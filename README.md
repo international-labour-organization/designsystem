@@ -4,11 +4,14 @@
 
 ## Packages
 
-- [react](./packages/react)
-- [styles](./packages/styles)
+- [themes](./packages/themes)
 - [fonts](./packages/fonts)
+- [styles](./packages/styles)
+- [brand-assets](./packages/brand-assets)
 - [icons](./packages/icons)
 - [react icons](./packages/icons-react)
+- [react](./packages/react)
+- [twig](./packages/twig)
 
 ## Getting Started
 
