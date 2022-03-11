@@ -1,0 +1,30 @@
+{
+  "color": {
+    "base": {
+      "blue": {
+        "light"  : { "value": "{color.brand.ilo-light-blue}" },
+        "medium"  : { "value": "{color.brand.ilo-blue}" },
+        "dark"  : { "value": "{color.brand.ilo-dark-blue}" }
+      },
+      "green" : { "value": "{color.brand.ilo-green}" },
+      "neutrals": {
+        "white": { "value": "{color.brand.ilo-white}" },
+        "lighter"  : { "value": "{color.brand.ilo-grey-light}" },
+        "light"  : { "value": "{color.brand.ilo-grey-ui}" },
+        "medium"  : { "value": "{color.brand.ilo-grey-accessible}" },
+        "dark"  : { "value": "{color.brand.ilo-grey-charcoal}" },
+        "black"  : { "value": "{color.brand.ilo-black}" }
+      },
+      "purple" : { "value": "{color.brand.ilo-purple}" },
+      "red": {
+        "light"  : { "value": "{color.brand.ilo-blue}" },
+        "medium"  : { "value": "{color.brand.ilo-red}" },
+        "dark"  : { "value": "{color.brand.ilo-dark-red}" }
+      },
+      "turquoise" : { "value": "{color.brand.ilo-turquoise}" },
+      "yellow" : { "value": "{color.brand.ilo-yellow}" }
+    }
+  }
+}
+
+

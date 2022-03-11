@@ -1,0 +1,87 @@
+{
+  "type": {
+    "base": {
+      "size"  : {
+        "value": "18.66px",
+        "comment": "the base size of the font"
+      },
+      "letter-spacing" : { "value" : "normal" },
+      "line-height" : { "value" : "27.24px" }
+    },
+    "body-small": {
+      "size"  : { "value": "16px" },
+      "letter-spacing" : { "value" : "normal" },
+      "line-height" : { "value" : "23.36px" }
+    },
+    "body-large": {
+      "size"  : { "value": "23.32px" },
+      "letter-spacing" : { "value" : "normal" },
+      "line-height" : { "value" : "34.05px" }
+    },
+    "body-xs": {
+      "size"  : { "value": "14.93px" },
+      "letter-spacing" : { "value" : "normal" },
+      "line-height" : { "value" : "20.3px" }
+    },
+    "body-xxs": {
+      "size"  : { "value": "11.94px" },
+      "letter-spacing" : { "value" : "normal" },
+      "line-height" : { "value" : "16.24px" }
+    },
+    "body-xxxs": {
+      "size"  : { "value": "9.55px" },
+      "letter-spacing" : { "value" : "normal" },
+      "line-height" : { "value" : "14.33px" }
+    },
+    "headline-1": {
+      "size"  : { "value": "56.95px" },
+      "letter-spacing" : { "value" : "-3.5%" },
+      "line-height" : { "value" : "65.49px" }
+    },
+    "headline-2": {
+      "size"  : { "value": "45.56px" },
+      "letter-spacing" : { "value" : "-3.5%" },
+      "line-height" : { "value" : "52.39px" }
+    },
+    "headline-3": {
+      "size"  : { "value": "36.45px" },
+      "letter-spacing" : { "value" : "-3.5%" },
+      "line-height" : { "value" : "43.74px" }
+    },
+    "headline-4": {
+      "size"  : { "value": "29.16px" },
+      "letter-spacing" : { "value" : "-3.5%" },
+      "line-height" : { "value" : "36.45px" }
+    },
+    "headline-5": {
+      "size"  : { "value": "23.32px" },
+      "letter-spacing" : { "value" : "-3.5%" },
+      "line-height" : { "value" : "29.15px" }
+    },
+    "headline-6": {
+      "size"  : { "value": "18.66px" },
+      "letter-spacing" : { "value" : "-3.5%" },
+      "line-height" : { "value" : "24.26px" }
+    },
+    "label-small": {
+      "size"  : { "value": "14.93px" },
+      "letter-spacing" : { "value" : "-2%" },
+      "line-height" : { "value" : "20.16px" }
+    },
+    "label-medium": {
+      "size"  : { "value": "16px" },
+      "letter-spacing" : { "value" : "-2%" },
+      "line-height" : { "value" : "21.6px" }
+    },
+    "label-large": {
+      "size"  : { "value": "18.66px" },
+      "letter-spacing" : { "value" : "-2%" },
+      "line-height" : { "value" : "24.26px" }
+    },
+    "pull-quote": {
+      "size"  : { "value": "36.45px" },
+      "letter-spacing" : { "value" : "-3.5%" },
+      "line-height" : { "value" : "43.74px" }
+    }
+  }
+}
