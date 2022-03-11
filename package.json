@@ -4,10 +4,11 @@
   "description": "A proof of concept for a design system based on un-core",
   "main": "index.js",
   "scripts": {
-    "build": "pnpm run build --filter=@ilo/icons --filter=@ilo/icons-react --filter=@ilo/react",
+    "build": "pnpm run build --filter=@ilo/icons --filter=@ilo/icons-react --filter=@example/themes --filter=@ilo/react",
     "build:icons": "pnpm run build --filter=@ilo/icons",
     "build:icons-react": "pnpm run build --filter=@ilo/icons-react",
     "build:react": "pnpm run build --filter=@ilo/react",
+    "build:themes": "pnpm run build --filter=@example/themes",
     "clean": "pnpm recursive exec -- rm -rf node_modules; rm shrinkwrap.yaml; rm -rf node_modules",
     "lint": "pnpm run lint",
     "lint:react": "pnpm run lint --filter=@ilo/react",

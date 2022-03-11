@@ -1,0 +1,14 @@
+{
+  "source": ["tokens/**/*.json"],
+  "platforms": {
+    "scss": {
+      "transformGroup": "scss",
+      "buildPath": "build/scss/",
+      "files": [{
+        "destination": "_tokens.scss",
+        "format": "scss/map-deep"
+      }],
+      "transforms": ["attribute/cti", "color/rgb", "size/rem", "name/cti/kebab"]
+    }
+  }
+}

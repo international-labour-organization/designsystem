@@ -269,6 +269,15 @@ importers:
     devDependencies:
       sass: 1.49.9
 
+  packages/themes:
+    specifiers:
+      style-dictionary: ^3.7.0
+    devDependencies:
+      style-dictionary: 3.7.0
+
+  packages/twig:
+    specifiers: {}
+
 packages:
 
   /@ampproject/remapping/2.1.2:
@@ -11764,7 +11773,6 @@ packages:
       graceful-fs: 4.2.9
       jsonfile: 6.1.0
       universalify: 2.0.0
-    dev: false
 
   /fs-extra/8.1.0:
     resolution: {integrity: sha512-yhlQgA6mnOJUKOsRUFsgJdQCvkKhcz8tlZG5HBQfReYZy46OwLcY+Zia0mtdHsOo9y/hP+CxMN0TU9QxoOtG4g==}
@@ -14402,6 +14410,10 @@ packages:
     hasBin: true
     dependencies:
       minimist: 1.2.5
+
+  /jsonc-parser/3.0.0:
+    resolution: {integrity: sha512-fQzRfAbIBnR0IQvftw9FJveWiHp72Fg20giDrHz6TdfB12UH/uue0D3hm57UB5KgAVuniLMCaS8P1IMj9NR7cA==}
+    dev: true
 
   /jsonfile/2.4.0:
     resolution: {integrity: sha1-NzaitCi4e72gzIO1P6PWM6NcKug=}
@@ -19542,6 +19554,22 @@ packages:
     engines: {node: '>=0.10.0'}
     dev: true
 
+  /style-dictionary/3.7.0:
+    resolution: {integrity: sha512-BL4AQS5kNDBXbFHWJhlCve6+ojnHgHkiwhf2nNByU698elXWdyK5b27OprphT4q0/tJ52zB+lodhqxIxbNOajQ==}
+    engines: {node: '>=12.0.0'}
+    hasBin: true
+    dependencies:
+      chalk: 4.1.2
+      change-case: 4.1.2
+      commander: 8.3.0
+      fs-extra: 10.0.1
+      glob: 7.2.0
+      json5: 2.2.0
+      jsonc-parser: 3.0.0
+      lodash: 4.17.21
+      tinycolor2: 1.4.2
+    dev: true
+
   /style-inject/0.3.0:
     resolution: {integrity: sha512-IezA2qp+vcdlhJaVm5SOdPPTUu0FCEqfNSli2vRuSIBbu5Nq5UvygTk/VzeCqfLz2Atj3dVII5QBKGZRZ0edzw==}
     dev: true
@@ -19994,6 +20022,10 @@ packages:
 
   /tiny-invariant/1.2.0:
     resolution: {integrity: sha512-1Uhn/aqw5C6RI4KejVeTg6mIS7IqxnLJ8Mv2tV5rTc0qWobay7pDUz6Wi392Cnc8ak1H0F2cjoRzb2/AW4+Fvg==}
+    dev: true
+
+  /tinycolor2/1.4.2:
+    resolution: {integrity: sha512-vJhccZPs965sV/L2sU4oRQVAos0pQXwsvTLkWYdqJ+a8Q5kPFzJTuOFwy7UniPli44NKQGAglksjvOcpo95aZA==}
     dev: true
 
   /tmp/0.0.33:

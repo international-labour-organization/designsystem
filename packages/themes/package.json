@@ -1,0 +1,19 @@
+{
+  "name": "@example/designsystem-themes",
+  "description": "Theme tokens for products using ILO's Design System",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/international-labour-organization/designsystem.git",
+    "directory": "packages/themes"
+  },
+  "scripts": {
+    "build": "node build.js"
+  },
+  "author": "@johnpauldavis, @avrilpearl, @ghlost, @justintemps",
+  "license": "MIT",
+  "files": [],
+  "devDependencies": {
+    "style-dictionary": "^3.7.0"
+  }
+}
