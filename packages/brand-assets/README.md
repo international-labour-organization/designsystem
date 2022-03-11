@@ -29,14 +29,14 @@ Consume the assets by directly referencing the file from the public assets direc
 
 ### React
 
-To cosume the package in a react app, simply import the image of interest, e.g.:
+To consume the package in a react app, simply import the image of interest, e.g.:
 
 ``` jsx
 import { logo } from '@ilo/brand-assets';
 ```
 
-The logo will be the src string of the image, that you can pass directly into an img tag to render the brand asset.
+The logo represents the src string of the image. You can pass directly into an img tag to render the brand asset in your app.
 
-```
+``` jsx
 <img src={logo} />
 ```
