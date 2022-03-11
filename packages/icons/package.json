@@ -1,0 +1,38 @@
+{
+  "name": "@ilo/icons",
+  "description": "Icons for digital and software products using ILO's Design System",
+  "version": "0.0.1",
+  "author": "@justintemps",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/international-labour-organization/designsystem.git",
+    "directory": "packages/icons"
+  },
+  "bugs": "https://github.com/international-labour-organization/designsystem/issues",
+  "keywords": [
+    "icons"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "pnpm run clean && node tasks/build.js",
+    "download-figma": "pnpm run clean && node tasks/download.js",
+    "ci-check": "node tasks/ci-check.js",
+    "clean": "rimraf es lib build-info.json metadata.json",
+    "prepublishOnly": "pnpm run build"
+  },
+  "dependencies": {
+    "@ilo/icon-build-helpers": "workspace:0.0.1"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.14.2",
+    "@un/figma-connect": "^0.0.7",
+    "browserslist-config-carbon": "^10.6.1",
+    "rimraf": "^3.0.2"
+  },
+  "gitHead": "1f06c355bfc57d62c4516f9daed57564730537f5"
+}

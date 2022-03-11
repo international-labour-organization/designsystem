@@ -1,0 +1,35 @@
+// @TODO: Not even sure what this does tbh, is it needed?
+$css--body: true;
+$css--reset: true;
+
+// This has to come first, because
+// @un/type is a dependency of several other @un packages. We
+// won't be able to reset its variables if the package has already
+// been imported
+@forward "typography";
+
+// Set prefix on default styles
+@use "@un/styles/scss/config" with (
+  $prefix: "ilo"
+);
+
+// Set prefix on default theme options
+@use "@un/themes/scss/themes" as themes with (
+  $custom-property-prefix: "ilo"
+);
+
+// Load the css resets
+@forward "@un/styles/scss/reset";
+
+// Import our own theme settings
+@use "theme" as theme;
+
+// Import our custom components css
+@use "components" as *;
+
+// Apply the theme settings to the default styles
+$carbon--theme: theme.$carbon--theme--ilo;
+:root {
+  @include themes.carbon--theme(theme.$carbon--theme--ilo, true) {
+  }
+}

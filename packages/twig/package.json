@@ -1,0 +1,16 @@
+{
+  "name": "@ilo/twig",
+  "description": "ILO twig component library",
+  "version": "0.0.1",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "files": [
+    "twig"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/international-labour-organization/designsystem.git",
+    "directory": "packages/twig"
+  }
+}

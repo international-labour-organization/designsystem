@@ -1,0 +1,17 @@
+{
+  "name": "@ilo/fonts",
+  "description": "ILO brand fonts and fontface declarations",
+  "version": "0.0.1",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "files": [
+    "index.scss",
+    "assets"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/international-labour-organization/designsystem.git",
+    "directory": "packages/fonts"
+  }
+}

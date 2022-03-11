@@ -1,0 +1,69 @@
+.ilo--accordion {
+  &__button {
+    color: #230050;
+    align-items: center;
+    background-color: transparent;
+    border: none;
+    border-top: 2px solid #EDF0F2;
+    display: flex;
+    fill: #230050;
+    flex-direction: row;
+    font-family: Overpass;
+    font-weight: 500;
+    justify-content: space-between;
+    letter-spacing: -0.02em;
+    transition: border 0.3s ease-in-out, background 0.3s ease-in-out, color 0.3s ease-in-out;
+    width: 100%;
+
+    &:hover,
+    &:focus {
+      background-color: #EBF5FD;
+      border-top-color: #1E2DBE;
+      color: #1E2DBE;
+      fill: #1E2DBE;
+    }
+
+    &--small {
+      font-family: Overpass;
+      font-size: 16px;
+      line-height: 22px;
+      padding: 20px 0px 15px;
+    }
+
+    &--large {
+      font-size: 19px;
+      line-height: 24px;
+      padding: 24px 0px 19px;
+    }
+  }
+
+  &__panel {
+    &.collapse {
+      visibility: hidden;
+      height: 0px;
+
+      &.show {
+        height: auto;
+        visibility: visible;
+        display: block;
+      }
+
+      &:not(.show){
+        display: none;
+      }
+    }
+
+    &.collapsing, &.expanding {
+      height: 0;
+      position: relative;
+      overflow: hidden;
+      visibility: visible;
+      -webkit-transition-property: height, visibility;
+      transition-property: height, visibility;
+      transition-duration: attr(data-transition);
+      -webkit-transition-duration: attr(data-transition);
+      transition-timing-function: ease;
+      -webkit-transition-timing-function: ease;
+    }
+  }
+}

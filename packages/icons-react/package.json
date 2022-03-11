@@ -1,0 +1,57 @@
+{
+  "name": "@ilo/icons-react",
+  "description": "React components for icons in digital and software products using ILO's Design System",
+  "version": "0.0.1",
+  "author": "@justintemps",
+  "license": "MIT",
+  "main": "lib/index.js",
+  "module": "es/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/international-labour-organization/designsystem.git",
+    "directory": "packages/icons-react"
+  },
+  "bugs": "https://github.com/international-labour-organization/designsystem/issues",
+  "files": [
+    "es",
+    "lib",
+    "umd",
+    "next"
+  ],
+  "keywords": [
+    "elements",
+    "components",
+    "react"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "scripts": {
+    "build": "pnpm run clean && node tasks/build.js",
+    "clean": "rimraf es lib umd next",
+    "postinstall": "carbon-telemetry collect --install"
+  },
+  "peerDependencies": {
+    "react": ">=16"
+  },
+  "dependencies": {
+    "@babel/core": "^7.14.6",
+    "@carbon/icon-helpers": "^10.19.0",
+    "@carbon/telemetry": "0.0.0-alpha.6",
+    "@ilo/icon-build-helpers": "workspace:0.0.1",
+    "@ilo/icons": "workspace:0.0.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "prop-types": "^15.7.2"
+  },
+  "devDependencies": {
+    "@babel/plugin-transform-react-constant-elements": "^7.17.6",
+    "@babel/preset-env": "^7.16.11",
+    "@babel/preset-react":"^7.16.7",
+    "babel-plugin-dev-expression": "^0.2.3",
+    "browserslist-config-carbon": "^10.6.1",
+    "rimraf": "^3.0.2"
+  },
+  "sideEffects": false,
+  "gitHead": "1f06c355bfc57d62c4516f9daed57564730537f5"
+}

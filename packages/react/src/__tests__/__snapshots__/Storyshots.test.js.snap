@@ -1,0 +1,503 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Storyshots Components/Accordion Accordion Default 1`] = `
+<div
+  style={
+    Object {
+      "margin": "3em",
+    }
+  }
+>
+  <ul
+    className="ilo--accordion ilo--accordion--small"
+  >
+    <li
+      className="ilo--accordion__item"
+    >
+      <h3
+        className="ilo--heading"
+      >
+        <button
+          aria-controls="panel-1"
+          aria-disabled={false}
+          aria-expanded={false}
+          className="ilo--accordion__button ilo--accordion__button--small"
+          id="button-1"
+          onClick={[Function]}
+        >
+          Item1
+          <svg
+            aria-hidden={true}
+            fill="currentColor"
+            focusable="false"
+            height={24}
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 24 24"
+            width={24}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M18 11H6v2h12v-2Z"
+            />
+          </svg>
+        </button>
+      </h3>
+      <div
+        aria-expanded={null}
+        aria-labelledby="button-1"
+        childRef={null}
+        className="ilo--accordion__panel collapse"
+        id="panel-1"
+        role="region"
+      >
+        <p>
+          Content of Item 1
+        </p>
+        <p>
+          Content of Item 1
+        </p>
+        <p>
+          Content of Item 1
+        </p>
+        <p>
+          Content of Item 1
+        </p>
+        <p>
+          Content of Item 1
+        </p>
+      </div>
+    </li>
+    <li
+      className="ilo--accordion__item"
+    >
+      <h3
+        className="ilo--heading"
+      >
+        <button
+          aria-controls="panel-2"
+          aria-disabled={false}
+          aria-expanded={false}
+          className="ilo--accordion__button ilo--accordion__button--small"
+          id="button-2"
+          onClick={[Function]}
+        >
+          Item2
+          <svg
+            aria-hidden={true}
+            fill="currentColor"
+            focusable="false"
+            height={24}
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 24 24"
+            width={24}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M18 11H6v2h12v-2Z"
+            />
+          </svg>
+        </button>
+      </h3>
+      <div
+        aria-expanded={null}
+        aria-labelledby="button-2"
+        childRef={null}
+        className="ilo--accordion__panel collapse"
+        id="panel-2"
+        role="region"
+      >
+        <p>
+          Content of Item 2
+        </p>
+        <p>
+          Content of Item 2
+        </p>
+        <p>
+          Content of Item 2
+        </p>
+        <p>
+          Content of Item 2
+        </p>
+        <p>
+          Content of Item 2
+        </p>
+        <p>
+          Content of Item 2
+        </p>
+      </div>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`Storyshots Components/Accordion Large Accordion 1`] = `
+<div
+  style={
+    Object {
+      "margin": "3em",
+    }
+  }
+>
+  <ul
+    className="ilo--accordion ilo--accordion--large"
+  >
+    <li
+      className="ilo--accordion__item"
+    >
+      <h3
+        className="ilo--heading"
+      >
+        <button
+          aria-controls="panel-1"
+          aria-disabled={false}
+          aria-expanded={false}
+          className="ilo--accordion__button ilo--accordion__button--large"
+          id="button-1"
+          onClick={[Function]}
+        >
+          Item1
+          <svg
+            aria-hidden={true}
+            fill="currentColor"
+            focusable="false"
+            height={24}
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 24 24"
+            width={24}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M18 11H6v2h12v-2Z"
+            />
+          </svg>
+        </button>
+      </h3>
+      <div
+        aria-expanded={null}
+        aria-labelledby="button-1"
+        childRef={null}
+        className="ilo--accordion__panel collapse"
+        id="panel-1"
+        role="region"
+      >
+        <p>
+          Content of Item 1
+        </p>
+        <p>
+          Content of Item 1
+        </p>
+        <p>
+          Content of Item 1
+        </p>
+        <p>
+          Content of Item 1
+        </p>
+        <p>
+          Content of Item 1
+        </p>
+      </div>
+    </li>
+    <li
+      className="ilo--accordion__item"
+    >
+      <h3
+        className="ilo--heading"
+      >
+        <button
+          aria-controls="panel-2"
+          aria-disabled={false}
+          aria-expanded={false}
+          className="ilo--accordion__button ilo--accordion__button--large"
+          id="button-2"
+          onClick={[Function]}
+        >
+          Item2
+          <svg
+            aria-hidden={true}
+            fill="currentColor"
+            focusable="false"
+            height={24}
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 24 24"
+            width={24}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M18 11H6v2h12v-2Z"
+            />
+          </svg>
+        </button>
+      </h3>
+      <div
+        aria-expanded={null}
+        aria-labelledby="button-2"
+        childRef={null}
+        className="ilo--accordion__panel collapse"
+        id="panel-2"
+        role="region"
+      >
+        <p>
+          Content of Item 2
+        </p>
+        <p>
+          Content of Item 2
+        </p>
+        <p>
+          Content of Item 2
+        </p>
+        <p>
+          Content of Item 2
+        </p>
+        <p>
+          Content of Item 2
+        </p>
+        <p>
+          Content of Item 2
+        </p>
+      </div>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`Storyshots Components/Accordion Small Accordion 1`] = `
+<div
+  style={
+    Object {
+      "margin": "3em",
+    }
+  }
+>
+  <ul
+    className="ilo--accordion ilo--accordion--small"
+  >
+    <li
+      className="ilo--accordion__item"
+    >
+      <h3
+        className="ilo--heading"
+      >
+        <button
+          aria-controls="panel-1"
+          aria-disabled={false}
+          aria-expanded={false}
+          className="ilo--accordion__button ilo--accordion__button--small"
+          id="button-1"
+          onClick={[Function]}
+        >
+          Item1
+          <svg
+            aria-hidden={true}
+            fill="currentColor"
+            focusable="false"
+            height={24}
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 24 24"
+            width={24}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M18 11H6v2h12v-2Z"
+            />
+          </svg>
+        </button>
+      </h3>
+      <div
+        aria-expanded={null}
+        aria-labelledby="button-1"
+        childRef={null}
+        className="ilo--accordion__panel collapse"
+        id="panel-1"
+        role="region"
+      >
+        <p>
+          Content of Item 1
+        </p>
+        <p>
+          Content of Item 1
+        </p>
+        <p>
+          Content of Item 1
+        </p>
+        <p>
+          Content of Item 1
+        </p>
+        <p>
+          Content of Item 1
+        </p>
+      </div>
+    </li>
+    <li
+      className="ilo--accordion__item"
+    >
+      <h3
+        className="ilo--heading"
+      >
+        <button
+          aria-controls="panel-2"
+          aria-disabled={false}
+          aria-expanded={false}
+          className="ilo--accordion__button ilo--accordion__button--small"
+          id="button-2"
+          onClick={[Function]}
+        >
+          Item2
+          <svg
+            aria-hidden={true}
+            fill="currentColor"
+            focusable="false"
+            height={24}
+            preserveAspectRatio="xMidYMid meet"
+            viewBox="0 0 24 24"
+            width={24}
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M18 11H6v2h12v-2Z"
+            />
+          </svg>
+        </button>
+      </h3>
+      <div
+        aria-expanded={null}
+        aria-labelledby="button-2"
+        childRef={null}
+        className="ilo--accordion__panel collapse"
+        id="panel-2"
+        role="region"
+      >
+        <p>
+          Content of Item 2
+        </p>
+        <p>
+          Content of Item 2
+        </p>
+        <p>
+          Content of Item 2
+        </p>
+        <p>
+          Content of Item 2
+        </p>
+        <p>
+          Content of Item 2
+        </p>
+        <p>
+          Content of Item 2
+        </p>
+      </div>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`Storyshots Components/Heading Heading Default 1`] = `
+<div
+  style={
+    Object {
+      "margin": "3em",
+    }
+  }
+>
+  <h3
+    className="ilo--heading"
+  >
+    Heading 3
+  </h3>
+</div>
+`;
+
+exports[`Storyshots Components/Heading Heading Level 1 1`] = `
+<div
+  style={
+    Object {
+      "margin": "3em",
+    }
+  }
+>
+  <h1
+    className="ilo--heading"
+  >
+    Heading 1
+  </h1>
+</div>
+`;
+
+exports[`Storyshots Components/Heading Heading Level 2 1`] = `
+<div
+  style={
+    Object {
+      "margin": "3em",
+    }
+  }
+>
+  <h2
+    className="ilo--heading"
+  >
+    Heading 2
+  </h2>
+</div>
+`;
+
+exports[`Storyshots Components/Heading Heading Level 3 1`] = `
+<div
+  style={
+    Object {
+      "margin": "3em",
+    }
+  }
+>
+  <h3
+    className="ilo--heading"
+  >
+    Heading 3
+  </h3>
+</div>
+`;
+
+exports[`Storyshots Components/Heading Heading Level 4 1`] = `
+<div
+  style={
+    Object {
+      "margin": "3em",
+    }
+  }
+>
+  <h4
+    className="ilo--heading"
+  >
+    Heading 4
+  </h4>
+</div>
+`;
+
+exports[`Storyshots Components/Heading Heading Level 5 1`] = `
+<div
+  style={
+    Object {
+      "margin": "3em",
+    }
+  }
+>
+  <h5
+    className="ilo--heading"
+  >
+    Heading 5
+  </h5>
+</div>
+`;
+
+exports[`Storyshots Components/Heading Heading Level 6 1`] = `
+<div
+  style={
+    Object {
+      "margin": "3em",
+    }
+  }
+>
+  <h6
+    className="ilo--heading"
+  >
+    Heading 6
+  </h6>
+</div>
+`;

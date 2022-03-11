@@ -1,0 +1,18 @@
+- name: add
+  friendly_name: add
+  aliases:
+    - ILO Icons
+  sizes:
+    - glyph
+- name: close
+  friendly_name: close
+  aliases:
+    - ILO Icons
+  sizes:
+    - glyph
+- name: minus
+  friendly_name: minus
+  aliases:
+    - ILO Icons
+  sizes:
+    - glyph

@@ -1,0 +1,12 @@
+@use "@un/type/scss/modules/font-family" with (
+  $font-families: (
+    // "mono":
+    //   unquote(
+    //     "'Menlo', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono', Courier, monospace"
+    //   ),
+    "sans": unquote("'Overpass', sans-serif"),
+    // "sans-condensed": unquote("'Overpass', 'Helvetica Neue', Arial, sans-serif"),
+    // "sans-hebrew": unquote("'Helvetica Hebrew', 'Arial Hebrew', sans-serif"),
+    // "sans-tajawal": unquote("'Tajawal', sans-serif"),,,
+  )
+);

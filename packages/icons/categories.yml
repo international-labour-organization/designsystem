@@ -1,0 +1,8 @@
+categories:
+- name: Actions
+  subcategories:
+    - name: Controls
+      members:
+        - add
+        - close
+        - minus
