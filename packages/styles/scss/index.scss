@@ -6,11 +6,8 @@
 // Load the css resets
 @use "reset";
 
-// Import theme settings
-@import "../../themes/build/scss/tokens";
-
 //Import type styles
-@import "typography";
+@use "typography";
 
 // Import our custom components css
-@import "components/**/*";
+@use "components";

@@ -8,16 +8,13 @@
     "directory": "packages/styles"
   },
   "scripts": {
-    "sass": "sass scss:build/css"
+    "build": "sass scss:build/css"
   },
   "author": "@justintemps, @johnpauldavis, @avrilpearl, @ghlost",
   "license": "MIT",
   "files": [
-    "es",
-    "lib",
-    "scss",
-    "src",
-    "umd"
+    "build",
+    "scss"
   ],
   "dependencies": {
     "@ilo/themes": "workspace:*"
