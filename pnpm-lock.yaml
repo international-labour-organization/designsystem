@@ -262,9 +262,11 @@ importers:
 
   packages/styles:
     specifiers:
+      '@ilo/fonts': workspace:*
       '@ilo/themes': workspace:*
       sass: ^1.49.9
     dependencies:
+      '@ilo/fonts': link:../fonts
       '@ilo/themes': link:../themes
     devDependencies:
       sass: 1.49.9

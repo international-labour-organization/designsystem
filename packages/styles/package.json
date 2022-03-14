@@ -8,7 +8,7 @@
     "directory": "packages/styles"
   },
   "scripts": {
-    "build": "sass scss:build/css"
+    "build": "sass scss:build/css --load-path=./node_modules"
   },
   "author": "@justintemps, @johnpauldavis, @avrilpearl, @ghlost",
   "license": "MIT",
@@ -17,6 +17,7 @@
     "scss"
   ],
   "dependencies": {
+    "@ilo/fonts": "workspace:*",
     "@ilo/themes": "workspace:*"
   },
   "devDependencies": {
