@@ -47,7 +47,6 @@ const AccordionButton: FC<AccordionButtonProps> = ({
         className={accordionButtonClasses}
         aria-expanded={open}
         onClick={(e) => handleClick(e, id)}
-        aria-disabled={open}
         aria-controls={`panel-${id}`}
         id={`button-${id}`}
         {...rest}
