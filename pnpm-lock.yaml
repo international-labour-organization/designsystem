@@ -155,9 +155,6 @@ importers:
       '@storybook/react': 5.3.21_e50cda8bd059f3d2a2e1e75b37ef9d56
       babel-loader: 8.2.3_@babel+core@7.17.5
 
-  packages/icons-react/next:
-    specifiers: {}
-
   packages/react:
     specifiers:
       '@ilo/fonts': workspace:0.0.1
@@ -265,7 +262,12 @@ importers:
 
   packages/styles:
     specifiers:
-      sass: ^1.46.0
+      '@ilo/fonts': workspace:*
+      '@ilo/themes': workspace:*
+      sass: ^1.49.9
+    dependencies:
+      '@ilo/fonts': link:../fonts
+      '@ilo/themes': link:../themes
     devDependencies:
       sass: 1.49.9
 

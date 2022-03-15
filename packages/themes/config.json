@@ -6,7 +6,7 @@
       "buildPath": "build/scss/",
       "files": [{
         "destination": "_tokens.scss",
-        "format": "scss/map-deep"
+        "format": "scss/individualMaps"
       }],
       "transforms": ["attribute/cti", "color/rgb", "size/rem", "name/cti/kebab"]
     }

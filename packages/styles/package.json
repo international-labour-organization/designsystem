@@ -7,16 +7,20 @@
     "url": "https://github.com/international-labour-organization/designsystem.git",
     "directory": "packages/styles"
   },
-  "author": "@justintemps",
+  "scripts": {
+    "build": "sass scss:build/css --load-path=./node_modules"
+  },
+  "author": "@justintemps, @johnpauldavis, @avrilpearl, @ghlost",
   "license": "MIT",
   "files": [
-    "es",
-    "lib",
-    "scss",
-    "src",
-    "umd"
+    "build",
+    "scss"
   ],
+  "dependencies": {
+    "@ilo/fonts": "workspace:*",
+    "@ilo/themes": "workspace:*"
+  },
   "devDependencies": {
-    "sass": "^1.46.0"
+    "sass": "^1.49.9"
   }
 }
