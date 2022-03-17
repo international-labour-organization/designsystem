@@ -12,7 +12,9 @@
   },
   "author": "@johnpauldavis, @avrilpearl, @ghlost, @justintemps",
   "license": "MIT",
-  "files": [],
+  "files": [
+    "build"
+  ],
   "devDependencies": {
     "style-dictionary": "^3.7.0"
   }

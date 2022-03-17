@@ -1,12 +1,4 @@
-@use "../vars" as *;
-
-// Apply settings to components
-@use "@un/styles/scss/components/button" with (
-  $button-height: 2.5rem,
-  $button-border-radius: 2px,
-  $button-padding: 5px,
-  $button-padding-lg: 0
-);
+@use "@ilo/themes/build/scss/tokens" as *;
 
 .ilo--btn--label {
   padding: 5px 10px;
@@ -15,21 +7,21 @@
 
 .ilo--btn.ilo--btn--primary {
   &:hover {
-    border: 2px solid $ilo-blue;
-    color: $ilo-blue;
+    border: 2px solid $color-brand-ilo-blue;
+    color: $color-brand-ilo-blue;
   }
   &:focus {
-    color: $brand-white;
-    background-color: $brand-yellow;
+    color: $color-brand-ilo-white;
+    background-color: $color-brand-ilo-yellow;
     .ilo--btn--label {
-      background-color: $brand-dk-blue;
+      background-color: $color-brand-ilo-dark-blue;
     }
   }
   &:active {
-    background-color: $ilo-blue;
-    color: $brand-white;
+    background-color: $color-brand-ilo-blue;
+    color: $color-brand-ilo-white;
     .ilo--btn--label {
-      background-color: $ilo-blue;
+      background-color: $color-brand-ilo-blue;
     }
   }
 }
