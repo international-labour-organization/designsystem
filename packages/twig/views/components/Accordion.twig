@@ -1,15 +1,19 @@
 {#
   ACCORDION COMPONENT
 #}
-<div class="accordion{% if useicon %} useicon{% endif %}{% if classes %} {{classes}}{% endif %}" data-loadcomponent="Accordion">
-    <div class="accordion__trigger">
-        <span class="accordion__trigger-text">{{ headline }}</span>
-    </div>
-    <ul class="accordion__item">
-        {% for item in accordion.items %}
-            <li>
-                <a class="accordion__item-link" href=""><span class="accordion__item-link-label"></span></a>
-            </li>
-        {% endfor %}
+<ul class="ilo--accordion ilo--accordion--large" data-loadcomponent="Accordion">
+    {% for item in items %}
+    <li class="ilo--accordion__item">
+      <h3 class="ilo--h3">
+        <button class="ilo--accordion__button ilo--accordion__button--large" aria-expanded="true" aria-controls="panel-l1" id="button-l1">
+        {{item.label}}
+        <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 11H13V6H11V11H6V13H11V18H13V13H18V11Z"></path></svg>
+        </button>
+      </h3>
+      <div class="ilo--accordion__panel ilo--accordion__panel--open collapse show" id="panel-l1" aria-labelledby="button-l1" role="region" style="transition-duration: 350ms;">
+        {{item.content|raw}}
+      </div>
+    </li>
+    {% endfor %}
     </ul>
 </div>
