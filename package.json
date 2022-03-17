@@ -4,7 +4,7 @@
   "description": "A proof of concept for a design system based on un-core",
   "main": "index.js",
   "scripts": {
-    "build": "pnpm run build --filter=@ilo/icons --filter=@ilo/icons-react --filter=@ilo/themes  --filter=@ilo/styles --filter=@ilo/react",
+    "build": "pnpm run build --filter=@ilo/icons --filter=@ilo/icons-react --filter=@ilo/themes  --filter=@ilo/styles --filter=@ilo/react --filter=@ilo/twig",
     "build:icons": "pnpm run build --filter=@ilo/icons",
     "build:icons-react": "pnpm run build --filter=@ilo/icons-react",
     "build:react": "pnpm run build --filter=@ilo/react",
@@ -15,6 +15,7 @@
     "lint": "pnpm run lint",
     "lint:react": "pnpm run lint --filter=@ilo/react",
     "lint:fix:react": "pnpm run lint:fix --filter=@ilo/react",
+    "serve:twig": "pnpm run serve --filter=@ilo/twig",
     "start": "pnpm run storybook",
     "storybook": "cd packages/react && pnpm run storybook",
     "test": "cd packages/react && pnpm run test"
