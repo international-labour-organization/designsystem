@@ -7,21 +7,21 @@
 
 .ilo--btn.ilo--btn--primary {
   &:hover {
-    border: 2px solid $color-brand-ilo-blue;
-    color: $color-brand-ilo-blue;
+    border: 2px solid $brand-ilo-blue;
+    color: $brand-ilo-blue;
   }
   &:focus {
-    color: $color-brand-ilo-white;
-    background-color: $color-brand-ilo-yellow;
+    color: $brand-ilo-white;
+    background-color: $brand-ilo-yellow;
     .ilo--btn--label {
-      background-color: $color-brand-ilo-dark-blue;
+      background-color: $brand-ilo-dark-blue;
     }
   }
   &:active {
-    background-color: $color-brand-ilo-blue;
-    color: $color-brand-ilo-white;
+    background-color: $brand-ilo-blue;
+    color: $brand-ilo-white;
     .ilo--btn--label {
-      background-color: $color-brand-ilo-blue;
+      background-color: $brand-ilo-blue;
     }
   }
 }

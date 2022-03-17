@@ -13,7 +13,7 @@ StyleDictionary.registerFormat({
 		const { tokens, properties } = dictionary;
 
 		return fileHeader({ file }) + `/**\n* TOKENS:\n*/\n\n` + jsonToSassVars(dictionary) + `\n\n` + `/**\n* MAPS:\n*/\n\n` + Object.keys(properties).map(property =>
-			`// ${property} MAP:\n\n`.toUpperCase() + `$${property}: ${jsonToSassMap(properties[property],0)}\n`
+			`// ${property} MAP:\n\n`.toUpperCase() + `$${property}: ${jsonToSassMap(properties[property],0)};\n`
 		)
 		.join(`\n`);
 	}

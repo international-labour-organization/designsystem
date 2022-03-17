@@ -1,0 +1,15 @@
+{#
+  ACCORDION COMPONENT
+#}
+<div class="accordion{% if useicon %} useicon{% endif %}{% if classes %} {{classes}}{% endif %}" data-loadcomponent="Accordion">
+    <div class="accordion__trigger">
+        <span class="accordion__trigger-text">{{ headline }}</span>
+    </div>
+    <ul class="accordion__item">
+        {% for item in accordion.items %}
+            <li>
+                <a class="accordion__item-link" href=""><span class="accordion__item-link-label"></span></a>
+            </li>
+        {% endfor %}
+    </ul>
+</div>

@@ -10,6 +10,7 @@
     "build:react": "pnpm run build --filter=@ilo/react",
     "build:themes": "pnpm run build --filter=@ilo/themes",
     "build:styles": "pnpm run build --filter=@ilo/styles",
+    "build:twig": "pnpm run build --filter=@ilo/twig",
     "clean": "pnpm recursive exec -- rm -rf node_modules; rm shrinkwrap.yaml; rm -rf node_modules",
     "lint": "pnpm run lint",
     "lint:react": "pnpm run lint --filter=@ilo/react",
