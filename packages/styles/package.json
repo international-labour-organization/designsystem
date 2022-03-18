@@ -8,7 +8,9 @@
     "directory": "packages/styles"
   },
   "scripts": {
-    "build": "sass scss:build/css --load-path=./node_modules"
+    "build": "sass scss:build/css --load-path=./node_modules",
+    "lint": "eslint --ext .js,.ts,.tsx",
+    "lint:fix": "eslint --ext .js,.ts,.tsx --fix"
   },
   "author": "@justintemps, @johnpauldavis, @avrilpearl, @ghlost",
   "license": "MIT",

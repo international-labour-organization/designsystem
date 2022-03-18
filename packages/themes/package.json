@@ -8,7 +8,9 @@
     "directory": "packages/themes"
   },
   "scripts": {
-    "build": "node build.js"
+    "build": "node build.js",
+    "lint": "eslint --ext .js,.ts,.tsx",
+    "lint:fix": "eslint --ext .js,.ts,.tsx --fix"
   },
   "author": "@johnpauldavis, @avrilpearl, @ghlost, @justintemps",
   "license": "MIT",

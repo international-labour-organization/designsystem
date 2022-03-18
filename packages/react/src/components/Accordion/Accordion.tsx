@@ -1,8 +1,8 @@
-import React, { useState, useEffect, createContext, FC } from 'react';
-import classNames from 'classnames';
-import useGlobalSettings from '../../hooks/useGlobalSettings';
-import { AccordionProps, AccordionContextProps } from './Accordion.props';
-import { AccordionControl } from '../../utils/accordion';
+import React, { useState, useEffect, createContext, FC } from "react";
+import classNames from "classnames";
+import useGlobalSettings from "../../hooks/useGlobalSettings";
+import { AccordionProps, AccordionContextProps } from "./Accordion.props";
+import { AccordionControl } from "../../utils/accordion";
 
 export const AccordionContext = createContext({} as AccordionContextProps);
 
@@ -11,8 +11,8 @@ const Accordion: FC<AccordionProps> = ({
   allowMultipleExpanded = false,
   onButtonClick,
   defaultAccordionsExpanded = [],
-  size = 'small',
-  headingLevel = 'h3',
+  size = "small",
+  headingLevel = "h3",
   className,
 }) => {
   const { prefix } = useGlobalSettings();
@@ -27,23 +27,27 @@ const Accordion: FC<AccordionProps> = ({
   });
 
   useEffect(() => {
-    const expandedOnLoad = allowMultipleExpanded ? defaultAccordionsExpanded : defaultAccordionsExpanded.length > 0 ? [defaultAccordionsExpanded[0]] : defaultAccordionsExpanded;
+    const expandedOnLoad = allowMultipleExpanded
+      ? defaultAccordionsExpanded
+      : defaultAccordionsExpanded.length > 0
+      ? [defaultAccordionsExpanded[0]]
+      : defaultAccordionsExpanded;
     setActiveItems(expandedOnLoad);
   }, [defaultAccordionsExpanded, allowMultipleExpanded]);
 
   return (
-    <AccordionContext.Provider value={{
-      activeItems,
-      setActiveItems,
-      getUpdatedItems,
-      allowMultipleExpanded,
-      onButtonClick,
-      size,
-      headingLevel,
-    }}>
-      <ul className={accordionClasses}>
-        {children}
-      </ul>
+    <AccordionContext.Provider
+      value={{
+        activeItems,
+        setActiveItems,
+        getUpdatedItems,
+        allowMultipleExpanded,
+        onButtonClick,
+        size,
+        headingLevel,
+      }}
+    >
+      <ul className={accordionClasses}>{children}</ul>
     </AccordionContext.Provider>
   );
 };

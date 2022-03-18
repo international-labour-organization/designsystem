@@ -1,10 +1,10 @@
-import React, { FC, useContext } from 'react';
-import classNames from 'classnames';
-import useGlobalSettings from '../../hooks/useGlobalSettings';
-import { default as AccordionPanelProps} from './AccordionPanel.props';
-import { AccordionContext } from './Accordion';
-import { AccordionItemContext } from './AccordionItem';
-import { Collapse } from '../Collapse';
+import React, { FC, useContext } from "react";
+import classNames from "classnames";
+import useGlobalSettings from "../../hooks/useGlobalSettings";
+import { default as AccordionPanelProps } from "./AccordionPanel.props";
+import { AccordionContext } from "./Accordion";
+import { AccordionItemContext } from "./AccordionItem";
+import { Collapse } from "../Collapse";
 
 const AccordionPanel: FC<AccordionPanelProps> = ({
   children,
@@ -22,17 +22,17 @@ const AccordionPanel: FC<AccordionPanelProps> = ({
     [baseClass]: true,
     [`${baseClass}--open`]: open,
   });
-  
+
   return (
     <Collapse panelIn={open} dimension="height" timeout={timeout}>
-      <div 
+      <div
         className={accordionaPanelClasses}
         id={`panel-${id}`}
         aria-labelledby={`button-${id}`}
         role="region"
         {...rest}
       >
-          {children}
+        {children}
       </div>
     </Collapse>
   );

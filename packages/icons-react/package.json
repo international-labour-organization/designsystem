@@ -29,6 +29,8 @@
   "scripts": {
     "build": "pnpm run clean && node tasks/build.js",
     "clean": "rimraf es lib umd next",
+    "lint": "eslint --ext .js,.ts,.tsx",
+    "lint:fix": "eslint --ext .js,.ts,.tsx --fix",
     "postinstall": "carbon-telemetry collect --install"
   },
   "peerDependencies": {

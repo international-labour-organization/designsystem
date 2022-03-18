@@ -1,11 +1,11 @@
-import React, { FC, useContext, MouseEvent } from 'react';
-import classNames from 'classnames';
-import { Add24, Minus24 } from '@ilo/icons-react';
-import useGlobalSettings from '../../hooks/useGlobalSettings';
-import { default as AccordionButtonProps } from './AccordionButton.props';
-import { AccordionContext } from './Accordion';
-import { AccordionItemContext } from './AccordionItem';
-import { Heading } from '../Heading';
+import React, { FC, useContext, MouseEvent } from "react";
+import classNames from "classnames";
+import { Add24, Minus24 } from "@ilo/icons-react";
+import useGlobalSettings from "../../hooks/useGlobalSettings";
+import { default as AccordionButtonProps } from "./AccordionButton.props";
+import { AccordionContext } from "./Accordion";
+import { AccordionItemContext } from "./AccordionItem";
+import { Heading } from "../Heading";
 
 const AccordionButton: FC<AccordionButtonProps> = ({
   children,
@@ -14,7 +14,7 @@ const AccordionButton: FC<AccordionButtonProps> = ({
 }) => {
   const { prefix } = useGlobalSettings();
   const baseClass = `${prefix}--accordion__button`;
-  const { 
+  const {
     activeItems,
     setActiveItems,
     getUpdatedItems,
@@ -36,7 +36,7 @@ const AccordionButton: FC<AccordionButtonProps> = ({
    */
   const handleClick = (e: MouseEvent<HTMLButtonElement>, id: string) => {
     setActiveItems(getUpdatedItems(id, activeItems, allowMultipleExpanded));
-    if(onButtonClick) {
+    if (onButtonClick) {
       onButtonClick(e, id);
     }
   };

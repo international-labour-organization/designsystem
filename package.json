@@ -12,7 +12,8 @@
     "build:styles": "pnpm run build --filter=@ilo/styles",
     "build:themes": "pnpm run build --filter=@ilo/themes",
     "clean": "pnpm recursive exec -- rm -rf node_modules; rm shrinkwrap.yaml; rm -rf node_modules",
-    "lint": "pnpm run lint",
+    "lint": "eslint --ext .js,.ts,.tsx",
+    "lint:fix": "eslint --ext .js,.ts,.tsx --fix",
     "lint:react": "pnpm run lint --filter=@ilo/react",
     "lint:fix:react": "pnpm run lint:fix --filter=@ilo/react",
     "start": "pnpm run storybook",
@@ -40,6 +41,14 @@
     "@un/layout": "^10.26.7",
     "@un/styles": "^10.26.8",
     "@un/themes": "^10.40.6",
-    "@un/type": "^10.30.8"
+    "@un/type": "^10.30.8",
+    "eslint": "^8.11.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.29.4",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "prettier": "^2.6.0",
+    "typescript": "^4.6.2"
   }
 }

@@ -23,6 +23,8 @@
     "download-figma": "pnpm run clean && node tasks/download.js",
     "ci-check": "node tasks/ci-check.js",
     "clean": "rimraf es lib build-info.json metadata.json",
+    "lint": "eslint --ext .js,.ts,.tsx",
+    "lint:fix": "eslint --ext .js,.ts,.tsx --fix",
     "prepublishOnly": "pnpm run build"
   },
   "dependencies": {

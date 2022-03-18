@@ -9,6 +9,10 @@
     "index.scss",
     "assets"
   ],
+  "scripts": {
+    "lint": "eslint --ext .js,.ts,.tsx",
+    "lint:fix": "eslint --ext .js,.ts,.tsx --fix"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/international-labour-organization/designsystem.git",
