@@ -1,8 +1,9 @@
-import React, { useState, useEffect, createContext, FC } from 'react';
+import React, { useState, useEffect, createContext, FC, ReactElement, Children } from 'react';
 import classNames from 'classnames';
 import useGlobalSettings from '../../hooks/useGlobalSettings';
 import { AccordionProps, AccordionContextProps } from './Accordion.props';
 import { AccordionControl } from '../../utils/accordion';
+import { checkArrayDuplicates } from '../../utils/checkArrayDuplicates';
 
 export const AccordionContext = createContext({} as AccordionContextProps);
 
@@ -30,6 +31,18 @@ const Accordion: FC<AccordionProps> = ({
     const expandedOnLoad = allowMultipleExpanded ? defaultAccordionsExpanded : defaultAccordionsExpanded.length > 0 ? [defaultAccordionsExpanded[0]] : defaultAccordionsExpanded;
     setActiveItems(expandedOnLoad);
   }, [defaultAccordionsExpanded, allowMultipleExpanded]);
+
+  if(children) {
+    const ids : string[] = [];
+    Children.forEach(children, (child: ReactElement) => {
+      ids.push(child.props.id);
+    });
+    if(checkArrayDuplicates(ids)) {
+      console.warn(
+        'Warning: Accordion items must have unique ids.',
+      );
+    }
+  }
 
   return (
     <AccordionContext.Provider value={{

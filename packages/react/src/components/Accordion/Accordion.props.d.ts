@@ -1,11 +1,12 @@
 import { ReactNode, MouseEvent } from 'react';
+export { default as AccordionItem } from './AccordionItem';
 import { accordionSize, headingLevel } from '../../types';
 
 export interface AccordionProps {
   /**
    * Specify the content of your Accordion.
    */
-  children: ReactNode;
+  children: ReactElement<AccordionItem> | Array<ReactElement<AccordionItem>>;
 
   /**
    * Callback to onButtonClick event;
