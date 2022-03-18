@@ -42,7 +42,7 @@ const AccordionButton: FC<AccordionButtonProps> = ({
   };
 
   return (
-    <Heading headingLevel={headingLevel}>
+    <Heading level={headingLevel}>
       <button
         className={accordionButtonClasses}
         aria-expanded={open}
