@@ -6,9 +6,9 @@ import { HeadingProps } from '../components/Heading/Heading.props';
 import headingArgs from '../components/Heading/Heading.args';
 
 const headingDoc = `
-By changing the \`headingLevel\` prop you can use different heading levels. The default heading level if not specified is \`h3\`.
+By changing the \`level\` prop you can use different heading levels. The default heading level if not specified is \`h3\`.
 
-| headingLevel   |  Description  |
+| level   |  Description  |
 |----------|-------------|
 | \`h1\` | heading level 1. |
 | \`h2\` | heading level 2. |
@@ -18,14 +18,14 @@ By changing the \`headingLevel\` prop you can use different heading levels. The 
 | \`h6\` | heading level 6. |
 `;
 
-const colorDoc = `
-By changing the \`color\` prop you can change the color of the heading. If not specified, the heading will inherit the color.
+const typeDoc = `
+By changing the \`type\` prop you can change the color of the heading. If not specified, the heading will inherit the color.
 
-| color   |  Description  |
+| type |  Description  |
 |----------|-------------|
-| \`grey\` | set the heading color to grey. |
-| \`blue\` | set the heading color to blue. |
-| \`white\` | set the heading color to white. |
+| \`default\` | Set the heading color to the base/default label theme. |
+| \`actionable\` | set the heading color to the actionable label theme. |
+| \`light\` | Set the heading color to the light label theme. |
 `;
 
 /**
@@ -36,7 +36,7 @@ export default {
   title: 'Components/Heading',
   component: Heading,
   argTypes: {
-    headingLevel: {
+    level: {
       control: 'text'
     },
     className: {
@@ -58,7 +58,7 @@ export default {
           </Description>
           <Subheading>Color Prop</Subheading>
           <Description>
-            {colorDoc}
+            {typeDoc}
           </Description>
           <Stories title="Examples" />
         </>
