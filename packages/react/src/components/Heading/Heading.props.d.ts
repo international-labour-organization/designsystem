@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { headingLevel, typographyColors } from "../../types";
+import { headingLevel, labelTypes } from "../../types";
 
 export interface HeadingProps {
   /**
@@ -10,7 +10,7 @@ export interface HeadingProps {
   /**
    * Specify the heading level the heading. Default level is h3.
    */
-  headingLevel?: headingLevel;
+  level?: headingLevel;
 
   /**
    * Specify an optional className to be added to your heading.
@@ -20,5 +20,5 @@ export interface HeadingProps {
   /**
    * Specify an optional color of Heading.
    */
-  color?: typographyColors;
+  type?: labelTypes;
 }

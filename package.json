@@ -2,6 +2,8 @@
   "name": "@ilo-ui/designsystem-poc",
   "version": "0.0.1",
   "description": "A proof of concept for a design system based on un-core",
+  "author": "@justintemps",
+  "license": "Apache-2.0",
   "main": "index.js",
   "scripts": {
     "build": "pnpm run build --filter=@ilo/icons --filter=@ilo/icons-react --filter=@ilo/themes  --filter=@ilo/styles --filter=@ilo/react --filter=@ilo/brand-assets",
@@ -27,8 +29,6 @@
     "type": "git",
     "url": "git+ttps://github.com/international-labour-organization/designsystem.git"
   },
-  "author": "@justintemps",
-  "license": "ISC",
   "bugs": {
     "url": "ttps://github.com/international-labour-organization/designsystem/issues"
   },

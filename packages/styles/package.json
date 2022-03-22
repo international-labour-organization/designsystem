@@ -13,7 +13,7 @@
     "lint:fix": "eslint --ext .js,.ts,.tsx --fix"
   },
   "author": "@justintemps, @johnpauldavis, @avrilpearl, @ghlost",
-  "license": "MIT",
+  "license": "Apache-2.0",
   "files": [
     "build",
     "scss"

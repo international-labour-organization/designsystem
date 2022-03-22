@@ -99,7 +99,7 @@ const Collapse = forwardRef<Transition<any>, CollapseProps>(
 
     return (
       <Transition
-        ref={ref}
+        nodeRef={ref}
         addEndListener={transitionEndListener}
         {...rest}
         aria-expanded={role ? panelIn : null}
@@ -108,7 +108,6 @@ const Collapse = forwardRef<Transition<any>, CollapseProps>(
         onEntered={handleEntered}
         onExit={handleExit}
         onExiting={handleExiting}
-        childRef={(children as any).ref}
         in={panelIn}
       >
         {(state: TransitionStatus, innerProps: Record<string, unknown>) => {

@@ -2,33 +2,33 @@ import { HeadingProps } from "./Heading.props";
 
 const heading1: HeadingProps = {
   children: "Heading 1",
-  headingLevel: "h1",
-  color: "blue",
+  level: "h1",
+  type: "actionable",
 };
 
 const heading2: HeadingProps = {
   children: "Heading 2",
-  headingLevel: "h2",
+  level: "h2",
 };
 
 const heading3: HeadingProps = {
   children: "Heading 3",
-  headingLevel: "h3",
+  level: "h3",
 };
 
 const heading4: HeadingProps = {
   children: "Heading 4",
-  headingLevel: "h4",
+  level: "h4",
 };
 
 const heading5: HeadingProps = {
   children: "Heading 5",
-  headingLevel: "h5",
+  level: "h5",
 };
 
 const heading6: HeadingProps = {
   children: "Heading 6",
-  headingLevel: "h6",
+  level: "h6",
 };
 
 /**
