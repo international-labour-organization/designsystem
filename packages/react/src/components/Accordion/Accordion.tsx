@@ -1,8 +1,8 @@
 import React, { useState, useEffect, createContext, FC } from 'react';
 import classNames from 'classnames';
+import { getUpdatedItems } from '@ilo/utils';
 import useGlobalSettings from '../../hooks/useGlobalSettings';
 import { AccordionProps, AccordionContextProps } from './Accordion.props';
-import { getUpdatedItems } from '../../utils/getUpdatedItems';
 
 export const AccordionContext = createContext({} as AccordionContextProps);
 
