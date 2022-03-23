@@ -24,7 +24,8 @@
     "start:static": "pnpm run storybook:static",
     "storybook": "cd packages/react && pnpm run storybook",
     "storybook:static": "cd packages/react && pnpm run storybook:static",
-    "test": "cd packages/react && pnpm run test"
+    "test:react": "pnpm run test --filter=@ilo/react",
+    "test:utils": "pnpm run test --filter=@ilo/utils"
   },
   "repository": {
     "type": "git",
