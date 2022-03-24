@@ -7,9 +7,19 @@
     "url": "https://github.com/international-labour-organization/designsystem.git",
     "directory": "packages/brand-assets"
   },
+  "main": "dist/index.js",
+  "module": "dist/esm/index.js",
   "author": "@justintemps",
-  "license": "MIT",
+  "license": "Apache-2.0",
   "files": [
-    "assets"
-  ]
+    "dist"
+  ],
+  "scripts": {
+    "build": "rollup -c"
+  },
+  "devDependencies": {
+    "rollup": "^2.70.0",
+    "rollup-plugin-copy": "^3.4.0",
+    "@web/rollup-plugin-import-meta-assets": "^1.0.7"
+  }
 }
