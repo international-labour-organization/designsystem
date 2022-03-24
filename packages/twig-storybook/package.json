@@ -1,17 +1,13 @@
 {
-  "name": "@ilo/vanilla",
-  "version": "1.2.1",
-  "description": "Vanilla Wingsuit Starter-Kit",
+  "name": "@ilo/twig-storybook",
+  "version": "0.0.1",
+  "license": "Apache-2.0",
+  "description": "Twig Storybook via Wingsuit",
   "main": "",
-  "license": "GPL-2.0",
-  "private": true,
-  "author": {
-    "name": "KEY-TEC",
-    "url": "https://github.com/wingsuit-designsystem/"
-  },
   "repository": {
     "type": "git",
-    "url": "git@github.com:wingsuit-designsystem/wingsuit.git"
+    "url": "https://github.com/international-labour-organization/designsystem.git",
+    "directory": "packages/twig-storybook"
   },
   "keywords": [
     "storybook",
