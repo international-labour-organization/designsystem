@@ -11,7 +11,7 @@
     "build": "sass scss:build/css --load-path=./node_modules"
   },
   "author": "@justintemps, @johnpauldavis, @avrilpearl, @ghlost",
-  "license": "MIT",
+  "license": "Apache-2.0",
   "files": [
     "build",
     "scss"
