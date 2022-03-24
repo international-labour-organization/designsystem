@@ -1,11 +1,13 @@
 {#
   ACCORDION COMPONENT
 #}
-<ul class="ilo--accordion ilo--accordion--large" data-loadcomponent="Accordion">
+<ul class="ilo--accordion ilo--accordion--{{ size|default('small') }}" data-loadcomponent="Accordion">
     {% for item in items %}
       {% include "@components/accordion/accordion-item.twig" with {
         label: item.label,
         content: item.content,
+        size: size,
+        headingLevel: headingLevel,
       } only %}
     {% endfor %}
     </ul>

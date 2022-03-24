@@ -32,12 +32,15 @@
     "fmt": "npm run fmt:js; npm run fmt:css",
     "ci": "npm run lint && npm run build:drupal"
   },
-  "devDependencies": {
-    "@babel/core": "^7.8.4",
-    "@babel/preset-env": "^7.8.4",
+  "dependencies": {
     "@ilo/fonts": "workspace:*",
     "@ilo/styles": "workspace:*",
     "@ilo/themes": "workspace:*",
+    "@ilo/utils": "workspace:*"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.8.4",
+    "@babel/preset-env": "^7.8.4",
     "@storybook/addon-actions": "^6.4.9",
     "@storybook/addon-essentials": "^6.4.9",
     "@storybook/addon-links": "^6.4.9",
