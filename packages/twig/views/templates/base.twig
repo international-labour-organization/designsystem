@@ -1,0 +1,33 @@
+<!doctype html>
+<html>
+  <head>
+      <link rel="stylesheet" href="css/index.css" type="text/css" media="screen" />
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+
+	<body>
+		<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+		{% block header %}
+      {% include "components/Header.twig" %}
+    {% endblock %}
+
+		<main id="content" role="main" class="content-wrapper">
+      <div class="wrapper">
+        {% block content %}
+          Sorry, no content
+        {% endblock %}
+      </div>
+      {% if sidebar %}
+        <aside class="layout-sidebar">
+          {{sidebar}}
+        </aside>
+      {% endif %}
+    </main>
+
+		{% block footer %}
+      {% include 'components/Footer.twig'%}
+    {% endblock %}
+	</body>
+</html>
