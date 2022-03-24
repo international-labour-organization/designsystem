@@ -1,0 +1,15 @@
+accordion:
+  use: '@components/accordion/accordion.twig'
+  label: Accordion
+  description: A collapsible accordion.
+  fields:
+    items:
+      type: object
+      label: Items
+      description: The accordion items.
+      preview:
+        - label: label 1
+          content: content 1
+        - label: label 2
+          content: content 2
+  visibility: storybook

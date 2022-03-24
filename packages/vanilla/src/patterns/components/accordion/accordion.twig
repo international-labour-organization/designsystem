@@ -1,20 +1,12 @@
 {#
   ACCORDION COMPONENT
 #}
-<div class="accordion{% if useicon %} useicon{% endif %}{% if classes %} {{classes}}{% endif %}" data-loadcomponent="Accordion">
-    <div class="accordion__trigger">
-        <span class="accordion__trigger-text">{{ accordion.label }}</span>
-    </div>
-    <ul class="accordion__item">
-        {% for item in accordion.items %}
-            {% if item.highlighted is defined %}
-              {% set highlighted = item.highlighted %}
-            {% else %}
-              {% set highlighted = false %}
-            {% endif %}
-            <li {% if highlighted %}class="highlighted"{% endif %}>
-                <a class="accordion__item-link" href="{{item.url}}"><span class="accordion__item-link-label">{{ item.label }}</span></a>
-            </li>
-        {% endfor %}
+<ul class="ilo--accordion ilo--accordion--large" data-loadcomponent="Accordion">
+    {% for item in items %}
+      {% include "@components/accordion/accordion-item.twig" with {
+        label: item.label,
+        content: item.content,
+      } only %}
+    {% endfor %}
     </ul>
 </div>

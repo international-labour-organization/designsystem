@@ -1,0 +1,18 @@
+accordion:
+  use: '@components/accordion/accordion-item.twig'
+  label: Accordion Item
+  description: A collapsible accordion item.
+  fields:
+    label:
+      type: text
+      label: Label
+      description: The accordion item's heading.
+      preview:
+        faker: lorem.word
+    content:
+      type: text
+      label: Content
+      description: The accordion item's collapsed content.
+      preview:
+        faker: lorem.word
+  visibility: storybook
