@@ -1,5 +1,6 @@
-import { ReactNode, MouseEvent } from 'react';
-import { accordionSize, headingLevel } from '../../types';
+import { ReactNode, MouseEvent } from "react";
+import { getUpdatedItems } from "@ilo/utils";
+import { accordionSize, headingLevel } from "../../types";
 
 export interface AccordionProps {
   /**
@@ -28,12 +29,12 @@ export interface AccordionProps {
    */
   size?: accordionSize;
 
-  /** 
+  /**
    * Specify the heading level that the accordion items, default level is h3.
    */
   headingLevel?: headingLevel;
 
-  /** 
+  /**
    * Specify an optional className to be added to your accordion.
    */
   className?: string;
@@ -41,7 +42,7 @@ export interface AccordionProps {
 
 export interface AccordionContextProps {
   activeItems: string[];
-  getUpdatedItems: (id: string, itemStatuses: string[], allowMultipleExpanded: boolean) => void;
+  getUpdatedItems: getUpdatedItems;
   setActiveItems: Dispatch<SetStateAction<string[]>>;
   allowMultipleExpanded: boolean;
   onButtonClick?: (e: MouseEvent<HTMLButtonElement>, i: any) => void;
