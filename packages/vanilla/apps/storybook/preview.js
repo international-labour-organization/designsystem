@@ -1,8 +1,7 @@
 import { configure, initJsBehaviors } from '@wingsuit-designsystem/storybook';
 import { TwingRenderer } from '@wingsuit-designsystem/pattern';
 import { addParameters } from '@storybook/react';
-
-const renderImpl = new TwingRenderer();
+import './styles.scss';
 
 const namespaces = require('../../src/namespaces');
 

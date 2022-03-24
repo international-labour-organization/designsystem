@@ -3,6 +3,10 @@ accordion:
   label: Accordion
   description: A collapsible accordion.
   fields:
+    size:
+      type: text
+      label: size
+      description: The size of the accordion.
     items:
       type: object
       label: Items

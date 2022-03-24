@@ -316,6 +316,9 @@ importers:
     specifiers:
       '@babel/core': ^7.8.4
       '@babel/preset-env': ^7.8.4
+      '@ilo/fonts': workspace:*
+      '@ilo/styles': workspace:*
+      '@ilo/themes': workspace:*
       '@storybook/addon-actions': ^6.4.9
       '@storybook/addon-essentials': ^6.4.9
       '@storybook/addon-links': ^6.4.9
@@ -363,6 +366,9 @@ importers:
     devDependencies:
       '@babel/core': 7.17.5
       '@babel/preset-env': 7.16.11_@babel+core@7.17.5
+      '@ilo/fonts': link:../fonts
+      '@ilo/styles': link:../styles
+      '@ilo/themes': link:../themes
       '@storybook/addon-actions': 6.4.19_693b1c1f404e651a3f513b5f6afa3810
       '@storybook/addon-essentials': 6.4.19_10ade681bad6bd8366151e52e00f7ecd
       '@storybook/addon-links': 6.4.19_react-dom@16.14.0+react@16.14.0
