@@ -1,7 +1,7 @@
 //*------------------------------------*\
 //    $MIXINS
 //*------------------------------------*/
-@use "@ilo/themes/build/scss/tokens" as *;
+@use "tokens" as *;
 @use "functions";
 
 @function map-deep-get($map, $keys...) {

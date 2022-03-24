@@ -1,4 +1,4 @@
-@use "@ilo/themes/build/scss/tokens" as *;
+@use "../tokens" as *;
 @import "../mixins";
 
 .ilo--accordion {
@@ -31,7 +31,7 @@
     
     &--large {
       @include font-styles('label-large');
-      padding: $spacing-ui-padding-xlg 0px calc($spacing-ui-padding-xlg - 5px);
+      padding: $spacing-ui-padding-xl 0px calc($spacing-ui-padding-xl - 5px);
     }
   }
 
