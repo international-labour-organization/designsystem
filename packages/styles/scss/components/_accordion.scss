@@ -4,7 +4,7 @@
     align-items: center;
     background-color: transparent;
     border: none;
-    border-top: 2px solid #EDF0F2;
+    border-top: 2px solid #edf0f2;
     display: flex;
     fill: #230050;
     flex-direction: row;
@@ -12,16 +12,17 @@
     font-weight: 500;
     justify-content: space-between;
     letter-spacing: -0.02em;
-    transition: border 0.3s ease-in-out, background 0.3s ease-in-out, color 0.3s ease-in-out;
+    transition: border 0.3s ease-in-out, background 0.3s ease-in-out,
+      color 0.3s ease-in-out;
     width: 100%;
 
     &:hover,
     &:focus {
-      background-color: #EBF5FD;
-      border-top-color: #1E2DBE;
-      color: #1E2DBE;
+      background-color: #ebf5fd;
+      border-top-color: #1e2dbe;
+      color: #1e2dbe;
       cursor: pointer;
-      fill: #1E2DBE;
+      fill: #1e2dbe;
     }
 
     &--small {
@@ -39,6 +40,10 @@
   }
 
   &__panel {
+    height: auto;
+    overflow: hidden;
+    transition: height 300ms ease-in-out;
+
     &.collapse {
       visibility: hidden;
       height: 0px;
@@ -49,12 +54,13 @@
         display: block;
       }
 
-      &:not(.show){
+      &:not(.show) {
         display: none;
       }
     }
 
-    &.collapsing, &.expanding {
+    &.collapsing,
+    &.expanding {
       height: 0;
       position: relative;
       overflow: hidden;

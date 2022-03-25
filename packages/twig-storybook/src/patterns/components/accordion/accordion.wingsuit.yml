@@ -34,6 +34,10 @@ accordion:
       preview:
         - label: label 1
           content: content 1
+          id: item1
+          defaultExpanded: 'true'
         - label: label 2
           content: content 2
+          id: item2
+          defaultExpanded: 'true'
   visibility: storybook

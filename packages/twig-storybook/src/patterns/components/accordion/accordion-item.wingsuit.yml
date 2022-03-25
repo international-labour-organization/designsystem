@@ -15,4 +15,16 @@ accordion:
       description: The accordion item's collapsed content.
       preview:
         faker: lorem.word
+    id:
+      type: text
+      label: ID
+      description: The accordion item's id.
+      preview:
+        faker: lorem.word
+    defaultExpanded:
+      type: text
+      label: Default Expanded
+      description: The accordion item loads in default expanded state.
+      preview:
+        faker: lorem.word
   visibility: storybook

@@ -18,6 +18,8 @@ export default class Accordion {
      * @property {Object}
      */
     this.element = element;
+    this.multipleExpanded = false;
+    this.itemStatuses = [];
 
     // Initialize the view
     this.init();
@@ -54,6 +56,19 @@ export default class Accordion {
     this.multipleExpanded = this.element.getAttribute('data-multipleexpanded');
     this.accordionButtons = this.element.querySelectorAll('.ilo--accordion__button');
     this.accordionPanels = this.element.querySelectorAll('.ilo--accordion__panel');
+    console.log(this.multipleExpanded);
+
+    this.accordionButtons.forEach((button, i) => {
+      const expanded = button.getAttribute(ARIA.EXPANDED);
+      const id = this.accordionItems[i].getAttribute('id');
+      if (expanded === 'true') {
+        this.itemStatuses = getUpdatedItems({
+          id,
+          itemStatuses: this.itemStatuses,
+          allowMultipleExpanded: this.multipleExpanded,
+        });
+      }
+    });
 
     return this;
   }
@@ -68,6 +83,7 @@ export default class Accordion {
     this.collapseSection = this.collapseSection.bind(this);
     this.expandSection = this.expandSection.bind(this);
     this.onClick = this.onClick.bind(this);
+    this.updateAccordionItems = this.updateAccordionItems.bind(this);
 
     return this;
   }
@@ -95,15 +111,38 @@ export default class Accordion {
    * @chainable
    */
   onClick(i) {
-    const expanded = this.accordionButtons[i].getAttribute(ARIA.EXPANDED) === 'true';
-    this.accordionButtons[i].setAttribute(ARIA.EXPANDED, !expanded);
-    this.accordionPanels[i].setAttribute(ARIA.HIDDEN, expanded);
+    const id = this.accordionItems[i].getAttribute('id');
 
-    // if (!expanded) {
-    //   this.expandSection(this.accordionPanels[i]);
-    // } else {
-    //   this.collapseSection(this.accordionPanels[i]);
-    // }
+    this.itemStatuses = getUpdatedItems({
+      id,
+      itemStatuses: this.itemStatuses,
+      allowMultipleExpanded: this.multipleExpanded,
+    });
+
+    this.updateAccordionItems();
+
+    return this;
+  }
+
+  /**
+   * Update accordion items based off of new statuses
+   *
+   * @chainable
+   */
+  updateAccordionItems() {
+    this.accordionItems.forEach((item, i) => {
+      const id = item.getAttribute('id');
+      const open = this.itemStatuses.indexOf(id) > -1;
+      if (open) {
+        this.accordionButtons[i].setAttribute(ARIA.EXPANDED, 'true');
+        this.accordionPanels[i].setAttribute(ARIA.HIDDEN, 'false');
+        this.expandSection(this.accordionPanels[i]);
+      } else {
+        this.accordionButtons[i].setAttribute(ARIA.EXPANDED, 'false');
+        this.accordionPanels[i].setAttribute(ARIA.HIDDEN, 'true');
+        this.collapseSection(this.accordionPanels[i]);
+      }
+    });
 
     return this;
   }
