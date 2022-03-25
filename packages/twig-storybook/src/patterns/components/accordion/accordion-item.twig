@@ -2,12 +2,12 @@
   ACCORDION ITEM COMPONENT
 #}
 <li class="ilo--accordion__item" id=" {{ id }}">
-  <h3 class="ilo--h3">
+  <{{ headingLevel|default('h3') }} class="ilo--h3">
     <button class="ilo--accordion__button ilo--accordion__button--{{ size|default('small') }}" aria-expanded="{{ defaultExpanded }}" aria-controls="panel-{{ id }}" id="button-{{ id }}">
     {{label}}
     <svg focusable="false" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg" fill="currentColor" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 11H13V6H11V11H6V13H11V18H13V13H18V11Z"></path></svg>
     </button>
-  </h3>
+  </{{ headingLevel|default('h3') }}>
   <div class="ilo--accordion__panel ilo--accordion__panel--open collapse{% if defaultExpanded %}show{% endif %}" id="panel-{{ id }}" aria-labelledby="button-{{ id }}" role="region">
     {{content|raw}}
   </div>

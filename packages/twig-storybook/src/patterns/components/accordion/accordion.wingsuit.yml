@@ -6,6 +6,7 @@ accordion:
     size:
       type: select
       label: Size
+      description: The size of the accordion.
       required: false
       options:
         small: Small
@@ -14,10 +15,13 @@ accordion:
     allowMultipleExpanded:
       type: string
       label: Allow Multiple Expanded
+      description: Allow mutiple accordion items to be expandable at once.
       preview: 'true'
+      required: false
     headingLevel:
       type: select
-      label: headingLevel
+      label: Heading Level
+      description: The heading Level of the accordion items.
       required: false
       options:
         h1: Heading1
@@ -31,6 +35,7 @@ accordion:
       type: object
       label: Items
       description: The accordion items.
+      required: true
       preview:
         - label: label 1
           content: content 1
