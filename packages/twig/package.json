@@ -2,15 +2,33 @@
   "name": "@ilo/twig",
   "description": "ILO twig component library",
   "version": "0.0.1",
-  "license": "MIT",
+  "license": "Apache-2.0",
   "main": "lib/index.js",
   "module": "es/index.js",
   "files": [
-    "twig"
+    "views"
   ],
+  "scripts": {
+    "build": "node build.js; sass scss:build/css --load-path=./node_modules",
+    "sass": "sass scss:build/css --load-path=./node_modules",
+    "serve": "node serve.js",
+    "twig": "node build.js"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/international-labour-organization/designsystem.git",
     "directory": "packages/twig"
+  },
+  "dependencies": {
+    "@ilo/fonts": "workspace:*",
+    "@ilo/styles": "workspace:*",
+    "@ilo/themes": "workspace:*",
+    "twing": "^5.1.0"
+  },
+  "devDependencies": {
+    "express": "^4.17.3",
+    "fs": "0.0.1-security",
+    "jsonfile": "^6.1.0",
+    "sass": "^1.49.9"
   }
 }

@@ -1,5 +1,6 @@
 import React, { useState, useEffect, createContext, FC, ReactElement, Children } from 'react';
 import classNames from 'classnames';
+import { getUpdatedItems } from '@ilo/utils';
 import useGlobalSettings from '../../hooks/useGlobalSettings';
 import { AccordionProps, AccordionContextProps } from './Accordion.props';
 import { AccordionControl } from '../../utils/accordion';
@@ -18,9 +19,7 @@ const Accordion: FC<AccordionProps> = ({
 }) => {
   const { prefix } = useGlobalSettings();
   const baseClass = `${prefix}--accordion`;
-  const accordionControl = new AccordionControl();
   const [activeItems, setActiveItems] = useState<string[]>([]);
-  const getUpdatedItems = accordionControl.getUpdatedItems;
 
   const accordionClasses = classNames(className, {
     [baseClass]: true,
