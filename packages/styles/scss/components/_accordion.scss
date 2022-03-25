@@ -1,44 +1,45 @@
+@use "../tokens" as *;
+@import "../mixins";
+
 .ilo--accordion {
   &__button {
-    color: #230050;
     align-items: center;
-    background-color: transparent;
+    background-color: $color-ux-background-default;
     border: none;
-    border-top: 2px solid #EDF0F2;
+    border-top: 2px solid $color-ux-borders-default;
+    color: $color-ux-labels-actionable;
     display: flex;
-    fill: #230050;
+    fill: $color-ux-labels-actionable;
     flex-direction: row;
-    font-family: Overpass;
+    font-family: $fonts-display;
     font-weight: 500;
+    @include font-styles('label-medium');
     justify-content: space-between;
-    letter-spacing: -0.02em;
+    margin: 0;
+    padding: $spacing-ui-padding-lg 0px calc($spacing-ui-padding-lg - 5px);
     transition: border 0.3s ease-in-out, background 0.3s ease-in-out, color 0.3s ease-in-out;
     width: 100%;
 
     &:hover,
     &:focus {
-      background-color: #EBF5FD;
-      border-top-color: #1E2DBE;
-      color: #1E2DBE;
+      background-color: $color-ux-background-hover;
+      border-top-color: $color-ux-borders-hover;
+      color: $color-ux-labels-hover;
       cursor: pointer;
-      fill: #1E2DBE;
+      fill: $color-ux-labels-hover;
     }
-
-    &--small {
-      font-family: Overpass;
-      font-size: 16px;
-      line-height: 22px;
-      padding: 20px 0px 15px;
-    }
-
+    
     &--large {
-      font-size: 19px;
-      line-height: 24px;
-      padding: 24px 0px 19px;
+      @include font-styles('label-large');
+      padding: $spacing-ui-padding-xl 0px calc($spacing-ui-padding-xl - 5px);
     }
   }
 
   &__panel {
+    color: $color-ux-labels-default;
+    font-family: $fonts-copy;
+    @include font-styles('label-medium');
+    
     &.collapse {
       visibility: hidden;
       height: 0px;
@@ -47,6 +48,7 @@
         height: auto;
         visibility: visible;
         display: block;
+        padding-bottom: $spacing-ui-padding-lg;
       }
 
       &:not(.show){
@@ -65,6 +67,10 @@
       -webkit-transition-duration: attr(data-transition);
       transition-timing-function: ease;
       -webkit-transition-timing-function: ease;
+    }
+    
+    .ilo--accordion--large & {
+      @include font-styles('label-large');
     }
   }
 }

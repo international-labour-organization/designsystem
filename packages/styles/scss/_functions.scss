@@ -1,0 +1,88 @@
+//*------------------------------------*\
+//    $FUNCTIONS
+//*------------------------------------*/
+
+// ======================================
+// String Replace
+// ======================================
+@use 'sass:math';
+
+@function str-replace($string, $search, $replace: "") {
+  $index: str-index($string, $search);
+
+  @if $index {
+    @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+  }
+
+  @return $string;
+}
+
+// ======================================
+// Strip Units
+//
+// Removes units (usually 'px', 'rem' or 'em')
+// from a value passed in and returns it as
+// a pure integer
+// ======================================
+@function strip-units($value) {
+    @return math.div($value, $value * 0 + 1);
+}
+
+// ======================================
+// Px-To-Rem
+//
+// Converts a pixel value to rems
+// @param {*} $px - either number or string
+// @return {*} - value in rems, with $font-size-default as base
+// ======================================
+@function px-to-rem($px) {
+    @return math.div(strip-units($px), strip-units($font-size-default)) * 1rem;
+}
+
+// =========================================
+// Vertical Spacing
+//
+// ensure that everything increments by 0.5
+// @param {Number} $size - number of times to multiply $padding-base
+// @return {*} - desired size, rounded to nearest 0.5, multiplied by $padding-base, in rems
+// =========================================
+
+@function spacing($size) {
+    $scaled : $size * $padding-base;
+    @if( $size % 0.5 != 0 ) {
+        $scaled : round($size) * $padding-base;
+    }
+    @return px-to-rem($scaled);
+}
+
+
+// =========================================
+// Map Deep Get
+//
+// get data from multi-level maps
+// @param {Map} $map - Map
+// @param {Arglist} $keys - Key chain
+// @return {*} - Desired value
+// =========================================
+@function map-deep-get($map, $keys...) {
+    @each $key in $keys {
+        $map: map-get($map, $key);
+    }
+    @return $map;
+}
+
+// =========================================
+// Encode color strings
+//
+// Useful for using color variables with inline CSS SVGs
+// =========================================
+@function encodecolor($string) {
+    @if type-of($string) == 'color' and str-index(#{$string}, '#') == 1 {
+        $hex: str-slice(ie-hex-str($string), 4);
+        $string: unquote('#{$hex}');
+
+        @return '%23' + $string;
+        }
+
+        @return $string;
+}

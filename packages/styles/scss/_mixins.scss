@@ -1,0 +1,80 @@
+//*------------------------------------*\
+//    $MIXINS
+//*------------------------------------*/
+@use "tokens" as *;
+@use "functions";
+
+@function map-deep-get($map, $keys...) {
+    @each $key in $keys {
+        $map: map-get($map, $key);
+    }
+    @return $map;
+}
+
+// ======================================
+// Output font styles
+// ======================================
+/// Retrieve the usual font styles for a given type styling
+/// @param {String} $stylename - the name of the style to get
+/// @return {CSS} font size, line-height, and letter-spacing for this type style
+@mixin font-styles($stylename) {
+  font-size: map-deep-get($type, $stylename, 'size');
+  letter-spacing: map-deep-get($type, $stylename, 'letter-spacing');
+  line-height: map-deep-get($type, $stylename, 'line-height');
+}
+
+// ======================================
+// Vertical Align
+// ======================================
+
+@mixin vertical-align {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+// ======================================
+// Horizontal Align
+// ======================================
+
+@mixin horizontal-align {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+@mixin vertical-horizontal-align {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+// ======================================
+// Visually Hidden
+//
+// Visually hide the element from the
+// screen but still have it accessible
+// via screenreaders
+//
+// ======================================
+@mixin isVisuallyHidden() {
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+    position: absolute;
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+// ======================================
+// Ellipsis
+// ======================================
+
+@mixin ellipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
