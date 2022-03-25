@@ -79,10 +79,9 @@ export default class Accordion {
    * @chainable
    */
   enable() {
-    this.element.addEventListener(EVENTS.CLICK, this.onClick);
     if (this.accordionButtons.length > 0) {
-      this.accordionButtons.forEach((button) => {
-        button.addEventListener(EVENTS.CLICK, this.onClick);
+      this.accordionButtons.forEach((button, i) => {
+        button.addEventListener(EVENTS.CLICK, () => this.onClick(i));
       });
     }
 
@@ -95,15 +94,10 @@ export default class Accordion {
    * @return {Object} Accordion A reference to the instance of the class
    * @chainable
    */
-  onClick(event, index) {
-    console.log(index);
-    const { target } = event;
-    console.log(target);
-    target.getAttribute;
-    // console.log(e);
-    // const expanded = this.accordionButtons[i].getAttribute(ARIA.EXPANDED) === 'true';
-    // this.accordionButtons[i].setAttribute(ARIA.EXPANDED, !expanded);
-    // this.accordionPanels[i].setAttribute(ARIA.HIDDEN, expanded);
+  onClick(i) {
+    const expanded = this.accordionButtons[i].getAttribute(ARIA.EXPANDED) === 'true';
+    this.accordionButtons[i].setAttribute(ARIA.EXPANDED, !expanded);
+    this.accordionPanels[i].setAttribute(ARIA.HIDDEN, expanded);
 
     // if (!expanded) {
     //   this.expandSection(this.accordionPanels[i]);

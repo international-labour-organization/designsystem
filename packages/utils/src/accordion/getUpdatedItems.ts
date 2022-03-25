@@ -9,7 +9,7 @@ export function getUpdatedItems(params: {
   } else {
     if (params.allowMultipleExpanded) {
       updatedstauses.push(params.id);
-    } else {0
+    } else {
       updatedstauses = [params.id];
     }
   }
