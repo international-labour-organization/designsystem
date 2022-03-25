@@ -1,5 +1,4 @@
 import { configure, initJsBehaviors } from '@wingsuit-designsystem/storybook';
-import { TwingRenderer } from '@wingsuit-designsystem/pattern';
 import { addParameters } from '@storybook/react';
 import './styles.scss';
 

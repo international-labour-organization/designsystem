@@ -3,7 +3,8 @@
 //* ------------------------------------*/
 
 export const ARIA = {
-  EXPANDED: 'aria-expanded',
-  HIDDEN: 'aria-hidden',
-  SELECTED: 'aria-selected',
+  CONTROLS: "aria-controls",
+  EXPANDED: "aria-expanded",
+  HIDDEN: "aria-hidden",
+  SELECTED: "aria-selected",
 };

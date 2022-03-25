@@ -11,6 +11,10 @@ accordion:
         small: Small
         large: Large
       preview: small
+    allowMultipleExpanded:
+      type: string
+      label: Allow Multiple Expanded
+      preview: 'true'
     headingLevel:
       type: select
       label: headingLevel
