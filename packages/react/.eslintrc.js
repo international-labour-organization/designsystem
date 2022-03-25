@@ -1,83 +1,39 @@
+/**
+ * Package-level eslint config extends the project-level configs
+ * and applies customizations relative to the local project. In this
+ * example we have to lint js and ts files, so we combine two configs
+ * and set the TypeScript one as an override
+ */
 module.exports = {
-  /* Global Eslint Settings */
+  /* =============== */
+  /* Global Settings */
+  /* =============== */
   root: true,
-  env: {
-    browser: true,
-    es6: true,
-    jest: true,
-    node: true,
-  },
+  // Extend the project config and add any specific to this project
+  extends: [
+    "plugin:storybook/recommended",
+    "../../config/eslint-config-ilo/base.js",
+  ],
+  // This will vary from package to package
   ignorePatterns: [
     "storybook-static/",
     "node_modules/",
     "lib/",
     "src/stories/",
   ],
-  settings: {
-    react: {
-      version: "detect",
-    },
-  },
-
-  /* Default Eslint for JS/JSX */
-  parserOptions: {
-    ecmaVersion: 2018,
-    sourceType: "module",
-    ecmaFeatures: {
-      jsx: true,
-    },
-  },
-  plugins: ["jsx-a11y"],
-  extends: [
-    "eslint:recommended",
-    "plugin:jsx-a11y/recommended",
-    "plugin:react-hooks/recommended",
-    "plugin:storybook/recommended",
-    "plugin:prettier/recommended",
-  ],
-  rules: {
-    "jsx-a11y/label-has-associated-control": [
-      "error",
-      {
-        assert: "either",
-        controlComponents: [],
-        depth: 25,
-        labelAttributes: [],
-        labelComponents: [],
-      },
-    ],
-    "prettier/prettier": [
-      "error",
-      {},
-      {
-        usePrettierrc: true,
-      },
-    ],
-    "react/prop-types": "off",
-    "react/react-in-jsx-scope": "off",
-  },
-
-  /* Overrides for TypeScript */
+  /* =================== */
+  /* TypeScript Settings */
+  /* =================== */
   overrides: [
     {
-      parser: "@typescript-eslint/parser",
+      // Which files the override will apply to. This has tobe be set here,
+      // it can't be set at the config level
+      files: ["**/*.{ts,tsx}"],
+      extends: ["../../config/eslint-config-ilo/ts.js"],
+      // Assuming tsconfig's may vary from package to package, we have to set
+      // this here as well
       parserOptions: {
         project: ["./tsconfig.json"],
-      },
-      files: ["**/*.{ts,tsx}"],
-      globals: {
-        React: "writable",
-      },
-      extends: [
-        "plugin:@typescript-eslint/eslint-recommended",
-        "plugin:@typescript-eslint/recommended",
-      ],
-      plugins: ["@typescript-eslint"],
-      rules: {
-        "@typescript-eslint/ban-ts-comment": "off",
-        "@typescript-eslint/ban-ts-ignore": "off",
-        "@typescript-eslint/explicit-function-return-type": "off",
-        "@typescript-eslint/no-explicit-any": "off",
       },
     },
   ],
