@@ -1,36 +1,8 @@
 {
+  "extends": "./config/tsconfig.base.json",
   "compilerOptions": {
-    "allowJs": true,
-    "alwaysStrict": true,
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "jsx": "preserve",
-    "lib": ["dom", "dom.iterable", "es2017"],
-    "module": "esnext",
-    "moduleResolution": "node",
-    "noEmit": true,
-    "noFallthroughCasesInSwitch": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "resolveJsonModule": true,
-    "skipLibCheck": true,
-    "strict": true,
-    "target": "esnext",
-    "isolatedModules": true,
-    "typeRoots": ["./types", "./node_modules/@types"]
+    "baseUrl": ".",
+    "noEmit": true
   },
-  "exclude": ["node_modules"],
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
-  "references": [
-    { "path": "./packages/brand-assets/" }, 
-		// if you tsconfig is something different
-    { "path": "./packages/fonts/" },
-    { "path": "./packages/icon-build-helpers/" },
-    { "path": "./packages/icons/" },
-    { "path": "./packages/icons-react/" },
-    { "path": "./packages/react/" },
-    { "path": "./packages/styles/" },
-    { "path": "./packages/themes/" },
-    { "path": "./packages/twig/" }
-  ]
+  "exclude": ["lib", "node_modules"]
 }
