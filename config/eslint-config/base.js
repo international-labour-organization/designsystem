@@ -7,6 +7,9 @@ module.exports = {
     jest: true,
     node: true,
   },
+  globals: {
+    React: "writable",
+  },
   ignorePatterns: ["node_modules/"],
   settings: {
     react: {
@@ -25,6 +28,7 @@ module.exports = {
     "eslint:recommended",
     "plugin:jsx-a11y/recommended",
     "plugin:react-hooks/recommended",
+    "plugin:storybook/recommended",
     "plugin:prettier/recommended",
   ],
   rules: {
