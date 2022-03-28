@@ -28,6 +28,7 @@
   },
   "devDependencies": {
     "@ilo/eslint-config": "workspace:^0.0.1",
+    "@ilo/prettier-config": "workspace:^0.0.1",
     "@rollup/plugin-commonjs": "^17.1.0",
     "@rollup/plugin-json": "^4.1.0",
     "@rollup/plugin-node-resolve": "^11.2.1",
@@ -57,6 +58,7 @@
     "eslint": "^8.10.0",
     "http-server": "^14.1.0",
     "jest-environment-jsdom": "^27.5.1",
+    "prettier": "^2.6.1",
     "rollup": "^2.56.3",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-postcss": "^3.1.8",
@@ -77,9 +79,8 @@
     "build": "pnpm run build:rollup && npm run build:storybook",
     "build:storybook": "build-storybook",
     "build:rollup": "rollup -c",
-    "prettier": "prettier --config ../../.prettierrc --ignore-path ../../.prettierignore .",
-    "format": "pnpm run prettier -- --write",
-    "format:check": "pnpm run prettier -- --check",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "lint:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix"
   },

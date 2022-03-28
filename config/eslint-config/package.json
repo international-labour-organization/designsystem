@@ -5,7 +5,8 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/international-labour-organization/designsystem.git"
+    "url": "git+https://github.com/international-labour-organization/designsystem.git",
+    "directory": "config/eslint-config"
   },
   "keywords": [
     "ilo",
