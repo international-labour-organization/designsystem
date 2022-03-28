@@ -5,6 +5,7 @@ importers:
   .:
     specifiers:
       '@ilo/prettier-config': workspace:^0.0.1
+      '@ilo/typescript-config': workspace:^0.0.1
       '@testing-library/jest-dom': ^5.11.4
       '@testing-library/react': ^11.1.0
       '@testing-library/user-event': ^12.1.10
@@ -19,6 +20,7 @@ importers:
       typescript: ^4.6.2
     devDependencies:
       '@ilo/prettier-config': link:config/prettier-config
+      '@ilo/typescript-config': link:config/typescript-config
       '@testing-library/jest-dom': 5.16.2
       '@testing-library/react': 11.2.7
       '@testing-library/user-event': 12.8.3
@@ -36,6 +38,7 @@ importers:
     specifiers:
       '@typescript-eslint/eslint-plugin': ^5.14.0
       '@typescript-eslint/parser': ^5.14.0
+      eslint-config-prettier: ^8.5.0
       eslint-plugin-jsx-a11y: ^6.5.1
       eslint-plugin-prettier: ^4.0.0
       eslint-plugin-react: ^7.29.4
@@ -45,8 +48,9 @@ importers:
     dependencies:
       '@typescript-eslint/eslint-plugin': 5.14.0_ace6f9e7722b813e21eaf2dc993bc413
       '@typescript-eslint/parser': 5.14.0_eslint@8.11.0+typescript@4.6.2
+      eslint-config-prettier: 8.5.0_eslint@8.11.0
       eslint-plugin-jsx-a11y: 6.5.1_eslint@8.11.0
-      eslint-plugin-prettier: 4.0.0_eslint@8.11.0+prettier@2.6.0
+      eslint-plugin-prettier: 4.0.0_68edcf5670f37721baf5d2cac6124e4d
       eslint-plugin-react: 7.29.4_eslint@8.11.0
       eslint-plugin-react-hooks: 4.3.0_eslint@8.11.0
       eslint-plugin-storybook: 0.5.7_eslint@8.11.0+typescript@4.6.2
@@ -208,6 +212,7 @@ importers:
       '@ilo/icons-react': workspace:0.0.1
       '@ilo/prettier-config': workspace:^0.0.1
       '@ilo/styles': workspace:0.0.1
+      '@ilo/typescript-config': workspace:^0.0.1
       '@rollup/plugin-commonjs': ^17.1.0
       '@rollup/plugin-json': ^4.1.0
       '@rollup/plugin-node-resolve': ^11.2.1
@@ -270,6 +275,7 @@ importers:
     devDependencies:
       '@ilo/eslint-config': link:../../config/eslint-config
       '@ilo/prettier-config': link:../../config/prettier-config
+      '@ilo/typescript-config': link:../../config/typescript-config
       '@rollup/plugin-commonjs': 17.1.0_rollup@2.69.1
       '@rollup/plugin-json': 4.1.0_rollup@2.69.1
       '@rollup/plugin-node-resolve': 11.2.1_rollup@2.69.1
@@ -10957,6 +10963,15 @@ packages:
     optionalDependencies:
       source-map: 0.6.1
 
+  /eslint-config-prettier/8.5.0_eslint@8.11.0:
+    resolution: {integrity: sha512-obmWKLUNCnhtQRKc+tmnYuQl0pFU1ibYJQ5BGhTVB08bHe9wC8qUeG7c08dj9XX+AuPj1YSGSQIHl1pnDHZR0Q==}
+    hasBin: true
+    peerDependencies:
+      eslint: '>=7.0.0'
+    dependencies:
+      eslint: 8.11.0
+    dev: false
+
   /eslint-config-react-app/7.0.0_48d4f70d82ebf49de4a22490c20da83f:
     resolution: {integrity: sha512-xyymoxtIt1EOsSaGag+/jmcywRuieQoA2JbPCjnw9HukFj9/97aGPoZVFioaotzk1K5Qt9sHO5EutZbkrAXS0g==}
     engines: {node: '>=14.0.0'}
@@ -11100,7 +11115,7 @@ packages:
       minimatch: 3.1.2
     dev: false
 
-  /eslint-plugin-prettier/4.0.0_eslint@8.11.0+prettier@2.6.0:
+  /eslint-plugin-prettier/4.0.0_68edcf5670f37721baf5d2cac6124e4d:
     resolution: {integrity: sha512-98MqmCJ7vJodoQK359bqQWaxOE0CS8paAz/GgjaZLyex4TTk3g9HugoO89EqWCrFiOqn9EVvcoo7gZzONCWVwQ==}
     engines: {node: '>=6.0.0'}
     peerDependencies:
@@ -11112,6 +11127,7 @@ packages:
         optional: true
     dependencies:
       eslint: 8.11.0
+      eslint-config-prettier: 8.5.0_eslint@8.11.0
       prettier: 2.6.0
       prettier-linter-helpers: 1.0.0
     dev: false

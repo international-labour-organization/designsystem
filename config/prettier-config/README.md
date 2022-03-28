@@ -8,14 +8,14 @@ To install `@ilo/prettier-config` in your project, you will need to run the
 following command using [npm](https://www.npmjs.com/):
 
 ```bash
-npm install -S @ilo/prettier-config
+npm install -D @ilo/prettier-config
 ```
 
 If you prefer [Yarn](https://yarnpkg.com/en/), use the following command
 instead:
 
 ```bash
-yarn add @ilo/prettier-config
+yarn add -D @ilo/prettier-config
 ```
 
 ## Usage

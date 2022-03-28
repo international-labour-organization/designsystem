@@ -8,14 +8,14 @@ To install `@ilo/eslint-config` in your project, you will need to run the
 following command using [npm](https://www.npmjs.com/):
 
 ```bash
-npm install -S @ilo/eslint-config
+npm install -D @ilo/eslint-config
 ```
 
 If you prefer [Yarn](https://yarnpkg.com/en/), use the following command
 instead:
 
 ```bash
-yarn add @ilo/eslint-config
+yarn add -D @ilo/eslint-config
 ```
 
 ## Usage
