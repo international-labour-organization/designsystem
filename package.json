@@ -15,6 +15,7 @@
     "build:themes": "pnpm run build --filter=@ilo/themes",
     "clean": "pnpm recursive exec -- rm -rf node_modules; rm shrinkwrap.yaml; rm -rf node_modules",
     "install:all": "pnpm recursive install",
+    "format:react": "pnpm run format --filter=@ilo/react",
     "lint": "eslint --ext .js,.ts,.tsx",
     "lint:fix": "eslint --ext .js,.ts,.tsx --fix",
     "lint:react": "pnpm run lint --filter=@ilo/react",

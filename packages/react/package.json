@@ -79,6 +79,9 @@
     "build": "pnpm run build:rollup && npm run build:storybook",
     "build:storybook": "build-storybook",
     "build:rollup": "rollup -c",
+    "prettier": "prettier --config ../../.prettierrc --ignore-path ../../.prettierignore .",
+    "format": "pnpm run prettier -- --write",
+    "format:check": "pnpm run prettier -- --check",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
     "lint:fix": "eslint . --ext .js,.jsx,.ts,.tsx --fix"
   },

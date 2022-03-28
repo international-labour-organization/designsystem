@@ -38,13 +38,6 @@ module.exports = {
         labelComponents: [],
       },
     ],
-    "prettier/prettier": [
-      "error",
-      {},
-      {
-        usePrettierrc: true,
-      },
-    ],
     "react/prop-types": "off",
     "react/react-in-jsx-scope": "off",
   },
