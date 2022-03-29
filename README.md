@@ -11,6 +11,8 @@
 - [icons](./packages/icons)
 - [react icons](./packages/icons-react)
 - [react](./packages/react)
+- [styles](./packages/styles)
+- [themes](./packages/themes)
 - [twig](./packages/twig)
 
 ## Getting Started

@@ -1,0 +1,24 @@
+{
+  "color": {
+    "ux": {
+      "background": {
+        "default": { "value": "{color.base.neutrals.white}" },
+        "disabled": { "value": "{color.base.neutrals.lighter}" },
+        "highlight": { "value": "{color.base.neutrals.lighter}" },
+        "hover": { "value": "{color.base.blue.light}" }
+      },
+      "borders": {
+        "default": { "value": "{color.base.neutrals.light}" },
+        "error": { "value": "{color.base.red.dark}" },
+        "highlight": { "value": "{color.base.purple}" },
+        "hover": { "value": "{color.base.blue.medium}" }
+      },
+      "labels": {
+        "actionable": { "value": "{color.base.blue.dark}" },
+        "default": { "value": "{color.base.neutrals.medium}" },
+        "error": { "value": "{color.base.red.dark}" },
+        "hover": { "value": "{color.base.blue.medium}" }
+      }
+    }
+  }
+}

@@ -1,6 +1,8 @@
 {
   "spacing": {
     "base": { "value": "8px" },
-    "ui-padding": { "value": "16px" }
+    "ui-padding": { "value": "16px" },
+    "ui-padding-lg": { "value": "24px" },
+    "ui-padding-xl": { "value": "32px" }
   }
 }

@@ -1,11 +1,13 @@
 import { ReactNode, MouseEvent } from "react";
+export { default as AccordionItem } from "./AccordionItem";
 import { accordionSize, headingLevel } from "../../types";
+import { getUpdatedItems } from "@ilo/utils";
 
 export interface AccordionProps {
   /**
    * Specify the content of your Accordion.
    */
-  children: ReactNode;
+  children: ReactElement<AccordionItem> | Array<ReactElement<AccordionItem>>;
 
   /**
    * Callback to onButtonClick event;
@@ -41,11 +43,7 @@ export interface AccordionProps {
 
 export interface AccordionContextProps {
   activeItems: string[];
-  getUpdatedItems: (
-    id: string,
-    itemStatuses: string[],
-    allowMultipleExpanded: boolean
-  ) => void;
+  getUpdatedItems: getUpdatedItems;
   setActiveItems: Dispatch<SetStateAction<string[]>>;
   allowMultipleExpanded: boolean;
   onButtonClick?: (e: MouseEvent<HTMLButtonElement>, i: any) => void;

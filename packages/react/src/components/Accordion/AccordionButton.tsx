@@ -35,7 +35,9 @@ const AccordionButton: FC<AccordionButtonProps> = ({
    * On click, get id of clicked item, and set that item in state to 'open', all others to 'closed'
    */
   const handleClick = (e: MouseEvent<HTMLButtonElement>, id: string) => {
-    setActiveItems(getUpdatedItems(id, activeItems, allowMultipleExpanded));
+    setActiveItems(
+      getUpdatedItems({ id, itemStatuses: activeItems, allowMultipleExpanded })
+    );
     if (onButtonClick) {
       onButtonClick(e, id);
     }

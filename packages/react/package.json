@@ -13,12 +13,13 @@
     "directory": "packages/react"
   },
   "dependencies": {
-    "@ilo/brand-assets": "workspace:0.0.1",
-    "@ilo/fonts": "workspace:0.0.1",
-    "@ilo/icons-react": "workspace:0.0.1",
-    "@ilo/styles": "workspace:0.0.1",
-    "classnames": "^2.3.1",
+    "@ilo/brand-assets": "workspace:*",
+    "@ilo/fonts": "workspace:*",
+    "@ilo/icons-react": "workspace:*",
+    "@ilo/styles": "workspace:*",
+    "@ilo/utils": "workspace:*",
     "dom-helpers": "^5.2.1",
+    "classnames": "^2.3.1",
     "global": "^4.4.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
