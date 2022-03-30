@@ -24,6 +24,7 @@
     "lint:utils": "pnpm run lint --filter=@ilo/utils",
     "lint:fix:react": "pnpm run lint:fix --filter=@ilo/react",
     "lint:fix:utils": "pnpm run lint:fix --filter=@ilo/utils",
+    "lint:brand-assets": "pnpm lint --filter=@ilo/brand-assets",
     "serve:twig": "pnpm run serve --filter=@ilo/twig",
     "start": "pnpm run storybook",
     "start:static": "pnpm run storybook:static",
@@ -41,6 +42,7 @@
   },
   "homepage": "https://github.com/international-labour-organization/designsystem#readme",
   "devDependencies": {
+    "@ilo/eslint-config": "workspace:^0.0.1",
     "@ilo/prettier-config": "workspace:^0.0.1",
     "@ilo/typescript-config": "workspace:^0.0.1",
     "@testing-library/jest-dom": "^5.11.4",
