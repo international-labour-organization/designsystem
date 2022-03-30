@@ -6,7 +6,7 @@
   "license": "Apache-2.0",
   "main": "index.js",
   "scripts": {
-    "build": "pnpm run build --filter=@ilo/icons --filter=@ilo/icons-react --filter=@ilo/themes  --filter=@ilo/styles --filter=@ilo/react --filter=@ilo/twig --filter=@ilo/brand-assets",
+    "build": "pnpm run turbo build",
     "build:brand-assets": "pnpm run build --filter=@ilo/brand-assets",
     "build:icons": "pnpm run build --filter=@ilo/icons",
     "build:icons-react": "pnpm run build --filter=@ilo/icons-react",
@@ -56,6 +56,11 @@
     "@un/type": "^10.30.8",
     "eslint": "^8.11.0",
     "prettier": "^2.6.0",
+    "turbo": "^1.1.10",
     "typescript": "^4.6.2"
-  }
+  },
+  "workspaces": [
+    "packages/*",
+    "config/*"
+  ]
 }
