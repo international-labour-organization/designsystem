@@ -29,6 +29,8 @@
   "scripts": {
     "build": "pnpm run clean && node tasks/build.js",
     "clean": "rimraf es lib umd next",
+    "format": "prettier --check . --ignore-path ../../.prettierignore",
+    "format:fix": "prettier --write . --ignore-path ../../.prettierignore",
     "lint": "eslint --ext .js,.ts,.tsx",
     "lint:fix": "eslint --ext .js,.ts,.tsx --fix",
     "postinstall": "carbon-telemetry collect --install"
@@ -49,7 +51,7 @@
   "devDependencies": {
     "@babel/plugin-transform-react-constant-elements": "^7.17.6",
     "@babel/preset-env": "^7.16.11",
-    "@babel/preset-react":"^7.16.7",
+    "@babel/preset-react": "^7.16.7",
     "babel-plugin-dev-expression": "^0.2.3",
     "browserslist-config-carbon": "^10.6.1",
     "rimraf": "^3.0.2"
