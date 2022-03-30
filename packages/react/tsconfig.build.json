@@ -1,5 +1,5 @@
 {
-  "extends": "@ilo/typescript-config/tsconfig.json",
+  "extends": "@ilo/typescript-config",
   "include": ["src/**/*"],
   "compilerOptions": {
     "outDir": "lib",
