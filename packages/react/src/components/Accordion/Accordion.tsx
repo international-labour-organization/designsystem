@@ -3,7 +3,6 @@ import classNames from 'classnames';
 import { getUpdatedItems } from '@ilo/utils';
 import useGlobalSettings from '../../hooks/useGlobalSettings';
 import { AccordionProps, AccordionContextProps } from './Accordion.props';
-import { AccordionControl } from '../../utils/accordion';
 import { checkArrayDuplicates } from '../../utils/checkArrayDuplicates';
 
 export const AccordionContext = createContext({} as AccordionContextProps);
