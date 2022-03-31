@@ -13,7 +13,13 @@
     "lint": {
       "outputs": []
     },
+    "lint:fix": {
+      "outputs": []
+    },
     "format": {
+      "outputs": []
+    },
+    "format:fix": {
       "outputs": []
     },
     "dev": {

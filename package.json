@@ -19,8 +19,9 @@
     "install:all": "pnpm recursive install",
     "format:react": "pnpm run format --filter=@ilo/react",
     "format": "pnpm turbo run format",
+    "format:fix": "pnpm turbo run format:fix",
     "lint": "pnpm turbo run lint",
-    "lint:fix": "eslint --ext .js,.ts,.tsx --fix",
+    "lint:fix": "pnpm turbo run lint:fix",
     "lint:react": "pnpm run lint --filter=@ilo/react",
     "lint:utils": "pnpm run lint --filter=@ilo/utils",
     "lint:fix:react": "pnpm run lint:fix --filter=@ilo/react",
@@ -31,6 +32,7 @@
     "start:static": "pnpm run storybook:static",
     "storybook": "cd packages/react && pnpm run storybook",
     "storybook:static": "cd packages/react && pnpm run storybook:static",
+    "test": "pnpm turbo run test",
     "test:react": "pnpm run test --filter=@ilo/react",
     "test:utils": "pnpm run test --filter=@ilo/utils"
   },
