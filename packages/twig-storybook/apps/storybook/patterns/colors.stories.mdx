@@ -1,0 +1,18 @@
+import { Meta, ColorPalette, ColorItem, Subtitle } from '@storybook/addon-docs/blocks';
+const colors = require('../../../src/tokens/exports/_colors.scss');
+
+<Meta
+  title="Tokens/Colors"
+  parameters={{ viewMode: 'docs', previewTabs: { canvas: { hidden: true } } }}
+/>
+
+# Colors
+
+<Subtitle>ILO Brand Colors</Subtitle>
+<ColorPalette>
+  {Object.keys(colors).map((key) => {
+    const color = typeof colors[key] === 'string' ? [colors[key]] : colors[key];
+    const title = `.${key}`;
+    return <ColorItem key={key} title={title} colors={color} />;
+  })}
+</ColorPalette>

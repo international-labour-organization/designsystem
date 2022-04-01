@@ -1,0 +1,48 @@
+accordion:
+  use: '@components/accordion/accordion.twig'
+  label: Accordion
+  description: A collapsible accordion.
+  fields:
+    size:
+      type: select
+      label: Size
+      description: The size of the accordion.
+      required: false
+      options:
+        small: Small
+        large: Large
+      preview: small
+    allowMultipleExpanded:
+      type: string
+      label: Allow Multiple Expanded
+      description: Allow mutiple accordion items to be expandable at once.
+      preview: 'true'
+      required: false
+    headingLevel:
+      type: select
+      label: Heading Level
+      description: The heading Level of the accordion items.
+      required: false
+      options:
+        h1: Heading1
+        h2: Heading2
+        h3: Heading3
+        h4: Heading4
+        h5: Heading5
+        h6: Heading6
+      preview: h3
+    items:
+      type: object
+      label: Items
+      description: The accordion items.
+      required: true
+      preview:
+        - label: label 1
+          content: content 1
+          id: item1
+          defaultExpanded: 'true'
+        - label: label 2
+          content: content 2
+          id: item2
+          defaultExpanded: 'true'
+  visibility: storybook

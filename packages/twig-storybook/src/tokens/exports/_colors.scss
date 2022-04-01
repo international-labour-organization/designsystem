@@ -1,0 +1,7 @@
+@use "@ilo/themes/build/scss/tokens" as *;
+
+@each $color, $value in $brand {
+  :export {
+    #{$color}: $value;
+  }
+}

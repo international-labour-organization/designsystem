@@ -29,6 +29,8 @@
     "lint:brand-assets": "pnpm lint --filter=@ilo/brand-assets",
     "serve:twig": "pnpm run serve --filter=@ilo/twig",
     "start": "pnpm run storybook",
+    "start:react-storybook": "pnpm run storybook --filter=@ilo/react",
+    "start:twig-storybook": "pnpm run storybook --filter=@ilo/twig-storybook",
     "start:static": "pnpm run storybook:static",
     "storybook": "cd packages/react && pnpm run storybook",
     "storybook:static": "cd packages/react && pnpm run storybook:static",
