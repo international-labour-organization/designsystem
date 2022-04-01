@@ -4,10 +4,12 @@
     "scss": {
       "transformGroup": "scss",
       "buildPath": "build/scss/",
-      "files": [{
-        "destination": "_tokens.scss",
-        "format": "scss/individualMaps"
-      }],
+      "files": [
+        {
+          "destination": "_tokens.scss",
+          "format": "scss/individualMaps"
+        }
+      ],
       "transforms": ["attribute/cti", "color/rgb", "size/rem", "name/cti/kebab"]
     }
   }

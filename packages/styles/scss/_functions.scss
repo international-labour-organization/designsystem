@@ -5,13 +5,18 @@
 // ======================================
 // String Replace
 // ======================================
-@use 'sass:math';
+@use "sass:math";
 
 @function str-replace($string, $search, $replace: "") {
   $index: str-index($string, $search);
 
   @if $index {
-    @return str-slice($string, 1, $index - 1) + $replace + str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+    @return str-slice($string, 1, $index - 1) + $replace +
+      str-replace(
+        str-slice($string, $index + str-length($search)),
+        $search,
+        $replace
+      );
   }
 
   @return $string;
@@ -25,7 +30,7 @@
 // a pure integer
 // ======================================
 @function strip-units($value) {
-    @return math.div($value, $value * 0 + 1);
+  @return math.div($value, $value * 0 + 1);
 }
 
 // ======================================
@@ -36,7 +41,7 @@
 // @return {*} - value in rems, with $font-size-default as base
 // ======================================
 @function px-to-rem($px) {
-    @return math.div(strip-units($px), strip-units($font-size-default)) * 1rem;
+  @return math.div(strip-units($px), strip-units($font-size-default)) * 1rem;
 }
 
 // =========================================
@@ -48,13 +53,12 @@
 // =========================================
 
 @function spacing($size) {
-    $scaled : $size * $padding-base;
-    @if( $size % 0.5 != 0 ) {
-        $scaled : round($size) * $padding-base;
-    }
-    @return px-to-rem($scaled);
+  $scaled: $size * $padding-base;
+  @if ($size % 0.5 != 0) {
+    $scaled: round($size) * $padding-base;
+  }
+  @return px-to-rem($scaled);
 }
-
 
 // =========================================
 // Map Deep Get
@@ -65,10 +69,10 @@
 // @return {*} - Desired value
 // =========================================
 @function map-deep-get($map, $keys...) {
-    @each $key in $keys {
-        $map: map-get($map, $key);
-    }
-    @return $map;
+  @each $key in $keys {
+    $map: map-get($map, $key);
+  }
+  @return $map;
 }
 
 // =========================================
@@ -77,12 +81,12 @@
 // Useful for using color variables with inline CSS SVGs
 // =========================================
 @function encodecolor($string) {
-    @if type-of($string) == 'color' and str-index(#{$string}, '#') == 1 {
-        $hex: str-slice(ie-hex-str($string), 4);
-        $string: unquote('#{$hex}');
+  @if type-of($string) == "color" and str-index(#{$string}, "#") == 1 {
+    $hex: str-slice(ie-hex-str($string), 4);
+    $string: unquote("#{$hex}");
 
-        @return '%23' + $string;
-        }
+    @return "%23" + $string;
+  }
 
-        @return $string;
+  @return $string;
 }

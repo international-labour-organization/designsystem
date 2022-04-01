@@ -90,12 +90,12 @@ time,
 mark,
 audio,
 video {
-	padding: 0;
-	border: 0;
-	margin: 0;
-	font: inherit;
-	font-size: 100%;
-	vertical-align: baseline;
+  padding: 0;
+  border: 0;
+  margin: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
 }
 
 /* HTML5 display-role reset for older browsers */
@@ -110,52 +110,52 @@ hgroup,
 menu,
 nav,
 section {
-	display: block;
+  display: block;
 }
 
 body {
-	line-height: 1;
+  line-height: 1;
 }
 
 ol,
 ul {
-	list-style: none;
+  list-style: none;
 }
 
 blockquote,
 q {
-	quotes: none;
+  quotes: none;
 }
 
 blockquote::before,
 blockquote::after,
 q::before,
 q::after {
-	content: '';
-	// stylelint-disable-next-line declaration-block-no-duplicate-properties
-	content: none;
+  content: "";
+  // stylelint-disable-next-line declaration-block-no-duplicate-properties
+  content: none;
 }
 
 table {
-	border-collapse: collapse;
-	border-spacing: 0;
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 /// End vendor reset
 
 html {
-	box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 *,
 *::before,
 *::after {
-	box-sizing: inherit;
+  box-sizing: inherit;
 }
 
 /// Makes SVGs accessible in high contrast mode
 /// @link https://github.com/IBM/carbon-elements/issues/345#issuecomment-466577293 Carbon-elements #345
 @media screen and (-ms-high-contrast: active) {
-	svg {
-		fill: ButtonText;
-	}
+  svg {
+    fill: ButtonText;
+  }
 }

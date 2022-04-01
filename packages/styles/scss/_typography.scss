@@ -13,8 +13,8 @@
 /// @access public
 /// @group @carbon/type
 $font-families: (
-  'display': unquote("#{$fonts-display}, sans-serif"),
-  'copy': unquote("#{$fonts-copy}, sans-serif")
+  "display": unquote("#{$fonts-display}, sans-serif"),
+  "copy": unquote("#{$fonts-copy}, sans-serif"),
 ) !default;
 
 /// Get the font-family for a font
@@ -39,11 +39,11 @@ $font-families: (
 /// @access public
 /// @group @carbon/type
 $font-weights: (
-  'light': 300,
-  'regular': 400,
-  'semibold': 600,
-  'bold': 700,
-  'extrabold': 800,
+  "light": 300,
+  "regular": 400,
+  "semibold": 600,
+  "bold": 700,
+  "extrabold": 800,
 ) !default;
 
 /// Retrieve the font-weight value for a given name
