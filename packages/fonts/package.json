@@ -9,6 +9,12 @@
     "index.scss",
     "assets"
   ],
+  "scripts": {
+    "format": "prettier --check . --ignore-path ../../.prettierignore",
+    "format:fix": "prettier --write . --ignore-path ../../.prettierignore",
+    "lint": "eslint --ext .js,.ts,.tsx",
+    "lint:fix": "eslint --ext .js,.ts,.tsx --fix"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/international-labour-organization/designsystem.git",

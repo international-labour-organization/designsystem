@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { ReactNode } from "react";
 
 export interface AccordionItemContextProps {
   /**
@@ -6,7 +6,6 @@ export interface AccordionItemContextProps {
    */
   id: string;
 }
-
 
 export interface AccordionItemProps {
   /**
@@ -19,7 +18,7 @@ export interface AccordionItemProps {
    */
   children: ReactNode;
 
-  /** 
+  /**
    * Specify an optional className to be added to your Button.
    */
   className?: string;

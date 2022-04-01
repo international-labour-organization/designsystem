@@ -1,10 +1,10 @@
-import React from 'react';
+import React from "react";
 import classNames from "classnames";
-import useGlobalSettings from '../../hooks/useGlobalSettings';
-import { HeadingProps } from './Heading.props';
-  
+import useGlobalSettings from "../../hooks/useGlobalSettings";
+import { HeadingProps } from "./Heading.props";
+
 const Heading: React.FC<HeadingProps> = ({
-  level = 'h3',
+  level = "h3",
   children,
   className,
   type,
@@ -23,6 +23,6 @@ const Heading: React.FC<HeadingProps> = ({
       {children}
     </UseHeading>
   );
-}
+};
 
 export default Heading;

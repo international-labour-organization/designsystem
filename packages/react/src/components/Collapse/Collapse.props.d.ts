@@ -1,10 +1,10 @@
-import React from 'react';
+import React from "react";
 
-type Dimension = 'height' | 'width';
+type Dimension = "height" | "width";
 
 export interface CollapseProps {
   className?: string;
-  
+
   /**
    * Show the component; triggers the expand or collapse animation
    */
@@ -53,7 +53,7 @@ export interface CollapseProps {
   /**
    * ARIA role of collapsible element
    */
-   role?: string,
+  role?: string;
 
   /**
    * You must provide a single JSX child element to this component and that element cannot be a \<React.Fragment\>
@@ -83,7 +83,7 @@ export interface CollapseProps {
   /**
    * Callback fired after the component starts to collapse
    */
-  onExiting?:() => void;
+  onExiting?: () => void;
 
   /**
    * Callback fired after the component has collapsed

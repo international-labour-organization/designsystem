@@ -1,21 +1,21 @@
-import css from 'dom-helpers/css';
-import transitionEnd from 'dom-helpers/transitionEnd';
+import css from "dom-helpers/css";
+import transitionEnd from "dom-helpers/transitionEnd";
 
 function parseDuration(
   node: HTMLElement,
-  property: 'transitionDuration' | 'transitionDelay',
+  property: "transitionDuration" | "transitionDelay"
 ) {
-  const str = css(node, property) || '';
-  const mult = str.indexOf('ms') === -1 ? 1000 : 1;
+  const str = css(node, property) || "";
+  const mult = str.indexOf("ms") === -1 ? 1000 : 1;
   return parseFloat(str) * mult;
 }
 
 export default function transitionEndListener(
   element: HTMLElement,
-  handler: (e: TransitionEvent) => void,
+  handler: (e: TransitionEvent) => void
 ) {
-  const duration = parseDuration(element, 'transitionDuration');
-  const delay = parseDuration(element, 'transitionDelay');
+  const duration = parseDuration(element, "transitionDuration");
+  const delay = parseDuration(element, "transitionDelay");
   const remove = transitionEnd(
     element,
     (e) => {
@@ -24,6 +24,6 @@ export default function transitionEndListener(
         handler(e);
       }
     },
-    duration + delay,
+    duration + delay
   );
 }

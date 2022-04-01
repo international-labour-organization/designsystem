@@ -1,19 +1,23 @@
 import { AccordionProps } from "./Accordion.props";
 
 const small: AccordionProps = {
-  onButtonClick: (e) => { console.log(e.target) },
+  onButtonClick: (e) => {
+    console.log(e.target);
+  },
   allowMultipleExpanded: true,
-  defaultAccordionsExpanded: ["s1","s2"],
-  size: 'small',
-  children: ''
+  defaultAccordionsExpanded: ["s1", "s2"],
+  size: "small",
+  children: "",
 };
 
 const large: AccordionProps = {
-  onButtonClick: (e) => { console.log(e.target) },
+  onButtonClick: (e) => {
+    console.log(e.target);
+  },
   allowMultipleExpanded: true,
-  defaultAccordionsExpanded: ["l1","l2"],
-  size: 'large',
-  children: ''
+  defaultAccordionsExpanded: ["l1", "l2"],
+  size: "large",
+  children: "",
 };
 
 /**

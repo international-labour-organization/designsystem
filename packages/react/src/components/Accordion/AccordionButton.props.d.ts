@@ -1,4 +1,4 @@
-import { ReactNode, MouseEvent } from 'react';
+import { ReactNode, MouseEvent } from "react";
 
 export default interface AccordionButtonProps {
   /**
@@ -6,7 +6,7 @@ export default interface AccordionButtonProps {
    */
   children: ReactNode;
 
-  /** 
+  /**
    * Specify an optional className to be added to your Button.
    */
   className?: string;

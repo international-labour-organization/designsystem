@@ -1,6 +1,6 @@
-import { ReactNode, MouseEvent } from 'react';
-export { default as AccordionItem } from './AccordionItem';
-import { accordionSize, headingLevel } from '../../types';
+import { ReactNode, MouseEvent } from "react";
+export { default as AccordionItem } from "./AccordionItem";
+import { accordionSize, headingLevel } from "../../types";
 import { getUpdatedItems } from "@ilo/utils";
 
 export interface AccordionProps {

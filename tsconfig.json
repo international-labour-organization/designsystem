@@ -1,0 +1,8 @@
+{
+  "extends": "@ilo/typescript-config",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "noEmit": true
+  },
+  "exclude": ["lib", "node_modules", "dist"]
+}

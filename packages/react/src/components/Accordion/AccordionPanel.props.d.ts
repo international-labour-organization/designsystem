@@ -1,4 +1,4 @@
-import { ReactNode} from 'react';
+import { ReactNode } from "react";
 
 export default interface AccordionPanelProps {
   /**
@@ -6,7 +6,7 @@ export default interface AccordionPanelProps {
    */
   children: ReactNode;
 
-  /** 
+  /**
    * Specify an optional className to be added to your Button.
    */
   className?: string;

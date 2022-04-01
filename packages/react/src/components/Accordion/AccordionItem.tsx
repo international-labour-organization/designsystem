@@ -1,9 +1,14 @@
-import React, { FC, createContext } from 'react';
-import classNames from 'classnames';
-import useGlobalSettings from '../../hooks/useGlobalSettings';
-import { AccordionItemProps, AccordionItemContextProps } from './AccordionItem.props';
+import React, { FC, createContext } from "react";
+import classNames from "classnames";
+import useGlobalSettings from "../../hooks/useGlobalSettings";
+import {
+  AccordionItemProps,
+  AccordionItemContextProps,
+} from "./AccordionItem.props";
 
-export const AccordionItemContext = createContext({} as AccordionItemContextProps);
+export const AccordionItemContext = createContext(
+  {} as AccordionItemContextProps
+);
 
 const AccordionItem: FC<AccordionItemProps> = ({
   children,
@@ -17,8 +22,10 @@ const AccordionItem: FC<AccordionItemProps> = ({
     [baseClass]: true,
   });
   return (
-    <AccordionItemContext.Provider value={{id}}>
-      <li className={accordionItemClasses} {...rest}>{children}</li>
+    <AccordionItemContext.Provider value={{ id }}>
+      <li className={accordionItemClasses} {...rest}>
+        {children}
+      </li>
     </AccordionItemContext.Provider>
   );
 };
