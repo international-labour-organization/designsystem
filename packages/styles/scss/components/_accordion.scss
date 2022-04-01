@@ -13,11 +13,12 @@
     flex-direction: row;
     font-family: $fonts-display;
     font-weight: 500;
-    @include font-styles('label-medium');
+    @include font-styles("label-medium");
     justify-content: space-between;
     margin: 0;
     padding: $spacing-ui-padding-lg 0px calc($spacing-ui-padding-lg - 5px);
-    transition: border 0.3s ease-in-out, background 0.3s ease-in-out, color 0.3s ease-in-out;
+    transition: border 0.3s ease-in-out, background 0.3s ease-in-out,
+      color 0.3s ease-in-out;
     width: 100%;
 
     &:hover,
@@ -28,9 +29,9 @@
       cursor: pointer;
       fill: $color-ux-labels-hover;
     }
-    
+
     &--large {
-      @include font-styles('label-large');
+      @include font-styles("label-large");
       padding: $spacing-ui-padding-xl 0px calc($spacing-ui-padding-xl - 5px);
     }
   }
@@ -38,8 +39,12 @@
   &__panel {
     color: $color-ux-labels-default;
     font-family: $fonts-copy;
-    @include font-styles('label-medium');
-    
+    height: auto;
+    overflow: hidden;
+    transition: height 300ms ease-in-out;
+
+    @include font-styles("label-medium");
+
     &.collapse {
       visibility: hidden;
       height: 0px;
@@ -51,12 +56,13 @@
         padding-bottom: $spacing-ui-padding-lg;
       }
 
-      &:not(.show){
+      &:not(.show) {
         display: none;
       }
     }
 
-    &.collapsing, &.expanding {
+    &.collapsing,
+    &.expanding {
       height: 0;
       position: relative;
       overflow: hidden;
@@ -68,9 +74,9 @@
       transition-timing-function: ease;
       -webkit-transition-timing-function: ease;
     }
-    
+
     .ilo--accordion--large & {
-      @include font-styles('label-large');
+      @include font-styles("label-large");
     }
   }
 }

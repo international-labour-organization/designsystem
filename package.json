@@ -6,7 +6,7 @@
   "license": "Apache-2.0",
   "main": "index.js",
   "scripts": {
-    "build": "pnpm run build --filter=@ilo/icons --filter=@ilo/icons-react --filter=@ilo/themes  --filter=@ilo/styles --filter=@ilo/react --filter=@ilo/twig --filter=@ilo/brand-assets",
+    "build": "pnpm run build --filter=@ilo/brand-assets --filter=@ilo/icons --filter=@ilo/icons-react --filter=@ilo/utils --filter=@ilo/themes  --filter=@ilo/styles --filter=@ilo/react --filter=@ilo/twig",
     "build:brand-assets": "pnpm run build --filter=@ilo/brand-assets",
     "build:icons": "pnpm run build --filter=@ilo/icons",
     "build:icons-react": "pnpm run build --filter=@ilo/icons-react",
@@ -23,6 +23,8 @@
     "lint:fix:utils": "pnpm run lint:fix --filter=@ilo/utils",
     "serve:twig": "pnpm run serve --filter=@ilo/twig",
     "start": "pnpm run storybook",
+    "start:react-storybook": "pnpm run storybook --filter=@ilo/react",
+    "start:twig-storybook": "pnpm run storybook --filter=@ilo/twig-storybook",
     "start:static": "pnpm run storybook:static",
     "storybook": "cd packages/react && pnpm run storybook",
     "storybook:static": "cd packages/react && pnpm run storybook:static",

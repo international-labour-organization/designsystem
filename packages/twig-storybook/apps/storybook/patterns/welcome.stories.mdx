@@ -1,0 +1,24 @@
+import { Meta, Canvas } from '@storybook/addon-docs/blocks';
+import { Badge } from '@storybook/components';
+import { getStorybook, storiesOf} from '@storybook/react';
+import LinkTo from '@storybook/addon-links/react';
+
+
+<Meta title="Welcome"
+  parameters={{ viewMode: 'docs', previewTabs: { canvas: { hidden: true }}}}
+/>
+
+## ILO Design system
+# Twig Component Library
+
+<div style={{paddingTop: '40px'}}>
+  Tokens
+  <Canvas>
+    <LinkTo story="page" kind="Tokens/Colors">
+      <Badge status="neutral">Colors</Badge>
+    </LinkTo>
+    <LinkTo story="page" kind="Tokens/Typography">
+      <Badge status="neutral">Typography</Badge>
+    </LinkTo>
+  </Canvas>
+</div>
