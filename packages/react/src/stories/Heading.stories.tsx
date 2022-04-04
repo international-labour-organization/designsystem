@@ -1,9 +1,16 @@
-import React from 'react';
-import { Story, Meta } from '@storybook/react';
-import { Title, Subtitle, Description, Primary, ArgsTable, Stories, Subheading } from '@storybook/addon-docs';
-import { Heading }  from '../components/Heading';
-import { HeadingProps } from '../components/Heading/Heading.props';
-import headingArgs from '../components/Heading/Heading.args';
+import { Story, Meta } from "@storybook/react";
+import {
+  Title,
+  Subtitle,
+  Description,
+  Primary,
+  ArgsTable,
+  Stories,
+  Subheading,
+} from "@storybook/addon-docs";
+import { Heading } from "../components/Heading";
+import { HeadingProps } from "../components/Heading/Heading.props";
+import headingArgs from "../components/Heading/Heading.args";
 
 const headingDoc = `
 By changing the \`level\` prop you can use different heading levels. The default heading level if not specified is \`h3\`.
@@ -33,18 +40,18 @@ By changing the \`type\` prop you can change the color of the heading. If not sp
  *
  */
 export default {
-  title: 'Components/Heading',
+  title: "Components/Heading",
   component: Heading,
   argTypes: {
     level: {
-      control: 'text'
+      control: "text",
     },
     className: {
-      control: 'text'
-    }
+      control: "text",
+    },
   },
   parameters: {
-    componentSubtitle: 'Component',
+    componentSubtitle: "Component",
     docs: {
       page: () => (
         <>
@@ -53,13 +60,9 @@ export default {
           <Primary />
           <ArgsTable />
           <Subheading>Heading Level Prop</Subheading>
-          <Description>
-            {headingDoc}
-          </Description>
+          <Description>{headingDoc}</Description>
           <Subheading>Color Prop</Subheading>
-          <Description>
-            {typeDoc}
-          </Description>
+          <Description>{typeDoc}</Description>
           <Stories title="Examples" />
         </>
       ),
@@ -74,7 +77,7 @@ export default {
  *
  *@param (Object) args - props to be passed to the component
  */
-const Heading1Template: Story<HeadingProps> = (args) => (
+const Heading1Template: Story<HeadingProps> = () => (
   <Heading {...headingArgs.heading1} />
 );
 
@@ -85,7 +88,7 @@ const Heading1Template: Story<HeadingProps> = (args) => (
  *
  *@param (Object) args - props to be passed to the component
  */
-const Heading2Template: Story<HeadingProps> = (args) => (
+const Heading2Template: Story<HeadingProps> = () => (
   <Heading {...headingArgs.heading2} />
 );
 
@@ -96,7 +99,7 @@ const Heading2Template: Story<HeadingProps> = (args) => (
  *
  *@param (Object) args - props to be passed to the component
  */
-const Heading3Template: Story<HeadingProps> = (args) => (
+const Heading3Template: Story<HeadingProps> = () => (
   <Heading {...headingArgs.heading3} />
 );
 
@@ -107,7 +110,7 @@ const Heading3Template: Story<HeadingProps> = (args) => (
  *
  *@param (Object) args - props to be passed to the component
  */
-const Heading4Template: Story<HeadingProps> = (args) => (
+const Heading4Template: Story<HeadingProps> = () => (
   <Heading {...headingArgs.heading4} />
 );
 
@@ -118,7 +121,7 @@ const Heading4Template: Story<HeadingProps> = (args) => (
  *
  *@param (Object) args - props to be passed to the component
  */
-const Heading5Template: Story<HeadingProps> = (args) => (
+const Heading5Template: Story<HeadingProps> = () => (
   <Heading {...headingArgs.heading5} />
 );
 
@@ -129,7 +132,7 @@ const Heading5Template: Story<HeadingProps> = (args) => (
  *
  *@param (Object) args - props to be passed to the component
  */
-const Heading6Template: Story<HeadingProps> = (args) => (
+const Heading6Template: Story<HeadingProps> = () => (
   <Heading {...headingArgs.heading6} />
 );
 
@@ -170,19 +173,19 @@ export const Heading5 = Heading5Template.bind({});
 export const Heading6 = Heading6Template.bind({});
 
 // enumerate the props for the heading 1.
-Heading1.storyName = 'Heading Level 1';
+Heading1.storyName = "Heading Level 1";
 
 // enumerate the props
-Heading2.storyName = 'Heading Level 2';
+Heading2.storyName = "Heading Level 2";
 
 // enumerate the props
-Heading3.storyName = 'Heading Level 3';
+Heading3.storyName = "Heading Level 3";
 
 // enumerate the props
-Heading4.storyName = 'Heading Level 4';
+Heading4.storyName = "Heading Level 4";
 
 // enumerate the props
-Heading5.storyName = 'Heading Level 5';
+Heading5.storyName = "Heading Level 5";
 
 // enumerate the props
-Heading6.storyName = 'Heading Level 6';
+Heading6.storyName = "Heading Level 6";

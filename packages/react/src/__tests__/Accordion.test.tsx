@@ -1,4 +1,4 @@
-import { render, screen, fireEvent, within } from "@testing-library/react";
+import { render, screen, fireEvent } from "@testing-library/react";
 import { composeStories } from "@storybook/testing-react";
 import * as stories from "../stories/Accordion.stories";
 import { Accordion, AccordionItem } from "../components/Accordion";
@@ -52,9 +52,9 @@ describe("<Accordion>", () => {
   });
 
   it("Should print a warning if two <AccordionItem /> have same id", async () => {
-    const consoleWarn = jest
-      .spyOn(console, "warn")
-      .mockImplementation(() => {});
+    const consoleWarn = jest.spyOn(console, "warn").mockImplementation(() => {
+      // do nothing
+    });
     render(
       <Accordion {...accordionArgs.large}>
         <AccordionItem id="test-1">Item/</AccordionItem>

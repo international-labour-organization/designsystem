@@ -4,5 +4,6 @@
     "baseUrl": ".",
     "noEmit": true
   },
-  "exclude": ["lib", "node_modules", "dist"]
+  "include": ["**/src/*"],
+  "exclude": ["**/lib/*", "**/node_modules/*", "**/dist/*"]
 }
