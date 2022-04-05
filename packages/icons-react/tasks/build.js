@@ -5,10 +5,10 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-'use strict';
+"use strict";
 
-const { builders } = require('@ilo/icon-build-helpers');
-const metadata = require('@ilo/icons/metadata.json');
+const { builders } = require("@ilo/icon-build-helpers");
+const metadata = require("@ilo/icons/metadata.json");
 
 async function build() {
   await builders.react.run(metadata, {

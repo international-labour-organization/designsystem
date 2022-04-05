@@ -11,11 +11,14 @@ export default function getDefaultDimensionValue(
   dimension: Dimension,
   elem: HTMLElement
 ): number {
-  const offset = `offset${dimension[0].toUpperCase()}${dimension.slice(1)}`;
+  const offset = `offset${dimension[0].toUpperCase()}${dimension.slice(
+    1
+  )}` as keyof HTMLElement;
   const value = elem[offset];
   const margins = MARGINS[dimension];
 
   return (
+    // @ts-ignore
     value +
     // @ts-ignore
     parseInt(css(elem, margins[0]), 10) +

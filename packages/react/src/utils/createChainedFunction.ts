@@ -7,7 +7,7 @@
  * @param {function} functions to chain
  * @returns {function|null}
  */
-function createChainedFunction(...funcs) {
+function createChainedFunction(...funcs: any[]) {
   return funcs
     .filter((f) => f != null)
     .reduce((acc, f) => {
@@ -19,7 +19,7 @@ function createChainedFunction(...funcs) {
 
       if (acc === null) return f;
 
-      return function chainedFunction(...args) {
+      return function chainedFunction(...args: any[]) {
         // @ts-ignore
         acc.apply(this, args);
         // @ts-ignore

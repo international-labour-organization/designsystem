@@ -5,11 +5,12 @@
     "alwaysStrict": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
-    "jsx": "react",
+    "jsx": "react-jsx",
     "lib": ["dom", "dom.iterable", "es2017"],
     "module": "esnext",
     "moduleResolution": "node",
     "noFallthroughCasesInSwitch": true,
+    "noImplicitAny": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "skipLibCheck": true,
@@ -21,5 +22,5 @@
     "target": "es6",
     "resolveJsonModule": true
   },
-  "exclude": ["__tests__", "lib", "node_modules"]
+  "exclude": ["**/lib/*", "**/node_modules/*", "**/dist/*"]
 }
