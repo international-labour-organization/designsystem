@@ -1,21 +1,21 @@
-# @ilo/typescript-config
+# @ilo-org/typescript-config
 
 > Typescript config for the ILO Design System. These docs are a WIP.
 
 ## Getting started
 
-To install `@ilo/typescript-config` in your project, you will need to run the
+To install `@ilo-org/typescript-config` in your project, you will need to run the
 following command using [npm](https://www.npmjs.com/):
 
 ```bash
-npm install -D @ilo/typescript-config
+npm install -D @ilo-org/typescript-config
 ```
 
 If you prefer [Yarn](https://yarnpkg.com/en/), use the following command
 instead:
 
 ```bash
-yarn add -D @ilo/typescript-config
+yarn add -D @ilo-org/typescript-config
 ```
 
 ## Usage
@@ -24,7 +24,7 @@ yarn add -D @ilo/typescript-config
 
 ```json
 {
-  "extends": "@ilo/typescript-config/tsconfig.json",
+  "extends": "@ilo-org/typescript-config/tsconfig.json",
   "compilerOptions": {
     "outDir": "dist"
   }

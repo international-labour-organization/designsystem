@@ -1,5 +1,5 @@
 {
-  "extends": "@ilo/typescript-config",
+  "extends": "@ilo-org/typescript-config",
   "include": ["src/**/*"],
   "compilerOptions": {
     "outDir": "lib",

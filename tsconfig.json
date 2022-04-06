@@ -1,5 +1,5 @@
 {
-  "extends": "@ilo/typescript-config",
+  "extends": "@ilo-org/typescript-config",
   "compilerOptions": {
     "baseUrl": ".",
     "noEmit": true

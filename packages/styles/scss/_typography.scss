@@ -5,8 +5,8 @@
 //
 
 // Load the theme vars and fonts
-@use "@ilo/themes/build/scss/tokens" as *;
-@forward "@ilo/fonts/index";
+@use "@ilo-org/themes/build/scss/tokens" as *;
+@forward "@ilo-org/fonts/index";
 
 /// Font family fallbacks for: Overpass, Noto Sans
 /// @type Map

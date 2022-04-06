@@ -9,7 +9,7 @@ module.exports = {
   /* Global Settings */
   /* =============== */
   root: true,
-  extends: ["@ilo/eslint-config"],
+  extends: ["@ilo-org/eslint-config"],
   // Extend the default config and add any specific settings for this project
   ignorePatterns: [
     "storybook-static/",
@@ -25,7 +25,7 @@ module.exports = {
     {
       // Which files the override will apply to relative to the package root
       files: ["**/*.{ts,tsx}"],
-      extends: ["@ilo/eslint-config/typescript"],
+      extends: ["@ilo-org/eslint-config/typescript"],
       // The typescript parser options for this package, which will be different
       // from other packages
       parserOptions: {

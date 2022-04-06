@@ -4,9 +4,9 @@ importers:
 
   .:
     specifiers:
-      '@ilo/eslint-config': workspace:^0.0.1
-      '@ilo/prettier-config': workspace:^0.0.1
-      '@ilo/typescript-config': workspace:^0.0.1
+      '@ilo-org/eslint-config': workspace:^0.0.1
+      '@ilo-org/prettier-config': workspace:^0.0.1
+      '@ilo-org/typescript-config': workspace:^0.0.1
       '@testing-library/jest-dom': ^5.11.4
       '@testing-library/react': ^11.1.0
       '@testing-library/user-event': ^12.1.10
@@ -21,9 +21,9 @@ importers:
       turbo: ^1.1.10
       typescript: ^4.6.2
     devDependencies:
-      '@ilo/eslint-config': link:config/eslint-config
-      '@ilo/prettier-config': link:config/prettier-config
-      '@ilo/typescript-config': link:config/typescript-config
+      '@ilo-org/eslint-config': link:config/eslint-config
+      '@ilo-org/prettier-config': link:config/prettier-config
+      '@ilo-org/typescript-config': link:config/typescript-config
       '@testing-library/jest-dom': 5.16.2
       '@testing-library/react': 11.2.7
       '@testing-library/user-event': 12.8.3
@@ -147,12 +147,12 @@ importers:
   packages/icons:
     specifiers:
       '@babel/preset-env': ^7.14.2
-      '@ilo/icon-build-helpers': workspace:0.0.1
+      '@ilo-org/icon-build-helpers': workspace:0.0.1
       '@un/figma-connect': ^0.0.7
       browserslist-config-carbon: ^10.6.1
       rimraf: ^3.0.2
     dependencies:
-      '@ilo/icon-build-helpers': link:../icon-build-helpers
+      '@ilo-org/icon-build-helpers': link:../icon-build-helpers
     devDependencies:
       '@babel/preset-env': 7.16.11
       '@un/figma-connect': 0.0.7
@@ -167,8 +167,8 @@ importers:
       '@babel/preset-react': ^7.16.7
       '@carbon/icon-helpers': ^10.19.0
       '@carbon/telemetry': 0.0.0-alpha.6
-      '@ilo/icon-build-helpers': workspace:0.0.1
-      '@ilo/icons': workspace:0.0.1
+      '@ilo-org/icon-build-helpers': workspace:0.0.1
+      '@ilo-org/icons': workspace:0.0.1
       babel-plugin-dev-expression: ^0.2.3
       browserslist-config-carbon: ^10.6.1
       prop-types: ^15.7.2
@@ -179,8 +179,8 @@ importers:
       '@babel/core': 7.17.5
       '@carbon/icon-helpers': 10.28.0
       '@carbon/telemetry': 0.0.0-alpha.6
-      '@ilo/icon-build-helpers': link:../icon-build-helpers
-      '@ilo/icons': link:../icons
+      '@ilo-org/icon-build-helpers': link:../icon-build-helpers
+      '@ilo-org/icons': link:../icons
       prop-types: 15.8.1
       react: 17.0.2
       react-dom: 17.0.2_react@17.0.2
@@ -273,14 +273,14 @@ importers:
 
   packages/react:
     specifiers:
-      '@ilo/brand-assets': workspace:*
-      '@ilo/eslint-config': workspace:^0.0.1
-      '@ilo/fonts': workspace:*
-      '@ilo/icons-react': workspace:*
-      '@ilo/prettier-config': workspace:^0.0.1
-      '@ilo/styles': workspace:*
-      '@ilo/typescript-config': workspace:^0.0.1
-      '@ilo/utils': workspace:*
+      '@ilo-org/brand-assets': workspace:*
+      '@ilo-org/eslint-config': workspace:^0.0.1
+      '@ilo-org/fonts': workspace:*
+      '@ilo-org/icons-react': workspace:*
+      '@ilo-org/prettier-config': workspace:^0.0.1
+      '@ilo-org/styles': workspace:*
+      '@ilo-org/typescript-config': workspace:^0.0.1
+      '@ilo-org/utils': workspace:*
       '@rollup/plugin-commonjs': ^17.1.0
       '@rollup/plugin-json': ^4.1.0
       '@rollup/plugin-node-resolve': ^11.2.1
@@ -327,11 +327,11 @@ importers:
       typescript: 4.3.4
       webpack: ^5.68.0
     dependencies:
-      '@ilo/brand-assets': link:../brand-assets
-      '@ilo/fonts': link:../fonts
-      '@ilo/icons-react': link:../icons-react
-      '@ilo/styles': link:../styles
-      '@ilo/utils': link:../utils
+      '@ilo-org/brand-assets': link:../brand-assets
+      '@ilo-org/fonts': link:../fonts
+      '@ilo-org/icons-react': link:../icons-react
+      '@ilo-org/styles': link:../styles
+      '@ilo-org/utils': link:../utils
       classnames: 2.3.1
       dom-helpers: 5.2.1
       global: 4.4.0
@@ -341,9 +341,9 @@ importers:
       react-transition-group: 4.4.2_react-dom@17.0.2+react@17.0.2
       typescript: 4.3.4
     devDependencies:
-      '@ilo/eslint-config': link:../../config/eslint-config
-      '@ilo/prettier-config': link:../../config/prettier-config
-      '@ilo/typescript-config': link:../../config/typescript-config
+      '@ilo-org/eslint-config': link:../../config/eslint-config
+      '@ilo-org/prettier-config': link:../../config/prettier-config
+      '@ilo-org/typescript-config': link:../../config/typescript-config
       '@rollup/plugin-commonjs': 17.1.0_rollup@2.69.1
       '@rollup/plugin-json': 4.1.0_rollup@2.69.1
       '@rollup/plugin-node-resolve': 11.2.1_rollup@2.69.1
@@ -384,12 +384,12 @@ importers:
 
   packages/styles:
     specifiers:
-      '@ilo/fonts': workspace:*
-      '@ilo/themes': workspace:*
+      '@ilo-org/fonts': workspace:*
+      '@ilo-org/themes': workspace:*
       sass: ^1.49.9
     dependencies:
-      '@ilo/fonts': link:../fonts
-      '@ilo/themes': link:../themes
+      '@ilo-org/fonts': link:../fonts
+      '@ilo-org/themes': link:../themes
     devDependencies:
       sass: 1.49.9
 
@@ -401,18 +401,18 @@ importers:
 
   packages/twig:
     specifiers:
-      '@ilo/fonts': workspace:*
-      '@ilo/styles': workspace:*
-      '@ilo/themes': workspace:*
+      '@ilo-org/fonts': workspace:*
+      '@ilo-org/styles': workspace:*
+      '@ilo-org/themes': workspace:*
       express: ^4.17.3
       fs: 0.0.1-security
       jsonfile: ^6.1.0
       sass: ^1.49.9
       twing: ^5.1.0
     dependencies:
-      '@ilo/fonts': link:../fonts
-      '@ilo/styles': link:../styles
-      '@ilo/themes': link:../themes
+      '@ilo-org/fonts': link:../fonts
+      '@ilo-org/styles': link:../styles
+      '@ilo-org/themes': link:../themes
       twing: 5.1.0
     devDependencies:
       express: 4.17.3
@@ -424,11 +424,11 @@ importers:
     specifiers:
       '@babel/core': ^7.8.4
       '@babel/preset-env': ^7.8.4
-      '@ilo/fonts': workspace:*
-      '@ilo/preset-scss': workspace:*
-      '@ilo/styles': workspace:*
-      '@ilo/themes': workspace:*
-      '@ilo/utils': workspace:*
+      '@ilo-org/fonts': workspace:*
+      '@ilo-org/preset-scss': workspace:*
+      '@ilo-org/styles': workspace:*
+      '@ilo-org/themes': workspace:*
+      '@ilo-org/utils': workspace:*
       '@storybook/addon-actions': ^6.4.9
       '@storybook/addon-essentials': ^6.4.9
       '@storybook/addon-links': ^6.4.9
@@ -480,14 +480,14 @@ importers:
       yaml-loader: ^0.6.0
       yo: ^3.1.1
     dependencies:
-      '@ilo/fonts': link:../fonts
-      '@ilo/styles': link:../styles
-      '@ilo/themes': link:../themes
-      '@ilo/utils': link:../utils
+      '@ilo-org/fonts': link:../fonts
+      '@ilo-org/styles': link:../styles
+      '@ilo-org/themes': link:../themes
+      '@ilo-org/utils': link:../utils
     devDependencies:
       '@babel/core': 7.17.5
       '@babel/preset-env': 7.16.11_@babel+core@7.17.5
-      '@ilo/preset-scss': link:../preset-scss
+      '@ilo-org/preset-scss': link:../preset-scss
       '@storybook/addon-actions': 6.4.19_693b1c1f404e651a3f513b5f6afa3810
       '@storybook/addon-essentials': 6.4.19_4b2deeedfea88c483095bc0e5ad0b39e
       '@storybook/addon-links': 6.4.19_react-dom@16.14.0+react@16.14.0

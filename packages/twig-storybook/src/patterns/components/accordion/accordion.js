@@ -1,4 +1,4 @@
-import { getUpdatedItems, EVENTS, ARIA } from '@ilo/utils';
+import { getUpdatedItems, EVENTS, ARIA } from '@ilo-org/utils';
 
 /**
  * The Accordion module which handles rendering field labels inline on a form.

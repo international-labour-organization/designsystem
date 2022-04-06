@@ -6,23 +6,23 @@
 
 ## Getting started
 
-To install `@ilo/icons` in your project, you will need to run the
+To install `@ilo-org/icons` in your project, you will need to run the
 following command using [npm](https://www.npmjs.com/):
 
 ```bash
-npm install -S @ilo/icons
+npm install -S @ilo-org/icons
 ```
 
 If you prefer [Yarn](https://yarnpkg.com/en/), use the following command
 instead:
 
 ```bash
-yarn add @ilo/icons
+yarn add @ilo-org/icons
 ```
 
 ## 📖 API Documentation
 
-If you're looking for `@ilo/icons` API documentation, check out:
+If you're looking for `@ilo-org/icons` API documentation, check out:
 
 - [Contributing](./docs/contributing.md)
 
