@@ -1,0 +1,52 @@
+@use "../tokens" as *;
+
+.ilo--link {
+  border-bottom: 1.5px solid $color-ux-borders-hover;
+  color: $color-ux-labels-actionable;
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  text-decoration: none;
+
+  &:focus {
+    background: $color-base-yellow;
+    border-bottom: 4px solid $color-ux-labels-actionable;
+    color: $color-ux-labels-actionable;
+    outline: none;
+  }
+
+  &:visited {
+    border-bottom: 1.5px solid $color-ux-borders-highlight;
+    color: $color-ux-borders-highlight;
+  }
+
+  &:hover {
+    background: $color-ux-background-default;
+    border-bottom: 3px solid $color-ux-borders-hover;
+    color: $color-ux-borders-hover;
+    text-decoration: none;
+  }
+
+  &--dark {
+    border-bottom: 1.5px solid $color-ux-background-default;
+    color: $color-base-neutrals-lighter;
+  
+    &:focus {
+      background: $color-base-yellow;
+      border-bottom: 4px solid $color-ux-labels-actionable;
+      color: $color-ux-labels-actionable;
+      outline: none;
+    }
+  
+    &:visited {
+      border-bottom: 1.5px solid $color-base-neutrals-light;
+      color: $color-base-neutrals-light;
+    }
+
+    &:hover {
+      background: $color-ux-background-default;
+      border-bottom: 3px solid $color-ux-borders-hover;
+      color: $color-ux-borders-hover;
+    }
+  }
+}
