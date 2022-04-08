@@ -76,7 +76,7 @@ const LightTemplate: Story<LinkProps> = (args) => (
  * Light Link Instance
  *
  */
-export const LightLink = LightTemplate.bind({});
+ export const BaseLink = LightTemplate.bind({});
 
 /**
  * Dark Link Instance
@@ -85,11 +85,14 @@ export const LightLink = LightTemplate.bind({});
 export const DarkLink = DarkTemplate.bind({});
 
 // enumerate the props for the light link.
-LightLink.args = linkArgs.light;
-LightLink.args.url = 'https://www.google.com/';
-LightLink.storyName = 'Light Link';
+BaseLink.args = linkArgs.light;
+BaseLink.args.url = 'https://www.google.com/';
+BaseLink.storyName = 'Light Link';
 
 // enumerate the props dark link
 DarkLink.args = linkArgs.dark;
+DarkLink.parameters = {
+  backgrounds: {default: 'dark'},
+};
 DarkLink.args.url = 'https://www.wikipedia.org/';
 DarkLink.storyName = 'Dark Link';
