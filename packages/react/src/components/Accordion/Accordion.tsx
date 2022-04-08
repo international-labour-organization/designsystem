@@ -32,6 +32,10 @@ const Accordion: FC<AccordionProps> = ({
     [`${baseClass}--${size}`]: size,
   });
 
+  const defaultAccordionsExpandedString = JSON.stringify(
+    defaultAccordionsExpanded
+  );
+
   useEffect(() => {
     const expandedOnLoad = allowMultipleExpanded
       ? defaultAccordionsExpanded
@@ -39,7 +43,7 @@ const Accordion: FC<AccordionProps> = ({
       ? [defaultAccordionsExpanded[0]]
       : defaultAccordionsExpanded;
     setActiveItems(expandedOnLoad);
-  }, [defaultAccordionsExpanded, allowMultipleExpanded]);
+  }, [defaultAccordionsExpandedString, allowMultipleExpanded]); //eslint-disable-line react-hooks/exhaustive-deps
 
   if (children) {
     const ids: string[] = [];
