@@ -1,3 +1,8 @@
-export type accordionSize = "small" | "large";
-export type headingLevel = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
-export type labelTypes = "default" | "actionable" | "light";
+export type accordionSize = 'small' | 'large';
+export type buttonTypes = 'primary' | 'secondary' | 'tertiary';
+export type headingLevel = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+export type labelTypes = 'default' | 'actionable' | 'light';
+export type linkTypes = 'light' | 'dark' | 'button';
+export type positionTypes = 'top' | 'bottom' | 'left' | 'right';
+export type sizeTypes = 'small' | 'medium' | 'large';
+export type urlTypes = 'small' | 'medium' | 'large';
