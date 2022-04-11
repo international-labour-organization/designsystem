@@ -5,4 +5,3 @@ export type labelTypes = 'default' | 'actionable' | 'light';
 export type linkTypes = 'light' | 'dark' | 'button';
 export type positionTypes = 'top' | 'bottom' | 'left' | 'right';
 export type sizeTypes = 'small' | 'medium' | 'large';
-export type urlTypes = 'small' | 'medium' | 'large';
