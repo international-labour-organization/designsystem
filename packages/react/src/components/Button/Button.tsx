@@ -1,8 +1,8 @@
-import React, { FC } from 'react';
-import classNames from 'classnames';
-import useGlobalSettings from '../../hooks/useGlobalSettings';
-import { ButtonProps } from './Button.props';
-import { Link } from '../Link';
+import { FC } from "react";
+import classNames from "classnames";
+import useGlobalSettings from "../../hooks/useGlobalSettings";
+import { ButtonProps } from "./Button.props";
+import { Link } from "../Link";
 
 const Button: FC<ButtonProps> = ({
   callback,
@@ -11,39 +11,46 @@ const Button: FC<ButtonProps> = ({
   icon,
   iconPosition,
   label,
-  theme = 'large',
+  size = "large",
+  type,
   url,
 }) => {
   const { prefix } = useGlobalSettings();
   const baseClass = `${prefix}--button`;
   const hasURL = !!url;
-  const icoPos = iconPosition || 'left';
+  const icoPos = iconPosition || "left";
 
   const ButtonClasses = classNames(className, {
     [baseClass]: true,
-    [`${baseClass}--${theme}`]: theme,
+    [`${baseClass}--${size}`]: size,
+    [`${baseClass}--${type}`]: type,
     [`icon--${icon} icon__position--${icoPos}`]: icon,
   });
-  
+
   /**
    * On click, if there is a callback, call it
    */
-  const handleClick = (e: MouseEvent<HTMLButtonElement>) => {
+  const handleClick = (e: React.MouseEvent<Element, MouseEvent>) => {
     if (callback) {
       callback(e);
     }
   };
 
   return (
-    {hasURL ? (
-      <Link  children={children} className={ButtonClasses} href={url} label={label} />
-    ) : (
-      <button className={ButtonClasses} label={label} onClick={(e) => handleClick(e)}>
-        {label ? (
-          <span className='button__label'>{label}</span>
-        )}
-      </button>
-    )}
+    <>
+      {hasURL ? (
+        <Link
+          children={children}
+          className={ButtonClasses}
+          url={url}
+          label={label}
+        />
+      ) : (
+        <button className={ButtonClasses} onClick={(e) => handleClick(e)}>
+          {label && <span className="button__label">{label}</span>}
+        </button>
+      )}
+    </>
   );
 };
 

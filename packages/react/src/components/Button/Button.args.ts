@@ -1,21 +1,30 @@
 import { ButtonProps } from "./Button.props";
 
 const large: ButtonProps = {
-  url: '',
-  children: '',
-  theme: 'large',
+  callback: "",
+  children: "",
+  label: "Large Button",
+  size: "large",
+  type: "primary",
+  url: "#",
 };
 
 const medium: ButtonProps = {
-  url: '',
-  children: '',
-  theme: 'medium',
+  callback: "",
+  children: "",
+  label: "Medium Button",
+  size: "medium",
+  type: "primary",
+  url: "#",
 };
 
 const small: ButtonProps = {
-  url: '',
-  children: '',
-  theme: 'small',
+  callback: "",
+  children: "",
+  label: "Small Button",
+  size: "small",
+  type: "primary",
+  url: "#",
 };
 
 /**
@@ -24,7 +33,7 @@ const small: ButtonProps = {
 const ButtonArgs = {
   large,
   medium,
-  small
+  small,
 };
 
 export default ButtonArgs;
