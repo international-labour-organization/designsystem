@@ -1,4 +1,4 @@
-import { FC } from "react";
+import React, { FC } from "react";
 import classNames from "classnames";
 import useGlobalSettings from "../../hooks/useGlobalSettings";
 import { LinkProps } from "./Link.props";
@@ -7,12 +7,8 @@ const Link: FC<LinkProps> = ({
   children,
   className,
   label,
-<<<<<<< Updated upstream
-  theme = "light",
-=======
   target,
-  theme = 'light',
->>>>>>> Stashed changes
+  theme = "light",
   url,
   ...rest
 }) => {
@@ -29,17 +25,10 @@ const Link: FC<LinkProps> = ({
   }
 
   return (
-<<<<<<< Updated upstream
-    <a className={LinkClasses} href={url} {...rest}>
+    <a className={LinkClasses} href={url} target={target} rel={target ? "noopener noreferrer": ''} {...rest}>
       {label && (
         <span className="link__label" dangerouslySetInnerHTML={createMarkup()}></span>
       )}
-=======
-    <a className={LinkClasses} href={url} target={target} rel={target ? "noopener noreferrer": ''} {...rest}>
-      {label && 
-        <span className="link__label" dangerouslySetInnerHTML={label}></span>
-      }
->>>>>>> Stashed changes
       {children}
     </a>
   );
