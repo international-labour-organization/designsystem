@@ -7,7 +7,12 @@ const Link: FC<LinkProps> = ({
   children,
   className,
   label,
+<<<<<<< Updated upstream
   theme = "light",
+=======
+  target,
+  theme = 'light',
+>>>>>>> Stashed changes
   url,
   ...rest
 }) => {
@@ -24,10 +29,17 @@ const Link: FC<LinkProps> = ({
   }
 
   return (
+<<<<<<< Updated upstream
     <a className={LinkClasses} href={url} {...rest}>
       {label && (
         <span className="link__label" dangerouslySetInnerHTML={createMarkup()}></span>
       )}
+=======
+    <a className={LinkClasses} href={url} target={target} rel={target ? "noopener noreferrer": ''} {...rest}>
+      {label && 
+        <span className="link__label" dangerouslySetInnerHTML={label}></span>
+      }
+>>>>>>> Stashed changes
       {children}
     </a>
   );
