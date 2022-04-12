@@ -8,6 +8,11 @@ export interface LinkProps {
   children: ReactNode;
 
   /**
+   * Specify the label for the link
+   */
+   label?: html;
+
+  /**
    * Specify the url for the link's href
    */
    url?: string;

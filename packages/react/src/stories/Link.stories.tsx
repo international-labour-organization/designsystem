@@ -15,7 +15,7 @@ By changing the \`theme\` prop you can change base coloring of the links. By def
 `;
 
 /**
- * Accordion Story
+ * Link Story
  *
  */
 export default {

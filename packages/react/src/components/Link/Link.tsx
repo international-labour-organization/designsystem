@@ -5,9 +5,10 @@ import { LinkProps } from './Link.props';
 
 const Link: FC<LinkProps> = ({
   children,
-  url,
   className,
+  label,
   theme = 'light',
+  url,
   ...rest
 }) => {
   const { prefix } = useGlobalSettings();
@@ -20,6 +21,9 @@ const Link: FC<LinkProps> = ({
 
   return (
     <a className={LinkClasses} href={url} {...rest}>
+      {label && 
+        <span className="link__label" dangerouslySetInnerHTML={label}></span>
+      }
       {children}
     </a>
   );
