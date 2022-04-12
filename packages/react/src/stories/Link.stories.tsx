@@ -1,4 +1,3 @@
-import React from 'react';
 import { Story, Meta } from '@storybook/react';
 import { Title, Subtitle, Description, Primary, ArgsTable, Stories, Subheading} from '@storybook/addon-docs';
 import { Link }  from '../components/Link';
@@ -47,42 +46,30 @@ export default {
 } as Meta<typeof Link>;
 
 /**
- * Light Template
+ * Link Template
  *
  * create a Storybook template for this component
  *
  *@param (Object) args - props to be passed to the component
  */
-const LightTemplate: Story<LinkProps> = (args) => (
-  <Link {...linkArgs.light}>
+const LinkTemplate: Story<LinkProps> = (args) => (
+  <Link {...args}>
     This is text for the link
   </Link>
 );
 
-/**
- * Dark Template
- *
- * create a Storybook template for this component
- *
- *@param (Object) args - props to be passed to the component
- */
- const DarkTemplate: Story<LinkProps> = (args) => (
-  <Link {...linkArgs.dark}>
-    This is text for the link
-  </Link>
-);
 
 /**
  * Light Link Instance
  *
  */
- export const BaseLink = LightTemplate.bind({});
+ export const BaseLink = LinkTemplate.bind({});
 
 /**
  * Dark Link Instance
  *
  */
-export const DarkLink = DarkTemplate.bind({});
+export const DarkLink = LinkTemplate.bind({});
 
 // enumerate the props for the light link.
 BaseLink.args = linkArgs.light;
