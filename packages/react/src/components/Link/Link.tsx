@@ -1,13 +1,13 @@
-import React, { FC } from 'react';
-import classNames from 'classnames';
-import useGlobalSettings from '../../hooks/useGlobalSettings';
-import { LinkProps } from './Link.props';
+import { FC } from "react";
+import classNames from "classnames";
+import useGlobalSettings from "../../hooks/useGlobalSettings";
+import { LinkProps } from "./Link.props";
 
 const Link: FC<LinkProps> = ({
   children,
   className,
   label,
-  theme = 'light',
+  theme = "light",
   url,
   ...rest
 }) => {
@@ -18,12 +18,16 @@ const Link: FC<LinkProps> = ({
     [baseClass]: true,
     [`${baseClass}--${theme}`]: theme,
   });
+  
+  function createMarkup() {
+    return {__html: label};
+  }
 
   return (
     <a className={LinkClasses} href={url} {...rest}>
-      {label && 
-        <span className="link__label" dangerouslySetInnerHTML={label}></span>
-      }
+      {label && (
+        <span className="link__label" dangerouslySetInnerHTML={createMarkup()}></span>
+      )}
       {children}
     </a>
   );
