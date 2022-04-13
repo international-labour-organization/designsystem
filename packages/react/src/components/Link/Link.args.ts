@@ -3,6 +3,7 @@ import { LinkProps } from "./Link.props";
 const light: LinkProps = {
   children: "",
   label: "",
+  target: "",
   theme: "light",
   url: "",
 };
@@ -10,6 +11,7 @@ const light: LinkProps = {
 const dark: LinkProps = {
   children: "",
   label: "",
+  target: "",
   theme: "dark",
   url: "",
 };

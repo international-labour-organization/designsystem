@@ -18,6 +18,11 @@ export interface LinkProps {
   url?: string;
 
   /**
+   * Specify the target for the link
+   */
+  target?: string;
+
+  /**
    * Specify an optional className to be added to your Link.
    */
   theme?: linkTypes;
