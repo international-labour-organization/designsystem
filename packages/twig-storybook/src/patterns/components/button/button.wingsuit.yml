@@ -1,0 +1,53 @@
+accordion:
+  use: '@components/button/button.twig'
+  label: Button
+  description: A button or a link styled like a button.
+  fields:
+    size:
+      type: select
+      label: Size
+      description: The size of the button.
+      required: true
+      options:
+        small: Small
+        medium: Medium
+        large: Large
+      preview: 'large'
+    type:
+      type: select
+      label: Type
+      description: The type of button.
+      required: true
+      options:
+        primary: Primary
+        secondary: Secondary
+        tertiary: Tertiary
+      preview: 'primary'
+    disabled:
+      type: select
+      label: Disabled
+      description: The disabled state of the button.
+      required: false
+      options:
+        true: True
+        false: False
+      preview: 'false'
+    label:
+      type: string
+      label: Label
+      description: The label for the button
+      preview: 'Button'
+      required: true
+    url:
+      type: string
+      label: url
+      description: The url for the button if it's a link
+      preview: ''
+      required: false
+    target:
+      type: string
+      label: target
+      description: Should the button open in a new tab? If so, include the name of the tab
+      preview: 'true'
+      required: false
+  visibility: storybook
