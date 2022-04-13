@@ -5,6 +5,7 @@ const large: ButtonProps = {
   children: "",
   label: "Large Button",
   size: "large",
+  target: "_blank",
   type: "primary",
   url: "#",
 };
