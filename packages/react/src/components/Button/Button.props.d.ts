@@ -41,7 +41,7 @@ export interface ButtonProps {
    * Specify an optional className to be added to your Button.
    */
   size?: sizeTypes;
-  
+
   /**
    * Specify the target for when Button is really a link
    */
