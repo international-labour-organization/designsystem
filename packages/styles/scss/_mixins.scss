@@ -4,13 +4,6 @@
 @use "tokens" as *;
 @use "functions";
 
-@function map-deep-get($map, $keys...) {
-  @each $key in $keys {
-    $map: map-get($map, $key);
-  }
-  @return $map;
-}
-
 // ======================================
 // Output font styles
 // ======================================
@@ -18,9 +11,9 @@
 /// @param {String} $stylename - the name of the style to get
 /// @return {CSS} font size, line-height, and letter-spacing for this type style
 @mixin font-styles($stylename) {
-  font-size: map-deep-get($type, $stylename, "size");
-  letter-spacing: map-deep-get($type, $stylename, "letter-spacing");
-  line-height: map-deep-get($type, $stylename, "line-height");
+  font-size: map-get($type, $stylename, 'size');
+  letter-spacing: map-get($type, $stylename, 'letter-spacing');
+  line-height: map-get($type, $stylename, 'line-height');
 }
 
 // ======================================

@@ -1,17 +1,17 @@
 import { LinkProps } from "./Link.props";
 
 const light: LinkProps = {
-  children: '',
-  label: '',
-  theme: 'light',
-  url: '',
+  children: "",
+  label: "",
+  theme: "light",
+  url: "",
 };
 
 const dark: LinkProps = {
-  children: '',
-  label: '',
-  theme: 'dark',
-  url: '',
+  children: "",
+  label: "",
+  theme: "dark",
+  url: "",
 };
 
 /**

@@ -16,6 +16,11 @@ export interface ButtonProps {
    * Specify an optional className to be added to your Button.
    */
   className?: string;
+  
+  /**
+   * Specify whether or not the button is disabled.
+   */
+  disabled?: boolean;
 
   /**
    * Specify the icon for the Button

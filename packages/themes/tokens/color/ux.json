@@ -5,19 +5,26 @@
         "default": { "value": "{color.base.neutrals.white}" },
         "disabled": { "value": "{color.base.neutrals.lighter}" },
         "highlight": { "value": "{color.base.neutrals.lighter}" },
-        "hover": { "value": "{color.base.blue.light}" }
+        "hover": { "value": "{color.base.blue.light}" },
+        "focus": { "value": "{color.base.neutrals.white}" },
+        "active": { "value": "{color.base.blue.medium}" },
+        "attention" : { "value": "{color.base.yellow}" }
       },
       "borders": {
         "default": { "value": "{color.base.neutrals.light}" },
         "error": { "value": "{color.base.red.dark}" },
         "highlight": { "value": "{color.base.purple}" },
-        "hover": { "value": "{color.base.blue.medium}" }
+        "hover": { "value": "{color.base.blue.medium}" },
+        "focus": { "value": "{color.base.yellow}" },
+        "active": { "value": "{color.base.blue.medium}" },
+        "attention" : { "value": "{color.base.yellow}" }
       },
       "labels": {
         "actionable": { "value": "{color.base.blue.dark}" },
         "default": { "value": "{color.base.neutrals.medium}" },
         "error": { "value": "{color.base.red.dark}" },
-        "hover": { "value": "{color.base.blue.medium}" }
+        "hover": { "value": "{color.base.blue.medium}" },
+        "active": { "value": "{color.base.neutrals.white}" }
       }
     }
   }

@@ -27,6 +27,43 @@ const small: ButtonProps = {
   url: "#",
 };
 
+const primary: ButtonProps = {
+  callback: "",
+  children: "",
+  label: "Primary Button",
+  size: "large",
+  type: "primary",
+  url: "",
+};
+
+const secondary: ButtonProps = {
+  callback: "",
+  children: "",
+  label: "Secondary Button",
+  size: "large",
+  type: "secondary",
+  url: "",
+};
+
+const tertiary: ButtonProps = {
+  callback: "",
+  children: "",
+  label: "Tertiary Button",
+  size: "large",
+  type: "tertiary",
+  url: "",
+};
+
+const disabled: ButtonProps = {
+  callback: "",
+  children: "",
+  disabled: true,
+  label: "Disabled Button",
+  size: "large",
+  type: "primary",
+  url: "",
+};
+
 /**
  * Sample prop definitions for Button's enumerable properties (imported in stories and tests).
  */
@@ -34,6 +71,10 @@ const ButtonArgs = {
   large,
   medium,
   small,
+  primary,
+  secondary,
+  tertiary,
+  disabled
 };
 
 export default ButtonArgs;

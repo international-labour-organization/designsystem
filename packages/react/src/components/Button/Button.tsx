@@ -8,11 +8,12 @@ const Button: FC<ButtonProps> = ({
   callback,
   children,
   className,
+  disabled = false,
   icon,
   iconPosition,
   label,
   size = "large",
-  type,
+  type = "primary",
   url,
 }) => {
   const { prefix } = useGlobalSettings();
@@ -46,7 +47,7 @@ const Button: FC<ButtonProps> = ({
           label={label}
         />
       ) : (
-        <button className={ButtonClasses} onClick={(e) => handleClick(e)}>
+        <button className={ButtonClasses} onClick={(e) => handleClick(e)} disabled={disabled}>
           {label && <span className="button__label">{label}</span>}
         </button>
       )}

@@ -12,7 +12,7 @@
     fill: $color-ux-labels-actionable;
     flex-direction: row;
     font-family: $fonts-display;
-    font-weight: 500;
+    font-weight: map-get($type, 'weights', 'section');
     @include font-styles("label-medium");
     justify-content: space-between;
     margin: 0;

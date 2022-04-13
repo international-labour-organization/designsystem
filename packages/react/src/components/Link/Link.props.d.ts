@@ -1,5 +1,5 @@
-import { ReactNode, MouseEvent } from 'react';
-import { linkTypes } from '../../types';
+import { ReactNode, MouseEvent } from "react";
+import { linkTypes } from "../../types";
 
 export interface LinkProps {
   /**
@@ -10,12 +10,12 @@ export interface LinkProps {
   /**
    * Specify the label for the link
    */
-   label?: html;
+  label?: html;
 
   /**
    * Specify the url for the link's href
    */
-   url?: string;
+  url?: string;
 
   /**
    * Specify an optional className to be added to your Link.
