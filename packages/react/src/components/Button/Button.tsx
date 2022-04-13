@@ -1,4 +1,4 @@
-import { FC } from "react";
+import React, { FC } from "react";
 import classNames from "classnames";
 import useGlobalSettings from "../../hooks/useGlobalSettings";
 import { ButtonProps } from "./Button.props";
@@ -13,6 +13,7 @@ const Button: FC<ButtonProps> = ({
   iconPosition,
   label,
   size = "large",
+  target = "",
   type = "primary",
   url,
 }) => {
@@ -43,11 +44,16 @@ const Button: FC<ButtonProps> = ({
         <Link
           children={children}
           className={ButtonClasses}
+          target={target}
           url={url}
           label={label}
         />
       ) : (
-        <button className={ButtonClasses} onClick={(e) => handleClick(e)} disabled={disabled}>
+        <button
+          className={ButtonClasses}
+          onClick={(e) => handleClick(e)}
+          disabled={disabled}
+        >
           {label && <span className="button__label">{label}</span>}
         </button>
       )}

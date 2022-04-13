@@ -74,7 +74,7 @@ const ButtonArgs = {
   primary,
   secondary,
   tertiary,
-  disabled
+  disabled,
 };
 
 export default ButtonArgs;
