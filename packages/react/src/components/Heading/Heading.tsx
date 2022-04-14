@@ -1,9 +1,9 @@
-import React from "react";
+import { FC } from "react";
 import classNames from "classnames";
 import useGlobalSettings from "../../hooks/useGlobalSettings";
 import { HeadingProps } from "./Heading.props";
 
-const Heading: React.FC<HeadingProps> = ({
+const Heading: FC<HeadingProps> = ({
   level = "h3",
   children,
   className,

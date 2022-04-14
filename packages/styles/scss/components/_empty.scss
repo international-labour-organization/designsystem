@@ -1,0 +1,38 @@
+@use "../tokens" as *;
+@import "../mixins";
+@import "../animations";
+
+.ilo--empty {
+  background-color: $color-base-neutrals-lighter;
+  height: 100%;
+  position: relative;
+  width: 100%;
+  
+  &:before,
+  &:after {
+    animation: emptygradient 2s infinite;
+    border-image: linear-gradient(90deg, $color-base-neutrals-lighter 0%, $color-base-neutrals-light 100%);
+    border-image-slice: 100;
+    border-bottom-style: solid;
+    border-left: none;
+    border-right: none;
+    border-top-style: solid;
+    border-bottom-width: $spacing-ui-padding-lg;
+    border-top-width: $spacing-ui-padding-lg;
+    content: "";
+    height: 80px;
+    left: $spacing-ui-padding-lg;
+    position: absolute;
+    top: $spacing-ui-padding-lg;
+    width: calc(100% - #{$spacing-ui-padding-lg * 2});
+  }
+  
+  &:after {
+    top: 136px;
+  }
+  
+  &.storybook {
+    height: 400px;
+    width: 600px;
+  }
+}
