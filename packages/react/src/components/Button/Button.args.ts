@@ -3,6 +3,7 @@ import { ButtonProps } from "./Button.props";
 const large: ButtonProps = {
   callback: "",
   children: "",
+  icon: "add",
   label: "Large Button",
   size: "large",
   target: "_blank",
@@ -13,6 +14,7 @@ const large: ButtonProps = {
 const medium: ButtonProps = {
   callback: "",
   children: "",
+  icon: "add",
   label: "Medium Button",
   size: "medium",
   type: "primary",
@@ -22,6 +24,7 @@ const medium: ButtonProps = {
 const small: ButtonProps = {
   callback: "",
   children: "",
+  icon: "add",
   label: "Small Button",
   size: "small",
   type: "primary",

@@ -11,6 +11,40 @@
     display: inline-block;
   }
   
+  &.icon {
+    position: relative;
+    
+    .ilo--icon {
+      height: map-get($spacing, 'ui-padding-lg');
+      position: absolute;
+      width: map-get($spacing, 'ui-padding-lg');
+    }
+    
+    &.icon__position--left {
+      .link__label,
+      .button__label {
+        padding-left: calc(map-get($spacing, 'ui-padding-lg') * 2);
+      }
+      
+      .ilo--icon {
+        left: map-get($spacing, 'icons', 'icon-padding-lg');
+        top: map-get($spacing, 'icons', 'icon-padding-lg');
+      }
+    }
+    
+    &.icon__position--right {
+      .link__label,
+      .button__label {
+        padding-right: calc(map-get($spacing, 'ui-padding') * 2);
+      }
+      
+      .ilo--icon {
+        right: map-get($spacing, 'icons', 'icon-padding-lg');
+        top: map-get($spacing, 'icons', 'icon-padding-lg');
+      }
+    }
+  }
+  
   &--large {
     .link__label,
     .button__label {
@@ -25,6 +59,20 @@
       padding: map-get($spacing, 'ui-padding-sm') map-get($spacing, 'ui-padding');
       @include font-styles('label-medium');
     }
+    
+    &.icon {
+      &.icon__position--left {        
+        .ilo--icon {
+          top: map-get($spacing, 'icons', 'icon-padding-m');
+        }
+      }
+      
+      &.icon__position--right {
+        .ilo--icon {
+          top: map-get($spacing, 'icons', 'icon-padding-m');
+        }
+      }
+    }
   }
   
   &--small {
@@ -32,6 +80,32 @@
     .button__label {
       padding: map-get($spacing, 'base') map-get($spacing, 'ui-padding-sm');
       @include font-styles('label-small');
+    }
+    
+    &.icon {
+      &.icon__position--left {
+        .link__label,
+        .button__label {
+          padding-left: calc(map-get($spacing, 'ui-padding') * 2);
+        }
+        
+        .ilo--icon {
+          left: map-get($spacing, 'icons', 'icon-padding-sm');
+          top: map-get($spacing, 'icons', 'icon-padding-sm');
+        }
+      }
+      
+      &.icon__position--right {
+        .link__label,
+        .button__label {
+          padding-right: calc(map-get($spacing, 'ui-padding') * 2);
+        }
+        
+        .ilo--icon {
+          right: map-get($spacing, 'icons', 'icon-padding-sm');
+          top: map-get($spacing, 'icons', 'icon-padding-sm');
+        }
+      }
     }
   }
   

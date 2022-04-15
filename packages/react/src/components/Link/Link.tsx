@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import { FC } from "react";
 import classNames from "classnames";
 import useGlobalSettings from "../../hooks/useGlobalSettings";
 import { LinkProps } from "./Link.props";

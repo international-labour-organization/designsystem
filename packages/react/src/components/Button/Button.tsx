@@ -1,12 +1,12 @@
-import React, { FC } from "react";
+import { FC } from "react";
 import classNames from "classnames";
 import useGlobalSettings from "../../hooks/useGlobalSettings";
 import { ButtonProps } from "./Button.props";
 import { Link } from "../Link";
+import { Icon } from "../Icon";
 
 const Button: FC<ButtonProps> = ({
   callback,
-  children,
   className,
   disabled = false,
   icon,
@@ -26,7 +26,7 @@ const Button: FC<ButtonProps> = ({
     [baseClass]: true,
     [`${baseClass}--${size}`]: size,
     [`${baseClass}--${type}`]: type,
-    [`icon--${icon} icon__position--${icoPos}`]: icon,
+    [`icon icon__position--${icoPos}`]: icon,
   });
 
   /**
@@ -41,13 +41,9 @@ const Button: FC<ButtonProps> = ({
   return (
     <>
       {hasURL ? (
-        <Link
-          children={children}
-          className={ButtonClasses}
-          target={target}
-          url={url}
-          label={label}
-        />
+        <Link className={ButtonClasses} target={target} url={url} label={label}>
+          {icon && <Icon name={icon} hidden={true} />}
+        </Link>
       ) : (
         <button
           className={ButtonClasses}
@@ -55,6 +51,7 @@ const Button: FC<ButtonProps> = ({
           disabled={disabled}
         >
           {label && <span className="button__label">{label}</span>}
+          {icon && <Icon name={icon} hidden={true} />}
         </button>
       )}
     </>
