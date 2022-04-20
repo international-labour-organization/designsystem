@@ -1,8 +1,7 @@
 {
-  "name": "@ilo-org-ui/designsystem-poc",
+  "name": "@ilo-org/designsystem",
   "version": "0.0.1",
-  "description": "A proof of concept for a design system based on un-core",
-  "author": "@justintemps",
+  "description": "A design system for the International Labour Organization",
   "license": "Apache-2.0",
   "main": "index.js",
   "scripts": {
@@ -53,12 +52,6 @@
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
-    "@un/icons": "^10.34.11",
-    "@un/icons-react": "^10.34.11",
-    "@un/layout": "^10.26.7",
-    "@un/styles": "^10.26.8",
-    "@un/themes": "^10.40.6",
-    "@un/type": "^10.30.8",
     "eslint": "^8.11.0",
     "prettier": "^2.6.0",
     "turbo": "^1.1.10",
