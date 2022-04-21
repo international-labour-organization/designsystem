@@ -1,6 +1,6 @@
 "use strict";
 
-const { builders, Metadata } = require("@ilo/icon-build-helpers");
+const { builders, Metadata } = require("@ilo-org/icon-build-helpers");
 const path = require("path");
 
 async function build() {

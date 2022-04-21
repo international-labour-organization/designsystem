@@ -7,7 +7,7 @@ import {
   Children,
 } from "react";
 import classNames from "classnames";
-import { getUpdatedItems } from "@ilo/utils";
+import { getUpdatedItems } from "@ilo-org/utils";
 import useGlobalSettings from "../../hooks/useGlobalSettings";
 import { AccordionProps, AccordionContextProps } from "./Accordion.props";
 import { checkArrayDuplicates } from "../../utils/checkArrayDuplicates";

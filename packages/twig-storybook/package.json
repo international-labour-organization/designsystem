@@ -1,5 +1,5 @@
 {
-  "name": "@ilo/twig-storybook",
+  "name": "@ilo-org/twig-storybook",
   "version": "0.0.1",
   "license": "Apache-2.0",
   "description": "Twig Storybook via Wingsuit",
@@ -29,15 +29,15 @@
     "ci": "npm run lint && npm run build:drupal"
   },
   "dependencies": {
-    "@ilo/fonts": "workspace:*",
-    "@ilo/styles": "workspace:*",
-    "@ilo/themes": "workspace:*",
-    "@ilo/utils": "workspace:*"
+    "@ilo-org/fonts": "workspace:*",
+    "@ilo-org/styles": "workspace:*",
+    "@ilo-org/themes": "workspace:*",
+    "@ilo-org/utils": "workspace:*"
   },
   "devDependencies": {
     "@babel/core": "^7.8.4",
     "@babel/preset-env": "^7.8.4",
-    "@ilo/preset-scss": "workspace:*",
+    "@ilo-org/preset-scss": "workspace:*",
     "@storybook/addon-actions": "^6.4.9",
     "@storybook/addon-essentials": "^6.4.9",
     "@storybook/addon-links": "^6.4.9",

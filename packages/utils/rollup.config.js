@@ -17,13 +17,13 @@ export default [
         file: packageJson.main,
         format: "cjs",
         sourcemap: true,
-        name: "@ilo/utils",
+        name: "@ilo-org/utils",
       },
       {
         file: packageJson.module,
         format: "esm",
         sourcemap: true,
-        name: "@ilo/utils",
+        name: "@ilo-org/utils",
       },
     ],
     plugins: [
