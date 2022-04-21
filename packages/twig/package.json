@@ -1,5 +1,5 @@
 {
-  "name": "@ilo/twig",
+  "name": "@ilo-org/twig",
   "description": "ILO twig component library",
   "version": "0.0.1",
   "license": "Apache-2.0",
@@ -24,9 +24,9 @@
     "directory": "packages/twig"
   },
   "dependencies": {
-    "@ilo/fonts": "workspace:*",
-    "@ilo/styles": "workspace:*",
-    "@ilo/themes": "workspace:*",
+    "@ilo-org/fonts": "workspace:*",
+    "@ilo-org/styles": "workspace:*",
+    "@ilo-org/themes": "workspace:*",
     "twing": "^5.1.0"
   },
   "devDependencies": {
