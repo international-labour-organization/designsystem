@@ -5,7 +5,7 @@
     "alwaysStrict": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
-    "jsx": "react",
+    "jsx": "react-jsx",
     "lib": ["dom", "dom.iterable", "es2017"],
     "module": "esnext",
     "moduleResolution": "node",
