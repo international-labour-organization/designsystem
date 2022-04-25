@@ -1,0 +1,7 @@
+.ilo--list {
+  &__title {
+    @include font-styles("headline-5");
+
+    margin-bottom: 40px;
+  }
+}

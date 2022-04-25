@@ -14,7 +14,7 @@ const ordered: ListProps = {
 
 const horizontal: ListProps = {
   children: "",
-  horizontal: true,
+  alignment: "horizontal",
   ordered: false,
   title: "Horizontal",
 };

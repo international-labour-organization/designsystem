@@ -1,3 +1,4 @@
+import React from "react";
 import { FC, createContext } from "react";
 import classNames from "classnames";
 import useGlobalSettings from "../../hooks/useGlobalSettings";

@@ -1,5 +1,5 @@
-import { MouseEvent } from "react";
 export { default as ListItem } from "./ListItem";
+import { listAlignment } from "../../types";
 
 export interface ListProps {
   /**
@@ -15,13 +15,13 @@ export interface ListProps {
   /**
    * Declare horizontal or not
    */
-   horizontal?: boolean;
+  alignment?: listAlignment;
 
   /**
    * Specify an optional title
    */
   title?: string;
-   
+
   /**
    * Specify an optional className to be added to your accordion.
    */
@@ -29,4 +29,7 @@ export interface ListProps {
 }
 
 export interface ListContextProps {
+  activeItems: string[];
+  alignment?: listAlignment;
+  headingLevel?: headingLevel;
 }

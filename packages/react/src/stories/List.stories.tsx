@@ -96,17 +96,8 @@ const UnorderedTemplate: Story<ListProps> = () => (
   <List {...listArgs.unordered}>
     <ListItem id="unordered1">
       <p>Content of Item 1</p>
-      <p>Content of Item 1</p>
-      <p>Content of Item 1</p>
-      <p>Content of Item 1</p>
-      <p>Content of Item 1</p>
     </ListItem>
     <ListItem id="unordered2">
-      <p>Content of Item 2</p>
-      <p>Content of Item 2</p>
-      <p>Content of Item 2</p>
-      <p>Content of Item 2</p>
-      <p>Content of Item 2</p>
       <p>Content of Item 2</p>
     </ListItem>
   </List>
@@ -123,17 +114,8 @@ const UnorderedTemplate: Story<ListProps> = () => (
   <List {...listArgs.unordered}>
     <ListItem id="unordered1">
       <p>Content of Item 1</p>
-      <p>Content of Item 1</p>
-      <p>Content of Item 1</p>
-      <p>Content of Item 1</p>
-      <p>Content of Item 1</p>
     </ListItem>
     <ListItem id="unordered2">
-      <p>Content of Item 2</p>
-      <p>Content of Item 2</p>
-      <p>Content of Item 2</p>
-      <p>Content of Item 2</p>
-      <p>Content of Item 2</p>
       <p>Content of Item 2</p>
     </ListItem>
   </List>

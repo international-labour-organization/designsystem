@@ -1,31 +1,20 @@
-import {
-  useState,
-  useEffect,
-  createContext,
-  FC,
-  ReactElement,
-  Children,
-} from "react";
+import React from "react";
+import { useState, createContext, FC } from "react";
 import classNames from "classnames";
 import useGlobalSettings from "../../hooks/useGlobalSettings";
 import { ListProps, ListContextProps } from "./List.props";
 
 export const ListContext = createContext({} as ListContextProps);
 
-const List: FC<ListProps> = ({
-  children,
-  className,
-  horizontal,
-  ordered,
-}) => {
+const List: FC<ListProps> = ({ children, className, alignment, ordered, title }) => {
   const { prefix } = useGlobalSettings();
   const baseClass = `${prefix}--list`;
-  const [activeItems, setActiveItems] = useState<string[]>([]);
+  const [activeItems] = useState<string[]>([]);
 
   const listClasses = classNames(className, {
     [baseClass]: true,
-    [`${baseClass}--${horizontal}`]: horizontal,
-    [`${baseClass}--${ordered}`]: ordered,
+    [`${baseClass}--${alignment}`]: alignment,
+    [`${baseClass}--ordered`]: ordered,
   });
 
   return (
@@ -34,8 +23,14 @@ const List: FC<ListProps> = ({
         activeItems,
       }}
     >
-      {ordered && <ol className={listClasses}>{children}</ol>}
-      {!ordered && <ul className={listClasses}>{children}</ul>}
+      {ordered && <ol className={listClasses}>
+        {title && <h5 className={`${baseClass}__title`}>{title}</h5>}
+        {children}
+      </ol>}
+      {!ordered && <ul className={listClasses}>
+        {title && <h5 className={`${baseClass}__title`}>{title}</h5>}
+        {children}
+      </ul>}
     </ListContext.Provider>
   );
 };
