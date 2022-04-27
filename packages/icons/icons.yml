@@ -10,8 +10,20 @@
     - ILO Icons
   sizes:
     - glyph
+- name: listarrow
+  friendly_name: listarrow
+  aliases:
+    - ILO Icons
+  sizes:
+    - glyph
 - name: minus
   friendly_name: minus
+  aliases:
+    - ILO Icons
+  sizes:
+    - glyph
+- name: quote
+  friendly_name: quote
   aliases:
     - ILO Icons
   sizes:

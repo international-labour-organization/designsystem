@@ -18,6 +18,10 @@
   "publishConfig": {
     "access": "public"
   },
+  "files": [
+    "scss",
+    "svg"
+  ],
   "scripts": {
     "build": "pnpm run clean && node tasks/build.js",
     "download-figma": "pnpm run clean && node tasks/download.js",

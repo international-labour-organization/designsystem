@@ -4,13 +4,6 @@
 @use "tokens" as *;
 @use "functions";
 
-@function map-deep-get($map, $keys...) {
-  @each $key in $keys {
-    $map: map-get($map, $key);
-  }
-  @return $map;
-}
-
 // ======================================
 // Output font styles
 // ======================================
@@ -18,9 +11,9 @@
 /// @param {String} $stylename - the name of the style to get
 /// @return {CSS} font size, line-height, and letter-spacing for this type style
 @mixin font-styles($stylename) {
-  font-size: map-deep-get($type, $stylename, "size");
-  letter-spacing: map-deep-get($type, $stylename, "letter-spacing");
-  line-height: map-deep-get($type, $stylename, "line-height");
+  font-size: map-get($type, $stylename, "size");
+  letter-spacing: map-get($type, $stylename, "letter-spacing");
+  line-height: map-get($type, $stylename, "line-height");
 }
 
 // ======================================
@@ -77,4 +70,37 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+// ======================================
+// Breakpoint
+// ======================================
+
+@mixin breakpoint($breakpoint, $max: false) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @if not $max {
+      @media screen and (min-width: map-get($breakpoints, $breakpoint)) {
+        @content;
+      }
+    }
+    
+    @if $max {
+      @media screen and (max-width: #{map-get($breakpoints, $breakpoint) - 1px}) {
+        @content;
+      }
+    }
+  }
+}
+
+// ======================================
+// Data URL Icon
+// ======================================
+
+@mixin dataurlicon($name, $color: false) {
+  $iconcolor : $color-base-neutrals-black;
+  @if $color != false {
+    $iconcolor : $color;
+  }
+  $icon : str-slice(map-get($icons, $name), 0, -15) + " fill='#{$iconcolor}' /%3e%3c/svg%3e";
+  background-image: url($icon);
 }

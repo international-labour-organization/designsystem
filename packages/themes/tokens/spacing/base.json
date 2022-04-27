@@ -1,6 +1,10 @@
 {
   "spacing": {
     "base": { "value": "8px" },
+    "content-padding" : { "value": "28px" },
+    "content-padding-lg": { "value": "44px" },
+    "content-padding-xl": { "value": "72px" },
+    "horizontal-rule": { "value": "3px" },
     "ui-padding": { "value": "16px" },
     "ui-padding-lg": { "value": "24px" },
     "ui-padding-xl": { "value": "32px" }

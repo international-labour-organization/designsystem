@@ -53,5 +53,4 @@ const RichTextTemplate: Story<RichTextProps> = (args) => (
 
 // enumerate the props for the rich text component
 BaseRichText.args = richTextArgs.richtext;
-console.log(BaseRichText.args);
 BaseRichText.storyName = 'Rich Text';

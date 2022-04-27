@@ -23,6 +23,7 @@ async function build() {
   await Promise.all([
     builders.svg.run(metadata, { output }),
     builders.vanilla.run(metadata, { output }),
+    builders.scss.run(metadata, { output }),
   ]);
 }
 

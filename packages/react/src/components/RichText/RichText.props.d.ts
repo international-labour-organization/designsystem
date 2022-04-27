@@ -7,5 +7,5 @@ export interface RichTextProps {
   /**
    * Specify the html content
    */
-  content?: string;
+  content?: html;
 }

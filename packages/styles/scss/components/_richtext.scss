@@ -1,0 +1,106 @@
+@use "../tokens" as *;
+@import "../mixins";
+
+.ilo--richtext {
+  font-family: $fonts-copy;
+  font-weight: 400;
+  @include font-styles("body-small");
+  
+  img {
+    margin-bottom: map-get($spacing, "content-padding");
+    margin-top: map-get($spacing, "content-padding-lg");
+    width: 100%;
+  }
+  
+  p {
+    margin-bottom: map-get($spacing, "content-padding");
+    
+    img {
+      margin-top: map-get($spacing, "content-padding-xl");
+    }
+  }
+  
+  em, i {
+    font-style: italic;
+  }
+  
+  strong, b {
+    font-weight: 700;
+  }
+  
+  hr {
+    background-color: $color-ux-horizontal-rule-default;
+    border: none;
+    height: map-get($spacing, "horizontal-rule");
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: $fonts-display;
+    font-weight: 700;
+    margin-bottom: map-get($spacing, "content-padding");
+    margin-top: map-get($spacing, "content-padding-lg");
+  }
+  
+  h1 {
+    @include font-styles("headline-2");
+  }
+  
+  h2 {
+    @include font-styles("headline-3");
+  }
+  
+  h3 {
+    @include font-styles("headline-4");
+  }
+  
+  h4 {
+    @include font-styles("headline-5");
+  }
+  
+  h5, h6 {
+    @include font-styles("headline-6");
+  }
+  
+  ul, ol {
+    li {
+      &::before {
+          content: "";
+          display: inline-block;
+          height: 14px;
+          margin-right: 12px;
+          width: 12px;
+          @include dataurlicon("listarrow");
+      }
+      margin-bottom: map-get($spacing, "content-padding");
+    }
+    margin-bottom: map-get($spacing, "content-padding");
+  }
+  
+  @include breakpoint("medium") {
+    @include font-styles("base");
+    
+    h1 {
+      @include font-styles("headline-1");
+    }
+    
+    h2 {
+      @include font-styles("headline-2");
+    }
+    
+    h3 {
+      @include font-styles("headline-3");
+    }
+    
+    h4 {
+      @include font-styles("headline-4");
+    }
+    
+    h5 {
+      @include font-styles("headline-5");
+    }
+    
+    h6 {
+      @include font-styles("headline-6");
+    }
+  }
+}
