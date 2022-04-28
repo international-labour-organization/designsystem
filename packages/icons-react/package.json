@@ -1,5 +1,5 @@
 {
-  "name": "@ilo/icons-react",
+  "name": "@ilo-org/icons-react",
   "description": "React components for icons in digital and software products using ILO's Design System",
   "version": "0.0.1",
   "author": "@justintemps",
@@ -42,8 +42,8 @@
     "@babel/core": "^7.14.6",
     "@carbon/icon-helpers": "^10.19.0",
     "@carbon/telemetry": "0.0.0-alpha.6",
-    "@ilo/icon-build-helpers": "workspace:0.0.1",
-    "@ilo/icons": "workspace:0.0.1",
+    "@ilo-org/icon-build-helpers": "workspace:0.0.1",
+    "@ilo-org/icons": "workspace:0.0.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "prop-types": "^15.7.2"

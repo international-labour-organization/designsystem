@@ -6,23 +6,23 @@
 
 ## Getting started
 
-To install `@ilo/icon-build-helpers` in your project, you will need to run
+To install `@ilo-org/icon-build-helpers` in your project, you will need to run
 the following command using [npm](https://www.npmjs.com/):
 
 ```bash
-npm install -S @ilo/icon-build-helpers
+npm install -S @ilo-org/icon-build-helpers
 ```
 
 If you prefer [Yarn](https://yarnpkg.com/en/), use the following command
 instead:
 
 ```bash
-yarn add @ilo/icon-build-helpers
+yarn add @ilo-org/icon-build-helpers
 ```
 
 ## Usage
 
-`@ilo/icon-build-helpers` is a private module in the Carbon Design System
+`@ilo-org/icon-build-helpers` is a private module in the Carbon Design System
 monorepo. The purpose of this module is to centralize tooling for:
 
 - Searching a directory of `.svg` assets and structuring them in terms of size
@@ -36,8 +36,8 @@ monorepo. The purpose of this module is to centralize tooling for:
 As a result, these file power the generation of the following SVG-based
 projects:
 
-- `@ilo/icons`
-- `@ilo/icons-react`
+- `@ilo-org/icons`
+- `@ilo-org/icons-react`
 
 ## 🙌 Contributing
 
