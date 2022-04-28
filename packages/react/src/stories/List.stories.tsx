@@ -16,12 +16,13 @@ import { ListProps } from "../components/List/List.props";
 import listArgs from "../components/List/List.args";
 
 const sizeDoc = `
-By changing the \`ordered\` prop you can use switch from a <ol> to a <ul>.
+By changing the \`ordered\` prop you can use switch from a \`<ol>\` to a \`<ul>\`
 
 | ordered   |  Description  |
 |----------|-------------|
-| \`true\` | make a <ol> |
-| \`false\` | make a <ul>   |
+| \`ordered\` | make a \`<ol>\` |
+| \`unordered\` | make a \`<ul>\`   |
+| \`unstyled\` | make a \`<ul>\` without markers  |
 `;
 
 /**
@@ -68,19 +69,19 @@ export default {
 const OrderedTemplate: Story<ListProps> = () => (
   <List {...listArgs.ordered}>
     <ListItem id="ordered1">
-      <p>Content of Item 1</p>
-      <p>Content of Item 1</p>
-      <p>Content of Item 1</p>
-      <p>Content of Item 1</p>
-      <p>Content of Item 1</p>
+      <p>Arabica. Arabica is the most popular type of coffee, hands down.</p>
     </ListItem>
     <ListItem id="ordered2">
-      <p>Content of Item 2</p>
-      <p>Content of Item 2</p>
-      <p>Content of Item 2</p>
-      <p>Content of Item 2</p>
-      <p>Content of Item 2</p>
-      <p>Content of Item 2</p>
+      <p>Robusta. While Arabica is the most popular, Robusta is cheaper and stronger.</p>
+    </ListItem>
+    <ListItem id="ordered3">
+      <p>Black coffee is as simple as it gets with ground coffee beans steeped in hot water, served warm.</p>
+    </ListItem>
+    <ListItem id="ordered4">
+      <p>Latte. Made with espresso and hot steamed milk, milkier than a cappuccino.</p>
+    </ListItem>
+    <ListItem id="ordered5">
+      <p>Cappuccino. Made with espresso and milk that has been frothed up with pressurized steam.</p>
     </ListItem>
   </List>
 );
@@ -95,28 +96,73 @@ const OrderedTemplate: Story<ListProps> = () => (
 const UnorderedTemplate: Story<ListProps> = () => (
   <List {...listArgs.unordered}>
     <ListItem id="unordered1">
-      <p>Content of Item 1</p>
+      <p>Arabica. Arabica is the most popular type of coffee, hands down.</p>
     </ListItem>
     <ListItem id="unordered2">
-      <p>Content of Item 2</p>
+      <p>Robusta. While Arabica is the most popular, Robusta is cheaper and stronger.</p>
+    </ListItem>
+    <ListItem id="unordered3">
+      <p>Black coffee is as simple as it gets with ground coffee beans steeped in hot water, served warm.</p>
+    </ListItem>
+    <ListItem id="unordered4">
+      <p>Latte. Made with espresso and hot steamed milk, milkier than a cappuccino.</p>
+    </ListItem>
+    <ListItem id="unordered5">
+      <p>Cappuccino. Made with espresso and milk that has been frothed up with pressurized steam.</p>
     </ListItem>
   </List>
 );
 
 /**
- * Unordered Template
+ * Unstyled Template
+ *
+ * create a Storybook template for this component
+ *
+ *@param (Object) args - props to be passed to the component
+ */
+ const UnstyledTemplate: Story<ListProps> = () => (
+  <List {...listArgs.unstyled}>
+    <ListItem id="unstyled1">
+      <p>Arabica. Arabica is the most popular type of coffee, hands down.</p>
+    </ListItem>
+    <ListItem id="unstyled2">
+      <p>Robusta. While Arabica is the most popular, Robusta is cheaper and stronger.</p>
+    </ListItem>
+    <ListItem id="unstyled3">
+      <p>Black coffee is as simple as it gets with ground coffee beans steeped in hot water, served warm.</p>
+    </ListItem>
+    <ListItem id="unstyled4">
+      <p>Latte. Made with espresso and hot steamed milk, milkier than a cappuccino.</p>
+    </ListItem>
+    <ListItem id="unstyled5">
+      <p>Cappuccino. Made with espresso and milk that has been frothed up with pressurized steam.</p>
+    </ListItem>
+  </List>
+);
+
+/**
+ * Horizontal Template
  *
  * create a Storybook template for this component
  *
  *@param (Object) args - props to be passed to the component
  */
  const HorizontalTemplate: Story<ListProps> = () => (
-  <List {...listArgs.unordered}>
-    <ListItem id="unordered1">
-      <p>Content of Item 1</p>
+  <List {...listArgs.horizontal}>
+    <ListItem id="horizontal1">
+      <p>Arabica</p>
     </ListItem>
-    <ListItem id="unordered2">
-      <p>Content of Item 2</p>
+    <ListItem id="horizontal2">
+      <p>Robusta</p>
+    </ListItem>
+    <ListItem id="horizontal3">
+      <p>Black coffee</p>
+    </ListItem>
+    <ListItem id="horizontal4">
+      <p>Latte</p>
+    </ListItem>
+    <ListItem id="horizontal5">
+      <p>Cappuccino</p>
     </ListItem>
   </List>
 );
@@ -134,6 +180,12 @@ export const ListOrdered = OrderedTemplate.bind({});
 export const ListUnordered = UnorderedTemplate.bind({});
 
 /**
+ * Unstyled List Instance
+ *
+ */
+ export const ListUnstyled = UnstyledTemplate.bind({});
+
+/**
  * Horizontal List Instance
  *
  */
@@ -148,5 +200,9 @@ ListUnordered.args = listArgs.unordered;
 ListUnordered.storyName = "Unordered List";
 
 // enumerate the props
+ListUnstyled.args = listArgs.unstyled;
+ListUnstyled.storyName = "Unstyled List";
+
+// enumerate the props
 ListHorizontal.args = listArgs.horizontal;
-ListHorizontal.storyName = "horizListHorizontal List";
+ListHorizontal.storyName = "Horizontal List";

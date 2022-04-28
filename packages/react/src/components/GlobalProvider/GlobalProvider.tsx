@@ -1,4 +1,3 @@
-import React from "react";
 import { createContext, FC } from "react";
 import { prefix as defaultPrefix } from "../../theme.json";
 import {

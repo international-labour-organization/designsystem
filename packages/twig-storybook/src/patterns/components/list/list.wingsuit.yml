@@ -1,0 +1,48 @@
+list:
+  use: '@components/list/list.twig'
+  label: List
+  description: A list.
+  fields:
+    title:
+      type: text
+      label: Label
+      description: The list item's heading.
+      preview:
+        faker: lorem.word
+    items:
+      type: object
+      label: Items
+      description: The list items.
+      required: true
+      preview:
+        - content: Arabica. Arabica is the most popular type of coffee, hands down.
+          id: item1
+        - content: Robusta. While Arabica is the most popular, Robusta is cheaper and stronger.
+          id: item2
+        - content: Black coffee is as simple as it gets with ground coffee beans steeped in hot water, served warm.
+          id: item3
+        - content: Latte. Made with espresso and hot steamed milk, milkier than a cappuccino.
+          id: item4
+        - content: Cappuccino. Made with espresso and milk that has been frothed up with pressurized steam.
+          id: item5
+  settings: 
+    ordered:
+      type: select
+      label: Ordered
+      description: The order for the list.
+      required: false
+      options:
+        ordered: Ordered
+        unordered: Unordered
+        unstyled: Unstyled
+      preview: 'unstyled'
+    alignment:
+      type: select
+      label: Alignment
+      description: Is the list displayed horizontally?
+      options:
+        default: Default
+        horizontal: Horizontal
+      preview: 'default'
+      required: false
+  visibility: storybook

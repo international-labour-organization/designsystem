@@ -1,4 +1,3 @@
-import React from "react";
 import { FC, useContext, MouseEvent } from "react";
 import classNames from "classnames";
 import { Add24, Minus24 } from "@ilo-org/icons-react";

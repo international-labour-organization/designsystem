@@ -1,5 +1,5 @@
 export { default as ListItem } from "./ListItem";
-import { listAlignment } from "../../types";
+import { listAlignment, listOrder } from "../../types";
 
 export interface ListProps {
   /**
@@ -8,12 +8,12 @@ export interface ListProps {
   children: ReactElement<ListItem> | Array<ReactElement<ListItem>>;
 
   /**
-   * Declare ordered or not
+   * Declare ordered, unordered or unstyled
    */
-  ordered?: boolean;
+  ordered?: listOrder;
 
   /**
-   * Declare horizontal or not
+   * Declare horizontal or default
    */
   alignment?: listAlignment;
 
@@ -31,5 +31,6 @@ export interface ListProps {
 export interface ListContextProps {
   activeItems: string[];
   alignment?: listAlignment;
+  ordered?: listOrder;
   headingLevel?: headingLevel;
 }

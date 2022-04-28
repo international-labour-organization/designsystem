@@ -1,7 +1,58 @@
+@use "../tokens" as *;
+@import "../mixins";
+
 .ilo--list {
+  &--ordered {
+    list-style: decimal;
+  }
+
+  &--unordered {
+    list-style: initial;
+    list-style-type: disclosure-closed;
+  }
+
+  &--unstyled {
+    list-style: none;
+
+    .ilo--list__item {
+      margin-left: 0;
+      padding-left: 0;
+    }
+  }
+
+  &--horizontal {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+
+    .ilo--list__title {
+      margin-bottom: $spacing-base;
+      margin-right: $spacing-ui-padding-heading;
+    }
+
+    .ilo--list__item {
+      margin-bottom: $spacing-base;
+      margin-left: 0;
+      margin-right: $spacing-ui-padding-heading;
+      padding-left: 0;
+    }
+  }
+
   &__title {
     @include font-styles("headline-5");
+    
+    font-family: $fonts-display;
+    font-weight: 700;
+    margin-bottom: $spacing-ui-padding-heading;
+  }
 
-    margin-bottom: 40px;
+  &__item {
+    @include font-styles("base");
+
+    font-family: $fonts-copy;
+    margin-bottom: $spacing-ui-padding-xl;
+    margin-left: $spacing-ui-padding-lg;
+    padding-left: $spacing-base;
   }
 }

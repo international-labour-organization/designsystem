@@ -2,21 +2,27 @@ import { ListProps } from "./List.props";
 
 const unordered: ListProps = {
   children: "",
-  ordered: false,
-  title: "Unordered",
+  ordered: "unordered",
+  title: "Unordered List Title",
+};
+
+const unstyled: ListProps = {
+  children: "",
+  ordered: "unstyled",
+  title: "Unstyled List Title",
 };
 
 const ordered: ListProps = {
   children: "",
-  ordered: true,
-  title: "Ordered",
+  ordered: "ordered",
+  title: "Ordered List Title",
 };
 
 const horizontal: ListProps = {
   children: "",
   alignment: "horizontal",
-  ordered: false,
-  title: "Horizontal",
+  ordered: "unordered",
+  title: "Horizontal List Title",
 };
 
 /**
@@ -25,6 +31,7 @@ const horizontal: ListProps = {
 const ListArgs = {
   horizontal,
   ordered,
+  unstyled,
   unordered,
 };
 

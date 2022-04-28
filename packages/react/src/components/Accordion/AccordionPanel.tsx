@@ -1,4 +1,3 @@
-import React from "react";
 import { FC, useContext } from "react";
 import classNames from "classnames";
 import useGlobalSettings from "../../hooks/useGlobalSettings";

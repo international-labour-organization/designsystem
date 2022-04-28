@@ -1,0 +1,30 @@
+{#
+  LIST COMPONENT
+#}
+{% if ordered == "ordered" %}
+<ol class="ilo--list ilo--list--{{ ordered|default('ordered') }}" data-loadcomponent="List">
+  {% if title %}
+    <h5 class="ilo--list__title">{{ title }}</h5>
+  {% endif %}
+  {% for item in items %}
+    {% include "@components/list/list-item.twig" with {
+      label: item.label,
+      content: item.content,
+      id: item.id,
+    } only %}
+  {% endfor %}
+</ol>
+{% else %}
+<ul class="ilo--list ilo--list--{{ ordered|default('unordered') }} ilo--list--{{ alignment|default('') }}" data-loadcomponent="List">
+  {% if title %}
+    <h5 class="ilo--list__title">{{ title }}</h5>
+  {% endif %}
+  {% for item in items %}
+    {% include "@components/list/list-item.twig" with {
+      label: item.label,
+      content: item.content,
+      id: item.id,
+    } only %}
+  {% endfor %}
+</ul>
+{% endif %}

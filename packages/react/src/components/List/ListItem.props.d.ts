@@ -19,11 +19,6 @@ export interface ListItemProps {
   children: ReactNode;
 
   /**
-   * Declare bolding for items
-   */
-  isBold?: boolean;
-
-  /**
    * Specify an optional className to be added to your Button.
    */
   className?: string;

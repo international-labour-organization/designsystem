@@ -1,4 +1,3 @@
-import React from "react";
 import type { DecoratorFn } from "@storybook/react";
 import { GlobalProvider } from "../src/components/GlobalProvider";
 import { prefix } from "../src/theme.json";
