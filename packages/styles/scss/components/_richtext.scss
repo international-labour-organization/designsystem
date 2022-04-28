@@ -6,6 +6,10 @@
   font-weight: 400;
   @include font-styles("body-small");
   
+  a {
+    @include linkstyles();
+  }
+  
   img {
     margin-bottom: map-get($spacing, "content-padding");
     margin-top: map-get($spacing, "content-padding-lg");
