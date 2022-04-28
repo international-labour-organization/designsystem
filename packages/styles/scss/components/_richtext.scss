@@ -16,7 +16,7 @@
     margin-bottom: map-get($spacing, "content-padding");
     
     img {
-      margin-top: map-get($spacing, "content-padding-xl");
+      margin-top: map-get($spacing, "content-padding-xxl");
     }
   }
   
@@ -76,6 +76,58 @@
     margin-bottom: map-get($spacing, "content-padding");
   }
   
+  blockquote { 
+    background-position: right top;
+    background-repeat: no-repeat;
+    background-size: 72px 40px;
+    display: block;
+    margin: map-get($spacing, "content-padding-med") 0;
+    padding: map-get($spacing, "content-padding-xl") 0 map-get($spacing, "content-padding-med") map-get($spacing, "content-padding-med");
+    position: relative;
+    width: 100%;
+    @include dataurlicon("triangle", $color-ux-background-highlight);
+    
+    p {
+      color: $color-font-blockquote;
+      font-weight: 300;
+      margin-bottom: map-get($spacing, "content-padding-med");
+      padding: 0 map-get($spacing, "content-padding-xl") 0 0;
+      position: relative;
+      @include font-styles("pull-quote-sm");
+      
+      &:after {
+        background-repeat: no-repeat;
+        bottom: 0;
+        content: "";
+        display: inline-block;
+        height: 20px;
+        position: absolute;
+        right: 0;
+        transform: scaleX(-1);
+        width: 26.5px;
+        @include dataurlicon("quote", $color-font-blockquote);   
+      }
+    }
+    
+    cite {
+      color: $color-font-cite;
+      font-weight: 400;
+      @include font-styles("pull-quote-cite");
+    }
+    
+    &:before {
+      background-repeat: no-repeat;
+      content: "";
+      display: inline-block;
+      height: 40px;
+      left: 0;
+      position: absolute;
+      width: 53px;
+      top: 0;
+      @include dataurlicon("quote", $color-font-blockquote);   
+    }
+  }
+  
   @include breakpoint("medium") {
     @include font-styles("base");
     
@@ -101,6 +153,29 @@
     
     h6 {
       @include font-styles("headline-6");
+    }
+    
+    blockquote { 
+      background-size: 86px 48px;
+      margin: map-get($spacing, "content-padding-med") 0;
+      padding: map-get($spacing, "content-padding-xxxl") 0 map-get($spacing, "content-padding-lg") map-get($spacing, "content-padding-lg");
+      
+      p {
+        margin-bottom: map-get($spacing, "content-padding-lg");
+        padding: 0 map-get($spacing, "content-padding-lg") 0 0;
+        position: relative;
+        @include font-styles("pull-quote-lg");
+        
+        &:after {
+          height: 24px;
+          width: 32px;  
+        }
+      }
+      
+      &:before {
+        height: 48px;
+        width: 64px;   
+      }
     }
   }
 }

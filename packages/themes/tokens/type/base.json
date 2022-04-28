@@ -78,10 +78,20 @@
       "letter-spacing": { "value": "-0.02em" },
       "line-height": { "value": "24.26px" }
     },
-    "pull-quote": {
+    "pull-quote-sm": {
+      "size": { "value": "29.16px" },
+      "letter-spacing": { "value": "-0.035em" },
+      "line-height": { "value": "36.45px" }
+    },
+    "pull-quote-lg": {
       "size": { "value": "36.45px" },
       "letter-spacing": { "value": "-0.035em" },
       "line-height": { "value": "43.74px" }
+    },
+    "pull-quote-cite": {
+      "size": { "value": "14.93px" },
+      "letter-spacing": { "value": "-0.02em" },
+      "line-height": { "value": "20.16px" }
     }
   }
 }
