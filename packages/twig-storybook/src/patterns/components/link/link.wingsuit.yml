@@ -1,0 +1,24 @@
+link:
+  use: '@components/link/link.twig'
+  label: Link
+  description: A component for displaying a link.
+  fields:
+    url:
+      type: string
+      label: URL
+      description: A string to be used as a url
+      preview: "http://www.ilo.org"
+      required: true
+    target:
+      type: string
+      label: target
+      description: If we want to set the target attribute, the string to use
+      preview: "__blank"
+      required: false
+    label:
+      type: string
+      label: label
+      description: Optional link label
+      preview: "Link"
+      required: false
+  visibility: storybook
