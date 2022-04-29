@@ -1,4 +1,4 @@
-import React, { FC } from "react";
+import { FC } from "react";
 import classNames from "classnames";
 import useGlobalSettings from "../../hooks/useGlobalSettings";
 import { LinkProps } from "./Link.props";
@@ -13,21 +13,33 @@ const Link: FC<LinkProps> = ({
   ...rest
 }) => {
   const { prefix } = useGlobalSettings();
-  const baseClass = `${prefix}--link`;
+  const baseClass =
+    typeof className !== "undefined" && className.includes("button")
+      ? ""
+      : `${prefix}--link`;
 
-  const linkClasses = classNames(className, {
+  const LinkClasses = classNames(className, {
     [baseClass]: true,
     [`${baseClass}--${theme}`]: theme,
   });
-  
+
   function createMarkup() {
-    return {__html: label};
+    return { __html: label };
   }
 
   return (
-    <a className={linkClasses} href={url} target={target} rel={target ? "noopener noreferrer": ''} {...rest}>
+    <a
+      className={LinkClasses}
+      href={url}
+      target={target}
+      rel={target ? "noopener noreferrer" : ""}
+      {...rest}
+    >
       {label && (
-        <span className="link__label" dangerouslySetInnerHTML={createMarkup()}></span>
+        <span
+          className="link__label"
+          dangerouslySetInnerHTML={createMarkup()}
+        ></span>
       )}
       {children}
     </a>
