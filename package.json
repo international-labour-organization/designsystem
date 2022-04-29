@@ -5,7 +5,7 @@
   "license": "Apache-2.0",
   "main": "index.js",
   "scripts": {
-    "build": "pnpm turbo run build",
+    "build:all": "pnpm turbo run build",
     "build:brand-assets": "pnpm run build --filter=@ilo-org/brand-assets",
     "build:icons": "pnpm run build --filter=@ilo-org/icons",
     "build:icons-react": "pnpm run build --filter=@ilo-org/icons-react",
@@ -14,14 +14,16 @@
     "build:themes": "pnpm run build --filter=@ilo-org/themes",
     "build:twig": "pnpm run build --filter=@ilo-org/twig",
     "build:utils": "pnpm run build --filter=@ilo-org/utils",
-    "clean": "pnpm recursive exec -- rm -rf node_modules; rm shrinkwrap.yaml; rm -rf node_modules",
+    "clean": "pnpm recursive exec -- rm -rf node_modules; rm -f shrinkwrap.yaml; rm -rf node_modules",
     "install:all": "pnpm recursive install",
-    "format:react": "pnpm run format --filter=@ilo-org/react",
+    "format:all": "pnpm turbo run format:fix",
+    "lint:all": "pnpm turbo run lint:fix",
     "lint:react": "pnpm run lint --filter=@ilo-org/react",
     "lint:utils": "pnpm run lint --filter=@ilo-org/utils",
     "lint:fix:react": "pnpm run lint:fix --filter=@ilo-org/react",
     "lint:fix:utils": "pnpm run lint:fix --filter=@ilo-org/utils",
     "lint:brand-assets": "pnpm lint --filter=@ilo-org/brand-assets",
+    "prepare": "husky install",
     "serve:twig": "pnpm run serve --filter=@ilo-org/twig",
     "start": "pnpm run storybook",
     "start:react-storybook": "pnpm run storybook --filter=@ilo-org/react",
@@ -29,9 +31,9 @@
     "start:static": "pnpm run storybook:static",
     "storybook": "cd packages/react && pnpm run storybook",
     "storybook:static": "cd packages/react && pnpm run storybook:static",
+    "test:all": "pnpm turbo run test",
     "test:react": "pnpm run test --filter=@ilo-org/react",
-    "test:utils": "pnpm run test --filter=@ilo-org/utils",
-    "prepare": "husky install"
+    "test:utils": "pnpm run test --filter=@ilo-org/utils"
   },
   "repository": {
     "type": "git",
@@ -52,7 +54,7 @@
     "husky": "^7.0.4",
     "lint-staged": "^12.4.1",
     "prettier": "^2.6.0",
-    "turbo": "^1.1.10",
+    "turbo": "^1.2.5",
     "typescript": "^4.6.2"
   },
   "lint-staged": {
