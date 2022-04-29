@@ -5,9 +5,9 @@ import { ButtonProps } from '../components/Button/Button.props';
 import buttonArgs from '../components/Button/Button.args';
 
 const themeDoc = `
-By changing the \`theme\` prop you can change the size of the button. By default this is set to \`large\`.
+By changing the \`size\` prop you can change the size of the button. By default this is set to \`large\`.
 
-| Theme   |  Description  |
+| Size   |  Description  |
 |----------|-------------|
 | \`large\` | Button theme for a large button. |
 | \`medium\` | Button theme for a medium button. |
@@ -17,7 +17,7 @@ By changing the \`theme\` prop you can change the size of the button. By default
 const typeDoc = `
 By changing the \`type\` prop you can change the type of the button, which affects the design of its default state. By default this is set to \`primary\`.
 
-| Theme   |  Description  |
+| Type   |  Description  |
 |----------|-------------|
 | \`primary\` | Button type for a primary button. |
 | \`secondary\` | Button type for a secondary button. |

@@ -1,7 +1,7 @@
 import { createElement, FC } from "react";
 import useGlobalSettings from "../../hooks/useGlobalSettings";
 import { IconProps } from "./Icon.props";
-import * as icons from "@ilo/icons-react";
+import * as icons from "@ilo-org/icons-react";
 
 const Icon: FC<IconProps> = ({ hidden, name }) => {
   const { prefix } = useGlobalSettings();

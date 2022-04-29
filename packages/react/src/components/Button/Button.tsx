@@ -16,6 +16,7 @@ const Button: FC<ButtonProps> = ({
   target = "",
   type = "primary",
   url,
+  ...rest
 }) => {
   const { prefix } = useGlobalSettings();
   const baseClass = `${prefix}--button`;
