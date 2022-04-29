@@ -22,7 +22,8 @@
   ],
   "dependencies": {
     "@ilo-org/fonts": "workspace:*",
-    "@ilo-org/themes": "workspace:*"
+    "@ilo-org/themes": "workspace:*",
+    "@ilo-org/icons": "workspace:*"
   },
   "devDependencies": {
     "sass": "^1.49.9"
