@@ -1,7 +1,7 @@
 {#
   LINK COMPONENT
 #}
-<a class="ilo--link" href="{{url}}"{% if target %} target={{target}} rel={target ? "noopener noreferrer": ''}{% endif %}>
+<a class="{{prefix}}--link" href="{{url}}"{% if target %} target={{target}} rel={target ? "noopener noreferrer": ''}{% endif %}>
   {% if label %}
     <span className="link__label">{{label}}</span>
   {% endif %}

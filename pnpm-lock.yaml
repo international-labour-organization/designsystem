@@ -454,6 +454,7 @@ importers:
       eslint-plugin-prettier: ^3.1.2
       eslint-plugin-vue: ^6.0.1
       file-loader: ^6.2.0
+      fs: 0.0.1-security
       glob: ^7.1.6
       jquery-once: ^2.2.3
       lodash: ^4.17.20
@@ -513,6 +514,7 @@ importers:
       eslint-plugin-prettier: 3.4.1_b77cd85fda941e232840dc83bf6b7690
       eslint-plugin-vue: 6.2.2_eslint@6.8.0
       file-loader: 6.2.0_webpack@4.46.0
+      fs: 0.0.1-security
       glob: 7.2.0
       jquery-once: 2.2.3
       lodash: 4.17.21
