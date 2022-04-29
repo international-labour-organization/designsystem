@@ -270,6 +270,7 @@ importers:
       '@ilo-org/icons-react': workspace:*
       '@ilo-org/prettier-config': workspace:^0.0.1
       '@ilo-org/styles': workspace:*
+      '@ilo-org/themes': workspace:*
       '@ilo-org/typescript-config': workspace:^0.0.1
       '@ilo-org/utils': workspace:*
       '@rollup/plugin-commonjs': ^17.1.0
@@ -322,6 +323,7 @@ importers:
       '@ilo-org/fonts': link:../fonts
       '@ilo-org/icons-react': link:../icons-react
       '@ilo-org/styles': link:../styles
+      '@ilo-org/themes': link:../themes
       '@ilo-org/utils': link:../utils
       classnames: 2.3.1
       dom-helpers: 5.2.1
