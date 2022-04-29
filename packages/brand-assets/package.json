@@ -1,5 +1,5 @@
 {
-  "name": "@ilo/brand-assets",
+  "name": "@ilo-org/brand-assets",
   "description": "Brand assets from ILO's Design System",
   "version": "0.0.1",
   "repository": {
@@ -15,7 +15,11 @@
     "dist"
   ],
   "scripts": {
-    "build": "rollup -c"
+    "build": "rollup -c",
+    "format": "prettier --check . --ignore-path ../../.prettierignore",
+    "format:fix": "prettier --write . --ignore-path ../../.prettierignore",
+    "lint": "eslint --ext .js,.ts,.tsx",
+    "lint:fix": "eslint --ext .js,.ts,.tsx --fix"
   },
   "devDependencies": {
     "rollup": "^2.70.0",

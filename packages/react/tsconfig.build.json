@@ -1,0 +1,15 @@
+{
+  "extends": "@ilo-org/typescript-config",
+  "include": ["src/**/*"],
+  "compilerOptions": {
+    "outDir": "lib",
+    "types": ["node"]
+  },
+  "exclude": [
+    "node_modules",
+    "lib",
+    "storybook-static",
+    "src/stories",
+    "src/__test__"
+  ]
+}

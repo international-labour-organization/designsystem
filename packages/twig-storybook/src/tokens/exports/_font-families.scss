@@ -1,0 +1,6 @@
+@use "@ilo-org/themes/build/scss/tokens" as *;
+
+:export {
+  Display: $fonts-display;
+  Copy: $fonts-copy;
+}

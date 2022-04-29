@@ -1,0 +1,16 @@
+{#
+  ACCORDION COMPONENT
+#}
+<ul class="ilo--accordion ilo--accordion--{{ size|default('small') }}" data-loadcomponent="Accordion" data-multipleexpanded="{{ allowMultipleExpanded|default(false) }}">
+    {% for item in items %}
+      {% include "@components/accordion/accordion-item.twig" with {
+        label: item.label,
+        content: item.content,
+        defaultExpanded: item.defaultExpanded,
+        size: size,
+        headingLevel: headingLevel,
+        id: item.id,
+      } only %}
+    {% endfor %}
+    </ul>
+</div>

@@ -1,0 +1,37 @@
+{
+  "name": "@ilo-org/eslint-config",
+  "version": "0.0.1",
+  "description": "ESLint configuration for ILO Design System",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/international-labour-organization/designsystem.git",
+    "directory": "config/eslint-config"
+  },
+  "keywords": [
+    "ilo",
+    "ilo-design-system",
+    "react"
+  ],
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/international-labour-organization/designsystem/issues"
+  },
+  "homepage": "https://github.com/international-labour-organization/designsystem#readme",
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.14.0",
+    "@typescript-eslint/parser": "^5.14.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-jsx-a11y": "^6.5.1",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.29.4",
+    "eslint-plugin-react-hooks": "^4.3.0",
+    "eslint-plugin-storybook": "^0.5.7"
+  },
+  "devDependencies": {
+    "prettier": "^2.6.0"
+  },
+  "peerDependencies": {
+    "eslint": ">= 8"
+  }
+}

@@ -1,13 +1,13 @@
-'use strict';
+"use strict";
 
-const { builders, Metadata } = require('@ilo/icon-build-helpers');
-const path = require('path');
+const { builders, Metadata } = require("@ilo-org/icon-build-helpers");
+const path = require("path");
 
 async function build() {
   const metadata = await Metadata.build({
     input: {
-      svg: path.resolve(__dirname, '../src/svg'),
-      extensions: path.resolve(__dirname, '../'),
+      svg: path.resolve(__dirname, "../src/svg"),
+      extensions: path.resolve(__dirname, "../"),
     },
     extensions: [
       Metadata.extensions.icons,
@@ -19,10 +19,11 @@ async function build() {
     ],
   });
 
-  const output = path.resolve(__dirname, '../');
+  const output = path.resolve(__dirname, "../");
   await Promise.all([
     builders.svg.run(metadata, { output }),
     builders.vanilla.run(metadata, { output }),
+    builders.scss.run(metadata, { output }),
   ]);
 }
 

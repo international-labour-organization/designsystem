@@ -1,51 +1,64 @@
 {
-  "name": "@ilo-ui/designsystem-poc",
+  "name": "@ilo-org/designsystem",
   "version": "0.0.1",
-  "description": "A proof of concept for a design system based on un-core",
-  "author": "@justintemps",
+  "description": "A design system for the International Labour Organization",
   "license": "Apache-2.0",
   "main": "index.js",
   "scripts": {
-    "build": "pnpm run build --filter=@ilo/icons --filter=@ilo/icons-react --filter=@ilo/themes  --filter=@ilo/styles --filter=@ilo/react --filter=@ilo/twig --filter=@ilo/brand-assets",
-    "build:brand-assets": "pnpm run build --filter=@ilo/brand-assets",
-    "build:icons": "pnpm run build --filter=@ilo/icons",
-    "build:icons-react": "pnpm run build --filter=@ilo/icons-react",
-    "build:react": "pnpm run build --filter=@ilo/react",
-    "build:styles": "pnpm run build --filter=@ilo/styles",
-    "build:themes": "pnpm run build --filter=@ilo/themes",
-    "build:twig": "pnpm run build --filter=@ilo/twig",
-    "build:utils": "pnpm run build --filter=@ilo/utils",
+    "build": "pnpm turbo run build",
+    "build:brand-assets": "pnpm run build --filter=@ilo-org/brand-assets",
+    "build:icons": "pnpm run build --filter=@ilo-org/icons",
+    "build:icons-react": "pnpm run build --filter=@ilo-org/icons-react",
+    "build:react": "pnpm run build --filter=@ilo-org/react",
+    "build:styles": "pnpm run build --filter=@ilo-org/styles",
+    "build:themes": "pnpm run build --filter=@ilo-org/themes",
+    "build:twig": "pnpm run build --filter=@ilo-org/twig",
+    "build:utils": "pnpm run build --filter=@ilo-org/utils",
     "clean": "pnpm recursive exec -- rm -rf node_modules; rm shrinkwrap.yaml; rm -rf node_modules",
-    "lint": "pnpm run lint",
-    "lint:react": "pnpm run lint --filter=@ilo/react",
-    "lint:utils": "pnpm run lint --filter=@ilo/utils",
-    "lint:fix:react": "pnpm run lint:fix --filter=@ilo/react",
-    "lint:fix:utils": "pnpm run lint:fix --filter=@ilo/utils",
-    "serve:twig": "pnpm run serve --filter=@ilo/twig",
+    "install:all": "pnpm recursive install",
+    "format:react": "pnpm run format --filter=@ilo-org/react",
+    "format": "pnpm turbo run format",
+    "format:fix": "pnpm turbo run format:fix",
+    "lint": "pnpm turbo run lint",
+    "lint:fix": "pnpm turbo run lint:fix",
+    "lint:react": "pnpm run lint --filter=@ilo-org/react",
+    "lint:utils": "pnpm run lint --filter=@ilo-org/utils",
+    "lint:fix:react": "pnpm run lint:fix --filter=@ilo-org/react",
+    "lint:fix:utils": "pnpm run lint:fix --filter=@ilo-org/utils",
+    "lint:brand-assets": "pnpm lint --filter=@ilo-org/brand-assets",
+    "serve:twig": "pnpm run serve --filter=@ilo-org/twig",
     "start": "pnpm run storybook",
+    "start:react-storybook": "pnpm run storybook --filter=@ilo-org/react",
+    "start:twig-storybook": "pnpm run storybook --filter=@ilo-org/twig-storybook",
     "start:static": "pnpm run storybook:static",
     "storybook": "cd packages/react && pnpm run storybook",
     "storybook:static": "cd packages/react && pnpm run storybook:static",
-    "test:react": "pnpm run test --filter=@ilo/react",
-    "test:utils": "pnpm run test --filter=@ilo/utils"
+    "test": "pnpm turbo run test",
+    "test:react": "pnpm run test --filter=@ilo-org/react",
+    "test:utils": "pnpm run test --filter=@ilo-org/utils"
   },
   "repository": {
     "type": "git",
-    "url": "git+ttps://github.com/international-labour-organization/designsystem.git"
+    "url": "git+https://github.com/international-labour-organization/designsystem.git"
   },
   "bugs": {
-    "url": "ttps://github.com/international-labour-organization/designsystem/issues"
+    "url": "https://github.com/international-labour-organization/designsystem/issues"
   },
-  "homepage": "ttps://github.com/international-labour-organization/designsystem#readme",
+  "homepage": "https://github.com/international-labour-organization/designsystem#readme",
   "devDependencies": {
+    "@ilo-org/eslint-config": "workspace:^0.0.1",
+    "@ilo-org/prettier-config": "workspace:^0.0.1",
+    "@ilo-org/typescript-config": "workspace:^0.0.1",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
-    "@un/icons": "^10.34.11",
-    "@un/icons-react": "^10.34.11",
-    "@un/layout": "^10.26.7",
-    "@un/styles": "^10.26.8",
-    "@un/themes": "^10.40.6",
-    "@un/type": "^10.30.8"
-  }
+    "eslint": "^8.11.0",
+    "prettier": "^2.6.0",
+    "turbo": "^1.1.10",
+    "typescript": "^4.6.2"
+  },
+  "workspaces": [
+    "packages/*",
+    "config/*"
+  ]
 }

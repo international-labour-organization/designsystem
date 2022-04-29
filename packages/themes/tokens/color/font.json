@@ -1,7 +1,10 @@
 {
   "color": {
     "font": {
-      "base"     : { "value": "{color.base.neutrals.black}" }
+      "base": { "value": "{color.base.neutrals.black}" },
+      "blockquote": { "value": "{color.base.purple}" },
+      "cite": { "value": "{color.base.neutrals.medium}" },
+      "caption": { "value": "{color.base.neutrals.medium}" }
     }
   }
 }

@@ -1,4 +1,4 @@
-import React, { useMemo, forwardRef, cloneElement } from "react";
+import { useMemo, forwardRef, cloneElement } from "react";
 import classNames from "classnames";
 import Transition, {
   TransitionStatus,
@@ -46,38 +46,39 @@ const Collapse = forwardRef<Transition<any>, CollapseProps>(
     /* -- Expanding -- */
     const handleEnter = useMemo(
       () =>
-        createChainedFunction((elem) => {
+        createChainedFunction((elem: HTMLElement) => {
           elem.style[computedDimension] = "0";
           elem.style.transitionDuration = `${timeout + 50}ms`;
         }, onEnter),
-      [computedDimension, onEnter]
+      [computedDimension, onEnter, timeout]
     );
 
     const handleEntering = useMemo(
       () =>
-        createChainedFunction((elem) => {
-          const scroll = `scroll${computedDimension[0].toUpperCase()}${computedDimension.slice(
-            1
-          )}`;
+        createChainedFunction((elem: HTMLElement) => {
+          const scroll =
+            `scroll${computedDimension[0].toUpperCase()}${computedDimension.slice(
+              1
+            )}` as keyof HTMLElement;
           elem.style[computedDimension] = `${elem[scroll]}px`;
           elem.style.transitionDuration = `${timeout + 50}ms`;
         }, onEntering),
-      [computedDimension, onEntering]
+      [computedDimension, onEntering, timeout]
     );
 
     const handleEntered = useMemo(
       () =>
-        createChainedFunction((elem) => {
-          elem.style[computedDimension] = null;
+        createChainedFunction((elem: HTMLElement) => {
+          elem.style[computedDimension] = "none";
           elem.style.transitionDuration = `${timeout + 50}ms`;
         }, onEntered),
-      [computedDimension, onEntered]
+      [computedDimension, onEntered, timeout]
     );
 
     /* -- Collapsing -- */
     const handleExit = useMemo(
       () =>
-        createChainedFunction((elem) => {
+        createChainedFunction((elem: HTMLElement) => {
           elem.style[computedDimension] = `${getDimensionValue(
             computedDimension,
             elem
@@ -85,16 +86,16 @@ const Collapse = forwardRef<Transition<any>, CollapseProps>(
           triggerBrowserReflow(elem);
           elem.style.transitionDuration = `${timeout + 50}ms`;
         }, onExit),
-      [onExit, getDimensionValue, computedDimension]
+      [onExit, getDimensionValue, computedDimension, timeout]
     );
 
     const handleExiting = useMemo(
       () =>
-        createChainedFunction((elem) => {
-          elem.style[computedDimension] = null;
+        createChainedFunction((elem: HTMLElement) => {
+          elem.style[computedDimension] = "0px";
           elem.style.transitionDuration = `${timeout + 50}ms`;
         }, onExiting),
-      [computedDimension, onExiting]
+      [computedDimension, onExiting, timeout]
     );
 
     return (

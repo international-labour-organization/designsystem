@@ -6,8 +6,8 @@ const config = {
     {
       name: "@storybook/preset-create-react-app",
       options: {
-        scriptsPackageName: 'react-scripts'
-      }
+        scriptsPackageName: "react-scripts",
+      },
     },
     "@storybook/addon-a11y",
   ],
@@ -15,14 +15,14 @@ const config = {
     builder: "webpack5",
   },
   typescript: {
-    reactDocgen: 'react-docgen-typescript',
+    reactDocgen: "react-docgen-typescript",
     reactDocgenTypescriptOptions: {
       compilerOptions: {
         allowSyntheticDefaultImports: true,
         esModuleInterop: true,
       },
-    }
-  }
+    },
+  },
 };
 
 module.exports = config;

@@ -1,7 +1,7 @@
-import React from 'react';
-import type { DecoratorFn } from '@storybook/react';
+import React from "react";
+import type { DecoratorFn } from "@storybook/react";
 import { GlobalProvider } from "../src/components/GlobalProvider";
-import { prefix } from '../src/theme.json';
+import { prefix } from "@ilo-org/themes/tokens/theme/base.json";
 import "./styles.scss";
 
 export const parameters = {
@@ -17,16 +17,16 @@ export const parameters = {
     layout: "centered",
   },
   previewTabs: {
-    'storybook/docs/panel': { index: -1 },
-    canvas: { title: 'Code', hidden: false },
+    "storybook/docs/panel": { index: -1 },
+    canvas: { title: "Code", hidden: false },
   },
-  viewMode: 'docs',
+  viewMode: "docs",
 };
 
 export const decorators: DecoratorFn[] = [
   (Story, { globals }) => (
-    <div style={{ margin: '3em' }}>
-      <GlobalProvider prefix={prefix}>
+    <div style={{ margin: "3em" }}>
+      <GlobalProvider prefix={prefix.value}>
         <Story />
       </GlobalProvider>
     </div>

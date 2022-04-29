@@ -1,5 +1,5 @@
 {
-  "name": "@ilo/themes",
+  "name": "@ilo-org/themes",
   "description": "Theme tokens for products using ILO's Design System",
   "version": "0.0.1",
   "repository": {
@@ -8,12 +8,17 @@
     "directory": "packages/themes"
   },
   "scripts": {
-    "build": "node build.js"
+    "build": "node build.js",
+    "format": "prettier --check . --ignore-path ../../.prettierignore",
+    "format:fix": "prettier --write . --ignore-path ../../.prettierignore",
+    "lint": "eslint --ext .js,.ts,.tsx",
+    "lint:fix": "eslint --ext .js,.ts,.tsx --fix"
   },
   "author": "@johnpauldavis, @avrilpearl, @ghlost, @justintemps",
   "license": "Apache-2.0",
   "files": [
-    "build"
+    "build",
+    "tokens"
   ],
   "devDependencies": {
     "style-dictionary": "^3.7.0"

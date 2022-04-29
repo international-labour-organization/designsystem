@@ -1,13 +1,13 @@
-import { useContext } from 'react';
-import { GlobalProviderContext } from '../components/GlobalProvider';
+import { useContext } from "react";
+import { GlobalProviderContext } from "../components/GlobalProvider";
 
 const useGlobalSettings = () => {
   const { prefix, ...rest } = useContext(GlobalProviderContext);
 
-  return ({
+  return {
     prefix,
-    ...rest
-  })
-}
+    ...rest,
+  };
+};
 
 export default useGlobalSettings;

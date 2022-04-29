@@ -362,13 +362,13 @@ function formatDeprecationWarning(moduleName, reason) {
   if (!reason) {
     return (
       `The ${moduleName} component has been deprecated and will be ` +
-      `removed in the next major version of @ilo/icons-react.`
+      `removed in the next major version of @ilo-org/icons-react.`
     );
   }
 
   return (
     `${reason}. As a result, the ${moduleName} component will be removed in ` +
-    `the next major version of @ilo/icons-react.`
+    `the next major version of @ilo-org/icons-react.`
   );
 }
 

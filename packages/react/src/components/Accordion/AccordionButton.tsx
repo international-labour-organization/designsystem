@@ -1,6 +1,6 @@
-import React, { FC, useContext, MouseEvent } from "react";
+import { FC, useContext, MouseEvent } from "react";
 import classNames from "classnames";
-import { Add24, Minus24 } from "@ilo/icons-react";
+import { Add24, Minus24 } from "@ilo-org/icons-react";
 import useGlobalSettings from "../../hooks/useGlobalSettings";
 import { default as AccordionButtonProps } from "./AccordionButton.props";
 import { AccordionContext } from "./Accordion";

@@ -1,5 +1,5 @@
 {
-  "name": "@ilo/icon-build-helpers",
+  "name": "@ilo-org/icon-build-helpers",
   "private": true,
   "description": "Build helpers for ILO's Design System icon library",
   "version": "0.0.1",
@@ -20,6 +20,12 @@
   "publishConfig": {
     "access": "public"
   },
+  "scripts": {
+    "format": "prettier --check . --ignore-path ../../.prettierignore",
+    "format:fix": "prettier --write . --ignore-path ../../.prettierignore",
+    "lint": "eslint --ext .js,.ts,.tsx",
+    "lint:fix": "eslint --ext .js,.ts,.tsx --fix"
+  },
   "devDependencies": {
     "@babel/core": "^7.14.2",
     "@babel/generator": "^7.14.2",
@@ -39,6 +45,7 @@
     "js-yaml": "^3.12.1",
     "klaw-sync": "^6.0.0",
     "memfs": "^3.0.4",
+    "mini-svg-data-uri": "^1.4.4",
     "prettier": "^2.2.1",
     "prop-types": "^15.6.2",
     "react": "^16.6.0",

@@ -1,0 +1,10 @@
+@use "@ilo-org/themes/build/scss/tokens" as *;
+
+:export {
+  h1: $type-headline-1-size;
+  h2: $type-headline-2-size;
+  h3: $type-headline-3-size;
+  h4: $type-headline-4-size;
+  h5: $type-headline-5-size;
+  h6: $type-headline-6-size;
+}

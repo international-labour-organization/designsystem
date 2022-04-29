@@ -1,0 +1,63 @@
+{
+  "name": "@ilo-org/preset-scss",
+  "version": "0.0.1",
+  "description": "Custom ILO implementation of Wingsuit Preset SCSS",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/international-labour-organization/designsystem.git"
+  },
+  "main": "./dist/index.js",
+  "files": [
+    "bin/**/*",
+    "dist/**/*",
+    "README.md",
+    "*.js",
+    "*.d.ts",
+    "ts3.5/**/*"
+  ],
+  "keywords": [
+    "SCSS"
+  ],
+  "author": "@johnpauldavis, @avrilpearl, @ghlost, @justintemps",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/international-labour-organization/designsystemissues"
+  },
+  "homepage": "https://github.com/international-labour-organization/designsystem#readme",
+  "dependencies": {
+    "@wingsuit-designsystem/core": "1.2.1",
+    "glob": "^7.1.6",
+    "mini-css-extract-plugin": "^1.3.1",
+    "npmlog": "^6.0.1",
+    "optimize-css-assets-webpack-plugin": "^5.0.3",
+    "postcss-loader": "^4.2.0",
+    "resolve-url-loader": "^3.1.1",
+    "sass-loader": "^10.1.0",
+    "style-loader": "^1.0.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.0",
+    "@babel/plugin-proposal-class-properties": "^7.3.3",
+    "@babel/plugin-proposal-decorators": "^7.3.0",
+    "@babel/plugin-proposal-export-default-from": "^7.2.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.2.0",
+    "@babel/plugin-syntax-dynamic-import": "^7.2.0",
+    "@babel/plugin-transform-react-constant-elements": "^7.6.3",
+    "@babel/plugin-transform-runtime": "^7.9.0",
+    "@babel/preset-env": "^7.8.4",
+    "@babel/preset-flow": "^7.0.0",
+    "@babel/preset-react": "^7.0.0",
+    "@babel/preset-typescript": "^7.3.3",
+    "@babel/runtime": "^7.8.4",
+    "@types/jest": "^27.4.1",
+    "chalk": "^2.1.0",
+    "downlevel-dts": "^0.4.0",
+    "shelljs": "^0.8.5",
+    "ts-node": "^8.9.1",
+    "typescript": "^4.5.4"
+  },
+  "scripts": {
+    "prepare": "node prepare.js"
+  }
+}

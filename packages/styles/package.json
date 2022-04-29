@@ -1,5 +1,5 @@
 {
-  "name": "@ilo/styles",
+  "name": "@ilo-org/styles",
   "description": "Styles for products using ILO's Design System",
   "version": "0.0.1",
   "repository": {
@@ -8,7 +8,11 @@
     "directory": "packages/styles"
   },
   "scripts": {
-    "build": "sass scss:build/css --load-path=./node_modules"
+    "build": "sass scss:build/css --load-path=./node_modules",
+    "format": "prettier --check . --ignore-path ../../.prettierignore",
+    "format:fix": "prettier --write . --ignore-path ../../.prettierignore",
+    "lint": "eslint --ext .js,.ts,.tsx",
+    "lint:fix": "eslint --ext .js,.ts,.tsx --fix"
   },
   "author": "@justintemps, @johnpauldavis, @avrilpearl, @ghlost",
   "license": "Apache-2.0",
@@ -17,8 +21,9 @@
     "scss"
   ],
   "dependencies": {
-    "@ilo/fonts": "workspace:*",
-    "@ilo/themes": "workspace:*"
+    "@ilo-org/fonts": "workspace:*",
+    "@ilo-org/themes": "workspace:*",
+    "@ilo-org/icons": "workspace:*"
   },
   "devDependencies": {
     "sass": "^1.49.9"

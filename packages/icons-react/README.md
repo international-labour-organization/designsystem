@@ -7,18 +7,18 @@
 
 ## Getting started
 
-To install `@ilo/icons-react` in your project, you will need to run the
+To install `@ilo-org/icons-react` in your project, you will need to run the
 following command using [npm](https://www.npmjs.com/):
 
 ```bash
-npm install -S @ilo/icons-react
+npm install -S @ilo-org/icons-react
 ```
 
 If you prefer [Yarn](https://yarnpkg.com/en/), use the following command
 instead:
 
 ```bash
-yarn add @ilo/icons-react
+yarn add @ilo-org/icons-react
 ```
 
 ## Usage
@@ -28,7 +28,7 @@ pixels. These sizes refer to the width and height of the icon. You can import an
 icon component into your project by referring to its name and size:
 
 ```jsx
-import { Add24 } from '@ilo/icons-react';
+import { Add24 } from "@ilo-org/icons-react";
 ```
 
 We also provide CommonJS and UMD files in the `lib` and `umd` directories,
@@ -37,7 +37,7 @@ respectively.
 To import using CommonJS, you can do the following:
 
 ```js
-const { Add24 } = require('@ilo/icons-react');
+const { Add24 } = require("@ilo-org/icons-react");
 ```
 
 _Note: if you would like to find the import path for an icon, you can reference
@@ -58,7 +58,7 @@ svg.my-custom-class {
 ```
 
 ```jsx
-import { Add16 } from '@ilo/icons-react';
+import { Add16 } from "@ilo-org/icons-react";
 
 function MyComponent() {
   return (
@@ -84,14 +84,14 @@ svg.my-custom-class {
 // Use the `data-icon-path` attribute selector to target the inner path
 // where we want to set the fill to `black`. We also set `opacity` to `1` so
 // that this inner-path is visible.
-svg.my-custom-class [data-icon-path='inner-path'] {
+svg.my-custom-class [data-icon-path="inner-path"] {
   fill: black;
   opacity: 1;
 }
 ```
 
 ```jsx
-import { WarningFilled16 } from '@ilo/icons-react';
+import { WarningFilled16 } from "@ilo-org/icons-react";
 
 function MyComponent() {
   return <WarningFilled16 aria-label="Add" className="my-custom-class" />;
@@ -100,7 +100,7 @@ function MyComponent() {
 
 ### Focus and `aria-label`
 
-By default, the icon components from `@ilo/icons-react` are treated as
+By default, the icon components from `@ilo-org/icons-react` are treated as
 decorative content. This means that we set `aria-hidden="true"` unless certain
 props are passed to the component.
 
@@ -108,7 +108,7 @@ If you would like the icon to be announced by a screen reader, you can supply an
 `aria-label` or `aria-labelledby`. For example:
 
 ```jsx
-import { Add16 } from '@ilo/icons-react';
+import { Add16 } from "@ilo-org/icons-react";
 
 function MyComponent() {
   return (
@@ -125,7 +125,7 @@ If you would like the `<svg>` to receive focus, you will need to pass in a
 `tabIndex` value. For example:
 
 ```jsx
-import { Add16 } from '@ilo/icons-react';
+import { Add16 } from "@ilo-org/icons-react";
 
 function MyComponent() {
   return <Add16 aria-label="Add" tabIndex="0" />;

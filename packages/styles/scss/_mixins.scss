@@ -4,13 +4,6 @@
 @use "tokens" as *;
 @use "functions";
 
-@function map-deep-get($map, $keys...) {
-    @each $key in $keys {
-        $map: map-get($map, $key);
-    }
-    @return $map;
-}
-
 // ======================================
 // Output font styles
 // ======================================
@@ -18,9 +11,9 @@
 /// @param {String} $stylename - the name of the style to get
 /// @return {CSS} font size, line-height, and letter-spacing for this type style
 @mixin font-styles($stylename) {
-  font-size: map-deep-get($type, $stylename, 'size');
-  letter-spacing: map-deep-get($type, $stylename, 'letter-spacing');
-  line-height: map-deep-get($type, $stylename, 'line-height');
+  font-size: map-get($type, $stylename, "size");
+  letter-spacing: map-get($type, $stylename, "letter-spacing");
+  line-height: map-get($type, $stylename, "line-height");
 }
 
 // ======================================
@@ -28,9 +21,9 @@
 // ======================================
 
 @mixin vertical-align {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 // ======================================
@@ -38,16 +31,16 @@
 // ======================================
 
 @mixin horizontal-align {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 @mixin vertical-horizontal-align {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 // ======================================
@@ -59,14 +52,14 @@
 //
 // ======================================
 @mixin isVisuallyHidden() {
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    padding: 0;
-    border: 0;
-    position: absolute;
-    clip: rect(0 0 0 0);
-    overflow: hidden;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  position: absolute;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
 }
 
 // ======================================
@@ -74,7 +67,113 @@
 // ======================================
 
 @mixin ellipsis {
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+// ======================================
+// Breakpoint
+// ======================================
+
+@mixin breakpoint($breakpoint, $max: false) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @if not $max {
+      @media screen and (min-width: map-get($breakpoints, $breakpoint)) {
+        @content;
+      }
+    }
+    
+    @if $max {
+      @media screen and (max-width: #{map-get($breakpoints, $breakpoint) - 1px}) {
+        @content;
+      }
+    }
+  }
+}
+
+// ======================================
+// Data URL Icon
+// ======================================
+
+@mixin dataurlicon($name, $color: false) {
+  $iconcolor : $color-base-neutrals-black;
+  @if $color != false {
+    $iconcolor : $color;
+  }
+  $icon : str-slice(map-get($icons, $name), 0, -15) + " fill='#{$iconcolor}' /%3e%3c/svg%3e";
+  background-image: url($icon);
+}
+
+// ======================================
+// Link styles
+// ======================================
+
+@mixin linkstyles() {
+  background: map-get($color, "link", "background", "default");
+  border-bottom: $widths-border-sm solid map-get($color, "link", "default", "default");
+  color: map-get($color, "link", "text", "default");
+  font-size: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  text-decoration: none;
+  
+  &:visited {
+    background: map-get($color, "link", "background", "visited");
+    border-bottom: $widths-border-sm solid map-get($color, "link", "underline", "visited");
+    color: map-get($color, "link", "text", "visited");
+  }
+  
+  &:hover {
+    background: map-get($color, "link", "background", "hover");
+    border-bottom: $widths-border-med solid map-get($color, "link", "underline", "hover");
+    color: map-get($color, "link", "text", "hover");
+    text-decoration: none;
+  }
+  
+  &:active {
+    background: map-get($color, "link", "background", "active");
+    border-bottom: $widths-border-lg solid map-get($color, "link", "underline", "active");
+    color: map-get($color, "link", "text", "active");
+    outline: none;
+  }
+  
+  &:focus {
+    background: map-get($color, "link", "background", "focus");
+    border-bottom: $widths-border-lg solid map-get($color, "link", "underline", "focus");
+    color: map-get($color, "link", "text", "focus");
+    outline: none;
+  }
+  
+  &--dark {
+    background: map-get($color, "link", "background-dark", "default");
+    border-bottom: $widths-border-sm solid map-get($color, "link", "underline-dark", "default");
+    color: map-get($color, "link", "text-dark", "default");
+  
+    &:visited {
+      background: map-get($color, "link", "background-dark", "visited");
+      border-bottom: $widths-border-sm solid map-get($color, "link", "underline-dark", "visited");
+      color: map-get($color, "link", "text-dark", "visited");
+    }
+  
+    &:hover {
+      background: map-get($color, "link", "background-dark", "hover");
+      border-bottom: $widths-border-med solid map-get($color, "link", "underline-dark", "hover");
+      color: map-get($color, "link", "text-dark", "hover");
+    }
+    
+    &:active {
+      background: map-get($color, "link", "background-dark", "active");
+      border-bottom: $widths-border-lg solid map-get($color, "link", "underline-dark", "active");
+      color: map-get($color, "link", "text-dark", "active");
+      outline: none;
+    }
+    
+    &:focus {
+      background: map-get($color, "link", "background-dark", "focus");
+      border-bottom: $widths-border-lg solid map-get($color, "link", "underline-dark", "focus");
+      color: map-get($color, "link", "text-dark", "focus");
+      outline: none;
+    }
+  }
 }

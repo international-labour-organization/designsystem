@@ -1,0 +1,196 @@
+@use "../tokens" as *;
+@use "../functions" as *;
+@import "../mixins";
+
+.ilo--richtext {
+  font-family: $fonts-copy;
+  font-weight: 400;
+  @include font-styles("body-small");
+  
+  a {
+    @include linkstyles();
+  }
+  
+  img {
+    margin-bottom: px-to-rem(map-get($spacing, "content-padding"));
+    margin-top: px-to-rem(map-get($spacing, "content-padding-lg"));
+    width: 100%;
+  }
+  
+  figure {
+    width: 100%;
+  }
+  
+  figcaption {
+    color: $color-font-caption;
+    font-weight: 400;
+    @include font-styles("image-caption");
+  }
+  
+  p {
+    margin-bottom: px-to-rem(map-get($spacing, "content-padding"));
+    
+    img {
+      margin-top: px-to-rem(map-get($spacing, "content-padding-xxl"));
+    }
+  }
+  
+  em, i {
+    font-style: italic;
+  }
+  
+  strong, b {
+    font-weight: 700;
+  }
+  
+  hr {
+    background-color: $color-ux-horizontal-rule-default;
+    border: none;
+    height: px-to-rem(map-get($spacing, "horizontal-rule"));
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: $fonts-display;
+    font-weight: 700;
+    margin-bottom: px-to-rem(map-get($spacing, "content-padding"));
+    margin-top: px-to-rem(map-get($spacing, "content-padding-lg"));
+  }
+  
+  h1 {
+    @include font-styles("headline-2");
+  }
+  
+  h2 {
+    @include font-styles("headline-3");
+  }
+  
+  h3 {
+    @include font-styles("headline-4");
+  }
+  
+  h4 {
+    @include font-styles("headline-5");
+  }
+  
+  h5, h6 {
+    @include font-styles("headline-6");
+  }
+  
+  ul, ol {
+    li {
+      &::before {
+          content: "";
+          display: inline-block;
+          height: px-to-rem(14px);
+          margin-right: px-to-rem(12px);
+          width: px-to-rem(12px);
+          @include dataurlicon("listarrow");
+      }
+      margin-bottom: px-to-rem(map-get($spacing, "content-padding"));
+    }
+    margin-bottom: px-to-rem(map-get($spacing, "content-padding"));
+  }
+  
+  blockquote { 
+    background-position: right top;
+    background-repeat: no-repeat;
+    background-size: px-to-rem(72px) px-to-rem(40px);
+    display: block;
+    margin: px-to-rem(map-get($spacing, "content-padding-med")) 0;
+    padding: px-to-rem(map-get($spacing, "content-padding-xl")) 0 px-to-rem(map-get($spacing, "content-padding-med")) px-to-rem(map-get($spacing, "content-padding-med"));
+    position: relative;
+    width: 100%;
+    @include dataurlicon("triangle", $color-ux-background-highlight);
+    
+    p {
+      color: $color-font-blockquote;
+      font-weight: 300;
+      margin-bottom: px-to-rem(map-get($spacing, "content-padding-med"));
+      padding: 0 px-to-rem(map-get($spacing, "content-padding-xl")) 0 0;
+      position: relative;
+      @include font-styles("pull-quote-sm");
+      
+      &:after {
+        background-repeat: no-repeat;
+        bottom: 0;
+        content: "";
+        display: inline-block;
+        height: px-to-rem(20px);
+        position: absolute;
+        right: 0;
+        transform: scaleX(-1);
+        width: px-to-rem(26.5px);
+        @include dataurlicon("quote", $color-font-blockquote);   
+      }
+    }
+    
+    cite {
+      color: $color-font-cite;
+      font-weight: 400;
+      @include font-styles("pull-quote-cite");
+    }
+    
+    &:before {
+      background-repeat: no-repeat;
+      content: "";
+      display: inline-block;
+      height: px-to-rem(40px);
+      left: 0;
+      position: absolute;
+      width: px-to-rem(53px);
+      top: 0;
+      @include dataurlicon("quote", $color-font-blockquote);   
+    }
+  }
+  
+  @include breakpoint("medium") {
+    @include font-styles("base");
+    
+    h1 {
+      @include font-styles("headline-1");
+    }
+    
+    h2 {
+      @include font-styles("headline-2");
+    }
+    
+    h3 {
+      @include font-styles("headline-3");
+    }
+    
+    h4 {
+      @include font-styles("headline-4");
+    }
+    
+    h5 {
+      @include font-styles("headline-5");
+    }
+    
+    h6 {
+      @include font-styles("headline-6");
+    }
+    
+    blockquote { 
+      background-size: px-to-rem(86px) px-to-rem(48px);
+      margin: px-to-rem(map-get($spacing, "content-padding-med")) 0;
+      padding: px-to-rem(map-get($spacing, "content-padding-xxxl")) 0 px-to-rem(map-get($spacing, "content-padding-lg")) px-to-rem(map-get($spacing, "content-padding-lg"));
+      
+      p {
+        margin-bottom: px-to-rem(map-get($spacing, "content-padding-lg"));
+        padding: 0 px-to-rem(map-get($spacing, "content-padding-lg")) 0 0;
+        position: relative;
+        @include font-styles("pull-quote-lg");
+        
+        &:after {
+          height: px-to-rem(24px);
+          width: px-to-rem(32px);  
+        }
+      }
+      
+      &:before {
+        height: px-to-rem(48px);
+        width: px-to-rem(64px);   
+      }
+    }
+  }
+}

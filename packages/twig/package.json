@@ -1,5 +1,5 @@
 {
-  "name": "@ilo/twig",
+  "name": "@ilo-org/twig",
   "description": "ILO twig component library",
   "version": "0.0.1",
   "license": "Apache-2.0",
@@ -9,6 +9,10 @@
     "views"
   ],
   "scripts": {
+    "format": "prettier --check . --ignore-path ../../.prettierignore",
+    "format:fix": "prettier --write . --ignore-path ../../.prettierignore",
+    "lint": "eslint --ext .js,.ts,.tsx",
+    "lint:fix": "eslint --ext .js,.ts,.tsx --fix",
     "build": "node build.js; sass scss:build/css --load-path=./node_modules",
     "sass": "sass scss:build/css --load-path=./node_modules",
     "serve": "node serve.js",
@@ -20,9 +24,9 @@
     "directory": "packages/twig"
   },
   "dependencies": {
-    "@ilo/fonts": "workspace:*",
-    "@ilo/styles": "workspace:*",
-    "@ilo/themes": "workspace:*",
+    "@ilo-org/fonts": "workspace:*",
+    "@ilo-org/styles": "workspace:*",
+    "@ilo-org/themes": "workspace:*",
     "twing": "^5.1.0"
   },
   "devDependencies": {

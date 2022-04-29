@@ -5,16 +5,23 @@
 //
 
 // Load the theme vars and fonts
-@use "@ilo/themes/build/scss/tokens" as *;
-@forward "@ilo/fonts/index";
+@use "@ilo-org/themes/build/scss/tokens" as *;
+@forward "@ilo-org/fonts/index";
+
+html, body {
+  color: $color-font-base;
+  font: #{$type-base-size}/#{$type-base-line-height} $fonts-copy;
+  letter-spacing: $type-base-letter-spacing;
+  -webkit-font-smoothing: antialiased;
+}
 
 /// Font family fallbacks for: Overpass, Noto Sans
 /// @type Map
 /// @access public
 /// @group @carbon/type
 $font-families: (
-  'display': unquote("#{$fonts-display}, sans-serif"),
-  'copy': unquote("#{$fonts-copy}, sans-serif")
+  "display": unquote("#{$fonts-display}, sans-serif"),
+  "copy": unquote("#{$fonts-copy}, sans-serif"),
 ) !default;
 
 /// Get the font-family for a font
@@ -39,11 +46,11 @@ $font-families: (
 /// @access public
 /// @group @carbon/type
 $font-weights: (
-  'light': 300,
-  'regular': 400,
-  'semibold': 600,
-  'bold': 700,
-  'extrabold': 800,
+  "light": 300,
+  "regular": 400,
+  "semibold": 600,
+  "bold": 700,
+  "extrabold": 800,
 ) !default;
 
 /// Retrieve the font-weight value for a given name
