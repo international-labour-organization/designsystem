@@ -15,7 +15,7 @@ const Link: FC<LinkProps> = ({
   const { prefix } = useGlobalSettings();
   const baseClass = `${prefix}--link`;
 
-  const LinkClasses = classNames(className, {
+  const linkClasses = classNames(className, {
     [baseClass]: true,
     [`${baseClass}--${theme}`]: theme,
   });
@@ -25,7 +25,7 @@ const Link: FC<LinkProps> = ({
   }
 
   return (
-    <a className={LinkClasses} href={url} target={target} rel={target ? "noopener noreferrer": ''} {...rest}>
+    <a className={linkClasses} href={url} target={target} rel={target ? "noopener noreferrer": ''} {...rest}>
       {label && (
         <span className="link__label" dangerouslySetInnerHTML={createMarkup()}></span>
       )}
