@@ -1,7 +1,7 @@
 //*------------------------------------*\
 //    $FUNCTIONS
 //*------------------------------------*/
-
+@use "tokens" as *;
 // ======================================
 // String Replace
 // ======================================
@@ -41,7 +41,7 @@
 // @return {*} - value in rems, with $font-size-default as base
 // ======================================
 @function px-to-rem($px) {
-  @return math.div(strip-units($px), strip-units($font-size-default)) * 1rem;
+  @return math.div(strip-units($px), strip-units($type-base-size)) * 1rem;
 }
 
 // =========================================

@@ -25,6 +25,9 @@
         "error": { "value": "{color.base.red.dark}" },
         "hover": { "value": "{color.base.blue.medium}" },
         "active": { "value": "{color.base.neutrals.white}" }
+      },
+      "horizontal-rule": {
+        "default": { "value": "{color.base.neutrals.lighter}" }
       }
     }
   }

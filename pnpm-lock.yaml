@@ -91,6 +91,7 @@ importers:
       js-yaml: ^3.12.1
       klaw-sync: ^6.0.0
       memfs: ^3.0.4
+      mini-svg-data-uri: ^1.4.4
       prettier: ^2.2.1
       prop-types: ^15.6.2
       react: ^16.6.0
@@ -121,6 +122,7 @@ importers:
       js-yaml: 3.14.1
       klaw-sync: 6.0.0
       memfs: 3.4.1
+      mini-svg-data-uri: 1.4.4
       prettier: 2.6.2
       prop-types: 15.8.1
       react: 16.14.0
@@ -270,6 +272,7 @@ importers:
       '@ilo-org/icons-react': workspace:*
       '@ilo-org/prettier-config': workspace:^0.0.1
       '@ilo-org/styles': workspace:*
+      '@ilo-org/themes': workspace:*
       '@ilo-org/typescript-config': workspace:^0.0.1
       '@ilo-org/utils': workspace:*
       '@rollup/plugin-commonjs': ^17.1.0
@@ -322,6 +325,7 @@ importers:
       '@ilo-org/fonts': link:../fonts
       '@ilo-org/icons-react': link:../icons-react
       '@ilo-org/styles': link:../styles
+      '@ilo-org/themes': link:../themes
       '@ilo-org/utils': link:../utils
       classnames: 2.3.1
       dom-helpers: 5.2.1
@@ -376,10 +380,12 @@ importers:
   packages/styles:
     specifiers:
       '@ilo-org/fonts': workspace:*
+      '@ilo-org/icons': workspace:*
       '@ilo-org/themes': workspace:*
       sass: ^1.49.9
     dependencies:
       '@ilo-org/fonts': link:../fonts
+      '@ilo-org/icons': link:../icons
       '@ilo-org/themes': link:../themes
     devDependencies:
       sass: 1.50.1
@@ -23618,6 +23624,11 @@ packages:
       schema-utils: 4.0.0
       webpack: 5.72.0
     dev: false
+
+  /mini-svg-data-uri/1.4.4:
+    resolution: {integrity: sha512-r9deDe9p5FJUPZAk3A59wGH7Ii9YrjjWw0jmw/liSbHl2CHiyXj6FcDXDu2K3TjVAXqiJdaw3xxwlZZr9E6nHg==}
+    hasBin: true
+    dev: true
 
   /minimalistic-assert/1.0.1:
     resolution: {integrity: sha512-UtJcAD4yEaGtjPezWuO9wC4nwUnVH/8/Im3yEHQP4b67cXlD/Qr9hdITCU1xDbSEXg2XKNaP8jsReV7vQd00/A==}
