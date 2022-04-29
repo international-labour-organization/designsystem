@@ -4,6 +4,9 @@
   "description": "A design system for the International Labour Organization",
   "license": "Apache-2.0",
   "main": "index.js",
+  "engines": {
+    "pnpm": "6.32.3"
+  },
   "scripts": {
     "build:all": "pnpm turbo run build",
     "build:brand-assets": "pnpm run build --filter=@ilo-org/brand-assets",
