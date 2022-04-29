@@ -8,6 +8,13 @@
 @use "@ilo-org/themes/build/scss/tokens" as *;
 @forward "@ilo-org/fonts/index";
 
+html, body {
+  color: $color-font-base;
+  font: #{$type-base-size}/#{$type-base-line-height} $fonts-copy;
+  letter-spacing: $type-base-letter-spacing;
+  -webkit-font-smoothing: antialiased;
+}
+
 /// Font family fallbacks for: Overpass, Noto Sans
 /// @type Map
 /// @access public
