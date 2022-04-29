@@ -10,12 +10,12 @@ Simply add the project as a dependency in your package.json and then import the 
 
 ```scss
 // SCSS
-@import "~@ilo/fonts";
+@import "~@ilo-org/fonts";
 ```
 
 ```js
 // JavaScript with Webpack
-import "~@ilo/fonts";
+import "~@ilo-org/fonts";
 ```
 
 Then, in any css file

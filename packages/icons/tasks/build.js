@@ -1,6 +1,6 @@
 "use strict";
 
-const { builders, Metadata } = require("@ilo/icon-build-helpers");
+const { builders, Metadata } = require("@ilo-org/icon-build-helpers");
 const path = require("path");
 
 async function build() {
@@ -23,6 +23,7 @@ async function build() {
   await Promise.all([
     builders.svg.run(metadata, { output }),
     builders.vanilla.run(metadata, { output }),
+    builders.scss.run(metadata, { output }),
   ]);
 }
 

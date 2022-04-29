@@ -1,0 +1,12 @@
+{#
+  BUTTON COMPONENT
+#}
+{% if url %}
+  <a class="ilo--button ilo--button--{{size}} ilo--button--{{type}}" href="{{url}}" {% if target %}target="{{target}}" rel="noopener noreferrer"{% endif %}>
+    <span class="link__label">{{label}}</span>
+  </a>
+{% else %}
+  <button class="ilo--button ilo--button--{{size}} ilo--button--{{type}}">
+    <span class="button__label">{{label}}</span>
+  </button>
+{% endif %}

@@ -1,5 +1,5 @@
 {
-  "name": "@ilo/styles",
+  "name": "@ilo-org/styles",
   "description": "Styles for products using ILO's Design System",
   "version": "0.0.1",
   "repository": {
@@ -21,8 +21,9 @@
     "scss"
   ],
   "dependencies": {
-    "@ilo/fonts": "workspace:*",
-    "@ilo/themes": "workspace:*"
+    "@ilo-org/fonts": "workspace:*",
+    "@ilo-org/themes": "workspace:*",
+    "@ilo-org/icons": "workspace:*"
   },
   "devDependencies": {
     "sass": "^1.49.9"

@@ -1,5 +1,5 @@
 //@TODO: Get rid of this as soon as type declarations are available for icons-react
-declare module "@ilo/icons-react";
+declare module "@ilo-org/icons-react";
 
 //@TODO: Get rid of this as soon as this issue has been resolved
 // https://github.com/DefinitelyTyped/DefinitelyTyped/discussions/59684

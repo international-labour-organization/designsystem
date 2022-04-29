@@ -205,7 +205,7 @@ const plugins = [
         'data-name',
         // Remove all fill and stroke attributes where the value is not "none"
         // https://github.com/svg/svgo/pull/977
-        '*:(fill|stroke):((?!^none$).)*',
+        '*:(fill|stroke):((?!^none|currentColor$).)*',
       ],
     },
   },

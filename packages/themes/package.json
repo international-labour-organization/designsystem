@@ -1,5 +1,5 @@
 {
-  "name": "@ilo/themes",
+  "name": "@ilo-org/themes",
   "description": "Theme tokens for products using ILO's Design System",
   "version": "0.0.1",
   "repository": {
@@ -17,7 +17,8 @@
   "author": "@johnpauldavis, @avrilpearl, @ghlost, @justintemps",
   "license": "Apache-2.0",
   "files": [
-    "build"
+    "build",
+    "tokens"
   ],
   "devDependencies": {
     "style-dictionary": "^3.7.0"

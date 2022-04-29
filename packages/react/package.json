@@ -1,5 +1,5 @@
 {
-  "name": "@ilo/react",
+  "name": "@ilo-org/react",
   "description": "React components for products using ILO's Design System",
   "version": "0.0.1",
   "author": "@justintemps",
@@ -13,11 +13,12 @@
     "directory": "packages/react"
   },
   "dependencies": {
-    "@ilo/brand-assets": "workspace:*",
-    "@ilo/fonts": "workspace:*",
-    "@ilo/icons-react": "workspace:*",
-    "@ilo/styles": "workspace:*",
-    "@ilo/utils": "workspace:*",
+    "@ilo-org/brand-assets": "workspace:*",
+    "@ilo-org/fonts": "workspace:*",
+    "@ilo-org/icons-react": "workspace:*",
+    "@ilo-org/styles": "workspace:*",
+    "@ilo-org/themes": "workspace:*",
+    "@ilo-org/utils": "workspace:*",
     "classnames": "^2.3.1",
     "dom-helpers": "^5.2.1",
     "global": "^4.4.0",
@@ -28,9 +29,9 @@
     "typescript": "4.3.4"
   },
   "devDependencies": {
-    "@ilo/eslint-config": "workspace:^0.0.1",
-    "@ilo/prettier-config": "workspace:^0.0.1",
-    "@ilo/typescript-config": "workspace:^0.0.1",
+    "@ilo-org/eslint-config": "workspace:^0.0.1",
+    "@ilo-org/prettier-config": "workspace:^0.0.1",
+    "@ilo-org/typescript-config": "workspace:^0.0.1",
     "@rollup/plugin-commonjs": "^17.1.0",
     "@rollup/plugin-json": "^4.1.0",
     "@rollup/plugin-node-resolve": "^11.2.1",

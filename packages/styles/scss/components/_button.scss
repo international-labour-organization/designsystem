@@ -1,27 +1,154 @@
-@use "@ilo/themes/build/scss/tokens" as *;
+@use "../tokens" as *;
+@import "../mixins";
 
-.ilo--btn--label {
-  padding: 5px 10px;
-  transition: inherit;
-}
-
-.ilo--btn.ilo--btn--primary {
-  &:hover {
-    border: 2px solid $brand-ilo-blue;
-    color: $brand-ilo-blue;
+.ilo--button {
+  display: inline-block;
+  font-family: $fonts-display;
+  font-weight: map-get($type, 'weights', 'label');
+  
+  .link__label,
+  .button__label {
+    display: inline-block;
   }
+  
+  &.icon {
+    position: relative;
+    
+    .ilo--icon {
+      height: map-get($spacing, 'ui-padding-lg');
+      position: absolute;
+      width: map-get($spacing, 'ui-padding-lg');
+    }
+    
+    &.icon__position--left {
+      .link__label,
+      .button__label {
+        padding-left: calc(map-get($spacing, 'ui-padding-lg') * 2);
+      }
+      
+      .ilo--icon {
+        left: map-get($spacing, 'icons', 'icon-padding-lg');
+        top: map-get($spacing, 'icons', 'icon-padding-lg');
+      }
+    }
+    
+    &.icon__position--right {
+      .link__label,
+      .button__label {
+        padding-right: calc(map-get($spacing, 'ui-padding') * 2);
+      }
+      
+      .ilo--icon {
+        right: map-get($spacing, 'icons', 'icon-padding-lg');
+        top: map-get($spacing, 'icons', 'icon-padding-lg');
+      }
+    }
+  }
+  
+  &--large {
+    .link__label,
+    .button__label {
+      padding: map-get($spacing, 'ui-padding') map-get($spacing, 'ui-padding-lg');
+      @include font-styles('label-large');
+    }
+  }
+  
+  &--medium {
+    .link__label,
+    .button__label {
+      padding: map-get($spacing, 'ui-padding-sm') map-get($spacing, 'ui-padding');
+      @include font-styles('label-medium');
+    }
+    
+    &.icon {
+      &.icon__position--left {        
+        .ilo--icon {
+          top: map-get($spacing, 'icons', 'icon-padding-m');
+        }
+      }
+      
+      &.icon__position--right {
+        .ilo--icon {
+          top: map-get($spacing, 'icons', 'icon-padding-m');
+        }
+      }
+    }
+  }
+  
+  &--small {
+    .link__label,
+    .button__label {
+      padding: map-get($spacing, 'base') map-get($spacing, 'ui-padding-sm');
+      @include font-styles('label-small');
+    }
+    
+    &.icon {
+      &.icon__position--left {
+        .link__label,
+        .button__label {
+          padding-left: calc(map-get($spacing, 'ui-padding') * 2);
+        }
+        
+        .ilo--icon {
+          left: map-get($spacing, 'icons', 'icon-padding-sm');
+          top: map-get($spacing, 'icons', 'icon-padding-sm');
+        }
+      }
+      
+      &.icon__position--right {
+        .link__label,
+        .button__label {
+          padding-right: calc(map-get($spacing, 'ui-padding') * 2);
+        }
+        
+        .ilo--icon {
+          right: map-get($spacing, 'icons', 'icon-padding-sm');
+          top: map-get($spacing, 'icons', 'icon-padding-sm');
+        }
+      }
+    }
+  }
+  
+  &--primary {
+    background-color: map-get($color, 'ux', 'background', 'attention');
+    border: map-get($borders, 'base') map-get($color, 'ux', 'borders', 'attention') solid;
+    color: map-get($color, 'ux', 'labels', 'attention');  
+  }
+  
+  &--secondary {
+    background-color: map-get($color, 'ux', 'background', 'default');
+    border: map-get($borders, 'base') map-get($color, 'ux', 'borders', 'default') solid;
+    color: map-get($color, 'ux', 'labels', 'actionable');
+  }
+  
+  &--tertiary {
+    background-color: map-get($color, 'ux', 'background', 'highlight');
+    border: map-get($borders, 'base') map-get($color, 'ux', 'borders', 'default') solid;
+    color: map-get($color, 'ux', 'labels', 'actionable');
+  }
+  
   &:focus {
-    color: $brand-ilo-white;
-    background-color: $brand-ilo-yellow;
-    .ilo--btn--label {
-      background-color: $brand-ilo-dark-blue;
-    }
+    background-color: map-get($color, 'ux', 'background', 'focus');
+    border: map-get($borders, 'base') map-get($color, 'ux', 'borders', 'thick') solid;
+    color: map-get($color, 'ux', 'labels', 'focus');
+    outline: none;
   }
+  
+  &:hover {
+    background-color: map-get($color, 'ux', 'background', 'hover');
+    border: map-get($borders, 'base') map-get($color, 'ux', 'borders', 'hover') solid;
+    color: map-get($color, 'ux', 'labels', 'hover');
+    cursor: pointer;
+  }
+  
   &:active {
-    background-color: $brand-ilo-blue;
-    color: $brand-ilo-white;
-    .ilo--btn--label {
-      background-color: $brand-ilo-blue;
-    }
+    background-color: map-get($color, 'ux', 'background', 'active');
+    border: map-get($borders, 'base') map-get($color, 'ux', 'borders', 'active') solid;
+    color: map-get($color, 'ux', 'labels', 'active');
+  }
+  
+  &:disabled {
+    opacity: map-get($opacity, 'disabled');
+    pointer-events: none;
   }
 }

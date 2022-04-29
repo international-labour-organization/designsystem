@@ -1,5 +1,5 @@
 {
-  "name": "@ilo/icons",
+  "name": "@ilo-org/icons",
   "description": "Icons for digital and software products using ILO's Design System",
   "version": "0.0.1",
   "author": "@justintemps",
@@ -18,6 +18,10 @@
   "publishConfig": {
     "access": "public"
   },
+  "files": [
+    "scss",
+    "svg"
+  ],
   "scripts": {
     "build": "pnpm run clean && node tasks/build.js",
     "download-figma": "pnpm run clean && node tasks/download.js",
@@ -30,7 +34,7 @@
     "prepublishOnly": "pnpm run build"
   },
   "dependencies": {
-    "@ilo/icon-build-helpers": "workspace:0.0.1"
+    "@ilo-org/icon-build-helpers": "workspace:0.0.1"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.14.2",
