@@ -17,10 +17,6 @@
     "clean": "pnpm recursive exec -- rm -rf node_modules; rm shrinkwrap.yaml; rm -rf node_modules",
     "install:all": "pnpm recursive install",
     "format:react": "pnpm run format --filter=@ilo-org/react",
-    "format": "pnpm turbo run format",
-    "format:fix": "pnpm turbo run format:fix",
-    "lint": "pnpm turbo run lint",
-    "lint:fix": "pnpm turbo run lint:fix",
     "lint:react": "pnpm run lint --filter=@ilo-org/react",
     "lint:utils": "pnpm run lint --filter=@ilo-org/utils",
     "lint:fix:react": "pnpm run lint:fix --filter=@ilo-org/react",
@@ -33,9 +29,9 @@
     "start:static": "pnpm run storybook:static",
     "storybook": "cd packages/react && pnpm run storybook",
     "storybook:static": "cd packages/react && pnpm run storybook:static",
-    "test": "pnpm turbo run test",
     "test:react": "pnpm run test --filter=@ilo-org/react",
-    "test:utils": "pnpm run test --filter=@ilo-org/utils"
+    "test:utils": "pnpm run test --filter=@ilo-org/utils",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
@@ -53,9 +49,16 @@
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "eslint": "^8.11.0",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.4.1",
     "prettier": "^2.6.0",
     "turbo": "^1.1.10",
     "typescript": "^4.6.2"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,md,mdx,js,jsx,css,scss}": [
+      "prettier --write"
+    ]
   },
   "workspaces": [
     "packages/*",
