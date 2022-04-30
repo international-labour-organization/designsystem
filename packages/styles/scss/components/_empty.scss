@@ -1,0 +1,15 @@
+@use "../tokens" as *;
+@import "../mixins";
+@import "../animations";
+
+.ilo--empty {
+  background-color: $color-base-neutrals-lighter;
+  height: 100%;
+  position: relative;
+  width: 100%;
+  
+  &.storybook {
+    height: 400px;
+    width: 600px;
+  }
+}

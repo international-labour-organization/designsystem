@@ -17,7 +17,8 @@
   "author": "@johnpauldavis, @avrilpearl, @ghlost, @justintemps",
   "license": "Apache-2.0",
   "files": [
-    "build"
+    "build",
+    "tokens"
   ],
   "devDependencies": {
     "style-dictionary": "^3.7.0"
