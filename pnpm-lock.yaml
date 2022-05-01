@@ -202,9 +202,6 @@ importers:
       '@storybook/react': 5.3.21_f9cc32c1e359a5ae50c86cf4f80cf65c
       babel-loader: 8.2.5_@babel+core@7.17.9
 
-  packages/icons-react/next:
-    specifiers: {}
-
   packages/preset-scss:
     specifiers:
       '@babel/cli': ^7.8.4
@@ -403,6 +400,7 @@ importers:
   packages/twig:
     specifiers:
       '@ilo-org/fonts': workspace:*
+      '@ilo-org/icons': workspace:^0.0.1
       '@ilo-org/styles': workspace:*
       '@ilo-org/themes': workspace:*
       express: ^4.17.3
@@ -412,6 +410,7 @@ importers:
       twing: ^5.1.0
     dependencies:
       '@ilo-org/fonts': link:../fonts
+      '@ilo-org/icons': link:../icons
       '@ilo-org/styles': link:../styles
       '@ilo-org/themes': link:../themes
       twing: 5.1.1
@@ -542,6 +541,8 @@ importers:
 
   packages/utils:
     specifiers:
+      '@ilo-org/eslint-config': workspace:^0.0.1
+      '@ilo-org/typescript-config': workspace:^0.0.1
       '@rollup/plugin-commonjs': ^17.1.0
       '@rollup/plugin-json': ^4.1.0
       '@rollup/plugin-node-resolve': ^11.2.1
@@ -563,6 +564,8 @@ importers:
     dependencies:
       typescript: 4.3.4
     devDependencies:
+      '@ilo-org/eslint-config': link:../../config/eslint-config
+      '@ilo-org/typescript-config': link:../../config/typescript-config
       '@rollup/plugin-commonjs': 17.1.0_rollup@2.70.2
       '@rollup/plugin-json': 4.1.0_rollup@2.70.2
       '@rollup/plugin-node-resolve': 11.2.1_rollup@2.70.2
