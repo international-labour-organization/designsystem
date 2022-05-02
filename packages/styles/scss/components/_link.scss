@@ -1,0 +1,6 @@
+@use "../tokens" as *;
+@use "../mixins" as *;
+
+.ilo--link {
+  @include linkstyles();
+}

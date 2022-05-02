@@ -1,6 +1,6 @@
 import type { DecoratorFn } from "@storybook/react";
 import { GlobalProvider } from "../src/components/GlobalProvider";
-import { prefix } from "../src/theme.json";
+import { prefix } from "@ilo-org/themes/tokens/theme/base.json";
 import "./styles.scss";
 
 export const parameters = {
@@ -25,7 +25,7 @@ export const parameters = {
 export const decorators: DecoratorFn[] = [
   (Story, { globals }) => (
     <div style={{ margin: "3em" }}>
-      <GlobalProvider prefix={prefix}>
+      <GlobalProvider prefix={prefix.value}>
         <Story />
       </GlobalProvider>
     </div>
