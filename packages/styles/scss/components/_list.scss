@@ -27,14 +27,14 @@
     list-style: none;
 
     .ilo--list__title {
-      margin-bottom: $spacing-base;
-      margin-right: $spacing-ui-padding-heading;
+      margin-bottom: px-to-rem($spacing-base);
+      margin-right: px-to-rem($spacing-ui-padding-heading);
     }
 
     .ilo--list__item {
-      margin-bottom: $spacing-base;
+      margin-bottom: px-to-rem($spacing-base);
       margin-left: 0;
-      margin-right: $spacing-ui-padding-heading;
+      margin-right: px-to-rem($spacing-ui-padding-heading);
       padding-left: 0;
     }
   }
@@ -44,15 +44,15 @@
     
     font-family: $fonts-display;
     font-weight: 700;
-    margin-bottom: $spacing-ui-padding-heading;
+    margin-bottom: px-to-rem($spacing-ui-padding-heading);
   }
 
   &__item {
     @include font-styles("base");
 
     font-family: $fonts-copy;
-    margin-bottom: $spacing-ui-padding-xl;
-    margin-left: $spacing-ui-padding-lg;
-    padding-left: $spacing-base;
+    margin-bottom: px-to-rem($spacing-ui-padding-xl);
+    margin-left: px-to-rem($spacing-ui-padding-lg);
+    padding-left: px-to-rem($spacing-base);
   }
 }
