@@ -1,0 +1,48 @@
+name: CI
+
+on:
+  push:
+    branches: ["develop", "main"]
+  pull_request:
+    types: [opened, synchronize]
+
+jobs:
+  build:
+    name: Build and Test
+    # Max number of minutes to run the step before killing the process
+    timeout-minutes: 15
+    runs-on: ${{ matrix.os }}
+    # To use Remote Caching, uncomment the next lines and follow the steps below.
+    # env:
+    #  TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
+    #  TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
+    strategy:
+      matrix:
+        node-version: [16.14.0]
+        os: [ubuntu-latest, macos-latest]
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 2
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2.0.1
+        with:
+          version: 6.32.3
+
+      - name: Setup Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: "pnpm"
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Build
+        run: pnpm build:all
+
+      - name: Test
+        run: pnpm test:all

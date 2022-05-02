@@ -8,17 +8,16 @@ const Icon: FC<IconProps> = ({ hidden, name }) => {
   const baseClass = `${prefix}--icon`;
 
   const icon = name
-    ? createElement(icons[`${name.charAt(0).toUpperCase() + name.slice(1)}16`], {
-        "aria-hidden": hidden,
-        className: baseClass,
-      })
+    ? createElement(
+        icons[`${name.charAt(0).toUpperCase() + name.slice(1)}16`],
+        {
+          "aria-hidden": hidden,
+          className: baseClass,
+        }
+      )
     : false;
 
-  return (
-    <>
-      {icon}
-    </>
-  );
+  return <>{icon}</>;
 };
 
 export default Icon;
