@@ -1,0 +1,12 @@
+{
+  "extends": "@ilo-org/typescript-config",
+  "compilerOptions": {
+    "outDir": "lib",
+    "declarationDir": "types",
+    "types": ["node", "jest"],
+    "declaration": true,
+    "emitDeclarationOnly": true
+  },
+  "include": ["src/**/*"],
+  "exclude": ["**/lib/*", "**/node_modules/*"]
+}

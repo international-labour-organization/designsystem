@@ -17,6 +17,7 @@
     "@ilo-org/fonts": "workspace:*",
     "@ilo-org/icons-react": "workspace:*",
     "@ilo-org/styles": "workspace:*",
+    "@ilo-org/themes": "workspace:*",
     "@ilo-org/utils": "workspace:*",
     "classnames": "^2.3.1",
     "dom-helpers": "^5.2.1",
@@ -73,7 +74,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build-test": "react-scripts build",
-    "test": "SKIP_PREFLIGHT_CHECK=true react-scripts test --setupFilesAfterEnv ./src/setup.ts",
+    "test": "SKIP_PREFLIGHT_CHECK=true react-scripts test --watchAll=false --setupFilesAfterEnv ./src/setup.ts",
     "eject": "react-scripts eject",
     "storybook": "start-storybook -p 6006",
     "storybook:static": "http-server ./storybook-static",

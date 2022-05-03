@@ -1,0 +1,20 @@
+//*------------------------------------*\
+//    $ANIMATIONS
+//*------------------------------------*/
+@use "tokens" as *;
+@import "mixins";
+
+// ======================================
+// Animation of empty gradient bars
+// ======================================
+@keyframes emptygradient {
+		0% { 
+			border-image: linear-gradient(90deg, $color-base-neutrals-lighter 0%, $color-base-neutrals-light 100%); border-image-slice: 100; 
+		}
+		50% { 
+			border-image: linear-gradient(-90deg, $color-base-neutrals-lighter 0%, $color-base-neutrals-light 100%); border-image-slice: 100; 
+		}
+		100% { 
+			border-image: linear-gradient(90deg, $color-base-neutrals-lighter 0%, $color-base-neutrals-light 100%);border-image-slice: 100;  
+		}
+}

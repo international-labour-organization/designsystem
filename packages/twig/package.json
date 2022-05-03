@@ -25,6 +25,7 @@
   },
   "dependencies": {
     "@ilo-org/fonts": "workspace:*",
+    "@ilo-org/icons": "workspace:^0.0.1",
     "@ilo-org/styles": "workspace:*",
     "@ilo-org/themes": "workspace:*",
     "twing": "^5.1.0"
