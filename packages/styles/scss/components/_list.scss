@@ -1,4 +1,5 @@
 @use "../tokens" as *;
+@use "../functions" as *;
 @import "../mixins";
 
 .ilo--list {
@@ -27,32 +28,32 @@
     list-style: none;
 
     .ilo--list__title {
-      margin-bottom: px-to-rem($spacing-base);
-      margin-right: px-to-rem($spacing-ui-padding-heading);
+      margin-bottom: px-to-rem(map-get($spacing, "base"));
+      margin-right: px-to-rem(map-get($spacing, "ui-padding-xxl"));
     }
 
     .ilo--list__item {
-      margin-bottom: px-to-rem($spacing-base);
+      margin-bottom: px-to-rem(map-get($spacing, "base"));
       margin-left: 0;
-      margin-right: px-to-rem($spacing-ui-padding-heading);
+      margin-right: px-to-rem(map-get($spacing, "ui-padding-xxl"));
       padding-left: 0;
     }
   }
 
   &__title {
     @include font-styles("headline-5");
-    
+
     font-family: $fonts-display;
     font-weight: 700;
-    margin-bottom: px-to-rem($spacing-ui-padding-heading);
+    margin-bottom: px-to-rem(map-get($spacing, "ui-padding-xxl"));
   }
 
   &__item {
     @include font-styles("base");
 
     font-family: $fonts-copy;
-    margin-bottom: px-to-rem($spacing-ui-padding-xl);
-    margin-left: px-to-rem($spacing-ui-padding-lg);
-    padding-left: px-to-rem($spacing-base);
+    margin-bottom: px-to-rem(map-get($spacing, "ui-padding-xl"));
+    margin-left: px-to-rem(map-get($spacing, "ui-padding-lg"));
+    padding-left: px-to-rem(map-get($spacing, "base"));
   }
 }
