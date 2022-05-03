@@ -1,5 +1,5 @@
 import { createContext, FC } from "react";
-import { prefix as defaultPrefix } from "@ilo-org/themes/tokens/theme/base.json";
+import { themeprefix } from "@ilo-org/themes/tokens/theme/base.json";
 import {
   GlobalProviderProps,
   GlobalProviderContextProps,
@@ -10,7 +10,7 @@ export const GlobalProviderContext = createContext(
 );
 
 const GlobalProvider: FC<GlobalProviderProps> = ({
-  prefix = defaultPrefix.value,
+  prefix = themeprefix.value,
   children,
 }) => {
   return (
