@@ -34,7 +34,8 @@
     "@ilo-org/fonts": "workspace:*",
     "@ilo-org/styles": "workspace:*",
     "@ilo-org/themes": "workspace:*",
-    "@ilo-org/utils": "workspace:*"
+    "@ilo-org/utils": "workspace:*",
+    "@ilo-org/preset-scss": "workspace:*"
   },
   "devDependencies": {
     "@babel/core": "^7.8.4",

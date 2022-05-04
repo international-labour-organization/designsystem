@@ -202,6 +202,9 @@ importers:
       '@storybook/react': 5.3.21_f9cc32c1e359a5ae50c86cf4f80cf65c
       babel-loader: 8.2.5_@babel+core@7.17.9
 
+  packages/icons-react/next:
+    specifiers: {}
+
   packages/preset-scss:
     specifiers:
       '@babel/cli': ^7.8.4
@@ -399,29 +402,6 @@ importers:
 
   packages/twig:
     specifiers:
-      '@ilo-org/fonts': workspace:*
-      '@ilo-org/icons': workspace:^0.0.1
-      '@ilo-org/styles': workspace:*
-      '@ilo-org/themes': workspace:*
-      express: ^4.17.3
-      fs: 0.0.1-security
-      jsonfile: ^6.1.0
-      sass: ^1.49.9
-      twing: ^5.1.0
-    dependencies:
-      '@ilo-org/fonts': link:../fonts
-      '@ilo-org/icons': link:../icons
-      '@ilo-org/styles': link:../styles
-      '@ilo-org/themes': link:../themes
-      twing: 5.1.1
-    devDependencies:
-      express: 4.17.3
-      fs: 0.0.1-security
-      jsonfile: 6.1.0
-      sass: 1.50.1
-
-  packages/twig-storybook:
-    specifiers:
       '@babel/core': ^7.8.4
       '@babel/preset-env': ^7.8.4
       '@ilo-org/fonts': workspace:*
@@ -482,13 +462,13 @@ importers:
       yo: ^3.1.1
     dependencies:
       '@ilo-org/fonts': link:../fonts
+      '@ilo-org/preset-scss': link:../preset-scss
       '@ilo-org/styles': link:../styles
       '@ilo-org/themes': link:../themes
       '@ilo-org/utils': link:../utils
     devDependencies:
       '@babel/core': 7.17.9
       '@babel/preset-env': 7.16.11_@babel+core@7.17.9
-      '@ilo-org/preset-scss': link:../preset-scss
       '@storybook/addon-actions': 6.4.22_867738753c97599a7f249e85e06b5b81
       '@storybook/addon-essentials': 6.4.22_dc360932defd2e6e6c42f38eb5403ed9
       '@storybook/addon-links': 6.4.22_react-dom@16.14.0+react@16.14.0
@@ -10806,7 +10786,7 @@ packages:
     resolution: {integrity: sha512-ayJ0iOCDNHnKpKTgBG6Q6JOnHTj9zFta+3j2b8Ejza0e4cvRyMn0ZoLEmbPrTHe5YYRlDYPvPWVdV4cTaRyH7g==}
     dependencies:
       '@types/expect': 1.20.4
-      '@types/node': 15.14.9
+      '@types/node': 17.0.25
     dev: true
 
   /@types/webpack-env/1.16.4:
