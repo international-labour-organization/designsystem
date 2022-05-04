@@ -6,12 +6,13 @@ import * as icons from "@ilo-org/icons-react";
 const Icon: FC<IconProps> = ({ hidden, name }) => {
   const { prefix } = useGlobalSettings();
   const baseClass = `${prefix}--icon`;
+  const ariaHidden = hidden ? "hidden" : "";
 
   const icon = name
     ? createElement(
         icons[`${name.charAt(0).toUpperCase() + name.slice(1)}16`],
         {
-          "aria-hidden": hidden,
+          "aria-hidden": ariaHidden,
           className: baseClass,
         }
       )
