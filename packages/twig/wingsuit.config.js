@@ -14,7 +14,7 @@ module.exports = {
       path: './apps/storybook',
       type: 'storybook',
       cssMode: 'hot',
-      distFolder: 'dist/app-storybook',
+      distFolder: 'storybook-static',
       designSystem: 'ilo',
       componentTypes: {
         wingsuit_presenter: 'ILO component (UI Pattern) with presentation template',

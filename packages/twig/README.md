@@ -1,23 +1,37 @@
-# ILO Design System - Twig Package
+<p align="center">
+<img src="https://github.com/wingsuit-designsystem/wingsuit/raw/master/images/wsuit-logo-stacked.svg" width="340px">
+</p>
 
-## Status: Proof of Concept
+### Build bulletproof TWIG Components in [Storybook](https://storybook.js.org/).with Bootstrap and JQuery
 
-## Getting Started
+1.  Describe, develop and test your Twig Components in storybook with [twing](https://www.npmjs.com/package/twing).
+1.  Use this components with zero configuration Drupal with UI Patterns
+1.  Bundled Webpack base configuration to keep everything up to date.
 
-Set the appropriate node version using [nvm](https://github.com/nvm-sh/nvm).
+## Prerequisites
 
+- [Node `^12`](https://nodejs.org)
+- [YARN `^1.19`](https://yarnpkg.com/)
+- [PHP `^7.3.0`](https://php.net)
+
+
+#### NPM
+To start storybook
 ```bash
-nvm use
+npm run dev:storybook
+```
+To start drupal
+```bash
+npm run dev:drupal
+```
+#### YARN (prefered)
+To start storybook
+```bash
+yarn dev:storybook
+```
+To start drupal
+```bash
+yarn dev:drupal
 ```
 
-Build the twigs and a copy of the CSS from the styles package.
 
-```bash
-npm run build
-```
-
-Start up the Express server to serve the twigs.
-
-```bash
-npm run serve
-```
