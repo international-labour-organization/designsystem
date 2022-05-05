@@ -1,23 +1,23 @@
 # ILO Design System - Twig Package
 
-## Status: Proof of Concept
+This package provides the implementation of the Design System using [Twig](https://reactjs.org/). It also includes a [Storybook](https://storybook.js.org/) project for documentation and development of Twig components, using [Wingsuit](https://storybook.js.org/).
 
-## Getting Started
+#### PNPM
 
-Set the appropriate node version using [nvm](https://github.com/nvm-sh/nvm).
+To start storybook
 
 ```bash
-nvm use
+pnpm storybook
 ```
 
-Build the twigs and a copy of the CSS from the styles package.
+To build storybook
 
 ```bash
-npm run build
+pnpm build:storybook
 ```
 
-Start up the Express server to serve the twigs.
+To build Twigs to be used in a CMS like Drupal (this will output Twigs and necessary JavaScript to a `/dist` folder.)
 
 ```bash
-npm run serve
+pnpm output
 ```
