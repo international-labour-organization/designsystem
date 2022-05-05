@@ -23,7 +23,6 @@ const ReadMore: FC<ReadMoreProps> = ({
   });
 
   const readmoreButtonClasses = classNames(className, {
-    [baseClass]: true,
     [`${baseClass}--button`]: true,
     [`${baseClass}--button--open`]: isopen,
   });
