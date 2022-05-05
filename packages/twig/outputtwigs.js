@@ -2,7 +2,7 @@
 const fs = require('fs');
 const path = require('path');
 const theme = require('@ilo-org/themes/tokens/theme/base.json');
-let buffer = new Buffer.from(theme.prefix.value);
+let buffer = new Buffer.from(`prefix: ${theme.themeprefix.value}`);
 const srcpath = `./src/patterns/components`;
 
 const checkFolder = async (dir) => {
