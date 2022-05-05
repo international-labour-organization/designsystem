@@ -25,14 +25,18 @@ describe("<Accordion>", () => {
     render(<AccordionSmall />);
     const buttonElement = screen.getAllByRole("button");
     expect(buttonElement).not.toBeNull();
-    expect(buttonElement[0]).toHaveClass("ilo--accordion__button--small");
+    expect(buttonElement[0].getAttribute("class")).toEqual(
+      expect.stringContaining(accordionArgs.small.size)
+    );
   });
 
   it("Expect button to have large class if large size prop passed", () => {
     render(<AccordionLarge />);
     const buttonElement = screen.getAllByRole("button");
     expect(buttonElement).not.toBeNull();
-    expect(buttonElement[0]).toHaveClass("ilo--accordion__button--large");
+    expect(buttonElement[0].getAttribute("class")).toEqual(
+      expect.stringContaining(accordionArgs.large.size)
+    );
   });
 
   it("Should render `h1` with story text.", () => {
