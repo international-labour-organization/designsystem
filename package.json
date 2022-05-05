@@ -17,7 +17,9 @@
     "build:themes": "pnpm run build --filter=@ilo-org/themes",
     "build:twig": "pnpm run build --filter=@ilo-org/twig",
     "build:utils": "pnpm run build --filter=@ilo-org/utils",
-    "clean": "pnpm recursive exec -- rm -rf node_modules; rm -f shrinkwrap.yaml; rm -rf node_modules",
+    "clean:node_modules": "pnpm -r exec rm -rf node_modules",
+    "clean:build": "pnpm -r exec rm -rf build lib dist .turbo storybook-static",
+    "clean": "npm-run-all -p clean:*",
     "install:all": "pnpm recursive install",
     "format:all": "pnpm turbo run format:fix",
     "lint:all": "pnpm turbo run lint:fix",
@@ -56,6 +58,7 @@
     "eslint": "^8.11.0",
     "husky": "^7.0.4",
     "lint-staged": "^12.4.1",
+    "npm-run-all": "^4.1.5",
     "prettier": "^2.6.0",
     "turbo": "^1.2.5",
     "typescript": "^4.6.2"
