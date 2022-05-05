@@ -1,84 +1,29 @@
-import { ButtonProps } from "./Button.props";
+import { ReadMoreProps } from "./ReadMore.props";
 
-const large: ButtonProps = {
-  callback: "",
-  children: "",
-  icon: "add",
-  label: "Large Button",
-  size: "large",
-  target: "_blank",
-  type: "primary",
-  url: "#",
+const closedatstart: ReadMoreProps = {
+  buttonlabel: "Read More",
+  excerpt:
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+  fulltext:
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+  openatstart: false,
 };
 
-const medium: ButtonProps = {
-  callback: "",
-  children: "",
-  icon: "add",
-  label: "Medium Button",
-  size: "medium",
-  type: "primary",
-  url: "#",
-};
-
-const small: ButtonProps = {
-  callback: "",
-  children: "",
-  icon: "add",
-  label: "Small Button",
-  size: "small",
-  type: "primary",
-  url: "#",
-};
-
-const primary: ButtonProps = {
-  callback: "",
-  children: "",
-  label: "Primary Button",
-  size: "large",
-  type: "primary",
-  url: "",
-};
-
-const secondary: ButtonProps = {
-  callback: "",
-  children: "",
-  label: "Secondary Button",
-  size: "large",
-  type: "secondary",
-  url: "",
-};
-
-const tertiary: ButtonProps = {
-  callback: "",
-  children: "",
-  label: "Tertiary Button",
-  size: "large",
-  type: "tertiary",
-  url: "",
-};
-
-const disabled: ButtonProps = {
-  callback: "",
-  children: "",
-  disabled: true,
-  label: "Disabled Button",
-  size: "large",
-  type: "primary",
-  url: "",
+const openedatstart: ReadMoreProps = {
+  buttonlabel: "Read More",
+  excerpt:
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+  fulltext:
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+  openatstart: true,
 };
 
 /**
- * Sample prop definitions for Button's enumerable properties (imported in stories and tests).
+ * Sample prop definitions for ReadMore's enumerable properties (imported in stories and tests).
  */
-const ButtonArgs = {
-  large,
-  medium,
-  small,
-  primary,
-  secondary,
-  tertiary,
-  disabled,
+const ReadMoreArgs = {
+  openedatstart,
+  closedatstart,
 };
 
-export default ButtonArgs;
+export default ReadMoreArgs;

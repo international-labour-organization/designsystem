@@ -1,61 +1,54 @@
-import { FC } from "react";
+import { FC, useState } from "react";
 import classNames from "classnames";
 import useGlobalSettings from "../../hooks/useGlobalSettings";
-import { ButtonProps } from "./Button.props";
-import { Link } from "../Link";
-import { Icon } from "../Icon";
+import { ReadMoreProps } from "./ReadMore.props";
+import { RichText } from "../RichText";
 
-const Button: FC<ButtonProps> = ({
-  callback,
+const ReadMore: FC<ReadMoreProps> = ({
+  buttonlabel,
   className,
-  disabled = false,
-  icon,
-  iconPosition,
-  label,
-  size = "large",
-  target = "",
-  type = "primary",
-  url,
+  excerpt,
+  fulltext,
+  openatstart,
+  ...rest
 }) => {
   const { prefix } = useGlobalSettings();
-  const baseClass = `${prefix}--button`;
-  const hasURL = !!url;
-  const icoPos = iconPosition || "left";
+  const baseClass = `${prefix}--read-more`;
+  const [content, setContent] = useState(openatstart ? fulltext : excerpt);
+  const [isopen, setOpen] = useState(openatstart);
 
-  const ButtonClasses = classNames(className, {
+  const readMoreClasses = classNames(className, {
     [baseClass]: true,
-    [`${baseClass}--${size}`]: size,
-    [`${baseClass}--${type}`]: type,
-    [`icon icon__position--${icoPos}`]: icon,
+    [`${baseClass}--open`]: isopen,
+  });
+
+  const readmoreButtonClasses = classNames(className, {
+    [baseClass]: true,
+    [`${baseClass}--button`]: true,
+    [`${baseClass}--button--open`]: isopen,
   });
 
   /**
-   * On click, if there is a callback, call it
+   * On click, toggle state vars
    */
-  const handleClick = (e: React.MouseEvent<Element, MouseEvent>) => {
-    if (callback) {
-      callback(e);
-    }
+  const handleClick = () => {
+    const nextcontent = content === excerpt ? fulltext : excerpt;
+    setContent(nextcontent);
+    setOpen(!isopen);
   };
 
   return (
-    <>
-      {hasURL ? (
-        <Link className={ButtonClasses} target={target} url={url} label={label}>
-          {icon && <Icon name={icon} hidden={true} />}
-        </Link>
-      ) : (
-        <button
-          className={ButtonClasses}
-          onClick={(e) => handleClick(e)}
-          disabled={disabled}
-        >
-          {label && <span className="button__label">{label}</span>}
-          {icon && <Icon name={icon} hidden={true} />}
-        </button>
-      )}
-    </>
+    <div className={readMoreClasses}>
+      <RichText content={content} {...rest} />
+      <button
+        className={readmoreButtonClasses}
+        aria-expanded={isopen}
+        onClick={() => handleClick()}
+      >
+        {buttonlabel}
+      </button>
+    </div>
   );
 };
 
-export default Button;
+export default ReadMore;

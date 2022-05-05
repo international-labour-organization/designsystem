@@ -1,16 +1,8 @@
-import { ReactNode, MouseEvent } from "react";
-import { buttonTypes } from "../../types";
-
-export interface ButtonProps {
+export interface ReadMoreProps {
   /**
-   * Specify the callback of your Button.
+   * Specify a label for the "Read More" button.
    */
-  callback: function;
-
-  /**
-   * Specify the content of your Button.
-   */
-  children: ReactNode;
+  buttonlabel?: string;
 
   /**
    * Specify an optional className to be added to your Button.
@@ -18,42 +10,17 @@ export interface ButtonProps {
   className?: string;
 
   /**
-   * Specify whether or not the button is disabled.
+   * Specify the excerpt text
    */
-  disabled?: boolean;
+  excerpt?: html;
 
   /**
-   * Specify the icon for the Button
+   * Specify the complete text
    */
-  icon?: string;
+  fulltext?: html;
 
   /**
-   * Specify the icon for the Button
+   * Specify the open/closed state on component load
    */
-  iconPosition?: positionTypes;
-
-  /**
-   * Specify the label for the Button
-   */
-  label?: string;
-
-  /**
-   * Specify an optional className to be added to your Button.
-   */
-  size?: sizeTypes;
-
-  /**
-   * Specify the target for when Button is really a link
-   */
-  target?: string;
-
-  /**
-   * Specify an optional className to be added to your Button.
-   */
-  type?: buttonTypes;
-
-  /**
-   * Specify the url for the Button's href
-   */
-  url?: string;
+  openatstart?: boolean;
 }
