@@ -83,7 +83,7 @@
         @content;
       }
     }
-    
+
     @if $max {
       @media screen and (max-width: #{map-get($breakpoints, $breakpoint) - 1px}) {
         @content;
@@ -97,11 +97,12 @@
 // ======================================
 
 @mixin dataurlicon($name, $color: false) {
-  $iconcolor : $color-base-neutrals-black;
+  $iconcolor: $color-base-neutrals-black;
   @if $color != false {
-    $iconcolor : $color;
+    $iconcolor: $color;
   }
-  $icon : str-slice(map-get($icons, $name), 0, -15) + " fill='#{$iconcolor}' /%3e%3c/svg%3e";
+  $icon: str-slice(map-get($icons, $name), 0, -15) +
+    " fill='#{$iconcolor}' /%3e%3c/svg%3e";
   background-image: url($icon);
 }
 
@@ -111,69 +112,120 @@
 
 @mixin linkstyles() {
   background: map-get($color, "link", "background", "default");
-  border-bottom: $widths-border-sm solid map-get($color, "link", "default", "default");
+  border-bottom: $widths-border-sm solid
+    map-get($color, "link", "default", "default");
   color: map-get($color, "link", "text", "default");
   font-size: inherit;
   font-weight: inherit;
   line-height: inherit;
   text-decoration: none;
-  
+
   &:visited {
     background: map-get($color, "link", "background", "visited");
-    border-bottom: $widths-border-sm solid map-get($color, "link", "underline", "visited");
+    border-bottom: $widths-border-sm solid
+      map-get($color, "link", "underline", "visited");
     color: map-get($color, "link", "text", "visited");
   }
-  
+
   &:hover {
     background: map-get($color, "link", "background", "hover");
-    border-bottom: $widths-border-med solid map-get($color, "link", "underline", "hover");
+    border-bottom: $widths-border-med solid
+      map-get($color, "link", "underline", "hover");
     color: map-get($color, "link", "text", "hover");
     text-decoration: none;
   }
-  
+
   &:active {
     background: map-get($color, "link", "background", "active");
-    border-bottom: $widths-border-lg solid map-get($color, "link", "underline", "active");
+    border-bottom: $widths-border-lg solid
+      map-get($color, "link", "underline", "active");
     color: map-get($color, "link", "text", "active");
     outline: none;
   }
-  
+
   &:focus {
     background: map-get($color, "link", "background", "focus");
-    border-bottom: $widths-border-lg solid map-get($color, "link", "underline", "focus");
+    border-bottom: $widths-border-lg solid
+      map-get($color, "link", "underline", "focus");
     color: map-get($color, "link", "text", "focus");
     outline: none;
   }
-  
+
   &--dark {
     background: map-get($color, "link", "background-dark", "default");
-    border-bottom: $widths-border-sm solid map-get($color, "link", "underline-dark", "default");
+    border-bottom: $widths-border-sm solid
+      map-get($color, "link", "underline-dark", "default");
     color: map-get($color, "link", "text-dark", "default");
-  
+
     &:visited {
       background: map-get($color, "link", "background-dark", "visited");
-      border-bottom: $widths-border-sm solid map-get($color, "link", "underline-dark", "visited");
+      border-bottom: $widths-border-sm solid
+        map-get($color, "link", "underline-dark", "visited");
       color: map-get($color, "link", "text-dark", "visited");
     }
-  
+
     &:hover {
       background: map-get($color, "link", "background-dark", "hover");
-      border-bottom: $widths-border-med solid map-get($color, "link", "underline-dark", "hover");
+      border-bottom: $widths-border-med solid
+        map-get($color, "link", "underline-dark", "hover");
       color: map-get($color, "link", "text-dark", "hover");
     }
-    
+
     &:active {
       background: map-get($color, "link", "background-dark", "active");
-      border-bottom: $widths-border-lg solid map-get($color, "link", "underline-dark", "active");
+      border-bottom: $widths-border-lg solid
+        map-get($color, "link", "underline-dark", "active");
       color: map-get($color, "link", "text-dark", "active");
       outline: none;
     }
-    
+
     &:focus {
       background: map-get($color, "link", "background-dark", "focus");
-      border-bottom: $widths-border-lg solid map-get($color, "link", "underline-dark", "focus");
+      border-bottom: $widths-border-lg solid
+        map-get($color, "link", "underline-dark", "focus");
       color: map-get($color, "link", "text-dark", "focus");
       outline: none;
     }
+  }
+}
+
+// ======================================
+// Tag styles
+// ======================================
+
+@mixin tagstyles() {
+  @include font-styles("nav-md-sm");
+
+  background: map-get($color, "tag", "background", "default");
+  border: none;
+  color: map-get($color, "tag", "text", "default");
+  cursor: pointer;
+  font-family: map-get($fonts, "display");
+  font-size: inherit;
+  font-weight: 500;
+  line-height: inherit;
+  text-decoration: none;
+
+  &:visited {
+    background: map-get($color, "tag", "background", "visited");
+    color: map-get($color, "tag", "text", "visited");
+  }
+
+  &:hover {
+    background: map-get($color, "tag", "background", "hover");
+    color: map-get($color, "tag", "text", "hover");
+    text-decoration: none;
+  }
+
+  &:active {
+    background: map-get($color, "tag", "background", "active");
+    color: map-get($color, "tag", "text", "active");
+    outline: none;
+  }
+
+  &:focus {
+    background: map-get($color, "tag", "background", "focus");
+    color: map-get($color, "tag", "text", "focus");
+    outline: none;
   }
 }

@@ -1,0 +1,16 @@
+@use "../tokens" as *;
+@use "../functions" as *;
+@use "../mixins" as *;
+
+.ilo--tag-set {
+  list-style: none;
+
+  &__item {
+    display: inline-block;
+    margin: map-get($spacing, "horizontal-rule");
+  }
+}
+
+.ilo--tag {
+  @include tagstyles();
+}
