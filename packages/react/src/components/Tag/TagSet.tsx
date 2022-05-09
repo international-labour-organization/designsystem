@@ -43,7 +43,7 @@ const TagSet: FC<TagSetProps> = ({
       ids.push(child.props.id);
     });
     if (checkArrayDuplicates(ids)) {
-      console.warn("Warning: Accordion items must have unique ids.");
+      console.warn("Warning: Tags must have unique ids.");
     }
   }
 

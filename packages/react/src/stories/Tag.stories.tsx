@@ -56,14 +56,30 @@ export default {
 const TagTemplate: Story<TagProps> = (args) => (
   <TagSet {...tagSetArgs.tag} {...args}>
     <Tag {...tagArgs.tag}>Test 1</Tag>
-    <Tag {...tagArgs.tag}>Test 2</Tag>
-    <Tag {...tagArgs.tag}>Test 3</Tag>
-    <Tag {...tagArgs.tag}>Test 4</Tag>
-    <Tag {...tagArgs.tag}>Test 5</Tag>
-    <Tag {...tagArgs.tag}>Test 6</Tag>
-    <Tag {...tagArgs.tag}>Test 7</Tag>
-    <Tag {...tagArgs.tag}>Test 8</Tag>
-    <Tag {...tagArgs.tag}>Test 9</Tag>
+    <Tag {...tagArgs.tag} id="tag2">
+      Test 2
+    </Tag>
+    <Tag {...tagArgs.tag} id="tag3">
+      Test 3
+    </Tag>
+    <Tag {...tagArgs.tag} id="tag4">
+      Test 4
+    </Tag>
+    <Tag {...tagArgs.tag} id="tag5">
+      Test 5
+    </Tag>
+    <Tag {...tagArgs.tag} id="tag6">
+      Test 6
+    </Tag>
+    <Tag {...tagArgs.tag} id="tag7">
+      Test 7
+    </Tag>
+    <Tag {...tagArgs.tag} id="tag8">
+      Test 8
+    </Tag>
+    <Tag {...tagArgs.tag} id="tag9">
+      Test 9
+    </Tag>
   </TagSet>
 );
 

@@ -1,12 +1,11 @@
 import { TagProps } from "./Tag.props";
 
 const tag: TagProps = {
-  onButtonClick: (e) => {
-    console.log(e.target);
-  },
+  // onButtonClick: (e) => {
+  //   console.log(e.target);
+  // },
   children: "",
   id: "tag1",
-  isActive: false,
 };
 
 /**

@@ -206,6 +206,12 @@
   line-height: inherit;
   text-decoration: none;
 
+  &--active {
+    background: map-get($color, "tag", "background", "active");
+    color: map-get($color, "tag", "text", "active");
+    outline: none;
+  }
+
   &:visited {
     background: map-get($color, "tag", "background", "visited");
     color: map-get($color, "tag", "text", "visited");
@@ -215,12 +221,6 @@
     background: map-get($color, "tag", "background", "hover");
     color: map-get($color, "tag", "text", "hover");
     text-decoration: none;
-  }
-
-  &:active {
-    background: map-get($color, "tag", "background", "active");
-    color: map-get($color, "tag", "text", "active");
-    outline: none;
   }
 
   &:focus {

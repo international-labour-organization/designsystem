@@ -1,6 +1,7 @@
 import { TagSetProps } from "./TagSet.props";
 
 const tag: TagSetProps = {
+  allowMultipleActive: true,
   onButtonClick: (e) => {
     console.log(e.target);
   },
