@@ -1,0 +1,30 @@
+readmore:
+  use: '@components/readmore/readmore.twig'
+  label: Read More
+  description: A component for displaying rich text as entered in a WYSIWYG editor.
+  fields:
+    buttonlabel:
+      type: string
+      label: Button Label
+      description: string for the button label
+      preview: "Read More"
+      required: true
+    excerpt:
+      type: string
+      label: Excerpt
+      description: HTML content
+      preview: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+      required: true
+    fulltext:
+      type: string
+      label: Full Text
+      description: HTML content
+      preview: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+      required: true
+    openatstart:
+      type: boolean
+      label: Open At Start
+      description: should the read more be open at page load?
+      preview: false
+      required: true
+  visibility: storybook

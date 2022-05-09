@@ -833,6 +833,66 @@ exports[`Storyshots Components/List Unstyled List 1`] = `
 </div>
 `;
 
+exports[`Storyshots Components/ReadMore ReadMore - default 1`] = `
+<div
+  style={
+    Object {
+      "margin": "3em",
+    }
+  }
+>
+  <div
+    className="ilo--read-more"
+  >
+    <div
+      className="ilo--richtext"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        }
+      }
+    />
+    <button
+      aria-expanded={false}
+      className="ilo--read-more--button"
+      onClick={[Function]}
+    >
+      Read More
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/ReadMore ReadMore - opened on component load 1`] = `
+<div
+  style={
+    Object {
+      "margin": "3em",
+    }
+  }
+>
+  <div
+    className="ilo--read-more ilo--read-more--open"
+  >
+    <div
+      className="ilo--richtext"
+      dangerouslySetInnerHTML={
+        Object {
+          "__html": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        }
+      }
+    />
+    <button
+      aria-expanded={true}
+      className="ilo--read-more--button ilo--read-more--button--open"
+      onClick={[Function]}
+    >
+      Read More
+    </button>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Components/RichText Rich Text 1`] = `
 <div
   style={
