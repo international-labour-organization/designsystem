@@ -1,9 +1,9 @@
 {#
-  ACCORDION COMPONENT
+  TAG SET COMPONENT
 #}
-<ul class="{{prefix}}--tag-set" data-loadcomponent="Tag" data-multipleactive="{{ allowMultipleActive|default(true) }}">
+<ul class="ilo--tag-set" data-loadcomponent="Tag" data-multipleactive="{{ allowMultipleActive|default(true) }}">
   {% for item in items %}
-    {% include "@components/accordion/tag.twig" with {
+    {% include "@components/tag/tag.twig" with {
       content: item.content,
       defaultActive: item.defaultActive,
       id: item.id,

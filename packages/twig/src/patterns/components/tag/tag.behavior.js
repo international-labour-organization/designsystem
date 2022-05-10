@@ -1,4 +1,4 @@
-import Tag from './tag';
+import Tag from './tagset';
 
 Drupal.behaviors.tag = {
   attach() {

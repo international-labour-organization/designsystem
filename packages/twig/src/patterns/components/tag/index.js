@@ -2,6 +2,6 @@
  * tag
  */
 // Module template
-import './tagset.twig';
+import './tag-set.twig';
 import './tagset.wingsuit.yml';
 import './tag.behavior';

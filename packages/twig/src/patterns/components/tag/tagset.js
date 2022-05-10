@@ -51,13 +51,11 @@ export default class Tag {
      * @type {Object}
      */
     this.tags = this.element.querySelectorAll('.ilo--tag');
-    this.multipleExpanded = this.element.getAttribute('data-multipleactive');
-    // this.accordionButtons = this.element.querySelectorAll('.ilo--accordion__button');
-    // this.accordionPanels = this.element.querySelectorAll('.ilo--accordion__panel');
-    console.log(this.multipleExpanded);
+    this.multipleActive = this.element.getAttribute('data-multipleactive');
+    console.log(this.multipleActive);
 
-    this.accordionButtons.forEach((button, i) => {
-      const expanded = button.dataset('active');
+    this.tags.forEach((button, i) => {
+      const expanded = button.dataset['active'];
       const id = this.tags[i].getAttribute('id');
       if (expanded === 'true') {
         this.itemStatuses = getUpdatedItems({
@@ -114,7 +112,7 @@ export default class Tag {
     this.itemStatuses = getUpdatedItems({
       id,
       itemStatuses: this.itemStatuses,
-      allowMultipleExpanded: this.multipleExpanded,
+      allowMultipleacmultipleActive: this.multipleActive,
     });
 
     this.updateTagItems();
@@ -133,10 +131,10 @@ export default class Tag {
       const open = this.itemStatuses.indexOf(id) > -1;
       if (open) {
         this.tags[i].classList.add('ilo--tag--active');
-        this.tags[i].dataset('active', 'true');
+        this.tags[i].setAttribute('data-active', 'true');
       } else {
         this.tags[i].classList.remove('ilo--tag--active');
-        this.tags[i].dataset('active', 'false');
+        this.tags[i].setAttribute('data-active', 'true');
       }
     });
 

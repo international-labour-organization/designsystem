@@ -15,10 +15,14 @@ tag:
       description: The tag item's id.
       preview:
         faker: lorem.word
+  settings: 
     defaultActive:
-      type: text
+      type: select
       label: Default Active
       description: The tag loads in an active state
-      preview:
-        faker: lorem.word
+      options:
+        true: True
+        false: False
+      preview: false
+      required: false
   visibility: storybook
