@@ -1,0 +1,45 @@
+@use "../tokens" as *;
+@use "../functions" as *;
+@import "../mixins";
+
+.ilo--read-more {
+  &--button {
+    background: map-get($color, "ux", "readmore", "default", "background");
+    @include bordervalues("readmore");
+    color: $color-ux-labels-actionable;
+    height: px-to-rem(map-get($spacing, "uxaction", "readmore", "height"));
+    @include spacingvalues("margin", "readmore");
+    @include spacingvalues("padding", "readmore");
+    position: relative;
+    text-align: left;
+    width: px-to-rem(map-get($spacing, "uxaction", "readmore", "width"));
+    @include font-styles("label-medium");
+
+    &:hover {
+      background: map-get($color, "ux", "readmore", "hover", "background");
+      @include bordervalues("readmore", "hover");
+      cursor: pointer;
+    }
+
+    &:after {
+      background-repeat: no-repeat;
+      content: "";
+      display: inline-block;
+      height: px-to-rem(24px);
+      position: absolute;
+      right: px-to-rem(2px);
+      top: 50%;
+      transform: translateY(-50%);
+      transform-origin: center center;
+      width: px-to-rem(24px);
+      @include dataurlicon("arrow", $color-ux-labels-actionable);
+    }
+
+    &--open {
+      &:after {
+        transform: translateY(-50%) rotateX(180deg);
+        transform-origin: center center;
+      }
+    }
+  }
+}

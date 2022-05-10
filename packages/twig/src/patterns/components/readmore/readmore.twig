@@ -1,0 +1,14 @@
+{#
+  READ MORE COMPONENT
+#}
+{% set content = excerpt %}
+{% if openatstart %}
+  {% set content = fulltext %}
+{% endif %}
+
+<div class="{{prefix}}--read-more" data-fulltext="{{fulltext|raw}}" data-loadcomponent="ReadMore" data-prefix="{{prefix}}">
+  {% include "@components/richtext/richtext.twig" with {
+    content: content,
+  } %}
+  <button class="{{prefix}}--read-more--button">{{buttonlabel}}</button>
+</div>
