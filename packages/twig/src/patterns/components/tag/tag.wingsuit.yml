@@ -1,0 +1,24 @@
+tag:
+  use: '@components/tag/tag.twig'
+  label: Tag
+  description: A clickable tag
+  fields:
+    content:
+      type: text
+      label: Content
+      description: The tag item's collapsed content.
+      preview:
+        faker: lorem.word
+    id:
+      type: text
+      label: ID
+      description: The tag item's id.
+      preview:
+        faker: lorem.word
+    defaultActive:
+      type: text
+      label: Default Active
+      description: The tag loads in an active state
+      preview:
+        faker: lorem.word
+  visibility: storybook

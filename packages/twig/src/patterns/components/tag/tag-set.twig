@@ -1,0 +1,13 @@
+{#
+  ACCORDION COMPONENT
+#}
+<ul class="{{prefix}}--tag-set" data-loadcomponent="Tag" data-multipleactive="{{ allowMultipleActive|default(true) }}">
+  {% for item in items %}
+    {% include "@components/accordion/tag.twig" with {
+      content: item.content,
+      defaultActive: item.defaultActive,
+      id: item.id,
+      prefix: prefix
+    } only %}
+  {% endfor %}
+</ul>
