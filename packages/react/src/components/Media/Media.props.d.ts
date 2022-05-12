@@ -10,6 +10,23 @@ interface ImageUrl {
   src?: string;
 }
 
+interface Video {
+  /**
+   * Specify whether a video is to be shown
+   */
+  hasvideo?: boolean;
+
+  /**
+   * if self-hosted, specify the url of this video
+   */
+  src?: string;
+
+  /**
+   * if YouTube, specify a YouTube url or ID
+   */
+  youtube?: string;
+}
+
 export interface MediaProps {
   /**
    * Specify the alt for the image
@@ -34,5 +51,10 @@ export interface MediaProps {
   /**
    * Specify the image src for the image
    */
-  url?: Required<Array<ImgageUrl>>;
+  url?: Required<Object<ImgageUrl>>;
+
+  /**
+   * Specify whether there is a video being shown
+   */
+  video?: Required<Object<Videol>>;
 }

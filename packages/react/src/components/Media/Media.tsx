@@ -2,8 +2,16 @@ import { FC } from "react";
 import classNames from "classnames";
 import useGlobalSettings from "../../hooks/useGlobalSettings";
 import { MediaProps } from "./Media.props";
+import { VideoPlayer } from "../VideoPlayer";
 
-const Media: FC<MediaProps> = ({ alt, caption, className, credit, url }) => {
+const Media: FC<MediaProps> = ({
+  alt,
+  caption,
+  className,
+  credit,
+  url,
+  video,
+}) => {
   const { prefix } = useGlobalSettings();
   const baseClass = `${prefix}--media`;
 
@@ -43,6 +51,7 @@ const Media: FC<MediaProps> = ({ alt, caption, className, credit, url }) => {
             ))}
         <img src={url[0].src} alt={alt} />
       </picture>
+      {video.hasvideo && <VideoPlayer {...video} />}
       {credit && <span className={creditClasses}>{credit}</span>}
       {caption && <figcaption className={captionClasses}>{caption}</figcaption>}
     </figure>
