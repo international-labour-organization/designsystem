@@ -29,7 +29,7 @@ export interface VideoPlayerProps {
   /**
    * Specify the labels for the controls
    */
-  controls?: Required<Object<VideoPlayerControls>>;
+  controls?: Required<VideoPlayerControls>;
 
   /**
    * if self-hosted, specify the url of this video

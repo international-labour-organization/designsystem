@@ -51,10 +51,10 @@ export interface MediaProps {
   /**
    * Specify the image src for the image
    */
-  url?: Required<Object<ImgageUrl>>;
+  url?: Required<ImgageUrl>;
 
   /**
    * Specify whether there is a video being shown
    */
-  video?: Required<Object<Videol>>;
+  video?: Required<Video>;
 }
