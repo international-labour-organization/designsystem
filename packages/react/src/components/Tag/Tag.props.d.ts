@@ -4,7 +4,7 @@ export interface TagProps {
   /**
    * Callback to onButtonClick event;
    */
-  // onButtonClick?: (e: MouseEvent<HTMLButtonElement>, i: any) => void;
+  onButtonClick?: (e: MouseEvent<HTMLButtonElement>, i: any) => void;
 
   /**
    * Specify the label for the tag
@@ -15,11 +15,6 @@ export interface TagProps {
    * The tag's unique id.
    */
   id: string;
-
-  /**
-   * Define if tag is active or not
-   */
-  // isActive: boolean;
 
   /**
    * Specify an optional className to be added to your Tag.
