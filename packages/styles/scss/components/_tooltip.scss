@@ -1,0 +1,141 @@
+@use "../tokens" as *;
+@use "../functions" as *;
+@import "../mixins";
+
+.ilo--tooltip {
+  @include font-styles("body-xs");
+
+  background: map-get($color, "tooltip", "background");
+  border: none;
+  border-radius: px-to-rem(2px);
+  display: inline-block;
+  filter: drop-shadow(
+      0 px-to-rem(0.8px) px-to-rem(1.6px)
+        rgba(map-get($color, "tooltip", "dropshadow"), 0.038)
+    )
+    drop-shadow(
+      0 px-to-rem(2.7px) px-to-rem(5.4px)
+        rgba(map-get($color, "tooltip", "dropshadow"), 0.054)
+    )
+    drop-shadow(
+      0 px-to-rem(12px) px-to-rem(24px)
+        rgba(map-get($color, "tooltip", "dropshadow"), 0.12)
+    );
+  color: map-get($color, "tooltip", "text");
+  padding: map-get($spacing, "ui-padding");
+  position: relative;
+
+  // &--alignment {}
+
+  &__arrow {
+    border-color: transparent;
+    border-right-color: transparent;
+    border-style: solid;
+    border-width: 0;
+    height: 0;
+    margin-top: -7px;
+    position: absolute;
+    width: 0;
+  }
+
+  &--alignment-top {
+    // arrow on the bottom
+    .ilo--tooltip__arrow {
+      border-top-color: map-get($color, "tooltip", "background");
+      border-width: 12px 7px 0 7px;
+      bottom: -12px;
+      left: 50%;
+      margin-left: -7px;
+      top: auto;
+
+      &--placement-negative {
+        left: 10%;
+      }
+
+      &--placement-positive {
+        left: auto;
+        right: 10%;
+      }
+
+      &--placement-center {
+        left: 50%;
+      }
+    }
+  }
+
+  &--alignment-right {
+    // arrow on the left
+    .ilo--tooltip__arrow {
+      border-right-color: map-get($color, "tooltip", "background");
+      border-width: 7px 12px 7px 0;
+      left: 0;
+      margin-left: -12px;
+      top: 50%;
+
+      &--placement-negative {
+        margin-top: 0;
+        top: 10%;
+      }
+
+      &--placement-positive {
+        top: auto;
+        bottom: 10%;
+      }
+
+      &--placement-center {
+        top: 50%;
+      }
+    }
+  }
+
+  &--alignment-left {
+    // arrow on the right
+    .ilo--tooltip__arrow {
+      border-left-color: map-get($color, "tooltip", "background");
+      border-width: 7px 0 7px 12px;
+      left: auto;
+      margin-top: -7px;
+      right: -12px;
+      top: 50%;
+
+      &--placement-negative {
+        margin-top: 0;
+        top: 10%;
+      }
+
+      &--placement-positive {
+        top: auto;
+        bottom: 10%;
+      }
+
+      &--placement-center {
+        top: 50%;
+      }
+    }
+  }
+
+  &--alignment-bottom {
+    // arrow on the top
+    .ilo--tooltip__arrow {
+      border-width: 0 7px 12px 7px;
+      left: 50%;
+      margin-left: -7px;
+      margin-top: -12px;
+      top: 0;
+      border-bottom-color: map-get($color, "tooltip", "background");
+
+      &--placement-negative {
+        left: 10%;
+      }
+
+      &--placement-positive {
+        left: auto;
+        right: 10%;
+      }
+
+      &--placement-center {
+        left: 50%;
+      }
+    }
+  }
+}

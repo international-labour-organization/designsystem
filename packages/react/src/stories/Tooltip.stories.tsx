@@ -65,11 +65,13 @@ const TooltipTemplate: Story<TooltipProps> = (args) => (
 );
 
 /**
- * Light Tooltip Instance
+ * Tooltip Instance
  *
  */
 export const BaseTooltip = TooltipTemplate.bind({});
 
-// enumerate the props for the light link.
+// enumerate the props for the tooltip
 BaseTooltip.args = tooltipArgs.tooltip;
+BaseTooltip.args.alignment = "bottom";
+BaseTooltip.args.placement = "negative";
 BaseTooltip.storyName = "Tooltip";
