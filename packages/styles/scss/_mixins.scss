@@ -2,7 +2,7 @@
 //    $MIXINS
 //*------------------------------------*/
 @use "tokens" as *;
-@use "functions";
+@use "functions" as *;
 
 // ======================================
 // Output font styles
@@ -90,6 +90,40 @@
       }
     }
   }
+}
+
+// ======================================
+// Spacing Values
+// ======================================
+
+@mixin spacingvalues($type, $mappath) {
+  #{$type}: px-to-rem(map-get($spacing, "uxaction", $mappath, $type, "top"))
+    px-to-rem(map-get($spacing, "uxaction", $mappath, $type, "right"))
+    px-to-rem(map-get($spacing, "uxaction", $mappath, $type, "bottom"))
+    px-to-rem(map-get($spacing, "uxaction", $mappath, $type, "left"));
+}
+
+// ======================================
+// Border Values
+// ======================================
+
+@mixin bordervalues($mappath, $state: "default") {
+  border-bottom: px-to-rem(
+      map-get($spacing, "uxaction", $mappath, "border", "bottom")
+    )
+    solid map-get($color, "ux", $mappath, $state, "border", "bottom");
+  border-left: px-to-rem(
+      map-get($spacing, "uxaction", $mappath, "border", "left")
+    )
+    solid map-get($color, "ux", $mappath, $state, "border", "left");
+  border-right: px-to-rem(
+      map-get($spacing, "uxaction", $mappath, "border", "right")
+    )
+    solid map-get($color, "ux", $mappath, $state, "border", "right");
+  border-top: px-to-rem(
+      map-get($spacing, "uxaction", $mappath, "border", "top")
+    )
+    solid map-get($color, "ux", $mappath, $state, "border", "top");
 }
 
 // ======================================

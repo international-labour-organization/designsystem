@@ -28,6 +28,26 @@
       },
       "horizontal-rule": {
         "default": { "value": "{color.base.neutrals.lighter}" }
+      },
+      "readmore": {
+        "default": {
+          "background": { "value": "transparent" },
+          "border": {
+            "bottom": { "value": "transparent" },
+            "left": { "value": "transparent" },
+            "right": { "value": "transparent" },
+            "top": { "value": "{color.base.neutrals.medium}" }
+          }
+        },
+        "hover" : {
+          "background": { "value": "{color.base.blue.light}" },
+          "border": {
+            "bottom": { "value": "transparent" },
+            "left": { "value": "transparent" },
+            "right": { "value": "transparent" },
+            "top": { "value": "{color.base.blue.medium}" }
+          }
+        }
       }
     }
   }
