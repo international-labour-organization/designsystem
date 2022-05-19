@@ -22,6 +22,16 @@ export interface TooltipProps {
   className?: string;
 
   /**
+   * Set the label for the tooltip
+   */
+  label?: string;
+
+  /**
+   * Set whether the tooltip is visible or not
+   */
+  isVisible?: boolean;
+
+  /**
    * Callback fired onMouseOver
    */
   onMouseOver?: function;
@@ -35,4 +45,9 @@ export interface TooltipProps {
    * Describe the theme of the tooltip
    */
   theme?: tooltipThemes;
+
+  /**
+   * Set a width for the tooltip
+   */
+  width?: string;
 }

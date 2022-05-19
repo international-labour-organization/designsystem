@@ -1,10 +1,12 @@
 import { TooltipProps } from "./Tooltip.props";
 
 const tooltip: TooltipProps = {
-  children: "Tooltip",
+  children: "<button>test<button>",
   alignment: "top", // "top" | "right" | "bot" | "left";
+  label: "This is a tooltip",
   placement: "negative", // "negative" | "middle" | "positive";
   theme: "dark", // "light" | "dark" ;
+  isVisible: false,
 };
 
 /**

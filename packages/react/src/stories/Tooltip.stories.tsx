@@ -61,7 +61,9 @@ export default {
  *@param (Object) args - props to be passed to the component
  */
 const TooltipTemplate: Story<TooltipProps> = (args) => (
-  <Tooltip {...args}>This is a tooltip</Tooltip>
+  <Tooltip {...args}>
+    <a href="https://www.google.com/">This is testing for the tooltip</a>
+  </Tooltip>
 );
 
 /**
@@ -72,6 +74,7 @@ export const BaseTooltip = TooltipTemplate.bind({});
 
 // enumerate the props for the tooltip
 BaseTooltip.args = tooltipArgs.tooltip;
-BaseTooltip.args.alignment = "bottom";
+BaseTooltip.args.label = "This is a tooltip!";
+BaseTooltip.args.alignment = "right";
 BaseTooltip.args.placement = "negative";
 BaseTooltip.storyName = "Tooltip";
