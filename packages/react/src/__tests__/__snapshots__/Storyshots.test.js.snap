@@ -926,110 +926,92 @@ exports[`Storyshots Components/Tag Tag 1`] = `
     <li
       className="ilo--tag-set__item"
     >
-      <button
+      <span
         className="ilo--tag"
         id="tag1"
-        onClick={[Function]}
-        type="button"
       >
         Test 1
-      </button>
+      </span>
     </li>
     <li
       className="ilo--tag-set__item"
     >
-      <button
+      <span
         className="ilo--tag"
         id="tag2"
-        onClick={[Function]}
-        type="button"
       >
         Test 2
-      </button>
+      </span>
     </li>
     <li
       className="ilo--tag-set__item"
     >
-      <button
+      <span
         className="ilo--tag"
         id="tag3"
-        onClick={[Function]}
-        type="button"
       >
         Test 3
-      </button>
+      </span>
     </li>
     <li
       className="ilo--tag-set__item"
     >
-      <button
+      <span
         className="ilo--tag"
         id="tag4"
-        onClick={[Function]}
-        type="button"
       >
         Test 4
-      </button>
+      </span>
     </li>
     <li
       className="ilo--tag-set__item"
     >
-      <button
+      <span
         className="ilo--tag"
         id="tag5"
-        onClick={[Function]}
-        type="button"
       >
         Test 5
-      </button>
+      </span>
     </li>
     <li
       className="ilo--tag-set__item"
     >
-      <button
+      <span
         className="ilo--tag"
         id="tag6"
-        onClick={[Function]}
-        type="button"
       >
         Test 6
-      </button>
+      </span>
     </li>
     <li
       className="ilo--tag-set__item"
     >
-      <button
+      <span
         className="ilo--tag"
         id="tag7"
-        onClick={[Function]}
-        type="button"
       >
         Test 7
-      </button>
+      </span>
     </li>
     <li
       className="ilo--tag-set__item"
     >
-      <button
+      <span
         className="ilo--tag"
         id="tag8"
-        onClick={[Function]}
-        type="button"
       >
         Test 8
-      </button>
+      </span>
     </li>
     <li
       className="ilo--tag-set__item"
     >
-      <button
+      <span
         className="ilo--tag"
         id="tag9"
-        onClick={[Function]}
-        type="button"
       >
         Test 9
-      </button>
+      </span>
     </li>
   </ul>
 </div>
