@@ -53,7 +53,7 @@ export default {
  *
  *@param (Object) args - props to be passed to the component
  */
-const TagTemplate: Story<TagProps> = (args) => (
+const DisplayTagTemplate: Story<TagProps> = (args) => (
   <TagSet {...tagSetArgs.tag} {...args}>
     <Tag {...tagArgs.tag}>Test 1</Tag>
     <Tag {...tagArgs.tag} id="tag2">
@@ -84,11 +84,60 @@ const TagTemplate: Story<TagProps> = (args) => (
 );
 
 /**
- * Light Tag Instance
+ * Tag Template
+ *
+ * create a Storybook template for this component
+ *
+ *@param (Object) args - props to be passed to the component
+ */
+const AnchorTagTemplate: Story<TagProps> = (args) => (
+  <TagSet {...tagSetArgs.tag} {...args}>
+    <Tag {...tagArgs.tag} url="https://www.google.com/">
+      Test 1
+    </Tag>
+    <Tag {...tagArgs.tag} id="tag2" url="https://www.google.com/">
+      Test 2
+    </Tag>
+    <Tag {...tagArgs.tag} id="tag3" url="https://www.google.com/">
+      Test 3
+    </Tag>
+    <Tag {...tagArgs.tag} id="tag4" url="https://www.google.com/">
+      Test 4
+    </Tag>
+    <Tag {...tagArgs.tag} id="tag5" url="https://www.google.com/">
+      Test 5
+    </Tag>
+    <Tag {...tagArgs.tag} id="tag6" url="https://www.google.com/">
+      Test 6
+    </Tag>
+    <Tag {...tagArgs.tag} id="tag7" url="https://www.google.com/">
+      Test 7
+    </Tag>
+    <Tag {...tagArgs.tag} id="tag8" url="https://www.google.com/">
+      Test 8
+    </Tag>
+    <Tag {...tagArgs.tag} id="tag9" url="https://www.google.com/">
+      Test 9
+    </Tag>
+  </TagSet>
+);
+
+/**
+ * Display Tag Instance
  *
  */
-export const DefaultTag = TagTemplate.bind({});
+export const DisplayTag = DisplayTagTemplate.bind({});
+
+/**
+ * Anchor Tag Instance
+ *
+ */
+export const AnchorTag = AnchorTagTemplate.bind({});
 
 // enumerate the props for the light tag.
-DefaultTag.args = tagSetArgs.tag;
-DefaultTag.storyName = "Tag";
+DisplayTag.args = tagSetArgs.tag;
+DisplayTag.storyName = "Display Tag";
+
+// enumerate the props for the light tag.
+AnchorTag.args = tagSetArgs.tag;
+AnchorTag.storyName = "Anchor Tag";

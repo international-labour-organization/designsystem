@@ -15,6 +15,7 @@ const Tag: FC<TagProps> = ({ className, children, id, url, ...rest }) => {
   const tagClasses = classNames(className, {
     [baseClass]: true,
     [`${baseClass}--active`]: open,
+    [`${baseClass}--anchor`]: url,
   });
 
   /**

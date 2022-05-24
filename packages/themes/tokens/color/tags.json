@@ -12,7 +12,7 @@
         "default": { "value": "{color.base.neutrals.medium}" },
         "hover": { "value": "{color.base.blue.medium}" },
         "focus": { "value": "{color.base.blue.medium}" },
-        "active": { "value": "{color.base.blue.medium}" },
+        "active": { "value": "{color.base.blue.dark}" },
         "visited": { "value": "{color.base.neutrals.medium}" }
       }
     }

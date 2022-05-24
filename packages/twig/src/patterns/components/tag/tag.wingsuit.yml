@@ -15,6 +15,12 @@ tag:
       description: The tag item's id.
       preview:
         faker: lorem.word
+    url:
+      type: text
+      label: URL
+      description: The tag's url reference
+      preview:
+        faker: https://www.google.com/
   settings: 
     defaultActive:
       type: select

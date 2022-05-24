@@ -233,7 +233,6 @@
   background: map-get($color, "tag", "background", "default");
   border: none;
   color: map-get($color, "tag", "text", "default");
-  cursor: pointer;
   display: inline-block;
   font-family: map-get($fonts, "display");
   font-size: inherit;
@@ -241,6 +240,7 @@
   line-height: inherit;
   padding: px-to-rem(10px) px-to-rem(map-get($spacing, "ui-padding-sm"));
   text-decoration: none;
+  $self: &;
 
   &--active {
     background: map-get($color, "tag", "background", "active");
@@ -248,20 +248,25 @@
     outline: none;
   }
 
-  &:visited {
-    background: map-get($color, "tag", "background", "visited");
-    color: map-get($color, "tag", "text", "visited");
-  }
+  &--anchor {
+    cursor: pointer;
 
-  &:hover {
-    background: map-get($color, "tag", "background", "hover");
-    color: map-get($color, "tag", "text", "hover");
-    text-decoration: none;
-  }
+    #{self}--active {
+      background: map-get($color, "tag", "background", "active");
+      color: map-get($color, "tag", "text", "active");
+      outline: none;
+    }
 
-  &:focus {
-    background: map-get($color, "tag", "background", "focus");
-    color: map-get($color, "tag", "text", "focus");
-    outline: none;
+    &:hover {
+      background: map-get($color, "tag", "background", "hover");
+      color: map-get($color, "tag", "text", "hover");
+      text-decoration: none;
+    }
+
+    &:focus {
+      background: map-get($color, "tag", "background", "focus");
+      color: map-get($color, "tag", "text", "focus");
+      outline: none;
+    }
   }
 }
