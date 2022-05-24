@@ -33,25 +33,32 @@ const Media: FC<MediaProps> = ({
 
   return (
     <figure className={mediaClasses}>
-      <picture className={imgClasses}>
-        {url &&
-          url
-            .sort(
-              (a: any, b: any) =>
-                parseFloat(a.breakpoint) - parseFloat(b.breakpoint)
-            )
-            .slice(1)
-            .reverse()
-            .map((item: any, index: any) => (
-              <source
-                srcSet={item.src}
-                media={`(min-width: ${item.breakpoint}px)`}
-                key={index}
-              />
-            ))}
-        <img src={url[0].src} alt={alt} />
-      </picture>
-      {video.hasvideo && <VideoPlayer {...video} />}
+      {video && !video.hasvideo && (
+        <picture className={imgClasses}>
+          {url &&
+            url
+              .sort(
+                (a: any, b: any) =>
+                  parseFloat(a.breakpoint) - parseFloat(b.breakpoint)
+              )
+              .slice(1)
+              .reverse()
+              .map((item: any, index: any) => (
+                <source
+                  srcSet={item.src}
+                  media={`(min-width: ${item.breakpoint}px)`}
+                  key={index}
+                />
+              ))}
+          <img src={url[0].src} alt={alt} />
+        </picture>
+      )}
+      {video && video.hasvideo && (
+        <VideoPlayer
+          {...video}
+          poster={{ url: url[url.length - 1].src, alt: alt }}
+        />
+      )}
       {credit && <span className={creditClasses}>{credit}</span>}
       {caption && <figcaption className={captionClasses}>{caption}</figcaption>}
     </figure>

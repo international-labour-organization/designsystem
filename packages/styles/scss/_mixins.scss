@@ -130,14 +130,19 @@
 // Data URL Icon
 // ======================================
 
-@mixin dataurlicon($name, $color: false) {
-  $iconcolor: $color-base-neutrals-black;
-  @if $color != false {
-    $iconcolor: $color;
-  }
-  $icon: str-slice(map-get($icons, $name), 0, -15) +
-    " fill='#{$iconcolor}' /%3e%3c/svg%3e";
-  background-image: url($icon);
+@mixin dataurlicon($name, $color: $color-base-neutrals-black) {
+  background-image: url("#{colortodataurlicon($name, $color)}");
+}
+
+// ======================================
+// Icon Button
+// ======================================
+
+@mixin iconbutton($name, $height, $width, $color: $color-base-neutrals-black) {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: $width $height;
+  @include dataurlicon($name, $color);
 }
 
 // ======================================

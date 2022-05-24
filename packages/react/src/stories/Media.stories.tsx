@@ -67,6 +67,16 @@ const MediaTemplate: Story<MediaProps> = (args) => <Media {...args} />;
  */
 export const ImageMedia = MediaTemplate.bind({});
 
-// enumerate the props for the large button
+/**
+ * Video File Instance
+ *
+ */
+export const VideoFileMedia = MediaTemplate.bind({});
+
+// enumerate the props for the image only option
 ImageMedia.args = mediaArgs.imageonly;
 ImageMedia.storyName = "Image Only";
+
+// enumerate the props for the video file option
+VideoFileMedia.args = mediaArgs.videofile;
+VideoFileMedia.storyName = "VIdeo File";

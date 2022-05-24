@@ -1,0 +1,250 @@
+@use "../tokens" as *;
+@use "../functions" as *;
+@import "../mixins";
+
+.ilo--video {
+  position: relative;
+
+  &--player {
+    position: relative;
+  }
+
+  &--poster {
+    display: none;
+    object-fit: cover;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
+  &--controls {
+    bottom: 8px;
+    color: white;
+    display: flex;
+    justify-content: flex-start;
+    left: 0;
+    height: px-to-rem(40px);
+    opacity: 0;
+    position: absolute;
+    width: 100%;
+
+    &.notplayed {
+      bottom: auto;
+      opacity: 1;
+      top: 0;
+
+      @include breakpoint("large") {
+        flex-direction: column;
+        height: 122px;
+        width: 80px;
+      }
+    }
+
+    button span {
+      @include isVisuallyHidden();
+    }
+
+    &--play,
+    &--pause {
+      background-color: #2d2d2d;
+      border: none;
+      cursor: pointer;
+      height: 100%;
+      width: px-to-rem(40px);
+      -webkit-appearance: none;
+      -moz-appearance: none;
+
+      .notplayed & {
+        @include breakpoint("large") {
+          order: 1;
+          height: px-to-rem(80px);
+          width: px-to-rem(80px);
+        }
+      }
+    }
+
+    &--play {
+      @include iconbutton("play", 24px, 24px, "white");
+    }
+
+    &--pause {
+      @include iconbutton("pause", 24px, 24px, "white");
+    }
+
+    &--duration {
+      background-color: #2d2d2d;
+      display: none;
+      margin-left: 2px;
+      height: 100%;
+      order: 2;
+
+      &.show {
+        display: block;
+      }
+
+      .notplayed & {
+        @include breakpoint("large") {
+          height: px-to-rem(40px);
+          margin-left: 0;
+          margin-top: 2px;
+          width: px-to-rem(80px);
+        }
+      }
+    }
+
+    &--progress {
+      background-color: #2d2d2d;
+      display: none;
+      flex-grow: 1;
+      height: 100%;
+      margin-left: 2px;
+      position: relative;
+
+      &.show {
+        display: block;
+      }
+
+      &-playhead {
+        height: 100%;
+        left: 2%;
+        opacity: 0;
+        padding: 0;
+        position: absolute;
+        top: 0;
+        width: 96%;
+        z-index: 20;
+      }
+
+      &-current {
+        height: 8px;
+        margin-left: 2%;
+        position: relative;
+        width: 96%;
+        z-index: 15;
+        -webkit-appearance: none;
+
+        &::-moz-progress-bar {
+          background: #ebf5fd;
+          border-radius: 0;
+        }
+
+        &::-webkit-progress-bar {
+          background: transparent;
+        }
+
+        &::-webkit-progress-value {
+          background: #ebf5fd;
+          border-radius: 0;
+        }
+      }
+
+      &-played {
+        display: none;
+        position: absolute;
+        top: -40px;
+        z-index: 20;
+      }
+
+      &-loaded {
+        height: 8px;
+        left: 2%;
+        position: absolute;
+        top: px-to-rem(16px);
+        width: 96%;
+        z-index: 10;
+        -webkit-appearance: none;
+
+        &::-moz-progress-bar {
+          background: #b8c4cc;
+          border-radius: 0;
+        }
+
+        &::-webkit-progress-bar {
+          background: transparent;
+        }
+
+        &::-webkit-progress-value {
+          background: #b8c4cc;
+          border-radius: 0;
+        }
+      }
+    }
+
+    &--volume {
+      bottom: 1px;
+      display: none;
+      flex-direction: column;
+      height: 140px;
+      margin-left: 2px;
+      position: relative;
+      width: 40px;
+
+      &.show {
+        display: block;
+      }
+    }
+
+    &--showvolume {
+      background-color: #2d2d2d;
+      border: none;
+      cursor: pointer;
+      height: 40px;
+      position: relative;
+      width: px-to-rem(40px);
+      z-index: 10;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      @include iconbutton("volume", 24px, 24px, "white");
+
+      &.muted {
+        @include iconbutton("muted", 24px, 24px, "white");
+      }
+    }
+
+    &--setvolume {
+      background: #2d2d2d;
+      display: none;
+      height: px-to-rem(40px);
+      order: 1;
+      padding: 0;
+      transform: rotate(270deg);
+      transform-origin: -4px -4px;
+      width: px-to-rem(100px);
+
+      &.show {
+        display: block;
+      }
+
+      &-container {
+        left: 0;
+        position: absolute;
+        top: 0;
+      }
+    }
+
+    &--fullscreen {
+      background-color: #2d2d2d;
+      border: none;
+      cursor: pointer;
+      display: none;
+      height: 100%;
+      margin-left: 2px;
+      width: px-to-rem(40px);
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      @include iconbutton("fullscreen", 24px, 24px, "white");
+
+      &.show {
+        display: block;
+      }
+    }
+  }
+
+  &:hover {
+    .ilo--video--controls {
+      opacity: 1;
+    }
+  }
+}
