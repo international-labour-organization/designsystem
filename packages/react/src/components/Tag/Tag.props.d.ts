@@ -20,4 +20,9 @@ export interface TagProps {
    * Specify an optional className to be added to your Tag.
    */
   className?: string;
+
+  /**
+   * Specify an optional url to be added to your Tag.
+   */
+  url?: string;
 }

@@ -234,10 +234,12 @@
   border: none;
   color: map-get($color, "tag", "text", "default");
   cursor: pointer;
+  display: inline-block;
   font-family: map-get($fonts, "display");
   font-size: inherit;
   font-weight: 500;
   line-height: inherit;
+  padding: px-to-rem(10px) px-to-rem(map-get($spacing, "ui-padding-sm"));
   text-decoration: none;
 
   &--active {

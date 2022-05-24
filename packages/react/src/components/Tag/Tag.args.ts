@@ -1,9 +1,6 @@
 import { TagProps } from "./Tag.props";
 
 const tag: TagProps = {
-  onButtonClick: (e) => {
-    console.log(e.target);
-  },
   children: "",
   id: "tag1",
 };

@@ -1,18 +1,12 @@
-import { useContext, FC, MouseEvent } from "react";
+import { useContext, FC } from "react";
 import classNames from "classnames";
 import useGlobalSettings from "../../hooks/useGlobalSettings";
 import { TagProps } from "./Tag.props";
 import { TagSetContext } from "./TagSet";
 
-const Tag: FC<TagProps> = ({ className, children, id, ...rest }) => {
+const Tag: FC<TagProps> = ({ className, children, id, url, ...rest }) => {
   const { prefix } = useGlobalSettings();
-  const {
-    activeItems,
-    setActiveItems,
-    getUpdatedItems,
-    allowMultipleActive,
-    onButtonClick,
-  } = useContext(TagSetContext);
+  const { activeItems } = useContext(TagSetContext);
   const open = activeItems.indexOf(id) > -1;
 
   const baseClass = `${prefix}--tag`;
@@ -26,26 +20,28 @@ const Tag: FC<TagProps> = ({ className, children, id, ...rest }) => {
   /**
    * On click, get id of clicked item, and set that item in state to 'open', all others to 'closed'
    */
-  const handleClick = (e: MouseEvent<HTMLButtonElement>) => {
-    setActiveItems(
-      getUpdatedItems({ id, itemStatuses: activeItems, allowMultipleActive })
-    );
-    if (onButtonClick) {
-      onButtonClick(e, id);
-    }
-  };
+  // const handleClick = (e: MouseEvent<HTMLButtonElement>) => {
+  //   setActiveItems(
+  //     getUpdatedItems({ id, itemStatuses: activeItems, allowMultipleActive })
+  //   );
+  //   if (onButtonClick) {
+  //     onButtonClick(e, id);
+  //   }
+  // };
 
   return (
     <li className={itemClass}>
-      <button
-        type="button"
-        className={tagClasses}
-        onClick={(e) => handleClick(e)}
-        id={id}
-        {...rest}
-      >
-        {children}
-      </button>
+      {url && (
+        <a className={tagClasses} href={url} id={id} {...rest}>
+          {children}
+        </a>
+      )}
+
+      {!url && (
+        <span className={tagClasses} id={id} {...rest}>
+          {children}
+        </span>
+      )}
     </li>
   );
 };
