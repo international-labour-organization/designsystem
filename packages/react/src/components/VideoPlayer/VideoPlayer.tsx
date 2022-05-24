@@ -5,7 +5,7 @@ import { FC, createRef, useState } from "react";
 import { default as RP } from "react-player";
 import { findDOMNode } from "react-dom";
 import { ReactPlayerProps } from "react-player/types/lib";
-const ReactPlayer = RP as unknown as FC<ReactPlayerProps>;
+const ReactPlayer = (RP as unknown) as FC<ReactPlayerProps>;
 import classNames from "classnames";
 import useGlobalSettings from "../../hooks/useGlobalSettings";
 import { VideoPlayerProps } from "./VideoPlayer.props";

@@ -1,7 +1,7 @@
 import { AccordionProps } from "./Accordion.props";
 
 const small: AccordionProps = {
-  onButtonClick: (e) => {
+  onButtonClick: e => {
     console.log(e.target);
   },
   allowMultipleExpanded: true,
@@ -11,7 +11,7 @@ const small: AccordionProps = {
 };
 
 const large: AccordionProps = {
-  onButtonClick: (e) => {
+  onButtonClick: e => {
     console.log(e.target);
   },
   allowMultipleExpanded: true,

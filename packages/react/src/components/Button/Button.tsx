@@ -47,7 +47,7 @@ const Button: FC<ButtonProps> = ({
       ) : (
         <button
           className={ButtonClasses}
-          onClick={(e) => handleClick(e)}
+          onClick={e => handleClick(e)}
           disabled={disabled}
         >
           {label && <span className="button__label">{label}</span>}

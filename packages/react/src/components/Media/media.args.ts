@@ -63,7 +63,8 @@ const videofile: MediaProps = {
       volume: "Volume",
     },
     hasvideo: true,
-    src: "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+    src:
+      "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
     tracks: null,
     youtube: null,
   },
