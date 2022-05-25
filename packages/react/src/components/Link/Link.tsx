@@ -18,7 +18,7 @@ const Link: FC<LinkProps> = ({
       ? ""
       : `${prefix}--link`;
 
-  const LinkClasses = classNames(className, {
+  const linkClasses = classNames(className, {
     [baseClass]: true,
     [`${baseClass}--${theme}`]: theme,
   });
@@ -29,7 +29,7 @@ const Link: FC<LinkProps> = ({
 
   return (
     <a
-      className={LinkClasses}
+      className={linkClasses}
       href={url}
       target={target}
       rel={target ? "noopener noreferrer" : ""}

@@ -1,0 +1,33 @@
+tagset:
+  use: '@components/tag/tag-set.twig'
+  label: Tag Set
+  description: A set of tags
+  fields:
+    items:
+      type: object
+      label: Items
+      description: The tag items.
+      required: true
+      preview:
+        - content: content 1
+          id: tag1
+          defaultActive: true
+          url: https://www.google.com/
+        - content: content 2
+          id: tag2
+          defaultActive: true
+          url: https://www.google.com/
+        - content: content 3
+          id: tag3
+          defaultActive: false
+  settings: 
+    allowMultipleActive:
+      type: select
+      label: Allow Multiple Active
+      description: Allow mutiple tag items to be active at once.
+      options:
+        true: True
+        false: False
+      preview: true
+      required: false
+  visibility: storybook

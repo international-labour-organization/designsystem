@@ -261,3 +261,51 @@
     }
   }
 }
+
+// ======================================
+// Tag styles
+// ======================================
+
+@mixin tagstyles() {
+  @include font-styles("nav-md-sm");
+
+  background: map-get($color, "tag", "background", "default");
+  border: none;
+  color: map-get($color, "tag", "text", "default");
+  display: inline-block;
+  font-family: map-get($fonts, "display");
+  font-size: inherit;
+  font-weight: 500;
+  line-height: inherit;
+  padding: px-to-rem(10px) px-to-rem(map-get($spacing, "ui-padding-sm"));
+  text-decoration: none;
+  $self: &;
+
+  &--active {
+    background: map-get($color, "tag", "background", "active");
+    color: map-get($color, "tag", "text", "active");
+    outline: none;
+  }
+
+  &--anchor {
+    cursor: pointer;
+
+    #{self}--active {
+      background: map-get($color, "tag", "background", "active");
+      color: map-get($color, "tag", "text", "active");
+      outline: none;
+    }
+
+    &:hover {
+      background: map-get($color, "tag", "background", "hover");
+      color: map-get($color, "tag", "text", "hover");
+      text-decoration: none;
+    }
+
+    &:focus {
+      background: map-get($color, "tag", "background", "focus");
+      color: map-get($color, "tag", "text", "focus");
+      outline: none;
+    }
+  }
+}

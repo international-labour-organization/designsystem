@@ -39,6 +39,7 @@
     "storybook:static": "cd packages/react && pnpm run storybook:static",
     "test:all": "pnpm turbo run test",
     "test:react": "pnpm run test --filter=@ilo-org/react",
+    "test:react-update": "pnpm run test:update --filter=@ilo-org/react",
     "test:utils": "pnpm run test --filter=@ilo-org/utils"
   },
   "repository": {
