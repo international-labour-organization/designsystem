@@ -16,12 +16,21 @@ const dark: LinkProps = {
   url: "",
 };
 
+const footer: LinkProps = {
+  children: "",
+  label: "",
+  target: "",
+  theme: "footer",
+  url: "",
+};
+
 /**
  * Sample prop definitions for Link's enumerable properties (imported in stories and tests).
  */
 const LinkArgs = {
   light,
   dark,
+  footer,
 };
 
 export default LinkArgs;
