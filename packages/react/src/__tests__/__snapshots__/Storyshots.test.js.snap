@@ -283,7 +283,7 @@ exports[`Storyshots Components/Button Large Button 1`] = `
   }
 >
   <a
-    className="ilo--button ilo--button--large ilo--button--primary icon icon__position--left  --light"
+    className="ilo--button ilo--button--large ilo--button--primary  --light"
     href="#"
     rel="noopener noreferrer"
     target="_blank"
@@ -296,22 +296,81 @@ exports[`Storyshots Components/Button Large Button 1`] = `
         }
       }
     />
+  </a>
+</div>
+`;
+
+exports[`Storyshots Components/Button Large Button with icon on left 1`] = `
+<div
+  style={
+    Object {
+      "margin": "3em",
+    }
+  }
+>
+  <button
+    className="ilo--button ilo--button--large ilo--button--primary icon icon__position--left"
+    disabled={false}
+    onClick={[Function]}
+  >
+    <span
+      className="button__label"
+    >
+      Icon on left
+    </span>
     <svg
       aria-hidden={true}
       className="ilo--icon"
       fill="currentColor"
       focusable="false"
-      height={16}
+      height={24}
       preserveAspectRatio="xMidYMid meet"
       viewBox="0 0 24 24"
-      width={16}
+      width={24}
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
-        d="M18 11H13V6H11V11H6V13H11V18H13V13H18V11Z"
+        d="M16.9497 15.5356L13.4142 12L16.9497 8.46451L15.5355 7.05029L12 10.5858L8.46446 7.05029L7.05025 8.46451L10.5858 12L7.05025 15.5356L8.46446 16.9498L12 13.4143L15.5355 16.9498L16.9497 15.5356Z"
       />
     </svg>
-  </a>
+  </button>
+</div>
+`;
+
+exports[`Storyshots Components/Button Large Button with icon on right 1`] = `
+<div
+  style={
+    Object {
+      "margin": "3em",
+    }
+  }
+>
+  <button
+    className="ilo--button ilo--button--large ilo--button--primary icon icon__position--right"
+    disabled={false}
+    onClick={[Function]}
+  >
+    <span
+      className="button__label"
+    >
+      Icon on right
+    </span>
+    <svg
+      aria-hidden={true}
+      className="ilo--icon"
+      fill="currentColor"
+      focusable="false"
+      height={24}
+      preserveAspectRatio="xMidYMid meet"
+      viewBox="0 0 24 24"
+      width={24}
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M16.9497 15.5356L13.4142 12L16.9497 8.46451L15.5355 7.05029L12 10.5858L8.46446 7.05029L7.05025 8.46451L10.5858 12L7.05025 15.5356L8.46446 16.9498L12 13.4143L15.5355 16.9498L16.9497 15.5356Z"
+      />
+    </svg>
+  </button>
 </div>
 `;
 
@@ -324,7 +383,7 @@ exports[`Storyshots Components/Button Medium Button 1`] = `
   }
 >
   <a
-    className="ilo--button ilo--button--medium ilo--button--primary icon icon__position--left  --light"
+    className="ilo--button ilo--button--medium ilo--button--primary  --light"
     href="#"
     rel=""
     target=""
@@ -337,22 +396,81 @@ exports[`Storyshots Components/Button Medium Button 1`] = `
         }
       }
     />
+  </a>
+</div>
+`;
+
+exports[`Storyshots Components/Button Medium Button with icon on left 1`] = `
+<div
+  style={
+    Object {
+      "margin": "3em",
+    }
+  }
+>
+  <button
+    className="ilo--button ilo--button--medium ilo--button--primary icon icon__position--left"
+    disabled={false}
+    onClick={[Function]}
+  >
+    <span
+      className="button__label"
+    >
+      Icon on left
+    </span>
     <svg
       aria-hidden={true}
       className="ilo--icon"
       fill="currentColor"
       focusable="false"
-      height={16}
+      height={24}
       preserveAspectRatio="xMidYMid meet"
       viewBox="0 0 24 24"
-      width={16}
+      width={24}
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
-        d="M18 11H13V6H11V11H6V13H11V18H13V13H18V11Z"
+        d="M16.9497 15.5356L13.4142 12L16.9497 8.46451L15.5355 7.05029L12 10.5858L8.46446 7.05029L7.05025 8.46451L10.5858 12L7.05025 15.5356L8.46446 16.9498L12 13.4143L15.5355 16.9498L16.9497 15.5356Z"
       />
     </svg>
-  </a>
+  </button>
+</div>
+`;
+
+exports[`Storyshots Components/Button Medium Button with icon on right 1`] = `
+<div
+  style={
+    Object {
+      "margin": "3em",
+    }
+  }
+>
+  <button
+    className="ilo--button ilo--button--medium ilo--button--primary icon icon__position--right"
+    disabled={false}
+    onClick={[Function]}
+  >
+    <span
+      className="button__label"
+    >
+      Icon on right
+    </span>
+    <svg
+      aria-hidden={true}
+      className="ilo--icon"
+      fill="currentColor"
+      focusable="false"
+      height={24}
+      preserveAspectRatio="xMidYMid meet"
+      viewBox="0 0 24 24"
+      width={24}
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M16.9497 15.5356L13.4142 12L16.9497 8.46451L15.5355 7.05029L12 10.5858L8.46446 7.05029L7.05025 8.46451L10.5858 12L7.05025 15.5356L8.46446 16.9498L12 13.4143L15.5355 16.9498L16.9497 15.5356Z"
+      />
+    </svg>
+  </button>
 </div>
 `;
 
@@ -409,7 +527,7 @@ exports[`Storyshots Components/Button Small Button 1`] = `
   }
 >
   <a
-    className="ilo--button ilo--button--small ilo--button--primary icon icon__position--left  --light"
+    className="ilo--button ilo--button--small ilo--button--primary  --light"
     href="#"
     rel=""
     target=""
@@ -422,22 +540,81 @@ exports[`Storyshots Components/Button Small Button 1`] = `
         }
       }
     />
+  </a>
+</div>
+`;
+
+exports[`Storyshots Components/Button Small Button with icon on left 1`] = `
+<div
+  style={
+    Object {
+      "margin": "3em",
+    }
+  }
+>
+  <button
+    className="ilo--button ilo--button--small ilo--button--primary icon icon__position--left"
+    disabled={false}
+    onClick={[Function]}
+  >
+    <span
+      className="button__label"
+    >
+      Icon on left
+    </span>
     <svg
       aria-hidden={true}
       className="ilo--icon"
       fill="currentColor"
       focusable="false"
-      height={16}
+      height={24}
       preserveAspectRatio="xMidYMid meet"
       viewBox="0 0 24 24"
-      width={16}
+      width={24}
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
-        d="M18 11H13V6H11V11H6V13H11V18H13V13H18V11Z"
+        d="M16.9497 15.5356L13.4142 12L16.9497 8.46451L15.5355 7.05029L12 10.5858L8.46446 7.05029L7.05025 8.46451L10.5858 12L7.05025 15.5356L8.46446 16.9498L12 13.4143L15.5355 16.9498L16.9497 15.5356Z"
       />
     </svg>
-  </a>
+  </button>
+</div>
+`;
+
+exports[`Storyshots Components/Button Small Button with icon on right; 1`] = `
+<div
+  style={
+    Object {
+      "margin": "3em",
+    }
+  }
+>
+  <button
+    className="ilo--button ilo--button--small ilo--button--primary icon icon__position--right"
+    disabled={false}
+    onClick={[Function]}
+  >
+    <span
+      className="button__label"
+    >
+      Icon on right
+    </span>
+    <svg
+      aria-hidden={true}
+      className="ilo--icon"
+      fill="currentColor"
+      focusable="false"
+      height={24}
+      preserveAspectRatio="xMidYMid meet"
+      viewBox="0 0 24 24"
+      width={24}
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M16.9497 15.5356L13.4142 12L16.9497 8.46451L15.5355 7.05029L12 10.5858L8.46446 7.05029L7.05025 8.46451L10.5858 12L7.05025 15.5356L8.46446 16.9498L12 13.4143L15.5355 16.9498L16.9497 15.5356Z"
+      />
+    </svg>
+  </button>
 </div>
 `;
 
@@ -905,7 +1082,7 @@ exports[`Storyshots Components/RichText Rich Text 1`] = `
     className="ilo--richtext"
     dangerouslySetInnerHTML={
       Object {
-        "__html": "<h1>Apollo 11</h1><p><strong>Apollo 11</strong> was the spaceflight that landed the first humans, Americans <a href='http://en.wikipedia.org/wiki/Neil_Armstrong'>Neil Armstrong</a> and <a href='http://en.wikipedia.org/wiki/Buzz_Aldrin'>Buzz Aldrin</a>, on the Moon on July 20, 1969, at 20:18 UTC. Armstrong became the first to step onto the lunar surface 6 hours later on July 21 at 02:56 UTC.</p><p>Armstrong spent about <s>three and a half</s> two and a half hours outside the spacecraft, Aldrin slightly less; and together they collected 47.5 pounds (21.5&nbsp;kg) of lunar material for return to Earth. A third member of the mission, <a href='http://en.wikipedia.org/wiki/Michael_Collins_(astronaut)'>Michael Collins</a>, piloted the <a href='http://en.wikipedia.org/wiki/Apollo_Command/Service_Module'>command</a> spacecraft alone in lunar orbit until Armstrong and Aldrin returned to it for the trip back to Earth. <figure><img alt='placeholder image' class='right' src='https://place-hold.it/400x300?text=Placeholder Image'><figcaption>The caption for this image</figcaption></figure></p><h2>Broadcasting and <em>quotes</em> <a id='quotes' name='quotes'></a></h2><p>Broadcast on live TV to a world-wide audience, Armstrong stepped onto the lunar surface and described the event as:</p><blockquote><p>One small step for [a] man, one giant leap for mankind</p><cite>Neil Armstrong</cite></blockquote><h2>Technical details <a id='tech-details' name='tech-details'></a></h2><p>Launched by a <strong>Saturn V</strong> rocket from <a href='http://en.wikipedia.org/wiki/Kennedy_Space_Center'>Kennedy Space Center</a> in Merritt Island, Florida on July 16, Apollo 11 was the fifth manned mission of <a href='http://en.wikipedia.org/wiki/NASA'>NASA</a>&#39;s Apollo program. The Apollo spacecraft had three parts:</p><ol><li><strong>Command Module</strong> with a cabin for the three astronauts which was the only part which landed back on Earth</li><li><strong>Service Module</strong> which supported the Command Module with propulsion, electrical power, oxygen and water</li><li><strong>Lunar Module</strong> for landing on the Moon.</li></ol><p>After being sent to the Moon by the Saturn V&#39;s upper stage, the astronauts separated the spacecraft from it and travelled for three days until they entered into lunar orbit. Armstrong and Aldrin then moved into the Lunar Module and landed in the <a href='http://en.wikipedia.org/wiki/Mare_Tranquillitatis'>Sea of Tranquility</a>. They stayed a total of about 21 and a half hours on the lunar surface. After lifting off in the upper part of the Lunar Module and rejoining Collins in the Command Module, they returned to Earth and landed in the <a href='http://en.wikipedia.org/wiki/Pacific_Ocean'>Pacific Ocean</a> on July 24.</p><hr><p><small>Source: <a href='http://en.wikipedia.org/wiki/Apollo_11'>Wikipedia.org</a></small></p>",
+        "__html": "<h1>Apollo 11</h1><p><strong>Apollo 11</strong> was the spaceflight that landed the first humans, Americans <a href='http://en.wikipedia.org/wiki/Neil_Armstrong'>Neil Armstrong</a> and <a href='http://en.wikipedia.org/wiki/Buzz_Aldrin'>Buzz Aldrin</a>, on the Moon on July 20, 1969, at 20:18 UTC. Armstrong became the first to step onto the lunar surface 6 hours later on July 21 at 02:56 UTC.</p><p>Armstrong spent about <s>three and a half</s> two and a half hours outside the spacecraft, Aldrin slightly less; and together they collected 47.5 pounds (21.5&nbsp;kg) of lunar material for return to Earth. A third member of the mission, <a href='http://en.wikipedia.org/wiki/Michael_Collins_(astronaut)'>Michael Collins</a>, piloted the <a href='http://en.wikipedia.org/wiki/Apollo_Command/Service_Module'>command</a> spacecraft alone in lunar orbit until Armstrong and Aldrin returned to it for the trip back to Earth. <figure><img alt='placeholder image' class='right' src='https://place-hold.it/400x300?text=Placeholder Image'><figcaption>The caption for this image</figcaption></figure></p><h2>Broadcasting and <em>quotes</em> <a id='quotes' name='quotes'></a></h2><p>Broadcast on live TV to a world-wide audience, Armstrong stepped onto the lunar surface and described the event as:</p><blockquote><p>One small step for [a] man, one giant leap for mankind</p><cite>Neil Armstrong</cite></blockquote><h2>Technical details <a id='tech-details' name='tech-details'></a></h2><p>Launched by a <strong>Saturn V</strong> rocket from <a href='http://en.wikipedia.org/wiki/Kennedy_Space_Center'>Kennedy Space Center</a> in Merritt Island, Florida on July 16, Apollo 11 was the fifth manned mission of <a href='http://en.wikipedia.org/wiki/NASA'>NASA</a>&#39;s Apollo program. The Apollo spacecraft had three parts:</p><ol><li><strong>Command Module</strong> with a cabin for the three astronauts which was the only part which landed back on Earth</li><li><strong>Service Module</strong> which supported the Command Module with propulsion, electrical power, oxygen and water</li><li><strong>Lunar Module</strong> for landing on the Moon.</li></ol><p>After being sent to the Moon by the Saturn V&#39;s upper stage, the astronauts separated the spacecraft from it and travelled for three days until they entered into lunar orbit. Armstrong and Aldrin then moved into the Lunar Module and landed in the <a href='http://en.wikipedia.org/wiki/Mare_Tranquillitatis'>Sea of Tranquility</a>. They stayed a total of about 21 and a half hours on the lunar surface. After lifting off in the upper part of the Lunar Module and rejoining Collins in the Command Module, they returned to Earth and landed in the <a href='http://en.wikipedia.org/wiki/Pacific_Ocean'>Pacific Ocean</a> on July 24.</p><hr><p><small>Source: <a href='http://en.wikipedia.org/wiki/Apollo_11'>Wikipedia.org</a></small></p><h2>H2 Headline</h2><p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.</p><h3>H3 Headline</h3><p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.</p><h4>H4 Headline</h4><p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.</p><h5>H5 Headline</h5><p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.</p><h6>H6 Headline</h6><p>At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.</p>",
       }
     }
   />

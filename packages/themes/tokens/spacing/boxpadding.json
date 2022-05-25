@@ -1,0 +1,46 @@
+{
+  "spacing": {
+    "boxpadding": {
+      "button": {
+        "small": {
+          "bottom": { "value": "5px" },
+          "left": { "value": "16px" },
+          "right": { "value": "16px" },
+          "top": { "value": "5px" }
+        },
+        "medium": {
+          "bottom": { "value": "9px" },
+          "left": { "value": "20px" },
+          "right": { "value": "20px" },
+          "top": { "value": "9px" }
+        },
+        "large": {
+          "bottom": { "value": "10px" },
+          "left": { "value": "24px" },
+          "right": { "value": "24px" },
+          "top": { "value": "10px" }
+        }
+      },
+      "button-icon": {
+        "small": {
+          "bottom": { "value": "5px" },
+          "left": { "value": "36px" },
+          "right": { "value": "36px" },
+          "top": { "value": "5px" }
+        },
+        "medium": {
+          "bottom": { "value": "9px" },
+          "left": { "value": "44px" },
+          "right": { "value": "44px" },
+          "top": { "value": "9px" }
+        },
+        "large": {
+          "bottom": { "value": "10px" },
+          "left": { "value": "48px" },
+          "right": { "value": "48px" },
+          "top": { "value": "10px" }
+        }
+      }
+    }
+  }
+}
