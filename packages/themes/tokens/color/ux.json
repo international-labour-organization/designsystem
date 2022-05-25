@@ -8,7 +8,7 @@
         "hover": { "value": "{color.base.blue.light}" },
         "focus": { "value": "{color.base.neutrals.white}" },
         "active": { "value": "{color.base.blue.medium}" },
-        "attention" : { "value": "{color.base.yellow}" }
+        "attention": { "value": "{color.base.yellow}" }
       },
       "borders": {
         "default": { "value": "{color.base.neutrals.light}" },
@@ -17,14 +17,14 @@
         "hover": { "value": "{color.base.blue.medium}" },
         "focus": { "value": "{color.base.yellow}" },
         "active": { "value": "{color.base.blue.medium}" },
-        "attention" : { "value": "{color.base.yellow}" }
+        "attention": { "value": "{color.base.yellow}" }
       },
       "labels": {
         "actionable": { "value": "{color.base.blue.dark}" },
         "default": { "value": "{color.base.neutrals.medium}" },
         "error": { "value": "{color.base.red.dark}" },
         "hover": { "value": "{color.base.blue.medium}" },
-        "active": { "value": "{color.base.neutrals.white}" }
+        "active": { "value": "{color.base.blue.light}" }
       },
       "horizontal-rule": {
         "default": { "value": "{color.base.neutrals.lighter}" }
@@ -39,7 +39,7 @@
             "top": { "value": "{color.base.neutrals.medium}" }
           }
         },
-        "hover" : {
+        "hover": {
           "background": { "value": "{color.base.blue.light}" },
           "border": {
             "bottom": { "value": "transparent" },
