@@ -9,7 +9,7 @@
     align-items: center;
     background-color: $color-ux-background-default;
     border: none;
-    border-top: 2px solid map-get($color, "accordion", "border"); //colors.base.neutrals.lighter
+    border-top: 2px solid map-get($color, "accordion", "border");
     color: $color-ux-labels-actionable;
     display: flex;
     fill: $color-ux-labels-actionable;
