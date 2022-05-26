@@ -21,4 +21,15 @@ link:
       description: Optional link label
       preview: "Link"
       required: false
+  settings: 
+    theme:
+      type: select
+      label: Theme
+      description: The theme for the link styles
+      required: false
+      options:
+        light: Light
+        dark: Dark
+        footer: Footer
+      preview: 'light'
   visibility: storybook
