@@ -1,24 +1,29 @@
 @use "../tokens" as *;
+@use "../functions" as *;
 @import "../mixins";
 
 .ilo--accordion {
+  $transition-timing: 0.15s;
+
   &__button {
     align-items: center;
     background-color: $color-ux-background-default;
     border: none;
-    border-top: 2px solid $color-ux-borders-default;
+    border-top: 2px solid map-get($color, "accordion", "border"); //colors.base.neutrals.lighter
     color: $color-ux-labels-actionable;
     display: flex;
     fill: $color-ux-labels-actionable;
     flex-direction: row;
     font-family: $fonts-display;
-    font-weight: map-get($type, 'weights', 'section');
+    font-weight: map-get($type, "weights", "section");
     @include font-styles("label-medium");
     justify-content: space-between;
     margin: 0;
-    padding: $spacing-ui-padding-lg 0px calc($spacing-ui-padding-lg - 5px);
-    transition: border 0.3s ease-in-out, background 0.3s ease-in-out,
-      color 0.3s ease-in-out;
+    padding: calc($spacing-ui-padding-lg - 8px) 0
+      calc($spacing-ui-padding-lg - 8px);
+    transition: border $transition-timing ease-in-out,
+      background $transition-timing ease-in-out,
+      color $transition-timing ease-in-out;
     width: 100%;
 
     &:hover,
@@ -32,7 +37,12 @@
 
     &--large {
       @include font-styles("label-large");
-      padding: $spacing-ui-padding-xl 0px calc($spacing-ui-padding-xl - 5px);
+      padding: calc($spacing-ui-padding-xl - 12px) 0px
+        calc($spacing-ui-padding-xl - 13px);
+    }
+
+    svg {
+      margin: 0 px-to-rem(map-get($spacing, "padding-0-5")) 0 0;
     }
   }
 
@@ -45,6 +55,11 @@
 
     @include font-styles("label-medium");
 
+    &--open {
+      padding-bottom: $spacing-ui-padding-xxl;
+      padding-top: px-to-rem(13px);
+    }
+
     &.collapse {
       visibility: hidden;
       height: 0px;
@@ -53,7 +68,6 @@
         height: auto;
         visibility: visible;
         display: block;
-        padding-bottom: $spacing-ui-padding-lg;
       }
 
       &:not(.show) {
@@ -67,8 +81,8 @@
       position: relative;
       overflow: hidden;
       visibility: visible;
-      -webkit-transition-property: height, visibility;
-      transition-property: height, visibility;
+      -webkit-transition-property: height, padding, visibility;
+      transition-property: height, padding, visibility;
       transition-duration: attr(data-transition);
       -webkit-transition-duration: attr(data-transition);
       transition-timing-function: ease;
