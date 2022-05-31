@@ -8,6 +8,9 @@
   &__button {
     align-items: center;
     background-color: $color-ux-background-default;
+    background-position: right center;
+    background-repeat: no-repeat;
+    background-size: 24px 24px;
     border: none;
     border-top: 2px solid map-get($color, "accordion", "border");
     color: $color-ux-labels-actionable;
@@ -41,8 +44,12 @@
         calc($spacing-ui-padding-xl - 13px);
     }
 
-    svg {
-      margin: 0 px-to-rem(map-get($spacing, "padding-0-5")) 0 0;
+    &[aria-expanded="true"] {
+      @include dataurlicon("minus", $color-ux-labels-actionable);
+    }
+
+    &[aria-expanded="false"] {
+      @include dataurlicon("add", $color-ux-labels-actionable);
     }
   }
 

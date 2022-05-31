@@ -1,6 +1,5 @@
 import { FC, useContext, MouseEvent } from "react";
 import classNames from "classnames";
-import { Add24, Minus24 } from "@ilo-org/icons-react";
 import useGlobalSettings from "../../hooks/useGlobalSettings";
 import { default as AccordionButtonProps } from "./AccordionButton.props";
 import { AccordionContext } from "./Accordion";
@@ -55,7 +54,6 @@ const AccordionButton: FC<AccordionButtonProps> = ({
         {...rest}
       >
         {children}
-        {open ? <Add24 /> : <Minus24 />}
       </button>
     </Heading>
   );
