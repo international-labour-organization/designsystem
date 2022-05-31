@@ -55,7 +55,7 @@
     url("~@ilo-org/fonts/assets/Overpass-SemiBold.woff2") format("woff2"),
     url("~@ilo-org/fonts/assets/Overpass-SemiBold.woff") format("woff"),
     url("~@ilo-org/fonts/assets/Overpass-SemiBold.ttf") format("truetype");
-  font-weight: 700;
+  font-weight: 600;
   font-style: normal;
   font-display: swap;
 }
@@ -68,6 +68,34 @@
     url("~@ilo-org/fonts/assets/Overpass-SemiBoldItalic.woff2") format("woff2"),
     url("~@ilo-org/fonts/assets/Overpass-SemiBoldItalic.woff") format("woff"),
     url("~@ilo-org/fonts/assets/Overpass-SemiBoldItalic.ttf") format("truetype");
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* --- Overpass Bold --- */
+
+@font-face {
+  font-family: "Overpass";
+  src: url("~@ilo-org/fonts/assets/Overpass-Bold.eot");
+  src: url("~@ilo-org/fonts/assets/Overpass-Bold.eot?#iefix")
+      format("embedded-opentype"),
+    url("~@ilo-org/fonts/assets/Overpass-Bold.woff2") format("woff2"),
+    url("~@ilo-org/fonts/assets/Overpass-Bold.woff") format("woff"),
+    url("~@ilo-org/fonts/assets/Overpass-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Overpass";
+  src: url("~@ilo-org/fonts/assets/Overpass-BoldItalic.eot");
+  src: url("~@ilo-org/fonts/assets/Overpass-BoldItalic.eot?#iefix")
+      format("embedded-opentype"),
+    url("~@ilo-org/fonts/assets/Overpass-BoldItalic.woff2") format("woff2"),
+    url("~@ilo-org/fonts/assets/Overpass-BoldItalic.woff") format("woff"),
+    url("~@ilo-org/fonts/assets/Overpass-BoldItalic.ttf") format("truetype");
   font-weight: 700;
   font-style: italic;
   font-display: swap;
@@ -82,7 +110,8 @@
 @font-face {
   font-family: "Noto Sans";
   src: url("~@ilo-org/fonts/assets/NotoSans.eot");
-  src: url("~@ilo-org/fonts/assets/NotoSans.eot?#iefix") format("embedded-opentype"),
+  src: url("~@ilo-org/fonts/assets/NotoSans.eot?#iefix")
+      format("embedded-opentype"),
     url("~@ilo-org/fonts/assets/NotoSans.woff2") format("woff2"),
     url("~@ilo-org/fonts/assets/NotoSans.woff") format("woff"),
     url("~@ilo-org/fonts/assets/NotoSans.ttf") format("truetype");
