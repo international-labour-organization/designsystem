@@ -1088,3 +1088,222 @@ exports[`Storyshots Components/RichText Rich Text 1`] = `
   />
 </div>
 `;
+
+exports[`Storyshots Components/Tag Anchor Tag 1`] = `
+<div
+  style={
+    Object {
+      "margin": "3em",
+    }
+  }
+>
+  <ul
+    className="ilo--tag-set"
+  >
+    <li
+      className="ilo--tag-set__item"
+    >
+      <a
+        className="ilo--tag ilo--tag--anchor"
+        href="https://www.google.com/"
+        id="tag1"
+      >
+        Test 1
+      </a>
+    </li>
+    <li
+      className="ilo--tag-set__item"
+    >
+      <a
+        className="ilo--tag ilo--tag--anchor"
+        href="https://www.google.com/"
+        id="tag2"
+      >
+        Test 2
+      </a>
+    </li>
+    <li
+      className="ilo--tag-set__item"
+    >
+      <a
+        className="ilo--tag ilo--tag--anchor"
+        href="https://www.google.com/"
+        id="tag3"
+      >
+        Test 3
+      </a>
+    </li>
+    <li
+      className="ilo--tag-set__item"
+    >
+      <a
+        className="ilo--tag ilo--tag--anchor"
+        href="https://www.google.com/"
+        id="tag4"
+      >
+        Test 4
+      </a>
+    </li>
+    <li
+      className="ilo--tag-set__item"
+    >
+      <a
+        className="ilo--tag ilo--tag--anchor"
+        href="https://www.google.com/"
+        id="tag5"
+      >
+        Test 5
+      </a>
+    </li>
+    <li
+      className="ilo--tag-set__item"
+    >
+      <a
+        className="ilo--tag ilo--tag--anchor"
+        href="https://www.google.com/"
+        id="tag6"
+      >
+        Test 6
+      </a>
+    </li>
+    <li
+      className="ilo--tag-set__item"
+    >
+      <a
+        className="ilo--tag ilo--tag--anchor"
+        href="https://www.google.com/"
+        id="tag7"
+      >
+        Test 7
+      </a>
+    </li>
+    <li
+      className="ilo--tag-set__item"
+    >
+      <a
+        className="ilo--tag ilo--tag--anchor"
+        href="https://www.google.com/"
+        id="tag8"
+      >
+        Test 8
+      </a>
+    </li>
+    <li
+      className="ilo--tag-set__item"
+    >
+      <a
+        className="ilo--tag ilo--tag--anchor"
+        href="https://www.google.com/"
+        id="tag9"
+      >
+        Test 9
+      </a>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`Storyshots Components/Tag Display Tag 1`] = `
+<div
+  style={
+    Object {
+      "margin": "3em",
+    }
+  }
+>
+  <ul
+    className="ilo--tag-set"
+  >
+    <li
+      className="ilo--tag-set__item"
+    >
+      <span
+        className="ilo--tag"
+        id="tag1"
+      >
+        Test 1
+      </span>
+    </li>
+    <li
+      className="ilo--tag-set__item"
+    >
+      <span
+        className="ilo--tag"
+        id="tag2"
+      >
+        Test 2
+      </span>
+    </li>
+    <li
+      className="ilo--tag-set__item"
+    >
+      <span
+        className="ilo--tag"
+        id="tag3"
+      >
+        Test 3
+      </span>
+    </li>
+    <li
+      className="ilo--tag-set__item"
+    >
+      <span
+        className="ilo--tag"
+        id="tag4"
+      >
+        Test 4
+      </span>
+    </li>
+    <li
+      className="ilo--tag-set__item"
+    >
+      <span
+        className="ilo--tag"
+        id="tag5"
+      >
+        Test 5
+      </span>
+    </li>
+    <li
+      className="ilo--tag-set__item"
+    >
+      <span
+        className="ilo--tag"
+        id="tag6"
+      >
+        Test 6
+      </span>
+    </li>
+    <li
+      className="ilo--tag-set__item"
+    >
+      <span
+        className="ilo--tag"
+        id="tag7"
+      >
+        Test 7
+      </span>
+    </li>
+    <li
+      className="ilo--tag-set__item"
+    >
+      <span
+        className="ilo--tag"
+        id="tag8"
+      >
+        Test 8
+      </span>
+    </li>
+    <li
+      className="ilo--tag-set__item"
+    >
+      <span
+        className="ilo--tag"
+        id="tag9"
+      >
+        Test 9
+      </span>
+    </li>
+  </ul>
+</div>
+`;
