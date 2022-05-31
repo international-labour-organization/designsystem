@@ -3,7 +3,6 @@ import { ButtonProps } from "./Button.props";
 const large: ButtonProps = {
   callback: "",
   children: "",
-  icon: "add",
   label: "Large Button",
   size: "large",
   target: "_blank",
@@ -14,7 +13,6 @@ const large: ButtonProps = {
 const medium: ButtonProps = {
   callback: "",
   children: "",
-  icon: "add",
   label: "Medium Button",
   size: "medium",
   type: "primary",
@@ -24,7 +22,6 @@ const medium: ButtonProps = {
 const small: ButtonProps = {
   callback: "",
   children: "",
-  icon: "add",
   label: "Small Button",
   size: "small",
   type: "primary",
@@ -68,6 +65,69 @@ const disabled: ButtonProps = {
   url: "",
 };
 
+const iconleftlg: ButtonProps = {
+  callback: "",
+  children: "",
+  icon: "close",
+  label: "Icon on left",
+  size: "large",
+  type: "primary",
+  url: "",
+};
+
+const iconleftm: ButtonProps = {
+  callback: "",
+  children: "",
+  icon: "close",
+  label: "Icon on left",
+  size: "medium",
+  type: "primary",
+  url: "",
+};
+
+const iconleftsm: ButtonProps = {
+  callback: "",
+  children: "",
+  icon: "close",
+  label: "Icon on left",
+  size: "small",
+  type: "primary",
+  url: "",
+};
+
+const iconrightlg: ButtonProps = {
+  callback: "",
+  children: "",
+  icon: "close",
+  iconPosition: "right",
+  label: "Icon on right",
+  size: "large",
+  type: "primary",
+  url: "",
+};
+
+const iconrightm: ButtonProps = {
+  callback: "",
+  children: "",
+  icon: "close",
+  iconPosition: "right",
+  label: "Icon on right",
+  size: "medium",
+  type: "primary",
+  url: "",
+};
+
+const iconrightsm: ButtonProps = {
+  callback: "",
+  children: "",
+  icon: "close",
+  iconPosition: "right",
+  label: "Icon on right",
+  size: "small",
+  type: "primary",
+  url: "",
+};
+
 /**
  * Sample prop definitions for Button's enumerable properties (imported in stories and tests).
  */
@@ -79,6 +139,12 @@ const ButtonArgs = {
   secondary,
   tertiary,
   disabled,
+  iconleftlg,
+  iconleftm,
+  iconleftsm,
+  iconrightlg,
+  iconrightm,
+  iconrightsm,
 };
 
 export default ButtonArgs;

@@ -6,110 +6,143 @@
   font-family: $fonts-copy;
   font-weight: 400;
   @include font-styles("body-small");
-  
+
   a {
     @include linkstyles();
   }
-  
+
   img {
-    margin-bottom: px-to-rem(map-get($spacing, "content-padding"));
-    margin-top: px-to-rem(map-get($spacing, "content-padding-lg"));
     width: 100%;
   }
-  
+
+  p {
+    margin-bottom: px-to-rem(map-get($spacing, "padding-3"));
+  }
+
+  p + figure,
+  p + img,
+  p + blockquote,
+  ul + img,
+  ol + img,
+  dl + img,
+  p + hr,
+  ul + hr,
+  ol + hr,
+  dl + hr,
+  blockquote + hr {
+    margin-top: px-to-rem(map-get($spacing, "padding-7"));
+  }
+
   figure {
     width: 100%;
+    margin-bottom: px-to-rem(map-get($spacing, "padding-7"));
   }
-  
+
   figcaption {
+    border-left: 3px solid #b8c4cc;
     color: $color-font-caption;
     font-weight: 400;
+    margin-top: px-to-rem(map-get($spacing, "padding-2"));
+    padding-left: px-to-rem(map-get($spacing, "padding-1"));
     @include font-styles("image-caption");
   }
-  
-  p {
-    margin-bottom: px-to-rem(map-get($spacing, "content-padding"));
-    
-    img {
-      margin-top: px-to-rem(map-get($spacing, "content-padding-xxl"));
-    }
-  }
-  
-  em, i {
+
+  em,
+  i {
     font-style: italic;
   }
-  
-  strong, b {
+
+  strong,
+  b {
     font-weight: 700;
   }
-  
+
   hr {
     background-color: $color-ux-horizontal-rule-default;
     border: none;
     height: px-to-rem(map-get($spacing, "horizontal-rule"));
+    margin-bottom: px-to-rem(map-get($spacing, "padding-7"));
   }
-  
-  h1, h2, h3, h4, h5, h6 {
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: $fonts-display;
     font-weight: 700;
-    margin-bottom: px-to-rem(map-get($spacing, "content-padding"));
-    margin-top: px-to-rem(map-get($spacing, "content-padding-lg"));
   }
-  
+
   h1 {
+    margin-bottom: px-to-rem(map-get($spacing, "padding-4"));
     @include font-styles("headline-2");
   }
-  
+
   h2 {
+    margin-bottom: px-to-rem(map-get($spacing, "padding-4"));
     @include font-styles("headline-3");
   }
-  
+
   h3 {
+    margin-bottom: px-to-rem(map-get($spacing, "padding-3"));
     @include font-styles("headline-4");
   }
-  
+
   h4 {
+    margin-bottom: px-to-rem(map-get($spacing, "padding-3"));
     @include font-styles("headline-5");
   }
-  
-  h5, h6 {
+
+  h5 {
+    margin-bottom: px-to-rem(map-get($spacing, "padding-3"));
     @include font-styles("headline-6");
   }
-  
-  ul, ol {
+
+  h6 {
+    margin-bottom: px-to-rem(map-get($spacing, "padding-3"));
+    @include font-styles("headline-5");
+  }
+
+  ul,
+  ol {
     li {
       &::before {
-          content: "";
-          display: inline-block;
-          height: px-to-rem(14px);
-          margin-right: px-to-rem(12px);
-          width: px-to-rem(12px);
-          @include dataurlicon("listarrow");
+        content: "";
+        display: inline-block;
+        height: px-to-rem(14px);
+        margin-right: px-to-rem(12px);
+        width: px-to-rem(12px);
+        @include dataurlicon("listarrow");
       }
-      margin-bottom: px-to-rem(map-get($spacing, "content-padding"));
+      margin-bottom: px-to-rem(map-get($spacing, "padding-4"));
     }
-    margin-bottom: px-to-rem(map-get($spacing, "content-padding"));
+    margin-bottom: px-to-rem(map-get($spacing, "padding-4"));
   }
-  
-  blockquote { 
+
+  blockquote {
+    background-color: $color-ux-background-highlight;
     background-position: right top;
     background-repeat: no-repeat;
     background-size: px-to-rem(72px) px-to-rem(40px);
     display: block;
-    margin: px-to-rem(map-get($spacing, "content-padding-med")) 0;
-    padding: px-to-rem(map-get($spacing, "content-padding-xl")) 0 px-to-rem(map-get($spacing, "content-padding-med")) px-to-rem(map-get($spacing, "content-padding-med"));
+    margin: px-to-rem(map-get($spacing, "padding-3")) 0
+      px-to-rem(map-get($spacing, "padding-5")) 0;
+    padding: px-to-rem(map-get($spacing, "padding-5")) 0
+      px-to-rem(map-get($spacing, "padding-3"))
+      px-to-rem(map-get($spacing, "padding-3"));
     position: relative;
     width: 100%;
-    @include dataurlicon("triangle", $color-ux-background-highlight);
-    
+    @include dataurlicon("triangle", $color-ux-background-default);
+
     p {
       color: $color-font-blockquote;
       font-weight: 300;
-      margin-bottom: px-to-rem(map-get($spacing, "content-padding-med"));
-      padding: 0 px-to-rem(map-get($spacing, "content-padding-xl")) 0 0;
+      margin-bottom: px-to-rem(map-get($spacing, "padding-3"));
+      padding: 0 px-to-rem(map-get($spacing, "padding-8")) 0 0;
       position: relative;
       @include font-styles("pull-quote-sm");
-      
+
       &:after {
         background-repeat: no-repeat;
         bottom: 0;
@@ -120,16 +153,16 @@
         right: 0;
         transform: scaleX(-1);
         width: px-to-rem(26.5px);
-        @include dataurlicon("quote", $color-font-blockquote);   
+        @include dataurlicon("quote", $color-font-blockquote);
       }
     }
-    
+
     cite {
       color: $color-font-cite;
       font-weight: 400;
       @include font-styles("pull-quote-cite");
     }
-    
+
     &:before {
       background-repeat: no-repeat;
       content: "";
@@ -139,57 +172,93 @@
       position: absolute;
       width: px-to-rem(53px);
       top: 0;
-      @include dataurlicon("quote", $color-font-blockquote);   
+      @include dataurlicon("quote", $color-font-blockquote);
     }
   }
-  
+
   @include breakpoint("medium") {
     @include font-styles("base");
-    
+
     h1 {
+      margin-bottom: px-to-rem(map-get($spacing, "padding-5"));
       @include font-styles("headline-1");
     }
-    
+
     h2 {
+      margin-bottom: px-to-rem(map-get($spacing, "padding-5"));
       @include font-styles("headline-2");
     }
-    
+
     h3 {
+      margin-bottom: px-to-rem(map-get($spacing, "padding-4"));
       @include font-styles("headline-3");
     }
-    
+
     h4 {
+      margin-bottom: px-to-rem(map-get($spacing, "padding-4"));
       @include font-styles("headline-4");
     }
-    
+
     h5 {
+      margin-bottom: px-to-rem(map-get($spacing, "padding-4"));
       @include font-styles("headline-5");
     }
-    
+
     h6 {
-      @include font-styles("headline-6");
+      margin-bottom: px-to-rem(map-get($spacing, "padding-4"));
+      @include font-styles("headline-5");
     }
-    
-    blockquote { 
+
+    p {
+      margin-bottom: px-to-rem(map-get($spacing, "padding-4"));
+    }
+
+    p + figure,
+    p + img,
+    p + blockquote,
+    ul + img,
+    ol + img,
+    dl + img,
+    p + hr,
+    ul + hr,
+    ol + hr,
+    dl + hr,
+    blockquote + hr {
+      margin-top: px-to-rem(map-get($spacing, "padding-8"));
+    }
+
+    hr {
+      margin-bottom: px-to-rem(map-get($spacing, "padding-8"));
+    }
+
+    figure {
+      width: 100%;
+      margin-bottom: px-to-rem(map-get($spacing, "padding-8"));
+    }
+
+    blockquote {
       background-size: px-to-rem(86px) px-to-rem(48px);
-      margin: px-to-rem(map-get($spacing, "content-padding-med")) 0;
-      padding: px-to-rem(map-get($spacing, "content-padding-xxxl")) 0 px-to-rem(map-get($spacing, "content-padding-lg")) px-to-rem(map-get($spacing, "content-padding-lg"));
-      
+      margin: px-to-rem(map-get($spacing, "padding-4")) 0
+        px-to-rem(map-get($spacing, "padding-8")) 0;
+      padding: px-to-rem(map-get($spacing, "padding-10")) 0
+        px-to-rem(map-get($spacing, "padding-6"))
+        px-to-rem(map-get($spacing, "padding-6"));
+
       p {
-        margin-bottom: px-to-rem(map-get($spacing, "content-padding-lg"));
-        padding: 0 px-to-rem(map-get($spacing, "content-padding-lg")) 0 0;
+        margin-bottom: px-to-rem(map-get($spacing, "padding-4"));
+        padding: 0 px-to-rem(map-get($spacing, "padding-6")) 0 0;
         position: relative;
         @include font-styles("pull-quote-lg");
-        
+
         &:after {
           height: px-to-rem(24px);
-          width: px-to-rem(32px);  
+          width: px-to-rem(32px);
         }
       }
-      
+
       &:before {
         height: px-to-rem(48px);
-        width: px-to-rem(64px);   
+        width: px-to-rem(64px);
       }
     }
   }
