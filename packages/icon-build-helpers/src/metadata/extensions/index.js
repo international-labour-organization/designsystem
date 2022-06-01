@@ -5,16 +5,16 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-'use strict';
+"use strict";
 
-const assets = require('./assets');
-const categories = require('./categories');
-const deprecated = require('./deprecated');
-const icons = require('./icons');
-const moduleName = require('./module-name');
-const moduleInfo = require('./module-info');
-const output = require('./output');
-const pictograms = require('./pictograms');
+const assets = require("./assets");
+const categories = require("./categories");
+const deprecated = require("./deprecated");
+const icons = require("./icons");
+const moduleName = require("./module-name");
+const moduleInfo = require("./module-info");
+const output = require("./output");
+const pictograms = require("./pictograms");
 
 /**
  * @typedef {object} Extension

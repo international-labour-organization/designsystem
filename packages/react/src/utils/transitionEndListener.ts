@@ -18,7 +18,7 @@ export default function transitionEndListener(
   const delay = parseDuration(element, "transitionDelay");
   const remove = transitionEnd(
     element,
-    e => {
+    (e) => {
       if (e.target === element) {
         remove();
         handler(e);

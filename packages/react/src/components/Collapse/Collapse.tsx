@@ -56,9 +56,10 @@ const Collapse = forwardRef<Transition<any>, CollapseProps>(
     const handleEntering = useMemo(
       () =>
         createChainedFunction((elem: HTMLElement) => {
-          const scroll = `scroll${computedDimension[0].toUpperCase()}${computedDimension.slice(
-            1
-          )}` as keyof HTMLElement;
+          const scroll =
+            `scroll${computedDimension[0].toUpperCase()}${computedDimension.slice(
+              1
+            )}` as keyof HTMLElement;
           elem.style[computedDimension] = `${elem[scroll]}px`;
           elem.style.transitionDuration = `${timeout + 50}ms`;
         }, onEntering),

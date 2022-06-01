@@ -7,15 +7,15 @@
  * @jest-environment jsdom
  */
 
-import React from 'react';
-import { render } from 'react-dom';
-import Icon from '../Icon';
+import React from "react";
+import { render } from "react-dom";
+import Icon from "../Icon";
 
-describe('Icon', () => {
+describe("Icon", () => {
   let mountNode;
 
   beforeEach(() => {
-    mountNode = document.createElement('div');
+    mountNode = document.createElement("div");
     document.body.appendChild(mountNode);
   });
 
@@ -23,7 +23,7 @@ describe('Icon', () => {
     mountNode.parentNode.removeChild(mountNode);
   });
 
-  it('should render', () => {
+  it("should render", () => {
     expect(() => {
       render(
         <Icon width={16} height={16} viewBox="0 0 16 16">
@@ -34,7 +34,7 @@ describe('Icon', () => {
     }).not.toThrow();
   });
 
-  it('should treat focusable as a string', () => {
+  it("should treat focusable as a string", () => {
     render(
       <Icon width={16} height={16} viewBox="0 0 16 16">
         <circle cx={8} cy={8} r={8} />
@@ -42,24 +42,24 @@ describe('Icon', () => {
       mountNode
     );
 
-    const getContainer = () => mountNode.querySelector('svg');
-    expect(getContainer().getAttribute('focusable')).toBe('false');
+    const getContainer = () => mountNode.querySelector("svg");
+    expect(getContainer().getAttribute("focusable")).toBe("false");
 
     render(<Icon focusable />, mountNode);
-    expect(getContainer().getAttribute('focusable')).toBe('true');
+    expect(getContainer().getAttribute("focusable")).toBe("true");
   });
 
-  it('should forward refs to the rendered SVG DOM element', () => {
+  it("should forward refs to the rendered SVG DOM element", () => {
     let svg;
     const ref = jest.fn((node) => {
       svg = node;
     });
     render(<Icon ref={ref} />, mountNode);
-    expect(svg === mountNode.querySelector('svg'));
+    expect(svg === mountNode.querySelector("svg"));
   });
 
-  it('should be focusable if an aria label and tab index is used', () => {
-    const getContainer = () => mountNode.querySelector('svg');
+  it("should be focusable if an aria label and tab index is used", () => {
+    const getContainer = () => mountNode.querySelector("svg");
 
     // Test without a tabIndex, should not be focusable
     render(
@@ -69,7 +69,7 @@ describe('Icon', () => {
       mountNode
     );
 
-    expect(getContainer().getAttribute('aria-label')).toBeDefined();
+    expect(getContainer().getAttribute("aria-label")).toBeDefined();
     getContainer().focus();
     expect(document.activeElement === getContainer()).toBe(false);
 
@@ -82,7 +82,7 @@ describe('Icon', () => {
       mountNode
     );
 
-    expect(getContainer().getAttribute('aria-label')).toBeDefined();
+    expect(getContainer().getAttribute("aria-label")).toBeDefined();
     getContainer().focus();
     expect(document.activeElement === getContainer()).toBe(false);
 
@@ -93,13 +93,14 @@ describe('Icon', () => {
         height={16}
         viewBox="0 0 16 16"
         aria-label="Mock icon"
-        tabIndex="0">
+        tabIndex="0"
+      >
         <circle cx={8} cy={8} r={8} />
       </Icon>,
       mountNode
     );
 
-    expect(getContainer().getAttribute('aria-label')).toBeDefined();
+    expect(getContainer().getAttribute("aria-label")).toBeDefined();
     getContainer().focus();
     expect(document.activeElement === getContainer()).toBe(true);
   });

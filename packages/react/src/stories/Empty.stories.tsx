@@ -4,7 +4,7 @@ import {
   Subtitle,
   Description,
   Primary,
-  Stories
+  Stories,
 } from "@storybook/addon-docs";
 import { Empty } from "../components/Empty";
 import { EmptyProps } from "../components/Empty/Empty.props";
@@ -25,7 +25,8 @@ export default {
           <Subtitle />
           <Title />
           <Description>
-            The Empty component receives no props. It it displayed on page load as a placeholder component while data loads.
+            The Empty component receives no props. It it displayed on page load
+            as a placeholder component while data loads.
           </Description>
           <Primary />
           <Stories title="Examples"></Stories>
@@ -42,8 +43,6 @@ export default {
  *
  *@param (Object) args - props to be passed to the component
  */
-const EmptyTemplate: Story<EmptyProps> = () => (
-  <Empty {...emptyArgs.empty1} />
-);
+const EmptyTemplate: Story<EmptyProps> = () => <Empty {...emptyArgs.empty1} />;
 
 export const Empty1 = EmptyTemplate.bind({});

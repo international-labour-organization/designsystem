@@ -5,12 +5,12 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-'use strict';
+"use strict";
 
-const { svgExporter } = require('@un/figma-connect');
-const path = require('path');
-const rimraf = require('rimraf');
-const fs = require('fs');
+const { svgExporter } = require("@un/figma-connect");
+const path = require("path");
+const rimraf = require("rimraf");
+const fs = require("fs");
 
 async function build() {
   /*rimraf.sync('./src');

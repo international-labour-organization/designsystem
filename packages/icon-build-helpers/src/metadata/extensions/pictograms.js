@@ -5,9 +5,9 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-'use strict';
+"use strict";
 
-const Joi = require('joi');
+const Joi = require("joi");
 
 /**
  * The default pictograms extension for the metadata. This validates a pictogram
@@ -16,7 +16,7 @@ const Joi = require('joi');
  */
 const pictograms = () => {
   return {
-    name: 'pictograms',
+    name: "pictograms",
 
     schema: Joi.array().items(
       Joi.object().keys({
@@ -53,7 +53,7 @@ const pictograms = () => {
         if (!metadata) {
           const filepaths = item.assets
             .map((asset) => asset.filepath)
-            .join('\n');
+            .join("\n");
           throw new Error(
             `Expected the pictogram \`${item.id}\` to be defined in the data ` +
               `metadata file. Found matches for this asset in the following ` +

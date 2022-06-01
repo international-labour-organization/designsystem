@@ -5,10 +5,10 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-'use strict';
+"use strict";
 
-const Joi = require('joi');
-const { reporter } = require('@carbon/cli-reporter');
+const Joi = require("joi");
+const { reporter } = require("@carbon/cli-reporter");
 
 /**
  * Validate the given icons and extension metadata against the asset registry

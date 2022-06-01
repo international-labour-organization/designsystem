@@ -5,18 +5,18 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-'use strict';
+"use strict";
 
-const fs = require('fs-extra');
-const yaml = require('js-yaml');
-const path = require('path');
-const search = require('./search');
-const cloneDeep = require('lodash.clonedeep');
+const fs = require("fs-extra");
+const yaml = require("js-yaml");
+const path = require("path");
+const search = require("./search");
+const cloneDeep = require("lodash.clonedeep");
 
 async function migrate() {
-  const metadataPath = path.resolve(__dirname, '../../icons/metadata.yml');
-  const metadata = yaml.safeLoad(await fs.readFile(metadataPath, 'utf8'));
-  const names = await search(path.resolve(__dirname, '../../icons/svg'));
+  const metadataPath = path.resolve(__dirname, "../../icons/metadata.yml");
+  const metadata = yaml.safeLoad(await fs.readFile(metadataPath, "utf8"));
+  const names = await search(path.resolve(__dirname, "../../icons/svg"));
 
   const data = {};
   for (const group of metadata.icons) {
@@ -53,7 +53,7 @@ async function migrate() {
   }
 
   await fs.writeFile(
-    path.resolve(__dirname, '../../icons/icons.yml'),
+    path.resolve(__dirname, "../../icons/icons.yml"),
     yaml.safeDump(
       { icons: Object.values(data) },
       {

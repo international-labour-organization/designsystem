@@ -5,9 +5,9 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-'use strict';
+"use strict";
 
-const Joi = require('joi');
+const Joi = require("joi");
 
 // Supports a list of deprecated assets
 //
@@ -19,7 +19,7 @@ const Joi = require('joi');
 // notice for what icon to use instead.
 const deprecated = () => {
   return {
-    name: 'deprecated',
+    name: "deprecated",
 
     schema: Joi.object().keys({
       deprecated: Joi.array()

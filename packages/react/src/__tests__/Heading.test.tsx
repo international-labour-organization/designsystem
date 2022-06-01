@@ -3,14 +3,8 @@ import { composeStories } from "@storybook/testing-react";
 import headingArgs from "../components/Heading/Heading.args";
 import * as stories from "../stories/Heading.stories";
 
-const {
-  Heading1,
-  Heading2,
-  Heading3,
-  Heading4,
-  Heading5,
-  Heading6,
-} = composeStories(stories);
+const { Heading1, Heading2, Heading3, Heading4, Heading5, Heading6 } =
+  composeStories(stories);
 
 describe("<Heading>", () => {
   it("Should render `h1` with story text.", () => {

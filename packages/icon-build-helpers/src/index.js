@@ -5,11 +5,11 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-'use strict';
+"use strict";
 
-const builders = require('./builders');
-const Metadata = require('./metadata');
-const Registry = require('./registry');
+const builders = require("./builders");
+const Metadata = require("./metadata");
+const Registry = require("./registry");
 
 module.exports = {
   builders,
