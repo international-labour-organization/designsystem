@@ -72,6 +72,7 @@
   h6 {
     font-family: $fonts-display;
     font-weight: 700;
+    margin-top: px-to-rem(map-get($spacing, "padding-7"));
   }
 
   h1 {
@@ -178,6 +179,15 @@
 
   @include breakpoint("medium") {
     @include font-styles("base");
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      margin-top: px-to-rem(map-get($spacing, "padding-8"));
+    }
 
     h1 {
       margin-bottom: px-to-rem(map-get($spacing, "padding-5"));

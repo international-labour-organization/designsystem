@@ -31,7 +31,7 @@
 
       .ilo--icon {
         left: calc($spacing-icons-icon-padding-lg - 4px);
-        top: calc($spacing-boxpadding-button-icon-large-top - 3px);
+        top: calc($spacing-boxpadding-button-icon-large-top - 1px);
       }
     }
 
@@ -43,7 +43,7 @@
 
       .ilo--icon {
         right: calc($spacing-icons-icon-padding-lg - 4px);
-        top: calc($spacing-boxpadding-button-icon-large-top - 3px);
+        top: calc($spacing-boxpadding-button-icon-large-top - 1px);
       }
     }
   }
@@ -118,7 +118,7 @@
 
         .ilo--icon {
           left: calc($spacing-icons-icon-padding-sm - 4px);
-          top: calc($spacing-boxpadding-button-icon-small-top - 3px);
+          top: calc($spacing-boxpadding-button-icon-small-top - 1px);
         }
       }
 
@@ -130,7 +130,7 @@
 
         .ilo--icon {
           right: calc($spacing-icons-icon-padding-sm - 4px);
-          top: calc($spacing-boxpadding-button-icon-small-top - 3px);
+          top: calc($spacing-boxpadding-button-icon-small-top - 1px);
         }
       }
     }

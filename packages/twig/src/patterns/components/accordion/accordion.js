@@ -1,4 +1,4 @@
-import { getUpdatedItems, EVENTS, ARIA } from '@ilo-org/utils';
+import { getUpdatedItems, EVENTS, ARIA, MISC } from '@ilo-org/utils';
 
 /**
  * The Accordion module which handles rendering field labels inline on a form.
@@ -34,9 +34,7 @@ export default class Accordion {
    * @chainable
    */
   init() {
-    this.cacheDomReferences()
-      .setupHandlers()
-      .enable();
+    this.cacheDomReferences().setupHandlers().enable();
 
     return this;
   }
@@ -157,6 +155,7 @@ export default class Accordion {
   collapseSection(element) {
     const sectionHeight = element.scrollHeight;
     const elementTransition = element.style.transition;
+    element.classList.remove('ilo--accordion__panel--open');
     element.style.transition = '';
 
     requestAnimationFrame(() => {
@@ -176,13 +175,16 @@ export default class Accordion {
    * @chainable
    */
   expandSection(element) {
+    element.classList.add('expanding');
     const sectionHeight = element.scrollHeight;
     element.style.height = `${sectionHeight}px`;
+    element.classList.add('ilo--accordion__panel--open');
 
     element.addEventListener(EVENTS.TRANSITIONEND, () => {
       element.getAttribute(ARIA.HIDDEN) === MISC.FALSE
         ? (element.style.height = 'auto')
         : (element.style.height = '0px');
+      element.classList.remove('expanding');
       element.removeEventListener(EVENTS.TRANSITIONEND, () => {
         element.style.height = null;
       });
