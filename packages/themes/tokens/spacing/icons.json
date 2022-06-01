@@ -1,9 +1,12 @@
 {
   "spacing": {
-    "icons": { 
-      "icon-padding-sm": { "value": "6px" },
-      "icon-padding-m": { "value": "10px" },
-      "icon-padding-lg": { "value": "16px" }
+    "icons": {
+      "icon-height-sm": { "value": "14px" },
+      "icon-height-m": { "value": "15px" },
+      "icon-height-lg": { "value": "16px" },
+      "icon-padding-sm": { "value": "15px" },
+      "icon-padding-m": { "value": "19px" },
+      "icon-padding-lg": { "value": "22px" }
     }
   }
 }

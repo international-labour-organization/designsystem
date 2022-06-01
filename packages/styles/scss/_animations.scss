@@ -5,16 +5,14 @@
 @import "mixins";
 
 // ======================================
-// Animation of empty gradient bars
+// Animation of empty gradient
 // ======================================
 @keyframes emptygradient {
-		0% { 
-			border-image: linear-gradient(90deg, $color-base-neutrals-lighter 0%, $color-base-neutrals-light 100%); border-image-slice: 100; 
-		}
-		50% { 
-			border-image: linear-gradient(-90deg, $color-base-neutrals-lighter 0%, $color-base-neutrals-light 100%); border-image-slice: 100; 
-		}
-		100% { 
-			border-image: linear-gradient(90deg, $color-base-neutrals-lighter 0%, $color-base-neutrals-light 100%);border-image-slice: 100;  
-		}
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
 }
