@@ -10,7 +10,7 @@ const Icon: FC<IconProps> = ({ hidden, name }) => {
 
   const icon = name
     ? createElement(
-        icons[`${name.charAt(0).toUpperCase() + name.slice(1)}16`],
+        icons[`${name.charAt(0).toUpperCase() + name.slice(1)}24`],
         {
           "aria-hidden": ariaHidden,
           className: baseClass,

@@ -24,7 +24,7 @@ describe("<ReadMore>", () => {
     const buttonElement = screen.getAllByRole("button");
     expect(buttonElement).not.toBeNull();
     expect(buttonElement[0].textContent).toEqual(
-      readMoreArgs.closedatstart.buttonlabel
+      readMoreArgs.closedatstart.buttonlabel.closed
     );
   });
 
@@ -34,7 +34,7 @@ describe("<ReadMore>", () => {
     );
     const richTextElement = document.querySelector('div[class*="--richtext"]');
     userEvent.click(
-      screen.getByText(readMoreArgs.closedatstart.buttonlabel, {
+      screen.getByText(readMoreArgs.closedatstart.buttonlabel.closed, {
         selector: "button",
       })
     );

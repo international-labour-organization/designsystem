@@ -127,6 +127,28 @@
 }
 
 // ======================================
+// Border Radius Values
+// ======================================
+
+@mixin borderradius($mappath) {
+  border-bottom-left-radius: map-get($radius, $mappath, "bottom-left");
+  border-bottom-right-radius: map-get($radius, $mappath, "bottom-right");
+  border-top-left-radius: map-get($radius, $mappath, "top-left");
+  border-top-right-radius: map-get($radius, $mappath, "top-right");
+}
+
+// ======================================
+// Box Padding Values
+// ======================================
+
+@mixin boxpadding($mappath, $size) {
+  padding-bottom: map-get($spacing, "boxpadding", $mappath, $size, "bottom");
+  padding-left: map-get($spacing, "boxpadding", $mappath, $size, "left");
+  padding-right: map-get($spacing, "boxpadding", $mappath, $size, "right");
+  padding-top: map-get($spacing, "boxpadding", $mappath, $size, "top");
+}
+
+// ======================================
 // Data URL Icon
 // ======================================
 
@@ -223,6 +245,93 @@
       border-bottom: $widths-border-lg solid
         map-get($color, "link", "underline-dark", "focus");
       color: map-get($color, "link", "text-dark", "focus");
+      outline: none;
+    }
+  }
+
+  &--footer {
+    @include font-styles("body-xxs");
+
+    background: map-get($color, "link", "background-footer", "default");
+    border-bottom: $widths-border-sm solid
+      map-get($color, "link", "underline-footer", "default");
+    color: map-get($color, "link", "text-footer", "default");
+
+    &:visited {
+      background: map-get($color, "link", "background-footer", "visited");
+      border-bottom: $widths-border-sm solid
+        map-get($color, "link", "underline-footer", "visited");
+      color: map-get($color, "link", "text-footer", "visited");
+    }
+
+    &:hover {
+      background: map-get($color, "link", "background-footer", "hover");
+      border-bottom: $widths-border-med solid
+        map-get($color, "link", "underline-footer", "hover");
+      color: map-get($color, "link", "text-footer", "hover");
+    }
+
+    &:active {
+      background: map-get($color, "link", "background-footer", "active");
+      border-bottom: $widths-border-lg solid
+        map-get($color, "link", "underline-footer", "active");
+      color: map-get($color, "link", "text-footer", "active");
+      outline: none;
+    }
+
+    &:focus {
+      background: map-get($color, "link", "background-footer", "focus");
+      border-bottom: $widths-border-lg solid
+        map-get($color, "link", "underline-footer", "focus");
+      color: map-get($color, "link", "text-footer", "focus");
+      outline: none;
+    }
+  }
+}
+
+// ======================================
+// Tag styles
+// ======================================
+
+@mixin tagstyles() {
+  @include font-styles("nav-md-sm");
+
+  background: map-get($color, "tag", "background", "default");
+  border: none;
+  color: map-get($color, "tag", "text", "default");
+  display: inline-block;
+  font-family: map-get($fonts, "display");
+  font-size: inherit;
+  font-weight: 500;
+  line-height: inherit;
+  padding: px-to-rem(10px) px-to-rem(map-get($spacing, "ui-padding-sm"));
+  text-decoration: none;
+  $self: &;
+
+  &--active {
+    background: map-get($color, "tag", "background", "active");
+    color: map-get($color, "tag", "text", "active");
+    outline: none;
+  }
+
+  &--anchor {
+    cursor: pointer;
+
+    #{self}--active {
+      background: map-get($color, "tag", "background", "active");
+      color: map-get($color, "tag", "text", "active");
+      outline: none;
+    }
+
+    &:hover {
+      background: map-get($color, "tag", "background", "hover");
+      color: map-get($color, "tag", "text", "hover");
+      text-decoration: none;
+    }
+
+    &:focus {
+      background: map-get($color, "tag", "background", "focus");
+      color: map-get($color, "tag", "text", "focus");
       outline: none;
     }
   }

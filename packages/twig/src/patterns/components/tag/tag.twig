@@ -1,0 +1,14 @@
+{#
+  TAG COMPONENT
+#}
+<li class="{{prefix}}--tag-set__item">
+  {% if url != "" %}
+    <a class="{{prefix}}--tag {{prefix}}--tag--anchor {% if defaultActive %} {{prefix}}--tag--active{% endif %}" href="{{ url }}"  id="{{ id }}" data-active={{ defaultActive }}>
+      {{content}}
+    </a>
+  {% else %}
+    <span class="{{prefix}}--tag {% if defaultActive %} {{prefix}}--tag--active{% endif %}" id="{{ id }}" data-active={{ defaultActive }}>
+      {{content}}
+    </span>
+  {% endif %}
+</li>

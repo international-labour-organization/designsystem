@@ -39,6 +39,7 @@
     "storybook:static": "cd packages/react && pnpm run storybook:static",
     "test:all": "pnpm turbo run test",
     "test:react": "pnpm run test --filter=@ilo-org/react",
+    "test:react-update": "pnpm run test:update --filter=@ilo-org/react",
     "test:utils": "pnpm run test --filter=@ilo-org/utils"
   },
   "repository": {
@@ -61,7 +62,7 @@
     "lint-staged": "^12.4.1",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.6.0",
-    "turbo": "^1.2.5",
+    "turbo": "^1.2.9",
     "typescript": "^4.6.2"
   },
   "lint-staged": {

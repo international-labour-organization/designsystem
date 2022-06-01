@@ -3,11 +3,28 @@
 @import "../animations";
 
 .ilo--empty {
-  background-color: $color-base-neutrals-lighter;
+  background: linear-gradient(108.07deg, #b8c4cc 0.17%, #ebf5fd 75.36%);
   height: 100%;
   position: relative;
   width: 100%;
-  
+
+  &:before {
+    animation-duration: 1.5s;
+    animation-name: emptygradient;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    background: linear-gradient(108.07deg, #b8c4cc 0.17%, #ebf5fd 75.36%);
+    border-radius: 4px;
+    content: "";
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    transform: rotate(-180deg);
+    width: 100%;
+    z-index: 1;
+  }
+
   &.storybook {
     height: 400px;
     width: 600px;

@@ -1,0 +1,20 @@
+{
+  "color": {
+    "tag": {
+      "background": {
+        "default": { "value": "{color.base.neutrals.lighter}" },
+        "hover": { "value": "{color.base.blue.light}" },
+        "focus": { "value": "{color.base.blue.light}" },
+        "active": { "value": "{color.base.neutrals.lighter}" },
+        "visited": { "value": "{color.base.neutrals.lighter}" }
+      },
+      "text": {
+        "default": { "value": "{color.base.neutrals.medium}" },
+        "hover": { "value": "{color.base.blue.medium}" },
+        "focus": { "value": "{color.base.blue.medium}" },
+        "active": { "value": "{color.base.blue.dark}" },
+        "visited": { "value": "{color.base.neutrals.medium}" }
+      }
+    }
+  }
+}
