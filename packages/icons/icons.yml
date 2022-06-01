@@ -16,8 +16,26 @@
     - ILO Icons
   sizes:
     - glyph
+- name: copyright
+  friendly_name: copyright
+  aliases:
+    - ILO Icons
+  sizes:
+    - glyph
+- name: equilateraltriangle
+  friendly_name: equilateraltriangle
+  aliases:
+    - ILO Icons
+  sizes:
+    - glyph
 - name: fullscreen
   friendly_name: fullscreen
+  aliases:
+    - ILO Icons
+  sizes:
+    - glyph
+- name: halfsquaretriangle
+  friendly_name: halfsquaretriangle
   aliases:
     - ILO Icons
   sizes:

@@ -76,9 +76,15 @@
     &--duration {
       background-color: #2d2d2d;
       display: none;
-      margin-left: 2px;
       height: 100%;
+      font-weight: 700;
+      margin-left: 2px;
       order: 2;
+      padding-top: 9px;
+      text-align: center;
+      width: px-to-rem(80px);
+
+      @include font-styles("label-small");
 
       &.show {
         display: block;

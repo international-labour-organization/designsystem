@@ -1,3 +1,4 @@
+// prettier-ignore
 import { FC, useContext, MouseEvent } from "react";
 import classNames from "classnames";
 import useGlobalSettings from "../../hooks/useGlobalSettings";
