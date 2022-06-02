@@ -6,27 +6,27 @@
 .ilo--credit {
   color: #ffffff;
   display: inline-block;
-  height: px-to-rem(24px);
+  height: px-to-rem($spacing-uxaction-credit-height);
   padding: 0;
   position: relative;
   @include font-styles("image-credit");
 
   &--label {
-    background-color: $color-base-neutrals-dark;
-    padding: px-to-rem(4px) px-to-rem(8px) px-to-rem(4px) px-to-rem(12px);
+    background-color: $color-ux-credit-background;
+    @include boxpadding("credit", "large");
   }
 
   &:after {
     background-position: top right;
     background-repeat: no-repeat;
     background-size: contain;
-    @include dataurlicon("halfsquaretriangle", $color-base-neutrals-dark);
+    @include dataurlicon("halfsquaretriangle", $color-ux-credit-background);
     content: "";
-    height: px-to-rem(24px);
+    height: px-to-rem($spacing-uxaction-credit-height);
     position: absolute;
     left: 100%;
-    top: px-to-rem(-4px);
-    width: px-to-rem(24px);
+    top: -#{px-to-rem(map-get($spacing, "padding-0-5"))};
+    width: px-to-rem($spacing-uxaction-credit-height);
   }
 
   @include breakpoint("large", true) {
@@ -36,7 +36,7 @@
       bottom: calc(100% + 1px);
       display: none;
       left: 0;
-      margin-bottom: px-to-rem(12px);
+      margin-bottom: px-to-rem(map-get($spacing, "padding-1-5"));
       position: absolute;
 
       &:after {
@@ -45,11 +45,11 @@
         background-size: contain;
         @include dataurlicon("equilateraltriangle", $color-base-neutrals-dark);
         content: "";
-        height: px-to-rem(12px);
+        height: px-to-rem(map-get($spacing, "padding-1-5"));
         position: absolute;
-        left: px-to-rem(6px);
-        bottom: px-to-rem(-12px);
-        width: px-to-rem(12px);
+        left: calc(#{px-to-rem(map-get($spacing, "padding-1-5"))} / 2);
+        bottom: -#{px-to-rem(map-get($spacing, "padding-1-5"))};
+        width: px-to-rem(map-get($spacing, "padding-1-5"));
       }
     }
 
@@ -57,18 +57,19 @@
       background-color: $color-base-neutrals-dark;
       background-position: center center;
       background-repeat: no-repeat;
-      background-size: px-to-rem(12px) px-to-rem(12px);
+      background-size: px-to-rem(map-get($spacing, "padding-1-5"))
+        px-to-rem(map-get($spacing, "padding-1-5"));
       @include dataurlicon("copyright", $color-base-neutrals-white);
       content: "";
-      height: px-to-rem(24px);
+      height: px-to-rem(map-get($spacing, "padding-3"));
       position: absolute;
       left: 0;
       top: 0;
-      width: px-to-rem(24x);
+      width: px-to-rem(map-get($spacing, "padding-3"));
     }
 
     &:after {
-      left: 24px;
+      left: px-to-rem(map-get($spacing, "padding-3"));
       top: 0;
     }
 

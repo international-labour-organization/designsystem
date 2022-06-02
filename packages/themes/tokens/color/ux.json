@@ -26,6 +26,26 @@
         "hover": { "value": "{color.base.blue.medium}" },
         "active": { "value": "{color.base.blue.light}" }
       },
+      "caption": {
+        "background": { "value": "transparent" },
+        "border": {
+          "bottom": { "value": "transparent" },
+          "left": { "value": "{color.base.neutrals.light}" },
+          "right": { "value": "transparent" },
+          "top": { "value": "transparent" }
+        },
+        "text": { "value": "{color.base.neutrals.black}" }
+      },
+      "credit": {
+        "background": { "value": "{color.base.neutrals.dark}" },
+        "border": {
+          "bottom": { "value": "transparent" },
+          "left": { "value": "transparent" },
+          "right": { "value": "transparent" },
+          "top": { "value": "transparent" }
+        },
+        "text": { "value": "{color.base.neutrals.white}" }
+      },
       "horizontal-rule": {
         "default": { "value": "{color.base.neutrals.lighter}" }
       },

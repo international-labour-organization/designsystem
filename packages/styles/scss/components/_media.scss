@@ -6,18 +6,23 @@
   position: relative;
 
   &--wrapper {
+    line-height: 0;
     position: relative;
     width: 100%;
   }
 
+  &--img {
+    line-height: 0;
+  }
+
   &--img,
   img {
-    display: block;
     width: 100%;
   }
 
   &--caption {
-    border-left: 3px solid #b8c4cc;
+    border-left: $spacing-uxaction-caption-border-left solid
+      $color-ux-caption-border-left;
     color: $color-font-caption;
     font-weight: 400;
     margin-top: px-to-rem(map-get($spacing, "padding-2"));
@@ -31,7 +36,7 @@
     position: absolute;
 
     @include breakpoint("large") {
-      bottom: -4px;
+      bottom: -#{px-to-rem(map-get($spacing, "padding-0-5"))};
     }
   }
 }
