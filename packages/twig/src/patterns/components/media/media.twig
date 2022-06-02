@@ -1,0 +1,52 @@
+{#
+  MEDIA COMPONENT
+#}
+
+<figure class="image {{prefix}}--media">
+  {% if video.hasvideo %}
+    <div class="{{prefix}}--video" data-loadcomponent="Video">
+      <div class="{{prefix}}-video--player" style="width: 100%; height: 100%;">
+        <video src="{{video.src}}" class="{{prefix}}--video--element"></video>
+      </div>
+      <img src="{{url|reverse|last.src}}" alt="{{alt}}" class="{{prefix}}--video--poster show" />
+      <div class="{{prefix}}--video--controls notplayed">
+        <label class="{{prefix}}--video--controls--duration show">00:00</label>
+        <button class="{{prefix}}--video--controls--play" data-play="{{video.controls.play}}" data-pause="{{video.controls.pause}}">
+          <span>{{video.controls.play}}</span>
+        </button>
+        <div class="{{prefix}}--video--controls--progress ">
+          <input type="range" min="0" max="0.999999" step="any" class="ilo--video--controls--progress-playhead" value="0" />
+          <progress class="{{prefix}}--video--controls--progress-current" max="1" value="0"></progress>
+          <progress class="{{prefix}}--video--controls--progress-loaded" max="1" value="1"></progress>
+          <label class="{{prefix}}--video--controls--progress-played">00:00</label>
+        </div>
+        <div class="{{prefix}}--video--controls--volume ">
+          <button class="i{{prefix}}-video--controls--showvolume ">
+            <span>{{video.controls.volume}}</span>
+          </button>
+          <div class="{{prefix}}--video--controls--setvolume-container">
+            <input class="{{prefix}}--video--controls--setvolume " type="range" step="0.5" min="1" max="10" value="0.8" />
+          </div>
+        </div>
+        <button class="{{prefix}}--video--controls--fullscreen ">
+          <span>{{video.controls.fullscreen}}</span>
+        </button>
+      </div>
+    </div>
+  {% else %}
+  <div class="image {{prefix}}--media--wrapper">
+    <picture class="{{prefix}}--media--img">
+      {% for img in url|reverse|slice(0,-1) %}
+      <source srcset="{{img.src}}" media="(min-width: {{img.breakpoint}}px)">
+      {% endfor %}
+      <img src="{{url|reverse|last.src}}" alt="{{alt}}">
+    </picture>
+    {% if credit %}
+    <span class="{{prefix}}--credit">
+      <span class="{{prefix}}--credit--label">{{credit}}</span>
+    </span>
+    {% endif %}
+  </div>
+  {% endif %}
+  <figcaption class="{{prefix}}-media--caption">{{caption}}</figcaption>
+</figure>
