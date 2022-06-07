@@ -37,7 +37,7 @@ export default class Video {
    * @chainable
    */
   init() {
-    this.cacheDomReferences().setupHandlers().enable().start();
+    this.cacheDomReferences().start().setupHandlers().enable();
 
     return this;
   }
@@ -53,16 +53,7 @@ export default class Video {
      * The button for toggling Read More state
      * @type {Object}
      */
-    this.VideoElement = this.element.querySelector(`.${this.controlsprefix}--video--element`);
-    this.PlayPauseButton = this.element.querySelector(`.${this.controlsprefix}--play`);
-    this.DurationDisplay = this.element.querySelector(`.${this.controlsprefix}--duration`);
-    this.VolumeButton = this.element.querySelector(`.${this.controlsprefix}--showvolume`);
-    this.SetVolumeSlider = this.element.querySelector(`.${this.controlsprefix}--setvolume`);
-    this.PlayheadSlider = this.element.querySelector(`.${this.controlsprefix}--progress-playhead`);
-    this.ProgressDisplay = this.element.querySelector(`.${this.controlsprefix}--progress-current`);
-    this.LoadedDisplay = this.element.querySelector(`.${this.controlsprefix}--progress-loaded`);
-    this.FullScreenButton = this.element.querySelector(`.${this.controlsprefix}--fullscreen`);
-    this.PlayedDisplay = this.element.querySelector(`.${this.controlsprefix}--progress-played`);
+    this.VideoElement = this.element.querySelector(`.${this.prefix}--video--element`);
 
     return this;
   }
@@ -70,18 +61,10 @@ export default class Video {
   /**
    * Bind event handlers with the proper context of `this`.
    *
-   * @return {Object} ReadMore A reference to the current instance of the class
+   * @return {Object} Video A reference to the current instance of the class
    * @chainable
    */
   setupHandlers() {
-    this.PlayPauseButtonClick = this.PlayPauseButtonClick.bind(this);
-    this.FullScreenButtonClick = this.FullScreenButtonClick.bind(this);
-    this.VolumeButtonClick = this.VolumeButtonClick.bind(this);
-    this.VolumeButtonHover = this.VolumeButtonHover.bind(this);
-    this.VolumeButtonUnHover = this.VolumeButtonUnHover.bind(this);
-    this.VolumeSliderChange = this.VolumeSliderChange.bind(this);
-    this.PlayheadSliderSliderChange = this.PlayheadSliderChange.bind(this);
-
     return this;
   }
 
@@ -92,14 +75,6 @@ export default class Video {
    * @chainable
    */
   enable() {
-    this.PlayPauseButton.addEventListener(EVENTS.CLICK, () => this.PlayPauseButtonClick());
-    this.SetVolumeSlider.addEventListener(EVENTS.CHANGE, () => this.VolumeSliderChange());
-    this.PlayheadSlider.addEventListener(EVENTS.CHANGE, () => this.PlayheadSliderChange());
-    this.FullScreenButton.addEventListener(EVENTS.CLICK, () => this.FullScreenButtonClick());
-    this.VolumeButton.addEventListener(EVENTS.CLICK, () => this.VolumeButtonClick());
-    this.VolumeButton.addEventListener(EVENTS.MOUSEOVER, () => this.VolumeButtonHover());
-    this.VolumeButton.addEventListener(EVENTS.MOUSEOUT, () => this.VolumeButtonUnHover());
-
     return this;
   }
 
@@ -110,10 +85,33 @@ export default class Video {
    * @chainable
    */
   start() {
+    console.log('this.VideoElement', this.VideoElement);
+
     this.player = videojs(this.VideoElement, {
       autoplay: false,
+      controls: true,
       preload: 'auto',
+      bigPlayButton: false,
+      textTrackDisplay: false,
+      liveTracker: false,
+      errorDisplay: false,
+      textTrackSettings: false,
+      resizeManager: false,
     });
+
+    this.player.controlBar.descriptionsButton.dispose();
+    this.player.controlBar.playbackRateMenuButton.dispose();
+    this.player.controlBar.chaptersButton.dispose();
+    this.player.controlBar.audioTrackButton.dispose();
+    this.player.controlBar.pictureInPictureToggle.dispose();
+    this.player.controlBar.subsCapsButton.dispose();
+    this.player.controlBar.seekToLive.dispose();
+    this.player.controlBar.liveDisplay.dispose();
+
+    console.log(videojs.players);
+    console.log(this.player);
+
+    // this.DurationDisplay.innerHTML = this.player.duration();
 
     return this;
   }

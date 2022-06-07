@@ -460,6 +460,7 @@ importers:
       sass-loader: ^10.1.0
       style-loader: ^1.0.2
       stylelint-scss: ^3.17.2
+      video.js: ^7.19.2
       videojs: ^1.0.0
       webpack: ^4.41.3
       yaml-loader: ^0.6.0
@@ -470,6 +471,7 @@ importers:
       '@ilo-org/styles': link:../styles
       '@ilo-org/themes': link:../themes
       '@ilo-org/utils': link:../utils
+      video.js: 7.19.2
     devDependencies:
       '@babel/core': 7.17.9
       '@babel/preset-env': 7.16.11_@babel+core@7.17.9
@@ -11287,6 +11289,37 @@ packages:
       - utf-8-validate
     dev: true
 
+  /@videojs/http-streaming/2.14.2:
+    resolution: {integrity: sha512-K1raSfO/pq5r8iUas3OSYni0kXOj91n8ealIpV02khghzGv9LQ6O3YUqYd/eAhJ1HIrmZWOnrYpK/P+mhUExXQ==}
+    engines: {node: '>=8', npm: '>=5'}
+    dependencies:
+      '@babel/runtime': 7.17.9
+      '@videojs/vhs-utils': 3.0.5
+      aes-decrypter: 3.1.3
+      global: 4.4.0
+      m3u8-parser: 4.7.1
+      mpd-parser: 0.21.1
+      mux.js: 6.0.1
+      video.js: 7.19.2
+    dev: false
+
+  /@videojs/vhs-utils/3.0.5:
+    resolution: {integrity: sha512-PKVgdo8/GReqdx512F+ombhS+Bzogiofy1LgAj4tN8PfdBx3HSS7V5WfJotKTqtOWGwVfSWsrYN/t09/DSryrw==}
+    engines: {node: '>=8', npm: '>=5'}
+    dependencies:
+      '@babel/runtime': 7.17.9
+      global: 4.4.0
+      url-toolkit: 2.2.5
+    dev: false
+
+  /@videojs/xhr/2.6.0:
+    resolution: {integrity: sha512-7J361GiN1tXpm+gd0xz2QWr3xNWBE+rytvo8J3KuggFaLg+U37gZQ2BuPLcnkfGffy2e+ozY70RHC8jt7zjA6Q==}
+    dependencies:
+      '@babel/runtime': 7.17.9
+      global: 4.4.0
+      is-function: 1.0.2
+    dev: false
+
   /@web/rollup-plugin-import-meta-assets/1.0.7:
     resolution: {integrity: sha512-ft44CqITUkNd8stwNb4ZOvrZ8DlPifM821jplksmxRGetg5Lx684oFrpfQJ7mfkU/Sa7B3dI1mHTX0DE52eBwg==}
     engines: {node: '>=10.0.0'}
@@ -11885,6 +11918,11 @@ packages:
       - webpack-plugin-serve
     dev: false
 
+  /@xmldom/xmldom/0.7.5:
+    resolution: {integrity: sha512-V3BIhmY36fXZ1OtVcI9W+FxQqxVLsPKcNjWigIaa81dLC9IolJl5Mt4Cvhmr0flUnjSpTdrbMTSbXqYqV5dT6A==}
+    engines: {node: '>=10.0.0'}
+    dev: false
+
   /@xstate/react/1.6.3_67d62de3a42b5c6cc9f5696347af82ab:
     resolution: {integrity: sha512-NCUReRHPGvvCvj2yLZUTfR0qVp6+apc8G83oXSjN4rl89ZjyujiKrTff55bze/HrsvCsP/sUJASf2n0nzMF1KQ==}
     peerDependencies:
@@ -12051,6 +12089,15 @@ packages:
     dependencies:
       loader-utils: 2.0.2
       regex-parser: 2.2.11
+    dev: false
+
+  /aes-decrypter/3.1.3:
+    resolution: {integrity: sha512-VkG9g4BbhMBy+N5/XodDeV6F02chEk9IpgRTq/0bS80y4dzy79VH2Gtms02VXomf3HmyRe3yyJYkJ990ns+d6A==}
+    dependencies:
+      '@babel/runtime': 7.17.9
+      '@videojs/vhs-utils': 3.0.5
+      global: 4.4.0
+      pkcs7: 1.0.4
     dev: false
 
   /agent-base/4.2.1:
@@ -20171,6 +20218,10 @@ packages:
   /indexes-of/1.0.1:
     resolution: {integrity: sha1-8w9xbI4r00bHtn0985FVZqfAVgc=}
 
+  /individual/2.0.0:
+    resolution: {integrity: sha512-pWt8hBCqJsUWI/HtcfWod7+N9SgAqyPEaF7JQjwzjn5vGrpg6aQ5qeAFQ7dx//UH4J1O+7xqew+gCeeFt6xN/g==}
+    dev: false
+
   /infer-owner/1.0.4:
     resolution: {integrity: sha512-IClj+Xz94+d7irH5qRyfJonOdfTzuDaifE6ZPWfx0N0+/ATZCbuTPq2prFl526urkQd90WyUKIh1DfBQ2hMz9A==}
 
@@ -22654,6 +22705,10 @@ packages:
     resolution: {integrity: sha512-X00TokkRIDotUIf3EV4xUm6ELc/IkqhS/vPSHdWnsM5y0HoNMfEqrazizI7g78lpHvnRSRt/PFfKtRqJCOGIuQ==}
     dev: true
 
+  /keycode/2.2.1:
+    resolution: {integrity: sha512-Rdgz9Hl9Iv4QKi8b0OlCRQEzp4AgVxyCtz5S/+VIHezDmrDhkp2N2TqBWOLz0/gbeREXOOiI9/4b8BY9uw2vFg==}
+    dev: false
+
   /keyv/3.0.0:
     resolution: {integrity: sha512-eguHnq22OE3uVoSYG0LVWNP+4ppamWr9+zWBe1bsNcovIMy6huUJFPgy4mGwCd/rnl3vOLGW1MTlu4c57CT1xA==}
     dependencies:
@@ -23244,6 +23299,14 @@ packages:
     hasBin: true
     dev: true
 
+  /m3u8-parser/4.7.1:
+    resolution: {integrity: sha512-pbrQwiMiq+MmI9bl7UjtPT3AK603PV9bogNlr83uC+X9IoxqL5E4k7kU7fMQ0dpRgxgeSMygqUa0IMLQNXLBNA==}
+    dependencies:
+      '@babel/runtime': 7.17.9
+      '@videojs/vhs-utils': 3.0.5
+      global: 4.4.0
+    dev: false
+
   /macos-release/2.5.0:
     resolution: {integrity: sha512-EIgv+QZ9r+814gjJj0Bt5vSLJLzswGmSUbUpbi9AIr/fsN2IWFBl2NucV9PAiek+U1STK468tEkxmVYUtuAN3g==}
     engines: {node: '>=6'}
@@ -23827,7 +23890,7 @@ packages:
     dev: false
 
   /min-document/2.19.0:
-    resolution: {integrity: sha1-e9KC4/WELtKVu3SM3Z8f+iyCRoU=}
+    resolution: {integrity: sha512-9Wy1B3m3f66bPPmU5hdA4DR4PB2OfDU/+GS3yAB7IQozE3tqXaVv2zOjgla7MEGSRv95+ILmOuvhLkOK6wJtCQ==}
     dependencies:
       dom-walk: 0.1.2
 
@@ -24102,6 +24165,16 @@ packages:
       logalot: 2.1.0
     optional: true
 
+  /mpd-parser/0.21.1:
+    resolution: {integrity: sha512-BxlSXWbKE1n7eyEPBnTEkrzhS3PdmkkKdM1pgKbPnPOH0WFZIc0sPOWi7m0Uo3Wd2a4Or8Qf4ZbS7+ASqQ49fw==}
+    hasBin: true
+    dependencies:
+      '@babel/runtime': 7.17.9
+      '@videojs/vhs-utils': 3.0.5
+      '@xmldom/xmldom': 0.7.5
+      global: 4.4.0
+    dev: false
+
   /ms/2.0.0:
     resolution: {integrity: sha1-VgiurfwAvmwpAd9fmGF4jeDVl8g=}
 
@@ -24165,6 +24238,15 @@ packages:
   /mute-stream/0.0.8:
     resolution: {integrity: sha512-nnbWWOkoWyUsTjKrhgD0dcz22mdkSnpYqbEjIm2nhwhuxlSkpywJmBo8h0ZqJdkp73mb90SssHkN4rsRaBAfAA==}
     dev: true
+
+  /mux.js/6.0.1:
+    resolution: {integrity: sha512-22CHb59rH8pWGcPGW5Og7JngJ9s+z4XuSlYvnxhLuc58cA1WqGDQPzuG8I+sPm1/p0CdgpzVTaKW408k5DNn8w==}
+    engines: {node: '>=8', npm: '>=5'}
+    hasBin: true
+    dependencies:
+      '@babel/runtime': 7.17.9
+      global: 4.4.0
+    dev: false
 
   /mv/2.1.1:
     resolution: {integrity: sha1-rmzg1vbV4KT32JN5jQPB6pVZtqI=}
@@ -25629,6 +25711,13 @@ packages:
   /pirates/4.0.5:
     resolution: {integrity: sha512-8V9+HQPupnaXMA23c5hvl69zXvTwTzyAYasnkb0Tts4XvO4CliqONMOnvlq26rkhLC3nWDFBJf73LU1e1VZLaQ==}
     engines: {node: '>= 6'}
+
+  /pkcs7/1.0.4:
+    resolution: {integrity: sha512-afRERtHn54AlwaF2/+LFszyAANTCggGilmcmILUzEjvs3XgFZT+xE6+QWQcAGmu4xajy+Xtj7acLOPdx5/eXWQ==}
+    hasBin: true
+    dependencies:
+      '@babel/runtime': 7.17.9
+    dev: false
 
   /pkg-dir/1.0.0:
     resolution: {integrity: sha1-ektQio1bstYp1EcFb/TpyTFM89Q=}
@@ -27479,7 +27568,7 @@ packages:
     resolution: {integrity: sha512-3ouUOpQhtgrbOa17J7+uxOTpITYWaGP7/AhoR3+A+/1e9skrzelGi/dXzEYyvbxubEF6Wn2ypscTKiKJFFn1ag==}
 
   /process/0.11.10:
-    resolution: {integrity: sha1-czIwDoQBYb2j5podHZGn1LwW8YI=}
+    resolution: {integrity: sha512-cdGef/drWFoydD1JsMzuFf8100nZl+GT+yacc2bEced5f9Rjk4z+WtFUTBu9PhOi9j/jfmBPu0mMEY4wIdAF8A==}
     engines: {node: '>= 0.6.0'}
 
   /progress/2.0.3:
@@ -29598,6 +29687,12 @@ packages:
     resolution: {integrity: sha512-K6p9y4ZyL9wPzA+PMDloNQPfoDGTiFYDvdlXznyGKgD10BJpcAosvATKrExRKOrNLgD8E7Um7WGW0lxsnOuNLg==}
     engines: {node: '>=4.0.0'}
 
+  /rust-result/1.0.0:
+    resolution: {integrity: sha1-NMdbLm3Dn+WHXlveyFteD5FTb3I=}
+    dependencies:
+      individual: 2.0.0
+    dev: false
+
   /rx-lite/4.0.8:
     resolution: {integrity: sha1-Cx4Rr4vESDbwSmQH6S2kJGe3lEQ=}
     dev: true
@@ -29631,6 +29726,12 @@ packages:
   /safe-identifier/0.4.2:
     resolution: {integrity: sha512-6pNbSMW6OhAi9j+N8V+U715yBQsaWJ7eyEUaOrawX+isg5ZxhUlV1NipNtgaKHmFGiABwt+ZF04Ii+3Xjkg+8w==}
     dev: true
+
+  /safe-json-parse/4.0.0:
+    resolution: {integrity: sha1-fA9XjPzNEtM6ccDgVBPi7KFx6qw=}
+    dependencies:
+      rust-result: 1.0.0
+    dev: false
 
   /safe-regex/1.1.0:
     resolution: {integrity: sha1-QKNmnzsHfR6UPURinhV91IAjvy4=}
@@ -32842,6 +32943,10 @@ packages:
     resolution: {integrity: sha1-FQWgOiiaSMvXpDTvuu7FBV9WM6k=}
     engines: {node: '>= 4'}
 
+  /url-toolkit/2.2.5:
+    resolution: {integrity: sha512-mtN6xk+Nac+oyJ/PrI7tzfmomRVNFIWKUbG8jdYFt52hxbiReFAXIjYskvu64/dvuW71IcB7lV8l0HvZMac6Jg==}
+    dev: false
+
   /url/0.11.0:
     resolution: {integrity: sha1-ODjpfPxgUh63PFJajlW/3Z4uKPE=}
     dependencies:
@@ -33150,6 +33255,34 @@ packages:
       is-buffer: 2.0.5
       unist-util-stringify-position: 2.0.3
       vfile-message: 2.0.4
+
+  /video.js/7.19.2:
+    resolution: {integrity: sha512-+rV/lJ1bDoMW3SbYlRp0eC9//RgvfBpEQ0USOyx44tHVxVyMjq+G9jZoiulsDXaIp4BX9q5+/y87TbZUysXBHA==}
+    dependencies:
+      '@babel/runtime': 7.17.9
+      '@videojs/http-streaming': 2.14.2
+      '@videojs/vhs-utils': 3.0.5
+      '@videojs/xhr': 2.6.0
+      aes-decrypter: 3.1.3
+      global: 4.4.0
+      keycode: 2.2.1
+      m3u8-parser: 4.7.1
+      mpd-parser: 0.21.1
+      mux.js: 6.0.1
+      safe-json-parse: 4.0.0
+      videojs-font: 3.2.0
+      videojs-vtt.js: 0.15.3
+    dev: false
+
+  /videojs-font/3.2.0:
+    resolution: {integrity: sha512-g8vHMKK2/JGorSfqAZQUmYYNnXmfec4MLhwtEFS+mMs2IDY398GLysy6BH6K+aS1KMNu/xWZ8Sue/X/mdQPliA==}
+    dev: false
+
+  /videojs-vtt.js/0.15.3:
+    resolution: {integrity: sha512-5FvVsICuMRx6Hd7H/Y9s9GDeEtYcXQWzGMS+sl4UX3t/zoHp3y+isSfIPRochnTH7h+Bh1ILyC639xy9Z6kPag==}
+    dependencies:
+      global: 4.4.0
+    dev: false
 
   /videojs/1.0.0:
     resolution: {integrity: sha1-UDcS4LdDuPY3xUIhkmkqxKNLVL4=}
