@@ -92,26 +92,22 @@ export default class Video {
       controls: true,
       preload: 'auto',
       bigPlayButton: false,
+      controlBar: {
+        descriptionsButton: false,
+        playbackRateMenuButton: false,
+        chaptersButton: false,
+        audioTrackButton: false,
+        pictureInPictureToggle: false,
+        subsCapsButton: false,
+        seekToLive: false,
+        liveDisplay: false,
+      },
       textTrackDisplay: false,
       liveTracker: false,
       errorDisplay: false,
       textTrackSettings: false,
       resizeManager: false,
     });
-
-    this.player.controlBar.descriptionsButton.dispose();
-    this.player.controlBar.playbackRateMenuButton.dispose();
-    this.player.controlBar.chaptersButton.dispose();
-    this.player.controlBar.audioTrackButton.dispose();
-    this.player.controlBar.pictureInPictureToggle.dispose();
-    this.player.controlBar.subsCapsButton.dispose();
-    this.player.controlBar.seekToLive.dispose();
-    this.player.controlBar.liveDisplay.dispose();
-
-    console.log(videojs.players);
-    console.log(this.player);
-
-    // this.DurationDisplay.innerHTML = this.player.duration();
 
     return this;
   }
