@@ -41,7 +41,7 @@
 
   &--controls,
   .vjs-control-bar {
-    bottom: 8px;
+    bottom: 0;
     color: white;
     display: flex;
     justify-content: flex-start;
@@ -278,6 +278,43 @@
             }
           }
         }
+
+        .ilo--video--controls--progress-played-container {
+          position: absolute;
+          left: 2%;
+          top: 0;
+          width: 96%;
+        }
+
+        .ilo--video--controls--progress-played {
+          --playhead: 0%;
+          align-items: center;
+          background-color: $color-ux-credit-background;
+          display: flex;
+          height: 32px;
+          justify-content: center;
+          left: calc(var(--playhead) - 34px);
+          position: absolute;
+          bottom: calc(300% + 12px);
+          width: 70px;
+          @include font-styles("image-credit");
+
+          &:after {
+            background-position: top left;
+            background-repeat: no-repeat;
+            background-size: contain;
+            @include dataurlicon(
+              "equilateraltriangle",
+              $color-base-neutrals-dark
+            );
+            content: "";
+            height: px-to-rem(map-get($spacing, "padding-1-5"));
+            position: absolute;
+            left: calc(50% - 6px);
+            bottom: -#{px-to-rem(map-get($spacing, "padding-1-5"))};
+            width: px-to-rem(map-get($spacing, "padding-1-5"));
+          }
+        }
       }
     }
 
@@ -339,6 +376,13 @@
       transform-origin: -4px -4px;
       top: 6px;
       width: px-to-rem(138px);
+    }
+
+    &--setvolume {
+      border-left: 8px solid #ebf5fd;
+      border-right: 8px solid #ebf5fd;
+      width: px-to-rem(122px);
+      -webkit-appearance: none;
 
       &.show {
         display: block;
@@ -348,6 +392,26 @@
         left: 0;
         position: absolute;
         top: 0;
+      }
+
+      &::-webkit-slider-runnable-track {
+        background-color: #1e2dbe;
+        border: none;
+        box-shadow: none;
+        height: 4px;
+        cursor: pointer;
+      }
+
+      &::-webkit-slider-thumb {
+        background-color: #1e2dbe;
+        border: none;
+        border-radius: 50%;
+        box-shadow: none;
+        cursor: pointer;
+        height: 16px;
+        margin-top: -5px;
+        width: 16px;
+        -webkit-appearance: none;
       }
     }
 

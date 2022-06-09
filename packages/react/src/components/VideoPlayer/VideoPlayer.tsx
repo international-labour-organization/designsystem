@@ -225,9 +225,14 @@ const VideoPlayer: FC<VideoPlayerProps> = ({
             max={1}
             value={buffer}
           />
-          <label className={`${controlsClasses}--progress-played`}>
-            {playedtime}
-          </label>
+          <div className={`${controlsClasses}--progress-played-container`}>
+            <label
+              className={`${controlsClasses}--progress-played`}
+              style={{ ["--playhead" as any]: `${playhead * 100}%` }}
+            >
+              {playedtime}
+            </label>
+          </div>
         </div>
         <div
           className={`${controlsClasses}--volume ${showposter ? "" : "show"}`}
