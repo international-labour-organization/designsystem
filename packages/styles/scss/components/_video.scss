@@ -5,14 +5,27 @@
 .ilo--video {
   position: relative;
 
+  &:focus,
+  .vjs-tech:focus {
+    outline: none;
+  }
+
   &--element,
   .vjs-tech {
     height: auto;
     width: 100%;
+
+    &:focus {
+      outline: none;
+    }
   }
 
   &--player {
     position: relative;
+
+    &:focus {
+      outline: none;
+    }
   }
 
   &--poster,
@@ -80,11 +93,21 @@
     .vjs-play-control:not(.vjs-playing),
     .vjs-big-play-button {
       @include iconbutton("play", 24px, 24px, "white");
+
+      &:hover {
+        background-color: #ebf5fd;
+        @include iconbutton("play", 24px, 24px, $brand-ilo-blue);
+      }
     }
 
     &--pause,
     .vjs-playing {
       @include iconbutton("pause", 24px, 24px, "white");
+
+      &:hover {
+        background-color: #ebf5fd;
+        @include iconbutton("pause", 24px, 24px, $brand-ilo-blue);
+      }
     }
 
     &--duration,
@@ -221,6 +244,41 @@
           border-radius: 0;
         }
       }
+
+      &:hover {
+        .vjs-play-progress {
+          position: relative;
+
+          .vjs-time-tooltip {
+            align-items: center;
+            background-color: $color-ux-credit-background;
+            display: flex;
+            height: 32px;
+            justify-content: center;
+            right: 0;
+            position: absolute;
+            bottom: calc(300% + 12px);
+            width: 70px;
+            @include font-styles("image-credit");
+
+            &:after {
+              background-position: top left;
+              background-repeat: no-repeat;
+              background-size: contain;
+              @include dataurlicon(
+                "equilateraltriangle",
+                $color-base-neutrals-dark
+              );
+              content: "";
+              height: px-to-rem(map-get($spacing, "padding-1-5"));
+              position: absolute;
+              left: calc(50% - 6px);
+              bottom: -#{px-to-rem(map-get($spacing, "padding-1-5"))};
+              width: px-to-rem(map-get($spacing, "padding-1-5"));
+            }
+          }
+        }
+      }
     }
 
     &--volume,
@@ -253,22 +311,34 @@
       -moz-appearance: none;
       @include iconbutton("volume", 24px, 24px, "white");
 
+      &:hover {
+        background-color: #ebf5fd;
+        @include iconbutton("volume", 24px, 24px, $brand-ilo-blue);
+      }
+
       &.muted,
       &[title="Unmute"] {
         @include iconbutton("muted", 24px, 24px, "white");
+
+        &:hover {
+          background-color: #ebf5fd;
+          @include iconbutton("muted", 24px, 24px, $brand-ilo-blue);
+        }
       }
     }
 
     &--setvolume,
-    .vjs-volume-bar {
-      background: #2d2d2d;
+    .vjs-volume-control {
+      background: #ebf5fd;
       display: none;
       height: px-to-rem(40px);
       order: 1;
       padding: 0;
+      position: absolute;
       transform: rotate(270deg);
       transform-origin: -4px -4px;
-      width: px-to-rem(100px);
+      top: 6px;
+      width: px-to-rem(138px);
 
       &.show {
         display: block;
@@ -281,13 +351,54 @@
       }
     }
 
-    .vjs-volume-panel.vjs-hover .vjs-volume-bar {
-      display: block;
+    .vjs-volume-panel.vjs-hover .vjs-volume-control {
+      align-items: center;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
     }
 
     .vjs-volume-bar {
+      height: 4px;
+      position: relative;
+      width: calc(100% - 24px);
+    }
+
+    .vjs-mouse-display,
+    .vjs-volume-level {
+      height: 4px;
+      left: 0;
       position: absolute;
-      top: 8px;
+      top: 0;
+    }
+
+    .vjs-mouse-display {
+      background-color: #b8c4cc;
+      width: 100%;
+    }
+
+    .vjs-volume-level {
+      background-color: #1e2dbe;
+
+      &:before {
+        background: #1e2dbe;
+        border-radius: 50%;
+        content: "";
+        height: 16px;
+        margin: 0;
+        padding: 0;
+        position: absolute;
+        right: -8px;
+        top: 50%;
+        width: 16px;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+      }
+    }
+
+    .vjs-volume-tooltip {
+      display: none;
     }
 
     &--fullscreen,
@@ -303,6 +414,11 @@
       -webkit-appearance: none;
       -moz-appearance: none;
       @include iconbutton("fullscreen", 24px, 24px, "white");
+
+      &:hover {
+        background-color: #ebf5fd;
+        @include iconbutton("fullscreen", 24px, 24px, $brand-ilo-blue);
+      }
 
       &.show {
         display: block;
@@ -353,8 +469,13 @@
     }
   }
 
+  .vjs-control:focus,
+  .vjs-control *:focus {
+    outline: none;
+  }
+
   .vjs-has-started {
-    .vjs-control:not(.vjs-duration) {
+    .vjs-control:not(.vjs-duration):not(.vjs-volume-control) {
       display: block;
     }
   }
