@@ -3,8 +3,9 @@
 #}
 {% if tagType == "button" and defaultActive %}
   <li class="{{prefix}}--tag-set__item">
-    <button class="{{prefix}}--tag {{prefix}}--tag--button {{prefix}}--tag--active" id="{{ id }}" data-active={{ defaultActive }} type="button">
+    <button class="{{prefix}}--tag {{prefix}}--tag--button {{prefix}}--tag--active icon__position--right" id="{{ id }}" data-active={{ defaultActive }} type="button">
       {{content}}
+      <span class="ilo--icon" title="Remove"></span>
     </button>
   </li>
 {% elseif tagType == "anchor" %}

@@ -364,6 +364,8 @@
 
     &.icon__position--right {
       .ilo--icon {
+        @include dataurlicon("close", map-get($color, "tag", "text", "active"));
+
         height: 100%;
         max-height: 28px;
         max-width: 28px;
