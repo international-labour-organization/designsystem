@@ -1512,7 +1512,7 @@ exports[`Storyshots Components/Tag Anchor Tag 1`] = `
       className="ilo--tag-set__item"
     >
       <a
-        className="ilo--tag ilo--tag--anchor"
+        className="ilo--tag ilo--tag--anchor icon icon__position--right"
         href="https://www.google.com/"
         id="tag1"
       >
@@ -1523,7 +1523,7 @@ exports[`Storyshots Components/Tag Anchor Tag 1`] = `
       className="ilo--tag-set__item"
     >
       <a
-        className="ilo--tag ilo--tag--anchor"
+        className="ilo--tag ilo--tag--anchor icon icon__position--right"
         href="https://www.google.com/"
         id="tag2"
       >
@@ -1534,7 +1534,7 @@ exports[`Storyshots Components/Tag Anchor Tag 1`] = `
       className="ilo--tag-set__item"
     >
       <a
-        className="ilo--tag ilo--tag--anchor"
+        className="ilo--tag ilo--tag--anchor icon icon__position--right"
         href="https://www.google.com/"
         id="tag3"
       >
@@ -1545,7 +1545,7 @@ exports[`Storyshots Components/Tag Anchor Tag 1`] = `
       className="ilo--tag-set__item"
     >
       <a
-        className="ilo--tag ilo--tag--anchor"
+        className="ilo--tag ilo--tag--anchor icon icon__position--right"
         href="https://www.google.com/"
         id="tag4"
       >
@@ -1556,7 +1556,7 @@ exports[`Storyshots Components/Tag Anchor Tag 1`] = `
       className="ilo--tag-set__item"
     >
       <a
-        className="ilo--tag ilo--tag--anchor"
+        className="ilo--tag ilo--tag--anchor icon icon__position--right"
         href="https://www.google.com/"
         id="tag5"
       >
@@ -1567,7 +1567,7 @@ exports[`Storyshots Components/Tag Anchor Tag 1`] = `
       className="ilo--tag-set__item"
     >
       <a
-        className="ilo--tag ilo--tag--anchor"
+        className="ilo--tag ilo--tag--anchor icon icon__position--right"
         href="https://www.google.com/"
         id="tag6"
       >
@@ -1578,7 +1578,7 @@ exports[`Storyshots Components/Tag Anchor Tag 1`] = `
       className="ilo--tag-set__item"
     >
       <a
-        className="ilo--tag ilo--tag--anchor"
+        className="ilo--tag ilo--tag--anchor icon icon__position--right"
         href="https://www.google.com/"
         id="tag7"
       >
@@ -1589,7 +1589,7 @@ exports[`Storyshots Components/Tag Anchor Tag 1`] = `
       className="ilo--tag-set__item"
     >
       <a
-        className="ilo--tag ilo--tag--anchor"
+        className="ilo--tag ilo--tag--anchor icon icon__position--right"
         href="https://www.google.com/"
         id="tag8"
       >
@@ -1600,7 +1600,7 @@ exports[`Storyshots Components/Tag Anchor Tag 1`] = `
       className="ilo--tag-set__item"
     >
       <a
-        className="ilo--tag ilo--tag--anchor"
+        className="ilo--tag ilo--tag--anchor icon icon__position--right"
         href="https://www.google.com/"
         id="tag9"
       >
@@ -1608,6 +1608,20 @@ exports[`Storyshots Components/Tag Anchor Tag 1`] = `
       </a>
     </li>
   </ul>
+</div>
+`;
+
+exports[`Storyshots Components/Tag Button Tag 1`] = `
+<div
+  style={
+    Object {
+      "margin": "3em",
+    }
+  }
+>
+  <ul
+    className="ilo--tag-set"
+  />
 </div>
 `;
 
@@ -1626,7 +1640,7 @@ exports[`Storyshots Components/Tag Display Tag 1`] = `
       className="ilo--tag-set__item"
     >
       <span
-        className="ilo--tag"
+        className="ilo--tag ilo--tag--display icon icon__position--right"
         id="tag1"
       >
         Test 1
@@ -1636,7 +1650,7 @@ exports[`Storyshots Components/Tag Display Tag 1`] = `
       className="ilo--tag-set__item"
     >
       <span
-        className="ilo--tag"
+        className="ilo--tag ilo--tag--display icon icon__position--right"
         id="tag2"
       >
         Test 2
@@ -1646,7 +1660,7 @@ exports[`Storyshots Components/Tag Display Tag 1`] = `
       className="ilo--tag-set__item"
     >
       <span
-        className="ilo--tag"
+        className="ilo--tag ilo--tag--display icon icon__position--right"
         id="tag3"
       >
         Test 3
@@ -1656,7 +1670,7 @@ exports[`Storyshots Components/Tag Display Tag 1`] = `
       className="ilo--tag-set__item"
     >
       <span
-        className="ilo--tag"
+        className="ilo--tag ilo--tag--display icon icon__position--right"
         id="tag4"
       >
         Test 4
@@ -1666,7 +1680,7 @@ exports[`Storyshots Components/Tag Display Tag 1`] = `
       className="ilo--tag-set__item"
     >
       <span
-        className="ilo--tag"
+        className="ilo--tag ilo--tag--display icon icon__position--right"
         id="tag5"
       >
         Test 5
@@ -1676,7 +1690,7 @@ exports[`Storyshots Components/Tag Display Tag 1`] = `
       className="ilo--tag-set__item"
     >
       <span
-        className="ilo--tag"
+        className="ilo--tag ilo--tag--display icon icon__position--right"
         id="tag6"
       >
         Test 6
@@ -1686,7 +1700,7 @@ exports[`Storyshots Components/Tag Display Tag 1`] = `
       className="ilo--tag-set__item"
     >
       <span
-        className="ilo--tag"
+        className="ilo--tag ilo--tag--display icon icon__position--right"
         id="tag7"
       >
         Test 7
@@ -1696,7 +1710,7 @@ exports[`Storyshots Components/Tag Display Tag 1`] = `
       className="ilo--tag-set__item"
     >
       <span
-        className="ilo--tag"
+        className="ilo--tag ilo--tag--display icon icon__position--right"
         id="tag8"
       >
         Test 8
@@ -1706,7 +1720,7 @@ exports[`Storyshots Components/Tag Display Tag 1`] = `
       className="ilo--tag-set__item"
     >
       <span
-        className="ilo--tag"
+        className="ilo--tag ilo--tag--display icon icon__position--right"
         id="tag9"
       >
         Test 9
