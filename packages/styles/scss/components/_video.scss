@@ -26,6 +26,22 @@
     &:focus {
       outline: none;
     }
+
+    &.youtube {
+      height: auto;
+      max-width: 100%;
+      overflow: hidden;
+      padding-bottom: 56.25%;
+      position: relative;
+    }
+
+    iframe {
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+    }
   }
 
   &--poster,
@@ -360,9 +376,10 @@
       background-color: $color-ux-video-controls-default-background;
       border: none;
       cursor: pointer;
-      height: 40px;
+      height: px-to-rem($spacing-uxaction-video-controls-height);
+      margin-top: 2px;
       position: relative;
-      width: px-to-rem(40px);
+      width: px-to-rem($spacing-uxaction-video-controls-height);
       z-index: 10;
       -webkit-appearance: none;
       -moz-appearance: none;
@@ -514,7 +531,7 @@
       height: 100%;
       margin-left: 2px;
       order: 5;
-      width: px-to-rem($spacing-uxaction-video-controls-width);
+      width: px-to-rem($spacing-uxaction-video-controls-height);
       -webkit-appearance: none;
       -moz-appearance: none;
       @include iconbutton(

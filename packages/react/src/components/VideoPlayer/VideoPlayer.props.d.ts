@@ -74,7 +74,7 @@ export interface VideoPlayerProps {
   tracks?: Required<Array<TracksConfig>> | null;
 
   /**
-   * if YouTube, specify a YouTube url or ID
+   * if YouTube, set to true
    */
-  youtube?: string | null;
+  youtube?: boolean;
 }

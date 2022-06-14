@@ -24,6 +24,7 @@ const VideoPlayer: FC<VideoPlayerProps> = ({
 
   const playerClasses = classNames("", {
     [`${baseClass}--player`]: true,
+    [`youtube`]: youtube,
   });
 
   const controlsClasses = classNames("", {
@@ -49,11 +50,6 @@ const VideoPlayer: FC<VideoPlayerProps> = ({
    */
   const videoElement = createRef();
 
-  /**
-   * Set some constants to pass as props
-   */
-  const url = src ? src : youtube ? youtube : "";
-
   const youtubeparams = {
     controls: 0,
     modestbranding: 1,
@@ -63,7 +59,7 @@ const VideoPlayer: FC<VideoPlayerProps> = ({
     file: {
       tracks: tracks || [],
     },
-    youtube: url === youtube ? { playerVars: youtubeparams } : {},
+    youtube: youtube ? { playerVars: youtubeparams } : {},
   };
 
   /**
@@ -174,7 +170,7 @@ const VideoPlayer: FC<VideoPlayerProps> = ({
         muted={muted}
         playing={playing}
         ref={videoElement}
-        url={url}
+        url={src as any}
         width="100%"
         height="100%"
         volume={volume}

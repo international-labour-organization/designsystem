@@ -17,7 +17,7 @@ The \`url\` prop expects an array of object each containing a \`breakpoint\` and
 
 | Prop   |  Description  |
 |----------|-------------|
-| \`breakpoint\` | The min-width at which to start displaying this sixe of the image - the first item in the array should always have a breakpoint value of 0 |
+| \`breakpoint\` | The min-width at which to start displaying this size of the image - the first item in the array should always have a breakpoint value of 0 |
 | \`src\` | The image src to display at this breakpoint |
 `;
 
@@ -73,10 +73,20 @@ export const ImageMedia = MediaTemplate.bind({});
  */
 export const VideoFileMedia = MediaTemplate.bind({});
 
+/**
+ * Video YouTube Instance
+ *
+ */
+export const VideoYTMedia = MediaTemplate.bind({});
+
 // enumerate the props for the image only option
 ImageMedia.args = mediaArgs.imageonly;
 ImageMedia.storyName = "Image Only";
 
 // enumerate the props for the video file option
 VideoFileMedia.args = mediaArgs.videofile;
-VideoFileMedia.storyName = "VIdeo File";
+VideoFileMedia.storyName = "Video File";
+
+// enumerate the props for the video youtube option
+VideoYTMedia.args = mediaArgs.videoyt;
+VideoYTMedia.storyName = "Video YouTube";
