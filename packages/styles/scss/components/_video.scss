@@ -42,11 +42,11 @@
   &--controls,
   .vjs-control-bar {
     bottom: 0;
-    color: white;
+    color: $color-ux-labels-darkbg;
     display: flex;
     justify-content: flex-start;
     left: 0;
-    height: px-to-rem(40px);
+    height: px-to-rem($spacing-uxaction-video-controls-height);
     opacity: 1;
     position: absolute;
     width: 100%;
@@ -59,7 +59,7 @@
       @include breakpoint("large") {
         flex-direction: column;
         height: 122px;
-        width: 80px;
+        width: px-to-rem($spacing-uxaction-video-bigplaybutton-width);
       }
     }
 
@@ -71,20 +71,20 @@
     &--pause,
     .vjs-play-control,
     .vjs-big-play-button {
-      background-color: #2d2d2d;
+      background-color: $color-ux-video-controls-default-background;
       border: none;
       cursor: pointer;
       height: 100%;
       order: 1;
-      width: px-to-rem(40px);
+      width: $spacing-uxaction-video-controls-height;
       -webkit-appearance: none;
       -moz-appearance: none;
 
       .notplayed & {
         @include breakpoint("large") {
           order: 1;
-          height: px-to-rem(80px);
-          width: px-to-rem(80px);
+          height: px-to-rem($spacing-uxaction-video-bigplaybutton-height);
+          width: px-to-rem($spacing-uxaction-video-bigplaybutton-width);
         }
       }
     }
@@ -92,27 +92,47 @@
     &--play,
     .vjs-play-control:not(.vjs-playing),
     .vjs-big-play-button {
-      @include iconbutton("play", 24px, 24px, "white");
+      @include iconbutton(
+        "play",
+        $spacing-uxaction-video-buttonicon-height,
+        $spacing-uxaction-video-buttonicon-width,
+        $color-ux-video-controls-default-icon
+      );
 
       &:hover {
-        background-color: #ebf5fd;
-        @include iconbutton("play", 24px, 24px, $brand-ilo-blue);
+        background-color: $color-ux-video-controls-hover-background;
+        @include iconbutton(
+          "play",
+          $spacing-uxaction-video-buttonicon-height,
+          $spacing-uxaction-video-buttonicon-width,
+          $color-ux-video-controls-hover-icon
+        );
       }
     }
 
     &--pause,
     .vjs-playing {
-      @include iconbutton("pause", 24px, 24px, "white");
+      @include iconbutton(
+        "pause",
+        $spacing-uxaction-video-buttonicon-height,
+        $spacing-uxaction-video-buttonicon-width,
+        $color-ux-video-controls-default-icon
+      );
 
       &:hover {
-        background-color: #ebf5fd;
-        @include iconbutton("pause", 24px, 24px, $brand-ilo-blue);
+        background-color: $color-ux-video-controls-hover-background;
+        @include iconbutton(
+          "pause",
+          $spacing-uxaction-video-buttonicon-height,
+          $spacing-uxaction-video-buttonicon-width,
+          $color-ux-video-controls-hover-icon
+        );
       }
     }
 
     &--duration,
     .vjs-duration {
-      background-color: #2d2d2d;
+      background-color: $color-ux-video-controls-default-background;
       display: none;
       height: 100%;
       font-weight: 700;
@@ -130,10 +150,10 @@
 
       .notplayed & {
         @include breakpoint("large") {
-          height: px-to-rem(40px);
+          height: px-to-rem($spacing-uxaction-video-controls-height);
           margin-left: 0;
           margin-top: 2px;
-          width: px-to-rem(80px);
+          width: px-to-rem($spacing-uxaction-video-bigplaybutton-width);
         }
       }
     }
@@ -145,7 +165,7 @@
 
     &--progress,
     .vjs-progress-control {
-      background-color: #2d2d2d;
+      background-color: $color-ux-video-controls-default-background;
       display: none;
       flex-grow: 1;
       height: 100%;
@@ -180,7 +200,7 @@
         -webkit-appearance: none;
 
         &::-moz-progress-bar {
-          background: #ebf5fd;
+          background: $color-ux-video-controls-hover-background;
           border-radius: 0;
         }
 
@@ -189,13 +209,13 @@
         }
 
         &::-webkit-progress-value {
-          background: #ebf5fd;
+          background: $color-ux-video-controls-hover-background;
           border-radius: 0;
         }
       }
 
       .vjs-play-progress {
-        background: #ebf5fd;
+        background: $color-ux-video-controls-hover-background;
 
         .vjs-time-tooltip {
           display: none;
@@ -203,7 +223,7 @@
       }
 
       div[data-start] {
-        background: #b8c4cc;
+        background: $color-base-neutrals-light;
         height: 8px;
         left: 2%;
         position: absolute;
@@ -231,7 +251,7 @@
         -webkit-appearance: none;
 
         &::-moz-progress-bar {
-          background: #b8c4cc;
+          background: $color-base-neutrals-light;
           border-radius: 0;
         }
 
@@ -240,7 +260,7 @@
         }
 
         &::-webkit-progress-value {
-          background: #b8c4cc;
+          background: $color-base-neutrals-light;
           border-radius: 0;
         }
       }
@@ -253,7 +273,7 @@
             align-items: center;
             background-color: $color-ux-credit-background;
             display: flex;
-            height: 32px;
+            height: px-to-rem(map-get($spacing, "padding-4"));
             justify-content: center;
             right: 0;
             position: absolute;
@@ -291,7 +311,7 @@
           align-items: center;
           background-color: $color-ux-credit-background;
           display: flex;
-          height: 32px;
+          height: px-to-rem(map-get($spacing, "padding-4"));
           justify-content: center;
           left: calc(var(--playhead) - 34px);
           position: absolute;
@@ -337,7 +357,7 @@
 
     &--showvolume,
     .vjs-mute-control {
-      background-color: #2d2d2d;
+      background-color: $color-ux-video-controls-default-background;
       border: none;
       cursor: pointer;
       height: 40px;
@@ -346,29 +366,49 @@
       z-index: 10;
       -webkit-appearance: none;
       -moz-appearance: none;
-      @include iconbutton("volume", 24px, 24px, "white");
+      @include iconbutton(
+        "volume",
+        $spacing-uxaction-video-buttonicon-height,
+        $spacing-uxaction-video-buttonicon-width,
+        $color-ux-video-controls-default-icon
+      );
 
       &:hover {
-        background-color: #ebf5fd;
-        @include iconbutton("volume", 24px, 24px, $brand-ilo-blue);
+        background-color: $color-ux-video-controls-hover-background;
+        @include iconbutton(
+          "volume",
+          $spacing-uxaction-video-buttonicon-height,
+          $spacing-uxaction-video-buttonicon-width,
+          $color-ux-video-controls-hover-icon
+        );
       }
 
       &.muted,
       &[title="Unmute"] {
-        @include iconbutton("muted", 24px, 24px, "white");
+        @include iconbutton(
+          "muted",
+          $spacing-uxaction-video-buttonicon-height,
+          $spacing-uxaction-video-buttonicon-width,
+          $color-ux-video-controls-default-icon
+        );
 
         &:hover {
           background-color: #ebf5fd;
-          @include iconbutton("muted", 24px, 24px, $brand-ilo-blue);
+          @include iconbutton(
+            "muted",
+            $spacing-uxaction-video-buttonicon-height,
+            $spacing-uxaction-video-buttonicon-width,
+            $color-ux-video-controls-hover-icon
+          );
         }
       }
     }
 
     &--setvolume,
     .vjs-volume-control {
-      background: #ebf5fd;
+      background: $color-ux-video-controls-hover-background;
       display: none;
-      height: px-to-rem(40px);
+      height: px-to-rem($spacing-uxaction-video-controls-height);
       order: 1;
       padding: 0;
       position: absolute;
@@ -379,8 +419,8 @@
     }
 
     &--setvolume {
-      border-left: 8px solid #ebf5fd;
-      border-right: 8px solid #ebf5fd;
+      border-left: 8px solid $color-ux-video-controls-hover-background;
+      border-right: 8px solid $color-ux-video-controls-hover-background;
       width: px-to-rem(122px);
       -webkit-appearance: none;
 
@@ -395,7 +435,7 @@
       }
 
       &::-webkit-slider-runnable-track {
-        background-color: #1e2dbe;
+        background-color: $color-ux-video-controls-hover-icon;
         border: none;
         box-shadow: none;
         height: 4px;
@@ -403,7 +443,7 @@
       }
 
       &::-webkit-slider-thumb {
-        background-color: #1e2dbe;
+        background-color: $color-ux-video-controls-hover-icon;
         border: none;
         border-radius: 50%;
         box-shadow: none;
@@ -437,15 +477,15 @@
     }
 
     .vjs-mouse-display {
-      background-color: #b8c4cc;
+      background-color: $color-base-neutrals-light;
       width: 100%;
     }
 
     .vjs-volume-level {
-      background-color: #1e2dbe;
+      background-color: $color-ux-video-controls-hover-icon;
 
       &:before {
-        background: #1e2dbe;
+        background: $color-ux-video-controls-hover-icon;
         border-radius: 50%;
         content: "";
         height: 16px;
@@ -467,21 +507,31 @@
 
     &--fullscreen,
     .vjs-fullscreen-control {
-      background-color: #2d2d2d;
+      background-color: $color-ux-video-controls-default-background;
       border: none;
       cursor: pointer;
       display: none;
       height: 100%;
       margin-left: 2px;
       order: 5;
-      width: px-to-rem(40px);
+      width: px-to-rem($spacing-uxaction-video-controls-width);
       -webkit-appearance: none;
       -moz-appearance: none;
-      @include iconbutton("fullscreen", 24px, 24px, "white");
+      @include iconbutton(
+        "fullscreen",
+        $spacing-uxaction-video-buttonicon-height,
+        $spacing-uxaction-video-buttonicon-width,
+        $color-ux-video-controls-default-icon
+      );
 
       &:hover {
         background-color: #ebf5fd;
-        @include iconbutton("fullscreen", 24px, 24px, $brand-ilo-blue);
+        @include iconbutton(
+          "fullscreen",
+          $spacing-uxaction-video-buttonicon-height,
+          $spacing-uxaction-video-buttonicon-width,
+          $color-ux-video-controls-hover-icon
+        );
       }
 
       &.show {
@@ -519,7 +569,7 @@
 
     @include breakpoint("large") {
       .vjs-duration {
-        height: px-to-rem(40px);
+        height: px-to-rem($spacing-uxaction-video-controls-height);
         margin-left: 0;
         margin-top: 2px;
         width: px-to-rem(80px);
