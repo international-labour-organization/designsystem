@@ -43,8 +43,24 @@ export default {
  *
  *@param (Object) args - props to be passed to the component
  */
-const SearchFieldTemplate: Story<SearchFieldProps> = () => (
-  <SearchField {...SearchFieldArgs.searchfield} />
+const SearchFieldTemplate: Story<SearchFieldProps> = (args) => (
+  <SearchField {...args} />
 );
 
-export const SearchField1 = SearchFieldTemplate.bind({});
+export const SearchFieldDefault = SearchFieldTemplate.bind({});
+
+// enumerate the props for the default search field
+SearchFieldDefault.args = SearchFieldArgs.searchfield;
+SearchFieldDefault.storyName = "Default SearchField";
+
+export const SearchFieldError = SearchFieldTemplate.bind({});
+
+// enumerate the props for the default search field
+SearchFieldError.args = SearchFieldArgs.searchfielderror;
+SearchFieldError.storyName = "SearchField Error";
+
+export const SearchFieldDisabled = SearchFieldTemplate.bind({});
+
+// enumerate the props for the default search field
+SearchFieldDisabled.args = SearchFieldArgs.searchfielddisabled;
+SearchFieldDisabled.storyName = "Disabled SearchField";

@@ -50,6 +50,7 @@
 
   &:disabled {
     opacity: 45%;
+    pointer-events: none;
   }
 
   &:invalid,

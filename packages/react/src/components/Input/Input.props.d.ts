@@ -10,6 +10,11 @@ export interface InputProps {
   disabled?: boolean;
 
   /**
+   * Does the input have an error?
+   */
+  error?: string | false;
+
+  /**
    * The input's id attribute
    */
   id?: string;

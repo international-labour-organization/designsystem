@@ -1,10 +1,12 @@
 import { FC } from "react";
+import classNames from "classnames";
 import useGlobalSettings from "../../hooks/useGlobalSettings";
 import { InputProps } from "./Input.props";
 
 const Input: FC<InputProps> = ({
   callback,
   disabled = false,
+  error,
   id,
   name,
   placeholder,
@@ -12,6 +14,11 @@ const Input: FC<InputProps> = ({
 }) => {
   const { prefix } = useGlobalSettings();
   const baseClass = `${prefix}--input`;
+
+  const InputClasses = classNames("", {
+    [baseClass]: true,
+    [`error`]: error,
+  });
 
   /**
    * On change, if there is a callback, call it
@@ -30,7 +37,7 @@ const Input: FC<InputProps> = ({
       disabled={disabled}
       placeholder={placeholder}
       type={type}
-      className={baseClass}
+      className={InputClasses}
     />
   );
 };

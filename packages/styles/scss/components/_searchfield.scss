@@ -60,4 +60,9 @@
       @include isVisuallyHidden();
     }
   }
+
+  .ilo--input:disabled + .ilo--searchfield--button {
+    opacity: 45%;
+    pointer-events: none;
+  }
 }
