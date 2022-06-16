@@ -2,4 +2,62 @@
 @import "../mixins";
 
 .ilo--searchfield {
+  display: flex;
+
+  .ilo--input {
+    width: calc(100% - #{$spacing-padding-6});
+  }
+
+  &--button {
+    background-color: map-get(
+      $color,
+      "formelements",
+      "inputbutton",
+      "default",
+      "background"
+    );
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: $spacing-padding-3 $spacing-padding-3;
+    @include bordervalues("inputbutton", "formelements");
+    height: $spacing-padding-6;
+    width: $spacing-padding-6;
+    @include dataurlicon(
+      "search",
+      $color-formelements-inputbutton-default-color
+    );
+
+    &:hover {
+      background-color: map-get(
+        $color,
+        "formelements",
+        "inputbutton",
+        "hover",
+        "background"
+      );
+      cursor: pointer;
+      @include dataurlicon(
+        "search",
+        $color-formelements-inputbutton-hover-color
+      );
+    }
+
+    &:active {
+      background-color: map-get(
+        $color,
+        "formelements",
+        "inputbutton",
+        "active",
+        "background"
+      );
+      @include dataurlicon(
+        "search",
+        $color-formelements-inputbutton-active-color
+      );
+    }
+
+    .button__label {
+      @include isVisuallyHidden();
+    }
+  }
 }

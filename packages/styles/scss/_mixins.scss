@@ -96,34 +96,34 @@
 // Spacing Values
 // ======================================
 
-@mixin spacingvalues($type, $mappath) {
-  #{$type}: px-to-rem(map-get($spacing, "uxaction", $mappath, $type, "top"))
-    px-to-rem(map-get($spacing, "uxaction", $mappath, $type, "right"))
-    px-to-rem(map-get($spacing, "uxaction", $mappath, $type, "bottom"))
-    px-to-rem(map-get($spacing, "uxaction", $mappath, $type, "left"));
+@mixin spacingvalues($type, $kind, $mappath, $state: "default") {
+  #{$type}: px-to-rem(map-get($spacing, $mappath, $kind, $state, $type, "top"))
+    px-to-rem(map-get($spacing, $mappath, $kind, $state, $type, "right"))
+    px-to-rem(map-get($spacing, $mappath, $kind, $state, $type, "bottom"))
+    px-to-rem(map-get($spacing, $mappath, $kind, $state, $type, "left"));
 }
 
 // ======================================
 // Border Values
 // ======================================
 
-@mixin bordervalues($mappath, $state: "default") {
+@mixin bordervalues($kind, $mappath, $state: "default") {
   border-bottom: px-to-rem(
-      map-get($spacing, "uxaction", $mappath, "border", "bottom")
+      map-get($spacing, $mappath, $kind, $state, "border", "bottom")
     )
-    solid map-get($color, "ux", $mappath, $state, "border", "bottom");
+    solid map-get($color, $mappath, $kind, $state, "border", "bottom");
   border-left: px-to-rem(
-      map-get($spacing, "uxaction", $mappath, "border", "left")
+      map-get($spacing, $mappath, $kind, $state, "border", "left")
     )
-    solid map-get($color, "ux", $mappath, $state, "border", "left");
+    solid map-get($color, $mappath, $kind, $state, "border", "left");
   border-right: px-to-rem(
-      map-get($spacing, "uxaction", $mappath, "border", "right")
+      map-get($spacing, $mappath, $kind, $state, "border", "right")
     )
-    solid map-get($color, "ux", $mappath, $state, "border", "right");
+    solid map-get($color, $mappath, $kind, $state, "border", "right");
   border-top: px-to-rem(
-      map-get($spacing, "uxaction", $mappath, "border", "top")
+      map-get($spacing, $mappath, $kind, $state, "border", "top")
     )
-    solid map-get($color, "ux", $mappath, $state, "border", "top");
+    solid map-get($color, $mappath, $kind, $state, "border", "top");
 }
 
 // ======================================
