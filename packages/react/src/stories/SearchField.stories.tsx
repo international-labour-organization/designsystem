@@ -4,9 +4,11 @@ import {
   Subtitle,
   Description,
   Primary,
+  ArgsTable,
   Stories,
 } from "@storybook/addon-docs";
 import { SearchField } from "../components/SearchField";
+import { Input } from "../components/Input";
 import { SearchFieldProps } from "../components/SearchField/SearchField.props";
 import SearchFieldArgs from "../components/SearchField/SearchField.args";
 
@@ -17,6 +19,10 @@ import SearchFieldArgs from "../components/SearchField/SearchField.args";
 export default {
   title: "Components/SearchField",
   component: SearchField,
+  argTypes: {},
+  subcomponents: {
+    Input,
+  },
   parameters: {
     componentSubtitle: "Component",
     docs: {
@@ -25,10 +31,13 @@ export default {
           <Subtitle />
           <Title />
           <Description>
-            The SearchField component receives no props. It it displayed on page
-            load as a placeholder component while data loads.
+            The SearchField component displays a single search input and a
+            button. It fires a callback function passed to it as the callback
+            prop onChange of the field, and another callback function onClick of
+            the button.
           </Description>
           <Primary />
+          <ArgsTable />
           <Stories title="Examples"></Stories>
         </>
       ),
