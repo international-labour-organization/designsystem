@@ -1,0 +1,30 @@
+{#
+  CALLOUT COMPONENT
+#}
+<div class="{{prefix}}--callout {{prefix}}--callout--{{alert}} {% if isOpen %} {{prefix}}--callout--open {% endif %}" data-loadcomponent="Callout" >
+  <div class="{{prefix}}--callout--sidebar">
+    <span class="{{prefix}}--callout--icon"></span>
+  </div>
+  <div class="{{prefix}}--callout--content">
+    <div class="{{prefix}}--callout--header">
+      <h5 class="{{prefix}}--callout--title">{{ title }}</h5>
+      {% if isCollapsible %}
+      <button class="{{prefix}}--callout--toggle" type="button" data-open="{{ toggleOpenLabel }}" data-closed="{{ toggleClosedLabel }}">
+        <span class="{{prefix}}--callout--button-text">{% if isOpen %}{{ toggleOpenLabel }}{% else %}{{ toggleClosedLabel }}{% endif %}</span>
+        <span class="{{prefix}}--callout--toggle--icon" role="presentation"></span>
+      </button>
+      {% endif %}
+    </div>
+    {{ content }}
+    {% if buttonLabel %}
+      <div class="{{prefix}}--callout--footer">
+        <button
+          class="{{prefix}}--button {{prefix}}--button--small {{prefix}}--button--secondary"
+          type="button"
+        >
+          {{ buttonLabel }}
+        </button>
+      </div>
+    {% endif %}
+  </div>
+</div>
