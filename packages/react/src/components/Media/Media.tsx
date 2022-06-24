@@ -52,10 +52,7 @@ const Media: FC<MediaProps> = ({
           </picture>
         )}
         {video && video.hasvideo && (
-          <VideoPlayer
-            {...video}
-            poster={{ url: url[url.length - 1].src, alt: alt }}
-          />
+          <VideoPlayer {...video} poster={{ url: url, alt: alt }} />
         )}
         {video && !video.hasvideo && credit && <Credit credit={credit} />}
       </div>

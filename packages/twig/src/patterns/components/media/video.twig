@@ -1,11 +1,11 @@
 {#
   VIDEO SUB-COMPONENT
 #}
-
+{% set poster = url|last %}
 <div class="{{prefix}}--video" data-loadcomponent="Video" data-prefix="{{prefix}}"">
   <div class="{{prefix}}-video--player" style="width: 100%; height: 100%;">
-    <video class="{{prefix}}--video--element">
+    <video class="{{prefix}}--video--element" poster="{{poster.src}}">
       <source src="{{src}}" />
     </video>
-  </div>
+</div>
 

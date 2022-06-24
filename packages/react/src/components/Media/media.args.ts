@@ -40,19 +40,19 @@ const videofile: MediaProps = {
   url: [
     {
       breakpoint: 0,
-      src: "https://place-hold.it/400x300?text=SmallBreakpointImage",
+      src: "https://place-hold.it/400x225?text=SmallBreakpointImage",
     },
     {
       breakpoint: 800,
-      src: "https://place-hold.it/800x600?text=MediumBreakpointImage",
+      src: "https://place-hold.it/800x450?text=MediumBreakpointImage",
     },
     {
       breakpoint: 1200,
-      src: "https://place-hold.it/1200x900?text=LargeBreakpointImage",
+      src: "https://place-hold.it/1200x675?text=LargeBreakpointImage",
     },
     {
       breakpoint: 1440,
-      src: "https://place-hold.it/1600x1200?text=LargestBreakpointImage",
+      src: "https://place-hold.it/1600x900?text=LargestBreakpointImage",
     },
   ],
   video: {
@@ -77,19 +77,19 @@ const videoyt: MediaProps = {
   url: [
     {
       breakpoint: 0,
-      src: "https://place-hold.it/400x300?text=SmallBreakpointImage",
+      src: "https://place-hold.it/400x225?text=SmallBreakpointImage",
     },
     {
       breakpoint: 800,
-      src: "https://place-hold.it/800x600?text=MediumBreakpointImage",
+      src: "https://place-hold.it/800x450?text=MediumBreakpointImage",
     },
     {
       breakpoint: 1200,
-      src: "https://place-hold.it/1200x900?text=LargeBreakpointImage",
+      src: "https://place-hold.it/1200x675?text=LargeBreakpointImage",
     },
     {
       breakpoint: 1440,
-      src: "https://place-hold.it/1600x1200?text=LargestBreakpointImage",
+      src: "https://place-hold.it/1600x900?text=LargestBreakpointImage",
     },
   ],
   video: {

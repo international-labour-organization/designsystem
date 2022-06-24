@@ -178,11 +178,24 @@ const VideoPlayer: FC<VideoPlayerProps> = ({
         onDuration={handleDuration}
         onEnded={handleEnded}
       />
-      <img
-        src={poster && poster.url}
-        alt={poster && poster.alt}
-        className={`${baseClass}--poster ${showposter ? "show" : ""}`}
-      />
+      <picture className={`${baseClass}--poster ${showposter ? "show" : ""}`}>
+        {poster.url &&
+          poster.url
+            .sort(
+              (a: any, b: any) =>
+                parseFloat(a.breakpoint) - parseFloat(b.breakpoint)
+            )
+            .slice(1)
+            .reverse()
+            .map((item: any, index: any) => (
+              <source
+                srcSet={item.src}
+                media={`(min-width: ${item.breakpoint}px)`}
+                key={index}
+              />
+            ))}
+        <img src={poster.url[0].src} alt={poster.alt} />
+      </picture>
       <div className={`${controlsClasses} ${showposter ? "notplayed" : ""}`}>
         <label
           className={`${controlsClasses}--duration ${showposter ? "show" : ""}`}
