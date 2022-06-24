@@ -22,6 +22,7 @@
     @include bordervalues("inputbutton", "formelements");
     height: $spacing-padding-6;
     width: $spacing-padding-6;
+    text-indent: -9999px;
     @include dataurlicon(
       "search",
       $color-formelements-inputbutton-default-color
@@ -54,10 +55,6 @@
         "search",
         $color-formelements-inputbutton-active-color
       );
-    }
-
-    .button__label {
-      @include isVisuallyHidden();
     }
   }
 

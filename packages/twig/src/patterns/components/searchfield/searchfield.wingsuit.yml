@@ -1,0 +1,18 @@
+searchfield:
+  use: '@components/searchfield/searchfield.twig'
+  label: Search Field
+  description: A component for displaying a search field.
+  fields:
+    action:
+      type: string
+      label: action
+      description: The form's action attribute
+      preview: "http://www.ilo.org"
+      required: false
+    placeholder:
+      type: string
+      label: placeholder
+      description: The search field's placeholder attribute
+      preview: "Search Field"
+      required: false
+  visibility: storybook

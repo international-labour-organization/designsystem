@@ -31,11 +31,11 @@ const SearchField: FC<SearchFieldProps> = ({
   return (
     <form className={SearchFieldClasses} action={action}>
       <Input {...input} />
-      <button className={buttonClass} onClick={(e) => handleClick(e)}>
-        {button && button.label && (
-          <span className="button__label">{button.label}</span>
-        )}
-      </button>
+      <input
+        className={buttonClass}
+        type="submit"
+        onClick={(e) => handleClick(e)}
+      />
     </form>
   );
 };
