@@ -18,10 +18,10 @@
         "padding": {
           "bottom": { "value": "16px" },
           "left": { "value": "2px" },
-          "right": { "value": "2px" },
+          "right": { "value": "32px" },
           "top": { "value": "16px" }
         },
-        "width": { "value": "120px" }
+        "width": { "value": "auto" }
       }
     }
   }

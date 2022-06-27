@@ -7,19 +7,14 @@
     background: map-get($color, "ux", "readmore", "default", "background");
     @include bordervalues("readmore");
     color: $color-ux-labels-actionable;
+    font-family: $fonts-display;
     height: px-to-rem(map-get($spacing, "uxaction", "readmore", "height"));
     @include spacingvalues("margin", "readmore");
     @include spacingvalues("padding", "readmore");
     position: relative;
     text-align: left;
-    width: px-to-rem(map-get($spacing, "uxaction", "readmore", "width"));
+    width: auto;
     @include font-styles("label-medium");
-
-    &:hover {
-      background: map-get($color, "ux", "readmore", "hover", "background");
-      @include bordervalues("readmore", "hover");
-      cursor: pointer;
-    }
 
     &:after {
       background-repeat: no-repeat;
@@ -33,6 +28,17 @@
       transform-origin: center center;
       width: px-to-rem(24px);
       @include dataurlicon("arrow", $color-ux-labels-actionable);
+    }
+
+    &:hover {
+      background: map-get($color, "ux", "readmore", "hover", "background");
+      @include bordervalues("readmore", "hover");
+      color: $color-ux-labels-hover;
+      cursor: pointer;
+
+      &:after {
+        @include dataurlicon("arrow", $color-ux-labels-hover);
+      }
     }
 
     &--open {
