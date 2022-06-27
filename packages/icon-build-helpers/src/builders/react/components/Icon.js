@@ -4,9 +4,9 @@
  * This source code is licensed under the Apache-2.0 license found in the
  * LICENSE file in the root directory of this source tree.
  */
-import { getAttributes } from '@carbon/icon-helpers';
-import PropTypes from 'prop-types';
-import React from 'react';
+import { getAttributes } from "@carbon/icon-helpers";
+import PropTypes from "prop-types";
+import React from "react";
 
 const Icon = React.forwardRef(function Icon(
   { className, children, tabIndex, ...rest },
@@ -29,14 +29,14 @@ const Icon = React.forwardRef(function Icon(
     props.ref = ref;
   }
 
-  return React.createElement('svg', props, children);
+  return React.createElement("svg", props, children);
 });
 
-Icon.displayName = 'Icon';
+Icon.displayName = "Icon";
 Icon.propTypes = {
-  'aria-hidden': PropTypes.string,
-  'aria-label': PropTypes.string,
-  'aria-labelledby': PropTypes.string,
+  "aria-hidden": PropTypes.string,
+  "aria-label": PropTypes.string,
+  "aria-labelledby": PropTypes.string,
   children: PropTypes.node,
   className: PropTypes.string,
   height: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
@@ -47,8 +47,8 @@ Icon.propTypes = {
   xmlns: PropTypes.string,
 };
 Icon.defaultProps = {
-  xmlns: 'http://www.w3.org/2000/svg',
-  preserveAspectRatio: 'xMidYMid meet',
+  xmlns: "http://www.w3.org/2000/svg",
+  preserveAspectRatio: "xMidYMid meet",
 };
 
 export default Icon;

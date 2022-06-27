@@ -5,11 +5,11 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-'use strict';
+"use strict";
 
-const fs = require('fs-extra');
-const yaml = require('js-yaml');
-const path = require('path');
+const fs = require("fs-extra");
+const yaml = require("js-yaml");
+const path = require("path");
 
 /**
  * Get the filename for a given path basename. This is helpful to
@@ -21,7 +21,7 @@ const path = require('path');
 function getFilenameFor(name) {
   return path.format({
     name,
-    ext: '.yml',
+    ext: ".yml",
   });
 }
 
@@ -59,7 +59,7 @@ async function read(directory, name) {
     );
   }
 
-  return deserialize(await fs.readFile(filepath, 'utf8'));
+  return deserialize(await fs.readFile(filepath, "utf8"));
 }
 
 /**
@@ -72,7 +72,7 @@ async function write(directory, name, data) {
   const filepath = path.join(directory, getFilenameFor(name));
 
   await fs.ensureFile(filepath);
-  await fs.writeFile(filepath, serialize(data), 'utf8');
+  await fs.writeFile(filepath, serialize(data), "utf8");
 }
 
 module.exports = {

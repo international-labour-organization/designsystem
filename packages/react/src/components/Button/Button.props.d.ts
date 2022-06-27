@@ -1,4 +1,4 @@
-import { ReactNode, MouseEvent } from "react";
+import { ReactNode } from "react";
 import { buttonTypes } from "../../types";
 
 export interface ButtonProps {

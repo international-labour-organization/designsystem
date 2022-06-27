@@ -5,7 +5,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-'use strict';
+"use strict";
 
 /**
  * Use the provided file adapter and directory information to load the given

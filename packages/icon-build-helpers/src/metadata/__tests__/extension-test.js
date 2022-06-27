@@ -7,15 +7,15 @@
  * @jest-environment node
  */
 
-'use strict';
+"use strict";
 
-const Extension = require('../extension');
+const Extension = require("../extension");
 
-describe('Extension', () => {
+describe("Extension", () => {
   let extensions;
 
   beforeEach(() => {
-    const names = ['a', 'b', 'c'];
+    const names = ["a", "b", "c"];
     extensions = {};
 
     for (const name of names) {
@@ -25,7 +25,7 @@ describe('Extension', () => {
     }
   });
 
-  it('should load the given extensions', () => {
+  it("should load the given extensions", () => {
     const loaded = Extension.load([extensions.a, extensions.b, extensions.c]);
     for (const extension of loaded) {
       expect(extensions[extension.name]).toBeDefined();
@@ -36,16 +36,16 @@ describe('Extension', () => {
     }
   });
 
-  it('should support loading an extension with options', () => {
-    const options = { foo: 'bar' };
+  it("should support loading an extension with options", () => {
+    const options = { foo: "bar" };
     Extension.load([[extensions.a, options], extensions.b]);
     expect(extensions.a).toHaveBeenCalledWith(options);
   });
 
-  it('should load extensions listed under `before` before the extension', () => {
+  it("should load extensions listed under `before` before the extension", () => {
     extensions.c = jest.fn(() => ({
       before: [extensions.a, extensions.b],
-      name: 'c',
+      name: "c",
     }));
 
     const loaded = Extension.load([extensions.c]);
@@ -55,17 +55,17 @@ describe('Extension', () => {
     expect(loaded.length).toBe(3);
   });
 
-  it('should not load an extension twice if it has already been loaded', () => {
+  it("should not load an extension twice if it has already been loaded", () => {
     extensions.c = jest.fn(() => ({
       before: [extensions.a, extensions.b],
-      name: 'c',
+      name: "c",
     }));
 
     const loaded = Extension.load([extensions.a, extensions.c]);
     expect(loaded.length).toBe(3);
   });
 
-  it('should throw if an invalid extension is provided', () => {
+  it("should throw if an invalid extension is provided", () => {
     expect(() => {
       Extension.load([() => ({})]);
     }).toThrowErrorMatchingInlineSnapshot(
