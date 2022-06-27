@@ -40,6 +40,46 @@
           "right": { "value": "48px" },
           "top": { "value": "10px" }
         }
+      },
+      "caption": {
+        "small": {
+          "bottom": { "value": "0" },
+          "left": { "value": "8px" },
+          "right": { "value": "0" },
+          "top": { "value": "0" }
+        },
+        "medium": {
+          "bottom": { "value": "0" },
+          "left": { "value": "8px" },
+          "right": { "value": "0" },
+          "top": { "value": "0" }
+        },
+        "large": {
+          "bottom": { "value": "0" },
+          "left": { "value": "8px" },
+          "right": { "value": "0" },
+          "top": { "value": "0" }
+        }
+      },
+      "credit": {
+        "small": {
+          "bottom": { "value": "4px" },
+          "left": { "value": "12px" },
+          "right": { "value": "8px" },
+          "top": { "value": "4px" }
+        },
+        "medium": {
+          "bottom": { "value": "4px" },
+          "left": { "value": "12px" },
+          "right": { "value": "8px" },
+          "top": { "value": "4px" }
+        },
+        "large": {
+          "bottom": { "value": "4px" },
+          "left": { "value": "12px" },
+          "right": { "value": "8px" },
+          "top": { "value": "4px" }
+        }
       }
     }
   }

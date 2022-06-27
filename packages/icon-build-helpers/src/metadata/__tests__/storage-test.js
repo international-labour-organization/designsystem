@@ -7,58 +7,58 @@
  * @jest-environment node
  */
 
-'use strict';
+"use strict";
 
-describe('Storage', () => {
+describe("Storage", () => {
   let vol;
   let Extension;
   let Storage;
   let adapter;
 
   beforeEach(() => {
-    jest.mock('fs', () => {
-      const memfs = require('memfs');
+    jest.mock("fs", () => {
+      const memfs = require("memfs");
       vol = memfs.vol;
       return memfs.fs;
     });
 
-    Extension = require('../extension');
-    Storage = require('../storage');
-    adapter = require('../adapters/yml');
+    Extension = require("../extension");
+    Storage = require("../storage");
+    adapter = require("../adapters/yml");
   });
 
   afterEach(() => {
     vol.reset();
   });
 
-  describe('Storage#load', () => {
-    it('should load all extensions with data stored in files from a directory', async () => {
-      const data = { foo: 'bar' };
+  describe("Storage#load", () => {
+    it("should load all extensions with data stored in files from a directory", async () => {
+      const data = { foo: "bar" };
       vol.fromJSON({
-        '/test/extension-a.yml': adapter.serialize(data),
-        '/test/extension-b.yml': adapter.serialize(data),
+        "/test/extension-a.yml": adapter.serialize(data),
+        "/test/extension-b.yml": adapter.serialize(data),
       });
 
       const a = jest.fn(() => {
         return {
-          name: 'extension-a',
+          name: "extension-a",
         };
       });
       const b = jest.fn(() => {
         return {
-          name: 'extension-b',
+          name: "extension-b",
         };
       });
       const c = jest.fn(() => {
         return {
-          name: 'extension-c',
+          name: "extension-c",
           computed: true,
         };
       });
       const extensions = [a, b, c];
       const result = await Storage.load(
         adapter,
-        '/test',
+        "/test",
         Extension.load(extensions)
       );
 
@@ -71,22 +71,22 @@ describe('Storage', () => {
     });
   });
 
-  describe('Storage#write', () => {
-    it('should write all extensions with data to files in the given directory', async () => {
-      const data = { foo: 'bar' };
+  describe("Storage#write", () => {
+    it("should write all extensions with data to files in the given directory", async () => {
+      const data = { foo: "bar" };
       const a = jest.fn(() => {
         return {
-          name: 'extension-a',
+          name: "extension-a",
         };
       });
       const b = jest.fn(() => {
         return {
-          name: 'extension-b',
+          name: "extension-b",
         };
       });
       const c = jest.fn(() => {
         return {
-          name: 'extension-c',
+          name: "extension-c",
           computed: true,
         };
       });
@@ -98,9 +98,9 @@ describe('Storage', () => {
         extension.data = data;
       }
 
-      await Storage.save(adapter, '/test', extensions);
+      await Storage.save(adapter, "/test", extensions);
 
-      const result = await Storage.load(adapter, '/test', extensions);
+      const result = await Storage.load(adapter, "/test", extensions);
 
       for (const extension of result) {
         if (extension.computed) {

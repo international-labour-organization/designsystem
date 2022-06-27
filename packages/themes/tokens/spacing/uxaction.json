@@ -1,7 +1,27 @@
 {
   "spacing": {
     "uxaction": {
-      "readmore" : {
+      "caption": {
+        "border": {
+          "bottom": { "value": "0" },
+          "left": { "value": "3px" },
+          "right": { "value": "0" },
+          "top": { "value": "0" }
+        },
+        "height": { "value": "auto" },
+        "width": { "value": "auto" }
+      },
+      "credit": {
+        "border": {
+          "bottom": { "value": "0" },
+          "left": { "value": "0" },
+          "right": { "value": "0" },
+          "top": { "value": "0" }
+        },
+        "height": { "value": "24px" },
+        "width": { "value": "auto" }
+      },
+      "readmore": {
         "height": { "value": "56px" },
         "border": {
           "bottom": { "value": "0" },
@@ -22,6 +42,74 @@
           "top": { "value": "16px" }
         },
         "width": { "value": "auto" }
+      },
+      "video": {
+        "controls": {
+          "height": { "value": "40px" },
+          "border": {
+            "bottom": { "value": "0" },
+            "left": { "value": "0" },
+            "right": { "value": "0" },
+            "top": { "value": "0" }
+          },
+          "margin": {
+            "bottom": { "value": "0" },
+            "left": { "value": "0" },
+            "right": { "value": "0" },
+            "top": { "value": "0" }
+          },
+          "padding": {
+            "bottom": { "value": "0" },
+            "left": { "value": "0" },
+            "right": { "value": "0" },
+            "top": { "value": "0" }
+          },
+          "width": { "value": "100%" }
+        },
+        "buttonicon": {
+          "height": { "value": "24px" },
+          "border": {
+            "bottom": { "value": "0" },
+            "left": { "value": "0" },
+            "right": { "value": "0" },
+            "top": { "value": "0" }
+          },
+          "margin": {
+            "bottom": { "value": "0" },
+            "left": { "value": "0" },
+            "right": { "value": "0" },
+            "top": { "value": "0" }
+          },
+          "padding": {
+            "bottom": { "value": "0" },
+            "left": { "value": "0" },
+            "right": { "value": "0" },
+            "top": { "value": "0" }
+          },
+          "width": { "value": "24px" }
+        },
+        "bigplaybutton": {
+          "height": { "value": "80px" },
+          "border": {
+            "bottom": { "value": "0" },
+            "left": { "value": "0" },
+            "right": { "value": "0" },
+            "top": { "value": "0" }
+          },
+          "margin": {
+            "bottom": { "value": "0" },
+            "left": { "value": "0" },
+            "right": { "value": "0" },
+            "top": { "value": "0" }
+          },
+          "padding": {
+            "bottom": { "value": "0" },
+            "left": { "value": "0" },
+            "right": { "value": "0" },
+            "top": { "value": "0" }
+          },
+          "width": { "value": "80px" }
+        }
       }
     }
   }

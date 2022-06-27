@@ -75,3 +75,15 @@
 
   @return $string;
 }
+
+// =========================================
+// Encode color strings
+//
+// Useful for using color variables with inline CSS SVGs
+// =========================================
+@function colortodataurlicon($name, $color) {
+  $icon: map-get($icons, $name);
+  $fill: "currentColor";
+  $output: str-replace($icon, $fill, $color);
+  @return $output;
+}

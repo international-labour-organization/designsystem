@@ -1,14 +1,12 @@
 import { render } from "@testing-library/react";
-import { composeStories } from "@storybook/testing-react";
 import { List } from "../components/List";
 import listArgs from "../components/List/List.args";
-import * as stories from "../stories/List.stories";
 
 describe("<List>", () => {
   it("Should render `ol` with some items.", () => {
     const { container } = render(<List {...listArgs.ordered} />);
     expect(container).not.toBeNull();
-    expect(container.firstChild.getAttribute("class")).toEqual(
+    expect(container?.firstChild?.getAttribute("class")).toEqual(
       expect.stringContaining(listArgs.ordered.ordered)
     );
   });

@@ -3,47 +3,91 @@ import classNames from "classnames";
 import useGlobalSettings from "../../hooks/useGlobalSettings";
 import { TagProps } from "./Tag.props";
 import { TagSetContext } from "./TagSet";
+import { Icon } from "../Icon";
 
-const Tag: FC<TagProps> = ({ className, children, id, url, ...rest }) => {
+const Tag: FC<TagProps> = ({
+  className,
+  children,
+  id,
+  url,
+  type,
+  callback,
+  ...rest
+}) => {
   const { prefix } = useGlobalSettings();
-  const { activeItems } = useContext(TagSetContext);
-  const open = activeItems.indexOf(id) > -1;
+  const { activeItems, setActiveItems, getUpdatedItems, allowMultipleActive } =
+    useContext(TagSetContext);
+  const active = activeItems.indexOf(id) > -1;
 
   const baseClass = `${prefix}--tag`;
   const itemClass = `${prefix}--tag-set__item`;
-
+  const stringType = type as string;
   const tagClasses = classNames(className, {
     [baseClass]: true,
-    [`${baseClass}--active`]: open,
-    [`${baseClass}--anchor`]: url,
+    [`${baseClass}--active`]: active,
+    [`${baseClass}--${type}`]: type,
+    [`icon icon__position--right`]: true,
   });
 
+  let visible = active;
+
   /**
-   * On click, get id of clicked item, and set that item in state to 'open', all others to 'closed'
+   * On click, get id of clicked item, and set that item in state to 'active', all others to 'closed'
    */
-  // const handleClick = (e: MouseEvent<HTMLButtonElement>) => {
-  //   setActiveItems(
-  //     getUpdatedItems({ id, itemStatuses: activeItems, allowMultipleActive })
-  //   );
-  //   if (onButtonClick) {
-  //     onButtonClick(e, id);
-  //   }
-  // };
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    setActiveItems(
+      getUpdatedItems({ id, itemStatuses: activeItems, allowMultipleActive })
+    );
+    visible = false;
+    if (callback) {
+      callback(e);
+    }
+  };
+
+  // @ts-ignore
+  const renderButton = () => {
+    let button;
+
+    if (visible) {
+      button = (
+        <li className={itemClass}>
+          <button
+            type="button"
+            className={tagClasses}
+            onClick={(e) => handleClick(e)}
+            id={id}
+            {...rest}
+          >
+            {children}
+            <Icon name="close" hidden={true} />
+          </button>
+        </li>
+      );
+    }
+
+    return button;
+  };
 
   return (
-    <li className={itemClass}>
-      {url && (
-        <a className={tagClasses} href={url} id={id} {...rest}>
-          {children}
-        </a>
-      )}
+    <>
+      {stringType === "button" ? (
+        <>{renderButton()}</>
+      ) : (
+        <li className={itemClass}>
+          {type === "anchor" && (
+            <a className={tagClasses} href={url} id={id} {...rest}>
+              {children}
+            </a>
+          )}
 
-      {!url && (
-        <span className={tagClasses} id={id} {...rest}>
-          {children}
-        </span>
+          {type === "display" && (
+            <span className={tagClasses} id={id} {...rest}>
+              {children}
+            </span>
+          )}
+        </li>
       )}
-    </li>
+    </>
   );
 };
 

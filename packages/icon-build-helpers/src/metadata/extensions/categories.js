@@ -5,9 +5,9 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-'use strict';
+"use strict";
 
-const Joi = require('joi');
+const Joi = require("joi");
 
 // Supports both top-level categories and subcategories
 //
@@ -26,7 +26,7 @@ const Joi = require('joi');
 //     - Member 2
 const categories = () => {
   return {
-    name: 'categories',
+    name: "categories",
 
     schema: Joi.object().keys({
       categories: Joi.array()
@@ -106,7 +106,7 @@ const categories = () => {
           throw new Error(
             `Expected the following icon to have category information: ` +
               `\`${icon.id}\`. This icon has assets in the following locations:\n` +
-              filepaths.join('\n')
+              filepaths.join("\n")
           );
         }
       }

@@ -5,16 +5,16 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-'use strict';
+"use strict";
 
-const fs = require('fs-extra');
-const path = require('path');
-const adapters = require('./adapters');
-const Extension = require('./extension');
-const defaultExtensions = require('./extensions');
-const Registry = require('../registry');
-const Storage = require('./storage');
-const validate = require('./validate');
+const fs = require("fs-extra");
+const path = require("path");
+const adapters = require("./adapters");
+const Extension = require("./extension");
+const defaultExtensions = require("./extensions");
+const Registry = require("../registry");
+const Storage = require("./storage");
+const validate = require("./validate");
 
 /**
  * Validate the given extensions against the assets found in a directory
@@ -94,7 +94,7 @@ async function build({
 }) {
   const metadata = await load({ adapter, extensions, input });
   const metadataFilePath =
-    output.metadata || path.join(output.extensions, 'metadata.json');
+    output.metadata || path.join(output.extensions, "metadata.json");
 
   await fs.ensureFile(metadataFilePath);
   await fs.writeJson(metadataFilePath, metadata, {

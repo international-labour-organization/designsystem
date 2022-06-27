@@ -5,14 +5,14 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-'use strict';
+"use strict";
 
-const { pascalCase } = require('change-case');
+const { pascalCase } = require("change-case");
 
 // Computed property for icons to determine their module name in code
 const moduleName = () => {
   return {
-    name: 'moduleName',
+    name: "moduleName",
     computed: true,
     extend(metadata, _data, registry) {
       for (const entry of metadata.icons) {
@@ -30,8 +30,8 @@ const moduleName = () => {
  * @returns {string}
  */
 function getModuleName(name, parts = []) {
-  const namespace = parts.map((part) => pascalCase(part)).join('');
-  if (namespace !== '') {
+  const namespace = parts.map((part) => pascalCase(part)).join("");
+  if (namespace !== "") {
     return `${namespace}${pascalCase(name)}`;
   }
 
@@ -39,7 +39,7 @@ function getModuleName(name, parts = []) {
     return pascalCase(name);
   }
 
-  return '_' + pascalCase(name);
+  return "_" + pascalCase(name);
 }
 
 module.exports = moduleName;

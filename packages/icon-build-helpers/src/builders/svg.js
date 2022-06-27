@@ -5,11 +5,11 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-const fs = require('fs-extra');
-const path = require('path');
+const fs = require("fs-extra");
+const path = require("path");
 
 async function builder(metadata, { output }) {
-  const SVG_OUTPUT_DIR = path.join(output, 'svg');
+  const SVG_OUTPUT_DIR = path.join(output, "svg");
 
   await fs.emptyDir(SVG_OUTPUT_DIR);
 
@@ -17,7 +17,7 @@ async function builder(metadata, { output }) {
     for (const asset of icon.assets) {
       const filepath = path.join(SVG_OUTPUT_DIR, asset.filepath);
       await fs.ensureFile(filepath);
-      await fs.writeFile(filepath, asset.optimized.data, 'utf8');
+      await fs.writeFile(filepath, asset.optimized.data, "utf8");
     }
   }
 }
