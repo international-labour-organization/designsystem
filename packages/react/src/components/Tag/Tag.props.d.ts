@@ -1,10 +1,11 @@
 import { ReactNode } from "react";
+import { tagTypes } from "../../types";
 
 export interface TagProps {
   /**
-   * Callback to onButtonClick event;
+   * Callback to event;
    */
-  onButtonClick?: (e: MouseEvent<HTMLButtonElement>, i: any) => void;
+  callback?: function;
 
   /**
    * Specify the label for the tag
@@ -20,6 +21,11 @@ export interface TagProps {
    * Specify an optional className to be added to your Tag.
    */
   className?: string;
+
+  /**
+   * Specify a tag type
+   */
+  type?: tagTypes;
 
   /**
    * Specify an optional url to be added to your Tag.

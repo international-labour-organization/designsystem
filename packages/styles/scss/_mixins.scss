@@ -335,4 +335,50 @@
       outline: none;
     }
   }
+
+  &--button {
+    @include font-styles("label-small");
+
+    cursor: pointer;
+    display: none;
+    opacity: 0;
+    padding-right: 36px;
+    position: relative;
+    visibility: hidden;
+
+    &.ilo--tag--active {
+      background: map-get($color, "tag", "background", "active");
+      color: map-get($color, "tag", "text", "active");
+      display: block;
+      opacity: 1;
+      outline: none;
+      visibility: visible;
+    }
+
+    &:hover {
+      background: map-get($color, "tag", "background", "hover");
+      color: map-get($color, "tag", "text", "hover");
+      text-decoration: none;
+    }
+
+    &:focus {
+      background: map-get($color, "tag", "background", "focus");
+      color: map-get($color, "tag", "text", "focus");
+      outline: none;
+    }
+
+    &.icon__position--right {
+      .ilo--icon {
+        @include dataurlicon("close", map-get($color, "tag", "text", "active"));
+
+        height: 100%;
+        max-height: 28px;
+        max-width: 28px;
+        position: absolute;
+        right: 5px;
+        top: 6px;
+        width: 100%;
+      }
+    }
+  }
 }
