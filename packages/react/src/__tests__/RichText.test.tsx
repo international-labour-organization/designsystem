@@ -4,8 +4,10 @@ import richTextArgs from "../components/RichText/richText.args";
 
 describe("<RichText>", () => {
   it("Should render `div` with content.", () => {
-    const richTextElement = render(<RichText {...richTextArgs} />);
-    expect(richTextElement).not.toBeNull();
-    expect(richTextElement.textContent).toEqual(richTextArgs.content);
+    const { container } = render(<RichText {...richTextArgs.richtext} />);
+    expect(container.children[0]).not.toBeNull();
+    expect(container.children[0].textContent).toEqual(
+      richTextArgs.richtext.content
+    );
   });
 });
