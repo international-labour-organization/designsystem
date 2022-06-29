@@ -7,9 +7,9 @@
  * @jest-environment node
  */
 
-'use strict';
+"use strict";
 
-describe('output', () => {
+describe("output", () => {
   let Metadata;
   let vol;
   let icons;
@@ -20,18 +20,18 @@ describe('output', () => {
   let extensions;
 
   beforeEach(() => {
-    jest.mock('fs', () => {
-      const memfs = require('memfs');
+    jest.mock("fs", () => {
+      const memfs = require("memfs");
       vol = memfs.vol;
       return memfs.fs;
     });
 
-    Metadata = require('../../../');
-    memory = require('../../../adapters/memory');
-    icons = require('../../icons');
-    pictogramExtension = require('../../pictograms');
-    assets = require('../../assets');
-    output = require('../');
+    Metadata = require("../../../");
+    memory = require("../../../adapters/memory");
+    icons = require("../../icons");
+    pictogramExtension = require("../../pictograms");
+    assets = require("../../assets");
+    output = require("../");
 
     extensions = [icons, assets, output];
   });
@@ -41,17 +41,17 @@ describe('output', () => {
     memory.filesystem.clear();
   });
 
-  it('should decorate the metadata with an output field with downsized assets', async () => {
+  it("should decorate the metadata with an output field with downsized assets", async () => {
     const icons = [
       {
-        name: 'test-a',
-        friendly_name: 'test-a',
+        name: "test-a",
+        friendly_name: "test-a",
         sizes: [32],
         assets: [
           {
             size: 32,
             source: '<svg width="32" height="32" viewBox="0 0 32 32"></svg>',
-            filepath: '32/test-a.svg',
+            filepath: "32/test-a.svg",
           },
         ],
       },
@@ -65,7 +65,7 @@ describe('output', () => {
     }
 
     memory.filesystem.set(
-      '/icons',
+      "/icons",
       icons.map((icon) => {
         return {
           name: icon.name,
@@ -80,8 +80,8 @@ describe('output', () => {
     const metadata = await Metadata.load({
       adapter: memory,
       input: {
-        svg: '/src/svg',
-        extensions: '/',
+        svg: "/src/svg",
+        extensions: "/",
       },
       extensions,
     });
@@ -91,35 +91,35 @@ describe('output', () => {
         return icon.name === entry.name;
       });
 
-      expect(match).toHaveProperty('output');
+      expect(match).toHaveProperty("output");
       // We downsample from 32 to 24, 20, and 16
       expect(match.output.length).toBe(4);
 
       for (const info of match.output) {
-        expect(info).toHaveProperty('moduleName');
-        expect(info).toHaveProperty('filepath');
-        expect(info).toHaveProperty('descriptor');
+        expect(info).toHaveProperty("moduleName");
+        expect(info).toHaveProperty("filepath");
+        expect(info).toHaveProperty("descriptor");
       }
     }
   });
 
-  it('should not downsample an asset if there is a bespoke size asset available', async () => {
+  it("should not downsample an asset if there is a bespoke size asset available", async () => {
     const icons = [
       {
-        name: 'test-a',
-        friendly_name: 'test-a',
+        name: "test-a",
+        friendly_name: "test-a",
         sizes: [32, 16],
         assets: [
           {
             size: 32,
             source: '<svg width="32" height="32" viewBox="0 0 32 32"></svg>',
-            filepath: '32/test-a.svg',
+            filepath: "32/test-a.svg",
           },
           {
             size: 16,
             source:
               '<svg width="16" height="16" viewBox="0 0 16 16" data-test-id="test"></svg>',
-            filepath: '16/test-a.svg',
+            filepath: "16/test-a.svg",
           },
         ],
       },
@@ -133,7 +133,7 @@ describe('output', () => {
     }
 
     memory.filesystem.set(
-      '/icons',
+      "/icons",
       icons.map((icon) => {
         return {
           name: icon.name,
@@ -148,8 +148,8 @@ describe('output', () => {
     const metadata = await Metadata.load({
       adapter: memory,
       input: {
-        svg: '/src/svg',
-        extensions: '/',
+        svg: "/src/svg",
+        extensions: "/",
       },
       extensions,
     });
@@ -158,18 +158,18 @@ describe('output', () => {
     const bespoke = icon.output.find((output) => {
       return output.descriptor.size === 16;
     });
-    expect(bespoke.descriptor.attrs).toHaveProperty('data-test-id', 'test');
+    expect(bespoke.descriptor.attrs).toHaveProperty("data-test-id", "test");
   });
 
-  it('should support the pictogram target for assets without sizes', async () => {
+  it("should support the pictogram target for assets without sizes", async () => {
     const pictograms = [
       {
-        name: 'test-a',
-        friendly_name: 'test-a',
+        name: "test-a",
+        friendly_name: "test-a",
         assets: [
           {
             source: '<svg width="32" height="32" viewBox="0 0 32 32"></svg>',
-            filepath: 'test-a.svg',
+            filepath: "test-a.svg",
           },
         ],
       },
@@ -183,7 +183,7 @@ describe('output', () => {
     }
 
     memory.filesystem.set(
-      '/pictograms',
+      "/pictograms",
       pictograms.map((pictogram) => {
         return {
           name: pictogram.name,
@@ -197,13 +197,13 @@ describe('output', () => {
     const metadata = await Metadata.load({
       adapter: memory,
       input: {
-        svg: '/src/svg',
-        extensions: '/',
+        svg: "/src/svg",
+        extensions: "/",
       },
       extensions: [
         pictogramExtension,
         assets,
-        [output, { target: 'pictograms' }],
+        [output, { target: "pictograms" }],
       ],
     });
 
@@ -214,9 +214,9 @@ describe('output', () => {
 
       // We don't downsample pictogram assets
       expect(icon.output.length).toBe(1);
-      expect(icon.output[0]).toHaveProperty('moduleName');
-      expect(icon.output[0]).toHaveProperty('filepath');
-      expect(icon.output[0]).toHaveProperty('descriptor');
+      expect(icon.output[0]).toHaveProperty("moduleName");
+      expect(icon.output[0]).toHaveProperty("filepath");
+      expect(icon.output[0]).toHaveProperty("descriptor");
     }
   });
 });

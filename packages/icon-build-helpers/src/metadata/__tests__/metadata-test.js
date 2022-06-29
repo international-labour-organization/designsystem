@@ -7,44 +7,44 @@
  * @jest-environment node
  */
 
-'use strict';
+"use strict";
 
-describe('Metadata', () => {
+describe("Metadata", () => {
   let vol;
   let fs;
   let Metadata;
   let adapter;
 
   beforeEach(() => {
-    jest.mock('fs', () => {
-      const memfs = require('memfs');
+    jest.mock("fs", () => {
+      const memfs = require("memfs");
       vol = memfs.vol;
       return memfs.fs;
     });
 
-    fs = require('fs-extra');
-    Metadata = require('../');
-    adapter = require('../adapters/memory');
+    fs = require("fs-extra");
+    Metadata = require("../");
+    adapter = require("../adapters/memory");
   });
 
   afterEach(() => {
     vol.reset();
   });
 
-  describe('check', () => {
-    it('should validate the given extensions with the registry of assets and extension data', async () => {
+  describe("check", () => {
+    it("should validate the given extensions with the registry of assets and extension data", async () => {
       vol.fromJSON({
-        '/test/svg/a.svg': '<test>',
+        "/test/svg/a.svg": "<test>",
       });
       const mockExtension = {
-        name: 'extension-a',
+        name: "extension-a",
         validate: jest.fn(),
       };
       const mockSchema = jest.fn(() => {
-        const Joi = require('joi');
+        const Joi = require("joi");
         return Joi.object({ foo: Joi.string() });
       });
-      Object.defineProperty(mockExtension, 'schema', {
+      Object.defineProperty(mockExtension, "schema", {
         get: mockSchema,
         enumerable: true,
       });
@@ -53,15 +53,15 @@ describe('Metadata', () => {
         return mockExtension;
       });
 
-      const data = { foo: 'bar' };
-      adapter.filesystem.set('/test/extension-a', data);
+      const data = { foo: "bar" };
+      adapter.filesystem.set("/test/extension-a", data);
 
       await expect(
         Metadata.check({
           adapter,
           input: {
-            svg: '/test',
-            extensions: '/test',
+            svg: "/test",
+            extensions: "/test",
           },
           extensions: [a],
         })
@@ -84,14 +84,14 @@ describe('Metadata', () => {
     });
   });
 
-  describe('load', () => {
-    it('should load the given extensions with the given adapter and asset path', async () => {
+  describe("load", () => {
+    it("should load the given extensions with the given adapter and asset path", async () => {
       vol.fromJSON({
-        '/test/svg/a.svg': '<test>',
+        "/test/svg/a.svg": "<test>",
       });
 
       const mockExtension = {
-        name: 'extension-a',
+        name: "extension-a",
         extend: jest.fn((metadata, data) => {
           metadata.data = data;
         }),
@@ -100,14 +100,14 @@ describe('Metadata', () => {
         return mockExtension;
       });
 
-      const data = { foo: 'bar' };
-      adapter.filesystem.set('/test/extension-a', data);
+      const data = { foo: "bar" };
+      adapter.filesystem.set("/test/extension-a", data);
 
       const metadata = await Metadata.load({
         adapter,
         input: {
-          svg: '/test',
-          extensions: '/test',
+          svg: "/test",
+          extensions: "/test",
         },
         extensions: [extension],
       });
@@ -120,22 +120,22 @@ describe('Metadata', () => {
         expect.any(Map),
         {
           input: {
-            svg: '/test',
-            extensions: '/test',
+            svg: "/test",
+            extensions: "/test",
           },
         }
       );
     });
   });
 
-  describe('build', () => {
-    it('should output the generated metadata for the given extensions', async () => {
+  describe("build", () => {
+    it("should output the generated metadata for the given extensions", async () => {
       vol.fromJSON({
-        '/test/svg/a.svg': '<test>',
+        "/test/svg/a.svg": "<test>",
       });
       const extension = () => {
         return {
-          name: 'extension',
+          name: "extension",
           extend(metadata, data, registry, context) {
             metadata.icons = Array.from(registry.keys());
             metadata.data = data;
@@ -144,26 +144,26 @@ describe('Metadata', () => {
         };
       };
 
-      const data = { foo: 'bar' };
-      adapter.filesystem.set('/test/extension', data);
+      const data = { foo: "bar" };
+      adapter.filesystem.set("/test/extension", data);
 
       await Metadata.build({
         adapter,
         input: {
-          svg: '/test',
-          extensions: '/test',
+          svg: "/test",
+          extensions: "/test",
         },
         extensions: [extension],
       });
 
-      const metadata = await fs.readJson('/test/metadata.json');
+      const metadata = await fs.readJson("/test/metadata.json");
       expect(metadata).toEqual({
-        icons: ['a'],
+        icons: ["a"],
         data,
         context: {
           input: {
-            svg: '/test',
-            extensions: '/test',
+            svg: "/test",
+            extensions: "/test",
           },
         },
       });

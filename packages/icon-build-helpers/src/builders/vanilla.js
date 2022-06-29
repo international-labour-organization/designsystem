@@ -5,10 +5,10 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-const { babel } = require('@rollup/plugin-babel');
-const path = require('path');
-const { rollup } = require('rollup');
-const virtual = require('./plugins/virtual');
+const { babel } = require("@rollup/plugin-babel");
+const path = require("path");
+const { rollup } = require("rollup");
+const virtual = require("./plugins/virtual");
 
 const BANNER = `/**
  *
@@ -22,15 +22,15 @@ const babelConfig = {
   exclude: /node_modules/,
   presets: [
     [
-      '@babel/preset-env',
+      "@babel/preset-env",
       {
         targets: {
-          browsers: ['extends browserslist-config-carbon'],
+          browsers: ["extends browserslist-config-carbon"],
         },
       },
     ],
   ],
-  babelHelpers: 'bundled',
+  babelHelpers: "bundled",
 };
 
 async function builder(metadata, { output }) {
@@ -46,17 +46,17 @@ async function builder(metadata, { output }) {
   });
 
   const files = {
-    'index.js': `${BANNER}\n\n`,
+    "index.js": `${BANNER}\n\n`,
   };
   const input = {
-    'index.js': 'index.js',
+    "index.js": "index.js",
   };
 
   for (const m of modules) {
     files[m.filepath] = m.source;
     input[m.filepath] = m.filepath;
     files[
-      'index.js'
+      "index.js"
     ] += `\nexport { default as ${m.moduleName} } from '${m.filepath}';`;
   }
 
@@ -67,12 +67,12 @@ async function builder(metadata, { output }) {
 
   const bundles = [
     {
-      directory: path.join(output, 'es'),
-      format: 'esm',
+      directory: path.join(output, "es"),
+      format: "esm",
     },
     {
-      directory: path.join(output, 'lib'),
-      format: 'commonjs',
+      directory: path.join(output, "lib"),
+      format: "commonjs",
     },
   ];
 
@@ -80,23 +80,23 @@ async function builder(metadata, { output }) {
     const outputOptions = {
       dir: directory,
       format,
-      entryFileNames: '[name]',
+      entryFileNames: "[name]",
       banner: BANNER,
-      exports: 'auto',
+      exports: "auto",
     };
 
     await bundle.write(outputOptions);
   }
 
   const umd = await rollup({
-    input: 'index.js',
+    input: "index.js",
     plugins: [virtual(files), babel(babelConfig)],
   });
 
   await umd.write({
-    file: path.join(output, 'umd/index.js'),
-    format: 'umd',
-    name: 'ILOIcons',
+    file: path.join(output, "umd/index.js"),
+    format: "umd",
+    name: "ILOIcons",
   });
 }
 

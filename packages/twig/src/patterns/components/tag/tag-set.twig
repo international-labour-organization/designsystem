@@ -7,8 +7,9 @@
       content: item.content,
       defaultActive: item.defaultActive,
       id: item.id,
+      prefix: prefix,
+      tagType: tagType,
       url: item.url|default(null),
-      prefix: prefix
     } only %}
   {% endfor %}
 </ul>

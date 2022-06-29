@@ -50,13 +50,12 @@ export default class Tag {
      * The field that a user interacts with on a form
      * @type {Object}
      */
-    this.tags = this.element.querySelectorAll('.ilo--tag');
+    this.buttonTags = this.element.querySelectorAll('.ilo--tag--button');
     this.multipleActive = this.element.getAttribute('data-multipleactive');
-    console.log(this.multipleActive);
 
-    this.tags.forEach((button, i) => {
+    this.buttonTags.forEach((button, i) => {
       const expanded = button.dataset['active'];
-      const id = this.tags[i].getAttribute('id');
+      const id = this.buttonTags[i].getAttribute('id');
       if (expanded === 'true') {
         this.itemStatuses = getUpdatedItems({
           id,
@@ -76,8 +75,6 @@ export default class Tag {
    * @chainable
    */
   setupHandlers() {
-    // this.collapseSection = this.collapseSection.bind(this);
-    // this.expandSection = this.expandSection.bind(this);
     this.onClick = this.onClick.bind(this);
     this.updateTagItems = this.updateTagItems.bind(this);
 
@@ -91,8 +88,8 @@ export default class Tag {
    * @chainable
    */
   enable() {
-    if (this.tags.length > 0) {
-      this.tags.forEach((button, i) => {
+    if (this.buttonTags.length > 0) {
+      this.buttonTags.forEach((button, i) => {
         button.addEventListener(EVENTS.CLICK, () => this.onClick(i));
       });
     }
@@ -107,7 +104,7 @@ export default class Tag {
    * @chainable
    */
   onClick(i) {
-    const id = this.tags[i].getAttribute('id');
+    const id = this.buttonTags[i].getAttribute('id');
 
     this.itemStatuses = getUpdatedItems({
       id,
@@ -115,7 +112,26 @@ export default class Tag {
       allowMultipleacmultipleActive: this.multipleActive,
     });
 
-    this.updateTagItems();
+    // this.updateTagItems();
+    console.log(id);
+    this.removeParentDom(id);
+
+    return this;
+  }
+
+  /**
+   *
+   * @param {String} id The element id of the child of the node to be removed
+   *
+   * @return {Object} Tag A reference to the instance of the class
+   * @chainable
+   */
+  removeParentDom(id) {
+    const buttonTag = document.getElementById(id);
+
+    if (buttonTag) {
+      buttonTag.parentElement.remove();
+    }
 
     return this;
   }
@@ -123,6 +139,7 @@ export default class Tag {
   /**
    * Update tag items based off of new statuses
    *
+   * @return {Object} Tag A reference to the instance of the class
    * @chainable
    */
   updateTagItems() {

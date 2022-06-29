@@ -7,39 +7,39 @@
  * @jest-environment node
  */
 
-'use strict';
+"use strict";
 
-describe('categories', () => {
+describe("categories", () => {
   let Metadata;
   let extension;
   let vol;
   let yml;
 
   beforeEach(() => {
-    jest.mock('fs', () => {
-      const memfs = require('memfs');
+    jest.mock("fs", () => {
+      const memfs = require("memfs");
       vol = memfs.vol;
       return memfs.fs;
     });
 
-    Metadata = require('../../');
-    extension = require('../categories');
-    yml = require('../../adapters').yml;
+    Metadata = require("../../");
+    extension = require("../categories");
+    yml = require("../../adapters").yml;
   });
 
   afterEach(() => {
     vol.reset();
   });
 
-  it('should throw an error if an icon is in the registry but has no category information', async () => {
+  it("should throw an error if an icon is in the registry but has no category information", async () => {
     const files = {
-      '/svg/icon-with-category.svg': 'mock',
-      '/svg/icon-without-category.svg': 'mock',
+      "/svg/icon-with-category.svg": "mock",
+      "/svg/icon-without-category.svg": "mock",
       [`/${extension.name}.yml`]: yml.serialize({
         categories: [
           {
-            name: 'test',
-            members: ['icon-with-category'],
+            name: "test",
+            members: ["icon-with-category"],
           },
         ],
       }),
@@ -50,8 +50,8 @@ describe('categories', () => {
       Metadata.check({
         adapter: yml,
         input: {
-          svg: '/svg',
-          extensions: '/',
+          svg: "/svg",
+          extensions: "/",
         },
         extensions: [extension],
       })
@@ -61,18 +61,18 @@ describe('categories', () => {
 `);
   });
 
-  it('should throw an error if an icon is in the registry but has no subcategory information', async () => {
+  it("should throw an error if an icon is in the registry but has no subcategory information", async () => {
     const files = {
-      '/svg/icon-with-category.svg': 'mock',
-      '/svg/icon-without-category.svg': 'mock',
+      "/svg/icon-with-category.svg": "mock",
+      "/svg/icon-without-category.svg": "mock",
       [`/${extension.name}.yml`]: yml.serialize({
         categories: [
           {
-            name: 'test-category',
+            name: "test-category",
             subcategories: [
               {
-                name: 'test-subcategory',
-                members: ['icon-with-category'],
+                name: "test-subcategory",
+                members: ["icon-with-category"],
               },
             ],
           },
@@ -85,8 +85,8 @@ describe('categories', () => {
       Metadata.check({
         adapter: yml,
         input: {
-          svg: '/svg',
-          extensions: '/',
+          svg: "/svg",
+          extensions: "/",
         },
         extensions: [extension],
       })
@@ -96,14 +96,14 @@ describe('categories', () => {
 `);
   });
 
-  it('should throw an error if an icon has category information but is not in the registry', async () => {
+  it("should throw an error if an icon has category information but is not in the registry", async () => {
     const files = {
-      '/svg/icon-with-category.svg': 'mock',
+      "/svg/icon-with-category.svg": "mock",
       [`/${extension.name}.yml`]: yml.serialize({
         categories: [
           {
-            name: 'test',
-            members: ['icon-with-category', 'missing-icon-in-registry'],
+            name: "test",
+            members: ["icon-with-category", "missing-icon-in-registry"],
           },
         ],
       }),
@@ -114,8 +114,8 @@ describe('categories', () => {
       Metadata.check({
         adapter: yml,
         input: {
-          svg: '/svg',
-          extensions: '/',
+          svg: "/svg",
+          extensions: "/",
         },
         extensions: [extension],
       })
@@ -124,17 +124,17 @@ describe('categories', () => {
     );
   });
 
-  it('should throw an error if an icon has subcategory information but is not in the registry', async () => {
+  it("should throw an error if an icon has subcategory information but is not in the registry", async () => {
     const files = {
-      '/svg/icon-with-category.svg': 'mock',
+      "/svg/icon-with-category.svg": "mock",
       [`/${extension.name}.yml`]: yml.serialize({
         categories: [
           {
-            name: 'test',
+            name: "test",
             subcategories: [
               {
-                name: 'test-subcategory',
-                members: ['icon-with-category', 'missing-icon-in-registry'],
+                name: "test-subcategory",
+                members: ["icon-with-category", "missing-icon-in-registry"],
               },
             ],
           },
@@ -147,8 +147,8 @@ describe('categories', () => {
       Metadata.check({
         adapter: yml,
         input: {
-          svg: '/svg',
-          extensions: '/',
+          svg: "/svg",
+          extensions: "/",
         },
         extensions: [extension],
       })

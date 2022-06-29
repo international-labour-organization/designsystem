@@ -7,40 +7,40 @@
  * @jest-environment node
  */
 
-'use strict';
+"use strict";
 
-describe('deprecated', () => {
+describe("deprecated", () => {
   let Metadata;
   let extension;
   let vol;
   let yml;
 
   beforeEach(() => {
-    jest.mock('fs', () => {
-      const memfs = require('memfs');
+    jest.mock("fs", () => {
+      const memfs = require("memfs");
       vol = memfs.vol;
       return memfs.fs;
     });
 
-    Metadata = require('../../');
-    extension = require('../deprecated');
-    yml = require('../../adapters').yml;
+    Metadata = require("../../");
+    extension = require("../deprecated");
+    yml = require("../../adapters").yml;
   });
 
   afterEach(() => {
     vol.reset();
   });
 
-  it('should throw an error if a deprecated icon is not in the registry', async () => {
+  it("should throw an error if a deprecated icon is not in the registry", async () => {
     const files = {
-      '/svg/a.svg': 'mock',
+      "/svg/a.svg": "mock",
       [`/${extension.name}.yml`]: yml.serialize({
         deprecated: [
           {
-            name: 'a',
+            name: "a",
           },
           {
-            name: 'b',
+            name: "b",
           },
         ],
       }),
@@ -51,8 +51,8 @@ describe('deprecated', () => {
       Metadata.check({
         adapter: yml,
         input: {
-          svg: '/svg',
-          extensions: '/',
+          svg: "/svg",
+          extensions: "/",
         },
         extensions: [extension],
       })

@@ -5,19 +5,19 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-'use strict';
+"use strict";
 
-const t = require('@babel/types');
-const { default: generate } = require('@babel/generator');
-const { default: template } = require('@babel/template');
-const { babel } = require('@rollup/plugin-babel');
-const fs = require('fs-extra');
-const path = require('path');
-const { rollup } = require('rollup');
-const virtual = require('../plugins/virtual');
-const { babelConfig } = require('./next/babel');
-const { svgToJSX, jsToAST } = require('./next/convert');
-const templates = require('./next/templates');
+const t = require("@babel/types");
+const { default: generate } = require("@babel/generator");
+const { default: template } = require("@babel/template");
+const { babel } = require("@rollup/plugin-babel");
+const fs = require("fs-extra");
+const path = require("path");
+const { rollup } = require("rollup");
+const virtual = require("../plugins/virtual");
+const { babelConfig } = require("./next/babel");
+const { svgToJSX, jsToAST } = require("./next/convert");
+const templates = require("./next/templates");
 
 // This builder outputs a collection of CommonJS modules representing our icon
 // components. It does not generate an `index.js` entrypoint file due to the
@@ -34,7 +34,7 @@ async function builder(metadata, { output }) {
     if (icon.deprecated) {
       localPreamble.push(
         templates.deprecatedBlock({
-          check: t.identifier('didWarnAboutDeprecation'),
+          check: t.identifier("didWarnAboutDeprecation"),
           warning: t.stringLiteral(
             formatDeprecationWarning(moduleInfo.local, icon.reason)
           ),
@@ -44,7 +44,7 @@ async function builder(metadata, { output }) {
       globalPreamble.push(
         templates.deprecatedBlock({
           check: t.memberExpression(
-            t.identifier('didWarnAboutDeprecation'),
+            t.identifier("didWarnAboutDeprecation"),
             t.stringLiteral(moduleInfo.global),
             true
           ),
@@ -84,7 +84,7 @@ async function builder(metadata, { output }) {
   // `input` object to files that we're generating for each icon component in
   // the `files` object
   const files = {
-    'index.js': template.ast(`
+    "index.js": template.ast(`
       import React from 'react';
       import Icon from './Icon.js';
       import { iconPropTypes } from './iconPropTypes.js';
@@ -93,28 +93,28 @@ async function builder(metadata, { output }) {
     `),
   };
   const input = {
-    'index.js': 'index.js',
+    "index.js": "index.js",
   };
 
   for (const m of modules) {
     files[m.filepath] = m.entrypoint;
     input[m.filepath] = m.filepath;
 
-    files['index.js'].push(...m.source);
-    files['index.js'].push(template.ast(`export { ${m.name} };`));
+    files["index.js"].push(...m.source);
+    files["index.js"].push(template.ast(`export { ${m.name} };`));
   }
 
-  files['index.js'] = t.file(t.program(files['index.js']));
-  files['index.js'] = generate(files['index.js']).code;
+  files["index.js"] = t.file(t.program(files["index.js"]));
+  files["index.js"] = generate(files["index.js"]).code;
 
   const defaultVirtualOptions = {
     // Each of our Icon modules use the "./Icon.js" path to import this base
     // componnet
-    './Icon.js': await fs.readFile(
-      path.resolve(__dirname, './components/Icon.js'),
-      'utf8'
+    "./Icon.js": await fs.readFile(
+      path.resolve(__dirname, "./components/Icon.js"),
+      "utf8"
     ),
-    './iconPropTypes.js': `
+    "./iconPropTypes.js": `
     import PropTypes from 'prop-types';
 
     export const iconPropTypes = {
@@ -128,7 +128,7 @@ async function builder(metadata, { output }) {
 
   const bundle = await rollup({
     input,
-    external: ['@carbon/icon-helpers', 'react', 'prop-types'],
+    external: ["@carbon/icon-helpers", "react", "prop-types"],
     plugins: [
       // We use a "virtual" plugin to pass all of our components that we
       // created from our metadata to rollup instead of rollup trying to read
@@ -145,20 +145,20 @@ async function builder(metadata, { output }) {
       // When this bundle becomes the default, this logic will live in
       // icons-react/package.json
       {
-        name: 'generate-package-json',
+        name: "generate-package-json",
         generateBundle() {
           const packageJson = {
-            main: 'index.js',
-            module: 'index.esm.js',
+            main: "index.js",
+            module: "index.esm.js",
             exports: {
-              import: 'index.esm.js',
-              require: 'index.js',
+              import: "index.esm.js",
+              require: "index.js",
             },
           };
           this.emitFile({
-            type: 'asset',
-            name: 'package.json',
-            fileName: 'package.json',
+            type: "asset",
+            name: "package.json",
+            fileName: "package.json",
             source: JSON.stringify(packageJson, null, 2),
           });
         },
@@ -167,37 +167,37 @@ async function builder(metadata, { output }) {
   });
 
   await bundle.write({
-    dir: path.join(output, 'next'),
-    format: 'commonjs',
-    entryFileNames: '[name]',
+    dir: path.join(output, "next"),
+    format: "commonjs",
+    entryFileNames: "[name]",
     banner: templates.banner,
-    exports: 'auto',
+    exports: "auto",
   });
 
   // We create a separate rollup for our ESM bundle since this will only emit
   // one file: `index.esm.js`
   const esmBundle = await rollup({
-    input: 'index.js',
+    input: "index.js",
     external: [
-      '@un/icon-helpers',
-      '@carbon/icon-helpers',
-      'react',
-      'prop-types',
+      "@un/icon-helpers",
+      "@carbon/icon-helpers",
+      "react",
+      "prop-types",
     ],
     plugins: [
       virtual({
         ...defaultVirtualOptions,
-        'index.js': files['index.js'],
+        "index.js": files["index.js"],
       }),
       babel(babelConfig),
     ],
   });
 
   await esmBundle.write({
-    file: path.join(output, 'next', 'index.esm.js'),
-    format: 'esm',
+    file: path.join(output, "next", "index.esm.js"),
+    format: "esm",
     banner: templates.banner,
-    exports: 'auto',
+    exports: "auto",
   });
 }
 
@@ -274,20 +274,20 @@ function createIconSource(moduleName, sizes, preamble = []) {
     const { svgProps, children } = svgToJSX(ast);
     const source = templates.jsx({
       props: t.objectExpression([
-        t.objectProperty(t.identifier('width'), t.identifier('size')),
-        t.objectProperty(t.identifier('height'), t.identifier('size')),
-        t.objectProperty(t.identifier('ref'), t.identifier('ref')),
+        t.objectProperty(t.identifier("width"), t.identifier("size")),
+        t.objectProperty(t.identifier("height"), t.identifier("size")),
+        t.objectProperty(t.identifier("ref"), t.identifier("ref")),
         ...Object.entries(svgProps).map(([key, value]) => {
           return t.objectProperty(t.identifier(key), jsToAST(value));
         }),
-        t.spreadElement(t.identifier('rest')),
+        t.spreadElement(t.identifier("rest")),
       ]),
       children,
     });
 
     return {
       source,
-      size: size || 'glyph',
+      size: size || "glyph",
     };
   });
 
@@ -326,19 +326,19 @@ function createIconSource(moduleName, sizes, preamble = []) {
         // block statements to match on numbers or strings
         return t.ifStatement(
           t.logicalExpression(
-            '||',
+            "||",
             t.logicalExpression(
-              '||',
-              t.binaryExpression('===', t.identifier('size'), jsToAST(size)),
+              "||",
+              t.binaryExpression("===", t.identifier("size"), jsToAST(size)),
               t.binaryExpression(
-                '===',
-                t.identifier('size'),
-                jsToAST('' + size)
+                "===",
+                t.identifier("size"),
+                jsToAST("" + size)
               )
             ),
             t.binaryExpression(
-              '===',
-              t.identifier('size'),
+              "===",
+              t.identifier("size"),
               jsToAST(`${size}px`)
             )
           ),

@@ -5,9 +5,9 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-'use strict';
+"use strict";
 
-const SVGO = require('svgo');
+const SVGO = require("svgo");
 
 /**
  * Our SVGO plugin options differ a bit from the defaults, namely in the
@@ -25,31 +25,31 @@ const SVGO = require('svgo');
 const plugins = [
   {
     removeTransparentRectangle: {
-      type: 'perItem',
-      description: 'removes transparent rectangles used for bounding box',
+      type: "perItem",
+      description: "removes transparent rectangles used for bounding box",
       fn(item) {
         // Two potential situations can happen if we have a bounding Transparent
         // Rectangle, namly the node has a `<rect>` element for the rectangle or
         // the group has valid content inside of it. As a result, we can return
         // the content and then have multipass remove the `<rect>` if that is
         // what is contained inside.
-        if (item.isElem('g') && item.attr('id', 'Transparent_Rectangle')) {
+        if (item.isElem("g") && item.attr("id", "Transparent_Rectangle")) {
           return item.content;
         }
 
-        if (item.hasAttr('id')) {
-          if (item.attr('id').value.includes('Transparent_Rectangle')) {
+        if (item.hasAttr("id")) {
+          if (item.attr("id").value.includes("Transparent_Rectangle")) {
             return !item;
           }
         }
 
-        const sizes = ['16', '20', '24', '32', '48'];
+        const sizes = ["16", "20", "24", "32", "48"];
 
         for (const size of sizes) {
           if (
-            item.isElem('rect') &&
-            item.attr('width', size) &&
-            item.attr('height', size)
+            item.isElem("rect") &&
+            item.attr("width", size) &&
+            item.attr("height", size)
           ) {
             return !item;
           }
@@ -60,16 +60,16 @@ const plugins = [
   },
   {
     addInnerPath: {
-      type: 'perItem',
-      description: 'map the inner-path id to a corresponding data attribute',
+      type: "perItem",
+      description: "map the inner-path id to a corresponding data attribute",
       fn(item) {
-        if (item.attr('id', 'inner-path')) {
-          item.removeAttr('id');
+        if (item.attr("id", "inner-path")) {
+          item.removeAttr("id");
           item.addAttr({
-            name: 'data-icon-path',
-            value: 'inner-path',
-            prefix: '',
-            local: 'data-icon-path',
+            name: "data-icon-path",
+            value: "inner-path",
+            prefix: "",
+            local: "data-icon-path",
           });
         }
         return item;
@@ -80,8 +80,8 @@ const plugins = [
     inlineStyles: {
       onlyMatchedOnce: false,
       removeMatchedSelectors: true,
-      useMqs: ['', 'screen'],
-      usePseudos: [''],
+      useMqs: ["", "screen"],
+      usePseudos: [""],
     },
   },
   // Remove the style elements from the SVG
@@ -170,7 +170,7 @@ const plugins = [
   },
   {
     cleanupIDs: {
-      preserve: ['inner-path'],
+      preserve: ["inner-path"],
     },
   },
   {
@@ -201,11 +201,11 @@ const plugins = [
     // Remove any ids or data attributes that are included in SVG source files.
     removeAttrs: {
       attrs: [
-        'class',
-        'data-name',
+        "class",
+        "data-name",
         // Remove all fill and stroke attributes where the value is not "none"
         // https://github.com/svg/svgo/pull/977
-        '*:(fill|stroke):((?!^none|currentColor$).)*',
+        "*:(fill|stroke):((?!^none|currentColor$).)*",
       ],
     },
   },
@@ -221,7 +221,7 @@ let pictogramsPlugins = plugins.filter((e) => !e.removeAttrs);
 
 pictogramsPlugins.push({
   removeAttrs: {
-    attrs: ['class', 'data-name'],
+    attrs: ["class", "data-name"],
   },
 });
 

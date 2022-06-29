@@ -8,3 +8,4 @@ export type listAlignment = "default" | "horizontal";
 export type listOrder = "unordered" | "ordered" | "unstyled";
 export type positionTypes = "top" | "bottom" | "left" | "right";
 export type sizeTypes = "small" | "medium" | "large";
+export type tagTypes = "anchor" | "display" | "button";

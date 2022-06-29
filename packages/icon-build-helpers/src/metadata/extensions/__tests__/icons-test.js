@@ -7,33 +7,33 @@
  * @jest-environment node
  */
 
-'use strict';
+"use strict";
 
-describe('icons', () => {
+describe("icons", () => {
   let Metadata;
   let extension;
   let vol;
   let yml;
 
   beforeEach(() => {
-    jest.mock('fs', () => {
-      const memfs = require('memfs');
+    jest.mock("fs", () => {
+      const memfs = require("memfs");
       vol = memfs.vol;
       return memfs.fs;
     });
 
-    Metadata = require('../../');
-    extension = require('../icons');
-    yml = require('../../adapters/yml');
+    Metadata = require("../../");
+    extension = require("../icons");
+    yml = require("../../adapters/yml");
   });
 
   afterEach(() => {
     vol.reset();
   });
 
-  it('should throw an error if an icon is in the registry that is not in metadata', async () => {
+  it("should throw an error if an icon is in the registry that is not in metadata", async () => {
     const files = {
-      '/svg/a.svg': 'mock',
+      "/svg/a.svg": "mock",
       [`/${extension.name}.yml`]: yml.serialize([]),
     };
     vol.fromJSON(files);
@@ -42,8 +42,8 @@ describe('icons', () => {
       Metadata.check({
         adapter: yml,
         input: {
-          svg: '/svg',
-          extensions: '/',
+          svg: "/svg",
+          extensions: "/",
         },
         extensions: [extension],
       })
@@ -54,21 +54,21 @@ describe('icons', () => {
 `);
   });
 
-  it('should throw an error if an icon is in metadata that is not in the registry', async () => {
+  it("should throw an error if an icon is in metadata that is not in the registry", async () => {
     const files = {
-      '/svg/a.svg': 'mock',
+      "/svg/a.svg": "mock",
       [`/${extension.name}.yml`]: yml.serialize([
         {
-          name: 'a',
-          friendly_name: 'a',
+          name: "a",
+          friendly_name: "a",
           aliases: [],
-          sizes: ['glyph'],
+          sizes: ["glyph"],
         },
         {
-          name: 'b',
-          friendly_name: 'b',
+          name: "b",
+          friendly_name: "b",
           aliases: [],
-          sizes: ['glyph'],
+          sizes: ["glyph"],
         },
       ]),
     };
@@ -78,8 +78,8 @@ describe('icons', () => {
       Metadata.check({
         adapter: yml,
         input: {
-          svg: '/svg',
-          extensions: '/',
+          svg: "/svg",
+          extensions: "/",
         },
         extensions: [extension],
       })
@@ -88,14 +88,14 @@ describe('icons', () => {
     );
   });
 
-  it('should throw an error if there is a missing size in the metadata', async () => {
+  it("should throw an error if there is a missing size in the metadata", async () => {
     const files = {
-      '/svg/16/a.svg': 'mock',
-      '/svg/32/a.svg': 'mock',
+      "/svg/16/a.svg": "mock",
+      "/svg/32/a.svg": "mock",
       [`/${extension.name}.yml`]: yml.serialize([
         {
-          name: 'a',
-          friendly_name: 'a',
+          name: "a",
+          friendly_name: "a",
           aliases: [],
           sizes: [16],
         },
@@ -107,8 +107,8 @@ describe('icons', () => {
       Metadata.check({
         adapter: yml,
         input: {
-          svg: '/svg',
-          extensions: '/',
+          svg: "/svg",
+          extensions: "/",
         },
         extensions: [extension],
       })
@@ -118,13 +118,13 @@ describe('icons', () => {
 `);
   });
 
-  it('should throw an error if there is size in metadata not in the registry', async () => {
+  it("should throw an error if there is size in metadata not in the registry", async () => {
     const files = {
-      '/svg/16/a.svg': 'mock',
+      "/svg/16/a.svg": "mock",
       [`/${extension.name}.yml`]: yml.serialize([
         {
-          name: 'a',
-          friendly_name: 'a',
+          name: "a",
+          friendly_name: "a",
           aliases: [],
           sizes: [16, 32],
         },
@@ -136,8 +136,8 @@ describe('icons', () => {
       Metadata.check({
         adapter: yml,
         input: {
-          svg: '/svg',
-          extensions: '/',
+          svg: "/svg",
+          extensions: "/",
         },
         extensions: [extension],
       })

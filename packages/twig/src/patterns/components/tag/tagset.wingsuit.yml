@@ -30,4 +30,14 @@ tagset:
         false: False
       preview: true
       required: false
+    tagType:
+      type: select
+      label: Tag Type
+      description: Type of tags
+      options:
+        anchor: Anchor
+        button: Button
+        display: Display
+      preview: display
+      required: true
   visibility: storybook

@@ -5,10 +5,10 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-'use strict';
+"use strict";
 
-const fs = require('fs-extra');
-const path = require('path');
+const fs = require("fs-extra");
+const path = require("path");
 
 /**
  * A collection of icons built up from a source directory of .svg assets
@@ -70,7 +70,7 @@ async function create(directory) {
     // Our namespace is generated from every directory that is not a size
     const namespace = directories.filter((directory) => isNaN(directory));
     const asset = {
-      id: path.basename(filepath, '.svg'),
+      id: path.basename(filepath, ".svg"),
       filepath,
       namespace,
     };
@@ -94,8 +94,8 @@ async function create(directory) {
     // We have an invariant that all icons in a source SVG folder must have a
     // unique name even if they are under different namespaces.
     if (hash(entry.id, entry.namespace) !== hash(asset.id, asset.namespace)) {
-      const expected = entry.namespace.join(', ');
-      const actual = asset.namespace.join(', ');
+      const expected = entry.namespace.join(", ");
+      const actual = asset.namespace.join(", ");
       throw new Error(
         `Found namespace mismatch with asset ${asset.id}. Expected ` +
           `[${expected}] but received [${actual}]. This likely means that ` +
@@ -120,10 +120,10 @@ async function create(directory) {
  * @returns {string}
  */
 function hash(basename, namespace = []) {
-  return [...namespace, basename].join('/');
+  return [...namespace, basename].join("/");
 }
 
-const denylist = new Set(['.DS_Store']);
+const denylist = new Set([".DS_Store"]);
 
 /**
  * Get all the filepaths from the given directory that are not contained in a

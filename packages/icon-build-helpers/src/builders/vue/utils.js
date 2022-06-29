@@ -5,8 +5,8 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-import { getAttributes } from '@carbon/icon-helpers';
-import * as Vue from 'vue';
+import { getAttributes } from "@carbon/icon-helpers";
+import * as Vue from "vue";
 
 // Note: we dynamically access keys on the Vue namespace so that rollup does not
 // automatically rewrite the binding into `import { h } from 'vue'` as this is
@@ -15,13 +15,13 @@ function getVueExport(key) {
   return Vue[key];
 }
 
-const h = getVueExport('h');
+const h = getVueExport("h");
 
 const getSvgAttrs = (title, svgAttrs, componentAttrs) => {
   return getAttributes({
     ...svgAttrs,
-    preserveAspectRatio: 'xMidYMid meet',
-    xmlns: 'http://www.w3.org/2000/svg',
+    preserveAspectRatio: "xMidYMid meet",
+    xmlns: "http://www.w3.org/2000/svg",
     // Special case here, we need to coordinate that we are using title,
     // potentially, to get the right focus attributes
     title,
@@ -64,8 +64,8 @@ const createSVGComponent = (name, svgAttrs, svgContent) => ({
         // Vue 3 component
         setup({ title }, { attrs: componentAttrs, slots }) {
           return () =>
-            h('svg', getSvgAttrs(title, svgAttrs, componentAttrs), [
-              ...(title ? [h('title', title)] : []),
+            h("svg", getSvgAttrs(title, svgAttrs, componentAttrs), [
+              ...(title ? [h("title", title)] : []),
               ...svgContent.map(({ elem, attrs }) => h(elem, attrs)),
               ...(slots.default ? slots.default() : []),
             ]);
@@ -76,10 +76,10 @@ const createSVGComponent = (name, svgAttrs, svgContent) => ({
         functional: true,
         render(createElement, { props: { title }, children, data, listeners }) {
           return createElement(
-            'svg',
+            "svg",
             getVue2SvgAttrs(title, svgAttrs, data, listeners),
             [
-              ...(title ? [createElement('title', null, title)] : []),
+              ...(title ? [createElement("title", null, title)] : []),
               ...svgContent.map(({ elem, attrs }) =>
                 createElement(elem, { attrs: attrs })
               ),

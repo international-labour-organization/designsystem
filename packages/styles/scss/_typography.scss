@@ -8,7 +8,8 @@
 @use "@ilo-org/themes/build/scss/tokens" as *;
 @forward "@ilo-org/fonts/index";
 
-html, body {
+html,
+body {
   color: $color-font-base;
   font: #{$type-base-size}/#{$type-base-line-height} $fonts-copy;
   letter-spacing: $type-base-letter-spacing;
