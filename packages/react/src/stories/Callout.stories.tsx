@@ -39,7 +39,8 @@ export default {
           <Subtitle />
           <Title />
           <Description>
-            The link component creates an anchor link with a specific theme.
+            The Callout component provides an inline alert or message to end
+            users.
           </Description>
           <Primary />
           <ArgsTable />

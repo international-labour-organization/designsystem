@@ -1028,6 +1028,172 @@ exports[`Storyshots Components/Button Tertiary Button 1`] = `
 </div>
 `;
 
+exports[`Storyshots Components/Callout Error Callout 1`] = `
+<div
+  style={
+    Object {
+      "margin": "3em",
+    }
+  }
+>
+  <div
+    className="ilo--callout ilo--callout--error ilo--callout--collapse"
+  >
+    <div
+      className="ilo--callout--sidebar"
+    >
+      <span
+        className="ilo--callout--icon"
+      />
+    </div>
+    <div
+      className="ilo--callout--content"
+    >
+      <div
+        className="ilo--callout--header"
+      >
+        <h5
+          className="ilo--callout--title"
+        >
+          Notification Title
+        </h5>
+        <button
+          className="ilo--callout--toggle"
+          onClick={[Function]}
+          type="button"
+        >
+          More
+           
+          <span
+            className="ilo--callout--toggle--icon"
+          />
+        </button>
+      </div>
+      That Biff, what a character. Always trying to get away with something. Been on top of Biff ever since high school. Although, if it wasn't for him - Yes, yes, I'm George, George McFly, and I'm your density. I mean, I'm your destiny. Right.
+      <div
+        className="ilo--callout--footer"
+      >
+        <button
+          className="ilo--button ilo--button--small ilo--button--secondary"
+          onClick={[Function]}
+          type="button"
+        >
+          Optional Label
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/Callout Info Callout 1`] = `
+<div
+  style={
+    Object {
+      "margin": "3em",
+    }
+  }
+>
+  <div
+    className="ilo--callout ilo--callout--info ilo--callout--open"
+  >
+    <div
+      className="ilo--callout--sidebar"
+    >
+      <span
+        className="ilo--callout--icon"
+      />
+    </div>
+    <div
+      className="ilo--callout--content"
+    >
+      <div
+        className="ilo--callout--header"
+      >
+        <h5
+          className="ilo--callout--title"
+        >
+          Notification Title
+        </h5>
+      </div>
+      That Biff, what a character. Always trying to get away with something. Been on top of Biff ever since high school. Although, if it wasn't for him - Yes, yes, I'm George, George McFly, and I'm your density. I mean, I'm your destiny. Right.
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/Callout Success Callout 1`] = `
+<div
+  style={
+    Object {
+      "margin": "3em",
+    }
+  }
+>
+  <div
+    className="ilo--callout ilo--callout--success ilo--callout--open"
+  >
+    <div
+      className="ilo--callout--sidebar"
+    >
+      <span
+        className="ilo--callout--icon"
+      />
+    </div>
+    <div
+      className="ilo--callout--content"
+    >
+      <div
+        className="ilo--callout--header"
+      >
+        <h5
+          className="ilo--callout--title"
+        >
+          Notification Title
+        </h5>
+      </div>
+      That Biff, what a character. Always trying to get away with something. Been on top of Biff ever since high school. Although, if it wasn't for him - Yes, yes, I'm George, George McFly, and I'm your density. I mean, I'm your destiny. Right.
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/Callout Warning Callout 1`] = `
+<div
+  style={
+    Object {
+      "margin": "3em",
+    }
+  }
+>
+  <div
+    className="ilo--callout ilo--callout--warning ilo--callout--open"
+  >
+    <div
+      className="ilo--callout--sidebar"
+    >
+      <span
+        className="ilo--callout--icon"
+      />
+    </div>
+    <div
+      className="ilo--callout--content"
+    >
+      <div
+        className="ilo--callout--header"
+      >
+        <h5
+          className="ilo--callout--title"
+        >
+          Notification Title
+        </h5>
+      </div>
+      That Biff, what a character. Always trying to get away with something. Been on top of Biff ever since high school. Although, if it wasn't for him - Yes, yes, I'm George, George McFly, and I'm your density. I mean, I'm your destiny. Right.
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Components/Empty Empty 1 1`] = `
 <div
   style={
