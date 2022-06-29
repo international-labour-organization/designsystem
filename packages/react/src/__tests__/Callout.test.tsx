@@ -1,8 +1,6 @@
-import { render, screen, fireEvent } from "@testing-library/react";
+import { render } from "@testing-library/react";
 import { composeStories } from "@storybook/testing-react";
 import * as stories from "../stories/Callout.stories";
-import { Callout } from "../components/Callout";
-import calloutArgs from "../components/Callout/Callout.args";
 
 const { InfoCallout, ErrorCallout, SuccessCallout, WarningCallout } =
   composeStories(stories);
