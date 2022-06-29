@@ -97,10 +97,10 @@
 // ======================================
 
 @mixin spacingvalues($type, $mappath) {
-  #{$type}: px-to-rem(map-get($spacing, "uxaction", $mappath, $type, "top"))
-    px-to-rem(map-get($spacing, "uxaction", $mappath, $type, "right"))
-    px-to-rem(map-get($spacing, "uxaction", $mappath, $type, "bottom"))
-    px-to-rem(map-get($spacing, "uxaction", $mappath, $type, "left"));
+  #{$type}: px-to-rem(map-get($spacing, "ux", $mappath, $type, "top"))
+    px-to-rem(map-get($spacing, "ux", $mappath, $type, "right"))
+    px-to-rem(map-get($spacing, "ux", $mappath, $type, "bottom"))
+    px-to-rem(map-get($spacing, "ux", $mappath, $type, "left"));
 }
 
 // ======================================
@@ -109,20 +109,14 @@
 
 @mixin bordervalues($mappath, $state: "default") {
   border-bottom: px-to-rem(
-      map-get($spacing, "uxaction", $mappath, "border", "bottom")
+      map-get($spacing, "ux", $mappath, "border", "bottom")
     )
     solid map-get($color, "ux", $mappath, $state, "border", "bottom");
-  border-left: px-to-rem(
-      map-get($spacing, "uxaction", $mappath, "border", "left")
-    )
+  border-left: px-to-rem(map-get($spacing, "ux", $mappath, "border", "left"))
     solid map-get($color, "ux", $mappath, $state, "border", "left");
-  border-right: px-to-rem(
-      map-get($spacing, "uxaction", $mappath, "border", "right")
-    )
+  border-right: px-to-rem(map-get($spacing, "ux", $mappath, "border", "right"))
     solid map-get($color, "ux", $mappath, $state, "border", "right");
-  border-top: px-to-rem(
-      map-get($spacing, "uxaction", $mappath, "border", "top")
-    )
+  border-top: px-to-rem(map-get($spacing, "ux", $mappath, "border", "top"))
     solid map-get($color, "ux", $mappath, $state, "border", "top");
 }
 

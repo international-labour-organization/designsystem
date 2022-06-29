@@ -1,0 +1,72 @@
+@use "../tokens" as *;
+@use "../functions" as *;
+@import "../mixins";
+
+.ilo--table-of-contents {
+  background-color: $color-ux-tableofcontents-items-default-background;
+  min-width: 343px;
+  padding: 0;
+
+  &--list,
+  &--list--item {
+    width: 100%;
+  }
+
+  &--link {
+    background-color: transparent;
+    background-position: calc(100% - 32px) center;
+    background-repeat: no-repeat;
+    background-size: px-to-rem(24px) px-to-rem(24px);
+    border-bottom: $color-ux-tableofcontents-items-default-border
+      $spacing-ux-tableofcontents-items-border-bottom solid;
+    color: $color-ux-labels-actionable;
+    display: block;
+    font-family: $fonts-display;
+    font-weight: 500;
+    margin: 0 $spacing-ux-tableofcontents-padding-right 0
+      $spacing-ux-tableofcontents-padding-left;
+    padding: $spacing-ux-tableofcontents-items-padding-top
+      $spacing-ux-tableofcontents-items-padding-right
+      $spacing-ux-tableofcontents-items-padding-bottom
+      $spacing-ux-tableofcontents-items-padding-left;
+    text-decoration: none;
+    width: calc(
+      100% - $spacing-ux-tableofcontents-padding-right -
+        $spacing-ux-tableofcontents-padding-left
+    );
+    @include dataurlicon("stemarrow", $color-ux-labels-actionable);
+    @include font-styles("label-medium");
+
+    &:hover {
+      background-color: $color-ux-tableofcontents-items-hover-background;
+      border-bottom: $color-ux-tableofcontents-items-hover-border
+        $spacing-ux-tableofcontents-items-border-bottom solid;
+      background-position: calc(100% - 40px) center;
+      color: $color-ux-labels-hover;
+      margin: 0;
+      padding: $spacing-ux-tableofcontents-items-padding-top
+        calc(
+          $spacing-ux-tableofcontents-items-padding-right +
+            $spacing-ux-tableofcontents-padding-right
+        )
+        $spacing-ux-tableofcontents-items-padding-bottom
+        calc(
+          $spacing-ux-tableofcontents-items-padding-left +
+            $spacing-ux-tableofcontents-padding-left
+        );
+      width: 100%;
+      @include dataurlicon("stemarrow", $color-ux-labels-hover);
+    }
+  }
+
+  &--list--item:last-of-type {
+    .ilo--table-of-contents--link {
+      border-bottom: none;
+
+      &:hover {
+        border-bottom: $color-ux-tableofcontents-items-hover-border
+          $spacing-ux-tableofcontents-items-border-bottom solid;
+      }
+    }
+  }
+}

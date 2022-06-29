@@ -8,7 +8,7 @@
     @include bordervalues("readmore");
     color: $color-ux-labels-actionable;
     font-family: $fonts-display;
-    height: px-to-rem(map-get($spacing, "uxaction", "readmore", "height"));
+    height: px-to-rem(map-get($spacing, "ux", "readmore", "height"));
     @include spacingvalues("margin", "readmore");
     @include spacingvalues("padding", "readmore");
     position: relative;
