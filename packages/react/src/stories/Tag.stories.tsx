@@ -55,29 +55,31 @@ export default {
  */
 const DisplayTagTemplate: Story<TagProps> = (args) => (
   <TagSet {...tagSetArgs.tag} {...args}>
-    <Tag {...tagArgs.tag}>Test 1</Tag>
-    <Tag {...tagArgs.tag} id="tag2">
+    <Tag {...tagArgs.tag} type="display">
+      Test 1
+    </Tag>
+    <Tag {...tagArgs.tag} id="tag2" type="display">
       Test 2
     </Tag>
-    <Tag {...tagArgs.tag} id="tag3">
+    <Tag {...tagArgs.tag} id="tag3" type="display">
       Test 3
     </Tag>
-    <Tag {...tagArgs.tag} id="tag4">
+    <Tag {...tagArgs.tag} id="tag4" type="display">
       Test 4
     </Tag>
-    <Tag {...tagArgs.tag} id="tag5">
+    <Tag {...tagArgs.tag} id="tag5" type="display">
       Test 5
     </Tag>
-    <Tag {...tagArgs.tag} id="tag6">
+    <Tag {...tagArgs.tag} id="tag6" type="display">
       Test 6
     </Tag>
-    <Tag {...tagArgs.tag} id="tag7">
+    <Tag {...tagArgs.tag} id="tag7" type="display">
       Test 7
     </Tag>
-    <Tag {...tagArgs.tag} id="tag8">
+    <Tag {...tagArgs.tag} id="tag8" type="display">
       Test 8
     </Tag>
-    <Tag {...tagArgs.tag} id="tag9">
+    <Tag {...tagArgs.tag} id="tag9" type="display">
       Test 9
     </Tag>
   </TagSet>
@@ -92,31 +94,70 @@ const DisplayTagTemplate: Story<TagProps> = (args) => (
  */
 const AnchorTagTemplate: Story<TagProps> = (args) => (
   <TagSet {...tagSetArgs.tag} {...args}>
-    <Tag {...tagArgs.tag} url="https://www.google.com/">
+    <Tag {...tagArgs.tag} url="https://www.google.com/" type="anchor">
       Test 1
     </Tag>
-    <Tag {...tagArgs.tag} id="tag2" url="https://www.google.com/">
+    <Tag {...tagArgs.tag} id="tag2" url="https://www.google.com/" type="anchor">
       Test 2
     </Tag>
-    <Tag {...tagArgs.tag} id="tag3" url="https://www.google.com/">
+    <Tag {...tagArgs.tag} id="tag3" url="https://www.google.com/" type="anchor">
       Test 3
     </Tag>
-    <Tag {...tagArgs.tag} id="tag4" url="https://www.google.com/">
+    <Tag {...tagArgs.tag} id="tag4" url="https://www.google.com/" type="anchor">
       Test 4
     </Tag>
-    <Tag {...tagArgs.tag} id="tag5" url="https://www.google.com/">
+    <Tag {...tagArgs.tag} id="tag5" url="https://www.google.com/" type="anchor">
       Test 5
     </Tag>
-    <Tag {...tagArgs.tag} id="tag6" url="https://www.google.com/">
+    <Tag {...tagArgs.tag} id="tag6" url="https://www.google.com/" type="anchor">
       Test 6
     </Tag>
-    <Tag {...tagArgs.tag} id="tag7" url="https://www.google.com/">
+    <Tag {...tagArgs.tag} id="tag7" url="https://www.google.com/" type="anchor">
       Test 7
     </Tag>
-    <Tag {...tagArgs.tag} id="tag8" url="https://www.google.com/">
+    <Tag {...tagArgs.tag} id="tag8" url="https://www.google.com/" type="anchor">
       Test 8
     </Tag>
-    <Tag {...tagArgs.tag} id="tag9" url="https://www.google.com/">
+    <Tag {...tagArgs.tag} id="tag9" url="https://www.google.com/" type="anchor">
+      Test 9
+    </Tag>
+  </TagSet>
+);
+
+/**
+ * Button Tag Template
+ *
+ * create a Storybook template for this component
+ *
+ *@param (Object) args - props to be passed to the component
+ */
+const ButtonTagTemplate: Story<TagProps> = (args) => (
+  <TagSet {...tagSetArgs.buttonTag} {...args}>
+    <Tag {...tagArgs.tag} id="tag1" url="https://www.google.com/" type="button">
+      Test 1
+    </Tag>
+    <Tag {...tagArgs.tag} id="tag2" url="https://www.google.com/" type="button">
+      Test 2
+    </Tag>
+    <Tag {...tagArgs.tag} id="tag3" url="https://www.google.com/" type="button">
+      Test 3
+    </Tag>
+    <Tag {...tagArgs.tag} id="tag4" url="https://www.google.com/" type="button">
+      Test 4
+    </Tag>
+    <Tag {...tagArgs.tag} id="tag5" url="https://www.google.com/" type="button">
+      Test 5
+    </Tag>
+    <Tag {...tagArgs.tag} id="tag6" url="https://www.google.com/" type="button">
+      Test 6
+    </Tag>
+    <Tag {...tagArgs.tag} id="tag7" url="https://www.google.com/" type="button">
+      Test 7
+    </Tag>
+    <Tag {...tagArgs.tag} id="tag8" url="https://www.google.com/" type="button">
+      Test 8
+    </Tag>
+    <Tag {...tagArgs.tag} id="tag9" url="https://www.google.com/" type="button">
       Test 9
     </Tag>
   </TagSet>
@@ -134,6 +175,12 @@ export const DisplayTag = DisplayTagTemplate.bind({});
  */
 export const AnchorTag = AnchorTagTemplate.bind({});
 
+/**
+ * Button Tag Instance
+ *
+ */
+export const ButtonTag = ButtonTagTemplate.bind({});
+
 // enumerate the props for the light tag.
 DisplayTag.args = tagSetArgs.tag;
 DisplayTag.storyName = "Display Tag";
@@ -141,3 +188,7 @@ DisplayTag.storyName = "Display Tag";
 // enumerate the props for the light tag.
 AnchorTag.args = tagSetArgs.tag;
 AnchorTag.storyName = "Anchor Tag";
+
+// enumerate the props for the light tag.
+ButtonTag.args = tagSetArgs.buttonTag;
+ButtonTag.storyName = "Button Tag";

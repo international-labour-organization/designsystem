@@ -1,14 +1,24 @@
 {#
   TAG COMPONENT
 #}
+{% if tagType == "button" and defaultActive %}
+  <li class="{{prefix}}--tag-set__item">
+    <button class="{{prefix}}--tag {{prefix}}--tag--button {{prefix}}--tag--active icon__position--right" id="{{ id }}" data-active={{ defaultActive }} type="button">
+      {{content}}
+      <span class="ilo--icon" title="Remove"></span>
+    </button>
+  </li>
+{% elseif tagType == "anchor" %}
 <li class="{{prefix}}--tag-set__item">
-  {% if url != "" %}
     <a class="{{prefix}}--tag {{prefix}}--tag--anchor {% if defaultActive %} {{prefix}}--tag--active{% endif %}" href="{{ url }}"  id="{{ id }}" data-active={{ defaultActive }}>
       {{content}}
     </a>
-  {% else %}
-    <span class="{{prefix}}--tag {% if defaultActive %} {{prefix}}--tag--active{% endif %}" id="{{ id }}" data-active={{ defaultActive }}>
-      {{content}}
-    </span>
-  {% endif %}
 </li>
+{% elseif tagType == "display" %}
+<li class="{{prefix}}--tag-set__item">
+  <span class="{{prefix}}--tag {% if defaultActive %} {{prefix}}--tag--active{% endif %}" id="{{ id }}" data-active={{ defaultActive }}>
+    {{content}}
+  </span>
+</li>
+{% else %}
+{% endif %}

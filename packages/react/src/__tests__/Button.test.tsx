@@ -1,6 +1,5 @@
 import { fireEvent, render, screen } from "@testing-library/react";
 import { Button } from "../components/Button";
-import { ButtonProps } from "../components/Button/Button.props";
 import buttonArgs from "../components/Button/Button.args";
 
 describe("<Button>", () => {
@@ -9,7 +8,7 @@ describe("<Button>", () => {
     const buttonElement = screen.getAllByRole("button");
     expect(buttonElement).not.toBeNull();
     expect(buttonElement[0].getAttribute("class")).toEqual(
-      expect.stringContaining(buttonArgs.primary.type)
+      expect.stringContaining(buttonArgs.primary.type as string)
     );
   });
 

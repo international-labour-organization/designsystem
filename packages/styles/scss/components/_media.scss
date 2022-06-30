@@ -1,0 +1,42 @@
+@use "../tokens" as *;
+@use "../functions" as *;
+@import "../mixins";
+
+.ilo--media {
+  position: relative;
+
+  &--wrapper {
+    line-height: 0;
+    position: relative;
+    width: 100%;
+  }
+
+  &--img {
+    line-height: 0;
+  }
+
+  &--img,
+  img {
+    width: 100%;
+  }
+
+  &--caption {
+    border-left: $spacing-ux-caption-border-left solid
+      $color-ux-caption-border-left;
+    color: $color-font-caption;
+    font-weight: 400;
+    margin-top: px-to-rem(map-get($spacing, "padding-2"));
+    padding-left: px-to-rem(map-get($spacing, "padding-1"));
+    @include font-styles("image-caption");
+  }
+
+  .ilo--credit {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+
+    @include breakpoint("large") {
+      bottom: -#{px-to-rem(map-get($spacing, "padding-0-5"))};
+    }
+  }
+}

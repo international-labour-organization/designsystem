@@ -21,10 +21,31 @@
       },
       "labels": {
         "actionable": { "value": "{color.base.blue.dark}" },
+        "darkbg": { "value": "{color.base.neutrals.white}" },
         "default": { "value": "{color.base.neutrals.medium}" },
         "error": { "value": "{color.base.red.dark}" },
         "hover": { "value": "{color.base.blue.medium}" },
         "active": { "value": "{color.base.blue.light}" }
+      },
+      "caption": {
+        "background": { "value": "transparent" },
+        "border": {
+          "bottom": { "value": "transparent" },
+          "left": { "value": "{color.base.neutrals.light}" },
+          "right": { "value": "transparent" },
+          "top": { "value": "transparent" }
+        },
+        "text": { "value": "{color.base.neutrals.black}" }
+      },
+      "credit": {
+        "background": { "value": "{color.base.neutrals.dark}" },
+        "border": {
+          "bottom": { "value": "transparent" },
+          "left": { "value": "transparent" },
+          "right": { "value": "transparent" },
+          "top": { "value": "transparent" }
+        },
+        "text": { "value": "{color.base.neutrals.white}" }
       },
       "horizontal-rule": {
         "default": { "value": "{color.base.neutrals.lighter}" }
@@ -36,7 +57,7 @@
             "bottom": { "value": "transparent" },
             "left": { "value": "transparent" },
             "right": { "value": "transparent" },
-            "top": { "value": "{color.base.neutrals.medium}" }
+            "top": { "value": "{color.base.neutrals.lighter}" }
           }
         },
         "hover": {
@@ -46,6 +67,30 @@
             "left": { "value": "transparent" },
             "right": { "value": "transparent" },
             "top": { "value": "{color.base.blue.medium}" }
+          }
+        }
+      },
+      "video": {
+        "controls": {
+          "default": {
+            "background": { "value": "{color.base.neutrals.dark}" },
+            "border": {
+              "bottom": { "value": "transparent" },
+              "left": { "value": "transparent" },
+              "right": { "value": "transparent" },
+              "top": { "value": "transparent" }
+            },
+            "icon": { "value": "{color.base.neutrals.white}" }
+          },
+          "hover": {
+            "background": { "value": "{color.base.blue.light}" },
+            "border": {
+              "bottom": { "value": "transparent" },
+              "left": { "value": "transparent" },
+              "right": { "value": "transparent" },
+              "top": { "value": "transparent" }
+            },
+            "icon": { "value": "{color.base.blue.medium}" }
           }
         }
       }

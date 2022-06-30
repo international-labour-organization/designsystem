@@ -5,22 +5,22 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-'use strict';
+"use strict";
 
-const fs = require('fs-extra');
-const yaml = require('js-yaml');
-const path = require('path');
-const Registry = require('../registry');
+const fs = require("fs-extra");
+const yaml = require("js-yaml");
+const path = require("path");
+const Registry = require("../registry");
 
 // This migration script transforms a nested pictograms file to a flat file
 async function migrate() {
   const metadataPath = path.resolve(
     __dirname,
-    '../../../../pictograms/metadata.yml'
+    "../../../../pictograms/metadata.yml"
   );
-  const metadata = yaml.safeLoad(await fs.readFile(metadataPath, 'utf8'));
+  const metadata = yaml.safeLoad(await fs.readFile(metadataPath, "utf8"));
   const registry = await Registry.create(
-    path.resolve(__dirname, '../../../../pictograms/svg')
+    path.resolve(__dirname, "../../../../pictograms/svg")
   );
 
   const pictograms = [];
@@ -59,7 +59,7 @@ async function migrate() {
   }
 
   await fs.writeFile(
-    path.resolve(__dirname, '../../../../pictograms/pictograms.yml'),
+    path.resolve(__dirname, "../../../../pictograms/pictograms.yml"),
     yaml.safeDump(pictograms, { noRefs: true })
   );
 }

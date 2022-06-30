@@ -5,9 +5,9 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-'use strict';
+"use strict";
 
-const { pascalCase } = require('change-case');
+const { pascalCase } = require("change-case");
 
 /**
  * @param {string} name
@@ -19,20 +19,20 @@ function getModuleName(name, size, namespace = []) {
   let moduleName = namespace
     .filter((size) => isNaN(size))
     .map(pascalCase)
-    .join('');
+    .join("");
 
   moduleName = moduleName + pascalCase(name);
 
   if (size) {
-    if (size === 'glyph') {
-      moduleName = moduleName + 'Glyph';
+    if (size === "glyph") {
+      moduleName = moduleName + "Glyph";
     } else {
       moduleName = moduleName + size;
     }
   }
 
   if (!isNaN(moduleName[0])) {
-    moduleName = '_' + moduleName;
+    moduleName = "_" + moduleName;
   }
 
   return moduleName;
