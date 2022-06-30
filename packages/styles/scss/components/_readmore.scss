@@ -13,7 +13,7 @@
     @include spacingvalues("padding", "readmore", "ux");
     position: relative;
     text-align: left;
-    width: auto;
+    width: $spacing-ux-readmore-default-width;
     @include font-styles("label-medium");
 
     &:hover {
@@ -38,7 +38,7 @@
 
     &:hover {
       background: map-get($color, "ux", "readmore", "hover", "background");
-      @include bordervalues("readmore", "hover");
+      @include bordervalues("readmore", "ux", "hover");
       color: $color-ux-labels-hover;
       cursor: pointer;
 

@@ -6,7 +6,6 @@ import { Input } from "../Input";
 
 const SearchField: FC<SearchFieldProps> = ({
   action,
-  button,
   callback,
   className,
   input,
