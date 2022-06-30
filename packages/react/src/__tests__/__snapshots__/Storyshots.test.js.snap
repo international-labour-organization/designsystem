@@ -1515,6 +1515,93 @@ exports[`Storyshots Components/RichText Rich Text 1`] = `
 </div>
 `;
 
+exports[`Storyshots Components/SearchField Default SearchField 1`] = `
+<div
+  style={
+    Object {
+      "margin": "3em",
+    }
+  }
+>
+  <form
+    action=""
+    className="ilo--searchfield"
+  >
+    <input
+      className="ilo--input"
+      disabled={false}
+      name="search"
+      onChange={[Function]}
+      placeholder="Search Field"
+      type="search"
+    />
+    <input
+      className="ilo--searchfield--button"
+      onClick={[Function]}
+      type="submit"
+    />
+  </form>
+</div>
+`;
+
+exports[`Storyshots Components/SearchField Disabled SearchField 1`] = `
+<div
+  style={
+    Object {
+      "margin": "3em",
+    }
+  }
+>
+  <form
+    action=""
+    className="ilo--searchfield"
+  >
+    <input
+      className="ilo--input"
+      disabled={true}
+      name="search"
+      onChange={[Function]}
+      placeholder="Search Field"
+      type="search"
+    />
+    <input
+      className="ilo--searchfield--button"
+      onClick={[Function]}
+      type="submit"
+    />
+  </form>
+</div>
+`;
+
+exports[`Storyshots Components/SearchField SearchField Error 1`] = `
+<div
+  style={
+    Object {
+      "margin": "3em",
+    }
+  }
+>
+  <form
+    action=""
+    className="ilo--searchfield"
+  >
+    <input
+      className="ilo--input error"
+      disabled={false}
+      name="search"
+      onChange={[Function]}
+      placeholder="Search Field"
+      type="search"
+    />
+    <input
+      className="ilo--searchfield--button"
+      onClick={[Function]}
+      type="submit"
+    />
+  </form>
+</div>
+`;
+
 exports[`Storyshots Components/Tag Anchor Tag 1`] = `
 <div
   style={

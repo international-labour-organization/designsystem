@@ -21,7 +21,7 @@ export interface SearchFieldProps {
   /**
    * The search field submit button's click function.
    */
-  callback: Required<function>;
+  callback: function;
 
   /**
    * Specify an optional className to be added to your Button.

@@ -2,9 +2,6 @@ import { SearchFieldProps } from "./SearchField.props";
 
 const searchfield: SearchFieldProps = {
   action: "",
-  button: {
-    label: "Search",
-  },
   callback: "",
   input: {
     callback: "",
@@ -17,9 +14,6 @@ const searchfield: SearchFieldProps = {
 
 const searchfielderror: SearchFieldProps = {
   action: "",
-  button: {
-    label: "Search",
-  },
   callback: "",
   input: {
     callback: "",
@@ -33,9 +27,6 @@ const searchfielderror: SearchFieldProps = {
 
 const searchfielddisabled: SearchFieldProps = {
   action: "",
-  button: {
-    label: "Search",
-  },
   callback: "",
   input: {
     callback: "",
