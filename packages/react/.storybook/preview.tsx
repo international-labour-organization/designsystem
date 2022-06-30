@@ -23,7 +23,7 @@ export const parameters = {
 };
 
 export const decorators: DecoratorFn[] = [
-  (Story, { globals }) => (
+  (Story) => (
     <div style={{ margin: "3em" }}>
       <GlobalProvider prefix={themeprefix.value}>
         <Story />

@@ -26,7 +26,7 @@ describe("<Accordion>", () => {
     const buttonElement = screen.getAllByRole("button");
     expect(buttonElement).not.toBeNull();
     expect(buttonElement[0].getAttribute("class")).toEqual(
-      expect.stringContaining(accordionArgs.small.size)
+      expect.stringContaining(accordionArgs.small.size as string)
     );
   });
 
@@ -35,7 +35,7 @@ describe("<Accordion>", () => {
     const buttonElement = screen.getAllByRole("button");
     expect(buttonElement).not.toBeNull();
     expect(buttonElement[0].getAttribute("class")).toEqual(
-      expect.stringContaining(accordionArgs.large.size)
+      expect.stringContaining(accordionArgs.large.size as string)
     );
   });
 
