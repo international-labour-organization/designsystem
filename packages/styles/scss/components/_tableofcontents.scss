@@ -37,13 +37,15 @@
     @include dataurlicon("stemarrow", $color-ux-labels-actionable);
     @include font-styles("label-medium");
 
-    &:hover {
+    &:hover,
+    &:focus {
       background-color: $color-ux-tableofcontents-items-hover-background;
       border-bottom: $color-ux-tableofcontents-items-hover-border
         $spacing-ux-tableofcontents-items-border-bottom solid;
       background-position: calc(100% - 40px) center;
       color: $color-ux-labels-hover;
       margin: 0;
+      outline: none;
       padding: $spacing-ux-tableofcontents-items-padding-top
         calc(
           $spacing-ux-tableofcontents-items-padding-right +
