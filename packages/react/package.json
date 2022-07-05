@@ -84,6 +84,7 @@
     "build": "pnpm run build:rollup && npm run build:storybook",
     "build:storybook": "build-storybook",
     "build:rollup": "rollup -c",
+    "check": "tsc --noEmit",
     "format": "prettier --check . --ignore-path ../../.prettierignore",
     "format:fix": "prettier --write . --ignore-path ../../.prettierignore",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",

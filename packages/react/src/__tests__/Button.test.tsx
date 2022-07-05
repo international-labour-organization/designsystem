@@ -8,7 +8,7 @@ describe("<Button>", () => {
     const buttonElement = screen.getAllByRole("button");
     expect(buttonElement).not.toBeNull();
     expect(buttonElement[0].getAttribute("class")).toEqual(
-      expect.stringContaining(buttonArgs.primary.type)
+      expect.stringContaining(buttonArgs.primary.type as string)
     );
   });
 
