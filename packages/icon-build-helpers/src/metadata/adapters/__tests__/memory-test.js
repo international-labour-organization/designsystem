@@ -7,37 +7,37 @@
  * @jest-environment node
  */
 
-'use strict';
+"use strict";
 
-describe('memory', () => {
+describe("memory", () => {
   let adapter;
 
   beforeEach(() => {
-    adapter = require('../memory');
+    adapter = require("../memory");
   });
 
   afterEach(() => {
     adapter.filesystem.clear();
   });
 
-  it('should read a filepath and return its content as a value', async () => {
-    const data = { foo: 'bar' };
-    adapter.filesystem.set('/test', data);
+  it("should read a filepath and return its content as a value", async () => {
+    const data = { foo: "bar" };
+    adapter.filesystem.set("/test", data);
 
-    const result = await adapter.read('/', 'test');
+    const result = await adapter.read("/", "test");
     expect(result).toEqual(data);
   });
 
-  it('should write the given data as yml to the given filepath', async () => {
-    const data = { foo: 'bar' };
-    await adapter.write('/', 'test', data);
-    const result = await adapter.read('/', 'test');
+  it("should write the given data as yml to the given filepath", async () => {
+    const data = { foo: "bar" };
+    await adapter.write("/", "test", data);
+    const result = await adapter.read("/", "test");
     expect(result).toEqual(data);
   });
 
-  it('should throw if the file its trying to read from does not exist', async () => {
+  it("should throw if the file its trying to read from does not exist", async () => {
     await expect(
-      adapter.read('/', 'test')
+      adapter.read("/", "test")
     ).rejects.toThrowErrorMatchingInlineSnapshot(
       `"Unable to find extension \`test\` at filepath: /test"`
     );

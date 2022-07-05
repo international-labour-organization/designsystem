@@ -5,10 +5,10 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-'use strict';
+"use strict";
 
-const memory = require('./memory');
-const yml = require('./yml');
+const memory = require("./memory");
+const yml = require("./yml");
 
 /**
  * An adapter defines how we work with a specific file format and defines the

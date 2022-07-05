@@ -7,76 +7,76 @@
  * @jest-environment node
  */
 
-'use strict';
+"use strict";
 
-const { getModuleName } = require('../getModuleName');
+const { getModuleName } = require("../getModuleName");
 
 const cases = [
   [
-    'without size',
+    "without size",
     {
-      name: 'test',
+      name: "test",
       namespace: [],
     },
-    'Test',
+    "Test",
   ],
   [
-    'with size',
+    "with size",
     {
-      name: 'test',
-      size: '32',
+      name: "test",
+      size: "32",
       namespace: [],
     },
-    'Test32',
+    "Test32",
   ],
   [
-    'with namespce',
+    "with namespce",
     {
-      name: 'test',
-      size: '32',
-      namespace: ['acme'],
+      name: "test",
+      size: "32",
+      namespace: ["acme"],
     },
-    'AcmeTest32',
+    "AcmeTest32",
   ],
   [
-    'with kebab-case',
+    "with kebab-case",
     {
-      name: 'test-foo-bar',
-      size: '32',
+      name: "test-foo-bar",
+      size: "32",
       namespace: [],
     },
-    'TestFooBar32',
+    "TestFooBar32",
   ],
   [
-    'with variant',
+    "with variant",
     {
-      name: 'test--foo',
-      size: '32',
+      name: "test--foo",
+      size: "32",
       namespace: [],
     },
-    'TestFoo32',
+    "TestFoo32",
   ],
   [
-    'with invalid identifier as first character',
+    "with invalid identifier as first character",
     {
-      name: '1-test',
-      size: '32',
+      name: "1-test",
+      size: "32",
       namespace: [],
     },
-    '_1Test32',
+    "_1Test32",
   ],
   [
-    'with glyph',
+    "with glyph",
     {
-      name: 'test',
-      size: 'glyph',
+      name: "test",
+      size: "glyph",
       namespace: [],
     },
-    'TestGlyph',
+    "TestGlyph",
   ],
 ];
 
-test.each(cases)('%s', (_name, options, expected) => {
+test.each(cases)("%s", (_name, options, expected) => {
   expect(getModuleName(options.name, options.size, options.namespace)).toBe(
     expected
   );

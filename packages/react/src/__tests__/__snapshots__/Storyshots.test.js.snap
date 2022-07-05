@@ -25,20 +25,6 @@ exports[`Storyshots Components/Accordion Large Accordion 1`] = `
           onClick={[Function]}
         >
           Item1
-          <svg
-            aria-hidden={true}
-            fill="currentColor"
-            focusable="false"
-            height={24}
-            preserveAspectRatio="xMidYMid meet"
-            viewBox="0 0 24 24"
-            width={24}
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M18 11H6v2h12v-2Z"
-            />
-          </svg>
         </button>
       </h3>
       <div
@@ -79,20 +65,6 @@ exports[`Storyshots Components/Accordion Large Accordion 1`] = `
           onClick={[Function]}
         >
           Item2
-          <svg
-            aria-hidden={true}
-            fill="currentColor"
-            focusable="false"
-            height={24}
-            preserveAspectRatio="xMidYMid meet"
-            viewBox="0 0 24 24"
-            width={24}
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M18 11H6v2h12v-2Z"
-            />
-          </svg>
         </button>
       </h3>
       <div
@@ -151,20 +123,6 @@ exports[`Storyshots Components/Accordion Small Accordion 1`] = `
           onClick={[Function]}
         >
           Item1
-          <svg
-            aria-hidden={true}
-            fill="currentColor"
-            focusable="false"
-            height={24}
-            preserveAspectRatio="xMidYMid meet"
-            viewBox="0 0 24 24"
-            width={24}
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M18 11H6v2h12v-2Z"
-            />
-          </svg>
         </button>
       </h3>
       <div
@@ -205,20 +163,6 @@ exports[`Storyshots Components/Accordion Small Accordion 1`] = `
           onClick={[Function]}
         >
           Item2
-          <svg
-            aria-hidden={true}
-            fill="currentColor"
-            focusable="false"
-            height={24}
-            preserveAspectRatio="xMidYMid meet"
-            viewBox="0 0 24 24"
-            width={24}
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M18 11H6v2h12v-2Z"
-            />
-          </svg>
         </button>
       </h3>
       <div
@@ -300,7 +244,7 @@ exports[`Storyshots Components/Button Large Button 1`] = `
 </div>
 `;
 
-exports[`Storyshots Components/Button Large Button with icon on left 1`] = `
+exports[`Storyshots Components/Button Large Primary Button with icon on left 1`] = `
 <div
   style={
     Object {
@@ -331,13 +275,14 @@ exports[`Storyshots Components/Button Large Button with icon on left 1`] = `
     >
       <path
         d="M16.9497 15.5356L13.4142 12L16.9497 8.46451L15.5355 7.05029L12 10.5858L8.46446 7.05029L7.05025 8.46451L10.5858 12L7.05025 15.5356L8.46446 16.9498L12 13.4143L15.5355 16.9498L16.9497 15.5356Z"
+        fill="currentColor"
       />
     </svg>
   </button>
 </div>
 `;
 
-exports[`Storyshots Components/Button Large Button with icon on right 1`] = `
+exports[`Storyshots Components/Button Large Primary Button with icon on right 1`] = `
 <div
   style={
     Object {
@@ -368,6 +313,159 @@ exports[`Storyshots Components/Button Large Button with icon on right 1`] = `
     >
       <path
         d="M16.9497 15.5356L13.4142 12L16.9497 8.46451L15.5355 7.05029L12 10.5858L8.46446 7.05029L7.05025 8.46451L10.5858 12L7.05025 15.5356L8.46446 16.9498L12 13.4143L15.5355 16.9498L16.9497 15.5356Z"
+        fill="currentColor"
+      />
+    </svg>
+  </button>
+</div>
+`;
+
+exports[`Storyshots Components/Button Large Secondary Button with icon on left 1`] = `
+<div
+  style={
+    Object {
+      "margin": "3em",
+    }
+  }
+>
+  <button
+    className="ilo--button ilo--button--large ilo--button--secondary icon icon__position--left"
+    disabled={false}
+    onClick={[Function]}
+  >
+    <span
+      className="button__label"
+    >
+      Icon on left
+    </span>
+    <svg
+      aria-hidden={true}
+      className="ilo--icon"
+      fill="currentColor"
+      focusable="false"
+      height={24}
+      preserveAspectRatio="xMidYMid meet"
+      viewBox="0 0 24 24"
+      width={24}
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M16.9497 15.5356L13.4142 12L16.9497 8.46451L15.5355 7.05029L12 10.5858L8.46446 7.05029L7.05025 8.46451L10.5858 12L7.05025 15.5356L8.46446 16.9498L12 13.4143L15.5355 16.9498L16.9497 15.5356Z"
+        fill="currentColor"
+      />
+    </svg>
+  </button>
+</div>
+`;
+
+exports[`Storyshots Components/Button Large Secondary Button with icon on right 1`] = `
+<div
+  style={
+    Object {
+      "margin": "3em",
+    }
+  }
+>
+  <button
+    className="ilo--button ilo--button--large ilo--button--secondary icon icon__position--right"
+    disabled={false}
+    onClick={[Function]}
+  >
+    <span
+      className="button__label"
+    >
+      Icon on right
+    </span>
+    <svg
+      aria-hidden={true}
+      className="ilo--icon"
+      fill="currentColor"
+      focusable="false"
+      height={24}
+      preserveAspectRatio="xMidYMid meet"
+      viewBox="0 0 24 24"
+      width={24}
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M16.9497 15.5356L13.4142 12L16.9497 8.46451L15.5355 7.05029L12 10.5858L8.46446 7.05029L7.05025 8.46451L10.5858 12L7.05025 15.5356L8.46446 16.9498L12 13.4143L15.5355 16.9498L16.9497 15.5356Z"
+        fill="currentColor"
+      />
+    </svg>
+  </button>
+</div>
+`;
+
+exports[`Storyshots Components/Button Large Tertiary Button with icon on left 1`] = `
+<div
+  style={
+    Object {
+      "margin": "3em",
+    }
+  }
+>
+  <button
+    className="ilo--button ilo--button--large ilo--button--tertiary icon icon__position--left"
+    disabled={false}
+    onClick={[Function]}
+  >
+    <span
+      className="button__label"
+    >
+      Icon on left
+    </span>
+    <svg
+      aria-hidden={true}
+      className="ilo--icon"
+      fill="currentColor"
+      focusable="false"
+      height={24}
+      preserveAspectRatio="xMidYMid meet"
+      viewBox="0 0 24 24"
+      width={24}
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M16.9497 15.5356L13.4142 12L16.9497 8.46451L15.5355 7.05029L12 10.5858L8.46446 7.05029L7.05025 8.46451L10.5858 12L7.05025 15.5356L8.46446 16.9498L12 13.4143L15.5355 16.9498L16.9497 15.5356Z"
+        fill="currentColor"
+      />
+    </svg>
+  </button>
+</div>
+`;
+
+exports[`Storyshots Components/Button Large Tertiary Button with icon on right 1`] = `
+<div
+  style={
+    Object {
+      "margin": "3em",
+    }
+  }
+>
+  <button
+    className="ilo--button ilo--button--large ilo--button--tertiary icon icon__position--right"
+    disabled={false}
+    onClick={[Function]}
+  >
+    <span
+      className="button__label"
+    >
+      Icon on right
+    </span>
+    <svg
+      aria-hidden={true}
+      className="ilo--icon"
+      fill="currentColor"
+      focusable="false"
+      height={24}
+      preserveAspectRatio="xMidYMid meet"
+      viewBox="0 0 24 24"
+      width={24}
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M16.9497 15.5356L13.4142 12L16.9497 8.46451L15.5355 7.05029L12 10.5858L8.46446 7.05029L7.05025 8.46451L10.5858 12L7.05025 15.5356L8.46446 16.9498L12 13.4143L15.5355 16.9498L16.9497 15.5356Z"
+        fill="currentColor"
       />
     </svg>
   </button>
@@ -400,7 +498,7 @@ exports[`Storyshots Components/Button Medium Button 1`] = `
 </div>
 `;
 
-exports[`Storyshots Components/Button Medium Button with icon on left 1`] = `
+exports[`Storyshots Components/Button Medium Primary Button with icon on left 1`] = `
 <div
   style={
     Object {
@@ -431,13 +529,14 @@ exports[`Storyshots Components/Button Medium Button with icon on left 1`] = `
     >
       <path
         d="M16.9497 15.5356L13.4142 12L16.9497 8.46451L15.5355 7.05029L12 10.5858L8.46446 7.05029L7.05025 8.46451L10.5858 12L7.05025 15.5356L8.46446 16.9498L12 13.4143L15.5355 16.9498L16.9497 15.5356Z"
+        fill="currentColor"
       />
     </svg>
   </button>
 </div>
 `;
 
-exports[`Storyshots Components/Button Medium Button with icon on right 1`] = `
+exports[`Storyshots Components/Button Medium Primary Button with icon on right 1`] = `
 <div
   style={
     Object {
@@ -468,6 +567,159 @@ exports[`Storyshots Components/Button Medium Button with icon on right 1`] = `
     >
       <path
         d="M16.9497 15.5356L13.4142 12L16.9497 8.46451L15.5355 7.05029L12 10.5858L8.46446 7.05029L7.05025 8.46451L10.5858 12L7.05025 15.5356L8.46446 16.9498L12 13.4143L15.5355 16.9498L16.9497 15.5356Z"
+        fill="currentColor"
+      />
+    </svg>
+  </button>
+</div>
+`;
+
+exports[`Storyshots Components/Button Medium Secondary Button with icon on left 1`] = `
+<div
+  style={
+    Object {
+      "margin": "3em",
+    }
+  }
+>
+  <button
+    className="ilo--button ilo--button--medium ilo--button--secondary icon icon__position--left"
+    disabled={false}
+    onClick={[Function]}
+  >
+    <span
+      className="button__label"
+    >
+      Icon on left
+    </span>
+    <svg
+      aria-hidden={true}
+      className="ilo--icon"
+      fill="currentColor"
+      focusable="false"
+      height={24}
+      preserveAspectRatio="xMidYMid meet"
+      viewBox="0 0 24 24"
+      width={24}
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M16.9497 15.5356L13.4142 12L16.9497 8.46451L15.5355 7.05029L12 10.5858L8.46446 7.05029L7.05025 8.46451L10.5858 12L7.05025 15.5356L8.46446 16.9498L12 13.4143L15.5355 16.9498L16.9497 15.5356Z"
+        fill="currentColor"
+      />
+    </svg>
+  </button>
+</div>
+`;
+
+exports[`Storyshots Components/Button Medium Secondary Button with icon on right 1`] = `
+<div
+  style={
+    Object {
+      "margin": "3em",
+    }
+  }
+>
+  <button
+    className="ilo--button ilo--button--medium ilo--button--secondary icon icon__position--right"
+    disabled={false}
+    onClick={[Function]}
+  >
+    <span
+      className="button__label"
+    >
+      Icon on right
+    </span>
+    <svg
+      aria-hidden={true}
+      className="ilo--icon"
+      fill="currentColor"
+      focusable="false"
+      height={24}
+      preserveAspectRatio="xMidYMid meet"
+      viewBox="0 0 24 24"
+      width={24}
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M16.9497 15.5356L13.4142 12L16.9497 8.46451L15.5355 7.05029L12 10.5858L8.46446 7.05029L7.05025 8.46451L10.5858 12L7.05025 15.5356L8.46446 16.9498L12 13.4143L15.5355 16.9498L16.9497 15.5356Z"
+        fill="currentColor"
+      />
+    </svg>
+  </button>
+</div>
+`;
+
+exports[`Storyshots Components/Button Medium Tertiary Button with icon on left 1`] = `
+<div
+  style={
+    Object {
+      "margin": "3em",
+    }
+  }
+>
+  <button
+    className="ilo--button ilo--button--medium ilo--button--tertiary icon icon__position--left"
+    disabled={false}
+    onClick={[Function]}
+  >
+    <span
+      className="button__label"
+    >
+      Icon on left
+    </span>
+    <svg
+      aria-hidden={true}
+      className="ilo--icon"
+      fill="currentColor"
+      focusable="false"
+      height={24}
+      preserveAspectRatio="xMidYMid meet"
+      viewBox="0 0 24 24"
+      width={24}
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M16.9497 15.5356L13.4142 12L16.9497 8.46451L15.5355 7.05029L12 10.5858L8.46446 7.05029L7.05025 8.46451L10.5858 12L7.05025 15.5356L8.46446 16.9498L12 13.4143L15.5355 16.9498L16.9497 15.5356Z"
+        fill="currentColor"
+      />
+    </svg>
+  </button>
+</div>
+`;
+
+exports[`Storyshots Components/Button Medium Tertiary Button with icon on right 1`] = `
+<div
+  style={
+    Object {
+      "margin": "3em",
+    }
+  }
+>
+  <button
+    className="ilo--button ilo--button--medium ilo--button--tertiary icon icon__position--right"
+    disabled={false}
+    onClick={[Function]}
+  >
+    <span
+      className="button__label"
+    >
+      Icon on right
+    </span>
+    <svg
+      aria-hidden={true}
+      className="ilo--icon"
+      fill="currentColor"
+      focusable="false"
+      height={24}
+      preserveAspectRatio="xMidYMid meet"
+      viewBox="0 0 24 24"
+      width={24}
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M16.9497 15.5356L13.4142 12L16.9497 8.46451L15.5355 7.05029L12 10.5858L8.46446 7.05029L7.05025 8.46451L10.5858 12L7.05025 15.5356L8.46446 16.9498L12 13.4143L15.5355 16.9498L16.9497 15.5356Z"
+        fill="currentColor"
       />
     </svg>
   </button>
@@ -544,7 +796,7 @@ exports[`Storyshots Components/Button Small Button 1`] = `
 </div>
 `;
 
-exports[`Storyshots Components/Button Small Button with icon on left 1`] = `
+exports[`Storyshots Components/Button Small Primary Button with icon on left 1`] = `
 <div
   style={
     Object {
@@ -575,13 +827,14 @@ exports[`Storyshots Components/Button Small Button with icon on left 1`] = `
     >
       <path
         d="M16.9497 15.5356L13.4142 12L16.9497 8.46451L15.5355 7.05029L12 10.5858L8.46446 7.05029L7.05025 8.46451L10.5858 12L7.05025 15.5356L8.46446 16.9498L12 13.4143L15.5355 16.9498L16.9497 15.5356Z"
+        fill="currentColor"
       />
     </svg>
   </button>
 </div>
 `;
 
-exports[`Storyshots Components/Button Small Button with icon on right; 1`] = `
+exports[`Storyshots Components/Button Small Primary Button with icon on right; 1`] = `
 <div
   style={
     Object {
@@ -612,6 +865,159 @@ exports[`Storyshots Components/Button Small Button with icon on right; 1`] = `
     >
       <path
         d="M16.9497 15.5356L13.4142 12L16.9497 8.46451L15.5355 7.05029L12 10.5858L8.46446 7.05029L7.05025 8.46451L10.5858 12L7.05025 15.5356L8.46446 16.9498L12 13.4143L15.5355 16.9498L16.9497 15.5356Z"
+        fill="currentColor"
+      />
+    </svg>
+  </button>
+</div>
+`;
+
+exports[`Storyshots Components/Button Small Secondary Button with icon on left 1`] = `
+<div
+  style={
+    Object {
+      "margin": "3em",
+    }
+  }
+>
+  <button
+    className="ilo--button ilo--button--small ilo--button--secondary icon icon__position--left"
+    disabled={false}
+    onClick={[Function]}
+  >
+    <span
+      className="button__label"
+    >
+      Icon on left
+    </span>
+    <svg
+      aria-hidden={true}
+      className="ilo--icon"
+      fill="currentColor"
+      focusable="false"
+      height={24}
+      preserveAspectRatio="xMidYMid meet"
+      viewBox="0 0 24 24"
+      width={24}
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M16.9497 15.5356L13.4142 12L16.9497 8.46451L15.5355 7.05029L12 10.5858L8.46446 7.05029L7.05025 8.46451L10.5858 12L7.05025 15.5356L8.46446 16.9498L12 13.4143L15.5355 16.9498L16.9497 15.5356Z"
+        fill="currentColor"
+      />
+    </svg>
+  </button>
+</div>
+`;
+
+exports[`Storyshots Components/Button Small Secondary Button with icon on right; 1`] = `
+<div
+  style={
+    Object {
+      "margin": "3em",
+    }
+  }
+>
+  <button
+    className="ilo--button ilo--button--small ilo--button--secondary icon icon__position--right"
+    disabled={false}
+    onClick={[Function]}
+  >
+    <span
+      className="button__label"
+    >
+      Icon on right
+    </span>
+    <svg
+      aria-hidden={true}
+      className="ilo--icon"
+      fill="currentColor"
+      focusable="false"
+      height={24}
+      preserveAspectRatio="xMidYMid meet"
+      viewBox="0 0 24 24"
+      width={24}
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M16.9497 15.5356L13.4142 12L16.9497 8.46451L15.5355 7.05029L12 10.5858L8.46446 7.05029L7.05025 8.46451L10.5858 12L7.05025 15.5356L8.46446 16.9498L12 13.4143L15.5355 16.9498L16.9497 15.5356Z"
+        fill="currentColor"
+      />
+    </svg>
+  </button>
+</div>
+`;
+
+exports[`Storyshots Components/Button Small Tertiary Button with icon on left 1`] = `
+<div
+  style={
+    Object {
+      "margin": "3em",
+    }
+  }
+>
+  <button
+    className="ilo--button ilo--button--small ilo--button--tertiary icon icon__position--left"
+    disabled={false}
+    onClick={[Function]}
+  >
+    <span
+      className="button__label"
+    >
+      Icon on left
+    </span>
+    <svg
+      aria-hidden={true}
+      className="ilo--icon"
+      fill="currentColor"
+      focusable="false"
+      height={24}
+      preserveAspectRatio="xMidYMid meet"
+      viewBox="0 0 24 24"
+      width={24}
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M16.9497 15.5356L13.4142 12L16.9497 8.46451L15.5355 7.05029L12 10.5858L8.46446 7.05029L7.05025 8.46451L10.5858 12L7.05025 15.5356L8.46446 16.9498L12 13.4143L15.5355 16.9498L16.9497 15.5356Z"
+        fill="currentColor"
+      />
+    </svg>
+  </button>
+</div>
+`;
+
+exports[`Storyshots Components/Button Small Tertiary Button with icon on right; 1`] = `
+<div
+  style={
+    Object {
+      "margin": "3em",
+    }
+  }
+>
+  <button
+    className="ilo--button ilo--button--small ilo--button--tertiary icon icon__position--right"
+    disabled={false}
+    onClick={[Function]}
+  >
+    <span
+      className="button__label"
+    >
+      Icon on right
+    </span>
+    <svg
+      aria-hidden={true}
+      className="ilo--icon"
+      fill="currentColor"
+      focusable="false"
+      height={24}
+      preserveAspectRatio="xMidYMid meet"
+      viewBox="0 0 24 24"
+      width={24}
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M16.9497 15.5356L13.4142 12L16.9497 8.46451L15.5355 7.05029L12 10.5858L8.46446 7.05029L7.05025 8.46451L10.5858 12L7.05025 15.5356L8.46446 16.9498L12 13.4143L15.5355 16.9498L16.9497 15.5356Z"
+        fill="currentColor"
       />
     </svg>
   </button>
@@ -761,6 +1167,26 @@ exports[`Storyshots Components/Link Dark Link 1`] = `
   <a
     className="ilo--link ilo--link--dark"
     href="https://www.wikipedia.org/"
+    rel=""
+    target=""
+  >
+    
+    This is text for the link
+  </a>
+</div>
+`;
+
+exports[`Storyshots Components/Link Footer Link 1`] = `
+<div
+  style={
+    Object {
+      "margin": "3em",
+    }
+  }
+>
+  <a
+    className="ilo--link ilo--link--footer"
+    href="https://www.weather.com/"
     rel=""
     target=""
   >
@@ -1064,7 +1490,7 @@ exports[`Storyshots Components/ReadMore ReadMore - opened on component load 1`] 
       className="ilo--read-more--button ilo--read-more--button--open"
       onClick={[Function]}
     >
-      Read More
+      Close
     </button>
   </div>
 </div>
@@ -1104,7 +1530,7 @@ exports[`Storyshots Components/Tag Anchor Tag 1`] = `
       className="ilo--tag-set__item"
     >
       <a
-        className="ilo--tag ilo--tag--anchor"
+        className="ilo--tag ilo--tag--anchor icon icon__position--right"
         href="https://www.google.com/"
         id="tag1"
       >
@@ -1115,7 +1541,7 @@ exports[`Storyshots Components/Tag Anchor Tag 1`] = `
       className="ilo--tag-set__item"
     >
       <a
-        className="ilo--tag ilo--tag--anchor"
+        className="ilo--tag ilo--tag--anchor icon icon__position--right"
         href="https://www.google.com/"
         id="tag2"
       >
@@ -1126,7 +1552,7 @@ exports[`Storyshots Components/Tag Anchor Tag 1`] = `
       className="ilo--tag-set__item"
     >
       <a
-        className="ilo--tag ilo--tag--anchor"
+        className="ilo--tag ilo--tag--anchor icon icon__position--right"
         href="https://www.google.com/"
         id="tag3"
       >
@@ -1137,7 +1563,7 @@ exports[`Storyshots Components/Tag Anchor Tag 1`] = `
       className="ilo--tag-set__item"
     >
       <a
-        className="ilo--tag ilo--tag--anchor"
+        className="ilo--tag ilo--tag--anchor icon icon__position--right"
         href="https://www.google.com/"
         id="tag4"
       >
@@ -1148,7 +1574,7 @@ exports[`Storyshots Components/Tag Anchor Tag 1`] = `
       className="ilo--tag-set__item"
     >
       <a
-        className="ilo--tag ilo--tag--anchor"
+        className="ilo--tag ilo--tag--anchor icon icon__position--right"
         href="https://www.google.com/"
         id="tag5"
       >
@@ -1159,7 +1585,7 @@ exports[`Storyshots Components/Tag Anchor Tag 1`] = `
       className="ilo--tag-set__item"
     >
       <a
-        className="ilo--tag ilo--tag--anchor"
+        className="ilo--tag ilo--tag--anchor icon icon__position--right"
         href="https://www.google.com/"
         id="tag6"
       >
@@ -1170,7 +1596,7 @@ exports[`Storyshots Components/Tag Anchor Tag 1`] = `
       className="ilo--tag-set__item"
     >
       <a
-        className="ilo--tag ilo--tag--anchor"
+        className="ilo--tag ilo--tag--anchor icon icon__position--right"
         href="https://www.google.com/"
         id="tag7"
       >
@@ -1181,7 +1607,7 @@ exports[`Storyshots Components/Tag Anchor Tag 1`] = `
       className="ilo--tag-set__item"
     >
       <a
-        className="ilo--tag ilo--tag--anchor"
+        className="ilo--tag ilo--tag--anchor icon icon__position--right"
         href="https://www.google.com/"
         id="tag8"
       >
@@ -1192,7 +1618,7 @@ exports[`Storyshots Components/Tag Anchor Tag 1`] = `
       className="ilo--tag-set__item"
     >
       <a
-        className="ilo--tag ilo--tag--anchor"
+        className="ilo--tag ilo--tag--anchor icon icon__position--right"
         href="https://www.google.com/"
         id="tag9"
       >
@@ -1200,6 +1626,20 @@ exports[`Storyshots Components/Tag Anchor Tag 1`] = `
       </a>
     </li>
   </ul>
+</div>
+`;
+
+exports[`Storyshots Components/Tag Button Tag 1`] = `
+<div
+  style={
+    Object {
+      "margin": "3em",
+    }
+  }
+>
+  <ul
+    className="ilo--tag-set"
+  />
 </div>
 `;
 
@@ -1218,7 +1658,7 @@ exports[`Storyshots Components/Tag Display Tag 1`] = `
       className="ilo--tag-set__item"
     >
       <span
-        className="ilo--tag"
+        className="ilo--tag ilo--tag--display icon icon__position--right"
         id="tag1"
       >
         Test 1
@@ -1228,7 +1668,7 @@ exports[`Storyshots Components/Tag Display Tag 1`] = `
       className="ilo--tag-set__item"
     >
       <span
-        className="ilo--tag"
+        className="ilo--tag ilo--tag--display icon icon__position--right"
         id="tag2"
       >
         Test 2
@@ -1238,7 +1678,7 @@ exports[`Storyshots Components/Tag Display Tag 1`] = `
       className="ilo--tag-set__item"
     >
       <span
-        className="ilo--tag"
+        className="ilo--tag ilo--tag--display icon icon__position--right"
         id="tag3"
       >
         Test 3
@@ -1248,7 +1688,7 @@ exports[`Storyshots Components/Tag Display Tag 1`] = `
       className="ilo--tag-set__item"
     >
       <span
-        className="ilo--tag"
+        className="ilo--tag ilo--tag--display icon icon__position--right"
         id="tag4"
       >
         Test 4
@@ -1258,7 +1698,7 @@ exports[`Storyshots Components/Tag Display Tag 1`] = `
       className="ilo--tag-set__item"
     >
       <span
-        className="ilo--tag"
+        className="ilo--tag ilo--tag--display icon icon__position--right"
         id="tag5"
       >
         Test 5
@@ -1268,7 +1708,7 @@ exports[`Storyshots Components/Tag Display Tag 1`] = `
       className="ilo--tag-set__item"
     >
       <span
-        className="ilo--tag"
+        className="ilo--tag ilo--tag--display icon icon__position--right"
         id="tag6"
       >
         Test 6
@@ -1278,7 +1718,7 @@ exports[`Storyshots Components/Tag Display Tag 1`] = `
       className="ilo--tag-set__item"
     >
       <span
-        className="ilo--tag"
+        className="ilo--tag ilo--tag--display icon icon__position--right"
         id="tag7"
       >
         Test 7
@@ -1288,7 +1728,7 @@ exports[`Storyshots Components/Tag Display Tag 1`] = `
       className="ilo--tag-set__item"
     >
       <span
-        className="ilo--tag"
+        className="ilo--tag ilo--tag--display icon icon__position--right"
         id="tag8"
       >
         Test 8
@@ -1298,7 +1738,7 @@ exports[`Storyshots Components/Tag Display Tag 1`] = `
       className="ilo--tag-set__item"
     >
       <span
-        className="ilo--tag"
+        className="ilo--tag ilo--tag--display icon icon__position--right"
         id="tag9"
       >
         Test 9

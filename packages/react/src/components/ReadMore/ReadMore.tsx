@@ -44,7 +44,9 @@ const ReadMore: FC<ReadMoreProps> = ({
         aria-expanded={isopen}
         onClick={() => handleClick()}
       >
-        {buttonlabel}
+        {isopen
+          ? `${buttonlabel && buttonlabel.opened}`
+          : `${buttonlabel && buttonlabel.closed}`}
       </button>
     </div>
   );

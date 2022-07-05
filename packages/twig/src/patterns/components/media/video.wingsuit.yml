@@ -1,0 +1,54 @@
+video:
+  use: '@components/media/video.twig'
+  label: Media
+  description: A component for displaying a video in the media component.
+  fields:
+    alt:
+      type: string
+      label: Alt
+      description: alt text for the image
+      required: true
+      preview: 'My alt text'
+    controls:
+      type: object
+      label: Video Control Labels
+      description: Labels for the various video controls
+      required: false
+      preview:
+        fullscreen: "Fullscreen"
+        play: "Play"
+        pause: "Pause"
+        volume: "Volume"
+    src:
+      type: string
+      label: Video url
+      description: url for the video
+      required: false
+      preview: "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4"
+    tracks:
+      type: string
+      label: Tracks
+      description: list of closed caption tracks, if any
+      required: false
+      preview: false
+    youtube:
+      type: string
+      label: YouTube
+      description: is this a YouTube video?
+      required: false
+      preview: false
+    url:
+      type: object
+      label: URL
+      description: The image url(s), and at which breakpoint each should be displayed.
+      required: true
+      preview:
+        - breakpoint: 0
+          src: 'https://place-hold.it/400x300?text=SmallBreakpointImage'
+        - breakpoint: 800
+          src: 'https://place-hold.it/800x600?text=MediumBreakpointImage'
+        - breakpoint: 1200
+          src: 'https://place-hold.it/1200x900?text=LargeBreakpointImage'
+        - breakpoint: 1440
+          src: 'https://place-hold.it/1600x1200?text=LargestBreakpointImage'
+  visibility: storybook

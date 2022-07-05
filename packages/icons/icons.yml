@@ -16,6 +16,30 @@
     - ILO Icons
   sizes:
     - glyph
+- name: copyright
+  friendly_name: copyright
+  aliases:
+    - ILO Icons
+  sizes:
+    - glyph
+- name: equilateraltriangle
+  friendly_name: equilateraltriangle
+  aliases:
+    - ILO Icons
+  sizes:
+    - glyph
+- name: fullscreen
+  friendly_name: fullscreen
+  aliases:
+    - ILO Icons
+  sizes:
+    - glyph
+- name: halfsquaretriangle
+  friendly_name: halfsquaretriangle
+  aliases:
+    - ILO Icons
+  sizes:
+    - glyph
 - name: listarrow
   friendly_name: listarrow
   aliases:
@@ -24,6 +48,24 @@
     - glyph
 - name: minus
   friendly_name: minus
+  aliases:
+    - ILO Icons
+  sizes:
+    - glyph
+- name: muted
+  friendly_name: muted
+  aliases:
+    - ILO Icons
+  sizes:
+    - glyph
+- name: pause
+  friendly_name: pause
+  aliases:
+    - ILO Icons
+  sizes:
+    - glyph
+- name: play
+  friendly_name: play
   aliases:
     - ILO Icons
   sizes:
@@ -40,4 +82,9 @@
     - ILO Icons
   sizes:
     - glyph
-
+- name: volume
+  friendly_name: volume
+  aliases:
+    - ILO Icons
+  sizes:
+    - glyph

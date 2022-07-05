@@ -5,16 +5,16 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-'use strict';
+"use strict";
 
-const { Metadata } = require('@carbon/icon-build-helpers');
-const path = require('path');
+const { Metadata } = require("@carbon/icon-build-helpers");
+const path = require("path");
 
 async function scaffold() {
   await Metadata.scaffold({
     input: {
-      svg: path.resolve(__dirname, '../src/svg'),
-      extensions: path.resolve(__dirname, '../'),
+      svg: path.resolve(__dirname, "../src/svg"),
+      extensions: path.resolve(__dirname, "../"),
     },
     extensions: [Metadata.extensions.icons],
   });

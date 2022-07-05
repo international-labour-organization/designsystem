@@ -5,11 +5,11 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-const path = require('path');
+const path = require("path");
 
 // Mirror of: https://github.com/rollup/rollup-plugin-virtual without the \0
 // prefix which noops in a lot of plugins
-const PREFIX = 'virtual:';
+const PREFIX = "virtual:";
 
 module.exports = function virtual(modules) {
   const resolvedIds = new Map();
@@ -19,7 +19,7 @@ module.exports = function virtual(modules) {
   });
 
   return {
-    name: 'virtual',
+    name: "virtual",
 
     resolveId(id, importer) {
       if (id in modules) {

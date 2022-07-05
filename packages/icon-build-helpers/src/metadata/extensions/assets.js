@@ -5,10 +5,10 @@
  * LICENSE file in the root directory of this assets tree.
  */
 
-'use strict';
+"use strict";
 
-const fs = require('fs-extra');
-const path = require('path');
+const fs = require("fs-extra");
+const path = require("path");
 
 /**
  * Provide source and filepath asset information for a given icon
@@ -16,7 +16,7 @@ const path = require('path');
  */
 const assets = () => {
   return {
-    name: 'assets',
+    name: "assets",
     computed: true,
     extend(metadata, _data, registry, { input }) {
       for (const entry of metadata.icons) {
@@ -25,7 +25,7 @@ const assets = () => {
           return {
             size,
             filepath: path.relative(input.svg, filepath),
-            source: fs.readFileSync(filepath, 'utf8'),
+            source: fs.readFileSync(filepath, "utf8"),
           };
         });
       }

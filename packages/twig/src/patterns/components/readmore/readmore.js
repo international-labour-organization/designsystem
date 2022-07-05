@@ -29,6 +29,12 @@ export default class ReadMore {
     // grab out HTML text to swap
     this.fulltext = this.element.dataset.fulltext;
 
+    // grab out button labels to swap
+    this.buttonlabel = {
+      closed: this.element.dataset.closed,
+      opened: this.element.dataset.opened,
+    };
+
     // Initialize the view
     this.init();
   }
@@ -98,8 +104,10 @@ export default class ReadMore {
   onClick() {
     if (this.element.classList.contains(this.openclass)) {
       this.RichText.innerHTML = this.excerpt;
+      this.ReadMoreButton.innerHTML = this.buttonlabel.closed;
     } else {
       this.RichText.innerHTML = this.fulltext;
+      this.ReadMoreButton.innerHTML = this.buttonlabel.opened;
     }
     this.element.classList.toggle(this.openclass);
     this.ReadMoreButton.classList.toggle(this.buttonopenclass);

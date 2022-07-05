@@ -5,11 +5,11 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-'use strict';
+"use strict";
 
-const svg2js = require('svgo/lib/svgo/svg2js');
-const { svgoPictograms, svgo } = require('./optimizer');
-const { getModuleName } = require('./getModuleName');
+const svg2js = require("svgo/lib/svgo/svg2js");
+const { svgoPictograms, svgo } = require("./optimizer");
+const { getModuleName } = require("./getModuleName");
 
 // Icon size targets and default size. Not used with pictograms
 const sizes = [32, 24, 20, 16];
@@ -20,7 +20,7 @@ const defaultSize = 32;
  * @property {('icons' | 'pictograms')} target
  */
 const defaultOptions = {
-  target: 'icons',
+  target: "icons",
 };
 
 /**
@@ -28,7 +28,7 @@ const defaultOptions = {
  */
 const output = (options = defaultOptions) => {
   return {
-    name: 'output',
+    name: "output",
     computed: true,
     async extend(metadata) {
       for (const icon of metadata.icons) {
@@ -39,7 +39,7 @@ const output = (options = defaultOptions) => {
           });
         }
 
-        if (options.target === 'pictograms') {
+        if (options.target === "pictograms") {
           const [asset] = icon.assets;
           const descriptor = await createDescriptor(
             icon.name,
@@ -53,7 +53,7 @@ const output = (options = defaultOptions) => {
                 icon.namespace,
                 descriptor
               ),
-              filepath: [...icon.namespace, `${icon.name}/index.js`].join('/'),
+              filepath: [...icon.namespace, `${icon.name}/index.js`].join("/"),
               descriptor,
             },
           ];
@@ -83,7 +83,7 @@ const output = (options = defaultOptions) => {
                 icon.namespace,
                 descriptor
               ),
-              filepath: [...icon.namespace, icon.name, `${size}.js`].join('/'),
+              filepath: [...icon.namespace, icon.name, `${size}.js`].join("/"),
               descriptor,
               size,
             };
@@ -91,18 +91,18 @@ const output = (options = defaultOptions) => {
         );
 
         // Handle glyph sizes that may not be one of our predetermined sizes
-        const hasGlyphAsset = icon.sizes.find((size) => size === 'glyph');
+        const hasGlyphAsset = icon.sizes.find((size) => size === "glyph");
         if (hasGlyphAsset) {
           const asset = icon.assets.find((asset) => !asset.size);
           icon.output.push({
             descriptor: await createDescriptor(
               icon.name,
               asset.optimized.data,
-              'glyph'
+              "glyph"
             ),
-            moduleName: getModuleName(icon.name, 'glyph', icon.namespace),
-            filepath: [...icon.namespace, icon.name, 'index.js'].join('/'),
-            size: 'glyph',
+            moduleName: getModuleName(icon.name, "glyph", icon.namespace),
+            filepath: [...icon.namespace, icon.name, "index.js"].join("/"),
+            size: "glyph",
           });
         }
       }
@@ -137,17 +137,17 @@ async function createDescriptor(name, data, size, original) {
     name,
     attrs: {
       ...attrs,
-      fill: 'currentColor',
+      fill: "currentColor",
     },
   };
   if (size) {
     descriptor.size = size;
-    if (size !== 'glyph') {
+    if (size !== "glyph") {
       descriptor.attrs.width = size;
       descriptor.attrs.height = size;
       descriptor.attrs.viewBox = info.attrs.viewBox;
     } else {
-      const [width, height] = info.attrs.viewBox.split(' ').slice(2);
+      const [width, height] = info.attrs.viewBox.split(" ").slice(2);
       descriptor.attrs.width = width;
       descriptor.attrs.height = height;
       descriptor.attrs.viewBox = info.attrs.viewBox;
@@ -156,7 +156,7 @@ async function createDescriptor(name, data, size, original) {
     descriptor.attrs.width = 64;
     descriptor.attrs.height = 64;
     if (info.attrs.viewBox) {
-      const [width, height] = info.attrs.viewBox.split(' ').slice(2);
+      const [width, height] = info.attrs.viewBox.split(" ").slice(2);
       descriptor.attrs.width = width;
       descriptor.attrs.height = height;
       descriptor.attrs.viewBox = info.attrs.viewBox;

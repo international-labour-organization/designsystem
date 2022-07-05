@@ -9,10 +9,10 @@
           "top": { "value": "5px" }
         },
         "medium": {
-          "bottom": { "value": "9px" },
-          "left": { "value": "20px" },
-          "right": { "value": "20px" },
-          "top": { "value": "9px" }
+          "bottom": { "value": "7px" },
+          "left": { "value": "18px" },
+          "right": { "value": "18px" },
+          "top": { "value": "7px" }
         },
         "large": {
           "bottom": { "value": "10px" },
@@ -39,6 +39,46 @@
           "left": { "value": "48px" },
           "right": { "value": "48px" },
           "top": { "value": "10px" }
+        }
+      },
+      "caption": {
+        "small": {
+          "bottom": { "value": "0" },
+          "left": { "value": "8px" },
+          "right": { "value": "0" },
+          "top": { "value": "0" }
+        },
+        "medium": {
+          "bottom": { "value": "0" },
+          "left": { "value": "8px" },
+          "right": { "value": "0" },
+          "top": { "value": "0" }
+        },
+        "large": {
+          "bottom": { "value": "0" },
+          "left": { "value": "8px" },
+          "right": { "value": "0" },
+          "top": { "value": "0" }
+        }
+      },
+      "credit": {
+        "small": {
+          "bottom": { "value": "4px" },
+          "left": { "value": "12px" },
+          "right": { "value": "8px" },
+          "top": { "value": "4px" }
+        },
+        "medium": {
+          "bottom": { "value": "4px" },
+          "left": { "value": "12px" },
+          "right": { "value": "8px" },
+          "top": { "value": "4px" }
+        },
+        "large": {
+          "bottom": { "value": "4px" },
+          "left": { "value": "12px" },
+          "right": { "value": "8px" },
+          "top": { "value": "4px" }
         }
       }
     }

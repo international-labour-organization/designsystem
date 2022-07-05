@@ -1,8 +1,20 @@
+export interface ReadMoreButtonLabelProps {
+  /**
+   * Specify the label for the closed state of the "Read More" button
+   */
+  closed?: Required<string>;
+
+  /**
+   * Specify the label for the opened state of the "Read More" button
+   */
+  opened?: Required<string>;
+}
+
 export interface ReadMoreProps {
   /**
-   * Specify a label for the "Read More" button.
+   * Specify labels for the "Read More" button.
    */
-  buttonlabel?: string;
+  buttonlabel?: Required<ReadMoreButtonLabelProps>;
 
   /**
    * Specify an optional className to be added to your Button.

@@ -46,27 +46,23 @@
     border-style: solid;
     border-width: 0;
     height: 0;
-    margin-top: -px-to-rem(map-get($spacing, "tooltip", "tooltip-arrow-width"));
+    margin-top: -map-get($spacing, "tooltip", "tooltip-arrow-width");
     position: absolute;
     width: 0;
   }
 
   &--alignment-top {
     left: 0;
-    top: calc(
-      -100% + px-to-rem(map-get($spacing, "tooltip", "tooltip-arrow-height"))
-    );
+    top: calc(-100% + map-get($spacing, "tooltip", "tooltip-arrow-height"));
 
     .ilo--tooltip__arrow {
       border-top-color: map-get($color, "tooltip", "background");
-      border-width: px-to-rem(
-          map-get($spacing, "tooltip", "tooltip-arrow-height")
-        )
-        px-to-rem(map-get($spacing, "tooltip", "tooltip-arrow-width")) 0
-        px-to-rem(map-get($spacing, "tooltip", "tooltip-arrow-width"));
-      bottom: -px-to-rem(map-get($spacing, "tooltip", "tooltip-arrow-height"));
+      border-width: map-get($spacing, "tooltip", "tooltip-arrow-height")
+        map-get($spacing, "tooltip", "tooltip-arrow-width") 0
+        map-get($spacing, "tooltip", "tooltip-arrow-width");
+      bottom: -map-get($spacing, "tooltip", "tooltip-arrow-height");
       left: 50%;
-      margin-left: -px-to-rem(map-get($spacing, "tooltip", "tooltip-arrow-width"));
+      margin-left: -map-get($spacing, "tooltip", "tooltip-arrow-width");
       top: auto;
 
       &--placement-negative {
@@ -85,20 +81,16 @@
   }
 
   &--alignment-right {
-    left: calc(100% + px-to-rem(map-get($spacing, "content-padding-med")));
-    top: calc(
-      50% - px-to-rem(map-get($spacing, "tooltip", "tooltip-arrow-width"))
-    );
+    left: calc(100% + map-get($spacing, "content-padding-med"));
+    top: calc(50% - map-get($spacing, "tooltip", "tooltip-arrow-width"));
 
     .ilo--tooltip__arrow {
       border-right-color: map-get($color, "tooltip", "background");
-      border-width: px-to-rem(
-          map-get($spacing, "tooltip", "tooltip-arrow-width")
-        )
-        px-to-rem(map-get($spacing, "tooltip", "tooltip-arrow-height"))
-        px-to-rem(map-get($spacing, "tooltip", "tooltip-arrow-width")) 0;
+      border-width: map-get($spacing, "tooltip", "tooltip-arrow-width")
+        map-get($spacing, "tooltip", "tooltip-arrow-height")
+        map-get($spacing, "tooltip", "tooltip-arrow-width") 0;
       left: 0;
-      margin-left: -px-to-rem(map-get($spacing, "tooltip", "tooltip-arrow-height"));
+      margin-left: -map-get($spacing, "tooltip", "tooltip-arrow-height");
       top: 50%;
 
       &--placement-negative {
@@ -118,21 +110,17 @@
   }
 
   &--alignment-left {
-    right: calc(100% + px-to-rem(map-get($spacing, "content-padding-med")));
-    top: calc(
-      50% - px-to-rem(map-get($spacing, "tooltip", "tooltip-arrow-width"))
-    );
+    right: calc(100% + map-get($spacing, "content-padding-med"));
+    top: calc(50% - map-get($spacing, "tooltip", "tooltip-arrow-width"));
 
     .ilo--tooltip__arrow {
       border-left-color: map-get($color, "tooltip", "background");
-      border-width: px-to-rem(
-          map-get($spacing, "tooltip", "tooltip-arrow-width")
-        )
-        0 px-to-rem(map-get($spacing, "tooltip", "tooltip-arrow-width"))
-        px-to-rem(map-get($spacing, "tooltip", "tooltip-arrow-height"));
+      border-width: map-get($spacing, "tooltip", "tooltip-arrow-width") 0
+        map-get($spacing, "tooltip", "tooltip-arrow-width")
+        map-get($spacing, "tooltip", "tooltip-arrow-height");
       left: auto;
-      margin-top: -px-to-rem(map-get($spacing, "tooltip", "tooltip-arrow-width"));
-      right: -px-to-rem(map-get($spacing, "tooltip", "tooltip-arrow-height"));
+      margin-top: -map-get($spacing, "tooltip", "tooltip-arrow-width");
+      right: -map-get($spacing, "tooltip", "tooltip-arrow-height");
       top: 50%;
 
       &--placement-negative {
@@ -153,18 +141,15 @@
 
   &--alignment-bottom {
     left: 0;
-    top: calc(
-      100% + px-to-rem(map-get($spacing, "tooltip", "tooltip-arrow-height"))
-    );
+    top: calc(100% + map-get($spacing, "tooltip", "tooltip-arrow-height"));
 
     .ilo--tooltip__arrow {
-      border-width: 0
-        px-to-rem(map-get($spacing, "tooltip", "tooltip-arrow-width"))
-        px-to-rem(map-get($spacing, "tooltip", "tooltip-arrow-height"))
-        px-to-rem(map-get($spacing, "tooltip", "tooltip-arrow-width"));
+      border-width: 0 map-get($spacing, "tooltip", "tooltip-arrow-width")
+        map-get($spacing, "tooltip", "tooltip-arrow-height")
+        map-get($spacing, "tooltip", "tooltip-arrow-width");
       left: 50%;
-      margin-left: -px-to-rem(map-get($spacing, "tooltip", "tooltip-arrow-width"));
-      margin-top: -px-to-rem(map-get($spacing, "tooltip", "tooltip-arrow-height"));
+      margin-left: -map-get($spacing, "tooltip", "tooltip-arrow-width");
+      margin-top: -map-get($spacing, "tooltip", "tooltip-arrow-height");
       top: 0;
       border-bottom-color: map-get($color, "tooltip", "background");
 

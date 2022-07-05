@@ -31,4 +31,13 @@ tag:
         false: False
       preview: false
       required: false
+    tagType:
+      type: type
+      label: Tag Type
+      description: The type of tag
+      options:
+        anchor: Anchor
+        button: Button
+        display: Display
+      preview: display
   visibility: storybook

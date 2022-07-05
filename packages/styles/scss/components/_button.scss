@@ -5,6 +5,7 @@
   display: inline-block;
   font-family: $fonts-display;
   font-weight: map-get($type, "weights", "label");
+  padding: 0;
   @include borderradius("button");
 
   .link__label,
@@ -78,7 +79,7 @@
 
         .ilo--icon {
           left: calc($spacing-icons-icon-padding-m - 4px);
-          top: calc($spacing-boxpadding-button-icon-medium-top - 3px);
+          top: calc($spacing-boxpadding-button-icon-medium-top - 6px);
         }
       }
 
@@ -90,7 +91,7 @@
 
         .ilo--icon {
           right: calc($spacing-icons-icon-padding-m - 4px);
-          top: calc($spacing-boxpadding-button-icon-medium-top - 3px);
+          top: calc($spacing-boxpadding-button-icon-medium-top - 6px);
         }
       }
     }
@@ -118,7 +119,7 @@
 
         .ilo--icon {
           left: calc($spacing-icons-icon-padding-sm - 4px);
-          top: calc($spacing-boxpadding-button-icon-small-top - 3px);
+          top: calc($spacing-boxpadding-button-icon-small-top - 4px);
         }
       }
 
@@ -130,7 +131,7 @@
 
         .ilo--icon {
           right: calc($spacing-icons-icon-padding-sm - 4px);
-          top: calc($spacing-boxpadding-button-icon-small-top - 3px);
+          top: calc($spacing-boxpadding-button-icon-small-top - 4px);
         }
       }
     }
@@ -140,20 +141,6 @@
     background-color: map-get($color, "ux", "background", "attention");
     border: map-get($borders, "base")
       map-get($color, "ux", "borders", "attention") solid;
-    color: map-get($color, "ux", "labels", "attention");
-  }
-
-  &--secondary {
-    background-color: map-get($color, "ux", "background", "default");
-    border: map-get($borders, "base")
-      map-get($color, "ux", "borders", "default") solid;
-    color: map-get($color, "ux", "labels", "actionable");
-  }
-
-  &--tertiary {
-    background-color: map-get($color, "ux", "background", "highlight");
-    border: map-get($borders, "base")
-      map-get($color, "ux", "borders", "default") solid;
     color: map-get($color, "ux", "labels", "actionable");
   }
 
@@ -183,5 +170,24 @@
   &:disabled {
     opacity: map-get($opacity, "disabled");
     pointer-events: none;
+  }
+
+  &--secondary {
+    background-color: map-get($color, "ux", "background", "default");
+    border: map-get($borders, "small")
+      map-get($color, "ux", "borders", "default") solid;
+    color: map-get($color, "ux", "labels", "actionable");
+
+    &:hover {
+      border: map-get($borders, "small")
+        map-get($color, "ux", "borders", "hover") solid;
+    }
+  }
+
+  &--tertiary {
+    background-color: map-get($color, "ux", "background", "highlight");
+    border: map-get($borders, "base")
+      map-get($color, "ux", "background", "highlight") solid;
+    color: map-get($color, "ux", "labels", "actionable");
   }
 }

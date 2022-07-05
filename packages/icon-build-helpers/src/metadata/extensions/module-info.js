@@ -5,19 +5,19 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-'use strict';
+"use strict";
 
-const { pascalCase } = require('change-case');
-const path = require('path');
-const parser = require('svgson');
-const { svgo } = require('./output/optimizer');
+const { pascalCase } = require("change-case");
+const path = require("path");
+const parser = require("svgson");
+const { svgo } = require("./output/optimizer");
 
 /**
  * @type {Extension}
  */
 const moduleInfo = () => {
   return {
-    name: 'module-info',
+    name: "module-info",
     computed: true,
     async extend(metadata) {
       for (const icon of metadata.icons) {
@@ -61,7 +61,7 @@ function getGlobalName(name, namespace = []) {
   let moduleName = namespace
     .filter((size) => isNaN(size))
     .map(pascalCase)
-    .join('');
+    .join("");
 
   moduleName = moduleName + getLocalName(name);
 
@@ -88,7 +88,7 @@ function getLocalName(name) {
  */
 function safe(name) {
   if (!isNaN(name[0])) {
-    return '_' + name;
+    return "_" + name;
   }
   return name;
 }
@@ -102,14 +102,14 @@ function parse(input) {
   const root = parser.parseSync(input);
 
   function transform(node) {
-    if (node.type === 'element') {
-      if (node.name === 'svg') {
+    if (node.type === "element") {
+      if (node.name === "svg") {
         return {
           type: node.type,
           tagName: node.name,
           attributes: {
             ...transformAttributes(node.attributes),
-            fill: 'currentColor',
+            fill: "currentColor",
           },
           children: node.children.map(transform),
         };
@@ -129,11 +129,11 @@ function parse(input) {
   function transformAttributes(attributes) {
     const result = {};
     for (const [key, value] of Object.entries(attributes)) {
-      if (typeof value === 'string') {
+      if (typeof value === "string") {
         // In our Adobe Illustrator exports, some attributes in the SVG contain
         // a \t sequence that is included in the parsed SVG ast. Here, we remove
         // it and replace it with a space as the whitespace character
-        result[key] = value.replace(/\t/g, ' ');
+        result[key] = value.replace(/\t/g, " ");
       }
     }
     return result;

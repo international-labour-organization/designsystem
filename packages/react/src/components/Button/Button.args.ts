@@ -65,7 +65,7 @@ const disabled: ButtonProps = {
   url: "",
 };
 
-const iconleftlg: ButtonProps = {
+const iconleftlgprimary: ButtonProps = {
   callback: "",
   children: "",
   icon: "close",
@@ -75,7 +75,7 @@ const iconleftlg: ButtonProps = {
   url: "",
 };
 
-const iconleftm: ButtonProps = {
+const iconleftmprimary: ButtonProps = {
   callback: "",
   children: "",
   icon: "close",
@@ -85,7 +85,7 @@ const iconleftm: ButtonProps = {
   url: "",
 };
 
-const iconleftsm: ButtonProps = {
+const iconleftsmprimary: ButtonProps = {
   callback: "",
   children: "",
   icon: "close",
@@ -95,7 +95,7 @@ const iconleftsm: ButtonProps = {
   url: "",
 };
 
-const iconrightlg: ButtonProps = {
+const iconrightlgprimary: ButtonProps = {
   callback: "",
   children: "",
   icon: "close",
@@ -106,7 +106,7 @@ const iconrightlg: ButtonProps = {
   url: "",
 };
 
-const iconrightm: ButtonProps = {
+const iconrightmprimary: ButtonProps = {
   callback: "",
   children: "",
   icon: "close",
@@ -117,7 +117,7 @@ const iconrightm: ButtonProps = {
   url: "",
 };
 
-const iconrightsm: ButtonProps = {
+const iconrightsmprimary: ButtonProps = {
   callback: "",
   children: "",
   icon: "close",
@@ -125,6 +125,132 @@ const iconrightsm: ButtonProps = {
   label: "Icon on right",
   size: "small",
   type: "primary",
+  url: "",
+};
+
+const iconleftlgsecondary: ButtonProps = {
+  callback: "",
+  children: "",
+  icon: "close",
+  label: "Icon on left",
+  size: "large",
+  type: "secondary",
+  url: "",
+};
+
+const iconleftmsecondary: ButtonProps = {
+  callback: "",
+  children: "",
+  icon: "close",
+  label: "Icon on left",
+  size: "medium",
+  type: "secondary",
+  url: "",
+};
+
+const iconleftsmsecondary: ButtonProps = {
+  callback: "",
+  children: "",
+  icon: "close",
+  label: "Icon on left",
+  size: "small",
+  type: "secondary",
+  url: "",
+};
+
+const iconrightlgsecondary: ButtonProps = {
+  callback: "",
+  children: "",
+  icon: "close",
+  iconPosition: "right",
+  label: "Icon on right",
+  size: "large",
+  type: "secondary",
+  url: "",
+};
+
+const iconrightmsecondary: ButtonProps = {
+  callback: "",
+  children: "",
+  icon: "close",
+  iconPosition: "right",
+  label: "Icon on right",
+  size: "medium",
+  type: "secondary",
+  url: "",
+};
+
+const iconrightsmsecondary: ButtonProps = {
+  callback: "",
+  children: "",
+  icon: "close",
+  iconPosition: "right",
+  label: "Icon on right",
+  size: "small",
+  type: "secondary",
+  url: "",
+};
+
+const iconleftlgtertiary: ButtonProps = {
+  callback: "",
+  children: "",
+  icon: "close",
+  label: "Icon on left",
+  size: "large",
+  type: "tertiary",
+  url: "",
+};
+
+const iconleftmtertiary: ButtonProps = {
+  callback: "",
+  children: "",
+  icon: "close",
+  label: "Icon on left",
+  size: "medium",
+  type: "tertiary",
+  url: "",
+};
+
+const iconleftsmtertiary: ButtonProps = {
+  callback: "",
+  children: "",
+  icon: "close",
+  label: "Icon on left",
+  size: "small",
+  type: "tertiary",
+  url: "",
+};
+
+const iconrightlgtertiary: ButtonProps = {
+  callback: "",
+  children: "",
+  icon: "close",
+  iconPosition: "right",
+  label: "Icon on right",
+  size: "large",
+  type: "tertiary",
+  url: "",
+};
+
+const iconrightmtertiary: ButtonProps = {
+  callback: "",
+  children: "",
+  icon: "close",
+  iconPosition: "right",
+  label: "Icon on right",
+  size: "medium",
+  type: "tertiary",
+  url: "",
+};
+
+const iconrightsmtertiary: ButtonProps = {
+  callback: "",
+  children: "",
+  icon: "close",
+  iconPosition: "right",
+  label: "Icon on right",
+  size: "small",
+  type: "tertiary",
   url: "",
 };
 
@@ -139,12 +265,24 @@ const ButtonArgs = {
   secondary,
   tertiary,
   disabled,
-  iconleftlg,
-  iconleftm,
-  iconleftsm,
-  iconrightlg,
-  iconrightm,
-  iconrightsm,
+  iconleftlgprimary,
+  iconleftmprimary,
+  iconleftsmprimary,
+  iconrightlgprimary,
+  iconrightmprimary,
+  iconrightsmprimary,
+  iconleftlgsecondary,
+  iconleftmsecondary,
+  iconleftsmsecondary,
+  iconrightlgsecondary,
+  iconrightmsecondary,
+  iconrightsmsecondary,
+  iconleftlgtertiary,
+  iconleftmtertiary,
+  iconleftsmtertiary,
+  iconrightlgtertiary,
+  iconrightmtertiary,
+  iconrightsmtertiary,
 };
 
 export default ButtonArgs;

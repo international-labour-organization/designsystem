@@ -151,6 +151,78 @@ export const MIconRightButton = ButtonTemplate.bind({});
  */
 export const SmIconRightButton = ButtonTemplate.bind({});
 
+/**
+ * Large Button With Icon on the Left Instance
+ *
+ */
+export const LgSecondaryIconLeftButton = ButtonTemplate.bind({});
+
+/**
+ * Medium Button With Icon on the Left Instance
+ *
+ */
+export const MSecondaryIconLeftButton = ButtonTemplate.bind({});
+
+/**
+ * Small Button With Icon on the Left Instance
+ *
+ */
+export const SmSecondaryIconLeftButton = ButtonTemplate.bind({});
+
+/**
+ * Large Button With Icon on the Right Instance
+ *
+ */
+export const LgSecondaryIconRightButton = ButtonTemplate.bind({});
+
+/**
+ * Medium Button With Icon on the Right Instance
+ *
+ */
+export const MSecondaryIconRightButton = ButtonTemplate.bind({});
+
+/**
+ * Small Button With Icon on the Right Instance
+ *
+ */
+export const SmSecondaryIconRightButton = ButtonTemplate.bind({});
+
+/**
+ * Large Button With Icon on the Left Instance
+ *
+ */
+export const LgTertiaryIconLeftButton = ButtonTemplate.bind({});
+
+/**
+ * Medium Button With Icon on the Left Instance
+ *
+ */
+export const MTertiaryIconLeftButton = ButtonTemplate.bind({});
+
+/**
+ * Small Button With Icon on the Left Instance
+ *
+ */
+export const SmTertiaryIconLeftButton = ButtonTemplate.bind({});
+
+/**
+ * Large Button With Icon on the Right Instance
+ *
+ */
+export const LgTertiaryIconRightButton = ButtonTemplate.bind({});
+
+/**
+ * Medium Button With Icon on the Right Instance
+ *
+ */
+export const MTertiaryIconRightButton = ButtonTemplate.bind({});
+
+/**
+ * Small Button With Icon on the Right Instance
+ *
+ */
+export const SmTertiaryIconRightButton = ButtonTemplate.bind({});
+
 // enumerate the props for the large button
 BaseButton.args = buttonArgs.large;
 BaseButton.args.url = "#";
@@ -186,32 +258,101 @@ DisabledButton.args = buttonArgs.disabled;
 DisabledButton.args.url = "";
 DisabledButton.storyName = "Disabled Button";
 
-// enumerate the props for a large icon left button
-LgIconLeftButton.args = buttonArgs.iconleftlg;
+// enumerate the props for a large primary icon left button
+LgIconLeftButton.args = buttonArgs.iconleftlgprimary;
 LgIconLeftButton.args.url = "";
-LgIconLeftButton.storyName = "Large Button with icon on left";
+LgIconLeftButton.storyName = "Large Primary Button with icon on left";
 
-// enumerate the props for a medium icon left button
-MIconLeftButton.args = buttonArgs.iconleftm;
+// enumerate the props for a medium primary icon left button
+MIconLeftButton.args = buttonArgs.iconleftmprimary;
 MIconLeftButton.args.url = "";
-MIconLeftButton.storyName = "Medium Button with icon on left";
+MIconLeftButton.storyName = "Medium Primary Button with icon on left";
 
-// enumerate the props for a small icon left button
-SmIconLeftButton.args = buttonArgs.iconleftsm;
+// enumerate the props for a small primary icon left button
+SmIconLeftButton.args = buttonArgs.iconleftsmprimary;
 SmIconLeftButton.args.url = "";
-SmIconLeftButton.storyName = "Small Button with icon on left";
+SmIconLeftButton.storyName = "Small Primary Button with icon on left";
 
-// enumerate the props for a large icon right button
-LgIconRightButton.args = buttonArgs.iconrightlg;
+// enumerate the props for a large primary icon right button
+LgIconRightButton.args = buttonArgs.iconrightlgprimary;
 LgIconRightButton.args.url = "";
-LgIconRightButton.storyName = "Large Button with icon on right";
+LgIconRightButton.storyName = "Large Primary Button with icon on right";
 
-// enumerate the props for a medium icon right button
-MIconRightButton.args = buttonArgs.iconrightm;
+// enumerate the props for a medium primary icon right button
+MIconRightButton.args = buttonArgs.iconrightmprimary;
 MIconRightButton.args.url = "";
-MIconRightButton.storyName = "Medium Button with icon on right";
+MIconRightButton.storyName = "Medium Primary Button with icon on right";
 
-// enumerate the props for a small icon right button
-SmIconRightButton.args = buttonArgs.iconrightsm;
+// enumerate the props for a small primary icon right button
+SmIconRightButton.args = buttonArgs.iconrightsmprimary;
 SmIconRightButton.args.url = "";
-SmIconRightButton.storyName = "Small Button with icon on right;";
+SmIconRightButton.storyName = "Small Primary Button with icon on right;";
+
+// enumerate the props for a large secondary icon left button
+LgSecondaryIconLeftButton.args = buttonArgs.iconleftlgsecondary;
+LgSecondaryIconLeftButton.args.url = "";
+LgSecondaryIconLeftButton.storyName =
+  "Large Secondary Button with icon on left";
+
+// enumerate the props for a medium secondary icon left button
+MSecondaryIconLeftButton.args = buttonArgs.iconleftmsecondary;
+MSecondaryIconLeftButton.args.url = "";
+MSecondaryIconLeftButton.storyName =
+  "Medium Secondary Button with icon on left";
+
+// enumerate the props for a small secondary icon left button
+SmSecondaryIconLeftButton.args = buttonArgs.iconleftsmsecondary;
+SmSecondaryIconLeftButton.args.url = "";
+SmSecondaryIconLeftButton.storyName =
+  "Small Secondary Button with icon on left";
+
+// enumerate the props for a large secondary icon right button
+LgSecondaryIconRightButton.args = buttonArgs.iconrightlgsecondary;
+LgSecondaryIconRightButton.args.url = "";
+LgSecondaryIconRightButton.storyName =
+  "Large Secondary Button with icon on right";
+
+// enumerate the props for a medium secondary icon right button
+MSecondaryIconRightButton.args = buttonArgs.iconrightmsecondary;
+MSecondaryIconRightButton.args.url = "";
+MSecondaryIconRightButton.storyName =
+  "Medium Secondary Button with icon on right";
+
+// enumerate the props for a small secondary icon right button
+SmSecondaryIconRightButton.args = buttonArgs.iconrightsmsecondary;
+SmSecondaryIconRightButton.args.url = "";
+SmSecondaryIconRightButton.storyName =
+  "Small Secondary Button with icon on right;";
+
+// enumerate the props for a large tertiary icon left button
+LgTertiaryIconLeftButton.args = buttonArgs.iconleftlgtertiary;
+LgTertiaryIconLeftButton.args.url = "";
+LgTertiaryIconLeftButton.storyName = "Large Tertiary Button with icon on left";
+
+// enumerate the props for a medium tertiary icon left button
+MTertiaryIconLeftButton.args = buttonArgs.iconleftmtertiary;
+MTertiaryIconLeftButton.args.url = "";
+MTertiaryIconLeftButton.storyName = "Medium Tertiary Button with icon on left";
+
+// enumerate the props for a small tertiary icon left button
+SmTertiaryIconLeftButton.args = buttonArgs.iconleftsmtertiary;
+SmTertiaryIconLeftButton.args.url = "";
+SmTertiaryIconLeftButton.storyName = "Small Tertiary Button with icon on left";
+
+// enumerate the props for a large tertiary icon right button
+LgTertiaryIconRightButton.args = buttonArgs.iconrightlgtertiary;
+LgTertiaryIconRightButton.args.url = "";
+LgTertiaryIconRightButton.storyName =
+  "Large Tertiary Button with icon on right";
+
+// enumerate the props for a medium tertiary icon right button
+MTertiaryIconRightButton.args = buttonArgs.iconrightmtertiary;
+MTertiaryIconRightButton.args.url = "";
+MTertiaryIconRightButton.storyName =
+  "Medium Tertiary Button with icon on right";
+
+// enumerate the props for a small tertiary icon right button
+SmTertiaryIconRightButton.args = buttonArgs.iconrightsmtertiary;
+SmTertiaryIconRightButton.args.url = "";
+SmTertiaryIconRightButton.storyName =
+  "Small Tertiary Button with icon on right;";

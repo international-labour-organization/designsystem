@@ -5,9 +5,9 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-'use strict';
+"use strict";
 
-const Joi = require('joi');
+const Joi = require("joi");
 
 /**
  * The default icons extension for the metadata. This validates an icon file
@@ -16,7 +16,7 @@ const Joi = require('joi');
  */
 const icons = () => {
   return {
-    name: 'icons',
+    name: "icons",
 
     /**
      * The base schema for an icons.<format> file. Icons should have the following
@@ -27,7 +27,7 @@ const icons = () => {
         name: Joi.string().required(),
         friendly_name: Joi.string().required(),
         sizes: Joi.array().items(
-          Joi.string().valid('glyph'),
+          Joi.string().valid("glyph"),
           Joi.number().valid([16, 20, 24, 32])
         ),
         aliases: Joi.array().items(Joi.string()),
@@ -55,8 +55,8 @@ const icons = () => {
         // entry in metadata does not already contain a mention of glyph, then
         // we'll add it in.
         for (const asset of icon.assets) {
-          if (!asset.size && !entry.sizes.includes('glyph')) {
-            entry.sizes.push('glyph');
+          if (!asset.size && !entry.sizes.includes("glyph")) {
+            entry.sizes.push("glyph");
           }
         }
       }
@@ -73,7 +73,7 @@ const icons = () => {
         if (!metadata) {
           const filepaths = item.assets
             .map((asset) => asset.filepath)
-            .join('\n');
+            .join("\n");
           throw new Error(
             `Expected the icon \`${item.id}\` to be defined in the data ` +
               `metadata file. Found matches for this asset in the following ` +
@@ -86,7 +86,7 @@ const icons = () => {
         // Verify that all the size information from the
         for (const size of metadata.sizes) {
           const match = item.assets.find((asset) => {
-            if (size === 'glyph') {
+            if (size === "glyph") {
               return asset.size === undefined;
             }
             return asset.size === size;
@@ -103,7 +103,7 @@ const icons = () => {
         for (const asset of item.assets) {
           const match = metadata.sizes.find((size) => {
             if (asset.size === undefined) {
-              return size === 'glyph';
+              return size === "glyph";
             }
             return size === asset.size;
           });
