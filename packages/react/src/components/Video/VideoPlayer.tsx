@@ -162,7 +162,7 @@ const VideoPlayer: FC<VideoPlayerProps> = ({
   };
 
   return (
-    <div className={baseClass}>
+    <div className={`${baseClass}--container`}>
       <ReactPlayer
         className={playerClasses}
         config={playerconfig as any}

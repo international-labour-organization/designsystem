@@ -1,0 +1,20 @@
+{#
+  IMAGE COMPONENT
+#}
+
+<figure class="{{prefix}}--image" data-prefix="{{prefix}}"">
+  <div class="image {{prefix}}--image--wrapper">
+    <picture class="{{prefix}}--image--img">
+      {% for img in url|reverse|slice(0,-1) %}
+      <source srcset="{{img.src}}" media="(min-width: {{img.breakpoint}}px)">
+      {% endfor %}
+      <img src="{{url|reverse|last.src}}" alt="{{alt}}">
+    </picture>
+    {% if credit %}
+    <span class="{{prefix}}--credit">
+      <span class="{{prefix}}--credit--label">{{credit}}</span>
+    </span>
+    {% endif %}
+  </div>
+  <figcaption class="{{prefix}}--image--caption">{{caption}}</figcaption>
+</figure>
