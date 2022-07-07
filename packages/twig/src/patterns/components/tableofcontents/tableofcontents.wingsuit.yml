@@ -1,0 +1,22 @@
+tableofcontents:
+  use: '@components/tableofcontents/tableofcontents.twig'
+  label: Table Of Contents
+  description: A component for displaying links internal to a page
+  fields:
+    items:
+      type: object
+      label: Items
+      description: The items in the table of contents.
+      required: true
+      preview:
+        - label: "Item One"
+          href: '#example'
+        - label: "Item Two"
+          href: '#example'
+        - label: "Item Three"
+          href: '#example'
+        - label: "Item Four"
+          href: '#example'
+        - label: "Item Five"
+          href: '#example'
+  visibility: storybook

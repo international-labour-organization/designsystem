@@ -1,0 +1,14 @@
+{#
+  TABLE OF CONTENTS COMPONENT
+#}
+{% if items %}
+  <nav class="{{prefix}}--table-of-contents">
+    <ul class="{{prefix}}--table-of-contents--list">
+      {% for item in items %}
+        <li class="{{prefix}}--table-of-contents--list--item">
+          <a class="{{prefix}}--table-of-contents--link" href="{{item.href}}">{{item.label}}</a>
+        </li>
+      {% endfor %}
+    </ul>
+  </nav>
+{% endif %}
