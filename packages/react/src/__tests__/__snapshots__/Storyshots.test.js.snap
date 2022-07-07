@@ -1602,6 +1602,75 @@ exports[`Storyshots Components/SearchField SearchField Error 1`] = `
 </div>
 `;
 
+exports[`Storyshots Components/TableOfContents Table Of Contents 1 1`] = `
+<div
+  style={
+    Object {
+      "margin": "3em",
+    }
+  }
+>
+  <nav
+    className="ilo--table-of-contents"
+  >
+    <ul
+      className="ilo--table-of-contents--list"
+    >
+      <li
+        className="ilo--table-of-contents--list--item"
+      >
+        <a
+          className="ilo--table-of-contents--link"
+          href="#example"
+        >
+          Item One
+        </a>
+      </li>
+      <li
+        className="ilo--table-of-contents--list--item"
+      >
+        <a
+          className="ilo--table-of-contents--link"
+          href="#example"
+        >
+          Item Two
+        </a>
+      </li>
+      <li
+        className="ilo--table-of-contents--list--item"
+      >
+        <a
+          className="ilo--table-of-contents--link"
+          href="#example"
+        >
+          Item Three
+        </a>
+      </li>
+      <li
+        className="ilo--table-of-contents--list--item"
+      >
+        <a
+          className="ilo--table-of-contents--link"
+          href="#example"
+        >
+          Item Four
+        </a>
+      </li>
+      <li
+        className="ilo--table-of-contents--list--item"
+      >
+        <a
+          className="ilo--table-of-contents--link"
+          href="#example"
+        >
+          Item Five
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>
+`;
+
 exports[`Storyshots Components/Tag Anchor Tag 1`] = `
 <div
   style={
