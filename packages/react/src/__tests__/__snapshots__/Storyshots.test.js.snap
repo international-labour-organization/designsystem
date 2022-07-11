@@ -1156,6 +1156,61 @@ exports[`Storyshots Components/Heading Heading Level 6 1`] = `
 </div>
 `;
 
+exports[`Storyshots Components/Image Image 1`] = `
+<div
+  style={
+    Object {
+      "margin": "3em",
+    }
+  }
+>
+  <figure
+    className="image ilo--media"
+  >
+    <div
+      className="image ilo--media--wrapper"
+    >
+      <picture
+        className="ilo--media--img"
+      >
+        <source
+          media="(min-width: 1440px)"
+          srcSet="https://place-hold.it/1600x1200?text=LargestBreakpointImage"
+        />
+        <source
+          media="(min-width: 1200px)"
+          srcSet="https://place-hold.it/1200x900?text=LargeBreakpointImage"
+        />
+        <source
+          media="(min-width: 800px)"
+          srcSet="https://place-hold.it/800x600?text=MediumBreakpointImage"
+        />
+        <img
+          alt="My alt text"
+          src="https://place-hold.it/400x300?text=SmallBreakpointImage"
+        />
+      </picture>
+      <span
+        className="ilo--credit"
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+      >
+        <span
+          className="ilo--credit--label"
+        >
+          Photo: copyright 2022 Person S. Name
+        </span>
+      </span>
+    </div>
+    <figcaption
+      className="ilo--media--caption"
+    >
+      my image caption
+    </figcaption>
+  </figure>
+</div>
+`;
+
 exports[`Storyshots Components/Link Dark Link 1`] = `
 <div
   style={

@@ -5,6 +5,31 @@
 .ilo--video {
   position: relative;
 
+  &--wrapper {
+    line-height: 0;
+    position: relative;
+    width: 100%;
+  }
+
+  &--img {
+    line-height: 0;
+  }
+
+  &--img,
+  img {
+    width: 100%;
+  }
+
+  &--caption {
+    border-left: $spacing-ux-caption-border-left solid
+      $color-ux-caption-border-left;
+    color: $color-font-caption;
+    font-weight: 400;
+    margin-top: px-to-rem(map-get($spacing, "padding-2"));
+    padding-left: px-to-rem(map-get($spacing, "padding-1"));
+    @include font-styles("image-caption");
+  }
+
   &:focus,
   .vjs-tech:focus {
     outline: none;
@@ -562,7 +587,7 @@
   }
 
   .vjs-control-bar {
-    bottom: 43px;
+    bottom: 0;
     left: -5px;
     width: calc(100% + 5px);
   }
@@ -579,7 +604,6 @@
         height: 158px;
         justify-content: flex-start;
         left: 0;
-        top: -27px;
         width: 80px;
       }
     }
@@ -633,4 +657,8 @@
   .vjs-control-text {
     display: none !important;
   }
+}
+
+.ilo--video--container {
+  position: relative;
 }

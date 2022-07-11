@@ -1,4 +1,16 @@
-export interface VideoPlayerControls {
+interface ImageUrl {
+  /**
+   * Specify the breakpoint at which this image src should be used
+   */
+  breakpoint?: number;
+
+  /**
+   * Specify the url of this breakpoint's image src
+   */
+  src?: string;
+}
+
+interface VideoPlayerControls {
   /**
    * Specify the label for the fullscreen button
    */
@@ -20,50 +32,11 @@ export interface VideoPlayerControls {
   volume?: Required<string>;
 }
 
-interface ImageUrl {
-  /**
-   * Specify the breakpoint at which this image src should be used
-   */
-  breakpoint?: number;
-
-  /**
-   * Specify the url of this breakpoint's image src
-   */
-  src?: string;
-}
-
-export interface TracksConfig {
-  /**
-   * is this the default track?
-   */
-  default?: boolean;
-
-  /**
-   * What kind of track is it?
-   */
-  kind?: string;
-
-  /**
-   * url for the track
-   */
-  src?: string;
-
-  /**
-   * language of the track
-   */
-  srcLang?: string;
-}
-
 interface Video {
   /**
    * Specify the strings to be used as labels for the video controls
    */
   controls?: Required<VideoPlayerControls | false>;
-
-  /**
-   * Specify whether a video is to be shown
-   */
-  hasvideo?: Required<boolean>;
 
   /**
    * if self-hosted, specify the url of this video
@@ -81,7 +54,7 @@ interface Video {
   youtube?: boolean;
 }
 
-export interface MediaProps {
+export interface VideoProps {
   /**
    * Specify the alt for the image
    */
@@ -96,11 +69,6 @@ export interface MediaProps {
    * Specify an optional className to be added to your Media.
    */
   className?: string;
-
-  /**
-   * Specify the credit for the image/video
-   */
-  credit?: Required<string>;
 
   /**
    * Specify the image src for the image
