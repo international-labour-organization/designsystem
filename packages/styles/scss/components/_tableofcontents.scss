@@ -59,6 +59,31 @@
       width: 100%;
       @include dataurlicon("stemarrow", $color-ux-labels-hover);
     }
+
+    &:active {
+      background-color: $color-ux-tableofcontents-items-active-background;
+      border-bottom: $color-ux-tableofcontents-items-active-border
+        $spacing-ux-tableofcontents-items-border-bottom solid;
+      background-position: calc(100% - 40px) center;
+      color: $color-ux-tableofcontents-items-active-color;
+      margin: 0;
+      outline: none;
+      padding: $spacing-ux-tableofcontents-items-padding-top
+        calc(
+          $spacing-ux-tableofcontents-items-padding-right +
+            $spacing-ux-tableofcontents-padding-right
+        )
+        $spacing-ux-tableofcontents-items-padding-bottom
+        calc(
+          $spacing-ux-tableofcontents-items-padding-left +
+            $spacing-ux-tableofcontents-padding-left
+        );
+      width: 100%;
+      @include dataurlicon(
+        "stemarrow",
+        $color-ux-tableofcontents-items-active-icon
+      );
+    }
   }
 
   &--list--item:last-of-type {
