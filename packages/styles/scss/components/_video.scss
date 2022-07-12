@@ -92,8 +92,9 @@
     justify-content: flex-start;
     left: 0;
     height: px-to-rem($spacing-ux-video-controls-height);
-    opacity: 1;
+    opacity: 0;
     position: absolute;
+    transition: opacity 150ms ease-out;
     width: 100%;
 
     &.notplayed {
@@ -643,6 +644,7 @@
     .ilo--video--controls,
     .vjs-control-bar {
       opacity: 1;
+      transition: opacity 150ms ease-out;
     }
   }
 
