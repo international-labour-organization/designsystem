@@ -1958,3 +1958,42 @@ exports[`Storyshots Components/Tag Display Tag 1`] = `
   </ul>
 </div>
 `;
+
+exports[`Storyshots Components/Tooltip Tooltip 1`] = `
+<div
+  style={
+    Object {
+      "margin": "3em",
+    }
+  }
+>
+  <div
+    className="ilo--tooltip__wrapper"
+    onBlur={[Function]}
+    onFocus={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  >
+    <a
+      href="https://www.google.com/"
+    >
+      This is testing for the tooltip
+    </a>
+    <span
+      className="ilo--tooltip ilo--tooltip--dark ilo--tooltip--alignment-left"
+      style={
+        Object {
+          "left": "0px",
+          "top": "0px",
+        }
+      }
+    >
+      <span
+        className="ilo--tooltip__arrow ilo--tooltip__arrow--placement-center"
+        role="presentation"
+      />
+      This is a tooltip!
+    </span>
+  </div>
+</div>
+`;
