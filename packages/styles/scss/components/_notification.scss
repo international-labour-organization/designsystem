@@ -1,0 +1,111 @@
+@use "../tokens" as *;
+@import "../mixins";
+@import "../animations";
+
+.ilo--notification {
+  background-color: $color-ux-notification-background;
+  box-shadow: 0px 0.8px 1.6px rgba(30, 45, 190, 0.038),
+    0px 4px 8px rgba(30, 45, 190, 0.054), 0px 10px 20px rgba(30, 45, 190, 0.08),
+    0px -4px 16px rgba(30, 45, 190, 0.054);
+  border-radius: 2px;
+  color: $color-ux-notification-text;
+  position: relative;
+
+  &--dialog {
+    max-width: 340px;
+    width: 100%;
+
+    @include breakpoint("medium") {
+      max-width: 490px;
+    }
+
+    .ilo--notification--content {
+      padding: 28px 24px;
+    }
+  }
+
+  &--inline {
+    width: 100%;
+
+    .ilo--notification--content {
+      padding: 24px;
+    }
+  }
+
+  &--content {
+    margin-left: 40px;
+    position: relative;
+    width: calc(100% - 40px);
+
+    &:before {
+      content: "";
+      display: block;
+      height: 100%;
+      left: -40px;
+      position: absolute;
+      width: 40px;
+      top: 0;
+
+      .icon--error & {
+        background-color: $color-ux-notification-type-error;
+      }
+
+      .icon--info & {
+        background-color: $color-ux-notification-type-info;
+      }
+
+      .icon--success & {
+        background-color: $color-ux-notification-type-success;
+      }
+
+      .icon--warning & {
+        background-color: $color-ux-notification-type-warning;
+      }
+    }
+  }
+
+  &--headline {
+    font-weight: 700;
+    margin-bottom: 24px;
+    @include font-styles("body-small");
+  }
+
+  &--copy {
+    font-weight: 400;
+    margin-bottom: 24px;
+    @include font-styles("body-xs");
+  }
+
+  &--date {
+    color: $color-base-neutrals-medium;
+    display: block;
+    font-weight: 400;
+    margin-bottom: 24px;
+    @include font-styles("body-xs");
+  }
+
+  &--close {
+    background-color: $color-ux-background-highlight;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 24px;
+    border: none;
+    height: 40px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 40px;
+    @include dataurlicon("close", $color-ux-labels-actionable);
+
+    &:hover,
+    &:focus {
+      background-color: $color-ux-background-hover;
+      cursor: pointer;
+      @include dataurlicon("close", $color-ux-labels-hover);
+    }
+
+    span {
+      @include isVisuallyHidden();
+    }
+  }
+}

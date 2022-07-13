@@ -67,7 +67,7 @@ const Notification: FC<NotificationProps> = ({
             type="button"
             onClick={() => handleClick()}
           >
-            {closelabel}
+            <span>{closelabel}</span>
           </button>
         </div>
       )}

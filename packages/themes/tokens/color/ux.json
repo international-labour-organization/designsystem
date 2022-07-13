@@ -50,6 +50,17 @@
       "horizontal-rule": {
         "default": { "value": "{color.base.neutrals.lighter}" }
       },
+      "notification": {
+        "background": { "value": "{color.base.neutrals.white}" },
+        "icon": { "value": "{color.base.neutrals.white}" },
+        "text": { "value": "{color.base.neutrals.dark}" },
+        "type": {
+          "error":  {"value": "{color.base.blue.medium}"},
+          "info":  {"value": "{color.base.blue.medium}"},
+          "success": { "value": "{color.base.red.medium}"},
+          "warning":  {"value": "{color.base.yellow}"}
+        }
+      },
       "readmore": {
         "default": {
           "background": { "value": "transparent" },
