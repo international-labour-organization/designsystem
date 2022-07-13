@@ -1,0 +1,18 @@
+{#
+  NOTIFICATION COMPONENT
+#}
+<div class="{{prefix}}--notification {{prefix}}--notification--{{placement}} icon icon--{{type}}" role="status" aria-live="polite" aria-relevant="additions">
+  <div class="{{prefix}}--notification--content">
+    <h2 class="{{prefix}}--notification--headline">{{headline}}</h2>
+    <p class="{{prefix}}--notification--copy">{{copy}}</p>
+    {% if timestamp %}
+      <time class="{{prefix}}--notification--date" datetime="{{timestamp.unix}}">{{timestamp.human}}</time>
+    {% endif %}
+    {% if cta %}
+      <a class="{{prefix}}--notification--cta {{prefix}}--button {{prefix}}--button--small {{prefix}}--button--secondary  --light" href="{{cta.url}}">
+        <span class="link__label">{{cta.label}}</span>
+      </a>
+    {% endif %}
+  </div>
+  <button class="{{prefix}}--notification--close" type="button"><span>{{closelabel}}</span></button>
+</div>
