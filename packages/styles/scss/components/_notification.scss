@@ -1,4 +1,5 @@
 @use "../tokens" as *;
+@use "../functions" as *;
 @import "../mixins";
 @import "../animations";
 
@@ -20,7 +21,8 @@
     }
 
     .ilo--notification--content {
-      padding: 28px 24px;
+      padding: calc(px-to-rem($spacing-padding-3) - 2px)
+        px-to-rem($spacing-padding-3);
     }
   }
 
@@ -28,73 +30,114 @@
     width: 100%;
 
     .ilo--notification--content {
-      padding: 24px;
+      align-items: center;
+      display: flex;
+      justify-items: space-between;
+      padding: px-to-rem(28px) px-to-rem($spacing-padding-3);
     }
   }
 
   &--content {
-    margin-left: 40px;
+    margin-left: px-to-rem($spacing-padding-5);
     position: relative;
     width: calc(100% - 40px);
 
     &:before {
+      background-position: center $spacing-padding-3;
+      background-repeat: no-repeat;
+      background-size: px-to-rem($spacing-padding-2);
       content: "";
       display: block;
       height: 100%;
       left: -40px;
       position: absolute;
-      width: 40px;
+      width: px-to-rem($spacing-padding-5);
       top: 0;
+
+      .ilo--notification--inline & {
+        background-position: center;
+      }
 
       .icon--error & {
         background-color: $color-ux-notification-type-error;
+        @include dataurlicon("error", $color-ux-notification-icon);
       }
 
       .icon--info & {
         background-color: $color-ux-notification-type-info;
+        @include dataurlicon("info", $color-ux-notification-icon);
       }
 
       .icon--success & {
         background-color: $color-ux-notification-type-success;
+        @include dataurlicon("success", $color-ux-notification-icon);
       }
 
       .icon--warning & {
         background-color: $color-ux-notification-type-warning;
+        @include dataurlicon("warning", $color-ux-notification-icon);
       }
     }
   }
 
   &--headline {
     font-weight: 700;
-    margin-bottom: 24px;
     @include font-styles("body-small");
+
+    .ilo--notification--dialog & {
+      margin-bottom: px-to-rem($spacing-padding-3);
+    }
   }
 
   &--copy {
     font-weight: 400;
-    margin-bottom: 24px;
     @include font-styles("body-xs");
+
+    .ilo--notification--inline & {
+      margin-left: px-to-rem($spacing-padding-3);
+    }
+
+    &:not(:last-child) {
+      .ilo--notification--dialog & {
+        margin-bottom: px-to-rem($spacing-padding-3);
+      }
+    }
   }
 
   &--date {
     color: $color-base-neutrals-medium;
     display: block;
     font-weight: 400;
-    margin-bottom: 24px;
     @include font-styles("body-xs");
+
+    .ilo--notification--inline & {
+      margin-left: px-to-rem($spacing-padding-2);
+    }
+
+    &:not(:last-child) {
+      .ilo--notification--dialog & {
+        margin-bottom: px-to-rem($spacing-padding-3);
+      }
+    }
+  }
+
+  &--cta {
+    .ilo--notification--inline & {
+      margin-left: px-to-rem($spacing-padding-3);
+    }
   }
 
   &--close {
     background-color: $color-ux-background-highlight;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: 24px;
+    background-size: px-to-rem($spacing-padding-3);
     border: none;
-    height: 40px;
+    height: px-to-rem($spacing-padding-5);
     position: absolute;
     right: 0;
     top: 0;
-    width: 40px;
+    width: px-to-rem($spacing-padding-5);
     @include dataurlicon("close", $color-ux-labels-actionable);
 
     &:hover,

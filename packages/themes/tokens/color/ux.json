@@ -55,9 +55,9 @@
         "icon": { "value": "{color.base.neutrals.white}" },
         "text": { "value": "{color.base.neutrals.dark}" },
         "type": {
-          "error":  {"value": "{color.base.blue.medium}"},
+          "error":  {"value": "{color.base.red.medium}"},
           "info":  {"value": "{color.base.blue.medium}"},
-          "success": { "value": "{color.base.red.medium}"},
+          "success": { "value": "{color.base.green}"},
           "warning":  {"value": "{color.base.yellow}"}
         }
       },
