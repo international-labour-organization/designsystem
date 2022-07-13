@@ -1,0 +1,17 @@
+{#
+  VIDEO COMPONENT
+#}
+
+<figure class="{{prefix}}--video" data-prefix="{{prefix}}"">
+  <div class="{{prefix}}--video--wrapper">
+    {% include "@components/video/videoplayer.twig" with {
+      alt: alt,
+      controls: video.controls,
+      prefix: prefix,
+      src: video.src,
+      tracks: video.tracks,
+      url: url
+    } %}
+  </div>
+  <figcaption class="{{prefix}}--video--caption">{{caption}}</figcaption>
+</figure>

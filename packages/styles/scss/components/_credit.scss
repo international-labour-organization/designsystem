@@ -6,7 +6,7 @@
 .ilo--credit {
   color: #ffffff;
   display: inline-block;
-  height: px-to-rem($spacing-uxaction-credit-height);
+  height: px-to-rem($spacing-ux-credit-height);
   padding: 0;
   position: relative;
   @include font-styles("image-credit");
@@ -22,11 +22,11 @@
     background-size: contain;
     @include dataurlicon("halfsquaretriangle", $color-ux-credit-background);
     content: "";
-    height: px-to-rem($spacing-uxaction-credit-height);
+    height: px-to-rem($spacing-ux-credit-height);
     position: absolute;
     left: 100%;
     top: -#{px-to-rem(map-get($spacing, "padding-0-5"))};
-    width: px-to-rem($spacing-uxaction-credit-height);
+    width: px-to-rem($spacing-ux-credit-height);
   }
 
   @include breakpoint("large", true) {

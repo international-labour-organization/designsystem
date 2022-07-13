@@ -5,16 +5,22 @@
 .ilo--read-more {
   &--button {
     background: map-get($color, "ux", "readmore", "default", "background");
-    @include bordervalues("readmore");
+    @include bordervalues("readmore", "ux");
     color: $color-ux-labels-actionable;
     font-family: $fonts-display;
-    height: px-to-rem(map-get($spacing, "uxaction", "readmore", "height"));
-    @include spacingvalues("margin", "readmore");
-    @include spacingvalues("padding", "readmore");
+    height: px-to-rem(map-get($spacing, "ux", "readmore", "default", "height"));
+    @include spacingvalues("margin", "readmore", "ux");
+    @include spacingvalues("padding", "readmore", "ux");
     position: relative;
     text-align: left;
-    width: auto;
+    width: $spacing-ux-readmore-default-width;
     @include font-styles("label-medium");
+
+    &:hover {
+      background: map-get($color, "ux", "readmore", "hover", "background");
+      @include bordervalues("readmore", "ux", "hover");
+      cursor: pointer;
+    }
 
     &:after {
       background-repeat: no-repeat;
@@ -32,7 +38,7 @@
 
     &:hover {
       background: map-get($color, "ux", "readmore", "hover", "background");
-      @include bordervalues("readmore", "hover");
+      @include bordervalues("readmore", "ux", "hover");
       color: $color-ux-labels-hover;
       cursor: pointer;
 

@@ -1,0 +1,68 @@
+@use "../tokens" as *;
+@use "../functions" as *;
+@import "../mixins";
+
+.ilo--input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: map-get(
+    $color,
+    "formelements",
+    "input",
+    "default",
+    "background"
+  );
+  @include bordervalues("input", "formelements");
+  box-sizing: border-box;
+  font-family: $fonts-display;
+  font-weight: map-get($type, "weights", "section");
+  @include font-styles("label-medium");
+  height: px-to-rem(
+    map-get($spacing, "formelements", "input", "default", "height")
+  );
+  @include spacingvalues("margin", "input", "formelements");
+  outline: none;
+  @include spacingvalues("padding", "input", "formelements");
+  width: map-get($spacing, "formelements", "input", "default", "width");
+
+  &:hover {
+    background-color: map-get(
+      $color,
+      "formelements",
+      "input",
+      "hover",
+      "background"
+    );
+    @include bordervalues("input", "formelements", "hover");
+  }
+
+  &:focus {
+    background-color: map-get(
+      $color,
+      "formelements",
+      "input",
+      "focus",
+      "background"
+    );
+    @include bordervalues("input", "formelements", "focus");
+  }
+
+  &:disabled {
+    opacity: 45%;
+    pointer-events: none;
+  }
+
+  &:invalid,
+  &.error,
+  .error & {
+    background-color: map-get(
+      $color,
+      "formelements",
+      "input",
+      "error",
+      "background"
+    );
+    @include bordervalues("input", "formelements", "error");
+  }
+}

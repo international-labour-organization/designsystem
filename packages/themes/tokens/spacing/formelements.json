@@ -1,0 +1,78 @@
+{
+  "spacing": {
+    "formelements": {
+      "input" : {
+        "default": {
+          "height": { "value": "48px" },
+          "border": {
+            "bottom": { "value": "2px" },
+            "left": { "value": "2px" },
+            "right": { "value": "2px" },
+            "top": { "value": "2px" }
+          },
+          "margin": {
+            "bottom": { "value": "0" },
+            "left": { "value": "0" },
+            "right": { "value": "0" },
+            "top": { "value": "0" }
+          },
+          "padding": {
+            "bottom": { "value": "16px" },
+            "left": { "value": "12px" },
+            "right": { "value": "12px" },
+            "top": { "value": "16px" }
+          },
+          "width": { "value": "100%" }
+        },
+        "focus": {
+          "border": {
+            "bottom": { "value": "2px" },
+            "left": { "value": "3px" },
+            "right": { "value": "2px" },
+            "top": { "value": "2px" }
+          }
+        },
+        "hover": {
+          "border": {
+            "bottom": { "value": "2px" },
+            "left": { "value": "3px" },
+            "right": { "value": "2px" },
+            "top": { "value": "2px" }
+          }
+        },
+        "error": {
+          "border": {
+            "bottom": { "value": "2px" },
+            "left": { "value": "3px" },
+            "right": { "value": "2px" },
+            "top": { "value": "2px" }
+          }
+        }
+      },
+      "inputbutton" : {
+        "default": {
+          "height": { "value": "48px" },
+          "border": {
+            "bottom": { "value": "2px" },
+            "left": { "value": "0" },
+            "right": { "value": "2px" },
+            "top": { "value": "2px" }
+          },
+          "margin": {
+            "bottom": { "value": "0" },
+            "left": { "value": "0" },
+            "right": { "value": "0" },
+            "top": { "value": "0" }
+          },
+          "padding": {
+            "bottom": { "value": "16px" },
+            "left": { "value": "12px" },
+            "right": { "value": "12px" },
+            "top": { "value": "16px" }
+          },
+          "width": { "value": "48px" }
+        }
+      }
+    }
+  }
+}
