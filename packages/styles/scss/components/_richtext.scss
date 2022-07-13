@@ -30,7 +30,14 @@
   ol + hr,
   dl + hr,
   blockquote + hr {
-    margin-top: px-to-rem(map-get($spacing, "padding-7"));
+    @include textmargin(
+      "margin-top",
+      map-get($spacing, "padding-7"),
+      "body-small",
+      "copy",
+      0,
+      0
+    );
   }
 
   figure {
@@ -76,33 +83,75 @@
   }
 
   h1 {
-    margin-bottom: px-to-rem(map-get($spacing, "padding-4"));
+    @include textmargin(
+      "margin-bottom",
+      map-get($spacing, "padding-4"),
+      "headline-2",
+      "display",
+      "body-small",
+      "copy"
+    );
     @include font-styles("headline-2");
   }
 
   h2 {
-    margin-bottom: px-to-rem(map-get($spacing, "padding-4"));
+    @include textmargin(
+      "margin-bottom",
+      map-get($spacing, "padding-4"),
+      "headline-3",
+      "display",
+      "body-small",
+      "copy"
+    );
     @include font-styles("headline-3");
   }
 
   h3 {
-    margin-bottom: px-to-rem(map-get($spacing, "padding-3"));
+    @include textmargin(
+      "margin-bottom",
+      map-get($spacing, "padding-3"),
+      "headline-4",
+      "display",
+      "body-small",
+      "copy"
+    );
     @include font-styles("headline-4");
   }
 
   h4 {
-    margin-bottom: px-to-rem(map-get($spacing, "padding-3"));
+    @include textmargin(
+      "margin-bottom",
+      map-get($spacing, "padding-3"),
+      "headline-5",
+      "display",
+      "body-small",
+      "copy"
+    );
     @include font-styles("headline-5");
   }
 
   h5 {
-    margin-bottom: px-to-rem(map-get($spacing, "padding-3"));
+    @include textmargin(
+      "margin-bottom",
+      map-get($spacing, "padding-3"),
+      "headline-6",
+      "display",
+      "body-small",
+      "copy"
+    );
     @include font-styles("headline-6");
   }
 
   h6 {
-    margin-bottom: px-to-rem(map-get($spacing, "padding-3"));
-    @include font-styles("headline-5");
+    @include textmargin(
+      "margin-bottom",
+      map-get($spacing, "padding-3"),
+      "headline-6",
+      "display",
+      "body-small",
+      "copy"
+    );
+    @include font-styles("headline-6");
   }
 
   ul,
@@ -112,11 +161,16 @@
         content: "";
         display: inline-block;
         height: px-to-rem(14px);
-        margin-right: px-to-rem(12px);
+        left: px-to-rem(-12px);
+        position: absolute;
+        top: 6px;
         width: px-to-rem(12px);
         @include dataurlicon("listarrow");
       }
       margin-bottom: px-to-rem(map-get($spacing, "padding-4"));
+      margin-left: px-to-rem(12px);
+      padding-left: px-to-rem(12px);
+      position: relative;
     }
     margin-bottom: px-to-rem(map-get($spacing, "padding-4"));
   }
@@ -190,37 +244,86 @@
     }
 
     h1 {
-      margin-bottom: px-to-rem(map-get($spacing, "padding-5"));
+      @include textmargin(
+        "margin-bottom",
+        map-get($spacing, "padding-5"),
+        "headline-1",
+        "display",
+        "body-large",
+        "copy"
+      );
       @include font-styles("headline-1");
     }
 
     h2 {
-      margin-bottom: px-to-rem(map-get($spacing, "padding-5"));
+      @include textmargin(
+        "margin-bottom",
+        map-get($spacing, "padding-5"),
+        "headline-2",
+        "display",
+        "body-large",
+        "copy"
+      );
       @include font-styles("headline-2");
     }
 
     h3 {
-      margin-bottom: px-to-rem(map-get($spacing, "padding-4"));
+      @include textmargin(
+        "margin-bottom",
+        map-get($spacing, "padding-4"),
+        "headline-3",
+        "display",
+        "body-large",
+        "copy"
+      );
       @include font-styles("headline-3");
     }
 
     h4 {
-      margin-bottom: px-to-rem(map-get($spacing, "padding-4"));
+      @include textmargin(
+        "margin-bottom",
+        map-get($spacing, "padding-4"),
+        "headline-4",
+        "display",
+        "body-large",
+        "copy"
+      );
       @include font-styles("headline-4");
     }
 
     h5 {
-      margin-bottom: px-to-rem(map-get($spacing, "padding-4"));
+      @include textmargin(
+        "margin-bottom",
+        map-get($spacing, "padding-4"),
+        "headline-5",
+        "display",
+        "body-large",
+        "copy"
+      );
       @include font-styles("headline-5");
     }
 
     h6 {
-      margin-bottom: px-to-rem(map-get($spacing, "padding-4"));
+      @include textmargin(
+        "margin-bottom",
+        map-get($spacing, "padding-4"),
+        "headline-5",
+        "display",
+        "body-large",
+        "copy"
+      );
       @include font-styles("headline-5");
     }
 
     p {
-      margin-bottom: px-to-rem(map-get($spacing, "padding-4"));
+      @include textmargin(
+        "margin-bottom",
+        map-get($spacing, "padding-3"),
+        "body-large",
+        "copy",
+        "body-large",
+        "copy"
+      );
     }
 
     p + figure,
@@ -234,7 +337,14 @@
     ol + hr,
     dl + hr,
     blockquote + hr {
-      margin-top: px-to-rem(map-get($spacing, "padding-8"));
+      @include textmargin(
+        "margin-top",
+        map-get($spacing, "padding-8"),
+        "body-large",
+        "copy",
+        0,
+        0
+      );
     }
 
     hr {
@@ -243,7 +353,14 @@
 
     figure {
       width: 100%;
-      margin-bottom: px-to-rem(map-get($spacing, "padding-8"));
+      @include textmargin(
+        "margin-bottom",
+        map-get($spacing, "padding-8"),
+        "body-large",
+        "copy",
+        0,
+        0
+      );
     }
 
     blockquote {

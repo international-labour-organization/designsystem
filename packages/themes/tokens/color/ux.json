@@ -83,6 +83,12 @@
             "border": { "value": "{color.base.blue.medium}" },
             "color": { "value": "{color.base.blue.medium}" },
             "icon": { "value": "{color.base.blue.medium}" }
+          },
+          "active": {
+            "background": { "value": "{color.base.neutrals.white}" },
+            "border": { "value": "{color.base.blue.dark}" },
+            "color": { "value": "{color.base.blue.dark}" },
+            "icon": { "value": "{color.base.blue.dark}" }
           }
         }
       },

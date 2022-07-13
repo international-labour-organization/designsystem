@@ -91,3 +91,36 @@
   $output: str-replace($icon, $fill, $color);
   @return $output;
 }
+
+// =========================================
+// Adjust a margin to account for line-height
+// and font descenders
+//
+// $descender is the height of the descender
+// in pixels when the font is $typesize
+// $lineheight is the line-height when
+// the font is $typesize
+//
+// include the second set of values
+// if your margin is between two sets
+// of text
+// =========================================
+@function margin-adjust(
+  $margin,
+  $descender1,
+  $lineheight1,
+  $typesize1,
+  $descender2: 0,
+  $lineheight2: 0,
+  $typesize2: 0
+) {
+  $lineHeightScale: math.div($lineheight1, $typesize1);
+  $finalval: ($lineHeightScale - 1) + ($descender1 * $typesize1);
+  @if $descender2 > 0 and $lineheight2 > 0 and $typesize2 > 0 {
+    $lineHeightScale2: math.div($lineheight2, $typesize2);
+    $val2: ($lineHeightScale2 - 1) + ($descender2 * $typesize2);
+    $finalval: $finalval + $val2;
+  }
+  $adjusted: $margin - $finalval;
+  @return $adjusted;
+}
