@@ -81,7 +81,7 @@
   }
 
   &--alignment-right {
-    left: calc(100% + map-get($spacing, "content-padding-med"));
+    left: calc(100% + map-get($spacing, "padding-4"));
     top: calc(50% - map-get($spacing, "tooltip", "tooltip-arrow-width"));
 
     .ilo--tooltip__arrow {
@@ -110,7 +110,7 @@
   }
 
   &--alignment-left {
-    right: calc(100% + map-get($spacing, "content-padding-med"));
+    right: calc(100% + map-get($spacing, "padding-4"));
     top: calc(50% - map-get($spacing, "tooltip", "tooltip-arrow-width"));
 
     .ilo--tooltip__arrow {
