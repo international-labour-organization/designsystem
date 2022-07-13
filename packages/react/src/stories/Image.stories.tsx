@@ -8,9 +8,9 @@ import {
   Stories,
   Subheading,
 } from "@storybook/addon-docs";
-import { Media } from "../components/Media";
-import { MediaProps } from "../components/Media/Media.props";
-import mediaArgs from "../components/Media/media.args";
+import { Image } from "../components/Image";
+import { ImageProps } from "../components/Image/Image.props";
+import imageArgs from "../components/Image/Image.args";
 
 const urlDoc = `
 The \`url\` prop expects an array of object each containing a \`breakpoint\` and a \`src\` prop. There must be a minimuim of one of these, but preferably multiple items corresponding to the same image at different raw sizes, so that responsive images can be displayed.
@@ -26,8 +26,8 @@ The \`url\` prop expects an array of object each containing a \`breakpoint\` and
  *
  */
 export default {
-  title: "Components/Media",
-  component: Media,
+  title: "Components/Image",
+  component: Image,
   argTypes: {},
   parameters: {
     componentSubtitle: "Component",
@@ -37,9 +37,8 @@ export default {
           <Subtitle />
           <Title />
           <Description>
-            The Media component displays either an image or a video. Requires an
-            image always, since the image is used as the video's poster when
-            there is a video.
+            The Image component displays an image, along with an image credit
+            and optional caption.
           </Description>
           <Primary />
           <ArgsTable />
@@ -50,43 +49,23 @@ export default {
       ),
     },
   },
-} as Meta<typeof Media>;
+} as Meta<typeof Image>;
 
 /**
- * MediaTemplate
+ * ImageTemplate
  *
  * create a Storybook template for this component
  *
  *@param (Object) args - props to be passed to the component
  */
-const MediaTemplate: Story<MediaProps> = (args) => <Media {...args} />;
+const ImageTemplate: Story<ImageProps> = (args) => <Image {...args} />;
 
 /**
  * Image Only Instance
  *
  */
-export const ImageMedia = MediaTemplate.bind({});
-
-/**
- * Video File Instance
- *
- */
-export const VideoFileMedia = MediaTemplate.bind({});
-
-/**
- * Video YouTube Instance
- *
- */
-export const VideoYTMedia = MediaTemplate.bind({});
+export const ImageMedia = ImageTemplate.bind({});
 
 // enumerate the props for the image only option
-ImageMedia.args = mediaArgs.imageonly;
-ImageMedia.storyName = "Image Only";
-
-// enumerate the props for the video file option
-VideoFileMedia.args = mediaArgs.videofile;
-VideoFileMedia.storyName = "Video File";
-
-// enumerate the props for the video youtube option
-VideoYTMedia.args = mediaArgs.videoyt;
-VideoYTMedia.storyName = "Video YouTube";
+ImageMedia.args = imageArgs.image;
+ImageMedia.storyName = "Image";

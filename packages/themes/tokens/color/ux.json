@@ -72,15 +72,15 @@
       },
       "tableofcontents": {
         "items": {
-          "default" : {
+          "default": {
             "background": { "value": "{color.base.neutrals.lighter}" },
-            "border": {"value": "{color.base.neutrals.white}"},
+            "border": { "value": "{color.base.neutrals.white}" },
             "color": { "value": "{color.base.blue.dark}" },
             "icon": { "value": "{color.base.blue.dark}" }
           },
-          "hover" : {
+          "hover": {
             "background": { "value": "{color.base.blue.light}" },
-            "border": {"value": "{color.base.blue.medium}"},
+            "border": { "value": "{color.base.blue.medium}" },
             "color": { "value": "{color.base.blue.medium}" },
             "icon": { "value": "{color.base.blue.medium}" }
           }
