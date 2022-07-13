@@ -41,7 +41,11 @@
 // @return {*} - value in rems, with $font-size-default as base
 // ======================================
 @function px-to-rem($px) {
-  @return math.div(strip-units($px), strip-units($type-base-size)) * 1rem;
+  @if index($px, "%") {
+    @return $px;
+  } @else {
+    @return math.div(strip-units($px), strip-units($type-base-size)) * 1rem;
+  }
 }
 
 // =========================================

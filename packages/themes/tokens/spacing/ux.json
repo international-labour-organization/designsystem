@@ -21,27 +21,51 @@
         "height": { "value": "24px" },
         "width": { "value": "auto" }
       },
-      "readmore": {
-        "height": { "value": "56px" },
-        "border": {
-          "bottom": { "value": "0" },
-          "left": { "value": "0" },
-          "right": { "value": "0" },
-          "top": { "value": "2px" }
+      "readmore" : {
+        "default": {
+          "height": { "value": "56px" },
+          "border": {
+            "bottom": { "value": "0" },
+            "left": { "value": "0" },
+            "right": { "value": "0" },
+            "top": { "value": "2px" }
+          },
+          "margin": {
+            "bottom": { "value": "0" },
+            "left": { "value": "0" },
+            "right": { "value": "0" },
+            "top": { "value": "32px" }
+          },
+          "padding": {
+            "bottom": { "value": "16px" },
+            "left": { "value": "2px" },
+            "right": { "value": "2px" },
+            "top": { "value": "16px" }
+          },
+          "width": { "value": "120px" }
         },
-        "margin": {
-          "bottom": { "value": "0" },
-          "left": { "value": "0" },
-          "right": { "value": "0" },
-          "top": { "value": "32px" }
-        },
-        "padding": {
-          "bottom": { "value": "16px" },
-          "left": { "value": "2px" },
-          "right": { "value": "32px" },
-          "top": { "value": "16px" }
-        },
-        "width": { "value": "auto" }
+        "hover": {
+          "height": { "value": "56px" },
+          "border": {
+            "bottom": { "value": "0" },
+            "left": { "value": "0" },
+            "right": { "value": "0" },
+            "top": { "value": "2px" }
+          },
+          "margin": {
+            "bottom": { "value": "0" },
+            "left": { "value": "0" },
+            "right": { "value": "0" },
+            "top": { "value": "32px" }
+          },
+          "padding": {
+            "bottom": { "value": "16px" },
+            "left": { "value": "2px" },
+            "right": { "value": "2px" },
+            "top": { "value": "16px" }
+          },
+          "width": { "value": "120px" }
+        }
       },
       "video": {
         "controls": {

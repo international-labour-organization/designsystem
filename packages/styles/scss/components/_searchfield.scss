@@ -1,0 +1,65 @@
+@use "../tokens" as *;
+@import "../mixins";
+
+.ilo--searchfield {
+  display: flex;
+
+  .ilo--input {
+    width: calc(100% - #{$spacing-padding-6});
+  }
+
+  &--button {
+    background-color: map-get(
+      $color,
+      "formelements",
+      "inputbutton",
+      "default",
+      "background"
+    );
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: $spacing-padding-3 $spacing-padding-3;
+    @include bordervalues("inputbutton", "formelements");
+    height: $spacing-padding-6;
+    width: $spacing-padding-6;
+    text-indent: -9999px;
+    @include dataurlicon(
+      "search",
+      $color-formelements-inputbutton-default-color
+    );
+
+    &:hover {
+      background-color: map-get(
+        $color,
+        "formelements",
+        "inputbutton",
+        "hover",
+        "background"
+      );
+      cursor: pointer;
+      @include dataurlicon(
+        "search",
+        $color-formelements-inputbutton-hover-color
+      );
+    }
+
+    &:active {
+      background-color: map-get(
+        $color,
+        "formelements",
+        "inputbutton",
+        "active",
+        "background"
+      );
+      @include dataurlicon(
+        "search",
+        $color-formelements-inputbutton-active-color
+      );
+    }
+  }
+
+  .ilo--input:disabled + .ilo--searchfield--button {
+    opacity: 45%;
+    pointer-events: none;
+  }
+}
