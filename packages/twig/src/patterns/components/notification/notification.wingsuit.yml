@@ -1,0 +1,58 @@
+notification:
+  use: '@components/notification/notification.twig'
+  label: Notification
+  description: The Notification component presents a dismissible alert.
+  fields:
+    closelabel:
+      type: string
+      label: Close Button Label
+      description: The label for the close button
+      required: true
+      preview: 'Close'
+    copy:
+      type: string
+      label: Copy
+      description: The text content of the notification
+      required: true
+      preview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+    cta:
+      type: object
+      label: Call To Action
+      description: an optional call to action button
+      preview:
+        label: Optional CTA
+        url: 'http://www.google.com'
+    headline:
+      type: string
+      label: Headline
+      description: The headline of the notification
+      required: true
+      preview: 'With CTA'
+    placement:
+      type: select
+      label: Placement
+      description: The placement of the notification
+      required: true
+      options:
+        inline: Inline
+        dialog: Dialog
+      preview: 'dialog'
+    type:
+      type: select
+      label: Type
+      description: What kind of notification is it?
+      required: true
+      options:
+        error: Error
+        info: Info
+        success: Success
+        warning: Warning
+      preview: 'info'
+    timestamp:
+      type: object
+      label: Timestamp
+      description: an optional date object, with human-readable and unix timestamps
+      preview:
+        human: Dec 7, 2022
+        unix: 1670389200
+  visibility: storybook
