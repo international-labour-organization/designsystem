@@ -46,7 +46,7 @@
     border-style: solid;
     border-width: 0;
     height: 0;
-    margin-top: -map-get($spacing, "tooltip", "tooltip-arrow-width");
+    margin-top: -#{map-get($spacing, "tooltip", "tooltip-arrow-width")};
     position: absolute;
     width: 0;
   }
@@ -60,9 +60,9 @@
       border-width: map-get($spacing, "tooltip", "tooltip-arrow-height")
         map-get($spacing, "tooltip", "tooltip-arrow-width") 0
         map-get($spacing, "tooltip", "tooltip-arrow-width");
-      bottom: -map-get($spacing, "tooltip", "tooltip-arrow-height");
+      bottom: -#{map-get($spacing, "tooltip", "tooltip-arrow-height")};
       left: 50%;
-      margin-left: -map-get($spacing, "tooltip", "tooltip-arrow-width");
+      margin-left: -#{map-get($spacing, "tooltip", "tooltip-arrow-width")};
       top: auto;
 
       &--placement-negative {
@@ -90,7 +90,7 @@
         map-get($spacing, "tooltip", "tooltip-arrow-height")
         map-get($spacing, "tooltip", "tooltip-arrow-width") 0;
       left: 0;
-      margin-left: -map-get($spacing, "tooltip", "tooltip-arrow-height");
+      margin-left: -#{map-get($spacing, "tooltip", "tooltip-arrow-height")};
       top: 50%;
 
       &--placement-negative {
@@ -119,8 +119,8 @@
         map-get($spacing, "tooltip", "tooltip-arrow-width")
         map-get($spacing, "tooltip", "tooltip-arrow-height");
       left: auto;
-      margin-top: -map-get($spacing, "tooltip", "tooltip-arrow-width");
-      right: -map-get($spacing, "tooltip", "tooltip-arrow-height");
+      margin-top: -#{map-get($spacing, "tooltip", "tooltip-arrow-width")};
+      right: -#{map-get($spacing, "tooltip", "tooltip-arrow-height")};
       top: 50%;
 
       &--placement-negative {
@@ -148,8 +148,8 @@
         map-get($spacing, "tooltip", "tooltip-arrow-height")
         map-get($spacing, "tooltip", "tooltip-arrow-width");
       left: 50%;
-      margin-left: -map-get($spacing, "tooltip", "tooltip-arrow-width");
-      margin-top: -map-get($spacing, "tooltip", "tooltip-arrow-height");
+      margin-left: -#{map-get($spacing, "tooltip", "tooltip-arrow-width")};
+      margin-top: -#{map-get($spacing, "tooltip", "tooltip-arrow-height")};
       top: 0;
       border-bottom-color: map-get($color, "tooltip", "background");
 
