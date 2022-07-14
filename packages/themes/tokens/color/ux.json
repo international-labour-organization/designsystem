@@ -50,6 +50,17 @@
       "horizontal-rule": {
         "default": { "value": "{color.base.neutrals.lighter}" }
       },
+      "notification": {
+        "background": { "value": "{color.base.neutrals.white}" },
+        "icon": { "value": "{color.base.neutrals.white}" },
+        "text": { "value": "{color.base.neutrals.dark}" },
+        "type": {
+          "error":  {"value": "{color.base.red.medium}"},
+          "info":  {"value": "{color.base.blue.medium}"},
+          "success": { "value": "{color.base.green}"},
+          "warning":  {"value": "{color.base.yellow}"}
+        }
+      },
       "readmore": {
         "default": {
           "background": { "value": "transparent" },
@@ -57,7 +68,7 @@
             "bottom": { "value": "transparent" },
             "left": { "value": "transparent" },
             "right": { "value": "transparent" },
-            "top": { "value": "{color.base.neutrals.medium}" }
+            "top": { "value": "{color.base.neutrals.lighter}" }
           }
         },
         "hover": {
@@ -67,6 +78,28 @@
             "left": { "value": "transparent" },
             "right": { "value": "transparent" },
             "top": { "value": "{color.base.blue.medium}" }
+          }
+        }
+      },
+      "tableofcontents": {
+        "items": {
+          "default": {
+            "background": { "value": "{color.base.neutrals.lighter}" },
+            "border": { "value": "{color.base.neutrals.white}" },
+            "color": { "value": "{color.base.blue.dark}" },
+            "icon": { "value": "{color.base.blue.dark}" }
+          },
+          "hover": {
+            "background": { "value": "{color.base.blue.light}" },
+            "border": { "value": "{color.base.blue.medium}" },
+            "color": { "value": "{color.base.blue.medium}" },
+            "icon": { "value": "{color.base.blue.medium}" }
+          },
+          "active": {
+            "background": { "value": "{color.base.neutrals.white}" },
+            "border": { "value": "{color.base.blue.dark}" },
+            "color": { "value": "{color.base.blue.dark}" },
+            "icon": { "value": "{color.base.blue.dark}" }
           }
         }
       },

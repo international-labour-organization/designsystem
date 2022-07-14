@@ -1,0 +1,37 @@
+image:
+  use: '@components/image/image.twig'
+  label: Image
+  description: A component for displaying an image.
+  fields:
+    alt:
+      type: string
+      label: Alt
+      description: alt text for the image
+      required: true
+      preview: 'My alt text'
+    caption:
+      type: string
+      label: Caption
+      description: string
+      preview: 'my image caption'
+    credit:
+      type: string
+      label: Credit
+      description: string
+      preview: 'Photo: copyright 2022 Person S. Name'
+      required: true
+    url:
+      type: object
+      label: URL
+      description: The image url(s), and at which breakpoint each should be displayed.
+      required: true
+      preview:
+        - breakpoint: 0
+          src: 'https://place-hold.it/400x300?text=SmallBreakpointImage'
+        - breakpoint: 800
+          src: 'https://place-hold.it/800x600?text=MediumBreakpointImage'
+        - breakpoint: 1200
+          src: 'https://place-hold.it/1200x900?text=LargeBreakpointImage'
+        - breakpoint: 1440
+          src: 'https://place-hold.it/1600x1200?text=LargestBreakpointImage'
+  visibility: storybook

@@ -93,37 +93,78 @@
 }
 
 // ======================================
+// Text Margin
+//
+// calculates reduced margin to account
+// for line-height and descenders
+// ======================================
+
+@mixin textmargin(
+  $margin,
+  $marginval,
+  $stylename,
+  $descender,
+  $stylename2: false,
+  $descender2: false
+) {
+  @if $stylename2 != false {
+    #{$margin}: px-to-rem(
+      margin-adjust(
+        $marginval,
+        map-get($type, "descenders", $descender),
+        map-get($type, $stylename, "size"),
+        map-get($type, $stylename, "line-height")
+      )
+    );
+  } @else {
+    #{$margin}: px-to-rem(
+      margin-adjust(
+        $marginval,
+        map-get($type, "descenders", $descender),
+        map-get($type, $stylename, "size"),
+        map-get($type, $stylename, "line-height"),
+        map-get($type, "descenders", $descender2),
+        map-get($type, $stylename2, "size"),
+        map-get($type, $stylename2, "line-height")
+      )
+    );
+  }
+}
+
+// ======================================
 // Spacing Values
 // ======================================
 
-@mixin spacingvalues($type, $mappath) {
-  #{$type}: px-to-rem(map-get($spacing, "uxaction", $mappath, $type, "top"))
-    px-to-rem(map-get($spacing, "uxaction", $mappath, $type, "right"))
-    px-to-rem(map-get($spacing, "uxaction", $mappath, $type, "bottom"))
-    px-to-rem(map-get($spacing, "uxaction", $mappath, $type, "left"));
+@mixin spacingvalues($type, $mappath, $location, $state: "default") {
+  #{$type}: px-to-rem(
+      map-get($spacing, $location, $mappath, $state, $type, "top")
+    )
+    px-to-rem(map-get($spacing, $location, $mappath, $state, $type, "right"))
+    px-to-rem(map-get($spacing, $location, $mappath, $state, $type, "bottom"))
+    px-to-rem(map-get($spacing, $location, $mappath, $state, $type, "left"));
 }
 
 // ======================================
 // Border Values
 // ======================================
 
-@mixin bordervalues($mappath, $state: "default") {
+@mixin bordervalues($mappath, $location, $state: "default") {
   border-bottom: px-to-rem(
-      map-get($spacing, "uxaction", $mappath, "border", "bottom")
+      map-get($spacing, $location, $mappath, $state, "border", "bottom")
     )
-    solid map-get($color, "ux", $mappath, $state, "border", "bottom");
+    solid map-get($color, $location, $mappath, $state, "border", "bottom");
   border-left: px-to-rem(
-      map-get($spacing, "uxaction", $mappath, "border", "left")
+      map-get($spacing, $location, $mappath, $state, "border", "left")
     )
-    solid map-get($color, "ux", $mappath, $state, "border", "left");
+    solid map-get($color, $location, $mappath, $state, "border", "left");
   border-right: px-to-rem(
-      map-get($spacing, "uxaction", $mappath, "border", "right")
+      map-get($spacing, $location, $mappath, $state, "border", "right")
     )
-    solid map-get($color, "ux", $mappath, $state, "border", "right");
+    solid map-get($color, $location, $mappath, $state, "border", "right");
   border-top: px-to-rem(
-      map-get($spacing, "uxaction", $mappath, "border", "top")
+      map-get($spacing, $location, $mappath, $state, "border", "top")
     )
-    solid map-get($color, "ux", $mappath, $state, "border", "top");
+    solid map-get($color, $location, $mappath, $state, "border", "top");
 }
 
 // ======================================

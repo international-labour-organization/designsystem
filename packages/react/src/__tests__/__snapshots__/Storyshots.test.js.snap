@@ -1304,6 +1304,61 @@ exports[`Storyshots Components/Heading Heading Level 6 1`] = `
 </div>
 `;
 
+exports[`Storyshots Components/Image Image 1`] = `
+<div
+  style={
+    Object {
+      "margin": "3em",
+    }
+  }
+>
+  <figure
+    className="image ilo--media"
+  >
+    <div
+      className="image ilo--media--wrapper"
+    >
+      <picture
+        className="ilo--media--img"
+      >
+        <source
+          media="(min-width: 1440px)"
+          srcSet="https://place-hold.it/1600x1200?text=LargestBreakpointImage"
+        />
+        <source
+          media="(min-width: 1200px)"
+          srcSet="https://place-hold.it/1200x900?text=LargeBreakpointImage"
+        />
+        <source
+          media="(min-width: 800px)"
+          srcSet="https://place-hold.it/800x600?text=MediumBreakpointImage"
+        />
+        <img
+          alt="My alt text"
+          src="https://place-hold.it/400x300?text=SmallBreakpointImage"
+        />
+      </picture>
+      <span
+        className="ilo--credit"
+        onMouseEnter={[Function]}
+        onMouseLeave={[Function]}
+      >
+        <span
+          className="ilo--credit--label"
+        >
+          Photo: copyright 2022 Person S. Name
+        </span>
+      </span>
+    </div>
+    <figcaption
+      className="ilo--media--caption"
+    >
+      my image caption
+    </figcaption>
+  </figure>
+</div>
+`;
+
 exports[`Storyshots Components/Link Dark Link 1`] = `
 <div
   style={
@@ -1584,6 +1639,506 @@ exports[`Storyshots Components/List Unstyled List 1`] = `
 </div>
 `;
 
+exports[`Storyshots Components/Notification Notification - dialog, has call to action 1`] = `
+<div
+  style={
+    Object {
+      "margin": "3em",
+    }
+  }
+>
+  <div
+    aria-live="polite"
+    aria-relevant="additions"
+    className="storybook ilo--notification ilo--notification--dialog icon icon--info"
+    role="status"
+  >
+    <div
+      className="ilo--notification--content"
+    >
+      <h2
+        className="ilo--notification--headline"
+      >
+        Notification With CTA
+      </h2>
+      <p
+        className="ilo--notification--copy"
+      >
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      </p>
+      <time
+        className="ilo--notification--date"
+        dateTime="1670389200"
+      >
+        Dec 7, 2022
+      </time>
+      <a
+        className="ilo--notification--cta ilo--button ilo--button--small ilo--button--secondary  --light"
+        href="http://www.google.com"
+        rel=""
+        target=""
+      >
+        <span
+          className="link__label"
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "Optional CTA",
+            }
+          }
+        />
+      </a>
+    </div>
+    <button
+      className="ilo--notification--close"
+      onClick={[Function]}
+      type="button"
+    >
+      <span>
+        Close
+      </span>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/Notification Notification - error 1`] = `
+<div
+  style={
+    Object {
+      "margin": "3em",
+    }
+  }
+>
+  <div
+    aria-live="polite"
+    aria-relevant="additions"
+    className="storybook ilo--notification ilo--notification--inline icon icon--error"
+    role="status"
+  >
+    <div
+      className="ilo--notification--content"
+    >
+      <h2
+        className="ilo--notification--headline"
+      >
+        Notification Error
+      </h2>
+      <p
+        className="ilo--notification--copy"
+      >
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      </p>
+      <time
+        className="ilo--notification--date"
+        dateTime="1670389200"
+      >
+        Dec 7, 2022
+      </time>
+    </div>
+    <button
+      className="ilo--notification--close"
+      onClick={[Function]}
+      type="button"
+    >
+      <span>
+        Close
+      </span>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/Notification Notification - error dialog 1`] = `
+<div
+  style={
+    Object {
+      "margin": "3em",
+    }
+  }
+>
+  <div
+    aria-live="polite"
+    aria-relevant="additions"
+    className="storybook ilo--notification ilo--notification--dialog icon icon--error"
+    role="status"
+  >
+    <div
+      className="ilo--notification--content"
+    >
+      <h2
+        className="ilo--notification--headline"
+      >
+        Notification Error
+      </h2>
+      <p
+        className="ilo--notification--copy"
+      >
+        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+      </p>
+      <time
+        className="ilo--notification--date"
+        dateTime="1670389200"
+      >
+        Dec 7, 2022
+      </time>
+    </div>
+    <button
+      className="ilo--notification--close"
+      onClick={[Function]}
+      type="button"
+    >
+      <span>
+        Close
+      </span>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/Notification Notification - has call to action 1`] = `
+<div
+  style={
+    Object {
+      "margin": "3em",
+    }
+  }
+>
+  <div
+    aria-live="polite"
+    aria-relevant="additions"
+    className="storybook ilo--notification ilo--notification--inline icon icon--info"
+    role="status"
+  >
+    <div
+      className="ilo--notification--content"
+    >
+      <h2
+        className="ilo--notification--headline"
+      >
+        With CTA
+      </h2>
+      <p
+        className="ilo--notification--copy"
+      >
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      </p>
+      <time
+        className="ilo--notification--date"
+        dateTime="1670389200"
+      >
+        Dec 7, 2022
+      </time>
+      <a
+        className="ilo--notification--cta ilo--button ilo--button--small ilo--button--secondary  --light"
+        href="http://www.google.com"
+        rel=""
+        target=""
+      >
+        <span
+          className="link__label"
+          dangerouslySetInnerHTML={
+            Object {
+              "__html": "Optional CTA",
+            }
+          }
+        />
+      </a>
+    </div>
+    <button
+      className="ilo--notification--close"
+      onClick={[Function]}
+      type="button"
+    >
+      <span>
+        Close
+      </span>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/Notification Notification - info 1`] = `
+<div
+  style={
+    Object {
+      "margin": "3em",
+    }
+  }
+>
+  <div
+    aria-live="polite"
+    aria-relevant="additions"
+    className="storybook ilo--notification ilo--notification--inline icon icon--info"
+    role="status"
+  >
+    <div
+      className="ilo--notification--content"
+    >
+      <h2
+        className="ilo--notification--headline"
+      >
+        Notification Info
+      </h2>
+      <p
+        className="ilo--notification--copy"
+      >
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      </p>
+      <time
+        className="ilo--notification--date"
+        dateTime="1670389200"
+      >
+        Dec 7, 2022
+      </time>
+    </div>
+    <button
+      className="ilo--notification--close"
+      onClick={[Function]}
+      type="button"
+    >
+      <span>
+        Close
+      </span>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/Notification Notification - info dialog 1`] = `
+<div
+  style={
+    Object {
+      "margin": "3em",
+    }
+  }
+>
+  <div
+    aria-live="polite"
+    aria-relevant="additions"
+    className="storybook ilo--notification ilo--notification--dialog icon icon--info"
+    role="status"
+  >
+    <div
+      className="ilo--notification--content"
+    >
+      <h2
+        className="ilo--notification--headline"
+      >
+        Notification Info
+      </h2>
+      <p
+        className="ilo--notification--copy"
+      >
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      </p>
+      <time
+        className="ilo--notification--date"
+        dateTime="1670389200"
+      >
+        Dec 7, 2022
+      </time>
+    </div>
+    <button
+      className="ilo--notification--close"
+      onClick={[Function]}
+      type="button"
+    >
+      <span>
+        Close
+      </span>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/Notification Notification - success 1`] = `
+<div
+  style={
+    Object {
+      "margin": "3em",
+    }
+  }
+>
+  <div
+    aria-live="polite"
+    aria-relevant="additions"
+    className="storybook ilo--notification ilo--notification--inline icon icon--success"
+    role="status"
+  >
+    <div
+      className="ilo--notification--content"
+    >
+      <h2
+        className="ilo--notification--headline"
+      >
+        Notification Success
+      </h2>
+      <p
+        className="ilo--notification--copy"
+      >
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      </p>
+      <time
+        className="ilo--notification--date"
+        dateTime="1670389200"
+      >
+        Dec 7, 2022
+      </time>
+    </div>
+    <button
+      className="ilo--notification--close"
+      onClick={[Function]}
+      type="button"
+    >
+      <span>
+        Close
+      </span>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/Notification Notification - success dialog 1`] = `
+<div
+  style={
+    Object {
+      "margin": "3em",
+    }
+  }
+>
+  <div
+    aria-live="polite"
+    aria-relevant="additions"
+    className="storybook ilo--notification ilo--notification--dialog icon icon--success"
+    role="status"
+  >
+    <div
+      className="ilo--notification--content"
+    >
+      <h2
+        className="ilo--notification--headline"
+      >
+        Notification Success
+      </h2>
+      <p
+        className="ilo--notification--copy"
+      >
+        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+      </p>
+      <time
+        className="ilo--notification--date"
+        dateTime="1670389200"
+      >
+        Dec 7, 2022
+      </time>
+    </div>
+    <button
+      className="ilo--notification--close"
+      onClick={[Function]}
+      type="button"
+    >
+      <span>
+        Close
+      </span>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/Notification Notification - warning 1`] = `
+<div
+  style={
+    Object {
+      "margin": "3em",
+    }
+  }
+>
+  <div
+    aria-live="polite"
+    aria-relevant="additions"
+    className="storybook ilo--notification ilo--notification--inline icon icon--warning"
+    role="status"
+  >
+    <div
+      className="ilo--notification--content"
+    >
+      <h2
+        className="ilo--notification--headline"
+      >
+        Notification Warning
+      </h2>
+      <p
+        className="ilo--notification--copy"
+      >
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      </p>
+      <time
+        className="ilo--notification--date"
+        dateTime="1670389200"
+      >
+        Dec 7, 2022
+      </time>
+    </div>
+    <button
+      className="ilo--notification--close"
+      onClick={[Function]}
+      type="button"
+    >
+      <span>
+        Close
+      </span>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/Notification Notification - warning dialog 1`] = `
+<div
+  style={
+    Object {
+      "margin": "3em",
+    }
+  }
+>
+  <div
+    aria-live="polite"
+    aria-relevant="additions"
+    className="storybook ilo--notification ilo--notification--dialog icon icon--warning"
+    role="status"
+  >
+    <div
+      className="ilo--notification--content"
+    >
+      <h2
+        className="ilo--notification--headline"
+      >
+        Notification Warning
+      </h2>
+      <p
+        className="ilo--notification--copy"
+      >
+        Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.
+      </p>
+      <time
+        className="ilo--notification--date"
+        dateTime="1670389200"
+      >
+        Dec 7, 2022
+      </time>
+    </div>
+    <button
+      className="ilo--notification--close"
+      onClick={[Function]}
+      type="button"
+    >
+      <span>
+        Close
+      </span>
+    </button>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Components/ReadMore ReadMore - default 1`] = `
 <div
   style={
@@ -1660,6 +2215,162 @@ exports[`Storyshots Components/RichText Rich Text 1`] = `
       }
     }
   />
+</div>
+`;
+
+exports[`Storyshots Components/SearchField Default SearchField 1`] = `
+<div
+  style={
+    Object {
+      "margin": "3em",
+    }
+  }
+>
+  <form
+    action=""
+    className="ilo--searchfield"
+  >
+    <input
+      className="ilo--input"
+      disabled={false}
+      name="search"
+      onChange={[Function]}
+      placeholder="Search Field"
+      type="search"
+    />
+    <input
+      className="ilo--searchfield--button"
+      onClick={[Function]}
+      type="submit"
+    />
+  </form>
+</div>
+`;
+
+exports[`Storyshots Components/SearchField Disabled SearchField 1`] = `
+<div
+  style={
+    Object {
+      "margin": "3em",
+    }
+  }
+>
+  <form
+    action=""
+    className="ilo--searchfield"
+  >
+    <input
+      className="ilo--input"
+      disabled={true}
+      name="search"
+      onChange={[Function]}
+      placeholder="Search Field"
+      type="search"
+    />
+    <input
+      className="ilo--searchfield--button"
+      onClick={[Function]}
+      type="submit"
+    />
+  </form>
+</div>
+`;
+
+exports[`Storyshots Components/SearchField SearchField Error 1`] = `
+<div
+  style={
+    Object {
+      "margin": "3em",
+    }
+  }
+>
+  <form
+    action=""
+    className="ilo--searchfield"
+  >
+    <input
+      className="ilo--input error"
+      disabled={false}
+      name="search"
+      onChange={[Function]}
+      placeholder="Search Field"
+      type="search"
+    />
+    <input
+      className="ilo--searchfield--button"
+      onClick={[Function]}
+      type="submit"
+    />
+  </form>
+</div>
+`;
+
+exports[`Storyshots Components/TableOfContents Table Of Contents 1 1`] = `
+<div
+  style={
+    Object {
+      "margin": "3em",
+    }
+  }
+>
+  <nav
+    className="ilo--table-of-contents"
+  >
+    <ul
+      className="ilo--table-of-contents--list"
+    >
+      <li
+        className="ilo--table-of-contents--list--item"
+      >
+        <a
+          className="ilo--table-of-contents--link"
+          href="#example"
+        >
+          Item One
+        </a>
+      </li>
+      <li
+        className="ilo--table-of-contents--list--item"
+      >
+        <a
+          className="ilo--table-of-contents--link"
+          href="#example"
+        >
+          Item Two
+        </a>
+      </li>
+      <li
+        className="ilo--table-of-contents--list--item"
+      >
+        <a
+          className="ilo--table-of-contents--link"
+          href="#example"
+        >
+          Item Three
+        </a>
+      </li>
+      <li
+        className="ilo--table-of-contents--list--item"
+      >
+        <a
+          className="ilo--table-of-contents--link"
+          href="#example"
+        >
+          Item Four
+        </a>
+      </li>
+      <li
+        className="ilo--table-of-contents--list--item"
+      >
+        <a
+          className="ilo--table-of-contents--link"
+          href="#example"
+        >
+          Item Five
+        </a>
+      </li>
+    </ul>
+  </nav>
 </div>
 `;
 

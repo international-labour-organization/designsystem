@@ -4,12 +4,13 @@
 
 .ilo--empty {
   background: linear-gradient(108.07deg, #b8c4cc 0.17%, #ebf5fd 75.36%);
+  border-radius: 4px;
   height: 100%;
   position: relative;
   width: 100%;
 
   &:before {
-    animation-duration: 1.5s;
+    animation-duration: 2s;
     animation-name: emptygradient;
     animation-iteration-count: infinite;
     animation-direction: alternate;
