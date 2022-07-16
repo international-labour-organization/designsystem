@@ -18,6 +18,8 @@ export const EVENTS = {
   HEADER_HIDING: "header-hiding",
   INDEX_CHANGED: "indexChanged",
   INPUT: "input",
+  ITEMSLOADING: "itemsloading",
+  ITEMSLOADED: "itemsloaded",
   KEY_DOWN: "keydown",
   MOUSEMOVE: "mousemove",
   MOUSEOUT: "mouseout",

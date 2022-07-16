@@ -1,0 +1,8 @@
+{#
+  LOADING COMPONENT
+#}
+<div class="storybook {{prefix}}--loading {{prefix}}--loading--{{size}} {{prefix}}--loading--{{status}}" role="alert" aria-live="assertive" data-loadcomponent="Loading" data-prefix="{{prefix}}">
+  {% if message %}
+    <p class="{{prefix}}--loading--copy">{{message}}</p>
+  {% endif %}
+</div>
