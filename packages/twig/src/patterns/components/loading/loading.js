@@ -79,8 +79,8 @@ export default class Loading {
    * @chainable
    */
   loading() {
-    this.element.classList.remove(`${prefix}--idle`);
-    this.element.classList.add(`${prefix}--loading`);
+    this.element.classList.remove(`${this.prefix}--idle`);
+    this.element.classList.add(`${this.prefix}--loading`);
 
     return this;
   }
@@ -92,9 +92,10 @@ export default class Loading {
    * @chainable
    */
   loaded() {
-    this.element.classList.remove(`${prefix}--loading`);
-    this.element.classList.add(`${prefix}--loaded`);
-    this.element.querySelector(`.${prefix}--copy`).innerHTML = this.element.dataset.loadedmessage;
+    this.element.classList.remove(`${this.prefix}--loading`);
+    this.element.classList.add(`${this.prefix}--loaded`);
+    this.element.querySelector(`.${this.prefix}--copy`).innerHTML =
+      this.element.dataset.loadedmessage;
 
     return this;
   }
