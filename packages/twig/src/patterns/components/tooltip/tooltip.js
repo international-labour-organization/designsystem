@@ -1,5 +1,3 @@
-import { EVENTS, ARIA } from '@ilo-org/utils';
-
 /**
  * The Tooltip module which handles showing a bit of markup on mouseover
  *
@@ -89,7 +87,6 @@ export default class Tooltip {
   }
 
   handleOnMouseOver(e) {
-    console.log('over');
     const target = e.currentTarget;
 
     if (target != null) {
@@ -102,7 +99,6 @@ export default class Tooltip {
   }
 
   handleOnMouseOut(e) {
-    console.log('out');
     this.tooltip.classList.remove(`${this.prefix}--tooltip--visible`);
 
     return this;
@@ -114,7 +110,6 @@ export default class Tooltip {
     let alignment = 'left';
 
     const ttNode = this.tooltip;
-    console.log('testing the bounding func', ttNode.getBoundingClientRect());
     if (ttNode != null) {
       let x = 0,
         y = 0;
@@ -136,11 +131,6 @@ export default class Tooltip {
       const bLeft = lx - ttRect.width >= 0 && ty + ttRect.height <= window.scrollY + docHeight;
       const bAbove = ty - ttRect.height >= 0;
       const bBellow = by + ttRect.height <= window.scrollY + docHeight;
-
-      console.log('bRight', bRight);
-      console.log('bLeft', bLeft);
-      console.log('bAbove', bAbove);
-      console.log('bBellow', bBellow);
 
       // the tooltip doesn't fit to the left
       if (bRight) {
