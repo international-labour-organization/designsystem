@@ -1,43 +1,60 @@
 import { CalloutProps } from "./Callout.props";
 
+const hascta: CalloutProps = {
+  className: "storybook",
+  copy: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+  cta: {
+    label: "Optional CTA",
+    url: "http://www.google.com",
+  },
+  headline: "With CTA",
+  isCollapsible: true,
+  isOpen: false,
+  toggleOpenLabel: "Open",
+  toggleClosedLabel: "Closed",
+  type: "info",
+};
+
 const infoCallout: CalloutProps = {
-  alert: "info",
-  callback: "",
-  children: "",
+  copy: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
   isCollapsible: false,
-  title: "Notification Title",
+  headline: "Notification Title",
+  type: "info",
 };
 
 const errorCallout: CalloutProps = {
-  alert: "error",
-  buttonLabel: "Optional Label",
-  callback: "",
-  children: "",
+  cta: {
+    label: "Optional CTA",
+    url: "http://www.google.com",
+  },
+  copy: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
   isCollapsible: true,
   isOpen: false,
-  title: "Notification Title",
+  headline: "Notification Title",
+  toggleOpenLabel: "Open",
+  toggleClosedLabel: "Closed",
+  type: "error",
 };
 
 const successCallout: CalloutProps = {
-  alert: "success",
-  callback: "",
-  children: "",
+  copy: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
   isCollapsible: false,
-  title: "Notification Title",
+  headline: "Notification Title",
+  type: "success",
 };
 
 const warningCallout: CalloutProps = {
-  alert: "warning",
-  callback: "",
-  children: "",
+  copy: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
   isCollapsible: false,
-  title: "Notification Title",
+  headline: "Notification Title",
+  type: "warning",
 };
 
 /**
  * Sample prop definitions for Callout's enumerable properties (imported in stories and tests).
  */
 const CalloutArgs = {
+  hascta,
   infoCallout,
   errorCallout,
   warningCallout,

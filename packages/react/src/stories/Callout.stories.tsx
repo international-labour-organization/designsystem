@@ -13,7 +13,7 @@ import { CalloutProps } from "../components/Callout/Callout.props";
 import calloutArgs from "../components/Callout/Callout.args";
 
 const themeDoc = `
-By changing the \`alert\` prop you can change base coloring of the links. By default this is set to \`info\`.
+By changing the \`type\` prop you can change base coloring of the links. By default this is set to \`info\`.
 
 | Theme   |  Description  |
 |----------|-------------|

@@ -1,21 +1,23 @@
 import { ReactNode } from "react";
 import { calloutTypes } from "../../types";
 
+interface CTAProps {
+  /**
+   * Specify the label of the CTA
+   */
+  label?: string;
+
+  /**
+   * Specify the url of the CTA
+   */
+  url?: string;
+}
+
 export interface CalloutProps {
   /**
-   * Describe the type of callout
+   * Specify the settings for an option CTA
    */
-  alert?: calloutTypes;
-
-  /**
-   * Specify an optional button label
-   */
-  buttonLabel?: string;
-
-  /**
-   * Specify the callback of your Button.
-   */
-  callback?: function;
+  cta?: CTAProps;
 
   /**
    * Specify an optional className to be added to your RichText.
@@ -23,9 +25,9 @@ export interface CalloutProps {
   className?: string;
 
   /**
-   * Specify the html content
+   * Specify the copy
    */
-  children?: ReactNode;
+  copy?: Required<string>;
 
   /**
    * Specify if callout is collapsible
@@ -38,9 +40,9 @@ export interface CalloutProps {
   isOpen?: boolean;
 
   /**
-   * Specify the callout title
+   * Specify the callout headline
    */
-  title?: string;
+  headline?: string;
 
   /**
    * Specify the open label
@@ -51,4 +53,9 @@ export interface CalloutProps {
    * Specify the open label
    */
   toggleClosedLabel?: string;
+
+  /**
+   * Describe the type of callout
+   */
+  type?: calloutTypes;
 }

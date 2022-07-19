@@ -1,42 +1,41 @@
-import { render } from "@testing-library/react";
-import { composeStories } from "@storybook/testing-react";
-import * as stories from "../stories/Callout.stories";
+import { render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
+import { Callout } from "../components/Callout";
+import calloutArgs from "../components/Callout/Callout.args";
 
-const { InfoCallout, ErrorCallout, SuccessCallout, WarningCallout } =
-  composeStories(stories);
+// const { InfoCallout, ErrorCallout, SuccessCallout, WarningCallout } =
+//   composeStories(stories);
 
 describe("<Callout>", () => {
-  it("Expect InfoCallout class to be based on type", () => {
-    const { container } = render(<InfoCallout />);
-    expect(container).not.toBeNull();
-    const infoCallout = document.querySelector('div[class*="--callout--info"]');
-    expect(infoCallout).not.toBeNull();
+  it("Should render Callout headline with content.", () => {
+    const { container } = render(<Callout {...calloutArgs.hascta} />);
+    expect(container.children[0]).not.toBeNull();
+    const headlineElement = document.querySelector('[class*="--headline"]');
+    console.log(headlineElement);
+    expect(headlineElement?.textContent).toEqual(calloutArgs?.hascta?.headline);
   });
 
-  it("Expect ErrorCallout class to be based on type", () => {
-    const { container } = render(<ErrorCallout />);
-    expect(container).not.toBeNull();
-    const errorCallout = document.querySelector(
-      'div[class*="--callout--error"]'
-    );
-    expect(errorCallout).not.toBeNull();
+  it("Should render Callout copy with content.", () => {
+    const { container } = render(<Callout {...calloutArgs.hascta} />);
+    expect(container.children[0]).not.toBeNull();
+    const copyElement = document.querySelector('[class*="--copy"]');
+    expect(copyElement?.textContent).toEqual(calloutArgs?.hascta?.copy);
   });
 
-  it("Expect SuccessCallout class to be based on type", () => {
-    const { container } = render(<SuccessCallout />);
-    expect(container).not.toBeNull();
-    const successCallout = document.querySelector(
-      'div[class*="--callout--success"]'
+  it("Should render `button` with correct label from prop toggleClosedLabel", () => {
+    render(<Callout {...calloutArgs.hascta} />);
+    const buttonElement = screen.getAllByRole("button");
+    expect(buttonElement).not.toBeNull();
+    expect(buttonElement[0].textContent).toEqual(
+      calloutArgs?.hascta?.toggleClosedLabel
     );
-    expect(successCallout).not.toBeNull();
   });
 
-  it("Expect WarningCallout class to be based on type", () => {
-    const { container } = render(<WarningCallout />);
-    expect(container).not.toBeNull();
-    const warningCallout = document.querySelector(
-      'div[class*="--callout--warning"]'
-    );
-    expect(warningCallout).not.toBeNull();
+  it("Should open the callout on button click", () => {
+    const { container } = render(<Callout {...calloutArgs.hascta} />);
+    expect(container.children[0]).not.toBeNull();
+    userEvent.click(screen.getByRole("button"));
+    const calloutOpenElement = document.querySelector('[class*="--open"]');
+    expect(calloutOpenElement).not.toBeNull();
   });
 });

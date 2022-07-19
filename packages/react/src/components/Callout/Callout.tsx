@@ -2,18 +2,19 @@ import React, { useState, useEffect, FC } from "react";
 import classNames from "classnames";
 import useGlobalSettings from "../../hooks/useGlobalSettings";
 import { CalloutProps } from "./Callout.props";
+import { ButtonProps } from "../Button/Button.props";
+import { Button } from "../Button";
 
 const Callout: FC<CalloutProps> = ({
-  alert,
-  buttonLabel,
-  callback,
   className,
-  children,
+  copy,
+  cta,
   isCollapsible,
   isOpen = true,
   toggleOpenLabel = "Less",
   toggleClosedLabel = "More",
-  title,
+  headline,
+  type,
 }) => {
   const { prefix } = useGlobalSettings();
   const baseClass = `${prefix}--callout`;
@@ -27,18 +28,21 @@ const Callout: FC<CalloutProps> = ({
 
   const calloutClasses = classNames(className, {
     [baseClass]: true,
-    [`${baseClass}--${alert}`]: alert,
+    [`${baseClass}--${type}`]: type,
     [`${baseClass}--open`]: toggleOpen,
     [`${baseClass}--collapse`]: isCollapsible,
   });
 
-  /**
-   * On click, if there is a callback, call it
-   */
-  const handleClick = (e: React.MouseEvent<Element, MouseEvent>) => {
-    if (callback) {
-      callback(e);
-    }
+  const iconClasses = `icon icon--${type}`;
+
+  const ctaprops: ButtonProps = {
+    callback: false,
+    className: `${baseClass}--cta`,
+    children: false,
+    label: cta?.label,
+    size: "small",
+    type: "secondary",
+    url: cta?.url,
   };
 
   const handleToggle = (e: React.MouseEvent<Element, MouseEvent>) => {
@@ -50,34 +54,24 @@ const Callout: FC<CalloutProps> = ({
   return (
     <div className={calloutClasses}>
       <div className={`${baseClass}--sidebar`}>
-        <span className={`${baseClass}--icon`}></span>
+        <span className={iconClasses}></span>
       </div>
       <div className={`${baseClass}--content`}>
         <div className={`${baseClass}--header`}>
-          <h5 className={`${baseClass}--title`}>{title}</h5>
+          <h5 className={`${baseClass}--headline`}>{headline}</h5>
           {isCollapsible && (
             <button
               className={`${baseClass}--toggle`}
               onClick={handleToggle}
               type="button"
             >
-              {toggleLabel}{" "}
+              {toggleLabel}
               <span className={`${baseClass}--toggle--icon`}></span>
             </button>
           )}
         </div>
-        {children}
-        {buttonLabel && (
-          <div className={`${baseClass}--footer`}>
-            <button
-              className="ilo--button ilo--button--small ilo--button--secondary"
-              type="button"
-              onClick={handleClick}
-            >
-              {buttonLabel}
-            </button>
-          </div>
-        )}
+        <p className={`${baseClass}--copy`}>{copy}</p>
+        {cta && <Button {...ctaprops} />}
       </div>
     </div>
   );
