@@ -1639,6 +1639,148 @@ exports[`Storyshots Components/List Unstyled List 1`] = `
 </div>
 `;
 
+exports[`Storyshots Components/Loading Loading - idle large 1`] = `
+<div
+  style={
+    Object {
+      "margin": "3em",
+    }
+  }
+>
+  <div
+    aria-live="assertive"
+    className="storybook ilo--loading ilo--loading--large ilo--loading--idle"
+    role="alert"
+  />
+</div>
+`;
+
+exports[`Storyshots Components/Loading Loading - idle small 1`] = `
+<div
+  style={
+    Object {
+      "margin": "3em",
+    }
+  }
+>
+  <div
+    aria-live="assertive"
+    className="storybook ilo--loading ilo--loading--small ilo--loading--idle"
+    role="alert"
+  />
+</div>
+`;
+
+exports[`Storyshots Components/Loading Loading - loaded large 1`] = `
+<div
+  style={
+    Object {
+      "margin": "3em",
+    }
+  }
+>
+  <div
+    aria-live="assertive"
+    className="storybook ilo--loading ilo--loading--large ilo--loading--loaded"
+    role="alert"
+  >
+    <p
+      className="ilo--loading--copy"
+    >
+      Completed
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/Loading Loading - loaded small 1`] = `
+<div
+  style={
+    Object {
+      "margin": "3em",
+    }
+  }
+>
+  <div
+    aria-live="assertive"
+    className="storybook ilo--loading ilo--loading--small ilo--loading--loaded"
+    role="alert"
+  >
+    <p
+      className="ilo--loading--copy"
+    >
+      Completed
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/Loading Loading - loading large 1`] = `
+<div
+  style={
+    Object {
+      "margin": "3em",
+    }
+  }
+>
+  <div
+    aria-live="assertive"
+    className="storybook ilo--loading ilo--loading--large ilo--loading--loading"
+    role="alert"
+  >
+    <p
+      className="ilo--loading--copy"
+    >
+      Submitting
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/Loading Loading - loading large 2`] = `
+<div
+  style={
+    Object {
+      "margin": "3em",
+    }
+  }
+>
+  <div
+    aria-live="assertive"
+    className="storybook ilo--loading ilo--loading--large ilo--loading--loading"
+    role="alert"
+  >
+    <p
+      className="ilo--loading--copy"
+    >
+      Submitting
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/Loading Loading - loading small 1`] = `
+<div
+  style={
+    Object {
+      "margin": "3em",
+    }
+  }
+>
+  <div
+    aria-live="assertive"
+    className="storybook ilo--loading ilo--loading--small ilo--loading--loading"
+    role="alert"
+  >
+    <p
+      className="ilo--loading--copy"
+    >
+      Submitting
+    </p>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Components/Notification Notification - dialog, has call to action 1`] = `
 <div
   style={
