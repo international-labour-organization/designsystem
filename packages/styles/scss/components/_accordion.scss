@@ -37,6 +37,14 @@
       color: $color-ux-labels-hover;
       cursor: pointer;
       fill: $color-ux-labels-hover;
+
+      &[aria-expanded="true"] {
+        @include dataurlicon("minus", $color-ux-labels-hover);
+      }
+
+      &[aria-expanded="false"] {
+        @include dataurlicon("add", $color-ux-labels-hover);
+      }
     }
 
     &--large {
@@ -59,7 +67,7 @@
     font-family: $fonts-copy;
     height: auto;
     overflow: hidden;
-    transition: height 300ms ease-in-out;
+    transition: height 150ms ease-out;
 
     @include font-styles("label-medium");
 
