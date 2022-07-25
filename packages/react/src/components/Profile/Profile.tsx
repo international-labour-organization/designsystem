@@ -25,14 +25,14 @@ const Profile: FC<ProfileProps> = ({
         alt={`Avatar for ${name}`}
       />
       <figcaption className={`${baseClass}--contents`}>
-        <span className={`${baseClass}--name`}>{name}</span>
-        {role && <span className={`${baseClass}--role`}>{role}</span>}
+        <span className={`${baseClass}--name id`}>{name}</span>
+        {role && <span className={`${baseClass}--role id`}>{role}</span>}
         {description && (
-          <span className={`${baseClass}--description`}>{description}</span>
+          <p className={`${baseClass}--description info`}>{description}</p>
         )}
         {link && (
-          <a className={`${baseClass}--link`} href={link.url}>
-            {link.label}
+          <a className={`${baseClass}--link info`} href={link.url}>
+            <span>{link.label}</span>
           </a>
         )}
       </figcaption>

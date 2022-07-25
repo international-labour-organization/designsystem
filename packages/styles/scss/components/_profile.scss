@@ -1,0 +1,139 @@
+@use "../tokens" as *;
+@import "../mixins";
+@import "../animations";
+
+.ilo--profile {
+  max-width: 343px;
+  position: relative;
+
+  &--avatar {
+    border-radius: 50%;
+    float: left;
+    width: 18.65%;
+  }
+
+  &--contents {
+    .id {
+      margin-left: calc(18.65% + 14px);
+      padding-top: 5px;
+
+      &:first-of-type {
+        padding-bottom: 5px;
+      }
+
+      &:nth-of-type(2):last-of-type {
+        padding-top: 0;
+      }
+    }
+
+    .id:first-of-type:last-of-type,
+    .id:nth-of-type(2):last-of-type {
+      border-bottom: 2px solid $color-base-neutrals-lighter;
+      padding-bottom: 7px;
+    }
+
+    .id:first-of-type:last-of-type {
+      padding-top: 14px;
+    }
+  }
+
+  &--name {
+    display: block;
+    font-family: $fonts-display;
+    font-weight: map-get($type, "weights", "label");
+    margin-left: 14px;
+    @include font-styles("body-xs");
+  }
+
+  &--role {
+    display: block;
+    font-family: $fonts-copy;
+    margin-left: 14px;
+    @include font-styles("body-xss");
+  }
+
+  &--description {
+    clear: both;
+    font-family: $fonts-copy;
+    padding-top: 22px;
+    @include font-styles("body-xss");
+  }
+
+  &--link {
+    clear: both;
+    color: map-get($color, "link", "text", "default");
+    display: block;
+    font-family: $fonts-display;
+    font-weight: map-get($type, "weights", "section");
+    text-decoration: none;
+    @include font-styles("body-xs");
+
+    span {
+      background-position: right center;
+      background-repeat: no-repeat;
+      background-size: 24px 24px;
+      padding-right: 32px;
+      @include dataurlicon("arrowright", $color-link-text-default);
+    }
+
+    &:visited {
+      color: map-get($color, "link", "text", "visited");
+
+      span {
+        @include dataurlicon("arrowright", $color-link-text-visited);
+      }
+    }
+
+    &:active {
+      color: map-get($color, "link", "text", "active");
+      outline: none;
+
+      span {
+        @include dataurlicon("arrowright", $color-link-text-active);
+        background-color: map-get($color, "link", "background", "active");
+      }
+    }
+
+    &:hover,
+    &:focus {
+      color: map-get($color, "link", "text", "hover");
+      outline: none;
+
+      span {
+        @include dataurlicon("arrowright", $color-link-text-hover);
+      }
+    }
+  }
+
+  .ilo--profile--description + .ilo--profile--link {
+    margin-top: 28px;
+  }
+
+  .ilo--profile--role + .ilo--profile--link {
+    margin-top: 22px;
+  }
+
+  .ilo--profile--name + .ilo--profile--link {
+    margin-top: 38px;
+  }
+
+  @include breakpoint("medium") {
+    &--name {
+      @include font-styles("body-small");
+    }
+
+    &--role {
+      font-family: $fonts-copy;
+      @include font-styles("body-xs");
+    }
+
+    &--description {
+      font-family: $fonts-copy;
+      @include font-styles("body-xs");
+    }
+
+    &--link {
+      @include font-styles("body-small");
+    }
+  }
+}
