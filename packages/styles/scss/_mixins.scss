@@ -214,8 +214,8 @@
 
 @mixin linkstyles() {
   background: map-get($color, "link", "background", "default");
-  border-bottom: $widths-border-sm solid
-    map-get($color, "link", "default", "default");
+  border-bottom: $widths-border-xsm solid
+    map-get($color, "link", "underline", "default");
   color: map-get($color, "link", "text", "default");
   font-size: inherit;
   font-weight: inherit;
@@ -224,14 +224,14 @@
 
   &:visited {
     background: map-get($color, "link", "background", "visited");
-    border-bottom: $widths-border-sm solid
+    border-bottom: $widths-border-xsm solid
       map-get($color, "link", "underline", "visited");
     color: map-get($color, "link", "text", "visited");
   }
 
   &:hover {
     background: map-get($color, "link", "background", "hover");
-    border-bottom: $widths-border-med solid
+    border-bottom: $widths-border-sm solid
       map-get($color, "link", "underline", "hover");
     color: map-get($color, "link", "text", "hover");
     text-decoration: none;
@@ -239,7 +239,7 @@
 
   &:active {
     background: map-get($color, "link", "background", "active");
-    border-bottom: $widths-border-lg solid
+    border-bottom: $widths-border-sm solid
       map-get($color, "link", "underline", "active");
     color: map-get($color, "link", "text", "active");
     outline: none;
@@ -247,7 +247,7 @@
 
   &:focus {
     background: map-get($color, "link", "background", "focus");
-    border-bottom: $widths-border-lg solid
+    border-bottom: $widths-border-med-sm solid
       map-get($color, "link", "underline", "focus");
     color: map-get($color, "link", "text", "focus");
     outline: none;
@@ -255,27 +255,27 @@
 
   &--dark {
     background: map-get($color, "link", "background-dark", "default");
-    border-bottom: $widths-border-sm solid
+    border-bottom: $widths-border-xsm solid
       map-get($color, "link", "underline-dark", "default");
     color: map-get($color, "link", "text-dark", "default");
 
     &:visited {
       background: map-get($color, "link", "background-dark", "visited");
-      border-bottom: $widths-border-sm solid
+      border-bottom: $widths-border-xsm solid
         map-get($color, "link", "underline-dark", "visited");
       color: map-get($color, "link", "text-dark", "visited");
     }
 
     &:hover {
       background: map-get($color, "link", "background-dark", "hover");
-      border-bottom: $widths-border-med solid
+      border-bottom: $widths-border-sm solid
         map-get($color, "link", "underline-dark", "hover");
       color: map-get($color, "link", "text-dark", "hover");
     }
 
     &:active {
       background: map-get($color, "link", "background-dark", "active");
-      border-bottom: $widths-border-lg solid
+      border-bottom: $widths-border-sm solid
         map-get($color, "link", "underline-dark", "active");
       color: map-get($color, "link", "text-dark", "active");
       outline: none;
@@ -283,7 +283,7 @@
 
     &:focus {
       background: map-get($color, "link", "background-dark", "focus");
-      border-bottom: $widths-border-lg solid
+      border-bottom: $widths-border-med-sm solid
         map-get($color, "link", "underline-dark", "focus");
       color: map-get($color, "link", "text-dark", "focus");
       outline: none;
