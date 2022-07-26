@@ -34,6 +34,14 @@
     &:focus {
       background-color: $color-base-blue-light;
     }
+
+    &.endsection {
+      border-bottom: px-to-rem($borders-base) solid $color-base-neutrals-white;
+
+      .ilo--context-menu--link {
+        border-bottom: none;
+      }
+    }
   }
 
   &--link {
@@ -42,7 +50,7 @@
     display: inline-block;
     font-family: $fonts-copy;
     font-weight: map-get($type, "weights", "section");
-    padding: px-to-rem(20px) 0;
+    padding: px-to-rem(14px) 0;
     text-decoration: none;
     width: 100%;
     @include font-styles("body-xs");
