@@ -1,0 +1,45 @@
+linklist:
+  use: '@components/linklist/linklist.twig'
+  label: Link List
+  description: The Link List receives a list of urls with labels and an optional prop indicating if this link is at the end of a 'section.'
+  fields:
+    headline:
+      type: string
+      label: Headline
+      description: Link List's Headline
+      required: true
+      preview: Link List Headling
+    linkgroup:
+      type: object
+      label: Link Group
+      description: A group of links
+      required: true
+      preview:
+        - headline: Section Headline
+          links:
+            - label: Link One
+              url: 'http://www.google.com'
+            - label: Link Two
+              url: 'http://www.google.com'
+            - label: Link Three
+              url: 'http://www.google.com'
+            - label: Link Four
+              url: 'http://www.google.com'
+            - label: Link Five Is Slightly Longer
+              url: 'http://www.google.com'
+        - headline: Section 2 (With Indents)
+          links:
+            - label: Section 2 Link One
+              url: 'http://www.google.com'
+            - indented: 'true'
+              label: Section 2 Link Two
+              url: 'http://www.google.com'
+            - indented: 'true'
+              label: Section 2 Link Three
+              url: 'http://www.google.com'
+            - indented: 'true'
+              label: Section 2 Link Four
+              url: 'http://www.google.com'
+            - label: Section 2 Link Five Is Slightly Longer
+              url: 'http://www.google.com'
+  visibility: storybook
