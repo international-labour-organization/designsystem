@@ -42,6 +42,7 @@ const AccordionButton: FC<AccordionButtonProps> = ({
     if (onButtonClick) {
       onButtonClick(e, id);
     }
+    e.currentTarget.blur();
   };
 
   return (

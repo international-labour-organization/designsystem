@@ -140,6 +140,7 @@ export default class Accordion {
         this.accordionPanels[i].setAttribute(ARIA.HIDDEN, 'true');
         this.collapseSection(this.accordionPanels[i]);
       }
+      this.accordionButtons[i].blur();
     });
 
     return this;
