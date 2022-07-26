@@ -1231,6 +1231,176 @@ exports[`Storyshots Components/Callout Warning Callout 1`] = `
 </div>
 `;
 
+exports[`Storyshots Components/ContextMenu ContextMenu - Basic 1`] = `
+<div
+  style={
+    Object {
+      "margin": "3em",
+    }
+  }
+>
+  <ul
+    className="ilo--context-menu"
+  >
+    <li
+      className="ilo--context-menu--item "
+    >
+      <a
+        className="ilo--context-menu--link"
+        href="http://www.google.com"
+      >
+        <span
+          className="ilo--context-menu--label"
+        >
+          Link One
+        </span>
+      </a>
+    </li>
+    <li
+      className="ilo--context-menu--item "
+    >
+      <a
+        className="ilo--context-menu--link"
+        href="http://www.google.com"
+      >
+        <span
+          className="ilo--context-menu--label"
+        >
+          Link Two
+        </span>
+      </a>
+    </li>
+    <li
+      className="ilo--context-menu--item "
+    >
+      <a
+        className="ilo--context-menu--link"
+        href="http://www.google.com"
+      >
+        <span
+          className="ilo--context-menu--label"
+        >
+          Link Three
+        </span>
+      </a>
+    </li>
+    <li
+      className="ilo--context-menu--item "
+    >
+      <a
+        className="ilo--context-menu--link"
+        href="http://www.google.com"
+      >
+        <span
+          className="ilo--context-menu--label"
+        >
+          Link Four
+        </span>
+      </a>
+    </li>
+    <li
+      className="ilo--context-menu--item "
+    >
+      <a
+        className="ilo--context-menu--link"
+        href="http://www.google.com"
+      >
+        <span
+          className="ilo--context-menu--label"
+        >
+          Link Five Is Much Longer
+        </span>
+      </a>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`Storyshots Components/ContextMenu ContextMenu - With A 'Section' 1`] = `
+<div
+  style={
+    Object {
+      "margin": "3em",
+    }
+  }
+>
+  <ul
+    className="ilo--context-menu"
+  >
+    <li
+      className="ilo--context-menu--item "
+    >
+      <a
+        className="ilo--context-menu--link"
+        href="http://www.google.com"
+      >
+        <span
+          className="ilo--context-menu--label"
+        >
+          Link One
+        </span>
+      </a>
+    </li>
+    <li
+      className="ilo--context-menu--item "
+    >
+      <a
+        className="ilo--context-menu--link"
+        href="http://www.google.com"
+      >
+        <span
+          className="ilo--context-menu--label"
+        >
+          Link Two
+        </span>
+      </a>
+    </li>
+    <li
+      className="ilo--context-menu--item endsection"
+    >
+      <a
+        className="ilo--context-menu--link"
+        href="http://www.google.com"
+      >
+        <span
+          className="ilo--context-menu--label"
+        >
+          Link Three Ends A Section
+        </span>
+      </a>
+    </li>
+    <li
+      className="ilo--context-menu--item "
+    >
+      <a
+        className="ilo--context-menu--link"
+        href="http://www.google.com"
+      >
+        <span
+          className="ilo--context-menu--label"
+        >
+          Link Four
+        </span>
+      </a>
+    </li>
+    <li
+      className="ilo--context-menu--item "
+    >
+      <a
+        className="ilo--context-menu--link"
+        href="http://www.google.com"
+      >
+        <span
+          className="ilo--context-menu--label"
+        >
+          Link Five Is Much Longer
+        </span>
+      </a>
+    </li>
+  </ul>
+</div>
+`;
+
 exports[`Storyshots Components/Empty Empty 1 1`] = `
 <div
   style={
