@@ -2318,6 +2318,187 @@ exports[`Storyshots Components/Notification Notification - warning dialog 1`] = 
 </div>
 `;
 
+exports[`Storyshots Components/Profile Profile - All Optional Props 1`] = `
+<div
+  style={
+    Object {
+      "margin": "3em",
+    }
+  }
+>
+  <figure
+    className="storybook ilo--profile"
+  >
+    <img
+      alt="Avatar for Firstname Lastname"
+      className="ilo--profile--avatar"
+      src="http://placekitten.com/128/128"
+    />
+    <figcaption
+      className="ilo--profile--contents"
+    >
+      <span
+        className="ilo--profile--name id"
+      >
+        Firstname Lastname
+      </span>
+      <span
+        className="ilo--profile--role id"
+      >
+        Senior Media Strategist
+      </span>
+      <p
+        className="ilo--profile--description info"
+      >
+        Firstname Lastname is the Senior Media Strategist. He has been with ILO for eight years.
+      </p>
+      <a
+        className="ilo--profile--link info"
+        href="http://www.google.com"
+      >
+        <span>
+          Optional Link
+        </span>
+      </a>
+    </figcaption>
+  </figure>
+</div>
+`;
+
+exports[`Storyshots Components/Profile Profile - Basic 1`] = `
+<div
+  style={
+    Object {
+      "margin": "3em",
+    }
+  }
+>
+  <figure
+    className="storybook ilo--profile"
+  >
+    <img
+      alt="Avatar for Firstname Lastname"
+      className="ilo--profile--avatar"
+      src="http://placekitten.com/128/128"
+    />
+    <figcaption
+      className="ilo--profile--contents"
+    >
+      <span
+        className="ilo--profile--name id"
+      >
+        Firstname Lastname
+      </span>
+    </figcaption>
+  </figure>
+</div>
+`;
+
+exports[`Storyshots Components/Profile Profile - With Descriptoon 1`] = `
+<div
+  style={
+    Object {
+      "margin": "3em",
+    }
+  }
+>
+  <figure
+    className="storybook ilo--profile"
+  >
+    <img
+      alt="Avatar for Firstname Lastname"
+      className="ilo--profile--avatar"
+      src="http://placekitten.com/128/128"
+    />
+    <figcaption
+      className="ilo--profile--contents"
+    >
+      <span
+        className="ilo--profile--name id"
+      >
+        Firstname Lastname
+      </span>
+      <p
+        className="ilo--profile--description info"
+      >
+        Firstname Lastname is the Senior Media Strategist. He has been with ILO for eight years.
+      </p>
+    </figcaption>
+  </figure>
+</div>
+`;
+
+exports[`Storyshots Components/Profile Profile - With Link 1`] = `
+<div
+  style={
+    Object {
+      "margin": "3em",
+    }
+  }
+>
+  <figure
+    className="storybook ilo--profile"
+  >
+    <img
+      alt="Avatar for Firstname Lastname"
+      className="ilo--profile--avatar"
+      src="http://placekitten.com/128/128"
+    />
+    <figcaption
+      className="ilo--profile--contents"
+    >
+      <span
+        className="ilo--profile--name id"
+      >
+        Firstname Lastname
+      </span>
+      <a
+        className="ilo--profile--link info"
+        href="http://www.google.com"
+      >
+        <span>
+          Optional Link
+        </span>
+      </a>
+    </figcaption>
+  </figure>
+</div>
+`;
+
+exports[`Storyshots Components/Profile Profile - With Role 1`] = `
+<div
+  style={
+    Object {
+      "margin": "3em",
+    }
+  }
+>
+  <figure
+    className="storybook ilo--profile"
+  >
+    <img
+      alt="Avatar for Firstname Lastname"
+      className="ilo--profile--avatar"
+      src="http://placekitten.com/128/128"
+    />
+    <figcaption
+      className="ilo--profile--contents"
+    >
+      <span
+        className="ilo--profile--name id"
+      >
+        Firstname Lastname
+      </span>
+      <span
+        className="ilo--profile--role id"
+      >
+        Senior Media Strategist
+      </span>
+    </figcaption>
+  </figure>
+</div>
+`;
+
 exports[`Storyshots Components/ReadMore ReadMore - default 1`] = `
 <div
   style={
