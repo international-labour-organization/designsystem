@@ -20,8 +20,8 @@ const ContextMenu: FC<ContextMenuProps> = ({ className, links }) => {
             }`}
             key={`${baseClass}--item-${i}`}
           >
-            <a href={link.url}>
-              <span>{link.label}</span>
+            <a href={link.url} className={`${baseClass}--link`}>
+              <span className={`${baseClass}--label`}>{link.label}</span>
             </a>
           </li>
         ))}
