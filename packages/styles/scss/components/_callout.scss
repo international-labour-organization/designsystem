@@ -1,0 +1,151 @@
+@use "../tokens" as *;
+@use "../functions" as *;
+@import "../mixins";
+
+.ilo--callout {
+  display: flex;
+  transition: max-height 0.2s ease-in-out;
+  $self: &;
+
+  &--collapse:not(.ilo--callout--open) {
+    max-height: 68px;
+    overflow: hidden;
+  }
+
+  &--open {
+    max-height: 300px;
+    overflow: hidden;
+
+    #{$self}--toggle--icon {
+      transform: translateY(-50%) rotate(180deg);
+    }
+  }
+
+  &--sidebar {
+    padding: px-to-rem(24px) px-to-rem(12px);
+    width: px-to-rem(40px);
+  }
+
+  &--content {
+    padding: px-to-rem($spacing-padding-3 + 2) px-to-rem($spacing-padding-3)
+      px-to-rem($spacing-padding-3);
+    width: 100%;
+  }
+
+  &--copy {
+    @include font-styles("body-xs");
+
+    &:not(:last-child) {
+      margin-bottom: px-to-rem($spacing-padding-3);
+    }
+  }
+
+  &--header {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 0 px-to-rem(24px);
+  }
+
+  &--headline {
+    @include font-styles("nav-bold-b");
+
+    font-family: $fonts-display;
+    font-weight: 700;
+  }
+
+  &--toggle {
+    @include font-styles("nav-bold-b");
+
+    background: none;
+    border: none;
+    color: $brand-ilo-dark-blue;
+    cursor: pointer;
+    font-family: $fonts-display;
+    font-weight: 500;
+    padding-right: 36px;
+    position: relative;
+
+    &--icon {
+      @include dataurlicon("arrow", $brand-ilo-dark-blue);
+
+      background-position: right;
+      background-repeat: no-repeat;
+      display: inline-block;
+      height: 24px;
+      position: absolute;
+      right: 4px;
+      top: 50%;
+      transform: translateY(-50%) rotate(0);
+      transition: transform 0.2s ease-in-out;
+      width: 24px;
+    }
+  }
+
+  &--footer {
+    padding: px-to-rem(24px) 0 0 0;
+  }
+
+  .icon {
+    background-repeat: no-repeat;
+    background-size: contain;
+    display: block;
+    height: 16px;
+    width: 16px;
+
+    &--error {
+      background-color: $color-ux-notification-type-error;
+
+      @include dataurlicon("error", $color-ux-notification-icon);
+    }
+
+    &--info {
+      background-color: $color-ux-notification-type-info;
+
+      @include dataurlicon("info", $color-ux-notification-icon);
+    }
+
+    &--success {
+      background-color: $color-ux-notification-type-success;
+
+      @include dataurlicon("success", $color-ux-notification-icon);
+    }
+
+    &--warning {
+      background-color: $color-ux-notification-type-warning;
+
+      @include dataurlicon("warning", $color-ux-notification-icon);
+    }
+  }
+
+  &--error {
+    background: $brand-ilo-ramp-red;
+
+    #{$self}--sidebar {
+      background: $brand-ilo-red;
+    }
+  }
+
+  &--info {
+    background: $brand-ilo-ramp-blue;
+
+    #{$self}--sidebar {
+      background: $brand-ilo-blue;
+    }
+  }
+
+  &--success {
+    background: $brand-ilo-ramp-green;
+
+    #{$self}--sidebar {
+      background: $brand-ilo-green;
+    }
+  }
+
+  &--warning {
+    background: $brand-ilo-ramp-yellow;
+
+    #{$self}--sidebar {
+      background: $brand-ilo-yellow;
+    }
+  }
+}
