@@ -1,0 +1,170 @@
+@use "../tokens" as *;
+@use "../functions" as *;
+@import "../mixins";
+
+.ilo--tooltip {
+  @include font-styles("body-xs");
+
+  background: map-get($color, "tooltip", "background");
+  border: none;
+  border-radius: px-to-rem(2px);
+  display: inline-block;
+  filter: drop-shadow(
+      0 px-to-rem(0.8px) px-to-rem(1.6px)
+        rgba(map-get($color, "tooltip", "dropshadow"), 0.038)
+    )
+    drop-shadow(
+      0 px-to-rem(2.7) px-to-rem(5.4px)
+        rgba(map-get($color, "tooltip", "dropshadow"), 0.054)
+    )
+    drop-shadow(
+      0 px-to-rem(12px) px-to-rem(24px)
+        rgba(map-get($color, "tooltip", "dropshadow"), 0.12)
+    );
+  color: map-get($color, "tooltip", "text");
+  opacity: 0;
+  padding: map-get($spacing, "ui-padding");
+  position: absolute;
+  transition: opacity 0.15s ease-in-out;
+  visibility: hidden;
+  width: 100%;
+
+  &--visible {
+    opacity: 1;
+    visibility: visible;
+    z-index: 2;
+  }
+
+  &__wrapper {
+    display: inline-block;
+    position: relative;
+  }
+
+  &__arrow {
+    border-color: transparent;
+    border-right-color: transparent;
+    border-style: solid;
+    border-width: 0;
+    height: 0;
+    margin-top: -#{map-get($spacing, "tooltip", "tooltip-arrow-width")};
+    position: absolute;
+    width: 0;
+  }
+
+  &--alignment-top {
+    left: 0;
+    top: calc(-100% + map-get($spacing, "tooltip", "tooltip-arrow-height"));
+
+    .ilo--tooltip__arrow {
+      border-top-color: map-get($color, "tooltip", "background");
+      border-width: map-get($spacing, "tooltip", "tooltip-arrow-height")
+        map-get($spacing, "tooltip", "tooltip-arrow-width") 0
+        map-get($spacing, "tooltip", "tooltip-arrow-width");
+      bottom: -#{map-get($spacing, "tooltip", "tooltip-arrow-height")};
+      left: 50%;
+      margin-left: -#{map-get($spacing, "tooltip", "tooltip-arrow-width")};
+      top: auto;
+
+      &--placement-negative {
+        left: 10%;
+      }
+
+      &--placement-positive {
+        left: auto;
+        right: 10%;
+      }
+
+      &--placement-center {
+        left: 50%;
+      }
+    }
+  }
+
+  &--alignment-right {
+    left: calc(100% + map-get($spacing, "padding-4"));
+    top: calc(50% - map-get($spacing, "tooltip", "tooltip-arrow-width"));
+
+    .ilo--tooltip__arrow {
+      border-right-color: map-get($color, "tooltip", "background");
+      border-width: map-get($spacing, "tooltip", "tooltip-arrow-width")
+        map-get($spacing, "tooltip", "tooltip-arrow-height")
+        map-get($spacing, "tooltip", "tooltip-arrow-width") 0;
+      left: 0;
+      margin-left: -#{map-get($spacing, "tooltip", "tooltip-arrow-height")};
+      top: 50%;
+
+      &--placement-negative {
+        margin-top: 0;
+        top: 10%;
+      }
+
+      &--placement-positive {
+        top: auto;
+        bottom: 10%;
+      }
+
+      &--placement-center {
+        top: 50%;
+      }
+    }
+  }
+
+  &--alignment-left {
+    right: calc(100% + map-get($spacing, "padding-4"));
+    top: calc(50% - map-get($spacing, "tooltip", "tooltip-arrow-width"));
+
+    .ilo--tooltip__arrow {
+      border-left-color: map-get($color, "tooltip", "background");
+      border-width: map-get($spacing, "tooltip", "tooltip-arrow-width") 0
+        map-get($spacing, "tooltip", "tooltip-arrow-width")
+        map-get($spacing, "tooltip", "tooltip-arrow-height");
+      left: auto;
+      margin-top: -#{map-get($spacing, "tooltip", "tooltip-arrow-width")};
+      right: -#{map-get($spacing, "tooltip", "tooltip-arrow-height")};
+      top: 50%;
+
+      &--placement-negative {
+        margin-top: 0;
+        top: 10%;
+      }
+
+      &--placement-positive {
+        top: auto;
+        bottom: 10%;
+      }
+
+      &--placement-center {
+        top: 50%;
+      }
+    }
+  }
+
+  &--alignment-bottom {
+    left: 0;
+    top: calc(100% + map-get($spacing, "tooltip", "tooltip-arrow-height"));
+
+    .ilo--tooltip__arrow {
+      border-width: 0 map-get($spacing, "tooltip", "tooltip-arrow-width")
+        map-get($spacing, "tooltip", "tooltip-arrow-height")
+        map-get($spacing, "tooltip", "tooltip-arrow-width");
+      left: 50%;
+      margin-left: -#{map-get($spacing, "tooltip", "tooltip-arrow-width")};
+      margin-top: -#{map-get($spacing, "tooltip", "tooltip-arrow-height")};
+      top: 0;
+      border-bottom-color: map-get($color, "tooltip", "background");
+
+      &--placement-negative {
+        left: 10%;
+      }
+
+      &--placement-positive {
+        left: auto;
+        right: 10%;
+      }
+
+      &--placement-center {
+        left: 50%;
+      }
+    }
+  }
+}

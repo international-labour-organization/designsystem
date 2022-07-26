@@ -204,9 +204,6 @@ importers:
       '@storybook/react': 5.3.21_f9cc32c1e359a5ae50c86cf4f80cf65c
       babel-loader: 8.2.5_@babel+core@7.17.9
 
-  packages/icons-react/next:
-    specifiers: {}
-
   packages/preset-scss:
     specifiers:
       '@babel/cli': ^7.8.4
@@ -30463,7 +30460,7 @@ packages:
     deprecated: See https://github.com/lydell/source-map-url#deprecated
 
   /source-map/0.2.0:
-    resolution: {integrity: sha1-2rc/vPwrqBm03gO9b26qSBZLP50=}
+    resolution: {integrity: sha512-CBdZ2oa/BHhS4xj5DlhjWNHcan57/5YuvfdLf17iVmIpd9KRm+DFLmC6nBNj+6Ua7Kt3TmOjDpQT1aTYOQtoUA==}
     engines: {node: '>=0.8.0'}
     requiresBuild: true
     dependencies:

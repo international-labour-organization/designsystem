@@ -12,6 +12,9 @@ export type inputTypes =
   | "url";
 export type labelTypes = "default" | "actionable" | "light";
 export type linkTypes = "light" | "dark" | "footer" | "button";
+export type tooltipThemes = "light" | "dark";
+export type tooltipAlignment = "top" | "right" | "bottom" | "left";
+export type tooltipPlacement = "negative" | "center" | "positive";
 export type listAlignment = "default" | "horizontal";
 export type listOrder = "unordered" | "ordered" | "unstyled";
 export type loadingStatus = "idle" | "loading" | "loaded";
