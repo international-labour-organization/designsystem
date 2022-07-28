@@ -3,8 +3,6 @@
   NPM_FLAGS="--version"
 
 [build]
-  # Uncomment to build the entire project on every deploy
-  # command = "npx pnpm@6.32.3 install --store-dir=.pnpm --frozen-lockfile && npx pnpm@6.32.3 build:all"
 
 
 
