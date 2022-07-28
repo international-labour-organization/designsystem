@@ -36,6 +36,8 @@ const Accordion: FC<AccordionProps> = ({
     defaultAccordionsExpanded
   );
 
+  console.log("I am an Accordion and this is a test: Accordion.tsx");
+
   useEffect(() => {
     const expandedOnLoad = allowMultipleExpanded
       ? defaultAccordionsExpanded
