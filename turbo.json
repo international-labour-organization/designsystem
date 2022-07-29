@@ -4,7 +4,16 @@
   "pipeline": {
     "build": {
       "dependsOn": ["^build"],
-      "outputs": ["dist/**", "lib/**", "storybook-static/**"]
+      "outputs": [
+        "es/**",
+        "svg/**",
+        "umd/**",
+        "dist/**",
+        "lib/**",
+        "build/**",
+        "storybook-static/**",
+        "scss/tokens/**"
+      ]
     },
     "test": {
       "dependsOn": ["^build"],
