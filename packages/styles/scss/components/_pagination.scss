@@ -1,0 +1,238 @@
+@use "../tokens" as *;
+@use "../functions" as *;
+@import "../mixins";
+
+.ilo--pagination {
+  display: flex;
+  justify-content: space-between;
+  margin-top: px-to-rem(
+    map-get($spacing, "ux", "pagination", "padding", "top")
+  );
+  $self: &;
+
+  &--link {
+    background: map-get($color, "ux", "pagination", "default", "background");
+    border: none;
+    border-radius: 2px;
+    color: map-get($color, "ux", "pagination", "default", "icon");
+    display: inline-block;
+    font-family: $fonts-display;
+    height: px-to-rem(map-get($spacing, "ux", "pagination", "width"));
+    overflow: hidden;
+    position: relative;
+    text-align: left;
+    text-indent: -999%;
+    width: px-to-rem(map-get($spacing, "ux", "pagination", "width"));
+    @include font-styles("label-medium");
+
+    &::before {
+      background-repeat: no-repeat;
+      content: "";
+      display: inline-block;
+      left: 50%;
+      height: px-to-rem(16px);
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      transform-origin: center center;
+      width: px-to-rem(16px);
+    }
+
+    &:hover {
+      background: map-get($color, "ux", "pagination", "hover", "background");
+      color: map-get($color, "ux", "pagination", "hover", "icon");
+    }
+
+    &.ilo--pagination--disable {
+      opacity: 0.45;
+      cursor: unset;
+
+      &:hover {
+        background: map-get(
+          $color,
+          "ux",
+          "pagination",
+          "default",
+          "background"
+        );
+      }
+    }
+  }
+
+  &--first-page {
+    margin: 0
+      px-to-rem(map-get($spacing, "ux", "pagination", "padding", "left")) 0 0;
+    &::before {
+      transform: translate(-50%, -50%) rotate(180deg);
+
+      @include dataurlicon(
+        "doublearrow",
+        map-get($color, "ux", "pagination", "default", "icon")
+      );
+    }
+
+    &:hover {
+      &::before {
+        @include dataurlicon(
+          "doublearrow",
+          map-get($color, "ux", "pagination", "hover", "icon")
+        );
+      }
+    }
+
+    &.ilo--pagination--disable {
+      opacity: 0.45;
+
+      &:hover {
+        background: map-get(
+          $color,
+          "ux",
+          "pagination",
+          "default",
+          "background"
+        );
+
+        &::before {
+          @include dataurlicon(
+            "doublearrow",
+            map-get($color, "ux", "pagination", "default", "icon")
+          );
+        }
+      }
+    }
+  }
+
+  &--prev-page {
+    &::before {
+      transform: translate(-50%, -50%) rotate(180deg);
+      width: px-to-rem(10px);
+
+      @include dataurlicon(
+        "paginationarrow",
+        map-get($color, "ux", "pagination", "default", "icon")
+      );
+    }
+
+    &:hover {
+      &::before {
+        @include dataurlicon(
+          "paginationarrow",
+          map-get($color, "ux", "pagination", "hover", "icon")
+        );
+      }
+    }
+
+    &.ilo--pagination--disable {
+      opacity: 0.45;
+
+      &:hover {
+        background: map-get(
+          $color,
+          "ux",
+          "pagination",
+          "default",
+          "background"
+        );
+
+        &::before {
+          @include dataurlicon(
+            "paginationarrow",
+            map-get($color, "ux", "pagination", "default", "icon")
+          );
+        }
+      }
+    }
+  }
+
+  &--next-page {
+    &::before {
+      transform: translate(-50%, -50%) rotate(0);
+      width: px-to-rem(10px);
+
+      @include dataurlicon(
+        "paginationarrow",
+        map-get($color, "ux", "pagination", "default", "icon")
+      );
+    }
+
+    &:hover {
+      &::before {
+        @include dataurlicon(
+          "paginationarrow",
+          map-get($color, "ux", "pagination", "hover", "icon")
+        );
+      }
+    }
+
+    &.ilo--pagination--disable {
+      opacity: 0.45;
+
+      &:hover {
+        background: map-get(
+          $color,
+          "ux",
+          "pagination",
+          "default",
+          "background"
+        );
+
+        &::before {
+          @include dataurlicon(
+            "paginationarrow",
+            map-get($color, "ux", "pagination", "default", "icon")
+          );
+        }
+      }
+    }
+  }
+
+  &--last-page {
+    margin: 0 0 0
+      px-to-rem(map-get($spacing, "ux", "pagination", "padding", "right"));
+
+    &::before {
+      @include dataurlicon(
+        "doublearrow",
+        map-get($color, "ux", "pagination", "default", "icon")
+      );
+    }
+
+    &:hover {
+      &::before {
+        @include dataurlicon(
+          "doublearrow",
+          map-get($color, "ux", "pagination", "hover", "icon")
+        );
+      }
+    }
+
+    &.ilo--pagination--disable {
+      opacity: 0.45;
+
+      &:hover {
+        background: map-get(
+          $color,
+          "ux",
+          "pagination",
+          "default",
+          "background"
+        );
+
+        &::before {
+          @include dataurlicon(
+            "paginationarrow",
+            map-get($color, "ux", "pagination", "default", "icon")
+          );
+        }
+      }
+    }
+  }
+
+  &--page {
+    @include font-styles("nav-md-sm");
+
+    font-family: $fonts-copy;
+    font-weight: 400;
+    line-height: 45px;
+  }
+}

@@ -10,6 +10,12 @@
     - ILO Icons
   sizes:
     - glyph
+- name: doublearrow
+  friendly_name: doublearrow
+  aliases:
+    - ILO Icons
+  sizes:
+    - glyph
 - name: close
   friendly_name: close
   aliases:
@@ -66,6 +72,12 @@
     - glyph
 - name: muted
   friendly_name: muted
+  aliases:
+    - ILO Icons
+  sizes:
+    - glyph
+- name: paginationarrow
+  friendly_name: paginationarrow
   aliases:
     - ILO Icons
   sizes:
