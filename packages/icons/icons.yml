@@ -10,8 +10,8 @@
     - ILO Icons
   sizes:
     - glyph
-- name: doublearrow
-  friendly_name: doublearrow
+- name: arrowright
+  friendly_name: arrowright
   aliases:
     - ILO Icons
   sizes:
@@ -24,6 +24,12 @@
     - glyph
 - name: copyright
   friendly_name: copyright
+  aliases:
+    - ILO Icons
+  sizes:
+    - glyph
+- name: doublearrow
+  friendly_name: doublearrow
   aliases:
     - ILO Icons
   sizes:

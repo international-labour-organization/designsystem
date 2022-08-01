@@ -8,9 +8,9 @@
   &__button {
     align-items: center;
     background-color: $color-ux-background-default;
-    background-position: right center;
+    background-position: calc(100% - px-to-rem(6px)) center;
     background-repeat: no-repeat;
-    background-size: 24px 24px;
+    background-size: px-to-rem(24px) px-to-rem(24px);
     border: none;
     border-top: 2px solid map-get($color, "accordion", "border");
     color: $color-ux-labels-actionable;
@@ -22,8 +22,9 @@
     @include font-styles("label-medium");
     justify-content: space-between;
     margin: 0;
-    padding: calc($spacing-ui-padding-lg - 8px) 0
-      calc($spacing-ui-padding-lg - 8px);
+    padding: px-to-rem(calc($spacing-ui-padding-lg - 6px)) px-to-rem(36px)
+      px-to-rem(calc($spacing-ui-padding-lg - 6px)) 0;
+    text-align: left;
     transition: border $transition-timing ease-in-out,
       background $transition-timing ease-in-out,
       color $transition-timing ease-in-out;
@@ -36,12 +37,20 @@
       color: $color-ux-labels-hover;
       cursor: pointer;
       fill: $color-ux-labels-hover;
+
+      &[aria-expanded="true"] {
+        @include dataurlicon("minus", $color-ux-labels-hover);
+      }
+
+      &[aria-expanded="false"] {
+        @include dataurlicon("add", $color-ux-labels-hover);
+      }
     }
 
     &--large {
       @include font-styles("label-large");
-      padding: calc($spacing-ui-padding-xl - 12px) 0px
-        calc($spacing-ui-padding-xl - 13px);
+      padding: px-to-rem(calc($spacing-ui-padding-xl - 11px)) px-to-rem(36px)
+        px-to-rem(calc($spacing-ui-padding-xl - 11px)) 0;
     }
 
     &[aria-expanded="true"] {
@@ -58,12 +67,12 @@
     font-family: $fonts-copy;
     height: auto;
     overflow: hidden;
-    transition: height 300ms ease-in-out;
+    transition: height 150ms ease-out;
 
     @include font-styles("label-medium");
 
     &--open {
-      padding-bottom: $spacing-ui-padding-xxl;
+      padding-bottom: px-to-rem($spacing-ui-padding-xxl);
       padding-top: px-to-rem(13px);
     }
 

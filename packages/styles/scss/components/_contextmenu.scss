@@ -1,0 +1,75 @@
+@use "../tokens" as *;
+@use "../functions" as *;
+@import "../mixins";
+
+.ilo--context-menu {
+  border-radius: px-to-rem(2px);
+  background-color: $color-ux-background-highlight;
+  display: inline-block;
+  position: relative;
+  width: auto;
+
+  &:before {
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    @include dataurlicon("halfsquaretriangle", $color-ux-background-highlight);
+    content: "";
+    height: px-to-rem(12px);
+    position: absolute;
+    left: 50%;
+    top: -#{px-to-rem(6px)};
+    transform: translateX(-50%) rotate(135deg);
+    width: px-to-rem(12px);
+  }
+
+  &--item {
+    padding: 0 px-to-rem(16px);
+
+    &:last-of-type a {
+      border-bottom: none;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: $color-base-blue-light;
+    }
+
+    &.endsection {
+      border-bottom: px-to-rem($borders-base) solid $color-base-neutrals-white;
+
+      .ilo--context-menu--link {
+        border-bottom: none;
+      }
+    }
+  }
+
+  &--link {
+    border-bottom: px-to-rem($borders-base) solid $color-base-neutrals-white;
+    color: map-get($color, "link", "text", "default");
+    display: inline-block;
+    font-family: $fonts-copy;
+    font-weight: map-get($type, "weights", "section");
+    padding: px-to-rem(14px) 0;
+    text-decoration: none;
+    width: 100%;
+    @include font-styles("body-xs");
+
+    &:visited {
+      color: map-get($color, "link", "text", "visited");
+    }
+
+    &:active {
+      color: map-get($color, "link", "text", "active");
+      outline: none;
+    }
+
+    &:hover,
+    &:focus {
+      color: map-get($color, "link", "text", "hover");
+      outline: none;
+      text-decoration: underline;
+      text-decoration-thickness: px-to-rem($borders-base);
+    }
+  }
+}

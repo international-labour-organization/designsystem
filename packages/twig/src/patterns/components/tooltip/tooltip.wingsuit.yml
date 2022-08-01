@@ -1,0 +1,28 @@
+tooltip:
+  use: '@components/tooltip/tooltip.twig'
+  label: Tooltip
+  description: A component for displaying a tooltip
+  fields:
+    label:
+      type: string
+      label: label
+      description: label shown on the tooltip
+      required: true
+      preview: 'Tooltip text'
+    content:
+      type: text
+      label: Content
+      description: The accordion item's collapsed content.
+      preview:
+        faker: lorem.word
+  settings: 
+    theme:
+      type: select
+      label: theme
+      description: The theme of the tooltip
+      required: false
+      options:
+        dark: Dark
+        light: Light
+      preview: 'light'
+  visibility: storybook

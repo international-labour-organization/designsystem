@@ -1,0 +1,18 @@
+{#
+  PROFILE COMPONENT
+#}
+<figure class="storybook {{prefix}}--profile">
+  <img class="{{prefix}}--profile--avatar" src="{{avatar}}" alt="Avatar for {{name}}">
+  <figcaption class="{{prefix}}--profile--contents">
+    <span class="{{prefix}}--profile--name id">{{name}}</span>
+    {% if role %}
+    <span class="{{prefix}}--profile--role id">{{role}}</span>
+    {% endif %}
+    {% if description %}
+    <p class="{{prefix}}--profile--description info">{{description}}</p>
+    {% endif %}
+    {% if link and link.url and link.label %}
+    <a class="{{prefix}}--profile--link info" href="{{link.url}}"><span>{{link.label}}</span></a>
+    {% endif %}
+  </figcaption>
+</figure>

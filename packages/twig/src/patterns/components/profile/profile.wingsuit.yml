@@ -1,0 +1,35 @@
+profile:
+  use: '@components/profile/profile.twig'
+  label: Profile
+  description: The Profile component is used to display information about a person.
+  fields:
+    avatar:
+      type: string
+      label: Avatar
+      description: The avatar for the profile
+      required: true
+      preview: "http://placekitten.com/128/128"
+    description:
+      type: string
+      label: Description
+      description: An optional plain-text description (e.g. a short bio)
+      preview: "Firstname Lastname is the Senior Media Strategist. He has been with ILO for eight years."
+    link:
+      type: object
+      label: Link
+      description: An optional url and label for a link associated with the profile
+      preview:
+        label: "Optional Link"
+        url: "http://www.google.com"
+    name:
+      type: string
+      label: Name
+      description: The name of the person associated with the profile
+      preview: 'Firstname Lastname'
+      required: true
+    role:
+      type: string
+      label: Role
+      description: An optional plain-text field indicating the person's role in the organization
+      preview: 'Senior Media Strategist'
+  visibility: storybook

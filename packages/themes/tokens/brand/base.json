@@ -14,6 +14,10 @@
     "ilo-grey-accessible": { "value": "rgba(109, 109, 109, 1)" },
     "ilo-grey-charcoal": { "value": "rgba(45, 45, 45, 1)" },
     "ilo-black": { "value": "rgba(45, 45, 45, 1)" },
-    "ilo-white": { "value": "rgba(255, 255, 255, 1)" }
+    "ilo-white": { "value": "rgba(255, 255, 255, 1)" },
+    "ilo-ramp-blue": { "value": "rgba(190, 220, 250, 1)" },
+    "ilo-ramp-red": { "value": "rgba(254, 216, 219, 1)" },
+    "ilo-ramp-green": { "value": "rgba(232, 249, 224, 1)" },
+    "ilo-ramp-yellow": { "value": "rgba(255, 245, 200, 1)" }
   }
 }

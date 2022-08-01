@@ -1,5 +1,6 @@
 export type accordionSize = "small" | "large";
 export type buttonTypes = "primary" | "secondary" | "tertiary";
+export type calloutTypes = "info" | "error" | "success" | "warning";
 export type headingLevel = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
 export type inputTypes =
   | "email"
@@ -11,6 +12,9 @@ export type inputTypes =
   | "url";
 export type labelTypes = "default" | "actionable" | "light";
 export type linkTypes = "light" | "dark" | "footer" | "button";
+export type tooltipThemes = "light" | "dark";
+export type tooltipAlignment = "top" | "right" | "bottom" | "left";
+export type tooltipPlacement = "negative" | "center" | "positive";
 export type listAlignment = "default" | "horizontal";
 export type listOrder = "unordered" | "ordered" | "unstyled";
 export type loadingStatus = "idle" | "loading" | "loaded";
