@@ -3072,6 +3072,74 @@ exports[`Storyshots Components/Notification Notification - warning dialog 1`] = 
 </div>
 `;
 
+exports[`Storyshots Components/Pagination Pagination 1`] = `
+<div
+  style={
+    Object {
+      "margin": "3em",
+    }
+  }
+>
+  <div
+    className="storybook ilo--pagination"
+  >
+    <div
+      className="ilo--pagination--previous-set"
+    >
+      <a
+        className="storybook ilo--pagination--first-page ilo--pagination--link"
+        href="https://www.google.com?s=first"
+        onClick={[Function]}
+        title="First"
+      >
+        First
+      </a>
+      <a
+        className="storybook ilo--pagination--prev-page ilo--pagination--link"
+        href="https://www.google.com?s=prev"
+        onClick={[Function]}
+        title="Prev"
+      >
+        Prev
+      </a>
+    </div>
+    <p
+      className="ilo--pagination--page"
+    >
+      <span>
+        2
+      </span>
+       
+      of
+       
+      <span>
+        8
+      </span>
+    </p>
+    <div
+      className="ilo--pagination--next-set"
+    >
+      <a
+        className="storybook ilo--pagination--next-page ilo--pagination--link"
+        href="https://www.google.com?s=next"
+        onClick={[Function]}
+        title="Next"
+      >
+        Next
+      </a>
+      <a
+        className="storybook ilo--pagination--last-page ilo--pagination--link"
+        href="https://www.google.com?s=last"
+        onClick={[Function]}
+        title="Last"
+      >
+        Last
+      </a>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Components/Profile Profile - All Optional Props 1`] = `
 <div
   style={
