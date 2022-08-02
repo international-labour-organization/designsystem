@@ -32,7 +32,7 @@
   },
   "dependencies": {
     "@ilo-org/fonts": "workspace:*",
-    "@ilo-org/preset-scss": "workspace:*",
+    "@wingsuit-designsystem/preset-scss": "^1.2.3",
     "@ilo-org/styles": "workspace:*",
     "@ilo-org/themes": "workspace:*",
     "@ilo-org/utils": "workspace:*",
@@ -41,7 +41,6 @@
   "devDependencies": {
     "@babel/core": "^7.8.4",
     "@babel/preset-env": "^7.8.4",
-    "@ilo-org/preset-scss": "workspace:*",
     "@storybook/addon-actions": "^6.4.9",
     "@storybook/addon-essentials": "^6.4.9",
     "@storybook/addon-links": "^6.4.9",
@@ -55,6 +54,7 @@
     "@wingsuit-designsystem/cli": "1.2.1",
     "@wingsuit-designsystem/core": "1.2.1",
     "@wingsuit-designsystem/pattern": "1.2.1",
+    "@wingsuit-designsystem/preset-scss": "^1.2.3",
     "@wingsuit-designsystem/storybook": "1.2.1",
     "autoprefixer": "^10.4.0",
     "core-js": "^3.4.1",
