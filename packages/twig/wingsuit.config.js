@@ -1,7 +1,7 @@
 const namespaces = require('./src/namespaces');
 
 module.exports = {
-  presets: ['@ilo-org/preset-scss'],
+  presets: ['@wingsuit-designsystem/preset-scss'],
   designSystems: {
     ilo: {
       path: 'src',
