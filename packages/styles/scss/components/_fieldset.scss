@@ -1,0 +1,58 @@
+@use "../tokens" as *;
+@use "../functions" as *;
+@import "../mixins";
+
+.ilo--fieldset {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  &--label {
+    display: inline-block;
+    float: left;
+    font-family: $fonts-display;
+    font-weight: map-get($type, "weights", "label");
+    @include font-styles("label-medium");
+    @include textmargin(
+      "margin-bottom",
+      map-get($spacing, "padding-1-5"),
+      "label-medium",
+      "display",
+      0,
+      0
+    );
+  }
+
+  &--helper {
+    font-family: $fonts-copy;
+    @include font-styles("body-xxs");
+    @include textmargin(
+      "margin-top",
+      map-get($spacing, "padding-1-5"),
+      "body-xxs",
+      "copy",
+      0,
+      0
+    );
+  }
+
+  &--error {
+    color: $color-base-red-dark;
+    font-family: $fonts-copy;
+    @include font-styles("body-xxs");
+    @include textmargin(
+      "margin-top",
+      map-get($spacing, "padding-1-5"),
+      "body-xxs",
+      "copy",
+      0,
+      0
+    );
+  }
+
+  .ilo--tooltip--wrapper {
+    float: left;
+    margin-left: 8px;
+    margin-top: 3px;
+  }
+}
