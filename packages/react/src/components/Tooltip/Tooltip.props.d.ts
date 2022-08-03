@@ -2,16 +2,6 @@ import { tooltipAlignment, tooltipPlacement, tooltipThemes } from "../../types";
 
 export interface TooltipProps {
   /**
-   * Describe the placement of the Tooltip
-   */
-  placement?: tooltipPlacement;
-
-  /**
-   * Describe the placement of the Tooltip
-   */
-  alignment?: tooltipAlignment;
-
-  /**
    * Specify the content of your Button.
    */
   children?: ReactNode;
@@ -22,9 +12,14 @@ export interface TooltipProps {
   className?: string;
 
   /**
+   * Should the tooltip appear on hover of an info icon?
+   */
+  icon?: boolean;
+
+  /**
    * Set the label for the tooltip
    */
-  label?: string;
+  label?: Required<string>;
 
   /**
    * Set whether the tooltip is visible or not
@@ -44,7 +39,7 @@ export interface TooltipProps {
   /**
    * Describe the theme of the tooltip
    */
-  theme?: tooltipThemes;
+  theme?: Required<tooltipThemes>;
 
   /**
    * Set a width for the tooltip
