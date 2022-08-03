@@ -146,6 +146,11 @@ const UnstyledTemplate: Story<ListProps> = () => (
     <ListItem id="unstyled1">
       <p>Arabica. Arabica is the most popular type of coffee, hands down.</p>
     </ListItem>
+    <ListItem id="unstyled1">
+      <p>
+        <b>With milk added.</b>
+      </p>
+    </ListItem>
     <ListItem id="unstyled2">
       <p>
         Robusta. While Arabica is the most popular, Robusta is cheaper and

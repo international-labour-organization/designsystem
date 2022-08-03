@@ -69,5 +69,11 @@
     );
     margin-left: px-to-rem(map-get($spacing, "ui-padding-lg"));
     padding-left: px-to-rem(map-get($spacing, "base") - 2px);
+
+    b,
+    strong {
+      font-weight: 700;
+      letter-spacing: $type-label-small-letter-spacing;
+    }
   }
 }
