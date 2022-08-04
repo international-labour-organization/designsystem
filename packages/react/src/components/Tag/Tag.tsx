@@ -75,7 +75,12 @@ const Tag: FC<TagProps> = ({
       ) : (
         <li className={itemClass}>
           {type === "anchor" && (
-            <a className={tagClasses} href={url} id={id} {...rest}>
+            <a
+              className={tagClasses}
+              href={active ? url : ""}
+              id={id}
+              {...rest}
+            >
               {children}
             </a>
           )}
