@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Storyshots Components/Accordion Large Accordion 1`] = `
+exports[`Storyshots Components/Accordion Accordion 1`] = `
 <div
   style={
     Object {
@@ -9,7 +9,7 @@ exports[`Storyshots Components/Accordion Large Accordion 1`] = `
   }
 >
   <ul
-    className="ilo--accordion ilo--accordion--large"
+    className="ilo--accordion"
   >
     <li
       className="ilo--accordion__item"
@@ -20,7 +20,7 @@ exports[`Storyshots Components/Accordion Large Accordion 1`] = `
         <button
           aria-controls="panel-l1"
           aria-expanded={false}
-          className="ilo--accordion__button ilo--accordion__button--large"
+          className="ilo--accordion__button"
           id="button-l1"
           onClick={[Function]}
         >
@@ -60,7 +60,7 @@ exports[`Storyshots Components/Accordion Large Accordion 1`] = `
         <button
           aria-controls="panel-l2"
           aria-expanded={false}
-          className="ilo--accordion__button ilo--accordion__button--large"
+          className="ilo--accordion__button"
           id="button-l2"
           onClick={[Function]}
         >
@@ -72,104 +72,6 @@ exports[`Storyshots Components/Accordion Large Accordion 1`] = `
         aria-labelledby="button-l2"
         className="ilo--accordion__panel collapse"
         id="panel-l2"
-        role="region"
-      >
-        <p>
-          Content of Item 2
-        </p>
-        <p>
-          Content of Item 2
-        </p>
-        <p>
-          Content of Item 2
-        </p>
-        <p>
-          Content of Item 2
-        </p>
-        <p>
-          Content of Item 2
-        </p>
-        <p>
-          Content of Item 2
-        </p>
-      </div>
-    </li>
-  </ul>
-</div>
-`;
-
-exports[`Storyshots Components/Accordion Small Accordion 1`] = `
-<div
-  style={
-    Object {
-      "margin": "3em",
-    }
-  }
->
-  <ul
-    className="ilo--accordion ilo--accordion--small"
-  >
-    <li
-      className="ilo--accordion__item"
-    >
-      <h3
-        className="ilo--h3"
-      >
-        <button
-          aria-controls="panel-s1"
-          aria-expanded={false}
-          className="ilo--accordion__button ilo--accordion__button--small"
-          id="button-s1"
-          onClick={[Function]}
-        >
-          Item1
-        </button>
-      </h3>
-      <div
-        aria-expanded={null}
-        aria-labelledby="button-s1"
-        className="ilo--accordion__panel collapse"
-        id="panel-s1"
-        role="region"
-      >
-        <p>
-          Content of Item 1
-        </p>
-        <p>
-          Content of Item 1
-        </p>
-        <p>
-          Content of Item 1
-        </p>
-        <p>
-          Content of Item 1
-        </p>
-        <p>
-          Content of Item 1
-        </p>
-      </div>
-    </li>
-    <li
-      className="ilo--accordion__item"
-    >
-      <h3
-        className="ilo--h3"
-      >
-        <button
-          aria-controls="panel-s2"
-          aria-expanded={false}
-          className="ilo--accordion__button ilo--accordion__button--small"
-          id="button-s2"
-          onClick={[Function]}
-        >
-          Item2
-        </button>
-      </h3>
-      <div
-        aria-expanded={null}
-        aria-labelledby="button-s2"
-        className="ilo--accordion__panel collapse"
-        id="panel-s2"
         role="region"
       >
         <p>
