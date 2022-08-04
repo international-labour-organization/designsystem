@@ -33,11 +33,6 @@ export interface DropdownProps {
   className?: string;
 
   /**
-   * The Dropdown's default selection; should match one of the values in `options`
-   */
-  defaultValue: string;
-
-  /**
    * Is the Dropdown disabled?
    */
   disabled?: boolean;
@@ -63,11 +58,6 @@ export interface DropdownProps {
   label: string;
 
   /**
-   * Should the user be allow to make multiple selections?
-   */
-  multiple?: boolean;
-
-  /**
    * The Dropdown's name attribute
    */
   name?: Required<string>;
@@ -86,4 +76,9 @@ export interface DropdownProps {
    * Does this Dropdown have a tooltip?
    */
   tooltip: string | false;
+
+  /**
+   * The Dropdown's default selection; should match one of the values in `options`
+   */
+  value: string;
 }

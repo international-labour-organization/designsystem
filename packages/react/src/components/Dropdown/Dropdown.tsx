@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useState } from "react";
 import classNames from "classnames";
 import useGlobalSettings from "../../hooks/useGlobalSettings";
 import { DropdownProps } from "./Dropdown.props";
@@ -7,17 +7,16 @@ import { Fieldset } from "../Fieldset";
 const Dropdown: FC<DropdownProps> = ({
   autocomplete,
   callback,
-  defaultValue,
   disabled = false,
   error,
   helper,
   id,
   label,
-  multiple,
   name,
   options,
   required,
   tooltip,
+  value,
 }) => {
   const { prefix } = useGlobalSettings();
 
@@ -28,10 +27,14 @@ const Dropdown: FC<DropdownProps> = ({
     [`error`]: error,
   });
 
+  const [currentvalue, setValue] = useState(value);
+
   /**
    * On change, if there is a callback, call it
    */
   const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setValue(e.target.value);
+
     if (callback) {
       callback(e);
     }
@@ -49,13 +52,12 @@ const Dropdown: FC<DropdownProps> = ({
         <select
           id={id}
           autoComplete={autocomplete}
-          multiple={multiple}
           name={name}
           required={required}
           onChange={handleChange}
-          defaultValue={defaultValue}
           disabled={disabled}
           className={dropdownClasses}
+          value={currentvalue}
         >
           {options &&
             options.map((option, i) => (

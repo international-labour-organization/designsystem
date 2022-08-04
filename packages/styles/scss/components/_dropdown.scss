@@ -62,6 +62,7 @@
         transparent calc(50% + 0.81px),
         transparent 100%
       );
+    padding-left: calc($spacing-formelements-input-default-padding-left - 1px);
   }
 
   &:focus {
@@ -83,6 +84,7 @@
         transparent calc(50% + 0.81px),
         transparent 100%
       );
+    padding-left: calc($spacing-formelements-input-default-padding-left - 1px);
   }
 
   &:disabled {

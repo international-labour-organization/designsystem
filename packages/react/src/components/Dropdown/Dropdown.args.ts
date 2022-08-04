@@ -4,13 +4,11 @@ const basic: DropdownProps = {
   autocomplete: "false",
   callback: null,
   className: "storybook",
-  defaultValue: "option one",
   disabled: false,
   error: false,
   helper: false,
   id: "dropdown",
   label: "Dropdown Label",
-  multiple: false,
   name: "dropdown",
   options: [
     {
@@ -41,19 +39,18 @@ const basic: DropdownProps = {
   ],
   required: false,
   tooltip: false,
+  value: "option one",
 };
 
 const haserror: DropdownProps = {
   autocomplete: "false",
   callback: null,
   className: "storybook",
-  defaultValue: "option one",
   disabled: false,
   error: "This is an error message",
   helper: "Example Helper Text",
   id: "dropdown",
   label: "Dropdown Label",
-  multiple: false,
   name: "dropdown",
   options: [
     {
@@ -84,19 +81,18 @@ const haserror: DropdownProps = {
   ],
   required: false,
   tooltip: false,
+  value: "option one",
 };
 
 const hashelper: DropdownProps = {
   autocomplete: "false",
   callback: null,
   className: "storybook",
-  defaultValue: "option one",
   disabled: false,
   error: false,
   helper: "Example Helper Text",
   id: "dropdown",
   label: "Dropdown Label",
-  multiple: false,
   name: "dropdown",
   options: [
     {
@@ -127,19 +123,18 @@ const hashelper: DropdownProps = {
   ],
   required: false,
   tooltip: false,
+  value: "option one",
 };
 
 const hastooltip: DropdownProps = {
   autocomplete: "false",
   callback: null,
   className: "storybook",
-  defaultValue: "option one",
   disabled: false,
   error: false,
   helper: false,
   id: "dropdown",
   label: "Dropdown Label",
-  multiple: false,
   name: "dropdown",
   options: [
     {
@@ -170,19 +165,18 @@ const hastooltip: DropdownProps = {
   ],
   required: false,
   tooltip: "This is my tooltip text.",
+  value: "option one",
 };
 
 const isdisabled: DropdownProps = {
   autocomplete: "false",
   callback: null,
   className: "storybook",
-  defaultValue: "option one",
   disabled: false,
   error: false,
   helper: false,
   id: "dropdown",
   label: "Dropdown Label",
-  multiple: false,
   name: "dropdown",
   options: [
     {
@@ -213,6 +207,7 @@ const isdisabled: DropdownProps = {
   ],
   required: false,
   tooltip: false,
+  value: "option one",
 };
 
 /**
