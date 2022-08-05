@@ -19,7 +19,6 @@ const Accordion: FC<AccordionProps> = ({
   allowMultipleExpanded = false,
   onButtonClick,
   defaultAccordionsExpanded = [],
-  size = "small",
   headingLevel = "h3",
   className,
 }) => {
@@ -29,7 +28,6 @@ const Accordion: FC<AccordionProps> = ({
 
   const accordionClasses = classNames(className, {
     [baseClass]: true,
-    [`${baseClass}--${size}`]: size,
   });
 
   const defaultAccordionsExpandedString = JSON.stringify(
@@ -63,7 +61,6 @@ const Accordion: FC<AccordionProps> = ({
         getUpdatedItems,
         allowMultipleExpanded,
         onButtonClick,
-        size,
         headingLevel,
       }}
     >
