@@ -8,4 +8,9 @@ export interface IconProps {
    * Specify the icon
    */
   name?: string;
+
+  /**
+   * Specify the icon's size
+   */
+  size?: integer;
 }

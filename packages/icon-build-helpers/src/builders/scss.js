@@ -10,7 +10,7 @@ const path = require("path");
 const svgToMiniDataURI = require("mini-svg-data-uri");
 
 async function builder(metadata, { output }) {
-  const SVG_OUTPUT_DIR = path.join(output, "scss");
+  const SVG_OUTPUT_DIR = path.join(output, "build/scss");
 
   await fs.emptyDir(SVG_OUTPUT_DIR);
 
