@@ -1,0 +1,76 @@
+dropdown:
+  use: '@components/dropdown/dropdown.twig'
+  label: Dropdown
+  description: The Dropdown displays a select element with options, and is most
+    commonly used in forms.
+  fields:
+    autocomplete:
+      type: string
+      label: autocomplete
+      description: Should this field autocomplete
+      preview: false
+      required: false
+    defaultValue:
+      type: string
+      label: defaultValue
+      description: The default value of the select
+      preview: "option one"
+      required: true
+    disabled:
+      type: boolean
+      label: disabled
+      description: Is this field disabled?
+      preview: false
+      required: false
+    error:
+      type: string
+      label: error
+      description: Does this have an error? If so, the error message
+      preview: false
+      required: false
+    helper:
+      type: string
+      label: helper
+      description: Does this have helper text? If so, the helper text
+      preview: "My helper text"
+      required: false
+    id:
+      type: string
+      label: id
+      description: the id of the form field
+      preview: "dropdown"
+      required: true
+    label:
+      type: string
+      label: label
+      description: the label of the form field
+      preview: "Dropdown Label"
+      required: true
+    name:
+      type: string
+      label: name
+      description: the name attribute of the form field
+      preview: "dropdown"
+      required: true
+    options:
+      type: object
+      label: Options
+      description: The options for this dropdown
+      required: true
+      preview:
+        - disabled: false
+          label: "Option One"
+          value: "option one"
+        - disabled: false
+          label: "Option Two"
+          value: "option two"
+        - disabled: false
+          label: "Option Three"
+          value: "option three"
+        - disabled: false
+          label: "Option Four"
+          value: "option four"
+        - disabled: false
+          label: "Option Five"
+          value: "option five"
+  visibility: storybook
