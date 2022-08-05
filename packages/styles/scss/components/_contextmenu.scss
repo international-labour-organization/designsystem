@@ -15,16 +15,16 @@
     background-size: contain;
     @include dataurlicon("halfsquaretriangle", $color-ux-background-highlight);
     content: "";
-    height: px-to-rem(12px);
+    height: px-to-rem($spacing-padding-1-5);
     position: absolute;
     left: 50%;
     top: -#{px-to-rem(6px)};
     transform: translateX(-50%) rotate(135deg);
-    width: px-to-rem(12px);
+    width: px-to-rem($spacing-padding-1-5);
   }
 
   &--item {
-    padding: 0 px-to-rem(16px);
+    padding: 0 px-to-rem($spacing-padding-1);
 
     &:last-of-type a {
       border-bottom: none;
@@ -53,10 +53,10 @@
     padding: px-to-rem(14px) 0;
     text-decoration: none;
     width: 100%;
-    @include font-styles("body-xs");
+    @include font-styles("body-xxs");
 
     &:visited {
-      color: map-get($color, "link", "text", "visited");
+      color: map-get($color, "link", "text", "default");
     }
 
     &:active {

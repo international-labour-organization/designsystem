@@ -8,19 +8,19 @@ const image: ImageProps = {
   url: [
     {
       breakpoint: 0,
-      src: "https://place-hold.it/400x300?text=SmallBreakpointImage",
+      src: "https://placekitten.com/400/300",
     },
     {
       breakpoint: 800,
-      src: "https://place-hold.it/800x600?text=MediumBreakpointImage",
+      src: "https://placekitten.com/800/600",
     },
     {
       breakpoint: 1200,
-      src: "https://place-hold.it/1200x900?text=LargeBreakpointImage",
+      src: "https://placekitten.com/1200/900",
     },
     {
       breakpoint: 1440,
-      src: "https://place-hold.it/1600x1200?text=LargestBreakpointImage",
+      src: "https://placekitten.com/1600/1200",
     },
   ],
 };

@@ -48,10 +48,10 @@
           "padding": {
             "bottom": { "value": "16px" },
             "left": { "value": "2px" },
-            "right": { "value": "2px" },
+            "right": { "value": "30px" },
             "top": { "value": "16px" }
           },
-          "width": { "value": "120px" }
+          "width": { "value": "auto" }
         },
         "hover": {
           "height": { "value": "56px" },

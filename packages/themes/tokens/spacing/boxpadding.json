@@ -3,10 +3,10 @@
     "boxpadding": {
       "button": {
         "small": {
-          "bottom": { "value": "5px" },
+          "bottom": { "value": "3px" },
           "left": { "value": "16px" },
           "right": { "value": "16px" },
-          "top": { "value": "5px" }
+          "top": { "value": "3px" }
         },
         "medium": {
           "bottom": { "value": "7px" },
@@ -16,28 +16,28 @@
         },
         "large": {
           "bottom": { "value": "10px" },
-          "left": { "value": "24px" },
-          "right": { "value": "24px" },
+          "left": { "value": "22px" },
+          "right": { "value": "22px" },
           "top": { "value": "10px" }
         }
       },
       "button-icon": {
         "small": {
           "bottom": { "value": "5px" },
-          "left": { "value": "36px" },
-          "right": { "value": "36px" },
+          "left": { "value": "34px" },
+          "right": { "value": "34px" },
           "top": { "value": "5px" }
         },
         "medium": {
           "bottom": { "value": "9px" },
-          "left": { "value": "44px" },
-          "right": { "value": "44px" },
+          "left": { "value": "42px" },
+          "right": { "value": "42px" },
           "top": { "value": "9px" }
         },
         "large": {
           "bottom": { "value": "10px" },
-          "left": { "value": "48px" },
-          "right": { "value": "48px" },
+          "left": { "value": "46px" },
+          "right": { "value": "46px" },
           "top": { "value": "10px" }
         }
       },
