@@ -16,12 +16,6 @@
     width: $spacing-ux-readmore-default-width;
     @include font-styles("label-medium");
 
-    &:hover {
-      background: map-get($color, "ux", "readmore", "hover", "background");
-      @include bordervalues("readmore", "ux", "hover");
-      cursor: pointer;
-    }
-
     &:after {
       background-repeat: no-repeat;
       content: "";
@@ -41,6 +35,8 @@
       @include bordervalues("readmore", "ux", "hover");
       color: $color-ux-labels-hover;
       cursor: pointer;
+      transition: background 150ms linear, border 150ms linear,
+        color 150ms linear;
 
       &:after {
         @include dataurlicon("arrow", $color-ux-labels-hover);
