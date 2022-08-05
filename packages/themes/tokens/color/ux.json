@@ -64,10 +64,10 @@
       "pagination": {
         "default": {
           "background": { "value": "{color.base.neutrals.lighter}" },
-          "icon": { "value": "{color.base.blue.dark}"}
+          "icon": { "value": "{color.base.blue.dark}" }
         },
         "hover": {
-          "background": { "value": "{color.base.blue.light}"},
+          "background": { "value": "{color.base.blue.light}" },
           "icon": { "value": "{color.base.blue.medium}" }
         }
       },
