@@ -21,7 +21,7 @@
     "build:skip-react": "pnpm run build:all -- --ignore=@ilo-org/react",
     "check:types": "pnpm turbo run check",
     "clean:node_modules": "pnpm -r exec rm -rf node_modules",
-    "clean:build": "pnpm -r exec rm -rf build lib dist .turbo storybook-static",
+    "clean:build": "pnpm -r exec rm -rf build lib dist .turbo storybook-static es svg umd && rm -rf packages/icons/scss",
     "clean": "npm-run-all -p clean:*",
     "format:all": "pnpm turbo run format:fix",
     "lint:all": "pnpm turbo run lint:fix",

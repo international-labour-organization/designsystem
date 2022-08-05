@@ -1,9 +1,16 @@
 {
   "color": {
     "tooltip": {
-      "background": { "value": "{color.base.neutrals.white}" },
-      "dropshadow": { "value": "{color.base.blue.dark}" },
-      "text": { "value": "{color.base.neutrals.dark}" }
+      "default": {
+        "background": { "value": "{color.base.neutrals.white}" },
+        "dropshadow": { "value": "{color.base.blue.dark}" },
+        "text": { "value": "{color.base.neutrals.dark}" }
+      },
+      "dark": {
+        "background": { "value": "{color.base.neutrals.dark}" },
+        "dropshadow": { "value": "{color.base.blue.dark}" },
+        "text": { "value": "{color.base.neutrals.white}" }
+      }
     }
   }
 }
