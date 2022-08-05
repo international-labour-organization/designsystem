@@ -61,6 +61,16 @@
           "warning": { "value": "{color.base.yellow}" }
         }
       },
+      "pagination": {
+        "default": {
+          "background": { "value": "{color.base.neutrals.lighter}" },
+          "icon": { "value": "{color.base.blue.dark}" }
+        },
+        "hover": {
+          "background": { "value": "{color.base.blue.light}" },
+          "icon": { "value": "{color.base.blue.medium}" }
+        }
+      },
       "readmore": {
         "default": {
           "background": { "value": "transparent" },

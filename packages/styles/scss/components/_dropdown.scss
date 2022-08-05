@@ -2,7 +2,7 @@
 @use "../functions" as *;
 @import "../mixins";
 
-.ilo--input {
+.ilo--dropdown {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -14,6 +14,7 @@
     "background"
   );
   @include bordervalues("input", "formelements");
+  border-radius: 0;
   box-sizing: border-box;
   font-family: $fonts-display;
   font-weight: map-get($type, "weights", "section");
@@ -24,7 +25,23 @@
   @include spacingvalues("margin", "input", "formelements");
   outline: none;
   @include spacingvalues("padding", "input", "formelements");
+  padding-bottom: 0;
+  padding-top: 0;
   width: map-get($spacing, "formelements", "input", "default", "width");
+
+  background-position: calc(100% - 14px) center;
+  background-repeat: no-repeat;
+  background-size: 24px 24px, 72px 100%;
+  background-image: url("#{colortodataurlicon("arrow", $color-ux-labels-actionable)}"),
+    linear-gradient(
+      to right,
+      transparent 0%,
+      transparent calc(50% - 0.81px),
+      $color-formelements-input-default-border-left calc(50% - 0.8px),
+      $color-formelements-input-default-border-left calc(50% + 0.8px),
+      transparent calc(50% + 0.81px),
+      transparent 100%
+    );
 
   &:hover {
     background-color: map-get(
@@ -35,6 +52,16 @@
       "background"
     );
     @include bordervalues("input", "formelements", "hover");
+    background-image: url("#{colortodataurlicon("arrow", $color-ux-labels-hover)}"),
+      linear-gradient(
+        to right,
+        transparent 0%,
+        transparent calc(50% - 0.81px),
+        $color-formelements-input-default-border-left calc(50% - 0.8px),
+        $color-formelements-input-default-border-left calc(50% + 0.8px),
+        transparent calc(50% + 0.81px),
+        transparent 100%
+      );
     padding-left: calc($spacing-formelements-input-default-padding-left - 1px);
   }
 
@@ -47,6 +74,16 @@
       "background"
     );
     @include bordervalues("input", "formelements", "focus");
+    background-image: url("#{colortodataurlicon("arrow", $color-ux-labels-hover)}"),
+      linear-gradient(
+        to right,
+        transparent 0%,
+        transparent calc(50% - 0.81px),
+        $color-formelements-input-default-border-left calc(50% - 0.8px),
+        $color-formelements-input-default-border-left calc(50% + 0.8px),
+        transparent calc(50% + 0.81px),
+        transparent 100%
+      );
     padding-left: calc($spacing-formelements-input-default-padding-left - 1px);
   }
 

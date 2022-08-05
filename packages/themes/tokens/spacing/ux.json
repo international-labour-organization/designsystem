@@ -21,6 +21,15 @@
         "height": { "value": "24px" },
         "width": { "value": "auto" }
       },
+      "pagination": {
+        "padding": {
+          "bottom": { "value": "0" },
+          "left": { "value": "8px" },
+          "right": { "value": "8px" },
+          "top": { "value": "40px" }
+        },
+        "width": { "value": "40px" }
+      },
       "readmore": {
         "default": {
           "height": { "value": "56px" },
