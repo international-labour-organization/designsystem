@@ -7,19 +7,19 @@ const videofile: VideoProps = {
   url: [
     {
       breakpoint: 0,
-      src: "https://place-hold.it/400x225?text=SmallBreakpointImage",
+      src: "https://placekitten.com/300/400",
     },
     {
       breakpoint: 800,
-      src: "https://place-hold.it/800x450?text=MediumBreakpointImage",
+      src: "https://placekitten.com/600/800",
     },
     {
       breakpoint: 1200,
-      src: "https://place-hold.it/1200x675?text=LargeBreakpointImage",
+      src: "https://placekitten.com/900/1200",
     },
     {
       breakpoint: 1440,
-      src: "https://place-hold.it/1600x900?text=LargestBreakpointImage",
+      src: "https://placekitten.com/1200/1200",
     },
   ],
   video: {
@@ -42,19 +42,19 @@ const videoyt: VideoProps = {
   url: [
     {
       breakpoint: 0,
-      src: "https://place-hold.it/400x225?text=SmallBreakpointImage",
+      src: "https://placekitten.com/400/300",
     },
     {
       breakpoint: 800,
-      src: "https://place-hold.it/800x450?text=MediumBreakpointImage",
+      src: "https://placekitten.com/800/600",
     },
     {
       breakpoint: 1200,
-      src: "https://place-hold.it/1200x675?text=LargeBreakpointImage",
+      src: "https://placekitten.com/1200/900",
     },
     {
       breakpoint: 1440,
-      src: "https://place-hold.it/1600x900?text=LargestBreakpointImage",
+      src: "https://placekitten.com/1600/1200",
     },
   ],
   video: {

@@ -6,7 +6,7 @@ import { Credit } from "../Credit";
 
 const Image: FC<ImageProps> = ({ alt, caption, className, credit, url }) => {
   const { prefix } = useGlobalSettings();
-  const baseClass = `${prefix}--media`;
+  const baseClass = `${prefix}--image`;
 
   const imageClasses = classNames(className, {
     [baseClass]: true,
