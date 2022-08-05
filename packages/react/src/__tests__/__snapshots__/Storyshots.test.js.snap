@@ -1878,29 +1878,29 @@ exports[`Storyshots Components/Image Image 1`] = `
   }
 >
   <figure
-    className="image ilo--media"
+    className="image ilo--image"
   >
     <div
-      className="image ilo--media--wrapper"
+      className="image ilo--image--wrapper"
     >
       <picture
-        className="ilo--media--img"
+        className="ilo--image--img"
       >
         <source
           media="(min-width: 1440px)"
-          srcSet="https://place-hold.it/1600x1200?text=LargestBreakpointImage"
+          srcSet="https://placekitten.com/1600/1200"
         />
         <source
           media="(min-width: 1200px)"
-          srcSet="https://place-hold.it/1200x900?text=LargeBreakpointImage"
+          srcSet="https://placekitten.com/1200/900"
         />
         <source
           media="(min-width: 800px)"
-          srcSet="https://place-hold.it/800x600?text=MediumBreakpointImage"
+          srcSet="https://placekitten.com/800/600"
         />
         <img
           alt="My alt text"
-          src="https://place-hold.it/400x300?text=SmallBreakpointImage"
+          src="https://placekitten.com/400/300"
         />
       </picture>
       <span
@@ -1916,7 +1916,7 @@ exports[`Storyshots Components/Image Image 1`] = `
       </span>
     </div>
     <figcaption
-      className="ilo--media--caption"
+      className="ilo--image--caption"
     >
       my image caption
     </figcaption>
