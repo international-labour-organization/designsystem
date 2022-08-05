@@ -1092,7 +1092,7 @@ exports[`Storyshots Components/Callout Error Callout 1`] = `
         Lorem ipsum dolor sit amet, consectetur adipiscing elit.
       </p>
       <a
-        className="ilo--callout--cta ilo--button ilo--button--small ilo--button--secondary  --light"
+        className="ilo--callout--cta ilo--button ilo--button--small ilo--button--tertiary  --light"
         href="http://www.google.com"
         rel=""
         target=""
