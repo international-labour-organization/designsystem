@@ -29,13 +29,13 @@
 
     .ilo--list__title {
       margin-bottom: px-to-rem(map-get($spacing, "base"));
-      margin-right: px-to-rem(map-get($spacing, "ui-padding-xxl"));
+      margin-right: px-to-rem(map-get($spacing, "ui-padding-xxl") - 3px);
     }
 
     .ilo--list__item {
       margin-bottom: px-to-rem(map-get($spacing, "base"));
       margin-left: 0;
-      margin-right: px-to-rem(map-get($spacing, "ui-padding-xxl"));
+      margin-right: px-to-rem(map-get($spacing, "ui-padding-xxl") - 3px);
       padding-left: 0;
     }
   }
@@ -45,15 +45,35 @@
 
     font-family: $fonts-display;
     font-weight: 700;
-    margin-bottom: px-to-rem(map-get($spacing, "ui-padding-xxl"));
+    @include textmargin(
+      "margin-bottom",
+      map-get($spacing, "ui-padding-xxl"),
+      "headline-5",
+      "display",
+      0,
+      0
+    );
   }
 
   &__item {
     @include font-styles("base");
 
     font-family: $fonts-copy;
-    margin-bottom: px-to-rem(map-get($spacing, "ui-padding-xl"));
+    @include textmargin(
+      "margin-bottom",
+      map-get($spacing, "ui-padding-xl"),
+      "base",
+      "display",
+      0,
+      0
+    );
     margin-left: px-to-rem(map-get($spacing, "ui-padding-lg"));
-    padding-left: px-to-rem(map-get($spacing, "base"));
+    padding-left: px-to-rem(map-get($spacing, "base") - 2px);
+
+    b,
+    strong {
+      font-weight: 700;
+      letter-spacing: $type-label-small-letter-spacing;
+    }
   }
 }
