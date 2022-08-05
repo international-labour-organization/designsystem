@@ -41,7 +41,7 @@ const Callout: FC<CalloutProps> = ({
     children: false,
     label: cta?.label,
     size: "small",
-    type: "secondary",
+    type: "tertiary",
     url: cta?.url,
   };
 
