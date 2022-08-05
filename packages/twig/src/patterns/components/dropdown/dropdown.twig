@@ -1,0 +1,20 @@
+{#
+  DROPDOWN COMPONENT
+
+  Like all form fields, extends the FIELDSET components, and passes it some variables
+#}
+{% extends '@components/fieldset/fieldset.twig' %}
+{% set fsinputid = inputid %}
+{% set fslabel = label %}
+{% set fshelper = helper %}
+{% set fserror = error %}
+
+{% block formfield %}
+  <div class="{{prefix}}--dropdown--wrapper">
+    <select id="dropdown" {% if autocomplete %}autocomplete="{{autocomplete}}"{% endif %} name="dropdown" class="{{prefix}}--dropdown" {% if disabled %}disabled{% endif %}>
+      {% for option in options %}
+      <option label="{{option.label}}" value="{{option.value}}" {% if option.disabled %}disabled{% endif %}></option>
+      {% endfor %}
+    </select>
+  </div>
+{% endblock %}

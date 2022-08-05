@@ -22,14 +22,12 @@ const AccordionButton: FC<AccordionButtonProps> = ({
     allowMultipleExpanded,
     onButtonClick,
     headingLevel,
-    size,
   } = useContext(AccordionContext);
   const { id } = useContext(AccordionItemContext);
   const open = activeItems.indexOf(id) > -1;
 
   const accordionButtonClasses = classNames(className, {
     [baseClass]: true,
-    [`${baseClass}--${size}`]: size,
   });
 
   /**

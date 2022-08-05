@@ -13,16 +13,7 @@ import { TooltipProps } from "../components/Tooltip/Tooltip.props";
 import tooltipArgs from "../components/Tooltip/Tooltip.args";
 
 const themeDoc = `
-By changing the \`alignment\` prop you can change the placement of the box in relation to the indicator. It will also assign an arrow on the side relative to the alignment.
-
-By changing the \`placement\` prop you can change the location of the arrow on the side of the Tooltip box.
-
-| placement   |  Description  |
-|----------|-------------|
-| \`negative\` | left or above center  |
-| \`middle\` | middle of the side |
-| \`positive\` | right or below center |
-`;
+By changing the \`theme\` prop you can set whether the tooltip has a light or dark theme.`;
 
 /**
  * Tooltip Story
@@ -70,11 +61,23 @@ const TooltipTemplate: Story<TooltipProps> = (args) => (
  * Tooltip Instance
  *
  */
-export const BaseTooltip = TooltipTemplate.bind({});
+export const Light = TooltipTemplate.bind({});
+
+export const Dark = TooltipTemplate.bind({});
+
+export const LightIcon = TooltipTemplate.bind({});
+
+export const DarkIcon = TooltipTemplate.bind({});
 
 // enumerate the props for the tooltip
-BaseTooltip.args = tooltipArgs.tooltip;
-BaseTooltip.args.label = "This is a tooltip!";
-BaseTooltip.args.alignment = "right";
-BaseTooltip.args.placement = "negative";
-BaseTooltip.storyName = "Tooltip";
+Light.args = tooltipArgs.light;
+Light.storyName = "Tooltip - Light";
+
+Dark.args = tooltipArgs.dark;
+Dark.storyName = "Tooltip - Dark";
+
+LightIcon.args = tooltipArgs.lighticon;
+LightIcon.storyName = "Tooltip - Light, with Icon";
+
+DarkIcon.args = tooltipArgs.darkicon;
+DarkIcon.storyName = "Tooltip - Dark, with Icon";

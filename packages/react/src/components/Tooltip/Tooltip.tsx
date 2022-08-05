@@ -3,8 +3,15 @@ import classNames from "classnames";
 import useGlobalSettings from "../../hooks/useGlobalSettings";
 import { TooltipProps } from "./Tooltip.props";
 import ReactDOM from "react-dom";
+import { Icon } from "../Icon";
 
-const Tooltip: FC<TooltipProps> = ({ className, children, label, theme }) => {
+const Tooltip: FC<TooltipProps> = ({
+  className,
+  children,
+  icon,
+  label,
+  theme,
+}) => {
   const { prefix } = useGlobalSettings();
   const baseClass = `${prefix}--tooltip`;
   const [isVisible, setIsVisible] = useState<boolean>(false);
@@ -25,8 +32,8 @@ const Tooltip: FC<TooltipProps> = ({ className, children, label, theme }) => {
   });
 
   const tooltipArrowClasses = classNames(className, {
-    [`${baseClass}__arrow`]: true,
-    [`${baseClass}__arrow--placement-${arrowPlacement}`]: arrowPlacement,
+    [`${baseClass}--arrow`]: true,
+    [`${baseClass}--arrow--placement-${arrowPlacement}`]: arrowPlacement,
   });
 
   const handleOnMouseOver = (e: any) => {
@@ -72,25 +79,25 @@ const Tooltip: FC<TooltipProps> = ({ className, children, label, theme }) => {
 
       // the tooltip doesn't fit to the left
       if (bRight) {
-        x = hoverRect.width + 32;
-        y = 0;
+        x = hoverRect.width + 16;
+        y = icon ? -8 : 0;
         placement = "negative";
         alignment = "right";
       } else if (bBellow) {
-        x = 0;
-        y = hoverRect.height + 32;
+        x = icon ? -8 : 0;
+        y = hoverRect.height + 16;
 
         placement = "center";
         alignment = "bottom";
       } else if (bLeft) {
-        x = -ttRect.width - 32;
-        y = 0;
+        x = -ttRect.width - 16;
+        y = icon ? -8 : 0;
 
         placement = "negative";
         alignment = "left";
       } else if (bAbove) {
-        x = 0;
-        y = -ttRect.height - 32;
+        x = icon ? -8 : 0;
+        y = -ttRect.height - 16;
 
         placement = "center";
         alignment = "top";
@@ -115,13 +122,18 @@ const Tooltip: FC<TooltipProps> = ({ className, children, label, theme }) => {
 
   return (
     <div
-      className={`${baseClass}__wrapper`}
+      className={`${baseClass}--wrapper ${icon && "has-icon"}`}
       onMouseOver={handleOnMouseOver}
       onFocus={handleOnMouseOver}
       onMouseOut={handleOnMouseOut}
       onBlur={handleOnMouseOut}
     >
-      {children}
+      {!icon && <>{children}</>}
+      {icon && (
+        <span className={`${baseClass}--icon`}>
+          <Icon name={"info"} hidden={true} size={16} />
+        </span>
+      )}
       <span className={tooltipClasses} style={style} ref={tooltipRef}>
         <span className={tooltipArrowClasses} role="presentation"></span>
         {label}

@@ -47,7 +47,7 @@
       }
     }
 
-    &--large {
+    @include breakpoint("large") {
       @include font-styles("label-large");
       padding: px-to-rem(calc($spacing-ui-padding-xl - 11px)) px-to-rem(36px)
         px-to-rem(calc($spacing-ui-padding-xl - 11px)) 0;
@@ -105,7 +105,7 @@
       -webkit-transition-timing-function: ease;
     }
 
-    .ilo--accordion--large & {
+    @include breakpoint("large") {
       @include font-styles("label-large");
     }
   }
