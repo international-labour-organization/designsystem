@@ -1401,6 +1401,364 @@ exports[`Storyshots Components/ContextMenu ContextMenu - With A 'Section' 1`] = 
 </div>
 `;
 
+exports[`Storyshots Components/Dropdown Dropdown - Basic 1`] = `
+<div
+  style={
+    Object {
+      "margin": "3em",
+    }
+  }
+>
+  <fieldset
+    className="ilo--fieldset"
+  >
+    <label
+      className="ilo--fieldset--label"
+      htmlFor="dropdown"
+    >
+      Dropdown Label
+    </label>
+    <div
+      className="ilo--dropdown--wrapper"
+    >
+      <select
+        autoComplete="false"
+        className="ilo--dropdown"
+        disabled={false}
+        id="dropdown"
+        name="dropdown"
+        onChange={[Function]}
+        required={false}
+        value="option one"
+      >
+        <option
+          disabled={false}
+          label="Option One"
+          value="option one"
+        />
+        <option
+          disabled={false}
+          label="Option Two"
+          value="option two"
+        />
+        <option
+          disabled={false}
+          label="Option Three"
+          value="option three"
+        />
+        <option
+          disabled={false}
+          label="Option Four"
+          value="four"
+        />
+        <option
+          disabled={false}
+          label="Option Five"
+          value="the fifth"
+        />
+      </select>
+    </div>
+  </fieldset>
+</div>
+`;
+
+exports[`Storyshots Components/Dropdown Dropdown - Has Error 1`] = `
+<div
+  style={
+    Object {
+      "margin": "3em",
+    }
+  }
+>
+  <fieldset
+    className="ilo--fieldset error"
+  >
+    <label
+      className="ilo--fieldset--label"
+      htmlFor="dropdown"
+    >
+      Dropdown Label
+    </label>
+    <div
+      className="ilo--dropdown--wrapper"
+    >
+      <select
+        autoComplete="false"
+        className="ilo--dropdown error"
+        disabled={false}
+        id="dropdown"
+        name="dropdown"
+        onChange={[Function]}
+        required={false}
+        value="option one"
+      >
+        <option
+          disabled={false}
+          label="Option One"
+          value="option one"
+        />
+        <option
+          disabled={false}
+          label="Option Two"
+          value="option two"
+        />
+        <option
+          disabled={false}
+          label="Option Three"
+          value="option three"
+        />
+        <option
+          disabled={false}
+          label="Option Four"
+          value="four"
+        />
+        <option
+          disabled={false}
+          label="Option Five"
+          value="the fifth"
+        />
+      </select>
+    </div>
+    <span
+      className="ilo--fieldset--error"
+    >
+      This is an error message
+    </span>
+  </fieldset>
+</div>
+`;
+
+exports[`Storyshots Components/Dropdown Dropdown - Has Helper 1`] = `
+<div
+  style={
+    Object {
+      "margin": "3em",
+    }
+  }
+>
+  <fieldset
+    className="ilo--fieldset"
+  >
+    <label
+      className="ilo--fieldset--label"
+      htmlFor="dropdown"
+    >
+      Dropdown Label
+    </label>
+    <div
+      className="ilo--dropdown--wrapper"
+    >
+      <select
+        autoComplete="false"
+        className="ilo--dropdown"
+        disabled={false}
+        id="dropdown"
+        name="dropdown"
+        onChange={[Function]}
+        required={false}
+        value="option one"
+      >
+        <option
+          disabled={false}
+          label="Option One"
+          value="option one"
+        />
+        <option
+          disabled={false}
+          label="Option Two"
+          value="option two"
+        />
+        <option
+          disabled={false}
+          label="Option Three"
+          value="option three"
+        />
+        <option
+          disabled={false}
+          label="Option Four"
+          value="four"
+        />
+        <option
+          disabled={false}
+          label="Option Five"
+          value="the fifth"
+        />
+      </select>
+    </div>
+    <span
+      className="ilo--fieldset--helper"
+    >
+      Example Helper Text
+    </span>
+  </fieldset>
+</div>
+`;
+
+exports[`Storyshots Components/Dropdown Dropdown - Has Tooltip 1`] = `
+<div
+  style={
+    Object {
+      "margin": "3em",
+    }
+  }
+>
+  <fieldset
+    className="ilo--fieldset"
+  >
+    <label
+      className="ilo--fieldset--label"
+      htmlFor="dropdown"
+    >
+      Dropdown Label
+    </label>
+    <div
+      className="ilo--tooltip--wrapper has-icon"
+      onBlur={[Function]}
+      onFocus={[Function]}
+      onMouseOut={[Function]}
+      onMouseOver={[Function]}
+    >
+      <span
+        className="ilo--tooltip--icon"
+      >
+        <svg
+          aria-hidden={true}
+          className="ilo--icon"
+          fill="currentColor"
+          focusable="false"
+          height={16}
+          preserveAspectRatio="xMidYMid meet"
+          viewBox="0 0 16 16"
+          width={16}
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0Zm1 12H7V7h2v5ZM8 6a.94.94 0 0 1-1-1 .94.94 0 0 1 1-1 .94.94 0 0 1 1 1 .94.94 0 0 1-1 1Z"
+            fill="currentColor"
+          />
+        </svg>
+      </span>
+      <span
+        className="ilo--fieldset--label ilo--tooltip ilo--tooltip--dark ilo--tooltip--alignment-left"
+        style={
+          Object {
+            "left": "0px",
+            "top": "0px",
+          }
+        }
+      >
+        <span
+          className="ilo--fieldset--label ilo--tooltip--arrow ilo--tooltip--arrow--placement-center"
+          role="presentation"
+        />
+        This is my tooltip text.
+      </span>
+    </div>
+    <div
+      className="ilo--dropdown--wrapper"
+    >
+      <select
+        autoComplete="false"
+        className="ilo--dropdown"
+        disabled={false}
+        id="dropdown"
+        name="dropdown"
+        onChange={[Function]}
+        required={false}
+        value="option one"
+      >
+        <option
+          disabled={false}
+          label="Option One"
+          value="option one"
+        />
+        <option
+          disabled={false}
+          label="Option Two"
+          value="option two"
+        />
+        <option
+          disabled={false}
+          label="Option Three"
+          value="option three"
+        />
+        <option
+          disabled={false}
+          label="Option Four"
+          value="four"
+        />
+        <option
+          disabled={false}
+          label="Option Five"
+          value="the fifth"
+        />
+      </select>
+    </div>
+  </fieldset>
+</div>
+`;
+
+exports[`Storyshots Components/Dropdown Dropdown - Is Disabled 1`] = `
+<div
+  style={
+    Object {
+      "margin": "3em",
+    }
+  }
+>
+  <fieldset
+    className="ilo--fieldset"
+  >
+    <label
+      className="ilo--fieldset--label"
+      htmlFor="dropdown"
+    >
+      Dropdown Label
+    </label>
+    <div
+      className="ilo--dropdown--wrapper"
+    >
+      <select
+        autoComplete="false"
+        className="ilo--dropdown"
+        disabled={false}
+        id="dropdown"
+        name="dropdown"
+        onChange={[Function]}
+        required={false}
+        value="option one"
+      >
+        <option
+          disabled={false}
+          label="Option One"
+          value="option one"
+        />
+        <option
+          disabled={false}
+          label="Option Two"
+          value="option two"
+        />
+        <option
+          disabled={false}
+          label="Option Three"
+          value="option three"
+        />
+        <option
+          disabled={false}
+          label="Option Four"
+          value="four"
+        />
+        <option
+          disabled={false}
+          label="Option Five"
+          value="the fifth"
+        />
+      </select>
+    </div>
+  </fieldset>
+</div>
+`;
+
 exports[`Storyshots Components/Empty Empty 1 1`] = `
 <div
   style={
@@ -3798,7 +4156,7 @@ exports[`Storyshots Components/Tag Display Tag 1`] = `
 </div>
 `;
 
-exports[`Storyshots Components/Tooltip Tooltip 1`] = `
+exports[`Storyshots Components/Tooltip Tooltip - Dark 1`] = `
 <div
   style={
     Object {
@@ -3807,7 +4165,7 @@ exports[`Storyshots Components/Tooltip Tooltip 1`] = `
   }
 >
   <div
-    className="ilo--tooltip__wrapper"
+    className="ilo--tooltip--wrapper undefined"
     onBlur={[Function]}
     onFocus={[Function]}
     onMouseOut={[Function]}
@@ -3828,10 +4186,157 @@ exports[`Storyshots Components/Tooltip Tooltip 1`] = `
       }
     >
       <span
-        className="ilo--tooltip__arrow ilo--tooltip__arrow--placement-center"
+        className="ilo--tooltip--arrow ilo--tooltip--arrow--placement-center"
         role="presentation"
       />
-      This is a tooltip!
+      This is a tooltip
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/Tooltip Tooltip - Dark, with Icon 1`] = `
+<div
+  style={
+    Object {
+      "margin": "3em",
+    }
+  }
+>
+  <div
+    className="ilo--tooltip--wrapper has-icon"
+    onBlur={[Function]}
+    onFocus={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  >
+    <span
+      className="ilo--tooltip--icon"
+    >
+      <svg
+        aria-hidden={true}
+        className="ilo--icon"
+        fill="currentColor"
+        focusable="false"
+        height={16}
+        preserveAspectRatio="xMidYMid meet"
+        viewBox="0 0 16 16"
+        width={16}
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0Zm1 12H7V7h2v5ZM8 6a.94.94 0 0 1-1-1 .94.94 0 0 1 1-1 .94.94 0 0 1 1 1 .94.94 0 0 1-1 1Z"
+          fill="currentColor"
+        />
+      </svg>
+    </span>
+    <span
+      className="ilo--tooltip ilo--tooltip--dark ilo--tooltip--alignment-left"
+      style={
+        Object {
+          "left": "0px",
+          "top": "0px",
+        }
+      }
+    >
+      <span
+        className="ilo--tooltip--arrow ilo--tooltip--arrow--placement-center"
+        role="presentation"
+      />
+      This is a tooltip
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/Tooltip Tooltip - Light 1`] = `
+<div
+  style={
+    Object {
+      "margin": "3em",
+    }
+  }
+>
+  <div
+    className="ilo--tooltip--wrapper undefined"
+    onBlur={[Function]}
+    onFocus={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  >
+    <a
+      href="https://www.google.com/"
+    >
+      This is testing for the tooltip
+    </a>
+    <span
+      className="ilo--tooltip ilo--tooltip--light ilo--tooltip--alignment-left"
+      style={
+        Object {
+          "left": "0px",
+          "top": "0px",
+        }
+      }
+    >
+      <span
+        className="ilo--tooltip--arrow ilo--tooltip--arrow--placement-center"
+        role="presentation"
+      />
+      This is a tooltip
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/Tooltip Tooltip - Light, with Icon 1`] = `
+<div
+  style={
+    Object {
+      "margin": "3em",
+    }
+  }
+>
+  <div
+    className="ilo--tooltip--wrapper has-icon"
+    onBlur={[Function]}
+    onFocus={[Function]}
+    onMouseOut={[Function]}
+    onMouseOver={[Function]}
+  >
+    <span
+      className="ilo--tooltip--icon"
+    >
+      <svg
+        aria-hidden={true}
+        className="ilo--icon"
+        fill="currentColor"
+        focusable="false"
+        height={16}
+        preserveAspectRatio="xMidYMid meet"
+        viewBox="0 0 16 16"
+        width={16}
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0Zm1 12H7V7h2v5ZM8 6a.94.94 0 0 1-1-1 .94.94 0 0 1 1-1 .94.94 0 0 1 1 1 .94.94 0 0 1-1 1Z"
+          fill="currentColor"
+        />
+      </svg>
+    </span>
+    <span
+      className="ilo--tooltip ilo--tooltip--light ilo--tooltip--alignment-left"
+      style={
+        Object {
+          "left": "0px",
+          "top": "0px",
+        }
+      }
+    >
+      <span
+        className="ilo--tooltip--arrow ilo--tooltip--arrow--placement-center"
+        role="presentation"
+      />
+      This is a tooltip
     </span>
   </div>
 </div>
