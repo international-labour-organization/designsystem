@@ -1,6 +1,4 @@
-import { inputTypes } from "../../types";
-
-export interface InputProps {
+export interface NumberPickerProps {
   /**
    * The input's onChange callback.
    */
@@ -42,7 +40,7 @@ export interface InputProps {
   name?: Required<string>;
 
   /**
-   * Specify an optional className to be added to your Input component.
+   * Specify an optional className to be added to your NumberPicker component.
    */
   placeholder?: string;
 
@@ -52,12 +50,7 @@ export interface InputProps {
   required?: boolean;
 
   /**
-   * Does this Input have a tooltip?
+   * Does this NumberPicker have a tooltip?
    */
   tooltip: string | false;
-
-  /**
-   * The input's type.
-   */
-  type: Required<inputTypes>;
 }

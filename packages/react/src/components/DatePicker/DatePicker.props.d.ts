@@ -1,6 +1,6 @@
-import { inputTypes } from "../../types";
+import { datePickerTypes } from "../../types";
 
-export interface InputProps {
+export interface DatePickerProps {
   /**
    * The input's onChange callback.
    */
@@ -42,9 +42,14 @@ export interface InputProps {
   name?: Required<string>;
 
   /**
-   * Specify an optional className to be added to your Input component.
+   * Specify an optional className to be added to your DatePicker component.
    */
   placeholder?: string;
+
+  /**
+   * Specify whether this is a date range
+   */
+  range?: boolean;
 
   /**
    * Specify whether this input is required
@@ -52,12 +57,7 @@ export interface InputProps {
   required?: boolean;
 
   /**
-   * Does this Input have a tooltip?
+   * Does this DatePicker have a tooltip?
    */
   tooltip: string | false;
-
-  /**
-   * The input's type.
-   */
-  type: Required<inputTypes>;
 }

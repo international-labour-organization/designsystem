@@ -1,36 +1,39 @@
-import { FC } from "react";
+import { FC, useState } from "react";
 import classNames from "classnames";
 import useGlobalSettings from "../../hooks/useGlobalSettings";
-import { InputProps } from "./Input.props";
+import { FileUploadProps } from "./FileUpload.props";
 import { Fieldset } from "../Fieldset";
 import { FormElement } from "../FormElement";
 
-const Input: FC<InputProps> = ({
+const FileUpload: FC<FileUploadProps> = ({
   callback,
   disabled = false,
   error,
   helper,
   id,
   label,
+  multiple,
   name,
   placeholder,
   required,
   tooltip,
-  type = "text",
 }) => {
-  console.log("here");
   const { prefix } = useGlobalSettings();
-  const baseClass = `${prefix}--input`;
-
-  const InputClasses = classNames("", {
+  const baseClass = `${prefix}--file-upload`;
+  const FileUploadClasses = classNames("", {
     [baseClass]: true,
     [`error`]: error,
   });
 
+  const [uploadfiles, setUploadFiles] = useState([]);
+
   /**
-   * On change, if there is a callback, call it
+   * On change, add file to listed files, if there is a callback, call it
    */
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const files = e.target.files;
+    setUploadFiles(files as any);
+
     if (callback) {
       callback(e);
     }
@@ -51,14 +54,27 @@ const Input: FC<InputProps> = ({
           name={name}
           onChange={handleChange}
           disabled={disabled}
+          multiple={multiple}
           placeholder={placeholder}
           required={required as any}
-          type={type}
-          className={InputClasses}
+          type={"file"}
+          className={FileUploadClasses}
         />
       </FormElement>
+      {uploadfiles.length > 0 && (
+        <ul className={`${baseClass}--list`}>
+          {uploadfiles.map((file: any, i: any) => (
+            <li
+              className={`${baseClass}--list-item`}
+              key={`${baseClass}--list-item-${i}`}
+            >
+              {file.name}
+            </li>
+          ))}
+        </ul>
+      )}
     </Fieldset>
   );
 };
 
-export default Input;
+export default FileUpload;

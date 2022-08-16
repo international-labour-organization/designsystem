@@ -10,27 +10,12 @@ export interface FieldsetProps {
   className?: string;
 
   /**
-   * The fieldset's error message
+   * The fieldset's id
    */
-  error: string | false;
+  fieldsetid: string | boolean;
 
   /**
-   * The fieldset's helper text
+   * The fieldset's legend
    */
-  helper: string;
-
-  /**
-   * The ID of the form element
-   */
-  inputid: Required<string>;
-
-  /**
-   * The fieldset's label
-   */
-  label: Required<string>;
-
-  /**
-   * Does this fieldset have a tooltip?
-   */
-  tooltip: string | false;
+  legend: Required<string | boolean>;
 }

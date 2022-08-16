@@ -2,7 +2,6 @@ import { FC } from "react";
 import classNames from "classnames";
 import useGlobalSettings from "../../hooks/useGlobalSettings";
 import { SearchFieldProps } from "./SearchField.props";
-import { Input } from "../Input";
 
 const SearchField: FC<SearchFieldProps> = ({
   action,
@@ -29,7 +28,15 @@ const SearchField: FC<SearchFieldProps> = ({
 
   return (
     <form className={SearchFieldClasses} action={action}>
-      <Input {...input} />
+      <input
+        id={input.id}
+        name={input.name}
+        onChange={input.handleChange}
+        disabled={input.disabled}
+        placeholder={input.placeholder}
+        type={input.type}
+        className={`${prefix}--input`}
+      />
       <input
         className={buttonClass}
         type="submit"

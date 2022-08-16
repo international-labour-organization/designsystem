@@ -1,11 +1,11 @@
 import { FC } from "react";
 import classNames from "classnames";
 import useGlobalSettings from "../../hooks/useGlobalSettings";
-import { InputProps } from "./Input.props";
+import { DatePickerProps } from "./DatePicker.props";
 import { Fieldset } from "../Fieldset";
 import { FormElement } from "../FormElement";
 
-const Input: FC<InputProps> = ({
+const DatePicker: FC<DatePickerProps> = ({
   callback,
   disabled = false,
   error,
@@ -14,15 +14,14 @@ const Input: FC<InputProps> = ({
   label,
   name,
   placeholder,
+  range,
   required,
   tooltip,
-  type = "text",
 }) => {
-  console.log("here");
   const { prefix } = useGlobalSettings();
-  const baseClass = `${prefix}--input`;
+  const baseClass = `${prefix}--datepicker`;
 
-  const InputClasses = classNames("", {
+  const DatePickerClasses = classNames("", {
     [baseClass]: true,
     [`error`]: error,
   });
@@ -30,9 +29,12 @@ const Input: FC<InputProps> = ({
   /**
    * On change, if there is a callback, call it
    */
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement>,
+    picker: string | false = false
+  ) => {
     if (callback) {
-      callback(e);
+      callback(e, picker);
     }
   };
 
@@ -47,18 +49,30 @@ const Input: FC<InputProps> = ({
         tooltip={tooltip}
       >
         <input
-          id={id}
-          name={name}
+          id={`${id}`}
+          name={`${name}`}
           onChange={handleChange}
           disabled={disabled}
           placeholder={placeholder}
           required={required as any}
-          type={type}
-          className={InputClasses}
+          type={"date"}
+          className={`${DatePickerClasses} ${prefix}--input`}
         />
+        {range && (
+          <input
+            id={`${name}--end`}
+            name={`${name}--end`}
+            onChange={(e) => handleChange(e, "end")}
+            disabled={disabled}
+            placeholder={placeholder}
+            required={required as any}
+            type={"date"}
+            className={`${DatePickerClasses} ${prefix}--input`}
+          />
+        )}
       </FormElement>
     </Fieldset>
   );
 };
 
-export default Input;
+export default DatePicker;

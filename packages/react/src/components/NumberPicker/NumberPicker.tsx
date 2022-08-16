@@ -1,11 +1,11 @@
 import { FC } from "react";
 import classNames from "classnames";
 import useGlobalSettings from "../../hooks/useGlobalSettings";
-import { InputProps } from "./Input.props";
+import { NumberPickerProps } from "./NumberPicker.props";
 import { Fieldset } from "../Fieldset";
 import { FormElement } from "../FormElement";
 
-const Input: FC<InputProps> = ({
+const NumberPicker: FC<NumberPickerProps> = ({
   callback,
   disabled = false,
   error,
@@ -16,13 +16,11 @@ const Input: FC<InputProps> = ({
   placeholder,
   required,
   tooltip,
-  type = "text",
 }) => {
-  console.log("here");
   const { prefix } = useGlobalSettings();
-  const baseClass = `${prefix}--input`;
+  const baseClass = `${prefix}--numberpicker`;
 
-  const InputClasses = classNames("", {
+  const NumberPickerClasses = classNames("", {
     [baseClass]: true,
     [`error`]: error,
   });
@@ -53,12 +51,14 @@ const Input: FC<InputProps> = ({
           disabled={disabled}
           placeholder={placeholder}
           required={required as any}
-          type={type}
-          className={InputClasses}
+          type={"text"}
+          className={`${NumberPickerClasses} ${prefix}--input`}
+          pattern="[0-9]*"
+          inputMode="numeric"
         />
       </FormElement>
     </Fieldset>
   );
 };
 
-export default Input;
+export default NumberPicker;
