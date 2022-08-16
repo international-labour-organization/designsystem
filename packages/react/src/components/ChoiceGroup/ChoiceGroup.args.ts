@@ -6,8 +6,8 @@ const checkboxfields = [];
 const radiofields = [];
 
 for (let i = 0; i < 5; i++) {
-  let checkboxargs = { ...CheckboxArgs.basic };
-  let radioargs = { ...RadioArgs.basic };
+  const checkboxargs = { ...CheckboxArgs.basic };
+  const radioargs = { ...RadioArgs.basic };
   checkboxfields.push(checkboxargs);
   checkboxfields[i].label = `Checkbox ${i}`;
   checkboxfields[i].name = `checkbox${i}`;

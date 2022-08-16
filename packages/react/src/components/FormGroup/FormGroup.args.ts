@@ -12,8 +12,8 @@ const fgcheckboxfields = [];
 const fgradiofields = [];
 
 for (let i = 0; i < 5; i++) {
-  let checkboxargs = { ...CheckboxArgs.basic };
-  let radioargs = { ...RadioArgs.basic };
+  const checkboxargs = { ...CheckboxArgs.basic };
+  const radioargs = { ...RadioArgs.basic };
   fgcheckboxfields.push(checkboxargs);
   fgcheckboxfields[i].label = `Checkbox ${i}`;
   fgcheckboxfields[i].name = `fgcheckbox${i}`;

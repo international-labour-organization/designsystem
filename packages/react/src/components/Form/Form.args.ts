@@ -13,8 +13,8 @@ const formcheckboxfields = [];
 const formradiofields = [];
 
 for (let i = 0; i < 5; i++) {
-  let checkboxargs = { ...CheckboxArgs.basic };
-  let radioargs = { ...RadioArgs.basic };
+  const checkboxargs = { ...CheckboxArgs.basic };
+  const radioargs = { ...RadioArgs.basic };
   formcheckboxfields.push(checkboxargs);
   formcheckboxfields[i].label = `Checkbox ${i}`;
   formcheckboxfields[i].name = `fcheckbox${i}`;
