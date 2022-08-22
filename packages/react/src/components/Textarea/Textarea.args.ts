@@ -10,7 +10,6 @@ const basic: TextareaProps = {
   placeholder: "Textarea",
   required: false,
   spellcheck: false,
-  tooltip: false,
 };
 
 /**

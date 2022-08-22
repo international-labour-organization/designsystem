@@ -18,7 +18,6 @@ const Input: FC<InputProps> = ({
   tooltip,
   type = "text",
 }) => {
-  console.log("here");
   const { prefix } = useGlobalSettings();
   const baseClass = `${prefix}--input`;
 

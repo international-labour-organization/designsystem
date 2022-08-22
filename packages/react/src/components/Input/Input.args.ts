@@ -9,7 +9,6 @@ const basic: InputProps = {
   name: "text",
   placeholder: "Text Field",
   required: false,
-  tooltip: false,
   type: "text",
 };
 
@@ -22,7 +21,6 @@ const email: InputProps = {
   name: "email",
   placeholder: "Email Field",
   required: false,
-  tooltip: false,
   type: "email",
 };
 
@@ -34,7 +32,6 @@ const hidden: InputProps = {
   label: "Hidden Field Label",
   name: "hidden",
   required: false,
-  tooltip: false,
   type: "hidden",
 };
 
@@ -47,7 +44,6 @@ const password: InputProps = {
   name: "password",
   placeholder: "Password Field",
   required: false,
-  tooltip: false,
   type: "email",
 };
 
@@ -60,7 +56,6 @@ const tel: InputProps = {
   name: "tel",
   placeholder: "Telephone Field",
   required: false,
-  tooltip: false,
   type: "tel",
 };
 
@@ -73,7 +68,6 @@ const url: InputProps = {
   name: "url",
   placeholder: "URL Field",
   required: false,
-  tooltip: false,
   type: "url",
 };
 

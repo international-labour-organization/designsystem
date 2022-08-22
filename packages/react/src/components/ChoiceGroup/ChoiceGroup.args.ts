@@ -25,6 +25,8 @@ const checkboxes: ChoiceGroupProps = {
 
 const radios: ChoiceGroupProps = {
   choicegroupid: "radiogroup",
+  grouphelper: "Helper text",
+  grouptooltip: "Tooltip text",
   items: radiofields,
   legend: "Radio Legend",
 };

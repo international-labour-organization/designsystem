@@ -31,6 +31,21 @@ interface FormItems {
   >;
 
   /**
+   * Optional error text for the choice group
+   */
+  grouperror?: string;
+
+  /**
+   * Optional helper text for the choice group
+   */
+  grouphelper?: string;
+
+  /**
+   * Optional tooltip text for the choice group
+   */
+  grouptooltip?: string;
+
+  /**
    * If this is an array of items, an optional legend
    */
   legend?: string;

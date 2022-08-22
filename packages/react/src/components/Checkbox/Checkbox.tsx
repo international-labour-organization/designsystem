@@ -70,6 +70,7 @@ const Checkbox: FC<CheckboxProps> = ({
             error={error as any}
             required={required as any}
             tooltip={tooltip}
+            type={"checkbox"}
           >
             <input
               id={id}

@@ -4,13 +4,13 @@ const basic: FileUploadProps = {
   callback: "",
   disabled: false,
   error: false,
-  helper: false,
+  helper: "The file upload's helper text",
   label: "File Upload Field Label",
   multiple: false,
   name: "fileupload",
   placeholder: "File Upload Field",
   required: false,
-  tooltip: false,
+  tooltip: "Tooltip",
 };
 /**
  * Sample prop definitions FileUpload's enumerable properties (imported in stories and test)

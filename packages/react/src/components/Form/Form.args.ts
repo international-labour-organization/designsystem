@@ -55,6 +55,8 @@ const basic: FormProps = {
     {
       choicegroupid: "radios",
       field: formradiofields,
+      grouphelper: "Helper text",
+      grouptooltip: "Tooltip text",
       legend: "Radio Group",
       type: "radio",
     },
@@ -63,7 +65,7 @@ const basic: FormProps = {
       type: "file",
     },
     {
-      field: DatePickerArgs.basic,
+      field: DatePickerArgs.hasrange,
       type: "date",
     },
     {

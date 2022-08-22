@@ -59,5 +59,5 @@ export interface FileUploadProps {
   /**
    * Does this FileUpload have a tooltip?
    */
-  tooltip: string | false;
+  tooltip?: string;
 }

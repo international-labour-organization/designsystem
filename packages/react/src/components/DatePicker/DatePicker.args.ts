@@ -5,25 +5,33 @@ const basic: DatePickerProps = {
   disabled: false,
   error: false,
   helper: false,
-  label: "Text Field Label",
-  name: "text",
-  placeholder: "Text Field",
-  range: false,
+  label: "Date Picker Field Label",
+  name: "datepicker",
+  placeholder: "MM/DD/YYYY",
   required: false,
-  tooltip: false,
 };
 
 const hasrange: DatePickerProps = {
   callback: "",
   disabled: false,
+  enddata: {
+    callback: "",
+    disabled: false,
+    error: false,
+    helper: "this is an end date range",
+    label: "Date Picker End Field Label",
+    name: "datepickerend",
+    placeholder: "MM/DD/YYYY",
+    range: false,
+    required: false,
+  },
   error: false,
   helper: false,
-  label: "Text Field Label",
-  name: "text",
-  placeholder: "Text Field",
+  label: "Date Picker Field Label",
+  name: "datepicker",
+  placeholder: "MM/DD/YYYY",
   range: true,
   required: false,
-  tooltip: false,
 };
 
 /**

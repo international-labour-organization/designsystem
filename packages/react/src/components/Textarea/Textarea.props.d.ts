@@ -67,5 +67,5 @@ export interface TextareaProps {
   /**
    * Does this Textarea have a tooltip?
    */
-  tooltip: string | false;
+  tooltip?: string;
 }

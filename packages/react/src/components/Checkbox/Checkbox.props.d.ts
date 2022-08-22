@@ -52,7 +52,7 @@ export interface CheckboxProps {
   /**
    * Does this checkbox have a tooltip?
    */
-  tooltip: string | false;
+  tooltip?: string;
 
   /**
    * The input's type.

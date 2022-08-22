@@ -8,6 +8,9 @@ const Fieldset: FC<FieldsetProps> = ({
   children,
   className,
   fieldsetid,
+  grouperror,
+  grouphelper,
+  grouptooltip,
   legend,
 }) => {
   const { prefix } = useGlobalSettings();
@@ -21,12 +24,31 @@ const Fieldset: FC<FieldsetProps> = ({
       className={fieldsetClasses}
       id={fieldsetid ? (fieldsetid as any) : undefined}
     >
-      {legend && <legend className={`${baseClass}--legend`}>{legend}</legend>}
+      {legend && (
+        <legend className={`${baseClass}--legend`}>
+          {legend}
+          {grouptooltip && (
+            <Tooltip
+              className={`${baseClass}--legend--tooltip`}
+              icon={true}
+              label={grouptooltip}
+              theme={"dark"}
+            ></Tooltip>
+          )}
+        </legend>
+      )}
+      {grouphelper && !grouperror && (
+        <span className={`${baseClass}--helper`}>{grouphelper}</span>
+      )}
+      {grouperror && (
+        <span className={`${baseClass}--error`}>{grouperror}</span>
+      )}
       {Children.map(children, (child, i) => (
         <>
           {child && child.props && (
             <div
-              key={`${baseClass}--input--${i} ${
+              key={`${baseClass}--input--${i}`}
+              className={`${baseClass}--input--${child.props.type} ${
                 child.props.error ? "error" : ""
               }`}
             >
@@ -36,15 +58,15 @@ const Fieldset: FC<FieldsetProps> = ({
                   htmlFor={child.props.id}
                 >
                   {child.props.label}
+                  {child.props.tooltip && (
+                    <Tooltip
+                      className={`${baseClass}--label--tooltip`}
+                      icon={true}
+                      label={child.props.tooltip}
+                      theme={"dark"}
+                    ></Tooltip>
+                  )}
                 </label>
-              )}
-              {child.props.tooltip && (
-                <Tooltip
-                  className={`${baseClass}--label`}
-                  icon={true}
-                  label={child.props.tooltip}
-                  theme={"dark"}
-                ></Tooltip>
               )}
               {child}
               {child.props.helper && !child.props.error && (

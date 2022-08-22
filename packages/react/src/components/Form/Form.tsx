@@ -41,6 +41,9 @@ const Form: FC<FormProps> = ({ className, formid, items }) => {
               items={item?.field as any}
               legend={item?.legend as any}
               choicegroupid={item?.choicegroupid as any}
+              grouperror={item?.grouperror as any}
+              grouphelper={item?.grouphelper as any}
+              grouptooltip={item?.grouptooltip as any}
               key={i}
             />
           );

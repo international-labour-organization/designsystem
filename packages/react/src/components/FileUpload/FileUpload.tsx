@@ -40,7 +40,7 @@ const FileUpload: FC<FileUploadProps> = ({
   };
 
   return (
-    <Fieldset legend={false} fieldsetid={false}>
+    <Fieldset className={"file-upload"} legend={false} fieldsetid={false}>
       <FormElement
         elemid={name as any}
         label={label}
@@ -59,11 +59,12 @@ const FileUpload: FC<FileUploadProps> = ({
           required={required as any}
           type={"file"}
           className={FileUploadClasses}
+          data-label={placeholder}
         />
       </FormElement>
       {uploadfiles.length > 0 && (
         <ul className={`${baseClass}--list`}>
-          {uploadfiles.map((file: any, i: any) => (
+          {[...uploadfiles].map((file: any, i: any) => (
             <li
               className={`${baseClass}--list-item`}
               key={`${baseClass}--list-item-${i}`}

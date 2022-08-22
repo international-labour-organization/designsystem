@@ -54,7 +54,7 @@ export interface InputProps {
   /**
    * Does this Input have a tooltip?
    */
-  tooltip: string | false;
+  tooltip?: string;
 
   /**
    * The input's type.

@@ -52,5 +52,5 @@ export interface NumberPickerProps {
   /**
    * Does this NumberPicker have a tooltip?
    */
-  tooltip: string | false;
+  tooltip?: string;
 }

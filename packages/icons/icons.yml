@@ -16,6 +16,12 @@
     - ILO Icons
   sizes:
     - glyph
+- name: checkmark
+  friendly_name: checkmark
+  aliases:
+    - ILO Icons
+  sizes:
+    - glyph
 - name: close
   friendly_name: close
   aliases:
@@ -102,6 +108,12 @@
     - glyph
 - name: quote
   friendly_name: quote
+  aliases:
+    - ILO Icons
+  sizes:
+    - glyph
+- name: scalenerighttriangle
+  friendly_name: scalenerighttriangle
   aliases:
     - ILO Icons
   sizes:

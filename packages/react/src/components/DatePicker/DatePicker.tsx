@@ -8,6 +8,7 @@ import { FormElement } from "../FormElement";
 const DatePicker: FC<DatePickerProps> = ({
   callback,
   disabled = false,
+  enddata,
   error,
   helper,
   id,
@@ -39,39 +40,77 @@ const DatePicker: FC<DatePickerProps> = ({
   };
 
   return (
-    <Fieldset legend={false} fieldsetid={false}>
-      <FormElement
-        elemid={name as any}
-        label={label}
-        helper={helper as any}
-        error={error as any}
-        required={required as any}
-        tooltip={tooltip}
-      >
-        <input
-          id={`${id}`}
-          name={`${name}`}
-          onChange={handleChange}
-          disabled={disabled}
-          placeholder={placeholder}
-          required={required as any}
-          type={"date"}
-          className={`${DatePickerClasses} ${prefix}--input`}
-        />
-        {range && (
-          <input
-            id={`${name}--end`}
-            name={`${name}--end`}
-            onChange={(e) => handleChange(e, "end")}
-            disabled={disabled}
-            placeholder={placeholder}
+    <>
+      {!range && (
+        <Fieldset legend={false} fieldsetid={false}>
+          <FormElement
+            elemid={name as any}
+            label={label}
+            helper={helper as any}
+            error={error as any}
             required={required as any}
-            type={"date"}
-            className={`${DatePickerClasses} ${prefix}--input`}
-          />
-        )}
-      </FormElement>
-    </Fieldset>
+            tooltip={tooltip}
+          >
+            <input
+              id={`${id}`}
+              name={`${name}`}
+              onChange={handleChange}
+              disabled={disabled}
+              placeholder={placeholder}
+              required={required as any}
+              type={"date"}
+              className={`${DatePickerClasses} ${prefix}--input`}
+            />
+          </FormElement>
+        </Fieldset>
+      )}
+      {range && (
+        <div className={`${baseClass}--range`}>
+          <Fieldset legend={false} fieldsetid={false}>
+            <FormElement
+              elemid={name as any}
+              label={label}
+              helper={helper as any}
+              error={error as any}
+              required={required as any}
+              tooltip={tooltip}
+            >
+              <input
+                id={`${id}`}
+                name={`${name}`}
+                onChange={handleChange}
+                disabled={disabled}
+                placeholder={placeholder}
+                required={required as any}
+                type={"date"}
+                className={`${DatePickerClasses} ${prefix}--input`}
+              />
+            </FormElement>
+          </Fieldset>
+          <Fieldset legend={false} fieldsetid={false}>
+            <FormElement
+              elemid={enddata?.name as any}
+              label={enddata?.label as any}
+              helper={enddata?.helper as any}
+              error={enddata?.error as any}
+              required={enddata?.required as any}
+              tooltip={enddata?.tooltip as any}
+            >
+              <input
+                id={enddata?.name}
+                name={enddata?.name}
+                onChange={(e) => handleChange(e, "end")}
+                disabled={enddata?.disabled}
+                placeholder={enddata?.placeholder}
+                required={enddata?.required as any}
+                type={"date"}
+                className={`${DatePickerClasses} ${prefix}--input`}
+              />
+            </FormElement>
+          </Fieldset>
+        </div>
+      )}
+    </>
   );
 };
 

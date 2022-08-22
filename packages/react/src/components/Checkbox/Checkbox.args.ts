@@ -9,7 +9,6 @@ const basic: CheckboxProps = {
   label: "Checkbox Label",
   name: "checkbox",
   required: false,
-  tooltip: false,
   type: "checkbox",
 };
 

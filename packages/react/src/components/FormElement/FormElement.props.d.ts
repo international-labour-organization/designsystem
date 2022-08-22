@@ -1,3 +1,5 @@
+import { inputTypes, fieldTypes } from "../../types";
+
 export interface FormElementProps {
   /**
    * Specify the content of your FormElement.
@@ -42,5 +44,10 @@ export interface FormElementProps {
   /**
    * Does this fieldset have a tooltip?
    */
-  tooltip: string | false;
+  tooltip?: string;
+
+  /**
+   * The type of field
+   */
+  type?: inputTypes | fieldTypes;
 }

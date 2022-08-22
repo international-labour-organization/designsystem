@@ -1,0 +1,20 @@
+@use "../tokens" as *;
+@use "../functions" as *;
+@import "../mixins";
+
+.ilo--formgroup {
+  &--legend {
+    display: block;
+    font-family: $fonts-display;
+    font-weight: map-get($type, "weights", "label");
+    @include font-styles("legend");
+    @include textmargin(
+      "margin-bottom",
+      map-get($spacing, "padding-4"),
+      "legend",
+      "display",
+      "label-small",
+      "display"
+    );
+  }
+}

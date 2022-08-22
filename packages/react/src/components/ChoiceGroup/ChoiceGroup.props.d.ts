@@ -31,6 +31,21 @@ export interface ChoiceGroupProps {
   choicegroupid: Required<string>;
 
   /**
+   * Optional error text for the choice group
+   */
+  grouperror?: string;
+
+  /**
+   * Optional helper text for the choice group
+   */
+  grouphelper?: string;
+
+  /**
+   * Optional tooltip text for the choice group
+   */
+  grouptooltip?: string;
+
+  /**
    * The inputs in this ChoiceGroup
    */
   items: Required<Array<FormGroupItems>>;

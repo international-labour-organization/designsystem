@@ -47,7 +47,7 @@ export interface RadioProps {
   /**
    * Does this Radio have a tooltip?
    */
-  tooltip: string | false;
+  tooltip?: string;
 
   /**
    * The Radio's value attribute

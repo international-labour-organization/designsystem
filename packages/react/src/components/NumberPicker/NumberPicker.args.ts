@@ -9,7 +9,6 @@ const basic: NumberPickerProps = {
   name: "text",
   placeholder: "Number Picker Field",
   required: false,
-  tooltip: false,
 };
 
 /**

@@ -8,7 +8,6 @@ const basic: RadioProps = {
   label: "Radio Field Label",
   name: "radio",
   required: false,
-  tooltip: false,
   type: "radio",
   value: "radio",
 };

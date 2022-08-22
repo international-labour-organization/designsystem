@@ -17,6 +17,11 @@ export interface DatePickerProps {
   disabled?: boolean;
 
   /**
+   * If this is a range, the data for the second field
+   */
+  enddata?: DatePickerProps;
+
+  /**
    * Does the input have an error?
    */
   error?: string | false;
@@ -59,5 +64,5 @@ export interface DatePickerProps {
   /**
    * Does this DatePicker have a tooltip?
    */
-  tooltip: string | false;
+  tooltip?: string;
 }

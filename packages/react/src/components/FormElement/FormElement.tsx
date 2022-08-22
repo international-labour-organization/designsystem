@@ -17,6 +17,8 @@ const FormElement: FC<FormElementProps> = ({
   required,
   // @ts-ignore
   tooltip,
+  // @ts-ignore
+  type,
 }) => {
   return <>{children}</>;
 };
