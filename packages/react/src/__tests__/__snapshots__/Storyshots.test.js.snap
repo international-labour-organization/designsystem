@@ -1771,6 +1771,371 @@ exports[`Storyshots Components/Heading Heading Level 6 1`] = `
 </div>
 `;
 
+exports[`Storyshots Components/Hero Article Centered Hero 1`] = `
+<div
+  style={
+    Object {
+      "margin": "3em",
+    }
+  }
+>
+  <div
+    className="storybook ilo--hero ilo--hero--light ilo--hero--article ilo--hero--image"
+  >
+    <figure
+      className="storybook ilo--image"
+    >
+      <div
+        className="storybook ilo--image--wrapper"
+      >
+        <picture
+          className="ilo--image--img"
+        >
+          <source
+            media="(min-width: 768px)"
+            srcSet="https://placekitten.com/1920/800"
+          />
+          <img
+            alt="Alt tag"
+            src="https://placekitten.com/1920/800"
+          />
+        </picture>
+      </div>
+    </figure>
+    <div
+      className="ilo--hero-card ilo--hero-card--center ilo--hero-card--light ilo--hero-card--article"
+    >
+      <p
+        className="ilo--hero-card--eyebrow"
+      >
+        Eyebrow Title
+      </p>
+      <h2
+        className="ilo--hero-card--title"
+      >
+        This is an centered aligned article headline that is more than two lines long
+      </h2>
+      <p
+        className="ilo--hero-card--datecopy"
+      >
+        11 February 2021
+      </p>
+      <p
+        className="ilo--hero-card--intro"
+      >
+        Brief intro text - ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      </p>
+      <ul
+        className="ilo--hero-card--list"
+      >
+        <li
+          className="ilo--hero-card--list--item"
+        >
+          <a
+            className="ilo--hero-card--link icon icon--facebook"
+            href="https://www.facebook.com/"
+            title="Facebook"
+          >
+            Facebook
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/Hero Article Hero 1`] = `
+<div
+  style={
+    Object {
+      "margin": "3em",
+    }
+  }
+>
+  <div
+    className="storybook ilo--hero ilo--hero--light ilo--hero--article ilo--hero--image"
+  >
+    <figure
+      className="storybook ilo--image"
+    >
+      <div
+        className="storybook ilo--image--wrapper"
+      >
+        <picture
+          className="ilo--image--img"
+        >
+          <source
+            media="(min-width: 768px)"
+            srcSet="https://placekitten.com/1920/800"
+          />
+          <img
+            alt="Alt tag"
+            src="https://placekitten.com/1920/800"
+          />
+        </picture>
+      </div>
+    </figure>
+    <div
+      className="ilo--hero-card ilo--hero-card--left ilo--hero-card--light ilo--hero-card--article"
+    >
+      <p
+        className="ilo--hero-card--eyebrow"
+      >
+        Eyebrow Title
+      </p>
+      <h2
+        className="ilo--hero-card--title"
+      >
+        This is an left aligned article headline that is more than two lines long
+      </h2>
+      <p
+        className="ilo--hero-card--datecopy"
+      >
+        11 February 2021
+      </p>
+      <p
+        className="ilo--hero-card--intro"
+      >
+        Brief intro text - ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      </p>
+      <ul
+        className="ilo--hero-card--list"
+      >
+        <li
+          className="ilo--hero-card--list--item"
+        >
+          <a
+            className="ilo--hero-card--link icon icon--facebook"
+            href="https://www.facebook.com/"
+            title="Facebook"
+          >
+            Facebook
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/Hero Home Hero 1`] = `
+<div
+  style={
+    Object {
+      "margin": "3em",
+    }
+  }
+>
+  <div
+    className="storybook ilo--hero ilo--hero--dark ilo--hero--home ilo--hero--image"
+  >
+    <figure
+      className="storybook ilo--image"
+    >
+      <div
+        className="storybook ilo--image--wrapper"
+      >
+        <picture
+          className="ilo--image--img"
+        >
+          <source
+            media="(min-width: 768px)"
+            srcSet="https://placekitten.com/1920/800"
+          />
+          <img
+            alt="Alt tag"
+            src="https://placekitten.com/1920/800"
+          />
+        </picture>
+      </div>
+    </figure>
+    <div
+      className="ilo--hero-card ilo--hero-card--left ilo--hero-card--dark ilo--hero-card--home"
+    >
+      <p
+        className="ilo--hero-card--eyebrow"
+      >
+        Eyebrow Title
+      </p>
+      <h2
+        className="ilo--hero-card--title"
+      >
+        ILO welcomes G7 call to make a just transition to a green economy happen
+      </h2>
+      <ul
+        className="ilo--hero-card--list"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/Hero Portal Hero 1`] = `
+<div
+  style={
+    Object {
+      "margin": "3em",
+    }
+  }
+>
+  <div
+    className="storybook ilo--hero ilo--hero--dark ilo--hero--portal ilo--hero--image"
+  >
+    <figure
+      className="storybook ilo--image"
+    >
+      <div
+        className="storybook ilo--image--wrapper"
+      >
+        <picture
+          className="ilo--image--img"
+        >
+          <source
+            media="(min-width: 768px)"
+            srcSet="https://placekitten.com/1920/800"
+          />
+          <img
+            alt="Alt tag"
+            src="https://placekitten.com/1920/800"
+          />
+        </picture>
+      </div>
+    </figure>
+    <div
+      className="ilo--hero-card ilo--hero-card--left ilo--hero-card--dark ilo--hero-card--portal"
+    >
+      <p
+        className="ilo--hero-card--eyebrow"
+      >
+        Eyebrow Title
+      </p>
+      <h2
+        className="ilo--hero-card--title"
+      >
+        This is a page title
+      </h2>
+      <ul
+        className="ilo--hero-card--list"
+      >
+        <li
+          className="ilo--hero-card--list--item"
+        >
+          <a
+            className="ilo--hero-card--link icon icon--facebook"
+            href="https://www.facebook.com/"
+            title="Facebook"
+          >
+            Facebook
+          </a>
+        </li>
+        <li
+          className="ilo--hero-card--list--item"
+        >
+          <a
+            className="ilo--hero-card--link icon icon--linkedin"
+            href="https://www.linkedin.com/"
+            title="Linkedin"
+          >
+            Linkedin
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Storyshots Components/Hero Publication Hero 1`] = `
+<div
+  style={
+    Object {
+      "margin": "3em",
+    }
+  }
+>
+  <div
+    className="storybook ilo--hero ilo--hero--light ilo--hero--publication ilo--hero--image"
+  >
+    <figure
+      className="storybook ilo--image"
+    >
+      <div
+        className="storybook ilo--image--wrapper"
+      >
+        <picture
+          className="ilo--image--img"
+        >
+          <source
+            media="(min-width: 768px)"
+            srcSet="https://placekitten.com/1920/800"
+          />
+          <img
+            alt="Alt tag"
+            src="https://placekitten.com/1920/800"
+          />
+        </picture>
+        <span
+          className="ilo--credit"
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+        >
+          <span
+            className="ilo--credit--label"
+          >
+            Credit Here
+          </span>
+        </span>
+      </div>
+      <figcaption
+        className="ilo--image--caption"
+      >
+        This is a caption
+      </figcaption>
+    </figure>
+    <div
+      className="ilo--hero-card ilo--hero-card--left ilo--hero-card--light ilo--hero-card--publication"
+    >
+      <p
+        className="ilo--hero-card--eyebrow"
+      >
+        Eyebrow Title
+      </p>
+      <h2
+        className="ilo--hero-card--title"
+      >
+        This is a page title
+      </h2>
+      <p
+        className="ilo--hero-card--datecopy"
+      >
+        Date | Duration
+      </p>
+      <p
+        className="ilo--hero-card--intro"
+      >
+        Brief intro text - ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      </p>
+      <ul
+        className="ilo--hero-card--list"
+      >
+        <li
+          className="ilo--hero-card--list--item"
+        >
+          <a
+            className="ilo--hero-card--link icon icon--facebook"
+            href="https://www.facebook.com/"
+            title="Facebook"
+          >
+            Facebook
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Storyshots Components/Image Image 1`] = `
 <div
   style={
