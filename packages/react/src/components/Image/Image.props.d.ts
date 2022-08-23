@@ -34,5 +34,5 @@ export interface ImageProps {
   /**
    * Specify the image src for the image
    */
-  url?: Required<ImgageUrl>;
+  url?: Required<Array<ImageUrl>>;
 }

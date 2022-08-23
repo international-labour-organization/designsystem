@@ -46,6 +46,12 @@
     - ILO Icons
   sizes:
     - glyph
+- name: facebook
+  friendly_name: facebook
+  aliases:
+    - ILO Icons
+  sizes:
+    - glyph
 - name: fullscreen
   friendly_name: fullscreen
   aliases:
@@ -60,6 +66,12 @@
     - glyph
 - name: info
   friendly_name: info
+  aliases:
+    - ILO Icons
+  sizes:
+    - glyph
+- name: linkedin
+  friendly_name: linkedin
   aliases:
     - ILO Icons
   sizes:
@@ -126,6 +138,12 @@
     - glyph
 - name: triangle
   friendly_name: triangle
+  aliases:
+    - ILO Icons
+  sizes:
+    - glyph
+- name: twitter
+  friendly_name: twitter
   aliases:
     - ILO Icons
   sizes:
