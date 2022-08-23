@@ -48,6 +48,7 @@ const FileUpload: FC<FileUploadProps> = ({
         error={error as any}
         required={required as any}
         tooltip={tooltip}
+        type={"file"}
       >
         <input
           id={id}

@@ -28,6 +28,7 @@ for (let i = 0; i < 5; i++) {
 }
 
 const basic: FormProps = {
+  action: "https://my.action.url",
   formid: "exampleform",
   items: [
     {
@@ -77,6 +78,7 @@ const basic: FormProps = {
       type: "textarea",
     },
   ],
+  submitlabel: "Submit",
 };
 
 /**

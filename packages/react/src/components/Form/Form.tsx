@@ -1,6 +1,7 @@
 import { FC } from "react";
 import classNames from "classnames";
 import useGlobalSettings from "../../hooks/useGlobalSettings";
+import { Button } from "../Button";
 import { FormProps } from "./Form.props";
 import { FormGroup } from "../FormGroup";
 import { Checkbox } from "../Checkbox";
@@ -12,7 +13,13 @@ import { Input } from "../Input";
 import { NumberPicker } from "../NumberPicker";
 import { Textarea } from "../Textarea";
 
-const Form: FC<FormProps> = ({ className, formid, items }) => {
+const Form: FC<FormProps> = ({
+  action,
+  className,
+  formid,
+  items,
+  submitlabel,
+}) => {
   const { prefix } = useGlobalSettings();
   const baseClass = `${prefix}--form`;
   const formClasses = classNames(className, {
@@ -20,8 +27,7 @@ const Form: FC<FormProps> = ({ className, formid, items }) => {
   });
 
   return (
-    <form className={formClasses} id={formid}>
-      {console.log(items)}
+    <form className={formClasses} id={formid} action={action}>
       {items.map((item, i) => {
         if (item?.type === "input") {
           return <Input {...(item?.field as any)} key={i} />;
@@ -64,6 +70,12 @@ const Form: FC<FormProps> = ({ className, formid, items }) => {
           return <FormGroup {...(item?.field as any)} key={i} />;
         }
       })}
+      <Button
+        kind={"submit"}
+        label={submitlabel}
+        size={"large"}
+        type={"primary"}
+      />
     </form>
   );
 };

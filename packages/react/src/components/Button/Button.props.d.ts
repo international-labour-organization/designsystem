@@ -1,16 +1,16 @@
 import { ReactNode } from "react";
-import { buttonTypes } from "../../types";
+import { buttonFunctions, buttonTypes } from "../../types";
 
 export interface ButtonProps {
   /**
    * Specify the callback of your Button.
    */
-  callback: function;
+  callback?: function;
 
   /**
    * Specify the content of your Button.
    */
-  children: ReactNode;
+  children?: ReactNode;
 
   /**
    * Specify an optional className to be added to your Button.
@@ -31,6 +31,11 @@ export interface ButtonProps {
    * Specify the icon for the Button
    */
   iconPosition?: positionTypes;
+
+  /**
+   * Specify which function the button performs
+   */
+  kind?: buttonFunctions;
 
   /**
    * Specify the label for the Button

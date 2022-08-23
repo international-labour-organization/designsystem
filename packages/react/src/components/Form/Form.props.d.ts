@@ -58,6 +58,11 @@ interface FormItems {
 
 export interface FormProps {
   /**
+   * The form's action attribute
+   */
+  action: Required<string>;
+
+  /**
    * Specify an optional className to be added to your Form component.
    */
   className?: string;
@@ -71,4 +76,9 @@ export interface FormProps {
    * The inputs in this form group
    */
   items: Required<Array<FormItems>>;
+
+  /**
+   * The label for the form's submit button
+   */
+  submitlabel: Required<string>;
 }

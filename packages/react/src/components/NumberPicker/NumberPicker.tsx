@@ -43,6 +43,7 @@ const NumberPicker: FC<NumberPickerProps> = ({
         error={error as any}
         required={required as any}
         tooltip={tooltip}
+        type={"text"}
       >
         <input
           id={id}

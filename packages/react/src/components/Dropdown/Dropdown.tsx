@@ -50,6 +50,7 @@ const Dropdown: FC<DropdownProps> = ({
         error={error as any}
         required={required as any}
         tooltip={tooltip}
+        type={"dropdown"}
       >
         <div className={`${baseClass}--wrapper`}>
           <select

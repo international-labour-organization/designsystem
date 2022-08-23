@@ -74,6 +74,7 @@ const DatePicker: FC<DatePickerProps> = ({
               error={error as any}
               required={required as any}
               tooltip={tooltip}
+              type={"date"}
             >
               <input
                 id={`${id}`}
@@ -95,6 +96,7 @@ const DatePicker: FC<DatePickerProps> = ({
               error={enddata?.error as any}
               required={enddata?.required as any}
               tooltip={enddata?.tooltip as any}
+              type={"date"}
             >
               <input
                 id={enddata?.name}
