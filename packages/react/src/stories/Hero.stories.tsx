@@ -79,6 +79,26 @@ ArticleCenteredHero.args = heroArgs.articleCenteredHero;
 ArticleCenteredHero.storyName = "Article Centered Hero";
 
 /**
+ * Article No-Image Hero Instance
+ *
+ */
+export const ArticleNoImageHero = HeroTemplate.bind({});
+
+// enumerate the props for the hero only option
+ArticleNoImageHero.args = heroArgs.articleNoImageHero;
+ArticleNoImageHero.storyName = "Article No Image Hero";
+
+/**
+ * Graphic Hero Instance
+ *
+ */
+export const GraphicHero = HeroTemplate.bind({});
+
+// enumerate the props for the hero only option
+GraphicHero.args = heroArgs.graphicHero;
+GraphicHero.storyName = "Graphic Hero";
+
+/**
  * Portal Hero Instance
  *
  */
@@ -87,6 +107,16 @@ export const PortalHero = HeroTemplate.bind({});
 // enumerate the props for the hero only option
 PortalHero.args = heroArgs.portalHero;
 PortalHero.storyName = "Portal Hero";
+
+/**
+ * Project Hero Instance
+ *
+ */
+export const ProjectHero = HeroTemplate.bind({});
+
+// enumerate the props for the hero only option
+ProjectHero.args = heroArgs.projectHero;
+ProjectHero.storyName = "Project Hero";
 
 /**
  * Publication Hero Instance

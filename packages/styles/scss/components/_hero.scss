@@ -73,6 +73,37 @@
     }
   }
 
+  &--project {
+    background: $brand-ilo-light-blue;
+    padding: 88px 0 0 0;
+
+    @include breakpoint("large") {
+      margin-bottom: 80px;
+      padding: 112px 0 0 0;
+
+      .ilo--hero-card {
+        top: 80px;
+      }
+    }
+
+    &.ilo--hero--image {
+      background-color: transparent;
+      padding: 0;
+
+      @include breakpoint("large") {
+        .ilo--hero-card {
+          top: 0;
+        }
+      }
+    }
+
+    .ilo--hero-card {
+      &--center {
+        margin: auto;
+      }
+    }
+  }
+
   &--image {
     background-color: transparent;
 
@@ -133,11 +164,15 @@
     padding: 0 70px 70px 56px;
   }
 
+  &--center {
+    margin: auto;
+  }
+
   &--dark {
-    background: rgba($color-base-blue-dark, 0.55);
+    background: $color-base-blue-dark;
     color: $color-base-neutrals-white;
 
-    .icon {
+    .ilo--hero-card--link.icon {
       color: $color-base-neutrals-white;
 
       &:hover {
@@ -168,6 +203,18 @@
         }
       }
     }
+
+    .ilo--hero-card--eyebrow {
+      color: $color-base-neutrals-white;
+    }
+
+    .ilo--hero-card--datecopy {
+      color: $color-base-neutrals-white;
+    }
+  }
+
+  &--graphic {
+    max-width: 856px;
   }
 
   &--home {
@@ -195,6 +242,10 @@
         left: auto;
         right: 0;
       }
+    }
+
+    &.ilo--hero-card--dark {
+      background: rgba($color-base-blue-dark, 0.55);
     }
   }
 
@@ -224,6 +275,8 @@
   &--datecopy {
     @include font-styles("body-small");
     @include textmargin("margin-bottom", 40px, "body-small", "copy", 0, 0);
+
+    color: $color-base-neutrals-medium;
   }
 
   &--eyebrow {
@@ -236,6 +289,8 @@
       "headline-2",
       "display"
     );
+
+    color: $brand-ilo-purple;
   }
 
   &--intro {
@@ -300,7 +355,7 @@
       background-size: auto 16px;
       border-radius: 2px;
       display: inline-block;
-      color: $color-base-neutrals-dark;
+      color: $color-base-neutrals-medium;
       height: 24px;
       width: px-to-rem(24px);
 
@@ -310,7 +365,7 @@
       }
 
       &--facebook {
-        @include dataurlicon("facebook", $color-base-neutrals-dark);
+        @include dataurlicon("facebook", $color-base-neutrals-medium);
 
         &:hover {
           @include dataurlicon("facebook", $brand-ilo-blue);
@@ -318,7 +373,7 @@
       }
 
       &--twitter {
-        @include dataurlicon("twitter", $color-base-neutrals-dark);
+        @include dataurlicon("twitter", $color-base-neutrals-medium);
 
         &:hover {
           @include dataurlicon("twitter", $brand-ilo-blue);
@@ -326,7 +381,7 @@
       }
 
       &--linkedin {
-        @include dataurlicon("linkedin", $color-base-neutrals-dark);
+        @include dataurlicon("linkedin", $color-base-neutrals-medium);
 
         &:hover {
           @include dataurlicon("linkedin", $brand-ilo-blue);

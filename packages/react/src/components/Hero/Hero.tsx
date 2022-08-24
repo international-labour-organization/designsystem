@@ -33,7 +33,25 @@ const Hero: FC<HeroProps> = ({
     return (
       <>
         <div className={heroClasses}>
-          <Image {...image} {...heroCard} />
+          {image && <Image {...image} />}
+          <HeroCard {...heroCard} />
+        </div>
+      </>
+    );
+  };
+
+  /**
+   * renderGraphic
+   *
+   * Hero render for graphic variation
+   *
+   * @returns render
+   */
+  const renderGraphic = () => {
+    return (
+      <>
+        <div className={heroClasses}>
+          {image && <Image {...image} />}
           <HeroCard {...heroCard} />
         </div>
       </>
@@ -51,7 +69,25 @@ const Hero: FC<HeroProps> = ({
     return (
       <>
         <div className={heroClasses}>
-          <Image {...image} {...heroCard} />
+          {image && <Image {...image} />}
+          <HeroCard {...heroCard} />
+        </div>
+      </>
+    );
+  };
+
+  /**
+   * renderProject
+   *
+   * Hero render for publication variation
+   *
+   * @returns render
+   */
+  const renderProject = () => {
+    return (
+      <>
+        <div className={heroClasses}>
+          {image && <Image {...image} />}
           <HeroCard {...heroCard} />
         </div>
       </>
@@ -69,7 +105,7 @@ const Hero: FC<HeroProps> = ({
     return (
       <>
         <div className={heroClasses}>
-          <Image {...image} {...heroCard} />
+          {image && <Image {...image} />}
           <HeroCard {...heroCard} />
         </div>
       </>
@@ -96,9 +132,13 @@ const Hero: FC<HeroProps> = ({
 
   return (
     <>
+      {types === "graphic" && <>{renderGraphic()}</>}
+
       {types === "home" && <>{renderHome()}</>}
 
       {types === "portal" && <>{renderPortal()}</>}
+
+      {types === "project" && <>{renderProject()}</>}
 
       {types === "publication" && <>{renderPublication()}</>}
 

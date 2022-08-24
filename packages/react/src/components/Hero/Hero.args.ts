@@ -76,6 +76,30 @@ const articleHero: HeroProps = {
   types: "article",
 };
 
+const articleNoImageHero: HeroProps = {
+  className: "storybook",
+  heroCard: {
+    alignment: "center",
+    datecopy: "11 February 2021",
+    eyebrow: "Eyebrow Title",
+    intro:
+      "Brief intro text - ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    socials: [
+      {
+        label: "Facebook",
+        url: "https://www.facebook.com/",
+        icon: "facebook",
+      },
+    ],
+    title:
+      "This is an center aligned article headline that is more than two lines long",
+    theme: "light",
+    types: "article",
+  },
+  theme: "light",
+  types: "article",
+};
+
 const homeHero: HeroProps = {
   className: "storybook",
   image: {
@@ -147,9 +171,7 @@ const projectHero: HeroProps = {
   className: "storybook",
   image: {
     alt: "Alt tag",
-    caption: "This is a caption",
     className: "storybook",
-    credit: "Credit Here",
     url: [
       {
         breakpoint: 0,
@@ -162,7 +184,7 @@ const projectHero: HeroProps = {
     ],
   },
   heroCard: {
-    alignment: "left",
+    alignment: "center",
     eyebrow: "Eyebrow Title",
     datecopy: "Date | Duration",
     intro:
@@ -176,19 +198,17 @@ const projectHero: HeroProps = {
     ],
     title: "This is a page title",
     theme: "dark",
-    types: "home",
+    types: "project",
   },
   theme: "dark",
-  types: "home",
+  types: "project",
 };
 
 const graphicHero: HeroProps = {
   className: "storybook",
   image: {
     alt: "Alt tag",
-    caption: "This is a caption",
     className: "storybook",
-    credit: "Credit Here",
     url: [
       {
         breakpoint: 0,
@@ -201,7 +221,7 @@ const graphicHero: HeroProps = {
     ],
   },
   heroCard: {
-    alignment: "left",
+    alignment: "center",
     eyebrow: "Eyebrow Title",
     datecopy: "Date | Duration",
     intro:
@@ -213,12 +233,12 @@ const graphicHero: HeroProps = {
         icon: "facebook",
       },
     ],
-    title: "This is a page title",
-    theme: "dark",
-    types: "home",
+    title: "This is a centered graphic article headline that is two lines long",
+    theme: "light",
+    types: "graphic",
   },
-  theme: "dark",
-  types: "home",
+  theme: "light",
+  types: "graphic",
 };
 
 const publicationHero: HeroProps = {
@@ -265,6 +285,7 @@ const publicationHero: HeroProps = {
 const HeroArgs = {
   articleHero,
   articleCenteredHero,
+  articleNoImageHero,
   homeHero,
   graphicHero,
   projectHero,
