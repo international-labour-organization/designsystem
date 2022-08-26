@@ -48,9 +48,9 @@ const Fieldset: FC<FieldsetProps> = ({
           {child && child.props && (
             <div
               key={`${baseClass}--input--${i}`}
-              className={`${baseClass}--input--${child.props.type} ${
-                child.props.error ? "error" : ""
-              }`}
+              className={`${baseClass}--input${
+                child.props.type ? "--" + child.props.type : ""
+              } ${child.props.error ? "error" : ""}`}
             >
               {child.props.label && (
                 <label
