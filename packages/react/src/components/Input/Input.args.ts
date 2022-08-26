@@ -12,6 +12,43 @@ const basic: InputProps = {
   type: "text",
 };
 
+const hashelper: InputProps = {
+  callback: "",
+  disabled: false,
+  error: false,
+  helper: "This one has helper text",
+  label: "Text Field Label",
+  name: "text",
+  placeholder: "Text Field",
+  required: false,
+  type: "text",
+};
+
+const haserror: InputProps = {
+  callback: "",
+  disabled: false,
+  error: "This one has an error",
+  helper: false,
+  label: "Text Field Label",
+  name: "text",
+  placeholder: "Text Field",
+  required: false,
+  type: "text",
+};
+
+const hastooltip: InputProps = {
+  callback: "",
+  disabled: false,
+  error: false,
+  helper: false,
+  label: "Text Field Label",
+  name: "text",
+  placeholder: "Text Field",
+  required: false,
+  tooltip: "Here is the tooltip",
+  type: "text",
+};
+
 const email: InputProps = {
   callback: "",
   disabled: false,
@@ -76,6 +113,9 @@ const url: InputProps = {
  */
 const InputArgs = {
   basic,
+  hashelper,
+  haserror,
+  hastooltip,
   email,
   hidden,
   password,

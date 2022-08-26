@@ -60,7 +60,8 @@
       @include font-styles("label-medium");
       margin: 0;
 
-      & + .ilo--fieldset--helper {
+      & + .ilo--fieldset--helper,
+      & + .ilo--fieldset--error {
         clear: both;
         display: block;
       }

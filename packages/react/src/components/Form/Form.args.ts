@@ -1,31 +1,13 @@
 import { FormProps } from "./Form.props";
 import CheckboxArgs from "../Checkbox/Checkbox.args";
+import ChoiceGroupArgs from "../ChoiceGroup/ChoiceGroup.args";
 import DatePickerArgs from "../DatePicker/DatePicker.args";
 import DropdownArgs from "../Dropdown/Dropdown.args";
 import FileUploadArgs from "../FileUpload/FileUpload.args";
 import FormGroupArgs from "../FormGroup/FormGroup.args";
 import InputArgs from "../Input/Input.args";
 import NumberPickerArgs from "../NumberPicker/NumberPicker.args";
-import RadioArgs from "../Radio/Radio.args";
 import TextareaArgs from "../Textarea/Textarea.args";
-
-const formcheckboxfields = [];
-const formradiofields = [];
-
-for (let i = 0; i < 5; i++) {
-  const checkboxargs = { ...CheckboxArgs.basic };
-  const radioargs = { ...RadioArgs.basic };
-  formcheckboxfields.push(checkboxargs);
-  formcheckboxfields[i].label = `Checkbox ${i}`;
-  formcheckboxfields[i].name = `fcheckbox${i}`;
-  formcheckboxfields[i].id = `fgcheckbox${i}`;
-  formcheckboxfields[i].grouped = true;
-  formradiofields.push(radioargs);
-  formradiofields[i].label = `Radio ${i}`;
-  formradiofields[i].name = `fradio`;
-  formradiofields[i].value = `fradio${i}`;
-  formradiofields[i].id = `fradio${i}`;
-}
 
 const basic: FormProps = {
   action: "https://my.action.url",
@@ -49,15 +31,13 @@ const basic: FormProps = {
     },
     {
       choicegroupid: "multiplecheckboxes",
-      field: formcheckboxfields,
+      field: ChoiceGroupArgs.checkboxes.items,
       legend: "Multiple Checkboxes",
       type: "checkbox",
     },
     {
       choicegroupid: "radios",
-      field: formradiofields,
-      grouphelper: "Helper text",
-      grouptooltip: "Tooltip text",
+      field: ChoiceGroupArgs.radios.items,
       legend: "Radio Group",
       type: "radio",
     },
@@ -81,11 +61,152 @@ const basic: FormProps = {
   submitlabel: "Submit",
 };
 
+const hashelper: FormProps = {
+  action: "https://my.action.url",
+  formid: "exampleform",
+  items: [
+    {
+      field: InputArgs.hashelper,
+      type: "input",
+    },
+    {
+      field: DropdownArgs.hashelper,
+      type: "dropdown",
+    },
+    {
+      choicegroupid: "multiplecheckboxes",
+      field: ChoiceGroupArgs.checkboxeshelper.items,
+      grouphelper: ChoiceGroupArgs.checkboxeshelper.grouphelper,
+      legend: "Multiple Checkboxes",
+      type: "checkbox",
+    },
+    {
+      choicegroupid: "radios",
+      field: ChoiceGroupArgs.radioshelper.items,
+      grouphelper: ChoiceGroupArgs.radioshelper.grouphelper,
+      legend: "Radio Group",
+      type: "radio",
+    },
+    {
+      field: FileUploadArgs.hashelper,
+      type: "file",
+    },
+    {
+      field: DatePickerArgs.hashelper,
+      type: "date",
+    },
+    {
+      field: NumberPickerArgs.hashelper,
+      type: "number",
+    },
+    {
+      field: TextareaArgs.hashelper,
+      type: "textarea",
+    },
+  ],
+  submitlabel: "Submit",
+};
+
+const haserror: FormProps = {
+  action: "https://my.action.url",
+  formid: "exampleform",
+  items: [
+    {
+      field: InputArgs.haserror,
+      type: "input",
+    },
+    {
+      field: DropdownArgs.haserror,
+      type: "dropdown",
+    },
+    {
+      choicegroupid: "multiplecheckboxes",
+      field: ChoiceGroupArgs.checkboxeserror.items,
+      grouperror: ChoiceGroupArgs.checkboxeserror.grouperror,
+      legend: "Multiple Checkboxes",
+      type: "checkbox",
+    },
+    {
+      choicegroupid: "radios",
+      field: ChoiceGroupArgs.radioserror.items,
+      grouperror: ChoiceGroupArgs.radioserror.grouperror,
+      legend: "Radio Group",
+      type: "radio",
+    },
+    {
+      field: FileUploadArgs.haserror,
+      type: "file",
+    },
+    {
+      field: DatePickerArgs.haserror,
+      type: "date",
+    },
+    {
+      field: NumberPickerArgs.haserror,
+      type: "number",
+    },
+    {
+      field: TextareaArgs.haserror,
+      type: "textarea",
+    },
+  ],
+  submitlabel: "Submit",
+};
+
+const hastooltip: FormProps = {
+  action: "https://my.action.url",
+  formid: "exampleform",
+  items: [
+    {
+      field: InputArgs.hastooltip,
+      type: "input",
+    },
+    {
+      field: DropdownArgs.hastooltip,
+      type: "dropdown",
+    },
+    {
+      choicegroupid: "multiplecheckboxes",
+      field: ChoiceGroupArgs.checkboxestooltip.items,
+      grouptooltip: ChoiceGroupArgs.checkboxestooltip.grouptooltip,
+      legend: "Multiple Checkboxes",
+      type: "checkbox",
+    },
+    {
+      choicegroupid: "radios",
+      field: ChoiceGroupArgs.radiostooltip.items,
+      grouptooltip: ChoiceGroupArgs.radioshelper.grouptooltip,
+      legend: "Radio Group",
+      type: "radio",
+    },
+    {
+      field: FileUploadArgs.hastooltip,
+      type: "file",
+    },
+    {
+      field: DatePickerArgs.hastooltip,
+      type: "date",
+    },
+    {
+      field: NumberPickerArgs.hastooltip,
+      type: "number",
+    },
+    {
+      field: TextareaArgs.hastooltip,
+      type: "textarea",
+    },
+  ],
+  submitlabel: "Submit",
+};
+
 /**
  * Sample prop definitions FormGroup's enumerable properties (imported in stories and test)
  */
 const FormArgs = {
   basic,
+  hashelper,
+  haserror,
+  hastooltip,
 };
 
 export default FormArgs;

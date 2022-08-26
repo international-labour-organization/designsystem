@@ -12,9 +12,11 @@ for (let i = 0; i < 5; i++) {
   checkboxfields[i].label = `Checkbox ${i}`;
   checkboxfields[i].name = `checkbox${i}`;
   checkboxfields[i].grouped = true;
+  checkboxfields[i].type = "checkbox";
   radiofields.push(radioargs);
   radiofields[i].label = `Radio ${i}`;
   radiofields[i].name = `radio${i}`;
+  radiofields[i].type = "radio";
 }
 
 const checkboxes: ChoiceGroupProps = {
@@ -25,10 +27,50 @@ const checkboxes: ChoiceGroupProps = {
 
 const radios: ChoiceGroupProps = {
   choicegroupid: "radiogroup",
-  grouphelper: "Helper text",
-  grouptooltip: "Tooltip text",
   items: radiofields,
   legend: "Radio Legend",
+};
+
+const checkboxeshelper: ChoiceGroupProps = {
+  choicegroupid: "checkboxgroup",
+  grouphelper: "This is the helper text",
+  items: checkboxfields,
+  legend: "Checkbox Legend",
+};
+
+const radioshelper: ChoiceGroupProps = {
+  choicegroupid: "radiogroup",
+  grouphelper: "This is the helper text",
+  items: radiofields,
+  legend: "Radio Legend",
+};
+
+const checkboxeserror: ChoiceGroupProps = {
+  choicegroupid: "checkboxgroup",
+  grouperror: "this one has an error",
+  items: checkboxfields,
+  legend: "Checkbox Legend",
+};
+
+const radioserror: ChoiceGroupProps = {
+  choicegroupid: "radiogroup",
+  grouperror: "this one has an error",
+  items: radiofields,
+  legend: "Radio Legend",
+};
+
+const checkboxestooltip: ChoiceGroupProps = {
+  choicegroupid: "checkboxgroup",
+  items: checkboxfields,
+  legend: "Checkbox Legend",
+  grouptooltip: "This is the tooltip",
+};
+
+const radiostooltip: ChoiceGroupProps = {
+  choicegroupid: "radiogroup",
+  items: radiofields,
+  legend: "Radio Legend",
+  grouptooltip: "This is the tooltip",
 };
 
 /**
@@ -37,6 +79,12 @@ const radios: ChoiceGroupProps = {
 const ChoiceGroupArgs = {
   checkboxes,
   radios,
+  checkboxeshelper,
+  radioshelper,
+  checkboxeserror,
+  radioserror,
+  checkboxestooltip,
+  radiostooltip,
 };
 
 export default ChoiceGroupArgs;

@@ -11,6 +11,40 @@ const basic: DatePickerProps = {
   required: false,
 };
 
+const hashelper: DatePickerProps = {
+  callback: "",
+  disabled: false,
+  error: false,
+  helper: "here is helper text",
+  label: "Date Picker Field Label",
+  name: "datepicker",
+  placeholder: "MM/DD/YYYY",
+  required: false,
+};
+
+const haserror: DatePickerProps = {
+  callback: "",
+  disabled: false,
+  error: "this one has an error",
+  helper: false,
+  label: "Date Picker Field Label",
+  name: "datepicker",
+  placeholder: "MM/DD/YYYY",
+  required: false,
+};
+
+const hastooltip: DatePickerProps = {
+  callback: "",
+  disabled: false,
+  error: false,
+  helper: false,
+  label: "Date Picker Field Label",
+  name: "datepicker",
+  placeholder: "MM/DD/YYYY",
+  required: false,
+  tooltip: "This is the tooltip",
+};
+
 const hasrange: DatePickerProps = {
   callback: "",
   disabled: false,
@@ -40,6 +74,9 @@ const hasrange: DatePickerProps = {
 const DatePickerArgs = {
   basic,
   hasrange,
+  hashelper,
+  haserror,
+  hastooltip,
 };
 
 export default DatePickerArgs;

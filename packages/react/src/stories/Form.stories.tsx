@@ -47,6 +47,21 @@ const FormTemplate: Story<FormProps> = (args) => <Form {...args} />;
 
 export const FormDefault = FormTemplate.bind({});
 
+export const FormHasHelper = FormTemplate.bind({});
+
+export const FormHasError = FormTemplate.bind({});
+
+export const FormHasTooltip = FormTemplate.bind({});
+
 // enumerate the props for the default search field
 FormDefault.args = FormArgs.basic;
 FormDefault.storyName = "Default Form";
+
+FormHasHelper.args = FormArgs.hashelper;
+FormHasHelper.storyName = "Default Form with Helper Text";
+
+FormHasError.args = FormArgs.haserror;
+FormHasError.storyName = "Default Form with errors";
+
+FormHasTooltip.args = FormArgs.hastooltip;
+FormHasTooltip.storyName = "Default Form with Tooltips";
