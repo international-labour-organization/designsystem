@@ -52,7 +52,7 @@ const DatePicker: FC<DatePickerProps> = ({
             tooltip={tooltip}
           >
             <input
-              id={`${id}`}
+              id={`${id ? id : name}`}
               name={`${name}`}
               onChange={handleChange}
               disabled={disabled}
@@ -77,7 +77,7 @@ const DatePicker: FC<DatePickerProps> = ({
               type={"date"}
             >
               <input
-                id={`${id}`}
+                id={`${id ? id : name}`}
                 name={`${name}`}
                 onChange={handleChange}
                 disabled={disabled}
@@ -99,7 +99,7 @@ const DatePicker: FC<DatePickerProps> = ({
               type={"date"}
             >
               <input
-                id={enddata?.name}
+                id={enddata?.id ? enddata?.id : enddata?.name}
                 name={enddata?.name}
                 onChange={(e) => handleChange(e, "end")}
                 disabled={enddata?.disabled}

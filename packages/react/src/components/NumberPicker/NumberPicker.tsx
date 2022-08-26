@@ -46,7 +46,7 @@ const NumberPicker: FC<NumberPickerProps> = ({
         type={"text"}
       >
         <input
-          id={id}
+          id={id ? id : name}
           name={name}
           onChange={handleChange}
           disabled={disabled}

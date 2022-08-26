@@ -51,7 +51,7 @@ const FileUpload: FC<FileUploadProps> = ({
         type={"file"}
       >
         <input
-          id={id}
+          id={id ? id : name}
           name={name}
           onChange={handleChange}
           disabled={disabled}

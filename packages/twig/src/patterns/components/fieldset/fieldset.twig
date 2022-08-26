@@ -8,15 +8,36 @@
   fslabel: a string, the label of the form field
   fshelper: a string, helper text, if any
   fserror: a string, error message, if any
+  fstype: a string, the type of field
+  fsclass: a string, any additional classnames
 #}
-<fieldset id="{{fsinputid}}--fieldset" class="{{prefix}}--fieldset" {% if fshelper %}data-helper="{{fshelper}}"{% endif %}  {% if fserror %}data-error="{{fserror}}"{% endif %}>
-  <label class="{{prefix}}--fieldset--label" for="{{fsinputid}}">{{fslabel}}</label>
-  {% block formfield %}
-  {% endblock %}
-  {% if fshelper and not fserror %}
-    <span class="{{prefix}}--fieldset--helper">{{fshelper}}</span>
+<fieldset id="{{fsinputid}}--fieldset" class="{{prefix}}--fieldset{% if fsclass %} {{fsclass}}{% endif %}" {% if fshelper %}data-helper="{{fshelper}}"{% endif %}  {% if fserror %}data-error="{{fserror}}"{% endif %}>
+  {% if legend %}
+  <legend class="ilo--fieldset--legend">{{legend}}
+    {% if grouptooltip %}
+      {% include '@components/tooltip/tooltip.twig' with {label: grouptooltip, icon: true, className: "ilo--fieldset--legend--tooltip"} %}
+    {% endif %}
+  </legend>
   {% endif %}
-  {% if fserror %}
-    <span class="{{prefix}}--fieldset--error">{{fserror}}</span>
+  {% if grouphelper and not grouperror %}
+    <span class="ilo--fieldset--helper">{{grouphelper}}</span>
   {% endif %}
+  {% if grouperror %}
+    <span class="ilo--fieldset--error">{{grouperror}}</span>
+  {% endif %}
+  <div class="ilo--fieldset--input--{{fstype}}">
+    <label class="{{prefix}}--fieldset--label" for="{{fsinputid}}">
+      {{fslabel}}
+      {% if formfield.tooltip %}
+        {% include '@components/tooltip/tooltip.twig' with formfield.tooltip %}
+      {% endif %}
+    </label>
+    {% block formfield %}
+    {% endblock %}
+    {% if fshelper and not fserror %}
+      <span class="{{prefix}}--fieldset--helper">{{fshelper}}</span>
+    {% endif %}
+    {% if fserror %}
+      <span class="{{prefix}}--fieldset--error">{{fserror}}</span>
+    {% endif %}
 </fieldset>

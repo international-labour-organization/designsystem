@@ -46,7 +46,7 @@ const Input: FC<InputProps> = ({
         tooltip={tooltip}
       >
         <input
-          id={id}
+          id={id ? id : name}
           name={name}
           onChange={handleChange}
           disabled={disabled}
