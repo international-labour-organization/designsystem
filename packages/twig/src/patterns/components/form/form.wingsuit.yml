@@ -1,0 +1,245 @@
+form:
+  use: '@components/form/form.twig'
+  label: Form
+  description: A component for displaying a form.
+  fields:
+    action:
+      type: string
+      label: action
+      description: The form's action attribute
+      preview: "http://www.ilo.org"
+      required: true
+    formid:
+      type: string
+      label: formid
+      description: The form's id attribute
+      preview: "exampleform"
+      required: true
+    items:
+      type: object
+      label: items
+      description: The form's fields
+      preview:
+        - field:
+            label: "Text Field Label"
+            name: "text"
+            placeholder: "Text Field"
+            type: "text"
+          type: "input"
+        - field:
+            id: "dropdown"
+            label: "Dropdown Label"
+            name: "dropdown"
+            options:
+              - label: "Option One"
+                value: "option one"
+              - label: "Option Two"
+                value: "option two"
+              - label: "Option Three"
+                value: "option three"
+              - label: "Option Four"
+                value: "four"
+              - label: "Option Five"
+                value: "the fifth"
+          type: "dropdown"
+        - field:
+            label: "Checkbox Label"
+            name: "checkbox"
+            type: "checkbox"
+          type: "checkbox"
+        - choicegroupid: "multiplecheckboxes"
+          field:
+            - label: "Checkbox Label 1"
+              grouped: true
+              name: "checkbox1"
+              type: "checkbox"
+            - label: "Checkbox Label 2"
+              grouped: true
+              name: "checkbox2"
+              type: "checkbox"
+            - label: "Checkbox Label 3"
+              grouped: true
+              name: "checkbox3"
+              type: "checkbox"
+            - label: "Checkbox Label 4"
+              grouped: true
+              name: "checkbox4"
+              type: "checkbox"
+            - label: "Checkbox Label 5"
+              grouped: true
+              name: "checkbox5"
+              type: "checkbox"
+          legend: "Multiple Checkboxes"
+          type: "checkbox"
+        - choicegroupid: "radios"
+          field:
+            - label: "Radio Field Label 1"
+              name: "radio"
+              type: "radio"
+              value: "radio1"
+            - label: "Radio Field Label 2"
+              name: "radio"
+              type: "radio"
+              value: "radio2"
+            - label: "Radio Field Label 3"
+              name: "radio"
+              type: "radio"
+              value: "radio3"
+            - label: "Radio Field Label 4"
+              name: "radio"
+              type: "radio"
+              value: "radio4"
+            - label: "Radio Field Label 5"
+              name: "radio"
+              type: "radio"
+              value: "radio5"
+          grouphelper: "Helper text"
+          grouptooltip: "Tooltip text"
+          legend: "Radio Group"
+          type: "radio"
+        - field:
+              helper: "The file upload's helper text"
+              label: "File Upload Field Label"
+              name: "fileupload"
+              placeholder: "File Upload Field"
+              tooltip: "Tooltip"
+          type: "file"
+        - field:
+            - enddata:
+                helper: "this is an end date range"
+                label: "Date Picker End Field Label"
+                name: "datepickerend"
+                placeholder: "MM/DD/YYYY"
+              label: "Date Picker Field Label"
+              name: "datepicker"
+              placeholder: "MM/DD/YYYY"
+              range: true
+          type: "date"
+        - field:
+              label: "Number Picker Field Label"
+              name: "text"
+              placeholder: "Number Picker Field"
+          type: "number"
+        - field:
+            label: "Textarea"
+            name: "textarea"
+            placeholder: "Textarea"
+          type: "textarea"
+        - field:
+            formgroupid: "formgroup"
+            items:
+              - field:
+                  label: "Text Field Label"
+                  name: "text"
+                  placeholder: "Text Field"
+                  type: "text"
+                type: "input"
+              - field:
+                  id: "dropdown"
+                  label: "Dropdown Label"
+                  name: "dropdown"
+                  options:
+                    - label: "Option One"
+                      value: "option one"
+                    - label: "Option Two"
+                      value: "option two"
+                    - label: "Option Three"
+                      value: "option three"
+                    - label: "Option Four"
+                      value: "four"
+                    - label: "Option Five"
+                      value: "the fifth"
+                type: "dropdown"
+              - field:
+                  label: "Checkbox Label"
+                  name: "checkbox"
+                  type: "checkbox"
+                type: "checkbox"
+              - choicegroupid: "multiplecheckboxes"
+                field:
+                  - label: "Checkbox Label 1"
+                    grouped: true
+                    name: "checkbox1"
+                    type: "checkbox"
+                  - label: "Checkbox Label 2"
+                    grouped: true
+                    name: "checkbox2"
+                    type: "checkbox"
+                  - label: "Checkbox Label 3"
+                    grouped: true
+                    name: "checkbox3"
+                    type: "checkbox"
+                  - label: "Checkbox Label 4"
+                    grouped: true
+                    name: "checkbox4"
+                    type: "checkbox"
+                  - label: "Checkbox Label 5"
+                    grouped: true
+                    name: "checkbox5"
+                    type: "checkbox"
+                legend: "Multiple Checkboxes"
+                type: "checkbox"
+              - choicegroupid: "radios"
+                field:
+                  - label: "Radio Field Label 1"
+                    name: "radio"
+                    type: "radio"
+                    value: "radio1"
+                  - label: "Radio Field Label 2"
+                    name: "radio"
+                    type: "radio"
+                    value: "radio2"
+                  - label: "Radio Field Label 3"
+                    name: "radio"
+                    type: "radio"
+                    value: "radio3"
+                  - label: "Radio Field Label 4"
+                    name: "radio"
+                    type: "radio"
+                    value: "radio4"
+                  - label: "Radio Field Label 5"
+                    name: "radio"
+                    type: "radio"
+                    value: "radio5"
+                grouphelper: "Helper text"
+                grouptooltip: "Tooltip text"
+                legend: "Radio Group"
+                type: "radio"
+              - field:
+                    helper: "The file upload's helper text"
+                    label: "File Upload Field Label"
+                    name: "fileupload"
+                    placeholder: "File Upload Field"
+                    tooltip: "Tooltip"
+                type: "file"
+              - field:
+                  - enddata:
+                      helper: "this is an end date range"
+                      label: "Date Picker End Field Label"
+                      name: "datepickerend"
+                      placeholder: "MM/DD/YYYY"
+                    label: "Date Picker Field Label"
+                    name: "datepicker"
+                    placeholder: "MM/DD/YYYY"
+                    range: true
+                type: "date"
+              - field:
+                    label: "Number Picker Field Label"
+                    name: "text"
+                    placeholder: "Number Picker Field"
+                type: "number"
+              - field:
+                  label: "Textarea"
+                  name: "textarea"
+                  placeholder: "Textarea"
+                type: "textarea"
+            legend: "Example Form Group"
+            type: "default"
+          type: "formgroup"
+    submitlabel:
+      type: string
+      label: submitlabel
+      description: The form's submit button label
+      preview: "Submit"
+      required: true
+  visibility: storybook

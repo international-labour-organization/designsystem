@@ -1,0 +1,13 @@
+{#
+  TEXTAREA COMPONENT
+#}
+{% extends '@components/fieldset/fieldset.twig' %}
+{% set fsinputid = id ? id : name %}
+{% set fslabel = label %}
+{% set fshelper = helper %}
+{% set fserror = error %}
+{% set fstype = "textarea" %}
+
+{% block formfield %}
+  <textarea name="textarea" {% if placeholder %}placeholder="{{placeholder}}"{% endif %} {% if required %}required{% endif %} {% if disabled %}disabled{% endif %} class="{{prefix}}--textarea" id="{% if id %}{{id}}{% else %}{{name}}{% endif %}" spellcheck="false"></textarea>
+{% endblock %}
