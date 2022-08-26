@@ -12,6 +12,18 @@ const basic: InputProps = {
   type: "text",
 };
 
+const isdisabled: InputProps = {
+  callback: "",
+  disabled: true,
+  error: false,
+  helper: "This one has helper text",
+  label: "Disabled Text Field Label",
+  name: "text",
+  placeholder: "Disabled Text Field",
+  required: false,
+  type: "text",
+};
+
 const hashelper: InputProps = {
   callback: "",
   disabled: false,
@@ -19,7 +31,7 @@ const hashelper: InputProps = {
   helper: "This one has helper text",
   label: "Text Field Label",
   name: "text",
-  placeholder: "Text Field",
+  placeholder: "Helper Text Field",
   required: false,
   type: "text",
 };
@@ -31,7 +43,7 @@ const haserror: InputProps = {
   helper: false,
   label: "Text Field Label",
   name: "text",
-  placeholder: "Text Field",
+  placeholder: "Error Text Field",
   required: false,
   type: "text",
 };
@@ -43,7 +55,7 @@ const hastooltip: InputProps = {
   helper: false,
   label: "Text Field Label",
   name: "text",
-  placeholder: "Text Field",
+  placeholder: "Tooltip Text Field",
   required: false,
   tooltip: "Here is the tooltip",
   type: "text",
@@ -113,6 +125,7 @@ const url: InputProps = {
  */
 const InputArgs = {
   basic,
+  isdisabled,
   hashelper,
   haserror,
   hastooltip,

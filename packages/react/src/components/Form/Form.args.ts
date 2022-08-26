@@ -199,11 +199,64 @@ const hastooltip: FormProps = {
   submitlabel: "Submit",
 };
 
+const hasdisabled: FormProps = {
+  action: "https://my.action.url",
+  formid: "exampleform",
+  items: [
+    {
+      field: InputArgs.isdisabled,
+      type: "input",
+    },
+    {
+      field: DropdownArgs.basic,
+      type: "dropdown",
+    },
+    {
+      field: FormGroupArgs.basic,
+      type: "formgroup",
+    },
+    {
+      field: { ...CheckboxArgs.basic },
+      type: "checkbox",
+    },
+    {
+      choicegroupid: "multiplecheckboxes",
+      field: ChoiceGroupArgs.checkboxes.items,
+      legend: "Multiple Checkboxes",
+      type: "checkbox",
+    },
+    {
+      choicegroupid: "radios",
+      field: ChoiceGroupArgs.radios.items,
+      legend: "Radio Group",
+      type: "radio",
+    },
+    {
+      field: FileUploadArgs.basic,
+      type: "file",
+    },
+    {
+      field: DatePickerArgs.hasrange,
+      type: "date",
+    },
+    {
+      field: NumberPickerArgs.basic,
+      type: "number",
+    },
+    {
+      field: TextareaArgs.basic,
+      type: "textarea",
+    },
+  ],
+  submitlabel: "Submit",
+};
+
 /**
  * Sample prop definitions FormGroup's enumerable properties (imported in stories and test)
  */
 const FormArgs = {
   basic,
+  hasdisabled,
   hashelper,
   haserror,
   hastooltip,

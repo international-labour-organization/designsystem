@@ -110,6 +110,7 @@ exports[`Storyshots Components/Button Disabled Button 1`] = `
     className="ilo--button ilo--button--large ilo--button--primary"
     disabled={true}
     onClick={[Function]}
+    type="button"
   >
     <span
       className="button__label"
@@ -158,6 +159,7 @@ exports[`Storyshots Components/Button Large Primary Button with icon on left 1`]
     className="ilo--button ilo--button--large ilo--button--primary icon icon__position--left"
     disabled={false}
     onClick={[Function]}
+    type="button"
   >
     <span
       className="button__label"
@@ -196,6 +198,7 @@ exports[`Storyshots Components/Button Large Primary Button with icon on right 1`
     className="ilo--button ilo--button--large ilo--button--primary icon icon__position--right"
     disabled={false}
     onClick={[Function]}
+    type="button"
   >
     <span
       className="button__label"
@@ -234,6 +237,7 @@ exports[`Storyshots Components/Button Large Secondary Button with icon on left 1
     className="ilo--button ilo--button--large ilo--button--secondary icon icon__position--left"
     disabled={false}
     onClick={[Function]}
+    type="button"
   >
     <span
       className="button__label"
@@ -272,6 +276,7 @@ exports[`Storyshots Components/Button Large Secondary Button with icon on right 
     className="ilo--button ilo--button--large ilo--button--secondary icon icon__position--right"
     disabled={false}
     onClick={[Function]}
+    type="button"
   >
     <span
       className="button__label"
@@ -310,6 +315,7 @@ exports[`Storyshots Components/Button Large Tertiary Button with icon on left 1`
     className="ilo--button ilo--button--large ilo--button--tertiary icon icon__position--left"
     disabled={false}
     onClick={[Function]}
+    type="button"
   >
     <span
       className="button__label"
@@ -348,6 +354,7 @@ exports[`Storyshots Components/Button Large Tertiary Button with icon on right 1
     className="ilo--button ilo--button--large ilo--button--tertiary icon icon__position--right"
     disabled={false}
     onClick={[Function]}
+    type="button"
   >
     <span
       className="button__label"
@@ -412,6 +419,7 @@ exports[`Storyshots Components/Button Medium Primary Button with icon on left 1`
     className="ilo--button ilo--button--medium ilo--button--primary icon icon__position--left"
     disabled={false}
     onClick={[Function]}
+    type="button"
   >
     <span
       className="button__label"
@@ -450,6 +458,7 @@ exports[`Storyshots Components/Button Medium Primary Button with icon on right 1
     className="ilo--button ilo--button--medium ilo--button--primary icon icon__position--right"
     disabled={false}
     onClick={[Function]}
+    type="button"
   >
     <span
       className="button__label"
@@ -488,6 +497,7 @@ exports[`Storyshots Components/Button Medium Secondary Button with icon on left 
     className="ilo--button ilo--button--medium ilo--button--secondary icon icon__position--left"
     disabled={false}
     onClick={[Function]}
+    type="button"
   >
     <span
       className="button__label"
@@ -526,6 +536,7 @@ exports[`Storyshots Components/Button Medium Secondary Button with icon on right
     className="ilo--button ilo--button--medium ilo--button--secondary icon icon__position--right"
     disabled={false}
     onClick={[Function]}
+    type="button"
   >
     <span
       className="button__label"
@@ -564,6 +575,7 @@ exports[`Storyshots Components/Button Medium Tertiary Button with icon on left 1
     className="ilo--button ilo--button--medium ilo--button--tertiary icon icon__position--left"
     disabled={false}
     onClick={[Function]}
+    type="button"
   >
     <span
       className="button__label"
@@ -602,6 +614,7 @@ exports[`Storyshots Components/Button Medium Tertiary Button with icon on right 
     className="ilo--button ilo--button--medium ilo--button--tertiary icon icon__position--right"
     disabled={false}
     onClick={[Function]}
+    type="button"
   >
     <span
       className="button__label"
@@ -640,6 +653,7 @@ exports[`Storyshots Components/Button Primary Button 1`] = `
     className="ilo--button ilo--button--large ilo--button--primary"
     disabled={false}
     onClick={[Function]}
+    type="button"
   >
     <span
       className="button__label"
@@ -662,6 +676,7 @@ exports[`Storyshots Components/Button Secondary Button 1`] = `
     className="ilo--button ilo--button--large ilo--button--secondary"
     disabled={false}
     onClick={[Function]}
+    type="button"
   >
     <span
       className="button__label"
@@ -710,6 +725,7 @@ exports[`Storyshots Components/Button Small Primary Button with icon on left 1`]
     className="ilo--button ilo--button--small ilo--button--primary icon icon__position--left"
     disabled={false}
     onClick={[Function]}
+    type="button"
   >
     <span
       className="button__label"
@@ -748,6 +764,7 @@ exports[`Storyshots Components/Button Small Primary Button with icon on right; 1
     className="ilo--button ilo--button--small ilo--button--primary icon icon__position--right"
     disabled={false}
     onClick={[Function]}
+    type="button"
   >
     <span
       className="button__label"
@@ -786,6 +803,7 @@ exports[`Storyshots Components/Button Small Secondary Button with icon on left 1
     className="ilo--button ilo--button--small ilo--button--secondary icon icon__position--left"
     disabled={false}
     onClick={[Function]}
+    type="button"
   >
     <span
       className="button__label"
@@ -824,6 +842,7 @@ exports[`Storyshots Components/Button Small Secondary Button with icon on right;
     className="ilo--button ilo--button--small ilo--button--secondary icon icon__position--right"
     disabled={false}
     onClick={[Function]}
+    type="button"
   >
     <span
       className="button__label"
@@ -862,6 +881,7 @@ exports[`Storyshots Components/Button Small Tertiary Button with icon on left 1`
     className="ilo--button ilo--button--small ilo--button--tertiary icon icon__position--left"
     disabled={false}
     onClick={[Function]}
+    type="button"
   >
     <span
       className="button__label"
@@ -900,6 +920,7 @@ exports[`Storyshots Components/Button Small Tertiary Button with icon on right; 
     className="ilo--button ilo--button--small ilo--button--tertiary icon icon__position--right"
     disabled={false}
     onClick={[Function]}
+    type="button"
   >
     <span
       className="button__label"
@@ -938,6 +959,7 @@ exports[`Storyshots Components/Button Tertiary Button 1`] = `
     className="ilo--button ilo--button--large ilo--button--tertiary"
     disabled={false}
     onClick={[Function]}
+    type="button"
   >
     <span
       className="button__label"
@@ -1314,51 +1336,54 @@ exports[`Storyshots Components/Dropdown Dropdown - Basic 1`] = `
   <fieldset
     className="ilo--fieldset"
   >
-    <label
-      className="ilo--fieldset--label"
-      htmlFor="dropdown"
-    >
-      Dropdown Label
-    </label>
     <div
-      className="ilo--dropdown--wrapper"
+      className="ilo--fieldset--input--dropdown "
     >
-      <select
-        autoComplete="false"
-        className="ilo--dropdown"
-        disabled={false}
-        id="dropdown"
-        name="dropdown"
-        onChange={[Function]}
-        required={false}
-        value="option one"
+      <label
+        className="ilo--fieldset--label"
       >
-        <option
+        Dropdown Label
+      </label>
+      <div
+        className="ilo--dropdown--wrapper"
+      >
+        <select
+          autoComplete="false"
+          className="ilo--dropdown"
           disabled={false}
-          label="Option One"
+          id="dropdown"
+          name="dropdown"
+          onChange={[Function]}
+          required={false}
           value="option one"
-        />
-        <option
-          disabled={false}
-          label="Option Two"
-          value="option two"
-        />
-        <option
-          disabled={false}
-          label="Option Three"
-          value="option three"
-        />
-        <option
-          disabled={false}
-          label="Option Four"
-          value="four"
-        />
-        <option
-          disabled={false}
-          label="Option Five"
-          value="the fifth"
-        />
-      </select>
+        >
+          <option
+            disabled={false}
+            label="Option One"
+            value="option one"
+          />
+          <option
+            disabled={false}
+            label="Option Two"
+            value="option two"
+          />
+          <option
+            disabled={false}
+            label="Option Three"
+            value="option three"
+          />
+          <option
+            disabled={false}
+            label="Option Four"
+            value="four"
+          />
+          <option
+            disabled={false}
+            label="Option Five"
+            value="the fifth"
+          />
+        </select>
+      </div>
     </div>
   </fieldset>
 </div>
@@ -1373,59 +1398,62 @@ exports[`Storyshots Components/Dropdown Dropdown - Has Error 1`] = `
   }
 >
   <fieldset
-    className="ilo--fieldset error"
+    className="ilo--fieldset"
   >
-    <label
-      className="ilo--fieldset--label"
-      htmlFor="dropdown"
-    >
-      Dropdown Label
-    </label>
     <div
-      className="ilo--dropdown--wrapper"
+      className="ilo--fieldset--input--dropdown error"
     >
-      <select
-        autoComplete="false"
-        className="ilo--dropdown error"
-        disabled={false}
-        id="dropdown"
-        name="dropdown"
-        onChange={[Function]}
-        required={false}
-        value="option one"
+      <label
+        className="ilo--fieldset--label"
       >
-        <option
+        Dropdown Label
+      </label>
+      <div
+        className="ilo--dropdown--wrapper"
+      >
+        <select
+          autoComplete="false"
+          className="ilo--dropdown error"
           disabled={false}
-          label="Option One"
+          id="dropdown"
+          name="dropdown"
+          onChange={[Function]}
+          required={false}
           value="option one"
-        />
-        <option
-          disabled={false}
-          label="Option Two"
-          value="option two"
-        />
-        <option
-          disabled={false}
-          label="Option Three"
-          value="option three"
-        />
-        <option
-          disabled={false}
-          label="Option Four"
-          value="four"
-        />
-        <option
-          disabled={false}
-          label="Option Five"
-          value="the fifth"
-        />
-      </select>
+        >
+          <option
+            disabled={false}
+            label="Option One"
+            value="option one"
+          />
+          <option
+            disabled={false}
+            label="Option Two"
+            value="option two"
+          />
+          <option
+            disabled={false}
+            label="Option Three"
+            value="option three"
+          />
+          <option
+            disabled={false}
+            label="Option Four"
+            value="four"
+          />
+          <option
+            disabled={false}
+            label="Option Five"
+            value="the fifth"
+          />
+        </select>
+      </div>
+      <span
+        className="ilo--fieldset--error"
+      >
+        This is an error message
+      </span>
     </div>
-    <span
-      className="ilo--fieldset--error"
-    >
-      This is an error message
-    </span>
   </fieldset>
 </div>
 `;
@@ -1441,57 +1469,60 @@ exports[`Storyshots Components/Dropdown Dropdown - Has Helper 1`] = `
   <fieldset
     className="ilo--fieldset"
   >
-    <label
-      className="ilo--fieldset--label"
-      htmlFor="dropdown"
-    >
-      Dropdown Label
-    </label>
     <div
-      className="ilo--dropdown--wrapper"
+      className="ilo--fieldset--input--dropdown "
     >
-      <select
-        autoComplete="false"
-        className="ilo--dropdown"
-        disabled={false}
-        id="dropdown"
-        name="dropdown"
-        onChange={[Function]}
-        required={false}
-        value="option one"
+      <label
+        className="ilo--fieldset--label"
       >
-        <option
+        Dropdown Label
+      </label>
+      <div
+        className="ilo--dropdown--wrapper"
+      >
+        <select
+          autoComplete="false"
+          className="ilo--dropdown"
           disabled={false}
-          label="Option One"
+          id="dropdown"
+          name="dropdown"
+          onChange={[Function]}
+          required={false}
           value="option one"
-        />
-        <option
-          disabled={false}
-          label="Option Two"
-          value="option two"
-        />
-        <option
-          disabled={false}
-          label="Option Three"
-          value="option three"
-        />
-        <option
-          disabled={false}
-          label="Option Four"
-          value="four"
-        />
-        <option
-          disabled={false}
-          label="Option Five"
-          value="the fifth"
-        />
-      </select>
+        >
+          <option
+            disabled={false}
+            label="Option One"
+            value="option one"
+          />
+          <option
+            disabled={false}
+            label="Option Two"
+            value="option two"
+          />
+          <option
+            disabled={false}
+            label="Option Three"
+            value="option three"
+          />
+          <option
+            disabled={false}
+            label="Option Four"
+            value="four"
+          />
+          <option
+            disabled={false}
+            label="Option Five"
+            value="the fifth"
+          />
+        </select>
+      </div>
+      <span
+        className="ilo--fieldset--helper"
+      >
+        Example Helper Text
+      </span>
     </div>
-    <span
-      className="ilo--fieldset--helper"
-    >
-      Example Helper Text
-    </span>
   </fieldset>
 </div>
 `;
@@ -1507,94 +1538,97 @@ exports[`Storyshots Components/Dropdown Dropdown - Has Tooltip 1`] = `
   <fieldset
     className="ilo--fieldset"
   >
-    <label
-      className="ilo--fieldset--label"
-      htmlFor="dropdown"
-    >
-      Dropdown Label
-    </label>
     <div
-      className="ilo--tooltip--wrapper has-icon"
-      onBlur={[Function]}
-      onFocus={[Function]}
-      onMouseOut={[Function]}
-      onMouseOver={[Function]}
+      className="ilo--fieldset--input--dropdown "
     >
-      <span
-        className="ilo--tooltip--icon"
+      <label
+        className="ilo--fieldset--label"
       >
-        <svg
-          aria-hidden={true}
-          className="ilo--icon"
-          fill="currentColor"
-          focusable="false"
-          height={16}
-          preserveAspectRatio="xMidYMid meet"
-          viewBox="0 0 16 16"
-          width={16}
-          xmlns="http://www.w3.org/2000/svg"
+        Dropdown Label
+        <div
+          className="ilo--tooltip--wrapper has-icon"
+          onBlur={[Function]}
+          onFocus={[Function]}
+          onMouseOut={[Function]}
+          onMouseOver={[Function]}
         >
-          <path
-            d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0Zm1 12H7V7h2v5ZM8 6a.94.94 0 0 1-1-1 .94.94 0 0 1 1-1 .94.94 0 0 1 1 1 .94.94 0 0 1-1 1Z"
-            fill="currentColor"
-          />
-        </svg>
-      </span>
-      <span
-        className="ilo--fieldset--label ilo--tooltip ilo--tooltip--dark ilo--tooltip--alignment-left"
-        style={
-          Object {
-            "left": "0px",
-            "top": "0px",
-          }
-        }
+          <span
+            className="ilo--tooltip--icon"
+          >
+            <svg
+              aria-hidden={true}
+              className="ilo--icon"
+              fill="currentColor"
+              focusable="false"
+              height={16}
+              preserveAspectRatio="xMidYMid meet"
+              viewBox="0 0 16 16"
+              width={16}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0Zm1 12H7V7h2v5ZM8 6a.94.94 0 0 1-1-1 .94.94 0 0 1 1-1 .94.94 0 0 1 1 1 .94.94 0 0 1-1 1Z"
+                fill="currentColor"
+              />
+            </svg>
+          </span>
+          <span
+            className="ilo--fieldset--label--tooltip ilo--tooltip ilo--tooltip--dark ilo--tooltip--alignment-left"
+            style={
+              Object {
+                "left": "0px",
+                "top": "0px",
+              }
+            }
+          >
+            <span
+              className="ilo--fieldset--label--tooltip ilo--tooltip--arrow ilo--tooltip--arrow--placement-center"
+              role="presentation"
+            />
+            This is my tooltip text.
+          </span>
+        </div>
+      </label>
+      <div
+        className="ilo--dropdown--wrapper"
       >
-        <span
-          className="ilo--fieldset--label ilo--tooltip--arrow ilo--tooltip--arrow--placement-center"
-          role="presentation"
-        />
-        This is my tooltip text.
-      </span>
-    </div>
-    <div
-      className="ilo--dropdown--wrapper"
-    >
-      <select
-        autoComplete="false"
-        className="ilo--dropdown"
-        disabled={false}
-        id="dropdown"
-        name="dropdown"
-        onChange={[Function]}
-        required={false}
-        value="option one"
-      >
-        <option
+        <select
+          autoComplete="false"
+          className="ilo--dropdown"
           disabled={false}
-          label="Option One"
+          id="dropdown"
+          name="dropdown"
+          onChange={[Function]}
+          required={false}
           value="option one"
-        />
-        <option
-          disabled={false}
-          label="Option Two"
-          value="option two"
-        />
-        <option
-          disabled={false}
-          label="Option Three"
-          value="option three"
-        />
-        <option
-          disabled={false}
-          label="Option Four"
-          value="four"
-        />
-        <option
-          disabled={false}
-          label="Option Five"
-          value="the fifth"
-        />
-      </select>
+        >
+          <option
+            disabled={false}
+            label="Option One"
+            value="option one"
+          />
+          <option
+            disabled={false}
+            label="Option Two"
+            value="option two"
+          />
+          <option
+            disabled={false}
+            label="Option Three"
+            value="option three"
+          />
+          <option
+            disabled={false}
+            label="Option Four"
+            value="four"
+          />
+          <option
+            disabled={false}
+            label="Option Five"
+            value="the fifth"
+          />
+        </select>
+      </div>
     </div>
   </fieldset>
 </div>
@@ -1611,51 +1645,54 @@ exports[`Storyshots Components/Dropdown Dropdown - Is Disabled 1`] = `
   <fieldset
     className="ilo--fieldset"
   >
-    <label
-      className="ilo--fieldset--label"
-      htmlFor="dropdown"
-    >
-      Dropdown Label
-    </label>
     <div
-      className="ilo--dropdown--wrapper"
+      className="ilo--fieldset--input--dropdown "
     >
-      <select
-        autoComplete="false"
-        className="ilo--dropdown"
-        disabled={false}
-        id="dropdown"
-        name="dropdown"
-        onChange={[Function]}
-        required={false}
-        value="option one"
+      <label
+        className="ilo--fieldset--label"
       >
-        <option
+        Dropdown Label
+      </label>
+      <div
+        className="ilo--dropdown--wrapper"
+      >
+        <select
+          autoComplete="false"
+          className="ilo--dropdown"
           disabled={false}
-          label="Option One"
+          id="dropdown"
+          name="dropdown"
+          onChange={[Function]}
+          required={false}
           value="option one"
-        />
-        <option
-          disabled={false}
-          label="Option Two"
-          value="option two"
-        />
-        <option
-          disabled={false}
-          label="Option Three"
-          value="option three"
-        />
-        <option
-          disabled={false}
-          label="Option Four"
-          value="four"
-        />
-        <option
-          disabled={false}
-          label="Option Five"
-          value="the fifth"
-        />
-      </select>
+        >
+          <option
+            disabled={false}
+            label="Option One"
+            value="option one"
+          />
+          <option
+            disabled={false}
+            label="Option Two"
+            value="option two"
+          />
+          <option
+            disabled={false}
+            label="Option Three"
+            value="option three"
+          />
+          <option
+            disabled={false}
+            label="Option Four"
+            value="four"
+          />
+          <option
+            disabled={false}
+            label="Option Five"
+            value="the fifth"
+          />
+        </select>
+      </div>
     </div>
   </fieldset>
 </div>
@@ -1672,6 +1709,2489 @@ exports[`Storyshots Components/Empty Empty 1 1`] = `
   <div
     className="storybook ilo--empty"
   />
+</div>
+`;
+
+exports[`Storyshots Components/Form Default Form 1`] = `
+<div
+  style={
+    Object {
+      "margin": "3em",
+    }
+  }
+>
+  <form
+    action="https://my.action.url"
+    className="ilo--form"
+    id="exampleform"
+  >
+    <fieldset
+      className="ilo--fieldset"
+    >
+      <div
+        className="ilo--fieldset--input "
+      >
+        <label
+          className="ilo--fieldset--label"
+        >
+          Text Field Label
+        </label>
+        <input
+          className="ilo--input"
+          disabled={false}
+          id="text"
+          name="text"
+          onChange={[Function]}
+          placeholder="Text Field"
+          required={false}
+          type="text"
+        />
+      </div>
+    </fieldset>
+    <fieldset
+      className="ilo--fieldset"
+    >
+      <div
+        className="ilo--fieldset--input--dropdown "
+      >
+        <label
+          className="ilo--fieldset--label"
+        >
+          Dropdown Label
+        </label>
+        <div
+          className="ilo--dropdown--wrapper"
+        >
+          <select
+            autoComplete="false"
+            className="ilo--dropdown"
+            disabled={false}
+            id="dropdown"
+            name="dropdown"
+            onChange={[Function]}
+            required={false}
+            value="option one"
+          >
+            <option
+              disabled={false}
+              label="Option One"
+              value="option one"
+            />
+            <option
+              disabled={false}
+              label="Option Two"
+              value="option two"
+            />
+            <option
+              disabled={false}
+              label="Option Three"
+              value="option three"
+            />
+            <option
+              disabled={false}
+              label="Option Four"
+              value="four"
+            />
+            <option
+              disabled={false}
+              label="Option Five"
+              value="the fifth"
+            />
+          </select>
+        </div>
+      </div>
+    </fieldset>
+    <fieldset
+      className="ilo--formgroup default"
+      id="examplegroup"
+    >
+      <legend
+        className="ilo--formgroup--legend"
+      >
+        Example Legend
+      </legend>
+      <fieldset
+        className="ilo--fieldset"
+      >
+        <div
+          className="ilo--fieldset--input "
+        >
+          <label
+            className="ilo--fieldset--label"
+          >
+            Text Field Label
+          </label>
+          <input
+            className="ilo--input"
+            disabled={false}
+            id="text"
+            name="text"
+            onChange={[Function]}
+            placeholder="Text Field"
+            required={false}
+            type="text"
+          />
+        </div>
+      </fieldset>
+      <fieldset
+        className="ilo--fieldset"
+      >
+        <div
+          className="ilo--fieldset--input--dropdown "
+        >
+          <label
+            className="ilo--fieldset--label"
+          >
+            Dropdown Label
+          </label>
+          <div
+            className="ilo--dropdown--wrapper"
+          >
+            <select
+              autoComplete="false"
+              className="ilo--dropdown"
+              disabled={false}
+              id="dropdown"
+              name="dropdown"
+              onChange={[Function]}
+              required={false}
+              value="option one"
+            >
+              <option
+                disabled={false}
+                label="Option One"
+                value="option one"
+              />
+              <option
+                disabled={false}
+                label="Option Two"
+                value="option two"
+              />
+              <option
+                disabled={false}
+                label="Option Three"
+                value="option three"
+              />
+              <option
+                disabled={false}
+                label="Option Four"
+                value="four"
+              />
+              <option
+                disabled={false}
+                label="Option Five"
+                value="the fifth"
+              />
+            </select>
+          </div>
+        </div>
+      </fieldset>
+      <fieldset
+        className="ilo--fieldset"
+      >
+        <div
+          className="ilo--fieldset--input--checkbox "
+        >
+          <label
+            className="ilo--fieldset--label"
+          >
+            Checkbox Label
+          </label>
+          <input
+            checked={false}
+            className="ilo--checkbox"
+            disabled={false}
+            name="checkbox"
+            onChange={[Function]}
+            required={false}
+            type="checkbox"
+          />
+        </div>
+      </fieldset>
+      <fieldset
+        className="ilo--choice-group  ilo--fieldset"
+        id="multiplecheckboxes"
+      >
+        <legend
+          className="ilo--fieldset--legend"
+        >
+          Multiple Checkboxes
+        </legend>
+        <div
+          className="ilo--fieldset--input--checkbox "
+        >
+          <label
+            className="ilo--fieldset--label"
+            htmlFor="fgcheckbox0"
+          >
+            Checkbox 0
+          </label>
+          <input
+            checked={false}
+            className="ilo--checkbox"
+            disabled={false}
+            id="fgcheckbox0"
+            name="fgcheckbox0"
+            onChange={[Function]}
+            required={false}
+            type="checkbox"
+          />
+        </div>
+        <div
+          className="ilo--fieldset--input--checkbox "
+        >
+          <label
+            className="ilo--fieldset--label"
+            htmlFor="fgcheckbox1"
+          >
+            Checkbox 1
+          </label>
+          <input
+            checked={false}
+            className="ilo--checkbox"
+            disabled={false}
+            id="fgcheckbox1"
+            name="fgcheckbox1"
+            onChange={[Function]}
+            required={false}
+            type="checkbox"
+          />
+        </div>
+        <div
+          className="ilo--fieldset--input--checkbox "
+        >
+          <label
+            className="ilo--fieldset--label"
+            htmlFor="fgcheckbox2"
+          >
+            Checkbox 2
+          </label>
+          <input
+            checked={false}
+            className="ilo--checkbox"
+            disabled={false}
+            id="fgcheckbox2"
+            name="fgcheckbox2"
+            onChange={[Function]}
+            required={false}
+            type="checkbox"
+          />
+        </div>
+        <div
+          className="ilo--fieldset--input--checkbox "
+        >
+          <label
+            className="ilo--fieldset--label"
+            htmlFor="fgcheckbox3"
+          >
+            Checkbox 3
+          </label>
+          <input
+            checked={false}
+            className="ilo--checkbox"
+            disabled={false}
+            id="fgcheckbox3"
+            name="fgcheckbox3"
+            onChange={[Function]}
+            required={false}
+            type="checkbox"
+          />
+        </div>
+        <div
+          className="ilo--fieldset--input--checkbox "
+        >
+          <label
+            className="ilo--fieldset--label"
+            htmlFor="fgcheckbox4"
+          >
+            Checkbox 4
+          </label>
+          <input
+            checked={false}
+            className="ilo--checkbox"
+            disabled={false}
+            id="fgcheckbox4"
+            name="fgcheckbox4"
+            onChange={[Function]}
+            required={false}
+            type="checkbox"
+          />
+        </div>
+      </fieldset>
+      <fieldset
+        className="ilo--choice-group  ilo--fieldset"
+        id="radios"
+      >
+        <legend
+          className="ilo--fieldset--legend"
+        >
+          Radio Group
+        </legend>
+        <div
+          className="ilo--fieldset--input--radio "
+        >
+          <label
+            className="ilo--fieldset--label"
+            htmlFor="fgradio0"
+          >
+            Radio 0
+          </label>
+          <input
+            checked={false}
+            className="ilo--radio"
+            disabled={false}
+            id="fgradio0"
+            name="fgradio"
+            onChange={[Function]}
+            required={false}
+            type="radio"
+            value="fgradio0"
+          />
+        </div>
+        <div
+          className="ilo--fieldset--input--radio "
+        >
+          <label
+            className="ilo--fieldset--label"
+            htmlFor="fgradio1"
+          >
+            Radio 1
+          </label>
+          <input
+            checked={false}
+            className="ilo--radio"
+            disabled={false}
+            id="fgradio1"
+            name="fgradio"
+            onChange={[Function]}
+            required={false}
+            type="radio"
+            value="fgradio1"
+          />
+        </div>
+        <div
+          className="ilo--fieldset--input--radio "
+        >
+          <label
+            className="ilo--fieldset--label"
+            htmlFor="fgradio2"
+          >
+            Radio 2
+          </label>
+          <input
+            checked={false}
+            className="ilo--radio"
+            disabled={false}
+            id="fgradio2"
+            name="fgradio"
+            onChange={[Function]}
+            required={false}
+            type="radio"
+            value="fgradio2"
+          />
+        </div>
+        <div
+          className="ilo--fieldset--input--radio "
+        >
+          <label
+            className="ilo--fieldset--label"
+            htmlFor="fgradio3"
+          >
+            Radio 3
+          </label>
+          <input
+            checked={false}
+            className="ilo--radio"
+            disabled={false}
+            id="fgradio3"
+            name="fgradio"
+            onChange={[Function]}
+            required={false}
+            type="radio"
+            value="fgradio3"
+          />
+        </div>
+        <div
+          className="ilo--fieldset--input--radio "
+        >
+          <label
+            className="ilo--fieldset--label"
+            htmlFor="fgradio4"
+          >
+            Radio 4
+          </label>
+          <input
+            checked={false}
+            className="ilo--radio"
+            disabled={false}
+            id="fgradio4"
+            name="fgradio"
+            onChange={[Function]}
+            required={false}
+            type="radio"
+            value="fgradio4"
+          />
+        </div>
+      </fieldset>
+      <fieldset
+        className="file-upload ilo--fieldset"
+      >
+        <div
+          className="ilo--fieldset--input--file "
+        >
+          <label
+            className="ilo--fieldset--label"
+          >
+            File Upload Field Label
+          </label>
+          <input
+            className="ilo--file-upload"
+            data-label="File Upload Field"
+            disabled={false}
+            id="fileupload"
+            multiple={false}
+            name="fileupload"
+            onChange={[Function]}
+            placeholder="File Upload Field"
+            required={false}
+            type="file"
+          />
+        </div>
+      </fieldset>
+      <fieldset
+        className="ilo--fieldset"
+      >
+        <div
+          className="ilo--fieldset--input "
+        >
+          <label
+            className="ilo--fieldset--label"
+          >
+            Date Picker Field Label
+          </label>
+          <input
+            className="ilo--datepicker ilo--input"
+            disabled={false}
+            id="datepicker"
+            name="datepicker"
+            onChange={[Function]}
+            placeholder="MM/DD/YYYY"
+            required={false}
+            type="date"
+          />
+        </div>
+      </fieldset>
+      <fieldset
+        className="ilo--fieldset"
+      >
+        <div
+          className="ilo--fieldset--input--text "
+        >
+          <label
+            className="ilo--fieldset--label"
+          >
+            Number Picker Field Label
+          </label>
+          <input
+            className="ilo--numberpicker ilo--input"
+            disabled={false}
+            id="text"
+            inputMode="numeric"
+            name="text"
+            onChange={[Function]}
+            pattern="[0-9]*"
+            placeholder="Number Picker Field"
+            required={false}
+            type="text"
+          />
+        </div>
+      </fieldset>
+      <fieldset
+        className="ilo--fieldset"
+      >
+        <div
+          className="ilo--fieldset--input "
+        >
+          <label
+            className="ilo--fieldset--label"
+          >
+            Textarea
+          </label>
+          <textarea
+            className="ilo--textarea"
+            disabled={false}
+            name="textarea"
+            onChange={[Function]}
+            placeholder="Textarea"
+            required={false}
+            spellCheck={false}
+          />
+        </div>
+      </fieldset>
+    </fieldset>
+    <fieldset
+      className="ilo--fieldset"
+    >
+      <div
+        className="ilo--fieldset--input--checkbox "
+      >
+        <label
+          className="ilo--fieldset--label"
+        >
+          Checkbox Label
+        </label>
+        <input
+          checked={false}
+          className="ilo--checkbox"
+          disabled={false}
+          name="checkbox"
+          onChange={[Function]}
+          required={false}
+          type="checkbox"
+        />
+      </div>
+    </fieldset>
+    <fieldset
+      className="ilo--choice-group  ilo--fieldset"
+      id="multiplecheckboxes"
+    >
+      <legend
+        className="ilo--fieldset--legend"
+      >
+        Multiple Checkboxes
+      </legend>
+      <div
+        className="ilo--fieldset--input--checkbox "
+      >
+        <label
+          className="ilo--fieldset--label"
+        >
+          Checkbox 0
+        </label>
+        <input
+          checked={false}
+          className="ilo--checkbox"
+          disabled={false}
+          name="checkbox0"
+          onChange={[Function]}
+          required={false}
+          type="checkbox"
+        />
+      </div>
+      <div
+        className="ilo--fieldset--input--checkbox "
+      >
+        <label
+          className="ilo--fieldset--label"
+        >
+          Checkbox 1
+        </label>
+        <input
+          checked={false}
+          className="ilo--checkbox"
+          disabled={false}
+          name="checkbox1"
+          onChange={[Function]}
+          required={false}
+          type="checkbox"
+        />
+      </div>
+      <div
+        className="ilo--fieldset--input--checkbox "
+      >
+        <label
+          className="ilo--fieldset--label"
+        >
+          Checkbox 2
+        </label>
+        <input
+          checked={false}
+          className="ilo--checkbox"
+          disabled={false}
+          name="checkbox2"
+          onChange={[Function]}
+          required={false}
+          type="checkbox"
+        />
+      </div>
+      <div
+        className="ilo--fieldset--input--checkbox "
+      >
+        <label
+          className="ilo--fieldset--label"
+        >
+          Checkbox 3
+        </label>
+        <input
+          checked={false}
+          className="ilo--checkbox"
+          disabled={false}
+          name="checkbox3"
+          onChange={[Function]}
+          required={false}
+          type="checkbox"
+        />
+      </div>
+      <div
+        className="ilo--fieldset--input--checkbox "
+      >
+        <label
+          className="ilo--fieldset--label"
+        >
+          Checkbox 4
+        </label>
+        <input
+          checked={false}
+          className="ilo--checkbox"
+          disabled={false}
+          name="checkbox4"
+          onChange={[Function]}
+          required={false}
+          type="checkbox"
+        />
+      </div>
+    </fieldset>
+    <fieldset
+      className="ilo--choice-group  ilo--fieldset"
+      id="radios"
+    >
+      <legend
+        className="ilo--fieldset--legend"
+      >
+        Radio Group
+      </legend>
+      <div
+        className="ilo--fieldset--input--radio "
+      >
+        <label
+          className="ilo--fieldset--label"
+        >
+          Radio 0
+        </label>
+        <input
+          checked={false}
+          className="ilo--radio"
+          disabled={false}
+          name="radio0"
+          onChange={[Function]}
+          required={false}
+          type="radio"
+          value="radio"
+        />
+      </div>
+      <div
+        className="ilo--fieldset--input--radio "
+      >
+        <label
+          className="ilo--fieldset--label"
+        >
+          Radio 1
+        </label>
+        <input
+          checked={false}
+          className="ilo--radio"
+          disabled={false}
+          name="radio1"
+          onChange={[Function]}
+          required={false}
+          type="radio"
+          value="radio"
+        />
+      </div>
+      <div
+        className="ilo--fieldset--input--radio "
+      >
+        <label
+          className="ilo--fieldset--label"
+        >
+          Radio 2
+        </label>
+        <input
+          checked={false}
+          className="ilo--radio"
+          disabled={false}
+          name="radio2"
+          onChange={[Function]}
+          required={false}
+          type="radio"
+          value="radio"
+        />
+      </div>
+      <div
+        className="ilo--fieldset--input--radio "
+      >
+        <label
+          className="ilo--fieldset--label"
+        >
+          Radio 3
+        </label>
+        <input
+          checked={false}
+          className="ilo--radio"
+          disabled={false}
+          name="radio3"
+          onChange={[Function]}
+          required={false}
+          type="radio"
+          value="radio"
+        />
+      </div>
+      <div
+        className="ilo--fieldset--input--radio "
+      >
+        <label
+          className="ilo--fieldset--label"
+        >
+          Radio 4
+        </label>
+        <input
+          checked={false}
+          className="ilo--radio"
+          disabled={false}
+          name="radio4"
+          onChange={[Function]}
+          required={false}
+          type="radio"
+          value="radio"
+        />
+      </div>
+    </fieldset>
+    <fieldset
+      className="file-upload ilo--fieldset"
+    >
+      <div
+        className="ilo--fieldset--input--file "
+      >
+        <label
+          className="ilo--fieldset--label"
+        >
+          File Upload Field Label
+        </label>
+        <input
+          className="ilo--file-upload"
+          data-label="File Upload Field"
+          disabled={false}
+          id="fileupload"
+          multiple={false}
+          name="fileupload"
+          onChange={[Function]}
+          placeholder="File Upload Field"
+          required={false}
+          type="file"
+        />
+      </div>
+    </fieldset>
+    <div
+      className="ilo--datepicker--range"
+    >
+      <fieldset
+        className="ilo--fieldset"
+      >
+        <div
+          className="ilo--fieldset--input--date "
+        >
+          <label
+            className="ilo--fieldset--label"
+          >
+            Date Picker Field Label
+          </label>
+          <input
+            className="ilo--datepicker ilo--input"
+            disabled={false}
+            id="datepicker"
+            name="datepicker"
+            onChange={[Function]}
+            placeholder="MM/DD/YYYY"
+            required={false}
+            type="date"
+          />
+        </div>
+      </fieldset>
+      <fieldset
+        className="ilo--fieldset"
+      >
+        <div
+          className="ilo--fieldset--input--date "
+        >
+          <label
+            className="ilo--fieldset--label"
+          >
+            Date Picker End Field Label
+          </label>
+          <input
+            className="ilo--datepicker ilo--input"
+            disabled={false}
+            id="datepickerend"
+            name="datepickerend"
+            onChange={[Function]}
+            placeholder="MM/DD/YYYY"
+            required={false}
+            type="date"
+          />
+          <span
+            className="ilo--fieldset--helper"
+          >
+            this is an end date range
+          </span>
+        </div>
+      </fieldset>
+    </div>
+    <fieldset
+      className="ilo--fieldset"
+    >
+      <div
+        className="ilo--fieldset--input--text "
+      >
+        <label
+          className="ilo--fieldset--label"
+        >
+          Number Picker Field Label
+        </label>
+        <input
+          className="ilo--numberpicker ilo--input"
+          disabled={false}
+          id="text"
+          inputMode="numeric"
+          name="text"
+          onChange={[Function]}
+          pattern="[0-9]*"
+          placeholder="Number Picker Field"
+          required={false}
+          type="text"
+        />
+      </div>
+    </fieldset>
+    <fieldset
+      className="ilo--fieldset"
+    >
+      <div
+        className="ilo--fieldset--input "
+      >
+        <label
+          className="ilo--fieldset--label"
+        >
+          Textarea
+        </label>
+        <textarea
+          className="ilo--textarea"
+          disabled={false}
+          name="textarea"
+          onChange={[Function]}
+          placeholder="Textarea"
+          required={false}
+          spellCheck={false}
+        />
+      </div>
+    </fieldset>
+    <button
+      className="ilo--button ilo--button--large ilo--button--primary"
+      disabled={false}
+      onClick={[Function]}
+      type="submit"
+    >
+      <span
+        className="button__label"
+      >
+        Submit
+      </span>
+    </button>
+  </form>
+</div>
+`;
+
+exports[`Storyshots Components/Form Default Form with Helper Text 1`] = `
+<div
+  style={
+    Object {
+      "margin": "3em",
+    }
+  }
+>
+  <form
+    action="https://my.action.url"
+    className="ilo--form"
+    id="exampleform"
+  >
+    <fieldset
+      className="ilo--fieldset"
+    >
+      <div
+        className="ilo--fieldset--input "
+      >
+        <label
+          className="ilo--fieldset--label"
+        >
+          Text Field Label
+        </label>
+        <input
+          className="ilo--input"
+          disabled={false}
+          id="text"
+          name="text"
+          onChange={[Function]}
+          placeholder="Helper Text Field"
+          required={false}
+          type="text"
+        />
+        <span
+          className="ilo--fieldset--helper"
+        >
+          This one has helper text
+        </span>
+      </div>
+    </fieldset>
+    <fieldset
+      className="ilo--fieldset"
+    >
+      <div
+        className="ilo--fieldset--input--dropdown "
+      >
+        <label
+          className="ilo--fieldset--label"
+        >
+          Dropdown Label
+        </label>
+        <div
+          className="ilo--dropdown--wrapper"
+        >
+          <select
+            autoComplete="false"
+            className="ilo--dropdown"
+            disabled={false}
+            id="dropdown"
+            name="dropdown"
+            onChange={[Function]}
+            required={false}
+            value="option one"
+          >
+            <option
+              disabled={false}
+              label="Option One"
+              value="option one"
+            />
+            <option
+              disabled={false}
+              label="Option Two"
+              value="option two"
+            />
+            <option
+              disabled={false}
+              label="Option Three"
+              value="option three"
+            />
+            <option
+              disabled={false}
+              label="Option Four"
+              value="four"
+            />
+            <option
+              disabled={false}
+              label="Option Five"
+              value="the fifth"
+            />
+          </select>
+        </div>
+        <span
+          className="ilo--fieldset--helper"
+        >
+          Example Helper Text
+        </span>
+      </div>
+    </fieldset>
+    <fieldset
+      className="ilo--choice-group  ilo--fieldset"
+      id="multiplecheckboxes"
+    >
+      <legend
+        className="ilo--fieldset--legend"
+      >
+        Multiple Checkboxes
+      </legend>
+      <span
+        className="ilo--fieldset--helper"
+      >
+        This is the helper text
+      </span>
+      <div
+        className="ilo--fieldset--input--checkbox "
+      >
+        <label
+          className="ilo--fieldset--label"
+        >
+          Checkbox 0
+        </label>
+        <input
+          checked={false}
+          className="ilo--checkbox"
+          disabled={false}
+          name="checkbox0"
+          onChange={[Function]}
+          required={false}
+          type="checkbox"
+        />
+      </div>
+      <div
+        className="ilo--fieldset--input--checkbox "
+      >
+        <label
+          className="ilo--fieldset--label"
+        >
+          Checkbox 1
+        </label>
+        <input
+          checked={false}
+          className="ilo--checkbox"
+          disabled={false}
+          name="checkbox1"
+          onChange={[Function]}
+          required={false}
+          type="checkbox"
+        />
+      </div>
+      <div
+        className="ilo--fieldset--input--checkbox "
+      >
+        <label
+          className="ilo--fieldset--label"
+        >
+          Checkbox 2
+        </label>
+        <input
+          checked={false}
+          className="ilo--checkbox"
+          disabled={false}
+          name="checkbox2"
+          onChange={[Function]}
+          required={false}
+          type="checkbox"
+        />
+      </div>
+      <div
+        className="ilo--fieldset--input--checkbox "
+      >
+        <label
+          className="ilo--fieldset--label"
+        >
+          Checkbox 3
+        </label>
+        <input
+          checked={false}
+          className="ilo--checkbox"
+          disabled={false}
+          name="checkbox3"
+          onChange={[Function]}
+          required={false}
+          type="checkbox"
+        />
+      </div>
+      <div
+        className="ilo--fieldset--input--checkbox "
+      >
+        <label
+          className="ilo--fieldset--label"
+        >
+          Checkbox 4
+        </label>
+        <input
+          checked={false}
+          className="ilo--checkbox"
+          disabled={false}
+          name="checkbox4"
+          onChange={[Function]}
+          required={false}
+          type="checkbox"
+        />
+      </div>
+    </fieldset>
+    <fieldset
+      className="ilo--choice-group  ilo--fieldset"
+      id="radios"
+    >
+      <legend
+        className="ilo--fieldset--legend"
+      >
+        Radio Group
+      </legend>
+      <span
+        className="ilo--fieldset--helper"
+      >
+        This is the helper text
+      </span>
+      <div
+        className="ilo--fieldset--input--radio "
+      >
+        <label
+          className="ilo--fieldset--label"
+        >
+          Radio 0
+        </label>
+        <input
+          checked={false}
+          className="ilo--radio"
+          disabled={false}
+          name="radio0"
+          onChange={[Function]}
+          required={false}
+          type="radio"
+          value="radio"
+        />
+      </div>
+      <div
+        className="ilo--fieldset--input--radio "
+      >
+        <label
+          className="ilo--fieldset--label"
+        >
+          Radio 1
+        </label>
+        <input
+          checked={false}
+          className="ilo--radio"
+          disabled={false}
+          name="radio1"
+          onChange={[Function]}
+          required={false}
+          type="radio"
+          value="radio"
+        />
+      </div>
+      <div
+        className="ilo--fieldset--input--radio "
+      >
+        <label
+          className="ilo--fieldset--label"
+        >
+          Radio 2
+        </label>
+        <input
+          checked={false}
+          className="ilo--radio"
+          disabled={false}
+          name="radio2"
+          onChange={[Function]}
+          required={false}
+          type="radio"
+          value="radio"
+        />
+      </div>
+      <div
+        className="ilo--fieldset--input--radio "
+      >
+        <label
+          className="ilo--fieldset--label"
+        >
+          Radio 3
+        </label>
+        <input
+          checked={false}
+          className="ilo--radio"
+          disabled={false}
+          name="radio3"
+          onChange={[Function]}
+          required={false}
+          type="radio"
+          value="radio"
+        />
+      </div>
+      <div
+        className="ilo--fieldset--input--radio "
+      >
+        <label
+          className="ilo--fieldset--label"
+        >
+          Radio 4
+        </label>
+        <input
+          checked={false}
+          className="ilo--radio"
+          disabled={false}
+          name="radio4"
+          onChange={[Function]}
+          required={false}
+          type="radio"
+          value="radio"
+        />
+      </div>
+    </fieldset>
+    <fieldset
+      className="file-upload ilo--fieldset"
+    >
+      <div
+        className="ilo--fieldset--input--file "
+      >
+        <label
+          className="ilo--fieldset--label"
+        >
+          File Upload Field Label
+        </label>
+        <input
+          className="ilo--file-upload"
+          data-label="File Upload Field"
+          disabled={false}
+          id="fileupload"
+          multiple={false}
+          name="fileupload"
+          onChange={[Function]}
+          placeholder="File Upload Field"
+          required={false}
+          type="file"
+        />
+        <span
+          className="ilo--fieldset--helper"
+        >
+          The file upload's helper text
+        </span>
+      </div>
+    </fieldset>
+    <fieldset
+      className="ilo--fieldset"
+    >
+      <div
+        className="ilo--fieldset--input "
+      >
+        <label
+          className="ilo--fieldset--label"
+        >
+          Date Picker Field Label
+        </label>
+        <input
+          className="ilo--datepicker ilo--input"
+          disabled={false}
+          id="datepicker"
+          name="datepicker"
+          onChange={[Function]}
+          placeholder="MM/DD/YYYY"
+          required={false}
+          type="date"
+        />
+        <span
+          className="ilo--fieldset--helper"
+        >
+          here is helper text
+        </span>
+      </div>
+    </fieldset>
+    <fieldset
+      className="ilo--fieldset"
+    >
+      <div
+        className="ilo--fieldset--input--text "
+      >
+        <label
+          className="ilo--fieldset--label"
+        >
+          Number Picker Field Label
+        </label>
+        <input
+          className="ilo--numberpicker ilo--input"
+          disabled={false}
+          id="text"
+          inputMode="numeric"
+          name="text"
+          onChange={[Function]}
+          pattern="[0-9]*"
+          placeholder="Number Picker Field"
+          required={false}
+          type="text"
+        />
+        <span
+          className="ilo--fieldset--helper"
+        >
+          Here is the helper text
+        </span>
+      </div>
+    </fieldset>
+    <fieldset
+      className="ilo--fieldset"
+    >
+      <div
+        className="ilo--fieldset--input "
+      >
+        <label
+          className="ilo--fieldset--label"
+        >
+          Textarea
+        </label>
+        <textarea
+          className="ilo--textarea"
+          disabled={false}
+          name="textarea"
+          onChange={[Function]}
+          placeholder="Textarea"
+          required={false}
+          spellCheck={false}
+        />
+        <span
+          className="ilo--fieldset--helper"
+        >
+          This one has helper text
+        </span>
+      </div>
+    </fieldset>
+    <button
+      className="ilo--button ilo--button--large ilo--button--primary"
+      disabled={false}
+      onClick={[Function]}
+      type="submit"
+    >
+      <span
+        className="button__label"
+      >
+        Submit
+      </span>
+    </button>
+  </form>
+</div>
+`;
+
+exports[`Storyshots Components/Form Default Form with Tooltips 1`] = `
+<div
+  style={
+    Object {
+      "margin": "3em",
+    }
+  }
+>
+  <form
+    action="https://my.action.url"
+    className="ilo--form"
+    id="exampleform"
+  >
+    <fieldset
+      className="ilo--fieldset"
+    >
+      <div
+        className="ilo--fieldset--input "
+      >
+        <label
+          className="ilo--fieldset--label"
+        >
+          Text Field Label
+          <div
+            className="ilo--tooltip--wrapper has-icon"
+            onBlur={[Function]}
+            onFocus={[Function]}
+            onMouseOut={[Function]}
+            onMouseOver={[Function]}
+          >
+            <span
+              className="ilo--tooltip--icon"
+            >
+              <svg
+                aria-hidden={true}
+                className="ilo--icon"
+                fill="currentColor"
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 16 16"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0Zm1 12H7V7h2v5ZM8 6a.94.94 0 0 1-1-1 .94.94 0 0 1 1-1 .94.94 0 0 1 1 1 .94.94 0 0 1-1 1Z"
+                  fill="currentColor"
+                />
+              </svg>
+            </span>
+            <span
+              className="ilo--fieldset--label--tooltip ilo--tooltip ilo--tooltip--dark ilo--tooltip--alignment-left"
+              style={
+                Object {
+                  "left": "0px",
+                  "top": "0px",
+                }
+              }
+            >
+              <span
+                className="ilo--fieldset--label--tooltip ilo--tooltip--arrow ilo--tooltip--arrow--placement-center"
+                role="presentation"
+              />
+              Here is the tooltip
+            </span>
+          </div>
+        </label>
+        <input
+          className="ilo--input"
+          disabled={false}
+          id="text"
+          name="text"
+          onChange={[Function]}
+          placeholder="Tooltip Text Field"
+          required={false}
+          type="text"
+        />
+      </div>
+    </fieldset>
+    <fieldset
+      className="ilo--fieldset"
+    >
+      <div
+        className="ilo--fieldset--input--dropdown "
+      >
+        <label
+          className="ilo--fieldset--label"
+        >
+          Dropdown Label
+          <div
+            className="ilo--tooltip--wrapper has-icon"
+            onBlur={[Function]}
+            onFocus={[Function]}
+            onMouseOut={[Function]}
+            onMouseOver={[Function]}
+          >
+            <span
+              className="ilo--tooltip--icon"
+            >
+              <svg
+                aria-hidden={true}
+                className="ilo--icon"
+                fill="currentColor"
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 16 16"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0Zm1 12H7V7h2v5ZM8 6a.94.94 0 0 1-1-1 .94.94 0 0 1 1-1 .94.94 0 0 1 1 1 .94.94 0 0 1-1 1Z"
+                  fill="currentColor"
+                />
+              </svg>
+            </span>
+            <span
+              className="ilo--fieldset--label--tooltip ilo--tooltip ilo--tooltip--dark ilo--tooltip--alignment-left"
+              style={
+                Object {
+                  "left": "0px",
+                  "top": "0px",
+                }
+              }
+            >
+              <span
+                className="ilo--fieldset--label--tooltip ilo--tooltip--arrow ilo--tooltip--arrow--placement-center"
+                role="presentation"
+              />
+              This is my tooltip text.
+            </span>
+          </div>
+        </label>
+        <div
+          className="ilo--dropdown--wrapper"
+        >
+          <select
+            autoComplete="false"
+            className="ilo--dropdown"
+            disabled={false}
+            id="dropdown"
+            name="dropdown"
+            onChange={[Function]}
+            required={false}
+            value="option one"
+          >
+            <option
+              disabled={false}
+              label="Option One"
+              value="option one"
+            />
+            <option
+              disabled={false}
+              label="Option Two"
+              value="option two"
+            />
+            <option
+              disabled={false}
+              label="Option Three"
+              value="option three"
+            />
+            <option
+              disabled={false}
+              label="Option Four"
+              value="four"
+            />
+            <option
+              disabled={false}
+              label="Option Five"
+              value="the fifth"
+            />
+          </select>
+        </div>
+      </div>
+    </fieldset>
+    <fieldset
+      className="ilo--choice-group  ilo--fieldset"
+      id="multiplecheckboxes"
+    >
+      <legend
+        className="ilo--fieldset--legend"
+      >
+        Multiple Checkboxes
+        <div
+          className="ilo--tooltip--wrapper has-icon"
+          onBlur={[Function]}
+          onFocus={[Function]}
+          onMouseOut={[Function]}
+          onMouseOver={[Function]}
+        >
+          <span
+            className="ilo--tooltip--icon"
+          >
+            <svg
+              aria-hidden={true}
+              className="ilo--icon"
+              fill="currentColor"
+              focusable="false"
+              height={16}
+              preserveAspectRatio="xMidYMid meet"
+              viewBox="0 0 16 16"
+              width={16}
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0Zm1 12H7V7h2v5ZM8 6a.94.94 0 0 1-1-1 .94.94 0 0 1 1-1 .94.94 0 0 1 1 1 .94.94 0 0 1-1 1Z"
+                fill="currentColor"
+              />
+            </svg>
+          </span>
+          <span
+            className="ilo--fieldset--legend--tooltip ilo--tooltip ilo--tooltip--dark ilo--tooltip--alignment-left"
+            style={
+              Object {
+                "left": "0px",
+                "top": "0px",
+              }
+            }
+          >
+            <span
+              className="ilo--fieldset--legend--tooltip ilo--tooltip--arrow ilo--tooltip--arrow--placement-center"
+              role="presentation"
+            />
+            This is the tooltip
+          </span>
+        </div>
+      </legend>
+      <div
+        className="ilo--fieldset--input--checkbox "
+      >
+        <label
+          className="ilo--fieldset--label"
+        >
+          Checkbox 0
+        </label>
+        <input
+          checked={false}
+          className="ilo--checkbox"
+          disabled={false}
+          name="checkbox0"
+          onChange={[Function]}
+          required={false}
+          type="checkbox"
+        />
+      </div>
+      <div
+        className="ilo--fieldset--input--checkbox "
+      >
+        <label
+          className="ilo--fieldset--label"
+        >
+          Checkbox 1
+        </label>
+        <input
+          checked={false}
+          className="ilo--checkbox"
+          disabled={false}
+          name="checkbox1"
+          onChange={[Function]}
+          required={false}
+          type="checkbox"
+        />
+      </div>
+      <div
+        className="ilo--fieldset--input--checkbox "
+      >
+        <label
+          className="ilo--fieldset--label"
+        >
+          Checkbox 2
+        </label>
+        <input
+          checked={false}
+          className="ilo--checkbox"
+          disabled={false}
+          name="checkbox2"
+          onChange={[Function]}
+          required={false}
+          type="checkbox"
+        />
+      </div>
+      <div
+        className="ilo--fieldset--input--checkbox "
+      >
+        <label
+          className="ilo--fieldset--label"
+        >
+          Checkbox 3
+        </label>
+        <input
+          checked={false}
+          className="ilo--checkbox"
+          disabled={false}
+          name="checkbox3"
+          onChange={[Function]}
+          required={false}
+          type="checkbox"
+        />
+      </div>
+      <div
+        className="ilo--fieldset--input--checkbox "
+      >
+        <label
+          className="ilo--fieldset--label"
+        >
+          Checkbox 4
+        </label>
+        <input
+          checked={false}
+          className="ilo--checkbox"
+          disabled={false}
+          name="checkbox4"
+          onChange={[Function]}
+          required={false}
+          type="checkbox"
+        />
+      </div>
+    </fieldset>
+    <fieldset
+      className="ilo--choice-group  ilo--fieldset"
+      id="radios"
+    >
+      <legend
+        className="ilo--fieldset--legend"
+      >
+        Radio Group
+      </legend>
+      <div
+        className="ilo--fieldset--input--radio "
+      >
+        <label
+          className="ilo--fieldset--label"
+        >
+          Radio 0
+        </label>
+        <input
+          checked={false}
+          className="ilo--radio"
+          disabled={false}
+          name="radio0"
+          onChange={[Function]}
+          required={false}
+          type="radio"
+          value="radio"
+        />
+      </div>
+      <div
+        className="ilo--fieldset--input--radio "
+      >
+        <label
+          className="ilo--fieldset--label"
+        >
+          Radio 1
+        </label>
+        <input
+          checked={false}
+          className="ilo--radio"
+          disabled={false}
+          name="radio1"
+          onChange={[Function]}
+          required={false}
+          type="radio"
+          value="radio"
+        />
+      </div>
+      <div
+        className="ilo--fieldset--input--radio "
+      >
+        <label
+          className="ilo--fieldset--label"
+        >
+          Radio 2
+        </label>
+        <input
+          checked={false}
+          className="ilo--radio"
+          disabled={false}
+          name="radio2"
+          onChange={[Function]}
+          required={false}
+          type="radio"
+          value="radio"
+        />
+      </div>
+      <div
+        className="ilo--fieldset--input--radio "
+      >
+        <label
+          className="ilo--fieldset--label"
+        >
+          Radio 3
+        </label>
+        <input
+          checked={false}
+          className="ilo--radio"
+          disabled={false}
+          name="radio3"
+          onChange={[Function]}
+          required={false}
+          type="radio"
+          value="radio"
+        />
+      </div>
+      <div
+        className="ilo--fieldset--input--radio "
+      >
+        <label
+          className="ilo--fieldset--label"
+        >
+          Radio 4
+        </label>
+        <input
+          checked={false}
+          className="ilo--radio"
+          disabled={false}
+          name="radio4"
+          onChange={[Function]}
+          required={false}
+          type="radio"
+          value="radio"
+        />
+      </div>
+    </fieldset>
+    <fieldset
+      className="file-upload ilo--fieldset"
+    >
+      <div
+        className="ilo--fieldset--input--file "
+      >
+        <label
+          className="ilo--fieldset--label"
+        >
+          File Upload Field Label
+          <div
+            className="ilo--tooltip--wrapper has-icon"
+            onBlur={[Function]}
+            onFocus={[Function]}
+            onMouseOut={[Function]}
+            onMouseOver={[Function]}
+          >
+            <span
+              className="ilo--tooltip--icon"
+            >
+              <svg
+                aria-hidden={true}
+                className="ilo--icon"
+                fill="currentColor"
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 16 16"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0Zm1 12H7V7h2v5ZM8 6a.94.94 0 0 1-1-1 .94.94 0 0 1 1-1 .94.94 0 0 1 1 1 .94.94 0 0 1-1 1Z"
+                  fill="currentColor"
+                />
+              </svg>
+            </span>
+            <span
+              className="ilo--fieldset--label--tooltip ilo--tooltip ilo--tooltip--dark ilo--tooltip--alignment-left"
+              style={
+                Object {
+                  "left": "0px",
+                  "top": "0px",
+                }
+              }
+            >
+              <span
+                className="ilo--fieldset--label--tooltip ilo--tooltip--arrow ilo--tooltip--arrow--placement-center"
+                role="presentation"
+              />
+              here is the Tooltip
+            </span>
+          </div>
+        </label>
+        <input
+          className="ilo--file-upload"
+          data-label="File Upload Field"
+          disabled={false}
+          id="fileupload"
+          multiple={false}
+          name="fileupload"
+          onChange={[Function]}
+          placeholder="File Upload Field"
+          required={false}
+          type="file"
+        />
+      </div>
+    </fieldset>
+    <fieldset
+      className="ilo--fieldset"
+    >
+      <div
+        className="ilo--fieldset--input "
+      >
+        <label
+          className="ilo--fieldset--label"
+        >
+          Date Picker Field Label
+          <div
+            className="ilo--tooltip--wrapper has-icon"
+            onBlur={[Function]}
+            onFocus={[Function]}
+            onMouseOut={[Function]}
+            onMouseOver={[Function]}
+          >
+            <span
+              className="ilo--tooltip--icon"
+            >
+              <svg
+                aria-hidden={true}
+                className="ilo--icon"
+                fill="currentColor"
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 16 16"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0Zm1 12H7V7h2v5ZM8 6a.94.94 0 0 1-1-1 .94.94 0 0 1 1-1 .94.94 0 0 1 1 1 .94.94 0 0 1-1 1Z"
+                  fill="currentColor"
+                />
+              </svg>
+            </span>
+            <span
+              className="ilo--fieldset--label--tooltip ilo--tooltip ilo--tooltip--dark ilo--tooltip--alignment-left"
+              style={
+                Object {
+                  "left": "0px",
+                  "top": "0px",
+                }
+              }
+            >
+              <span
+                className="ilo--fieldset--label--tooltip ilo--tooltip--arrow ilo--tooltip--arrow--placement-center"
+                role="presentation"
+              />
+              This is the tooltip
+            </span>
+          </div>
+        </label>
+        <input
+          className="ilo--datepicker ilo--input"
+          disabled={false}
+          id="datepicker"
+          name="datepicker"
+          onChange={[Function]}
+          placeholder="MM/DD/YYYY"
+          required={false}
+          type="date"
+        />
+      </div>
+    </fieldset>
+    <fieldset
+      className="ilo--fieldset"
+    >
+      <div
+        className="ilo--fieldset--input--text "
+      >
+        <label
+          className="ilo--fieldset--label"
+        >
+          Number Picker Field Label
+          <div
+            className="ilo--tooltip--wrapper has-icon"
+            onBlur={[Function]}
+            onFocus={[Function]}
+            onMouseOut={[Function]}
+            onMouseOver={[Function]}
+          >
+            <span
+              className="ilo--tooltip--icon"
+            >
+              <svg
+                aria-hidden={true}
+                className="ilo--icon"
+                fill="currentColor"
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 16 16"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0Zm1 12H7V7h2v5ZM8 6a.94.94 0 0 1-1-1 .94.94 0 0 1 1-1 .94.94 0 0 1 1 1 .94.94 0 0 1-1 1Z"
+                  fill="currentColor"
+                />
+              </svg>
+            </span>
+            <span
+              className="ilo--fieldset--label--tooltip ilo--tooltip ilo--tooltip--dark ilo--tooltip--alignment-left"
+              style={
+                Object {
+                  "left": "0px",
+                  "top": "0px",
+                }
+              }
+            >
+              <span
+                className="ilo--fieldset--label--tooltip ilo--tooltip--arrow ilo--tooltip--arrow--placement-center"
+                role="presentation"
+              />
+              This is the tooltip
+            </span>
+          </div>
+        </label>
+        <input
+          className="ilo--numberpicker ilo--input"
+          disabled={false}
+          id="text"
+          inputMode="numeric"
+          name="text"
+          onChange={[Function]}
+          pattern="[0-9]*"
+          placeholder="Number Picker Field"
+          required={false}
+          type="text"
+        />
+      </div>
+    </fieldset>
+    <fieldset
+      className="ilo--fieldset"
+    >
+      <div
+        className="ilo--fieldset--input "
+      >
+        <label
+          className="ilo--fieldset--label"
+        >
+          Textarea
+          <div
+            className="ilo--tooltip--wrapper has-icon"
+            onBlur={[Function]}
+            onFocus={[Function]}
+            onMouseOut={[Function]}
+            onMouseOver={[Function]}
+          >
+            <span
+              className="ilo--tooltip--icon"
+            >
+              <svg
+                aria-hidden={true}
+                className="ilo--icon"
+                fill="currentColor"
+                focusable="false"
+                height={16}
+                preserveAspectRatio="xMidYMid meet"
+                viewBox="0 0 16 16"
+                width={16}
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0Zm1 12H7V7h2v5ZM8 6a.94.94 0 0 1-1-1 .94.94 0 0 1 1-1 .94.94 0 0 1 1 1 .94.94 0 0 1-1 1Z"
+                  fill="currentColor"
+                />
+              </svg>
+            </span>
+            <span
+              className="ilo--fieldset--label--tooltip ilo--tooltip ilo--tooltip--dark ilo--tooltip--alignment-left"
+              style={
+                Object {
+                  "left": "0px",
+                  "top": "0px",
+                }
+              }
+            >
+              <span
+                className="ilo--fieldset--label--tooltip ilo--tooltip--arrow ilo--tooltip--arrow--placement-center"
+                role="presentation"
+              />
+              This is the tooltip
+            </span>
+          </div>
+        </label>
+        <textarea
+          className="ilo--textarea"
+          disabled={false}
+          name="textarea"
+          onChange={[Function]}
+          placeholder="Textarea"
+          required={false}
+          spellCheck={false}
+        />
+      </div>
+    </fieldset>
+    <button
+      className="ilo--button ilo--button--large ilo--button--primary"
+      disabled={false}
+      onClick={[Function]}
+      type="submit"
+    >
+      <span
+        className="button__label"
+      >
+        Submit
+      </span>
+    </button>
+  </form>
+</div>
+`;
+
+exports[`Storyshots Components/Form Default Form with errors 1`] = `
+<div
+  style={
+    Object {
+      "margin": "3em",
+    }
+  }
+>
+  <form
+    action="https://my.action.url"
+    className="ilo--form"
+    id="exampleform"
+  >
+    <fieldset
+      className="ilo--fieldset"
+    >
+      <div
+        className="ilo--fieldset--input error"
+      >
+        <label
+          className="ilo--fieldset--label"
+        >
+          Text Field Label
+        </label>
+        <input
+          className="ilo--input error"
+          disabled={false}
+          id="text"
+          name="text"
+          onChange={[Function]}
+          placeholder="Error Text Field"
+          required={false}
+          type="text"
+        />
+        <span
+          className="ilo--fieldset--error"
+        >
+          This one has an error
+        </span>
+      </div>
+    </fieldset>
+    <fieldset
+      className="ilo--fieldset"
+    >
+      <div
+        className="ilo--fieldset--input--dropdown error"
+      >
+        <label
+          className="ilo--fieldset--label"
+        >
+          Dropdown Label
+        </label>
+        <div
+          className="ilo--dropdown--wrapper"
+        >
+          <select
+            autoComplete="false"
+            className="ilo--dropdown error"
+            disabled={false}
+            id="dropdown"
+            name="dropdown"
+            onChange={[Function]}
+            required={false}
+            value="option one"
+          >
+            <option
+              disabled={false}
+              label="Option One"
+              value="option one"
+            />
+            <option
+              disabled={false}
+              label="Option Two"
+              value="option two"
+            />
+            <option
+              disabled={false}
+              label="Option Three"
+              value="option three"
+            />
+            <option
+              disabled={false}
+              label="Option Four"
+              value="four"
+            />
+            <option
+              disabled={false}
+              label="Option Five"
+              value="the fifth"
+            />
+          </select>
+        </div>
+        <span
+          className="ilo--fieldset--error"
+        >
+          This is an error message
+        </span>
+      </div>
+    </fieldset>
+    <fieldset
+      className="ilo--choice-group  ilo--fieldset"
+      id="multiplecheckboxes"
+    >
+      <legend
+        className="ilo--fieldset--legend"
+      >
+        Multiple Checkboxes
+      </legend>
+      <span
+        className="ilo--fieldset--error"
+      >
+        this one has an error
+      </span>
+      <div
+        className="ilo--fieldset--input--checkbox "
+      >
+        <label
+          className="ilo--fieldset--label"
+        >
+          Checkbox 0
+        </label>
+        <input
+          checked={false}
+          className="ilo--checkbox"
+          disabled={false}
+          name="checkbox0"
+          onChange={[Function]}
+          required={false}
+          type="checkbox"
+        />
+      </div>
+      <div
+        className="ilo--fieldset--input--checkbox "
+      >
+        <label
+          className="ilo--fieldset--label"
+        >
+          Checkbox 1
+        </label>
+        <input
+          checked={false}
+          className="ilo--checkbox"
+          disabled={false}
+          name="checkbox1"
+          onChange={[Function]}
+          required={false}
+          type="checkbox"
+        />
+      </div>
+      <div
+        className="ilo--fieldset--input--checkbox "
+      >
+        <label
+          className="ilo--fieldset--label"
+        >
+          Checkbox 2
+        </label>
+        <input
+          checked={false}
+          className="ilo--checkbox"
+          disabled={false}
+          name="checkbox2"
+          onChange={[Function]}
+          required={false}
+          type="checkbox"
+        />
+      </div>
+      <div
+        className="ilo--fieldset--input--checkbox "
+      >
+        <label
+          className="ilo--fieldset--label"
+        >
+          Checkbox 3
+        </label>
+        <input
+          checked={false}
+          className="ilo--checkbox"
+          disabled={false}
+          name="checkbox3"
+          onChange={[Function]}
+          required={false}
+          type="checkbox"
+        />
+      </div>
+      <div
+        className="ilo--fieldset--input--checkbox "
+      >
+        <label
+          className="ilo--fieldset--label"
+        >
+          Checkbox 4
+        </label>
+        <input
+          checked={false}
+          className="ilo--checkbox"
+          disabled={false}
+          name="checkbox4"
+          onChange={[Function]}
+          required={false}
+          type="checkbox"
+        />
+      </div>
+    </fieldset>
+    <fieldset
+      className="ilo--choice-group  ilo--fieldset"
+      id="radios"
+    >
+      <legend
+        className="ilo--fieldset--legend"
+      >
+        Radio Group
+      </legend>
+      <span
+        className="ilo--fieldset--error"
+      >
+        this one has an error
+      </span>
+      <div
+        className="ilo--fieldset--input--radio "
+      >
+        <label
+          className="ilo--fieldset--label"
+        >
+          Radio 0
+        </label>
+        <input
+          checked={false}
+          className="ilo--radio"
+          disabled={false}
+          name="radio0"
+          onChange={[Function]}
+          required={false}
+          type="radio"
+          value="radio"
+        />
+      </div>
+      <div
+        className="ilo--fieldset--input--radio "
+      >
+        <label
+          className="ilo--fieldset--label"
+        >
+          Radio 1
+        </label>
+        <input
+          checked={false}
+          className="ilo--radio"
+          disabled={false}
+          name="radio1"
+          onChange={[Function]}
+          required={false}
+          type="radio"
+          value="radio"
+        />
+      </div>
+      <div
+        className="ilo--fieldset--input--radio "
+      >
+        <label
+          className="ilo--fieldset--label"
+        >
+          Radio 2
+        </label>
+        <input
+          checked={false}
+          className="ilo--radio"
+          disabled={false}
+          name="radio2"
+          onChange={[Function]}
+          required={false}
+          type="radio"
+          value="radio"
+        />
+      </div>
+      <div
+        className="ilo--fieldset--input--radio "
+      >
+        <label
+          className="ilo--fieldset--label"
+        >
+          Radio 3
+        </label>
+        <input
+          checked={false}
+          className="ilo--radio"
+          disabled={false}
+          name="radio3"
+          onChange={[Function]}
+          required={false}
+          type="radio"
+          value="radio"
+        />
+      </div>
+      <div
+        className="ilo--fieldset--input--radio "
+      >
+        <label
+          className="ilo--fieldset--label"
+        >
+          Radio 4
+        </label>
+        <input
+          checked={false}
+          className="ilo--radio"
+          disabled={false}
+          name="radio4"
+          onChange={[Function]}
+          required={false}
+          type="radio"
+          value="radio"
+        />
+      </div>
+    </fieldset>
+    <fieldset
+      className="file-upload ilo--fieldset"
+    >
+      <div
+        className="ilo--fieldset--input--file error"
+      >
+        <label
+          className="ilo--fieldset--label"
+        >
+          File Upload Field Label
+        </label>
+        <input
+          className="ilo--file-upload error"
+          data-label="File Upload Field"
+          disabled={false}
+          id="fileupload"
+          multiple={false}
+          name="fileupload"
+          onChange={[Function]}
+          placeholder="File Upload Field"
+          required={false}
+          type="file"
+        />
+        <span
+          className="ilo--fieldset--error"
+        >
+          this one has an error
+        </span>
+      </div>
+    </fieldset>
+    <fieldset
+      className="ilo--fieldset"
+    >
+      <div
+        className="ilo--fieldset--input error"
+      >
+        <label
+          className="ilo--fieldset--label"
+        >
+          Date Picker Field Label
+        </label>
+        <input
+          className="ilo--datepicker error ilo--input"
+          disabled={false}
+          id="datepicker"
+          name="datepicker"
+          onChange={[Function]}
+          placeholder="MM/DD/YYYY"
+          required={false}
+          type="date"
+        />
+        <span
+          className="ilo--fieldset--error"
+        >
+          this one has an error
+        </span>
+      </div>
+    </fieldset>
+    <fieldset
+      className="ilo--fieldset"
+    >
+      <div
+        className="ilo--fieldset--input--text error"
+      >
+        <label
+          className="ilo--fieldset--label"
+        >
+          Number Picker Field Label
+        </label>
+        <input
+          className="ilo--numberpicker error ilo--input"
+          disabled={false}
+          id="text"
+          inputMode="numeric"
+          name="text"
+          onChange={[Function]}
+          pattern="[0-9]*"
+          placeholder="Number Picker Field"
+          required={false}
+          type="text"
+        />
+        <span
+          className="ilo--fieldset--error"
+        >
+          This one has an error
+        </span>
+      </div>
+    </fieldset>
+    <fieldset
+      className="ilo--fieldset"
+    >
+      <div
+        className="ilo--fieldset--input error"
+      >
+        <label
+          className="ilo--fieldset--label"
+        >
+          Textarea
+        </label>
+        <textarea
+          className="ilo--textarea error"
+          disabled={false}
+          name="textarea"
+          onChange={[Function]}
+          placeholder="Textarea"
+          required={false}
+          spellCheck={false}
+        />
+        <span
+          className="ilo--fieldset--error"
+        >
+          This one has an error
+        </span>
+      </div>
+    </fieldset>
+    <button
+      className="ilo--button ilo--button--large ilo--button--primary"
+      disabled={false}
+      onClick={[Function]}
+      type="submit"
+    >
+      <span
+        className="button__label"
+      >
+        Submit
+      </span>
+    </button>
+  </form>
 </div>
 `;
 
@@ -3685,7 +6205,6 @@ exports[`Storyshots Components/SearchField Default SearchField 1`] = `
       className="ilo--input"
       disabled={false}
       name="search"
-      onChange={[Function]}
       placeholder="Search Field"
       type="search"
     />
@@ -3714,7 +6233,6 @@ exports[`Storyshots Components/SearchField Disabled SearchField 1`] = `
       className="ilo--input"
       disabled={true}
       name="search"
-      onChange={[Function]}
       placeholder="Search Field"
       type="search"
     />
@@ -3740,10 +6258,9 @@ exports[`Storyshots Components/SearchField SearchField Error 1`] = `
     className="ilo--searchfield"
   >
     <input
-      className="ilo--input error"
+      className="ilo--input"
       disabled={false}
       name="search"
-      onChange={[Function]}
       placeholder="Search Field"
       type="search"
     />
