@@ -6760,3 +6760,301 @@ exports[`Storyshots Components/Tooltip Tooltip - Light, with Icon 1`] = `
   </div>
 </div>
 `;
+
+exports[`Storyshots Components/Video Video File 1`] = `
+<div
+  style={
+    Object {
+      "margin": "3em",
+    }
+  }
+>
+  <figure
+    className="image ilo--video"
+  >
+    <div
+      className="image ilo--video--wrapper"
+    >
+      <div
+        className="ilo--video--container"
+      >
+        <div
+          className="ilo--video--player"
+          style={
+            Object {
+              "height": "100%",
+              "width": "100%",
+            }
+          }
+        />
+        <picture
+          className="ilo--video--poster show"
+        >
+          <source
+            media="(min-width: 1440px)"
+            srcSet="https://placekitten.com/1200/1200"
+          />
+          <source
+            media="(min-width: 1200px)"
+            srcSet="https://placekitten.com/900/1200"
+          />
+          <source
+            media="(min-width: 800px)"
+            srcSet="https://placekitten.com/600/800"
+          />
+          <img
+            alt="My alt text"
+            src="https://placekitten.com/300/400"
+          />
+        </picture>
+        <div
+          className="ilo--video--controls notplayed"
+        >
+          <label
+            className="ilo--video--controls--duration show"
+          >
+            0:00
+          </label>
+          <button
+            className="ilo--video--controls--play"
+            onClick={[Function]}
+          >
+            <span>
+              Play
+            </span>
+          </button>
+          <div
+            className="ilo--video--controls--progress "
+          >
+            <input
+              className="ilo--video--controls--progress-playhead"
+              max={0.999999}
+              min={0}
+              onChange={[Function]}
+              onMouseDown={[Function]}
+              onMouseUp={[Function]}
+              step="any"
+              type="range"
+              value={0}
+            />
+            <progress
+              className="ilo--video--controls--progress-current"
+              max={1}
+              value={0}
+            />
+            <progress
+              className="ilo--video--controls--progress-loaded"
+              max={1}
+              value={0}
+            />
+            <div
+              className="ilo--video--controls--progress-played-container"
+            >
+              <label
+                className="ilo--video--controls--progress-played"
+                style={
+                  Object {
+                    "--playhead": "0%",
+                  }
+                }
+              >
+                0:00
+              </label>
+            </div>
+          </div>
+          <div
+            className="ilo--video--controls--volume "
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+          >
+            <button
+              className="ilo--video--controls--showvolume "
+              onClick={[Function]}
+            >
+              <span>
+                Volume
+              </span>
+            </button>
+            <div
+              className="ilo--video--controls--setvolume-container"
+            >
+              <input
+                className="ilo--video--controls--setvolume "
+                defaultValue={0.8}
+                max="10"
+                min="1"
+                onChange={[Function]}
+                onMouseLeave={[Function]}
+                step="0.5"
+                type="range"
+              />
+            </div>
+          </div>
+          <button
+            className="ilo--video--controls--fullscreen "
+            onClick={[Function]}
+          >
+            <span>
+              Fullscreen
+            </span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <figcaption
+      className="ilo--video--caption"
+    >
+      my video caption
+    </figcaption>
+  </figure>
+</div>
+`;
+
+exports[`Storyshots Components/Video Video YouTube 1`] = `
+<div
+  style={
+    Object {
+      "margin": "3em",
+    }
+  }
+>
+  <figure
+    className="image ilo--video"
+  >
+    <div
+      className="image ilo--video--wrapper"
+    >
+      <div
+        className="ilo--video--container"
+      >
+        <div
+          className="ilo--video--player youtube"
+          style={
+            Object {
+              "height": "100%",
+              "width": "100%",
+            }
+          }
+        />
+        <picture
+          className="ilo--video--poster show"
+        >
+          <source
+            media="(min-width: 1440px)"
+            srcSet="https://placekitten.com/1600/1200"
+          />
+          <source
+            media="(min-width: 1200px)"
+            srcSet="https://placekitten.com/1200/900"
+          />
+          <source
+            media="(min-width: 800px)"
+            srcSet="https://placekitten.com/800/600"
+          />
+          <img
+            alt="My alt text"
+            src="https://placekitten.com/400/300"
+          />
+        </picture>
+        <div
+          className="ilo--video--controls notplayed"
+        >
+          <label
+            className="ilo--video--controls--duration show"
+          >
+            0:00
+          </label>
+          <button
+            className="ilo--video--controls--play"
+            onClick={[Function]}
+          >
+            <span>
+              Play
+            </span>
+          </button>
+          <div
+            className="ilo--video--controls--progress "
+          >
+            <input
+              className="ilo--video--controls--progress-playhead"
+              max={0.999999}
+              min={0}
+              onChange={[Function]}
+              onMouseDown={[Function]}
+              onMouseUp={[Function]}
+              step="any"
+              type="range"
+              value={0}
+            />
+            <progress
+              className="ilo--video--controls--progress-current"
+              max={1}
+              value={0}
+            />
+            <progress
+              className="ilo--video--controls--progress-loaded"
+              max={1}
+              value={0}
+            />
+            <div
+              className="ilo--video--controls--progress-played-container"
+            >
+              <label
+                className="ilo--video--controls--progress-played"
+                style={
+                  Object {
+                    "--playhead": "0%",
+                  }
+                }
+              >
+                0:00
+              </label>
+            </div>
+          </div>
+          <div
+            className="ilo--video--controls--volume "
+            onMouseEnter={[Function]}
+            onMouseLeave={[Function]}
+          >
+            <button
+              className="ilo--video--controls--showvolume "
+              onClick={[Function]}
+            >
+              <span>
+                Volume
+              </span>
+            </button>
+            <div
+              className="ilo--video--controls--setvolume-container"
+            >
+              <input
+                className="ilo--video--controls--setvolume "
+                defaultValue={0.8}
+                max="10"
+                min="1"
+                onChange={[Function]}
+                onMouseLeave={[Function]}
+                step="0.5"
+                type="range"
+              />
+            </div>
+          </div>
+          <button
+            className="ilo--video--controls--fullscreen "
+            onClick={[Function]}
+          >
+            <span>
+              Fullscreen
+            </span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <figcaption
+      className="ilo--video--caption"
+    >
+      my video caption
+    </figcaption>
+  </figure>
+</div>
+`;
