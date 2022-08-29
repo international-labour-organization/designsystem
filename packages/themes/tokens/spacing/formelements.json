@@ -72,6 +72,30 @@
           },
           "width": { "value": "48px" }
         }
+      },
+      "uploadedfile": {
+        "default": {
+          "height": { "value": "48px" },
+          "border": {
+            "bottom": { "value": "2px" },
+            "left": { "value": "3px" },
+            "right": { "value": "2px" },
+            "top": { "value": "2px" }
+          },
+          "margin": {
+            "bottom": { "value": "0" },
+            "left": { "value": "0" },
+            "right": { "value": "0" },
+            "top": { "value": "24px" }
+          },
+          "padding": {
+            "bottom": { "value": "16px" },
+            "left": { "value": "11px" },
+            "right": { "value": "12px" },
+            "top": { "value": "13px" }
+          },
+          "width": { "value": "100%" }
+        }
       }
     }
   }

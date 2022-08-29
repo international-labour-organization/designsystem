@@ -1,8 +1,15 @@
+import { inputTypes } from "../../types";
+
 export interface InputProps {
   /**
    * The input's onChange callback.
    */
   callback: function;
+
+  /**
+   * Specify an optional className to be added to your input.
+   */
+  className?: string;
 
   /**
    * Is the input disabled?
@@ -15,9 +22,19 @@ export interface InputProps {
   error?: string | false;
 
   /**
+   * The input's helper text
+   */
+  helper: string | false;
+
+  /**
    * The input's id attribute
    */
   id?: string;
+
+  /**
+   * Does this input have a label?
+   */
+  label: string;
 
   /**
    * The input's name attribute
@@ -30,7 +47,17 @@ export interface InputProps {
   placeholder?: string;
 
   /**
+   * Specify whether this input is required
+   */
+  required?: boolean;
+
+  /**
+   * Does this Input have a tooltip?
+   */
+  tooltip?: string;
+
+  /**
    * The input's type.
    */
-  type: Required<string>;
+  type: Required<inputTypes>;
 }

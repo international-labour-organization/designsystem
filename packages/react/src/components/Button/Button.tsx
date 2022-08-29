@@ -11,6 +11,7 @@ const Button: FC<ButtonProps> = ({
   disabled = false,
   icon,
   iconPosition,
+  kind = "button",
   label,
   size = "large",
   target = "",
@@ -49,6 +50,7 @@ const Button: FC<ButtonProps> = ({
           className={ButtonClasses}
           onClick={(e) => handleClick(e)}
           disabled={disabled}
+          type={kind}
         >
           {label && <span className="button__label">{label}</span>}
           {icon && <Icon name={icon} hidden={true} />}

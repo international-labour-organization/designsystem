@@ -1,0 +1,19 @@
+@use "../tokens" as *;
+@use "../functions" as *;
+@import "../mixins";
+
+.ilo--datepicker {
+  &--range {
+    display: flex;
+
+    & > .ilo--fieldset {
+      width: 50%;
+
+      &:nth-of-type(1) {
+        .ilo--input {
+          border-right: none;
+        }
+      }
+    }
+  }
+}

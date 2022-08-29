@@ -3,6 +3,7 @@ import classNames from "classnames";
 import useGlobalSettings from "../../hooks/useGlobalSettings";
 import { DropdownProps } from "./Dropdown.props";
 import { Fieldset } from "../Fieldset";
+import { FormElement } from "../FormElement";
 
 const Dropdown: FC<DropdownProps> = ({
   autocomplete,
@@ -41,35 +42,39 @@ const Dropdown: FC<DropdownProps> = ({
   };
 
   return (
-    <Fieldset
-      inputid={name as any}
-      label={label}
-      helper={helper as any}
-      error={error as any}
-      tooltip={tooltip}
-    >
-      <div className={`${baseClass}--wrapper`}>
-        <select
-          id={id}
-          autoComplete={autocomplete}
-          name={name}
-          required={required}
-          onChange={handleChange}
-          disabled={disabled}
-          className={dropdownClasses}
-          value={currentvalue}
-        >
-          {options &&
-            options.map((option, i) => (
-              <option
-                disabled={option.disabled}
-                label={option.label}
-                value={option.value}
-                key={`${baseClass}--option--${i}`}
-              />
-            ))}
-        </select>
-      </div>
+    <Fieldset legend={false} fieldsetid={false}>
+      <FormElement
+        elemid={name as any}
+        label={label}
+        helper={helper as any}
+        error={error as any}
+        required={required as any}
+        tooltip={tooltip}
+        type={"dropdown"}
+      >
+        <div className={`${baseClass}--wrapper`}>
+          <select
+            id={id ? id : name}
+            autoComplete={autocomplete}
+            name={name}
+            required={required}
+            onChange={handleChange}
+            disabled={disabled}
+            className={dropdownClasses}
+            value={currentvalue}
+          >
+            {options &&
+              options.map((option, i) => (
+                <option
+                  disabled={option.disabled}
+                  label={option.label}
+                  value={option.value}
+                  key={`${baseClass}--option--${i}`}
+                />
+              ))}
+          </select>
+        </div>
+      </FormElement>
     </Fieldset>
   );
 };

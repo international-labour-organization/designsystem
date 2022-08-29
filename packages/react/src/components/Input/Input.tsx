@@ -2,14 +2,20 @@ import { FC } from "react";
 import classNames from "classnames";
 import useGlobalSettings from "../../hooks/useGlobalSettings";
 import { InputProps } from "./Input.props";
+import { Fieldset } from "../Fieldset";
+import { FormElement } from "../FormElement";
 
 const Input: FC<InputProps> = ({
   callback,
   disabled = false,
   error,
+  helper,
   id,
+  label,
   name,
   placeholder,
+  required,
+  tooltip,
   type = "text",
 }) => {
   const { prefix } = useGlobalSettings();
@@ -30,15 +36,27 @@ const Input: FC<InputProps> = ({
   };
 
   return (
-    <input
-      id={id}
-      name={name}
-      onChange={handleChange}
-      disabled={disabled}
-      placeholder={placeholder}
-      type={type}
-      className={InputClasses}
-    />
+    <Fieldset legend={false} fieldsetid={false}>
+      <FormElement
+        elemid={name as any}
+        label={label}
+        helper={helper as any}
+        error={error as any}
+        required={required as any}
+        tooltip={tooltip}
+      >
+        <input
+          id={id ? id : name}
+          name={name}
+          onChange={handleChange}
+          disabled={disabled}
+          placeholder={placeholder}
+          required={required as any}
+          type={type}
+          className={InputClasses}
+        />
+      </FormElement>
+    </Fieldset>
   );
 };
 

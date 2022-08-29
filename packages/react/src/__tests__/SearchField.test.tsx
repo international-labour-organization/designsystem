@@ -25,19 +25,6 @@ describe("<SearchField>", () => {
     expect(inputElement).toHaveAttribute("disabled", "");
   });
 
-  it("Should render `search field input` with error class", () => {
-    const { container } = render(
-      <SearchField {...searchFieldArgs.searchfielderror} />
-    );
-    expect(container.children[0]).not.toBeNull();
-    const inputElement = screen.getByPlaceholderText(
-      searchFieldArgs.searchfielderror.input.placeholder
-    );
-    expect(inputElement.getAttribute("class")).toEqual(
-      expect.stringContaining("error")
-    );
-  });
-
   it('calls "callback" prop on button click', () => {
     const onClick = jest.fn();
     render(<SearchField {...searchFieldArgs.searchfield} callback={onClick} />);

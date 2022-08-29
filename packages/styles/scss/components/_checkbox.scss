@@ -1,0 +1,113 @@
+@use "../tokens" as *;
+@use "../functions" as *;
+@import "../mixins";
+
+.ilo--checkbox {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border: none;
+  display: grid;
+  height: px-to-rem(24px);
+  margin: 0;
+  position: relative;
+  place-content: center;
+  width: px-to-rem(24px);
+  transform: none;
+
+  &:before {
+    content: "";
+    background-color: $color-base-neutrals-light;
+    border: px-to-rem(4px) solid $color-base-neutrals-light;
+    height: px-to-rem(18px);
+    left: px-to-rem(3px);
+    position: absolute;
+    top: px-to-rem(3px);
+    width: px-to-rem(18px);
+    z-index: 1;
+  }
+
+  &:after {
+    content: "";
+    background-color: $color-base-neutrals-light;
+    height: px-to-rem(24px);
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: px-to-rem(24px);
+    z-index: 0;
+  }
+
+  &:checked {
+    &:before {
+      background-color: $color-base-blue-dark;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center center;
+      border-color: $color-base-blue-dark;
+      @include dataurlicon("checkmark", $color-base-neutrals-lighter);
+    }
+
+    &:after {
+      background-color: $color-base-blue-dark;
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+
+    &:after {
+      background-color: $color-base-yellow;
+    }
+
+    &:checked {
+      &:before {
+        border-color: $color-base-blue-dark;
+      }
+    }
+  }
+
+  &:focus {
+    &:after {
+      background-color: $color-base-yellow;
+    }
+
+    &:checked {
+      &:before {
+        border-color: $color-base-blue-dark;
+      }
+    }
+  }
+
+  &:disabled {
+    opacity: 45%;
+    pointer-events: none;
+  }
+
+  &:invalid,
+  &.error,
+  .error & {
+    &:after {
+      background-color: $color-base-red-medium;
+    }
+
+    &:checked {
+      &:before {
+        border-color: $color-base-blue-dark;
+      }
+    }
+  }
+}
+
+.ilo--fieldset--input--checkbox {
+  align-items: center;
+  clear: both;
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: px-to-rem(22px);
+
+  .ilo--fieldset--label {
+    font-weight: 400;
+    margin-right: px-to-rem($spacing-padding-1);
+    margin-top: 2px;
+  }
+}
