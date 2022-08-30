@@ -111,6 +111,30 @@ export const SecondaryButton = ButtonTemplate.bind({});
 export const TertiaryButton = ButtonTemplate.bind({});
 
 /**
+ * Secondary Button Instance
+ *
+ */
+export const SecondaryButtonM = ButtonTemplate.bind({});
+
+/**
+ * Tertiary Button Instance
+ *
+ */
+export const TertiaryButtonM = ButtonTemplate.bind({});
+
+/**
+ * Secondary Button Instance
+ *
+ */
+export const SecondaryButtonSm = ButtonTemplate.bind({});
+
+/**
+ * Tertiary Button Instance
+ *
+ */
+export const TertiaryButtonSm = ButtonTemplate.bind({});
+
+/**
  * Disabled Button Instance
  *
  */
@@ -260,6 +284,18 @@ export const MAlertIconRightButton = ButtonTemplate.bind({});
  */
 export const SmAlertIconRightButton = ButtonTemplate.bind({});
 
+/**
+ * Secondary Button Instance
+ *
+ */
+export const ButtonAlertM = ButtonTemplate.bind({});
+
+/**
+ * Tertiary Button Instance
+ *
+ */
+export const ButtonAlertSm = ButtonTemplate.bind({});
+
 // enumerate the props for the large button
 BaseButton.args = buttonArgs.large;
 BaseButton.args.url = "#";
@@ -289,6 +325,36 @@ SecondaryButton.storyName = "Secondary Button";
 TertiaryButton.args = buttonArgs.tertiary;
 TertiaryButton.args.url = "";
 TertiaryButton.storyName = "Tertiary Button";
+
+// enumerate the props for the secondary button
+SecondaryButtonM.args = buttonArgs.secondarym;
+SecondaryButtonM.args.url = "";
+SecondaryButtonM.storyName = "Secondary Medium";
+
+// enumerate the props for the tertiary button
+TertiaryButtonM.args = buttonArgs.tertiarym;
+TertiaryButtonM.args.url = "";
+TertiaryButtonM.storyName = "Tertiary Medium";
+
+// enumerate the props for the secondary button
+SecondaryButtonSm.args = buttonArgs.secondarysm;
+SecondaryButtonSm.args.url = "";
+SecondaryButtonSm.storyName = "Secondary Small";
+
+// enumerate the props for the tertiary button
+TertiaryButtonSm.args = buttonArgs.tertiarysm;
+TertiaryButtonSm.args.url = "";
+TertiaryButtonSm.storyName = "Tertiary Small";
+
+// enumerate the props for the tertiary button
+ButtonAlertM.args = buttonArgs.alertm;
+ButtonAlertM.args.url = "";
+ButtonAlertM.storyName = "Alert Medium";
+
+// enumerate the props for the secondary button
+ButtonAlertSm.args = buttonArgs.alertsm;
+ButtonAlertSm.args.url = "";
+ButtonAlertSm.storyName = "Alert Small";
 
 // enumerate the props for a disabled button
 DisabledButton.args = buttonArgs.disabled;

@@ -43,6 +43,48 @@ const tertiary: ButtonProps = {
   url: "",
 };
 
+const secondarym: ButtonProps = {
+  label: "Secondary medium",
+  size: "medium",
+  type: "secondary",
+  url: "",
+};
+
+const tertiarym: ButtonProps = {
+  label: "Tertiary Medium",
+  size: "medium",
+  type: "tertiary",
+  url: "",
+};
+
+const secondarysm: ButtonProps = {
+  label: "Secondary Small",
+  size: "small",
+  type: "secondary",
+  url: "",
+};
+
+const tertiarysm: ButtonProps = {
+  label: "Tertiary Small",
+  size: "small",
+  type: "tertiary",
+  url: "",
+};
+
+const alertm: ButtonProps = {
+  label: "Alert Medium",
+  size: "medium",
+  type: "alert",
+  url: "",
+};
+
+const alertsm: ButtonProps = {
+  label: "Alert Small",
+  size: "small",
+  type: "alert",
+  url: "",
+};
+
 const alert: ButtonProps = {
   label: "Alert Button",
   size: "large",
@@ -274,7 +316,13 @@ const ButtonArgs = {
   primary,
   secondary,
   tertiary,
+  secondarym,
+  tertiarym,
+  secondarysm,
+  tertiarysm,
   alert,
+  alertm,
+  alertsm,
   disabled,
   iconleftlgprimary,
   iconleftmprimary,
