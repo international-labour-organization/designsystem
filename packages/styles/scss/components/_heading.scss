@@ -1,131 +1,70 @@
-.ilo--h1 {
+.ilo--h1,
+.ilo--h2,
+.ilo--h3,
+.ilo--h4,
+.ilo--h5,
+.ilo--h6 {
   color: inherit;
-  font-family: Overpass;
-  font-size: 57px;
-  font-style: normal;
+  font-family: $fonts-display;
   font-weight: 700;
-  line-height: 65px;
-  letter-spacing: -0.035em;
 
   &--default {
-    color: #2d2d2d;
+    color: $color-font-base;
   }
 
   &--actionable {
-    color: #230050;
+    color: $color-base-purple;
   }
 
   &--light {
-    color: #ffffff;
+    color: $color-base-neutrals-white;
+  }
+}
+
+.ilo--h1 {
+  @include font-styles("headline-2");
+
+  @include breakpoint("medium") {
+    @include font-styles("headline-1");
   }
 }
 
 .ilo--h2 {
-  color: inherit;
-  font-family: Overpass;
-  font-size: 46px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 52px;
-  letter-spacing: -0.035em;
+  @include font-styles("headline-3");
 
-  &--default {
-    color: #2d2d2d;
-  }
-
-  &--actionable {
-    color: #230050;
-  }
-
-  &--light {
-    color: #ffffff;
+  @include breakpoint("medium") {
+    @include font-styles("headline-2");
   }
 }
 
 .ilo--h3 {
-  color: inherit;
-  font-family: Overpass;
-  font-size: 36px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 44px;
-  letter-spacing: -0.035em;
+  @include font-styles("headline-4");
 
-  &--default {
-    color: #2d2d2d;
-  }
-
-  &--actionable {
-    color: #230050;
-  }
-
-  &--light {
-    color: #ffffff;
+  @include breakpoint("medium") {
+    @include font-styles("headline-3");
   }
 }
 
 .ilo--h4 {
-  color: inherit;
-  font-family: Overpass;
-  font-size: 29px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 36px;
-  letter-spacing: -0.035em;
+  @include font-styles("headline-5");
 
-  &--default {
-    color: #2d2d2d;
-  }
-
-  &--actionable {
-    color: #230050;
-  }
-
-  &--light {
-    color: #ffffff;
+  @include breakpoint("medium") {
+    @include font-styles("headline-4");
   }
 }
 
 .ilo--h5 {
-  color: inherit;
-  font-family: Overpass;
-  font-size: 23px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 29px;
-  letter-spacing: -0.035em;
+  @include font-styles("headline-6");
 
-  &--default {
-    color: #2d2d2d;
-  }
-
-  &--actionable {
-    color: #230050;
-  }
-
-  &--light {
-    color: #ffffff;
+  @include breakpoint("medium") {
+    @include font-styles("headline-5");
   }
 }
 
 .ilo--h6 {
-  color: inherit;
-  font-family: Overpass;
-  font-size: 19px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 24px;
-  letter-spacing: -0.02em;
+  @include font-styles("headline-6");
 
-  &--default {
-    color: #2d2d2d;
-  }
-
-  &--actionable {
-    color: #230050;
-  }
-
-  &--light {
-    color: #ffffff;
+  @include breakpoint("medium") {
+    @include font-styles("headline-6");
   }
 }
