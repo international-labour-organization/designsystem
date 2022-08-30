@@ -226,7 +226,6 @@ importers:
       '@storybook/addon-docs': ^6.4.19
       '@storybook/addon-essentials': ^6.4.12
       '@storybook/addon-links': ^6.4.12
-      '@storybook/addon-storyshots': ^6.4.19
       '@storybook/builder-webpack5': ^6.4.12
       '@storybook/client-api': ^6.4.0
       '@storybook/manager-webpack5': ^6.4.12
@@ -292,7 +291,6 @@ importers:
       '@storybook/addon-docs': 6.4.22_14028138f0aa6b629527d097a55ef8ff
       '@storybook/addon-essentials': 6.4.22_14028138f0aa6b629527d097a55ef8ff
       '@storybook/addon-links': 6.4.22_react-dom@17.0.2+react@17.0.2
-      '@storybook/addon-storyshots': 6.4.22_14028138f0aa6b629527d097a55ef8ff
       '@storybook/builder-webpack5': 6.4.22_6adfeff70e2c6dc138b42ce300ec3750
       '@storybook/client-api': 6.4.22_react-dom@17.0.2+react@17.0.2
       '@storybook/manager-webpack5': 6.4.22_6adfeff70e2c6dc138b42ce300ec3750

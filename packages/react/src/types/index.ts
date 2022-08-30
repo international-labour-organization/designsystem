@@ -1,6 +1,6 @@
 export type accordionSize = "small" | "large";
 export type buttonFunctions = "button" | "submit" | "reset";
-export type buttonTypes = "primary" | "secondary" | "tertiary";
+export type buttonTypes = "primary" | "secondary" | "tertiary" | "alert";
 export type calloutTypes = "info" | "error" | "success" | "warning";
 export type headingLevel = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
 export type fieldTypes =
