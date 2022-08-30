@@ -43,6 +43,13 @@ const tertiary: ButtonProps = {
   url: "",
 };
 
+const alert: ButtonProps = {
+  label: "Alert Button",
+  size: "large",
+  type: "alert",
+  url: "",
+};
+
 const disabled: ButtonProps = {
   disabled: true,
   label: "Disabled Button",
@@ -206,6 +213,57 @@ const iconrightsmtertiary: ButtonProps = {
   url: "",
 };
 
+const iconleftlgalert: ButtonProps = {
+  icon: "close",
+  label: "Icon on left",
+  size: "large",
+  type: "alert",
+  url: "",
+};
+
+const iconleftmalert: ButtonProps = {
+  icon: "close",
+  label: "Icon on left",
+  size: "medium",
+  type: "alert",
+  url: "",
+};
+
+const iconleftsmalert: ButtonProps = {
+  icon: "close",
+  label: "Icon on left",
+  size: "small",
+  type: "alert",
+  url: "",
+};
+
+const iconrightlgalert: ButtonProps = {
+  icon: "close",
+  iconPosition: "right",
+  label: "Icon on right",
+  size: "large",
+  type: "alert",
+  url: "",
+};
+
+const iconrightmalert: ButtonProps = {
+  icon: "close",
+  iconPosition: "right",
+  label: "Icon on right",
+  size: "medium",
+  type: "alert",
+  url: "",
+};
+
+const iconrightsmalert: ButtonProps = {
+  icon: "close",
+  iconPosition: "right",
+  label: "Icon on right",
+  size: "small",
+  type: "alert",
+  url: "",
+};
+
 /**
  * Sample prop definitions for Button's enumerable properties (imported in stories and tests).
  */
@@ -216,6 +274,7 @@ const ButtonArgs = {
   primary,
   secondary,
   tertiary,
+  alert,
   disabled,
   iconleftlgprimary,
   iconleftmprimary,
@@ -235,6 +294,12 @@ const ButtonArgs = {
   iconrightlgtertiary,
   iconrightmtertiary,
   iconrightsmtertiary,
+  iconleftlgalert,
+  iconleftmalert,
+  iconleftsmalert,
+  iconrightlgalert,
+  iconrightmalert,
+  iconrightsmalert,
 };
 
 export default ButtonArgs;

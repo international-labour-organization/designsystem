@@ -179,6 +179,7 @@
     color: map-get($color, "ux", "labels", "actionable");
 
     &:hover {
+      background-color: map-get($color, "ux", "background", "hover");
       border: map-get($borders, "small")
         map-get($color, "ux", "borders", "hover") solid;
     }
@@ -189,5 +190,19 @@
     border: map-get($borders, "base")
       map-get($color, "ux", "background", "highlight") solid;
     color: map-get($color, "ux", "labels", "actionable");
+  }
+
+  &--alert {
+    background-color: map-get($color, "ux", "background", "alert");
+    border: map-get($borders, "small") map-get($color, "ux", "borders", "alert")
+      solid;
+    color: map-get($color, "ux", "labels", "alert");
+
+    &:hover {
+      background-color: map-get($color, "ux", "background", "hover");
+      border: map-get($borders, "small")
+        map-get($color, "ux", "borders", "hover") solid;
+      color: map-get($color, "ux", "labels", "hover");
+    }
   }
 }
