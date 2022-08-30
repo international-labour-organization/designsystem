@@ -31,7 +31,7 @@
       }
 
       .ilo--icon {
-        left: calc($spacing-icons-icon-padding-lg - 4px);
+        left: calc($spacing-icons-icon-padding-lg - 9px);
         top: calc($spacing-boxpadding-button-icon-large-top - 3px);
       }
     }
@@ -43,7 +43,7 @@
       }
 
       .ilo--icon {
-        right: calc($spacing-icons-icon-padding-lg - 4px);
+        right: calc($spacing-icons-icon-padding-lg - 9px);
         top: calc($spacing-boxpadding-button-icon-large-top - 3px);
       }
     }
@@ -78,7 +78,7 @@
         }
 
         .ilo--icon {
-          left: calc($spacing-icons-icon-padding-m - 4px);
+          left: calc($spacing-icons-icon-padding-m - 9px);
           top: calc($spacing-boxpadding-button-icon-medium-top - 6px);
         }
       }
@@ -90,7 +90,7 @@
         }
 
         .ilo--icon {
-          right: calc($spacing-icons-icon-padding-m - 4px);
+          right: calc($spacing-icons-icon-padding-m - 9px);
           top: calc($spacing-boxpadding-button-icon-medium-top - 6px);
         }
       }
@@ -118,7 +118,7 @@
         }
 
         .ilo--icon {
-          left: calc($spacing-icons-icon-padding-sm - 4px);
+          left: calc($spacing-icons-icon-padding-sm - 9px);
           top: calc($spacing-boxpadding-button-icon-small-top - 4px);
         }
       }
@@ -130,7 +130,7 @@
         }
 
         .ilo--icon {
-          right: calc($spacing-icons-icon-padding-sm - 4px);
+          right: calc($spacing-icons-icon-padding-sm - 9px);
           top: calc($spacing-boxpadding-button-icon-small-top - 4px);
         }
       }
