@@ -10,7 +10,7 @@
     @include font-styles("legend");
     @include textmargin(
       "margin-bottom",
-      map-get($spacing, "padding-4"),
+      map-get($spacing, "padding-5"),
       "legend",
       "display",
       "label-small",
