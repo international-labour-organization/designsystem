@@ -7,7 +7,7 @@
     font-family: $fonts-display;
     font-weight: map-get($type, "weights", "label");
     @include font-styles("headline-5");
-    @include textmargin("margin-bottom", 34px, "headline-5", "display", 0, 0);
+    @include textmargin("margin-bottom", 30px, "headline-5", "display", 0, 0);
   }
 
   &--links {
