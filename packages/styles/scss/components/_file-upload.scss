@@ -46,6 +46,10 @@
     }
   }
 
+  &:focus-visible {
+    outline: none;
+  }
+
   &:active {
     &:before {
       background-color: map-get($color, "ux", "background", "active");
