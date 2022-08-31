@@ -175,7 +175,7 @@ const hastooltip: FormProps = {
     {
       choicegroupid: "radios",
       field: ChoiceGroupArgs.radiostooltip.items,
-      grouptooltip: ChoiceGroupArgs.radioshelper.grouptooltip,
+      grouptooltip: ChoiceGroupArgs.radiostooltip.grouptooltip,
       legend: "Radio Group",
       type: "radio",
     },
