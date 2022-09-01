@@ -120,7 +120,7 @@
 
     &:not(:last-child) {
       .ilo--notification--dialog & {
-        margin-bottom: px-to-rem($spacing-padding-3);
+        margin-bottom: px-to-rem(19px);
       }
     }
   }
