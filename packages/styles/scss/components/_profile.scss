@@ -13,7 +13,7 @@
 
   &--contents {
     .id {
-      margin-left: calc(18.65% + 14px);
+      margin-left: calc(18.65% + 11px);
       padding-top: 5px;
 
       &:first-of-type {
@@ -40,14 +40,14 @@
     display: block;
     font-family: $fonts-display;
     font-weight: map-get($type, "weights", "label");
-    margin-left: 14px;
+    margin-left: 11px;
     @include font-styles("body-xs");
   }
 
   &--role {
     display: block;
     font-family: $fonts-copy;
-    margin-left: 14px;
+    margin-left: 11px;
     @include font-styles("body-xss");
   }
 
