@@ -101,6 +101,10 @@
       .ilo--notification--dialog & {
         margin-bottom: px-to-rem($spacing-padding-3);
       }
+
+      .ilo--notification--inline & {
+        max-width: 40%;
+      }
     }
   }
 
