@@ -366,8 +366,7 @@
       background-size: px-to-rem(86px) px-to-rem(48px);
       margin: px-to-rem(map-get($spacing, "padding-4")) 0
         px-to-rem(map-get($spacing, "padding-8")) 0;
-      padding: px-to-rem(map-get($spacing, "padding-10")) 0
-        px-to-rem(map-get($spacing, "padding-6"))
+      padding: px-to-rem(62px) 0 px-to-rem(map-get($spacing, "padding-6"))
         px-to-rem(map-get($spacing, "padding-6"));
 
       p {
