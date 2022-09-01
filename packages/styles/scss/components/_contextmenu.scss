@@ -50,7 +50,7 @@
     display: inline-block;
     font-family: $fonts-copy;
     font-weight: map-get($type, "weights", "section");
-    padding: px-to-rem(14px) 0;
+    padding: px-to-rem($spacing-padding-2) 0;
     text-decoration: none;
     width: 100%;
     @include font-styles("body-xxs");
