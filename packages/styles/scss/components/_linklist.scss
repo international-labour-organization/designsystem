@@ -66,7 +66,7 @@
   }
 
   &--link {
-    background-position: calc(100% - $spacing-padding-1-5) center;
+    background-position: calc(100% - $spacing-padding-0-5) center;
     background-repeat: no-repeat;
     background-size: px-to-rem($spacing-padding-3) px-to-rem($spacing-padding-3);
     border-bottom: px-to-rem($borders-base) solid $color-base-neutrals-lighter;
