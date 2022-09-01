@@ -37,6 +37,28 @@ const searchfielddisabled: SearchFieldProps = {
   },
 };
 
+const searchfieldlabel: SearchFieldProps = {
+  action: "",
+  callback: "",
+  input: {
+    label: "Search Field",
+    name: "search",
+    placeholder: "Search Field",
+    type: "search",
+  },
+};
+
+const searchfieldhelper: SearchFieldProps = {
+  action: "",
+  callback: "",
+  input: {
+    helper: "Search Field Helper text",
+    name: "search",
+    placeholder: "Search Field",
+    type: "search",
+  },
+};
+
 /**
  * Sample prop definitions for SearchField's enumerable properties (imported in stories and test)
  */
@@ -44,6 +66,8 @@ const SearchFieldArgs = {
   searchfield,
   searchfielderror,
   searchfielddisabled,
+  searchfieldlabel,
+  searchfieldhelper,
 };
 
 export default SearchFieldArgs;

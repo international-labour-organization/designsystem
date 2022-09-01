@@ -48,6 +48,7 @@
     );
     @include bordervalues("input", "formelements", "focus");
     padding-left: calc($spacing-formelements-input-default-padding-left - 1px);
+    outline: none;
   }
 
   &:disabled {

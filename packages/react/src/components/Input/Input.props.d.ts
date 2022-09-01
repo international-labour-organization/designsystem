@@ -4,7 +4,7 @@ export interface InputProps {
   /**
    * The input's onChange callback.
    */
-  callback: function;
+  callback?: function;
 
   /**
    * Specify an optional className to be added to your input.
@@ -24,7 +24,7 @@ export interface InputProps {
   /**
    * The input's helper text
    */
-  helper: string | false;
+  helper?: string | false;
 
   /**
    * The input's id attribute
@@ -34,7 +34,7 @@ export interface InputProps {
   /**
    * Does this input have a label?
    */
-  label: string;
+  label?: string;
 
   /**
    * The input's name attribute

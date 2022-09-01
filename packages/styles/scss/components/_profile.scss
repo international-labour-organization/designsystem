@@ -13,7 +13,7 @@
 
   &--contents {
     .id {
-      margin-left: calc(18.65% + 14px);
+      margin-left: calc(18.65% + 11px);
       padding-top: 5px;
 
       &:first-of-type {
@@ -28,7 +28,7 @@
     .id:first-of-type:last-of-type,
     .id:nth-of-type(2):last-of-type {
       border-bottom: 2px solid $color-base-neutrals-lighter;
-      padding-bottom: 7px;
+      padding-bottom: 11px;
     }
 
     .id:first-of-type:last-of-type {
@@ -40,14 +40,14 @@
     display: block;
     font-family: $fonts-display;
     font-weight: map-get($type, "weights", "label");
-    margin-left: 14px;
+    margin-left: 11px;
     @include font-styles("body-xs");
   }
 
   &--role {
     display: block;
     font-family: $fonts-copy;
-    margin-left: 14px;
+    margin-left: 11px;
     @include font-styles("body-xss");
   }
 
@@ -68,7 +68,7 @@
     @include font-styles("body-xs");
 
     span {
-      background-position: right center;
+      background-position: calc(100% - 10px) center;
       background-repeat: no-repeat;
       background-size: 24px 24px;
       padding-right: 32px;

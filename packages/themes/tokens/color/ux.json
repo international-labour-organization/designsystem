@@ -26,6 +26,7 @@
         "darkbg": { "value": "{color.base.neutrals.white}" },
         "default": { "value": "{color.base.neutrals.medium}" },
         "error": { "value": "{color.base.red.dark}" },
+        "focus": { "value": "{color.base.blue.dark}" },
         "hover": { "value": "{color.base.blue.medium}" },
         "active": { "value": "{color.base.blue.light}" },
         "alert": { "value": "{color.base.neutrals.white}" }
