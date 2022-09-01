@@ -21,7 +21,7 @@
     }
 
     .ilo--notification--content {
-      padding: calc(px-to-rem($spacing-padding-3) - 2px)
+      padding: calc(px-to-rem($spacing-padding-3) + 2px)
         px-to-rem($spacing-padding-3);
     }
   }
