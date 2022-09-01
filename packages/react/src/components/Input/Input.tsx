@@ -39,7 +39,7 @@ const Input: FC<InputProps> = ({
     <Fieldset legend={false} fieldsetid={false}>
       <FormElement
         elemid={name as any}
-        label={label}
+        label={label as any}
         helper={helper as any}
         error={error as any}
         required={required as any}

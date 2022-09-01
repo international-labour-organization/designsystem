@@ -1,12 +1,9 @@
 @use "../tokens" as *;
+@use "../functions" as *;
 @import "../mixins";
 
 .ilo--searchfield {
   display: flex;
-
-  .ilo--input {
-    width: calc(100% - #{$spacing-padding-6});
-  }
 
   &--button {
     background-color: map-get(
@@ -56,10 +53,14 @@
         $color-formelements-inputbutton-active-color
       );
     }
-  }
 
-  .ilo--input:disabled + .ilo--searchfield--button {
-    opacity: 45%;
-    pointer-events: none;
+    .haslabel & {
+      margin-top: px-to-rem(28px);
+    }
+
+    &:disabled {
+      opacity: 45%;
+      pointer-events: none;
+    }
   }
 }
