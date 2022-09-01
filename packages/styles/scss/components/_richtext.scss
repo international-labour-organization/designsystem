@@ -371,7 +371,7 @@
         px-to-rem(map-get($spacing, "padding-6"));
 
       p {
-        margin-bottom: px-to-rem(map-get($spacing, "padding-4"));
+        margin-bottom: px-to-rem(map-get($spacing, "padding-3"));
         padding: 0 px-to-rem(map-get($spacing, "padding-6")) 0 0;
         position: relative;
         @include font-styles("pull-quote-lg");
