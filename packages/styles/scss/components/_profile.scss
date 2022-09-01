@@ -68,7 +68,7 @@
     @include font-styles("body-xs");
 
     span {
-      background-position: right center;
+      background-position: calc(100% - 10px) center;
       background-repeat: no-repeat;
       background-size: 24px 24px;
       padding-right: 32px;
