@@ -185,7 +185,7 @@
       px-to-rem(map-get($spacing, "padding-5")) 0;
     padding: px-to-rem(map-get($spacing, "padding-5")) 0
       px-to-rem(map-get($spacing, "padding-3"))
-      px-to-rem(map-get($spacing, "padding-3"));
+      px-to-rem(map-get($spacing, "padding-4"));
     position: relative;
     width: 100%;
     @include dataurlicon("triangle", $color-ux-background-default);
@@ -194,7 +194,7 @@
       color: $color-font-blockquote;
       font-weight: 300;
       margin-bottom: px-to-rem(map-get($spacing, "padding-3"));
-      padding: 0 px-to-rem(map-get($spacing, "padding-8")) 0 0;
+      padding: 0 px-to-rem(map-get($spacing, "padding-6")) 0 0;
       position: relative;
       @include font-styles("pull-quote-sm");
 
