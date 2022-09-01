@@ -29,7 +29,7 @@
 
   &--links--item {
     &.indented {
-      padding-left: px-to-rem(24px);
+      padding-left: px-to-rem($spacing-padding-4);
 
       .ilo--link-list--label {
         display: block;
