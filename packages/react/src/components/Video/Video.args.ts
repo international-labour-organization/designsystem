@@ -7,19 +7,19 @@ const videofile: VideoProps = {
   url: [
     {
       breakpoint: 0,
-      src: "https://placekitten.com/300/400",
+      src: "https://placekitten.com/g/400/300",
     },
     {
       breakpoint: 800,
-      src: "https://placekitten.com/600/800",
+      src: "https://placekitten.com/g/800/600",
     },
     {
       breakpoint: 1200,
-      src: "https://placekitten.com/900/1200",
+      src: "https://placekitten.com/g/1200/900",
     },
     {
       breakpoint: 1440,
-      src: "https://placekitten.com/1200/1200",
+      src: "https://placekitten.com/g/1600/1200",
     },
   ],
   video: {

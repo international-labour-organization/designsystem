@@ -15,11 +15,6 @@
     line-height: 0;
   }
 
-  &--img,
-  img {
-    width: 100%;
-  }
-
   &--caption {
     border-left: $spacing-ux-caption-border-left solid
       $color-ux-caption-border-left;
@@ -75,12 +70,25 @@
     object-fit: cover;
     height: 100%;
     left: 0;
+    max-height: 100%;
+    max-width: 100%;
+    overflow: hidden;
     position: absolute;
     top: 0;
     width: 100%;
 
     &.show {
       display: block;
+    }
+
+    & img,
+    & source {
+      height: auto;
+      left: 50%;
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
     }
   }
 
