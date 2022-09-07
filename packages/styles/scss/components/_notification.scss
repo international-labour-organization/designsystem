@@ -21,7 +21,7 @@
     }
 
     .ilo--notification--content {
-      padding: calc(px-to-rem($spacing-padding-3) - 2px)
+      padding: calc(px-to-rem($spacing-padding-3) + 2px)
         px-to-rem($spacing-padding-3);
     }
   }
@@ -33,7 +33,7 @@
       align-items: center;
       display: flex;
       justify-items: space-between;
-      padding: px-to-rem(28px) px-to-rem($spacing-padding-3);
+      padding: px-to-rem(18px) px-to-rem($spacing-padding-3);
     }
   }
 
@@ -85,7 +85,7 @@
     @include font-styles("body-small");
 
     .ilo--notification--dialog & {
-      margin-bottom: px-to-rem($spacing-padding-3);
+      margin-bottom: px-to-rem($spacing-padding-1-5);
     }
   }
 
@@ -100,6 +100,10 @@
     &:not(:last-child) {
       .ilo--notification--dialog & {
         margin-bottom: px-to-rem($spacing-padding-3);
+      }
+
+      .ilo--notification--inline & {
+        max-width: 40%;
       }
     }
   }
@@ -116,7 +120,7 @@
 
     &:not(:last-child) {
       .ilo--notification--dialog & {
-        margin-bottom: px-to-rem($spacing-padding-3);
+        margin-bottom: px-to-rem(19px);
       }
     }
   }
