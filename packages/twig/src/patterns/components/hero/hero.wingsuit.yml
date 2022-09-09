@@ -1,0 +1,108 @@
+hero:
+  use: '@components/hero/hero.twig'
+  label: Hero
+  description: The Hero presents an image banner.
+  fields:
+    image:
+      label: Image
+      type: pattern
+      preview:
+        id: image
+        fields:
+          alt:
+            type: string
+            label: Alt
+            description: alt text for the image
+            required: true
+            preview: 'My alt text'
+          caption:
+            type: string
+            label: Caption
+            description: string
+            preview: 'my image caption'
+          credit:
+            type: string
+            label: Credit
+            description: string
+            preview: 'Photo: copyright 2022 Person S. Name'
+            required: true
+          url:
+            type: object
+            label: URL
+            description: The image url(s), and at which breakpoint each should be displayed.
+            required: true
+            preview:
+              - breakpoint: 0
+                src: 'https://place-hold.it/400x300?text=SmallBreakpointImage'
+              - breakpoint: 800
+                src: 'https://place-hold.it/800x600?text=MediumBreakpointImage'
+              - breakpoint: 1200
+                src: 'https://place-hold.it/1200x900?text=LargeBreakpointImage'
+              - breakpoint: 1440
+                src: 'https://place-hold.it/1600x1200?text=LargestBreakpointImage'
+    heroCard:
+      label: heroCard
+      type: pattern
+      preview: 
+        id: heroCard
+        fields:
+          alignment:
+            type: string
+            label: Alignment
+            description: alignment for card
+            preview: "center"
+          datecopy:
+            type: string
+            label: Date copy
+            description: Date byline copy
+            preview: "11 February 2021"
+          eyebrow:
+            type: string
+            label: Date copy
+            description: Date byline copy
+            preview: "11 February 2021"
+          intro:
+            type: string
+            label: Intro
+            description: Intro text for the hero
+            preview: "Brief intro text - ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+          socials:
+            type: object
+            label: Social links
+            description: The social links to include in the hero
+            preview:
+              - label: "Facebook",
+                url: "https://www.facebook.com/",
+                icon: "facebook",
+              - label: "Linkedin",
+                url: "https://www.linkedin.com/",
+                icon: "linkedin",
+          title:
+            type: string
+            label: Title
+            description: This is the title for the hero card
+            preview: "This is an centered aligned article headline that is more than two lines long"
+  settings:
+    theme:
+      type: select
+      label: Theme
+      description: The theme type for the hero
+      required: false
+      preview: 'light'
+      options:
+        dark: Dark
+        light: Light
+    types:
+      type: select
+      label: Types
+      description: The type of hero
+      required: false
+      preview: 'publication'
+      options:
+        home: Home
+        publication: Publication
+        graphic: Graphic
+        project: Project
+        article: Article
+        portal: Portal
+  visibility: storybook
