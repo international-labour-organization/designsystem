@@ -29,12 +29,12 @@ herocard:
       label: Social links
       description: The social links to include in the hero
       preview:
-        - label: "Facebook",
-          url: "https://www.facebook.com/",
-          icon: "facebook",
-        - label: "Linkedin",
-          url: "https://www.linkedin.com/",
-          icon: "linkedin",
+        - label: "Facebook"
+          url: "https://www.facebook.com/"
+          icon: "facebook"
+        - label: "Linkedin"
+          url: "https://www.linkedin.com/"
+          icon: "linkedin"
     title:
       type: string
       label: Title
