@@ -14,7 +14,7 @@
       "borders": {
         "default": { "value": "{color.base.neutrals.light}" },
         "error": { "value": "{color.base.red.dark}" },
-        "highlight": { "value": "{color.base.purple}" },
+        "highlight": { "value": "{color.base.purple.medium}" },
         "hover": { "value": "{color.base.blue.medium}" },
         "focus": { "value": "{color.base.yellow}" },
         "active": { "value": "{color.base.blue.medium}" },

@@ -52,6 +52,12 @@
     - ILO Icons
   sizes:
     - glyph
+- name: facebook
+  friendly_name: facebook
+  aliases:
+    - ILO Icons
+  sizes:
+    - glyph
 - name: fullscreen
   friendly_name: fullscreen
   aliases:
@@ -66,6 +72,12 @@
     - glyph
 - name: info
   friendly_name: info
+  aliases:
+    - ILO Icons
+  sizes:
+    - glyph
+- name: instagram
+  friendly_name: instagram
   aliases:
     - ILO Icons
   sizes:
@@ -142,6 +154,12 @@
     - ILO Icons
   sizes:
     - glyph
+- name: twitter
+  friendly_name: twitter
+  aliases:
+    - ILO Icons
+  sizes:
+    - glyph
 - name: volume
   friendly_name: volume
   aliases:
@@ -150,6 +168,12 @@
     - glyph
 - name: warning
   friendly_name: warning
+  aliases:
+    - ILO Icons
+  sizes:
+    - glyph
+- name: youtube
+  friendly_name: youtube
   aliases:
     - ILO Icons
   sizes:
