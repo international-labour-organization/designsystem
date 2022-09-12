@@ -16,6 +16,7 @@ const SearchField: FC<SearchFieldProps> = ({
 
   const SearchFieldClasses = classNames(className, {
     [baseClass]: true,
+    [`haslabel`]: input.label,
   });
 
   /**
@@ -29,9 +30,21 @@ const SearchField: FC<SearchFieldProps> = ({
 
   return (
     <form className={SearchFieldClasses} action={action}>
-      <Input {...input} />
+      <Input
+        id={input.id}
+        name={input.name}
+        disabled={input.disabled}
+        callback={input.callback}
+        error={input.error}
+        helper={input.helper}
+        label={input.label}
+        placeholder={input.placeholder}
+        type={input.type}
+        className={`${prefix}--input`}
+      />
       <input
         className={buttonClass}
+        disabled={input.disabled}
         type="submit"
         onClick={(e) => handleClick(e)}
       />

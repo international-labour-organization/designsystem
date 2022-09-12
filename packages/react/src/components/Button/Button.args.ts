@@ -1,8 +1,6 @@
 import { ButtonProps } from "./Button.props";
 
 const large: ButtonProps = {
-  callback: "",
-  children: "",
   label: "Large Button",
   size: "large",
   target: "_blank",
@@ -11,8 +9,6 @@ const large: ButtonProps = {
 };
 
 const medium: ButtonProps = {
-  callback: "",
-  children: "",
   label: "Medium Button",
   size: "medium",
   type: "primary",
@@ -20,8 +16,6 @@ const medium: ButtonProps = {
 };
 
 const small: ButtonProps = {
-  callback: "",
-  children: "",
   label: "Small Button",
   size: "small",
   type: "primary",
@@ -29,8 +23,6 @@ const small: ButtonProps = {
 };
 
 const primary: ButtonProps = {
-  callback: "",
-  children: "",
   label: "Primary Button",
   size: "large",
   type: "primary",
@@ -38,8 +30,6 @@ const primary: ButtonProps = {
 };
 
 const secondary: ButtonProps = {
-  callback: "",
-  children: "",
   label: "Secondary Button",
   size: "large",
   type: "secondary",
@@ -47,17 +37,62 @@ const secondary: ButtonProps = {
 };
 
 const tertiary: ButtonProps = {
-  callback: "",
-  children: "",
   label: "Tertiary Button",
   size: "large",
   type: "tertiary",
   url: "",
 };
 
+const secondarym: ButtonProps = {
+  label: "Secondary medium",
+  size: "medium",
+  type: "secondary",
+  url: "",
+};
+
+const tertiarym: ButtonProps = {
+  label: "Tertiary Medium",
+  size: "medium",
+  type: "tertiary",
+  url: "",
+};
+
+const secondarysm: ButtonProps = {
+  label: "Secondary Small",
+  size: "small",
+  type: "secondary",
+  url: "",
+};
+
+const tertiarysm: ButtonProps = {
+  label: "Tertiary Small",
+  size: "small",
+  type: "tertiary",
+  url: "",
+};
+
+const alertm: ButtonProps = {
+  label: "Alert Medium",
+  size: "medium",
+  type: "alert",
+  url: "",
+};
+
+const alertsm: ButtonProps = {
+  label: "Alert Small",
+  size: "small",
+  type: "alert",
+  url: "",
+};
+
+const alert: ButtonProps = {
+  label: "Alert Button",
+  size: "large",
+  type: "alert",
+  url: "",
+};
+
 const disabled: ButtonProps = {
-  callback: "",
-  children: "",
   disabled: true,
   label: "Disabled Button",
   size: "large",
@@ -76,8 +111,6 @@ const iconleftlgprimary: ButtonProps = {
 };
 
 const iconleftmprimary: ButtonProps = {
-  callback: "",
-  children: "",
   icon: "close",
   label: "Icon on left",
   size: "medium",
@@ -86,8 +119,6 @@ const iconleftmprimary: ButtonProps = {
 };
 
 const iconleftsmprimary: ButtonProps = {
-  callback: "",
-  children: "",
   icon: "close",
   label: "Icon on left",
   size: "small",
@@ -96,8 +127,6 @@ const iconleftsmprimary: ButtonProps = {
 };
 
 const iconrightlgprimary: ButtonProps = {
-  callback: "",
-  children: "",
   icon: "close",
   iconPosition: "right",
   label: "Icon on right",
@@ -107,8 +136,6 @@ const iconrightlgprimary: ButtonProps = {
 };
 
 const iconrightmprimary: ButtonProps = {
-  callback: "",
-  children: "",
   icon: "close",
   iconPosition: "right",
   label: "Icon on right",
@@ -118,8 +145,6 @@ const iconrightmprimary: ButtonProps = {
 };
 
 const iconrightsmprimary: ButtonProps = {
-  callback: "",
-  children: "",
   icon: "close",
   iconPosition: "right",
   label: "Icon on right",
@@ -129,8 +154,6 @@ const iconrightsmprimary: ButtonProps = {
 };
 
 const iconleftlgsecondary: ButtonProps = {
-  callback: "",
-  children: "",
   icon: "close",
   label: "Icon on left",
   size: "large",
@@ -139,8 +162,6 @@ const iconleftlgsecondary: ButtonProps = {
 };
 
 const iconleftmsecondary: ButtonProps = {
-  callback: "",
-  children: "",
   icon: "close",
   label: "Icon on left",
   size: "medium",
@@ -149,8 +170,6 @@ const iconleftmsecondary: ButtonProps = {
 };
 
 const iconleftsmsecondary: ButtonProps = {
-  callback: "",
-  children: "",
   icon: "close",
   label: "Icon on left",
   size: "small",
@@ -159,8 +178,6 @@ const iconleftsmsecondary: ButtonProps = {
 };
 
 const iconrightlgsecondary: ButtonProps = {
-  callback: "",
-  children: "",
   icon: "close",
   iconPosition: "right",
   label: "Icon on right",
@@ -170,8 +187,6 @@ const iconrightlgsecondary: ButtonProps = {
 };
 
 const iconrightmsecondary: ButtonProps = {
-  callback: "",
-  children: "",
   icon: "close",
   iconPosition: "right",
   label: "Icon on right",
@@ -181,8 +196,6 @@ const iconrightmsecondary: ButtonProps = {
 };
 
 const iconrightsmsecondary: ButtonProps = {
-  callback: "",
-  children: "",
   icon: "close",
   iconPosition: "right",
   label: "Icon on right",
@@ -192,8 +205,6 @@ const iconrightsmsecondary: ButtonProps = {
 };
 
 const iconleftlgtertiary: ButtonProps = {
-  callback: "",
-  children: "",
   icon: "close",
   label: "Icon on left",
   size: "large",
@@ -202,8 +213,6 @@ const iconleftlgtertiary: ButtonProps = {
 };
 
 const iconleftmtertiary: ButtonProps = {
-  callback: "",
-  children: "",
   icon: "close",
   label: "Icon on left",
   size: "medium",
@@ -212,8 +221,6 @@ const iconleftmtertiary: ButtonProps = {
 };
 
 const iconleftsmtertiary: ButtonProps = {
-  callback: "",
-  children: "",
   icon: "close",
   label: "Icon on left",
   size: "small",
@@ -222,8 +229,6 @@ const iconleftsmtertiary: ButtonProps = {
 };
 
 const iconrightlgtertiary: ButtonProps = {
-  callback: "",
-  children: "",
   icon: "close",
   iconPosition: "right",
   label: "Icon on right",
@@ -233,8 +238,6 @@ const iconrightlgtertiary: ButtonProps = {
 };
 
 const iconrightmtertiary: ButtonProps = {
-  callback: "",
-  children: "",
   icon: "close",
   iconPosition: "right",
   label: "Icon on right",
@@ -244,13 +247,62 @@ const iconrightmtertiary: ButtonProps = {
 };
 
 const iconrightsmtertiary: ButtonProps = {
-  callback: "",
-  children: "",
   icon: "close",
   iconPosition: "right",
   label: "Icon on right",
   size: "small",
   type: "tertiary",
+  url: "",
+};
+
+const iconleftlgalert: ButtonProps = {
+  icon: "close",
+  label: "Icon on left",
+  size: "large",
+  type: "alert",
+  url: "",
+};
+
+const iconleftmalert: ButtonProps = {
+  icon: "close",
+  label: "Icon on left",
+  size: "medium",
+  type: "alert",
+  url: "",
+};
+
+const iconleftsmalert: ButtonProps = {
+  icon: "close",
+  label: "Icon on left",
+  size: "small",
+  type: "alert",
+  url: "",
+};
+
+const iconrightlgalert: ButtonProps = {
+  icon: "close",
+  iconPosition: "right",
+  label: "Icon on right",
+  size: "large",
+  type: "alert",
+  url: "",
+};
+
+const iconrightmalert: ButtonProps = {
+  icon: "close",
+  iconPosition: "right",
+  label: "Icon on right",
+  size: "medium",
+  type: "alert",
+  url: "",
+};
+
+const iconrightsmalert: ButtonProps = {
+  icon: "close",
+  iconPosition: "right",
+  label: "Icon on right",
+  size: "small",
+  type: "alert",
   url: "",
 };
 
@@ -264,6 +316,13 @@ const ButtonArgs = {
   primary,
   secondary,
   tertiary,
+  secondarym,
+  tertiarym,
+  secondarysm,
+  tertiarysm,
+  alert,
+  alertm,
+  alertsm,
   disabled,
   iconleftlgprimary,
   iconleftmprimary,
@@ -283,6 +342,12 @@ const ButtonArgs = {
   iconrightlgtertiary,
   iconrightmtertiary,
   iconrightsmtertiary,
+  iconleftlgalert,
+  iconleftmalert,
+  iconleftsmalert,
+  iconrightlgalert,
+  iconrightmalert,
+  iconrightsmalert,
 };
 
 export default ButtonArgs;

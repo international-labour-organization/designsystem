@@ -55,7 +55,7 @@
 
     &:before {
       background-color: $color-base-neutrals-dark;
-      background-position: center center;
+      background-position: calc(100% - 4px) center;
       background-repeat: no-repeat;
       background-size: px-to-rem(map-get($spacing, "padding-1-5"))
         px-to-rem(map-get($spacing, "padding-1-5"));
@@ -65,11 +65,11 @@
       position: absolute;
       left: 0;
       top: 0;
-      width: px-to-rem(map-get($spacing, "padding-3"));
+      width: px-to-rem(29px);
     }
 
     &:after {
-      left: px-to-rem(map-get($spacing, "padding-3"));
+      left: px-to-rem(29px);
       top: 0;
     }
 

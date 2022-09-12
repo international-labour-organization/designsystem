@@ -114,6 +114,18 @@
           },
           "color": { "value": "{color.base.neutrals.light}" }
         }
+      },
+      "uploadedfile": {
+        "default": {
+          "background": { "value": "{color.base.neutrals.lighter}" },
+          "border": {
+            "bottom": { "value": "{color.base.neutrals.lighter}" },
+            "left": { "value": "{color.base.blue.dark}" },
+            "right": { "value": "{color.base.neutrals.lighter}" },
+            "top": { "value": "{color.base.neutrals.lighter}" }
+          },
+          "color": { "value": "{color.base.neutrals.dark}" }
+        }
       }
     }
   }

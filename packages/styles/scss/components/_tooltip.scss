@@ -4,7 +4,6 @@
 
 .ilo--tooltip {
   @include font-styles("body-xs");
-
   background: map-get($color, "tooltip", "default", "background");
   border: none;
   border-radius: px-to-rem(2px);
@@ -67,7 +66,6 @@
 
     .ilo--icon {
       height: 100% !important;
-      transform: translate(0, -4px);
       width: 100% !important;
     }
 

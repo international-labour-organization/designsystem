@@ -183,9 +183,8 @@
     display: block;
     margin: px-to-rem(map-get($spacing, "padding-3")) 0
       px-to-rem(map-get($spacing, "padding-5")) 0;
-    padding: px-to-rem(map-get($spacing, "padding-5")) 0
-      px-to-rem(map-get($spacing, "padding-3"))
-      px-to-rem(map-get($spacing, "padding-3"));
+    padding: px-to-rem(54px) 0 px-to-rem(34px)
+      px-to-rem(map-get($spacing, "padding-4"));
     position: relative;
     width: 100%;
     @include dataurlicon("triangle", $color-ux-background-default);
@@ -194,7 +193,7 @@
       color: $color-font-blockquote;
       font-weight: 300;
       margin-bottom: px-to-rem(map-get($spacing, "padding-3"));
-      padding: 0 px-to-rem(map-get($spacing, "padding-8")) 0 0;
+      padding: 0 px-to-rem(map-get($spacing, "padding-6")) 0 0;
       position: relative;
       @include font-styles("pull-quote-sm");
 
@@ -367,12 +366,11 @@
       background-size: px-to-rem(86px) px-to-rem(48px);
       margin: px-to-rem(map-get($spacing, "padding-4")) 0
         px-to-rem(map-get($spacing, "padding-8")) 0;
-      padding: px-to-rem(map-get($spacing, "padding-10")) 0
-        px-to-rem(map-get($spacing, "padding-6"))
+      padding: px-to-rem(62px) 0 px-to-rem(map-get($spacing, "padding-6"))
         px-to-rem(map-get($spacing, "padding-6"));
 
       p {
-        margin-bottom: px-to-rem(map-get($spacing, "padding-4"));
+        margin-bottom: px-to-rem(map-get($spacing, "padding-3"));
         padding: 0 px-to-rem(map-get($spacing, "padding-6")) 0 0;
         position: relative;
         @include font-styles("pull-quote-lg");

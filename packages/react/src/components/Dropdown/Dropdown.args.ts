@@ -38,7 +38,6 @@ const basic: DropdownProps = {
     },
   ],
   required: false,
-  tooltip: false,
   value: "option one",
 };
 
@@ -80,7 +79,6 @@ const haserror: DropdownProps = {
     },
   ],
   required: false,
-  tooltip: false,
   value: "option one",
 };
 
@@ -122,7 +120,6 @@ const hashelper: DropdownProps = {
     },
   ],
   required: false,
-  tooltip: false,
   value: "option one",
 };
 
@@ -206,7 +203,6 @@ const isdisabled: DropdownProps = {
     },
   ],
   required: false,
-  tooltip: false,
   value: "option one",
 };
 

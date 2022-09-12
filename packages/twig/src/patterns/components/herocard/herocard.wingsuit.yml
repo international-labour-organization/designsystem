@@ -1,0 +1,43 @@
+herocard:
+  use: '@components/herocard/herocard.twig'
+  label: Hero Card
+  description: The Hero card
+  id: herocard
+  fields:
+    alignment:
+      type: string
+      label: Alignment
+      description: alignment for card
+      preview: "center"
+    datecopy:
+      type: string
+      label: Date copy
+      description: Date byline copy
+      preview: "11 February 2021"
+    eyebrow:
+      type: string
+      label: Date copy
+      description: Date byline copy
+      preview: "11 February 2021"
+    intro:
+      type: string
+      label: Intro
+      description: Intro text for the hero
+      preview: "Brief intro text - ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    socials:
+      type: object
+      label: Social links
+      description: The social links to include in the hero
+      preview:
+        - label: "Facebook",
+          url: "https://www.facebook.com/",
+          icon: "facebook",
+        - label: "Linkedin",
+          url: "https://www.linkedin.com/",
+          icon: "linkedin",
+    title:
+      type: string
+      label: Title
+      description: This is the title for the hero card
+      preview: "This is an centered aligned article headline that is more than two lines long"
+  visibility: storybook

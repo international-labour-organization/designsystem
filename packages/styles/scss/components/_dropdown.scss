@@ -15,7 +15,7 @@
   );
   @include bordervalues("input", "formelements");
   border-radius: 0;
-  box-sizing: border-box;
+  box-sizing: content-box;
   font-family: $fonts-display;
   font-weight: map-get($type, "weights", "section");
   @include font-styles("label-medium");
@@ -24,9 +24,13 @@
   );
   @include spacingvalues("margin", "input", "formelements");
   outline: none;
-  @include spacingvalues("padding", "input", "formelements");
+  overflow: hidden;
+  padding-left: 16px;
+  padding-right: 56px;
   padding-bottom: 0;
   padding-top: 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   width: map-get($spacing, "formelements", "input", "default", "width");
 
   background-position: calc(100% - 14px) center;
@@ -103,5 +107,11 @@
       "background"
     );
     @include bordervalues("input", "formelements", "error");
+  }
+
+  option {
+    width: calc(100% - 48px);
+    text-overflow: ellipsis;
+    overflow: hidden;
   }
 }

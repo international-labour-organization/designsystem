@@ -8,6 +8,7 @@
         "hover": { "value": "{color.base.blue.light}" },
         "focus": { "value": "{color.base.neutrals.white}" },
         "active": { "value": "{color.base.blue.medium}" },
+        "alert": { "value": "{color.base.red.dark}" },
         "attention": { "value": "{color.base.yellow}" }
       },
       "borders": {
@@ -17,6 +18,7 @@
         "hover": { "value": "{color.base.blue.medium}" },
         "focus": { "value": "{color.base.yellow}" },
         "active": { "value": "{color.base.blue.medium}" },
+        "alert": { "value": "{color.base.red.dark}" },
         "attention": { "value": "{color.base.yellow}" }
       },
       "labels": {
@@ -24,8 +26,10 @@
         "darkbg": { "value": "{color.base.neutrals.white}" },
         "default": { "value": "{color.base.neutrals.medium}" },
         "error": { "value": "{color.base.red.dark}" },
+        "focus": { "value": "{color.base.blue.dark}" },
         "hover": { "value": "{color.base.blue.medium}" },
-        "active": { "value": "{color.base.blue.light}" }
+        "active": { "value": "{color.base.blue.light}" },
+        "alert": { "value": "{color.base.neutrals.white}" }
       },
       "caption": {
         "background": { "value": "transparent" },

@@ -73,3 +73,15 @@ export const SearchFieldDisabled = SearchFieldTemplate.bind({});
 // enumerate the props for the default search field
 SearchFieldDisabled.args = SearchFieldArgs.searchfielddisabled;
 SearchFieldDisabled.storyName = "Disabled SearchField";
+
+export const SearchFieldLabel = SearchFieldTemplate.bind({});
+
+// enumerate the props for the default search field
+SearchFieldLabel.args = SearchFieldArgs.searchfieldlabel;
+SearchFieldLabel.storyName = "SearchField with Label";
+
+export const SearchFieldHelper = SearchFieldTemplate.bind({});
+
+// enumerate the props for the default search field
+SearchFieldHelper.args = SearchFieldArgs.searchfieldhelper;
+SearchFieldHelper.storyName = "SearchField with Helper text";
