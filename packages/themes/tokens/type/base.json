@@ -1,8 +1,8 @@
 {
   "type": {
     "descenders": {
-      "display": { "value": "0.445" },
-      "copy": { "value": "0.25" }
+      "display": { "value": "0.37" },
+      "copy": { "value": "0.20" }
     },
     "base": {
       "size": {
@@ -81,6 +81,11 @@
       "size": { "value": "18.66px" },
       "letter-spacing": { "value": "-0.02em" },
       "line-height": { "value": "24.26px" }
+    },
+    "legend": {
+      "size": { "value": "23.32px" },
+      "letter-spacing": { "value": "-3.5%" },
+      "line-height": { "value": "29.15px" }
     },
     "nav-md-sm": {
       "size": { "value": "14.93px" },

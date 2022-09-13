@@ -9,10 +9,14 @@ searchfield:
       description: The form's action attribute
       preview: "http://www.ilo.org"
       required: false
-    placeholder:
-      type: string
-      label: placeholder
-      description: The search field's placeholder attribute
-      preview: "Search Field"
-      required: false
+    input:
+      type: object
+      label: input
+      description: The search field input's attributes
+      preview:
+        label: "Search Field Label"
+        helper: "The search field's helper text"
+        name: "text"
+        placeholder: "Search Field"
+        type: "text"
   visibility: storybook

@@ -30,6 +30,7 @@ By changing the \`type\` prop you can change the type of the button, which affec
 | \`primary\` | Button type for a primary button. |
 | \`secondary\` | Button type for a secondary button. |
 | \`tertiary\` | Button type for a tertiary button. |
+| \`alert\` | Button type for an alert button. |
 `;
 
 /**
@@ -108,6 +109,30 @@ export const SecondaryButton = ButtonTemplate.bind({});
  *
  */
 export const TertiaryButton = ButtonTemplate.bind({});
+
+/**
+ * Secondary Button Instance
+ *
+ */
+export const SecondaryButtonM = ButtonTemplate.bind({});
+
+/**
+ * Tertiary Button Instance
+ *
+ */
+export const TertiaryButtonM = ButtonTemplate.bind({});
+
+/**
+ * Secondary Button Instance
+ *
+ */
+export const SecondaryButtonSm = ButtonTemplate.bind({});
+
+/**
+ * Tertiary Button Instance
+ *
+ */
+export const TertiaryButtonSm = ButtonTemplate.bind({});
 
 /**
  * Disabled Button Instance
@@ -223,6 +248,54 @@ export const MTertiaryIconRightButton = ButtonTemplate.bind({});
  */
 export const SmTertiaryIconRightButton = ButtonTemplate.bind({});
 
+/**
+ * Large Button With Icon on the Left Instance
+ *
+ */
+export const LgAlertIconLeftButton = ButtonTemplate.bind({});
+
+/**
+ * Medium Button With Icon on the Left Instance
+ *
+ */
+export const MAlertIconLeftButton = ButtonTemplate.bind({});
+
+/**
+ * Small Button With Icon on the Left Instance
+ *
+ */
+export const SmAlertIconLeftButton = ButtonTemplate.bind({});
+
+/**
+ * Large Button With Icon on the Right Instance
+ *
+ */
+export const LgAlertIconRightButton = ButtonTemplate.bind({});
+
+/**
+ * Medium Button With Icon on the Right Instance
+ *
+ */
+export const MAlertIconRightButton = ButtonTemplate.bind({});
+
+/**
+ * Small Button With Icon on the Right Instance
+ *
+ */
+export const SmAlertIconRightButton = ButtonTemplate.bind({});
+
+/**
+ * Secondary Button Instance
+ *
+ */
+export const ButtonAlertM = ButtonTemplate.bind({});
+
+/**
+ * Tertiary Button Instance
+ *
+ */
+export const ButtonAlertSm = ButtonTemplate.bind({});
+
 // enumerate the props for the large button
 BaseButton.args = buttonArgs.large;
 BaseButton.args.url = "#";
@@ -252,6 +325,36 @@ SecondaryButton.storyName = "Secondary Button";
 TertiaryButton.args = buttonArgs.tertiary;
 TertiaryButton.args.url = "";
 TertiaryButton.storyName = "Tertiary Button";
+
+// enumerate the props for the secondary button
+SecondaryButtonM.args = buttonArgs.secondarym;
+SecondaryButtonM.args.url = "";
+SecondaryButtonM.storyName = "Secondary Medium";
+
+// enumerate the props for the tertiary button
+TertiaryButtonM.args = buttonArgs.tertiarym;
+TertiaryButtonM.args.url = "";
+TertiaryButtonM.storyName = "Tertiary Medium";
+
+// enumerate the props for the secondary button
+SecondaryButtonSm.args = buttonArgs.secondarysm;
+SecondaryButtonSm.args.url = "";
+SecondaryButtonSm.storyName = "Secondary Small";
+
+// enumerate the props for the tertiary button
+TertiaryButtonSm.args = buttonArgs.tertiarysm;
+TertiaryButtonSm.args.url = "";
+TertiaryButtonSm.storyName = "Tertiary Small";
+
+// enumerate the props for the tertiary button
+ButtonAlertM.args = buttonArgs.alertm;
+ButtonAlertM.args.url = "";
+ButtonAlertM.storyName = "Alert Medium";
+
+// enumerate the props for the secondary button
+ButtonAlertSm.args = buttonArgs.alertsm;
+ButtonAlertSm.args.url = "";
+ButtonAlertSm.storyName = "Alert Small";
 
 // enumerate the props for a disabled button
 DisabledButton.args = buttonArgs.disabled;
@@ -356,3 +459,33 @@ SmTertiaryIconRightButton.args = buttonArgs.iconrightsmtertiary;
 SmTertiaryIconRightButton.args.url = "";
 SmTertiaryIconRightButton.storyName =
   "Small Tertiary Button with icon on right;";
+
+// enumerate the props for a large alert icon left button
+LgAlertIconLeftButton.args = buttonArgs.iconleftlgalert;
+LgAlertIconLeftButton.args.url = "";
+LgAlertIconLeftButton.storyName = "Large Alert Button with icon on left";
+
+// enumerate the props for a medium alert icon left button
+MAlertIconLeftButton.args = buttonArgs.iconleftmalert;
+MAlertIconLeftButton.args.url = "";
+MAlertIconLeftButton.storyName = "Medium Alert Button with icon on left";
+
+// enumerate the props for a small alert icon left button
+SmAlertIconLeftButton.args = buttonArgs.iconleftsmalert;
+SmAlertIconLeftButton.args.url = "";
+SmAlertIconLeftButton.storyName = "Small Alert Button with icon on left";
+
+// enumerate the props for a large alert icon right button
+LgAlertIconRightButton.args = buttonArgs.iconrightlgalert;
+LgAlertIconRightButton.args.url = "";
+LgAlertIconRightButton.storyName = "Large Alert Button with icon on right";
+
+// enumerate the props for a medium alert icon right button
+MAlertIconRightButton.args = buttonArgs.iconrightmalert;
+MAlertIconRightButton.args.url = "";
+MAlertIconRightButton.storyName = "Medium Alert Button with icon on right";
+
+// enumerate the props for a small alert icon right button
+SmAlertIconRightButton.args = buttonArgs.iconrightsmalert;
+SmAlertIconRightButton.args.url = "";
+SmAlertIconRightButton.storyName = "Small Alert Button with icon on right;";

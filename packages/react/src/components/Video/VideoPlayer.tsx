@@ -2,7 +2,7 @@ import { FC, createRef, useState } from "react";
 /* temporary way of importing ReactPlayer due to a known issue with ReactPlayer.
  * Revert to standard method of importing once RP's dev has fixed.
  */
-import { default as RP } from "react-player";
+import { default as RP } from "react-player/lazy";
 import { findDOMNode } from "react-dom";
 import { ReactPlayerProps } from "react-player/types/lib";
 const ReactPlayer = RP as unknown as FC<ReactPlayerProps>;

@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { Children, FC } from "react";
 import classNames from "classnames";
 import useGlobalSettings from "../../hooks/useGlobalSettings";
 import { FieldsetProps } from "./Fieldset.props";
@@ -7,39 +7,82 @@ import { Tooltip } from "../Tooltip";
 const Fieldset: FC<FieldsetProps> = ({
   children,
   className,
-  error,
-  inputid,
-  helper,
-  label,
-  tooltip,
+  fieldsetid,
+  grouperror,
+  grouphelper,
+  grouptooltip,
+  legend,
 }) => {
   const { prefix } = useGlobalSettings();
   const baseClass = `${prefix}--fieldset`;
   const fieldsetClasses = classNames(className, {
     [baseClass]: true,
-    [`error`]: error,
   });
 
   return (
-    <fieldset className={fieldsetClasses}>
-      {label && (
-        <label className={`${baseClass}--label`} htmlFor={inputid}>
-          {label}
-        </label>
+    <fieldset
+      className={fieldsetClasses}
+      id={fieldsetid ? (fieldsetid as any) : undefined}
+    >
+      {legend && (
+        <legend className={`${baseClass}--legend`}>
+          {legend}
+          {grouptooltip && (
+            <Tooltip
+              className={`${baseClass}--legend--tooltip`}
+              icon={true}
+              label={grouptooltip}
+              theme={"dark"}
+            ></Tooltip>
+          )}
+        </legend>
       )}
-      {tooltip && (
-        <Tooltip
-          className={`${baseClass}--label`}
-          icon={true}
-          label={tooltip}
-          theme={"dark"}
-        ></Tooltip>
+      {grouphelper && !grouperror && (
+        <span className={`${baseClass}--helper`}>{grouphelper}</span>
       )}
-      {children}
-      {helper && !error && (
-        <span className={`${baseClass}--helper`}>{helper}</span>
+      {grouperror && (
+        <span className={`${baseClass}--error`}>{grouperror}</span>
       )}
-      {error && <span className={`${baseClass}--error`}>{error}</span>}
+      {Children.map(children, (child, i) => (
+        <>
+          {child && child.props && (
+            <div
+              key={`${baseClass}--input--${i}`}
+              className={`${baseClass}--input${
+                child.props.type ? "--" + child.props.type : ""
+              } ${child.props.error ? "error" : ""}`}
+            >
+              {child.props.label && (
+                <label
+                  className={`${baseClass}--label`}
+                  htmlFor={child.props.id}
+                >
+                  {child.props.label}
+                  {child.props.tooltip && (
+                    <Tooltip
+                      className={`${baseClass}--label--tooltip`}
+                      icon={true}
+                      label={child.props.tooltip}
+                      theme={"dark"}
+                    ></Tooltip>
+                  )}
+                </label>
+              )}
+              {child}
+              {child.props.helper && !child.props.error && (
+                <span className={`${baseClass}--helper`}>
+                  {child.props.helper}
+                </span>
+              )}
+              {child.props.error && (
+                <span className={`${baseClass}--error`}>
+                  {child.props.error}
+                </span>
+              )}
+            </div>
+          )}
+        </>
+      ))}
     </fieldset>
   );
 };

@@ -75,7 +75,7 @@ export interface DropdownProps {
   /**
    * Does this Dropdown have a tooltip?
    */
-  tooltip: string | false;
+  tooltip?: string;
 
   /**
    * The Dropdown's default selection; should match one of the values in `options`

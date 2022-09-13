@@ -1,0 +1,33 @@
+{#
+  DATEPICKER COMPONENT
+#}
+<div class="{{prefix}}--datepicker{% if range %}--range{% endif %}">
+  <fieldset class="{{prefix}}--fieldset">
+    <div class="{{prefix}}--fieldset--input--date ">
+      <label class="{{prefix}}--fieldset--label">{{label}}</label>
+      <input name="{{name}}" type="date" class="{{prefix}}--datepicker {{prefix}}--input {% if error %} error{% endif %}" {% if placeholder %}placeholder="{{placeholder}}"{% endif %} {% if required %}required{% endif %}{% if disabled %}disabled{% endif %}  id="{% if id %}{{id}}{% else %}{{name}}{% endif %}">
+      {% if helper and not error %}
+          <span class="ilo--fieldset--helper">{{helper}}</span>
+        {% endif %}
+        {% if error %}
+          <span class="ilo--fieldset--error">{{error}}</span>
+        {% endif %}
+      </div>
+    </div>
+  </fieldset>
+  {% if range %}
+  <fieldset class="{{prefix}}--fieldset">
+    <div class="{{prefix}}--fieldset--input--date ">
+      <label class="{{prefix}}--fieldset--label">{{enddata.label}}</label>
+      <input name="{{enddata.name}}" type="date" class="{{prefix}}--datepicker {{prefix}}--input {% if enddata.error %} error{% endif %}" {% if enddata.placeholder %}placeholder="{{enddata.placeholder}}"{% endif %} {% if enddata.required %}required{% endif %} {% if disabled %}disabled{% endif %} id="{% if enddata.id %}{{enddata.id}}{% else %}{{enddata.name}}{% endif %}">
+    </div>
+    {% if helper and not error %}
+        <span class="ilo--fieldset--helper">{{helper}}</span>
+      {% endif %}
+      {% if error %}
+        <span class="ilo--fieldset--error">{{error}}</span>
+      {% endif %}
+    </div>
+  </fieldset>
+  {% endif %}
+</div>

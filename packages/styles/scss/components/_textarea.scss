@@ -1,0 +1,89 @@
+@use "../tokens" as *;
+@use "../functions" as *;
+@import "../mixins";
+
+.ilo--textarea {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: map-get(
+    $color,
+    "formelements",
+    "input",
+    "default",
+    "background"
+  );
+  @include bordervalues("input", "formelements");
+  box-sizing: border-box;
+  font-family: $fonts-display;
+  font-weight: map-get($type, "weights", "section");
+  @include font-styles("label-medium");
+  height: px-to-rem(
+    map-get($spacing, "formelements", "input", "default", "height")
+  );
+  @include spacingvalues("margin", "input", "formelements");
+  max-width: map-get($spacing, "formelements", "input", "default", "width");
+  min-height: px-to-rem($spacing-padding-15);
+  min-width: map-get($spacing, "formelements", "input", "default", "width");
+  outline: none;
+  position: relative;
+  @include spacingvalues("padding", "input", "formelements");
+  width: map-get($spacing, "formelements", "input", "default", "width");
+
+  &::-webkit-resizer {
+    background-size: cover;
+    background-repeat: no-repeat;
+    bottom: 2px;
+    height: 12px;
+    right: 0;
+    pointer-events: none;
+    position: absolute;
+    width: 22px;
+    @include dataurlicon(
+      "scalenerighttriangle",
+      $color-formelements-input-default-border-bottom
+    );
+  }
+
+  &:hover {
+    background-color: map-get(
+      $color,
+      "formelements",
+      "input",
+      "hover",
+      "background"
+    );
+    @include bordervalues("input", "formelements", "hover");
+    padding-left: calc($spacing-formelements-input-default-padding-left - 1px);
+  }
+
+  &:focus {
+    background-color: map-get(
+      $color,
+      "formelements",
+      "input",
+      "focus",
+      "background"
+    );
+    @include bordervalues("input", "formelements", "focus");
+    padding-left: calc($spacing-formelements-input-default-padding-left - 1px);
+  }
+
+  &:disabled {
+    opacity: 45%;
+    pointer-events: none;
+  }
+
+  &:invalid,
+  &.error,
+  .error & {
+    background-color: map-get(
+      $color,
+      "formelements",
+      "input",
+      "error",
+      "background"
+    );
+    @include bordervalues("input", "formelements", "error");
+  }
+}

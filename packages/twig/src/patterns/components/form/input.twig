@@ -1,0 +1,13 @@
+{#
+  INPUT COMPONENT
+#}
+{% extends '@components/fieldset/fieldset.twig' %}
+{% set fsinputid = id ? id : name %}
+{% set fslabel = label %}
+{% set fshelper = helper %}
+{% set fserror = error %}
+{% set fstype = type %}
+
+{% block formfield %}
+  <input name="{{name}}" type="{{type}}" class="{{prefix}}--input{% if error %} error{% endif %}" {% if placeholder %}placeholder="{{placeholder}}"{% endif %} {% if disabled %}disabled{% endif %} {% if required %}required{% endif %} id="{% if id %}{{id}}{% else %}{{name}}{% endif %}" />
+{% endblock %}

@@ -7,7 +7,7 @@
     font-family: $fonts-display;
     font-weight: map-get($type, "weights", "label");
     @include font-styles("headline-5");
-    @include textmargin("margin-bottom", 27px, "headline-5", "display", 0, 0);
+    @include textmargin("margin-bottom", 30px, "headline-5", "display", 0, 0);
   }
 
   &--links {
@@ -29,7 +29,7 @@
 
   &--links--item {
     &.indented {
-      padding-left: px-to-rem(24px);
+      padding-left: px-to-rem($spacing-padding-4);
 
       .ilo--link-list--label {
         display: block;
@@ -66,7 +66,7 @@
   }
 
   &--link {
-    background-position: calc(100% - $spacing-padding-2) center;
+    background-position: calc(100% - $spacing-padding-0-5) center;
     background-repeat: no-repeat;
     background-size: px-to-rem($spacing-padding-3) px-to-rem($spacing-padding-3);
     border-bottom: px-to-rem($borders-base) solid $color-base-neutrals-lighter;
