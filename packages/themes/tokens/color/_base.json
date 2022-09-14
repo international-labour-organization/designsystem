@@ -15,7 +15,10 @@
         "dark": { "value": "{brand.ilo-grey-charcoal}" },
         "black": { "value": "{brand.ilo-black}" }
       },
-      "purple": { "value": "{brand.ilo-purple}" },
+      "purple": {
+        "light": { "value": "{brand.ilo-purple-light}" },
+        "medium" : { "value": "{brand.ilo-purple}" }
+      },
       "red": {
         "light": { "value": "{brand.ilo-blue}" },
         "medium": { "value": "{brand.ilo-red}" },

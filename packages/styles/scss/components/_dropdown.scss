@@ -31,7 +31,7 @@
   padding-top: 0;
   text-overflow: ellipsis;
   white-space: nowrap;
-  width: map-get($spacing, "formelements", "input", "default", "width");
+  width: calc(100% - 78px);
 
   background-position: calc(100% - 14px) center;
   background-repeat: no-repeat;
@@ -46,6 +46,12 @@
       transparent calc(50% + 0.81px),
       transparent 100%
     );
+
+  option {
+    width: calc(100% - 48px);
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
 
   &:hover {
     background-color: map-get(
@@ -66,7 +72,6 @@
         transparent calc(50% + 0.81px),
         transparent 100%
       );
-    padding-left: calc($spacing-formelements-input-default-padding-left - 1px);
   }
 
   &:focus {
@@ -88,7 +93,6 @@
         transparent calc(50% + 0.81px),
         transparent 100%
       );
-    padding-left: calc($spacing-formelements-input-default-padding-left - 1px);
   }
 
   &:disabled {
@@ -107,11 +111,5 @@
       "background"
     );
     @include bordervalues("input", "formelements", "error");
-  }
-
-  option {
-    width: calc(100% - 48px);
-    text-overflow: ellipsis;
-    overflow: hidden;
   }
 }

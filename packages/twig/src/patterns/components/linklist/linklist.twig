@@ -1,12 +1,14 @@
 {#
   LINK LIST COMPONENT
 #}
-<div class="{{prefix}}--link-list">
-  <h3 class="{{prefix}}--link-list--headline">{{headline}}</h3>
+<div class="{{prefix}}--link-list {{prefix}}--link-list--{{theme}}">
+  {% if headline %}
+    <h3 class="{{prefix}}--link-list--headline">{{headline}}</h3>
+  {% endif %}
   <ul class="{{prefix}}--link-list--linkgroups">
     {% for group in linkgroup %}
     <li class="{{prefix}}--link-list--linkgroups-item">
-      {% if group.headline %}
+      {% if group.headline is not empty %}
       <h4 class="{{prefix}}--link-list--links--headline">{{group.headline}}</h4>
       {% endif %}
       <ul class="{{prefix}}--link-list--links">

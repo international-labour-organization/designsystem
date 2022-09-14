@@ -7,7 +7,6 @@ linklist:
       type: string
       label: Headline
       description: Link List's Headline
-      required: true
       preview: Link List Headling
     linkgroup:
       type: object
@@ -42,4 +41,13 @@ linklist:
               url: 'http://www.google.com'
             - label: Section 2 Link Five Is Slightly Longer
               url: 'http://www.google.com'
+    theme:
+      type: select
+      label: Theme
+      description: Is this link list on a light or dark background?
+      required: true
+      options:
+        primary: Light
+        secondary: Dark
+      preview: 'light'
   visibility: storybook
