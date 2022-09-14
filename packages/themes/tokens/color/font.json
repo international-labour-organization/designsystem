@@ -2,7 +2,7 @@
   "color": {
     "font": {
       "base": { "value": "{color.base.neutrals.black}" },
-      "blockquote": { "value": "{color.base.purple}" },
+      "blockquote": { "value": "{color.base.purple.medium}" },
       "cite": { "value": "{color.base.neutrals.medium}" },
       "caption": { "value": "{color.base.neutrals.medium}" }
     }

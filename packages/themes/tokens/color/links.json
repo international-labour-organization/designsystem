@@ -27,7 +27,7 @@
         "hover": { "value": "{color.base.blue.medium}" },
         "focus": { "value": "{color.base.blue.dark}" },
         "active": { "value": "{color.base.blue.dark}" },
-        "visited": { "value": "{color.base.purple}" }
+        "visited": { "value": "{color.base.purple.medium}" }
       },
       "text-dark": {
         "default": { "value": "{color.base.neutrals.lighter}" },
@@ -41,14 +41,14 @@
         "hover": { "value": "{color.base.blue.medium}" },
         "focus": { "value": "{color.base.blue.dark}" },
         "active": { "value": "{color.base.blue.dark}" },
-        "visited": { "value": "{color.base.purple}" }
+        "visited": { "value": "{color.base.purple.medium}" }
       },
       "underline": {
         "default": { "value": "{color.base.blue.medium}" },
         "hover": { "value": "{color.base.blue.medium}" },
         "focus": { "value": "{color.base.blue.dark}" },
         "active": { "value": "{color.base.blue.dark}" },
-        "visited": { "value": "{color.base.purple}" }
+        "visited": { "value": "{color.base.purple.medium}" }
       },
       "underline-dark": {
         "default": { "value": "{color.base.neutrals.white}" },
@@ -62,7 +62,7 @@
         "hover": { "value": "{color.base.blue.medium}" },
         "focus": { "value": "{color.base.blue.dark}" },
         "active": { "value": "{color.base.blue.dark}" },
-        "visited": { "value": "{color.base.purple}" }
+        "visited": { "value": "{color.base.purple.medium}" }
       }
     }
   }

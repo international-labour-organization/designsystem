@@ -3,11 +3,18 @@ import classNames from "classnames";
 import useGlobalSettings from "../../hooks/useGlobalSettings";
 import { LinkListProps } from "./LinkList.props";
 
-const LinkList: FC<LinkListProps> = ({ className, headline, linkgroup }) => {
+const LinkList: FC<LinkListProps> = ({
+  className,
+  headline,
+  linkgroup,
+  theme,
+}) => {
   const { prefix } = useGlobalSettings();
   const baseClass = `${prefix}--link-list`;
   const linkListClasses = classNames(className, {
     [baseClass]: true,
+    [`${baseClass + "--" + (theme && theme === "dark" ? theme : "light")}`]:
+      true,
   });
 
   return (
