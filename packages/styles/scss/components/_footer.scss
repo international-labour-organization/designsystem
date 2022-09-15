@@ -5,6 +5,7 @@
 .ilo--footer {
   &--main {
     background-color: $color-base-blue-dark;
+    border-bottom: px-to-rem(6px) solid $color-base-red-medium;
     padding: 0 px-to-rem(32px);
     position: relative;
 
@@ -70,6 +71,10 @@
       "body-xxs",
       "display"
     );
+  }
+
+  .connect {
+    margin: px-to-rem(55px) 0;
   }
 
   .social--headline {
@@ -216,7 +221,6 @@
     &--main {
       display: grid;
       grid-template-columns: minmax(0, 50%) minmax(0, 50%);
-      grid-template-rows: 1fr 1fr 1fr;
       gap: 0px 64px;
       grid-template-areas:
         "site-info links"
@@ -232,6 +236,10 @@
 
     .address {
       grid-area: address;
+    }
+
+    .connect {
+      margin-top: 0;
     }
 
     .links {
@@ -295,6 +303,7 @@
       grid-template-columns: minmax(0, 40%), 60%;
       grid-template-rows: repeat(3, minmax(0, 1fr));
       grid-area: connect;
+      margin: 0;
     }
 
     .social--headline {
