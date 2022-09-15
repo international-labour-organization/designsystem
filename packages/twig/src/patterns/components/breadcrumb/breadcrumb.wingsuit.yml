@@ -1,0 +1,35 @@
+breadcrumb:
+  use: '@components/breadcrumb/breadcrumb.twig'
+  label: Breadcrumb
+  description: A component for displaying links in a "breadcrumb" ux
+  fields:
+    home:
+      type: object
+      label: Home
+      description: url and label for link to site home page
+      required: true
+      preview:
+        label: "Home"
+        url: "/"
+    links:
+      type: object
+      label: Home
+      description: the links to display in the breadcrumb
+      required: true
+      preview:
+        - label: "Link One"
+          url: "/linkone"
+        - label: "Link Two"
+          url: "/linktwo"
+        - label: "Link Three"
+          url: "/linkthree"
+        - label: "Link Four"
+          url: "/linkfour"
+        - label: "Link Five"
+          url: "/linkfive"
+    className:
+      type: string
+      label: className
+      description: optional class name
+      preview: "storybook"
+  visibility: storybook

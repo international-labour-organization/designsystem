@@ -16,6 +16,12 @@
     - ILO Icons
   sizes:
     - glyph
+- name: breadcrumbdivider
+  friendly_name: breadcrumbdivider
+  aliases:
+    - ILO Icons
+  sizes:
+    - glyph
 - name: checkmark
   friendly_name: checkmark
   aliases:
@@ -36,6 +42,12 @@
     - glyph
 - name: doublearrow
   friendly_name: doublearrow
+  aliases:
+    - ILO Icons
+  sizes:
+    - glyph
+- name: elipsis
+  friendly_name: elipsis
   aliases:
     - ILO Icons
   sizes:
@@ -66,6 +78,12 @@
     - glyph
 - name: halfsquaretriangle
   friendly_name: halfsquaretriangle
+  aliases:
+    - ILO Icons
+  sizes:
+    - glyph
+- name: home
+  friendly_name: home
   aliases:
     - ILO Icons
   sizes:
