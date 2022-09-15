@@ -90,4 +90,5 @@
           {% endif %}
     {% endif %}
   {% endfor %}
+  {% include '@components/button/button.twig' with {type: "primary", kind: "submit", size: "large", label: submitlabel} %}
 </form>

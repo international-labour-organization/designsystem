@@ -6,7 +6,7 @@
     <span class="link__label">{{label}}</span>
   </a>
 {% else %}
-  <button class="{{prefix}}--button ilo--button--{{size}} {{prefix}}--button--{{type}}">
+  <button class="{{prefix}}--button ilo--button--{{size}} {{prefix}}--button--{{type}}" {% if kind %}type="{{kind}}"{% endif %}>
     <span class="button__label">{{label}}</span>
   </button>
 {% endif %}
