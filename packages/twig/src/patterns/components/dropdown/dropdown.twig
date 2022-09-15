@@ -11,9 +11,9 @@
 
 {% block formfield %}
   <div class="{{prefix}}--dropdown--wrapper">
-    <select id="dropdown" {% if autocomplete %}autocomplete="{{autocomplete}}"{% endif %} name="dropdown" class="{{prefix}}--dropdown" {% if disabled == true %}disabled{% endif %}>
+    <select id="dropdown" {% if autocomplete is defined %}autocomplete="{{autocomplete}}"{% endif %} name="dropdown" class="{{prefix}}--dropdown{% if error %} error{% endif %}" {% if disabled is defined and disabled == 'true' %}disabled{% endif %}>
       {% for option in options %}
-      <option label="{{option.label}}" value="{{option.value}}" {% if option.disabled is defined %}disabled{% endif %}></option>
+      <option label="{{option.label}}" value="{{option.value}}" {% if defaultValue is defined and defaultValue == option.value %}selected{% endif %} {% if option.disabled is defined and option.disabled == 'true' %}disabled{% endif %}></option>
       {% endfor %}
     </select>
   </div>
