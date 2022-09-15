@@ -26,8 +26,11 @@ export default class ReadMore {
     this.openclass = `${this.prefix}--read-more--open`;
     this.buttonopenclass = `${this.prefix}--read-more--button--open`;
 
-    // grab out HTML text to swap
+    // grab our HTML text to swap
     this.fulltext = this.element.dataset.fulltext;
+
+    // cache the excerpt
+    this.excerpt = this.element.dataset.excerpt;
 
     // grab out button labels to swap
     this.buttonlabel = {
@@ -66,7 +69,6 @@ export default class ReadMore {
      */
     this.ReadMoreButton = this.element.querySelector(`.${this.prefix}--read-more--button`);
     this.RichText = this.element.querySelector(`.${this.prefix}--richtext`);
-    this.excerpt = this.RichText.innerHTML;
 
     return this;
   }
