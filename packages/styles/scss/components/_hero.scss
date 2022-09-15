@@ -41,9 +41,9 @@
       }
     }
   }
-
+  background: map-get($color, "ux", "pagination", "default", "background");
   &--article {
-    background: $brand-ilo-light-blue;
+    background: map-get($color, "hero", "article");
     padding: 88px 0 0 0;
 
     @include breakpoint("large") {
@@ -56,7 +56,7 @@
     }
 
     &.ilo--hero--image {
-      background-color: transparent;
+      background-color: map-get($color, "hero", "image");
       padding: 0;
 
       @include breakpoint("large") {
@@ -74,7 +74,7 @@
   }
 
   &--project {
-    background: $brand-ilo-light-blue;
+    background: map-get($color, "hero", "project");
     padding: 88px 0 0 0;
 
     @include breakpoint("large") {
@@ -87,7 +87,7 @@
     }
 
     &.ilo--hero--image {
-      background-color: transparent;
+      background-color: map-get($color, "hero", "image");
       padding: 0;
 
       @include breakpoint("large") {
@@ -105,7 +105,7 @@
   }
 
   &--image {
-    background-color: transparent;
+    background-color: map-get($color, "hero", "image");
 
     @include breakpoint("large") {
       padding-top: 128px;
@@ -137,8 +137,8 @@
 }
 
 .ilo--hero-card {
-  background: $color-base-neutrals-white;
-  color: $color-base-neutrals-dark;
+  background: map-get($color, "hero", "card", "light", "background");
+  color: map-get($color, "hero", "card", "light", "color");
   max-width: 998px;
   position: relative;
   padding: 16px 16px 40px 16px;
@@ -151,12 +151,12 @@
     height: 40px;
     left: 0;
     position: absolute;
-    top: -40px;
+    top: -39.7px;
     width: 100%;
 
     @include breakpoint("large") {
       height: 64px;
-      top: -64px;
+      top: -63.7px;
     }
   }
 
@@ -169,47 +169,72 @@
   }
 
   &--dark {
-    background: $color-base-blue-dark;
-    color: $color-base-neutrals-white;
+    background: map-get($color, "hero", "card", "dark", "background");
+    color: map-get($color, "hero", "card", "dark", "color");
 
     .ilo--hero-card--link.icon {
-      color: $color-base-neutrals-white;
+      color: map-get($color, "hero", "card", "dark", "icon", "color");
 
       &:hover {
-        background-color: $color-base-neutrals-white;
+        background-color: map-get(
+          $color,
+          "hero",
+          "card",
+          "dark",
+          "iconhover",
+          "background"
+        );
       }
 
       &--facebook {
-        @include dataurlicon("facebook", $color-base-neutrals-white);
+        @include dataurlicon(
+          "facebook",
+          map-get($color, "hero", "card", "dark", "icon", "color")
+        );
 
         &:hover {
-          @include dataurlicon("facebook", $brand-ilo-blue);
+          @include dataurlicon(
+            "facebook",
+            map-get($color, "hero", "card", "dark", "iconhover", "color")
+          );
         }
       }
 
       &--twitter {
-        @include dataurlicon("twitter", $color-base-neutrals-white);
+        @include dataurlicon(
+          "twitter",
+          map-get($color, "hero", "card", "dark", "icon", "color")
+        );
 
         &:hover {
-          @include dataurlicon("twitter", $brand-ilo-blue);
+          @include dataurlicon(
+            "twitter",
+            map-get($color, "hero", "card", "dark", "iconhover", "color")
+          );
         }
       }
 
       &--linkedin {
-        @include dataurlicon("linkedin", $color-base-neutrals-white);
+        @include dataurlicon(
+          "linkedin",
+          map-get($color, "hero", "card", "dark", "icon", "color")
+        );
 
         &:hover {
-          @include dataurlicon("linkedin", $brand-ilo-blue);
+          @include dataurlicon(
+            "linkedin",
+            map-get($color, "hero", "card", "dark", "iconhover", "color")
+          );
         }
       }
     }
 
     .ilo--hero-card--eyebrow {
-      color: $color-base-neutrals-white;
+      color: map-get($color, "hero", "card", "dark", "eyebrow", "color");
     }
 
     .ilo--hero-card--datecopy {
-      color: $color-base-neutrals-white;
+      color: map-get($color, "hero", "card", "dark", "datecopy", "color");
     }
   }
 
@@ -245,13 +270,16 @@
     }
 
     &.ilo--hero-card--dark {
-      background: rgba($color-base-blue-dark, 0.55);
+      background: rgba(
+        map-get($color, "hero", "card", "dark", "background"),
+        0.55
+      );
     }
   }
 
   &--portal {
-    background: $color-base-blue-dark;
-    color: $color-base-neutrals-white;
+    background: map-get($color, "hero", "portal", "background");
+    color: map-get($color, "hero", "portal", "color");
     padding: 24px;
 
     @include breakpoint("large") {
@@ -276,7 +304,7 @@
     @include font-styles("body-small");
     @include textmargin("margin-bottom", 40px, "body-small", "copy", 0, 0);
 
-    color: $color-base-neutrals-medium;
+    color: map-get($color, "hero", "card", "light", "datecopy", "color");
   }
 
   &--eyebrow {
@@ -290,7 +318,7 @@
       "display"
     );
 
-    color: $brand-ilo-purple;
+    color: map-get($color, "hero", "card", "light", "eyebrow", "color");
   }
 
   &--intro {
@@ -342,7 +370,7 @@
   }
 
   &--link {
-    color: $color-base-neutrals-white;
+    color: map-get($color, "hero", "card", "light", "link", "color");
     display: inline-block;
     overflow: hidden;
     padding: 0 5px;
@@ -355,36 +383,61 @@
       background-size: auto 16px;
       border-radius: 2px;
       display: inline-block;
-      color: $color-base-neutrals-medium;
+      color: map-get($color, "hero", "card", "light", "icon", "color");
       height: 24px;
       width: px-to-rem(24px);
 
       &:hover {
-        background-color: $color-base-blue-light;
+        background-color: map-get(
+          $color,
+          "hero",
+          "card",
+          "light",
+          "iconhover",
+          "background"
+        );
         transition: all 0.1s ease-in-out;
       }
 
       &--facebook {
-        @include dataurlicon("facebook", $color-base-neutrals-medium);
+        @include dataurlicon(
+          "facebook",
+          map-get($color, "hero", "card", "light", "iconhover", "background")
+        );
 
         &:hover {
-          @include dataurlicon("facebook", $brand-ilo-blue);
+          @include dataurlicon(
+            "facebook",
+            map-get($color, "hero", "card", "light", "iconhover", "color")
+          );
         }
       }
 
       &--twitter {
-        @include dataurlicon("twitter", $color-base-neutrals-medium);
+        @include dataurlicon(
+          "twitter",
+          map-get($color, "hero", "card", "light", "iconhover", "background")
+        );
 
         &:hover {
-          @include dataurlicon("twitter", $brand-ilo-blue);
+          @include dataurlicon(
+            "twitter",
+            map-get($color, "hero", "card", "light", "iconhover", "color")
+          );
         }
       }
 
       &--linkedin {
-        @include dataurlicon("linkedin", $color-base-neutrals-medium);
+        @include dataurlicon(
+          "linkedin",
+          map-get($color, "hero", "card", "light", "iconhover", "background")
+        );
 
         &:hover {
-          @include dataurlicon("linkedin", $brand-ilo-blue);
+          @include dataurlicon(
+            "linkedin",
+            map-get($color, "hero", "card", "light", "iconhover", "color")
+          );
         }
       }
     }

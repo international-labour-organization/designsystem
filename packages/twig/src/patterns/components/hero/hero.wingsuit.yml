@@ -4,50 +4,39 @@ hero:
   description: The Hero presents an image banner.
   fields:
     image:
-      use: '@components/image/image.twig'
-      label: Image
-      type: pattern
+      type: object
       preview:
-        id: image
-        fields:
-          alt:
-            type: string
-            label: Alt
-            description: alt text for the image
-            required: true
-            preview: 'My alt text'
-          caption:
-            type: string
-            label: Caption
-            description: string
-            preview: 'my image caption'
-          credit:
-            type: string
-            label: Credit
-            description: string
-            preview: 'Photo: copyright 2022 Person S. Name'
-            required: true
-          url:
-            type: object
-            label: URL
-            description: The image url(s), and at which breakpoint each should be displayed.
-            required: true
-            preview:
-              - breakpoint: 0
-                src: 'https://place-hold.it/400x300?text=SmallBreakpointImage'
-              - breakpoint: 800
-                src: 'https://place-hold.it/800x600?text=MediumBreakpointImage'
-              - breakpoint: 1200
-                src: 'https://place-hold.it/1200x900?text=LargeBreakpointImage'
-              - breakpoint: 1440
-                src: 'https://place-hold.it/1600x1200?text=LargestBreakpointImage'
+        alt: Lorem ipsum
+        caption: ""
+        credit: ""
+        url: 
+          - breakpoint: 0
+            src: "https://placekitten.com/1920/800"
+          - breakpoint: 768
+            src: "https://placekitten.com/1920/800"
+    herocard:
+      label: herocard
+      type: object
+      preview: 
+        alignment: left
+        datecopy: 11 February 2022
+        eyebrow: Eyebrow
+        intro: "Brief intro text - ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        socials: 
+          - label: "Facebook"
+            url: "https://www.facebook.com/"
+            icon: "facebook"
+          - label: "Linkedin"
+            url: "https://www.linkedin.com/"
+            icon: "linkedin"
+        title: "This is an left aligned article headline that is more than two lines long"
   settings:
     theme:
       type: select
       label: Theme
       description: The theme type for the hero
       required: false
-      preview: 'light'
+      preview: 'dark'
       options:
         dark: Dark
         light: Light

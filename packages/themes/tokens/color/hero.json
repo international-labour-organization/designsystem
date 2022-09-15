@@ -1,0 +1,58 @@
+{
+  "color": {
+    "hero": {
+      "article": { "value": "{color.base.blue.light}" },
+      "image": { "value": "transparent" },
+      "project": { "value": "{color.base.blue.light}" },
+      "portal": { 
+        "background": {"value": "{color.base.blue.dark}"},
+        "color": {"value": "{color.base.neutrals.white}"}
+      },
+      "card": {
+        "dark": {
+          "background": { "value": "{color.base.blue.dark}" },
+          "color": { "value": "{color.base.neutrals.white}" },
+          "icon": {
+            "color": {
+              "value": "{color.base.neutrals.white}"
+            }
+          },
+          "iconhover": {
+            "color": {
+              "value": "{color.base.blue.medium}"
+            },
+            "background": {
+              "value": "{color.base.neutrals.white}"
+            }
+          },
+          "eyebrow": {
+            "color": { "value": "{color.base.neutrals.white}" }
+          },
+          "datecopy": {
+            "color": { "value": "{color.base.neutrals.white}" }
+          }
+        },
+        "light": {
+          "background": { "value": "{color.base.neutrals.white}" },
+          "color": { "value": "{color.base.neutrals.dark}" },
+          "eyebrow": {
+            "color": { "value": "{color.base.purple}" }
+          },
+          "datecopy": {
+            "color": { "value": "{color.base.neutrals.medium}" }
+          },
+          "link": {
+            "color": { "value": "{color.base.neutrals.white}" }
+          },
+          "icon": {
+            "color": { "value": "{color.base.neutrals.medium}" }
+          },
+          "iconhover": {
+            "background": { "value": "{color.base.blue.light}" },
+            "color": { "value": "{color.base.blue.medium}" }
+          }
+        }
+      }
+    }
+  }
+}
