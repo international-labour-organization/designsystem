@@ -1,0 +1,332 @@
+@use "../tokens" as *;
+@use "../functions" as *;
+@import "../mixins";
+
+.ilo--footer {
+  &--main {
+    background-color: $color-base-blue-dark;
+    padding: 0 px-to-rem(32px);
+    position: relative;
+
+    & > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    &:after {
+      background-color: $color-base-blue-medium;
+      clip-path: polygon(63.75% 0%, 100% 63.75%, 100% 0);
+      content: "";
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+      z-index: 0;
+    }
+  }
+
+  &--secondary {
+    background-color: $color-base-neutrals-white;
+    padding: px-to-rem(36px) px-to-rem(16px) 0 px-to-rem(16px);
+  }
+
+  &--headline {
+    color: $color-base-neutrals-white;
+    font-family: $fonts-display;
+    font-weight: map-get($type, "weights", "label");
+    @include font-styles("body-small");
+    @include textmargin(
+      "margin-bottom",
+      10px,
+      "body-small",
+      "display",
+      "body-xxs",
+      "display"
+    );
+    @include textmargin("margin-top", 22px, "body-small", "display", 0, 0);
+  }
+
+  &--subhead {
+    color: #bedcfa;
+    font-family: $fonts-display;
+    font-weight: map-get($type, "weights", "section");
+    @include font-styles("body-xxs");
+    @include textmargin("margin-bottom", 28px, "body-xxs", "display", 0, 0);
+  }
+
+  .address {
+    margin-bottom: px-to-rem(42px);
+  }
+
+  .address--line {
+    color: $color-base-neutrals-white;
+    @include font-styles("body-xxs");
+    @include textmargin(
+      "margin-bottom",
+      8px,
+      "body-xxs",
+      "display",
+      "body-xxs",
+      "display"
+    );
+  }
+
+  .social--headline {
+    color: $color-base-neutrals-white;
+    font-family: $fonts-display;
+    font-weight: map-get($type, "weights", "label");
+    @include font-styles("body-small");
+    @include textmargin("margin-bottom", 28px, "body-small", "display", 0, 0);
+  }
+
+  .social--links {
+    display: flex;
+    margin-bottom: px-to-rem(45px);
+  }
+
+  .social--links--item {
+    height: px-to-rem(16px);
+    margin-right: px-to-rem(20px);
+    position: relative;
+    width: px-to-rem(16px);
+
+    &:last-of-type {
+      margin-right: none;
+    }
+  }
+
+  .social--links--link {
+    background-repeat: no-repeat;
+    background-size: contain;
+    border: 0;
+    display: inline-block;
+    height: px-to-rem(16px);
+    margin: -1px;
+    padding: 0;
+    position: absolute;
+    overflow: hidden;
+    text-indent: -999rem;
+    width: px-to-rem(16px);
+
+    &.facebook {
+      @include dataurlicon("facebook", $color-base-neutrals-white);
+    }
+
+    &.instagram {
+      @include dataurlicon("instagram", $color-base-neutrals-white);
+    }
+
+    &.twitter {
+      @include dataurlicon("twitter", $color-base-neutrals-white);
+    }
+
+    &.youtube {
+      @include dataurlicon("youtube", $color-base-neutrals-white);
+    }
+  }
+
+  .legal,
+  .secondarylinks {
+    color: $color-base-neutrals-medium;
+    display: inline;
+    font-family: $fonts-copy;
+    @include font-styles("body-xxs");
+  }
+
+  .secondarylinks--list,
+  .secondarylinks--list--item {
+    display: inline;
+    list-style: none;
+  }
+
+  .secondarylinks--list--item:not(first-child) {
+    &:before {
+      content: " | ";
+    }
+  }
+
+  .secondarylinks--list--item a {
+    color: $color-base-neutrals-medium;
+
+    &:visited {
+      color: map-get($color, "link", "text-footer", "visited");
+    }
+
+    &:hover {
+      color: map-get($color, "link", "text-footer", "hover");
+    }
+
+    &:active {
+      color: map-get($color, "link", "text-footer", "active");
+      outline: none;
+    }
+
+    &:focus {
+      color: map-get($color, "link", "text-footer", "focus");
+      outline: none;
+    }
+  }
+
+  .anchorlink {
+    background: map-get($color, "ux", "readmore", "default", "background");
+    border-bottom: 0.1071811361rem solid $brand-ilo-grey-light;
+    color: $color-ux-labels-actionable;
+    display: block;
+    font-family: $fonts-display;
+    height: px-to-rem(map-get($spacing, "ux", "readmore", "default", "height"));
+    margin: px-to-rem(12px) auto 0 auto;
+    padding: px-to-rem($spacing-padding-2) px-to-rem($spacing-padding-4)
+      px-to-rem($spacing-padding-2) 0;
+    position: relative;
+    text-align: left;
+    text-decoration: none;
+    @include font-styles("label-medium");
+    width: max-content;
+
+    &:after {
+      background-repeat: no-repeat;
+      content: "";
+      display: inline-block;
+      height: px-to-rem(24px);
+      position: absolute;
+      right: px-to-rem(2px);
+      top: 50%;
+      transform: translateY(-50%) rotateX(180deg);
+      transform-origin: center center;
+      width: px-to-rem(24px);
+      @include dataurlicon("arrow", $color-ux-labels-actionable);
+    }
+
+    &:hover {
+      background: map-get($color, "ux", "readmore", "hover", "background");
+      border-bottom: 0.1071811361rem solid $color-base-blue-medium;
+      color: $color-ux-labels-hover;
+      cursor: pointer;
+      transition: background 150ms linear, border 150ms linear,
+        color 150ms linear;
+
+      &:after {
+        @include dataurlicon("arrow", $color-ux-labels-hover);
+      }
+    }
+  }
+
+  @include breakpoint("medium") {
+    &--main {
+      display: grid;
+      grid-template-columns: minmax(0, 50%) minmax(0, 50%);
+      grid-template-rows: 1fr 1fr 1fr;
+      gap: 0px 64px;
+      grid-template-areas:
+        "site-info links"
+        "address links"
+        "connect links";
+      align-content: start;
+      align-items: start;
+    }
+
+    .site--info {
+      grid-area: site-info;
+    }
+
+    .address {
+      grid-area: address;
+    }
+
+    .links {
+      grid-area: links;
+    }
+
+    &--logo {
+      width: 100%;
+    }
+
+    &--secondary {
+      padding: px-to-rem(18px) px-to-rem(16px);
+      position: relative;
+    }
+
+    .legal,
+    .secondarylinks {
+      display: block;
+      float: left;
+    }
+
+    .secondarylinks {
+      margin-right: px-to-rem(126px);
+    }
+
+    .anchorlink {
+      display: inline-block;
+      margin: 0;
+      position: absolute;
+      right: 16px;
+      top: 0;
+    }
+  }
+
+  @include breakpoint("large") {
+    &--main {
+      display: grid;
+      grid-template-columns: 14.6% 20.6% 20.6% 29.2%;
+      grid-template-rows: 0.6fr 1.4fr;
+      gap: 0px 64px;
+      grid-template-areas:
+        "site-info address address connect"
+        "site-info links links connect";
+      padding: px-to-rem(56px) px-to-rem(70px) px-to-rem(64px) px-to-rem(70px);
+    }
+
+    &--logo {
+      width: 100%;
+    }
+
+    .ilo--link-list--links {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0px 64px;
+      align-content: start;
+      align-items: start;
+    }
+
+    .connect {
+      display: grid;
+      grid-template-columns: minmax(0, 40%), 60%;
+      grid-template-rows: repeat(3, minmax(0, 1fr));
+      grid-area: connect;
+    }
+
+    .social--headline {
+      padding-left: 40%;
+      text-align: left;
+    }
+
+    .social--links {
+      padding-left: 40%;
+    }
+
+    .ilo--button {
+      align-self: start;
+      justify-self: start;
+      margin-left: 40%;
+    }
+
+    &--secondary {
+      padding: px-to-rem(18px) px-to-rem(70px);
+      position: relative;
+    }
+
+    .secondarylinks {
+      margin-right: px-to-rem(140px);
+    }
+
+    .anchorlink {
+      display: inline-block;
+      margin: 0;
+      position: absolute;
+      right: 70px;
+      top: 0;
+    }
+  }
+}

@@ -99,4 +99,50 @@
       @include dataurlicon("arrowright", $color-link-text-hover);
     }
   }
+
+  &--dark {
+    .ilo--link-list--headline,
+    .ilo--link-list--links--headline {
+      color: $color-base-neutrals-white;
+    }
+
+    .ilo--link-list--label {
+      &:before {
+        @include dataurlicon("equilateraltriangle", $color-base-neutrals-white);
+      }
+    }
+
+    .ilo--link-list--link {
+      border-bottom: px-to-rem($borders-base) solid $color-base-purple-light;
+      @include dataurlicon("arrowright", $color-base-neutrals-white);
+
+      .ilo--link-list--label {
+        color: $color-base-neutrals-white;
+      }
+
+      &:visited {
+        .ilo--link-list--label {
+          color: $color-base-neutrals-white;
+        }
+      }
+
+      &:active {
+        outline: none;
+
+        .ilo--link-list--label {
+          color: map-get($color, "link", "text", "active");
+        }
+      }
+
+      &:hover,
+      &:focus {
+        outline: none;
+        @include dataurlicon("arrowright", $color-base-blue-medium);
+
+        .ilo--link-list--label {
+          color: $color-base-blue-medium;
+        }
+      }
+    }
+  }
 }

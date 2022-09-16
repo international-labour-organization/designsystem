@@ -1,0 +1,62 @@
+{#
+  FOOTER COMPONENT
+#}
+<footer class="{{prefix}}--footer">
+  <div class="{{prefix}}--footer--main">
+    <div class="site--info">
+      <img class="{{prefix}}--footer--logo" src="{{logo.url}}" alt="{{logo.alt}}" />
+      <h3 class="{{prefix}}--footer--headline">{{tagline}}</h3>
+      <h4 class="{{prefix}}--footer--subhead">{{subtagline}}</h4>
+    </div>
+    {% if address %}
+    <div class="address">
+      {% for line in address %}
+        <p class="address--line">{{line}}</p>
+      {% endfor %}
+    </div>
+    {% endif %}
+    {% if linkgroup %}
+    <nav class="links">
+      {% include '@components/linklist/linklist.twig' with {linkgroup: linkgroup, theme: 'dark'} %}
+    </nav>
+    {% endif %}
+    {% if social or subscribe %}
+    <div class="connect">
+      {% if social %}
+        <h5 class="social--headline">{{social.headline}}</h5>
+        <ul class="social--links">
+          {% for link in social.links %}
+            <li class="social--links--item">
+              <a href="{{link.url}}" class="social--links--link {{link.type|lower}}">{{link.type|capitalize}}</a>
+            </li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+      {% if subscribe %}
+        {% include '@components/button/button.twig' with {label: subscribe.label, url: subscribe.url, type: 'primary', size: 'large', target: '_blank'} %}
+      {% endif %}
+    </div>
+    {% endif %}
+  </div>
+  <div class="{{prefix}}--footer--secondary">
+    {% if legal %}
+    <div class="legal">
+      {{legal}}
+    </div>
+    {% endif %}
+    {% if secondarylinks %}
+    <nav class="secondarylinks">
+      <ul class="secondarylinks--list">
+        {% for link in secondarylinks %}
+          <li class="secondarylinks--list--item">
+            <a href="{{link.url}}" class="secondarylinks--list--link">{{link.label}}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </nav>
+    {% endif %}
+    {% if anchorlink %}
+      <a href="{{anchorlink.href}}" class="anchorlink">{{anchorlink.label}}</a>
+    {% endif %}
+  </div>
+</footer>

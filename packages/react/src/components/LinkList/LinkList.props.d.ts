@@ -1,3 +1,5 @@
+import { linkListThemes } from "../../types";
+
 interface LinkProps {
   /**
    * Specify if this link should indent and have a triangle icon
@@ -42,4 +44,9 @@ export interface LinkListProps {
    * Specify the links to be displayed in the Link List
    */
   linkgroup?: Required<Array<LinkGroupProps>>;
+
+  /**
+   * Specify the theme for the Link List
+   */
+  theme?: Required<linkListThemes>;
 }
