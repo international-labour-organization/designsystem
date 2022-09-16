@@ -12,20 +12,19 @@
         {% if error %}
           <span class="ilo--fieldset--error">{{error}}</span>
         {% endif %}
-      </div>
     </div>
   </fieldset>
   {% if range %}
   <fieldset class="{{prefix}}--fieldset">
     <div class="{{prefix}}--fieldset--input--date ">
       <label class="{{prefix}}--fieldset--label">{{enddata.label}}</label>
-      <input name="{{enddata.name}}" type="date" class="{{prefix}}--datepicker {{prefix}}--input {% if enddata.error %} error{% endif %}" {% if enddata.placeholder %}placeholder="{{enddata.placeholder}}"{% endif %} {% if enddata.required %}required{% endif %} {% if disabled %}disabled{% endif %} id="{% if enddata.id %}{{enddata.id}}{% else %}{{enddata.name}}{% endif %}">
+      <input name="{{enddata.name}}" type="date" class="{{prefix}}--datepicker {{prefix}}--input{% if enddata['error'] is defined %} error{% endif %}" {% if enddata['placeholder'] is defined %}placeholder="{{enddata.placeholder}}"{% endif %} {% if enddata['required'] is defined %}required{% endif %} {% if enddata['disabled'] is defined %}disabled{% endif %} id="{% if enddata['id'] is defined %}{{enddata.id}}{% else %}{{enddata.name}}{% endif %}">
     </div>
-    {% if helper and not error %}
-        <span class="ilo--fieldset--helper">{{helper}}</span>
+    {% if enddata.helper and not enddata.error %}
+        <span class="ilo--fieldset--helper">{{enddata.helper}}</span>
       {% endif %}
-      {% if error %}
-        <span class="ilo--fieldset--error">{{error}}</span>
+      {% if enddata.error %}
+        <span class="ilo--fieldset--error">{{enddata.error}}</span>
       {% endif %}
     </div>
   </fieldset>

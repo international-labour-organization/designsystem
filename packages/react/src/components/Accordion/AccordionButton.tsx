@@ -13,7 +13,7 @@ const AccordionButton: FC<AccordionButtonProps> = ({
   ...rest
 }) => {
   const { prefix } = useGlobalSettings();
-  const baseClass = `${prefix}--accordion__button`;
+  const baseClass = `${prefix}--accordion--button`;
 
   const {
     activeItems,

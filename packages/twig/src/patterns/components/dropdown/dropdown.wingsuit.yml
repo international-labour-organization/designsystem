@@ -58,19 +58,14 @@ dropdown:
       description: The options for this dropdown
       required: true
       preview:
-        - disabled: false
-          label: "Option One"
+        - label: "Option One"
           value: "option one"
-        - disabled: false
-          label: "Option Two"
+        - label: "Option Two"
           value: "option two"
-        - disabled: false
-          label: "Option Three"
+        - label: "Option Three"
           value: "option three"
-        - disabled: false
-          label: "Option Four"
-          value: "option four"
-        - disabled: false
-          label: "Option Five"
-          value: "option five"
+        - label: "Option Four"
+          value: "four"
+        - label: "Option Five"
+          value: "the fifth"
   visibility: storybook

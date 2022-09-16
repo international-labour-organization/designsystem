@@ -105,15 +105,9 @@ form:
               tooltip: "Tooltip"
           type: "file"
         - field:
-            - enddata:
-                helper: "this is an end date range"
-                label: "Date Picker End Field Label"
-                name: "datepickerend"
-                placeholder: "MM/DD/YYYY"
-              label: "Date Picker Field Label"
-              name: "datepicker"
-              placeholder: "MM/DD/YYYY"
-              range: true
+            label: "Date Picker Field Label"
+            name: "datepicker"
+            placeholder: "MM/DD/YYYY"
           type: "date"
         - field:
               label: "Number Picker Field Label"
@@ -213,15 +207,15 @@ form:
                     tooltip: "Tooltip"
                 type: "file"
               - field:
-                  - enddata:
-                      helper: "this is an end date range"
-                      label: "Date Picker End Field Label"
-                      name: "datepickerend"
-                      placeholder: "MM/DD/YYYY"
-                    label: "Date Picker Field Label"
-                    name: "datepicker"
+                  enddata:
+                    helper: "this is an end date range"
+                    label: "Date Picker End Field Label"
+                    name: "datepickerend"
                     placeholder: "MM/DD/YYYY"
-                    range: true
+                  label: "Date Picker Field Label"
+                  name: "datepicker"
+                  placeholder: "MM/DD/YYYY"
+                  range: true
                 type: "date"
               - field:
                     label: "Number Picker Field Label"

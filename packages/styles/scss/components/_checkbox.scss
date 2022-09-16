@@ -9,6 +9,7 @@
   display: grid;
   height: px-to-rem(24px);
   margin: 0;
+  order: 1;
   position: relative;
   place-content: center;
   width: px-to-rem(24px);
@@ -109,7 +110,8 @@
 
   .ilo--fieldset--label {
     font-weight: 400;
-    margin-right: px-to-rem($spacing-padding-1);
+    margin-left: px-to-rem($spacing-padding-1);
     margin-top: 2px;
+    order: 2;
   }
 }

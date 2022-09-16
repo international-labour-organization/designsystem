@@ -38,11 +38,16 @@ accordion:
       required: true
       preview:
         - label: label 1
-          content: content 1
+          content: "<p>Content of Item 1</p><p>Content of Item 1</p><p>Content of Item 1</p><p>Content of Item 1</p><p>Content of Item 1</p>"
           id: item1
-          defaultExpanded: 'true'
+          defaultExpanded: false
         - label: label 2
-          content: content 2
+          content: "<p>Content of Item 2</p><p>Content of Item 2</p><p>Content of Item 2</p><p>Content of Item 2</p><p>Content of Item 2</p>"
           id: item2
-          defaultExpanded: 'true'
+          defaultExpanded: false
+  variants:
+    default:
+      label: Default
+    expanded:
+      label: Expanded
   visibility: storybook

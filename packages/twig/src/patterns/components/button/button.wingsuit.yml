@@ -50,4 +50,14 @@ button:
       description: Should the button open in a new tab? If so, include the name of the tab
       preview: 'true'
       required: false
+    kind:
+      type: select
+      label: Kind
+      description: What kind of functionality does the button have?
+      required: false
+      options:
+        button: button
+        reset: reset
+        submit: submit
+      preview: 'button'
   visibility: storybook

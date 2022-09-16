@@ -40,8 +40,8 @@
             </div>
             {% endfor %}
           </fieldset>
-        {% elseif  i.field == "datepicker" %}
-          {% include '@components/form/datepicker.twig' with i %}
+        {% elseif  i.type == "date" %}
+          {% include '@components/form/datepicker.twig' with i.field %}
         {% else %}
               {% if i.type == "input" or (i.type == "checkbox" and not i.field[0].grouped) or i.type == "file" or i.type == "number" or i.type == "textarea" %}
                 {% include '@components/form/'~ i.type ~'.twig' with i.field %}
@@ -79,8 +79,8 @@
         </div>
         {% endfor %}
       </fieldset>
-    {% elseif  item.field == "datepicker" %}
-      {% include '@components/form/datepicker.twig' with item %}
+    {% elseif  item.type == "date" %}
+      {% include '@components/form/datepicker.twig' with item.field %}
     {% else %}
           {% if item.type == "input" or (item.type == "checkbox" and not item.field[0].grouped) or item.type == "file" or item.type == "number" or item.type == "textarea" %}
             {% include '@components/form/'~ item.type ~'.twig' with item.field %}
@@ -90,4 +90,5 @@
           {% endif %}
     {% endif %}
   {% endfor %}
+  {% include '@components/button/button.twig' with {type: "primary", kind: "submit", size: "large", label: submitlabel} %}
 </form>

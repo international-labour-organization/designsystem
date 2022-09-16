@@ -1,13 +1,15 @@
 {#
   ACCORDION ITEM COMPONENT
 #}
-<li class="{{prefix}}--accordion__item" id=" {{ id }}">
+<li class="{{prefix}}--accordion--item" id=" {{ id }}">
   <{{ headingLevel|default('h3') }} class="ilo--h3">
-    <button class="{{prefix}}--accordion__button {{prefix}}--accordion__button--{{ size|default('small') }}" aria-expanded="{{ defaultExpanded }}" aria-controls="panel-{{ id }}" id="button-{{ id }}">
+    <button class="{{prefix}}--accordion--button {{prefix}}--accordion--button--{{ size|default('small') }}" aria-expanded="{{ defaultExpanded }}" aria-controls="panel-{{ id }}" id="button-{{ id }}">
     {{label}}
     </button>
   </{{ headingLevel|default('h3') }}>
-  <div class="{{prefix}}--accordion__panel {{prefix}}--accordion__panel--open collapse show" id="panel-{{ id }}" aria-labelledby="button-{{ id }}" role="region">
-    {{content|raw}}
+  <div class="{{prefix}}--accordion--panel{% if defaultExpanded == 'true'%} {{prefix}}--accordion--panel--open{% endif %}" id="panel-{{ id }}" aria-labelledby="button-{{ id }}" role="region">
+    <div class="{{prefix}}--accordion--innerpanel">
+      {{content|raw}}
+    </div>
   </div>
 </li>
