@@ -19,7 +19,6 @@ export default class Accordion {
      */
     this.element = element;
     this.multipleExpanded = false;
-    this.itemStatuses = [];
 
     // Initialize the view
     this.init();
@@ -34,7 +33,7 @@ export default class Accordion {
    * @chainable
    */
   init() {
-    this.cacheDomReferences().setupHandlers().enable();
+    this.cacheDomReferences().setupHandlers().enable().evaluateAccordionHeights();
 
     return this;
   }
@@ -50,23 +49,11 @@ export default class Accordion {
      * The field that a user interacts with on a form
      * @type {Object}
      */
-    this.accordionItems = this.element.querySelectorAll('.ilo--accordion__item');
-    this.multipleExpanded = this.element.getAttribute('data-multipleexpanded');
-    this.accordionButtons = this.element.querySelectorAll('.ilo--accordion__button');
-    this.accordionPanels = this.element.querySelectorAll('.ilo--accordion__panel');
+    this.accordionItems = this.element.querySelectorAll('.ilo--accordion--item');
+    this.multipleExpanded = this.element.getAttribute('data-multipleexpanded') === 'true';
+    this.accordionPanels = this.element.querySelectorAll('.ilo--accordion--panel');
+    this.accordionButtons = this.element.querySelectorAll('.ilo--accordion--button');
     console.log(this.multipleExpanded);
-
-    this.accordionButtons.forEach((button, i) => {
-      const expanded = button.getAttribute(ARIA.EXPANDED);
-      const id = this.accordionItems[i].getAttribute('id');
-      if (expanded === 'true') {
-        this.itemStatuses = getUpdatedItems({
-          id,
-          itemStatuses: this.itemStatuses,
-          allowMultipleExpanded: this.multipleExpanded,
-        });
-      }
-    });
 
     return this;
   }
@@ -95,7 +82,7 @@ export default class Accordion {
   enable() {
     if (this.accordionButtons.length > 0) {
       this.accordionButtons.forEach((button, i) => {
-        button.addEventListener(EVENTS.CLICK, () => this.onClick(i));
+        button.addEventListener(EVENTS.CLICK, (e) => this.onClick(e));
       });
     }
 
@@ -108,16 +95,24 @@ export default class Accordion {
    * @return {Object} Accordion A reference to the instance of the class
    * @chainable
    */
-  onClick(i) {
-    const id = this.accordionItems[i].getAttribute('id');
+  onClick(e) {
+    this.updateAccordionItems(e.target);
 
-    this.itemStatuses = getUpdatedItems({
-      id,
-      itemStatuses: this.itemStatuses,
-      allowMultipleExpanded: this.multipleExpanded,
+    return this;
+  }
+
+  /**
+   * Evaluate accordion panel heights
+   *
+   * @chainable
+   */
+  evaluateAccordionHeights() {
+    this.accordionPanels.forEach((item, i) => {
+      item.style.setProperty(
+        '--height',
+        item.querySelector('.ilo--accordion--innerpanel').scrollHeight + 'px'
+      );
     });
-
-    this.updateAccordionItems();
 
     return this;
   }
@@ -127,21 +122,28 @@ export default class Accordion {
    *
    * @chainable
    */
-  updateAccordionItems() {
-    this.accordionItems.forEach((item, i) => {
-      const id = item.getAttribute('id');
-      const open = this.itemStatuses.indexOf(id) > -1;
-      if (open) {
-        this.accordionButtons[i].setAttribute(ARIA.EXPANDED, 'true');
-        this.accordionPanels[i].setAttribute(ARIA.HIDDEN, 'false');
-        this.expandSection(this.accordionPanels[i]);
-      } else {
-        this.accordionButtons[i].setAttribute(ARIA.EXPANDED, 'false');
-        this.accordionPanels[i].setAttribute(ARIA.HIDDEN, 'true');
-        this.collapseSection(this.accordionPanels[i]);
-      }
-      this.accordionButtons[i].blur();
-    });
+  updateAccordionItems(panelbutton) {
+    const panel = panelbutton
+      .closest('.ilo--accordion--item')
+      .querySelector('.ilo--accordion--panel');
+    const isopen = panel.classList.contains('ilo--accordion--panel--open');
+    const panelid = panel.id;
+
+    if (!this.multipleExpanded) {
+      this.accordionPanels.forEach((item) => {
+        const currentId = item.id;
+        if (panelid !== currentId) {
+          this.collapseSection(item);
+        }
+      });
+    }
+
+    if (!isopen) {
+      this.expandSection(panel);
+    } else {
+      this.collapseSection(panel);
+    }
+    panelbutton.blur();
 
     return this;
   }
@@ -154,18 +156,11 @@ export default class Accordion {
    * @chainable
    */
   collapseSection(element) {
-    const sectionHeight = element.scrollHeight;
-    const elementTransition = element.style.transition;
-    element.classList.remove('ilo--accordion__panel--open');
-    element.style.transition = '';
-
-    requestAnimationFrame(() => {
-      element.style.height = `${sectionHeight}px`;
-      element.style.transition = elementTransition;
-      requestAnimationFrame(() => {
-        element.style.height = `${0}px`;
-      });
-    });
+    element.parentElement
+      .querySelector('.ilo--accordion--button')
+      .setAttribute(ARIA.EXPANDED, 'true');
+    element.setAttribute(ARIA.HIDDEN, 'false');
+    element.classList.remove('ilo--accordion--panel--open');
   }
 
   /**
@@ -176,19 +171,10 @@ export default class Accordion {
    * @chainable
    */
   expandSection(element) {
-    element.classList.add('expanding');
-    const sectionHeight = element.scrollHeight;
-    element.style.height = `${sectionHeight}px`;
-    element.classList.add('ilo--accordion__panel--open');
-
-    element.addEventListener(EVENTS.TRANSITIONEND, () => {
-      element.getAttribute(ARIA.HIDDEN) === MISC.FALSE
-        ? (element.style.height = 'auto')
-        : (element.style.height = '0px');
-      element.classList.remove('expanding');
-      element.removeEventListener(EVENTS.TRANSITIONEND, () => {
-        element.style.height = null;
-      });
-    });
+    element.parentElement
+      .querySelector('.ilo--accordion--button')
+      .setAttribute(ARIA.EXPANDED, 'false');
+    element.setAttribute(ARIA.HIDDEN, 'true');
+    element.classList.add('ilo--accordion--panel--open');
   }
 }

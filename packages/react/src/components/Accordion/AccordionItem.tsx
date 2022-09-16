@@ -17,7 +17,7 @@ const AccordionItem: FC<AccordionItemProps> = ({
   ...rest
 }) => {
   const { prefix } = useGlobalSettings();
-  const baseClass = `${prefix}--accordion__item`;
+  const baseClass = `${prefix}--accordion--item`;
   const accordionItemClasses = classNames(className, {
     [baseClass]: true,
   });
