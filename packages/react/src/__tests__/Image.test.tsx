@@ -7,7 +7,7 @@ describe("<Image>", () => {
     const { container } = render(<Image {...imageArgs.image} />);
     expect(container).not.toBeNull();
     expect(container.querySelector("img")?.getAttribute("src")).toEqual(
-      imageArgs.image.url[0].src
+      imageArgs.image.url?.[0].src
     );
   });
 

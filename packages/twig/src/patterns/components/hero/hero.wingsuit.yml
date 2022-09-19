@@ -1,0 +1,56 @@
+hero:
+  use: '@components/hero/hero.twig'
+  label: Hero
+  description: The Hero presents an image banner.
+  fields:
+    image:
+      type: object
+      preview:
+        alt: Lorem ipsum
+        caption: ""
+        credit: ""
+        url: 
+          - breakpoint: 0
+            src: "https://placekitten.com/1920/800"
+          - breakpoint: 768
+            src: "https://placekitten.com/1920/800"
+    herocard:
+      label: herocard
+      type: object
+      preview: 
+        alignment: left
+        datecopy: 11 February 2022
+        eyebrow: Eyebrow
+        intro: "Brief intro text - ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+        socials: 
+          - label: "Facebook"
+            url: "https://www.facebook.com/"
+            icon: "facebook"
+          - label: "Linkedin"
+            url: "https://www.linkedin.com/"
+            icon: "linkedin"
+        title: "This is an left aligned article headline that is more than two lines long"
+  settings:
+    theme:
+      type: select
+      label: Theme
+      description: The theme type for the hero
+      required: false
+      preview: 'dark'
+      options:
+        dark: Dark
+        light: Light
+    types:
+      type: select
+      label: Types
+      description: The type of hero
+      required: false
+      preview: 'publication'
+      options:
+        home: Home
+        publication: Publication
+        graphic: Graphic
+        project: Project
+        article: Article
+        portal: Portal
+  visibility: storybook

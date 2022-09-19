@@ -39,7 +39,7 @@ const Image: FC<ImageProps> = ({ alt, caption, className, credit, url }) => {
                   key={index}
                 />
               ))}
-          <img src={url[0].src} alt={alt} />
+          {url && <img src={url[0].src} alt={alt} />}
         </picture>
         {credit && <Credit credit={credit} />}
       </div>
