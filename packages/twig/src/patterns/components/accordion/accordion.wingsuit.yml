@@ -55,9 +55,6 @@ accordion:
       label: Expanded
       description: The Accordion with panels opened on page load
       fields:
-        size: small
-        allowMultipleExpanded: 'true'
-        headingLevel: h3
         items:
           - label: label 1
             content: "<p>Content of Item 1</p><p>Content of Item 1</p><p>Content of Item 1</p><p>Content of Item 1</p><p>Content of Item 1</p>"
@@ -70,17 +67,4 @@ accordion:
     closed:
       label: Closed
       description: The Accordion with panels closed on page load
-      fields:
-        size: small
-        allowMultipleExpanded: 'true'
-        headingLevel: h3
-        items:
-          - label: label 1
-            content: "<p>Content of Item 1</p><p>Content of Item 1</p><p>Content of Item 1</p><p>Content of Item 1</p><p>Content of Item 1</p>"
-            id: item1
-            defaultExpanded: 'false'
-          - label: label 2
-            content: "<p>Content of Item 2</p><p>Content of Item 2</p><p>Content of Item 2</p><p>Content of Item 2</p><p>Content of Item 2</p>"
-            id: item2
-            defaultExpanded: 'false'
   visibility: storybook
