@@ -1,0 +1,54 @@
+modal:
+  use: '@components/modal/modal.twig'
+  label: Modal
+  description: The Modal displays a div containing a button which is visible on page load. On click of this button, a modal dialog is opened which displays a semitransparent fixed-position background and the contents of the chosen component.
+  fields:
+    closebutton:
+      type: object
+      label: Closee Button
+      description: Label and settings for the "close" button
+      preview:
+        size: 'small'
+        type: 'secondary'
+        label: 'Close Button'
+        icon: close
+        iconPos: center
+        icononly: true
+        className: 'modal--close'
+      required: true
+    component:
+      type: string
+      label: Component
+      description: The component to add to this modal
+      preview: "image"
+      required: true
+    modaldata:
+      type: object
+      label: Modal Data
+      description: The fields needed to populate the component being displayed by the modal
+      preview:
+        alt: 'My alt text'
+        caption: 'my image caption'
+        credit: 'Photo: copyright 2022 Person S. Name'
+        url:
+            - breakpoint: 0
+              src: 'https://place-hold.it/400x300?text=SmallBreakpointImage'
+            - breakpoint: 800
+              src: 'https://place-hold.it/800x600?text=MediumBreakpointImage'
+            - breakpoint: 1200
+              src: 'https://place-hold.it/1200x900?text=LargeBreakpointImage'
+            - breakpoint: 1440
+              src: 'https://place-hold.it/1600x1200?text=LargestBreakpointImage'
+      required: true
+    openbutton:
+      type: object
+      label: Open Button
+      description: The label and settings for the button that will open the modal
+      preview:
+        size: 'large'
+        type: 'primary'
+        label: 'Open Button'
+        className: 'modal--open'
+        opensmodal: true
+      required: true
+  visibility: storybook

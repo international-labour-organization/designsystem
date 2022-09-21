@@ -1,0 +1,18 @@
+{#
+  MODAL COMPONENT
+
+  The modal calls another Twig into it, and therefore passes `modaldata` into it. `modaldata` should contain the fields for the component in question, just as if the component were being used anywhere else.
+#}
+
+  {% if component != 'modal' %}
+  <div class="{{prefix}}--modal" data-loadcomponent="Modal" data-prefix="{{prefix}}">
+    {% include '@components/button/button.twig' with openbutton %}
+    <div class="{{prefix}}--modal--wrapper" aria-modal="true" role="alertdialog">
+      <div class="{{prefix}}--modal--background" role="presentation"></div>
+      <div class="{{prefix}}--modal--contents">
+        {% include '@components/' ~ component ~ '/' ~ component ~ '.twig' with modaldata %}
+        {% include '@components/button/button.twig' with closebutton %}
+      </div>
+    </div>
+  </div>
+  {% endif %}

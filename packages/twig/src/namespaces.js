@@ -10,4 +10,5 @@ module.exports = {
   patterns: patterns,
   components: path.resolve(patterns, 'components'),
   tokens: path.resolve(__dirname, 'tokens'),
+  svgs: path.resolve(__dirname, 'svgs'),
 };

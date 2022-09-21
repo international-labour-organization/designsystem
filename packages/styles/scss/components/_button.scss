@@ -1,4 +1,5 @@
 @use "../tokens" as *;
+@use "../functions" as *;
 @import "../mixins";
 
 .ilo--button {
@@ -45,6 +46,20 @@
       .ilo--icon {
         right: calc($spacing-icons-icon-padding-lg - 9px);
         top: calc($spacing-boxpadding-button-icon-large-top - 3px);
+      }
+    }
+
+    &--only {
+      height: px-to-rem($spacing-padding-3);
+      width: px-to-rem($spacing-padding-3);
+
+      .ilo--icon {
+        left: 0;
+        top: 0;
+      }
+
+      .button__label {
+        @include isVisuallyHidden();
       }
     }
   }

@@ -1,6 +1,11 @@
 export type accordionSize = "small" | "large";
 export type buttonFunctions = "button" | "submit" | "reset";
-export type buttonTypes = "primary" | "secondary" | "tertiary" | "alert";
+export type buttonTypes =
+  | "primary"
+  | "secondary"
+  | "tertiary"
+  | "alert"
+  | "icononly";
 export type calloutTypes = "info" | "error" | "success" | "warning";
 export type fieldTypes =
   | "checkbox"

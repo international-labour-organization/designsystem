@@ -22,6 +22,8 @@ button:
         primary: Primary
         secondary: Secondary
         tertiary: Tertiary
+        alert: Alert
+        icononly: Icon Only
       preview: 'primary'
     disabled:
       type: select
@@ -60,4 +62,40 @@ button:
         reset: reset
         submit: submit
       preview: 'button'
+    icon:
+      type: string
+      label: Icon
+      description: optional icon to include in button
+      preview: false
+      required: false
+    iconPosition:
+      type: select
+      label: Icon Position
+      description: if there's an icon, where is it in the button?
+      preview:
+        left: left
+        right: right
+      required: false
+    icononly:
+      type: select
+      label: Icon Only
+      description: Is this an icon-only button?
+      preview:
+        true: true
+        false: false
+      required: false
+    className:
+      type: string
+      label: Class name
+      description: optional class name
+      preview: 'optionalclass'
+      required: false
+    opensmodal:
+      type: select
+      label: Opens Modal
+      description: Does this button trigger open a modal?
+      preview:
+        true: true
+        false: false
+      required: false
   visibility: storybook
