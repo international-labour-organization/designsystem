@@ -33,6 +33,11 @@ export interface ButtonProps {
   iconPosition?: positionTypes;
 
   /**
+   * Does this button display an icon only?
+   */
+  icononly?: boolean;
+
+  /**
    * Specify which function the button performs
    */
   kind?: buttonFunctions;
@@ -41,6 +46,11 @@ export interface ButtonProps {
    * Specify the label for the Button
    */
   label?: string;
+
+  /**
+   * Does this button open a modal?
+   */
+  opensmodal?: boolean;
 
   /**
    * Specify an optional className to be added to your Button.
