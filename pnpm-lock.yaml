@@ -346,6 +346,7 @@ importers:
       '@babel/core': ^7.8.4
       '@babel/preset-env': ^7.8.4
       '@ilo-org/fonts': workspace:*
+      '@ilo-org/icons': workspace:*
       '@ilo-org/styles': workspace:*
       '@ilo-org/themes': workspace:*
       '@ilo-org/utils': workspace:*
@@ -379,6 +380,7 @@ importers:
       eslint-plugin-vue: ^6.0.1
       file-loader: ^6.2.0
       fs: 0.0.1-security
+      fs-extra: ^8.1.0
       glob: ^7.1.6
       jquery-once: ^2.2.3
       lodash: ^4.17.20
@@ -404,6 +406,7 @@ importers:
       yo: ^3.1.1
     dependencies:
       '@ilo-org/fonts': link:../fonts
+      '@ilo-org/icons': link:../icons
       '@ilo-org/styles': link:../styles
       '@ilo-org/themes': link:../themes
       '@ilo-org/utils': link:../utils
@@ -441,6 +444,7 @@ importers:
       eslint-plugin-vue: 6.2.2_eslint@6.8.0
       file-loader: 6.2.0_webpack@4.46.0
       fs: 0.0.1-security
+      fs-extra: 8.1.0
       glob: 7.2.0
       jquery-once: 2.2.3
       lodash: 4.17.21
@@ -6302,97 +6306,6 @@ packages:
       - webpack
     dev: true
 
-  /@storybook/addon-storyshots/6.4.22_14028138f0aa6b629527d097a55ef8ff:
-    resolution: {integrity: sha512-9u+uigHH4khxHB18z1TOau+RKpLo/8tdhvKVqgjy6pr3FSsgp+JyoI+ubDtgWAWFHQ0Zhh5MBWNDmPOo5pwBdA==}
-    peerDependencies:
-      '@angular/core': '>=6.0.0'
-      '@angular/platform-browser-dynamic': '>=6.0.0'
-      '@storybook/angular': '*'
-      '@storybook/react': '*'
-      '@storybook/vue': '*'
-      '@storybook/vue3': '*'
-      jest: '*'
-      jest-preset-angular: '*'
-      jest-vue-preprocessor: '*'
-      preact: ^10.5.13
-      react: ^16.8.0 || ^17.0.0
-      react-dom: ^16.8.0 || ^17.0.0
-      rxjs: '*'
-      svelte: '*'
-      vue: '*'
-      vue-jest: '*'
-    peerDependenciesMeta:
-      '@angular/core':
-        optional: true
-      '@angular/platform-browser-dynamic':
-        optional: true
-      '@storybook/angular':
-        optional: true
-      '@storybook/react':
-        optional: true
-      '@storybook/vue':
-        optional: true
-      '@storybook/vue3':
-        optional: true
-      jest-preset-angular:
-        optional: true
-      jest-vue-preprocessor:
-        optional: true
-      preact:
-        optional: true
-      react:
-        optional: true
-      react-dom:
-        optional: true
-      rxjs:
-        optional: true
-      svelte:
-        optional: true
-      vue:
-        optional: true
-      vue-jest:
-        optional: true
-    dependencies:
-      '@jest/transform': 26.6.2
-      '@storybook/addons': 6.4.22_react-dom@17.0.2+react@17.0.2
-      '@storybook/babel-plugin-require-context-hook': 1.0.1
-      '@storybook/client-api': 6.4.22_react-dom@17.0.2+react@17.0.2
-      '@storybook/core': 6.4.22_d3ad7d9f82c8a4f9c59e8af0845ecb33
-      '@storybook/core-client': 6.4.22_ae8bac78fbc388ee1a2910a05c5dd7ae
-      '@storybook/core-common': 6.4.22_362996456c0672810dbe41a7f699397a
-      '@storybook/csf': 0.0.2--canary.87bc651.0
-      '@storybook/react': 6.4.22_d514cea93a76dd82f919e73d94ee0dc5
-      '@types/glob': 7.2.0
-      '@types/jest': 26.0.24
-      '@types/jest-specific-snapshot': 0.5.5
-      core-js: 3.22.2
-      glob: 7.2.0
-      global: 4.4.0
-      jest-specific-snapshot: 4.0.0
-      preact-render-to-string: 5.1.21
-      pretty-format: 26.6.2
-      react: 17.0.2
-      react-dom: 17.0.2_react@17.0.2
-      react-test-renderer: 17.0.2_react@17.0.2
-      read-pkg-up: 7.0.1
-      regenerator-runtime: 0.13.9
-      ts-dedent: 2.2.0
-    transitivePeerDependencies:
-      - '@storybook/builder-webpack5'
-      - '@storybook/manager-webpack5'
-      - '@types/react'
-      - bufferutil
-      - encoding
-      - eslint
-      - supports-color
-      - typescript
-      - utf-8-validate
-      - vue-template-compiler
-      - webpack
-      - webpack-cli
-      - webpack-command
-    dev: true
-
   /@storybook/addon-toolbars/6.4.22_7a759d72fcbc11ce03c9de110c21df82:
     resolution: {integrity: sha512-FFyj6XDYpBBjcUu6Eyng7R805LUbVclEfydZjNiByAoDVyCde9Hb4sngFxn/T4fKAfBz/32HKVXd5iq4AHYtLg==}
     peerDependencies:
@@ -6813,10 +6726,6 @@ packages:
       telejson: 6.0.8
       ts-dedent: 2.2.0
       util-deprecate: 1.0.2
-    dev: true
-
-  /@storybook/babel-plugin-require-context-hook/1.0.1:
-    resolution: {integrity: sha512-WM4vjgSVi8epvGiYfru7BtC3f0tGwNs7QK3Uc4xQn4t5hHQvISnCqbNrHdDYmNW56Do+bBztE8SwP6NGUvd7ww==}
     dev: true
 
   /@storybook/builder-webpack4/6.4.22_31f9e7e41812f904f986075d2a1b0474:
@@ -10096,24 +10005,11 @@ packages:
     dependencies:
       '@types/istanbul-lib-report': 3.0.0
 
-  /@types/jest-specific-snapshot/0.5.5:
-    resolution: {integrity: sha512-AaPPw2tE8ewfjD6qGLkEd4DOfM6pPOK7ob/RSOe1Z8Oo70r9Jgo0SlWyfxslPAOvLfQukQtiVPm6DcnjSoZU5A==}
-    dependencies:
-      '@types/jest': 27.4.1
-    dev: true
-
   /@types/jest/25.2.3:
     resolution: {integrity: sha512-JXc1nK/tXHiDhV55dvfzqtmP4S3sy3T3ouV2tkViZgxY/zeUkcpQcQPGRlgF4KmWzWW5oiWYSZwtCB+2RsE4Fw==}
     dependencies:
       jest-diff: 25.5.0
       pretty-format: 25.5.0
-
-  /@types/jest/26.0.24:
-    resolution: {integrity: sha512-E/X5Vib8BWqZNRlDxj9vYXhsDwPYbPINqKF9BsnSoon4RQ0D9moEuLD8txgyypFLH7J4+Lho9Nr/c8H0Fi+17w==}
-    dependencies:
-      jest-diff: 26.6.2
-      pretty-format: 26.6.2
-    dev: true
 
   /@types/jest/27.4.1:
     resolution: {integrity: sha512-23iPJADSmicDVrWk+HT58LMJtzLAnB2AgIzplQuq/bSrGaxCrlvRFjGbXmamnnk/mAmCdLStiGqggu28ocUyiw==}
@@ -12351,7 +12247,7 @@ packages:
       loader-utils: 2.0.2
       make-dir: 3.1.0
       schema-utils: 2.7.1
-      webpack: 4.46.0
+      webpack: 4.46.0_webpack-cli@3.3.12
 
   /babel-loader/8.2.5_@babel+core@7.17.9:
     resolution: {integrity: sha512-OSiFfH89LrEMiWd4pLNqGz4CwJDtbs2ZVc+iGu2HrkRfPxId9F2anQj38IxWpmRfsUY0aBZYi1EFcd3mhtRMLQ==}
@@ -21716,14 +21612,6 @@ packages:
     transitivePeerDependencies:
       - supports-color
 
-  /jest-specific-snapshot/4.0.0:
-    resolution: {integrity: sha512-YdW5P/MVwOizWR0MJwURxdrjdXvdG2MMpXKVGr7dZ2YrBmE6E6Ab74UL3DOYmGmzaCnNAW1CL02pY5MTHE3ulQ==}
-    peerDependencies:
-      jest: '>= 26.0.0'
-    dependencies:
-      jest-snapshot: 26.6.2
-    dev: true
-
   /jest-util/24.9.0:
     resolution: {integrity: sha512-x+cZU8VRmOJxbA1K5oDBdxQmdq0OIdADarLxk0Mq+3XS4jgvhG/oKGWcIDCtPG0HgjxOYvF+ilPJQsAyXfbNOg==}
     engines: {node: '>= 6'}
@@ -27256,14 +27144,6 @@ packages:
       posthtml-parser: 0.4.2
       posthtml-render: 1.4.0
 
-  /preact-render-to-string/5.1.21:
-    resolution: {integrity: sha512-wbMtNU4JpfvbE04iCe7BZ1yLYN8i6NRrq+NhR0fUINjPXGu3ZIc4GM5ScOiwdIP1sPXv9SVETuud/tmQGMvdNQ==}
-    peerDependencies:
-      preact: '>=10'
-    dependencies:
-      pretty-format: 3.8.0
-    dev: true
-
   /preferred-pm/3.0.3:
     resolution: {integrity: sha512-+wZgbxNES/KlJs9q40F/1sfOd/j7f1O9JaHcW5Dsn3aUUOZg3L2bjpVUcKV2jvtElYfoTuQiNeMfQJ4kwUAhCQ==}
     engines: {node: '>=10'}
@@ -27354,10 +27234,6 @@ packages:
       ansi-regex: 5.0.1
       ansi-styles: 5.2.0
       react-is: 17.0.2
-
-  /pretty-format/3.8.0:
-    resolution: {integrity: sha1-v77VbV6ad2ZF9LH/eqGjrE+jw4U=}
-    dev: true
 
   /pretty-hrtime/1.0.3:
     resolution: {integrity: sha512-66hKPCr+72mlfiSjlEB1+45IjXSqvVAIy6mocupoww4tBFE9R9IhwwUGoI4G++Tc9Aq+2rxOt0RFU6gPcrte0A==}
@@ -28236,16 +28112,6 @@ packages:
       - webpack-plugin-serve
     dev: false
 
-  /react-shallow-renderer/16.15.0_react@17.0.2:
-    resolution: {integrity: sha512-oScf2FqQ9LFVQgA73vr86xl2NaOIX73rh+YFqcOp68CWj56tSfgtGKrEbyhCj0rSijyG9M1CYprTh39fBi5hzA==}
-    peerDependencies:
-      react: ^16.0.0 || ^17.0.0 || ^18.0.0
-    dependencies:
-      object-assign: 4.1.1
-      react: 17.0.2
-      react-is: 17.0.2
-    dev: true
-
   /react-sizeme/2.6.12_react-dom@16.14.0+react@16.14.0:
     resolution: {integrity: sha512-tL4sCgfmvapYRZ1FO2VmBmjPVzzqgHA7kI8lSJ6JS6L78jXFNRdOZFpXyK6P1NBZvKPPCZxReNgzZNUajAerZw==}
     peerDependencies:
@@ -28317,18 +28183,6 @@ packages:
       prismjs: 1.28.0
       react: 16.14.0
       refractor: 3.6.0
-
-  /react-test-renderer/17.0.2_react@17.0.2:
-    resolution: {integrity: sha512-yaQ9cB89c17PUb0x6UfWRs7kQCorVdHlutU1boVPEsB8IDZH6n9tHxMacc3y0JoXOJUsZb/t/Mb8FUWMKaM7iQ==}
-    peerDependencies:
-      react: 17.0.2
-    dependencies:
-      object-assign: 4.1.1
-      react: 17.0.2
-      react-is: 17.0.2
-      react-shallow-renderer: 16.15.0_react@17.0.2
-      scheduler: 0.20.2
-    dev: true
 
   /react-textarea-autosize/7.1.2_react@16.14.0:
     resolution: {integrity: sha512-uH3ORCsCa3C6LHxExExhF4jHoXYCQwE5oECmrRsunlspaDAbS4mGKNlWZqjLfInWtFQcf0o1n1jC/NGXFdUBCg==}
@@ -29692,6 +29546,7 @@ packages:
     dependencies:
       loose-envify: 1.4.0
       object-assign: 4.1.1
+    dev: false
 
   /schema-utils/1.0.0:
     resolution: {integrity: sha512-i27Mic4KovM/lnGsy8whRCHhc7VicJajAjTrYg11K9zfZXnYIt4k5F+kZkwjnrhKzLic/HLU4j11mjsz2G/75g==}
@@ -31510,7 +31365,7 @@ packages:
       serialize-javascript: 4.0.0
       source-map: 0.6.1
       terser: 4.8.0
-      webpack: 4.46.0
+      webpack: 4.46.0_webpack-cli@3.3.12
       webpack-sources: 1.4.3
 
   /terser-webpack-plugin/4.2.3_webpack@4.46.0:

@@ -15,8 +15,8 @@
     "prototyping"
   ],
   "scripts": {
-    "storybook": "node importprefix.js; start-storybook --config-dir apps/storybook",
-    "build:storybook": "node importprefix.js; build-storybook --config-dir apps/storybook -o ./storybook-static",
+    "storybook": "node importprefix.js; node importsvgs.js; start-storybook --config-dir apps/storybook",
+    "build:storybook": "node importprefix.js; node importsvgs.js; build-storybook --config-dir apps/storybook -o ./storybook-static",
     "build": "pnpm build:storybook",
     "dev:drupal": "cross-env-shell NODE_ENV=development \"webpack --watch --config ./apps/drupal/webpack.config.js\"",
     "build:drupal": "cross-env-shell NODE_ENV=production \"webpack  --config ./apps/drupal/webpack.config.js\"",
@@ -28,14 +28,16 @@
     "fmt": "npm run fmt:js; npm run fmt:css",
     "ci": "npm run lint && npm run build:drupal",
     "import:prefix": "node importprefix.js",
+    "import:svgs": "node importsvgs.js",
     "output": "node outputtwigs.js"
   },
   "dependencies": {
     "@ilo-org/fonts": "workspace:*",
-    "@wingsuit-designsystem/preset-scss": "^1.2.3",
+    "@ilo-org/icons": "workspace:*",
     "@ilo-org/styles": "workspace:*",
     "@ilo-org/themes": "workspace:*",
     "@ilo-org/utils": "workspace:*",
+    "@wingsuit-designsystem/preset-scss": "^1.2.3",
     "video.js": "^7.19.2"
   },
   "devDependencies": {
@@ -71,6 +73,7 @@
     "eslint-plugin-vue": "^6.0.1",
     "file-loader": "^6.2.0",
     "fs": "0.0.1-security",
+    "fs-extra": "^8.1.0",
     "glob": "^7.1.6",
     "jquery-once": "^2.2.3",
     "lodash": "^4.17.20",
