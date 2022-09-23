@@ -50,7 +50,7 @@ export default class Tooltip {
     // enable defaults
     this.prefix = this.element.getAttribute('data-prefix');
     this.tooltip = this.element.querySelector(`.${this.prefix}--tooltip`);
-    this.arrow = this.element.querySelector(`.${this.prefix}--tooltip__arrow`);
+    this.arrow = this.element.querySelector(`.${this.prefix}--tooltip--arrow`);
     this.alignment = this.arrow.getAttribute('data-alignment');
     this.placement = this.tooltip.getAttribute('data-placement');
 
@@ -165,8 +165,8 @@ export default class Tooltip {
 
       // set class for placement on arrow
       // setArrowPlacement(placement);
-      this.arrow.classList.remove(`${this.prefix}--tooltip__arrow--placement-${this.placement}`);
-      this.arrow.classList.add(`${this.prefix}--tooltip__arrow--placement-${this.placement}`);
+      this.arrow.classList.remove(`${this.prefix}--tooltip--arrow--placement-${this.placement}`);
+      this.arrow.classList.add(`${this.prefix}--tooltip--arrow--placement-${this.placement}`);
       this.placement = placement;
       this.arrow.setAttribute('data-placement', placement);
 
