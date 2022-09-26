@@ -39,7 +39,11 @@
     position: relative;
 
     &.has-icon {
-      height: 16px;
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: px-to-rem($spacing-padding-2);
+      min-width: px-to-rem($spacing-padding-2);
+      @include dataurlicon("info", $color-ux-labels-actionable);
     }
   }
 
@@ -52,36 +56,6 @@
     margin-top: -#{map-get($spacing, "tooltip", "tooltip-arrow-width")};
     position: absolute;
     width: 0;
-  }
-
-  &--icon {
-    background-color: map-get($color, "tooltip", "dark", "background");
-    border-radius: 50%;
-    color: map-get($color, "tooltip", "default", "background");
-    display: inline-block;
-    height: 16px;
-    padding: 0;
-    position: relative;
-    width: 16px;
-
-    .ilo--icon {
-      height: 100% !important;
-      width: 100% !important;
-    }
-
-    &:after {
-      background: transparent;
-      border: 2px solid map-get($color, "tooltip", "dark", "background");
-      border-radius: 50%;
-      content: "";
-      display: block;
-      height: 100%;
-      left: 0;
-      position: absolute;
-      top: 0;
-      width: 100%;
-      z-index: 2;
-    }
   }
 
   &--alignment-top {

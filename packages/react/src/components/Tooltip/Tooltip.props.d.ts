@@ -2,7 +2,7 @@ import { tooltipAlignment, tooltipPlacement, tooltipThemes } from "../../types";
 
 export interface TooltipProps {
   /**
-   * Specify the content of your Button.
+   * Specify the content of your Tooltip.
    */
   children?: ReactNode;
 

@@ -2,11 +2,10 @@
   TOOLTIP COMPONENT
 #}
   <div
-    class="{{prefix}}--tooltip__wrapper" role="status" aria-live="polite" aria-relevant="additions" data-loadcomponent="Tooltip" data-prefix="{{prefix}}"
+    class="{{prefix}}--tooltip--wrapper{% if icon %} has-icon{% endif %}" role="status" aria-live="polite" aria-relevant="additions" data-loadcomponent="Tooltip" data-prefix="{{prefix}}"
   >
-    {{content}}
     <span class="{{prefix}}--tooltip {{prefix}}--tooltip--{{theme}}" data-alignment="left">
-      <span class="{{prefix}}--tooltip__arrow {{prefix}}--tooltip__arrow--placement-negative" data-placement="negative" role="presentation"></span>
+      <span class="{{prefix}}--tooltip--arrow {{prefix}}--tooltip--arrow--placement-negative" data-placement="negative" role="presentation"></span>
       {{label}}
     </span>
   </div>

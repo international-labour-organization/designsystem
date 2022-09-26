@@ -3,7 +3,6 @@ import classNames from "classnames";
 import useGlobalSettings from "../../hooks/useGlobalSettings";
 import { TooltipProps } from "./Tooltip.props";
 import ReactDOM from "react-dom";
-import { Icon } from "../Icon";
 
 const Tooltip: FC<TooltipProps> = ({
   className,
@@ -129,11 +128,6 @@ const Tooltip: FC<TooltipProps> = ({
       onBlur={handleOnMouseOut}
     >
       {!icon && <>{children}</>}
-      {icon && (
-        <span className={`${baseClass}--icon`}>
-          <Icon name={"info"} hidden={true} size={16} />
-        </span>
-      )}
       <span className={tooltipClasses} style={style} ref={tooltipRef}>
         <span className={tooltipArrowClasses} role="presentation"></span>
         {label}
