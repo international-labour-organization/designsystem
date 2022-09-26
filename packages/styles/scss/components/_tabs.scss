@@ -60,6 +60,8 @@ Note that the styles for this component rely on CSS container queries, which cur
       --tabscount: 1;
       display: flex;
       max-width: 100%;
+      overflow-x: scroll;
+      overflow-y: hidden;
 
       &--button {
         align-items: center;
@@ -117,7 +119,7 @@ Note that the styles for this component rely on CSS container queries, which cur
 
       &--item {
         display: block;
-        width: min(calc(var(--tabscount) / 1 * 100%), 100%);
+        width: min(calc(var(--tabscount) / 1 * 100%), 50%);
 
         &:last-of-type {
           .ilo--tabs--selection--button {
@@ -144,6 +146,14 @@ Note that the styles for this component rely on CSS container queries, which cur
       .ilo--tabs--content {
         padding: px-to-rem($spacing-padding-5) px-to-rem($spacing-padding-8)
           px-to-rem($spacing-padding-8) px-to-rem($spacing-padding-8);
+      }
+    }
+
+    @include breakpoint("large") {
+      .ilo--tabs--selection {
+        &--item {
+          width: min(calc(var(--tabscount) / 1 * 100%), 100%);
+        }
       }
     }
   }
