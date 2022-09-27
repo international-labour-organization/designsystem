@@ -83,10 +83,12 @@ Note that the styles for this component rely on CSS container queries, which cur
           border-top: px-to-rem(3px) solid $color-ux-labels-actionable;
         }
 
-        &.has--tooltip {
-          .ilo--tooltip--wrapper {
+        &.icon {
+          .ilo--icon {
+            height: px-to-rem($spacing-padding-2);
             margin-right: px-to-rem(5px);
             order: 1;
+            width: px-to-rem($spacing-padding-2);
           }
 
           .ilo--tabs--selection--label {
