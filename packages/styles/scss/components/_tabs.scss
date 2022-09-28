@@ -58,13 +58,12 @@ Note that the styles for this component rely on CSS container queries, which cur
   &.tabs--js {
     .ilo--tabs--selection {
       --tabscount: 1;
-      display: flex;
-      max-width: 100%;
+      display: block;
 
       &--button {
         align-items: center;
         background-color: $color-base-neutrals-lighter;
-        border-right: px-to-rem(5px) solid $color-base-neutrals-white;
+        border-bottom: px-to-rem(3px) solid $color-base-neutrals-white;
         color: $color-ux-labels-actionable;
         font-family: $fonts-display;
         font-weight: 600;
@@ -81,10 +80,12 @@ Note that the styles for this component rely on CSS container queries, which cur
           border-top: px-to-rem(3px) solid $color-ux-labels-actionable;
         }
 
-        &.has--tooltip {
-          .ilo--tooltip--wrapper {
+        &.icon {
+          .ilo--icon {
+            height: px-to-rem($spacing-padding-2);
             margin-right: px-to-rem(5px);
             order: 1;
+            width: px-to-rem($spacing-padding-2);
           }
 
           .ilo--tabs--selection--label {
@@ -117,10 +118,11 @@ Note that the styles for this component rely on CSS container queries, which cur
 
       &--item {
         display: block;
-        width: min(calc(var(--tabscount) / 1 * 100%), 100%);
+        width: 100%;
 
         &:last-of-type {
           .ilo--tabs--selection--button {
+            border-bottom: none;
             border-right: none;
           }
         }
@@ -144,6 +146,30 @@ Note that the styles for this component rely on CSS container queries, which cur
       .ilo--tabs--content {
         padding: px-to-rem($spacing-padding-5) px-to-rem($spacing-padding-8)
           px-to-rem($spacing-padding-8) px-to-rem($spacing-padding-8);
+      }
+
+      .ilo--tabs--selection {
+        display: flex;
+        max-width: 100%;
+        overflow-x: scroll;
+        overflow-y: hidden;
+
+        &--button {
+          border-bottom: none;
+          border-right: px-to-rem(5px) solid $color-base-neutrals-white;
+        }
+
+        &--item {
+          width: min(calc(var(--tabscount) / 1 * 100%), 25%);
+        }
+      }
+    }
+
+    @include breakpoint("large") {
+      .ilo--tabs--selection {
+        &--item {
+          width: min(calc(var(--tabscount) / 1 * 100%), 100%);
+        }
       }
     }
   }
