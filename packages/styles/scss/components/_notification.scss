@@ -103,7 +103,11 @@
       }
 
       .ilo--notification--inline & {
-        max-width: 40%;
+        max-width: 24%;
+
+        @include breakpoint("large") {
+          max-width: 40%;
+        }
       }
     }
   }
