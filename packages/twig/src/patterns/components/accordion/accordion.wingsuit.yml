@@ -51,7 +51,9 @@ accordion:
             content: "<p>Content of Item 2</p><p>Content of Item 2</p><p>Content of Item 2</p><p>Content of Item 2</p><p>Content of Item 2</p>"
             id: item2
             defaultExpanded: 'true'
-    closed:
-      label: Closed
-      description: The Accordion with panels closed on page load
+    multiple:
+      label: Allow Multiple Expanded
+      description: The Accordion set to allow multiple panels to be expanded at once
+      fields:
+        allowMultipleExpanded: 'true'
   visibility: storybook
