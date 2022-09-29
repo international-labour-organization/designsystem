@@ -105,6 +105,7 @@
   align-items: center;
   clear: both;
   display: flex;
+  flex-wrap: wrap;
   justify-content: flex-start;
   margin-bottom: px-to-rem(22px);
 
@@ -113,5 +114,11 @@
     margin-left: px-to-rem($spacing-padding-1);
     margin-top: 2px;
     order: 2;
+  }
+
+  .ilo--fieldset--error,
+  .ilo--fieldset--helper {
+    order: 3;
+    width: 100%;
   }
 }
