@@ -42,7 +42,7 @@
       background-color: $color-ux-tableofcontents-items-hover-background;
       border-bottom: $color-ux-tableofcontents-items-hover-border
         $spacing-ux-tableofcontents-items-border-bottom solid;
-      background-position: calc(100% - 40px) center;
+      background-position: calc(100% - 19px) center;
       color: $color-ux-labels-hover;
       margin: 0;
       outline: none;
@@ -64,7 +64,6 @@
       background-color: $color-ux-tableofcontents-items-active-background;
       border-bottom: $color-ux-tableofcontents-items-active-border
         $spacing-ux-tableofcontents-items-border-bottom solid;
-      background-position: calc(100% - 40px) center;
       color: $color-ux-tableofcontents-items-active-color;
       margin: 0;
       outline: none;
