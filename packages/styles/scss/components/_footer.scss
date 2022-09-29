@@ -223,11 +223,12 @@
       grid-template-columns: minmax(0, 50%) minmax(0, 50%);
       gap: 0px 64px;
       grid-template-areas:
+        "site-info address"
         "site-info links"
-        "address links"
-        "connect links";
+        "site-info connect";
       align-content: start;
       align-items: start;
+      padding: px-to-rem(40px) px-to-rem(32px) px-to-rem(40px) px-to-rem(32px);
     }
 
     .site--info {
@@ -239,7 +240,8 @@
     }
 
     .connect {
-      margin-top: 0;
+      grid-area: connect;
+      margin-bottom: 0;
     }
 
     .links {
@@ -277,12 +279,12 @@
   @include breakpoint("large") {
     &--main {
       display: grid;
-      grid-template-columns: 14.6% 20.6% 20.6% 29.2%;
+      grid-template-columns: 19.2% 25.1% calc(32.5% + 64px);
       grid-template-rows: 0.6fr 1.4fr;
       gap: 0px 64px;
       grid-template-areas:
-        "site-info address address connect"
-        "site-info links links connect";
+        "site-info address connect"
+        "site-info links connect";
       padding: px-to-rem(56px) px-to-rem(70px) px-to-rem(64px) px-to-rem(70px);
     }
 
@@ -290,35 +292,21 @@
       width: 100%;
     }
 
-    .ilo--link-list--links {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 0px 64px;
-      align-content: start;
-      align-items: start;
-    }
-
     .connect {
       display: grid;
       grid-template-columns: minmax(0, 40%), 60%;
       grid-template-rows: repeat(3, minmax(0, 1fr));
       grid-area: connect;
-      margin: 0;
+      margin: 0 0 0 calc(18.9% + 64px);
     }
 
     .social--headline {
-      padding-left: 40%;
       text-align: left;
-    }
-
-    .social--links {
-      padding-left: 40%;
     }
 
     .ilo--button {
       align-self: start;
       justify-self: start;
-      margin-left: 40%;
     }
 
     &--secondary {
