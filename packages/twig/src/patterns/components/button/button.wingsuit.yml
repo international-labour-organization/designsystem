@@ -49,7 +49,7 @@ button:
     target:
       type: string
       label: target
-      description: Should the button open in a new tab? If so, include the name of the tab
+      description: Should the button open in a new tab? If so, include the name of the tab. Only evaluated if the url field is populated.
       preview: 'true'
       required: false
     kind:
