@@ -3,11 +3,11 @@
 #}
 {% set uid = "now"|date('Uv') %}
 <li class="{{prefix}}--accordion--item" id=" {{ id }}{{ uid }}">
-  <{{ headingLevel|default('h3') }} class="ilo--h3">
+  <div class="ilo--h3">
     <button class="{{prefix}}--accordion--button {{prefix}}--accordion--button--{{ size|default('small') }}" aria-expanded="{{ defaultExpanded }}" aria-controls="panel-{{ id }}{{ uid }}" id="button-{{ id }}{{ uid }}">
     {{label}}
     </button>
-  </{{ headingLevel|default('h3') }}>
+  </div>
   <div class="{{prefix}}--accordion--panel{% if defaultExpanded == 'true'%} {{prefix}}--accordion--panel--open{% endif %}" id="panel-{{ id }}{{ uid }}" aria-labelledby="button-{{ id }}{{ uid }}" role="region">
     <div class="{{prefix}}--accordion--innerpanel">
       {{content|raw}}

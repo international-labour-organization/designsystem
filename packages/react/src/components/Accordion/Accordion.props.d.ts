@@ -25,11 +25,6 @@ export interface AccordionProps {
   defaultAccordionsExpanded?: string[];
 
   /**
-   * Specify the heading level that the accordion items, default level is h3.
-   */
-  headingLevel?: headingLevel;
-
-  /**
    * Specify an optional className to be added to your accordion.
    */
   className?: string;
@@ -41,5 +36,4 @@ export interface AccordionContextProps {
   setActiveItems: Dispatch<SetStateAction<string[]>>;
   allowMultipleExpanded: boolean;
   onButtonClick?: (e: MouseEvent<HTMLButtonElement>, i: any) => void;
-  headingLevel?: headingLevel;
 }
