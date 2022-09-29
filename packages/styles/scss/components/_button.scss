@@ -215,6 +215,18 @@
       border: map-get($borders, "small")
         map-get($color, "ux", "borders", "hover") solid;
     }
+
+    &:active {
+      background-color: map-get($color, "ux", "background", "active");
+      border: map-get($borders, "base")
+        map-get($color, "ux", "borders", "active") solid;
+      box-shadow: none;
+      color: map-get($color, "ux", "labels", "active");
+
+      &.ilo--button--small {
+        box-shadow: none;
+      }
+    }
   }
 
   &--tertiary {
@@ -243,6 +255,18 @@
         map-get($color, "ux", "borders", "focus") solid;
       color: map-get($color, "ux", "labels", "focus");
       outline: none;
+    }
+
+    &:active {
+      background-color: map-get($color, "ux", "background", "active");
+      border: map-get($borders, "base")
+        map-get($color, "ux", "borders", "active") solid;
+      box-shadow: none;
+      color: map-get($color, "ux", "labels", "active");
+
+      &.ilo--button--small {
+        box-shadow: none;
+      }
     }
   }
 }
