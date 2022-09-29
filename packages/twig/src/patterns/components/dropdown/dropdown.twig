@@ -4,14 +4,14 @@
   Like all form fields, extends the FIELDSET components, and passes it some variables
 #}
 {% extends '@components/fieldset/fieldset.twig' %}
-{% set fsinputid = inputid %}
+{% set fsinputid = id ? id : name %}
 {% set fslabel = label %}
 {% set fshelper = helper %}
 {% set fserror = error %}
 
 {% block formfield %}
   <div class="{{prefix}}--dropdown--wrapper">
-    <select id="dropdown" {% if autocomplete is defined %}autocomplete="{{autocomplete}}"{% endif %} name="dropdown" class="{{prefix}}--dropdown{% if error %} error{% endif %}" {% if disabled is defined and disabled == 'true' %}disabled{% endif %}>
+    <select id="{% if id %}{{id}}{% else %}{{name}}{% endif %}" {% if autocomplete is defined %}autocomplete="{{autocomplete}}"{% endif %} name="dropdown" class="{{prefix}}--dropdown{% if error %} error{% endif %}" {% if disabled is defined and disabled == 'true' %}disabled{% endif %}>
       {% for option in options %}
       <option label="{{option.label}}" value="{{option.value}}" {% if defaultValue is defined and defaultValue == option.value %}selected{% endif %} {% if option.disabled is defined and option.disabled == 'true' %}disabled{% endif %}></option>
       {% endfor %}
