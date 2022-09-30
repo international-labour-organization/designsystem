@@ -33,7 +33,7 @@
       align-items: center;
       display: flex;
       justify-items: space-between;
-      padding: px-to-rem(18px) px-to-rem($spacing-padding-3);
+      padding: px-to-rem(14px) px-to-rem($spacing-padding-3);
     }
   }
 
@@ -103,7 +103,11 @@
       }
 
       .ilo--notification--inline & {
-        max-width: 40%;
+        max-width: 24%;
+
+        @include breakpoint("large") {
+          max-width: 40%;
+        }
       }
     }
   }

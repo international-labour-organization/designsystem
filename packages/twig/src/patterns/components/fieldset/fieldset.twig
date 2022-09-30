@@ -15,7 +15,7 @@
   {% if legend %}
   <legend class="ilo--fieldset--legend">{{legend}}
     {% if grouptooltip %}
-      {% include '@components/tooltip/tooltip.twig' with {label: grouptooltip, icon: true, className: "ilo--fieldset--legend--tooltip"} %}
+      {% include '@components/tooltip/tooltip.twig' with {label: grouptooltip.label, icon: grouptooltip.icon, theme: grouptooltip.theme, className: "ilo--fieldset--legend--tooltip"} %}
     {% endif %}
   </legend>
   {% endif %}
@@ -28,8 +28,8 @@
   <div class="ilo--fieldset--input--{{fstype}}">
     <label class="{{prefix}}--fieldset--label" for="{{fsinputid}}">
       {{fslabel}}
-      {% if formfield.tooltip %}
-        {% include '@components/tooltip/tooltip.twig' with formfield.tooltip %}
+      {% if tooltip %}
+        {% include '@components/tooltip/tooltip.twig' with tooltip %}
       {% endif %}
     </label>
     {% block formfield %}
