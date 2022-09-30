@@ -1,0 +1,272 @@
+card:
+  use: '@components/card/card.twig'
+  label: Card
+  description: The Card presents an image banner.
+  fields:
+    title:
+      type: string
+      label: Date copy
+      description: Date byline copy
+      preview: Lorem ipsum
+    intro:
+      type: string
+      label: Intro
+      description: Intro copy text
+      preview: "Brief intro text - ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+    eyebrow:
+      type: string
+      label: Eyebrow
+      description: Intro copy text
+      preview: "Eyebrow"
+    date:
+      type: string
+      label: Eyebrow
+      description: Intro copy text
+      preview: 20 September 2022
+    eventdate:
+      type: string
+      label: Eyebrow
+      description: Intro copy text
+      preview: ""
+    profile:
+      type: object
+      label: Profile
+      description: Profile to embed in the card
+      preview:
+    list:
+      type: object
+      label: List
+      description: List to embed in the card
+      preview:
+    link:
+      type: string
+      label: Link
+      description: Link for clickable cards
+      preview: "https://www.google.com/"
+    cta:
+      type: object
+      label: CTA
+      description: Items for clickable CTA button
+      preview:
+    image:
+      type: string
+      label: Image
+      description: The image for the card
+      preview: "http://placekitten.com/600/300"
+    source:
+      type: object
+      label: Source
+      description: Source link for stat cards
+      preview:
+    linklist:
+      type: object
+      label: Link List
+      description: Multi-link list
+      preview:
+    dataset:
+      type: object
+      label: Data set
+      description: This is a series of items, headline and copy, to include on the card
+      preview:
+  settings:
+    theme:
+      type: select
+      label: Theme
+      description: The theme type for the hero
+      required: false
+      preview: 'dark'
+      options:
+        dark: Dark
+        light: Light
+    types:
+      type: select
+      label: Types
+      description: The type of hero
+      required: false
+      preview: 'graphic'
+      options:
+        graphic: graphic
+    color:
+      type: select
+      label: Color
+      description: Color of the stat cards
+      preview: 'blue'
+      options:
+        turquoise: Turquoise
+        green: Green
+        yellow: Yellow
+        blue: Blue
+    cornercut:
+      type: select
+      label: Corner cut
+      description: Setting for whether the card has a cut corner
+      preview: cornercut
+      options:
+        cornercut: Corner cut
+        corner: Corner
+    alignment:
+      type: select
+      label: Alignment
+      description: Set whether card (multilink) image is right aligned or left aligned
+      preview: left
+      options:
+        left: Left
+        right: right
+  variants:
+    default:
+      label: Default
+      description: the default settings for the Card
+    graphic:
+      label: Graphic Text Card
+      description: The graphic Card
+      fields:
+        title: "Brief title text - ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod"
+        intro: ""
+        eyebrow: Eyebrow title
+        date: 20 September 2022
+        link: "https://www.google.com/search?q=graphic"
+        profile:
+          avatar: "https://placekitten.com/128/128"
+          description: "Firstname Lastname is the Senior Media Strategist. He has been with ILO for eight years."
+          link: 
+            - label: "Optional Link"
+              url: "https://www.google.com"
+          name: "Firstname Lastname"
+          role: "Senior Media Strategist"
+        cta: ""
+        eventdate: ""
+    stat:
+      label: Stat Card
+      description: The stat Card
+      settings:
+        theme: light
+      fields:
+        title: "Date headline"
+        image: ""
+        intro: "Data title - Lorem ipsum dolor sit amet consectetur"
+        eyebrow: ""
+        date: ""
+        link: ""
+        profile: ""
+        eventdate: ""
+        cta: ""
+        source: 
+          label: "Source: lorem ipsum dolor sit amet, 2020"
+          url: "https://www.google.com/search?q=stat"
+    multilink:
+      label: Multilink Card
+      description: The multilink Card
+      settings:
+        theme: light
+      fields:
+        title: "Multi-link card - right aligned image, wide option"
+        image: "http://placekitten.com/475/267"
+        intro: "Lorem ipsum dolor sit amet consectetur adipiscing elit. Lobortis egestas ipsum dolor sit amet consectetur adipiscing elit. Lobortis egestas ipsum dolor sit amet consectetur adipiscing elit. Lobortis egestas lacus."
+        eyebrow: ""
+        date: ""
+        link: ""
+        profile: ""
+        eventdate: ""
+        cta: ""
+        source: ""
+        linklist:
+          headline: ""
+          linkgroup:
+            - headline: ""
+              links:
+                - label: Link One
+                  url: 'http://www.google.com'
+                - label: Link Two
+                  url: 'http://www.google.com'
+                - label: Link Three
+                  url: 'http://www.google.com'
+    graphicpromo:
+      label: Graphic Promo Card
+      description: The graphic promo Card
+      fields:
+        title: "Brief title text - ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod"
+        image: ""
+        intro: "We advance social justice and promote decent work by setting labour standards, developing policies and devising programmes."
+        eyebrow: ""
+        date: ""
+        link: "https://www.google.com/search?q=graphic-promo"
+        profile: ""
+        eventdate: ""
+        cta: 
+          label: "Discover our unique mission"
+          url: "https://www.google.com/search?q=button"
+    detail:
+      label: Detail Card
+      description: The Detail Card
+      fields:
+        title: "Horizontal info card descriptive headline text"
+        intro: "This ILO flagship report details the effects of the COVID-19 crisis on the world of work. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eu auctor tusrpis, this is 200 characters."
+        eyebrow: Eyebrow title
+        date: 00 month 0000
+        link: "https://www.google.com/search?q=graphic"
+        image: "http://placekitten.com/196/296"
+        profile:
+        eventdate: "8 - 9 February 2022, 8:30 - 12:00 CET  |  Egypt"
+    factlist:
+      label: Fact List Card
+      description: The Fact List Card
+      fields:
+        title: "Title of fast fact list"
+        intro: ""
+        eyebrow: ""
+        date: ""
+        link: ""
+        image: ""
+        profile: ""
+        eventdate: ""
+        list: 
+          title: ""
+          settings:
+            - ordered: unordered
+            - alignment: default
+          items: 
+            - content: "Wipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor."
+              id: "list1"
+            - content: "Nut labore et dolore magna sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+              id: "list2"
+    data:
+      label: Data Card
+      description: The Data Card
+      fields:
+        title: ""
+        image: "https://placekitten.com/205/179"
+        intro: ""
+        eyebrow: "Event details"
+        date: ""
+        link: ""
+        profile: ""
+        eventdate: ""
+        cta: ""
+        dataset: 
+          content: 
+            items: 
+              - label: Date
+                copy: Publication date
+              - label: Event type
+                copy: Event location
+          files:
+            headline: Files
+            items: 
+              - label: File/size MB 1
+                url: "https://www.google.com/search?q=file1"
+              - label: File/size MB 2
+                url: "https://www.google.com/search?q=file2"
+              - label: File/size MB 3
+                url: "https://www.google.com/search?q=file3"
+          links:
+            headline: Languages
+            items: 
+              - label: Language link 1
+                url: "https://www.google.com/search?q=link"
+              - label: Language link 2
+                url: "https://www.google.com/search?q=hyperlink"
+              - label: Language link 3
+                url: "https://www.google.com/search?q=url"
+      settings:
+        theme: light
+  visibility: storybook

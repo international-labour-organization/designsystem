@@ -1,0 +1,194 @@
+@use "../tokens" as *;
+@use "../functions" as *;
+@import "../mixins";
+
+.ilo--card {
+  $self: &;
+
+  &--wrap {
+    background: inherit;
+    color: inherit;
+    text-decoration: inherit;
+
+    &:hover,
+    &:focus {
+      background: $brand-ilo-white;
+      color: $brand-ilo-blue;
+      text-decoration: none;
+    }
+  }
+
+  &--eyebrow {
+    color: $brand-ilo-purple;
+    @include font-styles("body-small");
+    @include textmargin(
+      "margin-bottom",
+      16px,
+      "headline-5",
+      "display",
+      "body-small",
+      "copy"
+    );
+
+    #{$self}--wrap:hover &,
+    #{$self}--wrap:focus & {
+      color: $brand-ilo-blue;
+    }
+  }
+
+  &--title {
+    color: $brand-ilo-dark-blue;
+    font-family: $fonts-display;
+    font-weight: 700;
+    @include font-styles("headline-5");
+    @include textmargin(
+      "margin-bottom",
+      10px,
+      "headline-5",
+      "display",
+      "body-small",
+      "copy"
+    );
+
+    #{$self}--wrap:hover &,
+    #{$self}--wrap:focus & {
+      color: $brand-ilo-blue;
+    }
+  }
+
+  &--intro {
+    color: $brand-ilo-grey-charcoal;
+    @include font-styles("body-small");
+    @include textmargin("margin-bottom", 30px, "body-small", "copy", 0, 0);
+
+    #{$self}--wrap:hover &,
+    #{$self}--wrap:focus & {
+      color: $brand-ilo-blue;
+    }
+  }
+
+  &--date {
+    color: $brand-ilo-grey-accessible;
+    @include font-styles("body-small");
+    @include textmargin("margin-bottom", 30px, "body-small", "copy", 0, 0);
+
+    #{$self}--wrap:hover &,
+    #{$self}--wrap:focus & {
+      color: $brand-ilo-blue;
+    }
+  }
+
+  // CARD VARIANTS
+  &--detail {
+    #{$self}--wrap {
+      display: flex;
+    }
+
+    #{$self}--image {
+      object-fit: contain;
+      width: 77px;
+
+      @include breakpoint("large") {
+        width: 200px;
+      }
+
+      &--wrapper {
+        margin-right: 16px;
+        max-width: 77px;
+        width: 100%;
+
+        @include breakpoint("large") {
+          margin-right: 24px;
+          max-width: 200px;
+        }
+      }
+    }
+  }
+
+  &--graphicpromo {
+    max-width: 920px;
+    width: 100%;
+
+    #{$self}--title {
+      color: $brand-ilo-grey-charcoal;
+      @include font-styles("headline-3");
+      @include textmargin(
+        "margin-bottom",
+        24px,
+        "headline-3",
+        "display",
+        "base",
+        "copy"
+      );
+    }
+
+    #{$self}--intro {
+      @include font-styles("base");
+    }
+  }
+
+  &--factlist {
+    padding: 0 24px 48px 24px;
+
+    @include breakpoint("large") {
+      padding: 0 40px 55px 40px;
+    }
+
+    #{$self}--title {
+      color: $brand-ilo-grey-charcoal;
+      @include font-styles("headline-4");
+      @include textmargin(
+        "margin-bottom",
+        30px,
+        "headline-4",
+        "display",
+        "body-small",
+        "copy"
+      );
+    }
+  }
+
+  &--stat {
+    padding: 0 24px 24px 30px;
+    width: 100%;
+
+    &#{$self}--blue {
+      background: $brand-ilo-light-blue;
+    }
+
+    &#{$self}--yellow {
+      background: $brand-ilo-yellow;
+    }
+
+    &#{$self}--green {
+      background: $brand-ilo-green;
+    }
+
+    &#{$self}--turquoise {
+      background: $brand-ilo-turquoise;
+    }
+
+    #{$self}--content {
+      display: flex;
+      flex-wrap: wrap;
+      height: 100%;
+    }
+
+    #{$self}--title {
+      @include font-styles("headline-3");
+      @include textmargin("margin-bottom", 24px, "headline-3", "display", 0, 0);
+      width: 100%;
+    }
+
+    #{$self}--intro {
+      @include font-styles("nav-md-sm");
+      @include textmargin("margin-bottom", 40px, "nav-md-sm", "copy", 0, 0);
+      width: 100%;
+    }
+
+    .ilo--link {
+      @include font-styles("image-credit");
+      align-self: flex-end;
+    }
+  }
+}
