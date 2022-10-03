@@ -1,7 +1,7 @@
-import { EVENTS, ARIA } from '@ilo-org/utils';
+import { EVENTS } from '@ilo-org/utils';
 
 /**
- * The Modal module which handles rendering field labels inline on a form.
+ * The Modal module which handles control and display of a modal dialog
  *
  *
  * @class Modal
