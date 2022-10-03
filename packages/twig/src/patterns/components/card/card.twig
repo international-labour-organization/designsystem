@@ -2,12 +2,13 @@
   CARD COMPONENT
 #}
 <script>console.log({{ _context | json_encode | raw }});</script>
-<div class="{{prefix}}--card {{prefix}}--card--{{theme}} {{prefix}}--card--{{variant}} {{prefix}}--card--{{cornercut}} {{prefix}}--card--{{color}} {{prefix}}--card--{{alignment}}">
+<div class="{{prefix}}--card {{prefix}}--card--{{theme}} {{prefix}}--card--{{variant}}{% if cornercut %} {{prefix}}--card--{{cornercut}}{% endif %}{% if color %} {{prefix}}--card--{{color}}{% endif %}{% if alignment %} {{prefix}}--card--{{alignment}}{% endif %} {% if link %} {{prefix}}--card--action{% endif %}">
   {% if link %}
-    <a class="{{prefix}}--card--wrap" href="{{link}}">
+    <a class="{{prefix}}--card--link" href="{{link}}" title="{{title}}"></a>
   {% endif %}
+  <div class="{{prefix}}--card--wrap">
     {% if image %}
-      <div class="{{prefix}}--card--image--wrapper"><img class="{{prefix}}--card--image" src="{{image}}" alt="{{title}}"></div>
+      <div class="{{prefix}}--card--image--wrapper"><picture><img class="{{prefix}}--card--image" src="{{image}}" alt="{{title}}"></picture></div>
     {% endif %}
     <div class="{{prefix}}--card--content">
       {% if eyebrow %}
@@ -35,7 +36,6 @@
           prefix: prefix,
         } only %}
       {% endif %}
-
       {% if list %}
         {% include "@components/list/list.twig" with {
           title: list.title,
@@ -45,13 +45,11 @@
           prefix: prefix,
         } only %}
       {% endif %}
-
       {% if cta %}
         <a class="{{prefix}}--card--cta {{prefix}}--button {{prefix}}--button--small {{prefix}}--button--primary" href="{{cta.url}}">
           <span class="link__label">{{cta.label}}</span>
         </a>
       {% endif %}
-
       {% if source %}
         {% include "@components/link/link.twig" with {
           theme: theme,
@@ -60,7 +58,6 @@
           prefix: prefix
         } %}
       {% endif %}
-
       {% if linklist %}
         {% include "@components/linklist/linklist.twig" with {
           headline: linklist.headline,
@@ -69,7 +66,6 @@
           theme: theme
         } only %}
       {% endif %}
-
       {% if dataset %}
         {% if dataset.content %}
           {% for item in dataset.content.items %}
@@ -77,14 +73,12 @@
             <p class="{{prefix}}--card--dataset--content-copy">{{ item.copy }}</p>
           {% endfor %}
         {% endif %}
-
         {% if dataset.files %}
           <p class="{{prefix}}--card--dataset--content-label">{{ dataset.files.headline }}</p>
           {% for item in dataset.files.items %}
             <a class="{{prefix}}--card--dataset--file {{prefix}}--button {{prefix}}--button--primary {{prefix}}--button--small" href="{{item.url}}"><span class="button__label">{{ item.label }}</span></a>
           {% endfor %}
         {% endif %}
-
         {% if dataset.links %}
           {% for item in dataset.links.items %}
             {% include "@components/link/link.twig" with {
@@ -97,7 +91,5 @@
         {% endif %}
       {% endif %}
     </div>
-  {% if link %}
-    </a>
-  {% endif %}
+  </div>
 </div>

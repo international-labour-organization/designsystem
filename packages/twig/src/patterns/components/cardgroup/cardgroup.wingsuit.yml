@@ -1,0 +1,194 @@
+cardgroup:
+  use: '@components/cardgroup/cardgroup.twig'
+  label: Card Group
+  description: The Card group
+  fields:
+    group:
+      type: object
+      label: Group of cards
+      description: The group of cards, object
+      preview: 
+    settings:
+      type: object
+      label: Settings
+      description: Settings for the cards
+  variants:
+    default:
+      label: Multilink
+      description: multilink settings
+      fields:
+        group:
+          - title: "Multi-link card - first"
+            image: "http://placekitten.com/475/267"
+            intro: "Lorem ipsum dolor sit amet consectetur adipiscing elit. Lobortis egestas ipsum dolor sit amet consectetur adipiscing elit. Lobortis egestas ipsum dolor sit amet consectetur adipiscing elit. Lobortis egestas lacus."
+            eyebrow: ""
+            date: ""
+            link: ""
+            profile: ""
+            eventdate: ""
+            cta: ""
+            source: ""
+            linklist:
+              headline: ""
+              linkgroup:
+                - headline: ""
+                  links:
+                    - label: Link One
+                      url: 'http://www.google.com'
+                    - label: Link Two
+                      url: 'http://www.google.com'
+                    - label: Link Three
+                      url: 'http://www.google.com'
+          - title: "Multi-link card second - right aligned image, wide option"
+            image: "http://placekitten.com/475/267"
+            intro: "Lorem ipsum dolor sit amet consectetur adipiscing elit. Lobortis egestas ipsum dolor sit amet consectetur adipiscing elit. Lobortis egestas ipsum dolor sit amet consectetur adipiscing elit. Lobortis egestas lacus."
+            eyebrow: ""
+            date: ""
+            link: ""
+            profile: ""
+            eventdate: ""
+            cta: ""
+            source: ""
+            linklist:
+              headline: ""
+              linkgroup:
+                - headline: ""
+                  links:
+                    - label: Link One
+                      url: 'http://www.google.com'
+                    - label: Link Two
+                      url: 'http://www.google.com'
+                    - label: Link Three
+                      url: 'http://www.google.com'
+          - title: "Multi-link card - right aligned image, wide option"
+            image: "http://placekitten.com/475/267"
+            intro: "Lorem ipsum dolor sit amet consectetur adipiscing elit. Lobortis egestas ipsum dolor sit amet consectetur adipiscing elit. Lobortis egestas ipsum dolor sit amet consectetur adipiscing elit. Lobortis egestas lacus."
+            eyebrow: ""
+            date: ""
+            link: ""
+            profile: ""
+            eventdate: ""
+            cta: ""
+            source: ""
+            linklist:
+              headline: ""
+              linkgroup:
+                - headline: ""
+                  links:
+                    - label: Link One
+                      url: 'http://www.google.com'
+                    - label: Link Two
+                      url: 'http://www.google.com'
+                    - label: Link Three
+                      url: 'http://www.google.com'
+        settings:
+          theme: light
+          cornercut: cornercut
+          alignment: left
+          variant: multilink
+      settings: 
+        cardcount: three
+    graphicpromo:
+      label: Graphic Promo
+      description: graphic promo settings
+      fields:
+        group:
+          - title: "Brief title text - ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod"
+            image: ""
+            intro: "We advance social justice and promote decent work by setting labour standards, developing policies and devising programmes."
+            eyebrow: ""
+            date: ""
+            link: "https://www.google.com/search?q=graphic-promo"
+            profile: ""
+            eventdate: ""
+            cta: 
+              label: "Discover our unique mission"
+              url: "https://www.google.com/search?q=button"
+            source: ""
+            linklist: ""
+            list: ""
+            dataset: ""
+        settings:
+          theme: dark
+          cornercut: cornercut
+          alignment: left
+          variant: graphicpromo
+      settings:
+        cardcount: one
+    stat:
+      label: Stat cards
+      description: Stat settings
+      fields:
+        group:
+          - title: "Date headline"
+            image: ""
+            intro: "Data title - Lorem ipsum dolor sit amet consectetur"
+            eyebrow: ""
+            date: ""
+            link: ""
+            profile: ""
+            eventdate: ""
+            cta: ""
+            source: 
+              label: "Source: lorem ipsum dolor sit amet, 2020"
+              url: "https://www.google.com/search?q=stat"
+            color: blue
+          - title: "Date headline"
+            image: ""
+            intro: "Data title - Lorem ipsum dolor sit amet consectetur"
+            eyebrow: ""
+            date: ""
+            link: ""
+            profile: ""
+            eventdate: ""
+            cta: ""
+            source: 
+              label: "Source: lorem ipsum dolor sit amet, 2020"
+              url: "https://www.google.com/search?q=stat"
+            color: green
+          - title: "Date headline"
+            image: ""
+            intro: "Data title - Lorem ipsum dolor sit amet consectetur"
+            eyebrow: ""
+            date: ""
+            link: ""
+            profile: ""
+            eventdate: ""
+            cta: ""
+            source: 
+              label: "Source: lorem ipsum dolor sit amet, 2020"
+              url: "https://www.google.com/search?q=stat"
+            color: yellow
+          - title: "Date headline"
+            image: ""
+            intro: "Data title - Lorem ipsum dolor sit amet consectetur"
+            eyebrow: ""
+            date: ""
+            link: ""
+            profile: ""
+            eventdate: ""
+            cta: ""
+            source: 
+              label: "Source: lorem ipsum dolor sit amet, 2020"
+              url: "https://www.google.com/search?q=stat"
+            color: turquoise
+        settings:
+          theme: light
+          cornercut: cornercut
+          alignment: left
+          variant: stat
+      settings:
+        cardcount: two
+  settings:
+    cardcount:
+      type: select
+      label: Card Count
+      description: Number of cards within a group
+      required: true
+      preview: 'two'
+      options:
+        one: One
+        two: Two
+        three: Three
+        four: Four
+  visibility: storybook

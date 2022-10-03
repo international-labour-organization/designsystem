@@ -1,0 +1,45 @@
+@use "../tokens" as *;
+@use "../functions" as *;
+@import "../mixins";
+
+.ilo--cardgroup {
+  $card: ".ilo--card";
+  background: $brand-ilo-light-blue;
+  padding: 112px 40px;
+
+  &--inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: auto;
+    max-width: 1189px;
+
+    #{$card} {
+      width: 100%;
+    }
+  }
+
+  &--two {
+    @include breakpoint("large") {
+      #{$card} {
+        width: calc(50% - 16px);
+      }
+    }
+  }
+
+  &--three {
+    @include breakpoint("large") {
+      #{$card} {
+        width: calc(33.333% - 16px);
+      }
+    }
+  }
+
+  &--four {
+    @include breakpoint("large") {
+      #{$card} {
+        width: calc(25% - 16px);
+      }
+    }
+  }
+}

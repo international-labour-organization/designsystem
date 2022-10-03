@@ -5,8 +5,8 @@ card:
   fields:
     title:
       type: string
-      label: Date copy
-      description: Date byline copy
+      label: Title
+      description: Title field
       preview: Lorem ipsum
     intro:
       type: string
@@ -16,17 +16,17 @@ card:
     eyebrow:
       type: string
       label: Eyebrow
-      description: Intro copy text
+      description: Eyebrow copy text
       preview: "Eyebrow"
     date:
       type: string
-      label: Eyebrow
-      description: Intro copy text
+      label: Date
+      description: Date copy text
       preview: 20 September 2022
     eventdate:
       type: string
       label: Eyebrow
-      description: Intro copy text
+      description: Eyebrow copy text
       preview: ""
     profile:
       type: object
@@ -68,6 +68,11 @@ card:
       label: Data set
       description: This is a series of items, headline and copy, to include on the card
       preview:
+    color:
+      type: string
+      label: Color
+      description: Color of the stat cards, options are turquoise, green, yellow, or blue
+      preview: 'blue'
   settings:
     theme:
       type: select
@@ -86,16 +91,6 @@ card:
       preview: 'graphic'
       options:
         graphic: graphic
-    color:
-      type: select
-      label: Color
-      description: Color of the stat cards
-      preview: 'blue'
-      options:
-        turquoise: Turquoise
-        green: Green
-        yellow: Yellow
-        blue: Blue
     cornercut:
       type: select
       label: Corner cut
@@ -153,6 +148,7 @@ card:
         source: 
           label: "Source: lorem ipsum dolor sit amet, 2020"
           url: "https://www.google.com/search?q=stat"
+        color: blue
     multilink:
       label: Multilink Card
       description: The multilink Card
@@ -195,6 +191,18 @@ card:
         cta: 
           label: "Discover our unique mission"
           url: "https://www.google.com/search?q=button"
+    feature:
+      label: Feature Card
+      description: The Feature Card
+      fields:
+        title: "Vertical info card descriptive headline text"
+        intro: ""
+        eyebrow: Eyebrow title
+        date: Date
+        link: "https://www.google.com/search?q=graphic"
+        image: "http://placekitten.com/412/232"
+        profile:
+        eventdate: ""
     detail:
       label: Detail Card
       description: The Detail Card
@@ -204,7 +212,8 @@ card:
         eyebrow: Eyebrow title
         date: 00 month 0000
         link: "https://www.google.com/search?q=graphic"
-        image: "http://placekitten.com/196/296"
+        # image: "http://placekitten.com/296/196"
+        image: "https://www.ilo.org/wcmsp5/groups/public/---dgreports/---dcomm/documents/image/wcms_856513.jpg"
         profile:
         eventdate: "8 - 9 February 2022, 8:30 - 12:00 CET  |  Egypt"
     factlist:

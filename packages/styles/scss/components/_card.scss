@@ -4,17 +4,111 @@
 
 .ilo--card {
   $self: &;
+  margin: 16px 0;
 
-  &--wrap {
-    background: inherit;
-    color: inherit;
-    text-decoration: inherit;
+  &--action:hover,
+  &--action:focus {
+    background: $brand-ilo-white;
+    color: $brand-ilo-blue;
+    text-decoration: none;
 
-    &:hover,
-    &:focus {
+    #{$self}--dark {
       background: $brand-ilo-white;
+    }
+
+    #{$self}--eyebrow {
       color: $brand-ilo-blue;
-      text-decoration: none;
+    }
+
+    #{$self}--title {
+      color: $brand-ilo-blue;
+    }
+
+    #{$self}--intro {
+      color: $brand-ilo-blue;
+    }
+
+    #{$self}--date {
+      color: $brand-ilo-blue;
+    }
+
+    #{$self}--eventdate {
+      color: $brand-ilo-blue;
+    }
+  }
+
+  &--link {
+    background: none;
+    color: transparent;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    text-decoration: none;
+    top: 0;
+    width: 100%;
+  }
+
+  &--light {
+    background: $brand-ilo-white;
+  }
+
+  &--dark {
+    background: $brand-ilo-dark-blue;
+
+    #{$self}--eyebrow {
+      color: $brand-ilo-grey-light;
+    }
+
+    #{$self}--title {
+      color: $brand-ilo-white;
+    }
+
+    #{$self}--intro {
+      color: $brand-ilo-grey-light;
+    }
+
+    #{$self}--date {
+      color: $brand-ilo-grey-light;
+    }
+
+    #{$self}--eventdate {
+      color: $brand-ilo-grey-light;
+    }
+  }
+
+  &--cornercut {
+    margin-top: 40px;
+    padding-top: 0 !important;
+    position: relative;
+
+    @include breakpoint("medium") {
+      margin-top: 48px;
+    }
+
+    @include breakpoint("large") {
+      margin-top: 64px;
+    }
+
+    &::before {
+      background: inherit;
+      clip-path: polygon(90% 0, 100% 100%, 100% 100%, 0% 100%, 0% 0%);
+      content: "";
+      display: block;
+      height: 40px;
+      left: 0;
+      position: absolute;
+      top: -39.7px;
+      width: 100%;
+
+      @include breakpoint("medium") {
+        height: 48px;
+        top: -47.7px;
+      }
+
+      @include breakpoint("large") {
+        height: 64px;
+        top: -63.7px;
+      }
     }
   }
 
@@ -30,8 +124,8 @@
       "copy"
     );
 
-    #{$self}--wrap:hover &,
-    #{$self}--wrap:focus & {
+    #{$self}--link:hover &,
+    #{$self}--link:focus & {
       color: $brand-ilo-blue;
     }
   }
@@ -50,8 +144,8 @@
       "copy"
     );
 
-    #{$self}--wrap:hover &,
-    #{$self}--wrap:focus & {
+    #{$self}--link:hover &,
+    #{$self}--link:focus & {
       color: $brand-ilo-blue;
     }
   }
@@ -61,8 +155,8 @@
     @include font-styles("body-small");
     @include textmargin("margin-bottom", 30px, "body-small", "copy", 0, 0);
 
-    #{$self}--wrap:hover &,
-    #{$self}--wrap:focus & {
+    #{$self}--link:hover &,
+    #{$self}--link:focus & {
       color: $brand-ilo-blue;
     }
   }
@@ -72,16 +166,72 @@
     @include font-styles("body-small");
     @include textmargin("margin-bottom", 30px, "body-small", "copy", 0, 0);
 
-    #{$self}--wrap:hover &,
-    #{$self}--wrap:focus & {
+    #{$self}--link:hover &,
+    #{$self}--link:focus & {
       color: $brand-ilo-blue;
     }
   }
 
+  &--event-date {
+    @include font-styles("body-small");
+    @include textmargin("margin-bottom", 30px, "body-small", "copy", 0, 0);
+  }
+
+  &--image {
+    max-width: 100%;
+    width: 100%;
+  }
+
+  &--cta {
+    position: relative;
+  }
+
   // CARD VARIANTS
+  &--multilink {
+    padding: 24px;
+
+    @include breakpoint("medium") {
+      padding: 40px;
+    }
+
+    @include breakpoint("large") {
+      padding: 56px 48px;
+    }
+  }
+
   &--detail {
+    border-bottom: 3px solid $brand-ilo-grey-accessible;
+    margin: 32px 0;
+
     #{$self}--wrap {
       display: flex;
+
+      &:hover,
+      &:focus {
+        picture::before {
+          opacity: 0.4;
+          z-index: 1;
+        }
+      }
+    }
+
+    picture {
+      display: flex;
+      position: relative;
+
+      &::before {
+        background-color: $brand-ilo-blue;
+        content: "";
+        display: block;
+        height: 100%;
+        left: 0;
+        opacity: 0;
+        position: absolute;
+        top: 0;
+        transition: opacity 0.15s ease-in-out;
+        width: 100%;
+        z-index: -1;
+      }
     }
 
     #{$self}--image {
@@ -103,27 +253,80 @@
         }
       }
     }
+
+    #{$self}--title {
+      @include font-styles("headline-6");
+    }
+
+    @include breakpoint("large") {
+      #{$self}--title {
+        @include font-styles("headline-5");
+      }
+    }
+
+    // #{}
+    // title shrinks on mobile
+    // color border on cards
+    // padding around cards
+  }
+
+  &--graphic {
+    border-bottom: 3px solid $brand-ilo-grey-ui;
+
+    &#{$self}--dark {
+      border-bottom: 3px solid $brand-ilo-purple;
+    }
   }
 
   &--graphicpromo {
     max-width: 920px;
+    padding: 40px 24px;
     width: 100%;
 
-    #{$self}--title {
+    @include breakpoint("medium") {
+      padding: 48px;
+    }
+
+    @include breakpoint("large") {
+      padding: 64px 72px;
+    }
+
+    &#{$self}--light:not(:hover) #{$self}--title {
       color: $brand-ilo-grey-charcoal;
-      @include font-styles("headline-3");
+    }
+
+    #{$self}--title {
+      @include font-styles("headline-4");
       @include textmargin(
         "margin-bottom",
         24px,
-        "headline-3",
+        "headline-4",
         "display",
-        "base",
+        "body-small",
         "copy"
       );
+
+      @include breakpoint("medium") {
+        @include font-styles("headline-3");
+        @include textmargin(
+          "margin-bottom",
+          32px,
+          "headline-3",
+          "display",
+          "base",
+          "copy"
+        );
+      }
     }
 
     #{$self}--intro {
-      @include font-styles("base");
+      @include font-styles("body-small");
+      @include textmargin("margin-bottom", 40px, "body-small", "copy", 0, 0);
+
+      @include breakpoint("medium") {
+        @include font-styles("base");
+        @include textmargin("margin-bottom", 40px, "base", "copy", 0, 0);
+      }
     }
   }
 
@@ -149,8 +352,15 @@
   }
 
   &--stat {
+    border-bottom: 3px solid $brand-ilo-purple;
     padding: 0 24px 24px 30px;
     width: 100%;
+
+    &::before {
+      clip-path: polygon(75% 0, 100% 100%, 100% 100%, 0% 100%, 0% 0%);
+      height: 40px;
+      top: -39.7px;
+    }
 
     &#{$self}--blue {
       background: $brand-ilo-light-blue;
@@ -175,12 +385,14 @@
     }
 
     #{$self}--title {
+      color: $brand-ilo-dark-blue;
       @include font-styles("headline-3");
       @include textmargin("margin-bottom", 24px, "headline-3", "display", 0, 0);
       width: 100%;
     }
 
     #{$self}--intro {
+      color: $brand-ilo-dark-blue;
       @include font-styles("nav-md-sm");
       @include textmargin("margin-bottom", 40px, "nav-md-sm", "copy", 0, 0);
       width: 100%;
