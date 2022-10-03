@@ -1,0 +1,33 @@
+{#
+  TABLE COMPONENT
+#}
+<div class="{{prefix}}--table">
+  <header class="{{prefix}}--table--header">
+    <h3 class="{{prefix}}--table--headline">
+      {{headline}}
+    </h3>
+    {% if description is defined %}
+    <p class="{{prefix}}--table--description">
+      {{description|raw}}
+    </p>
+    {% endif %}
+  </header>
+  <table class="{{prefix}}--table--content">
+    <thead>
+      <tr>
+      {% for column in tableheadings %}
+        <th>{{column}}</th>
+      {% endfor %}
+      </tr>
+    </thead>
+    <tbody>
+      {% for row in tabledata %}
+        <tr>
+          {% for cell in row %}
+            <td>{{cell|raw}}</td>
+          {% endfor %}
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
