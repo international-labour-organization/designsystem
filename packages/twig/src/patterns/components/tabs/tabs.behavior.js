@@ -1,7 +1,7 @@
 import Tabs from './tabs';
 import Tooltip from '../tooltip/tooltip';
 
-Drupal.behaviors.loading = {
+Drupal.behaviors.tabs = {
   attach() {
     Array.prototype.forEach.call(
       document.querySelectorAll(`[data-loadcomponent="Tabs"]`),

@@ -1,8 +1,7 @@
 import Modal from './modal';
 
-Drupal.behaviors.loading = {
+Drupal.behaviors.modal = {
   attach() {
-    console.log('');
     Array.prototype.forEach.call(
       document.querySelectorAll(`[data-loadcomponent="Modal"]`),
       (element) => {
