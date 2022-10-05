@@ -1,7 +1,7 @@
 {#
   TABLE COMPONENT
 #}
-<div class="{{prefix}}--table">
+<div class="{{prefix}}--table{% if zebra is defined and zebra == 'true' %} {{prefix}}--table--zebra{% endif %}">
   <header class="{{prefix}}--table--header">
     <h3 class="{{prefix}}--table--headline">
       {{headline}}
@@ -12,22 +12,25 @@
     </p>
     {% endif %}
   </header>
-  <table class="{{prefix}}--table--content">
-    <thead>
-      <tr>
-      {% for column in tableheadings %}
-        <th>{{column}}</th>
-      {% endfor %}
-      </tr>
-    </thead>
-    <tbody>
-      {% for row in tabledata %}
-        <tr>
-          {% for cell in row %}
-            <td>{{cell|raw}}</td>
-          {% endfor %}
+  <div class="{{prefix}}--table--wrapper">
+    <table class="{{prefix}}--table--content">
+      <thead class="{{prefix}}--table--head">
+        <tr class="{{prefix}}--table--head--row">
+        {% for column in tableheadings %}
+          <th class="{{prefix}}--table--head--cell">{{column}}</th>
+        {% endfor %}
         </tr>
-      {% endfor %}
-    </tbody>
-  </table>
+      </thead>
+      <tbody class="{{prefix}}--table--body">
+        {% for row in tabledata %}
+          <tr class="{{prefix}}--table--body--row">
+            {% for cell in row %}
+              {% set evaluate = cell|striptags|replace({'/': '', '-':'','_':'','.':'',}) %}
+              <td class="{{prefix}}--table--body--cell{% if evaluate matches '/^[0-9]+$/' %} numeric{% endif %}">{{cell|raw}}</td>
+            {% endfor %}
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
 </div>

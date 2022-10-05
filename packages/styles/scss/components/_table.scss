@@ -1,0 +1,141 @@
+@use "../tokens" as *;
+@use "../functions" as *;
+@import "../mixins";
+
+.ilo--table {
+  background-color: $color-ux-table-background;
+  padding: $spacing-ux-table-padding-top $spacing-ux-table-padding-right
+    $spacing-ux-table-padding-bottom $spacing-ux-table-padding-left;
+  position: relative;
+
+  &--header {
+    background-color: $color-ux-table-content-background;
+    padding: $spacing-ux-table-content-padding-top
+      $spacing-ux-table-content-padding-right
+      $spacing-ux-table-content-padding-bottom
+      $spacing-ux-table-content-padding-left;
+  }
+
+  &--wrapper {
+    max-height: 380px;
+    overflow: scroll;
+    position: relative;
+    width: 100%;
+  }
+
+  &--content {
+    width: 100%;
+  }
+
+  &--head {
+    background-color: $color-ux-table-content-background;
+    border-top: px-to-rem(2px) solid $color-base-neutrals-lighter;
+    border-bottom: px-to-rem(2px) solid $color-base-neutrals-lighter;
+    box-shadow: 0px 0.8px 1.6px rgba(30, 45, 190, 0.038),
+      0px 4px 8px rgba(30, 45, 190, 0.054),
+      0px 10px 20px rgba(30, 45, 190, 0.08),
+      0px -4px 16px rgba(30, 45, 190, 0.054);
+    left: 0;
+    height: auto;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+
+    &--cell {
+      background-color: $color-ux-table-content-background;
+      border-left: px-to-rem(1px) solid $color-base-neutrals-lighter;
+      font-family: $fonts-display;
+      font-weight: 700;
+      @include font-styles("body-xs");
+      padding: $spacing-ux-table-head-padding-top
+        $spacing-ux-table-head-padding-right
+        $spacing-ux-table-head-padding-bottom
+        $spacing-ux-table-head-padding-left;
+      text-align: left;
+
+      &:first-of-type {
+        border-left: none;
+      }
+    }
+  }
+
+  &--body {
+    background-color: $color-ux-table-cell-background;
+
+    &--row:hover,
+    &--row:focus {
+      background-color: $color-ux-table-hover-background;
+    }
+
+    &--cell {
+      border-bottom: px-to-rem(2px) solid $color-base-neutrals-lighter;
+      border-left: px-to-rem(1px) solid $color-base-neutrals-lighter;
+      font-family: $fonts-copy;
+      font-weight: 400;
+      @include font-styles("body-xs");
+      outline: 0;
+      padding: $spacing-ux-table-cell-padding-top
+        $spacing-ux-table-cell-padding-right
+        $spacing-ux-table-cell-padding-bottom
+        $spacing-ux-table-cell-padding-left;
+      position: relative;
+
+      &:first-of-type {
+        border-left: none;
+      }
+
+      &.numeric {
+        text-align: right;
+      }
+
+      &:hover,
+      &:focus,
+      &.selected {
+        background-color: $color-ux-table-selected-background;
+      }
+
+      a {
+        @include linkstyles();
+      }
+    }
+  }
+
+  &--headline {
+    font-family: $fonts-display;
+    font-weight: 700;
+    margin-bottom: px-to-rem(7px);
+    @include font-styles("headline-6");
+  }
+
+  &--description {
+    font-family: $fonts-copy;
+    font-weight: 400;
+    @include font-styles("body-xxs");
+
+    a {
+      @include linkstyles();
+    }
+  }
+
+  &--zebra {
+    .ilo--table--body--row:nth-child(odd) {
+      background-color: $color-ux-table-zebra-background;
+
+      &:hover,
+      &:focus {
+        background-color: $color-ux-table-hover-background;
+      }
+
+      .ilo--table--body--cell {
+        border-left: px-to-rem(1px) solid $color-base-neutrals-white;
+
+        &:hover,
+        &:focus,
+        &.selected {
+          background-color: $color-ux-table-selected-background;
+        }
+      }
+    }
+  }
+}
