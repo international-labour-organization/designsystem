@@ -88,6 +88,114 @@ cardgroup:
           variant: multilink
       settings: 
         cardcount: three
+    feature:
+      label: Feature
+      description: feature settings
+      fields:
+        group:
+          - title: "Vertical info card descriptive headline text"
+            image: "http://placekitten.com/475/267"
+            intro: ""
+            eyebrow: "Eyebrow title"
+            date: "Date"
+            link: "https://www.google.com/search?q=feature"
+            profile: ""
+            eventdate: ""
+            cta: ""
+            source: ""
+            linklist: ""
+            list: ""
+            dataset: ""
+            color: ""
+          - title: "Vertical info card descriptive headline text"
+            image: "http://placekitten.com/475/267"
+            intro: ""
+            eyebrow: "Eyebrow title"
+            date: "Date"
+            link: "https://www.google.com/search?q=feature"
+            profile: ""
+            eventdate: ""
+            cta: ""
+            source: ""
+            linklist: ""
+            list: ""
+            dataset: ""
+            color: ""
+          - title: "Vertical info card descriptive headline text Vertical info card descriptive headline text Vertical info card descriptive headline text"
+            image: "http://placekitten.com/475/267"
+            intro: ""
+            eyebrow: "Eyebrow title"
+            date: "Date"
+            link: "https://www.google.com/search?q=feature"
+            profile: ""
+            eventdate: ""
+            cta: ""
+            source: ""
+            linklist: ""
+            list: ""
+            dataset: ""
+            color: ""
+          - title: "Vertical info card descriptive headline text"
+            image: "http://placekitten.com/475/267"
+            intro: ""
+            eyebrow: "Eyebrow title"
+            date: "Date"
+            link: "https://www.google.com/search?q=feature"
+            profile: ""
+            eventdate: ""
+            cta: ""
+            source: ""
+            linklist: ""
+            list: ""
+            dataset: ""
+            color: ""
+        settings:
+          theme: light
+          cornercut: cornercut
+          alignment: left
+          variant: feature
+      settings: 
+        cardcount: four
+    detail:
+      label: Detail
+      description: detail settings
+      fields:
+        group:
+          - title: "Horizontal info card descriptive headline text"
+            image: "http://placekitten.com/196/296"
+            intro: "This ILO flagship report details the effects of the COVID-19 crisis on the world of work. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eu auctor tusrpis, this is 200 characters."
+            eyebrow: "Eyebrow title"
+            date: "00 month 0000"
+            link: "https://www.google.com/search?q=detail"
+            profile: ""
+            eventdate: "8 - 9 February 2022, 8:30 - 12:00 CET  |  Egypt"
+            cta: ""
+            source: ""
+            linklist: ""
+            list: ""
+            dataset: ""
+            color: ""
+          - title: "Horizontal info card descriptive headline text"
+            image: "https://www.ilo.org/wcmsp5/groups/public/---dgreports/---dcomm/documents/image/wcms_856513.jpg"
+            intro: "This ILO flagship report details the effects of the COVID-19 crisis on the world of work. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eu auctor tusrpis, this is 200 characters."
+            eyebrow: "Eyebrow title"
+            date: "00 month 0000"
+            link: "https://www.google.com/search?q=detail"
+            profile: ""
+            eventdate: "8 - 9 February 2022, 8:30 - 12:00 CET  |  Egypt"
+            cta: ""
+            source: ""
+            linklist: ""
+            list: ""
+            dataset: ""
+            color: ""
+        settings:
+          theme: light
+          cornercut: cornercut
+          alignment: left
+          variant: detail
+      settings: 
+        cardcount: one
     graphicpromo:
       label: Graphic Promo
       description: graphic promo settings
@@ -179,6 +287,109 @@ cardgroup:
           variant: stat
       settings:
         cardcount: two
+    graphic:
+      label: Graphic
+      description: graphic settings
+      fields:
+        group:
+          - title: "Brief title text - ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod"
+            image: ""
+            intro: ""
+            eyebrow: "Eyebrow title"
+            date: "date"
+            link: "https://www.google.com/search?q=graphic"
+            profile: ""
+            eventdate: ""
+            cta: ""
+            source: ""
+            linklist: ""
+            list: ""
+            dataset: ""
+        settings:
+          theme: light
+          cornercut: cornercut
+          alignment: left
+          variant: graphic
+      settings:
+        cardcount: one
+    factlist:
+      label: Factlist
+      description: Factlist settings
+      fields:
+        group:
+          - title: "Title of fast fact list"
+            intro: ""
+            eyebrow: ""
+            date: ""
+            link: ""
+            image: ""
+            profile: ""
+            eventdate: ""
+            cta: ""
+            list: 
+              title: ""
+              settings:
+                - ordered: unordered
+                - alignment: default
+              items: 
+                - content: "Wipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor."
+                  id: "list1"
+                - content: "Nut labore et dolore magna sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+                  id: "list2"
+        settings:
+          theme: light
+          cornercut: cornercut
+          alignment: left
+          variant: factlist
+      settings:
+        cardcount: one
+    data:
+      label: Data
+      description: Data settings
+      fields:
+        group:
+          - title: ""
+            image: ""
+            # image: "https://placekitten.com/205/179"
+            intro: ""
+            eyebrow: "Event details"
+            date: ""
+            link: ""
+            profile: ""
+            eventdate: ""
+            cta: ""
+            dataset: 
+              content: 
+                items: 
+                  - label: Date
+                    copy: Publication date
+                  - label: Event type
+                    copy: Event location
+              files:
+                headline: Files
+                items: 
+                  - label: File/size MB 1
+                    url: "https://www.google.com/search?q=file1"
+                  - label: File/size MB 2
+                    url: "https://www.google.com/search?q=file2"
+                  - label: File/size MB 3
+                    url: "https://www.google.com/search?q=file3"
+              links:
+                headline: Languages
+                items: 
+                  - label: Language link 1
+                    url: "https://www.google.com/search?q=link"
+                  - label: Language link 2
+                    url: "https://www.google.com/search?q=hyperlink"
+                  - label: Language link 3
+                    url: "https://www.google.com/search?q=url"
+        settings:
+          theme: light
+          cornercut: cornercut
+          alignment: left
+          variant: data
+      settings:
+        cardcount: one
   settings:
     cardcount:
       type: select

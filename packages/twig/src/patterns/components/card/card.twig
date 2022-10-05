@@ -69,25 +69,29 @@
       {% if dataset %}
         {% if dataset.content %}
           {% for item in dataset.content.items %}
-            <p class="{{prefix}}--card--dataset--content-label">{{ item.label }}</p>
-            <p class="{{prefix}}--card--dataset--content-copy">{{ item.copy }}</p>
+            <p class="{{prefix}}--card--data--content-label">{{ item.label }}</p>
+            <p class="{{prefix}}--card--data--content-copy">{{ item.copy }}</p>
           {% endfor %}
         {% endif %}
         {% if dataset.files %}
-          <p class="{{prefix}}--card--dataset--content-label">{{ dataset.files.headline }}</p>
-          {% for item in dataset.files.items %}
-            <a class="{{prefix}}--card--dataset--file {{prefix}}--button {{prefix}}--button--primary {{prefix}}--button--small" href="{{item.url}}"><span class="button__label">{{ item.label }}</span></a>
-          {% endfor %}
+          <div class="{{prefix}}--card--data--content-files">
+            <p class="{{prefix}}--card--data--content-label">{{ dataset.files.headline }}</p>
+            {% for item in dataset.files.items %}
+              <a class="{{prefix}}--card--data--file {{prefix}}--button {{prefix}}--button--primary {{prefix}}--button--small" href="{{item.url}}"><span class="button__label" download>{{ item.label }}</span></a>
+            {% endfor %}
+          </div>
         {% endif %}
         {% if dataset.links %}
-          {% for item in dataset.links.items %}
-            {% include "@components/link/link.twig" with {
-              theme: theme,
-              url: item.url,
-              label: item.label,
-              prefix: prefix
-            } %} <span>&nbsp;</span>
-          {% endfor %}
+          <div class="{{prefix}}--card--data--content-links">
+            {% for item in dataset.links.items %}
+              {% include "@components/link/link.twig" with {
+                theme: theme,
+                url: item.url,
+                label: item.label,
+                prefix: prefix
+              } %} <span>&nbsp;</span>
+            {% endfor %}
+          </div>
         {% endif %}
       {% endif %}
     </div>

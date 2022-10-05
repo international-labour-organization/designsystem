@@ -211,7 +211,7 @@ card:
         intro: "This ILO flagship report details the effects of the COVID-19 crisis on the world of work. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eu auctor tusrpis, this is 200 characters."
         eyebrow: Eyebrow title
         date: 00 month 0000
-        link: "https://www.google.com/search?q=graphic"
+        link: "https://www.google.com/search?q=detail"
         # image: "http://placekitten.com/296/196"
         image: "https://www.ilo.org/wcmsp5/groups/public/---dgreports/---dcomm/documents/image/wcms_856513.jpg"
         profile:
@@ -228,6 +228,7 @@ card:
         image: ""
         profile: ""
         eventdate: ""
+        cta: ""
         list: 
           title: ""
           settings:
