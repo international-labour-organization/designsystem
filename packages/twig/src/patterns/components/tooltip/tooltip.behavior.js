@@ -1,6 +1,6 @@
 import Tooltip from './tooltip';
 
-Drupal.behaviors.media = {
+Drupal.behaviors.tooltip = {
   attach() {
     Array.prototype.forEach.call(
       document.querySelectorAll(`[data-loadcomponent="Tooltip"]`),

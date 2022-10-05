@@ -1,0 +1,10 @@
+{#
+  POLYFILL COMPONENT
+
+  This component is specifically to make this polyfill work correctly in Wingsuit. To use this in the context of Drupal, Wordpress, etc, consider using the approach documented at https://github.com/GoogleChromeLabs/container-query-polyfill
+#}
+<script>
+  if (!("container" in document.documentElement.style)) {
+    import("https://unpkg.com/container-query-polyfill@^0.2.0");
+  }
+</script>

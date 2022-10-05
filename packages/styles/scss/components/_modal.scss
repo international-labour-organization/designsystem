@@ -1,0 +1,84 @@
+@use "../tokens" as *;
+@use "../functions" as *;
+@import "../mixins";
+@import "../animations";
+
+.ilo--modal {
+  &--wrapper {
+    display: none;
+
+    & > * {
+      opacity: 0;
+    }
+  }
+
+  &.show {
+    .ilo--modal--wrapper {
+      display: block;
+      height: 100vh;
+      left: 0;
+      position: fixed;
+      top: 0;
+      width: 100vw;
+      z-index: 10001;
+    }
+
+    &.fadein {
+      .ilo--modal--wrapper {
+        & > * {
+          opacity: 1;
+          transition: opacity 1.5s ease-out 125ms;
+        }
+      }
+    }
+  }
+
+  &--background {
+    background-color: rgba(0, 0, 0, 0.85);
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 10002;
+  }
+
+  &--contents {
+    background-color: $color-base-neutrals-white;
+    left: 0;
+    position: absolute;
+    margin: 0 4.2%;
+    max-height: 96%;
+    overflow: scroll;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 91.4%;
+    z-index: 10003;
+  }
+
+  .modal--close {
+    right: 0;
+    position: absolute;
+    top: 0;
+    z-index: 10004;
+  }
+
+  @include breakpoint("medium") {
+    &--contents {
+      margin: 0 23.2%;
+      width: 53.58%;
+    }
+  }
+
+  @include breakpoint("large") {
+    &--contents {
+      margin: 0 18.05%;
+      width: 63.888%;
+    }
+  }
+
+  &.storybook {
+    height: 400px;
+    width: 100%;
+  }
+}

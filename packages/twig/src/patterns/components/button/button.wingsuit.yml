@@ -22,6 +22,8 @@ button:
         primary: Primary
         secondary: Secondary
         tertiary: Tertiary
+        alert: Alert
+        icononly: Icon Only
       preview: 'primary'
     disabled:
       type: select
@@ -29,8 +31,8 @@ button:
       description: The disabled state of the button.
       required: false
       options:
-        true: True
-        false: False
+        true: 'true'
+        false: false
       preview: 'false'
     label:
       type: string
@@ -47,7 +49,7 @@ button:
     target:
       type: string
       label: target
-      description: Should the button open in a new tab? If so, include the name of the tab
+      description: Should the button open in a new tab? If so, include the name of the tab. Only evaluated if the url field is populated.
       preview: 'true'
       required: false
     kind:
@@ -60,4 +62,43 @@ button:
         reset: reset
         submit: submit
       preview: 'button'
+    icon:
+      type: string
+      label: Icon
+      description: optional icon to include in button
+      preview: false
+      required: false
+    iconPosition:
+      type: select
+      label: Icon Position
+      description: if there's an icon, where is it in the button?
+      fields:
+        left: left
+        right: right
+      preview: left
+      required: false
+    icononly:
+      type: select
+      label: Icon Only
+      description: Is this an icon-only button?
+      fields:
+        true: 'true'
+        false: false
+      preview: false
+      required: false
+    className:
+      type: string
+      label: Class name
+      description: optional class name
+      preview: 'optionalclass'
+      required: false
+    opensmodal:
+      type: select
+      label: Opens Modal
+      description: Does this button trigger open a modal?
+      fields:
+        true: 'true'
+        false: false
+      preview: false
+      required: false
   visibility: storybook

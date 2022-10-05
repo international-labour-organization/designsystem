@@ -94,7 +94,6 @@ form:
               type: "radio"
               value: "radio5"
           grouphelper: "Helper text"
-          grouptooltip: "Tooltip text"
           legend: "Radio Group"
           type: "radio"
         - field:
@@ -196,7 +195,6 @@ form:
                     type: "radio"
                     value: "radio5"
                 grouphelper: "Helper text"
-                grouptooltip: "Tooltip text"
                 legend: "Radio Group"
                 type: "radio"
               - field:
@@ -204,7 +202,6 @@ form:
                     label: "File Upload Field Label"
                     name: "fileupload"
                     placeholder: "File Upload Field"
-                    tooltip: "Tooltip"
                 type: "file"
               - field:
                   enddata:
@@ -236,4 +233,741 @@ form:
       description: The form's submit button label
       preview: "Submit"
       required: true
+  variants:
+    default:
+      label: Default
+      description: the default settings for the Form
+    hastooltips:
+      label: Has Tooltips
+      description: the Form with Tooltips on the field labels
+      fields:
+        formid: "tooltipform"
+        items:
+          - field:
+              label: "Text Field Label"
+              name: "text"
+              placeholder: "Text Field"
+              type: "text"
+              tooltip:
+                label: "tooltip"
+                icon: true
+                theme: "dark"
+            type: "input"
+          - field:
+              id: "dropdown"
+              label: "Dropdown Label"
+              name: "dropdown"
+              options:
+                - label: "Option One"
+                  value: "option one"
+                - label: "Option Two"
+                  value: "option two"
+                - label: "Option Three"
+                  value: "option three"
+                - label: "Option Four"
+                  value: "four"
+                - label: "Option Five"
+                  value: "the fifth"
+              tooltip:
+                label: "tooltip"
+                icon: true
+                theme: "dark"
+            type: "dropdown"
+          - field:
+              label: "Checkbox Label"
+              name: "checkbox"
+              type: "checkbox"
+              tooltip:
+                label: "tooltip"
+                icon: true
+                theme: "dark"
+            type: "checkbox"
+          - choicegroupid: "multiplecheckboxes"
+            field:
+              - label: "Checkbox Label 1"
+                grouped: true
+                name: "checkbox1"
+                type: "checkbox"
+              - label: "Checkbox Label 2"
+                grouped: true
+                name: "checkbox2"
+                type: "checkbox"
+              - label: "Checkbox Label 3"
+                grouped: true
+                name: "checkbox3"
+                type: "checkbox"
+              - label: "Checkbox Label 4"
+                grouped: true
+                name: "checkbox4"
+                type: "checkbox"
+              - label: "Checkbox Label 5"
+                grouped: true
+                name: "checkbox5"
+                type: "checkbox"
+            grouptooltip:
+              label: "tooltip"
+              icon: true
+              theme: "dark"
+            legend: "Multiple Checkboxes"
+            type: "checkbox"
+          - choicegroupid: "radios"
+            field:
+              - label: "Radio Field Label 1"
+                name: "radio"
+                type: "radio"
+                value: "radio1"
+              - label: "Radio Field Label 2"
+                name: "radio"
+                type: "radio"
+                value: "radio2"
+              - label: "Radio Field Label 3"
+                name: "radio"
+                type: "radio"
+                value: "radio3"
+              - label: "Radio Field Label 4"
+                name: "radio"
+                type: "radio"
+                value: "radio4"
+              - label: "Radio Field Label 5"
+                name: "radio"
+                type: "radio"
+                value: "radio5"
+            grouptooltip:
+              label: "tooltip"
+              icon: true
+              theme: "dark"
+            legend: "Radio Group"
+            type: "radio"
+          - field:
+                label: "File Upload Field Label"
+                name: "fileupload"
+                placeholder: "File Upload Field"
+                tooltip:
+                  label: "tooltip"
+                  icon: true
+                  theme: "dark"
+            type: "file"
+          - field:
+              label: "Date Picker Field Label"
+              name: "datepicker"
+              placeholder: "MM/DD/YYYY"
+              tooltip:
+                label: "tooltip"
+                icon: true
+                theme: "dark"
+            type: "date"
+          - field:
+                label: "Number Picker Field Label"
+                name: "text"
+                placeholder: "Number Picker Field"
+                tooltip:
+                  label: "tooltip"
+                  icon: true
+                  theme: "dark"
+            type: "number"
+          - field:
+              label: "Textarea"
+              name: "textarea"
+              placeholder: "Textarea"
+              tooltip:
+                label: "tooltip"
+                icon: true
+                theme: "dark"
+            type: "textarea"
+          - field:
+              formgroupid: "formgroup"
+              items:
+                - field:
+                    label: "Text Field Label"
+                    name: "text"
+                    placeholder: "Text Field"
+                    type: "text"
+                    tooltip:
+                      label: "tooltip"
+                      icon: true
+                      theme: "dark"
+                  type: "input"
+                - field:
+                    id: "dropdown"
+                    label: "Dropdown Label"
+                    name: "dropdown"
+                    options:
+                      - label: "Option One"
+                        value: "option one"
+                      - label: "Option Two"
+                        value: "option two"
+                      - label: "Option Three"
+                        value: "option three"
+                      - label: "Option Four"
+                        value: "four"
+                      - label: "Option Five"
+                        value: "the fifth"
+                    tooltip:
+                      label: "tooltip"
+                      icon: true
+                      theme: "dark"
+                  type: "dropdown"
+                - field:
+                    label: "Checkbox Label"
+                    name: "checkbox"
+                    type: "checkbox"
+                    tooltip:
+                      label: "tooltip"
+                      icon: true
+                      theme: "dark"
+                  type: "checkbox"
+                - choicegroupid: "multiplecheckboxes"
+                  field:
+                    - label: "Checkbox Label 1"
+                      grouped: true
+                      name: "checkbox1"
+                      type: "checkbox"
+                    - label: "Checkbox Label 2"
+                      grouped: true
+                      name: "checkbox2"
+                      type: "checkbox"
+                    - label: "Checkbox Label 3"
+                      grouped: true
+                      name: "checkbox3"
+                      type: "checkbox"
+                    - label: "Checkbox Label 4"
+                      grouped: true
+                      name: "checkbox4"
+                      type: "checkbox"
+                    - label: "Checkbox Label 5"
+                      grouped: true
+                      name: "checkbox5"
+                      type: "checkbox"
+                  grouptooltip:
+                    label: "tooltip"
+                    icon: true
+                    theme: "dark"
+                  legend: "Multiple Checkboxes"
+                  type: "checkbox"
+                - choicegroupid: "radios"
+                  field:
+                    - label: "Radio Field Label 1"
+                      name: "radio"
+                      type: "radio"
+                      value: "radio1"
+                    - label: "Radio Field Label 2"
+                      name: "radio"
+                      type: "radio"
+                      value: "radio2"
+                    - label: "Radio Field Label 3"
+                      name: "radio"
+                      type: "radio"
+                      value: "radio3"
+                    - label: "Radio Field Label 4"
+                      name: "radio"
+                      type: "radio"
+                      value: "radio4"
+                    - label: "Radio Field Label 5"
+                      name: "radio"
+                      type: "radio"
+                      value: "radio5"
+                  grouptooltip:
+                    label: "tooltip"
+                    icon: true
+                    theme: "dark"
+                  legend: "Radio Group"
+                  type: "radio"
+                - field:
+                      label: "File Upload Field Label"
+                      name: "fileupload"
+                      placeholder: "File Upload Field"
+                      tooltip:
+                        label: 'tooltip'
+                        icon: true
+                        theme: dark
+                  type: "file"
+                - field:
+                    enddata:
+                      label: "Date Picker End Field Label"
+                      name: "datepickerend"
+                      placeholder: "MM/DD/YYYY"
+                      tooltip: "Tooltip"
+                    label: "Date Picker Field Label"
+                    name: "datepicker"
+                    placeholder: "MM/DD/YYYY"
+                    tooltip:
+                      label: "tooltip"
+                      icon: true
+                      theme: "dark"
+                    range: true
+                  type: "date"
+                - field:
+                      label: "Number Picker Field Label"
+                      name: "text"
+                      placeholder: "Number Picker Field"
+                      tooltip:
+                        label: "tooltip"
+                        icon: true
+                        theme: "dark"
+                  type: "number"
+                - field:
+                    label: "Textarea"
+                    name: "textarea"
+                    placeholder: "Textarea"
+                    tooltip:
+                      label: "tooltip"
+                      icon: true
+                      theme: "dark"
+                  type: "textarea"
+              legend: "Example Form Group"
+              type: "default"
+            type: "formgroup"
+    haserrors:
+      label: Has Errors
+      description: the Form with Errors on the fields
+      fields:
+        formid: "errorsform"
+        items:
+          - field:
+              label: "Text Field Label"
+              name: "text"
+              placeholder: "Text Field"
+              type: "text"
+              error: 'this is an error message form the server'
+            type: "input"
+          - field:
+              id: "dropdown"
+              label: "Dropdown Label"
+              name: "dropdown"
+              options:
+                - label: "Option One"
+                  value: "option one"
+                - label: "Option Two"
+                  value: "option two"
+                - label: "Option Three"
+                  value: "option three"
+                - label: "Option Four"
+                  value: "four"
+                - label: "Option Five"
+                  value: "the fifth"
+              error: 'this is an error message form the server'
+            type: "dropdown"
+          - field:
+              label: "Checkbox Label"
+              name: "checkbox"
+              type: "checkbox"
+              error: 'this is an error message form the server'
+            type: "checkbox"
+          - choicegroupid: "multiplecheckboxes"
+            field:
+              - label: "Checkbox Label 1"
+                grouped: true
+                name: "checkbox1"
+                type: "checkbox"
+              - label: "Checkbox Label 2"
+                grouped: true
+                name: "checkbox2"
+                type: "checkbox"
+              - label: "Checkbox Label 3"
+                grouped: true
+                name: "checkbox3"
+                type: "checkbox"
+              - label: "Checkbox Label 4"
+                grouped: true
+                name: "checkbox4"
+                type: "checkbox"
+              - label: "Checkbox Label 5"
+                grouped: true
+                name: "checkbox5"
+                type: "checkbox"
+            legend: "Multiple Checkboxes"
+            type: "checkbox"
+            grouperror: 'this is an error message form the server'
+          - choicegroupid: "radios"
+            field:
+              - label: "Radio Field Label 1"
+                name: "radio"
+                type: "radio"
+                value: "radio1"
+              - label: "Radio Field Label 2"
+                name: "radio"
+                type: "radio"
+                value: "radio2"
+              - label: "Radio Field Label 3"
+                name: "radio"
+                type: "radio"
+                value: "radio3"
+              - label: "Radio Field Label 4"
+                name: "radio"
+                type: "radio"
+                value: "radio4"
+              - label: "Radio Field Label 5"
+                name: "radio"
+                type: "radio"
+                value: "radio5"
+            grouperror: 'this is an error message form the server'
+            legend: "Radio Group"
+            type: "radio"
+          - field:
+                helper: "The file upload's helper text"
+                label: "File Upload Field Label"
+                name: "fileupload"
+                placeholder: "File Upload Field"
+                error: 'this is an error message form the server'
+            type: "file"
+          - field:
+              label: "Date Picker Field Label"
+              name: "datepicker"
+              placeholder: "MM/DD/YYYY"
+              error: 'this is an error message form the server'
+            type: "date"
+          - field:
+                label: "Number Picker Field Label"
+                name: "text"
+                placeholder: "Number Picker Field"
+                error: 'this is an error message form the server'
+            type: "number"
+          - field:
+              label: "Textarea"
+              name: "textarea"
+              placeholder: "Textarea"
+              error: 'this is an error message form the server'
+            type: "textarea"
+          - field:
+              formgroupid: "formgroup"
+              items:
+                - field:
+                    label: "Text Field Label"
+                    name: "text"
+                    placeholder: "Text Field"
+                    type: "text"
+                    error: 'this is an error message form the server'
+                  type: "input"
+                - field:
+                    id: "dropdown"
+                    label: "Dropdown Label"
+                    name: "dropdown"
+                    options:
+                      - label: "Option One"
+                        value: "option one"
+                      - label: "Option Two"
+                        value: "option two"
+                      - label: "Option Three"
+                        value: "option three"
+                      - label: "Option Four"
+                        value: "four"
+                      - label: "Option Five"
+                        value: "the fifth"
+                    error: 'this is an error message form the server'
+                  type: "dropdown"
+                - field:
+                    label: "Checkbox Label"
+                    name: "checkbox"
+                    type: "checkbox"
+                    error: 'this is an error message form the server'
+                  type: "checkbox"
+                - choicegroupid: "multiplecheckboxes"
+                  field:
+                    - label: "Checkbox Label 1"
+                      grouped: true
+                      name: "checkbox1"
+                      type: "checkbox"
+                    - label: "Checkbox Label 2"
+                      grouped: true
+                      name: "checkbox2"
+                      type: "checkbox"
+                    - label: "Checkbox Label 3"
+                      grouped: true
+                      name: "checkbox3"
+                      type: "checkbox"
+                    - label: "Checkbox Label 4"
+                      grouped: true
+                      name: "checkbox4"
+                      type: "checkbox"
+                    - label: "Checkbox Label 5"
+                      grouped: true
+                      name: "checkbox5"
+                      type: "checkbox"
+                  legend: "Multiple Checkboxes"
+                  type: "checkbox"
+                  grouperror: 'this is an error message form the server'
+                - choicegroupid: "radios"
+                  field:
+                    - label: "Radio Field Label 1"
+                      name: "radio"
+                      type: "radio"
+                      value: "radio1"
+                    - label: "Radio Field Label 2"
+                      name: "radio"
+                      type: "radio"
+                      value: "radio2"
+                    - label: "Radio Field Label 3"
+                      name: "radio"
+                      type: "radio"
+                      value: "radio3"
+                    - label: "Radio Field Label 4"
+                      name: "radio"
+                      type: "radio"
+                      value: "radio4"
+                    - label: "Radio Field Label 5"
+                      name: "radio"
+                      type: "radio"
+                      value: "radio5"
+                  legend: "Radio Group"
+                  type: "radio"
+                  grouperror: 'this is an error message form the server'
+                - field:
+                      label: "File Upload Field Label"
+                      name: "fileupload"
+                      placeholder: "File Upload Field"
+                      error: 'this is an error message form the server'
+                  type: "file"
+                - field:
+                    enddata:
+                      label: "Date Picker End Field Label"
+                      name: "datepickerend"
+                      placeholder: "MM/DD/YYYY"
+                      error: 'this is an error message form the server'
+                    label: "Date Picker Field Label"
+                    name: "datepicker"
+                    placeholder: "MM/DD/YYYY"
+                    error: 'this is an error message form the server'
+                    range: true
+                  type: "date"
+                - field:
+                      label: "Number Picker Field Label"
+                      name: "text"
+                      placeholder: "Number Picker Field"
+                      error: 'this is an error message form the server'
+                  type: "number"
+                - field:
+                    label: "Textarea"
+                    name: "textarea"
+                    placeholder: "Textarea"
+                    error: 'this is an error message form the server'
+                  type: "textarea"
+              legend: "Example Form Group"
+              type: "default"
+            type: "formgroup"
+    hashelper:
+      label: Has Helper Text
+      description: the Form with helper text on the fields
+      fields:
+        formid: "helperform"
+        items:
+          - field:
+              label: "Text Field Label"
+              name: "text"
+              placeholder: "Text Field"
+              type: "text"
+              helper: "this is the helper text"
+            type: "input"
+          - field:
+              id: "dropdown"
+              label: "Dropdown Label"
+              name: "dropdown"
+              options:
+                - label: "Option One"
+                  value: "option one"
+                - label: "Option Two"
+                  value: "option two"
+                - label: "Option Three"
+                  value: "option three"
+                - label: "Option Four"
+                  value: "four"
+                - label: "Option Five"
+                  value: "the fifth"
+              helper: "this is the helper text"
+            type: "dropdown"
+          - field:
+              label: "Checkbox Label"
+              name: "checkbox"
+              type: "checkbox"
+              helper: "this is the helper text"
+            type: "checkbox"
+          - choicegroupid: "multiplecheckboxes"
+            field:
+              - label: "Checkbox Label 1"
+                grouped: true
+                name: "checkbox1"
+                type: "checkbox"
+              - label: "Checkbox Label 2"
+                grouped: true
+                name: "checkbox2"
+                type: "checkbox"
+              - label: "Checkbox Label 3"
+                grouped: true
+                name: "checkbox3"
+                type: "checkbox"
+              - label: "Checkbox Label 4"
+                grouped: true
+                name: "checkbox4"
+                type: "checkbox"
+              - label: "Checkbox Label 5"
+                grouped: true
+                name: "checkbox5"
+                type: "checkbox"
+            legend: "Multiple Checkboxes"
+            type: "checkbox"
+            grouphelper: "this is the helper text"
+          - choicegroupid: "radios"
+            field:
+              - label: "Radio Field Label 1"
+                name: "radio"
+                type: "radio"
+                value: "radio1"
+              - label: "Radio Field Label 2"
+                name: "radio"
+                type: "radio"
+                value: "radio2"
+              - label: "Radio Field Label 3"
+                name: "radio"
+                type: "radio"
+                value: "radio3"
+              - label: "Radio Field Label 4"
+                name: "radio"
+                type: "radio"
+                value: "radio4"
+              - label: "Radio Field Label 5"
+                name: "radio"
+                type: "radio"
+                value: "radio5"
+            grouphelper: "this is the helper text"
+            legend: "Radio Group"
+            type: "radio"
+          - field:
+                label: "File Upload Field Label"
+                name: "fileupload"
+                placeholder: "File Upload Field"
+                helper: "this is the helper text"
+            type: "file"
+          - field:
+              label: "Date Picker Field Label"
+              name: "datepicker"
+              placeholder: "MM/DD/YYYY"
+              helper: "this is the helper text"
+            type: "date"
+          - field:
+                label: "Number Picker Field Label"
+                name: "text"
+                placeholder: "Number Picker Field"
+                helper: "this is the helper text"
+            type: "number"
+          - field:
+              label: "Textarea"
+              name: "textarea"
+              placeholder: "Textarea"
+              helper: "this is the helper text"
+            type: "textarea"
+          - field:
+              formgroupid: "formgroup"
+              items:
+                - field:
+                    label: "Text Field Label"
+                    name: "text"
+                    placeholder: "Text Field"
+                    type: "text"
+                    helper: "this is the helper text"
+                  type: "input"
+                - field:
+                    id: "dropdown"
+                    label: "Dropdown Label"
+                    name: "dropdown"
+                    options:
+                      - label: "Option One"
+                        value: "option one"
+                      - label: "Option Two"
+                        value: "option two"
+                      - label: "Option Three"
+                        value: "option three"
+                      - label: "Option Four"
+                        value: "four"
+                      - label: "Option Five"
+                        value: "the fifth"
+                    helper: "this is the helper text"
+                  type: "dropdown"
+                - field:
+                    label: "Checkbox Label"
+                    name: "checkbox"
+                    type: "checkbox"
+                    helper: "this is the helper text"
+                  type: "checkbox"
+                - choicegroupid: "multiplecheckboxes"
+                  field:
+                    - label: "Checkbox Label 1"
+                      grouped: true
+                      name: "checkbox1"
+                      type: "checkbox"
+                    - label: "Checkbox Label 2"
+                      grouped: true
+                      name: "checkbox2"
+                      type: "checkbox"
+                    - label: "Checkbox Label 3"
+                      grouped: true
+                      name: "checkbox3"
+                      type: "checkbox"
+                    - label: "Checkbox Label 4"
+                      grouped: true
+                      name: "checkbox4"
+                      type: "checkbox"
+                    - label: "Checkbox Label 5"
+                      grouped: true
+                      name: "checkbox5"
+                      type: "checkbox"
+                  legend: "Multiple Checkboxes"
+                  type: "checkbox"
+                  grouphelper: "this is the helper text"
+                - choicegroupid: "radios"
+                  field:
+                    - label: "Radio Field Label 1"
+                      name: "radio"
+                      type: "radio"
+                      value: "radio1"
+                    - label: "Radio Field Label 2"
+                      name: "radio"
+                      type: "radio"
+                      value: "radio2"
+                    - label: "Radio Field Label 3"
+                      name: "radio"
+                      type: "radio"
+                      value: "radio3"
+                    - label: "Radio Field Label 4"
+                      name: "radio"
+                      type: "radio"
+                      value: "radio4"
+                    - label: "Radio Field Label 5"
+                      name: "radio"
+                      type: "radio"
+                      value: "radio5"
+                  legend: "Radio Group"
+                  type: "radio"
+                  grouphelper: "this is the helper text"
+                - field:
+                      label: "File Upload Field Label"
+                      name: "fileupload"
+                      placeholder: "File Upload Field"
+                      helper: "this is the helper text"
+                  type: "file"
+                - field:
+                    enddata:
+                      label: "Date Picker End Field Label"
+                      name: "datepickerend"
+                      placeholder: "MM/DD/YYYY"
+                      helper: "this is the helper text"
+                    label: "Date Picker Field Label"
+                    name: "datepicker"
+                    placeholder: "MM/DD/YYYY"
+                    helper: "this is the helper text"
+                    range: true
+                  type: "date"
+                - field:
+                      label: "Number Picker Field Label"
+                      name: "text"
+                      placeholder: "Number Picker Field"
+                      helper: "this is the helper text"
+                  type: "number"
+                - field:
+                    label: "Textarea"
+                    name: "textarea"
+                    placeholder: "Textarea"
+                    helper: "this is the helper text"
+                  type: "textarea"
+              legend: "Example Form Group"
+              type: "default"
+            type: "formgroup"
   visibility: storybook

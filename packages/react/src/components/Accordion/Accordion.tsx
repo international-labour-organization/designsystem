@@ -19,7 +19,6 @@ const Accordion: FC<AccordionProps> = ({
   allowMultipleExpanded = false,
   onButtonClick,
   defaultAccordionsExpanded = [],
-  headingLevel = "h3",
   className,
 }) => {
   const { prefix } = useGlobalSettings();
@@ -61,7 +60,6 @@ const Accordion: FC<AccordionProps> = ({
         getUpdatedItems,
         allowMultipleExpanded,
         onButtonClick,
-        headingLevel,
       }}
     >
       <ul className={accordionClasses}>{children}</ul>

@@ -1,13 +1,14 @@
 {#
   ACCORDION ITEM COMPONENT
 #}
-<li class="{{prefix}}--accordion--item" id=" {{ id }}">
-  <{{ headingLevel|default('h3') }} class="ilo--h3">
-    <button class="{{prefix}}--accordion--button {{prefix}}--accordion--button--{{ size|default('small') }}" aria-expanded="{{ defaultExpanded }}" aria-controls="panel-{{ id }}" id="button-{{ id }}">
+{% set uid = "now"|date('Uv') %}
+<li class="{{prefix}}--accordion--item" id=" {{ id }}{{ uid }}">
+  <div class="ilo--h3">
+    <button class="{{prefix}}--accordion--button {{prefix}}--accordion--button--{{ size|default('small') }}" aria-expanded="{{ defaultExpanded }}" aria-controls="panel-{{ id }}{{ uid }}" id="button-{{ id }}{{ uid }}">
     {{label}}
     </button>
-  </{{ headingLevel|default('h3') }}>
-  <div class="{{prefix}}--accordion--panel{% if defaultExpanded == 'true'%} {{prefix}}--accordion--panel--open{% endif %}" id="panel-{{ id }}" aria-labelledby="button-{{ id }}" role="region">
+  </div>
+  <div class="{{prefix}}--accordion--panel{% if defaultExpanded == 'true'%} {{prefix}}--accordion--panel--open{% endif %}" id="panel-{{ id }}{{ uid }}" aria-labelledby="button-{{ id }}{{ uid }}" role="region">
     <div class="{{prefix}}--accordion--innerpanel">
       {{content|raw}}
     </div>

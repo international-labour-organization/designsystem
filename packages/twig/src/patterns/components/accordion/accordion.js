@@ -127,12 +127,10 @@ export default class Accordion {
       .closest('.ilo--accordion--item')
       .querySelector('.ilo--accordion--panel');
     const isopen = panel.classList.contains('ilo--accordion--panel--open');
-    const panelid = panel.id;
 
     if (!this.multipleExpanded) {
       this.accordionPanels.forEach((item) => {
-        const currentId = item.id;
-        if (panelid !== currentId) {
+        if (panel !== item) {
           this.collapseSection(item);
         }
       });

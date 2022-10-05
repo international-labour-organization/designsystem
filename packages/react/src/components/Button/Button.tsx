@@ -10,9 +10,11 @@ const Button: FC<ButtonProps> = ({
   className,
   disabled = false,
   icon,
+  icononly,
   iconPosition,
   kind = "button",
   label,
+  opensmodal,
   size = "large",
   target = "",
   type = "primary",
@@ -28,6 +30,7 @@ const Button: FC<ButtonProps> = ({
     [`${baseClass}--${size}`]: size,
     [`${baseClass}--${type}`]: type,
     [`icon icon__position--${icoPos}`]: icon,
+    [`icon--only`]: icononly,
   });
 
   /**
@@ -51,6 +54,7 @@ const Button: FC<ButtonProps> = ({
           onClick={(e) => handleClick(e)}
           disabled={disabled}
           type={kind}
+          aria-haspopup={opensmodal ? `dialog` : false}
         >
           {label && <span className="button__label">{label}</span>}
           {icon && <Icon name={icon} hidden={true} />}

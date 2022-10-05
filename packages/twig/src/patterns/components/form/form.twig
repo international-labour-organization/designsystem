@@ -18,8 +18,8 @@
           <fieldset class="{{prefix}}--choice-group {{prefix}}--fieldset">
             {% if i.legend %}
             <legend class="{{prefix}}--fieldset--legend">{{i.legend}}
-              {% if i.grouptooltip %}
-                {% include '@components/tooltip/tooltip.twig' with {label: i.grouptooltip, icon: true, className: prefix ~ "--fieldset--legend--tooltip"} %}
+              {% if i.grouptooltip is defined %}
+                {% include '@components/tooltip/tooltip.twig' with {label: i.grouptooltip.label, icon: i.grouptooltip.icon, theme: i.grouptooltip.theme, className: prefix ~ "--fieldset--legend--tooltip"} %}
               {% endif %}
             </legend>
             {% endif %}
@@ -57,8 +57,8 @@
       <fieldset class="{{prefix}}--choice-group {{prefix}}--fieldset">
         {% if item.legend %}
         <legend class="{{prefix}}--fieldset--legend">{{item.legend}}
-          {% if item.grouptooltip %}
-            {% include '@components/tooltip/tooltip.twig' with {label: item.grouptooltip, icon: true, className: prefix ~ "--fieldset--legend--tooltip"} %}
+          {% if item.grouptooltip is defined %}
+            {% include '@components/tooltip/tooltip.twig' with {label: item.grouptooltip.label, icon: item.grouptooltip.icon, theme: item.grouptooltip.theme, className: prefix ~ "--fieldset--legend--tooltip"} %}
           {% endif %}
         </legend>
         {% endif %}

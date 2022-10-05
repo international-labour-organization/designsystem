@@ -1,7 +1,9 @@
 accordion:
   use: '@components/accordion/accordion.twig'
   label: Accordion
-  description: A collapsible accordion.
+  description: The accordion component allows the user to show and hide sections of
+    related content on a page. Click the accordions below to
+    expand/collapse the accordion content.
   fields:
     size:
       type: select
@@ -18,19 +20,6 @@ accordion:
       description: Allow mutiple accordion items to be expandable at once.
       preview: 'true'
       required: false
-    headingLevel:
-      type: select
-      label: Heading Level
-      description: The heading Level of the accordion items.
-      required: false
-      options:
-        h1: Heading1
-        h2: Heading2
-        h3: Heading3
-        h4: Heading4
-        h5: Heading5
-        h6: Heading6
-      preview: h3
     items:
       type: object
       label: Items
@@ -48,6 +37,23 @@ accordion:
   variants:
     default:
       label: Default
+      description: the default settings for the Accordion
     expanded:
       label: Expanded
+      description: The Accordion with panels opened on page load
+      fields:
+        items:
+          - label: label 1
+            content: "<p>Content of Item 1</p><p>Content of Item 1</p><p>Content of Item 1</p><p>Content of Item 1</p><p>Content of Item 1</p>"
+            id: item1
+            defaultExpanded: 'true'
+          - label: label 2
+            content: "<p>Content of Item 2</p><p>Content of Item 2</p><p>Content of Item 2</p><p>Content of Item 2</p><p>Content of Item 2</p>"
+            id: item2
+            defaultExpanded: 'true'
+    multiple:
+      label: Allow Multiple Expanded
+      description: The Accordion set to allow multiple panels to be expanded at once
+      fields:
+        allowMultipleExpanded: 'true'
   visibility: storybook

@@ -61,7 +61,7 @@ const LargeTemplate: Story<AccordionProps> = () => (
   <Accordion {...accordionArgs.large}>
     <AccordionItem id="l1">
       <AccordionButton>Item1</AccordionButton>
-      <AccordionPanel timeout={300}>
+      <AccordionPanel>
         <p>Content of Item 1</p>
         <p>Content of Item 1</p>
         <p>Content of Item 1</p>
@@ -71,7 +71,7 @@ const LargeTemplate: Story<AccordionProps> = () => (
     </AccordionItem>
     <AccordionItem id="l2">
       <AccordionButton>Item2</AccordionButton>
-      <AccordionPanel timeout={300}>
+      <AccordionPanel>
         <p>Content of Item 2</p>
         <p>Content of Item 2</p>
         <p>Content of Item 2</p>

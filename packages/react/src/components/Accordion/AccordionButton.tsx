@@ -5,7 +5,6 @@ import useGlobalSettings from "../../hooks/useGlobalSettings";
 import { default as AccordionButtonProps } from "./AccordionButton.props";
 import { AccordionContext } from "./Accordion";
 import { AccordionItemContext } from "./AccordionItem";
-import { Heading } from "../Heading";
 
 const AccordionButton: FC<AccordionButtonProps> = ({
   children,
@@ -21,7 +20,6 @@ const AccordionButton: FC<AccordionButtonProps> = ({
     getUpdatedItems,
     allowMultipleExpanded,
     onButtonClick,
-    headingLevel,
   } = useContext(AccordionContext);
   const { id } = useContext(AccordionItemContext);
   const open = activeItems.indexOf(id) > -1;
@@ -44,7 +42,7 @@ const AccordionButton: FC<AccordionButtonProps> = ({
   };
 
   return (
-    <Heading level={headingLevel}>
+    <div className={`${prefix}--h3`}>
       <button
         className={accordionButtonClasses}
         aria-expanded={open}
@@ -55,7 +53,7 @@ const AccordionButton: FC<AccordionButtonProps> = ({
       >
         {children}
       </button>
-    </Heading>
+    </div>
   );
 };
 

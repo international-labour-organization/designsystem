@@ -9,20 +9,22 @@ tooltip:
       description: label shown on the tooltip
       required: true
       preview: 'Tooltip text'
-    content:
-      type: text
-      label: Content
-      description: The accordion item's collapsed content.
-      preview:
-        faker: lorem.word
-  settings: 
+    icon:
+      type: select
+      label: Icon
+      description: does this tooltip have the "info" icon?
+      fields:
+        true: 'true'
+        false: false
+      preview: 'true'
+      required: true
     theme:
       type: select
-      label: theme
-      description: The theme of the tooltip
-      required: false
-      options:
-        dark: Dark
-        light: Light
-      preview: 'light'
+      label: Theme
+      description: choose the tooltip's theme
+      fields:
+        light: light
+        dark: dark
+      preview: dark
+      required: true
   visibility: storybook

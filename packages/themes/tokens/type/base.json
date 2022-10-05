@@ -42,6 +42,21 @@
       "letter-spacing": { "value": "normal" },
       "line-height": { "value": "14.33px" }
     },
+    "button-small": {
+      "size": { "value": "14.93px" },
+      "letter-spacing": { "value": "-0.02em" },
+      "line-height": { "value": "120%" }
+    },
+    "button-medium": {
+      "size": { "value": "16px" },
+      "letter-spacing": { "value": "-0.02em" },
+      "line-height": { "value": "120%" }
+    },
+    "button-large": {
+      "size": { "value": "18.66px" },
+      "letter-spacing": { "value": "-0.02em" },
+      "line-height": { "value": "120%" }
+    },
     "headline-1": {
       "size": { "value": "56.95px" },
       "letter-spacing": { "value": "-0.035em" },
