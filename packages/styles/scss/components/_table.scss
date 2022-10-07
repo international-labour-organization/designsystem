@@ -52,10 +52,44 @@
         $spacing-ux-table-head-padding-right
         $spacing-ux-table-head-padding-bottom
         $spacing-ux-table-head-padding-left;
+      pointer-events: none;
       text-align: left;
 
       &:first-of-type {
         border-left: none;
+      }
+
+      &.sortable {
+        pointer-events: auto;
+        position: relative;
+
+        &:after {
+          background-color: $color-base-neutrals-lighter;
+          background-image: url("#{colortodataurlicon("arrow", $color-ux-labels-actionable)}");
+          background-position: center center;
+          background-repeat: no-repeat;
+          background-size: 75%;
+          content: "";
+          display: block;
+          height: px-to-rem($spacing-padding-3);
+          position: absolute;
+          right: px-to-rem(9px);
+          width: px-to-rem($spacing-padding-3);
+          top: 50%;
+          transform: translateY(-50%);
+        }
+
+        &:hover {
+          background-color: $color-ux-table-selected-background;
+          cursor: pointer;
+        }
+
+        &[aria-sort="descending"] {
+          &:after {
+            transform-origin: center center;
+            transform: translateY(-50%) rotate(180deg);
+          }
+        }
       }
     }
   }
@@ -63,14 +97,12 @@
   &--body {
     background-color: $color-ux-table-cell-background;
 
-    &--row:hover,
-    &--row:focus {
+    &--row.selected {
       background-color: $color-ux-table-hover-background;
     }
 
     &--cell {
       border-bottom: px-to-rem(2px) solid $color-base-neutrals-lighter;
-      border-left: px-to-rem(1px) solid $color-base-neutrals-lighter;
       font-family: $fonts-copy;
       font-weight: 400;
       @include font-styles("body-xs");
@@ -89,10 +121,14 @@
         text-align: right;
       }
 
-      &:hover,
-      &:focus,
       &.selected {
         background-color: $color-ux-table-selected-background;
+        border-bottom: 2px solid $color-ux-labels-hover;
+        color: $color-ux-labels-hover;
+      }
+
+      &.column--selected {
+        background-color: $color-ux-table-hover-background;
       }
 
       a {

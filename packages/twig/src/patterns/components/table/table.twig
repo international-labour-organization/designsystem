@@ -1,7 +1,7 @@
 {#
   TABLE COMPONENT
 #}
-<div class="{{prefix}}--table{% if zebra is defined and zebra == 'true' %} {{prefix}}--table--zebra{% endif %}">
+<div class="{{prefix}}--table{% if zebra is defined and zebra == 'true' %} {{prefix}}--table--zebra{% endif %}" data-prefix="{{prefix}}" data-loadcomponent="Table">
   <header class="{{prefix}}--table--header">
     <h3 class="{{prefix}}--table--headline">
       {{headline}}
