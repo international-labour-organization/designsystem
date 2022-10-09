@@ -25,7 +25,7 @@ cardgroup:
             date: ""
             link: ""
             profile: ""
-            eventdate: ""
+            eventdetails: ""
             cta: ""
             source: ""
             linklist:
@@ -46,7 +46,7 @@ cardgroup:
             date: ""
             link: ""
             profile: ""
-            eventdate: ""
+            eventdetails: ""
             cta: ""
             source: ""
             linklist:
@@ -67,7 +67,7 @@ cardgroup:
             date: ""
             link: ""
             profile: ""
-            eventdate: ""
+            eventdetails: ""
             cta: ""
             source: ""
             linklist:
@@ -97,10 +97,12 @@ cardgroup:
             image: "http://placekitten.com/475/267"
             intro: ""
             eyebrow: "Eyebrow title"
-            date: "Date"
+            date:
+              human: "Date"
+              unix: 1670389200
             link: "https://www.google.com/search?q=feature"
             profile: ""
-            eventdate: ""
+            eventdetails: ""
             cta: ""
             source: ""
             linklist: ""
@@ -111,10 +113,12 @@ cardgroup:
             image: "http://placekitten.com/475/267"
             intro: ""
             eyebrow: "Eyebrow title"
-            date: "Date"
+            date:
+              human: "Date"
+              unix: 1670389200
             link: "https://www.google.com/search?q=feature"
             profile: ""
-            eventdate: ""
+            eventdetails: ""
             cta: ""
             source: ""
             linklist: ""
@@ -125,10 +129,12 @@ cardgroup:
             image: "http://placekitten.com/475/267"
             intro: ""
             eyebrow: "Eyebrow title"
-            date: "Date"
+            date:
+              human: "Date"
+              unix: 1670389200
             link: "https://www.google.com/search?q=feature"
             profile: ""
-            eventdate: ""
+            eventdetails: ""
             cta: ""
             source: ""
             linklist: ""
@@ -139,10 +145,12 @@ cardgroup:
             image: "http://placekitten.com/475/267"
             intro: ""
             eyebrow: "Eyebrow title"
-            date: "Date"
+            date:
+              human: "Date"
+              unix: 1670389200
             link: "https://www.google.com/search?q=feature"
             profile: ""
-            eventdate: ""
+            eventdetails: ""
             cta: ""
             source: ""
             linklist: ""
@@ -165,10 +173,12 @@ cardgroup:
             image: "http://placekitten.com/196/296"
             intro: "This ILO flagship report details the effects of the COVID-19 crisis on the world of work. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eu auctor tusrpis, this is 200 characters."
             eyebrow: "Eyebrow title"
-            date: "00 month 0000"
+            date:
+              human: "00 month 0000"
+              unix: 1670389200
             link: "https://www.google.com/search?q=detail"
             profile: ""
-            eventdate: "8 - 9 February 2022, 8:30 - 12:00 CET  |  Egypt"
+            eventdetails: "8 - 9 February 2022, 8:30 - 12:00 CET  |  Egypt"
             cta: ""
             source: ""
             linklist: ""
@@ -179,10 +189,12 @@ cardgroup:
             image: "https://www.ilo.org/wcmsp5/groups/public/---dgreports/---dcomm/documents/image/wcms_856513.jpg"
             intro: "This ILO flagship report details the effects of the COVID-19 crisis on the world of work. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eu auctor tusrpis, this is 200 characters."
             eyebrow: "Eyebrow title"
-            date: "00 month 0000"
+            date:
+              human: "00 month 0000"
+              unix: 1670389200
             link: "https://www.google.com/search?q=detail"
             profile: ""
-            eventdate: "8 - 9 February 2022, 8:30 - 12:00 CET  |  Egypt"
+            eventdetails: "8 - 9 February 2022, 8:30 - 12:00 CET  |  Egypt"
             cta: ""
             source: ""
             linklist: ""
@@ -208,7 +220,7 @@ cardgroup:
             date: ""
             link: "https://www.google.com/search?q=graphic-promo"
             profile: ""
-            eventdate: ""
+            eventdetails: ""
             cta: 
               label: "Discover our unique mission"
               url: "https://www.google.com/search?q=button"
@@ -235,7 +247,7 @@ cardgroup:
             date: ""
             link: ""
             profile: ""
-            eventdate: ""
+            eventdetails: ""
             cta: ""
             source: 
               label: "Source: lorem ipsum dolor sit amet, 2020"
@@ -248,7 +260,7 @@ cardgroup:
             date: ""
             link: ""
             profile: ""
-            eventdate: ""
+            eventdetails: ""
             cta: ""
             source: 
               label: "Source: lorem ipsum dolor sit amet, 2020"
@@ -261,7 +273,7 @@ cardgroup:
             date: ""
             link: ""
             profile: ""
-            eventdate: ""
+            eventdetails: ""
             cta: ""
             source: 
               label: "Source: lorem ipsum dolor sit amet, 2020"
@@ -274,7 +286,7 @@ cardgroup:
             date: ""
             link: ""
             profile: ""
-            eventdate: ""
+            eventdetails: ""
             cta: ""
             source: 
               label: "Source: lorem ipsum dolor sit amet, 2020"
@@ -296,10 +308,12 @@ cardgroup:
             image: ""
             intro: ""
             eyebrow: "Eyebrow title"
-            date: "date"
+            date:
+              human: "date"
+              unix: 1670389200
             link: "https://www.google.com/search?q=graphic"
             profile: ""
-            eventdate: ""
+            eventdetails: ""
             cta: ""
             source: ""
             linklist: ""
@@ -324,7 +338,7 @@ cardgroup:
             link: ""
             image: ""
             profile: ""
-            eventdate: ""
+            eventdetails: ""
             cta: ""
             list: 
               title: ""
@@ -356,7 +370,7 @@ cardgroup:
             date: ""
             link: ""
             profile: ""
-            eventdate: ""
+            eventdetails: ""
             cta: ""
             dataset: 
               content: 

@@ -19,11 +19,13 @@ card:
       description: Eyebrow copy text
       preview: "Eyebrow"
     date:
-      type: string
+      type: object
       label: Date
       description: Date copy text
-      preview: 20 September 2022
-    eventdate:
+      preview:
+        human: 20 September 2022
+        unix: 1670389200
+    eventdetails:
       type: string
       label: Eyebrow
       description: Eyebrow copy text
@@ -118,7 +120,9 @@ card:
         title: "Brief title text - ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod"
         intro: ""
         eyebrow: Eyebrow title
-        date: 20 September 2022
+        date:
+          human: 20 September 2022
+          unix: 1670389200
         link: "https://www.google.com/search?q=graphic"
         profile:
           avatar: "https://placekitten.com/128/128"
@@ -129,7 +133,7 @@ card:
           name: "Firstname Lastname"
           role: "Senior Media Strategist"
         cta: ""
-        eventdate: ""
+        eventdetails: ""
     stat:
       label: Stat Card
       description: The stat Card
@@ -140,10 +144,12 @@ card:
         image: ""
         intro: "Data title - Lorem ipsum dolor sit amet consectetur"
         eyebrow: ""
-        date: ""
+        date:
+          human: ""
+          unix: 1670389200
         link: ""
         profile: ""
-        eventdate: ""
+        eventdetails: ""
         cta: ""
         source: 
           label: "Source: lorem ipsum dolor sit amet, 2020"
@@ -159,10 +165,12 @@ card:
         image: "http://placekitten.com/475/267"
         intro: "Lorem ipsum dolor sit amet consectetur adipiscing elit. Lobortis egestas ipsum dolor sit amet consectetur adipiscing elit. Lobortis egestas ipsum dolor sit amet consectetur adipiscing elit. Lobortis egestas lacus."
         eyebrow: ""
-        date: ""
+        date:
+          human: ""
+          unix: 1670389200
         link: ""
         profile: ""
-        eventdate: ""
+        eventdetails: ""
         cta: ""
         source: ""
         linklist:
@@ -184,10 +192,12 @@ card:
         image: ""
         intro: "We advance social justice and promote decent work by setting labour standards, developing policies and devising programmes."
         eyebrow: ""
-        date: ""
+        date:
+          human: ""
+          unix: 1670389200
         link: "https://www.google.com/search?q=graphic-promo"
         profile: ""
-        eventdate: ""
+        eventdetails: ""
         cta: 
           label: "Discover our unique mission"
           url: "https://www.google.com/search?q=button"
@@ -198,11 +208,13 @@ card:
         title: "Vertical info card descriptive headline text"
         intro: ""
         eyebrow: Eyebrow title
-        date: Date
+        date:
+          human: Date
+          unix: 1670389200
         link: "https://www.google.com/search?q=graphic"
         image: "http://placekitten.com/412/232"
         profile:
-        eventdate: ""
+        eventdetails: ""
     detail:
       label: Detail Card
       description: The Detail Card
@@ -210,12 +222,14 @@ card:
         title: "Horizontal info card descriptive headline text"
         intro: "This ILO flagship report details the effects of the COVID-19 crisis on the world of work. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eu auctor tusrpis, this is 200 characters."
         eyebrow: Eyebrow title
-        date: 00 month 0000
+        date:
+          human: 00 month 0000
+          unix: 1670389200
         link: "https://www.google.com/search?q=detail"
         # image: "http://placekitten.com/296/196"
         image: "https://www.ilo.org/wcmsp5/groups/public/---dgreports/---dcomm/documents/image/wcms_856513.jpg"
         profile:
-        eventdate: "8 - 9 February 2022, 8:30 - 12:00 CET  |  Egypt"
+        eventdetails: "8 - 9 February 2022, 8:30 - 12:00 CET  |  Egypt"
     factlist:
       label: Fact List Card
       description: The Fact List Card
@@ -223,11 +237,13 @@ card:
         title: "Title of fast fact list"
         intro: ""
         eyebrow: ""
-        date: ""
+        date:
+          human: ""
+          unix: 1670389200
         link: ""
         image: ""
         profile: ""
-        eventdate: ""
+        eventdetails: ""
         cta: ""
         list: 
           title: ""
@@ -247,10 +263,12 @@ card:
         image: "https://placekitten.com/205/179"
         intro: ""
         eyebrow: "Event details"
-        date: ""
+        date:
+          human: ""
+          unix: 1670389200
         link: ""
         profile: ""
-        eventdate: ""
+        eventdetails: ""
         cta: ""
         dataset: 
           content: 
