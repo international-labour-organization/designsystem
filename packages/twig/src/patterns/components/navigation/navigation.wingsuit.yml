@@ -1,0 +1,12 @@
+navigation:
+  use: '@components/navigation/navigation.twig'
+  label: Navigation
+  description: The Navigation component
+  fields:
+    title:
+      type: string
+      label: title
+      description: THE TITLE
+      required: true
+      preview: 'TITLE'
+  visibility: storybook
