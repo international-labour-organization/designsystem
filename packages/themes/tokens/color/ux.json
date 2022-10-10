@@ -95,6 +95,24 @@
           }
         }
       },
+      "table": {
+        "background": { "value": "{color.base.blue.intermediate}" },
+        "content": {
+          "background": { "value": "{color.base.neutrals.white}" }
+        },
+        "cell": {
+          "background": { "value": "{color.base.neutrals.white}" }
+        },
+        "zebra": {
+          "background": { "value": "{color.base.neutrals.lighter}" }
+        },
+        "hover": {
+          "background": { "value": "{color.base.blue.light}" }
+        },
+        "selected" : {
+          "background": { "value": "{color.base.blue.intermediate}" }
+        }
+      },
       "tableofcontents": {
         "items": {
           "default": {

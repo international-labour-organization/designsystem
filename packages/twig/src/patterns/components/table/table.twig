@@ -1,0 +1,36 @@
+{#
+  TABLE COMPONENT
+#}
+<div class="{{prefix}}--table{% if zebra is defined and zebra == 'true' %} {{prefix}}--table--zebra{% endif %}" data-prefix="{{prefix}}" data-loadcomponent="Table">
+  <header class="{{prefix}}--table--header">
+    <h3 class="{{prefix}}--table--headline">
+      {{headline}}
+    </h3>
+    {% if description is defined %}
+    <p class="{{prefix}}--table--description">
+      {{description|raw}}
+    </p>
+    {% endif %}
+  </header>
+  <div class="{{prefix}}--table--wrapper">
+    <table class="{{prefix}}--table--content">
+      <thead class="{{prefix}}--table--head">
+        <tr class="{{prefix}}--table--head--row">
+        {% for column in tableheadings %}
+          <th class="{{prefix}}--table--head--cell">{{column}}</th>
+        {% endfor %}
+        </tr>
+      </thead>
+      <tbody class="{{prefix}}--table--body">
+        {% for row in tabledata %}
+          <tr class="{{prefix}}--table--body--row">
+            {% for cell in row %}
+              {% set evaluate = cell|striptags|replace({'/': '', '-':'','_':'','.':'',}) %}
+              <td class="{{prefix}}--table--body--cell{% if evaluate matches '/^[0-9]+$/' %} numeric{% endif %}">{{cell|raw}}</td>
+            {% endfor %}
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -144,6 +144,38 @@
           "width": { "value": "80px" }
         }
       },
+      "table": {
+        "padding": {
+          "bottom": { "value": "80px" },
+          "left": { "value": "80px" },
+          "right": { "value": "80px" },
+          "top": { "value": "80px" }
+        },
+        "content": {
+          "padding": {
+            "bottom": { "value": "24px" },
+            "left": { "value": "8px" },
+            "right": { "value": "8px" },
+            "top": { "value": "24px" }
+          }
+        },
+        "head": {
+          "padding": {
+            "bottom": { "value": "22px" },
+            "left": { "value": "11px" },
+            "right": { "value": "11px" },
+            "top": { "value": "22px" }
+          }
+        },
+        "cell": {
+          "padding": {
+            "bottom": { "value": "14px" },
+            "left": { "value": "11px" },
+            "right": { "value": "11px" },
+            "top": { "value": "14px" }
+          }
+        }
+      },
       "tableofcontents": {
         "border": {
           "bottom": { "value": "0" },

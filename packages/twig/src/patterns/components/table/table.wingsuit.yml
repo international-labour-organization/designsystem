@@ -1,0 +1,112 @@
+table:
+  use: '@components/table/table.twig'
+  label: Table
+  description: A component for displaying data in a table
+  fields:
+    headline:
+      type: string
+      label: Headline
+      description: The table's headline
+      preview: "Headline"
+      required: true
+    toolip:
+      type: object
+      label: Tooltip
+      description: If there is a tooltip next to the headline, the tooltip's data
+      preview:
+        label: "tooltip"
+        icon: true
+        theme: "dark"
+      required: false
+    description:
+      type: string
+      label: Description
+      description: Descriptive copy to augment the table's headline
+      preview: "This is my descriptive copy.<br />It can contain some html: br, a, strong, em tags."
+      required: false
+    tableheadings:
+      type: object
+      label: Table Headings
+      description: The heading labels for the table's columns
+      preview:
+        - "Plain Text One"
+        - "Plain Text Two"
+        - "Plain Text With Links"
+        - "Numbers & Number Ranges"
+        - "Dates"
+    tabledata:
+      type: object
+      label: Table Data
+      description: The data of the table proper. Cells can include plain text or plain text with anchor tags.
+      preview:
+        -
+          - "table cell text one"
+          - "table cell text 1"
+          - "table cell <a href='http://www.ilo.org'>text one</a>"
+          - "1-20"
+          - "11/05/2022"
+        -
+          - "table cell text two"
+          - "table cell text 2"
+          - "table cell <a href='http://www.ilo.org'>text two<a>"
+          - "3"
+          - "7/19/2022"
+        -
+          - "table cell text three"
+          - "table cell text 3"
+          - "table cell <a href='http://www.ilo.org'>text three</a>"
+          - "75"
+          - "01/01/1975"
+        -
+          - "table cell text four"
+          - "table cell text 4"
+          - "table cell <a href='http://www.ilo.org'>text four</a>"
+          - "10-15"
+          - "01/01/2022"
+        -
+          - "table cell text five"
+          - "table cell text 5"
+          - "table cell <a href='http://www.ilo.org'>text five</a>"
+          - "5"
+          - "10/31/2022"
+        -
+          - "table cell text six"
+          - "table cell text 6"
+          - "table cell <a href='http://www.ilo.org'>text six</a>"
+          - "6"
+          - "08/13/2016"
+        -
+          - "table cell text seven"
+          - "table cell text 7"
+          - "table cell <a href='http://www.ilo.org'>text seven</a>"
+          - "7"
+          - "11/18/2013"
+        -
+          - "table cell text eight"
+          - "table cell text 8"
+          - "table cell <a href='http://www.ilo.org'>text eight</a>"
+          - "8"
+          - "12/31/1"
+        -
+          - "table cell text nine"
+          - "table cell text 9"
+          - "table cell <a href='http://www.ilo.org'>text nine</a>"
+          - "9"
+          - "01/01/1970"
+        -
+          - "table cell text ten"
+          - "table cell text 10"
+          - "table cell <a href='http://www.ilo.org'>text ten</a>"
+          - "10"
+          - "01/01/2023"
+  settings:
+    zebra:
+      type: select
+      label: Zebra Striping
+      description: Should the table display zebra striping?
+      options:
+        true: True
+        false: False
+      preview: false
+      required: false
+  visibility: storybook
