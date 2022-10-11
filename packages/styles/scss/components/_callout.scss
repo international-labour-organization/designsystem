@@ -22,7 +22,7 @@
   }
 
   &--sidebar {
-    padding: px-to-rem(24px) px-to-rem(12px);
+    padding: px-to-rem($spacing-padding-3 + 2) px-to-rem(12px);
     width: px-to-rem(40px);
   }
 
