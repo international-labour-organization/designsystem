@@ -50,8 +50,8 @@
       map-get($spacing, "ui-padding-xxl"),
       "headline-5",
       "display",
-      0,
-      0
+      "base",
+      "copy"
     );
   }
 
@@ -61,9 +61,9 @@
     font-family: $fonts-copy;
     @include textmargin(
       "margin-bottom",
-      map-get($spacing, "ui-padding-xl"),
+      map-get($spacing, "ui-padding-lg"),
       "base",
-      "display",
+      "copy",
       0,
       0
     );
