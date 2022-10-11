@@ -25,9 +25,8 @@
     padding: px-to-rem(calc($spacing-ui-padding-lg - 4px)) px-to-rem(36px)
       px-to-rem(calc($spacing-ui-padding-lg - 4px)) 0;
     text-align: left;
-    transition: border $transition-timing ease-in-out,
-      background $transition-timing ease-in-out,
-      color $transition-timing ease-in-out;
+    transition: border $transition-timing ease-out,
+      background $transition-timing ease-out, color $transition-timing ease-out;
     width: 100%;
 
     &:hover,
