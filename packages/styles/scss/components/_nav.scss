@@ -1,0 +1,68 @@
+@use "../tokens" as *;
+@use "../functions" as *;
+@import "../mixins";
+
+.ilo--header {
+  $self: &;
+
+  &--nav {
+    background: $brand-ilo-dark-blue;
+  }
+
+  &--logo-bar {
+    background: $brand-ilo-blue;
+    display: flex;
+    width: 100%;
+  }
+}
+
+.ilo--nav {
+  &--label:not(:focus):not(:active) {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+  }
+
+  &--set {
+    display: flex;
+  }
+
+  &--items {
+    @include font-styles("nav-md");
+    align-items: center;
+    display: flex;
+    font-family: $fonts-display;
+    font-weight: 500;
+  }
+
+  &--link {
+    background: $brand-ilo-dark-blue;
+    color: $brand-ilo-white;
+    display: inline-block;
+    padding: 21.5px 24px 20.5px;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      background: $brand-ilo-white;
+      color: $brand-ilo-blue;
+      text-decoration: none;
+    }
+  }
+}
+
+.ilo--subnav {
+  &--set {
+    display: grid;
+    grid-auto-flow: column;
+
+    @include breakpoint("large") {
+      grid-template-columns: repeat(5, 1fr);
+      grid-template-rows: repeat(5, 1fr);
+    }
+  }
+}

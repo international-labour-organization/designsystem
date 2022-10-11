@@ -82,6 +82,11 @@
       "letter-spacing": { "value": "-0.035em" },
       "line-height": { "value": "24.26px" }
     },
+    "language-switcher": {
+      "size": { "value": "11.94px" },
+      "letter-spacing": { "value": "-0.02em" },
+      "line-height": { "value": "16.12px" }
+    },
     "label-small": {
       "size": { "value": "14.93px" },
       "letter-spacing": { "value": "-0.02em" },
@@ -102,7 +107,17 @@
       "letter-spacing": { "value": "-3.5%" },
       "line-height": { "value": "29.15px" }
     },
+    "nav-md": {
+      "size": { "value": "16px" },
+      "letter-spacing": { "value": "-0.02em" },
+      "line-height": { "value": "21.6px" }
+    },
     "nav-md-sm": {
+      "size": { "value": "14.93px" },
+      "letter-spacing": { "value": "-0.02em" },
+      "line-height": { "value": "20.16px" }
+    },
+    "nav-bold-b-sm": {
       "size": { "value": "14.93px" },
       "letter-spacing": { "value": "-0.02em" },
       "line-height": { "value": "20.16px" }
@@ -136,6 +151,11 @@
       "size": { "value": "11.94px" },
       "letter-spacing": { "value": "-0.02em" },
       "line-height": { "value": "16.24px" }
+    },
+    "tagline": {
+      "size": { "value": "11.9px" },
+      "letter-spacing": { "value": "-0.02em" },
+      "line-height": { "value": "19.4px" }
     }
   }
 }
