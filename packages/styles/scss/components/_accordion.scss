@@ -72,7 +72,7 @@
 
     .ilo--accordion--innerpanel {
       padding-bottom: px-to-rem($spacing-ui-padding-xxl);
-      padding-top: px-to-rem(13px);
+      padding-top: px-to-rem(8px);
     }
 
     @include font-styles("label-medium");
