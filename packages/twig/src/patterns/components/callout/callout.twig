@@ -3,7 +3,7 @@
 #}
 <div class="{{prefix}}--callout {{prefix}}--callout--{{alert}} {% if isOpen %} {{prefix}}--callout--open {% endif %}" data-loadcomponent="Callout" >
   <div class="{{prefix}}--callout--sidebar">
-    <span class="{{prefix}}--callout--icon"></span>
+    <span class="{{prefix}}--callout--icon icon icon--{{alert}}"></span>
   </div>
   <div class="{{prefix}}--callout--content">
     <div class="{{prefix}}--callout--header">
@@ -19,7 +19,7 @@
     {% if buttonLabel %}
       <div class="{{prefix}}--callout--footer">
         <button
-          class="{{prefix}}--button {{prefix}}--button--small {{prefix}}--button--secondary"
+          class="{{prefix}}--button {{prefix}}--button--small {{prefix}}--button--tertiary"
           type="button"
         >
           {{ buttonLabel }}

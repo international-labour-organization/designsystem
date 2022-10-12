@@ -21,13 +21,16 @@
   </div>
 
   <p class="{{prefix}}--pagination--page">
-    <span>{{currentPage + 1}}</span> {{pageCountPreposition}}
+    {% set currentPageZeroIndex = currentPage * 1 %}
+    {% set currentPageIndex = currentPageZeroIndex + 1 %}
+
+    <span>{{currentPageIndex}}</span> {{pageCountPreposition}}
     <span>{{totalPages}}</span>
   </p>
 
   <div class="{{prefix}}--next-set">
     <a
-      class="{{prefix}}--pagination--next-page {{prefix}}--pagination--link {% if currentPage + 1 == totalPages %}{{prefix}}--pagination--disable{% endif %}"
+      class="{{prefix}}--pagination--next-page {{prefix}}--pagination--link {% if currentPageIndex == totalPages %}{{prefix}}--pagination--disable{% endif %}"
       href="{{ nextPageUrl }}"
       title="{{ nextPageTitle }}"
     >
@@ -35,7 +38,7 @@
     </a>
 
     <a
-      class="{{prefix}}--pagination--last-page {{prefix}}--pagination--link {% if currentPage + 1 == totalPages %}{{prefix}}--pagination--disable{% endif %}"
+      class="{{prefix}}--pagination--last-page {{prefix}}--pagination--link {% if currentPageIndex == totalPages %}{{prefix}}--pagination--disable{% endif %}"
       href="{{ lastPageUrl }}"
       title="{{ lastPageTitle }}"
     >
