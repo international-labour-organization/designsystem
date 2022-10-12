@@ -112,13 +112,15 @@ const BaseButtonTemplate = (args) => (
  */
 // @ts-ignore
 const ButtonTemplate = ({ buttons, ...args }) => (
-  // @ts-ignore
   <>
-    {buttons.map((button, i) => (
-      <React.Fragment key={i}>
-        <Button {...button} />
-      </React.Fragment>
-    ))}
+    {
+      // @ts-ignore
+      buttons.map((button, i) => (
+        <React.Fragment key={i}>
+          <Button {...button} />
+        </React.Fragment>
+      ))
+    }
   </>
 );
 
