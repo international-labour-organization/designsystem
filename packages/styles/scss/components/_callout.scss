@@ -27,7 +27,7 @@
   }
 
   &--content {
-    padding: px-to-rem($spacing-padding-3 + 2) px-to-rem($spacing-padding-3)
+    padding: px-to-rem($spacing-padding-3 + 2) px-to-rem($spacing-padding-3 - 2)
       px-to-rem($spacing-padding-3);
     width: 100%;
   }
@@ -73,11 +73,11 @@
       display: inline-block;
       height: 24px;
       position: absolute;
-      right: 4px;
+      right: 0;
       top: 50%;
       transform: translateY(-50%) rotate(0);
       transition: transform 0.2s ease-in-out;
-      width: 24px;
+      width: 23px;
     }
   }
 
