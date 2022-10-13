@@ -36,8 +36,8 @@ export default {
           <Subtitle />
           <Title />
           <Description>
-            The ContextMenu component is used to display information about a
-            person.
+            The ContextMenu component is used to display a list of contextual
+            links.
           </Description>
           <Primary />
           <Subheading>Props</Subheading>
@@ -70,3 +70,11 @@ Basic.storyName = "ContextMenu - Basic";
 
 WithSection.args = contextMenuArgs.withsection;
 WithSection.storyName = "ContextMenu - With A 'Section'";
+WithSection.parameters = {
+  docs: {
+    description: {
+      story:
+        "The Context menu iteams can each be marked, via the `endsection` prop, as a *section*, which display a 100% width bottom border.",
+    },
+  },
+};

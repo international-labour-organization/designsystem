@@ -184,11 +184,32 @@ export const ButtonTag = ButtonTagTemplate.bind({});
 // enumerate the props for the light tag.
 DisplayTag.args = tagSetArgs.tag;
 DisplayTag.storyName = "Display Tag";
+DisplayTag.parameters = {
+  docs: {
+    description: {
+      story: "Display Tag...",
+    },
+  },
+};
 
 // enumerate the props for the light tag.
 AnchorTag.args = tagSetArgs.tag;
 AnchorTag.storyName = "Anchor Tag";
+AnchorTag.parameters = {
+  docs: {
+    description: {
+      story: "Anchor Tag...",
+    },
+  },
+};
 
 // enumerate the props for the light tag.
 ButtonTag.args = tagSetArgs.buttonTag;
 ButtonTag.storyName = "Button Tag";
+ButtonTag.parameters = {
+  docs: {
+    description: {
+      story: "Button Tag...",
+    },
+  },
+};

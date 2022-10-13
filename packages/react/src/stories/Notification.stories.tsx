@@ -22,6 +22,14 @@ By changing the \`type\` prop you can set which icon to use with the Notificatio
 | \`success\` | The Notification alerts user to an operation's success. Border is green with a success icon. |
 | \`warning\` | The Notification alerts user to a warning. Border is yellow with a warning icon. |`;
 
+const placementDoc = `
+By changing the \`placement\` prop you can set whether the Notification is displayed inline in the document flow, or highest in the document z-index as a dialog.
+
+| type   |  Description  |
+|----------|-------------|
+| \`dialog\` | The Notification appears highest in the document z-index, outside the doucment flow. |
+| \`inline\` | The Notification appears in the normal document flow. |`;
+
 /**
  * Notification Story
  *
@@ -38,12 +46,17 @@ export default {
           <Subtitle />
           <Title />
           <Description>
-            The Notification component presents a dismissible alert.
+            The Notification component presents a dismissible alert. It can
+            appear as an inline alert, which appears in the normal flow of the
+            document, or it can appear as a dialog, highest in the document's
+            z-index.
           </Description>
           <Primary />
           <ArgsTable />
           <Subheading>type Prop</Subheading>
           <Description>{typeDoc}</Description>
+          <Subheading>placement Prop</Subheading>
+          <Description>{placementDoc}</Description>
           <Stories title="Examples"></Stories>
         </>
       ),

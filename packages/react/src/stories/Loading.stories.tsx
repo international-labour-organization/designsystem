@@ -73,13 +73,9 @@ export const LoadingLarge = LoadingTemplate.bind({});
 
 export const LoadedLarge = LoadingTemplate.bind({});
 
-export const IdleLarge = LoadingTemplate.bind({});
-
 export const LoadingSmall = LoadingTemplate.bind({});
 
 export const LoadedSmall = LoadingTemplate.bind({});
-
-export const IdleSmall = LoadingTemplate.bind({});
 
 BaseLoading.args = loadingArgs.loadinglarge;
 BaseLoading.storyName = "Loading - loading large";
@@ -90,14 +86,8 @@ LoadingLarge.storyName = "Loading - loading large";
 LoadedLarge.args = loadingArgs.loadedlarge;
 LoadedLarge.storyName = "Loading - loaded large";
 
-IdleLarge.args = loadingArgs.idlelarge;
-IdleLarge.storyName = "Loading - idle large";
-
 LoadingSmall.args = loadingArgs.loadingsmall;
 LoadingSmall.storyName = "Loading - loading small";
 
 LoadedSmall.args = loadingArgs.loadedsmall;
 LoadedSmall.storyName = "Loading - loaded small";
-
-IdleSmall.args = loadingArgs.idlesmall;
-IdleSmall.storyName = "Loading - idle small";
