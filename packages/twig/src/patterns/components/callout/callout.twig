@@ -1,7 +1,7 @@
 {#
   CALLOUT COMPONENT
 #}
-<div class="{{prefix}}--callout {{prefix}}--callout--{{alert}} {% if isOpen %} {{prefix}}--callout--open {% endif %}" data-loadcomponent="Callout" >
+<div class="{{prefix}}--callout {{prefix}}--callout--{{alert}} {% if isOpen %} {{prefix}}--callout--open {% endif %} {% if isCollapsible %} {{prefix}}--callout--collapse {% endif %}" data-loadcomponent="Callout" >
   <div class="{{prefix}}--callout--sidebar">
     <span class="{{prefix}}--callout--icon icon icon--{{alert}}"></span>
   </div>

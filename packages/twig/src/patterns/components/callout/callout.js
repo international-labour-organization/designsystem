@@ -50,6 +50,7 @@ export default class Callout {
      * @type {Object}
      */
     this.toggle = this.element.querySelector('.ilo--callout--toggle');
+    console.log('Toggle', this.toggle);
     this.toggleOpen = this.element.classList.value.includes('ilo--callout--open');
     this.toggleLabel = this.toggle.querySelector('.ilo--callout--button-text');
     this.toggleLabelOpen = this.toggle.getAttribute('data-open');
@@ -79,8 +80,8 @@ export default class Callout {
    * @chainable
    */
   enable() {
-    this.toggle.addEventListener(EVENTS.CLICK, onToggle);
-    this.button.addEventListener(EVENTS.CLICK, onClick);
+    this.toggle.addEventListener(EVENTS.CLICK, this.onToggle);
+    this.button.addEventListener(EVENTS.CLICK, this.onClick);
 
     return this;
   }
@@ -110,10 +111,11 @@ export default class Callout {
   handleToggle(e) {
     e.preventDefault();
     this.toggleOpen = !this.toggleOpen;
+    console.log('toggle clicked');
 
     const label = this.toggleOpen ? this.toggleLabelOpen : this.toggleLabelClosed;
 
-    this.element.classList.toggle('ilo--toggle--open');
+    this.element.classList.toggle('ilo--callout--open');
     this.toggleLabel.innerText = label;
 
     return this;

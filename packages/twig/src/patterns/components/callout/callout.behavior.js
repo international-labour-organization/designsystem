@@ -1,6 +1,6 @@
 import Callout from './callout';
 
-Drupal.behaviors.tag = {
+Drupal.behaviors.callout = {
   attach() {
     Array.prototype.forEach.call(
       document.querySelectorAll(`[data-loadcomponent="Callout"]`),
