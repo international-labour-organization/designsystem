@@ -1,5 +1,5 @@
 import React from "react";
-import { Meta } from "@storybook/react";
+import { Meta, Story } from "@storybook/react";
 import {
   Title,
   Subtitle,
@@ -10,6 +10,7 @@ import {
   Subheading,
 } from "@storybook/addon-docs";
 import { Button } from "../components/Button";
+import { ButtonProps } from "../components/Button/Button.props";
 import buttonArgs from "../components/Button/Button.args";
 
 const mainDoc = `
@@ -97,32 +98,7 @@ export default {
  *
  *@param args (Array) - props to be passed to the component
  */
-// @ts-ignore
-const BaseButtonTemplate = (args) => (
-  // @ts-ignore
-  <Button {...args} />
-);
-
-/**
- * Button Template
- *
- * create a Storybook template for this component
- *
- *@param args (Array) - props to be passed to the component
- */
-// @ts-ignore
-const ButtonTemplate = ({ buttons, ...args }) => (
-  <>
-    {
-      // @ts-ignore
-      buttons.map((button, i) => (
-        <React.Fragment key={i}>
-          <Button {...button} />
-        </React.Fragment>
-      ))
-    }
-  </>
-);
+const BaseButtonTemplate: Story<ButtonProps> = (args) => <Button {...args} />;
 
 /**
  * Base Button Instance
@@ -134,94 +110,190 @@ export const BaseButton = BaseButtonTemplate.bind({});
 BaseButton.args = buttonArgs.primary;
 
 /**
+ * Large Button Template
+ *
+ * create a Storybook template for this component
+ *
+ *@param args (Object) - props to be passed to the component
+ */
+const LargeButtonTemplate: Story<ButtonProps> = (args) => (
+  <>
+    {largebuttons.map((button, i) => (
+      <React.Fragment key={i}>
+        <Button
+          {...args}
+          label={button.label}
+          size={button.size}
+          target={button.target}
+          kind={button.kind}
+          disabled={button.disabled}
+          type={button.type}
+          url={button.url}
+          icon={button.icon}
+          icononly={button.icononly}
+          iconPosition={button.iconPosition}
+        />
+      </React.Fragment>
+    ))}
+  </>
+);
+
+/**
  * Large Button Instance
  *
  */
-export const LargeButton = ButtonTemplate.bind({});
-
-// @ts-ignore
-LargeButton.args = {
-  buttons: [
-    buttonArgs.primary,
-    buttonArgs.secondary,
-    buttonArgs.tertiary,
-    buttonArgs.alert,
-    buttonArgs.disabled,
-    buttonArgs.iconleftlgprimary,
-    buttonArgs.iconleftlgsecondary,
-    buttonArgs.iconleftlgtertiary,
-    buttonArgs.iconleftlgalert,
-    buttonArgs.iconrightlgprimary,
-    buttonArgs.iconrightlgsecondary,
-    buttonArgs.iconrightlgtertiary,
-    buttonArgs.iconrightlgalert,
-    buttonArgs.icononlylgprimary,
-    buttonArgs.icononlylgsecondary,
-    buttonArgs.icononlylgtertiary,
-    buttonArgs.icononlylgalert,
-  ],
-};
+export const LargeButton = LargeButtonTemplate.bind({});
+const largebuttons = [
+  buttonArgs.primary,
+  buttonArgs.secondary,
+  buttonArgs.tertiary,
+  buttonArgs.alert,
+  buttonArgs.disabled,
+  buttonArgs.iconleftlgprimary,
+  buttonArgs.iconleftlgsecondary,
+  buttonArgs.iconleftlgtertiary,
+  buttonArgs.iconleftlgalert,
+  buttonArgs.iconrightlgprimary,
+  buttonArgs.iconrightlgsecondary,
+  buttonArgs.iconrightlgtertiary,
+  buttonArgs.iconrightlgalert,
+  buttonArgs.icononlylgprimary,
+  buttonArgs.icononlylgsecondary,
+  buttonArgs.icononlylgtertiary,
+  buttonArgs.icononlylgalert,
+];
 // @ts-ignore
 LargeButton.storyName = "Large Button";
+LargeButton.parameters = {
+  docs: {
+    description: {
+      story: "Large buttons should be used ",
+    },
+  },
+};
+
+/**
+ * Medium Button Template
+ *
+ * create a Storybook template for this component
+ *
+ *@param args (Object) - props to be passed to the component
+ */
+const MediumButtonTemplate: Story<ButtonProps> = (args) => (
+  <>
+    {mediumbuttons.map((button, i) => (
+      <React.Fragment key={i}>
+        <Button
+          {...args}
+          label={button.label}
+          size={button.size}
+          target={button.target}
+          kind={button.kind}
+          disabled={button.disabled}
+          type={button.type}
+          url={button.url}
+          icon={button.icon}
+          icononly={button.icononly}
+          iconPosition={button.iconPosition}
+        />
+      </React.Fragment>
+    ))}
+  </>
+);
 
 /**
  * Medium Button Instance
  *
  */
-export const MediumButton = ButtonTemplate.bind({});
+export const MediumButton = MediumButtonTemplate.bind({});
 
-// @ts-ignore
-MediumButton.args = {
-  buttons: [
-    buttonArgs.medium,
-    buttonArgs.secondarym,
-    buttonArgs.tertiarym,
-    buttonArgs.alertm,
-    buttonArgs.disabledm,
-    buttonArgs.iconleftmprimary,
-    buttonArgs.iconleftmsecondary,
-    buttonArgs.iconleftmtertiary,
-    buttonArgs.iconleftmalert,
-    buttonArgs.iconrightmprimary,
-    buttonArgs.iconrightmsecondary,
-    buttonArgs.iconrightmtertiary,
-    buttonArgs.iconrightmalert,
-    buttonArgs.icononlymprimary,
-    buttonArgs.icononlymsecondary,
-    buttonArgs.icononlymtertiary,
-    buttonArgs.icononlymalert,
-  ],
-};
-// @ts-ignore
+const mediumbuttons = [
+  buttonArgs.medium,
+  buttonArgs.secondarym,
+  buttonArgs.tertiarym,
+  buttonArgs.alertm,
+  buttonArgs.disabledm,
+  buttonArgs.iconleftmprimary,
+  buttonArgs.iconleftmsecondary,
+  buttonArgs.iconleftmtertiary,
+  buttonArgs.iconleftmalert,
+  buttonArgs.iconrightmprimary,
+  buttonArgs.iconrightmsecondary,
+  buttonArgs.iconrightmtertiary,
+  buttonArgs.iconrightmalert,
+  buttonArgs.icononlymprimary,
+  buttonArgs.icononlymsecondary,
+  buttonArgs.icononlymtertiary,
+  buttonArgs.icononlymalert,
+];
 MediumButton.storyName = "Medium Button";
+MediumButton.parameters = {
+  docs: {
+    description: {
+      story: "Medium buttons should be used ",
+    },
+  },
+};
+
+/**
+ * Small Button Template
+ *
+ * create a Storybook template for this component
+ *
+ *@param args (Object) - props to be passed to the component
+ */
+const SmallButtonTemplate: Story<ButtonProps> = (args) => (
+  <>
+    {smallbuttons.map((button, i) => (
+      <React.Fragment key={i}>
+        <Button
+          {...args}
+          label={button.label}
+          size={button.size}
+          target={button.target}
+          kind={button.kind}
+          disabled={button.disabled}
+          type={button.type}
+          url={button.url}
+          icon={button.icon}
+          icononly={button.icononly}
+          iconPosition={button.iconPosition}
+        />
+      </React.Fragment>
+    ))}
+  </>
+);
 
 /**
  * Small Button Instance
  *
  */
-export const SmallButton = ButtonTemplate.bind({});
+export const SmallButton = SmallButtonTemplate.bind({});
 
-// @ts-ignore
-SmallButton.args = {
-  buttons: [
-    buttonArgs.medium,
-    buttonArgs.secondarym,
-    buttonArgs.tertiarym,
-    buttonArgs.alertm,
-    buttonArgs.disabledm,
-    buttonArgs.iconleftsmprimary,
-    buttonArgs.iconleftmsecondary,
-    buttonArgs.iconleftsmtertiary,
-    buttonArgs.iconleftsmalert,
-    buttonArgs.iconrightsmprimary,
-    buttonArgs.iconrightmsecondary,
-    buttonArgs.iconrightsmtertiary,
-    buttonArgs.iconrightsmalert,
-    buttonArgs.icononlysmprimary,
-    buttonArgs.icononlysmsecondary,
-    buttonArgs.icononlysmtertiary,
-    buttonArgs.icononlysmalert,
-  ],
-};
-// @ts-ignore
+const smallbuttons = [
+  buttonArgs.medium,
+  buttonArgs.secondarym,
+  buttonArgs.tertiarym,
+  buttonArgs.alertm,
+  buttonArgs.disabledm,
+  buttonArgs.iconleftsmprimary,
+  buttonArgs.iconleftmsecondary,
+  buttonArgs.iconleftsmtertiary,
+  buttonArgs.iconleftsmalert,
+  buttonArgs.iconrightsmprimary,
+  buttonArgs.iconrightmsecondary,
+  buttonArgs.iconrightsmtertiary,
+  buttonArgs.iconrightsmalert,
+  buttonArgs.icononlysmprimary,
+  buttonArgs.icononlysmsecondary,
+  buttonArgs.icononlysmtertiary,
+  buttonArgs.icononlysmalert,
+];
 SmallButton.storyName = "Small Button";
+SmallButton.parameters = {
+  docs: {
+    description: {
+      story: "Small buttons should be used ",
+    },
+  },
+};
