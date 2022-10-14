@@ -1,4 +1,5 @@
 import { EVENTS } from '@ilo-org/utils';
+import style from 'react-syntax-highlighter/dist/esm/styles/hljs/agate';
 
 /**
  * The Callout module which handles rendering field labels inline on a form.
@@ -34,6 +35,9 @@ export default class Callout {
    */
   init() {
     this.cacheDomReferences().setupHandlers().enable();
+    if (!this.toggleOpen) {
+      this.calcHeight();
+    }
 
     return this;
   }
@@ -50,12 +54,13 @@ export default class Callout {
      * @type {Object}
      */
     this.toggle = this.element.querySelector('.ilo--callout--toggle');
-    console.log('Toggle', this.toggle);
     this.toggleOpen = this.element.classList.value.includes('ilo--callout--open');
-    this.toggleLabel = this.toggle.querySelector('.ilo--callout--button-text');
-    this.toggleLabelOpen = this.toggle.getAttribute('data-open');
-    this.toggleLabelClosed = this.toggle.getAttribute('data-closed');
-    this.button = this.element.querySelectorAll('.ilo--button');
+    if (this.toggle) {
+      this.toggleLabel = this.toggle.querySelector('.ilo--callout--button-text');
+      this.toggleLabelOpen = this.toggle.getAttribute('data-open');
+      this.toggleLabelClosed = this.toggle.getAttribute('data-closed');
+    }
+    this.button = this.element.querySelector('.ilo--button');
 
     return this;
   }
@@ -80,8 +85,29 @@ export default class Callout {
    * @chainable
    */
   enable() {
-    this.toggle.addEventListener(EVENTS.CLICK, this.onToggle);
-    this.button.addEventListener(EVENTS.CLICK, this.onClick);
+    if (this.toggle) {
+      console.log('this is toggle');
+      this.toggle.addEventListener(EVENTS.CLICK, this.onToggle);
+    }
+
+    if (this.button) {
+      console.log('this is button');
+      this.button.addEventListener(EVENTS.CLICK, this.onClick);
+    }
+
+    return this;
+  }
+
+  /**
+   * calcHeight
+   *
+   * @return {Object} Callout A reference to the instance of the class
+   * @chainable
+   */
+  calcHeight() {
+    this.header = this.element.querySelector('[class*="--header"]');
+    this.height = this.header.offsetHeight;
+    this.element.style.maxHeight = `${this.height + 25}px`;
 
     return this;
   }
@@ -111,7 +137,6 @@ export default class Callout {
   handleToggle(e) {
     e.preventDefault();
     this.toggleOpen = !this.toggleOpen;
-    console.log('toggle clicked');
 
     const label = this.toggleOpen ? this.toggleLabelOpen : this.toggleLabelClosed;
 
