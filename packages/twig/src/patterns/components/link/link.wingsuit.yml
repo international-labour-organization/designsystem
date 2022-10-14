@@ -13,7 +13,7 @@ link:
       type: string
       label: target
       description: If we want to set the target attribute, the string to use
-      preview: "__blank"
+      preview: "_blank"
       required: false
     label:
       type: string
