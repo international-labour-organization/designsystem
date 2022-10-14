@@ -1,5 +1,4 @@
 import { EVENTS } from '@ilo-org/utils';
-import style from 'react-syntax-highlighter/dist/esm/styles/hljs/agate';
 
 /**
  * The Callout module which handles rendering field labels inline on a form.
