@@ -1,10 +1,13 @@
 {
   "name": "@ilo-org/react",
-  "description": "React components for products using ILO's Design System",
+  "description": "React components for the ILO's Design System",
   "version": "0.0.1",
   "author": "@justintemps",
   "license": "Apache-2.0",
   "main": "lib/index.js",
+  "publishConfig": {
+    "access": "public"
+  },
   "module": "lib/index.esm.js",
   "types": "lib/index.d.ts",
   "repository": {
@@ -12,6 +15,13 @@
     "url": "https://github.com/international-labour-organization/designsystem.git",
     "directory": "packages/react"
   },
+  "keywords": [
+    "ui_patterns",
+    "prototyping",
+    "react",
+    "designsystem",
+    "components"
+  ],
   "dependencies": {
     "@ilo-org/brand-assets": "workspace:*",
     "@ilo-org/fonts": "workspace:*",
