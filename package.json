@@ -52,6 +52,7 @@
   },
   "homepage": "https://github.com/international-labour-organization/designsystem#readme",
   "devDependencies": {
+    "@changesets/cli": "^2.25.0",
     "@ilo-org/eslint-config": "workspace:^0.0.1",
     "@ilo-org/prettier-config": "workspace:^0.0.1",
     "@ilo-org/typescript-config": "workspace:^0.0.1",
