@@ -68,7 +68,7 @@
       0
     );
     margin-left: px-to-rem(map-get($spacing, "ui-padding-lg"));
-    padding-left: px-to-rem(map-get($spacing, "base") - 2px);
+    padding-left: px-to-rem(map-get($spacing, "base") - 5px);
 
     b,
     strong {
