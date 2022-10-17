@@ -1,4 +1,3 @@
-import React from "react";
 import { Meta, Story } from "@storybook/react";
 import {
   Title,
@@ -120,21 +119,20 @@ A_BaseButton.storyName = "Default Button";
 const PrimaryButtonTemplate: Story<ButtonProps> = (args) => (
   <>
     {primarybuttons.map((button, i) => (
-      <React.Fragment key={i}>
-        <Button
-          {...args}
-          label={button.label}
-          size={button.size}
-          target={button.target}
-          kind={button.kind}
-          disabled={button.disabled}
-          type={button.type}
-          url={button.url}
-          icon={button.icon}
-          icononly={button.icononly}
-          iconPosition={button.iconPosition}
-        />
-      </React.Fragment>
+      <Button
+        {...args}
+        label={button.label}
+        size={button.size}
+        target={button.target}
+        kind={button.kind}
+        disabled={button.disabled}
+        type={button.type}
+        url={button.url}
+        icon={button.icon}
+        icononly={button.icononly}
+        iconPosition={button.iconPosition}
+        key={i}
+      />
     ))}
     <Button {...primarybuttons[0]} label={`Disabled Primary`} disabled={true} />
   </>
@@ -180,21 +178,20 @@ B_PrimaryButton.parameters = {
 const SecondaryButtonTemplate: Story<ButtonProps> = (args) => (
   <>
     {secondarybuttons.map((button, i) => (
-      <React.Fragment key={i}>
-        <Button
-          {...args}
-          label={button.label}
-          size={button.size}
-          target={button.target}
-          kind={button.kind}
-          disabled={button.disabled}
-          type={button.type}
-          url={button.url}
-          icon={button.icon}
-          icononly={button.icononly}
-          iconPosition={button.iconPosition}
-        />
-      </React.Fragment>
+      <Button
+        {...args}
+        label={button.label}
+        size={button.size}
+        target={button.target}
+        kind={button.kind}
+        disabled={button.disabled}
+        type={button.type}
+        url={button.url}
+        icon={button.icon}
+        icononly={button.icononly}
+        iconPosition={button.iconPosition}
+        key={i}
+      />
     ))}
     <Button
       {...secondarybuttons[0]}
@@ -244,21 +241,20 @@ C_SecondaryButton.parameters = {
 const TertiaryButtonTemplate: Story<ButtonProps> = (args) => (
   <>
     {tertiarybuttons.map((button, i) => (
-      <React.Fragment key={i}>
-        <Button
-          {...args}
-          label={button.label}
-          size={button.size}
-          target={button.target}
-          kind={button.kind}
-          disabled={button.disabled}
-          type={button.type}
-          url={button.url}
-          icon={button.icon}
-          icononly={button.icononly}
-          iconPosition={button.iconPosition}
-        />
-      </React.Fragment>
+      <Button
+        {...args}
+        label={button.label}
+        size={button.size}
+        target={button.target}
+        kind={button.kind}
+        disabled={button.disabled}
+        type={button.type}
+        url={button.url}
+        icon={button.icon}
+        icononly={button.icononly}
+        iconPosition={button.iconPosition}
+        key={i}
+      />
     ))}
     <Button
       {...tertiarybuttons[0]}
@@ -308,21 +304,20 @@ D_TertiaryButton.parameters = {
 const AlertButtonTemplate: Story<ButtonProps> = (args) => (
   <>
     {alertbuttons.map((button, i) => (
-      <React.Fragment key={i}>
-        <Button
-          {...args}
-          label={button.label}
-          size={button.size}
-          target={button.target}
-          kind={button.kind}
-          disabled={button.disabled}
-          type={button.type}
-          url={button.url}
-          icon={button.icon}
-          icononly={button.icononly}
-          iconPosition={button.iconPosition}
-        />
-      </React.Fragment>
+      <Button
+        {...args}
+        label={button.label}
+        size={button.size}
+        target={button.target}
+        kind={button.kind}
+        disabled={button.disabled}
+        type={button.type}
+        url={button.url}
+        icon={button.icon}
+        icononly={button.icononly}
+        iconPosition={button.iconPosition}
+        key={i}
+      />
     ))}
     <Button {...alertbuttons[0]} label={`Disabled Alert`} disabled={true} />
   </>
