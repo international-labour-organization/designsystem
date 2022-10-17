@@ -7,6 +7,9 @@
     "type": "git",
     "url": "git+https://github.com/international-labour-organization/designsystem.git"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "keywords": [
     "ilo-design-system",
     "typescript"

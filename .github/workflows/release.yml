@@ -1,0 +1,56 @@
+name: Build, test and release
+
+on:
+  push:
+    branches:
+      - main
+
+concurrency: ${{ github.workflow }}-${{ github.ref }}
+
+jobs:
+  release:
+    name: Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+
+      - name: Add auth token to .npmrc
+        run: |
+          cat << EOF > "$HOME/.npmrc"
+            //registry.npmjs.org/:_authToken=$NPM_TOKEN
+          EOF
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v2.0.1
+        with:
+          version: 6.32.3
+
+      - name: Setup Node.js 16.14.0
+        uses: actions/setup-node@v2
+        with:
+          node-version: 16.14.0
+          cache: "pnpm"
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Build
+        run: pnpm build:all
+
+      - name: Check types
+        run: pnpm check:types
+
+      - name: Test
+        run: pnpm test:all
+
+      - name: Create Release Pull Request or Publish to npm
+        id: changesets
+        uses: changesets/action@v1
+        with:
+          publish: pnpm release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

@@ -12,6 +12,9 @@
     "url": "https://github.com/international-labour-organization/designsystem.git",
     "directory": "packages/utils"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "dependencies": {
     "typescript": "4.3.4"
   },
