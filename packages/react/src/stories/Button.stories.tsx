@@ -104,21 +104,22 @@ const BaseButtonTemplate: Story<ButtonProps> = (args) => <Button {...args} />;
  * Base Button Instance
  *
  */
-export const BaseButton = BaseButtonTemplate.bind({});
+export const A_BaseButton = BaseButtonTemplate.bind({});
 // enumerate the props for the base button
 // @ts-ignore
-BaseButton.args = buttonArgs.primary;
+A_BaseButton.args = buttonArgs.primary;
+A_BaseButton.storyName = "Default Button";
 
 /**
- * Large Button Template
+ * Primary Button Template
  *
  * create a Storybook template for this component
  *
  *@param args (Object) - props to be passed to the component
  */
-const LargeButtonTemplate: Story<ButtonProps> = (args) => (
+const PrimaryButtonTemplate: Story<ButtonProps> = (args) => (
   <>
-    {largebuttons.map((button, i) => (
+    {primarybuttons.map((button, i) => (
       <React.Fragment key={i}>
         <Button
           {...args}
@@ -135,53 +136,50 @@ const LargeButtonTemplate: Story<ButtonProps> = (args) => (
         />
       </React.Fragment>
     ))}
+    <Button {...primarybuttons[0]} label={`Disabled Primary`} disabled={true} />
   </>
 );
 
 /**
- * Large Button Instance
+ * Primary Button Instance
  *
  */
-export const LargeButton = LargeButtonTemplate.bind({});
-const largebuttons = [
+export const B_PrimaryButton = PrimaryButtonTemplate.bind({});
+const primarybuttons = [
   buttonArgs.primary,
-  buttonArgs.secondary,
-  buttonArgs.tertiary,
-  buttonArgs.alert,
-  buttonArgs.disabled,
   buttonArgs.iconleftlgprimary,
-  buttonArgs.iconleftlgsecondary,
-  buttonArgs.iconleftlgtertiary,
-  buttonArgs.iconleftlgalert,
   buttonArgs.iconrightlgprimary,
-  buttonArgs.iconrightlgsecondary,
-  buttonArgs.iconrightlgtertiary,
-  buttonArgs.iconrightlgalert,
   buttonArgs.icononlylgprimary,
-  buttonArgs.icononlylgsecondary,
-  buttonArgs.icononlylgtertiary,
-  buttonArgs.icononlylgalert,
+  buttonArgs.medium,
+  buttonArgs.iconleftmprimary,
+  buttonArgs.iconrightmprimary,
+  buttonArgs.icononlymprimary,
+  buttonArgs.small,
+  buttonArgs.iconleftsmprimary,
+  buttonArgs.iconrightsmprimary,
+  buttonArgs.icononlysmprimary,
 ];
 // @ts-ignore
-LargeButton.storyName = "Large Button";
-LargeButton.parameters = {
+B_PrimaryButton.storyName = "Primary Button";
+B_PrimaryButton.parameters = {
   docs: {
     description: {
-      story: "Large buttons should be used ",
+      story:
+        "Primary buttons are the default button style, most-often used. They usually indicate positive action.",
     },
   },
 };
 
 /**
- * Medium Button Template
+ * Secondary Button Template
  *
  * create a Storybook template for this component
  *
  *@param args (Object) - props to be passed to the component
  */
-const MediumButtonTemplate: Story<ButtonProps> = (args) => (
+const SecondaryButtonTemplate: Story<ButtonProps> = (args) => (
   <>
-    {mediumbuttons.map((button, i) => (
+    {secondarybuttons.map((button, i) => (
       <React.Fragment key={i}>
         <Button
           {...args}
@@ -198,6 +196,11 @@ const MediumButtonTemplate: Story<ButtonProps> = (args) => (
         />
       </React.Fragment>
     ))}
+    <Button
+      {...secondarybuttons[0]}
+      label={`Disabled Secondary`}
+      disabled={true}
+    />
   </>
 );
 
@@ -205,46 +208,42 @@ const MediumButtonTemplate: Story<ButtonProps> = (args) => (
  * Medium Button Instance
  *
  */
-export const MediumButton = MediumButtonTemplate.bind({});
+export const C_SecondaryButton = SecondaryButtonTemplate.bind({});
 
-const mediumbuttons = [
-  buttonArgs.medium,
+const secondarybuttons = [
+  buttonArgs.secondary,
+  buttonArgs.iconleftlgsecondary,
+  buttonArgs.iconrightlgsecondary,
+  buttonArgs.icononlylgsecondary,
   buttonArgs.secondarym,
-  buttonArgs.tertiarym,
-  buttonArgs.alertm,
-  buttonArgs.disabledm,
-  buttonArgs.iconleftmprimary,
   buttonArgs.iconleftmsecondary,
-  buttonArgs.iconleftmtertiary,
-  buttonArgs.iconleftmalert,
-  buttonArgs.iconrightmprimary,
   buttonArgs.iconrightmsecondary,
-  buttonArgs.iconrightmtertiary,
-  buttonArgs.iconrightmalert,
-  buttonArgs.icononlymprimary,
   buttonArgs.icononlymsecondary,
-  buttonArgs.icononlymtertiary,
-  buttonArgs.icononlymalert,
+  buttonArgs.secondarysm,
+  buttonArgs.iconleftsmsecondary,
+  buttonArgs.iconrightsmsecondary,
+  buttonArgs.icononlysmsecondary,
 ];
-MediumButton.storyName = "Medium Button";
-MediumButton.parameters = {
+C_SecondaryButton.storyName = "Secondary Button";
+C_SecondaryButton.parameters = {
   docs: {
     description: {
-      story: "Medium buttons should be used ",
+      story:
+        "Secondary buttons are usually seen alongside Primary buttons when there are two action options, especially a positive and a negative option (e.g. a Cancel button next to a Submit button) or when there is a hierarchy of action (for example, the File Upload button in a form is a Secondary Button and the Submit button is a Primary button).",
     },
   },
 };
 
 /**
- * Small Button Template
+ * Tertiary Button Template
  *
  * create a Storybook template for this component
  *
  *@param args (Object) - props to be passed to the component
  */
-const SmallButtonTemplate: Story<ButtonProps> = (args) => (
+const TertiaryButtonTemplate: Story<ButtonProps> = (args) => (
   <>
-    {smallbuttons.map((button, i) => (
+    {tertiarybuttons.map((button, i) => (
       <React.Fragment key={i}>
         <Button
           {...args}
@@ -261,39 +260,100 @@ const SmallButtonTemplate: Story<ButtonProps> = (args) => (
         />
       </React.Fragment>
     ))}
+    <Button
+      {...tertiarybuttons[0]}
+      label={`Disabled Tertiary`}
+      disabled={true}
+    />
   </>
 );
 
 /**
- * Small Button Instance
+ * Tertiary Button Instance
  *
  */
-export const SmallButton = SmallButtonTemplate.bind({});
+export const D_TertiaryButton = TertiaryButtonTemplate.bind({});
 
-const smallbuttons = [
-  buttonArgs.medium,
-  buttonArgs.secondarym,
+const tertiarybuttons = [
+  buttonArgs.tertiary,
+  buttonArgs.iconleftlgtertiary,
+  buttonArgs.iconrightlgtertiary,
+  buttonArgs.icononlylgtertiary,
   buttonArgs.tertiarym,
-  buttonArgs.alertm,
-  buttonArgs.disabledm,
-  buttonArgs.iconleftsmprimary,
-  buttonArgs.iconleftmsecondary,
+  buttonArgs.iconleftmtertiary,
+  buttonArgs.iconrightmtertiary,
+  buttonArgs.icononlymtertiary,
+  buttonArgs.tertiarysm,
   buttonArgs.iconleftsmtertiary,
-  buttonArgs.iconleftsmalert,
-  buttonArgs.iconrightsmprimary,
-  buttonArgs.iconrightmsecondary,
   buttonArgs.iconrightsmtertiary,
-  buttonArgs.iconrightsmalert,
-  buttonArgs.icononlysmprimary,
-  buttonArgs.icononlysmsecondary,
   buttonArgs.icononlysmtertiary,
-  buttonArgs.icononlysmalert,
 ];
-SmallButton.storyName = "Small Button";
-SmallButton.parameters = {
+D_TertiaryButton.storyName = "Tertiary Button";
+D_TertiaryButton.parameters = {
   docs: {
     description: {
-      story: "Small buttons should be used ",
+      story:
+        "Tertiary buttons are used when the action taken is not of primary importance to the component functionality, especially when the action is optional (for example, the call to action in a Callout component).",
+    },
+  },
+};
+
+/**
+ * Alert Button Template
+ *
+ * create a Storybook template for this component
+ *
+ *@param args (Object) - props to be passed to the component
+ */
+const AlertButtonTemplate: Story<ButtonProps> = (args) => (
+  <>
+    {alertbuttons.map((button, i) => (
+      <React.Fragment key={i}>
+        <Button
+          {...args}
+          label={button.label}
+          size={button.size}
+          target={button.target}
+          kind={button.kind}
+          disabled={button.disabled}
+          type={button.type}
+          url={button.url}
+          icon={button.icon}
+          icononly={button.icononly}
+          iconPosition={button.iconPosition}
+        />
+      </React.Fragment>
+    ))}
+    <Button {...alertbuttons[0]} label={`Disabled Alert`} disabled={true} />
+  </>
+);
+
+/**
+ * Alert Button Instance
+ *
+ */
+export const E_AlertButton = AlertButtonTemplate.bind({});
+
+const alertbuttons = [
+  buttonArgs.alert,
+  buttonArgs.iconleftlgalert,
+  buttonArgs.iconrightlgalert,
+  buttonArgs.icononlylgalert,
+  buttonArgs.alertm,
+  buttonArgs.iconleftmalert,
+  buttonArgs.iconrightmalert,
+  buttonArgs.icononlymalert,
+  buttonArgs.alertsm,
+  buttonArgs.iconleftsmalert,
+  buttonArgs.iconrightsmalert,
+  buttonArgs.icononlysmalert,
+];
+E_AlertButton.storyName = "Alert Button";
+E_AlertButton.parameters = {
+  docs: {
+    description: {
+      story:
+        "Alert buttons are used when the action resolves an emergecny or responds to an alert.",
     },
   },
 };
