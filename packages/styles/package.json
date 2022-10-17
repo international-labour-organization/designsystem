@@ -7,6 +7,9 @@
     "url": "https://github.com/international-labour-organization/designsystem.git",
     "directory": "packages/styles"
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "build": "sass scss:build/css --load-path=./node_modules",
     "format": "prettier --check . --ignore-path ../../.prettierignore",
