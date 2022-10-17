@@ -41,7 +41,8 @@
     "test:all": "pnpm turbo run test",
     "test:react": "pnpm run test --filter=@ilo-org/react",
     "test:react-update": "pnpm run test:update --filter=@ilo-org/react",
-    "test:utils": "pnpm run test --filter=@ilo-org/utils"
+    "test:utils": "pnpm run test --filter=@ilo-org/utils",
+    "release": "pnpm turbo run build lint test && pnpm changeset version && pnpm changeset publish"
   },
   "repository": {
     "type": "git",
