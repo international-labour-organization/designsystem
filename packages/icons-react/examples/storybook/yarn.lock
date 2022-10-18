@@ -2,7 +2,7 @@
 # Manual changes might be lost - proceed with caution!
 
 __metadata:
-  version: 4
+  version: 6
   cacheKey: 7
 
 "@babel/code-frame@npm:7.0.0, @babel/code-frame@npm:^7.0.0":
@@ -2222,6 +2222,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"acorn@npm:^8.5.0":
+  version: 8.8.0
+  resolution: "acorn@npm:8.8.0"
+  bin:
+    acorn: bin/acorn
+  checksum: 8/7270ca82b242eafe5687a11fea6e088c960af712683756abf0791b68855ea9cace3057bd5e998ffcef50c944810c1e0ca1da526d02b32110e13c722aa959afdc
+  languageName: node
+  linkType: hard
+
 "address@npm:1.0.3":
   version: 1.0.3
   resolution: "address@npm:1.0.3"
@@ -3766,6 +3775,13 @@ __metadata:
   version: 2.20.0
   resolution: "commander@npm:2.20.0"
   checksum: f58e7e2a010da2702eabcb8772c6fa45c9dd2df3bbff2cd0598d7f444427aa89f71420e5bfbabface21c6e94abd39c4e013772f5ce6a59b40418818e45aa56da
+  languageName: node
+  linkType: hard
+
+"commander@npm:^2.20.0":
+  version: 2.20.3
+  resolution: "commander@npm:2.20.3"
+  checksum: 8/ab8c07884e42c3a8dbc5dd9592c606176c7eb5c1ca5ff274bcf907039b2c41de3626f684ea75ccf4d361ba004bbaff1f577d5384c155f3871e456bdf27becf9e
   languageName: node
   linkType: hard
 
@@ -5317,16 +5333,17 @@ fsevents@^1.2.7:
     nan: ^2.12.1
     node-pre-gyp: ^0.12.0
   checksum: 50f56363fcfe256e21abf9bbbbafa16c462aba768efaca55cdd8c45b59c522ab771b190891354664b47f05e8a342da0bb0bd44bb1222bd8cf1edbea2e6943b88
+  conditions: os=darwin
   languageName: node
   linkType: hard
 
-"fsevents@patch:fsevents@^1.2.7#builtin<compat/fsevents>":
+"fsevents@patch:fsevents@^1.2.7#~builtin<compat/fsevents>":
   version: 1.2.9
-  resolution: "fsevents@patch:fsevents@npm%3A1.2.9#builtin<compat/fsevents>::version=1.2.9&hash=11e9ea"
+  resolution: "fsevents@patch:fsevents@npm%3A1.2.9#~builtin<compat/fsevents>::version=1.2.9&hash=18f3a7"
   dependencies:
     nan: ^2.12.1
     node-pre-gyp: ^0.12.0
-  checksum: c46883f2cdf354e07315272ebd6e21ed4133c48d6eceb954c06fdb9cc832cc14d87d9bebb4acbc6aef91e5a8fe52f1374c19de30791b6c6c76806fe2173abda9
+  conditions: os=darwin
   languageName: node
   linkType: hard
 
@@ -9052,12 +9069,12 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"resolve@patch:resolve@^1.1.6#builtin<compat/resolve>, resolve@patch:resolve@^1.10.0#builtin<compat/resolve>, resolve@patch:resolve@^1.11.0#builtin<compat/resolve>, resolve@patch:resolve@^1.3.2#builtin<compat/resolve>, resolve@patch:resolve@^1.8.1#builtin<compat/resolve>":
+"resolve@patch:resolve@^1.1.6#~builtin<compat/resolve>, resolve@patch:resolve@^1.10.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.11.0#~builtin<compat/resolve>, resolve@patch:resolve@^1.3.2#~builtin<compat/resolve>, resolve@patch:resolve@^1.8.1#~builtin<compat/resolve>":
   version: 1.11.0
-  resolution: "resolve@patch:resolve@npm%3A1.11.0#builtin<compat/resolve>::version=1.11.0&hash=3388aa"
+  resolution: "resolve@patch:resolve@npm%3A1.11.0#~builtin<compat/resolve>::version=1.11.0&hash=07638b"
   dependencies:
     path-parse: ^1.0.6
-  checksum: 2d92772d275894efa49787ae6d0892d0f4d6d1d45ee151cda14dd80edd9397ce015fcb798e5dcc3b61afedf49a821ef311ee85537c50bb18366279a70d427b40
+  checksum: 8/a84335c055583bccca988ebefcfffee93adabc9dc9667b7e822626336403610d9d2a71ea80e4c44fedfcadf3e343a0b8d665a965a91a6840e381362b659ebb1b
   languageName: node
   linkType: hard
 
@@ -9536,13 +9553,13 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"source-map-support@npm:~0.5.10":
-  version: 0.5.12
-  resolution: "source-map-support@npm:0.5.12"
+"source-map-support@npm:~0.5.12":
+  version: 0.5.21
+  resolution: "source-map-support@npm:0.5.21"
   dependencies:
     buffer-from: ^1.0.0
     source-map: ^0.6.0
-  checksum: 4832e717e1c3fcd295c1ef4b3cc6620ebbed502c10d60955f2e1cbc7097d3134c1cb95ee0d2bc90681e942024a4960264d5038db180fe2ed31804b708c59badc
+  checksum: 8/43e98d700d79af1d36f859bdb7318e601dfc918c7ba2e98456118ebc4c4872b327773e5a1df09b0524e9e5063bb18f0934538eace60cca2710d1fa687645d137
   languageName: node
   linkType: hard
 
@@ -9980,15 +9997,15 @@ fsevents@^1.2.7:
   linkType: hard
 
 "terser@npm:^4.0.0":
-  version: 4.0.0
-  resolution: "terser@npm:4.0.0"
+  version: 4.8.1
+  resolution: "terser@npm:4.8.1"
   dependencies:
-    commander: ^2.19.0
+    commander: ^2.20.0
     source-map: ~0.6.1
-    source-map-support: ~0.5.10
+    source-map-support: ~0.5.12
   bin:
-    terser: bin/uglifyjs
-  checksum: 7c85dc186821860f3f15e281628b88f83ce4f53c88f624614c8107f7c01915ae144aefbd3866d187a3f8a1ffc46bb588b9e88146f0513be67059e6235f1494d9
+    terser: bin/terser
+  checksum: 8/b342819bf7e82283059aaa3f22bb74deb1862d07573ba5a8947882190ad525fd9b44a15074986be083fd379c58b9a879457a330b66dcdb77b485c44267f9a55a
   languageName: node
   linkType: hard
 
@@ -10618,7 +10635,7 @@ fsevents@^1.2.7:
   languageName: node
   linkType: hard
 
-"webpack@npm:4.33.0, webpack@npm:^4.28.0, webpack@npm:^4.32.0":
+"webpack@npm:^4.28.0, webpack@npm:^4.32.0":
   version: 4.33.0
   resolution: "webpack@npm:4.33.0"
   dependencies:
