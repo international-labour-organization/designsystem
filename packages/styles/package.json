@@ -11,7 +11,8 @@
     "access": "public"
   },
   "scripts": {
-    "build": "sass scss:build/css --load-path=./node_modules",
+    "build": "sass scss:build/css --load-path=./node_modules && postcss build/css/index.css --base/css build/css --dir build/minified && postcss build/css/localfonts.css --base/css build/css --dir build/minified",
+    "minify": "postcss build/css/index.css --base/css build/css --dir build/minified && postcss build/css/localfonts.css --base/css build/css --dir build/minified",
     "format": "prettier --check . --ignore-path ../../.prettierignore",
     "format:fix": "prettier --write . --ignore-path ../../.prettierignore",
     "lint": "eslint --ext .js,.ts,.tsx",
@@ -25,10 +26,12 @@
   ],
   "dependencies": {
     "@ilo-org/fonts": "workspace:*",
-    "@ilo-org/themes": "workspace:*",
-    "@ilo-org/icons": "workspace:*"
+    "@ilo-org/icons": "workspace:*",
+    "@ilo-org/themes": "workspace:*"
   },
   "devDependencies": {
+    "cssnano": "^5.1.13",
+    "postcss": "^8.4.12",
     "sass": "^1.49.9"
   }
 }

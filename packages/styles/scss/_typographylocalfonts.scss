@@ -1,0 +1,72 @@
+// Adapted from Carbon Library
+//
+// This source code is licensed under the Apache-2.0 license found in the
+// LICENSE file in the root directory of this source tree.
+//
+
+// Load the theme vars and fonts
+@use "@ilo-org/themes/build/scss/tokens" as *;
+@forward "@ilo-org/fonts/fonts";
+
+html,
+body {
+  color: $color-font-base;
+  font: #{$type-base-size}/#{$type-base-line-height} $fonts-copy;
+  letter-spacing: $type-base-letter-spacing;
+  -webkit-font-smoothing: antialiased;
+}
+
+/// Font family fallbacks for: Overpass, Noto Sans
+/// @type Map
+/// @access public
+/// @group @carbon/type
+$font-families: (
+  "display": unquote("#{$fonts-display}, sans-serif"),
+  "copy": unquote("#{$fonts-copy}, sans-serif"),
+) !default;
+
+/// Get the font-family for a font
+/// @param {String} $name
+/// @return {String}
+/// @access public
+/// @group @carbon/type
+@function font-family($name) {
+  @return map-get($font-families, $name);
+}
+
+/// Include the `font-family` definition for the given name in your selector
+/// @param {String} $name
+/// @access public
+/// @group @carbon/type
+@mixin font-family($name) {
+  font-family: font-family($name);
+}
+
+/// Suggested font weights to be used in product
+/// @type Map
+/// @access public
+/// @group @carbon/type
+$font-weights: (
+  "light": 300,
+  "regular": 400,
+  "semibold": 600,
+  "bold": 700,
+  "extrabold": 800,
+) !default;
+
+/// Retrieve the font-weight value for a given name
+/// @param {String} $weight
+/// @return {Number}
+/// @access public
+/// @group @carbon/type
+@function font-weight($weight) {
+  @return map-get($font-weights, $weight);
+}
+
+/// Set the `font-weight` property with the value for a given name
+/// @param {String} $weight
+/// @access public
+/// @group @carbon/type
+@mixin font-weight($weight) {
+  font-weight: font-weight($weight);
+}
