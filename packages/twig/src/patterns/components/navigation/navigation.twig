@@ -3,21 +3,26 @@
 #}
 <header class="{{prefix}}--header">
   <div class="{{prefix}}--header--utility-bar">
-    <div class="{{prefix}}--header--language-switcher">
-      Language
+    <nav class="{{prefix}}--nav--local"></nav>
+    <div class="{{prefix}}--language-switcher">
+      <button class="{{prefix}}--language-switcher--button" type="button">
+        English
+      </button>
     </div>
   </div>
   <div class="{{prefix}}--header--logo-bar">
-    <a href="/" class="{{prefix}}--header--logo-link">
-      <img class="{{prefix}}--header--logo" src="" alt="">
-    </a>
-    <p class="{{prefix}}--header--logo-tagline">
-      Advancing social justice, promoting decent work
-      <span class="{{prefix}}--header--logo-tagline--small">ILO is a specialized agency of the United Nations</span>
-    </p>
+    <div class="{{prefix}}--header--inner">
+      <a href="/" class="{{prefix}}--header--logo-link">
+        <img class="{{prefix}}--header--logo" src="https://placekitten.com/g/155/56" alt="">
+      </a>
+      <p class="{{prefix}}--header--logo-tagline">
+        Advancing social justice, promoting decent work
+        <span class="{{prefix}}--header--logo-tagline--small">ILO is a specialized agency of the United Nations</span>
+      </p>
+    </div>
   </div>
   <div class="{{prefix}}--header--navigation">
-    <div class="{{prefix}}--header--nav">
+    <div class="{{prefix}}--header--inner">
       <nav class="{{prefix}}--nav" aria-labelledby="primary-navigation">
         <h2 class="{{prefix}}--nav--label" id="primary-navigation">Primary nav list</h2>
         <ul class="{{prefix}}--nav--set">
@@ -42,36 +47,41 @@
         </ul>
       </nav>
       <div class="{{prefix}}--search">
+        <button class="{{prefix}}--search--button" type="button">Search</button>
       </div>
     </div>
-    <nav class="{{prefix}}--header--subnav" aria-labelledby="secondary-navigation">
-      <h2 class="{{prefix}}--nav--label" id="secondary-navigation">Secondary nav list</h2>
-      <ul class="{{prefix}}--subnav--set">
-        <li class="{{prefix}}--subnav--items">
-          <a href="https://www.google.com/search?q=News" class="{{prefix}}--subnav--link">News</a>
-        </li>
-        <li class="{{prefix}}--subnav--items">
-          <a href="https://www.google.com/search?q=meeting+events" class="{{prefix}}--subnav--link">Meeting &amp; Events</a>
-        </li>
-        <li class="{{prefix}}--subnav--items">
-          <a href="https://www.google.com/search?q=Publications" class="{{prefix}}--subnav--link">Publications</a>
-        </li>
-        <li class="{{prefix}}--subnav--items">
-          <a href="https://www.google.com/search?q=Projects" class="{{prefix}}--subnav--link">Projects</a>
-        </li>
-        <li class="{{prefix}}--subnav--items">
-          <a href="https://www.google.com/search?q=Partners" class="{{prefix}}--subnav--link">Partners</a>
-        </li>
-        <li class="{{prefix}}--subnav--items">
-          <a href="https://www.google.com/search?q=Industries+Sectors" class="{{prefix}}--subnav--link">Industries &amp; Sectors</a>
-        </li>
-        <li class="{{prefix}}--subnav--items">
-          <a href="https://www.google.com/search?q=About+the+ilo" class="{{prefix}}--subnav--link">About the ILO</a>
-        </li>
-      </ul>
+    <nav class="{{prefix}}--subnav" aria-labelledby="secondary-navigation">
+      <div class="{{prefix}}--header--inner">
+        <h2 class="{{prefix}}--nav--label" id="secondary-navigation">Secondary nav list</h2>
+        <ul class="{{prefix}}--subnav--set">
+          <li class="{{prefix}}--subnav--items">
+            <a href="https://www.google.com/search?q=News" class="{{prefix}}--subnav--link">News</a>
+          </li>
+          <li class="{{prefix}}--subnav--items">
+            <a href="https://www.google.com/search?q=meeting+events" class="{{prefix}}--subnav--link">Meeting &amp; Events</a>
+          </li>
+          <li class="{{prefix}}--subnav--items">
+            <a href="https://www.google.com/search?q=Publications" class="{{prefix}}--subnav--link">Publications</a>
+          </li>
+          <li class="{{prefix}}--subnav--items">
+            <a href="https://www.google.com/search?q=Projects" class="{{prefix}}--subnav--link">Projects</a>
+          </li>
+          <li class="{{prefix}}--subnav--items">
+            <a href="https://www.google.com/search?q=Partners" class="{{prefix}}--subnav--link">Partners</a>
+          </li>
+          <li class="{{prefix}}--subnav--items">
+            <a href="https://www.google.com/search?q=Industries+Sectors" class="{{prefix}}--subnav--link">Industries &amp; Sectors</a>
+          </li>
+          <li class="{{prefix}}--subnav--items">
+            <a href="https://www.google.com/search?q=About+the+ilo" class="{{prefix}}--subnav--link">About the ILO</a>
+          </li>
+        </ul>
+      </div>
     </nav>
-    <div class="{{prefix}}--header--search-box">
-      {# search box #}
+    <div class="{{prefix}}--search-box">
+      <div class="{{prefix}}--header--inner">
+        {# search box #}
+      </div>
     </div>
   </div>
 </header>

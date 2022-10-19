@@ -76,6 +76,12 @@
     - ILO Icons
   sizes:
     - glyph
+- name: global
+  friendly_name: global
+  aliases:
+    - ILO Icons
+  sizes:
+    - glyph
 - name: halfsquaretriangle
   friendly_name: halfsquaretriangle
   aliases:
