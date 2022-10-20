@@ -4,6 +4,7 @@
   "description": "A design system for the International Labour Organization",
   "license": "Apache-2.0",
   "main": "index.js",
+  "packageManager": "pnpm@6.32.3",
   "engines": {
     "pnpm": "6.32.3"
   },
