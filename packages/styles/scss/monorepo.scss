@@ -1,3 +1,5 @@
+// Outputs CSS to be used within the monorepo, with fonts drawn from the @ilo-fonts package via pnpm
+
 // Set prefix on default styles
 @use "config";
 
@@ -5,7 +7,7 @@
 @use "reset";
 
 //Import type styles
-@use "typographylocalfonts";
+@use "typographymonorepo";
 
 // Import our custom components css
 @use "components";
