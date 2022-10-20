@@ -1,4 +1,4 @@
-import { Story, Meta } from "@storybook/react";
+import { Meta, Story } from "@storybook/react";
 import {
   Title,
   Subtitle,
@@ -11,6 +11,11 @@ import {
 import { Button } from "../components/Button";
 import { ButtonProps } from "../components/Button/Button.props";
 import buttonArgs from "../components/Button/Button.args";
+
+const mainDoc = `
+### Usage
+Buttons are used primarily on action items (for actions like submitting a form, or triggering open a modal) that do not navigate the user to another page or view, though sometimes an anchor element may be styled as a button. (See below regarding the \`url\` prop).
+`;
 
 const themeDoc = `
 By changing the \`size\` prop you can change the size of the button. By default this is set to \`large\`.
@@ -33,6 +38,25 @@ By changing the \`type\` prop you can change the type of the button, which affec
 | \`alert\` | Button type for an alert button. |
 `;
 
+const iconDoc = `
+By changing the \`icon\` and \`iconPosition\` props you can set the icon to use, and set its position in the button. Additonally, you can set the \`icononly\` prop to \`true\` if you want the button's label to be visually hidden.
+
+| Prop   |  Description  |
+|----------|-------------|
+| \`icon\` | Sets the icon. Must match the name of an icon in the @ilo-org icons package. |
+| \`iconPosition\` | left or right. On which side of the label does the icon display? |
+| \`icononly\` | Boolean. If true, no label is shown visually (though one is still provided to screen readers). |
+`;
+
+const hrefDoc = `
+Populating the \`url\` prop with a valid url and/or an anchor to an id in the current document (e.g. \`#my-id\`) will result in the same design being displayed, but "under the hood," in the html, an \`<a>\` element will be used, allowing link functionality. When this is populated, the \`target\` prop is also read. Populating this, sets the \`target\` attribute of the anchor tag, which opens the link url in a new tab or window.
+
+| Prop   |  Description  |
+|----------|-------------|
+| \`url\` | Should be a valid url or anchor in the page. |
+| \`target\` | Should be a valid value for the anchor tag's target attribute. |
+`;
+
 /**
  * Button Story
  *
@@ -48,16 +72,17 @@ export default {
         <>
           <Subtitle />
           <Title />
-          <Description>
-            The button component creates either an HTML button, or an anchor
-            link styled like a button.
-          </Description>
+          <Description>{mainDoc}</Description>
           <Primary />
           <ArgsTable />
           <Subheading>Theme Prop</Subheading>
           <Description>{themeDoc}</Description>
           <Subheading>Type Prop</Subheading>
           <Description>{typeDoc}</Description>
+          <Subheading>Icon Props</Subheading>
+          <Description>{iconDoc}</Description>
+          <Subheading>Link Props</Subheading>
+          <Description>{hrefDoc}</Description>
           <Stories title="Examples"></Stories>
         </>
       ),
@@ -66,426 +91,264 @@ export default {
 } as Meta<typeof Button>;
 
 /**
- * Button Template
+ * Base Button Template
  *
  * create a Storybook template for this component
  *
- *@param (Object) args - props to be passed to the component
+ *@param args (Array) - props to be passed to the component
  */
-const ButtonTemplate: Story<ButtonProps> = (args) => <Button {...args} />;
+const BaseButtonTemplate: Story<ButtonProps> = (args) => <Button {...args} />;
 
 /**
- * Large Button Instance
+ * Base Button Instance
  *
  */
-export const BaseButton = ButtonTemplate.bind({});
+export const A_BaseButton = BaseButtonTemplate.bind({});
+// enumerate the props for the base button
+// @ts-ignore
+A_BaseButton.args = buttonArgs.primary;
+A_BaseButton.storyName = "Default Button";
 
 /**
- * Medium Button Instance
+ * Primary Button Template
  *
- */
-export const MediumButton = ButtonTemplate.bind({});
-
-/**
- * Small Button Instance
+ * create a Storybook template for this component
  *
+ *@param args (Object) - props to be passed to the component
  */
-export const SmallButton = ButtonTemplate.bind({});
+const PrimaryButtonTemplate: Story<ButtonProps> = (args) => (
+  <>
+    {primarybuttons.map((button, i) => (
+      <Button
+        {...args}
+        label={button.label}
+        size={button.size}
+        target={button.target}
+        kind={button.kind}
+        disabled={button.disabled}
+        type={button.type}
+        url={button.url}
+        icon={button.icon}
+        icononly={button.icononly}
+        iconPosition={button.iconPosition}
+        key={i}
+      />
+    ))}
+    <Button {...primarybuttons[0]} label={`Disabled Primary`} disabled={true} />
+  </>
+);
 
 /**
  * Primary Button Instance
  *
  */
-export const PrimaryButton = ButtonTemplate.bind({});
+export const B_PrimaryButton = PrimaryButtonTemplate.bind({});
+const primarybuttons = [
+  buttonArgs.primary,
+  buttonArgs.iconleftlgprimary,
+  buttonArgs.iconrightlgprimary,
+  buttonArgs.icononlylgprimary,
+  buttonArgs.medium,
+  buttonArgs.iconleftmprimary,
+  buttonArgs.iconrightmprimary,
+  buttonArgs.icononlymprimary,
+  buttonArgs.small,
+  buttonArgs.iconleftsmprimary,
+  buttonArgs.iconrightsmprimary,
+  buttonArgs.icononlysmprimary,
+];
+// @ts-ignore
+B_PrimaryButton.storyName = "Primary Button";
+B_PrimaryButton.parameters = {
+  docs: {
+    description: {
+      story:
+        "Primary buttons are the default button style, most-often used. They usually indicate positive action.",
+    },
+  },
+};
 
 /**
- * Secondary Button Instance
+ * Secondary Button Template
  *
+ * create a Storybook template for this component
+ *
+ *@param args (Object) - props to be passed to the component
  */
-export const SecondaryButton = ButtonTemplate.bind({});
+const SecondaryButtonTemplate: Story<ButtonProps> = (args) => (
+  <>
+    {secondarybuttons.map((button, i) => (
+      <Button
+        {...args}
+        label={button.label}
+        size={button.size}
+        target={button.target}
+        kind={button.kind}
+        disabled={button.disabled}
+        type={button.type}
+        url={button.url}
+        icon={button.icon}
+        icononly={button.icononly}
+        iconPosition={button.iconPosition}
+        key={i}
+      />
+    ))}
+    <Button
+      {...secondarybuttons[0]}
+      label={`Disabled Secondary`}
+      disabled={true}
+    />
+  </>
+);
 
 /**
- * Tertiary Button Instance
+ * Medium Button Instance
  *
  */
-export const TertiaryButton = ButtonTemplate.bind({});
+export const C_SecondaryButton = SecondaryButtonTemplate.bind({});
+
+const secondarybuttons = [
+  buttonArgs.secondary,
+  buttonArgs.iconleftlgsecondary,
+  buttonArgs.iconrightlgsecondary,
+  buttonArgs.icononlylgsecondary,
+  buttonArgs.secondarym,
+  buttonArgs.iconleftmsecondary,
+  buttonArgs.iconrightmsecondary,
+  buttonArgs.icononlymsecondary,
+  buttonArgs.secondarysm,
+  buttonArgs.iconleftsmsecondary,
+  buttonArgs.iconrightsmsecondary,
+  buttonArgs.icononlysmsecondary,
+];
+C_SecondaryButton.storyName = "Secondary Button";
+C_SecondaryButton.parameters = {
+  docs: {
+    description: {
+      story:
+        "Secondary buttons are usually seen alongside Primary buttons when there are two action options, especially a positive and a negative option (e.g. a Cancel button next to a Submit button) or when there is a hierarchy of action (for example, the File Upload button in a form is a Secondary Button and the Submit button is a Primary button).",
+    },
+  },
+};
 
 /**
- * Secondary Button Instance
+ * Tertiary Button Template
  *
- */
-export const SecondaryButtonM = ButtonTemplate.bind({});
-
-/**
- * Tertiary Button Instance
+ * create a Storybook template for this component
  *
+ *@param args (Object) - props to be passed to the component
  */
-export const TertiaryButtonM = ButtonTemplate.bind({});
-
-/**
- * Secondary Button Instance
- *
- */
-export const SecondaryButtonSm = ButtonTemplate.bind({});
-
-/**
- * Tertiary Button Instance
- *
- */
-export const TertiaryButtonSm = ButtonTemplate.bind({});
-
-/**
- * Disabled Button Instance
- *
- */
-export const DisabledButton = ButtonTemplate.bind({});
-
-/**
- * Large Button With Icon on the Left Instance
- *
- */
-export const LgIconLeftButton = ButtonTemplate.bind({});
-
-/**
- * Medium Button With Icon on the Left Instance
- *
- */
-export const MIconLeftButton = ButtonTemplate.bind({});
-
-/**
- * Small Button With Icon on the Left Instance
- *
- */
-export const SmIconLeftButton = ButtonTemplate.bind({});
-
-/**
- * Large Button With Icon on the Right Instance
- *
- */
-export const LgIconRightButton = ButtonTemplate.bind({});
-
-/**
- * Medium Button With Icon on the Right Instance
- *
- */
-export const MIconRightButton = ButtonTemplate.bind({});
-
-/**
- * Small Button With Icon on the Right Instance
- *
- */
-export const SmIconRightButton = ButtonTemplate.bind({});
-
-/**
- * Large Button With Icon on the Left Instance
- *
- */
-export const LgSecondaryIconLeftButton = ButtonTemplate.bind({});
-
-/**
- * Medium Button With Icon on the Left Instance
- *
- */
-export const MSecondaryIconLeftButton = ButtonTemplate.bind({});
-
-/**
- * Small Button With Icon on the Left Instance
- *
- */
-export const SmSecondaryIconLeftButton = ButtonTemplate.bind({});
-
-/**
- * Large Button With Icon on the Right Instance
- *
- */
-export const LgSecondaryIconRightButton = ButtonTemplate.bind({});
-
-/**
- * Medium Button With Icon on the Right Instance
- *
- */
-export const MSecondaryIconRightButton = ButtonTemplate.bind({});
-
-/**
- * Small Button With Icon on the Right Instance
- *
- */
-export const SmSecondaryIconRightButton = ButtonTemplate.bind({});
-
-/**
- * Large Button With Icon on the Left Instance
- *
- */
-export const LgTertiaryIconLeftButton = ButtonTemplate.bind({});
-
-/**
- * Medium Button With Icon on the Left Instance
- *
- */
-export const MTertiaryIconLeftButton = ButtonTemplate.bind({});
-
-/**
- * Small Button With Icon on the Left Instance
- *
- */
-export const SmTertiaryIconLeftButton = ButtonTemplate.bind({});
-
-/**
- * Large Button With Icon on the Right Instance
- *
- */
-export const LgTertiaryIconRightButton = ButtonTemplate.bind({});
-
-/**
- * Medium Button With Icon on the Right Instance
- *
- */
-export const MTertiaryIconRightButton = ButtonTemplate.bind({});
-
-/**
- * Small Button With Icon on the Right Instance
- *
- */
-export const SmTertiaryIconRightButton = ButtonTemplate.bind({});
-
-/**
- * Large Button With Icon on the Left Instance
- *
- */
-export const LgAlertIconLeftButton = ButtonTemplate.bind({});
-
-/**
- * Medium Button With Icon on the Left Instance
- *
- */
-export const MAlertIconLeftButton = ButtonTemplate.bind({});
-
-/**
- * Small Button With Icon on the Left Instance
- *
- */
-export const SmAlertIconLeftButton = ButtonTemplate.bind({});
-
-/**
- * Large Button With Icon on the Right Instance
- *
- */
-export const LgAlertIconRightButton = ButtonTemplate.bind({});
-
-/**
- * Medium Button With Icon on the Right Instance
- *
- */
-export const MAlertIconRightButton = ButtonTemplate.bind({});
-
-/**
- * Small Button With Icon on the Right Instance
- *
- */
-export const SmAlertIconRightButton = ButtonTemplate.bind({});
-
-/**
- * Secondary Button Instance
- *
- */
-export const ButtonAlertM = ButtonTemplate.bind({});
+const TertiaryButtonTemplate: Story<ButtonProps> = (args) => (
+  <>
+    {tertiarybuttons.map((button, i) => (
+      <Button
+        {...args}
+        label={button.label}
+        size={button.size}
+        target={button.target}
+        kind={button.kind}
+        disabled={button.disabled}
+        type={button.type}
+        url={button.url}
+        icon={button.icon}
+        icononly={button.icononly}
+        iconPosition={button.iconPosition}
+        key={i}
+      />
+    ))}
+    <Button
+      {...tertiarybuttons[0]}
+      label={`Disabled Tertiary`}
+      disabled={true}
+    />
+  </>
+);
 
 /**
  * Tertiary Button Instance
  *
  */
-export const ButtonAlertSm = ButtonTemplate.bind({});
+export const D_TertiaryButton = TertiaryButtonTemplate.bind({});
 
-// enumerate the props for the large button
-BaseButton.args = buttonArgs.large;
-BaseButton.args.url = "#";
-BaseButton.storyName = "Large Button";
+const tertiarybuttons = [
+  buttonArgs.tertiary,
+  buttonArgs.iconleftlgtertiary,
+  buttonArgs.iconrightlgtertiary,
+  buttonArgs.icononlylgtertiary,
+  buttonArgs.tertiarym,
+  buttonArgs.iconleftmtertiary,
+  buttonArgs.iconrightmtertiary,
+  buttonArgs.icononlymtertiary,
+  buttonArgs.tertiarysm,
+  buttonArgs.iconleftsmtertiary,
+  buttonArgs.iconrightsmtertiary,
+  buttonArgs.icononlysmtertiary,
+];
+D_TertiaryButton.storyName = "Tertiary Button";
+D_TertiaryButton.parameters = {
+  docs: {
+    description: {
+      story:
+        "Tertiary buttons are used when the action taken is not of primary importance to the component functionality, especially when the action is optional (for example, the call to action in a Callout component).",
+    },
+  },
+};
 
-// enumerate the props for the medium button
-MediumButton.args = buttonArgs.medium;
-MediumButton.args.url = "#";
-MediumButton.storyName = "Medium Button";
+/**
+ * Alert Button Template
+ *
+ * create a Storybook template for this component
+ *
+ *@param args (Object) - props to be passed to the component
+ */
+const AlertButtonTemplate: Story<ButtonProps> = (args) => (
+  <>
+    {alertbuttons.map((button, i) => (
+      <Button
+        {...args}
+        label={button.label}
+        size={button.size}
+        target={button.target}
+        kind={button.kind}
+        disabled={button.disabled}
+        type={button.type}
+        url={button.url}
+        icon={button.icon}
+        icononly={button.icononly}
+        iconPosition={button.iconPosition}
+        key={i}
+      />
+    ))}
+    <Button {...alertbuttons[0]} label={`Disabled Alert`} disabled={true} />
+  </>
+);
 
-// enumerate the props for the small button
-SmallButton.args = buttonArgs.small;
-SmallButton.args.url = "#";
-SmallButton.storyName = "Small Button";
+/**
+ * Alert Button Instance
+ *
+ */
+export const E_AlertButton = AlertButtonTemplate.bind({});
 
-// enumerate the props for the primary button
-PrimaryButton.args = buttonArgs.primary;
-PrimaryButton.args.url = "";
-PrimaryButton.storyName = "Primary Button";
-
-// enumerate the props for the secondary button
-SecondaryButton.args = buttonArgs.secondary;
-SecondaryButton.args.url = "";
-SecondaryButton.storyName = "Secondary Button";
-
-// enumerate the props for the tertiary button
-TertiaryButton.args = buttonArgs.tertiary;
-TertiaryButton.args.url = "";
-TertiaryButton.storyName = "Tertiary Button";
-
-// enumerate the props for the secondary button
-SecondaryButtonM.args = buttonArgs.secondarym;
-SecondaryButtonM.args.url = "";
-SecondaryButtonM.storyName = "Secondary Medium";
-
-// enumerate the props for the tertiary button
-TertiaryButtonM.args = buttonArgs.tertiarym;
-TertiaryButtonM.args.url = "";
-TertiaryButtonM.storyName = "Tertiary Medium";
-
-// enumerate the props for the secondary button
-SecondaryButtonSm.args = buttonArgs.secondarysm;
-SecondaryButtonSm.args.url = "";
-SecondaryButtonSm.storyName = "Secondary Small";
-
-// enumerate the props for the tertiary button
-TertiaryButtonSm.args = buttonArgs.tertiarysm;
-TertiaryButtonSm.args.url = "";
-TertiaryButtonSm.storyName = "Tertiary Small";
-
-// enumerate the props for the tertiary button
-ButtonAlertM.args = buttonArgs.alertm;
-ButtonAlertM.args.url = "";
-ButtonAlertM.storyName = "Alert Medium";
-
-// enumerate the props for the secondary button
-ButtonAlertSm.args = buttonArgs.alertsm;
-ButtonAlertSm.args.url = "";
-ButtonAlertSm.storyName = "Alert Small";
-
-// enumerate the props for a disabled button
-DisabledButton.args = buttonArgs.disabled;
-DisabledButton.args.url = "";
-DisabledButton.storyName = "Disabled Button";
-
-// enumerate the props for a large primary icon left button
-LgIconLeftButton.args = buttonArgs.iconleftlgprimary;
-LgIconLeftButton.args.url = "";
-LgIconLeftButton.storyName = "Large Primary Button with icon on left";
-
-// enumerate the props for a medium primary icon left button
-MIconLeftButton.args = buttonArgs.iconleftmprimary;
-MIconLeftButton.args.url = "";
-MIconLeftButton.storyName = "Medium Primary Button with icon on left";
-
-// enumerate the props for a small primary icon left button
-SmIconLeftButton.args = buttonArgs.iconleftsmprimary;
-SmIconLeftButton.args.url = "";
-SmIconLeftButton.storyName = "Small Primary Button with icon on left";
-
-// enumerate the props for a large primary icon right button
-LgIconRightButton.args = buttonArgs.iconrightlgprimary;
-LgIconRightButton.args.url = "";
-LgIconRightButton.storyName = "Large Primary Button with icon on right";
-
-// enumerate the props for a medium primary icon right button
-MIconRightButton.args = buttonArgs.iconrightmprimary;
-MIconRightButton.args.url = "";
-MIconRightButton.storyName = "Medium Primary Button with icon on right";
-
-// enumerate the props for a small primary icon right button
-SmIconRightButton.args = buttonArgs.iconrightsmprimary;
-SmIconRightButton.args.url = "";
-SmIconRightButton.storyName = "Small Primary Button with icon on right;";
-
-// enumerate the props for a large secondary icon left button
-LgSecondaryIconLeftButton.args = buttonArgs.iconleftlgsecondary;
-LgSecondaryIconLeftButton.args.url = "";
-LgSecondaryIconLeftButton.storyName =
-  "Large Secondary Button with icon on left";
-
-// enumerate the props for a medium secondary icon left button
-MSecondaryIconLeftButton.args = buttonArgs.iconleftmsecondary;
-MSecondaryIconLeftButton.args.url = "";
-MSecondaryIconLeftButton.storyName =
-  "Medium Secondary Button with icon on left";
-
-// enumerate the props for a small secondary icon left button
-SmSecondaryIconLeftButton.args = buttonArgs.iconleftsmsecondary;
-SmSecondaryIconLeftButton.args.url = "";
-SmSecondaryIconLeftButton.storyName =
-  "Small Secondary Button with icon on left";
-
-// enumerate the props for a large secondary icon right button
-LgSecondaryIconRightButton.args = buttonArgs.iconrightlgsecondary;
-LgSecondaryIconRightButton.args.url = "";
-LgSecondaryIconRightButton.storyName =
-  "Large Secondary Button with icon on right";
-
-// enumerate the props for a medium secondary icon right button
-MSecondaryIconRightButton.args = buttonArgs.iconrightmsecondary;
-MSecondaryIconRightButton.args.url = "";
-MSecondaryIconRightButton.storyName =
-  "Medium Secondary Button with icon on right";
-
-// enumerate the props for a small secondary icon right button
-SmSecondaryIconRightButton.args = buttonArgs.iconrightsmsecondary;
-SmSecondaryIconRightButton.args.url = "";
-SmSecondaryIconRightButton.storyName =
-  "Small Secondary Button with icon on right;";
-
-// enumerate the props for a large tertiary icon left button
-LgTertiaryIconLeftButton.args = buttonArgs.iconleftlgtertiary;
-LgTertiaryIconLeftButton.args.url = "";
-LgTertiaryIconLeftButton.storyName = "Large Tertiary Button with icon on left";
-
-// enumerate the props for a medium tertiary icon left button
-MTertiaryIconLeftButton.args = buttonArgs.iconleftmtertiary;
-MTertiaryIconLeftButton.args.url = "";
-MTertiaryIconLeftButton.storyName = "Medium Tertiary Button with icon on left";
-
-// enumerate the props for a small tertiary icon left button
-SmTertiaryIconLeftButton.args = buttonArgs.iconleftsmtertiary;
-SmTertiaryIconLeftButton.args.url = "";
-SmTertiaryIconLeftButton.storyName = "Small Tertiary Button with icon on left";
-
-// enumerate the props for a large tertiary icon right button
-LgTertiaryIconRightButton.args = buttonArgs.iconrightlgtertiary;
-LgTertiaryIconRightButton.args.url = "";
-LgTertiaryIconRightButton.storyName =
-  "Large Tertiary Button with icon on right";
-
-// enumerate the props for a medium tertiary icon right button
-MTertiaryIconRightButton.args = buttonArgs.iconrightmtertiary;
-MTertiaryIconRightButton.args.url = "";
-MTertiaryIconRightButton.storyName =
-  "Medium Tertiary Button with icon on right";
-
-// enumerate the props for a small tertiary icon right button
-SmTertiaryIconRightButton.args = buttonArgs.iconrightsmtertiary;
-SmTertiaryIconRightButton.args.url = "";
-SmTertiaryIconRightButton.storyName =
-  "Small Tertiary Button with icon on right;";
-
-// enumerate the props for a large alert icon left button
-LgAlertIconLeftButton.args = buttonArgs.iconleftlgalert;
-LgAlertIconLeftButton.args.url = "";
-LgAlertIconLeftButton.storyName = "Large Alert Button with icon on left";
-
-// enumerate the props for a medium alert icon left button
-MAlertIconLeftButton.args = buttonArgs.iconleftmalert;
-MAlertIconLeftButton.args.url = "";
-MAlertIconLeftButton.storyName = "Medium Alert Button with icon on left";
-
-// enumerate the props for a small alert icon left button
-SmAlertIconLeftButton.args = buttonArgs.iconleftsmalert;
-SmAlertIconLeftButton.args.url = "";
-SmAlertIconLeftButton.storyName = "Small Alert Button with icon on left";
-
-// enumerate the props for a large alert icon right button
-LgAlertIconRightButton.args = buttonArgs.iconrightlgalert;
-LgAlertIconRightButton.args.url = "";
-LgAlertIconRightButton.storyName = "Large Alert Button with icon on right";
-
-// enumerate the props for a medium alert icon right button
-MAlertIconRightButton.args = buttonArgs.iconrightmalert;
-MAlertIconRightButton.args.url = "";
-MAlertIconRightButton.storyName = "Medium Alert Button with icon on right";
-
-// enumerate the props for a small alert icon right button
-SmAlertIconRightButton.args = buttonArgs.iconrightsmalert;
-SmAlertIconRightButton.args.url = "";
-SmAlertIconRightButton.storyName = "Small Alert Button with icon on right;";
+const alertbuttons = [
+  buttonArgs.alert,
+  buttonArgs.iconleftlgalert,
+  buttonArgs.iconrightlgalert,
+  buttonArgs.icononlylgalert,
+  buttonArgs.alertm,
+  buttonArgs.iconleftmalert,
+  buttonArgs.iconrightmalert,
+  buttonArgs.icononlymalert,
+  buttonArgs.alertsm,
+  buttonArgs.iconleftsmalert,
+  buttonArgs.iconrightsmalert,
+  buttonArgs.icononlysmalert,
+];
+E_AlertButton.storyName = "Alert Button";
+E_AlertButton.parameters = {
+  docs: {
+    description: {
+      story:
+        "Alert buttons are used when the action resolves an emergecny or responds to an alert.",
+    },
+  },
+};

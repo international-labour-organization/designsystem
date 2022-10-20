@@ -15,7 +15,7 @@ import tableOfContentsArgs from "../components/TableOfContents/TableOfContents.a
  *
  */
 export default {
-  title: "Components/TableOfContents",
+  title: "Components/Table Of Contents",
   component: TableOfContents,
   parameters: {
     componentSubtitle: "Component",
@@ -25,8 +25,8 @@ export default {
           <Subtitle />
           <Title />
           <Description>
-            The TableOfContents component displays a list of anchor links to aid
-            users navigating within a page.
+            The Table Of Contents component displays a list of anchor links to
+            aid users navigating within a page.
           </Description>
           <Primary />
           <Stories title="Examples"></Stories>

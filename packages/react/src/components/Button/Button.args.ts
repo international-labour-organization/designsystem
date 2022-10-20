@@ -100,6 +100,22 @@ const disabled: ButtonProps = {
   url: "",
 };
 
+const disabledm: ButtonProps = {
+  disabled: true,
+  label: "Disabled Button",
+  size: "medium",
+  type: "primary",
+  url: "",
+};
+
+const disabledsm: ButtonProps = {
+  disabled: true,
+  label: "Disabled Button",
+  size: "small",
+  type: "primary",
+  url: "",
+};
+
 const iconleftlgprimary: ButtonProps = {
   callback: "",
   children: "",
@@ -306,6 +322,104 @@ const iconrightsmalert: ButtonProps = {
   url: "",
 };
 
+const icononlylgprimary: ButtonProps = {
+  callback: "",
+  children: "",
+  icon: "close",
+  icononly: true,
+  label: "Icon only",
+  size: "large",
+  type: "primary",
+};
+
+const icononlymprimary: ButtonProps = {
+  icon: "close",
+  icononly: true,
+  label: "Icon only",
+  size: "medium",
+  type: "primary",
+};
+
+const icononlysmprimary: ButtonProps = {
+  icon: "close",
+  icononly: true,
+  label: "Icon only",
+  size: "small",
+  type: "primary",
+};
+
+const icononlylgsecondary: ButtonProps = {
+  icon: "close",
+  icononly: true,
+  label: "Icon only",
+  size: "large",
+  type: "secondary",
+};
+
+const icononlymsecondary: ButtonProps = {
+  icon: "close",
+  icononly: true,
+  label: "Icon only",
+  size: "medium",
+  type: "secondary",
+};
+
+const icononlysmsecondary: ButtonProps = {
+  icon: "close",
+  icononly: true,
+  label: "Icon only",
+  size: "small",
+  type: "secondary",
+};
+
+const icononlylgtertiary: ButtonProps = {
+  icon: "close",
+  icononly: true,
+  label: "Icon only",
+  size: "large",
+  type: "tertiary",
+};
+
+const icononlymtertiary: ButtonProps = {
+  icon: "close",
+  icononly: true,
+  label: "Icon only",
+  size: "medium",
+  type: "tertiary",
+};
+
+const icononlysmtertiary: ButtonProps = {
+  icon: "close",
+  icononly: true,
+  label: "Icon only",
+  size: "small",
+  type: "tertiary",
+};
+
+const icononlylgalert: ButtonProps = {
+  icon: "close",
+  icononly: true,
+  label: "Icon only",
+  size: "large",
+  type: "alert",
+};
+
+const icononlymalert: ButtonProps = {
+  icon: "close",
+  icononly: true,
+  label: "Icon only",
+  size: "medium",
+  type: "alert",
+};
+
+const icononlysmalert: ButtonProps = {
+  icon: "close",
+  icononly: true,
+  label: "Icon only",
+  size: "small",
+  type: "alert",
+};
+
 /**
  * Sample prop definitions for Button's enumerable properties (imported in stories and tests).
  */
@@ -324,6 +438,8 @@ const ButtonArgs = {
   alertm,
   alertsm,
   disabled,
+  disabledm,
+  disabledsm,
   iconleftlgprimary,
   iconleftmprimary,
   iconleftsmprimary,
@@ -348,6 +464,18 @@ const ButtonArgs = {
   iconrightlgalert,
   iconrightmalert,
   iconrightsmalert,
+  icononlylgprimary,
+  icononlymprimary,
+  icononlysmprimary,
+  icononlylgsecondary,
+  icononlymsecondary,
+  icononlysmsecondary,
+  icononlylgtertiary,
+  icononlymtertiary,
+  icononlysmtertiary,
+  icononlylgalert,
+  icononlymalert,
+  icononlysmalert,
 };
 
 export default ButtonArgs;

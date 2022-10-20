@@ -18,7 +18,7 @@ const hascta: CalloutProps = {
 const infoCallout: CalloutProps = {
   copy: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
   isCollapsible: false,
-  headline: "Notification Title",
+  headline: "Callout Title",
   type: "info",
 };
 
@@ -30,7 +30,7 @@ const errorCallout: CalloutProps = {
   copy: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
   isCollapsible: true,
   isOpen: false,
-  headline: "Notification Title",
+  headline: "Callout Title",
   toggleOpenLabel: "Open",
   toggleClosedLabel: "Closed",
   type: "error",
@@ -39,14 +39,14 @@ const errorCallout: CalloutProps = {
 const successCallout: CalloutProps = {
   copy: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
   isCollapsible: false,
-  headline: "Notification Title",
+  headline: "Callout Title",
   type: "success",
 };
 
 const warningCallout: CalloutProps = {
   copy: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
   isCollapsible: false,
-  headline: "Notification Title",
+  headline: "Callout Title",
   type: "warning",
 };
 
