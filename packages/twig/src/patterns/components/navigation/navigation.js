@@ -13,6 +13,15 @@ export default class Navigation {
    * @param {HTMLElement} element - REQUIRED - the module's container
    */
   constructor(element) {
+    /**
+     * Reference to the DOM element that is the root of the component
+     * @property {Object}
+     */
+    this.element = element;
+
+    // get the theme prefix
+    this.prefix = this.element.dataset.prefix;
+
     this.init();
   }
 
@@ -38,10 +47,10 @@ export default class Navigation {
    */
   cacheDomReferences() {
     /**
-     * The button for toggling Read More state
+     * The button for toggling Subnav state
      * @type {Object}
      */
-    // this.CloseButton = this.element.querySelector(`.${this.prefix}--notification--close`);
+    this.SubnavButton = this.element.querySelector(`.${this.prefix}--nav--trigger`);
 
     return this;
   }
@@ -53,7 +62,7 @@ export default class Navigation {
    * @chainable
    */
   setupHandlers() {
-    // this.onClick = this.onClick.bind(this);
+    this.subnavClick = this.handleSubnavClick.bind(this);
 
     return this;
   }
@@ -65,7 +74,19 @@ export default class Navigation {
    * @chainable
    */
   enable() {
-    // this.CloseButton.addEventListener(EVENTS.CLICK, () => this.onClick());
+    this.SubnavButton.addEventListener(EVENTS.CLICK, () => this.subnavClick());
+
+    return this;
+  }
+
+  /**
+   * Onclick interaction with the Subnav button
+   *
+   * @return {Object} Navigation A reference to the instance of the class
+   * @chainable
+   */
+  handleSubnavClick() {
+    this.element.classList.toggle(`${this.prefix}--subnav--open`);
 
     return this;
   }

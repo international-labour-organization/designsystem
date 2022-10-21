@@ -1,15 +1,15 @@
 {#
   NAVIGATION COMPONENT
 #}
-<header class="{{prefix}}--header">
+<header class="{{prefix}}--header ilo--mobile--open ilo--mobile--subnav--open" data-loadcomponent="Navigation" data-prefix="{{prefix}}">
   <div class="{{prefix}}--header--utility-bar">
     <nav class="{{prefix}}--nav--local"></nav>
     <div class="{{prefix}}--language-switcher">
       <button class="{{prefix}}--language-switcher--button" type="button">
         English
       </button>
-    </div>
-  </div>
+    </div> <!-- /.{{prefix}}--language-switcher -->
+  </div> <!-- /.{{prefix}}--header--utility-bar -->
   <div class="{{prefix}}--header--logo-bar">
     <div class="{{prefix}}--header--inner">
       <a href="/" class="{{prefix}}--header--logo-link">
@@ -19,10 +19,22 @@
         Advancing social justice, promoting decent work
         <span class="{{prefix}}--header--logo-tagline--small">ILO is a specialized agency of the United Nations</span>
       </p>
-    </div>
-  </div>
+      <button class="{{prefix}}--header--menu">Menu</button>
+    </div> <!-- /.{{prefix}}--header--inner -->
+  </div> <!-- /.{{prefix}}--header--logo-bar -->
   <div class="{{prefix}}--header--navigation">
     <div class="{{prefix}}--header--inner">
+      <div class="{{prefix}}--mobile--nav">
+        <div class="{{prefix}}--mobile--nav--logo">
+          <a href="/" class="{{prefix}}--header--logo-link">
+            <img class="{{prefix}}--header--logo" src="https://placekitten.com/g/155/56" alt="">
+          </a>
+          <button class="{{prefix}}--header--menu--close">Close</button>
+        </div> <!-- /.{{prefix}}--mobile--logo -->
+        <div class="{{prefix}}--mobile--nav--search"></div> <!-- /.{{prefix}}--mobile--search -->
+
+        <div class="{{prefix}}--mobile--nav--language--switcher"></div> <!-- /.{{prefix}}--mobile--nav--language--switcher -->
+      </div> <!-- /.{{prefix}}--mobile--nav -->
       <nav class="{{prefix}}--nav" aria-labelledby="primary-navigation">
         <h2 class="{{prefix}}--nav--label" id="primary-navigation">Primary nav list</h2>
         <ul class="{{prefix}}--nav--set">
@@ -48,11 +60,18 @@
       </nav>
       <div class="{{prefix}}--search">
         <button class="{{prefix}}--search--button" type="button">Search</button>
-      </div>
-    </div>
+      </div> <!-- /.{{prefix}}--search -->
+    </div> <!-- /.{{prefix}}--header--inner -->
     <nav class="{{prefix}}--subnav" aria-labelledby="secondary-navigation">
-      <div class="{{prefix}}--header--inner">
-        <h2 class="{{prefix}}--nav--label" id="secondary-navigation">Secondary nav list</h2>
+      <div class="{{prefix}}--subnav--inner">
+        <div class="{{prefix}}--mobile--subnav">
+          <div class="{{prefix}}--mobile--subnav--menu">
+            <button class="{{prefix}}--mobile--subnav--back" type="button">Menu Home</button>
+            <button class="{{prefix}}--header--menu--close">Close</button>
+            <h6 class="{{prefix}}--mobile--subnav--label">More</h6>
+          </div> <!-- /{{prefix}}--mobile--subnav--menu -->
+        </div> <!-- /.{{prefix}}--mobile--subnav -->
+        <h2 class="{{prefix}}--nav--label" id="secondary-navigation">Secondary Navigation</h2>
         <ul class="{{prefix}}--subnav--set">
           <li class="{{prefix}}--subnav--items">
             <a href="https://www.google.com/search?q=News" class="{{prefix}}--subnav--link">News</a>
@@ -76,12 +95,12 @@
             <a href="https://www.google.com/search?q=About+the+ilo" class="{{prefix}}--subnav--link">About the ILO</a>
           </li>
         </ul>
-      </div>
+      </div> <!-- /.{{prefix}}--subnav--inner -->
     </nav>
     <div class="{{prefix}}--search-box">
       <div class="{{prefix}}--header--inner">
         {# search box #}
       </div>
-    </div>
-  </div>
+    </div> <!-- /.{{prefix}}--search-box -->
+  </div> <!-- /.{{prefix}}--header--navigation -->
 </header>
