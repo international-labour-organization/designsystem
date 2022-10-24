@@ -93,4 +93,26 @@ navigation:
           name: "text"
           placeholder: "Search Field"
           type: "text"
+    languagelabel:
+      type: string
+      label: Language Label
+      description: Label for the language switcher
+      preview: English
+    languagecontextmenu:
+      type: object
+      label: Language Context Menu
+      description: The Language Context Menu receives a list of urls with labels
+      preview:
+        links:
+          - label: Link One
+            url: 'http://www.google.com'
+          - label: Link Two
+            url: 'http://www.google.com'
+          - endsection: 'true'
+            label: Link Three Ends A Section
+            url: 'http://www.google.com'
+          - label: Link Four
+            url: 'http://www.google.com'
+          - label: Link Five Is Slightly Longer
+            url: 'http://www.google.com'
   visibility: storybook

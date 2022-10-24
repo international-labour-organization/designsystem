@@ -9,7 +9,7 @@ localnav:
       description: Logo for the nav
       required: true
       preview:
-        image: "https://placekitten.com/g/155/56"
+        image: "https://placekitten.com/g/148/38"
         alt: Logo
     siteurl:
       type: string
@@ -42,55 +42,36 @@ localnav:
         navlabel: Primary Local nav
         mobilecloselabel: Close
         items:
-          - link: "https://www.google.com/search?q=topics"
-            label: Topics
-          - link: "https://www.google.com/search?q=countries"
-            label: Countries
-          - link: "https://www.google.com/search?q=standards"
-            label: Standards
-          - link: "https://www.google.com/search?q=statistics"
-            label: Statistics
-          - link: "https://www.google.com/search?q=about"
-            label: About
-    subnav:
-      type: object
-      label: Secondary localnav
-      description: Local nav for the sub menu
-      preview:
-        navlabel: Secondary Local nav
-        buttonlabel: More
-        mobilecloselabel: Close
-        mobilebacklabel: Menu Home
-        items:
-          - link: "https://www.google.com/search?q=News"
-            label: News
-          - link: "https://www.google.com/search?q=meeting+events"
-            label: "Meeting & Events"
-          - link: "https://www.google.com/search?q=publications"
-            label: Publications
-          - link: "https://www.google.com/search?q=projects"
-            label: Projects
-          - link: "https://www.google.com/search?q=partners"
-            label: Partners
-          - link: "https://www.google.com/search?q=Industries+Sectors"
-            label: "Industries & Sectors"
-          - link: "https://www.google.com/search?q=About+the+ilo"
-            label: "About the ILO"
-    searchlabel:
+          - link: "https://www.google.com/search?q=menu1"
+            label: Menu Item 1
+          - link: "https://www.google.com/search?q=menu2"
+            label: Menu Item 2
+          - link: "https://www.google.com/search?q=menu3"
+            label: Menu Item 3
+          - link: "https://www.google.com/search?q=menu4"
+            label: Menu Item 4
+          - link: "https://www.google.com/search?q=menu5"
+            label: Menu Item 5
+    languagelabel:
       type: string
-      label: Search label
-      description: label for search button
-      preview: Search
-    searchfield:
+      label: Language Label
+      description: Label for the language switcher
+      preview: English
+    languagecontextmenu:
       type: object
-      label: Search field object
-      description: Search field details
+      label: Language Context Menu
+      description: The Language Context Menu receives a list of urls with labels
       preview:
-        action: "http://www.ilo.org"
-        input:
-          label: "Search Field Label"
-          helper: "The search field's helper text"
-          name: "text"
-          placeholder: "Search Field"
-          type: "text"
+        links:
+          - label: Link One
+            url: 'http://www.google.com'
+          - label: Link Two
+            url: 'http://www.google.com'
+          - endsection: 'true'
+            label: Link Three Ends A Section
+            url: 'http://www.google.com'
+          - label: Link Four
+            url: 'http://www.google.com'
+          - label: Link Five Is Slightly Longer
+            url: 'http://www.google.com'
   visibility: storybook

@@ -4,9 +4,16 @@
 <header class="{{prefix}}--header" data-loadcomponent="Navigation" data-prefix="{{prefix}}">
   <div class="{{prefix}}--header--utility-bar">
     <div class="{{prefix}}--language-switcher">
-      <button class="{{prefix}}--language-switcher--button" type="button">
-        English
-      </button>
+      <div class="{{prefix}}--language-switcher--wrap">
+        <button class="{{prefix}}--language-switcher--button" type="button">
+          {{languagelabel}}
+        </button>
+        {% include '@components/contextmenu/contextmenu.twig' with {
+            links: languagecontextmenu.links,
+            prefix: prefix
+          }
+        %}
+      </div> <!-- /.{{prefix}}--language-switcher--wrap -->
     </div> <!-- /.{{prefix}}--language-switcher -->
   </div> <!-- /.{{prefix}}--header--utility-bar -->
   <div class="{{prefix}}--header--logo-bar">

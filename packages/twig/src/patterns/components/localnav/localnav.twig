@@ -4,31 +4,29 @@
 <header class="{{prefix}}--header" data-loadcomponent="Navigation" data-prefix="{{prefix}}">
   <div class="{{prefix}}--header--utility-bar {{prefix}}--header--utility-bar--local">
     <nav class="{{prefix}}--nav--local">
-      <a href="/" class="{{prefix}}--nav--local--logo-link">
-        <img src="https://placekitten.com/g/148/38" alt="" class="{{prefix}}--nav--local--logo">
+      <a href="{{siteurl}}" class="{{prefix}}--nav--local--logo-link">
+        <img src="{{logo.image}}" alt="{{logo.alt}}" class="{{prefix}}--nav--local--logo">
       </a>
+
       <ul class="{{prefix}}--nav--local--set">
-        <li class="{{prefix}}--nav--local--item">
-          <a href="https://www.google.com/search?q=menu1" class="{{prefix}}--nav--local--link">Menu Item 1</a>
-        </li>
-        <li class="{{prefix}}--nav--local--item">
-          <a href="https://www.google.com/search?q=menu2" class="{{prefix}}--nav--local--link">Menu Item 2</a>
-        </li>
-        <li class="{{prefix}}--nav--local--item">
-          <a href="https://www.google.com/search?q=menu3" class="{{prefix}}--nav--local--link">Menu Item 3</a>
-        </li>
-        <li class="{{prefix}}--nav--local--item">
-          <a href="https://www.google.com/search?q=menu4" class="{{prefix}}--nav--local--link">Menu Item 4</a>
-        </li>
-        <li class="{{prefix}}--nav--local--item">
-          <a href="https://www.google.com/search?q=menu5" class="{{prefix}}--nav--local--link">Menu Item 5</a>
-        </li>
+        {% for item in primarynav.items %}
+          <li class="{{prefix}}--nav--local--item">
+            <a href="{{item.link}}" class="{{prefix}}--nav--local--link">{{item.label}}</a>
+          </li>
+        {% endfor %}
       </ul>
     </nav>
     <div class="{{prefix}}--language-switcher">
-      <button class="{{prefix}}--language-switcher--button" type="button">
-        English
-      </button>
+      <div class="{{prefix}}--language-switcher--wrap">
+        <button class="{{prefix}}--language-switcher--button" type="button">
+          {{languagelabel}}
+        </button>
+        {% include '@components/contextmenu/contextmenu.twig' with {
+            links: languagecontextmenu.links,
+            prefix: prefix
+          }
+        %}
+      </div> <!-- /.{{prefix}}--language-switcher--wrap -->
     </div> <!-- /.{{prefix}}--language-switcher -->
   </div> <!-- /.{{prefix}}--header--utility-bar -->
 </header>

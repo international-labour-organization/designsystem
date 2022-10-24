@@ -12,7 +12,7 @@ export default class Navigation {
    *
    * @param {HTMLElement} element - REQUIRED - the module's container
    */
-  constructor(element) {
+  constructor(element, callback = null) {
     /**
      * Reference to the DOM element that is the root of the component
      * @property {Object}
@@ -21,6 +21,8 @@ export default class Navigation {
 
     // get the theme prefix
     this.prefix = this.element.dataset.prefix;
+
+    this.callback = callback;
 
     this.init();
   }
@@ -55,6 +57,8 @@ export default class Navigation {
     this.subnavBack = this.element.querySelector(`.${this.prefix}--mobile--subnav--back`);
     this.menuOpen = this.element.querySelector(`.${this.prefix}--header--menu`);
     this.searchButton = this.element.querySelector(`.${this.prefix}--search--button`);
+    this.contextButton = this.element.querySelector(`.${this.prefix}--language-switcher--button`);
+    this.contextLinks = this.element.querySelectorAll(`.${this.prefix}--context-menu--link`);
 
     return this;
   }
@@ -71,6 +75,8 @@ export default class Navigation {
     this.menuCloseClick = this.handleMenuCloseClick.bind(this);
     this.menuOpenClick = this.handleMenuOpenClick.bind(this);
     this.searchButtonClick = this.handleSearchButtonClick.bind(this);
+    this.contextButtonClick = this.handleContextButtonClick.bind(this);
+    this.contextLinkClick = this.handleContextLinkClick.bind(this);
 
     return this;
   }
@@ -110,6 +116,45 @@ export default class Navigation {
       this.menuOpen.addEventListener(EVENTS.CLICK, () => this.menuOpenClick());
       this.menuOpen.addEventListener(EVENTS.TOUCH_START, () => this.menuOpenClick());
     }
+
+    // contextButton
+    if (this.contextButton) {
+      this.contextButton.addEventListener(EVENTS.CLICK, () => this.contextButtonClick());
+      this.contextButton.addEventListener(EVENTS.TOUCH_START, () => this.contextButtonClick());
+    }
+
+    // contextLinks
+    if (this.contextLinks.length > 0 && this.callback) {
+      this.contextLinks.forEach((contextLink, i) => {
+        contextLink.addEventListener(EVENTS.CLICK, (e) => this.contextLinkClick(e));
+        contextLink.addEventListener(EVENTS.TOUCH_START, (e) => this.contextLinkClick(e));
+      });
+    }
+
+    return this;
+  }
+
+  /**
+   * Onclick interaction with the context links
+   *
+   * @return {Object} Navigation A reference to the instance of the class
+   * @chainable
+   */
+  handleContextLinkClick(event) {
+    event.preventDefault();
+    this.callback();
+
+    return this;
+  }
+
+  /**
+   * Onclick interaction with the context menu button
+   *
+   * @return {Object} Navigation A reference to the instance of the class
+   * @chainable
+   */
+  handleContextButtonClick() {
+    this.element.classList.toggle(`${this.prefix}--context--open`);
 
     return this;
   }

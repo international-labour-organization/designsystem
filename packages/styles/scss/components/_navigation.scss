@@ -363,6 +363,11 @@
     width: 32px;
   }
 
+  &--wrap {
+    display: flex;
+    position: relative;
+  }
+
   &--button {
     @include font-styles("image-credit");
     @include dataurlicon("global", $brand-ilo-white);
@@ -384,6 +389,20 @@
       @include dataurlicon("global", $brand-ilo-blue);
       background-color: $brand-ilo-light-blue;
       color: $brand-ilo-blue;
+    }
+  }
+
+  .ilo--context-menu {
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    top: calc(100% + 12px);
+    transition: opacity 150ms ease-out;
+    z-index: -1;
+
+    .ilo--context--open & {
+      opacity: 1;
+      z-index: 1;
     }
   }
 }
