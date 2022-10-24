@@ -1,6 +1,27 @@
 # ILO Design System
 
-## Status: Proof of Concept
+This monorepo contains packages comprising the Design System of the [International Labour Organization](https://www.ilo.org). Our goal is to make it easy for developers and designers to build accessible websites and web applications that implement the [ILO's brand identity](https://brand.ilo.org/hub/2).
+
+The components in this Design System are completely customizable so that they can be easily integrated into other design systems or website themes.
+
+## Status
+
+| Branch    | Current Status                                                                                                                         |
+| --------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| `main`    | ![Current release](https://github.com/international-labour-organization/designsystem/actions/workflows/release.yml/badge.svg)          |
+| `develop` | ![Next release](https://github.com/international-labour-organization/designsystem/actions/workflows/test.yml/badge.svg?branch=develop) |
+
+## Flavors
+
+ILO Design System is currently available in two different flavors.
+
+### [⚛️ React](./packages/react/README.md)
+
+Components for use in applications implemented in [React](https://reactjs.org/), a JavaScript library for building User Interfaces.
+
+### [🌱 Twig](./packages/twig/README.md)
+
+Components for use in applications that render pages with [Twig](https://twig.symfony.com/), a template engine for PHP.
 
 ## Packages
 
@@ -15,40 +36,6 @@
 - [themes](./packages/themes)
 - [twig](./packages/twig)
 
-## Getting Started
+## Contribution
 
-Set the appropriate node version using [nvm](https://github.com/nvm-sh/nvm).
-
-```bash
-nvm use
-```
-
-If not yet installed, install [pnpm](https://pnpm.io/).
-
-```bash
-npm i -g pnpm
-```
-
-Install dependencies using pnpm.
-
-```bash
-pnpm recursive install
-```
-
-Build local packages.
-
-```bash
-pnpm run build
-```
-
-Start up storybook.
-
-```bash
-pnpm run start
-```
-
-Run tests.
-
-```bash
-pnpm run test
-```
+This is an open-source project and the ILO welcomes your contributions! Plese review our [contribution guidelines](./contributing.md) to make your first pull request as smooth as possible.
