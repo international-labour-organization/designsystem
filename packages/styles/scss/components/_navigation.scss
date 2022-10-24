@@ -12,6 +12,10 @@
     height: 100vh;
   }
 
+  @include breakpoint("large") {
+    overflow: visible;
+  }
+
   &--nav {
     background: $brand-ilo-dark-blue;
   }
@@ -50,14 +54,16 @@
       background-size: 32px;
       border: none;
       cursor: pointer;
+      height: 32px;
       overflow: hidden;
       position: relative;
       text-indent: -999%;
       transition: all 150ms ease-out;
+      width: 32px;
 
       &:hover,
       &:focus {
-        @include dataurlicon("burger", $brand-ilo-blue);
+        @include dataurlicon("close", $brand-ilo-blue);
         background-color: $brand-ilo-light-blue;
         background-position: center;
         background-repeat: no-repeat;
@@ -100,7 +106,7 @@
     @include breakpoint("large") {
       background: $brand-ilo-blue;
       display: flex;
-      justify-content: space-between;
+      justify-content: flex-end;
       width: 100%;
     }
   }
@@ -229,8 +235,8 @@
   }
 
   &--trigger {
-    @include font-styles("nav-bold-b-sm");
     @include dataurlicon("arrowright", $brand-ilo-dark-blue);
+    @include font-styles("nav-md");
 
     appearance: none;
     background-color: $brand-ilo-white;
@@ -256,6 +262,9 @@
     }
 
     @include breakpoint("large") {
+      @include dataurlicon("add", $brand-ilo-white);
+      @include font-styles("nav-bold-b-sm");
+
       background-color: $brand-ilo-dark-blue;
       background-position: 90% 55%;
       background-repeat: no-repeat;
@@ -281,10 +290,49 @@
       }
     }
   }
+
+  &--local {
+    // display: flex;
+    display: none;
+    justify-content: space-between;
+    padding: 0 0 0 max((100% - 1260px) / 2, 20px);
+
+    &--logo-link {
+      display: flex;
+    }
+
+    &--set {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &--item {
+      @include font-styles("nav-md");
+      color: $brand-ilo-white;
+      font-family: $fonts-display;
+      font-weight: 500;
+    }
+
+    &--link {
+      background: $brand-ilo-blue;
+      color: $brand-ilo-white;
+      display: flex;
+      padding: 13px 24px;
+      text-decoration: none;
+      transition: all 150ms ease-out;
+
+      &:hover,
+      &:focus {
+        background: $brand-ilo-light-blue;
+        color: $brand-ilo-blue;
+      }
+    }
+  }
 }
 
 .ilo--mobile--nav {
   &--logo {
+    align-items: center;
     display: flex;
     justify-content: space-between;
   }
@@ -339,19 +387,20 @@
 
 .ilo--subnav {
   background: $brand-ilo-white;
-  padding: 32px 0;
+  padding: 0 0 32px;
   position: absolute;
   top: 0;
   transform: translateX(100%);
   transition: transform 225ms ease-out;
   width: 100%;
 
-  .ilo--mobile--subnav--open & {
+  .ilo--subnav--open & {
     transform: translateX(0);
   }
 
   @include breakpoint("large") {
     left: 0;
+    padding: 32px 0;
     top: auto;
     transform: translateY(-100%);
     transition: transform 225ms ease-out;
@@ -411,6 +460,56 @@
     display: none;
   }
 
+  &--menu {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  &--back {
+    @include font-styles("nav-md");
+    background-color: $brand-ilo-white;
+    border: none;
+    color: $brand-ilo-dark-blue;
+    cursor: pointer;
+    padding: 16px 16px 16px 32px;
+    position: relative;
+    transition: all 150ms ease-out;
+
+    &::before {
+      @include dataurlicon("arrowright", $brand-ilo-dark-blue);
+      background-position: 10% center;
+      background-repeat: no-repeat;
+      background-size: 24px;
+      content: "";
+      display: block;
+      height: 24px;
+      left: 0;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%) rotate(180deg);
+      width: 24px;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: $brand-ilo-light-blue;
+      color: $brand-ilo-blue;
+
+      &::before {
+        @include dataurlicon("arrowright", $brand-ilo-blue);
+        background-position: 10% center;
+        background-repeat: no-repeat;
+        background-size: 24px;
+      }
+    }
+
+    @include breakpoint("large") {
+      display: none;
+    }
+  }
+
   &--label {
     @include font-styles("headline-6");
     border-bottom: 3px solid $brand-ilo-grey-light;
@@ -419,11 +518,40 @@
     font-weight: 700;
     margin-bottom: 16px;
     padding: 20px 8px;
+    width: 100%;
   }
 }
 
 .ilo--search-box {
   background: $brand-ilo-white;
+  position: absolute;
+  top: 0;
+  transform: translateX(100%);
+  transition: transform 225ms ease-out;
+  width: 100%;
+
+  .ilo--search--open & {
+    transform: translateX(0);
+  }
+
+  @include breakpoint("large") {
+    left: 0;
+    padding: 32px 0;
+    top: auto;
+    transform: translateY(-100%);
+    transition: transform 225ms ease-out;
+    z-index: -1;
+
+    .ilo--header.ilo--search--open & {
+      transform: translateY(0);
+    }
+  }
+
+  .ilo--header--inner {
+    align-items: center;
+    justify-content: center;
+    padding: 80px 20px;
+  }
 }
 
 .ilo--search {
@@ -452,6 +580,20 @@
     &:focus {
       @include dataurlicon("search", $brand-ilo-blue);
       background-color: $brand-ilo-light-blue;
+    }
+
+    .ilo--search--open & {
+      @include dataurlicon("add", $brand-ilo-dark-blue);
+      background-color: $brand-ilo-white;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 21.5px 21.5px;
+
+      &:hover,
+      &:focus {
+        @include dataurlicon("add", $brand-ilo-blue);
+        background-color: $brand-ilo-light-blue;
+      }
     }
   }
 }
