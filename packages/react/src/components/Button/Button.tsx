@@ -29,8 +29,8 @@ const Button: FC<ButtonProps> = ({
     [baseClass]: true,
     [`${baseClass}--${size}`]: size,
     [`${baseClass}--${type}`]: type,
-    [`icon icon__position--${icoPos}`]: icon,
-    [`icon--only`]: icononly,
+    [`icon icon__position--${icoPos}`]: icon && !icononly,
+    [`icon icon--only`]: icon && icononly,
   });
 
   /**

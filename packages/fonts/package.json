@@ -1,7 +1,7 @@
 {
   "name": "@ilo-org/fonts",
   "description": "ILO brand fonts and fontface declarations",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "license": "Apache-2.0",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -9,6 +9,9 @@
     "index.scss",
     "assets"
   ],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "format": "prettier --check . --ignore-path ../../.prettierignore",
     "format:fix": "prettier --write . --ignore-path ../../.prettierignore",

@@ -143,12 +143,40 @@ export const WarningCallout = WarningCalloutTemplate.bind({});
 
 // enumerate the props for the Info Callout
 InfoCallout.storyName = "Info Callout";
+InfoCallout.parameters = {
+  docs: {
+    description: {
+      story: "The Info Callout is for",
+    },
+  },
+};
 
 // enumerate the props Error Callout
 ErrorCallout.storyName = "Error Callout";
+ErrorCallout.parameters = {
+  docs: {
+    description: {
+      story: "The Error Callout is for",
+    },
+  },
+};
 
 // enumerate the props Success Callout
 SuccessCallout.storyName = "Success Callout";
+SuccessCallout.parameters = {
+  docs: {
+    description: {
+      story: "The Success Callout is for",
+    },
+  },
+};
 
 // enumerate the props Warning Callout
 WarningCallout.storyName = "Warning Callout";
+WarningCallout.parameters = {
+  docs: {
+    description: {
+      story: "The Warning Callout is for",
+    },
+  },
+};

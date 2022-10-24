@@ -1,18 +1,23 @@
 {
   "name": "@ilo-org/twig",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "license": "Apache-2.0",
-  "description": "Twig Storybook via Wingsuit",
+  "description": "Twig components for the ILO's Design System",
   "main": "",
+  "publishConfig": {
+    "access": "public"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/international-labour-organization/designsystem.git",
-    "directory": "packages/twig-storybook"
+    "directory": "packages/twig"
   },
   "keywords": [
-    "storybook",
     "ui_patterns",
-    "prototyping"
+    "prototyping",
+    "twig",
+    "designsystem",
+    "components"
   ],
   "scripts": {
     "storybook": "node importprefix.js; node importsvgs.js; start-storybook --config-dir apps/storybook",
@@ -29,7 +34,8 @@
     "ci": "npm run lint && npm run build:drupal",
     "import:prefix": "node importprefix.js",
     "import:svgs": "node importsvgs.js",
-    "output": "node outputtwigs.js"
+    "output": "node outputtwigs.js",
+    "release": ""
   },
   "dependencies": {
     "@ilo-org/fonts": "workspace:*",

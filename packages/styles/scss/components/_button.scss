@@ -50,14 +50,6 @@
     }
 
     &--only {
-      height: px-to-rem($spacing-padding-3);
-      width: px-to-rem($spacing-padding-3);
-
-      .ilo--icon {
-        left: 0;
-        top: 0;
-      }
-
       .button__label {
         @include isVisuallyHidden();
       }
@@ -69,6 +61,16 @@
     .button__label {
       @include boxpadding("button", "large");
       @include font-styles("button-large");
+    }
+
+    &.icon--only {
+      height: px-to-rem(45px);
+      width: px-to-rem(45px);
+
+      .ilo--icon {
+        left: px-to-rem(4.5px);
+        top: px-to-rem(4.5px);
+      }
     }
   }
 
@@ -110,6 +112,16 @@
         }
       }
     }
+
+    &.icon--only {
+      height: px-to-rem(36px);
+      width: px-to-rem(36px);
+
+      .ilo--icon {
+        left: px-to-rem(2px);
+        top: px-to-rem(2px);
+      }
+    }
   }
 
   &--small {
@@ -148,6 +160,16 @@
           right: calc($spacing-icons-icon-padding-sm - 9px);
           top: calc($spacing-boxpadding-button-icon-small-top - 4px);
         }
+      }
+    }
+
+    &.icon--only {
+      height: px-to-rem(26px);
+      width: px-to-rem(26px);
+
+      .ilo--icon {
+        left: px-to-rem(0.5px);
+        top: px-to-rem(0.5px);
       }
     }
   }
@@ -267,6 +289,25 @@
       &.ilo--button--small {
         box-shadow: none;
       }
+    }
+  }
+}
+
+[id*="story--components-button"] div {
+  .ilo--button {
+    margin-right: 10px;
+    margin-bottom: 10px;
+
+    &--large.icon--only {
+      transform: translateY(-6px);
+    }
+
+    &--medium.icon--only {
+      transform: translateY(-5px);
+    }
+
+    &--small.icon--only {
+      transform: translateY(-5px);
     }
   }
 }
