@@ -4,15 +4,12 @@
 
 .ilo--cardgroup {
   $card: ".ilo--card";
-  background: #e5e5e5;
-  padding: 112px 40px;
 
   &--inner {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     margin: auto;
-    max-width: 1189px;
 
     #{$card} {
       width: 100%;
