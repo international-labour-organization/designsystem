@@ -108,6 +108,10 @@
       display: flex;
       justify-content: flex-end;
       width: 100%;
+
+      &--local {
+        justify-content: space-between;
+      }
     }
   }
 
@@ -292,8 +296,7 @@
   }
 
   &--local {
-    // display: flex;
-    display: none;
+    display: flex;
     justify-content: space-between;
     padding: 0 0 0 max((100% - 1260px) / 2, 20px);
 
@@ -344,20 +347,20 @@
 
 .ilo--language-switcher {
   background: $brand-ilo-dark-blue;
+  display: flex;
   padding: 0 max((100% - 1300px) / 2, 20px) 0 0;
   position: relative;
 
   &::before {
+    background: $brand-ilo-dark-blue;
+    clip-path: polygon(0 0, 100% 0, 100% 100%);
     content: "";
     display: block;
-    border-style: solid;
-    border-width: 0 32px 32px 0;
-    border-color: transparent $brand-ilo-dark-blue transparent transparent;
-    height: 0;
+    height: 100%;
     left: -32px;
     position: absolute;
     top: 0;
-    width: 0;
+    width: 32px;
   }
 
   &--button {

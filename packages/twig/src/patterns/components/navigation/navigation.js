@@ -106,8 +106,10 @@ export default class Navigation {
     }
 
     // menuOpen
-    this.menuOpen.addEventListener(EVENTS.CLICK, () => this.menuOpenClick());
-    this.menuOpen.addEventListener(EVENTS.TOUCH_START, () => this.menuOpenClick());
+    if (this.menuOpen) {
+      this.menuOpen.addEventListener(EVENTS.CLICK, () => this.menuOpenClick());
+      this.menuOpen.addEventListener(EVENTS.TOUCH_START, () => this.menuOpenClick());
+    }
 
     return this;
   }
