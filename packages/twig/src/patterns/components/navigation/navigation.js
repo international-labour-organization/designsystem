@@ -142,7 +142,7 @@ export default class Navigation {
    */
   handleContextLinkClick(event) {
     event.preventDefault();
-    this.callback();
+    this.callback(event);
 
     return this;
   }
