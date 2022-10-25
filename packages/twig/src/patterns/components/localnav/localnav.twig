@@ -1,0 +1,32 @@
+{#
+  LOCALNAV COMPONENT
+#}
+<header class="{{prefix}}--header" data-loadcomponent="Navigation" data-prefix="{{prefix}}">
+  <div class="{{prefix}}--header--utility-bar {{prefix}}--header--utility-bar--local">
+    <nav class="{{prefix}}--nav--local">
+      <a href="{{siteurl}}" class="{{prefix}}--nav--local--logo-link">
+        <img src="{{logo.image}}" alt="{{logo.alt}}" class="{{prefix}}--nav--local--logo">
+      </a>
+
+      <ul class="{{prefix}}--nav--local--set">
+        {% for item in primarynav.items %}
+          <li class="{{prefix}}--nav--local--item">
+            <a href="{{item.link}}" class="{{prefix}}--nav--local--link">{{item.label}}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </nav>
+    <div class="{{prefix}}--language-switcher">
+      <div class="{{prefix}}--language-switcher--wrap">
+        <button class="{{prefix}}--language-switcher--button" type="button">
+          {{languagelabel}}
+        </button>
+        {% include '@components/contextmenu/contextmenu.twig' with {
+            links: languagecontextmenu.links,
+            prefix: prefix
+          }
+        %}
+      </div> <!-- /.{{prefix}}--language-switcher--wrap -->
+    </div> <!-- /.{{prefix}}--language-switcher -->
+  </div> <!-- /.{{prefix}}--header--utility-bar -->
+</header>
