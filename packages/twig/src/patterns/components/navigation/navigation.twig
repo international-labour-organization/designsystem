@@ -1,0 +1,96 @@
+{#
+  NAVIGATION COMPONENT
+#}
+<header class="{{prefix}}--header" data-loadcomponent="Navigation" data-prefix="{{prefix}}">
+  <div class="{{prefix}}--header--utility-bar">
+    <div class="{{prefix}}--language-switcher">
+      <div class="{{prefix}}--language-switcher--wrap">
+        <button class="{{prefix}}--language-switcher--button" type="button">
+          {{languagelabel}}
+        </button>
+        {% include '@components/contextmenu/contextmenu.twig' with {
+            links: languagecontextmenu.links,
+            prefix: prefix
+          }
+        %}
+      </div> <!-- /.{{prefix}}--language-switcher--wrap -->
+    </div> <!-- /.{{prefix}}--language-switcher -->
+  </div> <!-- /.{{prefix}}--header--utility-bar -->
+  <div class="{{prefix}}--header--logo-bar">
+    <div class="{{prefix}}--header--inner">
+      <a href="{{siteurl}}" class="{{prefix}}--header--logo-link">
+        <img class="{{prefix}}--header--logo" src="{{logo.image}}" alt="{{logo.alt}}">
+      </a>
+      <p class="{{prefix}}--header--logo-tagline">
+        {{tagline.tag}}
+        <span class="{{prefix}}--header--logo-tagline--small">{{tagline.small}}</span>
+      </p>
+      <button class="{{prefix}}--header--menu">{{menulabel}}</button>
+    </div> <!-- /.{{prefix}}--header--inner -->
+  </div> <!-- /.{{prefix}}--header--logo-bar -->
+  <div class="{{prefix}}--header--navigation">
+    <div class="{{prefix}}--header--inner">
+      <div class="{{prefix}}--mobile--nav">
+        <div class="{{prefix}}--mobile--nav--logo">
+          <a href="{{siteurl}}" class="{{prefix}}--header--logo-link">
+            <img class="{{prefix}}--header--logo" src="{{logo.image}}" alt="{{logo.alt}}">
+          </a>
+          <button class="{{prefix}}--header--menu--close">{{menucloselabel}}</button>
+        </div> <!-- /.{{prefix}}--mobile--logo -->
+        <div class="{{prefix}}--mobile--nav--search"></div> <!-- /.{{prefix}}--mobile--search -->
+
+        <div class="{{prefix}}--mobile--nav--language--switcher"></div> <!-- /.{{prefix}}--mobile--nav--language--switcher -->
+      </div> <!-- /.{{prefix}}--mobile--nav -->
+      <nav class="{{prefix}}--nav" aria-labelledby="primary-navigation">
+        <h2 class="{{prefix}}--nav--label" id="primary-navigation">{{primarynav.navlabel}}</h2>
+        <ul class="{{prefix}}--nav--set">
+          {% for item in primarynav.items %}
+            <li class="{{prefix}}--nav--items">
+              <a href="{{item.link}}" class="{{prefix}}--nav--link">{{item.label}}</a>
+            </li>
+          {% endfor %}
+          {% if subnav %}
+            <li class="{{prefix}}--nav--items">
+              <button class="{{prefix}}--nav--trigger">{{subnav.buttonlabel}}</button>
+            </li>
+          {% endif %}
+        </ul>
+      </nav>
+      <div class="{{prefix}}--search">
+        <button class="{{prefix}}--search--button" type="button">{{searchlabel}}</button>
+      </div> <!-- /.{{prefix}}--search -->
+    </div> <!-- /.{{prefix}}--header--inner -->
+    {% if subnav %}
+      <nav class="{{prefix}}--subnav" aria-labelledby="secondary-navigation">
+        <div class="{{prefix}}--subnav--inner">
+          <div class="{{prefix}}--mobile--subnav">
+            <div class="{{prefix}}--mobile--subnav--menu">
+              <button class="{{prefix}}--mobile--subnav--back" type="button">{{subnav.mobilebacklabel}}</button>
+              <button class="{{prefix}}--header--menu--close">{{subnav.mobilecloselabel}}</button>
+              <h6 class="{{prefix}}--mobile--subnav--label">{{subnav.buttonlabel}}</h6>
+            </div> <!-- /{{prefix}}--mobile--subnav--menu -->
+          </div> <!-- /.{{prefix}}--mobile--subnav -->
+          <h2 class="{{prefix}}--nav--label" id="secondary-navigation">{{subnav.navlabel}}</h2>
+          <ul class="{{prefix}}--subnav--set">
+            {% for item in subnav.items %}
+              <li class="{{prefix}}--subnav--items">
+                <a href="{{item.link}}" class="{{prefix}}--subnav--link">{{item.label}}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        </div> <!-- /.{{prefix}}--subnav--inner -->
+      </nav>
+    {% endif %}
+
+    <div class="{{prefix}}--search-box">
+      <div class="{{prefix}}--header--inner">
+        {% include '@components/searchfield/searchfield.twig' with {
+            input: searchfield.input,
+            action: searchfield.action,
+            prefix: prefix
+          }
+        %}
+      </div>
+    </div> <!-- /.{{prefix}}--search-box -->
+  </div> <!-- /.{{prefix}}--header--navigation -->
+</header>

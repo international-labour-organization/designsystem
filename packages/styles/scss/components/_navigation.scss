@@ -1,0 +1,621 @@
+@use "../tokens" as *;
+@use "../functions" as *;
+@import "../mixins";
+
+.ilo--header {
+  $self: &;
+  overflow-x: hidden;
+  position: relative;
+  z-index: 4;
+
+  &.ilo--mobile--open {
+    height: 100vh;
+  }
+
+  @include breakpoint("large") {
+    overflow: visible;
+  }
+
+  &--nav {
+    background: $brand-ilo-dark-blue;
+  }
+
+  &--menu {
+    @include dataurlicon("burger", $brand-ilo-white);
+    background-color: transparent;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 32px;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    text-indent: -999%;
+    transition: all 150ms ease-out;
+
+    &:hover,
+    &:focus {
+      @include dataurlicon("burger", $brand-ilo-blue);
+      background-color: $brand-ilo-light-blue;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 32px;
+    }
+
+    @include breakpoint("large") {
+      display: none;
+    }
+
+    &--close {
+      @include dataurlicon("close", $brand-ilo-dark-blue);
+      background-color: $brand-ilo-grey-light;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 32px;
+      border: none;
+      cursor: pointer;
+      height: 32px;
+      overflow: hidden;
+      position: relative;
+      text-indent: -999%;
+      transition: all 150ms ease-out;
+      width: 32px;
+
+      &:hover,
+      &:focus {
+        @include dataurlicon("close", $brand-ilo-blue);
+        background-color: $brand-ilo-light-blue;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 32px;
+      }
+
+      @include breakpoint("large") {
+        display: none;
+      }
+    }
+  }
+
+  &--logo {
+    display: block;
+
+    &-link {
+      display: block;
+      padding: 16px 0;
+    }
+  }
+
+  &--logo-bar {
+    background: $brand-ilo-blue;
+    display: flex;
+    width: 100%;
+
+    .ilo--header--inner {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    @include breakpoint("large") {
+      background: $brand-ilo-blue;
+    }
+  }
+
+  &--utility-bar {
+    display: none;
+
+    @include breakpoint("large") {
+      background: $brand-ilo-blue;
+      display: flex;
+      justify-content: flex-end;
+      width: 100%;
+
+      &--local {
+        justify-content: space-between;
+      }
+    }
+  }
+
+  &--inner {
+    margin: auto;
+    max-width: 1300px;
+    padding: 0 16px;
+    width: 100%;
+
+    @include breakpoint("large") {
+      display: flex;
+      justify-content: space-between;
+      padding: 0 20px;
+    }
+  }
+
+  &--navigation {
+    background: $brand-ilo-white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translateX(100%);
+    transition: transform 225ms ease-out;
+    width: 100%;
+
+    .ilo--header.ilo--mobile--open & {
+      transform: translateX(0);
+    }
+
+    @include breakpoint("large") {
+      background: $brand-ilo-dark-blue;
+      position: static;
+      transform: none;
+    }
+  }
+
+  &--logo-tagline {
+    @include font-styles("headline-6");
+    color: $brand-ilo-white;
+    display: none;
+    font-family: $fonts-display;
+    font-weight: 700;
+    padding: 20px 0;
+    text-align: right;
+
+    @include breakpoint("large") {
+      display: block;
+    }
+
+    &--small {
+      @include font-styles("tagline");
+      display: block;
+      font-weight: 500;
+    }
+  }
+}
+
+.ilo--nav {
+  width: 100%;
+
+  @include breakpoint("large") {
+    width: auto;
+  }
+
+  &--label:not(:focus):not(:active) {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+  }
+
+  &--set {
+    width: 100%;
+
+    @include breakpoint("large") {
+      display: flex;
+      width: auto;
+    }
+  }
+
+  &--items {
+    @include font-styles("nav-md");
+    font-family: $fonts-display;
+    font-weight: 500;
+
+    @include breakpoint("large") {
+      display: flex;
+      align-items: center;
+
+      &:first-of-type {
+        margin-left: -20px;
+      }
+    }
+  }
+
+  &--link {
+    color: $brand-ilo-dark-blue;
+    display: block;
+    padding: 16px 36px 16px 8px;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      background: $brand-ilo-light-blue;
+      color: $brand-ilo-blue;
+      text-decoration: none;
+    }
+
+    @include breakpoint("large") {
+      background: $brand-ilo-dark-blue;
+      color: $brand-ilo-white;
+      display: inline-block;
+      padding: 21.5px 24px 20.5px;
+
+      &:hover,
+      &:focus {
+        background: $brand-ilo-white;
+        color: $brand-ilo-blue;
+        text-decoration: none;
+      }
+    }
+  }
+
+  &--trigger {
+    @include dataurlicon("arrowright", $brand-ilo-dark-blue);
+    @include font-styles("nav-md");
+
+    appearance: none;
+    background-color: $brand-ilo-white;
+    background-position: 90% 55%;
+    background-repeat: no-repeat;
+    background-size: 16px;
+    border: none;
+    color: $brand-ilo-dark-blue;
+    cursor: pointer;
+    display: block;
+    font-family: $fonts-display;
+    font-weight: 500;
+    padding: 16px 36px 16px 8px;
+    text-align: left;
+    transition: all 150ms ease-out;
+    width: 100%;
+
+    &:focus,
+    &:hover {
+      @include dataurlicon("arrowright", $brand-ilo-blue);
+      background-color: $brand-ilo-light-blue;
+      color: $brand-ilo-blue;
+    }
+
+    @include breakpoint("large") {
+      @include dataurlicon("add", $brand-ilo-white);
+      @include font-styles("nav-bold-b-sm");
+
+      background-color: $brand-ilo-dark-blue;
+      background-position: 90% 55%;
+      background-repeat: no-repeat;
+      background-size: 20px;
+      border: 1.5px solid rgba($brand-ilo-grey-ui, 0.5);
+      border-radius: 2px;
+      color: $brand-ilo-white;
+      cursor: pointer;
+      display: inline-block;
+      font-weight: 700;
+      margin-left: 20px;
+      padding: 7px 32px 5px 15px;
+      text-align: center;
+      transition: all 150ms ease-out;
+      width: auto;
+
+      &:focus,
+      &:hover {
+        @include dataurlicon("add", $brand-ilo-blue);
+        background-color: $brand-ilo-white;
+        border-color: $brand-ilo-white;
+        color: $brand-ilo-blue;
+      }
+    }
+  }
+
+  &--local {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 0 0 max((100% - 1260px) / 2, 20px);
+
+    &--logo-link {
+      display: flex;
+    }
+
+    &--set {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &--item {
+      @include font-styles("nav-md");
+      color: $brand-ilo-white;
+      font-family: $fonts-display;
+      font-weight: 500;
+    }
+
+    &--link {
+      background: $brand-ilo-blue;
+      color: $brand-ilo-white;
+      display: flex;
+      padding: 13px 24px;
+      text-decoration: none;
+      transition: all 150ms ease-out;
+
+      &:hover,
+      &:focus {
+        background: $brand-ilo-light-blue;
+        color: $brand-ilo-blue;
+      }
+    }
+  }
+}
+
+.ilo--mobile--nav {
+  &--logo {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  @include breakpoint("large") {
+    display: none;
+  }
+}
+
+.ilo--language-switcher {
+  background: $brand-ilo-dark-blue;
+  display: flex;
+  padding: 0 max((100% - 1300px) / 2, 20px) 0 0;
+  position: relative;
+
+  &::before {
+    background: $brand-ilo-dark-blue;
+    clip-path: polygon(0 0, 100% 0, 100% 100%);
+    content: "";
+    display: block;
+    height: 100%;
+    left: -32px;
+    position: absolute;
+    top: 0;
+    width: 32px;
+  }
+
+  &--wrap {
+    display: flex;
+    position: relative;
+  }
+
+  &--button {
+    @include font-styles("image-credit");
+    @include dataurlicon("global", $brand-ilo-white);
+    appearance: none;
+    background-color: $brand-ilo-dark-blue;
+    background-repeat: no-repeat;
+    background-position: 15px center;
+    background-size: 16px 16px;
+    border: none;
+    color: $brand-ilo-white;
+    cursor: pointer;
+    display: block;
+    font-weight: 500;
+    padding: 8px 30px 8px 40px;
+    transition: all 150ms ease-out;
+
+    &:hover,
+    &:focus {
+      @include dataurlicon("global", $brand-ilo-blue);
+      background-color: $brand-ilo-light-blue;
+      color: $brand-ilo-blue;
+    }
+  }
+
+  .ilo--context-menu {
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    top: calc(100% + 12px);
+    transition: opacity 150ms ease-out;
+    z-index: -1;
+
+    .ilo--context--open & {
+      opacity: 1;
+      z-index: 1;
+    }
+  }
+}
+
+.ilo--subnav {
+  background: $brand-ilo-white;
+  padding: 0 0 32px;
+  position: absolute;
+  top: 0;
+  transform: translateX(100%);
+  transition: transform 225ms ease-out;
+  width: 100%;
+
+  .ilo--subnav--open & {
+    transform: translateX(0);
+  }
+
+  @include breakpoint("large") {
+    left: 0;
+    padding: 32px 0;
+    top: auto;
+    transform: translateY(-100%);
+    transition: transform 225ms ease-out;
+    z-index: -1;
+
+    .ilo--header.ilo--subnav--open & {
+      transform: translateY(0);
+    }
+  }
+
+  &--inner {
+    margin: auto;
+    max-width: 1300px;
+    padding: 0 20px;
+    width: 100%;
+
+    @include breakpoint("large") {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+
+  &--set {
+    display: grid;
+    grid-template-columns: 1fr;
+    width: 100%;
+
+    @include breakpoint("large") {
+      grid-auto-flow: column;
+      grid-template-columns: repeat(5, 1fr);
+      grid-template-rows: repeat(5, 1fr);
+    }
+  }
+
+  &--link {
+    @include font-styles("nav-md");
+    background: $brand-ilo-white;
+    color: $brand-ilo-dark-blue;
+    display: flex;
+    font-family: $fonts-display;
+    font-weight: 500;
+    padding: 18px 8px;
+    text-decoration: none;
+    transition: all 150ms ease-out;
+
+    &:hover,
+    &:focus {
+      background: $brand-ilo-light-blue;
+      color: $brand-ilo-blue;
+      text-decoration: none;
+    }
+  }
+}
+
+.ilo--mobile--subnav {
+  @include breakpoint("large") {
+    display: none;
+  }
+
+  &--menu {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  &--back {
+    @include font-styles("nav-md");
+    background-color: $brand-ilo-white;
+    border: none;
+    color: $brand-ilo-dark-blue;
+    cursor: pointer;
+    padding: 16px 16px 16px 32px;
+    position: relative;
+    transition: all 150ms ease-out;
+
+    &::before {
+      @include dataurlicon("arrowright", $brand-ilo-dark-blue);
+      background-position: 10% center;
+      background-repeat: no-repeat;
+      background-size: 24px;
+      content: "";
+      display: block;
+      height: 24px;
+      left: 0;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%) rotate(180deg);
+      width: 24px;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: $brand-ilo-light-blue;
+      color: $brand-ilo-blue;
+
+      &::before {
+        @include dataurlicon("arrowright", $brand-ilo-blue);
+        background-position: 10% center;
+        background-repeat: no-repeat;
+        background-size: 24px;
+      }
+    }
+
+    @include breakpoint("large") {
+      display: none;
+    }
+  }
+
+  &--label {
+    @include font-styles("headline-6");
+    border-bottom: 3px solid $brand-ilo-grey-light;
+    color: $brand-ilo-grey-charcoal;
+    font-family: $fonts-display;
+    font-weight: 700;
+    margin-bottom: 16px;
+    padding: 20px 8px;
+    width: 100%;
+  }
+}
+
+.ilo--search-box {
+  background: $brand-ilo-white;
+  position: absolute;
+  top: 0;
+  transform: translateX(100%);
+  transition: transform 225ms ease-out;
+  width: 100%;
+
+  .ilo--search--open & {
+    transform: translateX(0);
+  }
+
+  @include breakpoint("large") {
+    left: 0;
+    padding: 32px 0;
+    top: auto;
+    transform: translateY(-100%);
+    transition: transform 225ms ease-out;
+    z-index: -1;
+
+    .ilo--header.ilo--search--open & {
+      transform: translateY(0);
+    }
+  }
+
+  .ilo--header--inner {
+    align-items: center;
+    justify-content: center;
+    padding: 80px 20px;
+  }
+}
+
+.ilo--search {
+  display: none;
+
+  @include breakpoint("large") {
+    display: flex;
+  }
+
+  &--button {
+    @include dataurlicon("search", $brand-ilo-white);
+    appearance: none;
+    background-color: transparent;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 21.5px 21.5px;
+    border: none;
+    border-radius: 0;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    text-indent: -999%;
+    transition: all 150ms ease-out;
+
+    &:hover,
+    &:focus {
+      @include dataurlicon("search", $brand-ilo-blue);
+      background-color: $brand-ilo-light-blue;
+    }
+
+    .ilo--search--open & {
+      @include dataurlicon("add", $brand-ilo-dark-blue);
+      background-color: $brand-ilo-white;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: 21.5px 21.5px;
+
+      &:hover,
+      &:focus {
+        @include dataurlicon("add", $brand-ilo-blue);
+        background-color: $brand-ilo-light-blue;
+      }
+    }
+  }
+}
