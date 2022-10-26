@@ -34,7 +34,7 @@ export default class Callout {
    */
   init() {
     this.cacheDomReferences().setupHandlers().enable();
-    if (!this.toggleOpen) {
+    if (!this.toggleOpen && this.toggleCollapsible) {
       this.calcHeight();
     }
 
@@ -53,7 +53,8 @@ export default class Callout {
      * @type {Object}
      */
     this.toggle = this.element.querySelector('.ilo--callout--toggle');
-    this.toggleOpen = this.element.classList.value.includes('ilo--callout--open');
+    this.toggleOpen = this.element.classList.value.includes('callout--open');
+    this.toggleCollapsible = this.element.classList.value.includes('callout--collapse');
     if (this.toggle) {
       this.toggleLabel = this.toggle.querySelector('.ilo--callout--button-text');
       this.toggleLabelOpen = this.toggle.getAttribute('data-open');
@@ -85,12 +86,10 @@ export default class Callout {
    */
   enable() {
     if (this.toggle) {
-      console.log('this is toggle');
       this.toggle.addEventListener(EVENTS.CLICK, this.onToggle);
     }
 
     if (this.button) {
-      console.log('this is button');
       this.button.addEventListener(EVENTS.CLICK, this.onClick);
     }
 
