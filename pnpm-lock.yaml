@@ -166,7 +166,7 @@ importers:
       '@carbon/icon-helpers': ^10.19.0
       '@carbon/telemetry': 0.0.0-alpha.6
       '@ilo-org/icon-build-helpers': workspace:0.0.1
-      '@ilo-org/icons': workspace:0.0.1
+      '@ilo-org/icons': workspace:0.1.0
       babel-plugin-dev-expression: ^0.2.3
       browserslist-config-carbon: ^10.6.1
       prop-types: ^15.7.2
@@ -205,9 +205,6 @@ importers:
       '@storybook/addons': 5.3.22
       '@storybook/react': 5.3.21_f9cc32c1e359a5ae50c86cf4f80cf65c
       babel-loader: 8.2.5_@babel+core@7.17.9
-
-  packages/icons-react/next:
-    specifiers: {}
 
   packages/react:
     specifiers:
