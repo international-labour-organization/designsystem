@@ -103,17 +103,6 @@
     margin-bottom: px-to-rem(45px);
   }
 
-  .social--links--item {
-    height: px-to-rem(16px);
-    margin-right: px-to-rem(20px);
-    position: relative;
-    width: px-to-rem(16px);
-
-    &:last-of-type {
-      margin-right: none;
-    }
-  }
-
   .social--links--link {
     background-repeat: no-repeat;
     background-size: contain;
@@ -141,6 +130,45 @@
 
     &.youtube {
       @include dataurlicon("youtube", $color-base-neutrals-white);
+    }
+  }
+
+  .social--links--item {
+    align-items: center;
+    background-color: transparent;
+    border-radius: px-to-rem(3px);
+    display: flex;
+    height: px-to-rem(24px);
+    justify-content: center;
+    margin-right: px-to-rem(20px);
+    position: relative;
+    width: px-to-rem(24px);
+
+    &:last-of-type {
+      margin-right: none;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: $color-base-blue-light;
+
+      .social--links--link {
+        &.facebook {
+          @include dataurlicon("facebook", $color-base-blue-medium);
+        }
+
+        &.instagram {
+          @include dataurlicon("instagram", $color-base-blue-medium);
+        }
+
+        &.twitter {
+          @include dataurlicon("twitter", $color-base-blue-medium);
+        }
+
+        &.youtube {
+          @include dataurlicon("youtube", $color-base-blue-medium);
+        }
+      }
     }
   }
 
