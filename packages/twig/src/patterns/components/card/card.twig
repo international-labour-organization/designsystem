@@ -1,7 +1,10 @@
 {#
   CARD COMPONENT
 #}
-<div class="{{prefix}}--card {{prefix}}--card--{{theme}} {{prefix}}--card--{{variant}}{% if cornercut %} {{prefix}}--card--{{cornercut}}{% endif %}{% if color %} {{prefix}}--card--{{color}}{% endif %}{% if alignment %} {{prefix}}--card--{{alignment}}{% endif %} {% if link %} {{prefix}}--card--action{% endif %}">
+<div class="{{prefix}}--card {{prefix}}--card--{{theme}} {{prefix}}--card--{{variant}}{% if cornercut %} {{prefix}}--card--{{cornercut}}{% endif %}{% if color %} {{prefix}}--card--{{color}}{% endif %}{% if alignment %} {{prefix}}--card--{{alignment}}{% endif %} {% if link %} {{prefix}}--card--action{% endif %}{% if type %} 
+{{prefix}}--card--{{type}}{% endif %}{% if type %} 
+{{prefix}}--card--{{size}}{% endif %}">
+<script>console.log({{ _context | json_encode | raw }});</script>
   {% if link %}
     <a class="{{prefix}}--card--link" href="{{link}}" title="{{title}}"></a>
   {% endif %}
@@ -62,7 +65,6 @@
           headline: linklist.headline,
           linkgroup: linklist.linkgroup,
           prefix: prefix,
-          theme: theme
         } only %}
       {% endif %}
       {% if dataset %}
@@ -83,11 +85,10 @@
         {% if dataset.links %}
           <div class="{{prefix}}--card--data--content-links">
             {% for item in dataset.links.items %}
-              {% include "@components/link/link.twig" with {
-                theme: theme,
+              {% include "@components/link/link.twig" with {  
                 url: item.url,
                 label: item.label,
-                prefix: prefix
+                prefix: prefix,
               } %} <span>&nbsp;</span>
             {% endfor %}
           </div>

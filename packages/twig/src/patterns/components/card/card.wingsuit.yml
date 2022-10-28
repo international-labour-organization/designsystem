@@ -85,14 +85,15 @@ card:
       options:
         dark: Dark
         light: Light
-    types:
+    size:
       type: select
-      label: Types
-      description: The type of hero
-      required: false
-      preview: 'graphic'
+      label: Size
+      description: Size of the cards (usually reduces padding)
+      preview: 'standard'
       options:
-        graphic: graphic
+        wide: Wide
+        standard: Standard
+        narrow: Narrow
     cornercut:
       type: select
       label: Corner cut
@@ -139,6 +140,7 @@ card:
       description: The stat Card
       settings:
         theme: light
+        cornercut: cornercut
       fields:
         title: "Date headline"
         image: ""
@@ -173,6 +175,7 @@ card:
         eventdetails: ""
         cta: ""
         source: ""
+        dataset: ""
         linklist:
           headline: ""
           linkgroup:
