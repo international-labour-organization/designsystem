@@ -1,7 +1,6 @@
 {#
   CARD COMPONENT
 #}
-<script>console.log({{ _context | json_encode | raw }});</script>
 <div class="{{prefix}}--card {{prefix}}--card--{{theme}} {{prefix}}--card--{{variant}}{% if cornercut %} {{prefix}}--card--{{cornercut}}{% endif %}{% if color %} {{prefix}}--card--{{color}}{% endif %}{% if alignment %} {{prefix}}--card--{{alignment}}{% endif %} {% if link %} {{prefix}}--card--action{% endif %}">
   {% if link %}
     <a class="{{prefix}}--card--link" href="{{link}}" title="{{title}}"></a>
