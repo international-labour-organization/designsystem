@@ -10,6 +10,12 @@
     - ILO Icons
   sizes:
     - glyph
+- name: arrowleft
+  friendly_name: arrowleft
+  aliases:
+    - ILO Icons
+  sizes:
+    - glyph
 - name: arrowright
   friendly_name: arrowright
   aliases:
@@ -72,6 +78,12 @@
     - glyph
 - name: facebook
   friendly_name: facebook
+  aliases:
+    - ILO Icons
+  sizes:
+    - glyph
+- name: footertriangle
+  friendly_name: footertriangle
   aliases:
     - ILO Icons
   sizes:

@@ -1,5 +1,6 @@
 @use "../tokens" as *;
 @use "../functions" as *;
+@import "../animations";
 @import "../mixins";
 
 .ilo--button {
@@ -189,6 +190,7 @@
       -4px -4px 0 1px map-get($color, "ux", "borders", "focus") inset;
     color: map-get($color, "ux", "labels", "focus");
     outline: none;
+    @include globaltransition("color, background-color, border-color");
 
     &.ilo--button--small {
       box-shadow: 3px 3px 0 1px map-get($color, "ux", "borders", "focus") inset,
@@ -203,6 +205,7 @@
     box-shadow: none;
     color: map-get($color, "ux", "labels", "hover");
     cursor: pointer;
+    @include globaltransition("color, background-color, border-color");
 
     &.ilo--button--small {
       box-shadow: none;
@@ -215,6 +218,7 @@
       solid;
     box-shadow: none;
     color: map-get($color, "ux", "labels", "active");
+    @include globaltransition("color, background-color, border-color");
 
     &.ilo--button--small {
       box-shadow: none;
@@ -231,11 +235,13 @@
     border: map-get($borders, "small")
       map-get($color, "ux", "borders", "default") solid;
     color: map-get($color, "ux", "labels", "actionable");
+    @include globaltransition("color, background-color, border-color");
 
     &:hover {
       background-color: map-get($color, "ux", "background", "hover");
       border: map-get($borders, "small")
         map-get($color, "ux", "borders", "hover") solid;
+      @include globaltransition("color, background-color, border-color");
     }
 
     &:active {
@@ -244,6 +250,7 @@
         map-get($color, "ux", "borders", "active") solid;
       box-shadow: none;
       color: map-get($color, "ux", "labels", "active");
+      @include globaltransition("color, background-color, border-color");
 
       &.ilo--button--small {
         box-shadow: none;
@@ -256,6 +263,7 @@
     border: map-get($borders, "base")
       map-get($color, "ux", "background", "highlight") solid;
     color: map-get($color, "ux", "labels", "actionable");
+    @include globaltransition("color, background-color, border-color");
   }
 
   &--alert {
@@ -263,12 +271,14 @@
     border: map-get($borders, "small") map-get($color, "ux", "borders", "alert")
       solid;
     color: map-get($color, "ux", "labels", "alert");
+    @include globaltransition("color, background-color, border-color");
 
     &:hover {
       background-color: map-get($color, "ux", "background", "hover");
       border: map-get($borders, "small")
         map-get($color, "ux", "borders", "hover") solid;
       color: map-get($color, "ux", "labels", "hover");
+      @include globaltransition("color, background-color, border-color");
     }
 
     &:focus {
@@ -277,6 +287,7 @@
         map-get($color, "ux", "borders", "focus") solid;
       color: map-get($color, "ux", "labels", "focus");
       outline: none;
+      @include globaltransition("color, background-color, border-color");
     }
 
     &:active {
@@ -285,6 +296,7 @@
         map-get($color, "ux", "borders", "active") solid;
       box-shadow: none;
       color: map-get($color, "ux", "labels", "active");
+      @include globaltransition("color, background-color, border-color");
 
       &.ilo--button--small {
         box-shadow: none;
