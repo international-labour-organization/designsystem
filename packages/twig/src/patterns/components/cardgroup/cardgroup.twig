@@ -29,5 +29,16 @@
         size: size
       } only %}
     {% endfor %}
+
+    {% if cta %}
+    <div class="{{prefix}}--cardgroup--button-wrap">
+      <a
+        class="{{prefix}}--button {{prefix}}--button--small {{prefix}}--button--secondary"
+        href="{{cta.url}}"
+      >
+        <span class="button__label">{{ cta.label }}</span>
+      </a>
+    </div>
+    {% endif %}
   </div>
 </div>

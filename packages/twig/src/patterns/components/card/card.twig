@@ -6,7 +6,7 @@
 {{prefix}}--card--{{size}}{% endif %}">
 <script>console.log({{ _context | json_encode | raw }});</script>
   {% if link %}
-    <a class="{{prefix}}--card--link" href="{{link}}" title="{{title}}"></a>
+    <a class="{{prefix}}--card--link" href="{{link}}" title="{{title}}"><span class="sr--only">{{title}}</span></a>
   {% endif %}
   <div class="{{prefix}}--card--wrap">
     {% if image %}

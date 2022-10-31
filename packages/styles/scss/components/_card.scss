@@ -6,13 +6,17 @@
   $self: &;
   margin: 0;
 
+  .right-to-left & {
+    text-align: right;
+  }
+
   &--action:hover,
   &--action:focus {
     background: $brand-ilo-white;
     color: $brand-ilo-blue;
     text-decoration: none;
 
-    #{$self}--dark {
+    #{$self}--dark:not(#{$self}--detail):not(#{$self}--data):not(#{$self}--multilink) {
       background: $brand-ilo-white;
     }
 
@@ -53,7 +57,7 @@
     background: $brand-ilo-white;
   }
 
-  &--dark {
+  &--dark:not(#{$self}--detail):not(#{$self}--data):not(#{$self}--multilink) {
     background: $brand-ilo-dark-blue;
 
     #{$self}--eyebrow {
@@ -77,7 +81,7 @@
     }
   }
 
-  &--cornercut {
+  &--cornercut:not(#{$self}--multilink):not(#{$self}--detail):not(#{$self}--feature) {
     margin-top: 40px;
     padding-top: 0;
     position: relative;
@@ -100,6 +104,10 @@
       position: absolute;
       top: -39.7px;
       width: 100%;
+
+      .right-to-left & {
+        clip-path: polygon(100% 0, 100% 100%, 100% 100%, 0% 100%, 10% 0%);
+      }
 
       @include breakpoint("medium") {
         height: 48px;
@@ -261,19 +269,6 @@
       padding: 32px 0;
     }
 
-    &#{$self}--cornercut {
-      padding: 24px 0;
-      margin-top: 0;
-
-      @include breakpoint("large") {
-        padding: 32px 0;
-      }
-    }
-
-    &::before {
-      display: none;
-    }
-
     &:hover,
     &:focus {
       picture::before {
@@ -309,6 +304,10 @@
 
     #{$self}--wrap {
       display: flex;
+
+      .right-to-left & {
+        flex-direction: row-reverse;
+      }
     }
 
     #{$self}--image {
@@ -410,6 +409,18 @@
       @include breakpoint("medium") {
         padding: 0 24px 40px;
       }
+
+      #{$self}--title {
+        @include font-styles("headline-6");
+        @include textmargin(
+          "margin-bottom",
+          40px,
+          "headline-6",
+          "display",
+          "base",
+          "copy"
+        );
+      }
     }
 
     &#{$self}--dark {
@@ -502,6 +513,23 @@
 
       @include breakpoint("large") {
         padding: 40px 24px;
+      }
+
+      #{$self}--title {
+        @include font-styles("headline-4");
+        @include textmargin(
+          "margin-bottom",
+          24px,
+          "headline-4",
+          "display",
+          "body-small",
+          "copy"
+        );
+      }
+
+      #{$self}--intro {
+        @include font-styles("body-small");
+        @include textmargin("margin-bottom", 40px, "body-small", "copy", 0, 0);
       }
     }
 
@@ -658,6 +686,10 @@
       display: flex;
       flex-wrap: wrap;
       height: 100%;
+
+      .right-to-left & {
+        flex-direction: row-reverse;
+      }
     }
 
     #{$self}--title {
@@ -753,6 +785,7 @@
     border-bottom: 3px solid $brand-ilo-grey-accessible;
     display: flex;
     margin-top: 0;
+    position: relative;
 
     &::before {
       display: none;
@@ -770,16 +803,42 @@
       }
     }
 
+    &#{$self}--narrow,
+    &#{$self}--standard {
+      #{$self}--wrap {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+      }
+
+      #{$self}--content {
+        width: 100%;
+      }
+
+      #{$self}--image--wrapper {
+        width: 100%;
+      }
+    }
+
     &#{$self}--wide {
       @include breakpoint("medium") {
         #{$self}--wrap {
           display: flex;
+          width: 100%;
+
+          .right-to-left & {
+            flex-direction: row-reverse;
+          }
         }
 
         #{$self}--content {
           display: flex;
           flex-wrap: wrap;
           width: 50%;
+
+          .right-to-left & {
+            flex-direction: row-reverse;
+          }
         }
 
         #{$self}--image--wrapper {
@@ -792,6 +851,14 @@
 
         #{$self}--date {
           align-self: flex-end;
+        }
+
+        #{$self}--eyebrow {
+          width: 100%;
+        }
+
+        #{$self}--title {
+          width: 100%;
         }
       }
     }

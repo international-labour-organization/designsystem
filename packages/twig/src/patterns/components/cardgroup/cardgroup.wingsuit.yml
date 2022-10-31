@@ -8,10 +8,17 @@ cardgroup:
       label: Group of cards
       description: The group of cards, object
       preview: 
-    settings:
+    cta:
       type: object
-      label: Settings
-      description: Settings for the cards
+      label: CTA
+      description: Button to display after the cards in the group
+      preview:
+        label: "Discover our unique mission"
+        url: "https://www.google.com/search?q=button"
+    # settings:
+    #   type: object
+    #   label: Settings
+    #   description: Settings for the cards
   variants:
     multilink:
       label: Multilink
@@ -251,6 +258,7 @@ cardgroup:
             profile: ""
             eventdetails: ""
             cta: ""
+            list: ""
             source: 
               label: "Source: lorem ipsum dolor sit amet, 2020"
               url: "https://www.google.com/search?q=stat"
@@ -264,6 +272,7 @@ cardgroup:
             profile: ""
             eventdetails: ""
             cta: ""
+            list: ""
             source: 
               label: "Source: lorem ipsum dolor sit amet, 2020"
               url: "https://www.google.com/search?q=stat"
@@ -277,6 +286,7 @@ cardgroup:
             profile: ""
             eventdetails: ""
             cta: ""
+            list: ""
             source: 
               label: "Source: lorem ipsum dolor sit amet, 2020"
               url: "https://www.google.com/search?q=stat"
@@ -290,6 +300,7 @@ cardgroup:
             profile: ""
             eventdetails: ""
             cta: ""
+            list: ""
             source: 
               label: "Source: lorem ipsum dolor sit amet, 2020"
               url: "https://www.google.com/search?q=stat"
