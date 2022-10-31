@@ -4,8 +4,10 @@
 <figure class="{{prefix}}--image" data-prefix="{{prefix}}">
   <div class="image {{prefix}}--image--wrapper">
     <picture class="{{prefix}}--image--img">
-      {% for img in url|reverse|slice(0,-1) %}
-      <source srcset="{{img.src}}" media="(min-width: {{img.breakpoint}}px)">
+      {% for img in url|reverse %}
+        {% if loop.last == false  %}
+          <source srcset="{{img.src}}" media="(min-width: {{img.breakpoint}}px)">
+        {% endif %}
       {% endfor %}
       <img src="{{url|reverse|last.src}}" alt="{{alt}}">
     </picture>
@@ -15,5 +17,7 @@
     </span>
     {% endif %}
   </div>
-  <figcaption class="{{prefix}}--image--caption">{{caption}}</figcaption>
+  {% if caption %}
+    <figcaption class="{{prefix}}--image--caption">{{caption}}</figcaption>
+  {% endif %}
 </figure>
