@@ -15,10 +15,6 @@ cardgroup:
       preview:
         label: "Discover our unique mission"
         url: "https://www.google.com/search?q=button"
-    # settings:
-    #   type: object
-    #   label: Settings
-    #   description: Settings for the cards
   variants:
     multilink:
       label: Multilink
@@ -89,11 +85,6 @@ cardgroup:
                       url: 'http://www.google.com'
                     - label: Link Three
                       url: 'http://www.google.com'
-        # settings:
-        #   theme: light
-        #   cornercut: cornercut
-        #   alignment: left
-        #   variant: multilink
       settings: 
         type: multilink
     feature:
@@ -165,11 +156,6 @@ cardgroup:
             list: ""
             dataset: ""
             color: ""
-        # settings:
-        #   theme: light
-        #   cornercut: cornercut
-        #   alignment: left
-        #   variant: feature
       settings: 
         type: feature
     detail:
@@ -209,11 +195,6 @@ cardgroup:
             list: ""
             dataset: ""
             color: ""
-        # settings:
-        #   theme: light
-        #   cornercut: cornercut
-        #   alignment: left
-        #   variant: detail
       settings: 
         type: detail
         theme: light
@@ -237,11 +218,6 @@ cardgroup:
             linklist: ""
             list: ""
             dataset: ""
-        # settings:
-        #   theme: dark
-        #   cornercut: cornercut
-        #   alignment: left
-        #   variant: graphicpromo
       settings:
         type: graphicpromo
     stat:
@@ -305,16 +281,11 @@ cardgroup:
               label: "Source: lorem ipsum dolor sit amet, 2020"
               url: "https://www.google.com/search?q=stat"
             color: turquoise
-        # settings:
-        #   theme: light
-        #   cornercut: cornercut
-        #   alignment: left
-        #   variant: stat
       settings:
         type: stat
         theme: light
     graphic:
-      label: Graphic
+      label: Graphic Text
       description: graphic settings
       fields:
         group:
@@ -333,11 +304,6 @@ cardgroup:
             linklist: ""
             list: ""
             dataset: ""
-        # settings:
-        #   theme: light
-        #   cornercut: cornercut
-        #   alignment: left
-        #   variant: graphic
       settings:
         type: graphic
     factlist:
@@ -364,11 +330,6 @@ cardgroup:
                   id: "list1"
                 - content: "Nut labore et dolore magna sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
                   id: "list2"
-      #   settings:
-      #     theme: light
-      #     cornercut: cornercut
-      #     alignment: left
-      #     variant: factlist
       settings:
         type: factlist
     data:
@@ -411,11 +372,6 @@ cardgroup:
                     url: "https://www.google.com/search?q=hyperlink"
                   - label: Language link 3
                     url: "https://www.google.com/search?q=url"
-      #   settings:
-      #     theme: light
-      #     cornercut: cornercut
-      #     alignment: left
-      #     variant: data
       settings:
         type: data
         theme: light

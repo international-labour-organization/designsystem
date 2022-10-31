@@ -1,7 +1,6 @@
 {#
   CARDGROUP COMPONENT
 #}
-<script>console.log({{ _context | json_encode | raw }});</script>
 <div class="{{prefix}}--cardgroup {{prefix}}--cardgroup--{{cardcount}}">
   <div class="{{prefix}}--cardgroup--inner">
     {% for card in group %}
