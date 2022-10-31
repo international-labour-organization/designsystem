@@ -48,6 +48,7 @@
       font-family: $fonts-display;
       font-weight: 700;
       @include font-styles("body-xs");
+      letter-spacing: -0.02em;
       padding: $spacing-ux-table-head-padding-top
         $spacing-ux-table-head-padding-right
         $spacing-ux-table-head-padding-bottom
