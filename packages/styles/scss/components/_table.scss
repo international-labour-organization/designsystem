@@ -121,10 +121,17 @@
         text-align: right;
       }
 
+      &:hover {
+        background-color: $color-ux-table-selected-background;
+        border-bottom: 2px solid $color-ux-labels-hover;
+        color: $color-ux-labels-hover;
+      }
+
       &.selected {
         background-color: $color-ux-table-selected-background;
         border-bottom: 2px solid $color-ux-labels-hover;
         color: $color-ux-labels-hover;
+        cursor: pointer;
       }
 
       &.column--selected {
