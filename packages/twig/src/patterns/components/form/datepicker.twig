@@ -4,7 +4,12 @@
 <div class="{{prefix}}--datepicker{% if range %}--range{% endif %}">
   <fieldset class="{{prefix}}--fieldset">
     <div class="{{prefix}}--fieldset--input--date ">
-      <label class="{{prefix}}--fieldset--label">{{label}}</label>
+      <label class="{{prefix}}--fieldset--label">
+        {{label}}
+        {% if tooltip %}
+          {% include '@components/tooltip/tooltip.twig' with tooltip %}
+        {% endif %}
+      </label>
       <input name="{{name}}" type="date" class="{{prefix}}--datepicker {{prefix}}--input {% if error %} error{% endif %}" {% if placeholder %}placeholder="{{placeholder}}"{% endif %} {% if required %}required{% endif %}{% if disabled %}disabled{% endif %}  id="{% if id %}{{id}}{% else %}{{name}}{% endif %}">
       {% if helper and not error %}
           <span class="ilo--fieldset--helper">{{helper}}</span>
@@ -17,7 +22,12 @@
   {% if range %}
   <fieldset class="{{prefix}}--fieldset">
     <div class="{{prefix}}--fieldset--input--date ">
-      <label class="{{prefix}}--fieldset--label">{{enddata.label}}</label>
+      <label class="{{prefix}}--fieldset--label">
+        {{enddata.label}}
+        {% if enddata.tooltip %}
+          {% include '@components/tooltip/tooltip.twig' with enddata.tooltip %}
+        {% endif %}
+      </label>
       <input name="{{enddata.name}}" type="date" class="{{prefix}}--datepicker {{prefix}}--input{% if enddata['error'] is defined %} error{% endif %}" {% if enddata['placeholder'] is defined %}placeholder="{{enddata.placeholder}}"{% endif %} {% if enddata['required'] is defined %}required{% endif %} {% if enddata['disabled'] is defined %}disabled{% endif %} id="{% if enddata['id'] is defined %}{{enddata.id}}{% else %}{{enddata.name}}{% endif %}">
     </div>
     {% if enddata.helper and not enddata.error %}
