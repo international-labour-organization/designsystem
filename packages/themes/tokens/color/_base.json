@@ -2,6 +2,7 @@
   "color": {
     "base": {
       "blue": {
+        "lighter": { "value": "{brand.ilo-lighter-blue}" },
         "light": { "value": "{brand.ilo-light-blue}" },
         "intermediate": { "value": "{brand.ilo-ramp-blue}" },
         "medium": { "value": "{brand.ilo-blue}" },

@@ -188,9 +188,18 @@
         border-left: px-to-rem(1px) solid $color-base-neutrals-white;
 
         &:hover,
-        &:focus,
-        &.selected {
+        &:focus {
           background-color: $color-ux-table-selected-background;
+        }
+      }
+
+      &.selected {
+        .ilo--table--body--cell {
+          background-color: $color-ux-table-hover-background;
+
+          &.selected {
+            background-color: $color-ux-table-selected-background;
+          }
         }
       }
     }
