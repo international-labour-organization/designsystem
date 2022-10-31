@@ -83,17 +83,17 @@ footer:
       description: "up to six links"
       preview:
         - label: "Link One"
-          url: "http://www.google.com"
+          url: "http://www.cnn.com"
         - label: "Link Two"
-          url: "http://www.google.com"
+          url: "http://www.bing.com"
         - label: "Link Three"
-          url: "http://www.google.com"
+          url: "http://www.yahoo.com"
         - label: "Link Four"
-          url: "http://www.google.com"
+          url: "http://www.askjeeves.com"
         - label: "Link Five"
-          url: "http://www.google.com"
+          url: "http://www.duckduckgo.com"
         - label: "Link Six"
-          url: "http://www.google.com"
+          url: "http://www.aol.com"
     anchorlink:
       type: object
       label: anchorlink
