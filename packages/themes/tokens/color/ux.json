@@ -104,7 +104,7 @@
           "background": { "value": "{color.base.neutrals.white}" }
         },
         "zebra": {
-          "background": { "value": "{color.base.neutrals.lighter}" }
+          "background": { "value": "{color.base.neutrals.alternate}" }
         },
         "hover": {
           "background": { "value": "{color.base.blue.light}" }

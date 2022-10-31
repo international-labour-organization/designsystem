@@ -10,6 +10,7 @@
       "green": { "value": "{brand.ilo-green}" },
       "neutrals": {
         "white": { "value": "{brand.ilo-white}" },
+        "alternate": { "value": "{brand.ilo-grey-light-alternate}" },
         "lighter": { "value": "{brand.ilo-grey-light}" },
         "light": { "value": "{brand.ilo-grey-ui}" },
         "medium": { "value": "{brand.ilo-grey-accessible}" },
