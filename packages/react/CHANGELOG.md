@@ -1,5 +1,14 @@
 # @ilo-org/react
 
+## 0.0.4
+
+### Patch Changes
+
+- Updated dependencies [6bf0e10]
+  - @ilo-org/styles@0.1.0
+  - @ilo-org/themes@0.1.0
+  - @ilo-org/icons-react@0.0.2
+
 ## 0.0.3
 
 ### Patch Changes
