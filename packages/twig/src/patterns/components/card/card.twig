@@ -5,7 +5,7 @@
 {{prefix}}--card--{{type}}{% endif %}{% if type %} 
 {{prefix}}--card--{{size}}{% endif %}">
   {% if link %}
-    <a class="{{prefix}}--card--link" href="{{link}}" title="{{title}}"><span class="sr--only">{{title}}</span></a>
+    <a class="{{prefix}}--card--link" href="{{link}}" title="{{title}}"><span class="{{prefix}}--card--link--text">{{title}}</span></a>
   {% endif %}
   <div class="{{prefix}}--card--wrap">
     {% if image %}
@@ -17,6 +17,9 @@
       {% endif %}
       {% if title %}
         <h5 class="{{prefix}}--card--title">{{title}}</h5>
+      {% endif %}
+      {% if type == "multilink" and image %}
+        <div class="{{prefix}}--card--image--wrapper"><picture><img class="{{prefix}}--card--image" src="{{image}}" alt="{{title}}"></picture></div>
       {% endif %}
       {% if intro %}
         <p class="{{prefix}}--card--intro">{{intro}}</p>
