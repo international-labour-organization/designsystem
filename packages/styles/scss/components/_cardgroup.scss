@@ -10,6 +10,11 @@
     flex-wrap: wrap;
     justify-content: space-between;
     margin: auto;
+    row-gap: px-to-rem(32px);
+
+    .right-to-left & {
+      flex-direction: row-reverse;
+    }
 
     #{$card} {
       width: 100%;
@@ -38,5 +43,12 @@
         width: calc(25% - 16px);
       }
     }
+  }
+
+  &--button-wrap {
+    display: flex;
+    justify-content: center;
+    margin-top: px-to-rem(64px);
+    width: 100%;
   }
 }

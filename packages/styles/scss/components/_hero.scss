@@ -3,6 +3,8 @@
 @import "../mixins";
 
 .ilo--hero {
+  background: map-get($color, "ux", "pagination", "default", "background");
+
   &--home {
     @include breakpoint("large") {
       position: relative;
@@ -13,8 +15,6 @@
     position: relative;
 
     @include breakpoint("large") {
-      padding-top: 128px;
-
       .ilo--image {
         height: calc(100% - 80px);
         left: 0;
@@ -41,7 +41,7 @@
       }
     }
   }
-  background: map-get($color, "ux", "pagination", "default", "background");
+
   &--article {
     background: map-get($color, "hero", "article");
     padding: 88px 0 0 0;
@@ -108,11 +108,10 @@
     background-color: map-get($color, "hero", "image");
 
     @include breakpoint("large") {
-      padding-top: 128px;
-
       .ilo--image {
         height: 100%;
         max-height: 592px;
+        overflow: hidden;
         width: 100%;
       }
 

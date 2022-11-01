@@ -5,6 +5,18 @@
 @import "mixins";
 
 // ======================================
+// Global transition
+// ======================================
+/// Applies the global transition to any transitionable property
+/// @param {String} $properties - the name of the property on which to transition
+/// @return {CSS} transition for the given properties
+@mixin globaltransition($properties) {
+  transition-property: unquote($properties);
+  transition-duration: 150ms;
+  transition-timing-function: ease-out;
+}
+
+// ======================================
 // Animation of empty gradient
 // ======================================
 @keyframes emptygradient {

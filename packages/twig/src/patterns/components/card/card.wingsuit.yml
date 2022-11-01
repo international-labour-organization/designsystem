@@ -54,7 +54,7 @@ card:
       type: string
       label: Image
       description: The image for the card
-      preview: "http://placekitten.com/600/300"
+      preview: "https://placekitten.com/600/300"
     source:
       type: object
       label: Source
@@ -85,14 +85,15 @@ card:
       options:
         dark: Dark
         light: Light
-    types:
+    size:
       type: select
-      label: Types
-      description: The type of hero
-      required: false
-      preview: 'graphic'
+      label: Size
+      description: Size of the cards (usually reduces padding)
+      preview: 'standard'
       options:
-        graphic: graphic
+        wide: Wide
+        standard: Standard
+        narrow: Narrow
     cornercut:
       type: select
       label: Corner cut
@@ -139,6 +140,7 @@ card:
       description: The stat Card
       settings:
         theme: light
+        cornercut: cornercut
       fields:
         title: "Date headline"
         image: ""
@@ -162,7 +164,7 @@ card:
         theme: light
       fields:
         title: "Multi-link card - right aligned image, wide option"
-        image: "http://placekitten.com/475/267"
+        image: "https://placekitten.com/475/267"
         intro: "Lorem ipsum dolor sit amet consectetur adipiscing elit. Lobortis egestas ipsum dolor sit amet consectetur adipiscing elit. Lobortis egestas ipsum dolor sit amet consectetur adipiscing elit. Lobortis egestas lacus."
         eyebrow: ""
         date:
@@ -173,6 +175,7 @@ card:
         eventdetails: ""
         cta: ""
         source: ""
+        dataset: ""
         linklist:
           headline: ""
           linkgroup:
@@ -212,7 +215,7 @@ card:
           human: Date
           unix: 1670389200
         link: "https://www.google.com/search?q=graphic"
-        image: "http://placekitten.com/412/232"
+        image: "https://placekitten.com/412/232"
         profile:
         eventdetails: ""
     detail:
@@ -226,7 +229,7 @@ card:
           human: 00 month 0000
           unix: 1670389200
         link: "https://www.google.com/search?q=detail"
-        # image: "http://placekitten.com/296/196"
+        # image: "https://placekitten.com/296/196"
         image: "https://www.ilo.org/wcmsp5/groups/public/---dgreports/---dcomm/documents/image/wcms_856513.jpg"
         profile:
         eventdetails: "8 - 9 February 2022, 8:30 - 12:00 CET  |  Egypt"

@@ -6,13 +6,17 @@
   $self: &;
   margin: 0;
 
+  .right-to-left & {
+    text-align: right;
+  }
+
   &--action:hover,
   &--action:focus {
     background: $brand-ilo-white;
     color: $brand-ilo-blue;
     text-decoration: none;
 
-    #{$self}--dark {
+    #{$self}--dark:not(#{$self}--detail):not(#{$self}--data):not(#{$self}--multilink) {
       background: $brand-ilo-white;
     }
 
@@ -47,13 +51,17 @@
     top: 0;
     width: 100%;
     z-index: 2;
+
+    &--text {
+      @include isVisuallyHidden();
+    }
   }
 
   &--light {
     background: $brand-ilo-white;
   }
 
-  &--dark {
+  &--dark:not(#{$self}--detail):not(#{$self}--data):not(#{$self}--multilink) {
     background: $brand-ilo-dark-blue;
 
     #{$self}--eyebrow {
@@ -77,17 +85,17 @@
     }
   }
 
-  &--cornercut {
-    margin-top: 40px;
-    padding-top: 0 !important;
+  &--cornercut:not(#{$self}--multilink):not(#{$self}--detail):not(#{$self}--feature) {
+    margin-top: px-to-rem(40px);
+    padding-top: 0;
     position: relative;
 
     @include breakpoint("medium") {
-      margin-top: 48px;
+      margin-top: px-to-rem(48px);
     }
 
     @include breakpoint("large") {
-      margin-top: 64px;
+      margin-top: px-to-rem(64px);
     }
 
     &::before {
@@ -95,20 +103,24 @@
       clip-path: polygon(90% 0, 100% 100%, 100% 100%, 0% 100%, 0% 0%);
       content: "";
       display: block;
-      height: 40px;
+      height: px-to-rem(40px);
       left: 0;
       position: absolute;
-      top: -39.7px;
+      top: px-to-rem(-39.7px);
       width: 100%;
 
+      .right-to-left & {
+        clip-path: polygon(100% 0, 100% 100%, 100% 100%, 0% 100%, 10% 0%);
+      }
+
       @include breakpoint("medium") {
-        height: 48px;
-        top: -47.7px;
+        height: px-to-rem(48px);
+        top: px-to-rem(-47.7px);
       }
 
       @include breakpoint("large") {
-        height: 64px;
-        top: -63.7px;
+        height: px-to-rem(64px);
+        top: px-to-rem(-63.7px);
       }
     }
   }
@@ -190,23 +202,133 @@
 
   // CARD VARIANTS
   &--multilink {
-    padding: 24px;
+    padding: px-to-rem(24px);
+
+    #{$self}--image--wrapper {
+      display: none;
+    }
+
+    #{$self}--content {
+      #{$self}--image--wrapper {
+        display: block;
+      }
+    }
 
     @include breakpoint("medium") {
-      padding: 40px;
+      padding: px-to-rem(40px);
     }
 
     @include breakpoint("large") {
-      padding: 56px 48px;
+      padding: px-to-rem(56px) px-to-rem(48px);
+    }
+
+    #{$self}--title {
+      color: $brand-ilo-grey-charcoal;
+      @include textmargin("margin-bottom", 24px, "headline-5", "display", 0, 0);
+    }
+
+    #{$self}--intro {
+      color: $brand-ilo-grey-charcoal;
+    }
+
+    &#{$self}--dark {
+      background: $brand-ilo-white;
+
+      #{$self}--title {
+        color: $brand-ilo-grey-charcoal;
+      }
+
+      #{$self}--intro {
+        color: $brand-ilo-grey-charcoal;
+      }
+    }
+
+    &#{$self}--wide {
+      padding: px-to-rem(40px) px-to-rem(24px) px-to-rem(48px);
+
+      @include breakpoint("medium") {
+        padding: px-to-rem(56px) px-to-rem(48px);
+
+        &#{$self}--right {
+          #{$self}--wrap {
+            flex-direction: row-reverse;
+
+            .right-to-left & {
+              flex-direction: row;
+            }
+          }
+        }
+
+        #{$self}--wrap {
+          display: flex;
+          column-gap: px-to-rem(32px);
+
+          .right-to-left & {
+            flex-direction: row-reverse;
+          }
+        }
+
+        #{$self}--image--wrapper {
+          display: block;
+          width: 50%;
+        }
+
+        #{$self}--content {
+          width: 50%;
+
+          #{$self}--image--wrapper {
+            display: none;
+          }
+        }
+      }
+    }
+
+    &#{$self}--standard {
+      padding: px-to-rem(48px) px-to-rem(40px);
+
+      @include breakpoint("medium") {
+        padding: px-to-rem(48px) px-to-rem(40px);
+      }
+
+      @include breakpoint("large") {
+        padding: px-to-rem(48px) px-to-rem(40px);
+      }
+    }
+
+    &#{$self}--narrow {
+      padding: px-to-rem(40px) px-to-rem(24px) px-to-rem(48px);
+
+      #{$self}--image--wrapper {
+        display: none;
+      }
+
+      #{$self}--content {
+        #{$self}--image--wrapper {
+          display: block;
+          margin-bottom: px-to-rem(24px);
+        }
+      }
+
+      @include breakpoint("medium") {
+        padding: px-to-rem(40px) px-to-rem(24px) px-to-rem(48px);
+      }
+
+      @include breakpoint("large") {
+        padding: px-to-rem(40px) px-to-rem(24px) px-to-rem(48px);
+      }
+    }
+
+    .ilo--link-list {
+      margin-top: px-to-rem(35px);
     }
   }
 
   &--detail {
-    border-bottom: 3px solid $brand-ilo-grey-accessible;
-    margin: 32px 0;
+    border-bottom: px-to-rem(3px) solid $brand-ilo-grey-light;
+    padding: px-to-rem(24px) 0;
 
-    &::before {
-      display: none;
+    @include breakpoint("large") {
+      padding: px-to-rem(32px) 0;
     }
 
     &:hover,
@@ -244,32 +366,32 @@
 
     #{$self}--wrap {
       display: flex;
+
+      .right-to-left & {
+        flex-direction: row-reverse;
+      }
     }
 
     #{$self}--image {
       object-fit: contain;
-      width: 77px;
+      width: px-to-rem(77px);
 
       @include breakpoint("large") {
-        width: 200px;
+        width: px-to-rem(200px);
       }
 
       &--wrapper {
-        max-width: 77px;
+        max-width: px-to-rem(77px);
         width: 100%;
 
         @include breakpoint("large") {
-          max-width: 200px;
+          max-width: px-to-rem(200px);
         }
       }
     }
 
     #{$self}--content {
-      padding: 16px 24px 40px;
-
-      @include breakpoint("large") {
-        padding: 24px 24px 64px;
-      }
+      padding: 0 px-to-rem(24px);
     }
 
     #{$self}--title {
@@ -283,7 +405,7 @@
     #{$self}--event-date {
       @include font-styles("body-small");
       margin-bottom: 0;
-      padding-left: 24px;
+      padding-left: px-to-rem(24px);
       position: relative;
 
       &::before {
@@ -303,17 +425,12 @@
     #{$self}--date {
       @include font-styles("body-small");
     }
-
-    // #{}
-    // title shrinks on mobile
-    // color border on cards
-    // padding around cards
   }
 
   &--graphic {
-    border-bottom: 3px solid $brand-ilo-grey-ui;
-    margin-top: 40px;
-    padding: 0 24px 40px;
+    border-bottom: px-to-rem(3px) solid $brand-ilo-grey-ui;
+    margin-top: px-to-rem(40px);
+    padding: 0 px-to-rem(24px) px-to-rem(40px);
     position: relative;
 
     &::before {
@@ -329,11 +446,47 @@
     }
 
     @include breakpoint("medium") {
-      padding: 0 32px 40px;
+      padding: 0 px-to-rem(32px) px-to-rem(40px);
+    }
+
+    &#{$self}--wide {
+      padding: 0 px-to-rem(32px) px-to-rem(40px);
+
+      @include breakpoint("medium") {
+        padding: 0 px-to-rem(32px) px-to-rem(40px);
+      }
+    }
+
+    &#{$self}--standard {
+      padding: 0 px-to-rem(32px) px-to-rem(40px);
+
+      @include breakpoint("medium") {
+        padding: 0 px-to-rem(32px) px-to-rem(40px);
+      }
+    }
+
+    &#{$self}--narrow {
+      padding: 0 px-to-rem(24px) px-to-rem(40px);
+
+      @include breakpoint("medium") {
+        padding: 0 px-to-rem(24px) px-to-rem(40px);
+      }
+
+      #{$self}--title {
+        @include font-styles("headline-6");
+        @include textmargin(
+          "margin-bottom",
+          40px,
+          "headline-6",
+          "display",
+          "base",
+          "copy"
+        );
+      }
     }
 
     &#{$self}--dark {
-      border-bottom: 3px solid $brand-ilo-purple;
+      border-bottom: px-to-rem(3px) solid $brand-ilo-purple;
     }
 
     #{$self}--eyebrow {
@@ -377,16 +530,69 @@
   }
 
   &--graphicpromo {
-    max-width: 920px;
-    padding: 40px 24px;
+    max-width: px-to-rem(920px);
+    padding: px-to-rem(40px) px-to-rem(24px);
     width: 100%;
 
     @include breakpoint("medium") {
-      padding: 48px;
+      padding: px-to-rem(48px);
     }
 
     @include breakpoint("large") {
-      padding: 64px 72px;
+      padding: px-to-rem(64px) px-to-rem(72px);
+    }
+
+    &#{$self}--wide {
+      padding: px-to-rem(64px) px-to-rem(72px);
+
+      @include breakpoint("medium") {
+        padding: px-to-rem(64px) px-to-rem(72px);
+      }
+
+      @include breakpoint("large") {
+        padding: px-to-rem(64px) px-to-rem(72px);
+      }
+    }
+
+    &#{$self}--standard {
+      padding: px-to-rem(48px);
+
+      @include breakpoint("medium") {
+        padding: px-to-rem(48px);
+      }
+
+      @include breakpoint("large") {
+        padding: px-to-rem(48px);
+      }
+    }
+
+    &#{$self}--narrow {
+      padding: px-to-rem(40px) px-to-rem(24px);
+
+      @include breakpoint("medium") {
+        padding: px-to-rem(40px) px-to-rem(24px);
+      }
+
+      @include breakpoint("large") {
+        padding: px-to-rem(40px) px-to-rem(24px);
+      }
+
+      #{$self}--title {
+        @include font-styles("headline-4");
+        @include textmargin(
+          "margin-bottom",
+          24px,
+          "headline-4",
+          "display",
+          "body-small",
+          "copy"
+        );
+      }
+
+      #{$self}--intro {
+        @include font-styles("body-small");
+        @include textmargin("margin-bottom", 40px, "body-small", "copy", 0, 0);
+      }
     }
 
     &#{$self}--light:not(:hover) #{$self}--title {
@@ -429,22 +635,59 @@
   }
 
   &--factlist {
-    padding: 0 24px 48px 24px;
-    max-width: 856px;
+    border-bottom: px-to-rem(3px) solid $brand-ilo-grey-ui;
+    max-width: px-to-rem(856px);
+    padding: 0 px-to-rem(24px) px-to-rem(48px) px-to-rem(24px);
 
     &::before {
       clip-path: polygon(90% 0, 100% 100%, 100% 100%, 0% 100%, 0% 0%);
-      height: 40px;
-      top: -39.7px;
+      height: px-to-rem(40px);
+      top: px-to-rem(-39.7px);
     }
 
     @include breakpoint("large") {
-      padding: 0 40px 56px 40px;
+      padding: 0 px-to-rem(40px) px-to-rem(56px) px-to-rem(40px);
 
       &::before {
         clip-path: polygon(90% 0, 100% 100%, 100% 100%, 0% 100%, 0% 0%);
-        height: 48px;
-        top: -47.7px;
+        height: px-to-rem(48px);
+        top: px-to-rem(-47.7px);
+      }
+    }
+
+    &#{$self}--wide {
+      padding: 0 px-to-rem(40px) px-to-rem(56px) px-to-rem(40px);
+
+      @include breakpoint("medium") {
+        padding: 0 px-to-rem(40px) px-to-rem(56px) px-to-rem(40px);
+      }
+    }
+
+    &#{$self}--standard {
+      padding: 0 px-to-rem(40px) px-to-rem(56px) px-to-rem(40px);
+
+      @include breakpoint("medium") {
+        padding: 0 px-to-rem(40px) px-to-rem(56px) px-to-rem(40px);
+      }
+    }
+
+    &#{$self}--narrow {
+      padding: 0 px-to-rem(24px) px-to-rem(48px) px-to-rem(24px);
+
+      @include breakpoint("medium") {
+        padding: 0 px-to-rem(24px) px-to-rem(48px) px-to-rem(24px);
+      }
+    }
+
+    &#{$self}--dark {
+      border-bottom: px-to-rem(3px) solid $brand-ilo-red;
+
+      #{$self}--title {
+        color: $brand-ilo-white;
+      }
+
+      .ilo--list__item {
+        color: $brand-ilo-white;
       }
     }
 
@@ -475,14 +718,14 @@
   }
 
   &--stat {
-    border-bottom: 3px solid $brand-ilo-purple;
-    padding: 0 24px 24px 30px;
+    border-bottom: px-to-rem(3px) solid $brand-ilo-purple;
+    padding: 0 px-to-rem(24px) px-to-rem(24px) px-to-rem(30px);
     width: 100%;
 
     &::before {
       clip-path: polygon(75% 0, 100% 100%, 100% 100%, 0% 100%, 0% 0%);
-      height: 40px;
-      top: -39.7px;
+      height: px-to-rem(40px);
+      top: px-to-rem(-39.7px);
     }
 
     &#{$self}--blue {
@@ -505,6 +748,10 @@
       display: flex;
       flex-wrap: wrap;
       height: 100%;
+
+      .right-to-left & {
+        flex-direction: row-reverse;
+      }
     }
 
     #{$self}--title {
@@ -529,26 +776,26 @@
 
   &--data {
     background: $brand-ilo-light-blue;
-    border-bottom: 3px solid #82afdc;
-    max-width: 600px;
-    padding: 0 24px 56px;
+    border-bottom: px-to-rem(3px) solid #82afdc;
+    max-width: px-to-rem(600px);
+    padding: 0 px-to-rem(24px) px-to-rem(56px);
 
     &::before {
       clip-path: polygon(90% 0, 100% 100%, 100% 100%, 0% 100%, 0% 0%);
-      height: 40px;
-      top: -39.7px;
+      height: px-to-rem(40px);
+      top: px-to-rem(-39.7px);
     }
 
     @include breakpoint("large") {
       &::before {
         clip-path: polygon(90% 0, 100% 100%, 100% 100%, 0% 100%, 0% 0%);
-        height: 48px;
-        top: -47.7px;
+        height: px-to-rem(48px);
+        top: px-to-rem(-47.7px);
       }
     }
 
     #{$self}--image--wrapper {
-      width: max(205px, 50%);
+      width: max(px-to-rem(205px), 50%);
     }
 
     &--content-label {
@@ -580,7 +827,7 @@
     }
 
     &--content-files {
-      margin-bottom: 40px;
+      margin-bottom: px-to-rem(40px);
     }
 
     .ilo--link {
@@ -588,7 +835,7 @@
     }
 
     &--file {
-      margin: 4px 8px 4px 0;
+      margin: px-to-rem(4px) px-to-rem(8px) px-to-rem(4px) 0;
 
       &:last-of-type {
         margin-right: 0;
@@ -597,10 +844,17 @@
   }
 
   &--feature {
+    border-bottom: px-to-rem(3px) solid $brand-ilo-grey-accessible;
+    display: flex;
     margin-top: 0;
+    position: relative;
 
     &::before {
       display: none;
+    }
+
+    &#{$self}--dark {
+      border-bottom: px-to-rem(3px) solid $brand-ilo-purple;
     }
 
     &:hover,
@@ -611,8 +865,69 @@
       }
     }
 
+    &#{$self}--narrow,
+    &#{$self}--standard {
+      #{$self}--wrap {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+      }
+
+      #{$self}--content {
+        width: 100%;
+      }
+
+      #{$self}--image--wrapper {
+        width: 100%;
+      }
+    }
+
+    &#{$self}--wide {
+      @include breakpoint("medium") {
+        #{$self}--wrap {
+          display: flex;
+          width: 100%;
+
+          .right-to-left & {
+            flex-direction: row-reverse;
+          }
+        }
+
+        #{$self}--content {
+          display: flex;
+          flex-wrap: wrap;
+          width: 50%;
+
+          .right-to-left & {
+            flex-direction: row-reverse;
+          }
+        }
+
+        #{$self}--image--wrapper {
+          width: 50%;
+        }
+
+        #{$self}--image {
+          object-fit: cover;
+        }
+
+        #{$self}--date {
+          align-self: flex-end;
+        }
+
+        #{$self}--eyebrow {
+          width: 100%;
+        }
+
+        #{$self}--title {
+          width: 100%;
+        }
+      }
+    }
+
     picture {
       display: flex;
+      height: 100%;
       position: relative;
 
       &::before {
@@ -624,14 +939,14 @@
         opacity: 0;
         position: absolute;
         top: 0;
-        transition: opacity 0.15s ease-in-out;
+        transition: opacity 150ms ease-in-out;
         width: 100%;
         z-index: -1;
       }
     }
 
     #{$self}--content {
-      padding: 24px 24px 40px;
+      padding: px-to-rem(24px) px-to-rem(24px) px-to-rem(40px);
     }
 
     #{$self}--title {
