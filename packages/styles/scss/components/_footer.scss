@@ -9,7 +9,7 @@
   &--main {
     background-color: $color-base-blue-dark;
     border-bottom: px-to-rem(6px) solid $color-base-red-medium;
-    padding: 0 px-to-rem(32px);
+    padding: px-to-rem(40px) px-to-rem(32px) 0 px-to-rem(32px);
     position: relative;
 
     & > * {
