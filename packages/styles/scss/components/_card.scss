@@ -204,6 +204,16 @@
   &--multilink {
     padding: px-to-rem(24px);
 
+    #{$self}--image--wrapper {
+      display: none;
+    }
+
+    #{$self}--content {
+      #{$self}--image--wrapper {
+        display: block;
+      }
+    }
+
     @include breakpoint("medium") {
       padding: px-to-rem(40px);
     }
@@ -234,10 +244,42 @@
     }
 
     &#{$self}--wide {
-      padding: px-to-rem(56px) px-to-rem(48px);
+      padding: px-to-rem(40px) px-to-rem(24px) px-to-rem(48px);
 
       @include breakpoint("medium") {
         padding: px-to-rem(56px) px-to-rem(48px);
+
+        &#{$self}--right {
+          #{$self}--wrap {
+            flex-direction: row-reverse;
+
+            .right-to-left & {
+              flex-direction: row;
+            }
+          }
+        }
+
+        #{$self}--wrap {
+          display: flex;
+          column-gap: px-to-rem(32px);
+
+          .right-to-left & {
+            flex-direction: row-reverse;
+          }
+        }
+
+        #{$self}--image--wrapper {
+          display: block;
+          width: 50%;
+        }
+
+        #{$self}--content {
+          width: 50%;
+
+          #{$self}--image--wrapper {
+            display: none;
+          }
+        }
       }
     }
 
