@@ -78,6 +78,11 @@
 
   &--logo {
     display: block;
+    max-width: 150px;
+
+    @include breakpoint("large") {
+      max-width: 200px;
+    }
 
     &-link {
       display: block;
