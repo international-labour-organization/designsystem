@@ -1,12 +1,15 @@
 @use "../tokens" as *;
 @use "../functions" as *;
+@import "../animations";
 @import "../mixins";
 
 .ilo--footer {
+  border-bottom: px-to-rem(3px) solid $color-base-neutrals-light;
+
   &--main {
     background-color: $color-base-blue-dark;
     border-bottom: px-to-rem(6px) solid $color-base-red-medium;
-    padding: 0 px-to-rem(32px);
+    padding: px-to-rem(40px) px-to-rem(32px) 0 px-to-rem(32px);
     position: relative;
 
     & > * {
@@ -15,21 +18,31 @@
     }
 
     &:after {
-      background-color: $color-base-blue-medium;
-      clip-path: polygon(63.75% 0%, 100% 63.75%, 100% 0);
+      background-size: contain;
+      background-repeat: no-repeat;
+      bottom: 0;
       content: "";
       height: 100%;
-      left: 0;
+      min-width: 409.5px;
+      right: 0;
       position: absolute;
-      top: 0;
-      width: 100%;
+      transform: scaleY(-1);
+      width: 28.8%;
       z-index: 0;
+      @include dataurlicon("footertriangle", $color-base-blue-medium);
     }
+  }
+
+  &--logo {
+    max-width: 100%;
   }
 
   &--secondary {
     background-color: $color-base-neutrals-white;
     padding: px-to-rem(36px) px-to-rem(16px) 0 px-to-rem(16px);
+    min-height: px-to-rem(
+      map-get($spacing, "ux", "readmore", "default", "height")
+    );
   }
 
   &--headline {
@@ -90,17 +103,6 @@
     margin-bottom: px-to-rem(45px);
   }
 
-  .social--links--item {
-    height: px-to-rem(16px);
-    margin-right: px-to-rem(20px);
-    position: relative;
-    width: px-to-rem(16px);
-
-    &:last-of-type {
-      margin-right: none;
-    }
-  }
-
   .social--links--link {
     background-repeat: no-repeat;
     background-size: contain;
@@ -131,6 +133,45 @@
     }
   }
 
+  .social--links--item {
+    align-items: center;
+    background-color: transparent;
+    border-radius: px-to-rem(3px);
+    display: flex;
+    height: px-to-rem(24px);
+    justify-content: center;
+    margin-right: px-to-rem(20px);
+    position: relative;
+    width: px-to-rem(24px);
+
+    &:last-of-type {
+      margin-right: none;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: $color-base-blue-light;
+
+      .social--links--link {
+        &.facebook {
+          @include dataurlicon("facebook", $color-base-blue-medium);
+        }
+
+        &.instagram {
+          @include dataurlicon("instagram", $color-base-blue-medium);
+        }
+
+        &.twitter {
+          @include dataurlicon("twitter", $color-base-blue-medium);
+        }
+
+        &.youtube {
+          @include dataurlicon("youtube", $color-base-blue-medium);
+        }
+      }
+    }
+  }
+
   .legal,
   .secondarylinks {
     color: $color-base-neutrals-medium;
@@ -153,23 +194,28 @@
 
   .secondarylinks--list--item a {
     color: $color-base-neutrals-medium;
+    @include globaltransition("color, border-color");
 
     &:visited {
       color: map-get($color, "link", "text-footer", "visited");
+      @include globaltransition("color, border-color");
     }
 
     &:hover {
       color: map-get($color, "link", "text-footer", "hover");
+      @include globaltransition("color, border-color");
     }
 
     &:active {
       color: map-get($color, "link", "text-footer", "active");
       outline: none;
+      @include globaltransition("color, border-color");
     }
 
     &:focus {
       color: map-get($color, "link", "text-footer", "focus");
       outline: none;
+      @include globaltransition("color, border-color");
     }
   }
 
@@ -208,8 +254,7 @@
       border-bottom: 0.1071811361rem solid $color-base-blue-medium;
       color: $color-ux-labels-hover;
       cursor: pointer;
-      transition: background 150ms linear, border 150ms linear,
-        color 150ms linear;
+      @include globaltransition("color, background-color, border-color");
 
       &:after {
         @include dataurlicon("arrow", $color-ux-labels-hover);
@@ -286,6 +331,13 @@
         "site-info address connect"
         "site-info links connect";
       padding: px-to-rem(56px) px-to-rem(70px) px-to-rem(64px) px-to-rem(70px);
+
+      &:after {
+        background-position: right top;
+        bottom: auto;
+        top: 0;
+        transform: scaleY(1);
+      }
     }
 
     &--logo {
@@ -324,6 +376,63 @@
       position: absolute;
       right: 70px;
       top: 0;
+    }
+  }
+
+  .right-to-left & {
+    * {
+      text-align: right;
+    }
+
+    .social--links {
+      flex-direction: row-reverse;
+    }
+
+    .social--links--link {
+      text-indent: 999em;
+    }
+
+    &--main {
+      &:after {
+        bottom: 0;
+        left: 0;
+        right: auto;
+        top: auto;
+        transform: scale(-1, -1);
+      }
+    }
+
+    @include breakpoint("medium") {
+      &--main {
+        grid-template-areas:
+          "address site-info"
+          "links site-info"
+          "connect site-info";
+      }
+    }
+
+    @include breakpoint("large") {
+      &--main {
+        grid-template-columns: calc(32.5% + 64px) 25.1% 19.2%;
+        grid-template-areas:
+          "connect address site-info"
+          "connect links site-info";
+
+        &:after {
+          left: 0;
+          right: auto;
+          transform: scale(-1, 1);
+        }
+      }
+
+      .connect {
+        grid-template-columns: 60%, minmax(0, 40%);
+        margin: 0 calc(18.9% + 64px) 0 0;
+      }
+
+      .ilo--button {
+        justify-self: end;
+      }
     }
   }
 }

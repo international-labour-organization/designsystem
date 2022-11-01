@@ -48,12 +48,20 @@
       font-family: $fonts-display;
       font-weight: 700;
       @include font-styles("body-xs");
+      letter-spacing: -0.02em;
       padding: $spacing-ux-table-head-padding-top
         $spacing-ux-table-head-padding-right
         $spacing-ux-table-head-padding-bottom
         $spacing-ux-table-head-padding-left;
       pointer-events: none;
       text-align: left;
+
+      .ilo--table--small & {
+        padding: $spacing-ux-table-smallhead-padding-top
+          $spacing-ux-table-smallhead-padding-right
+          $spacing-ux-table-smallhead-padding-bottom
+          $spacing-ux-table-smallhead-padding-left;
+      }
 
       &:first-of-type {
         border-left: none;
@@ -113,6 +121,13 @@
         $spacing-ux-table-cell-padding-left;
       position: relative;
 
+      .ilo--table--small & {
+        padding: $spacing-ux-table-smallcell-padding-top
+          $spacing-ux-table-smallcell-padding-right
+          $spacing-ux-table-smallcell-padding-bottom
+          $spacing-ux-table-smallcell-padding-left;
+      }
+
       &:first-of-type {
         border-left: none;
       }
@@ -121,10 +136,17 @@
         text-align: right;
       }
 
+      &:hover {
+        background-color: $color-ux-table-selected-background;
+        border-bottom: 2px solid $color-ux-labels-hover;
+        color: $color-ux-labels-hover;
+      }
+
       &.selected {
         background-color: $color-ux-table-selected-background;
         border-bottom: 2px solid $color-ux-labels-hover;
         color: $color-ux-labels-hover;
+        cursor: pointer;
       }
 
       &.column--selected {
@@ -145,6 +167,7 @@
   }
 
   &--description {
+    color: $color-base-neutrals-medium;
     font-family: $fonts-copy;
     font-weight: 400;
     @include font-styles("body-xxs");
@@ -167,9 +190,18 @@
         border-left: px-to-rem(1px) solid $color-base-neutrals-white;
 
         &:hover,
-        &:focus,
-        &.selected {
+        &:focus {
           background-color: $color-ux-table-selected-background;
+        }
+      }
+
+      &.selected {
+        .ilo--table--body--cell {
+          background-color: $color-ux-table-hover-background;
+
+          &.selected {
+            background-color: $color-ux-table-selected-background;
+          }
         }
       }
     }

@@ -156,7 +156,7 @@
             "bottom": { "value": "24px" },
             "left": { "value": "8px" },
             "right": { "value": "8px" },
-            "top": { "value": "24px" }
+            "top": { "value": "19px" }
           }
         },
         "head": {
@@ -169,10 +169,26 @@
         },
         "cell": {
           "padding": {
-            "bottom": { "value": "14px" },
+            "bottom": { "value": "22px" },
             "left": { "value": "11px" },
             "right": { "value": "11px" },
-            "top": { "value": "14px" }
+            "top": { "value": "22px" }
+          }
+        },
+        "smallhead": {
+          "padding": {
+            "bottom": { "value": "13px" },
+            "left": { "value": "11px" },
+            "right": { "value": "11px" },
+            "top": { "value": "13px" }
+          }
+        },
+        "smallcell": {
+          "padding": {
+            "bottom": { "value": "13px" },
+            "left": { "value": "11px" },
+            "right": { "value": "11px" },
+            "top": { "value": "13px" }
           }
         }
       },

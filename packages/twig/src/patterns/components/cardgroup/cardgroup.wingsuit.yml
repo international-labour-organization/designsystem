@@ -8,12 +8,15 @@ cardgroup:
       label: Group of cards
       description: The group of cards, object
       preview: 
-    settings:
+    cta:
       type: object
-      label: Settings
-      description: Settings for the cards
+      label: CTA
+      description: Button to display after the cards in the group
+      preview:
+        label: "Discover our unique mission"
+        url: "https://www.google.com/search?q=button"
   variants:
-    default:
+    multilink:
       label: Multilink
       description: multilink settings
       fields:
@@ -28,6 +31,7 @@ cardgroup:
             eventdetails: ""
             cta: ""
             source: ""
+            dataset: ""
             linklist:
               headline: ""
               linkgroup:
@@ -81,13 +85,8 @@ cardgroup:
                       url: 'http://www.google.com'
                     - label: Link Three
                       url: 'http://www.google.com'
-        settings:
-          theme: light
-          cornercut: cornercut
-          alignment: left
-          variant: multilink
       settings: 
-        cardcount: three
+        type: multilink
     feature:
       label: Feature
       description: feature settings
@@ -157,13 +156,8 @@ cardgroup:
             list: ""
             dataset: ""
             color: ""
-        settings:
-          theme: light
-          cornercut: cornercut
-          alignment: left
-          variant: feature
       settings: 
-        cardcount: four
+        type: feature
     detail:
       label: Detail
       description: detail settings
@@ -201,13 +195,9 @@ cardgroup:
             list: ""
             dataset: ""
             color: ""
-        settings:
-          theme: light
-          cornercut: cornercut
-          alignment: left
-          variant: detail
       settings: 
-        cardcount: one
+        type: detail
+        theme: light
     graphicpromo:
       label: Graphic Promo
       description: graphic promo settings
@@ -228,13 +218,8 @@ cardgroup:
             linklist: ""
             list: ""
             dataset: ""
-        settings:
-          theme: dark
-          cornercut: cornercut
-          alignment: left
-          variant: graphicpromo
       settings:
-        cardcount: one
+        type: graphicpromo
     stat:
       label: Stat cards
       description: Stat settings
@@ -249,6 +234,7 @@ cardgroup:
             profile: ""
             eventdetails: ""
             cta: ""
+            list: ""
             source: 
               label: "Source: lorem ipsum dolor sit amet, 2020"
               url: "https://www.google.com/search?q=stat"
@@ -262,6 +248,7 @@ cardgroup:
             profile: ""
             eventdetails: ""
             cta: ""
+            list: ""
             source: 
               label: "Source: lorem ipsum dolor sit amet, 2020"
               url: "https://www.google.com/search?q=stat"
@@ -275,6 +262,7 @@ cardgroup:
             profile: ""
             eventdetails: ""
             cta: ""
+            list: ""
             source: 
               label: "Source: lorem ipsum dolor sit amet, 2020"
               url: "https://www.google.com/search?q=stat"
@@ -288,19 +276,16 @@ cardgroup:
             profile: ""
             eventdetails: ""
             cta: ""
+            list: ""
             source: 
               label: "Source: lorem ipsum dolor sit amet, 2020"
               url: "https://www.google.com/search?q=stat"
             color: turquoise
-        settings:
-          theme: light
-          cornercut: cornercut
-          alignment: left
-          variant: stat
       settings:
-        cardcount: two
+        type: stat
+        theme: light
     graphic:
-      label: Graphic
+      label: Graphic Text
       description: graphic settings
       fields:
         group:
@@ -319,13 +304,8 @@ cardgroup:
             linklist: ""
             list: ""
             dataset: ""
-        settings:
-          theme: light
-          cornercut: cornercut
-          alignment: left
-          variant: graphic
       settings:
-        cardcount: one
+        type: graphic
     factlist:
       label: Factlist
       description: Factlist settings
@@ -350,13 +330,8 @@ cardgroup:
                   id: "list1"
                 - content: "Nut labore et dolore magna sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
                   id: "list2"
-        settings:
-          theme: light
-          cornercut: cornercut
-          alignment: left
-          variant: factlist
       settings:
-        cardcount: one
+        type: factlist
     data:
       label: Data
       description: Data settings
@@ -397,14 +372,44 @@ cardgroup:
                     url: "https://www.google.com/search?q=hyperlink"
                   - label: Language link 3
                     url: "https://www.google.com/search?q=url"
-        settings:
-          theme: light
-          cornercut: cornercut
-          alignment: left
-          variant: data
       settings:
-        cardcount: one
+        type: data
+        theme: light
   settings:
+    size:
+      type: select
+      label: Size
+      description: Size of the cards (usually reduces padding)
+      preview: 'standard'
+      options:
+        wide: wide
+        standard: Standard
+        narrow: Narrow
+    color:
+      type: select
+      label: Color
+      description: Color of the stat cards, options are turquoise, green, yellow, or blue
+      preview: 'blue'
+      options:
+        blue: Blue
+        turquoise: Turquoise
+        green: Green
+        yellow: Yellow
+    type:
+      type: select
+      label: Card Count
+      description: Number of cards within a group
+      required: true
+      preview: 'detail'
+      options:
+        data: Data
+        detail: Detail
+        factlist: Factlist
+        feature: Feature
+        graphic: Graphic
+        graphicpromo: Graphic Promo
+        multilink: Multilink
+        stat: Stat
     cardcount:
       type: select
       label: Card Count
@@ -416,4 +421,29 @@ cardgroup:
         two: Two
         three: Three
         four: Four
+    theme:
+      type: select
+      label: Theme
+      description: The theme type for the hero
+      required: false
+      preview: 'dark'
+      options:
+        dark: Dark
+        light: Light
+    cornercut:
+      type: select
+      label: Corner cut
+      description: Setting for whether the card has a cut corner
+      preview: cornercut
+      options:
+        cornercut: Corner cut
+        corner: Corner
+    alignment:
+      type: select
+      label: Alignment
+      description: Set whether card (multilink) image is right aligned or left aligned
+      preview: left
+      options:
+        left: Left
+        right: right
   visibility: storybook

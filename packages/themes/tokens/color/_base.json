@@ -2,6 +2,7 @@
   "color": {
     "base": {
       "blue": {
+        "lighter": { "value": "{brand.ilo-lighter-blue}" },
         "light": { "value": "{brand.ilo-light-blue}" },
         "intermediate": { "value": "{brand.ilo-ramp-blue}" },
         "medium": { "value": "{brand.ilo-blue}" },
@@ -10,6 +11,7 @@
       "green": { "value": "{brand.ilo-green}" },
       "neutrals": {
         "white": { "value": "{brand.ilo-white}" },
+        "alternate": { "value": "{brand.ilo-grey-light-alternate}" },
         "lighter": { "value": "{brand.ilo-grey-light}" },
         "light": { "value": "{brand.ilo-grey-ui}" },
         "medium": { "value": "{brand.ilo-grey-accessible}" },

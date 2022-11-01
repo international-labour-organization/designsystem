@@ -486,7 +486,10 @@ form:
                       label: "Date Picker End Field Label"
                       name: "datepickerend"
                       placeholder: "MM/DD/YYYY"
-                      tooltip: "Tooltip"
+                      tooltip:
+                        label: 'tooltip'
+                        icon: true
+                        theme: dark
                     label: "Date Picker Field Label"
                     name: "datepicker"
                     placeholder: "MM/DD/YYYY"

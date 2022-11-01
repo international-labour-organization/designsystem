@@ -109,4 +109,13 @@ table:
         false: False
       preview: false
       required: false
+    smallrows:
+      type: select
+      label: Small Rows
+      description: Should the table have rows with a smaller height?
+      options:
+        true: True
+        false: False
+      preview: false
+      required: false
   visibility: storybook

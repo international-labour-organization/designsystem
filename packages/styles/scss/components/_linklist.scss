@@ -1,5 +1,6 @@
 @use "../tokens" as *;
 @use "../functions" as *;
+@import "../animations";
 @import "../mixins";
 
 .ilo--link-list {
@@ -82,11 +83,13 @@
 
     &:visited {
       color: map-get($color, "link", "text", "default");
+      @include globaltransition("color");
     }
 
     &:active {
       color: map-get($color, "link", "text", "active");
       outline: none;
+      @include globaltransition("color");
     }
 
     &:hover,
@@ -97,6 +100,17 @@
       color: map-get($color, "link", "text", "hover");
       outline: none;
       @include dataurlicon("arrowright", $color-link-text-hover);
+      @include globaltransition("color, background-color, border-color");
+    }
+
+    .right-to-left & {
+      background-position: $spacing-padding-0-5 center;
+      @include dataurlicon("arrowleft", $color-link-text-default);
+
+      &:hover,
+      &:focus {
+        @include dataurlicon("arrowleft", $color-link-text-hover);
+      }
     }
   }
 
@@ -123,6 +137,7 @@
       &:visited {
         .ilo--link-list--label {
           color: $color-base-neutrals-white;
+          @include globaltransition("color");
         }
       }
 
@@ -131,6 +146,7 @@
 
         .ilo--link-list--label {
           color: map-get($color, "link", "text", "active");
+          @include globaltransition("color");
         }
       }
 
@@ -141,8 +157,25 @@
 
         .ilo--link-list--label {
           color: $color-base-blue-medium;
+          @include globaltransition("color");
         }
       }
+
+      .right-to-left & {
+        background-position: $spacing-padding-0-5 center;
+        @include dataurlicon("arrowleft", $color-base-neutrals-white);
+
+        &:hover,
+        &:focus {
+          @include dataurlicon("arrowleft", $color-base-blue-medium);
+        }
+      }
+    }
+  }
+
+  .right-to-left & {
+    * {
+      text-align: right;
     }
   }
 }
