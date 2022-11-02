@@ -1,0 +1,4 @@
+export declare function isInit(): boolean;
+export declare function init(pbehaviorName: any): void;
+export declare function attachBehaviorDecorator(storyFn: any): any;
+export declare function attachBehaviors(context: any, settings: {}): void;

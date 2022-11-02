@@ -1,0 +1,7 @@
+import { FunctionComponent } from 'react';
+import { PatternVariant } from '@wingsuit-designsystem/pattern';
+declare type Props = {
+    variant: PatternVariant;
+};
+export declare const PatternInclude: FunctionComponent<Props>;
+export {};

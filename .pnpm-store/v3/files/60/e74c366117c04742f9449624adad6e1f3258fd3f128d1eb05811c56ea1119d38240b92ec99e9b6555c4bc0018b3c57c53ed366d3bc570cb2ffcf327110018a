@@ -1,0 +1,20 @@
+import ConfigBundle from "./ConfigBundle";
+import DesignSystemConfig from "../common/DesignSystemConfig";
+import AppConfig from "../common/AppConfig";
+import BaseApp from "../common/BaseApp";
+export declare abstract class BaseConfigBundle implements ConfigBundle {
+    protected app: BaseApp;
+    protected appConfig: AppConfig;
+    protected designSystemConfig: DesignSystemConfig;
+    protected name: any;
+    protected sharedWebpackConfig: {};
+    protected developmentWebpackConfig: {};
+    protected productionWebpackConfig: {};
+    protected constructor(name: any, app: BaseApp);
+    getApp(): BaseApp;
+    getName(): any;
+    getSharedWebpackConfig(): {};
+    getDevelopmentWebpackConfig(): {};
+    getProductionWebpackConfig(): {};
+    alterFinalConfig(config: any): {};
+}

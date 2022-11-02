@@ -1,0 +1,7 @@
+export default class Tailwind2JsonPlugin {
+    private readonly tailwindConfig;
+    private readonly targetFilePath;
+    private plugin;
+    constructor(tailwindConfig: string, targetFilePath: string);
+    apply(compiler: any): void;
+}

@@ -1,0 +1,292 @@
+5.1.0
+
+* #541 Add a way to parse templates in a "loose" way
+
+5.0.2
+
+ * #513 Fix errors in relative filesystem loader
+
+5.0.1
+
+ * Fix an issue with node/module test
+
+5.0.0
+
+ * #508 Allows functions, filters and tests to use the template itself
+ * #502 Relatively loaded templates are cached under multiple keys
+ * #501 Add support for node@13
+ * #499 Remove the deprecated classes and functions
+ * #498 Remove the native "optimizer" extension
+ * #479 Binary nodes all share the same type
+ * #497 Output buffering doesn't support concurrent rendering
+
+4.0.6
+
+* #495 Relative filesystem loader fails to resolve template included from a relatively resolved template
+
+4.0.5
+
+ *#493 Chain loader fails to resolve when it contains more than one sub-loader
+
+4.0.4
+
+ * #486 "iterable1 is not iterable" error when merging into a hash
+ * #485 Twing render output is incorrect when \ (backslash) is present in source twig file(s)
+ * #484 String interpolation doesn't work for string with double and single quotes
+ * #483 The property object is async but the filter callback is sync
+ * #480 `json_encode` cannot serialize `_context`
+ * #449 Environment is not publicly available in TwingTemplate
+
+4.0.3
+
+ * #474 Issues with embed tag
+ * #475 TwingNodeComment is not exported in lib index
+
+4.0.2
+
+ * #466 - min function does not working as expected
+ * #469 - concatenation using ~ outputs "undefined" (variables)
+
+4.0.1
+
+ * #462 length filter does't work as expected on empty array
+
+4.0.0
+
+ * #452 Remove support for sourceMap environment option being a string
+ * #451 Remove TwingSource path property entirely
+ * #347 Async function support
+ * #288 Custom asynchronous loader
+
+3.1.1
+
+ * #450 Getting the source map of a template loaded from an array loader throws an error
+
+3.1.0
+
+ * #424 Add support for the line tag
+ * #435 Rename "eslint" test suite to "code quality"
+
+3.0.3
+
+ * #441 empty tmp file in dist
+
+3.0.2
+
+ * #432 Sandbox is always enabled, whatever the options passed to the environment
+ * #428 added eslint and fixed minor eslint problems
+ * #417 Rewrite the test suite in TypeScript
+ * #422 Map and reduce filters documentation exposes a non-existing "array" argument
+
+3.0.1
+
+ * #419 TwingLoaderNull doesn't behave as expected
+ * #418 Types are not available to consumers
+ * #414 Include function should be called with undefined when no variables is set to benefit from the default values
+ * #412 Performance is way lower than pre-2.3
+ * #411 Source maps are exported in the npm package
+
+3.0.0
+
+ * #409 3.x: compatibility chart is not up-to-date
+ * #403 3.x: Lexer doesn't support custom operators
+ * #399 Move the project to NightlyCommit
+ * #398 Add support for Node.js 12
+ * #391 Add a way to register templates module in the environment cache
+ * #390 Get rid of TwingTemplateWrapper
+ * #375 Clean the included extensions
+ * #368 filter tag is supposed to create a new context scope
+ * #365 Add support for Twig 2.11
+ * #362 Array syntax should always resolve to a Map
+ * #348 The lexer is lossy
+ * #345 Provide an easier way to load the main pre-compiled template
+ * #338 Rework filter and function declaration APIs to enforce explicit parameters naming
+ * #337 Clarify documentation of the auto_reload option
+ * #310 Move deprecation messages to warnings instead of errors
+ * #305 Provide an ES along with CJS version of Twing
+
+2.3.6
+
+ * #385 Get rid of most constructor.name usage
+
+2.3.5
+
+ * #381 Browser and Webpack (TypeScript)
+ * #380 Doesn't run without the types luxon
+
+2.3.4
+
+ * #378 Add a "Related projects" section to the README
+ * #376 Error thrown when for tag is used inside a with tag
+
+2.3.3
+
+ * #373 Browser flavor lacks some exports
+
+2.3.2
+
+ * #371 Add a compatibility chart
+ * #369 Add a "known issues" section in the documentation
+
+2.3.1
+
+ * #360 slice filter returns a map
+
+2.3.0
+
+ * #333 Add support for Twig 2.10
+
+2.2.7
+
+ * #358 package-lock.json prevents grabbing latest dependencies security patches
+ * #349 Variable wrongly interpreted as operator when used as assignment of a for tag
+ * #327 Comments are not part of the AST
+
+2.2.6
+
+ * #352 twing fails to render if the the html tag has an attribute lang="de" - Cannot read property 'LC_CTYPE' of undefined
+ * #354 Twing crashes when template contains JS interpolation syntax
+
+2.2.5
+
+ * #341 Syntax errors don't show the location where the error occurred
+
+2.2.4
+
+ * #334 Changing autoescape option doesn't invalidate the cache
+ * #298 Add support for sourceContents
+
+2.2.3
+
+ * #323 include function doesn't support relative filesystem loader
+ * #322 Test suite fails with node.js 11
+
+2.2.2
+
+ * #225 [RCF] npm found 3 vulnerabilities (2 low, 1 moderate)
+ * #313 TwingEnvironmentOptions.cache typing is incorrect
+ * #316 `json_encode` cannot serialize Map
+
+2.2.1
+
+ * #314 Twing 2.2.0 not working in browser
+
+2.2.0
+
+ * #299 Add support for Twig 2.6.3
+
+2.1.4
+
+ * #308 Source map for spaceless tag is still faulty in some case
+
+2.1.3
+
+ * #303 Incorrect souce map when spaceless tag is used
+ * #302 TwingErrorSyntax: Unknown "dump" function
+ * #300 Probable bug in TwingFileSystemLoader
+
+2.1.2
+
+ * #289 - "include" tag uses merge filter instead of merge helper
+ * #286 - Types are incorrect - i.e. impossible to build against Twing
+
+2.1.1
+
+ * #284 - Uncaught TwingErrorSyntax: An exception has been thrown during the compilation of a template ("parseFunction is not a function")
+ * #282 - Template code and path not send to TwingError when TwingTemplate#loadTemplate is called with a template name
+
+2.1.0
+
+ * #280 - Documentation doesn't build anymore
+ * #9 - Rewrite varDump helper
+ * #277 - Add core support for template-relative resolving
+ * #227 - date filter doesn't support all required format
+ * #274 - CHANGELOG not up-to-date
+
+2.0.0
+
+ * #267 - Update documentation
+ * #271 - Improve the packaging process
+ * #200 - Cannot find module 'twing/lib/runtime'
+ * #237 - Can twing be run on the frontend?
+ * #258 - Twing should return source map as string instead of SourceMapGenerator
+ * #209 - How to use base_template_class?
+
+1.3.1
+
+ * #266 - CHANGELOG not up-to-date on v1.3.0
+
+1.3.0
+
+ * #251 - Support Twig 2.5.0
+
+1.2.7
+
+ * #262 - TwingToken is not exported
+
+1.2.6
+
+ * #256 - Source map sources are not relative to the project root
+ * #254 - Changing source map config doesn't invalidate template cache
+ * #255 - TypeError: Cannot read property 'toMappings' of undefined
+ * #253 - "Error: ENOENT: no such file or directory" on non-existent namespace folder
+ * #249 - Interfaces are not exported
+
+1.2.5
+
+ * #247 - Package manifest uses deprecated licenses key
+
+1.2.4
+
+ * #236 - Batch filter throws an error when used on an undefined variable
+ * #238 - "types" entry missing from package.json
+ * #242 - Improve Travis CI support
+ * #240 - Remove benchmark and tasks folders and dependencies
+ * #239 - TwingEnvironmentOptions is not exported
+
+1.2.3
+
+ * Fix #234 - loop.last & loop.length & iterable not available in nested for
+
+1.2.2
+
+ * Fix #230 - Compiler should not escape quotation mark
+ * Fix #232 - Twing throws: "SyntaxError: missing ) after argument list" whenever it encounters a ` character.
+
+1.2.1
+
+ * Fix #218 - Twing@1.2.0 created a breaking changes with extension filters and functions
+ * Fix #219 - An exception has been thrown during the compilation of a template ("The comparison function must be either a function or undefined").
+ * Fix #220 - Error when getSourceMap is called with source_map option set to false
+
+1.2.0
+
+ * Fix #12 - Add source map support enhancement in progress
+ * Fix #205 - Unable to register extension "_default" when using babel + twing extensions
+ * Fix #216 - Restore auto reload behavior from pre-#194
+
+1.1.1
+
+ * Fix #210 - If with multiple elseif not working as expected
+
+1.1.0
+
+ * Fix #204 - Export TwingNodeType as part of twing
+ * Fix #206 - Make TwingEnvironment emit an event when encountering a template
+
+1.0.3
+
+ * Fix #194 - Autoreload broken
+
+1.0.2
+
+ * Fix #201 - The merge filter returns a Map even if the filtered object is an array
+
+1.0.1
+
+ * Catch-up with TwigPHP 2.4.8
+ * Add a changelog
+
+1.0.0
+
+ * Initial release based on TwigPHP 2.4.4

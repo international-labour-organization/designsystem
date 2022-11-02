@@ -1,0 +1,2 @@
+import AppConfig from "../../../AppConfig";
+export declare function webpack(appConfig: AppConfig): any;

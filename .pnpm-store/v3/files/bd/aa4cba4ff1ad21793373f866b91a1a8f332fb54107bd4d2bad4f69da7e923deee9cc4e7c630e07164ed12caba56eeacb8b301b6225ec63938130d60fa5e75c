@@ -1,0 +1,21 @@
+import AppConfig from './AppConfig';
+export { default as AppConfig } from './AppConfig';
+export { resolveConfig } from './resolveConfig';
+export { default as PresetManager } from './server/PresetManager';
+export declare function getAppPack(appConfig: AppConfig, webpacks?: any[]): any;
+/**
+ * Returns true if a feature is supported by an extension.
+ *
+ * @param name
+ *   The feature name.
+ *
+ * @return boolean
+ *   True if feature is supported.
+ */
+export declare function supportFeature(name: any, appConfig: AppConfig): boolean;
+export declare function getDefaultPreset(name: any): import("./AppConfig").Preset;
+export declare function invokePreset(funcName: any, config: any): {};
+export declare function getAppTypes(wingsuitConfig?: any): string[];
+export declare function getApps(wingsuitConfig?: any, environment?: string): AppConfig[];
+export declare function getAppNames(wingsuitConfig?: any, type?: string): string[];
+export declare function syncSilo(filename: any, data: any): void;

@@ -1,0 +1,10 @@
+export declare function webpack(appConfig: any): {
+    module: {
+        rules: {
+            test: RegExp;
+            use: {
+                loader: string;
+            }[];
+        }[];
+    };
+};

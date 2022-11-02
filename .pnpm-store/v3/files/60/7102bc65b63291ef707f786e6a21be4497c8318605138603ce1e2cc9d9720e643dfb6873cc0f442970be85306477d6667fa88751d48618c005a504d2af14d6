@@ -1,0 +1,26 @@
+export declare function webpack(appConfig: any): {
+    module: {
+        rules: ({
+            test: RegExp;
+            enforce: string;
+            exclude: RegExp;
+            loader: string;
+            options: {
+                emitWarning: boolean;
+            };
+            use?: undefined;
+        } | {
+            test: RegExp;
+            exclude: RegExp;
+            use: {
+                loader: string;
+                options: {
+                    presets: string[];
+                };
+            };
+            enforce?: undefined;
+            loader?: undefined;
+            options?: undefined;
+        })[];
+    };
+};

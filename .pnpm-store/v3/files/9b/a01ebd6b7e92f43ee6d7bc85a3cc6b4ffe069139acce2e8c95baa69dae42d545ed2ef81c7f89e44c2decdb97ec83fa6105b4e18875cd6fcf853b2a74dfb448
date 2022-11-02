@@ -1,0 +1,12 @@
+export default class TwigAttribute {
+    private attributes;
+    constructor(attributes?: string);
+    class(): any;
+    setAttribute(key: any, value: any): this;
+    removeAttribute(key: any): this;
+    removeClass(className?: string): void;
+    addClass(className?: string | string[] | null): this;
+    render(): string;
+    toArray(): [string, any][];
+    toString(): string;
+}

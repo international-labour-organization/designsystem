@@ -1,0 +1,9 @@
+import { AppConfig } from '../../index';
+export default class Svg2JsonPlugin {
+    private readonly sourceFolder;
+    private readonly targetJsonFlename;
+    private plugin;
+    private appConfig;
+    constructor(sourceFolder: any, targetJsonFilename: any, appConfig: AppConfig);
+    apply(compiler: any): void;
+}

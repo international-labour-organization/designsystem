@@ -1,0 +1,89 @@
+{
+  "name": "unist-util-inspect",
+  "version": "5.0.1",
+  "description": "unist utility to inspect nodes",
+  "license": "MIT",
+  "keywords": [
+    "unist",
+    "unist-util",
+    "util",
+    "utility",
+    "inspect",
+    "debug",
+    "log",
+    "console"
+  ],
+  "repository": "syntax-tree/unist-util-inspect",
+  "bugs": "https://github.com/syntax-tree/unist-util-inspect/issues",
+  "funding": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/unified"
+  },
+  "author": "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)",
+  "contributors": [
+    "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)"
+  ],
+  "files": [
+    "index.js",
+    "types/index.d.ts"
+  ],
+  "types": "types/index.d.ts",
+  "dependencies": {
+    "is-empty": "^1.0.0"
+  },
+  "devDependencies": {
+    "@types/unist": "^2.0.3",
+    "browserify": "^16.0.0",
+    "chalk": "^3.0.0",
+    "dtslint": "^3.0.0",
+    "nyc": "^15.0.0",
+    "prettier": "^1.0.0",
+    "remark-cli": "^7.0.0",
+    "remark-preset-wooorm": "^6.0.0",
+    "retext": "^7.0.0",
+    "strip-ansi": "^6.0.0",
+    "tape": "^4.0.0",
+    "tinyify": "^2.0.0",
+    "xo": "^0.26.0"
+  },
+  "scripts": {
+    "format": "remark . -qfo && prettier --write \"**/*.js\" && xo --fix",
+    "build-bundle": "browserify . --bare -s unistUtilInspect > unist-util-inspect.js",
+    "build-mangle": "browserify . --bare -s unistUtilInspect -p tinyify > unist-util-inspect.min.js",
+    "build": "npm run build-bundle && npm run build-mangle",
+    "test-api": "node test",
+    "test-coverage": "nyc --reporter lcov tape test.js",
+    "test": "npm run format && npm run build && npm run test-coverage",
+    "dtslint": "dtslint types"
+  },
+  "prettier": {
+    "tabWidth": 2,
+    "useTabs": false,
+    "singleQuote": true,
+    "bracketSpacing": false,
+    "semi": false,
+    "trailingComma": "none"
+  },
+  "xo": {
+    "prettier": true,
+    "esnext": false,
+    "rules": {
+      "guard-for-in": "off",
+      "unicorn/prefer-includes": "off"
+    },
+    "ignore": [
+      "unist-util-inspect.js"
+    ]
+  },
+  "nyc": {
+    "check-coverage": true,
+    "lines": 100,
+    "functions": 100,
+    "branches": 100
+  },
+  "remarkConfig": {
+    "plugins": [
+      "preset-wooorm"
+    ]
+  }
+}

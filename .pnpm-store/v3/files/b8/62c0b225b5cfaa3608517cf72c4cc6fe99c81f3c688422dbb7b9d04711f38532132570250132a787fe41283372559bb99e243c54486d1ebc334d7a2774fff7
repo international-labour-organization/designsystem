@@ -1,0 +1,45 @@
+{
+  "name": "deep-get-set",
+  "description": "Set and get values on objects via dot-notation strings.",
+  "version": "1.1.1",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/acstll/deep-get-set.git"
+  },
+  "homepage": "https://github.com/acstll/deep-get-set",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape test.js"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "tape": "~1.0.4"
+  },
+  "keywords": [
+    "deep",
+    "object",
+    "access",
+    "property",
+    "utility",
+    "nested",
+    "string"
+  ],
+  "author": "Arturo Castillo Delgado <19@8302.net>",
+  "license": "MIT",
+  "testling": {
+    "files": "test.js",
+    "browsers": [
+      "ie/8..latest",
+      "firefox/17..latest",
+      "firefox/nightly",
+      "chrome/22..latest",
+      "chrome/canary",
+      "opera/12..latest",
+      "opera/next",
+      "safari/5.1..latest",
+      "ipad/6.0..latest",
+      "iphone/6.0..latest",
+      "android-browser/4.2..latest"
+    ]
+  }
+}

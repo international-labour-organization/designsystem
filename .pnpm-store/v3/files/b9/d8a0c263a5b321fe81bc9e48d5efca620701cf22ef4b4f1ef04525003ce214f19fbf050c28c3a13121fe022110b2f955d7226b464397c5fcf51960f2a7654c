@@ -1,0 +1,73 @@
+{
+  "name": "jquery-once",
+  "title": "jQuery Once",
+  "description": "Act on jQuery elements only once.",
+  "version": "2.2.3",
+  "keywords": [
+    "jquery",
+    "jquery-plugin"
+  ],
+  "homepage": "https://github.com/RobLoach/jquery-once",
+  "author": "Rob Loach (http://github.com/RobLoach)",
+  "maintainers": [
+    "Rob Loach (https://github.com/RobLoach)"
+  ],
+  "types": "jquery.once.d.ts",
+  "main": "jquery.once.js",
+  "contributors": [
+    "JohnAlbin (https://github.com/JohnAlbin)",
+    "Rob Loach <robloach@gmail.com> (https://github.com/RobLoach)",
+    "theodoreb (https://github.com/theodoreb)"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/RobLoach/jquery-once.git"
+  },
+  "bugs": {
+    "url": "https://github.com/RobLoach/jquery-once/issues"
+  },
+  "license": "(GPL-2.0 OR MIT)",
+  "engines": {
+    "node": ">=4"
+  },
+  "dependencies": {
+    "jquery": "*"
+  },
+  "devDependencies": {
+    "@types/jquery": "*",
+    "coveralls": "^3.0.3",
+    "jsdoc-to-markdown": "^5.0.0",
+    "jsdom": "~15.1.0",
+    "mocha": "^6.1.2",
+    "mocha-jsdom": "*",
+    "nyc": "^14.1.0",
+    "uglify-js": "~3.5.3",
+    "xo": "*"
+  },
+  "scripts": {
+    "test": "mocha test/test.js --env node",
+    "posttest": "xo --space=2 --no-esnext jquery.once.js test",
+    "docs": "jsdoc2md jquery.once.js > API.md",
+    "build": "uglifyjs -o jquery.once.min.js --comments --source-map filename=jquery.once.min.js,url=jquery.once.min.js.map --mangle -- jquery.once.js",
+    "prepackage": "npm it",
+    "package": "npm run docs",
+    "postpackage": "npm run build",
+    "coverage": "nyc npm run test",
+    "precoveralls": "npm run coverage",
+    "coveralls": "nyc report --reporter=text-lcov | coveralls"
+  },
+  "files": [
+    "jquery.once.js",
+    "jquery.once.d.ts",
+    "jquery.once.min.js",
+    "jquery.once.min.js.map"
+  ],
+  "browser": "./jquery.once.min.js",
+  "browserPackage": {
+    "files": [
+      "jquery.once.js",
+      "jquery.once.min.js",
+      "jquery.once.min.js.map"
+    ]
+  }
+}

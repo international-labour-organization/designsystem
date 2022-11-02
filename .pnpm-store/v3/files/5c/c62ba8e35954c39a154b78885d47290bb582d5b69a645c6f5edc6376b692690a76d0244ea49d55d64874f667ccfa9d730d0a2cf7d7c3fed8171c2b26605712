@@ -1,0 +1,6 @@
+import { BaseConfigBundle } from "../BaseConfigBundle";
+import BaseApp from "../../common/BaseApp";
+export default class TwigBundle extends BaseConfigBundle {
+    static create(app: BaseApp): TwigBundle;
+    protected sharedWebpackConfig: {};
+}

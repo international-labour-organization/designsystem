@@ -1,0 +1,53 @@
+{
+  "author": {
+    "name": "Karify B.V.",
+    "email": "questions@karify.com",
+    "url": "https://www.karify.com"
+  },
+  "contributors": [
+    {
+      "name": "Bruno Sampaio",
+      "email": "bruno.sampaio@karify.com",
+      "url": "http://bensampaio.github.io/"
+    }
+  ],
+  "dependencies": {
+    "cheerio": "^0.20.0",
+    "imagemin": "^7.0.0",
+    "imagemin-svgo": "^7.0.0",
+    "loader-utils": "^1.2.3",
+    "lodash.escaperegexp": "^4.1.2"
+  },
+  "description": "A webpack loader and plugin that generate SVG sprites out of a collection of SVG files used in your JS and CSS files",
+  "devDependencies": {
+    "eslint": "^6.1.0",
+    "eslint-plugin-react": "^7.14.3",
+    "webpack": "^4.39.2"
+  },
+  "peerDependencies": {
+    "webpack": "^4.1.0"
+  },
+  "engines": {
+    "node": ">=8.0.0",
+    "npm": ">=3.8.0"
+  },
+  "files": [
+    "lib"
+  ],
+  "keywords": [
+    "svg",
+    "webpack",
+    "webpack-loader"
+  ],
+  "license": "MIT",
+  "main": "lib/SvgStorePlugin.js",
+  "name": "external-svg-sprite-loader",
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/Karify/external-svg-sprite-loader.git"
+  },
+  "scripts": {
+    "lint": "eslint lib examples --ext=js,jsx"
+  },
+  "version": "5.0.1"
+}

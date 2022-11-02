@@ -1,0 +1,116 @@
+{
+  "name": "unified-engine",
+  "version": "8.2.0",
+  "description": "Engine to process multiple files with unified",
+  "license": "MIT",
+  "keywords": [
+    "unified",
+    "processor",
+    "engine"
+  ],
+  "repository": "unifiedjs/unified-engine",
+  "bugs": "https://github.com/unifiedjs/unified-engine/issues",
+  "author": "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)",
+  "funding": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/unified"
+  },
+  "contributors": [
+    "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)",
+    "Christian Murphy <christian.murphy.42@gmail.com>"
+  ],
+  "main": "lib/index.js",
+  "types": "types/index.d.ts",
+  "files": [
+    "lib/",
+    "types/index.d.ts"
+  ],
+  "dependencies": {
+    "concat-stream": "^2.0.0",
+    "debug": "^4.0.0",
+    "fault": "^1.0.0",
+    "figures": "^3.0.0",
+    "glob": "^7.0.3",
+    "ignore": "^5.0.0",
+    "is-buffer": "^2.0.0",
+    "is-empty": "^1.0.0",
+    "is-plain-obj": "^2.0.0",
+    "js-yaml": "^3.6.1",
+    "load-plugin": "^3.0.0",
+    "parse-json": "^5.0.0",
+    "to-vfile": "^6.0.0",
+    "trough": "^1.0.0",
+    "unist-util-inspect": "^5.0.0",
+    "vfile-reporter": "^6.0.0",
+    "vfile-statistics": "^1.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "^14.0.0",
+    "@types/unist": "^2.0.0",
+    "dtslint": "^4.0.0",
+    "nyc": "^15.0.0",
+    "prettier": "^2.0.0",
+    "remark": "^13.0.0",
+    "remark-cli": "^9.0.0",
+    "remark-preset-wooorm": "^8.0.0",
+    "remark-toc": "^7.0.0",
+    "semver": "^7.0.0",
+    "strip-ansi": "^6.0.0",
+    "tape": "^5.0.0",
+    "unified": "^9.0.0",
+    "vfile": "^4.0.0",
+    "vfile-reporter-json": "^2.0.0",
+    "vfile-reporter-pretty": "^5.0.0",
+    "xo": "^0.38.0"
+  },
+  "scripts": {
+    "format": "remark . -qfo && prettier . -w --loglevel warn && xo --fix",
+    "test-api": "node test",
+    "test-coverage": "nyc --reporter lcov tape test/index.js",
+    "test-types": "dtslint types",
+    "test": "npm run format && npm run test-coverage && npm run test-types"
+  },
+  "nyc": {
+    "check-coverage": true,
+    "lines": 100,
+    "functions": 100,
+    "branches": 100
+  },
+  "remarkConfig": {
+    "plugins": [
+      "preset-wooorm",
+      [
+        "toc",
+        {
+          "heading": "contents",
+          "maxDepth": 3,
+          "tight": true
+        }
+      ]
+    ]
+  },
+  "prettier": {
+    "tabWidth": 2,
+    "useTabs": false,
+    "singleQuote": true,
+    "bracketSpacing": false,
+    "semi": false,
+    "trailingComma": "none"
+  },
+  "xo": {
+    "prettier": true,
+    "esnext": false,
+    "ignore": [
+      "types"
+    ],
+    "rules": {
+      "complexity": "off",
+      "guard-for-in": "off",
+      "unicorn/no-array-callback-reference": "off",
+      "unicorn/no-array-for-each": "off",
+      "unicorn/no-this-assignment": "off",
+      "unicorn/prefer-optional-catch-binding": "off",
+      "unicorn/prefer-includes": "off"
+    }
+  }
+}

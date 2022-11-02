@@ -1,0 +1,338 @@
+"use strict";
+
+require("core-js/modules/es.object.define-property.js");
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.getPatternConfiguration = getPatternConfiguration;
+exports.initializeRenderer = initializeRenderer;
+exports.renderData = renderData;
+exports.renderPattern = renderPattern;
+exports.renderPatternPreview = renderPatternPreview;
+exports.renderTemplate = renderTemplate;
+exports.setRenderer = setRenderer;
+exports.twingMapToArray = twingMapToArray;
+
+require("regenerator-runtime/runtime.js");
+
+require("core-js/modules/es.array.for-each.js");
+
+require("core-js/modules/es.object.to-string.js");
+
+require("core-js/modules/web.dom-collections.for-each.js");
+
+require("core-js/modules/es.object.keys.js");
+
+require("core-js/modules/es.array.iterator.js");
+
+require("core-js/modules/es.map.js");
+
+require("core-js/modules/es.string.iterator.js");
+
+require("core-js/modules/web.dom-collections.iterator.js");
+
+require("core-js/modules/es.object.assign.js");
+
+require("core-js/modules/es.promise.js");
+
+require("core-js/modules/es.regexp.exec.js");
+
+require("core-js/modules/es.string.split.js");
+
+require("core-js/modules/es.number.parse-int.js");
+
+require("core-js/modules/es.number.constructor.js");
+
+require("core-js/modules/es.array.concat.js");
+
+var _index = require("./index");
+
+var _Pattern = _interopRequireDefault(require("./Pattern"));
+
+var _Field = require("./Field");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+var rendererImpl;
+
+function setRenderer(_x) {
+  return _setRenderer.apply(this, arguments);
+}
+
+function _setRenderer() {
+  _setRenderer = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(renderer) {
+    return regeneratorRuntime.wrap(function _callee$(_context) {
+      while (1) {
+        switch (_context.prev = _context.next) {
+          case 0:
+            rendererImpl = renderer;
+
+          case 1:
+          case "end":
+            return _context.stop();
+        }
+      }
+    }, _callee);
+  }));
+  return _setRenderer.apply(this, arguments);
+}
+
+function initializeRenderer() {
+  Object.keys(_index.storage.getTwigResources()).forEach(function (key) {
+    rendererImpl.addTemplate(key, _index.storage.getTwigResources()[key]);
+  });
+}
+
+function getPatternConfiguration(_x2) {
+  return _getPatternConfiguration.apply(this, arguments);
+}
+
+function _getPatternConfiguration() {
+  _getPatternConfiguration = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee2(patternId) {
+    var variantId,
+        configuration,
+        variant,
+        _args2 = arguments;
+    return regeneratorRuntime.wrap(function _callee2$(_context2) {
+      while (1) {
+        switch (_context2.prev = _context2.next) {
+          case 0:
+            variantId = _args2.length > 1 && _args2[1] !== undefined ? _args2[1] : _Pattern["default"].DEFAULT_VARIANT_NAME;
+            configuration = _args2.length > 2 ? _args2[2] : undefined;
+            _context2.prev = 2;
+            variant = _index.storage.loadVariant(patternId, variantId);
+            return _context2.abrupt("return", new Promise(function (resolve) {
+              var config = variant.getConfiguration();
+              resolve(config[configuration]);
+            }));
+
+          case 7:
+            _context2.prev = 7;
+            _context2.t0 = _context2["catch"](2);
+            return _context2.abrupt("return", new Promise(function (resolve) {
+              if (_context2.t0 instanceof Error) {
+                // eslint-disable-next-line no-console
+                console.info("Cannot load pattern configuration. Message: ".concat(_context2.t0.message));
+              }
+
+              resolve('');
+            }));
+
+          case 10:
+          case "end":
+            return _context2.stop();
+        }
+      }
+    }, _callee2, null, [[2, 7]]);
+  }));
+  return _getPatternConfiguration.apply(this, arguments);
+}
+
+function twingMapToArray(variables) {
+  var ary = [];
+
+  if (variables instanceof Map) {
+    variables.forEach(function (value) {
+      ary.push(value);
+    });
+  }
+
+  return ary;
+}
+
+function renderPatternPreview(_x3) {
+  return _renderPatternPreview.apply(this, arguments);
+}
+
+function _renderPatternPreview() {
+  _renderPatternPreview = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee3(patternId) {
+    var variables,
+        variantId,
+        renderInfoContext,
+        variant,
+        renderInfo,
+        promisedPreview,
+        promisedPreviewNames,
+        i,
+        patternVariables,
+        _args3 = arguments;
+    return regeneratorRuntime.wrap(function _callee3$(_context3) {
+      while (1) {
+        switch (_context3.prev = _context3.next) {
+          case 0:
+            variables = _args3.length > 1 && _args3[1] !== undefined ? _args3[1] : {};
+            variantId = _args3.length > 2 && _args3[2] !== undefined ? _args3[2] : _Pattern["default"].DEFAULT_VARIANT_NAME;
+            renderInfoContext = _args3.length > 3 && _args3[3] !== undefined ? _args3[3] : {};
+            _context3.prev = 3;
+            variant = _index.storage.loadVariant(patternId, variantId);
+            _context3.next = 10;
+            break;
+
+          case 7:
+            _context3.prev = 7;
+            _context3.t0 = _context3["catch"](3);
+            return _context3.abrupt("return", new Promise(function (resolve) {
+              if (_context3.t0 instanceof Error) {
+                resolve(_context3.t0.message);
+              }
+            }));
+
+          case 10:
+            renderInfo = Object.assign({}, variant.getRenderInfo(), renderInfoContext);
+            promisedPreview = [];
+            promisedPreviewNames = [];
+            i = 0;
+            Object.keys(renderInfo).forEach(function (key) {
+              var _renderInfo$key;
+
+              promisedPreview[i] = renderPatternPreview(renderInfo[key].patternId, renderInfo[key].variables, renderInfo[key].variant, ((_renderInfo$key = renderInfo[key]) === null || _renderInfo$key === void 0 ? void 0 : _renderInfo$key.children) || {});
+              promisedPreviewNames[i] = key;
+              i += 1;
+            });
+            patternVariables = variant.getVariables();
+
+            if (!(Object.keys(promisedPreview).length !== 0)) {
+              _context3.next = 18;
+              break;
+            }
+
+            return _context3.abrupt("return", new Promise(function (resolve) {
+              Promise.all(promisedPreview).then(function (promisedPreviewValues) {
+                var previewRenderedVariables = {};
+
+                for (var j = 0; j < promisedPreviewValues.length; j += 1) {
+                  var nameKeys = promisedPreviewNames[j].split('--'); // Handling multi value fields.
+                  // Multi value patterns uses key--i as field name.
+
+                  // Handling multi value fields.
+                  // Multi value patterns uses key--i as field name.
+                  if (nameKeys.length === 1) {
+                    previewRenderedVariables[nameKeys[0]] = promisedPreviewValues[j];
+                  } else {
+                    var fieldName = nameKeys[0];
+                    var delta = Number.parseInt(nameKeys[1], 10);
+
+                    if (variant.getField(fieldName).multiValueType() === _Field.MultiValueTypes.items) {
+                      if (previewRenderedVariables[nameKeys[0]] === undefined) {
+                        previewRenderedVariables[nameKeys[0]] = [];
+                      }
+
+                      previewRenderedVariables[nameKeys[0]][delta] = promisedPreviewValues[j];
+                    } else if (variant.getField(fieldName).multiValueType() === _Field.MultiValueTypes.field_items) {
+                      if (previewRenderedVariables[nameKeys[0]] === undefined) {
+                        previewRenderedVariables[nameKeys[0]] = [];
+                      }
+
+                      previewRenderedVariables[nameKeys[0]][delta] = {
+                        content: promisedPreviewValues[j]
+                      };
+                    } else if (variant.getField(fieldName).multiValueType() === _Field.MultiValueTypes.single_value) {
+                      if (previewRenderedVariables[nameKeys[0]] === undefined) {
+                        previewRenderedVariables[nameKeys[0]] = promisedPreviewValues[j];
+                      } else {
+                        previewRenderedVariables[nameKeys[0]] += promisedPreviewValues[j];
+                      }
+                    } else {
+                      previewRenderedVariables[nameKeys[0]] = "No multi value type for field: '".concat(variant.getPattern().getId(), ":").concat(fieldName, ":").concat(variant.getField(fieldName).multiValueType(), "'");
+                    }
+                  }
+                }
+
+                var finalVariables = Object.assign({}, patternVariables, buildBaseVariables(variables));
+                Object.keys(previewRenderedVariables).forEach(function (key) {
+                  // Overwrite variables with rendered ones.
+                  if (finalVariables[key] !== null) {
+                    finalVariables[key] = previewRenderedVariables[key];
+                  }
+                });
+                renderPattern(patternId, finalVariables, variantId).then(function (output) {
+                  resolve(output);
+                })["catch"](function (error) {
+                  resolve(error);
+                });
+              });
+            }));
+
+          case 18:
+            return _context3.abrupt("return", renderPattern(patternId, Object.assign({}, patternVariables, buildBaseVariables(variables, true)), variantId));
+
+          case 19:
+          case "end":
+            return _context3.stop();
+        }
+      }
+    }, _callee3, null, [[3, 7]]);
+  }));
+  return _renderPatternPreview.apply(this, arguments);
+}
+
+function buildBaseVariables(variables) {
+  var addGlobals = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;
+  var passedVariables = variables; // Variables are passed as Map in Twing.
+
+  if (variables instanceof Map) {
+    var obj = {};
+    variables.forEach(function (value, key) {
+      obj[key] = value;
+    });
+    passedVariables = obj;
+  }
+
+  if (addGlobals) {
+    return Object.assign({}, _index.storage.getGlobals(), passedVariables);
+  }
+
+  return passedVariables;
+}
+
+function renderPattern(_x4) {
+  return _renderPattern.apply(this, arguments);
+}
+
+function _renderPattern() {
+  _renderPattern = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee4(patternId) {
+    var variables,
+        variantId,
+        variant,
+        patternVariables,
+        finalVariables,
+        _args4 = arguments;
+    return regeneratorRuntime.wrap(function _callee4$(_context4) {
+      while (1) {
+        switch (_context4.prev = _context4.next) {
+          case 0:
+            variables = _args4.length > 1 && _args4[1] !== undefined ? _args4[1] : {};
+            variantId = _args4.length > 2 && _args4[2] !== undefined ? _args4[2] : _Pattern["default"].DEFAULT_VARIANT_NAME;
+            variant = _index.storage.loadVariant(patternId, variantId);
+            patternVariables = variant.getVariables(false);
+            finalVariables = Object.assign({}, patternVariables, buildBaseVariables(variables, true));
+            finalVariables.variant = variantId;
+            variant.setRenderArgs(finalVariables);
+            return _context4.abrupt("return", rendererImpl.render("".concat(patternId, "__").concat(variant.getVariant()), variant.getUse(), finalVariables));
+
+          case 8:
+          case "end":
+            return _context4.stop();
+        }
+      }
+    }, _callee4);
+  }));
+  return _renderPattern.apply(this, arguments);
+}
+
+function renderData(path, template) {
+  var variables = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+  rendererImpl.addTemplate(path, template);
+  return renderTemplate(path, variables);
+}
+
+function renderTemplate(path) {
+  var variables = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+  var finalVariables = Object.assign({}, _index.storage.getGlobals(), variables);
+  return rendererImpl.render(path, path, finalVariables);
+}

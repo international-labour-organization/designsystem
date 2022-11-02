@@ -1,0 +1,33 @@
+import AppConfig from '../../AppConfig';
+interface BabelConfig {
+    exclude: RegExp;
+}
+export declare function defaultConfig(appConfig: AppConfig): BabelConfig;
+export declare function name(appConfig: AppConfig): string;
+export declare function webpack(appConfig: AppConfig, config: BabelConfig): {
+    module: {
+        rules: ({
+            test: RegExp;
+            enforce: string;
+            exclude: RegExp;
+            loader: string;
+            options: {
+                emitWarning: boolean;
+            };
+            use?: undefined;
+        } | {
+            test: RegExp;
+            exclude: RegExp;
+            use: {
+                loader: string;
+                options: {
+                    presets: string[];
+                };
+            };
+            enforce?: undefined;
+            loader?: undefined;
+            options?: undefined;
+        })[];
+    };
+};
+export {};

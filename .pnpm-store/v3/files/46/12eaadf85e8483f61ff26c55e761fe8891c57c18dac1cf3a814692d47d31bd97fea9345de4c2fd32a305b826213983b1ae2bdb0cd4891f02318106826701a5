@@ -1,0 +1,4 @@
+import BaseApp from "./BaseApp";
+export default class StorybookApp extends BaseApp {
+    getSharedWebpackConfig(): {};
+}

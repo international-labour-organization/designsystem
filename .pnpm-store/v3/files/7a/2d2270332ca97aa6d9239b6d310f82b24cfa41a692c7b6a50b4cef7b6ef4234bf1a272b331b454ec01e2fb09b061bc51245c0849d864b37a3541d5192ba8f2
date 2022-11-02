@@ -1,0 +1,67 @@
+"use strict";
+
+require("core-js/modules/es.object.define-property.js");
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.PatternDoc = void 0;
+
+require("core-js/modules/es.object.values.js");
+
+require("core-js/modules/es.array.slice.js");
+
+require("core-js/modules/es.array.map.js");
+
+var _react = _interopRequireDefault(require("react"));
+
+var _addonDocs = require("@storybook/addon-docs");
+
+var _client = require("@wingsuit-designsystem/pattern-react/client");
+
+var _PatternInclude = require("./PatternInclude");
+
+var _PatternProperties = require("./PatternProperties");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+var PatternDoc = function PatternDoc(props) {
+  var pattern = props.pattern,
+      includePrimary = props.includePrimary,
+      showInclude = props.showInclude;
+
+  if (pattern == null) {
+    return null;
+  }
+
+  var variants = Object.values(pattern.getPatternVariants());
+
+  if (!includePrimary) {
+    variants = variants.slice(1);
+  }
+
+  if (variants.length === 0) {
+    return null;
+  }
+
+  return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, variants.map(function (variant) {
+    var included = showInclude === true ? /*#__PURE__*/_react["default"].createElement(_PatternInclude.PatternInclude, {
+      variant: variant
+    }) : null;
+    return /*#__PURE__*/_react["default"].createElement("div", {
+      key: variant.getId(),
+      id: "anchor--".concat(variant.getStoryId())
+    }, /*#__PURE__*/_react["default"].createElement(_addonDocs.Heading, null, variant.getLabel()), /*#__PURE__*/_react["default"].createElement(_addonDocs.Preview, null, /*#__PURE__*/_react["default"].createElement(_client.PatternPreview, {
+      patternId: pattern.getId(),
+      variantId: variant.getId()
+    })), /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, included), /*#__PURE__*/_react["default"].createElement(_PatternProperties.PatternProperties, {
+      variant: variant
+    }));
+  }));
+};
+
+exports.PatternDoc = PatternDoc;
+PatternDoc.defaultProps = {
+  includePrimary: false,
+  showInclude: true
+};
