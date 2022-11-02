@@ -1,9 +1,0 @@
-export default class Pattern2JsonPlugin {
-    private readonly targtFilePath;
-    private readonly sourceFolderPath;
-    private readonly plugin;
-    constructor(sourceFolderPath: any, targtFilePath: any);
-    handleField(field: any): any;
-    generate(callback: any): void;
-    apply(compiler: any): void;
-}

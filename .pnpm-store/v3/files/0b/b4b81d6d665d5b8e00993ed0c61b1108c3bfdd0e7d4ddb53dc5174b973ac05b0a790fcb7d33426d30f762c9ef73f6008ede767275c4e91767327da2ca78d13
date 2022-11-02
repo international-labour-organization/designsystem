@@ -1,7 +1,0 @@
-import Tailwind2JsonPlugin from '../plugins/Tailwind2JsonPlugin';
-import { BaseWebpackBundle } from '../BaseWebpackBundle';
-export default class TailwindConfigExport extends BaseWebpackBundle {
-    protected sharedWebpackConfig: {
-        plugins: Tailwind2JsonPlugin[];
-    };
-}

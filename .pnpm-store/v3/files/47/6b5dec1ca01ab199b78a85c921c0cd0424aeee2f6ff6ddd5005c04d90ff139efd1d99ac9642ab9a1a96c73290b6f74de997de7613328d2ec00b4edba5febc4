@@ -1,6 +1,0 @@
-import TwigAttribute from './TwigAttribute';
-export declare function twigAttributeFunction(attributes?: string): Promise<TwigAttribute>;
-export declare function twigFileUrl(url: any): Promise<any>;
-export declare function without(element: any, ...args: any[]): any;
-export declare function twigItok(): Promise<number>;
-export declare function twigUuid(): Promise<string>;

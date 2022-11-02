@@ -1,6 +1,0 @@
-import BaseApp from "./BaseApp";
-export default class DrupalApp extends BaseApp {
-    getSharedWebpackConfig(): {};
-    getDevelopmentWebpackConfig(): {};
-    getProductionWebpackConfig(): {};
-}

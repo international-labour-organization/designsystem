@@ -1,5 +1,0 @@
-/* {{ level1.level2 }} */
-
-.test {
-  content: "{{ level1.level2 }}";
-}

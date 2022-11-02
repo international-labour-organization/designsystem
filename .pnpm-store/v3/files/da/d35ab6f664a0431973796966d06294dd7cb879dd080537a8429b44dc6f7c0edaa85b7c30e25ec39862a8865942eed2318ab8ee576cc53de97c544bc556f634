@@ -1,9 +1,0 @@
-import { FunctionComponent } from 'react';
-import { Pattern } from '@wingsuit-designsystem/pattern';
-interface StoriesProps {
-    includePrimary?: boolean;
-    showInclude?: boolean;
-    pattern: Pattern;
-}
-export declare const PatternDoc: FunctionComponent<StoriesProps>;
-export {};

@@ -1,7 +1,0 @@
-export default class Svg2JsonPlugin {
-    private readonly svgFolderPath;
-    private readonly targetJsonFlename;
-    private plugin;
-    constructor(svgFolderPath: any, targetJsonFlename: any);
-    apply(compiler: any): void;
-}

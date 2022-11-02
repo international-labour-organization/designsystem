@@ -1,9 +1,0 @@
-import { FunctionComponent } from 'react';
-interface SpacingProps {
-    spacing: {};
-    color?: any;
-    direction?: any;
-    classNamePrefix?: any;
-}
-export declare const Spacing: FunctionComponent<SpacingProps>;
-export default Spacing;

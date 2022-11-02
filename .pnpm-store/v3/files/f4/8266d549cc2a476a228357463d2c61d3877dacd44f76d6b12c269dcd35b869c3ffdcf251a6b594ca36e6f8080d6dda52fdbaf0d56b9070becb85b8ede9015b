@@ -1,5 +1,0 @@
-/* {{ not_existing }} */
-
-.test {
-  content: "{{ not_existing }}";
-}

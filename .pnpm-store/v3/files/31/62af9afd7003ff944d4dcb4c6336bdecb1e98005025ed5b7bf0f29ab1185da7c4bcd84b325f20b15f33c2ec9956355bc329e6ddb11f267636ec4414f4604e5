@@ -1,4 +1,0 @@
-import { BaseWebpackBundle } from '../BaseWebpackBundle';
-export default class StorybookBundle extends BaseWebpackBundle {
-    protected sharedWebpackConfig: {};
-}

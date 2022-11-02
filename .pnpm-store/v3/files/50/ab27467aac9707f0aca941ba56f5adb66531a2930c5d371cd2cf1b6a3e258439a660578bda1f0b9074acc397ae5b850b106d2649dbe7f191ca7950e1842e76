@@ -1,5 +1,0 @@
-/* postcss-replace by Gridonic <hello@gridonic.ch> */
-
-.default {
-    content: "{{ name }}";
-}

@@ -1,3 +1,0 @@
-import { DocsContextProps, StoryData } from '@storybook/addon-docs';
-export declare const getContextualStory: (context: DocsContextProps, story?: StoryData | undefined) => StoryData;
-export declare const getDocsStories: (context: DocsContextProps) => StoryData[];

@@ -1,5 +1,0 @@
-/* {{ value }} */
-
-.test {
-  content: "{{ value }}";
-}

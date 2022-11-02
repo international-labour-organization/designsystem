@@ -1,5 +1,0 @@
-import { Meta, Story } from '@storybook/addon-docs/blocks';
-
-<Meta title="<%=capitalizeName %>" component="." />
-
-# <%=capitalizeName %>

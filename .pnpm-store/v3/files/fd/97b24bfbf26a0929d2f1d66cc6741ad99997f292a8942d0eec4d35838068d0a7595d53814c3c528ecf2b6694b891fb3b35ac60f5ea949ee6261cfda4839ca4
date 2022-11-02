@@ -1,3 +1,0 @@
-import { AppConfig } from '@wingsuit-designsystem/core';
-export declare function supportFeature(name: any, appConfig: AppConfig): boolean;
-export declare function webpack(appConfig: AppConfig): any;

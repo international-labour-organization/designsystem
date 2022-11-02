@@ -1,6 +1,0 @@
-import { FunctionComponent } from 'react';
-declare type Props = {
-    data: any;
-};
-declare const RenderTwig: FunctionComponent<Props>;
-export default RenderTwig;

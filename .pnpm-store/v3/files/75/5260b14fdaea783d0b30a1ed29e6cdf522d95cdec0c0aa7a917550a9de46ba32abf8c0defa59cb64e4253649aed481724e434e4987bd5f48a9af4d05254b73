@@ -1,5 +1,0 @@
-export interface AppProperties {
-    name: string;
-    value: string;
-}
-export declare function addApp(appName: any, appType: any, appProperties: AppProperties[], source: any): any;

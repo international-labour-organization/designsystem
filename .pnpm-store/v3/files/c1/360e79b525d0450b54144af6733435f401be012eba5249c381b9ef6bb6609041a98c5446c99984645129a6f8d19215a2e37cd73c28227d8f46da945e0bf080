@@ -1,4 +1,0 @@
-import { BaseWebpackBundle } from '../BaseWebpackBundle';
-export default class TwingBundle extends BaseWebpackBundle {
-    protected sharedWebpackConfig: {};
-}

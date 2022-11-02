@@ -1,6 +1,0 @@
-/// <reference types="node" />
-import BaseApp from "./BaseApp";
-export default class DesignSystem {
-    private resolveAppConfig;
-    getApp(module: NodeModule, configurationOverwrites?: {}): BaseApp;
-}
