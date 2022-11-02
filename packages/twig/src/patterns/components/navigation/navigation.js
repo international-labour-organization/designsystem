@@ -54,11 +54,15 @@ export default class Navigation {
      */
     this.subnavButton = this.element.querySelector(`.${this.prefix}--nav--trigger`);
     this.menuCloseSet = this.element.querySelectorAll(`.${this.prefix}--header--menu--close`);
-    this.subnavBack = this.element.querySelector(`.${this.prefix}--mobile--subnav--back`);
+    this.subnavBack = this.element.querySelectorAll(`.${this.prefix}--mobile--subnav--back`);
     this.menuOpen = this.element.querySelector(`.${this.prefix}--header--menu`);
     this.searchButton = this.element.querySelector(`.${this.prefix}--search--button`);
     this.contextButton = this.element.querySelector(`.${this.prefix}--language-switcher--button`);
+    this.languageButton = this.element.querySelector(
+      `.${this.prefix}--mobile--nav--language--switcher--button`
+    );
     this.contextLinks = this.element.querySelectorAll(`.${this.prefix}--context-menu--link`);
+    this.languageLinks = this.element.querySelectorAll(`.${this.prefix}--nav--language`);
 
     return this;
   }
@@ -76,7 +80,9 @@ export default class Navigation {
     this.menuOpenClick = this.handleMenuOpenClick.bind(this);
     this.searchButtonClick = this.handleSearchButtonClick.bind(this);
     this.contextButtonClick = this.handleContextButtonClick.bind(this);
+    this.languageButtonClick = this.handleLanguageButtonClick.bind(this);
     this.contextLinkClick = this.handleContextLinkClick.bind(this);
+    this.onResize = this.handleResize.bind(this);
 
     return this;
   }
@@ -93,11 +99,15 @@ export default class Navigation {
       this.subnavButton.addEventListener(EVENTS.CLICK, () => this.subnavOpenClick());
       this.subnavButton.addEventListener(EVENTS.TOUCH_START, () => this.subnavOpenClick());
     }
+
     // subnavBack
-    if (this.subnavBack) {
-      this.subnavBack.addEventListener(EVENTS.CLICK, () => this.subnavBackClick());
-      this.subnavBack.addEventListener(EVENTS.TOUCH_START, () => this.subnavBackClick());
+    if (this.subnavBack.length > 0) {
+      this.subnavBack.forEach((button, i) => {
+        button.addEventListener(EVENTS.CLICK, () => this.subnavBackClick(i));
+        button.addEventListener(EVENTS.TOUCH_START, () => this.subnavBackClick(i));
+      });
     }
+
     // searchButton
     if (this.searchButton) {
       this.searchButton.addEventListener(EVENTS.CLICK, () => this.searchButtonClick());
@@ -123,6 +133,12 @@ export default class Navigation {
       this.contextButton.addEventListener(EVENTS.TOUCH_START, () => this.contextButtonClick());
     }
 
+    // languageButton
+    if (this.languageButton) {
+      this.languageButton.addEventListener(EVENTS.CLICK, () => this.languageButtonClick());
+      this.languageButton.addEventListener(EVENTS.TOUCH_START, () => this.languageButtonClick());
+    }
+
     // contextLinks
     if (this.contextLinks.length > 0 && this.callback) {
       this.contextLinks.forEach((contextLink, i) => {
@@ -130,6 +146,16 @@ export default class Navigation {
         contextLink.addEventListener(EVENTS.TOUCH_START, (e) => this.contextLinkClick(e));
       });
     }
+
+    // languageLinks
+    if (this.languageLinks.length > 0 && this.callback) {
+      this.languageLinks.forEach((languageLink, i) => {
+        languageLink.addEventListener(EVENTS.CLICK, (e) => this.contextLinkClick(e));
+        languageLink.addEventListener(EVENTS.TOUCH_START, (e) => this.contextLinkClick(e));
+      });
+    }
+
+    window.addEventListener(EVENTS.RESIZE, (e) => this.onResize(e));
 
     return this;
   }
@@ -143,6 +169,18 @@ export default class Navigation {
   handleContextLinkClick(event) {
     event.preventDefault();
     this.callback(event);
+
+    return this;
+  }
+
+  /**
+   * Onclick interaction with the language menu button
+   *
+   * @return {Object} Navigation A reference to the instance of the class
+   * @chainable
+   */
+  handleLanguageButtonClick() {
+    this.element.classList.toggle(`${this.prefix}--select--open`);
 
     return this;
   }
@@ -205,6 +243,7 @@ export default class Navigation {
    */
   handleSubnavBackClick() {
     this.element.classList.remove(`${this.prefix}--subnav--open`);
+    this.element.classList.remove(`${this.prefix}--select--open`);
 
     return this;
   }
@@ -218,6 +257,21 @@ export default class Navigation {
   handleMenuCloseClick() {
     this.element.classList.remove(`${this.prefix}--mobile--open`);
     this.element.classList.remove(`${this.prefix}--subnav--open`);
+
+    return this;
+  }
+
+  /**
+   * onResize interaction with the accordion button
+   *
+   * @return {Object} Breadcrumb A reference to the instance of the class
+   * @chainable
+   */
+  handleResize(e) {
+    this.element.classList.remove(`${this.prefix}--context--open`);
+    this.element.classList.remove(`${this.prefix}--mobile--open`);
+    this.element.classList.remove(`${this.prefix}--subnav--open`);
+    this.element.classList.remove(`${this.prefix}--search--open`);
 
     return this;
   }
