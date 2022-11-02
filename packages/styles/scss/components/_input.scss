@@ -26,18 +26,6 @@
   @include spacingvalues("padding", "input", "formelements");
   width: map-get($spacing, "formelements", "input", "default", "width");
 
-  &:hover {
-    background-color: map-get(
-      $color,
-      "formelements",
-      "input",
-      "hover",
-      "background"
-    );
-    @include bordervalues("input", "formelements", "hover");
-    padding-left: calc($spacing-formelements-input-default-padding-left - 1px);
-  }
-
   &:focus {
     background-color: map-get(
       $color,

@@ -18,6 +18,7 @@
   }
 
   &--helper {
+    color: $color-base-neutrals-medium;
     font-family: $fonts-copy;
     @include font-styles("body-xxs");
     @include textmargin(
