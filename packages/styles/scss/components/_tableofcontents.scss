@@ -1,4 +1,5 @@
 @use "../tokens" as *;
+@use "../animations" as *;
 @use "../functions" as *;
 @import "../mixins";
 
@@ -29,6 +30,7 @@
       $spacing-ux-tableofcontents-items-padding-right
       $spacing-ux-tableofcontents-items-padding-bottom
       $spacing-ux-tableofcontents-items-padding-left;
+    position: relative;
     text-decoration: none;
     width: calc(
       100% - $spacing-ux-tableofcontents-padding-right -
@@ -36,6 +38,7 @@
     );
     @include dataurlicon("stemarrow", $color-ux-labels-actionable);
     @include font-styles("label-medium");
+    @include globaltransition("background, border, color");
 
     &:hover,
     &:focus {
@@ -58,14 +61,17 @@
         );
       width: 100%;
       @include dataurlicon("stemarrow", $color-ux-labels-hover);
+      @include globaltransition("background, border, color");
     }
 
     &:active {
       background-color: $color-ux-tableofcontents-items-active-background;
       border-bottom: $color-ux-tableofcontents-items-active-border
         $spacing-ux-tableofcontents-items-border-bottom solid;
+      border-top: $color-ux-tableofcontents-items-default-border
+        $spacing-ux-tableofcontents-items-border-bottom solid;
       color: $color-ux-tableofcontents-items-active-color;
-      margin: 0;
+      margin: -2px 0 0 0;
       outline: none;
       padding: $spacing-ux-tableofcontents-items-padding-top
         calc(
@@ -82,6 +88,7 @@
         "stemarrow",
         $color-ux-tableofcontents-items-active-icon
       );
+      z-index: 5;
     }
   }
 
