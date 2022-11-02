@@ -2,10 +2,6 @@
 @use "../functions" as *;
 @import "../mixins";
 
-/*
-Note that the styles for this component rely on CSS container queries, which currently require a polyfill. Your site template should load the polyfill in the <head> using the method described here: https://github.com/GoogleChromeLabs/container-query-polyfil
-*/
-
 .ilo--tabs {
   &:not(.tabs--js) {
     .ilo--tabs--selection {
