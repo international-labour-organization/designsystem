@@ -1,4 +1,5 @@
 @use "../tokens" as *;
+@use "../functions" as *;
 @import "../mixins";
 
 .ilo--profile {
@@ -59,18 +60,23 @@
   }
 
   &--link {
+    align-items: center;
     clear: both;
     color: map-get($color, "link", "text", "default");
-    display: block;
+    display: inline-flex;
     font-family: $fonts-display;
     font-weight: map-get($type, "weights", "section");
+    height: px-to-rem(56px);
     text-decoration: none;
     @include font-styles("body-xs");
 
     span {
+      align-items: center;
       background-position: calc(100% - 10px) center;
       background-repeat: no-repeat;
       background-size: 24px 24px;
+      display: inline-flex;
+      height: 24px;
       padding-right: 32px;
       @include dataurlicon("arrowright", $color-link-text-default);
     }
@@ -95,6 +101,7 @@
 
     &:hover,
     &:focus {
+      background-color: $color-base-blue-light;
       color: map-get($color, "link", "text", "hover");
       outline: none;
 
@@ -105,15 +112,15 @@
   }
 
   .ilo--profile--description + .ilo--profile--link {
-    margin-top: 28px;
+    margin-top: px-to-rem(8px);
   }
 
   .ilo--profile--role + .ilo--profile--link {
-    margin-top: 22px;
+    margin-top: px-to-rem(2px);
   }
 
   .ilo--profile--name + .ilo--profile--link {
-    margin-top: 38px;
+    margin-top: px-to-rem(18px);
   }
 
   @include breakpoint("medium") {
