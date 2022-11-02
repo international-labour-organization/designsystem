@@ -117,6 +117,10 @@
       &--local {
         justify-content: space-between;
       }
+
+      .right-to-left & {
+        flex-direction: row-reverse;
+      }
     }
   }
 
@@ -125,6 +129,10 @@
     max-width: 1300px;
     padding: 0 16px;
     width: 100%;
+
+    .right-to-left & {
+      direction: rtl;
+    }
 
     @include breakpoint("large") {
       display: flex;
@@ -161,6 +169,10 @@
     font-weight: 700;
     padding: 20px 0;
     text-align: right;
+
+    .right-to-left & {
+      text-align: left;
+    }
 
     @include breakpoint("large") {
       display: block;
@@ -271,6 +283,22 @@
       color: $brand-ilo-blue;
     }
 
+    .right-to-left & {
+      @include dataurlicon("arrowleft", $brand-ilo-dark-blue);
+      background-color: $brand-ilo-white;
+      background-position: 16px 55%;
+      background-repeat: no-repeat;
+      background-size: 16px;
+      text-align: right;
+
+      &:focus,
+      &:hover {
+        @include dataurlicon("arrowleft", $brand-ilo-blue);
+        background-color: $brand-ilo-light-blue;
+        color: $brand-ilo-blue;
+      }
+    }
+
     @include breakpoint("large") {
       @include dataurlicon("add", $brand-ilo-white);
       @include font-styles("nav-bold-b-sm");
@@ -297,6 +325,22 @@
         background-color: $brand-ilo-white;
         border-color: $brand-ilo-white;
         color: $brand-ilo-blue;
+      }
+
+      .right-to-left & {
+        @include dataurlicon("add", $brand-ilo-white);
+        background-color: $brand-ilo-dark-blue;
+        background-position: 90% 55%;
+        background-repeat: no-repeat;
+        background-size: 20px;
+        text-align: left;
+
+        &:focus,
+        &:hover {
+          @include dataurlicon("add", $brand-ilo-blue);
+          background-color: $brand-ilo-white;
+          color: $brand-ilo-blue;
+        }
       }
     }
   }
@@ -392,6 +436,11 @@
       background-color: $brand-ilo-light-blue;
       color: $brand-ilo-blue;
     }
+
+    .right-to-left & {
+      background-position: 16px 55%;
+      text-align: right;
+    }
   }
 
   @include breakpoint("large") {
@@ -405,6 +454,10 @@
   padding: 0 max((100% - 1300px) / 2, 20px) 0 0;
   position: relative;
 
+  .right-to-left & {
+    padding: 0 0 0 max((100% - 1300px) / 2, 20px);
+  }
+
   &::before {
     background: $brand-ilo-dark-blue;
     clip-path: polygon(0 0, 100% 0, 100% 100%);
@@ -415,6 +468,12 @@
     position: absolute;
     top: 0;
     width: 32px;
+
+    .right-to-left & {
+      clip-path: polygon(0 0, 0 100%, 100% 100%);
+      left: auto;
+      right: -32px;
+    }
   }
 
   &--wrap {
@@ -475,6 +534,10 @@
 
   .ilo--subnav--open & {
     transform: translateX(0);
+  }
+
+  .right-to-left & {
+    direction: rtl;
   }
 
   @include breakpoint("large") {
@@ -563,7 +626,7 @@
     transition: all 150ms ease-out;
 
     &::before {
-      @include dataurlicon("arrowright", $brand-ilo-dark-blue);
+      @include dataurlicon("arrowleft", $brand-ilo-dark-blue);
       background-position: 10% center;
       background-repeat: no-repeat;
       background-size: 24px;
@@ -573,8 +636,21 @@
       left: 0;
       position: absolute;
       top: 50%;
-      transform: translateY(-50%) rotate(180deg);
+      transform: translateY(-50%);
       width: 24px;
+    }
+
+    .right-to-left & {
+      padding: 16px 32px 16px 16px;
+
+      &::before {
+        @include dataurlicon("arrowright", $brand-ilo-dark-blue);
+        background-position: 10% center;
+        background-repeat: no-repeat;
+        background-size: 24px;
+        left: auto;
+        right: 0;
+      }
     }
 
     &:hover,
@@ -583,10 +659,19 @@
       color: $brand-ilo-blue;
 
       &::before {
-        @include dataurlicon("arrowright", $brand-ilo-blue);
+        @include dataurlicon("arrowleft", $brand-ilo-blue);
         background-position: 10% center;
         background-repeat: no-repeat;
         background-size: 24px;
+      }
+
+      .right-to-left & {
+        &::before {
+          @include dataurlicon("arrowright", $brand-ilo-blue);
+          background-position: 10% center;
+          background-repeat: no-repeat;
+          background-size: 24px;
+        }
       }
     }
 
