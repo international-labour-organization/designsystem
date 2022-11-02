@@ -57,10 +57,17 @@
   }
 
   .modal--close {
+    height: px-to-rem(40px);
     right: 0;
     position: absolute;
     top: 0;
+    width: px-to-rem(40px);
     z-index: 10004;
+
+    .ilo--icon {
+      left: px-to-rem(3px);
+      top: px-to-rem(3px);
+    }
   }
 
   @include breakpoint("medium") {
