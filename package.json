@@ -43,7 +43,8 @@
     "test:react": "pnpm run test --filter=@ilo-org/react",
     "test:react-update": "pnpm run test:update --filter=@ilo-org/react",
     "test:utils": "pnpm run test --filter=@ilo-org/utils",
-    "release": "pnpm changeset version && pnpm changeset publish"
+    "ci:version": "pnpm changeset version && pnpm install --lockfile-only",
+    "ci:publish": "pnpm changeset publish"
   },
   "repository": {
     "type": "git",
