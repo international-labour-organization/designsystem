@@ -27,7 +27,8 @@
       .ilo--modal--wrapper {
         & > * {
           opacity: 1;
-          transition: opacity 1.5s ease-out 125ms;
+          transition-delay: 125ms;
+          @include globaltransition("opacity");
         }
       }
     }
