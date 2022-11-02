@@ -37,9 +37,35 @@
           </a>
           <button class="{{prefix}}--header--menu--close">{{menucloselabel}}</button>
         </div> <!-- /.{{prefix}}--mobile--logo -->
-        <div class="{{prefix}}--mobile--nav--search"></div> <!-- /.{{prefix}}--mobile--search -->
+        <div class="{{prefix}}--mobile--nav--search">
+          {% include '@components/searchfield/searchfield.twig' with {
+            input: searchfield.input,
+            action: searchfield.action,
+            prefix: prefix
+          }
+        %}
+        </div> <!-- /.{{prefix}}--mobile--search -->
 
-        <div class="{{prefix}}--mobile--nav--language--switcher"></div> <!-- /.{{prefix}}--mobile--nav--language--switcher -->
+        <div class="{{prefix}}--mobile--nav--language--switcher">
+          <button class="{{prefix}}--mobile--nav--language--switcher--button" type="button">{{languagelabel}}</button>
+        </div> <!-- /.{{prefix}}--mobile--nav--language--switcher -->
+        <div class="{{prefix}}--mobile--nav--language--select">
+          <div class="{{prefix}}--header--inner">
+            <div class="{{prefix}}--mobile--subnav--menu">
+              <button class="{{prefix}}--mobile--subnav--back" type="button">{{subnav.mobilebacklabel}}</button>
+              <button class="{{prefix}}--header--menu--close">{{subnav.mobilecloselabel}}</button>
+              <h6 class="{{prefix}}--mobile--subnav--label">{{languagelabel}}</h6>
+            </div> <!-- /{{prefix}}--mobile--subnav--menu -->
+            <ul class="{{prefix}}--nav--set">
+              {% for item in languagecontextmenu.links %}
+                <li class="{{prefix}}--nav--items">
+                  <a href="{{item.url}}" class="{{prefix}}--nav--link {{prefix}}--nav--language">{{item.label}}</a>
+                </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+
       </div> <!-- /.{{prefix}}--mobile--nav -->
       <nav class="{{prefix}}--nav" aria-labelledby="primary-navigation">
         <h2 class="{{prefix}}--nav--label" id="primary-navigation">{{primarynav.navlabel}}</h2>
