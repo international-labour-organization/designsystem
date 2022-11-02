@@ -42,21 +42,21 @@
     font-family: $fonts-display;
     font-weight: map-get($type, "weights", "label");
     margin-left: 11px;
-    @include font-styles("body-xs");
+    @include font-styles("body-small");
   }
 
   &--role {
     display: block;
     font-family: $fonts-copy;
     margin-left: 11px;
-    @include font-styles("body-xss");
+    @include font-styles("body-xs");
   }
 
   &--description {
     clear: both;
     font-family: $fonts-copy;
     padding-top: 22px;
-    @include font-styles("body-xss");
+    @include font-styles("body-xs");
   }
 
   &--link {
@@ -68,7 +68,7 @@
     font-weight: map-get($type, "weights", "section");
     height: px-to-rem(56px);
     text-decoration: none;
-    @include font-styles("body-xs");
+    @include font-styles("body-small");
 
     span {
       align-items: center;
@@ -121,25 +121,5 @@
 
   .ilo--profile--name + .ilo--profile--link {
     margin-top: px-to-rem(18px);
-  }
-
-  @include breakpoint("medium") {
-    &--name {
-      @include font-styles("body-small");
-    }
-
-    &--role {
-      font-family: $fonts-copy;
-      @include font-styles("body-xs");
-    }
-
-    &--description {
-      font-family: $fonts-copy;
-      @include font-styles("body-xs");
-    }
-
-    &--link {
-      @include font-styles("body-small");
-    }
   }
 }
