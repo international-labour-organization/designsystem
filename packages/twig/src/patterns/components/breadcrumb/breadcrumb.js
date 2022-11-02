@@ -47,6 +47,8 @@ export default class Breadcrumb {
   cacheDomReferences() {
     this.breadcrumbs = this.element.querySelector('.ilo--breadcrumb--items');
     this.breadcrumbwidth = this.breadcrumbs.offsetWidth;
+    this.ContextButton = this.element.querySelector(`.${this.prefix}--breadcrumb--item--context`);
+    this.ContextMenu = this.element.querySelector(`.context--menu`);
 
     return this;
   }
@@ -59,6 +61,7 @@ export default class Breadcrumb {
    */
   setupHandlers() {
     this.onResize = this.onResize.bind(this);
+    this.onClick = this.onClick.bind(this);
 
     return this;
   }
@@ -71,6 +74,7 @@ export default class Breadcrumb {
    */
   enable() {
     window.addEventListener(EVENTS.RESIZE, (e) => this.onResize(e));
+    this.ContextButton.addEventListener(EVENTS.CLICK, () => this.onClick());
 
     return this;
   }
@@ -84,8 +88,28 @@ export default class Breadcrumb {
   onResize(e) {
     if (this.breadcrumbwidth > this.element.offsetWidth / 2) {
       this.element.classList.add('contextmenu');
+      this.ContextMenu.classList.remove('open');
     } else {
       this.element.classList.remove('contextmenu');
+      this.ContextMenu.classList.remove('open');
+    }
+
+    return this;
+  }
+
+  /**
+   * OnClick interaction with the ContextMenu button
+   *
+   * @return {Object} Breadcrumb A reference to the instance of the class
+   * @chainable
+   */
+  onClick() {
+    if (this.element.classList.contains('contextmenu')) {
+      if (this.ContextMenu.classList.contains('open')) {
+        this.ContextMenu.classList.remove('open');
+      } else {
+        this.ContextMenu.classList.add('open');
+      }
     }
 
     return this;
