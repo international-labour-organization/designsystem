@@ -1,0 +1,4 @@
+import { BaseWebpackBundle } from '../BaseWebpackBundle';
+export default class DefaultBundle extends BaseWebpackBundle {
+    protected sharedWebpackConfig: {};
+}

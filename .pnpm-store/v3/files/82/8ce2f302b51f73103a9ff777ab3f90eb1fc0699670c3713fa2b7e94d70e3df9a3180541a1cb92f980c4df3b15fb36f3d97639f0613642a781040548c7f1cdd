@@ -1,0 +1,26 @@
+{
+  "name": "@un/figma-connect",
+  "version": "0.0.7",
+  "description": "Export SVGs from Figma",
+  "main": "src/index.js",
+  "scripts": {
+    "build:images": "node src/index.js",
+    "extract:colors": "node src/colors.js",
+    "setup": "node src/setupEnv.js",
+    "test": "TZ=Asia/Singapore jest"
+  },
+  "author": "Jacob Tan <jacobtyq@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "dotenv": "^10.0.0",
+    "fs": "^0.0.1-security",
+    "jest": "^26.6.3",
+    "pg": "^8.6.0",
+    "replaceall": "^0.1.6"
+  },
+  "devDependencies": {
+    "yaml": "^1.10.2"
+  },
+  "gitHead": "d6e5c52c818559bfe20b2722f544ff2fd8ce429d"
+}

@@ -1,0 +1,8 @@
+import { FunctionComponent } from 'react';
+declare type Props = {
+    patternId?: any;
+    variantId?: any;
+    variant?: any;
+};
+declare const PatternPreview: FunctionComponent<Props>;
+export default PatternPreview;

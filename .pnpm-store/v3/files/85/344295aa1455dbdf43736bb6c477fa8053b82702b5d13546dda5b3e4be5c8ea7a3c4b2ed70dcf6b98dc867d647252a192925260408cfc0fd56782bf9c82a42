@@ -1,0 +1,32 @@
+{
+  "name": "utf8-binary-cutter",
+  "version": "0.9.2",
+  "description": "truncate UTF-8 strings to a given binary size",
+  "main": "main.js",
+  "scripts": {
+    "test": "mocha tests/ --recursive"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/lemonde/utf8-binary-cutter.git"
+  },
+  "keywords": [
+    "utf-8",
+    "truncate"
+  ],
+  "author": "Yvem <jutard@lemonde.fr>",
+  "license": "public domain",
+  "bugs": {
+    "url": "https://github.com/lemonde/utf8-binary-cutter/issues"
+  },
+  "homepage": "https://github.com/lemonde/utf8-binary-cutter",
+  "dependencies": {
+    "lodash": "^4.17.10"
+  },
+  "devDependencies": {
+    "chai": "~1.10.0",
+    "mocha": "~2.0.1",
+    "sinon": "~1.12.1",
+    "sinon-chai": "~2.6.0"
+  }
+}

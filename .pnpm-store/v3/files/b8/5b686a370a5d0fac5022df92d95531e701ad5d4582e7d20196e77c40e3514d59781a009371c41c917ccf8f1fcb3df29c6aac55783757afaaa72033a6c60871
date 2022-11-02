@@ -1,0 +1,7 @@
+import { FunctionComponent } from 'react';
+declare type Props = {
+    patternId: string;
+    children: any;
+};
+declare const PatternLoad: FunctionComponent<Props>;
+export default PatternLoad;

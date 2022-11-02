@@ -1,0 +1,6 @@
+import { BaseConfigBundle } from "../BaseConfigBundle";
+import BaseApp from "../../common/BaseApp";
+export default class TwingBundle extends BaseConfigBundle {
+    static create(app: BaseApp): TwingBundle;
+    protected sharedWebpackConfig: {};
+}

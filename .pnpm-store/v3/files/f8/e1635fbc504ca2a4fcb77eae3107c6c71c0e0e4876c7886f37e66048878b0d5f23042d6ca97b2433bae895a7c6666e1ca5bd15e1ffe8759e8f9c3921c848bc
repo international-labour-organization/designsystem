@@ -1,0 +1,40 @@
+import AppConfig from '../../AppConfig';
+import FileDependencyPlugin from '../plugins/FileDependencyPlugin';
+export declare function name(appConfig: AppConfig): string;
+export declare function webpack(appConfig: AppConfig): {
+    resolveLoader: {
+        alias: {
+            'wingsuit-loader': string;
+            'wingsuit-stories-loader': string;
+        };
+    };
+    plugins: FileDependencyPlugin[];
+    module: {
+        rules: ({
+            test: RegExp;
+            loader: string;
+            options: {
+                appConfig: AppConfig;
+                fileDependencyPlugin: FileDependencyPlugin;
+            };
+            use?: undefined;
+        } | {
+            test: RegExp;
+            use: ({
+                loader: string;
+                options: {
+                    presets: string[];
+                    appConfig?: undefined;
+                };
+            } | {
+                loader: string;
+                options: {
+                    appConfig: AppConfig;
+                    presets?: undefined;
+                };
+            })[];
+            loader?: undefined;
+            options?: undefined;
+        })[];
+    };
+};

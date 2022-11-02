@@ -1,0 +1,173 @@
+"use strict";
+
+require("core-js/modules/es.object.define-property.js");
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+Object.defineProperty(exports, "AppConfig", {
+  enumerable: true,
+  get: function get() {
+    return _AppConfig["default"];
+  }
+});
+Object.defineProperty(exports, "PresetManager", {
+  enumerable: true,
+  get: function get() {
+    return _PresetManager["default"];
+  }
+});
+exports.getAppNames = getAppNames;
+exports.getAppPack = getAppPack;
+exports.getAppTypes = getAppTypes;
+exports.getApps = getApps;
+exports.getDefaultPreset = getDefaultPreset;
+exports.invokePreset = invokePreset;
+Object.defineProperty(exports, "resolveConfig", {
+  enumerable: true,
+  get: function get() {
+    return _resolveConfig.resolveConfig;
+  }
+});
+exports.supportFeature = supportFeature;
+exports.syncSilo = syncSilo;
+
+require("core-js/modules/es.array.for-each.js");
+
+require("core-js/modules/es.object.to-string.js");
+
+require("core-js/modules/web.dom-collections.for-each.js");
+
+require("core-js/modules/es.function.name.js");
+
+require("core-js/modules/es.object.assign.js");
+
+require("core-js/modules/es.object.keys.js");
+
+require("core-js/modules/es.date.to-string.js");
+
+require("core-js/modules/es.regexp.to-string.js");
+
+var _path = _interopRequireDefault(require("path"));
+
+var _PresetManager = _interopRequireDefault(require("./server/PresetManager"));
+
+var _resolveConfig = require("./resolveConfig");
+
+var _AppConfig = _interopRequireDefault(require("./AppConfig"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+var fs = require('fs-extra');
+
+var presetManager = new _PresetManager["default"]();
+
+function getAppPack(appConfig) {
+  var webpacks = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : [];
+  var pack = presetManager.generateWebpack(appConfig, webpacks);
+  return pack;
+}
+/**
+ * Returns true if a feature is supported by an extension.
+ *
+ * @param name
+ *   The feature name.
+ *
+ * @return boolean
+ *   True if feature is supported.
+ */
+
+
+function supportFeature(name, appConfig) {
+  return presetManager.supportFeature(name, appConfig);
+}
+
+function getDefaultPreset(name) {
+  return presetManager.getDefaultPreset(name);
+}
+
+function invokePreset(funcName, config) {
+  var apps = getApps();
+  var result = {};
+  var executed = {};
+  apps.forEach(function (appConfig) {
+    var definitions = presetManager.getPresetDefinitions(appConfig);
+    definitions.forEach(function (def) {
+      if (def.preset[funcName] !== undefined && executed[def.name] === undefined) {
+        var defaultConfig = def.preset.defaultConfig !== undefined ? def.preset.defaultConfig(appConfig) : {};
+        var finalConfig = Object.assign({}, defaultConfig, config);
+        result[appConfig.name] = def.preset[funcName](apps, finalConfig);
+        executed[def.name] = true;
+      }
+    });
+  });
+  return result;
+}
+
+function getAppTypes() {
+  var wingsuitConfig = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
+
+  var _getConfigBase = (0, _resolveConfig.getConfigBase)(),
+      mergedConfig = _getConfigBase.mergedConfig;
+
+  var names = [];
+  Object.keys(mergedConfig.apps).forEach(function (name) {
+    if (mergedConfig.apps[name].type === name) {
+      names.push(name);
+    }
+  });
+  return names;
+}
+
+function getApps() {
+  var wingsuitConfig = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
+  var environment = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'development';
+
+  var _getConfigBase2 = (0, _resolveConfig.getConfigBase)(),
+      mergedConfig = _getConfigBase2.mergedConfig;
+
+  var apps = [];
+  Object.keys(mergedConfig.apps).forEach(function (name) {
+    var app = (0, _resolveConfig.resolveConfig)(name, environment, null, wingsuitConfig);
+    apps.push(app);
+  });
+  return apps;
+}
+
+function getAppNames() {
+  var wingsuitConfig = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
+  var type = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : '';
+
+  var _getConfigBase3 = (0, _resolveConfig.getConfigBase)(),
+      mergedConfig = _getConfigBase3.mergedConfig;
+
+  var names = [];
+  Object.keys(mergedConfig.apps).forEach(function (name) {
+    if (type === '' || type === mergedConfig.apps[name].type || name === type) {
+      names.push(name);
+    }
+  });
+  return names;
+}
+
+function syncSilo(filename, data) {
+  var output = JSON.stringify(data);
+  fs.readFile(filename, function (readerr, buffer) {
+    // Only write output if there is a difference or non-existent target file
+    var existingJson = buffer ? buffer.toString() : '';
+
+    if (readerr || output !== existingJson) {
+      var dir = _path["default"].dirname(filename);
+
+      if (!fs.existsSync(dir)) {
+        fs.mkdirSync(dir, {
+          recursive: true
+        });
+      }
+
+      fs.writeFile(filename, output, function (writeerr) {
+        if (writeerr) console.error(writeerr);
+      });
+    }
+  });
+}

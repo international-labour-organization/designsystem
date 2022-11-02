@@ -1,0 +1,34 @@
+'use strict'
+
+var fs = require('fs')
+var path = require('path')
+var debug = require('debug')('unified-engine:file-pipeline:read')
+var stats = require('vfile-statistics')
+
+module.exports = read
+
+// Fill a file with its contents when not already filled.
+function read(context, file, fileSet, next) {
+  var filePath = file.path
+
+  if (file.contents || file.data.unifiedEngineStreamIn) {
+    debug('Not reading file `%s` with contents', filePath)
+    next()
+  } else if (stats(file).fatal) {
+    debug('Not reading failed file `%s`', filePath)
+    next()
+  } else {
+    filePath = path.resolve(context.cwd, filePath)
+
+    debug('Reading `%s` in `%s`', filePath, 'utf8')
+    fs.readFile(filePath, 'utf8', onread)
+  }
+
+  function onread(error, contents) {
+    debug('Read `%s` (error: %s)', filePath, error)
+
+    file.contents = contents || ''
+
+    next(error)
+  }
+}

@@ -1,0 +1,8 @@
+import { BaseConfigBundle } from "../BaseConfigBundle";
+import BaseApp from "../../common/BaseApp";
+export default class DrupalBundle extends BaseConfigBundle {
+    static create(app: BaseApp): DrupalBundle;
+    protected sharedWebpackConfig: {};
+    protected developmentWebpackConfig: {};
+    protected productionWebpackConfig: {};
+}

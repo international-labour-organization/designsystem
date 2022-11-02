@@ -1,0 +1,333 @@
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+
+require("core-js/modules/es.symbol.js");
+
+require("core-js/modules/es.symbol.description.js");
+
+require("core-js/modules/es.array.concat.js");
+
+require("core-js/modules/es.object.assign.js");
+
+require("core-js/modules/es.array.for-each.js");
+
+require("core-js/modules/es.object.to-string.js");
+
+require("core-js/modules/web.dom-collections.for-each.js");
+
+require("core-js/modules/es.object.keys.js");
+
+require("core-js/modules/es.array.is-array.js");
+
+require("core-js/modules/es.regexp.exec.js");
+
+require("core-js/modules/es.string.replace.js");
+
+require("core-js/modules/es.object.define-property.js");
+
+var _Pattern = _interopRequireDefault(require("./Pattern"));
+
+var _TwigAttribute = _interopRequireDefault(require("./TwigAttribute"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+
+var PatternVariant = /*#__PURE__*/function () {
+  function PatternVariant(id, pattern, variant, use, label, description, configuration) {
+    _classCallCheck(this, PatternVariant);
+
+    this.pattern = void 0;
+    this.id = void 0;
+    this.use = void 0;
+    this.variant = void 0;
+    this.renderArgs = {};
+    this.beforeRenderHandler = void 0;
+    this.label = void 0;
+    this.description = void 0;
+    this.configuration = void 0;
+    this.fields = [];
+    this.settings = [];
+    this.id = id;
+    this.pattern = pattern;
+    this.variant = variant;
+    this.label = label;
+    this.use = use;
+    this.description = description;
+    this.configuration = configuration;
+  }
+
+  _createClass(PatternVariant, [{
+    key: "getUse",
+    value: function getUse() {
+      return this.use;
+    }
+  }, {
+    key: "getStoryId",
+    value: function getStoryId() {
+      var pattern = this.getPattern();
+      return this.cleanStorybookString("".concat(pattern.getNamespace(), "-").concat(pattern.getLabel(), "--").concat(this.getLabel()));
+    }
+  }, {
+    key: "getId",
+    value: function getId() {
+      return this.id;
+    }
+  }, {
+    key: "getStorage",
+    value: function getStorage() {
+      return this.pattern.getStorage();
+    }
+  }, {
+    key: "getLabel",
+    value: function getLabel() {
+      return this.label;
+    }
+  }, {
+    key: "getDescription",
+    value: function getDescription() {
+      return this.description;
+    }
+  }, {
+    key: "getPattern",
+    value: function getPattern() {
+      return this.pattern;
+    }
+  }, {
+    key: "setPattern",
+    value: function setPattern(pattern) {
+      this.pattern = pattern;
+    }
+  }, {
+    key: "getVariant",
+    value: function getVariant() {
+      return this.variant;
+    }
+  }, {
+    key: "setVariant",
+    value: function setVariant(value) {
+      this.variant = value;
+    }
+  }, {
+    key: "getFields",
+    value: function getFields() {
+      return this.fields;
+    }
+  }, {
+    key: "setConfiguration",
+    value: function setConfiguration(configuration) {
+      this.configuration = configuration;
+    }
+  }, {
+    key: "getConfiguration",
+    value: function getConfiguration() {
+      return this.configuration;
+    }
+  }, {
+    key: "addField",
+    value: function addField(field) {
+      this.fields[field.getName()] = field;
+    }
+  }, {
+    key: "getField",
+    value: function getField(name) {
+      return this.fields[name];
+    }
+  }, {
+    key: "setFields",
+    value: function setFields(fields) {
+      this.fields = fields;
+    }
+  }, {
+    key: "getSettings",
+    value: function getSettings() {
+      return this.settings;
+    }
+  }, {
+    key: "setSettings",
+    value: function setSettings(value) {
+      this.settings = value;
+    }
+  }, {
+    key: "getSetting",
+    value: function getSetting(name) {
+      return this.settings[name];
+    }
+  }, {
+    key: "addSetting",
+    value: function addSetting(setting) {
+      this.settings[setting.getName()] = setting;
+    }
+  }, {
+    key: "handleFieldItem",
+    value: function handleFieldItem(fieldItem) {
+      var variant = fieldItem.variant !== null ? fieldItem.variant : null;
+      var fields = fieldItem.fields != null ? fieldItem.fields : {};
+      var settings = fieldItem.settings != null ? fieldItem.settings : {};
+      var objects = Object.assign(fields, settings);
+      return {
+        patternId: fieldItem.id,
+        variant: variant,
+        fields: fields,
+        settings: settings,
+        variables: objects
+      };
+    }
+  }, {
+    key: "handleSubPreviewPattern",
+    value: function handleSubPreviewPattern(preview, parentVariables) {
+      var _this = this;
+
+      if (preview.fields !== undefined) {
+        Object.keys(preview.fields).forEach(function (key) {
+          var field = preview.fields[key];
+
+          if (field != null && field.id !== undefined) {
+            if (parentVariables.children === undefined) {
+              // eslint-disable-next-line no-param-reassign
+              parentVariables.children = {};
+            } // eslint-disable-next-line no-param-reassign
+
+
+            parentVariables.children[key] = _this.handleFieldItem(field);
+
+            _this.handleSubPreviewPattern(field, parentVariables.children[key]);
+          } else if (Array.isArray(field)) {
+            var i = 0;
+
+            if (parentVariables.children === undefined) {
+              // eslint-disable-next-line no-param-reassign
+              parentVariables.children = {};
+            }
+
+            field.forEach(function (item) {
+              if (item.id !== undefined) {
+                // eslint-disable-next-line no-param-reassign
+                parentVariables.children["".concat(key, "--").concat(i)] = _this.handleFieldItem(item);
+
+                _this.handleSubPreviewPattern(item, parentVariables.children["".concat(key, "--").concat(i)]);
+
+                i += 1;
+              }
+            });
+          }
+        });
+      }
+    }
+  }, {
+    key: "buildPreviewPattern",
+    value: function buildPreviewPattern(preview) {
+      var rootVariables = this.handleFieldItem(preview);
+      this.handleSubPreviewPattern(preview, rootVariables);
+      return rootVariables;
+    }
+  }, {
+    key: "getRenderInfo",
+    value: function getRenderInfo() {
+      var _this2 = this;
+
+      var previewPatterns = {};
+      Object.keys(this.fields).forEach(function (key) {
+        var field = _this2.fields[key];
+        var preview = field.getPreview();
+
+        if (field.getType() === 'pattern' && Array.isArray(preview)) {
+          for (var i = 0; i < preview.length; i += 1) {
+            previewPatterns["".concat(key, "--").concat(i)] = _this2.buildPreviewPattern(preview[i]);
+          }
+        } else if (field.getType() === 'pattern' && preview !== null && preview !== void 0 && preview.id) {
+          previewPatterns[key] = _this2.buildPreviewPattern(preview);
+        }
+      });
+      Object.keys(this.settings).forEach(function (key) {
+        var setting = _this2.settings[key];
+        var preview = setting.getPreview();
+
+        if (setting.getType() === 'media_library' && preview !== null && preview !== void 0 && preview.id) {
+          previewPatterns[key] = _this2.buildPreviewPattern(preview);
+        }
+      });
+      return previewPatterns;
+    }
+  }, {
+    key: "setRenderArgs",
+    value: function setRenderArgs(args) {
+      this.renderArgs = args;
+
+      if (this.beforeRenderHandler != null) {
+        this.beforeRenderHandler(args);
+      }
+    }
+  }, {
+    key: "getRenderArgs",
+    value: function getRenderArgs() {
+      return this.renderArgs;
+    }
+  }, {
+    key: "beforeRender",
+    value: function beforeRender(handler) {
+      this.beforeRenderHandler = handler;
+    }
+  }, {
+    key: "getVariables",
+    value: function getVariables() {
+      var _this3 = this;
+
+      var includeFields = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : true;
+      var includeSettings = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : true;
+      var values = {};
+
+      if (this.variant !== _Pattern["default"].DEFAULT_VARIANT_NAME) {
+        // eslint-disable-next-line dot-notation
+        values['variant'] = this.variant;
+      }
+
+      if (includeFields) {
+        Object.keys(this.fields).forEach(function (key) {
+          var field = _this3.fields[key];
+
+          if (field !== null && field.getType() !== 'pattern') {
+            values[key] = field.getPreview();
+          }
+        });
+      }
+
+      if (includeSettings) {
+        Object.keys(this.settings).forEach(function (key) {
+          if (_this3.settings[key].getType() !== 'media_library') {
+            if (_this3.settings[key].getType() === 'attributes') {
+              values[key] = new _TwigAttribute["default"](_this3.settings[key].getPreview());
+            } else {
+              values[key] = _this3.settings[key].getPreview();
+            }
+          }
+        });
+      } // eslint-disable-next-line dot-notation
+
+
+      if (values['attributes'] == null) {
+        // eslint-disable-next-line dot-notation
+        values['attributes'] = new _TwigAttribute["default"]();
+      }
+
+      return values;
+    }
+  }, {
+    key: "cleanStorybookString",
+    value: function cleanStorybookString(string) {
+      return string.toLowerCase().replace(/ /g, '-').replace(/\//g, '-');
+    }
+  }]);
+
+  return PatternVariant;
+}();
+
+exports["default"] = PatternVariant;

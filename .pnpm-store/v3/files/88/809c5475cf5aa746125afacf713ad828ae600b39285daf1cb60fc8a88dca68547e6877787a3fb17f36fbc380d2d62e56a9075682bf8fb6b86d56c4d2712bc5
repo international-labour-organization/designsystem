@@ -1,0 +1,40 @@
+{
+  "name": "remark-cli",
+  "version": "8.0.1",
+  "description": "CLI to process Markdown with remark",
+  "license": "MIT",
+  "keywords": [
+    "unified",
+    "remark",
+    "markdown",
+    "mdast",
+    "cli",
+    "bin"
+  ],
+  "homepage": "https://remark.js.org",
+  "repository": "https://github.com/remarkjs/remark/tree/main/packages/remark-cli",
+  "bugs": "https://github.com/remarkjs/remark/issues",
+  "funding": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/unified"
+  },
+  "author": "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)",
+  "contributors": [
+    "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)"
+  ],
+  "bin": {
+    "remark": "cli.js"
+  },
+  "files": [
+    "cli.js"
+  ],
+  "dependencies": {
+    "markdown-extensions": "^1.1.0",
+    "remark": "^12.0.0",
+    "unified-args": "^8.0.0"
+  },
+  "scripts": {
+    "test": "tape test.js"
+  },
+  "xo": false
+}

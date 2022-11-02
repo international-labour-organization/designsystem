@@ -1,0 +1,6 @@
+import IRenderer from './IRenderer';
+export declare class TwigRenderer implements IRenderer {
+    addTemplate(path: any, data: any): void;
+    constructor();
+    render(id: string, include: string, variables: {}): Promise<string>;
+}

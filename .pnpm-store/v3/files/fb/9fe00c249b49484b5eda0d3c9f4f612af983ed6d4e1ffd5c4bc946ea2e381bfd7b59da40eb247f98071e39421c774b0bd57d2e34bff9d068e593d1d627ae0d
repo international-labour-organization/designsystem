@@ -1,0 +1,33 @@
+{
+  "name": "svg-transform-loader",
+  "version": "2.0.13",
+  "description": "",
+  "license": "MIT",
+  "author": "JetBrains",
+  "homepage": "https://github.com/JetBrains/svg-mixer/tree/master/packages/svg-transform-loader",
+  "repository": "https://github.com/JetBrains/svg-mixer",
+  "main": "lib/loader.js",
+  "files": [
+    "lib",
+    "encode-query.js"
+  ],
+  "dependencies": {
+    "loader-utils": "^1.1.0",
+    "lodash.isempty": "^4.4.0",
+    "merge-options": "^1.0.0",
+    "postcss": "^7.0.14",
+    "posthtml-transform": "^1.0.10",
+    "postsvg": "^2.2.7",
+    "query-string": "^6.1.0",
+    "svg-mixer-utils": "^0.3.4"
+  },
+  "devDependencies": {
+    "css-loader": "^3.0.0",
+    "extract-text-webpack-plugin": "3",
+    "file-loader": "^1.1.11",
+    "postcss-loader": "^2.1.5",
+    "svg-mixer-test": "^0.2.8",
+    "webpack": "3"
+  },
+  "gitHead": "480d12f8c0e4e48a19b2ff3391bc59da9e407e80"
+}

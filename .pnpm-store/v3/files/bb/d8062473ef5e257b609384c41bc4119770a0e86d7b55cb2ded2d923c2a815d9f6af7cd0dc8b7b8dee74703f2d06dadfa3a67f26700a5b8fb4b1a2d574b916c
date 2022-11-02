@@ -1,0 +1,24 @@
+import { Preview } from './definition';
+export default class Property {
+    getDescription(): string;
+    isEnable(): boolean;
+    setEnable(value: boolean): void;
+    setDescription(value: string): void;
+    private generateFake;
+    private cleanString;
+    getPreview(): any;
+    setPreview(value: Preview | string): void;
+    getLabel(): string;
+    setLabel(value: string): void;
+    getName(): string;
+    setName(value: string): void;
+    getType(): string;
+    setType(value: string): void;
+    private name;
+    private type;
+    private label;
+    private description;
+    private preview;
+    private enable;
+    constructor(name: string, type: string, label: string, description: string, preview: any);
+}

@@ -1,0 +1,8 @@
+import { TwingLoaderArray, TwingSource } from "twing";
+/**
+ * Loads template from pattern storage.
+ */
+export declare class TwingNamespaceLoader extends TwingLoaderArray {
+    getCacheKey(name: string, from: TwingSource): string;
+    getSourceContext(name: string, from: TwingSource): TwingSource;
+}

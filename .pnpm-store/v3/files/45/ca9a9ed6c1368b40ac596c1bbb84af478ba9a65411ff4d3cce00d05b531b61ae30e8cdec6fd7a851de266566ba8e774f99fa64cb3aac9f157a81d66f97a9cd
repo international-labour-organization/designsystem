@@ -1,0 +1,13 @@
+/// <reference types="node" />
+import AppConfig from './AppConfig';
+import RootConfig from './RootConfig';
+export default class BaseApp {
+    protected appConfig: AppConfig;
+    protected rootConfig: RootConfig;
+    protected module: NodeModule;
+    getModule(): NodeModule;
+    getAppConfig(): AppConfig;
+    getRootConfig(): RootConfig;
+    private findRootConfig;
+    constructor(appConfig: AppConfig, module: NodeModule);
+}

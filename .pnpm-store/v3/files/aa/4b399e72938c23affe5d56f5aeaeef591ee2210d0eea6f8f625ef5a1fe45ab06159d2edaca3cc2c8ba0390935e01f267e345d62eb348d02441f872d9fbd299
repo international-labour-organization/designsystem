@@ -1,0 +1,3 @@
+import AppConfig from "../../../AppConfig";
+export declare function webpackFinal(config: any): any;
+export declare function webpacks(appConfig: AppConfig): any[];

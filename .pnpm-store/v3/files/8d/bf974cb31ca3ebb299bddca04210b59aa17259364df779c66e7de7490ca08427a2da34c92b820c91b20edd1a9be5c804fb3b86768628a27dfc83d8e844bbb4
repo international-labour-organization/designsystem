@@ -1,0 +1,31 @@
+{
+  "name": "posthtml-transform",
+  "version": "1.0.10",
+  "description": "PostHTML plugin to add/modify tags and attributes",
+  "keywords": [
+    "posthtml",
+    "posthtml plugin"
+  ],
+  "license": "MIT",
+  "author": "JetBrains",
+  "homepage": "https://github.com/JetBrains/svg-mixer/tree/master/packages/posthtml-transform",
+  "repository": "https://github.com/JetBrains/svg-mixer",
+  "main": "lib/plugin.js",
+  "files": [
+    "lib"
+  ],
+  "dependencies": {
+    "color-parse": "^1.3.7",
+    "loader-utils": "^1.1.0",
+    "lodash": "^4.17.14",
+    "postcss-values-parser": "^1.5.0",
+    "posthtml": "^0.11.3",
+    "posthtml-match-helper": "^1.0.1",
+    "slashes": "^1.0.5",
+    "unquote": "^1.1.1"
+  },
+  "devDependencies": {
+    "postsvg": "^2.2.7"
+  },
+  "gitHead": "eb37ef4bcbf7a24173b76319cfa2f299b60ae6dd"
+}

@@ -1,0 +1,97 @@
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.attachBehaviorDecorator = attachBehaviorDecorator;
+exports.attachBehaviors = attachBehaviors;
+exports.init = init;
+exports.isInit = isInit;
+
+require("core-js/modules/web.timers.js");
+
+require("core-js/modules/es.array.for-each.js");
+
+require("core-js/modules/es.object.to-string.js");
+
+require("core-js/modules/web.dom-collections.for-each.js");
+
+require("core-js/modules/es.object.keys.js");
+
+require("core-js/modules/es.object.define-property.js");
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+
+var behaviorName;
+var beahviorsInitialized = false;
+
+function isInit() {
+  return beahviorsInitialized;
+}
+
+function init(pbehaviorName) {
+  if (beahviorsInitialized === false) {
+    // @ts-ignore
+    window[pbehaviorName] = {
+      behaviors: {}
+    };
+    behaviorName = pbehaviorName;
+  }
+
+  beahviorsInitialized = true;
+}
+
+function attachBehaviorDecorator(storyFn) {
+  console.error('attachBehaviorDecorator in your apps/storybook/preview.js is deprecated.');
+  console.error('Please replace your preview.js with https://github.com/wingsuit-designsystem/wingsuit/blob/master/starter-kits/tailwind/apps/storybook/preview.js.');
+  return storyFn();
+}
+
+function attachBehaviors(context, settings) {
+  BehaviorExecutor.attachBehaviors(context, settings);
+}
+
+var BehaviorExecutor = /*#__PURE__*/function () {
+  function BehaviorExecutor() {
+    _classCallCheck(this, BehaviorExecutor);
+
+    this.behaviors = {};
+  }
+
+  _createClass(BehaviorExecutor, null, [{
+    key: "throwError",
+    value: function throwError(error) {
+      setTimeout(function () {
+        throw error;
+      }, 0);
+    }
+  }, {
+    key: "attachBehaviors",
+    value: function attachBehaviors(context) {
+      var settings = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
+
+      if (beahviorsInitialized === false) {
+        console.error("attachBehavior is not initialized. Call initJsBehaviors('Drupal'); in your preview.js.");
+        return;
+      } // @ts-ignore
+
+
+      var behaviors = window[behaviorName].behaviors;
+      Object.keys(behaviors).forEach(function (i) {
+        if (typeof behaviors[i].attach === 'function') {
+          try {
+            behaviors[i].attach(context, settings);
+          } catch (e) {
+            BehaviorExecutor.throwError(e);
+          }
+        }
+      });
+    }
+  }]);
+
+  return BehaviorExecutor;
+}();

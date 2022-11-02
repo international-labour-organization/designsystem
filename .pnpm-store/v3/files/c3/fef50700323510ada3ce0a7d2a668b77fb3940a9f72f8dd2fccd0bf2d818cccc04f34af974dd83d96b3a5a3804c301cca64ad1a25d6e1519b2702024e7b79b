@@ -1,0 +1,24 @@
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.name = name;
+exports.webpack = webpack;
+
+function name(appConfig) {
+  return 'twing';
+}
+
+function webpack(appConfig) {
+  return {
+    module: {
+      rules: [{
+        test: /\.twig$/,
+        use: [{
+          loader: 'raw-loader'
+        }]
+      }]
+    }
+  };
+}

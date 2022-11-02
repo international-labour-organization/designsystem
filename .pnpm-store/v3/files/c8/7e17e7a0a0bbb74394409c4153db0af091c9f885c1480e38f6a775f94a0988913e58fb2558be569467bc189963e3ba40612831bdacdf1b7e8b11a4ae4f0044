@@ -1,0 +1,4 @@
+import Tailwind2JsonPlugin from '../plugins/Tailwind2JsonPlugin';
+export declare function webpack(appConfig: any): {
+    plugins: Tailwind2JsonPlugin[];
+};

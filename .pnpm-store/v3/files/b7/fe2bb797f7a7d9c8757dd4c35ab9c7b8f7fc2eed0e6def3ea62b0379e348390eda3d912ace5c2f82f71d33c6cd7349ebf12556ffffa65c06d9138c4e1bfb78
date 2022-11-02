@@ -1,0 +1,10 @@
+declare const Generator: any;
+export default class extends Generator {
+    private targetFolder;
+    initializing(): void;
+    prompting(): any;
+    getTargetFolder(): any;
+    getProps(): any;
+    writing(): void;
+}
+export {};

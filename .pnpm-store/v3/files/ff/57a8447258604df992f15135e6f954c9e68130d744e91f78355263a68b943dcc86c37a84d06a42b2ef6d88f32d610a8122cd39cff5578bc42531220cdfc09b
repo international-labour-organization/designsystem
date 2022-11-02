@@ -1,0 +1,16 @@
+import { TwingLoaderInterface } from 'twing/dist/types/lib/loader-interface';
+import IRenderer from './IRenderer';
+export declare class TwingRenderer implements IRenderer {
+    private environment;
+    private initializeEnvironment;
+    private filters;
+    private functions;
+    addFilter(name: any, func: any): void;
+    addFunction(name: any, func: any): void;
+    getEnvironment(): any;
+    addTemplate(path: any, template: any): void;
+    setLoader(loader: TwingLoaderInterface): void;
+    constructor();
+    private initialize;
+    render(id: string, include: string, variables: {}): Promise<string>;
+}

@@ -1,0 +1,45 @@
+{
+  "name": "strip-use-strict",
+  "description": "Strip 'use strict' statements from a string of javascript",
+  "version": "0.1.0",
+  "homepage": "https://github.com/jonschlinkert/strip-use-strict",
+  "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
+  "repository": "jonschlinkert/strip-use-strict",
+  "bugs": {
+    "url": "https://github.com/jonschlinkert/strip-use-strict/issues"
+  },
+  "license": "MIT",
+  "files": [
+    "index.js"
+  ],
+  "main": "index.js",
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "gulp-format-md": "^0.1.7",
+    "mocha": "*"
+  },
+  "keywords": [],
+  "verb": {
+    "run": true,
+    "toc": false,
+    "layout": "default",
+    "tasks": [
+      "readme"
+    ],
+    "plugins": [
+      "gulp-format-md"
+    ],
+    "reflinks": [
+      "verb"
+    ],
+    "lint": {
+      "reflinks": true
+    }
+  }
+}

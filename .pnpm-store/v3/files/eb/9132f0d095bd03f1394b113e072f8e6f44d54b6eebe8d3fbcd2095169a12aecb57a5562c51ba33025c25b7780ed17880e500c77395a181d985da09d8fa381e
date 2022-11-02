@@ -1,0 +1,103 @@
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.defaultConfig = defaultConfig;
+exports.name = name;
+exports.webpack = webpack;
+exports.webpackFinal = webpackFinal;
+
+require("core-js/modules/es.regexp.constructor.js");
+
+require("core-js/modules/es.regexp.exec.js");
+
+var _path = _interopRequireDefault(require("path"));
+
+var _Svg2JsonPlugin = _interopRequireDefault(require("../plugins/Svg2JsonPlugin"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
+
+function name(appConfig) {
+  return 'svg';
+}
+
+function defaultConfig(appConfig) {
+  return {
+    sources: [{
+      sourceFolder: 'icons',
+      jsonFile: _path.default.join(appConfig.absAppPath, '/config/silo/svgs.json'),
+      spriteFilename: 'images/spritemap.svg'
+    }]
+  };
+}
+
+function webpack(appConfig, config) {
+  var resultWebpack = {
+    plugins: [],
+    module: {
+      rules: []
+    }
+  };
+  var testPatterns = [];
+  config.sources.forEach(function (svgConfig) {
+    resultWebpack.plugins.push(new _Svg2JsonPlugin.default(svgConfig.sourceFolder, svgConfig.jsonFile, appConfig));
+    testPatterns.push(`.*[/|\\\\]${svgConfig.sourceFolder}[/|\\\\].*.svg$`);
+  });
+  var rule = new RegExp(testPatterns.join('|'));
+  resultWebpack.module.rules.push({
+    test: rule,
+    use: [{
+      loader: 'svg-sprite-loader',
+      options: {
+        extract: true,
+        outputPath: `${appConfig.assetBundleFolder}/`,
+        spriteFilename: function (sourceFileName) {
+          var targetFileName = 'images/spritemap.svg';
+          config.sources.forEach(function (svgConfig) {
+            if (sourceFileName.includes(`/${svgConfig.sourceFolder}/`)) {
+              targetFileName = svgConfig.spriteFilename;
+            }
+          });
+          return targetFileName;
+        }
+      }
+    }, 'svg-transform-loader', {
+      loader: 'svgo-loader',
+      options: {
+        plugins: [{
+          convertFillsToCurrentColor: true
+        }, {
+          removeTitle: true
+        }, {
+          removeEditorsNSData: false
+        }, {
+          convertColors: {
+            shorthex: false
+          }
+        }, {
+          convertPathData: false
+        }]
+      }
+    }]
+  });
+  resultWebpack.plugins.push(new SpriteLoaderPlugin({
+    plainSprite: true
+  }));
+  return resultWebpack;
+}
+
+function webpackFinal(appConfig, config) {
+  if (appConfig.type === 'storybook') {
+    // eslint-disable-next-line no-param-reassign
+    config.module.rules = config.module.rules.map(function (data) {
+      if (/svg\|ico\|jpg\|/.test(String(data.test))) // eslint-disable-next-line no-param-reassign
+        data = {};
+      return data;
+    });
+  }
+
+  return config;
+}

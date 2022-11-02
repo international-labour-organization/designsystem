@@ -1,0 +1,24 @@
+import AppConfig, { PresetDefinition, Preset } from '../AppConfig';
+export default class PresetManager {
+    private environment;
+    getDefaultPreset(name: string): Preset;
+    private getPresetName;
+    private getPresetParameter;
+    getPresetDefinitions(appConfig: AppConfig): PresetDefinition[];
+    /**
+     * Returns true if a feature is supported by an extension.
+     *
+     * @param name
+     *   The feature name.
+     *
+     * @return boolean
+     *   True if feature is supported.
+     */
+    supportFeature(name: any, appConfig: AppConfig): boolean;
+    /**
+     * Generates Wingsuit webpack config based on appConfig.
+     *
+     * @returns {*} - Fully merged and customized webpack config
+     */
+    generateWebpack(appConfig: AppConfig, webpackConfigs?: any[]): any;
+}

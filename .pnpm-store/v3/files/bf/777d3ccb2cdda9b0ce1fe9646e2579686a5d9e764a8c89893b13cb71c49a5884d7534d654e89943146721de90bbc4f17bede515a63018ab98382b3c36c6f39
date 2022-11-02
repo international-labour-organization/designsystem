@@ -1,0 +1,15 @@
+/// <reference types="node" />
+import IApp from './IApp';
+import AppConfig from './AppConfig';
+import RootConfig from './RootConfig';
+export default class BaseApp implements IApp {
+    protected appConfig: AppConfig;
+    protected rootConfig: RootConfig;
+    protected module: NodeModule;
+    getRootConfig(): RootConfig;
+    private findRootConfig;
+    constructor(appConfig: AppConfig, module: NodeModule);
+    getSharedWebpackConfig(): {};
+    getDevelopmentWebpackConfig(): {};
+    getProductionWebpackConfig(): {};
+}

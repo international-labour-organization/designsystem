@@ -1,5 +1,15 @@
 # @ilo-org/react
 
+## 0.0.6
+
+### Patch Changes
+
+- a84c36d: Navigation RTL styles and design QA
+- Updated dependencies [a84c36d]
+  - @ilo-org/icons-react@0.0.4
+  - @ilo-org/styles@0.1.2
+  - @ilo-org/themes@0.1.2
+
 ## 0.0.5
 
 ### Patch Changes

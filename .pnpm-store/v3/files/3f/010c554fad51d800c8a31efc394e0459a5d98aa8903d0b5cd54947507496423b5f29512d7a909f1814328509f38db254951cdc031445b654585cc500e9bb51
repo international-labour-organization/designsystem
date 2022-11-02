@@ -1,0 +1,49 @@
+import { BaseWebpackBundle } from "../BaseWebpackBundle";
+export default class TailwindBundle extends BaseWebpackBundle {
+    protected sharedWebpackConfig: {
+        module: {
+            rules: ({
+                test: RegExp;
+                enforce: string;
+                exclude: RegExp;
+                loader: string;
+                options: {
+                    emitWarning: boolean;
+                    name?: undefined;
+                };
+                use?: undefined;
+            } | {
+                test: RegExp;
+                exclude: RegExp;
+                use: {
+                    loader: string;
+                };
+                enforce?: undefined;
+                loader?: undefined;
+                options?: undefined;
+            } | {
+                test: RegExp;
+                loader: string;
+                options: {
+                    name: string;
+                    emitWarning?: undefined;
+                };
+                enforce?: undefined;
+                exclude?: undefined;
+                use?: undefined;
+            } | {
+                test: RegExp;
+                use: {
+                    loader: string;
+                    options: {
+                        name: string;
+                    };
+                }[];
+                enforce?: undefined;
+                exclude?: undefined;
+                loader?: undefined;
+                options?: undefined;
+            })[];
+        };
+    };
+}
