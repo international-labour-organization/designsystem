@@ -1,0 +1,19 @@
+/// <reference types="webpack-env" />
+/// <reference types="node" />
+import { Pattern, IRenderer } from '@wingsuit-designsystem/pattern';
+import '@storybook/addon-docs/register';
+import PatternProperties from './docs/PatternProperties';
+import { PatternDoc } from './docs/PatternDoc';
+import { PatternInclude } from './docs/PatternInclude';
+export interface PatternEvents {
+    alterPattern: (pattern: Pattern) => Pattern;
+    alterStory: (story: any) => any;
+}
+export declare function configure(module: NodeModule, storybookContext: any, dataContext: any, templateContext: any, namespaces: any, renderImpl: IRenderer | null, events: PatternEvents | null): void;
+export { drupalAttachBehaviorDecorator } from './drupal';
+export { isInitDecorator, initDecorator, initJsBehaviors, attachBehaviorDecorator, } from '@wingsuit-designsystem/pattern-react/client';
+export { RenderTwig, PatternPreview } from '@wingsuit-designsystem/pattern-react/client';
+export { default as PatternLoad } from './docs/PatternLoad';
+export { default as Spacing } from './docs/Spacing';
+export { default as Typeset } from './docs/Typeset';
+export { PatternDoc, PatternProperties, PatternInclude };

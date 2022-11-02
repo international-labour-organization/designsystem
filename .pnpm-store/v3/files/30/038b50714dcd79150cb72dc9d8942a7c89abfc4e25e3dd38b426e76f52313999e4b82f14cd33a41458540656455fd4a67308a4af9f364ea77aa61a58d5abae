@@ -1,0 +1,50 @@
+{
+  "name": "eslint-plugin-json-files",
+  "version": "0.8.1",
+  "description": "ESLint JSON processor and rules",
+  "keywords": [
+    "eslint",
+    "eslintplugin",
+    "eslint-plugin"
+  ],
+  "author": "Kelly Selden",
+  "main": "lib/index.js",
+  "scripts": {
+    "lint": "eslint . --ext js,json",
+    "test": "mocha tests --recursive"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/kellyselden/eslint-plugin-json-files.git"
+  },
+  "dependencies": {
+    "requireindex": "^1.2.0",
+    "semver": "^6.0.0",
+    "sort-package-json": "^1.22.1"
+  },
+  "devDependencies": {
+    "@kellyselden/node-template": "0.11.3",
+    "chai": "^4.2.0",
+    "eslint": "^6.8.0",
+    "eslint-config-sane": "0.8.5",
+    "eslint-config-sane-node": "0.3.0",
+    "eslint-plugin-json-files": "file://.",
+    "eslint-plugin-mocha": "^6.2.2",
+    "eslint-plugin-node": "^11.0.0",
+    "eslint-plugin-prefer-let": "^1.0.1",
+    "mocha": "^7.0.0",
+    "mocha-helpers": "^4.2.1",
+    "renovate-config-standard": "^2.0.0",
+    "standard-node-template": "0.0.1"
+  },
+  "peerDependencies": {
+    "eslint": ">=5"
+  },
+  "engines": {
+    "node": ">=8"
+  },
+  "license": "MIT",
+  "files": [
+    "lib"
+  ]
+}

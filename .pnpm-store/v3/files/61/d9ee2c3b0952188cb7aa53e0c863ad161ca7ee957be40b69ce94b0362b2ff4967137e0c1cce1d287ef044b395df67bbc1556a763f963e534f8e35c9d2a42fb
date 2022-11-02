@@ -1,0 +1,101 @@
+"use strict";
+
+require("core-js/modules/es.object.define-property.js");
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.wingsuit = void 0;
+
+var css = require('../server/presets/css');
+
+var babel = require('../server/presets/babel');
+
+var assets = require('../server/presets/assets');
+
+var storybook = require('../server/presets/storybook');
+
+var drupal = require('../server/presets/drupal');
+
+var cms = require('../server/presets/cms');
+
+var twing = require('../server/presets/twing');
+
+var svg = require('../server/presets/svg');
+
+var assetsVideos = require('../server/presets/assetsVideos');
+
+var wingsuit = {
+  webpackFinal: null,
+  webpack: null,
+  parameters: {},
+  defaultPresets: {
+    babel: babel,
+    assets: assets,
+    assetsVideos: assetsVideos,
+    svg: svg,
+    twing: twing,
+    storybook: storybook,
+    drupal: drupal,
+    cms: cms
+  },
+  presets: [css, assets, assetsVideos, svg],
+  designSystems: {
+    "default": {
+      path: 'source/default',
+      patternFolder: 'patterns',
+      namespaces: {}
+    }
+  },
+  environments: {
+    development: {},
+    production: {}
+  },
+  apps: {
+    storybook: {
+      path: './apps/storybook',
+      type: 'storybook',
+      cssMode: 'hot',
+      distFolder: 'dist/app-storybook',
+      dataFolder: './apps/data',
+      assetBundleFolder: '',
+      designSystem: 'default',
+      presets: [twing, storybook],
+      componentTypes: {
+        wingsuit_presenter: 'Wingsuit component (UI Pattern) with presentation template',
+        plain: 'Twig only component',
+        plain_presenter: 'Twig only component with presentation template',
+        presenter: 'Presentation template'
+      },
+      startup: function startup() {
+        if (this.environment === 'production') {
+          return "build-storybook --config-dir ".concat(this.absAppPath);
+        }
+
+        return "start-storybook --config-dir ".concat(this.absAppPath);
+      }
+    },
+    cms: {
+      path: './apps/cms',
+      cssMode: 'hot',
+      type: 'cms',
+      dataFolder: './apps/data',
+      distFolder: 'dist/app-cms',
+      assetBundleFolder: '',
+      designSystem: 'default',
+      presets: [babel, cms]
+    },
+    drupal: {
+      path: './apps/drupal',
+      cssMode: 'extract',
+      distFolder: 'dist/app-drupal',
+      dataFolder: './apps/data',
+      assetAtomicFolder: 'atomic',
+      type: 'drupal',
+      assetBundleFolder: '',
+      designSystem: 'default',
+      presets: [babel, drupal]
+    }
+  }
+};
+exports.wingsuit = wingsuit;

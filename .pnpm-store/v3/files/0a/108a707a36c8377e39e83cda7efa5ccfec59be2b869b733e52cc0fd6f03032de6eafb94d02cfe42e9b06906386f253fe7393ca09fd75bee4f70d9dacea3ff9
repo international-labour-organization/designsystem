@@ -1,0 +1,7 @@
+export default interface WebpackBundle {
+    getName(): any;
+    getSharedWebpackConfig(): {};
+    getProductionWebpackConfig(): {};
+    getDevelopmentWebpackConfig(): {};
+    alterFinalConfig(config: {}): {};
+}

@@ -1,0 +1,227 @@
+"use strict";
+
+require("core-js/modules/es.array.is-array.js");
+
+require("core-js/modules/es.symbol.js");
+
+require("core-js/modules/es.symbol.description.js");
+
+require("core-js/modules/es.symbol.iterator.js");
+
+require("core-js/modules/es.array.iterator.js");
+
+require("core-js/modules/es.string.iterator.js");
+
+require("core-js/modules/web.dom-collections.iterator.js");
+
+require("core-js/modules/es.array.slice.js");
+
+require("core-js/modules/es.array.from.js");
+
+require("core-js/modules/es.object.define-property.js");
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.getConfigBase = getConfigBase;
+exports.resolveConfig = resolveConfig;
+
+require("core-js/modules/es.array.for-each.js");
+
+require("core-js/modules/es.object.to-string.js");
+
+require("core-js/modules/web.dom-collections.for-each.js");
+
+require("core-js/modules/es.object.keys.js");
+
+require("core-js/modules/es.regexp.exec.js");
+
+require("core-js/modules/es.string.split.js");
+
+require("core-js/modules/es.object.assign.js");
+
+require("core-js/modules/es.array.join.js");
+
+require("core-js/modules/es.function.name.js");
+
+var _path = _interopRequireDefault(require("path"));
+
+var _AppConfig = require("./AppConfig");
+
+var _PresetManager = _interopRequireDefault(require("./server/PresetManager"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+var merge = require('merge-deep');
+
+var yargs = require('yargs');
+
+var configStub = require('./stubs/defaultWingsuitConfig.stub');
+/**
+ * Returns the wingsuit base config.
+ *
+ * @param wingsuitConfig
+ *   The provided config.
+ *
+ * @return {mergedObject, projectConfig}
+ *   Returns two objects
+ *    - The complete merged configuration including all presets.
+ *    - The wingsuit.config.js
+ */
+
+
+function getConfigBase() {
+  var wingsuitConfig = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : null;
+  var projectConfig = // eslint-disable-next-line global-require,import/no-dynamic-require
+  wingsuitConfig != null ? wingsuitConfig : require("".concat(process.cwd(), "/wingsuit.config"));
+  var mergedConfig = merge(configStub.wingsuit, projectConfig);
+  mergedConfig.absAppPath = ''; // Overrule logic.
+  // 1. Merge config stub with presets configs.
+  // 2. Overrule default config with merged config.
+  // 3. Overrule with environment config.
+  // 4. Overrule with project config.
+  // Overrule with preset configs.
+
+  var presetManager = new _PresetManager["default"]();
+  var presets = presetManager.getPresetDefinitions(mergedConfig);
+  Object.keys(presets).forEach(function (key) {
+    if (presets[key] != null && presets[key].preset.wingsuitConfig != null) {
+      var presetWingsuitConfig = presets[key].preset.wingsuitConfig();
+      mergedConfig = merge(mergedConfig, presetWingsuitConfig);
+    }
+  });
+  return {
+    mergedConfig: mergedConfig,
+    projectConfig: projectConfig
+  };
+}
+/**
+ * Resolves wingsuit config.
+ *
+ * @param appNameId
+ *   The appNameId can contain app type and app id seperated by ":".
+ *   Example:
+ *     drupal:cms - drupal is app name. CMS is the preset app type
+ *
+ * @param environment
+ *   The current environment.
+ * @param configurationOverwrites
+ *   Overrule the config.
+ * @param wingsuitConfig
+ *   The provided config.
+ * @param configPath
+ *   The path to the config.
+ *
+ * @return AppConfig
+ *   The appConfig
+ */
+
+
+function resolveConfig(appNameId) {
+  var environment = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'development';
+  var configurationOverwrites = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : {};
+  var wingsuitConfig = arguments.length > 3 && arguments[3] !== undefined ? arguments[3] : null;
+  var configPath = arguments.length > 4 && arguments[4] !== undefined ? arguments[4] : null;
+  var appName = appNameId;
+  var type = appNameId;
+  var typeOverwritten = false;
+
+  if (appNameId.split(':').length === 2) {
+    var _appNameId$split = appNameId.split(':');
+
+    var _appNameId$split2 = _slicedToArray(_appNameId$split, 2);
+
+    appName = _appNameId$split2[0];
+    type = _appNameId$split2[1];
+    typeOverwritten = true;
+  }
+
+  var _getConfigBase = getConfigBase(wingsuitConfig),
+      mergedConfig = _getConfigBase.mergedConfig,
+      projectConfig = _getConfigBase.projectConfig;
+
+  if (projectConfig.apps === undefined) {
+    projectConfig.apps = {};
+  }
+
+  if (projectConfig.apps[appName] == null && mergedConfig.apps[appName] == null) {
+    throw new Error("App ".concat(appName, " not found. Check your apps section in your wingsuit.config.js"));
+  }
+
+  if (typeOverwritten === false && projectConfig.apps[appName] != null && projectConfig.apps[appName].type != null) {
+    type = projectConfig.apps[appName].type;
+  }
+
+  var rootPath = configPath != null ? configPath : process.cwd(); // Overrule default config with merged config.
+
+  var appConfig = merge((0, _AppConfig.defaultAppConfig)(type, rootPath), mergedConfig.apps[type]); // Overrule environment config.
+
+  if (mergedConfig.environments[environment] != null) {
+    appConfig = merge(appConfig, mergedConfig.environments[environment]);
+  } // Overrule project config.
+
+
+  if (projectConfig.apps != null && projectConfig.apps[appName] != null) {
+    appConfig = merge(appConfig, projectConfig.apps[appName]);
+  }
+
+  var overloadedFunctions = ['startup', 'generator'];
+  overloadedFunctions.forEach(function (funcName) {
+    if (mergedConfig.apps[type]) {
+      appConfig[funcName] = mergedConfig.apps[type][funcName] != null ? mergedConfig.apps[type][funcName] : appConfig[funcName];
+    }
+
+    if (projectConfig.apps != null && projectConfig.apps[appName] != null && projectConfig.apps[appName][funcName] !== undefined) {
+      appConfig[funcName] = projectConfig.apps[appName][funcName];
+    }
+  }); // Overrule hooks.
+
+  appConfig.webpack = mergedConfig.webpack !== null ? mergedConfig.webpack : appConfig.webpack;
+  appConfig.webpackFinal = mergedConfig.webpackFinal !== null ? mergedConfig.webpackFinal : appConfig.webpackFinal;
+  mergedConfig.presets.forEach(function (preset) {
+    appConfig.presets.push(preset);
+  });
+
+  appConfig.getParameters = function (name) {
+    return appConfig.parameters[name] != null ? appConfig.parameters[name] : {};
+  };
+
+  appConfig = Object.assign(appConfig, configurationOverwrites);
+  appConfig.environment = environment;
+  appConfig.absAppPath = _path["default"].join(rootPath, appConfig.path);
+  appConfig.absDistFolder = yargs.argv['output-dir'] != null ? _path["default"].resolve(yargs.argv['output-dir']) : _path["default"].join(appConfig.absRootPath, appConfig.distFolder);
+  var designSystem = mergedConfig.designSystems[appConfig.designSystem];
+
+  if (designSystem == null) {
+    throw new Error("No designSystem found: ".concat(appConfig.designSystem, ". Please check your wingsuit.config."));
+  }
+
+  appConfig.parameters = mergedConfig.parameters;
+  appConfig.name = appName;
+  appConfig.patternFolder = designSystem.patternFolder;
+  appConfig.absDesignSystemPath = _path["default"].join(appConfig.absRootPath, designSystem.path);
+  appConfig.absPatternPath = _path["default"].join(appConfig.absDesignSystemPath, appConfig.patternFolder);
+  appConfig.namespaces = designSystem.namespaces;
+  appConfig.namespaces.wsdesignsystem = appConfig.absDesignSystemPath;
+  appConfig.namespaces.wspatterns = appConfig.absPatternPath;
+  appConfig.namespaces.wsapp = appConfig.absAppPath;
+  appConfig.namespaces.wsdata = appConfig.absDataPath;
+
+  if (mergedConfig.postCssConfig != null) {
+    appConfig.postCssConfig = Object.assign(appConfig.postCssConfig, mergedConfig.postCssConfig);
+  }
+
+  return appConfig;
+}

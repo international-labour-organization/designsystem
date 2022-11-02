@@ -1,0 +1,28 @@
+/**
+ * Adds all the filters to the given Twig intstance.
+ *
+ * @param {Twing} twigInstance The instance of Twig to modify.
+ */
+const {TwingFilter, TwingFunction} = require('twing')
+
+module.exports = twingEnvironment => {
+  const filters = require('./filters')
+  Object.keys(filters).forEach(filterName => {
+    const filter = (arg1, arg2) => {
+      return Promise.resolve(filters[filterName](arg1, arg2))
+    }
+
+    twingEnvironment.addFilter(new TwingFilter(filterName, filter))
+  })
+
+  const functions = require('./functions')
+  Object.keys(functions).forEach(functionName => {
+    if (functionName !== 'file_url') {
+      const func = (arg1, arg2) => {
+        return Promise.resolve(functions[functionName](arg1, arg2))
+      }
+
+      twingEnvironment.addFunction(new TwingFunction(functionName, func))
+    }
+  })
+}

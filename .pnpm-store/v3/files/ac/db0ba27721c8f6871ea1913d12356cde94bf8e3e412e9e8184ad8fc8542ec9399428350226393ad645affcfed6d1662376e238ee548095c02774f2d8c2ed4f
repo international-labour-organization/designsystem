@@ -1,0 +1,101 @@
+{
+  "name": "unified-args",
+  "version": "8.1.0",
+  "description": "Create CLIs for unified processors",
+  "license": "MIT",
+  "keywords": [
+    "unified",
+    "processor",
+    "engine",
+    "cli",
+    "arguments"
+  ],
+  "repository": "unifiedjs/unified-args",
+  "bugs": "https://github.com/unifiedjs/unified-args/issues",
+  "funding": {
+    "type": "opencollective",
+    "url": "https://opencollective.com/unified"
+  },
+  "author": "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)",
+  "contributors": [
+    "Titus Wormer <tituswormer@gmail.com> (https://wooorm.com)",
+    "Christian Murphy <christian.murphy.42@gmail.com"
+  ],
+  "files": [
+    "index.js",
+    "types/index.d.ts",
+    "lib/"
+  ],
+  "types": "types/index.d.ts",
+  "dependencies": {
+    "camelcase": "^5.0.0",
+    "chalk": "^3.0.0",
+    "chokidar": "^3.0.0",
+    "fault": "^1.0.2",
+    "json5": "^2.0.0",
+    "minimist": "^1.2.0",
+    "text-table": "^0.2.0",
+    "unified-engine": "^8.0.0"
+  },
+  "devDependencies": {
+    "bail": "^1.0.0",
+    "dtslint": "^3.0.0",
+    "execa": "^4.0.0",
+    "figures": "^3.0.0",
+    "nyc": "^15.0.0",
+    "prettier": "^2.0.0",
+    "remark": "^12.0.0",
+    "remark-cli": "^8.0.0",
+    "remark-preset-wooorm": "^7.0.0",
+    "strip-ansi": "^6.0.0",
+    "tape": "^5.0.0",
+    "touch": "^3.0.0",
+    "unified": "^9.0.0",
+    "vfile-reporter-json": "^2.0.0",
+    "xo": "^0.32.0"
+  },
+  "scripts": {
+    "format": "remark . -qfo && prettier --write \"**/*.{js,ts}\" && xo --fix --ignore types",
+    "test-api": "node test",
+    "test-coverage": "nyc --reporter lcov tape test/index.js",
+    "test-types": "dtslint types",
+    "test": "npm run format && npm run test-coverage && npm run test-types"
+  },
+  "prettier": {
+    "tabWidth": 2,
+    "useTabs": false,
+    "singleQuote": true,
+    "bracketSpacing": false,
+    "semi": false,
+    "trailingComma": "none"
+  },
+  "xo": {
+    "prettier": true,
+    "esnext": false,
+    "rules": {
+      "unicorn/no-fn-reference-in-iterator": "off",
+      "unicorn/string-content": "off",
+      "guard-for-in": "off"
+    },
+    "ignores": [
+      "**/*.ts"
+    ]
+  },
+  "nyc": {
+    "check-coverage": true,
+    "lines": 100,
+    "functions": 100,
+    "branches": 100
+  },
+  "remarkConfig": {
+    "plugins": [
+      "preset-wooorm",
+      [
+        "toc",
+        {
+          "heading": "contents"
+        }
+      ]
+    ]
+  }
+}

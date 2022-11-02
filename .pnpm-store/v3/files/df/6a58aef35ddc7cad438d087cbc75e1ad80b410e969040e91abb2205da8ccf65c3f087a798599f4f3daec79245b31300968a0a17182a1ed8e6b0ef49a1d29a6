@@ -1,0 +1,8 @@
+declare const Generator: any;
+export default class extends Generator {
+    prompting(): any;
+    getDsComponentPath(): any;
+    getAppComponentPath(): any;
+    writing(): void;
+}
+export {};

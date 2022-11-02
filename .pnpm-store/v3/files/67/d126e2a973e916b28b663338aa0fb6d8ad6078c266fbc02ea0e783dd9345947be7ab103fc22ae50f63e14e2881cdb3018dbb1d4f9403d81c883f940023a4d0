@@ -1,0 +1,66 @@
+export declare function webpack(appConfig: any): {
+    entry: string[];
+    plugins: any[];
+    module: {
+        rules: ({
+            test: RegExp;
+            use: {
+                loader: string;
+                options: {
+                    outputPath: string;
+                    name: string;
+                };
+            }[];
+        } | {
+            test: RegExp;
+            use: (string | {
+                loader: string;
+                options: {
+                    extract: boolean;
+                    spriteFilename: string;
+                    plugins?: undefined;
+                };
+            } | {
+                loader: string;
+                options: {
+                    plugins: ({
+                        convertFillsToCurrentColor: boolean;
+                        removeTitle?: undefined;
+                        removeEditorsNSData?: undefined;
+                        convertColors?: undefined;
+                        convertPathData?: undefined;
+                    } | {
+                        removeTitle: boolean;
+                        convertFillsToCurrentColor?: undefined;
+                        removeEditorsNSData?: undefined;
+                        convertColors?: undefined;
+                        convertPathData?: undefined;
+                    } | {
+                        removeEditorsNSData: boolean;
+                        convertFillsToCurrentColor?: undefined;
+                        removeTitle?: undefined;
+                        convertColors?: undefined;
+                        convertPathData?: undefined;
+                    } | {
+                        convertColors: {
+                            shorthex: boolean;
+                        };
+                        convertFillsToCurrentColor?: undefined;
+                        removeTitle?: undefined;
+                        removeEditorsNSData?: undefined;
+                        convertPathData?: undefined;
+                    } | {
+                        convertPathData: boolean;
+                        convertFillsToCurrentColor?: undefined;
+                        removeTitle?: undefined;
+                        removeEditorsNSData?: undefined;
+                        convertColors?: undefined;
+                    })[];
+                    extract?: undefined;
+                    spriteFilename?: undefined;
+                };
+            })[];
+        })[];
+    };
+};
+export declare function webpackFinal(config: any): {};

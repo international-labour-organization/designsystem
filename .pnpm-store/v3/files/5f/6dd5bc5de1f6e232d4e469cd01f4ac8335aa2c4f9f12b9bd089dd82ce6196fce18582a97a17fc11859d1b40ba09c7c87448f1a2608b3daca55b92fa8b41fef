@@ -1,0 +1,4 @@
+export declare const name = "app";
+export declare const dist = "dist/";
+export declare const assetBundleFolder = "assets/";
+export declare const assetAtomicFolder = "atomic/";

@@ -1,0 +1,9 @@
+import { TwingMarkup } from "../../../markup";
+/**
+ * Converts a string to uppercase.
+ *
+ * @param {string | TwingMarkup} string A string
+ *
+ * @returns {Promise<string>} The uppercased string
+ */
+export declare function upper(string: string | TwingMarkup): Promise<string>;

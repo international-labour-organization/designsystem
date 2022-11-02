@@ -1,0 +1,197 @@
+"use strict";
+
+require("core-js/modules/es.symbol.js");
+
+require("core-js/modules/es.symbol.description.js");
+
+require("core-js/modules/es.symbol.iterator.js");
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+
+require("core-js/modules/es.array.iterator.js");
+
+require("core-js/modules/es.map.js");
+
+require("core-js/modules/es.object.to-string.js");
+
+require("core-js/modules/es.string.iterator.js");
+
+require("core-js/modules/web.dom-collections.iterator.js");
+
+require("core-js/modules/es.array.for-each.js");
+
+require("core-js/modules/web.dom-collections.for-each.js");
+
+require("core-js/modules/es.object.keys.js");
+
+require("core-js/modules/es.regexp.exec.js");
+
+require("core-js/modules/es.string.split.js");
+
+require("core-js/modules/es.array.is-array.js");
+
+require("core-js/modules/es.array.join.js");
+
+require("core-js/modules/es.array.index-of.js");
+
+require("core-js/modules/es.array.splice.js");
+
+require("core-js/modules/es.date.to-string.js");
+
+require("core-js/modules/es.regexp.to-string.js");
+
+require("core-js/modules/es.array.from.js");
+
+require("core-js/modules/es.array.concat.js");
+
+require("core-js/modules/es.string.trim.js");
+
+require("core-js/modules/es.object.define-property.js");
+
+var _twigRenderEngine = require("./twigRenderEngine");
+
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+
+var htmlAttributeParser = require('html-attribute-parser');
+
+var escapeHtml = require('escape-html');
+
+var TwigAttribute = /*#__PURE__*/function () {
+  function TwigAttribute() {
+    var _this = this;
+
+    var attributes = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
+
+    _classCallCheck(this, TwigAttribute);
+
+    this.attributes = void 0;
+    this.attributes = attributes instanceof Map ? attributes : new Map();
+
+    if (!(attributes instanceof Map) && attributes !== '') {
+      var attrs = htmlAttributeParser("<div ".concat(attributes, "></div>")).attributes;
+      Object.keys(attrs).forEach(function (key) {
+        if (key === 'class') {
+          _this.attributes.set(key, attrs[key].split(' '));
+        } else {
+          _this.attributes.set(key, attrs[key]);
+        }
+      });
+    }
+  }
+
+  _createClass(TwigAttribute, [{
+    key: "class",
+    value: function _class() {
+      var classes = this.attributes.get('class');
+
+      if (Array.isArray(classes)) {
+        return this.attributes.get('class').join(' ');
+      }
+
+      return this.attributes.get('class') != null ? this.attributes.get('class') : '';
+    }
+  }, {
+    key: "setAttribute",
+    value: function setAttribute(key, value) {
+      this.attributes.set(key, value);
+      return this;
+    }
+  }, {
+    key: "removeAttribute",
+    value: function removeAttribute(key) {
+      this.attributes["delete"](key);
+      return this;
+    }
+  }, {
+    key: "removeClass",
+    value: function removeClass() {
+      var className = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
+      var classAry = className.split(' ');
+
+      for (var i = 0; i < classAry.length; i += 1) {
+        var classItem = classAry[i];
+        var foundItem = this.attributes.get('class').indexOf(classItem);
+
+        if (this.attributes.get('class') != null && foundItem !== -1) {
+          this.attributes.get('class').splice(foundItem, 1);
+        }
+      }
+    }
+  }, {
+    key: "addClass",
+    value: function addClass() {
+      var className = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
+
+      if (className == null) {
+        return this;
+      }
+
+      if (this.attributes.get('class') == null) {
+        this.attributes.set('class', []);
+      }
+
+      var classes = this.attributes.get('class');
+      var classAry = [];
+
+      if (className instanceof Map) {
+        classAry = (0, _twigRenderEngine.twingMapToArray)(className);
+      } else if (Array.isArray(className)) {
+        classAry = className;
+      } else {
+        classAry = className.split(' ');
+      }
+
+      for (var i = 0; i < classAry.length; i += 1) {
+        if (classAry[i] !== '') {
+          classes.push(classAry[i]);
+        }
+      }
+
+      return this;
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      return this.toString();
+    }
+  }, {
+    key: "toArray",
+    value: function toArray() {
+      return Array.from(this.attributes);
+    }
+  }, {
+    key: "toString",
+    value: function toString() {
+      var _this2 = this;
+
+      var output = '';
+      Array.from(this.attributes.keys()).forEach(function (key) {
+        var attributeValue = null;
+
+        if (_typeof(_this2.attributes.get(key)) === 'object' && Array.isArray(_this2.attributes.get(key))) {
+          attributeValue = _this2.attributes.get(key).join(' ');
+        } else if (typeof _this2.attributes.get(key) === 'string') {
+          attributeValue = _this2.attributes.get(key);
+        }
+
+        if (attributeValue !== null) {
+          output += "".concat(key, "=\"").concat(escapeHtml(attributeValue), "\" ");
+        }
+      });
+      return " ".concat(output.trim());
+    }
+  }]);
+
+  return TwigAttribute;
+}();
+
+exports["default"] = TwigAttribute;

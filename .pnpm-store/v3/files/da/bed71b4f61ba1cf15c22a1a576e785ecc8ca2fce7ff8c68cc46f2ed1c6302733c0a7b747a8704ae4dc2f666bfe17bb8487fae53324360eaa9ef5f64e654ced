@@ -1,0 +1,384 @@
+"use strict";
+
+require("core-js/modules/es.function.bind.js");
+
+require("core-js/modules/es.object.define-property.js");
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+Object.defineProperty(exports, "PatternDoc", {
+  enumerable: true,
+  get: function get() {
+    return _PatternDoc.PatternDoc;
+  }
+});
+Object.defineProperty(exports, "PatternInclude", {
+  enumerable: true,
+  get: function get() {
+    return _PatternInclude.PatternInclude;
+  }
+});
+Object.defineProperty(exports, "PatternLoad", {
+  enumerable: true,
+  get: function get() {
+    return _PatternLoad["default"];
+  }
+});
+Object.defineProperty(exports, "PatternPreview", {
+  enumerable: true,
+  get: function get() {
+    return _client.PatternPreview;
+  }
+});
+Object.defineProperty(exports, "PatternProperties", {
+  enumerable: true,
+  get: function get() {
+    return _PatternProperties["default"];
+  }
+});
+Object.defineProperty(exports, "RenderTwig", {
+  enumerable: true,
+  get: function get() {
+    return _client.RenderTwig;
+  }
+});
+Object.defineProperty(exports, "Spacing", {
+  enumerable: true,
+  get: function get() {
+    return _Spacing["default"];
+  }
+});
+Object.defineProperty(exports, "Typeset", {
+  enumerable: true,
+  get: function get() {
+    return _Typeset["default"];
+  }
+});
+Object.defineProperty(exports, "attachBehaviorDecorator", {
+  enumerable: true,
+  get: function get() {
+    return _client.attachBehaviorDecorator;
+  }
+});
+exports.configure = configure;
+Object.defineProperty(exports, "drupalAttachBehaviorDecorator", {
+  enumerable: true,
+  get: function get() {
+    return _drupal.drupalAttachBehaviorDecorator;
+  }
+});
+Object.defineProperty(exports, "initDecorator", {
+  enumerable: true,
+  get: function get() {
+    return _client.initDecorator;
+  }
+});
+Object.defineProperty(exports, "initJsBehaviors", {
+  enumerable: true,
+  get: function get() {
+    return _client.initJsBehaviors;
+  }
+});
+Object.defineProperty(exports, "isInitDecorator", {
+  enumerable: true,
+  get: function get() {
+    return _client.isInitDecorator;
+  }
+});
+
+require("core-js/modules/es.array.for-each.js");
+
+require("core-js/modules/es.object.to-string.js");
+
+require("core-js/modules/web.dom-collections.for-each.js");
+
+require("core-js/modules/es.object.keys.js");
+
+require("core-js/modules/es.array.is-array.js");
+
+require("core-js/modules/es.array.iterator.js");
+
+require("core-js/modules/web.dom-collections.iterator.js");
+
+require("core-js/modules/es.object.assign.js");
+
+require("core-js/modules/es.array.concat.js");
+
+require("core-js/modules/es.function.name.js");
+
+require("core-js/modules/es.symbol.js");
+
+require("core-js/modules/es.symbol.description.js");
+
+require("core-js/modules/es.array.join.js");
+
+var _react = _interopRequireDefault(require("react"));
+
+var _pattern = require("@wingsuit-designsystem/pattern");
+
+var _react2 = require("@storybook/react");
+
+var _addonDocs = require("@storybook/addon-docs");
+
+var _TwigAttribute = _interopRequireDefault(require("@wingsuit-designsystem/pattern/dist/TwigAttribute"));
+
+require("@storybook/addon-docs/register");
+
+var _markup = _interopRequireDefault(require("react-syntax-highlighter/dist/cjs/languages/prism/markup"));
+
+var _reactSyntaxHighlighter = require("react-syntax-highlighter");
+
+var _client = require("@wingsuit-designsystem/pattern-react/client");
+
+var _PatternProperties = _interopRequireDefault(require("./docs/PatternProperties"));
+
+var _PatternDoc = require("./docs/PatternDoc");
+
+var _PatternInclude = require("./docs/PatternInclude");
+
+var _drupal = require("./drupal");
+
+var _PatternLoad = _interopRequireDefault(require("./docs/PatternLoad"));
+
+var _Spacing = _interopRequireDefault(require("./docs/Spacing"));
+
+var _Typeset = _interopRequireDefault(require("./docs/Typeset"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+function _extends() { _extends = Object.assign ? Object.assign.bind() : function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+_reactSyntaxHighlighter.PrismLight.registerLanguage('twig', _markup["default"]);
+
+function getStorybookControlsOptions(setting) {
+  var options = setting.getOptions();
+  var controls = {};
+  Object.keys(options).forEach(function (key) {
+    controls[key] = options[key];
+  });
+  return controls;
+}
+
+function configure(module, storybookContext, dataContext, templateContext, namespaces, renderImpl, events) {
+  _pattern.storage.setNamespaces(namespaces);
+
+  _pattern.storage.createDefinitionsFromMultiContext(storybookContext);
+
+  _pattern.storage.createTwigStorageFromContext(templateContext);
+
+  _pattern.storage.createGlobalsFromContext(dataContext);
+
+  if (renderImpl != null) {
+    _pattern.renderer.setRenderer(renderImpl);
+  }
+
+  _pattern.renderer.initializeRenderer();
+
+  var stories = [];
+  (0, _react2.configure)(function () {
+    // Load stories from wingusit.yml.
+    var patternIds = _pattern.storage.getPatternIds();
+
+    patternIds.forEach(function (patternId) {
+      var pattern = _pattern.storage.loadPattern(patternId);
+
+      if (events != null) {
+        pattern = events.alterPattern(pattern);
+      }
+
+      if (pattern !== null && pattern.isVisible('storybook')) {
+        stories.push(getStories(pattern, module));
+      }
+    }); // Load stories form storybook app.
+
+    var allExports = [];
+
+    if (Array.isArray(storybookContext) === false) {
+      storybookContext.keys().forEach(function (key) {
+        var storyContext = storybookContext(key);
+
+        if (storyContext["default"] !== null) {
+          if (events != null) {
+            storyContext["default"] = events.alterStory(storybookContext(key)["default"]);
+          }
+
+          if (storyContext["default"] !== null) {
+            allExports.push(storyContext);
+          }
+        }
+      });
+    } else {
+      storybookContext.forEach(function (innerContext) {
+        innerContext.keys().forEach(function (key) {
+          var storyContext = innerContext(key);
+
+          if (storyContext["default"] != null) {
+            if (events != null) {
+              storyContext["default"] = events.alterStory(storyContext["default"]);
+            }
+
+            if (storyContext["default"] !== null) {
+              allExports.push(storyContext);
+            }
+          }
+        });
+      });
+    }
+
+    return allExports;
+  }, module);
+}
+
+function getArgs(defaultArgs, variant) {
+  var fields = variant.getFields();
+  var resultArgs = Object.assign({}, defaultArgs);
+  var settings = variant.getSettings();
+  Object.keys(settings).forEach(function (key) {
+    if (settings[key].getType() === 'attributes') {
+      resultArgs[key] = new _TwigAttribute["default"](resultArgs[key]);
+    }
+  });
+  Object.keys(fields).forEach(function (key) {
+    var field = fields[key];
+
+    if (field.getType() === 'pattern') {
+      if (resultArgs[key] === false) {
+        resultArgs[key] = null;
+      } else {
+        delete resultArgs[key];
+      }
+    }
+  });
+  return resultArgs;
+}
+
+function getArgTypes(variant) {
+  var argTypes = {};
+  Object.keys(variant.getSettings()).forEach(function (key) {
+    var setting = variant.getSetting(key);
+
+    if (setting.isEnable() && setting.getType() !== 'group' && setting.getType() !== 'media_library') {
+      argTypes[key] = {
+        name: key,
+        type: {
+          type: 'string',
+          required: setting.isRequired()
+        },
+        table: {
+          defaultValue: {
+            summary: setting.getPreview()
+          },
+          category: 'Settings'
+        },
+        defaultValue: setting.getDefaultValue(),
+        description: "".concat(setting.getLabel(), " ").concat(setting.getDescription() !== '' ? " - ".concat(setting.getDescription()) : '')
+      };
+
+      if (setting.getType() === 'select' || setting.getType() === 'radios' || setting.getType() === 'colorwidget') {
+        argTypes[key].type.name = 'enum';
+        argTypes[key].description += "<br>Option keys: ".concat(Object.keys(setting.getOptions()).join(', '));
+        argTypes[key].options = Object.keys(getStorybookControlsOptions(setting));
+        argTypes[key].control = {
+          labels: getStorybookControlsOptions(setting),
+          type: setting.getType() === 'radio' ? 'radio' : 'select'
+        };
+      } else if (setting.getType() === 'boolean') {
+        argTypes[key].type.name = 'boolean';
+        argTypes[key].control = {
+          type: 'boolean'
+        };
+      } else if (setting.getType() === 'number') {
+        argTypes[key].type.name = 'number';
+        argTypes[key].control = {
+          type: 'number'
+        };
+      } else {
+        argTypes[key].type.name = 'string';
+        argTypes[key].control = {
+          type: 'text'
+        };
+      }
+    }
+  });
+  Object.keys(variant.getFields()).forEach(function (key) {
+    var field = variant.getField(key);
+
+    if (field.isEnable()) {
+      argTypes[key] = {
+        name: key,
+        table: {
+          category: 'Fields'
+        },
+        type: {
+          required: false
+        },
+        defaultValue: field.getPreview(),
+        description: "".concat(field.getLabel(), " ").concat(field.getDescription() !== '' ? " - ".concat(field.getDescription()) : '')
+      };
+
+      if (field.getType() === 'object') {
+        argTypes[key].type.name = 'object';
+        argTypes[key].control = {
+          type: 'object'
+        };
+      } else if (field.getType() === 'pattern' || field.getType() === 'media_library') {
+        argTypes[key].type.name = 'boolean';
+        argTypes[key].defaultValue = true;
+        argTypes[key].control = {
+          type: 'boolean'
+        };
+      } else {
+        argTypes[key].type.name = 'string';
+        argTypes[key].control = {
+          type: 'text'
+        };
+      }
+    }
+  });
+  return argTypes;
+}
+
+function getStories(pattern, module) {
+  var patternLabel = "".concat(pattern.getNamespace(), "/").concat(pattern.getLabel());
+  var story = (0, _react2.storiesOf)(patternLabel, module);
+  Object.keys(pattern.getPatternVariants()).forEach(function (variantKey) {
+    var variant = pattern.getVariant(variantKey);
+    var argTypes = getArgTypes(variant);
+
+    var twigFile = _pattern.storage.findTwigById(variant.getPattern().getId());
+
+    var stories = process.env.STORYBOOK_DOCS === 'true' ? /*#__PURE__*/_react["default"].createElement(_addonDocs.Stories, null) : null;
+    var parameters = {
+      argTypes: argTypes,
+      docs: {
+        source: {
+          code: twigFile["default"]
+        },
+        page: function page() {
+          return /*#__PURE__*/_react["default"].createElement(_react["default"].Fragment, null, /*#__PURE__*/_react["default"].createElement(_addonDocs.Title, null), /*#__PURE__*/_react["default"].createElement(_addonDocs.Subtitle, null, /*#__PURE__*/_react["default"].createElement("div", {
+            dangerouslySetInnerHTML: {
+              __html: pattern.getDescription()
+            }
+          })), /*#__PURE__*/_react["default"].createElement(_addonDocs.DocsStory, {
+            id: variant.getStoryId()
+          }), /*#__PURE__*/_react["default"].createElement(_addonDocs.ArgsTable, {
+            story: _addonDocs.CURRENT_SELECTION
+          }), /*#__PURE__*/_react["default"].createElement(_PatternInclude.PatternInclude, {
+            variant: variant
+          }), stories);
+        },
+        storyDescription: variant.getDescription()
+      }
+    };
+    parameters = Object.assign(parameters, pattern.getParameters());
+    story.add(variant.getLabel(), function (args) {
+      var vars = getArgs(args, variant);
+      return /*#__PURE__*/_react["default"].createElement(_client.PatternPreview, _extends({
+        patternId: pattern.getId(),
+        variantId: variantKey
+      }, vars));
+    }, parameters);
+  });
+  return story;
+}

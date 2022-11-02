@@ -1,0 +1,14 @@
+import AppConfig from '../../AppConfig';
+interface SvgSource {
+    sourceFolder: string;
+    jsonFile: string;
+    spriteFilename: string;
+}
+interface SvgConfig {
+    sources: SvgSource[];
+}
+export declare function name(appConfig: AppConfig): string;
+export declare function defaultConfig(appConfig: AppConfig): SvgConfig;
+export declare function webpack(appConfig: AppConfig, config: SvgConfig): any;
+export declare function webpackFinal(appConfig: AppConfig, config: any): {};
+export {};

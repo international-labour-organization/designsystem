@@ -1,0 +1,30 @@
+import AppConfig from '../../AppConfig';
+export declare function name(appConfig: AppConfig): string;
+export declare function webpack(appConfig: AppConfig): {
+    entry: string[] | {
+        assets: string;
+    };
+    plugins: any[];
+    module: {
+        rules: ({
+            test: RegExp;
+            use: {
+                loader: string;
+                options: {
+                    outputPath: string;
+                    name: string;
+                };
+            }[];
+            loader?: undefined;
+            options?: undefined;
+        } | {
+            loader: string;
+            test: RegExp;
+            options: {
+                outputPath: string;
+                name: string;
+            };
+            use?: undefined;
+        })[];
+    };
+};

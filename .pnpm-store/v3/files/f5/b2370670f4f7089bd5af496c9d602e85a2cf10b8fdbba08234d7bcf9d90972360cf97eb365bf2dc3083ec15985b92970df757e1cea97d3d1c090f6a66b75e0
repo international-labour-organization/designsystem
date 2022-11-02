@@ -1,0 +1,7 @@
+import { FC } from 'react';
+import { PatternVariant } from '@wingsuit-designsystem/pattern';
+declare type Props = {
+    variant: PatternVariant;
+};
+export declare const PatternProperties: FC<Props>;
+export default PatternProperties;

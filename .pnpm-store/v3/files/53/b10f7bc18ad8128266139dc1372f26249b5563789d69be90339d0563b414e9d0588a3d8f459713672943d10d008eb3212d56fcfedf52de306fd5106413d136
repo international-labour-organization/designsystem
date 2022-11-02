@@ -1,0 +1,107 @@
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.defaultConfig = defaultConfig;
+exports.name = name;
+exports.webpack = webpack;
+
+require("core-js/modules/es.array.iterator.js");
+
+function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); enumerableOnly && (symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; })), keys.push.apply(keys, symbols); } return keys; }
+
+function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = null != arguments[i] ? arguments[i] : {}; i % 2 ? ownKeys(Object(source), !0).forEach(function (key) { _defineProperty(target, key, source[key]); }) : Object.getOwnPropertyDescriptors ? Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)) : ownKeys(Object(source)).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } return target; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+var MiniCssExtractPlugin = require('mini-css-extract-plugin');
+
+var OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+
+function name(appConfig) {
+  return 'css';
+}
+
+function defaultConfig(appConfig) {
+  return {
+    cssLoaderConfig: {
+      options: {
+        sourceMap: true
+      }
+    }
+  };
+}
+
+function webpack(appConfig, config) {
+  var loader = [_objectSpread({
+    loader: require.resolve('css-loader')
+  }, config.cssLoaderConfig), _objectSpread({
+    // PostCSS config at ./postcss.config.js
+    loader: require.resolve('postcss-loader')
+  }, appConfig.postCssConfig), {
+    loader: require.resolve('resolve-url-loader'),
+    options: {
+      sourceMap: true,
+      root: ''
+    }
+  }];
+  /**
+   * CSS modes are import to frontend dev. Wingsuit currently supports hot
+   * reloading or full css file extraction.
+   */
+
+  var cssModes = {
+    // 'hot' uses the style-loader plugin which rewrites CSS inline via
+    // webpack-dev-server and is purely development-mode ONLY. style-loader
+    // CANNOT exists alongside MiniCsExtractPlugin
+    hot: {
+      // Webpack for hot starts here
+      module: {
+        rules: [{
+          test: /\.css$/,
+          use: [{
+            loader: 'style-loader'
+          }, ...loader]
+        }]
+      }
+    },
+    // 'extract' uses MiniCssExtractPlugin.loader to write out actual CSS files to
+    // the filesystem. This is useful for production builds, and webpack --watch
+    extract: {
+      // Webpack for extract starts here
+      module: {
+        rules: [{
+          test: /\.css$/,
+          use: [{
+            loader: MiniCssExtractPlugin.loader,
+            options: {
+              publicPath: './'
+            }
+          }, ...loader]
+        }]
+      },
+      plugins: []
+    }
+  };
+
+  if (appConfig.environment === 'production') {
+    cssModes.extract.plugins.push( // @ts-ignore
+    new OptimizeCSSAssetsPlugin({
+      // Ensure css map file output
+      cssProcessorOptions: {
+        map: {
+          inline: false,
+          annotation: true
+        }
+      }
+    }));
+  }
+
+  cssModes.extract.plugins.push( // @ts-ignore
+  new MiniCssExtractPlugin({
+    filename: '[name].css',
+    chunkFilename: 'css/[id].css'
+  }));
+  return cssModes[appConfig.cssMode];
+}

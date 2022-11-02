@@ -1,0 +1,12 @@
+import { isMap } from "./is-map";
+export const evaluate = (value) => {
+    if (value === '0' || (isMap(value) && value.size === 0)) {
+        return false;
+    }
+    else if (Number.isNaN(value)) {
+        return true;
+    }
+    else {
+        return value;
+    }
+};

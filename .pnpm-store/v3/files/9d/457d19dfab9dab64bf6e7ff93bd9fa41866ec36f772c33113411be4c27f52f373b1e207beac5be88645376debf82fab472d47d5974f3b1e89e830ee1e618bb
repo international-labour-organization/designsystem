@@ -1,0 +1,294 @@
+"use strict";
+
+function _typeof(obj) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (obj) { return typeof obj; } : function (obj) { return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }, _typeof(obj); }
+
+require("core-js/modules/es.array.iterator.js");
+
+require("core-js/modules/es.string.iterator.js");
+
+require("core-js/modules/es.weak-map.js");
+
+require("core-js/modules/web.dom-collections.iterator.js");
+
+require("core-js/modules/es.object.get-own-property-descriptor.js");
+
+require("core-js/modules/es.symbol.iterator.js");
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports["default"] = void 0;
+
+require("core-js/modules/es.symbol.js");
+
+require("core-js/modules/es.symbol.description.js");
+
+require("core-js/modules/es.regexp.exec.js");
+
+require("core-js/modules/es.string.replace.js");
+
+require("core-js/modules/es.string.split.js");
+
+require("core-js/modules/es.string.trim.js");
+
+require("core-js/modules/es.array.concat.js");
+
+require("core-js/modules/es.array.join.js");
+
+require("core-js/modules/es.object.keys.js");
+
+require("core-js/modules/es.array.for-each.js");
+
+require("core-js/modules/es.object.to-string.js");
+
+require("core-js/modules/web.dom-collections.for-each.js");
+
+require("core-js/modules/es.object.assign.js");
+
+require("core-js/modules/es.array.is-array.js");
+
+require("core-js/modules/es.object.define-property.js");
+
+var _PatternVariant = _interopRequireDefault(require("./PatternVariant"));
+
+var _Setting = _interopRequireDefault(require("./Setting"));
+
+var _Field = _interopRequireWildcard(require("./Field"));
+
+function _getRequireWildcardCache(nodeInterop) { if (typeof WeakMap !== "function") return null; var cacheBabelInterop = new WeakMap(); var cacheNodeInterop = new WeakMap(); return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) { return nodeInterop ? cacheNodeInterop : cacheBabelInterop; })(nodeInterop); }
+
+function _interopRequireWildcard(obj, nodeInterop) { if (!nodeInterop && obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(nodeInterop); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
+
+var Pattern = /*#__PURE__*/function () {
+  function Pattern(id, definition, storage) {
+    var _definition$icon_path;
+
+    _classCallCheck(this, Pattern);
+
+    this.id = void 0;
+    this.label = void 0;
+    this.description = void 0;
+    this.iconPath = void 0;
+    this.namespace = void 0;
+    this.parameters = void 0;
+    this.use = void 0;
+    this.visible = void 0;
+    this.definition = void 0;
+    this.patternVariants = [];
+    this.defaultVariant = void 0;
+    this.storage = void 0;
+    this.id = id;
+    this.label = definition.label;
+    this.description = definition.description;
+    this.visible = definition.visible;
+    this.storage = storage;
+    this.use = definition.use;
+    this.iconPath = (_definition$icon_path = definition.icon_path) === null || _definition$icon_path === void 0 ? void 0 : _definition$icon_path.replace('ws-assets://', '');
+    this.namespace = definition.namespace;
+    this.parameters = definition.parameters;
+    this.definition = definition;
+    this.defaultVariant = new _PatternVariant["default"]('__default', this, Pattern.DEFAULT_VARIANT_NAME, this.use, this.label, this.description, definition.configuration);
+    this.initializeVariants();
+  }
+
+  _createClass(Pattern, [{
+    key: "getUse",
+    value: function getUse() {
+      return this.use;
+    }
+  }, {
+    key: "getLabel",
+    value: function getLabel() {
+      return this.label;
+    }
+  }, {
+    key: "getIconPath",
+    value: function getIconPath() {
+      return this.iconPath;
+    }
+  }, {
+    key: "setIconPath",
+    value: function setIconPath(iconPath) {
+      this.iconPath = iconPath;
+    }
+  }, {
+    key: "getNamespace",
+    value: function getNamespace() {
+      return this.namespace;
+    }
+  }, {
+    key: "setNamespace",
+    value: function setNamespace(namespace) {
+      this.namespace = namespace;
+    }
+  }, {
+    key: "getDescription",
+    value: function getDescription() {
+      return this.description;
+    }
+  }, {
+    key: "getId",
+    value: function getId() {
+      return this.id;
+    }
+  }, {
+    key: "getDefaultVariant",
+    value: function getDefaultVariant() {
+      return this.defaultVariant;
+    }
+  }, {
+    key: "isVisible",
+    value: function isVisible(app) {
+      if (this.visible == null || this.visible === '') {
+        return true;
+      }
+
+      var apps = this.visible.split('|');
+
+      for (var i = 0; i < apps.length; i += 1) {
+        if (apps[i].trim() === app) {
+          return true;
+        }
+      }
+
+      return false;
+    }
+  }, {
+    key: "getPatternVariants",
+    value: function getPatternVariants() {
+      return this.patternVariants;
+    }
+  }, {
+    key: "getVariant",
+    value: function getVariant() {
+      var id = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : Pattern.DEFAULT_VARIANT_NAME;
+      var variantId = id === '' || id == null ? Pattern.DEFAULT_VARIANT_NAME : id;
+
+      if (this.patternVariants[variantId] == null) {
+        throw new Error("Variant \"".concat(id, "\" not found in pattern \"").concat(this.getId(), "\". Possible Variants are: \"").concat(Object.keys(this.patternVariants).join(', '), "\""));
+      }
+
+      return this.patternVariants[variantId];
+    }
+  }, {
+    key: "getParameters",
+    value: function getParameters() {
+      return this.parameters;
+    }
+  }, {
+    key: "getStorage",
+    value: function getStorage() {
+      return this.storage;
+    }
+  }, {
+    key: "initializeVariants",
+    value: function initializeVariants() {
+      var _this = this;
+
+      var variantKeys = [];
+      var settings = this.definition.settings != null ? this.definition.settings : {};
+      var fields = this.definition.fields != null ? this.definition.fields : {};
+      var configuration = this.definition.configuration != null ? this.definition.configuration : {};
+      var variantsDefinitions = this.definition.variants != null ? this.definition.variants : {};
+      Object.keys(variantsDefinitions).forEach(function (key) {
+        variantKeys.push(key);
+      });
+
+      if (variantKeys.length === 0) {
+        variantKeys.push(Pattern.DEFAULT_VARIANT_NAME);
+      }
+
+      var isFirst = true;
+      variantKeys.forEach(function (variantKey) {
+        var variantDefinition = variantsDefinitions[variantKey] != null ? variantsDefinitions[variantKey] : {};
+        var label = variantDefinition.label != null ? variantDefinition.label : _this.label;
+        var use = variantDefinition.use != null ? variantDefinition.use : _this.use;
+        var description = variantDefinition.description != null ? variantDefinition.description : '';
+        var variantConfiguration = variantDefinition.configuration != null ? variantDefinition.configuration : {};
+        var mergedConfiguration = Object.assign({}, configuration, variantConfiguration);
+        var variant = new _PatternVariant["default"](variantKey, _this, variantKey, use, label, description, mergedConfiguration);
+
+        if (isFirst === true) {
+          _this.defaultVariant = variant;
+        }
+
+        isFirst = false;
+        Object.keys(settings).forEach(function (key) {
+          var setting = new _Setting["default"](key, settings[key].type, settings[key].label, settings[key].description, settings[key].preview);
+          setting.setRequired(!!settings[key].required);
+          setting.setOptions(settings[key].options);
+          setting.setDefaultValue(settings[key].default_value);
+
+          if (settings[key].default_value != null) {
+            setting.setPreview(settings[key].default_value);
+          }
+
+          if (settings[key].value != null) {
+            setting.setPreview(settings[key].value);
+          }
+
+          if (setting.getPreview() == null && settings[key].required === true && settings[key].type === 'select') {
+            var keys = Object.keys(settings[key].options);
+
+            if (keys.length > 0) {
+              var firstOption = keys[0];
+              setting.setPreview(firstOption);
+            }
+          }
+
+          variant.addSetting(setting);
+        });
+        Object.keys(fields).forEach(function (key) {
+          var field = new _Field["default"](key, fields[key].type, fields[key].label, fields[key].description, fields[key].preview);
+          field.setMultiValueType(_Field.MultiValueTypes.single_value);
+
+          if (fields[key].multi_value_type != null) {
+            field.setMultiValueType(_Field.MultiValueTypes[fields[key].multi_value_type]);
+          } else if (Array.isArray(fields[key].preview)) {
+            field.setMultiValueType(_Field.MultiValueTypes.single_value);
+          }
+
+          variant.addField(field);
+        });
+
+        if (variantDefinition != null) {
+          if (variantDefinition.settings != null) {
+            Object.keys(variantDefinition.settings).forEach(function (key) {
+              var setting = variant.getSetting(key);
+
+              if (setting) {
+                setting.setPreview(variantDefinition.settings[key]);
+                setting.setEnable(false);
+              } else {
+                console.warn("Invalid variant configuration. Setting with ".concat(key, " doesn't exists in variant. ").concat(variant.getId()));
+              }
+            });
+          }
+
+          if (variantDefinition.fields != null) {
+            Object.keys(variantDefinition.fields).forEach(function (key) {
+              var field = variant.getField(key);
+              field.setPreview(variantDefinition.fields[key]);
+              field.setEnable(false);
+            });
+          }
+        }
+
+        _this.patternVariants[variantKey] = variant;
+      });
+    }
+  }]);
+
+  return Pattern;
+}();
+
+exports["default"] = Pattern;
+Pattern.DEFAULT_VARIANT_NAME = '__default';

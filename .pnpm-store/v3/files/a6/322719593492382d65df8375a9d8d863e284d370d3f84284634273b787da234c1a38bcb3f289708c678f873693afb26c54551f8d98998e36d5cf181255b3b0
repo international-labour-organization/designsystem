@@ -1,0 +1,87 @@
+import React, { useCallback, useState } from 'react';
+import { styled } from '@storybook/theming';
+import * as Expand from './parts';
+import { Button, Icons } from '@storybook/components';
+import { useService } from '@xstate/react';
+import useRequiredContext from '../../use-required-context';
+import ServiceContext from '../service-context';
+import { pluraliseCopies, pluraliseSamples } from '../../util/pluralise';
+import nextEventsInclude from '../next-events-include';
+const Container = styled.div `
+  --result-border-radius: 4px;
+  margin-bottom: var(--grid);
+  border: 1px solid lightgray;
+  border-radius: var(--result-border-radius);
+`;
+const HeaderButton = styled.button `
+  /* reset */
+  margin: 0;
+  padding: 0;
+  border: none;
+
+  width: 100%;
+  height: calc(var(--grid) * 4);
+  text-align: left;
+  font-size: 16px;
+  font-weight: bold;
+
+  border-radius: var(--result-border-radius);
+  background-color: ${(props) => props.theme.background.content};
+  color: ${(props) => props.theme.color.defaultText};
+
+  display: flex;
+  align-items: center;
+  padding: 0 var(--grid);
+
+  > * {
+    margin-left: var(--grid);
+    flex-shrink: 0;
+  }
+`;
+const Name = styled.h4 `
+  /* the name will push the result over, it can also collapse when there is no room */
+  flex-grow: 1;
+  flex-shrink: 1;
+  font-weight: bold;
+
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+`;
+const IconContainer = styled.span `
+  margin-left: 0;
+  width: var(--grid);
+  height: var(--grid);
+`;
+function ExpandIcon({ isExpanded }) {
+    return (React.createElement(IconContainer, null,
+        React.createElement(Icons, { icon: isExpanded ? 'arrowdown' : 'arrowright' })));
+}
+export function ExpandingResult({ name, result, getExpanded }) {
+    const [isExpanded, setIsExpanded] = useState(false);
+    const toggle = useCallback(() => setIsExpanded((value) => !value), [setIsExpanded]);
+    const service = useRequiredContext(ServiceContext);
+    const [state, send] = useService(service);
+    const expanded = getExpanded({ isExpanded });
+    const { copies, samples } = state.context.current;
+    return (React.createElement(Container, null,
+        React.createElement(HeaderButton, { onClick: toggle, isExpanded: isExpanded, "aria-expanded": isExpanded },
+            React.createElement(ExpandIcon, { isExpanded: isExpanded }),
+            React.createElement(Name, null, name),
+            result),
+        isExpanded ? (React.createElement(Expand.Section, null,
+            React.createElement(Button, { secondary: true, small: true, disabled: !nextEventsInclude('START_ONE', state.nextEvents), onClick: () => send({ type: 'START_ONE', taskName: name }) },
+                "Run task",
+                ' ',
+                React.createElement("small", null,
+                    "(",
+                    copies,
+                    " ",
+                    pluraliseCopies(copies),
+                    ", ",
+                    samples,
+                    " ",
+                    pluraliseSamples(samples),
+                    ")")),
+            expanded)) : null));
+}
