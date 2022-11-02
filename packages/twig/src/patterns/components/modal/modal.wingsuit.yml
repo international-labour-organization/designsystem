@@ -8,8 +8,8 @@ modal:
       label: Closee Button
       description: Label and settings for the "close" button
       preview:
-        size: 'small'
-        type: 'secondary'
+        size: 'medium'
+        type: 'tertiary'
         label: 'Close Button'
         icon: close
         iconPos: center
