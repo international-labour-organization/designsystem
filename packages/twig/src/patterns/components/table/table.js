@@ -201,6 +201,10 @@ export default class Table {
       );
     });
 
+    if (e.target.hasAttribute('href')) {
+      window.location.href = e.target.getAttribute('href');
+    }
+
     return this;
   }
 

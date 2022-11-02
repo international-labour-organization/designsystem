@@ -18,14 +18,14 @@
     background-size: $spacing-padding-3 $spacing-padding-3;
     @include bordervalues("inputbutton", "formelements");
     height: $spacing-padding-6;
-    width: $spacing-padding-6;
+    width: calc($spacing-padding-6 - 2px);
     text-indent: -9999px;
     @include dataurlicon(
       "search",
       $color-formelements-inputbutton-default-color
     );
 
-    &:hover {
+    &:focus {
       background-color: map-get(
         $color,
         "formelements",

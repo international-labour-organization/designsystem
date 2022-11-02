@@ -101,7 +101,6 @@ form:
               label: "File Upload Field Label"
               name: "fileupload"
               placeholder: "File Upload Field"
-              tooltip: "Tooltip"
           type: "file"
         - field:
             label: "Date Picker Field Label"

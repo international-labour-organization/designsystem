@@ -1,4 +1,5 @@
 @use "../tokens" as *;
+@use "../functions" as *;
 @import "../mixins";
 
 .ilo--profile {
@@ -41,36 +42,41 @@
     font-family: $fonts-display;
     font-weight: map-get($type, "weights", "label");
     margin-left: 11px;
-    @include font-styles("body-xs");
+    @include font-styles("body-small");
   }
 
   &--role {
     display: block;
     font-family: $fonts-copy;
     margin-left: 11px;
-    @include font-styles("body-xss");
+    @include font-styles("body-xs");
   }
 
   &--description {
     clear: both;
     font-family: $fonts-copy;
     padding-top: 22px;
-    @include font-styles("body-xss");
+    @include font-styles("body-xs");
   }
 
   &--link {
+    align-items: center;
     clear: both;
     color: map-get($color, "link", "text", "default");
-    display: block;
+    display: inline-flex;
     font-family: $fonts-display;
     font-weight: map-get($type, "weights", "section");
+    height: px-to-rem(56px);
     text-decoration: none;
-    @include font-styles("body-xs");
+    @include font-styles("body-small");
 
     span {
+      align-items: center;
       background-position: calc(100% - 10px) center;
       background-repeat: no-repeat;
       background-size: 24px 24px;
+      display: inline-flex;
+      height: 24px;
       padding-right: 32px;
       @include dataurlicon("arrowright", $color-link-text-default);
     }
@@ -95,6 +101,7 @@
 
     &:hover,
     &:focus {
+      background-color: $color-base-blue-light;
       color: map-get($color, "link", "text", "hover");
       outline: none;
 
@@ -105,34 +112,14 @@
   }
 
   .ilo--profile--description + .ilo--profile--link {
-    margin-top: 28px;
+    margin-top: px-to-rem(8px);
   }
 
   .ilo--profile--role + .ilo--profile--link {
-    margin-top: 22px;
+    margin-top: px-to-rem(2px);
   }
 
   .ilo--profile--name + .ilo--profile--link {
-    margin-top: 38px;
-  }
-
-  @include breakpoint("medium") {
-    &--name {
-      @include font-styles("body-small");
-    }
-
-    &--role {
-      font-family: $fonts-copy;
-      @include font-styles("body-xs");
-    }
-
-    &--description {
-      font-family: $fonts-copy;
-      @include font-styles("body-xs");
-    }
-
-    &--link {
-      @include font-styles("body-small");
-    }
+    margin-top: px-to-rem(18px);
   }
 }

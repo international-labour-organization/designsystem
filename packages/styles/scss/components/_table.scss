@@ -160,10 +160,16 @@
   }
 
   &--headline {
+    align-items: center;
+    display: flex;
     font-family: $fonts-display;
     font-weight: 700;
     margin-bottom: px-to-rem(7px);
     @include font-styles("headline-6");
+
+    .ilo--tooltip--wrapper {
+      margin-left: px-to-rem(6px);
+    }
   }
 
   &--description {

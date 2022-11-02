@@ -5,6 +5,9 @@
   <header class="{{prefix}}--table--header">
     <h3 class="{{prefix}}--table--headline">
       {{headline}}
+      {% if tooltip %}
+        {% include '@components/tooltip/tooltip.twig' with tooltip %}
+      {% endif %}
     </h3>
     {% if description is defined %}
     <p class="{{prefix}}--table--description">

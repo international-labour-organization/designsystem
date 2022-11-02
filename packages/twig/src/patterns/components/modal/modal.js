@@ -105,7 +105,7 @@ export default class Modal {
    * @chainable
    */
   closeButtonClick() {
-    this.element.classList.remove('fadeout');
+    this.element.classList.remove('fadein');
     setTimeout(() => {
       this.element.classList.remove('show');
     }, 125);

@@ -78,6 +78,7 @@
     @include font-styles("body-small");
     @include textmargin("padding-bottom", 25px, "body-small", "display", 0, 0);
     @include textmargin("padding-top", 25px, "body-small", "display", 0, 0);
+    padding-right: px-to-rem($spacing-padding-4);
     text-decoration: none;
     @include dataurlicon("arrowright", $color-link-text-default);
 
