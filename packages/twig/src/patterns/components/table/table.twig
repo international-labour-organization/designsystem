@@ -1,10 +1,14 @@
 {#
   TABLE COMPONENT
 #}
+<script>console.log({{ _context | json_encode | raw }});</script>
 <div class="{{prefix}}--table{% if zebra is defined and zebra == 'true' %} {{prefix}}--table--zebra{% endif %}{% if smallrows is defined and smallrows == 'true' %} {{prefix}}--table--small{% endif %}" data-prefix="{{prefix}}" data-loadcomponent="Table">
   <header class="{{prefix}}--table--header">
     <h3 class="{{prefix}}--table--headline">
       {{headline}}
+      {% if tooltip %}
+        {% include '@components/tooltip/tooltip.twig' with tooltip %}
+      {% endif %}
     </h3>
     {% if description is defined %}
     <p class="{{prefix}}--table--description">
