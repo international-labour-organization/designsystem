@@ -57,8 +57,7 @@ export default class TableOfContents {
     this.trigger = this.element.querySelector(`.${this.prefix}--table-of-contents--trigger`);
     this.modalUx = this.element.querySelector(`.${this.prefix}--table-of-contents--modal`);
     this.toc = this.element.querySelector(`.${this.prefix}--table-of-contents`);
-
-    console.log(this.modalUx);
+    this.tocItems = this.element.querySelectorAll(`.${this.prefix}--table-of-contents--link`);
 
     return this;
   }
@@ -73,6 +72,7 @@ export default class TableOfContents {
     this.OpenButtonHandler = this.openButtonClick.bind(this);
     this.CloseHandler = this.closeButtonClick.bind(this);
     this.KeyPressHandler = this.keyPress.bind(this);
+    this.linkClickHandler = this.linkClick.bind(this);
 
     return this;
   }
@@ -86,6 +86,12 @@ export default class TableOfContents {
   enable() {
     this.OpenButton.addEventListener(EVENTS.CLICK, () => this.OpenButtonHandler());
     this.CloseButton.addEventListener(EVENTS.CLICK, () => this.CloseHandler());
+
+    if (this.tocItems.length > 0) {
+      this.tocItems.forEach((link, i) => {
+        link.addEventListener(EVENTS.CLICK, () => this.linkClickHandler());
+      });
+    }
 
     return this;
   }
@@ -126,6 +132,18 @@ export default class TableOfContents {
       this.trigger.classList.remove('hide');
     }, 125);
     window.removeEventListener(EVENTS.KEY_DOWN, (e) => this.KeyPressHandler(e));
+
+    return this;
+  }
+
+  /**
+   * Actions performed on click of any link
+   *
+   * @return {Object} TableOfContents A reference to the instance of the class
+   * @chainable
+   */
+  linkClick() {
+    this.closeButtonClick();
 
     return this;
   }
