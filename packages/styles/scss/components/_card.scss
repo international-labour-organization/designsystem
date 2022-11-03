@@ -16,7 +16,7 @@
     color: $brand-ilo-blue;
     text-decoration: none;
 
-    #{$self}--dark:not(#{$self}--detail):not(#{$self}--data):not(#{$self}--multilink) {
+    &#{$self}--dark:not(#{$self}--detail):not(#{$self}--data):not(#{$self}--multilink) {
       background: $brand-ilo-white;
     }
 
@@ -61,7 +61,7 @@
     background: $brand-ilo-white;
   }
 
-  &--dark:not(#{$self}--detail):not(#{$self}--data):not(#{$self}--multilink) {
+  &--dark:not(#{$self}--detail):not(#{$self}--data):not(#{$self}--multilink):not(:hover):not(:focus) {
     background: $brand-ilo-dark-blue;
 
     #{$self}--eyebrow {
@@ -587,6 +587,18 @@
           "body-small",
           "copy"
         );
+
+        @include breakpoint("medium") {
+          @include font-styles("headline-3");
+          @include textmargin(
+            "margin-bottom",
+            24px,
+            "headline-3",
+            "display",
+            "body-small",
+            "copy"
+          );
+        }
       }
 
       #{$self}--intro {
@@ -859,9 +871,16 @@
 
     &:hover,
     &:focus {
+      background-color: $brand-ilo-white;
+      border-bottom: px-to-rem(3px) solid $brand-ilo-blue;
+
       picture::before {
         opacity: 0.4;
         z-index: 1;
+      }
+
+      #{$self}--image {
+        filter: saturate(0);
       }
     }
 
@@ -886,7 +905,6 @@
       @include breakpoint("medium") {
         #{$self}--wrap {
           display: flex;
-          width: 100%;
 
           .right-to-left & {
             flex-direction: row-reverse;
@@ -923,6 +941,10 @@
           width: 100%;
         }
       }
+    }
+
+    #{$self}--wrap {
+      width: 100%;
     }
 
     picture {
