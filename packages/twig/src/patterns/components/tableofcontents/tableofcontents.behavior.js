@@ -1,6 +1,6 @@
 import TableOfContents from './tableofcontents';
 
-Drupal.behaviors.table = {
+Drupal.behaviors.tableofcontents = {
   attach() {
     Array.prototype.forEach.call(
       document.querySelectorAll(`[data-loadcomponent="TableOfContents"]`),
