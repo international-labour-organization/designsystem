@@ -12,6 +12,7 @@ build
 # Icons in the icons package are ouptut to this folder
 # @TODO: Remove this once icons.scss are output to a build or dist folder
 icons/scss
+.pnpm-store/
 
 # Logs
 *.log

@@ -1,5 +1,11 @@
 # @ilo-org/themes
 
+## 0.1.2
+
+### Patch Changes
+
+- a84c36d: Navigation RTL styles and design QA
+
 ## 0.1.1
 
 ### Patch Changes
