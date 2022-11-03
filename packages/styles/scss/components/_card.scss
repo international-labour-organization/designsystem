@@ -857,6 +857,7 @@
 
   &--feature {
     border-bottom: px-to-rem(3px) solid $brand-ilo-grey-ui;
+    filter: drop-shadow(0 4px 4px rgba($brand-ilo-black, 0.25));
     display: flex;
     margin-top: 0;
     position: relative;
