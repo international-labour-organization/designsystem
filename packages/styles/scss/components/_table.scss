@@ -29,8 +29,6 @@
 
   &--head {
     background-color: $color-ux-table-content-background;
-    border-top: px-to-rem(2px) solid $color-base-neutrals-lighter;
-    border-bottom: px-to-rem(2px) solid $color-base-neutrals-lighter;
     box-shadow: 0px 0.8px 1.6px rgba(30, 45, 190, 0.038),
       0px 4px 8px rgba(30, 45, 190, 0.054),
       0px 10px 20px rgba(30, 45, 190, 0.08),
@@ -38,13 +36,15 @@
     left: 0;
     height: auto;
     position: sticky;
-    top: 0;
+    top: -1px;
     width: 100%;
     z-index: 2;
 
     &--cell {
       background-color: $color-ux-table-content-background;
       border-left: px-to-rem(1px) solid $color-base-neutrals-lighter;
+      border-top: px-to-rem(2px) solid $color-base-neutrals-lighter;
+      border-bottom: px-to-rem(2px) solid $color-base-neutrals-lighter;
       font-family: $fonts-display;
       font-weight: 700;
       @include font-styles("body-xs");
@@ -88,8 +88,15 @@
         }
 
         &:hover {
-          background-color: $color-ux-table-selected-background;
+          background-color: $color-base-blue-light;
+          border-bottom: px-to-rem(2px) solid $color-base-blue-medium;
+          color: $color-base-blue-medium;
           cursor: pointer;
+
+          &:after {
+            background-color: $color-base-blue-light;
+            background-image: url("#{colortodataurlicon("arrow", $color-base-blue-medium)}");
+          }
         }
 
         &[aria-sort="descending"] {

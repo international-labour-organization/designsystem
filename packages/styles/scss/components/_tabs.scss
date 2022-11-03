@@ -3,6 +3,10 @@
 @import "../mixins";
 
 .ilo--tabs {
+  border-bottom: px-to-rem(4px) solid $color-base-neutrals-lighter;
+  border-left: px-to-rem(4px) solid $color-base-neutrals-lighter;
+  border-right: px-to-rem(4px) solid $color-base-neutrals-lighter;
+
   &:not(.tabs--js) {
     .ilo--tabs--selection {
       margin-bottom: px-to-rem(24px);
@@ -166,5 +170,9 @@
         }
       }
     }
+  }
+
+  .right-to-left & {
+    direction: rtl;
   }
 }

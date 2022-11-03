@@ -5,8 +5,116 @@
 
 .ilo--table-of-contents {
   background-color: $color-ux-tableofcontents-items-default-background;
+  display: none;
   min-width: 343px;
   padding: 0;
+
+  & > * {
+    opacity: 0;
+  }
+
+  &.show {
+    display: block;
+
+    &.fadein {
+      & > * {
+        opacity: 1;
+        transition-delay: 125ms;
+        @include globaltransition("opacity");
+      }
+    }
+  }
+
+  &--headline {
+    margin-bottom: px-to-rem($spacing-padding-3);
+    margin-top: px-to-rem(9px);
+    @include font-styles("base");
+    font-family: $fonts-display;
+    font-weight: 700;
+  }
+
+  &--wrapper {
+    &.show {
+      display: block;
+      height: 100vh;
+      left: 0;
+      padding: px-to-rem(26px);
+      position: fixed;
+      top: 0;
+      width: 100vw;
+      z-index: 10001;
+
+      @include breakpoint("large") {
+        padding: 0;
+      }
+    }
+  }
+
+  &--trigger {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin: px-to-rem($spacing-padding-3) auto;
+
+    &.hide {
+      display: none;
+    }
+  }
+
+  @include breakpoint("large") {
+    display: block;
+
+    & > * {
+      opacity: 1;
+    }
+
+    &--trigger {
+      display: none;
+    }
+  }
+
+  &--modal {
+    display: none;
+    position: relative;
+
+    & > * {
+      opacity: 0;
+    }
+
+    &.show {
+      display: block;
+
+      &.fadein {
+        & > * {
+          opacity: 1;
+          transition-delay: 125ms;
+          @include globaltransition("opacity");
+        }
+      }
+    }
+
+    @include breakpoint("large") {
+      display: none;
+
+      &.show {
+        display: none;
+      }
+    }
+
+    .toc--modal--close {
+      bottom: 0;
+      height: px-to-rem(40px);
+      right: 0;
+      position: absolute;
+      width: px-to-rem(40px);
+      z-index: 10004;
+
+      .ilo--icon {
+        left: px-to-rem(3px);
+        top: px-to-rem(3px);
+      }
+    }
+  }
 
   &--list,
   &--list--item {
@@ -38,7 +146,7 @@
     );
     @include dataurlicon("stemarrow", $color-ux-labels-actionable);
     @include font-styles("label-medium");
-    @include globaltransition("background, border, color");
+    @include globaltransition("background-color, border, color");
 
     &:hover,
     &:focus {
@@ -61,7 +169,7 @@
         );
       width: 100%;
       @include dataurlicon("stemarrow", $color-ux-labels-hover);
-      @include globaltransition("background, border, color");
+      @include globaltransition("background-color, border, color");
     }
 
     &:active {
@@ -99,6 +207,30 @@
       &:hover {
         border-bottom: $color-ux-tableofcontents-items-hover-border
           $spacing-ux-tableofcontents-items-border-bottom solid;
+      }
+    }
+  }
+
+  .right-to-left & {
+    direction: rtl;
+
+    .ilo--table-of-contents--link {
+      background-position: 11px center;
+
+      &:hover,
+      &:focus {
+        background-position: 19px center;
+      }
+    }
+
+    &--wrapper {
+      direction: rtl;
+    }
+
+    &--modal {
+      .toc--modal--close {
+        left: 0;
+        right: auto;
       }
     }
   }
