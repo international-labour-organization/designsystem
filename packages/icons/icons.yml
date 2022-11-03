@@ -136,6 +136,12 @@
     - ILO Icons
   sizes:
     - glyph
+- name: listarrowreverse
+  friendly_name: listarrowsreverse
+  aliases:
+    - ILO Icons
+  sizes:
+    - glyph
 - name: minus
   friendly_name: minus
   aliases:
@@ -198,6 +204,12 @@
     - glyph
 - name: triangle
   friendly_name: triangle
+  aliases:
+    - ILO Icons
+  sizes:
+    - glyph
+- name: trianglereverse
+  friendly_name: trianglereverse
   aliases:
     - ILO Icons
   sizes:

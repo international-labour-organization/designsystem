@@ -15,7 +15,7 @@
   );
   @include bordervalues("input", "formelements");
   box-sizing: border-box;
-  font-family: $fonts-display;
+  font-family: $fonts-copy;
   font-weight: map-get($type, "weights", "section");
   @include font-styles("label-medium");
   height: px-to-rem(
@@ -25,18 +25,6 @@
   outline: none;
   @include spacingvalues("padding", "input", "formelements");
   width: map-get($spacing, "formelements", "input", "default", "width");
-
-  &:hover {
-    background-color: map-get(
-      $color,
-      "formelements",
-      "input",
-      "hover",
-      "background"
-    );
-    @include bordervalues("input", "formelements", "hover");
-    padding-left: calc($spacing-formelements-input-default-padding-left - 1px);
-  }
 
   &:focus {
     background-color: map-get(

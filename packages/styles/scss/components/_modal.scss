@@ -27,7 +27,8 @@
       .ilo--modal--wrapper {
         & > * {
           opacity: 1;
-          transition: opacity 1.5s ease-out 125ms;
+          transition-delay: 125ms;
+          @include globaltransition("opacity");
         }
       }
     }
@@ -57,10 +58,17 @@
   }
 
   .modal--close {
+    height: px-to-rem(40px);
     right: 0;
     position: absolute;
     top: 0;
+    width: px-to-rem(40px);
     z-index: 10004;
+
+    .ilo--icon {
+      left: px-to-rem(3px);
+      top: px-to-rem(3px);
+    }
   }
 
   @include breakpoint("medium") {

@@ -1,5 +1,6 @@
 @use "../tokens" as *;
 @use "../functions" as *;
+@use "../animations" as *;
 @import "../mixins";
 
 .ilo--breadcrumb {
@@ -11,7 +12,7 @@
     background-color: $color-base-neutrals-white;
     display: inline-flex;
     justify-content: flex-start;
-    padding: px-to-rem(11px) 0 px-to-rem(11px) px-to-rem($spacing-padding-1-5);
+    padding: px-to-rem(16px) 0 px-to-rem(16px) px-to-rem($spacing-padding-1-5);
     position: relative;
 
     &.context--menu {
@@ -28,6 +29,7 @@
     height: px-to-rem($spacing-padding-2);
     padding: 0 px-to-rem($spacing-padding-3) 0 px-to-rem(10px);
     text-decoration: none;
+    text-decoration-thickness: px-to-rem($borders-base);
     @include dataurlicon("breadcrumbdivider", $color-link-text-default);
 
     &--label {
@@ -40,6 +42,7 @@
     &:focus {
       color: map-get($color, "link", "text", "hover");
       text-decoration: underline;
+      text-decoration-thickness: px-to-rem($borders-base);
       @include dataurlicon("breadcrumbdivider", $color-link-text-hover);
     }
   }
@@ -109,6 +112,11 @@
       width: px-to-rem(42px);
       @include dataurlicon("elipsis", $color-link-text-default);
 
+      &:hover {
+        cursor: pointer;
+        @include dataurlicon("elipsis", $color-base-blue-medium);
+      }
+
       &:after {
         background-position: center center;
         background-repeat: no-repeat;
@@ -129,11 +137,15 @@
         left: px-to-rem(-40px);
         opacity: 0;
         position: absolute;
-        top: calc(100% + 20px);
-        transition: opacity 0.75s linear;
-        transition-delay: 0.5s;
+        top: calc(100% + 24px);
         width: px-to-rem(120px);
         z-index: 10;
+        @include globaltransition("opacity");
+
+        &.open {
+          opacity: 1;
+          @include globaltransition("opacity");
+        }
 
         &:before {
           background-position: top center;
@@ -150,6 +162,10 @@
           top: -#{px-to-rem(6px)};
           transform: translateX(-50%) rotate(135deg);
           width: px-to-rem($spacing-padding-1-5);
+        }
+
+        &:hover {
+          cursor: pointer;
         }
 
         .ilo--breadcrumb--item {
@@ -169,7 +185,8 @@
             text-decoration: none;
 
             .ilo--breadcrumb--link {
-              text-decoration: none;
+              text-decoration: underline;
+              text-decoration-thickness: px-to-rem($borders-base);
             }
           }
 
@@ -215,14 +232,6 @@
           }
         }
       }
-
-      &:hover,
-      &:focus {
-        .context--menu {
-          opacity: 1;
-          transition: opacity 1.5s ease-out;
-        }
-      }
     }
   }
 
@@ -236,11 +245,11 @@
         );
         content: "";
         display: inline-block;
-        height: 39px;
+        height: 47px;
         position: absolute;
-        right: -39px;
+        right: -47px;
         top: 0;
-        width: 39px;
+        width: 47px;
       }
 
       &.context--menu {

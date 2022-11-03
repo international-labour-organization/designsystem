@@ -36,7 +36,7 @@
     }
 
     &.endsection {
-      border-bottom: px-to-rem($borders-base) solid $color-base-neutrals-white;
+      border-bottom: px-to-rem(3px) solid $color-base-neutrals-white;
 
       .ilo--context-menu--link {
         border-bottom: none;
@@ -50,10 +50,11 @@
     display: inline-block;
     font-family: $fonts-copy;
     font-weight: map-get($type, "weights", "section");
-    padding: px-to-rem($spacing-padding-2) 0;
+    padding: px-to-rem($spacing-padding-2) px-to-rem($spacing-padding-1);
     text-decoration: none;
     width: 100%;
     @include font-styles("body-xxs");
+    letter-spacing: -0.1px;
 
     &:visited {
       color: map-get($color, "link", "text", "default");

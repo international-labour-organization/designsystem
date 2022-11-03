@@ -145,7 +145,7 @@
               "right": { "value": "transparent" },
               "top": { "value": "transparent" }
             },
-            "icon": { "value": "{color.base.neutrals.white}" }
+            "icon": { "value": "{color.base.neutrals.lighter}" }
           },
           "hover": {
             "background": { "value": "{color.base.blue.light}" },

@@ -2,11 +2,11 @@
 @use "../functions" as *;
 @import "../mixins";
 
-/*
-Note that the styles for this component rely on CSS container queries, which currently require a polyfill. Your site template should load the polyfill in the <head> using the method described here: https://github.com/GoogleChromeLabs/container-query-polyfil
-*/
-
 .ilo--tabs {
+  border-bottom: px-to-rem(4px) solid $color-base-neutrals-lighter;
+  border-left: px-to-rem(4px) solid $color-base-neutrals-lighter;
+  border-right: px-to-rem(4px) solid $color-base-neutrals-lighter;
+
   &:not(.tabs--js) {
     .ilo--tabs--selection {
       margin-bottom: px-to-rem(24px);
@@ -37,18 +37,18 @@ Note that the styles for this component rely on CSS container queries, which cur
         }
 
         &:active {
-          background: map-get($color, "link", "background", "active");
-          border-bottom: $widths-border-med solid
-            map-get($color, "link", "underline", "active");
-          color: map-get($color, "link", "text", "active");
+          background: map-get($color, "link", "background", "default");
+          border-bottom: $widths-border-sm solid
+            map-get($color, "link", "underline", "default");
+          color: map-get($color, "link", "text", "default");
           outline: none;
         }
 
         &:focus {
-          background: map-get($color, "link", "background", "focus");
-          border-bottom: $widths-border-lg solid
-            map-get($color, "link", "underline", "focus");
-          color: map-get($color, "link", "text", "focus");
+          background: map-get($color, "link", "background", "default");
+          border-bottom: $widths-border-sm solid
+            map-get($color, "link", "underline", "default");
+          color: map-get($color, "link", "text", "default");
           outline: none;
         }
       }
@@ -94,9 +94,7 @@ Note that the styles for this component rely on CSS container queries, which cur
         }
 
         &:hover,
-        &:focus,
-        &[aria-selected="true"]:hover,
-        &[aria-selected="true"]:focus {
+        &[aria-selected="true"]:hover {
           background-color: $color-base-blue-light;
           color: $color-base-blue-medium;
           outline: none;
@@ -174,21 +172,7 @@ Note that the styles for this component rely on CSS container queries, which cur
     }
   }
 
-  /* [aria-expanded="true"] {
-    display: none;
+  .right-to-left & {
+    direction: rtl;
   }
-
-  [aria-expanded="false"] {
-
-  }
-
-  [aria-expanded="false"] {
-    display: none;
-  }
-
-  @container (min-width: 700px) {
-    [aria-expanded="true"] {
-      display: block;
-    }
-  } */
 }

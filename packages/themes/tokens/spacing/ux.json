@@ -122,7 +122,7 @@
           "width": { "value": "24px" }
         },
         "bigplaybutton": {
-          "height": { "value": "80px" },
+          "height": { "value": "48px" },
           "border": {
             "bottom": { "value": "0" },
             "left": { "value": "0" },
@@ -141,7 +141,7 @@
             "right": { "value": "0" },
             "top": { "value": "0" }
           },
-          "width": { "value": "80px" }
+          "width": { "value": "48px" }
         }
       },
       "table": {
@@ -153,7 +153,7 @@
         },
         "content": {
           "padding": {
-            "bottom": { "value": "24px" },
+            "bottom": { "value": "18px" },
             "left": { "value": "8px" },
             "right": { "value": "8px" },
             "top": { "value": "19px" }
@@ -161,10 +161,10 @@
         },
         "head": {
           "padding": {
-            "bottom": { "value": "22px" },
-            "left": { "value": "11px" },
-            "right": { "value": "11px" },
-            "top": { "value": "22px" }
+            "bottom": { "value": "18px" },
+            "left": { "value": "6px" },
+            "right": { "value": "36px" },
+            "top": { "value": "18px" }
           }
         },
         "cell": {
@@ -177,10 +177,10 @@
         },
         "smallhead": {
           "padding": {
-            "bottom": { "value": "13px" },
-            "left": { "value": "11px" },
-            "right": { "value": "11px" },
-            "top": { "value": "13px" }
+            "bottom": { "value": "10px" },
+            "left": { "value": "7px" },
+            "right": { "value": "36px" },
+            "top": { "value": "10px" }
           }
         },
         "smallcell": {

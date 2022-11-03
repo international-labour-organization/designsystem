@@ -16,7 +16,7 @@
     color: $brand-ilo-blue;
     text-decoration: none;
 
-    #{$self}--dark:not(#{$self}--detail):not(#{$self}--data):not(#{$self}--multilink) {
+    &#{$self}--dark:not(#{$self}--detail):not(#{$self}--data):not(#{$self}--multilink) {
       background: $brand-ilo-white;
     }
 
@@ -61,7 +61,7 @@
     background: $brand-ilo-white;
   }
 
-  &--dark:not(#{$self}--detail):not(#{$self}--data):not(#{$self}--multilink) {
+  &--dark:not(#{$self}--detail):not(#{$self}--data):not(#{$self}--multilink):not(:hover):not(:focus) {
     background: $brand-ilo-dark-blue;
 
     #{$self}--eyebrow {
@@ -223,12 +223,32 @@
     }
 
     #{$self}--title {
-      color: $brand-ilo-grey-charcoal;
+      @include font-styles("headline-5");
       @include textmargin("margin-bottom", 24px, "headline-5", "display", 0, 0);
+      color: $brand-ilo-grey-charcoal;
+
+      @include breakpoint("medium") {
+        @include font-styles("headline-4");
+        @include textmargin(
+          "margin-bottom",
+          24px,
+          "headline-4",
+          "display",
+          0,
+          0
+        );
+      }
     }
 
     #{$self}--intro {
+      @include font-styles("body-small");
+      @include textmargin("margin-bottom", 40px, "body-small", "copy", 0, 0);
       color: $brand-ilo-grey-charcoal;
+
+      @include breakpoint("medium") {
+        @include font-styles("base");
+        @include textmargin("margin-bottom", 40px, "base", "copy", 0, 0);
+      }
     }
 
     &#{$self}--dark {
@@ -298,6 +318,14 @@
     &#{$self}--narrow {
       padding: px-to-rem(40px) px-to-rem(24px) px-to-rem(48px);
 
+      @include breakpoint("medium") {
+        padding: px-to-rem(40px) px-to-rem(24px) px-to-rem(48px);
+      }
+
+      @include breakpoint("large") {
+        padding: px-to-rem(40px) px-to-rem(24px) px-to-rem(48px);
+      }
+
       #{$self}--image--wrapper {
         display: none;
       }
@@ -309,12 +337,32 @@
         }
       }
 
-      @include breakpoint("medium") {
-        padding: px-to-rem(40px) px-to-rem(24px) px-to-rem(48px);
+      #{$self}--title {
+        @include breakpoint("medium") {
+          @include font-styles("headline-5");
+          @include textmargin(
+            "margin-bottom",
+            24px,
+            "headline-5",
+            "display",
+            0,
+            0
+          );
+        }
       }
 
-      @include breakpoint("large") {
-        padding: px-to-rem(40px) px-to-rem(24px) px-to-rem(48px);
+      #{$self}--intro {
+        @include breakpoint("medium") {
+          @include font-styles("body-small");
+          @include textmargin(
+            "margin-bottom",
+            40px,
+            "body-small",
+            "copy",
+            0,
+            0
+          );
+        }
       }
     }
 
@@ -587,6 +635,18 @@
           "body-small",
           "copy"
         );
+
+        @include breakpoint("medium") {
+          @include font-styles("headline-3");
+          @include textmargin(
+            "margin-bottom",
+            24px,
+            "headline-3",
+            "display",
+            "body-small",
+            "copy"
+          );
+        }
       }
 
       #{$self}--intro {
@@ -795,7 +855,14 @@
     }
 
     #{$self}--image--wrapper {
+      display: none;
       width: max(px-to-rem(205px), 50%);
+    }
+
+    #{$self}--content {
+      #{$self}--image--wrapper {
+        display: block;
+      }
     }
 
     &--content-label {
@@ -844,7 +911,8 @@
   }
 
   &--feature {
-    border-bottom: px-to-rem(3px) solid $brand-ilo-grey-accessible;
+    border-bottom: px-to-rem(3px) solid $brand-ilo-grey-ui;
+    filter: drop-shadow(0 4px 4px rgba($brand-ilo-black, 0.25));
     display: flex;
     margin-top: 0;
     position: relative;
@@ -859,9 +927,16 @@
 
     &:hover,
     &:focus {
+      background-color: $brand-ilo-white;
+      border-bottom: px-to-rem(3px) solid $brand-ilo-blue;
+
       picture::before {
         opacity: 0.4;
         z-index: 1;
+      }
+
+      #{$self}--image {
+        filter: saturate(0);
       }
     }
 
@@ -886,7 +961,6 @@
       @include breakpoint("medium") {
         #{$self}--wrap {
           display: flex;
-          width: 100%;
 
           .right-to-left & {
             flex-direction: row-reverse;
@@ -923,6 +997,10 @@
           width: 100%;
         }
       }
+    }
+
+    #{$self}--wrap {
+      width: 100%;
     }
 
     picture {
