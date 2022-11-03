@@ -3,6 +3,35 @@ tableofcontents:
   label: Table Of Contents
   description: A component for displaying links internal to a page
   fields:
+    openbutton:
+      type: object
+      label: Open Button
+      description: The label and settings for the button that will show the table of contents at small breakpoints
+      preview:
+        size: 'medium'
+        type: 'secondary'
+        label: 'Open Button'
+        className: 'toc--modal--open'
+        opensmodal: true
+      required: true
+    closebutton:
+      type: object
+      label: Close Button
+      description: Label and settings for the "close" button
+      preview:
+        size: 'large'
+        type: 'tertiary'
+        label: 'Close Button'
+        icon: close
+        iconPos: center
+        icononly: true
+        className: 'toc--modal--close'
+    headline:
+      type: string
+      label: Headline
+      description: A headline for the small breakpoint view of the table of contents, shown when it is opened. Design recommendation is that this matches the page title as shown in the hero.
+      preview: "Page Title"
+      required: true
     items:
       type: object
       label: Items
