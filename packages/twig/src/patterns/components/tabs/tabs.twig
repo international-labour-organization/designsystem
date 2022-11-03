@@ -6,7 +6,6 @@
 {% for item in items %}
   {% set tabids = tabids|merge([random(100000)]) %}
 {% endfor %}
-<div class="right-to-left">
 <div class="{{prefix}}--tabs" data-prefix="{{prefix}}" id="tabs--{{uid}}" data-loadcomponent="Tabs">
     <ul class="{{prefix}}--tabs--selection" aria-controls="tabs--{{uid}}" role="tablist" style="--tabscount: {{items|length}};">
       {% for item in items %}
@@ -27,5 +26,4 @@
         </div>
       {% endfor %}
     </div>
-</div>
 </div>
