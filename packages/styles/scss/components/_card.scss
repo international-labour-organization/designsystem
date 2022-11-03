@@ -855,7 +855,14 @@
     }
 
     #{$self}--image--wrapper {
+      display: none;
       width: max(px-to-rem(205px), 50%);
+    }
+
+    #{$self}--content {
+      #{$self}--image--wrapper {
+        display: block;
+      }
     }
 
     &--content-label {
