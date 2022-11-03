@@ -112,6 +112,11 @@
       width: px-to-rem(42px);
       @include dataurlicon("elipsis", $color-link-text-default);
 
+      &:hover {
+        cursor: pointer;
+        @include dataurlicon("elipsis", $color-base-blue-medium);
+      }
+
       &:after {
         background-position: center center;
         background-repeat: no-repeat;
@@ -133,7 +138,6 @@
         opacity: 0;
         position: absolute;
         top: calc(100% + 24px);
-        transition-delay: 0.5s;
         width: px-to-rem(120px);
         z-index: 10;
         @include globaltransition("opacity");
