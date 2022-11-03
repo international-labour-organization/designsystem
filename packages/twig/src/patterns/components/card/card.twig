@@ -86,6 +86,7 @@
         {% endif %}
         {% if dataset.links %}
           <div class="{{prefix}}--card--data--content-links">
+            <p class="{{prefix}}--card--data--content-label">{{ dataset.links.headline }}</p>
             {% for item in dataset.links.items %}
               {% include "@components/link/link.twig" with {  
                 url: item.url,
