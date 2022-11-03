@@ -46,11 +46,11 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Check types
-        run: pnpm check:types
-
       - name: Build
         run: pnpm build:all
+
+      - name: Check types
+        run: pnpm check:types
 
       - name: Test
         run: pnpm test:all
@@ -62,7 +62,7 @@ jobs:
           version: pnpm ci:version
           commit: "chore: update versions"
           title: "chore: update versions"
-          publish: pnpm ci:release
+          publish: pnpm ci:publish
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
