@@ -1,12 +1,12 @@
 name: Build and test
 
 concurrency:
-  group: develop
+  group: ci-${{ github.ref }}
   cancel-in-progress: true
 
 on:
   push:
-    branches: ["develop"]
+    branches: ["develop", "main"]
   pull_request:
     types: [opened, synchronize]
 
