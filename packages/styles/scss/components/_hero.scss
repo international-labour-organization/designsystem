@@ -4,6 +4,8 @@
 
 .ilo--hero {
   background: map-get($color, "ux", "pagination", "default", "background");
+  display: block;
+  width: 100%;
 
   &--home {
     @include breakpoint("large") {
@@ -15,6 +17,9 @@
     position: relative;
 
     @include breakpoint("large") {
+      margin-bottom: 80px;
+      padding-top: 170px;
+
       .ilo--image {
         height: calc(100% - 80px);
         left: 0;
@@ -38,6 +43,10 @@
           height: auto;
           width: 100%;
         }
+      }
+
+      .ilo--hero-card {
+        top: 80px;
       }
     }
   }
