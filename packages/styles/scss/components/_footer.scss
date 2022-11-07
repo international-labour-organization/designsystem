@@ -343,7 +343,8 @@
     }
 
     &--logo {
-      width: 100%;
+      min-width: 133px;
+      width: 48%;
     }
 
     .connect {
@@ -390,8 +391,35 @@
       flex-direction: row-reverse;
     }
 
+    .social--links--item:first-of-type {
+      margin-right: 0;
+    }
+
     .social--links--link {
       text-indent: 999em;
+    }
+
+    .legal,
+    .secondarylinks {
+      display: block;
+    }
+
+    .secondarylinks {
+      &--list {
+        display: flex;
+        flex-direction: row-reverse;
+      }
+    }
+
+    .secondarylinks--list--item:not(first-child) {
+      &:before {
+        content: none;
+      }
+
+      &:after {
+        content: " |  ";
+        padding-right: px-to-rem(2px);
+      }
     }
 
     &--main {
@@ -410,6 +438,26 @@
           "address site-info"
           "links site-info"
           "connect site-info";
+      }
+
+      .legal,
+      .secondarylinks {
+        float: right;
+      }
+
+      .secondarylinks {
+        margin-left: px-to-rem(126px);
+        margin-right: px-to-rem(4px);
+
+        &--list {
+          display: flex;
+          flex-direction: row-reverse;
+        }
+      }
+
+      .anchorlink {
+        left: 16px;
+        right: auto;
       }
     }
 

@@ -72,4 +72,16 @@
     margin-left: 8px;
     margin-top: 3px;
   }
+
+  .right-to-left & {
+    direction: rtl;
+
+    .ilo--fieldset--label {
+      float: right;
+    }
+
+    &.ilo--choice-group .ilo--fieldset--legend {
+      float: right;
+    }
+  }
 }
