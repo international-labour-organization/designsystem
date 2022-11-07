@@ -7,4 +7,4 @@
 "@ilo-org/twig": patch
 ---
 
-Card fixes such as font sizes and some slight tweaks to make sure all the data is displayed
+QA bugfixes for Nav Hero and Callout

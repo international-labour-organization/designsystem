@@ -1,5 +1,19 @@
 # @ilo-org/react
 
+## 0.0.7
+
+### Patch Changes
+
+- 774682316: Card fixes such as font sizes and some slight tweaks to make sure all the data is displayed
+- 2d7d8114a: Bug fixes and right-to-left stlying for rich text, tabs, image and credit components
+- 04fe60f9f: Mostly design bugfixes across multiple components
+- Updated dependencies [774682316]
+- Updated dependencies [2d7d8114a]
+- Updated dependencies [04fe60f9f]
+  - @ilo-org/icons-react@0.0.5
+  - @ilo-org/styles@0.1.3
+  - @ilo-org/themes@0.1.3
+
 ## 0.0.6
 
 ### Patch Changes

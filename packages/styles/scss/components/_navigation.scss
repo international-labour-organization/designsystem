@@ -22,16 +22,19 @@
 
   &--menu {
     @include dataurlicon("burger", $brand-ilo-white);
+    align-self: center;
     background-color: transparent;
     background-position: center;
     background-repeat: no-repeat;
     background-size: 32px;
     border: none;
     cursor: pointer;
+    height: 32px;
     overflow: hidden;
     position: relative;
     text-indent: -999%;
     transition: all 150ms ease-out;
+    width: 32px;
 
     &:hover,
     &:focus {
@@ -87,6 +90,10 @@
     &-link {
       display: block;
       padding: 16px 0;
+
+      @include breakpoint("large") {
+        padding: 0 0 24px;
+      }
     }
   }
 
@@ -443,6 +450,17 @@
     }
   }
 
+  &--search {
+    .ilo--searchfield {
+      max-width: 618px;
+      width: 100%;
+    }
+
+    .ilo--fieldset {
+      width: 100%;
+    }
+  }
+
   @include breakpoint("large") {
     display: none;
   }
@@ -725,6 +743,15 @@
     align-items: center;
     justify-content: center;
     padding: 80px 20px;
+  }
+
+  .ilo--searchfield {
+    max-width: 618px;
+    width: 100%;
+  }
+
+  .ilo--fieldset {
+    width: 100%;
   }
 }
 

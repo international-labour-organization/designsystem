@@ -88,8 +88,8 @@ navigation:
       preview:
         action: "http://www.ilo.org"
         input:
-          label: "Search Field Label"
-          helper: "The search field's helper text"
+          label: ""
+          helper: ""
           name: "text"
           placeholder: "Search Field"
           type: "text"

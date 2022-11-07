@@ -1,5 +1,13 @@
 # @ilo-org/themes
 
+## 0.1.3
+
+### Patch Changes
+
+- 774682316: Card fixes such as font sizes and some slight tweaks to make sure all the data is displayed
+- 2d7d8114a: Bug fixes and right-to-left stlying for rich text, tabs, image and credit components
+- 04fe60f9f: Mostly design bugfixes across multiple components
+
 ## 0.1.2
 
 ### Patch Changes

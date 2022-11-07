@@ -4,8 +4,28 @@
 
 .ilo--hero {
   background: map-get($color, "ux", "pagination", "default", "background");
+  display: block;
+  width: 100%;
 
   &--home {
+    .ilo--image {
+      &::before {
+        background: linear-gradient(
+            360deg,
+            rgba($brand-ilo-black, 0.3) 0%,
+            rgba($brand-ilo-black, 0) 24.88%
+          ),
+          transparent;
+        content: "";
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+        z-index: 2;
+      }
+    }
+
     @include breakpoint("large") {
       position: relative;
     }
@@ -15,6 +35,9 @@
     position: relative;
 
     @include breakpoint("large") {
+      margin-bottom: 80px;
+      padding-top: 170px;
+
       .ilo--image {
         height: calc(100% - 80px);
         left: 0;
@@ -38,6 +61,10 @@
           height: auto;
           width: 100%;
         }
+      }
+
+      .ilo--hero-card {
+        top: 80px;
       }
     }
   }
