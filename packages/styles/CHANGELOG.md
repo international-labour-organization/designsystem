@@ -1,5 +1,16 @@
 # @ilo-org/styles
 
+## 0.1.4
+
+### Patch Changes
+
+- a8e627c45: Bugfixes in Form and Footer, and right-to-left styling for Form
+- 9d25aa0e8: QA bugfixes for Nav Hero and Callout
+- Updated dependencies [a8e627c45]
+- Updated dependencies [9d25aa0e8]
+  - @ilo-org/icons@0.1.4
+  - @ilo-org/themes@0.1.4
+
 ## 0.1.3
 
 ### Patch Changes
