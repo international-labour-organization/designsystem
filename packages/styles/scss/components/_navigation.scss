@@ -450,6 +450,17 @@
     }
   }
 
+  &--search {
+    .ilo--searchfield {
+      max-width: 618px;
+      width: 100%;
+    }
+
+    .ilo--fieldset {
+      width: 100%;
+    }
+  }
+
   @include breakpoint("large") {
     display: none;
   }
@@ -732,6 +743,15 @@
     align-items: center;
     justify-content: center;
     padding: 80px 20px;
+  }
+
+  .ilo--searchfield {
+    max-width: 618px;
+    width: 100%;
+  }
+
+  .ilo--fieldset {
+    width: 100%;
   }
 }
 
