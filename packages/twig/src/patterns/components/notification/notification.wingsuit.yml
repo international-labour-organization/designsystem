@@ -28,15 +28,6 @@ notification:
       description: The headline of the notification
       required: true
       preview: 'With CTA'
-    placement:
-      type: select
-      label: Placement
-      description: The placement of the notification
-      required: true
-      options:
-        inline: Inline
-        dialog: Dialog
-      preview: 'dialog'
     type:
       type: select
       label: Type
@@ -55,4 +46,13 @@ notification:
       preview:
         human: Dec 7, 2022
         unix: 1670389200
+  settings:
+    placement:
+      type: select
+      label: Placement
+      description: Is this notification inline (in the flow of the document) or a dialog (highest on the z-index and fixed-position)?
+      options:
+        inline: Inline
+        dialog: Dialog
+      preview: 'dialog'
   visibility: storybook

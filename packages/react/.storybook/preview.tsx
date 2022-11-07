@@ -24,7 +24,7 @@ export const parameters = {
 
 export const decorators: DecoratorFn[] = [
   (Story) => (
-    <div style={{ margin: "3em" }}>
+    <div>
       <GlobalProvider prefix={themeprefix.value}>
         <Story />
       </GlobalProvider>

@@ -16,12 +16,10 @@
   @include bordervalues("input", "formelements");
   border-radius: 0;
   box-sizing: content-box;
-  font-family: $fonts-display;
+  font-family: $fonts-copy;
   font-weight: map-get($type, "weights", "section");
   @include font-styles("label-medium");
-  height: px-to-rem(
-    map-get($spacing, "formelements", "input", "default", "height")
-  );
+  height: px-to-rem(45px);
   @include spacingvalues("margin", "input", "formelements");
   outline: none;
   overflow: hidden;
@@ -33,9 +31,9 @@
   white-space: nowrap;
   width: calc(100% - 78px);
 
-  background-position: calc(100% - 14px) center;
+  background-position: calc(100% - 14px) center, 100% center;
   background-repeat: no-repeat;
-  background-size: 24px 24px, 72px 100%;
+  background-size: 24px 24px, 102px 100%;
   background-image: url("#{colortodataurlicon("arrow", $color-ux-labels-actionable)}"),
     linear-gradient(
       to right,
@@ -43,8 +41,8 @@
       transparent calc(50% - 0.81px),
       $color-formelements-input-default-border-left calc(50% - 0.8px),
       $color-formelements-input-default-border-left calc(50% + 0.8px),
-      transparent calc(50% + 0.81px),
-      transparent 100%
+      rgba(237, 240, 242, 1) calc(50% + 0.81px),
+      rgba(237, 240, 242, 1) 100%
     );
 
   option {
@@ -93,6 +91,23 @@
         transparent calc(50% + 0.81px),
         transparent 100%
       );
+  }
+
+  &:active {
+    background-position: calc(100% - 14px) center, 100% center;
+    background-repeat: no-repeat;
+    background-size: 24px 24px, 102px 100%;
+    background-image: url("#{colortodataurlicon("arrow", $color-ux-labels-actionable)}"),
+      linear-gradient(
+        to right,
+        transparent 0%,
+        transparent calc(50% - 0.81px),
+        $color-formelements-input-default-border-left calc(50% - 0.8px),
+        $color-formelements-input-default-border-left calc(50% + 0.8px),
+        rgba(237, 240, 242, 1) calc(50% + 0.81px),
+        rgba(237, 240, 242, 1) 100%
+      );
+    @include bordervalues("input", "formelements");
   }
 
   &:disabled {

@@ -18,5 +18,5 @@ searchfield:
         helper: "The search field's helper text"
         name: "text"
         placeholder: "Search Field"
-        type: "text"
+        type: "search"
   visibility: storybook

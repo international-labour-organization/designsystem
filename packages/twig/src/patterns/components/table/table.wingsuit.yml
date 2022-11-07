@@ -9,7 +9,7 @@ table:
       description: The table's headline
       preview: "Headline"
       required: true
-    toolip:
+    tooltip:
       type: object
       label: Tooltip
       description: If there is a tooltip next to the headline, the tooltip's data

@@ -387,4 +387,58 @@
       }
     }
   }
+
+  .right-to-left & {
+    direction: rtl;
+
+    figcaption {
+      border-left: none;
+      border-right: 3px solid #b8c4cc;
+      padding-left: 0;
+      padding-right: px-to-rem(map-get($spacing, "padding-1"));
+    }
+
+    ul,
+    ol {
+      li {
+        &::before {
+          left: auto;
+          right: px-to-rem(-12px);
+          @include dataurlicon("listarrowreverse");
+        }
+        margin-left: 0;
+        margin-right: px-to-rem(12px);
+        padding-left: 0;
+        padding-right: px-to-rem(12px);
+      }
+    }
+
+    blockquote {
+      background-position: -1px -1px;
+      padding: px-to-rem(54px) px-to-rem(map-get($spacing, "padding-4"))
+        px-to-rem(34px) 0;
+      @include dataurlicon("trianglereverse", $color-ux-background-default);
+
+      p {
+        padding: 0 0 0 px-to-rem(map-get($spacing, "padding-6"));
+
+        &:after {
+          left: 0;
+          right: auto;
+          transform: scaleX(1);
+        }
+      }
+
+      &:before {
+        left: auto;
+        right: 0;
+        transform: scaleX(-1);
+      }
+
+      @include breakpoint("medium") {
+        padding: px-to-rem(62px) px-to-rem(map-get($spacing, "padding-6"))
+          px-to-rem(map-get($spacing, "padding-6")) 0;
+      }
+    }
+  }
 }

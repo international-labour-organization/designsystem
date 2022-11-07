@@ -1,5 +1,29 @@
 # @ilo-org/twig
 
+## 0.1.3
+
+### Patch Changes
+
+- 774682316: Card fixes such as font sizes and some slight tweaks to make sure all the data is displayed
+- 2d7d8114a: Bug fixes and right-to-left stlying for rich text, tabs, image and credit components
+- 04fe60f9f: Mostly design bugfixes across multiple components
+- Updated dependencies [774682316]
+- Updated dependencies [2d7d8114a]
+- Updated dependencies [04fe60f9f]
+  - @ilo-org/icons@0.1.3
+  - @ilo-org/styles@0.1.3
+  - @ilo-org/themes@0.1.3
+
+## 0.1.2
+
+### Patch Changes
+
+- a84c36d: Navigation RTL styles and design QA
+- Updated dependencies [a84c36d]
+  - @ilo-org/icons@0.1.2
+  - @ilo-org/styles@0.1.2
+  - @ilo-org/themes@0.1.2
+
 ## 0.1.1
 
 ### Patch Changes

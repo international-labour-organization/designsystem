@@ -2,7 +2,7 @@
   BUTTON COMPONENT
 #}
 {% if url %}
-  <a class="{{prefix}}--button ilo--button--{{size}} {{prefix}}--button--{{type}}{% if icon %} icon icon__position--{{iconPos}}{% endif %}{% if icononly %} icon--only{% endif %}{% if className %} {{className}}{% endif %}" href="{{url}}" {% if target is defined and target == 'true' %}target="{{target}}" rel="noopener noreferrer"{% endif %} {% if disabled is defined and disabled == 'true' %}disabled{% endif %}>
+  <a class="{{prefix}}--button ilo--button--{{size}} {{prefix}}--button--{{type}}{% if icon %} icon icon__position--{{iconPos}}{% endif %}{% if icononly %} icon--only{% endif %}{% if className %} {{className}}{% endif %}" href="{{url}}" {% if target is defined and target != 'false' %}target="{{target}}" rel="noopener noreferrer"{% endif %} {% if disabled is defined and disabled == 'true' %}disabled{% endif %}>
     <span class="link__label">{{label}}</span>
     {% if icon %}
       {% include '@components/icon/icon.twig' with {icon: icon} %}

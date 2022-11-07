@@ -79,4 +79,41 @@
       }
     }
   }
+
+  .right-to-left & {
+    &:after {
+      background-position: top left;
+      left: auto;
+      right: 100%;
+      transform: scaleX(-1);
+    }
+
+    @include breakpoint("large", true) {
+      &--label {
+        left: auto;
+        right: 0;
+
+        &:after {
+          background-position: top right;
+          @include dataurlicon(
+            "equilateraltriangle",
+            $color-base-neutrals-dark
+          );
+          left: auto;
+          right: calc(#{px-to-rem(map-get($spacing, "padding-1-5"))} / 2);
+        }
+      }
+
+      &:before {
+        background-position: 4px center;
+        left: auto;
+        right: 0;
+      }
+
+      &:after {
+        left: auto;
+        right: px-to-rem(29px);
+      }
+    }
+  }
 }

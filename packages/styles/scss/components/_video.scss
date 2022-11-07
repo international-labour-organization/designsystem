@@ -148,8 +148,8 @@
     .vjs-big-play-button {
       @include iconbutton(
         "play",
-        $spacing-ux-video-buttonicon-height,
-        $spacing-ux-video-buttonicon-width,
+        $spacing-ux-video-bigplaybutton-height,
+        $spacing-ux-video-bigplaybutton-width,
         $color-ux-video-controls-default-icon
       );
 
@@ -157,10 +157,35 @@
         background-color: $color-ux-video-controls-hover-background;
         @include iconbutton(
           "play",
-          $spacing-ux-video-buttonicon-height,
-          $spacing-ux-video-buttonicon-width,
+          $spacing-ux-video-bigplaybutton-height,
+          $spacing-ux-video-bigplaybutton-width,
           $color-ux-video-controls-hover-icon
         );
+
+        & ~ .vjs-duration,
+        & ~ .ilo--video--controls--duration {
+          background-color: $color-ux-video-controls-hover-background;
+          color: $color-ux-video-controls-hover-icon;
+        }
+      }
+
+      &.vjs-paused {
+        @include iconbutton(
+          "play",
+          $spacing-ux-video-buttonicon-height,
+          $spacing-ux-video-buttonicon-width,
+          $color-ux-video-controls-default-icon
+        );
+
+        &:hover {
+          background-color: $color-ux-video-controls-hover-background;
+          @include iconbutton(
+            "play",
+            $spacing-ux-video-buttonicon-height,
+            $spacing-ux-video-buttonicon-width,
+            $color-ux-video-controls-hover-icon
+          );
+        }
       }
     }
 
@@ -187,6 +212,7 @@
     &--duration,
     .vjs-duration {
       background-color: $color-ux-video-controls-default-background;
+      color: $color-ux-video-controls-default-icon;
       display: none;
       height: 100%;
       font-weight: 700;
@@ -195,6 +221,11 @@
       padding-top: 9px;
       text-align: center;
       width: px-to-rem(80px);
+
+      &:hover {
+        background-color: $color-ux-video-controls-hover-background;
+        color: $color-ux-video-controls-hover-icon;
+      }
 
       @include font-styles("label-small");
 
@@ -407,6 +438,12 @@
       .vjs-has-started & {
         display: block;
       }
+
+      &:hover {
+        .vjs-volume-control {
+          display: block;
+        }
+      }
     }
 
     &--showvolume,
@@ -520,7 +557,7 @@
     .vjs-volume-bar {
       height: 4px;
       position: relative;
-      width: calc(100% - 24px);
+      width: calc(100% - 26px);
     }
 
     .vjs-mouse-display,
@@ -547,7 +584,7 @@
         margin: 0;
         padding: 0;
         position: absolute;
-        right: -8px;
+        right: -16px;
         top: 50%;
         width: 16px;
         -webkit-transform: translate(-50%, -50%);

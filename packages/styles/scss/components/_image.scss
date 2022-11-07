@@ -39,4 +39,18 @@
       bottom: -#{px-to-rem(map-get($spacing, "padding-0-5"))};
     }
   }
+
+  .right-to-left & {
+    .ilo--image--caption {
+      border-left: none;
+      border-right: 3px solid #b8c4cc;
+      padding-left: 0;
+      padding-right: px-to-rem(map-get($spacing, "padding-1"));
+    }
+
+    .ilo--credit {
+      left: auto;
+      right: 0;
+    }
+  }
 }

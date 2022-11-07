@@ -2,13 +2,22 @@
   TABLE OF CONTENTS COMPONENT
 #}
 {% if items %}
-  <nav class="{{prefix}}--table-of-contents">
-    <ul class="{{prefix}}--table-of-contents--list">
-      {% for item in items %}
-        <li class="{{prefix}}--table-of-contents--list--item">
-          <a class="{{prefix}}--table-of-contents--link" href="{{item.href}}">{{item.label}}</a>
-        </li>
-      {% endfor %}
-    </ul>
-  </nav>
+  <div class="{{prefix}}--table-of-contents--wrapper" data-loadcomponent="TableOfContents" data-prefix="{{prefix}}">
+    <div class="{{prefix}}--table-of-contents--trigger">
+      {% include '@components/button/button.twig' with openbutton %}
+    </div>
+    <div class="{{prefix}}--table-of-contents--modal">
+      <h3 class="{{prefix}}--table-of-contents--headline">{{headline}}</h3>
+      {% include '@components/button/button.twig' with closebutton %}
+    </div>
+    <nav class="{{prefix}}--table-of-contents">
+      <ul class="{{prefix}}--table-of-contents--list">
+        {% for item in items %}
+          <li class="{{prefix}}--table-of-contents--list--item">
+            <a class="{{prefix}}--table-of-contents--link" href="{{item.href}}">{{item.label}}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </nav>
+  </div>
 {% endif %}
