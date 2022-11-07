@@ -1,5 +1,14 @@
 # @ilo-org/icons-react
 
+## 0.0.6
+
+### Patch Changes
+
+- 9d25aa0e8: QA bugfixes for Nav Hero and Callout
+- Updated dependencies [a8e627c45]
+- Updated dependencies [9d25aa0e8]
+  - @ilo-org/icons@0.1.4
+
 ## 0.0.5
 
 ### Patch Changes
