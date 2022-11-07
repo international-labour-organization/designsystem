@@ -94,6 +94,7 @@
 
   .ilo--fieldset--label {
     font-weight: 400;
+    margin-bottom: 0;
     margin-left: px-to-rem($spacing-padding-1);
     margin-top: 2px;
     order: 2;
@@ -103,5 +104,14 @@
   .ilo--fieldset--helper {
     order: 3;
     width: 100%;
+  }
+
+  .right-to-left & {
+    direction: rtl;
+
+    .ilo--fieldset--label {
+      margin-left: 0;
+      margin-right: px-to-rem($spacing-padding-1);
+    }
   }
 }
