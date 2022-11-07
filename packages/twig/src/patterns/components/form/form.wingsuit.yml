@@ -9,6 +9,11 @@ form:
       description: The form's action attribute
       preview: "http://www.ilo.org"
       required: true
+    headline:
+      type: string
+      label: Headline
+      description: Optional form headline
+      preview: ""
     formid:
       type: string
       label: formid

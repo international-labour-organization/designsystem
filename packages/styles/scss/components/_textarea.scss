@@ -30,21 +30,6 @@
   @include spacingvalues("padding", "input", "formelements");
   width: map-get($spacing, "formelements", "input", "default", "width");
 
-  &::-webkit-resizer {
-    background-size: cover;
-    background-repeat: no-repeat;
-    bottom: 2px;
-    height: 12px;
-    right: 0;
-    pointer-events: none;
-    position: absolute;
-    width: 22px;
-    @include dataurlicon(
-      "scalenerighttriangle",
-      $color-formelements-input-default-border-bottom
-    );
-  }
-
   &:focus {
     background-color: map-get(
       $color,
@@ -73,5 +58,9 @@
       "background"
     );
     @include bordervalues("input", "formelements", "error");
+  }
+
+  .right-to-left & {
+    direction: rtl;
   }
 }
