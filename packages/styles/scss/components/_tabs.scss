@@ -3,9 +3,9 @@
 @import "../mixins";
 
 .ilo--tabs {
-  border-bottom: px-to-rem(4px) solid $color-base-neutrals-lighter;
-  border-left: px-to-rem(4px) solid $color-base-neutrals-lighter;
-  border-right: px-to-rem(4px) solid $color-base-neutrals-lighter;
+  border-bottom: px-to-rem(3px) solid $color-base-neutrals-lighter;
+  border-left: px-to-rem(3px) solid $color-base-neutrals-lighter;
+  border-right: px-to-rem(3px) solid $color-base-neutrals-lighter;
 
   &:not(.tabs--js) {
     .ilo--tabs--selection {
