@@ -11,7 +11,7 @@
   &--label {
     display: inline-flex;
     float: left;
-    font-family: $fonts-copy;
+    font-family: $fonts-display;
     font-weight: map-get($type, "weights", "label");
     @include font-styles("label-medium");
     @include textmargin("margin-bottom", 14px, "label-medium", "display", 0, 0);
