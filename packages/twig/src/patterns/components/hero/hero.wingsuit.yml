@@ -30,6 +30,17 @@ hero:
             url: "https://www.linkedin.com/"
             icon: "linkedin"
         title: "This is an left aligned article headline that is more than two lines long"
+  variants:
+    default:
+      lable: Default
+    article:
+      label: Article
+      description: article settings
+      fields:
+        image: ""
+      settings:
+        theme: light
+        types: article
   settings:
     theme:
       type: select
