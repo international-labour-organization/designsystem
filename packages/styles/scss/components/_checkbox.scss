@@ -96,6 +96,7 @@
   margin-bottom: px-to-rem(22px);
 
   .ilo--fieldset--label {
+    font-family: $fonts-copy;
     font-weight: 400;
     margin-bottom: 0;
     margin-left: px-to-rem($spacing-padding-1);
