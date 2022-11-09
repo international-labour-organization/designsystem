@@ -1,5 +1,16 @@
 # @ilo-org/react
 
+## 0.0.8
+
+### Patch Changes
+
+- 9d25aa0e8: QA bugfixes for Nav Hero and Callout
+- Updated dependencies [a8e627c45]
+- Updated dependencies [9d25aa0e8]
+  - @ilo-org/styles@0.1.4
+  - @ilo-org/themes@0.1.4
+  - @ilo-org/icons-react@0.0.6
+
 ## 0.0.7
 
 ### Patch Changes
