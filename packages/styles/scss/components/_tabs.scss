@@ -158,7 +158,7 @@
         }
 
         &--item {
-          width: min(calc(var(--tabscount) / 1 * 100%), 25%);
+          width: min(calc(var(--tabscount) / 1 * 100%), 100%);
         }
       }
     }
