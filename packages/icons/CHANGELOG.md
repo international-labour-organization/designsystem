@@ -1,5 +1,13 @@
 # @ilo-org/icons
 
+## 0.1.5
+
+### Patch Changes
+
+- aa8469ceb: Remove testing code from hero and add RTL style for tags
+- 539894a90: Hero fixes for RTL and lack of image
+- 22bda9fb8: Rename tagset to Tags to match other components and work as an npm package
+
 ## 0.1.4
 
 ### Patch Changes
