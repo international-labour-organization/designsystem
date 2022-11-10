@@ -180,6 +180,12 @@
     top: -39.7px;
     width: 100%;
 
+    .right-to-left & {
+      clip-path: polygon(100% 0, 100% 100%, 100% 100%, 0% 100%, 10% 0%);
+      left: auto;
+      right: 0;
+    }
+
     @include breakpoint("large") {
       height: 64px;
       top: -63.7px;
@@ -188,6 +194,10 @@
 
   @include breakpoint("large") {
     padding: 0 70px 70px 56px;
+  }
+
+  .right-to-left & {
+    direction: rtl;
   }
 
   &--center {
