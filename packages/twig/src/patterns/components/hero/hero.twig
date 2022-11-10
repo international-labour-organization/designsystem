@@ -4,8 +4,6 @@
 <div class="{{prefix}}--hero {{prefix}}--hero--{{theme}} {{prefix}}--hero--{{types}} {% if image %}{{prefix}}--hero--image{% endif %}">
 
   {% if not image %}
-    <figure class="{{prefix}}--bg" data-prefix="{{prefix}}">
-    </figure>
   {% else %}
     {% include "@components/image/image.twig" with {
       alt: image.alt,
