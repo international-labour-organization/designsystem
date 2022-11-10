@@ -1,6 +1,6 @@
-tagset:
-  use: '@components/tag/tag-set.twig'
-  label: Tag Set
+tags:
+  use: '@components/tags/tags.twig'
+  label: Tags
   description: A set of tags
   fields:
     items:
