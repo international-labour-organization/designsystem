@@ -1,9 +1,9 @@
 {#
-  TAG SET COMPONENT
+  TAGS COMPONENT
 #}
-<ul class="ilo--tag-set" data-loadcomponent="Tag" data-multipleactive="{{ allowMultipleActive|default(true) }}">
+<ul class="ilo--tags" data-loadcomponent="Tag" data-multipleactive="{{ allowMultipleActive|default(true) }}">
   {% for item in items %}
-    {% include "@components/tag/tag.twig" with {
+    {% include "@components/tags/tag.twig" with {
       content: item.content,
       defaultActive: item.defaultActive,
       id: item.id,

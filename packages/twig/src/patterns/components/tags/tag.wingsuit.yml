@@ -1,5 +1,5 @@
 tag:
-  use: '@components/tag/tag.twig'
+  use: '@components/tags/tag.twig'
   label: Tag
   description: A clickable tag
   fields:
