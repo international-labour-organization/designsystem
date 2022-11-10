@@ -3,6 +3,19 @@ loading:
   label: Loading
   description: The Loading component displays a loading state. (See Javascript comments in loading.js for how to use this with vanilla JS).
   fields:
+    message:
+      type: string
+      label: Message
+      description: The loading message
+      preview: 'Submitting'
+      required: true
+    loadedmessage:
+      type: string
+      label: LOaded Message
+      description: The loaded message
+      preview: 'Completed'
+      required: true
+  settings:
     size:
       type: select
       label: Size
@@ -22,16 +35,4 @@ loading:
         loading: Loading
         loaded: Loaded
       preview: 'loading'
-    message:
-      type: string
-      label: Message
-      description: The loading message
-      preview: 'Submitting'
-      required: true
-    loadedmessage:
-      type: string
-      label: LOaded Message
-      description: The loaded message
-      preview: 'Completed'
-      required: true
   visibility: storybook

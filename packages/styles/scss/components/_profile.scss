@@ -1,5 +1,6 @@
 @use "../tokens" as *;
 @use "../functions" as *;
+@import "../animations";
 @import "../mixins";
 
 .ilo--profile {
@@ -104,6 +105,7 @@
       background-color: $color-base-blue-light;
       color: map-get($color, "link", "text", "hover");
       outline: none;
+      @include globaltransition("color, background-color");
 
       span {
         @include dataurlicon("arrowright", $color-link-text-hover);

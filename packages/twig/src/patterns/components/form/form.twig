@@ -34,7 +34,7 @@
             {% endif %}
             {% for f in i.field %}
             <div class="{{prefix}}--fieldset--input--{{i.type}}">
-              <label class="{{prefix}}--fieldset--label" for="{% if f.id %}{{f.id}}{% else %}{{f.name}}{% endif %}">{{f.label}}</label>
+              <label class="{{prefix}}--fieldset--label" for="{% if f.id is defined and f.id is not empty %}{{f.id}}{% else %}{{f.name}}{% endif %}">{{f.label}}</label>
               {% if i.type == "radio" %}
                 {% include '@components/form/radio.twig' with f %}
               {% else %}
@@ -73,7 +73,7 @@
         {% endif %}
         {% for f in item.field %}
         <div class="{{prefix}}--fieldset--input--{{item.type}}">
-          <label class="{{prefix}}--fieldset--label" for="{% if f.id %}{{f.id}}{% else %}{{f.name}}{% endif %}">{{f.label}}</label>
+          <label class="{{prefix}}--fieldset--label" for="{% if f.id is defined and f.id is not empty %}{{f.id}}{% else %}{{f.name}}{% endif %}">{{f.label}}</label>
           {% if item.type == "radio" %}
             {% include '@components/form/radio.twig' with f %}
           {% else %}

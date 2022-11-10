@@ -4,6 +4,7 @@ import RadioArgs from "../Radio/Radio.args";
 
 const checkboxfields = [];
 const radiofields = [];
+const radioid = `radio${Math.random() * (1000 - 1) + 1}`;
 
 for (let i = 0; i < 5; i++) {
   const checkboxargs = { ...CheckboxArgs.basic };
@@ -15,7 +16,7 @@ for (let i = 0; i < 5; i++) {
   checkboxfields[i].type = "checkbox";
   radiofields.push(radioargs);
   radiofields[i].label = `Radio ${i}`;
-  radiofields[i].name = `radio${i}`;
+  radiofields[i].name = radioid;
   radiofields[i].type = "radio";
 }
 

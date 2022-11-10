@@ -1,15 +1,18 @@
 {#
   HERO COMPONENT
 #}
-
 <div class="{{prefix}}--hero {{prefix}}--hero--{{theme}} {{prefix}}--hero--{{types}} {% if image %}{{prefix}}--hero--image{% endif %}">
-  {% include "@components/image/image.twig" with {
-    alt: image.alt,
-    caption: image.caption,
-    credit: image.credit,
-    prefix: prefix,
-    url: image.url,
-  } only %}
+
+  {% if not image %}
+  {% else %}
+    {% include "@components/image/image.twig" with {
+      alt: image.alt,
+      caption: image.caption,
+      credit: image.credit,
+      prefix: prefix,
+      url: image.url,
+    } only %}
+  {% endif %}
   {% include "@components/herocard/herocard.twig" with {
     alignment: herocard.alignment,
     eyebrow: herocard.eyebrow,

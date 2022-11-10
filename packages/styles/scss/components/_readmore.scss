@@ -1,5 +1,6 @@
 @use "../tokens" as *;
 @use "../functions" as *;
+@import "../animations";
 @import "../mixins";
 
 .ilo--read-more {
@@ -35,8 +36,7 @@
       @include bordervalues("readmore", "ux", "hover");
       color: $color-ux-labels-hover;
       cursor: pointer;
-      transition: background 150ms linear, border 150ms linear,
-        color 150ms linear;
+      @include globaltransition("color, background-color, border-color");
 
       &:after {
         @include dataurlicon("arrow", $color-ux-labels-hover);
