@@ -5,6 +5,10 @@
 .ilo--tags {
   list-style: none;
 
+  .right-to-left & {
+    direction: rtl;
+  }
+
   &__item {
     display: inline-block;
     margin: map-get($spacing, "horizontal-rule");

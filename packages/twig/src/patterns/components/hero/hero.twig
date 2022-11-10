@@ -1,33 +1,29 @@
 {#
   HERO COMPONENT
 #}
-<div class="right-to-left">
-  
-  <div class="{{prefix}}--hero {{prefix}}--hero--{{theme}} {{prefix}}--hero--{{types}} {% if image %}{{prefix}}--hero--image{% endif %}">
-  <script>console.log({{ _context | json_encode | raw }});</script>
-  
-    {% if not image %}
-      <figure class="{{prefix}}--bg" data-prefix="{{prefix}}">
-      </figure>
-    {% else %}
-      {% include "@components/image/image.twig" with {
-        alt: image.alt,
-        caption: image.caption,
-        credit: image.credit,
-        prefix: prefix,
-        url: image.url,
-      } only %}
-    {% endif %}
-    {% include "@components/herocard/herocard.twig" with {
-      alignment: herocard.alignment,
-      eyebrow: herocard.eyebrow,
-      datecopy: herocard.datecopy,
-      intro: herocard.intro,
+<div class="{{prefix}}--hero {{prefix}}--hero--{{theme}} {{prefix}}--hero--{{types}} {% if image %}{{prefix}}--hero--image{% endif %}">
+
+  {% if not image %}
+    <figure class="{{prefix}}--bg" data-prefix="{{prefix}}">
+    </figure>
+  {% else %}
+    {% include "@components/image/image.twig" with {
+      alt: image.alt,
+      caption: image.caption,
+      credit: image.credit,
       prefix: prefix,
-      socials: herocard.socials,
-      theme: theme,
-      title: herocard.title,
-      types: types
+      url: image.url,
     } only %}
-  </div>
+  {% endif %}
+  {% include "@components/herocard/herocard.twig" with {
+    alignment: herocard.alignment,
+    eyebrow: herocard.eyebrow,
+    datecopy: herocard.datecopy,
+    intro: herocard.intro,
+    prefix: prefix,
+    socials: herocard.socials,
+    theme: theme,
+    title: herocard.title,
+    types: types
+  } only %}
 </div>
