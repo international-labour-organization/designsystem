@@ -18,18 +18,18 @@
   &:before {
     content: "";
     background-color: $color-base-neutrals-light;
-    border: px-to-rem(4px) solid $color-base-neutrals-light;
-    height: px-to-rem(18px);
-    left: px-to-rem(3px);
+    height: px-to-rem(16px);
+    left: px-to-rem(4px);
     position: absolute;
-    top: px-to-rem(3px);
-    width: px-to-rem(18px);
+    top: px-to-rem(4px);
+    width: px-to-rem(16px);
     z-index: 1;
   }
 
   &:after {
     content: "";
     background-color: $color-base-neutrals-light;
+    border: px-to-rem(4px) solid $color-base-neutrals-light;
     height: px-to-rem(24px);
     left: 0;
     position: absolute;
@@ -42,25 +42,26 @@
     &:before {
       background-color: $color-base-blue-dark;
       background-repeat: no-repeat;
-      background-size: cover;
+      background-size: contain;
       background-position: center center;
-      border-color: $color-base-blue-dark;
       @include dataurlicon("checkmark", $color-base-neutrals-lighter);
     }
 
     &:after {
       background-color: $color-base-blue-dark;
+      border-color: $color-base-blue-dark;
     }
   }
 
   &:focus {
     &:after {
       background-color: $color-base-yellow;
+      border-color: $color-base-yellow;
     }
 
     &:checked {
-      &:before {
-        border-color: $color-base-blue-dark;
+      &:after {
+        border-color: $color-base-yellow;
       }
     }
 
@@ -80,7 +81,7 @@
     }
 
     &:checked {
-      &:before {
+      &:after {
         border-color: $color-base-blue-dark;
       }
     }
@@ -96,9 +97,7 @@
   margin-bottom: px-to-rem(22px);
 
   .ilo--fieldset--label {
-    font-family: $fonts-copy;
     font-weight: 400;
-    margin-bottom: 0;
     margin-left: px-to-rem($spacing-padding-1);
     margin-top: 2px;
     order: 2;
@@ -108,14 +107,5 @@
   .ilo--fieldset--helper {
     order: 3;
     width: 100%;
-  }
-
-  .right-to-left & {
-    direction: rtl;
-
-    .ilo--fieldset--label {
-      margin-left: 0;
-      margin-right: px-to-rem($spacing-padding-1);
-    }
   }
 }
