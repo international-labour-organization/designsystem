@@ -28,6 +28,7 @@
     transition: border $transition-timing ease-out,
       background $transition-timing ease-out, color $transition-timing ease-out;
     width: 100%;
+    @include dataurlicon("add", $color-ux-labels-actionable);
 
     &:hover,
     &:focus {
