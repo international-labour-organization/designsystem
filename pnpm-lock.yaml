@@ -5,9 +5,9 @@ importers:
   .:
     specifiers:
       '@changesets/cli': ^2.25.0
-      '@ilo-org/eslint-config': workspace:^0.0.1
-      '@ilo-org/prettier-config': workspace:^0.0.1
-      '@ilo-org/typescript-config': workspace:^0.0.1
+      '@ilo-org/eslint-config': workspace:*
+      '@ilo-org/prettier-config': workspace:*
+      '@ilo-org/typescript-config': workspace:*
       '@testing-library/jest-dom': ^5.11.4
       '@testing-library/react': ^11.1.0
       '@testing-library/user-event': ^12.1.10
@@ -145,7 +145,7 @@ importers:
   packages/icons:
     specifiers:
       '@babel/preset-env': ^7.14.2
-      '@ilo-org/icon-build-helpers': workspace:0.0.1
+      '@ilo-org/icon-build-helpers': workspace:*
       '@un/figma-connect': ^0.0.7
       browserslist-config-carbon: ^10.6.1
       rimraf: ^3.0.2
@@ -165,8 +165,8 @@ importers:
       '@babel/preset-react': ^7.16.7
       '@carbon/icon-helpers': ^10.19.0
       '@carbon/telemetry': 0.0.0-alpha.6
-      '@ilo-org/icon-build-helpers': workspace:0.0.1
-      '@ilo-org/icons': workspace:0.1.4
+      '@ilo-org/icon-build-helpers': workspace:*
+      '@ilo-org/icons': workspace:*
       babel-plugin-dev-expression: ^0.2.3
       browserslist-config-carbon: ^10.6.1
       prop-types: ^15.7.2
@@ -212,13 +212,13 @@ importers:
   packages/react:
     specifiers:
       '@ilo-org/brand-assets': workspace:*
-      '@ilo-org/eslint-config': workspace:^0.0.1
+      '@ilo-org/eslint-config': workspace:*
       '@ilo-org/fonts': workspace:*
       '@ilo-org/icons-react': workspace:*
-      '@ilo-org/prettier-config': workspace:^0.0.1
+      '@ilo-org/prettier-config': workspace:*
       '@ilo-org/styles': workspace:*
       '@ilo-org/themes': workspace:*
-      '@ilo-org/typescript-config': workspace:^0.0.1
+      '@ilo-org/typescript-config': workspace:*
       '@ilo-org/utils': workspace:*
       '@rollup/plugin-commonjs': ^17.1.0
       '@rollup/plugin-json': ^4.1.0
@@ -478,8 +478,8 @@ importers:
 
   packages/utils:
     specifiers:
-      '@ilo-org/eslint-config': workspace:^0.0.1
-      '@ilo-org/typescript-config': workspace:^0.0.1
+      '@ilo-org/eslint-config': workspace:*
+      '@ilo-org/typescript-config': workspace:*
       '@rollup/plugin-commonjs': ^17.1.0
       '@rollup/plugin-json': ^4.1.0
       '@rollup/plugin-node-resolve': ^11.2.1
