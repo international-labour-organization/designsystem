@@ -156,7 +156,7 @@ export default class Accordion {
   collapseSection(element) {
     element.parentElement
       .querySelector('.ilo--accordion--button')
-      .setAttribute(ARIA.EXPANDED, 'true');
+      .setAttribute(ARIA.EXPANDED, 'false');
     element.setAttribute(ARIA.HIDDEN, 'false');
     element.classList.remove('ilo--accordion--panel--open');
   }
@@ -171,7 +171,7 @@ export default class Accordion {
   expandSection(element) {
     element.parentElement
       .querySelector('.ilo--accordion--button')
-      .setAttribute(ARIA.EXPANDED, 'false');
+      .setAttribute(ARIA.EXPANDED, 'true');
     element.setAttribute(ARIA.HIDDEN, 'true');
     element.classList.add('ilo--accordion--panel--open');
   }

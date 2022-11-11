@@ -26,11 +26,13 @@
   }
 
   &--headline {
+    border-bottom: px-to-rem(3px) solid $color-base-neutrals-lighter;
     margin-bottom: px-to-rem($spacing-padding-3);
     margin-top: px-to-rem(9px);
     @include font-styles("base");
     font-family: $fonts-display;
     font-weight: 700;
+    padding-bottom: px-to-rem($spacing-padding-2);
   }
 
   &--wrapper {
@@ -75,7 +77,6 @@
 
   &--modal {
     display: none;
-    position: relative;
 
     & > * {
       opacity: 0;
@@ -102,7 +103,7 @@
     }
 
     .toc--modal--close {
-      bottom: 0;
+      top: 0;
       height: px-to-rem(40px);
       right: 0;
       position: absolute;
