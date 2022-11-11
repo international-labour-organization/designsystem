@@ -425,7 +425,8 @@
 
     &--volume,
     .vjs-volume-panel {
-      bottom: 1px;
+      border-bottom: 1px solid;
+      bottom: 0;
       display: none;
       flex-direction: column;
       height: 140px;
@@ -499,6 +500,7 @@
     &--setvolume,
     .vjs-volume-control {
       background: $color-ux-video-controls-hover-background;
+      border-left: 3px solid rgb(184, 196, 204);
       display: none;
       height: px-to-rem($spacing-ux-video-controls-height);
       order: 1;
@@ -506,7 +508,7 @@
       position: absolute;
       transform: rotate(270deg);
       transform-origin: -4px -4px;
-      top: 6px;
+      top: 9px;
       width: px-to-rem(138px);
     }
 

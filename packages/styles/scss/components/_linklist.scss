@@ -128,7 +128,7 @@
     }
 
     .ilo--link-list--link {
-      border-bottom: px-to-rem($borders-base) solid $color-base-purple-light;
+      border-bottom: px-to-rem($borders-base) solid rgba(237, 240, 242, 0.4);
       @include dataurlicon("arrowright", $color-base-neutrals-white);
 
       .ilo--link-list--label {

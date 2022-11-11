@@ -59,7 +59,7 @@
       background-repeat: no-repeat;
       background-size: px-to-rem(map-get($spacing, "padding-1-5"))
         px-to-rem(map-get($spacing, "padding-1-5"));
-      @include dataurlicon("copyright", $color-base-neutrals-white);
+      @include dataurlicon("info", $color-base-neutrals-white);
       content: "";
       height: px-to-rem(map-get($spacing, "padding-3"));
       position: absolute;

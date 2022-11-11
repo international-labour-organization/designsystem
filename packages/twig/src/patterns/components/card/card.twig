@@ -1,8 +1,8 @@
 {#
   CARD COMPONENT
 #}
-<div class="{{prefix}}--card {{prefix}}--card--{{theme}} {{prefix}}--card--{{variant}}{% if cornercut %} {{prefix}}--card--{{cornercut}}{% endif %}{% if color %} {{prefix}}--card--{{color}}{% endif %}{% if alignment %} {{prefix}}--card--{{alignment}}{% endif %} {% if link %} {{prefix}}--card--action{% endif %}{% if type %} 
-{{prefix}}--card--{{type}}{% endif %}{% if size %} 
+<div class="{{prefix}}--card {{prefix}}--card--{{theme}} {{prefix}}--card--{{variant}}{% if cornercut %} {{prefix}}--card--{{cornercut}}{% endif %}{% if color %} {{prefix}}--card--{{color}}{% endif %}{% if alignment %} {{prefix}}--card--{{alignment}}{% endif %} {% if link %} {{prefix}}--card--action{% endif %}{% if type %}
+{{prefix}}--card--{{type}}{% endif %}{% if size %}
 {{prefix}}--card--{{size}}{% endif %}">
 {% if type == "" %}
   {% set type = variant %}
@@ -91,7 +91,7 @@
           <div class="{{prefix}}--card--data--content-links">
             <p class="{{prefix}}--card--data--content-label">{{ dataset.links.headline }}</p>
             {% for item in dataset.links.items %}
-              {% include "@components/link/link.twig" with {  
+              {% include "@components/link/link.twig" with {
                 url: item.url,
                 label: item.label,
                 prefix: prefix,

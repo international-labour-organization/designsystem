@@ -34,9 +34,8 @@
   }
 
   &--logo {
-    min-width: 200px;
-    max-width: 100%;
-    width: 35%;
+    height: px-to-rem(48px);
+    width: auto;
   }
 
   &--secondary {
@@ -119,19 +118,19 @@
     width: px-to-rem(16px);
 
     &.facebook {
-      @include dataurlicon("facebook", $color-base-neutrals-white);
+      @include dataurlicon("facebook", $color-base-neutrals-lighter);
     }
 
     &.instagram {
-      @include dataurlicon("instagram", $color-base-neutrals-white);
+      @include dataurlicon("instagram", $color-base-neutrals-lighter);
     }
 
     &.twitter {
-      @include dataurlicon("twitter", $color-base-neutrals-white);
+      @include dataurlicon("twitter", $color-base-neutrals-lighter);
     }
 
     &.youtube {
-      @include dataurlicon("youtube", $color-base-neutrals-white);
+      @include dataurlicon("youtube", $color-base-neutrals-lighter);
     }
   }
 
@@ -295,10 +294,6 @@
       grid-area: links;
     }
 
-    &--logo {
-      width: 25%;
-    }
-
     &--secondary {
       padding: px-to-rem(18px) px-to-rem(16px);
       position: relative;
@@ -340,11 +335,6 @@
         top: 0;
         transform: scaleY(1);
       }
-    }
-
-    &--logo {
-      min-width: 133px;
-      width: 48%;
     }
 
     .connect {
