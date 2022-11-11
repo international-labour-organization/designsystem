@@ -42,8 +42,8 @@
     "@babel/core": "^7.14.6",
     "@carbon/icon-helpers": "^10.19.0",
     "@carbon/telemetry": "0.0.0-alpha.6",
-    "@ilo-org/icon-build-helpers": "workspace:0.0.1",
-    "@ilo-org/icons": "workspace:0.1.5",
+    "@ilo-org/icon-build-helpers": "workspace:*",
+    "@ilo-org/icons": "workspace:*",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "prop-types": "^15.7.2"

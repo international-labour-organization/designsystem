@@ -39,9 +39,9 @@
     "typescript": "4.3.4"
   },
   "devDependencies": {
-    "@ilo-org/eslint-config": "workspace:^0.0.1",
-    "@ilo-org/prettier-config": "workspace:^0.0.1",
-    "@ilo-org/typescript-config": "workspace:^0.0.1",
+    "@ilo-org/eslint-config": "workspace:*",
+    "@ilo-org/prettier-config": "workspace:*",
+    "@ilo-org/typescript-config": "workspace:*",
     "@rollup/plugin-commonjs": "^17.1.0",
     "@rollup/plugin-json": "^4.1.0",
     "@rollup/plugin-node-resolve": "^11.2.1",

@@ -34,7 +34,7 @@
     "prepublishOnly": "pnpm run build"
   },
   "dependencies": {
-    "@ilo-org/icon-build-helpers": "workspace:0.0.1"
+    "@ilo-org/icon-build-helpers": "workspace:*"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.14.2",
