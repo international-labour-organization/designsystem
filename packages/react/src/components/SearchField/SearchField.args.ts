@@ -1,7 +1,6 @@
 import { SearchFieldProps } from "./SearchField.props";
 
 const searchfield: SearchFieldProps = {
-  action: "",
   callback: "",
   input: {
     callback: "",
@@ -13,7 +12,6 @@ const searchfield: SearchFieldProps = {
 };
 
 const searchfielderror: SearchFieldProps = {
-  action: "",
   callback: "",
   input: {
     callback: "",
@@ -26,7 +24,6 @@ const searchfielderror: SearchFieldProps = {
 };
 
 const searchfielddisabled: SearchFieldProps = {
-  action: "",
   callback: "",
   input: {
     callback: "",
@@ -38,7 +35,6 @@ const searchfielddisabled: SearchFieldProps = {
 };
 
 const searchfieldlabel: SearchFieldProps = {
-  action: "",
   callback: "",
   input: {
     label: "Search Field",
@@ -49,7 +45,6 @@ const searchfieldlabel: SearchFieldProps = {
 };
 
 const searchfieldhelper: SearchFieldProps = {
-  action: "",
   callback: "",
   input: {
     helper: "Search Field Helper text",

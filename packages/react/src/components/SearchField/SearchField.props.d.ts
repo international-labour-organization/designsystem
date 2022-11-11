@@ -11,7 +11,7 @@ export interface SearchFieldProps {
   /**
    * Specify the action attribute for the search form
    */
-  action?: Required<string>;
+  action?: string;
 
   /**
    * Specify the properties of the submit button
