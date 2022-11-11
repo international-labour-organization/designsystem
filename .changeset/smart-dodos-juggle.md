@@ -4,4 +4,4 @@
 "@ilo-org/twig": patch
 ---
 
-Bugfixes for Form, Loading components
+Right to left for Profile component

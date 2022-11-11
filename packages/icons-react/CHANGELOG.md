@@ -1,5 +1,17 @@
 # @ilo-org/icons-react
 
+## 0.0.7
+
+### Patch Changes
+
+- aa8469ceb: Remove testing code from hero and add RTL style for tags
+- 539894a90: Hero fixes for RTL and lack of image
+- 22bda9fb8: Rename tagset to Tags to match other components and work as an npm package
+- Updated dependencies [aa8469ceb]
+- Updated dependencies [539894a90]
+- Updated dependencies [22bda9fb8]
+  - @ilo-org/icons@0.1.5
+
 ## 0.0.6
 
 ### Patch Changes
