@@ -1,5 +1,24 @@
 # @ilo-org/twig
 
+## 0.2.1
+
+### Patch Changes
+
+- b65d5c4c1: Various bugfixes
+- 487778036: CHangeset wasn't detected by github
+- ab6c0a1c7: Set all packages to rely on latest fixed version of other internal packages
+- d2b78bb88: Right to left for Profile component
+- dd2b3ece6: YHet another changeset, perhaps something is broken with changesets
+- Updated dependencies [b65d5c4c1]
+- Updated dependencies [487778036]
+- Updated dependencies [ab6c0a1c7]
+- Updated dependencies [d2b78bb88]
+- Updated dependencies [dd2b3ece6]
+  - @ilo-org/icons@0.1.6
+  - @ilo-org/styles@0.1.6
+  - @ilo-org/utils@0.0.2
+  - @ilo-org/themes@0.1.6
+
 ## 0.2.0
 
 ### Minor Changes
