@@ -1,5 +1,22 @@
 # @ilo-org/react
 
+## 0.0.10
+
+### Patch Changes
+
+- b65d5c4c1: Various bugfixes
+- ab6c0a1c7: Set all packages to rely on latest fixed version of other internal packages
+- d2b78bb88: Right to left for Profile component
+- Updated dependencies [b65d5c4c1]
+- Updated dependencies [487778036]
+- Updated dependencies [ab6c0a1c7]
+- Updated dependencies [d2b78bb88]
+- Updated dependencies [dd2b3ece6]
+  - @ilo-org/icons-react@0.0.8
+  - @ilo-org/styles@0.1.6
+  - @ilo-org/utils@0.0.2
+  - @ilo-org/themes@0.1.6
+
 ## 0.0.9
 
 ### Patch Changes
