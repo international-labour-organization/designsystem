@@ -34,9 +34,8 @@
   }
 
   &--logo {
-    min-width: 200px;
-    max-width: 100%;
-    width: 35%;
+    height: px-to-rem(48px);
+    width: auto;
   }
 
   &--secondary {
@@ -295,10 +294,6 @@
       grid-area: links;
     }
 
-    &--logo {
-      width: 25%;
-    }
-
     &--secondary {
       padding: px-to-rem(18px) px-to-rem(16px);
       position: relative;
@@ -340,11 +335,6 @@
         top: 0;
         transform: scaleY(1);
       }
-    }
-
-    &--logo {
-      min-width: 133px;
-      width: 48%;
     }
 
     .connect {
