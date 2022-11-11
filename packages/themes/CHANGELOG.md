@@ -1,5 +1,11 @@
 # @ilo-org/themes
 
+## 0.1.6
+
+### Patch Changes
+
+- ab6c0a1c7: Set all packages to rely on latest fixed version of other internal packages
+
 ## 0.1.5
 
 ### Patch Changes
