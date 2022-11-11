@@ -124,4 +124,47 @@
   .ilo--profile--name + .ilo--profile--link {
     margin-top: px-to-rem(18px);
   }
+
+  .right-to-left & {
+    direction: rtl;
+
+    .ilo--profile--avatar {
+      float: right;
+    }
+
+    .ilo--profile--contents {
+      .id {
+        margin-left: auto;
+        margin-right: calc(18.65% + 11px);
+      }
+    }
+
+    .ilo--profile--link {
+      span {
+        background-position: 10px center;
+        padding-left: 32px;
+        padding-right: 0;
+        @include dataurlicon("arrowleft", $color-link-text-default);
+      }
+
+      &:visited {
+        span {
+          @include dataurlicon("arrowleft", $color-link-text-visited);
+        }
+      }
+
+      &:active {
+        span {
+          @include dataurlicon("arrowleft", $color-link-text-active);
+        }
+      }
+
+      &:hover,
+      &:focus {
+        span {
+          @include dataurlicon("arrowleft", $color-link-text-hover);
+        }
+      }
+    }
+  }
 }
