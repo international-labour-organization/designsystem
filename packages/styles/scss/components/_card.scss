@@ -972,10 +972,6 @@
           display: flex;
           flex-wrap: wrap;
           width: 50%;
-
-          .right-to-left & {
-            flex-direction: row-reverse;
-          }
         }
 
         #{$self}--image--wrapper {
