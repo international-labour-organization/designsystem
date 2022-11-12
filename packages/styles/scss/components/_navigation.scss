@@ -240,6 +240,7 @@
     display: block;
     padding: 16px 36px 16px 8px;
     text-decoration: none;
+    transition: color 150ms ease-out, background 150ms ease-out;
 
     &:hover,
     &:focus {
