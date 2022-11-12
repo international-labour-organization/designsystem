@@ -374,6 +374,7 @@
   &--detail {
     border-bottom: px-to-rem(3px) solid $brand-ilo-grey-light;
     padding: px-to-rem(24px) 0;
+    position: relative;
 
     @include breakpoint("large") {
       padding: px-to-rem(32px) 0;
