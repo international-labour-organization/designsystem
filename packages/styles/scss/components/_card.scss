@@ -5,6 +5,7 @@
 .ilo--card {
   $self: &;
   margin: 0;
+  max-width: px-to-rem(920px);
 
   .right-to-left & {
     text-align: right;
@@ -16,7 +17,7 @@
     color: $brand-ilo-blue;
     text-decoration: none;
 
-    &#{$self}--dark:not(#{$self}--detail):not(#{$self}--data):not(#{$self}--multilink) {
+    &#{$self}--dark:not(#{$self}--detail):not(#{$self}--data):not(#{$self}--multilink):not(#{$self}--factlist) {
       background: $brand-ilo-white;
     }
 
@@ -61,7 +62,7 @@
     background: $brand-ilo-white;
   }
 
-  &--dark:not(#{$self}--detail):not(#{$self}--data):not(#{$self}--multilink):not(:hover):not(:focus) {
+  &--dark#{$self}--action:not(#{$self}--detail):not(#{$self}--data):not(#{$self}--multilink):not(:hover):not(:focus) {
     background: $brand-ilo-dark-blue;
 
     #{$self}--eyebrow {
@@ -704,6 +705,10 @@
       clip-path: polygon(90% 0, 100% 100%, 100% 100%, 0% 100%, 0% 0%);
       height: px-to-rem(40px);
       top: px-to-rem(-39.7px);
+    }
+
+    &#{$self}--dark {
+      background: $brand-ilo-dark-blue;
     }
 
     @include breakpoint("large") {
