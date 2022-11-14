@@ -1,6 +1,6 @@
 {
   "name": "@ilo-org/twig",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "license": "Apache-2.0",
   "description": "Twig components for the ILO's Design System",
   "main": "",
@@ -102,6 +102,5 @@
     "webpack": "^4.41.3",
     "yaml-loader": "^0.6.0",
     "yo": "^3.1.1"
-  },
-  "gitHead": "bfeff58b8f6e6ace1c28f31ad67d75d6f18ee5a4"
+  }
 }
