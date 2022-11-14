@@ -1,5 +1,11 @@
 # @ilo-org/utils
 
+## 0.0.3
+
+### Patch Changes
+
+- 6e470111a: Nav, Card and Hero fixes for QA
+
 ## 0.0.2
 
 ### Patch Changes
