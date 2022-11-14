@@ -5,6 +5,7 @@
 .ilo--card {
   $self: &;
   margin: 0;
+  max-width: px-to-rem(920px);
 
   .right-to-left & {
     text-align: right;
@@ -16,7 +17,7 @@
     color: $brand-ilo-blue;
     text-decoration: none;
 
-    &#{$self}--dark:not(#{$self}--detail):not(#{$self}--data):not(#{$self}--multilink) {
+    &#{$self}--dark:not(#{$self}--detail):not(#{$self}--data):not(#{$self}--multilink):not(#{$self}--factlist) {
       background: $brand-ilo-white;
     }
 
@@ -61,7 +62,7 @@
     background: $brand-ilo-white;
   }
 
-  &--dark:not(#{$self}--detail):not(#{$self}--data):not(#{$self}--multilink):not(:hover):not(:focus) {
+  &--dark#{$self}--action:not(#{$self}--detail):not(#{$self}--data):not(#{$self}--multilink):not(:hover):not(:focus) {
     background: $brand-ilo-dark-blue;
 
     #{$self}--eyebrow {
@@ -374,6 +375,7 @@
   &--detail {
     border-bottom: px-to-rem(3px) solid $brand-ilo-grey-light;
     padding: px-to-rem(24px) 0;
+    position: relative;
 
     @include breakpoint("large") {
       padding: px-to-rem(32px) 0;
@@ -705,6 +707,10 @@
       top: px-to-rem(-39.7px);
     }
 
+    &#{$self}--dark {
+      background: $brand-ilo-dark-blue;
+    }
+
     @include breakpoint("large") {
       padding: 0 px-to-rem(40px) px-to-rem(56px) px-to-rem(40px);
 
@@ -971,10 +977,6 @@
           display: flex;
           flex-wrap: wrap;
           width: 50%;
-
-          .right-to-left & {
-            flex-direction: row-reverse;
-          }
         }
 
         #{$self}--image--wrapper {

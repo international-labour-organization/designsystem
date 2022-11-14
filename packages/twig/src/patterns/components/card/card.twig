@@ -1,9 +1,7 @@
 {#
   CARD COMPONENT
 #}
-<div class="{{prefix}}--card {{prefix}}--card--{{theme}} {{prefix}}--card--{{variant}}{% if cornercut %} {{prefix}}--card--{{cornercut}}{% endif %}{% if color %} {{prefix}}--card--{{color}}{% endif %}{% if alignment %} {{prefix}}--card--{{alignment}}{% endif %} {% if link %} {{prefix}}--card--action{% endif %}{% if type %}
-{{prefix}}--card--{{type}}{% endif %}{% if size %}
-{{prefix}}--card--{{size}}{% endif %}">
+<div class="{{prefix}}--card {{prefix}}--card--{{theme}} {{prefix}}--card--{{variant}}{% if cornercut %} {{prefix}}--card--{{cornercut}}{% endif %}{% if color %} {{prefix}}--card--{{color}}{% endif %}{% if alignment %} {{prefix}}--card--{{alignment}}{% endif %}{% if link %} {{prefix}}--card--action{% endif %}{% if type %} {{prefix}}--card--{{type}}{% endif %}{% if size %} {{prefix}}--card--{{size}}{% endif %}">
 {% if type == "" %}
   {% set type = variant %}
 {% endif %}

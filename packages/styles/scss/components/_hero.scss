@@ -206,6 +206,7 @@
 
   &--dark {
     background: map-get($color, "hero", "card", "dark", "background");
+    border-bottom: 3px solid $brand-ilo-red;
     color: map-get($color, "hero", "card", "dark", "color");
 
     .ilo--hero-card--link.icon {
@@ -279,6 +280,7 @@
   }
 
   &--home {
+    border: none;
     padding: 24px;
 
     @include breakpoint("large") {
@@ -438,7 +440,7 @@
       &--facebook {
         @include dataurlicon(
           "facebook",
-          map-get($color, "hero", "card", "light", "iconhover", "background")
+          map-get($color, "hero", "card", "light", "icon", "color")
         );
 
         &:hover {
@@ -452,7 +454,7 @@
       &--twitter {
         @include dataurlicon(
           "twitter",
-          map-get($color, "hero", "card", "light", "iconhover", "background")
+          map-get($color, "hero", "card", "light", "icon", "color")
         );
 
         &:hover {
@@ -466,7 +468,7 @@
       &--linkedin {
         @include dataurlicon(
           "linkedin",
-          map-get($color, "hero", "card", "light", "iconhover", "background")
+          map-get($color, "hero", "card", "light", "icon", "color")
         );
 
         &:hover {
