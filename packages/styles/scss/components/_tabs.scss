@@ -1,5 +1,6 @@
 @use "../tokens" as *;
 @use "../functions" as *;
+@use "../animations" as *;
 @import "../mixins";
 
 .ilo--tabs {
@@ -20,6 +21,7 @@
         font-weight: inherit;
         line-height: inherit;
         text-decoration: none;
+        @include globaltransition("color, background-color, border-color");
 
         &:visited {
           background: map-get($color, "link", "background", "visited");
@@ -34,6 +36,7 @@
             map-get($color, "link", "underline", "hover");
           color: map-get($color, "link", "text", "hover");
           text-decoration: none;
+          @include globaltransition("color, background-color, border-color");
         }
 
         &:active {
@@ -74,10 +77,12 @@
         padding-right: $spacing-padding-3;
         text-decoration: none;
         @include font-styles("label-medium");
+        @include globaltransition("color, background-color, border-color");
 
         &[aria-selected="true"] {
           background-color: $color-base-neutrals-white;
           border-top: px-to-rem(3px) solid $color-ux-labels-actionable;
+          @include globaltransition("color, background-color, border-color");
         }
 
         &.icon {
@@ -98,6 +103,7 @@
           background-color: $color-base-blue-light;
           color: $color-base-blue-medium;
           outline: none;
+          @include globaltransition("color, background-color, border-color");
 
           &.has--tooltip {
             .ilo--tooltip--wrapper {

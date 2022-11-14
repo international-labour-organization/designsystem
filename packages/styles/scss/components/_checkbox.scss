@@ -102,6 +102,11 @@
     margin-bottom: 0;
     margin-top: 2px;
     order: 2;
+
+    .right-to-left & {
+      margin-left: 0;
+      margin-right: px-to-rem($spacing-padding-1);
+    }
   }
 
   .ilo--fieldset--error,
