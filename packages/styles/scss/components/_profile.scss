@@ -10,12 +10,12 @@
   &--avatar {
     border-radius: 50%;
     float: left;
-    width: 18.65%;
+    width: px-to-rem(64px);
   }
 
   &--contents {
     .id {
-      margin-left: calc(18.65% + 11px);
+      margin-left: px-to-rem(75px);
       padding-top: 5px;
 
       &:first-of-type {
@@ -135,7 +135,7 @@
     .ilo--profile--contents {
       .id {
         margin-left: auto;
-        margin-right: calc(18.65% + 11px);
+        margin-right: px-to-rem(75px);
       }
     }
 
