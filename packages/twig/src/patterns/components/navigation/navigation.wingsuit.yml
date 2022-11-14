@@ -11,6 +11,14 @@ navigation:
       preview:
         image: "https://placekitten.com/g/155/56"
         alt: Logo
+    mobilelogo:
+      type: object
+      label: Logo
+      description: Logo for the nav
+      required: true
+      preview:
+        image: "https://placekitten.com/111/40"
+        alt: Logo
     siteurl:
       type: string
       label: Site url

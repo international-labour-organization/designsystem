@@ -174,7 +174,7 @@
     display: none;
     font-family: $fonts-display;
     font-weight: 700;
-    padding: 20px 0;
+    padding: 16px 0;
     text-align: right;
 
     .right-to-left & {
@@ -240,6 +240,7 @@
     display: block;
     padding: 16px 36px 16px 8px;
     text-decoration: none;
+    transition: color 150ms ease-out, background 150ms ease-out;
 
     &:hover,
     &:focus {
@@ -452,7 +453,6 @@
 
   &--search {
     .ilo--searchfield {
-      max-width: 618px;
       width: 100%;
     }
 
