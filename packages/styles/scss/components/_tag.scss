@@ -44,6 +44,7 @@
       color: map-get($color, "tag", "text", "active");
       cursor: pointer;
       outline: none;
+      pointer-events: none;
 
       &:hover {
         background: map-get($color, "tag", "background", "hover");
@@ -55,6 +56,10 @@
         background: map-get($color, "tag", "background", "focus");
         color: map-get($color, "tag", "text", "focus");
         outline: none;
+      }
+
+      &.ilo--tag--active {
+        pointer-events: auto;
       }
     }
   }
