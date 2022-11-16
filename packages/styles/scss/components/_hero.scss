@@ -5,6 +5,7 @@
 .ilo--hero {
   background: map-get($color, "ux", "pagination", "default", "background");
   display: block;
+  position: relative;
   width: 100%;
 
   &--home {
@@ -158,6 +159,15 @@
           width: 100%;
         }
       }
+    }
+  }
+
+  .ilo--breadcrumb {
+    @include breakpoint("large") {
+      left: 0;
+      max-width: 560px;
+      position: absolute;
+      top: 0;
     }
   }
 }

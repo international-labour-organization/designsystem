@@ -2,7 +2,13 @@
   HERO COMPONENT
 #}
 <div class="{{prefix}}--hero {{prefix}}--hero--{{theme}} {{prefix}}--hero--{{types}} {% if image %}{{prefix}}--hero--image{% endif %}">
-
+  {% if breadcrumb is defined %}
+    {% include "@components/breadcrumb/breadcrumb.twig" with {
+      home: breadcrumb.home,
+      links: breadcrumb.links,
+      prefix: prefix,
+    } only %}
+  {% endif %}
   {% if not image %}
   {% else %}
     {% include "@components/image/image.twig" with {

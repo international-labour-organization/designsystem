@@ -3,6 +3,24 @@ hero:
   label: Hero
   description: The Hero presents an image banner.
   fields:
+    breadcrumb:
+      label: breadcrumb
+      type: object
+      preview:
+        home:
+          label: "Home"
+          url: "/"
+        links:
+          - label: "Link One"
+            url: "/linkone"
+          - label: "Link Two"
+            url: "/linktwo"
+          - label: "Link Three"
+            url: "/linkthree"
+          - label: "Link Four"
+            url: "/linkfour"
+          - label: "Link Five"
+            url: "/linkfive"
     image:
       type: object
       preview:
