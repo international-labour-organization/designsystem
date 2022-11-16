@@ -1,5 +1,18 @@
 # @ilo-org/twig
 
+## 0.2.2
+
+### Patch Changes
+
+- 84fd6bc7d: Bugfixes with several components
+- 6e470111a: Nav, Card and Hero fixes for QA
+- Updated dependencies [84fd6bc7d]
+- Updated dependencies [6e470111a]
+  - @ilo-org/styles@0.1.7
+  - @ilo-org/icons@0.1.7
+  - @ilo-org/themes@0.1.7
+  - @ilo-org/utils@0.0.3
+
 ## 0.2.1
 
 ### Patch Changes

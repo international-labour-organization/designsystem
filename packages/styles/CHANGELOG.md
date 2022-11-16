@@ -1,5 +1,15 @@
 # @ilo-org/styles
 
+## 0.1.7
+
+### Patch Changes
+
+- 84fd6bc7d: Bugfixes with several components
+- 6e470111a: Nav, Card and Hero fixes for QA
+- Updated dependencies [6e470111a]
+  - @ilo-org/icons@0.1.7
+  - @ilo-org/themes@0.1.7
+
 ## 0.1.6
 
 ### Patch Changes
