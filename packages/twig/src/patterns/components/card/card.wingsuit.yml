@@ -8,6 +8,11 @@ card:
       label: Title
       description: Title field
       preview: Lorem ipsum
+    isvideo:
+      type: string
+      label: Is a Video
+      description: Whether the card should display a video icon
+      preview: False
     intro:
       type: string
       label: Intro
@@ -176,6 +181,7 @@ card:
       label: Feature Card
       description: The Feature Card
       fields:
+        isvideo: true
         title: "Vertical info card descriptive headline text"
         eyebrow: Eyebrow title
         date:

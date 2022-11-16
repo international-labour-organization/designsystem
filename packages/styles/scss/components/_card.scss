@@ -218,6 +218,28 @@
     z-index: 2;
   }
 
+  &--isvideo {
+    #{$self}--image--wrapper {
+      position: relative;
+
+      &::before {
+        @include dataurlicon("play", $brand-ilo-grey-light);
+        background-color: $brand-ilo-grey-charcoal;
+        background-position: center;
+        background-size: 18px 20px;
+        background-repeat: no-repeat;
+        content: "";
+        display: block;
+        height: 40px;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 40px;
+        z-index: 1;
+      }
+    }
+  }
+
   // CARD VARIANTS
   &--multilink {
     padding: px-to-rem(24px);
