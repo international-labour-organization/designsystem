@@ -5,7 +5,7 @@
 {% if type == "" %}
   {% set type = variant %}
 {% endif %}
-  {% if link %}
+  {% if link and type != 'data' and type != 'factlist' and type != 'stat' %}
     <a class="{{prefix}}--card--link" href="{{link}}" title="{{title}}"><span class="{{prefix}}--card--link--text">{{title}}</span></a>
   {% endif %}
   <div class="{{prefix}}--card--wrap">
@@ -25,7 +25,7 @@
       {% if intro %}
         <p class="{{prefix}}--card--intro">{{intro}}</p>
       {% endif %}
-      {% if date %}
+      {% if date and type != "stat" and type != "data" and type != "graphicpromo" and type != "stat" and type != "factlist" %}
         <time class="{{prefix}}--card--date" datetime="{{date.unix}}">{{date.human}}</time>
       {% endif %}
       {% if eventdetails %}

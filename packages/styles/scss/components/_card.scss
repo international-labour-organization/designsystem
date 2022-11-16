@@ -1,5 +1,6 @@
 @use "../tokens" as *;
 @use "../functions" as *;
+@use "../animations" as *;
 @import "../mixins";
 
 .ilo--card {
@@ -52,6 +53,14 @@
     top: 0;
     width: 100%;
     z-index: 2;
+    @include globaltransition("color, background-color, border-color, opacity");
+
+    &:hover,
+    &:focus {
+      @include globaltransition(
+        "color, background-color, border-color, opacity"
+      );
+    }
 
     &--text {
       @include isVisuallyHidden();
@@ -137,10 +146,12 @@
       "body-small",
       "copy"
     );
+    @include globaltransition("color");
 
     #{$self}--link:hover &,
     #{$self}--link:focus & {
       color: $brand-ilo-blue;
+      @include globaltransition("color");
     }
   }
 
@@ -157,10 +168,12 @@
       "body-small",
       "copy"
     );
+    @include globaltransition("color");
 
     #{$self}--link:hover &,
     #{$self}--link:focus & {
       color: $brand-ilo-blue;
+      @include globaltransition("color");
     }
   }
 
@@ -168,10 +181,12 @@
     color: $brand-ilo-grey-charcoal;
     @include font-styles("body-small");
     @include textmargin("margin-bottom", 30px, "body-small", "copy", 0, 0);
+    @include globaltransition("color");
 
     #{$self}--link:hover &,
     #{$self}--link:focus & {
       color: $brand-ilo-blue;
+      @include globaltransition("color");
     }
   }
 
@@ -179,10 +194,12 @@
     color: $brand-ilo-grey-accessible;
     @include font-styles("body-small");
     @include textmargin("margin-bottom", 30px, "body-small", "copy", 0, 0);
+    @include globaltransition("color");
 
     #{$self}--link:hover &,
     #{$self}--link:focus & {
       color: $brand-ilo-blue;
+      @include globaltransition("color");
     }
   }
 
@@ -383,6 +400,11 @@
 
     &:hover,
     &:focus {
+      filter: drop-shadow(0px 0.8px 1.6px rgba(30, 45, 190, 0.038))
+        drop-shadow(0px 4px 8px rgba(30, 45, 190, 0.054))
+        drop-shadow(0px 10px 20px rgba(30, 45, 190, 0.08))
+        drop-shadow(0px -4px 16px rgba(30, 45, 190, 0.054));
+
       picture::before {
         opacity: 0.4;
         z-index: 2;
@@ -408,9 +430,9 @@
         opacity: 0;
         position: absolute;
         top: 0;
-        transition: opacity 0.15s ease-in-out;
         width: 100%;
         z-index: -1;
+        @include globaltransition("opacity");
       }
     }
 
@@ -495,6 +517,22 @@
       width: 100%;
     }
 
+    .ilo--profile--contents * {
+      color: $color-base-neutrals-white;
+    }
+
+    &:hover,
+    &:focus {
+      filter: drop-shadow(0px 0.8px 1.6px rgba(30, 45, 190, 0.038))
+        drop-shadow(0px 4px 8px rgba(30, 45, 190, 0.054))
+        drop-shadow(0px 10px 20px rgba(30, 45, 190, 0.08))
+        drop-shadow(0px -4px 16px rgba(30, 45, 190, 0.054));
+
+      .ilo--profile--contents * {
+        color: $color-base-blue-medium;
+      }
+    }
+
     @include breakpoint("medium") {
       padding: 0 px-to-rem(32px) px-to-rem(40px);
     }
@@ -575,6 +613,7 @@
     }
 
     #{$self}--date {
+      display: block;
       @include textmargin("margin-bottom", 32px, "base", "copy", 0, 0);
     }
   }
@@ -583,6 +622,14 @@
     max-width: px-to-rem(920px);
     padding: px-to-rem(40px) px-to-rem(24px);
     width: 100%;
+
+    &:hover,
+    &:focus {
+      filter: drop-shadow(0px 0.8px 1.6px rgba(30, 45, 190, 0.038))
+        drop-shadow(0px 4px 8px rgba(30, 45, 190, 0.054))
+        drop-shadow(0px 10px 20px rgba(30, 45, 190, 0.08))
+        drop-shadow(0px -4px 16px rgba(30, 45, 190, 0.054));
+    }
 
     @include breakpoint("medium") {
       padding: px-to-rem(48px);
@@ -659,6 +706,7 @@
 
     &#{$self}--light:not(:hover) #{$self}--title {
       color: $brand-ilo-grey-charcoal;
+      @include globaltransition("color");
     }
 
     #{$self}--title {
@@ -700,6 +748,7 @@
     border-bottom: px-to-rem(3px) solid $brand-ilo-grey-ui;
     max-width: px-to-rem(856px);
     padding: 0 px-to-rem(24px) px-to-rem(48px) px-to-rem(24px);
+    pointer-events: none;
 
     &.ilo--card--cornercut:not(.ilo--card--multilink):not(.ilo--card--detail):not(.ilo--card--feature)::before {
       clip-path: polygon(90% 0, 100% 100%, 100% 100%, 0% 100%, 0% 0%);
@@ -750,6 +799,7 @@
 
       #{$self}--title {
         color: $brand-ilo-white;
+        @include globaltransition("color");
       }
 
       .ilo--list__item {
@@ -757,6 +807,18 @@
 
         &:last-of-type {
           margin-bottom: 0;
+        }
+      }
+
+      &:hover,
+      &:focus {
+        #{$self}--title {
+          color: $brand-ilo-white;
+          @include globaltransition("color");
+        }
+
+        .ilo--list__item {
+          color: $brand-ilo-white;
         }
       }
     }
@@ -850,6 +912,11 @@
     max-width: px-to-rem(600px);
     padding: 0 px-to-rem(24px) px-to-rem(56px);
 
+    &:hover,
+    &:focus {
+      background: $brand-ilo-light-blue;
+    }
+
     &::before {
       clip-path: polygon(90% 0, 100% 100%, 100% 100%, 0% 100%, 0% 0%);
       height: px-to-rem(40px);
@@ -922,7 +989,6 @@
 
   &--feature {
     border-bottom: px-to-rem(3px) solid $brand-ilo-grey-ui;
-    filter: drop-shadow(0 4px 4px rgba($brand-ilo-black, 0.25));
     display: flex;
     margin-top: 0;
     position: relative;
@@ -935,14 +1001,23 @@
       border-bottom: px-to-rem(3px) solid $brand-ilo-purple;
     }
 
+    picture::before {
+      @include globaltransition("opacity");
+    }
+
     &:hover,
     &:focus {
       background-color: $brand-ilo-white;
+      filter: drop-shadow(0px 0.8px 1.6px rgba(30, 45, 190, 0.038))
+        drop-shadow(0px 4px 8px rgba(30, 45, 190, 0.054))
+        drop-shadow(0px 10px 20px rgba(30, 45, 190, 0.08))
+        drop-shadow(0px -4px 16px rgba(30, 45, 190, 0.054));
       border-bottom: px-to-rem(3px) solid $brand-ilo-blue;
 
       picture::before {
         opacity: 0.4;
         z-index: 1;
+        @include globaltransition("opacity");
       }
 
       #{$self}--image {
