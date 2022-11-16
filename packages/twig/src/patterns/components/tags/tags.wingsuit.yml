@@ -20,7 +20,7 @@ tags:
         - content: content 3
           id: tag3
           defaultActive: false
-  settings: 
+  settings:
     allowMultipleActive:
       type: select
       label: Allow Multiple Active
@@ -38,6 +38,7 @@ tags:
         anchor: Anchor
         button: Button
         display: Display
+        reset: Reset
       preview: display
       required: true
   visibility: storybook

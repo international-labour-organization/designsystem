@@ -1,5 +1,11 @@
 # @ilo-org/themes
 
+## 0.1.7
+
+### Patch Changes
+
+- 6e470111a: Nav, Card and Hero fixes for QA
+
 ## 0.1.6
 
 ### Patch Changes

@@ -1,5 +1,14 @@
 # @ilo-org/icons-react
 
+## 0.0.9
+
+### Patch Changes
+
+- 5a4806edb: Upgrading pnpm is expected to fix workspace deps not being fixed to version numbers in package.json. This should fix broken installs of the react-icons and react packages.
+- 6e470111a: Nav, Card and Hero fixes for QA
+- Updated dependencies [6e470111a]
+  - @ilo-org/icons@0.1.7
+
 ## 0.0.8
 
 ### Patch Changes
