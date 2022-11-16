@@ -104,10 +104,10 @@
       clip-path: polygon(90% 0, 100% 100%, 100% 100%, 0% 100%, 0% 0%);
       content: "";
       display: block;
-      height: px-to-rem(40px);
+      height: px-to-rem(30px);
       left: 0;
       position: absolute;
-      top: px-to-rem(-39.7px);
+      top: px-to-rem(-29.7px);
       width: 100%;
 
       .right-to-left & {
@@ -115,13 +115,13 @@
       }
 
       @include breakpoint("medium") {
-        height: px-to-rem(48px);
-        top: px-to-rem(-47.7px);
+        height: px-to-rem(38px);
+        top: px-to-rem(-37.7px);
       }
 
       @include breakpoint("large") {
-        height: px-to-rem(64px);
-        top: px-to-rem(-63.7px);
+        height: px-to-rem(58px);
+        top: px-to-rem(-57.7px);
       }
     }
   }
@@ -608,11 +608,11 @@
       padding: px-to-rem(48px);
 
       @include breakpoint("medium") {
-        padding: px-to-rem(48px);
+        padding: px-to-rem(48px) px-to-rem(48px) px-to-rem(64px) px-to-rem(48px);
       }
 
       @include breakpoint("large") {
-        padding: px-to-rem(48px);
+        padding: px-to-rem(48px) px-to-rem(48px) px-to-rem(64px) px-to-rem(48px);
       }
     }
 
