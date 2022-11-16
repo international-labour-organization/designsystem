@@ -789,7 +789,7 @@
 
   &--stat {
     border-bottom: px-to-rem(3px) solid $brand-ilo-purple;
-    padding: 0 px-to-rem(24px) px-to-rem(24px) px-to-rem(30px);
+    padding: 0 px-to-rem(24px) px-to-rem(40px) px-to-rem(22px);
     width: 100%;
 
     &::before {
@@ -834,7 +834,7 @@
     #{$self}--intro {
       color: $brand-ilo-dark-blue;
       @include font-styles("nav-md-sm");
-      @include textmargin("margin-bottom", 40px, "nav-md-sm", "copy", 0, 0);
+      @include textmargin("margin-bottom", 35px, "nav-md-sm", "copy", 0, 0);
       width: 100%;
     }
 
