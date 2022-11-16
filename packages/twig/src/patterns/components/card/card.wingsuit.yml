@@ -119,7 +119,6 @@ card:
       description: The graphic Card
       fields:
         title: "Brief title text - ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod"
-        intro: ""
         eyebrow: Eyebrow title
         date:
           human: 20 September 2022
@@ -128,13 +127,11 @@ card:
         profile:
           avatar: "https://placekitten.com/128/128"
           description: "Firstname Lastname is the Senior Media Strategist. He has been with ILO for eight years."
-          link: 
+          link:
             - label: "Optional Link"
               url: "https://www.google.com"
           name: "Firstname Lastname"
           role: "Senior Media Strategist"
-        cta: ""
-        eventdetails: ""
     stat:
       label: Stat Card
       description: The stat Card
@@ -143,17 +140,8 @@ card:
         cornercut: cornercut
       fields:
         title: "Date headline"
-        image: ""
         intro: "Data title - Lorem ipsum dolor sit amet consectetur"
-        eyebrow: ""
-        date:
-          human: ""
-          unix: 1670389200
-        link: ""
-        profile: ""
-        eventdetails: ""
-        cta: ""
-        source: 
+        source:
           label: "Source: lorem ipsum dolor sit amet, 2020"
           url: "https://www.google.com/search?q=stat"
     multilink:
@@ -165,21 +153,9 @@ card:
         title: "Multi-link card - right aligned image, wide option"
         image: "https://placekitten.com/475/267"
         intro: "Lorem ipsum dolor sit amet consectetur adipiscing elit. Lobortis egestas ipsum dolor sit amet consectetur adipiscing elit. Lobortis egestas ipsum dolor sit amet consectetur adipiscing elit. Lobortis egestas lacus."
-        eyebrow: ""
-        date:
-          human: ""
-          unix: 1670389200
-        link: ""
-        profile: ""
-        eventdetails: ""
-        cta: ""
-        source: ""
-        dataset: ""
         linklist:
-          headline: ""
           linkgroup:
-            - headline: ""
-              links:
+            - links:
                 - label: Link One
                   url: 'http://www.google.com'
                 - label: Link Two
@@ -191,16 +167,9 @@ card:
       description: The graphic promo Card
       fields:
         title: "Brief title text - ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod"
-        image: ""
         intro: "We advance social justice and promote decent work by setting labour standards, developing policies and devising programmes."
-        eyebrow: ""
-        date:
-          human: ""
-          unix: 1670389200
         link: "https://www.google.com/search?q=graphic-promo"
-        profile: ""
-        eventdetails: ""
-        cta: 
+        cta:
           label: "Discover our unique mission"
           url: "https://www.google.com/search?q=button"
     feature:
@@ -208,15 +177,12 @@ card:
       description: The Feature Card
       fields:
         title: "Vertical info card descriptive headline text"
-        intro: ""
         eyebrow: Eyebrow title
         date:
           human: Date
           unix: 1670389200
         link: "https://www.google.com/search?q=graphic"
         image: "https://placekitten.com/412/232"
-        profile:
-        eventdetails: ""
     detail:
       label: Detail Card
       description: The Detail Card
@@ -237,22 +203,11 @@ card:
       description: The Fact List Card
       fields:
         title: "Title of fast fact list"
-        intro: ""
-        eyebrow: ""
-        date:
-          human: ""
-          unix: 1670389200
-        link: ""
-        image: ""
-        profile: ""
-        eventdetails: ""
-        cta: ""
-        list: 
-          title: ""
+        list:
           settings:
             - ordered: unordered
             - alignment: default
-          items: 
+          items:
             - content: "Wipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor."
               id: "list1"
             - content: "Nut labore et dolore magna sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
@@ -261,27 +216,17 @@ card:
       label: Data Card
       description: The Data Card
       fields:
-        title: ""
-        image: "https://placekitten.com/205/179"
-        intro: ""
         eyebrow: "Event details"
-        date:
-          human: ""
-          unix: 1670389200
-        link: ""
-        profile: ""
-        eventdetails: ""
-        cta: ""
-        dataset: 
-          content: 
-            items: 
+        dataset:
+          content:
+            items:
               - label: Date
                 copy: Publication date
               - label: Event type
                 copy: Event location
           files:
             headline: Files
-            items: 
+            items:
               - label: File/size MB 1
                 url: "https://www.google.com/search?q=file1"
               - label: File/size MB 2
@@ -290,7 +235,7 @@ card:
                 url: "https://www.google.com/search?q=file3"
           links:
             headline: Languages
-            items: 
+            items:
               - label: Language link 1
                 url: "https://www.google.com/search?q=link"
               - label: Language link 2
