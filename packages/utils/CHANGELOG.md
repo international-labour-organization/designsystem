@@ -1,5 +1,11 @@
 # @ilo-org/utils
 
+## 0.0.4
+
+### Patch Changes
+
+- a76395618: ESC exits out of toggle menus in the nav
+
 ## 0.0.3
 
 ### Patch Changes

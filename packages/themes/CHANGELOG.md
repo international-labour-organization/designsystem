@@ -1,5 +1,13 @@
 # @ilo-org/themes
 
+## 0.1.8
+
+### Patch Changes
+
+- 069cd8eaf: FIxes to cards
+- a76395618: ESC exits out of toggle menus in the nav
+- 8cd74234c: Bugfixes to Tag, Tooltip, Callout, Checkbox, LinkList
+
 ## 0.1.7
 
 ### Patch Changes

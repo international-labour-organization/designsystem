@@ -1,5 +1,20 @@
 # @ilo-org/twig
 
+## 0.2.3
+
+### Patch Changes
+
+- 069cd8eaf: FIxes to cards
+- a76395618: ESC exits out of toggle menus in the nav
+- 8cd74234c: Bugfixes to Tag, Tooltip, Callout, Checkbox, LinkList
+- Updated dependencies [069cd8eaf]
+- Updated dependencies [a76395618]
+- Updated dependencies [8cd74234c]
+  - @ilo-org/styles@0.1.8
+  - @ilo-org/themes@0.1.8
+  - @ilo-org/icons@0.1.8
+  - @ilo-org/utils@0.0.4
+
 ## 0.2.2
 
 ### Patch Changes
