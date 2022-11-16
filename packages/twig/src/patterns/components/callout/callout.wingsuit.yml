@@ -15,24 +15,6 @@ callout:
       description: The callout's content
       preview:
         faker: lorem.word
-    isCollapsible:
-      type: select
-      label: Is Collapsible
-      description: Whether or not the callout is collapsible
-      required: false
-      options:
-        true: True
-        false: False
-      preview: false
-    isOpen:
-      type: select
-      label: Is Open
-      description: Whether or not a collapsible callout is open
-      required: false
-      options:
-        true: True
-        false: False
-      preview: true
     title:
       type: string
       label: Notification Title
@@ -63,4 +45,22 @@ callout:
         success: Success
         warning: Warning
       preview: 'info'
+    isCollapsible:
+      type: select
+      label: Is Collapsible?
+      description: Whether or not the callout is collapsible
+      required: true
+      options:
+        true: True
+        false: False
+      preview: false
+    isOpen:
+      type: select
+      label: Is Open
+      description: Whether or not a collapsible callout is open on page load
+      required: false
+      options:
+        true: True
+        false: False
+      preview: true
   visibility: storybook

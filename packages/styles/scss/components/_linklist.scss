@@ -81,6 +81,7 @@
     padding-right: px-to-rem($spacing-padding-4);
     text-decoration: none;
     @include dataurlicon("arrowright", $color-link-text-default);
+    @include globaltransition("color, background-color, border-color");
 
     &:visited {
       color: map-get($color, "link", "text", "default");

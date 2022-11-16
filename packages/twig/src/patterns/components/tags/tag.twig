@@ -8,6 +8,12 @@
       <span class="ilo--icon" title="Remove"></span>
     </button>
   </li>
+{% elseif tagType == "reset" %}
+  <li class="{{prefix}}--tags__item">
+    <button class="{{prefix}}--tag {{prefix}}--tag--reset {{prefix}}--tag--active" id="{{ id }}" data-active={{ defaultActive }} type="button">
+      {{content}}
+    </button>
+  </li>
 {% elseif tagType == "anchor" %}
 <li class="{{prefix}}--tags__item">
     <a class="{{prefix}}--tag {{prefix}}--tag--anchor {% if defaultActive %} {{prefix}}--tag--active{% endif %}" href="{{ url }}"  id="{{ id }}" data-active={{ defaultActive }}>
