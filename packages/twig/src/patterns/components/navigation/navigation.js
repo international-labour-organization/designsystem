@@ -63,6 +63,7 @@ export default class Navigation {
     );
     this.contextLinks = this.element.querySelectorAll(`.${this.prefix}--context-menu--link`);
     this.languageLinks = this.element.querySelectorAll(`.${this.prefix}--nav--language`);
+    this.body = document.body;
 
     return this;
   }
@@ -74,15 +75,23 @@ export default class Navigation {
    * @chainable
    */
   setupHandlers() {
-    this.subnavOpenClick = this.handleSubnavClickOpen.bind(this);
+    this.subnavClick = this.handleSubnavClick.bind(this);
+    this.subnavClickOff = this.handleSubnavClickOff.bind(this);
+    this.subnavClickOn = this.handleSubnavClickOn.bind(this);
     this.subnavBackClick = this.handleSubnavBackClick.bind(this);
     this.menuCloseClick = this.handleMenuCloseClick.bind(this);
     this.menuOpenClick = this.handleMenuOpenClick.bind(this);
-    this.searchButtonClick = this.handleSearchButtonClick.bind(this);
-    this.contextButtonClick = this.handleContextButtonClick.bind(this);
     this.languageButtonClick = this.handleLanguageButtonClick.bind(this);
     this.contextLinkClick = this.handleContextLinkClick.bind(this);
     this.onResize = this.handleResize.bind(this);
+    this.keyPress = this.handleKeyPress.bind(this);
+    this.bodyClick = this.removeClass.bind(this);
+    this.contextButtonClick = this.handleContextButtonClick.bind(this);
+    this.contextButtonClickOff = this.handleContextButtonClickOff.bind(this);
+    this.contextButtonClickOn = this.handleContextButtonClickOn.bind(this);
+    this.searchButtonClick = this.handleSearchButtonClick.bind(this);
+    this.searchButtonClickOff = this.handleSearchButtonClickOff.bind(this);
+    this.searchButtonClickOn = this.handleSearchButtonClickOn.bind(this);
 
     return this;
   }
@@ -96,8 +105,8 @@ export default class Navigation {
   enable() {
     // subnavButton
     if (this.subnavButton) {
-      this.subnavButton.addEventListener(EVENTS.CLICK, () => this.subnavOpenClick());
-      this.subnavButton.addEventListener(EVENTS.TOUCH_START, () => this.subnavOpenClick());
+      this.subnavButton.addEventListener(EVENTS.CLICK, (e) => this.subnavClick(e));
+      this.subnavButton.addEventListener(EVENTS.TOUCH_START, (e) => this.subnavClick(e));
     }
 
     // subnavBack
@@ -110,8 +119,8 @@ export default class Navigation {
 
     // searchButton
     if (this.searchButton) {
-      this.searchButton.addEventListener(EVENTS.CLICK, () => this.searchButtonClick());
-      this.searchButton.addEventListener(EVENTS.TOUCH_START, () => this.searchButtonClick());
+      this.searchButton.addEventListener(EVENTS.CLICK, (e) => this.searchButtonClick(e));
+      this.searchButton.addEventListener(EVENTS.TOUCH_START, (e) => this.searchButtonClick(e));
     }
     // menuCloseSet
     if (this.menuCloseSet.length > 0) {
@@ -129,8 +138,8 @@ export default class Navigation {
 
     // contextButton
     if (this.contextButton) {
-      this.contextButton.addEventListener(EVENTS.CLICK, () => this.contextButtonClick());
-      this.contextButton.addEventListener(EVENTS.TOUCH_START, () => this.contextButtonClick());
+      this.contextButton.addEventListener(EVENTS.CLICK, (e) => this.contextButtonClick(e));
+      this.contextButton.addEventListener(EVENTS.TOUCH_START, (e) => this.contextButtonClick(e));
     }
 
     // languageButton
@@ -161,6 +170,22 @@ export default class Navigation {
   }
 
   /**
+   * Onclick interaction with the body element
+   *
+   * @param {String} classText - Class name to remove from the element on body click
+   * @return {Object} Navigation A reference to the instance of the class
+   * @chainable
+   */
+  removeClass(e, classText) {
+    e.stopImmediatePropagation();
+    e.stopPropagation();
+
+    this.element.classList.remove(classText);
+
+    return this;
+  }
+
+  /**
    * Onclick interaction with the context links
    *
    * @return {Object} Navigation A reference to the instance of the class
@@ -169,6 +194,26 @@ export default class Navigation {
   handleContextLinkClick(event) {
     event.preventDefault();
     this.callback(event);
+
+    return this;
+  }
+
+  /**
+   * Actions performed on key press
+   *
+   * @param {Event} e - event object
+   * @param {Function} callback - function to call if the escape key is pressed
+   *
+   * @return {Object} Nav A reference to the instance of the class
+   * @chainable
+   */
+  handleKeyPress(e, callback) {
+    if (e.key === 'Escape') {
+      // this.element.classList.remove(`${this.prefix}--context--open`);
+      // this.element.classList.remove(`${this.prefix}--subnav--open`);
+      // this.element.classList.remove(`${this.prefix}--search--open`);
+      callback(e);
+    }
 
     return this;
   }
@@ -191,8 +236,56 @@ export default class Navigation {
    * @return {Object} Navigation A reference to the instance of the class
    * @chainable
    */
-  handleContextButtonClick() {
-    this.element.classList.toggle(`${this.prefix}--context--open`);
+  handleContextButtonClickOn(e) {
+    e.stopImmediatePropagation();
+    // e.stopPropagation();
+    this.element.classList.add(`${this.prefix}--context--open`);
+    window.addEventListener(
+      EVENTS.KEY_DOWN,
+      (ev) => this.keyPress(ev, this.contextButtonClickOff),
+      false
+    );
+    this.body.addEventListener(EVENTS.CLICK, (ev) => this.handleContextButtonClickOff(ev), false);
+
+    return this;
+  }
+
+  /**
+   * Onclick interaction with the context menu button
+   *
+   * @return {Object} Navigation A reference to the instance of the class
+   * @chainable
+   */
+  handleContextButtonClickOff(e) {
+    e.stopImmediatePropagation();
+    // e.stopPropagation();
+    this.element.classList.remove(`${this.prefix}--context--open`);
+    window.removeEventListener(
+      EVENTS.KEY_DOWN,
+      (ev) => this.keyPress(ev, this.contextButtonClickOff),
+      false
+    );
+    this.body.removeEventListener(
+      EVENTS.CLICK,
+      (ev) => this.handleContextButtonClickoff(ev, `${this.prefix}--context--open`),
+      false
+    );
+
+    return this;
+  }
+
+  /**
+   * Onclick interaction with the context menu button
+   *
+   * @return {Object} Navigation A reference to the instance of the class
+   * @chainable
+   */
+  handleContextButtonClick(e) {
+    if (this.element.classList.contains(`${this.prefix}--context--open`)) {
+      this.contextButtonClickOff(e);
+    } else {
+      this.contextButtonClickOn(e);
+    }
 
     return this;
   }
@@ -203,9 +296,53 @@ export default class Navigation {
    * @return {Object} Navigation A reference to the instance of the class
    * @chainable
    */
-  handleSearchButtonClick() {
-    this.element.classList.toggle(`${this.prefix}--search--open`);
+  handleSearchButtonClickOn(e) {
+    e.stopImmediatePropagation();
+    // e.stopPropagation();
+    this.element.classList.add(`${this.prefix}--search--open`);
+    window.addEventListener(
+      EVENTS.KEY_DOWN,
+      (ev) => this.keyPress(ev, this.searchButtonClickOff),
+      false
+    );
+
+    return this;
+  }
+
+  /**
+   * Onclick interaction with the search button
+   *
+   * @return {Object} Navigation A reference to the instance of the class
+   * @chainable
+   */
+  handleSearchButtonClickOff(e) {
+    e.stopImmediatePropagation();
+    // e.stopPropagation();
+    this.element.classList.remove(`${this.prefix}--search--open`);
+    window.removeEventListener(
+      EVENTS.KEY_DOWN,
+      (ev) => this.keyPress(ev, this.searchButtonClickOff),
+      false
+    );
+
+    return this;
+  }
+
+  /**
+   * Onclick interaction with the search button
+   *
+   * @return {Object} Navigation A reference to the instance of the class
+   * @chainable
+   */
+  handleSearchButtonClick(e) {
+    // this.element.classList.toggle(`${this.prefix}--search--open`);
     this.element.classList.remove(`${this.prefix}--subnav--open`);
+
+    if (this.element.classList.contains(`${this.prefix}--search--open`)) {
+      this.searchButtonClickOff(e);
+    } else {
+      this.searchButtonClickOn(e);
+    }
 
     return this;
   }
@@ -223,14 +360,53 @@ export default class Navigation {
   }
 
   /**
+   * Onclick interaction with the subnav button
+   *
+   * @return {Object} Navigation A reference to the instance of the class
+   * @chainable
+   */
+  handleSubnavClickOn(e) {
+    e.stopImmediatePropagation();
+    // e.stopPropagation();
+    this.element.classList.add(`${this.prefix}--subnav--open`);
+    window.addEventListener(EVENTS.KEY_DOWN, (ev) => this.keyPress(ev, this.subnavClickOff), false);
+
+    return this;
+  }
+
+  /**
+   * Onclick interaction with the subnav button
+   *
+   * @return {Object} Navigation A reference to the instance of the class
+   * @chainable
+   */
+  handleSubnavClickOff(e) {
+    e.stopImmediatePropagation();
+    // e.stopPropagation();
+    this.element.classList.remove(`${this.prefix}--subnav--open`);
+    window.removeEventListener(
+      EVENTS.KEY_DOWN,
+      (ev) => this.keyPress(ev, this.subnavClickOff),
+      false
+    );
+
+    return this;
+  }
+
+  /**
    * Onclick interaction with the Subnav button
    *
    * @return {Object} Navigation A reference to the instance of the class
    * @chainable
    */
-  handleSubnavClickOpen() {
-    this.element.classList.toggle(`${this.prefix}--subnav--open`);
+  handleSubnavClick(e) {
     this.element.classList.remove(`${this.prefix}--search--open`);
+
+    if (this.element.classList.contains(`${this.prefix}--subnav--open`)) {
+      this.subnavClickOff(e);
+    } else {
+      this.subnavClickOn(e);
+    }
 
     return this;
   }
@@ -242,7 +418,8 @@ export default class Navigation {
    * @chainable
    */
   handleSubnavBackClick() {
-    this.element.classList.remove(`${this.prefix}--subnav--open`);
+    // this.element.classList.remove(`${this.prefix}--subnav--open`);
+    this.subnavClickOff(e);
     this.element.classList.remove(`${this.prefix}--select--open`);
 
     return this;

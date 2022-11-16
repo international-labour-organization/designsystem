@@ -488,7 +488,7 @@
     width: 32px;
 
     .right-to-left & {
-      clip-path: polygon(0 0, 0 100%, 100% 100%);
+      clip-path: polygon(0 0, 0 100%, 100% 0);
       left: auto;
       right: -32px;
     }
