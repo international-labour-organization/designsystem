@@ -596,7 +596,7 @@
     }
 
     &#{$self}--dark {
-      border-bottom: px-to-rem(3px) solid $brand-ilo-purple;
+      border-bottom: px-to-rem(3px) solid $color-base-red-medium;
     }
 
     #{$self}--eyebrow {
@@ -817,7 +817,7 @@
     }
 
     &#{$self}--dark {
-      border-bottom: px-to-rem(3px) solid $brand-ilo-red;
+      border-bottom: px-to-rem(3px) solid $color-base-red-medium;
 
       #{$self}--title {
         color: $brand-ilo-white;
@@ -1020,7 +1020,7 @@
     }
 
     &#{$self}--dark {
-      border-bottom: px-to-rem(3px) solid $brand-ilo-purple;
+      border-bottom: px-to-rem(3px) solid $color-base-red-medium;
 
       .ilo--link-list {
         border-top: 2px solid rgba($brand-ilo-grey-light, 0.25);
