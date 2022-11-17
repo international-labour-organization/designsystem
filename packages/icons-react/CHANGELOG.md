@@ -1,5 +1,15 @@
 # @ilo-org/icons-react
 
+## 0.0.10
+
+### Patch Changes
+
+- 069cd8eaf: FIxes to cards
+- a76395618: ESC exits out of toggle menus in the nav
+- 9bfb1eae1: Remove stray yarn files that were causing changesets to use yarn istead of pnpm to publish to npm.
+- Updated dependencies [a76395618]
+  - @ilo-org/icons@0.1.8
+
 ## 0.0.9
 
 ### Patch Changes

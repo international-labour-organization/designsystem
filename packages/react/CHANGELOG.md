@@ -1,5 +1,19 @@
 # @ilo-org/react
 
+## 0.0.12
+
+### Patch Changes
+
+- a76395618: ESC exits out of toggle menus in the nav
+- Updated dependencies [069cd8eaf]
+- Updated dependencies [a76395618]
+- Updated dependencies [8cd74234c]
+- Updated dependencies [9bfb1eae1]
+  - @ilo-org/icons-react@0.0.10
+  - @ilo-org/styles@0.1.8
+  - @ilo-org/themes@0.1.8
+  - @ilo-org/utils@0.0.4
+
 ## 0.0.11
 
 ### Patch Changes
