@@ -97,6 +97,7 @@
   margin-bottom: px-to-rem(22px);
 
   .ilo--fieldset--label {
+    font-family: unquote("#{$fonts-copy}, sans-serif");
     font-weight: 400;
     line-height: 1;
     margin-left: px-to-rem($spacing-padding-1);

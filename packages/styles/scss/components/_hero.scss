@@ -5,6 +5,7 @@
 .ilo--hero {
   background: map-get($color, "ux", "pagination", "default", "background");
   display: block;
+  position: relative;
   width: 100%;
 
   &--home {
@@ -160,6 +161,18 @@
       }
     }
   }
+
+  .ilo--breadcrumb {
+    left: 0;
+    max-width: 560px;
+    position: absolute;
+    top: 0;
+
+    .right-to-left & {
+      left: auto;
+      right: 0;
+    }
+  }
 }
 
 .ilo--hero-card {
@@ -187,13 +200,17 @@
     }
 
     @include breakpoint("large") {
-      height: 64px;
-      top: -63.7px;
+      height: 56px;
+      top: -55.7px;
     }
   }
 
   @include breakpoint("large") {
     padding: 0 70px 70px 56px;
+
+    &.ilo--hero-card--graphic {
+      padding: 0 70px 44px 56px;
+    }
   }
 
   .right-to-left & {
@@ -206,7 +223,7 @@
 
   &--dark {
     background: map-get($color, "hero", "card", "dark", "background");
-    border-bottom: 3px solid $brand-ilo-red;
+    border-bottom: 3px solid $color-base-red-medium;
     color: map-get($color, "hero", "card", "dark", "color");
 
     .ilo--hero-card--link.icon {
@@ -283,12 +300,34 @@
     border: none;
     padding: 24px;
 
+    &::before {
+      display: none;
+    }
+
     @include breakpoint("large") {
       bottom: 72px;
       max-width: 720px;
       padding: 0 48px 48px 72px;
       position: absolute;
       width: 100%;
+
+      &::before {
+        background: inherit;
+        clip-path: polygon(90% 0, 100% 100%, 100% 100%, 0% 100%, 0% 0%);
+        content: "";
+        display: block;
+        height: 59px;
+        left: 0;
+        position: absolute;
+        top: -58.7px;
+        width: 100%;
+
+        .right-to-left & {
+          clip-path: polygon(100% 0, 100% 100%, 100% 100%, 0% 100%, 10% 0%);
+          left: auto;
+          right: 0;
+        }
+      }
 
       &.ilo--hero-card--center {
         left: 50%;
@@ -308,10 +347,12 @@
     }
 
     &.ilo--hero-card--dark {
-      background: rgba(
-        map-get($color, "hero", "card", "dark", "background"),
-        0.55
-      );
+      @include breakpoint("large") {
+        background: rgba(
+          map-get($color, "hero", "card", "dark", "background"),
+          0.55
+        );
+      }
     }
   }
 
@@ -328,10 +369,10 @@
   }
 
   &--publication {
-    margin-top: -64px;
     padding: 24px;
 
     @include breakpoint("large") {
+      margin-top: -64px;
       max-width: 720px;
       padding: 0 48px 48px 72px;
       width: 100%;
@@ -340,35 +381,21 @@
 
   &--datecopy {
     @include font-styles("body-small");
-    @include textmargin("margin-bottom", 40px, "body-small", "copy", 0, 0);
+    margin-bottom: px-to-rem(28px);
 
     color: map-get($color, "hero", "card", "light", "datecopy", "color");
   }
 
   &--eyebrow {
     @include font-styles("body-small");
-    @include textmargin(
-      "margin-bottom",
-      32px,
-      "body-small",
-      "copy",
-      "headline-2",
-      "display"
-    );
+    margin-bottom: px-to-rem(16px);
 
     color: map-get($color, "hero", "card", "light", "eyebrow", "color");
   }
 
   &--intro {
     @include font-styles("body-small");
-    @include textmargin(
-      "margin-bottom",
-      40px,
-      "base",
-      "copy",
-      "body-small",
-      "copy"
-    );
+    margin-bottom: px-to-rem(28px);
 
     @include breakpoint("large") {
       @include font-styles("base");

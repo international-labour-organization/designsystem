@@ -218,6 +218,28 @@
     z-index: 2;
   }
 
+  &--isvideo {
+    #{$self}--image--wrapper {
+      position: relative;
+
+      &::before {
+        @include dataurlicon("play", $brand-ilo-grey-light);
+        background-color: $brand-ilo-grey-charcoal;
+        background-position: center;
+        background-size: 18px 20px;
+        background-repeat: no-repeat;
+        content: "";
+        display: block;
+        height: 40px;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 40px;
+        z-index: 1;
+      }
+    }
+  }
+
   // CARD VARIANTS
   &--multilink {
     padding: px-to-rem(24px);
@@ -574,7 +596,7 @@
     }
 
     &#{$self}--dark {
-      border-bottom: px-to-rem(3px) solid $brand-ilo-purple;
+      border-bottom: px-to-rem(3px) solid $color-base-red-medium;
     }
 
     #{$self}--eyebrow {
@@ -623,6 +645,11 @@
     padding: px-to-rem(40px) px-to-rem(24px);
     width: 100%;
 
+    &.ilo--card--cornercut:not(.ilo--card--multilink):not(.ilo--card--detail):not(.ilo--card--feature)::before {
+      height: px-to-rem(40px);
+      top: px-to-rem(-39.7px);
+    }
+
     &:hover,
     &:focus {
       filter: drop-shadow(0px 0.8px 1.6px rgba(30, 45, 190, 0.038))
@@ -633,10 +660,20 @@
 
     @include breakpoint("medium") {
       padding: px-to-rem(48px);
+
+      &.ilo--card--cornercut:not(.ilo--card--multilink):not(.ilo--card--detail):not(.ilo--card--feature)::before {
+        height: px-to-rem(64px);
+        top: px-to-rem(-63.7px);
+      }
     }
 
     @include breakpoint("large") {
       padding: px-to-rem(64px) px-to-rem(72px);
+
+      &.ilo--card--cornercut:not(.ilo--card--multilink):not(.ilo--card--detail):not(.ilo--card--feature)::before {
+        height: px-to-rem(64px);
+        top: px-to-rem(-63.7px);
+      }
     }
 
     &#{$self}--wide {
@@ -752,8 +789,8 @@
 
     &.ilo--card--cornercut:not(.ilo--card--multilink):not(.ilo--card--detail):not(.ilo--card--feature)::before {
       clip-path: polygon(90% 0, 100% 100%, 100% 100%, 0% 100%, 0% 0%);
-      height: px-to-rem(34px);
-      top: px-to-rem(-33.7px);
+      height: px-to-rem(40px);
+      top: px-to-rem(-39.7px);
     }
 
     &#{$self}--dark {
@@ -795,7 +832,7 @@
     }
 
     &#{$self}--dark {
-      border-bottom: px-to-rem(3px) solid $brand-ilo-red;
+      border-bottom: px-to-rem(3px) solid $color-base-red-medium;
 
       #{$self}--title {
         color: $brand-ilo-white;
@@ -854,7 +891,7 @@
     padding: 0 px-to-rem(24px) px-to-rem(40px) px-to-rem(22px);
     width: 100%;
 
-    &::before {
+    &.ilo--card--cornercut:not(.ilo--card--multilink):not(.ilo--card--detail):not(.ilo--card--feature)::before {
       clip-path: polygon(75% 0, 100% 100%, 100% 100%, 0% 100%, 0% 0%);
       height: px-to-rem(40px);
       top: px-to-rem(-39.7px);
@@ -903,6 +940,13 @@
     .ilo--link {
       @include font-styles("image-credit");
       align-self: flex-end;
+    }
+
+    @include breakpoint("large") {
+      &.ilo--card--cornercut:not(.ilo--card--multilink):not(.ilo--card--detail):not(.ilo--card--feature)::before {
+        height: px-to-rem(48px);
+        top: px-to-rem(-47.7px);
+      }
     }
   }
 
@@ -998,7 +1042,26 @@
     }
 
     &#{$self}--dark {
-      border-bottom: px-to-rem(3px) solid $brand-ilo-purple;
+      border-bottom: px-to-rem(3px) solid $color-base-red-medium;
+
+      .ilo--link-list {
+        border-top: 2px solid rgba($brand-ilo-grey-light, 0.25);
+
+        &--link {
+          color: $brand-ilo-white;
+          @include dataurlicon("arrowright", $brand-ilo-white);
+        }
+      }
+
+      &:hover,
+      &:focus {
+        .ilo--link-list {
+          &--link {
+            color: $brand-ilo-blue;
+            @include dataurlicon("arrowright", $brand-ilo-blue);
+          }
+        }
+      }
     }
 
     picture::before {
@@ -1022,6 +1085,22 @@
 
       #{$self}--image {
         filter: saturate(0);
+      }
+    }
+
+    .ilo--link-list {
+      border-top: px-to-rem(2px) solid $brand-ilo-grey-light;
+      margin-left: px-to-rem(-24px);
+      margin-right: px-to-rem(-24px);
+      margin-top: px-to-rem(34px);
+      position: relative;
+      z-index: 2;
+
+      &--link,
+      &--link:hover {
+        border-bottom: none;
+        padding-left: px-to-rem(24px);
+        padding-right: px-to-rem(24px);
       }
     }
 
@@ -1106,6 +1185,11 @@
 
     #{$self}--content {
       padding: px-to-rem(24px) px-to-rem(24px) px-to-rem(40px);
+    }
+    &#{$self}--linklist {
+      #{$self}--content {
+        padding-bottom: 0;
+      }
     }
 
     #{$self}--title {
