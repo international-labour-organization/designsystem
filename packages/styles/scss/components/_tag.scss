@@ -41,13 +41,13 @@
 
   &--anchor {
     cursor: unset;
+    pointer-events: none;
 
     &.ilo--tag--active {
       background: map-get($color, "tag", "background", "active");
       color: map-get($color, "tag", "text", "active");
       cursor: pointer;
       outline: none;
-      pointer-events: none;
 
       &:hover {
         background: map-get($color, "tag", "background", "hover");
