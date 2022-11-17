@@ -8,4 +8,5 @@
 "@ilo-org/utils": patch
 ---
 
-External link and video icon for feature card
+- Hero: Breadcrumb add in
+- Cards: Video icon for feature and external link option
