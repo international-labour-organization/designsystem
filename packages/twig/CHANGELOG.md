@@ -1,5 +1,19 @@
 # @ilo-org/twig
 
+## 0.2.4
+
+### Patch Changes
+
+- 48e7a4ada: - Hero: Breadcrumb add in
+  - Cards: Video icon for feature and external link option
+- 2bfdfd356: Fixes to Hero, Cards components
+- Updated dependencies [48e7a4ada]
+- Updated dependencies [2bfdfd356]
+  - @ilo-org/icons@0.1.9
+  - @ilo-org/styles@0.1.9
+  - @ilo-org/themes@0.1.9
+  - @ilo-org/utils@0.0.5
+
 ## 0.2.3
 
 ### Patch Changes

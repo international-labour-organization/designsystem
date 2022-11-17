@@ -1,5 +1,12 @@
 # @ilo-org/themes
 
+## 0.1.9
+
+### Patch Changes
+
+- 48e7a4ada: - Hero: Breadcrumb add in
+  - Cards: Video icon for feature and external link option
+
 ## 0.1.8
 
 ### Patch Changes
