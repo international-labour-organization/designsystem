@@ -70,6 +70,11 @@ card:
       label: Link List
       description: Multi-link list
       preview:
+    externallink:
+      type: object
+      label: External Link
+      description: External link
+      preview:
     dataset:
       type: object
       label: Data set
@@ -189,6 +194,16 @@ card:
           unix: 1670389200
         link: "https://www.google.com/search?q=graphic"
         image: "https://placekitten.com/412/232"
+        linklist:
+          headline: ""
+          linkgroup:
+            - headline: ""
+              links:
+                - label: Link One
+                  url: 'http://www.google.com'
+        # externallink:
+        #     label: Link One
+        #     url: 'https://www.google.com'
     detail:
       label: Detail Card
       description: The Detail Card

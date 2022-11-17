@@ -1,7 +1,7 @@
 {#
   CARD COMPONENT
 #}
-<div class="{{prefix}}--card {{prefix}}--card--{{theme}} {{prefix}}--card--{{variant}}{% if cornercut %} {{prefix}}--card--{{cornercut}}{% endif %}{% if color %} {{prefix}}--card--{{color}}{% endif %}{% if alignment %} {{prefix}}--card--{{alignment}}{% endif %}{% if link %} {{prefix}}--card--action{% endif %}{% if type %} {{prefix}}--card--{{type}}{% endif %}{% if size %} {{prefix}}--card--{{size}}{% endif %}{% if isvideo %} {{prefix}}--card--isvideo{% endif %}">
+<div class="{{prefix}}--card {{prefix}}--card--{{theme}} {{prefix}}--card--{{variant}}{% if cornercut %} {{prefix}}--card--{{cornercut}}{% endif %}{% if color %} {{prefix}}--card--{{color}}{% endif %}{% if alignment %} {{prefix}}--card--{{alignment}}{% endif %}{% if link %} {{prefix}}--card--action{% endif %}{% if type %} {{prefix}}--card--{{type}}{% endif %}{% if size %} {{prefix}}--card--{{size}}{% endif %}{% if isvideo %} {{prefix}}--card--isvideo{% endif %}{% if linklist is defined %} {{prefix}}--card--linklist{% endif %}">
 {% if type == "" %}
   {% set type = variant %}
 {% endif %}
@@ -67,7 +67,7 @@
         {% include "@components/linklist/linklist.twig" with {
           headline: linklist.headline,
           linkgroup: linklist.linkgroup,
-          prefix: prefix,
+          prefix: prefix
         } only %}
       {% endif %}
       {% if dataset %}
@@ -92,7 +92,7 @@
               {% include "@components/link/link.twig" with {
                 url: item.url,
                 label: item.label,
-                prefix: prefix,
+                prefix: prefix
               } %} <span>&nbsp;</span>
             {% endfor %}
           </div>
@@ -100,4 +100,7 @@
       {% endif %}
     </div>
   </div>
+  {% if externallink is defined %}
+    <a href="{{externallink.url}}" class="{{prefix}}--card--external">{{externallink.label}}</a>
+  {% endif %}
 </div>

@@ -1021,6 +1021,25 @@
 
     &#{$self}--dark {
       border-bottom: px-to-rem(3px) solid $brand-ilo-purple;
+
+      .ilo--link-list {
+        border-top: 2px solid rgba($brand-ilo-grey-light, 0.25);
+
+        &--link {
+          color: $brand-ilo-white;
+          @include dataurlicon("arrowright", $brand-ilo-white);
+        }
+      }
+
+      &:hover,
+      &:focus {
+        .ilo--link-list {
+          &--link {
+            color: $brand-ilo-blue;
+            @include dataurlicon("arrowright", $brand-ilo-blue);
+          }
+        }
+      }
     }
 
     picture::before {
@@ -1044,6 +1063,22 @@
 
       #{$self}--image {
         filter: saturate(0);
+      }
+    }
+
+    .ilo--link-list {
+      border-top: px-to-rem(2px) solid $brand-ilo-grey-light;
+      margin-left: px-to-rem(-24px);
+      margin-right: px-to-rem(-24px);
+      margin-top: px-to-rem(34px);
+      position: relative;
+      z-index: 2;
+
+      &--link,
+      &--link:hover {
+        border-bottom: none;
+        padding-left: px-to-rem(24px);
+        padding-right: px-to-rem(24px);
       }
     }
 
@@ -1128,6 +1163,11 @@
 
     #{$self}--content {
       padding: px-to-rem(24px) px-to-rem(24px) px-to-rem(40px);
+    }
+    &#{$self}--linklist {
+      #{$self}--content {
+        padding-bottom: 0;
+      }
     }
 
     #{$self}--title {
