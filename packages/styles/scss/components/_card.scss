@@ -645,6 +645,11 @@
     padding: px-to-rem(40px) px-to-rem(24px);
     width: 100%;
 
+    &.ilo--card--cornercut:not(.ilo--card--multilink):not(.ilo--card--detail):not(.ilo--card--feature)::before {
+      height: px-to-rem(40px);
+      top: px-to-rem(-39.7px);
+    }
+
     &:hover,
     &:focus {
       filter: drop-shadow(0px 0.8px 1.6px rgba(30, 45, 190, 0.038))
@@ -655,10 +660,20 @@
 
     @include breakpoint("medium") {
       padding: px-to-rem(48px);
+
+      &.ilo--card--cornercut:not(.ilo--card--multilink):not(.ilo--card--detail):not(.ilo--card--feature)::before {
+        height: px-to-rem(64px);
+        top: px-to-rem(-63.7px);
+      }
     }
 
     @include breakpoint("large") {
       padding: px-to-rem(64px) px-to-rem(72px);
+
+      &.ilo--card--cornercut:not(.ilo--card--multilink):not(.ilo--card--detail):not(.ilo--card--feature)::before {
+        height: px-to-rem(64px);
+        top: px-to-rem(-63.7px);
+      }
     }
 
     &#{$self}--wide {
@@ -774,8 +789,8 @@
 
     &.ilo--card--cornercut:not(.ilo--card--multilink):not(.ilo--card--detail):not(.ilo--card--feature)::before {
       clip-path: polygon(90% 0, 100% 100%, 100% 100%, 0% 100%, 0% 0%);
-      height: px-to-rem(34px);
-      top: px-to-rem(-33.7px);
+      height: px-to-rem(40px);
+      top: px-to-rem(-39.7px);
     }
 
     &#{$self}--dark {
@@ -876,7 +891,7 @@
     padding: 0 px-to-rem(24px) px-to-rem(40px) px-to-rem(22px);
     width: 100%;
 
-    &::before {
+    &.ilo--card--cornercut:not(.ilo--card--multilink):not(.ilo--card--detail):not(.ilo--card--feature)::before {
       clip-path: polygon(75% 0, 100% 100%, 100% 100%, 0% 100%, 0% 0%);
       height: px-to-rem(40px);
       top: px-to-rem(-39.7px);
@@ -925,6 +940,13 @@
     .ilo--link {
       @include font-styles("image-credit");
       align-self: flex-end;
+    }
+
+    @include breakpoint("large") {
+      &.ilo--card--cornercut:not(.ilo--card--multilink):not(.ilo--card--detail):not(.ilo--card--feature)::before {
+        height: px-to-rem(48px);
+        top: px-to-rem(-47.7px);
+      }
     }
   }
 
