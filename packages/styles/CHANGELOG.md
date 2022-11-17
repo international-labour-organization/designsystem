@@ -1,5 +1,16 @@
 # @ilo-org/styles
 
+## 0.1.9
+
+### Patch Changes
+
+- 48e7a4ada: - Hero: Breadcrumb add in
+  - Cards: Video icon for feature and external link option
+- 2bfdfd356: Fixes to Hero, Cards components
+- Updated dependencies [48e7a4ada]
+  - @ilo-org/icons@0.1.9
+  - @ilo-org/themes@0.1.9
+
 ## 0.1.8
 
 ### Patch Changes

@@ -1,5 +1,18 @@
 # @ilo-org/react
 
+## 0.0.13
+
+### Patch Changes
+
+- 48e7a4ada: - Hero: Breadcrumb add in
+  - Cards: Video icon for feature and external link option
+- Updated dependencies [48e7a4ada]
+- Updated dependencies [2bfdfd356]
+  - @ilo-org/icons-react@0.0.11
+  - @ilo-org/styles@0.1.9
+  - @ilo-org/themes@0.1.9
+  - @ilo-org/utils@0.0.5
+
 ## 0.0.12
 
 ### Patch Changes

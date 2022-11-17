@@ -1,5 +1,14 @@
 # @ilo-org/icons-react
 
+## 0.0.11
+
+### Patch Changes
+
+- 48e7a4ada: - Hero: Breadcrumb add in
+  - Cards: Video icon for feature and external link option
+- Updated dependencies [48e7a4ada]
+  - @ilo-org/icons@0.1.9
+
 ## 0.0.10
 
 ### Patch Changes
