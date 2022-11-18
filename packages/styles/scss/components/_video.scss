@@ -746,3 +746,17 @@
 .ilo--video--container {
   position: relative;
 }
+
+.right-to-left & {
+  .ilo--video--caption {
+    border-left: none;
+    border-right: 3px solid #b8c4cc;
+    padding-left: 0;
+    padding-right: px-to-rem(map-get($spacing, "padding-1"));
+  }
+
+  .ilo--credit {
+    left: auto;
+    right: 0;
+  }
+}
