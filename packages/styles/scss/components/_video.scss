@@ -747,10 +747,11 @@
   position: relative;
 }
 
-.right-to-left & {
+.right-to-left {
   .ilo--video--caption {
     border-left: none;
     border-right: 3px solid #b8c4cc;
+    direction: rtl;
     padding-left: 0;
     padding-right: px-to-rem(map-get($spacing, "padding-1"));
   }
