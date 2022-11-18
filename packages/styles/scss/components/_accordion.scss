@@ -3,7 +3,8 @@
 @import "../mixins";
 
 .ilo--accordion {
-  $transition-timing: 0.15s;
+  $transition-timing: 150ms;
+  $transition-timing-long: 225ms;
 
   &--button {
     align-items: center;
@@ -80,7 +81,8 @@
     font-family: $fonts-copy;
     height: 0px;
     overflow: hidden;
-    transition: height 0.5s ease-out, padding 0.5s ease-out;
+    transition: height $transition-timing-long ease-out,
+      padding $transition-timing-long ease-out;
 
     .ilo--accordion--innerpanel {
       padding-bottom: px-to-rem($spacing-ui-padding-xxl);
@@ -91,7 +93,8 @@
 
     &--open {
       height: var(--height);
-      transition: height 0.5s ease-out, padding 0.5s ease-out;
+      transition: height $transition-timing-long ease-out,
+        padding $transition-timing-long ease-out;
     }
 
     &.collapsing,
