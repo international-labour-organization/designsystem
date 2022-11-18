@@ -92,6 +92,7 @@ export default class Tooltip {
     if (target != null) {
       const rect = target.getBoundingClientRect();
       this.tooltip.classList.add(`${this.prefix}--tooltip--visible`);
+      this.tooltip.classList.add(`${this.prefix}--tooltip--fade`);
       this.postMouseOver(rect);
     }
 
@@ -99,7 +100,10 @@ export default class Tooltip {
   }
 
   handleOnMouseOut(e) {
-    this.tooltip.classList.remove(`${this.prefix}--tooltip--visible`);
+    this.tooltip.classList.remove(`${this.prefix}--tooltip--fade`);
+    setTimeout(() => {
+      this.tooltip.classList.remove(`${this.prefix}--tooltip--visible`);
+    }, 150);
 
     return this;
   }

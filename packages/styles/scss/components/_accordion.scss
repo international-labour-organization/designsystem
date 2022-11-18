@@ -3,7 +3,8 @@
 @import "../mixins";
 
 .ilo--accordion {
-  $transition-timing: 0.15s;
+  $transition-timing: 150ms;
+  $transition-timing-long: 225ms;
 
   &--button {
     align-items: center;
@@ -22,13 +23,19 @@
     @include font-styles("label-medium");
     justify-content: space-between;
     margin: 0;
-    padding: px-to-rem(calc($spacing-ui-padding-lg - 9px)) px-to-rem(36px)
-      px-to-rem(calc($spacing-ui-padding-lg - 9px)) 0;
+    padding: px-to-rem(calc($spacing-ui-padding-lg - 6px)) px-to-rem(36px)
+      px-to-rem(calc($spacing-ui-padding-lg - 6px)) 0;
     text-align: left;
     transition: border $transition-timing ease-out,
       background $transition-timing ease-out, color $transition-timing ease-out;
     width: 100%;
     @include dataurlicon("add", $color-ux-labels-actionable);
+
+    &--large {
+      @include font-styles("headline-6");
+      padding: px-to-rem(calc($spacing-ui-padding-lg - 3px)) px-to-rem(36px)
+        px-to-rem(calc($spacing-ui-padding-lg - 3px)) 0;
+    }
 
     &:hover,
     &:focus {
@@ -48,9 +55,15 @@
     }
 
     @include breakpoint("large") {
-      @include font-styles("label-large");
-      padding: px-to-rem(calc($spacing-ui-padding-xl - 16px)) px-to-rem(36px)
-        px-to-rem(calc($spacing-ui-padding-xl - 16px)) 0;
+      @include font-styles("label-medium");
+      padding: px-to-rem(calc($spacing-ui-padding-xl - 14px)) px-to-rem(36px)
+        px-to-rem(calc($spacing-ui-padding-xl - 14px)) 0;
+
+      &--large {
+        @include font-styles("headline-6");
+        padding: px-to-rem(calc($spacing-ui-padding-lg - 3px)) px-to-rem(36px)
+          px-to-rem(calc($spacing-ui-padding-lg - 3px)) 0;
+      }
     }
 
     &[aria-expanded="true"] {
@@ -68,7 +81,8 @@
     font-family: $fonts-copy;
     height: 0px;
     overflow: hidden;
-    transition: height 0.5s ease-out, padding 0.5s ease-out;
+    transition: height $transition-timing-long ease-out,
+      padding $transition-timing-long ease-out;
 
     .ilo--accordion--innerpanel {
       padding-bottom: px-to-rem($spacing-ui-padding-xxl);
@@ -79,7 +93,8 @@
 
     &--open {
       height: var(--height);
-      transition: height 0.5s ease-out, padding 0.5s ease-out;
+      transition: height $transition-timing-long ease-out,
+        padding $transition-timing-long ease-out;
     }
 
     &.collapsing,

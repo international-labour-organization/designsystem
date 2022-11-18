@@ -4,7 +4,7 @@
 
 .ilo--callout {
   display: flex;
-  transition: max-height 0.2s ease-in-out;
+  transition: max-height 225ms ease-out;
   $self: &;
 
   &--collapse:not(.ilo--callout--open) {
@@ -76,7 +76,7 @@
       right: -3px;
       top: 50%;
       transform: translateY(-50%) rotate(0);
-      transition: transform 0.2s ease-in-out;
+      transition: transform 225ms ease-out;
       width: 23px;
     }
   }

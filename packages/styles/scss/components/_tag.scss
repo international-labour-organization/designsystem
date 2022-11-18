@@ -24,11 +24,9 @@
   color: map-get($color, "tag", "text", "default");
   display: inline-block;
   font-family: map-get($fonts, "display");
-  font-size: inherit;
   font-weight: 500;
-  line-height: inherit;
-  padding: px-to-rem(10px) px-to-rem(map-get($spacing, "ui-padding-sm"))
-    px-to-rem(8px) px-to-rem(map-get($spacing, "ui-padding-sm"));
+  padding: px-to-rem(7px) px-to-rem(map-get($spacing, "ui-padding-sm"))
+    px-to-rem(5px) px-to-rem(map-get($spacing, "ui-padding-sm"));
   text-decoration: none;
   $self: &;
   @include globaltransition("color, background-color, border-color");
@@ -92,13 +90,16 @@
     &.icon__position--right {
       .ilo--icon {
         @include dataurlicon("close", map-get($color, "tag", "text", "active"));
-
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
         height: 100%;
-        max-height: 28px;
-        max-width: 28px;
+        max-height: 24px;
+        max-width: 24px;
         position: absolute;
-        right: 5px;
-        top: 5px;
+        right: 10px;
+        top: 50%;
+        transform: translateY(-50%);
         width: 100%;
       }
     }
