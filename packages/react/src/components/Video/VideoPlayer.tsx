@@ -181,6 +181,7 @@ const VideoPlayer: FC<VideoPlayerProps> = ({
         url={src as any}
         width="100%"
         height="100%"
+        progressInterval={30}
         volume={volume}
         onProgress={handleProgress}
         onDuration={handleDuration}
