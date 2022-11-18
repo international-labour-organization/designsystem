@@ -201,6 +201,12 @@
       }
     }
 
+    &:not(.notplayed) {
+      .ilo--video--controls--play {
+        background-size: 24px 24px;
+      }
+    }
+
     &--pause,
     .vjs-playing {
       @include iconbutton(
