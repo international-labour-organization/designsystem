@@ -9,7 +9,24 @@
 
   &--unordered {
     list-style: initial;
-    list-style-type: disclosure-closed;
+    list-style-type: none;
+
+    li {
+      &::before {
+        content: "";
+        display: inline-block;
+        height: px-to-rem(14px);
+        left: px-to-rem(-12px);
+        position: absolute;
+        top: 6px;
+        width: px-to-rem(12px);
+        @include dataurlicon("listarrow", $color-base-neutrals-light);
+      }
+      margin-bottom: px-to-rem(map-get($spacing, "padding-4"));
+      margin-left: px-to-rem(12px);
+      padding-left: px-to-rem(12px);
+      position: relative;
+    }
   }
 
   &--unstyled {
