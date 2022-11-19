@@ -50,6 +50,11 @@ const VideoPlayer: FC<VideoPlayerProps> = ({
    */
   const videoElement = createRef();
 
+  /**
+   * Ref for the video container
+   */
+  const videoContainer = createRef();
+
   const youtubeparams = {
     controls: 0,
     modestbranding: 1,
@@ -68,7 +73,7 @@ const VideoPlayer: FC<VideoPlayerProps> = ({
   const toggleFullscreen = () => {
     /* This is a known issue with ReactPlayer */
     /* @ts-ignore */
-    screenfull.request(findDOMNode(videoElement.current));
+    screenfull.request(findDOMNode(videoContainer.current));
   };
 
   /**
@@ -162,7 +167,10 @@ const VideoPlayer: FC<VideoPlayerProps> = ({
   };
 
   return (
-    <div className={`${baseClass}--container`}>
+    <div
+      className={`${baseClass}--container`}
+      ref={videoContainer as React.RefObject<HTMLDivElement>}
+    >
       <ReactPlayer
         className={playerClasses}
         config={playerconfig as any}
@@ -173,6 +181,7 @@ const VideoPlayer: FC<VideoPlayerProps> = ({
         url={src as any}
         width="100%"
         height="100%"
+        progressInterval={30}
         volume={volume}
         onProgress={handleProgress}
         onDuration={handleDuration}

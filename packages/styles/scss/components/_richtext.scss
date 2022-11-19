@@ -191,7 +191,7 @@
         position: absolute;
         top: 6px;
         width: px-to-rem(12px);
-        @include dataurlicon("listarrow");
+        @include dataurlicon("listarrow", $color-base-neutrals-light);
       }
       margin-bottom: px-to-rem(map-get($spacing, "padding-4"));
       margin-left: px-to-rem(12px);
