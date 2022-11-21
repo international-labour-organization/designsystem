@@ -1,14 +1,5 @@
 # ILO Design System - React Package
 
-## Status: Proof of Concept
-
-This package provides the implementation of the Design System using [React](https://reactjs.org/). It also includes a [Storybook](https://storybook.js.org/) project for documentation and development of React components.
-
-<div style={{paddingTop: '40px', color: 'inherit'}}>
-	<h2 style={{fontFamily: 'Overpass', fontSize: '56.95px', fontWeight: '700', marginBottom: '40px', border: 'none'}}>ILO Design System</h2>
-	<h3 style={{fontFamily: 'Overpass', fontSize: '45.56px', fontWeight: '700', marginBottom: '40px'}}>Getting Started</h3>
-</div>
-
 This package provides the implementation of the Design System using [React](https://reactjs.org). It also includes a [Storybook](https://storybook.js.org/) project for documentation and development of the components in the system. It has dependencies on the following other @ilo-org packages:
 
 - [@ilo-org/themes](./packages/themes)
@@ -18,7 +9,7 @@ This package provides the implementation of the Design System using [React](http
 - [@ilo-org/icons](./packages/icons)
 - [@ilo-org/icons-react](./packages/icons-react)
 
-<h4 style={{fontFamily: 'Overpass', fontSize: '29px', fontWeight: '700', marginBottom: '40px', marginTop: '40px'}}>Installation and PNPM Commands</h4>
+## Installation and PNPM Commands
 
 To install
 
