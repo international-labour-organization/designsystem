@@ -4,11 +4,6 @@ herocard:
   description: The Hero card
   id: herocard
   fields:
-    alignment:
-      type: string
-      label: Alignment
-      description: alignment for card
-      preview: "center"
     datecopy:
       type: string
       label: Date copy
@@ -40,4 +35,14 @@ herocard:
       label: Title
       description: This is the title for the hero card
       preview: "This is an centered aligned article headline that is more than two lines long"
+  settings:
+    alignment:
+      type: select
+      label: Alignment
+      description: alignment for card
+      options:
+        left: 'left'
+        center: 'center'
+        right: 'right'
+      preview: "center"
   visibility: storybook

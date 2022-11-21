@@ -41,13 +41,14 @@ linklist:
               url: 'http://www.google.com'
             - label: Section 2 Link Five Is Slightly Longer
               url: 'http://www.google.com'
+  settings:
     theme:
       type: select
       label: Theme
       description: Is this link list on a light or dark background?
       required: true
       options:
-        primary: Light
-        secondary: Dark
+        light: Light
+        dark: Dark
       preview: 'light'
   visibility: storybook
