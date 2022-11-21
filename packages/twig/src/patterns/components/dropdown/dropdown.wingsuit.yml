@@ -4,29 +4,17 @@ dropdown:
   description: The Dropdown displays a select element with options, and is most
     commonly used in forms.
   fields:
-    autocomplete:
-      type: string
-      label: autocomplete
-      description: Should this field autocomplete
-      preview: false
-      required: false
     defaultValue:
       type: string
       label: defaultValue
       description: The default value of the select
       preview: "option one"
       required: true
-    disabled:
-      type: boolean
-      label: disabled
-      description: Is this field disabled?
-      preview: false
-      required: false
     error:
       type: string
       label: error
       description: Does this have an error? If so, the error message
-      preview: false
+      preview: ''
       required: false
     helper:
       type: string
@@ -68,4 +56,23 @@ dropdown:
           value: "four"
         - label: "Option Five"
           value: "the fifth"
+  settings:
+    autocomplete:
+      type: select
+      label: autocomplete
+      description: Should this field autocomplete
+      options:
+        true: 'true'
+        false: false
+      preview: false
+      required: false
+    disabled:
+      type: select
+      label: disabled
+      description: Is this field disabled?
+      options:
+        true: 'true'
+        false: false
+      preview: false
+      required: false
   visibility: storybook

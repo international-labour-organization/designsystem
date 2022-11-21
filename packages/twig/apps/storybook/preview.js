@@ -7,20 +7,18 @@ const namespaces = require('../../src/namespaces');
 initJsBehaviors('Drupal');
 
 addParameters({
+  viewMode: 'docs',
+  previewTabs: {
+    'storybook/docs/panel': {
+      index: 1,
+      title: 'Documentation',
+    },
+    canvas: { title: 'Canvas', hidden: false },
+  },
   options: {
     storySort: {
       method: 'alphabetical',
-      order: [
-        'Welcome',
-        'Layout',
-        'Tokens',
-        ['Colors', 'Typography', 'Scales'],
-        'Atoms',
-        'Molecules',
-        'Organisms',
-        'Templates',
-        'Pages',
-      ],
+      order: ['Welcome', 'Intro', 'Tokens', ['Colors', 'Typography']],
       locales: 'en-US',
     },
   },

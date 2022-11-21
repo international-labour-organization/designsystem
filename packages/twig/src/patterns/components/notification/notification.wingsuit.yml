@@ -28,17 +28,6 @@ notification:
       description: The headline of the notification
       required: true
       preview: 'With CTA'
-    type:
-      type: select
-      label: Type
-      description: What kind of notification is it?
-      required: true
-      options:
-        error: Error
-        info: Info
-        success: Success
-        warning: Warning
-      preview: 'info'
     timestamp:
       type: object
       label: Timestamp
@@ -55,4 +44,15 @@ notification:
         inline: Inline
         dialog: Dialog
       preview: 'dialog'
+    type:
+      type: select
+      label: Type
+      description: What kind of notification is it?
+      required: true
+      options:
+        error: Error
+        info: Info
+        success: Success
+        warning: Warning
+      preview: 'info'
   visibility: storybook

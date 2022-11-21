@@ -5,21 +5,6 @@ accordion:
     related content on a page. Click the accordions below to
     expand/collapse the accordion content.
   fields:
-    size:
-      type: select
-      label: Size
-      description: The size of the accordion.
-      required: false
-      options:
-        small: Small
-        large: Large
-      preview: small
-    allowMultipleExpanded:
-      type: string
-      label: Allow Multiple Expanded
-      description: Allow mutiple accordion items to be expandable at once.
-      preview: 'true'
-      required: false
     items:
       type: object
       label: Items
@@ -34,26 +19,23 @@ accordion:
           content: "<p>Content of Item 2</p><p>Content of Item 2</p><p>Content of Item 2</p><p>Content of Item 2</p><p>Content of Item 2</p>"
           id: item2
           defaultExpanded: false
-  variants:
-    default:
-      label: Default
-      description: the default settings for the Accordion
-    expanded:
-      label: Expanded
-      description: The Accordion with panels opened on page load
-      fields:
-        items:
-          - label: label 1
-            content: "<p>Content of Item 1</p><p>Content of Item 1</p><p>Content of Item 1</p><p>Content of Item 1</p><p>Content of Item 1</p>"
-            id: item1
-            defaultExpanded: 'true'
-          - label: label 2
-            content: "<p>Content of Item 2</p><p>Content of Item 2</p><p>Content of Item 2</p><p>Content of Item 2</p><p>Content of Item 2</p>"
-            id: item2
-            defaultExpanded: 'true'
-    multiple:
+  settings:
+    size:
+      type: select
+      label: Size
+      description: The size of the accordion.
+      required: false
+      options:
+        small: Small
+        large: Large
+      preview: small
+    allowMultipleExpanded:
+      type: select
       label: Allow Multiple Expanded
-      description: The Accordion set to allow multiple panels to be expanded at once
-      fields:
-        allowMultipleExpanded: 'true'
+      description: Allow mutiple accordion items to be expandable at once.
+      options:
+        true: True
+        false: False
+      preview: 'true'
+      required: false
   visibility: storybook

@@ -1,24 +1,69 @@
 import { Meta, Canvas } from '@storybook/addon-docs/blocks';
 import { Badge } from '@storybook/components';
-import { getStorybook, storiesOf} from '@storybook/react';
+import { getStorybook, storiesOf } from '@storybook/react';
 import LinkTo from '@storybook/addon-links/react';
 
-
-<Meta title="Welcome"
-  parameters={{ viewMode: 'docs', previewTabs: { canvas: { hidden: true }}}}
+<Meta
+  title="Welcome"
+  parameters={{ viewMode: 'docs', previewTabs: { canvas: { hidden: true } } }}
 />
 
-## ILO Design system
-# Twig Component Library
+### Current Project Status: _Proof of Concept_
 
-<div style={{paddingTop: '40px'}}>
-  Tokens
-  <Canvas>
-    <LinkTo story="page" kind="Tokens/Colors">
-      <Badge status="neutral">Colors</Badge>
-    </LinkTo>
-    <LinkTo story="page" kind="Tokens/Typography">
-      <Badge status="neutral">Typography</Badge>
-    </LinkTo>
-  </Canvas>
+Browse example stories now by navigating to them in the sidebar.
+View their code in the `src/stories` directory to learn how they work.
+
+<div style={{ paddingTop: '40px', color: 'inherit' }}>
+  <h2
+    style={{
+      fontFamily: 'Overpass',
+      fontSize: '56.95px',
+      fontWeight: '700',
+      marginBottom: '40px',
+      border: 'none',
+    }}
+  >
+    ILO Design System
+  </h2>
+  <h3
+    style={{ fontFamily: 'Overpass', fontSize: '45.56px', fontWeight: '700', marginBottom: '40px' }}
+  >
+    Twig Component Library 0.2.3
+  </h3>
+  <a
+    class="ilo--button ilo--button--large ilo--button--primary optionalclass"
+    href="/docs/introduction--page"
+    target="true"
+    rel="noopener noreferrer"
+    style={{ color: 'inherit', marginRight: '20px' }}
+  >
+    <span class="link__label">Get started</span>
+  </a>
+  <a
+    class="ilo--button ilo--button--large ilo--button--primary optionalclass"
+    href="https://github.com/international-labour-organization/designsystem"
+    target="true"
+    rel="noopener noreferrer"
+    style={{ color: 'inherit', marginRight: '20px' }}
+  >
+    <span class="link__label">Follow on Github</span>
+  </a>
+  <a
+    class="ilo--button ilo--button--large ilo--button--primary optionalclass"
+    href="https://brand.ilo.org"
+    target="true"
+    rel="noopener noreferrer"
+    style={{ color: 'inherit', marginRight: '20px' }}
+  >
+    <span class="link__label">See Design Docs</span>
+  </a>
+  <a
+    class="ilo--button ilo--button--large ilo--button--primary optionalclass"
+    href="https://ilo-ui-react.netlify.app"
+    target="true"
+    rel="noopener noreferrer"
+    style={{ color: 'inherit', marginRight: '20px' }}
+  >
+    <span class="link__label">ILO Design System for React</span>
+  </a>
 </div>
