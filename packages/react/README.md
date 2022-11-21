@@ -53,26 +53,26 @@ To test formatting and fix errors
 pnpm lint:fix
 ```
 
-<h4 style={{fontFamily: 'Overpass', fontSize: '29px', fontWeight: '700', marginBottom: '40px', marginTop: '40px'}}>Questions and Feedback</h4>
+## Questions and Feedback
 
 (TBD)
 
-<h4 style={{fontFamily: 'Overpass', fontSize: '29px', fontWeight: '700', marginBottom: '40px', marginTop: '40px'}}>Accessibility Standards</h4>
+## Accessibility Standards
 
 (TBD)
 
-<h4 style={{fontFamily: 'Overpass', fontSize: '29px', fontWeight: '700', marginBottom: '40px', marginTop: '40px'}}>Contributing</h4>
+## Contributing
 
 ILO Design System is an open-source project and we welcome your contributions! Before submitting a pull request, please take a moment to review the following guidelines.
 
-## Branches
+### Branches
 
 | Branch    | Purpose                            |
 | --------- | ---------------------------------- |
 | `main`    | The latest version of all packages |
 | `develop` | The next release of all packages   |
 
-## Contribution workflow
+### Contribution workflow
 
 1. Fork and clone the repo
 2. Create a new branch from the `develop` branch
@@ -80,17 +80,17 @@ ILO Design System is an open-source project and we welcome your contributions! B
 4. Push your branch to the forked version of the repo
 5. Open a pull request back to the `develop` branch of the main repo
 
-## Versioning
+### Versioning
 
 The project uses [changesets](https://github.com/changesets/changesets) to manage package versioning. All pull requests that will affect the project's semantic versioning must include a changest.
 
 See more information on [how to add a changeset](https://github.com/changesets/changesets/blob/main/docs/adding-a-changeset.md)
 
-## Conventions
+### Conventions
 
 Contributions should respect the following conventions for branch names, commit messages and pull request descriptions
 
-### Commits
+#### Commits
 
 Commits should follow [Angular Commit Message Guidelines](https://github.com/angular/angular/blob/22b96b9/CONTRIBUTING.md#commit).
 

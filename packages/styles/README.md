@@ -1,74 +1,186 @@
 # ILO Design System - Styles Package
 
-## Status: Proof of Concept
+This package provides the stylesheets which are used to style components in other packages. It does this primarily by supplying a theme and other customization options to the `@ilo-org/styles` package [SASS](https://sass-lang.com/). It has dependencies on the following other @ilo-org packages:
 
-This package provides the stylesheets which are used to style components in other packages. It does this primarily by supplying a theme and other customization options to the `@un/styles` package [SASS](https://sass-lang.com/). It also includes custom css for components in cases where the desired styles can't be achieved only by configuring `@un/styles`.
+- [@ilo-org/themes](./packages/themes)
+- [@ilo-org/fonts](./packages/fonts)
+- [@ilo-org/icons](./packages/icons)
 
-## Prefixing
+## Installation and PNPM Commands
 
-All stylesheets in `@un/core` are prefixed via SASS variables. This prefix should correspond with the one used in the component classnames in order for styles to be configured correctly. To see prefixes:
+To install
 
-```scss
-// Set prefix on default styles
-@use "@un/styles/scss/config" with (
-  $prefix: "ilo"
-);
-
-// Set prefix on default theme options
-@use "@un/themes/scss/themes" as themes with (
-  $custom-property-prefix: "ilo"
-);
+```bash
+npm i @ilo-org/styles
 ```
 
-## CSS Reset
+To build
 
-`@un/styles` includes a basic CSS reset that can be added like this.
-
-```scss
-@forward "@un/styles/scss/reset";
+```bash
+pnpm build
 ```
 
-## Theming
+To minify
 
-UN Core is based on IBM Carbon, so themeing [works the same way](https://www.carbondesignsystem.com/guidelines/themes/overview/#customizing-a-theme).
-
-[Here is an example](./scss/_theme.scss) of the theme used in this POC, which essentially just WFP's theme with a few values changed. Below shows how we use the theme to customize styles.
-
-As you can see, a theme is simply a large map of style tokens which are consumed at various places by the `@un/styles` packages.
-
-```scss
-// Import our own theme settings
-@use "theme" as theme;
-
-// Apply the theme settings to the default styles
-$carbon--theme: theme.$carbon--theme--ilo;
-:root {
-  @include themes.carbon--theme(theme.$carbon--theme--ilo, true) {
-  }
-}
+```bash
+pnpm minify
 ```
 
-## Styling components
+To test formatting
 
-We can accomplish a lot by customizing style tokens, but we will probably also need to apply more specific styles to components.
-
-### Applying styles
-
-We can use the default styles for an individual component simply by adding its scss from the `@un/styles` package.
-
-```css
-@forward "@un/styles/scss/components/button";
+```bash
+pnpm format
 ```
 
-Note that some components (like Button) may also have their own set of tokens that we can customize like this:
+To test formatting and fix errors
 
-```scss
-@use "@un/styles/scss/components/button" with (
-  $button-height: 2.5rem,
-  $button-border-radius: 2px,
-  $button-padding: 5px,
-  $button-padding-lg: 0
-);
+```bash
+pnpm format:fix
 ```
 
-Obviously, in addition to this, we can override or apply new styles to the component simply by writing our own stylesheets for them. There may be cases where we don't even want to use the default styles, and so we can forgo importing them for a given component.
+To lint
+
+```bash
+pnpm lint
+```
+
+To test formatting and fix errors
+
+```bash
+pnpm lint:fix
+```
+
+## Questions and Feedback
+
+(TBD)
+
+## Accessibility Standards
+
+(TBD)
+
+## Contributing
+
+ILO Design System is an open-source project and we welcome your contributions! Before submitting a pull request, please take a moment to review the following guidelines.
+
+### Branches
+
+| Branch    | Purpose                            |
+| --------- | ---------------------------------- |
+| `main`    | The latest version of all packages |
+| `develop` | The next release of all packages   |
+
+### Contribution workflow
+
+1. Fork and clone the repo
+2. Create a new branch from the `develop` branch
+3. Make your changes and [add a changeset](#versioning) identifying the changes and affected packages
+4. Push your branch to the forked version of the repo
+5. Open a pull request back to the `develop` branch of the main repo
+
+### Versioning
+
+The project uses [changesets](https://github.com/changesets/changesets) to manage package versioning. All pull requests that will affect the project's semantic versioning must include a changest.
+
+See more information on [how to add a changeset](https://github.com/changesets/changesets/blob/main/docs/adding-a-changeset.md)
+
+### Conventions
+
+Contributions should respect the following conventions for branch names, commit messages and pull request descriptions
+
+#### Commits
+
+Commits should follow [Angular Commit Message Guidelines](https://github.com/angular/angular/blob/22b96b9/CONTRIBUTING.md#commit).
+
+```
+<type>(<scope>): <subject>
+```
+
+Examples:
+
+```
+fix(react): change button color on hover
+feat(twig): add button component
+ci(github): add release workflow
+perf(react): improve modal animations
+```
+
+#### Types
+
+- build: Changes that affect the build system or external dependencies (example scopes: gulp, broccoli, npm)
+- ci: Changes to our CI configuration files and scripts (example scopes: Travis, Circle, BrowserStack, SauceLabs)
+- docs: Documentation only changes
+- feat: A new feature
+- fix: A bug fix
+- perf: A code change that improves performance
+- refactor: A code change that neither fixes a bug nor adds a feature
+- style: Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)
+- test: Adding missing tests or correcting existing tests
+
+#### Scopes
+
+This should be a package name or an aspect of the project's configuration.
+
+### Branches
+
+Branch names should broadly mirror the same convention as commits.
+
+Examples:
+
+```
+feat/react/modal-wrapper
+fix/twig/modal-wrapper
+```
+
+### Pull requests
+
+Pull requests should include a descriptive name and detailed explanation of what merging the pull request will accomplish. Authors should make sure to reference Github issues that the the pull request will fix or affect.
+
+## Building the project
+
+Use [nvm](https://github.com/nvm-sh/nvm) to make sure you have the correct version of node installed.
+
+```bash
+nvm use
+```
+
+Install [pnpm](https://pnpm.io/).
+
+```bash
+npm i -g pnpm
+```
+
+Install dependencies
+
+```bash
+pnpm recursive install
+```
+
+Build all packages.
+
+```bash
+pnpm build:all
+```
+
+Start React storybook
+
+```bash
+pnpm start:react-storybook
+```
+
+Start Twig storybook
+
+```bash
+pnpm start:twig-storybook
+```
+
+Check types
+
+```bash
+pnpm check:types
+```
+
+Run all tests
+
+```bash
+pnpm test:all
+```
