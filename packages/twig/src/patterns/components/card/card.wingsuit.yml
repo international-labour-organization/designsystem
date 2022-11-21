@@ -80,12 +80,17 @@ card:
       label: Data set
       description: This is a series of items, headline and copy, to include on the card
       preview:
+  settings:
     color:
-      type: string
+      type: select
       label: Color
       description: Color of the stat cards, options are turquoise, green, yellow, or blue
+      options:
+        turquoise: turquoise
+        green: green
+        yellow: yellow
+        blue: blue
       preview: 'blue'
-  settings:
     theme:
       type: select
       label: Theme

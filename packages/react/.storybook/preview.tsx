@@ -12,6 +12,13 @@ export const parameters = {
       date: /Date$/,
     },
   },
+  options: {
+    storySort: {
+      method: "alphabetical",
+      order: ["Welcome", "Intro", "Tokens", ["Colors", "Typography"]],
+      locales: "en-US",
+    },
+  },
   parameters: {
     layout: "centered",
   },

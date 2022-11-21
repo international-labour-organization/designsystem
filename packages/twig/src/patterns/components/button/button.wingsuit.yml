@@ -3,6 +3,37 @@ button:
   label: Button
   description: A button or a link styled like a button.
   fields:
+    label:
+      type: string
+      label: Label
+      description: The label for the button
+      preview: 'Button'
+      required: true
+    url:
+      type: string
+      label: url
+      description: The url for the button if it's a link
+      preview: ''
+      required: false
+    target:
+      type: string
+      label: target
+      description: Should the button open in a new tab? If so, include the name of the tab. Only evaluated if the url field is populated.
+      preview: 'true'
+      required: false
+    icon:
+      type: string
+      label: Icon
+      description: optional icon to include in button
+      preview: false
+      required: false
+    className:
+      type: string
+      label: Class name
+      description: optional class name
+      preview: 'optionalclass'
+      required: false
+  settings:
     size:
       type: select
       label: Size
@@ -34,24 +65,6 @@ button:
         true: 'true'
         false: false
       preview: 'false'
-    label:
-      type: string
-      label: Label
-      description: The label for the button
-      preview: 'Button'
-      required: true
-    url:
-      type: string
-      label: url
-      description: The url for the button if it's a link
-      preview: ''
-      required: false
-    target:
-      type: string
-      label: target
-      description: Should the button open in a new tab? If so, include the name of the tab. Only evaluated if the url field is populated.
-      preview: 'true'
-      required: false
     kind:
       type: select
       label: Kind
@@ -62,17 +75,11 @@ button:
         reset: reset
         submit: submit
       preview: 'button'
-    icon:
-      type: string
-      label: Icon
-      description: optional icon to include in button
-      preview: false
-      required: false
     iconPosition:
       type: select
       label: Icon Position
       description: if there's an icon, where is it in the button?
-      fields:
+      options:
         left: left
         right: right
       preview: left
@@ -81,22 +88,16 @@ button:
       type: select
       label: Icon Only
       description: Is this an icon-only button?
-      fields:
+      options:
         true: 'true'
         false: false
       preview: false
-      required: false
-    className:
-      type: string
-      label: Class name
-      description: optional class name
-      preview: 'optionalclass'
       required: false
     opensmodal:
       type: select
       label: Opens Modal
       description: Does this button trigger open a modal?
-      fields:
+      options:
         true: 'true'
         false: false
       preview: false
