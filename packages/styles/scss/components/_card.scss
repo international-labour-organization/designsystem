@@ -5,6 +5,7 @@
 
 .ilo--card {
   $self: &;
+  $transition-timing: 150ms;
   margin: 0;
   max-width: px-to-rem(920px);
 
@@ -12,8 +13,8 @@
     text-align: right;
   }
 
-  &--action:hover,
-  &--action:focus {
+  &--action:hover:not(#{$self}--data),
+  &--action:focus:not(#{$self}--data) {
     background: $brand-ilo-white;
     color: $brand-ilo-blue;
     text-decoration: none;
@@ -71,27 +72,33 @@
     background: $brand-ilo-white;
   }
 
-  &--dark#{$self}--action:not(#{$self}--detail):not(#{$self}--data):not(#{$self}--multilink):not(:hover):not(:focus) {
+  &--dark:not(#{$self}--detail):not(#{$self}--data):not(#{$self}--multilink):not(:hover):not(:focus) {
     background: $brand-ilo-dark-blue;
+    transition: background $transition-timing ease-out;
 
     #{$self}--eyebrow {
       color: $brand-ilo-grey-light;
+      transition: color $transition-timing ease-out;
     }
 
     #{$self}--title {
       color: $brand-ilo-white;
+      transition: color $transition-timing ease-out;
     }
 
     #{$self}--intro {
       color: $brand-ilo-grey-light;
+      transition: color $transition-timing ease-out;
     }
 
     #{$self}--date {
       color: $brand-ilo-grey-light;
+      transition: color $transition-timing ease-out;
     }
 
     #{$self}--eventdate {
       color: $brand-ilo-grey-light;
+      transition: color $transition-timing ease-out;
     }
   }
 
@@ -1160,6 +1167,8 @@
     }
 
     #{$self}--wrap {
+      display: flex;
+      flex-direction: column;
       width: 100%;
     }
 
@@ -1184,8 +1193,12 @@
     }
 
     #{$self}--content {
+      display: flex;
+      flex: 1 1 auto;
+      flex-direction: column;
       padding: px-to-rem(24px) px-to-rem(24px) px-to-rem(40px);
     }
+
     &#{$self}--linklist {
       #{$self}--content {
         padding-bottom: 0;
@@ -1220,6 +1233,7 @@
 
     #{$self}--date {
       margin-bottom: 0;
+      margin-top: auto;
     }
   }
 }

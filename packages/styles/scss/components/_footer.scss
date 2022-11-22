@@ -51,6 +51,7 @@
     font-family: $fonts-display;
     font-weight: map-get($type, "weights", "label");
     @include font-styles("body-small");
+    line-height: px-to-rem(21.6px);
     @include textmargin(
       "margin-bottom",
       10px,
@@ -66,7 +67,9 @@
     color: #bedcfa;
     font-family: $fonts-display;
     font-weight: map-get($type, "weights", "section");
+    margin-top: px-to-rem(10px);
     @include font-styles("body-xxs");
+    line-height: px-to-rem(18.56px);
     @include textmargin("margin-bottom", 28px, "body-xxs", "display", 0, 0);
   }
 

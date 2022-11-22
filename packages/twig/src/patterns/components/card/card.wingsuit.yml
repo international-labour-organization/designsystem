@@ -6,13 +6,8 @@ card:
     title:
       type: string
       label: Title
-      description: Title field
+      description: Title field for the card
       preview: Lorem ipsum
-    isvideo:
-      type: string
-      label: Is a Video
-      description: Whether the card should display a video icon
-      preview: False
     intro:
       type: string
       label: Intro
@@ -21,84 +16,84 @@ card:
     eyebrow:
       type: string
       label: Eyebrow
-      description: Eyebrow copy text
+      description: Eyebrow copy
       preview: "Eyebrow"
     date:
       type: object
       label: Date
-      description: Date copy text
+      description: Date copy (human and Unix)
       preview:
         human: 20 September 2022
         unix: 1670389200
     eventdetails:
       type: string
       label: Eyebrow
-      description: Eyebrow copy text
+      description: Event details for `Detail` card
       preview: ""
     profile:
       type: object
       label: Profile
-      description: Profile to embed in the card
+      description: Profile to embed in the card for `Graphic Text`
       preview:
     list:
       type: object
       label: List
-      description: List to embed in the card
+      description: List to embed in the card, specifically used for `Factlist`
       preview:
     link:
       type: string
       label: Link
-      description: Link for clickable cards
+      description: Link for clickable cards. Do no use on `Multilink`, `Factlist`, `Data`, or `Stat` cards.
       preview: "https://www.google.com/"
     cta:
       type: object
       label: CTA
-      description: Items for clickable CTA button
+      description: Items for clickable CTA button. Button used for `Graphic Promo` card.
       preview:
     image:
       type: string
       label: Image
-      description: The image for the card
-      preview: "https://placekitten.com/600/300"
+      description: The image for the card. Images should be avoided on `Graphic Promo`, `Graphic Text`, `Factlist`, and `Stat` card.
+      preview: ""
     source:
       type: object
       label: Source
-      description: Source link for stat cards
+      description: Source link for `Stat` cards
       preview:
     linklist:
       type: object
       label: Link List
-      description: Multi-link list
-      preview:
-    externallink:
-      type: object
-      label: External Link
-      description: External link
+      description: Implementation of the LinkList component. Appears at the bottom of `Multilink` or `Feature` card.
       preview:
     dataset:
       type: object
-      label: Data set
-      description: This is a series of items, headline and copy, to include on the card
+      label: Dataset object
+      description: Dataset object for the `Data` card. Array of Content (label, copy), Files object (optional headline, array of items with label and url) and Links object (optional headline, array of items with label and url)
       preview:
-    color:
-      type: string
-      label: Color
-      description: Color of the stat cards, options are turquoise, green, yellow, or blue
-      preview: 'blue'
   settings:
+    color:
+      type: select
+      label: Color
+      description: Color of the stat cards, options are `turquoise`, `green`, `yellow`, or `blue`. Only use for stat cards.
+      options:
+        turquoise: turquoise
+        green: green
+        yellow: yellow
+        blue: blue
+      preview: 'blue'
     theme:
       type: select
       label: Theme
-      description: The theme type for the hero
+      description: The theme type for the card. Theme choice doesn't apply to these card types - `Multilink`, `Data`, `Stat` and `Detail`
       required: false
-      preview: 'dark'
+      preview: 'light'
       options:
         dark: Dark
         light: Light
     size:
       type: select
       label: Size
-      description: Size of the cards (usually reduces padding)
+      description: Size of the cards (usually reduces padding). `Wide` on Multilink and Feature cause a two column structure above a desktop breakpoint.
       preview: 'standard'
       options:
         wide: Wide
@@ -107,7 +102,7 @@ card:
     cornercut:
       type: select
       label: Corner cut
-      description: Setting for whether the card has a cut corner
+      description: Setting for whether the card has a cut corner. The only cards that use this setting are `Graphic Promo` and `Factlist`.
       preview: cornercut
       options:
         cornercut: Corner cut
@@ -115,15 +110,20 @@ card:
     alignment:
       type: select
       label: Alignment
-      description: Set whether card (multilink) image is right aligned or left aligned
+      description: Set whether card image is right aligned or left aligned for `Multilink` cards.
       preview: left
       options:
         left: Left
         right: right
+    isvideo:
+      type: select
+      label: Is a Video
+      description: Whether the card should display a video icon (for Feature card)
+      preview: false
+      options:
+        true: True
+        false: False
   variants:
-    default:
-      label: Default
-      description: the default settings for the Card
     graphic:
       label: Graphic Text Card
       description: The graphic Card
@@ -133,6 +133,7 @@ card:
         date:
           human: 20 September 2022
           unix: 1670389200
+        image: ""
         link: "https://www.google.com/search?q=graphic"
         profile:
           avatar: "https://placekitten.com/128/128"
@@ -186,7 +187,6 @@ card:
       label: Feature Card
       description: The Feature Card
       fields:
-        isvideo: true
         title: "Vertical info card descriptive headline text"
         eyebrow: Eyebrow title
         date:
@@ -201,9 +201,6 @@ card:
               links:
                 - label: Link One
                   url: 'http://www.google.com'
-        # externallink:
-        #     label: Link One
-        #     url: 'https://www.google.com'
     detail:
       label: Detail Card
       description: The Detail Card
@@ -215,7 +212,6 @@ card:
           human: 00 month 0000
           unix: 1670389200
         link: "https://www.google.com/search?q=detail"
-        # image: "https://placekitten.com/296/196"
         image: "https://www.ilo.org/wcmsp5/groups/public/---dgreports/---dcomm/documents/image/wcms_856513.jpg"
         profile:
         eventdetails: "8 - 9 February 2022, 8:30 - 12:00 CET  |  Egypt"
@@ -224,6 +220,7 @@ card:
       description: The Fact List Card
       fields:
         title: "Title of fast fact list"
+        image: ""
         list:
           settings:
             - ordered: unordered

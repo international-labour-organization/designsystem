@@ -26,8 +26,16 @@
   &--item {
     padding: 0 px-to-rem($spacing-padding-1);
 
-    &:last-of-type a {
-      border-bottom: none;
+    &:first-of-type {
+      border-radius: 2px 2px 0 0;
+    }
+
+    &:last-of-type {
+      border-radius: 0 0 2px 2px;
+
+      a {
+        border-bottom: none;
+      }
     }
 
     &:hover,

@@ -1,24 +1,24 @@
 tag:
   use: '@components/tags/tag.twig'
   label: Tag
-  description: A clickable tag
+  description: A display or interactable tag
   fields:
     content:
       type: text
       label: Content
-      description: The tag item's collapsed content.
+      description: The tag text content.
       preview:
         faker: lorem.word
     id:
       type: text
       label: ID
-      description: The tag item's id.
+      description: The tag's id.
       preview:
         faker: lorem.word
     url:
       type: text
       label: URL
-      description: The tag's url reference
+      description: The tag's url reference 
       preview:
         faker: https://www.google.com/
   settings: 
@@ -34,7 +34,7 @@ tag:
     tagType:
       type: type
       label: Tag Type
-      description: The type of tag
+      description: The type of tag. Anchor and button have potential user interactions where display is static.
       options:
         anchor: Anchor
         button: Button

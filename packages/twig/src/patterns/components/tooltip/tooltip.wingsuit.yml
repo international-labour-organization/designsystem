@@ -9,11 +9,12 @@ tooltip:
       description: label shown on the tooltip
       required: true
       preview: 'Tooltip text'
+  settings:
     icon:
       type: select
       label: Icon
       description: does this tooltip have the "info" icon?
-      fields:
+      options:
         true: 'true'
         false: false
       preview: 'true'
@@ -21,8 +22,8 @@ tooltip:
     theme:
       type: select
       label: Theme
-      description: choose the tooltip's theme
-      fields:
+      description: Choose the tooltip's theme
+      options:
         light: light
         dark: dark
       preview: dark

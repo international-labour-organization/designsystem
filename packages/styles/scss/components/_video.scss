@@ -33,6 +33,7 @@
   &--element,
   .vjs-tech {
     height: auto;
+    object-fit: cover;
     width: 100%;
 
     &:focus {
@@ -133,12 +134,22 @@
       width: $spacing-ux-video-controls-height;
       -webkit-appearance: none;
       -moz-appearance: none;
+    }
 
-      .notplayed & {
-        @include breakpoint("large") {
+    &.notplayed {
+      @include breakpoint("large") {
+        .vjs-play-control,
+        .vjs-big-play-button {
           order: 1;
           height: px-to-rem($spacing-ux-video-bigplaybutton-height);
           width: px-to-rem($spacing-ux-video-bigplaybutton-width);
+        }
+
+        .ilo--video--controls--play,
+        .ilo--video--controls--pause {
+          order: 1;
+          height: px-to-rem(80px);
+          width: px-to-rem(80px);
         }
       }
     }
@@ -153,7 +164,8 @@
         $color-ux-video-controls-default-icon
       );
 
-      &:hover {
+      &:hover,
+      &:focus {
         background-color: $color-ux-video-controls-hover-background;
         @include iconbutton(
           "play",
@@ -177,7 +189,8 @@
           $color-ux-video-controls-default-icon
         );
 
-        &:hover {
+        &:hover,
+        &:focus {
           background-color: $color-ux-video-controls-hover-background;
           @include iconbutton(
             "play",
@@ -186,6 +199,12 @@
             $color-ux-video-controls-hover-icon
           );
         }
+      }
+    }
+
+    &:not(.notplayed) {
+      .ilo--video--controls--play {
+        background-size: 24px 24px;
       }
     }
 
@@ -198,7 +217,8 @@
         $color-ux-video-controls-default-icon
       );
 
-      &:hover {
+      &:hover,
+      &:focus {
         background-color: $color-ux-video-controls-hover-background;
         @include iconbutton(
           "pause",
@@ -222,7 +242,8 @@
       text-align: center;
       width: px-to-rem(80px);
 
-      &:hover {
+      &:hover,
+      &:focus {
         background-color: $color-ux-video-controls-hover-background;
         color: $color-ux-video-controls-hover-icon;
       }
@@ -232,13 +253,22 @@
       &.show {
         display: block;
       }
+    }
 
-      .notplayed & {
-        @include breakpoint("large") {
+    &.notplayed {
+      @include breakpoint("large") {
+        .vjs-duration {
           height: px-to-rem($spacing-ux-video-controls-height);
           margin-left: 0;
           margin-top: 2px;
           width: px-to-rem($spacing-ux-video-bigplaybutton-width);
+        }
+
+        .ilo--video--controls--duration {
+          height: px-to-rem($spacing-ux-video-controls-height);
+          margin-left: 0;
+          margin-top: 2px;
+          width: px-to-rem(80px);
         }
       }
     }
@@ -350,7 +380,8 @@
         }
       }
 
-      &:hover {
+      &:hover,
+      &:focus {
         .vjs-play-progress {
           position: relative;
 
@@ -440,7 +471,8 @@
         display: block;
       }
 
-      &:hover {
+      &:hover,
+      &:focus {
         .vjs-volume-control {
           display: block;
         }
@@ -453,7 +485,7 @@
       border: none;
       cursor: pointer;
       height: px-to-rem($spacing-ux-video-controls-height);
-      margin-top: 1px;
+      margin-top: 0;
       position: relative;
       width: px-to-rem($spacing-ux-video-controls-height);
       z-index: 10;
@@ -466,7 +498,8 @@
         $color-ux-video-controls-default-icon
       );
 
-      &:hover {
+      &:hover,
+      &:focus {
         background-color: $color-ux-video-controls-hover-background;
         @include iconbutton(
           "volume",
@@ -485,7 +518,8 @@
           $color-ux-video-controls-default-icon
         );
 
-        &:hover {
+        &:hover,
+        &:focus {
           background-color: #ebf5fd;
           @include iconbutton(
             "muted",
@@ -523,9 +557,9 @@
       }
 
       &-container {
-        left: 0;
+        left: -2px;
         position: absolute;
-        top: 0;
+        top: -2px;
       }
 
       &::-webkit-slider-runnable-track {
@@ -618,7 +652,8 @@
         $color-ux-video-controls-default-icon
       );
 
-      &:hover {
+      &:hover,
+      &:focus {
         background-color: #ebf5fd;
         @include iconbutton(
           "fullscreen",
@@ -687,7 +722,8 @@
     }
   }
 
-  &:hover {
+  &:hover,
+  &:focus {
     .ilo--video--controls,
     .vjs-control-bar {
       opacity: 1;
@@ -710,4 +746,19 @@
 
 .ilo--video--container {
   position: relative;
+}
+
+.right-to-left {
+  .ilo--video--caption {
+    border-left: none;
+    border-right: 3px solid #b8c4cc;
+    direction: rtl;
+    padding-left: 0;
+    padding-right: px-to-rem(map-get($spacing, "padding-1"));
+  }
+
+  .ilo--credit {
+    left: auto;
+    right: 0;
+  }
 }

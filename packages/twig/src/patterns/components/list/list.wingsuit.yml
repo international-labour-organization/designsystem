@@ -1,7 +1,7 @@
 list:
   use: '@components/list/list.twig'
   label: List
-  description: A list.
+  description: The list component
   fields:
     title:
       type: text
@@ -12,7 +12,7 @@ list:
     items:
       type: object
       label: Items
-      description: The list items.
+      description: Array of the list items
       required: true
       preview:
         - content: Arabica. Arabica is the most popular type of coffee, hands down.
@@ -29,7 +29,7 @@ list:
     ordered:
       type: select
       label: Ordered
-      description: The order for the list.
+      description: The order for the list. `Ordered` uses numbers, `unordered` uses arrow indicators and `unstyled` doesn't have anything but spacing.
       required: false
       options:
         ordered: Ordered
@@ -39,7 +39,7 @@ list:
     alignment:
       type: select
       label: Alignment
-      description: Is the list displayed horizontally?
+      description: Is the list displayed horizontally? Usually used for shorter items inside a list.
       options:
         default: Default
         horizontal: Horizontal

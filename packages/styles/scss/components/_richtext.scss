@@ -9,32 +9,6 @@
 
   a {
     @include linkstyles();
-    border: none;
-    text-decoration: underline;
-
-    &:visited {
-      border: none;
-      text-decoration: underline;
-      text-decoration-color: map-get($color, "link", "underline", "visited");
-    }
-
-    &:hover {
-      border: none;
-      text-decoration: underline;
-      text-decoration-color: map-get($color, "link", "underline", "hover");
-    }
-
-    &:active {
-      border: none;
-      text-decoration: underline;
-      text-decoration-color: map-get($color, "link", "underline", "active");
-    }
-
-    &:focus {
-      border: none;
-      text-decoration: underline;
-      text-decoration-color: map-get($color, "link", "underline", "focus");
-    }
   }
 
   img {
@@ -191,7 +165,7 @@
         position: absolute;
         top: 6px;
         width: px-to-rem(12px);
-        @include dataurlicon("listarrow");
+        @include dataurlicon("listarrow", $color-base-neutrals-light);
       }
       margin-bottom: px-to-rem(map-get($spacing, "padding-4"));
       margin-left: px-to-rem(12px);
@@ -207,6 +181,7 @@
     background-repeat: no-repeat;
     background-size: px-to-rem(72px) px-to-rem(40px);
     display: block;
+    font-family: $fonts-display;
     margin: px-to-rem(map-get($spacing, "padding-3")) 0
       px-to-rem(map-get($spacing, "padding-5")) 0;
     padding: px-to-rem(54px) 0 px-to-rem(34px)
