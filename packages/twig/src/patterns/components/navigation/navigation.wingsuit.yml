@@ -45,7 +45,7 @@ navigation:
     primarynav:
       type: object
       label: Primary Navigation
-      description: Navigation for the primary menu
+      description: Navigation for the primary menu, a list of navigation items as well as some labels for display.
       preview:
         navlabel: Primary Navigation
         mobilecloselabel: Close
@@ -63,7 +63,7 @@ navigation:
     subnav:
       type: object
       label: Secondary navigation
-      description: Navigation for the sub menu
+      description: Navigation for the sub menu, a list of subnav items as well as some labels for display.
       preview:
         navlabel: Secondary Navigation
         buttonlabel: More

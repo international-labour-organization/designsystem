@@ -1,7 +1,7 @@
 callout:
   use: '@components/callout/callout.twig'
   label: Callout
-  description: A callout alert
+  description: A callout alert section with a few different types
   fields:
     buttonLabel:
       type: string
@@ -57,7 +57,7 @@ callout:
     isOpen:
       type: select
       label: Is Open
-      description: Whether or not a collapsible callout is open on page load
+      description: Whether or not a collapsible callout is open on page load. If callout is not collapsible then the callout will be open always.
       required: false
       options:
         true: True

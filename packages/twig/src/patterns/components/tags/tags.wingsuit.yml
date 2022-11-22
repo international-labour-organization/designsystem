@@ -1,12 +1,12 @@
 tags:
   use: '@components/tags/tags.twig'
   label: Tags
-  description: A set of tags
+  description: A group of tags
   fields:
     items:
       type: object
       label: Items
-      description: The tag items.
+      description: An array of tag data to implement a Tag component
       required: true
       preview:
         - content: content 1
