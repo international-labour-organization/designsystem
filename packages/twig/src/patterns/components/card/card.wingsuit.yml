@@ -59,7 +59,7 @@ card:
       type: string
       label: Image
       description: The image for the card
-      preview: "https://placekitten.com/600/300"
+      preview: ""
     source:
       type: object
       label: Source
@@ -126,9 +126,6 @@ card:
         left: Left
         right: right
   variants:
-    default:
-      label: Default
-      description: the default settings for the Card
     graphic:
       label: Graphic Text Card
       description: The graphic Card
