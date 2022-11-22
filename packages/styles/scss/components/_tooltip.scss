@@ -8,18 +8,10 @@
   border: none;
   border-radius: px-to-rem(2px);
   display: inline-block;
-  filter: drop-shadow(
-      0 px-to-rem(0.8px) px-to-rem(1.6px)
-        rgba(map-get($color, "tooltip", "default", "dropshadow"), 0.038)
-    )
-    drop-shadow(
-      0 px-to-rem(2.7) px-to-rem(5.4px)
-        rgba(map-get($color, "tooltip", "default", "dropshadow"), 0.054)
-    )
-    drop-shadow(
-      0 px-to-rem(12px) px-to-rem(24px)
-        rgba(map-get($color, "tooltip", "default", "dropshadow"), 0.12)
-    );
+  filter: drop-shadow(0px 0.8px 1.6px rgba(30, 45, 190, 0.038))
+    drop-shadow(0px 4px 8px rgba(30, 45, 190, 0.054))
+    drop-shadow(0px 10px 20px rgba(30, 45, 190, 0.08))
+    drop-shadow(0px -4px 16px rgba(30, 45, 190, 0.054));
   color: map-get($color, "tooltip", "default", "text");
   opacity: 0;
   padding: px-to-rem($spacing-padding-1) px-to-rem($spacing-padding-1-5);
