@@ -1,5 +1,22 @@
 # @ilo-org/icons-react
 
+## 0.0.12
+
+### Patch Changes
+
+- 592c40ae9: Hover fix for data card and breadcrumb for hero
+- d7015e194: - Tag fixes for consistent font size
+  - Accordion transition, font size and height fixes
+  - Tooltip transition fix
+  - Cards padding and anchor the date on feature cards
+  - List fix font sizes on mobile
+  - Callout fix transition timing
+- 6ba8ee615: Documentation for wingusit
+- Updated dependencies [592c40ae9]
+- Updated dependencies [d7015e194]
+- Updated dependencies [6ba8ee615]
+  - @ilo-org/icons@0.1.10
+
 ## 0.0.11
 
 ### Patch Changes

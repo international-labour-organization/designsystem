@@ -1,5 +1,27 @@
 # @ilo-org/styles
 
+## 0.1.10
+
+### Patch Changes
+
+- fdba39df6: Adjust card widths
+- 592c40ae9: Hover fix for data card and breadcrumb for hero
+- 3005bb74c: Fixes to Video, Accordion, List, Checkbox, favicon
+- b72b8aa9e: Update README; various bugfixes with Table, Footer, Notification, Video, RichText
+- d7015e194: - Tag fixes for consistent font size
+  - Accordion transition, font size and height fixes
+  - Tooltip transition fix
+  - Cards padding and anchor the date on feature cards
+  - List fix font sizes on mobile
+  - Callout fix transition timing
+- 6ba8ee615: Documentation for wingusit
+- Updated dependencies [592c40ae9]
+- Updated dependencies [b72b8aa9e]
+- Updated dependencies [d7015e194]
+- Updated dependencies [6ba8ee615]
+  - @ilo-org/icons@0.1.10
+  - @ilo-org/themes@0.1.10
+
 ## 0.1.9
 
 ### Patch Changes

@@ -1,5 +1,19 @@
 # @ilo-org/utils
 
+## 0.0.6
+
+### Patch Changes
+
+- 592c40ae9: Hover fix for data card and breadcrumb for hero
+- b72b8aa9e: Update README; various bugfixes with Table, Footer, Notification, Video, RichText
+- d7015e194: - Tag fixes for consistent font size
+  - Accordion transition, font size and height fixes
+  - Tooltip transition fix
+  - Cards padding and anchor the date on feature cards
+  - List fix font sizes on mobile
+  - Callout fix transition timing
+- 6ba8ee615: Documentation for wingusit
+
 ## 0.0.5
 
 ### Patch Changes
