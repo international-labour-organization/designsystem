@@ -1131,7 +1131,7 @@
     &#{$self}--wide {
       @include breakpoint("medium") {
         #{$self}--wrap {
-          display: flex;
+          flex-direction: row;
 
           .right-to-left & {
             flex-direction: row-reverse;
