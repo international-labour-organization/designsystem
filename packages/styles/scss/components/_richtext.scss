@@ -9,32 +9,6 @@
 
   a {
     @include linkstyles();
-    border: none;
-    text-decoration: underline;
-
-    &:visited {
-      border: none;
-      text-decoration: underline;
-      text-decoration-color: map-get($color, "link", "underline", "visited");
-    }
-
-    &:hover {
-      border: none;
-      text-decoration: underline;
-      text-decoration-color: map-get($color, "link", "underline", "hover");
-    }
-
-    &:active {
-      border: none;
-      text-decoration: underline;
-      text-decoration-color: map-get($color, "link", "underline", "active");
-    }
-
-    &:focus {
-      border: none;
-      text-decoration: underline;
-      text-decoration-color: map-get($color, "link", "underline", "focus");
-    }
   }
 
   img {
