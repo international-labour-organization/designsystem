@@ -207,6 +207,7 @@
     background-repeat: no-repeat;
     background-size: px-to-rem(72px) px-to-rem(40px);
     display: block;
+    font-family: $fonts-display;
     margin: px-to-rem(map-get($spacing, "padding-3")) 0
       px-to-rem(map-get($spacing, "padding-5")) 0;
     padding: px-to-rem(54px) 0 px-to-rem(34px)
