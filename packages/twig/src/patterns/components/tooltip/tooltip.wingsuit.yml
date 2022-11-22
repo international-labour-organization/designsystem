@@ -22,7 +22,7 @@ tooltip:
     theme:
       type: select
       label: Theme
-      description: choose the tooltip's theme
+      description: Choose the tooltip's theme
       options:
         light: light
         dark: dark

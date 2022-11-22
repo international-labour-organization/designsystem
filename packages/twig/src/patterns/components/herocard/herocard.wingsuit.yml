@@ -1,7 +1,7 @@
 herocard:
   use: '@components/herocard/herocard.twig'
   label: Hero Card
-  description: The Hero card
+  description: The Hero card, a subcomponent of the hero
   id: herocard
   fields:
     datecopy:
@@ -11,9 +11,9 @@ herocard:
       preview: "11 February 2021"
     eyebrow:
       type: string
-      label: Date copy
-      description: Date byline copy
-      preview: "11 February 2021"
+      label: Eyebrow
+      description: Copy for the eyebrow of the card
+      preview: "Eyebrow"
     intro:
       type: string
       label: Intro
