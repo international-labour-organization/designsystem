@@ -39,7 +39,7 @@
       width: 100%;
 
       .ilo--notification--content {
-        align-items: center;
+        align-items: start;
         display: flex;
         justify-items: space-between;
         padding: px-to-rem(14px) px-to-rem($spacing-padding-3);

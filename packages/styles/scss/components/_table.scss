@@ -10,6 +10,7 @@
 
   &--header {
     background-color: $color-ux-table-content-background;
+    border-bottom: px-to-rem(2px) solid $color-base-neutrals-lighter;
     padding: $spacing-ux-table-content-padding-top
       $spacing-ux-table-content-padding-right
       $spacing-ux-table-content-padding-bottom
@@ -24,6 +25,7 @@
   }
 
   &--content {
+    border-collapse: initial;
     width: 100%;
   }
 
@@ -43,7 +45,6 @@
     &--cell {
       background-color: $color-ux-table-content-background;
       border-left: px-to-rem(1px) solid $color-base-neutrals-lighter;
-      border-top: px-to-rem(2px) solid $color-base-neutrals-lighter;
       border-bottom: px-to-rem(2px) solid $color-base-neutrals-lighter;
       font-family: $fonts-display;
       font-weight: 700;
@@ -144,7 +145,7 @@
       }
 
       &:hover {
-        background-color: $color-ux-table-selected-background;
+        background-color: $color-ux-table-hover-background;
         border-bottom: 2px solid $color-ux-labels-hover;
         color: $color-ux-labels-hover;
       }
