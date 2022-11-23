@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useState } from "react";
 import { ChoiceGroupProps } from "./ChoiceGroup.props";
 import { Checkbox } from "../Checkbox";
 import { Fieldset } from "../Fieldset";
@@ -16,6 +16,12 @@ const ChoiceGroup: FC<ChoiceGroupProps> = ({
   // whatever type the first item has we expect from the other items
   const sanitzeditems = items.filter((item: any) => item !== items[0].type);
 
+  const [radio, setRadio] = useState(false);
+
+  const radioChangeHandler = (e: any) => {
+    setRadio(e.target.value);
+  };
+
   return (
     <Fieldset
       className={`ilo--choice-group ${className ? className : ""}`}
@@ -26,12 +32,18 @@ const ChoiceGroup: FC<ChoiceGroupProps> = ({
       grouptooltip={grouptooltip}
     >
       {sanitzeditems.map((item: any, i: any) => {
-        console.log(item);
         if (item?.type === "checkbox") {
           return <Checkbox {...(item as any)} key={i} />;
         }
         if (item?.type === "radio") {
-          return <Radio {...(item as any)} key={i} />;
+          return (
+            <Radio
+              {...(item as any)}
+              callback={radioChangeHandler}
+              selected={radio}
+              key={i}
+            />
+          );
         }
       })}
       ;
