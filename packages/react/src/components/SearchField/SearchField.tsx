@@ -22,14 +22,18 @@ const SearchField: FC<SearchFieldProps> = ({
   /**
    * On click, if there is a callback, call it
    */
-  const handleClick = (e: React.MouseEvent<Element, MouseEvent>) => {
+  const handleSubmit = (e: React.SyntheticEvent) => {
     if (callback) {
       callback(e);
     }
   };
 
   return (
-    <form className={SearchFieldClasses} action={action}>
+    <form
+      className={SearchFieldClasses}
+      action={action}
+      onSubmit={(e) => handleSubmit(e)}
+    >
       <Input
         id={input.id}
         name={input.name}
@@ -42,12 +46,7 @@ const SearchField: FC<SearchFieldProps> = ({
         type={input.type}
         className={`${prefix}--input`}
       />
-      <input
-        className={buttonClass}
-        disabled={input.disabled}
-        type="submit"
-        onClick={(e) => handleClick(e)}
-      />
+      <input className={buttonClass} disabled={input.disabled} type="submit" />
     </form>
   );
 };
