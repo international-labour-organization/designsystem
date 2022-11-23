@@ -115,6 +115,25 @@
   &--utility-bar {
     display: none;
 
+    &--local {
+      background: $brand-ilo-blue;
+      display: flex;
+      justify-content: space-between;
+      padding: 0 20px;
+
+      .ilo--language-switcher {
+        display: none;
+
+        @include breakpoint("large") {
+          display: flex;
+        }
+      }
+
+      @include breakpoint("large") {
+        padding: 0;
+      }
+    }
+
     @include breakpoint("large") {
       background: $brand-ilo-blue;
       display: flex;
@@ -159,6 +178,12 @@
 
     .ilo--header.ilo--mobile--open & {
       transform: translateX(0);
+    }
+
+    .ilo--header--local & {
+      @include breakpoint("large") {
+        display: none;
+      }
     }
 
     @include breakpoint("large") {
@@ -356,15 +381,32 @@
   &--local {
     display: flex;
     justify-content: space-between;
-    padding: 0 0 0 max((100% - 1260px) / 2, 20px);
+
+    @include breakpoint("large") {
+      padding: 0 0 0 max((100% - 1260px) / 2, 20px);
+    }
+
+    &--logo-wrapper {
+      display: flex;
+      padding: 16px 0;
+
+      @include breakpoint("large") {
+        padding: 0;
+      }
+    }
 
     &--logo-link {
       display: flex;
+      align-items: center;
     }
 
     &--set {
-      display: flex;
-      justify-content: space-between;
+      display: none;
+
+      @include breakpoint("large") {
+        display: flex;
+        justify-content: space-between;
+      }
     }
 
     &--item {
