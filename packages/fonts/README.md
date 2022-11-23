@@ -52,3 +52,34 @@ All fonts-face declarations include files in the following formats:
 - `.woff`
 - `.woff2`
 - `.ttf`
+
+## Raw CSS Import files
+
+This pacakge includes a directory named `fonts-css` which contains raw css for importing font stacks. Included as of now:
+
+| character set | font-family      |
+| ------------- | ---------------- |
+| Latin         | Noto Sans        |
+| Latin         | Overpass         |
+| Arabic        | Noto Sans Arabic |
+
+(Note there is no Arabic character set for `Overpass`).
+
+Note that both CSS imports refer to their character set's font-family as "Noto Sans" in the CSS. This allows switching out _just_ the font import files while loading CSS from the `styles` pacakge without having to load an entirely new version of `styles` package CSS. In an example font stack in an HTML `<head>` you might have the following logic (pseduo-code):
+
+```
+if is latin
+	<link rel="stylesheet" href="css/fonts.css" type="text/css" media="screen" />
+else
+	<link rel="stylesheet" href="css/fonts-{{language}}.css" type="text/css" media="screen" />
+endif
+```
+
+## Non-Latin Fonts
+
+This pacakge also includes, as an example, Noto Sans Arabic.
+
+| font-family | font-weight | font-style | file                |
+| ----------- | ----------- | ---------- | ------------------- |
+| "Noto Sans" | normal      | normal     | NotoSansArabic      |
+| "Noto Sans" | 700         | normal     | NotoSansArabic-Bold |
