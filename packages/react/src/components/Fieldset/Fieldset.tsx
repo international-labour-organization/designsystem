@@ -55,7 +55,7 @@ const Fieldset: FC<FieldsetProps> = ({
               {child.props.label && (
                 <label
                   className={`${baseClass}--label`}
-                  htmlFor={child.props.id}
+                  htmlFor={child.props.id ? child.props.id : child.props.name}
                 >
                   {child.props.label}
                   {child.props.tooltip && (

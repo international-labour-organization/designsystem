@@ -163,19 +163,16 @@ export default class Tooltip {
       }
 
       // set style top and left on tooltip
-      // setPosition({ x: x, y: y });
       this.tooltip.style.top = y;
       this.tooltip.style.left = x;
 
       // set class for placement on arrow
-      // setArrowPlacement(placement);
       this.arrow.classList.remove(`${this.prefix}--tooltip--arrow--placement-${this.placement}`);
       this.arrow.classList.add(`${this.prefix}--tooltip--arrow--placement-${this.placement}`);
       this.placement = placement;
       this.arrow.setAttribute('data-placement', placement);
 
       // set class for alignment on tooltip
-      // setArrowAlignment(alignment);
       this.tooltip.classList.remove(`${this.prefix}--tooltip--alignment-${this.alignment}`);
       this.tooltip.classList.add(`${this.prefix}--tooltip--alignment-${this.alignment}`);
       this.alignment = alignment;

@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { FC } from "react";
 import classNames from "classnames";
 import useGlobalSettings from "../../hooks/useGlobalSettings";
 import { RadioProps } from "./Radio.props";
@@ -13,6 +13,7 @@ const Radio: FC<RadioProps> = ({
   label,
   name,
   required,
+  selected,
   tooltip,
   value,
 }) => {
@@ -24,14 +25,10 @@ const Radio: FC<RadioProps> = ({
     [`error`]: error,
   });
 
-  const [checked, setChecked] = useState(false);
-
   /**
    * On change, if there is a callback, call it
    */
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setChecked(e.target.checked);
-
     if (callback) {
       callback(e);
     }
@@ -54,7 +51,7 @@ const Radio: FC<RadioProps> = ({
         required={required as any}
         type={"radio"}
         className={RadioClasses}
-        checked={checked}
+        checked={selected == value}
         value={value}
       />
     </FormElement>

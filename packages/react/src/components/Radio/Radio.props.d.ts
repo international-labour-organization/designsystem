@@ -45,6 +45,11 @@ export interface RadioProps {
   required?: boolean;
 
   /**
+   * Which radio button has been selected?
+   */
+  selected?: string | boolean;
+
+  /**
    * Does this Radio have a tooltip?
    */
   tooltip?: string;
