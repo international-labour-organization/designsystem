@@ -372,6 +372,10 @@
   &--publication {
     padding: 24px;
 
+    .ilo--hero-card--eyebrow {
+      margin-bottom: px-to-rem(6px);
+    }
+
     @include breakpoint("large") {
       margin-top: -64px;
       max-width: 720px;
