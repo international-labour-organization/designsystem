@@ -653,8 +653,8 @@
     width: 100%;
 
     &.ilo--card--cornercut:not(.ilo--card--multilink):not(.ilo--card--detail):not(.ilo--card--feature)::before {
-      height: px-to-rem(40px);
-      top: px-to-rem(-39.7px);
+      height: px-to-rem(34px);
+      top: px-to-rem(-33.7px);
     }
 
     &:hover,
