@@ -1,5 +1,21 @@
 # @ilo-org/react
 
+## 0.0.15
+
+### Patch Changes
+
+- f7f448c65: Fixes to React radio button, SearchField, add ability to serve different langauge fonts
+- f4b7bcb7f: Local nav fixes for mobile
+- 0dfb90274: Patchfix for Feature card wide version
+- Updated dependencies [f7f448c65]
+- Updated dependencies [f4b7bcb7f]
+- Updated dependencies [0dfb90274]
+  - @ilo-org/fonts@0.0.3
+  - @ilo-org/styles@0.1.11
+  - @ilo-org/themes@0.1.11
+  - @ilo-org/utils@0.0.7
+  - @ilo-org/icons-react@0.0.13
+
 ## 0.0.14
 
 ### Patch Changes

@@ -1,5 +1,15 @@
 # @ilo-org/icons-react
 
+## 0.0.13
+
+### Patch Changes
+
+- f4b7bcb7f: Local nav fixes for mobile
+- 0dfb90274: Patchfix for Feature card wide version
+- Updated dependencies [f4b7bcb7f]
+- Updated dependencies [0dfb90274]
+  - @ilo-org/icons@0.1.11
+
 ## 0.0.12
 
 ### Patch Changes
