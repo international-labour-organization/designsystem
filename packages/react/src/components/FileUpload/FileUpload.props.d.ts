@@ -1,5 +1,3 @@
-import { fileUploadTypes } from "../../types";
-
 export interface FileUploadProps {
   /**
    * The FileUpload's onChange callback.

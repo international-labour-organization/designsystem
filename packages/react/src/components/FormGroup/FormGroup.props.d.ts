@@ -1,15 +1,12 @@
+import { formGroupTypes } from "../../types";
 import { CheckboxProps } from "../Checkbox/Checkbox.props";
 import { DatePickerProps } from "../DatePicker/DatePicker.props";
 import { DropdownProps } from "../Dropdown/Dropdown.props";
 import { FileUploadProps } from "../FileUpload/FileUpload.props";
-import { InputProps } from "../InputProps/InputProps.props";
+import { InputProps } from "../Input/Input.props";
 import { NumberPickerProps } from "../NumberPicker/NumberPicker.props";
 import { RadioProps } from "../Radio/Radio.props";
 import { TextareaProps } from "../Textarea/Textarea.props";
-import { fieldTypes, formGroupTypes } from "../../types";
-
-// We can't put a form group inside a form group so let's remove that option
-const formGroupFieldTypes = fieldTypes.filter((item) => item !== "formgroup");
 
 interface FormGroupItems {
   /**

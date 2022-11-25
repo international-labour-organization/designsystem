@@ -1,5 +1,6 @@
-import { HeroCard } from "../HeroCard.props";
-import { heroCardAlignment, heroCardTypes, heroCardTheme } from "../../types";
+import { heroCardTheme, heroCardTypes } from "../../types";
+import { ImageProps } from "../Image/Image.props";
+import { HeroCardProps } from "./HeroCard.props";
 
 export interface HeroProps {
   /**

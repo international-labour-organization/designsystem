@@ -1,11 +1,5 @@
 import { CheckboxProps } from "../Checkbox/Checkbox.props";
-import { RadioProps } from "../RadioProps/RadioProps.props";
-import { fieldTypes } from "../../types";
-
-// We can't put a form group inside a form group so let's remove that option
-const choiceGroupFieldTypes = fieldTypes.filter(
-  (item) => item === "checkbox" || item === "radio"
-);
+import { RadioProps } from "../Radio/Radio.props";
 
 interface ChoiceGroupItems {
   /**

@@ -1,4 +1,4 @@
-import { InputProps } from "../Input.props";
+import { InputProps } from "../Input/Input.props";
 
 export interface ButtonProps {
   /**

@@ -1,5 +1,3 @@
-import { datePickerTypes } from "../../types";
-
 export interface DatePickerProps {
   /**
    * The input's onChange callback.

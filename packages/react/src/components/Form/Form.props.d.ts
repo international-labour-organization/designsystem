@@ -2,12 +2,12 @@ import { CheckboxProps } from "../Checkbox/Checkbox.props";
 import { DatePickerProps } from "../DatePicker/DatePicker.props";
 import { DropdownProps } from "../Dropdown/Dropdown.props";
 import { FileUploadProps } from "../FileUpload/FileUpload.props";
-import { FormGroupProps } from "../FormGroupProps/FormGroupProps.props";
-import { InputProps } from "../InputProps/InputProps.props";
 import { NumberPickerProps } from "../NumberPicker/NumberPicker.props";
 import { RadioProps } from "../Radio/Radio.props";
 import { TextareaProps } from "../Textarea/Textarea.props";
 import { fieldTypes } from "../../types";
+import { FormGroupProps } from "../FormGroup/FormGroup.props";
+import { InputProps } from "../Input/Input.props";
 
 interface FormItems {
   /**
@@ -28,6 +28,7 @@ interface FormItems {
     | NumberPickerProps
     | DatePickerProps
     | TextareaProps
+    | InputProps
   >;
 
   /**
