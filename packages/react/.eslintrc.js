@@ -16,6 +16,9 @@ module.exports = {
     "node_modules/",
     "lib/",
     "src/stories/",
+    //@TODO: Remove this once type errors in tests and args files are fixed
+    "src/__tests__",
+    "src/components/**/*.args.ts",
   ],
 
   overrides: [

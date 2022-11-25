@@ -2,12 +2,12 @@ import commonjs from "@rollup/plugin-commonjs";
 import json from "@rollup/plugin-json";
 import resolve from "@rollup/plugin-node-resolve";
 import { createRequire } from "node:module";
-import multiInput from "rollup-plugin-multi-input";
+import del from "rollup-plugin-delete";
+import dts from "rollup-plugin-dts";
+import livereload from "rollup-plugin-livereload";
 import peerDepsExternal from "rollup-plugin-peer-deps-external";
 import postcss from "rollup-plugin-postcss";
 import typescript from "rollup-plugin-typescript2";
-import livereload from "rollup-plugin-livereload";
-import del from "rollup-plugin-delete";
 
 const require = createRequire(import.meta.url);
 const packageJson = require("./package.json");
@@ -39,6 +39,7 @@ const basePlugins = [
     extensions: [".css"],
   }),
   json(),
+  dts(),
 ];
 
 export default function (commandLineArgs) {

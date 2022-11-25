@@ -2,6 +2,8 @@
   "extends": "@ilo-org/typescript-config",
   "include": ["src/**/*"],
   "compilerOptions": {
+    "declaration": true,
+    "declarationDir": "lib/dts",
     "outDir": "lib",
     "types": ["node"]
   },
@@ -10,6 +12,7 @@
     "lib",
     "storybook-static",
     "src/stories",
-    "src/__test__"
+    "src/__tests__",
+    "src/components/**/*.args.ts"
   ]
 }
