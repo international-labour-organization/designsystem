@@ -164,7 +164,11 @@ export default class Navigation {
       });
     }
 
-    window.addEventListener(EVENTS.RESIZE, (e) => this.onResize(e));
+    window.addEventListener(EVENTS.RESIZE, (e) => {
+      if (window.innerWidth >= 1024) {
+        this.onResize(e);
+      }
+    });
 
     return this;
   }
@@ -209,9 +213,6 @@ export default class Navigation {
    */
   handleKeyPress(e, callback) {
     if (e.key === 'Escape') {
-      // this.element.classList.remove(`${this.prefix}--context--open`);
-      // this.element.classList.remove(`${this.prefix}--subnav--open`);
-      // this.element.classList.remove(`${this.prefix}--search--open`);
       callback(e);
     }
 
@@ -238,7 +239,6 @@ export default class Navigation {
    */
   handleContextButtonClickOn(e) {
     e.stopImmediatePropagation();
-    // e.stopPropagation();
     this.element.classList.add(`${this.prefix}--context--open`);
     window.addEventListener(
       EVENTS.KEY_DOWN,
@@ -258,7 +258,6 @@ export default class Navigation {
    */
   handleContextButtonClickOff(e) {
     e.stopImmediatePropagation();
-    // e.stopPropagation();
     this.element.classList.remove(`${this.prefix}--context--open`);
     window.removeEventListener(
       EVENTS.KEY_DOWN,
@@ -317,7 +316,6 @@ export default class Navigation {
    */
   handleSearchButtonClickOff(e) {
     e.stopImmediatePropagation();
-    // e.stopPropagation();
     this.element.classList.remove(`${this.prefix}--search--open`);
     window.removeEventListener(
       EVENTS.KEY_DOWN,
@@ -335,7 +333,6 @@ export default class Navigation {
    * @chainable
    */
   handleSearchButtonClick(e) {
-    // this.element.classList.toggle(`${this.prefix}--search--open`);
     this.element.classList.remove(`${this.prefix}--subnav--open`);
 
     if (this.element.classList.contains(`${this.prefix}--search--open`)) {
@@ -367,7 +364,6 @@ export default class Navigation {
    */
   handleSubnavClickOn(e) {
     e.stopImmediatePropagation();
-    // e.stopPropagation();
     this.element.classList.add(`${this.prefix}--subnav--open`);
     window.addEventListener(EVENTS.KEY_DOWN, (ev) => this.keyPress(ev, this.subnavClickOff), false);
 
@@ -382,7 +378,6 @@ export default class Navigation {
    */
   handleSubnavClickOff(e) {
     e.stopImmediatePropagation();
-    // e.stopPropagation();
     this.element.classList.remove(`${this.prefix}--subnav--open`);
     window.removeEventListener(
       EVENTS.KEY_DOWN,
@@ -445,6 +440,7 @@ export default class Navigation {
    * @chainable
    */
   handleResize(e) {
+    window;
     this.element.classList.remove(`${this.prefix}--context--open`);
     this.element.classList.remove(`${this.prefix}--mobile--open`);
     this.element.classList.remove(`${this.prefix}--subnav--open`);
