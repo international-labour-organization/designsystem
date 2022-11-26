@@ -440,7 +440,6 @@ export default class Navigation {
    * @chainable
    */
   handleResize(e) {
-    window;
     this.element.classList.remove(`${this.prefix}--context--open`);
     this.element.classList.remove(`${this.prefix}--mobile--open`);
     this.element.classList.remove(`${this.prefix}--subnav--open`);
