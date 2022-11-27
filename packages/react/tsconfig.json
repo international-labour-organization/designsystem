@@ -2,6 +2,11 @@
   "extends": "./tsconfig.build.json",
   "exclude": ["node_modules", "lib", "storybook-static"],
   "compilerOptions": {
-    "types": ["jest", "node"]
+    "types": ["jest", "node"],
+    "paths": {
+      "components": ["src/components/*"],
+      "hooks": ["src/hooks/*"],
+      "utils": ["src/utils/*"]
+    }
   }
 }

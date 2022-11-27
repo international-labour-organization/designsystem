@@ -3,26 +3,31 @@ import json from "@rollup/plugin-json";
 import resolve from "@rollup/plugin-node-resolve";
 import { createRequire } from "node:module";
 import del from "rollup-plugin-delete";
-import dts from "rollup-plugin-dts";
 import livereload from "rollup-plugin-livereload";
 import peerDepsExternal from "rollup-plugin-peer-deps-external";
-import postcss from "rollup-plugin-postcss";
 import typescript from "rollup-plugin-typescript2";
+import multiInput from "rollup-plugin-multi-input";
 
 const require = createRequire(import.meta.url);
 const packageJson = require("./package.json");
 
 const config = {
-  input: ["src/index.ts"],
+  input: [
+    "src/index.ts",
+    "src/components/**/index.ts",
+    "src/components/**/*.tsx",
+    "src/hooks/*.ts",
+    "src/utils/*.ts",
+  ],
   external: [...Object.keys(packageJson.dependencies)],
   output: [
     {
-      dir: "lib/cjs/",
-      format: "cjs",
+      dir: "lib/esm",
+      format: "esm",
     },
     {
-      dir: "lib/esm/",
-      format: "esm",
+      dir: "lib/cjs",
+      format: "cjs",
     },
   ],
 };
@@ -30,25 +35,25 @@ const config = {
 const basePlugins = [
   resolve(),
   commonjs(),
+  peerDepsExternal(),
+  json(),
+  multiInput.default({ relative: "src/" }),
   typescript({
+    baseUrl: "./src",
     useTsconfigDeclarationDir: true,
     tsconfig: "./tsconfig.build.json",
   }),
-  peerDepsExternal(),
-  postcss({
-    extensions: [".css"],
-  }),
-  json(),
-  dts(),
 ];
 
 export default function (commandLineArgs) {
   let plugins;
 
+  // For production
   if (!commandLineArgs.configDevelop) {
     plugins = [...basePlugins, del({ targets: "lib/*" })];
   }
 
+  // for development
   if (commandLineArgs.configDevelop) {
     plugins = [
       ...basePlugins,
