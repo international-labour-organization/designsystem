@@ -136,7 +136,7 @@
           background-color: inherit;
           background-position: 16px 50%;
           background-repeat: no-repeat;
-          background-size: 16px;
+          background-size: 24px;
           border: none;
           color: $brand-ilo-white;
           cursor: pointer;
@@ -349,7 +349,7 @@
     background-color: $brand-ilo-white;
     background-position: calc(100% - 16px) 55%;
     background-repeat: no-repeat;
-    background-size: 16px;
+    background-size: 24px;
     border: none;
     color: $brand-ilo-dark-blue;
     cursor: pointer;
@@ -634,10 +634,17 @@
     transition: opacity 150ms ease-out;
     z-index: -1;
 
-    .ilo--context--open & {
+    .ilo--context--open &,
+    .ilo--language-switcher:focus-within &,
+    &:focus-within {
       opacity: 1;
       z-index: 1;
     }
+  }
+
+  .ilo--language-switcher--button:focus + .ilo--context-menu {
+    opacity: 1;
+    z-index: 1;
   }
 }
 
@@ -661,9 +668,6 @@
   }
 
   @include breakpoint("large") {
-    filter: drop-shadow(0px 0.8px 1.6px rgba(30, 45, 190, 0.038))
-      drop-shadow(0px 4px 8px rgba(30, 45, 190, 0.054))
-      drop-shadow(0px 10px 20px rgba(30, 45, 190, 0.08));
     height: auto;
     left: 0;
     padding: 32px 0;
@@ -673,6 +677,10 @@
     z-index: -1;
 
     .ilo--header.ilo--subnav--open & {
+      border-bottom: px-to-rem(3px) solid $color-base-neutrals-light;
+      filter: drop-shadow(0px 0.8px 1.6px rgba(30, 45, 190, 0.038))
+        drop-shadow(0px 4px 8px rgba(30, 45, 190, 0.054))
+        drop-shadow(0px 10px 20px rgba(30, 45, 190, 0.08));
       transform: translateY(0);
     }
 
@@ -879,7 +887,7 @@
     background-color: transparent;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: 21.5px 21.5px;
+    background-size: 32px 32px;
     border: none;
     border-radius: 0;
     cursor: pointer;
@@ -899,7 +907,7 @@
       background-color: $brand-ilo-white;
       background-position: center;
       background-repeat: no-repeat;
-      background-size: 21.5px 21.5px;
+      background-size: 32px 32px;
 
       &:hover,
       &:focus {
@@ -910,8 +918,19 @@
   }
 }
 
+
 .ilo--menu--open {
   height: 100%;
   overflow: hidden;
   width: 100%;
+}
+
+#anchor--components-navigation--navigation .docs-story {
+  & > div:first-child {
+    padding-top: 0;
+  }
+}
+
+.sb-show-main.sb-main-padded {
+  padding-top: 0;
 }

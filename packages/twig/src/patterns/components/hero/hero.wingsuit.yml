@@ -26,9 +26,7 @@ hero:
       type: object
       preview:
         alt: Lorem ipsum
-        caption: ""
-        credit: ""
-        url: 
+        url:
           - breakpoint: 0
             src: "https://placekitten.com/1920/800"
           - breakpoint: 768
@@ -36,12 +34,12 @@ hero:
     herocard:
       label: Part of the hero that displays text on top of image (or if no image on a background color). There are light and dark versions and all text parts are optional.
       type: object
-      preview: 
+      preview:
         alignment: left
         datecopy: 11 February 2022
         eyebrow: Eyebrow
         intro: "Brief intro text - ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-        socials: 
+        socials:
           - label: "Facebook"
             url: "https://www.facebook.com/"
             icon: "facebook"
