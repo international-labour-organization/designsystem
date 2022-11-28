@@ -9,6 +9,12 @@ tooltip:
       description: label shown on the tooltip
       required: true
       preview: 'Tooltip text'
+    children:
+      type: string
+      label: children
+      description: html to pass in to be wrapped by the tooltip
+      required: false
+      preview: "<a href='https://www.google.com/'>This is testing for the tooltip</a>"
   settings:
     icon:
       type: select

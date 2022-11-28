@@ -163,15 +163,18 @@
   }
 
   .ilo--breadcrumb {
-    left: 0;
-    max-width: 560px;
-    position: absolute;
-    top: 0;
     width: 100%;
 
     .right-to-left & {
       left: auto;
       right: 0;
+    }
+
+    @include breakpoint("medium") {
+      left: 0;
+      max-width: 560px;
+      position: absolute;
+      top: 0;
     }
   }
 }
@@ -364,7 +367,7 @@
 
     @include breakpoint("large") {
       max-width: 625px;
-      padding: 0 48px 48px 72px;
+      padding: 0 48px 42px 72px;
       width: 100%;
     }
   }
@@ -372,11 +375,21 @@
   &--publication {
     padding: 24px;
 
+    .ilo--hero-card--eyebrow {
+      margin-bottom: px-to-rem(6px);
+    }
+
     @include breakpoint("large") {
+      margin-left: 106px;
       margin-top: -64px;
       max-width: 720px;
-      padding: 0 48px 48px 72px;
+      padding: 0 48px 48px 48px;
       width: 100%;
+
+      &:before {
+        height: px-to-rem(40px);
+        top: px-to-rem(-39.7px);
+      }
     }
   }
 
@@ -428,7 +441,7 @@
 
   &--list--item {
     display: inline-block;
-    margin-right: 32px;
+    margin-right: 24px;
 
     &:last-of-type {
       margin-right: 0;
