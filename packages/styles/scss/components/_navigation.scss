@@ -626,10 +626,17 @@
     transition: opacity 150ms ease-out;
     z-index: -1;
 
-    .ilo--context--open & {
+    .ilo--context--open &,
+    .ilo--language-switcher:focus-within &,
+    &:focus-within {
       opacity: 1;
       z-index: 1;
     }
+  }
+
+  .ilo--language-switcher--button:focus + .ilo--context-menu {
+    opacity: 1;
+    z-index: 1;
   }
 }
 
