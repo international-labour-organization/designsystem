@@ -952,7 +952,8 @@
 
     #{$self}--intro {
       color: $brand-ilo-dark-blue;
-      @include font-styles("nav-md-sm");
+      font-family: $fonts-display;
+      @include font-styles("base");
       @include textmargin("margin-bottom", 35px, "nav-md-sm", "copy", 0, 0);
       width: 100%;
     }
