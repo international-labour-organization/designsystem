@@ -899,3 +899,9 @@
     }
   }
 }
+
+#anchor--components-navigation--navigation .docs-story {
+  & > div:first-child {
+    padding-top: 0;
+  }
+}
