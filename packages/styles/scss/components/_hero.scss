@@ -380,6 +380,7 @@
     }
 
     @include breakpoint("large") {
+      margin-left: 106px;
       margin-top: -64px;
       max-width: 720px;
       padding: 0 48px 48px 48px;

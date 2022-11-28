@@ -723,7 +723,8 @@
   }
 
   &:hover,
-  &:focus {
+  &:focus,
+  &:focus-within {
     .ilo--video--controls,
     .vjs-control-bar {
       opacity: 1;

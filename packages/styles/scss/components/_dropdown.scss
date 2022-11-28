@@ -60,6 +60,7 @@
       "background"
     );
     @include bordervalues("input", "formelements", "hover");
+    border-left-width: 2px;
     background-image: url("#{colortodataurlicon("arrow", $color-ux-labels-hover)}"),
       linear-gradient(
         to right,
@@ -82,6 +83,7 @@
       "background"
     );
     @include bordervalues("input", "formelements", "focus");
+    border-left-width: 2px;
     background-image: url("#{colortodataurlicon("arrow", $color-ux-labels-hover)}"),
       linear-gradient(
         to right,

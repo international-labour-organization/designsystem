@@ -14,9 +14,11 @@
   }
 
   &--action:hover:not(#{$self}--data),
-  &--action:focus:not(#{$self}--data) {
+  &--action:focus:not(#{$self}--data),
+  &--action:focus-within:not(#{$self}--data) {
     background: $brand-ilo-white;
     color: $brand-ilo-blue;
+    outline: none;
     text-decoration: none;
 
     &#{$self}--dark:not(#{$self}--detail):not(#{$self}--data):not(#{$self}--multilink):not(#{$self}--factlist) {
@@ -57,7 +59,9 @@
     @include globaltransition("color, background-color, border-color, opacity");
 
     &:hover,
-    &:focus {
+    &:focus,
+    &:focus-within {
+      outline: none;
       @include globaltransition(
         "color, background-color, border-color, opacity"
       );
@@ -72,8 +76,9 @@
     background: $brand-ilo-white;
   }
 
-  &--dark:not(#{$self}--detail):not(#{$self}--data):not(#{$self}--multilink):not(:hover):not(:focus) {
+  &--dark:not(#{$self}--detail):not(#{$self}--data):not(#{$self}--multilink):not(:hover):not(:focus):not(:focus-within) {
     background: $brand-ilo-dark-blue;
+    outline: none;
     transition: background $transition-timing ease-out;
 
     #{$self}--eyebrow {
@@ -156,7 +161,8 @@
     @include globaltransition("color");
 
     #{$self}--link:hover &,
-    #{$self}--link:focus & {
+    #{$self}--link:focus &,
+    #{$self}--link:focus-within & {
       color: $brand-ilo-blue;
       @include globaltransition("color");
     }
@@ -178,7 +184,8 @@
     @include globaltransition("color");
 
     #{$self}--link:hover &,
-    #{$self}--link:focus & {
+    #{$self}--link:focus &,
+    #{$self}--link:focus-within & {
       color: $brand-ilo-blue;
       @include globaltransition("color");
     }
@@ -191,7 +198,8 @@
     @include globaltransition("color");
 
     #{$self}--link:hover &,
-    #{$self}--link:focus & {
+    #{$self}--link:focus &,
+    #{$self}--link:focus-within & {
       color: $brand-ilo-blue;
       @include globaltransition("color");
     }
@@ -204,7 +212,8 @@
     @include globaltransition("color");
 
     #{$self}--link:hover &,
-    #{$self}--link:focus & {
+    #{$self}--link:focus &,
+    #{$self}--link:focus-within & {
       color: $brand-ilo-blue;
       @include globaltransition("color");
     }
@@ -428,7 +437,8 @@
     }
 
     &:hover,
-    &:focus {
+    &:focus,
+    &:focus-within {
       filter: drop-shadow(0px 0.8px 1.6px rgba(30, 45, 190, 0.038))
         drop-shadow(0px 4px 8px rgba(30, 45, 190, 0.054))
         drop-shadow(0px 10px 20px rgba(30, 45, 190, 0.08))
@@ -551,7 +561,8 @@
     }
 
     &:hover,
-    &:focus {
+    &:focus,
+    &:focus-within {
       filter: drop-shadow(0px 0.8px 1.6px rgba(30, 45, 190, 0.038))
         drop-shadow(0px 4px 8px rgba(30, 45, 190, 0.054))
         drop-shadow(0px 10px 20px rgba(30, 45, 190, 0.08))
@@ -658,7 +669,8 @@
     }
 
     &:hover,
-    &:focus {
+    &:focus,
+    &:focus-within {
       filter: drop-shadow(0px 0.8px 1.6px rgba(30, 45, 190, 0.038))
         drop-shadow(0px 4px 8px rgba(30, 45, 190, 0.054))
         drop-shadow(0px 10px 20px rgba(30, 45, 190, 0.08))
@@ -855,7 +867,8 @@
       }
 
       &:hover,
-      &:focus {
+      &:focus,
+      &:focus-within {
         #{$self}--title {
           color: $brand-ilo-white;
           @include globaltransition("color");
@@ -939,7 +952,8 @@
 
     #{$self}--intro {
       color: $brand-ilo-dark-blue;
-      @include font-styles("nav-md-sm");
+      font-family: $fonts-display;
+      @include font-styles("base");
       @include textmargin("margin-bottom", 35px, "nav-md-sm", "copy", 0, 0);
       width: 100%;
     }
@@ -964,7 +978,8 @@
     padding: 0 px-to-rem(24px) px-to-rem(56px);
 
     &:hover,
-    &:focus {
+    &:focus,
+    &:focus-within {
       background: $brand-ilo-light-blue;
     }
 
@@ -1061,7 +1076,8 @@
       }
 
       &:hover,
-      &:focus {
+      &:focus,
+      &:focus-within {
         .ilo--link-list {
           &--link {
             color: $brand-ilo-blue;
@@ -1076,7 +1092,8 @@
     }
 
     &:hover,
-    &:focus {
+    &:focus,
+    &:focus-within {
       background-color: $brand-ilo-white;
       filter: drop-shadow(0px 0.8px 1.6px rgba(30, 45, 190, 0.038))
         drop-shadow(0px 4px 8px rgba(30, 45, 190, 0.054))
