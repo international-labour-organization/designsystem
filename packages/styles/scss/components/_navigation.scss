@@ -675,6 +675,10 @@
     .ilo--header.ilo--subnav--open & {
       transform: translateY(0);
     }
+
+    &:has(.ilo--subnav--link:focus) {
+      transform: translateY(0);
+    }
   }
 
   &--inner {
@@ -837,6 +841,11 @@
     z-index: -1;
 
     .ilo--header.ilo--search--open & {
+      transform: translateY(0);
+    }
+
+    &:has(.ilo--input:focus),
+    &:has(.ilo--searchfield--button:focus) {
       transform: translateY(0);
     }
   }
