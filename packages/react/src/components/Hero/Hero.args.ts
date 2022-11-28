@@ -245,9 +245,7 @@ const publicationHero: HeroProps = {
   className: "storybook",
   image: {
     alt: "Alt tag",
-    caption: "This is a caption",
     className: "storybook",
-    credit: "Credit Here",
     url: [
       {
         breakpoint: 0,
