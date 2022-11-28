@@ -660,9 +660,6 @@
   }
 
   @include breakpoint("large") {
-    filter: drop-shadow(0px 0.8px 1.6px rgba(30, 45, 190, 0.038))
-      drop-shadow(0px 4px 8px rgba(30, 45, 190, 0.054))
-      drop-shadow(0px 10px 20px rgba(30, 45, 190, 0.08));
     height: auto;
     left: 0;
     padding: 32px 0;
@@ -672,6 +669,10 @@
     z-index: -1;
 
     .ilo--header.ilo--subnav--open & {
+      border-bottom: px-to-rem(3px) solid $color-base-neutrals-light;
+      filter: drop-shadow(0px 0.8px 1.6px rgba(30, 45, 190, 0.038))
+        drop-shadow(0px 4px 8px rgba(30, 45, 190, 0.054))
+        drop-shadow(0px 10px 20px rgba(30, 45, 190, 0.08));
       transform: translateY(0);
     }
   }
