@@ -1,5 +1,29 @@
 # @ilo-org/styles
 
+## 0.1.12
+
+### Patch Changes
+
+- 94bd642d9: ILOUAT-16: Clicking on the page should close subnav menu
+  ILOUAT-26: mobile hamburger click shouldn't auto navigate to inside link
+  ILOUAT-27: Menu take over on mobile should be the whole page without the ability to scroll past it
+  ILOUAT-37: Subnav pane should properly open when subnav items are focused
+- a167b7405: - Border radius for context menu
+  - Mobile nav disappear on breakpoint instead of any resize event
+  - More List spacing fixes (title item)
+  - Breadcrumb on mobile in heroes
+  - Bugfixes for feature card on wide mode with list item
+  - Add in "Back to main site" link for local nav
+- 79e17c5d3: Bufdixes to multiple components
+- 7b3813bb1: Bugfixes to multiple components
+- Updated dependencies [94bd642d9]
+- Updated dependencies [a167b7405]
+- Updated dependencies [79e17c5d3]
+- Updated dependencies [7b3813bb1]
+  - @ilo-org/fonts@0.0.4
+  - @ilo-org/icons@0.1.12
+  - @ilo-org/themes@0.1.12
+
 ## 0.1.11
 
 ### Patch Changes
