@@ -1,5 +1,6 @@
 @use "../tokens" as *;
 @use "../functions" as *;
+@use "../animations" as *;
 @import "../mixins";
 
 .ilo--tooltip {
@@ -16,12 +17,13 @@
   opacity: 0;
   padding: px-to-rem($spacing-padding-1) px-to-rem($spacing-padding-1-5);
   position: absolute;
-  transition: opacity 150ms ease-out;
   visibility: hidden;
   width: auto;
+  @include globaltransition("opacity");
 
   &--fade {
     opacity: 1;
+    @include globaltransition("opacity");
   }
 
   &--visible {
