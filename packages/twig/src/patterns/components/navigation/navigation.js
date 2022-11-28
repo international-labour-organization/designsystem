@@ -369,6 +369,9 @@ export default class Navigation {
     this.element.classList.add(`${this.prefix}--subnav--open`);
     window.addEventListener(EVENTS.KEY_DOWN, (ev) => this.keyPress(ev, this.subnavClickOff), false);
 
+    if (window.innerWidth >= 1024) {
+      this.body.addEventListener(EVENTS.CLICK, (ev) => this.handleSubnavClickOff(ev), false);
+    }
     return this;
   }
 
@@ -386,6 +389,8 @@ export default class Navigation {
       (ev) => this.keyPress(ev, this.subnavClickOff),
       false
     );
+
+    this.body.removeEventListener(EVENTS.CLICK, (ev) => this.handleSubnavClickOff(ev), false);
 
     return this;
   }
