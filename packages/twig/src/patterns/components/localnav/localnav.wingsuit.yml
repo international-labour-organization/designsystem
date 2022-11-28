@@ -52,6 +52,13 @@ localnav:
             label: Menu Item 4
           - link: "https://www.google.com/search?q=menu5"
             label: Menu Item 5
+    mainlink:
+      type: object
+      label: Main link object
+      description: Link object for back to main site link
+      preview: 
+        url: 'https://www.google.com/'
+        label: 'Go to main ILO website'
     languagelabel:
       type: string
       label: Language Label

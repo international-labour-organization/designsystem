@@ -58,18 +58,29 @@
   }
 
   &__title {
-    @include font-styles("headline-5");
-
-    font-family: $fonts-display;
-    font-weight: 700;
+    @include font-styles("headline-6");
     @include textmargin(
       "margin-bottom",
-      map-get($spacing, "ui-padding-xxl"),
-      "headline-5",
+      24px,
+      "headline-6",
       "display",
-      "base",
+      "body-small",
       "copy"
     );
+    font-family: $fonts-display;
+    font-weight: 700;
+
+    @include breakpoint("medium") {
+      @include font-styles("headline-5");
+      @include textmargin(
+        "margin-bottom",
+        map-get($spacing, "ui-padding-xxl"),
+        "headline-5",
+        "display",
+        "base",
+        "copy"
+      );
+    }
   }
 
   &__item {
@@ -95,14 +106,7 @@
 
     @include breakpoint("medium") {
       @include font-styles("base");
-      @include textmargin(
-        "margin-bottom",
-        map-get($spacing, "ui-padding-lg"),
-        "base",
-        "copy",
-        0,
-        0
-      );
+      @include textmargin("margin-bottom", 20px, "base", "copy", 0, 0);
     }
   }
 }

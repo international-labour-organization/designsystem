@@ -1140,7 +1140,9 @@
 
         #{$self}--content {
           display: flex;
+          flex-direction: row;
           flex-wrap: wrap;
+          position: relative;
           width: 50%;
         }
 
@@ -1154,6 +1156,7 @@
 
         #{$self}--date {
           align-self: flex-end;
+          width: 100%;
         }
 
         #{$self}--eyebrow {
@@ -1162,6 +1165,10 @@
 
         #{$self}--title {
           width: 100%;
+        }
+
+        .ilo--link-list {
+          width: calc(100% + 48px);
         }
       }
     }
