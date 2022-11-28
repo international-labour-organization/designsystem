@@ -20,6 +20,11 @@
     </nav>
     <div class="{{prefix}}--language-switcher">
       <div class="{{prefix}}--language-switcher--wrap">
+        {% if mainlink is defined %}
+          <span class="{{prefix}}--language-switcher--link--wrap">
+            <a href="{{mainlink.url}}" class="{{prefix}}--language-switcher--link">{{mainlink.label}}</a>
+          </span>
+        {% endif %}
         <button class="{{prefix}}--language-switcher--button" type="button">
           {{languagelabel}}
         </button>
