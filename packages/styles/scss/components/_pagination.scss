@@ -235,4 +235,10 @@
     font-weight: 400;
     line-height: 45px;
   }
+
+  &--previous-set,
+  &--next-set {
+    display: flex;
+    justify-content: flex-start;
+  }
 }
