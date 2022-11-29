@@ -113,6 +113,40 @@
     }
   }
 
+  &--dark:not(#{$self}--action),
+  &--dark:not(#{$self}--action):hover,
+  &--dark:not(#{$self}--action):focus,
+  &--dark:not(#{$self}--action):focus-within {
+    background: $brand-ilo-dark-blue;
+    outline: none;
+    transition: background $transition-timing ease-out;
+
+    #{$self}--eyebrow {
+      color: $brand-ilo-grey-light;
+      transition: color $transition-timing ease-out;
+    }
+
+    #{$self}--title {
+      color: $brand-ilo-white;
+      transition: color $transition-timing ease-out;
+    }
+
+    #{$self}--intro {
+      color: $brand-ilo-grey-light;
+      transition: color $transition-timing ease-out;
+    }
+
+    #{$self}--date {
+      color: $brand-ilo-grey-light;
+      transition: color $transition-timing ease-out;
+    }
+
+    #{$self}--eventdate {
+      color: $brand-ilo-grey-light;
+      transition: color $transition-timing ease-out;
+    }
+  }
+
   &--cornercut:not(#{$self}--multilink):not(#{$self}--detail):not(#{$self}--feature):not(#{$self}--graphic):not(#{$self}--stat):not(#{$self}--data) {
     @include cornercut($brand-ilo-white, 40px, 73px);
     margin-top: px-to-rem(40px);
@@ -153,7 +187,8 @@
       transition: background-image $transition-timing ease-out;
 
       .right-to-left & {
-        // clip-path: polygon(100% 0, 100% 100%, 100% 100%, 0% 100%, 10% 0%);
+        left: auto;
+        right: 0;
       }
 
       @include breakpoint("medium") {
@@ -169,6 +204,12 @@
       right: 0;
       top: px-to-rem(-40px);
       transition: background-image $transition-timing ease-out;
+
+      .right-to-left & {
+        left: 0;
+        right: auto;
+        transform: rotateY(180deg);
+      }
 
       @include breakpoint("medium") {
         top: px-to-rem(-47.7px);
@@ -595,12 +636,23 @@
     &::before {
       left: 0;
       top: -39.7px;
+
+      .right-to-left & {
+        left: auto;
+        right: 0;
+      }
     }
 
     &::after {
       right: 0;
       top: -39.7px;
       transition: background-image $transition-timing ease-out;
+
+      .right-to-left & {
+        left: 0;
+        right: auto;
+        transform: rotateY(180deg);
+      }
     }
 
     .ilo--profile--contents * {
@@ -641,11 +693,22 @@
       &::before {
         left: 0;
         top: -39.7px;
+
+        .right-to-left & {
+          left: auto;
+          right: 0;
+        }
       }
 
       &::after {
         right: 0;
         top: -39.7px;
+
+        .right-to-left & {
+          left: 0;
+          right: auto;
+          transform: rotateY(180deg);
+        }
       }
     }
 
@@ -669,11 +732,22 @@
       &::before {
         left: 0;
         top: -39.7px;
+
+        .right-to-left & {
+          left: auto;
+          right: 0;
+        }
       }
 
       &::after {
         right: 0;
         top: -39.7px;
+
+        .right-to-left & {
+          left: 0;
+          right: auto;
+          transform: rotateY(180deg);
+        }
       }
     }
 
@@ -1018,11 +1092,22 @@
       &::before {
         left: 0;
         top: px-to-rem(-39.7px);
+
+        .right-to-left & {
+          left: auto;
+          right: 0;
+        }
       }
 
       &::after {
         right: 0;
         top: px-to-rem(-39.7px);
+
+        .right-to-left & {
+          left: 0;
+          right: auto;
+          transform: rotateY(180deg);
+        }
       }
     }
 
@@ -1107,11 +1192,22 @@
     &::before {
       left: 0;
       top: px-to-rem(-39.7px);
+
+      .right-to-left & {
+        left: auto;
+        right: 0;
+      }
     }
 
     &::after {
       right: 0;
       top: px-to-rem(-39.7px);
+
+      .right-to-left & {
+        left: 0;
+        right: auto;
+        transform: rotateY(180deg);
+      }
     }
 
     @include breakpoint("medium") {

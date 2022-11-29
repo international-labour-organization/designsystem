@@ -208,6 +208,11 @@
     right: 0;
     top: -39.7px;
 
+    .right-to-left & {
+      left: 0;
+      right: auto;
+    }
+
     @include breakpoint("large") {
       top: -63.7px;
     }
@@ -342,6 +347,11 @@
       &::after {
         right: 0;
         top: -48px;
+
+        .right-to-left & {
+          left: 0;
+          right: auto;
+        }
       }
 
       &.ilo--hero-card--center {
