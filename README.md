@@ -74,27 +74,9 @@ The ILO component library, as React components. Displays components in Storybook
 
 The ILO component library, as [Twig](https://twig.symfony.com/) partials. Displays components in [Wingsuit](https://wingsuit-designsystem.github.io/components/wingsuit/), a port of Storybook modified to display Twigs.
 
-## Contribution
+## Contributing
 
-This is an open-source project and the ILO welcomes your contributions! Plese review our [contribution guidelines](./contributing.md) to make your first pull request as smooth as possible.
-
-## Installation
-
-This is a monorepo, managed with [pnpm](https://pnpm.io). To install, clone and run
-
-```
-nvm use
-```
-
-This will ensure the correct versions of [Node](https://nodejs.org/en/) and [npm](https://www.npmjs.com) are being used.
-
-Next, run
-
-```
-pnpm install
-```
-
-This will install every package and its dependencies.
+[See contribution notes.](./contributing.md)
 
 ## Individual Package Scripts
 
