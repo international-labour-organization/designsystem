@@ -240,6 +240,7 @@
 
     @include breakpoint("large") {
       background: $brand-ilo-dark-blue;
+      overflow: visible;
       position: static;
       transform: none;
     }
