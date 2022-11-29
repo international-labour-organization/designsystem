@@ -180,6 +180,10 @@
 }
 
 .ilo--hero-card {
+  @include cornercut(
+    map-get($color, "hero", "card", "light", "background"),
+    40px
+  );
   background: map-get($color, "hero", "card", "light", "background");
   color: map-get($color, "hero", "card", "light", "color");
   max-width: 998px;
@@ -187,14 +191,8 @@
   padding: 16px 16px 40px 16px;
 
   &::before {
-    background: inherit;
-    content: "";
-    display: block;
-    height: 40px;
     left: 0;
-    position: absolute;
     top: -39.7px;
-    width: calc(100% - 73px);
 
     .right-to-left & {
       left: auto;
@@ -202,32 +200,25 @@
     }
 
     @include breakpoint("large") {
-      height: 56px;
-      top: -55.7px;
-      width: calc(100% - 116px);
+      top: -63.7px;
     }
   }
 
   &::after {
-    @include dataurlicon("triangledecoration", $brand-ilo-white);
-    background-position: bottom right;
-    background-size: cover;
-    content: "";
-    display: block;
-    height: 40px;
     right: 0;
-    position: absolute;
     top: -39.7px;
-    width: 74px;
 
     @include breakpoint("large") {
-      height: 56px;
-      top: -55.7px;
-      width: 116px;
+      top: -63.7px;
     }
   }
 
   @include breakpoint("large") {
+    @include cornercut(
+      map-get($color, "hero", "card", "light", "background"),
+      64px,
+      116px
+    );
     padding: 0 70px 70px 56px;
 
     &.ilo--hero-card--graphic {
@@ -331,6 +322,7 @@
     }
 
     @include breakpoint("large") {
+      @include cornercut($brand-ilo-white, 48px, 87.4px);
       bottom: 72px;
       max-width: 720px;
       padding: 0 48px 48px 72px;
@@ -338,30 +330,18 @@
       width: 100%;
 
       &::before {
-        background: inherit;
-        // clip-path: polygon(90% 0, 100% 100%, 100% 100%, 0% 100%, 0% 0%);
-        content: "";
-        display: block;
-        height: 48px;
         left: 0;
-        position: absolute;
         top: -48px;
-        width: calc(100% - 87px);
 
         .right-to-left & {
-          // clip-path: polygon(100% 0, 100% 100%, 100% 100%, 0% 100%, 10% 0%);
           left: auto;
           right: 0;
         }
       }
 
       &::after {
-        @include dataurlicon("triangledecoration", $brand-ilo-white);
-        height: 48px;
         right: 0;
-        position: absolute;
         top: -48px;
-        width: 87.4px;
       }
 
       &.ilo--hero-card--center {
@@ -423,18 +403,6 @@
       max-width: 720px;
       padding: 0 48px 48px 48px;
       width: 100%;
-
-      &::before {
-        height: px-to-rem(40px);
-        top: px-to-rem(-39.7px);
-        width: calc(100% - 73px);
-      }
-
-      &::after {
-        height: px-to-rem(40px);
-        top: px-to-rem(-39.7px);
-        width: px-to-rem(74px);
-      }
     }
   }
 
