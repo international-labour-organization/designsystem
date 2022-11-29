@@ -18,7 +18,23 @@ import heroArgs from "../components/Hero/Hero.args";
 export default {
   title: "Components/Hero",
   component: Hero,
-  argTypes: {},
+  argTypes: {
+    theme: {
+      options: ["dark", "light"],
+      control: { type: "select" },
+    },
+    types: {
+      options: [
+        "publication",
+        "graphic",
+        "article",
+        "portal",
+        "project",
+        "home",
+      ],
+      control: { type: "select" },
+    },
+  },
   parameters: {
     componentSubtitle: "Component",
     docs: {

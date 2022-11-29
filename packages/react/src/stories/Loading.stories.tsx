@@ -35,6 +35,16 @@ By changing the \`size\` prop you can change whether the Loading component appea
 export default {
   title: "Components/Loading",
   component: Loading,
+  argTypes: {
+    size: {
+      options: ["small", "large"],
+      control: { type: "select" },
+    },
+    status: {
+      options: ["idle", "loading", "loaded"],
+      control: { type: "select" },
+    },
+  },
   parameters: {
     componentSubtitle: "Component",
     docs: {

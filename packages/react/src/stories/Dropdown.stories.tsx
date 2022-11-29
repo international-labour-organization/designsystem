@@ -28,6 +28,12 @@ The Dropdown receives a prop for 'options,' which has three parameters:
 export default {
   title: "Components/Dropdown",
   component: Dropdown,
+  argTypes: {
+    disabled: {
+      options: [true, false],
+      control: { type: "boolean" },
+    },
+  },
   parameters: {
     componentSubtitle: "Component",
     docs: {

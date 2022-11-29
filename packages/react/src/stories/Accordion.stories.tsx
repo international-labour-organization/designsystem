@@ -23,7 +23,12 @@ import accordionArgs from "../components/Accordion/Accordion.args";
 export default {
   title: "Components/Accordion",
   component: Accordion,
-  argTypes: {},
+  argTypes: {
+    allowMultipleExpanded: {
+      options: [true, false],
+      control: { type: "boolean" },
+    },
+  },
   subcomponents: {
     AccordionItem,
     AccordionButton,

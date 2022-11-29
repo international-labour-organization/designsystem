@@ -14,7 +14,13 @@ import tagSetArgs from "../components/Tag/TagSet.args";
 import tagArgs from "../components/Tag/Tag.args";
 
 const themeDoc = `
-By changing
+By changing the \`type\` prop you can set the which kind of tag to use.
+
+| Prop   |  Description  |
+|----------|-------------|
+| \`anochor\` | The tag is a link. Useful for taxonomies that have landing pages. |
+| \`button\` | The tag is a button. Useful for tags that are used to filter search results. |
+| \`display\` | The tag is static (not clickable). Useful for displaying non-actionable info. |
 `;
 
 /**
@@ -24,7 +30,12 @@ By changing
 export default {
   title: "Components/Tag",
   component: Tag,
-  argTypes: {},
+  argTypes: {
+    type: {
+      options: ["anchor", "button", "display"],
+      control: { type: "select" },
+    },
+  },
   parameters: {
     componentSubtitle: "Component",
     docs: {
