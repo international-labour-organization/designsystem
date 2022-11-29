@@ -32,6 +32,12 @@
     text-decoration-thickness: px-to-rem($borders-base);
     @include dataurlicon("breadcrumbdivider", $color-link-text-default);
 
+    .right-to-left & {
+      background-position: 0 52%;
+      padding: 0 px-to-rem(10px) 0 px-to-rem($spacing-padding-3);
+      @include dataurlicon("breadcrumbdividerrtl", $color-link-text-default);
+    }
+
     &--label {
       font-family: $fonts-copy;
       font-weight: 400;
@@ -44,6 +50,10 @@
       text-decoration: underline;
       text-decoration-thickness: px-to-rem($borders-base);
       @include dataurlicon("breadcrumbdivider", $color-link-text-hover);
+
+      .right-to-left & {
+        @include dataurlicon("breadcrumbdividerrtl", $color-link-text-hover);
+      }
     }
   }
 
@@ -128,6 +138,15 @@
         top: 0;
         width: px-to-rem($spacing-padding-2);
         @include dataurlicon("breadcrumbdivider", $color-link-text-default);
+
+        .right-to-left & {
+          right: auto;
+          left: -7px;
+          @include dataurlicon(
+            "breadcrumbdividerrtl",
+            $color-link-text-default
+          );
+        }
       }
 
       .context--menu {
@@ -230,6 +249,10 @@
             text-decoration: underline;
             text-decoration-thickness: px-to-rem($borders-base);
           }
+
+          .right-to-left & {
+            text-align: center;
+          }
         }
       }
     }
@@ -250,6 +273,12 @@
         right: -47px;
         top: 0;
         width: 47px;
+
+        .right-to-left & {
+          right: auto;
+          left: -47px;
+          transform: scaleX(-1);
+        }
       }
 
       &.context--menu {
@@ -258,6 +287,10 @@
         }
       }
     }
+  }
+
+  .right-to-left & {
+    direction: rtl;
   }
 
   &.storybook {
