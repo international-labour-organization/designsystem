@@ -37,7 +37,16 @@ By changing the \`placement\` prop you can set whether the Notification is displ
 export default {
   title: "Components/Notification",
   component: Notification,
-  argTypes: {},
+  argTypes: {
+    type: {
+      options: ["error", "info", "success", "warning"],
+      control: { type: "select" },
+    },
+    placement: {
+      options: ["dialog", "inline"],
+      control: { type: "select" },
+    },
+  },
   parameters: {
     componentSubtitle: "Component",
     docs: {

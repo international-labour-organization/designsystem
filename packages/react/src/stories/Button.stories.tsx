@@ -64,7 +64,28 @@ Populating the \`url\` prop with a valid url and/or an anchor to an id in the cu
 export default {
   title: "Components/Button",
   component: Button,
-  argTypes: {},
+  argTypes: {
+    size: {
+      options: ["large", "medium", "small"],
+      control: { type: "select" },
+    },
+    type: {
+      options: ["primary", "secondary", "tertiary"],
+      control: { type: "select" },
+    },
+    icononly: {
+      options: [true, false],
+      control: { type: "boolean" },
+    },
+    iconPosition: {
+      options: ["left", "center", "right"],
+      control: { type: "select" },
+    },
+    opensmodal: {
+      options: [true, false],
+      control: { type: "boolean" },
+    },
+  },
   parameters: {
     componentSubtitle: "Component",
     docs: {

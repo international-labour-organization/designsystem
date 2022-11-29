@@ -29,7 +29,16 @@ By changing the \`ordered\` prop you can use switch from a \`<ol>\` to a \`<ul>\
 export default {
   title: "Components/List",
   component: List,
-  argTypes: {},
+  argTypes: {
+    alignment: {
+      options: ["horizontal", "default"],
+      control: { type: "select" },
+    },
+    ordered: {
+      options: ["ordered", "unordered", "unstyled"],
+      control: { type: "select" },
+    },
+  },
   subcomponents: {
     ListItem,
   },
