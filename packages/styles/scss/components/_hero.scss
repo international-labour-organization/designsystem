@@ -308,6 +308,22 @@
       display: none;
     }
 
+    &.ilo--hero-card--nobackground {
+      background: transparent;
+
+      > * {
+        filter: drop-shadow(0px 12px 32px rgba(0, 0, 0, 0.16))
+          drop-shadow(0px 0.8px 1.6px rgba(0, 0, 0, 0.02))
+          drop-shadow(0px 2.7px 4.8px rgba(0, 0, 0, 0.04))
+          drop-shadow(0px 8px 16px rgba(0, 0, 0, 0.08));
+      }
+
+      &::before,
+      &::after {
+        content: "";
+      }
+    }
+
     @include breakpoint("large") {
       bottom: 72px;
       max-width: 720px;
@@ -348,6 +364,15 @@
         left: auto;
         right: 0;
       }
+
+      &.ilo--hero-card--nobackground {
+        background: transparent;
+
+        &::before,
+        &::after {
+          content: "";
+        }
+      }
     }
 
     &.ilo--hero-card--dark {
@@ -356,6 +381,15 @@
           map-get($color, "hero", "card", "dark", "background"),
           0.55
         );
+
+        &.ilo--hero-card--nobackground {
+          background: transparent;
+
+          &::before,
+          &::after {
+            content: "";
+          }
+        }
       }
     }
   }

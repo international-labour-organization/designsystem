@@ -59,27 +59,13 @@
 
   &__title {
     @include font-styles("headline-6");
-    @include textmargin(
-      "margin-bottom",
-      24px,
-      "headline-6",
-      "display",
-      "body-small",
-      "copy"
-    );
+    margin-bottom: px-to-rem(21px);
     font-family: $fonts-display;
     font-weight: 700;
 
     @include breakpoint("medium") {
       @include font-styles("headline-5");
-      @include textmargin(
-        "margin-bottom",
-        map-get($spacing, "ui-padding-xxl"),
-        "headline-5",
-        "display",
-        "base",
-        "copy"
-      );
+      margin-bottom: px-to-rem(27px);
     }
   }
 

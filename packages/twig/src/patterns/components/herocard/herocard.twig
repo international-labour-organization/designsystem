@@ -1,7 +1,7 @@
 {#
   HEROCARD COMPONENT
 #}
-<div class="{{prefix}}--hero-card {{prefix}}--hero-card--{{alignment}} {{prefix}}--hero-card--{{theme}} {{prefix}}--hero-card--{{types}}">
+<div class="{{prefix}}--hero-card {{prefix}}--hero-card--{{alignment}} {{prefix}}--hero-card--{{theme}} {{prefix}}--hero-card--{{types}}{% if not hasbackground or hasbackground == 'false' %} {{prefix}}--hero-card--nobackground{% endif %}">
   {% if eyebrow %}
     <p class="{{ prefix }}--hero-card--eyebrow">{{ eyebrow }}</p>
   {% endif %}

@@ -68,6 +68,14 @@ hero:
       options:
         dark: Dark
         light: Light
+    hasbackground:
+      type: select
+      label: Has Background
+      description: does the hero card have a background? (Defaults to true, only applied to Home Hero)
+      options:
+        true: true
+        false: 'false'
+      preview: true
     types:
       type: select
       label: Types
