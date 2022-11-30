@@ -1,5 +1,11 @@
 # @ilo-org/fonts
 
+## 0.0.6
+
+### Patch Changes
+
+- b48b386b8: Local nav color for the background is a setting now
+
 ## 0.0.5
 
 ### Patch Changes

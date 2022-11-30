@@ -1,5 +1,17 @@
 # @ilo-org/react
 
+## 0.0.18
+
+### Patch Changes
+
+- b48b386b8: Local nav color for the background is a setting now
+- Updated dependencies [b48b386b8]
+  - @ilo-org/fonts@0.0.6
+  - @ilo-org/icons-react@0.0.16
+  - @ilo-org/styles@0.1.14
+  - @ilo-org/themes@0.1.14
+  - @ilo-org/utils@0.0.10
+
 ## 0.0.17
 
 ### Patch Changes
