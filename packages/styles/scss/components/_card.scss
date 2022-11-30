@@ -13,9 +13,9 @@
     text-align: right;
   }
 
-  &--action:hover:not(#{$self}--data),
-  &--action:focus:not(#{$self}--data),
-  &--action:focus-within:not(#{$self}--data) {
+  &--action:hover:not(#{$self}--data):not(#{$self}--stat),
+  &--action:focus:not(#{$self}--data):not(#{$self}--stat),
+  &--action:focus-within:not(#{$self}--data):not(#{$self}--stat) {
     background: $brand-ilo-white;
     color: $brand-ilo-blue;
     outline: none;
@@ -23,6 +23,12 @@
 
     &#{$self}--dark:not(#{$self}--detail):not(#{$self}--data):not(#{$self}--multilink):not(#{$self}--factlist) {
       background: $brand-ilo-white;
+
+      &#{$self}--cornercut {
+        &::after {
+          @include dataurlicon("triangledecoration", $brand-ilo-white);
+        }
+      }
     }
 
     #{$self}--eyebrow {
@@ -107,42 +113,110 @@
     }
   }
 
-  &--cornercut:not(#{$self}--multilink):not(#{$self}--detail):not(#{$self}--feature) {
+  &--dark:not(#{$self}--action),
+  &--dark:not(#{$self}--action):hover,
+  &--dark:not(#{$self}--action):focus,
+  &--dark:not(#{$self}--action):focus-within {
+    background: $brand-ilo-dark-blue;
+    outline: none;
+    transition: background $transition-timing ease-out;
+
+    #{$self}--eyebrow {
+      color: $brand-ilo-grey-light;
+      transition: color $transition-timing ease-out;
+    }
+
+    #{$self}--title {
+      color: $brand-ilo-white;
+      transition: color $transition-timing ease-out;
+    }
+
+    #{$self}--intro {
+      color: $brand-ilo-grey-light;
+      transition: color $transition-timing ease-out;
+    }
+
+    #{$self}--date {
+      color: $brand-ilo-grey-light;
+      transition: color $transition-timing ease-out;
+    }
+
+    #{$self}--eventdate {
+      color: $brand-ilo-grey-light;
+      transition: color $transition-timing ease-out;
+    }
+  }
+
+  &--cornercut:not(#{$self}--multilink):not(#{$self}--detail):not(#{$self}--feature):not(#{$self}--graphic):not(#{$self}--stat):not(#{$self}--data) {
+    @include cornercut($brand-ilo-white, 40px, 73px);
     margin-top: px-to-rem(40px);
     padding-top: 0;
     position: relative;
 
+    &#{$self}--dark {
+      &::after {
+        @include dataurlicon("triangledecoration", $brand-ilo-dark-blue);
+      }
+    }
+
     @include breakpoint("medium") {
+      @include cornercut($brand-ilo-white, 48px, 87px);
       margin-top: px-to-rem(48px);
+
+      &#{$self}--dark {
+        &::after {
+          @include dataurlicon("triangledecoration", $brand-ilo-dark-blue);
+        }
+      }
     }
 
     @include breakpoint("large") {
+      @include cornercut($brand-ilo-white, 64px, 116px);
       margin-top: px-to-rem(64px);
+
+      &#{$self}--dark {
+        &::after {
+          @include dataurlicon("triangledecoration", $brand-ilo-dark-blue);
+        }
+      }
     }
 
     &::before {
-      background: inherit;
-      clip-path: polygon(90% 0, 100% 100%, 100% 100%, 0% 100%, 0% 0%);
-      content: "";
-      display: block;
-      height: px-to-rem(30px);
       left: 0;
-      position: absolute;
-      top: px-to-rem(-29.7px);
-      width: 100%;
+      top: px-to-rem(-40px);
+      transition: background-image $transition-timing ease-out;
 
       .right-to-left & {
-        clip-path: polygon(100% 0, 100% 100%, 100% 100%, 0% 100%, 10% 0%);
+        left: auto;
+        right: 0;
       }
 
       @include breakpoint("medium") {
-        height: px-to-rem(38px);
-        top: px-to-rem(-37.7px);
+        top: px-to-rem(-47.7px);
       }
 
       @include breakpoint("large") {
-        height: px-to-rem(58px);
-        top: px-to-rem(-57.7px);
+        top: px-to-rem(-63.7px);
+      }
+    }
+
+    &::after {
+      right: 0;
+      top: px-to-rem(-40px);
+      transition: background-image $transition-timing ease-out;
+
+      .right-to-left & {
+        left: 0;
+        right: auto;
+        transform: rotateY(180deg);
+      }
+
+      @include breakpoint("medium") {
+        top: px-to-rem(-47.7px);
+      }
+
+      @include breakpoint("large") {
+        top: px-to-rem(-63.7px);
       }
     }
   }
@@ -539,21 +613,46 @@
   }
 
   &--graphic {
+    @include cornercut($brand-ilo-white, 40px, 73px);
     border-bottom: px-to-rem(3px) solid $brand-ilo-grey-ui;
     margin-top: px-to-rem(40px);
     padding: 0 px-to-rem(24px) px-to-rem(40px);
     position: relative;
 
+    &#{$self}--dark {
+      &::after {
+        @include dataurlicon("triangledecoration", $brand-ilo-dark-blue);
+      }
+
+      &:hover,
+      &:focus,
+      &:focus-within {
+        &::after {
+          @include dataurlicon("triangledecoration", $brand-ilo-white);
+        }
+      }
+    }
+
     &::before {
-      background: inherit;
-      clip-path: polygon(90% 0, 100% 100%, 100% 100%, 0% 100%, 0% 0%);
-      content: "";
-      display: block;
-      height: 40px;
       left: 0;
-      position: absolute;
       top: -39.7px;
-      width: 100%;
+
+      .right-to-left & {
+        left: auto;
+        right: 0;
+      }
+    }
+
+    &::after {
+      right: 0;
+      top: -39.7px;
+      transition: background-image $transition-timing ease-out;
+
+      .right-to-left & {
+        left: 0;
+        right: auto;
+        transform: rotateY(180deg);
+      }
     }
 
     .ilo--profile--contents * {
@@ -574,7 +673,82 @@
     }
 
     @include breakpoint("medium") {
+      @include cornercut($brand-ilo-white, 40px, 73px);
       padding: 0 px-to-rem(32px) px-to-rem(40px);
+
+      &#{$self}--dark {
+        &::after {
+          @include dataurlicon("triangledecoration", $brand-ilo-dark-blue);
+        }
+
+        &:hover,
+        &:focus,
+        &:focus-within {
+          &::after {
+            @include dataurlicon("triangledecoration", $brand-ilo-white);
+          }
+        }
+      }
+
+      &::before {
+        left: 0;
+        top: -39.7px;
+
+        .right-to-left & {
+          left: auto;
+          right: 0;
+        }
+      }
+
+      &::after {
+        right: 0;
+        top: -39.7px;
+
+        .right-to-left & {
+          left: 0;
+          right: auto;
+          transform: rotateY(180deg);
+        }
+      }
+    }
+
+    @include breakpoint("large") {
+      @include cornercut($brand-ilo-white, 40px, 73px);
+
+      &#{$self}--dark {
+        &::after {
+          @include dataurlicon("triangledecoration", $brand-ilo-dark-blue);
+        }
+
+        &:hover,
+        &:focus,
+        &:focus-within {
+          &::after {
+            @include dataurlicon("triangledecoration", $brand-ilo-white);
+          }
+        }
+      }
+
+      &::before {
+        left: 0;
+        top: -39.7px;
+
+        .right-to-left & {
+          left: auto;
+          right: 0;
+        }
+      }
+
+      &::after {
+        right: 0;
+        top: -39.7px;
+
+        .right-to-left & {
+          left: 0;
+          right: auto;
+          transform: rotateY(180deg);
+        }
+      }
     }
 
     &#{$self}--wide {
@@ -656,17 +830,27 @@
       display: block;
       @include textmargin("margin-bottom", 32px, "base", "copy", 0, 0);
     }
+
+    .ilo--card--content {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+
+      > * {
+        justify-self: flex-start;
+      }
+
+      > *:last-child {
+        justify-self: flex-end;
+        margin-bottom: 0;
+      }
+    }
   }
 
   &--graphicpromo {
     max-width: px-to-rem(920px);
     padding: px-to-rem(40px) px-to-rem(24px);
     width: 100%;
-
-    &.ilo--card--cornercut:not(.ilo--card--multilink):not(.ilo--card--detail):not(.ilo--card--feature)::before {
-      height: px-to-rem(34px);
-      top: px-to-rem(-33.7px);
-    }
 
     &:hover,
     &:focus,
@@ -679,20 +863,10 @@
 
     @include breakpoint("medium") {
       padding: px-to-rem(48px);
-
-      &.ilo--card--cornercut:not(.ilo--card--multilink):not(.ilo--card--detail):not(.ilo--card--feature)::before {
-        height: px-to-rem(64px);
-        top: px-to-rem(-63.7px);
-      }
     }
 
     @include breakpoint("large") {
       padding: px-to-rem(64px) px-to-rem(72px);
-
-      &.ilo--card--cornercut:not(.ilo--card--multilink):not(.ilo--card--detail):not(.ilo--card--feature)::before {
-        height: px-to-rem(64px);
-        top: px-to-rem(-63.7px);
-      }
     }
 
     &#{$self}--wide {
@@ -806,10 +980,18 @@
     padding: 0 px-to-rem(24px) px-to-rem(48px) px-to-rem(24px);
     pointer-events: none;
 
-    &.ilo--card--cornercut:not(.ilo--card--multilink):not(.ilo--card--detail):not(.ilo--card--feature)::before {
-      clip-path: polygon(90% 0, 100% 100%, 100% 100%, 0% 100%, 0% 0%);
-      height: px-to-rem(40px);
-      top: px-to-rem(-39.7px);
+    &.ilo--card--cornercut:not(.ilo--card--multilink):not(.ilo--card--detail):not(.ilo--card--feature) {
+      &::before {
+        height: 40px;
+        top: px-to-rem(-39.7px);
+        width: calc(100% - 73px);
+      }
+
+      &::after {
+        height: 40px;
+        top: px-to-rem(-39.7px);
+        width: 73.3px;
+      }
     }
 
     &#{$self}--dark {
@@ -819,10 +1001,18 @@
     @include breakpoint("large") {
       padding: 0 px-to-rem(40px) px-to-rem(56px) px-to-rem(40px);
 
-      &.ilo--card--cornercut:not(.ilo--card--multilink):not(.ilo--card--detail):not(.ilo--card--feature)::before {
-        clip-path: polygon(90% 0, 100% 100%, 100% 100%, 0% 100%, 0% 0%);
-        height: px-to-rem(41px);
-        top: px-to-rem(-40.7px);
+      &.ilo--card--cornercut:not(.ilo--card--multilink):not(.ilo--card--detail):not(.ilo--card--feature) {
+        &::before {
+          height: 48px;
+          top: px-to-rem(-47.7px);
+          width: calc(100% - 87px);
+        }
+
+        &::after {
+          height: 48px;
+          top: px-to-rem(-47.7px);
+          width: 87.3px;
+        }
       }
     }
 
@@ -908,29 +1098,64 @@
 
   &--stat {
     border-bottom: px-to-rem(3px) solid $brand-ilo-purple;
+    margin-top: px-to-rem(40px);
     padding: 0 px-to-rem(24px) px-to-rem(40px) px-to-rem(22px);
+    position: relative;
     width: 100%;
 
-    &.ilo--card--cornercut:not(.ilo--card--multilink):not(.ilo--card--detail):not(.ilo--card--feature)::before {
-      clip-path: polygon(75% 0, 100% 100%, 100% 100%, 0% 100%, 0% 0%);
-      height: px-to-rem(40px);
-      top: px-to-rem(-39.7px);
+    &.ilo--card--cornercut:not(.ilo--card--multilink):not(.ilo--card--detail):not(.ilo--card--feature) {
+      &::before {
+        left: 0;
+        top: px-to-rem(-39.7px);
+
+        .right-to-left & {
+          left: auto;
+          right: 0;
+        }
+      }
+
+      &::after {
+        right: 0;
+        top: px-to-rem(-39.7px);
+
+        .right-to-left & {
+          left: 0;
+          right: auto;
+          transform: rotateY(180deg);
+        }
+      }
     }
 
     &#{$self}--blue {
       background: $brand-ilo-light-blue;
+
+      &.ilo--card--cornercut:not(.ilo--card--multilink):not(.ilo--card--detail):not(.ilo--card--feature) {
+        @include cornercut($brand-ilo-light-blue, 40px, 73px);
+      }
     }
 
     &#{$self}--yellow {
       background: $brand-ilo-yellow;
+
+      &.ilo--card--cornercut:not(.ilo--card--multilink):not(.ilo--card--detail):not(.ilo--card--feature) {
+        @include cornercut($brand-ilo-yellow, 40px, 73px);
+      }
     }
 
     &#{$self}--green {
       background: $brand-ilo-green;
+
+      &.ilo--card--cornercut:not(.ilo--card--multilink):not(.ilo--card--detail):not(.ilo--card--feature) {
+        @include cornercut($brand-ilo-green, 40px, 73px);
+      }
     }
 
     &#{$self}--turquoise {
       background: $brand-ilo-turquoise;
+
+      &.ilo--card--cornercut:not(.ilo--card--multilink):not(.ilo--card--detail):not(.ilo--card--feature) {
+        @include cornercut($brand-ilo-turquoise, 40px, 73px);
+      }
     }
 
     #{$self}--content {
@@ -962,20 +1187,16 @@
       @include font-styles("image-credit");
       align-self: flex-end;
     }
-
-    @include breakpoint("large") {
-      &.ilo--card--cornercut:not(.ilo--card--multilink):not(.ilo--card--detail):not(.ilo--card--feature)::before {
-        height: px-to-rem(48px);
-        top: px-to-rem(-47.7px);
-      }
-    }
   }
 
   &--data {
+    @include cornercut($brand-ilo-light-blue, 40px, 73px);
     background: $brand-ilo-light-blue;
     border-bottom: px-to-rem(3px) solid #82afdc;
+    margin-top: px-to-rem(40px);
     max-width: px-to-rem(600px);
     padding: 0 px-to-rem(24px) px-to-rem(56px);
+    position: relative;
 
     &:hover,
     &:focus,
@@ -984,15 +1205,34 @@
     }
 
     &::before {
-      clip-path: polygon(90% 0, 100% 100%, 100% 100%, 0% 100%, 0% 0%);
-      height: px-to-rem(40px);
+      left: 0;
       top: px-to-rem(-39.7px);
+
+      .right-to-left & {
+        left: auto;
+        right: 0;
+      }
     }
 
-    @include breakpoint("large") {
+    &::after {
+      right: 0;
+      top: px-to-rem(-39.7px);
+
+      .right-to-left & {
+        left: 0;
+        right: auto;
+        transform: rotateY(180deg);
+      }
+    }
+
+    @include breakpoint("medium") {
+      @include cornercut($brand-ilo-light-blue, 48px, 84px);
+
       &::before {
-        clip-path: polygon(90% 0, 100% 100%, 100% 100%, 0% 100%, 0% 0%);
-        height: px-to-rem(48px);
+        top: px-to-rem(-47.7px);
+      }
+
+      &::after {
         top: px-to-rem(-47.7px);
       }
     }

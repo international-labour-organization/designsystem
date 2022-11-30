@@ -17,6 +17,12 @@ import profileArgs from "../components/LinkList/LinkList.args";
 export default {
   title: "Components/LinkList",
   component: LinkList,
+  argTypes: {
+    theme: {
+      options: ["light", "dark"],
+      control: { type: "select" },
+    },
+  },
   parameters: {
     componentSubtitle: "Component",
     docs: {

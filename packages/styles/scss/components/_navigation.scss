@@ -240,6 +240,7 @@
 
     @include breakpoint("large") {
       background: $brand-ilo-dark-blue;
+      overflow: visible;
       position: static;
       transform: none;
     }
@@ -918,9 +919,9 @@
   }
 }
 
-
 .ilo--menu--open {
   height: 100%;
+  padding-top: 85px;
   overflow: hidden;
   width: 100%;
 }

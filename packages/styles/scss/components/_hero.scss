@@ -180,6 +180,10 @@
 }
 
 .ilo--hero-card {
+  @include cornercut(
+    map-get($color, "hero", "card", "light", "background"),
+    40px
+  );
   background: map-get($color, "hero", "card", "light", "background");
   color: map-get($color, "hero", "card", "light", "color");
   max-width: 998px;
@@ -187,29 +191,39 @@
   padding: 16px 16px 40px 16px;
 
   &::before {
-    background: inherit;
-    clip-path: polygon(90% 0, 100% 100%, 100% 100%, 0% 100%, 0% 0%);
-    content: "";
-    display: block;
-    height: 40px;
     left: 0;
-    position: absolute;
     top: -39.7px;
-    width: 100%;
 
     .right-to-left & {
-      clip-path: polygon(100% 0, 100% 100%, 100% 100%, 0% 100%, 10% 0%);
       left: auto;
       right: 0;
     }
 
     @include breakpoint("large") {
-      height: 56px;
-      top: -55.7px;
+      top: -63.7px;
+    }
+  }
+
+  &::after {
+    right: 0;
+    top: -39.7px;
+
+    .right-to-left & {
+      left: 0;
+      right: auto;
+    }
+
+    @include breakpoint("large") {
+      top: -63.7px;
     }
   }
 
   @include breakpoint("large") {
+    @include cornercut(
+      map-get($color, "hero", "card", "light", "background"),
+      64px,
+      116px
+    );
     padding: 0 70px 70px 56px;
 
     &.ilo--hero-card--graphic {
@@ -229,6 +243,10 @@
     background: map-get($color, "hero", "card", "dark", "background");
     border-bottom: 3px solid $color-base-red-medium;
     color: map-get($color, "hero", "card", "dark", "color");
+
+    &::after {
+      @include dataurlicon("triangledecoration", $brand-ilo-dark-blue);
+    }
 
     .ilo--hero-card--link.icon {
       color: map-get($color, "hero", "card", "dark", "icon", "color");
@@ -308,7 +326,24 @@
       display: none;
     }
 
+    &.ilo--hero-card--nobackground {
+      background: transparent;
+
+      > * {
+        filter: drop-shadow(0px 12px 32px rgba(0, 0, 0, 0.16))
+          drop-shadow(0px 0.8px 1.6px rgba(0, 0, 0, 0.02))
+          drop-shadow(0px 2.7px 4.8px rgba(0, 0, 0, 0.04))
+          drop-shadow(0px 8px 16px rgba(0, 0, 0, 0.08));
+      }
+
+      &::before,
+      &::after {
+        content: "";
+      }
+    }
+
     @include breakpoint("large") {
+      @include cornercut($brand-ilo-white, 48px, 87.4px);
       bottom: 72px;
       max-width: 720px;
       padding: 0 48px 48px 72px;
@@ -316,20 +351,22 @@
       width: 100%;
 
       &::before {
-        background: inherit;
-        clip-path: polygon(90% 0, 100% 100%, 100% 100%, 0% 100%, 0% 0%);
-        content: "";
-        display: block;
-        height: 59px;
         left: 0;
-        position: absolute;
-        top: -58.7px;
-        width: 100%;
+        top: -48px;
 
         .right-to-left & {
-          clip-path: polygon(100% 0, 100% 100%, 100% 100%, 0% 100%, 10% 0%);
           left: auto;
           right: 0;
+        }
+      }
+
+      &::after {
+        right: 0;
+        top: -48px;
+
+        .right-to-left & {
+          left: 0;
+          right: auto;
         }
       }
 
@@ -348,6 +385,15 @@
         left: auto;
         right: 0;
       }
+
+      &.ilo--hero-card--nobackground {
+        background: transparent;
+
+        &::before,
+        &::after {
+          content: "";
+        }
+      }
     }
 
     &.ilo--hero-card--dark {
@@ -355,6 +401,22 @@
         background: rgba(
           map-get($color, "hero", "card", "dark", "background"),
           0.55
+        );
+
+        &.ilo--hero-card--nobackground {
+          background: transparent;
+
+          &::before,
+          &::after {
+            content: "";
+          }
+        }
+      }
+
+      &::after {
+        @include dataurlicon(
+          "triangledecoration",
+          rgba($brand-ilo-dark-blue, 0.55)
         );
       }
     }
@@ -385,11 +447,6 @@
       max-width: 720px;
       padding: 0 48px 48px 48px;
       width: 100%;
-
-      &:before {
-        height: px-to-rem(40px);
-        top: px-to-rem(-39.7px);
-      }
     }
   }
 

@@ -22,7 +22,16 @@ By changing the \`theme\` prop you can set whether the tooltip has a light or da
 export default {
   title: "Components/Tooltip",
   component: Tooltip,
-  argTypes: {},
+  argTypes: {
+    icon: {
+      options: [true, false],
+      control: { type: "boolean" },
+    },
+    theme: {
+      options: ["light", "dark"],
+      control: { type: "select" },
+    },
+  },
   parameters: {
     componentSubtitle: "Component",
     docs: {

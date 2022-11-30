@@ -30,7 +30,20 @@ By changing the \`type\` prop you can change base coloring of the links. By defa
 export default {
   title: "Components/Callout",
   component: Callout,
-  argTypes: {},
+  argTypes: {
+    isCollapsible: {
+      options: [true, false],
+      control: { type: "boolean" },
+    },
+    isOpen: {
+      options: [true, false],
+      control: { type: "boolean" },
+    },
+    type: {
+      options: ["info", "error", "success", "warning"],
+      control: { type: "select" },
+    },
+  },
   parameters: {
     componentSubtitle: "Component",
     docs: {

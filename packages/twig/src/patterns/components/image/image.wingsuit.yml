@@ -34,4 +34,14 @@ image:
           src: 'https://place-hold.it/1200x900?text=LargeBreakpointImage'
         - breakpoint: 1440
           src: 'https://place-hold.it/1600x1200?text=LargestBreakpointImage'
+  settings:
+    ishero:
+      type: select
+      label: Is Hero
+      description: Is this image in a hero? If true, and credit exists, will display credit in a title attribute
+      preview: false
+      required: false
+      options:
+        True: true
+        False: 'false'
   visibility: storybook

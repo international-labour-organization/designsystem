@@ -29,7 +29,12 @@ By changing the \`theme\` prop you can change base coloring of the links. By def
 export default {
   title: "Components/Link",
   component: Link,
-  argTypes: {},
+  argTypes: {
+    theme: {
+      options: ["light", "dark", "footer"],
+      control: { type: "select" },
+    },
+  },
   parameters: {
     componentSubtitle: "Component",
     docs: {

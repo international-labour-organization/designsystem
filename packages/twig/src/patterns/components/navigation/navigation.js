@@ -305,6 +305,10 @@ export default class Navigation {
       false
     );
 
+    if (window.innerWidth >= 1024) {
+      this.body.addEventListener(EVENTS.CLICK, (ev) => this.handleSearchButtonClickOff(ev), false);
+    }
+
     return this;
   }
 
@@ -322,6 +326,8 @@ export default class Navigation {
       (ev) => this.keyPress(ev, this.searchButtonClickOff),
       false
     );
+
+    this.body.removeEventListener(EVENTS.CLICK, (ev) => this.handleSearchButtonClickOff(ev), false);
 
     return this;
   }

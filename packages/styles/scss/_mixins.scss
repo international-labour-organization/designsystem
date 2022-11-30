@@ -329,3 +329,29 @@
     }
   }
 }
+
+// ======================================
+// Cornercut
+// ======================================
+@mixin cornercut($color: $brand-ilo-dark-blue, $height: 40px, $width: 73px) {
+  // 1.8125x
+  &::before {
+    background: inherit;
+    content: "";
+    display: block;
+    height: $height;
+    position: absolute;
+    width: calc(100% - $width);
+  }
+
+  &::after {
+    @include dataurlicon("triangledecoration", $color);
+    background-position: bottom right;
+    background-size: cover;
+    content: "";
+    height: $height;
+    display: block;
+    position: absolute;
+    width: $width + 0.4;
+  }
+}
