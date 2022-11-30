@@ -1,5 +1,13 @@
 # @ilo-org/themes
 
+## 0.1.13
+
+### Patch Changes
+
+- 62c3c624e: Bugfixes in multiple components
+- 1b29018f0: Adds better React Storybook experience
+- 43c2b0026: Cornercut changes to make more consistent across sizes and breakpoints for hero and cards
+
 ## 0.1.12
 
 ### Patch Changes

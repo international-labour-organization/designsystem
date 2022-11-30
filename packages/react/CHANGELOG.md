@@ -1,5 +1,21 @@
 # @ilo-org/react
 
+## 0.0.17
+
+### Patch Changes
+
+- 62c3c624e: Bugfixes in multiple components
+- 1b29018f0: Adds better React Storybook experience
+- 43c2b0026: Cornercut changes to make more consistent across sizes and breakpoints for hero and cards
+- Updated dependencies [62c3c624e]
+- Updated dependencies [1b29018f0]
+- Updated dependencies [43c2b0026]
+  - @ilo-org/fonts@0.0.5
+  - @ilo-org/styles@0.1.13
+  - @ilo-org/themes@0.1.13
+  - @ilo-org/utils@0.0.9
+  - @ilo-org/icons-react@0.0.15
+
 ## 0.0.16
 
 ### Patch Changes
