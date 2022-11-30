@@ -2,7 +2,7 @@
   LOCALNAV COMPONENT
 #}
 <header class="{{prefix}}--header {{prefix}}--header--local" data-loadcomponent="Navigation" data-prefix="{{prefix}}">
-  <div class="{{prefix}}--header--utility-bar {{prefix}}--header--utility-bar--local">
+  <div class="{{prefix}}--header--utility-bar {{prefix}}--header--utility-bar--local" {% if background %} style="background: {{background}};"{% endif %}>
     <nav class="{{prefix}}--nav--local">
       <div class="{{prefix}}--nav--local--logo-wrapper">
         <a href="{{siteurl}}" class="{{prefix}}--nav--local--logo-link">
