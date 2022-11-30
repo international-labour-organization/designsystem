@@ -1,5 +1,15 @@
 # @ilo-org/icons-react
 
+## 0.0.15
+
+### Patch Changes
+
+- 43c2b0026: Cornercut changes to make more consistent across sizes and breakpoints for hero and cards
+- Updated dependencies [62c3c624e]
+- Updated dependencies [1b29018f0]
+- Updated dependencies [43c2b0026]
+  - @ilo-org/icons@0.1.13
+
 ## 0.0.14
 
 ### Patch Changes
