@@ -3,6 +3,11 @@ localnav:
   label: Local nav
   description: The Local nav component
   fields:
+    background:
+      type: string
+      label: Background
+      description: Override color for the background
+      preview: "#960A55"
     logo:
       type: object
       label: Logo
