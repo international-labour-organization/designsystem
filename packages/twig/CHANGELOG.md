@@ -1,5 +1,19 @@
 # @ilo-org/twig
 
+## 0.2.9
+
+### Patch Changes
+
+- 414f75fca: Fix issue where CardGroup used the wrong size button
+- e53bad307: enable hero to use title attribute instead of credit component
+- b48b386b8: Local nav color for the background is a setting now
+- Updated dependencies [b48b386b8]
+  - @ilo-org/fonts@0.0.6
+  - @ilo-org/icons@0.1.14
+  - @ilo-org/styles@0.1.14
+  - @ilo-org/themes@0.1.14
+  - @ilo-org/utils@0.0.10
+
 ## 0.2.8
 
 ### Patch Changes
