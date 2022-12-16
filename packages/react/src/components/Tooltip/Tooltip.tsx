@@ -35,7 +35,8 @@ const Tooltip: FC<TooltipProps> = ({
     [`${baseClass}--arrow--placement-${arrowPlacement}`]: arrowPlacement,
   });
 
-  const handleOnMouseOver = (e: any) => {
+  const handleOnMouseOver: React.MouseEventHandler<HTMLDivElement> &
+    React.FocusEventHandler<HTMLDivElement> = (e) => {
     // get hovered element reference
     const target = e.currentTarget;
 

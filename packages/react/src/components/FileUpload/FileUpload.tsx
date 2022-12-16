@@ -40,7 +40,7 @@ const FileUpload: FC<FileUploadProps> = ({
   };
 
   return (
-    <Fieldset className={"file-upload"} legend={false} fieldsetid={false}>
+    <Fieldset className={"file-upload"}>
       <FormElement
         elemid={name as any}
         label={label}

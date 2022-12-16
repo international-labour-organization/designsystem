@@ -6,7 +6,7 @@ const large: AccordionProps = {
   },
   allowMultipleExpanded: true,
   defaultAccordionsExpanded: ["l1", "l2"],
-  children: "",
+  children: undefined,
 };
 
 /**

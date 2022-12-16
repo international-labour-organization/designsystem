@@ -32,7 +32,7 @@ const DatePicker: FC<DatePickerProps> = ({
    */
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement>,
-    picker: string | false = false
+    picker?: string
   ) => {
     if (callback) {
       callback(e, picker);
@@ -42,7 +42,7 @@ const DatePicker: FC<DatePickerProps> = ({
   return (
     <>
       {!range && (
-        <Fieldset legend={false} fieldsetid={false}>
+        <Fieldset>
           <FormElement
             elemid={name as any}
             label={label}
@@ -66,7 +66,7 @@ const DatePicker: FC<DatePickerProps> = ({
       )}
       {range && (
         <div className={`${baseClass}--range`}>
-          <Fieldset legend={false} fieldsetid={false}>
+          <Fieldset>
             <FormElement
               elemid={name as any}
               label={label}
@@ -88,7 +88,7 @@ const DatePicker: FC<DatePickerProps> = ({
               />
             </FormElement>
           </Fieldset>
-          <Fieldset legend={false} fieldsetid={false}>
+          <Fieldset>
             <FormElement
               elemid={enddata?.name as any}
               label={enddata?.label as any}

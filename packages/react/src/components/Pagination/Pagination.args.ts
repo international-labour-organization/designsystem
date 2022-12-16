@@ -2,7 +2,7 @@ import { PaginationProps } from "./Pagination.props";
 
 const pagination: PaginationProps = {
   className: "storybook",
-  callback: "",
+  callback: () => {},
   currentPage: 1,
   firstPageUrl: "https://www.google.com?s=first",
   firstPageTitle: "First",
@@ -18,7 +18,7 @@ const pagination: PaginationProps = {
 
 const firstDisabled: PaginationProps = {
   className: "storybook",
-  callback: "",
+  callback: () => {},
   currentPage: 0,
   firstPageUrl: "https://www.google.com?s=first",
   firstPageTitle: "First",

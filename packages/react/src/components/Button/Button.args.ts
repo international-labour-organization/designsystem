@@ -117,7 +117,7 @@ const disabledsm: ButtonProps = {
 };
 
 const iconleftlgprimary: ButtonProps = {
-  callback: "",
+  callback: () => {},
   children: "",
   icon: "close",
   label: "Icon on left",
@@ -323,7 +323,7 @@ const iconrightsmalert: ButtonProps = {
 };
 
 const icononlylgprimary: ButtonProps = {
-  callback: "",
+  callback: () => {},
   children: "",
   icon: "close",
   icononly: true,

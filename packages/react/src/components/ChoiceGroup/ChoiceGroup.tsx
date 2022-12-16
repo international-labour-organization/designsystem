@@ -45,8 +45,8 @@ const ChoiceGroup: FC<ChoiceGroupProps> = ({
             />
           );
         }
+        return null;
       })}
-      ;
     </Fieldset>
   );
 };

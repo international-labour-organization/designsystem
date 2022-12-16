@@ -1,7 +1,7 @@
 import { RadioProps } from "./Radio.props";
 
 const basic: RadioProps = {
-  callback: "",
+  callback: () => {},
   disabled: false,
   error: false,
   helper: false,

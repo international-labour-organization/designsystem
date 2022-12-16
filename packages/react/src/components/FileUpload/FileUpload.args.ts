@@ -1,7 +1,7 @@
 import { FileUploadProps } from "./FileUpload.props";
 
 const basic: FileUploadProps = {
-  callback: "",
+  callback: () => {},
   disabled: false,
   error: false,
   helper: false,
@@ -13,7 +13,7 @@ const basic: FileUploadProps = {
 };
 
 const hashelper: FileUploadProps = {
-  callback: "",
+  callback: () => {},
   disabled: false,
   error: false,
   helper: "The file upload's helper text",
@@ -25,7 +25,7 @@ const hashelper: FileUploadProps = {
 };
 
 const haserror: FileUploadProps = {
-  callback: "",
+  callback: () => {},
   disabled: false,
   error: "this one has an error",
   helper: false,
@@ -37,7 +37,7 @@ const haserror: FileUploadProps = {
 };
 
 const hastooltip: FileUploadProps = {
-  callback: "",
+  callback: () => {},
   disabled: false,
   error: false,
   helper: false,

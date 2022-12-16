@@ -27,7 +27,7 @@ const Notification: FC<NotificationProps> = ({
   });
 
   const ctaprops: ButtonProps = {
-    callback: false,
+    callback: () => {},
     className: `${baseClass}--cta`,
     children: false,
     label: cta?.label,

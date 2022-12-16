@@ -1,9 +1,8 @@
-// prettier-ignore
-import { FC, useContext, MouseEvent } from "react";
 import classNames from "classnames";
+import { FC, MouseEvent, useContext } from "react";
 import useGlobalSettings from "../../hooks/useGlobalSettings";
-import { default as AccordionButtonProps } from "./AccordionButton.props";
 import { AccordionContext } from "./Accordion";
+import { default as AccordionButtonProps } from "./AccordionButton.props";
 import { AccordionItemContext } from "./AccordionItem";
 
 const AccordionButton: FC<AccordionButtonProps> = ({

@@ -4,7 +4,7 @@ import useGlobalSettings from "../../hooks/useGlobalSettings";
 import { VideoProps } from "./Video.props";
 import VideoPlayer from "./VideoPlayer";
 
-const Video: FC<VideoProps> = ({ alt, className, caption, url, video }) => {
+const Video: FC<VideoProps> = ({ className, caption, poster, video }) => {
   const { prefix } = useGlobalSettings();
   const baseClass = `${prefix}--video`;
 
@@ -19,7 +19,7 @@ const Video: FC<VideoProps> = ({ alt, className, caption, url, video }) => {
   return (
     <figure className={videoClasses}>
       <div className={`${videoClasses}--wrapper`}>
-        {video && <VideoPlayer {...video} poster={{ url: url, alt: alt }} />}
+        {video && <VideoPlayer {...video} poster={poster} />}
       </div>
       {caption && <figcaption className={captionClasses}>{caption}</figcaption>}
     </figure>

@@ -1,16 +1,16 @@
+import { getUpdatedItems } from "@ilo-org/utils";
+import classNames from "classnames";
 import {
-  useState,
-  useEffect,
+  Children,
   createContext,
   FC,
   ReactElement,
-  Children,
+  useEffect,
+  useState,
 } from "react";
-import classNames from "classnames";
-import { getUpdatedItems } from "@ilo-org/utils";
 import useGlobalSettings from "../../hooks/useGlobalSettings";
-import { AccordionProps, AccordionContextProps } from "./Accordion.props";
 import { checkArrayDuplicates } from "../../utils/checkArrayDuplicates";
+import { AccordionContextProps, AccordionProps } from "./Accordion.props";
 
 export const AccordionContext = createContext({} as AccordionContextProps);
 
