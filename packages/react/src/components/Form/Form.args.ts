@@ -1,13 +1,11 @@
-import { FormProps } from "./Form.props";
 import CheckboxArgs from "../Checkbox/Checkbox.args";
-import ChoiceGroupArgs from "../ChoiceGroup/ChoiceGroup.args";
 import DatePickerArgs from "../DatePicker/DatePicker.args";
 import DropdownArgs from "../Dropdown/Dropdown.args";
 import FileUploadArgs from "../FileUpload/FileUpload.args";
-import FormGroupArgs from "../FormGroup/FormGroup.args";
 import InputArgs from "../Input/Input.args";
 import NumberPickerArgs from "../NumberPicker/NumberPicker.args";
 import TextareaArgs from "../Textarea/Textarea.args";
+import { FormProps } from "./Form.props";
 
 const basic: FormProps = {
   action: "https://my.action.url",
@@ -22,24 +20,9 @@ const basic: FormProps = {
       type: "dropdown",
     },
     {
-      field: FormGroupArgs.basic,
-      type: "formgroup",
-    },
-    {
-      field: { ...CheckboxArgs.basic },
+      field: CheckboxArgs.basic,
       type: "checkbox",
-    },
-    {
-      choicegroupid: "multiplecheckboxes",
-      field: ChoiceGroupArgs.checkboxes.items,
-      legend: "Multiple Checkboxes",
-      type: "checkbox",
-    },
-    {
-      choicegroupid: "radios",
-      field: ChoiceGroupArgs.radios.items,
-      legend: "Radio Group",
-      type: "radio",
+      choicegroupid: "",
     },
     {
       field: FileUploadArgs.basic,
@@ -74,20 +57,6 @@ const hashelper: FormProps = {
       type: "dropdown",
     },
     {
-      choicegroupid: "multiplecheckboxes",
-      field: ChoiceGroupArgs.checkboxeshelper.items,
-      grouphelper: ChoiceGroupArgs.checkboxeshelper.grouphelper,
-      legend: "Multiple Checkboxes",
-      type: "checkbox",
-    },
-    {
-      choicegroupid: "radios",
-      field: ChoiceGroupArgs.radioshelper.items,
-      grouphelper: ChoiceGroupArgs.radioshelper.grouphelper,
-      legend: "Radio Group",
-      type: "radio",
-    },
-    {
       field: FileUploadArgs.hashelper,
       type: "file",
     },
@@ -118,20 +87,6 @@ const haserror: FormProps = {
     {
       field: DropdownArgs.haserror,
       type: "dropdown",
-    },
-    {
-      choicegroupid: "multiplecheckboxes",
-      field: ChoiceGroupArgs.checkboxeserror.items,
-      grouperror: ChoiceGroupArgs.checkboxeserror.grouperror,
-      legend: "Multiple Checkboxes",
-      type: "checkbox",
-    },
-    {
-      choicegroupid: "radios",
-      field: ChoiceGroupArgs.radioserror.items,
-      grouperror: ChoiceGroupArgs.radioserror.grouperror,
-      legend: "Radio Group",
-      type: "radio",
     },
     {
       field: FileUploadArgs.haserror,
@@ -165,20 +120,7 @@ const hastooltip: FormProps = {
       field: DropdownArgs.hastooltip,
       type: "dropdown",
     },
-    {
-      choicegroupid: "multiplecheckboxes",
-      field: ChoiceGroupArgs.checkboxestooltip.items,
-      grouptooltip: ChoiceGroupArgs.checkboxestooltip.grouptooltip,
-      legend: "Multiple Checkboxes",
-      type: "checkbox",
-    },
-    {
-      choicegroupid: "radios",
-      field: ChoiceGroupArgs.radiostooltip.items,
-      grouptooltip: ChoiceGroupArgs.radiostooltip.grouptooltip,
-      legend: "Radio Group",
-      type: "radio",
-    },
+
     {
       field: FileUploadArgs.hastooltip,
       type: "file",
@@ -210,26 +152,6 @@ const hasdisabled: FormProps = {
     {
       field: DropdownArgs.basic,
       type: "dropdown",
-    },
-    {
-      field: FormGroupArgs.basic,
-      type: "formgroup",
-    },
-    {
-      field: { ...CheckboxArgs.basic },
-      type: "checkbox",
-    },
-    {
-      choicegroupid: "multiplecheckboxes",
-      field: ChoiceGroupArgs.checkboxes.items,
-      legend: "Multiple Checkboxes",
-      type: "checkbox",
-    },
-    {
-      choicegroupid: "radios",
-      field: ChoiceGroupArgs.radios.items,
-      legend: "Radio Group",
-      type: "radio",
     },
     {
       field: FileUploadArgs.basic,

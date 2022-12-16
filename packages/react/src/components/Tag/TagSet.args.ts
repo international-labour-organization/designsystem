@@ -5,7 +5,6 @@ const tag: TagSetProps = {
   onButtonClick: (e) => {
     console.log(e.target);
   },
-  children: "",
   defaultTagActive: ["tag1", "tag2"],
 };
 
@@ -14,7 +13,6 @@ const buttonTag: TagSetProps = {
   onButtonClick: (e) => {
     console.log(e.target);
   },
-  children: "",
   defaultTagActive: [
     "tag1",
     "tag2",

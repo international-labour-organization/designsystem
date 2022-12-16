@@ -62,7 +62,7 @@ const Checkbox: FC<CheckboxProps> = ({
         </FormElement>
       )}
       {!grouped && (
-        <Fieldset legend={false} fieldsetid={false}>
+        <Fieldset>
           <FormElement
             elemid={id as any}
             label={label}

@@ -1,7 +1,7 @@
 import { DatePickerProps } from "./DatePicker.props";
 
 const basic: DatePickerProps = {
-  callback: "",
+  callback: () => {},
   disabled: false,
   error: false,
   helper: false,
@@ -12,7 +12,7 @@ const basic: DatePickerProps = {
 };
 
 const hashelper: DatePickerProps = {
-  callback: "",
+  callback: () => {},
   disabled: false,
   error: false,
   helper: "here is helper text",
@@ -23,7 +23,7 @@ const hashelper: DatePickerProps = {
 };
 
 const haserror: DatePickerProps = {
-  callback: "",
+  callback: () => {},
   disabled: false,
   error: "this one has an error",
   helper: false,
@@ -34,7 +34,7 @@ const haserror: DatePickerProps = {
 };
 
 const hastooltip: DatePickerProps = {
-  callback: "",
+  callback: () => {},
   disabled: false,
   error: false,
   helper: false,
@@ -46,10 +46,10 @@ const hastooltip: DatePickerProps = {
 };
 
 const hasrange: DatePickerProps = {
-  callback: "",
+  callback: () => {},
   disabled: false,
   enddata: {
-    callback: "",
+    callback: () => {},
     disabled: false,
     error: false,
     helper: "this is an end date range",

@@ -1,9 +1,9 @@
-import React, { useState, useEffect, FC } from "react";
 import classNames from "classnames";
+import React, { FC, useEffect, useState } from "react";
 import useGlobalSettings from "../../hooks/useGlobalSettings";
-import { CalloutProps } from "./Callout.props";
-import { ButtonProps } from "../Button/Button.props";
 import { Button } from "../Button";
+import { ButtonProps } from "../Button/Button.props";
+import { CalloutProps } from "./Callout.props";
 
 const Callout: FC<CalloutProps> = ({
   className,
@@ -36,7 +36,7 @@ const Callout: FC<CalloutProps> = ({
   const iconClasses = `icon icon--${type}`;
 
   const ctaprops: ButtonProps = {
-    callback: false,
+    callback: undefined,
     className: `${baseClass}--cta`,
     children: false,
     label: cta?.label,

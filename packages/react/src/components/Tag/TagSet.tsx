@@ -9,7 +9,6 @@ import {
 import classNames from "classnames";
 import useGlobalSettings from "../../hooks/useGlobalSettings";
 import { TagSetContextProps, TagSetProps } from "./TagSet.props";
-import { getUpdatedItems } from "@ilo-org/utils";
 import { checkArrayDuplicates } from "../../utils/checkArrayDuplicates";
 
 export const TagSetContext = createContext({} as TagSetContextProps);
@@ -56,7 +55,6 @@ const TagSet: FC<TagSetProps> = ({
       value={{
         activeItems,
         setActiveItems,
-        getUpdatedItems,
         allowMultipleActive,
         onButtonClick,
       }}

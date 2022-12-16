@@ -7,6 +7,8 @@ import livereload from "rollup-plugin-livereload";
 import peerDepsExternal from "rollup-plugin-peer-deps-external";
 import typescript from "rollup-plugin-typescript2";
 import multiInput from "rollup-plugin-multi-input";
+import copy from "rollup-plugin-copy";
+import mv from "rollup-plugin-mv";
 
 const require = createRequire(import.meta.url);
 const packageJson = require("./package.json");

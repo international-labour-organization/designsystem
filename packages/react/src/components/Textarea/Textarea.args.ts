@@ -1,7 +1,6 @@
 import { TextareaProps } from "./Textarea.props";
 
 const basic: TextareaProps = {
-  callback: "",
   disabled: false,
   error: false,
   helper: false,
@@ -13,7 +12,6 @@ const basic: TextareaProps = {
 };
 
 const hashelper: TextareaProps = {
-  callback: "",
   disabled: false,
   error: false,
   helper: "This one has helper text",
@@ -25,7 +23,6 @@ const hashelper: TextareaProps = {
 };
 
 const haserror: TextareaProps = {
-  callback: "",
   disabled: false,
   error: "This one has an error",
   helper: false,
@@ -37,7 +34,6 @@ const haserror: TextareaProps = {
 };
 
 const hastooltip: TextareaProps = {
-  callback: "",
   disabled: false,
   error: false,
   helper: false,

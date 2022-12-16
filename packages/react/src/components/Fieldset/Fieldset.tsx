@@ -1,7 +1,7 @@
 import { Children, FC } from "react";
 import classNames from "classnames";
 import useGlobalSettings from "../../hooks/useGlobalSettings";
-import { FieldsetProps } from "./Fieldset.props";
+import { FieldsetChild, FieldsetProps } from "./Fieldset.props";
 import { Tooltip } from "../Tooltip";
 
 const Fieldset: FC<FieldsetProps> = ({
@@ -22,7 +22,7 @@ const Fieldset: FC<FieldsetProps> = ({
   return (
     <fieldset
       className={fieldsetClasses}
-      id={fieldsetid ? (fieldsetid as any) : undefined}
+      id={fieldsetid ? fieldsetid : undefined}
     >
       {legend && (
         <legend className={`${baseClass}--legend`}>
@@ -43,13 +43,13 @@ const Fieldset: FC<FieldsetProps> = ({
       {grouperror && (
         <span className={`${baseClass}--error`}>{grouperror}</span>
       )}
-      {Children.map(children, (child, i) => (
+      {Children.map(children, (child: FieldsetChild, i) => (
         <>
           {child && child.props && (
             <div
               key={`${baseClass}--input--${i}`}
               className={`${baseClass}--input${
-                child.props.type ? "--" + child.props.type : ""
+                child.props?.type ? "--" + child.props.type : ""
               } ${child.props.error ? "error" : ""}`}
             >
               {child.props.label && (

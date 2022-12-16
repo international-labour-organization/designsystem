@@ -26,15 +26,14 @@ const ChoiceGroup: FC<ChoiceGroupProps> = ({
       grouptooltip={grouptooltip}
     >
       {sanitzeditems.map((item: any, i: any) => {
-        console.log(item);
         if (item?.type === "checkbox") {
           return <Checkbox {...(item as any)} key={i} />;
         }
         if (item?.type === "radio") {
           return <Radio {...(item as any)} key={i} />;
         }
+        return null;
       })}
-      ;
     </Fieldset>
   );
 };

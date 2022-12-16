@@ -1,9 +1,9 @@
-import { FC, useContext, useLayoutEffect, useRef, useState } from "react";
 import classNames from "classnames";
+import { FC, useContext, useLayoutEffect, useRef, useState } from "react";
 import useGlobalSettings from "../../hooks/useGlobalSettings";
-import { default as AccordionPanelProps } from "./AccordionPanel.props";
 import { AccordionContext } from "./Accordion";
 import { AccordionItemContext } from "./AccordionItem";
+import { default as AccordionPanelProps } from "./AccordionPanel.props";
 
 const AccordionPanel: FC<AccordionPanelProps> = ({
   children,

@@ -1,8 +1,9 @@
-export type accordionSize = "small" | "large";
-export type buttonFunctions = "button" | "submit" | "reset";
-export type buttonTypes = "primary" | "secondary" | "tertiary" | "alert";
-export type calloutTypes = "info" | "error" | "success" | "warning";
-export type fieldTypes =
+// export type AccordionSize = "small" | "large";
+export type ButtonFunctions = "button" | "submit" | "reset";
+export type ButtonTypes = "primary" | "secondary" | "tertiary" | "alert";
+export type CalloutTypes = "info" | "error" | "success" | "warning";
+export type ChoiceGroupFieldTypes = "checkbox" | "radio";
+export type FieldTypes =
   | "checkbox"
   | "date"
   | "dropdown"
@@ -13,18 +14,18 @@ export type fieldTypes =
   | "textarea"
   | "toggle"
   | "file";
-export type formGroupTypes = "default" | "filter";
-export type headingLevel = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
-export type heroCardAlignment = "left" | "center" | "right";
-export type heroCardTypes =
+export type FormGroupTypes = "default" | "filter";
+export type HeadingLevel = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+export type HeroCardAlignment = "left" | "center" | "right";
+export type HeroCardTypes =
   | "home"
   | "publication"
   | "graphic"
   | "project"
   | "article"
   | "portal";
-export type heroCardTheme = "dark" | "light";
-export type inputTypes =
+export type HeroCardTheme = "dark" | "light";
+export type InputTypes =
   | "email"
   | "hidden"
   | "password"
@@ -32,18 +33,18 @@ export type inputTypes =
   | "tel"
   | "text"
   | "url";
-export type labelTypes = "default" | "actionable" | "light";
-export type linkTypes = "light" | "dark" | "footer" | "button";
-export type linkListThemes = "light" | "dark";
-export type tooltipThemes = "light" | "dark";
-export type tooltipAlignment = "top" | "right" | "bottom" | "left";
-export type tooltipPlacement = "negative" | "center" | "positive";
-export type listAlignment = "default" | "horizontal";
-export type listOrder = "unordered" | "ordered" | "unstyled";
-export type loadingStatus = "idle" | "loading" | "loaded";
-export type loadingSize = "small" | "large";
-export type notificationPlacement = "dialog" | "inline";
-export type notificationTypes = "error" | "info" | "success" | "warning";
-export type positionTypes = "top" | "bottom" | "left" | "right";
-export type sizeTypes = "small" | "medium" | "large";
-export type tagTypes = "anchor" | "display" | "button";
+export type LabelTypes = "default" | "actionable" | "light";
+export type LinkTypes = "light" | "dark" | "footer" | "button";
+export type LinkListThemes = "light" | "dark";
+export type TooltipThemes = "light" | "dark";
+export type TooltipAlignment = "top" | "right" | "bottom" | "left";
+export type TooltipPlacement = "negative" | "center" | "positive";
+export type ListAlignment = "default" | "horizontal";
+export type ListOrder = "unordered" | "ordered" | "unstyled";
+export type LoadingStatus = "idle" | "loading" | "loaded";
+export type LoadingSize = "small" | "large";
+export type NotificationPlacement = "dialog" | "inline";
+export type NotificationTypes = "error" | "info" | "success" | "warning";
+export type PositionTypes = "top" | "bottom" | "left" | "right";
+export type SizeTypes = "small" | "medium" | "large";
+export type TagTypes = "anchor" | "display" | "button";

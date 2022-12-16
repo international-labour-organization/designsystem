@@ -23,10 +23,6 @@ const Link: FC<LinkProps> = ({
     [`${baseClass}--${theme}`]: theme,
   });
 
-  function createMarkup() {
-    return { __html: label };
-  }
-
   return (
     <a
       className={linkClasses}
@@ -35,12 +31,7 @@ const Link: FC<LinkProps> = ({
       rel={target ? "noopener noreferrer" : ""}
       {...rest}
     >
-      {label && (
-        <span
-          className="link__label"
-          dangerouslySetInnerHTML={createMarkup()}
-        ></span>
-      )}
+      {label && <span className="link__label">{label}</span>}
       {children}
     </a>
   );

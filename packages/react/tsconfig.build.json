@@ -6,14 +6,13 @@
     "declaration": true,
     "declarationDir": "lib/types"
   },
-  "files": ["src/types/index.ts", "src/types/temp.d.ts"],
   "exclude": [
     "node_modules",
     "lib",
     "storybook-static",
     "src/stories",
     "src/__tests__",
-    "src/components/**/*.args.ts",
+    "**/*.args.ts",
     "src/setup.ts",
     "scripts"
   ]
