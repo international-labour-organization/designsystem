@@ -1,26 +1,7 @@
 {
   "name": "@ilo-org/react",
-  "description": "React components for the ILO's Design System",
   "version": "0.0.12",
-  "author": "@justintemps",
-  "license": "Apache-2.0",
-  "main": "lib/cjs/index.js",
-  "publishConfig": {
-    "access": "public"
-  },
-  "module": "lib/esm/index.js",
-  "files": [
-    "lib/esm/components",
-    "lib/esm/hooks",
-    "lib/esm/utils"
-  ],
-  "type": "module",
-  "types": "lib/types/react/src/index.d.ts",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/international-labour-organization/designsystem.git",
-    "directory": "packages/react"
-  },
+  "description": "React components for the ILO's Design System",
   "keywords": [
     "ui_patterns",
     "prototyping",
@@ -28,6 +9,47 @@
     "designsystem",
     "components"
   ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/international-labour-organization/designsystem.git",
+    "directory": "packages/react"
+  },
+  "license": "Apache-2.0",
+  "main": "lib/cjs/index.js",
+  "module": "lib/esm/index.js",
+  "type": "module",
+  "types": "lib/types/react/src/index.d.ts",
+  "scripts": {
+    "build": "pnpm run build:rollup && build:storybook",
+    "build-test": "react-scripts build",
+    "build:lib": "rollup -c",
+    "build:storybook": "build-storybook",
+    "check": "tsc --noEmit --p tsconfig.build.json",
+    "dev:lib": "rollup --config --configDevelop -w",
+    "eject": "react-scripts eject",
+    "format": "prettier --check . --ignore-path ../../.prettierignore",
+    "format:fix": "prettier --write . --ignore-path ../../.prettierignore",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "lint:fix": "pnpm lint -- --fix",
+    "start": "react-scripts start",
+    "storybook": "start-storybook -p 6006",
+    "storybook:static": "http-server ./storybook-static",
+    "test": "NODE_OPTIONS=--experimental-vm-modules SKIP_PREFLIGHT_CHECK=true react-scripts test --watchAll=false --setupFilesAfterEnv ./src/setup.ts",
+    "test:update": "SKIP_PREFLIGHT_CHECK=true react-scripts test -u --watchAll=false --setupFilesAfterEnv ./src/setup.ts",
+    "tsc": "tsc --showConfig"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
   "dependencies": {
     "@ilo-org/brand-assets": "workspace:*",
     "@ilo-org/fonts": "workspace:*",
@@ -71,6 +93,8 @@
     "http-server": "^14.1.0",
     "jest-environment-jsdom": "^27.5.1",
     "nodemon": "^2.0.20",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "react-scripts": "5.0.0",
     "rollup": "^3.4.0",
     "rollup-plugin-copy": "^3.4.0",
@@ -92,35 +116,7 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build-test": "react-scripts build",
-    "test": "NODE_OPTIONS=--experimental-vm-modules SKIP_PREFLIGHT_CHECK=true react-scripts test --watchAll=false --setupFilesAfterEnv ./src/setup.ts",
-    "test:update": "SKIP_PREFLIGHT_CHECK=true react-scripts test -u --watchAll=false --setupFilesAfterEnv ./src/setup.ts",
-    "eject": "react-scripts eject",
-    "storybook": "start-storybook -p 6006",
-    "storybook:static": "http-server ./storybook-static",
-    "build": "pnpm run build:rollup && build:storybook",
-    "build:storybook": "build-storybook",
-    "build:lib": "rollup -c",
-    "dev:lib": "rollup --config --configDevelop -w",
-    "check": "tsc --noEmit --p tsconfig.build.json",
-    "format": "prettier --check . --ignore-path ../../.prettierignore",
-    "format:fix": "prettier --write . --ignore-path ../../.prettierignore",
-    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
-    "lint:fix": "pnpm lint -- --fix",
-    "tsc": "tsc --showConfig"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "publishConfig": {
+    "access": "public"
   }
 }
