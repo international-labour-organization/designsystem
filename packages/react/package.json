@@ -14,6 +14,36 @@
     "url": "https://github.com/international-labour-organization/designsystem.git",
     "directory": "packages/react"
   },
+  "exports": {
+    ".": {
+      "types": "./lib/types/react/src/index.d.ts",
+      "import": "./lib/esm/index.js",
+      "default": "./lib/cjs/index.js"
+    },
+    "./components/*": {
+      "import": "./lib/esm/components/*/index.js",
+      "require": "./lib/cjs/components/*/index.js",
+      "types": "./lib/types/react/src/components/*/index.d.ts"
+    },
+    "./hooks/*": {
+      "import": "./lib/esm/hooks/*.js",
+      "require": "./lib/cjs/hooks/*.js",
+      "types": "./lib/types/react/src/hooks/index.d.ts"
+    }
+  },
+  "typesVersions": {
+    "*": {
+      "components": [
+        "./lib/types/react/src/components/index.d.ts"
+      ],
+      "hooks": [
+        "./lib/types/react/src/hooks/index.d.ts"
+      ],
+      "*": [
+        "./lib/types/react/src/index.d.ts"
+      ]
+    }
+  },
   "license": "Apache-2.0",
   "main": "lib/cjs/index.js",
   "module": "lib/esm/index.js",

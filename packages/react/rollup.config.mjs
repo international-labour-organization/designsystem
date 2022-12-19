@@ -7,8 +7,6 @@ import livereload from "rollup-plugin-livereload";
 import peerDepsExternal from "rollup-plugin-peer-deps-external";
 import typescript from "rollup-plugin-typescript2";
 import multiInput from "rollup-plugin-multi-input";
-import copy from "rollup-plugin-copy";
-import mv from "rollup-plugin-mv";
 
 const require = createRequire(import.meta.url);
 const packageJson = require("./package.json");
@@ -21,7 +19,10 @@ const config = {
     "src/hooks/*.ts",
     "src/utils/*.ts",
   ],
-  external: [...Object.keys(packageJson.dependencies)],
+  external: [
+    ...Object.keys(packageJson.dependencies),
+    ...Object.keys(packageJson.devDependencies),
+  ],
   output: [
     {
       dir: "lib/esm",
@@ -37,7 +38,6 @@ const config = {
 const basePlugins = [
   resolve(),
   commonjs(),
-  peerDepsExternal(),
   json(),
   multiInput.default({ relative: "src/" }),
   typescript({
@@ -45,6 +45,7 @@ const basePlugins = [
     useTsconfigDeclarationDir: true,
     tsconfig: "./tsconfig.build.json",
   }),
+  peerDepsExternal(),
 ];
 
 export default function (commandLineArgs) {

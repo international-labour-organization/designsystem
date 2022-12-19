@@ -4,7 +4,7 @@ export interface GlobalProviderContextProps {
   /**
    * Prefix classname to use across the components.
    */
-  prefix: string;
+  prefix?: string;
 }
 
 export interface GlobalProviderProps extends GlobalProviderContextProps {

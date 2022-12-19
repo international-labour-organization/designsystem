@@ -4,7 +4,8 @@
   "compilerOptions": {
     "types": ["node"],
     "declaration": true,
-    "declarationDir": "lib/types"
+    "declarationDir": "lib/types",
+    "moduleResolution": "node16"
   },
   "exclude": [
     "node_modules",
