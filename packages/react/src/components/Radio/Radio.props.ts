@@ -10,4 +10,5 @@ export interface RadioProps {
   required?: boolean;
   tooltip?: string;
   value: string;
+  selected?: string;
 }

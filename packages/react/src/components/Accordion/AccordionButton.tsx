@@ -1,9 +1,8 @@
 import classNames from "classnames";
 import { FC, MouseEvent, useContext } from "react";
 import useGlobalSettings from "../../hooks/useGlobalSettings";
-import { AccordionContext } from "./Accordion";
 import { default as AccordionButtonProps } from "./AccordionButton.props";
-import { AccordionItemContext } from "./AccordionItem";
+import { AccordionContext, AccordionItemContext } from "./AccordionCtx";
 
 const AccordionButton: FC<AccordionButtonProps> = ({
   children,

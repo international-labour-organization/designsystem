@@ -1,9 +1,8 @@
-import { FC, createContext } from "react";
 import classNames from "classnames";
+import { FC } from "react";
 import useGlobalSettings from "../../hooks/useGlobalSettings";
-import { ListItemProps, ListItemContextProps } from "./ListItem.props";
-
-export const ListItemContext = createContext({} as ListItemContextProps);
+import { ListItemContext } from "./ListCtx";
+import { ListItemProps } from "./ListItem.props";
 
 const ListItem: FC<ListItemProps> = ({ children, id, className, ...rest }) => {
   const { prefix } = useGlobalSettings();

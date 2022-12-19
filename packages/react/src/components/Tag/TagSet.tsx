@@ -1,17 +1,9 @@
-import {
-  useState,
-  useEffect,
-  createContext,
-  FC,
-  ReactElement,
-  Children,
-} from "react";
 import classNames from "classnames";
+import { Children, FC, ReactElement, useEffect, useState } from "react";
 import useGlobalSettings from "../../hooks/useGlobalSettings";
-import { TagSetContextProps, TagSetProps } from "./TagSet.props";
 import { checkArrayDuplicates } from "../../utils/checkArrayDuplicates";
-
-export const TagSetContext = createContext({} as TagSetContextProps);
+import { TagSetContext } from "./TagCtx";
+import { TagSetProps } from "./TagSet.props";
 
 const TagSet: FC<TagSetProps> = ({
   className,

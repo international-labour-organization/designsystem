@@ -2,9 +2,9 @@ import { useContext, FC } from "react";
 import classNames from "classnames";
 import useGlobalSettings from "../../hooks/useGlobalSettings";
 import { TagProps } from "./Tag.props";
-import { TagSetContext } from "./TagSet";
 import { Icon } from "../Icon";
 import { getUpdatedItems } from "@ilo-org/utils";
+import { TagSetContext } from "./TagCtx";
 
 const Tag: FC<TagProps> = ({
   className,
