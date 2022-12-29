@@ -1,5 +1,10 @@
 import { TracksConfig } from "./VideoPlayer.props";
 
+export interface Poster {
+  url: { src: string }[];
+  alt: string;
+}
+
 interface VideoPlayerControls {
   /**
    * Specify the label for the fullscreen button
@@ -63,7 +68,7 @@ export interface VideoProps {
   /**
    * Specify the image src for the image
    */
-  poster: string;
+  poster?: Poster;
 
   /**
    * Specify whether there is a video being shown

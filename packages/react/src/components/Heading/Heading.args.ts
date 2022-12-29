@@ -1,33 +1,36 @@
 import { HeadingProps } from "./Heading.props";
 
+const text =
+  "The ILO brings together governments, employers and workers to set labour standards and promote decent work";
+
 const heading1: HeadingProps = {
-  children: "Heading 1",
+  children: text,
   level: "h1",
   type: "actionable",
 };
 
 const heading2: HeadingProps = {
-  children: "Heading 2",
+  children: text,
   level: "h2",
 };
 
 const heading3: HeadingProps = {
-  children: "Heading 3",
+  children: text,
   level: "h3",
 };
 
 const heading4: HeadingProps = {
-  children: "Heading 4",
+  children: text,
   level: "h4",
 };
 
 const heading5: HeadingProps = {
-  children: "Heading 5",
+  children: text,
   level: "h5",
 };
 
 const heading6: HeadingProps = {
-  children: "Heading 6",
+  children: text,
   level: "h6",
 };
 

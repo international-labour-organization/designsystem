@@ -1,64 +1,38 @@
 import { CalloutProps } from "./Callout.props";
 
-const hascta: CalloutProps = {
-  className: "storybook",
-  copy: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-  cta: {
-    label: "Optional CTA",
-    url: "http://www.google.com",
-  },
-  headline: "With CTA",
-  isCollapsible: true,
-  isOpen: false,
-  toggleOpenLabel: "Open",
-  toggleClosedLabel: "Closed",
-  type: "info",
-};
-
-const infoCallout: CalloutProps = {
+const baseArgs: CalloutProps = {
   copy: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
   isCollapsible: false,
-  headline: "Callout Title",
+  headline: "Info Callout",
   type: "info",
 };
 
-const errorCallout: CalloutProps = {
+const success: CalloutProps = {
+  ...baseArgs,
+  type: "success",
+  headline: "Success Callout",
+};
+
+const warning: CalloutProps = {
+  ...baseArgs,
+  type: "warning",
+  headline: "Warning Callout",
+};
+
+const error: CalloutProps = {
+  ...baseArgs,
   cta: {
     label: "Optional CTA",
     url: "http://www.google.com",
   },
-  copy: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
   isCollapsible: true,
   isOpen: false,
-  headline: "Callout Title",
+  headline: "Error Callout (Collapsible)",
   toggleOpenLabel: "Open",
   toggleClosedLabel: "Closed",
   type: "error",
 };
 
-const successCallout: CalloutProps = {
-  copy: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-  isCollapsible: false,
-  headline: "Callout Title",
-  type: "success",
-};
-
-const warningCallout: CalloutProps = {
-  copy: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-  isCollapsible: false,
-  headline: "Callout Title",
-  type: "warning",
-};
-
-/**
- * Sample prop definitions for Callout's enumerable properties (imported in stories and tests).
- */
-const CalloutArgs = {
-  hascta,
-  infoCallout,
-  errorCallout,
-  warningCallout,
-  successCallout,
-};
+const CalloutArgs = { baseArgs, success, warning, error };
 
 export default CalloutArgs;

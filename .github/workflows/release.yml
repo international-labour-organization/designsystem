@@ -30,7 +30,7 @@ jobs:
       - name: Install pnpm
         uses: pnpm/action-setup@v2.0.1
         with:
-          version: 6.35.1
+          version: 7.25.0
 
       - name: Add auth token to .npmrc
         run: |
@@ -47,13 +47,7 @@ jobs:
         run: pnpm install
 
       - name: Build
-        run: pnpm build:all
-
-      - name: Check types
-        run: pnpm check:types
-
-      - name: Test
-        run: pnpm test:all
+        run: pnpm build:libs
 
       - name: Create and publish versions
         id: changesets

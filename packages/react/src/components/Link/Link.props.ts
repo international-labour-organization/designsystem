@@ -31,4 +31,9 @@ export interface LinkProps {
    * Specify an optional className to be added to your Link.
    */
   className?: string;
+
+  /**
+   * Inline styles to be applied to the rendered element
+   */
+  style?: React.CSSProperties;
 }

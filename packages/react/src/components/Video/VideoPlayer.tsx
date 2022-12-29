@@ -186,9 +186,8 @@ const VideoPlayer: FC<VideoPlayerProps> = ({
         onProgress={handleProgress}
         onDuration={handleDuration}
         onEnded={handleEnded}
-        light={poster}
       />
-      {/* <picture className={`${baseClass}--poster ${showposter ? "show" : ""}`}>
+      <picture className={`${baseClass}--poster ${showposter ? "show" : ""}`}>
         {poster?.url &&
           poster.url
             .sort(
@@ -204,8 +203,8 @@ const VideoPlayer: FC<VideoPlayerProps> = ({
                 key={index}
               />
             ))}
-        <img src={poster.url[0].src} alt={poster.alt} />
-      </picture> */}
+        <img src={poster?.url[0]?.src} alt={poster?.alt} />
+      </picture>
       <div className={`${controlsClasses} ${showposter ? "notplayed" : ""}`}>
         <label
           className={`${controlsClasses}--duration ${showposter ? "show" : ""}`}

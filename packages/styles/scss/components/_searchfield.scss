@@ -5,6 +5,10 @@
 .ilo--searchfield {
   display: flex;
 
+  .ilo--fieldset {
+    width: 100%;
+  }
+
   &--button {
     background-color: map-get(
       $color,

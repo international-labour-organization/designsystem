@@ -1,3 +1,5 @@
+import { Poster } from "./Video.props";
+
 export interface VideoPlayerControls {
   /**
    * Specify the label for the fullscreen button
@@ -61,7 +63,7 @@ export interface VideoPlayerProps {
   /**
    *  poster image for video
    */
-  poster?: string;
+  poster?: Poster;
 
   /**
    * if self-hosted, specify the url of this video

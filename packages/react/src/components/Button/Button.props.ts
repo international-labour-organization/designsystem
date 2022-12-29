@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import React, { ReactNode } from "react";
 import {
   ButtonFunctions,
   ButtonTypes,
@@ -76,4 +76,9 @@ export interface ButtonProps {
    * Specify the url for the Button's href
    */
   url?: string;
+
+  /**
+   * Inline styles to be applied to the rendered element
+   */
+  style?: React.CSSProperties;
 }

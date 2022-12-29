@@ -1,7 +1,7 @@
 import { InputProps } from "./Input.props";
 
 const basic: InputProps = {
-  callback: "",
+  callback: () => {},
   disabled: false,
   error: false,
   helper: false,
@@ -13,7 +13,7 @@ const basic: InputProps = {
 };
 
 const isdisabled: InputProps = {
-  callback: "",
+  callback: () => {},
   disabled: true,
   error: false,
   helper: "This one has helper text",
@@ -25,7 +25,7 @@ const isdisabled: InputProps = {
 };
 
 const hashelper: InputProps = {
-  callback: "",
+  callback: () => {},
   disabled: false,
   error: false,
   helper: "This one has helper text",
@@ -37,7 +37,7 @@ const hashelper: InputProps = {
 };
 
 const haserror: InputProps = {
-  callback: "",
+  callback: () => {},
   disabled: false,
   error: "This one has an error",
   helper: false,
@@ -49,7 +49,7 @@ const haserror: InputProps = {
 };
 
 const hastooltip: InputProps = {
-  callback: "",
+  callback: () => {},
   disabled: false,
   error: false,
   helper: false,
@@ -62,7 +62,7 @@ const hastooltip: InputProps = {
 };
 
 const email: InputProps = {
-  callback: "",
+  callback: () => {},
   disabled: false,
   error: false,
   helper: false,
@@ -74,7 +74,7 @@ const email: InputProps = {
 };
 
 const hidden: InputProps = {
-  callback: "",
+  callback: () => {},
   disabled: false,
   error: false,
   helper: false,
@@ -85,7 +85,7 @@ const hidden: InputProps = {
 };
 
 const password: InputProps = {
-  callback: "",
+  callback: () => {},
   disabled: false,
   error: false,
   helper: false,
@@ -97,7 +97,7 @@ const password: InputProps = {
 };
 
 const tel: InputProps = {
-  callback: "",
+  callback: () => {},
   disabled: false,
   error: false,
   helper: false,
@@ -109,7 +109,7 @@ const tel: InputProps = {
 };
 
 const url: InputProps = {
-  callback: "",
+  callback: () => {},
   disabled: false,
   error: false,
   helper: false,

@@ -4,23 +4,23 @@ const basic: ContextMenuProps = {
   links: [
     {
       label: "Link One",
-      url: "http://www.google.com",
+      url: "https://www.ilo.org",
     },
     {
       label: "Link Two",
-      url: "http://www.google.com",
+      url: "https://www.ilo.org",
     },
     {
       label: "Link Three",
-      url: "http://www.google.com",
+      url: "https://www.ilo.org",
     },
     {
       label: "Link Four",
-      url: "http://www.google.com",
+      url: "https://www.ilo.org",
     },
     {
       label: "Link Five Is Much Longer",
-      url: "http://www.google.com",
+      url: "https://www.ilo.org",
     },
   ],
 };
@@ -29,24 +29,24 @@ const withsection: ContextMenuProps = {
   links: [
     {
       label: "Link One",
-      url: "http://www.google.com",
+      url: "https://www.ilo.org",
     },
     {
       label: "Link Two",
-      url: "http://www.google.com",
+      url: "https://www.ilo.org",
     },
     {
       endsection: true,
       label: "Link Three Ends A Section",
-      url: "http://www.google.com",
+      url: "https://www.ilo.org",
     },
     {
       label: "Link Four",
-      url: "http://www.google.com",
+      url: "https://www.ilo.org",
     },
     {
       label: "Link Five Is Much Longer",
-      url: "http://www.google.com",
+      url: "https://www.ilo.org",
     },
   ],
 };

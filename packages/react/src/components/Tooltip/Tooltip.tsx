@@ -40,7 +40,7 @@ const Tooltip: FC<TooltipProps> = ({
     // get hovered element reference
     const target = e.currentTarget;
 
-    if (target != null) {
+    if (target) {
       const rect = target.getBoundingClientRect();
       setIsVisible(true);
       postMouseOver(rect);

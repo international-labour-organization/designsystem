@@ -10,6 +10,7 @@ const Link: FC<LinkProps> = ({
   target,
   theme = "light",
   url,
+  style,
   ...rest
 }) => {
   const { prefix } = useGlobalSettings();
@@ -29,6 +30,7 @@ const Link: FC<LinkProps> = ({
       href={url}
       target={target}
       rel={target ? "noopener noreferrer" : ""}
+      style={style}
       {...rest}
     >
       {label && <span className="link__label">{label}</span>}

@@ -1,7 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import { composeStories } from "@storybook/testing-react";
 import headingArgs from "../components/Heading/Heading.args";
-import * as stories from "../stories/Heading.stories";
+import * as stories from "../stories/Heading/Heading.stories";
 
 const { Heading1, Heading2, Heading3, Heading4, Heading5, Heading6 } =
   composeStories(stories);

@@ -2,5 +2,5 @@ import { createContext } from "react";
 import { GlobalProviderContextProps } from "./GlobalProvider.props";
 
 export const GlobalProviderContext = createContext({
-  prefix: "",
+  prefix: "ilo",
 } as GlobalProviderContextProps);

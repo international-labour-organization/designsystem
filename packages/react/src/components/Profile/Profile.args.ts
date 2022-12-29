@@ -1,47 +1,47 @@
 import { ProfileProps } from "./Profile.props";
 
 const basic: ProfileProps = {
-  avatar: "http://placekitten.com/128/128",
+  avatar: "/ilo-dg.jpg",
   className: "storybook",
-  name: "Firstname Lastname",
+  name: "Gilbert F. Houngbo",
 };
 
 const hasall: ProfileProps = {
-  avatar: "http://placekitten.com/128/128",
+  avatar: "/ilo-dg.jpg",
   className: "storybook",
   description:
-    "Firstname Lastname is the Senior Media Strategist. He has been with ILO for eight years.",
+    "Gilbert F. Houngbo was elected as the ILO’s 11th Director-General by the organization’s Governing Body in March 2022",
   link: {
-    label: "Optional Link",
+    label: "Learn more",
     url: "http://www.google.com",
   },
-  name: "Firstname Lastname",
-  role: "Senior Media Strategist",
+  name: "Gilbert F. Houngbo",
+  role: "ILO Director-General",
 };
 
 const hasdescription: ProfileProps = {
-  avatar: "http://placekitten.com/128/128",
+  avatar: "/ilo-dg.jpg",
   className: "storybook",
   description:
-    "Firstname Lastname is the Senior Media Strategist. He has been with ILO for eight years.",
-  name: "Firstname Lastname",
+    "Gilbert F. Houngbo was elected as the ILO’s 11th Director-General by the organization’s Governing Body in March 2022",
+  name: "Gilbert F. Houngbo",
 };
 
 const haslink: ProfileProps = {
-  avatar: "http://placekitten.com/128/128",
+  avatar: "/ilo-dg.jpg",
   className: "storybook",
   link: {
-    label: "Optional Link",
+    label: "Learn more",
     url: "http://www.google.com",
   },
-  name: "Firstname Lastname",
+  name: "Gilbert F. Houngbo",
 };
 
 const hasrole: ProfileProps = {
-  avatar: "http://placekitten.com/128/128",
+  avatar: "/ilo-dg.jpg",
   className: "storybook",
-  name: "Firstname Lastname",
-  role: "Senior Media Strategist",
+  name: "Gilbert F. Houngbo",
+  role: "ILO Director-General",
 };
 
 /**

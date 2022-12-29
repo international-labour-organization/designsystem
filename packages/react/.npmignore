@@ -2,3 +2,6 @@
 storybook-static
 .turbo/
 .storybook/
+src/__tests__
+src/stories
+src/setup.ts

@@ -1,10 +1,14 @@
 import { VideoProps } from "./Video.props";
 
 const videofile: VideoProps = {
-  alt: "My alt text",
+  alt: "The ILO logo on a blue background",
   className: "image",
-  caption: "my video caption",
-  poster: "https://placekitten.com/g/1600/1200",
+  caption:
+    "The ILO brings together governments, employers and workers to set labour standards and promote decent work.",
+  poster: {
+    url: [{ src: "/media-file-poster.jpg" }],
+    alt: "",
+  },
   video: {
     controls: {
       fullscreen: "Fullscreen",
@@ -12,16 +16,20 @@ const videofile: VideoProps = {
       pause: "Pause",
       volume: "Volume",
     },
-    src: "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+    src: "/video-example.mp4",
     youtube: false,
   },
 };
 
 const videoyt: VideoProps = {
-  alt: "My alt text",
-  caption: "my video caption",
+  alt: "An smiling woman with gray hair holds a bowl full of corn in front of her home.",
+  caption:
+    "Indigenous entrepreneur Celestina Ábalos runs a tourism business in the UNESCO World Heritage site of Quebrada de Humahuaca in northern Argentina. ©ILO/Ivar Velasquez",
   className: "image",
-  poster: "https://placekitten.com/g/1600/1200",
+  poster: {
+    url: [{ src: "/youtube-video-poster.avif" }],
+    alt: "",
+  },
   video: {
     controls: {
       fullscreen: "Fullscreen",
@@ -29,7 +37,7 @@ const videoyt: VideoProps = {
       pause: "Pause",
       volume: "Volume",
     },
-    src: "https://youtu.be/ombTwldE3Kw",
+    src: "https://youtu.be/X72_A4_6zjU",
     youtube: true,
   },
 };

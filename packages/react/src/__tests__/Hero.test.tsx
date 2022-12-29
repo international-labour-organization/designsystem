@@ -7,7 +7,7 @@ describe("<Hero>", () => {
     const { container } = render(<Hero {...heroArgs.homeHero} />);
     expect(container).not.toBeNull();
     expect(container.querySelector("h2")?.textContent).toEqual(
-      heroArgs.homeHero.heroCard.title
+      heroArgs.homeHero.heroCard?.title
     );
   });
 
