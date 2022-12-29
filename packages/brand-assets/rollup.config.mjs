@@ -1,7 +1,10 @@
+import { createRequire } from "node:module";
 import copy from "rollup-plugin-copy";
 import { importMetaAssets } from "@web/rollup-plugin-import-meta-assets";
 
-import packageJson from "./package.json";
+// eslint-disable-next-line
+const require = createRequire(import.meta.url);
+const packageJson = require("./package.json");
 
 export default {
   input: "src/index.js",

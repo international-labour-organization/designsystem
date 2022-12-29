@@ -1,11 +1,15 @@
 import commonjs from "@rollup/plugin-commonjs";
+import { createRequire } from "node:module";
 import json from "@rollup/plugin-json";
 import resolve from "@rollup/plugin-node-resolve";
 import typescript from "@rollup/plugin-typescript";
 import dts from "rollup-plugin-dts";
 import peerDepsExternal from "rollup-plugin-peer-deps-external";
 import { terser } from "rollup-plugin-terser";
-import packageJson from "./package.json";
+
+// eslint-disable-next-line
+const require = createRequire(import.meta.url);
+const packageJson = require("./package.json");
 
 export default [
   {
