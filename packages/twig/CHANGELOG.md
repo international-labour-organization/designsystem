@@ -1,5 +1,117 @@
 # @ilo-org/twig
 
+## 0.2.9
+
+### Patch Changes
+
+- 414f75fca: Fix issue where CardGroup used the wrong size button
+- e53bad307: enable hero to use title attribute instead of credit component
+- b48b386b8: Local nav color for the background is a setting now
+- Updated dependencies [b48b386b8]
+  - @ilo-org/fonts@0.0.6
+  - @ilo-org/icons@0.1.14
+  - @ilo-org/styles@0.1.14
+  - @ilo-org/themes@0.1.14
+  - @ilo-org/utils@0.0.10
+
+## 0.2.8
+
+### Patch Changes
+
+- 62c3c624e: Bugfixes in multiple components
+- 1b29018f0: Adds better React Storybook experience
+- 43c2b0026: Cornercut changes to make more consistent across sizes and breakpoints for hero and cards
+- Updated dependencies [62c3c624e]
+- Updated dependencies [1b29018f0]
+- Updated dependencies [43c2b0026]
+  - @ilo-org/fonts@0.0.5
+  - @ilo-org/icons@0.1.13
+  - @ilo-org/styles@0.1.13
+  - @ilo-org/themes@0.1.13
+  - @ilo-org/utils@0.0.9
+
+## 0.2.7
+
+### Patch Changes
+
+- 94bd642d9: ILOUAT-16: Clicking on the page should close subnav menu
+  ILOUAT-26: mobile hamburger click shouldn't auto navigate to inside link
+  ILOUAT-27: Menu take over on mobile should be the whole page without the ability to scroll past it
+  ILOUAT-37: Subnav pane should properly open when subnav items are focused
+- a167b7405: - Border radius for context menu
+  - Mobile nav disappear on breakpoint instead of any resize event
+  - More List spacing fixes (title item)
+  - Breadcrumb on mobile in heroes
+  - Bugfixes for feature card on wide mode with list item
+  - Add in "Back to main site" link for local nav
+- 79e17c5d3: Bufdixes to multiple components
+- 7b3813bb1: Bugfixes to multiple components
+- Updated dependencies [94bd642d9]
+- Updated dependencies [a167b7405]
+- Updated dependencies [79e17c5d3]
+- Updated dependencies [7b3813bb1]
+  - @ilo-org/fonts@0.0.4
+  - @ilo-org/icons@0.1.12
+  - @ilo-org/styles@0.1.12
+  - @ilo-org/themes@0.1.12
+  - @ilo-org/utils@0.0.8
+
+## 0.2.6
+
+### Patch Changes
+
+- f7f448c65: Fixes to React radio button, SearchField, add ability to serve different langauge fonts
+- f4b7bcb7f: Local nav fixes for mobile
+- 0dfb90274: Patchfix for Feature card wide version
+- Updated dependencies [f7f448c65]
+- Updated dependencies [f4b7bcb7f]
+- Updated dependencies [0dfb90274]
+  - @ilo-org/fonts@0.0.3
+  - @ilo-org/styles@0.1.11
+  - @ilo-org/themes@0.1.11
+  - @ilo-org/utils@0.0.7
+  - @ilo-org/icons@0.1.11
+
+## 0.2.5
+
+### Patch Changes
+
+- fdba39df6: Adjust card widths
+- 592c40ae9: Hover fix for data card and breadcrumb for hero
+- 3005bb74c: Fixes to Video, Accordion, List, Checkbox, favicon
+- b72b8aa9e: Update README; various bugfixes with Table, Footer, Notification, Video, RichText
+- d7015e194: - Tag fixes for consistent font size
+  - Accordion transition, font size and height fixes
+  - Tooltip transition fix
+  - Cards padding and anchor the date on feature cards
+  - List fix font sizes on mobile
+  - Callout fix transition timing
+- 6ba8ee615: Documentation for wingusit
+- Updated dependencies [fdba39df6]
+- Updated dependencies [592c40ae9]
+- Updated dependencies [3005bb74c]
+- Updated dependencies [b72b8aa9e]
+- Updated dependencies [d7015e194]
+- Updated dependencies [6ba8ee615]
+  - @ilo-org/styles@0.1.10
+  - @ilo-org/icons@0.1.10
+  - @ilo-org/themes@0.1.10
+  - @ilo-org/utils@0.0.6
+
+## 0.2.4
+
+### Patch Changes
+
+- 48e7a4ada: - Hero: Breadcrumb add in
+  - Cards: Video icon for feature and external link option
+- 2bfdfd356: Fixes to Hero, Cards components
+- Updated dependencies [48e7a4ada]
+- Updated dependencies [2bfdfd356]
+  - @ilo-org/icons@0.1.9
+  - @ilo-org/styles@0.1.9
+  - @ilo-org/themes@0.1.9
+  - @ilo-org/utils@0.0.5
+
 ## 0.2.3
 
 ### Patch Changes

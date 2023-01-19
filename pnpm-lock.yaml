@@ -8753,12 +8753,20 @@ packages:
       '@storybook/react': '>=5.2'
       react-scripts: '>=5.0.0'
     dependencies:
+<<<<<<< HEAD
       '@babel/core': 7.20.12
       '@pmmmwh/react-refresh-webpack-plugin': 0.5.10_ohj47mxwagpoxvu7nhhwxzphqm
       '@storybook/node-logger': 7.0.0-beta.30
       '@storybook/react': 7.0.0-beta.30_wfh3mw2ke2bdr53qfq544ltemu
       '@storybook/react-docgen-typescript-plugin': 1.0.2--canary.7.324a727c65a1819f7f3ede5abc1f32d440e4530a.0_vfotqvx6lgcbf3upbs6hgaza4q
       '@types/babel__core': 7.20.0
+=======
+      '@pmmmwh/react-refresh-webpack-plugin': 0.5.8_webpack@5.74.0
+      '@storybook/node-logger': 6.5.13
+      '@storybook/react': 6.5.13_6baa41ee923e94235abc3bc3b0f2375d
+      '@storybook/react-docgen-typescript-plugin': 1.0.2--canary.7.324a727c65a1819f7f3ede5abc1f32d440e4530a.0_typescript@4.3.4+webpack@5.74.0
+      '@types/babel__core': 7.1.19
+>>>>>>> main
       babel-plugin-react-docgen: 4.2.1
       pnp-webpack-plugin: 1.7.0_typescript@4.9.3
       react-scripts: 5.0.1_iqbxfr72qc2djin5l4alrdztcy
@@ -8919,6 +8927,7 @@ packages:
       util-deprecate: 1.0.2
     dev: true
 
+<<<<<<< HEAD
   /@storybook/preview-web/6.5.15_wcqkhtmu7mswc6yz4uyexck3ty:
     resolution: {integrity: sha512-gIHABSAD0JS0iRaG67BnSDq/q8Zf4fFwEWBQOSYgcEx2TzhAUeSkhGZUQHdlOTCwuA2PpXT0/cWDH8u2Ev+msg==}
     peerDependencies:
@@ -8949,6 +8958,9 @@ packages:
     dev: true
 
   /@storybook/react-docgen-typescript-plugin/1.0.2--canary.7.324a727c65a1819f7f3ede5abc1f32d440e4530a.0_vfotqvx6lgcbf3upbs6hgaza4q:
+=======
+  /@storybook/react-docgen-typescript-plugin/1.0.2--canary.7.324a727c65a1819f7f3ede5abc1f32d440e4530a.0_typescript@4.3.4+webpack@5.74.0:
+>>>>>>> main
     resolution: {integrity: sha512-tnaT0VqSGhmMi/I880aMOToSrNd7XCr1avS/M1tk/+FDO+0GqHXo9abC5sos705ly3Hmi1FxFvHnzV/cvU1JTg==}
     peerDependencies:
       typescript: '>= 3.x'
@@ -8959,15 +8971,26 @@ packages:
       find-cache-dir: 3.3.2
       flat-cache: 3.0.4
       micromatch: 4.0.5
+<<<<<<< HEAD
       react-docgen-typescript: 2.2.2_typescript@4.9.3
       tslib: 2.4.1
       typescript: 4.9.3
       webpack: 5.75.0_esbuild@0.16.17
+=======
+      react-docgen-typescript: 2.2.2_typescript@4.3.4
+      tslib: 2.4.1
+      typescript: 4.3.4
+      webpack: 5.74.0
+>>>>>>> main
     transitivePeerDependencies:
       - supports-color
     dev: true
 
+<<<<<<< HEAD
   /@storybook/react-docgen-typescript-plugin/1.0.2-canary.6.9d540b91e815f8fc2f8829189deb00553559ff63.0_iwqxfwsshx7fg7qv26gkfn55c4:
+=======
+  /@storybook/react-docgen-typescript-plugin/1.0.2-canary.6.9d540b91e815f8fc2f8829189deb00553559ff63.0_typescript@3.9.10+webpack@5.74.0:
+>>>>>>> main
     resolution: {integrity: sha512-eVg3BxlOm2P+chijHBTByr90IZVUtgRW56qEOLX7xlww2NBuKrcavBlcmn+HH7GIUktquWkMPtvy6e0W0NgA5w==}
     peerDependencies:
       typescript: '>= 3.x'

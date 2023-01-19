@@ -1,5 +1,77 @@
 # @ilo-org/icons-react
 
+## 0.0.16
+
+### Patch Changes
+
+- b48b386b8: Local nav color for the background is a setting now
+- Updated dependencies [b48b386b8]
+  - @ilo-org/icons@0.1.14
+
+## 0.0.15
+
+### Patch Changes
+
+- 43c2b0026: Cornercut changes to make more consistent across sizes and breakpoints for hero and cards
+- Updated dependencies [62c3c624e]
+- Updated dependencies [1b29018f0]
+- Updated dependencies [43c2b0026]
+  - @ilo-org/icons@0.1.13
+
+## 0.0.14
+
+### Patch Changes
+
+- 94bd642d9: ILOUAT-16: Clicking on the page should close subnav menu
+  ILOUAT-26: mobile hamburger click shouldn't auto navigate to inside link
+  ILOUAT-27: Menu take over on mobile should be the whole page without the ability to scroll past it
+  ILOUAT-37: Subnav pane should properly open when subnav items are focused
+- a167b7405: - Border radius for context menu
+  - Mobile nav disappear on breakpoint instead of any resize event
+  - More List spacing fixes (title item)
+  - Breadcrumb on mobile in heroes
+  - Bugfixes for feature card on wide mode with list item
+  - Add in "Back to main site" link for local nav
+- Updated dependencies [94bd642d9]
+- Updated dependencies [a167b7405]
+  - @ilo-org/icons@0.1.12
+
+## 0.0.13
+
+### Patch Changes
+
+- f4b7bcb7f: Local nav fixes for mobile
+- 0dfb90274: Patchfix for Feature card wide version
+- Updated dependencies [f4b7bcb7f]
+- Updated dependencies [0dfb90274]
+  - @ilo-org/icons@0.1.11
+
+## 0.0.12
+
+### Patch Changes
+
+- 592c40ae9: Hover fix for data card and breadcrumb for hero
+- d7015e194: - Tag fixes for consistent font size
+  - Accordion transition, font size and height fixes
+  - Tooltip transition fix
+  - Cards padding and anchor the date on feature cards
+  - List fix font sizes on mobile
+  - Callout fix transition timing
+- 6ba8ee615: Documentation for wingusit
+- Updated dependencies [592c40ae9]
+- Updated dependencies [d7015e194]
+- Updated dependencies [6ba8ee615]
+  - @ilo-org/icons@0.1.10
+
+## 0.0.11
+
+### Patch Changes
+
+- 48e7a4ada: - Hero: Breadcrumb add in
+  - Cards: Video icon for feature and external link option
+- Updated dependencies [48e7a4ada]
+  - @ilo-org/icons@0.1.9
+
 ## 0.0.10
 
 ### Patch Changes
