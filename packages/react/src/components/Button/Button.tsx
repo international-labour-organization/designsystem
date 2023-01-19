@@ -19,6 +19,7 @@ const Button: FC<ButtonProps> = ({
   target = "",
   type = "primary",
   url,
+  style,
 }) => {
   const { prefix } = useGlobalSettings();
   const baseClass = `${prefix}--button`;
@@ -45,7 +46,13 @@ const Button: FC<ButtonProps> = ({
   return (
     <>
       {hasURL ? (
-        <Link className={ButtonClasses} target={target} url={url} label={label}>
+        <Link
+          className={ButtonClasses}
+          target={target}
+          url={url}
+          label={label}
+          style={style}
+        >
           {icon && <Icon name={icon} hidden={true} />}
         </Link>
       ) : (
@@ -55,6 +62,7 @@ const Button: FC<ButtonProps> = ({
           disabled={disabled}
           type={kind}
           aria-haspopup={opensmodal ? `dialog` : false}
+          style={style}
         >
           {label && <span className="button__label">{label}</span>}
           {icon && <Icon name={icon} hidden={true} />}

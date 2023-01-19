@@ -38,8 +38,9 @@ const basic: FormGroupProps = {
       type: "dropdown",
     },
     {
-      field: { ...CheckboxArgs.basic },
+      field: CheckboxArgs.basic,
       type: "checkbox",
+      choicegroupid: "id",
     },
     {
       choicegroupid: "multiplecheckboxes",

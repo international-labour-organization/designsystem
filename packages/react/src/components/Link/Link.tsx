@@ -10,6 +10,7 @@ const Link: FC<LinkProps> = ({
   target,
   theme = "light",
   url,
+  style,
   ...rest
 }) => {
   const { prefix } = useGlobalSettings();
@@ -23,24 +24,16 @@ const Link: FC<LinkProps> = ({
     [`${baseClass}--${theme}`]: theme,
   });
 
-  function createMarkup() {
-    return { __html: label };
-  }
-
   return (
     <a
       className={linkClasses}
       href={url}
       target={target}
       rel={target ? "noopener noreferrer" : ""}
+      style={style}
       {...rest}
     >
-      {label && (
-        <span
-          className="link__label"
-          dangerouslySetInnerHTML={createMarkup()}
-        ></span>
-      )}
+      {label && <span className="link__label">{label}</span>}
       {children}
     </a>
   );

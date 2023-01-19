@@ -1,14 +1,8 @@
-import { FC, createContext } from "react";
 import classNames from "classnames";
+import { FC } from "react";
 import useGlobalSettings from "../../hooks/useGlobalSettings";
-import {
-  AccordionItemProps,
-  AccordionItemContextProps,
-} from "./AccordionItem.props";
-
-export const AccordionItemContext = createContext(
-  {} as AccordionItemContextProps
-);
+import { AccordionItemContext } from "./AccordionCtx";
+import { AccordionItemProps } from "./AccordionItem.props";
 
 const AccordionItem: FC<AccordionItemProps> = ({
   children,

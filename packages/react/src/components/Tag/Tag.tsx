@@ -2,8 +2,9 @@ import { useContext, FC } from "react";
 import classNames from "classnames";
 import useGlobalSettings from "../../hooks/useGlobalSettings";
 import { TagProps } from "./Tag.props";
-import { TagSetContext } from "./TagSet";
 import { Icon } from "../Icon";
+import { getUpdatedItems } from "@ilo-org/utils";
+import { TagSetContext } from "./TagCtx";
 
 const Tag: FC<TagProps> = ({
   className,
@@ -15,7 +16,7 @@ const Tag: FC<TagProps> = ({
   ...rest
 }) => {
   const { prefix } = useGlobalSettings();
-  const { activeItems, setActiveItems, getUpdatedItems, allowMultipleActive } =
+  const { activeItems, setActiveItems, allowMultipleActive } =
     useContext(TagSetContext);
   const active = activeItems.indexOf(id) > -1;
 
@@ -36,7 +37,11 @@ const Tag: FC<TagProps> = ({
    */
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     setActiveItems(
-      getUpdatedItems({ id, itemStatuses: activeItems, allowMultipleActive })
+      getUpdatedItems({
+        id,
+        itemStatuses: activeItems,
+        allowMultipleExpanded: allowMultipleActive,
+      })
     );
     visible = false;
     if (callback) {

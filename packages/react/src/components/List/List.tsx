@@ -1,9 +1,8 @@
-import { useState, createContext, FC } from "react";
 import classNames from "classnames";
+import { FC, useState } from "react";
 import useGlobalSettings from "../../hooks/useGlobalSettings";
-import { ListProps, ListContextProps } from "./List.props";
-
-export const ListContext = createContext({} as ListContextProps);
+import { ListProps } from "./List.props";
+import { ListContext } from "./ListCtx";
 
 const List: FC<ListProps> = ({
   children,

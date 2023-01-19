@@ -2,14 +2,18 @@
   "extends": "@ilo-org/typescript-config",
   "include": ["src/**/*"],
   "compilerOptions": {
-    "outDir": "lib",
-    "types": ["node"]
+    "types": ["node"],
+    "declaration": true,
+    "declarationDir": "lib/types"
   },
   "exclude": [
     "node_modules",
     "lib",
     "storybook-static",
     "src/stories",
-    "src/__test__"
+    "src/__tests__",
+    "**/*.args.ts",
+    "src/setup.ts",
+    "scripts"
   ]
 }

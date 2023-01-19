@@ -1,16 +1,16 @@
-import { useMemo, forwardRef, cloneElement } from "react";
 import classNames from "classnames";
+import { cloneElement, forwardRef, useMemo } from "react";
 import Transition, {
-  TransitionStatus,
   ENTERED,
   ENTERING,
   EXITED,
   EXITING,
+  TransitionStatus,
 } from "react-transition-group/Transition";
-import transitionEndListener from "../../utils/transitionEndListener";
 import createChainedFunction from "../../utils/createChainedFunction";
-import triggerBrowserReflow from "../../utils/triggerBrowserReflow";
 import getDefaultDimensionValue from "../../utils/getDefaultDimensionValue";
+import transitionEndListener from "../../utils/transitionEndListener";
+import triggerBrowserReflow from "../../utils/triggerBrowserReflow";
 import { CollapseProps } from "./Collapse.props";
 
 const collapseStyles = {

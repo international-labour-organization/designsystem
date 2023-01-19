@@ -1,0 +1,35 @@
+import { Meta, Story, Canvas, ArgsTable, Unstyled } from "@storybook/blocks";
+import * as CalloutStories from "./Callout.stories.tsx";
+import { Callout } from "../../components";
+
+<Meta title="Callout" of={CalloutStories} />
+
+# Callout
+
+The Callout component provides an inline alert or message to end users.
+
+<Canvas>
+  <Story of={CalloutStories.InfoCallout} />
+</Canvas>
+
+## Callout type
+
+You can change the coloring of the callout with the `type` prop. The default is `info`.
+
+## Examples
+
+<Canvas>
+  <Story of={CalloutStories.SuccessCallout} />
+</Canvas>
+
+<Canvas>
+  <Story of={CalloutStories.WarningCallout} />
+</Canvas>
+
+<Canvas>
+  <Story of={CalloutStories.ErrorCallout} />
+</Canvas>
+
+## Default Props
+
+<ArgsTable of={Callout} />

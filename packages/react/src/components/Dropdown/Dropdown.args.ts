@@ -2,7 +2,7 @@ import { DropdownProps } from "./Dropdown.props";
 
 const basic: DropdownProps = {
   autocomplete: "false",
-  callback: null,
+  callback: () => {},
   className: "storybook",
   disabled: false,
   error: false,
@@ -43,7 +43,7 @@ const basic: DropdownProps = {
 
 const haserror: DropdownProps = {
   autocomplete: "false",
-  callback: null,
+  callback: () => {},
   className: "storybook",
   disabled: false,
   error: "This is an error message",
@@ -84,7 +84,7 @@ const haserror: DropdownProps = {
 
 const hashelper: DropdownProps = {
   autocomplete: "false",
-  callback: null,
+  callback: () => {},
   className: "storybook",
   disabled: false,
   error: false,
@@ -125,7 +125,7 @@ const hashelper: DropdownProps = {
 
 const hastooltip: DropdownProps = {
   autocomplete: "false",
-  callback: null,
+  callback: () => {},
   className: "storybook",
   disabled: false,
   error: false,
@@ -167,7 +167,7 @@ const hastooltip: DropdownProps = {
 
 const isdisabled: DropdownProps = {
   autocomplete: "false",
-  callback: null,
+  callback: () => {},
   className: "storybook",
   disabled: false,
   error: false,

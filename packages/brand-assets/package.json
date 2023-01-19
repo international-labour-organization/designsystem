@@ -19,14 +19,23 @@
   ],
   "scripts": {
     "build": "rollup -c",
+    "build:lib": "pnpm build",
+    "build:docs": "pnpm build",
     "format": "prettier --check . --ignore-path ../../.prettierignore",
     "format:fix": "prettier --write . --ignore-path ../../.prettierignore",
     "lint": "eslint --ext .js,.ts,.tsx",
     "lint:fix": "eslint --ext .js,.ts,.tsx --fix"
   },
   "devDependencies": {
-    "rollup": "^2.70.0",
-    "rollup-plugin-copy": "^3.4.0",
-    "@web/rollup-plugin-import-meta-assets": "^1.0.7"
+    "@web/rollup-plugin-import-meta-assets": "^1.0.7",
+    "rollup": "^3.4.0",
+    "rollup-plugin-copy": "^3.4.0"
+  },
+  "dependencies": {
+    "@ilo-org/fonts": "^0.0.6",
+    "@ilo-org/icons": "^0.1.14",
+    "@ilo-org/styles": "^0.1.14",
+    "@ilo-org/themes": "^0.1.14",
+    "@ilo-org/utils": "^0.0.10"
   }
 }

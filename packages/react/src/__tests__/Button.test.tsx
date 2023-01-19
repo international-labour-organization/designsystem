@@ -17,7 +17,7 @@ describe("<Button>", () => {
     const buttonElement = screen.getAllByRole("button");
     expect(buttonElement).not.toBeNull();
     expect(buttonElement[0].getAttribute("class")).toEqual(
-      expect.stringContaining(buttonArgs.primary.size)
+      expect.stringContaining(buttonArgs.primary.size as string)
     );
   });
 
@@ -29,10 +29,10 @@ describe("<Button>", () => {
   });
 
   it("Should render `button` as anchor, with the correct url", () => {
-    render(<Button {...buttonArgs.large} />);
+    render(<Button {...buttonArgs.link} />);
     const buttonElement = screen.getAllByRole("link");
     expect(buttonElement).not.toBeNull();
-    expect(buttonElement[0]).toHaveAttribute("href", buttonArgs.large.url);
+    expect(buttonElement[0]).toHaveAttribute("href", buttonArgs.link.url);
   });
 
   it("Should render `button` with disabled attribute", () => {
@@ -43,10 +43,10 @@ describe("<Button>", () => {
   });
 
   it("Should render `button` as anchor with target attribute and rel attribute", () => {
-    render(<Button {...buttonArgs.large} />);
+    render(<Button {...buttonArgs.link} />);
     const buttonElement = screen.getAllByRole("link");
     expect(buttonElement).not.toBeNull();
-    expect(buttonElement[0]).toHaveAttribute("target", buttonArgs.large.target);
+    expect(buttonElement[0]).toHaveAttribute("target", buttonArgs.link.target);
     expect(buttonElement[0]).toHaveAttribute("rel", "noopener noreferrer");
   });
 

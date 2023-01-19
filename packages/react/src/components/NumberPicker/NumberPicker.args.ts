@@ -1,7 +1,7 @@
 import { NumberPickerProps } from "./NumberPicker.props";
 
 const basic: NumberPickerProps = {
-  callback: "",
+  callback: () => {},
   disabled: false,
   error: false,
   helper: false,
@@ -12,7 +12,7 @@ const basic: NumberPickerProps = {
 };
 
 const hashelper: NumberPickerProps = {
-  callback: "",
+  callback: () => {},
   disabled: false,
   error: false,
   helper: "Here is the helper text",
@@ -23,7 +23,7 @@ const hashelper: NumberPickerProps = {
 };
 
 const haserror: NumberPickerProps = {
-  callback: "",
+  callback: () => {},
   disabled: false,
   error: "This one has an error",
   helper: false,
@@ -34,7 +34,7 @@ const haserror: NumberPickerProps = {
 };
 
 const hastooltip: NumberPickerProps = {
-  callback: "",
+  callback: () => {},
   disabled: false,
   error: false,
   helper: false,

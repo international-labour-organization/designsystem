@@ -12,6 +12,8 @@
   },
   "scripts": {
     "build": "node build.js",
+    "build:lib": "pnpm build",
+    "build:docs": "pnpm build",
     "format": "prettier --check . --ignore-path ../../.prettierignore",
     "format:fix": "prettier --write . --ignore-path ../../.prettierignore",
     "lint": "eslint --ext .js,.ts,.tsx",

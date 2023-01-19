@@ -25,10 +25,9 @@
     "lint:fix": "eslint --ext .js,.ts,.tsx --fix"
   },
   "devDependencies": {
-    "@babel/core": "^7.14.2",
     "@babel/generator": "^7.14.2",
     "@babel/preset-env": "^7.14.2",
-    "@babel/preset-react": "^7.13.13",
+    "@babel/preset-react": "^7.16.7",
     "@babel/template": "^7.12.13",
     "@babel/types": "^7.14.2",
     "@carbon/cli-reporter": "^10.5.0",
@@ -44,12 +43,12 @@
     "klaw-sync": "^6.0.0",
     "memfs": "^3.0.4",
     "mini-svg-data-uri": "^1.4.4",
-    "prettier": "^2.2.1",
-    "prop-types": "^15.6.2",
-    "react": "^16.6.0",
-    "react-dom": "^16.6.0",
-    "rimraf": "^3.0.0",
-    "rollup": "^2.46.0",
+    "prettier": "^2.6.0",
+    "prop-types": "^15.7.2",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "rimraf": "^3.0.2",
+    "rollup": "^3.4.0",
     "rollup-plugin-strip-banner": "^2.0.0",
     "svg-parser": "^2.0.4",
     "svgo": "^1.1.1",
@@ -57,5 +56,9 @@
   },
   "dependencies": {
     "@babel/core": "^7.14.6"
+  },
+  "peerDependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^16.6.0"
   }
 }
