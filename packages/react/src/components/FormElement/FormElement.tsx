@@ -1,24 +1,17 @@
 import { FC } from "react";
 import { FormElementProps } from "./FormElement.props";
 
+// TODO: What is the point of this component?
 const FormElement: FC<FormElementProps> = ({
   children,
-  // @ts-ignore
-  className,
-  // @ts-ignore
-  error,
-  // @ts-ignore
-  elemid,
-  // @ts-ignore
-  helper,
-  // @ts-ignore
-  label,
-  // @ts-ignore
-  required,
-  // @ts-ignore
-  tooltip,
-  // @ts-ignore
-  type,
+  // className,
+  // error,
+  // elemid,
+  // helper,
+  // label,
+  // required,
+  // tooltip,
+  // type,
 }) => {
   return <>{children}</>;
 };

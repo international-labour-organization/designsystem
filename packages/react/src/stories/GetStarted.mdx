@@ -1,0 +1,57 @@
+import { Meta } from "@storybook/blocks";
+
+<Meta title="Getting started" />
+
+# Getting started
+
+This website provides guidance and documentation for the ILO Design System using [React](https://reactjs.org). These docs are a work in progress so bear with us as we add and correct them.
+
+## Installation
+
+```bash
+npm i @ilo-org/react
+```
+
+If you plan on using the default styles for the library, then you should also install the `@ilo-org/styles` package.
+
+```bash
+npm i @ilo-org/styles
+```
+
+## Peer dependencies
+
+In order to use this component library, you will need to have `react` and `react-dom` installed as a dependency.
+
+```bash
+npm i react react-dom
+```
+
+## Usage
+
+Components can be exported directly from the `@ilo-org/react` package.
+
+```typescript
+import { Button } from "@ilo-org/react";
+```
+
+This is fine if you think you're going to use all or most of the components in the library. However, if you're only going to use a few or you want to take advantage of code splitting, then you can import them individually.
+
+```typescript
+import { Button } from "@ilo-org/react/Button";
+```
+
+## Styles
+
+Styles for the library should be imported at the top of your project.
+
+```html
+<link rel="stylesheet" href="node_modules/@ilo-org/styles/index.css" />
+```
+
+## Contributing
+
+The ILO Design System is an open-source project. If you'd like to make a contribution, feel free to check out the [project](https://github.com/international-labour-organization/designsystem) on Github. Make sure to read the [Contribution Guidelines](https://github.com/international-labour-organization/designsystem/blob/develop/contributing.md) before making a pull request.
+
+## Issues and feature requests
+
+Please feel free to open issues or make feature requests on our Github repo.

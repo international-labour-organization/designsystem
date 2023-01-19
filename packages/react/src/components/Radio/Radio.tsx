@@ -51,7 +51,7 @@ const Radio: FC<RadioProps> = ({
         required={required as any}
         type={"radio"}
         className={RadioClasses}
-        checked={selected == value}
+        checked={selected === value}
         value={value}
       />
     </FormElement>

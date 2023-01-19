@@ -2,7 +2,7 @@ import { FC } from "react";
 import classNames from "classnames";
 import useGlobalSettings from "../../hooks/useGlobalSettings";
 import { HeroProps } from "./Hero.props";
-import { HeroCard } from "../Hero";
+import HeroCard from "./HeroCard";
 import { Image } from "../Image";
 
 const Hero: FC<HeroProps> = ({

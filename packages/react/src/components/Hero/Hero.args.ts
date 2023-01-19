@@ -8,11 +8,11 @@ const articleCenteredHero: HeroProps = {
     url: [
       {
         breakpoint: 0,
-        src: "https://placekitten.com/1920/800",
+        src: "/hero.jpg",
       },
       {
         breakpoint: 768,
-        src: "https://placekitten.com/1920/800",
+        src: "/hero.jpg",
       },
     ],
   },
@@ -46,11 +46,11 @@ const articleHero: HeroProps = {
     url: [
       {
         breakpoint: 0,
-        src: "https://placekitten.com/1920/800",
+        src: "/hero.jpg",
       },
       {
         breakpoint: 768,
-        src: "https://placekitten.com/1920/800",
+        src: "/hero.jpg",
       },
     ],
   },
@@ -108,11 +108,11 @@ const homeHero: HeroProps = {
     url: [
       {
         breakpoint: 0,
-        src: "https://placekitten.com/1920/800",
+        src: "/hero.jpg",
       },
       {
         breakpoint: 768,
-        src: "https://placekitten.com/1920/800",
+        src: "/hero.jpg",
       },
     ],
   },
@@ -136,11 +136,11 @@ const portalHero: HeroProps = {
     url: [
       {
         breakpoint: 0,
-        src: "https://placekitten.com/1920/800",
+        src: "/hero.jpg",
       },
       {
         breakpoint: 768,
-        src: "https://placekitten.com/1920/800",
+        src: "/hero.jpg",
       },
     ],
   },
@@ -175,11 +175,11 @@ const projectHero: HeroProps = {
     url: [
       {
         breakpoint: 0,
-        src: "https://placekitten.com/1920/800",
+        src: "/hero.jpg",
       },
       {
         breakpoint: 768,
-        src: "https://placekitten.com/1920/800",
+        src: "/hero.jpg",
       },
     ],
   },
@@ -212,11 +212,11 @@ const graphicHero: HeroProps = {
     url: [
       {
         breakpoint: 0,
-        src: "https://placekitten.com/1920/800",
+        src: "/hero.jpg",
       },
       {
         breakpoint: 768,
-        src: "https://placekitten.com/1920/800",
+        src: "/hero.jpg",
       },
     ],
   },
@@ -249,11 +249,11 @@ const publicationHero: HeroProps = {
     url: [
       {
         breakpoint: 0,
-        src: "https://placekitten.com/1920/800",
+        src: "/hero.jpg",
       },
       {
         breakpoint: 768,
-        src: "https://placekitten.com/1920/800",
+        src: "/hero.jpg",
       },
     ],
   },

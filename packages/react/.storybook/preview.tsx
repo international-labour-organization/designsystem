@@ -1,7 +1,7 @@
-import type { DecoratorFn } from "@storybook/react";
 import { GlobalProvider } from "../src/components/GlobalProvider";
 import { themeprefix } from "@ilo-org/themes/tokens/theme/base.json";
 import "./styles.scss";
+import { Decorator } from "@storybook/react";
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
@@ -15,12 +15,9 @@ export const parameters = {
   options: {
     storySort: {
       method: "alphabetical",
-      order: ["Welcome", "Intro", "Tokens", ["Colors", "Typography"]],
+      order: ["Introduction", "GettingStarted"],
       locales: "en-US",
     },
-  },
-  parameters: {
-    layout: "centered",
   },
   previewTabs: {
     "storybook/docs/panel": { index: -1 },
@@ -29,12 +26,24 @@ export const parameters = {
   viewMode: "docs",
 };
 
-export const decorators: DecoratorFn[] = [
+export const decorators: Decorator[] = [
+  // Providces the GlobalProvider context to all stories
   (Story) => (
-    <div>
-      <GlobalProvider prefix={themeprefix.value}>
-        <Story />
-      </GlobalProvider>
-    </div>
+    <GlobalProvider prefix={themeprefix.value}>
+      <Story />
+    </GlobalProvider>
   ),
+  // Wraps components in story mode
+  (Story, ctx) => {
+    if (ctx.viewMode === "story") {
+      return (
+        <div className="story-decorator-wrapper">
+          <div className="story-decorator">
+            <Story />
+          </div>
+        </div>
+      );
+    }
+    return <Story />;
+  },
 ];

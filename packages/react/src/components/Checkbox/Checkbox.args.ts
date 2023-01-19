@@ -1,15 +1,13 @@
 import { CheckboxProps } from "./Checkbox.props";
 
 const basic: CheckboxProps = {
-  callback: "",
+  callback: () => {},
   disabled: false,
   error: false,
   grouped: false,
-  helper: false,
   label: "Checkbox Label",
   name: "checkbox",
   required: false,
-  type: "checkbox",
 };
 
 /**

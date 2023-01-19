@@ -1,8 +1,8 @@
 {
   "$schema": "https://turborepo.org/schema.json",
   "pipeline": {
-    "build": {
-      "dependsOn": ["^build"],
+    "build:lib": {
+      "dependsOn": ["^build:lib"],
       "outputs": [
         "es/**",
         "svg/**",
@@ -10,13 +10,26 @@
         "dist/**",
         "lib/**",
         "build/**",
-        "storybook-static/**",
         "scss/tokens/**",
         "metadata.json"
       ]
     },
+    "build:docs": {
+      "dependsOn": ["^build:docs"],
+      "outputs": [
+        "es/**",
+        "svg/**",
+        "umd/**",
+        "dist/**",
+        "lib/**",
+        "build/**",
+        "scss/tokens/**",
+        "metadata.json",
+        "storybook-static/**"
+      ]
+    },
     "test": {
-      "dependsOn": ["build"],
+      "dependsOn": ["build:lib"],
       "outputs": []
     },
     "lint": {

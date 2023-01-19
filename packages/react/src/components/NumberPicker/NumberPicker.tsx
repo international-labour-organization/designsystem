@@ -35,7 +35,7 @@ const NumberPicker: FC<NumberPickerProps> = ({
   };
 
   return (
-    <Fieldset legend={false} fieldsetid={false}>
+    <Fieldset>
       <FormElement
         elemid={name as any}
         label={label}

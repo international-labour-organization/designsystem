@@ -24,6 +24,8 @@
   ],
   "scripts": {
     "build": "pnpm run clean && node tasks/build.js",
+    "build:lib": "pnpm build",
+    "build:docs": "pnpm build",
     "download-figma": "pnpm run clean && node tasks/download.js",
     "ci-check": "node tasks/ci-check.js",
     "clean": "rimraf es lib build-info.json metadata.json",

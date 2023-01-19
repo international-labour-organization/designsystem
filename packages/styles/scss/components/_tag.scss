@@ -3,7 +3,7 @@
 @use "../animations" as *;
 @import "../mixins";
 
-.ilo--tags {
+.ilo--tag-set {
   list-style: none;
 
   .right-to-left & {

@@ -38,7 +38,7 @@ const Textarea: FC<TextareaProps> = ({
   };
 
   return (
-    <Fieldset legend={false} fieldsetid={false}>
+    <Fieldset>
       <FormElement
         elemid={name as any}
         label={label}

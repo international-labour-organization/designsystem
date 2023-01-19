@@ -12,6 +12,8 @@
   },
   "scripts": {
     "build": "sass scss:build/css --load-path=./node_modules && postcss build/css/index.css --base/css build/css --dir build/minified && postcss build/css/monorepo.css --base/css build/css --dir build/minified",
+    "build:lib": "pnpm build",
+    "build:docs": "pnpm build",
     "minify": "postcss build/css/index.css --base/css build/css --dir build/minified && postcss build/css/monorepo.css --base/css build/css --dir build/minified",
     "format": "prettier --check . --ignore-path ../../.prettierignore",
     "format:fix": "prettier --write . --ignore-path ../../.prettierignore",

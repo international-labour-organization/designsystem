@@ -9,7 +9,7 @@ describe("<SearchField>", () => {
     );
     expect(container.children[0]).not.toBeNull();
     const inputElement = screen.getByPlaceholderText(
-      searchFieldArgs.searchfield.input.placeholder
+      searchFieldArgs.searchfield.input?.placeholder as string
     );
     expect(inputElement).not.toBeNull();
   });
@@ -20,7 +20,7 @@ describe("<SearchField>", () => {
     );
     expect(container.children[0]).not.toBeNull();
     const inputElement = screen.getByPlaceholderText(
-      searchFieldArgs.searchfielddisabled.input.placeholder
+      searchFieldArgs.searchfielddisabled.input?.placeholder as string
     );
     expect(inputElement).toHaveAttribute("disabled", "");
   });

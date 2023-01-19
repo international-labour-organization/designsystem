@@ -1,35 +1,29 @@
 import { ImageProps } from "./Image.props";
 
-const image: ImageProps = {
-  alt: "My alt text",
+const imageArgs: ImageProps = {
+  alt: "Two women wearing yellow hard hats and neon safety jackets look directly at the viewer",
   className: "image",
-  caption: "my image caption",
-  credit: "Photo: copyright 2022 Person S. Name",
+  caption:
+    "Women construction workers in Nepal build roads and bridges as part of a National Rural Transport Programme co-sponsored by the ILO.",
+  credit: "© Marcel Crozet/ILO",
   url: [
     {
       breakpoint: 0,
-      src: "https://placekitten.com/400/300",
+      src: "/small.jpg",
     },
     {
       breakpoint: 800,
-      src: "https://placekitten.com/800/600",
+      src: "/medium.jpg",
     },
     {
       breakpoint: 1200,
-      src: "https://placekitten.com/1200/900",
+      src: "/medium.jpg",
     },
     {
       breakpoint: 1440,
-      src: "https://placekitten.com/1600/1200",
+      src: "/large.jpg",
     },
   ],
-};
-
-/**
- * Sample prop definitions for Image's enumerable properties (imported in stories and tests).
- */
-const imageArgs = {
-  image,
 };
 
 export default imageArgs;

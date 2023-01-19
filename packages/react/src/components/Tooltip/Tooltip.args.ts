@@ -1,31 +1,27 @@
 import { TooltipProps } from "./Tooltip.props";
 
 const light: TooltipProps = {
-  children: "<button>test<button>",
-  label: "This is a tooltip",
+  label: "This is a light tooltip",
   theme: "light", // "light" | "dark" ;
   isVisible: false,
 };
 
 const lighticon: TooltipProps = {
-  children: "<button>test<button>",
   icon: true,
-  label: "This is a tooltip",
+  label: "This is a light tooltip",
   theme: "light", // "light" | "dark" ;
   isVisible: false,
 };
 
 const dark: TooltipProps = {
-  children: "<button>test<button>",
-  label: "This is a tooltip",
+  label: "This is a dark tooltip",
   theme: "dark", // "light" | "dark" ;
   isVisible: false,
 };
 
 const darkicon: TooltipProps = {
-  children: "<button>test<button>",
   icon: true,
-  label: "This is a tooltip",
+  label: "This is a tooltip for an icon",
   theme: "dark", // "light" | "dark" ;
   isVisible: false,
 };
