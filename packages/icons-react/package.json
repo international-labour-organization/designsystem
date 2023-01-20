@@ -38,8 +38,8 @@
     "postinstall": "carbon-telemetry collect --install"
   },
   "peerDependencies": {
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react": ">16",
+    "react-dom": ">16"
   },
   "dependencies": {
     "@babel/core": "^7.14.6",
