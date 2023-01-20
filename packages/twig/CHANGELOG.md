@@ -1,5 +1,12 @@
 # @ilo-org/twig
 
+## 0.2.11
+
+### Patch Changes
+
+- @ilo-org/icons@0.1.16
+- @ilo-org/styles@0.1.16
+
 ## 0.2.10
 
 ### Patch Changes

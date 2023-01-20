@@ -1,5 +1,14 @@
 # @ilo-org/icons-react
 
+## 0.0.18
+
+### Patch Changes
+
+- 368092aee: Set React peer dependencies to >16
+- Updated dependencies [368092aee]
+  - @ilo-org/icon-build-helpers@0.0.3
+  - @ilo-org/icons@0.1.16
+
 ## 0.0.17
 
 ### Patch Changes

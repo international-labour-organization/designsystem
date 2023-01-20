@@ -1,5 +1,11 @@
 # @ilo-org/styles
 
+## 0.1.16
+
+### Patch Changes
+
+- @ilo-org/icons@0.1.16
+
 ## 0.1.15
 
 ### Patch Changes
