@@ -21,7 +21,7 @@
     "fix-deps": "manypkg fix",
     "format": "pnpm turbo run format:fix",
     "lint": "pnpm turbo run lint:fix",
-    "prepare": "husky install",
+    "prepare": "node ./prepare.js",
     "react:install": "pnpm clean:deps && pnpm --filter react... install",
     "react:build:docs": "pnpm turbo run build:docs --filter=@ilo-org/react...",
     "react:dev:docs": "pnpm run storybook --filter=@ilo-org/react",
