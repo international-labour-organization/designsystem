@@ -1,5 +1,12 @@
 # @ilo-org/icons
 
+## 0.1.16
+
+### Patch Changes
+
+- Updated dependencies [368092aee]
+  - @ilo-org/icon-build-helpers@0.0.3
+
 ## 0.1.15
 
 ### Patch Changes
