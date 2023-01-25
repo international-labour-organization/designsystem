@@ -69,6 +69,7 @@ const logofr = new URL("./assets/ilo-fr.png", import.meta.url);
 export {
   logo,
   logofr,
+  favicon,
   logo_en_horizontal_blue_png,
   logo_en_horizontal_blue_svg,
   logo_en_horizontal_white_png,
