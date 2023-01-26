@@ -29,12 +29,12 @@ If you're using [Next.js](https://nextjs.org/), you should use its [`next/image`
 ```jsx
 import { logo_en_horizontal_blue } from "@ilo-org/brand-assets";
 
-const ReactComponent = () => <img src={logo_en_horizontal_blue} />;
+export const Logo = (props) => <img src={logo_en_horizontal_blue} {...props} />;
 ```
 
-This will give you a [URL object](https://developer.mozilla.org/en-US/docs/Web/API/URL) with normalized path to the file's location in the package. This is the easiest solution if you're not bundling images and are able to serve them directly from the `node_modules` folder.
+This will give you a [URL object](https://developer.mozilla.org/en-US/docs/Web/API/URL) with normalized path to the file's location in the package. This is the easiest solution if you're able to serve them directly from the `node_modules` folder.
 
-Conversely, it will not work in build systems (like Next.js) that wont't serve assets from `node_modules` and that need to bundle them directly.
+Conversely, it will not work in build systems that wont't serve assets from `node_modules` and that need to bundle them directly.
 
 ## List of Assets
 
