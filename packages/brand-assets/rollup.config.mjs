@@ -7,29 +7,31 @@ import typescript from "rollup-plugin-typescript2";
 const require = createRequire(import.meta.url);
 const packageJson = require("./package.json");
 
-export default {
-  input: "src/index.ts",
-  output: [
-    {
-      file: packageJson.main,
-      format: "cjs",
-      sourcemap: true,
-    },
-    {
-      file: packageJson.module,
-      format: "esm",
-      sourcemap: true,
-    },
-  ],
-  plugins: [
-    copy({
-      targets: [{ src: "src/assets", dest: "dist/" }],
-    }),
-    typescript({
-      baseUrl: "./src",
-      useTsconfigDeclarationDir: true,
-      tsconfig: "./tsconfig.json",
-    }),
-    importMetaAssets(),
-  ],
-};
+export default [
+  {
+    input: "src/index.ts",
+    output: [
+      {
+        file: packageJson.main,
+        format: "cjs",
+        sourcemap: true,
+      },
+      {
+        file: packageJson.module,
+        format: "esm",
+        sourcemap: true,
+      },
+    ],
+    plugins: [
+      copy({
+        targets: [{ src: "src/assets", dest: "dist/" }],
+      }),
+      typescript({
+        baseUrl: "./src",
+        useTsconfigDeclarationDir: true,
+        tsconfig: "./tsconfig.json",
+      }),
+      importMetaAssets(),
+    ],
+  },
+];

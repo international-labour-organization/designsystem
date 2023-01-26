@@ -1,7 +1,6 @@
 # ILO Design System - Brand Assets
 
-Static brand assets (pngs, favicons, svgs, etc.) for use in digital and software products using the ILO
-Design System.
+Static brand assets for use in digital and software products using the ILO Design System.
 
 ## Installation
 
@@ -11,18 +10,16 @@ npm i @ilo-org/brand-assets
 
 ## Basic Usage
 
-This package assuming you're using a module bundler like [Webpack](https://webpack.js.org/) or [Vite](https://vitejs.dev/) that will allow to import the image into a JavaScript file and then include it in a production bundle where the JavaScript import will be interpolated into a file path.
-
-There are two ways that you can do this.
-
 ### 1. Import the image directly
 
-This will work in most Webpack5 build systems like [Create React App](https://create-react-app.dev/docs/adding-images-fonts-and-files/);
+This assumes that you're using a module bundler like [Webpack](https://webpack.js.org/) that will allow you to import the image into a JavaScript file and then include it in a production bundle where the import will be interpolated into a file path.
+
+In this example, we're importing a logo from the from `@ilo-org/brand-assets` package and providing it to a [React](https://www.reactjs.com) component.
 
 ```jsx
 import ilo_logo from "@ilo-org/brand-assets/logo_en_horizontal_blue.svg";
 
-const ReactComponent = () => <img src={ilo_logo} />;
+export const Logo = (props) => <img src={ilo_logo} {...props} />;
 ```
 
 If you're using [Next.js](https://nextjs.org/), you should use its [`next/image`](https://nextjs.org/docs/api-reference/next/image) component to do this.
@@ -35,7 +32,9 @@ import { logo_en_horizontal_blue } from "@ilo-org/brand-assets";
 const ReactComponent = () => <img src={logo_en_horizontal_blue} />;
 ```
 
-This will give you a normalized path to the file's location in the package. This may not work in situations like Next.js that have their own pipelines for static assets.
+This will give you a [URL object](https://developer.mozilla.org/en-US/docs/Web/API/URL) with normalized path to the file's location in the package. This is the easiest solution if you're not bundling images and are able to serve them directly from the `node_modules` folder.
+
+Conversely, it will not work in build systems (like Next.js) that wont't serve assets from `node_modules` and that need to bundle them directly.
 
 ## List of Assets
 
@@ -43,20 +42,20 @@ Additional assets will be added to this package in future versions.
 
 ### ILO Logo
 
-| Language | Color | Orientation | Filetype | Exported as                    | Filename                       |
-| -------- | ----- | ----------- | -------- | ------------------------------ | ------------------------------ |
-| English  | blue  | horizontal  | png      | `logo_en_horizontal_blue_png`  | `logo_en_horizontal_blue.png`  |
-| English  | blue  | horizontal  | svg      | `logo_en_horizontal_blue_svg`  | `logo_en_horizontal_blue.svg`  |
-| English  | white | horizontal  | png      | `logo_en_horizontal_white_png` | `logo_en_horizontal_white.png` |
-| English  | white | horizontal  | svg      | `logo_en_horizontal_white_svg` | `logo_en_horizontal_white.svg` |
-| French   | blue  | horizontal  | png      | `logo_fr_horizontal_blue_png`  | `logo_fr_horizontal_blue.png`  |
-| French   | blue  | horizontal  | svg      | `logo_fr_horizontal_blue_svg`  | `logo_fr_horizontal_blue.svg`  |
-| French   | white | horizontal  | png      | `logo_fr_horizontal_white_png` | `logo_fr_horizontal_white.png` |
-| French   | white | horizontal  | svg      | `logo_fr_horizontal_white_svg` | `logo_fr_horizontal_white.svg` |
-| Spanish  | blue  | horizontal  | png      | `logo_es_horizontal_blue_png`  | `logo_es_horizontal_blue.png`  |
-| Spanish  | blue  | horizontal  | svg      | `logo_es_horizontal_blue_svg`  | `logo_es_horizontal_blue.svg`  |
-| Spanish  | white | horizontal  | png      | `logo_es_horizontal_white_png` | `logo_es_horizontal_white.png` |
-| Spanish  | white | horizontal  | svg      | `logo_es_horizontal_white_svg` | `logo_es_horizontal_white.svg` |
+| Image                                                               | Language | Filetype | Exported as                    | Filename                       |
+| ------------------------------------------------------------------- | -------- | -------- | ------------------------------ | ------------------------------ |
+| <img src="./src/assets/logo_en_horizontal_blue.png" width="200" />  | English  | png      | `logo_en_horizontal_blue_png`  | `logo_en_horizontal_blue.png`  |
+| <img src="./src/assets/logo_en_horizontal_blue.svg" width="200" />  | English  | svg      | `logo_en_horizontal_blue_svg`  | `logo_en_horizontal_blue.svg`  |
+| <img src="./src/assets/logo_en_horizontal_white.png" width="200" /> | English  | png      | `logo_en_horizontal_white_png` | `logo_en_horizontal_white.png` |
+| <img src="./src/assets/logo_en_horizontal_white.svg" width="200" /> | English  | svg      | `logo_en_horizontal_white_svg` | `logo_en_horizontal_white.svg` |
+| <img src="./src/assets/logo_fr_horizontal_blue.png" width="200" />  | French   | png      | `logo_fr_horizontal_blue_png`  | `logo_fr_horizontal_blue.png`  |
+| <img src="./src/assets/logo_fr_horizontal_blue.svg" width="200" />  | French   | svg      | `logo_fr_horizontal_blue_svg`  | `logo_fr_horizontal_blue.svg`  |
+| <img src="./src/assets/logo_fr_horizontal_white.png" width="200" /> | French   | png      | `logo_fr_horizontal_white_png` | `logo_fr_horizontal_white.png` |
+| <img src="./src/assets/logo_fr_horizontal_white.svg" width="200" /> | French   | svg      | `logo_fr_horizontal_white_svg` | `logo_fr_horizontal_white.svg` |
+| <img src="./src/assets/logo_es_horizontal_blue.png" width="200" />  | Spanish  | png      | `logo_es_horizontal_blue_png`  | `logo_es_horizontal_blue.png`  |
+| <img src="./src/assets/logo_es_horizontal_blue.svg" width="200" />  | Spanish  | svg      | `logo_es_horizontal_blue_svg`  | `logo_es_horizontal_blue.svg`  |
+| <img src="./src/assets/logo_es_horizontal_white.png" width="200" /> | Spanish  | png      | `logo_es_horizontal_white_png` | `logo_es_horizontal_white.png` |
+| <img src="./src/assets/logo_es_horizontal_white.svg" width="200" /> | Spanish  | svg      | `logo_es_horizontal_white_svg` | `logo_es_horizontal_white.svg` |
 
 ### Favicon
 
