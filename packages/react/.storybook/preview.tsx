@@ -1,7 +1,7 @@
 import { GlobalProvider } from "../src/components/GlobalProvider";
 import { themeprefix } from "@ilo-org/themes/tokens/theme/base.json";
-import "./styles.scss";
 import { Decorator } from "@storybook/react";
+import "./styles.scss";
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
