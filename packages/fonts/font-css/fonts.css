@@ -6,7 +6,7 @@
 
 @font-face {
   font-family: "Overpass";
-  src: url("../fonts/Overpass-Medium.ttf") format("truetype");
+  src: url("../assets/Overpass-Medium.ttf") format("truetype");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -14,7 +14,7 @@
 
 @font-face {
   font-family: "Overpass";
-  src: url("../fonts/Overpass-Medium.ttf") format("truetype");
+  src: url("../assets/Overpass-Medium.ttf") format("truetype");
   font-weight: 500;
   font-style: italic;
   font-display: swap;
@@ -24,11 +24,11 @@
 
 @font-face {
   font-family: "Overpass";
-  src: url("../fonts/Overpass-Light.eot");
-  src: url("../fonts/Overpass-Light.eot?#iefix") format("embedded-opentype"),
-    url("../fonts/Overpass-Light.woff2") format("woff2"),
-    url("../fonts/Overpass-Light.woff") format("woff"),
-    url("../fonts/Overpass-Light.ttf") format("truetype");
+  src: url("../assets/Overpass-Light.eot");
+  src: url("../assets/Overpass-Light.eot?#iefix") format("embedded-opentype"),
+    url("../assets/Overpass-Light.woff2") format("woff2"),
+    url("../assets/Overpass-Light.woff") format("woff"),
+    url("../assets/Overpass-Light.ttf") format("truetype");
   font-weight: 300;
   font-style: normal;
   font-display: swap;
@@ -38,11 +38,11 @@
 
 @font-face {
   font-family: "Overpass";
-  src: url("../fonts/Overpass-Bold.eot");
-  src: url("../fonts/Overpass-Bold.eot?#iefix") format("embedded-opentype"),
-    url("../fonts/Overpass-Bold.woff2") format("woff2"),
-    url("../fonts/Overpass-Bold.woff") format("woff"),
-    url("../fonts/Overpass-Bold.ttf") format("truetype");
+  src: url("../assets/Overpass-Bold.eot");
+  src: url("../assets/Overpass-Bold.eot?#iefix") format("embedded-opentype"),
+    url("../assets/Overpass-Bold.woff2") format("woff2"),
+    url("../assets/Overpass-Bold.woff") format("woff"),
+    url("../assets/Overpass-Bold.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -50,12 +50,12 @@
 
 @font-face {
   font-family: "Overpass";
-  src: url("../fonts/Overpass-BoldItalic.eot");
-  src: url("../fonts/Overpass-BoldItalic.eot?#iefix")
+  src: url("../assets/Overpass-BoldItalic.eot");
+  src: url("../assets/Overpass-BoldItalic.eot?#iefix")
       format("embedded-opentype"),
-    url("../fonts/Overpass-BoldItalic.woff2") format("woff2"),
-    url("../fonts/Overpass-BoldItalic.woff") format("woff"),
-    url("../fonts/Overpass-BoldItalic.ttf") format("truetype");
+    url("../assets/Overpass-BoldItalic.woff2") format("woff2"),
+    url("../assets/Overpass-BoldItalic.woff") format("woff"),
+    url("../assets/Overpass-BoldItalic.ttf") format("truetype");
   font-weight: 700;
   font-style: italic;
   font-display: swap;
@@ -69,11 +69,11 @@
 
 @font-face {
   font-family: "Noto Sans";
-  src: url("../fonts/NotoSans.eot");
-  src: url("../fonts/NotoSans.eot?#iefix") format("embedded-opentype"),
-    url("../fonts/NotoSans.woff2") format("woff2"),
-    url("../fonts/NotoSans.woff") format("woff"),
-    url("../fonts/NotoSans.ttf") format("truetype");
+  src: url("../assets/NotoSans.eot");
+  src: url("../assets/NotoSans.eot?#iefix") format("embedded-opentype"),
+    url("../assets/NotoSans.woff2") format("woff2"),
+    url("../assets/NotoSans.woff") format("woff"),
+    url("../assets/NotoSans.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -81,11 +81,11 @@
 
 @font-face {
   font-family: "Noto Sans";
-  src: url("../fonts/NotoSans-Italic.eot");
-  src: url("../fonts/NotoSans-Italic.eot?#iefix") format("embedded-opentype"),
-    url("../fonts/NotoSans-Italic.woff2") format("woff2"),
-    url("../fonts/NotoSans-Italic.woff") format("woff"),
-    url("../fonts/NotoSans-Italic.ttf") format("truetype");
+  src: url("../assets/NotoSans-Italic.eot");
+  src: url("../assets/NotoSans-Italic.eot?#iefix") format("embedded-opentype"),
+    url("../assets/NotoSans-Italic.woff2") format("woff2"),
+    url("../assets/NotoSans-Italic.woff") format("woff"),
+    url("../assets/NotoSans-Italic.ttf") format("truetype");
   font-weight: normal;
   font-style: italic;
   font-display: swap;
@@ -95,11 +95,11 @@
 
 @font-face {
   font-family: "Noto Sans";
-  src: url("../fonts/NotoSans-Bold.eot");
-  src: url("../fonts/NotoSans-Bold.eot?#iefix") format("embedded-opentype"),
-    url("../fonts/NotoSans-Bold.woff2") format("woff2"),
-    url("../fonts/NotoSans-Bold.woff") format("woff"),
-    url("../fonts/NotoSans-Bold.ttf") format("truetype");
+  src: url("../assets/NotoSans-Bold.eot");
+  src: url("../assets/NotoSans-Bold.eot?#iefix") format("embedded-opentype"),
+    url("../assets/NotoSans-Bold.woff2") format("woff2"),
+    url("../assets/NotoSans-Bold.woff") format("woff"),
+    url("../assets/NotoSans-Bold.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
   font-display: swap;
@@ -107,12 +107,12 @@
 
 @font-face {
   font-family: "Noto Sans";
-  src: url("../fonts/NotoSans-BoldItalic.eot");
-  src: url("../fonts/NotoSans-BoldItalic.eot?#iefix")
+  src: url("../assets/NotoSans-BoldItalic.eot");
+  src: url("../assets/NotoSans-BoldItalic.eot?#iefix")
       format("embedded-opentype"),
-    url("../fonts/NotoSans-BoldItalic.woff2") format("woff2"),
-    url("../fonts/NotoSans-BoldItalic.woff") format("woff"),
-    url("../fonts/NotoSans-BoldItalic.ttf") format("truetype");
+    url("../assets/NotoSans-BoldItalic.woff2") format("woff2"),
+    url("../assets/NotoSans-BoldItalic.woff") format("woff"),
+    url("../assets/NotoSans-BoldItalic.ttf") format("truetype");
   font-weight: 700;
   font-style: italic;
   font-display: swap;
