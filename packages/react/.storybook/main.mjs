@@ -14,7 +14,10 @@ export const docs = {
   defaultName: "Overview",
 };
 
-export const staticDirs = ["../public"];
+export const staticDirs = [
+  "../public",
+  { from: "../node_modules/@ilo-org/fonts/font-css", to: "/fonts" },
+];
 
 export const addons = [
   "@storybook/addon-links",

@@ -1,6 +1,63 @@
 <!-- .storybook/manager-head.html -->
+<style>
+  @import url("/fonts/fonts-google.css");
+  @import url("https://fonts.googleapis.com/css2?family=Fira+Code&display=swap");
+</style>
+
 <link
   rel="icon"
   type="image/x-icon"
   href="https://www.ilo.org/wcmsp5/ilo/global/images/templates/favicons/favicon.ico"
 />
+
+<style>
+  :root {
+    --ilo-white: #fff;
+    --ilo-dark-blue: #230050;
+    --ilo-yellow: #ffcd2d;
+    --ilo-turquoise: #05d2d2;
+    --ilo-purple: #960a55;
+  }
+
+  body {
+    font-family: "Noto Sans", sans-serif;
+  }
+
+  a[id*="overview"] > svg {
+    color: var(--ilo-purple);
+    font-family: "Overpass", sans-serif;
+  }
+
+  a:not[id*="overview"] > svg {
+    color: var(--ilo-turquoise);
+  }
+
+  /* Remount component */
+  button[title="Remount component"]:hover,
+  button[title="Zoom in"]:hover,
+  button[title="Zoom out"]:hover,
+  button[title="Reset zoom"]:hover,
+  button[title="Change the background of the preview"]:hover,
+  button[title="Apply a grid to the preview"]:hover,
+  button[title="Change the size of the preview"]:hover,
+  button[title="Enable measure"]:hover,
+  button[title="Apply outlines to the preview"]:hover,
+  button[title="Vision simulator"]:hover,
+  button[title="Go full screen [F]"]:hover,
+  a[title="Open canvas in new tab"]:hover,
+  button[title="Copy canvas link"]:hover {
+    color: var(--ilo-dark-blue);
+    background-color: var(--ilo-yellow);
+  }
+
+  button.sto-1qova3h,
+  button.sto-4f61h0,
+  button[title="Rotate viewport"]:hover {
+    color: var(--ilo-yellow);
+  }
+
+  button.tabbutton:active,
+  button.tabbutton:focus {
+    border-bottom-color: var(--ilo-yellow);
+  }
+</style>
