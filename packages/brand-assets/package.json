@@ -10,13 +10,22 @@
   "publishConfig": {
     "access": "public"
   },
-  "main": "dist/index.js",
+  "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "author": "@justintemps",
   "license": "Apache-2.0",
   "files": [
     "dist"
   ],
+  "types": "dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "import": "./dist/esm/index.js",
+      "default": "./dist/cjs/index.js"
+    },
+    "./*": "./dist/assets/*"
+  },
   "scripts": {
     "build": "rollup -c",
     "build:lib": "pnpm build",
@@ -27,15 +36,14 @@
     "lint:fix": "eslint --ext .js,.ts,.tsx --fix"
   },
   "devDependencies": {
+    "@ilo-org/eslint-config": "workspace:*",
+    "@ilo-org/prettier-config": "workspace:*",
+    "@ilo-org/typescript-config": "workspace:*",
+    "@types/node": "^17.0.45",
     "@web/rollup-plugin-import-meta-assets": "^1.0.7",
     "rollup": "^3.4.0",
-    "rollup-plugin-copy": "^3.4.0"
-  },
-  "dependencies": {
-    "@ilo-org/fonts": "^0.0.7",
-    "@ilo-org/icons": "^0.1.15",
-    "@ilo-org/styles": "^0.1.15",
-    "@ilo-org/themes": "^0.1.15",
-    "@ilo-org/utils": "^0.0.11"
+    "rollup-plugin-copy": "^3.4.0",
+    "rollup-plugin-typescript2": "^0.34.1",
+    "typescript": "4.9.3"
   }
 }

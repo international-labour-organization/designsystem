@@ -1,0 +1,10 @@
+{
+  "extends": "@ilo-org/typescript-config",
+  "include": ["src/**/*"],
+  "compilerOptions": {
+    "types": ["node"],
+    "declaration": true,
+    "declarationDir": "dist/types"
+  },
+  "exclude": ["node_modules"]
+}
