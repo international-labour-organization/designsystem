@@ -1,8 +1,8 @@
 import { GlobalProvider } from "../src/components/GlobalProvider";
 import { themeprefix } from "@ilo-org/themes/tokens/theme/base.json";
 import { Decorator } from "@storybook/react";
+import { theme } from "./theme";
 import "./styles.scss";
-import theme from "./theme";
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
@@ -26,7 +26,7 @@ export const parameters = {
   },
   viewMode: "docs",
   docs: {
-    theme: theme, // The replacement theme to use
+    theme: theme,
   },
 };
 

@@ -6,7 +6,7 @@ import brandColors from "@ilo-org/themes/tokens/brand/base.json";
 
 const { brand } = brandColors;
 
-export default create({
+export const theme = create({
   base: "light",
   brandTitle: "ILO Design System for React",
   brandUrl: "https://www.ilo.org/",
