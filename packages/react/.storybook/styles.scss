@@ -1,6 +1,14 @@
 @import "@ilo-org/themes/build/scss/tokens";
 @import "@ilo-org/styles/scss/monorepo";
 
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Overpass", sans-serif !important;
+}
+
 button[title="Zoom in"]:hover,
 button[title="Zoom out"]:hover,
 button[title="Reset zoom"]:hover {
@@ -8,7 +16,7 @@ button[title="Reset zoom"]:hover {
   background-color: $brand-ilo-yellow;
 }
 
-a.ilo--button--secondary {
+a[class*="ilo--button"] {
   color: $brand-ilo-dark-blue;
 
   &:hover {
