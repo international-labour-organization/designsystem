@@ -1,7 +1,8 @@
 import { GlobalProvider } from "../src/components/GlobalProvider";
 import { themeprefix } from "@ilo-org/themes/tokens/theme/base.json";
-import "./styles.scss";
 import { Decorator } from "@storybook/react";
+import { theme } from "./theme";
+import "./styles.scss";
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
@@ -24,6 +25,9 @@ export const parameters = {
     canvas: { title: "Code", hidden: false },
   },
   viewMode: "docs",
+  docs: {
+    theme: theme,
+  },
 };
 
 export const decorators: Decorator[] = [
