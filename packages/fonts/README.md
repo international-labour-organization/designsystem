@@ -28,6 +28,15 @@ Then, in any css file
 }
 ```
 
+### As Google Fonts
+
+If you need to import the fonts for Google for some reason, you can also do this:
+
+```css
+/* CSS */
+@import url("@ilo-org/fonts/font-css/fonts-google.css");
+```
+
 ## Fonts included
 
 This package includes a subset of [Overpass](https://fonts.google.com/specimen/Overpass) and [Noto Sans](https://fonts.google.com/noto/specimen/Noto+Sans) fonts used in ILO projects.
