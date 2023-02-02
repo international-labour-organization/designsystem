@@ -1,4 +1,4 @@
-import { EVENTS, ARIA } from '@ilo-org/utils';
+import { EVENTS, ARIA } from "@ilo-org/utils";
 
 /**
  * The Loading module which handles rendering field labels inline on a form.
@@ -26,7 +26,7 @@ export default class Loading {
     this.prefix = `${this.element.dataset.prefix}--loading`;
 
     // set some values
-    this.status = 'idle';
+    this.status = "idle";
 
     // Initialize the view
     this.init();

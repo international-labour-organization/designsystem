@@ -1,7 +1,8 @@
 accordion:
-  use: '@components/accordion/accordion.twig'
+  use: "@components/accordion/accordion.twig"
   label: Accordion
-  description: The accordion component allows the user to show and hide sections of
+  description:
+    The accordion component allows the user to show and hide sections of
     related content on a page. Click the accordions below to
     expand/collapse the accordion content.
   fields:
@@ -36,6 +37,6 @@ accordion:
       options:
         true: True
         false: False
-      preview: 'true'
+      preview: "true"
       required: false
   visibility: storybook

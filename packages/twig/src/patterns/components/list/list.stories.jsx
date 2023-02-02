@@ -1,6 +1,6 @@
-import './index';
+import "./index";
 
-const patternDefinition = require('./list.wingsuit.yml');
+const patternDefinition = require("./list.wingsuit.yml");
 
 export const wingsuit = {
   patternDefinition,

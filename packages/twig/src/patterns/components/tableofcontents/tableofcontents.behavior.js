@@ -1,4 +1,4 @@
-import TableOfContents from './tableofcontents';
+import TableOfContents from "./tableofcontents";
 
 Drupal.behaviors.tableofcontents = {
   attach() {
@@ -6,7 +6,7 @@ Drupal.behaviors.tableofcontents = {
       document.querySelectorAll(`[data-loadcomponent="TableOfContents"]`),
       (element) => {
         // eslint-disable-next-line no-console
-        console.log('loading TableOfContents component....');
+        console.log("loading TableOfContents component....");
         new TableOfContents(element);
       }
     );

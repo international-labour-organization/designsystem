@@ -1,6 +1,6 @@
-import './index';
+import "./index";
 
-const patternDefinition = require('./richtext.wingsuit.yml');
+const patternDefinition = require("./richtext.wingsuit.yml");
 
 export const wingsuit = {
   patternDefinition,

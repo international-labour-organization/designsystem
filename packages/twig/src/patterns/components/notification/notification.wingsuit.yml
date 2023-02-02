@@ -1,5 +1,5 @@
 notification:
-  use: '@components/notification/notification.twig'
+  use: "@components/notification/notification.twig"
   label: Notification
   description: The Notification component presents a dismissible alert.
   fields:
@@ -8,26 +8,26 @@ notification:
       label: Close Button Label
       description: The label for the close button
       required: true
-      preview: 'Close'
+      preview: "Close"
     copy:
       type: string
       label: Copy
       description: The text content of the notification
       required: true
-      preview: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.'
+      preview: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
     cta:
       type: object
       label: Call To Action
       description: an optional call to action button
       preview:
         label: Optional CTA
-        url: 'http://www.google.com'
+        url: "http://www.google.com"
     headline:
       type: string
       label: Headline
       description: The headline of the notification
       required: true
-      preview: 'With CTA'
+      preview: "With CTA"
     timestamp:
       type: object
       label: Timestamp
@@ -43,7 +43,7 @@ notification:
       options:
         inline: Inline
         dialog: Dialog
-      preview: 'dialog'
+      preview: "dialog"
     type:
       type: select
       label: Type
@@ -54,5 +54,5 @@ notification:
         info: Info
         success: Success
         warning: Warning
-      preview: 'info'
+      preview: "info"
   visibility: storybook

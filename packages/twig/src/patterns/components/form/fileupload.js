@@ -1,4 +1,4 @@
-import { getUpdatedItems, EVENTS, ARIA } from '@ilo-org/utils';
+import { getUpdatedItems, EVENTS, ARIA } from "@ilo-org/utils";
 
 /**
  * The FileUpload module which handles rendering field labels inline on a form.
@@ -87,15 +87,16 @@ export default class FileUpload {
    * @chainable
    */
   onChange(e) {
-    const oldDiv = this.container.querySelector(`.${this.prefix}--fieldset--input`) !== null;
+    const oldDiv =
+      this.container.querySelector(`.${this.prefix}--fieldset--input`) !== null;
     if (oldDiv) {
       this.container.remove(oldDiv);
     }
-    const newDiv = document.createElement('div');
+    const newDiv = document.createElement("div");
     newDiv.classList.add(`${this.prefix}--fieldset--input`);
-    const fileList = document.createElement('ul');
+    const fileList = document.createElement("ul");
     fileList.classList.add(`${this.prefix}--file-upload--list`);
-    let files = '';
+    let files = "";
     [...e.target.files].map((file) => {
       files += this.template(file.name);
     });

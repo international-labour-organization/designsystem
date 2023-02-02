@@ -1,4 +1,4 @@
-import { EVENTS } from '@ilo-org/utils';
+import { EVENTS } from "@ilo-org/utils";
 
 /**
  * The Callout module which handles rendering field labels inline on a form.
@@ -18,7 +18,7 @@ export default class Callout {
      * @property {Object}
      */
     this.element = element;
-    this.toggleLabel = '';
+    this.toggleLabel = "";
 
     // Initialize the view
     this.init();
@@ -52,15 +52,18 @@ export default class Callout {
      * The field that a user interacts with on a form
      * @type {Object}
      */
-    this.toggle = this.element.querySelector('.ilo--callout--toggle');
-    this.toggleOpen = this.element.classList.value.includes('callout--open');
-    this.toggleCollapsible = this.element.classList.value.includes('callout--collapse');
+    this.toggle = this.element.querySelector(".ilo--callout--toggle");
+    this.toggleOpen = this.element.classList.value.includes("callout--open");
+    this.toggleCollapsible =
+      this.element.classList.value.includes("callout--collapse");
     if (this.toggle) {
-      this.toggleLabel = this.toggle.querySelector('.ilo--callout--button-text');
-      this.toggleLabelOpen = this.toggle.getAttribute('data-open');
-      this.toggleLabelClosed = this.toggle.getAttribute('data-closed');
+      this.toggleLabel = this.toggle.querySelector(
+        ".ilo--callout--button-text"
+      );
+      this.toggleLabelOpen = this.toggle.getAttribute("data-open");
+      this.toggleLabelClosed = this.toggle.getAttribute("data-closed");
     }
-    this.button = this.element.querySelector('.ilo--button');
+    this.button = this.element.querySelector(".ilo--button");
 
     return this;
   }
@@ -118,7 +121,7 @@ export default class Callout {
    */
   handleClick(e) {
     // callback of sorts
-    console.log('button clicked');
+    console.log("button clicked");
 
     return this;
   }
@@ -136,9 +139,11 @@ export default class Callout {
     e.preventDefault();
     this.toggleOpen = !this.toggleOpen;
 
-    const label = this.toggleOpen ? this.toggleLabelOpen : this.toggleLabelClosed;
+    const label = this.toggleOpen
+      ? this.toggleLabelOpen
+      : this.toggleLabelClosed;
 
-    this.element.classList.toggle('ilo--callout--open');
+    this.element.classList.toggle("ilo--callout--open");
     this.toggleLabel.innerText = label;
 
     return this;

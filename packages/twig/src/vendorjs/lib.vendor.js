@@ -1,1 +1,1 @@
-import 'videojs';
+import "videojs";

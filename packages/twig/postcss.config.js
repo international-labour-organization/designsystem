@@ -1,6 +1,6 @@
-const autoprefixer = require('autoprefixer');
+const autoprefixer = require("autoprefixer");
 
 module.exports = {
-  syntax: 'postcss-scss',
+  syntax: "postcss-scss",
   plugins: [autoprefixer],
 };

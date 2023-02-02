@@ -1,5 +1,5 @@
 localnav:
-  use: '@components/localnav/localnav.twig'
+  use: "@components/localnav/localnav.twig"
   label: Local nav
   description: The Local nav component
   fields:
@@ -61,9 +61,9 @@ localnav:
       type: object
       label: Main link object
       description: Link object for back to main site link
-      preview: 
-        url: 'https://www.google.com/'
-        label: 'Go to main ILO website'
+      preview:
+        url: "https://www.google.com/"
+        label: "Go to main ILO website"
     languagelabel:
       type: string
       label: Language Label
@@ -76,14 +76,14 @@ localnav:
       preview:
         links:
           - label: Link One
-            url: 'http://www.google.com'
+            url: "http://www.google.com"
           - label: Link Two
-            url: 'http://www.google.com'
-          - endsection: 'true'
+            url: "http://www.google.com"
+          - endsection: "true"
             label: Link Three Ends A Section
-            url: 'http://www.google.com'
+            url: "http://www.google.com"
           - label: Link Four
-            url: 'http://www.google.com'
+            url: "http://www.google.com"
           - label: Link Five Is Slightly Longer
-            url: 'http://www.google.com'
+            url: "http://www.google.com"
   visibility: storybook

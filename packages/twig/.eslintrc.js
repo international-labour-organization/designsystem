@@ -4,12 +4,12 @@
  * Rule reference: http://eslint.org/docs/rules
  * Individual rule reference: http://eslint.org/docs/rules/NAME-OF-RULE
  */
-const wingsuitCore = require('@wingsuit-designsystem/core');
-const wingsuitConfig = require('./wingsuit.config.js');
+const wingsuitCore = require("@wingsuit-designsystem/core");
+const wingsuitConfig = require("./wingsuit.config.js");
 
 const appConfig = wingsuitCore.resolveConfig(
-  'storybook',
-  'development',
+  "storybook",
+  "development",
   {},
   wingsuitConfig,
   __dirname
@@ -22,14 +22,14 @@ Object.keys(namespaces).forEach((key) => {
 
 module.exports = {
   extends: [
-    'airbnb-base',
-    'plugin:jest/recommended',
-    'plugin:vue/recommended',
-    'plugin:prettier/recommended',
-    'prettier/vue',
-    'plugin:react/recommended',
+    "airbnb-base",
+    "plugin:jest/recommended",
+    "plugin:vue/recommended",
+    "plugin:prettier/recommended",
+    "prettier/vue",
+    "plugin:react/recommended",
   ],
-  plugins: ['prettier'],
+  plugins: ["prettier"],
   root: true,
   globals: {
     Drupal: true,
@@ -42,22 +42,22 @@ module.exports = {
     node: true,
   },
   rules: {
-    'react/jsx-uses-react': 1,
-    'prettier/prettier': [
-      'error',
+    "react/jsx-uses-react": 1,
+    "prettier/prettier": [
+      "error",
       {
-        endOfLine: 'auto',
+        endOfLine: "auto",
       },
     ],
-    'no-console': [0], // turned off for now while we are console.logging everywhere.
-    'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
-    'import/prefer-default-export': [0],
+    "no-console": [0], // turned off for now while we are console.logging everywhere.
+    "import/no-extraneous-dependencies": ["error", { devDependencies: true }],
+    "import/prefer-default-export": [0],
   },
   settings: {
     react: {
-      version: 'detect',
+      version: "detect",
     },
-    'import/resolver': {
+    "import/resolver": {
       alias: {
         map: aliasMap,
       },

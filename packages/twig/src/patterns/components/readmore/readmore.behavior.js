@@ -1,4 +1,4 @@
-import ReadMore from './readmore';
+import ReadMore from "./readmore";
 
 Drupal.behaviors.readmore = {
   attach() {
@@ -6,7 +6,7 @@ Drupal.behaviors.readmore = {
       document.querySelectorAll(`[data-loadcomponent="ReadMore"]`),
       (element) => {
         // eslint-disable-next-line no-console
-        console.log('loading ReadMore component....');
+        console.log("loading ReadMore component....");
         new ReadMore(element);
       }
     );

@@ -1,4 +1,4 @@
-import { EVENTS, ARIA } from '@ilo-org/utils';
+import { EVENTS, ARIA } from "@ilo-org/utils";
 
 /**
  * The Tabs module which handles rendering field labels inline on a form.
@@ -52,7 +52,9 @@ export default class Tabs {
      * The button for toggling Read More state
      * @type {Object}
      */
-    this.tabButtons = this.element.querySelectorAll(`.${this.prefix}--tabs--selection--button`);
+    this.tabButtons = this.element.querySelectorAll(
+      `.${this.prefix}--tabs--selection--button`
+    );
     this.tabPanels = this.element.querySelectorAll('[role="tabpanel"]');
     this.firstTab;
 
@@ -81,7 +83,7 @@ export default class Tabs {
    * @chainable
    */
   enable() {
-    this.element.classList.add('tabs--js');
+    this.element.classList.add("tabs--js");
 
     Array.from(this.tabButtons).forEach((button) => {
       button.addEventListener(EVENTS.CLICK, (e) => this.OnClickHandler(e));
@@ -122,22 +124,22 @@ export default class Tabs {
     console.log(e.key);
 
     switch (e.key) {
-      case 'ArrowLeft':
+      case "ArrowLeft":
         this.setSelectedToPreviousTab(tabid);
         flag = true;
         break;
 
-      case 'ArrowRight':
+      case "ArrowRight":
         this.setSelectedToNextTab(tabid);
         flag = true;
         break;
 
-      case 'Home':
+      case "Home":
         this.selectTab(this.firstTab.id);
         flag = true;
         break;
 
-      case 'End':
+      case "End":
         this.selectTab(this.lastTab.id);
         flag = true;
         break;
@@ -161,7 +163,9 @@ export default class Tabs {
    * @chainable
    */
   selectTab(tabid) {
-    const selectedTab = this.element.querySelector(`[${ARIA.CONTROLS}="${tabid}"]`);
+    const selectedTab = this.element.querySelector(
+      `[${ARIA.CONTROLS}="${tabid}"]`
+    );
     Array.from(this.tabPanels).forEach((panel) => {
       panel.setAttribute(ARIA.EXPANDED, false);
     });

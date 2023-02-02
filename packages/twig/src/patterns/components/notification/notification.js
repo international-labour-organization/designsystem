@@ -1,4 +1,4 @@
-import { EVENTS } from '@ilo-org/utils';
+import { EVENTS } from "@ilo-org/utils";
 
 /**
  * The Notification module which handles rendering field labels inline on a form.
@@ -52,7 +52,9 @@ export default class Notification {
      * The button for toggling Read More state
      * @type {Object}
      */
-    this.CloseButton = this.element.querySelector(`.${this.prefix}--notification--close`);
+    this.CloseButton = this.element.querySelector(
+      `.${this.prefix}--notification--close`
+    );
 
     return this;
   }

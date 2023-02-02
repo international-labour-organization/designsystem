@@ -1,4 +1,4 @@
-import { EVENTS, ARIA, MISC } from '@ilo-org/utils';
+import { EVENTS, ARIA, MISC } from "@ilo-org/utils";
 
 /**
  * The Table module which handles rendering field labels inline on a form.
@@ -54,11 +54,19 @@ export default class Table {
      * The button for toggling Read More state
      * @type {Object}
      */
-    this.thCells = this.element.querySelectorAll(`.${this.prefix}--table--head--cell`);
-    this.tdCells = this.element.querySelectorAll(`.${this.prefix}--table--body--cell`);
+    this.thCells = this.element.querySelectorAll(
+      `.${this.prefix}--table--head--cell`
+    );
+    this.tdCells = this.element.querySelectorAll(
+      `.${this.prefix}--table--body--cell`
+    );
     this.rows = this.element.querySelectorAll(`[class~="--row"]`);
-    this.thRows = this.element.querySelectorAll(`.${this.prefix}--table--head--row`);
-    this.tdRows = this.element.querySelectorAll(`.${this.prefix}--table--body--row`);
+    this.thRows = this.element.querySelectorAll(
+      `.${this.prefix}--table--head--row`
+    );
+    this.tdRows = this.element.querySelectorAll(
+      `.${this.prefix}--table--body--row`
+    );
     this.tBody = this.element.querySelector(`.${this.prefix}--table--body`);
 
     return this;
@@ -85,27 +93,39 @@ export default class Table {
    */
   setUpSorting() {
     Array.from(this.tdRows).forEach((tdrow) => {
-      Array.from(tdrow.querySelectorAll(`.${this.prefix}--table--body--cell`)).forEach(
-        (cell, index) => {
-          const sortablecontent = cell.textContent.toLowerCase();
-          if (typeof this.sortlist[index] === 'undefined') {
-            this.sortlist[index] = [];
-          }
-          if (cell.classList.contains('numeric')) {
-            if (this.isDate(sortablecontent)) {
-              this.sortlist[index].push({ value: sortablecontent, node: tdrow, type: 'date' });
-            } else {
-              this.sortlist[index].push({ value: sortablecontent, node: tdrow, type: 'numeric' });
-            }
-          } else if (cell.innerHTML.match(/^([^0-9]*)$/)) {
-            this.sortlist[index].push({ value: sortablecontent, node: tdrow, type: 'string' });
-          }
+      Array.from(
+        tdrow.querySelectorAll(`.${this.prefix}--table--body--cell`)
+      ).forEach((cell, index) => {
+        const sortablecontent = cell.textContent.toLowerCase();
+        if (typeof this.sortlist[index] === "undefined") {
+          this.sortlist[index] = [];
         }
-      );
+        if (cell.classList.contains("numeric")) {
+          if (this.isDate(sortablecontent)) {
+            this.sortlist[index].push({
+              value: sortablecontent,
+              node: tdrow,
+              type: "date",
+            });
+          } else {
+            this.sortlist[index].push({
+              value: sortablecontent,
+              node: tdrow,
+              type: "numeric",
+            });
+          }
+        } else if (cell.innerHTML.match(/^([^0-9]*)$/)) {
+          this.sortlist[index].push({
+            value: sortablecontent,
+            node: tdrow,
+            type: "string",
+          });
+        }
+      });
     });
     this.sortlist.forEach((column, index) => {
       if (this.sortlist[index].length === this.tdRows.length) {
-        this.thCells[index].classList.add('sortable');
+        this.thCells[index].classList.add("sortable");
       }
     });
 
@@ -119,7 +139,7 @@ export default class Table {
    * @chainable
    */
   enable() {
-    this.element.classList.add('table--js');
+    this.element.classList.add("table--js");
 
     Array.from(this.thCells).forEach((thcell) => {
       thcell.addEventListener(EVENTS.CLICK, (e) => this.ClickThHandler(e));
@@ -144,7 +164,7 @@ export default class Table {
       // set/remove aria-sort attribute
       if (thcell === e.target) {
         if (
-          typeof thcell.getAttribute(ARIA.SORT) === 'undefined' ||
+          typeof thcell.getAttribute(ARIA.SORT) === "undefined" ||
           thcell.getAttribute(ARIA.SORT) === MISC.DESCENDING
         ) {
           thcell.setAttribute(ARIA.SORT, MISC.ASCENDING);
@@ -172,37 +192,39 @@ export default class Table {
     let currentindex = null;
 
     Array.from(this.tdRows).forEach((tdrow) => {
-      tdrow.classList.remove('selected');
+      tdrow.classList.remove("selected");
     });
 
-    e.target.parentElement.classList.add('selected');
+    e.target.parentElement.classList.add("selected");
 
     Array.from(this.tdCells).forEach((tdcell) => {
-      tdcell.classList.remove('selected');
-      tdcell.classList.remove('column--selected');
+      tdcell.classList.remove("selected");
+      tdcell.classList.remove("column--selected");
     });
 
     Array.from(
-      e.target.parentElement.querySelectorAll(`.${this.prefix}--table--body--cell`)
+      e.target.parentElement.querySelectorAll(
+        `.${this.prefix}--table--body--cell`
+      )
     ).forEach((tdcell, index) => {
       if (tdcell === e.target) {
-        tdcell.classList.add('selected');
+        tdcell.classList.add("selected");
         currentindex = index;
       }
     });
 
     Array.from(this.tdRows).forEach((tdrow) => {
-      Array.from(tdrow.querySelectorAll(`.${this.prefix}--table--body--cell`)).forEach(
-        (tdcell, index) => {
-          if (index === currentindex && tdcell !== e.target) {
-            tdcell.classList.add('column--selected');
-          }
+      Array.from(
+        tdrow.querySelectorAll(`.${this.prefix}--table--body--cell`)
+      ).forEach((tdcell, index) => {
+        if (index === currentindex && tdcell !== e.target) {
+          tdcell.classList.add("column--selected");
         }
-      );
+      });
     });
 
-    if (e.target.hasAttribute('href')) {
-      window.location.href = e.target.getAttribute('href');
+    if (e.target.hasAttribute("href")) {
+      window.location.href = e.target.getAttribute("href");
     }
 
     return this;
@@ -239,9 +261,9 @@ export default class Table {
         if (a.value === b.value) {
           return 0;
         } else {
-          if (a.type === 'numeric') {
+          if (a.type === "numeric") {
             return a.value - b.value;
-          } else if (a.type === 'date') {
+          } else if (a.type === "date") {
             return new Date(a.value) - new Date(b.value);
           } else {
             return a.value < b.value ? -1 : 1;
@@ -251,9 +273,9 @@ export default class Table {
         if (a.value === b.value) {
           return 0;
         } else {
-          if (a.type === 'numeric') {
+          if (a.type === "numeric") {
             return b.value - a.value;
-          } else if (a.type === 'date') {
+          } else if (a.type === "date") {
             return new Date(b.value) - new Date(a.value);
           } else {
             return a.value > b.value ? -1 : 1;

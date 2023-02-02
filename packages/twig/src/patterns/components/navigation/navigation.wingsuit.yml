@@ -1,5 +1,5 @@
 navigation:
-  use: '@components/navigation/navigation.twig'
+  use: "@components/navigation/navigation.twig"
   label: Navigation
   description: The Navigation component
   fields:
@@ -113,14 +113,14 @@ navigation:
       preview:
         links:
           - label: Link One
-            url: 'http://www.google.com'
+            url: "http://www.google.com"
           - label: Link Two
-            url: 'http://www.google.com'
-          - endsection: 'true'
+            url: "http://www.google.com"
+          - endsection: "true"
             label: Link Three Ends A Section
-            url: 'http://www.google.com'
+            url: "http://www.google.com"
           - label: Link Four
-            url: 'http://www.google.com'
+            url: "http://www.google.com"
           - label: Link Five Is Slightly Longer
-            url: 'http://www.google.com'
+            url: "http://www.google.com"
   visibility: storybook

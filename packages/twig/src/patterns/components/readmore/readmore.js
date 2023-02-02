@@ -1,4 +1,4 @@
-import { getUpdatedItems, EVENTS, ARIA } from '@ilo-org/utils';
+import { getUpdatedItems, EVENTS, ARIA } from "@ilo-org/utils";
 
 /**
  * The ReadMore module which handles rendering field labels inline on a form.
@@ -67,7 +67,9 @@ export default class ReadMore {
      * The button for toggling Read More state
      * @type {Object}
      */
-    this.ReadMoreButton = this.element.querySelector(`.${this.prefix}--read-more--button`);
+    this.ReadMoreButton = this.element.querySelector(
+      `.${this.prefix}--read-more--button`
+    );
     this.RichText = this.element.querySelector(`.${this.prefix}--richtext`);
 
     return this;

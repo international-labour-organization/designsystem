@@ -1,4 +1,4 @@
-import { EVENTS } from '@ilo-org/utils';
+import { EVENTS } from "@ilo-org/utils";
 
 /**
  * The Breadcrumb module which handles rendering field labels inline on a form.
@@ -45,9 +45,11 @@ export default class Breadcrumb {
    * @chainable
    */
   cacheDomReferences() {
-    this.breadcrumbs = this.element.querySelector('.ilo--breadcrumb--items');
+    this.breadcrumbs = this.element.querySelector(".ilo--breadcrumb--items");
     this.breadcrumbwidth = this.breadcrumbs.offsetWidth;
-    this.ContextButton = this.element.querySelector(`.${this.prefix}--breadcrumb--item--context`);
+    this.ContextButton = this.element.querySelector(
+      `.${this.prefix}--breadcrumb--item--context`
+    );
     this.ContextMenu = this.element.querySelector(`.context--menu`);
 
     return this;
@@ -87,11 +89,11 @@ export default class Breadcrumb {
    */
   onResize(e) {
     if (this.breadcrumbwidth > this.element.offsetWidth / 2) {
-      this.element.classList.add('contextmenu');
-      this.ContextMenu.classList.remove('open');
+      this.element.classList.add("contextmenu");
+      this.ContextMenu.classList.remove("open");
     } else {
-      this.element.classList.remove('contextmenu');
-      this.ContextMenu.classList.remove('open');
+      this.element.classList.remove("contextmenu");
+      this.ContextMenu.classList.remove("open");
     }
 
     return this;
@@ -104,11 +106,11 @@ export default class Breadcrumb {
    * @chainable
    */
   onClick() {
-    if (this.element.classList.contains('contextmenu')) {
-      if (this.ContextMenu.classList.contains('open')) {
-        this.ContextMenu.classList.remove('open');
+    if (this.element.classList.contains("contextmenu")) {
+      if (this.ContextMenu.classList.contains("open")) {
+        this.ContextMenu.classList.remove("open");
       } else {
-        this.ContextMenu.classList.add('open');
+        this.ContextMenu.classList.add("open");
       }
     }
 

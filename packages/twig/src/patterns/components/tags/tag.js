@@ -1,4 +1,4 @@
-import { getUpdatedItems, EVENTS, ARIA } from '@ilo-org/utils';
+import { getUpdatedItems, EVENTS, ARIA } from "@ilo-org/utils";
 
 /**
  * The Tag module which handles rendering field labels inline on a form.
@@ -50,13 +50,13 @@ export default class Tag {
      * The field that a user interacts with on a form
      * @type {Object}
      */
-    this.buttonTags = this.element.querySelectorAll('.ilo--tag--button');
-    this.multipleActive = this.element.getAttribute('data-multipleactive');
+    this.buttonTags = this.element.querySelectorAll(".ilo--tag--button");
+    this.multipleActive = this.element.getAttribute("data-multipleactive");
 
     this.buttonTags.forEach((button, i) => {
-      const expanded = button.dataset['active'];
-      const id = this.buttonTags[i].getAttribute('id');
-      if (expanded === 'true') {
+      const expanded = button.dataset["active"];
+      const id = this.buttonTags[i].getAttribute("id");
+      if (expanded === "true") {
         this.itemStatuses = getUpdatedItems({
           id,
           itemStatuses: this.itemStatuses,
@@ -104,7 +104,7 @@ export default class Tag {
    * @chainable
    */
   onClick(i) {
-    const id = this.buttonTags[i].getAttribute('id');
+    const id = this.buttonTags[i].getAttribute("id");
 
     this.itemStatuses = getUpdatedItems({
       id,
@@ -144,14 +144,14 @@ export default class Tag {
    */
   updateTagItems() {
     this.tags.forEach((item, i) => {
-      const id = item.getAttribute('id');
+      const id = item.getAttribute("id");
       const open = this.itemStatuses.indexOf(id) > -1;
       if (open) {
-        this.tags[i].classList.add('ilo--tag--active');
-        this.tags[i].setAttribute('data-active', 'true');
+        this.tags[i].classList.add("ilo--tag--active");
+        this.tags[i].setAttribute("data-active", "true");
       } else {
-        this.tags[i].classList.remove('ilo--tag--active');
-        this.tags[i].setAttribute('data-active', 'true');
+        this.tags[i].classList.remove("ilo--tag--active");
+        this.tags[i].setAttribute("data-active", "true");
       }
     });
 

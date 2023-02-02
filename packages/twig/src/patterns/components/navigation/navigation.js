@@ -1,4 +1,4 @@
-import { EVENTS } from '@ilo-org/utils';
+import { EVENTS } from "@ilo-org/utils";
 
 /**
  * The Navigation module which handles rendering field labels inline on a form.
@@ -52,17 +52,31 @@ export default class Navigation {
      * The button for toggling Subnav state
      * @type {Object}
      */
-    this.subnavButton = this.element.querySelector(`.${this.prefix}--nav--trigger`);
-    this.menuCloseSet = this.element.querySelectorAll(`.${this.prefix}--header--menu--close`);
-    this.subnavBack = this.element.querySelectorAll(`.${this.prefix}--mobile--subnav--back`);
+    this.subnavButton = this.element.querySelector(
+      `.${this.prefix}--nav--trigger`
+    );
+    this.menuCloseSet = this.element.querySelectorAll(
+      `.${this.prefix}--header--menu--close`
+    );
+    this.subnavBack = this.element.querySelectorAll(
+      `.${this.prefix}--mobile--subnav--back`
+    );
     this.menuOpen = this.element.querySelector(`.${this.prefix}--header--menu`);
-    this.searchButton = this.element.querySelector(`.${this.prefix}--search--button`);
-    this.contextButton = this.element.querySelector(`.${this.prefix}--language-switcher--button`);
+    this.searchButton = this.element.querySelector(
+      `.${this.prefix}--search--button`
+    );
+    this.contextButton = this.element.querySelector(
+      `.${this.prefix}--language-switcher--button`
+    );
     this.languageButton = this.element.querySelector(
       `.${this.prefix}--mobile--nav--language--switcher--button`
     );
-    this.contextLinks = this.element.querySelectorAll(`.${this.prefix}--context-menu--link`);
-    this.languageLinks = this.element.querySelectorAll(`.${this.prefix}--nav--language`);
+    this.contextLinks = this.element.querySelectorAll(
+      `.${this.prefix}--context-menu--link`
+    );
+    this.languageLinks = this.element.querySelectorAll(
+      `.${this.prefix}--nav--language`
+    );
     this.body = document.body;
 
     return this;
@@ -105,62 +119,96 @@ export default class Navigation {
   enable() {
     // subnavButton
     if (this.subnavButton) {
-      this.subnavButton.addEventListener(EVENTS.CLICK, (e) => this.subnavClick(e));
-      this.subnavButton.addEventListener(EVENTS.TOUCH_START, (e) => this.subnavClick(e));
+      this.subnavButton.addEventListener(EVENTS.CLICK, (e) =>
+        this.subnavClick(e)
+      );
+      this.subnavButton.addEventListener(EVENTS.TOUCH_START, (e) =>
+        this.subnavClick(e)
+      );
     }
 
     // subnavBack
     if (this.subnavBack.length > 0) {
       this.subnavBack.forEach((button, i) => {
         button.addEventListener(EVENTS.CLICK, (e) => this.subnavBackClick(e));
-        button.addEventListener(EVENTS.TOUCH_START, (e) => this.subnavBackClick(e));
+        button.addEventListener(EVENTS.TOUCH_START, (e) =>
+          this.subnavBackClick(e)
+        );
       });
     }
 
     // searchButton
     if (this.searchButton) {
-      this.searchButton.addEventListener(EVENTS.CLICK, (e) => this.searchButtonClick(e));
-      this.searchButton.addEventListener(EVENTS.TOUCH_START, (e) => this.searchButtonClick(e));
+      this.searchButton.addEventListener(EVENTS.CLICK, (e) =>
+        this.searchButtonClick(e)
+      );
+      this.searchButton.addEventListener(EVENTS.TOUCH_START, (e) =>
+        this.searchButtonClick(e)
+      );
     }
     // menuCloseSet
     if (this.menuCloseSet.length > 0) {
       this.menuCloseSet.forEach((closeButton, i) => {
-        closeButton.addEventListener(EVENTS.CLICK, () => this.menuCloseClick(i));
-        closeButton.addEventListener(EVENTS.TOUCH_START, () => this.menuCloseClick(i));
+        closeButton.addEventListener(EVENTS.CLICK, () =>
+          this.menuCloseClick(i)
+        );
+        closeButton.addEventListener(EVENTS.TOUCH_START, () =>
+          this.menuCloseClick(i)
+        );
       });
     }
 
     // menuOpen
     if (this.menuOpen) {
-      this.menuOpen.addEventListener(EVENTS.CLICK, (e) => this.menuOpenClick(e));
-      this.menuOpen.addEventListener(EVENTS.TOUCH_START, (e) => this.menuOpenClick(e));
+      this.menuOpen.addEventListener(EVENTS.CLICK, (e) =>
+        this.menuOpenClick(e)
+      );
+      this.menuOpen.addEventListener(EVENTS.TOUCH_START, (e) =>
+        this.menuOpenClick(e)
+      );
     }
 
     // contextButton
     if (this.contextButton) {
-      this.contextButton.addEventListener(EVENTS.CLICK, (e) => this.contextButtonClick(e));
-      this.contextButton.addEventListener(EVENTS.TOUCH_START, (e) => this.contextButtonClick(e));
+      this.contextButton.addEventListener(EVENTS.CLICK, (e) =>
+        this.contextButtonClick(e)
+      );
+      this.contextButton.addEventListener(EVENTS.TOUCH_START, (e) =>
+        this.contextButtonClick(e)
+      );
     }
 
     // languageButton
     if (this.languageButton) {
-      this.languageButton.addEventListener(EVENTS.CLICK, () => this.languageButtonClick());
-      this.languageButton.addEventListener(EVENTS.TOUCH_START, () => this.languageButtonClick());
+      this.languageButton.addEventListener(EVENTS.CLICK, () =>
+        this.languageButtonClick()
+      );
+      this.languageButton.addEventListener(EVENTS.TOUCH_START, () =>
+        this.languageButtonClick()
+      );
     }
 
     // contextLinks
     if (this.contextLinks.length > 0 && this.callback) {
       this.contextLinks.forEach((contextLink, i) => {
-        contextLink.addEventListener(EVENTS.CLICK, (e) => this.contextLinkClick(e));
-        contextLink.addEventListener(EVENTS.TOUCH_START, (e) => this.contextLinkClick(e));
+        contextLink.addEventListener(EVENTS.CLICK, (e) =>
+          this.contextLinkClick(e)
+        );
+        contextLink.addEventListener(EVENTS.TOUCH_START, (e) =>
+          this.contextLinkClick(e)
+        );
       });
     }
 
     // languageLinks
     if (this.languageLinks.length > 0 && this.callback) {
       this.languageLinks.forEach((languageLink, i) => {
-        languageLink.addEventListener(EVENTS.CLICK, (e) => this.contextLinkClick(e));
-        languageLink.addEventListener(EVENTS.TOUCH_START, (e) => this.contextLinkClick(e));
+        languageLink.addEventListener(EVENTS.CLICK, (e) =>
+          this.contextLinkClick(e)
+        );
+        languageLink.addEventListener(EVENTS.TOUCH_START, (e) =>
+          this.contextLinkClick(e)
+        );
       });
     }
 
@@ -212,7 +260,7 @@ export default class Navigation {
    * @chainable
    */
   handleKeyPress(e, callback) {
-    if (e.key === 'Escape') {
+    if (e.key === "Escape") {
       callback(e);
     }
 
@@ -245,7 +293,11 @@ export default class Navigation {
       (ev) => this.keyPress(ev, this.contextButtonClickOff),
       false
     );
-    this.body.addEventListener(EVENTS.CLICK, (ev) => this.handleContextButtonClickOff(ev), false);
+    this.body.addEventListener(
+      EVENTS.CLICK,
+      (ev) => this.handleContextButtonClickOff(ev),
+      false
+    );
 
     return this;
   }
@@ -266,7 +318,8 @@ export default class Navigation {
     );
     this.body.removeEventListener(
       EVENTS.CLICK,
-      (ev) => this.handleContextButtonClickoff(ev, `${this.prefix}--context--open`),
+      (ev) =>
+        this.handleContextButtonClickoff(ev, `${this.prefix}--context--open`),
       false
     );
 
@@ -306,7 +359,11 @@ export default class Navigation {
     );
 
     if (window.innerWidth >= 1024) {
-      this.body.addEventListener(EVENTS.CLICK, (ev) => this.handleSearchButtonClickOff(ev), false);
+      this.body.addEventListener(
+        EVENTS.CLICK,
+        (ev) => this.handleSearchButtonClickOff(ev),
+        false
+      );
     }
 
     return this;
@@ -327,7 +384,11 @@ export default class Navigation {
       false
     );
 
-    this.body.removeEventListener(EVENTS.CLICK, (ev) => this.handleSearchButtonClickOff(ev), false);
+    this.body.removeEventListener(
+      EVENTS.CLICK,
+      (ev) => this.handleSearchButtonClickOff(ev),
+      false
+    );
 
     return this;
   }
@@ -373,10 +434,18 @@ export default class Navigation {
   handleSubnavClickOn(e) {
     e.stopImmediatePropagation();
     this.element.classList.add(`${this.prefix}--subnav--open`);
-    window.addEventListener(EVENTS.KEY_DOWN, (ev) => this.keyPress(ev, this.subnavClickOff), false);
+    window.addEventListener(
+      EVENTS.KEY_DOWN,
+      (ev) => this.keyPress(ev, this.subnavClickOff),
+      false
+    );
 
     if (window.innerWidth >= 1024) {
-      this.body.addEventListener(EVENTS.CLICK, (ev) => this.handleSubnavClickOff(ev), false);
+      this.body.addEventListener(
+        EVENTS.CLICK,
+        (ev) => this.handleSubnavClickOff(ev),
+        false
+      );
     }
     return this;
   }
@@ -396,7 +465,11 @@ export default class Navigation {
       false
     );
 
-    this.body.removeEventListener(EVENTS.CLICK, (ev) => this.handleSubnavClickOff(ev), false);
+    this.body.removeEventListener(
+      EVENTS.CLICK,
+      (ev) => this.handleSubnavClickOff(ev),
+      false
+    );
 
     return this;
   }

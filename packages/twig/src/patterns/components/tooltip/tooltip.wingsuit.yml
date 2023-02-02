@@ -1,5 +1,5 @@
 tooltip:
-  use: '@components/tooltip/tooltip.twig'
+  use: "@components/tooltip/tooltip.twig"
   label: Tooltip
   description: A component for displaying a tooltip
   fields:
@@ -8,7 +8,7 @@ tooltip:
       label: label
       description: label shown on the tooltip
       required: true
-      preview: 'Tooltip text'
+      preview: "Tooltip text"
     children:
       type: string
       label: children
@@ -21,9 +21,9 @@ tooltip:
       label: Icon
       description: does this tooltip have the "info" icon?
       options:
-        true: 'true'
+        true: "true"
         false: false
-      preview: 'true'
+      preview: "true"
       required: true
     theme:
       type: select

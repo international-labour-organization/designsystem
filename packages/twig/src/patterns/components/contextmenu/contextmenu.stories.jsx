@@ -1,6 +1,6 @@
-import './index';
+import "./index";
 
-const patternDefinition = require('./contextmenu.wingsuit.yml');
+const patternDefinition = require("./contextmenu.wingsuit.yml");
 
 export const wingsuit = {
   patternDefinition,
