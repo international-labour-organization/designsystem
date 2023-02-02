@@ -50,7 +50,7 @@
   ],
   "dependencies": {
     "@changesets/cli": "^2.25.0",
-    "@ilo-org/eslint-config": "0.0.1",
+    "@ilo-org/eslint-config": "0.0.2",
     "@ilo-org/prettier-config": "0.0.1",
     "@ilo-org/typescript-config": "0.0.1",
     "@manypkg/cli": "^0.19.2",
