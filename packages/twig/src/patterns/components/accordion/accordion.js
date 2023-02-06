@@ -1,4 +1,4 @@
-import { getUpdatedItems, EVENTS, ARIA, MISC } from "@ilo-org/utils";
+import { EVENTS, ARIA } from "@ilo-org/utils";
 
 /**
  * The Accordion module which handles rendering field labels inline on a form.
@@ -91,7 +91,7 @@ export default class Accordion {
    */
   enable() {
     if (this.accordionButtons.length > 0) {
-      this.accordionButtons.forEach((button, i) => {
+      this.accordionButtons.forEach((button) => {
         button.addEventListener(EVENTS.CLICK, (e) => this.onClick(e));
       });
     }
@@ -117,7 +117,7 @@ export default class Accordion {
    * @chainable
    */
   evaluateAccordionHeights() {
-    this.accordionPanels.forEach((item, i) => {
+    this.accordionPanels.forEach((item) => {
       item.style.setProperty(
         "--height",
         item.querySelector(".ilo--accordion--innerpanel").scrollHeight + "px"

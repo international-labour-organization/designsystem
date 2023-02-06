@@ -119,7 +119,7 @@ export default class Callout {
    * @return {Object} Callout A reference to the instance of the class
    * @chainable
    */
-  handleClick(e) {
+  handleClick() {
     // callback of sorts
     console.log("button clicked");
 

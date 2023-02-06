@@ -23,7 +23,7 @@ const traverseDirectory = (directory) => {
       traverseDirectory(absolute);
     } else {
       if (ext === ".twig" || (ext === ".js" && file !== "index.js")) {
-        filepath = directory
+        let filepath = directory
           .replace(`src/`, `dist/`)
           .replace("patterns/", "")
           .replace(`/${file}`, "");

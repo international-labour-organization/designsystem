@@ -87,7 +87,7 @@ export default class Breadcrumb {
    * @return {Object} Breadcrumb A reference to the instance of the class
    * @chainable
    */
-  onResize(e) {
+  onResize() {
     if (this.breadcrumbwidth > this.element.offsetWidth / 2) {
       this.element.classList.add("contextmenu");
       this.ContextMenu.classList.remove("open");

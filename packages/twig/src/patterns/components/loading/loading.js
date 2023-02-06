@@ -1,4 +1,4 @@
-import { EVENTS, ARIA } from "@ilo-org/utils";
+import { EVENTS } from "@ilo-org/utils";
 
 /**
  * The Loading module which handles rendering field labels inline on a form.

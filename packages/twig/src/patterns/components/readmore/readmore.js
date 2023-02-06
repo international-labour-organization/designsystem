@@ -1,4 +1,4 @@
-import { getUpdatedItems, EVENTS, ARIA } from "@ilo-org/utils";
+import { EVENTS } from "@ilo-org/utils";
 
 /**
  * The ReadMore module which handles rendering field labels inline on a form.

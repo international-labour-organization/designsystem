@@ -99,7 +99,7 @@ export default class Tooltip {
     return this;
   }
 
-  handleOnMouseOut(e) {
+  handleOnMouseOut() {
     this.tooltip.classList.remove(`${this.prefix}--tooltip--fade`);
     setTimeout(() => {
       this.tooltip.classList.remove(`${this.prefix}--tooltip--visible`);

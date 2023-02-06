@@ -129,7 +129,7 @@ export default class Navigation {
 
     // subnavBack
     if (this.subnavBack.length > 0) {
-      this.subnavBack.forEach((button, i) => {
+      this.subnavBack.forEach((button) => {
         button.addEventListener(EVENTS.CLICK, (e) => this.subnavBackClick(e));
         button.addEventListener(EVENTS.TOUCH_START, (e) =>
           this.subnavBackClick(e)
@@ -190,7 +190,7 @@ export default class Navigation {
 
     // contextLinks
     if (this.contextLinks.length > 0 && this.callback) {
-      this.contextLinks.forEach((contextLink, i) => {
+      this.contextLinks.forEach((contextLink) => {
         contextLink.addEventListener(EVENTS.CLICK, (e) =>
           this.contextLinkClick(e)
         );
@@ -202,7 +202,7 @@ export default class Navigation {
 
     // languageLinks
     if (this.languageLinks.length > 0 && this.callback) {
-      this.languageLinks.forEach((languageLink, i) => {
+      this.languageLinks.forEach((languageLink) => {
         languageLink.addEventListener(EVENTS.CLICK, (e) =>
           this.contextLinkClick(e)
         );
@@ -527,7 +527,7 @@ export default class Navigation {
    * @return {Object} Breadcrumb A reference to the instance of the class
    * @chainable
    */
-  handleResize(e) {
+  handleResize() {
     this.element.classList.remove(`${this.prefix}--context--open`);
     this.element.classList.remove(`${this.prefix}--mobile--open`);
     this.element.classList.remove(`${this.prefix}--subnav--open`);

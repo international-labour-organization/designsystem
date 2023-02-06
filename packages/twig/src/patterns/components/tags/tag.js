@@ -1,4 +1,4 @@
-import { getUpdatedItems, EVENTS, ARIA } from "@ilo-org/utils";
+import { getUpdatedItems, EVENTS } from "@ilo-org/utils";
 
 /**
  * The Tag module which handles rendering field labels inline on a form.

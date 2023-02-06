@@ -96,7 +96,7 @@ export default class TableOfContents {
     this.CloseButton.addEventListener(EVENTS.CLICK, () => this.CloseHandler());
 
     if (this.tocItems.length > 0) {
-      this.tocItems.forEach((link, i) => {
+      this.tocItems.forEach((link) => {
         link.addEventListener(EVENTS.CLICK, () => this.linkClickHandler());
       });
     }

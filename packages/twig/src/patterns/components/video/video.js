@@ -1,4 +1,3 @@
-import { EVENTS, ARIA } from "@ilo-org/utils";
 import videojs from "video.js";
 
 /**

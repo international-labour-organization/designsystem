@@ -291,15 +291,15 @@ export default class Table {
    *
    * @return {Boolean} is it a date?
    */
-  isDate = function (date) {
+  isDate(date) {
     let isdate = false;
     if (date.match(/^[0-3]?[0-9]\/[0-3]?[0-9]\/(?:[0-9]{2})?[0-9]{2}$/)) {
       isdate = true;
     }
-    if (date.match(/^[0-3]?[0-9]\-[0-3]?[0-9]\-(?:[0-9]{2})?[0-9]{2}$/)) {
+    if (date.match(/^[0-3]?[0-9]-[0-3]?[0-9]-(?:[0-9]{2})?[0-9]{2}$/)) {
       isdate = true;
     }
 
     return isdate;
-  };
+  }
 }
