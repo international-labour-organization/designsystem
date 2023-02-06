@@ -1,5 +1,5 @@
 loading:
-  use: '@components/loading/loading.twig'
+  use: "@components/loading/loading.twig"
   label: Loading
   description: The Loading component displays a loading state. (See Javascript comments in loading.js for how to use this with vanilla JS).
   fields:
@@ -7,13 +7,13 @@ loading:
       type: string
       label: Message
       description: The loading message
-      preview: 'Submitting'
+      preview: "Submitting"
       required: true
     loadedmessage:
       type: string
       label: LOaded Message
       description: The loaded message
-      preview: 'Completed'
+      preview: "Completed"
       required: true
   settings:
     size:
@@ -24,7 +24,7 @@ loading:
       options:
         small: Small
         large: Large
-      preview: 'large'
+      preview: "large"
     status:
       type: select
       label: Status
@@ -34,5 +34,5 @@ loading:
         idle: Idle
         loading: Loading
         loaded: Loaded
-      preview: 'loading'
+      preview: "loading"
   visibility: storybook

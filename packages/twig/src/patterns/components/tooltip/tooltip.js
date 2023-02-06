@@ -48,11 +48,11 @@ export default class Tooltip {
      */
 
     // enable defaults
-    this.prefix = this.element.getAttribute('data-prefix');
+    this.prefix = this.element.getAttribute("data-prefix");
     this.tooltip = this.element.querySelector(`.${this.prefix}--tooltip`);
     this.arrow = this.element.querySelector(`.${this.prefix}--tooltip--arrow`);
-    this.alignment = this.arrow.getAttribute('data-alignment');
-    this.placement = this.tooltip.getAttribute('data-placement');
+    this.alignment = this.arrow.getAttribute("data-alignment");
+    this.placement = this.tooltip.getAttribute("data-placement");
 
     return this;
   }
@@ -79,10 +79,10 @@ export default class Tooltip {
    * @chainable
    */
   enable() {
-    this.element.addEventListener('mouseover', this.onMouseOver);
-    this.element.addEventListener('focus', this.onMouseOver);
-    this.element.addEventListener('mouseout', this.onMouseOut);
-    this.element.addEventListener('blur', this.onMouseOut);
+    this.element.addEventListener("mouseover", this.onMouseOver);
+    this.element.addEventListener("focus", this.onMouseOver);
+    this.element.addEventListener("mouseout", this.onMouseOut);
+    this.element.addEventListener("blur", this.onMouseOut);
     return this;
   }
 
@@ -99,7 +99,7 @@ export default class Tooltip {
     return this;
   }
 
-  handleOnMouseOut(e) {
+  handleOnMouseOut() {
     this.tooltip.classList.remove(`${this.prefix}--tooltip--fade`);
     setTimeout(() => {
       this.tooltip.classList.remove(`${this.prefix}--tooltip--visible`);
@@ -110,8 +110,8 @@ export default class Tooltip {
 
   postMouseOver(hoverRect) {
     // position the tooltip after showing it
-    let placement = 'center';
-    let alignment = 'left';
+    let placement = "center";
+    let alignment = "left";
 
     const ttNode = this.tooltip;
     if (ttNode != null) {
@@ -132,7 +132,9 @@ export default class Tooltip {
       const bRight =
         rx + ttRect.width <= window.scrollX + docWidth &&
         ty + ttRect.height <= window.scrollY + docHeight;
-      const bLeft = lx - ttRect.width >= 0 && ty + ttRect.height <= window.scrollY + docHeight;
+      const bLeft =
+        lx - ttRect.width >= 0 &&
+        ty + ttRect.height <= window.scrollY + docHeight;
       const bAbove = ty - ttRect.height >= 0;
       const bBellow = by + ttRect.height <= window.scrollY + docHeight;
 
@@ -140,26 +142,26 @@ export default class Tooltip {
       if (bRight) {
         x = hoverRect.width + 32;
         y = 0;
-        placement = 'negative';
-        alignment = 'right';
+        placement = "negative";
+        alignment = "right";
       } else if (bBellow) {
         x = 0;
         y = hoverRect.height + 32;
 
-        placement = 'center';
-        alignment = 'bottom';
+        placement = "center";
+        alignment = "bottom";
       } else if (bLeft) {
         x = -ttRect.width - 32;
         y = 0;
 
-        placement = 'negative';
-        alignment = 'left';
+        placement = "negative";
+        alignment = "left";
       } else if (bAbove) {
         x = 0;
         y = -ttRect.height - 32;
 
-        placement = 'center';
-        alignment = 'top';
+        placement = "center";
+        alignment = "top";
       }
 
       // set style top and left on tooltip
@@ -167,17 +169,25 @@ export default class Tooltip {
       this.tooltip.style.left = x;
 
       // set class for placement on arrow
-      this.arrow.classList.remove(`${this.prefix}--tooltip--arrow--placement-${this.placement}`);
-      this.arrow.classList.add(`${this.prefix}--tooltip--arrow--placement-${this.placement}`);
+      this.arrow.classList.remove(
+        `${this.prefix}--tooltip--arrow--placement-${this.placement}`
+      );
+      this.arrow.classList.add(
+        `${this.prefix}--tooltip--arrow--placement-${this.placement}`
+      );
       this.placement = placement;
-      this.arrow.setAttribute('data-placement', placement);
+      this.arrow.setAttribute("data-placement", placement);
 
       // set class for alignment on tooltip
-      this.tooltip.classList.remove(`${this.prefix}--tooltip--alignment-${this.alignment}`);
-      this.tooltip.classList.add(`${this.prefix}--tooltip--alignment-${this.alignment}`);
+      this.tooltip.classList.remove(
+        `${this.prefix}--tooltip--alignment-${this.alignment}`
+      );
+      this.tooltip.classList.add(
+        `${this.prefix}--tooltip--alignment-${this.alignment}`
+      );
       this.alignment = alignment;
 
-      this.tooltip.setAttribute('data-alignment', alignment);
+      this.tooltip.setAttribute("data-alignment", alignment);
     }
 
     return this;

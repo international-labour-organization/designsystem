@@ -1,5 +1,5 @@
 contextmenu:
-  use: '@components/contextmenu/contextmenu.twig'
+  use: "@components/contextmenu/contextmenu.twig"
   label: Context Menu
   description: The ContextMenu receives a list of urls with labels and an optional prop indicating if this link is at the end of a 'section.'
   fields:
@@ -10,14 +10,14 @@ contextmenu:
       required: true
       preview:
         - label: Link One
-          url: 'http://www.google.com'
+          url: "http://www.google.com"
         - label: Link Two
-          url: 'http://www.google.com'
-        - endsection: 'true'
+          url: "http://www.google.com"
+        - endsection: "true"
           label: Link Three Ends A Section
-          url: 'http://www.google.com'
+          url: "http://www.google.com"
         - label: Link Four
-          url: 'http://www.google.com'
+          url: "http://www.google.com"
         - label: Link Five Is Slightly Longer
-          url: 'http://www.google.com'
+          url: "http://www.google.com"
   visibility: storybook

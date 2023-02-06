@@ -1,4 +1,4 @@
-import { EVENTS } from '@ilo-org/utils';
+import { EVENTS } from "@ilo-org/utils";
 
 /**
  * The Modal module which handles control and display of a modal dialog
@@ -76,7 +76,9 @@ export default class Modal {
    * @chainable
    */
   enable() {
-    this.OpenButton.addEventListener(EVENTS.CLICK, () => this.OpenButtonHandler());
+    this.OpenButton.addEventListener(EVENTS.CLICK, () =>
+      this.OpenButtonHandler()
+    );
     this.CloseButton.addEventListener(EVENTS.CLICK, () => this.CloseHandler());
 
     return this;
@@ -89,9 +91,9 @@ export default class Modal {
    * @chainable
    */
   openButtonClick() {
-    this.element.classList.add('show');
+    this.element.classList.add("show");
     setTimeout(() => {
-      this.element.classList.add('fadein');
+      this.element.classList.add("fadein");
     }, 125);
     window.addEventListener(EVENTS.KEY_DOWN, (e) => this.KeyPressHandler(e));
 
@@ -105,9 +107,9 @@ export default class Modal {
    * @chainable
    */
   closeButtonClick() {
-    this.element.classList.remove('fadein');
+    this.element.classList.remove("fadein");
     setTimeout(() => {
-      this.element.classList.remove('show');
+      this.element.classList.remove("show");
     }, 125);
     window.removeEventListener(EVENTS.KEY_DOWN, (e) => this.KeyPressHandler(e));
 
@@ -121,7 +123,7 @@ export default class Modal {
    * @chainable
    */
   keyPress(e) {
-    if (e.key === 'Escape') {
+    if (e.key === "Escape") {
       this.closeButtonClick();
     }
 

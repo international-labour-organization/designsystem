@@ -1,5 +1,5 @@
 richtext:
-  use: '@components/richtext/richtext.twig'
+  use: "@components/richtext/richtext.twig"
   label: Rich Text
   description: A component for displaying rich text as entered in a WYSIWYG editor.
   fields:

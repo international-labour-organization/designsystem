@@ -1,5 +1,26 @@
 # @ilo-org/brand-assets
 
+## 0.1.0
+
+### Minor Changes
+
+- e2a233688: - This adds blue and white horizontal logos in English, French and Spanish. Logos are available as pngs and svgs.
+
+  - Adjust exports. URl exports are available from the package root:
+
+  ```js
+  import { logo_en_horizontal_blue } from "@ilo-org/brand-assets";
+  ```
+
+  Whereas files are accessible by adding the filename to the root:
+
+  ```js
+  import ilo_logo from "@ilo-org/brand-assets/logo_en_horizontal_blue.svg";
+  ```
+
+  - Add types for URL exports
+  - Update docs
+
 ## 0.0.2
 
 ### Patch Changes

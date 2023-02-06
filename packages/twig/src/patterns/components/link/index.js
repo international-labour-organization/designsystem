@@ -2,5 +2,5 @@
  * Link
  */
 // Module template
-import './link.twig';
-import './link.wingsuit.yml';
+import "./link.twig";
+import "./link.wingsuit.yml";

@@ -1,5 +1,5 @@
 card:
-  use: '@components/card/card.twig'
+  use: "@components/card/card.twig"
   label: Card
   description: The Card presents an image banner.
   fields:
@@ -80,13 +80,13 @@ card:
         green: green
         yellow: yellow
         blue: blue
-      preview: 'blue'
+      preview: "blue"
     theme:
       type: select
       label: Theme
       description: The theme type for the card. Theme choice doesn't apply to these card types - `Multilink`, `Data`, `Stat` and `Detail`
       required: false
-      preview: 'light'
+      preview: "light"
       options:
         dark: Dark
         light: Light
@@ -94,7 +94,7 @@ card:
       type: select
       label: Size
       description: Size of the cards (usually reduces padding). `Wide` on Multilink and Feature cause a two column structure above a desktop breakpoint.
-      preview: 'standard'
+      preview: "standard"
       options:
         wide: Wide
         standard: Standard
@@ -168,11 +168,11 @@ card:
           linkgroup:
             - links:
                 - label: Link One
-                  url: 'http://www.google.com'
+                  url: "http://www.google.com"
                 - label: Link Two
-                  url: 'http://www.google.com'
+                  url: "http://www.google.com"
                 - label: Link Three
-                  url: 'http://www.google.com'
+                  url: "http://www.google.com"
     graphicpromo:
       label: Graphic Promo Card
       description: The graphic promo Card
@@ -200,7 +200,7 @@ card:
             - headline: ""
               links:
                 - label: Link One
-                  url: 'http://www.google.com'
+                  url: "http://www.google.com"
     detail:
       label: Detail Card
       description: The Detail Card

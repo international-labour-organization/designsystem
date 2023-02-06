@@ -1,4 +1,4 @@
-import Modal from './modal';
+import Modal from "./modal";
 
 Drupal.behaviors.modal = {
   attach() {
@@ -6,7 +6,7 @@ Drupal.behaviors.modal = {
       document.querySelectorAll(`[data-loadcomponent="Modal"]`),
       (element) => {
         // eslint-disable-next-line no-console
-        console.log('loading Modal component....');
+        console.log("loading Modal component....");
         new Modal(element);
       }
     );

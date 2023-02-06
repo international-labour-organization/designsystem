@@ -1,4 +1,4 @@
-import Navigation from './navigation';
+import Navigation from "./navigation";
 
 Drupal.behaviors.navigation = {
   attach() {
@@ -6,7 +6,7 @@ Drupal.behaviors.navigation = {
       document.querySelectorAll(`[data-loadcomponent="Navigation"]`),
       (element) => {
         // eslint-disable-next-line no-console
-        console.log('loading Navigation component....');
+        console.log("loading Navigation component....");
         new Navigation(element);
       }
     );

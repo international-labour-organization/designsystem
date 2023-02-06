@@ -1,5 +1,5 @@
 footer:
-  use: '@components/footer/footer.twig'
+  use: "@components/footer/footer.twig"
   label: Footer
   description: A component for displaying a page's footer
   fields:

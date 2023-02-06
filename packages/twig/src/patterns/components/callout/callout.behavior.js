@@ -1,4 +1,4 @@
-import Callout from './callout';
+import Callout from "./callout";
 
 Drupal.behaviors.callout = {
   attach() {
@@ -6,7 +6,7 @@ Drupal.behaviors.callout = {
       document.querySelectorAll(`[data-loadcomponent="Callout"]`),
       (element) => {
         // eslint-disable-next-line no-console
-        console.log('loading Callout component....');
+        console.log("loading Callout component....");
         new Callout(element);
       }
     );

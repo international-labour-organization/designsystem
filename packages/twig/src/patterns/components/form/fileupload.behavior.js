@@ -1,4 +1,4 @@
-import FileUpload from './fileupload';
+import FileUpload from "./fileupload";
 
 Drupal.behaviors.fileupload = {
   attach() {
@@ -6,7 +6,7 @@ Drupal.behaviors.fileupload = {
       document.querySelectorAll(`[data-loadcomponent="FileUpload"]`),
       (element) => {
         // eslint-disable-next-line no-console
-        console.log('loading FileUpload component....');
+        console.log("loading FileUpload component....");
         new FileUpload(element);
       }
     );

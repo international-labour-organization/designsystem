@@ -1,5 +1,5 @@
 tag:
-  use: '@components/tags/tag.twig'
+  use: "@components/tags/tag.twig"
   label: Tag
   description: A display or interactable tag
   fields:
@@ -18,10 +18,10 @@ tag:
     url:
       type: text
       label: URL
-      description: The tag's url reference 
+      description: The tag's url reference
       preview:
         faker: https://www.google.com/
-  settings: 
+  settings:
     defaultActive:
       type: select
       label: Default Active

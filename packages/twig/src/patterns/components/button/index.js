@@ -2,5 +2,5 @@
  * button
  */
 // Module template
-import './button.twig';
-import './button.wingsuit.yml';
+import "./button.twig";
+import "./button.wingsuit.yml";

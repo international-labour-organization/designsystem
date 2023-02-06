@@ -1,5 +1,5 @@
 list:
-  use: '@components/list/list-item.twig'
+  use: "@components/list/list-item.twig"
   label: List Item
   description: A list item.
   fields:

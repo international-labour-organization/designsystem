@@ -1,7 +1,10 @@
-import './index';
+import "./index";
 
-const patternDefinition = require('./richtext.wingsuit.yml');
+export default {};
+const patternDefinition = require("./richtext.wingsuit.yml");
 
+/* eslint-disable-next-line */
+/* eslint-disable-next-line */
 export const wingsuit = {
   patternDefinition,
 };

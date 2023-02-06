@@ -1,5 +1,5 @@
 accordion:
-  use: '@components/accordion/accordion-item.twig'
+  use: "@components/accordion/accordion-item.twig"
   label: Accordion Item
   description: A collapsible accordion item.
   fields:

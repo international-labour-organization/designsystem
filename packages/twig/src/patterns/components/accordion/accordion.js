@@ -1,4 +1,4 @@
-import { getUpdatedItems, EVENTS, ARIA, MISC } from '@ilo-org/utils';
+import { EVENTS, ARIA } from "@ilo-org/utils";
 
 /**
  * The Accordion module which handles rendering field labels inline on a form.
@@ -33,7 +33,10 @@ export default class Accordion {
    * @chainable
    */
   init() {
-    this.cacheDomReferences().setupHandlers().enable().evaluateAccordionHeights();
+    this.cacheDomReferences()
+      .setupHandlers()
+      .enable()
+      .evaluateAccordionHeights();
 
     return this;
   }
@@ -49,10 +52,17 @@ export default class Accordion {
      * The field that a user interacts with on a form
      * @type {Object}
      */
-    this.accordionItems = this.element.querySelectorAll('.ilo--accordion--item');
-    this.multipleExpanded = this.element.getAttribute('data-multipleexpanded') === 'true';
-    this.accordionPanels = this.element.querySelectorAll('.ilo--accordion--panel');
-    this.accordionButtons = this.element.querySelectorAll('.ilo--accordion--button');
+    this.accordionItems = this.element.querySelectorAll(
+      ".ilo--accordion--item"
+    );
+    this.multipleExpanded =
+      this.element.getAttribute("data-multipleexpanded") === "true";
+    this.accordionPanels = this.element.querySelectorAll(
+      ".ilo--accordion--panel"
+    );
+    this.accordionButtons = this.element.querySelectorAll(
+      ".ilo--accordion--button"
+    );
     console.log(this.multipleExpanded);
 
     return this;
@@ -81,7 +91,7 @@ export default class Accordion {
    */
   enable() {
     if (this.accordionButtons.length > 0) {
-      this.accordionButtons.forEach((button, i) => {
+      this.accordionButtons.forEach((button) => {
         button.addEventListener(EVENTS.CLICK, (e) => this.onClick(e));
       });
     }
@@ -107,10 +117,10 @@ export default class Accordion {
    * @chainable
    */
   evaluateAccordionHeights() {
-    this.accordionPanels.forEach((item, i) => {
+    this.accordionPanels.forEach((item) => {
       item.style.setProperty(
-        '--height',
-        item.querySelector('.ilo--accordion--innerpanel').scrollHeight + 'px'
+        "--height",
+        item.querySelector(".ilo--accordion--innerpanel").scrollHeight + "px"
       );
     });
 
@@ -124,9 +134,9 @@ export default class Accordion {
    */
   updateAccordionItems(panelbutton) {
     const panel = panelbutton
-      .closest('.ilo--accordion--item')
-      .querySelector('.ilo--accordion--panel');
-    const isopen = panel.classList.contains('ilo--accordion--panel--open');
+      .closest(".ilo--accordion--item")
+      .querySelector(".ilo--accordion--panel");
+    const isopen = panel.classList.contains("ilo--accordion--panel--open");
 
     if (!this.multipleExpanded) {
       this.accordionPanels.forEach((item) => {
@@ -155,10 +165,10 @@ export default class Accordion {
    */
   collapseSection(element) {
     element.parentElement
-      .querySelector('.ilo--accordion--button')
-      .setAttribute(ARIA.EXPANDED, 'false');
-    element.setAttribute(ARIA.HIDDEN, 'false');
-    element.classList.remove('ilo--accordion--panel--open');
+      .querySelector(".ilo--accordion--button")
+      .setAttribute(ARIA.EXPANDED, "false");
+    element.setAttribute(ARIA.HIDDEN, "false");
+    element.classList.remove("ilo--accordion--panel--open");
   }
 
   /**
@@ -170,9 +180,9 @@ export default class Accordion {
    */
   expandSection(element) {
     element.parentElement
-      .querySelector('.ilo--accordion--button')
-      .setAttribute(ARIA.EXPANDED, 'true');
-    element.setAttribute(ARIA.HIDDEN, 'true');
-    element.classList.add('ilo--accordion--panel--open');
+      .querySelector(".ilo--accordion--button")
+      .setAttribute(ARIA.EXPANDED, "true");
+    element.setAttribute(ARIA.HIDDEN, "true");
+    element.classList.add("ilo--accordion--panel--open");
   }
 }

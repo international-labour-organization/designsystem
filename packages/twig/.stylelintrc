@@ -1,10 +1,6 @@
 {
-  "extends": [
-    "stylelint-config-prettier"
-  ],
-  "plugins": [
-    "stylelint-scss"
-  ],
+  "extends": ["stylelint-config-prettier"],
+  "plugins": ["stylelint-scss"],
   "rules": {
     "indentation": 2,
     "declaration-colon-space-after": "always",
