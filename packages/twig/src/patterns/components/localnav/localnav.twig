@@ -13,7 +13,9 @@
       <ul class="{{prefix}}--nav--local--set">
         {% for item in primarynav.items %}
           <li class="{{prefix}}--nav--local--item">
-            <a href="{{item.link}}" class="{{prefix}}--nav--local--link">{{item.label}}</a>
+            <a href="{{item.link}}" class="{{prefix}}--nav--local--link">
+              <span>{{item.label}}</span>
+            </a>
           </li>
         {% endfor %}
       </ul>
