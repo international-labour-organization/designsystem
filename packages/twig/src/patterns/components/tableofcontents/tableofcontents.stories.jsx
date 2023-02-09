@@ -1,7 +1,10 @@
-import './index';
+import "./index";
 
-const patternDefinition = require('./tableofcontents.wingsuit.yml');
+export default {};
+const patternDefinition = require("./tableofcontents.wingsuit.yml");
 
+/* eslint-disable-next-line */
+/* eslint-disable-next-line */
 export const wingsuit = {
   patternDefinition,
 };

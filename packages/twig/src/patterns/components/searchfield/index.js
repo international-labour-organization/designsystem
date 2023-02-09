@@ -2,5 +2,5 @@
  * Search Field
  */
 // Module template
-import './searchfield.twig';
-import './searchfield.wingsuit.yml';
+import "./searchfield.twig";
+import "./searchfield.wingsuit.yml";

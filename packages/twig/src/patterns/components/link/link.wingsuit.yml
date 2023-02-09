@@ -1,5 +1,5 @@
 link:
-  use: '@components/link/link.twig'
+  use: "@components/link/link.twig"
   label: Link
   description: A component for displaying a link.
   fields:
@@ -21,7 +21,7 @@ link:
       description: Optional link label
       preview: "Link"
       required: false
-  settings: 
+  settings:
     theme:
       type: select
       label: Theme
@@ -31,5 +31,5 @@ link:
         light: Light
         dark: Dark
         footer: Footer
-      preview: 'light'
+      preview: "light"
   visibility: storybook

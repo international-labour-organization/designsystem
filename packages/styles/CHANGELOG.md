@@ -1,5 +1,12 @@
 # @ilo-org/styles
 
+## 0.1.17
+
+### Patch Changes
+
+- Updated dependencies [391687e3e]
+  - @ilo-org/fonts@0.1.0
+
 ## 0.1.16
 
 ### Patch Changes

@@ -1,25 +1,25 @@
-import { configure, initJsBehaviors } from '@wingsuit-designsystem/storybook';
-import { addParameters } from '@storybook/react';
-import './styles.scss';
+import { configure, initJsBehaviors } from "@wingsuit-designsystem/storybook";
+import { addParameters } from "@storybook/react";
+import "./styles.scss";
 
-const namespaces = require('../../src/namespaces');
+const namespaces = require("../../src/namespaces");
 
-initJsBehaviors('Drupal');
+initJsBehaviors("Drupal");
 
 addParameters({
-  viewMode: 'docs',
+  viewMode: "docs",
   previewTabs: {
-    'storybook/docs/panel': {
+    "storybook/docs/panel": {
       index: 1,
-      title: 'Documentation',
+      title: "Documentation",
     },
-    canvas: { title: 'Canvas', hidden: false },
+    canvas: { title: "Canvas", hidden: false },
   },
   options: {
     storySort: {
-      method: 'alphabetical',
-      order: ['Welcome', 'Intro', 'Tokens', ['Colors', 'Typography']],
-      locales: 'en-US',
+      method: "alphabetical",
+      order: ["Welcome", "Intro", "Tokens", ["Colors", "Typography"]],
+      locales: "en-US",
     },
   },
 });
@@ -27,10 +27,10 @@ addParameters({
 configure(
   module,
   [
-    require.context('./patterns', true, /\.stories(\.jsx|\.js|\.mdx)$/),
-    require.context('wspatterns', true, /\.stories(\.jsx|\.js|\.mdx)$/),
+    require.context("./patterns", true, /\.stories(\.jsx|\.js|\.mdx)$/),
+    require.context("wspatterns", true, /\.stories(\.jsx|\.js|\.mdx)$/),
   ],
-  require.context('./config', false, /\.json|\.ya?ml$/),
-  require.context('wspatterns', true, /\.twig$/),
+  require.context("./config", false, /\.json|\.ya?ml$/),
+  require.context("wspatterns", true, /\.twig$/),
   namespaces
 );

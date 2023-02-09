@@ -1,5 +1,5 @@
 hero:
-  use: '@components/hero/hero.twig'
+  use: "@components/hero/hero.twig"
   label: Hero
   description: The Hero presents an image banner.
   fields:
@@ -64,7 +64,7 @@ hero:
       label: Theme
       description: The theme type for the hero
       required: false
-      preview: 'dark'
+      preview: "dark"
       options:
         dark: Dark
         light: Light
@@ -74,14 +74,14 @@ hero:
       description: does the hero card have a background? (Defaults to true, only applied to Home Hero)
       options:
         true: true
-        false: 'false'
+        false: "false"
       preview: true
     types:
       type: select
       label: Types
       description: The type of hero
       required: false
-      preview: 'publication'
+      preview: "publication"
       options:
         home: Home
         publication: Publication

@@ -1,5 +1,5 @@
 searchfield:
-  use: '@components/searchfield/searchfield.twig'
+  use: "@components/searchfield/searchfield.twig"
   label: Search Field
   description: A component for displaying a search field.
   fields:

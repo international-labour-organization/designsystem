@@ -1,5 +1,5 @@
 callout:
-  use: '@components/callout/callout.twig'
+  use: "@components/callout/callout.twig"
   label: Callout
   description: A callout alert section with a few different types
   fields:
@@ -44,7 +44,7 @@ callout:
         error: Error
         success: Success
         warning: Warning
-      preview: 'info'
+      preview: "info"
     isCollapsible:
       type: select
       label: Is Collapsible?

@@ -1,5 +1,5 @@
-import Tabs from './tabs';
-import Tooltip from '../tooltip/tooltip';
+import Tabs from "./tabs";
+import Tooltip from "../tooltip/tooltip";
 
 Drupal.behaviors.tabs = {
   attach() {
@@ -7,7 +7,7 @@ Drupal.behaviors.tabs = {
       document.querySelectorAll(`[data-loadcomponent="Tabs"]`),
       (element) => {
         // eslint-disable-next-line no-console
-        console.log('loading Tabs component....');
+        console.log("loading Tabs component....");
         new Tabs(element);
       }
     );
@@ -15,7 +15,7 @@ Drupal.behaviors.tabs = {
       document.querySelectorAll(`[data-loadcomponent="Tooltip"]`),
       (element) => {
         // eslint-disable-next-line no-console
-        console.log('loading Tooltip component....');
+        console.log("loading Tooltip component....");
         new Tooltip(element);
       }
     );

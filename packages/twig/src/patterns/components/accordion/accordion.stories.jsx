@@ -1,7 +1,9 @@
-import './index';
+import "./index";
 
-const patternDefinition = require('./accordion.wingsuit.yml');
+export default {};
+const patternDefinition = require("./accordion.wingsuit.yml");
 
+/* eslint-disable-next-line */
 export const wingsuit = {
   patternDefinition,
 };

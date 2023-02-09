@@ -6,6 +6,8 @@ lib/
 storybook-static/
 next/
 .turbo
+pnpm-lock.yaml
+pnpm-workspace.yaml
 
 brand-assets/dist/
 brand-assets/node_modules/
@@ -34,3 +36,10 @@ styles/node_modules/
 themes/build/
 themes/node_modules/
 
+# Twig
+vendor/
+pattern-lab/
+tools/new-component/templates/
+_icons-generated.scss
+env.json
+scssVariables.json

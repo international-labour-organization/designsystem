@@ -1,4 +1,4 @@
-import Video from './video';
+import Video from "./video";
 
 Drupal.behaviors.media = {
   attach() {
@@ -6,7 +6,7 @@ Drupal.behaviors.media = {
       document.querySelectorAll(`[data-loadcomponent="Video"]`),
       (element) => {
         // eslint-disable-next-line no-console
-        console.log('loading Video component....');
+        console.log("loading Video component....");
         new Video(element);
       }
     );

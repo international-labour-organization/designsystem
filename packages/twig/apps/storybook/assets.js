@@ -1,3 +1,8 @@
+/**
+ * What does this even do?
+ */
+
+// eslint-disable-next-line
 function requireAll(r) {
   r.keys().forEach(r);
 }

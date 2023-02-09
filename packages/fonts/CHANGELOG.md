@@ -1,5 +1,17 @@
 # @ilo-org/fonts
 
+## 0.1.0
+
+### Minor Changes
+
+- 391687e3e: - Fixes broken font imports in /font-css
+
+  - Adds Google Font import declaration
+
+  ```css
+  @import url("@ilo-org/fonts/font-css/fonts-google.css");
+  ```
+
 ## 0.0.7
 
 ### Patch Changes

@@ -1,4 +1,4 @@
-import { EVENTS } from '@ilo-org/utils';
+import { EVENTS } from "@ilo-org/utils";
 
 /**
  * The TableOfContents module which handles control and display of a TableOfContents dialog
@@ -54,10 +54,16 @@ export default class TableOfContents {
      */
     this.OpenButton = this.element.querySelector(`.toc--modal--open`);
     this.CloseButton = this.element.querySelector(`.toc--modal--close`);
-    this.trigger = this.element.querySelector(`.${this.prefix}--table-of-contents--trigger`);
-    this.modalUx = this.element.querySelector(`.${this.prefix}--table-of-contents--modal`);
+    this.trigger = this.element.querySelector(
+      `.${this.prefix}--table-of-contents--trigger`
+    );
+    this.modalUx = this.element.querySelector(
+      `.${this.prefix}--table-of-contents--modal`
+    );
     this.toc = this.element.querySelector(`.${this.prefix}--table-of-contents`);
-    this.tocItems = this.element.querySelectorAll(`.${this.prefix}--table-of-contents--link`);
+    this.tocItems = this.element.querySelectorAll(
+      `.${this.prefix}--table-of-contents--link`
+    );
 
     return this;
   }
@@ -84,11 +90,13 @@ export default class TableOfContents {
    * @chainable
    */
   enable() {
-    this.OpenButton.addEventListener(EVENTS.CLICK, () => this.OpenButtonHandler());
+    this.OpenButton.addEventListener(EVENTS.CLICK, () =>
+      this.OpenButtonHandler()
+    );
     this.CloseButton.addEventListener(EVENTS.CLICK, () => this.CloseHandler());
 
     if (this.tocItems.length > 0) {
-      this.tocItems.forEach((link, i) => {
+      this.tocItems.forEach((link) => {
         link.addEventListener(EVENTS.CLICK, () => this.linkClickHandler());
       });
     }
@@ -103,13 +111,13 @@ export default class TableOfContents {
    * @chainable
    */
   openButtonClick() {
-    this.trigger.classList.add('hide');
-    this.element.classList.add('show');
-    this.modalUx.classList.add('show');
-    this.toc.classList.add('show');
+    this.trigger.classList.add("hide");
+    this.element.classList.add("show");
+    this.modalUx.classList.add("show");
+    this.toc.classList.add("show");
     setTimeout(() => {
-      this.modalUx.classList.add('fadein');
-      this.toc.classList.add('fadein');
+      this.modalUx.classList.add("fadein");
+      this.toc.classList.add("fadein");
     }, 125);
     window.addEventListener(EVENTS.KEY_DOWN, (e) => this.KeyPressHandler(e));
 
@@ -123,13 +131,13 @@ export default class TableOfContents {
    * @chainable
    */
   closeButtonClick() {
-    this.modalUx.classList.remove('fadein');
-    this.toc.classList.remove('fadein');
+    this.modalUx.classList.remove("fadein");
+    this.toc.classList.remove("fadein");
     setTimeout(() => {
-      this.modalUx.classList.remove('show');
-      this.toc.classList.remove('show');
-      this.element.classList.remove('show');
-      this.trigger.classList.remove('hide');
+      this.modalUx.classList.remove("show");
+      this.toc.classList.remove("show");
+      this.element.classList.remove("show");
+      this.trigger.classList.remove("hide");
     }, 125);
     window.removeEventListener(EVENTS.KEY_DOWN, (e) => this.KeyPressHandler(e));
 
@@ -155,7 +163,7 @@ export default class TableOfContents {
    * @chainable
    */
   keyPress(e) {
-    if (e.key === 'Escape') {
+    if (e.key === "Escape") {
       this.closeButtonClick();
     }
 

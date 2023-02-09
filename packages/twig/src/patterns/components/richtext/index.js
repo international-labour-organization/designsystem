@@ -2,5 +2,5 @@
  * rich text
  */
 // Module template
-import './richtext.twig';
-import './richtext.wingsuit.yml';
+import "./richtext.twig";
+import "./richtext.wingsuit.yml";

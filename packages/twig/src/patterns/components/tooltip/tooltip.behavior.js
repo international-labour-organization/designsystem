@@ -1,4 +1,4 @@
-import Tooltip from './tooltip';
+import Tooltip from "./tooltip";
 
 Drupal.behaviors.tooltip = {
   attach() {
@@ -6,7 +6,7 @@ Drupal.behaviors.tooltip = {
       document.querySelectorAll(`[data-loadcomponent="Tooltip"]`),
       (element) => {
         // eslint-disable-next-line no-console
-        console.log('loading Tooltip component....');
+        console.log("loading Tooltip component....");
         new Tooltip(element);
       }
     );

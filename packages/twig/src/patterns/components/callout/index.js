@@ -2,6 +2,6 @@
  * callout
  */
 // Module template
-import './callout.twig';
-import './callout.wingsuit.yml';
-import './callout.behavior';
+import "./callout.twig";
+import "./callout.wingsuit.yml";
+import "./callout.behavior";
