@@ -1,0 +1,17 @@
+import { Meta, Story, Canvas, ArgsTable, Unstyled } from "@storybook/blocks";
+import * as FooterStories from "./Footer.stories.tsx";
+import { Footer } from "../../components";
+
+<Meta title="Footer" of={FooterStories} />
+
+# Footer Example
+
+The Footer component provides a Footer to users.
+
+<Canvas>
+  <Story of={FooterStories.BasicFooter} />
+</Canvas>
+
+## Default Props
+
+<ArgsTable of={Footer} />

@@ -47,7 +47,7 @@ export interface HeroCardProps {
   types?: HeroCardTypes;
 }
 
-interface SocialProps {
+export interface SocialProps {
   /**
    * Specify the label for this link
    */
