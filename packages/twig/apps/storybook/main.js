@@ -9,6 +9,12 @@ module.exports = {
     "@storybook/addon-backgrounds",
     "@storybook/addon-postcss",
   ],
+  staticDirs: [
+    {
+      from: "../../node_modules/@ilo-org/brand-assets/dist/assets/",
+      to: "/brand-assets",
+    },
+  ],
   webpackFinal: (config) => {
     const final = wingsuitCore.getAppPack(
       wingsuitCore.resolveConfig("storybook"),
