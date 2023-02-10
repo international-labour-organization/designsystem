@@ -30,43 +30,86 @@ const basic: FooterProps = {
       links: [
         {
           label: "Link One",
-          url: "http://www.google.com",
+          url: "https://www.cnn.com",
         },
         {
           label: "Link Two",
-          url: "http://www.google.com",
+          url: "https://www.bing.com",
         },
         {
           label: "Link Three",
-          url: "http://www.google.com",
+          url: "https://www.yahoo.com",
         },
         {
           label: "Link Four",
-          url: "http://www.google.com",
+          url: "https://www.askjeeves.com",
         },
         {
-          label: "Link Five Is Much Longer",
-          url: "http://www.google.com",
+          label: "Link Five",
+          url: "https://www.duckduckgo.com",
+        },
+        {
+          label: "Link Six",
+          url: "https://www.google.com",
         },
       ],
     },
   ],
-  socials: [
-    {
-      label: "Facebook",
-      url: "https://www.facebook.com/",
-      icon: "facebook",
-    },
-  ],
+  socials: {
+    headline: "Social Links Headline",
+    links: [
+      {
+        type: "instagram",
+        url: "https://www.instagram.com/",
+      },
+      {
+        type: "facebook",
+        url: "https://www.facebook.com/",
+      },
+      {
+        type: "twitter",
+        url: "https://twitter.com/",
+      },
+      {
+        type: "youtube",
+        url: "https://youtube.com/",
+      },
+    ],
+  },
   subscribe: {
     label: "Subscribe",
-    url: "http://google.com",
+    url: "https://www.ilo.org",
   },
-  legal: "1996-2023 International Labour Organization (ILO)",
-  secondarylinks: [],
+  legal: "© 1996-2022 International Labour Organization (ILO)",
+  secondarylinks: [
+    {
+      label: "Link One",
+      url: "https://www.cnn.com",
+    },
+    {
+      label: "Link Two",
+      url: "https://www.bing.com",
+    },
+    {
+      label: "Link Three",
+      url: "https://www.yahoo.com",
+    },
+    {
+      label: "Link Four",
+      url: "https://www.askjeeves.com",
+    },
+    {
+      label: "Link Five",
+      url: "https://www.duckduckgo.com",
+    },
+    {
+      label: "Link Six",
+      url: "https://www.google.com",
+    },
+  ],
   anchorlink: {
-    label: "Link One",
-    url: "http://www.google.com",
+    label: "Back to Top",
+    url: "#anchor",
   },
 };
 

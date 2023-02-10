@@ -1,8 +1,6 @@
 import { FC } from "react";
-//import classNames from "classnames";
 import useGlobalSettings from "../../hooks/useGlobalSettings";
 import { FooterProps } from "./Footer.props";
-//import { Image } from "../Image";
 import { LinkList } from "../LinkList";
 import { Button } from "../Button";
 
@@ -48,44 +46,40 @@ const Footer: FC<FooterProps> = ({
             <LinkList linkgroup={linkgroup} theme="dark"></LinkList>
           </nav>
         )}
-        if (socials || subscribe){" "}
-        {
+        {(socials || subscribe) && (
           <div className="connect">
-            if (socials){" "}
-            {
+            {socials && (
               <>
-                <h5 className="social--headline">Socials.Headline here</h5>
+                <h5 className="social--headline">{socials?.headline}</h5>
                 <ul className="social--links">
-                  {socials &&
-                    socials.map((item: any, index: any) => {
-                      return (
-                        <li className={`${baseclass}--list--item`} key={index}>
-                          <a
-                            className={`${baseclass}--link icon icon--${item.icon}`}
-                            href={item.url}
-                            title={item.label}
-                          >
-                            {item.label}
-                          </a>
-                        </li>
-                      );
-                    })}
+                  {socials.links &&
+                    socials.links.map((link, index) => (
+                      <li
+                        className="social--links--item"
+                        key={index.toString()}
+                      >
+                        <a
+                          className={`social--links--link ${link.type}`}
+                          href={link.url}
+                        >
+                          {link.type}
+                        </a>
+                      </li>
+                    ))}
                 </ul>
               </>
-            }
-            if (subscribe){" "}
-            {
+            )}
+            {subscribe && (
               <Button
+                label={subscribe?.label}
                 url={subscribe?.url}
                 type="primary"
                 size="large"
                 target="_blank"
-              >
-                {subscribe?.label}
-              </Button>
-            }
+              ></Button>
+            )}
           </div>
-        }
+        )}
       </div>
       <div className={`${baseclass}--secondary`}>
         <div className="legal">{legal}</div>
@@ -96,7 +90,7 @@ const Footer: FC<FooterProps> = ({
                 <li className="secondarylinks--list--item">
                   <a
                     id={i.toString()}
-                    href="{{link.url}}"
+                    href={link.url}
                     className="secondarylinks--list--link"
                   >
                     {link?.label}
