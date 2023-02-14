@@ -24,18 +24,14 @@ const Footer: FC<FooterProps> = ({
     <footer className={`${baseclass}`}>
       <div className={`${baseclass}--main`}>
         <div className="site--info">
-          <img
-            className={`${baseclass}--logo`}
-            src={logo}
-            alt="ILO Logo EN-White"
-          />
+          <img className={`${baseclass}--logo`} src={logo} alt="ILO Logo" />
           <h3 className={`${baseclass}--headline`}>{tagline}</h3>
           <h4 className={`${baseclass}--subhead`}>{subtagline}</h4>
         </div>
         {address && (
           <div className="address">
             {address.map((line, i) => (
-              <p id={i.toString()} className="address--line">
+              <p key={i} className="address--line">
                 {line}
               </p>
             ))}
@@ -54,10 +50,7 @@ const Footer: FC<FooterProps> = ({
                 <ul className="social--links">
                   {socials.links &&
                     socials.links.map((link, index) => (
-                      <li
-                        className="social--links--item"
-                        key={index.toString()}
-                      >
+                      <li className="social--links--item" key={index}>
                         <a
                           className={`social--links--link ${link.type}`}
                           href={link.url}
@@ -89,7 +82,7 @@ const Footer: FC<FooterProps> = ({
               {secondarylinks.map((link, i) => (
                 <li className="secondarylinks--list--item">
                   <a
-                    id={i.toString()}
+                    key={i}
                     href={link.url}
                     className="secondarylinks--list--link"
                   >

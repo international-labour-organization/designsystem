@@ -3,20 +3,6 @@ import ilo_logo_white from "@ilo-org/brand-assets/logo_en_horizontal_white.svg";
 
 const basic: FooterProps = {
   logo: ilo_logo_white,
-  /*logo: {
-    alt: "ILO Logo EN-White",
-    className: "storybook",
-    url: [
-      {
-        breakpoint: 0,
-        src: ilo_logo_white,
-      },
-      {
-        breakpoint: 768,
-        src: ilo_logo_white,
-      },
-    ],
-  },*/
   tagline: "Advancing social justice, promoting decent work",
   subtagline: "ILO is a specialized agency of the United Nations",
   address: [
@@ -30,27 +16,27 @@ const basic: FooterProps = {
       links: [
         {
           label: "Link One",
-          url: "https://www.cnn.com",
+          url: "https://www.ilo.org",
         },
         {
           label: "Link Two",
-          url: "https://www.bing.com",
+          url: "https://www.ilo.org",
         },
         {
           label: "Link Three",
-          url: "https://www.yahoo.com",
+          url: "https://www.ilo.org",
         },
         {
           label: "Link Four",
-          url: "https://www.askjeeves.com",
+          url: "https://www.ilo.org",
         },
         {
           label: "Link Five",
-          url: "https://www.duckduckgo.com",
+          url: "https://www.ilo.org",
         },
         {
           label: "Link Six",
-          url: "https://www.google.com",
+          url: "https://www.ilo.org",
         },
       ],
     },
@@ -60,19 +46,19 @@ const basic: FooterProps = {
     links: [
       {
         type: "instagram",
-        url: "https://www.instagram.com/",
+        url: "https://www.instagram.com/iloinfo/",
       },
       {
         type: "facebook",
-        url: "https://www.facebook.com/",
+        url: "https://www.facebook.com/ILO.ORG/",
       },
       {
         type: "twitter",
-        url: "https://twitter.com/",
+        url: "https://twitter.com/ILO/",
       },
       {
         type: "youtube",
-        url: "https://youtube.com/",
+        url: "https://youtube.com/@ILO/featured/",
       },
     ],
   },
@@ -84,27 +70,27 @@ const basic: FooterProps = {
   secondarylinks: [
     {
       label: "Link One",
-      url: "https://www.cnn.com",
+      url: "https://www.ilo.org",
     },
     {
       label: "Link Two",
-      url: "https://www.bing.com",
+      url: "https://www.ilo.org",
     },
     {
       label: "Link Three",
-      url: "https://www.yahoo.com",
+      url: "https://www.ilo.org",
     },
     {
       label: "Link Four",
-      url: "https://www.askjeeves.com",
+      url: "https://www.ilo.org",
     },
     {
       label: "Link Five",
-      url: "https://www.duckduckgo.com",
+      url: "https://www.ilo.org",
     },
     {
       label: "Link Six",
-      url: "https://www.google.com",
+      url: "https://www.ilo.org",
     },
   ],
   anchorlink: {
