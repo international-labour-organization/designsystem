@@ -43,3 +43,4 @@ export { List } from "./List";
 export { Profile } from "./Profile";
 export { TableOfContents } from "./TableOfContents";
 export { Footer } from "./Footer";
+export { LocalNav } from "./LocalNav";
