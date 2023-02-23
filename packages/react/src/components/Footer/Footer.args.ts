@@ -2,6 +2,7 @@ import { FooterProps } from "./Footer.props";
 import ilo_logo_white from "@ilo-org/brand-assets/logo_en_horizontal_white.svg";
 
 const basic: FooterProps = {
+  className: "footer",
   logo: ilo_logo_white,
   tagline: "Advancing social justice, promoting decent work",
   subtagline: "ILO is a specialized agency of the United Nations",

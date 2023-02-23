@@ -1,10 +1,12 @@
 import { FC } from "react";
 import useGlobalSettings from "../../hooks/useGlobalSettings";
+import classNames from "classnames";
 import { FooterProps } from "./Footer.props";
 import { LinkList } from "../LinkList";
 import { Button } from "../Button";
 
 const Footer: FC<FooterProps> = ({
+  className,
   logo,
   tagline,
   subtagline,
@@ -18,15 +20,18 @@ const Footer: FC<FooterProps> = ({
 }) => {
   const { prefix } = useGlobalSettings();
 
-  const baseclass = `${prefix}--footer`;
+  const baseClass = `${prefix}--footer`;
+  const footerClasses = classNames(className, {
+    [baseClass]: true,
+  });
 
   return (
-    <footer className={`${baseclass}`}>
-      <div className={`${baseclass}--main`}>
+    <footer className={footerClasses}>
+      <div className={`${baseClass}--main`}>
         <div className="site--info">
-          <img className={`${baseclass}--logo`} src={logo} alt="ILO Logo" />
-          <h3 className={`${baseclass}--headline`}>{tagline}</h3>
-          <h4 className={`${baseclass}--subhead`}>{subtagline}</h4>
+          <img className={`${baseClass}--logo`} src={logo} alt="ILO Logo" />
+          <h3 className={`${baseClass}--headline`}>{tagline}</h3>
+          <h4 className={`${baseClass}--subhead`}>{subtagline}</h4>
         </div>
         {address && (
           <div className="address">
@@ -74,7 +79,7 @@ const Footer: FC<FooterProps> = ({
           </div>
         )}
       </div>
-      <div className={`${baseclass}--secondary`}>
+      <div className={`${baseClass}--secondary`}>
         <div className="legal">{legal}</div>
         {secondarylinks && (
           <nav className="secondarylinks">

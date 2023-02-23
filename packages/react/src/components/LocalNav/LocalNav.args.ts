@@ -57,7 +57,6 @@ const basic: LocalNavProps = {
       },
     ],
   },
-  isMenuOpen: true,
 };
 
 const LocalNavArgs = { basic };

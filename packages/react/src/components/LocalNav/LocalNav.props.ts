@@ -40,11 +40,6 @@ export interface LocalNavProps {
    * Specify the language context menu for the LocalNav
    */
   languagecontextmenu?: ContextMenuProps;
-
-  /**
-   * Specify the state of a toggle hamburg context menu button for the LocalNav
-   */
-  isMenuOpen?: boolean;
 }
 
 interface PrimaryNavProps {

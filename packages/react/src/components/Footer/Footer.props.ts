@@ -4,6 +4,11 @@ import { SocialTypes } from "../../types";
 
 export interface FooterProps {
   /**
+   * Specify an optional className to be added to your Footer.
+   */
+  className?: string;
+
+  /**
    * Props for the logo of the Footer
    */
   logo?: string;
