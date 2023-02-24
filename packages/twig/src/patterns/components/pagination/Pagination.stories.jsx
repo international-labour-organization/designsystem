@@ -1,7 +1,9 @@
-import './index';
+import "./index";
 
-const patternDefinition = require('./pagination.wingsuit.yml');
+export default {};
+const patternDefinition = require("./pagination.wingsuit.yml");
 
+/* eslint-disable-next-line */
 export const wingsuit = {
   patternDefinition,
 };

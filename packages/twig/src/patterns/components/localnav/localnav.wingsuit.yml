@@ -1,5 +1,5 @@
 localnav:
-  use: '@components/localnav/localnav.twig'
+  use: "@components/localnav/localnav.twig"
   label: Local nav
   description: The Local nav component
   fields:
@@ -7,21 +7,21 @@ localnav:
       type: string
       label: Background
       description: Override color for the background
-      preview: "#960A55"
+      preview: "#1E2DBE"
     logo:
       type: object
       label: Logo
       description: Logo for the nav
       required: true
       preview:
-        image: "https://placekitten.com/g/148/38"
+        image: "/brand-assets/logo_en_horizontal_white.svg"
         alt: Logo
     siteurl:
       type: string
       label: Site url
       description: home url for the website
       required: true
-      preview: "https://www.google.com/"
+      preview: "https://www.ilo.org/"
     tagline:
       type: object
       label: Site tagline
@@ -47,23 +47,21 @@ localnav:
         navlabel: Primary Local nav
         mobilecloselabel: Close
         items:
-          - link: "https://www.google.com/search?q=menu1"
+          - link: "https://www.ilo.org"
             label: Menu Item 1
-          - link: "https://www.google.com/search?q=menu2"
+          - link: "https://www.ilo.org"
             label: Menu Item 2
-          - link: "https://www.google.com/search?q=menu3"
+          - link: "https://www.ilo.org"
             label: Menu Item 3
-          - link: "https://www.google.com/search?q=menu4"
+          - link: "https://www.ilo.org"
             label: Menu Item 4
-          - link: "https://www.google.com/search?q=menu5"
-            label: Menu Item 5
     mainlink:
       type: object
       label: Main link object
       description: Link object for back to main site link
-      preview: 
-        url: 'https://www.google.com/'
-        label: 'Go to main ILO website'
+      preview:
+        url: "https://www.ilo.org/"
+        label: "Go to main website"
     languagelabel:
       type: string
       label: Language Label
@@ -76,14 +74,14 @@ localnav:
       preview:
         links:
           - label: Link One
-            url: 'http://www.google.com'
+            url: "http://www.google.com"
           - label: Link Two
-            url: 'http://www.google.com'
-          - endsection: 'true'
+            url: "http://www.google.com"
+          - endsection: "true"
             label: Link Three Ends A Section
-            url: 'http://www.google.com'
+            url: "http://www.google.com"
           - label: Link Four
-            url: 'http://www.google.com'
+            url: "http://www.google.com"
           - label: Link Five Is Slightly Longer
-            url: 'http://www.google.com'
+            url: "http://www.google.com"
   visibility: storybook

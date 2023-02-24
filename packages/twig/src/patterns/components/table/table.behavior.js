@@ -1,4 +1,4 @@
-import Table from './table';
+import Table from "./table";
 
 Drupal.behaviors.table = {
   attach() {
@@ -6,7 +6,7 @@ Drupal.behaviors.table = {
       document.querySelectorAll(`[data-loadcomponent="Table"]`),
       (element) => {
         // eslint-disable-next-line no-console
-        console.log('loading Table component....');
+        console.log("loading Table component....");
         new Table(element);
       }
     );

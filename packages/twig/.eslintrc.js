@@ -4,63 +4,51 @@
  * Rule reference: http://eslint.org/docs/rules
  * Individual rule reference: http://eslint.org/docs/rules/NAME-OF-RULE
  */
-const wingsuitCore = require('@wingsuit-designsystem/core');
-const wingsuitConfig = require('./wingsuit.config.js');
+// const wingsuitCore = require("@wingsuit-designsystem/core");
+// const wingsuitConfig = require("./wingsuit.config.js");
 
-const appConfig = wingsuitCore.resolveConfig(
-  'storybook',
-  'development',
-  {},
-  wingsuitConfig,
-  __dirname
-);
-const { namespaces } = appConfig;
-const aliasMap = [];
-Object.keys(namespaces).forEach((key) => {
-  aliasMap.push([key, namespaces[key]]);
-});
+// const appConfig = wingsuitCore.resolveConfig(
+//   "storybook",
+//   "development",
+//   {},
+//   wingsuitConfig,
+//   __dirname
+// );
+// const { namespaces } = appConfig;
+// const aliasMap = [];
+// Object.keys(namespaces).forEach(key => {
+//   aliasMap.push([key, namespaces[key]]);
+// });
 
 module.exports = {
-  extends: [
-    'airbnb-base',
-    'plugin:jest/recommended',
-    'plugin:vue/recommended',
-    'plugin:prettier/recommended',
-    'prettier/vue',
-    'plugin:react/recommended',
-  ],
-  plugins: ['prettier'],
   root: true,
+  extends: ["@ilo-org/eslint-config"],
   globals: {
     Drupal: true,
     jQuery: true,
     _: true,
     BUILD_TARGET: true,
   },
-  env: {
-    browser: true,
-    node: true,
-  },
-  rules: {
-    'react/jsx-uses-react': 1,
-    'prettier/prettier': [
-      'error',
-      {
-        endOfLine: 'auto',
-      },
-    ],
-    'no-console': [0], // turned off for now while we are console.logging everywhere.
-    'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
-    'import/prefer-default-export': [0],
-  },
-  settings: {
-    react: {
-      version: 'detect',
-    },
-    'import/resolver': {
-      alias: {
-        map: aliasMap,
-      },
-    },
-  },
+  // settings: {
+  //   "import/resolver": {
+  //     alias: {
+  //       map: aliasMap,
+  //     },
+  //   },
+  // },
+  ignorePatterns: [
+    "dist/",
+    "pattern-lab/",
+    "vendor/",
+    "tools/test/vrt/backstop_data",
+    "preview.js-generated-config-entry.js",
+    "storybook-init-framework-entry.js",
+    "tools/new-component/templates",
+    "storybook-static/",
+    "node_modules/",
+    "lib/",
+    "src/stories/",
+    "src/__tests__",
+    "src/components/**/*.args.ts",
+  ],
 };

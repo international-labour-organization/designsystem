@@ -1,5 +1,4 @@
-import { EVENTS, ARIA } from '@ilo-org/utils';
-import videojs from 'video.js';
+import videojs from "video.js";
 
 /**
  * The Video module which handles rendering field labels inline on a form.
@@ -53,7 +52,9 @@ export default class Video {
      * The button for toggling Read More state
      * @type {Object}
      */
-    this.VideoElement = this.element.querySelector(`.${this.prefix}--video--element`);
+    this.VideoElement = this.element.querySelector(
+      `.${this.prefix}--video--element`
+    );
 
     return this;
   }
@@ -85,12 +86,12 @@ export default class Video {
    * @chainable
    */
   start() {
-    console.log('this.VideoElement', this.VideoElement);
+    console.log("this.VideoElement", this.VideoElement);
 
     this.player = videojs(this.VideoElement, {
       autoplay: false,
       controls: true,
-      preload: 'auto',
+      preload: "auto",
       bigPlayButton: false,
       controlBar: {
         descriptionsButton: false,

@@ -1,4 +1,4 @@
-import Loading from './loading';
+import Loading from "./loading";
 
 Drupal.behaviors.loading = {
   attach() {
@@ -6,7 +6,7 @@ Drupal.behaviors.loading = {
       document.querySelectorAll(`[data-loadcomponent="Loading"]`),
       (element) => {
         // eslint-disable-next-line no-console
-        console.log('loading Loading component....');
+        console.log("loading Loading component....");
         new Loading(element);
       }
     );

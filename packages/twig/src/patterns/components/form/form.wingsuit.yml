@@ -1,5 +1,5 @@
 form:
-  use: '@components/form/form.twig'
+  use: "@components/form/form.twig"
   label: Form
   description: A component for displaying a form.
   fields:
@@ -102,10 +102,10 @@ form:
           legend: "Radio Group"
           type: "radio"
         - field:
-              helper: "The file upload's helper text"
-              label: "File Upload Field Label"
-              name: "fileupload"
-              placeholder: "File Upload Field"
+            helper: "The file upload's helper text"
+            label: "File Upload Field Label"
+            name: "fileupload"
+            placeholder: "File Upload Field"
           type: "file"
         - field:
             label: "Date Picker Field Label"
@@ -113,9 +113,9 @@ form:
             placeholder: "MM/DD/YYYY"
           type: "date"
         - field:
-              label: "Number Picker Field Label"
-              name: "text"
-              placeholder: "Number Picker Field"
+            label: "Number Picker Field Label"
+            name: "text"
+            placeholder: "Number Picker Field"
           type: "number"
         - field:
             label: "Textarea"
@@ -202,10 +202,10 @@ form:
                 legend: "Radio Group"
                 type: "radio"
               - field:
-                    helper: "The file upload's helper text"
-                    label: "File Upload Field Label"
-                    name: "fileupload"
-                    placeholder: "File Upload Field"
+                  helper: "The file upload's helper text"
+                  label: "File Upload Field Label"
+                  name: "fileupload"
+                  placeholder: "File Upload Field"
                 type: "file"
               - field:
                   enddata:
@@ -219,9 +219,9 @@ form:
                   range: true
                 type: "date"
               - field:
-                    label: "Number Picker Field Label"
-                    name: "text"
-                    placeholder: "Number Picker Field"
+                  label: "Number Picker Field Label"
+                  name: "text"
+                  placeholder: "Number Picker Field"
                 type: "number"
               - field:
                   label: "Textarea"
@@ -343,13 +343,13 @@ form:
             legend: "Radio Group"
             type: "radio"
           - field:
-                label: "File Upload Field Label"
-                name: "fileupload"
-                placeholder: "File Upload Field"
-                tooltip:
-                  label: "tooltip"
-                  icon: true
-                  theme: "dark"
+              label: "File Upload Field Label"
+              name: "fileupload"
+              placeholder: "File Upload Field"
+              tooltip:
+                label: "tooltip"
+                icon: true
+                theme: "dark"
             type: "file"
           - field:
               label: "Date Picker Field Label"
@@ -361,13 +361,13 @@ form:
                 theme: "dark"
             type: "date"
           - field:
-                label: "Number Picker Field Label"
-                name: "text"
-                placeholder: "Number Picker Field"
-                tooltip:
-                  label: "tooltip"
-                  icon: true
-                  theme: "dark"
+              label: "Number Picker Field Label"
+              name: "text"
+              placeholder: "Number Picker Field"
+              tooltip:
+                label: "tooltip"
+                icon: true
+                theme: "dark"
             type: "number"
           - field:
               label: "Textarea"
@@ -477,13 +477,13 @@ form:
                   legend: "Radio Group"
                   type: "radio"
                 - field:
-                      label: "File Upload Field Label"
-                      name: "fileupload"
-                      placeholder: "File Upload Field"
-                      tooltip:
-                        label: 'tooltip'
-                        icon: true
-                        theme: dark
+                    label: "File Upload Field Label"
+                    name: "fileupload"
+                    placeholder: "File Upload Field"
+                    tooltip:
+                      label: "tooltip"
+                      icon: true
+                      theme: dark
                   type: "file"
                 - field:
                     enddata:
@@ -491,7 +491,7 @@ form:
                       name: "datepickerend"
                       placeholder: "MM/DD/YYYY"
                       tooltip:
-                        label: 'tooltip'
+                        label: "tooltip"
                         icon: true
                         theme: dark
                     label: "Date Picker Field Label"
@@ -504,13 +504,13 @@ form:
                     range: true
                   type: "date"
                 - field:
-                      label: "Number Picker Field Label"
-                      name: "text"
-                      placeholder: "Number Picker Field"
-                      tooltip:
-                        label: "tooltip"
-                        icon: true
-                        theme: "dark"
+                    label: "Number Picker Field Label"
+                    name: "text"
+                    placeholder: "Number Picker Field"
+                    tooltip:
+                      label: "tooltip"
+                      icon: true
+                      theme: "dark"
                   type: "number"
                 - field:
                     label: "Textarea"
@@ -535,7 +535,7 @@ form:
               name: "text"
               placeholder: "Text Field"
               type: "text"
-              error: 'this is an error message form the server'
+              error: "this is an error message form the server"
             type: "input"
           - field:
               id: "dropdown"
@@ -552,13 +552,13 @@ form:
                   value: "four"
                 - label: "Option Five"
                   value: "the fifth"
-              error: 'this is an error message form the server'
+              error: "this is an error message form the server"
             type: "dropdown"
           - field:
               label: "Checkbox Label"
               name: "checkbox"
               type: "checkbox"
-              error: 'this is an error message form the server'
+              error: "this is an error message form the server"
             type: "checkbox"
           - choicegroupid: "multiplecheckboxes"
             field:
@@ -584,7 +584,7 @@ form:
                 type: "checkbox"
             legend: "Multiple Checkboxes"
             type: "checkbox"
-            grouperror: 'this is an error message form the server'
+            grouperror: "this is an error message form the server"
           - choicegroupid: "radios"
             field:
               - label: "Radio Field Label 1"
@@ -607,33 +607,33 @@ form:
                 name: "radio"
                 type: "radio"
                 value: "radio5"
-            grouperror: 'this is an error message form the server'
+            grouperror: "this is an error message form the server"
             legend: "Radio Group"
             type: "radio"
           - field:
-                helper: "The file upload's helper text"
-                label: "File Upload Field Label"
-                name: "fileupload"
-                placeholder: "File Upload Field"
-                error: 'this is an error message form the server'
+              helper: "The file upload's helper text"
+              label: "File Upload Field Label"
+              name: "fileupload"
+              placeholder: "File Upload Field"
+              error: "this is an error message form the server"
             type: "file"
           - field:
               label: "Date Picker Field Label"
               name: "datepicker"
               placeholder: "MM/DD/YYYY"
-              error: 'this is an error message form the server'
+              error: "this is an error message form the server"
             type: "date"
           - field:
-                label: "Number Picker Field Label"
-                name: "text"
-                placeholder: "Number Picker Field"
-                error: 'this is an error message form the server'
+              label: "Number Picker Field Label"
+              name: "text"
+              placeholder: "Number Picker Field"
+              error: "this is an error message form the server"
             type: "number"
           - field:
               label: "Textarea"
               name: "textarea"
               placeholder: "Textarea"
-              error: 'this is an error message form the server'
+              error: "this is an error message form the server"
             type: "textarea"
           - field:
               formgroupid: "formgroup"
@@ -643,7 +643,7 @@ form:
                     name: "text"
                     placeholder: "Text Field"
                     type: "text"
-                    error: 'this is an error message form the server'
+                    error: "this is an error message form the server"
                   type: "input"
                 - field:
                     id: "dropdown"
@@ -660,13 +660,13 @@ form:
                         value: "four"
                       - label: "Option Five"
                         value: "the fifth"
-                    error: 'this is an error message form the server'
+                    error: "this is an error message form the server"
                   type: "dropdown"
                 - field:
                     label: "Checkbox Label"
                     name: "checkbox"
                     type: "checkbox"
-                    error: 'this is an error message form the server'
+                    error: "this is an error message form the server"
                   type: "checkbox"
                 - choicegroupid: "multiplecheckboxes"
                   field:
@@ -692,7 +692,7 @@ form:
                       type: "checkbox"
                   legend: "Multiple Checkboxes"
                   type: "checkbox"
-                  grouperror: 'this is an error message form the server'
+                  grouperror: "this is an error message form the server"
                 - choicegroupid: "radios"
                   field:
                     - label: "Radio Field Label 1"
@@ -717,36 +717,36 @@ form:
                       value: "radio5"
                   legend: "Radio Group"
                   type: "radio"
-                  grouperror: 'this is an error message form the server'
+                  grouperror: "this is an error message form the server"
                 - field:
-                      label: "File Upload Field Label"
-                      name: "fileupload"
-                      placeholder: "File Upload Field"
-                      error: 'this is an error message form the server'
+                    label: "File Upload Field Label"
+                    name: "fileupload"
+                    placeholder: "File Upload Field"
+                    error: "this is an error message form the server"
                   type: "file"
                 - field:
                     enddata:
                       label: "Date Picker End Field Label"
                       name: "datepickerend"
                       placeholder: "MM/DD/YYYY"
-                      error: 'this is an error message form the server'
+                      error: "this is an error message form the server"
                     label: "Date Picker Field Label"
                     name: "datepicker"
                     placeholder: "MM/DD/YYYY"
-                    error: 'this is an error message form the server'
+                    error: "this is an error message form the server"
                     range: true
                   type: "date"
                 - field:
-                      label: "Number Picker Field Label"
-                      name: "text"
-                      placeholder: "Number Picker Field"
-                      error: 'this is an error message form the server'
+                    label: "Number Picker Field Label"
+                    name: "text"
+                    placeholder: "Number Picker Field"
+                    error: "this is an error message form the server"
                   type: "number"
                 - field:
                     label: "Textarea"
                     name: "textarea"
                     placeholder: "Textarea"
-                    error: 'this is an error message form the server'
+                    error: "this is an error message form the server"
                   type: "textarea"
               legend: "Example Form Group"
               type: "default"
@@ -838,10 +838,10 @@ form:
             legend: "Radio Group"
             type: "radio"
           - field:
-                label: "File Upload Field Label"
-                name: "fileupload"
-                placeholder: "File Upload Field"
-                helper: "this is the helper text"
+              label: "File Upload Field Label"
+              name: "fileupload"
+              placeholder: "File Upload Field"
+              helper: "this is the helper text"
             type: "file"
           - field:
               label: "Date Picker Field Label"
@@ -850,10 +850,10 @@ form:
               helper: "this is the helper text"
             type: "date"
           - field:
-                label: "Number Picker Field Label"
-                name: "text"
-                placeholder: "Number Picker Field"
-                helper: "this is the helper text"
+              label: "Number Picker Field Label"
+              name: "text"
+              placeholder: "Number Picker Field"
+              helper: "this is the helper text"
             type: "number"
           - field:
               label: "Textarea"
@@ -945,10 +945,10 @@ form:
                   type: "radio"
                   grouphelper: "this is the helper text"
                 - field:
-                      label: "File Upload Field Label"
-                      name: "fileupload"
-                      placeholder: "File Upload Field"
-                      helper: "this is the helper text"
+                    label: "File Upload Field Label"
+                    name: "fileupload"
+                    placeholder: "File Upload Field"
+                    helper: "this is the helper text"
                   type: "file"
                 - field:
                     enddata:
@@ -963,10 +963,10 @@ form:
                     range: true
                   type: "date"
                 - field:
-                      label: "Number Picker Field Label"
-                      name: "text"
-                      placeholder: "Number Picker Field"
-                      helper: "this is the helper text"
+                    label: "Number Picker Field Label"
+                    name: "text"
+                    placeholder: "Number Picker Field"
+                    helper: "this is the helper text"
                   type: "number"
                 - field:
                     label: "Textarea"

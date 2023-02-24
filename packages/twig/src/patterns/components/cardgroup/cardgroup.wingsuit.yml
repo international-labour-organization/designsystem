@@ -1,5 +1,5 @@
 cardgroup:
-  use: '@components/cardgroup/cardgroup.twig'
+  use: "@components/cardgroup/cardgroup.twig"
   label: Card Group
   description: The Card group
   fields:
@@ -7,7 +7,7 @@ cardgroup:
       type: object
       label: Group of cards
       description: The group of cards, object
-      preview: 
+      preview:
     cta:
       type: object
       label: CTA
@@ -38,11 +38,11 @@ cardgroup:
                 - headline: ""
                   links:
                     - label: Link One
-                      url: 'http://www.google.com'
+                      url: "http://www.google.com"
                     - label: Link Two
-                      url: 'http://www.google.com'
+                      url: "http://www.google.com"
                     - label: Link Three
-                      url: 'http://www.google.com'
+                      url: "http://www.google.com"
           - title: "Multi-link card second - right aligned image, wide option"
             image: "https://placekitten.com/475/267"
             intro: "Lorem ipsum dolor sit amet consectetur adipiscing elit. Lobortis egestas ipsum dolor sit amet consectetur adipiscing elit. Lobortis egestas ipsum dolor sit amet consectetur adipiscing elit. Lobortis egestas lacus."
@@ -59,11 +59,11 @@ cardgroup:
                 - headline: ""
                   links:
                     - label: Link One
-                      url: 'http://www.google.com'
+                      url: "http://www.google.com"
                     - label: Link Two
-                      url: 'http://www.google.com'
+                      url: "http://www.google.com"
                     - label: Link Three
-                      url: 'http://www.google.com'
+                      url: "http://www.google.com"
           - title: "Multi-link card - right aligned image, wide option"
             image: "https://placekitten.com/475/267"
             intro: "Lorem ipsum dolor sit amet consectetur adipiscing elit. Lobortis egestas ipsum dolor sit amet consectetur adipiscing elit. Lobortis egestas ipsum dolor sit amet consectetur adipiscing elit. Lobortis egestas lacus."
@@ -80,12 +80,12 @@ cardgroup:
                 - headline: ""
                   links:
                     - label: Link One
-                      url: 'http://www.google.com'
+                      url: "http://www.google.com"
                     - label: Link Two
-                      url: 'http://www.google.com'
+                      url: "http://www.google.com"
                     - label: Link Three
-                      url: 'http://www.google.com'
-      settings: 
+                      url: "http://www.google.com"
+      settings:
         type: multilink
     feature:
       label: Feature
@@ -152,7 +152,7 @@ cardgroup:
             list: ""
             dataset: ""
             color: ""
-      settings: 
+      settings:
         type: feature
     detail:
       label: Detail
@@ -191,7 +191,7 @@ cardgroup:
             list: ""
             dataset: ""
             color: ""
-      settings: 
+      settings:
         type: detail
         theme: light
     graphicpromo:
@@ -207,7 +207,7 @@ cardgroup:
             link: "https://www.google.com/search?q=graphic-promo"
             profile: ""
             eventdetails: ""
-            cta: 
+            cta:
               label: "Discover our unique mission"
               url: "https://www.google.com/search?q=button"
             source: ""
@@ -231,7 +231,7 @@ cardgroup:
             eventdetails: ""
             cta: ""
             list: ""
-            source: 
+            source:
               label: "Source: lorem ipsum dolor sit amet, 2020"
               url: "https://www.google.com/search?q=stat"
             color: blue
@@ -245,7 +245,7 @@ cardgroup:
             eventdetails: ""
             cta: ""
             list: ""
-            source: 
+            source:
               label: "Source: lorem ipsum dolor sit amet, 2020"
               url: "https://www.google.com/search?q=stat"
             color: green
@@ -259,7 +259,7 @@ cardgroup:
             eventdetails: ""
             cta: ""
             list: ""
-            source: 
+            source:
               label: "Source: lorem ipsum dolor sit amet, 2020"
               url: "https://www.google.com/search?q=stat"
             color: yellow
@@ -273,7 +273,7 @@ cardgroup:
             eventdetails: ""
             cta: ""
             list: ""
-            source: 
+            source:
               label: "Source: lorem ipsum dolor sit amet, 2020"
               url: "https://www.google.com/search?q=stat"
             color: turquoise
@@ -316,12 +316,12 @@ cardgroup:
             profile: ""
             eventdetails: ""
             cta: ""
-            list: 
+            list:
               title: ""
               settings:
                 - ordered: unordered
                 - alignment: default
-              items: 
+              items:
                 - content: "Wipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor."
                   id: "list1"
                 - content: "Nut labore et dolore magna sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
@@ -342,16 +342,16 @@ cardgroup:
             profile: ""
             eventdetails: ""
             cta: ""
-            dataset: 
-              content: 
-                items: 
+            dataset:
+              content:
+                items:
                   - label: Date
                     copy: Publication date
                   - label: Event type
                     copy: Event location
               files:
                 headline: Files
-                items: 
+                items:
                   - label: File/size MB 1
                     url: "https://www.google.com/search?q=file1"
                   - label: File/size MB 2
@@ -360,7 +360,7 @@ cardgroup:
                     url: "https://www.google.com/search?q=file3"
               links:
                 headline: Languages
-                items: 
+                items:
                   - label: Language link 1
                     url: "https://www.google.com/search?q=link"
                   - label: Language link 2
@@ -375,7 +375,7 @@ cardgroup:
       type: select
       label: Size
       description: Size of the cards (usually reduces padding)
-      preview: 'standard'
+      preview: "standard"
       options:
         wide: wide
         standard: Standard
@@ -384,7 +384,7 @@ cardgroup:
       type: select
       label: Color
       description: Color of the stat cards, options are turquoise, green, yellow, or blue
-      preview: 'blue'
+      preview: "blue"
       options:
         blue: Blue
         turquoise: Turquoise
@@ -395,7 +395,7 @@ cardgroup:
       label: Card Count
       description: Number of cards within a group
       required: true
-      preview: 'detail'
+      preview: "detail"
       options:
         data: Data
         detail: Detail
@@ -410,7 +410,7 @@ cardgroup:
       label: Card Count
       description: Number of cards within a group
       required: true
-      preview: 'two'
+      preview: "two"
       options:
         one: One
         two: Two
@@ -421,7 +421,7 @@ cardgroup:
       label: Theme
       description: The theme type for the hero
       required: false
-      preview: 'dark'
+      preview: "dark"
       options:
         dark: Dark
         light: Light

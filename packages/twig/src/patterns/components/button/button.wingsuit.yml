@@ -1,5 +1,5 @@
 button:
-  use: '@components/button/button.twig'
+  use: "@components/button/button.twig"
   label: Button
   description: A button or a link styled like a button.
   fields:
@@ -7,19 +7,19 @@ button:
       type: string
       label: Label
       description: The label for the button
-      preview: 'Button'
+      preview: "Button"
       required: true
     url:
       type: string
       label: url
       description: The url for the button if it's a link
-      preview: ''
+      preview: ""
       required: false
     target:
       type: string
       label: target
       description: Should the button open in a new tab? If so, include the name of the tab. Only evaluated if the url field is populated.
-      preview: 'true'
+      preview: "true"
       required: false
     icon:
       type: string
@@ -31,7 +31,7 @@ button:
       type: string
       label: Class name
       description: optional class name
-      preview: 'optionalclass'
+      preview: "optionalclass"
       required: false
   settings:
     size:
@@ -43,7 +43,7 @@ button:
         small: Small
         medium: Medium
         large: Large
-      preview: 'large'
+      preview: "large"
     type:
       type: select
       label: Type
@@ -55,16 +55,16 @@ button:
         tertiary: Tertiary
         alert: Alert
         icononly: Icon Only
-      preview: 'primary'
+      preview: "primary"
     disabled:
       type: select
       label: Disabled
       description: The disabled state of the button.
       required: false
       options:
-        true: 'true'
+        true: "true"
         false: false
-      preview: 'false'
+      preview: "false"
     kind:
       type: select
       label: Kind
@@ -74,7 +74,7 @@ button:
         button: button
         reset: reset
         submit: submit
-      preview: 'button'
+      preview: "button"
     iconPosition:
       type: select
       label: Icon Position
@@ -89,7 +89,7 @@ button:
       label: Icon Only
       description: Is this an icon-only button?
       options:
-        true: 'true'
+        true: "true"
         false: false
       preview: false
       required: false
@@ -98,7 +98,7 @@ button:
       label: Opens Modal
       description: Does this button trigger open a modal?
       options:
-        true: 'true'
+        true: "true"
         false: false
       preview: false
       required: false

@@ -26,7 +26,7 @@
     "react:build:docs": "pnpm turbo run build:docs --filter=@ilo-org/react...",
     "react:dev:docs": "pnpm run storybook --filter=@ilo-org/react",
     "test:all": "pnpm turbo run test",
-    "twig:install": "pnpm clean:deps && pnpm --node-linker=hoisted --filter twig... install",
+    "twig:install": "pnpm clean:deps && pnpm --filter twig... install",
     "twig:build:docs": "pnpm turbo run build:docs --filter=@ilo-org/twig...",
     "twig:dev:docs": "pnpm run storybook --filter=@ilo-org/twig"
   },
@@ -50,7 +50,7 @@
   ],
   "dependencies": {
     "@changesets/cli": "^2.25.0",
-    "@ilo-org/eslint-config": "0.0.1",
+    "@ilo-org/eslint-config": "0.0.2",
     "@ilo-org/prettier-config": "0.0.1",
     "@ilo-org/typescript-config": "0.0.1",
     "@manypkg/cli": "^0.19.2",

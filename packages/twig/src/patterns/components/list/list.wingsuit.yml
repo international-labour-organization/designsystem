@@ -1,5 +1,5 @@
 list:
-  use: '@components/list/list.twig'
+  use: "@components/list/list.twig"
   label: List
   description: The list component
   fields:
@@ -25,7 +25,7 @@ list:
           id: item4
         - content: Cappuccino. Made with espresso and milk that has been frothed up with pressurized steam.
           id: item5
-  settings: 
+  settings:
     ordered:
       type: select
       label: Ordered
@@ -35,7 +35,7 @@ list:
         ordered: Ordered
         unordered: Unordered
         unstyled: Unstyled
-      preview: 'unstyled'
+      preview: "unstyled"
     alignment:
       type: select
       label: Alignment
@@ -43,6 +43,6 @@ list:
       options:
         default: Default
         horizontal: Horizontal
-      preview: 'default'
+      preview: "default"
       required: false
   visibility: storybook

@@ -1,4 +1,4 @@
-import Accordion from './accordion';
+import Accordion from "./accordion";
 
 Drupal.behaviors.accordion = {
   attach() {
@@ -6,7 +6,7 @@ Drupal.behaviors.accordion = {
       document.querySelectorAll(`[data-loadcomponent="Accordion"]`),
       (element) => {
         // eslint-disable-next-line no-console
-        console.log('loading Accordion component....');
+        console.log("loading Accordion component....");
         new Accordion(element);
       }
     );

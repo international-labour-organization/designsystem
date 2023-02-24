@@ -23,7 +23,7 @@ module.exports = {
       jsx: true,
     },
   },
-  plugins: ["jsx-a11y"],
+  plugins: ["jsx-a11y", "prettier"],
   extends: [
     "eslint:recommended",
     "plugin:jsx-a11y/recommended",
@@ -47,5 +47,6 @@ module.exports = {
     "jsx-a11y/no-noninteractive-element-interactions": "off",
     "react/prop-types": "off",
     "react/react-in-jsx-scope": "off",
+    "prettier/prettier": "error",
   },
 };

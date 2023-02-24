@@ -1,7 +1,9 @@
-import './index';
+import "./index";
 
-const patternDefinition = require('./dropdown.wingsuit.yml');
+export default {};
+const patternDefinition = require("./dropdown.wingsuit.yml");
 
+/* eslint-disable-next-line */
 export const wingsuit = {
   patternDefinition,
 };

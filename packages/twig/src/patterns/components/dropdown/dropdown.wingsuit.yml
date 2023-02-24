@@ -1,5 +1,5 @@
 dropdown:
-  use: '@components/dropdown/dropdown.twig'
+  use: "@components/dropdown/dropdown.twig"
   label: Dropdown
   description: The Dropdown displays a select element with options, and is most
     commonly used in forms.
@@ -14,7 +14,7 @@ dropdown:
       type: string
       label: error
       description: Does this have an error? If so, the error message
-      preview: ''
+      preview: ""
       required: false
     helper:
       type: string
@@ -62,7 +62,7 @@ dropdown:
       label: autocomplete
       description: Should this field autocomplete
       options:
-        true: 'true'
+        true: "true"
         false: false
       preview: false
       required: false
@@ -71,7 +71,7 @@ dropdown:
       label: disabled
       description: Is this field disabled?
       options:
-        true: 'true'
+        true: "true"
         false: false
       preview: false
       required: false

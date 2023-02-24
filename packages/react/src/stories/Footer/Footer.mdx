@@ -1,0 +1,17 @@
+import { Meta, Story, Canvas, ArgsTable, Unstyled } from "@storybook/blocks";
+import * as FooterStories from "./Footer.stories.tsx";
+import { Footer } from "../../components";
+
+<Meta title="Footer" of={FooterStories} />
+
+# Footer Example
+
+The footer informs users about the Organization that a website belongs to. It can include copyright details, links to Terms and Conditions and generic calls to action. It should be included at the bottom of each page.
+
+<Canvas>
+  <Story of={FooterStories.BasicFooter} />
+</Canvas>
+
+## Default Props
+
+<ArgsTable of={Footer} />

@@ -1,11 +1,11 @@
-import { Meta, Subtitle } from '@storybook/addon-docs/blocks';
-import { Typeset } from '@wingsuit-designsystem/storybook';
-const fontFamilies = require('../../../src/tokens/exports/_font-families.scss');
-const fontHeadingSizes = require('../../../src/tokens/exports/_font-sizes-heading.scss');
+import { Meta, Subtitle } from "@storybook/addon-docs/blocks";
+import { Typeset } from "@wingsuit-designsystem/storybook";
+const fontFamilies = require("../../../src/tokens/exports/_font-families.scss");
+const fontHeadingSizes = require("../../../src/tokens/exports/_font-sizes-heading.scss");
 
 <Meta
   title="Tokens/Typography"
-  parameters={{ viewMode: 'docs', previewTabs: { canvas: { hidden: true } } }}
+  parameters={{ viewMode: "docs", previewTabs: { canvas: { hidden: true } } }}
 />
 
 # Typography
@@ -21,7 +21,11 @@ const fontHeadingSizes = require('../../../src/tokens/exports/_font-sizes-headin
         <Subtitle>
           <b>{key} Font Family:</b> {fontFamilies[key]}
         </Subtitle>
-        <Typeset fontFamily={fontFamilies[key]} classNamePrefix="." fontSizes={fontHeadingSizes} />
+        <Typeset
+          fontFamily={fontFamilies[key]}
+          classNamePrefix="."
+          fontSizes={fontHeadingSizes}
+        />
       </div>
     );
   })}

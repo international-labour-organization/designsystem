@@ -1,4 +1,4 @@
-import Tag from './tag';
+import Tag from "./tag";
 
 Drupal.behaviors.tag = {
   attach() {
@@ -6,7 +6,7 @@ Drupal.behaviors.tag = {
       document.querySelectorAll(`[data-loadcomponent="Tag"]`),
       (element) => {
         // eslint-disable-next-line no-console
-        console.log('loading Tag component....');
+        console.log("loading Tag component....");
         new Tag(element);
       }
     );
