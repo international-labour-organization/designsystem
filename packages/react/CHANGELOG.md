@@ -1,5 +1,19 @@
 # @ilo-org/react
 
+## 0.2.0
+
+### Minor Changes
+
+- 3a19726f2: Add LocalNav and Footer components
+
+### Patch Changes
+
+- Updated dependencies [2f60e9d92]
+- Updated dependencies [c9413b943]
+  - @ilo-org/styles@0.1.18
+  - @ilo-org/brand-assets@0.1.0
+  - @ilo-org/utils@0.0.11
+
 ## 0.1.2
 
 ### Patch Changes

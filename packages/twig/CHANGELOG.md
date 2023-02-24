@@ -1,5 +1,17 @@
 # @ilo-org/twig
 
+## 0.2.13
+
+### Patch Changes
+
+- 7a09aa23c: Fix minor linting errors throughout
+- 7a09aa23c: Update twig storybook deps
+- Updated dependencies [2f60e9d92]
+- Updated dependencies [c9413b943]
+  - @ilo-org/styles@0.1.18
+  - @ilo-org/brand-assets@0.1.0
+  - @ilo-org/utils@0.0.11
+
 ## 0.2.12
 
 ### Patch Changes

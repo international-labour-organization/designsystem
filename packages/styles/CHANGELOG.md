@@ -1,5 +1,12 @@
 # @ilo-org/styles
 
+## 0.1.18
+
+### Patch Changes
+
+- 2f60e9d92: Correct local navigation styles
+- c9413b943: Fix small line showing through nav component diagonal at some viewports
+
 ## 0.1.17
 
 ### Patch Changes
