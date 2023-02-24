@@ -3,7 +3,7 @@ import useGlobalSettings from "../../hooks/useGlobalSettings";
 import { ContextMenu } from "../ContextMenu";
 import { LocalNavProps } from "./LocalNav.props";
 import { brand } from "@ilo-org/themes/tokens/brand/base.json";
-import classNames from "classnames";
+import classnames from "classnames";
 
 const LocalNav: FC<LocalNavProps> = ({
   background,
@@ -21,7 +21,7 @@ const LocalNav: FC<LocalNavProps> = ({
   const [toggleLanguageOpen, setLanguageToggleOpen] = useState(false);
 
   const baseClass = `${prefix}--header`;
-  const localNavClasses = classNames(baseClass, `${baseClass}--local`, {
+  const localNavClasses = classnames(baseClass, `${baseClass}--local`, {
     [`${prefix}--mobile--open`]: toggleMenuOpen,
     [`${prefix}--select--open`]: toggleLanguageOpen,
   });

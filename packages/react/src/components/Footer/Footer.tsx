@@ -1,6 +1,6 @@
 import { FC } from "react";
 import useGlobalSettings from "../../hooks/useGlobalSettings";
-import classNames from "classnames";
+import classnames from "classnames";
 import { FooterProps } from "./Footer.props";
 import { LinkList } from "../LinkList";
 import { Button } from "../Button";
@@ -21,9 +21,7 @@ const Footer: FC<FooterProps> = ({
   const { prefix } = useGlobalSettings();
 
   const baseClass = `${prefix}--footer`;
-  const footerClasses = classNames(className, {
-    [baseClass]: true,
-  });
+  const footerClasses = classnames(className, baseClass);
 
   return (
     <footer className={footerClasses}>

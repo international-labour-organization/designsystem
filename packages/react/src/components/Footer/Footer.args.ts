@@ -67,7 +67,7 @@ const basic: FooterProps = {
     label: "Subscribe",
     url: "https://www.ilo.org",
   },
-  legal: "© 1996-2022 International Labour Organization (ILO)",
+  legal: "© 1996-2023 International Labour Organization (ILO)",
   secondarylinks: [
     {
       label: "Link One",
