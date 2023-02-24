@@ -14,6 +14,7 @@ module.exports = {
       from: "../../node_modules/@ilo-org/brand-assets/dist/assets/",
       to: "/brand-assets",
     },
+    { from: "../../node_modules/@ilo-org/fonts/font-css", to: "/fonts" },
   ],
   webpackFinal: (config) => {
     const final = wingsuitCore.getAppPack(
