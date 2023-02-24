@@ -1,6 +1,6 @@
 import { LinkListThemes } from "../../types";
 
-interface LinkProps {
+export interface LinkProps {
   /**
    * Specify if this link should indent and have a triangle icon
    */
@@ -17,7 +17,7 @@ interface LinkProps {
   url?: Required<string>;
 }
 
-interface LinkGroupProps {
+export interface LinkGroupProps {
   /**
    * Specify an optional headline for this link group
    */
