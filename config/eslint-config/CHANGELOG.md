@@ -1,5 +1,11 @@
 # @ilo-org/eslint-config
 
+## 0.0.3
+
+### Patch Changes
+
+- 2f60e9d92: Make sure eslint treats broken prettier rules as errors
+
 ## 0.0.2
 
 ### Patch Changes
