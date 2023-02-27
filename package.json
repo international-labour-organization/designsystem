@@ -9,7 +9,7 @@
     "pnpm": "7.25.0"
   },
   "scripts": {
-    "build:libs": "turbo run build:lib",
+    "build:libs": "turbo run build:lib -v",
     "check:deps": "manypkg check",
     "ci:version": "pnpm changeset version && pnpm install --lockfile-only",
     "ci:publish": "pnpm changeset publish",
@@ -58,7 +58,7 @@
     "husky": "^7.0.4",
     "lint-staged": "^13.1.0",
     "prettier": "^2.6.0",
-    "turbo": "^1.2.9",
+    "turbo": "1.7.4",
     "typescript": "4.9.3"
   }
 }
