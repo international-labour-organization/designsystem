@@ -22,7 +22,7 @@
   "scripts": {
     "storybook": "node importprefix.js; node importsvgs.js; start-storybook --config-dir apps/storybook",
     "build:docs": "node importprefix.js; node importsvgs.js; build-storybook --config-dir apps/storybook -o ./storybook-static",
-    "build:lib": "pnpm output",
+    "build:lib": "node importprefix.js; node importsvgs.js; pnpm output",
     "build": "pnpm build:lib",
     "lint:js": "eslint . --ext .js,.jsx",
     "lint:css": "stylelint '**/*.css'",
