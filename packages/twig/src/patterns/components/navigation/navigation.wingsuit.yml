@@ -9,7 +9,7 @@ navigation:
       description: Logo for the nav
       required: true
       preview:
-        image: "https://placekitten.com/g/155/56"
+        image: "/brand-assets/logo_en_horizontal_white.svg"
         alt: Logo
     mobilelogo:
       type: object
@@ -17,7 +17,7 @@ navigation:
       description: Logo for the nav
       required: true
       preview:
-        image: "https://placekitten.com/111/40"
+        image: "/brand-assets/logo_en_horizontal_white.svg"
         alt: Logo
     siteurl:
       type: string
@@ -50,15 +50,15 @@ navigation:
         navlabel: Primary Navigation
         mobilecloselabel: Close
         items:
-          - link: "https://www.google.com/search?q=topics"
+          - link: "https://www.ilo.org"
             label: Topics
-          - link: "https://www.google.com/search?q=countries"
+          - link: "https://www.ilo.org"
             label: Countries
-          - link: "https://www.google.com/search?q=standards"
+          - link: "https://www.ilo.org"
             label: Standards
-          - link: "https://www.google.com/search?q=statistics"
+          - link: "https://www.ilo.org"
             label: Statistics
-          - link: "https://www.google.com/search?q=about"
+          - link: "https://www.ilo.org"
             label: About
     subnav:
       type: object
@@ -70,19 +70,19 @@ navigation:
         mobilecloselabel: Close
         mobilebacklabel: Menu Home
         items:
-          - link: "https://www.google.com/search?q=News"
+          - link: "https://www.ilo.org"
             label: News
-          - link: "https://www.google.com/search?q=meeting+events"
+          - link: "https://www.ilo.org"
             label: "Meeting & Events"
-          - link: "https://www.google.com/search?q=publications"
+          - link: "https://www.ilo.org"
             label: Publications
-          - link: "https://www.google.com/search?q=projects"
+          - link: "https://www.ilo.org"
             label: Projects
-          - link: "https://www.google.com/search?q=partners"
+          - link: "https://www.ilo.org"
             label: Partners
-          - link: "https://www.google.com/search?q=Industries+Sectors"
+          - link: "https://www.ilo.org"
             label: "Industries & Sectors"
-          - link: "https://www.google.com/search?q=About+the+ilo"
+          - link: "https://www.ilo.org"
             label: "About the ILO"
     searchlabel:
       type: string
@@ -113,14 +113,14 @@ navigation:
       preview:
         links:
           - label: Link One
-            url: "http://www.google.com"
+            url: "https://www.ilo.org"
           - label: Link Two
-            url: "http://www.google.com"
+            url: "https://www.ilo.org"
           - endsection: "true"
             label: Link Three Ends A Section
-            url: "http://www.google.com"
+            url: "https://www.ilo.org"
           - label: Link Four
-            url: "http://www.google.com"
+            url: "https://www.ilo.org"
           - label: Link Five Is Slightly Longer
-            url: "http://www.google.com"
+            url: "https://www.ilo.org"
   visibility: storybook

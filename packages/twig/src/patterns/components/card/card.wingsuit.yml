@@ -1,7 +1,7 @@
 card:
   use: "@components/card/card.twig"
   label: Card
-  description: The Card presents an image banner.
+  description: Cards display prominent content of a page layout, with information and actions about a single subject, they typically contain a link to a new page or downloadable content.
   fields:
     title:
       type: string
@@ -12,7 +12,7 @@ card:
       type: string
       label: Intro
       description: Intro copy text
-      preview: "Brief intro text - ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+      preview: "A toxic combination of mutually-reinforcing crises – inflation, debt, food and fuel price rises, geopolitical tensions and conflict, climate change – are threatening to increase poverty, inequality and discrimination worldwide."
     eyebrow:
       type: string
       label: Eyebrow
@@ -44,7 +44,7 @@ card:
       type: string
       label: Link
       description: Link for clickable cards. Do no use on `Multilink`, `Factlist`, `Data`, or `Stat` cards.
-      preview: "https://www.google.com/"
+      preview: "https://www.ilo.org/"
     cta:
       type: object
       label: CTA
@@ -128,21 +128,21 @@ card:
       label: Graphic Text Card
       description: The graphic Card
       fields:
-        title: "Brief title text - ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod"
-        eyebrow: Eyebrow title
+        title: "Why we need greater social justice"
+        eyebrow: Podcast
         date:
           human: 20 September 2022
           unix: 1670389200
         image: ""
-        link: "https://www.google.com/search?q=graphic"
+        link: "https:/www.ilo.org"
         profile:
-          avatar: "https://placekitten.com/128/128"
-          description: "Firstname Lastname is the Senior Media Strategist. He has been with ILO for eight years."
+          avatar: "/images/ilo-dg.jpg"
+          description: "Gilbert Houngbo is the Director-General of the International Labour Organization"
           link:
             - label: "Optional Link"
-              url: "https://www.google.com"
-          name: "Firstname Lastname"
-          role: "Senior Media Strategist"
+              url: "https://www.ilo.org"
+          name: "Gilbert Houngbo"
+          role: "ILO Director-General"
     stat:
       label: Stat Card
       description: The stat Card
@@ -150,116 +150,124 @@ card:
         theme: light
         cornercut: cornercut
       fields:
-        title: "Date headline"
-        intro: "Data title - Lorem ipsum dolor sit amet consectetur"
+        eyebrow: "Report"
+        title: "Global employment growth down by half in 2023"
+        intro: The current global economic slowdown is likely to force more workers to accept lower quality, poorly paid jobs which lack job security and social protection, so accentuating inequalities exacerbated by the COVID-19 crisis.
         source:
-          label: "Source: lorem ipsum dolor sit amet, 2020"
-          url: "https://www.google.com/search?q=stat"
+          label: "World Employment and Social Outlook: Trends 2023"
+          url: "https://www.ilo.org/global/research/global-reports/weso/WCMS_865332/lang--en/index.htm"
     multilink:
       label: Multilink Card
       description: The multilink Card
       settings:
         theme: light
       fields:
-        title: "Multi-link card - right aligned image, wide option"
-        image: "https://placekitten.com/475/267"
-        intro: "Lorem ipsum dolor sit amet consectetur adipiscing elit. Lobortis egestas ipsum dolor sit amet consectetur adipiscing elit. Lobortis egestas ipsum dolor sit amet consectetur adipiscing elit. Lobortis egestas lacus."
+        eyebrow: High-level meeting
+        title: "ILO welcomes G7 call to make a just transition to a green economy happen"
+        image: "/images/hero.jpg"
+        intro: "At the end of their meeting the G7 Labour Ministers highlighted the urgent need to greater focus on rights and occupational safety and health."
         linklist:
           linkgroup:
             - links:
-                - label: Link One
-                  url: "http://www.google.com"
-                - label: Link Two
-                  url: "http://www.google.com"
-                - label: Link Three
-                  url: "http://www.google.com"
+                - label: Read the press release
+                  url: "https://www.ilo.org"
+                - label: See the statement
+                  url: "https://www.ilo.org"
+                - label: Remarks to G7 Openening Session
+                  url: "https://www.ilo.org"
     graphicpromo:
       label: Graphic Promo Card
       description: The graphic promo Card
       fields:
-        title: "Brief title text - ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod"
-        intro: "We advance social justice and promote decent work by setting labour standards, developing policies and devising programmes."
-        link: "https://www.google.com/search?q=graphic-promo"
+        eyebrow: High-level meetings
+        title: "ILO welcomes G7 call to make a just transition to a green economy happen"
+        intro: "At the end of their meeting the G7 Labour Ministers highlighted the urgent need to greater focus on rights and occupational safety and health."
+        link: "https://www.ilo.org"
         cta:
-          label: "Discover our unique mission"
-          url: "https://www.google.com/search?q=button"
+          label: "Read the press release"
+          url: "https://www.ilo.org"
     feature:
       label: Feature Card
       description: The Feature Card
       fields:
-        title: "Vertical info card descriptive headline text"
-        eyebrow: Eyebrow title
+        title: "ILO welcomes G7 call to make a just transition to a green economy happen"
+        eyebrow: High-level meeting
         date:
-          human: Date
+          human: 17 March 2022
           unix: 1670389200
-        link: "https://www.google.com/search?q=graphic"
-        image: "https://placekitten.com/412/232"
+        link: "https://www.ilo.org/search?q=graphic"
+        image: "/images/hero.jpg"
         linklist:
           headline: ""
           linkgroup:
             - headline: ""
               links:
-                - label: Link One
-                  url: "http://www.google.com"
+                - label: Read the press release
+                  url: "https://www.ilo.org"
     detail:
       label: Detail Card
       description: The Detail Card
       fields:
-        title: "Horizontal info card descriptive headline text"
-        intro: "This ILO flagship report details the effects of the COVID-19 crisis on the world of work. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eu auctor tusrpis, this is 200 characters."
-        eyebrow: Eyebrow title
+        title: "Technical meeting on digitalization in the construction sector"
+        intro: "The purpose of the meeting will be to discuss opportunities and challenges for the future of work in the construction industry as a vehicle to ensure a human-centred economic recovery."
+        eyebrow: Meeting
         date:
-          human: 00 month 0000
+          human: 17 March 2022
           unix: 1670389200
-        link: "https://www.google.com/search?q=detail"
-        image: "https://www.ilo.org/wcmsp5/groups/public/---dgreports/---dcomm/documents/image/wcms_856513.jpg"
+        link: "https://www.ilo.org"
+        image: "/images/medium.jpg"
         profile:
-        eventdetails: "8 - 9 February 2022, 8:30 - 12:00 CET  |  Egypt"
+        eventdetails: "8:30 - 12:00 CET | Geneva"
     factlist:
       label: Fact List Card
       description: The Fact List Card
       fields:
-        title: "Title of fast fact list"
+        eyebrow: Report
+        title: "Economic slowdown likely to force workers to accept lower quality jobs"
         image: ""
         list:
           settings:
             - ordered: unordered
             - alignment: default
           items:
-            - content: "Wipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor."
+            - content: "Global employment growth will be only 1.0 per cent in 2023, less than half the level in 2022."
               id: "list1"
-            - content: "Nut labore et dolore magna sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+            - content: "The labour market deterioration is mainly due to emerging geopolitical tensions and the Ukraine conflict."
               id: "list2"
+            - content: "The current slowdown means that many workers will have to accept lower quality jobs, often at very low pay."
+              id: "list3"
     data:
       label: Data Card
       description: The Data Card
       fields:
-        eyebrow: "Event details"
+        title: Technical meeting on digitalization in the construction sector
+        eyebrow: "Meeting"
+        intro: The purpose of the meeting will be to discuss opportunities and challenges for the future of work in the construction industry as a vehicle to ensure a human-centred economic recovery.
         dataset:
           content:
             items:
               - label: Date
-                copy: Publication date
+                copy: 17 March 2022
               - label: Event type
-                copy: Event location
+                copy: Technical meeting of experts
           files:
             headline: Files
             items:
-              - label: File/size MB 1
-                url: "https://www.google.com/search?q=file1"
-              - label: File/size MB 2
-                url: "https://www.google.com/search?q=file2"
-              - label: File/size MB 3
-                url: "https://www.google.com/search?q=file3"
+              - label: Meeting agenda
+                url: "https://www.ilo.org"
+              - label: Briefing notes
+                url: "https://www.ilo.org"
+              - label: Practical info
+                url: "https://www.ilo.org"
           links:
             headline: Languages
             items:
-              - label: Language link 1
-                url: "https://www.google.com/search?q=link"
-              - label: Language link 2
-                url: "https://www.google.com/search?q=hyperlink"
-              - label: Language link 3
-                url: "https://www.google.com/search?q=url"
+              - label: English
+                url: "https://www.ilo.org/search?q=link"
+              - label: Español
+                url: "https://www.ilo.org/search?q=hyperlink"
+              - label: Français
+                url: "https://www.ilo.org/search?q=url"
       settings:
         theme: light
   visibility: storybook
