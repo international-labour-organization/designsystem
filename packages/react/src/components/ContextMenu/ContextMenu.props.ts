@@ -1,4 +1,4 @@
-interface LinkProps {
+export interface LinkProps {
   /**
    * Specify whether this link marks the end of a section
    */
