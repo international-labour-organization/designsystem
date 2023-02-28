@@ -1,5 +1,11 @@
 # @ilo-org/styles
 
+## 0.1.19
+
+### Patch Changes
+
+- 1405b9cbf: Fix logo not appearing in Navigation
+
 ## 0.1.18
 
 ### Patch Changes
