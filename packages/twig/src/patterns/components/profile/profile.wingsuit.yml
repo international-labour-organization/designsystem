@@ -8,28 +8,28 @@ profile:
       label: Avatar
       description: The avatar for the profile
       required: true
-      preview: "http://placekitten.com/128/128"
+      preview: "/images/ilo-dg.jpg"
     description:
       type: string
       label: Description
       description: An optional plain-text description (e.g. a short bio)
-      preview: "Firstname Lastname is the Senior Media Strategist. He has been with ILO for eight years."
+      preview: "Gilbert F. Houngbo was elected as the ILO’s 11th Director-General by the organization’s Governing Body in March 2022."
     link:
       type: object
       label: Link
       description: An optional url and label for a link associated with the profile
       preview:
-        label: "Optional Link"
-        url: "http://www.google.com"
+        label: "Learn more"
+        url: "https://www.ilo.org"
     name:
       type: string
       label: Name
       description: The name of the person associated with the profile
-      preview: "Firstname Lastname"
+      preview: "Gilbert F. Houngbo"
       required: true
     role:
       type: string
       label: Role
       description: An optional plain-text field indicating the person's role in the organization
-      preview: "Senior Media Strategist"
+      preview: "ILO Director-General"
   visibility: storybook

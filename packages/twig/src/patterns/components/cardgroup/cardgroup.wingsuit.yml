@@ -14,7 +14,7 @@ cardgroup:
       description: Button to display after the cards in the group
       preview:
         label: "Discover our unique mission"
-        url: "https://www.google.com/search?q=button"
+        url: "https://www.ilo.org"
   variants:
     multilink:
       label: Multilink
@@ -22,7 +22,7 @@ cardgroup:
       fields:
         group:
           - title: "Multi-link card - first"
-            image: "https://placekitten.com/475/267"
+            image: "/images/hero.jpg"
             intro: "Lorem ipsum dolor sit amet consectetur adipiscing elit. Lobortis egestas ipsum dolor sit amet consectetur adipiscing elit. Lobortis egestas ipsum dolor sit amet consectetur adipiscing elit. Lobortis egestas lacus."
             eyebrow: ""
             date: ""
@@ -44,7 +44,7 @@ cardgroup:
                     - label: Link Three
                       url: "http://www.google.com"
           - title: "Multi-link card second - right aligned image, wide option"
-            image: "https://placekitten.com/475/267"
+            image: "/images/medium.jpg"
             intro: "Lorem ipsum dolor sit amet consectetur adipiscing elit. Lobortis egestas ipsum dolor sit amet consectetur adipiscing elit. Lobortis egestas ipsum dolor sit amet consectetur adipiscing elit. Lobortis egestas lacus."
             eyebrow: ""
             date: ""
@@ -65,7 +65,7 @@ cardgroup:
                     - label: Link Three
                       url: "http://www.google.com"
           - title: "Multi-link card - right aligned image, wide option"
-            image: "https://placekitten.com/475/267"
+            image: "/images/ilo-headquarters.jpg"
             intro: "Lorem ipsum dolor sit amet consectetur adipiscing elit. Lobortis egestas ipsum dolor sit amet consectetur adipiscing elit. Lobortis egestas ipsum dolor sit amet consectetur adipiscing elit. Lobortis egestas lacus."
             eyebrow: ""
             date: ""
@@ -93,13 +93,13 @@ cardgroup:
       fields:
         group:
           - title: "Vertical info card descriptive headline text"
-            image: "https://placekitten.com/475/267"
+            image: "/images/small.jpg"
             intro: ""
             eyebrow: "Eyebrow title"
             date:
               human: "Date"
               unix: 1670389200
-            link: "https://www.google.com/search?q=feature"
+            link: "https://www.ilo.org?q=feature"
             profile: ""
             eventdetails: ""
             cta: ""
@@ -108,13 +108,13 @@ cardgroup:
             dataset: ""
             color: ""
           - title: "Vertical info card descriptive headline text"
-            image: "https://placekitten.com/475/267"
+            image: "/images/hero.jpg"
             intro: ""
             eyebrow: "Eyebrow title"
             date:
               human: "Date"
               unix: 1670389200
-            link: "https://www.google.com/search?q=feature"
+            link: "https://www.ilo.org?q=feature"
             profile: ""
             eventdetails: ""
             cta: ""
@@ -123,13 +123,13 @@ cardgroup:
             dataset: ""
             color: ""
           - title: "Vertical info card descriptive headline text Vertical info card descriptive headline text Vertical info card descriptive headline text"
-            image: "https://placekitten.com/475/267"
+            image: "images/ilo-headquarters.jpg"
             intro: ""
             eyebrow: "Eyebrow title"
             date:
               human: "Date"
               unix: 1670389200
-            link: "https://www.google.com/search?q=feature"
+            link: "https://www.ilo.org?q=feature"
             profile: ""
             eventdetails: ""
             cta: ""
@@ -138,13 +138,13 @@ cardgroup:
             dataset: ""
             color: ""
           - title: "Vertical info card descriptive headline text"
-            image: "https://placekitten.com/475/267"
+            image: "/images/youtube-video-poster.avif"
             intro: ""
             eyebrow: "Eyebrow title"
             date:
               human: "Date"
               unix: 1670389200
-            link: "https://www.google.com/search?q=feature"
+            link: "https://www.ilo.org?q=feature"
             profile: ""
             eventdetails: ""
             cta: ""
@@ -160,13 +160,13 @@ cardgroup:
       fields:
         group:
           - title: "Horizontal info card descriptive headline text"
-            image: "https://placekitten.com/196/296"
+            image: "/images/ilo-headquarters.jpg"
             intro: "This ILO flagship report details the effects of the COVID-19 crisis on the world of work. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eu auctor tusrpis, this is 200 characters."
             eyebrow: "Eyebrow title"
             date:
               human: "00 month 0000"
               unix: 1670389200
-            link: "https://www.google.com/search?q=detail"
+            link: "https://www.ilo.org?q=detail"
             profile: ""
             eventdetails: "8 - 9 February 2022, 8:30 - 12:00 CET  |  Egypt"
             cta: ""
@@ -176,13 +176,13 @@ cardgroup:
             dataset: ""
             color: ""
           - title: "Horizontal info card descriptive headline text"
-            image: "https://www.ilo.org/wcmsp5/groups/public/---dgreports/---dcomm/documents/image/wcms_856513.jpg"
+            image: "/images/small.jpg"
             intro: "This ILO flagship report details the effects of the COVID-19 crisis on the world of work. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eu auctor tusrpis, this is 200 characters."
             eyebrow: "Eyebrow title"
             date:
               human: "00 month 0000"
               unix: 1670389200
-            link: "https://www.google.com/search?q=detail"
+            link: "https://www.ilo.org?q=detail"
             profile: ""
             eventdetails: "8 - 9 February 2022, 8:30 - 12:00 CET  |  Egypt"
             cta: ""
@@ -204,12 +204,12 @@ cardgroup:
             intro: "We advance social justice and promote decent work by setting labour standards, developing policies and devising programmes."
             eyebrow: ""
             date: ""
-            link: "https://www.google.com/search?q=graphic-promo"
+            link: "https://www.ilo.org"
             profile: ""
             eventdetails: ""
             cta:
               label: "Discover our unique mission"
-              url: "https://www.google.com/search?q=button"
+              url: "https://www.ilo.org?q=button"
             source: ""
             linklist: ""
             list: ""
@@ -233,7 +233,7 @@ cardgroup:
             list: ""
             source:
               label: "Source: lorem ipsum dolor sit amet, 2020"
-              url: "https://www.google.com/search?q=stat"
+              url: "https://www.ilo.org?q=stat"
             color: blue
           - title: "Date headline"
             image: ""
@@ -247,7 +247,7 @@ cardgroup:
             list: ""
             source:
               label: "Source: lorem ipsum dolor sit amet, 2020"
-              url: "https://www.google.com/search?q=stat"
+              url: "https://www.ilo.org?q=stat"
             color: green
           - title: "Date headline"
             image: ""
@@ -261,7 +261,7 @@ cardgroup:
             list: ""
             source:
               label: "Source: lorem ipsum dolor sit amet, 2020"
-              url: "https://www.google.com/search?q=stat"
+              url: "https://www.ilo.org?q=stat"
             color: yellow
           - title: "Date headline"
             image: ""
@@ -275,7 +275,7 @@ cardgroup:
             list: ""
             source:
               label: "Source: lorem ipsum dolor sit amet, 2020"
-              url: "https://www.google.com/search?q=stat"
+              url: "https://www.ilo.org?q=stat"
             color: turquoise
       settings:
         type: stat
@@ -292,7 +292,7 @@ cardgroup:
             date:
               human: "date"
               unix: 1670389200
-            link: "https://www.google.com/search?q=graphic"
+            link: "https://www.ilo.org?q=graphic"
             profile: ""
             eventdetails: ""
             cta: ""
@@ -334,7 +334,7 @@ cardgroup:
       fields:
         group:
           - title: ""
-            image: "https://placekitten.com/205/179"
+            image: "/images/small.jpg"
             intro: ""
             eyebrow: "Event details"
             date: ""
@@ -353,20 +353,20 @@ cardgroup:
                 headline: Files
                 items:
                   - label: File/size MB 1
-                    url: "https://www.google.com/search?q=file1"
+                    url: "https://www.ilo.org?q=file1"
                   - label: File/size MB 2
-                    url: "https://www.google.com/search?q=file2"
+                    url: "https://www.ilo.org?q=file2"
                   - label: File/size MB 3
-                    url: "https://www.google.com/search?q=file3"
+                    url: "https://www.ilo.org?q=file3"
               links:
                 headline: Languages
                 items:
                   - label: Language link 1
-                    url: "https://www.google.com/search?q=link"
+                    url: "https://www.ilo.org?q=link"
                   - label: Language link 2
-                    url: "https://www.google.com/search?q=hyperlink"
+                    url: "https://www.ilo.org?q=hyperlink"
                   - label: Language link 3
-                    url: "https://www.google.com/search?q=url"
+                    url: "https://www.ilo.org?q=url"
       settings:
         type: data
         theme: light
