@@ -28,9 +28,9 @@ hero:
         alt: Lorem ipsum
         url:
           - breakpoint: 0
-            src: "https://placekitten.com/1920/800"
+            src: "/images/hero.jpg"
           - breakpoint: 768
-            src: "https://placekitten.com/1920/800"
+            src: "/images/hero.jpg"
     herocard:
       label: Part of the hero that displays text on top of image (or if no image on a background color). There are light and dark versions and all text parts are optional.
       type: object
@@ -41,10 +41,10 @@ hero:
         intro: "Brief intro text - ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
         socials:
           - label: "Facebook"
-            url: "https://www.facebook.com/"
+            url: "https://www.facebook.com/ilo.org"
             icon: "facebook"
           - label: "Linkedin"
-            url: "https://www.linkedin.com/"
+            url: "https://www.linkedin.com/company/international-labour-organization-ilo"
             icon: "linkedin"
         title: "This is an left aligned article headline that is more than two lines long"
   variants:

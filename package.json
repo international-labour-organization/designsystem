@@ -9,7 +9,7 @@
     "pnpm": "7.25.0"
   },
   "scripts": {
-    "build:libs": "turbo run build:lib",
+    "build:libs": "turbo run build:lib -v",
     "check:deps": "manypkg check",
     "ci:version": "pnpm changeset version && pnpm install --lockfile-only",
     "ci:publish": "pnpm changeset publish",
@@ -22,11 +22,11 @@
     "format": "pnpm turbo run format:fix",
     "lint": "pnpm turbo run lint:fix",
     "prepare": "node ./prepare.js",
-    "react:install": "pnpm clean:deps && pnpm --filter react... install",
+    "react:install": "pnpm clean && pnpm --filter react... install",
     "react:build:docs": "pnpm turbo run build:docs --filter=@ilo-org/react...",
     "react:dev:docs": "pnpm run storybook --filter=@ilo-org/react",
     "test:all": "pnpm turbo run test",
-    "twig:install": "pnpm clean:deps && pnpm --filter twig... install",
+    "twig:install": "pnpm clean && pnpm --filter twig... install",
     "twig:build:docs": "pnpm turbo run build:docs --filter=@ilo-org/twig...",
     "twig:dev:docs": "pnpm run storybook --filter=@ilo-org/twig"
   },
@@ -58,7 +58,7 @@
     "husky": "^7.0.4",
     "lint-staged": "^13.1.0",
     "prettier": "^2.6.0",
-    "turbo": "^1.2.9",
+    "turbo": "1.7.4",
     "typescript": "4.9.3"
   }
 }

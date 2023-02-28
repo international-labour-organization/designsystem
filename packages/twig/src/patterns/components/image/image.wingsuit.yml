@@ -13,12 +13,12 @@ image:
       type: string
       label: Caption
       description: string
-      preview: "my image caption"
+      preview: "Women construction workers in Nepal build roads and bridges as part of a National Rural Transport Programme co-sponsored by the ILO."
     credit:
       type: string
       label: Credit
       description: string
-      preview: "Photo: copyright 2022 Person S. Name"
+      preview: "© Marcel Crozet/ILO"
       required: true
     url:
       type: object
@@ -27,13 +27,13 @@ image:
       required: true
       preview:
         - breakpoint: 0
-          src: "https://place-hold.it/400x300?text=SmallBreakpointImage"
+          src: "/images/small.jpg"
         - breakpoint: 800
-          src: "https://place-hold.it/800x600?text=MediumBreakpointImage"
+          src: "/images/medium.jpg"
         - breakpoint: 1200
-          src: "https://place-hold.it/1200x900?text=LargeBreakpointImage"
+          src: "/images/large.jpg"
         - breakpoint: 1440
-          src: "https://place-hold.it/1600x1200?text=LargestBreakpointImage"
+          src: "/images/large.jpg"
   settings:
     ishero:
       type: select
