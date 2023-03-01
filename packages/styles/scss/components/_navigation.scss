@@ -87,6 +87,7 @@
   &--logo {
     display: block;
     max-width: 150px;
+    width: 100%;
 
     @include breakpoint("large") {
       max-width: 200px;
