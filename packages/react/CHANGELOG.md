@@ -1,5 +1,15 @@
 # @ilo-org/react
 
+## 0.3.0
+
+### Minor Changes
+
+- df509e960: react: added global Navigation component
+
+### Patch Changes
+
+- d55e975ca: Add homepage to package.json
+
 ## 0.2.1
 
 ### Patch Changes
