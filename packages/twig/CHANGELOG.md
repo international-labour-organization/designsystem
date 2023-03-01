@@ -1,5 +1,11 @@
 # @ilo-org/twig
 
+## 0.2.15
+
+### Patch Changes
+
+- d55e975ca: Add homepage to package.json
+
 ## 0.2.14
 
 ### Patch Changes
