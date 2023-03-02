@@ -1,95 +1,63 @@
-# ILO Design System
+<p align="center">
+  <img src="https://raw.githubusercontent.com/international-labour-organization/designsystem/develop/packages/brand-assets/src/assets/logo_en_horizontal_white.svg#gh-dark-mode-only" width="200"  alt="ILO Logo" />
+  <img src="https://raw.githubusercontent.com/international-labour-organization/designsystem/develop/packages/brand-assets/src/assets/logo_en_horizontal_blue.svg#gh-light-mode-only" width="200"  alt="ILO Logo" />
+</p>
 
-This monorepo contains packages comprising the Design System of the [International Labour Organization](https://www.ilo.org). Our goal is to make it easy for developers and designers to build accessible websites and web applications that implement the [ILO's brand identity](https://brand.ilo.org/hub/2).
+<h1 align="center">ILO Design System</h1>
 
-The components in this Design System are completely customizable so that they can be easily integrated into other design systems or website themes.
+<p align="center">Tools and components for building accessible websites using Twig or React</p>
 
-## Status
+<p align="center">
+  <a href="https://brand.ilo.org/designsystem"><button>🚀 Website</button></a>
+  <a href="https://react.ui.ilo.org"><button>⚛️ React Docs</button></a>
+  <a href="https://twig.ui.ilo.org"><button>🌿 Twig Docs</button></a>
+</p>
 
-| Branch    | Current Status                                                                                                                         |
-| --------- | -------------------------------------------------------------------------------------------------------------------------------------- |
-| `main`    | ![Current release](https://github.com/international-labour-organization/designsystem/actions/workflows/release.yml/badge.svg)          |
-| `develop` | ![Next release](https://github.com/international-labour-organization/designsystem/actions/workflows/test.yml/badge.svg?branch=develop) |
+## Introduction
 
-## Flavors
+This repo houses the source code of the ILO's Design System. It comes in two flavors:
 
-ILO Design System is currently available in two different flavors.
+- **[Twig](https://twig.symfony.com/)** is a template engine used by PHP apps like WordPress and Drupal.
+- **[React](https://reactjs.org)** is a JavaScript library for building user interfaces.
 
-### [⚛️ React](./packages/react/README.md)
-
-[React Storybook](https://react.ui.ilo.org)
-
-Components for use in applications implemented in [React](https://reactjs.org/), a JavaScript library for building User Interfaces.
-
-### [🌱 Twig](./packages/twig/README.md)
-
-[Twig Storybook](https://twig.ui.ilo.org)
-
-Components for use in applications that render pages with [Twig](https://twig.symfony.com/), a template engine for PHP.
-
-## Design Styleguide
-
-### [Frontify](https://brand.ilo.org/document/131#/accordion-1)
+Consult our documentation websites for information on how to get started with either one.
 
 ## Packages
 
-- [themes](./packages/themes) -- ([README](./packages/themes/README.md))
-- [fonts](./packages/fonts) -- ([README](./packages/fonts/README.md))
-- [styles](./packages/styles) -- ([README](./packages/styles/README.md))
-- [brand-assets](./packages/brand-assets) -- ([README](./packages/brand-assets/README.md))
-- [icons](./packages/icons) -- ([README](./packages/icons/README.md))
-- [react icons](./packages/icons-react) -- ([README](./packages/icons-react/README.md))
-- [react](./packages/react) -- ([README](./packages/react/README.md))
-- [twig](./packages/twig) -- ([README](./packages/twig/README.md))
+This is a monorepo made of multiple packages which are published as node modules on `npm`.
 
-### Themes
+| Package                                                                | Description                              | Current version                                                        |
+| ---------------------------------------------------------------------- | ---------------------------------------- | ---------------------------------------------------------------------- |
+| [@ilo-org/brand-assets](./packages/brand-assets/README.md)             | Logos and image files                    | <img src="https://img.shields.io/npm/v/@ilo-org/brand-assets" />       |
+| [@ilo-org/fonts](./packages/fonts/README.md)                           | Official fonts                           | <img src="https://img.shields.io/npm/v/@ilo-org/fonts" />              |
+| [@ilo-org/icon-build-helpers](./packages/icon-build-helpers/README.md) | Module used internally to generate icons | <img src="https://img.shields.io/npm/v/@ilo-org/icon-build-helpers" /> |
+| [@ilo-org/icons](./packages/icons/README.md)                           | Icon files                               | <img src="https://img.shields.io/npm/v/@ilo-org/icons" />              |
+| [@ilo-org/icons-react](./packages/icons-react/README.md)               | Icon components                          | <img src="https://img.shields.io/npm/v/@ilo-org/icons-react" />        |
+| [@ilo-org/react](./packages/react/README.md)                           | React component library                  | <img src="https://img.shields.io/npm/v/@ilo-org/react" />              |
+| [@ilo-org/styles](./packages/styles/README.md)                         | Stylesheets for components               | <img src="https://img.shields.io/npm/v/@ilo-org/styles" />             |
+| [@ilo-org/themes](./packages/themes/README.md)                         | Style tokens for stylesheets             | <img src="https://img.shields.io/npm/v/@ilo-org/themes" />             |
+| [@ilo-org/twig](./packages/twig/README.md)                             | Twig component library                   | <img src="https://img.shields.io/npm/v/@ilo-org/twig" />               |
+| [@ilo-org/utils](./packages/utils/README.md)                           | Shared utilities                         | <img src="https://img.shields.io/npm/v/@ilo-org/utils" />              |
+|                                                                        |
 
-Implements [Style Dictionary](https://amzn.github.io/style-dictionary) to output scss files with constant tokens equalling values such as colors, spacing values, etc.
+## Code quality
 
-### Fonts
+JavasScript/Typescript projects undertaken for the ILO should use these configurations to be consist with ILO code standards.
 
-Provides ILO brand fonts as well as CSS import files that add font faces to font-families.
+| Package                                                        | Description                              | Current version                                                       |
+| -------------------------------------------------------------- | ---------------------------------------- | --------------------------------------------------------------------- |
+| [@ilo-org/eslint-config](./config/eslint-config/README.md)     | Config for linting with eslint           | <img src="https://img.shields.io/npm/v/@ilo-org/eslint-config" />     |
+| [@ilo-org/eslint-config](./config/prettier-config/README.md)   | Config for formatting with prettier      | <img src="https://img.shields.io/npm/v/@ilo-org/prettier-config" />   |
+| [@ilo-org/eslint-config](./config/typescript-config/README.md) | config for type checking with TypeScript | <img src="https://img.shields.io/npm/v/@ilo-org/typescript-config" /> |
 
-### Styles
+## Issues
 
-SCSS styling for each component. Consumes tokens output by the themes package, and icon tokens output by the icons package.
-
-### Brand Assets
-
-Provides brand-specific assets such as logos and favicons.
-
-### Icons
-
-Processes SVGs and outputs them as optimized svgs and also as a SASS map of CSS background images with the icons as bse64-encoded data-urls, for use in SCSS.
-
-### React Icons
-
-Works in conjunction with the icons package - receives the same icons used in that package and outputs a set of React components that output an SVG HTML element.
-
-### React
-
-The ILO component library, as React components. Displays components in Storybook.
-
-### Twig
-
-The ILO component library, as [Twig](https://twig.symfony.com/) partials. Displays components in [Wingsuit](https://wingsuit-designsystem.github.io/components/wingsuit/), a port of Storybook modified to display Twigs.
+Feel free to create an issue in this repository for all bugs, questions and feature requests.
 
 ## Contributing
 
-[See contribution notes.](./contributing.md)
+ILO Design System is an open-source project and we welcome your contributions! Before submitting a pull request, please take a moment to review our [Contribution Guidelines](./contributing.md).
 
-## Individual Package Scripts
+## License
 
-Each package contains its own package.json with relevant scripts and commands to run, compile, build, etc its code. For example, the React package contains commands to build and run React locally, while the styles package contains commands to compile SASS into CSS.
-The monorepo's package.json contains aliases to the most important and useful of these as well, meaning one can run commands to build one package while the current working directory is another package. These can be found in the monorepo's package.json.
-In general, the command convention is
-
-```
-pnpm run build:package-name
-```
-
-where `package-name` is the name of the package in question (e.g. `react`, `styles`). This will run the top-level build command for that package. There are similar commands for `lint`, `format` and `test` (though bear in mind not every pacakge needs every command, for example, icons does not need to be linted, and fonts does not need to be tested.)
-
-## Theme vs. Styles
-
-The `themes` pacakge uses Amazon's [Style Dictionary](https://amzn.github.io/style-dictionary) utility to organize style tokens as JSON, outputting them as constants and maps in a SASS file which the `styles` package imports. Colors, spacing, border thickness and similar properties derive their values from what is set in the theme. See the themes pacakge README for more info.
+Licensed under the [Apache 2.0](/LICENSE).

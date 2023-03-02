@@ -85,7 +85,7 @@ Use [nvm](https://github.com/nvm-sh/nvm) to make sure you have the correct versi
 nvm use
 ```
 
-Install [pnpm](https://pnpm.io/). Check the [package.json]([../package.json](https://github.com/international-labour-organization/designsystem/blob/1de14fe3a6c3edb8991720b189a870f2f132fc73/package.json#L9)) to get the correct version. Example:
+Install [pnpm](https://pnpm.io/). Check the [package.json](<[../package.json](https://github.com/international-labour-organization/designsystem/blob/1de14fe3a6c3edb8991720b189a870f2f132fc73/package.json#L9)>) to get the correct version. Example:
 
 ```bash
 npm -i -g pnpm@7.25.0
@@ -95,7 +95,7 @@ npm -i -g pnpm@7.25.0
 
 The `react` and `twig` Storybook projects use different versions of Webpack that don't play well together. That means you'll have to install the dependencies for each of them separately depending on which package you're working on.
 
-**Note:** This should be resolved in the future once [Wingsuit@2.0.0](https://github.com/wingsuit-designsystem/wingsuit) is released, which will use Webpack@5.0.0. 
+**Note:** This should be resolved in the future once [Wingsuit@2.0.0](https://github.com/wingsuit-designsystem/wingsuit) is released, which will use Webpack@5.0.0.
 
 The below commands will clean out all project installation and build files (`node_modules`, `pnpm-lock.json`, `dist/`, etc.) and install all project dependencies for either `react` or `twig`. That includes dependencies for all of the other packages in the project that the `react` and `twig` packages depend on. These are the only install commands that you need.
 
@@ -121,7 +121,14 @@ Start React storybook in dev mode
 pnpm --filter react storybook
 ```
 
+Build React library and dependent packages
+
+```bash
+pnpm react:build:lib
+```
+
 Build Twig Storybook and dependent packages
+
 ```bash
 pnpm twig:build:docs
 ```
@@ -130,6 +137,12 @@ Start Twig storybook in dev mode
 
 ```bash
 pnpm --filter twig storybook
+```
+
+Build Twig library and dependent packages
+
+```bash
+pnpm twig:build:lib
 ```
 
 ### Other commands
@@ -141,6 +154,7 @@ pnpm check:types
 ```
 
 Run tests for all packages in the project
+
 ```bash
 pnpm test:all
 ```
