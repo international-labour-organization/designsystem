@@ -1,12 +1,12 @@
-<a href="https://brand.ilo.org/designsystem">
-  <img src="./packages/brand-assets/src/assets/logo_en_dds_horizontal_white.svg#gh-dark-mode-only" width="400"  alt="ILO Digital Design System" />
-  <img src="./packages/brand-assets/src/assets/logo_en_dds_horizontal_blue.svg#gh-light-mode-only" width="400"  alt="ILO Digital Design System" />
-</a>
-
+<img src="./packages/brand-assets/src/assets/logo_en_dds_horizontal_white.svg#gh-dark-mode-only" width="400"  alt="ILO Digital Design System" />
+<img src="./packages/brand-assets/src/assets/logo_en_dds_horizontal_blue.svg#gh-light-mode-only" width="400"  alt="ILO Digital Design System" />
+ 
 <p>
-  <a href="https://brand.ilo.org/designsystem"><button>🚀 Go to website</button></a>
-  <a href="https://react.ui.ilo.org"><button>⚛️ React components</button></a>
-  <a href="https://twig.ui.ilo.org"><button>🌿 Twig components</button></a>
+  <a href="https://brand.ilo.org/designsystem">🚀 Go to website</a>
+  &ensp;|&ensp;
+  <a href="https://react.ui.ilo.org">⚛️ React docs</a>
+   &ensp;|&ensp;
+  <a href="https://twig.ui.ilo.org">🌿 Twig docs</a>
 </p>
 
 ## Introduction
