@@ -1,7 +1,9 @@
+<p align="center">
 <img src="./packages/brand-assets/src/assets/logo_en_dds_horizontal_white.svg#gh-dark-mode-only" width="400"  alt="ILO Digital Design System" />
 <img src="./packages/brand-assets/src/assets/logo_en_dds_horizontal_blue.svg#gh-light-mode-only" width="400"  alt="ILO Digital Design System" />
+</p>
  
-<p>
+<p align="center">
   <a href="https://brand.ilo.org/designsystem">🚀 Go to website</a>
   &ensp;|&ensp;
   <a href="https://react.ui.ilo.org">⚛️ React docs</a>
