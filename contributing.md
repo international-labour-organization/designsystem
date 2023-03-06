@@ -145,7 +145,19 @@ Build Twig library and dependent packages
 pnpm twig:build:lib
 ```
 
-### Other commands
+### Testing, linting, formatting and type checking
+
+Format all code in the repository
+
+```bash
+pnpm format
+```
+
+Lint all code in the repository
+
+```bash
+pnpm lint
+```
 
 Check types for all packages in the project
 
@@ -159,8 +171,36 @@ Run tests for all packages in the project
 pnpm test:all
 ```
 
-Each package has its own build and test commands which you can run like this:
+You can also perform either of the above in a specific package like this:
 
 ```bash
-pnpm --filter styles build
+pnpm --filter react format
+```
+
+### Clean dependencies and build artefacts
+
+Removes all dependencies and build artefacts
+
+```bash
+pnpm clean
+```
+
+Removes only dependency files (node_modules, lock files, etc.)
+
+```bash
+pnpm clean:deps
+```
+
+Removes only build artefacts
+
+```bash
+pnpm clean:build
+```
+
+### Other commands
+
+Checks to see if multiple packages are using different version of the same dependencies
+
+```bash
+pnpm check:deps
 ```

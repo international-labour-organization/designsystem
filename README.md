@@ -1,30 +1,29 @@
-<p align="center">
-  <img src="https://raw.githubusercontent.com/international-labour-organization/designsystem/develop/packages/brand-assets/src/assets/logo_en_horizontal_white.svg#gh-dark-mode-only" width="200"  alt="ILO Logo" />
-  <img src="https://raw.githubusercontent.com/international-labour-organization/designsystem/develop/packages/brand-assets/src/assets/logo_en_horizontal_blue.svg#gh-light-mode-only" width="200"  alt="ILO Logo" />
-</p>
+<a href="https://brand.ilo.org/designsystem">
+  <img src="./packages/brand-assets/src/assets/logo_en_dds_horizontal_white.svg#gh-dark-mode-only" width="400"  alt="ILO Digital Design System" />
+  <img src="./packages/brand-assets/src/assets/logo_en_dds_horizontal_blue.svg#gh-light-mode-only" width="400"  alt="ILO Digital Design System" />
+</a>
 
-<h1 align="center">ILO Design System</h1>
-
-<p align="center">Tools and components for building accessible websites using Twig or React</p>
-
-<p align="center">
-  <a href="https://brand.ilo.org/designsystem"><button>🚀 Website</button></a>
-  <a href="https://react.ui.ilo.org"><button>⚛️ React Docs</button></a>
-  <a href="https://twig.ui.ilo.org"><button>🌿 Twig Docs</button></a>
+<p>
+  <a href="https://brand.ilo.org/designsystem"><button>🚀 Go to website</button></a>
+  <a href="https://react.ui.ilo.org"><button>⚛️ React components</button></a>
+  <a href="https://twig.ui.ilo.org"><button>🌿 Twig components</button></a>
 </p>
 
 ## Introduction
 
-This repo houses the source code of the ILO's Design System. It comes in two flavors:
+The ILO Design System provides tools and components for building accessible websites that implement the visual identity of the [International Labour Organization](https://www.ilo.org).
 
-- **[Twig](https://twig.symfony.com/)** is a template engine used by PHP apps like WordPress and Drupal.
-- **[React](https://reactjs.org)** is a JavaScript library for building user interfaces.
+### Twig
 
-Consult our documentation websites for information on how to get started with either one.
+Twig is a template engine used by PHP apps like WordPress and Drupal. Use our [Twig Component Library](https://twig.ui.ilo.org) to build content-heavy websites that don't require a lot of interactivity.
+
+### React
+
+React is a JavaScript library for building user interfaces. Use our [React Component Library](https://react.ui.ilo.org) to build dynamic web applications and dashboards, or websites that use frameworks like Next.js or Remix.
 
 ## Packages
 
-This is a monorepo made of multiple packages which are published as node modules on `npm`.
+In addition to the two component libraries mentioned above, this monorepo includes packages which provides all of the styles, assets and utilities that both libraries need to operate. All packages are public packages on `npm`.
 
 | Package                                                                | Description                              | Current version                                                        |
 | ---------------------------------------------------------------------- | ---------------------------------------- | ---------------------------------------------------------------------- |
@@ -44,11 +43,11 @@ This is a monorepo made of multiple packages which are published as node modules
 
 JavasScript/Typescript projects undertaken for the ILO should use these configurations to be consist with ILO code standards.
 
-| Package                                                        | Description                              | Current version                                                       |
-| -------------------------------------------------------------- | ---------------------------------------- | --------------------------------------------------------------------- |
-| [@ilo-org/eslint-config](./config/eslint-config/README.md)     | Config for linting with eslint           | <img src="https://img.shields.io/npm/v/@ilo-org/eslint-config" />     |
-| [@ilo-org/eslint-config](./config/prettier-config/README.md)   | Config for formatting with prettier      | <img src="https://img.shields.io/npm/v/@ilo-org/prettier-config" />   |
-| [@ilo-org/eslint-config](./config/typescript-config/README.md) | config for type checking with TypeScript | <img src="https://img.shields.io/npm/v/@ilo-org/typescript-config" /> |
+| Package                                                            | Description                              | Current version                                                       |
+| ------------------------------------------------------------------ | ---------------------------------------- | --------------------------------------------------------------------- |
+| [@ilo-org/eslint-config](./config/eslint-config/README.md)         | Config for linting with eslint           | <img src="https://img.shields.io/npm/v/@ilo-org/eslint-config" />     |
+| [@ilo-org/prettier-config](./config/prettier-config/README.md)     | Config for formatting with prettier      | <img src="https://img.shields.io/npm/v/@ilo-org/prettier-config" />   |
+| [@ilo-org/typescript-config](./config/typescript-config/README.md) | config for type checking with TypeScript | <img src="https://img.shields.io/npm/v/@ilo-org/typescript-config" /> |
 
 ## Issues
 
