@@ -1,7 +1,5 @@
 # ILO Design System - Fonts Package
 
-## Status: Proof of Concept
-
 This package includes the ILO's brand fonts and typeface declarations. Fore more information about typography at the ILO, see the [ILO Brand Hub](https://brand.ilo.org/d/XdDMx745iKTL/visual-identity#/typography/fonts).
 
 ## Usage

@@ -9,7 +9,7 @@ This package provides the implementation of the Design System using [React](http
 - [@ilo-org/icons](./packages/icons)
 - [@ilo-org/icons-react](./packages/icons-react)
 
-## Installation and PNPM Commands
+## Installation
 
 To install
 
