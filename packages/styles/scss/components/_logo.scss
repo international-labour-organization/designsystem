@@ -1,0 +1,72 @@
+@use "../tokens" as *;
+
+.ilo--logo {
+  &--visibility--hidden {
+    visibility: hidden;
+  }
+
+  &--size--fluid {
+    width: 100%;
+    height: auto;
+  }
+
+  &--theme {
+    &--light {
+      --logo-theme-color: #{$brand-ilo-blue};
+    }
+
+    &--dark {
+      --logo-theme-color: #{$brand-ilo-white};
+    }
+  }
+
+  &--link {
+    all: unset;
+    cursor: pointer;
+  }
+
+  &--image {
+    height: 100%;
+    width: 100%;
+  }
+
+  &--sub-brand {
+    --lockup-height: calc(var(--logo-image-height) * 0.703);
+    --lockup-bottom-offset: calc(var(--lockup-height) * 0.05);
+
+    color: var(--logo-theme-color);
+    font-size: var(--logo-font-size);
+    line-height: var(--logo-font-size);
+    font-family: $fonts-display;
+    font-weight: 700;
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    &--image {
+      height: 100%;
+      width: 63%;
+    }
+
+    &--lock-up {
+      position: relative;
+      display: flex;
+      height: var(--lockup-height);
+      flex-flow: row nowrap;
+      align-items: center;
+      justify-content: flex-start;
+      width: 37%;
+      bottom: var(--lockup-bottom-offset);
+
+      &::before {
+        content: "";
+        position: relative;
+        display: inline-block;
+        margin: 0 9%;
+        height: 100%;
+        border-left: solid var(--logo-theme-color)
+          calc(var(--logo-image-height) * 0.02);
+      }
+    }
+  }
+}
