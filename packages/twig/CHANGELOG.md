@@ -1,5 +1,11 @@
 # @ilo-org/twig
 
+## 0.2.16
+
+### Patch Changes
+
+- 9da85065a: Remove unneeded props and markup from localnav
+
 ## 0.2.15
 
 ### Patch Changes
