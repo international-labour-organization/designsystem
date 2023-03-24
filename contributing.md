@@ -75,7 +75,9 @@ fix/twig/modal-wrapper
 
 Pull requests should include a descriptive name and detailed explanation of what merging the pull request will accomplish. Authors should make sure to reference Github issues that the the pull request will fix or affect.
 
-## Building the project
+## Getting started
+
+### Setup
 
 Use [nvm](https://github.com/nvm-sh/nvm) to make sure you have the correct version of node installed.
 
@@ -83,44 +85,122 @@ Use [nvm](https://github.com/nvm-sh/nvm) to make sure you have the correct versi
 nvm use
 ```
 
-Install [pnpm](https://pnpm.io/).
+Install [pnpm](https://pnpm.io/). Check the [package.json](<[../package.json](https://github.com/international-labour-organization/designsystem/blob/1de14fe3a6c3edb8991720b189a870f2f132fc73/package.json#L9)>) to get the correct version. Example:
 
 ```bash
-npm i -g pnpm
+npm -i -g pnpm@7.25.0
 ```
 
-Install dependencies
+### Installing Storybook dependencies
+
+The `react` and `twig` Storybook projects use different versions of Webpack that don't play well together. That means you'll have to install the dependencies for each of them separately depending on which package you're working on.
+
+**Note:** This should be resolved in the future once [Wingsuit@2.0.0](https://github.com/wingsuit-designsystem/wingsuit) is released, which will use Webpack@5.0.0.
+
+The below commands will clean out all project installation and build files (`node_modules`, `pnpm-lock.json`, `dist/`, etc.) and install all project dependencies for either `react` or `twig`. That includes dependencies for all of the other packages in the project that the `react` and `twig` packages depend on. These are the only install commands that you need.
 
 ```bash
-pnpm recursive install
+pnpm react:install
 ```
-
-Build all packages.
 
 ```bash
-pnpm build:all
+pnpm twig:install
 ```
 
-Start React storybook
+### React and Twig Storybook projects
+
+Build React Storybook and dependent packages
 
 ```bash
-pnpm start:react-storybook
+pnpm react:build:docs
 ```
 
-Start Twig storybook
+Start React storybook in dev mode
 
 ```bash
-pnpm start:twig-storybook
+pnpm --filter react storybook
 ```
 
-Check types
+Build React library and dependent packages
+
+```bash
+pnpm react:build:lib
+```
+
+Build Twig Storybook and dependent packages
+
+```bash
+pnpm twig:build:docs
+```
+
+Start Twig storybook in dev mode
+
+```bash
+pnpm --filter twig storybook
+```
+
+Build Twig library and dependent packages
+
+```bash
+pnpm twig:build:lib
+```
+
+### Testing, linting, formatting and type checking
+
+Format all code in the repository
+
+```bash
+pnpm format
+```
+
+Lint all code in the repository
+
+```bash
+pnpm lint
+```
+
+Check types for all packages in the project
 
 ```bash
 pnpm check:types
 ```
 
-Run all tests
+Run tests for all packages in the project
 
 ```bash
 pnpm test:all
+```
+
+You can also perform either of the above in a specific package like this:
+
+```bash
+pnpm --filter react format
+```
+
+### Clean dependencies and build artefacts
+
+Removes all dependencies and build artefacts
+
+```bash
+pnpm clean
+```
+
+Removes only dependency files (node_modules, lock files, etc.)
+
+```bash
+pnpm clean:deps
+```
+
+Removes only build artefacts
+
+```bash
+pnpm clean:build
+```
+
+### Other commands
+
+Checks to see if multiple packages are using different version of the same dependencies
+
+```bash
+pnpm check:deps
 ```

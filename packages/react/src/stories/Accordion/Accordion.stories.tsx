@@ -1,10 +1,10 @@
-import { Meta, StoryFn } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react";
 import {
   Title,
   Subtitle,
   Description,
   Primary,
-  ArgsTable,
+  ArgTypes,
   Stories,
 } from "@storybook/blocks";
 import {
@@ -14,6 +14,7 @@ import {
   AccordionItem,
 } from "../../components/Accordion";
 import { AccordionProps } from "../../components/Accordion/Accordion.props";
+import { large } from "../../components/Accordion/Accordion.args";
 
 /**
  * Accordion Story
@@ -23,12 +24,6 @@ const AccordionMeta: Meta<typeof Accordion> = {
   title: "Components/Content/Accordion",
   component: Accordion,
   tags: ["autodocs"],
-  argTypes: {
-    allowMultipleExpanded: {
-      options: [true, false],
-      control: { type: "boolean" },
-    },
-  },
   subcomponents: {
     AccordionItem,
     AccordionButton,
@@ -46,8 +41,8 @@ const AccordionMeta: Meta<typeof Accordion> = {
             expand/collapse the accordion content.
           </Description>
           <Primary />
-          <ArgsTable />
           <Stories title="Examples"></Stories>
+          <ArgTypes />
         </>
       ),
     },
@@ -56,16 +51,9 @@ const AccordionMeta: Meta<typeof Accordion> = {
 
 export default AccordionMeta;
 
-const args: AccordionProps = {
-  onButtonClick: (e) => {
-    console.log(e.target);
-  },
-  allowMultipleExpanded: true,
-  defaultAccordionsExpanded: ["l1", "l2"],
-  children: undefined,
-};
+// Default
 
-const Default: StoryFn<AccordionProps> = (args) => (
+const DefaultAccordion = (args: AccordionProps) => (
   <Accordion {...args}>
     <AccordionItem id="l1">
       <AccordionButton>Item1</AccordionButton>
@@ -91,6 +79,10 @@ const Default: StoryFn<AccordionProps> = (args) => (
   </Accordion>
 );
 
-Default.args = args;
+const Default: StoryObj<typeof DefaultAccordion> = {
+  name: "Primary",
+  args: large,
+  render: (args) => <DefaultAccordion {...args} />,
+};
 
 export { Default };

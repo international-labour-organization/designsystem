@@ -3,10 +3,10 @@ import {
   Title,
   Description,
   Primary,
-  ArgsTable,
+  ArgTypes,
   Stories,
   Subheading,
-} from "@storybook/addon-docs";
+} from "@storybook/blocks";
 import { List, ListItem } from "../../components/List";
 import { ListProps } from "../../components/List/List.props";
 
@@ -52,7 +52,7 @@ const ListMeta: Meta<typeof List> = {
           <Description>{sizeDoc}</Description>
           <Stories title="Examples"></Stories>
           <Subheading>Default Props</Subheading>
-          <ArgsTable />
+          <ArgTypes />
         </>
       ),
     },

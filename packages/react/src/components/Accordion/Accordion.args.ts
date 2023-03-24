@@ -12,8 +12,5 @@ const large: AccordionProps = {
 /**
  * Sample prop definitions for Accordions's enumerable properties (imported in stories and tests).
  */
-const AccordionArgs = {
-  large,
-};
 
-export default AccordionArgs;
+export { large };

@@ -3,9 +3,9 @@ import {
   Title,
   Description,
   Primary,
-  ArgsTable,
+  ArgTypes,
   Stories,
-} from "@storybook/addon-docs";
+} from "@storybook/blocks";
 import { SearchField } from "../../components/SearchField";
 import { Input } from "../../components/Input";
 import { SearchFieldProps } from "../../components/SearchField/SearchField.props";
@@ -32,8 +32,8 @@ const SearchFieldMeta: Meta<typeof SearchField> = {
             the button.
           </Description>
           <Primary />
-          <ArgsTable />
           <Stories title="Examples"></Stories>
+          <ArgTypes />
         </>
       ),
     },

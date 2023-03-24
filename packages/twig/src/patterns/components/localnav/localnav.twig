@@ -37,9 +37,8 @@
         %}
       </div> <!-- /.{{prefix}}--language-switcher--wrap -->
     </div> <!-- /.{{prefix}}--language-switcher -->
-    <button class="ilo--header--menu">Menu</button>
+    <button class="{{prefix}}--header--menu">Menu</button>
   </div> <!-- /.{{prefix}}--header--utility-bar -->
-
 
   <div class="{{prefix}}--header--navigation">
     <div class="{{prefix}}--header--inner">
@@ -79,15 +78,6 @@
               <a href="{{item.link}}" class="{{prefix}}--nav--link">{{item.label}}</a>
             </li>
           {% endfor %}
-          {% if subnav %}
-            <li class="{{prefix}}--nav--items">
-              <button class="{{prefix}}--nav--trigger">{{subnav.buttonlabel}}</button>
-            </li>
-          {% endif %}
         </ul>
       </nav>
-      <div class="{{prefix}}--search">
-        <button class="{{prefix}}--search--button" type="button">{{searchlabel}}</button>
-      </div> <!-- /.{{prefix}}--search -->
-    </div> <!-- /.{{prefix}}--header--inner -->
 </header>

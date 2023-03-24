@@ -1,24 +1,9 @@
 # ILO Design System - React Icons Package
 
-## Status: Proof of Concept
-
-> React components for icons in digital and software products using the ILO
-> Design System
-
-## Getting started
-
-To install `@ilo-org/icons-react` in your project, you will need to run the
-following command using [npm](https://www.npmjs.com/):
+## Installation
 
 ```bash
 npm install -S @ilo-org/icons-react
-```
-
-If you prefer [Yarn](https://yarnpkg.com/en/), use the following command
-instead:
-
-```bash
-yarn add @ilo-org/icons-react
 ```
 
 ## Usage
@@ -141,6 +126,10 @@ browsers like Internet Explorer 11 by setting `focusable` to `true`.
 We're always looking for contributors to help us fix bugs, build new features,
 or help us improve the project documentation. If you're interested, definitely
 check out our [Contributing Guide](/.github/CONTRIBUTING.md)! 👀
+
+## Acknowledgements
+
+This package is heavily inspired by [@carbon/icons-react](https://github.com/carbon-design-system/carbon/tree/main/packages/icons-react)
 
 ## 📝 License
 

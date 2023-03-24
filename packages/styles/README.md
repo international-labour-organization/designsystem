@@ -6,7 +6,7 @@ This package provides the stylesheets which are used to style components in othe
 - [@ilo-org/fonts](./packages/fonts)
 - [@ilo-org/icons](./packages/icons)
 
-## Installation and PNPM Commands
+## Installation and commands
 
 To install
 
