@@ -13,6 +13,8 @@ import {
   AccordionPanel,
   AccordionItem,
 } from "../../components/Accordion";
+import { AccordionProps } from "../../components/Accordion/Accordion.props";
+import { large } from "../../components/Accordion/Accordion.args";
 
 /**
  * Accordion Story
@@ -49,33 +51,38 @@ const AccordionMeta: Meta<typeof Accordion> = {
 
 export default AccordionMeta;
 
-const Default: StoryObj<typeof Accordion> = {
+// Default
+
+const DefaultAccordion = (args: AccordionProps) => (
+  <Accordion {...args}>
+    <AccordionItem id="l1">
+      <AccordionButton>Item1</AccordionButton>
+      <AccordionPanel>
+        <p>Content of Item 1</p>
+        <p>Content of Item 1</p>
+        <p>Content of Item 1</p>
+        <p>Content of Item 1</p>
+        <p>Content of Item 1</p>
+      </AccordionPanel>
+    </AccordionItem>
+    <AccordionItem id="l2">
+      <AccordionButton>Item2</AccordionButton>
+      <AccordionPanel>
+        <p>Content of Item 2</p>
+        <p>Content of Item 2</p>
+        <p>Content of Item 2</p>
+        <p>Content of Item 2</p>
+        <p>Content of Item 2</p>
+        <p>Content of Item 2</p>
+      </AccordionPanel>
+    </AccordionItem>
+  </Accordion>
+);
+
+const Default: StoryObj<typeof DefaultAccordion> = {
   name: "Primary",
-  render: (args) => (
-    <Accordion {...args}>
-      <AccordionItem id="l1">
-        <AccordionButton>Item1</AccordionButton>
-        <AccordionPanel>
-          <p>Content of Item 1</p>
-          <p>Content of Item 1</p>
-          <p>Content of Item 1</p>
-          <p>Content of Item 1</p>
-          <p>Content of Item 1</p>
-        </AccordionPanel>
-      </AccordionItem>
-      <AccordionItem id="l2">
-        <AccordionButton>Item2</AccordionButton>
-        <AccordionPanel>
-          <p>Content of Item 2</p>
-          <p>Content of Item 2</p>
-          <p>Content of Item 2</p>
-          <p>Content of Item 2</p>
-          <p>Content of Item 2</p>
-          <p>Content of Item 2</p>
-        </AccordionPanel>
-      </AccordionItem>
-    </Accordion>
-  ),
+  args: large,
+  render: (args) => <DefaultAccordion {...args} />,
 };
 
 export { Default };
