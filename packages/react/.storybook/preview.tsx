@@ -27,6 +27,9 @@ export const parameters = {
   viewMode: "docs",
   docs: {
     theme: theme,
+    source: {
+      excludeDecorators: true,
+    },
   },
 };
 
