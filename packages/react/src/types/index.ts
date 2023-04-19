@@ -33,6 +33,7 @@ export type InputTypes =
   | "tel"
   | "text"
   | "url";
+export type Language = "en" | "fr" | "es";
 export type LabelTypes = "default" | "actionable" | "light";
 export type LinkTypes = "light" | "dark" | "footer" | "button";
 export type LinkListThemes = "light" | "dark";
