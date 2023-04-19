@@ -12,9 +12,7 @@ const isOverflown = ({
 
 const getFullFontSize = (
   container: HTMLElement,
-  maxSize = 600,
-  startingHeight = 9,
-  step = 0.5
+  { maxSize = 600, startingHeight = 9, step = 0.5 }
 ) => {
   let i = startingHeight;
   let overflow = false;
@@ -120,10 +118,9 @@ const BaseLogo: React.FC<InnerLogoProps> = ({
       lockupTextRef.current &&
       initialImageHeight.current
     ) {
-      const fullFontSize = getFullFontSize(
-        lockupRef.current,
-        initialImageHeight.current
-      );
+      const fullFontSize = getFullFontSize(lockupRef.current, {
+        maxSize: initialImageHeight.current,
+      });
       const ratio = fullFontSize / initialImageHeight.current;
       setfontSizeRatio(ratio);
     }
@@ -200,6 +197,7 @@ const BaseLogo: React.FC<InnerLogoProps> = ({
       />
       {hasSubbrand && (
         <div ref={lockupRef} className={`${subBrandClass}--lock-up`}>
+          <span className={`${subBrandClass}--lock-up--separator`} />
           <span ref={lockupTextRef}>{subbrand}</span>
         </div>
       )}

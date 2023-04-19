@@ -45,7 +45,7 @@
 
     &--image {
       height: 100%;
-      width: 63%;
+      width: 50%;
     }
 
     &--lock-up {
@@ -55,17 +55,23 @@
       flex-flow: row nowrap;
       align-items: center;
       justify-content: flex-start;
-      width: 37%;
+      width: 50%;
       bottom: var(--lockup-bottom-offset);
 
-      &::before {
-        content: "";
-        position: relative;
-        display: inline-block;
-        margin: 0 9%;
+      &--separator {
+        padding: 0 0.4em;
         height: 100%;
-        border-left: solid var(--logo-theme-color)
-          calc(var(--logo-image-height) * 0.02);
+        display: inline-block;
+        line-height: 0px;
+
+        &::before {
+          content: "";
+          position: relative;
+          display: inline-block;
+          height: 100%;
+          width: calc(var(--logo-image-height) * 0.02);
+          background-color: var(--logo-theme-color);
+        }
       }
     }
   }
