@@ -1,0 +1,78 @@
+@use "../tokens" as *;
+
+.ilo--logo {
+  &--visibility--hidden {
+    visibility: hidden;
+  }
+
+  &--size--fluid {
+    width: 100%;
+    height: auto;
+  }
+
+  &--theme {
+    &--light {
+      --logo-theme-color: #{$brand-ilo-blue};
+    }
+
+    &--dark {
+      --logo-theme-color: #{$brand-ilo-white};
+    }
+  }
+
+  &--link {
+    all: unset;
+    cursor: pointer;
+  }
+
+  &--image {
+    height: 100%;
+    width: 100%;
+  }
+
+  &--sub-brand {
+    --lockup-height: calc(var(--logo-image-height) * 0.703);
+    --lockup-bottom-offset: calc(var(--lockup-height) * 0.05);
+
+    color: var(--logo-theme-color);
+    font-size: var(--logo-font-size);
+    line-height: var(--logo-font-size);
+    font-family: $fonts-display;
+    font-weight: 700;
+    display: inline-flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    &--image {
+      height: 100%;
+      width: 50%;
+    }
+
+    &--lock-up {
+      position: relative;
+      display: flex;
+      height: var(--lockup-height);
+      flex-flow: row nowrap;
+      align-items: center;
+      justify-content: flex-start;
+      width: 50%;
+      bottom: var(--lockup-bottom-offset);
+
+      &--separator {
+        padding: 0 0.4em;
+        height: 100%;
+        display: inline-block;
+        line-height: 0px;
+
+        &::before {
+          content: "";
+          position: relative;
+          display: inline-block;
+          height: 100%;
+          width: calc(var(--logo-image-height) * 0.02);
+          background-color: var(--logo-theme-color);
+        }
+      }
+    }
+  }
+}

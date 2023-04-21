@@ -3,8 +3,12 @@ import ilo_logo_white from "@ilo-org/brand-assets/logo_en_horizontal_white.svg";
 
 const basic: LocalNavProps = {
   background: "#960A55",
-  logo: ilo_logo_white,
-  siteurl: "https://www.ilo.org/",
+  logo: {
+    src: ilo_logo_white,
+    alt: "ILO Voices Logo",
+    subbrand: "Voices",
+    theme: "dark",
+  },
   primarynav: {
     navlabel: "Primary Nav Menu",
     mobilecloselabel: "Close",
@@ -23,10 +27,6 @@ const basic: LocalNavProps = {
       },
       {
         label: "Menu Item 4",
-        url: "https://www.ilo.org",
-      },
-      {
-        label: "Menu Item 5",
         url: "https://www.ilo.org",
       },
     ],
