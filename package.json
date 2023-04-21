@@ -23,11 +23,11 @@
     "prepare": "node ./prepare.js",
     "react:install": "pnpm clean && pnpm --filter react... install",
     "react:build:docs": "pnpm turbo run build:docs --filter=@ilo-org/react...",
-    "react:dev:docs": "pnpm run storybook --filter=@ilo-org/react",
+    "react:dev:docs": "pnpm --filter react storybook",
     "test:all": "pnpm turbo run test",
     "twig:install": "pnpm clean && pnpm --filter twig... install",
     "twig:build:docs": "pnpm turbo run build:docs --filter=@ilo-org/twig...",
-    "twig:dev:docs": "pnpm run storybook --filter=@ilo-org/twig"
+    "twig:dev:docs": "pnpm --filter twig storybook"
   },
   "postinstall": "manypkg check",
   "repository": {
