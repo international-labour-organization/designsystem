@@ -4,11 +4,13 @@ import { ContextMenu } from "../ContextMenu";
 import { LocalNavProps } from "./LocalNav.props";
 import { brand } from "@ilo-org/themes/tokens/brand/base.json";
 import classnames from "classnames";
+import { Logo } from "../Logo";
+
+const DEFAULT_LOGO_SIZE = 280;
 
 const LocalNav: FC<LocalNavProps> = ({
   background,
   logo,
-  siteurl,
   primarynav,
   mainlink,
   menucloselabel,
@@ -43,13 +45,15 @@ const LocalNav: FC<LocalNavProps> = ({
       >
         <nav className={`${prefix}--nav--local`}>
           <div className={`${prefix}--nav--local--logo-wrapper`}>
-            <a href={siteurl} className={`${prefix}--nav--local--logo-link`}>
-              <img
-                src={logo}
-                alt="ILO Logo"
-                className={`${prefix}--nav--local--logo`}
-              />
-            </a>
+            <Logo
+              url={logo.url}
+              src={logo.src}
+              alt={logo.alt}
+              className={`${prefix}--nav--local--logo`}
+              subbrand={logo.subbrand}
+              theme={logo.theme}
+              size={logo.size || DEFAULT_LOGO_SIZE}
+            />
           </div>
           <ul className={`${prefix}--nav--local--set`}>
             {primarynav?.items &&
@@ -90,13 +94,15 @@ const LocalNav: FC<LocalNavProps> = ({
           <div className={`${baseClass}--inner`}>
             <div className={`${prefix}--mobile--nav`}>
               <div className={`${prefix}--mobile--nav--logo`}>
-                <a href={siteurl} className={`${baseClass}--logo-link`}>
-                  <img
-                    className={`${baseClass}--logo`}
-                    src={logo}
-                    alt="ILO Logo"
-                  />
-                </a>
+                <Logo
+                  url={logo.url}
+                  src={logo.src}
+                  alt={logo.alt}
+                  className={`${prefix}--nav--local--logo`}
+                  subbrand={logo.subbrand}
+                  theme={logo.theme}
+                  size={logo.size || DEFAULT_LOGO_SIZE}
+                />
                 <button
                   className={`${baseClass}--menu--close`}
                   onClick={handleMenuToggle}
