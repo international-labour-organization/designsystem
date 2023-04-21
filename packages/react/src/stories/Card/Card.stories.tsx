@@ -5,6 +5,41 @@ import CardArgs from "../../components/Card/Card.args";
 const CardMeta: Meta<typeof Card> = {
   title: "Components/Content/Card",
   component: Card,
+  argTypes: {
+    variant: {
+      options: [
+        "graphic",
+        "stat",
+        "graphicpromo",
+        "multilink",
+        "feature",
+        "data",
+        "detail",
+        "factlist",
+      ],
+      control: { type: "select" },
+    },
+    theme: {
+      options: ["dark", "light"],
+      control: { type: "radio" },
+    },
+    cornercut: {
+      options: ["cornercut", "corner"],
+      control: { type: "radio" },
+    },
+    color: {
+      options: ["turquoise", "green", "yellow", "blue"],
+      control: { type: "select" },
+    },
+    size: {
+      options: ["wide", "standard", "narrow"],
+      control: { type: "radio" },
+    },
+    alignment: {
+      options: ["left", "right"],
+      control: { type: "radio" },
+    },
+  },
 };
 
 export default CardMeta;
