@@ -1,5 +1,15 @@
 # @ilo-org/twig
 
+## 0.2.17
+
+### Patch Changes
+
+- 2aa1f1cc6: enable profile to be themeable and address a few minor style issues
+- Updated dependencies [2aa1f1cc6]
+- Updated dependencies [2aa1f1cc6]
+- Updated dependencies [c24a5f721]
+  - @ilo-org/styles@0.2.0
+
 ## 0.2.16
 
 ### Patch Changes
