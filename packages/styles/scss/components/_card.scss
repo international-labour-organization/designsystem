@@ -21,7 +21,9 @@
     outline: none;
     text-decoration: none;
 
-    &#{$self}--dark:not(#{$self}--detail):not(#{$self}--data):not(#{$self}--multilink):not(#{$self}--factlist) {
+    &#{$self}--dark:not(#{$self}--detail):not(#{$self}--data):not(
+        #{$self}--multilink
+      ):not(#{$self}--factlist) {
       background: $brand-ilo-white;
 
       &#{$self}--cornercut {
@@ -82,7 +84,9 @@
     background: $brand-ilo-white;
   }
 
-  &--dark:not(#{$self}--detail):not(#{$self}--data):not(#{$self}--multilink):not(:hover):not(:focus):not(:focus-within) {
+  &--dark:not(#{$self}--detail):not(#{$self}--data):not(
+      #{$self}--multilink
+    ):not(:hover):not(:focus):not(:focus-within) {
     background: $brand-ilo-dark-blue;
     outline: none;
     transition: background $transition-timing ease-out;
@@ -147,7 +151,9 @@
     }
   }
 
-  &--cornercut:not(#{$self}--multilink):not(#{$self}--detail):not(#{$self}--feature):not(#{$self}--graphic):not(#{$self}--stat):not(#{$self}--data) {
+  &--cornercut:not(#{$self}--multilink):not(#{$self}--detail):not(
+      #{$self}--feature
+    ):not(#{$self}--graphic):not(#{$self}--stat):not(#{$self}--data) {
     @include cornercut($brand-ilo-white, 40px, 73px);
     margin-top: px-to-rem(40px);
     padding-top: 0;
@@ -655,7 +661,11 @@
       }
     }
 
-    .ilo--profile--contents * {
+    .ilo--profile--contents--light * {
+      color: $color-base-neutrals-dark;
+    }
+
+    .ilo--profile--contents--dark * {
       color: $color-base-neutrals-white;
     }
 
@@ -980,7 +990,9 @@
     padding: 0 px-to-rem(24px) px-to-rem(48px) px-to-rem(24px);
     pointer-events: none;
 
-    &.ilo--card--cornercut:not(.ilo--card--multilink):not(.ilo--card--detail):not(.ilo--card--feature) {
+    &.ilo--card--cornercut:not(.ilo--card--multilink):not(
+        .ilo--card--detail
+      ):not(.ilo--card--feature) {
       &::before {
         height: 40px;
         top: px-to-rem(-39.7px);
@@ -1001,7 +1013,9 @@
     @include breakpoint("large") {
       padding: 0 px-to-rem(40px) px-to-rem(56px) px-to-rem(40px);
 
-      &.ilo--card--cornercut:not(.ilo--card--multilink):not(.ilo--card--detail):not(.ilo--card--feature) {
+      &.ilo--card--cornercut:not(.ilo--card--multilink):not(
+          .ilo--card--detail
+        ):not(.ilo--card--feature) {
         &::before {
           height: 48px;
           top: px-to-rem(-47.7px);
@@ -1103,7 +1117,9 @@
     position: relative;
     width: 100%;
 
-    &.ilo--card--cornercut:not(.ilo--card--multilink):not(.ilo--card--detail):not(.ilo--card--feature) {
+    &.ilo--card--cornercut:not(.ilo--card--multilink):not(
+        .ilo--card--detail
+      ):not(.ilo--card--feature) {
       &::before {
         left: 0;
         top: px-to-rem(-39.7px);
@@ -1129,7 +1145,9 @@
     &#{$self}--blue {
       background: $brand-ilo-light-blue;
 
-      &.ilo--card--cornercut:not(.ilo--card--multilink):not(.ilo--card--detail):not(.ilo--card--feature) {
+      &.ilo--card--cornercut:not(.ilo--card--multilink):not(
+          .ilo--card--detail
+        ):not(.ilo--card--feature) {
         @include cornercut($brand-ilo-light-blue, 40px, 73px);
       }
     }
@@ -1137,7 +1155,9 @@
     &#{$self}--yellow {
       background: $brand-ilo-yellow;
 
-      &.ilo--card--cornercut:not(.ilo--card--multilink):not(.ilo--card--detail):not(.ilo--card--feature) {
+      &.ilo--card--cornercut:not(.ilo--card--multilink):not(
+          .ilo--card--detail
+        ):not(.ilo--card--feature) {
         @include cornercut($brand-ilo-yellow, 40px, 73px);
       }
     }
@@ -1145,7 +1165,9 @@
     &#{$self}--green {
       background: $brand-ilo-green;
 
-      &.ilo--card--cornercut:not(.ilo--card--multilink):not(.ilo--card--detail):not(.ilo--card--feature) {
+      &.ilo--card--cornercut:not(.ilo--card--multilink):not(
+          .ilo--card--detail
+        ):not(.ilo--card--feature) {
         @include cornercut($brand-ilo-green, 40px, 73px);
       }
     }
@@ -1153,7 +1175,9 @@
     &#{$self}--turquoise {
       background: $brand-ilo-turquoise;
 
-      &.ilo--card--cornercut:not(.ilo--card--multilink):not(.ilo--card--detail):not(.ilo--card--feature) {
+      &.ilo--card--cornercut:not(.ilo--card--multilink):not(
+          .ilo--card--detail
+        ):not(.ilo--card--feature) {
         @include cornercut($brand-ilo-turquoise, 40px, 73px);
       }
     }
