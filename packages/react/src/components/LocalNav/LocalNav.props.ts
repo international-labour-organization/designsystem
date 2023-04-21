@@ -1,4 +1,5 @@
 import { LinkProps, ContextMenuProps } from "../ContextMenu/ContextMenu.props";
+import { LogoProps } from "../Logo/Logo.props";
 
 export interface LocalNavProps {
   /**
@@ -7,19 +8,14 @@ export interface LocalNavProps {
   background?: string;
 
   /**
-   * Props for the logo of the LocalNav
+   * Props for the Logo component of the LocalNav
    */
-  logo?: Required<string>;
-
-  /**
-   * Props for the home url of the LocalNav
-   */
-  siteurl?: Required<string>;
+  logo: LogoProps;
 
   /**
    * Specify the primary items for the LocalNav
    */
-  primarynav?: Required<PrimaryNavProps>;
+  primarynav?: PrimaryNavProps;
 
   /**
    * Specify the main link for the LocalNav
