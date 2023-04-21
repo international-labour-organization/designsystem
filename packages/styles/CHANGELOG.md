@@ -1,5 +1,16 @@
 # @ilo-org/styles
 
+## 0.2.0
+
+### Minor Changes
+
+- c24a5f721: Adds responsive logo component and styles
+
+### Patch Changes
+
+- 2aa1f1cc6: feat/react: Implementation of Card and CardGroup components
+- 2aa1f1cc6: enable profile to be themeable and address a few minor style issues
+
 ## 0.1.19
 
 ### Patch Changes

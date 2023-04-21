@@ -1,5 +1,21 @@
 # @ilo-org/react
 
+## 0.4.0
+
+### Minor Changes
+
+- 2aa1f1cc6: feat/react: Implementation of Card and CardGroup components
+- c24a5f721: Adds responsive logo component and styles
+- 77a4f5b75: LocalNav uses Logo component so that it can have sub-brands
+
+### Patch Changes
+
+- 2aa1f1cc6: enable profile to be themeable and address a few minor style issues
+- Updated dependencies [2aa1f1cc6]
+- Updated dependencies [2aa1f1cc6]
+- Updated dependencies [c24a5f721]
+  - @ilo-org/styles@0.2.0
+
 ## 0.3.0
 
 ### Minor Changes
