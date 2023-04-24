@@ -59,18 +59,20 @@
       bottom: var(--lockup-bottom-offset);
 
       &--separator {
-        padding: 0 0.4em;
+        padding: 0 calc(var(--logo-image-height) * 0.25);
         height: 100%;
         display: inline-block;
         line-height: 0px;
+        overflow-y: hidden;
 
         &::before {
           content: "";
           position: relative;
           display: inline-block;
           height: 100%;
-          width: calc(var(--logo-image-height) * 0.02);
-          background-color: var(--logo-theme-color);
+          border-right: calc(var(--logo-image-height) * 0.033) solid
+            var(--logo-theme-color);
+          width: 0;
         }
       }
     }
