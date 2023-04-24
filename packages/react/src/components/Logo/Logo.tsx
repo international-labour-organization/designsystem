@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { useGlobalSettings } from "../../hooks";
 import { InnerLogoProps, LogoProps } from "./Logo.props";
 import classnames from "classnames";
@@ -55,6 +55,9 @@ const BaseLogo: React.FC<InnerLogoProps> = ({
   // The lockup text
   const lockupTextRef = useRef<HTMLSpanElement>(null);
 
+  // Initial height of the image when it's loaded
+  const initialImageHeight = useRef<null | number>(null);
+
   // Has the image loaded or not
   const [imageLoaded, setImageLoaded] = useState(false);
 
@@ -66,9 +69,6 @@ const BaseLogo: React.FC<InnerLogoProps> = ({
 
   // Is the logo visible? Default to true if not a subbrand
   const [isLogoVisible, setIsLogoVisible] = useState(!subbrand);
-
-  // Initial height of the image when it's loaded
-  const initialImageHeight = useRef<null | number>(null);
 
   // Resize observer gets the initial height of the image when
   // it loads and updates the height when it changes in state
@@ -90,7 +90,7 @@ const BaseLogo: React.FC<InnerLogoProps> = ({
   }, [imageLoaded, fontSizeRatio, subbrand]);
 
   // Set up the Resize observer to watch the image
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (imageLoaded && lockupRef.current && imageRef.current) {
       const imageEl = imageRef.current;
       observer.current.observe(imageEl);
@@ -102,13 +102,13 @@ const BaseLogo: React.FC<InnerLogoProps> = ({
   // the lockup container as much as possible without overflowing.
   // Then gets the ratio of full font size to image height which will
   // be used to calculate the font size if the image gets resized
-  useEffect(() => {
+  useLayoutEffect(() => {
     setFontSize();
   }, [imageLoaded, initialImageHeight.current]);
 
   // Adjust the font size if for some weird reason the subbrand changes
   // This is mostly just to illustrate how the component works on Storybook
-  useEffect(() => {
+  useLayoutEffect(() => {
     setFontSize();
   }, [subbrand]);
 
