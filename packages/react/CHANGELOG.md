@@ -1,5 +1,13 @@
 # @ilo-org/react
 
+## 0.4.1
+
+### Patch Changes
+
+- bac3cc9d5: Fix bug preventing the sub-brand from rendering with the proper font size on some mobile browsers
+- Updated dependencies [bac3cc9d5]
+  - @ilo-org/styles@0.2.1
+
 ## 0.4.0
 
 ### Minor Changes
