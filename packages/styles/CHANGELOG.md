@@ -1,5 +1,11 @@
 # @ilo-org/styles
 
+## 0.2.1
+
+### Patch Changes
+
+- bac3cc9d5: Fix bug preventing the sub-brand from rendering with the proper font size on some mobile browsers
+
 ## 0.2.0
 
 ### Minor Changes
