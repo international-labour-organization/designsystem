@@ -1,0 +1,131 @@
+@use "../tokens" as *;
+@use "../functions" as *;
+@import "../mixins";
+
+.ilo--form-control {
+  $c: &;
+
+  display: inline-grid;
+
+  &__label-placement {
+    // Label is to the flex start of form element
+    &__start {
+      grid-template-rows: auto auto;
+      grid-template-columns: auto auto;
+      grid-template-areas:
+        "label input"
+        "helper .";
+      column-gap: px-to-rem($spacing-padding-1);
+
+      #{$c}--helper {
+        text-align: right;
+      }
+    }
+
+    // Label is at the end of the form element
+    &__end {
+      grid-template-rows: auto auto;
+      grid-template-columns: auto auto;
+      grid-template-areas:
+        "input label"
+        ". helper";
+      column-gap: px-to-rem($spacing-padding-1);
+    }
+
+    // Label is above form element
+    &__top {
+      grid-template-rows: auto auto auto;
+      grid-template-columns: auto;
+      grid-template-areas:
+        "label"
+        "input"
+        "helper";
+      row-gap: px-to-rem($spacing-padding-1);
+    }
+
+    // Label is below form element
+    &__bottom {
+      grid-template-rows: auto auto auto;
+      grid-template-columns: auto;
+      grid-template-areas:
+        "helper"
+        "input"
+        "label";
+      row-gap: px-to-rem($spacing-padding-1);
+    }
+  }
+
+  &__disabled {
+    #{$c}--label,
+    #{$c}--helper {
+      opacity: 0.5;
+      pointer-events: none;
+    }
+  }
+
+  &__error {
+    #{$c}--helper {
+      color: $color-base-red-dark;
+    }
+  }
+
+  &--label {
+    color: $color-base-neutrals-black;
+    grid-area: label;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: flex-start;
+
+    &__size {
+      &__small {
+        font-family: $fonts-copy;
+        font-size: px-to-rem(map-get($type, "label-small", "size"));
+        letter-spacing: px-to-rem(
+          map-get($type, "label-small", "letter-spacing")
+        );
+        line-height: px-to-rem(map-get($type, "label-small", "line-height"));
+        font-weight: 400;
+      }
+
+      &__medium {
+        font-family: $fonts-display;
+        font-size: px-to-rem(map-get($type, "label-medium", "size"));
+        letter-spacing: px-to-rem(
+          map-get($type, "label-medium", "letter-spacing")
+        );
+        line-height: px-to-rem(map-get($type, "label-medium", "line-height"));
+        font-weight: 700;
+      }
+
+      &__large {
+        font-family: $fonts-display;
+        font-size: px-to-rem(map-get($type, "label-large", "size"));
+        letter-spacing: px-to-rem(
+          map-get($type, "label-large", "letter-spacing")
+        );
+        line-height: px-to-rem(map-get($type, "label-large", "line-height"));
+        font-weight: 700;
+      }
+    }
+
+    label {
+      font-family: inherit;
+      font-size: inherit;
+      letter-spacing: inherit;
+      line-height: inherit;
+      font-weight: inherit;
+    }
+
+    div[class*="tooltip"] {
+      margin-left: px-to-rem($spacing-padding-1 / 2);
+    }
+  }
+
+  &--helper {
+    grid-area: helper;
+    color: $color-base-neutrals-medium;
+    font-family: $fonts-copy;
+    @include font-styles("body-xxs");
+  }
+}

@@ -53,6 +53,29 @@
           "color": { "value": "{color.base.neutrals.light}" }
         }
       },
+      "toggle": {
+        "unchecked": {
+          "background": { "value": "{color.base.neutrals.light}" },
+          "border": { "value": "none" },
+          "slider": { "color": { "value": "{color.base.neutrals.white}" } },
+          "label": { "color": { "value": "{color.base.neutrals.dark}" } },
+          "helperText": { "color": { "value": "{color.base.neutrals.medium}" } }
+        },
+        "checked": {
+          "background": { "value": "{color.base.blue.dark}" },
+          "border": { "value": "none" },
+          "slider": { "color": { "value": "{color.base.blue.lighter}" } }
+        },
+        "active": {
+          "border": { "value": "{color.base.yellow}" },
+          "slider": { "color": { "value": "{color.base.blue.lighter}" } }
+        },
+        "error": {
+          "background": { "value": "{color.base.neutrals.light}" },
+          "border": { "value": "{color.base.red.medium}" },
+          "slider": { "color": { "value": "{color.base.neutrals.white}" } }
+        }
+      },
       "inputbutton": {
         "default": {
           "background": { "value": "{color.base.neutrals.lighter}" },

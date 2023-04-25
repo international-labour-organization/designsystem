@@ -49,6 +49,12 @@
           }
         }
       },
+      "toggle": {
+        "base": {
+          "height": { "value": "24px" },
+          "width": { "value": "46px" }
+        }
+      },
       "inputbutton": {
         "default": {
           "height": { "value": "48px" },
