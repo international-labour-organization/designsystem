@@ -3,6 +3,7 @@ import { Toggle, ToggleArgs } from "../../components/Toggle";
 import {
   ArgTypes,
   Description,
+  Heading,
   Primary,
   Stories,
   Subheading,
@@ -25,16 +26,18 @@ const ToggleMeta: Meta<typeof Toggle> = {
             states.
           </Description>
           <Primary />
-          <Subheading>Uncontrolled</Subheading>
-          <Description>
-            The Toggle is uncontrolled by default. Use `inputProps` if you need
-            to control the state of the Toggle programatically.
-          </Description>
           <Subheading>Accessibility</Subheading>
           <Description>
-            Like all form elements, the Toggle component must have an `id` prop
-            to map a label to the form element.
+            The Toggle component must have an `id` prop to map a label to the
+            form element.
           </Description>
+          <Subheading>Uncontrolled</Subheading>
+          <Description>
+            The Toggle is uncontrolled by default. Use the `checked` and
+            `onClick` props if you need to control the state of the Toggle
+            programatically.
+          </Description>
+          <Heading>Props</Heading>
           <ArgTypes of={ToggleMeta} />
           <Stories />
         </>

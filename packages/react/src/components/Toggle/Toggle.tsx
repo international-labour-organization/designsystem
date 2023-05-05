@@ -10,12 +10,15 @@ const Toggle: React.FC<ToggleProps> = ({
   defaultChecked = false,
   required = false,
   id,
+  name,
   onChange,
   onClick,
-  inputProps,
+  checked,
   className,
 }) => {
   const { prefix } = useGlobalSettings();
+
+  const inputName = name || id;
 
   const hasError = !disabled && !!error;
 
@@ -35,16 +38,16 @@ const Toggle: React.FC<ToggleProps> = ({
   return (
     <div className={toggleClass}>
       <input
+        checked={checked}
         disabled={disabled}
         defaultChecked={defaultChecked}
-        name={id}
+        name={inputName}
         id={id}
         type="checkbox"
         role="switch"
         required={required}
         onChange={onChange}
         onClick={onClick}
-        {...inputProps}
       />
       <span className={sliderClass} />
     </div>

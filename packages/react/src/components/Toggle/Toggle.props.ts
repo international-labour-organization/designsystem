@@ -16,6 +16,11 @@ export interface ToggleProps {
   defaultChecked?: boolean;
 
   /**
+   * Specify whether your Toggle is checked. Defaults to undefined.
+   */
+  checked?: boolean;
+
+  /**
    * Specify an optional className to be added to your Toggle.
    */
   className?: string;
@@ -31,14 +36,14 @@ export interface ToggleProps {
   error?: boolean;
 
   /**
+   * Specify the name of your Toggle.
+   */
+  name?: string;
+
+  /**
    * Is the toggle required? Defaults to false.
    */
   required?: boolean;
-
-  /**
-   * Props that will be passed directly to the input element.
-   */
-  inputProps?: React.InputHTMLAttributes<HTMLInputElement>;
 
   /**
    * OnChange handler for the input element.

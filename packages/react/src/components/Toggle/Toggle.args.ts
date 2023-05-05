@@ -25,7 +25,8 @@ export const DefaultChecked: ToggleProps = { ...Default, defaultChecked: true };
 
 export const Controlled: ToggleProps = {
   ...Default,
-  inputProps: { checked: true },
+  onClick: () => console.log("clicked"),
+  checked: true,
 };
 
 export const Large: ToggleProps = {
