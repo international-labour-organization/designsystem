@@ -45,6 +45,11 @@ export interface FormControlProps {
   labelSize?: "small" | "medium" | "large";
 
   /**
+   * Inline styles for the input
+   */
+  style?: React.CSSProperties;
+
+  /**
    * Optional text to render in a tooltip
    */
   tooltip?: string;

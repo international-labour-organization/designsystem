@@ -11,6 +11,7 @@ const FormControl: FC<FormControlProps> = ({
   helper,
   errorMessage,
   tooltip,
+  style,
   labelSize = "medium",
   labelPlacement = "top",
 }) => {
@@ -18,24 +19,18 @@ const FormControl: FC<FormControlProps> = ({
   const htmlFor = children.props.id;
   const error = children.props.error;
   const disabled = children.props.disabled;
-  const required = children.props.required;
 
   // Classes applied to the outer container
   const baseClass = `${prefix}--form-control`;
   const errorClass = `${baseClass}__error`;
   const disabledClass = `${baseClass}__disabled`;
   const labelPlacementClass = `${baseClass}__label-placement__${labelPlacement}`;
-  const requiredClass = `${baseClass}__required`;
 
   const formControlClass = classnames(
     baseClass,
     className,
     labelPlacementClass,
-    [
-      { [errorClass]: error },
-      { [disabledClass]: disabled },
-      { [requiredClass]: required },
-    ]
+    [{ [errorClass]: error }, { [disabledClass]: disabled }]
   );
 
   // Classes applies to the label
@@ -51,7 +46,7 @@ const FormControl: FC<FormControlProps> = ({
   const helperText = error ? errorMessage : helper;
 
   return (
-    <div className={formControlClass}>
+    <div className={formControlClass} style={style}>
       <span className={labelClass}>
         <label htmlFor={htmlFor}>{label}</label>
         {tooltip && (
