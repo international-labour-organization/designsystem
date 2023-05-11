@@ -25,7 +25,7 @@ export type HeroCardTypes =
   | "article"
   | "portal";
 export type HeroCardTheme = "dark" | "light";
-export type InputTypes =
+export type TextInputTypes =
   | "email"
   | "hidden"
   | "password"
@@ -63,3 +63,44 @@ export type CardTypes =
   | "detail"
   | "factlist"
   | "data";
+export interface FormFieldProps<T> {
+  /**
+   * The input's onChange callback.
+   */
+  onChange?: (e: React.ChangeEvent<T>) => any;
+
+  /**
+   * Specify an optional className to be added to your input.
+   */
+  className?: string;
+
+  /**
+   * Is the input disabled?
+   */
+  disabled?: boolean;
+
+  /**
+   * Does the input have an error?
+   */
+  error?: boolean;
+
+  /**
+   * The input's id attribute
+   */
+  id: string;
+
+  /**
+   * The input's name attribute
+   */
+  name?: string;
+
+  /**
+   * Specify whether this input is required
+   */
+  required?: boolean;
+
+  /**
+   * Inline styles applies to the outermost container
+   */
+  style?: React.CSSProperties;
+}

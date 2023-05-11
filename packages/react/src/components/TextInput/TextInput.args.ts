@@ -33,7 +33,7 @@ export const hashelper: TextInputProps = {
 export const haserror: TextInputProps = {
   id: "text-input",
   disabled: false,
-  error: "This one has an error",
+  error: true,
   name: "text",
   placeholder: "Error Text Field",
   required: false,
