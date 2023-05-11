@@ -1,3 +1,5 @@
+import { FormFieldProps } from "../../types";
+
 export interface OptionProps {
   /**
    * Is this option disabled?
@@ -7,75 +9,39 @@ export interface OptionProps {
   /**
    * The option's label
    */
-  label: Required<string>;
+  label: string;
 
   /**
    * The option's value
    */
-  value?: Required<string>;
+  value?: string;
 }
 
-export interface DropdownProps {
+export interface DropdownProps extends FormFieldProps<HTMLSelectElement> {
   /**
-   * Should the Dropdown allow default browser autocomplete functionality?
-   * Ideally this would be boolean but for some reason React expects a string. So: "true" if true.
+   * A string providing a hint for a user agent's autocomplete feature.
    */
   autocomplete: string;
 
   /**
-   * The Dropdown's onChange callback.
+   * The form element to associate the Dropdown with if it's not nested in a form element.
    */
-  callback?: (e: React.ChangeEvent<HTMLSelectElement>) => any;
+  form?: string;
 
   /**
-   * Specify an optional className to be added to your Profile component.
+   * Indicates that multiple options can be selected from the list.
    */
-  className?: string;
-
-  /**
-   * Is the Dropdown disabled?
-   */
-  disabled?: boolean;
-
-  /**
-   * Does the Dropdown have an error?
-   */
-  error?: string | false;
-
-  /**
-   * The Dropdown's helper text
-   */
-  helper: string | false;
-
-  /**
-   * The Dropdown's id attribute
-   */
-  id?: string;
-
-  /**
-   * The Dropdown's label
-   */
-  label: string;
-
-  /**
-   * The Dropdown's name attribute
-   */
-  name?: Required<string>;
+  multiple?: boolean;
 
   /**
    * The Dropdown's options
    */
-  options?: Required<Array<OptionProps>>;
+  options?: OptionProps[];
 
   /**
-   * Is a selection required?
+   * Number of rows in the list that should be visible at one time. Corresponds to the select element's size attribute.
    */
-  required?: boolean;
-
-  /**
-   * Does this Dropdown have a tooltip?
-   */
-  tooltip?: string;
+  selectSize?: number;
 
   /**
    * The Dropdown's default selection; should match one of the values in `options`

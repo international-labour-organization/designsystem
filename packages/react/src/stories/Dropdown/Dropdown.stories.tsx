@@ -1,4 +1,4 @@
-import { Meta, StoryFn } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react";
 import {
   Title,
   Subtitle,
@@ -9,18 +9,8 @@ import {
   ArgsTable,
 } from "@storybook/addon-docs";
 import { Dropdown } from "../../components/Dropdown";
-import { DropdownProps } from "../../components/Dropdown/Dropdown.props";
 import dropdownArgs from "../../components/Dropdown/Dropdown.args";
-
-const propsDoc = `
-The Dropdown receives a prop for 'options,' which has three parameters:
-
-| Prop  |  Description  |
-|----------|-------------|
-| \`disabled\` | Is *this* option disabled? |
-| \`label\` | The human-readable label for the option. |
-| \`value\` | The value of the option which is what is submitted with the form. |
-`;
+import { FormControl } from "../../components/FormControl";
 
 const DropdownMeta: Meta<typeof Dropdown> = {
   title: "Components/Forms/Dropdown",
@@ -43,11 +33,9 @@ const DropdownMeta: Meta<typeof Dropdown> = {
             commonly used in forms.
           </Description>
           <Primary />
-          <Subheading>Options</Subheading>
-          <Description>{propsDoc}</Description>
-          <Stories title="Examples" />
-          <Subheading>Default Props</Subheading>
+          <Subheading>Props</Subheading>
           <ArgsTable />
+          <Stories title="Examples" />
         </>
       ),
     },
@@ -56,39 +44,79 @@ const DropdownMeta: Meta<typeof Dropdown> = {
 
 export default DropdownMeta;
 
-/**
- * Dropdown Template
- *
- * create a Storybook template for this component
- *
- *@param (Object) args - props to be passed to the component
- */
-const DropdownTemplate: StoryFn<DropdownProps> = (args) => (
-  <Dropdown {...args} />
-);
+export const Basic: StoryObj<typeof Dropdown> = {
+  args: dropdownArgs.basic,
+};
 
-export const Basic: StoryFn<DropdownProps> = DropdownTemplate.bind({});
+export const WithLabel: StoryObj<typeof Dropdown> = {
+  args: dropdownArgs.basic,
+  render: (props) => (
+    <FormControl
+      label="Choose among the following options"
+      labelPlacement="top"
+      labelSize="medium"
+      style={{ width: "100%" }}
+    >
+      <Dropdown {...props} />
+    </FormControl>
+  ),
+};
 
-export const HasError: StoryFn<DropdownProps> = DropdownTemplate.bind({});
+export const WithHelperText: StoryObj<typeof Dropdown> = {
+  args: dropdownArgs.basic,
+  render: (props) => (
+    <FormControl
+      label="Choose among the following options"
+      labelPlacement="top"
+      labelSize="medium"
+      style={{ width: "100%" }}
+      helper="This is helper text"
+    >
+      <Dropdown {...props} />
+    </FormControl>
+  ),
+};
 
-export const HasHelper: StoryFn<DropdownProps> = DropdownTemplate.bind({});
+export const Error: StoryObj<typeof Dropdown> = {
+  args: dropdownArgs.haserror,
+  render: (props) => (
+    <FormControl
+      label="Choose among the following options"
+      labelPlacement="top"
+      labelSize="medium"
+      style={{ width: "100%" }}
+      errorMessage="This is an error"
+    >
+      <Dropdown {...props} />
+    </FormControl>
+  ),
+};
 
-export const HasTooltip: StoryFn<DropdownProps> = DropdownTemplate.bind({});
+export const Disabled: StoryObj<typeof Dropdown> = {
+  args: dropdownArgs.isdisabled,
+  render: (props) => (
+    <FormControl
+      label="Choose among the following options"
+      labelPlacement="top"
+      labelSize="medium"
+      style={{ width: "100%" }}
+    >
+      <Dropdown {...props} />
+    </FormControl>
+  ),
+};
 
-export const IsDisabled: StoryFn<DropdownProps> = DropdownTemplate.bind({});
-
-// enumerate the props for the variations on the Dropdown component
-Basic.args = dropdownArgs.basic;
-Basic.storyName = "Basic";
-
-HasError.args = dropdownArgs.haserror;
-HasError.storyName = "Error";
-
-HasHelper.args = dropdownArgs.hashelper;
-HasHelper.storyName = "Helper";
-
-HasTooltip.args = dropdownArgs.hastooltip;
-HasTooltip.storyName = "Tooltip";
-
-IsDisabled.args = dropdownArgs.isdisabled;
-IsDisabled.storyName = "Disabled";
+export const WithToolTip: StoryObj<typeof Dropdown> = {
+  args: dropdownArgs.basic,
+  render: (props) => (
+    <FormControl
+      label="Choose among the following options"
+      labelPlacement="top"
+      labelSize="medium"
+      style={{ width: "100%" }}
+      tooltip="This is a tooltip"
+    >
+      <Dropdown {...props} />
+    </FormControl>
+  ),
+};
