@@ -1,48 +1,35 @@
-export interface DatePickerProps {
+import { FormFieldProps } from "../../types";
+
+export interface DatePickerProps extends FormFieldProps<HTMLInputElement> {
   /**
    * The input's onChange callback.
    */
-  callback?: (e: React.ChangeEvent<HTMLInputElement>, picker?: string) => any;
-
-  /**
-   * Specify an optional className to be added to your input.
-   */
-  className?: string;
-
-  /**
-   * Is the input disabled?
-   */
-  disabled?: boolean;
-
-  /**
-   * If this is a range, the data for the second field
-   */
-  enddata?: DatePickerProps;
-
-  /**
-   * Does the input have an error?
-   */
-  error?: string | false;
-
-  /**
-   * The input's helper text
-   */
-  helper: string | false;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>, picker?: string) => any;
 
   /**
    * The input's id attribute
    */
-  id?: string;
+  id: string;
 
   /**
-   * Does this input have a label?
+   * The latest date to accept
    */
-  label: string;
+  max?: string | number;
+
+  /**
+   * The earliest date to accept.
+   */
+  min?: string | number;
+
+  /**
+   * The granularity of the date picker
+   */
+  step?: number | "any";
 
   /**
    * The input's name attribute
    */
-  name?: Required<string>;
+  name?: string;
 
   /**
    * Specify an optional className to be added to your DatePicker component.
@@ -50,17 +37,7 @@ export interface DatePickerProps {
   placeholder?: string;
 
   /**
-   * Specify whether this is a date range
+   * Renders the input right-to-left
    */
-  range?: boolean;
-
-  /**
-   * Specify whether this input is required
-   */
-  required?: boolean;
-
-  /**
-   * Does this DatePicker have a tooltip?
-   */
-  tooltip?: string;
+  rtl?: boolean;
 }
