@@ -1,53 +1,46 @@
 import { FileUploadProps } from "./FileUpload.props";
 
 const basic: FileUploadProps = {
-  callback: () => {},
+  id: "fileupload",
   disabled: false,
   error: false,
-  helper: false,
-  label: "File Upload Field Label",
-  multiple: false,
+  multiple: true,
   name: "fileupload",
-  placeholder: "File Upload Field",
+  placeholder: "Select files",
   required: false,
 };
 
 const hashelper: FileUploadProps = {
-  callback: () => {},
+  id: "fileupload",
   disabled: false,
   error: false,
-  helper: "The file upload's helper text",
-  label: "File Upload Field Label",
-  multiple: false,
+  multiple: true,
   name: "fileupload",
-  placeholder: "File Upload Field",
+  placeholder: "Select files",
   required: false,
 };
 
 const haserror: FileUploadProps = {
-  callback: () => {},
+  id: "fileupload",
   disabled: false,
-  error: "this one has an error",
-  helper: false,
-  label: "File Upload Field Label",
-  multiple: false,
+  error: true,
+  multiple: true,
   name: "fileupload",
-  placeholder: "File Upload Field",
+  placeholder: "Select files",
   required: false,
 };
 
 const hastooltip: FileUploadProps = {
-  callback: () => {},
+  id: "fileupload",
   disabled: false,
   error: false,
-  helper: false,
-  label: "File Upload Field Label",
-  multiple: false,
+  multiple: true,
   name: "fileupload",
-  placeholder: "File Upload Field",
+  placeholder: "Select files",
   required: false,
-  tooltip: "here is the Tooltip",
 };
+
+const disabled: FileUploadProps = { ...basic, disabled: true };
 
 /**
  * Sample prop definitions FileUpload's enumerable properties (imported in stories and test)
@@ -57,6 +50,7 @@ const FileUploadArgs = {
   hashelper,
   haserror,
   hastooltip,
+  disabled,
 };
 
 export default FileUploadArgs;
