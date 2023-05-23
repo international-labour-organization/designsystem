@@ -1,5 +1,11 @@
 # @ilo-org/styles
 
+## 0.3.0
+
+### Minor Changes
+
+- 8bc52db6e: Create a new build folder called css which includes both the bundled stylesheets as well as the compiled css for each of the components.
+
 ## 0.2.1
 
 ### Patch Changes
