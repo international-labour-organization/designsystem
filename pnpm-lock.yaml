@@ -349,7 +349,6 @@ importers:
       gulp: ^4.0.2
       gulp-clean-css: ^4.3.0
       gulp-cssnano: ^2.1.3
-      gulp-flatmap: ^1.0.2
       gulp-postcss: ^9.0.1
       gulp-rename: ^2.0.0
       gulp-sass: ^5.1.0
@@ -367,7 +366,6 @@ importers:
       gulp: 4.0.2
       gulp-clean-css: 4.3.0
       gulp-cssnano: 2.1.3
-      gulp-flatmap: 1.0.2
       gulp-postcss: 9.0.1_postcss@8.4.23
       gulp-rename: 2.0.0
       gulp-sass: 5.1.0
@@ -11276,13 +11274,6 @@ packages:
     engines: {node: '>=6'}
     dev: false
 
-  /ansi-cyan/0.1.1:
-    resolution: {integrity: sha512-eCjan3AVo/SxZ0/MyIYRtkpxIu/H3xZN7URr1vXVrISxeyz8fUFz0FJziamK4sS8I+t35y4rHg1b2PklyBe/7A==}
-    engines: {node: '>=0.10.0'}
-    dependencies:
-      ansi-wrap: 0.1.0
-    dev: true
-
   /ansi-escapes/1.4.0:
     resolution: {integrity: sha512-wiXutNjDUlNEDWHcYH3jtZUhd3c4/VojassD8zHdHCY13xbZy2XbW+NKQwA0tWGBVzDA9qEzYwfoSsWmviidhw==}
     engines: {node: '>=0.10.0'}
@@ -11310,13 +11301,6 @@ packages:
     resolution: {integrity: sha512-1APHAyr3+PCamwNw3bXCPp4HFLONZt/yIH0sZp0/469KWNTEy+qN5jQ3GVX6DMZ1UXAi34yVwtTeaG/HpBuuzw==}
     engines: {'0': node >= 0.8.0}
     hasBin: true
-    dev: true
-
-  /ansi-red/0.1.1:
-    resolution: {integrity: sha512-ewaIr5y+9CUTGFwZfpECUbFlGcC0GCw1oqR9RI6h1gQCd9Aj2GxSckCnPsVJnmfMZbwFYE+leZGASgkWl06Jow==}
-    engines: {node: '>=0.10.0'}
-    dependencies:
-      ansi-wrap: 0.1.0
     dev: true
 
   /ansi-regex/2.1.1:
@@ -11495,14 +11479,6 @@ packages:
     resolution: {integrity: sha512-fExL2kFDC1Q2DUOx3whE/9KoN66IzkY4b4zUHUBFM1ojEYjZZYDcUW3bek/ufGionX9giIKDC5redH2IlGqcQQ==}
     dev: true
 
-  /arr-diff/1.1.0:
-    resolution: {integrity: sha512-OQwDZUqYaQwyyhDJHThmzId8daf4/RFNLaeh3AevmSeZ5Y7ug4Ga/yKc6l6kTZOBW781rCj103ZuTh8GAsB3+Q==}
-    engines: {node: '>=0.10.0'}
-    dependencies:
-      arr-flatten: 1.1.0
-      array-slice: 0.2.3
-    dev: true
-
   /arr-diff/4.0.0:
     resolution: {integrity: sha512-YVIQ82gZPGBebQV/a8dar4AitzCQs0jjXwMPZllpXMaGjXPYVUawSxQrRsjhjupyVxEvbHgUmIhKVlND+j02kA==}
     engines: {node: '>=0.10.0'}
@@ -11525,11 +11501,6 @@ packages:
     engines: {node: '>=0.10.0'}
     dependencies:
       make-iterator: 1.0.1
-    dev: true
-
-  /arr-union/2.1.0:
-    resolution: {integrity: sha512-t5db90jq+qdgk8aFnxEkjqta0B/GHrM1pxzuuZz2zWsOXc5nKu3t+76s/PQBA8FTcM/ipspIH9jWG4OxCBc2eA==}
-    engines: {node: '>=0.10.0'}
     dev: true
 
   /arr-union/3.1.0:
@@ -11602,11 +11573,6 @@ packages:
     engines: {node: '>=0.10.0'}
     dependencies:
       is-number: 4.0.0
-    dev: true
-
-  /array-slice/0.2.3:
-    resolution: {integrity: sha512-rlVfZW/1Ph2SNySXwR9QYkChp8EkOEiTMO5Vwx60usw04i4nWemkm9RXmQqgkQFaLHsqLuADvjp6IfgL9l2M8Q==}
-    engines: {node: '>=0.10.0'}
     dev: true
 
   /array-slice/1.1.0:
@@ -17707,13 +17673,6 @@ packages:
       type: 2.7.2
     dev: true
 
-  /extend-shallow/1.1.4:
-    resolution: {integrity: sha512-L7AGmkO6jhDkEBBGWlLtftA80Xq8DipnrRPr0pyi7GQLXkaq9JYA4xF4z6qnadIC6euiTDKco0cGSU9muw+WTw==}
-    engines: {node: '>=0.10.0'}
-    dependencies:
-      kind-of: 1.1.0
-    dev: true
-
   /extend-shallow/2.0.1:
     resolution: {integrity: sha512-zCnTtlxNoAiDc3gqY2aYAWFx7XWWiasuF2K8Me5WbN8otHKTUKBwjPtNpRs/rbUZm7KxWAaNj7P1a/p52GbVug==}
     engines: {node: '>=0.10.0'}
@@ -19640,14 +19599,6 @@ packages:
       object-assign: 4.1.1
       plugin-error: 1.0.1
       vinyl-sourcemaps-apply: 0.2.1
-    dev: true
-
-  /gulp-flatmap/1.0.2:
-    resolution: {integrity: sha512-xm+Ax2vPL/xiMBqLFI++wUyPtncm3b55ztGHewmRcoG/sYb0OUTatjSacOud3fee77rnk+jOgnDEHhwBtMHgFA==}
-    engines: {node: '>=0.10.0'}
-    dependencies:
-      plugin-error: 0.1.2
-      through2: 2.0.3
     dev: true
 
   /gulp-postcss/9.0.1_postcss@8.4.23:
@@ -23721,11 +23672,6 @@ packages:
       json-buffer: 3.0.1
     dev: false
 
-  /kind-of/1.1.0:
-    resolution: {integrity: sha512-aUH6ElPnMGon2/YkxRIigV32MOpTVcoXQ1Oo8aYn40s+sJ3j+0gFZsT8HKDcxNy7Fi9zuquWtGaGAahOdv5p/g==}
-    engines: {node: '>=0.10.0'}
-    dev: true
-
   /kind-of/2.0.1:
     resolution: {integrity: sha512-0u8i1NZ/mg0b+W3MGGw5I7+6Eib2nx72S/QvXa0hYjEkjTknYmEYQJwGu3mLC0BrhtJjtQafTkyRUQ75Kx0LVg==}
     engines: {node: '>=0.10.0'}
@@ -27688,17 +27634,6 @@ packages:
     engines: {node: '>=8'}
     dependencies:
       find-up: 3.0.0
-    dev: true
-
-  /plugin-error/0.1.2:
-    resolution: {integrity: sha512-WzZHcm4+GO34sjFMxQMqZbsz3xiNEgonCskQ9v+IroMmYgk/tas8dG+Hr2D6IbRPybZ12oWpzE/w3cGJ6FJzOw==}
-    engines: {node: '>=0.10.0'}
-    dependencies:
-      ansi-cyan: 0.1.1
-      ansi-red: 0.1.1
-      arr-diff: 1.1.0
-      arr-union: 2.1.0
-      extend-shallow: 1.1.4
     dev: true
 
   /plugin-error/1.0.1:
@@ -34580,13 +34515,6 @@ packages:
     resolution: {integrity: sha512-jaRjI2WxN3W1V8/FMZ9HKIBXixtiqs3SQSX4/YGIiP3gL6djW48VoZq9tDqeCWs3MT8YY5wb/zli8VW8snY1CA==}
     dependencies:
       through2: 2.0.5
-      xtend: 4.0.2
-    dev: true
-
-  /through2/2.0.3:
-    resolution: {integrity: sha512-tmNYYHFqXmaKSSlOU4ZbQ82cxmFQa5LRWKFtWCNkGIiZ3/VHmOffCeWfBRZZRyXAhNP9itVMR+cuvomBOPlm8g==}
-    dependencies:
-      readable-stream: 2.3.8
       xtend: 4.0.2
     dev: true
 
