@@ -15,9 +15,6 @@
   "publishConfig": {
     "access": "public"
   },
-  "dependencies": {
-    "typescript": "4.9.3"
-  },
   "devDependencies": {
     "@ilo-org/eslint-config": "workspace:*",
     "@ilo-org/typescript-config": "workspace:*",
