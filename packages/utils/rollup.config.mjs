@@ -14,7 +14,6 @@ const packageJson = require("./package.json");
 export default [
   {
     input: "src/index.ts",
-    external: [...Object.keys(packageJson.dependencies)],
     output: [
       {
         file: packageJson.main,
