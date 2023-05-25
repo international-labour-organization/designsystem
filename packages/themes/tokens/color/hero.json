@@ -4,9 +4,9 @@
       "article": { "value": "{color.base.blue.light}" },
       "image": { "value": "transparent" },
       "project": { "value": "{color.base.blue.light}" },
-      "portal": { 
-        "background": {"value": "{color.base.blue.dark}"},
-        "color": {"value": "{color.base.neutrals.white}"}
+      "portal": {
+        "background": { "value": "{color.base.blue.dark}" },
+        "color": { "value": "{color.base.neutrals.white}" }
       },
       "card": {
         "dark": {
