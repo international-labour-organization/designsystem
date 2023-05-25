@@ -46,8 +46,8 @@
     "video.js": "^7.21.2"
   },
   "devDependencies": {
-    "@babel/core": "^7.20.12",
-    "@babel/preset-env": "^7.20.2",
+    "@babel/core": "^7.21.8",
+    "@babel/preset-env": "^7.21.5",
     "@ilo-org/eslint-config": "workspace:*",
     "@ilo-org/prettier-config": "workspace:*",
     "@storybook/addon-actions": "^6.5.16",
@@ -58,8 +58,8 @@
     "@storybook/linter-config": "^3.1.2",
     "@storybook/react": "^6.5.16",
     "@storybook/storybook-deployer": "^2.8.16",
-    "@types/react": "^16.14.35",
-    "@types/react-dom": "^16.9.17",
+    "@types/react": "^17.0.11",
+    "@types/react-dom": "^17.0.20",
     "@wingsuit-designsystem/cli": "1.2.7",
     "@wingsuit-designsystem/core": "1.2.7",
     "@wingsuit-designsystem/pattern": "1.2.7",
