@@ -41,7 +41,6 @@
     "@ilo-org/typescript-config": "workspace:*",
     "@types/node": "^17.0.45",
     "@web/rollup-plugin-import-meta-assets": "^1.0.7",
-    "rollup": "^3.4.0",
     "rollup-plugin-copy": "^3.4.0",
     "rollup-plugin-typescript2": "^0.34.1"
   }
