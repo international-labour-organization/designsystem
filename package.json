@@ -49,9 +49,6 @@
   ],
   "dependencies": {
     "@changesets/cli": "^2.25.0",
-    "@ilo-org/eslint-config": "workspace:*",
-    "@ilo-org/prettier-config": "workspace:*",
-    "@ilo-org/typescript-config": "workspace:*",
     "@manypkg/cli": "^0.19.2",
     "eslint": "^8.41.0",
     "husky": "^7.0.4",
