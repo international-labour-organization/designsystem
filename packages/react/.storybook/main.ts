@@ -41,3 +41,7 @@ export const typescript = {
     },
   },
 };
+
+export const core = {
+  disableTelemetry: true,
+};
