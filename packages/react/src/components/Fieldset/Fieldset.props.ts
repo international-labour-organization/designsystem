@@ -2,8 +2,7 @@ import { ReactElement } from "react";
 import { InputProps } from "../Input/Input.props";
 import { TextareaProps } from "../Textarea/Textarea.props";
 
-export interface FieldsetChild
-  extends ReactElement<InputProps | TextareaProps> {}
+export type FieldsetChild = ReactElement<InputProps | TextareaProps>;
 
 export interface FieldsetProps {
   /**

@@ -53,7 +53,7 @@ export interface VideoProps {
   /**
    * Specify the alt for the image
    */
-  alt: String;
+  alt: string;
 
   /**
    * Specify the caption for the image/video
