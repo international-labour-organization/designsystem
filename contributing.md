@@ -88,7 +88,7 @@ nvm use
 Install [pnpm](https://pnpm.io/). Check the [package.json](<[../package.json](https://github.com/international-labour-organization/designsystem/blob/1de14fe3a6c3edb8991720b189a870f2f132fc73/package.json#L9)>) to get the correct version. Example:
 
 ```bash
-npm -i -g pnpm@7.25.0
+npm -i -g pnpm@8.5.1
 ```
 
 ### Installing Storybook dependencies
