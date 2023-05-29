@@ -1,7 +1,10 @@
-// import remarkGfm from "remark-gfm";
+export const core = {
+  disableTelemetry: true,
+  builder: "@storybook/builder-vite",
+};
 
 export const framework = {
-  name: "@storybook/react-webpack5",
+  name: "@storybook/react-vite",
   options: { fastRefresh: true },
 };
 
@@ -22,12 +25,6 @@ export const staticDirs = [
 export const addons = [
   "@storybook/addon-links",
   "@storybook/addon-essentials",
-  {
-    name: "@storybook/preset-create-react-app",
-    options: {
-      scriptsPackageName: "react-scripts",
-    },
-  },
   "@storybook/addon-a11y",
   "@storybook/addon-postcss",
 ];
@@ -40,8 +37,4 @@ export const typescript = {
       esModuleInterop: true,
     },
   },
-};
-
-export const core = {
-  disableTelemetry: true,
 };
