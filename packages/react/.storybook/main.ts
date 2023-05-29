@@ -1,3 +1,5 @@
+import sass from "sass";
+
 export const core = {
   disableTelemetry: true,
   builder: "@storybook/builder-vite",
@@ -5,7 +7,6 @@ export const core = {
 
 export const framework = {
   name: "@storybook/react-vite",
-  options: { fastRefresh: true },
 };
 
 export const stories = [
@@ -15,6 +16,7 @@ export const stories = [
 
 export const docs = {
   defaultName: "Overview",
+  autodocs: "tag",
 };
 
 export const staticDirs = [
@@ -26,7 +28,14 @@ export const addons = [
   "@storybook/addon-links",
   "@storybook/addon-essentials",
   "@storybook/addon-a11y",
-  "@storybook/addon-postcss",
+  {
+    name: "@storybook/addon-styling",
+    options: {
+      sass: {
+        implementation: sass,
+      },
+    },
+  },
 ];
 
 export const typescript = {
