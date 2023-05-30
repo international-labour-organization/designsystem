@@ -28,14 +28,7 @@ export const addons = [
   "@storybook/addon-links",
   "@storybook/addon-essentials",
   "@storybook/addon-a11y",
-  {
-    name: "@storybook/addon-styling",
-    options: {
-      sass: {
-        implementation: sass,
-      },
-    },
-  },
+  "@storybook/addon-styling",
 ];
 
 export const typescript = {
