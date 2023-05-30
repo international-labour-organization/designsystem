@@ -88,16 +88,14 @@ nvm use
 Install [pnpm](https://pnpm.io/). Check the [package.json](<[../package.json](https://github.com/international-labour-organization/designsystem/blob/1de14fe3a6c3edb8991720b189a870f2f132fc73/package.json#L9)>) to get the correct version. Example:
 
 ```bash
-npm -i -g pnpm@8.5.1
+npm -i -g pnpm@8.6.0
 ```
 
 ### Installing Storybook dependencies
 
-The `react` and `twig` Storybook projects use different versions of Webpack that don't play well together. That means you'll have to install the dependencies for each of them separately depending on which package you're working on.
+You can install all of the project dependencies with `pnpm install`. This is sufficient for building the `twig` and `react` libraries.
 
-**Note:** This should be resolved in the future once [Wingsuit@2.0.0](https://github.com/wingsuit-designsystem/wingsuit) is released, which will use Webpack@5.0.0.
-
-The below commands will clean out all project installation and build files (`node_modules`, `pnpm-lock.json`, `dist/`, etc.) and install all project dependencies for either `react` or `twig`. That includes dependencies for all of the other packages in the project that the `react` and `twig` packages depend on. These are the only install commands that you need.
+However, if you want to run the Storybook documentation sites for either `twig` or `react`, you will need to run a specific install script for either package in order to avoid dependency conflicts.
 
 ```bash
 pnpm react:install
@@ -107,7 +105,17 @@ pnpm react:install
 pnpm twig:install
 ```
 
-### React and Twig Storybook projects
+These will clean out all project installation and build files (`node_modules`, `pnpm-lock.json`, `dist/`, etc.) and install all project dependencies for either `react` or `twig`. That includes dependencies for all of the other packages in the project that the `react` and `twig` packages depend on.
+
+### React and Twig Libraries
+
+Build both the `react` and `twig` libraries in one command. Before you run this, you should run the global `pnpm install` command.
+
+```bash
+pnpm build:libs
+```
+
+### React and Twig Storybooks
 
 Build React Storybook and dependent packages
 
@@ -118,13 +126,7 @@ pnpm react:build:docs
 Start React storybook in dev mode
 
 ```bash
-pnpm --filter react storybook
-```
-
-Build React library and dependent packages
-
-```bash
-pnpm react:build:lib
+pnpm react:dev:docs
 ```
 
 Build Twig Storybook and dependent packages
@@ -136,13 +138,7 @@ pnpm twig:build:docs
 Start Twig storybook in dev mode
 
 ```bash
-pnpm --filter twig storybook
-```
-
-Build Twig library and dependent packages
-
-```bash
-pnpm twig:build:lib
+pnpm twig:dev:docs
 ```
 
 ### Testing, linting, formatting and type checking
