@@ -1,7 +1,6 @@
 <style>
   html,
   body,
-  #storybook-root,
   .story-decorator,
   .story-decorator-wrapper,
   .story-decorator {
@@ -13,13 +12,6 @@
     padding: 0;
   }
 
-  #storybook-root {
-    display: flex;
-    flex-flow: column;
-    justify-content: center;
-    align-items: center;
-  }
-
   .story-decorator-wrapper {
     display: table;
     text-align: center;
@@ -27,6 +19,8 @@
   }
 
   .story-decorator-wrapper.full-width-wrapper {
+    display: block;
+    text-align: initial;
     max-width: 100%;
   }
 
