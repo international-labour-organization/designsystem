@@ -1,5 +1,12 @@
 # @ilo-org/icon-build-helpers
 
+## 0.0.4
+
+### Patch Changes
+
+- be8262383: Prevent optimizer from stripping out color placeholder used by sass functions
+- be8262383: Add check for viewbox when generating descriptors. Builds broke sometimes without.
+
 ## 0.0.3
 
 ### Patch Changes

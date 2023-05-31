@@ -1,5 +1,14 @@
 # @ilo-org/styles
 
+## 0.3.2
+
+### Patch Changes
+
+- be8262383: Use css fonts file for monorepo
+- be8262383: Get monorepo fonts from css instead of from sass
+- 36960e383: Transpile and export global css for components
+  - @ilo-org/icons@0.1.17
+
 ## 0.3.1
 
 ### Patch Changes
