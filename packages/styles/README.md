@@ -48,3 +48,9 @@ As above, if you don't need styles for the whole design system, you can also imp
 ```SCSS
 @import "@ilo-org/styles/scss/components/accordion";
 ```
+
+### Remember to include global styles
+
+If you're importing CSS for individual components, remember to include the global styles as well. These are styles which are not scoped to any particular component, but which are needed for the components to work properly.
+
+You can import the global styles from `@ilo-org/styles/scss/global` or from `@ilo-org/styles/css/global`.
