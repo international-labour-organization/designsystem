@@ -147,10 +147,12 @@ async function createDescriptor(name, data, size, original) {
       descriptor.attrs.height = size;
       descriptor.attrs.viewBox = info.attrs.viewBox;
     } else {
-      const [width, height] = info.attrs.viewBox.split(" ").slice(2);
-      descriptor.attrs.width = width;
-      descriptor.attrs.height = height;
-      descriptor.attrs.viewBox = info.attrs.viewBox;
+      if (info.attrs.viewBox) {
+        const [width, height] = info.attrs.viewBox.split(" ").slice(2);
+        descriptor.attrs.width = width;
+        descriptor.attrs.height = height;
+        descriptor.attrs.viewBox = info.attrs.viewBox;
+      }
     }
   } else {
     descriptor.attrs.width = 64;

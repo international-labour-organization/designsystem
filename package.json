@@ -4,9 +4,9 @@
   "description": "A design system for the International Labour Organization",
   "license": "Apache-2.0",
   "main": "index.js",
-  "packageManager": "pnpm@7.25.0",
+  "packageManager": "pnpm@8.6.0",
   "engines": {
-    "pnpm": "7.25.0"
+    "pnpm": "8.6.0"
   },
   "scripts": {
     "build:libs": "turbo run build:lib -v",
@@ -21,12 +21,13 @@
     "format": "pnpm turbo run format:fix",
     "lint": "pnpm turbo run lint:fix",
     "prepare": "node ./prepare.js",
-    "react:install": "pnpm clean && pnpm --filter react... install",
+    "react:install": "pnpm clean && pnpm config set dedupe-peer-dependents=false && pnpm --filter react... install",
     "react:build:docs": "pnpm turbo run build:docs --filter=@ilo-org/react...",
     "react:dev:docs": "pnpm --filter react storybook",
     "test:all": "pnpm turbo run test",
-    "twig:install": "pnpm clean && pnpm --filter twig... install",
-    "twig:build:docs": "pnpm turbo run build:docs --filter=@ilo-org/twig...",
+    "twig:install": "pnpm clean && pnpm config set dedupe-peer-dependents=false && pnpm --filter twig... install",
+    "fix:pnpm-filter": "pnpm config set dedupe-peer-dependents=false",
+    "twig:build:docs": "pnpm fix:pnpm-filter && pnpm turbo run build:docs --filter twig...",
     "twig:dev:docs": "pnpm --filter twig storybook"
   },
   "postinstall": "manypkg check",
@@ -49,14 +50,12 @@
   ],
   "dependencies": {
     "@changesets/cli": "^2.25.0",
-    "@ilo-org/eslint-config": "0.0.2",
-    "@ilo-org/prettier-config": "0.0.1",
-    "@ilo-org/typescript-config": "0.0.1",
     "@manypkg/cli": "^0.19.2",
-    "eslint": "^8.11.0",
+    "eslint": "^8.41.0",
     "husky": "^7.0.4",
     "lint-staged": "^13.1.0",
-    "prettier": "^2.6.0",
+    "prettier": "^2.8.8",
+    "rollup": "^3.23.0",
     "turbo": "1.7.4",
     "typescript": "4.9.3"
   }

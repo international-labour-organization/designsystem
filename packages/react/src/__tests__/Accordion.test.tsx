@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from "@testing-library/react";
-import { composeStories } from "@storybook/testing-react";
+import { composeStories } from "@storybook/react";
 import * as stories from "../stories/Accordion/Accordion.stories";
 
 const { Default: AccordionLarge } = composeStories(stories);
