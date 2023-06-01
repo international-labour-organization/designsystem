@@ -1,5 +1,26 @@
 # @ilo-org/styles
 
+## 0.3.2
+
+### Patch Changes
+
+- be8262383: Use css fonts file for monorepo
+- be8262383: Get monorepo fonts from css instead of from sass
+- 36960e383: Transpile and export global css for components
+  - @ilo-org/icons@0.1.17
+
+## 0.3.1
+
+### Patch Changes
+
+- e5c100219: Correctly export files in styles/css dir
+
+## 0.3.0
+
+### Minor Changes
+
+- 8bc52db6e: Create a new build folder called css which includes both the bundled stylesheets as well as the compiled css for each of the components.
+
 ## 0.2.1
 
 ### Patch Changes

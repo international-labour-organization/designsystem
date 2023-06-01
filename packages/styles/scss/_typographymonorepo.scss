@@ -6,7 +6,7 @@
 
 // Load the theme vars and fonts
 @use "@ilo-org/themes/build/scss/tokens" as *;
-@forward "@ilo-org/fonts/index";
+@forward "@ilo-org/fonts/font-css/fonts";
 
 html,
 body {

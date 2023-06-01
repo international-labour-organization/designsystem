@@ -1,5 +1,37 @@
 # @ilo-org/twig
 
+## 0.2.22
+
+### Patch Changes
+
+- 31f3c3790: Added a block to wrap the image on the Hero component. That allows Drupal to include responsive images.
+
+## 0.2.21
+
+### Patch Changes
+
+- Updated dependencies [be8262383]
+- Updated dependencies [be8262383]
+- Updated dependencies [36960e383]
+  - @ilo-org/styles@0.3.2
+  - @ilo-org/brand-assets@0.1.0
+  - @ilo-org/utils@0.0.11
+  - @ilo-org/icons@0.1.17
+
+## 0.2.20
+
+### Patch Changes
+
+- Updated dependencies [e5c100219]
+  - @ilo-org/styles@0.3.1
+
+## 0.2.19
+
+### Patch Changes
+
+- Updated dependencies [8bc52db6e]
+  - @ilo-org/styles@0.3.0
+
 ## 0.2.18
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @ilo-org/eslint-config
 
+## 0.1.0
+
+### Minor Changes
+
+- be8262383: Update eslint plugins
+
 ## 0.0.3
 
 ### Patch Changes

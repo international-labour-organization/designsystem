@@ -1,5 +1,5 @@
 import { render, screen } from "@testing-library/react";
-import { composeStories } from "@storybook/testing-react";
+import { composeStories } from "@storybook/react";
 import headingArgs from "../components/Heading/Heading.args";
 import * as stories from "../stories/Heading/Heading.stories";
 

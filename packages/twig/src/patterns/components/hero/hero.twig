@@ -9,15 +9,17 @@
       prefix: prefix,
     } only %}
   {% endif %}
-  {% if not image %}
-  {% else %}
-    {% include "@components/image/image.twig" with {
-      alt: image.alt,
-      prefix: prefix,
-      url: image.url,
-      ishero: "true"
-    } only %}
-  {% endif %}
+  {% block hero_image %}
+    {% if not image %}
+    {% else %}
+      {% include "@components/image/image.twig" with {
+        alt: image.alt,
+        prefix: prefix,
+        url: image.url,
+        ishero: "true"
+      } only %}
+    {% endif %}
+  {% endblock %}
   {% include "@components/herocard/herocard.twig" with {
     alignment: herocard.alignment,
     eyebrow: herocard.eyebrow,

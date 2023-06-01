@@ -1,4 +1,3 @@
 "use strict";
-
-const prettierConfig = require("@ilo-org/prettier-config");
-module.exports = prettierConfig;
+const config = require("./config/prettier-config/index.js");
+module.exports = config;

@@ -1,7 +1,7 @@
 {
   "name": "@ilo-org/styles",
   "description": "Styles for products using ILO's Design System",
-  "version": "0.2.1",
+  "version": "0.3.2",
   "repository": {
     "type": "git",
     "url": "https://github.com/international-labour-organization/designsystem.git",
@@ -11,9 +11,12 @@
     "access": "public"
   },
   "scripts": {
-    "build": "sass scss:build/css --load-path=./node_modules && postcss build/css/index.css --base/css build/css --dir build/minified && postcss build/css/monorepo.css --base/css build/css --dir build/minified",
+    "build:legacy": "sass scss:build/css --load-path=./node_modules && postcss build/css/index.css --base/css build/css --dir build/minified && postcss build/css/monorepo.css --base/css build/css --dir build/minified",
+    "build:next": "gulp",
+    "build": "pnpm build:legacy && pnpm build:next",
     "build:lib": "pnpm build",
     "build:docs": "pnpm build",
+    "gulp": "gulp",
     "minify": "postcss build/css/index.css --base/css build/css --dir build/minified && postcss build/css/monorepo.css --base/css build/css --dir build/minified",
     "format": "prettier --check . --ignore-path ../../.prettierignore",
     "format:fix": "prettier --write . --ignore-path ../../.prettierignore",
@@ -24,7 +27,8 @@
   "license": "Apache-2.0",
   "files": [
     "build",
-    "scss"
+    "scss",
+    "css"
   ],
   "dependencies": {
     "@ilo-org/fonts": "workspace:*",
@@ -33,8 +37,16 @@
   },
   "devDependencies": {
     "cssnano": "^5.1.13",
-    "postcss": "^8.4.12",
+    "del": "^7.0.0",
+    "gulp": "^4.0.2",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-cssnano": "^2.1.3",
+    "gulp-postcss": "^9.0.1",
+    "gulp-rename": "^2.0.0",
+    "gulp-sass": "^5.1.0",
+    "gulp-sourcemaps": "^3.0.0",
+    "postcss": "^8.4.21",
     "postcss-cli": "^10.0.0",
-    "sass": "^1.49.9"
+    "sass": "^1.62.1"
   }
 }

@@ -1,0 +1,8 @@
+// Set prefix on default styles
+@use "config";
+
+// Load the css resets
+@use "reset";
+
+//Import type styles
+@use "typography";

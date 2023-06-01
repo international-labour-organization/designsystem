@@ -1,8 +1,12 @@
-// import remarkGfm from "remark-gfm";
+import sass from "sass";
+
+export const core = {
+  disableTelemetry: true,
+  builder: "@storybook/builder-vite",
+};
 
 export const framework = {
-  name: "@storybook/react-webpack5",
-  options: { fastRefresh: true },
+  name: "@storybook/react-vite",
 };
 
 export const stories = [
@@ -12,6 +16,7 @@ export const stories = [
 
 export const docs = {
   defaultName: "Overview",
+  autodocs: "tag",
 };
 
 export const staticDirs = [
@@ -22,14 +27,8 @@ export const staticDirs = [
 export const addons = [
   "@storybook/addon-links",
   "@storybook/addon-essentials",
-  {
-    name: "@storybook/preset-create-react-app",
-    options: {
-      scriptsPackageName: "react-scripts",
-    },
-  },
   "@storybook/addon-a11y",
-  "@storybook/addon-postcss",
+  "@storybook/addon-styling",
 ];
 
 export const typescript = {
