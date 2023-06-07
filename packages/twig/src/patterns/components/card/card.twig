@@ -10,7 +10,11 @@
   {% endif %}
   <div class="{{prefix}}--card--wrap">
     {% if image %}
-      <div class="{{prefix}}--card--image--wrapper"><picture><img class="{{prefix}}--card--image" src="{{image}}" alt="{{title}}"></picture></div>
+      <div class="{{prefix}}--card--image--wrapper">
+        {% block card_image %}
+          <picture><img class="{{prefix}}--card--image" src="{{image}}" alt="{{title}}"></picture>
+        {% endblock %}
+      </div>
     {% endif %}
     <div class="{{prefix}}--card--content">
       {% if eyebrow %}
@@ -20,7 +24,11 @@
         <h5 class="{{prefix}}--card--title">{{title}}</h5>
       {% endif %}
       {% if type == "multilink" or type == "data" and image %}
-        <div class="{{prefix}}--card--image--wrapper"><picture><img class="{{prefix}}--card--image" src="{{image}}" alt="{{title}}"></picture></div>
+        <div class="{{prefix}}--card--image--wrapper">
+          {% block card_image_multilink_or_data %}
+            <picture><img class="{{prefix}}--card--image" src="{{image}}" alt="{{title}}"></picture>
+          {% endblock %}
+        </div>
       {% endif %}
       {% if intro %}
         <p class="{{prefix}}--card--intro">{{intro}}</p>
