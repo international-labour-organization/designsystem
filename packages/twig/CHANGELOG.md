@@ -1,5 +1,11 @@
 # @ilo-org/twig
 
+## 0.2.23
+
+### Patch Changes
+
+- 3134bcadf: Add blocks to wrap pictures in card component
+
 ## 0.2.22
 
 ### Patch Changes
