@@ -5,6 +5,7 @@
 .ilo--checkbox {
   -webkit-appearance: none;
   -moz-appearance: none;
+  appearance: none;
   border: none;
   display: grid;
   height: px-to-rem(24px);
@@ -74,10 +75,10 @@
   }
 
   &:invalid,
-  &.error,
-  .error & {
+  &__error,
+  &__error & {
     &:after {
-      background-color: $color-base-red-medium;
+      border-color: $color-base-red-medium;
     }
 
     &:checked {

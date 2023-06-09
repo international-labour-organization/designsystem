@@ -1,88 +1,82 @@
-import { Children, FC } from "react";
+import { FC, createContext, useContext, useState } from "react";
 import classNames from "classnames";
 import useGlobalSettings from "../../hooks/useGlobalSettings";
-import { FieldsetChild, FieldsetProps } from "./Fieldset.props";
+import { FieldsetProps } from "./Fieldset.props";
 import { Tooltip } from "../Tooltip";
+
+type FieldsetContextType = {
+  hasError: boolean;
+  setHasError: (value: boolean) => void;
+};
+
+// Create a new context for the error state
+export const FieldsetErrorContext = createContext<FieldsetContextType>({
+  hasError: false,
+  setHasError: (value) => value,
+});
+
+// Custom hook to access the error state from the context
+export const useFieldsetError = () => useContext(FieldsetErrorContext);
 
 const Fieldset: FC<FieldsetProps> = ({
   children,
   className,
-  fieldsetid,
-  grouperror,
-  grouphelper,
-  grouptooltip,
   legend,
+  helper,
+  tooltip,
+  disabled = false,
+  wrap = "nowrap",
+  direction = "column",
+  ...props
 }) => {
   const { prefix } = useGlobalSettings();
+
+  const [hasError, setHasError] = useState(false);
+
   const baseClass = `${prefix}--fieldset`;
-  const fieldsetClasses = classNames(className, {
-    [baseClass]: true,
-  });
+  const wrapClass = `${baseClass}--wrap__${wrap}`;
+  const directionClass = `${baseClass}--direction__${direction}`;
+  const helperClass = `${baseClass}--helper`;
+  const errorClass = `${baseClass}__error`;
+  const disabledClass = `${baseClass}__disabled`;
+
+  const fieldsetClasses = classNames(
+    className,
+    baseClass,
+    wrapClass,
+    directionClass,
+    {
+      [errorClass]: hasError,
+      [disabledClass]: disabled,
+    }
+  );
+
+  const contextValue = {
+    hasError,
+    setHasError,
+  };
 
   return (
-    <fieldset
-      className={fieldsetClasses}
-      id={fieldsetid ? fieldsetid : undefined}
-    >
+    <fieldset className={fieldsetClasses} {...props}>
       {legend && (
         <legend className={`${baseClass}--legend`}>
           {legend}
-          {grouptooltip && (
+          {tooltip && (
             <Tooltip
               className={`${baseClass}--legend--tooltip`}
               icon={true}
-              label={grouptooltip}
+              label={tooltip}
               theme={"dark"}
             ></Tooltip>
           )}
         </legend>
       )}
-      {grouphelper && !grouperror && (
-        <span className={`${baseClass}--helper`}>{grouphelper}</span>
-      )}
-      {grouperror && (
-        <span className={`${baseClass}--error`}>{grouperror}</span>
-      )}
-      {Children.map(children, (child: FieldsetChild, i) => (
-        <>
-          {child && child.props && (
-            <div
-              key={`${baseClass}--input--${i}`}
-              className={`${baseClass}--input${
-                child.props?.type ? "--" + child.props.type : ""
-              } ${child.props.error ? "error" : ""}`}
-            >
-              {child.props.label && (
-                <label
-                  className={`${baseClass}--label`}
-                  htmlFor={child.props.id ? child.props.id : child.props.name}
-                >
-                  {child.props.label}
-                  {child.props.tooltip && (
-                    <Tooltip
-                      className={`${baseClass}--label--tooltip`}
-                      icon={true}
-                      label={child.props.tooltip}
-                      theme={"dark"}
-                    ></Tooltip>
-                  )}
-                </label>
-              )}
-              {child}
-              {child.props.helper && !child.props.error && (
-                <span className={`${baseClass}--helper`}>
-                  {child.props.helper}
-                </span>
-              )}
-              {child.props.error && (
-                <span className={`${baseClass}--error`}>
-                  {child.props.error}
-                </span>
-              )}
-            </div>
-          )}
-        </>
-      ))}
+      <div className={`${baseClass}--elements`}>
+        <FieldsetErrorContext.Provider value={contextValue}>
+          {children}
+        </FieldsetErrorContext.Provider>
+      </div>
+      {helper && <span className={helperClass}>{helper}</span>}
     </fieldset>
   );
 };

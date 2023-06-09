@@ -2,27 +2,28 @@ import { FC, useState } from "react";
 import classNames from "classnames";
 import useGlobalSettings from "../../hooks/useGlobalSettings";
 import { CheckboxProps } from "./Checkbox.props";
-import { Fieldset } from "../Fieldset";
-import { FormElement } from "../FormElement";
+import { useFieldsetError } from "../Fieldset/Fieldset";
 
 const Checkbox: FC<CheckboxProps> = ({
-  callback,
+  onChange,
   disabled = false,
   error,
-  grouped,
-  helper,
   id,
-  label,
   name,
   required,
-  tooltip,
 }) => {
   const { prefix } = useGlobalSettings();
   const baseClass = `${prefix}--checkbox`;
+  const errorClass = `${baseClass}__error`;
 
-  const CheckboxClasses = classNames("", {
-    [baseClass]: true,
-    [`error`]: error,
+  const { setHasError } = useFieldsetError();
+
+  if (error) {
+    setHasError(true);
+  }
+
+  const CheckboxClasses = classNames(baseClass, {
+    [errorClass]: error,
   });
 
   const [checked, setChecked] = useState(false);
@@ -33,59 +34,22 @@ const Checkbox: FC<CheckboxProps> = ({
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setChecked(e.target.checked);
 
-    if (callback) {
-      callback(e);
+    if (onChange) {
+      onChange(e);
     }
   };
 
   return (
-    <>
-      {grouped && (
-        <FormElement
-          elemid={id as any}
-          label={label}
-          helper={helper as any}
-          error={error as any}
-          required={required as any}
-          tooltip={tooltip}
-        >
-          <input
-            id={id}
-            name={name}
-            onChange={handleChange}
-            disabled={disabled}
-            required={required as any}
-            type={"checkbox"}
-            className={CheckboxClasses}
-            checked={checked}
-          />
-        </FormElement>
-      )}
-      {!grouped && (
-        <Fieldset>
-          <FormElement
-            elemid={id as any}
-            label={label}
-            helper={helper as any}
-            error={error as any}
-            required={required as any}
-            tooltip={tooltip}
-            type={"checkbox"}
-          >
-            <input
-              id={id}
-              name={name}
-              onChange={handleChange}
-              disabled={disabled}
-              required={required as any}
-              type={"checkbox"}
-              className={CheckboxClasses}
-              checked={checked}
-            />
-          </FormElement>
-        </Fieldset>
-      )}
-    </>
+    <input
+      id={id}
+      name={name ? name : id}
+      onChange={handleChange}
+      disabled={disabled}
+      required={required}
+      type={"checkbox"}
+      className={CheckboxClasses}
+      checked={checked}
+    />
   );
 };
 
