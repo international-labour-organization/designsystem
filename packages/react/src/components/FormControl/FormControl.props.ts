@@ -1,19 +1,4 @@
-import { ReactElement } from "react";
-import { DropdownProps } from "../Dropdown/Dropdown.props";
-import { InputProps } from "../Input/Input.props";
-import { TextareaProps } from "../Textarea/Textarea.props";
-import { ToggleProps } from "../Toggle";
-
 export interface FormControlProps {
-  /**
-   * The form element component to render
-   */
-  children:
-    | ReactElement<ToggleProps>
-    | ReactElement<InputProps>
-    | ReactElement<DropdownProps>
-    | ReactElement<TextareaProps>;
-
   /**
    * Optional className to add to the FormControl wrapper
    */
