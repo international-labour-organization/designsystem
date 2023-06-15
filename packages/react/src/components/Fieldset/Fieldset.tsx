@@ -24,6 +24,7 @@ const Fieldset: FC<FieldsetProps> = ({
   legend,
   helper,
   tooltip,
+  errorMessage,
   disabled = false,
   wrap = "nowrap",
   direction = "column",
@@ -46,37 +47,46 @@ const Fieldset: FC<FieldsetProps> = ({
     wrapClass,
     directionClass,
     {
-      [errorClass]: hasError,
       [disabledClass]: disabled,
     }
   );
+
+  const helperClasses = classNames(helperClass, {
+    [errorClass]: hasError,
+  });
 
   const contextValue = {
     hasError,
     setHasError,
   };
 
+  const showHelper = helper || hasError;
+
+  const helperMessage = hasError ? errorMessage : helper;
+
   return (
     <fieldset className={fieldsetClasses} {...props}>
-      {legend && (
-        <legend className={`${baseClass}--legend`}>
-          {legend}
-          {tooltip && (
-            <Tooltip
-              className={`${baseClass}--legend--tooltip`}
-              icon={true}
-              label={tooltip}
-              theme={"dark"}
-            ></Tooltip>
-          )}
-        </legend>
-      )}
+      <div className={`${baseClass}--legend-wrapper`}>
+        {legend && (
+          <legend className={`${baseClass}--legend`}>
+            {legend}
+            {tooltip && (
+              <Tooltip
+                className={`${baseClass}--legend--tooltip`}
+                icon={true}
+                label={tooltip}
+                theme={"dark"}
+              ></Tooltip>
+            )}
+          </legend>
+        )}
+        {showHelper && <span className={helperClasses}>{helperMessage}</span>}
+      </div>
       <div className={`${baseClass}--elements`}>
         <FieldsetErrorContext.Provider value={contextValue}>
           {children}
         </FieldsetErrorContext.Provider>
       </div>
-      {helper && <span className={helperClass}>{helper}</span>}
     </fieldset>
   );
 };

@@ -7,6 +7,11 @@ export interface FieldsetProps extends HTMLProps<HTMLFieldSetElement> {
   helper?: string;
 
   /**
+   * Optional error text for the fieldset
+   */
+  errorMessage?: string;
+
+  /**
    * Optional tooltip text for the fieldset
    */
   tooltip?: string;

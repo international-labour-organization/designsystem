@@ -18,11 +18,14 @@
   appearance: none;
   $c: &;
 
+  &--legend-wrapper {
+    @include textmargin("margin-bottom", $gap, "label-medium", "display", 0, 0);
+  }
+
   &--legend {
     font-family: $fonts-display;
     font-weight: map-get($type, "weights", "label");
     @include font-styles("label-medium");
-    @include textmargin("margin-bottom", $gap, "label-medium", "display", 0, 0);
   }
 
   &--direction__column {
@@ -49,8 +52,8 @@
     }
   }
 
-  &--helper {
-    color: $color-base-neutrals-medium;
+  &--helper,
+  &__error {
     font-family: $fonts-copy;
     @include font-styles("body-xxs");
     @include textmargin(
@@ -61,25 +64,19 @@
       0,
       0
     );
+  }
+
+  &--helper {
+    color: $color-base-neutrals-medium;
+  }
+
+  &__error {
+    color: $color-base-red-dark;
   }
 
   &__disabled {
     opacity: 50%;
     pointer-events: none;
-  }
-
-  &__error {
-    color: $color-base-red-dark;
-    font-family: $fonts-copy;
-    @include font-styles("body-xxs");
-    @include textmargin(
-      "margin-top",
-      map-get($spacing, "padding-1-5"),
-      "body-xxs",
-      "copy",
-      0,
-      0
-    );
   }
 
   div[class^="ilo--fieldset--input"]:first-of-type,
