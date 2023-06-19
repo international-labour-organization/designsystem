@@ -1,5 +1,11 @@
 # @ilo-org/twig
 
+## 0.2.24
+
+### Patch Changes
+
+- 55e5c479e: Add a check to only run the accordion function once in Drupal.
+
 ## 0.2.23
 
 ### Patch Changes
