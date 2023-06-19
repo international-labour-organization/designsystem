@@ -104,3 +104,10 @@ export interface FormFieldProps<T> {
    */
   style?: React.CSSProperties;
 }
+
+export interface ChoiceFieldProps<T> extends FormFieldProps<T> {
+  /**
+   * Whether the input should be checked by default
+   **/
+  defaultChecked?: boolean;
+}

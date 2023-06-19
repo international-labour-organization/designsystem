@@ -1,3 +1,3 @@
-import { FormFieldProps } from "../../types";
+import { ChoiceFieldProps } from "../../types";
 
-export type CheckboxProps = FormFieldProps<HTMLInputElement>;
+export type CheckboxProps = ChoiceFieldProps<HTMLInputElement>;

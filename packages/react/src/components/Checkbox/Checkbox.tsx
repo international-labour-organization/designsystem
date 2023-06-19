@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { FC, useEffect } from "react";
 import classNames from "classnames";
 import useGlobalSettings from "../../hooks/useGlobalSettings";
 import { CheckboxProps } from "./Checkbox.props";
@@ -11,29 +11,28 @@ const Checkbox: FC<CheckboxProps> = ({
   id,
   name,
   required,
+  defaultChecked = false,
 }) => {
   const { prefix } = useGlobalSettings();
-  const baseClass = `${prefix}--checkbox`;
-  const errorClass = `${baseClass}__error`;
 
   const { setHasError } = useFieldsetError();
 
-  if (error) {
-    setHasError(true);
-  }
+  const baseClass = `${prefix}--checkbox`;
+  const errorClass = `${baseClass}__error`;
 
   const CheckboxClasses = classNames(baseClass, {
     [errorClass]: error,
   });
 
-  const [checked, setChecked] = useState(false);
+  // Initialize the error state
+  useEffect(() => {
+    setHasError(!!error);
+  }, [error, setHasError]);
 
   /**
    * On change, if there is a callback, call it
    */
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setChecked(e.target.checked);
-
     if (onChange) {
       onChange(e);
     }
@@ -48,7 +47,7 @@ const Checkbox: FC<CheckboxProps> = ({
       required={required}
       type={"checkbox"}
       className={CheckboxClasses}
-      checked={checked}
+      defaultChecked={defaultChecked}
     />
   );
 };

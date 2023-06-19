@@ -1,60 +1,54 @@
-import { FC } from "react";
+import { FC, useEffect } from "react";
 import classNames from "classnames";
 import useGlobalSettings from "../../hooks/useGlobalSettings";
 import { RadioProps } from "./Radio.props";
-import { FormElement } from "../FormElement";
+import { useFieldsetError } from "../Fieldset/Fieldset";
 
 const Radio: FC<RadioProps> = ({
-  callback,
+  onChange,
   disabled = false,
   error,
-  helper,
   id,
-  label,
   name,
   required,
-  selected,
-  tooltip,
-  value,
+  defaultChecked = false,
 }) => {
   const { prefix } = useGlobalSettings();
-  const baseClass = `${prefix}--radio`;
+  const { setHasError } = useFieldsetError();
 
-  const RadioClasses = classNames("", {
-    [baseClass]: true,
-    [`error`]: error,
+  const baseClass = `${prefix}--radio`;
+  const errorClass = `${baseClass}__error`;
+
+  const CheckboxClasses = classNames(baseClass, {
+    [errorClass]: error,
   });
+
+  // Initialize the error state
+  useEffect(() => {
+    setHasError(!!error);
+  }, [error, setHasError]);
 
   /**
    * On change, if there is a callback, call it
    */
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (callback) {
-      callback(e);
+    console.log(e.target.value);
+    if (onChange) {
+      onChange(e);
     }
   };
 
   return (
-    <FormElement
-      elemid={id as any}
-      label={label}
-      helper={helper as any}
-      error={error as any}
-      required={required as any}
-      tooltip={tooltip}
-    >
-      <input
-        id={id}
-        name={name}
-        onChange={handleChange}
-        disabled={disabled}
-        required={required as any}
-        type={"radio"}
-        className={RadioClasses}
-        checked={selected === value}
-        value={value}
-      />
-    </FormElement>
+    <input
+      id={id}
+      name={name ? name : id}
+      onChange={handleChange}
+      disabled={disabled}
+      required={required}
+      type={"radio"}
+      className={CheckboxClasses}
+      defaultChecked={defaultChecked}
+    />
   );
 };
 
