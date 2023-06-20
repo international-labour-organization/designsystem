@@ -5,9 +5,12 @@ Drupal.behaviors.breadcrumb = {
     Array.prototype.forEach.call(
       document.querySelectorAll(`[data-loadcomponent="Breadcrumb"]`),
       (element) => {
-        // eslint-disable-next-line no-console
-        console.log("loading Breadcrumb component....");
-        new Breadcrumb(element);
+          if(!element.dataset.jsProcessed) {
+              // eslint-disable-next-line no-console
+              console.log("loading Breadcrumb component....");
+              new Breadcrumb(element);
+              element.dataset.jsProcessed = true;
+          }
       }
     );
   },

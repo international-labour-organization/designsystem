@@ -6,9 +6,12 @@ Drupal.behaviors.notification = {
     Array.prototype.forEach.call(
       document.querySelectorAll(`[data-loadcomponent="Notification"]`),
       (element) => {
-        // eslint-disable-next-line no-console
-        console.log("loading Notification component....");
-        new Notification(element);
+        if(!element.dataset.jsProcessed) {
+            // eslint-disable-next-line no-console
+            console.log("loading Notification component....");
+            new Notification(element);
+            element.dataset.jsProcessed = true;
+        }
       }
     );
   },
