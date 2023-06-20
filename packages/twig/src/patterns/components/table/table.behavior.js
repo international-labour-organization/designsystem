@@ -5,9 +5,12 @@ Drupal.behaviors.table = {
     Array.prototype.forEach.call(
       document.querySelectorAll(`[data-loadcomponent="Table"]`),
       (element) => {
-        // eslint-disable-next-line no-console
-        console.log("loading Table component....");
-        new Table(element);
+          if(!element.dataset.jsProcessed) {
+              // eslint-disable-next-line no-console
+              console.log("loading Table component....");
+              new Table(element);
+              element.dataset.jsProcessed = true;
+          }
       }
     );
   },
