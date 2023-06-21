@@ -1,5 +1,11 @@
 # @ilo-org/twig
 
+## 0.2.25
+
+### Patch Changes
+
+- 48900c9ac: Add an if statement to all Drupal.behaviors to avoid calling js functions more than once.
+
 ## 0.2.24
 
 ### Patch Changes
