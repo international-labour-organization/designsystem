@@ -1,5 +1,12 @@
 # @ilo-org/twig
 
+## 0.2.26
+
+### Patch Changes
+
+- 4dd7f57a5: Add an if statement to all Drupal.behaviors to avoid calling js functions more than once.
+- 44ff8b6db: Add responsive image structure to card images. Add loading attribute for card images and image component.
+
 ## 0.2.25
 
 ### Patch Changes
