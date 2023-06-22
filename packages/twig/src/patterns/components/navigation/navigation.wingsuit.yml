@@ -24,7 +24,7 @@ navigation:
       label: Site url
       description: home url for the website
       required: true
-      preview: "https://www.google.com/"
+      preview: "https://www.ilo.org/"
     tagline:
       type: object
       label: Site tagline
