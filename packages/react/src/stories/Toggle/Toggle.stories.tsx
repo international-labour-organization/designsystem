@@ -50,45 +50,97 @@ export default ToggleMeta;
 
 export const Default: StoryObj<typeof Toggle> = {
   args: ToggleArgs.Default,
+  render: (args) => (
+    <FormControl label="Show details" labelPlacement="end" labelSize="small">
+      <Toggle {...args} />
+    </FormControl>
+  ),
 };
 
 export const DefaultChecked: StoryObj<typeof Toggle> = {
   args: ToggleArgs.DefaultChecked,
+  render: (args) => (
+    <FormControl label="Show details" labelPlacement="end" labelSize="small">
+      <Toggle {...args} />
+    </FormControl>
+  ),
 };
 
 export const Disabled: StoryObj<typeof Toggle> = {
   args: ToggleArgs.Disabled,
+  render: (args) => (
+    <FormControl label="Show details" labelPlacement="end" labelSize="small">
+      <Toggle {...args} />
+    </FormControl>
+  ),
 };
 
 export const Error: StoryObj<typeof Toggle> = {
   args: ToggleArgs.Error,
+  render: (args) => (
+    <FormControl
+      label="Show details"
+      labelPlacement="end"
+      labelSize="small"
+      errorMessage="Invalid option"
+    >
+      <Toggle {...args} />
+    </FormControl>
+  ),
 };
 
 export const Controlled: StoryObj<typeof Toggle> = {
   args: ToggleArgs.Controlled,
+  render: (args) => (
+    <FormControl
+      label="Show details"
+      labelPlacement="end"
+      labelSize="small"
+      errorMessage="Invalid option"
+    >
+      <Toggle {...args} />
+    </FormControl>
+  ),
 };
 
 export const Small: StoryObj<typeof Toggle> = {
   args: ToggleArgs.Small,
+  render: (args) => (
+    <FormControl
+      label="Show details"
+      labelPlacement="end"
+      labelSize="small"
+      errorMessage="Invalid option"
+    >
+      <Toggle {...args} />
+    </FormControl>
+  ),
 };
 
 export const Medium: StoryObj<typeof Toggle> = {
   args: ToggleArgs.Medium,
+  render: (args) => (
+    <FormControl
+      label="Show details"
+      labelPlacement="end"
+      labelSize="small"
+      errorMessage="Invalid option"
+    >
+      <Toggle {...args} />
+    </FormControl>
+  ),
 };
 
 export const Large: StoryObj<typeof Toggle> = {
   args: ToggleArgs.Large,
-};
-
-export const WithLabel: StoryObj<typeof Toggle> = {
-  args: ToggleArgs.Small,
-  render: (props) => (
+  render: (args) => (
     <FormControl
-      label="Accept all cookies?"
+      label="Show details"
       labelPlacement="end"
-      labelSize="small"
+      labelSize="medium"
+      errorMessage="Invalid option"
     >
-      <Toggle {...props} />
+      <Toggle {...args} />
     </FormControl>
   ),
 };
