@@ -20,6 +20,15 @@ image:
       description: string
       preview: "© Marcel Crozet/ILO"
       required: true
+    loading:
+      type: string
+      label: Loading
+      description: The loading attribute for the image
+      required: false
+      preview: "lazy"
+      options:
+        Lazy: lazy
+        Eager: eager
     url:
       type: object
       label: URL

@@ -9,7 +9,7 @@
           <source srcset="{{img.src}}" media="(min-width: {{img.breakpoint}}px)">
         {% endif %}
       {% endfor %}
-      <img src="{{url|reverse|last.src}}" alt="{{alt}}">
+      <img src="{{url|reverse|last.src}}" alt="{{alt}}" {% if loading %}loading="{{ loading }}"{% endif %}>
     </picture>
     {% if not ishero or ishero =='false' %}
       {% if credit %}

@@ -12,7 +12,14 @@
     {% if image %}
       <div class="{{prefix}}--card--image--wrapper">
         {% block card_image %}
-          <picture><img class="{{prefix}}--card--image" src="{{image}}" alt="{{title}}"></picture>
+          <picture>
+            {% for img in url|reverse %}
+              {% if loop.last == false  %}
+                <source srcset="{{img.src}}" media="(min-width: {{img.breakpoint}}px)">
+              {% endif %}
+            {% endfor %}
+            <img class="{{prefix}}--card--image" src="{{url|reverse|last.src}}" alt="{{alt}}" {% if loading %}loading="{{ loading }}"{% endif %}>
+          </picture>
         {% endblock %}
       </div>
     {% endif %}
@@ -26,7 +33,14 @@
       {% if type == "multilink" or type == "data" and image %}
         <div class="{{prefix}}--card--image--wrapper">
           {% block card_image_multilink_or_data %}
-            <picture><img class="{{prefix}}--card--image" src="{{image}}" alt="{{title}}"></picture>
+            <picture>
+              {% for img in url|reverse %}
+                {% if loop.last == false  %}
+                  <source srcset="{{img.src}}" media="(min-width: {{img.breakpoint}}px)">
+                {% endif %}
+              {% endfor %}
+              <img class="{{prefix}}--card--image" src="{{url|reverse|last.src}}" alt="{{alt}}" {% if loading %}loading="{{ loading }}"{% endif %}>
+            </picture>
           {% endblock %}
         </div>
       {% endif %}
