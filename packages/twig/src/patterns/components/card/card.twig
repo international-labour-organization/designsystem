@@ -13,12 +13,12 @@
       <div class="{{prefix}}--card--image--wrapper">
         {% block card_image %}
           <picture>
-            {% for img in url|reverse %}
+            {% for img in image.url|reverse %}
               {% if loop.last == false  %}
                 <source srcset="{{img.src}}" media="(min-width: {{img.breakpoint}}px)">
               {% endif %}
             {% endfor %}
-            <img class="{{prefix}}--card--image" src="{{url|reverse|last.src}}" alt="{{alt}}" {% if loading %}loading="{{ loading }}"{% endif %}>
+            <img class="{{prefix}}--card--image" src="{{image.url|reverse|last.src}}" alt="{{image.alt}}" {% if loading %}loading="{{ image.loading }}"{% endif %}>
           </picture>
         {% endblock %}
       </div>
@@ -34,12 +34,12 @@
         <div class="{{prefix}}--card--image--wrapper">
           {% block card_image_multilink_or_data %}
             <picture>
-              {% for img in url|reverse %}
+              {% for img in image.url|reverse %}
                 {% if loop.last == false  %}
                   <source srcset="{{img.src}}" media="(min-width: {{img.breakpoint}}px)">
                 {% endif %}
               {% endfor %}
-              <img class="{{prefix}}--card--image" src="{{url|reverse|last.src}}" alt="{{alt}}" {% if loading %}loading="{{ loading }}"{% endif %}>
+              <img class="{{prefix}}--card--image" src="{{image.url|reverse|last.src}}" alt="{{image.alt}}" {% if loading %}loading="{{ image.loading }}"{% endif %}>
             </picture>
           {% endblock %}
         </div>

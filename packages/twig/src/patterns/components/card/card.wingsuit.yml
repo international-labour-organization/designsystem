@@ -164,7 +164,10 @@ card:
       fields:
         eyebrow: High-level meeting
         title: "ILO welcomes G7 call to make a just transition to a green economy happen"
-        image: "/images/hero.jpg"
+        image:
+          url: "/images/hero.jpg"
+          alt: "alt text"
+          loading: "lazy"
         intro: "At the end of their meeting the G7 Labour Ministers highlighted the urgent need to greater focus on rights and occupational safety and health."
         linklist:
           linkgroup:
@@ -196,7 +199,10 @@ card:
           human: 17 March 2022
           unix: 1670389200
         link: "https://www.ilo.org/search?q=graphic"
-        image: "/images/hero.jpg"
+        image:
+          url: "/images/hero.jpg"
+          alt: "alt text"
+          loading: "lazy"
         linklist:
           headline: ""
           linkgroup:
@@ -215,7 +221,10 @@ card:
           human: 17 March 2022
           unix: 1670389200
         link: "https://www.ilo.org"
-        image: "/images/medium.jpg"
+        image:
+          url: "/images/medium.jpg"
+          alt: "text"
+          loading: "lazy"
         profile:
         eventdetails: "8:30 - 12:00 CET | Geneva"
     factlist:
