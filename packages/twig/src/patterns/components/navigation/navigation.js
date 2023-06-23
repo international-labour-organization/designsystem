@@ -500,6 +500,8 @@ export default class Navigation {
    * @chainable
    */
   handleSubnavBackClick(e) {
+    e.stopImmediatePropagation();
+    e.preventDefault();
     // this.element.classList.remove(`${this.prefix}--subnav--open`);
     this.subnavClickOff(e);
     this.element.classList.remove(`${this.prefix}--select--open`);
