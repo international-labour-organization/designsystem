@@ -649,6 +649,7 @@
 
   .ilo--context-menu {
     opacity: 0;
+    visibility: hidden;
     position: absolute;
     right: 0;
     top: calc(100% + 12px);
@@ -659,12 +660,14 @@
     .ilo--language-switcher:focus-within &,
     &:focus-within {
       opacity: 1;
+      visibility: visible;
       z-index: 1;
     }
   }
 
   .ilo--language-switcher--button:focus + .ilo--context-menu {
     opacity: 1;
+    visibility: visible;
     z-index: 1;
   }
 }
