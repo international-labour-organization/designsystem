@@ -214,6 +214,10 @@
       direction: rtl;
     }
 
+    .ilo--subnav--open & {
+      visibility: hidden;
+    }
+
     @include breakpoint("large") {
       display: flex;
       justify-content: space-between;
