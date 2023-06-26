@@ -86,8 +86,6 @@ export default class Video {
    * @chainable
    */
   start() {
-    console.log("this.VideoElement", this.VideoElement);
-
     this.player = videojs(this.VideoElement, {
       autoplay: false,
       controls: true,
