@@ -1,5 +1,13 @@
 # @ilo-org/styles
 
+## 0.3.3
+
+### Patch Changes
+
+- ee859111c: Fix bug where links in language toggle were still clickable even when not showing
+- ee859111c: Correct hero card with
+- ee859111c: Correctly handle visibility of mobile nav sections when they're covered by other parts
+
 ## 0.3.2
 
 ### Patch Changes

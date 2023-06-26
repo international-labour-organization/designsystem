@@ -1,5 +1,19 @@
 # @ilo-org/twig
 
+## 0.3.0
+
+### Minor Changes
+
+- ee859111c: Add support for reponsive images in the Card component. The `image` field can take either a string (for a non-responsive image) or an array of objects with an `src` and `breakpoint` property. The `image` field of the card now works the same way as the `url` field of the Image component. This also adds an `imageAlt` field that applies a describe alt tag to the image.
+
+### Patch Changes
+
+- ee859111c: Fixes bug where touch events on the mobile open/close buttons inadvertantly activated the logo link. Also correctly hides the mobile nav when it's closed so it doesn't show up in the tab order and can't be clicked.
+- Updated dependencies [ee859111c]
+- Updated dependencies [ee859111c]
+- Updated dependencies [ee859111c]
+  - @ilo-org/styles@0.3.3
+
 ## 0.2.26
 
 ### Patch Changes
