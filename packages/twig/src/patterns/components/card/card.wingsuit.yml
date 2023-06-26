@@ -30,6 +30,16 @@ card:
       label: Eyebrow
       description: Event details for `Detail` card
       preview: ""
+    image:
+      type: object
+      label: Image
+      description: Image settings for the card. Only applies to `Graphic Promo` and `Graphic Text` cards. Image can be a string consisting of an image src or an array of objects with `src` and `breakpoint` properties for responsive images.
+      preview: ""
+    imageAlt:
+      type: string
+      label: Image Alt
+      description: Alt text for the image
+      preview: "This is the alt text for the image"
     profile:
       type: object
       label: Profile
@@ -49,22 +59,14 @@ card:
       type: object
       label: CTA
       description: Items for clickable CTA button. Button used for `Graphic Promo` card.
-      preview:
-    image:
-      type: string
-      label: Image
-      description: The image for the card. Images should be avoided on `Graphic Promo`, `Graphic Text`, `Factlist`, and `Stat` card.
-      preview: ""
     source:
       type: object
       label: Source
       description: Source link for `Stat` cards
-      preview:
     linklist:
       type: object
       label: Link List
       description: Implementation of the LinkList component. Appears at the bottom of `Multilink` or `Feature` card.
-      preview:
     dataset:
       type: object
       label: Dataset object
@@ -164,7 +166,15 @@ card:
       fields:
         eyebrow: High-level meeting
         title: "ILO welcomes G7 call to make a just transition to a green economy happen"
-        image: "/images/hero.jpg"
+        image:
+          - breakpoint: 0
+            src: "/images/small.jpg"
+          - breakpoint: 800
+            src: "/images/medium.jpg"
+          - breakpoint: 1200
+            src: "/images/large.jpg"
+          - breakpoint: 1440
+            src: "/images/large.jpg"
         intro: "At the end of their meeting the G7 Labour Ministers highlighted the urgent need to greater focus on rights and occupational safety and health."
         linklist:
           linkgroup:
