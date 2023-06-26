@@ -1,5 +1,11 @@
 # @ilo-org/styles
 
+## 0.3.4
+
+### Patch Changes
+
+- ee2e53f51: Fix bug where whole nav disappeared when user clicked more button
+
 ## 0.3.3
 
 ### Patch Changes
