@@ -17,14 +17,14 @@ navigation:
       description: Logo for the nav
       required: true
       preview:
-        image: "/brand-assets/logo_en_horizontal_white.svg"
+        image: "/brand-assets/logo_en_horizontal_blue.svg"
         alt: Logo
     siteurl:
       type: string
       label: Site url
       description: home url for the website
       required: true
-      preview: "https://www.google.com/"
+      preview: "https://www.ilo.org/"
     tagline:
       type: object
       label: Site tagline
