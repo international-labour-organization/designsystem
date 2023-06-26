@@ -6,7 +6,6 @@ Drupal.behaviors.fileupload = {
       document.querySelectorAll(`[data-loadcomponent="FileUpload"]`),
       (element) => {
         // eslint-disable-next-line no-console
-        console.log("loading FileUpload component....");
         new FileUpload(element);
       }
     );

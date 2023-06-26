@@ -63,7 +63,6 @@ export default class Accordion {
     this.accordionButtons = this.element.querySelectorAll(
       ".ilo--accordion--button"
     );
-    console.log(this.multipleExpanded);
 
     return this;
   }
