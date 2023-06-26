@@ -33,8 +33,16 @@ card:
     image:
       type: object
       label: Image
-      description: Image settings for the card. Only applies to `Graphic Promo` and `Graphic Text` cards. Image can be a string consisting of an image src or an array of objects with `src` and `breakpoint` properties for responsive images.
-      preview: ""
+      description: Image settings for the card. For responsive images, this can be an array of objects with an `src` property pointing to the image file and a `breakpoint` property indicating the minimum viewport width at which the image should be displayed. For static images, this can be a string pointing to the image file.
+      preview:
+        - breakpoint: 0
+          src: "/images/small.jpg"
+        - breakpoint: 800
+          src: "/images/medium.jpg"
+        - breakpoint: 1200
+          src: "/images/large.jpg"
+        - breakpoint: 1440
+          src: "/images/large.jpg"
     imageAlt:
       type: string
       label: Image Alt
@@ -135,7 +143,6 @@ card:
         date:
           human: 20 September 2022
           unix: 1670389200
-        image: ""
         link: "https:/www.ilo.org"
         profile:
           avatar: "/images/ilo-dg.jpg"
@@ -166,15 +173,6 @@ card:
       fields:
         eyebrow: High-level meeting
         title: "ILO welcomes G7 call to make a just transition to a green economy happen"
-        image:
-          - breakpoint: 0
-            src: "/images/small.jpg"
-          - breakpoint: 800
-            src: "/images/medium.jpg"
-          - breakpoint: 1200
-            src: "/images/large.jpg"
-          - breakpoint: 1440
-            src: "/images/large.jpg"
         intro: "At the end of their meeting the G7 Labour Ministers highlighted the urgent need to greater focus on rights and occupational safety and health."
         linklist:
           linkgroup:
@@ -206,7 +204,6 @@ card:
           human: 17 March 2022
           unix: 1670389200
         link: "https://www.ilo.org/search?q=graphic"
-        image: "/images/hero.jpg"
         linklist:
           headline: ""
           linkgroup:
@@ -225,7 +222,6 @@ card:
           human: 17 March 2022
           unix: 1670389200
         link: "https://www.ilo.org"
-        image: "/images/medium.jpg"
         profile:
         eventdetails: "8:30 - 12:00 CET | Geneva"
     factlist:
