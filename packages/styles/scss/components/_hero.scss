@@ -186,7 +186,7 @@
   );
   background: map-get($color, "hero", "card", "light", "background");
   color: map-get($color, "hero", "card", "light", "color");
-  max-width: 998px;
+  max-width: 920px;
   position: relative;
   padding: 16px 16px 40px 16px;
 
@@ -224,10 +224,10 @@
       64px,
       116px
     );
-    padding: 0 70px 70px 56px;
+    padding: 0 70px 70px 70px;
 
     &.ilo--hero-card--graphic {
-      padding: 0 70px 44px 56px;
+      padding: 0 70px 44px 70px;
     }
   }
 

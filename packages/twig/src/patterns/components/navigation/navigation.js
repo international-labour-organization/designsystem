@@ -149,11 +149,11 @@ export default class Navigation {
     // menuCloseSet
     if (this.menuCloseSet.length > 0) {
       this.menuCloseSet.forEach((closeButton, i) => {
-        closeButton.addEventListener(EVENTS.CLICK, () =>
-          this.menuCloseClick(i)
+        closeButton.addEventListener(EVENTS.CLICK, (e) =>
+          this.menuCloseClick(i, e)
         );
-        closeButton.addEventListener(EVENTS.TOUCH_START, () =>
-          this.menuCloseClick(i)
+        closeButton.addEventListener(EVENTS.TOUCH_START, (e) =>
+          this.menuCloseClick(i, e)
         );
       });
     }
@@ -418,6 +418,7 @@ export default class Navigation {
    * @chainable
    */
   handleMenuOpenClick(e) {
+    e.preventDefault();
     e.stopImmediatePropagation();
     this.element.classList.add(`${this.prefix}--mobile--open`);
     this.body.classList.add(`${this.prefix}--menu--open`);
@@ -499,6 +500,8 @@ export default class Navigation {
    * @chainable
    */
   handleSubnavBackClick(e) {
+    e.stopImmediatePropagation();
+    e.preventDefault();
     // this.element.classList.remove(`${this.prefix}--subnav--open`);
     this.subnavClickOff(e);
     this.element.classList.remove(`${this.prefix}--select--open`);
@@ -512,7 +515,9 @@ export default class Navigation {
    * @return {Object} Navigation A reference to the instance of the class
    * @chainable
    */
-  handleMenuCloseClick() {
+  handleMenuCloseClick(i, e) {
+    e.preventDefault();
+    e.stopImmediatePropagation();
     this.element.classList.remove(`${this.prefix}--mobile--open`);
     this.element.classList.remove(`${this.prefix}--subnav--open`);
 
