@@ -4,6 +4,8 @@
 
 .ilo--video {
   position: relative;
+  width: 100%;
+  max-width: 855px;
 
   &--wrapper {
     line-height: 0;
@@ -708,6 +710,14 @@
         height: px-to-rem(80px);
         width: px-to-rem(80px);
       }
+    }
+  }
+
+  .vjs-youtube {
+    padding-bottom: 56%;
+
+    &:not(.vjs-has-started) .vjs-poster {
+      display: block;
     }
   }
 

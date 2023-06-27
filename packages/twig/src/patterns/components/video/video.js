@@ -106,6 +106,9 @@ export default class Video {
       errorDisplay: false,
       textTrackSettings: false,
       resizeManager: false,
+      sources: [
+        { type: this.element.dataset.vjsType, src: this.element.dataset.src },
+      ],
     });
 
     return this;
