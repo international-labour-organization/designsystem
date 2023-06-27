@@ -23,6 +23,32 @@ const basic: BreadcrumbProps = {
       label: "Link Four",
       url: "https://www.ilo.org/",
     },
+  ],
+};
+
+const fiveLinks: BreadcrumbProps = {
+  home: {
+    indented: false,
+    label: "Home",
+    url: "/",
+  },
+  links: [
+    {
+      label: "Link One",
+      url: "https://www.ilo.org/",
+    },
+    {
+      label: "Link Two",
+      url: "https://www.ilo.org/",
+    },
+    {
+      label: "Link Three",
+      url: "https://www.ilo.org/",
+    },
+    {
+      label: "Link Four",
+      url: "https://www.ilo.org/",
+    },
     {
       label: "Link Five",
       url: "https://www.ilo.org/",
@@ -30,6 +56,6 @@ const basic: BreadcrumbProps = {
   ],
 };
 
-const BreadcrumbArgs = { basic };
+const BreadcrumbArgs = { basic, fiveLinks };
 
 export default BreadcrumbArgs;

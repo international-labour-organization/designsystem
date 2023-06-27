@@ -13,3 +13,8 @@ export const BasicBreadcrumb: StoryObj<typeof Breadcrumb> = {
   args: BreadcrumbArgs.basic,
   name: "Basic",
 };
+
+export const FiveLinksBreadcrumb: StoryObj<typeof Breadcrumb> = {
+  args: BreadcrumbArgs.fiveLinks,
+  name: "Five Links",
+};
