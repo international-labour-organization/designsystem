@@ -1,26 +1,8 @@
 hero:
   use: "@components/hero/hero.twig"
   label: Hero
-  description: The Hero presents an image banner.
+  description: The Hero component is usually found at the top of the page and introduces the page content. It can be used with our without an image and/or breadcrumbs that provide context to the page.
   fields:
-    breadcrumb:
-      label: Implementation of Breadcrumb component. See Breadcrumb for more details
-      type: object
-      preview:
-        home:
-          label: "Home"
-          url: "/"
-        links:
-          - label: "Link One"
-            url: "/linkone"
-          - label: "Link Two"
-            url: "/linktwo"
-          - label: "Link Three"
-            url: "/linkthree"
-          - label: "Link Four"
-            url: "/linkfour"
-          - label: "Link Five"
-            url: "/linkfive"
     image:
       label: Implementation of Image component. See Image for more details
       type: object
@@ -31,6 +13,9 @@ hero:
             src: "/images/hero.jpg"
           - breakpoint: 768
             src: "/images/hero.jpg"
+    breadcrumb:
+      label: Breadcrumbs
+      type: object
     herocard:
       label: Part of the hero that displays text on top of image (or if no image on a background color). There are light and dark versions and all text parts are optional.
       type: object
@@ -46,18 +31,47 @@ hero:
           - label: "Linkedin"
             url: "https://www.linkedin.com/company/international-labour-organization-ilo"
             icon: "linkedin"
-        title: "This is an left aligned article headline that is more than two lines long"
+        title: "G20 Labour and Employment Ministers meet to discuss the future of work"
   variants:
     default:
       label: Default
-    article:
-      label: Article
-      description: article settings
+    withoutimage:
+      label: With no image
+      description: without image settings
       fields:
         image: ""
-      settings:
-        theme: light
-        types: article
+        herocard:
+          alignment: center
+          datecopy: 11 February 2022
+          eyebrow: Eyebrow
+          intro: "Brief intro text - ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+          socials:
+            - label: "Facebook"
+              url: "https://www.facebook.com/ilo.org"
+              icon: "facebook"
+            - label: "Linkedin"
+              url: "https://www.linkedin.com/company/international-labour-organization-ilo"
+              icon: "linkedin"
+          title: "G20 Labour and Employment Ministers meet to discuss the future of work"
+    breadcrumbs:
+      label: With breadcrumbs
+      description: with breadcrumbs settings
+      fields:
+        breadcrumb:
+            home:
+              label: "Home"
+              url: "/"
+            links:
+              - label: "Link One"
+                url: "/linkone"
+              - label: "Link Two"
+                url: "/linktwo"
+              - label: "Link Three"
+                url: "/linkthree"
+              - label: "Link Four"
+                url: "/linkfour"
+              - label: "Link Five"
+                url: "/linkfive"
   settings:
     theme:
       type: select
@@ -81,7 +95,7 @@ hero:
       label: Types
       description: The type of hero
       required: false
-      preview: "publication"
+      preview: "graphic"
       options:
         home: Home
         publication: Publication
