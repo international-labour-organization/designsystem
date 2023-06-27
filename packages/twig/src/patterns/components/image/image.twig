@@ -6,7 +6,7 @@
     <picture class="{{prefix}}--image--img" {% if credit and ishero and ishero != 'false' %}title="{{credit}}"{% endif %}>
       {% for img in url|reverse %}
         {% if loop.last == false  %}
-          <source srcset="{{img.src}}" media="(min-width: {{img.breakpoint}}px)">
+          <source srcset="{{img.src}}" media="{{img.breakpoint}}">
         {% endif %}
       {% endfor %}
       <img src="{{url|reverse|last.src}}" alt="{{alt}}" {% if loading %}loading="{{ loading }}"{% endif %}>

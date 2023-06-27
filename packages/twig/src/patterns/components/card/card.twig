@@ -16,7 +16,7 @@
             <picture>
               {% for img in image|reverse %}
                 {% if loop.last == false  %}
-                  <source srcset="{{img.src}}" media="(min-width: {{img.breakpoint}}px)">
+                  <source srcset="{{img.src}}" media="{{img.breakpoint}}">
                 {% endif %}
               {% endfor %}
               <img class="{{prefix}}--card--image" src="{{image|reverse|last.src}}" alt="{{imageAlt}}" {% if loading %} loading="{{ loading }}"{% endif %}>

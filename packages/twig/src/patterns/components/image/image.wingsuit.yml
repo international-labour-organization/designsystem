@@ -35,13 +35,13 @@ image:
       description: The image url(s), and at which breakpoint each should be displayed.
       required: true
       preview:
-        - breakpoint: 0
+        - breakpoint: "(min-width: 0px)"
           src: "/images/small.jpg"
-        - breakpoint: 800
+        - breakpoint: "(min-width: 800px)"
           src: "/images/medium.jpg"
-        - breakpoint: 1200
+        - breakpoint: "(min-width: 1200px)"
           src: "/images/large.jpg"
-        - breakpoint: 1440
+        - breakpoint: "(min-width: 1440px)"
           src: "/images/large.jpg"
   settings:
     ishero:
