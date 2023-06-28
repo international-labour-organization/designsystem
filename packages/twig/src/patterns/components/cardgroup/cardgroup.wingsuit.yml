@@ -23,6 +23,8 @@ cardgroup:
         group:
           - title: "Multi-link card - first"
             image: "/images/hero.jpg"
+            imageAlt: "The alt text of the image"
+            loading: lazy
             intro: "Lorem ipsum dolor sit amet consectetur adipiscing elit. Lobortis egestas ipsum dolor sit amet consectetur adipiscing elit. Lobortis egestas ipsum dolor sit amet consectetur adipiscing elit. Lobortis egestas lacus."
             eyebrow: ""
             date: ""
@@ -45,6 +47,8 @@ cardgroup:
                       url: "http://www.google.com"
           - title: "Multi-link card second - right aligned image, wide option"
             image: "/images/medium.jpg"
+            imageAlt: "The alt text of the image"
+            loading: "lazy"
             intro: "Lorem ipsum dolor sit amet consectetur adipiscing elit. Lobortis egestas ipsum dolor sit amet consectetur adipiscing elit. Lobortis egestas ipsum dolor sit amet consectetur adipiscing elit. Lobortis egestas lacus."
             eyebrow: ""
             date: ""
@@ -66,6 +70,8 @@ cardgroup:
                       url: "http://www.google.com"
           - title: "Multi-link card - right aligned image, wide option"
             image: "/images/ilo-headquarters.jpg"
+            imageAlt: "The alt text of the image"
+            loading: "lazy"
             intro: "Lorem ipsum dolor sit amet consectetur adipiscing elit. Lobortis egestas ipsum dolor sit amet consectetur adipiscing elit. Lobortis egestas ipsum dolor sit amet consectetur adipiscing elit. Lobortis egestas lacus."
             eyebrow: ""
             date: ""
@@ -94,6 +100,8 @@ cardgroup:
         group:
           - title: "Vertical info card descriptive headline text"
             image: "/images/small.jpg"
+            imageAlt: "The alt text of the image"
+            loading: "lazy"
             intro: ""
             eyebrow: "Eyebrow title"
             date:
@@ -109,6 +117,8 @@ cardgroup:
             color: ""
           - title: "Vertical info card descriptive headline text"
             image: "/images/hero.jpg"
+            imageAlt: "The alt text of the image"
+            loading: "lazy"
             intro: ""
             eyebrow: "Eyebrow title"
             date:
@@ -124,6 +134,8 @@ cardgroup:
             color: ""
           - title: "Vertical info card descriptive headline text Vertical info card descriptive headline text Vertical info card descriptive headline text"
             image: "images/ilo-headquarters.jpg"
+            imageAlt: "The alt text of the image"
+            loading: "lazy"
             intro: ""
             eyebrow: "Eyebrow title"
             date:
@@ -139,6 +151,8 @@ cardgroup:
             color: ""
           - title: "Vertical info card descriptive headline text"
             image: "/images/youtube-video-poster.avif"
+            imageAlt: "The alt text of the image"
+            loading: "lazy"
             intro: ""
             eyebrow: "Eyebrow title"
             date:
@@ -161,6 +175,8 @@ cardgroup:
         group:
           - title: "Horizontal info card descriptive headline text"
             image: "/images/ilo-headquarters.jpg"
+            imageAlt: "The alt text of the image"
+            loading: "lazy"
             intro: "This ILO flagship report details the effects of the COVID-19 crisis on the world of work. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eu auctor tusrpis, this is 200 characters."
             eyebrow: "Eyebrow title"
             date:
@@ -177,6 +193,8 @@ cardgroup:
             color: ""
           - title: "Horizontal info card descriptive headline text"
             image: "/images/small.jpg"
+            imageAlt: "The alt text of the image"
+            loading: "lazy"
             intro: "This ILO flagship report details the effects of the COVID-19 crisis on the world of work. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eu auctor tusrpis, this is 200 characters."
             eyebrow: "Eyebrow title"
             date:
@@ -335,6 +353,8 @@ cardgroup:
         group:
           - title: ""
             image: "/images/small.jpg"
+            imageAlt: "The alt text of the image"
+            loading: "lazy"
             intro: ""
             eyebrow: "Event details"
             date: ""
