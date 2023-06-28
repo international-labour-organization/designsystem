@@ -1,5 +1,12 @@
 # @ilo-org/styles
 
+## 0.3.5
+
+### Patch Changes
+
+- 11801070b: Change request for videojs player to be able to work with Youtube videos.
+- 1b942833b: Remove max-width for the video component. Not needed.
+
 ## 0.3.4
 
 ### Patch Changes
