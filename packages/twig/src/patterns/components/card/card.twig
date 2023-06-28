@@ -19,11 +19,11 @@
                   <source srcset="{{img.src}}" media="(min-width: {{img.breakpoint}}px)">
                 {% endif %}
               {% endfor %}
-              <img class="{{prefix}}--card--image" src="{{image|reverse|last.src}}" alt="{{imageAlt}}" {% if loading %} loading="{{ loading }}"{% endif %}>
+              <img class="{{prefix}}--card--image" src="{{image|reverse|last.src}}" alt="{{imageAlt}}" {% if loading %} loading="{{ loading }}" {% endif %}>
             </picture>
             {% else %}
             <picture>
-              <img class="{{prefix}}--card--image" src="{{image}}" alt="{{imageAlt}}">
+              <img class="{{prefix}}--card--image" src="{{image}}" alt="{{imageAlt}}" {% if loading %} loading="{{ loading }}" {% endif %}>
             </picture>
           {% endif %}
         </div>
