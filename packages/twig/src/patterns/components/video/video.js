@@ -86,8 +86,6 @@ export default class Video {
    * @chainable
    */
   start() {
-    console.log("this.VideoElement", this.VideoElement);
-
     this.player = videojs(this.VideoElement, {
       autoplay: false,
       controls: true,
@@ -108,6 +106,9 @@ export default class Video {
       errorDisplay: false,
       textTrackSettings: false,
       resizeManager: false,
+      sources: [
+        { type: this.element.dataset.vjsType, src: this.element.dataset.src },
+      ],
     });
 
     return this;

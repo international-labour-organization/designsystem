@@ -7,7 +7,6 @@ Drupal.behaviors.navigation = {
       (element) => {
         if (!element.dataset.jsProcessed) {
           // eslint-disable-next-line no-console
-          console.log("loading Navigation component....");
           new Navigation(element);
           element.dataset.jsProcessed = true;
         }
