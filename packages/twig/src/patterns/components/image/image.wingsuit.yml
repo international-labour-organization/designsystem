@@ -32,7 +32,7 @@ image:
     url:
       type: object
       label: URL
-      description: The image url(s), and at which breakpoint each should be displayed.
+      description: The image url(s), and at which breakpoint each should be displayed. This is a list of objects, each with a breakpoint and src property. The `src`` property is the url of the image, and the `breakpoint` property can be either a media query string or an integer that will be supplied to a `min-width` media query. The first url object in the list is the default image, and will be used if no other breakpoint matches.
       required: true
       preview:
         - breakpoint: "(min-width: 0px)"

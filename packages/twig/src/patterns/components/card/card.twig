@@ -16,7 +16,11 @@
             <picture>
               {% for img in image|reverse %}
                 {% if loop.last == false  %}
-                  <source srcset="{{img.src}}" media="{{img.breakpoint}}">
+                  {% if img.breakpoint matches '/^\\d+$/' %}
+                    <source srcset="{{img.src}}" media="(min-width: {{img.breakpoint}}px)">
+                  {% else %}
+                    <source srcset="{{img.src}}" media="{{img.breakpoint}}">
+                  {% endif %}
                 {% endif %}
               {% endfor %}
               <img class="{{prefix}}--card--image" src="{{image|reverse|last.src}}" alt="{{imageAlt}}" {% if loading %} loading="{{ loading }}"{% endif %}>

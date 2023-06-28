@@ -33,7 +33,7 @@ card:
     image:
       type: object
       label: Image
-      description: Image settings for the card. For responsive images, this can be an array of objects with an `src` property pointing to the image file and a `breakpoint` property indicating the minimum viewport width at which the image should be displayed. For static images, this can be a string pointing to the image file.
+      description: Image settings for the card. For responsive images, this can be an array of objects with an `src` property pointing to the image file and a `breakpoint` property which is either a number indicating the minimum viewport width at which the image should be displayed or a media query. For static images, this can be a string pointing to the image file.
       preview:
         - breakpoint: "(min-width: 0px)"
           src: "/images/small.jpg"
