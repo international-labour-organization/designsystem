@@ -11,7 +11,6 @@
           {% else %}
             <source srcset="{{img.src}}" media="{{img.breakpoint}}">
           {% endif %}
-          <source srcset="{{img.src}}" media="{{img.breakpoint}}">
         {% endif %}
       {% endfor %}
       <img src="{{url|reverse|last.src}}" alt="{{alt}}" {% if loading %}loading="{{ loading }}"{% endif %}>
