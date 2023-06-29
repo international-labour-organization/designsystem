@@ -1,5 +1,17 @@
 # @ilo-org/react
 
+## 0.5.0
+
+### Minor Changes
+
+- 25c3bca99: feat(react): add breadcrumb as a new component
+
+### Patch Changes
+
+- Updated dependencies [11801070b]
+- Updated dependencies [1b942833b]
+  - @ilo-org/styles@0.3.5
+
 ## 0.4.6
 
 ### Patch Changes

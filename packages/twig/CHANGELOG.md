@@ -1,5 +1,21 @@
 # @ilo-org/twig
 
+## 0.4.0
+
+### Minor Changes
+
+- 36f5da68a: In responsive images, allow the breakpoint property to take either a string containing a media query or a number that will indicate the minimum width of the viewport at which the image should be displayed.
+
+### Patch Changes
+
+- 11801070b: Change request for videojs player to be able to work with Youtube videos.
+- 1692a67dc: Remove needless console.logs
+- bbfa1d9b9: Add Alt and loading card variables on cardgroup template.
+- 1b942833b: Remove max-width for the video component. Not needed.
+- Updated dependencies [11801070b]
+- Updated dependencies [1b942833b]
+  - @ilo-org/styles@0.3.5
+
 ## 0.3.1
 
 ### Patch Changes
