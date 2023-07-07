@@ -135,6 +135,14 @@
     &.youtube {
       @include dataurlicon("youtube", $color-base-neutrals-lighter);
     }
+
+    &.tiktok {
+      @include dataurlicon("tiktok", $color-base-neutrals-lighter);
+    }
+
+    &.flickr {
+      @include dataurlicon("flickr", $color-base-neutrals-lighter);
+    }
   }
 
   .social--links--item {
@@ -171,6 +179,14 @@
 
         &.youtube {
           @include dataurlicon("youtube", $color-base-blue-medium);
+        }
+
+        &.tiktok {
+          @include dataurlicon("tiktok", $color-base-blue-medium);
+        }
+
+        &.flickr {
+          @include dataurlicon("flickr", $color-base-blue-medium);
         }
       }
     }
