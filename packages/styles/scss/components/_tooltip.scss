@@ -4,6 +4,8 @@
 @import "../mixins";
 
 .ilo--tooltip {
+  $c: &;
+
   @include font-styles("body-xs");
   background: map-get($color, "tooltip", "default", "background");
   border: none;
@@ -35,6 +37,7 @@
   &--wrapper {
     display: inline-block;
     position: relative;
+    cursor: pointer;
 
     &.has-icon {
       background-repeat: no-repeat;
@@ -42,6 +45,12 @@
       height: px-to-rem($spacing-padding-2);
       min-width: px-to-rem($spacing-padding-2);
       @include dataurlicon("info", $color-ux-labels-actionable);
+    }
+
+    &--dark {
+      &.has-icon {
+        @include dataurlicon("info", $color-tooltip-dark-icon);
+      }
     }
   }
 
