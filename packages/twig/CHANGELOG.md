@@ -1,5 +1,12 @@
 # @ilo-org/twig
 
+## 0.4.1
+
+### Patch Changes
+
+- 7cb5e74da: Add attributes to videoplayer missing.
+- 2c843d726: Delete source tag duplicated.
+
 ## 0.4.0
 
 ### Minor Changes
