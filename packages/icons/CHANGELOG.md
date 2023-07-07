@@ -1,5 +1,11 @@
 # @ilo-org/icons
 
+## 0.2.0
+
+### Minor Changes
+
+- 5df0bb1a9: Add tiktok and flickr icons
+
 ## 0.1.17
 
 ### Patch Changes

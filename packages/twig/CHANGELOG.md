@@ -1,5 +1,23 @@
 # @ilo-org/twig
 
+## 0.5.0
+
+### Minor Changes
+
+- e74f529ac: Refactor hero and hero card component. Expose layout and style options more explicitly and remove parameters and classes that refer to specific template names which could change.
+- cc4fe4ba6: In the Callout component, use the Button component so it can take a url and act as a link
+
+### Patch Changes
+
+- bb9180a14: In hero, make sure breadcrumb is not null and not empty or it could render unintentionally
+- Updated dependencies [5df0bb1a9]
+- Updated dependencies [51b4be31a]
+- Updated dependencies [6a7dbe609]
+- Updated dependencies [b498c19c4]
+  - @ilo-org/icons@0.2.0
+  - @ilo-org/themes@0.1.16
+  - @ilo-org/styles@0.4.0
+
 ## 0.4.1
 
 ### Patch Changes
