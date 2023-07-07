@@ -1,12 +1,18 @@
 {#
   HEROCARD COMPONENT
 #}
-<div class="{{prefix}}--hero-card {{prefix}}--hero-card--{{alignment}} {{prefix}}--hero-card--{{theme}} {{prefix}}--hero-card--{{types}}{% if not hasbackground or hasbackground == 'false' %} {{prefix}}--hero-card--nobackground{% endif %}">
+<div class="{{prefix}}--hero-card {{prefix}}--hero-card__theme__{{ theme }} {{prefix}}--hero-card__background__{{ background }} {% if cornercut == "true" %} {{prefix}}--hero-card__cornercut {% endif %}">
   {% if eyebrow %}
     <p class="{{ prefix }}--hero-card--eyebrow">{{ eyebrow }}</p>
   {% endif %}
   {% if title %}
-    <h2 class="{{ prefix }}--hero-card--title">{{ title }}</h2>
+    {% if url %}
+      <a href={{ url }} class="{{ prefix }}--hero-card--title-link">
+        <h1 class="{{ prefix }}--hero-card--title">{{ title }}</h1>
+      </a>
+    {% else %}
+     <h1 class="{{ prefix }}--hero-card--title">{{ title }}</h2>
+    {% endif %}
   {% endif %}
   {% if datecopy %}
     <p class="{{ prefix }}--hero-card--datecopy">{{ datecopy }}</p>
@@ -14,7 +20,6 @@
   {% if intro %}
     <p class="{{ prefix }}--hero-card--intro">{{ intro }}</p>
   {% endif %}
-
   <ul class="{{ prefix }}--hero-card--list">
     {% for item in socials %}
       <li class="{{ prefix }}--hero-card--list--item">
