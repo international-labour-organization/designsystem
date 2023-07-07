@@ -16,14 +16,19 @@
       {% endif %}
     </div>
     {{ content }}
-    {% if buttonLabel %}
+    {% if button %}
       <div class="{{prefix}}--callout--footer">
-        <button
-          class="{{prefix}}--button {{prefix}}--button--small {{prefix}}--button--secondary"
-          type="button"
-        >
-          <span class="button__label">{{ buttonLabel }}</span>
-        </button>
+        {% include '@components/button/button.twig' with {
+          label: button.label,
+          url: button.url,
+          target: button.target,
+          icon: button.icon,
+          className: button.className,
+          icon: button.icon,
+          iconPosition: button.iconPosition,
+          size: "small",
+          type: "secondary",
+        } %}
       </div>
     {% endif %}
   </div>
