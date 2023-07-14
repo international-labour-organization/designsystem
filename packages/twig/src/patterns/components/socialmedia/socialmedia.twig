@@ -1,0 +1,13 @@
+{#
+  SOCIALMEDIA COMPONENT
+#}
+<div class="storybook {{prefix}}--socialmedia">
+    <h5 class="social--headline">{{headline}}</h5>
+    <ul class="social--links">
+        {% for link in links %}
+        <li class="social--links--item">
+            <a href="{{link.url}}" class="social--links--link {{link.type|lower}}">{{link.type|capitalize}}</a>
+        </li>
+        {% endfor %}
+    </ul>
+</div>

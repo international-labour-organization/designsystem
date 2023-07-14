@@ -55,11 +55,13 @@ footer:
       preview:
         headline: "Social Links Headline"
         links:
-          - type: "instagram"
+          - type: "twitter"
             url: "http://www.google.com"
           - type: "facebook"
             url: "http://www.google.com"
-          - type: "twitter"
+          - type: "linkedin"
+            url: "http://www.google.com"
+          - type: "instagram"
             url: "http://www.google.com"
           - type: "tiktok"
             url: "http://www.google.com"

@@ -143,6 +143,14 @@
     &.flickr {
       @include dataurlicon("flickr", $color-base-neutrals-lighter);
     }
+
+    &.linkedin {
+      @include dataurlicon("linkedin", $color-base-neutrals-lighter);
+    }
+
+    &.vimeo {
+      @include dataurlicon("vimeo", $color-base-neutrals-lighter);
+    }
   }
 
   .social--links--item {
@@ -187,6 +195,10 @@
 
         &.flickr {
           @include dataurlicon("flickr", $color-base-blue-medium);
+        }
+
+        &.linkedin {
+          @include dataurlicon("linkedin", $color-base-blue-medium);
         }
       }
     }

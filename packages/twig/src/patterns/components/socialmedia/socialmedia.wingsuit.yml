@@ -1,0 +1,31 @@
+socialmedia:
+  use: "@components/socialmedia/socialmedia.twig"
+  label: Socialmedia
+  description: The Socialmedia displays a series of social media icons that are most
+    commonly used in forms.
+  fields:
+    headline:
+      type: string
+      label: headline
+      description: Optional headline of social media links
+      preview: "Social Links Headline"
+      required: false
+    links:
+      type: object
+      label: links
+      description: Social media links
+      preview:
+        - type: "twitter"
+          url: "http://www.google.com"
+        - type: "facebook"
+          url: "http://www.google.com"
+        - type: "linkedin"
+          url: "http://www.google.com"
+        - type: "instagram"
+          url: "http://www.google.com"
+        - type: "tiktok"
+          url: "http://www.google.com"
+        - type: "flickr"
+          url: "http://www.google.com"
+      required: true
+  visibility: storybook
