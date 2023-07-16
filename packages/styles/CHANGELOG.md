@@ -1,5 +1,19 @@
 # @ilo-org/styles
 
+## 0.4.0
+
+### Minor Changes
+
+- 6a7dbe609: Refactor hero and hero card, expose more options for styling and positioning and remove params that tied layout options to template names
+- b498c19c4: Add support for tiktok and flickr social media links in footer
+
+### Patch Changes
+
+- Updated dependencies [5df0bb1a9]
+- Updated dependencies [51b4be31a]
+  - @ilo-org/icons@0.2.0
+  - @ilo-org/themes@0.1.16
+
 ## 0.3.5
 
 ### Patch Changes
