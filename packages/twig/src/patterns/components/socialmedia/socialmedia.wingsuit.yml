@@ -1,31 +1,58 @@
 socialmedia:
   use: "@components/socialmedia/socialmedia.twig"
-  label: Socialmedia
-  description: The Socialmedia displays a series of social media icons that are most
-    commonly used in forms.
+  label: Social Media
+  description: The Social Media component displays a series of social media icons with links and an optional headline. It can have a light or a dark theme.
+  settings:
+    theme:
+      type: select
+      label: Theme
+      description: The theme of the social media icons.
+      options:
+        light: light
+        dark: dark
+      preview: light
+      defaultValue: light
+    align:
+      type: select
+      label: Alignment
+      description: The alignment of the headline and icons.
+      options:
+        start: start
+        center: center
+      preview: start
+      defaultValue: start
   fields:
     headline:
       type: string
       label: headline
       description: Optional headline of social media links
-      preview: "Social Links Headline"
+      preview: "Follow us on social media"
       required: false
-    links:
+    icons:
       type: object
       label: links
-      description: Social media links
+      description: The social media icons to display. Each icon has a `type` corresponding to the name of a social network in lowercase, a `label` that is displayed as a tooltip, and a `url` that is the link to the social media page.
       preview:
         - type: "twitter"
-          url: "http://www.google.com"
+          label: "Twitter"
+          url: "https://twitter.com/#!/ilo"
         - type: "facebook"
-          url: "http://www.google.com"
+          label: "Facebook"
+          url: "https://www.facebook.com/ilo.org"
         - type: "linkedin"
-          url: "http://www.google.com"
+          label: "LinkedIn"
+          url: "https://www.linkedin.com/company/international-labour-organization-ilo"
         - type: "instagram"
-          url: "http://www.google.com"
+          label: "Instagram"
+          url: "https://www.instagram.com/ilo.org/"
         - type: "tiktok"
-          url: "http://www.google.com"
+          label: "TikTok"
+          url: "https://www.tiktok.com/@ilo"
         - type: "flickr"
-          url: "http://www.google.com"
+          label: "Flickr"
+          url: "https://www.flickr.com/photos/ilopictures/albums"
+        - type: "youtube"
+          label: "YouTube"
+          url: "https://www.youtube.com/channel/UCrlcu5KChYyHwXlIeD7oLUg"
       required: true
   visibility: storybook
