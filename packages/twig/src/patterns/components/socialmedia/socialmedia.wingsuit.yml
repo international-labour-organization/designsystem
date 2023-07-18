@@ -30,28 +30,28 @@ socialmedia:
       required: false
     icons:
       type: object
-      label: links
-      description: The social media icons to display. Each icon has a `type` corresponding to the name of a social network in lowercase, a `label` that is displayed as a tooltip, and a `url` that is the link to the social media page.
+      label: icons
+      description: The social media icons to display. Each icon has an `icon` corresponding to the name of a social network icon in lowercase, a `label` that is displayed as a tooltip, and a `url` that is the link to the social media page.
       preview:
-        - type: "twitter"
+        - icon: "twitter"
           label: "Twitter"
           url: "https://twitter.com/#!/ilo"
-        - type: "facebook"
+        - icon: "facebook"
           label: "Facebook"
           url: "https://www.facebook.com/ilo.org"
-        - type: "linkedin"
+        - icon: "linkedin"
           label: "LinkedIn"
           url: "https://www.linkedin.com/company/international-labour-organization-ilo"
-        - type: "instagram"
+        - icon: "instagram"
           label: "Instagram"
           url: "https://www.instagram.com/ilo.org/"
-        - type: "tiktok"
+        - icon: "tiktok"
           label: "TikTok"
           url: "https://www.tiktok.com/@ilo"
-        - type: "flickr"
+        - icon: "flickr"
           label: "Flickr"
           url: "https://www.flickr.com/photos/ilopictures/albums"
-        - type: "youtube"
+        - icon: "youtube"
           label: "YouTube"
           url: "https://www.youtube.com/channel/UCrlcu5KChYyHwXlIeD7oLUg"
       required: true
