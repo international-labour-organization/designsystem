@@ -12,10 +12,10 @@ socialmedia:
         dark: dark
       preview: light
       defaultValue: light
-    align:
+    justify:
       type: select
-      label: Alignment
-      description: The alignment of the headline and icons.
+      label: Justify
+      description: The justification of the headline and icons.
       options:
         start: start
         center: center
