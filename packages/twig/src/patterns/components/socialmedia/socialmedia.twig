@@ -1,13 +1,15 @@
 {#
   SOCIALMEDIA COMPONENT
 #}
-<div class="storybook {{prefix}}--socialmedia">
-    <h5 class="social--headline">{{headline}}</h5>
-    <ul class="social--links">
-        {% for link in links %}
-        <li class="social--links--item">
-            <a href="{{link.url}}" class="social--links--link {{link.type|lower}}">{{link.type|capitalize}}</a>
-        </li>
+<div class="{{ prefix }}--social-media {{ prefix }}--social-media__theme__{{ theme|default("light") }} {{ prefix }}--social-media__align__{{ align|default("start") }}">
+    <h5 class="{{ prefix }}--social-media--headline">{{ headline }}</h5>
+    <ul class="{{ prefix }}--social-media--list">
+        {% for item in icons %}
+            <li class="{{ prefix }}--social-media--list--item">
+                <a class="{{ prefix }}--social-media--list--item--icon {{ prefix }}--social-media--list--item--icon__{{ item.type }}" href={{ item.url }} title={{ item.type|capitalize }} target="_blank">
+                    {{item.label|capitalize}}
+                </a>
+            </li>
         {% endfor %}
     </ul>
 </div>
