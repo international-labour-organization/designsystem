@@ -1,5 +1,6 @@
 import { FooterProps } from "./Footer.props";
 import ilo_logo_white from "@ilo-org/brand-assets/logo_en_horizontal_white.svg";
+import { darkArgs as socialMediaArgs } from "../SocialMedia/SocialMedia.args";
 
 const basic: FooterProps = {
   className: "footer",
@@ -42,27 +43,7 @@ const basic: FooterProps = {
       ],
     },
   ],
-  socials: {
-    headline: "Social Links Headline",
-    links: [
-      {
-        type: "instagram",
-        url: "https://www.instagram.com/iloinfo/",
-      },
-      {
-        type: "facebook",
-        url: "https://www.facebook.com/ILO.ORG/",
-      },
-      {
-        type: "twitter",
-        url: "https://twitter.com/ILO/",
-      },
-      {
-        type: "youtube",
-        url: "https://youtube.com/@ILO/featured/",
-      },
-    ],
-  },
+  socialmedia: socialMediaArgs,
   subscribe: {
     label: "Subscribe",
     url: "https://www.ilo.org",
