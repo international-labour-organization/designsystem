@@ -48,25 +48,34 @@ footer:
               url: "http://www.google.com"
             - label: "Link Six"
               url: "http://www.google.com"
-    social:
+    socialmedia:
       type: object
       label: social
       description: "Links to social media"
       preview:
-        headline: "Social Links Headline"
-        links:
-          - type: "twitter"
-            url: "http://www.google.com"
-          - type: "facebook"
-            url: "http://www.google.com"
-          - type: "linkedin"
-            url: "http://www.google.com"
-          - type: "instagram"
-            url: "http://www.google.com"
-          - type: "tiktok"
-            url: "http://www.google.com"
-          - type: "flickr"
-            url: "http://www.google.com"
+        headline: "Connect with the ILO"
+        icons:
+          - icon: "twitter"
+            label: "Twitter"
+            url: "https://twitter.com/#!/ilo"
+          - icon: "facebook"
+            label: "Facebook"
+            url: "https://www.facebook.com/ilo.org"
+          - icon: "linkedin"
+            label: "LinkedIn"
+            url: "https://www.linkedin.com/company/international-labour-organization-ilo"
+          - icon: "instagram"
+            label: "Instagram"
+            url: "https://www.instagram.com/ilo.org/"
+          - icon: "tiktok"
+            label: "TikTok"
+            url: "https://www.tiktok.com/@ilo"
+          - icon: "flickr"
+            label: "Flickr"
+            url: "https://www.flickr.com/photos/ilopictures/albums"
+          - icon: "youtube"
+            label: "YouTube"
+            url: "https://www.youtube.com/channel/UCrlcu5KChYyHwXlIeD7oLUg"
     subscribe:
       type: object
       label: subscribe

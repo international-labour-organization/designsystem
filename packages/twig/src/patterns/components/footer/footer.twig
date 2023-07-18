@@ -22,8 +22,14 @@
     {% endif %}
     {% if social or subscribe %}
     <div class="connect">
-      {% if social %}
-        {% include '@components/socialmedia/socialmedia.twig' with social %}
+      {% if socialmedia %}
+        <div class="social--links">
+          {% include '@components/socialmedia/socialmedia.twig' with {
+            theme: "dark",
+            headline: socialmedia.headline,
+            icons: socialmedia.icons,
+          } %}
+        </div>
       {% endif %}
       {% if subscribe %}
         {% include '@components/button/button.twig' with {label: subscribe.label, url: subscribe.url, type: 'primary', size: 'large', target: '_blank'} %}

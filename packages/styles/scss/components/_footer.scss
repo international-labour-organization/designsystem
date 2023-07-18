@@ -94,16 +94,7 @@
     margin: px-to-rem(55px) 0;
   }
 
-  .social--headline {
-    color: $color-base-neutrals-white;
-    font-family: $fonts-display;
-    font-weight: map-get($type, "weights", "label");
-    @include font-styles("body-small");
-    @include textmargin("margin-bottom", 28px, "body-small", "display", 0, 0);
-  }
-
   .social--links {
-    display: flex;
     margin-bottom: px-to-rem(45px);
   }
 
@@ -376,10 +367,6 @@
       margin: 0 0 0 calc(18.9% + 64px);
     }
 
-    .social--headline {
-      text-align: left;
-    }
-
     .ilo--button {
       align-self: start;
       justify-self: start;
@@ -406,18 +393,6 @@
   .right-to-left & {
     * {
       text-align: right;
-    }
-
-    .social--links {
-      flex-direction: row-reverse;
-    }
-
-    .social--links--item:first-of-type {
-      margin-right: 0;
-    }
-
-    .social--links--link {
-      text-indent: 999em;
     }
 
     .legal,
