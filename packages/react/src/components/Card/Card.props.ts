@@ -1,6 +1,6 @@
 import {
   CardAlignment,
-  HeroCardTheme,
+  ThemeTypes,
   CardCornerType,
   CardColor,
   CardSize,
@@ -33,7 +33,7 @@ export interface CardProps {
   /**
    * The theme type for the card. Theme doesn't apply to these card types: Multilink, Data, Stat and Detail. Possible themes: light | dark.
    */
-  theme?: HeroCardTheme;
+  theme?: ThemeTypes;
 
   /**
    * Different variations of card: Graphic | Stat | Graphic Promo | Multilink | Feature | Detail | Fact List | Data.
