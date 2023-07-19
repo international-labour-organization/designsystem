@@ -1,51 +1,63 @@
 import { FC } from "react";
-import classNames from "classnames";
+import classnames from "classnames";
 import useGlobalSettings from "../../hooks/useGlobalSettings";
 import { HeroCardProps } from "./HeroCard.props";
+import { SocialMedia } from "../SocialMedia";
+
+interface HeroCardTitleProps {
+  baseclass: string;
+  title: string;
+  url?: string;
+}
+
+const HeroCardTitle: FC<HeroCardTitleProps> = ({ baseclass, title, url }) => {
+  const titleClass = `${baseclass}--title`;
+  const linkClass = `${baseclass}--title-link`;
+
+  if (!url) {
+    return <h1 className={titleClass}>{title}</h1>;
+  }
+
+  return (
+    <a className={linkClass} href={url}>
+      <h1 className={titleClass}>{title}</h1>
+    </a>
+  );
+};
 
 const HeroCard: FC<HeroCardProps> = ({
-  className,
-  alignment,
-  datecopy,
+  theme = "dark",
+  background = "solid",
+  cornercut = "true",
   eyebrow,
-  intro,
-  socials,
   title,
-  theme = "light",
-  types = "article",
+  url,
+  datecopy,
+  intro,
+  socialmedia,
 }) => {
   const { prefix } = useGlobalSettings();
 
   const baseClass = `${prefix}--hero-card`;
-  const heroCardClasses = classNames(className, {
-    [baseClass]: true,
-    [`${baseClass}--${alignment}`]: alignment,
-    [`${baseClass}--${theme}`]: theme,
-    [`${baseClass}--${types}`]: types,
+  const themeClass = `${baseClass}__theme__${theme}`;
+  const backgroundClass = `${baseClass}__background__${background}`;
+  const cornercutClass = `${baseClass}__cornercut`;
+
+  const heroCardClasses = classnames(baseClass, themeClass, backgroundClass, {
+    [cornercutClass]: cornercut,
   });
+
+  const eyebrowClass = `${baseClass}--eyebrow`;
+  const datecopyClass = `${baseClass}--datecopy`;
+  const introClass = `${baseClass}--intro`;
 
   return (
     <div className={heroCardClasses}>
-      {eyebrow && <p className={`${baseClass}--eyebrow`}>{eyebrow}</p>}
-      {title && <h2 className={`${baseClass}--title`}>{title}</h2>}
-      {datecopy && <p className={`${baseClass}--datecopy`}>{datecopy}</p>}
-      {intro && <p className={`${baseClass}--intro`}>{intro}</p>}
-      <ul className={`${baseClass}--list`}>
-        {socials &&
-          socials.map((item: any, index: any) => {
-            return (
-              <li className={`${baseClass}--list--item`} key={index}>
-                <a
-                  className={`${baseClass}--link icon icon--${item.icon}`}
-                  href={item.url}
-                  title={item.label}
-                >
-                  {item.label}
-                </a>
-              </li>
-            );
-          })}
-      </ul>
+      {eyebrow && <p className={eyebrowClass}>{eyebrow}</p>}
+      <HeroCardTitle baseclass={baseClass} title={title} url={url} />
+      {datecopy && <p className={datecopyClass}>{datecopy}</p>}
+      {intro && <p className={introClass}>{intro}</p>}
+      {socialmedia && <SocialMedia {...socialmedia} theme={theme} />}
     </div>
   );
 };
