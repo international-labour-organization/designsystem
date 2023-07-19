@@ -44,16 +44,17 @@ hero:
         background: "solid"
         cornercut: "true"
         eyebrow: ILO Topics
-        socials:
-          - label: "Facebook"
-            url: "https://www.facebook.com/ilo.org"
-            icon: "facebook"
-          - label: "Twitter"
-            url: "https://www.twitter.com/ilo.org"
-            icon: "twitter"
-          - label: "Linkedin"
-            url: "https://www.linkedin.com/company/international-labour-organization-ilo"
-            icon: "linkedin"
+        socialmedia:
+          icons:
+            - label: "Facebook"
+              url: "https://www.facebook.com/ilo.org"
+              icon: "facebook"
+            - label: "Twitter"
+              url: "https://www.twitter.com/ilo.org"
+              icon: "twitter"
+            - label: "Linkedin"
+              url: "https://www.linkedin.com/company/international-labour-organization-ilo"
+              icon: "linkedin"
     caption:
       label: Caption
       type: object
@@ -138,16 +139,17 @@ hero:
           background: "solid"
           cornercut: "true"
           eyebrow: Women in management
-          socials:
-            - label: "Facebook"
-              url: "https://www.facebook.com/ilo.org"
-              icon: "facebook"
-            - label: "Twitter"
-              url: "https://www.twitter.com/ilo.org"
-              icon: "twitter"
-            - label: "Linkedin"
-              url: "https://www.linkedin.com/company/international-labour-organization-ilo"
-              icon: "linkedin"
+          socialmedia:
+            icons:
+              - label: "Facebook"
+                url: "https://www.facebook.com/ilo.org"
+                icon: "facebook"
+              - label: "Twitter"
+                url: "https://www.twitter.com/ilo.org"
+                icon: "twitter"
+              - label: "Linkedin"
+                url: "https://www.linkedin.com/company/international-labour-organization-ilo"
+                icon: "linkedin"
         caption:
           label: A metalurgy worker at a manufacturing plant in Viet Nam. © ILO/Minh Quang
           icon: "true"

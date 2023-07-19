@@ -50,17 +50,18 @@ herocard:
       label: Intro
       description: Intro text for the hero
       preview: "Over the last three decades, global supply chains have been a key entry point for women to enter the formal workforce."
-    socials:
+    socialmedia:
       type: object
-      label: Social links
+      label: Social media links
       description: The social links to include in the hero
       preview:
-        - label: "Facebook"
-          url: "https://www.facebook.com/"
-          icon: "facebook"
-        - label: "Linkedin"
-          url: "https://www.linkedin.com/"
-          icon: "linkedin"
+        icons:
+          - label: "Facebook"
+            url: "https://www.facebook.com/"
+            icon: "facebook"
+          - label: "Linkedin"
+            url: "https://www.linkedin.com/"
+            icon: "linkedin"
     title:
       type: string
       label: Title

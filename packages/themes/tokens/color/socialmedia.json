@@ -1,0 +1,46 @@
+{
+  "color": {
+    "socialmedia": {
+      "dark": {
+        "headline": {
+          "color": {
+            "value": "{color.base.neutrals.white}"
+          }
+        },
+        "icon": {
+          "color": {
+            "value": "{color.base.neutrals.white}"
+          }
+        },
+        "iconhover": {
+          "color": {
+            "value": "{color.base.blue.medium}"
+          },
+          "background": {
+            "value": "{color.base.neutrals.white}"
+          }
+        }
+      },
+      "light": {
+        "headline": {
+          "color": {
+            "value": "{color.base.blue.dark}"
+          }
+        },
+        "icon": {
+          "color": {
+            "value": "{color.base.neutrals.medium}"
+          }
+        },
+        "iconhover": {
+          "color": {
+            "value": "{color.base.blue.medium}"
+          },
+          "background": {
+            "value": "{color.base.blue.light}"
+          }
+        }
+      }
+    }
+  }
+}

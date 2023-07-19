@@ -4,6 +4,7 @@ import classnames from "classnames";
 import { FooterProps } from "./Footer.props";
 import { LinkList } from "../LinkList";
 import { Button } from "../Button";
+import { SocialMedia } from "../SocialMedia";
 
 const Footer: FC<FooterProps> = ({
   className,
@@ -12,7 +13,7 @@ const Footer: FC<FooterProps> = ({
   subtagline,
   address,
   linkgroup,
-  socials,
+  socialmedia,
   subscribe,
   legal,
   secondarylinks,
@@ -45,25 +46,12 @@ const Footer: FC<FooterProps> = ({
             <LinkList linkgroup={linkgroup} theme="dark"></LinkList>
           </nav>
         )}
-        {(socials || subscribe) && (
+        {(socialmedia || subscribe) && (
           <div className="connect">
-            {socials && (
-              <>
-                <h5 className="social--headline">{socials?.headline}</h5>
-                <ul className="social--links">
-                  {socials.links &&
-                    socials.links.map((link, index) => (
-                      <li className="social--links--item" key={index}>
-                        <a
-                          className={`social--links--link ${link.type}`}
-                          href={link.url}
-                        >
-                          {link.type}
-                        </a>
-                      </li>
-                    ))}
-                </ul>
-              </>
+            {socialmedia && (
+              <div className="social--links">
+                <SocialMedia {...socialmedia} theme="dark" />
+              </div>
             )}
             {subscribe && (
               <Button
