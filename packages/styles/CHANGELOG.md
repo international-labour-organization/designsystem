@@ -1,5 +1,20 @@
 # @ilo-org/styles
 
+## 0.5.0
+
+### Minor Changes
+
+- 0f45a7aae: Add styles for new social media component
+
+### Patch Changes
+
+- 0f45a7aae: Remove unneeded styles from footer which are now in social media component
+- 2f6b0e73f: added background color white to the content tabs
+- Updated dependencies [0f45a7aae]
+- Updated dependencies [0f45a7aae]
+  - @ilo-org/themes@0.2.0
+  - @ilo-org/icons@0.2.1
+
 ## 0.4.0
 
 ### Minor Changes
