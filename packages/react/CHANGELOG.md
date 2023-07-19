@@ -1,5 +1,21 @@
 # @ilo-org/react
 
+## 0.6.0
+
+### Minor Changes
+
+- 0f45a7aae: Add Social Media component and use in Footer
+
+### Patch Changes
+
+- Updated dependencies [0f45a7aae]
+- Updated dependencies [0f45a7aae]
+- Updated dependencies [0f45a7aae]
+- Updated dependencies [2f6b0e73f]
+  - @ilo-org/themes@0.2.0
+  - @ilo-org/styles@0.5.0
+  - @ilo-org/icons-react@0.0.21
+
 ## 0.5.1
 
 ### Patch Changes

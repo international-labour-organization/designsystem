@@ -1,5 +1,11 @@
 # @ilo-org/themes
 
+## 0.2.0
+
+### Minor Changes
+
+- 0f45a7aae: Add tokens for social media component
+
 ## 0.1.16
 
 ### Patch Changes

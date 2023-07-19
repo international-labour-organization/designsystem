@@ -1,5 +1,11 @@
 # @ilo-org/icons
 
+## 0.2.1
+
+### Patch Changes
+
+- 0f45a7aae: Fix flickr, tiktok and youtube icons
+
 ## 0.2.0
 
 ### Minor Changes

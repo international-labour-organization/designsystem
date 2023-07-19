@@ -1,5 +1,22 @@
 # @ilo-org/twig
 
+## 0.6.0
+
+### Minor Changes
+
+- 0f45a7aae: Add new social media component and use in hero card and footer components
+
+### Patch Changes
+
+- Updated dependencies [0f45a7aae]
+- Updated dependencies [0f45a7aae]
+- Updated dependencies [0f45a7aae]
+- Updated dependencies [0f45a7aae]
+- Updated dependencies [2f6b0e73f]
+  - @ilo-org/themes@0.2.0
+  - @ilo-org/icons@0.2.1
+  - @ilo-org/styles@0.5.0
+
 ## 0.5.0
 
 ### Minor Changes
