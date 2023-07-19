@@ -1,15 +1,21 @@
-import { HeroCardAlignment, HeroCardTypes, HeroCardTheme } from "../../types";
+import { ThemeTypes } from "../../types";
+import { SocialMediaProps } from "../SocialMedia";
 
 export interface HeroCardProps {
   /**
-   * Theme for the card
+   * Specify whether the background should be solid, transparent or semi-transparent
    */
-  alignment?: HeroCardAlignment;
+  background?: "solid" | "transparent" | "semi-transparent";
 
   /**
    * Specify an optional className to be added to your Hero component.
    */
   className?: string;
+
+  /**
+   * Whether the card should have a cornercut or not
+   */
+  cornercut?: boolean;
 
   /**
    * date copy for the hero card
@@ -29,37 +35,20 @@ export interface HeroCardProps {
   /**
    * Specify the links to be displayed in this link group
    */
-  socials?: SocialProps[];
+  socialmedia?: SocialMediaProps;
 
   /**
    * Title for the page
    */
-  title?: string;
+  title: string;
 
   /**
    * Theme for the card
    */
-  theme?: HeroCardTheme;
+  theme?: ThemeTypes;
 
   /**
-   * Type of hero for the card
+   * The link of the card's title if it has one
    */
-  types?: HeroCardTypes;
-}
-
-interface SocialProps {
-  /**
-   * Specify the label for this link
-   */
-  label?: Required<string>;
-
-  /**
-   * Specify the url for this link
-   */
-  url?: Required<string>;
-
-  /**
-   * Specify the icon for this link
-   */
-  icon?: Required<string>;
+  url?: string;
 }
