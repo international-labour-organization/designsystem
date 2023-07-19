@@ -49,7 +49,14 @@ export type NotificationTypes = "error" | "info" | "success" | "warning";
 export type PositionTypes = "top" | "bottom" | "left" | "right";
 export type SizeTypes = "small" | "medium" | "large";
 export type TagTypes = "anchor" | "display" | "button";
-export type SocialTypes = "instagram" | "facebook" | "twitter" | "youtube";
+export type SocialTypes =
+  | "facebook"
+  | "twitter"
+  | "instagram"
+  | "linkedin"
+  | "youtube"
+  | "tiktok"
+  | "flickr";
 export type CardColor = "turquoise" | "green" | "yellow" | "blue";
 export type CardSize = "wide" | "standard" | "narrow";
 export type CardCornerType = "cornercut" | "corner";

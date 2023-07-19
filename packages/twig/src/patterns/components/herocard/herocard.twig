@@ -20,17 +20,11 @@
   {% if intro %}
     <p class="{{ prefix }}--hero-card--intro">{{ intro }}</p>
   {% endif %}
-  <ul class="{{ prefix }}--hero-card--list">
-    {% for item in socials %}
-      <li class="{{ prefix }}--hero-card--list--item">
-        <a
-          class="{{ prefix }}--hero-card--link icon icon--{{ item.icon }}"
-          href={{ item.url }}
-          title={{ item.label }}
-        >
-          {{ item.label }}
-        </a>
-      </li>
-    {% endfor %}
-  </ul>
+  {% if socialmedia %}
+    {% include "@components/socialmedia/socialmedia.twig" with {
+      theme: theme,
+      align: "start",
+      icons: socialmedia.icons
+  } %}
+  {% endif %}
 </div>

@@ -134,6 +134,7 @@
     }
 
     .ilo--tabs--content {
+      background-color: $color-base-neutrals-white;
       padding: px-to-rem($spacing-padding-5) px-to-rem($spacing-padding-3)
         px-to-rem($spacing-padding-7) px-to-rem($spacing-padding-3);
 
