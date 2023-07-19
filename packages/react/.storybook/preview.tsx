@@ -43,18 +43,14 @@ export const decorators: Decorator[] = [
   // Wraps components in story mode
   (Story, ctx) => {
     // Should this story be rendered in full width?
-    const fullWidthStories = ["footer", "localnav", "navigation"];
+    const fullWidthStories = ["footer", "localnav", "navigation", "hero"];
     const isFullWidth = fullWidthStories.some((story) =>
       ctx.title.toLocaleLowerCase().includes(story)
     );
 
     if (ctx.viewMode === "story") {
       if (isFullWidth) {
-        return (
-          <div className="story-decorator-wrapper full-width-wrapper">
-            <Story />
-          </div>
-        );
+        return <Story />;
       }
 
       return (
