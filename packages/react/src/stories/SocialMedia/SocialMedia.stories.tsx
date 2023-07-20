@@ -23,12 +23,6 @@ const SocialMediaMeta: Meta<SocialMediaProps> = {
   component: SocialMedia,
   tags: ["autodocs"],
   parameters: {
-    backgrounds: {
-      values: [
-        { name: "light", value: "white" },
-        { name: "dark", value: brand["ilo-dark-blue"].value },
-      ],
-    },
     docs: {
       page: () => (
         <>
