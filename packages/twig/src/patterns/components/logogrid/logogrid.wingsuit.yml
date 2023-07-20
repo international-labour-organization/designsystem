@@ -1,0 +1,46 @@
+logogrid:
+  use: "@components/logogrid/logogrid.twig"
+  label: Logo Grid
+  description: The Logo Grid component renders a series of logos representing a group of organizations. It can be shown on a light or dark background.
+  settings:
+    theme:
+      type: select
+      label: Theme
+      description: The theme of the component
+      default: light
+      options:
+        light: Light
+        dark: Dark
+      preview: "light"
+  fields:
+    logos:
+      type: object
+      label: Logos
+      description: Logos to display
+      required: true
+      preview:
+        - label: "International Labour Organization"
+          src: "/images/logo_en_horizontal_blue.svg"
+          url: "https://www.ilo.org/"
+
+        - label: "Food and Agriculture Organization"
+          src: "/images/fao-logo.svg"
+          url: "https://www.fao.org"
+
+        - label: "World Health Organization"
+          src: "/images/who-logo.svg"
+          url: "https://www.who.int/"
+
+        - label: "World Food Programme"
+          src: "/images/wfp-logo.svg"
+          url: "https://www.wfp.org/"
+
+        - label: "UNICEF"
+          src: "/images/unicef-logo.png"
+          url: "https://www.unicef.org/"
+
+        - label: "UN Refugees"
+          src: "/images/unhcr-logo.svg"
+          url: "https://www.unhcr.org/"
+
+

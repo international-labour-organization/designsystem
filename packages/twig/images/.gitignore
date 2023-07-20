@@ -1,2 +1,5 @@
 # Imported icons
 *.svg
+
+# Allow .svg files in subfolders
+!/*/*.svg
