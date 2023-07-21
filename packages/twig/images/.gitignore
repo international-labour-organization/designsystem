@@ -1,5 +1,10 @@
 # Imported icons
 *.svg
 
-# Allow .svg files in subfolders
-!/*/*.svg
+# Allow logo files used in Logo Grid story
+!fao-logo.svg
+!unhcr-logo.svg
+!unicef-logo.png
+!wfp-logo.svg
+!who-logo.svg
+!logo_en_horizontal_blue.svg
