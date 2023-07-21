@@ -5,6 +5,7 @@
 .ilo--accordion {
   $transition-timing: 150ms;
   $transition-timing-long: 225ms;
+  $scroll-max-height: 500px;
 
   &--button {
     align-items: center;
@@ -79,6 +80,7 @@
     --height: auto;
     color: $color-ux-labels-default;
     font-family: $fonts-copy;
+    position: relative;
     height: 0px;
     overflow: hidden;
     transition: height $transition-timing-long ease-out,
@@ -95,6 +97,12 @@
       height: var(--height);
       transition: height $transition-timing-long ease-out,
         padding $transition-timing-long ease-out;
+    }
+
+    &__scroll {
+      max-height: $scroll-max-height;
+      overflow-y: auto;
+      padding-right: px-to-rem($spacing-ui-padding-xl);
     }
 
     &.collapsing,

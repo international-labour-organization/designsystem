@@ -1,7 +1,7 @@
 {#
   ACCORDION COMPONENT
 #}
-<ul class="{{prefix}}--accordion {{prefix}}--accordion--{{ size|default('small') }}" data-loadcomponent="Accordion" data-multipleexpanded="{{ allowMultipleExpanded|default(false) }}">
+<ul class="{{prefix}}--accordion" data-loadcomponent="Accordion" data-multipleexpanded="{{ allowMultipleExpanded|default(false) }}">
     {% for item in items %}
       {% include "@components/accordion/accordion-item.twig" with {
         label: item.label,
@@ -10,7 +10,8 @@
         size: size,
         headingLevel: headingLevel,
         id: item.id,
-        prefix: prefix
+        prefix: prefix,
+        scroll: item.scroll
       } only %}
     {% endfor %}
 </ul>

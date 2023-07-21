@@ -17,4 +17,9 @@ export default interface AccordionPanelProps {
    * events are canceled
    */
   timeout?: number;
+
+  /**
+   * Allows the AccordionPanel to be scrollable by default
+   */
+  scroll?: boolean;
 }

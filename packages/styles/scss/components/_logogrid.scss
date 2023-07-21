@@ -1,0 +1,52 @@
+@use "../tokens" as *;
+@use "../functions" as *;
+@import "../mixins";
+
+.ilo--logo-grid {
+  $c: &;
+
+  &--logos {
+    display: flex;
+    flex-flow: row wrap;
+    grid-gap: px-to-rem(16px);
+  }
+
+  &--link {
+    text-decoration: none;
+    transition: background-color 0.2s ease-in-out;
+
+    #{$c}__theme__light &,
+    #{$c}__theme__dark & {
+      &:hover {
+        background-color: map-get($color, "ux", "background", "hover");
+      }
+    }
+  }
+
+  &--item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: px-to-rem(134px);
+    flex: 100%;
+
+    @include breakpoint("small") {
+      flex: 0 0 px-to-rem(238px);
+    }
+
+    #{$c}__theme__light & {
+      background-color: map-get($color, "ux", "background", "highlight");
+    }
+
+    #{$c}__theme__dark & {
+      background-color: map-get($color, "ux", "background", "default");
+    }
+
+    img {
+      width: auto;
+      height: auto;
+      max-width: px-to-rem(150px);
+      max-height: px-to-rem(50px);
+    }
+  }
+}

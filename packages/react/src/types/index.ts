@@ -1,4 +1,5 @@
 // export type AccordionSize = "small" | "large";
+export type ThemeTypes = "light" | "dark";
 export type ButtonFunctions = "button" | "submit" | "reset";
 export type ButtonTypes = "primary" | "secondary" | "tertiary" | "alert";
 export type CalloutTypes = "info" | "error" | "success" | "warning";
@@ -16,15 +17,6 @@ export type FieldTypes =
   | "file";
 export type FormGroupTypes = "default" | "filter";
 export type HeadingLevel = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
-export type HeroCardAlignment = "left" | "center" | "right";
-export type HeroCardTypes =
-  | "home"
-  | "publication"
-  | "graphic"
-  | "project"
-  | "article"
-  | "portal";
-export type HeroCardTheme = "dark" | "light";
 export type InputTypes =
   | "email"
   | "hidden"

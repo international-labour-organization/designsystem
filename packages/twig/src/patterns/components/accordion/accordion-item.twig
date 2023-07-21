@@ -8,7 +8,7 @@
     {{label}}
     </button>
   </div>
-  <div class="{{prefix}}--accordion--panel{% if defaultExpanded == 'true'%} {{prefix}}--accordion--panel--open{% endif %}" id="panel-{{ id }}{{ uid }}" aria-labelledby="button-{{ id }}{{ uid }}" role="region">
+  <div class="{{prefix}}--accordion--panel{% if defaultExpanded == 'true'%} {{prefix}}--accordion--panel--open{% endif %} {% if scroll %} {{prefix}}--accordion--panel__scroll {% endif %}" id="panel-{{ id }}{{ uid }}" aria-labelledby="button-{{ id }}{{ uid }}" role="region">
     <div class="{{prefix}}--accordion--innerpanel">
       {{content|raw}}
     </div>
