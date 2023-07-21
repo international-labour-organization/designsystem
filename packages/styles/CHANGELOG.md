@@ -1,5 +1,12 @@
 # @ilo-org/styles
 
+## 0.6.0
+
+### Minor Changes
+
+- c0648530f: Accordion items can now be made scrollable by passing `scroll: true` to the Accordion Panel component.
+- 0dc9a8538: Add LogoGrid component which shows a list of logos with an optional link
+
 ## 0.5.0
 
 ### Minor Changes
