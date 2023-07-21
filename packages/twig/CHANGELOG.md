@@ -1,5 +1,18 @@
 # @ilo-org/twig
 
+## 0.7.0
+
+### Minor Changes
+
+- c0648530f: Accordion items can now be made scrollable by passing `scroll: true` to the Accordion Panel component.
+- d3c276e92: Add LogoGrid component which shows a list of logos with an optional link
+
+### Patch Changes
+
+- Updated dependencies [c0648530f]
+- Updated dependencies [0dc9a8538]
+  - @ilo-org/styles@0.6.0
+
 ## 0.6.0
 
 ### Minor Changes

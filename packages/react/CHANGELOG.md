@@ -1,5 +1,19 @@
 # @ilo-org/react
 
+## 0.7.0
+
+### Minor Changes
+
+- c0648530f: Accordion items can now be made scrollable by passing `scroll: true` to the Accordion Panel component.
+- 0dc9a8538: Add LogoGrid component which shows a list of logos with an optional link
+
+### Patch Changes
+
+- 77517f4dc: Refactor Hero and HeroCard to sync with new implemenation in Twig and Styles packages
+- Updated dependencies [c0648530f]
+- Updated dependencies [0dc9a8538]
+  - @ilo-org/styles@0.6.0
+
 ## 0.6.0
 
 ### Minor Changes
