@@ -51,38 +51,95 @@ const AccordionMeta: Meta<typeof Accordion> = {
 
 export default AccordionMeta;
 
-// Default
+//@TODO: We should just use the list component for this
 
 const DefaultAccordion = (args: AccordionProps) => (
   <Accordion {...args}>
     <AccordionItem id="l1">
-      <AccordionButton>Item1</AccordionButton>
+      <AccordionButton>Topics</AccordionButton>
       <AccordionPanel>
-        <p>Content of Item 1</p>
-        <p>Content of Item 1</p>
-        <p>Content of Item 1</p>
-        <p>Content of Item 1</p>
-        <p>Content of Item 1</p>
+        <div style={{ padding: "20px" }}>
+          <ul className="ilo--list--unordered">
+            <li>Employment Promotion and Job Creation</li>
+            <li>Social Protection</li>
+            <li>International Labour Standards</li>
+            <li>Social Dialogue and Tripartism</li>
+          </ul>
+        </div>
       </AccordionPanel>
     </AccordionItem>
     <AccordionItem id="l2">
-      <AccordionButton>Item2</AccordionButton>
+      <AccordionButton>Sectors</AccordionButton>
       <AccordionPanel>
-        <p>Content of Item 2</p>
-        <p>Content of Item 2</p>
-        <p>Content of Item 2</p>
-        <p>Content of Item 2</p>
-        <p>Content of Item 2</p>
-        <p>Content of Item 2</p>
+        <div style={{ padding: "20px" }}>
+          <ul className="ilo--list--unordered">
+            <li>Agriculture, Forestry, and Fishing</li>
+            <li>Construction</li>
+            <li>Manufacturing</li>
+            <li>Transport and Storage</li>
+            <li>Wholesale and Retail Trade</li>
+            <li>Information and Communication</li>
+          </ul>
+        </div>
       </AccordionPanel>
     </AccordionItem>
   </Accordion>
 );
 
 const Default: StoryObj<typeof DefaultAccordion> = {
-  name: "Primary",
+  name: "Default",
   args: large,
   render: (args) => <DefaultAccordion {...args} />,
 };
 
-export { Default };
+const Scrollable: StoryObj<typeof DefaultAccordion> = {
+  name: "Scrollable",
+  args: large,
+  render: (args) => (
+    <Accordion {...args}>
+      <AccordionItem id="l1">
+        <AccordionButton>Topics</AccordionButton>
+        <AccordionPanel scroll>
+          <div style={{ padding: "20px" }}>
+            <ul className="ilo--list--unordered">
+              <li>Employment Promotion and Job Creation</li>
+              <li>Social Protection</li>
+              <li>International Labour Standards</li>
+              <li>Social Dialogue and Tripartism</li>
+              <li>Occupational Safety and Health</li>
+              <li>Labor Migration</li>
+              <li>Child Labour and Forced Labour Elimination</li>
+              <li>Gender Equality and Non-Discrimination</li>
+              <li>Decent Work</li>
+              <li>Wages and Working Hours</li>
+              <li>Social Security</li>
+              <li>Green Jobs</li>
+            </ul>
+          </div>
+        </AccordionPanel>
+      </AccordionItem>
+      <AccordionItem id="l2">
+        <AccordionButton>Sectors</AccordionButton>
+        <AccordionPanel scroll>
+          <div style={{ padding: "20px" }}>
+            <ul className="ilo--list--unordered">
+              <li>Agriculture, Forestry, and Fishing</li>
+              <li>Construction</li>
+              <li>Manufacturing</li>
+              <li>Transport and Storage</li>
+              <li>Wholesale and Retail Trade</li>
+              <li>Information and Communication</li>
+              <li>Finance and Insurance</li>
+              <li>Health and Social Work</li>
+              <li>Educational Services</li>
+              <li>Public Administration and Defense</li>
+              <li>Other Services</li>
+            </ul>
+          </div>
+        </AccordionPanel>
+      </AccordionItem>
+    </Accordion>
+  ),
+};
+
+export { Default, Scrollable };

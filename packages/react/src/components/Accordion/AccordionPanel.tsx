@@ -7,7 +7,7 @@ import { default as AccordionPanelProps } from "./AccordionPanel.props";
 const AccordionPanel: FC<AccordionPanelProps> = ({
   children,
   className,
-  timeout = 600,
+  scroll,
   ...rest
 }) => {
   const { activeItems } = useContext(AccordionContext);
@@ -17,8 +17,8 @@ const AccordionPanel: FC<AccordionPanelProps> = ({
   const { prefix } = useGlobalSettings();
   const baseClass = `${prefix}--accordion--panel`;
 
-  const accordionaPanelClasses = classNames(className, {
-    [baseClass]: true,
+  const accordionaPanelClasses = classNames(className, baseClass, {
+    [`${baseClass}__scroll`]: scroll,
     [`${baseClass}--open`]: open,
   });
 
