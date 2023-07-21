@@ -3,6 +3,7 @@ import { themeprefix } from "@ilo-org/themes/tokens/theme/base.json";
 import { Decorator } from "@storybook/react";
 import { theme } from "./theme";
 import "./styles.scss";
+import { brand } from "@ilo-org/themes/tokens/brand/base.json";
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
@@ -19,6 +20,12 @@ export const parameters = {
       order: ["Introduction", "GettingStarted"],
       locales: "en-US",
     },
+  },
+  backgrounds: {
+    values: [
+      { name: "light", value: "white" },
+      { name: "dark", value: brand["ilo-dark-blue"].value },
+    ],
   },
   previewTabs: {
     "storybook/docs/panel": { index: -1 },
