@@ -3,28 +3,29 @@ accordion:
   label: Accordion
   description:
     The accordion component allows the user to show and hide sections of
-    related content on a page. Click the accordions below to
-    expand/collapse the accordion content.
+    related content on a page. Items in the accordion can be expanded by default or scrollable if the content is very long.
   fields:
     items:
       type: object
       label: Items
-      description: The accordion items.
+      description: The accordion items. Each item takes a label, content, and id. You can also set the defaultExpanded and scroll properties for each item.
       required: true
       preview:
-        - label: label 1
-          content: "<p>Content of Item 1</p><p>Content of Item 1</p><p>Content of Item 1</p><p>Content of Item 1</p><p>Content of Item 1</p>"
+        - label: Topics
+          content: '<div style="padding: 20px"><ul class="ilo--list--unordered"><li>Employment Promotion and Job Creation</li><li>Social Protection</li><li>International Labour Standards</li><li>Social Dialogue and Tripartism</li><li>Occupational Safety and Health</li><li>Labor Migration</li><li>Child Labour and Forced Labour Elimination</li><li>Gender Equality and Non-Discrimination</li></ul></div>'
           id: item1
           defaultExpanded: false
-        - label: label 2
-          content: "<p>Content of Item 2</p><p>Content of Item 2</p><p>Content of Item 2</p><p>Content of Item 2</p><p>Content of Item 2</p>"
+          scroll: false
+        - label: Sectors
+          content: '<div style="padding: 20px"><ul class="ilo--list--unordered"><li>Agriculture, Forestry, and Fishing</li><li>Construction</li><li>Manufacturing</li><li>Transport and Storage</li><li>Wholesale and Retail Trade</li><li>Information and Communication</li><li>Finance and Insurance</li><li>Health and Social Work</li><li>Educational Services</li><li>Public Administration and Defense</li><li>Other Services</li></ul></div>'
           id: item2
           defaultExpanded: false
+          scroll: false
   settings:
     size:
       type: select
       label: Size
-      description: The size of the accordion.
+      description: The size of the accordion button.
       required: false
       options:
         small: Small
@@ -39,4 +40,22 @@ accordion:
         false: False
       preview: "true"
       required: false
+  variants:
+    default:
+      label: "Default"
+    scrollable:
+      label: "Scrollable"
+      description: "You can make an accordion item scrollable simply by passing it scroll: true in the preview."
+      fields:
+        items:
+          - label: Topics
+            content: '<div style="padding: 20px"><ul class="ilo--list--unordered"><li>Employment Promotion and Job Creation</li><li>Social Protection</li><li>International Labour Standards</li><li>Social Dialogue and Tripartism</li><li>Occupational Safety and Health</li><li>Labor Migration</li><li>Child Labour and Forced Labour Elimination</li><li>Gender Equality and Non-Discrimination</li><li>Decent Work</li><li>Wages and Working Hours</li><li>Social Security</li><li>Green Jobs</li>'
+            id: item1
+            defaultExpanded: false
+            scroll: true
+          - label: Sectors
+            content: '<div style="padding: 20px"><ul class="ilo--list--unordered"><li>Agriculture, Forestry, and Fishing</li><li>Construction</li><li>Manufacturing</li><li>Transport and Storage</li><li>Wholesale and Retail Trade</li><li>Information and Communication</li><li>Finance and Insurance</li><li>Health and Social Work</li><li>Educational Services</li><li>Public Administration and Defense</li><li>Other Services</li><li>Mining and Quarrying</li><li>Real Estate Activities</li><li>Water Supply and Waste Management</li><li>Professional, Scientific, and Technical Services</li><li>Arts, Entertainment, and Recreation</li><li>Electricity, Gas, Steam, and Air Conditioning Supply</li><li>Accommodation and Food Service Activities</li></ul></div>'
+            id: item2
+            defaultExpanded: false
+            scroll: true
   visibility: storybook
