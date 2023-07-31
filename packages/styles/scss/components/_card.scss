@@ -93,26 +93,10 @@
     outline: none;
     transition: background $transition-timing ease-out;
 
-    #{$self}--eyebrow {
-      color: $brand-ilo-grey-light;
-      transition: color $transition-timing ease-out;
-    }
-
-    #{$self}--title {
-      color: $brand-ilo-white;
-      transition: color $transition-timing ease-out;
-    }
-
-    #{$self}--intro {
-      color: $brand-ilo-grey-light;
-      transition: color $transition-timing ease-out;
-    }
-
-    #{$self}--date {
-      color: $brand-ilo-grey-light;
-      transition: color $transition-timing ease-out;
-    }
-
+    #{$self}--eyebrow,
+    #{$self}--title,
+    #{$self}--intro,
+    #{$self}--date,
     #{$self}--eventdate {
       color: $brand-ilo-grey-light;
       transition: color $transition-timing ease-out;
@@ -665,11 +649,11 @@
       }
     }
 
-    .ilo--profile--contents--light * {
+    [class$="profile--contents--light"] * {
       color: $color-base-neutrals-dark;
     }
 
-    .ilo--profile--contents--dark * {
+    [class$="profile--contents--dark"] * {
       color: $color-base-neutrals-white;
     }
 
@@ -681,7 +665,7 @@
         drop-shadow(0px 10px 20px rgba(30, 45, 190, 0.08))
         drop-shadow(0px -4px 16px rgba(30, 45, 190, 0.054));
 
-      .ilo--profile--contents * {
+      [class*="profile--contents"] * {
         color: $color-base-blue-medium;
       }
     }
