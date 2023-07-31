@@ -8,6 +8,7 @@
   $transition-timing: 150ms;
   margin: 0;
   max-width: px-to-rem(920px);
+  position: relative;
 
   .right-to-left & {
     text-align: right;
@@ -504,6 +505,8 @@
 
     .ilo--link-list {
       margin-top: px-to-rem(35px);
+      position: relative;
+      z-index: 3;
     }
   }
 
