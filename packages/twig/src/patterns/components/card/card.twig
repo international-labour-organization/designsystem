@@ -5,7 +5,7 @@
 {% if type == "" %}
   {% set type = variant %}
 {% endif %}
-  {% if link and type != 'data' and type != 'factlist' and type != 'stat' %}
+  {% if link and type != 'data' and type != 'factlist' and type != 'stat' and not cta %}
     <a class="{{prefix}}--card--link" href="{{link}}" title="{{title}}"><span class="{{prefix}}--card--link--text">{{title}}</span></a>
   {% endif %}
   <div class="{{prefix}}--card--wrap">
