@@ -453,12 +453,4 @@ cardgroup:
       options:
         cornercut: Corner cut
         corner: Corner
-    alignment:
-      type: select
-      label: Alignment
-      description: Set whether card (multilink) image is right aligned or left aligned
-      preview: left
-      options:
-        left: Left
-        right: right
   visibility: storybook

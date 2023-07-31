@@ -113,18 +113,10 @@ card:
       type: select
       label: Corner cut
       description: Setting for whether the card has a cut corner. The only cards that use this setting are `Graphic Promo` and `Factlist`.
-      preview: cornercut
+      preview: false
       options:
-        cornercut: Corner cut
-        corner: Corner
-    alignment:
-      type: select
-      label: Alignment
-      description: Set whether card image is right aligned or left aligned for `Multilink` cards.
-      preview: left
-      options:
-        left: Left
-        right: right
+        true: True
+        false: False
     isvideo:
       type: select
       label: Is a Video
@@ -157,7 +149,7 @@ card:
       description: The stat Card
       settings:
         theme: light
-        cornercut: cornercut
+        cornercut: True
       fields:
         eyebrow: "Report"
         title: "Global employment growth down by half in 2023"
