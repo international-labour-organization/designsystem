@@ -12,11 +12,10 @@
       {% endif %}
       {% if source %}
         {% include "@components/link/link.twig" with {
-          theme: theme,
           url: source.url,
           label: source.label,
           prefix: prefix
-        } %}
+        } only %}
       {% endif %}
     </div>
   </div>
