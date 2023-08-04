@@ -1,125 +1,24 @@
 {#
   CARD COMPONENT
 #}
-<div class="{{prefix}}--card {{prefix}}--card--{{theme}} {{prefix}}--card--{{variant}}{% if cornercut %} {{prefix}}--card--{{cornercut}}{% endif %}{% if color %} {{prefix}}--card--{{color}}{% endif %}{% if alignment %} {{prefix}}--card--{{alignment}}{% endif %}{% if link %} {{prefix}}--card--action{% endif %}{% if type %} {{prefix}}--card--{{type}}{% endif %}{% if size %} {{prefix}}--card--{{size}}{% endif %}{% if isvideo %} {{prefix}}--card--isvideo{% endif %}{% if linklist %} {{prefix}}--card--linklist{% endif %}">
 {% if type == "" %}
   {% set type = variant %}
 {% endif %}
-  {% if link and type != 'data' and type != 'factlist' and type != 'stat' %}
-    <a class="{{prefix}}--card--link" href="{{link}}" title="{{title}}"><span class="{{prefix}}--card--link--text">{{title}}</span></a>
-  {% endif %}
-  <div class="{{prefix}}--card--wrap">
-    {% if image %}
-      {% block card_image %}
-        <div class="{{prefix}}--card--image--wrapper">
-          {% if image is iterable %}
-            <picture>
-              {% for img in image|reverse %}
-                {% if loop.last == false  %}
-                  {% if img.breakpoint matches '/^\\d+$/' %}
-                    <source srcset="{{img.src}}" media="(min-width: {{img.breakpoint}}px)">
-                  {% else %}
-                    <source srcset="{{img.src}}" media="{{img.breakpoint}}">
-                  {% endif %}
-                {% endif %}
-              {% endfor %}
-              <img class="{{prefix}}--card--image" src="{{image|reverse|last.src}}" alt="{{imageAlt}}" {% if loading %} loading="{{ loading }}" {% endif %}>
-            </picture>
-            {% else %}
-            <picture>
-              <img class="{{prefix}}--card--image" src="{{image}}" alt="{{imageAlt}}" {% if loading %} loading="{{ loading }}" {% endif %}>
-            </picture>
-          {% endif %}
-        </div>
-      {% endblock %}
-    {% endif %}
-    <div class="{{prefix}}--card--content">
-      {% if eyebrow %}
-        <p class="{{prefix}}--card--eyebrow">{{eyebrow}}</p>
-      {% endif %}
-      {% if title %}
-        <h5 class="{{prefix}}--card--title">{{title}}</h5>
-      {% endif %}
-      {% if type == "multilink" or type == "data" and image %}
-        {{ block("card_image") }}
-      {% endif %}
-      {% if intro %}
-        <p class="{{prefix}}--card--intro">{{intro}}</p>
-      {% endif %}
-      {% if date and type != "stat" and type != "data" and type != "graphicpromo" and type != "stat" and type != "factlist" %}
-        <time class="{{prefix}}--card--date" datetime="{{date.unix}}">{{date.human}}</time>
-      {% endif %}
-      {% if eventdetails %}
-        <p class="{{prefix}}--card--event-date">{{eventdetails}}</p>
-      {% endif %}
-      {% if profile %}
-        {% include "@components/profile/profile.twig" with {
-          avatar: profile.avatar,
-          description: profile.description,
-          link: profile.link,
-          name: profile.name,
-          role: profile.role,
-          prefix: prefix,
-          theme: theme,
-        } only %}
-      {% endif %}
-      {% if list %}
-        {% include "@components/list/list.twig" with {
-          title: list.title,
-          ordered: list.ordered,
-          alignment: list.alignment,
-          items: list.items,
-          prefix: prefix,
-        } only %}
-      {% endif %}
-      {% if cta %}
-        <a class="{{prefix}}--card--cta {{prefix}}--button {{prefix}}--button--medium {{prefix}}--button--primary" href="{{cta.url}}">
-          <span class="link__label">{{cta.label}}</span>
-        </a>
-      {% endif %}
-      {% if source %}
-        {% include "@components/link/link.twig" with {
-          theme: theme,
-          url: source.url,
-          label: source.label,
-          prefix: prefix
-        } %}
-      {% endif %}
-      {% if linklist %}
-        {% include "@components/linklist/linklist.twig" with {
-          headline: linklist.headline,
-          linkgroup: linklist.linkgroup,
-          prefix: prefix
-        } only %}
-      {% endif %}
-      {% if dataset %}
-        {% if dataset.content %}
-          {% for item in dataset.content.items %}
-            <p class="{{prefix}}--card--data--content-label">{{ item.label }}</p>
-            <p class="{{prefix}}--card--data--content-copy">{{ item.copy }}</p>
-          {% endfor %}
-        {% endif %}
-        {% if dataset.files %}
-          <div class="{{prefix}}--card--data--content-files">
-            <p class="{{prefix}}--card--data--content-label">{{ dataset.files.headline }}</p>
-            {% for item in dataset.files.items %}
-              <a class="{{prefix}}--card--data--file {{prefix}}--button {{prefix}}--button--primary {{prefix}}--button--small" href="{{item.url}}"><span class="button__label" download>{{ item.label }}</span></a>
-            {% endfor %}
-          </div>
-        {% endif %}
-        {% if dataset.links %}
-          <div class="{{prefix}}--card--data--content-links">
-            <p class="{{prefix}}--card--data--content-label">{{ dataset.links.headline }}</p>
-            {% for item in dataset.links.items %}
-              {% include "@components/link/link.twig" with {
-                url: item.url,
-                label: item.label,
-                prefix: prefix
-              } %} <span>&nbsp;</span>
-            {% endfor %}
-          </div>
-        {% endif %}
-      {% endif %}
-    </div>
-  </div>
-</div>
+
+{% if type == "data" %}
+  {% include "@components/card_data/card_data.twig" %}
+{% elseif type == "detail" %}
+  {% include "@components/card_detail/card_detail.twig" %}
+{% elseif type == "factlist" %}
+  {% include "@components/card_factlist/card_factlist.twig" %}
+{% elseif type == "feature" %}
+  {% include "@components/card_feature/card_feature.twig" %}
+{% elseif type == "multilink" %}
+  {% include "@components/card_multilink/card_multilink.twig" %}
+{% elseif type == "promo" %}
+  {% include "@components/card_promo/card_promo.twig" %}
+{% elseif type == "stat" %}
+  {% include "@components/card_stat/card_stat.twig" %}
+{% elseif type == "text" %}
+  {% include "@components/card_text/card_text.twig" %}
+{% endif %}

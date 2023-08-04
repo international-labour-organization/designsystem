@@ -3,45 +3,45 @@
 @import "../mixins";
 
 .ilo--cardgroup {
+  $c: &;
   $card: ".ilo--card";
+
+  &__collapsed {
+    #{$c}--inner {
+      gap: 0;
+    }
+  }
+
+  &__justify {
+    &__start {
+      #{$c}--inner {
+        justify-content: flex-start;
+      }
+    }
+
+    &__between {
+      #{$c}--inner {
+        justify-content: space-between;
+      }
+    }
+
+    &__center {
+      #{$c}--inner {
+        justify-content: center;
+      }
+    }
+  }
 
   &--inner {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    flex-flow: row wrap;
+    justify-content: center;
     margin: auto;
-    row-gap: px-to-rem(32px);
+    gap: px-to-rem(32px);
+    width: 100%;
 
     .right-to-left & {
       flex-direction: row-reverse;
-    }
-
-    #{$card} {
-      width: 100%;
-    }
-  }
-
-  &--two {
-    @include breakpoint("large") {
-      #{$card} {
-        width: calc(50% - 24px);
-      }
-    }
-  }
-
-  &--three {
-    @include breakpoint("large") {
-      #{$card} {
-        width: calc(33.333% - 24px);
-      }
-    }
-  }
-
-  &--four {
-    @include breakpoint("large") {
-      #{$card} {
-        width: calc(25% - 24px);
-      }
     }
   }
 

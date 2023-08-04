@@ -1,0 +1,150 @@
+@use "../tokens" as *;
+@use "../functions" as *;
+@use "../animations" as *;
+@import "../mixins";
+
+.ilo--card {
+  $self: &;
+
+  &__type {
+    &__detail {
+      --max-width: #{px-to-rem(343px)};
+
+      border-bottom: px-to-rem(3px) solid $brand-ilo-grey-light;
+      padding: px-to-rem(24px) 0;
+      position: relative;
+
+      @include breakpoint("large") {
+        padding: px-to-rem(32px) 0;
+      }
+
+      &:hover,
+      &:focus,
+      &:focus-within {
+        @include card-drop-shadow;
+
+        picture::before {
+          opacity: 0.4;
+          z-index: 2;
+        }
+
+        #{$self}--date-extra {
+          &::before {
+            @include dataurlicon("equilateraltriangle", $brand-ilo-blue);
+          }
+        }
+      }
+
+      #{$self}--title {
+        @include font-styles("headline-6");
+
+        @include breakpoint("large") {
+          #{$self}__size__wide & {
+            @include font-styles("headline-5");
+          }
+
+          #{$self}__size__wide & {
+            @include font-styles("headline-6");
+          }
+        }
+      }
+
+      &#{$self}__size {
+        &__wide,
+        &__fluid {
+          --max-width: #{px-to-rem(745px)};
+
+          #{$self}--title {
+            @include breakpoint("large") {
+              @include font-styles("headline-5");
+            }
+          }
+
+          #{$self}--image--wrapper {
+            @include breakpoint("large") {
+              flex: 0 0 px-to-rem(196px);
+            }
+          }
+
+          #{$self}--picture {
+            @include breakpoint("large") {
+              width: px-to-rem(196px);
+            }
+          }
+        }
+
+        &__narrow {
+          --max-width: #{px-to-rem(343px)};
+        }
+      }
+
+      picture {
+        display: flex;
+        position: relative;
+
+        &::before {
+          background-color: $brand-ilo-blue;
+          content: "";
+          display: block;
+          height: 100%;
+          left: 0;
+          opacity: 0;
+          position: absolute;
+          top: 0;
+          width: 100%;
+          z-index: -1;
+          @include globaltransition("opacity");
+        }
+      }
+
+      #{$self}--wrap {
+        display: flex;
+
+        .right-to-left & {
+          flex-direction: row-reverse;
+        }
+      }
+
+      #{$self}--title {
+        @include font-styles("headline-6");
+      }
+
+      #{$self}--image--wrapper {
+        flex: 0 0 px-to-rem(77px);
+      }
+
+      #{$self}--picture {
+        object-fit: contain;
+        width: px-to-rem(77px);
+      }
+
+      #{$self}--content {
+        padding: 0 px-to-rem(24px);
+      }
+
+      #{$self}--date-extra {
+        @include font-styles("body-small");
+        margin-bottom: 0;
+        padding-left: px-to-rem(24px);
+        position: relative;
+
+        &::before {
+          background-repeat: no-repeat;
+          content: "";
+          display: inline-block;
+          height: px-to-rem(14px);
+          left: 0;
+          position: absolute;
+          top: 50%;
+          transform: rotate(-90deg) translateX(50%);
+          width: px-to-rem(12px);
+          @include dataurlicon("equilateraltriangle", $brand-ilo-grey-charcoal);
+        }
+      }
+
+      #{$self}--date {
+        @include font-styles("body-small");
+      }
+    }
+  }
+}

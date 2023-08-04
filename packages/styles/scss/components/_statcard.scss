@@ -1,0 +1,76 @@
+@use "../tokens" as *;
+@use "../functions" as *;
+@use "../animations" as *;
+@import "../mixins";
+
+.ilo--card {
+  $self: &;
+
+  &__type {
+    &__stat {
+      --max-width: #{px-to-rem(343px)};
+
+      border-bottom: px-to-rem(3px) solid $brand-ilo-purple;
+      padding: px-to-rem(24px) px-to-rem(40px) px-to-rem(22px);
+      position: relative;
+      width: 100%;
+
+      @include cornercut(72px, 40px);
+
+      &#{$self}__color {
+        &__blue {
+          background: $brand-ilo-light-blue;
+        }
+
+        &__yellow {
+          background: $brand-ilo-yellow;
+        }
+
+        &__green {
+          background: $brand-ilo-green;
+        }
+
+        &__turquoise {
+          background: $brand-ilo-turquoise;
+        }
+      }
+
+      #{$self}--content {
+        display: flex;
+        flex-wrap: wrap;
+        height: 100%;
+
+        .right-to-left & {
+          flex-direction: row-reverse;
+        }
+      }
+
+      #{$self}--title {
+        color: $brand-ilo-dark-blue;
+        @include font-styles("headline-3");
+        @include textmargin(
+          "margin-bottom",
+          24px,
+          "headline-3",
+          "display",
+          0,
+          0
+        );
+        width: 100%;
+      }
+
+      #{$self}--intro {
+        color: $brand-ilo-dark-blue;
+        font-family: $fonts-display;
+        @include font-styles("base");
+        @include textmargin("margin-bottom", 35px, "nav-md-sm", "copy", 0, 0);
+        width: 100%;
+      }
+
+      .ilo--link {
+        @include font-styles("image-credit");
+        align-self: flex-end;
+      }
+    }
+  }
+}

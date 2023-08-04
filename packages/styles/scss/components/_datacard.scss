@@ -1,0 +1,90 @@
+@use "../tokens" as *;
+@use "../functions" as *;
+@use "../animations" as *;
+@import "../mixins";
+
+.ilo--card {
+  $self: &;
+
+  &__type {
+    &__data {
+      --max-width: #{px-to-rem(301px)};
+
+      background: $brand-ilo-light-blue;
+      border-bottom: px-to-rem(3px) solid #82afdc;
+      margin-top: px-to-rem(40px);
+      padding: px-to-rem(24px) px-to-rem(56px);
+      position: relative;
+      width: 100%;
+
+      &:hover,
+      &:focus,
+      &:focus-within {
+        background: $brand-ilo-light-blue;
+      }
+
+      &#{$self}__size {
+        &__narrow {
+          --max-width: #{px-to-rem(301px)};
+
+          @include cornercut(72px, 40px);
+        }
+
+        &__wide,
+        &__fluid {
+          --max-width: #{px-to-rem(600px)};
+
+          @include cornercut(87px, 48px);
+        }
+      }
+
+      #{$self}--image--wrapper {
+        width: max(px-to-rem(205px), 50%);
+      }
+
+      &--content-label {
+        @include font-styles("body-xs");
+        @include textmargin(
+          "margin-bottom",
+          16px,
+          "body-xs",
+          "copy",
+          "headline-5",
+          "display"
+        );
+        color: $brand-ilo-grey-accessible;
+      }
+
+      &--content-copy {
+        @include font-styles("headline-5");
+        @include textmargin(
+          "margin-bottom",
+          40px,
+          "headline-5",
+          "display",
+          "body-xs",
+          "copy"
+        );
+        color: $brand-ilo-grey-charcoal;
+        font-family: $fonts-display;
+        font-weight: 500;
+      }
+
+      &--content-files {
+        margin-bottom: px-to-rem(40px);
+      }
+
+      .ilo--link {
+        @include font-styles("headline-6");
+      }
+
+      &--file {
+        margin: px-to-rem(4px) px-to-rem(8px) px-to-rem(4px) 0;
+
+        &:last-of-type {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}

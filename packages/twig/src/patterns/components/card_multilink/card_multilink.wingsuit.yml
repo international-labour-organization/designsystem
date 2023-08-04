@@ -1,0 +1,88 @@
+multilinkcard:
+  use: "@components/card_multilink/card_multilink.twig"
+  label: Multilink Card
+  description: A multilink card component for displaying links to content. It can have an image, title, intro text and a list of links displayed at the bottom or on the side of the card.
+  visibility: storybook
+  fields:
+    date:
+      type: object
+      label: Date
+      description: Date copy (human and Unix)
+      preview:
+        human: 20 September 2022
+        unix: 1670389200
+    image:
+      type: object
+      label: Image
+      description: Image settings for the card. This should include a `url`, which is an array of objects with an `src` property pointing to the image file and a `breakpoint` property which is either a number indicating the minimum viewport width at which the image should be displayed or a media query. It should also contain an `alt` property for the image's alt text.
+      preview:
+        alt: "Image alt text"
+        loading: "lazy"
+        url:
+          - breakpoint: "(min-width: 0px)"
+            src: "/images/small.jpg"
+          - breakpoint: "(min-width: 800px)"
+            src: "/images/medium.jpg"
+          - breakpoint: "(min-width: 1200px)"
+            src: "/images/large.jpg"
+          - breakpoint: "(min-width: 1440px)"
+            src: "/images/large.jpg"
+    intro:
+      type: string
+      label: Intro
+      description: Intro field for the card
+      preview: "As the United Nations agency for the world of work, the ILO sets international labour standards, promotes rights at work and encourages decent employment opportunities, the enhancement of social protection and the strengthening of dialogue on work-related issues."
+    link:
+      type: string
+      label: Link
+      description: Link field for the card
+      preview: "https://www.ilo.org/"
+    linklist:
+      type: object
+      label: Link List
+      description: Implementation of the LinkList component.
+      preview:
+        linkgroup:
+          - links:
+            - label: Read the press release
+              url: "https://www.ilo.org"
+            - label: See the statement
+              url: "https://www.ilo.org"
+            - label: Remarks to G7 Openening Session
+              url: "https://www.ilo.org"
+    title:
+      type: string
+      label: Title
+      description: Title field for the card
+      preview: Advancing social justice
+  settings:
+    alignment:
+      type: select
+      label: Alignment
+      description: Positions the image to the right or to the left of the content when the card is displayed in a `wide` or `fluid` size. Has no effect if the card is displayed in a `standard` or `narrow` size.
+      preview: "left"
+      options:
+        left: Left
+        right: Right
+    isvideo:
+      type: select
+      label: is a Video
+      description: Whether the card should display a video icon (for Feature card)
+      preview: false
+      options:
+        true: True
+        false: False
+    size:
+      type: select
+      label: Size
+      description: Sets the size of the card. If not set, the card will appear as `standard`.
+      required: false
+      preview: "standard"
+      options:
+        standard: standard
+        narrow: narrow
+        wide: wide
+        fluid: fluid
+
+
+
