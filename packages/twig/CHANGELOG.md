@@ -1,5 +1,48 @@
 # @ilo-org/twig
 
+## 0.8.0
+
+### Minor Changes
+
+- bdeca8720: Refactor the Card Group in line with changes made to the Cards.
+
+  - Width of the cards in the card group are set via a new `size` property that uses the `size` property of the cards in the group.
+  - A new `collapsed` property optionally removes the space between the cards so they are touching.
+  - A new `justify` property allows the user to horizontally align the cards to the beginning or center, or to the left and right edges of the container.
+
+- ba46a3a7d: Complete refactor of the Card component. Exposes each individual card as a separate template that can be imported individually or via the `Card` component using the `type` property.
+
+  Settings for the `Card` component change as follows:
+
+  - `cornercut` is deprecated for all cards except the Promo Card. For the others, it’s determined automatically by the type of card.
+  - `alignment` is deprecated for all cards except the Multilink Card, where it determines where the image should be placed, when size is set to wide.
+  - `size` has the following options: `narrow`, `wide`, `standard` and `fluid`. When a component only has two sizes, the options are `narrow`, `wide` and `fluid` and the default is `narrow`. When it has three options, all of the options are available and the default is `standard`. `fluid` is a new option which sets the card to be as wide as its container.
+  - `eventDetails` becomes `dateExtra`
+  - `imageAlt` is moved to `image.alt`
+  - `loading` is moved to `image.loading`
+
+  The following options for the Card's `type` setting have changed as follows:
+
+  - `graphic` becomes `text`
+  - `graphicpromo` becomes `promo`
+
+### Patch Changes
+
+- ee2889916: Cards are not clickable if they are passed a cta prop, only the cta is clickable
+- 8b12345cb: Remove alignment prop from Card component, which didn't do anything
+- ba46a3a7d: Create new picture component to be used internally where responsive images are needed without captions.
+- 8b12345cb: In Card, change cornercut options to be boolean `true` or `false`
+- Updated dependencies [ba46a3a7d]
+- Updated dependencies [bdeca8720]
+- Updated dependencies [bbd9262d1]
+- Updated dependencies [ee14cd3d3]
+- Updated dependencies [b56d55cfd]
+- Updated dependencies [5022dfc4c]
+- Updated dependencies [bacc0bba7]
+- Updated dependencies [ba46a3a7d]
+- Updated dependencies [652966ab7]
+  - @ilo-org/styles@0.7.0
+
 ## 0.7.0
 
 ### Minor Changes

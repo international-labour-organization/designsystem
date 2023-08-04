@@ -1,5 +1,26 @@
 # @ilo-org/styles
 
+## 0.7.0
+
+### Minor Changes
+
+- bdeca8720: Refactor the Card Group in line with changes made to the Cards.
+
+  - Width of the cards in the card group are set via a new `size` property that uses the `size` property of the cards in the group.
+  - A new `collapsed` property optionally removes the space between the cards so they are touching.
+  - A new `justify` property allows the user to horizontally align the cards to the beginning or center, or to the left and right edges of the container.
+
+### Patch Changes
+
+- ba46a3a7d: Complete refactor of card styles.
+- bbd9262d1: Fix bug preventing sub-links in multilink card from being clickable
+- ee14cd3d3: changed spaces between cards
+- b56d55cfd: Cards: fix unlinked text changing colors on hover
+- 5022dfc4c: Fix bug where profile in dark themed graphic card had unreadable white text on hover
+- bacc0bba7: Fix hero image corner cut
+- ba46a3a7d: Use clip-path for cornercuts instead of pseudoelements and svgs
+- 652966ab7: Add `fluid` size to cards allowing them to take the full width of their container.
+
 ## 0.6.0
 
 ### Minor Changes
