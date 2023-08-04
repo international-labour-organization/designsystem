@@ -5,8 +5,8 @@
 .ilo--hero-card {
   $c: &;
   $semi-transparent: 0.6;
-  $padding-lg: 64px;
-  $padding-sm: 39px;
+  $padding-lg: $spacing-padding-8;
+  $padding-sm: $spacing-padding-5;
 
   height: 100%;
   position: relative;
@@ -74,23 +74,7 @@
   }
 
   &__cornercut {
-    clip-path: polygon(
-      0 0,
-      calc(100% - $padding-lg) 0,
-      100% $padding-sm,
-      100% 100%,
-      0 100%
-    );
-
-    @include breakpoint("large") {
-      clip-path: polygon(
-        0 0,
-        calc(100% - $padding-lg) 0,
-        100% $padding-lg,
-        100% 100%,
-        0 100%
-      );
-    }
+    @include cornercut();
   }
 
   &--datecopy {

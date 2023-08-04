@@ -1,0 +1,49 @@
+{#
+  DATA CARD COMPONENT
+#}
+<div class="{{prefix}}--card {{prefix}}--card__type__data {{prefix}}--card__layout__{{layout}}">
+  <div class="{{prefix}}--card--wrap">
+    <div class="{{prefix}}--card--content">
+      {% if eyebrow %}
+        <p class="{{prefix}}--card--eyebrow">{{eyebrow}}</p>
+      {% endif %}
+      {% if image %}
+        <div class="{{prefix}}--card--image--wrapper">
+        {% include "@components/picture/picture.twig" with {
+            image: image,
+            class: "card"
+          }
+        %}
+        </div>
+      {% endif %}
+      {% if dataset %}
+        {% if dataset.content %}
+          {% for item in dataset.content.items %}
+            <p class="{{prefix}}--card--data--content-label">{{ item.label }}</p>
+            <p class="{{prefix}}--card--data--content-copy">{{ item.copy }}</p>
+          {% endfor %}
+        {% endif %}
+        {% if dataset.files %}
+          <div class="{{prefix}}--card--data--content-files">
+            <p class="{{prefix}}--card--data--content-label">{{ dataset.files.headline }}</p>
+            {% for item in dataset.files.items %}
+              <a class="{{prefix}}--card--data--file {{prefix}}--button {{prefix}}--button--primary {{prefix}}--button--small" href="{{item.url}}"><span class="button__label" download>{{ item.label }}</span></a>
+            {% endfor %}
+          </div>
+        {% endif %}
+        {% if dataset.links %}
+          <div class="{{prefix}}--card--data--content-links">
+            <p class="{{prefix}}--card--data--content-label">{{ dataset.links.headline }}</p>
+            {% for item in dataset.links.items %}
+              {% include "@components/link/link.twig" with {
+                url: item.url,
+                label: item.label,
+                prefix: prefix
+              } %} <span>&nbsp;</span>
+            {% endfor %}
+          </div>
+        {% endif %}
+      {% endif %}
+    </div>
+  </div>
+</div>

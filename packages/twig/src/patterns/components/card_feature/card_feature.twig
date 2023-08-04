@@ -1,0 +1,39 @@
+{#
+  FEATURE CARD COMPONENT
+#}
+
+<div class="{{prefix}}--card {{prefix}}--card__type__feature {{prefix}}--card__action {{prefix}}--card__theme__{{theme}} {{prefix}}--card__layout__{{ layout }} {% if isvideo %} {{prefix}}--card__isvideo {% endif %} {% if cta %} {{prefix}}--card__linklist {% endif %}">
+  <a class="{{prefix}}--card--link" href="{{link}}" title="{{title}}">
+    <span class="{{prefix}}--card--link--text">{{title}}</span>
+  </a>
+  <div class="{{prefix}}--card--wrap">
+    {% if image %}
+    <div class="{{prefix}}--card--image--wrapper">
+      {% include "@components/picture/picture.twig" with {
+          image: image,
+          class: "card"
+        }
+      %}
+    </div>
+    {% endif %}
+    <div class="{{prefix}}--card--content">
+      {% if eyebrow %}
+        <p class="{{prefix}}--card--eyebrow">{{eyebrow}}</p>
+      {% endif %}
+      {% if title %}
+        <h5 class="{{prefix}}--card--title">{{title}}</h5>
+      {% endif %}
+      {% if date %}
+        <time class="{{prefix}}--card--date" datetime="{{date.unix}}">{{date.human}}</time>
+      {% endif %}
+      {% if cta %}
+        {% include "@components/linklist/linklist.twig" with {
+          linkgroup: [{
+            links: [cta]
+          }],
+          prefix: prefix
+        } only %}
+      {% endif %}
+    </div>
+  </div>
+</div>

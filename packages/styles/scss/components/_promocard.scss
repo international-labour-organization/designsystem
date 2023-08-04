@@ -1,0 +1,156 @@
+@use "../tokens" as *;
+@use "../functions" as *;
+@use "../animations" as *;
+@import "../mixins";
+
+.ilo--card {
+  $self: &;
+
+  &__type {
+    &__promo {
+      --max-width: #{px-to-rem(343px)};
+
+      padding: px-to-rem(40px) px-to-rem(24px);
+      width: 100%;
+
+      @include breakpoint("medium") {
+        padding: px-to-rem(48px);
+      }
+
+      @include breakpoint("large") {
+        padding: px-to-rem(64px) px-to-rem(72px);
+      }
+
+      &#{$self}__layout {
+        &__standard {
+          --max-width: #{px-to-rem(634px)};
+
+          padding: px-to-rem(48px);
+
+          @include breakpoint("medium") {
+            padding: px-to-rem(48px) px-to-rem(48px) px-to-rem(64px);
+          }
+
+          @include breakpoint("large") {
+            padding: px-to-rem(48px) px-to-rem(48px) px-to-rem(64px);
+          }
+
+          &#{$self}__cornercut {
+            @include cornercut(87px, 48px);
+          }
+        }
+
+        &__wide {
+          --max-width: #{px-to-rem(920px)};
+
+          padding: px-to-rem(64px) px-to-rem(72px);
+
+          @include breakpoint("medium") {
+            padding: px-to-rem(64px) px-to-rem(72px);
+          }
+
+          @include breakpoint("large") {
+            padding: px-to-rem(64px) px-to-rem(72px);
+          }
+
+          &#{$self}__cornercut {
+            @include cornercut(116px, 64px);
+          }
+        }
+
+        &__narrow {
+          --max-width: #{px-to-rem(343px)};
+
+          padding: px-to-rem(40px) px-to-rem(24px);
+
+          @include breakpoint("medium") {
+            padding: px-to-rem(40px) px-to-rem(24px);
+          }
+
+          @include breakpoint("large") {
+            padding: px-to-rem(40px) px-to-rem(24px);
+          }
+
+          &#{$self}__cornercut {
+            @include cornercut(72px, 40px);
+          }
+
+          #{$self}--title {
+            @include font-styles("headline-4");
+            @include textmargin(
+              "margin-bottom",
+              24px,
+              "headline-4",
+              "display",
+              "body-small",
+              "copy"
+            );
+
+            @include breakpoint("medium") {
+              @include font-styles("headline-3");
+              @include textmargin(
+                "margin-bottom",
+                24px,
+                "headline-3",
+                "display",
+                "body-small",
+                "copy"
+              );
+            }
+          }
+
+          #{$self}--intro {
+            @include font-styles("body-small");
+            @include textmargin(
+              "margin-bottom",
+              40px,
+              "body-small",
+              "copy",
+              0,
+              0
+            );
+          }
+        }
+      }
+
+      &#{$self}__theme__light:not(:hover) #{$self}--title {
+        color: $brand-ilo-grey-charcoal;
+        @include globaltransition("color");
+      }
+
+      #{$self}--title {
+        @include font-styles("headline-4");
+        @include textmargin(
+          "margin-bottom",
+          24px,
+          "headline-4",
+          "display",
+          "body-small",
+          "copy"
+        );
+
+        @include breakpoint("medium") {
+          @include font-styles("headline-3");
+          @include textmargin(
+            "margin-bottom",
+            32px,
+            "headline-3",
+            "display",
+            "base",
+            "copy"
+          );
+        }
+      }
+
+      #{$self}--intro {
+        @include font-styles("body-small");
+        @include textmargin("margin-bottom", 40px, "body-small", "copy", 0, 0);
+
+        @include breakpoint("medium") {
+          @include font-styles("base");
+          @include textmargin("margin-bottom", 40px, "base", "copy", 0, 0);
+        }
+      }
+    }
+  }
+}

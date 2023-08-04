@@ -1,0 +1,48 @@
+factlistcard:
+  use: "@components/card_factlist/card_factlist.twig"
+  label: Fact List Card
+  description: A Fact List Card is a card that displays a list of facts or statistics.
+  visibility: storybook
+  fields:
+    title:
+      type: string
+      label: Title
+      description: Title field for the card
+      preview: Can digital technology be an equality machine?
+    list:
+      type: object
+      label: List
+      description: List of facts or statistics. See the List component for a full list of options.
+      preview:
+        settings:
+          - ordered: unordered
+          - alignment: default
+        items:
+          - content: "Global employment growth will be only 1.0 per cent in 2023, less than half the level in 2022."
+            id: "list1"
+          - content: "The labour market deterioration is mainly due to emerging geopolitical tensions and the Ukraine conflict."
+            id: "list2"
+          - content: "The current slowdown means that many workers will have to accept lower quality jobs, often at very low pay."
+            id: "list3"
+  settings:
+    layout:
+      type: select
+      label: Layout
+      description: Sets the size of the card. If not set, the card will appear as `narrow`.
+      preview: "narrow"
+      options:
+        narrow: Narrow
+        wide: Wide
+    theme:
+      type: select
+      label: Theme
+      description: Sets the card to appear as either light or dark. If not set, the card will inherit the theme of its parent.
+      required: false
+      preview: "light"
+      options:
+        dark: Dark
+        light: Light
+
+
+
+

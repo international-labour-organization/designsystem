@@ -1,0 +1,72 @@
+datacard:
+  use: "@components/card_data/card_data.twig"
+  label: Data Card
+  description: A data card component for organising data about things like publications or events.
+  visibility: storybook
+  fields:
+    dataset:
+      type: object
+      label: Dataset object
+      description: Array of Content (label, copy), Files object (optional headline, array of items with label and url) and Links object (optional headline, array of items with label and url)
+      preview:
+        content:
+          items:
+            - label: Date
+              copy: 17 March 2022
+            - label: Event type
+              copy: Technical meeting of experts
+        files:
+          headline: Files
+          items:
+            - label: Meeting agenda
+              url: "https://www.ilo.org"
+            - label: Briefing notes
+              url: "https://www.ilo.org"
+            - label: Practical info
+              url: "https://www.ilo.org"
+        links:
+          headline: Languages
+          items:
+            - label: English
+              url: "https://www.ilo.org/search?q=link"
+            - label: Español
+              url: "https://www.ilo.org/search?q=hyperlink"
+            - label: Français
+              url: "https://www.ilo.org/search?q=url"
+    eyebrow:
+      type: string
+      label: Eyebrow
+      description: Eyebrow copy
+      preview: "Podcast"
+    image:
+      type: object
+      label: Image
+      description: Image settings for the card. This should include a `url`, which is an array of objects with an `src` property pointing to the image file and a `breakpoint` property which is either a number indicating the minimum viewport width at which the image should be displayed or a media query. It should also contain an `alt` property for the image's alt text.
+      preview:
+        alt: "Image alt text"
+        loading: "lazy"
+        url:
+          - breakpoint: "(min-width: 0px)"
+            src: "/images/small.jpg"
+          - breakpoint: "(min-width: 800px)"
+            src: "/images/medium.jpg"
+          - breakpoint: "(min-width: 1200px)"
+            src: "/images/large.jpg"
+          - breakpoint: "(min-width: 1440px)"
+            src: "/images/large.jpg"
+  settings:
+    layout:
+      type: select
+      label: Layout
+      description: Sets the size of the card. If not set, the card will appear as `narrow`.
+      required: false
+      preview: "narrow"
+      options:
+        narrow: Narrow
+        wide: Wide
+
+
+
+
+
+

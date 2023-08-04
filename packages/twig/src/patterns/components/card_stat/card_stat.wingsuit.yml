@@ -1,0 +1,48 @@
+statcard:
+  use: "@components/card_stat/card_stat.twig"
+  label: Stat Card
+  description: A stat card highlights a prominent fact or statistic with a link to where the information comes from. It can appear in a range of different colors.
+  visibility: storybook
+  fields:
+    title:
+      type: string
+      label: Title
+      description: The headline for the statistic
+      preview: "Global employment growth down by half in 2023"
+    intro:
+      type: string
+      label: Intro
+      description: More informationa about the statistic
+      preview: "The current global economic slowdown is likely to force more workers to accept lower quality, poorly paid jobs which lack job security and social protection, so accentuating inequalities exacerbated by the COVID-19 crisis."
+    source:
+      type: object
+      label: Source
+      description: A link pointing to where the statistic comes from.
+      preview:
+        label: "World Employment and Social Outlook: Trends 2023"
+        url: "https://www.ilo.org/global/research/global-reports/weso/WCMS_865332/lang--en/index.htm"
+  settings:
+    layout:
+      type: select
+      label: Size
+      description: Sets the size of the card. If not set, the card will appear as `standard`.
+      required: false
+      preview: "standard"
+      options:
+        standard: Standard
+        fluid: Fluid
+    color:
+      type: select
+      label: Color
+      description: Color of the stat cards, options are `turquoise`, `green`, `yellow`, or `blue`. Only use for stat cards.
+      options:
+        turquoise: turquoise
+        green: green
+        yellow: yellow
+        blue: blue
+      preview: "blue"
+
+
+
+
+
