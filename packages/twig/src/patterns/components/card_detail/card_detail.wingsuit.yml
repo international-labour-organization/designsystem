@@ -10,7 +10,7 @@ detailcard:
       description: Date copy readable for both humans and machines
     dateExtra:
       type: string
-      label: Eyebrow
+      label: dateExtra
       description: Strong date copy that could include other information such as the location of an event.
       preview: 20 September 2022 | Geneva
     eyebrow:
