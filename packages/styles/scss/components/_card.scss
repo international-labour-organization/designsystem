@@ -10,9 +10,13 @@
   box-sizing: border-box;
   position: relative;
 
-  // Max width is set in the invididual card types
+  // Max width is set in the invididual card types unless fluid
   max-width: var(--max-width);
   flex: 1 1 var(--max-width);
+
+  &__size__fluid {
+    --max-width: 100% !important;
+  }
 
   .right-to-left & {
     text-align: right;

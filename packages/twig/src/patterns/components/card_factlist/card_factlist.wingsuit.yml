@@ -31,8 +31,9 @@ factlistcard:
       description: Sets the size of the card. If not set, the card will appear as `narrow`.
       preview: "narrow"
       options:
-        narrow: Narrow
-        wide: Wide
+        narrow: narrow
+        wide: wide
+        fluid: fluid
     theme:
       type: select
       label: Theme

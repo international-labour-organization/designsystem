@@ -30,7 +30,8 @@
           @include cornercut(72px, 40px);
         }
 
-        &__wide {
+        &__wide,
+        &__fluid {
           --max-width: #{px-to-rem(600px)};
 
           @include cornercut(87px, 48px);

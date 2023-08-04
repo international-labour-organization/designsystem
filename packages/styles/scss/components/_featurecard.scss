@@ -78,7 +78,7 @@
       }
 
       &#{$self}__size {
-        &__standard {
+        &__narrow {
           #{$self}--wrap {
             display: flex;
             flex-wrap: wrap;
@@ -94,7 +94,8 @@
           }
         }
 
-        &__wide {
+        &__wide,
+        &__fluid {
           --max-width: #{px-to-rem(754px)};
 
           @include breakpoint("medium") {

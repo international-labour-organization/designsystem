@@ -65,8 +65,9 @@ featurecard:
       required: false
       preview: "narrow"
       options:
-        narrow: Narrow
-        wide: Wide
+        narrow: narrow
+        wide: wide
+        fluid: fluid
     theme:
       type: select
       label: Theme

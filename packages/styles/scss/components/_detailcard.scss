@@ -50,11 +50,8 @@
       }
 
       &#{$self}__size {
+        &__wide,
         &__fluid {
-          --max-width: 100%;
-        }
-
-        &__wide {
           --max-width: #{px-to-rem(745px)};
 
           #{$self}--title {

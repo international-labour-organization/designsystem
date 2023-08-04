@@ -57,8 +57,9 @@ detailcard:
       required: false
       preview: "narrow"
       options:
-        narrow: Narrow
-        wide: Wide
+        narrow: narrow
+        wide: wide
+        fluid: fluid
     isvideo:
       type: select
       label: Is a Video

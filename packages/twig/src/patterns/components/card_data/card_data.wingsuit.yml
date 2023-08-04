@@ -62,8 +62,9 @@ datacard:
       required: false
       preview: "narrow"
       options:
-        narrow: warrow
-        wide: nide
+        narrow: narrow
+        wide: wide
+        fluid: fluid
 
 
 

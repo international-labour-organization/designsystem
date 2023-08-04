@@ -135,7 +135,8 @@
           }
         }
 
-        &__wide {
+        &__wide,
+        &__fluid {
           --max-width: #{px-to-rem(1104px)};
 
           padding: px-to-rem(40px) px-to-rem(24px) px-to-rem(48px);

@@ -55,9 +55,10 @@ promocard:
       required: false
       preview: "standard"
       options:
-        standard: Standard
-        narrow: Narrow
-        wide: Wide
+        standard: standard
+        narrow: narrow
+        wide: wide
+        fluid: fluid
     theme:
       type: select
       label: Theme
