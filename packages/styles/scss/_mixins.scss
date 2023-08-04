@@ -333,25 +333,24 @@
 // ======================================
 // Cornercut
 // ======================================
-@mixin cornercut($color: $brand-ilo-dark-blue, $height: 40px, $width: 73px) {
-  // 1.8125x
-  &::before {
-    background: inherit;
-    content: "";
-    display: block;
-    height: $height;
-    position: absolute;
-    width: calc(100% - $width);
-  }
 
-  &::after {
-    @include dataurlicon("triangledecoration", $color);
-    background-position: bottom right;
-    background-size: cover;
-    content: "";
-    height: $height;
-    display: block;
-    position: absolute;
-    width: $width + 0.4;
-  }
+@mixin cornercut($width: $spacing-padding-8, $height: $spacing-padding-5) {
+  clip-path: polygon(
+    0 0,
+    calc(100% - $width) 0,
+    100% $height,
+    100% 100%,
+    0 100%
+  );
+}
+
+// ======================================
+// Dropshadow for cards
+// ======================================
+
+@mixin card-drop-shadow {
+  filter: drop-shadow(0px 0.8px 1.6px rgba(30, 45, 190, 0.038))
+    drop-shadow(0px 4px 8px rgba(30, 45, 190, 0.054))
+    drop-shadow(0px 10px 20px rgba(30, 45, 190, 0.08))
+    drop-shadow(0px -4px 16px rgba(30, 45, 190, 0.054));
 }

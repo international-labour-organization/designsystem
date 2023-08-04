@@ -1,0 +1,59 @@
+textcard:
+  use: "@components/card_text/card_text.twig"
+  label: Text Card
+  description: A text card component for displaying links to content. It can have a title, link, date and profile to highlight the author of the content.
+  visibility: storybook
+  fields:
+    date:
+      type: object
+      label: Date
+      description: Date copy (human and Unix)
+      preview:
+        human: 20 September 2022
+        unix: 1670389200
+    eyebrow:
+      type: string
+      label: Eyebrow
+      description: Eyebrow copy
+      preview: "Podcast"
+    link:
+      type: string
+      label: Link
+      description: Link field for the card
+      preview: "https://www.ilo.org/"
+    profile:
+      type: object
+      label: Profile
+      description: Optional profile of the author who created the content
+      preview:
+         avatar: "/images/ilo-dg.jpg"
+         name: "Gilbert F. Houngbo"
+         role: "ILO Director-General"
+    title:
+      type: string
+      label: Title
+      description: Title field for the card
+      preview: Can digital technology be an equality machine?
+  settings:
+    size:
+      type: select
+      label: Size
+      description: Sets the size of the card. If not set, the card will appear as `narrow`.
+      required: false
+      preview: "narrow"
+      options:
+        narrow: narrow
+        wide: wide
+        fluid: fluid
+    theme:
+      type: select
+      label: Theme
+      description: Sets the card to appear as either light or dark. If not set, the card will inherit the theme of its parent.
+      required: false
+      preview: "light"
+      options:
+        dark: Dark
+        light: Light
+
+
+

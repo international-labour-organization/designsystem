@@ -1,0 +1,21 @@
+{#
+  FACT LIST CARD COMPONENT
+#}
+<div class="{{prefix}}--card {{prefix}}--card__type__factlist  {{prefix}}--card__size__{{size}} {{prefix}}--card__theme__{{theme}}">
+  <div class="{{prefix}}--card--wrap">
+    <div class="{{prefix}}--card--content">
+      {% if title %}
+        <h5 class="{{prefix}}--card--title">{{title}}</h5>
+      {% endif %}
+      {% if list %}
+        {% include "@components/list/list.twig" with {
+          title: list.title,
+          ordered: list.ordered,
+          alignment: list.alignment,
+          items: list.items,
+          prefix: prefix,
+        } only %}
+      {% endif %}
+    </div>
+  </div>
+</div>

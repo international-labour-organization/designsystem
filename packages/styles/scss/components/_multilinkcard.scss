@@ -1,0 +1,189 @@
+@use "../tokens" as *;
+@use "../functions" as *;
+@use "../animations" as *;
+@import "../mixins";
+
+.ilo--card {
+  $self: &;
+
+  &__type {
+    &__multilink {
+      // Defaults to standard size
+      --max-width: #{px-to-rem(536px)};
+
+      padding: px-to-rem(24px);
+
+      #{$self}--image--wrapper {
+        display: none;
+      }
+
+      #{$self}--content {
+        #{$self}--image--wrapper {
+          display: block;
+        }
+      }
+
+      @include breakpoint("medium") {
+        padding: px-to-rem(40px);
+      }
+
+      @include breakpoint("large") {
+        padding: px-to-rem(56px) px-to-rem(48px);
+      }
+
+      #{$self}--title {
+        @include font-styles("headline-5");
+        @include textmargin(
+          "margin-bottom",
+          24px,
+          "headline-5",
+          "display",
+          0,
+          0
+        );
+        color: $brand-ilo-grey-charcoal;
+
+        @include breakpoint("medium") {
+          @include font-styles("headline-4");
+          @include textmargin(
+            "margin-bottom",
+            24px,
+            "headline-4",
+            "display",
+            0,
+            0
+          );
+        }
+      }
+
+      #{$self}--intro {
+        @include font-styles("body-small");
+        @include textmargin("margin-bottom", 40px, "body-small", "copy", 0, 0);
+        color: $brand-ilo-grey-charcoal;
+
+        @include breakpoint("medium") {
+          @include font-styles("base");
+          @include textmargin("margin-bottom", 40px, "base", "copy", 0, 0);
+        }
+      }
+
+      &#{$self}__size {
+        &__standard {
+          --max-width: #{px-to-rem(536px)};
+
+          padding: px-to-rem(48px) px-to-rem(40px);
+
+          @include breakpoint("medium") {
+            padding: px-to-rem(48px) px-to-rem(40px);
+          }
+
+          @include breakpoint("large") {
+            padding: px-to-rem(48px) px-to-rem(40px);
+          }
+        }
+
+        &__narrow {
+          --max-width: #{px-to-rem(375px)};
+
+          padding: px-to-rem(40px) px-to-rem(24px) px-to-rem(48px);
+
+          @include breakpoint("medium") {
+            padding: px-to-rem(40px) px-to-rem(24px) px-to-rem(48px);
+          }
+
+          @include breakpoint("large") {
+            padding: px-to-rem(40px) px-to-rem(24px) px-to-rem(48px);
+          }
+
+          #{$self}--image--wrapper {
+            display: none;
+          }
+
+          #{$self}--content {
+            #{$self}--image--wrapper {
+              display: block;
+              margin-bottom: px-to-rem(24px);
+            }
+          }
+
+          #{$self}--title {
+            @include breakpoint("medium") {
+              @include font-styles("headline-5");
+              @include textmargin(
+                "margin-bottom",
+                24px,
+                "headline-5",
+                "display",
+                0,
+                0
+              );
+            }
+          }
+
+          #{$self}--intro {
+            @include breakpoint("medium") {
+              @include font-styles("body-small");
+              @include textmargin(
+                "margin-bottom",
+                40px,
+                "body-small",
+                "copy",
+                0,
+                0
+              );
+            }
+          }
+        }
+
+        &__wide,
+        &__fluid {
+          --max-width: #{px-to-rem(1104px)};
+
+          padding: px-to-rem(40px) px-to-rem(24px) px-to-rem(48px);
+
+          @include breakpoint("medium") {
+            padding: px-to-rem(56px) px-to-rem(48px);
+
+            &#{$self}__align__right {
+              #{$self}--wrap {
+                flex-direction: row-reverse;
+
+                .right-to-left & {
+                  flex-direction: row;
+                }
+              }
+            }
+
+            #{$self}--wrap {
+              display: flex;
+              column-gap: px-to-rem(32px);
+
+              .right-to-left & {
+                flex-direction: row-reverse;
+              }
+            }
+
+            #{$self}--image--wrapper {
+              display: block;
+              width: 50%;
+            }
+
+            #{$self}--content {
+              width: 50%;
+
+              #{$self}--image--wrapper {
+                display: none;
+              }
+            }
+          }
+        }
+      }
+
+      .ilo--link-list {
+        margin-top: px-to-rem(35px);
+        position: relative;
+        z-index: 3;
+      }
+    }
+  }
+}

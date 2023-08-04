@@ -1,0 +1,37 @@
+{#
+  DETAIL CARD COMPONENT
+#}
+
+<div class="{{prefix}}--card {{prefix}}--card__type__detail {{prefix}}--card__action {{prefix}}--card__size__{{size}} {% if isvideo %} {{prefix}}--card__isvideo {% endif %}">
+  <a class="{{prefix}}--card--link" href="{{link}}" title="{{title}}">
+    <span class="{{prefix}}--card--link--text">{{title}}</span>
+  </a>
+  <div class="{{prefix}}--card--wrap">
+    {% if image %}
+    <div class="{{prefix}}--card--image--wrapper">
+      {% include "@components/picture/picture.twig" with {
+          image: image,
+          class: "card"
+        }
+      %}
+    </div>
+    {% endif %}
+    <div class="{{prefix}}--card--content">
+      {% if eyebrow %}
+        <p class="{{prefix}}--card--eyebrow">{{eyebrow}}</p>
+      {% endif %}
+      {% if title %}
+        <h5 class="{{prefix}}--card--title">{{title}}</h5>
+      {% endif %}
+      {% if intro %}
+        <p class="{{prefix}}--card--intro">{{intro}}</p>
+      {% endif %}
+      {% if date %}
+        <time class="{{prefix}}--card--date" datetime="{{date.unix}}">{{date.human}}</time>
+      {% endif %}
+      {% if dateExtra %}
+        <p class="{{prefix}}--card--date-extra">{{dateExtra}}</p>
+      {% endif %}
+    </div>
+  </div>
+</div>
