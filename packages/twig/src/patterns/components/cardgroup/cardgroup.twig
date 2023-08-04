@@ -1,35 +1,31 @@
 {#
   CARDGROUP COMPONENT
 #}
-<div class="{{prefix}}--cardgroup {{prefix}}--cardgroup--{{cardcount}}">
+<div class="{{prefix}}--cardgroup {% if collapsed %} {{prefix}}--cardgroup__collapsed {% endif %} {% if justify %} {{prefix}}--cardgroup__justify__{{justify}} {% endif %}">
   <div class="{{prefix}}--cardgroup--inner">
     {% for card in group %}
       {% include "@components/card/card.twig" with {
-        title: card.title,
+        size: size,
+        cta: card.cta,
+        dataset: card.dataset,
+        date: card.date,
+        dateExtra: card.dateExtra,
+        eyebrow: card.eyebrow,
         image: card.image,
         intro: card.intro,
-        eyebrow: card.eyebrow,
-        date: card.date,
-        dataset: card.dataset,
         link: card.link,
-        profile: card.profile,
-        eventdate: card.eventdate,
-        cta: card.cta,
-        source: card.source,
-        list: card.list,
         linklist: card.linklist,
+        list: card.list,
+        title: card.title,
+        alignment: card.alignment,
         color: card.color,
-        imageAlt: card.imageAlt,
-        loading: card.loading,
-        prefix: prefix,
-        theme: theme,
-        cornercut: cornercut,
-        variant: variant,
-        type: type,
-        size: size
+        cornercut: card.cornercut,
+        source: card.source,
+        theme: card.theme,
+        type: card.type,
+        prefix: prefix
       } only %}
     {% endfor %}
-
     {% if cta %}
     <div class="{{prefix}}--cardgroup--button-wrap">
       <a
