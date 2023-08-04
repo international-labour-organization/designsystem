@@ -58,9 +58,9 @@ featurecard:
       options:
         true: True
         false: False
-    layout:
+    size:
       type: select
-      label: Size
+      label: size
       description: Sets the size of the card. If not set, the card will appear as `narrow`.
       required: false
       preview: "narrow"

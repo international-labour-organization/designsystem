@@ -25,9 +25,9 @@ factlistcard:
           - content: "The current slowdown means that many workers will have to accept lower quality jobs, often at very low pay."
             id: "list3"
   settings:
-    layout:
+    size:
       type: select
-      label: Layout
+      label: Size
       description: Sets the size of the card. If not set, the card will appear as `narrow`.
       preview: "narrow"
       options:

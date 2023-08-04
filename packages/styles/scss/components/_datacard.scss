@@ -23,7 +23,7 @@
         background: $brand-ilo-light-blue;
       }
 
-      &#{$self}__layout {
+      &#{$self}__size {
         &__narrow {
           --max-width: #{px-to-rem(301px)};
 

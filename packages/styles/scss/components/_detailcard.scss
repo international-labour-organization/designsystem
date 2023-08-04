@@ -39,17 +39,17 @@
         @include font-styles("headline-6");
 
         @include breakpoint("large") {
-          #{$self}__layout__wide & {
+          #{$self}__size__wide & {
             @include font-styles("headline-5");
           }
 
-          #{$self}__layout__wide & {
+          #{$self}__size__wide & {
             @include font-styles("headline-6");
           }
         }
       }
 
-      &#{$self}__layout {
+      &#{$self}__size {
         &__fluid {
           --max-width: 100%;
         }

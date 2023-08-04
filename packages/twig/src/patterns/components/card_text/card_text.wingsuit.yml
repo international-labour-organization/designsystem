@@ -35,7 +35,7 @@ textcard:
       description: Title field for the card
       preview: Can digital technology be an equality machine?
   settings:
-    layout:
+    size:
       type: select
       label: Size
       description: Sets the size of the card. If not set, the card will appear as `narrow`.

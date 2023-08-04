@@ -8,7 +8,7 @@
 
   &__type {
     &__multilink {
-      // Defaults to standard layout
+      // Defaults to standard size
       --max-width: #{px-to-rem(536px)};
 
       padding: px-to-rem(24px);
@@ -67,7 +67,7 @@
         }
       }
 
-      &#{$self}__layout {
+      &#{$self}__size {
         &__standard {
           --max-width: #{px-to-rem(536px)};
 

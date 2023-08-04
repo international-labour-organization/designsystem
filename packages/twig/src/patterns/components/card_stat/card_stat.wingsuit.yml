@@ -22,7 +22,7 @@ statcard:
         label: "World Employment and Social Outlook: Trends 2023"
         url: "https://www.ilo.org/global/research/global-reports/weso/WCMS_865332/lang--en/index.htm"
   settings:
-    layout:
+    size:
       type: select
       label: Size
       description: Sets the size of the card. If not set, the card will appear as `standard`.

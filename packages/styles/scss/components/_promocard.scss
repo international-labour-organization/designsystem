@@ -21,7 +21,7 @@
         padding: px-to-rem(64px) px-to-rem(72px);
       }
 
-      &#{$self}__layout {
+      &#{$self}__size {
         &__standard {
           --max-width: #{px-to-rem(634px)};
 

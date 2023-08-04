@@ -19,7 +19,7 @@
         padding: px-to-rem(40px) px-to-rem(56px);
       }
 
-      &#{$self}__layout {
+      &#{$self}__size {
         &__wide {
           --max-width: #{px-to-rem(856px)};
 

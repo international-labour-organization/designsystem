@@ -59,7 +59,7 @@ multilinkcard:
     alignment:
       type: select
       label: Alignment
-      description: Positions the image to the right or to the left of the content when the card is displayed in a `wide` layout. Has no effect if the card is displayed in a `standard` or `narrow` layout.
+      description: Positions the image to the right or to the left of the content when the card is displayed in a `wide` size. Has no effect if the card is displayed in a `standard` or `narrow` size.
       preview: "left"
       options:
         left: Left
@@ -72,7 +72,7 @@ multilinkcard:
       options:
         true: True
         false: False
-    layout:
+    size:
       type: select
       label: Size
       description: Sets the size of the card. If not set, the card will appear as `standard`.

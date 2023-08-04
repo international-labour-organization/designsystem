@@ -77,7 +77,7 @@
         }
       }
 
-      &#{$self}__layout {
+      &#{$self}__size {
         &__standard {
           #{$self}--wrap {
             display: flex;

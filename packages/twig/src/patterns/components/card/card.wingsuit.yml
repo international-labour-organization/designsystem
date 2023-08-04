@@ -1,7 +1,7 @@
 card:
   use: "@components/card/card.twig"
   label: Card
-  description: Cards display prominent content of a page layout, with information and actions about a single subject, they typically contain a link to a new page or downloadable content.
+  description: Cards display prominent content of a page, with information and actions about a single subject, they typically contain a link to a new page or downloadable content.
   fields:
     title:
       type: string
