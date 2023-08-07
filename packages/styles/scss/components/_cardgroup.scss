@@ -4,11 +4,10 @@
 
 .ilo--cardgroup {
   $c: &;
-  $card: ".ilo--card";
 
   &__collapsed {
     #{$c}--inner {
-      gap: 0;
+      gap: 0 !important;
     }
   }
 
@@ -32,12 +31,55 @@
     }
   }
 
+  &__count {
+    @include breakpoint("large") {
+      &__one {
+        #{$c}--inner {
+          gap: 0;
+        }
+
+        #{$c}--card {
+          flex: 1 1 100%;
+        }
+      }
+
+      &__two {
+        #{$c}--inner {
+          gap: 16px;
+        }
+
+        #{$c}--card {
+          flex: 0 1 calc(50% - 16px);
+        }
+      }
+
+      &__three {
+        #{$c}--inner {
+          gap: 21px;
+        }
+
+        #{$c}--card {
+          flex: 0 1 calc(33.3333% - 21px);
+        }
+      }
+
+      &__four {
+        #{$c}--inner {
+          gap: 24px;
+        }
+
+        #{$c}--card {
+          flex: 0 1 calc(25% - 24px);
+        }
+      }
+    }
+  }
+
   &--inner {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
     margin: auto;
-    gap: px-to-rem(32px);
     width: 100%;
 
     .right-to-left & {

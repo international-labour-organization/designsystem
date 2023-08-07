@@ -13,6 +13,17 @@ cardgroup:
       options:
         true: True
         false: False
+    cardcount:
+      type: select
+      label: collapsed
+      description: Number of cards to show in a row, also determines the width of the cards as a function of how many there need to be. As a result, passing `size` to the individual cards has no effect since the card group manages the size of the cards.
+      required: false
+      preview: "three"
+      options:
+        one: one
+        two: two
+        three: three
+        four: four
     justify:
       type: select
       label: collapsed
@@ -23,16 +34,6 @@ cardgroup:
         start: start
         center: center
         between: between
-    size:
-      type: select
-      label: Size
-      description: Sets the size of all of the cards. See the `Card` component for more details on the different sizes.
-      required: false
-      options:
-        standard: standard
-        narrow: narrow
-        wide: wide
-        fluid: fluid
     theme:
       type: select
       label: Theme
