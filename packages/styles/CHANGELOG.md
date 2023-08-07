@@ -1,5 +1,12 @@
 # @ilo-org/styles
 
+## 0.6.1
+
+### Patch Changes
+
+- deae70635: - changed spaces between cards
+  - removed max width of the cards
+
 ## 0.6.0
 
 ### Minor Changes

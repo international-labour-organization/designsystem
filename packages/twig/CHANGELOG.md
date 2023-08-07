@@ -1,5 +1,12 @@
 # @ilo-org/twig
 
+## 0.7.1
+
+### Patch Changes
+
+- Updated dependencies [deae70635]
+  - @ilo-org/styles@0.6.1
+
 ## 0.7.0
 
 ### Minor Changes
