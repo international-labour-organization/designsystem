@@ -33,6 +33,29 @@ cardgroup:
         narrow: narrow
         wide: wide
         fluid: fluid
+    theme:
+      type: select
+      label: Theme
+      description: Sets all of the cards to appear as either light or dark. Used by all card groups except for `Multilink Card`, `Data Card` and `Stat Card`.
+      required: false
+      preview: "dark"
+      options:
+        dark: Dark
+        light: Light
+    type:
+      type: select
+      label: Type
+      description: Sets the type of cards to render in the Card Group
+      preview: "feature"
+      options:
+        feature: Feature
+        text: Text
+        detail: Detail
+        promo: Promo
+        multilink: Multilink
+        data: Data
+        stat: Stat
+        factlist: Factlist
   fields:
     group:
       type: object
