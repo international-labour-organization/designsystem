@@ -24,7 +24,7 @@
   &--two {
     @include breakpoint("large") {
       #{$card} {
-        width: calc(50% - 24px);
+        width: calc(50% - 16px);
       }
     }
   }
@@ -32,7 +32,7 @@
   &--three {
     @include breakpoint("large") {
       #{$card} {
-        width: calc(33.333% - 24px);
+        width: calc(33.333% - 21px);
       }
     }
   }

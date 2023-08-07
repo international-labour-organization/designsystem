@@ -7,7 +7,6 @@
   $self: &;
   $transition-timing: 150ms;
   margin: 0;
-  max-width: px-to-rem(920px);
 
   .right-to-left & {
     text-align: right;
