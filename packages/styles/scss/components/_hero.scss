@@ -66,7 +66,11 @@
         border-left: calc(var(--tooltip-height) - 4px) solid
           map-get($color, "tooltip", "dark", "background");
 
-        .right-to-left & {
+        // Caption faces left or right depending on whether the flow is rtl or whether
+        // the caption has to move out of the way of a hero card which is bottom aligned
+        // and justified start
+        .right-to-left &,
+        #{$c}__card-align__bottom#{$c}__card-justify__start & {
           left: auto;
           right: 100%;
           border-left: none;
@@ -253,6 +257,15 @@
 
       #{$c}__card-align__bottom & {
         grid-area: 4 / 1 / 5 / 2;
+      }
+
+      #{$c}__card-align__bottom#{$c}__card-justify__start & {
+        grid-area: 4 / 4 / 5 / 5;
+
+        #{$c}--caption--wrapper {
+          left: initial;
+          right: 0;
+        }
       }
 
       &--wrapper {
