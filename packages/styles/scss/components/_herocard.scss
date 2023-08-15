@@ -75,6 +75,10 @@
 
   &__cornercut {
     @include cornercut(116px, 64px);
+
+    .right-to-left & {
+      @include cornercut(116px, 64px, "left");
+    }
   }
 
   &--datecopy {
