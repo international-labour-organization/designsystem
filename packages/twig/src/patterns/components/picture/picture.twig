@@ -4,7 +4,7 @@
 {% if image.url is iterable %}
   <picture>
     {% for img in image.url|reverse %}
-      {% if loop.last == false  %}
+      {% if loop.length == 1 or loop.last == false  %}
         {% if img.breakpoint matches '/^\\d+$/' %}
           <source srcset="{{img.src}}" media="(min-width: {{img.breakpoint}}px)">
         {% else %}
