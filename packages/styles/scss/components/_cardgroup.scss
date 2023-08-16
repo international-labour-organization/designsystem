@@ -4,6 +4,7 @@
 
 .ilo--cardgroup {
   $c: &;
+  --gap: 16px;
 
   &__collapsed {
     #{$c}--inner {
@@ -35,7 +36,7 @@
     @include breakpoint("large") {
       &__one {
         #{$c}--inner {
-          gap: 0;
+          --gap: 0;
         }
 
         #{$c}--card {
@@ -45,31 +46,59 @@
 
       &__two {
         #{$c}--inner {
-          gap: 16px;
+          --gap: 16px;
         }
 
         #{$c}--card {
-          flex: 0 1 calc(50% - 16px);
+          flex-basis: calc(50% - var(--gap));
         }
       }
 
       &__three {
         #{$c}--inner {
-          gap: 21px;
+          --gap: 21px;
         }
 
         #{$c}--card {
-          flex: 0 1 calc(33.3333% - 21px);
+          flex-basis: calc(33.3333% - var(--gap));
         }
       }
 
       &__four {
         #{$c}--inner {
-          gap: 24px;
+          --gap: 24px;
         }
 
         #{$c}--card {
-          flex: 0 1 calc(25% - 24px);
+          flex-basis: calc(25% - var(--gap));
+        }
+      }
+    }
+  }
+
+  &--card {
+    @include breakpoint("large") {
+      flex-grow: 0;
+      flex-shrink: 1;
+
+      &__expand-orphan {
+        flex-grow: 1;
+
+        #{$c}__justify__start & {
+          padding-right: var(--gap);
+
+          .right-to-left & {
+            padding-right: 0;
+            padding-left: var(--gap);
+          }
+        }
+
+        #{$c}__justify__center & {
+          padding: 0 calc(var(--gap) / 2);
+        }
+
+        #{$c}__justify__between & {
+          padding: 0;
         }
       }
     }
@@ -81,6 +110,7 @@
     justify-content: center;
     margin: auto;
     width: 100%;
+    gap: var(--gap);
 
     .right-to-left & {
       flex-direction: row-reverse;

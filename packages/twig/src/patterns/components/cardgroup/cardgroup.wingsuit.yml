@@ -24,6 +24,14 @@ cardgroup:
         two: two
         three: three
         four: four
+    expandorphans:
+      type: select
+      label: expandorphans
+      description: If one card is on a row by itself, expand the card to fill the entire row.
+      preview: false
+      options:
+        true: True
+        false: False
     justify:
       type: select
       label: collapsed

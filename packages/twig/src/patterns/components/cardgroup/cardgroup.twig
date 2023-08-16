@@ -1,10 +1,21 @@
 {#
   CARDGROUP COMPONENT
 #}
-<div class="{{prefix}}--cardgroup {{prefix}}--cardgroup__count__{{cardcount}} {% if collapsed %} {{prefix}}--cardgroup__collapsed {% endif %} {% if justify %} {{prefix}}--cardgroup__justify__{{justify}} {% endif %}">
+
+{% if cardcount == "one" %}
+  {% set cards = 1 %}
+{% elseif cardcount == "two" %}
+   {% set cards = 2 %}
+{% elseif cardcount == "three" %}
+   {% set cards = 3 %}
+{% elseif cardcount == "four" %}
+   {% set cards = 4 %}
+{% endif %}
+
+<div class="{{prefix}}--cardgroup {{prefix}}--cardgroup__count__{{cardcount}} {% if collapsed %} {{prefix}}--cardgroup__collapsed {% endif %} {% if justify %} {{prefix}}--cardgroup__justify__{{justify}} {% endif %} {% if expandorphans %} {{prefix}}--cardgroup__expand-orphans {% endif %}">
   <div class="{{prefix}}--cardgroup--inner">
     {% for card in group %}
-      <div class="{{prefix}}--cardgroup--card">
+      <div class="{{prefix}}--cardgroup--card {% if expandorphans and loop.last and loop.index % cards == 1 %} {{prefix}}--cardgroup--card__expand-orphan {% endif %}">
         {% include "@components/card/card.twig" with {
           size: "fluid",
           theme: theme,
