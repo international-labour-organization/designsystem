@@ -1,5 +1,14 @@
 # @ilo-org/twig
 
+## 0.8.1
+
+### Patch Changes
+
+- 0fd4b60df: - In Card Group, set `theme` and `type` properties for Cards on Card Group, not on invididual cards
+  - Use `cardcount` to determine how many cards should be in a row and how wide they should be.
+- Updated dependencies [0fd4b60df]
+  - @ilo-org/styles@0.7.1
+
 ## 0.8.0
 
 ### Minor Changes
