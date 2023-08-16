@@ -11,21 +11,19 @@ datacard:
       preview:
         content:
           items:
-            - label: Date
+            - label: Date of publication
               copy: 17 March 2022
-            - label: Event type
-              copy: Technical meeting of experts
         files:
-          headline: Files
+          headline: Files for download
           items:
-            - label: Meeting agenda
+            - label: PDF 3.2 MB
               url: "https://www.ilo.org"
-            - label: Briefing notes
+            - label: EPUB 5.8 MB
               url: "https://www.ilo.org"
-            - label: Practical info
+            - label: MOBI 2.4 MB
               url: "https://www.ilo.org"
         links:
-          headline: Languages
+          headline: Also available in
           items:
             - label: English
               url: "https://www.ilo.org/search?q=link"
@@ -33,11 +31,21 @@ datacard:
               url: "https://www.ilo.org/search?q=hyperlink"
             - label: Français
               url: "https://www.ilo.org/search?q=url"
+            - label: Deutsch
+              url: "https://www.ilo.org/search?q=url"
+            - label: Русский
+              url: "https://www.ilo.org/search?q=url"
+            - label: 中文
+              url: "https://www.ilo.org/search?q=url"
+            - label: العربية
+              url: "https://www.ilo.org/search?q=url"
+            - label: Italiano
+              url: "https://www.ilo.org/search?q=url"
     eyebrow:
       type: string
       label: Eyebrow
       description: Eyebrow copy
-      preview: "Podcast"
+      preview: Flagship report
     image:
       type: object
       label: Image
@@ -46,26 +54,48 @@ datacard:
         alt: "Image alt text"
         loading: "lazy"
         url:
-          - breakpoint: "(min-width: 0px)"
-            src: "/images/small.jpg"
-          - breakpoint: "(min-width: 800px)"
-            src: "/images/medium.jpg"
-          - breakpoint: "(min-width: 1200px)"
-            src: "/images/large.jpg"
-          - breakpoint: "(min-width: 1440px)"
-            src: "/images/large.jpg"
+        - breakpoint: "(min-width: 0px)"
+          src: "/images/publication.jpg"
   settings:
     size:
       type: select
       label: size
       description: Sets the size of the card. If not set, the card will appear as `narrow`.
       required: false
-      preview: "narrow"
+      preview: narrow
       options:
         narrow: narrow
         wide: wide
         fluid: fluid
-
+    columns:
+      type: select
+      label: Columns
+      description: Displays the data in one or two columns. If not set, the card will appear as `one`.
+      required: false
+      preview: one
+      options:
+        one: one
+        two: two
+  variants:
+    default:
+      label: Default
+    no_image:
+      label: No image
+      fields:
+        image: false
+        eyebrow: false
+    two_columns:
+      label: Two columns
+      settings:
+        columns: two
+        size: wide
+    two_columns_no_image:
+      label: Two columns without image
+      settings:
+        columns: two
+        size: wide
+      fields:
+        image: null
 
 
 

@@ -1,48 +1,64 @@
 {#
   DATA CARD COMPONENT
 #}
-<div class="{{prefix}}--card {{prefix}}--card__type__data {{prefix}}--card__size__{{size}}">
+
+{% if not columns %}
+  {% set columns = "one" %}
+{% endif %}
+
+<div class="{{prefix}}--card {{prefix}}--card__type__data {{prefix}}--card__size__{{size}} {{prefix}}--card__type__data__columns__{{columns}}">
   <div class="{{prefix}}--card--wrap">
-    <div class="{{prefix}}--card--content">
-      {% if eyebrow %}
-        <p class="{{prefix}}--card--eyebrow">{{eyebrow}}</p>
-      {% endif %}
+    <div class="{{prefix}}--card--content {% if image %} {{prefix}}--card--content__with-image {% endif %}">
       {% if image %}
-        <div class="{{prefix}}--card--image--wrapper">
-        {% include "@components/picture/picture.twig" with {
-            image: image,
-            class: "card"
-          }
-        %}
+      <div class="{{prefix}}--card--area--image">
+        <div class="{{prefix}}--card--image">
+          {% include "@components/picture/picture.twig" with { image: image, class: "card" } %}
+        </div>
+      </div>
+      {% endif %}
+      {% if dataset.content %}
+        {% for item in dataset.content.items %}
+          <div class="{{prefix}}--card--area--content">
+            {% block content_item %}
+              <p class="{{prefix}}--card__type__data--content-label">{{ item.label }}</p>
+              <p class="{{prefix}}--card__type__data--content-copy">{{ item.copy }}</p>
+            {% endblock %}
+          </div>
+        {% endfor %}
+      {% endif %}
+      {% if dataset.files %}
+        <div class="{{prefix}}--card--area--files">
+          {% block area_files %}
+            <div class="{{prefix}}--card__type__data--content-files">
+              <p class="{{prefix}}--card__type__data--content-label">{{ dataset.files.headline }}</p>
+              {% for item in dataset.files.items %}
+                {% include "@components/button/button.twig" with {
+                  type: "primary",
+                  size: "small",
+                  url: item.url,
+                  label: item.label,
+                  prefix: prefix
+                } only %}
+              {% endfor %}
+            </div>
+          {% endblock %}
         </div>
       {% endif %}
-      {% if dataset %}
-        {% if dataset.content %}
-          {% for item in dataset.content.items %}
-            <p class="{{prefix}}--card__type__data--content-label">{{ item.label }}</p>
-            <p class="{{prefix}}--card__type__data--content-copy">{{ item.copy }}</p>
-          {% endfor %}
-        {% endif %}
-        {% if dataset.files %}
-          <div class="{{prefix}}--card__type__data--content-files">
-            <p class="{{prefix}}--card__type__data--content-label">{{ dataset.files.headline }}</p>
-            {% for item in dataset.files.items %}
-              <a class="{{prefix}}--card__type__data--file {{prefix}}--button {{prefix}}--button--primary {{prefix}}--button--small" href="{{item.url}}"><span class="button__label" download>{{ item.label }}</span></a>
-            {% endfor %}
-          </div>
-        {% endif %}
-        {% if dataset.links %}
-          <div class="{{prefix}}--card__type__data--content-links">
-            <p class="{{prefix}}--card__type__data--content-label">{{ dataset.links.headline }}</p>
-            {% for item in dataset.links.items %}
-              {% include "@components/link/link.twig" with {
-                url: item.url,
-                label: item.label,
-                prefix: prefix
-              } %} <span>&nbsp;</span>
-            {% endfor %}
-          </div>
-        {% endif %}
+      {% if dataset.links %}
+        <div class="{{prefix}}--card--area--links">
+          {% block area_links %}
+            <div class="{{prefix}}--card__type__data--content-links">
+              <p class="{{prefix}}--card__type__data--content-label">{{ dataset.links.headline }}</p>
+              {% for item in dataset.links.items %}
+                {% include "@components/link/link.twig" with {
+                  url: item.url,
+                  label: item.label,
+                  prefix: prefix
+                } only %}
+              {% endfor %}
+            </div>
+          {% endblock %}
+        </div>
       {% endif %}
     </div>
   </div>
