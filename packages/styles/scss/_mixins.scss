@@ -334,7 +334,11 @@
 // Cornercut
 // ======================================
 
-@mixin cornercut($width: $spacing-padding-8, $height: $spacing-padding-5) {
+@mixin cornercut(
+  $width: $spacing-padding-8,
+  $height: $spacing-padding-5,
+  $dir: "right"
+) {
   clip-path: polygon(
     0 0,
     calc(100% - $width) 0,
@@ -342,6 +346,10 @@
     100% 100%,
     0 100%
   );
+
+  @if ($dir == "left") {
+    clip-path: polygon($width 0, 100% 0, 100% 100%, 0 100%, 0 $height);
+  }
 }
 
 // ======================================
@@ -353,4 +361,45 @@
     drop-shadow(0px 4px 8px rgba(30, 45, 190, 0.054))
     drop-shadow(0px 10px 20px rgba(30, 45, 190, 0.08))
     drop-shadow(0px -4px 16px rgba(30, 45, 190, 0.054));
+}
+
+// ======================================
+// Background box for a caption icon tooltip (see Hero)
+// ======================================
+
+@mixin caption-icon-wrapper($dir: "right", $width, $height) {
+  background: map-get($color, "tooltip", "dark", "background");
+  height: $height;
+  width: $width;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 0;
+    height: 0;
+    border-top: #{$height} solid transparent;
+
+    @if ($dir == "right") {
+      left: 100%;
+      border-right: none;
+      border-left: calc(#{$height} - 4px)
+        solid
+        map-get($color, "tooltip", "dark", "background");
+    }
+
+    @if ($dir == "left") {
+      left: auto;
+      right: 100%;
+      border-left: none;
+      border-right: calc(#{$height} - 4px)
+        solid
+        map-get($color, "tooltip", "dark", "background");
+    }
+  }
 }

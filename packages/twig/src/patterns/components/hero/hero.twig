@@ -1,52 +1,52 @@
 {#
   Hero COMPONENT
 #}
-  <div class="hero hero__card-justify__{{ justify }} hero__poster-size__{{ postersize }} hero__card-size__{{ cardsize }} hero__card-align__{{ align }}">
-    <figure class="hero--figure">
-      {% block hero_image %}
-        {% if image %}
-          <picture>
-            {% for img in image.url|reverse %}
-              {% if loop.last == false  %}
-                <source srcset="{{img.src}}" media="(min-width: {{img.breakpoint}}px)">
-              {% endif %}
-            {% endfor %}
-            <img class="{{prefix}}--card--image" src="{{image.url|reverse|last.src}}" alt="{{image.alt}}" {% if image.loading %} loading="{{ image.loading }}"{% endif %}>
-          </picture>
-        {% endif %}
-      {% endblock %}
-    </figure>
-    {% if breadcrumb %}
-      <div class="hero--breadcrumbs">
-        <div class="hero--breadcrumbs--wrapper">
-          {% include "@components/breadcrumb/breadcrumb.twig" with {
-            home: breadcrumb.home,
-            links: breadcrumb.links,
-            prefix: prefix,
-          } only %}
-        </div>
+<div class="hero hero__card-justify__{{ justify }} hero__poster-size__{{ postersize }} hero__card-size__{{ cardsize }} hero__card-align__{{ align }}">
+  <figure class="hero--figure">
+    {% block hero_image %}
+      {% if image %}
+        <picture>
+          {% for img in image.url|reverse %}
+            {% if loop.last == false  %}
+              <source srcset="{{img.src}}" media="(min-width: {{img.breakpoint}}px)">
+            {% endif %}
+          {% endfor %}
+          <img class="{{prefix}}--card--image" src="{{image.url|reverse|last.src}}" alt="{{image.alt}}" {% if image.loading %} loading="{{ image.loading }}"{% endif %}>
+        </picture>
+      {% endif %}
+    {% endblock %}
+  </figure>
+  {% if breadcrumb %}
+    <div class="hero--breadcrumbs">
+      <div class="hero--breadcrumbs--wrapper">
+        {% include "@components/breadcrumb/breadcrumb.twig" with {
+          home: breadcrumb.home,
+          links: breadcrumb.links,
+          prefix: prefix,
+        } only %}
+      </div>
+    </div>
+  {% endif %}
+  <div class="hero--card">
+    {% include "@components/herocard/herocard.twig" with {
+    url: herocard.url,
+    eyebrow: herocard.eyebrow,
+    cornercut: herocard.cornercut,
+    datecopy: herocard.datecopy,
+    intro: herocard.intro,
+    prefix: prefix,
+    socialmedia: herocard.socialmedia,
+    theme: herocard.theme,
+    background: herocard.background,
+    title: herocard.title,
+  } only %}
+  </div>
+  <div class="hero--caption">
+    {% if not caption %}
+      {% else %}
+      <div class="hero--caption--wrapper">
+        {% include '@components/tooltip/tooltip.twig' with caption %}
       </div>
     {% endif %}
-    <div class="hero--card">
-      {% include "@components/herocard/herocard.twig" with {
-      url: herocard.url,
-      eyebrow: herocard.eyebrow,
-      cornercut: herocard.cornercut,
-      datecopy: herocard.datecopy,
-      intro: herocard.intro,
-      prefix: prefix,
-      socialmedia: herocard.socialmedia,
-      theme: herocard.theme,
-      background: herocard.background,
-      title: herocard.title,
-    } only %}
-    </div>
-    <div class="hero--caption">
-      {% if not caption %}
-        {% else %}
-        <div class="hero--caption--wrapper">
-          {% include '@components/tooltip/tooltip.twig' with caption %}
-        </div>
-      {% endif %}
-    </div>
   </div>
+</div>

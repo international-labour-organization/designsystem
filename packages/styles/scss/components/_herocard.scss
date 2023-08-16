@@ -74,7 +74,19 @@
   }
 
   &__cornercut {
-    @include cornercut(116px, 64px);
+    @include cornercut(72px, 40px);
+
+    .right-to-left & {
+      @include cornercut(72px, 40px, "left");
+    }
+
+    @include breakpoint("large") {
+      @include cornercut(116px, 64px);
+
+      .right-to-left & {
+        @include cornercut(116px, 64px, "left");
+      }
+    }
   }
 
   &--datecopy {
