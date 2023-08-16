@@ -1,5 +1,12 @@
 # @ilo-org/styles
 
+## 0.7.2
+
+### Patch Changes
+
+- 0cb90a388: Prevent caption from appearing on top of hero card when it's aligned bottom and justified start
+- b0797d2f9: Fixes RTL styles in hero. As for other components, adding the `right-to-left` class to any parent of Hero now correctly renders the RTL styles.
+
 ## 0.7.1
 
 ### Patch Changes
