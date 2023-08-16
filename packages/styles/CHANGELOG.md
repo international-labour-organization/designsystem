@@ -1,5 +1,12 @@
 # @ilo-org/styles
 
+## 0.7.1
+
+### Patch Changes
+
+- 0fd4b60df: - In Card Group, set `theme` and `type` properties for Cards on Card Group, not on invididual cards
+  - Use `cardcount` to determine how many cards should be in a row and how wide they should be.
+
 ## 0.7.0
 
 ### Minor Changes
