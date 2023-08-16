@@ -213,18 +213,18 @@
       }
 
       #{$c}__card-align__bottom#{$c}__card-justify__start & {
-        grid-area: 3 / 3 / 5 / 5;
+        grid-area: 1 / 1 / 3 / 3;
 
         #{$c}--caption--wrapper {
           @include caption-icon-wrapper(
-            "left",
+            "right",
             $tooltip-width,
             $tooltip-height
           );
 
           position: absolute;
-          left: initial;
-          right: 0;
+          left: 0;
+          right: initial;
           bottom: 0;
         }
       }
@@ -237,6 +237,14 @@
 
   // Layout for RTL languages
   .right-to-left & {
+    &--caption {
+      &--wrapper {
+        @include caption-icon-wrapper("left", $tooltip-width, $tooltip-height);
+        position: absolute;
+        right: 0;
+      }
+    }
+
     @include breakpoint("large") {
       &__card-justify {
         &__start {
@@ -293,18 +301,18 @@
 
         &__bottom#{$c}__card-justify__start {
           #{$c}--caption {
-            grid-area: 4 / 1 / 5 / 2;
+            grid-area: 2 / 3 / 3 / 4;
 
             &--wrapper {
               @include caption-icon-wrapper(
-                "right",
+                "left",
                 $tooltip-width,
                 $tooltip-height
               );
 
               position: absolute;
-              left: 0;
-              right: initial;
+              left: initial;
+              right: 0;
             }
           }
         }
