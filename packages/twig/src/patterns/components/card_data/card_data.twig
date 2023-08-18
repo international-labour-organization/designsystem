@@ -22,9 +22,15 @@
 
 <div class="{{prefix}}--card {{prefix}}--card__type__data {{prefix}}--card__size__{{size}} {{prefix}}--card__type__data__columns__{{columns}}">
   <div class="{{prefix}}--card--wrap">
+    {% if not image and eyebrow %}
+      <div class="{{prefix}}--card--eyebrow">{{ eyebrow }}</div>
+    {% endif %}
     <div class="{{prefix}}--card--content {{prefix}}--card--content__{{ content }}">
       {% if image %}
       <div class="{{prefix}}--card--area--image">
+        {% if eyebrow %}
+          <div class="{{prefix}}--card--eyebrow">{{ eyebrow }}</div>
+        {% endif %}
         <div class="{{prefix}}--card--image">
           {% include "@components/picture/picture.twig" with { image: image, class: "card" } %}
         </div>

@@ -93,7 +93,6 @@ datacard:
       label: No image
       fields:
         image: false
-        eyebrow: false
     two_columns:
       label: Two columns
       settings:
@@ -112,7 +111,6 @@ datacard:
         columns: two
         size: wide
       fields:
-        eyebrow: Project details
         image: false
         dataset:
           content:

@@ -12,7 +12,7 @@
 
       background: $brand-ilo-light-blue;
       border-bottom: px-to-rem(3px) solid $brand-ilo-ramp-blue;
-      padding: px-to-rem(24px) px-to-rem(52px);
+      padding: px-to-rem(48px) px-to-rem(52px);
       position: relative;
       width: 100%;
 
@@ -23,11 +23,18 @@
       }
 
       @include breakpoint("medium") {
+        padding: px-to-rem(48px) px-to-rem(48px) px-to-rem(48px)
+          px-to-rem(110px);
+
+        // 629
         &__columns {
           &__two {
             #{$self}--content {
-              grid-template-columns: 1fr 1fr;
-              column-gap: px-to-rem(50px);
+              grid-template-columns: minmax(px-to-rem(200px), 32%) minmax(
+                  53%,
+                  1fr
+                );
+              column-gap: 14%;
 
               &__with-image {
                 #{$self}--area {
@@ -70,7 +77,7 @@
         &__narrow {
           --max-width: #{px-to-rem(600px)};
 
-          @include cornercut(72px, 40px);
+          @include cornercut(72px, 48px);
         }
 
         &__wide {
@@ -79,13 +86,13 @@
 
         &__wide,
         &__fluid {
-          @include cornercut(87px, 48px);
+          @include cornercut(86px, 48px);
         }
       }
 
       #{$self}--image {
-        width: max(px-to-rem(205px), 50%);
-        max-width: px-to-rem(205px);
+        width: 100%;
+        max-width: 200px;
         margin: 0 0 #{px-to-rem(31px)};
       }
 
