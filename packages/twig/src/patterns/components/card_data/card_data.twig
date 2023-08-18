@@ -6,9 +6,23 @@
   {% set columns = "one" %}
 {% endif %}
 
+{# Different layout options to apply depending on if the card has an image
+ or if it has links. If it has two columns with image, then image goes on one side
+ and content goes on the other. If it has two columns witout image but links, then
+ links go on one side and the rest of the content goes on the other. Otherwise, flow
+ all content normally. #}
+{% if image %}
+  {% set content = "with-image" %}
+{% elseif not image and dataset.links %}
+  {% set content = "no-image-with-links" %}
+{% else %}
+  {% set content = "default" %}
+{% endif %}
+
+
 <div class="{{prefix}}--card {{prefix}}--card__type__data {{prefix}}--card__size__{{size}} {{prefix}}--card__type__data__columns__{{columns}}">
   <div class="{{prefix}}--card--wrap">
-    <div class="{{prefix}}--card--content {% if image %} {{prefix}}--card--content__with-image {% endif %}">
+    <div class="{{prefix}}--card--content {{prefix}}--card--content__{{ content }}">
       {% if image %}
       <div class="{{prefix}}--card--area--image">
         <div class="{{prefix}}--card--image">

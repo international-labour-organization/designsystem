@@ -13,6 +13,8 @@ datacard:
           items:
             - label: Date of publication
               copy: 17 March 2022
+            - label: Published by
+              copy: "ILO Department of Research"
         files:
           headline: Files for download
           items:
@@ -29,9 +31,15 @@ datacard:
               url: "https://www.ilo.org/search?q=link"
             - label: Español
               url: "https://www.ilo.org/search?q=hyperlink"
-            - label: Français
+            - label: Dansk
               url: "https://www.ilo.org/search?q=url"
             - label: Deutsch
+              url: "https://www.ilo.org/search?q=url"
+            - label: Français
+              url: "https://www.ilo.org/search?q=url"
+            - label: Italiano
+              url: "https://www.ilo.org/search?q=url"
+            - label: Português
               url: "https://www.ilo.org/search?q=url"
             - label: Русский
               url: "https://www.ilo.org/search?q=url"
@@ -39,7 +47,9 @@ datacard:
               url: "https://www.ilo.org/search?q=url"
             - label: العربية
               url: "https://www.ilo.org/search?q=url"
-            - label: Italiano
+            - label: Ελληνικά
+              url: "https://www.ilo.org/search?q=url"
+            - label: Nederlands
               url: "https://www.ilo.org/search?q=url"
     eyebrow:
       type: string
@@ -95,7 +105,28 @@ datacard:
         columns: two
         size: wide
       fields:
-        image: null
+        image: false
+    two_columns_no_links:
+      label: Two columns without image or links
+      settings:
+        columns: two
+        size: wide
+      fields:
+        eyebrow: Project details
+        image: false
+        dataset:
+          content:
+            items:
+              - label: Date of publication
+                copy: 5 June 2023
+          files:
+            headline: Files for download
+            items:
+              - label: PDF 3.2 MB
+                url: "https://www.ilo.org"
+              - label: EPUB 5.8 MB
+                url: "https://www.ilo.org"
+          links: false
 
 
 
