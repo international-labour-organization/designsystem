@@ -4,7 +4,7 @@
 {% if image.url is iterable %}
   <picture>
     {% for img in image.url|reverse %}
-      {% if loop.last == false  %}
+      {% if loop.length == 1 or loop.last == false %}
         {% if img.breakpoint matches '/^\\d+$/' %}
           <source srcset="{{img.src}}" media="(min-width: {{img.breakpoint}}px)">
         {% else %}
@@ -12,7 +12,7 @@
         {% endif %}
       {% endif %}
     {% endfor %}
-    <img class="{{prefix}}--{{class}}--picture" src="{{image|reverse|last.src}}" alt="{{image.alt}}" {% if image.loading %} loading="{{ image.loading }}" {% endif %}>
+    <img class="{{prefix}}--{{class}}--picture" src="{{image.url|reverse|last.src}}" alt="{{image.alt}}" {% if image.loading %} loading="{{ image.loading }}" {% endif %}>
   </picture>
   {% else %}
   <picture>
