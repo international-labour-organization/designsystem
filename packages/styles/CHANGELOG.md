@@ -1,5 +1,11 @@
 # @ilo-org/styles
 
+## 0.8.1
+
+### Patch Changes
+
+- 5887810c3: Feature Card, prevent image from distorting
+
 ## 0.8.0
 
 ### Minor Changes
