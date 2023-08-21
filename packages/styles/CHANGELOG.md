@@ -1,5 +1,15 @@
 # @ilo-org/styles
 
+## 0.8.0
+
+### Minor Changes
+
+- 9edcc451f: Add 2-column layout for Data Cards. `columns` setting allows users to choose preferred layout option.
+
+### Patch Changes
+
+- 9edcc451f: Fix spacing in data card to match designs
+
 ## 0.7.2
 
 ### Patch Changes

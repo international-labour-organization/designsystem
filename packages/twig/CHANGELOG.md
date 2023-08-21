@@ -1,5 +1,18 @@
 # @ilo-org/twig
 
+## 0.9.0
+
+### Minor Changes
+
+- 9edcc451f: Add 2-column layout for Data Cards. `columns` setting allows users to choose preferred layout option.
+
+### Patch Changes
+
+- 289d2f3f6: Fix response images not working when only one breakpoint url is provided
+- Updated dependencies [9edcc451f]
+- Updated dependencies [9edcc451f]
+  - @ilo-org/styles@0.8.0
+
 ## 0.8.2
 
 ### Patch Changes
