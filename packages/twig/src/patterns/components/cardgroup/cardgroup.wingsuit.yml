@@ -16,7 +16,7 @@ cardgroup:
     cardcount:
       type: select
       label: collapsed
-      description: Number of cards to show in a row, also determines the width of the cards as a function of how many there need to be. As a result, passing `size` to the individual cards has no effect since the card group manages the size of the cards.
+      description: Number of cards to show in a row, also determines the width of the cards as a function of how many there need to be. This will override the width set in the `size` setting.
       required: false
       preview: "three"
       options:
@@ -34,6 +34,17 @@ cardgroup:
         start: start
         center: center
         between: between
+    size:
+      type: select
+      label: Size
+      description: Sets the layout of the cards in the group. See the `Card` component for more info on this setting, which has different effects on the different types of cards.
+      required: false
+      preview: "standard"
+      options:
+        standard: standard
+        narrow: narrow
+        wide: wide
+        fluid: fluid
     theme:
       type: select
       label: Theme
@@ -61,40 +72,84 @@ cardgroup:
     group:
       type: object
       label: Group of cards
-      description: "The group of cards. Each card can be one of the following types: multilink, feature, detail, graphicpromo, stat, graphic, factlist, data. All fields are passed to cards except for size, which is managed by the card group."
+      description: "The group of cards. Each card can be one of the following types: multilink, feature, detail, graphicpromo, stat, graphic, factlist, data."
       preview:
-        - type: text
-          eyebrow: "Podcast"
+        - eyebrow: "Podcast"
           title: "Can digital technology be an equality machine?"
           link: "https://www.ilo.org/"
           cta:
             label: "Read the press release"
             url: "https://www.ilo.org/global/about-the-ilo/newsroom/news/WCMS_846303/lang--en/index.htm"
           theme: dark
-        - type: text
-          eyebrow: "Podcast"
+          image:
+            alt: "Image alt text"
+            loading: "lazy"
+            url:
+              - breakpoint: "(min-width: 0px)"
+                src: "/images/small.jpg"
+              - breakpoint: "(min-width: 800px)"
+                src: "/images/medium.jpg"
+              - breakpoint: "(min-width: 1200px)"
+                src: "/images/large.jpg"
+              - breakpoint: "(min-width: 1440px)"
+                src: "/images/large.jpg"
+        - eyebrow: "Podcast"
           title: "Can digital technology be an equality machine?"
           link: "https://www.ilo.org/"
           cta:
             label: "Read the press release"
             url: "https://www.ilo.org/global/about-the-ilo/newsroom/news/WCMS_846303/lang--en/index.htm"
           theme: dark
-        - type: text
-          eyebrow: "Podcast"
+          image:
+            alt: "Image alt text"
+            loading: "lazy"
+            url:
+              - breakpoint: "(min-width: 0px)"
+                src: "/images/small.jpg"
+              - breakpoint: "(min-width: 800px)"
+                src: "/images/medium.jpg"
+              - breakpoint: "(min-width: 1200px)"
+                src: "/images/large.jpg"
+              - breakpoint: "(min-width: 1440px)"
+                src: "/images/large.jpg"
+        - eyebrow: "Podcast"
           title: "Can digital technology be an equality machine?"
           link: "https://www.ilo.org/"
           cta:
             label: "Read the press release"
             url: "https://www.ilo.org/global/about-the-ilo/newsroom/news/WCMS_846303/lang--en/index.htm"
           theme: dark
-        - type: text
-          eyebrow: "Podcast"
+          image:
+            alt: "Image alt text"
+            loading: "lazy"
+            url:
+              - breakpoint: "(min-width: 0px)"
+                src: "/images/small.jpg"
+              - breakpoint: "(min-width: 800px)"
+                src: "/images/medium.jpg"
+              - breakpoint: "(min-width: 1200px)"
+                src: "/images/large.jpg"
+              - breakpoint: "(min-width: 1440px)"
+                src: "/images/large.jpg"
+        - eyebrow: "Podcast"
           title: "Can digital technology be an equality machine?"
           link: "https://www.ilo.org/"
           cta:
             label: "Read the press release"
             url: "https://www.ilo.org/global/about-the-ilo/newsroom/news/WCMS_846303/lang--en/index.htm"
           theme: dark
+          image:
+            alt: "Image alt text"
+            loading: "lazy"
+            url:
+              - breakpoint: "(min-width: 0px)"
+                src: "/images/small.jpg"
+              - breakpoint: "(min-width: 800px)"
+                src: "/images/medium.jpg"
+              - breakpoint: "(min-width: 1200px)"
+                src: "/images/large.jpg"
+              - breakpoint: "(min-width: 1440px)"
+                src: "/images/large.jpg"
     cta:
       type: object
       label: CTA
