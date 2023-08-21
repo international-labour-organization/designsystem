@@ -6,7 +6,7 @@
     {% for card in group %}
       <div class="{{prefix}}--cardgroup--card">
         {% include "@components/card/card.twig" with {
-          size: "fluid",
+          size: size,
           theme: theme,
           type: type,
           cta: card.cta,
