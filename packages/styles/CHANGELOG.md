@@ -1,5 +1,14 @@
 # @ilo-org/styles
 
+## 0.8.2
+
+### Patch Changes
+
+- 270805a67: Avoid card wrappers getting stretched beyond the width of the actual component
+- 9ed7f815a: Cards should have white background by default
+- c81b76d1a: All cards in card group should be the same height.
+- bffee71ef: In Feature Card, push dates and ctas to the bottom of the card
+
 ## 0.8.1
 
 ### Patch Changes
