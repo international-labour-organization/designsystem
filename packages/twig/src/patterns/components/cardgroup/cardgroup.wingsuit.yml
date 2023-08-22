@@ -74,8 +74,27 @@ cardgroup:
       label: Group of cards
       description: "The group of cards. Each card can be one of the following types: multilink, feature, detail, graphicpromo, stat, graphic, factlist, data."
       preview:
-        - eyebrow: "Podcast"
-          title: "Can digital technology be an equality machine?"
+        - eyebrow: "Press release"
+          title: "ILO welcomes first global agreement on working conditions and rights of professional football players"
+          link: "https://www.ilo.org/"
+          cta:
+            label: "Read the press release"
+            url: "https://www.ilo.org/global/about-the-ilo/newsroom/news/WCMS_846303/lang--en/index.htm"
+          theme: dark
+          image:
+            alt: "Image alt text"
+            loading: "lazy"
+            url:
+              - breakpoint: "(min-width: 0px)"
+                src: "/images/small.jpg"
+              - breakpoint: "(min-width: 800px)"
+                src: "/images/medium.jpg"
+              - breakpoint: "(min-width: 1200px)"
+                src: "/images/large.jpg"
+              - breakpoint: "(min-width: 1440px)"
+                src: "/images/large.jpg"
+        - eyebrow: "Report"
+          title: "Renewable energy jobs hit 12.7 million globally"
           link: "https://www.ilo.org/"
           cta:
             label: "Read the press release"
@@ -94,26 +113,7 @@ cardgroup:
               - breakpoint: "(min-width: 1440px)"
                 src: "/images/large.jpg"
         - eyebrow: "Podcast"
-          title: "Can digital technology be an equality machine?"
-          link: "https://www.ilo.org/"
-          cta:
-            label: "Read the press release"
-            url: "https://www.ilo.org/global/about-the-ilo/newsroom/news/WCMS_846303/lang--en/index.htm"
-          theme: dark
-          image:
-            alt: "Image alt text"
-            loading: "lazy"
-            url:
-              - breakpoint: "(min-width: 0px)"
-                src: "/images/small.jpg"
-              - breakpoint: "(min-width: 800px)"
-                src: "/images/medium.jpg"
-              - breakpoint: "(min-width: 1200px)"
-                src: "/images/large.jpg"
-              - breakpoint: "(min-width: 1440px)"
-                src: "/images/large.jpg"
-        - eyebrow: "Podcast"
-          title: "Can digital technology be an equality machine?"
+          title: "Telangana and Andhra Pradesh launch pre-departure handbook for Indians going to the European Union"
           link: "https://www.ilo.org/"
           cta:
             label: "Read the press release"
