@@ -6,9 +6,31 @@
 .ilo--card {
   $self: &;
 
+  &--wrapper__type__promo {
+    --max-width: #{px-to-rem(634px)};
+
+    &__size {
+      &__narrow {
+        --max-width: #{px-to-rem(343px)};
+      }
+
+      &__standard {
+        --max-width: #{px-to-rem(634px)};
+      }
+
+      &__wide {
+        --max-width: #{px-to-rem(920px)};
+      }
+
+      &__fluid {
+        --max-width: 100%;
+      }
+    }
+  }
+
   &__type {
     &__promo {
-      --max-width: #{px-to-rem(343px)};
+      // --max-width: #{px-to-rem(343px)};
 
       padding: px-to-rem(40px) px-to-rem(24px);
       width: 100%;
@@ -23,8 +45,6 @@
 
       &#{$self}__size {
         &__standard {
-          --max-width: #{px-to-rem(634px)};
-
           padding: px-to-rem(48px);
 
           @include breakpoint("medium") {
@@ -42,8 +62,6 @@
 
         &__wide,
         &__fluid {
-          --max-width: #{px-to-rem(920px)};
-
           padding: px-to-rem(64px) px-to-rem(72px);
 
           @include breakpoint("medium") {
@@ -60,8 +78,6 @@
         }
 
         &__narrow {
-          --max-width: #{px-to-rem(343px)};
-
           padding: px-to-rem(40px) px-to-rem(24px);
 
           @include breakpoint("medium") {
