@@ -1,5 +1,14 @@
 # @ilo-org/twig
 
+## 0.9.1
+
+### Patch Changes
+
+- 76e3c3efa: build(deps-dev): bump lodash from 4.17.20 to 4.17.21
+- b90ff5984: Add `size` prop back to Card Group so that it can be used to set layout options.
+- Updated dependencies [5887810c3]
+  - @ilo-org/styles@0.8.1
+
 ## 0.9.0
 
 ### Minor Changes
