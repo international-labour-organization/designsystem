@@ -199,6 +199,7 @@
         );
         font-family: $fonts-display;
         font-weight: 700;
+        flex: 1;
       }
 
       #{$self}--eyebrow {
