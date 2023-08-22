@@ -86,6 +86,8 @@
   }
 
   &--wrapper {
+    max-width: var(--max-width);
+
     &:hover,
     &:focus,
     &:focus-within {
