@@ -1,5 +1,13 @@
 # @ilo-org/twig
 
+## 0.9.3
+
+### Patch Changes
+
+- cefc8690e: Correctly apply max-width to card wrappers
+- Updated dependencies [cefc8690e]
+  - @ilo-org/styles@0.8.3
+
 ## 0.9.2
 
 ### Patch Changes
