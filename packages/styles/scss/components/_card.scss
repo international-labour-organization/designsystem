@@ -9,6 +9,7 @@
 
   box-sizing: border-box;
   position: relative;
+  background-color: map-get($color, "base", "neutrals", "white");
 
   // Max width is set in the invididual card types unless fluid
   max-width: var(--max-width);
