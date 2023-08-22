@@ -1,5 +1,11 @@
 # @ilo-org/styles
 
+## 0.8.3
+
+### Patch Changes
+
+- cefc8690e: Correctly apply max-width to card wrappers
+
 ## 0.8.2
 
 ### Patch Changes
