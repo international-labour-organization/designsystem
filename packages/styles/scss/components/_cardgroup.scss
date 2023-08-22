@@ -87,6 +87,11 @@
     }
   }
 
+  .ilo--card,
+  .ilo--card--wrapper {
+    height: 100%;
+  }
+
   &--button-wrap {
     display: flex;
     justify-content: center;
