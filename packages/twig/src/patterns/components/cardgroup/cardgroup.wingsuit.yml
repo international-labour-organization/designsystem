@@ -24,16 +24,6 @@ cardgroup:
         two: two
         three: three
         four: four
-    justify:
-      type: select
-      label: collapsed
-      description: Sets the horizontal justification of the cards. `between` justifies the cards to the left and right edges of the container, and the space between the cards is distributed evenly. `center` is the default.
-      required: false
-      preview: center
-      options:
-        start: start
-        center: center
-        between: between
     size:
       type: select
       label: Size

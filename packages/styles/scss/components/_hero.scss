@@ -18,6 +18,7 @@
   // CSS vars can be changed
   --corner-cut-height: #{$corner-cut-sm};
 
+  width: 100%;
   display: grid;
   position: relative;
   grid-template-rows:

@@ -4,6 +4,7 @@
 
 .ilo--cardgroup {
   $c: &;
+  $gap-size: px-to-rem(32px);
 
   &__collapsed {
     #{$c}--inner {
@@ -11,74 +12,40 @@
     }
   }
 
-  &__justify {
-    &__start {
-      #{$c}--inner {
-        justify-content: flex-start;
-      }
-    }
-
-    &__between {
-      #{$c}--inner {
-        justify-content: space-between;
-      }
-    }
-
-    &__center {
-      #{$c}--inner {
-        justify-content: center;
-      }
-    }
-  }
-
   &__count {
     @include breakpoint("large") {
       &__one {
         #{$c}--inner {
-          gap: 0;
-        }
-
-        #{$c}--card {
-          flex: 1 1 100%;
+          grid-template-columns: 1fr;
         }
       }
 
       &__two {
         #{$c}--inner {
-          gap: 16px;
-        }
-
-        #{$c}--card {
-          flex: 0 1 calc(50% - 16px);
+          grid-template-columns: repeat(2, 1fr);
         }
       }
 
       &__three {
         #{$c}--inner {
-          gap: 21px;
-        }
-
-        #{$c}--card {
-          flex: 0 1 calc(33.3333% - 21px);
+          grid-template-columns: repeat(3, 1fr);
         }
       }
 
       &__four {
         #{$c}--inner {
-          gap: 24px;
-        }
-
-        #{$c}--card {
-          flex: 0 1 calc(25% - 24px);
+          grid-template-columns: repeat(4, 1fr);
         }
       }
     }
   }
 
   &--inner {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    column-gap: $gap-size;
+    row-gap: $gap-size;
     margin: auto;
     width: 100%;
 
@@ -90,6 +57,8 @@
   .ilo--card,
   .ilo--card--wrapper {
     height: 100%;
+    width: 100%;
+    max-width: 100%;
   }
 
   &--button-wrap {
