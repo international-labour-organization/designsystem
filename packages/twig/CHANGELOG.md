@@ -1,5 +1,15 @@
 # @ilo-org/twig
 
+## 0.9.4
+
+### Patch Changes
+
+- 58bc8ff88: Remove justify setting on card group
+- 58bc8ff88: Ensure cards in card group take up full width of card group and always have the same gap
+- Updated dependencies [58bc8ff88]
+- Updated dependencies [58a708c3a]
+  - @ilo-org/styles@0.8.4
+
 ## 0.9.3
 
 ### Patch Changes

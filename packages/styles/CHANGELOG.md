@@ -1,5 +1,12 @@
 # @ilo-org/styles
 
+## 0.8.4
+
+### Patch Changes
+
+- 58bc8ff88: Ensure cards in card group take up full width of card group and always have the same gap
+- 58a708c3a: Ensure Hero can expand to the full width of its container
+
 ## 0.8.3
 
 ### Patch Changes
