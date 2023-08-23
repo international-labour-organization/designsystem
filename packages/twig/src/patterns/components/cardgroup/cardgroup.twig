@@ -1,7 +1,11 @@
 {#
   CARDGROUP COMPONENT
 #}
-<div class="{{prefix}}--cardgroup {{prefix}}--cardgroup__count__{{cardcount}} {% if collapsed %} {{prefix}}--cardgroup__collapsed {% endif %} {% if justify %} {{prefix}}--cardgroup__justify__{{justify}} {% endif %}">
+{% if not cardcount%}
+  {% set cardcount = "three" %}
+{% endif %}
+
+<div class="{{prefix}}--cardgroup {{prefix}}--cardgroup__count__{{cardcount}} {% if collapsed %} {{prefix}}--cardgroup__collapsed {% endif %}">
   <div class="{{prefix}}--cardgroup--inner">
     {% for card in group %}
       <div class="{{prefix}}--cardgroup--card">
@@ -28,7 +32,8 @@
         } only %}
       </div>
       {% endfor %}
-    {% if cta %}
+  </div>
+  {% if cta %}
     <div class="{{prefix}}--cardgroup--button-wrap">
       <a
         class="{{prefix}}--button {{prefix}}--button--medium {{prefix}}--button--secondary"
@@ -38,5 +43,4 @@
       </a>
     </div>
     {% endif %}
-  </div>
 </div>
