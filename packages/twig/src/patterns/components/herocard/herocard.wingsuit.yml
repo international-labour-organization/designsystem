@@ -1,9 +1,40 @@
 herocard:
   use: "@components/herocard/herocard.twig"
   label: Hero Card
-  description: The Hero card, a subcomponent of the hero
+  description: The Hero Card includes the title, intro, date, and social links for the hero
   id: herocard
+  settings:
+    theme:
+      type: select
+      label: Theme
+      description: The theme of the hero card.
+      options:
+        light: light
+        dark: dark
+      preview: "dark"
+    background:
+      type: select
+      label: Background
+      description: Should the background be solid, semi-transparent or transparent
+      options:
+        solid: solid
+        semi-transparent: semi-transparent
+        transparent: transparent
+      preview: "solid"
+    cornercut:
+      type: select
+      label: Cornercut
+      description: Whether the card show have its right or left corner cut
+      options:
+        false: false
+        true: "true"
+      preview: "true"
   fields:
+    url:
+      type: string
+      label: URL
+      description: Optional URL for the hero card. If provided, the title will be a link.
+      preview: null
     datecopy:
       type: string
       label: Date copy
@@ -13,44 +44,27 @@ herocard:
       type: string
       label: Eyebrow
       description: Copy for the eyebrow of the card
-      preview: "Eyebrow"
+      preview: "Gender equality"
     intro:
       type: string
       label: Intro
       description: Intro text for the hero
-      preview: "Brief intro text - ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    socials:
+      preview: "Over the last three decades, global supply chains have been a key entry point for women to enter the formal workforce."
+    socialmedia:
       type: object
-      label: Social links
+      label: Social media links
       description: The social links to include in the hero
       preview:
-        - label: "Facebook"
-          url: "https://www.facebook.com/"
-          icon: "facebook"
-        - label: "Linkedin"
-          url: "https://www.linkedin.com/"
-          icon: "linkedin"
+        icons:
+          - label: "Facebook"
+            url: "https://www.facebook.com/"
+            icon: "facebook"
+          - label: "Linkedin"
+            url: "https://www.linkedin.com/"
+            icon: "linkedin"
     title:
       type: string
       label: Title
       description: This is the title for the hero card
-      preview: "This is an centered aligned article headline that is more than two lines long"
-  settings:
-    alignment:
-      type: select
-      label: Alignment
-      description: alignment for card
-      options:
-        left: "left"
-        center: "center"
-        right: "right"
-      preview: "center"
-    hasbackground:
-      type: select
-      label: Has Background
-      description: does the hero card have a background? (Defaults to true, only applied to Home Hero)
-      options:
-        true: true
-        false: "false"
-      preview: true
+      preview: "How to achieve gender equality in global garment supply chains"
   visibility: storybook

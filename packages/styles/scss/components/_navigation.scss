@@ -214,10 +214,18 @@
       direction: rtl;
     }
 
+    .ilo--subnav--open & {
+      visibility: hidden;
+    }
+
     @include breakpoint("large") {
       display: flex;
       justify-content: space-between;
       padding: 0 20px;
+
+      .ilo--subnav--open & {
+        visibility: visible;
+      }
     }
   }
 
@@ -230,11 +238,13 @@
     position: absolute;
     top: 0;
     transform: translateX(100%);
-    transition: transform 225ms ease-out;
+    transition: transform 225ms ease-out, visibility 225ms 0ms;
     width: 100%;
+    visibility: hidden;
 
     .ilo--header.ilo--mobile--open & {
       transform: translateX(0);
+      visibility: visible;
     }
 
     .ilo--header--local & {
@@ -248,6 +258,7 @@
       overflow: visible;
       position: static;
       transform: none;
+      visibility: visible;
     }
   }
 
@@ -642,6 +653,7 @@
 
   .ilo--context-menu {
     opacity: 0;
+    visibility: hidden;
     position: absolute;
     right: 0;
     top: calc(100% + 12px);
@@ -652,12 +664,14 @@
     .ilo--language-switcher:focus-within &,
     &:focus-within {
       opacity: 1;
+      visibility: visible;
       z-index: 1;
     }
   }
 
   .ilo--language-switcher--button:focus + .ilo--context-menu {
     opacity: 1;
+    visibility: visible;
     z-index: 1;
   }
 }

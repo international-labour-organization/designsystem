@@ -113,7 +113,6 @@ export default class Tag {
     });
 
     // this.updateTagItems();
-    console.log(id);
     this.removeParentDom(id);
 
     return this;

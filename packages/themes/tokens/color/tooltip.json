@@ -9,7 +9,8 @@
       "dark": {
         "background": { "value": "{color.base.neutrals.dark}" },
         "dropshadow": { "value": "{color.base.blue.dark}" },
-        "text": { "value": "{color.base.neutrals.lighter}" }
+        "text": { "value": "{color.base.neutrals.lighter}" },
+        "icon": { "value": "{color.base.neutrals.lighter}" }
       }
     }
   }

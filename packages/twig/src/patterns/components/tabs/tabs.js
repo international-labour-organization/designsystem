@@ -121,7 +121,6 @@ export default class Tabs {
   onKeyPress(e) {
     let flag = false;
     const tabid = e.currentTarget.getAttribute(ARIA.CONTROLS);
-    console.log(e.key);
 
     switch (e.key) {
       case "ArrowLeft":

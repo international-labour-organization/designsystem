@@ -2,12 +2,12 @@ interface ImageUrl {
   /**
    * Specify the breakpoint at which this image src should be used
    */
-  breakpoint?: number;
+  breakpoint: number;
 
   /**
    * Specify the url of this breakpoint's image src
    */
-  src?: string;
+  src: string;
 }
 
 export interface ImageProps {
@@ -34,5 +34,10 @@ export interface ImageProps {
   /**
    * Specify the image src for the image
    */
-  url?: Required<Array<ImageUrl>>;
+  url: ImageUrl[];
+
+  /**
+   * Value to pass to lading attribute
+   */
+  loading?: "lazy" | "eager";
 }

@@ -1,273 +1,227 @@
 card:
   use: "@components/card/card.twig"
   label: Card
-  description: Cards display prominent content of a page layout, with information and actions about a single subject, they typically contain a link to a new page or downloadable content.
+  description: Cards display prominent content of a page. This component is a wrapper around all of the card types in the design system except for the Hero Card. To use it, pass a `type` setting to the card and then pass the appropriate fields for that card type. For more information about the settings you can pass to each card type, see the documentation for that card.
+  visibility: storybook
   fields:
-    title:
-      type: string
-      label: Title
-      description: Title field for the card
-      preview: Lorem ipsum
-    intro:
-      type: string
-      label: Intro
-      description: Intro copy text
-      preview: "A toxic combination of mutually-reinforcing crises – inflation, debt, food and fuel price rises, geopolitical tensions and conflict, climate change – are threatening to increase poverty, inequality and discrimination worldwide."
-    eyebrow:
-      type: string
-      label: Eyebrow
-      description: Eyebrow copy
-      preview: "Eyebrow"
-    date:
-      type: object
-      label: Date
-      description: Date copy (human and Unix)
-      preview:
-        human: 20 September 2022
-        unix: 1670389200
-    eventdetails:
-      type: string
-      label: Eyebrow
-      description: Event details for `Detail` card
-      preview: ""
-    profile:
-      type: object
-      label: Profile
-      description: Profile to embed in the card for `Graphic Text`
-      preview:
-    list:
-      type: object
-      label: List
-      description: List to embed in the card, specifically used for `Factlist`
-      preview:
-    link:
-      type: string
-      label: Link
-      description: Link for clickable cards. Do no use on `Multilink`, `Factlist`, `Data`, or `Stat` cards.
-      preview: "https://www.ilo.org/"
     cta:
       type: object
-      label: CTA
-      description: Items for clickable CTA button. Button used for `Graphic Promo` card.
+      label: cta
+      description: Renders a call to action button at the bottom of the card. This should include a `url` property for the link and a `label` property for the link text. Used by the `Feature Card`, `Promo Card` and `DataCard` types.
       preview:
-    image:
-      type: string
-      label: Image
-      description: The image for the card. Images should be avoided on `Graphic Promo`, `Graphic Text`, `Factlist`, and `Stat` card.
-      preview: ""
-    source:
-      type: object
-      label: Source
-      description: Source link for `Stat` cards
-      preview:
-    linklist:
-      type: object
-      label: Link List
-      description: Implementation of the LinkList component. Appears at the bottom of `Multilink` or `Feature` card.
-      preview:
+        label: "Read more"
+        url: "https://www.ilo.org/"
     dataset:
       type: object
       label: Dataset object
-      description: Dataset object for the `Data` card. Array of Content (label, copy), Files object (optional headline, array of items with label and url) and Links object (optional headline, array of items with label and url)
+      description: Array of Content (label, copy), Files object (optional headline, array of items with label and url) and Links object (optional headline, array of items with label and url). Only used by `Data Card`.
       preview:
+        content:
+          items:
+            - label: Date of publication
+              copy: 17 March 2022
+        files:
+          headline: Files for download
+          items:
+            - label: PDF 3.2 MB
+              url: "https://www.ilo.org"
+            - label: EPUB 5.8 MB
+              url: "https://www.ilo.org"
+            - label: MOBI 2.4 MB
+              url: "https://www.ilo.org"
+        links:
+          headline: Also available in
+          items:
+          - label: English
+            url: "https://www.ilo.org/search?q=link"
+          - label: Español
+            url: "https://www.ilo.org/search?q=hyperlink"
+          - label: Français
+            url: "https://www.ilo.org/search?q=url"
+    date:
+      type: object
+      label: Date
+      description: Date copy (human and Unix). Used by all cards except for the `Promo Card` and `Stat Card`.
+      preview:
+        human: 20 September 2022
+        unix: 1670389200
+    dateExtra:
+      type: string
+      label: dateExtra
+      description: Strong date copy that could include other information such as the location of an event. Only used by `Details Card`.
+      preview: 20 September 2023 | Geneva
+    eyebrow:
+      type: string
+      label: Eyebrow
+      description: Text appears above the title providing extra context. Used by all cards except for the `Feature Card`, `Text Card`, `Detail Card`, `Promo Card` and `Data Card`.
+      preview: "Podcast"
+    image:
+      type: object
+      label: Image
+      description: Image settings for the card. This should include a `url`, which is an array of objects with an `src` property pointing to the image file and a `breakpoint` property which is either a number indicating the minimum viewport width at which the image should be displayed or a media query. It can also contain an `alt` property for the image's alt text and a `loading` property for the image's loading attribute. Used by `Detail Card`, `Feature Card`, `Multilink Card` and `Data Card`
+      preview:
+        alt: "Image alt text"
+        loading: "lazy"
+        url:
+          - breakpoint: "(min-width: 0px)"
+            src: "/images/small.jpg"
+          - breakpoint: "(min-width: 800px)"
+            src: "/images/medium.jpg"
+          - breakpoint: "(min-width: 1200px)"
+            src: "/images/large.jpg"
+          - breakpoint: "(min-width: 1440px)"
+            src: "/images/large.jpg"
+    intro:
+      type: string
+      label: Intro
+      description: Intro text usually follows the Title providing more information about the Card. Used by `Text Card`, `Detail Card`, `Promo Card`, `Multilink Card` and`Stat Card`.
+      preview: "A toxic combination of mutually-reinforcing crises – inflation, debt, food and fuel price rises, geopolitical tensions and conflict, climate change – are threatening to increase poverty, inequality and discrimination worldwide."
+    link:
+      type: string
+      label: Link
+      description: The primary link for the card, activated by clicking on the card itself. Used by all cards except for the `Data Card`, `Stat Card` and `Facts Card`.
+      preview: "https://www.ilo.org/"
+    linklist:
+      type: object
+      label: Link List
+      description: Displays a list of links. See the `Link` component for more details on settings. Only used by the `Multilink Card`.
+      preview:
+        linkgroup:
+          - links:
+            - label: Read the press release
+              url: "https://www.ilo.org"
+            - label: See the statement
+              url: "https://www.ilo.org"
+            - label: Remarks to G7 Openening Session
+              url: "https://www.ilo.org"
+    list:
+      type: object
+      label: List
+      description: List of facts or statistics. See the `List` component for a full list of options. Only used by `Factlist Card`.
+      preview:
+        settings:
+          - ordered: unordered
+          - alignment: default
+        items:
+          - content: "Global employment growth will be only 1.0 per cent in 2023, less than half the level in 2022."
+            id: "list1"
+          - content: "The labour market deterioration is mainly due to emerging geopolitical tensions and the Ukraine conflict."
+            id: "list2"
+          - content: "The current slowdown means that many workers will have to accept lower quality jobs, often at very low pay."
+            id: "list3"
+    title:
+      type: string
+      label: Title
+      description: The main title of the card. Used by all cards except for the `Data Card`.
+      preview: Can digital technology be an equality machine?
   settings:
+    alignment:
+      type: select
+      label: Alignment
+      description: Positions the image to the right or to the left of the content when the card is displayed in a `wide` or `fluid` size. Has no effect if the card is displayed in a `standard` or `narrow` size. Only used by `Multilink Card`.
+      preview: "left"
+      options:
+        left: Left
+        right: Right
     color:
       type: select
       label: Color
-      description: Color of the stat cards, options are `turquoise`, `green`, `yellow`, or `blue`. Only use for stat cards.
+      description: Used to set the color of `Stat Card`.
       options:
         turquoise: turquoise
         green: green
         yellow: yellow
         blue: blue
       preview: "blue"
-    theme:
+    columns:
       type: select
-      label: Theme
-      description: The theme type for the card. Theme choice doesn't apply to these card types - `Multilink`, `Data`, `Stat` and `Detail`
-      required: false
-      preview: "light"
+      label: columns
+      description: Displays the data in one or two columns when the size is set to `wide` or `fluid`. If not set, the card will appear as `one`. Only used by `Data Card`.
       options:
-        dark: Dark
-        light: Light
-    size:
-      type: select
-      label: Size
-      description: Size of the cards (usually reduces padding). `Wide` on Multilink and Feature cause a two column structure above a desktop breakpoint.
-      preview: "standard"
-      options:
-        wide: Wide
-        standard: Standard
-        narrow: Narrow
+        one: one
+        two: two
+      preview: "one"
     cornercut:
       type: select
-      label: Corner cut
-      description: Setting for whether the card has a cut corner. The only cards that use this setting are `Graphic Promo` and `Factlist`.
-      preview: cornercut
-      options:
-        cornercut: Corner cut
-        corner: Corner
-    alignment:
-      type: select
-      label: Alignment
-      description: Set whether card image is right aligned or left aligned for `Multilink` cards.
-      preview: left
-      options:
-        left: Left
-        right: right
-    isvideo:
-      type: select
-      label: Is a Video
-      description: Whether the card should display a video icon (for Feature card)
-      preview: false
+      label: cornercut
+      description: Allows user to set the cornercut of the card. This is only used by the `Promo Card`.
+      required: false
+      preview: true
       options:
         true: True
         false: False
+    size:
+      type: select
+      label: Size
+      description: Sets the size of the card. If a card has two options, `standard` and `fluid` are used and `standard` is the default. If it has three options, `narrow`, `wide` and `fluid` are used and `narrow` is the default. If it has all four options `standard` is the default. `fluid` makes the card stretch to fit the size of its container. If the size is set to `fluid`, other styles from `wide` will be used.
+      required: false
+      preview: "standard"
+      options:
+        standard: standard
+        narrow: narrow
+        wide: wide
+        fluid: fluid
+    source:
+      type: object
+      label: Source
+      description: A stylized link used only by the `Stat Card` to indicate the source of a statistic.
+      preview:
+        label: "World Employment and Social Outlook: Trends 2023"
+        url: "https://www.ilo.org/global/research/global-reports/weso/WCMS_865332/lang--en/index.htm"
+    theme:
+      type: select
+      label: Theme
+      description: Sets the card to appear as either light or dark. Used by all cards except for `Multilink Card`, `Data Card` and `Stat Card`.
+      required: false
+      preview: "dark"
+      options:
+        dark: Dark
+        light: Light
+    type:
+      type: select
+      label: Type
+      description: Sets the type of card to render.
+      preview: "feature"
+      options:
+        feature: Feature
+        text: Text
+        detail: Detail
+        promo: Promo
+        multilink: Multilink
+        data: Data
+        stat: Stat
+        factlist: Factlist
   variants:
-    graphic:
-      label: Graphic Text Card
-      description: The graphic Card
-      fields:
-        title: "Why we need greater social justice"
-        eyebrow: Podcast
-        date:
-          human: 20 September 2022
-          unix: 1670389200
-        image: ""
-        link: "https:/www.ilo.org"
-        profile:
-          avatar: "/images/ilo-dg.jpg"
-          description: "Gilbert Houngbo is the Director-General of the International Labour Organization"
-          link:
-            - label: "Optional Link"
-              url: "https://www.ilo.org"
-          name: "Gilbert Houngbo"
-          role: "ILO Director-General"
-    stat:
-      label: Stat Card
-      description: The stat Card
-      settings:
-        theme: light
-        cornercut: cornercut
-      fields:
-        eyebrow: "Report"
-        title: "Global employment growth down by half in 2023"
-        intro: The current global economic slowdown is likely to force more workers to accept lower quality, poorly paid jobs which lack job security and social protection, so accentuating inequalities exacerbated by the COVID-19 crisis.
-        source:
-          label: "World Employment and Social Outlook: Trends 2023"
-          url: "https://www.ilo.org/global/research/global-reports/weso/WCMS_865332/lang--en/index.htm"
-    multilink:
-      label: Multilink Card
-      description: The multilink Card
-      settings:
-        theme: light
-      fields:
-        eyebrow: High-level meeting
-        title: "ILO welcomes G7 call to make a just transition to a green economy happen"
-        image: "/images/hero.jpg"
-        intro: "At the end of their meeting the G7 Labour Ministers highlighted the urgent need to greater focus on rights and occupational safety and health."
-        linklist:
-          linkgroup:
-            - links:
-                - label: Read the press release
-                  url: "https://www.ilo.org"
-                - label: See the statement
-                  url: "https://www.ilo.org"
-                - label: Remarks to G7 Openening Session
-                  url: "https://www.ilo.org"
-    graphicpromo:
-      label: Graphic Promo Card
-      description: The graphic promo Card
-      fields:
-        eyebrow: High-level meetings
-        title: "ILO welcomes G7 call to make a just transition to a green economy happen"
-        intro: "At the end of their meeting the G7 Labour Ministers highlighted the urgent need to greater focus on rights and occupational safety and health."
-        link: "https://www.ilo.org"
-        cta:
-          label: "Read the press release"
-          url: "https://www.ilo.org"
+    basic:
+      label: Default
     feature:
       label: Feature Card
-      description: The Feature Card
-      fields:
-        title: "ILO welcomes G7 call to make a just transition to a green economy happen"
-        eyebrow: High-level meeting
-        date:
-          human: 17 March 2022
-          unix: 1670389200
-        link: "https://www.ilo.org/search?q=graphic"
-        image: "/images/hero.jpg"
-        linklist:
-          headline: ""
-          linkgroup:
-            - headline: ""
-              links:
-                - label: Read the press release
-                  url: "https://www.ilo.org"
+      settings:
+        type: feature
+    text:
+      label: Text Card
+      settings:
+        type: text
     detail:
       label: Detail Card
-      description: The Detail Card
-      fields:
-        title: "Technical meeting on digitalization in the construction sector"
-        intro: "The purpose of the meeting will be to discuss opportunities and challenges for the future of work in the construction industry as a vehicle to ensure a human-centred economic recovery."
-        eyebrow: Meeting
-        date:
-          human: 17 March 2022
-          unix: 1670389200
-        link: "https://www.ilo.org"
-        image: "/images/medium.jpg"
-        profile:
-        eventdetails: "8:30 - 12:00 CET | Geneva"
-    factlist:
-      label: Fact List Card
-      description: The Fact List Card
-      fields:
-        eyebrow: Report
-        title: "Economic slowdown likely to force workers to accept lower quality jobs"
-        image: ""
-        list:
-          settings:
-            - ordered: unordered
-            - alignment: default
-          items:
-            - content: "Global employment growth will be only 1.0 per cent in 2023, less than half the level in 2022."
-              id: "list1"
-            - content: "The labour market deterioration is mainly due to emerging geopolitical tensions and the Ukraine conflict."
-              id: "list2"
-            - content: "The current slowdown means that many workers will have to accept lower quality jobs, often at very low pay."
-              id: "list3"
+      settings:
+        type: detail
+    promo:
+      label: Promo Card
+      settings:
+        type: promo
+    multilink:
+      label: Multilink Card
+      settings:
+        type: multilink
     data:
       label: Data Card
-      description: The Data Card
-      fields:
-        title: Technical meeting on digitalization in the construction sector
-        eyebrow: "Meeting"
-        intro: The purpose of the meeting will be to discuss opportunities and challenges for the future of work in the construction industry as a vehicle to ensure a human-centred economic recovery.
-        dataset:
-          content:
-            items:
-              - label: Date
-                copy: 17 March 2022
-              - label: Event type
-                copy: Technical meeting of experts
-          files:
-            headline: Files
-            items:
-              - label: Meeting agenda
-                url: "https://www.ilo.org"
-              - label: Briefing notes
-                url: "https://www.ilo.org"
-              - label: Practical info
-                url: "https://www.ilo.org"
-          links:
-            headline: Languages
-            items:
-              - label: English
-                url: "https://www.ilo.org/search?q=link"
-              - label: Español
-                url: "https://www.ilo.org/search?q=hyperlink"
-              - label: Français
-                url: "https://www.ilo.org/search?q=url"
       settings:
-        theme: light
-  visibility: storybook
+        type: data
+      fields:
+        eyebrow: Flagship report
+    image:
+    stat:
+      label: Stat Card
+      settings:
+        type: stat

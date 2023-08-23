@@ -1,0 +1,135 @@
+@use "../tokens" as *;
+@use "../functions" as *;
+@use "../animations" as *;
+@import "../mixins";
+
+.ilo--card {
+  $self: &;
+
+  &__type {
+    &__text {
+      --max-width: #{px-to-rem(301px)};
+
+      border-bottom: px-to-rem(3px) solid $brand-ilo-grey-ui;
+      padding: px-to-rem(24px) px-to-rem(40px);
+
+      @include cornercut(73px, 40px);
+
+      [class$="profile--contents--light"] * {
+        color: $color-base-neutrals-dark;
+      }
+
+      [class$="profile--contents--dark"] * {
+        color: $color-base-neutrals-white;
+      }
+
+      &:hover,
+      &:focus,
+      &:focus-within {
+        @include card-drop-shadow;
+
+        [class*="profile--contents"] * {
+          color: $color-base-blue-medium;
+        }
+      }
+
+      @include breakpoint("medium") {
+        padding: px-to-rem(32px) px-to-rem(40px);
+      }
+
+      &#{$self}__size {
+        &__wide,
+        &__fluid {
+          --max-width: #{px-to-rem(523px)};
+
+          padding: px-to-rem(32px) px-to-rem(40px);
+
+          @include breakpoint("medium") {
+            padding: px-to-rem(32px) px-to-rem(40px);
+          }
+        }
+
+        &__narrow {
+          --max-width: #{px-to-rem(301px)};
+
+          padding: px-to-rem(24px) px-to-rem(40px);
+
+          @include breakpoint("medium") {
+            padding: px-to-rem(24px) px-to-rem(40px);
+          }
+
+          #{$self}--title {
+            @include font-styles("headline-6");
+            @include textmargin(
+              "margin-bottom",
+              40px,
+              "headline-6",
+              "display",
+              "base",
+              "copy"
+            );
+          }
+        }
+      }
+
+      &#{$self}__dark {
+        border-bottom: px-to-rem(3px) solid $color-base-red-medium;
+      }
+
+      #{$self}--eyebrow {
+        @include textmargin(
+          "margin-bottom",
+          24px,
+          "base",
+          "copy",
+          "headline-5",
+          "display"
+        );
+      }
+
+      #{$self}--title {
+        @include font-styles("headline-6");
+        @include textmargin(
+          "margin-bottom",
+          40px,
+          "headline-6",
+          "display",
+          "base",
+          "copy"
+        );
+
+        @include breakpoint("medium") {
+          @include font-styles("headline-5");
+          @include textmargin(
+            "margin-bottom",
+            40px,
+            "headline-5",
+            "display",
+            "base",
+            "copy"
+          );
+        }
+      }
+
+      #{$self}--date {
+        display: block;
+        @include textmargin("margin-bottom", 32px, "base", "copy", 0, 0);
+      }
+
+      #{$self}--content {
+        display: flex;
+        flex-direction: column;
+        position: relative;
+
+        > * {
+          justify-self: flex-start;
+        }
+
+        > *:last-child {
+          justify-self: flex-end;
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}

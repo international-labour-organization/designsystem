@@ -1,294 +1,108 @@
 import { HeroProps } from "./Hero.props";
+import { defaultArgs } from "../SocialMedia";
+import { HeroCardProps } from "./HeroCard.props";
+import { ImageProps } from "../Image/Image.props";
 
-const articleCenteredHero: HeroProps = {
-  className: "storybook",
-  image: {
-    alt: "Alt tag",
-    className: "storybook",
-    url: [
-      {
-        breakpoint: 0,
-        src: "/hero.jpg",
-      },
-      {
-        breakpoint: 768,
-        src: "/hero.jpg",
-      },
-    ],
-  },
-  heroCard: {
-    alignment: "center",
-    datecopy: "11 February 2021",
-    eyebrow: "Eyebrow Title",
-    intro:
-      "Brief intro text - ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    socials: [
-      {
-        label: "Facebook",
-        url: "https://www.facebook.com/",
-        icon: "facebook",
-      },
-    ],
-    title:
-      "This is an centered aligned article headline that is more than two lines long",
-    theme: "light",
-    types: "article",
+const lightArticleCard: HeroCardProps = {
+  title: "Does Artificial Intelligence threaten decent work?",
+  datecopy: "17 July 2023",
+  eyebrow: "Future of Work Podcast",
+  intro:
+    "The world of work has always been shaped by technology, but the new generation of Artificial Intelligence (AI) has raised fears that it could destroy tens of millions of jobs, and undermine progress towards decent work and greater social justice.",
+  socialmedia: {
+    icons: defaultArgs.icons.slice(0, 3),
   },
   theme: "light",
-  types: "article",
 };
 
-const articleHero: HeroProps = {
-  className: "storybook",
-  image: {
-    alt: "Alt tag",
-    className: "storybook",
-    url: [
-      {
-        breakpoint: 0,
-        src: "/hero.jpg",
-      },
-      {
-        breakpoint: 768,
-        src: "/hero.jpg",
-      },
-    ],
+const darkPortalCard: HeroCardProps = {
+  title: "Child labour",
+  eyebrow: "ILO Topics",
+  socialmedia: {
+    icons: defaultArgs.icons.slice(0, 3),
   },
-  heroCard: {
-    alignment: "left",
-    datecopy: "11 February 2021",
-    eyebrow: "Eyebrow Title",
-    intro:
-      "Brief intro text - ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    socials: [
-      {
-        label: "Facebook",
-        url: "https://www.facebook.com/",
-        icon: "facebook",
-      },
-    ],
-    title:
-      "This is an left aligned article headline that is more than two lines long",
-    theme: "light",
-    types: "article",
-  },
+};
+
+const lightPortalCard: HeroCardProps = {
+  ...darkPortalCard,
   theme: "light",
-  types: "article",
 };
 
-const articleNoImageHero: HeroProps = {
+const homepageCard: HeroCardProps = {
+  eyebrow: lightArticleCard.eyebrow,
+  title: lightArticleCard.title,
+  url: "https://www.ilo.org",
+  background: "semi-transparent",
+};
+
+const transparentHomepageCard: HeroCardProps = {
+  ...homepageCard,
+  background: "transparent",
+};
+
+const heroImage: ImageProps = {
+  alt: "Alt tag",
   className: "storybook",
-  heroCard: {
-    alignment: "center",
-    datecopy: "11 February 2021",
-    eyebrow: "Eyebrow Title",
-    intro:
-      "Brief intro text - ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    socials: [
-      {
-        label: "Facebook",
-        url: "https://www.facebook.com/",
-        icon: "facebook",
-      },
-    ],
-    title:
-      "This is an center aligned article headline that is more than two lines long",
-    theme: "light",
-    types: "article",
-  },
-  theme: "light",
-  types: "article",
+  url: [
+    {
+      breakpoint: 0,
+      src: "/hero.jpg",
+    },
+    {
+      breakpoint: 768,
+      src: "/hero.jpg",
+    },
+  ],
 };
 
-const homeHero: HeroProps = {
-  className: "storybook",
-  image: {
-    alt: "Alt tag",
-    className: "storybook",
-    url: [
-      {
-        breakpoint: 0,
-        src: "/hero.jpg",
-      },
-      {
-        breakpoint: 768,
-        src: "/hero.jpg",
-      },
-    ],
-  },
-  heroCard: {
-    alignment: "left",
-    eyebrow: "Eyebrow Title",
-    title:
-      "ILO welcomes G7 call to make a just transition to a green economy happen",
-    theme: "dark",
-    types: "home",
-  },
-  theme: "dark",
-  types: "home",
+const standard = {
+  image: heroImage,
+  heroCard: darkPortalCard,
 };
 
-const portalHero: HeroProps = {
-  className: "storybook",
-  image: {
-    alt: "Alt tag",
-    className: "storybook",
-    url: [
-      {
-        breakpoint: 0,
-        src: "/hero.jpg",
-      },
-      {
-        breakpoint: 768,
-        src: "/hero.jpg",
-      },
-    ],
-  },
-  heroCard: {
-    alignment: "left",
-    eyebrow: "Eyebrow Title",
-    socials: [
-      {
-        label: "Facebook",
-        url: "https://www.facebook.com/",
-        icon: "facebook",
-      },
-      {
-        label: "Linkedin",
-        url: "https://www.linkedin.com/",
-        icon: "linkedin",
-      },
-    ],
-    title: "This is a page title",
-    theme: "dark",
-    types: "portal",
-  },
-  theme: "dark",
-  types: "portal",
+export const darkPortal: HeroProps = standard;
+
+export const lightPortal: HeroProps = {
+  ...standard,
+  heroCard: lightPortalCard,
 };
 
-const projectHero: HeroProps = {
-  className: "storybook",
-  image: {
-    alt: "Alt tag",
-    className: "storybook",
-    url: [
-      {
-        breakpoint: 0,
-        src: "/hero.jpg",
-      },
-      {
-        breakpoint: 768,
-        src: "/hero.jpg",
-      },
-    ],
-  },
-  heroCard: {
-    alignment: "center",
-    eyebrow: "Eyebrow Title",
-    datecopy: "Date | Duration",
-    intro:
-      "Brief intro text - ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    socials: [
-      {
-        label: "Facebook",
-        url: "https://www.facebook.com/",
-        icon: "facebook",
-      },
-    ],
-    title: "This is a page title",
-    theme: "dark",
-    types: "project",
-  },
-  theme: "dark",
-  types: "project",
+export const semiTransparent: HeroProps = {
+  ...standard,
+  align: "center",
+  heroCard: homepageCard,
 };
 
-const graphicHero: HeroProps = {
-  className: "storybook",
-  image: {
-    alt: "Alt tag",
-    className: "storybook",
-    url: [
-      {
-        breakpoint: 0,
-        src: "/hero.jpg",
-      },
-      {
-        breakpoint: 768,
-        src: "/hero.jpg",
-      },
-    ],
-  },
-  heroCard: {
-    alignment: "center",
-    eyebrow: "Eyebrow Title",
-    datecopy: "Date | Duration",
-    intro:
-      "Brief intro text - ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    socials: [
-      {
-        label: "Facebook",
-        url: "https://www.facebook.com/",
-        icon: "facebook",
-      },
-    ],
-    title: "This is a centered graphic article headline that is two lines long",
-    theme: "light",
-    types: "graphic",
-  },
-  theme: "light",
-  types: "graphic",
+export const transparent: HeroProps = {
+  ...standard,
+  align: "center",
+  heroCard: transparentHomepageCard,
 };
 
-const publicationHero: HeroProps = {
-  className: "storybook",
-  image: {
-    alt: "Alt tag",
-    className: "storybook",
-    url: [
-      {
-        breakpoint: 0,
-        src: "/hero.jpg",
-      },
-      {
-        breakpoint: 768,
-        src: "/hero.jpg",
-      },
-    ],
-  },
-  heroCard: {
-    alignment: "left",
-    eyebrow: "Eyebrow Title",
-    datecopy: "Date | Duration",
-    intro:
-      "Brief intro text - ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    socials: [
-      {
-        label: "Facebook",
-        url: "https://www.facebook.com/",
-        icon: "facebook",
-      },
-    ],
-    title: "This is a page title",
-    theme: "light",
-    types: "publication",
-  },
-  theme: "light",
-  types: "publication",
-};
-/**
- * Sample prop definitions for Hero's enumerable properties (imported in stories and test)
- */
-const HeroArgs = {
-  articleHero,
-  articleCenteredHero,
-  articleNoImageHero,
-  homeHero,
-  graphicHero,
-  projectHero,
-  portalHero,
-  publicationHero,
+export const offset: HeroProps = {
+  ...standard,
+  align: "baseline",
+  justify: "offset",
 };
 
-export default HeroArgs;
+export const center: HeroProps = {
+  ...standard,
+  align: "baseline",
+  justify: "center",
+};
+
+export const centerBottom: HeroProps = {
+  ...standard,
+  cardSize: "xlarge",
+  align: "bottom",
+  justify: "center",
+  heroCard: lightArticleCard,
+};
+
+export const noPoster: HeroProps = {
+  cardSize: "xlarge",
+  align: "bottom",
+  justify: "center",
+  posterSize: "small",
+  heroCard: lightArticleCard,
+};

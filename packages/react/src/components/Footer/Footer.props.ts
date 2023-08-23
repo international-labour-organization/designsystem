@@ -1,6 +1,6 @@
 import { LinkGroupProps } from "../LinkList/LinkList.props";
 import { LinkProps } from "../LinkList/LinkList.props";
-import { SocialTypes } from "../../types";
+import { SocialMediaProps } from "../SocialMedia";
 
 export interface FooterProps {
   /**
@@ -36,7 +36,7 @@ export interface FooterProps {
   /**
    * Specify the links to be displayed in this link group
    */
-  socials?: FooterSocialProps;
+  socialmedia?: SocialMediaProps;
 
   /**
    * Specify the legal statement for the Footer
@@ -57,28 +57,4 @@ export interface FooterProps {
    * Specify the anchor link for the Footer
    */
   anchorlink?: LinkProps;
-}
-
-interface FooterSocialProps {
-  /**
-   * Specify the headline for social links
-   */
-  headline?: Required<string>;
-
-  /**
-   * Specify the social links
-   */
-  links?: Required<SocialLinkProps>[];
-}
-
-interface SocialLinkProps {
-  /**
-   * Specify the type for social link
-   */
-  type?: Required<SocialTypes>;
-
-  /**
-   * Specify the url for social link
-   */
-  url?: Required<string>;
 }

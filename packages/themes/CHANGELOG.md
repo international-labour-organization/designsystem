@@ -1,5 +1,17 @@
 # @ilo-org/themes
 
+## 0.2.0
+
+### Minor Changes
+
+- 0f45a7aae: Add tokens for social media component
+
+## 0.1.16
+
+### Patch Changes
+
+- 51b4be31a: Add dark color options for tooltip icon
+
 ## 0.1.15
 
 ### Patch Changes

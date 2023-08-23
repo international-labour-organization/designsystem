@@ -1,4 +1,5 @@
 // export type AccordionSize = "small" | "large";
+export type ThemeTypes = "light" | "dark";
 export type ButtonFunctions = "button" | "submit" | "reset";
 export type ButtonTypes = "primary" | "secondary" | "tertiary" | "alert";
 export type CalloutTypes = "info" | "error" | "success" | "warning";
@@ -16,16 +17,7 @@ export type FieldTypes =
   | "file";
 export type FormGroupTypes = "default" | "filter";
 export type HeadingLevel = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
-export type HeroCardAlignment = "left" | "center" | "right";
-export type HeroCardTypes =
-  | "home"
-  | "publication"
-  | "graphic"
-  | "project"
-  | "article"
-  | "portal";
-export type HeroCardTheme = "dark" | "light";
-export type TextInputTypes =
+export type InputTypes =
   | "email"
   | "hidden"
   | "password"
@@ -49,7 +41,14 @@ export type NotificationTypes = "error" | "info" | "success" | "warning";
 export type PositionTypes = "top" | "bottom" | "left" | "right";
 export type SizeTypes = "small" | "medium" | "large";
 export type TagTypes = "anchor" | "display" | "button";
-export type SocialTypes = "instagram" | "facebook" | "twitter" | "youtube";
+export type SocialTypes =
+  | "facebook"
+  | "twitter"
+  | "instagram"
+  | "linkedin"
+  | "youtube"
+  | "tiktok"
+  | "flickr";
 export type CardColor = "turquoise" | "green" | "yellow" | "blue";
 export type CardSize = "wide" | "standard" | "narrow";
 export type CardCornerType = "cornercut" | "corner";

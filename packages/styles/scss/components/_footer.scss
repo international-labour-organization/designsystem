@@ -94,86 +94,8 @@
     margin: px-to-rem(55px) 0;
   }
 
-  .social--headline {
-    color: $color-base-neutrals-white;
-    font-family: $fonts-display;
-    font-weight: map-get($type, "weights", "label");
-    @include font-styles("body-small");
-    @include textmargin("margin-bottom", 28px, "body-small", "display", 0, 0);
-  }
-
   .social--links {
-    display: flex;
     margin-bottom: px-to-rem(45px);
-  }
-
-  .social--links--link {
-    background-repeat: no-repeat;
-    background-size: contain;
-    border: 0;
-    display: inline-block;
-    height: px-to-rem(16px);
-    margin: -1px;
-    padding: 0;
-    position: absolute;
-    overflow: hidden;
-    text-indent: -999rem;
-    width: px-to-rem(16px);
-
-    &.facebook {
-      @include dataurlicon("facebook", $color-base-neutrals-lighter);
-    }
-
-    &.instagram {
-      @include dataurlicon("instagram", $color-base-neutrals-lighter);
-    }
-
-    &.twitter {
-      @include dataurlicon("twitter", $color-base-neutrals-lighter);
-    }
-
-    &.youtube {
-      @include dataurlicon("youtube", $color-base-neutrals-lighter);
-    }
-  }
-
-  .social--links--item {
-    align-items: center;
-    background-color: transparent;
-    border-radius: px-to-rem(3px);
-    display: flex;
-    height: px-to-rem(24px);
-    justify-content: center;
-    margin-right: px-to-rem(20px);
-    position: relative;
-    width: px-to-rem(24px);
-
-    &:last-of-type {
-      margin-right: none;
-    }
-
-    &:hover,
-    &:focus {
-      background-color: $color-base-blue-light;
-
-      .social--links--link {
-        &.facebook {
-          @include dataurlicon("facebook", $color-base-blue-medium);
-        }
-
-        &.instagram {
-          @include dataurlicon("instagram", $color-base-blue-medium);
-        }
-
-        &.twitter {
-          @include dataurlicon("twitter", $color-base-blue-medium);
-        }
-
-        &.youtube {
-          @include dataurlicon("youtube", $color-base-blue-medium);
-        }
-      }
-    }
   }
 
   .legal,
@@ -348,10 +270,6 @@
       margin: 0 0 0 calc(18.9% + 64px);
     }
 
-    .social--headline {
-      text-align: left;
-    }
-
     .ilo--button {
       align-self: start;
       justify-self: start;
@@ -378,18 +296,6 @@
   .right-to-left & {
     * {
       text-align: right;
-    }
-
-    .social--links {
-      flex-direction: row-reverse;
-    }
-
-    .social--links--item:first-of-type {
-      margin-right: 0;
-    }
-
-    .social--links--link {
-      text-indent: 999em;
     }
 
     .legal,

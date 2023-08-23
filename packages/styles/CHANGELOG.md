@@ -1,5 +1,135 @@
 # @ilo-org/styles
 
+## 0.8.4
+
+### Patch Changes
+
+- 58bc8ff88: Ensure cards in card group take up full width of card group and always have the same gap
+- 58a708c3a: Ensure Hero can expand to the full width of its container
+
+## 0.8.3
+
+### Patch Changes
+
+- cefc8690e: Correctly apply max-width to card wrappers
+
+## 0.8.2
+
+### Patch Changes
+
+- 270805a67: Avoid card wrappers getting stretched beyond the width of the actual component
+- 9ed7f815a: Cards should have white background by default
+- c81b76d1a: All cards in card group should be the same height.
+- bffee71ef: In Feature Card, push dates and ctas to the bottom of the card
+
+## 0.8.1
+
+### Patch Changes
+
+- 5887810c3: Feature Card, prevent image from distorting
+
+## 0.8.0
+
+### Minor Changes
+
+- 9edcc451f: Add 2-column layout for Data Cards. `columns` setting allows users to choose preferred layout option.
+
+### Patch Changes
+
+- 9edcc451f: Fix spacing in data card to match designs
+
+## 0.7.2
+
+### Patch Changes
+
+- 0cb90a388: Prevent caption from appearing on top of hero card when it's aligned bottom and justified start
+- b0797d2f9: Fixes RTL styles in hero. As for other components, adding the `right-to-left` class to any parent of Hero now correctly renders the RTL styles.
+
+## 0.7.1
+
+### Patch Changes
+
+- 0fd4b60df: - In Card Group, set `theme` and `type` properties for Cards on Card Group, not on invididual cards
+  - Use `cardcount` to determine how many cards should be in a row and how wide they should be.
+
+## 0.7.0
+
+### Minor Changes
+
+- bdeca8720: Refactor the Card Group in line with changes made to the Cards.
+
+  - Width of the cards in the card group are set via a new `size` property that uses the `size` property of the cards in the group.
+  - A new `collapsed` property optionally removes the space between the cards so they are touching.
+  - A new `justify` property allows the user to horizontally align the cards to the beginning or center, or to the left and right edges of the container.
+
+### Patch Changes
+
+- ba46a3a7d: Complete refactor of card styles.
+- bbd9262d1: Fix bug preventing sub-links in multilink card from being clickable
+- ee14cd3d3: changed spaces between cards
+- b56d55cfd: Cards: fix unlinked text changing colors on hover
+- 5022dfc4c: Fix bug where profile in dark themed graphic card had unreadable white text on hover
+- bacc0bba7: Fix hero image corner cut
+- ba46a3a7d: Use clip-path for cornercuts instead of pseudoelements and svgs
+- 652966ab7: Add `fluid` size to cards allowing them to take the full width of their container.
+
+## 0.6.0
+
+### Minor Changes
+
+- c0648530f: Accordion items can now be made scrollable by passing `scroll: true` to the Accordion Panel component.
+- 0dc9a8538: Add LogoGrid component which shows a list of logos with an optional link
+
+## 0.5.0
+
+### Minor Changes
+
+- 0f45a7aae: Add styles for new social media component
+
+### Patch Changes
+
+- 0f45a7aae: Remove unneeded styles from footer which are now in social media component
+- 2f6b0e73f: added background color white to the content tabs
+- Updated dependencies [0f45a7aae]
+- Updated dependencies [0f45a7aae]
+  - @ilo-org/themes@0.2.0
+  - @ilo-org/icons@0.2.1
+
+## 0.4.0
+
+### Minor Changes
+
+- 6a7dbe609: Refactor hero and hero card, expose more options for styling and positioning and remove params that tied layout options to template names
+- b498c19c4: Add support for tiktok and flickr social media links in footer
+
+### Patch Changes
+
+- Updated dependencies [5df0bb1a9]
+- Updated dependencies [51b4be31a]
+  - @ilo-org/icons@0.2.0
+  - @ilo-org/themes@0.1.16
+
+## 0.3.5
+
+### Patch Changes
+
+- 11801070b: Change request for videojs player to be able to work with Youtube videos.
+- 1b942833b: Remove max-width for the video component. Not needed.
+
+## 0.3.4
+
+### Patch Changes
+
+- ee2e53f51: Fix bug where whole nav disappeared when user clicked more button
+
+## 0.3.3
+
+### Patch Changes
+
+- ee859111c: Fix bug where links in language toggle were still clickable even when not showing
+- ee859111c: Correct hero card with
+- ee859111c: Correctly handle visibility of mobile nav sections when they're covered by other parts
+
 ## 0.3.2
 
 ### Patch Changes

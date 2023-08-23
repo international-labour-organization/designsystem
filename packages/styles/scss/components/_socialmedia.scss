@@ -1,0 +1,154 @@
+@use "../tokens" as *;
+@use "../functions" as *;
+@import "../animations";
+@import "../mixins";
+
+.ilo--social-media {
+  $c: &;
+  $default-theme: "light";
+  $icon-size: map-get($spacing, "icons", "icon-height-lg");
+
+  @mixin get-icon($icon, $theme: $default-theme) {
+    @include dataurlicon(
+      $icon,
+      map-get($color, "socialmedia", $theme, "icon", "color")
+    );
+
+    &:hover {
+      @include dataurlicon(
+        $icon,
+        map-get($color, "socialmedia", $theme, "iconhover", "color")
+      );
+    }
+  }
+
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: flex-start;
+
+  &__justify__center {
+    align-items: center;
+  }
+
+  .right-to-left & {
+    .social--links {
+      flex-direction: row-reverse;
+    }
+
+    * {
+      text-align: right;
+    }
+  }
+
+  &--headline {
+    color: map-get($color, "socialmedia", $default-theme, "headline", "color");
+    font-family: $fonts-display;
+    font-weight: map-get($type, "weights", "label");
+    @include font-styles("body-small");
+    @include textmargin("margin-bottom", 28px, "body-small", "display", 0, 0);
+
+    #{$c}__theme__dark & {
+      color: map-get($color, "socialmedia", "dark", "headline", "color");
+    }
+  }
+
+  &--list {
+    display: inline-flex;
+    flex-flow: row wrap;
+    gap: map-get($spacing, "icons", "icon-padding-lg");
+
+    &--item {
+      display: inline-block;
+      overflow: hidden;
+      position: relative;
+
+      &--icon {
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: auto #{$icon-size};
+        text-indent: -999px;
+        border-radius: 2px;
+        display: inline-block;
+        height: px-to-rem($icon-size + 8px);
+        width: px-to-rem($icon-size + 8px);
+        transition: all 0.1s ease-in-out;
+
+        &:hover {
+          background-color: map-get(
+            $color,
+            "socialmedia",
+            $default-theme,
+            "iconhover",
+            "background"
+          );
+        }
+
+        #{$c}__theme__dark &:hover {
+          background-color: map-get(
+            $color,
+            "socialmedia",
+            "dark",
+            "iconhover",
+            "background"
+          );
+        }
+
+        &__facebook {
+          @include get-icon("facebook");
+
+          #{$c}__theme__dark & {
+            @include get-icon("facebook", "dark");
+          }
+        }
+
+        &__twitter {
+          @include get-icon("twitter");
+
+          #{$c}__theme__dark & {
+            @include get-icon("twitter", "dark");
+          }
+        }
+
+        &__instagram {
+          @include get-icon("instagram");
+
+          #{$c}__theme__dark & {
+            @include get-icon("instagram", "dark");
+          }
+        }
+
+        &__youtube {
+          @include get-icon("youtube");
+
+          #{$c}__theme__dark & {
+            @include get-icon("youtube", "dark");
+          }
+        }
+
+        &__linkedin {
+          @include get-icon("linkedin");
+
+          #{$c}__theme__dark & {
+            @include get-icon("linkedin", "dark");
+          }
+        }
+
+        &__flickr {
+          @include get-icon("flickr");
+
+          #{$c}__theme__dark & {
+            @include get-icon("flickr", "dark");
+          }
+        }
+
+        &__tiktok {
+          @include get-icon("tiktok");
+
+          #{$c}__theme__dark & {
+            @include get-icon("tiktok", "dark");
+          }
+        }
+      }
+    }
+  }
+}

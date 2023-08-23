@@ -1,0 +1,156 @@
+@use "../tokens" as *;
+@use "../functions" as *;
+@import "../mixins";
+
+.ilo--hero-card {
+  $c: &;
+  $semi-transparent: 0.6;
+  $padding-lg: $spacing-padding-8;
+  $padding-sm: $spacing-padding-5;
+
+  height: 100%;
+  position: relative;
+  padding: $padding-sm 16px;
+
+  @include breakpoint("large") {
+    padding: $padding-lg;
+  }
+
+  .right-to-left & {
+    direction: rtl;
+  }
+
+  &--title-link {
+    color: inherit;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__theme {
+    &__light {
+      color: map-get($color, "hero", "card", "light", "color");
+      background: map-get($color, "hero", "card", "light", "background");
+
+      @include breakpoint("large") {
+        &.ilo--hero-card__background__semi-transparent {
+          background: rgba(
+            map-get($color, "hero", "card", "light", "background"),
+            $semi-transparent
+          );
+        }
+      }
+    }
+
+    &__dark {
+      background: map-get($color, "hero", "card", "dark", "background");
+      color: map-get($color, "hero", "card", "dark", "color");
+
+      @include breakpoint("large") {
+        &.ilo--hero-card__background__semi-transparent {
+          background: rgba(
+            map-get($color, "hero", "card", "dark", "background"),
+            $semi-transparent
+          );
+        }
+      }
+    }
+
+    @include breakpoint("large") {
+      &__dark.ilo--hero-card__background__transparent,
+      &__light.ilo--hero-card__background__transparent {
+        color: map-get($color, "hero", "card", "dark", "color");
+        background: transparent;
+
+        * {
+          filter: drop-shadow(
+            1px 1px 12px #{map-get($color, "base", "neutrals", "dark")}
+          );
+        }
+      }
+    }
+  }
+
+  &__cornercut {
+    @include cornercut(72px, 40px);
+
+    .right-to-left & {
+      @include cornercut(72px, 40px, "left");
+    }
+
+    @include breakpoint("large") {
+      @include cornercut(116px, 64px);
+
+      .right-to-left & {
+        @include cornercut(116px, 64px, "left");
+      }
+    }
+  }
+
+  &--datecopy {
+    @include font-styles("body-small");
+    margin-bottom: px-to-rem(28px);
+    color: map-get($color, "hero", "card", "light", "datecopy", "color");
+
+    #{$c}__theme__dark & {
+      color: map-get($color, "hero", "card", "dark", "datecopy", "color");
+    }
+
+    #{$c}__theme__light & {
+      color: map-get($color, "hero", "card", "light", "datecopy", "color");
+    }
+
+    .ilo--hero-card__background__transparent &,
+    .ilo--hero-card__background__semi-transparent & {
+      color: map-get($color, "hero", "card", "dark", "eyebrow", "color");
+    }
+  }
+
+  &--eyebrow {
+    @include font-styles("body-small");
+    margin-bottom: px-to-rem(16px);
+    color: map-get($color, "hero", "card", "light", "eyebrow", "color");
+
+    #{$c}__theme__dark & {
+      color: map-get($color, "hero", "card", "dark", "eyebrow", "color");
+    }
+
+    #{$c}__theme__light & {
+      color: map-get($color, "hero", "card", "light", "eyebrow", "color");
+    }
+
+    .ilo--hero-card__background__transparent & {
+      color: map-get($color, "hero", "card", "dark", "eyebrow", "color");
+    }
+  }
+
+  &--intro {
+    @include font-styles("body-small");
+    margin-bottom: px-to-rem(28px);
+
+    @include breakpoint("large") {
+      @include font-styles("base");
+    }
+  }
+
+  &--title {
+    @include font-styles("headline-3");
+    @include textmargin(
+      "margin-bottom",
+      40px,
+      "headline-2",
+      "display",
+      "base",
+      "copy"
+    );
+
+    font-family: $fonts-display;
+    font-weight: 700;
+
+    @include breakpoint("large") {
+      @include font-styles("headline-2");
+    }
+  }
+}

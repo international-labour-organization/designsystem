@@ -121,8 +121,6 @@ export default class Callout {
    */
   handleClick() {
     // callback of sorts
-    console.log("button clicked");
-
     return this;
   }
 

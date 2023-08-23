@@ -3,46 +3,62 @@
 @import "../mixins";
 
 .ilo--cardgroup {
-  $card: ".ilo--card";
+  $c: &;
+  $gap-size: px-to-rem(32px);
+
+  &__collapsed {
+    #{$c}--inner {
+      gap: 0 !important;
+    }
+  }
+
+  &__count {
+    @include breakpoint("large") {
+      &__one {
+        #{$c}--inner {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      &__two {
+        #{$c}--inner {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      &__three {
+        #{$c}--inner {
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+
+      &__four {
+        #{$c}--inner {
+          grid-template-columns: repeat(4, 1fr);
+        }
+      }
+    }
+  }
 
   &--inner {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    column-gap: $gap-size;
+    row-gap: $gap-size;
     margin: auto;
-    row-gap: px-to-rem(32px);
+    width: 100%;
 
     .right-to-left & {
       flex-direction: row-reverse;
     }
-
-    #{$card} {
-      width: 100%;
-    }
   }
 
-  &--two {
-    @include breakpoint("large") {
-      #{$card} {
-        width: calc(50% - 24px);
-      }
-    }
-  }
-
-  &--three {
-    @include breakpoint("large") {
-      #{$card} {
-        width: calc(33.333% - 24px);
-      }
-    }
-  }
-
-  &--four {
-    @include breakpoint("large") {
-      #{$card} {
-        width: calc(25% - 24px);
-      }
-    }
+  .ilo--card,
+  .ilo--card--wrapper {
+    height: 100%;
+    width: 100%;
+    max-width: 100%;
   }
 
   &--button-wrap {

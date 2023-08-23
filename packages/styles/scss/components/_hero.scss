@@ -2,577 +2,342 @@
 @use "../functions" as *;
 @import "../mixins";
 
-.ilo--hero {
-  background: map-get($color, "ux", "pagination", "default", "background");
-  display: block;
-  position: relative;
+// @TODO: The grid layout is fairly clean until you get to the placement of the caption which breaks out of it
+// and uses a lot of absolute positioning. This should be cleaned up to use the grid layout more effectively.
+
+.hero {
+  $c: &;
+
+  // SASS vars are all constants
+  $tooltip-width: 30px;
+  $tooltip-height: 27px;
+  $image-max-height: 216px;
+  $corner-cut-sm: 39px;
+  $corner-cut-lg: 64px;
+
+  // CSS vars can be changed
+  --corner-cut-height: #{$corner-cut-sm};
+
   width: 100%;
-
-  &--home {
-    .ilo--image {
-      &::before {
-        background: linear-gradient(
-            360deg,
-            rgba($brand-ilo-black, 0.3) 0%,
-            rgba($brand-ilo-black, 0) 24.88%
-          ),
-          transparent;
-        content: "";
-        height: 100%;
-        left: 0;
-        position: absolute;
-        top: 0;
-        width: 100%;
-        z-index: 2;
-      }
-    }
-
-    @include breakpoint("large") {
-      position: relative;
-    }
-  }
-
-  &--portal {
-    position: relative;
-
-    @include breakpoint("large") {
-      margin-bottom: 80px;
-      padding-top: 170px;
-
-      .ilo--image {
-        height: calc(100% - 80px);
-        left: 0;
-        position: absolute;
-        top: 0;
-        width: 100%;
-      }
-
-      .ilo--image--wrapper {
-        height: 100%;
-      }
-
-      .ilo--image--img {
-        display: flex;
-        height: 100%;
-        object-fit: cover;
-        width: 100%;
-
-        img {
-          object-fit: cover;
-          height: auto;
-          width: 100%;
-        }
-      }
-
-      .ilo--hero-card {
-        top: 80px;
-      }
-    }
-  }
-
-  &--article {
-    background: map-get($color, "hero", "article");
-    padding: 88px 0 0 0;
-
-    @include breakpoint("large") {
-      margin-bottom: 80px;
-      padding: 112px 0 0 0;
-
-      .ilo--hero-card {
-        top: 80px;
-      }
-    }
-
-    &.ilo--hero--image {
-      background-color: map-get($color, "hero", "image");
-      padding: 0;
-
-      @include breakpoint("large") {
-        .ilo--hero-card {
-          top: 0;
-        }
-      }
-    }
-
-    .ilo--hero-card {
-      &--center {
-        margin: auto;
-      }
-    }
-  }
-
-  &--project {
-    background: map-get($color, "hero", "project");
-    padding: 88px 0 0 0;
-
-    @include breakpoint("large") {
-      margin-bottom: 80px;
-      padding: 112px 0 0 0;
-
-      .ilo--hero-card {
-        top: 80px;
-      }
-    }
-
-    &.ilo--hero--image {
-      background-color: map-get($color, "hero", "image");
-      padding: 0;
-
-      @include breakpoint("large") {
-        .ilo--hero-card {
-          top: 0;
-        }
-      }
-    }
-
-    .ilo--hero-card {
-      &--center {
-        margin: auto;
-      }
-    }
-  }
-
-  &--image {
-    background-color: map-get($color, "hero", "image");
-
-    @include breakpoint("large") {
-      .ilo--image {
-        height: 100%;
-        max-height: 592px;
-        overflow: hidden;
-        width: 100%;
-      }
-
-      .ilo--image--wrapper {
-        height: 100%;
-      }
-
-      .ilo--image--img {
-        display: flex;
-        height: 100%;
-        object-fit: cover;
-        width: 100%;
-
-        img {
-          object-fit: cover;
-          height: auto;
-          width: 100%;
-        }
-      }
-    }
-  }
-
-  .ilo--breadcrumb {
-    width: 100%;
-
-    .right-to-left & {
-      left: auto;
-      right: 0;
-    }
-
-    @include breakpoint("medium") {
-      left: 0;
-      max-width: 560px;
-      position: absolute;
-      top: 0;
-    }
-  }
-}
-
-.ilo--hero-card {
-  @include cornercut(
-    map-get($color, "hero", "card", "light", "background"),
-    40px
-  );
-  background: map-get($color, "hero", "card", "light", "background");
-  color: map-get($color, "hero", "card", "light", "color");
-  max-width: 998px;
+  display: grid;
   position: relative;
-  padding: 16px 16px 40px 16px;
+  grid-template-rows:
+    minmax($image-max-height, 1fr)
+    $tooltip-height
+    $corner-cut-sm
+    auto;
+  grid-template-columns: 1fr;
 
-  &::before {
-    left: 0;
-    top: -39.7px;
+  &--breadcrumbs {
+    display: none;
+  }
 
-    .right-to-left & {
-      left: auto;
-      right: 0;
-    }
+  &--figure {
+    background-color: map-get($color, "base", "blue", "light");
+    position: relative;
+    grid-area: 1 / 1 / 4 / 2;
 
-    @include breakpoint("large") {
-      top: -63.7px;
+    img {
+      position: absolute;
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
     }
   }
 
-  &::after {
-    right: 0;
-    top: -39.7px;
+  &--card {
+    grid-area: 3 / 1 / 5 / 2;
+  }
 
-    .right-to-left & {
-      left: 0;
-      right: auto;
-    }
+  &--caption {
+    grid-area: 2 / 1 / 3 / 2;
 
-    @include breakpoint("large") {
-      top: -63.7px;
+    &--wrapper {
+      @include caption-icon-wrapper("right", $tooltip-width, $tooltip-height);
     }
   }
 
   @include breakpoint("large") {
-    @include cornercut(
-      map-get($color, "hero", "card", "light", "background"),
-      64px,
-      116px
-    );
-    padding: 0 70px 70px 56px;
+    --card-width: minmax(200px, 625px);
+    --corner-cut-height: #{$corner-cut-lg};
+    --breadcrumbs-height: 48px;
+    --card-offset: 109px;
+    --image-gap: 240px;
 
-    &.ilo--hero-card--graphic {
-      padding: 0 70px 44px 56px;
+    // Defaults to baseline
+    --row-1-lg: var(--breadcrumbs-height);
+    --row-2-lg: calc(var(--image-gap) - var(--breadcrumbs-height));
+    --row-3-lg: auto;
+    --row-4-lg: #{$tooltip-height};
+    --row-5-lg: 72px;
+
+    --col-1-lg: 0;
+    --col-2-lg: var(--card-width);
+    --col-3-lg: #{$tooltip-width};
+    --col-4-lg: 1fr;
+
+    grid-template-rows:
+      var(--row-1-lg)
+      var(--row-2-lg)
+      var(--row-3-lg)
+      var(--row-4-lg)
+      var(--row-5-lg);
+
+    grid-template-columns:
+      var(--col-1-lg)
+      var(--col-2-lg)
+      var(--col-3-lg)
+      var(--col-4-lg);
+
+    &__poster-size {
+      &__small {
+        --image-gap: 112px;
+      }
+
+      &__medium {
+        --image-gap: 176px;
+      }
+
+      &__large {
+        --image-gap: 240px;
+      }
+
+      &__xlarge {
+        --image-gap: 527px;
+      }
+    }
+
+    &__card-size {
+      &__small {
+        --card-width: minmax(200px, 625px);
+      }
+
+      &__medium {
+        --card-width: minmax(200px, 721px);
+      }
+
+      &__large {
+        --card-width: minmax(200px, 856px);
+      }
+
+      &__xlarge {
+        --card-width: minmax(200px, 920px);
+      }
+
+      &__xxlarge {
+        --card-width: minmax(200px, 998px);
+      }
+    }
+
+    &__card-justify {
+      &__start {
+        --col-1-lg: 0;
+      }
+
+      &__offset {
+        --col-1-lg: var(--card-offset);
+      }
+
+      &__center {
+        --col-1-lg: 1fr;
+        --col-4-lg: 1fr;
+      }
+    }
+
+    &__card-align {
+      &__center {
+        --row-4-lg: calc(72px - #{$tooltip-height});
+        --row-5-lg: #{$tooltip-height};
+      }
+
+      &__bottom {
+        --row-3-lg: 0;
+        --row-4-lg: var(--corner-cut-height);
+        --row-5-lg: auto;
+      }
+    }
+
+    &--breadcrumbs {
+      grid-area: 1 / 1 / 2 / 5;
+      z-index: 1;
+      display: flex;
+      flex-flow: row nowrap;
+
+      &--wrapper {
+        max-width: 500px;
+      }
+    }
+
+    &--figure {
+      grid-area: 1 / 1 / 5 / 5;
+
+      #{$c}__card-align__center & {
+        grid-area: 1 / 1 / 6 / 5;
+      }
+
+      #{$c}__card-align__bottom & {
+        grid-area: 1 / 1 / 5 / 5;
+      }
+    }
+
+    &--card {
+      grid-area: 3 / 2 / 6 / 3;
+
+      #{$c}__card-align__center & {
+        grid-area: 3 / 2 / 4 / 3;
+      }
+
+      #{$c}__card-align__bottom & {
+        grid-area: 4 / 2 / 6 / 3;
+      }
+    }
+
+    &--caption {
+      grid-area: 4 / 3 / 5 / 4;
+      position: relative;
+
+      #{$c}__card-align__center & {
+        grid-area: 5 / 1 / 6 / 3;
+      }
+
+      #{$c}__card-align__bottom & {
+        grid-area: 4 / 1 / 5 / 2;
+      }
+
+      #{$c}__card-align__center &,
+      #{$c}__card-align__bottom & {
+        &--wrapper {
+          position: absolute;
+          left: 0;
+          bottom: 0;
+        }
+      }
+
+      #{$c}__card-align__bottom#{$c}__card-justify__start & {
+        grid-area: 1 / 1 / 3 / 3;
+
+        #{$c}--caption--wrapper {
+          @include caption-icon-wrapper(
+            "right",
+            $tooltip-width,
+            $tooltip-height
+          );
+
+          position: absolute;
+          left: 0;
+          right: initial;
+          bottom: 0;
+        }
+      }
+
+      &--wrapper {
+        left: 2px;
+      }
     }
   }
 
+  // Layout for RTL languages
   .right-to-left & {
-    direction: rtl;
-  }
-
-  &--center {
-    margin: auto;
-  }
-
-  &--dark {
-    background: map-get($color, "hero", "card", "dark", "background");
-    border-bottom: 3px solid $color-base-red-medium;
-    color: map-get($color, "hero", "card", "dark", "color");
-
-    &::after {
-      @include dataurlicon("triangledecoration", $brand-ilo-dark-blue);
-    }
-
-    .ilo--hero-card--link.icon {
-      color: map-get($color, "hero", "card", "dark", "icon", "color");
-
-      &:hover {
-        background-color: map-get(
-          $color,
-          "hero",
-          "card",
-          "dark",
-          "iconhover",
-          "background"
-        );
-      }
-
-      &--facebook {
-        @include dataurlicon(
-          "facebook",
-          map-get($color, "hero", "card", "dark", "icon", "color")
-        );
-
-        &:hover {
-          @include dataurlicon(
-            "facebook",
-            map-get($color, "hero", "card", "dark", "iconhover", "color")
-          );
-        }
-      }
-
-      &--twitter {
-        @include dataurlicon(
-          "twitter",
-          map-get($color, "hero", "card", "dark", "icon", "color")
-        );
-
-        &:hover {
-          @include dataurlicon(
-            "twitter",
-            map-get($color, "hero", "card", "dark", "iconhover", "color")
-          );
-        }
-      }
-
-      &--linkedin {
-        @include dataurlicon(
-          "linkedin",
-          map-get($color, "hero", "card", "dark", "icon", "color")
-        );
-
-        &:hover {
-          @include dataurlicon(
-            "linkedin",
-            map-get($color, "hero", "card", "dark", "iconhover", "color")
-          );
-        }
-      }
-    }
-
-    .ilo--hero-card--eyebrow {
-      color: map-get($color, "hero", "card", "dark", "eyebrow", "color");
-    }
-
-    .ilo--hero-card--datecopy {
-      color: map-get($color, "hero", "card", "dark", "datecopy", "color");
-    }
-  }
-
-  &--graphic {
-    max-width: 856px;
-  }
-
-  &--home {
-    border: none;
-    padding: 24px;
-
-    &::before {
-      display: none;
-    }
-
-    &.ilo--hero-card--nobackground {
-      background: transparent;
-
-      > * {
-        filter: drop-shadow(0px 12px 32px rgba(0, 0, 0, 0.16))
-          drop-shadow(0px 0.8px 1.6px rgba(0, 0, 0, 0.02))
-          drop-shadow(0px 2.7px 4.8px rgba(0, 0, 0, 0.04))
-          drop-shadow(0px 8px 16px rgba(0, 0, 0, 0.08));
-      }
-
-      &::before,
-      &::after {
-        content: "";
+    &--caption {
+      &--wrapper {
+        @include caption-icon-wrapper("left", $tooltip-width, $tooltip-height);
+        position: absolute;
+        right: 0;
       }
     }
 
     @include breakpoint("large") {
-      @include cornercut($brand-ilo-white, 48px, 87.4px);
-      bottom: 72px;
-      max-width: 720px;
-      padding: 0 48px 48px 72px;
-      position: absolute;
-      width: 100%;
+      &__card-justify {
+        &__start {
+          --col-1-lg: 1fr;
+          --col-2-lg: #{$tooltip-width};
+          --col-3-lg: var(--card-width);
+          --col-4-lg: 0;
+        }
 
-      &::before {
-        left: 0;
-        top: -48px;
+        &__offset {
+          --col-1-lg: 1fr;
+          --col-2-lg: #{$tooltip-width};
+          --col-3-lg: var(--card-width);
+          --col-4-lg: var(--card-offset);
+        }
 
-        .right-to-left & {
-          left: auto;
-          right: 0;
+        &__center {
+          --col-1-lg: 1fr;
+          --col-2-lg: #{$tooltip-width};
+          --col-3-lg: var(--card-width);
+          --col-4-lg: 1fr;
         }
       }
 
-      &::after {
-        right: 0;
-        top: -48px;
+      &__card-align {
+        &__center {
+          #{$c}--card {
+            grid-area: 3 / 3 / 4 / 4;
+          }
 
-        .right-to-left & {
-          left: 0;
-          right: auto;
+          #{$c}--caption {
+            grid-area: 5 / 4 / 6 / 5;
+
+            &--wrapper {
+              right: 0;
+              left: initial;
+              position: absolute;
+            }
+          }
         }
-      }
 
-      &.ilo--hero-card--center {
-        left: 50%;
-        right: auto;
-        transform: translateX(-50%);
-      }
+        &__bottom {
+          #{$c}--caption {
+            grid-area: 4 / 4 / 5 / 5;
 
-      &.ilo--hero-card--left {
-        left: 0;
-        right: auto;
-      }
-
-      &.ilo--hero-card--right {
-        left: auto;
-        right: 0;
-      }
-
-      &.ilo--hero-card--nobackground {
-        background: transparent;
-
-        &::before,
-        &::after {
-          content: "";
+            &--wrapper {
+              position: absolute;
+              right: 0;
+              bottom: 0;
+              left: initial;
+            }
+          }
         }
-      }
-    }
 
-    &.ilo--hero-card--dark {
-      @include breakpoint("large") {
-        background: rgba(
-          map-get($color, "hero", "card", "dark", "background"),
-          0.55
-        );
+        &__bottom#{$c}__card-justify__start {
+          #{$c}--caption {
+            grid-area: 2 / 3 / 3 / 4;
 
-        &.ilo--hero-card--nobackground {
-          background: transparent;
+            &--wrapper {
+              @include caption-icon-wrapper(
+                "left",
+                $tooltip-width,
+                $tooltip-height
+              );
 
-          &::before,
-          &::after {
-            content: "";
+              position: absolute;
+              left: initial;
+              right: 0;
+            }
           }
         }
       }
 
-      &::after {
-        @include dataurlicon(
-          "triangledecoration",
-          rgba($brand-ilo-dark-blue, 0.55)
-        );
-      }
-    }
-  }
-
-  &--portal {
-    background: map-get($color, "hero", "portal", "background");
-    color: map-get($color, "hero", "portal", "color");
-    padding: 24px;
-
-    @include breakpoint("large") {
-      max-width: 625px;
-      padding: 0 48px 42px 72px;
-      width: 100%;
-    }
-  }
-
-  &--publication {
-    padding: 24px;
-
-    .ilo--hero-card--eyebrow {
-      margin-bottom: px-to-rem(6px);
-    }
-
-    @include breakpoint("large") {
-      margin-left: 106px;
-      margin-top: -64px;
-      max-width: 720px;
-      padding: 0 48px 48px 48px;
-      width: 100%;
-    }
-  }
-
-  &--datecopy {
-    @include font-styles("body-small");
-    margin-bottom: px-to-rem(28px);
-
-    color: map-get($color, "hero", "card", "light", "datecopy", "color");
-  }
-
-  &--eyebrow {
-    @include font-styles("body-small");
-    margin-bottom: px-to-rem(16px);
-
-    color: map-get($color, "hero", "card", "light", "eyebrow", "color");
-  }
-
-  &--intro {
-    @include font-styles("body-small");
-    margin-bottom: px-to-rem(28px);
-
-    @include breakpoint("large") {
-      @include font-styles("base");
-    }
-  }
-
-  &--title {
-    @include font-styles("headline-3");
-    @include textmargin(
-      "margin-bottom",
-      40px,
-      "headline-2",
-      "display",
-      "base",
-      "copy"
-    );
-
-    font-family: $fonts-display;
-    font-weight: 700;
-
-    @include breakpoint("large") {
-      @include font-styles("headline-2");
-    }
-  }
-
-  &--list {
-    display: flex;
-  }
-
-  &--list--item {
-    display: inline-block;
-    margin-right: 24px;
-
-    &:last-of-type {
-      margin-right: 0;
-    }
-  }
-
-  &--link {
-    color: map-get($color, "hero", "card", "light", "link", "color");
-    display: inline-block;
-    overflow: hidden;
-    padding: 0 5px;
-    text-indent: -999px;
-    width: 100%;
-
-    &.icon {
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: auto 16px;
-      border-radius: 2px;
-      display: inline-block;
-      color: map-get($color, "hero", "card", "light", "icon", "color");
-      height: 24px;
-      width: px-to-rem(24px);
-
-      &:hover {
-        background-color: map-get(
-          $color,
-          "hero",
-          "card",
-          "light",
-          "iconhover",
-          "background"
-        );
-        transition: all 0.1s ease-in-out;
+      &--card {
+        grid-area: 3 / 3 / 6 / 4;
       }
 
-      &--facebook {
-        @include dataurlicon(
-          "facebook",
-          map-get($color, "hero", "card", "light", "icon", "color")
-        );
-
-        &:hover {
-          @include dataurlicon(
-            "facebook",
-            map-get($color, "hero", "card", "light", "iconhover", "color")
-          );
-        }
+      &--breadcrumbs {
+        flex-direction: row-reverse;
       }
 
-      &--twitter {
-        @include dataurlicon(
-          "twitter",
-          map-get($color, "hero", "card", "light", "icon", "color")
-        );
+      &--caption {
+        grid-area: 4 / 2 / 5 / 3;
 
-        &:hover {
-          @include dataurlicon(
-            "twitter",
-            map-get($color, "hero", "card", "light", "iconhover", "color")
-          );
-        }
-      }
+        &--wrapper {
+          right: 2px;
+          left: initial;
 
-      &--linkedin {
-        @include dataurlicon(
-          "linkedin",
-          map-get($color, "hero", "card", "light", "icon", "color")
-        );
-
-        &:hover {
-          @include dataurlicon(
-            "linkedin",
-            map-get($color, "hero", "card", "light", "iconhover", "color")
+          @include caption-icon-wrapper(
+            "left",
+            $tooltip-width,
+            $tooltip-height
           );
         }
       }

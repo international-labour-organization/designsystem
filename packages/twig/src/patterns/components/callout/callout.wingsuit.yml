@@ -3,12 +3,17 @@ callout:
   label: Callout
   description: A callout alert section with a few different types
   fields:
-    buttonLabel:
-      type: string
+    button:
+      type: object
       label: Button Label
-      description: The label for the optional button
-      preview: "Optional Button Label"
+      description: Fields to pass to the button if there is one
       required: false
+      preview:
+        label: "Button"
+        url: "https://www.ilo.org"
+        target: "_blank"
+        icon: false
+        className: "optionalclass"
     content:
       type: text
       label: Content

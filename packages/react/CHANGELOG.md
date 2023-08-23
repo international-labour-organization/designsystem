@@ -1,5 +1,144 @@
 # @ilo-org/react
 
+## 0.7.8
+
+### Patch Changes
+
+- Updated dependencies [58bc8ff88]
+- Updated dependencies [58a708c3a]
+  - @ilo-org/styles@0.8.4
+
+## 0.7.7
+
+### Patch Changes
+
+- Updated dependencies [cefc8690e]
+  - @ilo-org/styles@0.8.3
+
+## 0.7.6
+
+### Patch Changes
+
+- Updated dependencies [270805a67]
+- Updated dependencies [9ed7f815a]
+- Updated dependencies [c81b76d1a]
+- Updated dependencies [bffee71ef]
+  - @ilo-org/styles@0.8.2
+
+## 0.7.5
+
+### Patch Changes
+
+- Updated dependencies [5887810c3]
+  - @ilo-org/styles@0.8.1
+
+## 0.7.4
+
+### Patch Changes
+
+- Updated dependencies [9edcc451f]
+- Updated dependencies [9edcc451f]
+  - @ilo-org/styles@0.8.0
+
+## 0.7.3
+
+### Patch Changes
+
+- Updated dependencies [0cb90a388]
+- Updated dependencies [b0797d2f9]
+  - @ilo-org/styles@0.7.2
+
+## 0.7.2
+
+### Patch Changes
+
+- Updated dependencies [0fd4b60df]
+  - @ilo-org/styles@0.7.1
+
+## 0.7.1
+
+### Patch Changes
+
+- Updated dependencies [ba46a3a7d]
+- Updated dependencies [bdeca8720]
+- Updated dependencies [bbd9262d1]
+- Updated dependencies [ee14cd3d3]
+- Updated dependencies [b56d55cfd]
+- Updated dependencies [5022dfc4c]
+- Updated dependencies [bacc0bba7]
+- Updated dependencies [ba46a3a7d]
+- Updated dependencies [652966ab7]
+  - @ilo-org/styles@0.7.0
+
+## 0.7.0
+
+### Minor Changes
+
+- c0648530f: Accordion items can now be made scrollable by passing `scroll: true` to the Accordion Panel component.
+- 0dc9a8538: Add LogoGrid component which shows a list of logos with an optional link
+
+### Patch Changes
+
+- 77517f4dc: Refactor Hero and HeroCard to sync with new implemenation in Twig and Styles packages
+- Updated dependencies [c0648530f]
+- Updated dependencies [0dc9a8538]
+  - @ilo-org/styles@0.6.0
+
+## 0.6.0
+
+### Minor Changes
+
+- 0f45a7aae: Add Social Media component and use in Footer
+
+### Patch Changes
+
+- Updated dependencies [0f45a7aae]
+- Updated dependencies [0f45a7aae]
+- Updated dependencies [0f45a7aae]
+- Updated dependencies [2f6b0e73f]
+  - @ilo-org/themes@0.2.0
+  - @ilo-org/styles@0.5.0
+  - @ilo-org/icons-react@0.0.21
+
+## 0.5.1
+
+### Patch Changes
+
+- Updated dependencies [51b4be31a]
+- Updated dependencies [6a7dbe609]
+- Updated dependencies [b498c19c4]
+  - @ilo-org/themes@0.1.16
+  - @ilo-org/styles@0.4.0
+  - @ilo-org/icons-react@0.0.20
+
+## 0.5.0
+
+### Minor Changes
+
+- 25c3bca99: feat(react): add breadcrumb as a new component
+
+### Patch Changes
+
+- Updated dependencies [11801070b]
+- Updated dependencies [1b942833b]
+  - @ilo-org/styles@0.3.5
+
+## 0.4.6
+
+### Patch Changes
+
+- Updated dependencies [ee2e53f51]
+  - @ilo-org/styles@0.3.4
+
+## 0.4.5
+
+### Patch Changes
+
+- Updated dependencies [ee859111c]
+- Updated dependencies [ee859111c]
+- Updated dependencies [ee859111c]
+  - @ilo-org/styles@0.3.3
+
 ## 0.4.4
 
 ### Patch Changes

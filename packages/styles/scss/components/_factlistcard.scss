@@ -1,0 +1,110 @@
+@use "../tokens" as *;
+@use "../functions" as *;
+@use "../animations" as *;
+@import "../mixins";
+
+.ilo--card {
+  $self: &;
+
+  &__type {
+    &__factlist {
+      --max-width: #{px-to-rem(375px)};
+
+      border-bottom: px-to-rem(3px) solid $brand-ilo-grey-ui;
+      padding: px-to-rem(24px) px-to-rem(48px);
+
+      @include cornercut(72px, 40px);
+
+      @include breakpoint("large") {
+        padding: px-to-rem(40px) px-to-rem(56px);
+      }
+
+      &#{$self}__size {
+        &__wide {
+          --max-width: #{px-to-rem(856px)};
+
+          padding: px-to-rem(40px) px-to-rem(52px);
+
+          @include breakpoint("medium") {
+            padding: px-to-rem(40px) px-to-rem(60px);
+            @include cornercut(87px, 48px);
+          }
+        }
+
+        // &__standard {
+        //   padding: px-to-rem(40px) px-to-rem(52px);
+
+        //   @include breakpoint("medium") {
+        //     padding: px-to-rem(40px) px-to-rem(60px);
+        //   }
+        // }
+
+        &__narrow {
+          --max-width: #{px-to-rem(375px)};
+
+          padding: px-to-rem(24px) px-to-rem(48px);
+          @include cornercut(72px, 40px);
+
+          @include breakpoint("medium") {
+            padding: px-to-rem(24px) px-to-rem(48px);
+          }
+        }
+      }
+
+      &#{$self}__theme {
+        &__dark {
+          border-bottom: px-to-rem(3px) solid $color-base-red-medium;
+
+          #{$self}--title {
+            color: $brand-ilo-white;
+          }
+
+          .ilo--list__item {
+            color: $brand-ilo-white;
+
+            &:last-of-type {
+              margin-bottom: 0;
+            }
+          }
+
+          &:hover,
+          &:focus,
+          &:focus-within {
+            #{$self}--title {
+              color: $brand-ilo-white;
+            }
+
+            .ilo--list__item {
+              color: $brand-ilo-white;
+            }
+          }
+        }
+      }
+
+      #{$self}--title {
+        color: $brand-ilo-grey-charcoal;
+        @include font-styles("headline-5");
+        @include textmargin(
+          "margin-bottom",
+          32px,
+          "headline-5",
+          "display",
+          "body-small",
+          "copy"
+        );
+
+        @include breakpoint("large") {
+          @include font-styles("headline-4");
+          @include textmargin(
+            "margin-bottom",
+            40px,
+            "headline-4",
+            "display",
+            "base",
+            "copy"
+          );
+        }
+      }
+    }
+  }
+}

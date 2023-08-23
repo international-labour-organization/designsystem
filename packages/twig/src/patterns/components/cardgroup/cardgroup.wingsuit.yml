@@ -1,13 +1,145 @@
 cardgroup:
   use: "@components/cardgroup/cardgroup.twig"
   label: Card Group
-  description: The Card group
+  description: A group of cards
+  visibility: storybook
+  settings:
+    collapsed:
+      type: select
+      label: collapsed
+      description: Optionally collapses margins between the cards.
+      required: false
+      preview: false
+      options:
+        true: True
+        false: False
+    cardcount:
+      type: select
+      label: collapsed
+      description: Number of cards to show in a row, also determines the width of the cards as a function of how many there need to be. This will override the width set in the `size` setting.
+      required: false
+      preview: "three"
+      options:
+        one: one
+        two: two
+        three: three
+        four: four
+    size:
+      type: select
+      label: Size
+      description: Sets the layout of the cards in the group. See the `Card` component for more info on this setting, which has different effects on the different types of cards.
+      required: false
+      preview: "standard"
+      options:
+        standard: standard
+        narrow: narrow
+        wide: wide
+        fluid: fluid
+    theme:
+      type: select
+      label: Theme
+      description: Sets all of the cards to appear as either light or dark. Used by all card groups except for `Multilink Card`, `Data Card` and `Stat Card`.
+      required: false
+      preview: "dark"
+      options:
+        dark: Dark
+        light: Light
+    type:
+      type: select
+      label: Type
+      description: Sets the type of cards to render in the Card Group
+      preview: "feature"
+      options:
+        feature: Feature
+        text: Text
+        detail: Detail
+        promo: Promo
+        multilink: Multilink
+        data: Data
+        stat: Stat
+        factlist: Factlist
   fields:
     group:
       type: object
       label: Group of cards
-      description: The group of cards, object
+      description: "The group of cards. Each card can be one of the following types: multilink, feature, detail, graphicpromo, stat, graphic, factlist, data."
       preview:
+        - eyebrow: "Press release"
+          title: "ILO welcomes first global agreement on working conditions and rights of professional football players"
+          link: "https://www.ilo.org/"
+          cta:
+            label: "Read the press release"
+            url: "https://www.ilo.org/global/about-the-ilo/newsroom/news/WCMS_846303/lang--en/index.htm"
+          theme: dark
+          image:
+            alt: "Image alt text"
+            loading: "lazy"
+            url:
+              - breakpoint: "(min-width: 0px)"
+                src: "/images/small.jpg"
+              - breakpoint: "(min-width: 800px)"
+                src: "/images/medium.jpg"
+              - breakpoint: "(min-width: 1200px)"
+                src: "/images/large.jpg"
+              - breakpoint: "(min-width: 1440px)"
+                src: "/images/large.jpg"
+        - eyebrow: "Report"
+          title: "Renewable energy jobs hit 12.7 million globally"
+          link: "https://www.ilo.org/"
+          cta:
+            label: "Read the press release"
+            url: "https://www.ilo.org/global/about-the-ilo/newsroom/news/WCMS_846303/lang--en/index.htm"
+          theme: dark
+          image:
+            alt: "Image alt text"
+            loading: "lazy"
+            url:
+              - breakpoint: "(min-width: 0px)"
+                src: "/images/small.jpg"
+              - breakpoint: "(min-width: 800px)"
+                src: "/images/medium.jpg"
+              - breakpoint: "(min-width: 1200px)"
+                src: "/images/large.jpg"
+              - breakpoint: "(min-width: 1440px)"
+                src: "/images/large.jpg"
+        - eyebrow: "Podcast"
+          title: "Telangana and Andhra Pradesh launch pre-departure handbook for Indians going to the European Union"
+          link: "https://www.ilo.org/"
+          cta:
+            label: "Read the press release"
+            url: "https://www.ilo.org/global/about-the-ilo/newsroom/news/WCMS_846303/lang--en/index.htm"
+          theme: dark
+          image:
+            alt: "Image alt text"
+            loading: "lazy"
+            url:
+              - breakpoint: "(min-width: 0px)"
+                src: "/images/small.jpg"
+              - breakpoint: "(min-width: 800px)"
+                src: "/images/medium.jpg"
+              - breakpoint: "(min-width: 1200px)"
+                src: "/images/large.jpg"
+              - breakpoint: "(min-width: 1440px)"
+                src: "/images/large.jpg"
+        - eyebrow: "Podcast"
+          title: "Can digital technology be an equality machine?"
+          link: "https://www.ilo.org/"
+          cta:
+            label: "Read the press release"
+            url: "https://www.ilo.org/global/about-the-ilo/newsroom/news/WCMS_846303/lang--en/index.htm"
+          theme: dark
+          image:
+            alt: "Image alt text"
+            loading: "lazy"
+            url:
+              - breakpoint: "(min-width: 0px)"
+                src: "/images/small.jpg"
+              - breakpoint: "(min-width: 800px)"
+                src: "/images/medium.jpg"
+              - breakpoint: "(min-width: 1200px)"
+                src: "/images/large.jpg"
+              - breakpoint: "(min-width: 1440px)"
+                src: "/images/large.jpg"
     cta:
       type: object
       label: CTA
@@ -15,430 +147,7 @@ cardgroup:
       preview:
         label: "Discover our unique mission"
         url: "https://www.ilo.org"
-  variants:
-    multilink:
-      label: Multilink
-      description: multilink settings
-      fields:
-        group:
-          - title: "Multi-link card - first"
-            image: "/images/hero.jpg"
-            intro: "Lorem ipsum dolor sit amet consectetur adipiscing elit. Lobortis egestas ipsum dolor sit amet consectetur adipiscing elit. Lobortis egestas ipsum dolor sit amet consectetur adipiscing elit. Lobortis egestas lacus."
-            eyebrow: ""
-            date: ""
-            link: ""
-            profile: ""
-            eventdetails: ""
-            cta: ""
-            source: ""
-            dataset: ""
-            linklist:
-              headline: ""
-              linkgroup:
-                - headline: ""
-                  links:
-                    - label: Link One
-                      url: "http://www.google.com"
-                    - label: Link Two
-                      url: "http://www.google.com"
-                    - label: Link Three
-                      url: "http://www.google.com"
-          - title: "Multi-link card second - right aligned image, wide option"
-            image: "/images/medium.jpg"
-            intro: "Lorem ipsum dolor sit amet consectetur adipiscing elit. Lobortis egestas ipsum dolor sit amet consectetur adipiscing elit. Lobortis egestas ipsum dolor sit amet consectetur adipiscing elit. Lobortis egestas lacus."
-            eyebrow: ""
-            date: ""
-            link: ""
-            profile: ""
-            eventdetails: ""
-            cta: ""
-            source: ""
-            linklist:
-              headline: ""
-              linkgroup:
-                - headline: ""
-                  links:
-                    - label: Link One
-                      url: "http://www.google.com"
-                    - label: Link Two
-                      url: "http://www.google.com"
-                    - label: Link Three
-                      url: "http://www.google.com"
-          - title: "Multi-link card - right aligned image, wide option"
-            image: "/images/ilo-headquarters.jpg"
-            intro: "Lorem ipsum dolor sit amet consectetur adipiscing elit. Lobortis egestas ipsum dolor sit amet consectetur adipiscing elit. Lobortis egestas ipsum dolor sit amet consectetur adipiscing elit. Lobortis egestas lacus."
-            eyebrow: ""
-            date: ""
-            link: ""
-            profile: ""
-            eventdetails: ""
-            cta: ""
-            source: ""
-            linklist:
-              headline: ""
-              linkgroup:
-                - headline: ""
-                  links:
-                    - label: Link One
-                      url: "http://www.google.com"
-                    - label: Link Two
-                      url: "http://www.google.com"
-                    - label: Link Three
-                      url: "http://www.google.com"
-      settings:
-        type: multilink
-    feature:
-      label: Feature
-      description: feature settings
-      fields:
-        group:
-          - title: "Vertical info card descriptive headline text"
-            image: "/images/small.jpg"
-            intro: ""
-            eyebrow: "Eyebrow title"
-            date:
-              human: "Date"
-              unix: 1670389200
-            link: "https://www.ilo.org?q=feature"
-            profile: ""
-            eventdetails: ""
-            cta: ""
-            source: ""
-            list: ""
-            dataset: ""
-            color: ""
-          - title: "Vertical info card descriptive headline text"
-            image: "/images/hero.jpg"
-            intro: ""
-            eyebrow: "Eyebrow title"
-            date:
-              human: "Date"
-              unix: 1670389200
-            link: "https://www.ilo.org?q=feature"
-            profile: ""
-            eventdetails: ""
-            cta: ""
-            source: ""
-            list: ""
-            dataset: ""
-            color: ""
-          - title: "Vertical info card descriptive headline text Vertical info card descriptive headline text Vertical info card descriptive headline text"
-            image: "images/ilo-headquarters.jpg"
-            intro: ""
-            eyebrow: "Eyebrow title"
-            date:
-              human: "Date"
-              unix: 1670389200
-            link: "https://www.ilo.org?q=feature"
-            profile: ""
-            eventdetails: ""
-            cta: ""
-            source: ""
-            list: ""
-            dataset: ""
-            color: ""
-          - title: "Vertical info card descriptive headline text"
-            image: "/images/youtube-video-poster.avif"
-            intro: ""
-            eyebrow: "Eyebrow title"
-            date:
-              human: "Date"
-              unix: 1670389200
-            link: "https://www.ilo.org?q=feature"
-            profile: ""
-            eventdetails: ""
-            cta: ""
-            source: ""
-            list: ""
-            dataset: ""
-            color: ""
-      settings:
-        type: feature
-    detail:
-      label: Detail
-      description: detail settings
-      fields:
-        group:
-          - title: "Horizontal info card descriptive headline text"
-            image: "/images/ilo-headquarters.jpg"
-            intro: "This ILO flagship report details the effects of the COVID-19 crisis on the world of work. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eu auctor tusrpis, this is 200 characters."
-            eyebrow: "Eyebrow title"
-            date:
-              human: "00 month 0000"
-              unix: 1670389200
-            link: "https://www.ilo.org?q=detail"
-            profile: ""
-            eventdetails: "8 - 9 February 2022, 8:30 - 12:00 CET  |  Egypt"
-            cta: ""
-            source: ""
-            linklist: ""
-            list: ""
-            dataset: ""
-            color: ""
-          - title: "Horizontal info card descriptive headline text"
-            image: "/images/small.jpg"
-            intro: "This ILO flagship report details the effects of the COVID-19 crisis on the world of work. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum eu auctor tusrpis, this is 200 characters."
-            eyebrow: "Eyebrow title"
-            date:
-              human: "00 month 0000"
-              unix: 1670389200
-            link: "https://www.ilo.org?q=detail"
-            profile: ""
-            eventdetails: "8 - 9 February 2022, 8:30 - 12:00 CET  |  Egypt"
-            cta: ""
-            source: ""
-            linklist: ""
-            list: ""
-            dataset: ""
-            color: ""
-      settings:
-        type: detail
-        theme: light
-    graphicpromo:
-      label: Graphic Promo
-      description: graphic promo settings
-      fields:
-        group:
-          - title: "Brief title text - ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod"
-            image: ""
-            intro: "We advance social justice and promote decent work by setting labour standards, developing policies and devising programmes."
-            eyebrow: ""
-            date: ""
-            link: "https://www.ilo.org"
-            profile: ""
-            eventdetails: ""
-            cta:
-              label: "Discover our unique mission"
-              url: "https://www.ilo.org?q=button"
-            source: ""
-            linklist: ""
-            list: ""
-            dataset: ""
-      settings:
-        type: graphicpromo
-    stat:
-      label: Stat cards
-      description: Stat settings
-      fields:
-        group:
-          - title: "Date headline"
-            image: ""
-            intro: "Data title - Lorem ipsum dolor sit amet consectetur"
-            eyebrow: ""
-            date: ""
-            link: ""
-            profile: ""
-            eventdetails: ""
-            cta: ""
-            list: ""
-            source:
-              label: "Source: lorem ipsum dolor sit amet, 2020"
-              url: "https://www.ilo.org?q=stat"
-            color: blue
-          - title: "Date headline"
-            image: ""
-            intro: "Data title - Lorem ipsum dolor sit amet consectetur"
-            eyebrow: ""
-            date: ""
-            link: ""
-            profile: ""
-            eventdetails: ""
-            cta: ""
-            list: ""
-            source:
-              label: "Source: lorem ipsum dolor sit amet, 2020"
-              url: "https://www.ilo.org?q=stat"
-            color: green
-          - title: "Date headline"
-            image: ""
-            intro: "Data title - Lorem ipsum dolor sit amet consectetur"
-            eyebrow: ""
-            date: ""
-            link: ""
-            profile: ""
-            eventdetails: ""
-            cta: ""
-            list: ""
-            source:
-              label: "Source: lorem ipsum dolor sit amet, 2020"
-              url: "https://www.ilo.org?q=stat"
-            color: yellow
-          - title: "Date headline"
-            image: ""
-            intro: "Data title - Lorem ipsum dolor sit amet consectetur"
-            eyebrow: ""
-            date: ""
-            link: ""
-            profile: ""
-            eventdetails: ""
-            cta: ""
-            list: ""
-            source:
-              label: "Source: lorem ipsum dolor sit amet, 2020"
-              url: "https://www.ilo.org?q=stat"
-            color: turquoise
-      settings:
-        type: stat
-        theme: light
-    graphic:
-      label: Graphic Text
-      description: graphic settings
-      fields:
-        group:
-          - title: "Brief title text - ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod"
-            image: ""
-            intro: ""
-            eyebrow: "Eyebrow title"
-            date:
-              human: "date"
-              unix: 1670389200
-            link: "https://www.ilo.org?q=graphic"
-            profile: ""
-            eventdetails: ""
-            cta: ""
-            source: ""
-            linklist: ""
-            list: ""
-            dataset: ""
-      settings:
-        type: graphic
-    factlist:
-      label: Factlist
-      description: Factlist settings
-      fields:
-        group:
-          - title: "Title of fast fact list"
-            intro: ""
-            eyebrow: ""
-            date: ""
-            link: ""
-            image: ""
-            profile: ""
-            eventdetails: ""
-            cta: ""
-            list:
-              title: ""
-              settings:
-                - ordered: unordered
-                - alignment: default
-              items:
-                - content: "Wipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor."
-                  id: "list1"
-                - content: "Nut labore et dolore magna sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-                  id: "list2"
-      settings:
-        type: factlist
-    data:
-      label: Data
-      description: Data settings
-      fields:
-        group:
-          - title: ""
-            image: "/images/small.jpg"
-            intro: ""
-            eyebrow: "Event details"
-            date: ""
-            link: ""
-            profile: ""
-            eventdetails: ""
-            cta: ""
-            dataset:
-              content:
-                items:
-                  - label: Date
-                    copy: Publication date
-                  - label: Event type
-                    copy: Event location
-              files:
-                headline: Files
-                items:
-                  - label: File/size MB 1
-                    url: "https://www.ilo.org?q=file1"
-                  - label: File/size MB 2
-                    url: "https://www.ilo.org?q=file2"
-                  - label: File/size MB 3
-                    url: "https://www.ilo.org?q=file3"
-              links:
-                headline: Languages
-                items:
-                  - label: Language link 1
-                    url: "https://www.ilo.org?q=link"
-                  - label: Language link 2
-                    url: "https://www.ilo.org?q=hyperlink"
-                  - label: Language link 3
-                    url: "https://www.ilo.org?q=url"
-      settings:
-        type: data
-        theme: light
-  settings:
-    size:
-      type: select
-      label: Size
-      description: Size of the cards (usually reduces padding)
-      preview: "standard"
-      options:
-        wide: wide
-        standard: Standard
-        narrow: Narrow
-    color:
-      type: select
-      label: Color
-      description: Color of the stat cards, options are turquoise, green, yellow, or blue
-      preview: "blue"
-      options:
-        blue: Blue
-        turquoise: Turquoise
-        green: Green
-        yellow: Yellow
-    type:
-      type: select
-      label: Card Count
-      description: Number of cards within a group
-      required: true
-      preview: "detail"
-      options:
-        data: Data
-        detail: Detail
-        factlist: Factlist
-        feature: Feature
-        graphic: Graphic
-        graphicpromo: Graphic Promo
-        multilink: Multilink
-        stat: Stat
-    cardcount:
-      type: select
-      label: Card Count
-      description: Number of cards within a group
-      required: true
-      preview: "two"
-      options:
-        one: One
-        two: Two
-        three: Three
-        four: Four
-    theme:
-      type: select
-      label: Theme
-      description: The theme type for the hero
-      required: false
-      preview: "dark"
-      options:
-        dark: Dark
-        light: Light
-    cornercut:
-      type: select
-      label: Corner cut
-      description: Setting for whether the card has a cut corner
-      preview: cornercut
-      options:
-        cornercut: Corner cut
-        corner: Corner
-    alignment:
-      type: select
-      label: Alignment
-      description: Set whether card (multilink) image is right aligned or left aligned
-      preview: left
-      options:
-        left: Left
-        right: right
-  visibility: storybook
+
+
+
+
