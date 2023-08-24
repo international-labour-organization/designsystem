@@ -1,20 +1,37 @@
 import classnames from "classnames";
 import { nanoid } from "nanoid";
-import { FC, createContext, useContext, useMemo, useState } from "react";
+import {
+  FC,
+  createContext,
+  useContext,
+  useEffect,
+  useMemo,
+  useState,
+} from "react";
 import { useGlobalSettings } from "../../hooks";
 import { Tooltip } from "../Tooltip";
 import { FormControlProps } from "./FormControl.props";
 
-interface GetAllyFieldsProps {
+interface AllyFields {
   tooltip?: string;
   helper?: string;
   errorMessage?: string;
 }
 
-// A function used to calculate unique IDs for the internal accessibility elements
+interface AllyFieldsIds {
+  tooltipId?: string;
+  helperId?: string;
+  errorId?: string;
+}
+
+export interface FormControlContextProps {
+  ariaDescribedBy?: string;
+}
+
+// Calculates unique IDs for the internal accessibility elements
 function getA11yFields(
   baseClass = "",
-  { tooltip, helper, errorMessage }: GetAllyFieldsProps = {}
+  { tooltip, helper, errorMessage }: AllyFields = {}
 ) {
   return {
     tooltipId: tooltip && `${baseClass}--tooltip--${nanoid()}`,
@@ -23,28 +40,34 @@ function getA11yFields(
   };
 }
 
-export interface FormControlContextProps {
-  tooltipId?: string;
-  helperId?: string;
-  errorId?: string;
-  setDisabled?: (disabled: boolean) => void;
-  setError?: (error: boolean) => void;
-  setFieldId?: (id: string) => void;
+// Calculates the aria-describedby attribute value based on whether or not there's an error
+function getAriaDescribedBy(getAllyFields: AllyFieldsIds, hasError?: boolean) {
+  const { tooltipId, helperId, errorId } = getAllyFields;
+  const ariaDescribedBy = classnames(tooltipId, {
+    [`${helperId}`]: !hasError,
+    [`${errorId}`]: hasError,
+  });
+  return ariaDescribedBy.length > 0 ? ariaDescribedBy : undefined;
 }
 
+// The context passed down to form elements wrapped by the form control
 export const FormControlContext: React.Context<FormControlContextProps> =
   createContext({});
 
+// Hook to get the context value
 export const useFormControl = () => useContext(FormControlContext);
 
 const FormControl: FC<FormControlProps> = ({
   children,
-  className,
+  formControlClassName,
   label,
   helper,
   errorMessage,
   tooltip,
-  style,
+  formControlStyle,
+  error,
+  disabled,
+  fieldId,
   labelSize = "medium",
   labelPlacement = "top",
 }) => {
@@ -58,29 +81,35 @@ const FormControl: FC<FormControlProps> = ({
     () => getA11yFields(baseClass, { helper, errorMessage, tooltip }),
     [baseClass, helper, errorMessage, tooltip]
   );
+
+  // The ids of the tooltip, helper, and error
   const { tooltipId, helperId, errorId } = a11yFields;
 
-  const [error, setError] = useState<boolean>(false);
-  const [disabled, setDisabled] = useState<boolean>(false);
-  const [fieldId, setFieldId] = useState<string>("");
+  // The aria-describedby attribute value
+  const [ariaDescribedBy, setAriaDescribedBy] = useState<string | undefined>(
+    undefined
+  );
+
+  // Update the aria-describedby attribute value when the error changes
+  useEffect(() => {
+    setAriaDescribedBy(
+      getAriaDescribedBy({ tooltipId, helperId, errorId }, error)
+    );
+  }, [tooltipId, helperId, errorId, error]);
 
   // The context passed down to form elements wrapped by the form control
   const contextValue: FormControlContextProps = {
-    tooltipId,
-    helperId,
-    errorId,
-    setError,
-    setDisabled,
-    setFieldId,
+    ariaDescribedBy,
   };
 
+  // Classes applied to the outer container
   const errorClass = `${baseClass}__error`;
   const disabledClass = `${baseClass}__disabled`;
   const labelPlacementClass = `${baseClass}__label-placement__${labelPlacement}`;
 
   const formControlClass = classnames(
     baseClass,
-    className,
+    formControlClassName,
     labelPlacementClass,
     [{ [errorClass]: error }, { [disabledClass]: disabled }]
   );
@@ -101,7 +130,7 @@ const FormControl: FC<FormControlProps> = ({
 
   return (
     <FormControlContext.Provider value={contextValue}>
-      <div className={formControlClass} style={style}>
+      <div className={formControlClass} style={formControlStyle}>
         <span className={labelClass}>
           <label htmlFor={fieldId}>{label}</label>
           {tooltip && (
@@ -121,7 +150,7 @@ const FormControl: FC<FormControlProps> = ({
           </span>
         )}
         {showError && (
-          <span id={errorId} className={helperClass}>
+          <span id={errorId} className={helperClass} aria-live="assertive">
             {errorMessage}
           </span>
         )}

@@ -1,45 +1,62 @@
-import { ToggleProps } from "./Toggle.props";
+import { LabelledToggleProps, ToggleProps } from "./Toggle.props";
 
-export const Default: ToggleProps = {
+export const Default: LabelledToggleProps = {
   defaultChecked: false,
-  id: "my-toggle",
+  errorMessage: "Invalid option",
+  name: "my-toggle",
   size: "medium",
+  label: "Show details",
+  labelPlacement: "end",
+  labelSize: "small",
 };
 
-export const Checked: ToggleProps = {
+export const Checked: LabelledToggleProps = {
   ...Default,
   defaultChecked: true,
 };
 
-export const Disabled: ToggleProps = {
+export const Disabled: LabelledToggleProps = {
   ...Default,
   disabled: true,
 };
 
-export const Error: ToggleProps = {
+export const Helper: LabelledToggleProps = {
+  ...Default,
+  helper: "This is a helper text",
+};
+
+export const Tooltip: LabelledToggleProps = {
+  ...Helper,
+  tooltip: "This is a tooltip",
+};
+
+export const Error: LabelledToggleProps = {
   ...Default,
   error: true,
 };
 
-export const DefaultChecked: ToggleProps = { ...Default, defaultChecked: true };
+export const DefaultChecked: LabelledToggleProps = {
+  ...Default,
+  defaultChecked: true,
+};
 
-export const Controlled: ToggleProps = {
+export const Controlled: LabelledToggleProps = {
   ...Default,
   onClick: () => console.log("clicked"),
   checked: true,
 };
 
-export const Large: ToggleProps = {
+export const Large: LabelledToggleProps = {
   ...Default,
   size: "large",
 };
 
-export const Medium: ToggleProps = {
+export const Medium: LabelledToggleProps = {
   ...Default,
   size: "medium",
 };
 
-export const Small: ToggleProps = {
+export const Small: LabelledToggleProps = {
   ...Default,
   size: "small",
 };

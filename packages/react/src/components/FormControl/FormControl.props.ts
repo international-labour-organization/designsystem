@@ -4,17 +4,21 @@ import { InputProps } from "../Input/Input.props";
 import { TextareaProps } from "../Textarea";
 import { ToggleProps } from "../Toggle";
 
-export interface FormControlProps {
-  children:
-    | ReactElement<ToggleProps>
-    | ReactElement<InputProps>
-    | ReactElement<DropdownProps>
-    | ReactElement<TextareaProps>;
-
+export interface FormControlPublicProps {
   /**
    * Optional className to add to the FormControl wrapper
    */
-  className?: string;
+  formControlClassName?: string;
+
+  /**
+   * Is the input disabled?
+   */
+  disabled?: boolean;
+
+  /**
+   * Does the input have an error?
+   */
+  error?: boolean;
 
   /**
    * The message to display in case of an error
@@ -44,10 +48,25 @@ export interface FormControlProps {
   /**
    * Inline styles for the input
    */
-  style?: React.CSSProperties;
+  formControlStyle?: React.CSSProperties;
 
   /**
    * Optional text to render in a tooltip
    */
   tooltip?: string;
 }
+
+export interface FormControlPrivateProps {
+  /**
+   * The id of the underlying input element
+   */
+  fieldId: string;
+
+  children:
+    | ReactElement<ToggleProps>
+    | ReactElement<InputProps>
+    | ReactElement<DropdownProps>
+    | ReactElement<TextareaProps>;
+}
+
+export type FormControlProps = FormControlPublicProps & FormControlPrivateProps;
