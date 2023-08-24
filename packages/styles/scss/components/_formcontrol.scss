@@ -1,5 +1,6 @@
 @use "../tokens" as *;
 @use "../functions" as *;
+@use "sass:math";
 @import "../mixins";
 
 .ilo--form-control {
@@ -118,7 +119,7 @@
     }
 
     div[class*="tooltip"] {
-      margin-left: px-to-rem($spacing-padding-1 / 2);
+      margin-left: px-to-rem(math.div($spacing-padding-1, 2));
     }
   }
 
