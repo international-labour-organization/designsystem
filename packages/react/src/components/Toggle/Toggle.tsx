@@ -55,8 +55,6 @@ const Toggle: React.FC<ToggleProps> = ({
     }
   }, [id, setFieldId]);
 
-  const inputName = name || id;
-
   const hasError = !disabled && !!error;
 
   const baseClass = `${prefix}--input--toggle`;
@@ -78,8 +76,8 @@ const Toggle: React.FC<ToggleProps> = ({
         checked={checked}
         disabled={disabled}
         defaultChecked={defaultChecked}
-        name={inputName}
-        id={id}
+        name={name}
+        id={id ? id : name}
         type="checkbox"
         role="switch"
         required={required}

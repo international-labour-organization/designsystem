@@ -3,7 +3,13 @@ import classnames from "classnames";
 import useGlobalSettings from "../../hooks/useGlobalSettings";
 import { TextareaProps } from "./Textarea.props";
 
-const Textarea: FC<TextareaProps> = ({ error, className, name, ...props }) => {
+const Textarea: FC<TextareaProps> = ({
+  error,
+  className,
+  name,
+  id,
+  ...props
+}) => {
   const { prefix } = useGlobalSettings();
 
   const baseClass = `${prefix}--textarea`;
@@ -13,9 +19,14 @@ const Textarea: FC<TextareaProps> = ({ error, className, name, ...props }) => {
     [errorClass]: error,
   });
 
-  const textareaName = name ? name : props.id;
-
-  return <textarea className={textAreaClass} name={textareaName} {...props} />;
+  return (
+    <textarea
+      className={textAreaClass}
+      name={name}
+      id={id ? id : name}
+      {...props}
+    />
+  );
 };
 
 export default Textarea;

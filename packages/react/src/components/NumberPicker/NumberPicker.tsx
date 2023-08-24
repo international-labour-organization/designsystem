@@ -28,8 +28,8 @@ const NumberPicker: FC<NumberPickerProps> = ({
 
   return (
     <input
-      id={id}
-      name={name ? name : id}
+      id={id ? id : name}
+      name={name}
       onChange={handleChange}
       disabled={disabled}
       placeholder={placeholder}

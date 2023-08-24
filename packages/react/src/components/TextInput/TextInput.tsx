@@ -21,12 +21,10 @@ const TextInput: FC<TextInputProps> = ({
     [`${baseClass}__error`]: error,
   });
 
-  const inputName = name ? name : id;
-
   return (
     <input
-      id={id}
-      name={inputName}
+      id={id ? id : name}
+      name={name}
       onChange={onChange}
       disabled={disabled}
       placeholder={placeholder}

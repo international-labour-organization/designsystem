@@ -40,8 +40,8 @@ const Checkbox: FC<CheckboxProps> = ({
 
   return (
     <input
-      id={id}
-      name={name ? name : id}
+      id={id ? id : name}
+      name={name}
       onChange={handleChange}
       disabled={disabled}
       required={required}

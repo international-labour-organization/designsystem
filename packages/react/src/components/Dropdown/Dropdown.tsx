@@ -41,9 +41,9 @@ const Dropdown: FC<DropdownProps> = ({
   return (
     <div className={`${baseClass}--wrapper`}>
       <select
-        id={id}
+        id={id ? id : name}
         autoComplete={autocomplete}
-        name={name ? name : id}
+        name={name}
         required={required}
         onChange={handleChange}
         disabled={disabled}

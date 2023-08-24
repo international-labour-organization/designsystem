@@ -17,7 +17,7 @@ export type FieldTypes =
   | "file";
 export type FormGroupTypes = "default" | "filter";
 export type HeadingLevel = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
-export type InputTypes =
+export type TextInputTypes =
   | "email"
   | "hidden"
   | "password"
@@ -84,14 +84,14 @@ export interface FormFieldProps<T> {
   error?: boolean;
 
   /**
-   * The input's id attribute
+   * The input's id attribute. Will otherwise be set to the same value as `name`.
    */
-  id: string;
+  id?: string;
 
   /**
-   * The input's name attribute
+   * The input's name attribute.
    */
-  name?: string;
+  name: string;
 
   /**
    * Specify whether this input is required
