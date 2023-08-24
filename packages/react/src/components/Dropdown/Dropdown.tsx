@@ -1,22 +1,24 @@
-import { FC, useState } from "react";
+import { forwardRef, useState } from "react";
 import classNames from "classnames";
 import useGlobalSettings from "../../hooks/useGlobalSettings";
 import { DropdownProps } from "./Dropdown.props";
 
-const Dropdown: FC<DropdownProps> = ({
-  autocomplete,
-  onChange,
-  disabled = false,
-  error,
-  id,
-  name,
-  options,
-  required,
-  value,
-  form,
-  multiple,
-  selectSize,
-}) => {
+const Dropdown = forwardRef<HTMLSelectElement, DropdownProps>((props, ref) => {
+  const {
+    autocomplete,
+    onChange,
+    disabled = false,
+    error,
+    id,
+    name,
+    options,
+    required,
+    value,
+    form,
+    multiple,
+    selectSize,
+  } = props;
+
   const { prefix } = useGlobalSettings();
 
   const baseClass = `${prefix}--dropdown`;
@@ -41,6 +43,7 @@ const Dropdown: FC<DropdownProps> = ({
   return (
     <div className={`${baseClass}--wrapper`}>
       <select
+        ref={ref}
         id={id ? id : name}
         autoComplete={autocomplete}
         name={name}
@@ -65,6 +68,6 @@ const Dropdown: FC<DropdownProps> = ({
       </select>
     </div>
   );
-};
+});
 
 export default Dropdown;

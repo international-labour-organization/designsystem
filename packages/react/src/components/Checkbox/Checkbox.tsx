@@ -1,18 +1,20 @@
-import { FC, useEffect } from "react";
+import { useEffect, forwardRef } from "react";
 import classNames from "classnames";
 import useGlobalSettings from "../../hooks/useGlobalSettings";
 import { CheckboxProps } from "./Checkbox.props";
 import { useFieldsetError } from "../Fieldset/Fieldset";
 
-const Checkbox: FC<CheckboxProps> = ({
-  onChange,
-  disabled = false,
-  error,
-  id,
-  name,
-  required,
-  defaultChecked = false,
-}) => {
+const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>((props, ref) => {
+  const {
+    onChange,
+    disabled = false,
+    error,
+    id,
+    name,
+    required,
+    defaultChecked = false,
+  } = props;
+
   const { prefix } = useGlobalSettings();
 
   const { setHasError } = useFieldsetError();
@@ -40,6 +42,7 @@ const Checkbox: FC<CheckboxProps> = ({
 
   return (
     <input
+      ref={ref}
       id={id ? id : name}
       name={name}
       onChange={handleChange}
@@ -50,6 +53,6 @@ const Checkbox: FC<CheckboxProps> = ({
       defaultChecked={defaultChecked}
     />
   );
-};
+});
 
 export default Checkbox;
