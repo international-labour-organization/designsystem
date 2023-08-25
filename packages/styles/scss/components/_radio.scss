@@ -62,17 +62,16 @@
     pointer-events: none;
   }
 
-  // &:invalid,
-  // &.error,
-  // .error & {
-  //   &:after {
-  //     background-color: $color-base-red-medium;
-  //   }
+  &:invalid,
+  &__error {
+    &:after {
+      background-color: $color-base-red-medium;
+    }
 
-  //   &:checked {
-  //     &:before {
-  //       border-color: $color-base-blue-dark;
-  //     }
-  //   }
-  // }
+    &:checked {
+      &:before {
+        border-color: $color-base-blue-dark;
+      }
+    }
+  }
 }
