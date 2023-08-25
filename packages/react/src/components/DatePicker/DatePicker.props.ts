@@ -1,15 +1,11 @@
 import { FormFieldProps } from "../../types";
+import { LabelledFormFieldProps } from "../FormControl/FormControl.props";
 
 export interface DatePickerProps extends FormFieldProps<HTMLInputElement> {
   /**
    * The input's onChange callback.
    */
   onChange?: (e: React.ChangeEvent<HTMLInputElement>, picker?: string) => any;
-
-  /**
-   * The input's id attribute
-   */
-  id: string;
 
   /**
    * The latest date to accept
@@ -27,17 +23,9 @@ export interface DatePickerProps extends FormFieldProps<HTMLInputElement> {
   step?: number | "any";
 
   /**
-   * The input's name attribute
-   */
-  name?: string;
-
-  /**
    * Specify an optional className to be added to your DatePicker component.
    */
   placeholder?: string;
-
-  /**
-   * Renders the input right-to-left
-   */
-  rtl?: boolean;
 }
+
+export type LabelledDatePickerProps = LabelledFormFieldProps<DatePickerProps>;

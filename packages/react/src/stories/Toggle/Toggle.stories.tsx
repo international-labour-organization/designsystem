@@ -9,7 +9,6 @@ import {
   Subheading,
   Title,
 } from "@storybook/blocks";
-import { FormControl } from "../../components/FormControl";
 
 const ToggleMeta: Meta<typeof Toggle> = {
   title: "Components/Forms/Toggle",
@@ -26,11 +25,6 @@ const ToggleMeta: Meta<typeof Toggle> = {
             states.
           </Description>
           <Primary />
-          <Subheading>Accessibility</Subheading>
-          <Description>
-            The Toggle component must have an `id` prop to map a label to the
-            form element.
-          </Description>
           <Subheading>Uncontrolled</Subheading>
           <Description>
             The Toggle is uncontrolled by default. Use the `checked` and

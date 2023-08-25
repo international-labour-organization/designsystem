@@ -2,18 +2,7 @@ import { RadioProps } from "./Radio.props";
 
 const basic: RadioProps = {
   className: "Radio",
-  id: "Radio",
-  name: "Radio",
-};
-
-const error: RadioProps = {
-  ...basic,
-  error: true,
-};
-
-const checked: RadioProps = {
-  ...basic,
-  defaultChecked: true,
+  name: "radio",
 };
 
 /**
@@ -21,8 +10,6 @@ const checked: RadioProps = {
  */
 const RadioArgs = {
   basic,
-  error,
-  checked,
 };
 
 export default RadioArgs;

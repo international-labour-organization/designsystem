@@ -1,5 +1,5 @@
 import { FormFieldProps } from "../../types";
-
+import { LabelledFormFieldProps } from "../FormControl/FormControl.props";
 export interface TextareaProps extends FormFieldProps<HTMLTextAreaElement> {
   /**
    * The Textarea's onChange callback.
@@ -41,3 +41,5 @@ export interface TextareaProps extends FormFieldProps<HTMLTextAreaElement> {
    **/
   wrap?: "hard" | "soft" | "off";
 }
+
+export type LabelledTextareaProps = LabelledFormFieldProps<TextareaProps>;

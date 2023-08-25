@@ -10,7 +10,6 @@ import {
 } from "@storybook/addon-docs";
 import { Dropdown } from "../../components/Dropdown";
 import dropdownArgs from "../../components/Dropdown/Dropdown.args";
-import { FormControl } from "../../components/FormControl";
 
 const DropdownMeta: Meta<typeof Dropdown> = {
   title: "Components/Forms/Dropdown",
@@ -45,78 +44,58 @@ const DropdownMeta: Meta<typeof Dropdown> = {
 export default DropdownMeta;
 
 export const Basic: StoryObj<typeof Dropdown> = {
-  args: dropdownArgs.basic,
+  args: { ...dropdownArgs.basic, style: { width: "100%" } },
 };
 
 export const WithLabel: StoryObj<typeof Dropdown> = {
-  args: dropdownArgs.basic,
-  render: (props) => (
-    <FormControl
-      label="Choose among the following options"
-      labelPlacement="top"
-      labelSize="medium"
-      style={{ width: "100%" }}
-    >
-      <Dropdown {...props} />
-    </FormControl>
-  ),
+  args: {
+    ...dropdownArgs.basic,
+    label: "Choose among the following options",
+    labelPlacement: "top",
+    labelSize: "medium",
+    style: { width: "100%" },
+  },
 };
 
 export const WithHelperText: StoryObj<typeof Dropdown> = {
-  args: dropdownArgs.basic,
-  render: (props) => (
-    <FormControl
-      label="Choose among the following options"
-      labelPlacement="top"
-      labelSize="medium"
-      style={{ width: "100%" }}
-      helper="This is helper text"
-    >
-      <Dropdown {...props} />
-    </FormControl>
-  ),
+  args: {
+    ...dropdownArgs.basic,
+    label: "Choose among the following options",
+    labelPlacement: "top",
+    labelSize: "medium",
+    style: { width: "100%" },
+    helper: "This is helper text",
+  },
 };
 
 export const Error: StoryObj<typeof Dropdown> = {
-  args: dropdownArgs.haserror,
-  render: (props) => (
-    <FormControl
-      label="Choose among the following options"
-      labelPlacement="top"
-      labelSize="medium"
-      style={{ width: "100%" }}
-      errorMessage="This is an error"
-    >
-      <Dropdown {...props} />
-    </FormControl>
-  ),
+  args: {
+    ...dropdownArgs.haserror,
+    label: "Choose among the following options",
+    labelPlacement: "top",
+    labelSize: "medium",
+    style: { width: "100%" },
+    errorMessage: "This is an error",
+  },
 };
 
 export const Disabled: StoryObj<typeof Dropdown> = {
-  args: dropdownArgs.isdisabled,
-  render: (props) => (
-    <FormControl
-      label="Choose among the following options"
-      labelPlacement="top"
-      labelSize="medium"
-      style={{ width: "100%" }}
-    >
-      <Dropdown {...props} />
-    </FormControl>
-  ),
+  args: {
+    ...dropdownArgs.isdisabled,
+    label: "Choose among the following options",
+    labelPlacement: "top",
+    labelSize: "medium",
+    style: { width: "100%" },
+  },
 };
 
 export const WithToolTip: StoryObj<typeof Dropdown> = {
-  args: dropdownArgs.basic,
-  render: (props) => (
-    <FormControl
-      label="Choose among the following options"
-      labelPlacement="top"
-      labelSize="medium"
-      style={{ width: "100%" }}
-      tooltip="This is a tooltip"
-    >
-      <Dropdown {...props} />
-    </FormControl>
-  ),
+  args: {
+    ...dropdownArgs.basic,
+    label: "Choose among the following options",
+    labelPlacement: "top",
+    labelSize: "medium",
+    style: { width: "100%" },
+    tooltip: "This is a tooltip",
+  },
 };

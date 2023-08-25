@@ -8,8 +8,6 @@ import {
   Subheading,
   Title,
 } from "@storybook/blocks";
-import { FormControl } from "../../components/FormControl";
-// import { FormControl } from "../../components/FormControl";
 
 const TextareaMeta: Meta<typeof Textarea> = {
   title: "Components/Forms/Textarea",
@@ -45,37 +43,17 @@ export const Basic: StoryObj<typeof Textarea> = {
   args: TextareaArgs.basic,
 };
 
-const formControlProps = {
-  label: "Insert your life story here",
-  labelPlacement: "top" as const,
-  labelSize: "medium" as const,
-  style: { width: "100%" },
-  errorMessage: "This is an error message",
-};
-
 export const WithLabel: StoryObj<typeof Textarea> = {
   args: TextareaArgs.basic,
-  render: (props) => (
-    <FormControl {...formControlProps}>
-      <Textarea {...props} />
-    </FormControl>
-  ),
+  render: (props) => <Textarea {...props} />,
 };
 
 export const WithError: StoryObj<typeof Textarea> = {
   args: TextareaArgs.basic,
-  render: (props) => (
-    <FormControl {...formControlProps}>
-      <Textarea {...props} error />
-    </FormControl>
-  ),
+  render: (props) => <Textarea {...props} error />,
 };
 
 export const disabled: StoryObj<typeof Textarea> = {
   args: TextareaArgs.disabled,
-  render: (props) => (
-    <FormControl {...formControlProps}>
-      <Textarea {...props} />
-    </FormControl>
-  ),
+  render: (props) => <Textarea {...props} />,
 };

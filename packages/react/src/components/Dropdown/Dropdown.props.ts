@@ -1,4 +1,5 @@
 import { FormFieldProps } from "../../types";
+import { LabelledFormFieldProps } from "../FormControl/FormControl.props";
 
 export interface OptionProps {
   /**
@@ -48,3 +49,5 @@ export interface DropdownProps extends FormFieldProps<HTMLSelectElement> {
    */
   value: string;
 }
+
+export type LabelledDropdownProps = LabelledFormFieldProps<DropdownProps>;

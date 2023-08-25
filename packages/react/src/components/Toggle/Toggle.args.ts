@@ -1,4 +1,4 @@
-import { LabelledToggleProps, ToggleProps } from "./Toggle.props";
+import { LabelledToggleProps } from "./Toggle.props";
 
 export const Default: LabelledToggleProps = {
   defaultChecked: false,

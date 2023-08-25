@@ -1,7 +1,8 @@
-import { forwardRef, useState } from "react";
+import React, { forwardRef, useState } from "react";
 import classNames from "classnames";
-import useGlobalSettings from "../../hooks/useGlobalSettings";
-import { DropdownProps } from "./Dropdown.props";
+import { useGlobalSettings } from "../../hooks";
+import { DropdownProps, LabelledDropdownProps } from "./Dropdown.props";
+import FormControl, { useFormControl } from "../FormControl/FormControl";
 
 const Dropdown = forwardRef<HTMLSelectElement, DropdownProps>((props, ref) => {
   const {
@@ -20,19 +21,17 @@ const Dropdown = forwardRef<HTMLSelectElement, DropdownProps>((props, ref) => {
   } = props;
 
   const { prefix } = useGlobalSettings();
+  const formControlCtx = useFormControl();
+  const { ariaDescribedBy } = formControlCtx;
 
   const baseClass = `${prefix}--dropdown`;
 
-  const dropdownClasses = classNames("", {
-    [baseClass]: true,
+  const dropdownClasses = classNames(baseClass, {
     [`error`]: error,
   });
 
   const [currentvalue, setValue] = useState(value);
 
-  /**
-   * On change, if there is a callback, call it
-   */
   const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setValue(e.target.value);
     if (onChange) {
@@ -55,6 +54,7 @@ const Dropdown = forwardRef<HTMLSelectElement, DropdownProps>((props, ref) => {
         form={form}
         multiple={multiple}
         size={selectSize}
+        aria-describedby={ariaDescribedBy}
       >
         {options &&
           options.map((option, i) => (
@@ -70,4 +70,15 @@ const Dropdown = forwardRef<HTMLSelectElement, DropdownProps>((props, ref) => {
   );
 });
 
-export default Dropdown;
+const LabelledDropdown = forwardRef<HTMLSelectElement, LabelledDropdownProps>(
+  (props, ref) => {
+    const fieldId = props.id ? props.id : props.name;
+    return (
+      <FormControl fieldId={fieldId} {...props}>
+        <Dropdown ref={ref} {...props} />
+      </FormControl>
+    );
+  }
+);
+
+export default LabelledDropdown;

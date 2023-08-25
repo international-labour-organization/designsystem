@@ -1,101 +1,75 @@
-import { TextInputProps } from "./TextInput.props";
+import { LabelledTextInputProps } from "./TextInput.props";
 
-export const basic: TextInputProps = {
-  id: "text-input",
+export const basic: LabelledTextInputProps = {
   disabled: false,
+  errorMessage: "This is an error message",
   error: false,
+  formControlStyle: { width: "100%" },
+  id: "text-input",
+  label: "Insert your name here",
+  labelPlacement: "top",
+  labelSize: "medium",
   name: "text",
   placeholder: "This is a text field",
   required: false,
   type: "text",
 };
 
-export const isdisabled: TextInputProps = {
-  id: "text-input",
+export const isdisabled: LabelledTextInputProps = {
+  ...basic,
   disabled: true,
-  error: false,
-  name: "text",
   placeholder: "Disabled Text Field",
-  required: false,
-  type: "text",
 };
 
-export const hashelper: TextInputProps = {
-  id: "text-input",
-  disabled: false,
-  error: false,
-  name: "text",
-  placeholder: "Helper Text Field",
-  required: false,
-  type: "text",
+export const hashelper: LabelledTextInputProps = {
+  ...basic,
+  placeholder: "This has a helper text",
 };
 
-export const haserror: TextInputProps = {
-  id: "text-input",
-  disabled: false,
+export const haserror: LabelledTextInputProps = {
+  ...basic,
+  placeholder: "This has an error",
   error: true,
-  name: "text",
-  placeholder: "Error Text Field",
-  required: false,
-  type: "text",
 };
 
-export const hastooltip: TextInputProps = {
-  id: "text-input",
-  disabled: false,
-  error: false,
-  name: "text",
-  placeholder: "Tooltip Text Field",
-  required: false,
-  type: "text",
+export const hastooltip: LabelledTextInputProps = {
+  ...basic,
+  placeholder: "This has an tooltip",
+  tooltip: "This is a tooltip",
 };
 
-export const email: TextInputProps = {
-  id: "text-input",
-  disabled: false,
-  error: false,
-  name: "email",
-  placeholder: "Email Field",
-  required: false,
+export const email: LabelledTextInputProps = {
+  ...basic,
+  label: "Enter your email address",
+  placeholder: "my@email.com",
   type: "email",
+  id: "email-input",
 };
 
-export const hidden: TextInputProps = {
-  id: "text-input",
-  disabled: false,
-  error: false,
-  name: "hidden",
-  required: false,
-  type: "hidden",
-};
-
-export const password: TextInputProps = {
-  id: "text-input",
-  disabled: false,
-  error: false,
-  name: "password",
-  placeholder: "Password Field",
-  required: false,
+export const password: LabelledTextInputProps = {
+  ...basic,
+  label: "Enter your password",
+  placeholder: "Must be 8 digits long",
   type: "password",
+  id: "password-input",
 };
 
-export const tel: TextInputProps = {
-  id: "text-input",
-  disabled: false,
-  error: false,
+export const telephone: LabelledTextInputProps = {
+  ...basic,
   name: "tel",
+  label: "Enter your telephone number",
   placeholder: "###-###-####",
   required: false,
   type: "tel",
   pattern: "[0-9]{3}-[0-9]{3}-[0-9]{4}",
 };
 
-export const url: TextInputProps = {
-  id: "text-input",
-  disabled: false,
-  error: false,
+export const url: LabelledTextInputProps = {
+  ...basic,
+  label: "Enter website address",
+  id: "url-input",
   name: "url",
-  placeholder: "URL Field",
+  placeholder: "https://www.example.com",
   required: false,
   type: "url",
 };

@@ -1,5 +1,6 @@
 import { FormFieldProps } from "../../types";
-
+import { LabelledFormFieldProps } from "../FormControl/FormControl.props";
+s;
 export interface FileUploadProps extends FormFieldProps<HTMLInputElement> {
   /**
    * The placeholder for the input
@@ -11,3 +12,5 @@ export interface FileUploadProps extends FormFieldProps<HTMLInputElement> {
    */
   multiple?: boolean;
 }
+
+export type LabelledFileUploadProps = LabelledFormFieldProps<FileUploadProps>;

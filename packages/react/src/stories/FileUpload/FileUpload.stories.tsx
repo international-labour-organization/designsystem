@@ -10,10 +10,8 @@ import {
 } from "@storybook/addon-docs";
 import { FileUpload } from "../../components";
 import fileUploadArgs from "../../components/FileUpload/FileUpload.args";
-import { FormControl, FormControlProps } from "../../components/FormControl";
-import { FileUploadProps } from "../../components/FileUpload/FileUpload.props";
 
-const DropdownMeta: Meta<typeof FileUpload> = {
+const FileUploadMeta: Meta<typeof FileUpload> = {
   title: "Components/Forms/FileUpload",
   component: FileUpload,
   tags: ["autodocs"],
@@ -44,53 +42,42 @@ const DropdownMeta: Meta<typeof FileUpload> = {
   },
 };
 
-export default DropdownMeta;
-
-const formControlProps: Omit<FormControlProps, "children"> = {
-  label: "Upload your files here",
-  labelPlacement: "top",
-  labelSize: "medium",
-  style: { width: "100%" },
-  errorMessage: "There was an error uploading your files",
-};
-
-const formControlPropsWithHelper: Omit<FormControlProps, "children"> = {
-  ...formControlProps,
-  helper: "You can upload up to 5 files",
-};
-
-const Template = (args: FileUploadProps) => (
-  <FormControl {...formControlProps}>
-    <FileUpload {...args} />
-  </FormControl>
-);
-
-const TemplateWithHelper = (args: FileUploadProps) => (
-  <FormControl {...formControlPropsWithHelper}>
-    <FileUpload {...args} />
-  </FormControl>
-);
+export default FileUploadMeta;
 
 export const Basic: StoryObj<typeof FileUpload> = {
-  args: fileUploadArgs.basic,
-};
-
-export const WithLabel: StoryObj<typeof FileUpload> = {
-  args: fileUploadArgs.basic,
-  render: Template,
+  args: {
+    ...fileUploadArgs.basic,
+    label: "Upload your files here",
+    labelPlacement: "top",
+    labelSize: "medium",
+  },
 };
 
 export const Helper: StoryObj<typeof FileUpload> = {
-  args: fileUploadArgs.basic,
-  render: TemplateWithHelper,
+  args: {
+    ...fileUploadArgs.basic,
+    label: "Upload your files here",
+    labelPlacement: "top",
+    labelSize: "medium",
+    helper: "You can upload up to 5 files",
+  },
 };
 
 export const Error: StoryObj<typeof FileUpload> = {
-  args: fileUploadArgs.haserror,
-  render: Template,
+  args: {
+    ...fileUploadArgs.haserror,
+    label: "Upload your files here",
+    labelPlacement: "top",
+    labelSize: "medium",
+    errorMessage: "There was an error uploading your files",
+  },
 };
 
 export const Disabled: StoryObj<typeof FileUpload> = {
-  args: fileUploadArgs.disabled,
-  render: Template,
+  args: {
+    ...fileUploadArgs.disabled,
+    label: "Upload your files here",
+    labelPlacement: "top",
+    labelSize: "medium",
+  },
 };

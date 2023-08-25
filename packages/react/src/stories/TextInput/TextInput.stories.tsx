@@ -8,7 +8,6 @@ import {
   Subheading,
   Title,
 } from "@storybook/blocks";
-import { FormControl } from "../../components/FormControl";
 
 const TextInputMeta: Meta<typeof TextInput> = {
   title: "Components/Forms/TextInput",
@@ -46,129 +45,45 @@ export const Basic: StoryObj<typeof TextInput> = {
 
 export const WithLabel: StoryObj<typeof TextInput> = {
   args: TextInputArgs.basic,
-  render: (props) => (
-    <FormControl
-      label="Insert your name here"
-      labelPlacement="top"
-      labelSize="medium"
-      style={{ width: "100%" }}
-    >
-      <TextInput {...props} />
-    </FormControl>
-  ),
+  render: (props) => <TextInput {...props} />,
 };
 
 export const WithHelperText: StoryObj<typeof TextInput> = {
   args: TextInputArgs.basic,
-  render: (props) => (
-    <FormControl
-      label="Insert your name here"
-      labelPlacement="top"
-      labelSize="medium"
-      helper="This is helper text"
-      style={{ width: "100%" }}
-    >
-      <TextInput {...props} />
-    </FormControl>
-  ),
+  render: (props) => <TextInput {...props} />,
 };
 
 export const Error: StoryObj<typeof TextInput> = {
   args: TextInputArgs.haserror,
-  render: (props) => (
-    <FormControl
-      label="Insert your name here"
-      labelPlacement="top"
-      labelSize="medium"
-      errorMessage="This is an error message"
-      style={{ width: "100%" }}
-    >
-      <TextInput {...props} />
-    </FormControl>
-  ),
+  render: (props) => <TextInput {...props} />,
 };
 
 export const Disabled: StoryObj<typeof TextInput> = {
   args: TextInputArgs.isdisabled,
-  render: (props) => (
-    <FormControl
-      label="Insert your name here"
-      labelPlacement="top"
-      labelSize="medium"
-      style={{ width: "100%" }}
-    >
-      <TextInput {...props} />
-    </FormControl>
-  ),
+  render: (props) => <TextInput {...props} />,
 };
 
 export const WithToolTip: StoryObj<typeof TextInput> = {
   args: TextInputArgs.basic,
-  render: (props) => (
-    <FormControl
-      label="Insert your name here"
-      labelPlacement="top"
-      labelSize="medium"
-      tooltip="This is a tooltip"
-      style={{ width: "100%" }}
-    >
-      <TextInput {...props} />
-    </FormControl>
-  ),
+  render: (props) => <TextInput {...props} />,
 };
 
 export const Email: StoryObj<typeof TextInput> = {
   args: TextInputArgs.email,
-  render: (props) => (
-    <FormControl
-      label="Insert your email here"
-      labelPlacement="top"
-      labelSize="medium"
-      style={{ width: "100%" }}
-    >
-      <TextInput {...props} />
-    </FormControl>
-  ),
+  render: (props) => <TextInput {...props} />,
 };
 
 export const Telephone: StoryObj<typeof TextInput> = {
-  args: TextInputArgs.tel,
-  render: (props) => (
-    <FormControl
-      label="Insert your telephone number here"
-      labelPlacement="top"
-      labelSize="medium"
-      style={{ width: "100%" }}
-    >
-      <TextInput {...props} />
-    </FormControl>
-  ),
+  args: TextInputArgs.telephone,
+  render: (props) => <TextInput {...props} />,
 };
 
 export const Password: StoryObj<typeof TextInput> = {
   args: TextInputArgs.password,
-  render: (props) => (
-    <FormControl
-      label="Insert your password here"
-      labelPlacement="top"
-      labelSize="medium"
-      style={{ width: "100%" }}
-    >
-      <TextInput {...props} />
-    </FormControl>
-  ),
+  render: (props) => <TextInput {...props} />,
 };
 
 export const URL: StoryObj<typeof TextInput> = {
   args: TextInputArgs.url,
-  render: (props) => (
-    <FormControl
-      label="Insert your URL here"
-      labelPlacement="top"
-      labelSize="medium"
-      style={{ width: "100%" }}
-    >
-      <TextInput {...props} />
-    </FormControl>
-  ),
+  render: (props) => <TextInput {...props} />,
 };

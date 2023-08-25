@@ -9,7 +9,6 @@ import {
   Subheading,
   Title,
 } from "@storybook/blocks";
-import { FormControl, FormControlProps } from "../../components/FormControl";
 import { Fieldset } from "../../components";
 import { RadioProps } from "../../components/Radio/Radio.props";
 import { FieldsetProps } from "../../components/Fieldset/Fieldset.props";
@@ -43,12 +42,6 @@ const RadioMeta: Meta<typeof Radio> = {
   },
 };
 
-const formControlArgs: FormControlProps = {
-  label: "",
-  labelPlacement: "end",
-  labelSize: "small",
-};
-
 const fieldsetArgs: FieldsetProps = {
   legend: "Which world of work topic interests you the most?",
   errorMessage: "You must choose a topic",
@@ -58,58 +51,71 @@ export const Default: StoryObj<RadioProps> = {
   args: RadioArgs.basic,
   render: (args) => (
     <Fieldset {...fieldsetArgs}>
-      <FormControl {...formControlArgs} label="Social Justice">
-        <Radio {...args} id="Radio-1" />
-      </FormControl>
-      <FormControl label="Decent work" labelPlacement="end" labelSize="small">
-        <Radio {...args} id="Radio-2" />
-      </FormControl>
-      <FormControl {...formControlArgs} label="Ending child labour">
-        <Radio {...args} id="Radio-3" />
-      </FormControl>
-      <FormControl {...formControlArgs} label="Achieving full employment">
-        <Radio {...args} id="Radio-4" />
-      </FormControl>
+      <Radio
+        {...args}
+        id="Radio-1"
+        label="Social Justice"
+        labelPlacement="end"
+        labelSize="small"
+      />
+      <Radio
+        {...args}
+        id="Radio-1"
+        label="Decent Work"
+        labelPlacement="end"
+        labelSize="small"
+      />
+      <Radio
+        {...args}
+        id="Radio-1"
+        label="Ending child labour"
+        labelPlacement="end"
+        labelSize="small"
+      />
+      <Radio
+        {...args}
+        id="Radio-1"
+        label="Achieving full employment"
+        labelPlacement="end"
+        labelSize="small"
+      />
     </Fieldset>
   ),
 };
 
 export const CheckedByDefault: StoryObj<RadioProps> = {
-  args: RadioArgs.checked,
-  render: (args) => (
-    <Fieldset {...fieldsetArgs}>
-      <FormControl {...formControlArgs} label="Social Justice">
-        <Radio {...args} id="Radio-1" />
-      </FormControl>
-      <FormControl label="Decent work" labelPlacement="end" labelSize="small">
-        <Radio {...args} id="Radio-2" />
-      </FormControl>
-      <FormControl {...formControlArgs} label="Ending child labour">
-        <Radio {...args} id="Radio-3" />
-      </FormControl>
-      <FormControl {...formControlArgs} label="Achieving full employment">
-        <Radio {...args} id="Radio-4" />
-      </FormControl>
-    </Fieldset>
-  ),
-};
-
-export const Row: StoryObj<RadioProps> = {
   args: RadioArgs.basic,
   render: (args) => (
-    <Fieldset {...fieldsetArgs} direction="row">
-      <FormControl {...formControlArgs} label="Social Justice">
-        <Radio {...args} id="Radio-1" />
-      </FormControl>
-      <FormControl label="Decent work" labelPlacement="end" labelSize="small">
-        <Radio {...args} id="Radio-2" />
-      </FormControl>
-      <FormControl {...formControlArgs} label="Ending child labour">
-        <Radio {...args} id="Radio-3" />
-      </FormControl>
-      <FormControl {...formControlArgs} label="Achieving full employment">
-        <Radio {...args} id="Radio-4" />
-      </FormControl>
+    <Fieldset {...fieldsetArgs}>
+      <Radio
+        {...args}
+        id="Radio-1"
+        label="Social Justice"
+        labelPlacement="end"
+        labelSize="small"
+        defaultChecked
+      />
+      <Radio
+        {...args}
+        id="Radio-1"
+        label="Decent Work"
+        labelPlacement="end"
+        labelSize="small"
+      />
+      <Radio
+        {...args}
+        id="Radio-1"
+        label="Ending child labour"
+        labelPlacement="end"
+        labelSize="small"
+      />
+      <Radio
+        {...args}
+        id="Radio-1"
+        label="Achieving full employment"
+        labelPlacement="end"
+        labelSize="small"
+      />
     </Fieldset>
   ),
 };
@@ -117,59 +123,82 @@ export const Row: StoryObj<RadioProps> = {
 export const Helper: StoryObj<RadioProps> = {
   args: RadioArgs.basic,
   render: (args) => (
-    <Fieldset {...fieldsetArgs} helper="Choose at least one topic">
-      <FormControl {...formControlArgs} label="Social Justice">
-        <Radio {...args} id="Radio-1" />
-      </FormControl>
-      <FormControl label="Decent work" labelPlacement="end" labelSize="small">
-        <Radio {...args} id="Radio-2" />
-      </FormControl>
-      <FormControl {...formControlArgs} label="Ending child labour">
-        <Radio {...args} id="Radio-3" />
-      </FormControl>
-      <FormControl {...formControlArgs} label="Achieving full employment">
-        <Radio {...args} id="Radio-4" />
-      </FormControl>
+    <Fieldset
+      {...fieldsetArgs}
+      legend="Which organization was established in 1919 to promote workers’ rights and address labor issues on an international scale?"
+      helper="Hint, it's the oldest of the four organizations."
+    >
+      <Radio
+        {...args}
+        id="Radio-1"
+        label="International Monetary Fund"
+        labelPlacement="end"
+        labelSize="small"
+      />
+      <Radio
+        {...args}
+        id="Radio-1"
+        label="World Trade Organization"
+        labelPlacement="end"
+        labelSize="small"
+      />
+      <Radio
+        {...args}
+        id="Radio-1"
+        label="Food and Agriculture Organization"
+        labelPlacement="end"
+        labelSize="small"
+      />
+      <Radio
+        {...args}
+        id="Radio-1"
+        label="International Labour Organization"
+        labelPlacement="end"
+        labelSize="small"
+      />
     </Fieldset>
   ),
 };
 
 export const Error: StoryObj<RadioProps> = {
-  args: RadioArgs.error,
-  render: (args) => (
-    <Fieldset {...fieldsetArgs}>
-      <FormControl {...formControlArgs} label="Social Justice">
-        <Radio {...args} id="Radio-1" />
-      </FormControl>
-      <FormControl label="Decent work" labelPlacement="end" labelSize="small">
-        <Radio {...args} id="Radio-2" />
-      </FormControl>
-      <FormControl {...formControlArgs} label="Ending child labour">
-        <Radio {...args} id="Radio-3" />
-      </FormControl>
-      <FormControl {...formControlArgs} label="Achieving full employment">
-        <Radio {...args} id="Radio-4" />
-      </FormControl>
-    </Fieldset>
-  ),
-};
-
-export const Disabled: StoryObj<RadioProps> = {
   args: RadioArgs.basic,
   render: (args) => (
-    <Fieldset {...fieldsetArgs} disabled>
-      <FormControl {...formControlArgs} label="Social Justice">
-        <Radio {...args} id="Radio-1" />
-      </FormControl>
-      <FormControl label="Decent work" labelPlacement="end" labelSize="small">
-        <Radio {...args} id="Radio-2" />
-      </FormControl>
-      <FormControl {...formControlArgs} label="Ending child labour">
-        <Radio {...args} id="Radio-3" />
-      </FormControl>
-      <FormControl {...formControlArgs} label="Achieving full employment">
-        <Radio {...args} id="Radio-4" />
-      </FormControl>
+    <Fieldset
+      {...fieldsetArgs}
+      legend="Which organization was established in 1919 to promote workers’ rights and address labor issues on an international scale?"
+      helper="Hint, it's the oldest of the four organizations."
+      errorMessage="The correct answer is the International Labour Organization."
+    >
+      <Radio
+        {...args}
+        id="Radio-1"
+        label="International Monetary Fund"
+        labelPlacement="end"
+        labelSize="small"
+        checked
+      />
+      <Radio
+        {...args}
+        id="Radio-1"
+        label="World Trade Organization"
+        labelPlacement="end"
+        labelSize="small"
+      />
+      <Radio
+        {...args}
+        id="Radio-1"
+        label="Food and Agriculture Organization"
+        labelPlacement="end"
+        labelSize="small"
+      />
+      <Radio
+        {...args}
+        id="Radio-1"
+        label="International Labour Organization"
+        labelPlacement="end"
+        labelSize="small"
+        error
+      />
     </Fieldset>
   ),
 };

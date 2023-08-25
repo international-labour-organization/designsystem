@@ -1,8 +1,10 @@
-import { useEffect, forwardRef } from "react";
+import React, { useEffect, forwardRef } from "react";
 import classNames from "classnames";
 import useGlobalSettings from "../../hooks/useGlobalSettings";
-import { CheckboxProps } from "./Checkbox.props";
+import { CheckboxProps, LabelledCheckboxProps } from "./Checkbox.props";
 import { useFieldsetError } from "../Fieldset/Fieldset";
+import FormControl, { useFormControl } from "../FormControl/FormControl";
+import usePrevious from "../../hooks/usePrevious";
 
 const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>((props, ref) => {
   const {
@@ -13,11 +15,14 @@ const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>((props, ref) => {
     name,
     required,
     defaultChecked = false,
+    checked,
+    value,
   } = props;
 
   const { prefix } = useGlobalSettings();
-
   const { setHasError } = useFieldsetError();
+  const formControlCtx = useFormControl();
+  const { ariaDescribedBy } = formControlCtx;
 
   const baseClass = `${prefix}--checkbox`;
   const errorClass = `${baseClass}__error`;
@@ -26,14 +31,14 @@ const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>((props, ref) => {
     [errorClass]: error,
   });
 
-  // Initialize the error state
-  useEffect(() => {
-    setHasError(!!error);
-  }, [error, setHasError]);
+  const prevError = usePrevious(error);
 
-  /**
-   * On change, if there is a callback, call it
-   */
+  useEffect(() => {
+    if (error !== prevError) {
+      setHasError(!!error);
+    }
+  }, [error, prevError, setHasError]);
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (onChange) {
       onChange(e);
@@ -48,11 +53,27 @@ const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>((props, ref) => {
       onChange={handleChange}
       disabled={disabled}
       required={required}
-      type={"checkbox"}
+      type="checkbox"
       className={CheckboxClasses}
       defaultChecked={defaultChecked}
+      aria-describedby={ariaDescribedBy}
+      checked={checked}
+      value={value}
     />
   );
 });
 
-export default Checkbox;
+const LabelledCheckbox = React.forwardRef<
+  HTMLInputElement,
+  LabelledCheckboxProps
+>((props, ref) => {
+  const fieldId = props.id ? props.id : props.name;
+  const { style, inputStyle, ...rest } = props;
+  return (
+    <FormControl fieldId={fieldId} style={style} {...rest}>
+      <Checkbox ref={ref} style={inputStyle} {...rest} />
+    </FormControl>
+  );
+});
+
+export default LabelledCheckbox;

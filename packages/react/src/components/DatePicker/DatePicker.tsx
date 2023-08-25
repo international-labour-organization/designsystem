@@ -1,7 +1,8 @@
 import { forwardRef } from "react";
 import classNames from "classnames";
 import useGlobalSettings from "../../hooks/useGlobalSettings";
-import { DatePickerProps } from "./DatePicker.props";
+import FormControl, { useFormControl } from "../FormControl/FormControl";
+import { DatePickerProps, LabelledDatePickerProps } from "./DatePicker.props";
 
 const DatePicker = forwardRef<HTMLInputElement, DatePickerProps>(
   (props, ref) => {
@@ -16,14 +17,16 @@ const DatePicker = forwardRef<HTMLInputElement, DatePickerProps>(
       max,
       min,
       step,
-      rtl = false,
     } = props;
 
     const { prefix } = useGlobalSettings();
+    const formControlCtx = useFormControl();
+    const { ariaDescribedBy } = formControlCtx;
+
+    const inputClass = `${prefix}--input`;
     const baseClass = `${prefix}--datepicker`;
 
-    const DatePickerClasses = classNames(baseClass, {
-      ["right-to-left"]: rtl,
+    const datePickerClasses = classNames(inputClass, baseClass, {
       [`error`]: error,
     });
 
@@ -46,13 +49,26 @@ const DatePicker = forwardRef<HTMLInputElement, DatePickerProps>(
         disabled={disabled}
         placeholder={placeholder}
         required={required}
-        className={`${DatePickerClasses} ${prefix}--input`}
+        className={datePickerClasses}
         max={max}
         min={min}
         step={step}
+        aria-describedby={ariaDescribedBy}
       />
     );
   }
 );
 
-export default DatePicker;
+const LabelledDatePicker = forwardRef<
+  HTMLInputElement,
+  LabelledDatePickerProps
+>((props, ref) => {
+  const fieldId = props.id ? props.id : props.name;
+  return (
+    <FormControl fieldId={fieldId} {...props}>
+      <DatePicker ref={ref} {...props} />
+    </FormControl>
+  );
+});
+
+export default LabelledDatePicker;

@@ -10,7 +10,6 @@ import {
 } from "@storybook/addon-docs";
 import { NumberPicker } from "../../components";
 import NumberPickerArgs from "../../components/NumberPicker/NumberPicker.args";
-import { FormControl, FormControlProps } from "../../components/FormControl";
 
 const NumberPickerMeta: Meta<typeof NumberPicker> = {
   title: "Components/Forms/NumberPicker",
@@ -44,37 +43,17 @@ const NumberPickerMeta: Meta<typeof NumberPicker> = {
 
 export default NumberPickerMeta;
 
-const startFormCtrlProps: Omit<FormControlProps, "children"> = {
-  label: "Pick a number",
-  labelPlacement: "top",
-  labelSize: "medium",
-  style: { width: "50%" },
-  errorMessage: "There was an error selecting your number",
-};
-
 export const Basic: StoryObj<typeof NumberPicker> = {
   args: NumberPickerArgs.basic,
-  render: (args) => (
-    <FormControl {...startFormCtrlProps}>
-      <NumberPicker {...args} />
-    </FormControl>
-  ),
+  render: (args) => <NumberPicker {...args} />,
 };
 
 export const Error: StoryObj<typeof NumberPicker> = {
   args: NumberPickerArgs.haserror,
-  render: (args) => (
-    <FormControl {...startFormCtrlProps}>
-      <NumberPicker {...args} />
-    </FormControl>
-  ),
+  render: (args) => <NumberPicker {...args} />,
 };
 
 export const Disabled: StoryObj<typeof NumberPicker> = {
   args: { ...NumberPickerArgs.basic, disabled: true },
-  render: (args) => (
-    <FormControl {...startFormCtrlProps}>
-      <NumberPicker {...args} />
-    </FormControl>
-  ),
+  render: (args) => <NumberPicker {...args} />,
 };

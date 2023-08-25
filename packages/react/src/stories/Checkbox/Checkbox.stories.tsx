@@ -1,17 +1,15 @@
 import { Meta, StoryObj } from "@storybook/react";
 import { Checkbox, CheckboxArgs } from "../../components/Checkbox";
+import { CheckboxProps } from "../../components/Checkbox/Checkbox.props";
 import {
   ArgTypes,
   Description,
   Heading,
   Primary,
   Stories,
-  Subheading,
   Title,
 } from "@storybook/blocks";
-import { FormControl, FormControlProps } from "../../components/FormControl";
 import { Fieldset } from "../../components";
-import { CheckboxProps } from "../../components/Checkbox/Checkbox.props";
 import { FieldsetProps } from "../../components/Fieldset/Fieldset.props";
 
 const CheckboxMeta: Meta<typeof Checkbox> = {
@@ -29,11 +27,6 @@ const CheckboxMeta: Meta<typeof Checkbox> = {
             states.
           </Description>
           <Primary />
-          <Subheading>Accessibility</Subheading>
-          <Description>
-            The Checkbox component must have an `id` prop to map a label to the
-            form element.
-          </Description>
           <Heading>Props</Heading>
           <ArgTypes of={CheckboxMeta} />
           <Stories />
@@ -43,135 +36,80 @@ const CheckboxMeta: Meta<typeof Checkbox> = {
   },
 };
 
-const formControlArgs: FormControlProps = {
-  label: "",
-  labelPlacement: "end",
-  labelSize: "small",
-};
-
-const fieldsetArgs: FieldsetProps = {
+const fieldSetDefaults: FieldsetProps = {
   legend: "What world of work topics interest you?",
   errorMessage: "You must choose at least one topic",
 };
 
+const renderCheckboxes = (
+  args: Omit<CheckboxProps, "name" | "label">,
+  fieldsetArgs: FieldsetProps = fieldSetDefaults
+) => (
+  <Fieldset {...fieldsetArgs}>
+    <Checkbox
+      {...args}
+      labelPlacement="end"
+      labelSize="small"
+      label="Social Justice"
+      name="checkbox-1"
+    />
+    <Checkbox
+      {...args}
+      labelPlacement="end"
+      labelSize="small"
+      label="Decent work"
+      name="checkbox-2"
+    />
+    <Checkbox
+      {...args}
+      labelPlacement="end"
+      labelSize="small"
+      label="Ending child labour"
+      name="checkbox-3"
+    />
+    <Checkbox
+      {...args}
+      labelPlacement="end"
+      labelSize="small"
+      label="Achieving full employment"
+      name="checkbox-4"
+    />
+  </Fieldset>
+);
+
 export const Default: StoryObj<CheckboxProps> = {
   args: CheckboxArgs.basic,
-  render: (args) => (
-    <Fieldset {...fieldsetArgs}>
-      <FormControl {...formControlArgs} label="Social Justice">
-        <Checkbox {...args} id="checkbox-1" />
-      </FormControl>
-      <FormControl label="Decent work" labelPlacement="end" labelSize="small">
-        <Checkbox {...args} id="checkbox-2" />
-      </FormControl>
-      <FormControl {...formControlArgs} label="Ending child labour">
-        <Checkbox {...args} id="checkbox-3" />
-      </FormControl>
-      <FormControl {...formControlArgs} label="Achieving full employment">
-        <Checkbox {...args} id="checkbox-4" />
-      </FormControl>
-    </Fieldset>
-  ),
+  render: (args) => renderCheckboxes(args),
 };
 
 export const CheckedByDefault: StoryObj<CheckboxProps> = {
   args: CheckboxArgs.checked,
-  render: (args) => (
-    <Fieldset {...fieldsetArgs}>
-      <FormControl {...formControlArgs} label="Social Justice">
-        <Checkbox {...args} id="checkbox-1" />
-      </FormControl>
-      <FormControl label="Decent work" labelPlacement="end" labelSize="small">
-        <Checkbox {...args} id="checkbox-2" />
-      </FormControl>
-      <FormControl {...formControlArgs} label="Ending child labour">
-        <Checkbox {...args} id="checkbox-3" />
-      </FormControl>
-      <FormControl {...formControlArgs} label="Achieving full employment">
-        <Checkbox {...args} id="checkbox-4" />
-      </FormControl>
-    </Fieldset>
-  ),
+  render: (args) => renderCheckboxes(args),
 };
 
 export const Row: StoryObj<CheckboxProps> = {
   args: CheckboxArgs.basic,
-  render: (args) => (
-    <Fieldset {...fieldsetArgs} direction="row">
-      <FormControl {...formControlArgs} label="Social Justice">
-        <Checkbox {...args} id="checkbox-1" />
-      </FormControl>
-      <FormControl label="Decent work" labelPlacement="end" labelSize="small">
-        <Checkbox {...args} id="checkbox-2" />
-      </FormControl>
-      <FormControl {...formControlArgs} label="Ending child labour">
-        <Checkbox {...args} id="checkbox-3" />
-      </FormControl>
-      <FormControl {...formControlArgs} label="Achieving full employment">
-        <Checkbox {...args} id="checkbox-4" />
-      </FormControl>
-    </Fieldset>
-  ),
+  render: (args) => renderCheckboxes(args),
 };
 
 export const Helper: StoryObj<CheckboxProps> = {
   args: CheckboxArgs.basic,
-  render: (args) => (
-    <Fieldset {...fieldsetArgs} helper="Choose at least one topic">
-      <FormControl {...formControlArgs} label="Social Justice">
-        <Checkbox {...args} id="checkbox-1" />
-      </FormControl>
-      <FormControl label="Decent work" labelPlacement="end" labelSize="small">
-        <Checkbox {...args} id="checkbox-2" />
-      </FormControl>
-      <FormControl {...formControlArgs} label="Ending child labour">
-        <Checkbox {...args} id="checkbox-3" />
-      </FormControl>
-      <FormControl {...formControlArgs} label="Achieving full employment">
-        <Checkbox {...args} id="checkbox-4" />
-      </FormControl>
-    </Fieldset>
-  ),
+  render: (args) =>
+    renderCheckboxes(args, {
+      ...fieldSetDefaults,
+      helper: "Choose at least one topic",
+    }),
 };
 
 export const Error: StoryObj<CheckboxProps> = {
   args: CheckboxArgs.error,
-  render: (args) => (
-    <Fieldset {...fieldsetArgs}>
-      <FormControl {...formControlArgs} label="Social Justice">
-        <Checkbox {...args} />
-      </FormControl>
-      <FormControl label="Decent work" labelPlacement="end" labelSize="small">
-        <Checkbox {...args} />
-      </FormControl>
-      <FormControl {...formControlArgs} label="Ending child labour">
-        <Checkbox {...args} />
-      </FormControl>
-      <FormControl {...formControlArgs} label="Achieving full employment">
-        <Checkbox {...args} />
-      </FormControl>
-    </Fieldset>
-  ),
+  render: (args) => renderCheckboxes(args),
 };
 
 export const Disabled: StoryObj<CheckboxProps> = {
   args: CheckboxArgs.basic,
-  render: (args) => (
-    <Fieldset {...fieldsetArgs} disabled>
-      <FormControl {...formControlArgs} label="Social Justice">
-        <Checkbox {...args} />
-      </FormControl>
-      <FormControl label="Decent work" labelPlacement="end" labelSize="small">
-        <Checkbox {...args} />
-      </FormControl>
-      <FormControl {...formControlArgs} label="Ending child labour">
-        <Checkbox {...args} />
-      </FormControl>
-      <FormControl {...formControlArgs} label="Achieving full employment">
-        <Checkbox {...args} />
-      </FormControl>
-    </Fieldset>
-  ),
+  render: (args) =>
+    renderCheckboxes(args, { ...fieldSetDefaults, disabled: true }),
 };
 
 export default CheckboxMeta;

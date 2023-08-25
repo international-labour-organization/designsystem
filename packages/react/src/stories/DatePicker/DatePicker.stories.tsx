@@ -10,7 +10,7 @@ import {
 } from "@storybook/addon-docs";
 import { DatePicker } from "../../components";
 import DatePickerArgs from "../../components/DatePicker/DatePicker.args";
-import { FormControl, FormControlProps } from "../../components/FormControl";
+import { FormControlPublicProps } from "../../components/FormControl/FormControl.props";
 
 const DatePickerMeta: Meta<typeof DatePicker> = {
   title: "Components/Forms/DatePicker",
@@ -44,7 +44,7 @@ const DatePickerMeta: Meta<typeof DatePicker> = {
 
 export default DatePickerMeta;
 
-const startFormCtrlProps: Omit<FormControlProps, "children"> = {
+const startFormCtrlProps: FormControlPublicProps = {
   label: "Select a date",
   labelPlacement: "top",
   labelSize: "medium",
@@ -53,37 +53,16 @@ const startFormCtrlProps: Omit<FormControlProps, "children"> = {
 };
 
 export const Basic: StoryObj<typeof DatePicker> = {
-  args: DatePickerArgs.basic,
-  render: (args) => (
-    <FormControl {...startFormCtrlProps}>
-      <DatePicker {...args} />
-    </FormControl>
-  ),
+  args: { ...DatePickerArgs.basic, ...startFormCtrlProps },
+  render: (args) => <DatePicker {...args} />,
 };
 
 export const Error: StoryObj<typeof DatePicker> = {
-  args: DatePickerArgs.haserror,
-  render: (args) => (
-    <FormControl {...startFormCtrlProps}>
-      <DatePicker {...args} />
-    </FormControl>
-  ),
+  args: { ...DatePickerArgs.haserror, ...startFormCtrlProps },
+  render: (args) => <DatePicker {...args} />,
 };
 
 export const Disabled: StoryObj<typeof DatePicker> = {
-  args: { ...DatePickerArgs.basic, disabled: true },
-  render: (args) => (
-    <FormControl {...startFormCtrlProps}>
-      <DatePicker {...args} />
-    </FormControl>
-  ),
-};
-
-export const RTL: StoryObj<typeof DatePicker> = {
-  args: { ...DatePickerArgs.basic, rtl: true },
-  render: (args) => (
-    <FormControl {...startFormCtrlProps}>
-      <DatePicker {...args} />
-    </FormControl>
-  ),
+  args: { ...DatePickerArgs.basic, disabled: true, ...startFormCtrlProps },
+  render: (args) => <DatePicker {...args} />,
 };

@@ -1,7 +1,11 @@
 import React from "react";
 import classNames from "classnames";
 import useGlobalSettings from "../../hooks/useGlobalSettings";
-import { NumberPickerProps } from "./NumberPicker.props";
+import FormControl, { useFormControl } from "../FormControl/FormControl";
+import {
+  NumberPickerProps,
+  LabelledNumberPickerProps,
+} from "./NumberPicker.props";
 
 const NumberPicker = React.forwardRef<HTMLInputElement, NumberPickerProps>(
   (
@@ -9,11 +13,16 @@ const NumberPicker = React.forwardRef<HTMLInputElement, NumberPickerProps>(
     ref
   ) => {
     const { prefix } = useGlobalSettings();
+    const formControlCtx = useFormControl();
+    const { ariaDescribedBy } = formControlCtx;
+
+    const inputClass = `${prefix}--input`;
     const baseClass = `${prefix}--numberpicker`;
 
-    const NumberPickerClasses = classNames("", {
-      [baseClass]: true,
-      [`error`]: error,
+    const hasError = !disabled && !!error;
+
+    const numberPickerClasses = classNames(inputClass, baseClass, {
+      error: hasError,
     });
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -30,14 +39,27 @@ const NumberPicker = React.forwardRef<HTMLInputElement, NumberPickerProps>(
         onChange={handleChange}
         disabled={disabled}
         placeholder={placeholder}
-        required={required as any}
+        required={required}
         type="number"
-        className={`${NumberPickerClasses} ${prefix}--input`}
+        className={numberPickerClasses}
         pattern="[0-9]*"
         inputMode="numeric"
+        aria-describedby={ariaDescribedBy}
       />
     );
   }
 );
 
-export default NumberPicker;
+const LabelledNumberPicker = React.forwardRef<
+  HTMLInputElement,
+  LabelledNumberPickerProps
+>((props, ref) => {
+  const fieldId = props.id ? props.id : props.name;
+  return (
+    <FormControl fieldId={fieldId} {...props}>
+      <NumberPicker ref={ref} {...props} />
+    </FormControl>
+  );
+});
+
+export default LabelledNumberPicker;

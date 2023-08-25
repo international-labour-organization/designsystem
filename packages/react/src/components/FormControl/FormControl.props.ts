@@ -48,7 +48,7 @@ export interface FormControlPublicProps {
   /**
    * Inline styles for the input
    */
-  formControlStyle?: React.CSSProperties;
+  style?: React.CSSProperties;
 
   /**
    * Optional text to render in a tooltip
@@ -70,3 +70,6 @@ export interface FormControlPrivateProps {
 }
 
 export type FormControlProps = FormControlPublicProps & FormControlPrivateProps;
+
+export type LabelledFormFieldProps<T> = Omit<T, "style"> &
+  FormControlPublicProps & { inputStyle?: React.CSSProperties };

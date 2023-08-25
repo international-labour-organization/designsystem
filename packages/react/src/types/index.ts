@@ -109,4 +109,14 @@ export interface ChoiceFieldProps<T> extends FormFieldProps<T> {
    * Whether the input should be checked by default
    **/
   defaultChecked?: boolean;
+
+  /**
+   * Whether the input is checked
+   */
+  checked?: boolean;
+
+  /**
+   * The input's value attribute.
+   */
+  value?: string;
 }

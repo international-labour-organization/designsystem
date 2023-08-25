@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import classNames from "classnames";
 import useGlobalSettings from "../../hooks/useGlobalSettings";
-import { FileUploadProps } from "./FileUpload.props";
+import FormControl, { useFormControl } from "../FormControl/FormControl";
+import { FileUploadProps, LabelledFileUploadProps } from "./FileUpload.props";
 
 const FileUpload = React.forwardRef<HTMLInputElement, FileUploadProps>(
   (
@@ -18,6 +19,9 @@ const FileUpload = React.forwardRef<HTMLInputElement, FileUploadProps>(
     ref
   ) => {
     const { prefix } = useGlobalSettings();
+    const formControlCtx = useFormControl();
+    const { ariaDescribedBy } = formControlCtx;
+
     const baseClass = `${prefix}--file-upload`;
     const fileUploadClasses = classNames(baseClass, {
       [`error`]: error,
@@ -26,9 +30,6 @@ const FileUpload = React.forwardRef<HTMLInputElement, FileUploadProps>(
 
     const [uploadfiles, setUploadFiles] = useState([]);
 
-    /**
-     * On change, add file to listed files, if there is a callback, call it
-     */
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
       const files = e.target.files;
       setUploadFiles(files as any);
@@ -52,6 +53,7 @@ const FileUpload = React.forwardRef<HTMLInputElement, FileUploadProps>(
           type="file"
           className={inputClass}
           data-label={placeholder}
+          aria-describedby={ariaDescribedBy}
         />
         {uploadfiles.length > 0 && (
           <ul className={`${baseClass}--list`}>
@@ -70,4 +72,16 @@ const FileUpload = React.forwardRef<HTMLInputElement, FileUploadProps>(
   }
 );
 
-export default FileUpload;
+const LabelledFileUpload = React.forwardRef<
+  HTMLInputElement,
+  LabelledFileUploadProps
+>((props, ref) => {
+  const fieldId = props.id ? props.id : props.name;
+  return (
+    <FormControl fieldId={fieldId} {...props}>
+      <FileUpload ref={ref} {...props} />
+    </FormControl>
+  );
+});
+
+export default LabelledFileUpload;

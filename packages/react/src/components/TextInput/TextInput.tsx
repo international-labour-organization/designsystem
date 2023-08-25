@@ -1,7 +1,8 @@
 import React from "react";
 import classNames from "classnames";
 import useGlobalSettings from "../../hooks/useGlobalSettings";
-import { TextInputProps } from "./TextInput.props";
+import { TextInputProps, LabelledTextInputProps } from "./TextInput.props";
+import FormControl, { useFormControl } from "../FormControl/FormControl";
 
 const TextInput = React.forwardRef<HTMLInputElement, TextInputProps>(
   (
@@ -19,6 +20,9 @@ const TextInput = React.forwardRef<HTMLInputElement, TextInputProps>(
     ref
   ) => {
     const { prefix } = useGlobalSettings();
+    const formControlCtx = useFormControl();
+    const { ariaDescribedBy } = formControlCtx;
+
     const baseClass = `${prefix}--text-input`;
 
     const inputClass = classNames(baseClass, {
@@ -37,9 +41,22 @@ const TextInput = React.forwardRef<HTMLInputElement, TextInputProps>(
         type={type}
         className={inputClass}
         pattern={pattern}
+        aria-describedby={ariaDescribedBy}
       />
     );
   }
 );
 
-export default TextInput;
+const LabelledTextInput = React.forwardRef<
+  HTMLInputElement,
+  LabelledTextInputProps
+>((props, ref) => {
+  const fieldId = props.id ? props.id : props.name;
+  return (
+    <FormControl fieldId={fieldId} {...props}>
+      <TextInput ref={ref} {...props} />
+    </FormControl>
+  );
+});
+
+export default LabelledTextInput;
