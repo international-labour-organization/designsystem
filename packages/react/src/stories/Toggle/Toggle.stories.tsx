@@ -9,11 +9,36 @@ import {
   Subheading,
   Title,
 } from "@storybook/blocks";
+import { labelledChoiceFieldArgTypes } from "../../types/forms.args";
 
 const ToggleMeta: Meta<typeof Toggle> = {
   title: "Components/Forms/Toggle",
   component: Toggle,
   tags: ["autodocs"],
+  argTypes: {
+    ...labelledChoiceFieldArgTypes("HTMLInputElement"),
+    size: {
+      description: "The size of the toggle",
+      control: {
+        type: "select",
+        options: ["small", "medium", "large"],
+      },
+      table: {
+        defaultValue: { summary: "medium" },
+        type: {
+          summary: "small | medium | large",
+        },
+      },
+    },
+    onClick: {
+      description: "The click event handler",
+      table: {
+        type: {
+          summary: "React.MouseEventHandler<HTMLInputElement>",
+        },
+      },
+    },
+  },
   parameters: {
     docs: {
       page: () => (
@@ -25,12 +50,6 @@ const ToggleMeta: Meta<typeof Toggle> = {
             states.
           </Description>
           <Primary />
-          <Subheading>Uncontrolled</Subheading>
-          <Description>
-            The Toggle is uncontrolled by default. Use the `checked` and
-            `onClick` props if you need to control the state of the Toggle
-            programatically.
-          </Description>
           <Heading>Props</Heading>
           <ArgTypes of={ToggleMeta} />
           <Stories />
@@ -44,50 +63,40 @@ export default ToggleMeta;
 
 export const Default: StoryObj<typeof Toggle> = {
   args: ToggleArgs.Default,
-  render: (args) => <Toggle {...args} />,
 };
 
 export const DefaultChecked: StoryObj<typeof Toggle> = {
   args: ToggleArgs.DefaultChecked,
-  render: (args) => <Toggle {...args} />,
 };
 
 export const Disabled: StoryObj<typeof Toggle> = {
   args: ToggleArgs.Disabled,
-  render: (args) => <Toggle {...args} />,
 };
 
 export const Helper: StoryObj<typeof Toggle> = {
   args: ToggleArgs.Helper,
-  render: (args) => <Toggle {...args} />,
 };
 
 export const Tooltip: StoryObj<typeof Toggle> = {
   args: ToggleArgs.Tooltip,
-  render: (args) => <Toggle {...args} />,
 };
 
 export const Error: StoryObj<typeof Toggle> = {
   args: ToggleArgs.Error,
-  render: (args) => <Toggle {...args} />,
 };
 
 export const Controlled: StoryObj<typeof Toggle> = {
   args: ToggleArgs.Controlled,
-  render: (args) => <Toggle {...args} />,
 };
 
 export const Small: StoryObj<typeof Toggle> = {
   args: ToggleArgs.Small,
-  render: (args) => <Toggle {...args} />,
 };
 
 export const Medium: StoryObj<typeof Toggle> = {
   args: ToggleArgs.Medium,
-  render: (args) => <Toggle {...args} />,
 };
 
 export const Large: StoryObj<typeof Toggle> = {
   args: ToggleArgs.Large,
-  render: (args) => <Toggle {...args} />,
 };

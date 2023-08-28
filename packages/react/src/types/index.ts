@@ -128,5 +128,5 @@ export interface ChoiceFieldProps<T> extends FormFieldProps<T> {
   value?: string;
 }
 
-export type LabelledFormFieldProps<T> = Omit<T, "style"> &
+export type LabelledFormFieldProps<T> = T &
   FormControlPublicProps & { inputStyle?: React.CSSProperties };
