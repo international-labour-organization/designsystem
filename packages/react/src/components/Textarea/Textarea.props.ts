@@ -1,5 +1,5 @@
 import { FormFieldProps } from "../../types";
-import { LabelledFormFieldProps } from "../FormControl/FormControl.props";
+import { LabelledFormFieldProps } from "../../types";
 export interface TextareaProps extends FormFieldProps<HTMLTextAreaElement> {
   /**
    * The Textarea's onChange callback.

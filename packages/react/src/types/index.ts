@@ -1,3 +1,5 @@
+import { FormControlPublicProps } from "../components/FormControl/FormControl.props";
+
 // export type AccordionSize = "small" | "large";
 export type ThemeTypes = "light" | "dark";
 export type ButtonFunctions = "button" | "submit" | "reset";
@@ -125,3 +127,6 @@ export interface ChoiceFieldProps<T> extends FormFieldProps<T> {
    */
   value?: string;
 }
+
+export type LabelledFormFieldProps<T> = Omit<T, "style"> &
+  FormControlPublicProps & { inputStyle?: React.CSSProperties };

@@ -1,5 +1,5 @@
 import { FormFieldProps } from "../../types";
-import { FormControlPublicProps } from "../FormControl/FormControl.props";
+import { LabelledFormFieldProps } from "../../types";
 
 export interface ToggleProps extends FormFieldProps<HTMLInputElement> {
   /**
@@ -24,4 +24,4 @@ export interface ToggleProps extends FormFieldProps<HTMLInputElement> {
   onClick?: (event: React.MouseEvent<HTMLInputElement>) => void;
 }
 
-export type LabelledToggleProps = ToggleProps & FormControlPublicProps;
+export type LabelledToggleProps = LabelledFormFieldProps<ToggleProps>;

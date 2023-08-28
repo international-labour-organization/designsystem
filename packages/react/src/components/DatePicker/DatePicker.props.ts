@@ -1,5 +1,5 @@
 import { FormFieldProps } from "../../types";
-import { LabelledFormFieldProps } from "../FormControl/FormControl.props";
+import { LabelledFormFieldProps } from "../../types";
 
 export interface DatePickerProps extends FormFieldProps<HTMLInputElement> {
   /**

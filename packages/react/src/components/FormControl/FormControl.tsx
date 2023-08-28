@@ -64,7 +64,7 @@ const FormControl: FC<FormControlProps> = ({
   helper,
   errorMessage,
   tooltip,
-  formControlStyle,
+  style,
   error,
   disabled,
   fieldId,
@@ -130,7 +130,7 @@ const FormControl: FC<FormControlProps> = ({
 
   return (
     <FormControlContext.Provider value={contextValue}>
-      <div className={formControlClass} style={formControlStyle}>
+      <div className={formControlClass} style={style}>
         <span className={labelClass}>
           <label htmlFor={fieldId}>{label}</label>
           {tooltip && (

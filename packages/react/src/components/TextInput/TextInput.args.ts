@@ -4,7 +4,7 @@ export const basic: LabelledTextInputProps = {
   disabled: false,
   errorMessage: "This is an error message",
   error: false,
-  formControlStyle: { width: "100%" },
+  style: { width: "100%" },
   id: "text-input",
   label: "Insert your name here",
   labelPlacement: "top",

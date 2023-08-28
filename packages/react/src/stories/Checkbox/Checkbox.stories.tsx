@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from "@storybook/react";
 import { Checkbox, CheckboxArgs } from "../../components/Checkbox";
-import { CheckboxProps } from "../../components/Checkbox/Checkbox.props";
+import { LabelledCheckboxProps } from "../../components/Checkbox/Checkbox.props";
 import {
   ArgTypes,
   Description,
@@ -42,7 +42,7 @@ const fieldSetDefaults: FieldsetProps = {
 };
 
 const renderCheckboxes = (
-  args: Omit<CheckboxProps, "name" | "label">,
+  args: LabelledCheckboxProps,
   fieldsetArgs: FieldsetProps = fieldSetDefaults
 ) => (
   <Fieldset {...fieldsetArgs}>
@@ -77,22 +77,22 @@ const renderCheckboxes = (
   </Fieldset>
 );
 
-export const Default: StoryObj<CheckboxProps> = {
+export const Default: StoryObj<LabelledCheckboxProps> = {
   args: CheckboxArgs.basic,
   render: (args) => renderCheckboxes(args),
 };
 
-export const CheckedByDefault: StoryObj<CheckboxProps> = {
+export const CheckedByDefault: StoryObj<LabelledCheckboxProps> = {
   args: CheckboxArgs.checked,
   render: (args) => renderCheckboxes(args),
 };
 
-export const Row: StoryObj<CheckboxProps> = {
+export const Row: StoryObj<LabelledCheckboxProps> = {
   args: CheckboxArgs.basic,
   render: (args) => renderCheckboxes(args),
 };
 
-export const Helper: StoryObj<CheckboxProps> = {
+export const Helper: StoryObj<LabelledCheckboxProps> = {
   args: CheckboxArgs.basic,
   render: (args) =>
     renderCheckboxes(args, {
@@ -101,12 +101,12 @@ export const Helper: StoryObj<CheckboxProps> = {
     }),
 };
 
-export const Error: StoryObj<CheckboxProps> = {
+export const Error: StoryObj<LabelledCheckboxProps> = {
   args: CheckboxArgs.error,
   render: (args) => renderCheckboxes(args),
 };
 
-export const Disabled: StoryObj<CheckboxProps> = {
+export const Disabled: StoryObj<LabelledCheckboxProps> = {
   args: CheckboxArgs.basic,
   render: (args) =>
     renderCheckboxes(args, { ...fieldSetDefaults, disabled: true }),

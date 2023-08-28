@@ -13,7 +13,7 @@ export const basic: LabelledTextareaProps = {
   label: "Insert your life story here",
   labelPlacement: "top" as const,
   labelSize: "medium" as const,
-  formControlStyle: { width: "100%" },
+  style: { width: "100%" },
   errorMessage: "This is an error message",
 };
 

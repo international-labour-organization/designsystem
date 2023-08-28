@@ -1,8 +1,9 @@
-import { CheckboxProps } from "./Checkbox.props";
+import { LabelledCheckboxProps } from "./Checkbox.props";
 
 const NUMBER_CHECKBOXES = 3;
 
-const basic: Omit<CheckboxProps, "id"> = {
+const basic: LabelledCheckboxProps = {
+  label: "Checkbox",
   className: "checkbox",
   name: "checkbox",
 };
@@ -12,7 +13,12 @@ const basicCheckBoxes = Array(NUMBER_CHECKBOXES).map((_, i) => ({
   id: `checkbox-${i}`,
 }));
 
-const error: Omit<CheckboxProps, "id"> = {
+const checked: LabelledCheckboxProps = {
+  ...basic,
+  defaultChecked: true,
+};
+
+const error: LabelledCheckboxProps = {
   ...basic,
   error: true,
 };
@@ -22,26 +28,15 @@ const errorCheckBoxes = Array(NUMBER_CHECKBOXES).map((_, i) => ({
   id: `checkbox-${i}`,
 }));
 
-const checked: Omit<CheckboxProps, "id"> = {
-  ...basic,
-  defaultChecked: true,
-};
-
-const checkedCheckBoxes = Array(NUMBER_CHECKBOXES).map((_, i) => ({
-  ...checked,
-  id: `checkbox-${i}`,
-}));
-
 /**
  * Sample prop definitions Checkbox's enumerable properties (imported in stories and test)
  */
 const CheckboxArgs = {
   basic,
   basicCheckBoxes,
-  error,
   errorCheckBoxes,
   checked,
-  checkedCheckBoxes,
+  error,
 };
 
 export default CheckboxArgs;

@@ -70,6 +70,3 @@ export interface FormControlPrivateProps {
 }
 
 export type FormControlProps = FormControlPublicProps & FormControlPrivateProps;
-
-export type LabelledFormFieldProps<T> = Omit<T, "style"> &
-  FormControlPublicProps & { inputStyle?: React.CSSProperties };
