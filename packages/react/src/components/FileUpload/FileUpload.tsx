@@ -8,6 +8,7 @@ const FileUpload = React.forwardRef<HTMLInputElement, FileUploadProps>(
   (
     {
       onChange,
+      onBlur,
       disabled = false,
       error,
       id,
@@ -46,6 +47,7 @@ const FileUpload = React.forwardRef<HTMLInputElement, FileUploadProps>(
           id={id ? id : name}
           name={name}
           onChange={handleChange}
+          onBlur={onBlur}
           disabled={disabled}
           multiple={multiple}
           placeholder={placeholder}

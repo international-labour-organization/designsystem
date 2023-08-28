@@ -15,6 +15,7 @@ const Toggle = React.forwardRef<HTMLInputElement, ToggleProps>(
       id,
       name,
       onChange,
+      onBlur,
       onClick,
       checked,
       className,
@@ -53,6 +54,7 @@ const Toggle = React.forwardRef<HTMLInputElement, ToggleProps>(
           role="switch"
           required={required}
           onChange={onChange}
+          onBlur={onBlur}
           onClick={onClick}
           aria-describedby={ariaDescribedBy}
         />

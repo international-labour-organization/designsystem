@@ -8,6 +8,7 @@ const Dropdown = forwardRef<HTMLSelectElement, DropdownProps>((props, ref) => {
   const {
     autocomplete,
     onChange,
+    onBlur,
     disabled = false,
     error,
     id,
@@ -48,6 +49,7 @@ const Dropdown = forwardRef<HTMLSelectElement, DropdownProps>((props, ref) => {
         name={name}
         required={required}
         onChange={handleChange}
+        onBlur={onBlur}
         disabled={disabled}
         className={dropdownClasses}
         value={currentvalue}

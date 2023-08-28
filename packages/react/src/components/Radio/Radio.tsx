@@ -10,6 +10,7 @@ const Radio = React.forwardRef<HTMLInputElement, RadioProps>(
   (
     {
       onChange,
+      onBlur,
       disabled = false,
       error,
       id,
@@ -54,6 +55,7 @@ const Radio = React.forwardRef<HTMLInputElement, RadioProps>(
         id={id ? id : name}
         name={name}
         onChange={handleChange}
+        onBlur={onBlur}
         disabled={disabled}
         required={required}
         type="radio"

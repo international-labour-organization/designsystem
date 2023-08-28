@@ -9,7 +9,16 @@ import {
 
 const NumberPicker = React.forwardRef<HTMLInputElement, NumberPickerProps>(
   (
-    { onChange, disabled = false, error, id, name, placeholder, required },
+    {
+      onChange,
+      onBlur,
+      disabled = false,
+      error,
+      id,
+      name,
+      placeholder,
+      required,
+    },
     ref
   ) => {
     const { prefix } = useGlobalSettings();
@@ -37,6 +46,7 @@ const NumberPicker = React.forwardRef<HTMLInputElement, NumberPickerProps>(
         id={id ? id : name}
         name={name}
         onChange={handleChange}
+        onBlur={onBlur}
         disabled={disabled}
         placeholder={placeholder}
         required={required}

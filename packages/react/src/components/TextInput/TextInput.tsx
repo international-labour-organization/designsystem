@@ -8,6 +8,7 @@ const TextInput = React.forwardRef<HTMLInputElement, TextInputProps>(
   (
     {
       onChange,
+      onBlur,
       error,
       id,
       name,
@@ -35,6 +36,7 @@ const TextInput = React.forwardRef<HTMLInputElement, TextInputProps>(
         id={id ? id : name}
         name={name}
         onChange={onChange}
+        onBlur={onBlur}
         disabled={disabled}
         placeholder={placeholder}
         required={required}

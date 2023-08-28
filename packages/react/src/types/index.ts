@@ -69,6 +69,11 @@ export interface FormFieldProps<T> {
   onChange?: (e: React.ChangeEvent<T>) => any;
 
   /**
+   * The input's onBlur callback.
+   */
+  onBlur?: (e: React.FocusEvent<T>) => any;
+
+  /**
    * Specify an optional className to be added to your input.
    */
   className?: string;

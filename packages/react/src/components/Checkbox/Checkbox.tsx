@@ -9,6 +9,7 @@ import usePrevious from "../../hooks/usePrevious";
 const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>((props, ref) => {
   const {
     onChange,
+    onBlur,
     disabled = false,
     error,
     id,
@@ -51,6 +52,7 @@ const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>((props, ref) => {
       id={id ? id : name}
       name={name}
       onChange={handleChange}
+      onBlur={onBlur}
       disabled={disabled}
       required={required}
       type="checkbox"

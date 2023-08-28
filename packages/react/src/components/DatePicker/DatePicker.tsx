@@ -8,6 +8,7 @@ const DatePicker = forwardRef<HTMLInputElement, DatePickerProps>(
   (props, ref) => {
     const {
       onChange,
+      onBlur,
       disabled = false,
       error,
       id,
@@ -46,6 +47,7 @@ const DatePicker = forwardRef<HTMLInputElement, DatePickerProps>(
         id={id ? id : name}
         name={name}
         onChange={handleChange}
+        onBlur={onBlur}
         disabled={disabled}
         placeholder={placeholder}
         required={required}
