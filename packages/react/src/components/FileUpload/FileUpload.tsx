@@ -78,10 +78,17 @@ const LabelledFileUpload = React.forwardRef<
   HTMLInputElement,
   LabelledFileUploadProps
 >((props, ref) => {
+  const { style, inputStyle, className, ...rest } = props;
   const fieldId = props.id ? props.id : props.name;
+
   return (
-    <FormControl fieldId={fieldId} {...props}>
-      <FileUpload ref={ref} {...props} />
+    <FormControl
+      fieldId={fieldId}
+      style={style}
+      className={className}
+      {...rest}
+    >
+      <FileUpload ref={ref} style={inputStyle} {...rest} />
     </FormControl>
   );
 });

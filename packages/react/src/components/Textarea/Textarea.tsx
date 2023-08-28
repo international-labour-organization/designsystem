@@ -34,10 +34,17 @@ const LabelledTextarea = React.forwardRef<
   HTMLTextAreaElement,
   LabelledTextareaProps
 >((props, ref) => {
+  const { style, inputStyle, className, ...rest } = props;
   const fieldId = props.id ? props.id : props.name;
+
   return (
-    <FormControl fieldId={fieldId} {...props}>
-      <Textarea ref={ref} {...props} />
+    <FormControl
+      fieldId={fieldId}
+      style={style}
+      className={className}
+      {...rest}
+    >
+      <Textarea ref={ref} style={inputStyle} {...rest} />
     </FormControl>
   );
 });

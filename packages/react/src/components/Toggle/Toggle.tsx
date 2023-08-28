@@ -1,10 +1,11 @@
-import React from "react";
-import { LabelledToggleProps, ToggleProps } from "./Toggle.props";
+import { Ref, forwardRef } from "react";
+import { ToggleProps } from "./Toggle.props";
+import { LabelledToggleProps } from "./Toggle.props";
 import { useGlobalSettings } from "../../hooks";
 import classnames from "classnames";
 import FormControl, { useFormControl } from "../FormControl/FormControl";
 
-const Toggle = React.forwardRef<HTMLInputElement, ToggleProps>(
+const Toggle = forwardRef<HTMLInputElement, ToggleProps>(
   (
     {
       size = "medium",
@@ -64,12 +65,18 @@ const Toggle = React.forwardRef<HTMLInputElement, ToggleProps>(
   }
 );
 
-const LabelledToggle = React.forwardRef<HTMLInputElement, LabelledToggleProps>(
-  (props, ref) => {
+const LabelledToggle = forwardRef(
+  (props: LabelledToggleProps, ref: Ref<HTMLInputElement>) => {
     const fieldId = props.id ? props.id : props.name;
+    const { style, inputStyle, className, ...rest } = props;
     return (
-      <FormControl fieldId={fieldId} {...props}>
-        <Toggle ref={ref} {...props} />
+      <FormControl
+        fieldId={fieldId}
+        style={style}
+        className={className}
+        {...rest}
+      >
+        <Toggle ref={ref} style={inputStyle} {...rest} />
       </FormControl>
     );
   }

@@ -59,7 +59,7 @@ export const useFormControl = () => useContext(FormControlContext);
 
 const FormControl: FC<FormControlProps> = ({
   children,
-  formControlClassName,
+  className,
   label,
   helper,
   errorMessage,
@@ -109,7 +109,7 @@ const FormControl: FC<FormControlProps> = ({
 
   const formControlClass = classnames(
     baseClass,
-    formControlClassName,
+    className,
     labelPlacementClass,
     [{ [errorClass]: error }, { [disabledClass]: disabled }]
   );

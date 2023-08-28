@@ -74,10 +74,17 @@ const Dropdown = forwardRef<HTMLSelectElement, DropdownProps>((props, ref) => {
 
 const LabelledDropdown = forwardRef<HTMLSelectElement, LabelledDropdownProps>(
   (props, ref) => {
+    const { style, inputStyle, className, ...rest } = props;
     const fieldId = props.id ? props.id : props.name;
+
     return (
-      <FormControl fieldId={fieldId} {...props}>
-        <Dropdown ref={ref} {...props} />
+      <FormControl
+        fieldId={fieldId}
+        style={style}
+        className={className}
+        {...rest}
+      >
+        <Dropdown ref={ref} style={inputStyle} {...rest} />
       </FormControl>
     );
   }

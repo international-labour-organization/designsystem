@@ -64,8 +64,6 @@ const Fieldset: FC<FieldsetProps> = ({
 
   const helperMessage = hasError ? errorMessage : helper;
 
-  console.log({ hasError, helper, errorMessage, helperMessage });
-
   return (
     <fieldset className={fieldsetClasses} {...props}>
       <div className={`${baseClass}--legend-wrapper`}>

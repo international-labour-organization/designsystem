@@ -8,7 +8,7 @@ export interface FormControlPublicProps {
   /**
    * Optional className to add to the FormControl wrapper
    */
-  formControlClassName?: string;
+  className?: string;
 
   /**
    * Is the input disabled?

@@ -53,10 +53,17 @@ const LabelledTextInput = React.forwardRef<
   HTMLInputElement,
   LabelledTextInputProps
 >((props, ref) => {
+  const { style, inputStyle, className, ...rest } = props;
   const fieldId = props.id ? props.id : props.name;
+
   return (
-    <FormControl fieldId={fieldId} {...props}>
-      <TextInput ref={ref} {...props} />
+    <FormControl
+      fieldId={fieldId}
+      style={style}
+      className={className}
+      {...rest}
+    >
+      <TextInput ref={ref} style={inputStyle} {...rest} />
     </FormControl>
   );
 });

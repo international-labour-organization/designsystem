@@ -21,7 +21,7 @@ export interface ToggleProps extends FormFieldProps<HTMLInputElement> {
   /**
    * OnClick handler for the input element.
    */
-  onClick?: (event: React.MouseEvent<HTMLInputElement>) => void;
+  onClick?: (event: React.MouseEvent<HTMLInputElement>) => any;
 }
 
 export type LabelledToggleProps = LabelledFormFieldProps<ToggleProps>;

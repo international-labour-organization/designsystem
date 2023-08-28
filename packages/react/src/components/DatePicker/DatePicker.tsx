@@ -65,10 +65,17 @@ const LabelledDatePicker = forwardRef<
   HTMLInputElement,
   LabelledDatePickerProps
 >((props, ref) => {
+  const { style, inputStyle, className, ...rest } = props;
   const fieldId = props.id ? props.id : props.name;
+
   return (
-    <FormControl fieldId={fieldId} {...props}>
-      <DatePicker ref={ref} {...props} />
+    <FormControl
+      fieldId={fieldId}
+      style={style}
+      className={className}
+      {...rest}
+    >
+      <DatePicker ref={ref} style={inputStyle} {...rest} />
     </FormControl>
   );
 });
