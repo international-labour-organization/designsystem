@@ -1,6 +1,7 @@
-import { FileUploadProps } from "./FileUpload.props";
+import { FileUploadProps, LabelledFileUploadProps } from "./FileUpload.props";
 
-const basic: FileUploadProps = {
+const basic: LabelledFileUploadProps = {
+  label: "Upload your file",
   id: "fileupload",
   disabled: false,
   error: false,
@@ -10,7 +11,8 @@ const basic: FileUploadProps = {
   required: false,
 };
 
-const hashelper: FileUploadProps = {
+const hashelper: LabelledFileUploadProps = {
+  label: "Upload your file",
   id: "fileupload",
   disabled: false,
   error: false,
@@ -20,7 +22,8 @@ const hashelper: FileUploadProps = {
   required: false,
 };
 
-const haserror: FileUploadProps = {
+const haserror: LabelledFileUploadProps = {
+  label: "Upload your file",
   id: "fileupload",
   disabled: false,
   error: true,
@@ -30,7 +33,8 @@ const haserror: FileUploadProps = {
   required: false,
 };
 
-const hastooltip: FileUploadProps = {
+const hastooltip: LabelledFileUploadProps = {
+  label: "Upload your file",
   id: "fileupload",
   disabled: false,
   error: false,

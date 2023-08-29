@@ -216,24 +216,11 @@ export const formControlArgTypes = {
       },
     },
   },
-  labelPosition: {
-    description: "The position of the label",
-    defaultValue: "top",
-    control: "select",
-    options: "top, left, right",
-    table: {
-      defaultValue: { summary: "top" },
-      type: {
-        name: "enum",
-        summary: "top | left | right",
-      },
-    },
-  },
   labelSize: {
     description: "The size of the label",
     defaultValue: "medium",
     control: "select",
-    options: "small, medium, large",
+    options: ["small", "medium", "large"],
     table: {
       defaultValue: { summary: "medium" },
       type: {
@@ -246,7 +233,7 @@ export const formControlArgTypes = {
     description: "The placement of the label",
     defaultValue: "start",
     control: "select",
-    options: "top | start | bottom | end",
+    options: ["top", "start", "bottom", "end"],
     table: {
       defaultValue: { summary: "start" },
       type: {

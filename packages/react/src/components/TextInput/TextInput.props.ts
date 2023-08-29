@@ -4,7 +4,6 @@ export interface TextInputProps extends FormFieldProps<HTMLInputElement> {
   /**
    * Optional pattern attribute for phone numbers, zip codes, etc.
    */
-
   pattern?: string;
 
   /**

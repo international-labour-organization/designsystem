@@ -3,11 +3,6 @@ import { LabelledFormFieldProps } from "../../types";
 
 export interface DatePickerProps extends FormFieldProps<HTMLInputElement> {
   /**
-   * The input's onChange callback.
-   */
-  onChange?: (e: React.ChangeEvent<HTMLInputElement>, picker?: string) => any;
-
-  /**
    * The latest date to accept
    */
   max?: string | number;
@@ -20,7 +15,7 @@ export interface DatePickerProps extends FormFieldProps<HTMLInputElement> {
   /**
    * The granularity of the date picker
    */
-  step?: number | "any";
+  step?: number;
 
   /**
    * Specify an optional className to be added to your DatePicker component.
