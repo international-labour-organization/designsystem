@@ -12,11 +12,15 @@ import {
 import { Fieldset } from "../../components";
 import { RadioProps } from "../../components/Radio/Radio.props";
 import { FieldsetProps } from "../../components/Fieldset/Fieldset.props";
+import { labelledChoiceFieldArgTypes } from "../../types/forms.args";
 
 const RadioMeta: Meta<typeof Radio> = {
   title: "Components/Forms/Radio",
   component: Radio,
   tags: ["autodocs"],
+  argTypes: {
+    ...labelledChoiceFieldArgTypes("HTMLInputElement"),
+  },
   parameters: {
     docs: {
       page: () => (
@@ -28,11 +32,6 @@ const RadioMeta: Meta<typeof Radio> = {
             different states.
           </Description>
           <Primary />
-          <Subheading>Accessibility</Subheading>
-          <Description>
-            The Radio component must have an `id` prop to map a label to the
-            form element.
-          </Description>
           <Heading>Props</Heading>
           <ArgTypes of={RadioMeta} />
           <Stories />

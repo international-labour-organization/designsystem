@@ -6,21 +6,63 @@ import {
   Primary,
   Stories,
   Subheading,
-  ArgsTable,
+  ArgTypes,
 } from "@storybook/addon-docs";
 import { DatePicker } from "../../components";
 import DatePickerArgs from "../../components/DatePicker/DatePicker.args";
 import { FormControlPublicProps } from "../../components/FormControl/FormControl.props";
+import { labelledFormFieldArgTypes } from "../../types/forms.args";
 
 const DatePickerMeta: Meta<typeof DatePicker> = {
   title: "Components/Forms/DatePicker",
   component: DatePicker,
   tags: ["autodocs"],
   argTypes: {
-    disabled: {
-      options: [true, false],
-      control: { type: "boolean" },
+    max: {
+      description: "The maximum date that can be selected",
+      control: {
+        type: "date",
+      },
+      table: {
+        type: {
+          summary: "string",
+        },
+      },
     },
+    min: {
+      description: "The minimum date that can be selected",
+      control: {
+        type: "date",
+      },
+      table: {
+        type: {
+          summary: "string",
+        },
+      },
+    },
+    step: {
+      description: "The step value for the date picker",
+      control: {
+        type: "number",
+      },
+      table: {
+        type: {
+          summary: "number",
+        },
+      },
+    },
+    placeholder: {
+      description: "The placeholder text for the date picker",
+      control: {
+        type: "text",
+      },
+      table: {
+        type: {
+          summary: "string",
+        },
+      },
+    },
+    ...labelledFormFieldArgTypes("HTMLInputElement"),
   },
   parameters: {
     docs: {
@@ -34,7 +76,7 @@ const DatePickerMeta: Meta<typeof DatePicker> = {
           </Description>
           <Primary />
           <Subheading>Props</Subheading>
-          <ArgsTable />
+          <ArgTypes of={DatePickerMeta} />
           <Stories title="Examples" />
         </>
       ),

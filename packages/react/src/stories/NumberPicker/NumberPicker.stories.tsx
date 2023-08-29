@@ -7,19 +7,29 @@ import {
   Stories,
   Subheading,
   ArgsTable,
+  ArgTypes,
 } from "@storybook/addon-docs";
 import { NumberPicker } from "../../components";
 import NumberPickerArgs from "../../components/NumberPicker/NumberPicker.args";
+import { labelledFormFieldArgTypes } from "../../types/forms.args";
 
 const NumberPickerMeta: Meta<typeof NumberPicker> = {
   title: "Components/Forms/NumberPicker",
   component: NumberPicker,
   tags: ["autodocs"],
   argTypes: {
-    disabled: {
-      options: [true, false],
-      control: { type: "boolean" },
+    placeholder: {
+      description: "The placeholder text for the number picker",
+      control: {
+        type: "text",
+      },
+      table: {
+        type: {
+          summary: "string",
+        },
+      },
     },
+    ...labelledFormFieldArgTypes("HTMLInputElement"),
   },
   parameters: {
     docs: {
@@ -33,7 +43,7 @@ const NumberPickerMeta: Meta<typeof NumberPicker> = {
           </Description>
           <Primary />
           <Subheading>Props</Subheading>
-          <ArgsTable />
+          <ArgTypes of={NumberPickerMeta} />
           <Stories title="Examples" />
         </>
       ),

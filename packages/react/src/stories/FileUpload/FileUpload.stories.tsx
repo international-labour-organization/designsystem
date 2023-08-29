@@ -6,20 +6,40 @@ import {
   Primary,
   Stories,
   Subheading,
-  ArgsTable,
+  ArgTypes,
 } from "@storybook/addon-docs";
 import { FileUpload } from "../../components";
 import fileUploadArgs from "../../components/FileUpload/FileUpload.args";
+import { labelledFormFieldArgTypes } from "../../types/forms.args";
 
 const FileUploadMeta: Meta<typeof FileUpload> = {
   title: "Components/Forms/FileUpload",
   component: FileUpload,
   tags: ["autodocs"],
   argTypes: {
-    disabled: {
-      options: [true, false],
-      control: { type: "boolean" },
+    multiple: {
+      description: "Whether or not multiple files can be uploaded",
+      control: {
+        type: "boolean",
+      },
+      table: {
+        type: {
+          summary: "boolean",
+        },
+      },
     },
+    placeholder: {
+      description: "The placeholder text for the file upload",
+      control: {
+        type: "text",
+      },
+      table: {
+        type: {
+          summary: "string",
+        },
+      },
+    },
+    ...labelledFormFieldArgTypes("HTMLInputElement"),
   },
   parameters: {
     docs: {
@@ -34,7 +54,7 @@ const FileUploadMeta: Meta<typeof FileUpload> = {
           </Description>
           <Primary />
           <Subheading>Props</Subheading>
-          <ArgsTable />
+          <ArgTypes of={FileUploadMeta} />
           <Stories title="Examples" />
         </>
       ),

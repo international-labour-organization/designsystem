@@ -8,11 +8,27 @@ import {
   Subheading,
   Title,
 } from "@storybook/blocks";
+import { labelledFormFieldArgTypes } from "../../types/forms.args";
 
 const TextInputMeta: Meta<typeof TextInput> = {
   title: "Components/Forms/TextInput",
   component: TextInput,
   tags: ["autodocs"],
+  argTypes: {
+    pattern: {
+      description:
+        "Optional pattern attribute for phone numbers, zip codes, etc.",
+      control: "select",
+      options: ["email", "hidden", "password", "search", "tel", "text", "url"],
+
+      table: {
+        type: {
+          summary: "email | hidden | password | search | tel | text| url",
+        },
+      },
+    },
+    ...labelledFormFieldArgTypes("HTMLTextAreaElement"),
+  },
   parameters: {
     docs: {
       page: () => (
@@ -24,11 +40,6 @@ const TextInputMeta: Meta<typeof TextInput> = {
             email addresses, passwords and other short form fields.
           </Description>
           <Primary />
-          <Subheading>Accessibility</Subheading>
-          <Description>
-            The TextInput component must have an `id` prop to map a label to the
-            form element.
-          </Description>
           <ArgTypes of={TextInputMeta} />
           <Stories />
         </>

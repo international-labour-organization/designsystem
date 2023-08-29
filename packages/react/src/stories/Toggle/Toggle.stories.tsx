@@ -6,7 +6,6 @@ import {
   Heading,
   Primary,
   Stories,
-  Subheading,
   Title,
 } from "@storybook/blocks";
 import { labelledChoiceFieldArgTypes } from "../../types/forms.args";
@@ -19,10 +18,8 @@ const ToggleMeta: Meta<typeof Toggle> = {
     ...labelledChoiceFieldArgTypes("HTMLInputElement"),
     size: {
       description: "The size of the toggle",
-      control: {
-        type: "select",
-        options: ["small", "medium", "large"],
-      },
+      control: "select",
+      options: ["small", "medium", "large"],
       table: {
         defaultValue: { summary: "medium" },
         type: {
@@ -34,7 +31,7 @@ const ToggleMeta: Meta<typeof Toggle> = {
       description: "The click event handler",
       table: {
         type: {
-          summary: "React.MouseEventHandler<HTMLInputElement>",
+          summary: "(event: React.MouseEventHandler<HTMLInputElement>) => any",
         },
       },
     },

@@ -11,11 +11,15 @@ import {
 } from "@storybook/blocks";
 import { Fieldset } from "../../components";
 import { FieldsetProps } from "../../components/Fieldset/Fieldset.props";
+import { labelledChoiceFieldArgTypes } from "../../types/forms.args";
 
 const CheckboxMeta: Meta<typeof Checkbox> = {
   title: "Components/Forms/Checkbox",
   component: Checkbox,
   tags: ["autodocs"],
+  argTypes: {
+    ...labelledChoiceFieldArgTypes("HTMLInputElement"),
+  },
   parameters: {
     docs: {
       page: () => (
@@ -23,8 +27,7 @@ const CheckboxMeta: Meta<typeof Checkbox> = {
           <Title />
           <Description>
             The checkbox component provides users with a switch they can use to
-            turn a single option on or off or alternate between two different
-            states.
+            select more than one option from a list.
           </Description>
           <Primary />
           <Heading>Props</Heading>

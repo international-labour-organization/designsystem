@@ -6,20 +6,87 @@ import {
   Primary,
   Stories,
   Subheading,
-  ArgsTable,
+  ArgTypes,
 } from "@storybook/addon-docs";
 import { Dropdown } from "../../components/Dropdown";
 import dropdownArgs from "../../components/Dropdown/Dropdown.args";
+import { labelledFormFieldArgTypes } from "../../types/forms.args";
 
 const DropdownMeta: Meta<typeof Dropdown> = {
   title: "Components/Forms/Dropdown",
   component: Dropdown,
   tags: ["autodocs"],
   argTypes: {
-    disabled: {
-      options: [true, false],
-      control: { type: "boolean" },
+    autocomplete: {
+      description:
+        "A string providing a hint for a user agent's autocomplete feature.",
+      control: {
+        type: "string",
+      },
+      table: {
+        type: {
+          summary: "string",
+        },
+      },
     },
+    form: {
+      description:
+        "The id of the form that the dropdown belongs to if it isn't nested in a form element",
+      control: {
+        type: "string",
+      },
+      table: {
+        type: {
+          summary: "string",
+        },
+      },
+    },
+    multiple: {
+      description: "Whether the dropdown allows multiple selections",
+      control: {
+        type: "boolean",
+      },
+      table: {
+        type: {
+          summary: "boolean",
+        },
+      },
+    },
+    options: {
+      description: "The options to display in the dropdown",
+      control: {
+        type: "object",
+      },
+      table: {
+        type: {
+          summary: "object",
+        },
+      },
+    },
+    selectSize: {
+      description:
+        "Number of rows in the list that should be visible at one time. Corresponds to the select element's size attribute.",
+      control: {
+        type: "number",
+      },
+      table: {
+        type: {
+          summary: "number",
+        },
+      },
+    },
+    value: {
+      description: "The value of the dropdown",
+      control: {
+        type: "string",
+      },
+      table: {
+        type: {
+          summary: "string",
+        },
+      },
+    },
+    ...labelledFormFieldArgTypes("HTMLSelectElement"),
   },
   parameters: {
     docs: {
@@ -33,7 +100,7 @@ const DropdownMeta: Meta<typeof Dropdown> = {
           </Description>
           <Primary />
           <Subheading>Props</Subheading>
-          <ArgsTable />
+          <ArgTypes of={DropdownMeta} />
           <Stories title="Examples" />
         </>
       ),
