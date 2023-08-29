@@ -43,11 +43,17 @@ function getA11yFields(
 // Calculates the aria-describedby attribute value based on whether or not there's an error
 function getAriaDescribedBy(getAllyFields: AllyFieldsIds, hasError?: boolean) {
   const { tooltipId, helperId, errorId } = getAllyFields;
+
   const ariaDescribedBy = classnames(tooltipId, {
     [`${helperId}`]: !hasError,
     [`${errorId}`]: hasError,
   });
-  return ariaDescribedBy.length > 0 ? ariaDescribedBy : undefined;
+
+  // For some reason, classnames seems to return "undefined" as a string sometimes
+  if (!ariaDescribedBy || ariaDescribedBy === "undefined") {
+    return undefined;
+  }
+  return ariaDescribedBy;
 }
 
 // The context passed down to form elements wrapped by the form control
