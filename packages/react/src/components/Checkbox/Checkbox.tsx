@@ -68,12 +68,21 @@ const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>((props, ref) => {
 const LabelledCheckbox = forwardRef<HTMLInputElement, LabelledCheckboxProps>(
   (props, ref) => {
     const fieldId = props.id ? props.id : props.name;
-    const { style, inputStyle, className, ...rest } = props;
+    const {
+      style,
+      inputStyle,
+      className,
+      labelPlacement = "end",
+      labelSize = "small",
+      ...rest
+    } = props;
     return (
       <FormControl
         fieldId={fieldId}
         style={style}
         className={className}
+        labelPlacement={labelPlacement}
+        labelSize={labelSize}
         {...rest}
       >
         <Checkbox ref={ref} style={inputStyle} {...rest} />

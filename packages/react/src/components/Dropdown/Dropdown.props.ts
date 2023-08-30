@@ -22,7 +22,7 @@ export interface DropdownProps extends FormFieldProps<HTMLSelectElement> {
   /**
    * A string providing a hint for a user agent's autocomplete feature.
    */
-  autocomplete: string;
+  autocomplete?: string;
 
   /**
    * The form element to associate the Dropdown with if it's not nested in a form element.
@@ -47,7 +47,7 @@ export interface DropdownProps extends FormFieldProps<HTMLSelectElement> {
   /**
    * The Dropdown's default selection; should match one of the values in `options`
    */
-  value: string;
+  value?: string;
 }
 
 export type LabelledDropdownProps = LabelledFormFieldProps<DropdownProps>;

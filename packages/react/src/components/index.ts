@@ -4,6 +4,7 @@ export {
   AccordionItem,
   AccordionPanel,
 } from "./Accordion";
+export { Form } from "./Form";
 export { Collapse } from "./Collapse";
 export { Empty } from "./Empty";
 export { Image } from "./Image";
@@ -33,7 +34,6 @@ export { Pagination } from "./Pagination";
 export { SearchField } from "./SearchField";
 export { Video } from "./Video";
 export { Dropdown } from "./Dropdown";
-export { FormElement } from "./FormElement";
 export { Icon } from "./Icon";
 export { List } from "./List";
 export { Profile } from "./Profile";

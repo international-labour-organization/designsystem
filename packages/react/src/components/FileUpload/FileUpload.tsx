@@ -40,23 +40,27 @@ const FileUpload = React.forwardRef<HTMLInputElement, FileUploadProps>(
       }
     };
 
+    const inputId = id ? id : name;
+
     return (
       <div className={fileUploadClasses}>
-        <input
-          ref={ref}
-          id={id ? id : name}
-          name={name}
-          onChange={handleChange}
-          onBlur={onBlur}
-          disabled={disabled}
-          multiple={multiple}
-          placeholder={placeholder}
-          required={required as any}
-          type="file"
-          className={inputClass}
-          data-label={placeholder}
-          aria-describedby={ariaDescribedBy}
-        />
+        <label className={inputClass}>
+          {placeholder}
+          <input
+            ref={ref}
+            id={inputId}
+            name={name}
+            onChange={handleChange}
+            onBlur={onBlur}
+            disabled={disabled}
+            multiple={multiple}
+            placeholder={placeholder}
+            required={required as any}
+            type="file"
+            data-label={placeholder}
+            aria-describedby={ariaDescribedBy}
+          />
+        </label>
         {uploadfiles.length > 0 && (
           <ul className={`${baseClass}--list`}>
             {[...uploadfiles].map((file: any, i: any) => (

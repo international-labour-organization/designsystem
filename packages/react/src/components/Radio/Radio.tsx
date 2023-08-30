@@ -71,7 +71,14 @@ const Radio = React.forwardRef<HTMLInputElement, RadioProps>(
 
 const LabelledRadio = React.forwardRef<HTMLInputElement, LabelledRadioProps>(
   (props, ref) => {
-    const { style, inputStyle, className, ...rest } = props;
+    const {
+      style,
+      inputStyle,
+      className,
+      labelPlacement = "end",
+      labelSize = "small",
+      ...rest
+    } = props;
     const fieldId = props.id ? props.id : props.name;
 
     return (
@@ -79,6 +86,8 @@ const LabelledRadio = React.forwardRef<HTMLInputElement, LabelledRadioProps>(
         fieldId={fieldId}
         style={style}
         className={className}
+        labelPlacement={labelPlacement}
+        labelSize={labelSize}
         {...rest}
       >
         <Radio ref={ref} style={inputStyle} {...rest} />
