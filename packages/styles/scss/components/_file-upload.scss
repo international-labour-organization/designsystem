@@ -4,47 +4,46 @@
 
 .ilo--file-upload {
   &--input {
-    color: transparent;
     order: 3;
 
-    &::-webkit-file-upload-button {
+    input {
       visibility: hidden;
+      color: transparent;
+      width: 0;
     }
 
-    &:before {
-      background-color: map-get($color, "ux", "background", "default");
-      border: map-get($borders, "small")
-        map-get($color, "ux", "borders", "default") solid;
+    background-color: map-get($color, "ux", "background", "default");
+    border: map-get($borders, "small")
+      map-get($color, "ux", "borders", "default") solid;
+    color: map-get($color, "ux", "labels", "actionable");
+    content: attr(data-label);
+    display: inline-block;
+    font-family: $fonts-display;
+    font-weight: map-get($type, "weights", "label");
+    padding: 0;
+    @include borderradius("button");
+    @include boxpadding("button", "medium");
+    @include font-styles("label-medium");
+
+    .ilo--form__theme__dark & {
       color: map-get($color, "ux", "labels", "actionable");
-      content: attr(data-label);
-      display: inline-block;
-      font-family: $fonts-display;
-      font-weight: map-get($type, "weights", "label");
-      padding: 0;
-      @include borderradius("button");
-      @include boxpadding("button", "medium");
-      @include font-styles("label-medium");
     }
 
     &:hover {
-      &:before {
-        background-color: map-get($color, "ux", "background", "hover");
-        border: map-get($borders, "small")
-          map-get($color, "ux", "borders", "hover") solid;
-        cursor: pointer;
-        color: map-get($color, "ux", "labels", "hover");
-        outline: none;
-      }
+      background-color: map-get($color, "ux", "background", "hover");
+      border: map-get($borders, "small")
+        map-get($color, "ux", "borders", "hover") solid;
+      cursor: pointer;
+      color: map-get($color, "ux", "labels", "hover");
+      outline: none;
     }
 
     &:focus {
-      &:before {
-        background-color: map-get($color, "ux", "background", "focus");
-        border: map-get($borders, "small")
-          map-get($color, "ux", "borders", "hover") solid;
-        color: map-get($color, "ux", "labels", "focus");
-        outline: none;
-      }
+      background-color: map-get($color, "ux", "background", "focus");
+      border: map-get($borders, "small")
+        map-get($color, "ux", "borders", "hover") solid;
+      color: map-get($color, "ux", "labels", "focus");
+      outline: none;
     }
 
     &:focus-visible {
@@ -52,12 +51,10 @@
     }
 
     &:active {
-      &:before {
-        background-color: map-get($color, "ux", "background", "active");
-        border: map-get($borders, "base")
-          map-get($color, "ux", "borders", "active") solid;
-        color: map-get($color, "ux", "labels", "active");
-      }
+      background-color: map-get($color, "ux", "background", "active");
+      border: map-get($borders, "base")
+        map-get($color, "ux", "borders", "active") solid;
+      color: map-get($color, "ux", "labels", "active");
     }
 
     &:disabled {
@@ -68,24 +65,24 @@
     &:invalid,
     &.error,
     .error & {
-      &:before {
-        background-color: map-get(
-          $color,
-          "formelements",
-          "input",
-          "error",
-          "background"
-        );
-        @include bordervalues("input", "formelements", "error");
-      }
+      background-color: map-get(
+        $color,
+        "formelements",
+        "input",
+        "error",
+        "background"
+      );
+      @include bordervalues("input", "formelements", "error");
     }
   }
 
   &--list {
     order: 4;
+    grid-area: uploads;
   }
 
   &--list-item {
+    display: inline-block;
     background-color: $color-formelements-uploadedfile-default-background;
     @include bordervalues("uploadedfile", "formelements", "default");
     box-sizing: border-box;
@@ -98,12 +95,5 @@
     @include spacingvalues("margin", "uploadedfile", "formelements");
     outline: none;
     @include spacingvalues("padding", "uploadedfile", "formelements");
-    width: map-get(
-      $spacing,
-      "formelements",
-      "uploadedfile",
-      "default",
-      "width"
-    );
   }
 }

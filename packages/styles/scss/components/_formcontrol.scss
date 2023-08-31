@@ -7,15 +7,17 @@
   $c: &;
 
   display: inline-grid;
+  grid-area: input;
 
   &__label-placement {
     // Label is to the flex start of form element
     &__start {
-      grid-template-rows: auto auto;
-      grid-template-columns: auto auto;
+      grid-template-rows: auto;
+      grid-template-columns: auto;
       grid-template-areas:
         "label input"
-        "helper .";
+        "helper ."
+        "uploads uploads";
       column-gap: px-to-rem($spacing-padding-1);
 
       #{$c}--helper {
@@ -25,11 +27,12 @@
 
     // Label is at the end of the form element
     &__end {
-      grid-template-rows: auto auto;
-      grid-template-columns: auto auto;
+      grid-template-rows: auto;
+      grid-template-columns: auto;
       grid-template-areas:
-        "input label"
-        ". helper";
+        "input    label"
+        ".        helper"
+        "uploads uploads";
       column-gap: px-to-rem($spacing-padding-1);
     }
 
@@ -40,6 +43,7 @@
       grid-template-areas:
         "label"
         "input"
+        "downloads"
         "helper";
       row-gap: px-to-rem($spacing-padding-1);
     }
@@ -51,6 +55,7 @@
       grid-template-areas:
         "helper"
         "input"
+        "downloads"
         "label";
       row-gap: px-to-rem($spacing-padding-1);
     }

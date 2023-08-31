@@ -4,6 +4,17 @@ import useGlobalSettings from "../../hooks/useGlobalSettings";
 import FormControl, { useFormControl } from "../FormControl/FormControl";
 import { FileUploadProps, LabelledFileUploadProps } from "./FileUpload.props";
 
+function formatBytes(bytes: number, decimals = 2) {
+  if (!+bytes) return "0 Bytes";
+
+  const k = 1024;
+  const dm = decimals < 0 ? 0 : decimals;
+  const sizes = ["Bytes", "KB", "MB", "GB", "TB", "PB", "EB", "ZB", "YB"];
+
+  const i = Math.floor(Math.log(bytes) / Math.log(k));
+
+  return `${parseFloat((bytes / Math.pow(k, i)).toFixed(dm))} ${sizes[i]}`;
+}
 const FileUpload = React.forwardRef<HTMLInputElement, FileUploadProps>(
   (
     {
@@ -29,11 +40,11 @@ const FileUpload = React.forwardRef<HTMLInputElement, FileUploadProps>(
     });
     const inputClass = `${baseClass}--input`;
 
-    const [uploadfiles, setUploadFiles] = useState([]);
+    const [uploadfiles, setUploadFiles] = useState<null | FileList>(null);
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
       const files = e.target.files;
-      setUploadFiles(files as any);
+      setUploadFiles(files);
 
       if (onChange) {
         onChange(e);
@@ -43,37 +54,39 @@ const FileUpload = React.forwardRef<HTMLInputElement, FileUploadProps>(
     const inputId = id ? id : name;
 
     return (
-      <div className={fileUploadClasses}>
-        <label className={inputClass}>
-          {placeholder}
-          <input
-            ref={ref}
-            id={inputId}
-            name={name}
-            onChange={handleChange}
-            onBlur={onBlur}
-            disabled={disabled}
-            multiple={multiple}
-            placeholder={placeholder}
-            required={required as any}
-            type="file"
-            data-label={placeholder}
-            aria-describedby={ariaDescribedBy}
-          />
-        </label>
-        {uploadfiles.length > 0 && (
+      <>
+        <div className={fileUploadClasses}>
+          <label className={inputClass}>
+            {placeholder}
+            <input
+              ref={ref}
+              id={inputId}
+              name={name}
+              onChange={handleChange}
+              onBlur={onBlur}
+              disabled={disabled}
+              multiple={multiple}
+              placeholder={placeholder}
+              required={required as any}
+              type="file"
+              data-label={placeholder}
+              aria-describedby={ariaDescribedBy}
+            />
+          </label>
+        </div>
+        {uploadfiles && uploadfiles.length > 0 && (
           <ul className={`${baseClass}--list`}>
-            {[...uploadfiles].map((file: any, i: any) => (
+            {[...uploadfiles].map((file, i) => (
               <li
                 className={`${baseClass}--list-item`}
                 key={`${baseClass}--list-item-${i}`}
               >
-                {file.name}
+                {`${file.name} (${formatBytes(file.size)})`}
               </li>
             ))}
           </ul>
         )}
-      </div>
+      </>
     );
   }
 );
