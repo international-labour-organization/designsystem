@@ -13,8 +13,6 @@
     @include textmargin("gap", $gap, "label-medium", "display", 0, 0);
   }
 
-  -webkit-appearance: none;
-  -moz-appearance: none;
   appearance: none;
   $c: &;
 
@@ -29,26 +27,50 @@
   }
 
   &--direction__column {
-    #{$c}--elements {
+    > #{$c}--elements {
       @include flex(column);
     }
   }
 
   &--direction__row {
-    #{$c}--elements {
+    > #{$c}--elements {
       @include flex(row);
     }
   }
 
   &--direction__row-reverse {
-    #{$c}--elements {
+    > #{$c}--elements {
       @include flex(row-reverse);
     }
   }
 
   &--direction__column-reverse {
-    #{$c}--elements {
+    > #{$c}--elements {
       @include flex(column-reverse);
+    }
+  }
+
+  &--wrap__nowrap {
+    > #{$c}--elements {
+      flex-wrap: nowrap;
+    }
+  }
+
+  &--wrap__wrap {
+    > #{$c}--elements {
+      flex-wrap: wrap;
+    }
+  }
+
+  &--wrap__wrap-reverse {
+    > #{$c}--elements {
+      flex-wrap: wrap-reverse;
+    }
+  }
+
+  &--wrap__reverse {
+    > #{$c}--elements {
+      flex-wrap: reverse;
     }
   }
 
@@ -77,12 +99,6 @@
   &__disabled {
     opacity: 50%;
     pointer-events: none;
-  }
-
-  div[class^="ilo--fieldset--input"]:first-of-type,
-  div[class*=" ilo--fieldset--input"]:first-of-type {
-    clear: both;
-    padding-top: px-to-rem($spacing-padding-3);
   }
 
   .ilo--tooltip--wrapper {
