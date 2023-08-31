@@ -117,52 +117,29 @@ export const Basic: StoryObj<typeof Dropdown> = {
 export const WithLabel: StoryObj<typeof Dropdown> = {
   args: {
     ...dropdownArgs.basic,
-    label: "Choose among the following options",
-    labelPlacement: "top",
-    labelSize: "medium",
-    style: { width: "100%" },
   },
 };
 
 export const WithHelperText: StoryObj<typeof Dropdown> = {
   args: {
     ...dropdownArgs.basic,
-    label: "Choose among the following options",
-    labelPlacement: "top",
-    labelSize: "medium",
-    style: { width: "100%" },
-    helper: "This is helper text",
   },
 };
 
 export const Error: StoryObj<typeof Dropdown> = {
   args: {
     ...dropdownArgs.haserror,
-    label: "Choose among the following options",
-    labelPlacement: "top",
-    labelSize: "medium",
-    style: { width: "100%" },
-    errorMessage: "This is an error",
   },
 };
 
 export const Disabled: StoryObj<typeof Dropdown> = {
   args: {
     ...dropdownArgs.isdisabled,
-    label: "Choose among the following options",
-    labelPlacement: "top",
-    labelSize: "medium",
-    style: { width: "100%" },
   },
 };
 
 export const WithToolTip: StoryObj<typeof Dropdown> = {
   args: {
-    ...dropdownArgs.basic,
-    label: "Choose among the following options",
-    labelPlacement: "top",
-    labelSize: "medium",
-    style: { width: "100%" },
-    tooltip: "This is a tooltip",
+    ...dropdownArgs.hastooltip,
   },
 };
