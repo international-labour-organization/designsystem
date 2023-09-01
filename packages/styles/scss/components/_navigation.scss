@@ -367,6 +367,7 @@
     background-position: calc(100% - 16px) 55%;
     background-repeat: no-repeat;
     background-size: 24px;
+    background-position-y: center;
     border: none;
     color: $brand-ilo-dark-blue;
     cursor: pointer;
@@ -374,6 +375,7 @@
     font-family: $fonts-display;
     font-weight: 500;
     padding: 16px 36px 16px 8px;
+    line-height: 24px;
     text-align: left;
     transition: all 150ms ease-out;
     width: 100%;
@@ -554,6 +556,7 @@
     background-position: calc(100% - 16px) 55%;
     background-repeat: no-repeat;
     background-size: 16px;
+    background-position-y: center;
     border: none;
     color: $brand-ilo-dark-blue;
     cursor: pointer;
@@ -561,6 +564,7 @@
     font-family: $fonts-display;
     font-weight: 500;
     padding: 16px 36px 16px 8px;
+    line-height: 16px;
     text-align: left;
     transition: all 150ms ease-out;
     width: 100%;
