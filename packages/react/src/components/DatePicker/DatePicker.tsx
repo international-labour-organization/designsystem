@@ -31,12 +31,9 @@ const DatePicker = forwardRef<HTMLInputElement, DatePickerProps>(
       [`error`]: error,
     });
 
-    const handleChange = (
-      e: React.ChangeEvent<HTMLInputElement>,
-      picker?: string
-    ) => {
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
       if (onChange) {
-        onChange(e, picker);
+        onChange(e);
       }
     };
 
