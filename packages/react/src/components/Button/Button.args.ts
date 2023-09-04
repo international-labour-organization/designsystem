@@ -3,6 +3,7 @@ import { ButtonProps } from "./Button.props";
 const primary: ButtonProps = {
   type: "primary",
   label: "Primary",
+  size: "medium",
 };
 const secondary: ButtonProps = { type: "secondary", label: "Secondary" };
 const tertiary: ButtonProps = { type: "tertiary", label: "Tertiary" };
