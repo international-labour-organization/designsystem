@@ -20,19 +20,19 @@ describe("<Dropdown>", () => {
 
   it("selects the correct option", () => {
     render(<Dropdown {...dropdownArgs.basic} />);
-    fireEvent.change(screen.getByRole("combobox"), {
-      target: { value: "option two" },
+    fireEvent.change(screen.getByLabelText("Select a country" as string), {
+      target: { value: "CH" },
     });
-    const chosenoption = document.querySelector('option[value="option two"]');
+    const chosenoption = document.querySelector('option[value="CH"]');
     expect((chosenoption as HTMLOptionElement).selected).toBeTruthy();
   });
 
-  it('calls "callback" prop on button click', () => {
-    const onClick = jest.fn();
-    render(<Dropdown {...dropdownArgs.basic} callback={onClick} />);
-    fireEvent.change(screen.getByRole("combobox"), {
-      target: { value: "option two" },
+  it('calls "onChange" prop on button click', () => {
+    const handleChange = jest.fn();
+    render(<Dropdown {...dropdownArgs.basic} onChange={handleChange} />);
+    fireEvent.change(screen.getByLabelText("Select a country" as string), {
+      target: { value: "CH" },
     });
-    expect(onClick).toHaveBeenCalled();
+    expect(handleChange).toHaveBeenCalled();
   });
 });
