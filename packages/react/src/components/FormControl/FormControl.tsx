@@ -29,6 +29,7 @@ export interface FormControlContextProps {
 }
 
 // Calculates unique IDs for the internal accessibility elements
+// TODO: When we upgrade to React 8, this should use useId instead
 function getA11yFields(
   baseClass = "",
   { tooltip, helper, errorMessage }: AllyFields = {}
