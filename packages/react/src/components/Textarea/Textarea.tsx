@@ -1,67 +1,52 @@
-import { FC } from "react";
-import classNames from "classnames";
+import React from "react";
+import classnames from "classnames";
 import useGlobalSettings from "../../hooks/useGlobalSettings";
-import { TextareaProps } from "./Textarea.props";
-import { Fieldset } from "../Fieldset";
-import { FormElement } from "../FormElement";
+import { TextareaProps, LabelledTextareaProps } from "./Textarea.props";
+import FormControl, { useFormControl } from "../FormControl/FormControl";
 
-const Textarea: FC<TextareaProps> = ({
-  callback,
-  disabled = false,
-  error,
-  helper,
-  id,
-  label,
-  maxlength,
-  minlength,
-  name,
-  placeholder,
-  required,
-  spellcheck,
-  tooltip,
-}) => {
-  const { prefix } = useGlobalSettings();
-  const baseClass = `${prefix}--textarea`;
+const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
+  ({ error, className, name, id, ...props }, ref) => {
+    const { prefix } = useGlobalSettings();
+    const formControlCtx = useFormControl();
+    const { ariaDescribedBy } = formControlCtx;
 
-  const TextareaClasses = classNames("", {
-    [baseClass]: true,
-    [`error`]: error,
-  });
+    const baseClass = `${prefix}--textarea`;
+    const errorClass = `${baseClass}__error`;
 
-  /**
-   * On change, if there is a callback, call it
-   */
-  const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    if (callback) {
-      callback(e);
-    }
-  };
+    const textAreaClass = classnames(baseClass, className, {
+      [errorClass]: error,
+    });
+
+    return (
+      <textarea
+        ref={ref}
+        className={textAreaClass}
+        name={name}
+        id={id ? id : name}
+        aria-describedby={ariaDescribedBy}
+        {...props}
+      />
+    );
+  }
+);
+
+const LabelledTextarea = React.forwardRef<
+  HTMLTextAreaElement,
+  LabelledTextareaProps
+>((props, ref) => {
+  const { style, inputStyle, className, ...rest } = props;
+  const fieldId = props.id ? props.id : props.name;
 
   return (
-    <Fieldset>
-      <FormElement
-        elemid={name as any}
-        label={label}
-        helper={helper as any}
-        error={error as any}
-        required={required as any}
-        tooltip={tooltip}
-      >
-        <textarea
-          id={id}
-          name={name}
-          onChange={handleChange}
-          disabled={disabled}
-          placeholder={placeholder}
-          required={required as any}
-          className={TextareaClasses}
-          maxLength={maxlength}
-          minLength={minlength}
-          spellCheck={spellcheck}
-        />
-      </FormElement>
-    </Fieldset>
+    <FormControl
+      fieldId={fieldId}
+      style={style}
+      className={className}
+      {...rest}
+    >
+      <Textarea ref={ref} style={inputStyle} {...rest} />
+    </FormControl>
   );
-};
+});
 
-export default Textarea;
+export default LabelledTextarea;

@@ -1,92 +1,94 @@
-import { FC, useState } from "react";
+import React, { useEffect, forwardRef } from "react";
 import classNames from "classnames";
 import useGlobalSettings from "../../hooks/useGlobalSettings";
-import { CheckboxProps } from "./Checkbox.props";
-import { Fieldset } from "../Fieldset";
-import { FormElement } from "../FormElement";
+import { CheckboxProps, LabelledCheckboxProps } from "./Checkbox.props";
+import { useFieldsetError } from "../Fieldset/Fieldset";
+import FormControl, { useFormControl } from "../FormControl/FormControl";
+import usePrevious from "../../hooks/usePrevious";
 
-const Checkbox: FC<CheckboxProps> = ({
-  callback,
-  disabled = false,
-  error,
-  grouped,
-  helper,
-  id,
-  label,
-  name,
-  required,
-  tooltip,
-}) => {
+const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>((props, ref) => {
+  const {
+    onChange,
+    onBlur,
+    disabled = false,
+    error,
+    id,
+    name,
+    required,
+    defaultChecked = false,
+    checked,
+    value,
+  } = props;
+
   const { prefix } = useGlobalSettings();
-  const baseClass = `${prefix}--checkbox`;
+  const { setHasError } = useFieldsetError();
+  const formControlCtx = useFormControl();
+  const { ariaDescribedBy } = formControlCtx;
 
-  const CheckboxClasses = classNames("", {
-    [baseClass]: true,
-    [`error`]: error,
+  const baseClass = `${prefix}--checkbox`;
+  const errorClass = `${baseClass}__error`;
+
+  const CheckboxClasses = classNames(baseClass, {
+    [errorClass]: error,
   });
 
-  const [checked, setChecked] = useState(false);
+  const prevError = usePrevious(error);
 
-  /**
-   * On change, if there is a callback, call it
-   */
+  useEffect(() => {
+    if (error !== prevError) {
+      setHasError(!!error);
+    }
+  }, [error, prevError, setHasError]);
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setChecked(e.target.checked);
-
-    if (callback) {
-      callback(e);
+    if (onChange) {
+      onChange(e);
     }
   };
 
   return (
-    <>
-      {grouped && (
-        <FormElement
-          elemid={id as any}
-          label={label}
-          helper={helper as any}
-          error={error as any}
-          required={required as any}
-          tooltip={tooltip}
-        >
-          <input
-            id={id}
-            name={name}
-            onChange={handleChange}
-            disabled={disabled}
-            required={required as any}
-            type={"checkbox"}
-            className={CheckboxClasses}
-            checked={checked}
-          />
-        </FormElement>
-      )}
-      {!grouped && (
-        <Fieldset>
-          <FormElement
-            elemid={id as any}
-            label={label}
-            helper={helper as any}
-            error={error as any}
-            required={required as any}
-            tooltip={tooltip}
-            type={"checkbox"}
-          >
-            <input
-              id={id}
-              name={name}
-              onChange={handleChange}
-              disabled={disabled}
-              required={required as any}
-              type={"checkbox"}
-              className={CheckboxClasses}
-              checked={checked}
-            />
-          </FormElement>
-        </Fieldset>
-      )}
-    </>
+    <input
+      ref={ref}
+      id={id ? id : name}
+      name={name}
+      onChange={handleChange}
+      onBlur={onBlur}
+      disabled={disabled}
+      required={required}
+      type="checkbox"
+      className={CheckboxClasses}
+      defaultChecked={defaultChecked}
+      aria-describedby={ariaDescribedBy}
+      checked={checked}
+      value={value}
+    />
   );
-};
+});
 
-export default Checkbox;
+const LabelledCheckbox = forwardRef<HTMLInputElement, LabelledCheckboxProps>(
+  (props, ref) => {
+    const fieldId = props.id ? props.id : props.name;
+    const {
+      style,
+      inputStyle,
+      className,
+      labelPlacement = "end",
+      labelSize = "small",
+      ...rest
+    } = props;
+    return (
+      <FormControl
+        fieldId={fieldId}
+        style={style}
+        className={className}
+        labelPlacement={labelPlacement}
+        labelSize={labelSize}
+        {...rest}
+      >
+        <Checkbox ref={ref} style={inputStyle} {...rest} />
+      </FormControl>
+    );
+  }
+);
+
+export default LabelledCheckbox;

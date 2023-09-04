@@ -1,82 +1,113 @@
-import { FC, useState } from "react";
+import React, { useState } from "react";
 import classNames from "classnames";
 import useGlobalSettings from "../../hooks/useGlobalSettings";
-import { FileUploadProps } from "./FileUpload.props";
-import { Fieldset } from "../Fieldset";
-import { FormElement } from "../FormElement";
+import FormControl, { useFormControl } from "../FormControl/FormControl";
+import { FileUploadProps, LabelledFileUploadProps } from "./FileUpload.props";
 
-const FileUpload: FC<FileUploadProps> = ({
-  callback,
-  disabled = false,
-  error,
-  helper,
-  id,
-  label,
-  multiple,
-  name,
-  placeholder,
-  required,
-  tooltip,
-}) => {
-  const { prefix } = useGlobalSettings();
-  const baseClass = `${prefix}--file-upload`;
-  const FileUploadClasses = classNames("", {
-    [baseClass]: true,
-    [`error`]: error,
-  });
+function formatBytes(bytes: number, decimals = 2) {
+  if (!+bytes) return "0 Bytes";
 
-  const [uploadfiles, setUploadFiles] = useState([]);
+  const k = 1024;
+  const dm = decimals < 0 ? 0 : decimals;
+  const sizes = ["Bytes", "KB", "MB", "GB", "TB", "PB", "EB", "ZB", "YB"];
 
-  /**
-   * On change, add file to listed files, if there is a callback, call it
-   */
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const files = e.target.files;
-    setUploadFiles(files as any);
+  const i = Math.floor(Math.log(bytes) / Math.log(k));
 
-    if (callback) {
-      callback(e);
-    }
-  };
+  return `${parseFloat((bytes / Math.pow(k, i)).toFixed(dm))} ${sizes[i]}`;
+}
+const FileUpload = React.forwardRef<HTMLInputElement, FileUploadProps>(
+  (
+    {
+      onChange,
+      onBlur,
+      disabled = false,
+      error,
+      id,
+      multiple,
+      name,
+      placeholder,
+      required,
+    },
+    ref
+  ) => {
+    const { prefix } = useGlobalSettings();
+    const formControlCtx = useFormControl();
+    const { ariaDescribedBy } = formControlCtx;
+
+    const baseClass = `${prefix}--file-upload`;
+    const fileUploadClasses = classNames(baseClass, {
+      [`error`]: error,
+    });
+    const inputClass = `${baseClass}--input`;
+
+    const [uploadfiles, setUploadFiles] = useState<null | FileList>(null);
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+      const files = e.target.files;
+      setUploadFiles(files);
+
+      if (onChange) {
+        onChange(e);
+      }
+    };
+
+    const inputId = id ? id : name;
+
+    return (
+      <>
+        <div className={fileUploadClasses}>
+          <label className={inputClass}>
+            {placeholder}
+            <input
+              ref={ref}
+              id={inputId}
+              name={name}
+              onChange={handleChange}
+              onBlur={onBlur}
+              disabled={disabled}
+              multiple={multiple}
+              placeholder={placeholder}
+              required={required as any}
+              type="file"
+              data-label={placeholder}
+              aria-describedby={ariaDescribedBy}
+            />
+          </label>
+        </div>
+        {uploadfiles && uploadfiles.length > 0 && (
+          <ul className={`${baseClass}--list`}>
+            {[...uploadfiles].map((file, i) => (
+              <li
+                className={`${baseClass}--list-item`}
+                key={`${baseClass}--list-item-${i}`}
+              >
+                {`${file.name} (${formatBytes(file.size)})`}
+              </li>
+            ))}
+          </ul>
+        )}
+      </>
+    );
+  }
+);
+
+const LabelledFileUpload = React.forwardRef<
+  HTMLInputElement,
+  LabelledFileUploadProps
+>((props, ref) => {
+  const { style, inputStyle, className, ...rest } = props;
+  const fieldId = props.id ? props.id : props.name;
 
   return (
-    <Fieldset className={"file-upload"}>
-      <FormElement
-        elemid={name as any}
-        label={label}
-        helper={helper as any}
-        error={error as any}
-        required={required as any}
-        tooltip={tooltip}
-        type={"file"}
-      >
-        <input
-          id={id ? id : name}
-          name={name}
-          onChange={handleChange}
-          disabled={disabled}
-          multiple={multiple}
-          placeholder={placeholder}
-          required={required as any}
-          type={"file"}
-          className={FileUploadClasses}
-          data-label={placeholder}
-        />
-      </FormElement>
-      {uploadfiles.length > 0 && (
-        <ul className={`${baseClass}--list`}>
-          {[...uploadfiles].map((file: any, i: any) => (
-            <li
-              className={`${baseClass}--list-item`}
-              key={`${baseClass}--list-item-${i}`}
-            >
-              {file.name}
-            </li>
-          ))}
-        </ul>
-      )}
-    </Fieldset>
+    <FormControl
+      fieldId={fieldId}
+      style={style}
+      className={className}
+      {...rest}
+    >
+      <FileUpload ref={ref} style={inputStyle} {...rest} />
+    </FormControl>
   );
-};
+});
 
-export default FileUpload;
+export default LabelledFileUpload;

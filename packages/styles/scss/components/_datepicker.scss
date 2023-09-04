@@ -3,29 +3,9 @@
 @import "../mixins";
 
 .ilo--datepicker {
-  &--range {
-    display: flex;
+  cursor: pointer;
 
-    & > .ilo--fieldset {
-      width: 50%;
-
-      &:nth-of-type(1) {
-        .ilo--input {
-          border-right: none;
-        }
-      }
-    }
+  &::-webkit-calendar-picker-indicator {
+    cursor: pointer;
   }
-
-  .right-to-left & {
-    direction: rtl;
-  }
-}
-
-.right-to-left
-  .ilo--datepicker--range
-  > .ilo--fieldset:nth-of-type(1)
-  .ilo--input {
-  border-left: none;
-  border-right: 0.1071811361rem solid rgb(184, 196, 204);
 }

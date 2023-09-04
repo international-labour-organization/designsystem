@@ -1,52 +1,34 @@
-import { TextareaProps } from "./Textarea.props";
+import { LabelledTextareaProps, TextareaProps } from "./Textarea.props";
 
-const basic: TextareaProps = {
+const placeholder =
+  "It was a cold day in April and the clocks were striking thirteen....";
+
+export const basic: LabelledTextareaProps = {
+  id: "textarea",
   disabled: false,
-  label: "Textarea",
   name: "textarea",
-  placeholder: "Textarea",
+  placeholder,
   required: false,
   spellcheck: false,
+  label: "Insert your life story here",
+  labelPlacement: "top" as const,
+  labelSize: "medium" as const,
+  style: { width: "100%" },
+  errorMessage: "This is an error message",
 };
 
-const hashelper: TextareaProps = {
-  disabled: false,
-  helper: "This one has helper text",
-  label: "Textarea",
-  name: "textarea",
-  placeholder: "Textarea",
-  required: false,
-  spellcheck: false,
+export const haserror: TextareaProps = {
+  ...basic,
+  error: true,
 };
 
-const haserror: TextareaProps = {
-  disabled: false,
-  error: "This one has an error",
-  label: "Textarea",
-  name: "textarea",
-  placeholder: "Textarea",
-  required: false,
-  spellcheck: false,
+export const disabled: TextareaProps = {
+  ...basic,
+  disabled: true,
 };
 
-const hastooltip: TextareaProps = {
-  disabled: false,
-  label: "Textarea",
-  name: "textarea",
-  placeholder: "Textarea",
-  required: false,
-  spellcheck: false,
-  tooltip: "This is the tooltip",
-};
-
-/**
- * Sample prop definitions Textarea's enumerable properties (imported in stories and test)
- */
-const TextareaArgs = {
+export default {
   basic,
-  hashelper,
   haserror,
-  hastooltip,
+  disabled,
 };
-
-export default TextareaArgs;

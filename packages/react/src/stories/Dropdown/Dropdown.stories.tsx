@@ -1,4 +1,4 @@
-import { Meta, StoryFn } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react";
 import {
   Title,
   Subtitle,
@@ -6,31 +6,87 @@ import {
   Primary,
   Stories,
   Subheading,
-  ArgsTable,
+  ArgTypes,
 } from "@storybook/addon-docs";
 import { Dropdown } from "../../components/Dropdown";
-import { DropdownProps } from "../../components/Dropdown/Dropdown.props";
 import dropdownArgs from "../../components/Dropdown/Dropdown.args";
-
-const propsDoc = `
-The Dropdown receives a prop for 'options,' which has three parameters:
-
-| Prop  |  Description  |
-|----------|-------------|
-| \`disabled\` | Is *this* option disabled? |
-| \`label\` | The human-readable label for the option. |
-| \`value\` | The value of the option which is what is submitted with the form. |
-`;
+import { labelledFormFieldArgTypes } from "../../types/forms.args";
 
 const DropdownMeta: Meta<typeof Dropdown> = {
   title: "Components/Forms/Dropdown",
   component: Dropdown,
   tags: ["autodocs"],
   argTypes: {
-    disabled: {
-      options: [true, false],
-      control: { type: "boolean" },
+    autocomplete: {
+      description:
+        "A string providing a hint for a user agent's autocomplete feature.",
+      control: {
+        type: "string",
+      },
+      table: {
+        type: {
+          summary: "string",
+        },
+      },
     },
+    form: {
+      description:
+        "The id of the form that the dropdown belongs to if it isn't nested in a form element",
+      control: {
+        type: "string",
+      },
+      table: {
+        type: {
+          summary: "string",
+        },
+      },
+    },
+    multiple: {
+      description: "Whether the dropdown allows multiple selections",
+      control: {
+        type: "boolean",
+      },
+      table: {
+        type: {
+          summary: "boolean",
+        },
+      },
+    },
+    options: {
+      description: "The options to display in the dropdown",
+      control: {
+        type: "object",
+      },
+      table: {
+        type: {
+          summary: "object",
+        },
+      },
+    },
+    selectSize: {
+      description:
+        "Number of rows in the list that should be visible at one time. Corresponds to the select element's size attribute.",
+      control: {
+        type: "number",
+      },
+      table: {
+        type: {
+          summary: "number",
+        },
+      },
+    },
+    value: {
+      description: "The value of the dropdown",
+      control: {
+        type: "string",
+      },
+      table: {
+        type: {
+          summary: "string",
+        },
+      },
+    },
+    ...labelledFormFieldArgTypes("HTMLSelectElement"),
   },
   parameters: {
     docs: {
@@ -43,11 +99,9 @@ const DropdownMeta: Meta<typeof Dropdown> = {
             commonly used in forms.
           </Description>
           <Primary />
-          <Subheading>Options</Subheading>
-          <Description>{propsDoc}</Description>
+          <Subheading>Props</Subheading>
+          <ArgTypes of={DropdownMeta} />
           <Stories title="Examples" />
-          <Subheading>Default Props</Subheading>
-          <ArgsTable />
         </>
       ),
     },
@@ -56,39 +110,36 @@ const DropdownMeta: Meta<typeof Dropdown> = {
 
 export default DropdownMeta;
 
-/**
- * Dropdown Template
- *
- * create a Storybook template for this component
- *
- *@param (Object) args - props to be passed to the component
- */
-const DropdownTemplate: StoryFn<DropdownProps> = (args) => (
-  <Dropdown {...args} />
-);
+export const Basic: StoryObj<typeof Dropdown> = {
+  args: { ...dropdownArgs.basic, style: { width: "100%" } },
+};
 
-export const Basic: StoryFn<DropdownProps> = DropdownTemplate.bind({});
+export const WithLabel: StoryObj<typeof Dropdown> = {
+  args: {
+    ...dropdownArgs.basic,
+  },
+};
 
-export const HasError: StoryFn<DropdownProps> = DropdownTemplate.bind({});
+export const WithHelperText: StoryObj<typeof Dropdown> = {
+  args: {
+    ...dropdownArgs.basic,
+  },
+};
 
-export const HasHelper: StoryFn<DropdownProps> = DropdownTemplate.bind({});
+export const Error: StoryObj<typeof Dropdown> = {
+  args: {
+    ...dropdownArgs.haserror,
+  },
+};
 
-export const HasTooltip: StoryFn<DropdownProps> = DropdownTemplate.bind({});
+export const Disabled: StoryObj<typeof Dropdown> = {
+  args: {
+    ...dropdownArgs.isdisabled,
+  },
+};
 
-export const IsDisabled: StoryFn<DropdownProps> = DropdownTemplate.bind({});
-
-// enumerate the props for the variations on the Dropdown component
-Basic.args = dropdownArgs.basic;
-Basic.storyName = "Basic";
-
-HasError.args = dropdownArgs.haserror;
-HasError.storyName = "Error";
-
-HasHelper.args = dropdownArgs.hashelper;
-HasHelper.storyName = "Helper";
-
-HasTooltip.args = dropdownArgs.hastooltip;
-HasTooltip.storyName = "Tooltip";
-
-IsDisabled.args = dropdownArgs.isdisabled;
-IsDisabled.storyName = "Disabled";
+export const WithToolTip: StoryObj<typeof Dropdown> = {
+  args: {
+    ...dropdownArgs.hastooltip,
+  },
+};

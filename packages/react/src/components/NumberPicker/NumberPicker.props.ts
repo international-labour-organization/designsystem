@@ -1,56 +1,11 @@
-export interface NumberPickerProps {
+import { FormFieldProps } from "../../types";
+import { LabelledFormFieldProps } from "../../types";
+export interface NumberPickerProps extends FormFieldProps<HTMLInputElement> {
   /**
-   * The input's onChange callback.
-   */
-  callback: (e: React.ChangeEvent<HTMLInputElement>) => any;
-
-  /**
-   * Specify an optional className to be added to your input.
-   */
-  className?: string;
-
-  /**
-   * Is the input disabled?
-   */
-  disabled?: boolean;
-
-  /**
-   * Does the input have an error?
-   */
-  error?: string | false;
-
-  /**
-   * The input's helper text
-   */
-  helper: string | false;
-
-  /**
-   * The input's id attribute
-   */
-  id?: string;
-
-  /**
-   * Does this input have a label?
-   */
-  label: string;
-
-  /**
-   * The input's name attribute
-   */
-  name?: Required<string>;
-
-  /**
-   * Specify an optional className to be added to your NumberPicker component.
+   * The placeholder text when the input is empty.
    */
   placeholder?: string;
-
-  /**
-   * Specify whether this input is required
-   */
-  required?: boolean;
-
-  /**
-   * Does this NumberPicker have a tooltip?
-   */
-  tooltip?: string;
 }
+
+export type LabelledNumberPickerProps =
+  LabelledFormFieldProps<NumberPickerProps>;
