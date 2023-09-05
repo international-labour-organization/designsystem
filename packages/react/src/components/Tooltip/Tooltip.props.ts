@@ -12,6 +12,11 @@ export interface TooltipProps {
   icon?: boolean;
 
   /**
+   * Set the id of the tooltip
+   */
+  id?: string;
+
+  /**
    * Set the label for the tooltip
    */
   label?: Required<string>;

@@ -48,8 +48,8 @@
   }
 
   &:invalid,
-  &.error,
-  .error & {
+  &__error,
+  &__error & {
     background-color: map-get(
       $color,
       "formelements",

@@ -1,61 +1,99 @@
-import { FC } from "react";
+import React, { useEffect } from "react";
 import classNames from "classnames";
-import useGlobalSettings from "../../hooks/useGlobalSettings";
-import { RadioProps } from "./Radio.props";
-import { FormElement } from "../FormElement";
+import { useGlobalSettings } from "../../hooks";
+import { LabelledRadioProps, RadioProps } from "./Radio.props";
+import { useFieldsetError } from "../Fieldset/Fieldset";
+import FormControl, { useFormControl } from "../FormControl/FormControl";
+import usePrevious from "../../hooks/usePrevious";
 
-const Radio: FC<RadioProps> = ({
-  callback,
-  disabled = false,
-  error,
-  helper,
-  id,
-  label,
-  name,
-  required,
-  selected,
-  tooltip,
-  value,
-}) => {
-  const { prefix } = useGlobalSettings();
-  const baseClass = `${prefix}--radio`;
+const Radio = React.forwardRef<HTMLInputElement, RadioProps>(
+  (
+    {
+      onChange,
+      onBlur,
+      disabled = false,
+      error,
+      id,
+      name,
+      required,
+      checked,
+      defaultChecked = false,
+      value,
+    },
+    ref
+  ) => {
+    const { prefix } = useGlobalSettings();
+    const { setHasError } = useFieldsetError();
+    const formControlCtx = useFormControl();
+    const prevError = usePrevious(error);
 
-  const RadioClasses = classNames("", {
-    [baseClass]: true,
-    [`error`]: error,
-  });
+    useEffect(() => {
+      if (error !== prevError) {
+        setHasError(!!error);
+      }
+    }, [error, prevError, setHasError]);
 
-  /**
-   * On change, if there is a callback, call it
-   */
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (callback) {
-      callback(e);
-    }
-  };
+    const { ariaDescribedBy } = formControlCtx;
 
-  return (
-    <FormElement
-      elemid={id as any}
-      label={label}
-      helper={helper as any}
-      error={error as any}
-      required={required as any}
-      tooltip={tooltip}
-    >
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+      console.log(e.target.value);
+      if (onChange) {
+        onChange(e);
+      }
+    };
+
+    const baseClass = `${prefix}--radio`;
+    const errorClass = `${baseClass}__error`;
+
+    const RadioClasses = classNames(baseClass, {
+      [errorClass]: error,
+    });
+
+    return (
       <input
-        id={id}
+        ref={ref}
+        id={id ? id : name}
         name={name}
         onChange={handleChange}
+        onBlur={onBlur}
         disabled={disabled}
-        required={required as any}
-        type={"radio"}
+        required={required}
+        type="radio"
         className={RadioClasses}
-        checked={selected === value}
+        defaultChecked={defaultChecked}
+        aria-describedby={ariaDescribedBy}
+        checked={checked}
         value={value}
       />
-    </FormElement>
-  );
-};
+    );
+  }
+);
 
-export default Radio;
+const LabelledRadio = React.forwardRef<HTMLInputElement, LabelledRadioProps>(
+  (props, ref) => {
+    const {
+      style,
+      inputStyle,
+      className,
+      labelPlacement = "end",
+      labelSize = "small",
+      ...rest
+    } = props;
+    const fieldId = props.id ? props.id : props.name;
+
+    return (
+      <FormControl
+        fieldId={fieldId}
+        style={style}
+        className={className}
+        labelPlacement={labelPlacement}
+        labelSize={labelSize}
+        {...rest}
+      >
+        <Radio ref={ref} style={inputStyle} {...rest} />
+      </FormControl>
+    );
+  }
+);
+
+export default LabelledRadio;

@@ -180,11 +180,11 @@ export default class Navigation {
 
     // languageButton
     if (this.languageButton) {
-      this.languageButton.addEventListener(EVENTS.CLICK, () =>
-        this.languageButtonClick()
+      this.languageButton.addEventListener(EVENTS.CLICK, (e) =>
+        this.languageButtonClick(e)
       );
-      this.languageButton.addEventListener(EVENTS.TOUCH_START, () =>
-        this.languageButtonClick()
+      this.languageButton.addEventListener(EVENTS.TOUCH_START, (e) =>
+        this.languageButtonClick(e)
       );
     }
 
@@ -273,7 +273,9 @@ export default class Navigation {
    * @return {Object} Navigation A reference to the instance of the class
    * @chainable
    */
-  handleLanguageButtonClick() {
+  handleLanguageButtonClick(e) {
+    e.preventDefault();
+    e.stopImmediatePropagation();
     this.element.classList.toggle(`${this.prefix}--select--open`);
 
     return this;
@@ -482,6 +484,8 @@ export default class Navigation {
    * @chainable
    */
   handleSubnavClick(e) {
+    e.preventDefault();
+    e.stopImmediatePropagation();
     this.element.classList.remove(`${this.prefix}--search--open`);
 
     if (this.element.classList.contains(`${this.prefix}--subnav--open`)) {

@@ -1,5 +1,5 @@
 import { ReactElement } from "react";
-import { InputTypes, FieldTypes } from "../../types";
+import { TextInputTypes, FieldTypes } from "../../types";
 import { DropdownProps } from "../Dropdown/Dropdown.props";
 import { InputProps } from "../Input/Input.props";
 import { TextareaProps } from "../Textarea/Textarea.props";
@@ -56,5 +56,5 @@ export interface FormElementProps {
   /**
    * The type of field
    */
-  type?: InputTypes | FieldTypes;
+  type?: TextInputTypes | FieldTypes;
 }

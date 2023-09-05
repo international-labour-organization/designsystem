@@ -3,14 +3,15 @@
 @import "../mixins";
 
 .ilo--file-upload {
-  color: transparent;
-  order: 3;
+  &--input {
+    order: 3;
 
-  &::-webkit-file-upload-button {
-    visibility: hidden;
-  }
+    input {
+      visibility: hidden;
+      color: transparent;
+      width: 0;
+    }
 
-  &:before {
     background-color: map-get($color, "ux", "background", "default");
     border: map-get($borders, "small")
       map-get($color, "ux", "borders", "default") solid;
@@ -23,10 +24,12 @@
     @include borderradius("button");
     @include boxpadding("button", "medium");
     @include font-styles("label-medium");
-  }
 
-  &:hover {
-    &:before {
+    .ilo--form__theme__dark & {
+      color: map-get($color, "ux", "labels", "actionable");
+    }
+
+    &:hover {
       background-color: map-get($color, "ux", "background", "hover");
       border: map-get($borders, "small")
         map-get($color, "ux", "borders", "hover") solid;
@@ -34,40 +37,34 @@
       color: map-get($color, "ux", "labels", "hover");
       outline: none;
     }
-  }
 
-  &:focus {
-    &:before {
+    &:focus {
       background-color: map-get($color, "ux", "background", "focus");
       border: map-get($borders, "small")
         map-get($color, "ux", "borders", "hover") solid;
       color: map-get($color, "ux", "labels", "focus");
       outline: none;
     }
-  }
 
-  &:focus-visible {
-    outline: none;
-  }
+    &:focus-visible {
+      outline: none;
+    }
 
-  &:active {
-    &:before {
+    &:active {
       background-color: map-get($color, "ux", "background", "active");
       border: map-get($borders, "base")
         map-get($color, "ux", "borders", "active") solid;
       color: map-get($color, "ux", "labels", "active");
     }
-  }
 
-  &:disabled {
-    opacity: 45%;
-    pointer-events: none;
-  }
+    &:disabled {
+      opacity: 45%;
+      pointer-events: none;
+    }
 
-  &:invalid,
-  &.error,
-  .error & {
-    &:before {
+    &:invalid,
+    &.error,
+    .error & {
       background-color: map-get(
         $color,
         "formelements",
@@ -81,9 +78,11 @@
 
   &--list {
     order: 4;
+    grid-area: uploads;
   }
 
   &--list-item {
+    display: inline-block;
     background-color: $color-formelements-uploadedfile-default-background;
     @include bordervalues("uploadedfile", "formelements", "default");
     box-sizing: border-box;
@@ -96,35 +95,5 @@
     @include spacingvalues("margin", "uploadedfile", "formelements");
     outline: none;
     @include spacingvalues("padding", "uploadedfile", "formelements");
-    width: map-get(
-      $spacing,
-      "formelements",
-      "uploadedfile",
-      "default",
-      "width"
-    );
-  }
-}
-
-.file-upload div {
-  display: flex;
-  flex-direction: column;
-
-  .ilo--fieldset--label {
-    order: 1;
-  }
-
-  .ilo--fieldset--helper,
-  .ilo--fieldset--error {
-    margin-top: 0;
-    @include textmargin(
-      "margin-bottom",
-      map-get($spacing, "padding-3"),
-      "label-small",
-      "display",
-      0,
-      0
-    );
-    order: 2;
   }
 }

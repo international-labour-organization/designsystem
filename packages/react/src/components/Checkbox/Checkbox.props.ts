@@ -1,13 +1,5 @@
-export interface CheckboxProps {
-  callback?: (e: React.ChangeEvent<HTMLInputElement>) => any;
-  className?: string;
-  disabled?: boolean;
-  error?: string | false;
-  grouped?: boolean;
-  helper?: string;
-  id?: string;
-  label?: string;
-  name: string;
-  required?: boolean;
-  tooltip?: string;
-}
+import { ChoiceFieldProps } from "../../types";
+import { LabelledFormFieldProps } from "../../types";
+export type CheckboxProps = ChoiceFieldProps<HTMLInputElement>;
+
+export type LabelledCheckboxProps = LabelledFormFieldProps<CheckboxProps>;

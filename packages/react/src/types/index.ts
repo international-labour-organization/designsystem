@@ -1,3 +1,5 @@
+import { FormControlPublicProps } from "../components/FormControl/FormControl.props";
+
 // export type AccordionSize = "small" | "large";
 export type ThemeTypes = "light" | "dark";
 export type ButtonFunctions = "button" | "submit" | "reset";
@@ -17,7 +19,7 @@ export type FieldTypes =
   | "file";
 export type FormGroupTypes = "default" | "filter";
 export type HeadingLevel = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
-export type InputTypes =
+export type TextInputTypes =
   | "email"
   | "hidden"
   | "password"
@@ -62,3 +64,69 @@ export type CardTypes =
   | "detail"
   | "factlist"
   | "data";
+export interface FormFieldProps<T> {
+  /**
+   * The input's onChange callback.
+   */
+  onChange?: (e: React.ChangeEvent<T>) => any;
+
+  /**
+   * The input's onBlur callback.
+   */
+  onBlur?: (e: React.FocusEvent<T>) => any;
+
+  /**
+   * Specify an optional className to be added to your input.
+   */
+  className?: string;
+
+  /**
+   * Is the input disabled?
+   */
+  disabled?: boolean;
+
+  /**
+   * Does the input have an error?
+   */
+  error?: boolean;
+
+  /**
+   * The input's id attribute. Will otherwise be set to the same value as `name`.
+   */
+  id?: string;
+
+  /**
+   * The input's name attribute.
+   */
+  name: string;
+
+  /**
+   * Specify whether this input is required
+   */
+  required?: boolean;
+
+  /**
+   * Inline styles applies to the outermost container
+   */
+  style?: React.CSSProperties;
+}
+
+export interface ChoiceFieldProps<T> extends FormFieldProps<T> {
+  /**
+   * Whether the input should be checked by default
+   **/
+  defaultChecked?: boolean;
+
+  /**
+   * Whether the input is checked
+   */
+  checked?: boolean;
+
+  /**
+   * The input's value attribute.
+   */
+  value?: string;
+}
+
+export type LabelledFormFieldProps<T> = T &
+  FormControlPublicProps & { inputStyle?: React.CSSProperties };

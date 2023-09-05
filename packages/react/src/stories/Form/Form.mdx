@@ -1,0 +1,58 @@
+import { Primary, Meta, ArgTypes, Title } from "@storybook/blocks";
+import * as FormStories from "./Form.stories";
+
+<Meta of={FormStories} />
+
+# Building Forms
+
+Form components in the ILO Design System make it easy to build branded and accessible forms with a minimum of effort. The components are built on top of standard HTML form elements and can be used with most form libraries or validation strategy.
+
+<Primary />
+
+## Usage
+
+Here's a basic example of a form with four text inputs and a submit button. The `<Form>` component is simply a wrapper around an HTML form element. It's primary purpose is to provide standard layout and spacing for form fields. Otherwise, it takes the same props as a standard HTML form element.
+
+```tsx
+import { Form, Fieldset, TextInput, Button } from "@ilo-org/react";
+
+function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  // handle form submission
+}
+
+<Form theme="light" onSubmit={handleSubmit}>
+  <Fieldset legend="Personal Information">
+    <TextInput name="first-name" label="First Name" />
+    <TextInput name="last-name" label="Last Name" />
+  </Fieldset>
+  <Fieldset legend="Contact Information">
+    <TextInput name="email" type="email" label="Email" />
+    <TextInput name="phone" type="tel" label="Phone" />
+  </Fieldset>
+  <Button type="submit">Submit</Button
+</Form>
+```
+
+## Form components
+
+### Names and ids
+
+All form elements must be passed a `name` prop. If you don't also pass in an `id` then it will be set to the same value as the `name` prop.
+
+### Labels and legends
+
+All form inputs include `labels` props that can be used to provide a label for the input. The label size and position can also be adjusted with the `labelSize` and `labelPosition` props. Form elements also include `helper` and `errorMessage` props that can be used to display additional info and error messages to the user
+
+## Grouping components together
+
+### Form
+
+The form provides a simple wrapper around a standard HTML form element. It accepts all the same props as a standard HTML form element, but also accepts a `theme` prop that can be used to set the text color of the form for rendering on light or dark backgrounds.
+
+### Fieldset
+
+The `<Fieldset>` component can be used to group related form elements together. It accepts a `legend` prop that can be used to provide a title for the fieldset. When used with `<Radio>` and `<Checkbox>` components, the `<Fieldset>` component can also be used to show error messages.
+
+## Validation
+
+Form Components expose the standard HTML attributes that you can use for native form validation. For use with libraries, form components also expose a `ref` prop that can be used to access the underlying input elements. We recommend using the [React Hook Form](https://react-hook-form.com/) library for form validation.

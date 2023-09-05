@@ -1,5 +1,3 @@
-import sass from "sass";
-
 export const core = {
   disableTelemetry: true,
   builder: "@storybook/builder-vite",

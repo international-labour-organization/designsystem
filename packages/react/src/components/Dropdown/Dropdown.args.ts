@@ -1,214 +1,64 @@
-import { DropdownProps } from "./Dropdown.props";
+import { LabelledDropdownProps } from "./Dropdown.props";
 
-const basic: DropdownProps = {
+export const options = [
+  { label: "Switzerland", value: "CH" },
+  { label: "Côte d'Ivoire ", value: "CI" },
+  { label: "Thailand", value: "TH" },
+  { label: "United States", value: "US" },
+  { label: "Zimbabwe", value: "ZW" },
+  { label: "Afghanistan", value: "AF" },
+  { label: "Åland Islands", value: "AX" },
+  { label: "Albania", value: "AL" },
+  { label: "Algeria", value: "DZ" },
+  { label: "American Samoa", value: "AS" },
+  { label: "AndorrA", value: "AD" },
+  { label: "Angola", value: "AO" },
+  { label: "Anguilla", value: "AI" },
+  { label: "Antarctica", value: "AQ" },
+  { label: "Antigua and Barbuda", value: "AG" },
+  { label: "Argentina", value: "AR" },
+  { label: "Armenia", value: "AM" },
+  { label: "Aruba", value: "AW" },
+  { label: "Australia", value: "AU" },
+  { label: "Austria", value: "AT" },
+  { label: "Azerbaijan", value: "AZ" },
+];
+
+const basic: LabelledDropdownProps = {
+  label: "Select a country",
+  errorMessage: "Please select a country",
   autocomplete: "false",
-  callback: () => {},
   className: "storybook",
   disabled: false,
   error: false,
-  helper: false,
   id: "dropdown",
-  label: "Dropdown Label",
   name: "dropdown",
-  options: [
-    {
-      disabled: false,
-      label: "Option One",
-      value: "option one",
-    },
-    {
-      disabled: false,
-      label: "Option Two",
-      value: "option two",
-    },
-    {
-      disabled: false,
-      label: "Option Three",
-      value: "option three",
-    },
-    {
-      disabled: false,
-      label: "Option Four",
-      value: "four",
-    },
-    {
-      disabled: false,
-      label: "Option Five",
-      value: "the fifth",
-    },
-  ],
+  options,
   required: false,
   value: "option one",
+  style: { width: "100%" },
 };
 
-const haserror: DropdownProps = {
-  autocomplete: "false",
-  callback: () => {},
-  className: "storybook",
-  disabled: false,
-  error: "This is an error message",
-  helper: "Example Helper Text",
-  id: "dropdown",
-  label: "Dropdown Label",
-  name: "dropdown",
-  options: [
-    {
-      disabled: false,
-      label: "Option One",
-      value: "option one",
-    },
-    {
-      disabled: false,
-      label: "Option Two",
-      value: "option two",
-    },
-    {
-      disabled: false,
-      label: "Option Three",
-      value: "option three",
-    },
-    {
-      disabled: false,
-      label: "Option Four",
-      value: "four",
-    },
-    {
-      disabled: false,
-      label: "Option Five",
-      value: "the fifth",
-    },
-  ],
-  required: false,
-  value: "option one",
+const haserror: LabelledDropdownProps = {
+  ...basic,
+  error: true,
 };
 
-const hashelper: DropdownProps = {
-  autocomplete: "false",
-  callback: () => {},
-  className: "storybook",
-  disabled: false,
-  error: false,
-  helper: "Example Helper Text",
-  id: "dropdown",
-  label: "Dropdown Label",
-  name: "dropdown",
-  options: [
-    {
-      disabled: false,
-      label: "Option One",
-      value: "option one",
-    },
-    {
-      disabled: false,
-      label: "Option Two",
-      value: "option two",
-    },
-    {
-      disabled: false,
-      label: "Option Three",
-      value: "option three",
-    },
-    {
-      disabled: false,
-      label: "Option Four",
-      value: "four",
-    },
-    {
-      disabled: false,
-      label: "Option Five",
-      value: "the fifth",
-    },
-  ],
-  required: false,
-  value: "option one",
+const hashelper: LabelledDropdownProps = {
+  ...basic,
+  helper: "Please select a country",
 };
 
-const hastooltip: DropdownProps = {
-  autocomplete: "false",
-  callback: () => {},
-  className: "storybook",
-  disabled: false,
-  error: false,
-  helper: false,
-  id: "dropdown",
-  label: "Dropdown Label",
-  name: "dropdown",
-  options: [
-    {
-      disabled: false,
-      label: "Option One",
-      value: "option one",
-    },
-    {
-      disabled: false,
-      label: "Option Two",
-      value: "option two",
-    },
-    {
-      disabled: false,
-      label: "Option Three",
-      value: "option three",
-    },
-    {
-      disabled: false,
-      label: "Option Four",
-      value: "four",
-    },
-    {
-      disabled: false,
-      label: "Option Five",
-      value: "the fifth",
-    },
-  ],
-  required: false,
-  tooltip: "This is my tooltip text.",
-  value: "option one",
+const hastooltip: LabelledDropdownProps = {
+  ...basic,
+  tooltip: "Please select a country",
 };
 
-const isdisabled: DropdownProps = {
-  autocomplete: "false",
-  callback: () => {},
-  className: "storybook",
-  disabled: false,
-  error: false,
-  helper: false,
-  id: "dropdown",
-  label: "Dropdown Label",
-  name: "dropdown",
-  options: [
-    {
-      disabled: false,
-      label: "Option One",
-      value: "option one",
-    },
-    {
-      disabled: false,
-      label: "Option Two",
-      value: "option two",
-    },
-    {
-      disabled: false,
-      label: "Option Three",
-      value: "option three",
-    },
-    {
-      disabled: false,
-      label: "Option Four",
-      value: "four",
-    },
-    {
-      disabled: false,
-      label: "Option Five",
-      value: "the fifth",
-    },
-  ],
-  required: false,
-  value: "option one",
+const isdisabled: LabelledDropdownProps = {
+  ...basic,
+  disabled: true,
 };
 
-/**
- * Sample prop definitions Dropdown's enumerable properties (imported in stories and test)
- */
 const DropdownArgs = {
   basic,
   haserror,

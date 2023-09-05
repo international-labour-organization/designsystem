@@ -1,42 +1,33 @@
-import { ReactElement } from "react";
-import { InputProps } from "../Input/Input.props";
-import { TextareaProps } from "../Textarea/Textarea.props";
+import { HTMLProps } from "react";
 
-export type FieldsetChild = ReactElement<InputProps | TextareaProps>;
-
-export interface FieldsetProps {
+export interface FieldsetProps extends HTMLProps<HTMLFieldSetElement> {
   /**
-   * Specify the content of your Fieldset.
+   * Optional helper text for the fieldset
    */
-  children: (null | false | FieldsetChild) | (null | false | FieldsetChild)[];
-
-  /**
-   * Specify an optional className to be added to your Fieldset component.
-   */
-  className?: string;
-
-  /**
-   * The fieldset's id
-   */
-  fieldsetid?: string;
+  helper?: string;
 
   /**
    * Optional error text for the fieldset
    */
-  grouperror?: string;
-
-  /**
-   * Optional helper text for the fieldset
-   */
-  grouphelper?: string;
+  errorMessage?: string;
 
   /**
    * Optional tooltip text for the fieldset
    */
-  grouptooltip?: string;
+  tooltip?: string;
 
   /**
    * The fieldset's legend
    */
   legend?: string;
+
+  /**
+   * The direction of the Fieldset's children
+   */
+  direction?: "row" | "column" | "row-reverse" | "column-reverse";
+
+  /**
+   * How the Fieldset children will wrap
+   */
+  wrap?: "reverse" | "nowrap" | "wrap" | "wrap-reverse";
 }

@@ -1,66 +1,26 @@
-export interface DatePickerProps {
+import { FormFieldProps } from "../../types";
+import { LabelledFormFieldProps } from "../../types";
+
+export interface DatePickerProps extends FormFieldProps<HTMLInputElement> {
   /**
-   * The input's onChange callback.
+   * The latest date to accept
    */
-  callback?: (e: React.ChangeEvent<HTMLInputElement>, picker?: string) => any;
+  max?: string | number;
 
   /**
-   * Specify an optional className to be added to your input.
+   * The earliest date to accept.
    */
-  className?: string;
+  min?: string | number;
 
   /**
-   * Is the input disabled?
+   * The granularity of the date picker
    */
-  disabled?: boolean;
-
-  /**
-   * If this is a range, the data for the second field
-   */
-  enddata?: DatePickerProps;
-
-  /**
-   * Does the input have an error?
-   */
-  error?: string | false;
-
-  /**
-   * The input's helper text
-   */
-  helper: string | false;
-
-  /**
-   * The input's id attribute
-   */
-  id?: string;
-
-  /**
-   * Does this input have a label?
-   */
-  label: string;
-
-  /**
-   * The input's name attribute
-   */
-  name?: Required<string>;
+  step?: number;
 
   /**
    * Specify an optional className to be added to your DatePicker component.
    */
   placeholder?: string;
-
-  /**
-   * Specify whether this is a date range
-   */
-  range?: boolean;
-
-  /**
-   * Specify whether this input is required
-   */
-  required?: boolean;
-
-  /**
-   * Does this DatePicker have a tooltip?
-   */
-  tooltip?: string;
 }
+
+export type LabelledDatePickerProps = LabelledFormFieldProps<DatePickerProps>;

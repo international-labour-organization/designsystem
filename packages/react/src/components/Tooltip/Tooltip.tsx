@@ -10,6 +10,7 @@ const Tooltip: FC<TooltipProps> = ({
   icon,
   label,
   theme,
+  id,
 }) => {
   const { prefix } = useGlobalSettings();
   const baseClass = `${prefix}--tooltip`;
@@ -127,6 +128,7 @@ const Tooltip: FC<TooltipProps> = ({
       onFocus={handleOnMouseOver}
       onMouseOut={handleOnMouseOut}
       onBlur={handleOnMouseOut}
+      id={id}
     >
       {!icon && <>{children}</>}
       <span className={tooltipClasses} style={style} ref={tooltipRef}>

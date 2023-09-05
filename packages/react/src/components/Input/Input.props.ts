@@ -1,4 +1,4 @@
-import { InputTypes } from "../../types";
+import { TextInputTypes } from "../../types";
 
 export interface InputProps {
   /**
@@ -59,5 +59,5 @@ export interface InputProps {
   /**
    * The input's type.
    */
-  type: InputTypes;
+  type: TextInputTypes;
 }

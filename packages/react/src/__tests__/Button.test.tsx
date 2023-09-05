@@ -16,8 +16,8 @@ describe("<Button>", () => {
     render(<Button {...buttonArgs.primary} />);
     const buttonElement = screen.getAllByRole("button");
     expect(buttonElement).not.toBeNull();
-    expect(buttonElement[0].getAttribute("class")).toEqual(
-      expect.stringContaining(buttonArgs.primary.size as string)
+    expect(buttonElement[0].getAttribute("class")).toContain(
+      buttonArgs.primary.size
     );
   });
 

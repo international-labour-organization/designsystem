@@ -1,119 +1,80 @@
-import { FC } from "react";
+import { forwardRef } from "react";
 import classNames from "classnames";
 import useGlobalSettings from "../../hooks/useGlobalSettings";
-import { DatePickerProps } from "./DatePicker.props";
-import { Fieldset } from "../Fieldset";
-import { FormElement } from "../FormElement";
+import FormControl, { useFormControl } from "../FormControl/FormControl";
+import { DatePickerProps, LabelledDatePickerProps } from "./DatePicker.props";
 
-const DatePicker: FC<DatePickerProps> = ({
-  callback,
-  disabled = false,
-  enddata,
-  error,
-  helper,
-  id,
-  label,
-  name,
-  placeholder,
-  range,
-  required,
-  tooltip,
-}) => {
-  const { prefix } = useGlobalSettings();
-  const baseClass = `${prefix}--datepicker`;
+const DatePicker = forwardRef<HTMLInputElement, DatePickerProps>(
+  (props, ref) => {
+    const {
+      onChange,
+      onBlur,
+      disabled = false,
+      error,
+      id,
+      name,
+      placeholder,
+      required,
+      max,
+      min,
+      step,
+    } = props;
 
-  const DatePickerClasses = classNames("", {
-    [baseClass]: true,
-    [`error`]: error,
-  });
+    const { prefix } = useGlobalSettings();
+    const formControlCtx = useFormControl();
+    const { ariaDescribedBy } = formControlCtx;
 
-  /**
-   * On change, if there is a callback, call it
-   */
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement>,
-    picker?: string
-  ) => {
-    if (callback) {
-      callback(e, picker);
-    }
-  };
+    const inputClass = `${prefix}--input`;
+    const baseClass = `${prefix}--datepicker`;
+
+    const datePickerClasses = classNames(inputClass, baseClass, {
+      [`error`]: error,
+    });
+
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+      if (onChange) {
+        onChange(e);
+      }
+    };
+
+    return (
+      <input
+        ref={ref}
+        type="date"
+        id={id ? id : name}
+        name={name}
+        onChange={handleChange}
+        onBlur={onBlur}
+        disabled={disabled}
+        placeholder={placeholder}
+        required={required}
+        className={datePickerClasses}
+        max={max}
+        min={min}
+        step={step}
+        aria-describedby={ariaDescribedBy}
+      />
+    );
+  }
+);
+
+const LabelledDatePicker = forwardRef<
+  HTMLInputElement,
+  LabelledDatePickerProps
+>((props, ref) => {
+  const { style, inputStyle, className, ...rest } = props;
+  const fieldId = props.id ? props.id : props.name;
 
   return (
-    <>
-      {!range && (
-        <Fieldset>
-          <FormElement
-            elemid={name as any}
-            label={label}
-            helper={helper as any}
-            error={error as any}
-            required={required as any}
-            tooltip={tooltip}
-          >
-            <input
-              id={`${id ? id : name}`}
-              name={`${name}`}
-              onChange={handleChange}
-              disabled={disabled}
-              placeholder={placeholder}
-              required={required as any}
-              type={"date"}
-              className={`${DatePickerClasses} ${prefix}--input`}
-            />
-          </FormElement>
-        </Fieldset>
-      )}
-      {range && (
-        <div className={`${baseClass}--range`}>
-          <Fieldset>
-            <FormElement
-              elemid={name as any}
-              label={label}
-              helper={helper as any}
-              error={error as any}
-              required={required as any}
-              tooltip={tooltip}
-              type={"date"}
-            >
-              <input
-                id={`${id ? id : name}`}
-                name={`${name}`}
-                onChange={handleChange}
-                disabled={disabled}
-                placeholder={placeholder}
-                required={required as any}
-                type={"date"}
-                className={`${DatePickerClasses} ${prefix}--input`}
-              />
-            </FormElement>
-          </Fieldset>
-          <Fieldset>
-            <FormElement
-              elemid={enddata?.name as any}
-              label={enddata?.label as any}
-              helper={enddata?.helper as any}
-              error={enddata?.error as any}
-              required={enddata?.required as any}
-              tooltip={enddata?.tooltip as any}
-              type={"date"}
-            >
-              <input
-                id={enddata?.id ? enddata?.id : enddata?.name}
-                name={enddata?.name}
-                onChange={(e) => handleChange(e, "end")}
-                disabled={enddata?.disabled}
-                placeholder={enddata?.placeholder}
-                required={enddata?.required as any}
-                type={"date"}
-                className={`${DatePickerClasses} ${prefix}--input`}
-              />
-            </FormElement>
-          </Fieldset>
-        </div>
-      )}
-    </>
+    <FormControl
+      fieldId={fieldId}
+      style={style}
+      className={className}
+      {...rest}
+    >
+      <DatePicker ref={ref} style={inputStyle} {...rest} />
+    </FormControl>
   );
-};
+});
 
-export default DatePicker;
+export default LabelledDatePicker;

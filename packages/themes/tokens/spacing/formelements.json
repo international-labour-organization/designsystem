@@ -40,6 +40,14 @@
             "top": { "value": "2px" }
           }
         },
+        "invalid": {
+          "border": {
+            "bottom": { "value": "2px" },
+            "left": { "value": "3px" },
+            "right": { "value": "2px" },
+            "top": { "value": "2px" }
+          }
+        },
         "error": {
           "border": {
             "bottom": { "value": "2px" },
@@ -47,6 +55,12 @@
             "right": { "value": "2px" },
             "top": { "value": "2px" }
           }
+        }
+      },
+      "toggle": {
+        "base": {
+          "height": { "value": "24px" },
+          "width": { "value": "46px" }
         }
       },
       "inputbutton": {

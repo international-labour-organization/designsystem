@@ -1,82 +1,93 @@
-import { FC, useState } from "react";
+import React, { forwardRef, useState } from "react";
 import classNames from "classnames";
-import useGlobalSettings from "../../hooks/useGlobalSettings";
-import { DropdownProps } from "./Dropdown.props";
-import { Fieldset } from "../Fieldset";
-import { FormElement } from "../FormElement";
+import { useGlobalSettings } from "../../hooks";
+import { DropdownProps, LabelledDropdownProps } from "./Dropdown.props";
+import FormControl, { useFormControl } from "../FormControl/FormControl";
 
-const Dropdown: FC<DropdownProps> = ({
-  autocomplete,
-  callback,
-  disabled = false,
-  error,
-  helper,
-  id,
-  label,
-  name,
-  options,
-  required,
-  tooltip,
-  value,
-}) => {
+const Dropdown = forwardRef<HTMLSelectElement, DropdownProps>((props, ref) => {
+  const {
+    autocomplete,
+    onChange,
+    onBlur,
+    disabled = false,
+    error,
+    id,
+    name,
+    options,
+    required,
+    value,
+    form,
+    multiple,
+    selectSize,
+  } = props;
+
   const { prefix } = useGlobalSettings();
+  const formControlCtx = useFormControl();
+  const { ariaDescribedBy } = formControlCtx;
 
   const baseClass = `${prefix}--dropdown`;
 
-  const dropdownClasses = classNames("", {
-    [baseClass]: true,
+  const dropdownClasses = classNames(baseClass, {
     [`error`]: error,
   });
 
   const [currentvalue, setValue] = useState(value);
 
-  /**
-   * On change, if there is a callback, call it
-   */
   const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     setValue(e.target.value);
-
-    if (callback) {
-      callback(e);
+    if (onChange) {
+      onChange(e);
     }
   };
 
   return (
-    <Fieldset>
-      <FormElement
-        elemid={name as any}
-        label={label}
-        helper={helper as any}
-        error={error as any}
-        required={required as any}
-        tooltip={tooltip}
-        type={"dropdown"}
+    <div className={`${baseClass}--wrapper`}>
+      <select
+        ref={ref}
+        id={id ? id : name}
+        autoComplete={autocomplete}
+        name={name}
+        required={required}
+        onChange={handleChange}
+        onBlur={onBlur}
+        disabled={disabled}
+        className={dropdownClasses}
+        value={currentvalue}
+        form={form}
+        multiple={multiple}
+        size={selectSize}
+        aria-describedby={ariaDescribedBy}
       >
-        <div className={`${baseClass}--wrapper`}>
-          <select
-            id={id ? id : name}
-            autoComplete={autocomplete}
-            name={name}
-            required={required}
-            onChange={handleChange}
-            disabled={disabled}
-            className={dropdownClasses}
-            value={currentvalue}
-          >
-            {options &&
-              options.map((option, i) => (
-                <option
-                  disabled={option.disabled}
-                  label={option.label}
-                  value={option.value}
-                  key={`${baseClass}--option--${i}`}
-                />
-              ))}
-          </select>
-        </div>
-      </FormElement>
-    </Fieldset>
+        {options &&
+          options.map((option, i) => (
+            <option
+              disabled={option.disabled}
+              label={option.label}
+              value={option.value}
+              key={`${baseClass}--option--${i}`}
+            />
+          ))}
+      </select>
+    </div>
   );
-};
+});
 
-export default Dropdown;
+const LabelledDropdown = forwardRef<HTMLSelectElement, LabelledDropdownProps>(
+  (props, ref) => {
+    const { style, inputStyle, className, ...rest } = props;
+    const fieldId = props.id ? props.id : props.name;
+
+    return (
+      <FormControl
+        fieldId={fieldId}
+        style={style}
+        className={className}
+        {...rest}
+      >
+        <Dropdown ref={ref} style={inputStyle} {...rest} />
+      </FormControl>
+    );
+  }
+);
+
+export default LabelledDropdown;

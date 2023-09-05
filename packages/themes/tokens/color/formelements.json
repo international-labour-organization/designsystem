@@ -42,6 +42,16 @@
           },
           "color": { "value": "{color.base.neutrals.medium}" }
         },
+        "invalid": {
+          "background": { "value": "{color.base.neutrals.white}" },
+          "border": {
+            "bottom": { "value": "{color.base.neutrals.light}" },
+            "left": { "value": "{color.base.yellow}" },
+            "right": { "value": "{color.base.neutrals.light}" },
+            "top": { "value": "{color.base.neutrals.light}" }
+          },
+          "color": { "value": "{color.base.neutrals.medium}" }
+        },
         "disabled": {
           "background": { "value": "{color.base.neutrals.white}" },
           "border": {
@@ -51,6 +61,29 @@
             "top": { "value": "{color.base.neutrals.lighter}" }
           },
           "color": { "value": "{color.base.neutrals.light}" }
+        }
+      },
+      "toggle": {
+        "unchecked": {
+          "background": { "value": "{color.base.neutrals.light}" },
+          "border": { "value": "none" },
+          "slider": { "color": { "value": "{color.base.neutrals.white}" } },
+          "label": { "color": { "value": "{color.base.neutrals.dark}" } },
+          "helperText": { "color": { "value": "{color.base.neutrals.medium}" } }
+        },
+        "checked": {
+          "background": { "value": "{color.base.blue.dark}" },
+          "border": { "value": "none" },
+          "slider": { "color": { "value": "{color.base.blue.lighter}" } }
+        },
+        "active": {
+          "border": { "value": "{color.base.yellow}" },
+          "slider": { "color": { "value": "{color.base.blue.lighter}" } }
+        },
+        "error": {
+          "background": { "value": "{color.base.neutrals.light}" },
+          "border": { "value": "{color.base.red.medium}" },
+          "slider": { "color": { "value": "{color.base.neutrals.white}" } }
         }
       },
       "inputbutton": {

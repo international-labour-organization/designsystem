@@ -1,14 +1,8 @@
 import { RadioProps } from "./Radio.props";
 
 const basic: RadioProps = {
-  callback: () => {},
-  disabled: false,
-  error: "",
-  helper: "",
-  label: "Radio Field Label",
+  className: "Radio",
   name: "radio",
-  required: false,
-  value: "radio",
 };
 
 /**

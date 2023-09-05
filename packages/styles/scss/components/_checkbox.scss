@@ -5,15 +5,16 @@
 .ilo--checkbox {
   -webkit-appearance: none;
   -moz-appearance: none;
+  appearance: none;
   border: none;
   display: grid;
   height: px-to-rem(24px);
   margin: 0;
-  order: 1;
   position: relative;
   place-content: center;
   width: px-to-rem(24px);
   transform: none;
+  cursor: pointer;
 
   &:before {
     content: "";
@@ -74,10 +75,10 @@
   }
 
   &:invalid,
-  &.error,
-  .error & {
+  &__error,
+  &__error & {
     &:after {
-      background-color: $color-base-red-medium;
+      border-color: $color-base-red-medium;
     }
 
     &:checked {
@@ -85,37 +86,5 @@
         border-color: $color-base-blue-dark;
       }
     }
-  }
-}
-
-.ilo--fieldset--input--checkbox {
-  align-items: center;
-  clear: both;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  margin-bottom: px-to-rem(22px);
-
-  .ilo--fieldset--label {
-    color: $color-base-neutrals-black;
-    font-family: $fonts-copy;
-    font-size: 14.9px;
-    font-weight: 400;
-    line-height: 1;
-    margin-left: px-to-rem($spacing-padding-1);
-    margin-bottom: 0;
-    margin-top: 1px;
-    order: 2;
-
-    .right-to-left & {
-      margin-left: 0;
-      margin-right: px-to-rem($spacing-padding-1);
-    }
-  }
-
-  .ilo--fieldset--error,
-  .ilo--fieldset--helper {
-    order: 3;
-    width: 100%;
   }
 }
