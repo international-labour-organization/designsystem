@@ -1,5 +1,15 @@
 # @ilo-org/twig
 
+## 0.9.5
+
+### Patch Changes
+
+- 897fe5766: fix click event bubbling
+- Updated dependencies [897fe5766]
+- Updated dependencies [897fe5766]
+- Updated dependencies [897fe5766]
+  - @ilo-org/styles@0.9.0
+
 ## 0.9.4
 
 ### Patch Changes
