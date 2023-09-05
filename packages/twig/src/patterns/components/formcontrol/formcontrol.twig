@@ -1,0 +1,46 @@
+{# form-control.twig #}
+
+{% set baseClass = prefix ~ "--form-control" %}
+{% set errorClass = baseClass ~ "__error" %}
+{% set disabledClass = baseClass ~ "__disabled" %}
+{% set labelPlacementClass = baseClass ~ "__label-placement__" ~ labelPlacement|default("start") %}
+{% set formControlClass = [baseClass, className, labelPlacementClass] %}
+{% if error %}
+    {% set formControlClass = formControlClass|merge([errorClass]) %}
+{% endif %}
+{% if disabled %}
+    {% set formControlClass = formControlClass|merge([disabledClass]) %}
+{% endif %}
+
+{% set labelBaseClass = baseClass ~ "--label" %}
+{% set labelSizeClass = labelBaseClass ~ "__size__" ~ labelSize|default("medium") %}
+{% set labelClass = [labelBaseClass, labelSizeClass] %}
+{% set helperClass = baseClass ~ "--helper" %}
+
+{% set showError = error and errorMessage %}
+{% set showHelper = not showError and helper %}
+
+<div class="{{ formControlClass|join(' ') }}">
+  <span class="{{ labelClass|join(' ') }}">
+      <label for="{{ fieldId }}">{{ label }}</label>
+      {% if tooltip %}
+          {% include '@components/tooltip/tooltip.twig' with {
+            "id": "blarblar",
+            "icon": true,
+            "label": tooltip,
+            "theme": "dark",
+            "prefix": prefix
+          } only %}
+      {% endif %}
+  </span>
+
+  {# Child content goes here. In the context of Twig #}
+  {{ block('formfield') }}
+
+  {% if showHelper %}
+      <span id="{{ helperId }}" class="{{ helperClass }}">{{ helper }}</span>
+  {% endif %}
+  {% if showError %}
+      <span id="{{ errorId }}" class="{{ helperClass }}" aria-live="assertive">{{ errorMessage }}</span>
+  {% endif %}
+</div>
