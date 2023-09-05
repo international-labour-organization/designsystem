@@ -1,44 +1,48 @@
-{#
-  FIELDSET COMPONENT
-  This component by itself does nothing, but is used to wrap form labels and inputs as well as provide their helper text and error messaging
+{# fieldset.twig #}
 
-  it takes four params:
+{% set baseClass = prefix ~ "--fieldset" %}
+{% set wrapClass = baseClass ~ "--wrap__" ~ wrap %}
+{% set directionClass = baseClass ~ "--direction__" ~ direction %}
+{% set helperClass = baseClass ~ "--helper" %}
+{% set errorClass = baseClass ~ "__error" %}
+{% set disabledClass = baseClass ~ "__disabled" %}
 
-  fsinputid: a string, the id of the form field it contains
-  fslabel: a string, the label of the form field
-  fshelper: a string, helper text, if any
-  fserror: a string, error message, if any
-  fstype: a string, the type of field
-  fsclass: a string, any additional classnames
-#}
-<fieldset id="{{fsinputid}}--fieldset" class="{{prefix}}--fieldset{% if fsclass %} {{fsclass}}{% endif %}" {% if fshelper %}data-helper="{{fshelper}}"{% endif %}  {% if fserror %}data-error="{{fserror}}"{% endif %}>
-  {% if legend %}
-  <legend class="ilo--fieldset--legend">{{legend}}
-    {% if grouptooltip %}
-      {% include '@components/tooltip/tooltip.twig' with {label: grouptooltip.label, icon: grouptooltip.icon, theme: grouptooltip.theme, className: "ilo--fieldset--legend--tooltip"} %}
-    {% endif %}
-  </legend>
+{% set fieldsetClasses = [className, baseClass, wrapClass, directionClass] %}
+{% if disabled %}
+    {% set fieldsetClasses = fieldsetClasses|merge([disabledClass]) %}
+{% endif %}
+
+{% set helperClasses = [helperClass] %}
+{% if hasError %}
+    {% set helperClasses = helperClasses|merge([errorClass]) %}
+{% endif %}
+
+{% set showHelper = helper or hasError %}
+{% set helperMessage = hasError ? errorMessage : helper %}
+
+<fieldset class="{{ fieldsetClasses|join(' ') }}">
+  {% if legend or helper %}
+      <div class="{{ baseClass ~ '--legend-wrapper' }}">
+          {% if legend %}
+              <legend class="{{ baseClass ~ '--legend' }}">
+                  {{ legend }}
+                  {% if tooltip %}
+                      {% include '@components/tooltip/tooltip.twig' with {
+                          'className': baseClass ~ '--legend--tooltip',
+                          'icon': true,
+                          'label': tooltip,
+                          'theme': 'dark'
+                      } only %}
+                  {% endif %}
+              </legend>
+          {% endif %}
+          {% if showHelper %}
+              <span class="{{ helperClasses|join(' ') }}">{{ helperMessage }}</span>
+          {% endif %}
+      </div>
   {% endif %}
-  {% if grouphelper and not grouperror %}
-    <span class="ilo--fieldset--helper">{{grouphelper}}</span>
-  {% endif %}
-  {% if grouperror %}
-    <span class="ilo--fieldset--error">{{grouperror}}</span>
-  {% endif %}
-  <div class="ilo--fieldset--input--{{fstype}}">
-    <label class="{{prefix}}--fieldset--label" for="{{fsinputid}}">
-      {{fslabel}}
-      {% if tooltip %}
-        {% include '@components/tooltip/tooltip.twig' with tooltip %}
-      {% endif %}
-    </label>
-    {% block formfield %}
-    {% endblock %}
-    {% if fshelper and not fserror %}
-      <span class="{{prefix}}--fieldset--helper">{{fshelper}}</span>
-    {% endif %}
-    {% if fserror %}
-      <span class="{{prefix}}--fieldset--error">{{fserror}}</span>
-    {% endif %}
+  <div class="{{ baseClass ~ '--elements' }}">
+      {# Child content goes here. In the context of Twig, this might be blocks or includes. #}
+      {{ block('content') }}
   </div>
 </fieldset>
