@@ -13,33 +13,19 @@ tags:
       type: string
       description: The tooltip for the form element.
       preview: "This is a tooltip"
-    helperId:
-      type: text
-      label: Helper ID
-      description: The ID of the helper text for the form element. If you have a helper, this should be set for accessibility reasons.
-      preview: "my-form-element-helper"
     helper:
       type: text
       label: Helper Text
       description: The helper text for the form element.
       preview: "Enter first name and last name"
-    errorId:
-      type: text
-      label: Error ID
-      description: The ID of the error message for the form element. If you have an error, this should be set for accessibility reasons.
-      preview: "my-form-element-error"
     id:
       type: text
       label: ID
       description: The ID of the text input.
-      preview: textinput
-      default: ""
     name:
       type: text
       label: Name
       description: The name of the text input.
-      preview: textinput
-      default: ""
     placeholder:
       type: text
       label: Placeholder

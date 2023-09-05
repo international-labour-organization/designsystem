@@ -1,4 +1,5 @@
 {# text-input.twig #}
+
 {% extends "@components/formcontrol/formcontrol.twig" %}
 
 {% set baseClass = prefix ~ "--text-input" %}
@@ -9,13 +10,13 @@
 
 {% block formfield %}
 <input
-    id="{{ id ? id : name }}"
+    id="{{ id }}"
     name="{{ name }}"
+    type="{{ type|default("text") }}"
+    class="{{ inputClass|join(" ") }}"
+    {% if placeholder %}placeholder="{{ placeholder }}"{% endif %}
     {% if disabled %}disabled{% endif %}
-    placeholder="{{ placeholder }}"
     {% if required %}required{% endif %}
-    type="{{ type }}"
-    class="{{ inputClass|join(' ') }}"
     {% if pattern %}pattern="{{ pattern }}"{% endif %}
     {% if ariaDescribedBy %}aria-describedby="{{ ariaDescribedBy }}"{% endif %}
 />

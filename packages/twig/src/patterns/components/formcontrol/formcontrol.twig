@@ -1,13 +1,49 @@
-{# form-control.twig #}
+{# formcontrol.twig #}
 
 {% set baseClass = prefix ~ "--form-control" %}
+
+{# Initialize ariaDescribedBy #}
+{% set ariaDescribedBy  = [] %}
+
+{# if not defined id will be set to the value of name or to a random number #}
+{% if not id %}
+    {% if name  %}
+        {% set id = name %}
+    {% else %}
+        {% set id = baseClass ~ "--field--" ~ random() %}
+        {% set name = id %}
+    {% endif %}
+{% endif %}
+
+{# Determine which accessibility ids we're going to need #}
+{% if tooltip %}
+    {% set tooltipId = baseClass ~ "--tooltip--" ~ random() %}
+    {% set ariaDescribedBy = ariaDescribedBy|merge([tooltipId])   %}
+{% endif %}
+
+{% if helper %}
+    {% set helperId = baseClass ~ "--helper--" ~ random() %}
+    {% set ariaDescribedBy = ariaDescribedBy|merge([helperId])   %}
+{% endif %}
+
+{% if error %}
+    {% set errorId = baseClass ~ "--error--" ~ random() %}
+    {% set ariaDescribedBy = ariaDescribedBy|merge([errorId])   %}
+{% endif %}
+
+{# Condense them into a single string #}
+{% set ariaDescribedBy = ariaDescribedBy|join(' ') %}
+
+{# Classes for different form element states #}
 {% set errorClass = baseClass ~ "__error" %}
 {% set disabledClass = baseClass ~ "__disabled" %}
 {% set labelPlacementClass = baseClass ~ "__label-placement__" ~ labelPlacement|default("start") %}
 {% set formControlClass = [baseClass, className, labelPlacementClass] %}
+
 {% if error %}
     {% set formControlClass = formControlClass|merge([errorClass]) %}
 {% endif %}
+
 {% if disabled %}
     {% set formControlClass = formControlClass|merge([disabledClass]) %}
 {% endif %}
@@ -22,14 +58,14 @@
 
 <div class="{{ formControlClass|join(' ') }}">
   <span class="{{ labelClass|join(' ') }}">
-      <label for="{{ fieldId }}">{{ label }}</label>
+      <label for="{{ id }}">{{ label }}</label>
       {% if tooltip %}
           {% include '@components/tooltip/tooltip.twig' with {
-            "id": "blarblar",
             "icon": true,
             "label": tooltip,
             "theme": "dark",
-            "prefix": prefix
+            "prefix": prefix,
+            "tooltipid": tooltipId
           } only %}
       {% endif %}
   </span>
@@ -38,9 +74,9 @@
   {{ block('formfield') }}
 
   {% if showHelper %}
-      <span id="{{ helperId }}" class="{{ helperClass }}">{{ helper }}</span>
+      <span id="{{ helperid }}" class="{{ helperClass }}">{{ helper }}</span>
   {% endif %}
   {% if showError %}
-      <span id="{{ errorId }}" class="{{ helperClass }}" aria-live="assertive">{{ errorMessage }}</span>
+      <span id="{{ errorid }}" class="{{ helperClass }}" aria-live="assertive">{{ errorMessage }}</span>
   {% endif %}
 </div>
