@@ -48,6 +48,10 @@
 				{% include "@components/textinput/textinput.twig" with field|merge({ "prefix": prefix }) only %}
 			{% elseif field.type == "checkbox" %}
 				{% include "@components/checkbox/checkbox.twig" with field|merge({ "prefix": prefix }) only %}
+			{% elseif field.type == "datepicker" %}
+				{% include "@components/datepicker/datepicker.twig" with field|merge({ "prefix": prefix }) only %}
+			{% elseif field.type == "dropdown" %}
+				{% include "@components/dropdown/dropdown.twig" with field|merge({ "prefix": prefix }) only %}
 			{% endif %}
 		{% endfor %}
 	</div>
