@@ -1,5 +1,6 @@
 modal:
   use: "@components/modal/modal.twig"
+  namespace: Components/Feedback
   label: Modal
   description: The Modal displays a div containing a button which is visible on page load. On click of this button, a modal dialog is opened which displays a semitransparent fixed-position background and the contents of the chosen component.
   fields:

@@ -1,4 +1,5 @@
 statcard:
+  namespace: Components/Cards
   use: "@components/card_stat/card_stat.twig"
   label: Stat Card
   description: A stat card highlights a prominent fact or statistic with a link to where the information comes from. It can appear in a range of different colors.
@@ -41,8 +42,3 @@ statcard:
         yellow: yellow
         blue: blue
       preview: "blue"
-
-
-
-
-

@@ -1,4 +1,5 @@
 socialmedia:
+  namespace: Components/Navigation
   use: "@components/socialmedia/socialmedia.twig"
   label: Social Media
   description: The Social Media component displays a series of social media icons with links and an optional headline. It can have a light or a dark theme.

@@ -1,0 +1,83 @@
+checkbox:
+  namespace: Components/Forms
+  use: "@components/checkbox/checkbox.twig"
+  label: Checkbox
+  description:
+    The checkbox component provides users with a switch they can use to
+    select more than one option from a list.
+  visibility: storybook
+  fields:
+    label:
+      type: text
+      label: Label
+      description: The label for the form element.
+      preview: "Do you agree to these terms?"
+    tooltip:
+      type: string
+      description: The tooltip for the form element.
+    helper:
+      type: text
+      label: Helper Text
+      description: The helper text for the form element.
+    id:
+      type: text
+      label: ID
+      description: The ID of the input.
+    name:
+      type: text
+      label: Name
+      description: The name of the input.
+    class:
+      type: text
+      label: Class
+      description: The class of the form field.
+      preview: checkbox
+      default: ""
+    value:
+      type: text
+      label: Value
+      description: The value of the input.
+      preview: "1"
+  settings:
+    defaultSelected:
+      type: boolean
+      label: Default Selected
+      description: The default selected state of the form element.
+      preview: false
+    labelPlacement:
+      type: select
+      label: Label Placement
+      description: The placement of the label for the form element.
+      preview: "end"
+      options:
+        start: start
+        end: end
+        top: top
+        bottom: bottom
+    labelSize:
+      type: select
+      label: Label Size
+      description: The size of the label for the form element.
+      preview: "small"
+      options:
+        small: small
+        medium: medium
+        large: large
+    disabled:
+      type: boolean
+      label: Disabled
+      description: The disabled state of the form element.
+      preview: false
+      default: false
+    required:
+      type: boolean
+      label: Required
+      description: The required state of the form element.
+      preview: false
+      default: false
+    error:
+      type: boolean
+      label: Error
+      description: Adds an error state to the form control.
+      preview: false
+      default: false

@@ -1,78 +1,100 @@
 dropdown:
+  namespace: components/Forms
   use: "@components/dropdown/dropdown.twig"
   label: Dropdown
   description: The Dropdown displays a select element with options, and is most
     commonly used in forms.
+  visibility: storybook
   fields:
-    defaultValue:
-      type: string
-      label: defaultValue
-      description: The default value of the select
-      preview: "option one"
-      required: true
-    error:
-      type: string
-      label: error
-      description: Does this have an error? If so, the error message
-      preview: ""
-      required: false
-    helper:
-      type: string
-      label: helper
-      description: Does this have helper text? If so, the helper text
-      preview: "My helper text"
-      required: false
-    id:
-      type: string
-      label: id
-      description: the id of the form field
-      preview: "dropdown"
-      required: true
     label:
+      type: text
+      label: Label
+      description: The label for the form element.
+      preview: "Select a country"
+    tooltip:
       type: string
-      label: label
-      description: the label of the form field
-      preview: "Dropdown Label"
-      required: true
+      description: The tooltip for the form element.
+    helper:
+      type: text
+      label: Helper Text
+      description: The helper text for the form element.
+    id:
+      type: text
+      label: ID
+      description: The ID of the input.
     name:
-      type: string
-      label: name
-      description: the name attribute of the form field
-      preview: "dropdown"
-      required: true
+      type: text
+      label: Name
+      description: The name of the input.
+    class:
+      type: text
+      label: Class
+      description: The class of the form field.
+      preview: checkbox
+      default: ""
+    style:
+      type: text
+      label: Style
+      description: The style of the form field.
+    defaultOption:
+      type: text
+      label: Default Option
+      description: The value of the default option for the form element.
+      preview: "TH"
     options:
       type: object
       label: Options
-      description: The options for this dropdown
-      required: true
+      description: The options for the form element.
       preview:
-        - label: "Option One"
-          value: "option one"
-        - label: "Option Two"
-          value: "option two"
-        - label: "Option Three"
-          value: "option three"
-        - label: "Option Four"
-          value: "four"
-        - label: "Option Five"
-          value: "the fifth"
+        - label: Switzerland
+          value: CH
+        - label: Côte d'Ivoire
+          value: CI
+        - label: Thailand
+          value: TH
+        - label: United States
+          value: US
+        - label: Zimbabwe
+          value: ZW
+        - label: Afghanistan
+          value: AF
+        - label: Åland Islands
+          value: AX
   settings:
-    autocomplete:
+    labelPlacement:
       type: select
-      label: autocomplete
-      description: Should this field autocomplete
+      label: Label Placement
+      description: The placement of the label for the form element.
+      preview: "top"
       options:
-        true: "true"
-        false: false
-      preview: false
-      required: false
+        start: start
+        end: end
+        top: top
+        bottom: bottom
+    labelSize:
+      type: select
+      label: Label Size
+      description: The size of the label for the form element.
+      preview: medium
+      options:
+        small: small
+        medium: medium
+        large: large
     disabled:
-      type: select
-      label: disabled
-      description: Is this field disabled?
-      options:
-        true: "true"
-        false: false
+      type: boolean
+      label: Disabled
+      description: The disabled state of the form element.
       preview: false
-      required: false
-  visibility: storybook
+      default: false
+    required:
+      type: boolean
+      label: Required
+      description: The required state of the form element.
+      preview: false
+      default: false
+    error:
+      type: boolean
+      label: Error
+      description: Adds an error state to the form control.
+      preview: false
+      default: false

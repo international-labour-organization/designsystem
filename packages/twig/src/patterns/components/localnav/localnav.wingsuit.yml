@@ -1,4 +1,5 @@
 localnav:
+  namespace: Components/Navigation
   use: "@components/localnav/localnav.twig"
   label: Local nav
   description: The Local nav component

@@ -1,4 +1,5 @@
 callout:
+  namespace: Components/Feedback
   use: "@components/callout/callout.twig"
   label: Callout
   description: A callout alert section with a few different types

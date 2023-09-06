@@ -1,4 +1,5 @@
 promocard:
+  namespace: Components/Cards
   use: "@components/card_promo/card_promo.twig"
   label: Promo Card
   description: A promo card component for displaying links to content. It can have a title, link, intro and additional call to action.
@@ -68,6 +69,3 @@ promocard:
       options:
         dark: Dark
         light: Light
-
-
-

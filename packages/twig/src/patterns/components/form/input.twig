@@ -1,13 +1,10 @@
-{#
-  INPUT COMPONENT
-#}
-{% extends '@components/fieldset/fieldset.twig' %}
-{% set fsinputid = id ? id : name %}
-{% set fslabel = label %}
-{% set fshelper = helper %}
-{% set fserror = error %}
-{% set fstype = type %}
+{# text-input.twig #}
+{% extends "@components/form/formcontrol.twig" %}
 
-{% block formfield %}
-  <input name="{{name}}" type="{{type}}" class="{{prefix}}--input{% if error %} error{% endif %}" {% if placeholder %}placeholder="{{placeholder}}"{% endif %} {% if disabled %}disabled{% endif %} {% if required %}required{% endif %} id="{% if id %}{{id}}{% else %}{{name}}{% endif %}" />
-{% endblock %}
+{% set baseClass = prefix ~ "--text-input" %}
+{% set inputClass = [baseClass] %}
+{% if error %}
+	{% set inputClass = inputClass|merge([baseClass ~ "__error"]) %}
+{% endif %}
+
+<input id="{{ id ? id : name }}" name="{{ name }}" {% if disabled %} disabled {% endif %} placeholder="{{ placeholder }}" {% if required %} required {% endif %} type="{{ type }}" class="{{ inputClass|join(' ') }}" {% if pattern %} pattern="{{ pattern }}" {% endif %} {% if ariaDescribedBy %} aria-describedby="{{ ariaDescribedBy }}" {% endif %}/>

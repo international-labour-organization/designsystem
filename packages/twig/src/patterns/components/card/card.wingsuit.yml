@@ -1,4 +1,5 @@
 card:
+  namespace: Components/Cards
   use: "@components/card/card.twig"
   label: Card
   description: Cards display prominent content of a page. This component is a wrapper around all of the card types in the design system except for the Hero Card. To use it, pass a `type` setting to the card and then pass the appropriate fields for that card type. For more information about the settings you can pass to each card type, see the documentation for that card.
@@ -32,12 +33,12 @@ card:
         links:
           headline: Also available in
           items:
-          - label: English
-            url: "https://www.ilo.org/search?q=link"
-          - label: Español
-            url: "https://www.ilo.org/search?q=hyperlink"
-          - label: Français
-            url: "https://www.ilo.org/search?q=url"
+            - label: English
+              url: "https://www.ilo.org/search?q=link"
+            - label: Español
+              url: "https://www.ilo.org/search?q=hyperlink"
+            - label: Français
+              url: "https://www.ilo.org/search?q=url"
     date:
       type: object
       label: Date
@@ -88,12 +89,12 @@ card:
       preview:
         linkgroup:
           - links:
-            - label: Read the press release
-              url: "https://www.ilo.org"
-            - label: See the statement
-              url: "https://www.ilo.org"
-            - label: Remarks to G7 Openening Session
-              url: "https://www.ilo.org"
+              - label: Read the press release
+                url: "https://www.ilo.org"
+              - label: See the statement
+                url: "https://www.ilo.org"
+              - label: Remarks to G7 Openening Session
+                url: "https://www.ilo.org"
     list:
       type: object
       label: List

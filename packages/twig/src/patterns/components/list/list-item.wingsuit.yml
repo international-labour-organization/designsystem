@@ -1,4 +1,5 @@
 list:
+  namespace: Components/Content
   use: "@components/list/list-item.twig"
   label: List Item
   description: A list item.

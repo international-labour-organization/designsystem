@@ -1,5 +1,6 @@
 linklist:
   use: "@components/linklist/linklist.twig"
+  namespace: Components/Navigation
   label: Link List
   description: The Link List receives a list of urls with labels and an optional prop indicating if this link is at the end of a 'section.'
   fields:

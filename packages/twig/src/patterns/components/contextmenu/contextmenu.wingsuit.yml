@@ -1,4 +1,5 @@
 contextmenu:
+  namespace: Components/Navigation
   use: "@components/contextmenu/contextmenu.twig"
   label: Context Menu
   description: The ContextMenu receives a list of urls with labels and an optional prop indicating if this link is at the end of a 'section.'

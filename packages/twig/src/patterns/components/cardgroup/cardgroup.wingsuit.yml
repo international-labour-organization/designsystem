@@ -1,4 +1,5 @@
 cardgroup:
+  namespace: Components/Cards
   use: "@components/cardgroup/cardgroup.twig"
   label: Card Group
   description: A group of cards
@@ -147,7 +148,3 @@ cardgroup:
       preview:
         label: "Discover our unique mission"
         url: "https://www.ilo.org"
-
-
-
-

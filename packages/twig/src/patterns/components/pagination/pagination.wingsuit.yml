@@ -1,4 +1,5 @@
 pagination:
+  namespace: Components/Navigation
   use: "@components/pagination/pagination.twig"
   label: Pagination
   description: The Pagination component presents a dismissible alert.

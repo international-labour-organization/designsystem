@@ -1,4 +1,5 @@
 image:
+  namespace: Components/Media
   use: "@components/image/image.twig"
   label: Image
   description: A component for displaying an image.

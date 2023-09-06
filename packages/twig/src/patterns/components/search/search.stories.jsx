@@ -1,7 +1,7 @@
 import "./index";
 
 export default {};
-const patternDefinition = require("./searchfield.wingsuit.yml");
+const patternDefinition = require("./search.wingsuit.yml");
 
 /* eslint-disable-next-line */
 /* eslint-disable-next-line */
