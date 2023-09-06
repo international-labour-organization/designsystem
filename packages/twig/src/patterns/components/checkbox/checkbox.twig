@@ -1,0 +1,7 @@
+{# checkbox.twig #}
+
+{% extends "@components/form/formcontrol.twig" %}
+
+{% block formfield %}
+	<input id="{{id}}" name="{{name}}" type="checkbox" class="{{prefix}}--checkbox" {% if disabled %} disabled {% endif %}/>
+{% endblock %}
