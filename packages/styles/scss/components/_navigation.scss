@@ -579,7 +579,12 @@
   }
 
   &--search {
-    .ilo--searchfield {
+    padding: px-to-rem(32px) 0 px-to-rem(24px);
+
+    .ilo--searchfield,
+    .ilo--form,
+    .ilo--fieldset,
+    .ilo--form-control {
       width: 100%;
     }
 
@@ -892,12 +897,14 @@
     padding: 80px 20px;
   }
 
+  .ilo--form,
   .ilo--searchfield {
     max-width: 618px;
     width: 100%;
   }
 
-  .ilo--fieldset {
+  .ilo--fieldset,
+  .ilo--form-control {
     width: 100%;
   }
 }
