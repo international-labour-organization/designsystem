@@ -1,9 +1,10 @@
 import { NavigationProps } from "./Navigation.props";
 import ilo_logo_white from "@ilo-org/brand-assets/logo_en_horizontal_white.svg";
+import ilo_logo_blue from "@ilo-org/brand-assets/logo_en_horizontal_blue.svg";
 
 const basic: NavigationProps = {
   logo: ilo_logo_white,
-  mobilelogo: ilo_logo_white,
+  mobilelogo: ilo_logo_blue,
   siteurl: "https://www.ilo.org/",
   tagline: {
     tag: "Advancing social justice, promoting decent work",
