@@ -11,7 +11,7 @@ checkbox:
       type: text
       label: Label
       description: The label for the form element.
-      preview: "Insert your name here"
+      preview: "Do you agree to these terms?"
     tooltip:
       type: string
       description: The tooltip for the form element.
@@ -33,7 +33,17 @@ checkbox:
       description: The class of the form field.
       preview: checkbox
       default: ""
+    value:
+      type: text
+      label: Value
+      description: The value of the input.
+      preview: "1"
   settings:
+    defaultSelected:
+      type: boolean
+      label: Default Selected
+      description: The default selected state of the form element.
+      preview: false
     labelPlacement:
       type: select
       label: Label Placement
