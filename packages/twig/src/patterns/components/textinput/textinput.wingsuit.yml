@@ -1,4 +1,4 @@
-tags:
+textinput:
   namespace: Components/Forms
   use: "@components/textinput/textinput.twig"
   label: Text Input
@@ -33,7 +33,7 @@ tags:
       description: The placeholder of the text input.
       preview: Sarah Martinez
       default: ""
-    fieldClass:
+    class:
       type: text
       label: Class
       description: The class of the text input.
@@ -44,12 +44,6 @@ tags:
       label: Pattern
       description: The pattern of the text input.
       preview: textinput``
-      default: ""
-    ariaDescribedBy:
-      type: text
-      label: Aria Described By
-      description: The aria described by of the text input.
-      preview: textinput
       default: ""
   settings:
     labelPlacement:
