@@ -1,4 +1,5 @@
 button:
+  namespace: Components/User Interface
   use: "@components/button/button.twig"
   label: Button
   description: A button or a link styled like a button.

@@ -1,4 +1,5 @@
 datacard:
+  namespace: Components/Cards
   use: "@components/card_data/card_data.twig"
   label: Data Card
   description: A data card component for organising data about things like publications or events.
@@ -64,8 +65,8 @@ datacard:
         alt: "Image alt text"
         loading: "lazy"
         url:
-        - breakpoint: "(min-width: 0px)"
-          src: "/images/publication.jpg"
+          - breakpoint: "(min-width: 0px)"
+            src: "/images/publication.jpg"
   settings:
     size:
       type: select
@@ -125,8 +126,3 @@ datacard:
               - label: EPUB 5.8 MB
                 url: "https://www.ilo.org"
           links: false
-
-
-
-
-

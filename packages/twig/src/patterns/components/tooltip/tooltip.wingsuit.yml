@@ -1,4 +1,5 @@
 tooltip:
+  namespace: Components/Feedback
   use: "@components/tooltip/tooltip.twig"
   label: Tooltip
   description: A component for displaying a tooltip

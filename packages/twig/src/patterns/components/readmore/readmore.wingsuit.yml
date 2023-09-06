@@ -1,4 +1,5 @@
 readmore:
+  namespace: Components/User Interface
   use: "@components/readmore/readmore.twig"
   label: Read More
   description: A component for displaying rich text as entered in a WYSIWYG editor.

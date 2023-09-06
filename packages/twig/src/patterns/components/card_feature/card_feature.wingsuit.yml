@@ -1,4 +1,5 @@
 featurecard:
+  namespace: Components/Cards
   use: "@components/card_feature/card_feature.twig"
   label: Feature Card
   description: A feature card component for displaying links to content. It can have an image, title, link, date and call to action.
@@ -77,6 +78,3 @@ featurecard:
       options:
         dark: Dark
         light: Light
-
-
-

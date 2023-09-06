@@ -1,4 +1,5 @@
 breadcrumb:
+  namespace: Components/Navigation
   use: "@components/breadcrumb/breadcrumb.twig"
   label: Breadcrumb
   description: A component for displaying links in a "breadcrumb" ux

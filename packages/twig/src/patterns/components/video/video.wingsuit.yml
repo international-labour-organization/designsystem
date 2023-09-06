@@ -1,4 +1,5 @@
 video:
+  namespace: Components/Media
   use: "@components/video/video.twig"
   label: Video
   description: A component for displaying a video, source from either a server or YouTube.

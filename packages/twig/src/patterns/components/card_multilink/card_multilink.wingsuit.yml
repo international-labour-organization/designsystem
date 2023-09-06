@@ -1,4 +1,5 @@
 multilinkcard:
+  namespace: Components/Cards
   use: "@components/card_multilink/card_multilink.twig"
   label: Multilink Card
   description: A multilink card component for displaying links to content. It can have an image, title, intro text and a list of links displayed at the bottom or on the side of the card.
@@ -44,12 +45,12 @@ multilinkcard:
       preview:
         linkgroup:
           - links:
-            - label: Read the press release
-              url: "https://www.ilo.org"
-            - label: See the statement
-              url: "https://www.ilo.org"
-            - label: Remarks to G7 Openening Session
-              url: "https://www.ilo.org"
+              - label: Read the press release
+                url: "https://www.ilo.org"
+              - label: See the statement
+                url: "https://www.ilo.org"
+              - label: Remarks to G7 Openening Session
+                url: "https://www.ilo.org"
     title:
       type: string
       label: Title
@@ -83,6 +84,3 @@ multilinkcard:
         narrow: narrow
         wide: wide
         fluid: fluid
-
-
-

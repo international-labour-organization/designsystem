@@ -1,4 +1,5 @@
 accordion:
+  namespace: Components/Content
   use: "@components/accordion/accordion.twig"
   label: Accordion
   description:

@@ -1,5 +1,6 @@
 hero:
   use: "@components/hero/hero.twig"
+  namespace: Components/Content
   label: Hero
   description: The Hero is an attention-grabbing section of a web page designed to engage users and create a memorable first impression.
   fields:
@@ -64,45 +65,45 @@ hero:
         icon: "true"
         theme: "dark"
   settings:
-      justify:
-        label: Justify
-        description: Sets the horizontal alignment of the hero card. `start` is on the left in LTR layouts and on the right in RTL layouts.
-        type: select
-        options:
-          start: start
-          offset: offset
-          center: center
-        preview: "start"
-      align:
-        label: Align
-        description: Sets the vertical alignment of the hero card.
-        type: select
-        options:
-          baseline: baseline
-          center: center
-          bottom: bottom
-        preview: "baseline"
-      postersize:
-        label: Poster Size
-        description: Sets the size of the image poster.
-        type: select
-        options:
-          small: small
-          medium: medium
-          large: large
-          xlarge: xlarge
-        preview: large
-      cardsize:
-        label: Card Size
-        description: Sets the width of the hero card.
-        type: select
-        options:
-          small: small
-          medium: medium
-          large: large
-          xlarge: xlarge
-          xxlarge: xxlarge
-        preview: small
+    justify:
+      label: Justify
+      description: Sets the horizontal alignment of the hero card. `start` is on the left in LTR layouts and on the right in RTL layouts.
+      type: select
+      options:
+        start: start
+        offset: offset
+        center: center
+      preview: "start"
+    align:
+      label: Align
+      description: Sets the vertical alignment of the hero card.
+      type: select
+      options:
+        baseline: baseline
+        center: center
+        bottom: bottom
+      preview: "baseline"
+    postersize:
+      label: Poster Size
+      description: Sets the size of the image poster.
+      type: select
+      options:
+        small: small
+        medium: medium
+        large: large
+        xlarge: xlarge
+      preview: large
+    cardsize:
+      label: Card Size
+      description: Sets the width of the hero card.
+      type: select
+      options:
+        small: small
+        medium: medium
+        large: large
+        xlarge: xlarge
+        xxlarge: xxlarge
+      preview: small
   variants:
     default:
       label: Default
@@ -155,4 +156,3 @@ hero:
           icon: "true"
           theme: "dark"
   visibility: storybook
-
