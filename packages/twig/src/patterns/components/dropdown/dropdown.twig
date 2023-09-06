@@ -1,20 +1,20 @@
-{#
-  DROPDOWN COMPONENT
+{# formcontrol.twig #}
 
-  Like all form fields, extends the FIELDSET components, and passes it some variables
-#}
-{% extends '@components/fieldset/fieldset.twig' %}
-{% set fsinputid = id ? id : name %}
-{% set fslabel = label %}
-{% set fshelper = helper %}
-{% set fserror = error %}
+{% extends "@components/form/formcontrol.twig" %}
+
+{% set disabled = disabled|default(false) %}
+{% set baseClass = prefix ~ '--dropdown' %}
+{% set dropdownClasses = [baseClass, class] %}
+{% if error %}
+	{% set dropdownClasses = dropdownClasses|merge(['error']) %}
+{% endif %}
 
 {% block formfield %}
-  <div class="{{prefix}}--dropdown--wrapper">
-    <select id="{% if id %}{{id}}{% else %}{{name}}{% endif %}" {% if autocomplete is defined %}autocomplete="{{autocomplete}}"{% endif %} name="dropdown" class="{{prefix}}--dropdown{% if error %} error{% endif %}" {% if disabled is defined and disabled == 'true' %}disabled{% endif %}>
-      {% for option in options %}
-      <option label="{{option.label}}" value="{{option.value}}" {% if defaultValue is defined and defaultValue == option.value %}selected{% endif %} {% if option.disabled is defined and option.disabled == 'true' %}disabled{% endif %}></option>
-      {% endfor %}
-    </select>
-  </div>
+	<div class="{{ baseClass }}--wrapper">
+		<select id="{{ id|default(name) }}" autocomplete="{{ autocomplete|default('off') }}" name="{{ name }}" {% if required %} required {% endif %} {% if onBlur %} onblur="{{ onBlur }}" {% endif %} {% if disabled %} disabled {% endif %} class="{{ dropdownClasses|join(' ') }}" value="{{ currentvalue|default(value) }}" {% if form %} form="{{ form }}" {% endif %} {% if multiple %} multiple {% endif %} {% if selectSize %} size="{{ selectSize }}" {% endif %} {% if ariaDescribedBy %} aria-describedby="{{ ariaDescribedBy }}" {% endif %}>
+			{% for option in options %}
+				<option {% if option.disabled %} disabled {% endif %} label="{{ option.label }}" value="{{ option.value }}" {% if defaultOption and defaultOption == option.value%}} selected {% endif %}></option>
+			{% endfor %}
+		</select>
+	</div>
 {% endblock %}
