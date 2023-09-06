@@ -57,18 +57,20 @@
 {% set showHelper = not showError and helper %}
 
 <div class="{{ formControlClass|join(' ') }}" {% if style %} style="{{ style }}" {% endif %}>
-	<span class="{{ labelClass|join(' ') }}">
-		<label for="{{ id }}">{{ label }}</label>
-		{% if tooltip %}
-			{% include '@components/tooltip/tooltip.twig' with {
+	{% if label %}
+		<span class="{{ labelClass|join(' ') }}">
+			<label for="{{ id }}">{{ label }}</label>
+			{% if tooltip %}
+				{% include '@components/tooltip/tooltip.twig' with {
 				"icon": true,
 				"label": tooltip,
 				"theme": "dark",
 				"prefix": prefix,
 				"tooltipId": tooltipId
 			} only %}
-		{% endif %}
-	</span>
+			{% endif %}
+		</span>
+	{% endif %}
 
 	{# Child content goes here. In the context of Twig #}
 	{{ block('formfield') }}
