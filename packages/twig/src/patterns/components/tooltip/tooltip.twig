@@ -1,14 +1,12 @@
 {#
   TOOLTIP COMPONENT
 #}
-  <div
-    class="{{prefix}}--tooltip--wrapper {% if icon %}has-icon{% endif %}" role="status" aria-live="polite" aria-relevant="additions" data-loadcomponent="Tooltip" data-prefix="{{prefix}}"
-  >
-    {% if not icon or icon == 'false' %}
-      {{ children|raw }}
-    {% endif %}
-    <span class="{{prefix}}--tooltip {{prefix}}--tooltip--{{theme}}" data-alignment="left">
-      <span class="{{prefix}}--tooltip--arrow {{prefix}}--tooltip--arrow--placement-negative" data-placement="negative" role="presentation"></span>
-      {{label}}
-    </span>
-  </div>
+<div class="{{prefix}}--tooltip--wrapper {% if icon %}has-icon{% endif %}" role="status" aria-live="polite" aria-relevant="additions" data-loadcomponent="Tooltip" data-prefix="{{prefix}}">
+	{% if not icon or icon == 'false' %}
+		{{ children|raw }}
+	{% endif %}
+	<span class="{{prefix}}--tooltip {{prefix}}--tooltip--{{theme}}" data-alignment="left" id={{tooltipId}}>
+		<span class="{{prefix}}--tooltip--arrow {{prefix}}--tooltip--arrow--placement-negative" data-placement="negative" role="presentation"></span>
+		{{label}}
+	</span>
+</div>

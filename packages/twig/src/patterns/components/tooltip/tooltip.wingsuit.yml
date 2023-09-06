@@ -9,6 +9,12 @@ tooltip:
       description: label shown on the tooltip
       required: true
       preview: "Tooltip text"
+    tooltipId:
+      type: string
+      label: tooltipId
+      description: id for the tooltip. This is often needed for accessibility purposes, for example when you need to provide an `id` to an `aria-describedby` attribute.
+      required: true
+      preview: "tooltip-id"
     children:
       type: string
       label: children
