@@ -1,4 +1,5 @@
 loading:
+  namespace: Components/Transitions
   use: "@components/loading/loading.twig"
   label: Loading
   description: The Loading component displays a loading state. (See Javascript comments in loading.js for how to use this with vanilla JS).

@@ -1,4 +1,5 @@
 notification:
+  namespace: Components/Feedback
   use: "@components/notification/notification.twig"
   label: Notification
   description: The Notification component presents a dismissible alert.

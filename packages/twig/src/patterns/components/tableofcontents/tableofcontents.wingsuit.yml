@@ -1,4 +1,5 @@
 tableofcontents:
+  namespace: Components/Navigation
   use: "@components/tableofcontents/tableofcontents.twig"
   label: Table Of Contents
   description: A component for displaying links internal to a page

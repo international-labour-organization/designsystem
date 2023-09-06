@@ -1,4 +1,5 @@
 tabs:
+  namespace: Components/User Interface
   use: "@components/tabs/tabs.twig"
   label: Tabs
   description: The Tabs component displays content that is subdivided into sections, providing an interface for toggling visually between sections

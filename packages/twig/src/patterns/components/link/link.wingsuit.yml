@@ -1,4 +1,5 @@
 link:
+  namespace: Components/Navigation
   use: "@components/link/link.twig"
   label: Link
   description: A component for displaying a link.

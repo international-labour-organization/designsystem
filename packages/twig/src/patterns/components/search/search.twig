@@ -1,0 +1,22 @@
+{# dropdown.twig #}
+
+{% extends "@components/form/formcontrol.twig" %}
+
+{% set baseClass = prefix ~ "--searchfield" %}
+{% set searchClass = [baseClass, class] %}
+{% set inputClass = prefix ~ "--input" %}
+{% set buttonClass = baseClass ~ "--button" %}
+
+{% if error %}
+	{% set inputClass = inputClass|merge([baseClass ~ "__error"]) %}
+{% endif %}
+
+
+{% block formfield %}
+
+	<div class="{{ searchClass|join(" ") }}" {% if style %} style={{ style }} {% endif %}>
+		<input name="{{name}}" type="{{type}}" class="{{ inputClass }}{% if error %} error{% endif %}" {% if placeholder %} placeholder="{{placeholder}}" {% endif %} {% if disabled %} disabled {% endif %} {% if required %} required {% endif %} id="{% if id %}{{id}}{% else %}{{name}}{% endif %}"/>
+		<input class="{{ buttonClass }}" type="submit"/>
+	</div>
+
+{% endblock %}

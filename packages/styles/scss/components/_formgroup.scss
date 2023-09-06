@@ -1,9 +1,0 @@
-@use "../tokens" as *;
-@use "../functions" as *;
-@import "../mixins";
-
-.ilo--form {
-  .right-to-left & {
-    direction: rtl;
-  }
-}

@@ -1,4 +1,5 @@
 textcard:
+  namespace: Components/Cards
   use: "@components/card_text/card_text.twig"
   label: Text Card
   description: A text card component for displaying links to content. It can have a title, link, date and profile to highlight the author of the content.
@@ -26,9 +27,9 @@ textcard:
       label: Profile
       description: Optional profile of the author who created the content
       preview:
-         avatar: "/images/ilo-dg.jpg"
-         name: "Gilbert F. Houngbo"
-         role: "ILO Director-General"
+        avatar: "/images/ilo-dg.jpg"
+        name: "Gilbert F. Houngbo"
+        role: "ILO Director-General"
     title:
       type: string
       label: Title
@@ -54,6 +55,3 @@ textcard:
       options:
         dark: Dark
         light: Light
-
-
-

@@ -1,4 +1,5 @@
 profile:
+  namespace: Components/Content
   use: "@components/profile/profile.twig"
   label: Profile
   description: The Profile component is used to display information about a person.

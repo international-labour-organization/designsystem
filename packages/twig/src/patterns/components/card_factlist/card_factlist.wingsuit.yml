@@ -1,4 +1,5 @@
 factlistcard:
+  namespace: Components/Cards
   use: "@components/card_factlist/card_factlist.twig"
   label: Fact List Card
   description: A Fact List Card is a card that displays a list of facts or statistics.
@@ -43,7 +44,3 @@ factlistcard:
       options:
         dark: Dark
         light: Light
-
-
-
-

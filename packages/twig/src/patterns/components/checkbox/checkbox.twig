@@ -1,0 +1,17 @@
+{# checkbox.twig #}
+
+{% extends "@components/form/formcontrol.twig" %}
+
+{% set disabled = disabled|default(false) %}
+{% set baseClass = prefix ~ '--checkbox' %}
+{% set errorClass = baseClass ~ '__error' %}
+{% set CheckboxClasses = [baseClass] %}
+
+{% if error %}
+	{% set CheckboxClasses = CheckboxClasses|merge([errorClass]) %}
+{% endif %}
+
+
+{% block formfield %}
+	<input id="{{ id|default(name) }}" name="{{ name }}" {% if disabled %} disabled {% endif %} {% if required %} required {% endif %} type="checkbox" class="{{ CheckboxClasses|join(' ') }}" {% if defaultChecked %} checked {% endif %} {% if ariaDescribedBy %} aria-describedby="{{ ariaDescribedBy }}" {% endif %} {% if value %} value="{{ value }}" {% endif %}/>
+{% endblock %}

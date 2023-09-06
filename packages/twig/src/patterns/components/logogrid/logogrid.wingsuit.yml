@@ -1,4 +1,5 @@
 logogrid:
+  namespace: Components/Brand
   use: "@components/logogrid/logogrid.twig"
   label: Logo Grid
   description: The Logo Grid component renders a series of logos representing a group of organizations. It can be shown on a light or dark background.
@@ -42,5 +43,3 @@ logogrid:
         - label: "UN Refugees"
           src: "/images/unhcr-logo.svg"
           url: "https://www.unhcr.org/"
-
-

@@ -1,4 +1,5 @@
 table:
+  namespace: Components/Content
   use: "@components/table/table.twig"
   label: Table
   description: A component for displaying data in a table

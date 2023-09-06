@@ -1,0 +1,71 @@
+datepicker:
+  namespace: Components/Forms
+  use: "@components/datepicker/datepicker.twig"
+  label: Date Picker
+  description: The facet component combines the Accordion and the Checkbox components. It's usually used to filter a list of items.
+  visibility: storybook
+  fields:
+    label:
+      type: text
+      label: Label
+      description: The label for the form element.
+      preview: "Select a date"
+    tooltip:
+      type: string
+      description: The tooltip for the form element.
+    helper:
+      type: text
+      label: Helper Text
+      description: The helper text for the form element.
+    id:
+      type: text
+      label: ID
+      description: The ID of the input.
+    name:
+      type: text
+      label: Name
+      description: The name of the input.
+    class:
+      type: text
+      label: Class
+      description: The class of the form field.
+      preview: checkbox
+      default: ""
+  settings:
+    labelPlacement:
+      type: select
+      label: Label Placement
+      description: The placement of the label for the form element.
+      preview: "top"
+      options:
+        start: start
+        end: end
+        top: top
+        bottom: bottom
+    labelSize:
+      type: select
+      label: Label Size
+      description: The size of the label for the form element.
+      preview: medium
+      options:
+        small: small
+        medium: medium
+        large: large
+    disabled:
+      type: boolean
+      label: Disabled
+      description: The disabled state of the form element.
+      preview: false
+      default: false
+    required:
+      type: boolean
+      label: Required
+      description: The required state of the form element.
+      preview: false
+      default: false
+    error:
+      type: boolean
+      label: Error
+      description: Adds an error state to the form control.
+      preview: false
+      default: false

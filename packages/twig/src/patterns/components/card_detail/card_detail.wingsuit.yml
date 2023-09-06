@@ -1,4 +1,5 @@
 detailcard:
+  namespace: Components/Cards
   use: "@components/card_detail/card_detail.twig"
   label: Detail Card
   description: A detail card component for displaying links to content. It can have an image, title, link, intro text and date.
@@ -68,6 +69,3 @@ detailcard:
       options:
         true: True
         false: False
-
-
-

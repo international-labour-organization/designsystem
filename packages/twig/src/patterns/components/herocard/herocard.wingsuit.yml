@@ -1,4 +1,5 @@
 herocard:
+  namespace: Components/Content
   use: "@components/herocard/herocard.twig"
   label: Hero Card
   description: The Hero Card includes the title, intro, date, and social links for the hero
