@@ -1,5 +1,11 @@
 # @ilo-org/themes
 
+## 0.3.0
+
+### Minor Changes
+
+- 5a4a7255a: Includes themes for new form elements
+
 ## 0.2.0
 
 ### Minor Changes
