@@ -32,6 +32,10 @@ dropdown:
       description: The class of the form field.
       preview: checkbox
       default: ""
+    style:
+      type: text
+      label: Style
+      description: The style of the form field.
     defaultOption:
       type: text
       label: Default Option
