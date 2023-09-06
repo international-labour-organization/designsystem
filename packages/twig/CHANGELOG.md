@@ -1,5 +1,19 @@
 # @ilo-org/twig
 
+## 0.10.0
+
+### Minor Changes
+
+- 5a4a7255a: This includes an initial refactor of the Form component and exposes several sub-components so they can be used directly by the developer without the Form component if they need to. So far, the Checkbox, Date Picker, Dropdown, Search and Text Input are exposed. Legacy form components have been removed from the documentation and should not be used, they will be refactored and exposed properly in the next version.
+
+### Patch Changes
+
+- Updated dependencies [5a4a7255a]
+- Updated dependencies [5a4a7255a]
+- Updated dependencies [5a4a7255a]
+  - @ilo-org/themes@0.3.0
+  - @ilo-org/styles@0.9.1
+
 ## 0.9.5
 
 ### Patch Changes

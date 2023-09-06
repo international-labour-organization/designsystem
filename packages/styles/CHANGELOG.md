@@ -1,5 +1,14 @@
 # @ilo-org/styles
 
+## 0.9.1
+
+### Patch Changes
+
+- 5a4a7255a: Fix navigation spacing and styles
+- 5a4a7255a: Fix grid spacing between form control elements
+- Updated dependencies [5a4a7255a]
+  - @ilo-org/themes@0.3.0
+
 ## 0.9.0
 
 ### Minor Changes
