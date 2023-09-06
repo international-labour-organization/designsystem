@@ -27,6 +27,15 @@ form:
         name: my--form--name
         action: https://www.ilo.org
         method: post
+    submit:
+      type: object
+      label: Submit button
+      description: Options to pass to the submit button if your form has one
+      preview:
+        label: Submit your info
+        type: primary
+        size: large
+        kind: submit
     fieldsets:
       type: object
       label: Fieldsets
@@ -80,3 +89,63 @@ form:
               labelSize: small
               class: my--formfield--class
               value: 3
+        - legend: Tell us more about you
+          direction: row
+          style: "width: 100%"
+          fields:
+            - type: dropdown
+              name: country
+              label: What country are you from?
+              labelPlacement: top
+              labelSize: small
+              class: my--formfield--class
+              style: "flex: 1 1 49%"
+              options:
+                - label: Switzerland
+                  value: CH
+                - label: Côte d'Ivoire
+                  value: CI
+                - label: Thailand
+                  value: TH
+                - label: United States
+                  value: US
+                - label: Zimbabwe
+                  value: ZW
+                - label: Afghanistan
+                  value: AF
+                - label: Åland Islands
+                  value: AX
+            - type: dropdown
+              name: country
+              label: Who will you be representing?
+              labelPlacement: top
+              labelSize: small
+              class: my--formfield--class
+              style: "flex: 1 1 49%"
+              options:
+                - label: Workers
+                  value: 1
+                - label: Employers
+                  value: 2
+                - label: Governments
+                  value: 3
+                - label: Other
+                  value: 4
+        - legend: When will you be coming to the ILC?
+          direction: row
+          style: "width: 100%"
+          fields:
+            - type: datepicker
+              name: arrival-date
+              label: Arrival date
+              labelPlacement: top
+              labelSize: small
+              class: my--formfield--class
+              style: "flex: 1 1 49%"
+            - type: datepicker
+              name: departure-date
+              label: Departure date
+              labelPlacement: top
+              labelSize: small
+              class: my--formfield--class
+              style: "flex: 1 1 49%"
