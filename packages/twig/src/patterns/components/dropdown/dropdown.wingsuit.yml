@@ -1,5 +1,5 @@
 dropdown:
-  namespace: components/forms
+  namespace: components/Forms
   use: "@components/dropdown/dropdown.twig"
   label: Dropdown
   description: The Dropdown displays a select element with options, and is most
