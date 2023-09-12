@@ -12,7 +12,15 @@
   width: px-to-rem(24px);
   cursor: pointer;
 
-  &:before {
+  input {
+    appearance: none;
+    width: px-to-rem(24px);
+    height: px-to-rem(24px);
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  &--control:before {
     content: "";
     background-color: $color-base-neutrals-light;
     border: px-to-rem(4px) solid $color-base-neutrals-light;
@@ -26,7 +34,7 @@
     pointer-events: none;
   }
 
-  &:after {
+  &--control:after {
     content: "";
     background-color: $color-base-neutrals-light;
     border-radius: 50%;
@@ -39,39 +47,26 @@
     pointer-events: none;
   }
 
-  &:checked {
-    &:before {
-      background-color: $color-base-blue-light;
-      border-color: $color-base-blue-dark;
-    }
-
-    &:after {
-      background-color: $color-base-blue-dark;
-    }
+  input:checked + &--control:before {
+    background-color: $color-base-blue-light;
+    border-color: $color-base-blue-dark;
   }
 
-  &:focus {
-    &:after {
-      background-color: $color-base-yellow;
-    }
-    outline: none;
+  input:checked + &--control:after {
+    background-color: $color-base-blue-dark;
   }
 
-  &:disabled {
+  input:focus + &--control:after {
+    background-color: $color-base-yellow;
+  }
+
+  input:disabled + &--control:after,
+  input:disabled + &--control:before {
     opacity: 45%;
-    pointer-events: none;
   }
 
-  &:invalid,
-  &__error {
-    &:after {
-      background-color: $color-base-red-medium;
-    }
-
-    &:checked {
-      &:before {
-        border-color: $color-base-blue-dark;
-      }
-    }
+  input:invalid + &--control:after,
+  &__error &--control:after {
+    background-color: $color-base-red-medium;
   }
 }
