@@ -149,3 +149,13 @@ form:
               labelSize: small
               class: my--formfield--class
               style: "flex: 1 1 49%"
+        - direction: row
+          style: "width: 100%"
+          fields:
+            - type: textarea
+              name: comments
+              label: Do you have any questions or comments?
+              labelPlacement: top
+              labelSize: medium
+              class: my--formfield--class
+              style: "flex: 1 1 100%"
