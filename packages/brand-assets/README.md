@@ -42,20 +42,60 @@ Additional assets will be added to this package in future versions.
 
 ### ILO Logo
 
-| Image                                                               | Language | Filetype | Exported as                    | Filename                       |
-| ------------------------------------------------------------------- | -------- | -------- | ------------------------------ | ------------------------------ |
-| <img src="./src/assets/logo_en_horizontal_blue.png" width="200" />  | English  | png      | `logo_en_horizontal_blue_png`  | `logo_en_horizontal_blue.png`  |
-| <img src="./src/assets/logo_en_horizontal_blue.svg" width="200" />  | English  | svg      | `logo_en_horizontal_blue_svg`  | `logo_en_horizontal_blue.svg`  |
-| <img src="./src/assets/logo_en_horizontal_white.png" width="200" /> | English  | png      | `logo_en_horizontal_white_png` | `logo_en_horizontal_white.png` |
-| <img src="./src/assets/logo_en_horizontal_white.svg" width="200" /> | English  | svg      | `logo_en_horizontal_white_svg` | `logo_en_horizontal_white.svg` |
-| <img src="./src/assets/logo_fr_horizontal_blue.png" width="200" />  | French   | png      | `logo_fr_horizontal_blue_png`  | `logo_fr_horizontal_blue.png`  |
-| <img src="./src/assets/logo_fr_horizontal_blue.svg" width="200" />  | French   | svg      | `logo_fr_horizontal_blue_svg`  | `logo_fr_horizontal_blue.svg`  |
-| <img src="./src/assets/logo_fr_horizontal_white.png" width="200" /> | French   | png      | `logo_fr_horizontal_white_png` | `logo_fr_horizontal_white.png` |
-| <img src="./src/assets/logo_fr_horizontal_white.svg" width="200" /> | French   | svg      | `logo_fr_horizontal_white_svg` | `logo_fr_horizontal_white.svg` |
-| <img src="./src/assets/logo_es_horizontal_blue.png" width="200" />  | Spanish  | png      | `logo_es_horizontal_blue_png`  | `logo_es_horizontal_blue.png`  |
-| <img src="./src/assets/logo_es_horizontal_blue.svg" width="200" />  | Spanish  | svg      | `logo_es_horizontal_blue_svg`  | `logo_es_horizontal_blue.svg`  |
-| <img src="./src/assets/logo_es_horizontal_white.png" width="200" /> | Spanish  | png      | `logo_es_horizontal_white_png` | `logo_es_horizontal_white.png` |
-| <img src="./src/assets/logo_es_horizontal_white.svg" width="200" /> | Spanish  | svg      | `logo_es_horizontal_white_svg` | `logo_es_horizontal_white.svg` |
+| Image                                                               | Language   | Filetype | Exported as                    | Filename                       |
+| ------------------------------------------------------------------- | ---------- | -------- | ------------------------------ | ------------------------------ |
+| <img src="./src/assets/logo_en_horizontal_blue.png" width="200" />  | English    | png      | `logo_en_horizontal_blue_png`  | `logo_en_horizontal_blue.png`  |
+| <img src="./src/assets/logo_en_horizontal_blue.svg" width="200" />  | English    | svg      | `logo_en_horizontal_blue_svg`  | `logo_en_horizontal_blue.svg`  |
+| <img src="./src/assets/logo_en_horizontal_white.png" width="200" /> | English    | png      | `logo_en_horizontal_white_png` | `logo_en_horizontal_white.png` |
+| <img src="./src/assets/logo_en_horizontal_white.svg" width="200" /> | English    | svg      | `logo_en_horizontal_white_svg` | `logo_en_horizontal_white.svg` |
+| <img src="./src/assets/logo_fr_horizontal_blue.png" width="200" />  | French     | png      | `logo_fr_horizontal_blue_png`  | `logo_fr_horizontal_blue.png`  |
+| <img src="./src/assets/logo_fr_horizontal_blue.svg" width="200" />  | French     | svg      | `logo_fr_horizontal_blue_svg`  | `logo_fr_horizontal_blue.svg`  |
+| <img src="./src/assets/logo_fr_horizontal_white.png" width="200" /> | French     | png      | `logo_fr_horizontal_white_png` | `logo_fr_horizontal_white.png` |
+| <img src="./src/assets/logo_fr_horizontal_white.svg" width="200" /> | French     | svg      | `logo_fr_horizontal_white_svg` | `logo_fr_horizontal_white.svg` |
+| <img src="./src/assets/logo_es_horizontal_blue.png" width="200" />  | Spanish    | png      | `logo_es_horizontal_blue_png`  | `logo_es_horizontal_blue.png`  |
+| <img src="./src/assets/logo_es_horizontal_blue.svg" width="200" />  | Spanish    | svg      | `logo_es_horizontal_blue_svg`  | `logo_es_horizontal_blue.svg`  |
+| <img src="./src/assets/logo_es_horizontal_white.png" width="200" /> | Spanish    | png      | `logo_es_horizontal_white_png` | `logo_es_horizontal_white.png` |
+| <img src="./src/assets/logo_es_horizontal_white.svg" width="200" /> | Spanish    | svg      | `logo_es_horizontal_white_svg` | `logo_es_horizontal_white.svg` |
+| <img src="./src/assets/logo_ar_horizontal_blue.png" width="200" />  | Arabic     | png      | `logo_ar_horizontal_blue_png`  | `logo_ar_horizontal_blue.png`  |
+| <img src="./src/assets/logo_ar_horizontal_blue.svg" width="200" />  | Arabic     | svg      | `logo_ar_horizontal_blue_svg`  | `logo_ar_horizontal_blue.svg`  |
+| <img src="./src/assets/logo_ar_horizontal_white.png" width="200" /> | Arabic     | png      | `logo_ar_horizontal_white_png` | `logo_ar_horizontal_white.png` |
+| <img src="./src/assets/logo_ar_horizontal_white.svg" width="200" /> | Arabic     | svg      | `logo_ar_horizontal_white_svg` | `logo_ar_horizontal_white.svg` |
+| <img src="./src/assets/logo_zh_horizontal_blue.png" width="200" />  | Chinese    | png      | `logo_zh_horizontal_blue_png`  | `logo_zh_horizontal_blue.png`  |
+| <img src="./src/assets/logo_zh_horizontal_blue.svg" width="200" />  | Chinese    | svg      | `logo_zh_horizontal_blue_svg`  | `logo_zh_horizontal_blue.svg`  |
+| <img src="./src/assets/logo_zh_horizontal_white.png" width="200" /> | Chinese    | png      | `logo_zh_horizontal_white_png` | `logo_zh_horizontal_white.png` |
+| <img src="./src/assets/logo_zh_horizontal_white.svg" width="200" /> | Chinese    | svg      | `logo_zh_horizontal_white_svg` | `logo_zh_horizontal_white.svg` |
+| <img src="./src/assets/logo_nl_horizontal_blue.png" width="200" />  | Dutch      | png      | `logo_nl_horizontal_blue_png`  | `logo_nl_horizontal_blue.png`  |
+| <img src="./src/assets/logo_nl_horizontal_blue.svg" width="200" />  | Dutch      | svg      | `logo_nl_horizontal_blue_svg`  | `logo_nl_horizontal_blue.svg`  |
+| <img src="./src/assets/logo_nl_horizontal_white.png" width="200" /> | Dutch      | png      | `logo_nl_horizontal_white_png` | `logo_nl_horizontal_white.png` |
+| <img src="./src/assets/logo_nl_horizontal_white.svg" width="200" /> | Dutch      | svg      | `logo_nl_horizontal_white_svg` | `logo_nl_horizontal_white.svg` |
+| <img src="./src/assets/logo_de_horizontal_blue.png" width="200" />  | German     | png      | `logo_de_horizontal_blue_png`  | `logo_de_horizontal_blue.png`  |
+| <img src="./src/assets/logo_de_horizontal_blue.svg" width="200" />  | German     | svg      | `logo_de_horizontal_blue_svg`  | `logo_de_horizontal_blue.svg`  |
+| <img src="./src/assets/logo_de_horizontal_white.png" width="200" /> | German     | png      | `logo_de_horizontal_white_png` | `logo_de_horizontal_white.png` |
+| <img src="./src/assets/logo_de_horizontal_white.svg" width="200" /> | German     | svg      | `logo_de_horizontal_white_svg` | `logo_de_horizontal_white.svg` |
+| <img src="./src/assets/logo_it_horizontal_blue.png" width="200" />  | Italian    | png      | `logo_it_horizontal_blue_png`  | `logo_it_horizontal_blue.png`  |
+| <img src="./src/assets/logo_it_horizontal_blue.svg" width="200" />  | Italian    | svg      | `logo_it_horizontal_blue_svg`  | `logo_it_horizontal_blue.svg`  |
+| <img src="./src/assets/logo_it_horizontal_white.png" width="200" /> | Italian    | png      | `logo_it_horizontal_white_png` | `logo_it_horizontal_white.png` |
+| <img src="./src/assets/logo_it_horizontal_white.svg" width="200" /> | Italian    | svg      | `logo_it_horizontal_white_svg` | `logo_it_horizontal_white.svg` |
+| <img src="./src/assets/logo_ja_horizontal_blue.png" width="200" />  | Japanese   | png      | `logo_ja_horizontal_blue_png`  | `logo_ja_horizontal_blue.png`  |
+| <img src="./src/assets/logo_ja_horizontal_blue.svg" width="200" />  | Japanese   | svg      | `logo_ja_horizontal_blue_svg`  | `logo_ja_horizontal_blue.svg`  |
+| <img src="./src/assets/logo_ja_horizontal_white.png" width="200" /> | Japanese   | png      | `logo_ja_horizontal_white_png` | `logo_ja_horizontal_white.png` |
+| <img src="./src/assets/logo_ja_horizontal_white.svg" width="200" /> | Japanese   | svg      | `logo_ja_horizontal_white_svg` | `logo_ja_horizontal_white.svg` |
+| <img src="./src/assets/logo_pt_horizontal_blue.png" width="200" />  | Portuguese | png      | `logo_pt_horizontal_blue_png`  | `logo_pt_horizontal_blue.png`  |
+| <img src="./src/assets/logo_pt_horizontal_blue.svg" width="200" />  | Portuguese | svg      | `logo_pt_horizontal_blue_svg`  | `logo_pt_horizontal_blue.svg`  |
+| <img src="./src/assets/logo_pt_horizontal_white.png" width="200" /> | Portuguese | png      | `logo_pt_horizontal_white_png` | `logo_pt_horizontal_white.png` |
+| <img src="./src/assets/logo_pt_horizontal_white.svg" width="200" /> | Portuguese | svg      | `logo_pt_horizontal_white_svg` | `logo_pt_horizontal_white.svg` |
+| <img src="./src/assets/logo_ru_horizontal_blue.png" width="200" />  | Russian    | png      | `logo_ru_horizontal_blue_png`  | `logo_ru_horizontal_blue.png`  |
+| <img src="./src/assets/logo_ru_horizontal_blue.svg" width="200" />  | Russian    | svg      | `logo_ru_horizontal_blue_svg`  | `logo_ru_horizontal_blue.svg`  |
+| <img src="./src/assets/logo_ru_horizontal_white.png" width="200" /> | Russian    | png      | `logo_ru_horizontal_white_png` | `logo_ru_horizontal_white.png` |
+| <img src="./src/assets/logo_ru_horizontal_white.svg" width="200" /> | Russian    | svg      | `logo_ru_horizontal_white_svg` | `logo_ru_horizontal_white.svg` |
+| <img src="./src/assets/logo_tr_horizontal_blue.png" width="200" />  | Turkish    | png      | `logo_tr_horizontal_blue_png`  | `logo_tr_horizontal_blue.png`  |
+| <img src="./src/assets/logo_tr_horizontal_blue.svg" width="200" />  | Turkish    | svg      | `logo_tr_horizontal_blue_svg`  | `logo_tr_horizontal_blue.svg`  |
+| <img src="./src/assets/logo_tr_horizontal_white.png" width="200" /> | Turkish    | png      | `logo_tr_horizontal_white_png` | `logo_tr_horizontal_white.png` |
+| <img src="./src/assets/logo_tr_horizontal_white.svg" width="200" /> | Turkish    | svg      | `logo_tr_horizontal_white_svg` | `logo_tr_horizontal_white.svg` |
+| <img src="./src/assets/logo_vi_horizontal_blue.png" width="200" />  | Vietnamese | png      | `logo_vi_horizontal_blue_png`  | `logo_vi_horizontal_blue.png`  |
+| <img src="./src/assets/logo_vi_horizontal_blue.svg" width="200" />  | Vietnamese | svg      | `logo_vi_horizontal_blue_svg`  | `logo_vi_horizontal_blue.svg`  |
+| <img src="./src/assets/logo_vi_horizontal_white.png" width="200" /> | Vietnamese | png      | `logo_vi_horizontal_white_png` | `logo_vi_horizontal_white.png` |
+| <img src="./src/assets/logo_vi_horizontal_white.svg" width="200" /> | Vietnamese | svg      | `logo_vi_horizontal_white_svg` | `logo_vi_horizontal_white.svg` |
 
 ### Favicon
 
