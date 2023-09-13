@@ -1,0 +1,15 @@
+# This file makes it so that we don't add any of the images that we use for
+# documentation purposes in the Storybook to the npm package, but we do add
+# all of the icons that are generated during build. There is probably a better
+# way to do this, but this works for now.
+
+# Imported icons
+!*.svg
+
+# Allow logo files used in Logo Grid story
+fao-logo.svg
+unhcr-logo.svg
+unicef-logo.png
+wfp-logo.svg
+who-logo.svg
+logo_en_horizontal_blue.svg
