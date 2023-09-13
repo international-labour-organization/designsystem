@@ -1,5 +1,11 @@
 # @ilo-org/twig
 
+## 0.10.3
+
+### Patch Changes
+
+- 260be930f: Fix the Icon component being unable to actually render icons. This was happening because the icon files generated during build were not being included in the package published to npm.
+
 ## 0.10.2
 
 ### Patch Changes
