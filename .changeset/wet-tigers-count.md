@@ -1,5 +1,5 @@
 ---
-"@ilo-org/twig": patch
+"@ilo-org/twig": minor
 ---
 
 Add Toggle as form element
