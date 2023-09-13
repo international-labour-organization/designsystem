@@ -2,4 +2,4 @@
 "@ilo-org/brand-assets": minor
 ---
 
-add logos in some other languages
+Add ILO logos in Arabic, Chinese, Dutch, German, Italian, Japanese, Portuguese, Russian, Turkish and Vietnamese, 
