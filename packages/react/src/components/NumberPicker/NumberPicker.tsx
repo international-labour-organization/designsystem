@@ -18,6 +18,9 @@ const NumberPicker = React.forwardRef<HTMLInputElement, NumberPickerProps>(
       name,
       placeholder,
       required,
+      max,
+      min,
+      step,
     },
     ref
   ) => {
@@ -55,6 +58,9 @@ const NumberPicker = React.forwardRef<HTMLInputElement, NumberPickerProps>(
         pattern="[0-9]*"
         inputMode="numeric"
         aria-describedby={ariaDescribedBy}
+        max={max}
+        min={min}
+        step={step}
       />
     );
   }
