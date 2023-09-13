@@ -1,5 +1,11 @@
 # @ilo-org/twig
 
+## 0.10.1
+
+### Patch Changes
+
+- ac70147d0: Add a block wrap the modal content so it can be overriden.
+
 ## 0.10.0
 
 ### Minor Changes
