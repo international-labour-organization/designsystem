@@ -2,7 +2,7 @@ datepicker:
   namespace: Components/Forms
   use: "@components/datepicker/datepicker.twig"
   label: Date Picker
-  description: The facet component combines the Accordion and the Checkbox components. It's usually used to filter a list of items.
+  description: The Date Picker component is used to select a date from a calendar.
   visibility: storybook
   fields:
     label:
