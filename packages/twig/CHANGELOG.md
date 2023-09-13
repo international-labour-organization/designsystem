@@ -1,5 +1,13 @@
 # @ilo-org/twig
 
+## 0.10.2
+
+### Patch Changes
+
+- 3661a0200: Fix bug in Button where icons appeared outside the borders of the button. This was caused by the attribute being mislabelled in the twig component preventing the correct classname from being applied.
+- Updated dependencies [c0fb36a66]
+  - @ilo-org/brand-assets@0.2.0
+
 ## 0.10.1
 
 ### Patch Changes
