@@ -1,5 +1,11 @@
 # @ilo-org/brand-assets
 
+## 0.2.0
+
+### Minor Changes
+
+- c0fb36a66: Add ILO logos in Arabic, Chinese, Dutch, German, Italian, Japanese, Portuguese, Russian, Turkish and Vietnamese,
+
 ## 0.1.0
 
 ### Minor Changes

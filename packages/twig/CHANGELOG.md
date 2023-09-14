@@ -1,5 +1,25 @@
 # @ilo-org/twig
 
+## 0.10.3
+
+### Patch Changes
+
+- 260be930f: Fix the Icon component being unable to actually render icons. This was happening because the icon files generated during build were not being included in the package published to npm.
+
+## 0.10.2
+
+### Patch Changes
+
+- 3661a0200: Fix bug in Button where icons appeared outside the borders of the button. This was caused by the attribute being mislabelled in the twig component preventing the correct classname from being applied.
+- Updated dependencies [c0fb36a66]
+  - @ilo-org/brand-assets@0.2.0
+
+## 0.10.1
+
+### Patch Changes
+
+- ac70147d0: Add a block wrap the modal content so it can be overriden.
+
 ## 0.10.0
 
 ### Minor Changes
