@@ -66,7 +66,7 @@ const Radio = React.forwardRef<HTMLInputElement, RadioProps>(
           checked={checked}
           value={value}
         />
-        <span class={controlClass}></span>
+        <span className={controlClass}></span>
       </div>
     );
   }
