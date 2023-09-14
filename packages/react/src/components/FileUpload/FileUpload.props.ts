@@ -8,6 +8,11 @@ export interface FileUploadProps extends FormFieldProps<HTMLInputElement> {
   placeholder?: string;
 
   /**
+   * The accept attribute for the input
+   */
+  accept?: string;
+
+  /**
    * Can the user upload more than one file?
    */
   multiple?: boolean;
