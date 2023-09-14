@@ -1,0 +1,94 @@
+fileupload:
+  namespace: Components/Forms
+  use: "@components/fileupload/fileupload.twig"
+  label: File Upload
+  description: The FileUpload component allows users to select and upload files
+    from their device to a web application. It displays a list of the
+    files to upload once they've been selected.
+  visibility: storybook
+  fields:
+    label:
+      type: text
+      label: Label
+      description: The label for the form element.
+      preview: Upload your files here
+    tooltip:
+      type: string
+      description: The tooltip for the form element.
+    helper:
+      type: text
+      label: Helper Text
+      description: The helper text for the form element.
+      preview: Max docs size 10MB
+    id:
+      type: text
+      label: ID
+      description: The ID of the text input.
+    name:
+      type: text
+      label: Name
+      description: The name of the text input.
+    placeholder:
+      type: text
+      label: Placeholder
+      description: The placeholder of the text input.
+      preview: Select files
+    class:
+      type: text
+      label: Class
+      description: The class of the text input.
+      preview: textinput
+      default: ""
+    accept:
+      type: text
+      label: Accept
+      description: The accept attribute of the text input.
+      preview: ".pdf,.doc, .docx, .jpg, .png"
+  settings:
+    labelPlacement:
+      type: select
+      label: Label Placement
+      description: The placement of the label for the form element.
+      preview: "top"
+      default: "top"
+      options:
+        start: start
+        end: end
+        top: top
+        bottom: bottom
+    labelSize:
+      type: select
+      label: Label Size
+      description: The size of the label for the form element.
+      preview: "medium"
+      default: "medium"
+      options:
+        small: small
+        medium: medium
+        large: large
+    multiple:
+      type: boolean
+      label: Multiple
+      description: If the user can select multiple files.
+      preview: false
+      options:
+        true: true
+        false: false
+    disabled:
+      type: boolean
+      label: Disabled
+      description: The disabled state of the text input.
+      preview: false
+      default: false
+    required:
+      type: boolean
+      label: Required
+      description: The required state of the text input.
+      preview: false
+      default: false
+    error:
+      type: boolean
+      label: Error
+      description: Adds an error state to the form control.
+      preview: false
+      default: false
