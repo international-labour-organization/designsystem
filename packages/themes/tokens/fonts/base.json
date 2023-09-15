@@ -1,6 +1,10 @@
 {
   "fonts": {
-    "display": { "value": "Overpass" },
-    "copy": { "value": "Noto Sans" }
+    "display": {
+      "value": "Overpass, Noto Sans, Noto Sans CJK JP, TakaoPGothic, PingFang SC, Microsoft YaHei, 微软雅黑, sans-serif"
+    },
+    "copy": {
+      "value": "Noto Sans, Noto Sans CJK JP, TakaoPGothic, PingFang SC, Microsoft YaHei, 微软雅黑, sans-serif"
+    }
   }
 }
