@@ -205,10 +205,10 @@
   }
 
   &--inner {
-    margin: auto;
-    max-width: 1300px;
-    padding: 0 16px;
-    width: 100%;
+    // margin: auto;
+    // max-width: $layout-max-width;
+    // padding: 0 16px;
+    // width: 100%;
 
     .right-to-left & {
       direction: rtl;
@@ -605,11 +605,11 @@
 .ilo--language-switcher {
   background: $brand-ilo-dark-blue;
   display: flex;
-  padding: 0 max((100% - 1300px) / 2, 20px) 0 0;
+  padding: 0 max((100% - $layout-max-width) / 2, $layout-padding) 0 0;
   position: relative;
 
   .right-to-left & {
-    padding: 0 0 0 max((100% - 1300px) / 2, 20px);
+    padding: 0 0 0 max((100% - $layout-max-width) / 2, $layout-padding);
   }
 
   &::before {
@@ -727,10 +727,10 @@
   }
 
   &--inner {
-    margin: auto;
-    max-width: 1300px;
-    padding: 0 20px;
-    width: 100%;
+    // margin: auto;
+    // max-width: 1300px;
+    // padding: 0 20px;
+    // width: 100%;
 
     @include breakpoint("large") {
       display: flex;
