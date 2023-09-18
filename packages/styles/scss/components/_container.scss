@@ -1,0 +1,8 @@
+@use "../tokens" as *;
+
+.ilo--container {
+  margin: auto;
+  max-width: $layout-max-width;
+  padding: 0 $layout-padding;
+  width: 100%;
+}
