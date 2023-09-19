@@ -1,6 +1,4 @@
-{#
-  FOOTER COMPONENT
-#}
+{# footer.twig #}
 <footer class="{{prefix}}--footer">
 	<div class="{{prefix}}--footer--main {{prefix}}--container">
 		<div class="site--info">
@@ -20,40 +18,42 @@
 				{% include '@components/linklist/linklist.twig' with {linkgroup: linkgroup, theme: 'dark'} %}
 			</nav>
 		{% endif %}
-		{% if social or subscribe %}
+		{% if socialmedia %}
 			<div class="connect">
-				{% if socialmedia %}
-					<div class="social--links">
-						{% include '@components/socialmedia/socialmedia.twig' with {
+				<div class="social--links">
+					{% include '@components/socialmedia/socialmedia.twig' with {
             theme: "dark",
             headline: socialmedia.headline,
             icons: socialmedia.icons,
           } %}
-					</div>
-				{% endif %}
-				{% if subscribe %}
-					{% include '@components/button/button.twig' with {label: subscribe.label, url: subscribe.url, type: 'primary', size: 'large', target: '_blank'} %}
-				{% endif %}
+				</div>
+			</div>
+		{% endif %}
+		{% if subscribe %}
+			<div class="subscribe">
+				{% include '@components/button/button.twig' with {label: subscribe.label, url: subscribe.url, type: 'primary', size: 'large', target: '_blank'} %}
 			</div>
 		{% endif %}
 	</div>
 	<div class="{{prefix}}--footer--secondary">
 		<div class="{{prefix}}--container">
-			{% if legal %}
-				<div class="legal">
-					{{legal}}
+			<div class="{{prefix}}--footer--secondary--details">
+				{% if legal %}
+					<div class="legal">
+						{{legal}}
+					</div>
+				{% endif %}
+				{% if secondarylinks %}
+					<nav class="secondarylinks">
+						<ul class="secondarylinks--list">
+							{% for link in secondarylinks %}
+								<li class="secondarylinks--list--item">
+									<a href="{{link.url}}" class="secondarylinks--list--link">{{link.label}}</a>
+								</li>
+							{% endfor %}
+						</ul>
+					</nav>
 				</div>
-			{% endif %}
-			{% if secondarylinks %}
-				<nav class="secondarylinks">
-					<ul class="secondarylinks--list">
-						{% for link in secondarylinks %}
-							<li class="secondarylinks--list--item">
-								<a href="{{link.url}}" class="secondarylinks--list--link">{{link.label}}</a>
-							</li>
-						{% endfor %}
-					</ul>
-				</nav>
 			{% endif %}
 			{% if anchorlink %}
 				<a href="{{anchorlink.href}}" class="anchorlink">{{anchorlink.label}}</a>

@@ -37,19 +37,18 @@ footer:
       description: "up to six links"
       preview:
         - links:
-            - label: "Link One"
-              url: "http://www.google.com"
-            - label: "Link Two"
-              url: "http://www.google.com"
-            - label: "Link Three"
-              url: "http://www.google.com"
-
+            - label: "Contact us"
+              url: "https://www.ilo.org"
+            - label: "Contact us"
+              url: "https://www.ilo.org"
+            - label: "Contact us"
+              url: "https://www.ilo.org"
     socialmedia:
       type: object
       label: social
       description: "Links to social media"
       preview:
-        headline: "Connect with the ILO"
+        headline: "Stay informed"
         icons:
           - icon: "twitter"
             label: "Twitter"
@@ -77,8 +76,8 @@ footer:
       label: subscribe
       description: "a link to a subscribe form"
       preview:
-        label: "Subscribe"
-        url: "http://www.google.com"
+        label: "Subscribe for updates"
+        url: "https://www.ilo.org"
     legal:
       type: string
       label: legal
@@ -89,18 +88,14 @@ footer:
       label: secondarylinks
       description: "up to six links"
       preview:
-        - label: "Link One"
+        - label: "Rights and permissions"
           url: "http://www.cnn.com"
-        - label: "Link Two"
+        - label: "Privacy policy"
           url: "http://www.bing.com"
-        - label: "Link Three"
+        - label: "Fraud alert"
           url: "http://www.yahoo.com"
-        - label: "Link Four"
+        - label: "Disclaimer"
           url: "http://www.askjeeves.com"
-        - label: "Link Five"
-          url: "http://www.duckduckgo.com"
-        - label: "Link Six"
-          url: "http://www.aol.com"
     anchorlink:
       type: object
       label: anchorlink

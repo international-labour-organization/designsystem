@@ -95,7 +95,7 @@
   }
 
   &--secondary {
-    background-color: $color-base-neutrals-white;
+    background-color: $color-base-neutrals-lighter;
     padding-top: px-to-rem(36px);
     min-height: px-to-rem(
       map-get($spacing, "ux", "readmore", "default", "height")
@@ -116,7 +116,7 @@
       "body-xxs",
       "display"
     );
-    @include textmargin("margin-top", 22px, "body-small", "display", 0, 0);
+    margin-top: px-to-rem(22px);
   }
 
   &--subhead {
@@ -126,11 +126,11 @@
     margin-top: px-to-rem(10px);
     @include font-styles("body-xxs");
     line-height: px-to-rem(18.56px);
-    @include textmargin("margin-bottom", 28px, "body-xxs", "display", 0, 0);
+    margin-bottom: px-to-rem(45px);
   }
 
   .address {
-    margin-bottom: px-to-rem(42px);
+    margin-bottom: px-to-rem(39px);
   }
 
   .address--line {
@@ -170,7 +170,8 @@
 
   .secondarylinks--list--item {
     &:before {
-      content: " | ";
+      content: "|";
+      margin: px-to-rem(4px);
     }
   }
 
@@ -253,7 +254,8 @@
       grid-template-areas:
         "site-info address"
         "site-info links"
-        "site-info connect";
+        "site-info connect"
+        "site-info subscribe";
       align-content: start;
       align-items: start;
       padding: px-to-rem(40px) px-to-rem(20px);
@@ -276,6 +278,10 @@
       grid-area: links;
     }
 
+    .subscribe {
+      grid-area: subscribe;
+    }
+
     &--secondary {
       padding-top: px-to-rem(18px);
       padding-bottom: px-to-rem(18px);
@@ -293,14 +299,15 @@
 
     &--main {
       display: grid;
-      grid-template-columns: 19.2% 25.1% calc(32.5% + 64px);
-      grid-template-rows: 0.6fr 1.4fr;
+      grid-template-columns: 0.25fr 0.33fr 0.09fr 0.33fr;
+      grid-template-rows: auto auto;
       gap: 0px 64px;
       grid-template-areas:
-        "site-info address connect"
-        "site-info links connect";
-      padding-top: px-to-rem(56px);
-      padding-bottom: px-to-rem(64px);
+        "site-info address  .  connect"
+        "site-info links    .  subscribe";
+
+      padding-top: px-to-rem(44px);
+      padding-bottom: px-to-rem(51px);
 
       &:before {
         content: none;
@@ -308,11 +315,17 @@
     }
 
     .connect {
-      display: grid;
-      grid-template-columns: minmax(0, 40%), 60%;
-      grid-template-rows: repeat(3, minmax(0, 1fr));
       grid-area: connect;
-      margin: 0 0 0 calc(18.9% + 64px);
+      margin: 0;
+    }
+
+    .subscribe {
+      height: 100%;
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+      flex-flow: column;
+      top: 8px;
     }
 
     .ilo--button {
@@ -327,16 +340,21 @@
 
       [class*="container"] {
         display: flex;
-        flex-flow: row nowrap;
+        flex-flow: row;
         justify-content: space-between;
         align-items: center;
       }
-    }
 
-    .secondarylinks--list--item {
-      &:first-child {
+      &--details {
+        display: flex;
+        flex-flow: row;
+        justify-content: flex-start;
+        align-items: center;
+      }
+
+      .secondarylinks--list--item {
         &:before {
-          content: none;
+          margin: px-to-rem(8px);
         }
       }
     }
@@ -345,6 +363,7 @@
       margin: 0;
       border: none;
       padding: 0.25rem;
+
       &:hover {
         margin-bottom: -0.1071811361rem;
       }
@@ -361,21 +380,35 @@
       @include footer-triangle(bottom-left);
     }
 
+    .subscribe a {
+      align-self: flex-end;
+    }
+
+    &--secondary {
+      [class*="container"] {
+        flex-direction: row-reverse;
+      }
+
+      &--details {
+        display: flex;
+        flex-flow: row-reverse wrap;
+      }
+    }
+
     .secondarylinks {
       &--list {
-        display: flex;
         flex-direction: row-reverse;
       }
     }
 
-    .secondarylinks--list--item:not(:first-child) {
+    .secondarylinks--list--item {
       &:before {
         content: none;
       }
 
       &:after {
-        content: " |  ";
-        padding-right: px-to-rem(2px);
+        content: "|";
+        margin: px-to-rem(4px);
       }
     }
 
@@ -384,13 +417,8 @@
         grid-template-areas:
           "address site-info"
           "links site-info"
-          "connect site-info";
-      }
-
-      .secondarylinks {
-        &--list {
-          flex-direction: row-reverse;
-        }
+          "connect site-info"
+          "subscribe site-info";
       }
     }
 
@@ -398,15 +426,18 @@
       @include footer-triangle(top-left);
 
       &--main {
-        grid-template-columns: 1fr calc(32.5% + 64px) 25.1% 19.2%;
+        grid-template-columns: 0.33fr 0.09fr 0.33fr 0.25fr;
         grid-template-areas:
-          ". connect address site-info"
-          ". connect links site-info";
+          "connect   . address site-info"
+          "subscribe . links   site-info";
+
+        &:before {
+          content: none;
+        }
       }
 
       .connect {
         grid-template-columns: 60%, minmax(0, 40%);
-        margin: 0 calc(18.9% + 64px) 0 0;
       }
 
       .ilo--button {
