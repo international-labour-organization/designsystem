@@ -3,33 +3,89 @@
 @import "../animations";
 @import "../mixins";
 
+// Properties common to the footer triangle whever they appear
+@mixin footer-triangle-props {
+  background-size: contain;
+  background-repeat: no-repeat;
+  content: "";
+  height: 100%;
+  min-width: 409.5px;
+  position: absolute;
+  width: 28.8%;
+  z-index: 0;
+  @include dataurlicon("footertriangle", $color-base-blue-medium);
+}
+
+@mixin footer-triangle($position: bottom-right) {
+  // The triangle is placed as an after element on
+  // the main footer element on desktop and as a before
+  // element on mobile
+  @if ($position == top-right) {
+    &:after {
+      @include footer-triangle-props;
+      background-position: right top;
+      bottom: auto;
+      top: 0;
+      right: 0;
+      transform: scaleY(1);
+    }
+  }
+
+  @if ($position == bottom-right) {
+    &:before {
+      @include footer-triangle-props;
+      bottom: 0;
+      right: 0;
+      transform: scaleY(-1);
+    }
+  }
+
+  @if ($position == top-left) {
+    &:after {
+      @include footer-triangle-props;
+      top: 0;
+      left: 0;
+      transform: scaleY(1) scaleX(-1);
+    }
+  }
+
+  @if ($position == bottom-left) {
+    &:before {
+      @include footer-triangle-props;
+      bottom: 0;
+      left: 0;
+      transform: scaleY(-1) scaleX(-1);
+    }
+  }
+}
+
 .ilo--footer {
+  $c: &;
+
   border-bottom: px-to-rem(3px) solid $color-base-neutrals-light;
+  background-color: $color-base-blue-dark;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
 
   &--main {
-    background-color: $color-base-blue-dark;
-    border-bottom: px-to-rem(6px) solid $color-base-red-medium;
-    padding: px-to-rem(40px) px-to-rem(32px) 0 px-to-rem(32px);
+    padding: px-to-rem(40px) px-to-rem(32px);
     position: relative;
+
+    @include footer-triangle(bottom-right);
+
+    &:after {
+      content: "";
+      border-bottom: px-to-rem(6px) solid $color-base-red-medium;
+      width: 200vw;
+      position: absolute;
+      bottom: 0;
+      left: -100vw;
+    }
 
     & > * {
       position: relative;
       z-index: 1;
-    }
-
-    &:after {
-      background-size: contain;
-      background-repeat: no-repeat;
-      bottom: 0;
-      content: "";
-      height: 100%;
-      min-width: 409.5px;
-      right: 0;
-      position: absolute;
-      transform: scaleY(-1);
-      width: 28.8%;
-      z-index: 0;
-      @include dataurlicon("footertriangle", $color-base-blue-medium);
     }
   }
 
@@ -40,7 +96,7 @@
 
   &--secondary {
     background-color: $color-base-neutrals-white;
-    padding: px-to-rem(36px) px-to-rem(16px) 0 px-to-rem(16px);
+    padding-top: px-to-rem(36px);
     min-height: px-to-rem(
       map-get($spacing, "ux", "readmore", "default", "height")
     );
@@ -112,7 +168,7 @@
     list-style: none;
   }
 
-  .secondarylinks--list--item:not(first-child) {
+  .secondarylinks--list--item {
     &:before {
       content: " | ";
     }
@@ -146,31 +202,32 @@
   }
 
   .anchorlink {
-    background: map-get($color, "ux", "readmore", "default", "background");
-    border-bottom: 0.1071811361rem solid $brand-ilo-grey-light;
+    // General Styles
+    display: flex;
+    flex-flow: row nowrap;
     color: $color-ux-labels-actionable;
-    display: block;
     font-family: $fonts-display;
-    height: px-to-rem(map-get($spacing, "ux", "readmore", "default", "height"));
-    margin: px-to-rem(12px) auto 0 auto;
-    padding: px-to-rem($spacing-padding-2) px-to-rem($spacing-padding-4)
-      px-to-rem($spacing-padding-2) 0;
-    position: relative;
-    text-align: left;
-    text-decoration: none;
     @include font-styles("label-medium");
+    position: relative;
+    text-decoration: none;
     width: max-content;
+
+    // Mobile styles
+    justify-content: center;
+    border-bottom: 0.1071811361rem solid $brand-ilo-grey-light;
+    margin: px-to-rem(12px) auto 0 auto;
+    padding: px-to-rem($spacing-padding-2) px-to-rem($spacing-padding-2)
+      px-to-rem($spacing-padding-2) px-to-rem($spacing-padding-2);
 
     &:after {
       background-repeat: no-repeat;
       content: "";
-      display: inline-block;
       height: px-to-rem(24px);
-      position: absolute;
-      right: px-to-rem(2px);
-      top: 50%;
-      transform: translateY(-50%) rotateX(180deg);
-      transform-origin: center center;
+      position: relative;
+      margin-left: px-to-rem(8px);
+      bottom: px-to-rem(3px);
+      transform: rotateX(180deg);
+      transform-origin: center;
       width: px-to-rem(24px);
       @include dataurlicon("arrow", $color-ux-labels-actionable);
     }
@@ -199,7 +256,7 @@
         "site-info connect";
       align-content: start;
       align-items: start;
-      padding: px-to-rem(40px) px-to-rem(32px) px-to-rem(40px) px-to-rem(32px);
+      padding: px-to-rem(40px) px-to-rem(20px);
     }
 
     .site--info {
@@ -220,30 +277,20 @@
     }
 
     &--secondary {
-      padding: px-to-rem(18px) px-to-rem(16px);
+      padding-top: px-to-rem(18px);
+      padding-bottom: px-to-rem(18px);
       position: relative;
-    }
-
-    .legal,
-    .secondarylinks {
-      display: block;
-      float: left;
-    }
-
-    .secondarylinks {
-      margin-right: px-to-rem(126px);
+      z-index: 1;
     }
 
     .anchorlink {
-      display: inline-block;
-      margin: 0;
-      position: absolute;
-      right: 16px;
-      top: 0;
+      bottom: 0;
     }
   }
 
   @include breakpoint("large") {
+    @include footer-triangle(top-right);
+
     &--main {
       display: grid;
       grid-template-columns: 19.2% 25.1% calc(32.5% + 64px);
@@ -252,13 +299,11 @@
       grid-template-areas:
         "site-info address connect"
         "site-info links connect";
-      padding: px-to-rem(56px) px-to-rem(70px) px-to-rem(64px) px-to-rem(70px);
+      padding-top: px-to-rem(56px);
+      padding-bottom: px-to-rem(64px);
 
-      &:after {
-        background-position: right top;
-        bottom: auto;
-        top: 0;
-        transform: scaleY(1);
+      &:before {
+        content: none;
       }
     }
 
@@ -276,31 +321,44 @@
     }
 
     &--secondary {
-      padding: px-to-rem(18px) px-to-rem(70px);
+      padding-top: px-to-rem(18px);
+      padding-bottom: px-to-rem(18px);
       position: relative;
+
+      [class*="container"] {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: center;
+      }
     }
 
-    .secondarylinks {
-      margin-right: px-to-rem(140px);
+    .secondarylinks--list--item {
+      &:first-child {
+        &:before {
+          content: none;
+        }
+      }
     }
 
     .anchorlink {
-      display: inline-block;
       margin: 0;
-      position: absolute;
-      right: 70px;
-      top: 0;
+      border: none;
+      padding: 0.25rem;
+      &:hover {
+        margin-bottom: -0.1071811361rem;
+      }
     }
   }
 
+  /* RTL Styles */
   .right-to-left & {
     * {
       text-align: right;
     }
 
-    .legal,
-    .secondarylinks {
-      display: block;
+    &--main {
+      @include footer-triangle(bottom-left);
     }
 
     .secondarylinks {
@@ -310,7 +368,7 @@
       }
     }
 
-    .secondarylinks--list--item:not(first-child) {
+    .secondarylinks--list--item:not(:first-child) {
       &:before {
         content: none;
       }
@@ -318,16 +376,6 @@
       &:after {
         content: " |  ";
         padding-right: px-to-rem(2px);
-      }
-    }
-
-    &--main {
-      &:after {
-        bottom: 0;
-        left: 0;
-        right: auto;
-        top: auto;
-        transform: scale(-1, -1);
       }
     }
 
@@ -339,39 +387,21 @@
           "connect site-info";
       }
 
-      .legal,
       .secondarylinks {
-        float: right;
-      }
-
-      .secondarylinks {
-        margin-left: px-to-rem(126px);
-        margin-right: px-to-rem(4px);
-
         &--list {
-          display: flex;
           flex-direction: row-reverse;
         }
-      }
-
-      .anchorlink {
-        left: 16px;
-        right: auto;
       }
     }
 
     @include breakpoint("large") {
-      &--main {
-        grid-template-columns: calc(32.5% + 64px) 25.1% 19.2%;
-        grid-template-areas:
-          "connect address site-info"
-          "connect links site-info";
+      @include footer-triangle(top-left);
 
-        &:after {
-          left: 0;
-          right: auto;
-          transform: scale(-1, 1);
-        }
+      &--main {
+        grid-template-columns: 1fr calc(32.5% + 64px) 25.1% 19.2%;
+        grid-template-areas:
+          ". connect address site-info"
+          ". connect links site-info";
       }
 
       .connect {

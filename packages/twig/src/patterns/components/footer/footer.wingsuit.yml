@@ -43,12 +43,7 @@ footer:
               url: "http://www.google.com"
             - label: "Link Three"
               url: "http://www.google.com"
-            - label: "Link Four"
-              url: "http://www.google.com"
-            - label: "Link Five"
-              url: "http://www.google.com"
-            - label: "Link Six"
-              url: "http://www.google.com"
+
     socialmedia:
       type: object
       label: social
@@ -111,6 +106,6 @@ footer:
       label: anchorlink
       description: "an anchor href and label for navigating to another section on the page"
       preview:
-        label: "Back to Top"
+        label: "Back to top"
         href: "#anchor"
   visibility: storybook
