@@ -1,5 +1,11 @@
 # @ilo-org/themes
 
+## 0.4.0
+
+### Minor Changes
+
+- 3290283dd: Specify system fonts to use for Chinese and Japanese
+
 ## 0.3.0
 
 ### Minor Changes
