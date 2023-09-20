@@ -1,5 +1,12 @@
 # @ilo-org/styles
 
+## 0.9.2
+
+### Patch Changes
+
+- Updated dependencies [3290283dd]
+  - @ilo-org/themes@0.4.0
+
 ## 0.9.1
 
 ### Patch Changes
