@@ -39,16 +39,14 @@
     position: relative;
     cursor: pointer;
 
-    &.has-icon {
+    &__icon {
       background-repeat: no-repeat;
       background-size: cover;
       height: px-to-rem($spacing-padding-2);
       min-width: px-to-rem($spacing-padding-2);
       @include dataurlicon("info", $color-ux-labels-actionable);
-    }
 
-    &--dark {
-      &.has-icon {
+      &#{&}__theme__dark {
         @include dataurlicon("info", $color-tooltip-dark-icon);
       }
     }
