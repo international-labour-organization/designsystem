@@ -5,15 +5,20 @@
 .ilo--hero-card {
   $c: &;
   $semi-transparent: 0.6;
-  $padding-lg: $spacing-padding-8;
-  $padding-sm: $spacing-padding-5;
+
+  // Replace with this
+  $padding-y-lg: $spacing-padding-7;
+  $padding-x-lg: $spacing-padding-9;
+
+  $padding-y-sm: $spacing-padding-5;
+  $padding-x-sm: $spacing-padding-2;
 
   height: 100%;
   position: relative;
-  padding: $padding-sm 16px;
+  padding: $padding-y-sm $padding-x-sm;
 
   @include breakpoint("large") {
-    padding: $padding-lg;
+    padding: $padding-y-lg $padding-x-lg;
   }
 
   .right-to-left & {
@@ -74,10 +79,10 @@
   }
 
   &__cornercut {
-    @include cornercut(72px, 40px);
+    @include cornercut(70px, 40px);
 
     .right-to-left & {
-      @include cornercut(72px, 40px, "left");
+      @include cornercut(720px, 40px, "left");
     }
 
     @include breakpoint("large") {
