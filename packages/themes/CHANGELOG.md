@@ -1,5 +1,11 @@
 # @ilo-org/themes
 
+## 0.5.0
+
+### Minor Changes
+
+- 73640499b: Add tokens for layout values maxWidth and padding
+
 ## 0.4.0
 
 ### Minor Changes

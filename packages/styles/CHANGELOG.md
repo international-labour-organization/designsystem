@@ -1,5 +1,20 @@
 # @ilo-org/styles
 
+## 0.10.0
+
+### Minor Changes
+
+- 6c4ebfeb3: Add layout .`container` class with theme values for maxWidth and padding that automatically center itself in its container.
+
+### Patch Changes
+
+- 1e18e0ca9: Fix RTL styles for social media component
+- ad590b833: Use container class to set max widths and padding for Navigation
+- e575c2973: Fit content in the footer inside a 1300px max-width container
+- e575c2973: Various style fixes in the Footer including to RTL layouts
+- Updated dependencies [73640499b]
+  - @ilo-org/themes@0.5.0
+
 ## 0.9.2
 
 ### Patch Changes
