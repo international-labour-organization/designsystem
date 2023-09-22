@@ -1,6 +1,8 @@
 {#
   NAVIGATION COMPONENT
 #}
+
+
 <header class="{{prefix}}--header" data-loadcomponent="Navigation" data-prefix="{{prefix}}">
 	<div class="{{prefix}}--header--utility-bar">
 		<div class="{{prefix}}--language-switcher">
@@ -20,7 +22,7 @@
 	</div>
 	<!-- /.{{prefix}}--header--utility-bar -->
 	<div class="{{prefix}}--header--logo-bar">
-		<div class="{{prefix}}--header--inner">
+		<div class="{{prefix}}--header--inner {{ prefix }}--container">
 			<a href="{{siteurl}}" class="{{prefix}}--header--logo-link">
 				<img class="{{prefix}}--header--logo" src="{{logo.image}}" alt="{{logo.alt}}">
 			</a>
@@ -32,9 +34,10 @@
 		</div>
 		<!-- /.{{prefix}}--header--inner -->
 	</div>
+
 	<!-- /.{{prefix}}--header--logo-bar -->
 	<div class="{{prefix}}--header--navigation">
-		<div class="{{prefix}}--header--inner">
+		<div class="{{prefix}}--header--inner {{ prefix }}--container">
 			<div class="{{prefix}}--mobile--nav">
 				<div class="{{prefix}}--mobile--nav--logo">
 					<a href="{{siteurl}}" class="{{prefix}}--header--logo-link">
@@ -68,7 +71,7 @@
 				</div>
 				<!-- /.{{prefix}}--mobile--nav--language--switcher -->
 				<div class="{{prefix}}--mobile--nav--language--select">
-					<div class="{{prefix}}--header--inner">
+					<div class="{{prefix}}--header--inner {{ prefix }}--container">
 						<div class="{{prefix}}--mobile--subnav--menu">
 							<button class="{{prefix}}--mobile--subnav--back" type="button">{{subnav.mobilebacklabel}}</button>
 							<button class="{{prefix}}--header--menu--close">{{subnav.mobilecloselabel}}</button>
@@ -109,7 +112,7 @@
 		<!-- /.{{prefix}}--header--inner -->
 		{% if subnav %}
 			<nav class="{{prefix}}--subnav" aria-labelledby="secondary-navigation">
-				<div class="{{prefix}}--subnav--inner">
+				<div class="{{prefix}}--subnav--inner {{ prefix }}--container">
 					<div class="{{prefix}}--mobile--subnav">
 						<div class="{{prefix}}--mobile--subnav--menu">
 							<button class="{{prefix}}--mobile--subnav--back" type="button">{{subnav.mobilebacklabel}}</button>
@@ -133,7 +136,7 @@
 		{% endif %}
 
 		<div class="{{prefix}}--search-box">
-			<div class="{{prefix}}--header--inner">
+			<div class="{{prefix}}--header--inner {{ prefix }}--container">
 				{% include '@components/form/form.twig' with {
             attributes: {
               action: searchfield.action,

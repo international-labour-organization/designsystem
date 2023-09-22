@@ -31,8 +31,18 @@
   }
 
   .right-to-left & {
+    direction: rtl;
+
     .social--links {
       flex-direction: row-reverse;
+    }
+
+    #{$c}--list {
+      &--item {
+        &--icon {
+          text-indent: 999px;
+        }
+      }
     }
 
     * {
