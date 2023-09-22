@@ -1,0 +1,11 @@
+@use "../tokens" as *;
+@use "../functions" as *;
+@import "../animations";
+@import "../mixins";
+
+.ilo--container {
+  margin: auto;
+  max-width: $layout-max-width;
+  padding: 0 px-to-rem($layout-padding);
+  width: 100%;
+}
