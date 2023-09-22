@@ -1,5 +1,5 @@
 footer:
-  namespace: Components/Cards
+  namespace: Components/Navigation
   use: "@components/footer/footer.twig"
   label: Footer
   description: A component for displaying a page's footer
