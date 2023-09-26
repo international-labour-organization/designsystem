@@ -4,16 +4,13 @@
 
 .ilo--hero-card {
   $c: &;
-  $semi-transparent: 0.6;
-  $padding-lg: $spacing-padding-8;
-  $padding-sm: $spacing-padding-5;
 
   height: 100%;
   position: relative;
-  padding: $padding-sm 16px;
+  padding: $spacing-hero-card-padding-y-sm $spacing-hero-card-padding-x-sm;
 
   @include breakpoint("large") {
-    padding: $padding-lg;
+    padding: $spacing-hero-card-padding-y-lg $spacing-hero-card-padding-x-lg;
   }
 
   .right-to-left & {
@@ -38,7 +35,7 @@
         &.ilo--hero-card__background__semi-transparent {
           background: rgba(
             map-get($color, "hero", "card", "light", "background"),
-            $semi-transparent
+            $opacity-semi-transparent
           );
         }
       }
@@ -52,7 +49,7 @@
         &.ilo--hero-card__background__semi-transparent {
           background: rgba(
             map-get($color, "hero", "card", "dark", "background"),
-            $semi-transparent
+            $opacity-semi-transparent
           );
         }
       }
@@ -74,17 +71,31 @@
   }
 
   &__cornercut {
-    @include cornercut(72px, 40px);
+    @include cornercut(
+      $spacing-hero-card-corner-cut-width-sm,
+      $spacing-hero-card-corner-cut-height-sm
+    );
 
     .right-to-left & {
-      @include cornercut(72px, 40px, "left");
+      @include cornercut(
+        $spacing-hero-card-corner-cut-width-sm,
+        $spacing-hero-card-corner-cut-height-sm,
+        "left"
+      );
     }
 
     @include breakpoint("large") {
-      @include cornercut(116px, 64px);
+      @include cornercut(
+        $spacing-hero-card-corner-cut-width-lg,
+        $spacing-hero-card-corner-cut-height-lg
+      );
 
       .right-to-left & {
-        @include cornercut(116px, 64px, "left");
+        @include cornercut(
+          $spacing-hero-card-corner-cut-width-lg,
+          $spacing-hero-card-corner-cut-height-lg,
+          "left"
+        );
       }
     }
   }

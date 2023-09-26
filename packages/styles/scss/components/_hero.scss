@@ -2,29 +2,24 @@
 @use "../functions" as *;
 @import "../mixins";
 
-// @TODO: The grid layout is fairly clean until you get to the placement of the caption which breaks out of it
-// and uses a lot of absolute positioning. This should be cleaned up to use the grid layout more effectively.
-
 .hero {
   $c: &;
 
-  // SASS vars are all constants
-  $tooltip-width: 30px;
-  $tooltip-height: 27px;
-  $image-max-height: 216px;
-  $corner-cut-sm: 39px;
-  $corner-cut-lg: 64px;
+  // Card offset from the edge of the window
+  $card-offset: calc(
+    (((100vw - #{$layout-max-width}) / 2) - #{$spacing-hero-card-padding-x-lg})
+  );
 
-  // CSS vars can be changed
-  --corner-cut-height: #{$corner-cut-sm};
+  // The height of the corner cut
+  --corner-cut-height: #{$spacing-hero-card-corner-cut-height-sm};
 
   width: 100%;
   display: grid;
   position: relative;
   grid-template-rows:
-    minmax($image-max-height, 1fr)
-    $tooltip-height
-    $corner-cut-sm
+    minmax($spacing-hero-image-max-height, 1fr)
+    $spacing-hero-tooltip-height
+    $spacing-hero-card-corner-cut-height-sm
     auto;
   grid-template-columns: 1fr;
 
@@ -53,27 +48,30 @@
     grid-area: 2 / 1 / 3 / 2;
 
     &--wrapper {
-      @include caption-icon-wrapper("right", $tooltip-width, $tooltip-height);
+      @include caption-icon-wrapper(
+        "right",
+        $spacing-hero-tooltip-width,
+        $spacing-hero-tooltip-height
+      );
     }
   }
 
   @include breakpoint("large") {
     --card-width: minmax(200px, 625px);
-    --corner-cut-height: #{$corner-cut-lg};
+    --corner-cut-height: #{$spacing-hero-card-corner-cut-height-lg};
     --breadcrumbs-height: 48px;
-    --card-offset: 109px;
     --image-gap: 240px;
 
     // Defaults to baseline
     --row-1-lg: var(--breadcrumbs-height);
     --row-2-lg: calc(var(--image-gap) - var(--breadcrumbs-height));
     --row-3-lg: auto;
-    --row-4-lg: #{$tooltip-height};
+    --row-4-lg: #{$spacing-hero-tooltip-height};
     --row-5-lg: 72px;
 
     --col-1-lg: 0;
     --col-2-lg: var(--card-width);
-    --col-3-lg: #{$tooltip-width};
+    --col-3-lg: #{$spacing-hero-tooltip-width};
     --col-4-lg: 1fr;
 
     grid-template-rows:
@@ -131,11 +129,10 @@
 
     &__card-justify {
       &__start {
-        --col-1-lg: 0;
+        --col-1-lg: #{$card-offset};
       }
-
       &__offset {
-        --col-1-lg: var(--card-offset);
+        --col-1-lg: minmax(109px, #{$card-offset});
       }
 
       &__center {
@@ -146,14 +143,54 @@
 
     &__card-align {
       &__center {
-        --row-4-lg: calc(72px - #{$tooltip-height});
-        --row-5-lg: #{$tooltip-height};
+        --row-4-lg: calc(72px - #{$spacing-hero-tooltip-height});
+        --row-5-lg: #{$spacing-hero-tooltip-height};
       }
 
       &__bottom {
         --row-3-lg: 0;
         --row-4-lg: var(--corner-cut-height);
         --row-5-lg: auto;
+      }
+    }
+
+    &__card-background {
+      &__transparent {
+        #{$c}--card-offset {
+          background-color: transparent !important;
+        }
+      }
+    }
+
+    &__card-theme {
+      &__dark {
+        #{$c}--card-offset {
+          background-color: map-get($color, "base", "blue", "dark");
+        }
+
+        &[class*="semi-transparent"] {
+          #{$c}--card-offset {
+            background: rgba(
+              map-get($color, "hero", "card", "dark", "background"),
+              $opacity-semi-transparent
+            );
+          }
+        }
+      }
+
+      &__light {
+        #{$c}--card-offset {
+          background: map-get($color, "hero", "card", "light", "background");
+        }
+
+        &[class*="semi-transparent"] {
+          #{$c}--card-offset {
+            background: rgba(
+              map-get($color, "hero", "card", "light", "background"),
+              $opacity-semi-transparent
+            );
+          }
+        }
       }
     }
 
@@ -177,6 +214,25 @@
 
       #{$c}__card-align__bottom & {
         grid-area: 1 / 1 / 5 / 5;
+      }
+    }
+
+    &--card-offset {
+      grid-area: 3 / 1 / 6 / 2;
+      z-index: 0;
+      background-color: transparent;
+
+      #{$c}__card-justify__offset &,
+      #{$c}__card-justify__center & {
+        background-color: transparent;
+      }
+
+      #{$c}__card-align__center & {
+        grid-area: 3 / 1 / 4 / 2;
+      }
+
+      #{$c}__card-align__bottom & {
+        grid-area: 4 / 1 / 6 / 2;
       }
     }
 
@@ -219,8 +275,8 @@
         #{$c}--caption--wrapper {
           @include caption-icon-wrapper(
             "right",
-            $tooltip-width,
-            $tooltip-height
+            $spacing-hero-tooltip-width,
+            $spacing-hero-tooltip-height
           );
 
           position: absolute;
@@ -240,7 +296,11 @@
   .right-to-left & {
     &--caption {
       &--wrapper {
-        @include caption-icon-wrapper("left", $tooltip-width, $tooltip-height);
+        @include caption-icon-wrapper(
+          "left",
+          $spacing-hero-tooltip-width,
+          $spacing-hero-tooltip-height
+        );
         position: absolute;
         right: 0;
       }
@@ -250,21 +310,21 @@
       &__card-justify {
         &__start {
           --col-1-lg: 1fr;
-          --col-2-lg: #{$tooltip-width};
+          --col-2-lg: #{$spacing-hero-tooltip-width};
           --col-3-lg: var(--card-width);
           --col-4-lg: 0;
         }
 
         &__offset {
           --col-1-lg: 1fr;
-          --col-2-lg: #{$tooltip-width};
+          --col-2-lg: #{$spacing-hero-tooltip-width};
           --col-3-lg: var(--card-width);
           --col-4-lg: var(--card-offset);
         }
 
         &__center {
           --col-1-lg: 1fr;
-          --col-2-lg: #{$tooltip-width};
+          --col-2-lg: #{$spacing-hero-tooltip-width};
           --col-3-lg: var(--card-width);
           --col-4-lg: 1fr;
         }
@@ -307,8 +367,8 @@
             &--wrapper {
               @include caption-icon-wrapper(
                 "left",
-                $tooltip-width,
-                $tooltip-height
+                $spacing-hero-tooltip-width,
+                $spacing-hero-tooltip-height
               );
 
               position: absolute;
@@ -336,8 +396,8 @@
 
           @include caption-icon-wrapper(
             "left",
-            $tooltip-width,
-            $tooltip-height
+            $spacing-hero-tooltip-width,
+            $spacing-hero-tooltip-height
           );
         }
       }
