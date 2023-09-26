@@ -5,6 +5,9 @@
 {# Initialize ariaDescribedBy #}
 {% set ariaDescribedBy  = [] %}
 
+{# Initialize formControlClass #}
+{% set formControlClass = formControlClass|default([]) %}
+
 {# if not defined id will be set to the value of name or to a random number #}
 {% if not id %}
 	{% if name  %}
@@ -38,7 +41,7 @@
 {% set errorClass = baseClass ~ "__error" %}
 {% set disabledClass = baseClass ~ "__disabled" %}
 {% set labelPlacementClass = baseClass ~ "__label-placement__" ~ labelPlacement|default("start") %}
-{% set formControlClass = [baseClass, class, labelPlacementClass] %}
+{% set formControlClass = formControlClass|merge([baseClass, class, labelPlacementClass]) %}
 
 {% if error %}
 	{% set formControlClass = formControlClass|merge([errorClass]) %}
