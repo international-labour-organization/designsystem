@@ -47,6 +47,7 @@
 				</div>
 				<!-- /.{{prefix}}--mobile--logo -->
 				<div class="{{prefix}}--mobile--nav--search">
+					{% block mobileSearch %}
 					{% include '@components/form/form.twig' with {
             attributes: {
               action: searchfield.action,
@@ -63,6 +64,7 @@
             }]
           }
           %}
+					{% endblock %}
 				</div>
 				<!-- /.{{prefix}}--mobile--search -->
 
@@ -137,6 +139,7 @@
 
 		<div class="{{prefix}}--search-box">
 			<div class="{{prefix}}--header--inner {{ prefix }}--container">
+				{% block desktopSearch %}
 				{% include '@components/form/form.twig' with {
             attributes: {
               action: searchfield.action,
@@ -153,6 +156,7 @@
             }]
           }
           %}
+				{% endblock %}
 			</div>
 		</div>
 		<!-- /.{{prefix}}--search-box -->
