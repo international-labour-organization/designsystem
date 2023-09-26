@@ -1,15 +1,17 @@
-datepicker:
+checkbox:
   namespace: Components/Forms
-  use: "@components/datepicker/datepicker.twig"
-  label: Date Picker
-  description: The Date Picker component is used to select a date from a calendar.
+  use: "@components/radio/radio.twig"
+  label: Radio
+  description: The Radio component provides users with a switch they can use to
+    turn a single option on or off or alternate between multiple
+    different states.
   visibility: storybook
   fields:
     label:
       type: text
       label: Label
       description: The label for the form element.
-      preview: "Select a date"
+      preview: "Do you agree to these terms?"
     tooltip:
       type: string
       description: The tooltip for the form element.
@@ -29,14 +31,24 @@ datepicker:
       type: text
       label: Class
       description: The class of the form field.
-      preview: checkbox
+      preview: radio
       default: ""
+    value:
+      type: text
+      label: Value
+      description: The value of the input.
+      preview: "1"
   settings:
+    defaultSelected:
+      type: boolean
+      label: Default Selected
+      description: The default selected state of the form element.
+      preview: false
     labelPlacement:
       type: select
       label: Label Placement
       description: The placement of the label for the form element.
-      preview: "top"
+      preview: "end"
       options:
         start: start
         end: end
@@ -46,7 +58,7 @@ datepicker:
       type: select
       label: Label Size
       description: The size of the label for the form element.
-      preview: medium
+      preview: "small"
       options:
         small: small
         medium: medium

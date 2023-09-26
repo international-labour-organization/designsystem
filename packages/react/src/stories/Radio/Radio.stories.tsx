@@ -6,7 +6,6 @@ import {
   Heading,
   Primary,
   Stories,
-  Subheading,
   Title,
 } from "@storybook/blocks";
 import { Fieldset } from "../../components";
@@ -56,27 +55,35 @@ export const Default: StoryObj<RadioProps> = {
         label="Social Justice"
         labelPlacement="end"
         labelSize="small"
+        value="social-justice"
+        name="radio-group-1"
       />
       <Radio
         {...args}
-        id="Radio-1"
+        id="Radio-2"
         label="Decent Work"
         labelPlacement="end"
         labelSize="small"
+        value="decent-work"
+        name="radio-group-1"
       />
       <Radio
         {...args}
-        id="Radio-1"
+        id="Radio-3"
         label="Ending child labour"
         labelPlacement="end"
         labelSize="small"
+        value="ending-child-labour"
+        name="radio-group-1"
       />
       <Radio
         {...args}
-        id="Radio-1"
+        id="Radio-4"
         label="Achieving full employment"
         labelPlacement="end"
         labelSize="small"
+        value="achieving-full-employment"
+        name="radio-group-1"
       />
     </Fieldset>
   ),
@@ -93,27 +100,35 @@ export const CheckedByDefault: StoryObj<RadioProps> = {
         labelPlacement="end"
         labelSize="small"
         defaultChecked
+        value="social-justice"
+        name="radio-group-2"
       />
       <Radio
         {...args}
-        id="Radio-1"
+        id="Radio-2"
         label="Decent Work"
         labelPlacement="end"
         labelSize="small"
+        value="decent-work"
+        name="radio-group-2"
       />
       <Radio
         {...args}
-        id="Radio-1"
+        id="Radio-3"
         label="Ending child labour"
         labelPlacement="end"
         labelSize="small"
+        value="ending-child-labour"
+        name="radio-group-2"
       />
       <Radio
         {...args}
-        id="Radio-1"
+        id="Radio-4"
         label="Achieving full employment"
         labelPlacement="end"
         labelSize="small"
+        value="achieving-full-employment"
+        name="radio-group-2"
       />
     </Fieldset>
   ),
@@ -133,27 +148,35 @@ export const Helper: StoryObj<RadioProps> = {
         label="International Monetary Fund"
         labelPlacement="end"
         labelSize="small"
+        value="international-monetary-fund"
+        name="radio-group-3"
       />
       <Radio
         {...args}
-        id="Radio-1"
+        id="Radio-2"
         label="World Trade Organization"
         labelPlacement="end"
         labelSize="small"
+        value="world-trade-organization"
+        name="radio-group-3"
       />
       <Radio
         {...args}
-        id="Radio-1"
+        id="Radio-3"
         label="Food and Agriculture Organization"
         labelPlacement="end"
         labelSize="small"
+        value="food-and-agriculture-organization"
+        name="radio-group-3"
       />
       <Radio
         {...args}
-        id="Radio-1"
+        id="Radio-4"
         label="International Labour Organization"
         labelPlacement="end"
         labelSize="small"
+        value="international-labour-organization"
+        name="radio-group-3"
       />
     </Fieldset>
   ),
@@ -175,6 +198,7 @@ export const Error: StoryObj<RadioProps> = {
         labelPlacement="end"
         labelSize="small"
         checked
+        value="international-monetary-fund"
       />
       <Radio
         {...args}
@@ -182,6 +206,7 @@ export const Error: StoryObj<RadioProps> = {
         label="World Trade Organization"
         labelPlacement="end"
         labelSize="small"
+        value="world-trade-organization"
       />
       <Radio
         {...args}
@@ -189,6 +214,7 @@ export const Error: StoryObj<RadioProps> = {
         label="Food and Agriculture Organization"
         labelPlacement="end"
         labelSize="small"
+        value="food-and-agriculture-organization"
       />
       <Radio
         {...args}
@@ -197,6 +223,7 @@ export const Error: StoryObj<RadioProps> = {
         labelPlacement="end"
         labelSize="small"
         error
+        value="international-labour-organization"
       />
     </Fieldset>
   ),

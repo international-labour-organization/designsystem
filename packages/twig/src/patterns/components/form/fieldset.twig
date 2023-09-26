@@ -52,10 +52,18 @@
 				{% include "@components/datepicker/datepicker.twig" with field|merge({ "prefix": prefix }) only %}
 			{% elseif field.type == "dropdown" %}
 				{% include "@components/dropdown/dropdown.twig" with field|merge({ "prefix": prefix }) only %}
-			{% elseif field.type == "dropdown" %}
-				{% include "@components/dropdown/dropdown.twig" with field|merge({ "prefix": prefix }) only %}
+			{% elseif field.type == "fileupload" %}
+				{% include "@components/fileupload/fileupload.twig" with field|merge({ "prefix": prefix }) only %}
+			{% elseif field.type == "numberpicker" %}
+				{% include "@components/numberpicker/numberpicker.twig" with field|merge({ "prefix": prefix }) only %}
+			{% elseif field.type == "radio" %}
+				{% include "@components/radio/radio.twig" with field|merge({ "prefix": prefix }) only %}
 			{% elseif field.type == "search" %}
 				{% include "@components/search/search.twig" with field|merge({ "prefix": prefix }) only %}
+			{% elseif field.type == "textarea" %}
+				{% include "@components/textarea/textarea.twig" with field|merge({ "prefix": prefix }) only %}
+			{% elseif field.type == "toggle" %}
+				{% include "@components/toggle/toggle.twig" with field|merge({ "prefix": prefix }) only %}
 			{% endif %}
 		{% endfor %}
 	</div>

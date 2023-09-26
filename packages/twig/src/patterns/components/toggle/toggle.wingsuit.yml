@@ -1,15 +1,17 @@
-datepicker:
+toggle:
   namespace: Components/Forms
-  use: "@components/datepicker/datepicker.twig"
-  label: Date Picker
-  description: The Date Picker component is used to select a date from a calendar.
+  use: "@components/toggle/toggle.twig"
+  label: Toggle
+  description: The toggle component provides users with a switch they can use to
+    turn a single option on or off or alternate between two different
+    states.
   visibility: storybook
   fields:
     label:
       type: text
       label: Label
       description: The label for the form element.
-      preview: "Select a date"
+      preview: Accept cookies
     tooltip:
       type: string
       description: The tooltip for the form element.
@@ -20,23 +22,23 @@ datepicker:
     id:
       type: text
       label: ID
-      description: The ID of the input.
+      description: The ID of the text input.
     name:
       type: text
       label: Name
-      description: The name of the input.
+      description: The name of the text input.
     class:
       type: text
       label: Class
-      description: The class of the form field.
-      preview: checkbox
+      description: The class of the text input.
+      preview: textinput
       default: ""
   settings:
     labelPlacement:
       type: select
       label: Label Placement
       description: The placement of the label for the form element.
-      preview: "top"
+      preview: end
       options:
         start: start
         end: end
@@ -46,21 +48,33 @@ datepicker:
       type: select
       label: Label Size
       description: The size of the label for the form element.
-      preview: medium
+      preview: small
       options:
         small: small
         medium: medium
         large: large
+    defaultchecked:
+      type: boolean
+      label: Default Checked
+      description: The default checked state of the text input.
+      preview: false
+      default: false
+    checked:
+      type: boolean
+      label: Checked
+      description: The checked state of the text input.
+      preview: false
+      default: false
     disabled:
       type: boolean
       label: Disabled
-      description: The disabled state of the form element.
+      description: The disabled state of the text input.
       preview: false
       default: false
     required:
       type: boolean
       label: Required
-      description: The required state of the form element.
+      description: The required state of the text input.
       preview: false
       default: false
     error:
@@ -69,3 +83,12 @@ datepicker:
       description: Adds an error state to the form control.
       preview: false
       default: false
+    size:
+      type: select
+      label: Size
+      description: The size of the toggle.
+      preview: medium
+      options:
+        small: small
+        medium: medium
+        large: large
