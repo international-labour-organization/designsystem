@@ -89,8 +89,33 @@ form:
               labelSize: small
               class: my--formfield--class
               value: 3
+        - legend: Which committee will you be attending?
+          direction: row
+          fields:
+            - type: radio
+              name: priority-1
+              label: Credentials committee
+              labelPlacement: end
+              labelSize: small
+              class: my--formfield--class
+              value: 1
+            - type: radio
+              name: priority-1
+              label: General Affairs Committee
+              labelPlacement: end
+              labelSize: small
+              class: my--formfield--class
+              value: 2
+            - type: radio
+              name: priority-1
+              label: Finance Committee
+              labelPlacement: end
+              labelSize: small
+              class: my--formfield--class
+              value: 3
         - legend: Tell us more about you
           direction: row
+          wrap: wrap
           style: "width: 100%"
           fields:
             - type: dropdown
@@ -99,7 +124,7 @@ form:
               labelPlacement: top
               labelSize: small
               class: my--formfield--class
-              style: "flex: 1 1 49%"
+              style: "flex: 1 0 250px"
               options:
                 - label: Switzerland
                   value: CH
@@ -121,7 +146,7 @@ form:
               labelPlacement: top
               labelSize: small
               class: my--formfield--class
-              style: "flex: 1 1 49%"
+              style: "flex: 1 0 250px"
               options:
                 - label: Workers
                   value: 1
@@ -131,6 +156,13 @@ form:
                   value: 3
                 - label: Other
                   value: 4
+            - type: numberpicker
+              name: arrival-date
+              label: How many people are in your delegation?
+              labelPlacement: top
+              labelSize: small
+              class: my--formfield--class
+              style: "flex: 1 0 250px"
         - legend: When will you be coming to the ILC?
           direction: row
           style: "width: 100%"
@@ -149,3 +181,25 @@ form:
               labelSize: small
               class: my--formfield--class
               style: "flex: 1 1 49%"
+        - legend: Submit a copy of your passport
+          direction: row
+          style: "width: 100%"
+          fields:
+            - type: fileupload
+              name: arrival-date
+              label: PDF or JPG files up to 10MB
+              accept: ".pdf,.jpg"
+              placeholder: Select file
+              labelPlacement: end
+              labelSize: small
+              class: my--formfield--class
+        - direction: row
+          style: "width: 100%"
+          fields:
+            - type: textarea
+              name: comments
+              label: Do you have any questions or comments?
+              labelPlacement: top
+              labelSize: medium
+              class: my--formfield--class
+              style: "flex: 1 1 100%"

@@ -78,10 +78,14 @@
 
   &--list {
     order: 4;
+    display: flex;
+    flex-flow: column;
+    padding-top: px-to-rem($spacing-padding-1);
+    gap: px-to-rem($spacing-padding-1);
   }
 
   &--list-item {
-    display: inline-block;
+    display: block;
     background-color: $color-formelements-uploadedfile-default-background;
     @include bordervalues("uploadedfile", "formelements", "default");
     box-sizing: border-box;
@@ -91,7 +95,6 @@
     height: px-to-rem(
       map-get($spacing, "formelements", "uploadedfile", "default", "height")
     );
-    @include spacingvalues("margin", "uploadedfile", "formelements");
     outline: none;
     @include spacingvalues("padding", "uploadedfile", "formelements");
   }

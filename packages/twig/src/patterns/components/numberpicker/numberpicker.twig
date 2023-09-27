@@ -1,0 +1,16 @@
+{# numberpicker.twig #}
+
+{% extends "@components/form/formcontrol.twig" %}
+
+{% set inputClass = prefix ~ '--input' %}
+{% set baseClass = prefix ~ '--numberpicker' %}
+{% set hasError = not disabled and error %}
+{% set numberPickerClasses = [inputClass, baseClass] %}
+
+{% if hasError %}
+	{% set numberPickerClasses = numberPickerClasses|merge(['error']) %}
+{% endif %}
+
+{% block formfield %}
+	<input id="{{ id|default(name) }}" name="{{ name }}" {% if disabled %} disabled {% endif %} placeholder="{{ placeholder }}" {% if required %} required {% endif %} type="number" class="{{ numberPickerClasses|join(' ') }}" pattern="[0-9]*" inputmode="numeric" aria-describedby="{{ ariaDescribedBy }}" {% if max is defined %} max="{{ max }}" {% endif %} {% if min is defined %} min="{{ min }}" {% endif %} {% if step is defined %} step="{{ step }}" {% endif %}/>
+{% endblock %}

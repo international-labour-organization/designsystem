@@ -15,6 +15,7 @@ function formatBytes(bytes: number, decimals = 2) {
 
   return `${parseFloat((bytes / Math.pow(k, i)).toFixed(dm))} ${sizes[i]}`;
 }
+
 const FileUpload = React.forwardRef<HTMLInputElement, FileUploadProps>(
   (
     {
@@ -27,6 +28,7 @@ const FileUpload = React.forwardRef<HTMLInputElement, FileUploadProps>(
       name,
       placeholder,
       required,
+      accept,
     },
     ref
   ) => {
@@ -62,6 +64,7 @@ const FileUpload = React.forwardRef<HTMLInputElement, FileUploadProps>(
               ref={ref}
               id={inputId}
               name={name}
+              accept={accept}
               onChange={handleChange}
               onBlur={onBlur}
               disabled={disabled}

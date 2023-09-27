@@ -1,15 +1,15 @@
-datepicker:
+numberpicker:
   namespace: Components/Forms
-  use: "@components/datepicker/datepicker.twig"
-  label: Date Picker
-  description: The Date Picker component is used to select a date from a calendar.
+  use: "@components/numberpicker/numberpicker.twig"
+  label: Number Picker
+  description: The Number Picker component is used to select a number from a range.
   visibility: storybook
   fields:
     label:
       type: text
       label: Label
       description: The label for the form element.
-      preview: "Select a date"
+      preview: "Pick a number"
     tooltip:
       type: string
       description: The tooltip for the form element.
@@ -31,6 +31,26 @@ datepicker:
       description: The class of the form field.
       preview: checkbox
       default: ""
+    placeholder:
+      type: text
+      label: Placeholder
+      description: The placeholder of the form field.
+      preview: "0 - 100"
+    min:
+      type: number
+      label: Min
+      description: The minimum value of the form field.
+      preview: 0
+    max:
+      type: number
+      label: Max
+      description: The maximum value of the form field.
+      preview: 100
+    step:
+      type: number
+      label: Step
+      description: The step value of the form field.
+      preview: 1
   settings:
     labelPlacement:
       type: select

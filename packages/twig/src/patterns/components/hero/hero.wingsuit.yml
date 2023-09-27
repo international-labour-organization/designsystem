@@ -62,8 +62,6 @@ hero:
       description: The credit and caption information about the image. Appears as a tooltip.
       preview:
         label: A metalurgy worker at a manufacturing plant in Viet Nam. © ILO/Minh Quang
-        icon: "true"
-        theme: "dark"
   settings:
     justify:
       label: Justify
@@ -153,6 +151,4 @@ hero:
                 icon: "linkedin"
         caption:
           label: A metalurgy worker at a manufacturing plant in Viet Nam. © ILO/Minh Quang
-          icon: "true"
-          theme: "dark"
   visibility: storybook

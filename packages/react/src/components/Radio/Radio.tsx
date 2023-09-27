@@ -43,6 +43,7 @@ const Radio = React.forwardRef<HTMLInputElement, RadioProps>(
     };
 
     const baseClass = `${prefix}--radio`;
+    const controlClass = `${baseClass}--control`;
     const errorClass = `${baseClass}__error`;
 
     const RadioClasses = classNames(baseClass, {
@@ -50,21 +51,23 @@ const Radio = React.forwardRef<HTMLInputElement, RadioProps>(
     });
 
     return (
-      <input
-        ref={ref}
-        id={id ? id : name}
-        name={name}
-        onChange={handleChange}
-        onBlur={onBlur}
-        disabled={disabled}
-        required={required}
-        type="radio"
-        className={RadioClasses}
-        defaultChecked={defaultChecked}
-        aria-describedby={ariaDescribedBy}
-        checked={checked}
-        value={value}
-      />
+      <div className={RadioClasses}>
+        <input
+          ref={ref}
+          id={id ? id : name}
+          name={name}
+          onChange={handleChange}
+          onBlur={onBlur}
+          disabled={disabled}
+          required={required}
+          type="radio"
+          defaultChecked={defaultChecked}
+          aria-describedby={ariaDescribedBy}
+          checked={checked}
+          value={value}
+        />
+        <span className={controlClass}></span>
+      </div>
     );
   }
 );
