@@ -57,7 +57,7 @@
   }
 
   @include breakpoint("large") {
-    --card-width: minmax(200px, 625px);
+    --card-width: 625px;
     --corner-cut-height: #{$spacing-hero-card-corner-cut-height-lg};
     --breadcrumbs-height: 48px;
     --image-gap: 240px;
@@ -107,23 +107,23 @@
 
     &__card-size {
       &__small {
-        --card-width: minmax(200px, 625px);
+        --card-width: 625px;
       }
 
       &__medium {
-        --card-width: minmax(200px, 721px);
+        --card-width: 721px;
       }
 
       &__large {
-        --card-width: minmax(200px, 856px);
+        --card-width: 856px;
       }
 
       &__xlarge {
-        --card-width: minmax(200px, 920px);
+        --card-width: 920px;
       }
 
       &__xxlarge {
-        --card-width: minmax(200px, 998px);
+        --card-width: 998px;
       }
     }
 
@@ -131,13 +131,16 @@
       &__start {
         --col-1-lg: #{$card-offset};
       }
+
       &__offset {
         --col-1-lg: minmax(109px, #{$card-offset});
       }
 
       &__center {
-        --col-1-lg: 1fr;
-        --col-4-lg: 1fr;
+        --col-1-lg: calc((100% - var(--card-width)) / 2);
+        --col-4-lg: calc(
+          ((100% - var(--card-width)) / 2) - #{$spacing-hero-tooltip-width}
+        );
       }
     }
 
