@@ -32,6 +32,15 @@ tooltip:
         false: false
       preview: "true"
       required: true
+    icontheme:
+      type: select
+      label: Icon Theme
+      description: Use dark for dark backgrounds, light for light backgrounds
+      options:
+        light: light
+        dark: dark
+      preview: light
+      required: true
     theme:
       type: select
       label: Theme

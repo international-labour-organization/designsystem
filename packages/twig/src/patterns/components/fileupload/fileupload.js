@@ -47,11 +47,11 @@ export default class FileUpload {
    * @chainable
    */
   cacheDomReferences() {
-    /**
-     * The button for toggling Read More state
-     * @type {Object}
-     */
+    // Find the container of the input
     this.container = this.element.parentElement.parentElement;
+
+    // Find the form control
+    this.formControl = this.container.parentElement;
 
     return this;
   }
@@ -81,28 +81,55 @@ export default class FileUpload {
   }
 
   /**
+   * Format bytes to a human readable format
+   *
+   * @param {Number} bytes
+   * @param {Number} decimals
+   * @return {String}
+   */
+  formatBytes(bytes, decimals = 2) {
+    if (!+bytes) return "0 Bytes";
+
+    const k = 1024;
+    const dm = decimals < 0 ? 0 : decimals;
+    const sizes = ["Bytes", "KB", "MB", "GB", "TB", "PB", "EB", "ZB", "YB"];
+
+    const i = Math.floor(Math.log(bytes) / Math.log(k));
+
+    return `${parseFloat((bytes / Math.pow(k, i)).toFixed(dm))} ${sizes[i]}`;
+  }
+
+  /**
    * onChange interaction with the FileUpload button
    *
    * @return {Object} FileUpload A reference to the instance of the class
    * @chainable
    */
-  onChange(e) {
-    const oldDiv =
-      this.container.querySelector(`.${this.prefix}--fieldset--input`) !== null;
-    if (oldDiv) {
-      this.container.remove(oldDiv);
+  onChange() {
+    // Classname of the list of files to upload
+    const fileListClass = `${this.prefix}--file-upload--list`;
+
+    // Find the fileList if it exsists
+    let fileList = this.formControl.querySelector(`.${fileListClass}`);
+
+    // Remove the fileList if it exists
+    if (fileList) {
+      fileList.remove();
     }
-    const newDiv = document.createElement("div");
-    newDiv.classList.add(`${this.prefix}--fieldset--input`);
-    const fileList = document.createElement("ul");
-    fileList.classList.add(`${this.prefix}--file-upload--list`);
+
+    // Create a new filelist and add it to the form control
+    fileList = document.createElement("ul");
+    fileList.classList.add(fileListClass);
+    this.formControl.appendChild(fileList);
+
+    // Add files to the filelist
     let files = "";
-    [...e.target.files].map((file) => {
-      files += this.template(file.name);
+    [...this.element.files].forEach((file) => {
+      const fileSize = this.formatBytes(file.size);
+      files += this.template(file.name, fileSize);
     });
+
     fileList.innerHTML = files;
-    newDiv.appendChild(fileList);
-    this.container.appendChild(newDiv);
 
     return this;
   }
@@ -111,9 +138,10 @@ export default class FileUpload {
    * A template for outputting the list item markup
    *
    * @param {String} filename
+   * @param {String} filesize
    * @return {String}
    */
-  template(filename) {
-    return `<li class="ilo--file-upload--list-item">${filename}</li>`;
+  template(filename, filesize) {
+    return `<li class="ilo--file-upload--list-item">${filename} (${filesize})</li>`;
   }
 }
