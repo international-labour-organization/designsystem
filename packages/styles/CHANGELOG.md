@@ -1,5 +1,16 @@
 # @ilo-org/styles
 
+## 0.10.1
+
+### Patch Changes
+
+- c3b0e6def: In Form Controls, fix the arrangement of elements (label, input, helper and upload list), especially in the case of the File Upload
+- 39ff32a91: Fix appearance of Radio buttons in Firefox
+- 0488bc66e: Fix padding in Hero Card
+- c86fa4f33: Fix tooltip icon appearing in the wrong color. This adds a new parameter `icontheme` for the tooltip, which defaults to light.
+- Updated dependencies [0488bc66e]
+  - @ilo-org/themes@0.5.1
+
 ## 0.10.0
 
 ### Minor Changes
