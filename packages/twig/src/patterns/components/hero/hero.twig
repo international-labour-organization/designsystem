@@ -48,7 +48,13 @@
 		{% if not caption %}
 			{% else %}
 				<div class="hero--caption--wrapper">
-					{% include '@components/tooltip/tooltip.twig' with caption %}
+					{% include '@components/tooltip/tooltip.twig' with {
+						prefix: prefix,
+						label: caption.label,
+						icon: true,
+						theme: "dark",
+						icontheme: "dark"
+					} only %}
 				</div>
 		{% endif %}
 	</div>
