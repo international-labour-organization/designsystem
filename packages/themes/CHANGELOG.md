@@ -1,5 +1,13 @@
 # @ilo-org/themes
 
+## 0.6.0
+
+### Minor Changes
+
+- ad52c6442: - Update color tokens for Hero
+  - Update spacing tokens for Hero
+  - Add new opacity token for `semi-transparent`
+
 ## 0.5.1
 
 ### Patch Changes
