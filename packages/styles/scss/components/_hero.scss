@@ -5,10 +5,11 @@
 .hero {
   $c: &;
 
-  // Card offset from the edge of the window
-  $card-offset: calc(
-    (((100vw - #{$layout-max-width}) / 2) - #{$spacing-hero-card-padding-x-lg})
-  );
+  // Offset from the edge of the window to keep content in the main content area
+  $base-offset: calc((100vw - #{$layout-max-width}) / 2);
+
+  // Card offset from the edge of the window minus the card's padding
+  $card-offset: calc(#{$base-offset} - #{$spacing-hero-card-padding-x-lg});
 
   // The height of the corner cut
   --corner-cut-height: #{$spacing-hero-card-corner-cut-height-sm};
@@ -133,7 +134,7 @@
       }
 
       &__offset {
-        --col-1-lg: minmax(109px, #{$card-offset});
+        --col-1-lg: #{$card-offset};
       }
 
       &__center {
@@ -204,7 +205,15 @@
       flex-flow: row nowrap;
 
       &--wrapper {
-        max-width: 500px;
+        width: 100%;
+      }
+
+      &:before {
+        content: "";
+        background-color: white;
+        position: relative;
+        height: 100%;
+        width: max($spacing-hero-card-padding-x-lg, $base-offset);
       }
     }
 
