@@ -1,5 +1,28 @@
 # @ilo-org/twig
 
+## 0.11.0
+
+### Minor Changes
+
+- 455e1b626: Add Radio as form element
+- 41f933135: Adds File Upload as form element
+- 4f439c1bf: Add Number Picker as form element
+- b7e6cda36: Add TextArea as form element
+- 2acffbd2e: Add Toggle as form element
+
+### Patch Changes
+
+- bd5919f50: Setting formControlClass as a variable with the default value at the begining of the template.
+- a43230b26: Add blocks to override with Drupal search block on the navigation.
+- c86fa4f33: Fix tooltip icon appearing in the wrong color. This adds a new parameter `icontheme` for the tooltip, which defaults to light.
+- 86b5b118a: Set name as default id for TextInput
+- Updated dependencies [c3b0e6def]
+- Updated dependencies [39ff32a91]
+- Updated dependencies [0488bc66e]
+- Updated dependencies [c86fa4f33]
+  - @ilo-org/styles@0.10.1
+  - @ilo-org/themes@0.5.1
+
 ## 0.10.5
 
 ### Patch Changes
