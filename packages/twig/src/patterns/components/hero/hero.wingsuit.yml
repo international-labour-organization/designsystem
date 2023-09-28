@@ -35,6 +35,8 @@ hero:
             url: "/linkfour"
           - label: "Link Five"
             url: "/linkfive"
+          - label: "Link Six"
+            url: "/linksix"
     herocard:
       label: Hero Card
       type: object
@@ -102,6 +104,23 @@ hero:
         xlarge: xlarge
         xxlarge: xxlarge
       preview: small
+    background:
+      type: select
+      label: Background
+      description: Should the background be solid, semi-transparent or transparent
+      options:
+        solid: solid
+        semi-transparent: semi-transparent
+        transparent: transparent
+      preview: "solid"
+    theme:
+      type: select
+      label: Theme
+      description: The theme of the hero card.
+      options:
+        light: light
+        dark: dark
+      preview: "dark"
   variants:
     default:
       label: Default

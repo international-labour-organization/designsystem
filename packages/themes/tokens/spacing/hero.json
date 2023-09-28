@@ -1,140 +1,34 @@
 {
   "spacing": {
     "hero": {
-      "article": {
-        "padding": {
-          "desktop": {
-            "top": { "value": "112px" }
-          },
-          "mobile": {
-            "top": { "value": "88px" }
-          }
-        },
-        "position": {
-          "top": { "value": "80px" }
-        }
-      },
-      "portal": {
-        "padding": {
-          "top": { "value": "128px" }
-        },
-        "height": { "value": "80px" }
-      },
-      "project": {
-        "padding": {
-          "desktop": {
-            "top": { "value": "112px" }
-          },
-          "mobile": {
-            "top": { "value": "88px" }
-          }
-        },
-        "position": {
-          "top": { "value": "80px" }
-        }
+      "tooltip": {
+        "width": { "value": "30px" },
+        "height": { "value": "27px" }
       },
       "image": {
-        "padding": {
-          "desktop": {
-            "top": { "value": "128px" }
-          },
-          "mobile": {
-            "top": { "value": "88px" }
-          }
+        "max-height": { "value": "216px" }
+      }
+    },
+    "hero-card": {
+      "padding": {
+        "y": {
+          "sm": { "value": "{spacing.padding-5}" },
+          "lg": { "value": "{spacing.padding-7}" }
         },
-        "position": {
-          "top": { "value": "80px" }
+        "x": {
+          "sm": { "value": "{spacing.padding-2}" },
+          "lg": { "value": "{spacing.padding-9}" }
+        }
+      },
+      "corner-cut": {
+        "width": {
+          "sm": { "value": "72px" },
+          "lg": { "value": "116px" }
         },
-        "height": { "value": "592px" }
-      },
-      "card": {
-        "padding": {
-          "mobile": {
-            "top": { "value": "16px" },
-            "right": { "value": "16px" },
-            "bottom": { "value": "40px" },
-            "left": { "value": "16px" }
-          },
-          "desktop": {
-            "top": { "value": "0" },
-            "right": { "value": "70px" },
-            "bottom": { "value": "70px" },
-            "left": { "value": "56px" }
-          }
-        },
-        "before": {
-          "mobile": {
-            "height": { "value": "40px" },
-            "top": { "value": "-39.7px" }
-          },
-          "desktop": {
-            "height": { "value": "64px" },
-            "top": { "value": "-63.7px" }
-          }
+        "height": {
+          "sm": { "value": "40px" },
+          "lg": { "value": "64px" }
         }
-      },
-      "graphic": {
-        "width": { "value": "856px" }
-      },
-      "publication": {
-        "mobile": {
-          "margin": {
-            "top": { "value": "-64px" }
-          },
-          "padding": {
-            "top": { "value": "24px" },
-            "right": { "value": "24px" },
-            "bottom": { "value": "24px" },
-            "left": { "value": "24px" }
-          }
-        },
-        "desktop": {
-          "padding": {
-            "top": { "value": "0" },
-            "right": { "value": "48px" },
-            "bottom": { "value": "48px" },
-            "left": { "value": "72px" }
-          }
-        }
-      },
-      "datecopy": {
-        "margin": {
-          "bottom": { "value": "40px" }
-        }
-      },
-      "eyebrow": {
-        "margin": {
-          "bottom": { "value": "32px" }
-        }
-      },
-      "intro": {
-        "margin": {
-          "bottom": { "value": "40px" }
-        }
-      },
-      "title": {
-        "margin": {
-          "bottom": { "value": "40px" }
-        }
-      },
-      "list-item": {
-        "margin": {
-          "right": { "value": "32px" }
-        }
-      },
-      "link": {
-        "padding": {
-          "top": { "value": "0" },
-          "right": { "value": "5px" },
-          "bottom": { "value": "0" },
-          "left": { "value": "5px" }
-        }
-      },
-      "icon": {
-        "backgroundsize": { "value": "16px" },
-        "borderradius": { "value": "2px" },
-        "height": { "value": "24px" },
-        "width": { "value": "24px" }
       }
     }
   }
