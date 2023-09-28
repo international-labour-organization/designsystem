@@ -11,6 +11,9 @@
   // Card offset from the edge of the window minus the card's padding
   $card-offset: calc(#{$base-offset} - #{$spacing-hero-card-padding-x-lg});
 
+  // Added offset for justified offset
+  $card-offset-justified: minmax(108px, #{$card-offset});
+
   // The height of the corner cut
   --corner-cut-height: #{$spacing-hero-card-corner-cut-height-sm};
 
@@ -134,7 +137,7 @@
       }
 
       &__offset {
-        --col-1-lg: #{$card-offset};
+        --col-1-lg: #{$card-offset-justified};
       }
 
       &__center {
@@ -210,7 +213,7 @@
 
       &:before {
         content: "";
-        background-color: white;
+        background-color: $color-base-neutrals-white;
         position: relative;
         height: 100%;
         width: max($spacing-hero-card-padding-x-lg, $base-offset);
@@ -324,21 +327,23 @@
           --col-1-lg: 1fr;
           --col-2-lg: #{$spacing-hero-tooltip-width};
           --col-3-lg: var(--card-width);
-          --col-4-lg: 0;
+          --col-4-lg: #{$card-offset};
         }
 
         &__offset {
           --col-1-lg: 1fr;
           --col-2-lg: #{$spacing-hero-tooltip-width};
           --col-3-lg: var(--card-width);
-          --col-4-lg: var(--card-offset);
+          --col-4-lg: #{$card-offset-justified};
         }
 
         &__center {
-          --col-1-lg: 1fr;
+          --col-1-lg: calc(
+            ((100% - var(--card-width)) / 2) - #{$spacing-hero-tooltip-width}
+          );
           --col-2-lg: #{$spacing-hero-tooltip-width};
           --col-3-lg: var(--card-width);
-          --col-4-lg: 1fr;
+          --col-4-lg: calc((100% - var(--card-width)) / 2);
         }
       }
 
@@ -389,6 +394,10 @@
             }
           }
         }
+      }
+
+      &--card-offset {
+        grid-area: 3 / 4 / 6 / 5;
       }
 
       &--card {
