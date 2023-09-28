@@ -4,21 +4,13 @@
 
 .ilo--hero-card {
   $c: &;
-  $semi-transparent: 0.6;
-
-  // Replace with this
-  $padding-y-lg: $spacing-padding-7;
-  $padding-x-lg: $spacing-padding-9;
-
-  $padding-y-sm: $spacing-padding-5;
-  $padding-x-sm: $spacing-padding-2;
 
   height: 100%;
   position: relative;
-  padding: $padding-y-sm $padding-x-sm;
+  padding: $spacing-hero-card-padding-y-sm $spacing-hero-card-padding-x-sm;
 
   @include breakpoint("large") {
-    padding: $padding-y-lg $padding-x-lg;
+    padding: $spacing-hero-card-padding-y-lg $spacing-hero-card-padding-x-lg;
   }
 
   .right-to-left & {
@@ -43,7 +35,7 @@
         &.ilo--hero-card__background__semi-transparent {
           background: rgba(
             map-get($color, "hero", "card", "light", "background"),
-            $semi-transparent
+            $opacity-semi-transparent
           );
         }
       }
@@ -57,7 +49,7 @@
         &.ilo--hero-card__background__semi-transparent {
           background: rgba(
             map-get($color, "hero", "card", "dark", "background"),
-            $semi-transparent
+            $opacity-semi-transparent
           );
         }
       }
@@ -79,17 +71,31 @@
   }
 
   &__cornercut {
-    @include cornercut(70px, 40px);
+    @include cornercut(
+      $spacing-hero-card-corner-cut-width-sm,
+      $spacing-hero-card-corner-cut-height-sm
+    );
 
     .right-to-left & {
-      @include cornercut(720px, 40px, "left");
+      @include cornercut(
+        $spacing-hero-card-corner-cut-width-sm,
+        $spacing-hero-card-corner-cut-height-sm,
+        "left"
+      );
     }
 
     @include breakpoint("large") {
-      @include cornercut(116px, 64px);
+      @include cornercut(
+        $spacing-hero-card-corner-cut-width-lg,
+        $spacing-hero-card-corner-cut-height-lg
+      );
 
       .right-to-left & {
-        @include cornercut(116px, 64px, "left");
+        @include cornercut(
+          $spacing-hero-card-corner-cut-width-lg,
+          $spacing-hero-card-corner-cut-height-lg,
+          "left"
+        );
       }
     }
   }
