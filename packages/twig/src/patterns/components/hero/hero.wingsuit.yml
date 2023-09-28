@@ -35,6 +35,8 @@ hero:
             url: "/linkfour"
           - label: "Link Five"
             url: "/linkfive"
+          - label: "Link Six"
+            url: "/linksix"
     herocard:
       label: Hero Card
       type: object
