@@ -5,9 +5,6 @@
 .ilo--pagination {
   display: flex;
   justify-content: space-between;
-  margin-bottom: px-to-rem(
-    map-get($spacing, "ux", "pagination", "padding", "top")
-  );
   margin-top: px-to-rem(
     map-get($spacing, "ux", "pagination", "padding", "top")
   );
