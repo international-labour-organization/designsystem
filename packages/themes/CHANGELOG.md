@@ -1,5 +1,11 @@
 # @ilo-org/themes
 
+## 0.5.1
+
+### Patch Changes
+
+- 0488bc66e: Fix padding in Hero Card
+
 ## 0.5.0
 
 ### Minor Changes

@@ -1,5 +1,19 @@
 # @ilo-org/react
 
+## 0.8.5
+
+### Patch Changes
+
+- 39ff32a91: Fix appearance of Radio buttons in Firefox
+- bab87cfac: Add min, max and step props to NumberPicker
+- c964d78cc: Adds an `accept` property to the FileUpload component so that it's possible to limit the kinds of files users can upload by file extension.
+- Updated dependencies [c3b0e6def]
+- Updated dependencies [39ff32a91]
+- Updated dependencies [0488bc66e]
+- Updated dependencies [c86fa4f33]
+  - @ilo-org/styles@0.10.1
+  - @ilo-org/themes@0.5.1
+
 ## 0.8.4
 
 ### Patch Changes
