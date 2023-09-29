@@ -52,7 +52,7 @@ gulp.task("minify css components", function () {
   return gulp
     .src(`${COMPILED_COMPONENTS}/*.css`)
     .pipe(postcss())
-    .pipe(cssnano())
+    .pipe(cssnano({ zindex: false }))
     .pipe(gulp.dest(COMPILED_COMPONENTS));
 });
 
@@ -81,7 +81,7 @@ gulp.task("minify main css bundle", function () {
   return gulp
     .src(`${SRC}/*.css`)
     .pipe(postcss())
-    .pipe(cssnano())
+    .pipe(cssnano({ zindex: false }))
     .pipe(gulp.dest(BUILD));
 });
 
