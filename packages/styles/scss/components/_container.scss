@@ -4,7 +4,8 @@
 @import "../mixins";
 
 .ilo--container {
-  margin: auto;
+  margin-right: auto;
+  margin-left: auto;
   max-width: $layout-max-width;
   padding: 0 px-to-rem($layout-padding);
   width: 100%;
