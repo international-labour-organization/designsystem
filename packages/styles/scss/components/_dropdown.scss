@@ -34,7 +34,7 @@
   background-position: calc(100% - 14px) center, 100% center;
   background-repeat: no-repeat;
   background-size: 24px 24px, 102px 100%;
-  background-image: url("#{colortodataurlicon("arrow", $color-ux-labels-actionable)}"),
+  background-image: url("#{colortodataurlicon('arrow', $color-ux-labels-actionable)}"),
     linear-gradient(
       to right,
       transparent 0%,
@@ -61,7 +61,7 @@
     );
     @include bordervalues("input", "formelements", "hover");
     border-left-width: 2px;
-    background-image: url("#{colortodataurlicon("arrow", $color-ux-labels-hover)}"),
+    background-image: url("#{colortodataurlicon('arrow', $color-ux-labels-hover)}"),
       linear-gradient(
         to right,
         transparent 0%,
@@ -84,7 +84,7 @@
     );
     @include bordervalues("input", "formelements", "focus");
     border-left-width: 2px;
-    background-image: url("#{colortodataurlicon("arrow", $color-ux-labels-hover)}"),
+    background-image: url("#{colortodataurlicon('arrow', $color-ux-labels-hover)}"),
       linear-gradient(
         to right,
         transparent 0%,
@@ -100,7 +100,7 @@
     background-position: calc(100% - 14px) center, 100% center;
     background-repeat: no-repeat;
     background-size: 24px 24px, 102px 100%;
-    background-image: url("#{colortodataurlicon("arrow", $color-ux-labels-actionable)}"),
+    background-image: url("#{colortodataurlicon('arrow', $color-ux-labels-actionable)}"),
       linear-gradient(
         to right,
         transparent 0%,
@@ -114,7 +114,7 @@
   }
 
   &:disabled {
-    opacity: 45%;
+    opacity: 0.45;
     pointer-events: none;
   }
 
