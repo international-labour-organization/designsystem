@@ -1,5 +1,13 @@
 # @ilo-org/styles
 
+## 0.10.5
+
+### Patch Changes
+
+- 2c4331403: Set opacity with decimals instead of percents to prevent cssnano from clamping values at 1%.
+- Updated dependencies [2c4331403]
+  - @ilo-org/themes@0.6.1
+
 ## 0.10.4
 
 ### Patch Changes
