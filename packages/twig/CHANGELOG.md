@@ -1,5 +1,19 @@
 # @ilo-org/twig
 
+## 0.11.1
+
+### Patch Changes
+
+- 515502c24: The Hero component accepts top level `theme` and `background` variables that it will pass to the card. Otherwise, it's still possible to pass them directly to the card on an object with all of the other card properties.
+- 7c5bb7bed: Update Hero to insert standard hero card offset so as to align it with content in the main content container
+- Updated dependencies [ee517d0f2]
+- Updated dependencies [71002bcde]
+- Updated dependencies [703bc66a6]
+- Updated dependencies [ad52c6442]
+- Updated dependencies [9be1cd23e]
+  - @ilo-org/styles@0.10.2
+  - @ilo-org/themes@0.6.0
+
 ## 0.11.0
 
 ### Minor Changes

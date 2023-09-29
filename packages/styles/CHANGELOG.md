@@ -1,5 +1,16 @@
 # @ilo-org/styles
 
+## 0.10.2
+
+### Patch Changes
+
+- ee517d0f2: Add margin bottom to the pagination.
+- 71002bcde: Correctly centers Hero Card when it's justify centred by taking into account the width of the caption
+- 703bc66a6: Offset Hero Card from the edge of the window so it lines up with content in the main content area
+- 9be1cd23e: Breadcrumbs in the Hero should be aligned with the main content area
+- Updated dependencies [ad52c6442]
+  - @ilo-org/themes@0.6.0
+
 ## 0.10.1
 
 ### Patch Changes
