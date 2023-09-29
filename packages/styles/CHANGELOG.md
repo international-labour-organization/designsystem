@@ -1,5 +1,11 @@
 # @ilo-org/styles
 
+## 0.10.4
+
+### Patch Changes
+
+- 477ccf7c0: Prevent cssnano from re-setting z-indexes during compilation of stylesheets
+
 ## 0.10.3
 
 ### Patch Changes
