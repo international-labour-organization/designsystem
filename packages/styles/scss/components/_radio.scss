@@ -62,7 +62,7 @@
 
   input:disabled + &--control:after,
   input:disabled + &--control:before {
-    opacity: 45%;
+    opacity: 0.45;
   }
 
   input:invalid + &--control:after,
