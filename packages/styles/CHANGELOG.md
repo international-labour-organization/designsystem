@@ -1,5 +1,11 @@
 # @ilo-org/styles
 
+## 0.10.3
+
+### Patch Changes
+
+- 0e2e0a039: Update container margins top and bottom auto that cause issues.
+
 ## 0.10.2
 
 ### Patch Changes
