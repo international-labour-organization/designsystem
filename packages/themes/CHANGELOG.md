@@ -1,5 +1,11 @@
 # @ilo-org/themes
 
+## 0.6.1
+
+### Patch Changes
+
+- 2c4331403: Set opacity with decimals instead of percents to prevent cssnano from clamping values at 1%.
+
 ## 0.6.0
 
 ### Minor Changes
