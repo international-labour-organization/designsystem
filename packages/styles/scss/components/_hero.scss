@@ -5,14 +5,19 @@
 .hero {
   $c: &;
 
-  // Offset from the edge of the window to keep content in the main content area
+  // Total offset from the edge of the window
   $base-offset: calc((100vw - #{$layout-max-width}) / 2);
+
+  // The card padding from the edge of the window This is a CSS variable
+  // so it can be used by the card and breadcrumb to calculate their own
+  // padding from the edge of the window
+  --card-padding-start: max(
+    16px,
+    min(#{$base-offset}, #{$spacing-hero-card-padding-x-lg})
+  );
 
   // Card offset from the edge of the window minus the card's padding
   $card-offset: calc(#{$base-offset} - #{$spacing-hero-card-padding-x-lg});
-
-  // Added offset for justified offset
-  $card-offset-justified: minmax(108px, #{$card-offset});
 
   // The height of the corner cut
   --corner-cut-height: #{$spacing-hero-card-corner-cut-height-sm};
@@ -82,8 +87,7 @@
       var(--row-1-lg)
       var(--row-2-lg)
       var(--row-3-lg)
-      var(--row-4-lg)
-      var(--row-5-lg);
+      var(--row-4-lg);
 
     grid-template-columns:
       var(--col-1-lg)
@@ -132,12 +136,9 @@
     }
 
     &__card-justify {
-      &__start {
-        --col-1-lg: #{$card-offset};
-      }
-
+      &__start,
       &__offset {
-        --col-1-lg: #{$card-offset-justified};
+        --col-1-lg: #{$card-offset};
       }
 
       &__center {
@@ -201,22 +202,29 @@
       }
     }
 
+    &--breadcrumbs-offset {
+      grid-area: 1 / 1 / 2 / 2;
+      background-color: $color-base-neutrals-white;
+      z-index: 1;
+    }
+
     &--breadcrumbs {
-      grid-area: 1 / 1 / 2 / 5;
+      grid-area: 1 / 2 / 2 / 5;
       z-index: 1;
       display: flex;
       flex-flow: row nowrap;
 
+      // &:before {
+      //   content: "";
+      //   position: relative;
+      //   display: inline-block;
+      //   height: 100%;
+      //   width: var(--card-padding-start);
+      //   background-color: $color-base-neutrals-white;
+      // }
+
       &--wrapper {
         width: 100%;
-      }
-
-      &:before {
-        content: "";
-        background-color: $color-base-neutrals-white;
-        position: relative;
-        height: 100%;
-        width: max($spacing-hero-card-padding-x-lg, $base-offset);
       }
     }
 
@@ -235,7 +243,6 @@
     &--card-offset {
       grid-area: 3 / 1 / 6 / 2;
       z-index: 0;
-      background-color: transparent;
 
       #{$c}__card-justify__offset &,
       #{$c}__card-justify__center & {
@@ -334,7 +341,7 @@
           --col-1-lg: 1fr;
           --col-2-lg: #{$spacing-hero-tooltip-width};
           --col-3-lg: var(--card-width);
-          --col-4-lg: #{$card-offset-justified};
+          --col-4-lg: #{$card-offset};
         }
 
         &__center {
