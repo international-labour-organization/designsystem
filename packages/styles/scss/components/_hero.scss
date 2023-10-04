@@ -8,15 +8,20 @@
   // Total offset from the edge of the window
   $base-offset: calc((100vw - #{$layout-max-width}) / 2);
 
-  // The card padding from the edge of the window This is a CSS variable
-  // so it can be used by the card and breadcrumb to calculate their own
-  // padding from the edge of the window
-  --card-padding-start: max(
+  // Card padding defaults to a fixed value. But it's a CSS variable
+  // so that we can make it squeezy when the card is justified `start`
+  // or `offset`
+  --card-padding-start: #{$spacing-hero-card-padding-x-lg};
+
+  // Squishy padding makes it so we can have a flexible padding value
+  // that will be somewhere between 16px and the card's fixed padding
+  // depending on how far the card is from the edge of the screen
+  $squeezy-padding-start: max(
     16px,
     min(#{$base-offset}, #{$spacing-hero-card-padding-x-lg})
   );
 
-  // Card offset from the edge of the window minus the card's padding
+  // Card offset from the edge of the window minus the card's fixed padding
   $card-offset: calc(#{$base-offset} - #{$spacing-hero-card-padding-x-lg});
 
   // The height of the corner cut
@@ -139,6 +144,7 @@
     &__card-justify {
       &__start,
       &__offset {
+        --card-padding-start: #{$squeezy-padding-start};
         --col-1-lg: #{$card-offset};
       }
 
