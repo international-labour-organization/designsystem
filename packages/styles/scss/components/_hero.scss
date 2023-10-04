@@ -31,6 +31,7 @@
     $spacing-hero-card-corner-cut-height-sm
     auto;
   grid-template-columns: 1fr;
+  overflow: hidden;
 
   &--breadcrumbs {
     display: none;
@@ -174,6 +175,7 @@
       &__dark {
         #{$c}--card-offset {
           background-color: map-get($color, "base", "blue", "dark");
+          position: relative;
         }
 
         &[class*="semi-transparent"] {
@@ -214,15 +216,6 @@
       display: flex;
       flex-flow: row nowrap;
 
-      // &:before {
-      //   content: "";
-      //   position: relative;
-      //   display: inline-block;
-      //   height: 100%;
-      //   width: var(--card-padding-start);
-      //   background-color: $color-base-neutrals-white;
-      // }
-
       &--wrapper {
         width: 100%;
       }
@@ -243,6 +236,19 @@
     &--card-offset {
       grid-area: 3 / 1 / 6 / 2;
       z-index: 0;
+      position: relative;
+
+      // A band-aid that prevents artifacts from appearing
+      // between the card and the card offset in Chrome
+      &::after {
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 3px;
+        right: -1px;
+        background-color: inherit;
+        z-index: 1;
+      }
 
       #{$c}__card-justify__offset &,
       #{$c}__card-justify__center & {
