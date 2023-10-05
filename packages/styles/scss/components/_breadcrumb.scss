@@ -12,7 +12,9 @@
     background-color: $color-base-neutrals-white;
     display: inline-flex;
     justify-content: flex-start;
-    padding: px-to-rem(16px) 0 px-to-rem(16px) px-to-rem($spacing-padding-1-5);
+    padding-block: px-to-rem(16px);
+    padding-inline-end: 0;
+    padding-inline-start: var(--card-padding-start);
     position: relative;
 
     &.context--menu {
@@ -66,7 +68,7 @@
       align-items: center;
       display: flex;
       position: relative;
-      width: px-to-rem($spacing-padding-4);
+      width: 17px;
 
       .ilo--breadcrumb--link {
         padding-left: 0;

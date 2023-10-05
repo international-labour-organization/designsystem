@@ -10,7 +10,9 @@
   padding: $spacing-hero-card-padding-y-sm $spacing-hero-card-padding-x-sm;
 
   @include breakpoint("large") {
-    padding: $spacing-hero-card-padding-y-lg $spacing-hero-card-padding-x-lg;
+    padding-block: $spacing-hero-card-padding-y-lg;
+    padding-inline-end: $spacing-hero-card-padding-x-lg;
+    padding-inline-start: var(--card-padding-start);
   }
 
   .right-to-left & {
