@@ -1,5 +1,16 @@
 # @ilo-org/twig
 
+## 0.11.5
+
+### Patch Changes
+
+- 1a6d0671f: Align Hero Card content with main body content when `justify` is set to `start` or `offset`
+- Updated dependencies [266671491]
+- Updated dependencies [244fae9db]
+- Updated dependencies [1a6d0671f]
+- Updated dependencies [371faf0fb]
+  - @ilo-org/styles@0.10.6
+
 ## 0.11.4
 
 ### Patch Changes
