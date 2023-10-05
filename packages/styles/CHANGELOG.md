@@ -1,5 +1,14 @@
 # @ilo-org/styles
 
+## 0.10.6
+
+### Patch Changes
+
+- 266671491: Hero Card and Breadcrumbs get their padding-inline-start value from a CSS variable calculated in the Hero
+- 244fae9db: Prevent artifact from appearing between the Hero Card and the card offset space in Chrome
+- 1a6d0671f: Align Hero Card content with main body content when `justify` is set to `start` or `offset`
+- 371faf0fb: Fix alignment of Hero Card content in RTL layouts
+
 ## 0.10.5
 
 ### Patch Changes
