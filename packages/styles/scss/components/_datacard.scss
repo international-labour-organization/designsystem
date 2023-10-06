@@ -26,7 +26,6 @@
         padding: px-to-rem(48px) px-to-rem(48px) px-to-rem(48px)
           px-to-rem(110px);
 
-        // 629
         &__columns {
           &__two {
             #{$self}--content {
@@ -46,9 +45,15 @@
                   &--content {
                     grid-column: 2 / 3;
                   }
+
                   &--files {
                     grid-column: 2 / 3;
                   }
+
+                  &--cta {
+                    grid-column: 2 / 3;
+                  }
+
                   &--links {
                     grid-column: 2 / 3;
                   }
@@ -60,9 +65,15 @@
                   &--content {
                     grid-column: 1 / 2;
                   }
+
                   &--files {
                     grid-column: 1 / 2;
                   }
+
+                  &--cta {
+                    grid-column: 1 / 2;
+                  }
+
                   &--links {
                     grid-area: 1 / 2 / 3 / 3;
                   }
@@ -128,7 +139,8 @@
         font-weight: 500;
       }
 
-      &--content-files {
+      &--content-files,
+      &--content-cta {
         margin-bottom: px-to-rem(35px);
       }
 
