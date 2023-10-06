@@ -8,6 +8,8 @@
 
   &__type {
     &__data {
+      $c: &;
+
       --max-width: #{px-to-rem(600px)};
 
       background: $brand-ilo-light-blue;
@@ -20,11 +22,11 @@
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: auto;
+        row-gap: px-to-rem(26px);
       }
 
       @include breakpoint("medium") {
-        padding: px-to-rem(48px) px-to-rem(48px) px-to-rem(48px)
-          px-to-rem(110px);
+        padding: px-to-rem(48px);
 
         &__columns {
           &__two {
@@ -71,7 +73,7 @@
                   }
 
                   &--cta {
-                    grid-column: 1 / 2;
+                    grid-column: 1 / 2 / 3 / 3;
                   }
 
                   &--links {
@@ -86,13 +88,21 @@
 
       &#{$self}__size {
         &__narrow {
-          --max-width: #{px-to-rem(600px)};
-
-          @include cornercut(72px, 48px);
+          --max-width: #{px-to-rem(301px)};
+          @include cornercut(72px, 40px);
+          padding: px-to-rem(40px) px-to-rem(24px) px-to-rem(53px);
         }
 
         &__wide {
           --max-width: #{px-to-rem(778px)};
+
+          &#{$c}__columns__one {
+            padding: px-to-rem(48px) px-to-rem(52px);
+          }
+
+          &#{$c}__columns__two {
+            padding: px-to-rem(48px) max(px-to-rem(52px), px-to-rem(109px));
+          }
         }
 
         &__wide,
@@ -104,7 +114,6 @@
       #{$self}--image {
         width: 100%;
         max-width: 200px;
-        margin: 0 0 #{px-to-rem(31px)};
       }
 
       &--content-label {
@@ -126,22 +135,9 @@
 
       &--content-copy {
         @include font-styles("headline-5");
-        @include textmargin(
-          "margin-bottom",
-          37px,
-          "headline-5",
-          "display",
-          "body-xs",
-          "copy"
-        );
         color: $brand-ilo-grey-charcoal;
         font-family: $fonts-display;
         font-weight: 500;
-      }
-
-      &--content-files,
-      &--content-cta {
-        margin-bottom: px-to-rem(35px);
       }
 
       [class*="ilo--link"] {
