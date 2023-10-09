@@ -1,5 +1,17 @@
 # @ilo-org/twig
 
+## 0.12.0
+
+### Minor Changes
+
+- b7fcf3426: Data Card dataset field takes an optional `cta` argument that renders a list of secondary buttons with possible headline
+
+### Patch Changes
+
+- Updated dependencies [b7fcf3426]
+- Updated dependencies [27624a076]
+  - @ilo-org/styles@0.11.0
+
 ## 0.11.5
 
 ### Patch Changes
