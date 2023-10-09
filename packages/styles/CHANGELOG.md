@@ -1,5 +1,15 @@
 # @ilo-org/styles
 
+## 0.11.0
+
+### Minor Changes
+
+- b7fcf3426: Data Card dataset field takes an optional `cta` argument that renders a list of secondary buttons with possible headline
+
+### Patch Changes
+
+- 27624a076: Correct spacing in Data Card
+
 ## 0.10.6
 
 ### Patch Changes
