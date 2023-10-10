@@ -2,4 +2,4 @@
 "@ilo-org/fonts": patch
 ---
 
-Move Arabic font files and removed unused fonts
+Remove unused Arabic font files and add modern font file formats for Arabic
