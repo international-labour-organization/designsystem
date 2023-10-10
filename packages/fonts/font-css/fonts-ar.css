@@ -6,7 +6,7 @@
 
 @font-face {
   font-family: "Noto Sans";
-  src: url("../fonts/Noto_Sans_Arabic/static/NotoSansArabic/NotoSansArabic-Regular.ttf")
+  src: url("../assets/Noto_Sans_Arabic/static/NotoSansArabic/NotoSansArabic-Regular.ttf")
     format("truetype");
   font-weight: normal;
   font-style: normal;
@@ -15,7 +15,7 @@
 
 @font-face {
   font-family: "Noto Sans";
-  src: url("../fonts/Noto_Sans_Arabic/static/NotoSansArabic/NotoSansArabic-Regular.ttf")
+  src: url("../assets/Noto_Sans_Arabic/static/NotoSansArabic/NotoSansArabic-Regular.ttf")
     format("truetype");
   font-weight: normal;
   font-style: italic;
@@ -26,7 +26,7 @@
 
 @font-face {
   font-family: "Noto Sans";
-  src: url("../fonts/Noto_Sans_Arabic/static/NotoSansArabic/NotoSansArabic-Bold.ttf")
+  src: url("../assets/Noto_Sans_Arabic/static/NotoSansArabic/NotoSansArabic-Bold.ttf")
     format("truetype");
   font-weight: 700;
   font-style: normal;
@@ -35,7 +35,7 @@
 
 @font-face {
   font-family: "Noto Sans";
-  src: url("../fonts/Noto_Sans_Arabic/static/NotoSansArabic/NotoSansArabic-Bold.ttf")
+  src: url("../assets/Noto_Sans_Arabic/static/NotoSansArabic/NotoSansArabic-Bold.ttf")
     format("truetype");
   font-weight: 700;
   font-style: italic;
