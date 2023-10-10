@@ -65,6 +65,15 @@ hero:
       preview:
         label: A metalurgy worker at a manufacturing plant in Viet Nam. © ILO/Minh Quang
   settings:
+    gap:
+      label: Gap
+      description: The color of the gap between the bottom of the hero image and the bottom of the card if there is one. In practice, this is the background color of the entire Hero component which will usually only be visible in that space.
+      type: select
+      options:
+        transparent: transparent
+        white: white
+        light: light
+        dark: dark
     justify:
       label: Justify
       description: Sets the horizontal alignment of the hero card. `start` is on the left in LTR layouts and on the right in RTL layouts.

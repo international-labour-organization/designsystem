@@ -38,6 +38,24 @@
   grid-template-columns: 1fr;
   overflow: hidden;
 
+  &__gap {
+    &__transparent {
+      background: transparent;
+    }
+
+    &__white {
+      background-color: $brand-ilo-white;
+    }
+
+    &__light {
+      background-color: $brand-ilo-light-blue;
+    }
+
+    &__dark {
+      background-color: $brand-ilo-dark-blue;
+    }
+  }
+
   &--breadcrumbs {
     display: none;
   }
