@@ -1,7 +1,6 @@
 {# profile.twig #}
 
 {% set defaultAlt = "Photo of " ~ name %}
-
 <figure class="{{prefix}}--profile {{prefix}}--profile__theme__{{theme|default("light")}} {{prefix}}--profile__size__{{size|default("large")}}">
 	{% if avatar %}
 		<img class="{{prefix}}--profile--avatar" src="{{avatar}}" alt="{{alt|default(defaultAlt)}}">
@@ -18,8 +17,10 @@
 		<p class="{{prefix}}--profile--description">{{description}}</p>
 	{% endif %}
 	{% if link and link.url and link.label %}
-		<a href={{link.url}} class="{{prefix}}--profile--link" target="__blank" rel="noopener noreferrer">
-			<span class="{{prefix}}--profile--link--label">{{link.label}}</span>
-		</a>
+		<div class="{{prefix}}--profile--link">
+			<a href={{link.url}} target="__blank" rel="noopener noreferrer">
+				<span class="{{prefix}}--profile--link--label">{{link.label}}</span>
+			</a>
+		</div>
 	{% endif %}
 </figure>

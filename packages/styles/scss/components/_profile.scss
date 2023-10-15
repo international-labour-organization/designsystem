@@ -8,8 +8,10 @@ $avatar-size-lg: $row-1-lg;
 
 .ilo--profile {
   $c: &;
+
   display: grid;
   grid-template-columns: min-content 1fr;
+  grid-template-rows: minmax($row-1-lg, auto) auto;
   max-width: px-to-rem(343px);
   width: 100%;
 
@@ -66,6 +68,12 @@ $avatar-size-lg: $row-1-lg;
     font-family: $fonts-display;
     grid-column: 1 / -1;
 
+    a {
+      text-decoration: none;
+      color: map-get($color, "link", "text", "default");
+      display: inline-block;
+    }
+
     &--label {
       display: flex;
       flex-flow: row nowrap;
@@ -79,17 +87,63 @@ $avatar-size-lg: $row-1-lg;
         margin-inline-start: px-to-rem(8px);
         content: "";
         @include dataurlicon("arrowright", $color-link-text-default);
+
+        [dir="rtl"] & {
+          @include dataurlicon("arrowleft", $color-link-text-default);
+        }
       }
     }
 
-    &:hover,
-    &:focus {
+    a:hover,
+    a:focus {
       #{$link}--label {
         color: map-get($color, "link", "text", "hover");
         outline: none;
 
         &:after {
           @include dataurlicon("arrowright", $color-link-text-hover);
+
+          [dir="rtl"] & {
+            @include dataurlicon("arrowleft", $color-link-text-hover);
+          }
+        }
+      }
+    }
+  }
+
+  &__theme {
+    &__dark {
+      color: $color-base-neutrals-lighter;
+
+      #{$c}--link {
+        &--label {
+          &:after {
+            @include dataurlicon("arrowright", $color-base-neutrals-lighter);
+
+            [dir="rtl"] & {
+              @include dataurlicon("arrowleft", $color-base-neutrals-lighter);
+            }
+          }
+        }
+
+        a {
+          color: $color-base-neutrals-lighter;
+        }
+
+        a:hover,
+        a:focus {
+          #{$c}--link--label {
+            color: $brand-ilo-turquoise;
+            outline: none;
+
+            &:after {
+              @include dataurlicon("arrowright", $brand-ilo-turquoise);
+
+              [dir="rtl"] & {
+                @include dataurlicon("arrowleft", $brand-ilo-turquoise);
+              }
+            }
+          }
         }
       }
     }
@@ -101,10 +155,6 @@ $avatar-size-lg: $row-1-lg;
         width: px-to-rem($avatar-size-lg);
         height: px-to-rem($avatar-size-lg);
         margin-inline-end: px-to-rem(15px);
-      }
-
-      figcaption {
-        min-height: px-to-rem(31px);
       }
 
       #{$c}--name {
@@ -122,9 +172,7 @@ $avatar-size-lg: $row-1-lg;
       }
 
       #{$c}--link {
-        text-decoration: none;
         @include font-styles("body-small");
-        color: map-get($color, "link", "text", "default");
         padding-block-start: px-to-rem(21px);
       }
     }
