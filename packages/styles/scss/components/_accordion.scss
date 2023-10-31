@@ -3,33 +3,35 @@
 @import "../mixins";
 
 .ilo--accordion {
-  $transition-timing: 150ms;
-  $transition-timing-long: 225ms;
-  $scroll-max-height: 500px;
+  $transition-timing: 500ms;
+  $scroll-max-height: 300px;
 
   &--button {
+    display: flex;
     align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+
+    width: 100%;
+    margin: 0;
+    padding: px-to-rem(calc($spacing-ui-padding-lg - 6px)) px-to-rem(36px)
+      px-to-rem(calc($spacing-ui-padding-lg - 6px)) 0;
+
     background-color: $color-ux-background-default;
     background-position: calc(100% - px-to-rem(6px)) center;
     background-repeat: no-repeat;
     background-size: px-to-rem(24px) px-to-rem(24px);
+
     border: none;
     border-top: 2px solid map-get($color, "accordion", "border");
-    color: $color-ux-labels-actionable;
-    display: flex;
+
     fill: $color-ux-labels-actionable;
-    flex-direction: row;
     font-family: $fonts-display;
+    color: $color-ux-labels-actionable;
     font-weight: map-get($type, "weights", "section");
     @include font-styles("label-medium");
-    justify-content: space-between;
-    margin: 0;
-    padding: px-to-rem(calc($spacing-ui-padding-lg - 6px)) px-to-rem(36px)
-      px-to-rem(calc($spacing-ui-padding-lg - 6px)) 0;
-    text-align: left;
-    transition: border $transition-timing ease-out,
-      background $transition-timing ease-out, color $transition-timing ease-out;
-    width: 100%;
+
+    transition: all $transition-timing ease-in-out;
     @include dataurlicon("add", $color-ux-labels-actionable);
 
     &--large {
@@ -77,50 +79,26 @@
   }
 
   &--panel {
-    --height: auto;
-    color: $color-ux-labels-default;
-    font-family: $fonts-copy;
-    position: relative;
-    height: 0px;
+    $panel: &;
+
+    max-height: 0;
+    transition: all $transition-timing cubic-bezier(0, 1, 0, 1);
     overflow: hidden;
-    transition: height $transition-timing-long ease-out,
-      padding $transition-timing-long ease-out;
 
     .ilo--accordion--innerpanel {
       padding-bottom: px-to-rem($spacing-ui-padding-xxl);
       padding-top: px-to-rem(8px);
     }
 
-    @include font-styles("label-medium");
-
     &--open {
-      height: var(--height);
-      transition: height $transition-timing-long ease-out,
-        padding $transition-timing-long ease-out;
-    }
+      max-height: 100vh;
+      transition: all $transition-timing ease-in-out;
 
-    &__scroll {
-      max-height: $scroll-max-height;
-      overflow-y: auto;
-      padding-right: px-to-rem($spacing-ui-padding-xl);
-    }
-
-    &.collapsing,
-    &.expanding {
-      height: 0;
-      position: relative;
-      overflow: hidden;
-      visibility: visible;
-      -webkit-transition-property: height, padding, visibility;
-      transition-property: height, padding, visibility;
-      transition-duration: attr(data-transition);
-      -webkit-transition-duration: attr(data-transition);
-      transition-timing-function: ease;
-      -webkit-transition-timing-function: ease;
-    }
-
-    @include breakpoint("medium") {
-      @include font-styles("label-large");
+      &#{$panel}__scroll {
+        max-height: $scroll-max-height;
+        overflow-y: auto;
+        padding-right: px-to-rem($spacing-ui-padding-xl);
+      }
     }
   }
 }
