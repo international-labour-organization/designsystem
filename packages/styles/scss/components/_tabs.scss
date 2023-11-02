@@ -156,7 +156,7 @@
       .ilo--tabs--selection {
         display: flex;
         max-width: 100%;
-        overflow-x: scroll;
+        overflow-x: hidden;
         overflow-y: hidden;
 
         &--button {
