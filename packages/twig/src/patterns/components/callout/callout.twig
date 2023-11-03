@@ -1,24 +1,30 @@
 {#
   CALLOUT COMPONENT
 #}
-<div class="{{prefix}}--callout {{prefix}}--callout--{{alert}} {% if isCollapsible == "true" and isOpen == "true" %} {{prefix}}--callout--open {% endif %} {% if isCollapsible == "true" %} {{prefix}}--callout--collapse {% endif %}" data-loadcomponent="Callout" >
-  <div class="{{prefix}}--callout--sidebar">
-    <span class="{{prefix}}--callout--icon icon icon--{{alert}}"></span>
-  </div>
-  <div class="{{prefix}}--callout--content">
-    <div class="{{prefix}}--callout--header">
-      <h5 class="{{prefix}}--callout--title">{{ title }}</h5>
-      {% if isCollapsible == "true" %}
-      <button class="{{prefix}}--callout--toggle" type="button" data-open="{{ toggleOpenLabel }}" data-closed="{{ toggleClosedLabel }}">
-        <span class="{{prefix}}--callout--button-text">{% if isOpen %}{{ toggleOpenLabel }}{% else %}{{ toggleClosedLabel }}{% endif %}</span>
-        <span class="{{prefix}}--callout--toggle--icon" role="presentation"></span>
-      </button>
-      {% endif %}
-    </div>
-    {{ content }}
-    {% if button %}
-      <div class="{{prefix}}--callout--footer">
-        {% include '@components/button/button.twig' with {
+<div class="{{prefix}}--callout {{prefix}}--callout--{{alert}} {% if isCollapsible == "true" and isOpen == "true" %} {{prefix}}--callout--open {% endif %} {% if isCollapsible == "true" %} {{prefix}}--callout--collapse {% endif %}" data-loadcomponent="Callout">
+	<div class="{{prefix}}--callout--sidebar">
+		<span class="{{prefix}}--callout--icon icon icon--{{alert}}"></span>
+	</div>
+	<div class="{{prefix}}--callout--content">
+		<div class="{{prefix}}--callout--header">
+			<h5 class="{{prefix}}--callout--title">{{ title }}</h5>
+			{% if isCollapsible == "true" %}
+				<button class="{{prefix}}--callout--toggle" type="button" data-open="{{ toggleOpenLabel }}" data-closed="{{ toggleClosedLabel }}">
+					<span class="{{prefix}}--callout--button-text">
+						{% if isOpen %}
+							{{ toggleOpenLabel }}
+						{% else %}
+							{{ toggleClosedLabel }}
+						{% endif %}
+					</span>
+					<span class="{{prefix}}--callout--toggle--icon" role="presentation"></span>
+				</button>
+			{% endif %}
+		</div>
+		{{ content }}
+		{% if button %}
+			<div class="{{prefix}}--callout--footer">
+				{% include '@components/button/button.twig' with {
           label: button.label,
           url: button.url,
           target: button.target,
@@ -29,7 +35,7 @@
           size: "small",
           type: "secondary",
         } %}
-      </div>
-    {% endif %}
-  </div>
+			</div>
+		{% endif %}
+	</div>
 </div>
