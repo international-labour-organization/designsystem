@@ -52,6 +52,7 @@ export default class Navigation {
      * The button for toggling Subnav state
      * @type {Object}
      */
+    this.subNav = this.element.querySelector(`.${this.prefix}--subnav`);
     this.subnavButton = this.element.querySelector(
       `.${this.prefix}--nav--trigger`
     );
@@ -65,6 +66,7 @@ export default class Navigation {
     this.searchButton = this.element.querySelector(
       `.${this.prefix}--search--button`
     );
+    this.searchBox = this.element.querySelector(`.${this.prefix}--search-box`);
     this.contextButton = this.element.querySelector(
       `.${this.prefix}--language-switcher--button`
     );
@@ -99,7 +101,6 @@ export default class Navigation {
     this.contextLinkClick = this.handleContextLinkClick.bind(this);
     this.onResize = this.handleResize.bind(this);
     this.keyPress = this.handleKeyPress.bind(this);
-    this.bodyClick = this.removeClass.bind(this);
     this.contextButtonClick = this.handleContextButtonClick.bind(this);
     this.contextButtonClickOff = this.handleContextButtonClickOff.bind(this);
     this.contextButtonClickOn = this.handleContextButtonClickOn.bind(this);
@@ -212,27 +213,29 @@ export default class Navigation {
       });
     }
 
+    // Click events in the searchBox should not bubble up to the body
+    this.searchBox.addEventListener(
+      EVENTS.CLICK,
+      (ev) => {
+        ev.stopPropagation();
+      },
+      false
+    );
+
+    // Click events in the subNav should not bubble up to the body
+    this.subNav.addEventListener(
+      EVENTS.CLICK,
+      (ev) => {
+        ev.stopPropagation();
+      },
+      false
+    );
+
     window.addEventListener(EVENTS.RESIZE, (e) => {
       if (window.innerWidth >= 1024) {
         this.onResize(e);
       }
     });
-
-    return this;
-  }
-
-  /**
-   * Onclick interaction with the body element
-   *
-   * @param {String} classText - Class name to remove from the element on body click
-   * @return {Object} Navigation A reference to the instance of the class
-   * @chainable
-   */
-  removeClass(e, classText) {
-    e.stopImmediatePropagation();
-    e.stopPropagation();
-
-    this.element.classList.remove(classText);
 
     return this;
   }
@@ -295,11 +298,7 @@ export default class Navigation {
       (ev) => this.keyPress(ev, this.contextButtonClickOff),
       false
     );
-    this.body.addEventListener(
-      EVENTS.CLICK,
-      (ev) => this.handleContextButtonClickOff(ev),
-      false
-    );
+    window.addEventListener(EVENTS.CLICK, this.contextButtonClickOff);
 
     return this;
   }
@@ -318,12 +317,7 @@ export default class Navigation {
       (ev) => this.keyPress(ev, this.contextButtonClickOff),
       false
     );
-    this.body.removeEventListener(
-      EVENTS.CLICK,
-      (ev) =>
-        this.handleContextButtonClickoff(ev, `${this.prefix}--context--open`),
-      false
-    );
+    window.removeEventListener(EVENTS.CLICK, this.contextButtonClickOff);
 
     return this;
   }
@@ -361,11 +355,7 @@ export default class Navigation {
     );
 
     if (window.innerWidth >= 1024) {
-      this.body.addEventListener(
-        EVENTS.CLICK,
-        (ev) => this.handleSearchButtonClickOff(ev),
-        false
-      );
+      window.addEventListener(EVENTS.CLICK, this.searchButtonClickOff, false);
     }
 
     return this;
@@ -386,11 +376,7 @@ export default class Navigation {
       false
     );
 
-    this.body.removeEventListener(
-      EVENTS.CLICK,
-      (ev) => this.handleSearchButtonClickOff(ev),
-      false
-    );
+    window.removeEventListener(EVENTS.CLICK, this.searchButtonClickOff, false);
 
     return this;
   }
@@ -444,11 +430,7 @@ export default class Navigation {
     );
 
     if (window.innerWidth >= 1024) {
-      this.body.addEventListener(
-        EVENTS.CLICK,
-        (ev) => this.handleSubnavClickOff(ev),
-        false
-      );
+      window.addEventListener(EVENTS.CLICK, this.subnavClickOff);
     }
     return this;
   }
@@ -468,11 +450,7 @@ export default class Navigation {
       false
     );
 
-    this.body.removeEventListener(
-      EVENTS.CLICK,
-      (ev) => this.handleSubnavClickOff(ev),
-      false
-    );
+    window.removeEventListener(EVENTS.CLICK, this.subnavClickOff);
 
     return this;
   }
