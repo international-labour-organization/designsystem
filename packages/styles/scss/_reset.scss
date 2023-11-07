@@ -151,6 +151,12 @@ select {
   -moz-appearance: none;
 }
 
+// Reset border-radius on iOS Safari
+input,
+textarea {
+  border-radius: 0;
+}
+
 *,
 *::before,
 *::after {
