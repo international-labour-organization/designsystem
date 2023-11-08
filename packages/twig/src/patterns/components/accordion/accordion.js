@@ -33,10 +33,7 @@ export default class Accordion {
    * @chainable
    */
   init() {
-    this.cacheDomReferences()
-      .setupHandlers()
-      .enable()
-      .evaluateAccordionHeights();
+    this.cacheDomReferences().setupHandlers().enable();
 
     return this;
   }
@@ -55,8 +52,7 @@ export default class Accordion {
     this.accordionItems = this.element.querySelectorAll(
       ".ilo--accordion--item"
     );
-    this.multipleExpanded =
-      this.element.getAttribute("data-multipleexpanded") === "true";
+    this.multipleExpanded = this.element.hasAttribute("data-multipleexpanded");
     this.accordionPanels = this.element.querySelectorAll(
       ".ilo--accordion--panel"
     );
@@ -111,22 +107,6 @@ export default class Accordion {
   }
 
   /**
-   * Evaluate accordion panel heights
-   *
-   * @chainable
-   */
-  evaluateAccordionHeights() {
-    this.accordionPanels.forEach((item) => {
-      item.style.setProperty(
-        "--height",
-        item.querySelector(".ilo--accordion--innerpanel").scrollHeight + "px"
-      );
-    });
-
-    return this;
-  }
-
-  /**
    * Update accordion items based off of new statuses
    *
    * @chainable
@@ -163,11 +143,11 @@ export default class Accordion {
    * @chainable
    */
   collapseSection(element) {
+    element.classList.remove("ilo--accordion--panel--open");
     element.parentElement
       .querySelector(".ilo--accordion--button")
       .setAttribute(ARIA.EXPANDED, "false");
     element.setAttribute(ARIA.HIDDEN, "false");
-    element.classList.remove("ilo--accordion--panel--open");
   }
 
   /**

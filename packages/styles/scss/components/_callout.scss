@@ -24,20 +24,18 @@
   &--sidebar {
     padding: px-to-rem($spacing-padding-3 + 2) px-to-rem(12px);
     width: px-to-rem(40px);
+
+    #{$self}--icon {
+      position: relative;
+      top: px-to-rem(1.5px);
+    }
   }
 
   &--content {
     padding: px-to-rem($spacing-padding-3 + 2) px-to-rem($spacing-padding-3 - 2)
       px-to-rem($spacing-padding-3);
     width: 100%;
-  }
-
-  &--copy {
-    @include font-styles("body-xs");
-
-    &:not(:last-child) {
-      margin-bottom: px-to-rem($spacing-padding-3);
-    }
+    font-size: px-to-rem(14.93px);
   }
 
   &--header {
@@ -46,7 +44,7 @@
     padding: 0 0 px-to-rem(24px);
   }
 
-  &--headline {
+  &--title {
     @include font-styles("nav-bold-b");
 
     font-family: $fonts-display;
@@ -62,7 +60,7 @@
     cursor: pointer;
     font-family: $fonts-display;
     font-weight: 500;
-    padding-right: 36px;
+    padding-right: 32px;
     position: relative;
 
     &--icon {
@@ -73,11 +71,11 @@
       display: inline-block;
       height: 24px;
       position: absolute;
-      right: -3px;
-      top: 50%;
+      right: 0;
+      top: 11px;
       transform: translateY(-50%) rotate(0);
       transition: transform 225ms ease-out;
-      width: 23px;
+      width: 24px;
     }
   }
 

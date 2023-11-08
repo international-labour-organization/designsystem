@@ -1,9 +1,8 @@
-{#
-  ACCORDION COMPONENT
-#}
-<ul class="{{prefix}}--accordion" data-loadcomponent="Accordion" data-multipleexpanded="{{ allowMultipleExpanded|default(false) }}">
-    {% for item in items %}
-      {% include "@components/accordion/accordion-item.twig" with {
+{# accordion.twig #}
+
+<ul class="{{prefix}}--accordion" data-loadcomponent="Accordion" {% if allowMultipleExpanded %} data-multipleexpanded {% endif %}>
+	{% for item in items %}
+		{% include "@components/accordion/accordion-item.twig" with {
         label: item.label,
         content: item.content,
         defaultExpanded: item.defaultExpanded,
@@ -13,5 +12,5 @@
         prefix: prefix,
         scroll: item.scroll
       } only %}
-    {% endfor %}
+	{% endfor %}
 </ul>

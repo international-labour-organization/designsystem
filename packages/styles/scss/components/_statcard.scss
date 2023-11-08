@@ -37,7 +37,9 @@
 
       #{$self}--content {
         display: flex;
-        flex-wrap: wrap;
+        flex-flow: column;
+        align-items: flex-start;
+        justify-content: flex-start;
         height: 100%;
 
         .right-to-left & {
@@ -67,9 +69,16 @@
         width: 100%;
       }
 
+      #{$self}--source {
+        display: flex;
+        flex: auto;
+        flex-flow: column;
+        justify-content: flex-end;
+        align-items: flex-start;
+      }
+
       .ilo--link {
         @include font-styles("image-credit");
-        align-self: flex-end;
       }
     }
   }
