@@ -1,5 +1,27 @@
 # @ilo-org/twig
 
+## 0.12.2
+
+### Patch Changes
+
+- 9b1d93031: Fix various styling issues with the Profile.
+- 7dedac6dd: Fix Callout styles
+- 1c65834a5: Change hero card date position
+- 8d912f712: Make the accordion function properly inside a modal window. This also smoothens animations and simplifies the accordion styles.
+- bd6fcbb9d: In Navigation, fix bug where clicking inside the Search Box would then close it immediately. This also fixes a similar issue in the context menu.
+- 50ed7febf: Align source to the bottom of Stat Cards
+- 44e42762f: fixed input border-radius on iOS Safari
+- Updated dependencies [9b1d93031]
+- Updated dependencies [1f7525b0d]
+- Updated dependencies [632a16fcf]
+- Updated dependencies [b8e8265ce]
+- Updated dependencies [7dedac6dd]
+- Updated dependencies [8d912f712]
+- Updated dependencies [50ed7febf]
+- Updated dependencies [44e42762f]
+  - @ilo-org/styles@0.11.2
+  - @ilo-org/fonts@0.1.2
+
 ## 0.12.1
 
 ### Patch Changes
