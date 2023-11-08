@@ -1,5 +1,11 @@
 # @ilo-org/fonts
 
+## 0.1.2
+
+### Patch Changes
+
+- 1f7525b0d: Fix issue where Overpass was missing some glyphs in Vietnamese and possibly other languages as well.
+
 ## 0.1.1
 
 ### Patch Changes
