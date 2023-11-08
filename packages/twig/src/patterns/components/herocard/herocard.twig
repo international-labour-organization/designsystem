@@ -14,11 +14,11 @@
      <h1 class="{{ prefix }}--hero-card--title">{{ title }}</h2>
     {% endif %}
   {% endif %}
-  {% if datecopy %}
-    <p class="{{ prefix }}--hero-card--datecopy">{{ datecopy }}</p>
-  {% endif %}
   {% if intro %}
     <p class="{{ prefix }}--hero-card--intro">{{ intro }}</p>
+  {% endif %}
+  {% if datecopy %}
+    <p class="{{ prefix }}--hero-card--datecopy">{{ datecopy }}</p>
   {% endif %}
   {% if socialmedia %}
     {% include "@components/socialmedia/socialmedia.twig" with {
