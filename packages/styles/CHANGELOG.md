@@ -1,5 +1,19 @@
 # @ilo-org/styles
 
+## 0.11.2
+
+### Patch Changes
+
+- 9b1d93031: Fix various styling issues with the Profile.
+- 632a16fcf: Prevent horizontal scrollbar from appearing in Tab content in some browsers
+- b8e8265ce: Fix nav logo no appearing in Firefox
+- 7dedac6dd: Fix Callout styles
+- 8d912f712: Make the accordion function properly inside a modal window. This also smoothens animations and simplifies the accordion styles.
+- 50ed7febf: Align source to the bottom of Stat Cards
+- 44e42762f: fixed input border-radius on iOS Safari
+- Updated dependencies [1f7525b0d]
+  - @ilo-org/fonts@0.1.2
+
 ## 0.11.1
 
 ### Patch Changes
