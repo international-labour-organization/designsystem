@@ -103,6 +103,7 @@
           background-color: $color-base-blue-light;
           color: $color-base-blue-medium;
           outline: none;
+          border-top: px-to-rem(3px) solid $color-base-blue-medium;
           @include globaltransition("color, background-color, border-color");
 
           &.has--tooltip {
