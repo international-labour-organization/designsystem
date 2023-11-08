@@ -1,5 +1,18 @@
 # @ilo-org/fonts
 
+## 0.1.2
+
+### Patch Changes
+
+- 1f7525b0d: Fix issue where Overpass was missing some glyphs in Vietnamese and possibly other languages as well.
+
+## 0.1.1
+
+### Patch Changes
+
+- 78f48eff5: Remove unused Arabic font files and add modern font file formats for Arabic
+- 03b3c26e4: Fix Arabic font-face declarations which had incorrect font urls. Also, include declarations for modern font formats.
+
 ## 0.1.0
 
 ### Minor Changes

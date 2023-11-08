@@ -2,21 +2,23 @@
   STAT CARD COMPONENT
 #}
 <div class="{{prefix}}--card {{prefix}}--card__type__stat {{prefix}}--card__color__{{color}} {{prefix}}--card__size__{{size}}">
-  <div class="{{prefix}}--card--wrap">
-    <div class="{{prefix}}--card--content">
-      {% if title %}
-        <h5 class="{{prefix}}--card--title">{{title}}</h5>
-      {% endif %}
-      {% if intro %}
-        <p class="{{prefix}}--card--intro">{{intro}}</p>
-      {% endif %}
-      {% if source %}
-        {% include "@components/link/link.twig" with {
-          url: source.url,
-          label: source.label,
-          prefix: prefix
-        } only %}
-      {% endif %}
-    </div>
-  </div>
+	<div class="{{prefix}}--card--wrap">
+		<div class="{{prefix}}--card--content">
+			{% if title %}
+				<h5 class="{{prefix}}--card--title">{{title}}</h5>
+			{% endif %}
+			{% if intro %}
+				<p class="{{prefix}}--card--intro">{{intro}}</p>
+			{% endif %}
+			{% if source %}
+				<div class="{{prefix}}--card--source">
+					{% include "@components/link/link.twig" with {
+            url: source.url,
+            label: source.label,
+            prefix: prefix
+          } only %}
+				</div>
+			{% endif %}
+		</div>
+	</div>
 </div>

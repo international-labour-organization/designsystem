@@ -20,7 +20,7 @@ callout:
       label: Content
       description: The callout's content
       preview:
-        faker: lorem.word
+        faker: lorem.paragraph(3)
     title:
       type: string
       label: Notification Title

@@ -3,14 +3,14 @@
 #}
 {% set uid = "now"|date('Uv') %}
 <li class="{{prefix}}--accordion--item" id=" {{ id }}{{ uid }}">
-  <div class="ilo--h3">
-    <button class="{{prefix}}--accordion--button {{prefix}}--accordion--button--{{ size|default('small') }}" aria-expanded="{{ defaultExpanded }}" aria-controls="panel-{{ id }}{{ uid }}" id="button-{{ id }}{{ uid }}">
-    {{label}}
-    </button>
-  </div>
-  <div class="{{prefix}}--accordion--panel{% if defaultExpanded == 'true'%} {{prefix}}--accordion--panel--open{% endif %} {% if scroll %} {{prefix}}--accordion--panel__scroll {% endif %}" id="panel-{{ id }}{{ uid }}" aria-labelledby="button-{{ id }}{{ uid }}" role="region">
-    <div class="{{prefix}}--accordion--innerpanel">
-      {{content|raw}}
-    </div>
-  </div>
+	<div class="ilo--h3">
+		<button class="{{prefix}}--accordion--button {{prefix}}--accordion--button--{{ size|default('small') }}" aria-expanded="{{ defaultExpanded }}" aria-controls="panel-{{ id }}{{ uid }}" id="button-{{ id }}{{ uid }}">
+			{{label}}
+		</button>
+	</div>
+	<div class="{{prefix}}--accordion--panel {% if defaultExpanded %} {{prefix}}--accordion--panel--open{% endif %} {% if scroll %} {{prefix}}--accordion--panel__scroll {% endif %}" id="panel-{{ id }}{{ uid }}" aria-labelledby="button-{{ id }}{{ uid }}" role="region">
+		<div class="{{prefix}}--accordion--innerpanel">
+			{{content|raw}}
+		</div>
+	</div>
 </li>

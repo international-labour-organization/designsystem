@@ -85,6 +85,10 @@
     }
   }
 
+  &--wrap {
+    height: 100%;
+  }
+
   &--wrapper {
     max-width: var(--max-width);
 
