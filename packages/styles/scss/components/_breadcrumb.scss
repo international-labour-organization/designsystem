@@ -16,7 +16,6 @@
     padding-inline-end: 0;
     padding-inline-start: var(--card-padding-start);
     position: relative;
-
     &.context--menu {
       padding: 0;
     }
@@ -41,6 +40,10 @@
     }
 
     &--label {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 40ch;
       font-family: $fonts-copy;
       font-weight: 400;
       @include font-styles("body-xxs");
