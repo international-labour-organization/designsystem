@@ -1,5 +1,15 @@
 # @ilo-org/themes
 
+## 0.7.0-next.0
+
+### Minor Changes
+
+- bf1ec0843: Truncate long text in tags
+
+### Patch Changes
+
+- ccdb35c99: Adjust padding-9 value by 1px
+
 ## 0.6.1
 
 ### Patch Changes
