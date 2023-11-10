@@ -1,5 +1,12 @@
 # @ilo-org/twig
 
+## 0.13.0-next.1
+
+### Patch Changes
+
+- Updated dependencies [045602383]
+  - @ilo-org/styles@0.11.3-next.1
+
 ## 0.13.0-next.0
 
 ### Minor Changes
