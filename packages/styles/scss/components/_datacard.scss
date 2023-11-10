@@ -91,6 +91,10 @@
           --max-width: #{px-to-rem(301px)};
           @include cornercut(72px, 40px);
           padding: px-to-rem(40px) px-to-rem(24px) px-to-rem(53px);
+
+          @include breakpoint("medium", true) {
+            --max-width: 100%;
+          }
         }
 
         &__wide {
