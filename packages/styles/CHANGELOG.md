@@ -1,5 +1,19 @@
 # @ilo-org/styles
 
+## 0.11.3-next.0
+
+### Patch Changes
+
+- ed548bcfc: Truncate text of breadcrumbs when it exceeds 40 chars
+- bf1ec0843: Truncate long text in tags
+- cf4d43446: added hover effect for anchor item inside indented linked list
+- 1794fc434: Fixed hover state styling in tab button
+- 3be0a12ac: reduced padding for accordion inner panel
+- 1e58f9c7d: Allow added offset for Hero Card when justify is set to offset
+- Updated dependencies [bf1ec0843]
+- Updated dependencies [ccdb35c99]
+  - @ilo-org/themes@0.7.0-next.0
+
 ## 0.11.2
 
 ### Patch Changes
