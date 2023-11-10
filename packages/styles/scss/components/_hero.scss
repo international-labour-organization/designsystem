@@ -5,8 +5,11 @@
 .hero {
   $c: &;
 
+  // Additional offset to add for justify: offset
+  --added-offset: 0;
+
   // Total offset from the edge of the window
-  $base-offset: calc((100vw - #{$layout-max-width}) / 2);
+  --base-offset: calc(((100vw - #{$layout-max-width}) / 2));
 
   // Card padding defaults to a fixed value. But it's a CSS variable
   // so that we can make it squeezy when the card is justified `start`
@@ -18,11 +21,16 @@
   // depending on how far the card is from the edge of the screen
   $squeezy-padding-start: max(
     16px,
-    min(#{$base-offset}, #{$spacing-hero-card-padding-x-lg})
+    min(
+      var(--base-offset) + var(--added-offset),
+      #{$spacing-hero-card-padding-x-lg}
+    )
   );
 
   // Card offset from the edge of the window minus the card's fixed padding
-  $card-offset: calc(#{$base-offset} - #{$spacing-hero-card-padding-x-lg});
+  $card-offset: calc(
+    var(--base-offset) - #{$spacing-hero-card-padding-x-lg} + var(--added-offset)
+  );
 
   // The height of the corner cut
   --corner-cut-height: #{$spacing-hero-card-corner-cut-height-sm};
@@ -146,6 +154,10 @@
       &__offset {
         --card-padding-start: #{$squeezy-padding-start};
         --col-1-lg: #{$card-offset};
+      }
+
+      &__offset {
+        --added-offset: 109px;
       }
 
       &__center {
@@ -303,7 +315,8 @@
         }
       }
 
-      #{$c}__card-align__bottom#{$c}__card-justify__start & {
+      #{$c}__card-align__bottom#{$c}__card-justify__start &,
+      #{$c}__card-align__bottom#{$c}__card-justify__offset & {
         grid-area: 1 / 1 / 3 / 3;
 
         #{$c}--caption--wrapper {
