@@ -57,6 +57,8 @@
         }
       }
 
+      & .ilo--link-list--link:hover,
+      & .ilo--link-list--link:focus,
       &:hover,
       &:focus {
         .ilo--link-list--label:before {
