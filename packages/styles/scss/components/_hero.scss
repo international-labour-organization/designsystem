@@ -315,10 +315,16 @@
         }
       }
 
+      #{$c}__card-align__bottom#{$c}__card-justify__start & {
+        grid-area: 1 / 1 / 3 / 3;
+      }
+
+      #{$c}__card-align__bottom#{$c}__card-justify__offset & {
+        grid-area: 1 / 2 / 3 / 3;
+      }
+
       #{$c}__card-align__bottom#{$c}__card-justify__start &,
       #{$c}__card-align__bottom#{$c}__card-justify__offset & {
-        grid-area: 1 / 1 / 3 / 3;
-
         #{$c}--caption--wrapper {
           @include caption-icon-wrapper(
             "right",
