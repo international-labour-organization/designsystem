@@ -1,5 +1,11 @@
 # @ilo-org/styles
 
+## 0.11.3-next.1
+
+### Patch Changes
+
+- 045602383: Hero caption should appear above the hero card when justify is set to offset
+
 ## 0.11.3-next.0
 
 ### Patch Changes
