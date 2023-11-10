@@ -1,5 +1,21 @@
 # @ilo-org/react
 
+## 0.8.14-next.0
+
+### Patch Changes
+
+- cf4d43446: added hover effect for anchor item inside indented linked list
+- 3be0a12ac: reduced padding for accordion inner panel
+- Updated dependencies [ed548bcfc]
+- Updated dependencies [bf1ec0843]
+- Updated dependencies [ccdb35c99]
+- Updated dependencies [cf4d43446]
+- Updated dependencies [1794fc434]
+- Updated dependencies [3be0a12ac]
+- Updated dependencies [1e58f9c7d]
+  - @ilo-org/styles@0.11.3-next.0
+  - @ilo-org/themes@0.7.0-next.0
+
 ## 0.8.13
 
 ### Patch Changes
