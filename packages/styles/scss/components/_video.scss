@@ -165,6 +165,7 @@
         $color-ux-video-controls-default-icon
       );
 
+      &.ilo--video--controls--play--hovered,
       &:hover,
       &:focus {
         background-color: $color-ux-video-controls-hover-background;
