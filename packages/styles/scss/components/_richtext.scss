@@ -157,6 +157,18 @@
   ul,
   ol {
     li {
+      margin-bottom: px-to-rem(map-get($spacing, "padding-4"));
+      margin-left: px-to-rem(20px);
+      padding-left: px-to-rem(12px);
+      position: relative;
+    }
+    margin-bottom: px-to-rem(map-get($spacing, "padding-4"));
+  }
+
+  ul {
+    li {
+      margin-left: px-to-rem(12px);
+
       &::before {
         content: "";
         display: inline-block;
@@ -167,12 +179,7 @@
         width: px-to-rem(12px);
         @include dataurlicon("listarrow", $color-base-neutrals-light);
       }
-      margin-bottom: px-to-rem(map-get($spacing, "padding-4"));
-      margin-left: px-to-rem(12px);
-      padding-left: px-to-rem(12px);
-      position: relative;
     }
-    margin-bottom: px-to-rem(map-get($spacing, "padding-4"));
   }
 
   blockquote {
@@ -402,15 +409,21 @@
     ul,
     ol {
       li {
+        margin-left: 0;
+        margin-right: px-to-rem(20px);
+        padding-left: 0;
+        padding-right: px-to-rem(12px);
+      }
+    }
+
+    ul {
+      li {
+        margin-right: px-to-rem(12px);
         &::before {
           left: auto;
           right: px-to-rem(-12px);
           @include dataurlicon("listarrowreverse");
         }
-        margin-left: 0;
-        margin-right: px-to-rem(12px);
-        padding-left: 0;
-        padding-right: px-to-rem(12px);
       }
     }
 
