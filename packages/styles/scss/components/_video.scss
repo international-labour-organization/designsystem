@@ -165,6 +165,7 @@
         $color-ux-video-controls-default-icon
       );
 
+      &.ilo--video--controls--play--hovered,
       &:hover,
       &:focus {
         background-color: $color-ux-video-controls-hover-background;
@@ -243,10 +244,22 @@
       text-align: center;
       width: px-to-rem(80px);
 
+      &.ilo--video--controls--duration--hovered,
       &:hover,
       &:focus {
         background-color: $color-ux-video-controls-hover-background;
         color: $color-ux-video-controls-hover-icon;
+
+        // react-player play button,  https://github.com/international-labour-organization/designsystem/issues/521
+        & ~ .ilo--video--controls--play {
+          background-color: $color-ux-video-controls-hover-background;
+          @include iconbutton(
+            "play",
+            $spacing-ux-video-bigplaybutton-height,
+            $spacing-ux-video-bigplaybutton-width,
+            $color-ux-video-controls-hover-icon
+          );
+        }
       }
 
       @include font-styles("label-small");

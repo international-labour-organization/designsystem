@@ -1,4 +1,11 @@
-import { FC, createRef, useState } from "react";
+import {
+  FC,
+  FocusEvent,
+  MouseEvent,
+  createRef,
+  useCallback,
+  useState,
+} from "react";
 /* temporary way of importing ReactPlayer due to a known issue with ReactPlayer.
  * Revert to standard method of importing once RP's dev has fixed.
  */
@@ -166,6 +173,27 @@ const VideoPlayer: FC<VideoPlayerProps> = ({
     setSeeking(false);
   };
 
+  const handlePlayHover = useCallback(
+    (
+      event: MouseEvent<HTMLButtonElement> | FocusEvent<HTMLButtonElement>,
+      state: boolean
+    ) => {
+      const element = event.currentTarget;
+      if (!element.classList.contains(`${controlsClasses}--play`)) {
+        return;
+      }
+
+      const duration = element.previousSibling;
+      if (duration instanceof HTMLLabelElement) {
+        duration.classList.toggle(
+          `${controlsClasses}--duration--hovered`,
+          state
+        );
+      }
+    },
+    [controlsClasses]
+  );
+
   return (
     <div
       className={`${baseClass}--container`}
@@ -214,6 +242,10 @@ const VideoPlayer: FC<VideoPlayerProps> = ({
         <button
           className={`${controlsClasses}--${!playing ? "play" : "pause"}`}
           onClick={togglePlay}
+          onMouseOver={(e) => handlePlayHover(e, true)}
+          onFocus={(e) => handlePlayHover(e, true)}
+          onMouseOut={(e) => handlePlayHover(e, false)}
+          onBlur={(e) => handlePlayHover(e, false)}
         >
           <span>
             {!playing ? controls && controls.play : controls && controls.pause}
