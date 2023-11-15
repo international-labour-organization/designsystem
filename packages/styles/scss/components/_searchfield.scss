@@ -68,9 +68,7 @@
     }
   }
 
-  .right-to-left & {
-    direction: rtl;
-
+  [dir="rtl"] & {
     .ilo--searchfield--button {
       border-left: $spacing-formelements-inputbutton-default-borderrtl-left
         solid $color-formelements-inputbutton-default-border-left;
