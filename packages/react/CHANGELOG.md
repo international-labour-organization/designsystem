@@ -1,5 +1,19 @@
 # @ilo-org/react
 
+## 0.9.0-next.2
+
+### Minor Changes
+
+- 55f0c47aa: Added chained hover effect for video play button
+
+### Patch Changes
+
+- ca463b9b7: added full width on mobile viewport for affected cards
+- Updated dependencies [55f0c47aa]
+- Updated dependencies [b976f7221]
+- Updated dependencies [ca463b9b7]
+  - @ilo-org/styles@0.11.3-next.2
+
 ## 0.8.14-next.1
 
 ### Patch Changes
