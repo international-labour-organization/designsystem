@@ -1,5 +1,12 @@
 # @ilo-org/styles
 
+## 0.11.3-next.3
+
+### Patch Changes
+
+- 6d089ba7f: Set box-sizing in fieldsets
+- a8ce5d3fc: Make sure form elements have box-sizing: border-box
+
 ## 0.11.3-next.2
 
 ### Patch Changes
