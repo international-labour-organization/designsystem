@@ -18,6 +18,10 @@
         padding: px-to-rem(32px) 0;
       }
 
+      @include breakpoint("medium", true) {
+        --max-width: 100%;
+      }
+
       &:hover,
       &:focus,
       &:focus-within {
@@ -75,6 +79,10 @@
 
         &__narrow {
           --max-width: #{px-to-rem(343px)};
+
+          @include breakpoint("medium", true) {
+            --max-width: 100%;
+          }
         }
       }
 

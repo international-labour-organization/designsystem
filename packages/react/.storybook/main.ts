@@ -27,6 +27,7 @@ export const addons = [
   "@storybook/addon-essentials",
   "@storybook/addon-a11y",
   "@storybook/addon-styling",
+  "storybook-addon-rtl-direction",
 ];
 
 export const typescript = {

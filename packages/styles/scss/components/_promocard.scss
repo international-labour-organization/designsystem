@@ -12,6 +12,10 @@
     &__size {
       &__narrow {
         --max-width: #{px-to-rem(343px)};
+
+        @include breakpoint("medium", true) {
+          --max-width: 100%;
+        }
       }
 
       &__standard {
