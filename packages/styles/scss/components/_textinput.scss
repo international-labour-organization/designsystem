@@ -53,13 +53,6 @@
       "error",
       "background"
     );
-  }
-
-  &:invalid {
-    @include bordervalues("input", "formelements", "invalid");
-  }
-
-  &__error {
     @include bordervalues("input", "formelements", "error");
   }
 }
