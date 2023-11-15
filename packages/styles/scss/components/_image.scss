@@ -40,7 +40,7 @@
     }
   }
 
-  .right-to-left & {
+  [dir="rtl"] & {
     .ilo--image--caption {
       border-left: none;
       border-right: 3px solid #b8c4cc;
