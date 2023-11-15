@@ -1,6 +1,11 @@
 {
   "spacing": {
-    "base": { "value": "8px" },
+    "base": { "value": "4px" },
+    "spacing-1": { "value": "4px" },
+    "spacing-2": { "value": "8px" },
+    "spacing-3": { "value": "12px" },
+    "spacing-4": { "value": "16px" },
+    "spacing-28": { "value": "112px" },
     "padding-0-5": { "value": "4px" },
     "padding-1": { "value": "8px" },
     "padding-1-5": { "value": "12px" },
