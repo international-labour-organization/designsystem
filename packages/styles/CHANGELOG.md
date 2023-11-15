@@ -1,5 +1,13 @@
 # @ilo-org/styles
 
+## 0.11.3-next.2
+
+### Patch Changes
+
+- 55f0c47aa: Added chained hover effect for video play button
+- b976f7221: Fix ol showing icon instead of numbers
+- ca463b9b7: added full width on mobile viewport for affected cards
+
 ## 0.11.3-next.1
 
 ### Patch Changes
