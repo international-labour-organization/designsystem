@@ -21,6 +21,10 @@
 
       @include cornercut(72px, 40px);
 
+      [dir="rtl"] & {
+        @include cornercut(72px, 40px, left);
+      }
+
       &#{$self}__color {
         &__blue {
           background: $brand-ilo-light-blue;
@@ -45,10 +49,6 @@
         align-items: flex-start;
         justify-content: flex-start;
         height: 100%;
-
-        .right-to-left & {
-          flex-direction: row-reverse;
-        }
       }
 
       #{$self}--title {
