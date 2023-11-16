@@ -1,5 +1,5 @@
 ---
-"@ilo-org/themes": patch
+"@ilo-org/themes": minor
 ---
 
-refactored config values for spacing
+Added new config values for spacing
