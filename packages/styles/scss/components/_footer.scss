@@ -371,34 +371,9 @@
   }
 
   /* RTL Styles */
-  .right-to-left & {
-    * {
-      text-align: right;
-    }
-
+  &[dir="rtl"] & {
     &--main {
       @include footer-triangle(bottom-left);
-    }
-
-    .subscribe a {
-      align-self: flex-end;
-    }
-
-    &--secondary {
-      [class*="container"] {
-        flex-direction: row-reverse;
-      }
-
-      &--details {
-        display: flex;
-        flex-flow: row-reverse wrap;
-      }
-    }
-
-    .secondarylinks {
-      &--list {
-        flex-direction: row-reverse;
-      }
     }
 
     .secondarylinks--list--item {

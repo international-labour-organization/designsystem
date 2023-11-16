@@ -55,6 +55,15 @@
             $color-base-neutrals-light
           );
         }
+
+        [dir="rtl"] & {
+          padding-right: px-to-rem($spacing-padding-3);
+          &:before {
+            transform: translateY(-50%) rotate(90deg);
+            left: unset;
+            right: 0;
+          }
+        }
       }
 
       & .ilo--link-list--link:hover,
@@ -107,7 +116,7 @@
       @include globaltransition("color, background-color, border-color");
     }
 
-    .right-to-left & {
+    [dir="rtl"] & {
       background-position: $spacing-padding-0-5 center;
       @include dataurlicon("arrowleft", $color-link-text-default);
 
@@ -165,7 +174,7 @@
         }
       }
 
-      .right-to-left & {
+      [dir="rtl"] & {
         background-position: $spacing-padding-0-5 center;
         @include dataurlicon("arrowleft", $color-base-neutrals-white);
 
@@ -174,12 +183,6 @@
           @include dataurlicon("arrowleft", $color-base-blue-medium);
         }
       }
-    }
-  }
-
-  .right-to-left & {
-    * {
-      text-align: right;
     }
   }
 }
