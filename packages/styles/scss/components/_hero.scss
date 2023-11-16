@@ -16,7 +16,7 @@
   // or `offset`
   --card-padding-start: #{$spacing-hero-card-padding-x-lg};
 
-  // Squishy padding makes it so we can have a flexible padding value
+  // Squeezy padding makes it so we can have a flexible padding value
   // that will be somewhere between 16px and the card's fixed padding
   // depending on how far the card is from the edge of the screen
   $squeezy-padding-start: max(
@@ -347,8 +347,7 @@
     }
   }
 
-  // Layout for RTL languages
-  .right-to-left & {
+  [dir="rtl"] & {
     &--caption {
       &--wrapper {
         @include caption-icon-wrapper(
@@ -356,120 +355,27 @@
           $spacing-hero-tooltip-width,
           $spacing-hero-tooltip-height
         );
-        position: absolute;
         right: 0;
+        position: absolute;
       }
     }
 
     @include breakpoint("large") {
-      &__card-justify {
-        &__start {
-          --col-1-lg: 1fr;
-          --col-2-lg: #{$spacing-hero-tooltip-width};
-          --col-3-lg: var(--card-width);
-          --col-4-lg: #{$card-offset};
-        }
+      &__card-align__bottom {
+        &#{$c}__card-justify__start,
+        &#{$c}__card-justify__offset {
+          #{$c}--caption--wrapper {
+            @include caption-icon-wrapper(
+              "left",
+              $spacing-hero-tooltip-width,
+              $spacing-hero-tooltip-height
+            );
 
-        &__offset {
-          --col-1-lg: 1fr;
-          --col-2-lg: #{$spacing-hero-tooltip-width};
-          --col-3-lg: var(--card-width);
-          --col-4-lg: #{$card-offset};
-        }
-
-        &__center {
-          --col-1-lg: calc(
-            ((100% - var(--card-width)) / 2) - #{$spacing-hero-tooltip-width}
-          );
-          --col-2-lg: #{$spacing-hero-tooltip-width};
-          --col-3-lg: var(--card-width);
-          --col-4-lg: calc((100% - var(--card-width)) / 2);
-        }
-      }
-
-      &__card-align {
-        &__center {
-          #{$c}--card {
-            grid-area: 3 / 3 / 4 / 4;
+            position: absolute;
+            left: initial;
+            right: 0;
+            bottom: 0;
           }
-
-          #{$c}--caption {
-            grid-area: 5 / 4 / 6 / 5;
-
-            &--wrapper {
-              right: 0;
-              left: initial;
-              position: absolute;
-            }
-          }
-        }
-
-        &__bottom {
-          #{$c}--caption {
-            grid-area: 4 / 4 / 5 / 5;
-
-            &--wrapper {
-              position: absolute;
-              right: 0;
-              bottom: 0;
-              left: initial;
-            }
-          }
-        }
-
-        &__bottom#{$c}__card-justify__start {
-          #{$c}--caption {
-            grid-area: 2 / 3 / 3 / 4;
-
-            &--wrapper {
-              @include caption-icon-wrapper(
-                "left",
-                $spacing-hero-tooltip-width,
-                $spacing-hero-tooltip-height
-              );
-
-              position: absolute;
-              left: initial;
-              right: 0;
-            }
-          }
-        }
-      }
-
-      &--card-offset {
-        grid-area: 3 / 4 / 6 / 5;
-
-        &:after {
-          right: initial;
-          left: -1px;
-        }
-      }
-
-      &--card {
-        grid-area: 3 / 3 / 6 / 4;
-      }
-
-      &--breadcrumbs-offset {
-        grid-area: 1 / 4 / 2 / 5;
-      }
-
-      &--breadcrumbs {
-        grid-area: 1 / 4 / 2 / 1;
-        flex-direction: row-reverse;
-      }
-
-      &--caption {
-        grid-area: 4 / 2 / 5 / 3;
-
-        &--wrapper {
-          right: 2px;
-          left: initial;
-
-          @include caption-icon-wrapper(
-            "left",
-            $spacing-hero-tooltip-width,
-            $spacing-hero-tooltip-height
-          );
         }
       }
     }
