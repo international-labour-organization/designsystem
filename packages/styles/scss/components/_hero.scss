@@ -38,19 +38,21 @@
   width: 100%;
   display: grid;
   position: relative;
-  grid-template-rows:
-    minmax($spacing-hero-image-max-height, 1fr)
-    $spacing-hero-tooltip-height
-    $spacing-hero-card-corner-cut-height-sm
-    auto;
   grid-template-columns: 1fr;
   overflow: hidden;
+  @include hero-grid-rows(1rem);
+
+  &--image {
+    display: grid;
+    @include hero-grid-rows();
+  }
 
   &--breadcrumbs {
     display: none;
   }
 
-  &--figure {
+  &--background {
+    display: grid;
     background-color: map-get($color, "base", "blue", "light");
     position: relative;
     grid-area: 1 / 1 / 4 / 2;
@@ -239,7 +241,7 @@
       }
     }
 
-    &--figure {
+    &--background {
       grid-area: 1 / 1 / 5 / 5;
 
       #{$c}__card-align__center & {

@@ -6,7 +6,7 @@
         "height": { "value": "27px" }
       },
       "image": {
-        "max-height": { "value": "216px" }
+        "min-height": { "value": "216px" }
       }
     },
     "hero-card": {
