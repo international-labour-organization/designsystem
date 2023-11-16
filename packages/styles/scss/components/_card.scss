@@ -6,7 +6,6 @@
 .ilo--card {
   $self: &;
   $transition-timing: 150ms;
-
   box-sizing: border-box;
   position: relative;
   background-color: map-get($color, "base", "neutrals", "white");
@@ -17,10 +16,6 @@
 
   &__size__fluid {
     --max-width: 100% !important;
-  }
-
-  .right-to-left & {
-    text-align: right;
   }
 
   &__action:hover,
