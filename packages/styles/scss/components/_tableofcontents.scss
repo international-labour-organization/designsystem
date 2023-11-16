@@ -212,9 +212,7 @@
     }
   }
 
-  .right-to-left & {
-    direction: rtl;
-
+  [dir="rtl"] & {
     .ilo--table-of-contents--link {
       background-position: 11px center;
 
@@ -222,10 +220,6 @@
       &:focus {
         background-position: 19px center;
       }
-    }
-
-    &--wrapper {
-      direction: rtl;
     }
 
     &--modal {
