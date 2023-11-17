@@ -11,7 +11,6 @@
       --max-width: #{px-to-rem(375px)};
 
       border-bottom: px-to-rem(3px) solid $brand-ilo-grey-ui;
-      // padding: px-to-rem(24px) px-to-rem(48px);
       padding: map-get($spacing, "spacing-6") map-get($spacing, "spacing-12");
 
       @include cornercut(72px, 40px);
