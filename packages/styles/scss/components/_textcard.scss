@@ -13,7 +13,11 @@
       border-bottom: px-to-rem(3px) solid $brand-ilo-grey-ui;
       padding: px-to-rem(24px) px-to-rem(40px);
 
-      @include cornercut(73px, 40px);
+      @include cornercut(72px, 40px);
+
+      [dir="rtl"] & {
+        @include cornercut(72px, 40px, left);
+      }
 
       [class$="profile--contents--light"] * {
         color: $color-base-neutrals-dark;

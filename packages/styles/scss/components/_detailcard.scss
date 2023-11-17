@@ -107,10 +107,6 @@
 
       #{$self}--wrap {
         display: flex;
-
-        .right-to-left & {
-          flex-direction: row-reverse;
-        }
       }
 
       #{$self}--title {

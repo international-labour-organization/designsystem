@@ -147,20 +147,12 @@
             &#{$self}__align__right {
               #{$self}--wrap {
                 flex-direction: row-reverse;
-
-                .right-to-left & {
-                  flex-direction: row;
-                }
               }
             }
 
             #{$self}--wrap {
               display: flex;
               column-gap: px-to-rem(32px);
-
-              .right-to-left & {
-                flex-direction: row-reverse;
-              }
             }
 
             #{$self}--image--wrapper {
