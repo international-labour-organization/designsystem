@@ -130,4 +130,18 @@
     );
     @include bordervalues("input", "formelements", "error");
   }
+  [dir="rtl"] & {
+    padding: 0 px-to-rem(16px) 0 px-to-rem(56px);
+    background-position: calc(0% + 14px) center, 0% center;
+    background-image: url("#{colortodataurlicon('arrow', $color-ux-labels-actionable)}"),
+      linear-gradient(
+        to left,
+        transparent 0%,
+        transparent calc(50% - 0.81px),
+        $color-formelements-input-default-border-right calc(50% - 0.8px),
+        $color-formelements-input-default-border-right calc(50% + 0.8px),
+        rgba(237, 240, 242, 1) calc(50% + 0.81px),
+        rgba(237, 240, 242, 1) 100%
+      );
+  }
 }
