@@ -33,7 +33,7 @@
     text-decoration-thickness: px-to-rem($borders-base);
     @include dataurlicon("breadcrumbdivider", $color-link-text-default);
 
-    .right-to-left & {
+    [dir="rtl"] & {
       background-position: 0 52%;
       padding: 0 px-to-rem(10px) 0 px-to-rem($spacing-padding-3);
       @include dataurlicon("breadcrumbdividerrtl", $color-link-text-default);
@@ -56,7 +56,7 @@
       text-decoration-thickness: px-to-rem($borders-base);
       @include dataurlicon("breadcrumbdivider", $color-link-text-hover);
 
-      .right-to-left & {
+      [dir="rtl"] & {
         @include dataurlicon("breadcrumbdividerrtl", $color-link-text-hover);
       }
     }
@@ -144,7 +144,7 @@
         width: px-to-rem($spacing-padding-2);
         @include dataurlicon("breadcrumbdivider", $color-link-text-default);
 
-        .right-to-left & {
+        [dir="rtl"] & {
           right: auto;
           left: -7px;
           @include dataurlicon(
@@ -255,7 +255,7 @@
             text-decoration-thickness: px-to-rem($borders-base);
           }
 
-          .right-to-left & {
+          [dir="rtl"] & {
             text-align: center;
           }
         }
@@ -279,7 +279,7 @@
         top: 0;
         width: 47px;
 
-        .right-to-left & {
+        [dir="rtl"] & {
           right: auto;
           left: -47px;
           transform: scaleX(-1);
@@ -292,10 +292,6 @@
         }
       }
     }
-  }
-
-  .right-to-left & {
-    direction: rtl;
   }
 
   &.storybook {
