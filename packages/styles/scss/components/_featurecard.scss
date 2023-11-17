@@ -72,8 +72,8 @@
         &--link,
         &--link:hover {
           border-bottom: none;
-          padding-left: px-to-rem(24px);
-          padding-right: px-to-rem(24px);
+          padding-left: map-get($spacing, "spacing-6");
+          padding-right: map-get($spacing, "spacing-6");
         }
       }
 
@@ -178,7 +178,8 @@
         display: flex;
         flex: 1 1 auto;
         flex-direction: column;
-        padding: px-to-rem(24px) px-to-rem(24px) px-to-rem(40px);
+        padding: map-get($spacing, "spacing-6") map-get($spacing, "spacing-6")
+          map-get($spacing, "spacing-10");
       }
 
       &#{$self}__linklist {

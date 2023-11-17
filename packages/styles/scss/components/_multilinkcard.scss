@@ -11,7 +11,7 @@
       // Defaults to standard size
       --max-width: #{px-to-rem(536px)};
 
-      padding: px-to-rem(24px);
+      padding: map-get($spacing, "spacing-6");
 
       #{$self}--image--wrapper {
         display: none;
@@ -24,11 +24,11 @@
       }
 
       @include breakpoint("medium") {
-        padding: px-to-rem(40px);
+        padding: map-get($spacing, "spacing-10");
       }
 
       @include breakpoint("large") {
-        padding: px-to-rem(56px) px-to-rem(48px);
+        padding: map-get($spacing, "spacing-14") map-get($spacing, "spacing-12");
       }
 
       #{$self}--title {
@@ -71,28 +71,34 @@
         &__standard {
           --max-width: #{px-to-rem(536px)};
 
-          padding: px-to-rem(48px) px-to-rem(40px);
+          padding: map-get($spacing, "spacing-12")
+            map-get($spacing, "spacing-10");
 
           @include breakpoint("medium") {
-            padding: px-to-rem(48px) px-to-rem(40px);
+            padding: map-get($spacing, "spacing-12")
+              map-get($spacing, "spacing-10");
           }
 
           @include breakpoint("large") {
-            padding: px-to-rem(48px) px-to-rem(40px);
+            padding: map-get($spacing, "spacing-12")
+              map-get($spacing, "spacing-10");
           }
         }
 
         &__narrow {
           --max-width: #{px-to-rem(375px)};
 
-          padding: px-to-rem(40px) px-to-rem(24px) px-to-rem(48px);
+          padding: map-get($spacing, "spacing-10")
+            map-get($spacing, "spacing-6") map-get($spacing, "spacing-12");
 
           @include breakpoint("medium") {
-            padding: px-to-rem(40px) px-to-rem(24px) px-to-rem(48px);
+            padding: map-get($spacing, "spacing-10")
+              map-get($spacing, "spacing-6") map-get($spacing, "spacing-12");
           }
 
           @include breakpoint("large") {
-            padding: px-to-rem(40px) px-to-rem(24px) px-to-rem(48px);
+            padding: map-get($spacing, "spacing-10")
+              map-get($spacing, "spacing-6") map-get($spacing, "spacing-12");
           }
 
           #{$self}--image--wrapper {
@@ -139,11 +145,12 @@
         &__fluid {
           --max-width: #{px-to-rem(1104px)};
 
-          padding: px-to-rem(40px) px-to-rem(24px) px-to-rem(48px);
+          padding: map-get($spacing, "spacing-10")
+            map-get($spacing, "spacing-6") map-get($spacing, "spacing-12");
 
           @include breakpoint("medium") {
-            padding: px-to-rem(56px) px-to-rem(48px);
-
+            padding: map-get($spacing, "spacing-14")
+              map-get($spacing, "spacing-12");
             &#{$self}__align__right {
               #{$self}--wrap {
                 flex-direction: row-reverse;

@@ -11,7 +11,7 @@
       --max-width: #{px-to-rem(301px)};
 
       border-bottom: px-to-rem(3px) solid $brand-ilo-grey-ui;
-      padding: px-to-rem(24px) px-to-rem(40px);
+      padding: map-get($spacing, "spacing-6") map-get($spacing, "spacing-10");
 
       @include cornercut(73px, 40px);
 
@@ -35,7 +35,7 @@
 
       @include breakpoint("medium", true) {
         --max-width: 100%;
-        padding: px-to-rem(32px) px-to-rem(40px);
+        padding: map-get($spacing, "spacing-8") map-get($spacing, "spacing-10");
       }
 
       &#{$self}__size {
@@ -43,21 +43,25 @@
         &__fluid {
           --max-width: #{px-to-rem(523px)};
 
-          padding: px-to-rem(32px) px-to-rem(40px);
+          padding: map-get($spacing, "spacing-8")
+            map-get($spacing, "spacing-10");
 
           @include breakpoint("medium") {
-            padding: px-to-rem(32px) px-to-rem(40px);
+            padding: map-get($spacing, "spacing-8")
+              map-get($spacing, "spacing-10");
           }
         }
 
         &__narrow {
           --max-width: #{px-to-rem(301px)};
 
-          padding: px-to-rem(24px) px-to-rem(40px);
+          padding: map-get($spacing, "spacing-6")
+            map-get($spacing, "spacing-10");
 
           @include breakpoint("medium", true) {
             --max-width: 100%;
-            padding: px-to-rem(24px) px-to-rem(40px);
+            padding: map-get($spacing, "spacing-6")
+              map-get($spacing, "spacing-10");
           }
 
           #{$self}--title {
