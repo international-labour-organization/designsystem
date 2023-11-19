@@ -11,7 +11,7 @@
       // Defaults to standard size
       --max-width: #{px-to-rem(536px)};
 
-      padding: map-get($spacing, "spacing-6");
+      padding: spacing(6);
 
       #{$self}--image--wrapper {
         display: none;
@@ -24,11 +24,11 @@
       }
 
       @include breakpoint("medium") {
-        padding: map-get($spacing, "spacing-10");
+        padding: spacing(10);
       }
 
       @include breakpoint("large") {
-        padding: map-get($spacing, "spacing-14") map-get($spacing, "spacing-12");
+        padding: spacing(14) spacing(12);
       }
 
       #{$self}--title {
@@ -71,36 +71,13 @@
         &__standard {
           --max-width: #{px-to-rem(536px)};
 
-          padding: map-get($spacing, "spacing-12")
-            map-get($spacing, "spacing-10");
-
-          @include breakpoint("medium") {
-            padding: map-get($spacing, "spacing-12")
-              map-get($spacing, "spacing-10");
-          }
-
-          @include breakpoint("large") {
-            padding: map-get($spacing, "spacing-12")
-              map-get($spacing, "spacing-10");
-          }
+          padding: spacing(12) spacing(10);
         }
 
         &__narrow {
           --max-width: #{px-to-rem(375px)};
 
-          padding: map-get($spacing, "spacing-10")
-            map-get($spacing, "spacing-6") map-get($spacing, "spacing-12");
-
-          @include breakpoint("medium") {
-            padding: map-get($spacing, "spacing-10")
-              map-get($spacing, "spacing-6") map-get($spacing, "spacing-12");
-          }
-
-          @include breakpoint("large") {
-            padding: map-get($spacing, "spacing-10")
-              map-get($spacing, "spacing-6") map-get($spacing, "spacing-12");
-          }
-
+          padding: spacing(10) spacing(6) spacing(12);
           #{$self}--image--wrapper {
             display: none;
           }
@@ -145,12 +122,11 @@
         &__fluid {
           --max-width: #{px-to-rem(1104px)};
 
-          padding: map-get($spacing, "spacing-10")
-            map-get($spacing, "spacing-6") map-get($spacing, "spacing-12");
+          padding: spacing(10) spacing(6) spacing(12);
 
           @include breakpoint("medium") {
-            padding: map-get($spacing, "spacing-14")
-              map-get($spacing, "spacing-12");
+            padding: spacing(14) spacing(12);
+
             &#{$self}__align__right {
               #{$self}--wrap {
                 flex-direction: row-reverse;
