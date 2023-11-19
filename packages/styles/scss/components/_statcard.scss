@@ -15,8 +15,7 @@
       }
 
       border-bottom: px-to-rem(3px) solid $brand-ilo-purple;
-      padding: map-get($spacing, "spacing-6") map-get($spacing, "spacing-10")
-        map-get($spacing, "spacing-6");
+      padding: spacing(10) spacing(6) spacing(8);
       position: relative;
       width: 100%;
 
