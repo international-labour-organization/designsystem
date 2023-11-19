@@ -36,8 +36,8 @@
         background-size: contain;
         content: "";
         display: block;
-        height: spacing(24);
-        width: spacing(24);
+        height: px-to-rem(96px);
+        width: px-to-rem(96px);
       }
     }
   }
@@ -65,9 +65,9 @@
         background-size: contain;
         content: "";
         display: block;
-        height: spacing(6);
+        height: px-to-rem(24px);
         margin-right: spacing(3);
-        width: spacing(6);
+        width: px-to-rem(24px);
       }
     }
 
@@ -79,9 +79,9 @@
         background-size: contain;
         content: "";
         display: block;
-        height: spacing(6);
+        height: px-to-rem(24px);
         margin-right: spacing(3);
-        width: spacing(6);
+        width: px-to-rem(24px);
       }
     }
   }
