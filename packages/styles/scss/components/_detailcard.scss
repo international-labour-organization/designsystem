@@ -11,11 +11,11 @@
       --max-width: #{px-to-rem(343px)};
 
       border-bottom: px-to-rem(3px) solid $brand-ilo-grey-light;
-      padding: map-get($spacing, "spacing-6") 0;
+      padding: spacing(6) 0;
       position: relative;
 
       @include breakpoint("large") {
-        padding: map-get($spacing, "spacing-8") 0;
+        padding: spacing(8) 0;
       }
 
       @include breakpoint("medium", true) {
@@ -127,13 +127,13 @@
       }
 
       #{$self}--content {
-        padding: 0 map-get($spacing, "spacing-6");
+        padding: 0 spacing(6);
       }
 
       #{$self}--date-extra {
         @include font-styles("body-small");
         margin-bottom: 0;
-        padding-left: map-get($spacing, "spacing-6");
+        padding-left: spacing(6);
         position: relative;
 
         &::before {
