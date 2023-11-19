@@ -6,15 +6,16 @@
 .ilo--read-more {
   &--button {
     background: map-get($color, "ux", "readmore", "default", "background");
-    @include bordervalues("readmore", "ux");
+    border: none;
+    border-top: solid $borders-base $color-base-blue-light;
     color: $color-ux-labels-actionable;
     font-family: $fonts-display;
-    height: px-to-rem(map-get($spacing, "ux", "readmore", "default", "height"));
-    @include spacingvalues("margin", "readmore", "ux");
-    @include spacingvalues("padding", "readmore", "ux");
+    height: px-to-rem(56px);
+    margin-top: spacing(8);
+    padding: spacing(4) spacing(7) spacing(4) spacing(0);
     position: relative;
     text-align: left;
-    width: $spacing-ux-readmore-default-width;
+    width: auto;
     @include font-styles("label-medium");
 
     &:after {
@@ -33,7 +34,7 @@
 
     &:hover {
       background: map-get($color, "ux", "readmore", "hover", "background");
-      @include bordervalues("readmore", "ux", "hover");
+      border-top: solid $borders-base $color-base-blue-medium;
       color: $color-ux-labels-hover;
       cursor: pointer;
       @include globaltransition("color, background-color, border-color");
