@@ -396,9 +396,7 @@
     }
   }
 
-  .right-to-left & {
-    direction: rtl;
-
+  [dir="rtl"] & {
     figcaption {
       border-left: none;
       border-right: 3px solid #b8c4cc;
