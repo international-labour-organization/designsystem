@@ -14,7 +14,7 @@
 
       background: $brand-ilo-light-blue;
       border-bottom: px-to-rem(3px) solid $brand-ilo-ramp-blue;
-      padding: map-get($spacing, "spacing-12") map-get($spacing, "spacing-13");
+      padding: spacing(12) spacing(10) spacing(14);
       position: relative;
       width: 100%;
 
@@ -26,7 +26,7 @@
       }
 
       @include breakpoint("medium") {
-        padding: map-get($spacing, "spacing-12");
+        padding: spacing(12);
 
         &__columns {
           &__two {
@@ -90,8 +90,7 @@
         &__narrow {
           --max-width: #{px-to-rem(301px)};
           @include cornercut(72px, 40px);
-          padding: map-get($spacing, "spacing-10")
-            map-get($spacing, "spacing-6") map-get($spacing, "spacing-13");
+          padding: spacing(10) spacing(6) spacing(14);
 
           @include breakpoint("medium", true) {
             --max-width: 100%;
@@ -102,13 +101,11 @@
           --max-width: #{px-to-rem(778px)};
 
           &#{$c}__columns__one {
-            padding: map-get($spacing, "spacing-12")
-              map-get($spacing, "spacing-13");
+            padding: spacing(12) spacing(10) spacing(14);
           }
 
           &#{$c}__columns__two {
-            padding: map-get($spacing, "spacing-12")
-              map-get($spacing, "spacing-13") map-get($spacing, "spacing-27");
+            padding: spacing(12) spacing(12) spacing(14) spacing(28);
           }
         }
 
