@@ -26,28 +26,12 @@
   flex-flow: column nowrap;
   align-items: flex-start;
 
-  &__justify__center {
-    align-items: center;
+  [dir="rtl"] {
+    align-items: flex-end;
   }
 
-  .right-to-left & {
-    direction: rtl;
-
-    .social--links {
-      flex-direction: row-reverse;
-    }
-
-    #{$c}--list {
-      &--item {
-        &--icon {
-          text-indent: 999px;
-        }
-      }
-    }
-
-    * {
-      text-align: right;
-    }
+  &__justify__center {
+    align-items: center;
   }
 
   &--headline {
