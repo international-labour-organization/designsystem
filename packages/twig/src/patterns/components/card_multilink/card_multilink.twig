@@ -2,10 +2,12 @@
   MULTILINK CARD COMPONENT
 #}
 
-<div class="{{prefix}}--card {{prefix}}--card__type__multilink {{prefix}}--card__action {{prefix}}--card__size__{{size}} {% if isvideo %} {{prefix}}--card__isvideo {% endif %} {% if linklist %} {{prefix}}--card__linklist {% endif %} {% if size == "wide" %} {{prefix}}--card__align__{{alignment}} {% endif %}">
-  <a class="{{prefix}}--card--link" href="{{link}}" title="{{title}}">
-    <span class="{{prefix}}--card--link--text">{{title}}</span>
-  </a>
+<div class="{{prefix}}--card {{prefix}}--card__type__multilink {% if link|length > 0 %} {{prefix}}--card__action {% endif %} {{prefix}}--card__size__{{size}} {% if isvideo %} {{prefix}}--card__isvideo {% endif %} {% if linklist %} {{prefix}}--card__linklist {% endif %} {% if size == "wide" %} {{prefix}}--card__align__{{alignment}} {% endif %}">
+  {% if link|length > 0 %}
+    <a class="{{prefix}}--card--link" href="{{link}}" title="{{title}}">
+      <span class="{{prefix}}--card--link--text">{{title}}</span>
+    </a>
+  {% endif %}
   <div class="{{prefix}}--card--wrap">
     <div class="{{prefix}}--card--image--wrapper">
       {% include "@components/picture/picture.twig" with {
