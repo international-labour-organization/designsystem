@@ -20,13 +20,10 @@
   font-weight: map-get($type, "weights", "section");
   @include font-styles("label-medium");
   height: px-to-rem(45px);
-  @include spacingvalues("margin", "input", "formelements");
+  margin: spacing(0);
   outline: none;
   overflow: hidden;
-  padding-left: 16px;
-  padding-right: 56px;
-  padding-bottom: 0;
-  padding-top: 0;
+  padding: 0 spacing(14) 0 spacing(4);
   text-overflow: ellipsis;
   white-space: nowrap;
   width: calc(100% - 78px);
@@ -131,7 +128,7 @@
     @include bordervalues("input", "formelements", "error");
   }
   [dir="rtl"] & {
-    padding: 0 px-to-rem(16px) 0 px-to-rem(56px);
+    padding: 0 spacing(4) 0 spacing(14);
     background-position: calc(0% + 14px) center, 0% center;
     background-image: url("#{colortodataurlicon('arrow', $color-ux-labels-actionable)}"),
       linear-gradient(

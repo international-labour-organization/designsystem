@@ -10,7 +10,7 @@
   display: inline-grid;
   grid-template-rows: auto;
   grid-template-columns: auto;
-  gap: px-to-rem($spacing-padding-1);
+  gap: spacing(2);
 
   &__label-placement {
     // Label is to the flex start of form element
@@ -169,10 +169,10 @@
     }
 
     div[class*="tooltip"] {
-      margin-left: px-to-rem(math.div($spacing-padding-1, 2));
+      margin-left: math.div(spacing(2), 2);
 
       [dir="rtl"] & {
-        margin-right: px-to-rem(math.div($spacing-padding-1, 2));
+        margin-right: math.div(spacing(2), 2);
       }
     }
   }
