@@ -119,6 +119,10 @@
       }
     }
 
+    [dir="rtl"] & {
+      justify-content: flex-end;
+    }
+
     button span {
       @include isVisuallyHidden();
     }
@@ -702,6 +706,11 @@
         justify-content: flex-start;
         left: 0;
         width: 80px;
+
+        [dir="rtl"] & {
+          left: auto;
+          right: 0;
+        }
       }
     }
 
@@ -771,11 +780,10 @@
   position: relative;
 }
 
-.right-to-left {
+[dir="rtl"] {
   .ilo--video--caption {
     border-left: none;
     border-right: 3px solid #b8c4cc;
-    direction: rtl;
     padding-left: 0;
     padding-right: px-to-rem(map-get($spacing, "padding-1"));
   }
