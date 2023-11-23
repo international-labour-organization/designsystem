@@ -80,8 +80,8 @@
         &--link,
         &--link:hover {
           border-bottom: none;
-          padding-left: px-to-rem(24px);
-          padding-right: px-to-rem(24px);
+          padding-left: spacing(6);
+          padding-right: spacing(6);
         }
       }
 
@@ -182,7 +182,7 @@
         display: flex;
         flex: 1 1 auto;
         flex-direction: column;
-        padding: px-to-rem(24px) px-to-rem(24px) px-to-rem(40px);
+        padding: spacing(6) spacing(6) spacing(10);
       }
 
       &#{$self}__linklist {

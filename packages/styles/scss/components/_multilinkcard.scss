@@ -11,7 +11,7 @@
       // Defaults to standard size
       --max-width: #{px-to-rem(536px)};
 
-      padding: px-to-rem(24px);
+      padding: spacing(6);
 
       #{$self}--image--wrapper {
         display: none;
@@ -24,11 +24,11 @@
       }
 
       @include breakpoint("medium") {
-        padding: px-to-rem(40px);
+        padding: spacing(10);
       }
 
       @include breakpoint("large") {
-        padding: px-to-rem(56px) px-to-rem(48px);
+        padding: spacing(14) spacing(12);
       }
 
       #{$self}--title {
@@ -71,30 +71,13 @@
         &__standard {
           --max-width: #{px-to-rem(536px)};
 
-          padding: px-to-rem(48px) px-to-rem(40px);
-
-          @include breakpoint("medium") {
-            padding: px-to-rem(48px) px-to-rem(40px);
-          }
-
-          @include breakpoint("large") {
-            padding: px-to-rem(48px) px-to-rem(40px);
-          }
+          padding: spacing(12) spacing(10);
         }
 
         &__narrow {
           --max-width: #{px-to-rem(375px)};
 
-          padding: px-to-rem(40px) px-to-rem(24px) px-to-rem(48px);
-
-          @include breakpoint("medium") {
-            padding: px-to-rem(40px) px-to-rem(24px) px-to-rem(48px);
-          }
-
-          @include breakpoint("large") {
-            padding: px-to-rem(40px) px-to-rem(24px) px-to-rem(48px);
-          }
-
+          padding: spacing(10) spacing(6) spacing(12);
           #{$self}--image--wrapper {
             display: none;
           }
@@ -139,10 +122,10 @@
         &__fluid {
           --max-width: #{px-to-rem(1104px)};
 
-          padding: px-to-rem(40px) px-to-rem(24px) px-to-rem(48px);
+          padding: spacing(10) spacing(6) spacing(12);
 
           @include breakpoint("medium") {
-            padding: px-to-rem(56px) px-to-rem(48px);
+            padding: spacing(14) spacing(12);
 
             &#{$self}__align__right {
               #{$self}--wrap {
