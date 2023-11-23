@@ -1,5 +1,6 @@
 @use "../tokens" as *;
 @use "../functions" as *;
+@use "sass:math";
 @import "../mixins";
 
 .ilo--fieldset {
@@ -19,6 +20,10 @@
 
   &--legend-wrapper {
     @include textmargin("margin-bottom", $gap, "label-medium", "display", 0, 0);
+
+    .ilo--tooltip--wrapper {
+      top: math.div(spacing(1), 2);
+    }
   }
 
   &--legend {

@@ -183,4 +183,8 @@
     font-family: $fonts-copy;
     @include font-styles("body-xxs");
   }
+
+  .ilo--tooltip--wrapper {
+    bottom: math.div(spacing(1), 2);
+  }
 }
