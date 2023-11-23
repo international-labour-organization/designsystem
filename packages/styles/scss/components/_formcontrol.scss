@@ -169,10 +169,10 @@
     }
 
     div[class*="tooltip"] {
-      margin-left: math.div(spacing(2), 2);
+      margin-left: spacing(2);
 
       [dir="rtl"] & {
-        margin-right: math.div(spacing(2), 2);
+        margin-right: spacing(2);
       }
     }
   }
