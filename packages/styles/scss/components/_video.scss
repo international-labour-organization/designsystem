@@ -17,12 +17,11 @@
   }
 
   &--caption {
-    border-left: $spacing-ux-caption-border-left solid
-      $color-ux-caption-border-left;
+    border-left: px-to-rem(3px) solid $color-ux-caption-border-left;
     color: $color-font-caption;
     font-weight: 400;
-    margin-top: px-to-rem(map-get($spacing, "padding-2"));
-    padding-left: px-to-rem(map-get($spacing, "padding-1"));
+    margin-top: spacing(4);
+    padding-left: spacing(2);
     @include font-styles("image-caption");
   }
 
@@ -101,7 +100,7 @@
     display: flex;
     justify-content: flex-start;
     left: 0;
-    height: px-to-rem($spacing-ux-video-controls-height);
+    height: px-to-rem(40px);
     opacity: 0;
     position: absolute;
     transition: opacity 150ms ease-out;
@@ -115,7 +114,7 @@
       @include breakpoint("large") {
         flex-direction: column;
         height: 122px;
-        width: px-to-rem($spacing-ux-video-bigplaybutton-width);
+        width: px-to-rem(4px);
       }
     }
 
@@ -132,7 +131,7 @@
       cursor: pointer;
       height: 100%;
       order: 1;
-      width: $spacing-ux-video-controls-height;
+      width: px-to-rem(40px);
       -webkit-appearance: none;
       -moz-appearance: none;
     }
@@ -142,8 +141,8 @@
         .vjs-play-control,
         .vjs-big-play-button {
           order: 1;
-          height: px-to-rem($spacing-ux-video-bigplaybutton-height);
-          width: px-to-rem($spacing-ux-video-bigplaybutton-width);
+          height: px-to-rem(48px);
+          width: px-to-rem(48px);
         }
 
         .ilo--video--controls--play,
@@ -160,8 +159,8 @@
     .vjs-big-play-button {
       @include iconbutton(
         "play",
-        $spacing-ux-video-bigplaybutton-height,
-        $spacing-ux-video-bigplaybutton-width,
+        px-to-rem(48px),
+        px-to-rem(48px),
         $color-ux-video-controls-default-icon
       );
 
@@ -171,8 +170,8 @@
         background-color: $color-ux-video-controls-hover-background;
         @include iconbutton(
           "play",
-          $spacing-ux-video-bigplaybutton-height,
-          $spacing-ux-video-bigplaybutton-width,
+          px-to-rem(48px),
+          px-to-rem(48px),
           $color-ux-video-controls-hover-icon
         );
 
@@ -186,8 +185,8 @@
       &.vjs-paused {
         @include iconbutton(
           "play",
-          $spacing-ux-video-buttonicon-height,
-          $spacing-ux-video-buttonicon-width,
+          px-to-rem(24px),
+          px-to-rem(24px),
           $color-ux-video-controls-default-icon
         );
 
@@ -196,8 +195,8 @@
           background-color: $color-ux-video-controls-hover-background;
           @include iconbutton(
             "play",
-            $spacing-ux-video-buttonicon-height,
-            $spacing-ux-video-buttonicon-width,
+            px-to-rem(24px),
+            px-to-rem(24px),
             $color-ux-video-controls-hover-icon
           );
         }
@@ -214,8 +213,8 @@
     .vjs-playing {
       @include iconbutton(
         "pause",
-        $spacing-ux-video-buttonicon-height,
-        $spacing-ux-video-buttonicon-width,
+        px-to-rem(24px),
+        px-to-rem(24px),
         $color-ux-video-controls-default-icon
       );
 
@@ -224,8 +223,8 @@
         background-color: $color-ux-video-controls-hover-background;
         @include iconbutton(
           "pause",
-          $spacing-ux-video-buttonicon-height,
-          $spacing-ux-video-buttonicon-width,
+          px-to-rem(24px),
+          px-to-rem(24px),
           $color-ux-video-controls-hover-icon
         );
       }
@@ -238,9 +237,9 @@
       display: none;
       height: 100%;
       font-weight: 700;
-      margin-left: 2px;
+      margin-left: px-to-rem(2px);
       order: 2;
-      padding-top: 9px;
+      padding-top: px-to-rem(9px);
       text-align: center;
       width: px-to-rem(80px);
 
@@ -255,8 +254,8 @@
           background-color: $color-ux-video-controls-hover-background;
           @include iconbutton(
             "play",
-            $spacing-ux-video-bigplaybutton-height,
-            $spacing-ux-video-bigplaybutton-width,
+            px-to-rem(48px),
+            px-to-rem(48px),
             $color-ux-video-controls-hover-icon
           );
         }
@@ -272,14 +271,14 @@
     &.notplayed {
       @include breakpoint("large") {
         .vjs-duration {
-          height: px-to-rem($spacing-ux-video-controls-height);
+          height: px-to-rem(40px);
           margin-left: 0;
           margin-top: 2px;
-          width: px-to-rem($spacing-ux-video-bigplaybutton-width);
+          width: px-to-rem(48px);
         }
 
         .ilo--video--controls--duration {
-          height: px-to-rem($spacing-ux-video-controls-height);
+          height: px-to-rem(40px);
           margin-left: 0;
           margin-top: 2px;
           width: px-to-rem(80px);
@@ -403,7 +402,7 @@
             align-items: center;
             background-color: $color-ux-credit-background;
             display: flex;
-            height: px-to-rem(map-get($spacing, "padding-4"));
+            height: px-to-rem(32px);
             justify-content: center;
             right: 0;
             position: absolute;
@@ -420,11 +419,11 @@
                 $color-base-neutrals-dark
               );
               content: "";
-              height: px-to-rem(map-get($spacing, "padding-1-5"));
+              height: px-to-rem(12px);
               position: absolute;
               left: calc(50% - 6px);
-              bottom: -#{px-to-rem(map-get($spacing, "padding-1-5"))};
-              width: px-to-rem(map-get($spacing, "padding-1-5"));
+              bottom: -#{px-to-rem(12px)};
+              width: px-to-rem(12px);
             }
           }
         }
@@ -441,7 +440,7 @@
           align-items: center;
           background-color: $color-ux-credit-background;
           display: flex;
-          height: px-to-rem(map-get($spacing, "padding-4"));
+          height: px-to-rem(32px);
           justify-content: center;
           left: calc(var(--playhead) - 34px);
           position: absolute;
@@ -458,11 +457,11 @@
               $color-base-neutrals-dark
             );
             content: "";
-            height: px-to-rem(map-get($spacing, "padding-1-5"));
+            height: px-to-rem(12px);
             position: absolute;
             left: calc(50% - 6px);
-            bottom: -#{px-to-rem(map-get($spacing, "padding-1-5"))};
-            width: px-to-rem(map-get($spacing, "padding-1-5"));
+            bottom: -#{px-to-rem(12px)};
+            width: px-to-rem(12px);
           }
         }
       }
@@ -498,17 +497,17 @@
       background-color: $color-ux-video-controls-default-background;
       border: none;
       cursor: pointer;
-      height: px-to-rem($spacing-ux-video-controls-height);
+      height: px-to-rem(40px);
       margin-top: 0;
       position: relative;
-      width: px-to-rem($spacing-ux-video-controls-height);
+      width: px-to-rem(40px);
       z-index: 10;
       -webkit-appearance: none;
       -moz-appearance: none;
       @include iconbutton(
         "volume",
-        $spacing-ux-video-buttonicon-height,
-        $spacing-ux-video-buttonicon-width,
+        px-to-rem(24px),
+        px-to-rem(24px),
         $color-ux-video-controls-default-icon
       );
 
@@ -517,8 +516,8 @@
         background-color: $color-ux-video-controls-hover-background;
         @include iconbutton(
           "volume",
-          $spacing-ux-video-buttonicon-height,
-          $spacing-ux-video-buttonicon-width,
+          px-to-rem(24px),
+          px-to-rem(24px),
           $color-ux-video-controls-hover-icon
         );
       }
@@ -527,8 +526,8 @@
       &[title="Unmute"] {
         @include iconbutton(
           "muted",
-          $spacing-ux-video-buttonicon-height,
-          $spacing-ux-video-buttonicon-width,
+          px-to-rem(24px),
+          px-to-rem(24px),
           $color-ux-video-controls-default-icon
         );
 
@@ -537,8 +536,8 @@
           background-color: #ebf5fd;
           @include iconbutton(
             "muted",
-            $spacing-ux-video-buttonicon-height,
-            $spacing-ux-video-buttonicon-width,
+            px-to-rem(24px),
+            px-to-rem(24px),
             $color-ux-video-controls-hover-icon
           );
         }
@@ -550,7 +549,7 @@
       background: $color-ux-video-controls-hover-background;
       border-left: 3px solid rgb(184, 196, 204);
       display: none;
-      height: px-to-rem($spacing-ux-video-controls-height);
+      height: px-to-rem(40px);
       order: 1;
       padding: 0;
       position: absolute;
@@ -656,13 +655,13 @@
       height: 100%;
       margin-left: 2px;
       order: 5;
-      width: px-to-rem($spacing-ux-video-controls-height);
+      width: px-to-rem(40px);
       -webkit-appearance: none;
       -moz-appearance: none;
       @include iconbutton(
         "fullscreen",
-        $spacing-ux-video-buttonicon-height,
-        $spacing-ux-video-buttonicon-width,
+        px-to-rem(24px),
+        px-to-rem(24px),
         $color-ux-video-controls-default-icon
       );
 
@@ -671,8 +670,8 @@
         background-color: #ebf5fd;
         @include iconbutton(
           "fullscreen",
-          $spacing-ux-video-buttonicon-height,
-          $spacing-ux-video-buttonicon-width,
+          px-to-rem(24px),
+          px-to-rem(24px),
           $color-ux-video-controls-hover-icon
         );
       }
@@ -711,7 +710,7 @@
 
     @include breakpoint("large") {
       .vjs-duration {
-        height: px-to-rem($spacing-ux-video-controls-height);
+        height: px-to-rem(40px);
         margin-left: 0;
         margin-top: 2px;
         width: px-to-rem(80px);
@@ -777,7 +776,7 @@
     border-right: 3px solid #b8c4cc;
     direction: rtl;
     padding-left: 0;
-    padding-right: px-to-rem(map-get($spacing, "padding-1"));
+    padding-right: spacing(2);
   }
 
   .ilo--credit {
