@@ -5,12 +5,8 @@
 .ilo--pagination {
   display: flex;
   justify-content: space-between;
-  margin-bottom: px-to-rem(
-    map-get($spacing, "ux", "pagination", "padding", "top")
-  );
-  margin-top: px-to-rem(
-    map-get($spacing, "ux", "pagination", "padding", "top")
-  );
+  margin-bottom: spacing(10);
+  margin-top: spacing(10);
   $self: &;
 
   &--link {
@@ -20,12 +16,12 @@
     color: map-get($color, "ux", "pagination", "default", "icon");
     display: inline-block;
     font-family: $fonts-display;
-    height: px-to-rem(map-get($spacing, "ux", "pagination", "width"));
+    height: px-to-rem(40px);
     overflow: hidden;
     position: relative;
     text-align: left;
     text-indent: -999%;
-    width: px-to-rem(map-get($spacing, "ux", "pagination", "width"));
+    width: px-to-rem(40px);
     @include font-styles("label-medium");
 
     &::before {
@@ -63,8 +59,7 @@
   }
 
   &--first-page {
-    margin: 0
-      px-to-rem(map-get($spacing, "ux", "pagination", "padding", "left")) 0 0;
+    margin: 0 spacing (2) 0 0;
     &::before {
       transform: translate(-50%, -50%) rotate(180deg);
 
@@ -190,8 +185,7 @@
   }
 
   &--last-page {
-    margin: 0 0 0
-      px-to-rem(map-get($spacing, "ux", "pagination", "padding", "right"));
+    margin: 0 0 0 spacing(2);
 
     &::before {
       @include dataurlicon(
