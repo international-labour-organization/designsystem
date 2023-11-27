@@ -21,8 +21,7 @@
     }
 
     .ilo--notification--content {
-      padding: calc(px-to-rem($spacing-padding-3) + 2px)
-        px-to-rem($spacing-padding-3);
+      padding: spacing(6);
     }
   }
 
@@ -30,38 +29,37 @@
     max-width: 340px;
 
     .ilo--notification--content {
-      padding: calc(px-to-rem($spacing-padding-3) + 2px)
-        px-to-rem($spacing-padding-3);
+      padding: spacing(6);
     }
 
     @include breakpoint("medium") {
       max-width: 100%;
-      width: 100%;
 
       .ilo--notification--content {
-        align-items: start;
+        max-width: 100%;
         display: flex;
-        justify-items: space-between;
-        padding: px-to-rem(14px) px-to-rem($spacing-padding-3);
+        justify-content: space-evenly;
+        align-items: center;
+        padding: spacing(4) spacing(16) spacing(4) spacing(6);
       }
     }
   }
 
   &--content {
-    margin-left: px-to-rem($spacing-padding-5);
+    margin-left: spacing(10);
     position: relative;
     width: calc(100% - 40px);
 
     &:before {
-      background-position: center $spacing-padding-3;
+      background-position: center px-to-rem(24px);
       background-repeat: no-repeat;
-      background-size: px-to-rem($spacing-padding-2);
+      background-size: px-to-rem(16px);
       content: "";
       display: block;
       height: 100%;
       left: -40px;
       position: absolute;
-      width: px-to-rem($spacing-padding-5);
+      width: px-to-rem(40px);
       top: 0;
 
       @include breakpoint("medium") {
@@ -96,7 +94,7 @@
     font-weight: 700;
     @include font-styles("body-small");
 
-    margin-bottom: px-to-rem($spacing-padding-1-5);
+    margin-bottom: spacing(3);
 
     @include breakpoint("medium") {
       .ilo--notification--inline & {
@@ -111,21 +109,14 @@
 
     @include breakpoint("medium") {
       .ilo--notification--inline & {
-        margin-left: px-to-rem($spacing-padding-3);
+        margin-left: spacing(6);
       }
     }
 
     &:not(:last-child) {
-      margin-bottom: px-to-rem($spacing-padding-3);
-
       @include breakpoint("medium") {
         .ilo--notification--inline & {
-          margin-bottom: 0;
-          max-width: 24%;
-
-          @include breakpoint("large") {
-            max-width: 40%;
-          }
+          flex-grow: 1;
         }
       }
     }
@@ -139,12 +130,12 @@
 
     @include breakpoint("medium") {
       .ilo--notification--inline & {
-        margin-left: px-to-rem($spacing-padding-2);
+        margin-left: spacing(4);
       }
     }
 
     &:not(:last-child) {
-      margin-bottom: px-to-rem(19px);
+      margin-bottom: spacing(5);
     }
 
     @include breakpoint("medium") {
@@ -157,7 +148,7 @@
   &--cta {
     @include breakpoint("medium") {
       .ilo--notification--inline & {
-        margin-left: px-to-rem($spacing-padding-3);
+        margin-left: spacing(6);
       }
     }
   }
@@ -166,13 +157,13 @@
     background-color: $color-ux-background-highlight;
     background-position: center;
     background-repeat: no-repeat;
-    background-size: px-to-rem($spacing-padding-3);
+    background-size: px-to-rem(24px);
     border: none;
-    height: px-to-rem($spacing-padding-5);
+    height: px-to-rem(40px);
     position: absolute;
     right: 0;
     top: 0;
-    width: px-to-rem($spacing-padding-5);
+    width: px-to-rem(40px);
     @include dataurlicon("close", $color-ux-labels-actionable);
 
     &:hover,
