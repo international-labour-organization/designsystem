@@ -6,7 +6,7 @@
   $c: &;
 
   // Additional offset to add for justify: offset
-  --added-offset: 0;
+  --added-offset: 0px;
 
   // Total offset from the edge of the window
   --base-offset: calc(((100vw - #{$layout-max-width}) / 2));
