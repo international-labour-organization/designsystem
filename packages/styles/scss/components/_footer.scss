@@ -259,7 +259,7 @@
         "site-info subscribe";
       align-content: start;
       align-items: start;
-      padding: spacing(10) spacing(18) spacing(24);
+      padding: spacing(10) spacing(5) spacing(24);
     }
 
     .site--info {
@@ -336,10 +336,6 @@
 
     .address {
       margin-bottom: spacing(5);
-    }
-
-    .links {
-      margin-top: -#{spacing(16)};
     }
 
     &--secondary {
