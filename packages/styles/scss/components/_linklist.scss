@@ -57,7 +57,7 @@
         }
 
         [dir="rtl"] & {
-          padding-right: px-to-rem($spacing-padding-3);
+          padding-right: spacing(6);
           &:before {
             transform: translateY(-50%) rotate(90deg);
             left: unset;
@@ -119,6 +119,7 @@
     [dir="rtl"] & {
       background-position: px-to-rem(4px) center;
       @include dataurlicon("arrowleft", $color-link-text-default);
+      padding-right: 0;
 
       &:hover,
       &:focus {
