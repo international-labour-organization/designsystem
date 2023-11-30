@@ -4,17 +4,13 @@
 
 .ilo--table {
   background-color: $color-ux-table-background;
-  padding: $spacing-ux-table-padding-top $spacing-ux-table-padding-right
-    $spacing-ux-table-padding-bottom $spacing-ux-table-padding-left;
+  padding: spacing(20);
   position: relative;
 
   &--header {
     background-color: $color-ux-table-content-background;
     border-bottom: px-to-rem(2px) solid $color-base-neutrals-lighter;
-    padding: $spacing-ux-table-content-padding-top
-      $spacing-ux-table-content-padding-right
-      $spacing-ux-table-content-padding-bottom
-      $spacing-ux-table-content-padding-left;
+    padding: spacing(4) spacing(2) spacing(5) spacing(2);
   }
 
   &--wrapper {
@@ -50,18 +46,12 @@
       font-weight: 700;
       @include font-styles("body-xs");
       letter-spacing: -0.02em;
-      padding: $spacing-ux-table-head-padding-top
-        $spacing-ux-table-head-padding-right
-        $spacing-ux-table-head-padding-bottom
-        $spacing-ux-table-head-padding-left;
+      padding: spacing(4) spacing(2);
       pointer-events: none;
       text-align: left;
 
       .ilo--table--small & {
-        padding: $spacing-ux-table-smallhead-padding-top
-          $spacing-ux-table-smallhead-padding-right
-          $spacing-ux-table-smallhead-padding-bottom
-          $spacing-ux-table-smallhead-padding-left;
+        padding: spacing(2);
       }
 
       &:first-of-type {
@@ -80,10 +70,10 @@
           background-size: 75%;
           content: "";
           display: block;
-          height: px-to-rem($spacing-padding-3);
+          height: px-to-rem(24px);
           position: absolute;
           right: px-to-rem(9px);
-          width: px-to-rem($spacing-padding-3);
+          width: px-to-rem(24px);
           top: 50%;
           transform: translateY(-50%);
         }
@@ -123,17 +113,11 @@
       font-weight: 400;
       @include font-styles("body-xs");
       outline: 0;
-      padding: $spacing-ux-table-cell-padding-top
-        $spacing-ux-table-cell-padding-right
-        $spacing-ux-table-cell-padding-bottom
-        $spacing-ux-table-cell-padding-left;
+      padding: spacing(4) spacing(2) spacing(5);
       position: relative;
 
       .ilo--table--small & {
-        padding: $spacing-ux-table-smallcell-padding-top
-          $spacing-ux-table-smallcell-padding-right
-          $spacing-ux-table-smallcell-padding-bottom
-          $spacing-ux-table-smallcell-padding-left;
+        padding: spacing(3) spacing(2);
       }
 
       &:first-of-type {
@@ -172,11 +156,11 @@
     display: flex;
     font-family: $fonts-display;
     font-weight: 700;
-    margin-bottom: px-to-rem(7px);
+    margin-bottom: spacing(2);
     @include font-styles("headline-6");
 
     .ilo--tooltip--wrapper {
-      margin-left: px-to-rem(6px);
+      margin-left: spacing(1);
     }
   }
 

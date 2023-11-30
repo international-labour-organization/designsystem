@@ -14,8 +14,7 @@
 
     width: 100%;
     margin: 0;
-    padding: px-to-rem(calc($spacing-ui-padding-lg - 6px)) px-to-rem(36px)
-      px-to-rem(calc($spacing-ui-padding-lg - 6px)) 0;
+    padding: spacing(4) spacing(4) spacing(4) 0;
 
     background-color: $color-ux-background-default;
     background-position: calc(100% - px-to-rem(6px)) center;
@@ -36,8 +35,7 @@
 
     &--large {
       @include font-styles("headline-6");
-      padding: px-to-rem(calc($spacing-ui-padding-lg - 3px)) px-to-rem(36px)
-        px-to-rem(calc($spacing-ui-padding-lg - 3px)) 0;
+      padding: spacing(5) spacing(4) spacing(5) 0;
     }
 
     &:hover,
@@ -59,13 +57,11 @@
 
     @include breakpoint("medium") {
       @include font-styles("label-medium");
-      padding: px-to-rem(calc($spacing-ui-padding-xl - 14px)) px-to-rem(36px)
-        px-to-rem(calc($spacing-ui-padding-xl - 14px)) 0;
+      padding: spacing(4) spacing(4) spacing(4) 0;
 
       &--large {
         @include font-styles("headline-6");
-        padding: px-to-rem(calc($spacing-ui-padding-lg - 3px)) px-to-rem(36px)
-          px-to-rem(calc($spacing-ui-padding-lg - 3px)) 0;
+        padding: spacing(5) spacing(4) spacing(5) 0;
       }
     }
 
@@ -86,8 +82,8 @@
     overflow: hidden;
 
     .ilo--accordion--innerpanel {
-      padding-bottom: px-to-rem($spacing-ui-padding-sm);
-      padding-top: px-to-rem(8px);
+      padding-bottom: spacing(3);
+      padding-top: spacing(2);
     }
 
     &--open {
@@ -97,7 +93,7 @@
       &#{$panel}__scroll {
         max-height: $scroll-max-height;
         overflow-y: auto;
-        padding-right: px-to-rem($spacing-ui-padding-xl);
+        padding-right: spacing(8);
       }
     }
   }

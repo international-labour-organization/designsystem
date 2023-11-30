@@ -154,7 +154,7 @@ $avatar-size-lg: $row-1-lg;
       #{$c}--avatar {
         width: px-to-rem($avatar-size-lg);
         height: px-to-rem($avatar-size-lg);
-        margin-inline-end: px-to-rem(15px);
+        margin-inline-end: spacing(4);
       }
 
       #{$c}--name {
@@ -168,12 +168,12 @@ $avatar-size-lg: $row-1-lg;
 
       #{$c}--description {
         @include font-styles("body-xs");
-        padding-block-start: px-to-rem(21px);
+        padding-block-start: spacing(5);
       }
 
       #{$c}--link {
         @include font-styles("body-small");
-        padding-block-start: px-to-rem(21px);
+        padding-block-start: spacing(6);
       }
     }
   }
