@@ -71,12 +71,8 @@
       align-items: center;
       display: flex;
       position: relative;
-      width: 17px;
 
       .ilo--breadcrumb--link {
-        padding-left: 0;
-        width: px-to-rem(38px);
-
         &--label {
           @include isVisuallyHidden();
         }
