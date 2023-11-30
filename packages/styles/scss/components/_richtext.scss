@@ -16,7 +16,7 @@
   }
 
   p {
-    margin-bottom: px-to-rem(map-get($spacing, "padding-3"));
+    margin-bottom: spacing(6);
   }
 
   p + figure,
@@ -42,15 +42,15 @@
 
   figure {
     width: 100%;
-    margin-bottom: px-to-rem(map-get($spacing, "padding-7"));
+    margin-bottom: spacing(14);
   }
 
   figcaption {
     border-left: 3px solid #b8c4cc;
     color: $color-font-caption;
     font-weight: 400;
-    margin-top: px-to-rem(map-get($spacing, "padding-2"));
-    padding-left: px-to-rem(map-get($spacing, "padding-1"));
+    margin-top: spacing(4);
+    padding-left: spacing(2);
     @include font-styles("image-caption");
   }
 
@@ -67,8 +67,8 @@
   hr {
     background-color: $color-ux-horizontal-rule-default;
     border: none;
-    height: px-to-rem(map-get($spacing, "horizontal-rule"));
-    margin-bottom: px-to-rem(map-get($spacing, "padding-7"));
+    height: px-to-rem(4px);
+    margin-bottom: spacing(14);
   }
 
   h1,
@@ -79,7 +79,7 @@
   h6 {
     font-family: $fonts-display;
     font-weight: 700;
-    margin-top: px-to-rem(map-get($spacing, "padding-7"));
+    margin-top: spacing(14);
   }
 
   h1 {
@@ -157,17 +157,18 @@
   ul,
   ol {
     li {
-      margin-bottom: px-to-rem(map-get($spacing, "padding-4"));
-      margin-left: px-to-rem(20px);
-      padding-left: px-to-rem(12px);
+      margin-bottom: spacing(8);
+      margin-left: spacing(5);
+      padding-left: spacing(3);
       position: relative;
     }
-    margin-bottom: px-to-rem(map-get($spacing, "padding-4"));
+
+    margin-bottom: spacing(8);
   }
 
   ul {
     li {
-      margin-left: px-to-rem(12px);
+      margin-left: spacing(3);
 
       &::before {
         content: "";
@@ -189,10 +190,8 @@
     background-size: px-to-rem(72px) px-to-rem(40px);
     display: block;
     font-family: $fonts-display;
-    margin: px-to-rem(map-get($spacing, "padding-3")) 0
-      px-to-rem(map-get($spacing, "padding-5")) 0;
-    padding: px-to-rem(54px) 0 px-to-rem(34px)
-      px-to-rem(map-get($spacing, "padding-4"));
+    margin: spacing(6) 0 spacing(10) 0;
+    padding: spacing(19) 0 spacing(9) spacing(8); // check
     position: relative;
     width: 100%;
     @include dataurlicon("triangle", $color-ux-background-default);
@@ -200,8 +199,8 @@
     p {
       color: $color-font-blockquote;
       font-weight: 300;
-      margin-bottom: px-to-rem(map-get($spacing, "padding-3"));
-      padding: 0 px-to-rem(map-get($spacing, "padding-6")) 0 0;
+      margin-bottom: spacing(6);
+      padding: 0 spacing(12) 0 0;
       position: relative;
       @include font-styles("pull-quote-sm");
 
@@ -247,7 +246,7 @@
     h4,
     h5,
     h6 {
-      margin-top: px-to-rem(map-get($spacing, "padding-8"));
+      margin-top: spacing(16);
     }
 
     h1 {
@@ -355,7 +354,7 @@
     }
 
     hr {
-      margin-bottom: px-to-rem(map-get($spacing, "padding-8"));
+      margin-bottom: spacing(19);
     }
 
     figure {
@@ -372,14 +371,12 @@
 
     blockquote {
       background-size: px-to-rem(86px) px-to-rem(48px);
-      margin: px-to-rem(map-get($spacing, "padding-4")) 0
-        px-to-rem(map-get($spacing, "padding-8")) 0;
-      padding: px-to-rem(62px) 0 px-to-rem(map-get($spacing, "padding-6"))
-        px-to-rem(map-get($spacing, "padding-6"));
+      margin: spacing(8) 0 spacing(19) 0;
+      padding: spacing(16) 0 spacing(12) spacing(12);
 
       p {
-        margin-bottom: px-to-rem(map-get($spacing, "padding-3"));
-        padding: 0 px-to-rem(map-get($spacing, "padding-6")) 0 0;
+        margin-bottom: spacing(6);
+        padding: 0 spacing(12) 0 0;
         position: relative;
         @include font-styles("pull-quote-lg");
 
@@ -401,22 +398,23 @@
       border-left: none;
       border-right: 3px solid #b8c4cc;
       padding-left: 0;
-      padding-right: px-to-rem(map-get($spacing, "padding-1"));
+      padding-right: spacing(2);
     }
 
     ul,
     ol {
       li {
         margin-left: 0;
-        margin-right: px-to-rem(20px);
+        margin-right: spacing(5);
         padding-left: 0;
-        padding-right: px-to-rem(12px);
+        padding-right: spacing(3);
       }
     }
 
     ul {
       li {
-        margin-right: px-to-rem(12px);
+        margin-right: spacing(3);
+
         &::before {
           left: auto;
           right: px-to-rem(-12px);
@@ -427,12 +425,11 @@
 
     blockquote {
       background-position: -1px -1px;
-      padding: px-to-rem(54px) px-to-rem(map-get($spacing, "padding-4"))
-        px-to-rem(34px) 0;
+      padding: spacing(14) spacing(8) spacing(9) 0;
       @include dataurlicon("trianglereverse", $color-ux-background-default);
 
       p {
-        padding: 0 0 0 px-to-rem(map-get($spacing, "padding-6"));
+        padding: 0 0 0 spacing(12);
 
         &:after {
           left: 0;
@@ -448,8 +445,7 @@
       }
 
       @include breakpoint("medium") {
-        padding: px-to-rem(62px) px-to-rem(map-get($spacing, "padding-6"))
-          px-to-rem(map-get($spacing, "padding-6")) 0;
+        padding: spacing(15) spacing(12) spacing(12) 0;
       }
     }
   }
