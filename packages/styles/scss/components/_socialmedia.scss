@@ -6,7 +6,7 @@
 .ilo--social-media {
   $c: &;
   $default-theme: "light";
-  $icon-size: map-get($spacing, "icons", "icon-height-lg");
+  $icon-size: $spacing-spacing-4;
 
   @mixin get-icon($icon, $theme: $default-theme) {
     @include dataurlicon(
@@ -49,7 +49,7 @@
   &--list {
     display: inline-flex;
     flex-flow: row wrap;
-    gap: map-get($spacing, "icons", "icon-padding-lg");
+    gap: spacing(4);
 
     &--item {
       display: inline-block;

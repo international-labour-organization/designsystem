@@ -123,7 +123,7 @@
       background: $brand-ilo-blue;
       display: flex;
       justify-content: space-between;
-      padding: 0 20px;
+      padding: 0 spacing(5);
 
       .ilo--language-switcher {
         display: none;
@@ -141,7 +141,7 @@
           cursor: pointer;
           font-family: $fonts-display;
           font-weight: 500;
-          padding: 16px 16px 16px 36px;
+          padding: spacing(4) spacing(4) spacing(4) spacing(9);
           text-decoration: none;
           transition: all 150ms ease-out;
           width: 100%;
@@ -211,7 +211,7 @@
     @include breakpoint("large") {
       display: flex;
       justify-content: space-between;
-      padding: 0 20px;
+      padding: 0 spacing(5);
 
       .ilo--subnav--open & {
         visibility: visible;
@@ -258,7 +258,7 @@
     display: none;
     font-family: $fonts-display;
     font-weight: 700;
-    padding: 16px 0;
+    padding: spacing(4) 0;
     text-align: right;
 
     @include breakpoint("large") {
@@ -310,7 +310,7 @@
       align-items: center;
 
       &:first-of-type {
-        margin-left: -20px;
+        margin-left: -#{spacing(5)};
       }
     }
   }
@@ -318,7 +318,7 @@
   &--link {
     color: $brand-ilo-dark-blue;
     display: block;
-    padding: 16px 36px 16px 8px;
+    padding: spacing(4) spacing(9) spacing(4) spacing(2);
     text-decoration: none;
     transition: color 150ms ease-out, background 150ms ease-out;
 
@@ -333,7 +333,7 @@
       background: $brand-ilo-dark-blue;
       color: $brand-ilo-white;
       display: inline-block;
-      padding: 21.5px 24px 20.5px;
+      padding: 21.5px spacing(6) 20.5px;
 
       &:hover,
       &:focus {
@@ -360,7 +360,7 @@
     display: block;
     font-family: $fonts-display;
     font-weight: 500;
-    padding: 16px 36px 16px 8px;
+    padding: spacing(4) spacing(9) spacing(4) spacing(2);
     line-height: 24px;
     text-align: left;
     transition: all 150ms ease-out;
@@ -403,8 +403,8 @@
       cursor: pointer;
       display: inline-block;
       font-weight: 700;
-      margin-left: 20px;
-      padding: 7px 32px 5px 15px;
+      margin-left: spacing(5);
+      padding: 7px spacing(8) 5px 15px;
       text-align: center;
       transition: all 150ms ease-out;
       width: auto;
@@ -423,7 +423,7 @@
         background-repeat: no-repeat;
         background-size: 20px;
         background-position: 10% 55%;
-        padding: 7px 15px 5px 32px;
+        padding: 7px 15px 5px spacing(8);
 
         &:focus,
         &:hover {
@@ -454,7 +454,7 @@
 
     &--logo-wrapper {
       display: flex;
-      padding: 16px 0;
+      padding: spacing(4) 0;
     }
 
     &--logo {
@@ -485,7 +485,7 @@
     &--link {
       background: inherit;
       color: $brand-ilo-white;
-      padding: 0 24px;
+      padding: 0 spacing(6);
       height: 100%;
       text-decoration: none;
       text-align: center;
@@ -506,8 +506,8 @@
 
 .ilo--mobile--nav {
   border-bottom: 3px solid $brand-ilo-grey-light;
-  margin-bottom: 16px;
-  padding-bottom: 16px;
+  margin-bottom: spacing(4);
+  padding-bottom: spacing(4);
 
   &--logo {
     align-items: center;
@@ -519,7 +519,7 @@
     background: $brand-ilo-white;
     left: 0;
     height: 100%;
-    padding: 0 0 px-to-rem(32px);
+    padding: 0 0 spacing(8);
     position: absolute;
     top: 0;
     transform: translateX(100%);
@@ -547,7 +547,7 @@
     display: block;
     font-family: $fonts-display;
     font-weight: 500;
-    padding: 16px 36px 16px 8px;
+    padding: spacing(4) spacing(9) spacing(4) spacing(2);
     line-height: 16px;
     text-align: left;
     transition: all 150ms ease-out;
@@ -567,7 +567,7 @@
   }
 
   &--search {
-    padding: px-to-rem(32px) 0 px-to-rem(24px);
+    padding: spacing(8) 0 spacing(6);
 
     .ilo--searchfield,
     .ilo--form,
@@ -633,7 +633,7 @@
     display: block;
     font-family: $fonts-display;
     font-weight: 500;
-    padding: 8px 30px 8px 40px;
+    padding: spacing(2) 30px spacing(2) spacing(10);
     transition: all 150ms ease-out;
 
     &:hover,
@@ -644,7 +644,7 @@
     }
 
     [dir="rtl"] & {
-      padding: 8px 40px 8px 30px;
+      padding: spacing(2) spacing(10) spacing(2) 30px;
       background-position: calc(100% - 15px) center;
     }
   }
@@ -678,7 +678,7 @@
   background: $brand-ilo-white;
   height: 100%;
   left: 0;
-  padding: 0 0 32px;
+  padding: 0 0 spacing(8);
   position: absolute;
   top: 0;
   transform: translateX(100%);
@@ -692,7 +692,7 @@
   @include breakpoint("large") {
     height: auto;
     left: 0;
-    padding: 32px 0;
+    padding: spacing(8) 0;
     top: auto;
     transform: translateY(-100%);
     transition: transform 225ms ease-out;
@@ -742,7 +742,7 @@
     display: flex;
     font-family: $fonts-display;
     font-weight: 500;
-    padding: 18px 8px;
+    padding: 18px spacing(2);
     text-decoration: none;
     transition: all 150ms ease-out;
 
@@ -775,7 +775,7 @@
     cursor: pointer;
     font-family: $fonts-display;
     font-weight: 500;
-    padding: 16px 16px 16px 32px;
+    padding: spacing(4) spacing(4) spacing(4) spacing(8);
     position: relative;
     transition: all 150ms ease-out;
 
@@ -840,8 +840,8 @@
     color: $brand-ilo-grey-charcoal;
     font-family: $fonts-display;
     font-weight: 700;
-    margin-bottom: 16px;
-    padding: 20px 8px;
+    margin-bottom: spacing(4);
+    padding: spacing(5) spacing(2);
     width: 100%;
   }
 }
@@ -864,7 +864,7 @@
       drop-shadow(0px 4px 8px rgba(30, 45, 190, 0.054))
       drop-shadow(0px 10px 20px rgba(30, 45, 190, 0.08));
     left: 0;
-    padding: 32px 0;
+    padding: spacing(8) 0;
     top: auto;
     transform: translateY(-100%);
     transition: transform 225ms ease-out;
@@ -883,7 +883,7 @@
   .ilo--header--inner {
     align-items: center;
     justify-content: center;
-    padding: 80px 20px;
+    padding: spacing(20) spacing(5);
   }
 
   .ilo--form,

@@ -15,16 +15,16 @@
     background-size: contain;
     @include dataurlicon("halfsquaretriangle", $color-ux-background-highlight);
     content: "";
-    height: px-to-rem($spacing-padding-1-5);
+    height: px-to-rem(12px);
     position: absolute;
     left: 50%;
     top: -#{px-to-rem(6px)};
     transform: translateX(-50%) rotate(135deg);
-    width: px-to-rem($spacing-padding-1-5);
+    width: px-to-rem(12px);
   }
 
   &--item {
-    padding: 0 px-to-rem($spacing-padding-1);
+    padding: 0 spacing(2);
 
     &:first-of-type {
       border-top-left-radius: 2px;
@@ -60,7 +60,7 @@
     display: inline-block;
     font-family: $fonts-copy;
     font-weight: map-get($type, "weights", "section");
-    padding: px-to-rem($spacing-padding-2) px-to-rem($spacing-padding-1);
+    padding: spacing(4) spacing(2);
     text-decoration: none;
     width: 100%;
     @include font-styles("body-xxs");

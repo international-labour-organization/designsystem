@@ -19,7 +19,7 @@
       @include textmargin("margin-bottom", 27px, "headline-6", "display", 0, 0);
       @include textmargin(
         "margin-top",
-        $spacing-padding-6,
+        $spacing-spacing-12,
         "headline-6",
         "display",
         0,
@@ -30,11 +30,11 @@
 
   &--links--item {
     &.indented {
-      padding-left: px-to-rem($spacing-padding-4);
+      padding-left: spacing(8);
 
       .ilo--link-list--label {
         display: block;
-        padding-left: px-to-rem($spacing-padding-3);
+        padding-left: spacing(5);
         position: relative;
 
         &:before {
@@ -43,13 +43,13 @@
           background-size: contain;
           content: "";
           display: block;
-          height: px-to-rem($spacing-padding-1-5);
+          height: px-to-rem(12px);
           left: 0;
           position: absolute;
           top: 50%;
           transform: translateY(-50%) rotate(-90deg);
           transform-origin: center;
-          width: px-to-rem($spacing-padding-1-5);
+          width: px-to-rem(12px);
           @include dataurlicon(
             "equilateraltriangle",
             $color-base-neutrals-light
@@ -57,7 +57,7 @@
         }
 
         [dir="rtl"] & {
-          padding-right: px-to-rem($spacing-padding-3);
+          padding-right: spacing(6);
           &:before {
             transform: translateY(-50%) rotate(90deg);
             left: unset;
@@ -78,18 +78,18 @@
   }
 
   &--link {
-    background-position: calc(100% - $spacing-padding-0-5) center;
+    background-position: calc(100% - 4px) center;
     background-repeat: no-repeat;
-    background-size: px-to-rem($spacing-padding-3) px-to-rem($spacing-padding-3);
+    background-size: px-to-rem(24px) px-to-rem(24px);
     border-bottom: px-to-rem($borders-base) solid $color-base-neutrals-lighter;
     color: map-get($color, "link", "text", "default");
     display: block;
     font-family: $fonts-display;
     font-weight: map-get($type, "weights", "section");
     @include font-styles("body-small");
-    @include textmargin("padding-bottom", 25px, "body-small", "display", 0, 0);
-    @include textmargin("padding-top", 25px, "body-small", "display", 0, 0);
-    padding-right: px-to-rem($spacing-padding-4);
+    padding-top: spacing(4);
+    padding-bottom: spacing(4);
+    padding-right: spacing(8);
     text-decoration: none;
     @include dataurlicon("arrowright", $color-link-text-default);
     @include globaltransition("color, background-color, border-color");
@@ -117,8 +117,9 @@
     }
 
     [dir="rtl"] & {
-      background-position: $spacing-padding-0-5 center;
+      background-position: px-to-rem(4px) center;
       @include dataurlicon("arrowleft", $color-link-text-default);
+      padding-right: 0;
 
       &:hover,
       &:focus {
@@ -175,7 +176,7 @@
       }
 
       [dir="rtl"] & {
-        background-position: $spacing-padding-0-5 center;
+        background-position: px-to-rem(4px) center;
         @include dataurlicon("arrowleft", $color-base-neutrals-white);
 
         &:hover,

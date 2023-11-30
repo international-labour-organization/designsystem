@@ -69,7 +69,7 @@
   overflow: hidden;
 
   &--main {
-    padding: px-to-rem(40px) px-to-rem(32px);
+    padding: spacing(10) spacing(8) spacing(12);
     position: relative;
 
     @include footer-triangle(bottom-right);
@@ -95,11 +95,13 @@
   }
 
   &--secondary {
+    [class*="container"] {
+      padding: 0;
+    }
+
     background-color: $color-base-neutrals-lighter;
-    padding-top: px-to-rem(36px);
-    min-height: px-to-rem(
-      map-get($spacing, "ux", "readmore", "default", "height")
-    );
+    padding: spacing(8) spacing(4) 0;
+    min-height: px-to-rem(56px);
   }
 
   &--headline {
@@ -116,21 +118,21 @@
       "body-xxs",
       "display"
     );
-    margin-top: px-to-rem(22px);
+    margin-top: spacing(5);
   }
 
   &--subhead {
     color: #bedcfa;
     font-family: $fonts-display;
     font-weight: map-get($type, "weights", "section");
-    margin-top: px-to-rem(10px);
+    margin-top: spacing(1);
     @include font-styles("body-xxs");
     line-height: px-to-rem(18.56px);
-    margin-bottom: px-to-rem(45px);
+    margin-bottom: spacing(12);
   }
 
   .address {
-    margin-bottom: px-to-rem(39px);
+    margin-bottom: spacing(5);
   }
 
   .address--line {
@@ -147,11 +149,11 @@
   }
 
   .connect {
-    margin: px-to-rem(55px) 0;
+    margin: spacing(12) 0 spacing(10);
   }
 
   .social--links {
-    margin-bottom: px-to-rem(45px);
+    margin-bottom: spacing(10);
   }
 
   .legal,
@@ -171,7 +173,7 @@
   .secondarylinks--list--item {
     &:before {
       content: "|";
-      margin: px-to-rem(4px);
+      margin: spacing(1);
     }
   }
 
@@ -216,16 +218,15 @@
     // Mobile styles
     justify-content: center;
     border-bottom: 0.1071811361rem solid $brand-ilo-grey-light;
-    margin: px-to-rem(12px) auto 0 auto;
-    padding: px-to-rem($spacing-padding-2) px-to-rem($spacing-padding-2)
-      px-to-rem($spacing-padding-2) px-to-rem($spacing-padding-2);
+    margin: spacing(3) auto 0 auto;
+    padding: spacing(4);
 
     &:after {
       background-repeat: no-repeat;
       content: "";
       height: px-to-rem(24px);
       position: relative;
-      margin-left: px-to-rem(8px);
+      margin-left: spacing(2);
       bottom: px-to-rem(3px);
       transform: rotateX(180deg);
       transform-origin: center;
@@ -250,7 +251,7 @@
     &--main {
       display: grid;
       grid-template-columns: minmax(0, 50%) minmax(0, 50%);
-      gap: 0px 64px;
+      gap: 0px spacing(16);
       grid-template-areas:
         "site-info address"
         "site-info links"
@@ -258,7 +259,7 @@
         "site-info subscribe";
       align-content: start;
       align-items: start;
-      padding: px-to-rem(40px) px-to-rem(20px);
+      padding: spacing(10) spacing(5) spacing(24);
     }
 
     .site--info {
@@ -283,8 +284,8 @@
     }
 
     &--secondary {
-      padding-top: px-to-rem(18px);
-      padding-bottom: px-to-rem(18px);
+      padding-top: spacing(4);
+      padding-bottom: spacing(4);
       position: relative;
       z-index: 1;
     }
@@ -301,13 +302,13 @@
       display: grid;
       grid-template-columns: 0.25fr 0.33fr 0.09fr 0.33fr;
       grid-template-rows: auto auto;
-      gap: 0px 64px;
+      gap: 0px spacing(16);
       grid-template-areas:
         "site-info address  .  connect"
         "site-info links    .  subscribe";
 
-      padding-top: px-to-rem(44px);
-      padding-bottom: px-to-rem(51px);
+      padding-top: spacing(10);
+      padding-bottom: spacing(24);
 
       &:before {
         content: none;
@@ -333,9 +334,13 @@
       justify-self: start;
     }
 
+    .address {
+      margin-bottom: spacing(5);
+    }
+
     &--secondary {
-      padding-top: px-to-rem(18px);
-      padding-bottom: px-to-rem(18px);
+      padding-top: spacing(4);
+      padding-bottom: spacing(4);
       position: relative;
 
       [class*="container"] {
@@ -354,7 +359,7 @@
 
       .secondarylinks--list--item {
         &:before {
-          margin: px-to-rem(8px);
+          margin: spacing(2);
         }
       }
     }
@@ -362,7 +367,7 @@
     .anchorlink {
       margin: 0;
       border: none;
-      padding: 0.25rem;
+      padding: spacing(1);
 
       &:hover {
         margin-bottom: -0.1071811361rem;
@@ -383,7 +388,7 @@
 
       &:after {
         content: "|";
-        margin: px-to-rem(4px);
+        margin: spacing(1);
       }
     }
 

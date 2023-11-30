@@ -12,7 +12,7 @@
     background-color: $color-base-neutrals-white;
     display: inline-flex;
     justify-content: flex-start;
-    padding-block: px-to-rem(16px);
+    padding-block: spacing(4);
     padding-inline-end: 0;
     padding-inline-start: var(--card-padding-start);
     position: relative;
@@ -27,15 +27,15 @@
     background-repeat: no-repeat;
     color: map-get($color, "link", "text", "default");
     display: inline-flex;
-    height: px-to-rem($spacing-padding-2);
-    padding: 0 px-to-rem($spacing-padding-3) 0 px-to-rem(10px);
+    height: px-to-rem(16px);
+    padding: 0 spacing(6) 0 px-to-rem(10px);
     text-decoration: none;
     text-decoration-thickness: px-to-rem($borders-base);
     @include dataurlicon("breadcrumbdivider", $color-link-text-default);
 
     [dir="rtl"] & {
       background-position: 0 52%;
-      padding: 0 px-to-rem(10px) 0 px-to-rem($spacing-padding-3);
+      padding: 0 px-to-rem(10px) 0 spacing(6);
       @include dataurlicon("breadcrumbdividerrtl", $color-link-text-default);
     }
 
@@ -65,7 +65,7 @@
   &--item {
     align-items: center;
     display: flex;
-    height: px-to-rem($spacing-padding-2);
+    height: px-to-rem(16px);
 
     &.home {
       align-items: center;
@@ -86,11 +86,11 @@
           background-repeat: no-repeat;
           content: "";
           display: block;
-          height: px-to-rem($spacing-padding-2);
+          height: px-to-rem(16px);
           left: 0;
           position: absolute;
           top: 0;
-          width: px-to-rem($spacing-padding-2);
+          width: px-to-rem(16px);
           @include dataurlicon("home", $color-link-text-default);
         }
       }
@@ -115,7 +115,7 @@
   .ilo--breadcrumb--item--context {
     align-items: flex-start;
     display: flex;
-    height: px-to-rem($spacing-padding-2);
+    height: px-to-rem(16px);
   }
 
   &.contextmenu {
@@ -137,11 +137,11 @@
         background-repeat: no-repeat;
         content: "";
         display: block;
-        height: px-to-rem($spacing-padding-2);
+        height: px-to-rem(16px);
         right: -7px;
         position: absolute;
         top: 0;
-        width: px-to-rem($spacing-padding-2);
+        width: px-to-rem(16px);
         @include dataurlicon("breadcrumbdivider", $color-link-text-default);
 
         [dir="rtl"] & {
@@ -180,12 +180,12 @@
             $color-ux-background-highlight
           );
           content: "";
-          height: px-to-rem($spacing-padding-1-5);
+          height: px-to-rem(12px);
           position: absolute;
           left: 50%;
           top: -#{px-to-rem(6px)};
           transform: translateX(-50%) rotate(135deg);
-          width: px-to-rem($spacing-padding-1-5);
+          width: px-to-rem(12px);
         }
 
         &:hover {
@@ -195,7 +195,7 @@
         .ilo--breadcrumb--item {
           display: inline-block;
           height: auto;
-          padding: 0 px-to-rem($spacing-padding-1);
+          padding: 0 spacing(2);
           position: relative;
           width: 100%;
 
@@ -233,7 +233,7 @@
           font-family: $fonts-copy;
           font-weight: map-get($type, "weights", "section");
           height: auto;
-          padding: px-to-rem($spacing-padding-2) 0;
+          padding: spacing(4) 0;
           text-decoration: none;
           width: 100%;
           @include font-styles("body-xxs");
