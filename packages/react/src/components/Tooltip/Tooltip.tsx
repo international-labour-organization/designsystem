@@ -21,6 +21,7 @@ const Tooltip: FC<TooltipProps> = ({
   });
   const [arrowPlacement, setArrowPlacement] = useState<string>("center");
   const [arrowAlignment, setArrowAlignment] = useState<string>("left");
+  const [tooltipSize, setTooltipSize] = useState<string>("");
 
   const tooltipRef = useRef(null);
 
@@ -29,6 +30,7 @@ const Tooltip: FC<TooltipProps> = ({
     [`${baseClass}--${theme}`]: theme,
     [`${baseClass}--alignment-${arrowAlignment}`]: arrowAlignment,
     [`${baseClass}--visible`]: isVisible,
+    [`${baseClass}--${tooltipSize}`]: tooltipSize,
   });
 
   const tooltipArrowClasses = classNames(className, {
@@ -48,10 +50,20 @@ const Tooltip: FC<TooltipProps> = ({
     }
   };
 
+  const setMaxWidthAndClass = (tooltip: any) => {
+    const tooltipText = tooltip.textContent || tooltip.innerText;
+    const textLength = tooltipText.trim().length;
+    if (textLength > 50) {
+      setTooltipSize("long");
+    }
+  };
+
   const postMouseOver = (hoverRect: any) => {
     // position the tooltip after showing it
     let placement = "center";
     let alignment = "left";
+
+    setMaxWidthAndClass(tooltipRef.current);
 
     const ttNode = ReactDOM.findDOMNode(tooltipRef.current) as Element;
     if (ttNode != null) {
