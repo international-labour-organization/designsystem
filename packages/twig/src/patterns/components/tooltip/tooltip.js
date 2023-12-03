@@ -113,6 +113,8 @@ export default class Tooltip {
     let placement = "center";
     let alignment = "left";
 
+    this.setMaxWidthAndClass(this.tooltip);
+
     const ttNode = this.tooltip;
     if (ttNode != null) {
       let x = 0,
@@ -168,6 +170,8 @@ export default class Tooltip {
       this.tooltip.style.top = y;
       this.tooltip.style.left = x;
 
+      this.placement = placement;
+      this.alignment = alignment;
       // set class for placement on arrow
       this.arrow.classList.remove(
         `${this.prefix}--tooltip--arrow--placement-${this.placement}`
@@ -186,10 +190,23 @@ export default class Tooltip {
         `${this.prefix}--tooltip--alignment-${this.alignment}`
       );
       this.alignment = alignment;
-
       this.tooltip.setAttribute("data-alignment", alignment);
     }
 
     return this;
+  }
+
+  /**
+   * Set max width and add class based on content length
+   *
+   * @param {string} content - Tooltip content
+   */
+  setMaxWidthAndClass(tooltip) {
+    const tooltipText = tooltip.textContent || tooltip.innerText;
+    const textLength = tooltipText.trim().length;
+
+    if (textLength > 50) {
+      this.tooltip.classList.add(`${this.prefix}--tooltip--long`);
+    }
   }
 }

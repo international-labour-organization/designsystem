@@ -21,8 +21,13 @@
   padding: spacing(2) spacing(4) spacing(3);
   position: absolute;
   visibility: hidden;
-  width: auto;
+  width: max-content;
+  max-width: px-to-rem(180px);
   @include globaltransition("opacity");
+
+  &--long {
+    max-width: px-to-rem(400px);
+  }
 
   &--fade {
     opacity: 1;
