@@ -31,6 +31,9 @@
       &:focus,
       &:focus-within {
         @include card-drop-shadow;
+        @include globaltransition(border-color);
+
+        border-color: $brand-ilo-blue;
 
         [class*="profile--contents"] * {
           color: $color-base-blue-medium;
