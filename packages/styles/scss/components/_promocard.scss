@@ -47,6 +47,10 @@
         padding: spacing(16) spacing(18);
       }
 
+      #{$self}--title {
+        margin-bottom: spacing(3);
+      }
+
       &#{$self}__size {
         &__standard {
           padding: spacing(12);
@@ -86,38 +90,15 @@
 
           #{$self}--title {
             @include font-styles("headline-4");
-            @include textmargin(
-              "margin-bottom",
-              24px,
-              "headline-4",
-              "display",
-              "body-small",
-              "copy"
-            );
+            margin-bottom: spacing(2);
 
             @include breakpoint("medium") {
               @include font-styles("headline-3");
-              @include textmargin(
-                "margin-bottom",
-                24px,
-                "headline-3",
-                "display",
-                "body-small",
-                "copy"
-              );
             }
           }
 
           #{$self}--intro {
             @include font-styles("body-small");
-            @include textmargin(
-              "margin-bottom",
-              40px,
-              "body-small",
-              "copy",
-              0,
-              0
-            );
           }
         }
       }
@@ -129,35 +110,18 @@
 
       #{$self}--title {
         @include font-styles("headline-4");
-        @include textmargin(
-          "margin-bottom",
-          24px,
-          "headline-4",
-          "display",
-          "body-small",
-          "copy"
-        );
 
         @include breakpoint("medium") {
           @include font-styles("headline-3");
-          @include textmargin(
-            "margin-bottom",
-            32px,
-            "headline-3",
-            "display",
-            "base",
-            "copy"
-          );
         }
       }
 
       #{$self}--intro {
         @include font-styles("body-small");
-        @include textmargin("margin-bottom", 40px, "body-small", "copy", 0, 0);
+        margin-bottom: spacing(8);
 
         @include breakpoint("medium") {
           @include font-styles("base");
-          @include textmargin("margin-bottom", 40px, "base", "copy", 0, 0);
         }
       }
     }
