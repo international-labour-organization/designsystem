@@ -189,8 +189,8 @@
   &--intro {
     color: $brand-ilo-grey-charcoal;
     @include font-styles("body-small");
-    @include textmargin("margin-bottom", 30px, "body-small", "copy", 0, 0);
     @include globaltransition("color");
+    margin-bottom: spacing(8);
 
     #{$self}--link:hover &,
     #{$self}--link:focus &,
