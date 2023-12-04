@@ -1,6 +1,6 @@
 ---
 "@ilo-org/themes": minor
-"@ilo-org/styles": patch
+"@ilo-org/styles": minor
 ---
 
 Truncate long text in tags
