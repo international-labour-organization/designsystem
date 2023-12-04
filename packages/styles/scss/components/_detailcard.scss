@@ -11,8 +11,10 @@
       --max-width: #{px-to-rem(343px)};
 
       border-bottom: px-to-rem(3px) solid $brand-ilo-grey-light;
-      padding: spacing(6) 0;
+      padding: spacing(8) 0;
       position: relative;
+
+      @include globaltransition(border);
 
       @include breakpoint("large") {
         padding: spacing(8) 0;
@@ -26,6 +28,7 @@
       &:focus,
       &:focus-within {
         @include card-drop-shadow;
+        border-bottom: px-to-rem(3px) solid $brand-ilo-blue;
 
         picture::before {
           opacity: 0.4;
@@ -39,9 +42,13 @@
         }
       }
 
-      #{$self}--title {
-        @include font-styles("headline-6");
+      #{$self}--eyebrow {
+        margin-bottom: spacing(4);
+      }
 
+      #{$self}--title {
+        padding: 0 0 spacing(2) 0;
+        @include font-styles("headline-6");
         @include breakpoint("large") {
           #{$self}__size__wide & {
             @include font-styles("headline-5");
