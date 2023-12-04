@@ -186,7 +186,8 @@
         }
       }
 
-      &.vjs-paused {
+      &.vjs-paused,
+      &.vjs-ended {
         @include iconbutton(
           "play",
           px-to-rem(24px),
