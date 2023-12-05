@@ -1,5 +1,69 @@
 # @ilo-org/react
 
+## 0.9.0
+
+### Minor Changes
+
+- 55f0c47aa: Added chained hover effect for video play button
+
+### Patch Changes
+
+- cf4d43446: added hover effect for anchor item inside indented linked list
+- 3be0a12ac: reduced padding for accordion inner panel
+- ca463b9b7: added full width on mobile viewport for affected cards
+- 5df8f748a: fixed text input invalid state
+- ee17a3bd2: Top spacing should be removed in hero card when there is no image
+- Updated dependencies [ed548bcfc]
+- Updated dependencies [4522e79de]
+- Updated dependencies [bf1ec0843]
+- Updated dependencies [34c8c9a8f]
+- Updated dependencies [05a5a4b84]
+- Updated dependencies [ccdb35c99]
+- Updated dependencies [cf4d43446]
+- Updated dependencies [e8cec8dfc]
+- Updated dependencies [045602383]
+- Updated dependencies [5e051fc7a]
+- Updated dependencies [d74847eff]
+- Updated dependencies [b04dd21bb]
+- Updated dependencies [060748c0f]
+- Updated dependencies [ff62947c3]
+- Updated dependencies [02a0e177e]
+- Updated dependencies [a010a5077]
+- Updated dependencies [9b960abc2]
+- Updated dependencies [55f0c47aa]
+- Updated dependencies [30b275924]
+- Updated dependencies [690efdabb]
+- Updated dependencies [e48c3cdbd]
+- Updated dependencies [01c4126c2]
+- Updated dependencies [309733cdd]
+- Updated dependencies [2b02101ef]
+- Updated dependencies [4a5afb00e]
+- Updated dependencies [aa4dce006]
+- Updated dependencies [1794fc434]
+- Updated dependencies [c885bf0cd]
+- Updated dependencies [ea4ac05ea]
+- Updated dependencies [3be0a12ac]
+- Updated dependencies [f0dbaa608]
+- Updated dependencies [b976f7221]
+- Updated dependencies [ca463b9b7]
+- Updated dependencies [6d089ba7f]
+- Updated dependencies [ec4cec224]
+- Updated dependencies [a8ce5d3fc]
+- Updated dependencies [bec744d2e]
+- Updated dependencies [6be769d3f]
+- Updated dependencies [5df8f748a]
+- Updated dependencies [ee17a3bd2]
+- Updated dependencies [cfba6422c]
+- Updated dependencies [03d0b6549]
+- Updated dependencies [b972abe2e]
+- Updated dependencies [1e58f9c7d]
+- Updated dependencies [f0e5b51b9]
+- Updated dependencies [76db527a0]
+- Updated dependencies [70c645779]
+- Updated dependencies [86189a0d7]
+  - @ilo-org/styles@0.12.0
+  - @ilo-org/themes@0.7.0
+
 ## 0.8.13
 
 ### Patch Changes
