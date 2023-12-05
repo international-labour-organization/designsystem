@@ -1,5 +1,18 @@
 # @ilo-org/themes
 
+## 0.7.0
+
+### Minor Changes
+
+- 4522e79de: Added new config values for spacing
+- bf1ec0843: Truncate long text in tags
+
+### Patch Changes
+
+- ccdb35c99: Adjust padding-9 value by 1px
+- 5df8f748a: fixed text input invalid state
+- ee17a3bd2: Top spacing should be removed in hero card when there is no image
+
 ## 0.6.1
 
 ### Patch Changes
