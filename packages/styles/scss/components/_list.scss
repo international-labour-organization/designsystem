@@ -22,9 +22,8 @@
         width: px-to-rem(12px);
         @include dataurlicon("listarrow", $color-base-neutrals-light);
       }
-      margin-bottom: px-to-rem(map-get($spacing, "padding-4"));
-      margin-left: px-to-rem(12px);
-      padding-left: px-to-rem(12px);
+      margin-left: spacing(3);
+      padding-left: spacing(2);
       position: relative;
     }
   }
@@ -39,33 +38,37 @@
   }
 
   &--horizontal {
+    li {
+      &::before {
+        content: none;
+      }
+    }
     align-items: center;
     display: flex;
     flex-wrap: wrap;
     list-style: none;
 
     .ilo--list__title {
-      margin-bottom: px-to-rem(map-get($spacing, "base"));
-      margin-right: px-to-rem(map-get($spacing, "ui-padding-xxl") - 3px);
+      margin-bottom: spacing(2);
+      margin-right: spacing(9);
     }
 
     .ilo--list__item {
-      margin-bottom: px-to-rem(map-get($spacing, "base"));
+      margin-bottom: spacing(2);
       margin-left: 0;
-      margin-right: px-to-rem(map-get($spacing, "ui-padding-xxl") - 3px);
+      margin-right: spacing(10);
       padding-left: 0;
     }
   }
 
   &__title {
     @include font-styles("headline-6");
-    margin-bottom: px-to-rem(21px);
+    margin-bottom: spacing(6);
     font-family: $fonts-display;
     font-weight: 700;
 
     @include breakpoint("medium") {
       @include font-styles("headline-5");
-      margin-bottom: px-to-rem(27px);
     }
   }
 
@@ -73,16 +76,9 @@
     @include font-styles("body-small");
 
     font-family: $fonts-copy;
-    @include textmargin(
-      "margin-bottom",
-      map-get($spacing, "ui-padding-lg"),
-      "body-small",
-      "copy",
-      0,
-      0
-    );
-    margin-left: px-to-rem(map-get($spacing, "ui-padding-lg"));
-    padding-left: px-to-rem(map-get($spacing, "base") - 5px);
+    margin-bottom: spacing(4);
+    margin-left: spacing(5);
+    padding-left: spacing(1);
 
     b,
     strong {
@@ -92,7 +88,6 @@
 
     @include breakpoint("medium") {
       @include font-styles("base");
-      @include textmargin("margin-bottom", 20px, "base", "copy", 0, 0);
     }
   }
 }

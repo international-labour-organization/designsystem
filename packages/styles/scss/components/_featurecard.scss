@@ -24,6 +24,10 @@
           &--link {
             color: $brand-ilo-white;
             @include dataurlicon("arrowright", $brand-ilo-white);
+
+            [dir="rtl"] & {
+              @include dataurlicon("arrowleft", $brand-ilo-white);
+            }
           }
         }
 
@@ -34,6 +38,10 @@
             &--link {
               color: $brand-ilo-blue;
               @include dataurlicon("arrowright", $brand-ilo-blue);
+
+              [dir="rtl"] & {
+                @include dataurlicon("arrowleft", $brand-ilo-blue);
+              }
             }
           }
         }
@@ -72,8 +80,8 @@
         &--link,
         &--link:hover {
           border-bottom: none;
-          padding-left: px-to-rem(24px);
-          padding-right: px-to-rem(24px);
+          padding-left: spacing(6);
+          padding-right: spacing(6);
         }
       }
 
@@ -101,10 +109,6 @@
           @include breakpoint("medium") {
             #{$self}--wrap {
               flex-direction: row;
-
-              .right-to-left & {
-                flex-direction: row-reverse;
-              }
             }
 
             #{$self}--content {
@@ -178,7 +182,7 @@
         display: flex;
         flex: 1 1 auto;
         flex-direction: column;
-        padding: px-to-rem(24px) px-to-rem(24px) px-to-rem(40px);
+        padding: spacing(6) spacing(6) spacing(10);
       }
 
       &#{$self}__linklist {

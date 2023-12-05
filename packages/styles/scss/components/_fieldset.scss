@@ -1,9 +1,11 @@
 @use "../tokens" as *;
 @use "../functions" as *;
+@use "sass:math";
 @import "../mixins";
 
 .ilo--fieldset {
   $gap: 24px;
+  box-sizing: border-box;
 
   @mixin flex($value) {
     display: flex;
@@ -18,6 +20,10 @@
 
   &--legend-wrapper {
     @include textmargin("margin-bottom", $gap, "label-medium", "display", 0, 0);
+
+    .ilo--tooltip--wrapper {
+      top: math.div(spacing(1), 2);
+    }
   }
 
   &--legend {
@@ -102,7 +108,6 @@
   }
 
   .ilo--tooltip--wrapper {
-    margin-left: 8px;
-    margin-top: 3px;
+    margin-left: spacing(1);
   }
 }

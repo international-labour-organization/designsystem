@@ -71,3 +71,10 @@ export const decorators: Decorator[] = [
     return <Story />;
   },
 ];
+
+export const globalTypes = {
+  rtlDirection: {
+    description: "HTML dir attribute",
+    defaultValue: "ltr",
+  },
+};

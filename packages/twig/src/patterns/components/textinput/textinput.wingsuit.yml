@@ -43,7 +43,6 @@ textinput:
       type: text
       label: Pattern
       description: The pattern of the text input.
-      preview: textinput``
       default: ""
   settings:
     labelPlacement:

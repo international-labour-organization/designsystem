@@ -8,6 +8,7 @@ module.exports = {
     "@storybook/addon-links",
     "@storybook/addon-backgrounds",
     "@storybook/addon-postcss",
+    "storybook-addon-rtl-direction",
   ],
   staticDirs: [
     {

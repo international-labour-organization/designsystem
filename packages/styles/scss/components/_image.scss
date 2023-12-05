@@ -21,12 +21,11 @@
   }
 
   &--caption {
-    border-left: $spacing-ux-caption-border-left solid
-      $color-ux-caption-border-left;
+    border-left: px-to-rem(3px) solid $color-ux-caption-border-left;
     color: $color-font-caption;
     font-weight: 400;
-    margin-top: px-to-rem(map-get($spacing, "padding-2"));
-    padding-left: px-to-rem(map-get($spacing, "padding-1"));
+    margin-top: spacing(4);
+    padding-left: spacing(2);
     @include font-styles("image-caption");
   }
 
@@ -36,16 +35,16 @@
     position: absolute;
 
     @include breakpoint("large") {
-      bottom: -#{px-to-rem(map-get($spacing, "padding-0-5"))};
+      bottom: -#{px-to-rem(4px)};
     }
   }
 
-  .right-to-left & {
+  [dir="rtl"] & {
     .ilo--image--caption {
       border-left: none;
       border-right: 3px solid #b8c4cc;
       padding-left: 0;
-      padding-right: px-to-rem(map-get($spacing, "padding-1"));
+      padding-right: spacing(2);
     }
 
     .ilo--credit {

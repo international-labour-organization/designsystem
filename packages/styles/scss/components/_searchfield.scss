@@ -19,10 +19,10 @@
     );
     background-position: center center;
     background-repeat: no-repeat;
-    background-size: $spacing-padding-3 $spacing-padding-3;
+    background-size: px-to-rem(24px) px-to-rem(24px);
     @include bordervalues("inputbutton", "formelements");
-    height: $spacing-padding-6;
-    width: calc($spacing-padding-6 - 2px);
+    height: px-to-rem(48px);
+    width: px-to-rem(46px);
     text-indent: -9999px;
     @include dataurlicon(
       "search",
@@ -59,7 +59,7 @@
     }
 
     .haslabel & {
-      margin-top: px-to-rem(28px);
+      margin-top: spacing(7);
     }
 
     &:disabled {
@@ -68,14 +68,11 @@
     }
   }
 
-  .right-to-left & {
-    direction: rtl;
-
+  [dir="rtl"] & {
     .ilo--searchfield--button {
-      border-left: $spacing-formelements-inputbutton-default-borderrtl-left
-        solid $color-formelements-inputbutton-default-border-left;
-      border-right: $spacing-formelements-inputbutton-default-borderrtl-right
-        solid $color-formelements-inputbutton-default-border-right;
+      border-left: px-to-rem(2px) solid
+        $color-formelements-inputbutton-default-border-left;
+      border-right: 0 solid $color-formelements-inputbutton-default-border-right;
     }
   }
 }

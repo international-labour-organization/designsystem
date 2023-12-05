@@ -1,3 +1,4 @@
+import { EVENTS } from "@ilo-org/utils";
 import videojs from "video.js";
 
 /**
@@ -36,7 +37,11 @@ export default class Video {
    * @chainable
    */
   init() {
-    this.cacheDomReferences().start().setupHandlers().enable();
+    this.cacheDomReferences()
+      .start()
+      .cacheVideoReferences()
+      .setupHandlers()
+      .enable();
 
     return this;
   }
@@ -60,25 +65,57 @@ export default class Video {
   }
 
   /**
+   * Find all necessary DOM elements inside videojs
+   *
+   * @return {Object} Video A reference to the instance of the class
+   * @chainable
+   */
+  cacheVideoReferences() {
+    /**
+     * The button for video play control
+     * @type {?Element}
+     */
+    this.PlayButton = this.element.querySelector(".vjs-play-control");
+
+    /**
+     * The duration display
+     * @type {?Element}
+     */
+    this.Duration = this.element.querySelector(".vjs-duration");
+
+    return this;
+  }
+
+  /**
    * Bind event handlers with the proper context of `this`.
    *
    * @return {Object} Video A reference to the current instance of the class
    * @chainable
    */
   setupHandlers() {
+    this.onDurationHover = this.onDurationHover.bind(this);
+
     return this;
   }
 
   /**
-   * Creates event listeners to enable interaction with view
+   * Creates event listeners to fix duration hover
+   * https://github.com/international-labour-organization/designsystem/issues/521
    *
-   * @return {Object} ReadMore A reference to the instance of the class
+   * @return {Object} Video A reference to the instance of the class
    * @chainable
    */
   enable() {
+    if (!this.Duration) return this;
+    this.Duration.addEventListener(EVENTS.MOUSEOVER, () =>
+      this.onDurationHover(true)
+    );
+    this.Duration.addEventListener(EVENTS.MOUSEOUT, () => {
+      this.onDurationHover(false);
+    });
+
     return this;
   }
-
   /**
    * Starts up videojs
    *
@@ -110,6 +147,23 @@ export default class Video {
         { type: this.element.dataset.vjsType, src: this.element.dataset.src },
       ],
     });
+
+    return this;
+  }
+
+  /**
+   * Controls duration hover
+   *
+   * @param {boolean} state - whether or not the duration is hovered
+   * @return {Object} Video A reference to the instance of the class
+   * @chainable
+   */
+  onDurationHover(state) {
+    if (!this.PlayButton) return this;
+    const className = `${this.controlsprefix}--play--hovered`;
+
+    if (this.PlayButton.classList.contains("vjs-playing")) return this;
+    this.PlayButton.classList.toggle(className, state);
 
     return this;
   }
