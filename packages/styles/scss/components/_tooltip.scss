@@ -8,6 +8,8 @@
   $arrow-width: calc(spacing(2) - px-to-rem(1));
 
   @include font-styles("body-xs");
+  font-family: $fonts-copy;
+  font-weight: 400;
   background: map-get($color, "tooltip", "default", "background");
   border: none;
   border-radius: px-to-rem(2px);
