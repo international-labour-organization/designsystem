@@ -21,18 +21,55 @@
   padding: spacing(2) spacing(4) spacing(3);
   position: absolute;
   visibility: hidden;
-  width: auto;
-  @include globaltransition("opacity");
+  width: max-content;
+  max-width: px-to-rem(180px);
+
+  &--long {
+    @include breakpoint("medium") {
+      max-width: px-to-rem(400px);
+    }
+  }
 
   &--fade {
     opacity: 1;
-    @include globaltransition("opacity");
   }
 
   &--visible {
     visibility: visible;
     z-index: 2;
     opacity: 1;
+  }
+
+  // Tooltip arrow styles
+  &--arrow,
+  &--arrow::before {
+    position: absolute;
+    visibility: hidden;
+    width: 10px;
+    height: 10px;
+    background: inherit;
+  }
+
+  &--arrow::before {
+    visibility: visible;
+    content: "";
+    transform: rotate(45deg);
+  }
+
+  &[data-popper-placement^="top"] > &--arrow {
+    bottom: -4px;
+  }
+
+  &[data-popper-placement^="bottom"] > &--arrow {
+    top: -4px;
+  }
+
+  &[data-popper-placement^="left"] > &--arrow {
+    right: -4px;
+  }
+
+  &[data-popper-placement^="right"] > &--arrow {
+    left: -4px;
   }
 
   &--wrapper {
@@ -53,143 +90,23 @@
     }
   }
 
-  &--arrow {
-    border-color: transparent;
-    border-right-color: transparent;
-    border-style: solid;
-    border-width: 0;
-    height: 0;
-    margin-top: -#{$arrow-width};
-    position: absolute;
-    width: 0;
-  }
-
-  &--alignment-top {
-    left: 0;
-    top: calc(-100% + 12px);
-
-    .ilo--tooltip--arrow {
-      border-top-color: map-get($color, "tooltip", "default", "background");
-      border-width: spacing(3) $arrow-width 0 $arrow-width;
-      bottom: -#{spacing(3)};
-      left: 50%;
-      margin-left: -#{$arrow-width};
-      top: auto;
-
-      &--placement-negative {
-        left: 10%;
-      }
-
-      &--placement-positive {
-        left: auto;
-        right: 10%;
-      }
-
-      &--placement-center {
-        left: 50%;
-      }
-    }
-  }
-
-  &--alignment-right {
-    left: calc(100% + 32px);
-    top: calc(50% - $arrow-width);
-
-    .ilo--tooltip--arrow {
-      border-right-color: map-get($color, "tooltip", "default", "background");
-      border-width: $arrow-width spacing(3) $arrow-width 0;
-      left: 0;
-      margin-left: -#{spacing(3)};
-      top: 50%;
-
-      &--placement-negative {
-        margin-top: 0;
-        top: 10%;
-      }
-
-      &--placement-positive {
-        top: auto;
-        bottom: 10%;
-      }
-
-      &--placement-center {
-        top: 50%;
-      }
-    }
-  }
-
-  &--alignment-left {
-    right: calc(100% + 32px);
-    top: calc(50% - $arrow-width);
-
-    .ilo--tooltip--arrow {
-      border-left-color: map-get($color, "tooltip", "default", "background");
-      border-width: $arrow-width 0 $arrow-width spacing(3);
-      left: auto;
-      margin-top: -#{$arrow-width};
-      right: -#{spacing(3)};
-      top: 50%;
-
-      &--placement-negative {
-        margin-top: 0;
-        top: 10%;
-      }
-
-      &--placement-positive {
-        top: auto;
-        bottom: 10%;
-      }
-
-      &--placement-center {
-        top: 50%;
-      }
-    }
-  }
-
-  &--alignment-bottom {
-    left: 0;
-    top: calc(100% + spacing(3));
-
-    .ilo--tooltip--arrow {
-      border-width: 0 $arrow-width spacing(3) $arrow-width;
-      left: 50%;
-      margin-left: -#{$arrow-width};
-      margin-top: -#{spacing(3)};
-      top: 0;
-      border-bottom-color: map-get($color, "tooltip", "default", "background");
-
-      &--placement-negative {
-        left: 10%;
-      }
-
-      &--placement-positive {
-        left: auto;
-        right: 10%;
-      }
-
-      &--placement-center {
-        left: 50%;
-      }
-    }
-  }
-
   &--dark {
     background: map-get($color, "tooltip", "dark", "background");
     color: map-get($color, "tooltip", "dark", "text");
 
-    &.ilo--tooltip--alignment-bottom .ilo--tooltip--arrow {
+    &.ilo--tooltip--arrow {
       border-bottom-color: map-get($color, "tooltip", "dark", "background");
     }
 
-    &.ilo--tooltip--alignment-top .ilo--tooltip--arrow {
+    &.ilo--tooltip--arrow {
       border-top-color: map-get($color, "tooltip", "dark", "background");
     }
 
-    &.ilo--tooltip--alignment-left .ilo--tooltip--arrow {
+    &.ilo--tooltip--arrow {
       border-left-color: map-get($color, "tooltip", "dark", "background");
     }
 
-    &.ilo--tooltip--alignment-right .ilo--tooltip--arrow {
+    &.ilo--tooltip--arrow {
       border-right-color: map-get($color, "tooltip", "dark", "background");
     }
   }
