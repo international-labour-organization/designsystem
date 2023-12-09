@@ -1,6 +1,9 @@
 // Set prefix on default styles
 @use "config";
 
+// Import our normalize styles
+@use "normalize";
+
 // Load the css resets
 @use "reset";
 
