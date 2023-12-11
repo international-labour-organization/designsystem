@@ -3,199 +3,177 @@
 @import "../animations";
 @import "../mixins";
 
+$row-1-lg: 64px;
+$avatar-size-lg: $row-1-lg;
+
 .ilo--profile {
-  max-width: 343px;
-  position: relative;
+  $c: &;
+
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  grid-template-rows: minmax($row-1-lg, auto) auto;
+  max-width: px-to-rem(343px);
+  width: 100%;
 
   &--avatar {
+    grid-row: 1;
     border-radius: 50%;
-    float: left;
-    width: px-to-rem(64px);
   }
 
-  &--contents--light {
-    .id {
-      margin-left: px-to-rem(75px);
-      padding-top: 5px;
-
-      &:first-of-type {
-        padding-bottom: 1px;
-      }
-
-      &:nth-of-type(2):last-of-type {
-        padding-top: 0;
-      }
-    }
-
-    .id:first-of-type:last-of-type,
-    .id:nth-of-type(2):last-of-type {
-      border-bottom: 2px solid $color-base-neutrals-lighter;
-      padding-bottom: 11px;
-    }
-
-    .id:first-of-type:last-of-type {
-      padding-top: 14px;
-    }
+  figcaption {
+    box-sizing: border-box;
+    grid-row: 1;
+    grid-column-end: -1;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: start;
   }
 
-  &--contents--dark {
-    .id {
-      margin-left: px-to-rem(75px);
-      padding-top: 5px;
+  &--figcaption--content {
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: start;
+    position: relative;
 
-      &:first-of-type {
-        padding-bottom: 1px;
-      }
-
-      &:nth-of-type(2):last-of-type {
-        padding-top: 0;
-      }
-    }
-
-    .id:first-of-type:last-of-type,
-    .id:nth-of-type(2):last-of-type {
+    &:after {
+      content: "";
+      position: absolute;
+      bottom: -12px;
+      width: 100%;
       border-bottom: 2px solid $color-base-neutrals-lighter;
-      padding-bottom: 11px;
-    }
-
-    .id:first-of-type:last-of-type {
-      padding-top: 14px;
     }
   }
 
   &--name {
-    display: block;
     font-family: $fonts-display;
-    font-weight: map-get($type, "weights", "label");
-    margin-left: 11px;
-    @include font-styles("body-small");
   }
 
   &--role {
-    display: block;
     font-family: $fonts-copy;
-    margin-left: 11px;
-    @include font-styles("body-xs");
   }
 
   &--description {
-    clear: both;
     font-family: $fonts-copy;
-    padding-top: 22px;
-    @include font-styles("body-xs");
+    grid-row: 2;
+    grid-column: 1 / -1;
   }
 
   &--link {
-    align-items: center;
-    clear: both;
-    color: map-get($color, "link", "text", "default");
-    display: inline-flex;
+    $link: &;
+
     font-family: $fonts-display;
-    font-weight: map-get($type, "weights", "section");
-    height: px-to-rem(56px);
-    text-decoration: none;
-    @include font-styles("body-small");
+    grid-column: 1 / -1;
 
-    span {
+    a {
+      text-decoration: none;
+      color: map-get($color, "link", "text", "default");
+      display: inline-block;
+    }
+
+    &--label {
+      display: flex;
+      flex-flow: row nowrap;
       align-items: center;
-      background-position: calc(100% - 10px) center;
-      background-repeat: no-repeat;
-      background-size: 24px 24px;
-      display: inline-flex;
-      height: 24px;
-      padding-right: 32px;
-      @include dataurlicon("arrowright", $color-link-text-default);
-    }
 
-    &:visited {
-      color: map-get($color, "link", "text", "visited");
+      &:after {
+        position: relative;
+        bottom: px-to-rem(1px);
+        height: px-to-rem(24px);
+        width: px-to-rem(24px);
+        margin-inline-start: px-to-rem(8px);
+        content: "";
+        @include dataurlicon("arrowright", $color-link-text-default);
 
-      span {
-        @include dataurlicon("arrowright", $color-link-text-visited);
-      }
-    }
-
-    &:active {
-      color: map-get($color, "link", "text", "active");
-      outline: none;
-
-      span {
-        @include dataurlicon("arrowright", $color-link-text-active);
-        background-color: map-get($color, "link", "background", "active");
-      }
-    }
-
-    &:hover,
-    &:focus {
-      background-color: $color-base-blue-light;
-      color: map-get($color, "link", "text", "hover");
-      outline: none;
-      @include globaltransition("color, background-color");
-
-      span {
-        @include dataurlicon("arrowright", $color-link-text-hover);
-      }
-    }
-  }
-
-  .ilo--profile--description + .ilo--profile--link {
-    margin-top: px-to-rem(8px);
-  }
-
-  .ilo--profile--role + .ilo--profile--link {
-    margin-top: px-to-rem(2px);
-  }
-
-  .ilo--profile--name + .ilo--profile--link {
-    margin-top: px-to-rem(18px);
-  }
-
-  .right-to-left & {
-    direction: rtl;
-
-    .ilo--profile--avatar {
-      float: right;
-    }
-
-    .ilo--profile--contents--light {
-      .id {
-        margin-left: auto;
-        margin-right: px-to-rem(75px);
-      }
-    }
-
-    .ilo--profile--contents--dark {
-      .id {
-        margin-left: auto;
-        margin-right: px-to-rem(75px);
-      }
-    }
-
-    .ilo--profile--link {
-      span {
-        background-position: 10px center;
-        padding-left: 32px;
-        padding-right: 0;
-        @include dataurlicon("arrowleft", $color-link-text-default);
-      }
-
-      &:visited {
-        span {
-          @include dataurlicon("arrowleft", $color-link-text-visited);
+        [dir="rtl"] & {
+          @include dataurlicon("arrowleft", $color-link-text-default);
         }
       }
+    }
 
-      &:active {
-        span {
-          @include dataurlicon("arrowleft", $color-link-text-active);
+    a:hover,
+    a:focus {
+      #{$link}--label {
+        color: map-get($color, "link", "text", "hover");
+        outline: none;
+
+        &:after {
+          @include dataurlicon("arrowright", $color-link-text-hover);
+
+          [dir="rtl"] & {
+            @include dataurlicon("arrowleft", $color-link-text-hover);
+          }
         }
       }
+    }
+  }
 
-      &:hover,
-      &:focus {
-        span {
-          @include dataurlicon("arrowleft", $color-link-text-hover);
+  &__theme {
+    &__dark {
+      color: $color-base-neutrals-lighter;
+
+      #{$c}--link {
+        &--label {
+          &:after {
+            @include dataurlicon("arrowright", $color-base-neutrals-lighter);
+
+            [dir="rtl"] & {
+              @include dataurlicon("arrowleft", $color-base-neutrals-lighter);
+            }
+          }
         }
+
+        a {
+          color: $color-base-neutrals-lighter;
+        }
+
+        a:hover,
+        a:focus {
+          #{$c}--link--label {
+            color: $brand-ilo-turquoise;
+            outline: none;
+
+            &:after {
+              @include dataurlicon("arrowright", $brand-ilo-turquoise);
+
+              [dir="rtl"] & {
+                @include dataurlicon("arrowleft", $brand-ilo-turquoise);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__size {
+    &__large {
+      #{$c}--avatar {
+        width: px-to-rem($avatar-size-lg);
+        height: px-to-rem($avatar-size-lg);
+        margin-inline-end: spacing(4);
+      }
+
+      #{$c}--name {
+        font-weight: map-get($type, "weights", "label");
+        @include font-styles("body-small");
+      }
+
+      #{$c}--role {
+        @include font-styles("body-xs");
+      }
+
+      #{$c}--description {
+        @include font-styles("body-xs");
+        padding-block-start: spacing(5);
+      }
+
+      #{$c}--link {
+        @include font-styles("body-small");
+        padding-block-start: spacing(6);
       }
     }
   }

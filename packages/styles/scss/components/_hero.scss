@@ -5,24 +5,32 @@
 .hero {
   $c: &;
 
+  // Additional offset to add for justify: offset
+  --added-offset: 0px;
+
   // Total offset from the edge of the window
-  $base-offset: calc((100vw - #{$layout-max-width}) / 2);
+  --base-offset: calc(((100vw - #{$layout-max-width}) / 2));
 
   // Card padding defaults to a fixed value. But it's a CSS variable
   // so that we can make it squeezy when the card is justified `start`
   // or `offset`
   --card-padding-start: #{$spacing-hero-card-padding-x-lg};
 
-  // Squishy padding makes it so we can have a flexible padding value
+  // Squeezy padding makes it so we can have a flexible padding value
   // that will be somewhere between 16px and the card's fixed padding
   // depending on how far the card is from the edge of the screen
   $squeezy-padding-start: max(
     16px,
-    min(#{$base-offset}, #{$spacing-hero-card-padding-x-lg})
+    min(
+      var(--base-offset) + var(--added-offset),
+      #{$spacing-hero-card-padding-x-lg}
+    )
   );
 
   // Card offset from the edge of the window minus the card's fixed padding
-  $card-offset: calc(#{$base-offset} - #{$spacing-hero-card-padding-x-lg});
+  $card-offset: calc(
+    var(--base-offset) - #{$spacing-hero-card-padding-x-lg} + var(--added-offset)
+  );
 
   // The height of the corner cut
   --corner-cut-height: #{$spacing-hero-card-corner-cut-height-sm};
@@ -30,13 +38,14 @@
   width: 100%;
   display: grid;
   position: relative;
-  grid-template-rows:
-    minmax($spacing-hero-image-max-height, 1fr)
-    $spacing-hero-tooltip-height
-    $spacing-hero-card-corner-cut-height-sm
-    auto;
   grid-template-columns: 1fr;
   overflow: hidden;
+  @include hero-grid-rows(1rem);
+
+  &--image {
+    display: grid;
+    @include hero-grid-rows();
+  }
 
   &__gap {
     &__transparent {
@@ -60,7 +69,8 @@
     display: none;
   }
 
-  &--figure {
+  &--background {
+    display: grid;
     background-color: map-get($color, "base", "blue", "light");
     position: relative;
     grid-area: 1 / 1 / 4 / 2;
@@ -166,6 +176,10 @@
         --col-1-lg: #{$card-offset};
       }
 
+      &__offset {
+        --added-offset: 109px;
+      }
+
       &__center {
         --col-1-lg: calc((100% - var(--card-width)) / 2);
         --col-4-lg: calc(
@@ -245,7 +259,7 @@
       }
     }
 
-    &--figure {
+    &--background {
       grid-area: 1 / 1 / 5 / 5;
 
       #{$c}__card-align__center & {
@@ -323,7 +337,14 @@
 
       #{$c}__card-align__bottom#{$c}__card-justify__start & {
         grid-area: 1 / 1 / 3 / 3;
+      }
 
+      #{$c}__card-align__bottom#{$c}__card-justify__offset & {
+        grid-area: 1 / 2 / 3 / 3;
+      }
+
+      #{$c}__card-align__bottom#{$c}__card-justify__start &,
+      #{$c}__card-align__bottom#{$c}__card-justify__offset & {
         #{$c}--caption--wrapper {
           @include caption-icon-wrapper(
             "right",
@@ -344,8 +365,7 @@
     }
   }
 
-  // Layout for RTL languages
-  .right-to-left & {
+  [dir="rtl"] & {
     &--caption {
       &--wrapper {
         @include caption-icon-wrapper(
@@ -353,120 +373,27 @@
           $spacing-hero-tooltip-width,
           $spacing-hero-tooltip-height
         );
-        position: absolute;
         right: 0;
+        position: absolute;
       }
     }
 
     @include breakpoint("large") {
-      &__card-justify {
-        &__start {
-          --col-1-lg: 1fr;
-          --col-2-lg: #{$spacing-hero-tooltip-width};
-          --col-3-lg: var(--card-width);
-          --col-4-lg: #{$card-offset};
-        }
+      &__card-align__bottom {
+        &#{$c}__card-justify__start,
+        &#{$c}__card-justify__offset {
+          #{$c}--caption--wrapper {
+            @include caption-icon-wrapper(
+              "left",
+              $spacing-hero-tooltip-width,
+              $spacing-hero-tooltip-height
+            );
 
-        &__offset {
-          --col-1-lg: 1fr;
-          --col-2-lg: #{$spacing-hero-tooltip-width};
-          --col-3-lg: var(--card-width);
-          --col-4-lg: #{$card-offset};
-        }
-
-        &__center {
-          --col-1-lg: calc(
-            ((100% - var(--card-width)) / 2) - #{$spacing-hero-tooltip-width}
-          );
-          --col-2-lg: #{$spacing-hero-tooltip-width};
-          --col-3-lg: var(--card-width);
-          --col-4-lg: calc((100% - var(--card-width)) / 2);
-        }
-      }
-
-      &__card-align {
-        &__center {
-          #{$c}--card {
-            grid-area: 3 / 3 / 4 / 4;
+            position: absolute;
+            left: initial;
+            right: 0;
+            bottom: 0;
           }
-
-          #{$c}--caption {
-            grid-area: 5 / 4 / 6 / 5;
-
-            &--wrapper {
-              right: 0;
-              left: initial;
-              position: absolute;
-            }
-          }
-        }
-
-        &__bottom {
-          #{$c}--caption {
-            grid-area: 4 / 4 / 5 / 5;
-
-            &--wrapper {
-              position: absolute;
-              right: 0;
-              bottom: 0;
-              left: initial;
-            }
-          }
-        }
-
-        &__bottom#{$c}__card-justify__start {
-          #{$c}--caption {
-            grid-area: 2 / 3 / 3 / 4;
-
-            &--wrapper {
-              @include caption-icon-wrapper(
-                "left",
-                $spacing-hero-tooltip-width,
-                $spacing-hero-tooltip-height
-              );
-
-              position: absolute;
-              left: initial;
-              right: 0;
-            }
-          }
-        }
-      }
-
-      &--card-offset {
-        grid-area: 3 / 4 / 6 / 5;
-
-        &:after {
-          right: initial;
-          left: -1px;
-        }
-      }
-
-      &--card {
-        grid-area: 3 / 3 / 6 / 4;
-      }
-
-      &--breadcrumbs-offset {
-        grid-area: 1 / 4 / 2 / 5;
-      }
-
-      &--breadcrumbs {
-        grid-area: 1 / 4 / 2 / 1;
-        flex-direction: row-reverse;
-      }
-
-      &--caption {
-        grid-area: 4 / 2 / 5 / 3;
-
-        &--wrapper {
-          right: 2px;
-          left: initial;
-
-          @include caption-icon-wrapper(
-            "left",
-            $spacing-hero-tooltip-width,
-            $spacing-hero-tooltip-height
-          );
         }
       }
     }

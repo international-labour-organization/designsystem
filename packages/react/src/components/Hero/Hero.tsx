@@ -18,7 +18,7 @@ const HeroImage: FC<ImageProps> = ({ url, alt }) => {
   const defaultSrc = sortedUrls[sortedUrls.length - 1].src;
 
   return (
-    <figure className="hero--figure">
+    <figure className="hero--image">
       <picture>
         {sortedUrls.map((img) => (
           <source
@@ -58,7 +58,9 @@ const Hero: FC<HeroProps> = ({
 
   return (
     <div className={heroClasses}>
-      {image ? <HeroImage {...image} /> : <div className="hero--figure" />}
+      <div className="hero--background">
+        {image && <HeroImage {...image} />}
+      </div>
       {breadcrumb && (
         <div className="hero--breadcrumbs">
           <div className="hero--breadcrumbs--wrapper">

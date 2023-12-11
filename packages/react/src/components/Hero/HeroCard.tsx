@@ -55,8 +55,8 @@ const HeroCard: FC<HeroCardProps> = ({
     <div className={heroCardClasses}>
       {eyebrow && <p className={eyebrowClass}>{eyebrow}</p>}
       <HeroCardTitle baseclass={baseClass} title={title} url={url} />
-      {datecopy && <p className={datecopyClass}>{datecopy}</p>}
       {intro && <p className={introClass}>{intro}</p>}
+      {datecopy && <p className={datecopyClass}>{datecopy}</p>}
       {socialmedia && <SocialMedia {...socialmedia} theme={theme} />}
     </div>
   );

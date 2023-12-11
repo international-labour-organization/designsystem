@@ -11,43 +11,30 @@
       --max-width: #{px-to-rem(375px)};
 
       border-bottom: px-to-rem(3px) solid $brand-ilo-grey-ui;
-      padding: px-to-rem(24px) px-to-rem(48px);
+      padding: spacing(10) spacing(6) spacing(12);
 
       @include cornercut(72px, 40px);
 
       @include breakpoint("large") {
-        padding: px-to-rem(40px) px-to-rem(56px);
+        padding: spacing(12) spacing(10) spacing(14);
       }
 
       &#{$self}__size {
         &__wide {
           --max-width: #{px-to-rem(856px)};
 
-          padding: px-to-rem(40px) px-to-rem(52px);
+          padding: spacing(12) spacing(10) spacing(14);
 
           @include breakpoint("medium") {
-            padding: px-to-rem(40px) px-to-rem(60px);
             @include cornercut(87px, 48px);
           }
         }
 
-        // &__standard {
-        //   padding: px-to-rem(40px) px-to-rem(52px);
-
-        //   @include breakpoint("medium") {
-        //     padding: px-to-rem(40px) px-to-rem(60px);
-        //   }
-        // }
-
         &__narrow {
           --max-width: #{px-to-rem(375px)};
 
-          padding: px-to-rem(24px) px-to-rem(48px);
+          padding: spacing(10) spacing(6) spacing(12);
           @include cornercut(72px, 40px);
-
-          @include breakpoint("medium") {
-            padding: px-to-rem(24px) px-to-rem(48px);
-          }
         }
       }
 

@@ -6,7 +6,6 @@
 .ilo--card {
   $self: &;
   $transition-timing: 150ms;
-
   box-sizing: border-box;
   position: relative;
   background-color: map-get($color, "base", "neutrals", "white");
@@ -17,10 +16,6 @@
 
   &__size__fluid {
     --max-width: 100% !important;
-  }
-
-  .right-to-left & {
-    text-align: right;
   }
 
   &__action:hover,
@@ -83,6 +78,10 @@
         z-index: 1;
       }
     }
+  }
+
+  &--wrap {
+    height: 100%;
   }
 
   &--wrapper {
@@ -190,8 +189,8 @@
   &--intro {
     color: $brand-ilo-grey-charcoal;
     @include font-styles("body-small");
-    @include textmargin("margin-bottom", 30px, "body-small", "copy", 0, 0);
     @include globaltransition("color");
+    margin-bottom: spacing(8);
 
     #{$self}--link:hover &,
     #{$self}--link:focus &,

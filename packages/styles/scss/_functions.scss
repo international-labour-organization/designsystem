@@ -49,17 +49,17 @@
 }
 
 // =========================================
-// Vertical Spacing
+// Spacing Helper
 //
-// ensure that everything increments by 0.5
-// @param {Number} $size - number of times to multiply $padding-base
-// @return {*} - desired size, rounded to nearest 0.5, multiplied by $padding-base, in rems
+// spacing will be calculated by multiples of 4
+// @param {Number} $size - number of times to multiply $padding-root, check tokens/spacing/base.json
+// @return {*} - desired size, rounded to nearest integer, multiplied by $padding-base, in rems
 // =========================================
 
 @function spacing($size) {
-  $scaled: $size * $padding-base;
-  @if ($size % 0.5 != 0) {
-    $scaled: round($size) * $padding-base;
+  $scaled: $size * $spacing-root;
+  @if ($size % 1 != 0) {
+    $scaled: round($size) * $spacing-root;
   }
   @return px-to-rem($scaled);
 }

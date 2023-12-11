@@ -6,13 +6,9 @@
 .ilo--tag-set {
   list-style: none;
 
-  .right-to-left & {
-    direction: rtl;
-  }
-
   &__item {
     display: inline-block;
-    margin: map-get($spacing, "horizontal-rule");
+    margin: spacing(1);
   }
 }
 
@@ -25,11 +21,14 @@
   display: inline-block;
   font-family: map-get($fonts, "display");
   font-weight: 500;
-  padding: px-to-rem(7px) px-to-rem(map-get($spacing, "ui-padding-sm"))
-    px-to-rem(5px) px-to-rem(map-get($spacing, "ui-padding-sm"));
+  padding: spacing(2) spacing(3);
   text-decoration: none;
   $self: &;
   @include globaltransition("color, background-color, border-color");
+  max-width: $widths-tags-max-width;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 
   &--active {
     background: map-get($color, "tag", "background", "active");
@@ -73,7 +72,7 @@
     cursor: pointer;
     display: none;
     opacity: 0;
-    padding-right: 36px;
+    padding-right: spacing(9);
     position: relative;
     visibility: hidden;
 

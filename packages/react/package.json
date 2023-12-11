@@ -1,6 +1,6 @@
 {
   "name": "@ilo-org/react",
-  "version": "0.8.11",
+  "version": "0.9.0",
   "description": "React components for the ILO's Design System",
   "keywords": [
     "ui_patterns",
@@ -143,6 +143,7 @@
     "screenfull": "^5.2.0",
     "storybook": "7.5.0-alpha.1",
     "storybook-addon-performance": "^0.17.1",
+    "storybook-addon-rtl-direction": "^0.0.19",
     "ts-dedent": "^2.2.0",
     "ts-jest": "^29.1.1",
     "tslib": "^2.3.1",

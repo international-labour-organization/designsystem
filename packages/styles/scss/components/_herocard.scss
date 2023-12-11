@@ -15,10 +15,6 @@
     padding-inline-start: var(--card-padding-start);
   }
 
-  .right-to-left & {
-    direction: rtl;
-  }
-
   &--title-link {
     color: inherit;
     text-decoration: none;
@@ -78,7 +74,7 @@
       $spacing-hero-card-corner-cut-height-sm
     );
 
-    .right-to-left & {
+    [dir="rtl"] & {
       @include cornercut(
         $spacing-hero-card-corner-cut-width-sm,
         $spacing-hero-card-corner-cut-height-sm,
@@ -92,7 +88,7 @@
         $spacing-hero-card-corner-cut-height-lg
       );
 
-      .right-to-left & {
+      [dir="rtl"] & {
         @include cornercut(
           $spacing-hero-card-corner-cut-width-lg,
           $spacing-hero-card-corner-cut-height-lg,
