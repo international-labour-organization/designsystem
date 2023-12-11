@@ -38,6 +38,7 @@ const Hero: FC<HeroProps> = ({
   align = "baseline",
   cardSize = "small",
   posterSize = "large",
+  theme = "dark",
   image,
   breadcrumb,
   heroCard,
@@ -48,26 +49,32 @@ const Hero: FC<HeroProps> = ({
   const alignClass = `${baseClass}__card-align__${align}`;
   const cardSizeClass = `${baseClass}__card-size__${cardSize}`;
   const posterSizeClass = `${baseClass}__poster-size__${posterSize}`;
+  const themeClass = `${baseClass}__card-theme__${theme}`;
+
   const heroClasses = classnames(
     baseClass,
     justifyClass,
     alignClass,
     cardSizeClass,
-    posterSizeClass
+    posterSizeClass,
+    themeClass
   );
-
   return (
     <div className={heroClasses}>
       <div className="hero--background">
         {image && <HeroImage {...image} />}
       </div>
       {breadcrumb && (
-        <div className="hero--breadcrumbs">
-          <div className="hero--breadcrumbs--wrapper">
-            <Breadcrumb {...breadcrumb} />
+        <>
+          <div className="hero--breadcrumbs-offset" />
+          <div className="hero--breadcrumbs">
+            <div className="hero--breadcrumbs--wrapper">
+              <Breadcrumb {...breadcrumb} />
+            </div>
           </div>
-        </div>
+        </>
       )}
+      <div className="hero--card-offset"></div>
       <div className="hero--card">
         <HeroCard {...heroCard} />
       </div>
