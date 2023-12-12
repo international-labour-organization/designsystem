@@ -11,6 +11,11 @@
   // Total offset from the edge of the window
   --base-offset: calc(((100vw - #{$layout-max-width}) / 2));
 
+  // Breadcrumb offset. This is used directly by the breadcrumb component
+  // Ensures the Breadcrumb aligns to the starting edge of a 1300px content
+  // container
+  --breadcrumb-padding: max(var(--base-offset), #{spacing(4)});
+
   // Card padding defaults to a fixed value. But it's a CSS variable
   // so that we can make it squeezy when the card is justified `start`
   // or `offset`
@@ -255,14 +260,8 @@
       }
     }
 
-    &--breadcrumbs-offset {
-      grid-area: 1 / 1 / 2 / 2;
-      background-color: $color-base-neutrals-white;
-      z-index: 1;
-    }
-
     &--breadcrumbs {
-      grid-area: 1 / 2 / 2 / 5;
+      grid-area: 1 / 1 / 2 / 5;
       z-index: 1;
       display: flex;
       flex-flow: row nowrap;
