@@ -214,6 +214,7 @@
         #{$c}--card-offset {
           background-color: map-get($color, "base", "blue", "dark");
           position: relative;
+          box-shadow: 0.3px 0 0 0 map-get($color, "base", "blue", "dark");
         }
 
         &[class*="semi-transparent"] {
@@ -222,6 +223,11 @@
               map-get($color, "hero", "card", "dark", "background"),
               $opacity-semi-transparent
             );
+            box-shadow: 0.3px 0 0 0
+              rgba(
+                map-get($color, "hero", "card", "dark", "background"),
+                $opacity-semi-transparent
+              );
           }
         }
       }
@@ -229,6 +235,8 @@
       &__light {
         #{$c}--card-offset {
           background: map-get($color, "hero", "card", "light", "background");
+          box-shadow: 0.3px 0 0 0
+            map-get($color, "hero", "card", "light", "background");
         }
 
         &[class*="semi-transparent"] {
@@ -237,6 +245,11 @@
               map-get($color, "hero", "card", "light", "background"),
               $opacity-semi-transparent
             );
+            box-shadow: 0.3px 0 0 0
+              rgba(
+                map-get($color, "hero", "card", "light", "background"),
+                $opacity-semi-transparent
+              );
           }
         }
       }
@@ -276,21 +289,9 @@
       z-index: 0;
       position: relative;
 
-      // A band-aid that prevents artifacts from appearing
-      // between the card and the card offset in Chrome
-      &::after {
-        content: "";
-        position: absolute;
-        height: 100%;
-        width: 3px;
-        right: -1px;
-        background-color: inherit;
-        z-index: 1;
-      }
-
       #{$c}__card-justify__offset &,
       #{$c}__card-justify__center & {
-        background-color: transparent;
+        background: transparent !important;
       }
 
       #{$c}__card-align__center & {
