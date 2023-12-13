@@ -5,6 +5,7 @@
 .ilo--accordion {
   $transition-timing: 500ms;
   $scroll-max-height: 300px;
+  margin-right: spacing(1);
 
   &--button {
     display: flex;
