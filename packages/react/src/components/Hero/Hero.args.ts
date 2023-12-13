@@ -2,6 +2,7 @@ import { HeroProps } from "./Hero.props";
 import { defaultArgs } from "../SocialMedia";
 import { HeroCardProps } from "./HeroCard.props";
 import { ImageProps } from "../Image/Image.props";
+import { BreadcrumbProps } from "../Breadcrumb/Breadcrumb.props";
 
 const lightArticleCard: HeroCardProps = {
   title: "Does Artificial Intelligence threaten decent work?",
@@ -55,8 +56,35 @@ const heroImage: ImageProps = {
   ],
 };
 
+const heroBreadCrumb: BreadcrumbProps = {
+  home: {
+    indented: false,
+    label: "Home",
+    url: "/",
+  },
+  links: [
+    {
+      label: "Link One",
+      url: "https://www.ilo.org/",
+    },
+    {
+      label: "Link Two",
+      url: "https://www.ilo.org/",
+    },
+    {
+      label: "Link Three",
+      url: "https://www.ilo.org/",
+    },
+    {
+      label: "Link Four",
+      url: "https://www.ilo.org/",
+    },
+  ],
+};
+
 const standard = {
   image: heroImage,
+  breadcrumb: heroBreadCrumb,
   heroCard: darkPortalCard,
 };
 
