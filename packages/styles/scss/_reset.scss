@@ -117,7 +117,6 @@ body {
   line-height: 1;
 }
 
-ol,
 ul {
   list-style: none;
 }
@@ -149,6 +148,12 @@ html {
 select {
   -webkit-appearance: none;
   -moz-appearance: none;
+}
+
+// Reset border-radius on iOS Safari
+input,
+textarea {
+  border-radius: 0;
 }
 
 *,

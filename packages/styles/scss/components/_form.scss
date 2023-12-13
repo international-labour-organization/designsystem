@@ -3,9 +3,10 @@
 @import "../mixins";
 
 .ilo--form {
-  $gap: 32px;
+  $gap: spacing(8);
   $c: &;
 
+  box-sizing: border-box;
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;

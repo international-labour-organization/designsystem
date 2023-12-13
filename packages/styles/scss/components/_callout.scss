@@ -8,7 +8,7 @@
   $self: &;
 
   &--collapse:not(.ilo--callout--open) {
-    max-height: 78px;
+    max-height: 64px;
     overflow: hidden;
   }
 
@@ -22,31 +22,30 @@
   }
 
   &--sidebar {
-    padding: px-to-rem($spacing-padding-3 + 2) px-to-rem(12px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: spacing(5) spacing(2);
     width: px-to-rem(40px);
+
+    #{$self}--icon {
+      margin: spacing(1);
+    }
   }
 
   &--content {
-    padding: px-to-rem($spacing-padding-3 + 2) px-to-rem($spacing-padding-3 - 2)
-      px-to-rem($spacing-padding-3);
+    padding: spacing(6);
     width: 100%;
-  }
-
-  &--copy {
-    @include font-styles("body-xs");
-
-    &:not(:last-child) {
-      margin-bottom: px-to-rem($spacing-padding-3);
-    }
+    font-size: px-to-rem(14.93px);
   }
 
   &--header {
     display: flex;
     justify-content: space-between;
-    padding: 0 0 px-to-rem(24px);
+    padding-bottom: spacing(3);
   }
 
-  &--headline {
+  &--title {
     @include font-styles("nav-bold-b");
 
     font-family: $fonts-display;
@@ -62,7 +61,7 @@
     cursor: pointer;
     font-family: $fonts-display;
     font-weight: 500;
-    padding-right: 36px;
+    padding-right: spacing(8);
     position: relative;
 
     &--icon {
@@ -73,16 +72,16 @@
       display: inline-block;
       height: 24px;
       position: absolute;
-      right: -3px;
-      top: 50%;
+      right: 0;
+      top: 11px;
       transform: translateY(-50%) rotate(0);
       transition: transform 225ms ease-out;
-      width: 23px;
+      width: 24px;
     }
   }
 
   &--footer {
-    padding: px-to-rem(24px) 0 0 0;
+    padding-top: spacing(5);
   }
 
   .icon {

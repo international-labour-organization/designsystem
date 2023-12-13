@@ -10,12 +10,20 @@
     &__stat {
       --max-width: #{px-to-rem(343px)};
 
+      @include breakpoint("medium", true) {
+        --max-width: 100%;
+      }
+
       border-bottom: px-to-rem(3px) solid $brand-ilo-purple;
-      padding: px-to-rem(24px) px-to-rem(40px) px-to-rem(22px);
+      padding: spacing(10) spacing(6) spacing(8);
       position: relative;
       width: 100%;
 
       @include cornercut(72px, 40px);
+
+      [dir="rtl"] & {
+        @include cornercut(72px, 40px, left);
+      }
 
       &#{$self}__color {
         &__blue {
@@ -37,12 +45,10 @@
 
       #{$self}--content {
         display: flex;
-        flex-wrap: wrap;
+        flex-flow: column;
+        align-items: flex-start;
+        justify-content: flex-start;
         height: 100%;
-
-        .right-to-left & {
-          flex-direction: row-reverse;
-        }
       }
 
       #{$self}--title {
@@ -67,9 +73,16 @@
         width: 100%;
       }
 
+      #{$self}--source {
+        display: flex;
+        flex: auto;
+        flex-flow: column;
+        justify-content: flex-end;
+        align-items: flex-start;
+      }
+
       .ilo--link {
         @include font-styles("image-credit");
-        align-self: flex-end;
       }
     }
   }

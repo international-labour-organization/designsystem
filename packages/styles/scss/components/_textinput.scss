@@ -18,13 +18,11 @@
   font-family: $fonts-copy;
   font-weight: map-get($type, "weights", "section");
   @include font-styles("label-medium");
-  height: px-to-rem(
-    map-get($spacing, "formelements", "input", "default", "height")
-  );
-  @include spacingvalues("margin", "input", "formelements");
+  height: px-to-rem(48px);
+  margin: spacing(0);
   outline: none;
-  @include spacingvalues("padding", "input", "formelements");
-  width: map-get($spacing, "formelements", "input", "default", "width");
+  padding: spacing(4) spacing(3);
+  width: 100%;
 
   &:focus {
     background-color: map-get(
@@ -35,7 +33,7 @@
       "background"
     );
     @include bordervalues("input", "formelements", "focus");
-    padding-left: calc($spacing-formelements-input-default-padding-left - 1px);
+    padding-left: spacing(3);
     outline: none;
   }
 
@@ -53,13 +51,6 @@
       "error",
       "background"
     );
-  }
-
-  &:invalid {
-    @include bordervalues("input", "formelements", "invalid");
-  }
-
-  &__error {
     @include bordervalues("input", "formelements", "error");
   }
 }

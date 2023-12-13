@@ -1,4 +1,4 @@
-checkbox:
+radio:
   namespace: Components/Forms
   use: "@components/radio/radio.twig"
   label: Radio

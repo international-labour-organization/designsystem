@@ -42,16 +42,6 @@
           },
           "color": { "value": "{color.base.neutrals.medium}" }
         },
-        "invalid": {
-          "background": { "value": "{color.base.neutrals.white}" },
-          "border": {
-            "bottom": { "value": "{color.base.neutrals.light}" },
-            "left": { "value": "{color.base.yellow}" },
-            "right": { "value": "{color.base.neutrals.light}" },
-            "top": { "value": "{color.base.neutrals.light}" }
-          },
-          "color": { "value": "{color.base.neutrals.medium}" }
-        },
         "disabled": {
           "background": { "value": "{color.base.neutrals.white}" },
           "border": {

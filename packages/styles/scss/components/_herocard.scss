@@ -10,11 +10,9 @@
   padding: $spacing-hero-card-padding-y-sm $spacing-hero-card-padding-x-sm;
 
   @include breakpoint("large") {
-    padding: $spacing-hero-card-padding-y-lg $spacing-hero-card-padding-x-lg;
-  }
-
-  .right-to-left & {
-    direction: rtl;
+    padding-block: $spacing-hero-card-padding-y-lg;
+    padding-inline-end: $spacing-hero-card-padding-x-lg;
+    padding-inline-start: var(--card-padding-start);
   }
 
   &--title-link {
@@ -76,7 +74,7 @@
       $spacing-hero-card-corner-cut-height-sm
     );
 
-    .right-to-left & {
+    [dir="rtl"] & {
       @include cornercut(
         $spacing-hero-card-corner-cut-width-sm,
         $spacing-hero-card-corner-cut-height-sm,
@@ -90,7 +88,7 @@
         $spacing-hero-card-corner-cut-height-lg
       );
 
-      .right-to-left & {
+      [dir="rtl"] & {
         @include cornercut(
           $spacing-hero-card-corner-cut-width-lg,
           $spacing-hero-card-corner-cut-height-lg,

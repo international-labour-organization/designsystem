@@ -11,9 +11,13 @@
       --max-width: #{px-to-rem(301px)};
 
       border-bottom: px-to-rem(3px) solid $brand-ilo-grey-ui;
-      padding: px-to-rem(24px) px-to-rem(40px);
+      padding: spacing(10) spacing(6) spacing(8);
 
-      @include cornercut(73px, 40px);
+      @include cornercut(72px, 40px);
+
+      [dir="rtl"] & {
+        @include cornercut(72px, 40px, left);
+      }
 
       [class$="profile--contents--light"] * {
         color: $color-base-neutrals-dark;
@@ -27,14 +31,17 @@
       &:focus,
       &:focus-within {
         @include card-drop-shadow;
+        @include globaltransition(border-color);
+
+        border-color: $brand-ilo-blue;
 
         [class*="profile--contents"] * {
           color: $color-base-blue-medium;
         }
       }
 
-      @include breakpoint("medium") {
-        padding: px-to-rem(32px) px-to-rem(40px);
+      @include breakpoint("medium", true) {
+        --max-width: 100%;
       }
 
       &#{$self}__size {
@@ -42,20 +49,16 @@
         &__fluid {
           --max-width: #{px-to-rem(523px)};
 
-          padding: px-to-rem(32px) px-to-rem(40px);
-
-          @include breakpoint("medium") {
-            padding: px-to-rem(32px) px-to-rem(40px);
-          }
+          padding: spacing(10) spacing(8) spacing(8);
         }
 
         &__narrow {
           --max-width: #{px-to-rem(301px)};
 
-          padding: px-to-rem(24px) px-to-rem(40px);
+          padding: spacing(10) spacing(6) spacing(8);
 
-          @include breakpoint("medium") {
-            padding: px-to-rem(24px) px-to-rem(40px);
+          @include breakpoint("medium", true) {
+            --max-width: 100%;
           }
 
           #{$self}--title {

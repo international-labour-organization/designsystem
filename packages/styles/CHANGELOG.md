@@ -1,5 +1,106 @@
 # @ilo-org/styles
 
+## 0.12.0
+
+### Minor Changes
+
+- ed548bcfc: Truncate text of breadcrumbs when it exceeds 40 chars
+- bf1ec0843: Truncate long text in tags
+
+### Patch Changes
+
+- 34c8c9a8f: Refactor RTL style using dir in Breadcrumb
+- 05a5a4b84: Refactor RTL style using dir in image and caption
+- cf4d43446: added hover effect for anchor item inside indented linked list
+- e8cec8dfc: Refactor RTL style using dir in linklist and fix style bug
+- 045602383: Hero caption should appear above the hero card when justify is set to offset
+- 5e051fc7a: corrected promo card spacing
+- d74847eff: Refactor RTL style using dir in cards
+- b04dd21bb: Refactor RTL style using dir in navigation
+- 060748c0f: Refactor rtl style using dir in text area
+- ff62947c3: Refactor RTL style using dir in dropdown
+- 02a0e177e: Use dir="rtl" to manage RTL layouts in Hero and correctly position RTL Hero Caption
+- a010a5077: reworked media components with new spacing utility
+- 9b960abc2: Update Detail Card spacing
+- 55f0c47aa: Added chained hover effect for video play button
+- 30b275924: Support rtl in statcard
+- 690efdabb: Refactor rtl style using dir in table of contents
+- e48c3cdbd: reworked spacing values for content category and fix design bugs.
+- 01c4126c2: reworked spacing for user interface and transition components
+- 309733cdd: reworked spacing values for form category and fix design bugs.
+- 2b02101ef: Refactor rtl to use dir in richtext
+- 4a5afb00e: refatored bare padding values with new spacing tokens for card components
+- aa4dce006: Refactor RTL style in tag
+- 1794fc434: Fixed hover state styling in tab button
+- c885bf0cd: reduced play button size for ended video
+- ea4ac05ea: rewroked spacing for navigation components
+- 3be0a12ac: reduced padding for accordion inner panel
+- f0dbaa608: Update intro spacing for all cards
+- b976f7221: Fix ol showing icon instead of numbers
+- ca463b9b7: added full width on mobile viewport for affected cards
+- 6d089ba7f: Set box-sizing in fieldsets
+- ec4cec224: Refactor RTL style using dir in seachfield
+- a8ce5d3fc: Make sure form elements have box-sizing: border-box
+- bec744d2e: Refactor rtl to use dir in social media
+- 6be769d3f: Refactor rtl to use dir in video
+- 5df8f748a: fixed text input invalid state
+- ee17a3bd2: Top spacing should be removed in hero card when there is no image
+- cfba6422c: Make sure Breadcrumb shows first link when condensed with ellipses
+- 03d0b6549: reworked spacing for feedback components
+- b972abe2e: Fix bug where long Hero titles would stretch the Hero Card when set to justify start, ignoring the size property of the card.
+- 1e58f9c7d: Allow added offset for Hero Card when justify is set to offset
+- f0e5b51b9: Add blue border on Text Card hover
+- 76db527a0: Refactor RTL style using dir in tabs
+- 70c645779: Refactor RTL style using dir in herocard
+- 86189a0d7: Update card crop shadows
+- Updated dependencies [4522e79de]
+- Updated dependencies [bf1ec0843]
+- Updated dependencies [ccdb35c99]
+- Updated dependencies [5df8f748a]
+- Updated dependencies [ee17a3bd2]
+  - @ilo-org/themes@0.7.0
+
+## 0.11.2
+
+### Patch Changes
+
+- 9b1d93031: Fix various styling issues with the Profile.
+- 632a16fcf: Prevent horizontal scrollbar from appearing in Tab content in some browsers
+- b8e8265ce: Fix nav logo no appearing in Firefox
+- 7dedac6dd: Fix Callout styles
+- 8d912f712: Make the accordion function properly inside a modal window. This also smoothens animations and simplifies the accordion styles.
+- 50ed7febf: Align source to the bottom of Stat Cards
+- 44e42762f: fixed input border-radius on iOS Safari
+- Updated dependencies [1f7525b0d]
+  - @ilo-org/fonts@0.1.2
+
+## 0.11.1
+
+### Patch Changes
+
+- Updated dependencies [78f48eff5]
+- Updated dependencies [03b3c26e4]
+  - @ilo-org/fonts@0.1.1
+
+## 0.11.0
+
+### Minor Changes
+
+- b7fcf3426: Data Card dataset field takes an optional `cta` argument that renders a list of secondary buttons with possible headline
+
+### Patch Changes
+
+- 27624a076: Correct spacing in Data Card
+
+## 0.10.6
+
+### Patch Changes
+
+- 266671491: Hero Card and Breadcrumbs get their padding-inline-start value from a CSS variable calculated in the Hero
+- 244fae9db: Prevent artifact from appearing between the Hero Card and the card offset space in Chrome
+- 1a6d0671f: Align Hero Card content with main body content when `justify` is set to `start` or `offset`
+- 371faf0fb: Fix alignment of Hero Card content in RTL layouts
+
 ## 0.10.5
 
 ### Patch Changes

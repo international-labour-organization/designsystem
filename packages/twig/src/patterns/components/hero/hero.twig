@@ -3,11 +3,11 @@
 {% set theme = theme|default(herocard.theme) %}
 {% set background = background|default(herocard.background) %}
 
-<div class="hero hero__card-justify__{{ justify }} hero__poster-size__{{ postersize }} hero__card-size__{{ cardsize }} hero__card-align__{{ align }} hero__card-theme__{{ theme }} hero__card-background__{{ background }}">
-	<figure class="hero--figure">
+<div class="hero {% if gap %} hero__gap__{{ gap }} {% endif %} hero__card-justify__{{ justify }} hero__poster-size__{{ postersize }} hero__card-size__{{ cardsize }} hero__card-align__{{ align }} hero__card-theme__{{ theme }} hero__card-background__{{ background }}">
+	<figure class="hero--background">
 		{% block hero_image %}
 			{% if image %}
-				<picture>
+				<picture class="hero--image">
 					{% for img in image.url|reverse %}
 						{% if loop.last == false  %}
 							<source srcset="{{img.src}}" media="(min-width: {{img.breakpoint}}px)">

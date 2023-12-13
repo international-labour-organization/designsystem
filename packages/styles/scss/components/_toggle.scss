@@ -11,13 +11,9 @@
   width: var(--toggle-width);
   height: var(--toggle-height);
 
-  --base-toggle-width: #{px-to-rem(
-      map-get($spacing, "formelements", "toggle", "base", "width")
-    )};
+  --base-toggle-width: #{px-to-rem(46px)};
 
-  --base-toggle-height: #{px-to-rem(
-      map-get($spacing, "formelements", "toggle", "base", "height")
-    )};
+  --base-toggle-height: #{px-to-rem(24px)};
 
   &__size__small {
     --toggle-width: var(--base-toggle-width);

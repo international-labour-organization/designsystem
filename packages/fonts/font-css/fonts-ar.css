@@ -1,22 +1,37 @@
-/* --------------------------- */
-/* -------- Noto Sans -------- */
-/* --------------------------- */
+/* ---------------------------------- */
+/* -------- Noto Sans Arabic -------- */
+/* ---------------------------------- */
 
 /* --- Noto Sans Normal --- */
 
 @font-face {
   font-family: "Noto Sans";
-  src: url("../fonts/Noto_Sans_Arabic/static/NotoSansArabic/NotoSansArabic-Regular.ttf")
+  src: url("../assets/Noto_Sans_Arabic/NotoSansArabic-Regular.ttf")
     format("truetype");
+  src: url("../assets/Noto_Sans_Arabic/NotoSansArabic-Regular.eot?#iefix")
+      format("embedded-opentype"),
+    url("../assets/Noto_Sans_Arabic/NotoSansArabic-Regular.woff2")
+      format("woff2"),
+    url("../assets/Noto_Sans_Arabic/NotoSansArabic-Regular.woff") format("woff"),
+    url("../assets/Noto_Sans_Arabic/NotoSansArabic-Regular.ttf")
+      format("truetype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 
+/* -- Noto Sans Regualr Also gets used for Italic in Arabic */
 @font-face {
   font-family: "Noto Sans";
-  src: url("../fonts/Noto_Sans_Arabic/static/NotoSansArabic/NotoSansArabic-Regular.ttf")
+  src: url("../assets/Noto_Sans_Arabic/NotoSansArabic-Regular.ttf")
     format("truetype");
+  src: url("../assets/Noto_Sans_Arabic/NotoSansArabic-Regular.eot?#iefix")
+      format("embedded-opentype"),
+    url("../assets/Noto_Sans_Arabic/NotoSansArabic-Regular.woff2")
+      format("woff2"),
+    url("../assets/Noto_Sans_Arabic/NotoSansArabic-Regular.woff") format("woff"),
+    url("../assets/Noto_Sans_Arabic/NotoSansArabic-Regular.ttf")
+      format("truetype");
   font-weight: normal;
   font-style: italic;
   font-display: swap;
@@ -26,18 +41,29 @@
 
 @font-face {
   font-family: "Noto Sans";
-  src: url("../fonts/Noto_Sans_Arabic/static/NotoSansArabic/NotoSansArabic-Bold.ttf")
+  src: url("../assets/Noto_Sans_Arabic/NotoSansArabic-Bold.ttf")
     format("truetype");
-  font-weight: 700;
+  src: url("../assets/Noto_Sans_Arabic/NotoSansArabic-Bold.eot?#iefix")
+      format("embedded-opentype"),
+    url("../assets/Noto_Sans_Arabic/NotoSansArabic-Bold.woff2") format("woff2"),
+    url("../assets/Noto_Sans_Arabic/NotoSansArabic-Bold.woff") format("woff"),
+    url("../assets/Noto_Sans_Arabic/NotoSansArabic-Bold.ttf") format("truetype");
+  font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 
+/* -- Noto Sans Bold also gets used for Bold Italic in Arabic */
 @font-face {
   font-family: "Noto Sans";
-  src: url("../fonts/Noto_Sans_Arabic/static/NotoSansArabic/NotoSansArabic-Bold.ttf")
+  src: url("../assets/Noto_Sans_Arabic/NotoSansArabic-Bold.ttf")
     format("truetype");
-  font-weight: 700;
+  src: url("../assets/Noto_Sans_Arabic/NotoSansArabic-Bold.eot?#iefix")
+      format("embedded-opentype"),
+    url("../assets/Noto_Sans_Arabic/NotoSansArabic-Bold.woff2") format("woff2"),
+    url("../assets/Noto_Sans_Arabic/NotoSansArabic-Bold.woff") format("woff"),
+    url("../assets/Noto_Sans_Arabic/NotoSansArabic-Bold.ttf") format("truetype");
+  font-weight: normal;
   font-style: italic;
   font-display: swap;
 }

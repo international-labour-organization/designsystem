@@ -48,10 +48,6 @@
     row-gap: $gap-size;
     margin: auto;
     width: 100%;
-
-    .right-to-left & {
-      flex-direction: row-reverse;
-    }
   }
 
   .ilo--card,

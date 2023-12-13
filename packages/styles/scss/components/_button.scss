@@ -20,8 +20,8 @@
 
     .ilo--icon {
       height: 100%;
-      max-height: calc($spacing-icons-icon-height-lg * 2);
-      max-width: calc($spacing-icons-icon-height-lg * 2);
+      max-height: px-to-rem(32px);
+      max-width: px-to-rem(32px);
       position: absolute;
       width: 100%;
     }
@@ -29,24 +29,24 @@
     &.icon__position--left {
       .link__label,
       .button__label {
-        padding-left: $spacing-boxpadding-button-icon-large-left;
+        padding-left: spacing(12);
       }
 
       .ilo--icon {
-        left: calc($spacing-icons-icon-padding-lg - 9px);
-        top: calc($spacing-boxpadding-button-icon-large-top - 3px);
+        left: px-to-rem(13px);
+        top: px-to-rem(7px);
       }
     }
 
     &.icon__position--right {
       .link__label,
       .button__label {
-        padding-right: $spacing-boxpadding-button-icon-large-right;
+        padding-right: spacing(12);
       }
 
       .ilo--icon {
-        right: calc($spacing-icons-icon-padding-lg - 9px);
-        top: calc($spacing-boxpadding-button-icon-large-top - 3px);
+        right: px-to-rem(13px);
+        top: px-to-rem(7px);
       }
     }
 
@@ -60,7 +60,7 @@
   &--large {
     .link__label,
     .button__label {
-      @include boxpadding("button", "large");
+      padding: spacing(3) spacing(6);
       @include font-styles("button-large");
     }
 
@@ -78,38 +78,38 @@
   &--medium {
     .link__label,
     .button__label {
-      @include boxpadding("button", "medium");
+      padding: spacing(2) spacing(5);
       @include font-styles("button-medium");
     }
 
     &.icon {
       .ilo--icon {
-        max-height: calc($spacing-icons-icon-height-m * 2);
-        max-width: calc($spacing-icons-icon-height-m * 2);
+        max-height: px-to-rem(30px);
+        max-width: px-to-rem(30px);
         position: absolute;
       }
 
       &.icon__position--left {
         .link__label,
         .button__label {
-          padding-left: $spacing-boxpadding-button-icon-medium-left;
+          padding-left: spacing(11);
         }
 
         .ilo--icon {
-          left: calc($spacing-icons-icon-padding-m - 9px);
-          top: calc($spacing-boxpadding-button-icon-medium-top - 6px);
+          left: px-to-rem(10px);
+          top: px-to-rem(3px);
         }
       }
 
       &.icon__position--right {
         .link__label,
         .button__label {
-          padding-right: $spacing-boxpadding-button-icon-medium-right;
+          padding-right: spacing(11);
         }
 
         .ilo--icon {
-          right: calc($spacing-icons-icon-padding-m - 9px);
-          top: calc($spacing-boxpadding-button-icon-medium-top - 6px);
+          right: px-to-rem(10px);
+          top: px-to-rem(3px);
         }
       }
     }
@@ -128,38 +128,38 @@
   &--small {
     .link__label,
     .button__label {
-      @include boxpadding("button", "small");
+      padding: spacing(1) spacing(4);
       @include font-styles("button-small");
     }
 
     &.icon {
       .ilo--icon {
-        max-height: calc($spacing-icons-icon-height-sm * 2);
-        max-width: calc($spacing-icons-icon-height-sm * 2);
+        max-height: px-to-rem(28px);
+        max-width: px-to-rem(28px);
         position: absolute;
       }
 
       &.icon__position--left {
         .link__label,
         .button__label {
-          padding-left: $spacing-boxpadding-button-icon-small-left;
+          padding-left: spacing(9);
         }
 
         .ilo--icon {
-          left: calc($spacing-icons-icon-padding-sm - 9px);
-          top: calc($spacing-boxpadding-button-icon-small-top - 4px);
+          left: px-to-rem(6px);
+          top: px-to-rem(1px);
         }
       }
 
       &.icon__position--right {
         .link__label,
         .button__label {
-          padding-right: $spacing-boxpadding-button-icon-small-right;
+          padding-right: spacing(9);
         }
 
         .ilo--icon {
-          right: calc($spacing-icons-icon-padding-sm - 9px);
-          top: calc($spacing-boxpadding-button-icon-small-top - 4px);
+          right: px-to-rem(6px);
+          top: px-to-rem(1px);
         }
       }
     }

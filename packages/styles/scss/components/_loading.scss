@@ -36,8 +36,8 @@
         background-size: contain;
         content: "";
         display: block;
-        height: px-to-rem($spacing-padding-12);
-        width: px-to-rem($spacing-padding-12);
+        height: px-to-rem(96px);
+        width: px-to-rem(96px);
       }
     }
   }
@@ -65,9 +65,9 @@
         background-size: contain;
         content: "";
         display: block;
-        height: px-to-rem($spacing-padding-3);
-        margin-right: px-to-rem($spacing-padding-1-5);
-        width: px-to-rem($spacing-padding-3);
+        height: px-to-rem(24px);
+        margin-right: spacing(3);
+        width: px-to-rem(24px);
       }
     }
 
@@ -79,9 +79,9 @@
         background-size: contain;
         content: "";
         display: block;
-        height: px-to-rem($spacing-padding-3);
-        margin-right: px-to-rem($spacing-padding-1-5);
-        width: px-to-rem($spacing-padding-3);
+        height: px-to-rem(24px);
+        margin-right: spacing(3);
+        width: px-to-rem(24px);
       }
     }
   }

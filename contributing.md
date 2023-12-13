@@ -115,6 +115,18 @@ Build both the `react` and `twig` libraries in one command. Before you run this,
 pnpm build:libs
 ```
 
+You can also build the libraries separately (in addition to each of their respective dependencies) with the following commands.
+
+```bash
+pnpm twig:build:lib
+```
+
+```bash
+pnpm react:build:lib
+```
+
+This is handy if you only need to build the library for a given project, but what to avoid have to build the Storybook too.
+
 ### React and Twig Storybooks
 
 Build React Storybook and dependent packages
