@@ -5,7 +5,7 @@
 
 .ilo--card {
   $self: &;
-  $transition-timing: 150ms;
+  $transition-timing: 250ms;
   box-sizing: border-box;
   position: relative;
   background-color: map-get($color, "base", "neutrals", "white");
@@ -86,6 +86,7 @@
 
   &--wrapper {
     max-width: var(--max-width);
+    transition: filter $transition-timing ease-out;
 
     &:hover,
     &:focus,
