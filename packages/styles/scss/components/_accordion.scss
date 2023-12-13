@@ -72,6 +72,10 @@
     &[aria-expanded="false"] {
       @include dataurlicon("add", $color-ux-labels-actionable);
     }
+
+    [dir="rtl"] & {
+      background-position: calc(0% + px-to-rem(6px)) center;
+    }
   }
 
   &--panel {
