@@ -1,0 +1,50 @@
+- Truncate text of breadcrumbs when it exceeds 40 chars
+- Added new config values for spacing
+- Truncate long text in tags
+- Refactor RTL style using dir in Breadcrumb
+- Refactor RTL style using dir in image and caption
+- Adjust padding-9 value by 1px
+- added hover effect for anchor item inside indented linked list
+- Refactor RTL style using dir in linklist and fix style bug
+- Hero caption should appear above the hero card when justify is set to offset
+- corrected promo card spacing
+- Refactor RTL style using dir in cards
+- Refactor RTL style using dir in navigation
+- Refactor rtl style using dir in text area
+- Refactor RTL style using dir in dropdown
+- Use dir="rtl" to manage RTL layouts in Hero and correctly position RTL Hero Caption
+- reworked media components with new spacing utility
+- Update Detail Card spacing
+- Added chained hover effect for video play button
+- Implemented functionality for external links to open in new browser tab
+- Support rtl in statcard
+- Refactor rtl style using dir in table of contents
+- reworked spacing values for content category and fix design bugs.
+- reworked spacing for user interface and transition components
+- reworked spacing values for form category and fix design bugs.
+- Refactor rtl to use dir in richtext
+- refatored bare padding values with new spacing tokens for card components
+- Refactor RTL style in tag
+- Fixed hover state styling in tab button
+- reduced play button size for ended video
+- rewroked spacing for navigation components
+- reduced padding for accordion inner panel
+- Update intro spacing for all cards
+- Fix ol showing icon instead of numbers
+- added full width on mobile viewport for affected cards
+- Set box-sizing in fieldsets
+- Refactor RTL style using dir in seachfield
+- Make sure form elements have box-sizing: border-box
+- Refactor rtl to use dir in social media
+- Refactor rtl to use dir in video
+- fixed text input invalid state
+- Top spacing should be removed in hero card when there is no image
+- Make sure Breadcrumb shows first link when condensed with ellipses
+- reworked spacing for feedback components
+- Fix bug where long Hero titles would stretch the Hero Card when set to justify start, ignoring the size property of the card.
+- Remove link from multicard when its not available
+- Allow added offset for Hero Card when justify is set to offset
+- Add blue border on Text Card hover
+- Refactor RTL style using dir in tabs
+- Refactor RTL style using dir in herocard
+- Update card crop shadows

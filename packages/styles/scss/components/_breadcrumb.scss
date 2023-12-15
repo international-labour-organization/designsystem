@@ -14,7 +14,7 @@
     justify-content: flex-start;
     padding-block: spacing(4);
     padding-inline-end: 0;
-    padding-inline-start: var(--card-padding-start);
+    padding-inline-start: var(--breadcrumb-padding);
     position: relative;
     &.context--menu {
       padding: 0;
