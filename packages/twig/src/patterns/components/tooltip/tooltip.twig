@@ -7,8 +7,8 @@
 	{% if not icon or icon == "false" %}
 		{{ children|raw }}
 	{% endif %}
-	<span class="{{prefix}}--tooltip {{prefix}}--tooltip--{{theme}}" data-alignment="left" id={{tooltipId}}>
-		<span class="{{prefix}}--tooltip--arrow {{prefix}}--tooltip--arrow--placement-negative" data-placement="negative" role="presentation"></span>
+	<span data-id={{tooltipId}} id="tooltip" role="tooltip" class="{{prefix}}--tooltip {{prefix}}--tooltip--{{theme}}" data-alignment="left" >
+		<span data-popper-arrow class="{{prefix}}--tooltip--arrow {{prefix}}--tooltip--arrow--placement-negative" data-placement="negative" role="presentation"></span>
 		{{label}}
 	</span>
 </div>
