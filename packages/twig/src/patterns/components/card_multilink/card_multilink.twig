@@ -17,6 +17,9 @@
       %}
     </div>
     <div class="{{prefix}}--card--content">
+      {% if eyebrow %}
+        <p class="{{prefix}}--card--eyebrow">{{eyebrow}}</p>
+      {% endif %}
       {% if title %}
         <h5 class="{{prefix}}--card--title">{{title}}</h5>
       {% endif %}

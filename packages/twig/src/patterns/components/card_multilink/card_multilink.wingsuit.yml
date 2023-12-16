@@ -12,6 +12,11 @@ multilinkcard:
       preview:
         human: 20 September 2022
         unix: 1670389200
+    eyebrow:
+      type: string
+      label: Eyebrow
+      description: Eyebrow copy
+      preview: "Podcast"
     image:
       type: object
       label: Image

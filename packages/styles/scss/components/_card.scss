@@ -146,14 +146,7 @@
   &--eyebrow {
     color: $brand-ilo-purple;
     @include font-styles("body-small");
-    @include textmargin(
-      "margin-bottom",
-      16px,
-      "headline-5",
-      "display",
-      "body-small",
-      "copy"
-    );
+    margin-bottom: spacing(3);
     @include globaltransition("color");
 
     #{$self}--link:hover &,
