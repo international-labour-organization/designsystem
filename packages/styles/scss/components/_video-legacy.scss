@@ -1,0 +1,795 @@
+@use "../tokens" as *;
+@use "../functions" as *;
+@import "../mixins";
+
+.ilo--video {
+  position: relative;
+  width: 100%;
+
+  &--wrapper {
+    line-height: 0;
+    position: relative;
+    width: 100%;
+  }
+
+  &--img {
+    line-height: 0;
+  }
+
+  &--caption {
+    border-left: px-to-rem(3px) solid $color-ux-caption-border-left;
+    color: $color-font-caption;
+    font-weight: 400;
+    margin-top: spacing(4);
+    padding-left: spacing(2);
+    @include font-styles("image-caption");
+  }
+
+  &:focus,
+  .vjs-tech:focus {
+    outline: none;
+  }
+
+  &--element,
+  .vjs-tech {
+    height: auto;
+    object-fit: cover;
+    width: 100%;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  &--player {
+    position: relative;
+
+    &:focus {
+      outline: none;
+    }
+
+    &.youtube {
+      height: auto;
+      max-width: 100%;
+      overflow: hidden;
+      padding-bottom: 56.25%;
+      position: relative;
+    }
+
+    iframe {
+      height: 100%;
+      left: 0;
+      position: absolute;
+      top: 0;
+      width: 100%;
+    }
+  }
+
+  &--poster,
+  .vjs-poster {
+    display: none;
+    object-fit: cover;
+    height: 100%;
+    left: 0;
+    max-height: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    width: 100%;
+
+    &.show {
+      display: block;
+    }
+
+    & img,
+    & source {
+      height: auto;
+      left: 50%;
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+    }
+  }
+
+  &--controls,
+  .vjs-control-bar {
+    bottom: 0;
+    color: $color-ux-labels-darkbg;
+    display: flex;
+    justify-content: flex-start;
+    left: 0;
+    height: px-to-rem(40px);
+    opacity: 0;
+    position: absolute;
+    transition: opacity 150ms ease-out;
+    width: 100%;
+
+    &.notplayed {
+      bottom: auto;
+      opacity: 1;
+      top: 0;
+
+      @include breakpoint("large") {
+        flex-direction: column;
+        height: 122px;
+        width: px-to-rem(4px);
+      }
+    }
+
+    [dir="rtl"] & {
+      justify-content: flex-end;
+    }
+
+    button span {
+      @include isVisuallyHidden();
+    }
+
+    &--play,
+    &--pause,
+    .vjs-play-control,
+    .vjs-big-play-button {
+      background-color: $color-ux-video-controls-default-background;
+      border: none;
+      cursor: pointer;
+      height: 100%;
+      order: 1;
+      width: px-to-rem(40px);
+      -webkit-appearance: none;
+      -moz-appearance: none;
+    }
+
+    &.notplayed {
+      @include breakpoint("large") {
+        .vjs-play-control,
+        .vjs-big-play-button {
+          order: 1;
+          height: px-to-rem(48px);
+          width: px-to-rem(48px);
+        }
+
+        .ilo--video--controls--play,
+        .ilo--video--controls--pause {
+          order: 1;
+          height: px-to-rem(80px);
+          width: px-to-rem(80px);
+        }
+      }
+    }
+
+    &--play,
+    .vjs-play-control:not(.vjs-playing),
+    .vjs-big-play-button {
+      @include iconbutton(
+        "play",
+        px-to-rem(48px),
+        px-to-rem(48px),
+        $color-ux-video-controls-default-icon
+      );
+
+      &.ilo--video--controls--play--hovered,
+      &:hover,
+      &:focus {
+        background-color: $color-ux-video-controls-hover-background;
+        @include iconbutton(
+          "play",
+          px-to-rem(48px),
+          px-to-rem(48px),
+          $color-ux-video-controls-hover-icon
+        );
+
+        & ~ .vjs-duration,
+        & ~ .ilo--video--controls--duration {
+          background-color: $color-ux-video-controls-hover-background;
+          color: $color-ux-video-controls-hover-icon;
+        }
+      }
+
+      &.vjs-paused,
+      &.vjs-ended {
+        @include iconbutton(
+          "play",
+          px-to-rem(24px),
+          px-to-rem(24px),
+          $color-ux-video-controls-default-icon
+        );
+
+        &:hover,
+        &:focus {
+          background-color: $color-ux-video-controls-hover-background;
+          @include iconbutton(
+            "play",
+            px-to-rem(24px),
+            px-to-rem(24px),
+            $color-ux-video-controls-hover-icon
+          );
+        }
+      }
+    }
+
+    &:not(.notplayed) {
+      .ilo--video--controls--play {
+        background-size: 24px 24px;
+      }
+    }
+
+    &--pause,
+    .vjs-playing {
+      @include iconbutton(
+        "pause",
+        px-to-rem(24px),
+        px-to-rem(24px),
+        $color-ux-video-controls-default-icon
+      );
+
+      &:hover,
+      &:focus {
+        background-color: $color-ux-video-controls-hover-background;
+        @include iconbutton(
+          "pause",
+          px-to-rem(24px),
+          px-to-rem(24px),
+          $color-ux-video-controls-hover-icon
+        );
+      }
+    }
+
+    &--duration,
+    .vjs-duration {
+      background-color: $color-ux-video-controls-default-background;
+      color: $color-ux-video-controls-default-icon;
+      display: none;
+      height: 100%;
+      font-weight: 700;
+      margin-left: px-to-rem(2px);
+      order: 2;
+      padding-top: px-to-rem(9px);
+      text-align: center;
+      width: px-to-rem(80px);
+
+      &.ilo--video--controls--duration--hovered,
+      &:hover,
+      &:focus {
+        background-color: $color-ux-video-controls-hover-background;
+        color: $color-ux-video-controls-hover-icon;
+
+        // react-player play button,  https://github.com/international-labour-organization/designsystem/issues/521
+        & ~ .ilo--video--controls--play {
+          background-color: $color-ux-video-controls-hover-background;
+          @include iconbutton(
+            "play",
+            px-to-rem(48px),
+            px-to-rem(48px),
+            $color-ux-video-controls-hover-icon
+          );
+        }
+      }
+
+      @include font-styles("label-small");
+
+      &.show {
+        display: block;
+      }
+    }
+
+    &.notplayed {
+      @include breakpoint("large") {
+        .vjs-duration {
+          height: px-to-rem(40px);
+          margin-left: 0;
+          margin-top: 2px;
+          width: px-to-rem(48px);
+        }
+
+        .ilo--video--controls--duration {
+          height: px-to-rem(40px);
+          margin-left: 0;
+          margin-top: 2px;
+          width: px-to-rem(80px);
+        }
+      }
+    }
+
+    .vjs-progress-holder {
+      position: relative;
+      width: 96%;
+    }
+
+    &--progress,
+    .vjs-progress-control {
+      background-color: $color-ux-video-controls-default-background;
+      display: none;
+      flex-grow: 1;
+      height: 100%;
+      margin-left: 2px;
+      order: 3;
+      position: relative;
+
+      &.show,
+      .vjs-has-started & {
+        display: block;
+      }
+
+      &-playhead {
+        height: 100%;
+        left: 2%;
+        opacity: 0;
+        padding: 0;
+        position: absolute;
+        top: 0;
+        width: 96%;
+        z-index: 20;
+      }
+
+      &-current,
+      .vjs-play-progress {
+        height: 8px;
+        left: 2%;
+        position: absolute;
+        top: px-to-rem(16px);
+        width: 96%;
+        z-index: 15;
+        -webkit-appearance: none;
+
+        &::-moz-progress-bar {
+          background: $color-ux-video-controls-hover-background;
+          border-radius: 0;
+        }
+
+        &::-webkit-progress-bar {
+          background: transparent;
+        }
+
+        &::-webkit-progress-value {
+          background: $color-ux-video-controls-hover-background;
+          border-radius: 0;
+        }
+      }
+
+      .vjs-play-progress {
+        background: $color-ux-video-controls-hover-background;
+
+        .vjs-time-tooltip {
+          display: none;
+        }
+      }
+
+      div[data-start] {
+        background: $color-base-neutrals-light;
+        height: 8px;
+        left: 2%;
+        position: absolute;
+        top: 0;
+        width: 96%;
+        z-index: 15;
+      }
+
+      &-played,
+      .vjs-mouse-display {
+        display: none;
+        position: absolute;
+        top: -40px;
+        z-index: 20;
+      }
+
+      &-loaded,
+      .vjs-load-progress {
+        height: 8px;
+        left: 2%;
+        position: absolute;
+        top: px-to-rem(16px);
+        width: 96%;
+        z-index: 10;
+        -webkit-appearance: none;
+
+        &::-moz-progress-bar {
+          background: $color-base-neutrals-light;
+          border-radius: 0;
+        }
+
+        &::-webkit-progress-bar {
+          background: transparent;
+        }
+
+        &::-webkit-progress-value {
+          background: $color-base-neutrals-light;
+          border-radius: 0;
+        }
+      }
+
+      &:hover,
+      &:focus {
+        .vjs-play-progress {
+          position: relative;
+
+          .vjs-time-tooltip {
+            align-items: center;
+            background-color: $color-ux-credit-background;
+            display: flex;
+            height: px-to-rem(32px);
+            justify-content: center;
+            right: 0;
+            position: absolute;
+            bottom: calc(300% + 12px);
+            width: 70px;
+            @include font-styles("image-credit");
+
+            &:after {
+              background-position: top left;
+              background-repeat: no-repeat;
+              background-size: contain;
+              @include dataurlicon(
+                "equilateraltriangle",
+                $color-base-neutrals-dark
+              );
+              content: "";
+              height: px-to-rem(12px);
+              position: absolute;
+              left: calc(50% - 6px);
+              bottom: -#{px-to-rem(12px)};
+              width: px-to-rem(12px);
+            }
+          }
+        }
+
+        .ilo--video--controls--progress-played-container {
+          position: absolute;
+          left: 2%;
+          top: 0;
+          width: 96%;
+        }
+
+        .ilo--video--controls--progress-played {
+          --playhead: 0%;
+          align-items: center;
+          background-color: $color-ux-credit-background;
+          display: flex;
+          height: px-to-rem(32px);
+          justify-content: center;
+          left: calc(var(--playhead) - 34px);
+          position: absolute;
+          bottom: calc(300% + 12px);
+          width: 70px;
+          @include font-styles("image-credit");
+
+          &:after {
+            background-position: top left;
+            background-repeat: no-repeat;
+            background-size: contain;
+            @include dataurlicon(
+              "equilateraltriangle",
+              $color-base-neutrals-dark
+            );
+            content: "";
+            height: px-to-rem(12px);
+            position: absolute;
+            left: calc(50% - 6px);
+            bottom: -#{px-to-rem(12px)};
+            width: px-to-rem(12px);
+          }
+        }
+      }
+    }
+
+    &--volume,
+    .vjs-volume-panel {
+      border-bottom: 1px solid;
+      bottom: 0;
+      display: none;
+      flex-direction: column;
+      height: 140px;
+      margin-left: 2px;
+      order: 4;
+      position: relative;
+      width: 40px;
+
+      &.show,
+      .vjs-has-started & {
+        display: block;
+      }
+
+      &:hover,
+      &:focus {
+        .vjs-volume-control {
+          display: block;
+        }
+      }
+    }
+
+    &--showvolume,
+    .vjs-mute-control {
+      background-color: $color-ux-video-controls-default-background;
+      border: none;
+      cursor: pointer;
+      height: px-to-rem(40px);
+      margin-top: 0;
+      position: relative;
+      width: px-to-rem(40px);
+      z-index: 10;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      @include iconbutton(
+        "volume",
+        px-to-rem(24px),
+        px-to-rem(24px),
+        $color-ux-video-controls-default-icon
+      );
+
+      &:hover,
+      &:focus {
+        background-color: $color-ux-video-controls-hover-background;
+        @include iconbutton(
+          "volume",
+          px-to-rem(24px),
+          px-to-rem(24px),
+          $color-ux-video-controls-hover-icon
+        );
+      }
+
+      &.muted,
+      &[title="Unmute"] {
+        @include iconbutton(
+          "muted",
+          px-to-rem(24px),
+          px-to-rem(24px),
+          $color-ux-video-controls-default-icon
+        );
+
+        &:hover,
+        &:focus {
+          background-color: #ebf5fd;
+          @include iconbutton(
+            "muted",
+            px-to-rem(24px),
+            px-to-rem(24px),
+            $color-ux-video-controls-hover-icon
+          );
+        }
+      }
+    }
+
+    &--setvolume,
+    .vjs-volume-control {
+      background: $color-ux-video-controls-hover-background;
+      border-left: 3px solid rgb(184, 196, 204);
+      display: none;
+      height: px-to-rem(40px);
+      order: 1;
+      padding: 0;
+      position: absolute;
+      transform: rotate(270deg);
+      transform-origin: -4px -4px;
+      top: 9px;
+      width: px-to-rem(138px);
+    }
+
+    &--setvolume {
+      border-left: 8px solid $color-ux-video-controls-hover-background;
+      border-right: 8px solid $color-ux-video-controls-hover-background;
+      width: px-to-rem(122px);
+      -webkit-appearance: none;
+
+      &.show {
+        display: block;
+      }
+
+      &-container {
+        left: -2px;
+        position: absolute;
+        top: -2px;
+      }
+
+      &::-webkit-slider-runnable-track {
+        background-color: $color-ux-video-controls-hover-icon;
+        border: none;
+        box-shadow: none;
+        height: 4px;
+        cursor: pointer;
+      }
+
+      &::-webkit-slider-thumb {
+        background-color: $color-ux-video-controls-hover-icon;
+        border: none;
+        border-radius: 50%;
+        box-shadow: none;
+        cursor: pointer;
+        height: 16px;
+        margin-top: -5px;
+        width: 16px;
+        -webkit-appearance: none;
+      }
+    }
+
+    .vjs-volume-panel.vjs-hover .vjs-volume-control {
+      align-items: center;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+    }
+
+    .vjs-volume-bar {
+      height: 4px;
+      position: relative;
+      width: calc(100% - 26px);
+    }
+
+    .vjs-mouse-display,
+    .vjs-volume-level {
+      height: 4px;
+      left: 0;
+      position: absolute;
+      top: 0;
+    }
+
+    .vjs-mouse-display {
+      background-color: $color-base-neutrals-light;
+      width: 100%;
+    }
+
+    .vjs-volume-level {
+      background-color: $color-ux-video-controls-hover-icon;
+
+      &:before {
+        background: $color-ux-video-controls-hover-icon;
+        border-radius: 50%;
+        content: "";
+        height: 16px;
+        margin: 0;
+        padding: 0;
+        position: absolute;
+        right: -16px;
+        top: 50%;
+        width: 16px;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+      }
+    }
+
+    .vjs-volume-tooltip {
+      display: none;
+    }
+
+    &--fullscreen,
+    .vjs-fullscreen-control {
+      background-color: $color-ux-video-controls-default-background;
+      border: none;
+      cursor: pointer;
+      display: none;
+      height: 100%;
+      margin-left: 2px;
+      order: 5;
+      width: px-to-rem(40px);
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      @include iconbutton(
+        "fullscreen",
+        px-to-rem(24px),
+        px-to-rem(24px),
+        $color-ux-video-controls-default-icon
+      );
+
+      &:hover,
+      &:focus {
+        background-color: #ebf5fd;
+        @include iconbutton(
+          "fullscreen",
+          px-to-rem(24px),
+          px-to-rem(24px),
+          $color-ux-video-controls-hover-icon
+        );
+      }
+
+      &.show {
+        display: block;
+      }
+    }
+  }
+
+  .vjs-control-bar {
+    bottom: 0;
+    left: -5px;
+    width: calc(100% + 5px);
+  }
+
+  &--element:not(.vjs-has-started) {
+    .vjs-control-bar {
+      bottom: auto;
+      left: -5px;
+      opacity: 1;
+      top: 0;
+
+      @include breakpoint("large") {
+        flex-direction: column;
+        height: 158px;
+        justify-content: flex-start;
+        left: 0;
+        width: 80px;
+
+        [dir="rtl"] & {
+          left: auto;
+          right: 0;
+        }
+      }
+    }
+
+    .vjs-duration {
+      display: block;
+    }
+
+    @include breakpoint("large") {
+      .vjs-duration {
+        height: px-to-rem(40px);
+        margin-left: 0;
+        margin-top: 2px;
+        width: px-to-rem(80px);
+      }
+
+      .vjs-play-control {
+        order: 1;
+        height: px-to-rem(80px);
+        width: px-to-rem(80px);
+      }
+    }
+  }
+
+  .vjs-youtube {
+    padding-bottom: 56%;
+
+    &:not(.vjs-has-started) .vjs-poster {
+      display: block;
+    }
+  }
+
+  .vjs-control:focus,
+  .vjs-control *:focus {
+    outline: none;
+  }
+
+  .vjs-has-started {
+    .vjs-control:not(.vjs-duration):not(.vjs-volume-control) {
+      display: block;
+    }
+  }
+
+  &:hover,
+  &:focus,
+  &:focus-within {
+    .ilo--video--controls,
+    .vjs-control-bar {
+      opacity: 1;
+      transition: opacity 150ms ease-out;
+    }
+  }
+
+  // TODO: style using loading component
+  .vjs-loading-spinner {
+    display: none;
+  }
+
+  .vjs-time-divider,
+  .vjs-remaining-time,
+  .vjs-current-time,
+  .vjs-control-text {
+    display: none !important;
+  }
+}
+
+.ilo--video--container {
+  position: relative;
+}
+
+[dir="rtl"] {
+  .ilo--video--caption {
+    border-left: none;
+    border-right: 3px solid #b8c4cc;
+    padding-left: 0;
+    padding-right: spacing(2);
+  }
+
+  .ilo--credit {
+    left: auto;
+    right: 0;
+  }
+}
