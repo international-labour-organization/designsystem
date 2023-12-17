@@ -314,3 +314,12 @@
     }
   }
 }
+
+[dir="rtl"] {
+  .ilo--newvideo--caption {
+    border-left: none;
+    border-right: 3px solid #b8c4cc;
+    padding-left: 0;
+    padding-right: spacing(2);
+  }
+}
