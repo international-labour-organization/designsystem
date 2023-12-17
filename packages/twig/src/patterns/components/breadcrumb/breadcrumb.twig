@@ -3,6 +3,8 @@
 #}
 {% set lastlink = links|last %}
 {% set firstlink = links|first %}
+{% set length = links|length %}
+
 <nav class="{{prefix}}--breadcrumb{% if className %} {{className}}{% endif %}" data-prefix="{{prefix}}" data-loadcomponent="Breadcrumb">
 	<ol class="{{prefix}}--breadcrumb--items">
 		<li class="{{prefix}}--breadcrumb--item home">
@@ -10,11 +12,14 @@
 				<span class="{{prefix}}--breadcrumb--link--label">{{home.label}}</span>
 			</a>
 		</li>
-		<li class="{{prefix}}--breadcrumb--item first">
-			<a class="{{prefix}}--breadcrumb--link" href="{{firstlink.url}}">
-				<span class="{{prefix}}--breadcrumb--link--label">{{firstlink.label}}</span>
-			</a>
-		</li>
+		{% if length %}
+			{% if length > 1 %}
+				<li class="{{prefix}}--breadcrumb--item first">
+					<a class="{{prefix}}--breadcrumb--link" href="{{firstlink.url}}">
+						<span class="{{prefix}}--breadcrumb--link--label">{{firstlink.label}}</span>
+					</a>
+				</li>
+			{% endif %}
 		<li class="{{prefix}}--breadcrumb--item--context">
 			<ul class="{{prefix}}--breadcrumb--items context--menu">
 				{% for link in links %}
@@ -28,10 +33,11 @@
 				{% endfor %}
 			</ul>
 		</li>
-		<li class="{{prefix}}--breadcrumb--item final">
-			<a class="{{prefix}}--breadcrumb--link" href="{{lastlink.url}}">
-				<span class="{{prefix}}--breadcrumb--link--label">{{lastlink.label}}</span>
-			</a>
-		</li>
+			<li class="{{prefix}}--breadcrumb--item final">
+				<a class="{{prefix}}--breadcrumb--link" href="{{lastlink.url}}">
+					<span class="{{prefix}}--breadcrumb--link--label">{{lastlink.label}}</span>
+				</a>
+			</li>
+		{% endif %}
 	</ol>
 </nav>
