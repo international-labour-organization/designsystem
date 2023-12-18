@@ -1,5 +1,30 @@
 # @ilo-org/twig
 
+## 0.14.0
+
+### Minor Changes
+
+- df7080c80: Used popper library to handle tooltip
+- 6fe60e0d6: Add a `gap` setting to the hero card that allows the developer to set an optional background color on the entire Hero,
+  which fills the "gap" between the bottom of the Hero Card and the bottom of the hero image when `align` is set to `bottom` or `baseline`. Options are `transparent`, `white`, `light` and `dark`.
+
+### Patch Changes
+
+- b014e9af0: Fix Breadcrumb incorrectly assuming there will always be at least two links
+- c54ce9923: Fix Breadcrumb spacing vis-a-vis Hero
+- a78b32be4: Add eyebrow to multilink card
+- 9ed7b873d: build(deps-dev): bump postcss from 8.4.21 to 8.4.31
+- Updated dependencies [df7080c80]
+- Updated dependencies [c5eaabd55]
+- Updated dependencies [720825342]
+- Updated dependencies [6f86e7a94]
+- Updated dependencies [94b03b9be]
+- Updated dependencies [c54ce9923]
+- Updated dependencies [6fe60e0d6]
+- Updated dependencies [9ed7b873d]
+- Updated dependencies [c173ec9f8]
+  - @ilo-org/styles@0.13.0
+
 ## 0.13.0
 
 ### Minor Changes

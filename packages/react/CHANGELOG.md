@@ -1,5 +1,21 @@
 # @ilo-org/react
 
+## 0.9.1
+
+### Patch Changes
+
+- afb53cabb: Sync hero with twig implementation
+- Updated dependencies [df7080c80]
+- Updated dependencies [c5eaabd55]
+- Updated dependencies [720825342]
+- Updated dependencies [6f86e7a94]
+- Updated dependencies [94b03b9be]
+- Updated dependencies [c54ce9923]
+- Updated dependencies [6fe60e0d6]
+- Updated dependencies [9ed7b873d]
+- Updated dependencies [c173ec9f8]
+  - @ilo-org/styles@0.13.0
+
 ## 0.9.0
 
 ### Minor Changes
