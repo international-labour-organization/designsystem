@@ -1,138 +1,119 @@
-import { FC, useState, useRef } from "react";
+import React, { FC, useState, useRef } from "react";
 import classNames from "classnames";
 import useGlobalSettings from "../../hooks/useGlobalSettings";
 import { TooltipProps } from "./Tooltip.props";
-import ReactDOM from "react-dom";
+import { createPopper, Instance as PopperInstance } from "@popperjs/core";
 
 const Tooltip: FC<TooltipProps> = ({
   className,
   children,
   icon,
   label,
+  iconTheme,
   theme,
   id,
 }) => {
   const { prefix } = useGlobalSettings();
   const baseClass = `${prefix}--tooltip`;
   const [isVisible, setIsVisible] = useState<boolean>(false);
-  const [position, setPosition] = useState<{ x: number; y: number }>({
-    x: 0,
-    y: 0,
-  });
-  const [arrowPlacement, setArrowPlacement] = useState<string>("center");
-  const [arrowAlignment, setArrowAlignment] = useState<string>("left");
+  const [longTooltip, setLongToolTip] = useState<boolean>(false);
+  const [popperInstance, setPopperInstance] = useState<PopperInstance | null>(
+    null
+  );
 
-  const tooltipRef = useRef(null);
+  const tooltipRef = useRef<HTMLDivElement>(null);
 
   const tooltipClasses = classNames(className, {
     [baseClass]: true,
     [`${baseClass}--${theme}`]: theme,
-    [`${baseClass}--alignment-${arrowAlignment}`]: arrowAlignment,
     [`${baseClass}--visible`]: isVisible,
+    [`${baseClass}--long`]: longTooltip,
   });
 
-  const tooltipArrowClasses = classNames(className, {
-    [`${baseClass}--arrow`]: true,
-    [`${baseClass}--arrow--placement-${arrowPlacement}`]: arrowPlacement,
+  const tooltipArrowClasses = classNames(
+    `${baseClass}--arrow`,
+    `${baseClass}--arrow--placement-negative`
+  );
+
+  const iconClasses = classNames(className, `${baseClass}--wrapper`, {
+    [`${baseClass}--wrapper__icon ${baseClass}--wrapper__icon__theme__${theme}`]:
+      icon,
+    [`${baseClass}--wrapper__icon__theme__${theme}`]: iconTheme,
   });
 
-  const handleOnMouseOver: React.MouseEventHandler<HTMLDivElement> &
-    React.FocusEventHandler<HTMLDivElement> = (e) => {
-    // get hovered element reference
-    const target = e.currentTarget;
+  const setMaxWidthAndClass = (tooltip: HTMLDivElement) => {
+    const tooltipText = tooltip.textContent || tooltip.innerText;
+    const textLength = tooltipText.trim().length;
 
-    if (target) {
-      const rect = target.getBoundingClientRect();
-      setIsVisible(true);
-      postMouseOver(rect);
+    if (textLength > 50) {
+      setLongToolTip(true);
     }
   };
 
-  const postMouseOver = (hoverRect: any) => {
-    // position the tooltip after showing it
-    let placement = "center";
-    let alignment = "left";
+  const handleOnMouseOver: React.MouseEventHandler<HTMLDivElement> = (e) => {
+    const target = e.currentTarget;
+    setMaxWidthAndClass(tooltipRef.current!);
+    if (target && tooltipRef.current) {
+      const popperInstance = createPopper(target, tooltipRef.current, {
+        placement: "top",
+        modifiers: [
+          {
+            name: "offset",
+            options: {
+              offset: [0, 12], // Adjust offset as needed
+            },
+          },
+          {
+            name: "flip",
+            enabled: true,
+          },
+          {
+            name: "preventOverflow",
+            enabled: true,
+          },
+        ],
+      });
 
-    const ttNode = ReactDOM.findDOMNode(tooltipRef.current) as Element;
-    if (ttNode != null) {
-      let x = 0,
-        y = 0;
-
-      const docWidth = document.documentElement.clientWidth,
-        docHeight = document.documentElement.clientHeight;
-
-      const rx = hoverRect.x + hoverRect.width, // most right x
-        lx = hoverRect.x, // most left x
-        ty = hoverRect.y, // most top y
-        by = hoverRect.y + hoverRect.height; // most bottom y
-
-      // tool tip rectange
-      const ttRect = ttNode.getBoundingClientRect();
-
-      const bRight =
-        rx + ttRect.width <= window.scrollX + docWidth &&
-        ty + ttRect.height <= window.scrollY + docHeight;
-      const bLeft =
-        lx - ttRect.width >= 0 &&
-        ty + ttRect.height <= window.scrollY + docHeight;
-      const bAbove = ty - ttRect.height >= 0;
-      const bBellow = by + ttRect.height <= window.scrollY + docHeight;
-
-      // the tooltip doesn't fit to the left
-      if (bRight) {
-        x = hoverRect.width + 16;
-        y = icon ? -8 : 0;
-        placement = "negative";
-        alignment = "right";
-      } else if (bBellow) {
-        x = icon ? -8 : 0;
-        y = hoverRect.height + 16;
-
-        placement = "center";
-        alignment = "bottom";
-      } else if (bLeft) {
-        x = -ttRect.width - 16;
-        y = icon ? -8 : 0;
-
-        placement = "negative";
-        alignment = "left";
-      } else if (bAbove) {
-        x = icon ? -8 : 0;
-        y = -ttRect.height - 16;
-
-        placement = "center";
-        alignment = "top";
-      }
-
-      setPosition({ x: x, y: y });
-      setArrowPlacement(placement);
-      setArrowAlignment(alignment);
+      setPopperInstance(popperInstance);
+      setIsVisible(true);
     }
   };
 
   const handleOnMouseOut = () => {
+    if (popperInstance) {
+      popperInstance.destroy();
+    }
     setIsVisible(false);
   };
 
-  const style = {
-    // left: ((position.x + window.scrollX) + 'px'),
-    // top: ((position.y + window.scrollY) + 'px')
-    left: position.x + "px",
-    top: position.y + "px",
+  const handleOnFocus: React.FocusEventHandler<HTMLDivElement> = (e) => {
+    handleOnMouseOver(e as unknown as React.MouseEvent<HTMLDivElement>);
   };
 
   return (
     <div
-      className={`${baseClass}--wrapper ${icon && "has-icon"}`}
+      className={iconClasses}
       onMouseOver={handleOnMouseOver}
-      onFocus={handleOnMouseOver}
+      onFocus={handleOnFocus}
       onMouseOut={handleOnMouseOut}
       onBlur={handleOnMouseOut}
       id={id}
     >
       {!icon && <>{children}</>}
-      <span className={tooltipClasses} style={style} ref={tooltipRef}>
-        <span className={tooltipArrowClasses} role="presentation"></span>
+      <span
+        className={tooltipClasses}
+        ref={tooltipRef}
+        data-id={id}
+        id="tooltip"
+        role="tooltip"
+        aria-hidden={!isVisible}
+      >
+        <span
+          data-popper-arrow
+          className={tooltipArrowClasses}
+          data-placement="negative"
+          role="presentation"
+        />
         {label}
       </span>
     </div>
