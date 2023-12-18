@@ -1,5 +1,23 @@
 # @ilo-org/styles
 
+## 0.13.0
+
+### Minor Changes
+
+- 6fe60e0d6: Add a `gap` setting to the hero card that allows the developer to set an optional background color on the entire Hero,
+  which fills the "gap" between the bottom of the Hero Card and the bottom of the hero image when `align` is set to `bottom` or `baseline`. Options are `transparent`, `white`, `light` and `dark`.
+
+### Patch Changes
+
+- df7080c80: Used popper library to handle tooltip
+- c5eaabd55: Support RTL for accordion
+- 720825342: Fix accordion spacing
+- 6f86e7a94: Add margin to accordion to prevent overflow
+- 94b03b9be: Make card animations smoother
+- c54ce9923: Fix Breadcrumb spacing vis-a-vis Hero
+- 9ed7b873d: build(deps-dev): bump postcss from 8.4.21 to 8.4.31
+- c173ec9f8: Tweak breadcrumb spacing, particularly in RTL
+
 ## 0.12.0
 
 ### Minor Changes
