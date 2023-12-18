@@ -46,6 +46,11 @@ export interface HeroProps {
   heroCard: HeroCardProps;
 
   /**
+   * Color of the gap space between bottom of the hero image and bottom of the card
+   */
+  gap?: "white" | "transparent" | "dark" | "light";
+
+  /**
    * The size of the poster image
    */
   posterSize?: "small" | "medium" | "large" | "xlarge";

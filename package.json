@@ -23,11 +23,13 @@
     "prepare": "node ./prepare.js",
     "react:install": "pnpm clean && pnpm config set dedupe-peer-dependents=false && pnpm --filter react... install",
     "react:build:docs": "pnpm turbo run build:docs --filter=@ilo-org/react...",
+    "react:build:lib": "pnpm turbo run build:lib --filter react... ",
     "react:dev:docs": "pnpm --filter react storybook",
     "test:all": "pnpm turbo run test",
     "twig:install": "pnpm clean && pnpm config set dedupe-peer-dependents=false && pnpm --filter twig... install",
     "fix:pnpm-filter": "pnpm config set dedupe-peer-dependents=false",
     "twig:build:docs": "pnpm fix:pnpm-filter && pnpm turbo run build:docs --filter twig...",
+    "twig:build:lib": "pnpm turbo run build:lib --filter twig... ",
     "twig:dev:docs": "pnpm --filter twig storybook"
   },
   "postinstall": "manypkg check",

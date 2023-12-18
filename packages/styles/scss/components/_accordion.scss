@@ -5,6 +5,7 @@
 .ilo--accordion {
   $transition-timing: 500ms;
   $scroll-max-height: 300px;
+  margin-right: spacing(1);
 
   &--button {
     display: flex;
@@ -72,6 +73,10 @@
     &[aria-expanded="false"] {
       @include dataurlicon("add", $color-ux-labels-actionable);
     }
+
+    [dir="rtl"] & {
+      background-position: calc(0% + px-to-rem(6px)) center;
+    }
   }
 
   &--panel {
@@ -82,7 +87,7 @@
     overflow: hidden;
 
     .ilo--accordion--innerpanel {
-      padding-bottom: spacing(3);
+      padding-bottom: spacing(9);
       padding-top: spacing(2);
     }
 
