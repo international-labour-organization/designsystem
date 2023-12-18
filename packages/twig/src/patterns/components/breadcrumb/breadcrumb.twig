@@ -10,28 +10,34 @@
 				<span class="{{prefix}}--breadcrumb--link--label">{{home.label}}</span>
 			</a>
 		</li>
-		<li class="{{prefix}}--breadcrumb--item first">
-			<a class="{{prefix}}--breadcrumb--link" href="{{firstlink.url}}">
-				<span class="{{prefix}}--breadcrumb--link--label">{{firstlink.label}}</span>
-			</a>
-		</li>
-		<li class="{{prefix}}--breadcrumb--item--context">
-			<ul class="{{prefix}}--breadcrumb--items context--menu">
-				{% for link in links %}
-					{% if not loop.first and not loop.last %}
-						<li class="{{prefix}}--breadcrumb--item">
-							<a href="{{link.url}}" class="{{prefix}}--breadcrumb--link">
-								<span class="{{prefix}}--breadcrumb--link--label">{{link.label}}</span>
-							</a>
-						</li>
-					{% endif %}
-				{% endfor %}
-			</ul>
-		</li>
-		<li class="{{prefix}}--breadcrumb--item final">
-			<a class="{{prefix}}--breadcrumb--link" href="{{lastlink.url}}">
-				<span class="{{prefix}}--breadcrumb--link--label">{{lastlink.label}}</span>
-			</a>
-		</li>
+		{% if links|length >= 2 %}
+			<li class="{{prefix}}--breadcrumb--item first">
+				<a class="{{prefix}}--breadcrumb--link" href="{{firstlink.url}}">
+					<span class="{{prefix}}--breadcrumb--link--label">{{firstlink.label}}</span>
+				</a>
+			</li>
+		{% endif %}
+		{% if links|length >= 3%}
+			<li class="{{prefix}}--breadcrumb--item--context">
+				<ul class="{{prefix}}--breadcrumb--items context--menu">
+					{% for link in links %}
+						{% if not loop.first and not loop.last %}
+							<li class="{{prefix}}--breadcrumb--item">
+								<a href="{{link.url}}" class="{{prefix}}--breadcrumb--link">
+									<span class="{{prefix}}--breadcrumb--link--label">{{link.label}}</span>
+								</a>
+							</li>
+						{% endif %}
+					{% endfor %}
+				</ul>
+			</li>
+		{% endif %}
+		{% if links|length >= 1%}
+			<li class="{{prefix}}--breadcrumb--item final">
+				<a class="{{prefix}}--breadcrumb--link" href="{{lastlink.url}}">
+					<span class="{{prefix}}--breadcrumb--link--label">{{lastlink.label}}</span>
+				</a>
+			</li>
+		{% endif %}
 	</ol>
 </nav>
