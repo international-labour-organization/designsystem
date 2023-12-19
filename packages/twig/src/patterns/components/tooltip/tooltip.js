@@ -3,6 +3,9 @@
  *
  * @class Tooltip
  */
+
+import { createPopper, right } from "@popperjs/core";
+
 export default class Tooltip {
   /**
    * Tooltip constructor which assigns the element passed into the constructor
@@ -100,96 +103,54 @@ export default class Tooltip {
   }
 
   handleOnMouseOut() {
-    this.tooltip.classList.remove(`${this.prefix}--tooltip--fade`);
     setTimeout(() => {
+      this.tooltip.classList.remove(`${this.prefix}--tooltip--fade`);
       this.tooltip.classList.remove(`${this.prefix}--tooltip--visible`);
-    }, 150);
+    }, 200);
 
     return this;
   }
 
   postMouseOver(hoverRect) {
-    // position the tooltip after showing it
-    let placement = "center";
-    let alignment = "left";
-
     const ttNode = this.tooltip;
+    this.setMaxWidthAndClass(this.tooltip);
     if (ttNode != null) {
-      let x = 0,
-        y = 0;
-
-      const docWidth = document.documentElement.clientWidth,
-        docHeight = document.documentElement.clientHeight;
-
-      const rx = hoverRect.x + hoverRect.width, // most right x
-        lx = hoverRect.x, // most left x
-        ty = hoverRect.y, // most top y
-        by = hoverRect.y + hoverRect.height; // most bottom y
-
-      // tooltip rectange
-      const ttRect = ttNode.getBoundingClientRect();
-
-      const bRight =
-        rx + ttRect.width <= window.scrollX + docWidth &&
-        ty + ttRect.height <= window.scrollY + docHeight;
-      const bLeft =
-        lx - ttRect.width >= 0 &&
-        ty + ttRect.height <= window.scrollY + docHeight;
-      const bAbove = ty - ttRect.height >= 0;
-      const bBellow = by + ttRect.height <= window.scrollY + docHeight;
-
-      // the tooltip doesn't fit to the left
-      if (bRight) {
-        x = hoverRect.width + 32;
-        y = 0;
-        placement = "negative";
-        alignment = "right";
-      } else if (bBellow) {
-        x = 0;
-        y = hoverRect.height + 32;
-
-        placement = "center";
-        alignment = "bottom";
-      } else if (bLeft) {
-        x = -ttRect.width - 32;
-        y = 0;
-
-        placement = "negative";
-        alignment = "left";
-      } else if (bAbove) {
-        x = 0;
-        y = -ttRect.height - 32;
-
-        placement = "center";
-        alignment = "top";
+      // Create Popper instance if not already existing
+      if (!this.popper) {
+        this.popper = createPopper(this.element, this.tooltip, {
+          // Set tooltip priority to be placed on top first
+          placement: "top",
+          modifiers: [
+            "flip", // Changes the side of the tooltip if there isnt space
+            "preventOverflow",
+            {
+              name: "offset",
+              options: {
+                offset: [0, 12], // Adjust offset as needed
+              },
+            },
+          ],
+        });
       }
 
-      // set style top and left on tooltip
-      this.tooltip.style.top = y;
-      this.tooltip.style.left = x;
-
-      // set class for placement on arrow
-      this.arrow.classList.remove(
-        `${this.prefix}--tooltip--arrow--placement-${this.placement}`
-      );
-      this.arrow.classList.add(
-        `${this.prefix}--tooltip--arrow--placement-${this.placement}`
-      );
-      this.placement = placement;
-      this.arrow.setAttribute("data-placement", placement);
-
-      // set class for alignment on tooltip
-      this.tooltip.classList.remove(
-        `${this.prefix}--tooltip--alignment-${this.alignment}`
-      );
-      this.tooltip.classList.add(
-        `${this.prefix}--tooltip--alignment-${this.alignment}`
-      );
-      this.alignment = alignment;
-
-      this.tooltip.setAttribute("data-alignment", alignment);
+      // Update Popper position
+      this.popper.update();
     }
 
     return this;
+  }
+
+  /**
+   * Set max width and add class based on content length
+   *
+   * @param {string} content - Tooltip content
+   */
+  setMaxWidthAndClass(tooltip) {
+    const tooltipText = tooltip.textContent || tooltip.innerText;
+    const textLength = tooltipText.trim().length;
+
+    if (textLength > 50) {
+      this.tooltip.classList.add(`${this.prefix}--tooltip--long`);
+    }
   }
 }

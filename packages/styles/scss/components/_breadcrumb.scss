@@ -14,7 +14,7 @@
     justify-content: flex-start;
     padding-block: spacing(4);
     padding-inline-end: 0;
-    padding-inline-start: var(--card-padding-start);
+    padding-inline-start: var(--breadcrumb-padding);
     position: relative;
     &.context--menu {
       padding: 0;
@@ -23,19 +23,20 @@
 
   &--link {
     align-items: center;
-    background-position: right 52%;
+    background-position: right;
     background-repeat: no-repeat;
     color: map-get($color, "link", "text", "default");
     display: inline-flex;
     height: px-to-rem(16px);
-    padding: 0 spacing(6) 0 px-to-rem(10px);
+    padding-block: 0;
+    padding-inline-start: spacing(4);
+    padding-inline-end: spacing(6);
     text-decoration: none;
     text-decoration-thickness: px-to-rem($borders-base);
     @include dataurlicon("breadcrumbdivider", $color-link-text-default);
 
     [dir="rtl"] & {
-      background-position: 0 52%;
-      padding: 0 px-to-rem(10px) 0 spacing(6);
+      background-position: left;
       @include dataurlicon("breadcrumbdividerrtl", $color-link-text-default);
     }
 
@@ -88,6 +89,13 @@
           top: 0;
           width: px-to-rem(16px);
           @include dataurlicon("home", $color-link-text-default);
+        }
+
+        [dir="rtl"] & {
+          &:before {
+            left: initial;
+            right: 0;
+          }
         }
       }
 
@@ -178,7 +186,7 @@
           content: "";
           height: px-to-rem(12px);
           position: absolute;
-          left: 50%;
+          // left: 50%;
           top: -#{px-to-rem(6px)};
           transform: translateX(-50%) rotate(135deg);
           width: px-to-rem(12px);
@@ -250,46 +258,37 @@
             text-decoration: underline;
             text-decoration-thickness: px-to-rem($borders-base);
           }
-
-          [dir="rtl"] & {
-            text-align: center;
-          }
         }
       }
     }
   }
 
-  @include breakpoint("medium") {
-    &--items {
+  &--items {
+    &:after {
+      background: linear-gradient(to bottom right, white 50%, transparent 50%);
+      content: "";
+      display: inline-block;
+      height: 47px;
+      position: absolute;
+      right: -47px;
+      top: 0;
+      width: 47px;
+
+      [dir="rtl"] & {
+        right: auto;
+        left: -47px;
+        transform: scaleX(-1);
+      }
+    }
+
+    &.context--menu {
       &:after {
-        background: linear-gradient(
-          to bottom right,
-          white 50%,
-          transparent 50%
-        );
-        content: "";
-        display: inline-block;
-        height: 47px;
-        position: absolute;
-        right: -47px;
-        top: 0;
-        width: 47px;
-
-        [dir="rtl"] & {
-          right: auto;
-          left: -47px;
-          transform: scaleX(-1);
-        }
-      }
-
-      &.context--menu {
-        &:after {
-          content: none;
-        }
+        content: none;
       }
     }
   }
 
+  // @TODO: This shouldn't be here, we should handle this through Storybook configuation
   &.storybook {
     background-color: $brand-ilo-grey-ui;
     height: 100vh;
