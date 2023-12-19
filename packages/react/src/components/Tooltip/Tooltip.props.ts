@@ -1,4 +1,4 @@
-import { TooltipThemes } from "../../types";
+import { TooltipThemes, TooltipIconThemes } from "../../types";
 
 export interface TooltipProps {
   /**
@@ -34,5 +34,5 @@ export interface TooltipProps {
   /**
    * Describe the background theme of the tooltip
    */
-  iconTheme?: Required<TooltipThemes>;
+  iconTheme?: Required<TooltipIconThemes>;
 }

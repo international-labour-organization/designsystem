@@ -32,6 +32,7 @@ export type LabelTypes = "default" | "actionable" | "light";
 export type LinkTypes = "light" | "dark" | "footer" | "button";
 export type LinkListThemes = "light" | "dark";
 export type TooltipThemes = "light" | "dark";
+export type TooltipIconThemes = "light" | "dark";
 export type TooltipAlignment = "top" | "right" | "bottom" | "left";
 export type TooltipPlacement = "negative" | "center" | "positive";
 export type ListAlignment = "default" | "horizontal";

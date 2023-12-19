@@ -16,18 +16,26 @@ const Tooltip: FC<TooltipProps> = ({
   const { prefix } = useGlobalSettings();
   const baseClass = `${prefix}--tooltip`;
   const [isVisible, setIsVisible] = useState<boolean>(false);
-  const [longTooltip, setLongToolTip] = useState<boolean>(false);
   const [popperInstance, setPopperInstance] = useState<PopperInstance | null>(
     null
   );
 
   const tooltipRef = useRef<HTMLDivElement>(null);
 
+  const isLongTooltip = () => {
+    const tooltipText = (
+      tooltipRef.current?.textContent ||
+      tooltipRef.current?.innerText ||
+      ""
+    ).trim();
+    return tooltipText.length > 50;
+  };
+
   const tooltipClasses = classNames(className, {
     [baseClass]: true,
     [`${baseClass}--${theme}`]: theme,
     [`${baseClass}--visible`]: isVisible,
-    [`${baseClass}--long`]: longTooltip,
+    [`${baseClass}--long`]: isLongTooltip(),
   });
 
   const tooltipArrowClasses = classNames(
@@ -41,18 +49,8 @@ const Tooltip: FC<TooltipProps> = ({
     [`${baseClass}--wrapper__icon__theme__${theme}`]: iconTheme,
   });
 
-  const setMaxWidthAndClass = (tooltip: HTMLDivElement) => {
-    const tooltipText = tooltip.textContent || tooltip.innerText;
-    const textLength = tooltipText.trim().length;
-
-    if (textLength > 50) {
-      setLongToolTip(true);
-    }
-  };
-
   const handleOnMouseOver: React.MouseEventHandler<HTMLDivElement> = (e) => {
     const target = e.currentTarget;
-    setMaxWidthAndClass(tooltipRef.current!);
     if (target && tooltipRef.current) {
       const popperInstance = createPopper(target, tooltipRef.current, {
         placement: "top",
