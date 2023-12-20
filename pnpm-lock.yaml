@@ -521,6 +521,9 @@ importers:
       '@ilo-org/utils':
         specifier: workspace:*
         version: link:../utils
+      '@popperjs/core':
+        specifier: ^2.11.8
+        version: 2.11.8
       video.js:
         specifier: ^7.21.2
         version: 7.21.2
@@ -537,9 +540,6 @@ importers:
       '@ilo-org/prettier-config':
         specifier: workspace:*
         version: link:../../config/prettier-config
-      '@popperjs/core':
-        specifier: ^2.11.8
-        version: 2.11.8
       '@storybook/addon-actions':
         specifier: ^6.5.16
         version: 6.5.16(react-dom@16.14.0)(react@16.14.0)
@@ -6341,7 +6341,7 @@ packages:
 
   /@popperjs/core@2.11.8:
     resolution: {integrity: sha512-P1st0aksCrn9sGZhp8GMYwBnQsbvAWsZAX44oXNNvLHGqAOcoVxmjZiohstwQ7SqKnbR47akdNi+uleWD8+g6A==}
-    dev: true
+    dev: false
 
   /@radix-ui/number@1.0.1:
     resolution: {integrity: sha512-T5gIdVO2mmPW3NNhjNgEP3cqMXjXL9UbO0BzWcXfvdBs+BohbQxvd/K5hSVKmn9/lbTdsQVKbUcP5WLCwvUbBg==}
@@ -10304,7 +10304,7 @@ packages:
       postcss: '>=7.0.0'
       postcss-syntax: '>=0.36.2'
     dependencies:
-      '@babel/core': 7.21.8
+      '@babel/core': 7.23.6
       postcss: 7.0.39
       postcss-syntax: 0.36.2(postcss-html@0.36.0)(postcss-less@3.1.4)(postcss-scss@2.1.1)(postcss@7.0.39)
     transitivePeerDependencies:
