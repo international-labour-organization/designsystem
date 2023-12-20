@@ -127,7 +127,7 @@ In the template file of the component, you have to declare the component in the 
 
 A helper function in your theme.theme file to aggregate all .behavior.js files:
     
-    ```php
+```php
 /**
 * Implements hook_library_info_build().
 *
