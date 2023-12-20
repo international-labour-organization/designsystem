@@ -1,5 +1,12 @@
 # @ilo-org/twig
 
+## 0.14.1
+
+### Patch Changes
+
+- 9d79b2a6f: Modify tooltip label and icon condition
+- 1e6365385: Add popperjs as a dependency in twig instead of as a dev dependency
+
 ## 0.14.0
 
 ### Minor Changes
