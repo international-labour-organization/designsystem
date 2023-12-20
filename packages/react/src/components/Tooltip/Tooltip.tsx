@@ -16,11 +16,8 @@ const Tooltip: FC<TooltipProps> = ({
   const { prefix } = useGlobalSettings();
   const baseClass = `${prefix}--tooltip`;
   const [isVisible, setIsVisible] = useState<boolean>(false);
-  const [popperInstance, setPopperInstance] = useState<PopperInstance | null>(
-    null
-  );
-
   const tooltipRef = useRef<HTMLDivElement>(null);
+  const popperInstanceRef = useRef<PopperInstance | null>(null);
 
   const isLongTooltip = () => {
     const tooltipText = (
@@ -72,14 +69,15 @@ const Tooltip: FC<TooltipProps> = ({
         ],
       });
 
-      setPopperInstance(popperInstance);
+      popperInstanceRef.current = popperInstance;
+
       setIsVisible(true);
     }
   };
 
   const handleOnMouseOut = () => {
-    if (popperInstance) {
-      popperInstance.destroy();
+    if (popperInstanceRef.current) {
+      popperInstanceRef.current.destroy();
     }
     setIsVisible(false);
   };
