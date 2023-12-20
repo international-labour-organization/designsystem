@@ -2,4 +2,4 @@
 "@ilo-org/twig": patch
 ---
 
-Add popperjs as a dev dependency in twig
+Add popperjs as a dependency in twig instead of as a dev dependency
