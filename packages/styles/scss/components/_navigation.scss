@@ -619,6 +619,11 @@
     position: relative;
   }
 
+  &--empty {
+    height: px-to-rem(26);
+    width: px-to-rem(100);
+  }
+
   &--button {
     @include font-styles("image-credit");
     @include dataurlicon("global", $brand-ilo-white);
