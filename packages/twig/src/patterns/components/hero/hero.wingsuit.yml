@@ -12,9 +12,9 @@ hero:
         alt: Lorem ipsum
         loading: lazy
         url:
-          - breakpoint: 0
+          - breakpoint: "(min-width: 0px)"
             src: "/images/hero.jpg"
-          - breakpoint: 768
+          - breakpoint: "(min-width: 768px)"
             src: "/images/hero.jpg"
     breadcrumb:
       label: Bread crumbs
