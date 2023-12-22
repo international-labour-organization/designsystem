@@ -231,7 +231,7 @@
 
   &:hover {
     background: map-get($color, "link", "background", "hover");
-    border-bottom: $widths-border-med solid
+    border-bottom: $widths-border-sm solid
       map-get($color, "link", "underline", "hover");
     color: map-get($color, "link", "text", "hover");
     text-decoration: none;
