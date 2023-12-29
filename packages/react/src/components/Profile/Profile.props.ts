@@ -1,3 +1,5 @@
+import { ThemeTypes, SizeTypes } from "../../types";
+
 interface LinkProps {
   /**
    * Specify the label for the the Profile's link
@@ -11,6 +13,16 @@ interface LinkProps {
 }
 
 export interface ProfileProps {
+  /**
+   * Specify the theme for your profile component.
+   */
+  theme?: ThemeTypes;
+
+  /**
+   * Specify the size for your profile component.
+   */
+  size?: SizeTypes;
+
   /**
    * Specify an optional avatar to be added to your Profile component. Image *must* be a perfect square. CMS backend should provide a fallback if the avatar is not populated.
    */
