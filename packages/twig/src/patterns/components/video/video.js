@@ -1,3 +1,4 @@
+import "videojs-youtube";
 import videojs from "video.js";
 
 /**
@@ -109,6 +110,9 @@ export default class Video {
       sources: [
         { type: this.element.dataset.vjsType, src: this.element.dataset.src },
       ],
+      dataSetup: {
+        techOrder: ["youtube"],
+      },
     });
 
     return this;
