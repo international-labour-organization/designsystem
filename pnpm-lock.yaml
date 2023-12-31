@@ -524,6 +524,9 @@ importers:
       video.js:
         specifier: ^7.21.2
         version: 7.21.2
+      videojs-youtube:
+        specifier: ^3.0.1
+        version: 3.0.1(video.js@7.21.2)
     devDependencies:
       '@babel/core':
         specifier: ^7.20.12
@@ -10304,7 +10307,7 @@ packages:
       postcss: '>=7.0.0'
       postcss-syntax: '>=0.36.2'
     dependencies:
-      '@babel/core': 7.21.8
+      '@babel/core': 7.23.6
       postcss: 7.0.39
       postcss-syntax: 0.36.2(postcss-html@0.36.0)(postcss-less@3.1.4)(postcss-scss@2.1.1)(postcss@7.0.39)
     transitivePeerDependencies:
@@ -38483,6 +38486,14 @@ packages:
     resolution: {integrity: sha512-yZbBxvA7QMYn15Lr/ZfhhLPrNpI/RmCSCqgIff57GC2gIrV5YfyzLfLyZMj0NnZSAz8syB4N0nHXpZg9MyrMOQ==}
     dependencies:
       global: 4.4.0
+    dev: false
+
+  /videojs-youtube@3.0.1(video.js@7.21.2):
+    resolution: {integrity: sha512-0gKgag7Zno/dDwIdk+h48ODKDulR4IW62RxGE81PrMwi0OX/wUcKO6m1j+DFYI+7qjtWMZTKnbtQoHGxvUrFQg==}
+    peerDependencies:
+      video.js: 5.x || 6.x || 7.x || 8.x
+    dependencies:
+      video.js: 7.21.2
     dev: false
 
   /vinyl-file@3.0.0:

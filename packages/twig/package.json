@@ -41,7 +41,8 @@
     "@ilo-org/styles": "workspace:*",
     "@ilo-org/themes": "workspace:*",
     "@ilo-org/utils": "workspace:*",
-    "video.js": "^7.21.2"
+    "video.js": "^7.21.2",
+    "videojs-youtube": "^3.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.20.12",
