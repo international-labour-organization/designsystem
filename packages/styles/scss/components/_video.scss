@@ -37,6 +37,10 @@
     position: relative;
   }
 
+  // ? drupal style reset issue
+  button {
+    padding: 0;
+  }
   // Remove extra controls
   .vjs-time-divider,
   .vjs-remaining-time,
