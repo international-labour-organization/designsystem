@@ -47,7 +47,7 @@ youtube_video:
   namespace: Components/Media
   use: "@components/video/video.twig"
   label: Youtube Video
-  description: A component for displaying a video, source from either a server or YouTube.
+  description: A component for displaying a video, source from YouTube.
   fields:
     alt:
       type: string
