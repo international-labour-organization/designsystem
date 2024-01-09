@@ -5,24 +5,22 @@
 
 <header class="{{prefix}}--header" data-loadcomponent="Navigation" data-prefix="{{prefix}}">
 	<div class="{{prefix}}--header--utility-bar">
-		<div class="{{prefix}}--language-switcher">
-			<div class="{{prefix}}--language-switcher--wrap">
-			{% if languagecontextmenu.links is not empty %}
-				<button class="{{prefix}}--language-switcher--button" type="button">
-					{{languagelabel}}
-				</button>
-				{% include '@components/contextmenu/contextmenu.twig' with {
+		{% if languagecontextmenu.links is not empty %}
+			<div class="{{prefix}}--language-switcher">
+				<div class="{{prefix}}--language-switcher--wrap">
+					<button class="{{prefix}}--language-switcher--button" type="button">
+						{{languagelabel}}
+					</button>
+		{% include '@components/contextmenu/contextmenu.twig' with {
             links: languagecontextmenu.links,
             prefix: prefix
           }
         %}
-		    {% else %}
-		 		<div class="{{prefix}}--language-switcher--empty"></div>
-		    {% endif %}  
+				</div>
+				<!-- /.{{prefix}}--language-switcher--wrap -->
 			</div>
-			<!-- /.{{prefix}}--language-switcher--wrap -->
-		</div>
-		<!-- /.{{prefix}}--language-switcher -->
+			<!-- /.{{prefix}}--language-switcher -->
+		{% endif %}  
 	</div>
 	<!-- /.{{prefix}}--header--utility-bar -->
 	<div class="{{prefix}}--header--logo-bar">
