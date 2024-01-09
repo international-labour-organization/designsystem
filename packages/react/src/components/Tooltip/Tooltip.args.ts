@@ -22,7 +22,7 @@ const dark: TooltipProps = {
 const darkicon: TooltipProps = {
   icon: true,
   label: "This is a tooltip for an icon",
-  theme: "dark", // "light" | "dark" ;
+  iconTheme: "dark", // "light" | "dark" ;
   isVisible: false,
 };
 
