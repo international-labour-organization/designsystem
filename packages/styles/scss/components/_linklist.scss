@@ -89,7 +89,7 @@
     @include font-styles("body-small");
     padding-top: spacing(4);
     padding-bottom: spacing(4);
-    padding-right: spacing(8);
+    padding-inline-end: spacing(8);
     text-decoration: none;
     @include dataurlicon("arrowright", $color-link-text-default);
     @include globaltransition("color, background-color, border-color");
@@ -119,7 +119,6 @@
     [dir="rtl"] & {
       background-position: px-to-rem(4px) center;
       @include dataurlicon("arrowleft", $color-link-text-default);
-      padding-right: 0;
 
       &:hover,
       &:focus {
