@@ -214,79 +214,63 @@
 
 @mixin linkstyles() {
   background: map-get($color, "link", "background", "default");
-  border-bottom: $widths-border-sm solid
-    map-get($color, "link", "underline", "default");
   color: map-get($color, "link", "text", "default");
   font-size: inherit;
   font-weight: inherit;
   line-height: inherit;
-  text-decoration: none;
+  text-decoration: underline;
+  text-underline-offset: px-to-rem(6px);
+  text-decoration-thickness: px-to-rem(1.5px);
+  padding-bottom: spacing(1);
 
   &:visited {
     background: map-get($color, "link", "background", "visited");
-    border-bottom: $widths-border-sm solid
-      map-get($color, "link", "underline", "visited");
     color: map-get($color, "link", "text", "visited");
   }
 
   &:hover {
     background: map-get($color, "link", "background", "hover");
-    border-bottom: $widths-border-med solid
-      map-get($color, "link", "underline", "hover");
     color: map-get($color, "link", "text", "hover");
-    text-decoration: none;
+    text-decoration-thickness: 3px;
   }
 
   &:active {
     background: map-get($color, "link", "background", "active");
-    border-bottom: $widths-border-med solid
-      map-get($color, "link", "underline", "active");
     color: map-get($color, "link", "text", "active");
-    outline: none;
+    text-decoration-thickness: 3px;
   }
 
   &:focus {
     background: map-get($color, "link", "background", "focus");
-    border-bottom: $widths-border-lg solid
-      map-get($color, "link", "underline", "focus");
     color: map-get($color, "link", "text", "focus");
-    outline: none;
+    text-decoration-thickness: 3px;
   }
 
   &--dark {
     background: map-get($color, "link", "background-dark", "default");
-    border-bottom: $widths-border-sm solid
-      map-get($color, "link", "underline-dark", "default");
     color: map-get($color, "link", "text-dark", "default");
 
     &:visited {
       background: map-get($color, "link", "background-dark", "visited");
-      border-bottom: $widths-border-sm solid
-        map-get($color, "link", "underline-dark", "visited");
       color: map-get($color, "link", "text-dark", "visited");
     }
 
     &:hover {
       background: map-get($color, "link", "background-dark", "hover");
-      border-bottom: $widths-border-med solid
-        map-get($color, "link", "underline-dark", "hover");
       color: map-get($color, "link", "text-dark", "hover");
+      text-decoration-thickness: 3px;
     }
 
     &:active {
       background: map-get($color, "link", "background-dark", "active");
-      border-bottom: $widths-border-med solid
-        map-get($color, "link", "underline-dark", "active");
       color: map-get($color, "link", "text-dark", "active");
-      outline: none;
+      text-decoration-thickness: 3px;
     }
 
     &:focus {
       background: map-get($color, "link", "background-dark", "focus");
-      border-bottom: $widths-border-lg solid
-        map-get($color, "link", "underline-dark", "focus");
       color: map-get($color, "link", "text-dark", "focus");
-      outline: none;
+      text-decoration-thickness: 3px;
     }
   }
 
@@ -294,38 +278,29 @@
     @include font-styles("body-xxs");
 
     background: map-get($color, "link", "background-footer", "default");
-    border-bottom: $widths-border-xsm solid
-      map-get($color, "link", "underline-footer", "default");
     color: map-get($color, "link", "text-footer", "default");
 
     &:visited {
       background: map-get($color, "link", "background-footer", "visited");
-      border-bottom: $widths-border-xsm solid
-        map-get($color, "link", "underline-footer", "visited");
       color: map-get($color, "link", "text-footer", "visited");
     }
 
     &:hover {
       background: map-get($color, "link", "background-footer", "hover");
-      border-bottom: $widths-border-sm solid
-        map-get($color, "link", "underline-footer", "hover");
       color: map-get($color, "link", "text-footer", "hover");
+      text-decoration-thickness: 3px;
     }
 
     &:active {
       background: map-get($color, "link", "background-footer", "active");
-      border-bottom: $widths-border-sm solid
-        map-get($color, "link", "underline-footer", "active");
       color: map-get($color, "link", "text-footer", "active");
-      outline: none;
+      text-decoration-thickness: 3px;
     }
 
     &:focus {
       background: map-get($color, "link", "background-footer", "focus");
-      border-bottom: $widths-border-med-sm solid
-        map-get($color, "link", "underline-footer", "focus");
       color: map-get($color, "link", "text-footer", "focus");
-      outline: none;
+      text-decoration-thickness: 3px;
     }
   }
 }
