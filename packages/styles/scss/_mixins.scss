@@ -221,6 +221,7 @@
   text-decoration: underline;
   text-underline-offset: px-to-rem(6px);
   text-decoration-thickness: px-to-rem(1.5px);
+  padding-bottom: spacing(1);
 
   &:visited {
     background: map-get($color, "link", "background", "visited");
