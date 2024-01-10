@@ -1,5 +1,14 @@
 # @ilo-org/twig
 
+## 0.14.2
+
+### Patch Changes
+
+- d67dc414b: Don't show language selector in Nav if no links are passed to the Language Context Menu
+- Updated dependencies [08a2141cc]
+- Updated dependencies [dea2d0a07]
+  - @ilo-org/styles@0.13.1
+
 ## 0.14.1
 
 ### Patch Changes
