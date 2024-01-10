@@ -2,4 +2,4 @@
 "@ilo-org/twig": patch
 ---
 
-Make language selector optional in nav/local nav
+Don't show language selector in Nav if no links are passed to the Language Context Menu
