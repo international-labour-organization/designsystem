@@ -1,5 +1,19 @@
 # @ilo-org/react
 
+## 0.10.0
+
+### Minor Changes
+
+- 4630eea87: Upgrade react storybook to 7.6.6
+
+### Patch Changes
+
+- d20d3c750: Sync tooltip with twig
+- 857b7b57b: Sync profile with twig
+- Updated dependencies [08a2141cc]
+- Updated dependencies [dea2d0a07]
+  - @ilo-org/styles@0.13.1
+
 ## 0.9.1
 
 ### Patch Changes
