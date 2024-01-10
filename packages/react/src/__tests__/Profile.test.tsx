@@ -38,7 +38,7 @@ describe("<Profile>", () => {
   it("Should render Profile with content from link prop.", () => {
     const { container } = render(<Profile {...profileArgs.haslink} />);
     expect(container.children[0]).not.toBeNull();
-    const linkElement = document.querySelector('[class*="--link"]');
+    const linkElement = document.querySelector('[class*="--link"] a');
     expect(linkElement?.textContent).toEqual(profileArgs?.haslink?.link?.label);
     expect(linkElement).toHaveAttribute(
       "href",

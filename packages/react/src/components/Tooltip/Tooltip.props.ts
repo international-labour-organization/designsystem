@@ -1,4 +1,4 @@
-import { TooltipThemes } from "../../types";
+import { TooltipThemes, TooltipIconThemes } from "../../types";
 
 export interface TooltipProps {
   /**
@@ -27,22 +27,12 @@ export interface TooltipProps {
   isVisible?: boolean;
 
   /**
-   * Callback fired onMouseOver
-   */
-  onMouseOver?: (e: React.MouseEventHandler<HTMLDivElement>) => any;
-
-  /**
-   * Callback fired onMouseOut
-   */
-  onMouseOut?: (e: React.MouseEventHandler<HTMLDivElement>) => any;
-
-  /**
    * Describe the theme of the tooltip
    */
   theme?: Required<TooltipThemes>;
 
   /**
-   * Set a width for the tooltip
+   * Describe the background theme of the tooltip
    */
-  width?: string;
+  iconTheme?: Required<TooltipIconThemes>;
 }
