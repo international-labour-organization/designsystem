@@ -10,7 +10,7 @@
 		{% endif %}
 	</a>
 {% else %}
-	<button class="{{prefix}}--button ilo--button--{{size}} {{prefix}}--button--{{type}}{% if icon %} icon icon__position--{{iconPosition}}{% endif %}{% if icononly %} icon--only{% endif %}{% if className %} {{className}}{% endif %}" {% if kind %} type="{{kind}}" {% endif %} {% if opensmodal %} aria-haspopup="dialog" {% endif %} {% if disabled is defined and disabled == 'true' %} disabled {% endif %}>
+	<button class="{{prefix}}--button ilo--button--{{size}} {{prefix}}--button--{{type}}{% if icon %} icon icon__position--{{iconPosition}}{% endif %}{% if icononly %} icon--only{% endif %}{% if className %} {{className}}{% endif %}" {% if kind %} type="{{kind}}" {% endif %} {% if opensmodal %} aria-haspopup="dialog" {% endif %} {% if disabled is defined and disabled == 'true' %} disabled {% endif %} {% if name %} name="{{name}}" {% endif %}>
 
 		<span class="button__label">{{label}}</span>
 		{% if icon %}
