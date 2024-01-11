@@ -118,7 +118,7 @@
 
   &--utility-bar {
     display: none;
-
+    min-height: px-to-rem(24px);
     &--local {
       background: $brand-ilo-blue;
       display: flex;
@@ -617,6 +617,11 @@
   &--wrap {
     display: flex;
     position: relative;
+  }
+
+  &--empty {
+    height: px-to-rem(26);
+    width: px-to-rem(100);
   }
 
   &--button {

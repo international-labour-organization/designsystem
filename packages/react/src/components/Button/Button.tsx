@@ -20,6 +20,7 @@ const Button: FC<ButtonProps> = ({
   type = "primary",
   url,
   style,
+  name,
 }) => {
   const { prefix } = useGlobalSettings();
   const baseClass = `${prefix}--button`;
@@ -63,6 +64,7 @@ const Button: FC<ButtonProps> = ({
           type={kind}
           aria-haspopup={opensmodal ? `dialog` : false}
           style={style}
+          name={name}
         >
           {label && <span className="button__label">{label}</span>}
           {icon && <Icon name={icon} hidden={true} />}

@@ -80,8 +80,7 @@
         &--link,
         &--link:hover {
           border-bottom: none;
-          padding-left: spacing(6);
-          padding-right: spacing(6);
+          padding-inline: spacing(6) spacing(2);
         }
       }
 
