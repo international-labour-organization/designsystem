@@ -10,11 +10,13 @@
 {% endif %}
 
 {% block formfield %}
-	<div class="{{ baseClass }}--wrapper" {% if style %} style="{{ style }}" {% endif %}>
-		<select id="{{ id|default(name) }}" autocomplete="{{ autocomplete|default('off') }}" name="{{ name }}" {% if required %} required {% endif %} {% if onBlur %} onblur="{{ onBlur }}" {% endif %} {% if disabled %} disabled {% endif %} class="{{ dropdownClasses|join(' ') }}" value="{{ currentvalue|default(value) }}" {% if form %} form="{{ form }}" {% endif %} {% if multiple %} multiple {% endif %} {% if selectSize %} size="{{ selectSize }}" {% endif %} {% if ariaDescribedBy %} aria-describedby="{{ ariaDescribedBy }}" {% endif %}>
-			{% for option in options %}
-				<option {% if option.disabled %} disabled {% endif %} label="{{ option.label }}" value="{{ option.value }}" {% if defaultOption and defaultOption == option.value%}} selected {% endif %}></option>
-			{% endfor %}
-		</select>
-	</div>
+    <div class="{{ baseClass }}--wrapper" {% if style %} style="{{ style }}" {% endif %}>
+        <select id="{{ id|default(name) }}" autocomplete="{{ autocomplete|default('off') }}" name="{{ name }}" {% if required %} required {% endif %} {% if onBlur %} onblur="{{ onBlur }}" {% endif %} {% if disabled %} disabled {% endif %} class="{{ dropdownClasses|join(' ') }}" value="{{ currentvalue|default(value) }}" {% if form %} form="{{ form }}" {% endif %} {% if multiple %} multiple {% endif %} {% if selectSize %} size="{{ selectSize }}" {% endif %} {% if ariaDescribedBy %} aria-describedby="{{ ariaDescribedBy }}" {% endif %}>
+            {% for option in options %}
+                <option {% if option.disabled %} disabled {% endif %} value="{{ option.value }}" {% if defaultOption and defaultOption == option.value %} selected {% endif %}>
+                    {{ option.label }}
+                </option>
+            {% endfor %}
+        </select>
+    </div>
 {% endblock %}

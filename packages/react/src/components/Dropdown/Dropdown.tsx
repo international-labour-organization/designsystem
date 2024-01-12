@@ -65,7 +65,9 @@ const Dropdown = forwardRef<HTMLSelectElement, DropdownProps>((props, ref) => {
               label={option.label}
               value={option.value}
               key={`${baseClass}--option--${i}`}
-            />
+            >
+              {option.label}
+            </option>
           ))}
       </select>
     </div>
