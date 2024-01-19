@@ -62,7 +62,9 @@
 <div class="{{ formControlClass|join(' ') }}" {% if style %} style="{{ style }}" {% endif %}>
 	{% if label %}
 		<span class="{{ labelClass|join(' ') }}">
-			<label for="{{ id }}">{{ label }}</label>
+			{% block label %}
+				<label for="{{ id }}">{{ label }}</label>
+			{% endblock %}
 			{% if tooltip %}
 				{% include '@components/tooltip/tooltip.twig' with {
 				"icon": true,
