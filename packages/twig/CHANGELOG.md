@@ -1,5 +1,22 @@
 # @ilo-org/twig
 
+## 0.14.3
+
+### Patch Changes
+
+- ba3fdf8fc: Update how the breakpoints are set on the Hero twig component.
+- fb6b65ec3: Fix alignment value to be used from cardgroup and passed on to the card
+- e077aa740: Add a condition to check the breakpoint value.
+- 67ac66a79: Refactor option label to be a child component instead of an attribute to improve screen reader experience
+- e34e17292: Add optional name paramater that will pass a string to the button element's underlying name attribute
+- d74d0161f: Refactor card heading from h5 to h3 to ensure headings are in sequential order to improve accessibility
+- d0e3e8c87: Add optional string modalLabel parameter to be used as aria-label attribute in modal
+- 261413766: Add block to wrap label, as required in Drupal development.
+- 1ddab579a: Refactor tab role to be in the proper child element in tabs so that they peform their intended accessibility functions
+- Updated dependencies [16dea2974]
+- Updated dependencies [0d0341a3c]
+  - @ilo-org/styles@0.13.2
+
 ## 0.14.2
 
 ### Patch Changes
