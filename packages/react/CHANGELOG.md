@@ -1,5 +1,16 @@
 # @ilo-org/react
 
+## 0.10.1
+
+### Patch Changes
+
+- 67ac66a79: Refactor option label to be a child component instead of an attribute to improve screen reader experience
+- e34e17292: Add optional name paramater that will pass a string to the button element's underlying name attribute
+- d74d0161f: Refactor card heading from h5 to h3 to ensure headings are in sequential order to improve accessibility
+- Updated dependencies [16dea2974]
+- Updated dependencies [0d0341a3c]
+  - @ilo-org/styles@0.13.2
+
 ## 0.10.0
 
 ### Minor Changes
