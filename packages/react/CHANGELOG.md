@@ -1,5 +1,11 @@
 # @ilo-org/react
 
+## 0.10.2
+
+### Patch Changes
+
+- 18dd9ea7c: Bump vite from 4.3.9 to 4.5.2
+
 ## 0.10.1
 
 ### Patch Changes
