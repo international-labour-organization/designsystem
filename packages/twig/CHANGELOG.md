@@ -1,5 +1,11 @@
 # @ilo-org/twig
 
+## 0.14.4
+
+### Patch Changes
+
+- f557eb372: breadcrumbs: added check for context items
+
 ## 0.14.3
 
 ### Patch Changes
