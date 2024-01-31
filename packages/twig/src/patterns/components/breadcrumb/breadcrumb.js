@@ -76,7 +76,9 @@ export default class Breadcrumb {
    */
   enable() {
     window.addEventListener(EVENTS.RESIZE, (e) => this.onResize(e));
-    this.ContextButton.addEventListener(EVENTS.CLICK, () => this.onClick());
+    if (this.ContextButton) {
+      this.ContextButton.addEventListener(EVENTS.CLICK, () => this.onClick());
+    }
 
     return this;
   }
@@ -88,14 +90,15 @@ export default class Breadcrumb {
    * @chainable
    */
   onResize() {
-    if (this.breadcrumbwidth > this.element.offsetWidth / 2) {
-      this.element.classList.add("contextmenu");
-      this.ContextMenu.classList.remove("open");
-    } else {
-      this.element.classList.remove("contextmenu");
-      this.ContextMenu.classList.remove("open");
+    if (this.ContextMenu) {
+      if (this.breadcrumbwidth > this.element.offsetWidth / 2) {
+        this.element.classList.add("contextmenu");
+        this.ContextMenu.classList.remove("open");
+      } else {
+        this.element.classList.remove("contextmenu");
+        this.ContextMenu.classList.remove("open");
+      }
     }
-
     return this;
   }
 
@@ -106,7 +109,7 @@ export default class Breadcrumb {
    * @chainable
    */
   onClick() {
-    if (this.element.classList.contains("contextmenu")) {
+    if (this.ContextMenu) {
       if (this.ContextMenu.classList.contains("open")) {
         this.ContextMenu.classList.remove("open");
       } else {
