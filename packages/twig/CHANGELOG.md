@@ -1,5 +1,12 @@
 # @ilo-org/twig
 
+## 0.14.5
+
+### Patch Changes
+
+- Updated dependencies [dcb36eeef]
+  - @ilo-org/brand-assets@0.3.0
+
 ## 0.14.4
 
 ### Patch Changes
