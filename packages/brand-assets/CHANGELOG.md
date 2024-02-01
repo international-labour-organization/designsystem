@@ -1,5 +1,11 @@
 # @ilo-org/brand-assets
 
+## 0.3.0
+
+### Minor Changes
+
+- dcb36eeef: Replace favicon with a proper version of the ILO logo that will be easy to see and recognize even at small sizes.
+
 ## 0.2.0
 
 ### Minor Changes
