@@ -1,5 +1,12 @@
 # @ilo-org/react
 
+## 0.10.3
+
+### Patch Changes
+
+- Updated dependencies [dcb36eeef]
+  - @ilo-org/brand-assets@0.3.0
+
 ## 0.10.2
 
 ### Patch Changes
