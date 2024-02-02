@@ -258,7 +258,42 @@ const logo_zh_horizontal_white_svg = new URL(
   import.meta.url
 );
 
-const favicon = new URL("./assets/favicon.ico", import.meta.url);
+const favicon = new URL("./assets/favicon/favicon.ico", import.meta.url);
+
+const favicon_android_chrome_192 = new URL(
+  "./assets/favicon/android-chrome-192x192.png",
+  import.meta.url
+);
+
+const favicon_android_chrome_512 = new URL(
+  "./assets/favicon/android-chrome-512x512.png",
+  import.meta.url
+);
+
+const favicon_apple_touch_icon = new URL(
+  "./assets/favicon/apple-touch-icon.png",
+  import.meta.url
+);
+
+const favicon_16 = new URL(
+  "./assets/favicon/favicon-16x16.png",
+  import.meta.url
+);
+
+const favicon_32 = new URL(
+  "./assets/favicon/favicon-32x32.png",
+  import.meta.url
+);
+
+const favicon_mstile_150 = new URL(
+  "./assets/favicon/mstile-150x150.png",
+  import.meta.url
+);
+
+const favicon_safari_pinned_tab = new URL(
+  "./assets/favicon/safari-pinned-tab.svg",
+  import.meta.url
+);
 
 /**
  * LEGACY, these will be removed in future versions
@@ -322,4 +357,11 @@ export {
   logo_zh_horizontal_blue_svg,
   logo_zh_horizontal_white_png,
   logo_zh_horizontal_white_svg,
+  favicon_android_chrome_192,
+  favicon_android_chrome_512,
+  favicon_apple_touch_icon,
+  favicon_16,
+  favicon_32,
+  favicon_mstile_150,
+  favicon_safari_pinned_tab,
 };
