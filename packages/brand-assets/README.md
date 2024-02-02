@@ -99,9 +99,16 @@ Additional assets will be added to this package in future versions.
 
 ### Favicon
 
-| Filetype | Exported as | Filename      |
-| -------- | ----------- | ------------- |
-| ico      | `favicon`   | `favicon.ico` |
+Various different favicon formats are available in the package. They are exported from the `/dist/favicon` directory. The following table lists the available formats and their dimensions.
+
+| Image                                                                   | Description                  | Dimensions | Filetype |
+| ----------------------------------------------------------------------- | ---------------------------- | ---------- | -------- |
+| <img src="./src/assets/favicon/favicon.ico" width="32">                 | `favicon.ico`                | 32x32      | .ico     |
+| <img src="./src/assets/favicon/mstile-150x150.png" width="150">         | `mstile-150x150x.png`        | 150x150    | .png     |
+| <img src="./src/assets/favicon/apple-touch-icon.png" width="150">       | `apple-touch-icon.png`       | 180x180    | .png     |
+| <img src="./src/assets/favicon/android-chrome-192x192.png" width="150"> | `android-chrome-192x192.png` | 192x192    | .png     |
+| <img src="./src/assets/favicon/android-chrome-512x512.png" width="150"> | `android-chrome-512x512.png` | 512x512    | .png     |
+| <img src="./src/assets/favicon/safari-pinned-tab.svg" width="150">      | `safari-pinned-tab.svg`      | -          | .svg     |
 
 ## Contributing
 
