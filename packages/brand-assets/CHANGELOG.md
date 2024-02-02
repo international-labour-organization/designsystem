@@ -1,5 +1,11 @@
 # @ilo-org/brand-assets
 
+## 0.3.1
+
+### Patch Changes
+
+- 2f7fe6c69: Add different versions of favicons and move favicon.ico into `/assets/favicon` folder
+
 ## 0.3.0
 
 ### Minor Changes
