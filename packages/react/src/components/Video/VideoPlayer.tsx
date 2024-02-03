@@ -27,7 +27,7 @@ const VideoPlayer: FC<VideoPlayerProps> = ({
   tracks,
 }) => {
   const { prefix } = useGlobalSettings();
-  const baseClass = `${prefix}--video`;
+  const baseClass = `${prefix}--legacyvideo`;
 
   const playerClasses = classNames("", {
     [`${baseClass}--player`]: true,

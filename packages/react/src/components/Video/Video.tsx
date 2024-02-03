@@ -6,7 +6,7 @@ import VideoPlayer from "./VideoPlayer";
 
 const Video: FC<VideoProps> = ({ className, caption, poster, video }) => {
   const { prefix } = useGlobalSettings();
-  const baseClass = `${prefix}--video`;
+  const baseClass = `${prefix}--legacyvideo`;
 
   const videoClasses = classNames(className, {
     [baseClass]: true,
