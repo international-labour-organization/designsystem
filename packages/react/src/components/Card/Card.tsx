@@ -67,7 +67,7 @@ const Card: FC<CardProps> = ({
         )}
         <div className={`${baseClass}--content`}>
           {eyebrow && <p className={`${baseClass}--eyebrow`}>{eyebrow}</p>}
-          {title && <h5 className={`${baseClass}--title`}>{title}</h5>}
+          {title && <h3 className={`${baseClass}--title`}>{title}</h3>}
           {(variant == "multilink" || (variant == "data" && image)) && (
             <div className={`${baseClass}--image--wrapper`}>
               <picture>

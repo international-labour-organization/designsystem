@@ -24,6 +24,10 @@ const TooltipMeta: Meta<typeof Tooltip> = {
       options: ["light", "dark"],
       control: { type: "select" },
     },
+    iconTheme: {
+      options: ["light", "dark"],
+      control: { type: "select" },
+    },
   },
   parameters: {
     docs: {

@@ -4,10 +4,19 @@ const primary: ButtonProps = {
   type: "primary",
   label: "Primary",
   size: "medium",
+  name: "primary",
 };
-const secondary: ButtonProps = { type: "secondary", label: "Secondary" };
-const tertiary: ButtonProps = { type: "tertiary", label: "Tertiary" };
-const alert: ButtonProps = { type: "alert", label: "Alert" };
+const secondary: ButtonProps = {
+  type: "secondary",
+  label: "Secondary",
+  name: "secondary",
+};
+const tertiary: ButtonProps = {
+  type: "tertiary",
+  label: "Tertiary",
+  name: "tertiary",
+};
+const alert: ButtonProps = { type: "alert", label: "Alert", name: "alert" };
 const icon: ButtonProps = { type: "primary", label: "Icon", icon: "close" };
 const disabled: ButtonProps = {
   type: "primary",
