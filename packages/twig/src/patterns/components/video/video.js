@@ -54,7 +54,7 @@ export default class Video {
      * @type {Object}
      */
     this.VideoElement = this.element.querySelector(
-      `.${this.prefix}--newvideo--element`
+      `.${this.prefix}--video--element`
     );
 
     return this;

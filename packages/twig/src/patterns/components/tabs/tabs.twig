@@ -9,8 +9,8 @@
 <div class="{{prefix}}--tabs" data-prefix="{{prefix}}" id="tabs--{{uid}}" data-loadcomponent="Tabs">
     <ul class="{{prefix}}--tabs--selection" aria-controls="tabs--{{uid}}" role="tablist" style="--tabscount: {{items|length}};">
       {% for item in items %}
-        <li class="{{prefix}}--tabs--selection--item">
-          <a href="#tab--{{tabids[loop.index - 1]}}" class="{{prefix}}--tabs--selection--button{% if item.icon is defined %} icon{% endif %}" role="tab" aria-controls="tab--{{tabids[loop.index - 1]}}" tabindex="0" aria-selected="{% if loop.index == 1 %}true{% else %}false{% endif %}" title="{{item.label}}">
+        <li class="{{prefix}}--tabs--selection--item" role="tab">
+          <a href="#tab--{{tabids[loop.index - 1]}}" class="{{prefix}}--tabs--selection--button{% if item.icon is defined %} icon{% endif %}" aria-controls="tab--{{tabids[loop.index - 1]}}" tabindex="0" aria-selected="{% if loop.index == 1 %}true{% else %}false{% endif %}" title="{{item.label}}">
             <span class="{{prefix}}--tabs--selection--label">{{item.label}}</span>
             {% if item.icon is defined %}
               {% include '@components/icon/icon.twig' with {icon: item.icon} %}

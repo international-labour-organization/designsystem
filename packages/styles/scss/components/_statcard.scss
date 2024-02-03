@@ -83,6 +83,7 @@
 
       .ilo--link {
         @include font-styles("image-credit");
+        line-height: px-to-rem(24px);
       }
     }
   }

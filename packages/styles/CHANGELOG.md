@@ -1,5 +1,19 @@
 # @ilo-org/styles
 
+## 0.13.2
+
+### Patch Changes
+
+- 16dea2974: Add spacing to iframes in richtext
+- 0d0341a3c: Fix padding between arrow and label content in table of contents to prevent overlap
+
+## 0.13.1
+
+### Patch Changes
+
+- 08a2141cc: Refactor link hover bottom border
+- dea2d0a07: Fix link position on RTL on feature card
+
 ## 0.13.0
 
 ### Minor Changes

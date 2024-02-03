@@ -27,14 +27,16 @@
             <a href="{{mainlink.url}}" class="{{prefix}}--language-switcher--link">{{mainlink.label}}</a>
           </span>
         {% endif %}
-        <button class="{{prefix}}--language-switcher--button" type="button">
+        {% if languagecontextmenu.links is not empty %}
+          <button class="{{prefix}}--language-switcher--button" type="button">
           {{languagelabel}}
-        </button>
-        {% include '@components/contextmenu/contextmenu.twig' with {
+          </button>
+          {% include '@components/contextmenu/contextmenu.twig' with {
             links: languagecontextmenu.links,
             prefix: prefix
           }
         %}
+        {% endif %}
       </div> <!-- /.{{prefix}}--language-switcher--wrap -->
     </div> <!-- /.{{prefix}}--language-switcher -->
     <button class="{{prefix}}--header--menu">Menu</button>
@@ -49,7 +51,7 @@
           </a>
           <button class="{{prefix}}--header--menu--close">{{menucloselabel}}</button>
         </div> <!-- /.{{prefix}}--mobile--logo -->
-
+      {% if languagecontextmenu.links is not empty %}
         <div class="{{prefix}}--mobile--nav--language--switcher">
           <button class="{{prefix}}--mobile--nav--language--switcher--button" type="button">{{languagelabel}}</button>
         </div> <!-- /.{{prefix}}--mobile--nav--language--switcher -->
@@ -69,6 +71,7 @@
             </ul>
           </div>
         </div>
+      {% endif %}
       </div> <!-- /.{{prefix}}--mobile--nav -->
       <nav class="{{prefix}}--nav" aria-labelledby="primary-navigation">
         <h2 class="{{prefix}}--nav--label" id="primary-navigation">{{primarynav.navlabel}}</h2>

@@ -36,6 +36,14 @@ cardgroup:
         narrow: narrow
         wide: wide
         fluid: fluid
+    alignment:
+      type: select
+      label: Alignment
+      description: Positions the image to the right or to the left of the content when the card is displayed in a `wide` or `fluid` size. Has no effect if the card is displayed in a `standard` or `narrow` size. Only used by `Multilink Card`.
+      preview: "left"
+      options:
+        left: Left
+        right: Right
     theme:
       type: select
       label: Theme

@@ -2,7 +2,7 @@
 @use "../functions" as *;
 @import "../mixins";
 
-.ilo--newvideo {
+.ilo--video {
   width: 100%;
 
   .video-js {
@@ -341,7 +341,7 @@
 }
 
 [dir="rtl"] {
-  .ilo--newvideo--caption {
+  .ilo--video--caption {
     border-left: none;
     border-right: 3px solid #b8c4cc;
     padding-left: 0;

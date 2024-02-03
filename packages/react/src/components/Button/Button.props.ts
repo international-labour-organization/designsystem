@@ -23,6 +23,11 @@ export interface ButtonProps {
   className?: string;
 
   /**
+   * Specify the name for the Button.
+   */
+  name?: string;
+
+  /**
    * Specify whether or not the button is disabled.
    */
   disabled?: boolean;

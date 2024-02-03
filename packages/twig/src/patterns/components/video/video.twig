@@ -2,8 +2,8 @@
   VIDEO COMPONENT
 #}
 
-<figure class="{{prefix}}--newvideo" data-prefix="{{prefix}}">
-  <div class="{{prefix}}--newvideo--wrapper">
+<figure class="{{prefix}}--video" data-prefix="{{prefix}}">
+  <div class="{{prefix}}--video--wrapper">
     {% include "@components/video/videoplayer.twig" with {
       alt: alt,
       controls: video.controls,
@@ -14,5 +14,5 @@
       vjsType: vjsType
     } %}
   </div>
-  <figcaption class="{{prefix}}--newvideo--caption">{{caption}}</figcaption>
+  <figcaption class="{{prefix}}--video--caption">{{caption}}</figcaption>
 </figure>

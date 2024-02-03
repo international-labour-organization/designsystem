@@ -1,5 +1,50 @@
 # @ilo-org/react
 
+## 0.10.4
+
+### Patch Changes
+
+- Updated dependencies [2f7fe6c69]
+  - @ilo-org/brand-assets@0.3.1
+
+## 0.10.3
+
+### Patch Changes
+
+- Updated dependencies [dcb36eeef]
+  - @ilo-org/brand-assets@0.3.0
+
+## 0.10.2
+
+### Patch Changes
+
+- 18dd9ea7c: Bump vite from 4.3.9 to 4.5.2
+
+## 0.10.1
+
+### Patch Changes
+
+- 67ac66a79: Refactor option label to be a child component instead of an attribute to improve screen reader experience
+- e34e17292: Add optional name paramater that will pass a string to the button element's underlying name attribute
+- d74d0161f: Refactor card heading from h5 to h3 to ensure headings are in sequential order to improve accessibility
+- Updated dependencies [16dea2974]
+- Updated dependencies [0d0341a3c]
+  - @ilo-org/styles@0.13.2
+
+## 0.10.0
+
+### Minor Changes
+
+- 4630eea87: Upgrade react storybook to 7.6.6
+
+### Patch Changes
+
+- d20d3c750: Sync tooltip with twig
+- 857b7b57b: Sync profile with twig
+- Updated dependencies [08a2141cc]
+- Updated dependencies [dea2d0a07]
+  - @ilo-org/styles@0.13.1
+
 ## 0.9.1
 
 ### Patch Changes

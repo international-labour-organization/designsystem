@@ -1,6 +1,6 @@
 {
   "name": "@ilo-org/twig",
-  "version": "0.14.0",
+  "version": "0.14.6",
   "license": "Apache-2.0",
   "description": "Twig components for the ILO's Design System",
   "main": "",
@@ -42,14 +42,14 @@
     "@ilo-org/themes": "workspace:*",
     "@ilo-org/utils": "workspace:*",
     "video.js": "^7.21.2",
-    "videojs-youtube": "^3.0.1"
+    "videojs-youtube": "^3.0.1",
+    "@popperjs/core": "^2.11.8"
   },
   "devDependencies": {
     "@babel/core": "^7.20.12",
     "@babel/preset-env": "^7.20.2",
     "@ilo-org/eslint-config": "workspace:*",
     "@ilo-org/prettier-config": "workspace:*",
-    "@popperjs/core": "^2.11.8",
     "@storybook/addon-actions": "^6.5.16",
     "@storybook/addon-essentials": "^6.5.16",
     "@storybook/addon-links": "^6.5.16",

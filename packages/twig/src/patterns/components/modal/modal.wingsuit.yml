@@ -52,4 +52,10 @@ modal:
         className: "modal--open"
         opensmodal: true
       required: true
+    modalLabel:
+      type: string
+      label: Modal Label
+      description: A modal label added to aria-label attribute to improve accessibility 
+      preview: "modal"
+      required: false
   visibility: storybook

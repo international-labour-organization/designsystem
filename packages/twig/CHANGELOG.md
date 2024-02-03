@@ -1,5 +1,58 @@
 # @ilo-org/twig
 
+## 0.14.6
+
+### Patch Changes
+
+- Updated dependencies [2f7fe6c69]
+  - @ilo-org/brand-assets@0.3.1
+
+## 0.14.5
+
+### Patch Changes
+
+- Updated dependencies [dcb36eeef]
+  - @ilo-org/brand-assets@0.3.0
+
+## 0.14.4
+
+### Patch Changes
+
+- f557eb372: breadcrumbs: added check for context items
+
+## 0.14.3
+
+### Patch Changes
+
+- ba3fdf8fc: Update how the breakpoints are set on the Hero twig component.
+- fb6b65ec3: Fix alignment value to be used from cardgroup and passed on to the card
+- e077aa740: Add a condition to check the breakpoint value.
+- 67ac66a79: Refactor option label to be a child component instead of an attribute to improve screen reader experience
+- e34e17292: Add optional name paramater that will pass a string to the button element's underlying name attribute
+- d74d0161f: Refactor card heading from h5 to h3 to ensure headings are in sequential order to improve accessibility
+- d0e3e8c87: Add optional string modalLabel parameter to be used as aria-label attribute in modal
+- 261413766: Add block to wrap label, as required in Drupal development.
+- 1ddab579a: Refactor tab role to be in the proper child element in tabs so that they peform their intended accessibility functions
+- Updated dependencies [16dea2974]
+- Updated dependencies [0d0341a3c]
+  - @ilo-org/styles@0.13.2
+
+## 0.14.2
+
+### Patch Changes
+
+- d67dc414b: Don't show language selector in Nav if no links are passed to the Language Context Menu
+- Updated dependencies [08a2141cc]
+- Updated dependencies [dea2d0a07]
+  - @ilo-org/styles@0.13.1
+
+## 0.14.1
+
+### Patch Changes
+
+- 9d79b2a6f: Modify tooltip label and icon condition
+- 1e6365385: Add popperjs as a dependency in twig instead of as a dev dependency
+
 ## 0.14.0
 
 ### Minor Changes
