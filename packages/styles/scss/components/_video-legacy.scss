@@ -2,7 +2,7 @@
 @use "../functions" as *;
 @import "../mixins";
 
-.ilo--video {
+.ilo--legacyvideo {
   position: relative;
   width: 100%;
 
@@ -149,8 +149,8 @@
           width: px-to-rem(48px);
         }
 
-        .ilo--video--controls--play,
-        .ilo--video--controls--pause {
+        .ilo--legacyvideo--controls--play,
+        .ilo--legacyvideo--controls--pause {
           order: 1;
           height: px-to-rem(80px);
           width: px-to-rem(80px);
@@ -168,7 +168,7 @@
         $color-ux-video-controls-default-icon
       );
 
-      &.ilo--video--controls--play--hovered,
+      &.ilo--legacyvideo--controls--play--hovered,
       &:hover,
       &:focus {
         background-color: $color-ux-video-controls-hover-background;
@@ -180,7 +180,7 @@
         );
 
         & ~ .vjs-duration,
-        & ~ .ilo--video--controls--duration {
+        & ~ .ilo--legacyvideo--controls--duration {
           background-color: $color-ux-video-controls-hover-background;
           color: $color-ux-video-controls-hover-icon;
         }
@@ -209,7 +209,7 @@
     }
 
     &:not(.notplayed) {
-      .ilo--video--controls--play {
+      .ilo--legacyvideo--controls--play {
         background-size: 24px 24px;
       }
     }
@@ -248,14 +248,14 @@
       text-align: center;
       width: px-to-rem(80px);
 
-      &.ilo--video--controls--duration--hovered,
+      &.ilo--legacyvideo--controls--duration--hovered,
       &:hover,
       &:focus {
         background-color: $color-ux-video-controls-hover-background;
         color: $color-ux-video-controls-hover-icon;
 
         // react-player play button,  https://github.com/international-labour-organization/designsystem/issues/521
-        & ~ .ilo--video--controls--play {
+        & ~ .ilo--legacyvideo--controls--play {
           background-color: $color-ux-video-controls-hover-background;
           @include iconbutton(
             "play",
@@ -282,7 +282,7 @@
           width: px-to-rem(48px);
         }
 
-        .ilo--video--controls--duration {
+        .ilo--legacyvideo--controls--duration {
           height: px-to-rem(40px);
           margin-left: 0;
           margin-top: 2px;
@@ -433,14 +433,14 @@
           }
         }
 
-        .ilo--video--controls--progress-played-container {
+        .ilo--legacyvideo--controls--progress-played-container {
           position: absolute;
           left: 2%;
           top: 0;
           width: 96%;
         }
 
-        .ilo--video--controls--progress-played {
+        .ilo--legacyvideo--controls--progress-played {
           --playhead: 0%;
           align-items: center;
           background-color: $color-ux-credit-background;
@@ -756,7 +756,7 @@
   &:hover,
   &:focus,
   &:focus-within {
-    .ilo--video--controls,
+    .ilo--legacyvideo--controls,
     .vjs-control-bar {
       opacity: 1;
       transition: opacity 150ms ease-out;
@@ -776,12 +776,12 @@
   }
 }
 
-.ilo--video--container {
+.ilo--legacyvideo--container {
   position: relative;
 }
 
 [dir="rtl"] {
-  .ilo--video--caption {
+  .ilo--legacyvideo--caption {
     border-left: none;
     border-right: 3px solid #b8c4cc;
     padding-left: 0;
