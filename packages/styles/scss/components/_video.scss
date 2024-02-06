@@ -5,6 +5,10 @@
 .ilo--video {
   width: 100%;
 
+  .video-js {
+    height: auto;
+  }
+
   .vjs-loading-spinner {
     display: none;
   }
@@ -31,12 +35,13 @@
   &--wrapper {
     line-height: 0;
     position: relative;
+    overflow: hidden;
   }
 
-  .vjs-poster {
-    display: none;
+  // ? drupal style reset issue
+  button {
+    padding: 0;
   }
-
   // Remove extra controls
   .vjs-time-divider,
   .vjs-remaining-time,
@@ -56,8 +61,24 @@
     }
   }
 
+  // Youtube spacing
+  .vjs-youtube {
+    padding-bottom: 56.25%;
+  }
+
   // Initial state
   &--element:not(.vjs-has-started) {
+    .vjs-poster {
+      background-size: cover;
+      object-fit: cover;
+      height: 100%;
+      overflow: hidden;
+      position: absolute;
+      width: 100%;
+      left: 0;
+      top: 0;
+    }
+
     .vjs-control-bar {
       & {
         bottom: auto;
@@ -133,6 +154,10 @@
 
     // TODO: BIG SCREEN
     .vjs-duration {
+      display: none;
+    }
+
+    .vjs-poster {
       display: none;
     }
 
