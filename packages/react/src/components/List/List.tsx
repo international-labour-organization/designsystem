@@ -27,18 +27,13 @@ const List: FC<ListProps> = ({
         activeItems,
       }}
     >
-      {ordered && ordered === "ordered" && (
-        <ol className={listClasses}>
-          {title && <h5 className={`${baseClass}__title`}>{title}</h5>}
-          {children}
-        </ol>
-      )}
-      {ordered && ordered !== "ordered" && (
-        <ul className={listClasses}>
-          {title && <h5 className={`${baseClass}__title`}>{title}</h5>}
-          {children}
-        </ul>
-      )}
+      <div className={listClasses}>
+        {title && <h5 className={`${baseClass}__title`}>{title}</h5>}
+        {ordered && ordered === "ordered" && <ol>{children}</ol>}
+        {ordered && ordered !== "ordered" && (
+          <ul className={`${baseClass}--${alignment}`}>{children}</ul>
+        )}
+      </div>
     </ListContext.Provider>
   );
 };
