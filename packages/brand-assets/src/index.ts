@@ -285,8 +285,8 @@ const favicon_32 = new URL(
   import.meta.url
 );
 
-const favicon_mstile_150 = new URL(
-  "./assets/favicon/mstile-150x150.png",
+const favicon_mstile_270 = new URL(
+  "./assets/favicon/mstile-270x270.png",
   import.meta.url
 );
 
@@ -362,6 +362,6 @@ export {
   favicon_apple_touch_icon,
   favicon_16,
   favicon_32,
-  favicon_mstile_150,
+  favicon_mstile_270,
   favicon_safari_pinned_tab,
 };
