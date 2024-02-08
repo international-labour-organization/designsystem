@@ -128,7 +128,7 @@
 
   &--reset {
     @include font-styles("label-small");
-
+    padding: calc(spacing(2) - px-to-rem(1.5)) calc(spacing(3) - px-to-rem(1.5));
     cursor: pointer;
     display: none;
     opacity: 0;
