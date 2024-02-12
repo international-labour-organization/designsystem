@@ -35,7 +35,7 @@
       #{$self}--title {
         @include font-styles("headline-5");
         margin-bottom: spacing(8);
-        color: $brand-ilo-grey-charcoal;
+        color: $brand-ilo-black;
 
         @include breakpoint("medium") {
           @include font-styles("headline-4");
@@ -45,7 +45,7 @@
       #{$self}--intro {
         @include font-styles("body-small");
         margin-bottom: spacing(8);
-        color: $brand-ilo-grey-charcoal;
+        color: $brand-ilo-black;
 
         @include breakpoint("medium") {
           @include font-styles("base");

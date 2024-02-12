@@ -17,7 +17,7 @@ export const theme = create({
   colorSecondary: brand["ilo-blue"].value,
 
   // UI
-  appBg: brand["ilo-lighter-blue"].value,
+  appBg: brand["ilo-light-blue"].value,
   appContentBg: brand["ilo-white"].value,
   appBorderColor: brand["ilo-grey-ui"].value,
   appBorderRadius: 0,
@@ -37,9 +37,9 @@ export const theme = create({
 
   buttonBg: brand["ilo-white"].value,
   buttonBorder: brand["ilo-grey-ui"].value,
-  booleanBg: brand["ilo-lighter-blue"].value,
+  booleanBg: brand["ilo-light-blue"].value,
   booleanSelectedBg: brand["ilo-white"].value,
-  inputBg: brand["ilo-lighter-blue"].value,
+  inputBg: brand["ilo-light-blue"].value,
   inputBorder: brand["ilo-grey-ui"].value,
   inputTextColor: brand["ilo-dark-blue"].value,
   inputBorderRadius: 3,
