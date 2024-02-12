@@ -48,6 +48,10 @@
       font-family: $fonts-copy;
       font-weight: 400;
       @include font-styles("body-xxs");
+
+      &--dropdown {
+        font-family: $fonts-copy;
+      }
     }
 
     &:hover,
@@ -186,7 +190,7 @@
           content: "";
           height: px-to-rem(12px);
           position: absolute;
-          // left: 50%;
+          left: 50%;
           top: -#{px-to-rem(6px)};
           transform: translateX(-50%) rotate(135deg);
           width: px-to-rem(12px);
