@@ -69,7 +69,7 @@
       }
 
       #{$self}--title {
-        color: $brand-ilo-grey-charcoal;
+        color: $brand-ilo-black;
         @include font-styles("headline-5");
         @include textmargin(
           "margin-bottom",

@@ -149,7 +149,7 @@
           top: 50%;
           transform: rotate(-90deg) translateX(50%);
           width: px-to-rem(12px);
-          @include dataurlicon("equilateraltriangle", $brand-ilo-grey-charcoal);
+          @include dataurlicon("equilateraltriangle", $brand-ilo-black);
         }
       }
 

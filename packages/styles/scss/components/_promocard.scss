@@ -104,7 +104,7 @@
       }
 
       &#{$self}__theme__light:not(:hover) #{$self}--title {
-        color: $brand-ilo-grey-charcoal;
+        color: $brand-ilo-black;
         @include globaltransition("color");
       }
 
