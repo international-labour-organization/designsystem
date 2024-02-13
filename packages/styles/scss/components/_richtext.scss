@@ -185,7 +185,7 @@
     margin: spacing(6) 0 spacing(10) 0;
     padding: spacing(19) 0 spacing(9) spacing(8); // check
     position: relative;
-    width: 100%;
+    width: fit-content;
     @include dataurlicon("triangle", $color-ux-background-default);
 
     p {
