@@ -86,17 +86,19 @@
 
   &--logo {
     display: block;
-    width: 100%;
+    height: spacing(14);
+
+    @include breakpoint("large") {
+      height: spacing(18);
+    }
 
     &-link {
       display: block;
-      padding: 16px 0;
-      max-width: 150px;
-      width: 100%;
+      padding: spacing(4) 0;
+      width: auto;
 
       @include breakpoint("large") {
-        padding: 0 0 24px;
-        max-width: 200px;
+        padding: 0 0 spacing(6);
       }
     }
   }
