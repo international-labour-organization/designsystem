@@ -1,0 +1,29 @@
+icon:
+  namespace: Components/User Interface
+  use: "@components/icon/icon.twig"
+  label: Icon
+  description: A component for displaying an svg icon.
+  settings:
+    name:
+      type: string
+      label: Icon
+      description: The name of the icon to display, see available icons in the @ilo-org/icons package
+      preview: "Arrowright"
+      required: true
+    size:
+      type: select
+      label: Size
+      description: The size of the icon in pixels
+      options:
+        16: 16
+        20: 20
+        24: 24
+        32: 32
+      preview: "24"
+      required: false
+    color:
+      type: string
+      label: Fill
+      description: The fill color of the icon in hex
+      preview: "#000000"
+      required: false
