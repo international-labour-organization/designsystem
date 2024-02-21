@@ -5,7 +5,7 @@
 .ilo--richtext {
   font-family: $fonts-copy;
   font-weight: 400;
-  @include font-styles("body-small");
+  @include font-styles("base");
 
   a {
     @include linkstyles();
