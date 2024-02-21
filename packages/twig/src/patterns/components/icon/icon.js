@@ -1,4 +1,4 @@
-import * as Icons from "@ilo-org/icons/umd/index";
+import * as Icons from "@ilo-org/icons";
 
 const SIZING = [16, 20, 24, 32];
 const DEFAULT_SIZE = 24;
