@@ -38,9 +38,10 @@ export default class Icon {
     }
 
     const svg = this.build();
-    this.attachClassName(svg);
 
+    this.attachClassName(svg);
     this.element.outerHTML = svg.outerHTML;
+
     return this;
   }
 
