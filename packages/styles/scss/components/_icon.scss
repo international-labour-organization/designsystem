@@ -1,0 +1,6 @@
+.ilo--icon {
+  &:not([data-jsProcessed="true"]) {
+    height: 24px;
+    width: 24px;
+  }
+}
