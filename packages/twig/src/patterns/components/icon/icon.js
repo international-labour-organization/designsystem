@@ -39,7 +39,7 @@ export default class Icon {
 
     const svg = this.build();
 
-    this.attachClassName(svg);
+    this.prepare(svg);
     this.element.outerHTML = svg.outerHTML;
 
     return this;
@@ -101,11 +101,12 @@ export default class Icon {
   }
 
   /**
-   * Attach class name to the icon
+   * Attach final attributes
    *
    * @param {SVGElement} icon - REQUIRED - the svg icon instance
    */
-  attachClassName(icon) {
+  prepare(icon) {
     icon.setAttribute("class", this.element.getAttribute("class"));
+    icon.setAttribute("data-js-processed", true);
   }
 }
