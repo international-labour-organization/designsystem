@@ -33,7 +33,6 @@ export default class Icon {
   init() {
     const isValid = this.validate();
     if (!isValid) {
-      console.error("Could not render icon");
       return;
     }
 
@@ -61,7 +60,7 @@ export default class Icon {
 
     const reference = Icons[`${name}${size}`];
     if (!reference) {
-      console.warn(`Icon ${name} not found`);
+      console.warn(`Icon "${name}" not found`);
       return false;
     }
 
