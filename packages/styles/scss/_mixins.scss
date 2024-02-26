@@ -209,6 +209,33 @@
 }
 
 // ======================================
+// Video Button
+// ======================================
+@mixin videobutton($name, $size: "standard") {
+  $height: if($size == "big", 48px, 24px);
+  $box: if($size == "big", 80px, 40px);
+  $width: $height;
+  $color: $color-ux-video-controls-default-icon;
+
+  cursor: pointer;
+  border: none;
+  background-color: $color-ux-video-controls-default-background;
+  width: $box;
+  height: $box;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: $width $height;
+  @include dataurlicon($name, $color);
+
+  &:hover,
+  &:focus {
+    background-color: $color-ux-video-controls-hover-background;
+    $color: $color-ux-video-controls-hover-icon;
+    @include dataurlicon($name, $color);
+  }
+}
+
+// ======================================
 // Link styles
 // ======================================
 
@@ -350,7 +377,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
 
   &::after {
     content: "";

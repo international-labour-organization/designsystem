@@ -185,8 +185,6 @@
   }
 
   &--last-page {
-    margin: 0 0 0 spacing(2);
-
     &::before {
       @include dataurlicon(
         "doublearrow",
@@ -227,7 +225,7 @@
 
   &--page {
     @include font-styles("nav-md-sm");
-
+    margin-inline-end: spacing(2);
     font-family: $fonts-copy;
     font-weight: 400;
     line-height: 45px;

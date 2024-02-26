@@ -2,7 +2,7 @@ pagination:
   namespace: Components/Navigation
   use: "@components/pagination/pagination.twig"
   label: Pagination
-  description: The Pagination component presents a dismissible alert.
+  description: The Pagination component breaks content into pages for easier navigation with intuitive controls like 'Previous' and 'Next' buttons.
   fields:
     currentPage:
       type: numeric

@@ -64,7 +64,7 @@
 
       &::before {
         @include dataurlicon("play", $brand-ilo-grey-light);
-        background-color: $brand-ilo-grey-charcoal;
+        background-color: $brand-ilo-black;
         background-position: center;
         background-size: 18px 20px;
         background-repeat: no-repeat;
@@ -181,7 +181,7 @@
   }
 
   &--intro {
-    color: $brand-ilo-grey-charcoal;
+    color: $brand-ilo-black;
     @include font-styles("body-small");
     @include globaltransition("color");
     margin-bottom: spacing(8);

@@ -12,10 +12,11 @@
     align-items: center;
     flex-direction: row;
     justify-content: space-between;
-
+    text-align: start;
     width: 100%;
     margin: 0;
-    padding: spacing(4) spacing(4) spacing(4) 0;
+    padding: spacing(4) 0;
+    padding-inline-end: spacing(4);
 
     background-color: $color-ux-background-default;
     background-position: calc(100% - px-to-rem(6px)) center;
@@ -36,7 +37,8 @@
 
     &--large {
       @include font-styles("headline-6");
-      padding: spacing(5) spacing(4) spacing(5) 0;
+      padding: spacing(5) 0;
+      padding-inline-end: spacing(4);
     }
 
     &:hover,
@@ -58,11 +60,11 @@
 
     @include breakpoint("medium") {
       @include font-styles("label-medium");
-      padding: spacing(4) spacing(4) spacing(4) 0;
 
       &--large {
         @include font-styles("headline-6");
-        padding: spacing(5) spacing(4) spacing(5) 0;
+        padding: spacing(5) 0;
+        padding-inline-end: spacing(4);
       }
     }
 

@@ -5,7 +5,7 @@
 .ilo--richtext {
   font-family: $fonts-copy;
   font-weight: 400;
-  @include font-styles("body-small");
+  @include font-styles("base");
 
   a {
     @include linkstyles();
@@ -80,8 +80,7 @@
   h2,
   h3,
   h4,
-  h5,
-  h6 {
+  h5 {
     font-family: $fonts-display;
     font-weight: 700;
     margin-top: spacing(14);
@@ -96,7 +95,7 @@
       "body-small",
       "copy"
     );
-    @include font-styles("headline-2");
+    @include font-styles("rich-text-heading-1");
   }
 
   h2 {
@@ -108,7 +107,7 @@
       "body-small",
       "copy"
     );
-    @include font-styles("headline-3");
+    @include font-styles("rich-text-heading-2");
   }
 
   h3 {
@@ -120,7 +119,7 @@
       "body-small",
       "copy"
     );
-    @include font-styles("headline-4");
+    @include font-styles("rich-text-heading-3");
   }
 
   h4 {
@@ -132,7 +131,7 @@
       "body-small",
       "copy"
     );
-    @include font-styles("headline-5");
+    @include font-styles("rich-text-heading-4");
   }
 
   h5 {
@@ -144,19 +143,7 @@
       "body-small",
       "copy"
     );
-    @include font-styles("headline-6");
-  }
-
-  h6 {
-    @include textmargin(
-      "margin-bottom",
-      map-get($spacing, "padding-3"),
-      "headline-6",
-      "display",
-      "body-small",
-      "copy"
-    );
-    @include font-styles("headline-6");
+    @include font-styles("rich-text-heading-5");
   }
 
   ul,
@@ -198,7 +185,7 @@
     margin: spacing(6) 0 spacing(10) 0;
     padding: spacing(19) 0 spacing(9) spacing(8); // check
     position: relative;
-    width: 100%;
+    width: fit-content;
     @include dataurlicon("triangle", $color-ux-background-default);
 
     p {
@@ -249,8 +236,7 @@
     h2,
     h3,
     h4,
-    h5,
-    h6 {
+    h5 {
       margin-top: spacing(16);
     }
 
@@ -263,7 +249,7 @@
         "body-large",
         "copy"
       );
-      @include font-styles("headline-1");
+      @include font-styles("rich-text-heading-1-md");
     }
 
     h2 {
@@ -275,7 +261,7 @@
         "body-large",
         "copy"
       );
-      @include font-styles("headline-2");
+      @include font-styles("rich-text-heading-2-md");
     }
 
     h3 {
@@ -287,7 +273,7 @@
         "body-large",
         "copy"
       );
-      @include font-styles("headline-3");
+      @include font-styles("rich-text-heading-3-md");
     }
 
     h4 {
@@ -299,7 +285,7 @@
         "body-large",
         "copy"
       );
-      @include font-styles("headline-4");
+      @include font-styles("rich-text-heading-4-md");
     }
 
     h5 {
@@ -311,19 +297,7 @@
         "body-large",
         "copy"
       );
-      @include font-styles("headline-5");
-    }
-
-    h6 {
-      @include textmargin(
-        "margin-bottom",
-        map-get($spacing, "padding-4"),
-        "headline-5",
-        "display",
-        "body-large",
-        "copy"
-      );
-      @include font-styles("headline-5");
+      @include font-styles("rich-text-heading-5-md");
     }
 
     p {
