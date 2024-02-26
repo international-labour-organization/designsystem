@@ -1,5 +1,38 @@
 # @ilo-org/twig
 
+## 0.15.0
+
+### Minor Changes
+
+- 4153f99b5: Removed black bars from youtube ebedded video
+- 1ed3123ae: Re-implemented video.js styles
+
+### Patch Changes
+
+- 9bf73c7bd: Fix lists containing other elements than li items to improve accessibility
+- a3c872512: separated labels for breadcrumbs
+- 056754038: Revise and refactor color names with the same values and remove duplicates and replace where it was used
+- e1000fbbd: added legacy classname for react video component
+- Updated dependencies [4153f99b5]
+- Updated dependencies [c8de2b695]
+- Updated dependencies [7472dd625]
+- Updated dependencies [b3298a267]
+- Updated dependencies [bf4432d7c]
+- Updated dependencies [1ed3123ae]
+- Updated dependencies [f76a35fdc]
+- Updated dependencies [a3c872512]
+- Updated dependencies [056754038]
+- Updated dependencies [4bbac5457]
+- Updated dependencies [e1000fbbd]
+- Updated dependencies [ac58b53d2]
+- Updated dependencies [51b20d4aa]
+- Updated dependencies [5a1e32f8e]
+- Updated dependencies [52eeae214]
+- Updated dependencies [709675b79]
+  - @ilo-org/styles@0.13.3
+  - @ilo-org/brand-assets@0.4.0
+  - @ilo-org/themes@0.7.1
+
 ## 0.14.6
 
 ### Patch Changes

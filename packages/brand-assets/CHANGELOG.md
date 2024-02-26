@@ -1,5 +1,15 @@
 # @ilo-org/brand-assets
 
+## 0.4.0
+
+### Minor Changes
+
+- 5a1e32f8e: Fix logos in various languages showing inconsistent sizes
+
+### Patch Changes
+
+- b3298a267: Change favicon name, mstile-150x150.png to mstile-270x270.png
+
 ## 0.3.1
 
 ### Patch Changes
