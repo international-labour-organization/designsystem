@@ -1,5 +1,26 @@
 # @ilo-org/styles
 
+## 0.13.3
+
+### Patch Changes
+
+- 4153f99b5: Removed black bars from youtube ebedded video
+- c8de2b695: Fix reset tag button having a bigger height than other tags
+- 7472dd625: Fix spacing when the date is not shown in the feature card
+- bf4432d7c: Force logo to appear a standard height in Navigation
+- 1ed3123ae: Re-implemented video.js styles
+- f76a35fdc: Refactor spacing in profile and cardgroup to use new mixin
+- a3c872512: separated labels for breadcrumbs
+- 056754038: Revise and refactor color names with the same values and remove duplicates and replace where it was used
+- 4bbac5457: Fix padding and ending quote missing issue in pullquote
+- e1000fbbd: added legacy classname for react video component
+- ac58b53d2: Fix breadcrumb getting hidden in small devices
+- 51b20d4aa: Remove gap between forward and end button in pagination
+- 52eeae214: Refactor default heading styles in richtext
+- 709675b79: Refactor text alignment on accordion on small devices and fix rtl design bug
+- Updated dependencies [056754038]
+  - @ilo-org/themes@0.7.1
+
 ## 0.13.2
 
 ### Patch Changes
