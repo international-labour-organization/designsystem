@@ -1,5 +1,11 @@
 # @ilo-org/themes
 
+## 0.7.1
+
+### Patch Changes
+
+- 056754038: Revise and refactor color names with the same values and remove duplicates and replace where it was used
+
 ## 0.7.0
 
 ### Minor Changes
