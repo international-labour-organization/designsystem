@@ -229,7 +229,7 @@
     }
   }
 
-  @include breakpoint("medium", true) {
+  @include breakpoint("medium") {
     @include font-styles("base");
 
     h1,
