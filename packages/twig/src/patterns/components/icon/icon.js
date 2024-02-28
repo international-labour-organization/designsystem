@@ -58,7 +58,12 @@ export default class Icon {
       size = DEFAULT_SIZE;
     }
 
-    const reference = Icons[`${name}${size}`];
+    if (!name) {
+      console.warn("Icon name is required");
+      return false;
+    }
+
+    const reference = this.getIconConfig(name, size);
     if (!reference) {
       console.warn(`Icon "${name}" not found`);
       return false;
@@ -74,7 +79,7 @@ export default class Icon {
    */
   build() {
     const { name, size, color } = this.element.dataset;
-    const config = Icons[`${name}${size}`];
+    const config = this.getIconConfig(name, size);
     const element = document.createElementNS(SVG_NS, "svg");
 
     for (const [key, value] of Object.entries(config.attrs)) {
@@ -97,6 +102,18 @@ export default class Icon {
     }
 
     return element;
+  }
+
+  /**
+   * Get the icon config
+   *
+   * @param {string} name
+   * @param {string} size
+   */
+  getIconConfig(name, size) {
+    const nameUpper = name.charAt(0).toUpperCase() + name.slice(1);
+
+    return Icons[`${nameUpper}${size}`];
   }
 
   /**
