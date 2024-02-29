@@ -135,6 +135,12 @@ Build React Storybook and dependent packages
 pnpm react:build:docs
 ```
 
+Shortcut to only install and build React deps for development
+
+```bash
+pnpm react:dev:prep
+```
+
 Start React storybook in dev mode
 
 ```bash
@@ -145,6 +151,12 @@ Build Twig Storybook and dependent packages
 
 ```bash
 pnpm twig:build:docs
+```
+
+Shortcut to only install and build Twig deps for development
+
+```bash
+pnpm twig:dev:prep
 ```
 
 Start Twig storybook in dev mode
