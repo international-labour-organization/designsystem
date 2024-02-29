@@ -9,8 +9,12 @@ import { RichText } from "../RichText";
 const Tabs: FC<TabsProps> = ({ items }) => {
   const [activeTab, setActiveTab] = useState(0);
 
-  const handleTabClick = (index: SetStateAction<number>) => {
+  const handleTabClick = (
+    index: SetStateAction<number>,
+    e: React.MouseEvent<HTMLElement>
+  ) => {
     setActiveTab(index);
+    e.preventDefault();
   };
 
   const { prefix } = useGlobalSettings();
@@ -20,14 +24,15 @@ const Tabs: FC<TabsProps> = ({ items }) => {
 
   return (
     <div className={`${tabsClasses} tabs--js`}>
-      <ul className={`${baseClass}--selection`}>
+      <ul className={`${baseClass}--selection`} role="tablist">
         {items.map((tab, index) => (
           <li
             key={`#tab--${index}`}
+            role="tab"
             className={`${baseClass}--selection--item ${
               activeTab === index ? "active" : ""
             }`}
-            onClick={() => handleTabClick(index)}
+            onClick={(e) => handleTabClick(index, e)}
           >
             <a
               href={`#tab--${index}`}
@@ -40,12 +45,11 @@ const Tabs: FC<TabsProps> = ({ items }) => {
               title={tab.label}
             >
               <span className={`${baseClass}--selection--label`}>
-                {tab.label &&
-                  (tab.label.length > 10
-                    ? `${tab.label.slice(0, 10)}...`
-                    : tab.label)}
+                {tab.label}
               </span>
-              {tab.icon && <Icon hidden={false}>{tab.icon}</Icon>}
+              {tab.icon && (
+                <Icon name={tab.icon.name} hidden={tab.icon.hidden} />
+              )}
             </a>
           </li>
         ))}
@@ -55,7 +59,12 @@ const Tabs: FC<TabsProps> = ({ items }) => {
           switch (items[activeTab].component) {
             case "image":
               return (
-                <Image url={items[activeTab].componentData.url}>
+                <Image
+                  url={items[activeTab].componentData.url}
+                  alt={items[activeTab].componentData.alt}
+                  caption={items[activeTab].componentData.caption}
+                  credit={items[activeTab].componentData.credit}
+                >
                   {items[activeTab].componentData}
                 </Image>
               );
@@ -72,32 +81,5 @@ const Tabs: FC<TabsProps> = ({ items }) => {
     </div>
   );
 };
-
-// const Tabs: FC<TabsProps> = ({ items }) => {
-//   const [activeTab, setActiveTab] = useState(0);
-
-//   const { prefix } = useGlobalSettings();
-
-//   const baseClass = `${prefix}--tabs`;
-//   const tabsClasses = classnames(baseClass);
-
-//   return (
-//     <div className={tabsClasses}>
-//       <div className='ilo--tabs--selection'>
-//         {items.map((tab, index) => (
-//           <button
-//             key={index}
-//             onClick={() => setActiveTab(index)}
-//             className={`${baseClass}--selection--item ${activeTab === index ? "active" : ""}`}
-//           >
-//             {tab.icon && <Icon hidden={tab.icon.hidden}>{tab.icon}</Icon>}
-//             <div className={`${baseClass}--selection--button`}>{tab.label}</div>
-//           </button>
-//         ))}
-//       </div>
-//       <div className={`${baseClass}--tab-content`}>{items[activeTab].children}</div>
-//     </div>
-//   );
-// };
 
 export default Tabs;

@@ -9,6 +9,11 @@ const TabsMeta: Meta<typeof Tabs> = {
 
 export default TabsMeta;
 
+export const Default: StoryObj<typeof Tabs> = {
+  args: TabsArgs.tabs,
+  name: "Default",
+};
+
 export const TabsWithIcon: StoryObj<typeof Tabs> = {
   args: TabsArgs.withIcon,
   name: "With Icon",
