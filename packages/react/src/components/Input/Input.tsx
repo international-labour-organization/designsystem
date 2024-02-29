@@ -16,6 +16,7 @@ const Input: FC<InputProps> = ({
   placeholder,
   required,
   tooltip,
+  value,
   type = "text",
 }) => {
   const { prefix } = useGlobalSettings();
@@ -53,6 +54,7 @@ const Input: FC<InputProps> = ({
           placeholder={placeholder}
           required={required as any}
           type={type}
+          value={value}
           className={InputClasses}
         />
       </FormElement>
