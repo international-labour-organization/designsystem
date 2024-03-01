@@ -1,5 +1,21 @@
 # @ilo-org/twig
 
+## 0.16.0
+
+### Minor Changes
+
+- 138890e7a: implemented new icon component
+
+### Patch Changes
+
+- ac23bf484: Add clear button to search input field
+- fd26dbafc: Enable Button to use newly refactored Icon component
+- db2ecaf48: Correct the way the Table of Contents passes properties to the Open and Close buttons.
+- Updated dependencies [ac23bf484]
+- Updated dependencies [1b9c54f99]
+- Updated dependencies [138890e7a]
+  - @ilo-org/styles@0.14.0
+
 ## 0.15.0
 
 ### Minor Changes
