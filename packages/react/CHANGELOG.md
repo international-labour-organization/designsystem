@@ -1,5 +1,15 @@
 # @ilo-org/react
 
+## 0.10.6
+
+### Patch Changes
+
+- 460210518: Add clear button to search input field
+- Updated dependencies [ac23bf484]
+- Updated dependencies [1b9c54f99]
+- Updated dependencies [138890e7a]
+  - @ilo-org/styles@0.14.0
+
 ## 0.10.5
 
 ### Patch Changes

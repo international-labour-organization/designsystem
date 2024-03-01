@@ -1,5 +1,16 @@
 # @ilo-org/styles
 
+## 0.14.0
+
+### Minor Changes
+
+- 138890e7a: implemented new icon component
+
+### Patch Changes
+
+- ac23bf484: Add clear button to search input field
+- 1b9c54f99: Fix alignment in navigation header label and icon
+
 ## 0.13.3
 
 ### Patch Changes
