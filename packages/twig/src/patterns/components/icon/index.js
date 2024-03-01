@@ -1,6 +1,6 @@
 /**
- * media
+ * Icon
  */
-// Module template
-import "./image.twig";
-import "./image.wingsuit.yml";
+import "./icon.twig";
+import "./icon.wingsuit.yml";
+import "./icon.behavior";
