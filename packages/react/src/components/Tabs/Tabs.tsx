@@ -3,8 +3,6 @@ import useGlobalSettings from "../../hooks/useGlobalSettings";
 import classnames from "classnames";
 import { TabsProps } from "./Tabs.props";
 import { Icon } from "../Icon";
-import { Image } from "../Image";
-import { RichText } from "../RichText";
 
 const Tabs: FC<TabsProps> = ({ items }) => {
   const [activeTab, setActiveTab] = useState(0);
@@ -54,30 +52,7 @@ const Tabs: FC<TabsProps> = ({ items }) => {
           </li>
         ))}
       </ul>
-      <div className={`${baseClass}--content`}>
-        {(() => {
-          switch (items[activeTab].component) {
-            case "image":
-              return (
-                <Image
-                  url={items[activeTab].componentData.url}
-                  alt={items[activeTab].componentData.alt}
-                  caption={items[activeTab].componentData.caption}
-                  credit={items[activeTab].componentData.credit}
-                >
-                  {items[activeTab].componentData}
-                </Image>
-              );
-            case "richtext":
-              return (
-                <RichText content={items[activeTab].componentData.content} />
-              );
-            // Add more cases for other component types
-            default:
-              return null; // Or handle unknown types as needed
-          }
-        })()}
-      </div>
+      <div className={`${baseClass}--content`}>{items[activeTab].content}</div>
     </div>
   );
 };
