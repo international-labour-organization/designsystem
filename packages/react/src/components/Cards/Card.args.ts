@@ -184,6 +184,19 @@ const dataCard: CardProps = {
         },
       ],
     },
+    cta: {
+      headline: "Read online",
+      items: [
+        {
+          label: "HTML Version",
+          url: "https://www.ilo.org",
+        },
+        {
+          label: "InfoStories",
+          url: "https://www.ilo.org/infostories/en-GB",
+        },
+      ],
+    },
     links: {
       headline: "Languages",
       items: [

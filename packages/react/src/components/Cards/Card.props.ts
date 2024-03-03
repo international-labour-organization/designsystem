@@ -9,8 +9,6 @@ import {
 import { LinkProps, LinkListProps } from "../LinkList/LinkList.props";
 import { ProfileProps } from "../Profile/Profile.props";
 
-export type DataCardProps = {};
-
 export interface CardProps {
   /**
    * Specify whether the card should display a video icon (for Feature card). Possible options: true | false
@@ -123,6 +121,7 @@ interface CardDataset {
   content?: DataContent;
   files?: DataFile;
   links?: DataLink;
+  cta?: Cta;
 }
 
 interface DataContent {
@@ -140,6 +139,11 @@ interface DataFile {
 }
 
 interface DataLink {
+  headline?: string;
+  items?: Array<LinkProps>;
+}
+
+interface Cta {
   headline?: string;
   items?: Array<LinkProps>;
 }

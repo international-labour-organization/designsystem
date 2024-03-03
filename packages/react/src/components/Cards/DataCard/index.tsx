@@ -3,43 +3,27 @@ import classnames from "classnames";
 import useGlobalSettings from "../../../hooks/useGlobalSettings";
 import { CardProps } from "../Card.props";
 import { Link } from "../../Link";
-import { List, ListItem } from "../../List";
-import { LinkList } from "../../LinkList";
-import { Profile } from "../../Profile";
 
 const DataCard: FC<CardProps> = ({
-  isvideo,
   eyebrow,
   title,
   color,
   theme,
-  type,
   size,
   cornercut,
   alignment,
-  intro,
-  eventdetails,
-  profile,
-  listitems,
-  link,
-  linklist,
-  cta,
   image,
-  source,
   dataset,
 }) => {
   const { prefix } = useGlobalSettings();
 
   const baseClass = `${prefix}--card`;
 
-  const cardClasses = classnames(baseClass, `${baseClass}__type__${type}`, {
+  const cardClasses = classnames(baseClass, `${baseClass}__type__data`, {
     [`${baseClass}__color__${color}`]: color,
     [`${baseClass}__${cornercut}`]: cornercut,
     [`${baseClass}__align__${alignment}`]: alignment,
-    [`${baseClass}__action`]: link,
     [`${baseClass}__size__${size}`]: size,
-    [`${baseClass}__isvideo`]: isvideo,
-    [`${baseClass}__linklist`]: linklist,
     [`${baseClass}__theme__${theme}`]: theme,
   });
 
@@ -59,7 +43,6 @@ const DataCard: FC<CardProps> = ({
         )}
         <div className={`${baseClass}--content`}>
           {eyebrow && <p className={`${baseClass}--eyebrow`}>{eyebrow}</p>}
-          {title && <h5 className={`${baseClass}--title`}>{title}</h5>}
           {image && (
             <div className={`${baseClass}--image--wrapper`}>
               <picture>
@@ -70,48 +53,6 @@ const DataCard: FC<CardProps> = ({
                 />
               </picture>
             </div>
-          )}
-          {intro && <p className={`${baseClass}--intro`}>{intro}</p>}
-          {eventdetails && (
-            <p className={`${baseClass}--date-extra`}>{eventdetails}</p>
-          )}
-          {profile && profile.avatar && (
-            <Profile
-              avatar={profile.avatar}
-              description={profile.description}
-              link={profile.link}
-              name={profile.name}
-              role={profile.role}
-              className={`${prefix}--profile--contents--${theme}`}
-            />
-          )}
-          {listitems && (
-            <List alignment="default" ordered="unordered">
-              {listitems.map((item, index) => (
-                <ListItem id={`list${index}`}>
-                  <p>{item}</p>
-                </ListItem>
-              ))}
-            </List>
-          )}
-          {cta && cta.label && (
-            <a
-              className={`${baseClass}--cta ${prefix}--button ${prefix}--button--medium ${prefix}--button--primary`}
-              href={cta.url}
-            >
-              <span className="link__label">{cta.label}</span>
-            </a>
-          )}
-          {source && (
-            <Link theme={theme} url={source.url}>
-              {source.label}
-            </Link>
-          )}
-          {linklist && (
-            <LinkList
-              headline={linklist.headline}
-              linkgroup={linklist.linkgroup}
-            />
           )}
           {dataset &&
             dataset.content &&
@@ -141,6 +82,24 @@ const DataCard: FC<CardProps> = ({
                     <span className="button__label">{item.label}</span>
                   </a>
                 ))}
+            </div>
+          )}
+          {dataset && dataset.cta && (
+            <div className={`${baseClass}--area--cta`}>
+              <div className={`${baseClass}--data--content-cta`}>
+                <p className={`${baseClass}--data--content-label`}>
+                  {dataset.cta.headline}
+                </p>
+                {dataset.cta.items &&
+                  dataset.cta.items.map((item) => (
+                    <a
+                      className={`${baseClass}--cta ${prefix}--button ${prefix}--button--medium ${prefix}--button--secondary`}
+                      href={item.url}
+                    >
+                      <span className="link__label">{item.label}</span>
+                    </a>
+                  ))}
+              </div>
             </div>
           )}
           {dataset && dataset.links && (
