@@ -22,29 +22,9 @@ export interface VideoPlayerControls {
   volume: string;
 }
 
-export interface TracksConfig {
-  /**
-   * is this the default track?
-   */
-  default?: boolean;
-
-  /**
-   * What kind of track is it?
-   */
-  kind?: string;
-
-  /**
-   * url for the track
-   */
-  src?: string;
-
-  /**
-   * language of the track
-   */
-  srcLang?: string;
-}
-
 export interface VideoPlayerProps {
+  src: string;
+
   /**
    * Specify an optional className to be added to your Media.
    */
@@ -53,27 +33,12 @@ export interface VideoPlayerProps {
   /**
    * Specify the strings to be used as labels for the video controls
    */
-  controls?: Required<VideoPlayerControls | false>;
-
-  /**
-   * Specify whether a video is to be shown
-   */
-  hasvideo?: Required<boolean>;
+  controls?: VideoPlayerControls;
 
   /**
    *  poster image for video
    */
   poster?: Poster;
-
-  /**
-   * if self-hosted, specify the url of this video
-   */
-  src?: string | null;
-
-  /**
-   * if there are closed-caption tracks,
-   */
-  tracks?: Required<Array<TracksConfig>> | null;
 
   /**
    * if YouTube, set to true
