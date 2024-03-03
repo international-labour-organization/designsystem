@@ -19,7 +19,7 @@ const LinkList: FC<LinkListProps> = ({
 
   return (
     <div className={linkListClasses}>
-      <h3 className={`${baseClass}--headline`}>{headline}</h3>
+      {headline && <h3 className={`${baseClass}--headline`}>{headline}</h3>}
       <ul className={`${baseClass}--linkgroups`}>
         {linkgroup &&
           linkgroup.map((linkset, i) => (

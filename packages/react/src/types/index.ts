@@ -59,8 +59,8 @@ export type CardAlignment = "left" | "right";
 export type CardTypes =
   | "stat"
   | "multilink"
-  | "graphic"
-  | "graphicpromo"
+  | "text"
+  | "promo"
   | "feature"
   | "detail"
   | "factlist"

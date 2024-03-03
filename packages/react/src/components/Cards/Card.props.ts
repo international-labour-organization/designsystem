@@ -9,6 +9,8 @@ import {
 import { LinkProps, LinkListProps } from "../LinkList/LinkList.props";
 import { ProfileProps } from "../Profile/Profile.props";
 
+export type DataCardProps = {};
+
 export interface CardProps {
   /**
    * Specify whether the card should display a video icon (for Feature card). Possible options: true | false
@@ -36,9 +38,10 @@ export interface CardProps {
   theme?: ThemeTypes;
 
   /**
-   * Different variations of card: Graphic | Stat | Graphic Promo | Multilink | Feature | Detail | Fact List | Data.
+   * Type - Sets the type of card to render.
+     Option keys: feature, text, detail, promo, multilink, data, stat, factlist
    */
-  variant: Required<CardTypes>;
+  type: Required<CardTypes>;
 
   /**
    * Size of the cards (usually reduces padding). `Wide` on Multilink and Feature cause a two column structure above a desktop breakpoint. Possible options: Wide | Standard | Narrow.
@@ -46,7 +49,7 @@ export interface CardProps {
   size?: CardSize;
 
   /**
-   * Specify whether the card has a cut corner. The only cards that use this setting are `Graphic Promo` and `Factlist`. Possible options: cornercut | corner.
+   * Specify whether the card has a cut corner. The only cards that use this setting are `Promo` and `Factlist`. Possible options: cornercut | corner.
    */
   cornercut?: CardCornerType;
 
@@ -71,7 +74,7 @@ export interface CardProps {
   eventdetails?: string;
 
   /**
-   * Profile to embed in the card for `Graphic Text`
+   * Profile to embed in the card for `Text` card
    */
   profile?: ProfileProps;
 
@@ -91,12 +94,12 @@ export interface CardProps {
   linklist?: LinkListProps;
 
   /**
-   * Items for clickable CTA button, specifically used for `Graphic Promo` card.
+   * Items for clickable CTA button, specifically used for `Promo` card.
    */
   cta?: LinkProps;
 
   /**
-   * The image used in a card. Images should be avoided on `Graphic Promo`, `Graphic Text`, `Factlist`, and `Stat` card.
+   * The image used in a card. Images should be avoided on `Promo`, `Text`, `Factlist`, and `Stat` card.
    */
   image?: string;
 

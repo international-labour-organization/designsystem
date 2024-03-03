@@ -1,7 +1,7 @@
 import { CardProps } from "./Card.props";
 
-const graphicTextCard: CardProps = {
-  variant: "graphic",
+const textCard: CardProps = {
+  type: "text",
   title: "Why we need greater social justice",
   eyebrow: "Podcast",
   date: {
@@ -22,7 +22,7 @@ const graphicTextCard: CardProps = {
 };
 
 const statCard: CardProps = {
-  variant: "stat",
+  type: "stat",
   title: "Global employment growth down by half in 2023",
   eyebrow: "Report",
   intro:
@@ -35,7 +35,7 @@ const statCard: CardProps = {
 };
 
 const multilinkCard: CardProps = {
-  variant: "multilink",
+  type: "multilink",
   title:
     "ILO welcomes G7 call to make a just transition to a green economy happen",
   eyebrow: "High-level meeting",
@@ -47,6 +47,7 @@ const multilinkCard: CardProps = {
     human: "6 September 2023",
     unix: "1670389200",
   },
+  link: "https:/www.ilo.org",
   linklist: {
     headline: "",
     linkgroup: [
@@ -70,8 +71,9 @@ const multilinkCard: CardProps = {
   },
 };
 
-const graphicPromoCard: CardProps = {
-  variant: "graphicpromo",
+const promoCard: CardProps = {
+  type: "promo",
+  size: "standard",
   title:
     "ILO welcomes G7 call to make a just transition to a green economy happen",
   eyebrow: "High-level meeting",
@@ -87,7 +89,7 @@ const graphicPromoCard: CardProps = {
 };
 
 const featureCard: CardProps = {
-  variant: "feature",
+  type: "feature",
   isvideo: false,
   title:
     "ILO welcomes G7 call to make a just transition to a green economy happen",
@@ -115,7 +117,7 @@ const featureCard: CardProps = {
 };
 
 const detailCard: CardProps = {
-  variant: "detail",
+  type: "detail",
   title: "Technical meeting on digitalization in the construction sector",
   eyebrow: "Meeting",
   intro:
@@ -130,7 +132,7 @@ const detailCard: CardProps = {
 };
 
 const factListCard: CardProps = {
-  variant: "factlist",
+  type: "factlist",
   title:
     "Economic slowdown likely to force workers to accept lower quality jobs",
   eyebrow: "Report",
@@ -146,7 +148,8 @@ const factListCard: CardProps = {
 };
 
 const dataCard: CardProps = {
-  variant: "data",
+  type: "data",
+  size: "standard",
   title: "Technical meeting on digitalization in the construction sector",
   eyebrow: "Meeting",
   eventdetails:
@@ -202,10 +205,10 @@ const dataCard: CardProps = {
 };
 
 const CardArgs = {
-  graphicTextCard,
+  textCard,
   statCard,
   multilinkCard,
-  graphicPromoCard,
+  promoCard,
   featureCard,
   detailCard,
   factListCard,

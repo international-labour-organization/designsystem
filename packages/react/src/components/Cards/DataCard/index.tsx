@@ -1,24 +1,23 @@
 import { FC } from "react";
 import classnames from "classnames";
-import useGlobalSettings from "../../hooks/useGlobalSettings";
-import { CardProps } from "./Card.props";
-import { Link } from "../Link";
-import { List, ListItem } from "../List";
-import { LinkList } from "../LinkList";
-import { Profile } from "../Profile";
+import useGlobalSettings from "../../../hooks/useGlobalSettings";
+import { CardProps } from "../Card.props";
+import { Link } from "../../Link";
+import { List, ListItem } from "../../List";
+import { LinkList } from "../../LinkList";
+import { Profile } from "../../Profile";
 
-const Card: FC<CardProps> = ({
+const DataCard: FC<CardProps> = ({
   isvideo,
   eyebrow,
   title,
   color,
   theme,
-  variant,
+  type,
   size,
   cornercut,
   alignment,
   intro,
-  date,
   eventdetails,
   profile,
   listitems,
@@ -32,47 +31,40 @@ const Card: FC<CardProps> = ({
   const { prefix } = useGlobalSettings();
 
   const baseClass = `${prefix}--card`;
-  const cardClasses = classnames(
-    baseClass,
-    `${baseClass}--${variant}`,
-    `${baseClass}--${color}`,
-    {
-      [`${baseClass}--${cornercut}`]: cornercut,
-      [`${baseClass}--${alignment}`]: alignment,
-      [`${baseClass}--action`]: link,
-      [`${baseClass}--${size}`]: size,
-      [`${baseClass}--isvideo`]: isvideo,
-      [`${baseClass}--linklist`]: linklist,
-      [`${baseClass}--${theme}`]: theme,
-    }
-  );
+
+  const cardClasses = classnames(baseClass, `${baseClass}__type__${type}`, {
+    [`${baseClass}__color__${color}`]: color,
+    [`${baseClass}__${cornercut}`]: cornercut,
+    [`${baseClass}__align__${alignment}`]: alignment,
+    [`${baseClass}__action`]: link,
+    [`${baseClass}__size__${size}`]: size,
+    [`${baseClass}__isvideo`]: isvideo,
+    [`${baseClass}__linklist`]: linklist,
+    [`${baseClass}__theme__${theme}`]: theme,
+  });
 
   return (
     <div className={cardClasses}>
-      {link &&
-        variant != "data" &&
-        variant != "factlist" &&
-        variant != "stat" && (
-          <a className={`${baseClass}--link`} href={link} title={title}>
-            <span className={`${baseClass}--link--text`}>{title}</span>
-          </a>
-        )}
       <div className={`${baseClass}--wrap`}>
         {image && (
           <div className={`${baseClass}--image--wrapper`}>
             <picture>
-              <img className={`${baseClass}--image`} src={image} alt={title} />
+              <img
+                className={`${baseClass}--picture`}
+                src={image}
+                alt={title}
+              />
             </picture>
           </div>
         )}
         <div className={`${baseClass}--content`}>
           {eyebrow && <p className={`${baseClass}--eyebrow`}>{eyebrow}</p>}
-          {title && <h3 className={`${baseClass}--title`}>{title}</h3>}
-          {(variant == "multilink" || (variant == "data" && image)) && (
+          {title && <h5 className={`${baseClass}--title`}>{title}</h5>}
+          {image && (
             <div className={`${baseClass}--image--wrapper`}>
               <picture>
                 <img
-                  className={`${baseClass}--image`}
+                  className={`${baseClass}--picture`}
                   src={image}
                   alt={title}
                 />
@@ -80,17 +72,8 @@ const Card: FC<CardProps> = ({
             </div>
           )}
           {intro && <p className={`${baseClass}--intro`}>{intro}</p>}
-          {date &&
-            variant != "stat" &&
-            variant != "data" &&
-            variant != "graphicpromo" &&
-            variant != "factlist" && (
-              <time className={`${baseClass}--date`} dateTime={date.unix}>
-                {date.human}
-              </time>
-            )}
           {eventdetails && (
-            <p className={`${baseClass}--event-date`}>{eventdetails}</p>
+            <p className={`${baseClass}--date-extra`}>{eventdetails}</p>
           )}
           {profile && profile.avatar && (
             <Profile
@@ -134,14 +117,14 @@ const Card: FC<CardProps> = ({
             dataset.content &&
             dataset.content.items &&
             dataset.content.items.map((item) => (
-              <>
-                <p className={`${baseClass}--data--content-label`}>
+              <div className={`${baseClass}--area--content`}>
+                <p className={`${baseClass}__type__data--content-label`}>
                   {item.label}
                 </p>
-                <p className={`${baseClass}--data--content-copy`}>
+                <p className={`${baseClass}__type__data--content-copy`}>
                   {item.copy}
                 </p>
-              </>
+              </div>
             ))}
           {dataset && dataset.files && (
             <div className={`${baseClass}--data--content-files`}>
@@ -180,4 +163,4 @@ const Card: FC<CardProps> = ({
   );
 };
 
-export default Card;
+export default DataCard;
