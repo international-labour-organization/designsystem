@@ -1,19 +1,21 @@
 import { FC } from "react";
-import { CardProps } from "./Card.props";
-import DataCard from "./DataCard";
-import DetailCard from "./DetailCard";
-import FactlistCard from "./FactlistCard";
-import FeatureCard from "./FeatureCard";
-import MultilinkCard from "./MultilinkCard";
-import PromoCard from "./PromoCard";
-import StatCard from "./StatCard";
-import TextCard from "./TextCard";
+import { CardProps, TextCardProps, FactlistCardProps } from "./Card.props";
+import {
+  DataCard,
+  DetailCard,
+  FactlistCard,
+  FeatureCard,
+  MultilinkCard,
+  PromoCard,
+  StatCard,
+  TextCard,
+} from ".";
 
 type ComponentMap = {
-  [key: string]: FC<CardProps>;
+  [key: string]: FC<any>;
 };
 
-const Card: FC<CardProps> = (combinedProps: CardProps) => {
+const Card: FC<CardProps> = (props: CardProps) => {
   const componentMap: ComponentMap = {
     data: DataCard,
     detail: DetailCard,
@@ -24,10 +26,11 @@ const Card: FC<CardProps> = (combinedProps: CardProps) => {
     stat: StatCard,
     text: TextCard,
   };
-  const { type } = combinedProps;
+
+  const { type } = props;
 
   const SelectedCardComponent = componentMap[type] || FeatureCard;
-  return <SelectedCardComponent {...combinedProps} />;
+  return <SelectedCardComponent {...props} />;
 };
 
 export default Card;

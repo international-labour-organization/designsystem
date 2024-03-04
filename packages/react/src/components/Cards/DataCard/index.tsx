@@ -11,6 +11,7 @@ const DataCard: FC<DataCardProps> = ({
   cornercut,
   image,
   dataset,
+  columns = "one",
 }) => {
   const { prefix } = useGlobalSettings();
 
@@ -20,24 +21,14 @@ const DataCard: FC<DataCardProps> = ({
     [`${baseClass}__${cornercut}`]: cornercut,
     [`${baseClass}__size__${size}`]: size,
     [`${baseClass}__theme__${theme}`]: theme,
+    [`${baseClass}__type__data__columns__${columns}`]: columns,
   });
 
   return (
     <div className={cardClasses}>
       <div className={`${baseClass}--wrap`}>
-        {image && (
-          <div className={`${baseClass}--image--wrapper`}>
-            <picture>
-              <img
-                className={`${baseClass}--picture`}
-                src={image}
-                alt={eyebrow}
-              />
-            </picture>
-          </div>
-        )}
+        {eyebrow && <p className={`${baseClass}--eyebrow`}>{eyebrow}</p>}
         <div className={`${baseClass}--content`}>
-          {eyebrow && <p className={`${baseClass}--eyebrow`}>{eyebrow}</p>}
           {image && (
             <div className={`${baseClass}--image--wrapper`}>
               <picture>
@@ -64,7 +55,7 @@ const DataCard: FC<DataCardProps> = ({
             ))}
           {dataset && dataset.files && (
             <div className={`${baseClass}--data--content-files`}>
-              <p className={`${baseClass}--data--content-label`}>
+              <p className={`${baseClass}__type__data--content-label`}>
                 {dataset.files.headline}
               </p>
               {dataset.files.items &&
@@ -82,7 +73,7 @@ const DataCard: FC<DataCardProps> = ({
           {dataset && dataset.cta && (
             <div className={`${baseClass}--area--cta`}>
               <div className={`${baseClass}--data--content-cta`}>
-                <p className={`${baseClass}--data--content-label`}>
+                <p className={`${baseClass}__type__data--content-label`}>
                   {dataset.cta.headline}
                 </p>
                 {dataset.cta.items &&
@@ -99,7 +90,7 @@ const DataCard: FC<DataCardProps> = ({
           )}
           {dataset && dataset.links && (
             <div className={`${baseClass}--data--content-links`}>
-              <p className={`${baseClass}--data--content-label`}>
+              <p className={`${baseClass}__type__data--content-label`}>
                 {dataset.links.headline}
               </p>
               {dataset.links.items &&

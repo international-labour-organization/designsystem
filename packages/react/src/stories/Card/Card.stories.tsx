@@ -13,19 +13,6 @@ const CardMeta: Meta<typeof Card> = {
   title: "Components/Content/Card",
   component: Card,
   argTypes: {
-    type: {
-      options: [
-        "text",
-        "stat",
-        "promo",
-        "multilink",
-        "feature",
-        "data",
-        "detail",
-        "factlist",
-      ],
-      control: { type: "select" },
-    },
     theme: {
       options: ["dark", "light"],
       control: { type: "radio" },
@@ -72,41 +59,41 @@ const CardMeta: Meta<typeof Card> = {
 export default CardMeta;
 
 export const FeatureCard: StoryObj<typeof Card> = {
-  args: CardArgs.featureCard,
+  args: { ...CardArgs.featureCard, type: "feature" },
   name: "Feature Card",
 };
 
 export const textCard: StoryObj<typeof Card> = {
-  args: CardArgs.textCard,
+  args: { ...CardArgs.textCard, type: "text" },
   name: "Text Card",
 };
 
 export const DetailCard: StoryObj<typeof Card> = {
-  args: CardArgs.detailCard,
+  args: { ...CardArgs.detailCard, type: "detail" },
   name: "Detail Card",
 };
 
 export const PromoCard: StoryObj<typeof Card> = {
-  args: CardArgs.promoCard,
+  args: { ...CardArgs.promoCard, type: "promo" },
   name: "Promo Card",
 };
 
 export const MultilinkCard: StoryObj<typeof Card> = {
-  args: CardArgs.multilinkCard,
+  args: { ...CardArgs.multilinkCard, type: "multilink" },
   name: "Multilink Card",
 };
 
 export const DataCard: StoryObj<typeof Card> = {
-  args: CardArgs.dataCard,
+  args: { ...CardArgs.dataCard, type: "data" },
   name: "Data Card",
 };
 
 export const StatCard: StoryObj<typeof Card> = {
-  args: CardArgs.statCard,
+  args: { ...CardArgs.statCard, type: "stat" },
   name: "Stat Card",
 };
 
 export const FactListCard: StoryObj<typeof Card> = {
-  args: CardArgs.factListCard,
+  args: { ...CardArgs.factListCard, type: "factlist" },
   name: "Fact List Card",
 };

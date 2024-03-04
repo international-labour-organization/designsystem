@@ -16,6 +16,7 @@ export type DataCardProps = {
   cornercut?: CardCornerType;
   image?: string;
   dataset?: CardDataset;
+  columns?: string;
 };
 export type DetailCardProps = {
   eyebrow?: string;

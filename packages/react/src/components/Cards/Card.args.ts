@@ -142,6 +142,7 @@ const factListCard: FactlistCardProps = {
 const dataCard: DataCardProps = {
   size: "standard",
   eyebrow: "Meeting",
+  image: "/small.jpg",
   dataset: {
     content: {
       items: [
