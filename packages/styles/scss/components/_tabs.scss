@@ -119,6 +119,7 @@
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
+        padding-top: spacing(1);
       }
 
       &--item {
