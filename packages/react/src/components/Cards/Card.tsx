@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { CardProps, TextCardProps, FactlistCardProps } from "./Card.props";
+import { CardProps } from "./Card.props";
 import {
   DataCard,
   DetailCard,
