@@ -9,6 +9,85 @@ import {
 import { LinkProps, LinkListProps } from "../LinkList/LinkList.props";
 import { ProfileProps } from "../Profile/Profile.props";
 
+export type DataCardProps = {
+  eyebrow?: string;
+  theme?: ThemeTypes;
+  size?: CardSize;
+  cornercut?: CardCornerType;
+  image?: string;
+  dataset?: CardDataset;
+};
+export type DetailCardProps = {
+  eyebrow?: string;
+  title: Required<string>;
+  size?: CardSize;
+  intro?: string;
+  date?: EventDate;
+  eventdetails?: string;
+  link?: string;
+  image?: string;
+};
+
+export type FactlistCardProps = {
+  title: Required<string>;
+  theme?: ThemeTypes;
+  size?: CardSize;
+  cornercut?: CardCornerType;
+  listitems?: Array<string>;
+};
+
+export type FeatureCardProps = {
+  isvideo?: boolean;
+  eyebrow?: string;
+  title: Required<string>;
+  theme?: ThemeTypes;
+  size?: CardSize;
+  date?: EventDate;
+  link?: string;
+  linklist?: LinkListProps;
+  image?: string;
+};
+
+export type MultilinkCardProps = {
+  isvideo?: boolean;
+  eyebrow?: string;
+  title: Required<string>;
+  size?: CardSize;
+  alignment?: CardAlignment;
+  intro?: string;
+  link?: string;
+  linklist?: LinkListProps;
+  image?: string;
+};
+export type PromoCardProps = {
+  eyebrow?: string;
+  title: Required<string>;
+  theme?: ThemeTypes;
+  size?: CardSize;
+  cornercut?: CardCornerType;
+  intro?: string;
+  link?: string;
+  cta?: LinkProps;
+};
+export type StatCardProps = {
+  title: Required<string>;
+  color?: CardColor;
+  size?: CardSize;
+  cornercut?: CardCornerType;
+  intro?: string;
+  source?: LinkProps;
+};
+export type TextCardProps = {
+  eyebrow?: string;
+  title: Required<string>;
+  theme?: ThemeTypes;
+  size?: CardSize;
+  cornercut?: CardCornerType;
+  date?: EventDate;
+  profile: ProfileProps;
+  link?: string;
+};
+
 export interface CardProps {
   /**
    * Specify whether the card should display a video icon (for Feature card). Possible options: true | false

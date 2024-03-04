@@ -1,18 +1,15 @@
 import { FC } from "react";
 import classnames from "classnames";
 import useGlobalSettings from "../../../hooks/useGlobalSettings";
-import { CardProps } from "../Card.props";
+import { FeatureCardProps } from "../Card.props";
 import { LinkList } from "../../LinkList";
 
-const FeatureCard: FC<CardProps> = ({
+const FeatureCard: FC<FeatureCardProps> = ({
   isvideo,
   eyebrow,
   title,
-  color,
   theme,
   size,
-  cornercut,
-  alignment,
   date,
   link,
   linklist,
@@ -23,9 +20,6 @@ const FeatureCard: FC<CardProps> = ({
   const baseClass = `${prefix}--card`;
 
   const cardClasses = classnames(baseClass, `${baseClass}__type__feature`, {
-    [`${baseClass}__color__${color}`]: color,
-    [`${baseClass}__${cornercut}`]: cornercut,
-    [`${baseClass}__align__${alignment}`]: alignment,
     [`${baseClass}__action`]: link,
     [`${baseClass}__size__${size}`]: size,
     [`${baseClass}__isvideo`]: isvideo,

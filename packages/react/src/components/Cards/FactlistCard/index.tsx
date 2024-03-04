@@ -1,16 +1,14 @@
 import { FC } from "react";
 import classnames from "classnames";
 import useGlobalSettings from "../../../hooks/useGlobalSettings";
-import { CardProps } from "../Card.props";
+import { FactlistCardProps } from "../Card.props";
 import { List, ListItem } from "../../List";
 
-const FactlistCard: FC<CardProps> = ({
+const FactlistCard: FC<FactlistCardProps> = ({
   title,
-  color,
   theme,
   size,
   cornercut,
-  alignment,
   listitems,
 }) => {
   const { prefix } = useGlobalSettings();
@@ -18,9 +16,7 @@ const FactlistCard: FC<CardProps> = ({
   const baseClass = `${prefix}--card`;
 
   const cardClasses = classnames(baseClass, `${baseClass}__type__factlist`, {
-    [`${baseClass}__color__${color}`]: color,
     [`${baseClass}__${cornercut}`]: cornercut,
-    [`${baseClass}__align__${alignment}`]: alignment,
     [`${baseClass}__size__${size}`]: size,
     [`${baseClass}__theme__${theme}`]: theme,
   });

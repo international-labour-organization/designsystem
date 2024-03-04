@@ -1,17 +1,14 @@
 import { FC } from "react";
 import classnames from "classnames";
 import useGlobalSettings from "../../../hooks/useGlobalSettings";
-import { CardProps } from "../Card.props";
+import { DataCardProps } from "../Card.props";
 import { Link } from "../../Link";
 
-const DataCard: FC<CardProps> = ({
+const DataCard: FC<DataCardProps> = ({
   eyebrow,
-  title,
-  color,
   theme,
   size,
   cornercut,
-  alignment,
   image,
   dataset,
 }) => {
@@ -20,9 +17,7 @@ const DataCard: FC<CardProps> = ({
   const baseClass = `${prefix}--card`;
 
   const cardClasses = classnames(baseClass, `${baseClass}__type__data`, {
-    [`${baseClass}__color__${color}`]: color,
     [`${baseClass}__${cornercut}`]: cornercut,
-    [`${baseClass}__align__${alignment}`]: alignment,
     [`${baseClass}__size__${size}`]: size,
     [`${baseClass}__theme__${theme}`]: theme,
   });
@@ -36,7 +31,7 @@ const DataCard: FC<CardProps> = ({
               <img
                 className={`${baseClass}--picture`}
                 src={image}
-                alt={title}
+                alt={eyebrow}
               />
             </picture>
           </div>
@@ -49,7 +44,7 @@ const DataCard: FC<CardProps> = ({
                 <img
                   className={`${baseClass}--picture`}
                   src={image}
-                  alt={title}
+                  alt={eyebrow}
                 />
               </picture>
             </div>

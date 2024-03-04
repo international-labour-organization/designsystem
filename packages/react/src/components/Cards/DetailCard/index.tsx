@@ -1,16 +1,12 @@
 import { FC } from "react";
 import classnames from "classnames";
 import useGlobalSettings from "../../../hooks/useGlobalSettings";
-import { CardProps } from "../Card.props";
+import { DetailCardProps } from "../Card.props";
 
-const DetailCard: FC<CardProps> = ({
+const DetailCard: FC<DetailCardProps> = ({
   eyebrow,
   title,
-  color,
-  theme,
   size,
-  cornercut,
-  alignment,
   intro,
   date,
   eventdetails,
@@ -22,12 +18,8 @@ const DetailCard: FC<CardProps> = ({
   const baseClass = `${prefix}--card`;
 
   const cardClasses = classnames(baseClass, `${baseClass}__type__detail`, {
-    [`${baseClass}__color__${color}`]: color,
-    [`${baseClass}__${cornercut}`]: cornercut,
-    [`${baseClass}__align__${alignment}`]: alignment,
     [`${baseClass}__action`]: link,
     [`${baseClass}__size__${size}`]: size,
-    [`${baseClass}__theme__${theme}`]: theme,
   });
 
   return (

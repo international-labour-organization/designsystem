@@ -1,16 +1,14 @@
 import { FC } from "react";
 import classnames from "classnames";
 import useGlobalSettings from "../../../hooks/useGlobalSettings";
-import { CardProps } from "../Card.props";
+import { PromoCardProps } from "../Card.props";
 
-const PromoCard: FC<CardProps> = ({
+const PromoCard: FC<PromoCardProps> = ({
   eyebrow,
   title,
-  color,
   theme,
   size,
   cornercut,
-  alignment,
   intro,
   link,
   cta,
@@ -25,9 +23,7 @@ const PromoCard: FC<CardProps> = ({
   );
 
   const cardClasses = classnames(baseClass, `${baseClass}__type__promo`, {
-    [`${baseClass}__color__${color}`]: color,
     [`${baseClass}__${cornercut}`]: cornercut,
-    [`${baseClass}__align__${alignment}`]: alignment,
     [`${baseClass}__action`]: link,
     [`${baseClass}__size__${size}`]: size,
     [`${baseClass}__theme__${theme}`]: theme,

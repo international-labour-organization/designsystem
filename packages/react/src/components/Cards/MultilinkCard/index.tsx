@@ -1,17 +1,14 @@
 import { FC } from "react";
 import classnames from "classnames";
 import useGlobalSettings from "../../../hooks/useGlobalSettings";
-import { CardProps } from "../Card.props";
+import { MultilinkCardProps } from "../Card.props";
 import { LinkList } from "../../LinkList";
 
-const MultilinkCard: FC<CardProps> = ({
+const MultilinkCard: FC<MultilinkCardProps> = ({
   isvideo,
   eyebrow,
   title,
-  color,
-  theme,
   size,
-  cornercut,
   alignment,
   intro,
   link,
@@ -23,14 +20,11 @@ const MultilinkCard: FC<CardProps> = ({
   const baseClass = `${prefix}--card`;
 
   const cardClasses = classnames(baseClass, `${baseClass}__type__multilink`, {
-    [`${baseClass}__color__${color}`]: color,
-    [`${baseClass}__${cornercut}`]: cornercut,
     [`${baseClass}__align__${alignment}`]: alignment,
     [`${baseClass}__action`]: link,
     [`${baseClass}__size__${size}`]: size,
     [`${baseClass}__isvideo`]: isvideo,
     [`${baseClass}__linklist`]: linklist,
-    [`${baseClass}__theme__${theme}`]: theme,
   });
 
   return (

@@ -1,17 +1,15 @@
 import { FC } from "react";
 import classnames from "classnames";
 import useGlobalSettings from "../../../hooks/useGlobalSettings";
-import { CardProps } from "../Card.props";
+import { TextCardProps } from "../Card.props";
 import { Profile } from "../../Profile";
 
-const TextCard: FC<CardProps> = ({
+const TextCard: FC<TextCardProps> = ({
   eyebrow,
   title,
-  color,
   theme,
   size,
   cornercut,
-  alignment,
   date,
   profile,
   link,
@@ -23,14 +21,13 @@ const TextCard: FC<CardProps> = ({
   const wrapperClass = classnames(`${baseClass}--wrapper`);
 
   const cardClasses = classnames(baseClass, `${baseClass}__type__text`, {
-    [`${baseClass}__color__${color}`]: color,
     [`${baseClass}__${cornercut}`]: cornercut,
-    [`${baseClass}__align__${alignment}`]: alignment,
     [`${baseClass}__action`]: link,
     [`${baseClass}__size__${size}`]: size,
     [`${baseClass}__theme__${theme}`]: theme,
   });
-
+  console.log("heloo");
+  console.log(profile);
   return (
     <div className={wrapperClass}>
       <div className={cardClasses}>
