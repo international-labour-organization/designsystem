@@ -1,59 +1,22 @@
-import { TracksConfig } from "./VideoPlayer.props";
+import { VideoPlayerControls } from "./VideoPlayer.props";
 
 export interface Poster {
-  url: { src: string }[];
+  src: string;
   alt: string;
 }
 
-interface VideoPlayerControls {
-  /**
-   * Specify the label for the fullscreen button
-   */
-  fullscreen?: Required<string>;
+export interface VideoProps {
+  src: string;
 
-  /**
-   * Specify the label for the  play button
-   */
-  play?: Required<string>;
-
-  /**
-   * Specify the label for the pause button
-   */
-  pause?: Required<string>;
-
-  /**
-   * Specify the label for the volume button
-   */
-  volume?: Required<string>;
-}
-
-interface Video {
   /**
    * Specify the strings to be used as labels for the video controls
    */
-  controls?: Required<VideoPlayerControls | false>;
-
-  /**
-   * if self-hosted, specify the url of this video
-   */
-  src?: string | null;
-
-  /**
-   * if there are closed-caption tracks,
-   */
-  tracks?: TracksConfig[];
+  controls?: VideoPlayerControls;
 
   /**
    * if YouTube, set to true
    */
   youtube?: boolean;
-}
-
-export interface VideoProps {
-  /**
-   * Specify the alt for the image
-   */
-  alt: string;
 
   /**
    * Specify the caption for the image/video
@@ -69,9 +32,4 @@ export interface VideoProps {
    * Specify the image src for the image
    */
   poster?: Poster;
-
-  /**
-   * Specify whether there is a video being shown
-   */
-  video: Video;
 }
