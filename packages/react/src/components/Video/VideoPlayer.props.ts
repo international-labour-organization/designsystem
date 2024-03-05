@@ -1,5 +1,9 @@
 import { Poster } from "./Video.props";
+import videojs from "video.js";
 
+export interface VideoPlayerRef {
+  player: videojs.Player | undefined;
+}
 export interface VideoPlayerControls {
   /**
    * Specify the label for the fullscreen button
