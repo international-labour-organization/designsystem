@@ -1,5 +1,19 @@
 # @ilo-org/react
 
+## 0.11.0
+
+### Minor Changes
+
+- d44ee1021: Normalized video implementation for react
+- 8491bba96: Create tabs component in react
+
+### Patch Changes
+
+- Updated dependencies [d44ee1021]
+- Updated dependencies [be59e9c1f]
+  - @ilo-org/styles@0.14.1
+  - @ilo-org/themes@0.7.2
+
 ## 0.10.6
 
 ### Patch Changes
