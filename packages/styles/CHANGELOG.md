@@ -1,5 +1,13 @@
 # @ilo-org/styles
 
+## 0.14.1
+
+### Patch Changes
+
+- d44ee1021: Normalized video implementation for react
+- Updated dependencies [be59e9c1f]
+  - @ilo-org/themes@0.7.2
+
 ## 0.14.0
 
 ### Minor Changes

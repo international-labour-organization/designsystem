@@ -1,5 +1,11 @@
 # @ilo-org/themes
 
+## 0.7.2
+
+### Patch Changes
+
+- be59e9c1f: Add Hiragino Sans and Yu Gothic as fallbacks for Noto Sans CJK JP (Japanese)
+
 ## 0.7.1
 
 ### Patch Changes
