@@ -43,3 +43,4 @@ export { LocalNav } from "./LocalNav";
 export { Navigation } from "./Navigation";
 export { Card, CardGroup } from "./Card";
 export { Breadcrumb } from "./Breadcrumb";
+export { Tabs } from "./Tabs";
