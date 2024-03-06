@@ -11,13 +11,12 @@ import { ProfileProps } from "../Profile/Profile.props";
 
 export type DataCardProps = {
   eyebrow?: string;
-  theme?: ThemeTypes;
-  size?: CardSize;
-  cornercut?: CardCornerType;
+  size?: Omit<CardSize, "standard">;
   image?: string;
   dataset?: CardDataset;
   columns?: string;
 };
+
 export type DetailCardProps = {
   eyebrow?: string;
   title: Required<string>;

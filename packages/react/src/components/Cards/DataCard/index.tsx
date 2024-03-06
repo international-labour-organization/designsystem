@@ -6,9 +6,7 @@ import { Link } from "../../Link";
 
 const DataCard: FC<DataCardProps> = ({
   eyebrow,
-  theme,
-  size,
-  cornercut,
+  size = "narrow",
   image,
   dataset,
   columns = "one",
@@ -18,9 +16,7 @@ const DataCard: FC<DataCardProps> = ({
   const baseClass = `${prefix}--card`;
 
   const cardClasses = classnames(baseClass, `${baseClass}__type__data`, {
-    [`${baseClass}__${cornercut}`]: cornercut,
     [`${baseClass}__size__${size}`]: size,
-    [`${baseClass}__theme__${theme}`]: theme,
     [`${baseClass}__type__data__columns__${columns}`]: columns,
   });
 

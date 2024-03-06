@@ -14,16 +14,12 @@ const CardMeta: Meta<typeof DataCard> = {
   component: DataCard,
   tags: ["autodocs"],
   argTypes: {
-    theme: {
-      options: ["dark", "light"],
-      control: { type: "radio" },
-    },
-    cornercut: {
-      options: ["cornercut", "corner"],
-      control: { type: "radio" },
-    },
     size: {
-      options: ["wide", "standard", "narrow"],
+      options: ["narrow", "wide", "fluid"],
+      control: { type: "radio" },
+    },
+    columns: {
+      options: ["one", "two"],
       control: { type: "radio" },
     },
   },
