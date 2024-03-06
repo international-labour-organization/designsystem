@@ -15,7 +15,7 @@ const CardMeta: Meta<typeof MultilinkCard> = {
   tags: ["autodocs"],
   argTypes: {
     size: {
-      options: ["wide", "standard", "narrow"],
+      options: ["wide", "standard", "narrow", "fluid"],
       control: { type: "radio" },
     },
     alignment: {

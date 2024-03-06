@@ -51,7 +51,7 @@ export type FeatureCardProps = {
 export type MultilinkCardProps = {
   isvideo?: boolean;
   eyebrow?: string;
-  title: Required<string>;
+  title: string;
   size?: CardSize;
   alignment?: CardAlignment;
   intro?: string;
