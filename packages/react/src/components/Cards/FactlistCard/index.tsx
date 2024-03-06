@@ -8,7 +8,6 @@ const FactlistCard: FC<FactlistCardProps> = ({
   title,
   theme = "narrow",
   size,
-  cornercut,
   list,
 }) => {
   const { prefix } = useGlobalSettings();
@@ -16,7 +15,6 @@ const FactlistCard: FC<FactlistCardProps> = ({
   const baseClass = `${prefix}--card`;
 
   const cardClasses = classnames(baseClass, `${baseClass}__type__factlist`, {
-    [`${baseClass}__${cornercut}`]: cornercut,
     [`${baseClass}__size__${size}`]: size,
     [`${baseClass}__theme__${theme}`]: theme,
   });

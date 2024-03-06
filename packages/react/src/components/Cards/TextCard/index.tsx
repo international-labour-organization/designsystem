@@ -9,7 +9,6 @@ const TextCard: FC<TextCardProps> = ({
   title,
   theme,
   size,
-  cornercut,
   date,
   profile,
   link,
@@ -21,7 +20,6 @@ const TextCard: FC<TextCardProps> = ({
   const wrapperClass = classnames(`${baseClass}--wrapper`);
 
   const cardClasses = classnames(baseClass, `${baseClass}__type__text`, {
-    [`${baseClass}__${cornercut}`]: cornercut,
     [`${baseClass}__action`]: link,
     [`${baseClass}__size__${size}`]: size,
     [`${baseClass}__theme__${theme}`]: theme,
