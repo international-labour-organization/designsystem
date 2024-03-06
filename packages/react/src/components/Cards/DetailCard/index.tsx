@@ -6,7 +6,7 @@ import { DetailCardProps } from "../Card.props";
 const DetailCard: FC<DetailCardProps> = ({
   eyebrow,
   title,
-  size,
+  size = "narrow",
   intro,
   date,
   eventdetails,

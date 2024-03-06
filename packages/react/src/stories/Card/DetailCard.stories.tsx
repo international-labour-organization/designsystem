@@ -15,7 +15,7 @@ const CardMeta: Meta<typeof DetailCard> = {
   tags: ["autodocs"],
   argTypes: {
     size: {
-      options: ["wide", "standard", "narrow"],
+      options: ["wide", "narrow", "fluid"],
       control: { type: "radio" },
     },
   },

@@ -19,13 +19,13 @@ export type DataCardProps = {
 
 export type DetailCardProps = {
   eyebrow?: string;
-  title: Required<string>;
-  size?: CardSize;
+  title: string;
   intro?: string;
   date?: EventDate;
   eventdetails?: string;
   link?: string;
   image?: string;
+  size?: Omit<CardSize, "standard">;
 };
 
 export type FactlistCardProps = {
