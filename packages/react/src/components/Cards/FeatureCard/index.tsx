@@ -9,7 +9,7 @@ const FeatureCard: FC<FeatureCardProps> = ({
   eyebrow,
   title,
   theme,
-  size,
+  size = "narrow",
   date,
   link,
   linklist,

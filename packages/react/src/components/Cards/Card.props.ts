@@ -41,7 +41,7 @@ export type FeatureCardProps = {
   eyebrow?: string;
   title: Required<string>;
   theme?: ThemeTypes;
-  size?: CardSize;
+  size?: Omit<CardSize, "standard">;
   date?: EventDate;
   link?: string;
   linklist?: LinkListProps;

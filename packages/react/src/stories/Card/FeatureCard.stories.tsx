@@ -19,7 +19,7 @@ const CardMeta: Meta<typeof FeatureCard> = {
       control: { type: "radio" },
     },
     size: {
-      options: ["wide", "standard", "narrow"],
+      options: ["wide", "narrow", "fluid"],
       control: { type: "radio" },
     },
   },
