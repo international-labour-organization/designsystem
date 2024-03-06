@@ -19,11 +19,10 @@ const CardMeta: Meta<typeof PromoCard> = {
       control: { type: "radio" },
     },
     cornercut: {
-      options: ["cornercut", "corner"],
-      control: { type: "radio" },
+      control: { type: "boolean" },
     },
     size: {
-      options: ["wide", "standard", "narrow"],
+      options: ["wide", "standard", "narrow", "fluid"],
       control: { type: "radio" },
     },
   },

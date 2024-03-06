@@ -7,7 +7,7 @@ const PromoCard: FC<PromoCardProps> = ({
   eyebrow,
   title,
   theme,
-  size,
+  size = "narrow",
   cornercut,
   intro,
   link,
@@ -23,7 +23,7 @@ const PromoCard: FC<PromoCardProps> = ({
   );
 
   const cardClasses = classnames(baseClass, `${baseClass}__type__promo`, {
-    [`${baseClass}__${cornercut}`]: cornercut,
+    [`${baseClass}__cornercut`]: cornercut,
     [`${baseClass}__action`]: link,
     [`${baseClass}__size__${size}`]: size,
     [`${baseClass}__theme__${theme}`]: theme,
