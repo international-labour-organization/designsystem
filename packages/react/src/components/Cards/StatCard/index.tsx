@@ -7,8 +7,7 @@ import { Link } from "../../Link";
 const StatCard: FC<StatCardProps> = ({
   title,
   color,
-  size,
-  cornercut,
+  size = "standard",
   intro,
   source,
 }) => {
@@ -18,7 +17,6 @@ const StatCard: FC<StatCardProps> = ({
 
   const cardClasses = classnames(baseClass, `${baseClass}__type__stat`, {
     [`${baseClass}__color__${color}`]: color,
-    [`${baseClass}__${cornercut}`]: cornercut,
     [`${baseClass}__size__${size}`]: size,
   });
 

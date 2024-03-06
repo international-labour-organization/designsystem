@@ -14,16 +14,12 @@ const CardMeta: Meta<typeof StatCard> = {
   component: StatCard,
   tags: ["autodocs"],
   argTypes: {
-    cornercut: {
-      options: ["cornercut", "corner"],
-      control: { type: "radio" },
-    },
     color: {
       options: ["turquoise", "green", "yellow", "blue"],
       control: { type: "select" },
     },
     size: {
-      options: ["wide", "standard", "narrow"],
+      options: ["standard", "fluid"],
       control: { type: "radio" },
     },
   },

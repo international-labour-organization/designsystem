@@ -59,6 +59,7 @@ export type MultilinkCardProps = {
   linklist?: LinkListProps;
   image?: string;
 };
+
 export type PromoCardProps = {
   eyebrow?: string;
   title: Required<string>;
@@ -69,14 +70,15 @@ export type PromoCardProps = {
   link?: string;
   cta?: LinkProps;
 };
+
 export type StatCardProps = {
-  title: Required<string>;
+  title: string;
   color?: CardColor;
-  size?: CardSize;
-  cornercut?: CardCornerType;
+  size?: Omit<CardSize, "narrow" | "wide">;
   intro?: string;
   source?: LinkProps;
 };
+
 export type TextCardProps = {
   eyebrow?: string;
   title: Required<string>;
