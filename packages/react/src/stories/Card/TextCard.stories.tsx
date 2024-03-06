@@ -23,7 +23,7 @@ const CardMeta: Meta<typeof TextCard> = {
       control: { type: "radio" },
     },
     size: {
-      options: ["wide", "standard", "narrow"],
+      options: ["wide", "fluid", "narrow"],
       control: { type: "radio" },
     },
   },

@@ -81,9 +81,9 @@ export type StatCardProps = {
 
 export type TextCardProps = {
   eyebrow?: string;
-  title: Required<string>;
+  title: string;
   theme?: ThemeTypes;
-  size?: CardSize;
+  size?: Omit<CardSize, "standard">;
   cornercut?: CardCornerType;
   date?: EventDate;
   profile: ProfileProps;
