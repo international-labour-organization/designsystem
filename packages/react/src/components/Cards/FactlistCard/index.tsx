@@ -6,10 +6,10 @@ import { List, ListItem } from "../../List";
 
 const FactlistCard: FC<FactlistCardProps> = ({
   title,
-  theme,
+  theme = "narrow",
   size,
   cornercut,
-  listitems,
+  list,
 }) => {
   const { prefix } = useGlobalSettings();
 
@@ -26,9 +26,9 @@ const FactlistCard: FC<FactlistCardProps> = ({
       <div className={`${baseClass}--wrap`}>
         <div className={`${baseClass}--content`}>
           {title && <h5 className={`${baseClass}--title`}>{title}</h5>}
-          {listitems && (
+          {list && (
             <List alignment="default" ordered="unordered">
-              {listitems.map((item, index) => (
+              {list.map((item, index) => (
                 <ListItem id={`list${index}`}>
                   <p>{item}</p>
                 </ListItem>

@@ -29,11 +29,11 @@ export type DetailCardProps = {
 };
 
 export type FactlistCardProps = {
-  title: Required<string>;
+  title: string;
   theme?: ThemeTypes;
-  size?: CardSize;
+  size?: Omit<CardSize, "standard">;
   cornercut?: CardCornerType;
-  listitems?: Array<string>;
+  list?: string[];
 };
 
 export type FeatureCardProps = {

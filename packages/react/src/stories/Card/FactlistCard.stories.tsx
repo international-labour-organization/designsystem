@@ -18,12 +18,8 @@ const CardMeta: Meta<typeof FactlistCard> = {
       options: ["dark", "light"],
       control: { type: "radio" },
     },
-    cornercut: {
-      options: ["cornercut", "corner"],
-      control: { type: "radio" },
-    },
     size: {
-      options: ["wide", "standard", "narrow"],
+      options: ["wide", "narrow", "fluid"],
       control: { type: "radio" },
     },
   },
