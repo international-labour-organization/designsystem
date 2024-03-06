@@ -10,7 +10,7 @@ import {
 } from "@storybook/blocks";
 
 const CardMeta: Meta<typeof MultilinkCard> = {
-  title: "Components/Content/Card/Multilink Card",
+  title: "Components/Cards/Multilink Card",
   component: MultilinkCard,
   tags: ["autodocs"],
   argTypes: {

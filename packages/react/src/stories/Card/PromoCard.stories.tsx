@@ -10,7 +10,7 @@ import {
 } from "@storybook/blocks";
 
 const CardMeta: Meta<typeof PromoCard> = {
-  title: "Components/Content/Card/Promo Card",
+  title: "Components/Cards/Promo Card",
   component: PromoCard,
   tags: ["autodocs"],
   argTypes: {

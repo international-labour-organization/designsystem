@@ -3,7 +3,7 @@ import { CardGroup } from "../../components/Cards";
 import CardGroupArgs from "../../components/Cards/CardGroup.args";
 
 const CardGroupMeta: Meta<typeof CardGroup> = {
-  title: "Components/Content/CardGroup",
+  title: "Components/Cards/CardGroup",
   component: CardGroup,
 };
 

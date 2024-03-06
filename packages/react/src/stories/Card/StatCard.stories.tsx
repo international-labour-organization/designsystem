@@ -10,7 +10,7 @@ import {
 } from "@storybook/blocks";
 
 const CardMeta: Meta<typeof StatCard> = {
-  title: "Components/Content/Card/Stat Card",
+  title: "Components/Cards/Stat Card",
   component: StatCard,
   tags: ["autodocs"],
   argTypes: {
