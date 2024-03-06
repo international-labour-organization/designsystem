@@ -1,9 +1,9 @@
 import { CardGroupProps } from "./CardGroup.props";
 
-const graphicCardGroup: CardGroupProps = {
+const textCardGroup: CardGroupProps = {
   cards: [
     {
-      variant: "graphic",
+      type: "text",
       title: "Why we need greater social justice",
       eyebrow: "Podcast",
       date: {
@@ -45,7 +45,7 @@ const graphicCardGroup: CardGroupProps = {
 const statCardGroup: CardGroupProps = {
   cards: [
     {
-      variant: "stat",
+      type: "stat",
       title: "Global employment growth down by half in 2023",
       eyebrow: "Report",
       intro:
@@ -71,7 +71,7 @@ const statCardGroup: CardGroupProps = {
       date: {},
     },
     {
-      variant: "stat",
+      type: "stat",
       title: "Global employment growth down by half in 2023",
       eyebrow: "Report",
       intro:
@@ -97,7 +97,7 @@ const statCardGroup: CardGroupProps = {
       date: {},
     },
     {
-      variant: "stat",
+      type: "stat",
       title: "Global employment growth down by half in 2023",
       eyebrow: "Report",
       intro:
@@ -123,7 +123,7 @@ const statCardGroup: CardGroupProps = {
       date: {},
     },
     {
-      variant: "stat",
+      type: "stat",
       title: "Global employment growth down by half in 2023",
       eyebrow: "Report",
       intro:
@@ -159,7 +159,7 @@ const statCardGroup: CardGroupProps = {
 const multilinkCardGroup: CardGroupProps = {
   cards: [
     {
-      variant: "multilink",
+      type: "multilink",
       title:
         "ILO welcomes G7 call to make a just transition to a green economy happen",
       eyebrow: "High-level meeting",
@@ -206,7 +206,7 @@ const multilinkCardGroup: CardGroupProps = {
       link: "",
     },
     {
-      variant: "multilink",
+      type: "multilink",
       title:
         "ILO welcomes G7 call to make a just transition to a green economy happen",
       eyebrow: "High-level meeting",
@@ -260,10 +260,10 @@ const multilinkCardGroup: CardGroupProps = {
   },
 };
 
-const graphicPromoCardGroup: CardGroupProps = {
+const promoCardGroup: CardGroupProps = {
   cards: [
     {
-      variant: "graphicpromo",
+      type: "promo",
       title:
         "ILO welcomes G7 call to make a just transition to a green economy happen",
       eyebrow: "High-level meeting",
@@ -290,7 +290,7 @@ const graphicPromoCardGroup: CardGroupProps = {
       date: {},
     },
     {
-      variant: "graphicpromo",
+      type: "promo",
       title:
         "ILO welcomes G7 call to make a just transition to a green economy happen",
       eyebrow: "High-level meeting",
@@ -317,7 +317,7 @@ const graphicPromoCardGroup: CardGroupProps = {
       date: {},
     },
     {
-      variant: "graphicpromo",
+      type: "promo",
       title:
         "ILO welcomes G7 call to make a just transition to a green economy happen",
       eyebrow: "High-level meeting",
@@ -354,7 +354,7 @@ const graphicPromoCardGroup: CardGroupProps = {
 const featureCardGroup: CardGroupProps = {
   cards: [
     {
-      variant: "feature",
+      type: "feature",
       isvideo: false,
       title:
         "ILO welcomes G7 call to make a just transition to a green economy happen",
@@ -392,7 +392,7 @@ const featureCardGroup: CardGroupProps = {
       source: {},
     },
     {
-      variant: "feature",
+      type: "feature",
       isvideo: true,
       title:
         "ILO welcomes G7 call to make a just transition to a green economy happen",
@@ -430,7 +430,7 @@ const featureCardGroup: CardGroupProps = {
       source: {},
     },
     {
-      variant: "feature",
+      type: "feature",
       isvideo: false,
       title:
         "ILO welcomes G7 call to make a just transition to a green economy happen",
@@ -468,7 +468,7 @@ const featureCardGroup: CardGroupProps = {
       source: {},
     },
     {
-      variant: "feature",
+      type: "feature",
       isvideo: false,
       title:
         "ILO welcomes G7 call to make a just transition to a green economy happen",
@@ -516,7 +516,7 @@ const featureCardGroup: CardGroupProps = {
 const detailCardGroup: CardGroupProps = {
   cards: [
     {
-      variant: "detail",
+      type: "detail",
       title: "Technical meeting on digitalization in the construction sector",
       eyebrow: "Meeting",
       intro:
@@ -542,7 +542,7 @@ const detailCardGroup: CardGroupProps = {
       source: {},
     },
     {
-      variant: "detail",
+      type: "detail",
       title: "Technical meeting on digitalization in the construction sector",
       eyebrow: "Meeting",
       intro:
@@ -578,7 +578,7 @@ const detailCardGroup: CardGroupProps = {
 const factListCardGroup: CardGroupProps = {
   cards: [
     {
-      variant: "factlist",
+      type: "factlist",
       title:
         "Economic slowdown likely to force workers to accept lower quality jobs",
       eyebrow: "Report",
@@ -606,7 +606,7 @@ const factListCardGroup: CardGroupProps = {
       image: "",
     },
     {
-      variant: "factlist",
+      type: "factlist",
       title:
         "Economic slowdown likely to force workers to accept lower quality jobs",
       eyebrow: "Report",
@@ -644,7 +644,7 @@ const factListCardGroup: CardGroupProps = {
 const dataCardGroup: CardGroupProps = {
   cards: [
     {
-      variant: "data",
+      type: "data",
       title: "Technical meeting on digitalization in the construction sector",
       eyebrow: "Meeting",
       eventdetails:
@@ -714,7 +714,7 @@ const dataCardGroup: CardGroupProps = {
       image: "",
     },
     {
-      variant: "data",
+      type: "data",
       title: "Technical meeting on digitalization in the construction sector",
       eyebrow: "Meeting",
       eventdetails:
@@ -784,7 +784,7 @@ const dataCardGroup: CardGroupProps = {
       image: "",
     },
     {
-      variant: "data",
+      type: "data",
       title: "Technical meeting on digitalization in the construction sector",
       eyebrow: "Meeting",
       eventdetails:
@@ -854,7 +854,7 @@ const dataCardGroup: CardGroupProps = {
       image: "",
     },
     {
-      variant: "data",
+      type: "data",
       title: "Technical meeting on digitalization in the construction sector",
       eyebrow: "Meeting",
       eventdetails:
@@ -932,10 +932,10 @@ const dataCardGroup: CardGroupProps = {
 };
 
 const CardGroupArgs = {
-  graphicCardGroup,
+  textCardGroup,
   statCardGroup,
   multilinkCardGroup,
-  graphicPromoCardGroup,
+  promoCardGroup,
   featureCardGroup,
   detailCardGroup,
   factListCardGroup,

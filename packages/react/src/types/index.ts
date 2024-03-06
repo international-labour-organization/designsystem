@@ -53,14 +53,14 @@ export type SocialTypes =
   | "tiktok"
   | "flickr";
 export type CardColor = "turquoise" | "green" | "yellow" | "blue";
-export type CardSize = "wide" | "standard" | "narrow";
-export type CardCornerType = "cornercut" | "corner";
+export type CardSize = "wide" | "standard" | "narrow" | "fluid";
+export type CardCornerType = boolean;
 export type CardAlignment = "left" | "right";
 export type CardTypes =
   | "stat"
   | "multilink"
-  | "graphic"
-  | "graphicpromo"
+  | "text"
+  | "promo"
   | "feature"
   | "detail"
   | "factlist"
