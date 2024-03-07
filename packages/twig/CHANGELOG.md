@@ -1,5 +1,13 @@
 # @ilo-org/twig
 
+## 0.16.2
+
+### Patch Changes
+
+- 4ed63c1a1: Fix bug in Multilink Card that prevented `alignment` property from being applied was size was set to `fluid`.
+- Updated dependencies [94c28eae7]
+  - @ilo-org/styles@0.14.2
+
 ## 0.16.1
 
 ### Patch Changes

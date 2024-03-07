@@ -1,5 +1,16 @@
 # @ilo-org/react
 
+## 0.12.0
+
+### Minor Changes
+
+- 5bb16757b: Sync cards with twig
+
+### Patch Changes
+
+- Updated dependencies [94c28eae7]
+  - @ilo-org/styles@0.14.2
+
 ## 0.11.0
 
 ### Minor Changes

@@ -1,5 +1,11 @@
 # @ilo-org/styles
 
+## 0.14.2
+
+### Patch Changes
+
+- 94c28eae7: Fix table of contents padding on hover
+
 ## 0.14.1
 
 ### Patch Changes
