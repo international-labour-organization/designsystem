@@ -2,7 +2,7 @@ import { FC } from "react";
 import classnames from "classnames";
 import useGlobalSettings from "../../hooks/useGlobalSettings";
 import { CardGroupProps } from "./CardGroup.props";
-import { Card } from "../Card";
+import { Card } from ".";
 
 const CardGroup: FC<CardGroupProps> = ({ cards, cardcount, cta }) => {
   const { prefix } = useGlobalSettings();
@@ -32,22 +32,21 @@ const CardGroup: FC<CardGroupProps> = ({ cards, cardcount, cta }) => {
               theme={card.theme}
               cornercut={card.cornercut}
               alignment={card.alignment}
-              variant={card.variant}
+              type={card.type}
               size={card.size}
             />
           ))}
-
-        {cta && (
-          <div className={`${baseClass}--button-wrap`}>
-            <a
-              className={`${prefix}--button ${prefix}--button--medium ${prefix}--button--secondary`}
-              href={cta.url}
-            >
-              <span className="button__label">{cta.label}</span>
-            </a>
-          </div>
-        )}
       </div>
+      {cta && (
+        <div className={`${baseClass}--button-wrap`}>
+          <a
+            className={`${prefix}--button ${prefix}--button--medium ${prefix}--button--secondary`}
+            href={cta.url}
+          >
+            <span className="button__label">{cta.label}</span>
+          </a>
+        </div>
+      )}
     </div>
   );
 };

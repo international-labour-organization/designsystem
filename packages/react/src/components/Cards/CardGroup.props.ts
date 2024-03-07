@@ -1,4 +1,4 @@
-import { CardProps } from "../Card/Card.props";
+import { CardProps } from "./Card.props";
 import { LinkProps } from "../LinkList/LinkList.props";
 
 export interface CardGroupProps {

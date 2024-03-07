@@ -1,7 +1,15 @@
-import { CardProps } from "./Card.props";
+import {
+  TextCardProps,
+  StatCardProps,
+  MultilinkCardProps,
+  PromoCardProps,
+  FeatureCardProps,
+  DetailCardProps,
+  FactlistCardProps,
+  DataCardProps,
+} from "./Card.props";
 
-const graphicTextCard: CardProps = {
-  variant: "graphic",
+const textCard: TextCardProps = {
   title: "Why we need greater social justice",
   eyebrow: "Podcast",
   date: {
@@ -10,8 +18,6 @@ const graphicTextCard: CardProps = {
   },
   theme: "light",
   link: "https:/www.ilo.org",
-  intro:
-    "A toxic combination of mutually-reinforcing crises – inflation, debt, food and fuel price rises, geopolitical tensions and conflict, climate change – are threatening to increase poverty, inequality and discrimination worldwide.",
   profile: {
     avatar: "/ilo-dg.jpg",
     description:
@@ -21,10 +27,8 @@ const graphicTextCard: CardProps = {
   },
 };
 
-const statCard: CardProps = {
-  variant: "stat",
+const statCard: StatCardProps = {
   title: "Global employment growth down by half in 2023",
-  eyebrow: "Report",
   intro:
     "The current global economic slowdown is likely to force more workers to accept lower quality, poorly paid jobs which lack job security and social protection, so accentuating inequalities exacerbated by the COVID-19 crisis.",
   color: "turquoise",
@@ -34,8 +38,7 @@ const statCard: CardProps = {
   },
 };
 
-const multilinkCard: CardProps = {
-  variant: "multilink",
+const multilinkCard: MultilinkCardProps = {
   title:
     "ILO welcomes G7 call to make a just transition to a green economy happen",
   eyebrow: "High-level meeting",
@@ -43,10 +46,7 @@ const multilinkCard: CardProps = {
     "At the end of their meeting the G7 Labour Ministers highlighted the urgent need to greater focus on rights and occupational safety and health.",
   image: "/hero.jpg",
   alignment: "left",
-  date: {
-    human: "6 September 2023",
-    unix: "1670389200",
-  },
+  link: "https:/www.ilo.org",
   linklist: {
     headline: "",
     linkgroup: [
@@ -70,13 +70,13 @@ const multilinkCard: CardProps = {
   },
 };
 
-const graphicPromoCard: CardProps = {
-  variant: "graphicpromo",
+const promoCard: PromoCardProps = {
+  size: "standard",
   title:
     "ILO welcomes G7 call to make a just transition to a green economy happen",
   eyebrow: "High-level meeting",
-  theme: "light",
-  cornercut: "cornercut",
+  theme: "dark",
+  cornercut: true,
   intro:
     "At the end of their meeting the G7 Labour Ministers highlighted the urgent need to greater focus on rights and occupational safety and health.",
   link: "https:/www.ilo.org",
@@ -86,8 +86,7 @@ const graphicPromoCard: CardProps = {
   },
 };
 
-const featureCard: CardProps = {
-  variant: "feature",
+const featureCard: FeatureCardProps = {
   isvideo: false,
   title:
     "ILO welcomes G7 call to make a just transition to a green economy happen",
@@ -114,8 +113,7 @@ const featureCard: CardProps = {
   },
 };
 
-const detailCard: CardProps = {
-  variant: "detail",
+const detailCard: DetailCardProps = {
   title: "Technical meeting on digitalization in the construction sector",
   eyebrow: "Meeting",
   intro:
@@ -129,28 +127,22 @@ const detailCard: CardProps = {
   eventdetails: "8:30 - 12:00 CET | Geneva",
 };
 
-const factListCard: CardProps = {
-  variant: "factlist",
+const factListCard: FactlistCardProps = {
   title:
     "Economic slowdown likely to force workers to accept lower quality jobs",
-  eyebrow: "Report",
   theme: "light",
-  cornercut: "cornercut",
-  intro:
-    "A toxic combination of mutually-reinforcing crises – inflation, debt, food and fuel price rises, geopolitical tensions and conflict, climate change – are threatening to increase poverty, inequality and discrimination worldwide.",
-  listitems: [
+  list: [
     "Global employment growth will be only 1.0 per cent in 2023, less than half the level in 2022.",
     "The labour market deterioration is mainly due to emerging geopolitical tensions and the Ukraine conflict.",
     "The current slowdown means that many workers will have to accept lower quality jobs, often at very low pay.",
   ],
 };
 
-const dataCard: CardProps = {
-  variant: "data",
-  title: "Technical meeting on digitalization in the construction sector",
+const dataCard: DataCardProps = {
+  size: "wide",
   eyebrow: "Meeting",
-  eventdetails:
-    "The purpose of the meeting will be to discuss opportunities and challenges for the future of work in the construction industry as a vehicle to ensure a human-centred economic recovery.",
+  image: "/small.jpg",
+  columns: "two",
   dataset: {
     content: {
       items: [
@@ -181,6 +173,19 @@ const dataCard: CardProps = {
         },
       ],
     },
+    cta: {
+      headline: "Read online",
+      items: [
+        {
+          label: "HTML Version",
+          url: "https://www.ilo.org",
+        },
+        {
+          label: "InfoStories",
+          url: "https://www.ilo.org/infostories/en-GB",
+        },
+      ],
+    },
     links: {
       headline: "Languages",
       items: [
@@ -202,10 +207,10 @@ const dataCard: CardProps = {
 };
 
 const CardArgs = {
-  graphicTextCard,
+  textCard,
   statCard,
   multilinkCard,
-  graphicPromoCard,
+  promoCard,
   featureCard,
   detailCard,
   factListCard,
