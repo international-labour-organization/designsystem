@@ -59,4 +59,18 @@ accordion:
             id: item2
             defaultExpanded: false
             scroll: true
+    focus:
+      label: "Focus elements"
+      description: "This variant includes checkboxes inside the accordion item."
+      fields:
+        items:
+          - label: User Preferences
+            content: '<div style="padding: 20px"><form><input type="checkbox" id="option1" name="option1"><label for="option1">Option 1</label><br><input type="checkbox" id="option2" name="option2"><label for="option2">Option 2</label><br><input type="checkbox" id="option3" name="option3"><label for="option3">Option 3</label><br><input type="checkbox" id="option4" name="option4"><label for="option4">Option 4</label><br><input type="checkbox" id="option5" name="option5"><label for="option5">Option 5</label></form></div>'
+            id: item1
+            defaultExpanded: false
+          - label: More Preferences
+            content: '<div style="padding: 20px"><form><input type="checkbox" id="option3" name="option3"><label for="option3">Option 3</label><br><input type="checkbox" id="option4" name="option4"><label for="option4">Option 4</label></form></div>'
+            id: item2
+            defaultExpanded: false
+
   visibility: storybook
