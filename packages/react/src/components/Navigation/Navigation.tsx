@@ -66,7 +66,7 @@ const Navigation: FC<NavigationProps> = ({
         </div>
       </div>
       <div className={`${baseClass}--logo-bar`}>
-        <div className={`${baseClass}--inner`}>
+        <div className={`${baseClass}--inner ${prefix}--container`}>
           <a href={siteurl} className={`${baseClass}--logo-link`}>
             <img className={`${baseClass}--logo`} src={logo} alt="ILO Logo" />
           </a>
