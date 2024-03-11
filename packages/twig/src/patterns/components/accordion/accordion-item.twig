@@ -14,7 +14,7 @@
 			{{label}}
 		</button>
 	</div>
-	<div class="{{prefix}}--accordion--panel {{ expanded_class }} {{ scroll_class }}" id="{{ panel_id }}" aria-labelledby="{{ button_id }}" role="region" aria-hidden='true'>
+	<div class="{{prefix}}--accordion--panel {{ expanded_class }} {{ scroll_class }}" id="{{ panel_id }}" aria-labelledby="{{ button_id }}" role="region" aria-hidden={{defaultExpanded ? 'false' : 'true'}}>
 		<div class="{{prefix}}--accordion--innerpanel">
 			{{content|raw}}
 		</div>
