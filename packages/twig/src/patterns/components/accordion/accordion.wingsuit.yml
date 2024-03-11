@@ -2,9 +2,8 @@ accordion:
   namespace: Components/Content
   use: "@components/accordion/accordion.twig"
   label: Accordion
-  description:
-    The accordion component allows the user to show and hide sections of
-    related content on a page. Items in the accordion can be expanded by default or scrollable if the content is very long.
+  description: The accordion component allows the user to show and hide sections of related content on a page. Items in the accordion can be expanded by default or scrollable if the content is very long.
+
   fields:
     items:
       type: object
@@ -22,6 +21,7 @@ accordion:
           id: item2
           defaultExpanded: false
           scroll: false
+
   settings:
     size:
       type: select
@@ -41,21 +41,22 @@ accordion:
         false: False
       preview: "true"
       required: false
+
   variants:
     default:
-      label: "Default"
+      label: Default
     scrollable:
       label: "Scrollable"
       description: "You can make an accordion item scrollable simply by passing it scroll: true in the preview."
       fields:
         items:
           - label: Topics
-            content: '<div style="padding: 20px"><ul class="ilo--list--unordered"><li>Employment Promotion and Job Creation</li><li>Social Protection</li><li>International Labour Standards</li><li>Social Dialogue and Tripartism</li><li>Occupational Safety and Health</li><li>Labor Migration</li><li>Child Labour and Forced Labour Elimination</li><li>Gender Equality and Non-Discrimination</li><li>Decent Work</li><li>Wages and Working Hours</li><li>Social Security</li><li>Green Jobs</li>'
+            content: '<div style="padding: 20px"><ul class="ilo--list--unordered"><li>Employment Promotion and Job Creation</li><li>Social Protection</li><li>International Labour Standards</li><li>Social Dialogue and Tripartism</li><li>Occupational Safety and Health</li><li>Labor Migration</li><li>Child Labour and Forced Labour Elimination</li><li>Gender Equality and Non-Discrimination</li></ul></div>'
             id: item1
             defaultExpanded: false
             scroll: true
           - label: Sectors
-            content: '<div style="padding: 20px"><ul class="ilo--list--unordered"><li>Agriculture, Forestry, and Fishing</li><li>Construction</li><li>Manufacturing</li><li>Transport and Storage</li><li>Wholesale and Retail Trade</li><li>Information and Communication</li><li>Finance and Insurance</li><li>Health and Social Work</li><li>Educational Services</li><li>Public Administration and Defense</li><li>Other Services</li><li>Mining and Quarrying</li><li>Real Estate Activities</li><li>Water Supply and Waste Management</li><li>Professional, Scientific, and Technical Services</li><li>Arts, Entertainment, and Recreation</li><li>Electricity, Gas, Steam, and Air Conditioning Supply</li><li>Accommodation and Food Service Activities</li></ul></div>'
+            content: '<div style="padding: 20px"><ul class="ilo--list--unordered"><li>Agriculture, Forestry, and Fishing</li><li>Construction</li><li>Manufacturing</li><li>Transport and Storage</li><li>Wholesale and Retail Trade</li><li>Information and Communication</li><li>Finance and Insurance</li><li>Health and Social Work</li><li>Educational Services</li><li>Public Administration and Defense</li><li>Other Services</li></ul></div>'
             id: item2
             defaultExpanded: false
             scroll: true
@@ -68,9 +69,10 @@ accordion:
             content: '<div style="padding: 20px"><form><input type="checkbox" id="option1" name="option1"><label for="option1">Option 1</label><br><input type="checkbox" id="option2" name="option2"><label for="option2">Option 2</label><br><input type="checkbox" id="option3" name="option3"><label for="option3">Option 3</label><br><input type="checkbox" id="option4" name="option4"><label for="option4">Option 4</label><br><input type="checkbox" id="option5" name="option5"><label for="option5">Option 5</label></form></div>'
             id: item1
             defaultExpanded: false
+            scroll: false
           - label: More Preferences
             content: '<div style="padding: 20px"><form><input type="checkbox" id="option3" name="option3"><label for="option3">Option 3</label><br><input type="checkbox" id="option4" name="option4"><label for="option4">Option 4</label></form></div>'
             id: item2
             defaultExpanded: false
-
-  visibility: storybook
+            scroll: false
+            visibility: storybook
