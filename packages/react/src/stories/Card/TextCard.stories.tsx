@@ -1,6 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { TextCard } from "../../components/Cards";
-import CardArgs from "../../components/Cards/Card.args";
+import { TextCard, TextCardArgs } from "../../components/Cards/TextCard";
 import {
   ArgTypes,
   Description,
@@ -16,10 +15,6 @@ const CardMeta: Meta<typeof TextCard> = {
   argTypes: {
     theme: {
       options: ["dark", "light"],
-      control: { type: "radio" },
-    },
-    cornercut: {
-      options: ["cornercut", "corner"],
       control: { type: "radio" },
     },
     size: {
@@ -45,6 +40,6 @@ const CardMeta: Meta<typeof TextCard> = {
 export default CardMeta;
 
 export const TextCardDefault: StoryObj<typeof TextCard> = {
-  args: CardArgs.textCard,
+  args: TextCardArgs,
   name: "Default",
 };

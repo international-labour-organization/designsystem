@@ -1,6 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { PromoCard } from "../../components/Cards";
-import CardArgs from "../../components/Cards/Card.args";
+import { PromoCard, PromoCardArgs } from "../../components/Cards/PromoCard";
 import {
   ArgTypes,
   Description,
@@ -44,6 +43,6 @@ const CardMeta: Meta<typeof PromoCard> = {
 export default CardMeta;
 
 export const PromoCardDefault: StoryObj<typeof PromoCard> = {
-  args: CardArgs.promoCard,
+  args: PromoCardArgs,
   name: "Default",
 };

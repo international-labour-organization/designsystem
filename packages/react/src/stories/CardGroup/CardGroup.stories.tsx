@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { CardGroup } from "../../components/Cards";
-import CardGroupArgs from "../../components/Cards/CardGroup.args";
+import CardGroup from "../../components/Cards/CardGroup/CardGroup";
+import CardGroupArgs from "../../components/Cards/CardGroup/CardGroup.args";
 
 const CardGroupMeta: Meta<typeof CardGroup> = {
   title: "Components/Cards/CardGroup",

@@ -1,28 +1,15 @@
 import { FC } from "react";
 import classnames from "classnames";
-import useGlobalSettings from "../../hooks/useGlobalSettings";
+import useGlobalSettings from "../../../hooks/useGlobalSettings";
 import { CardGroupProps } from "./CardGroup.props";
-import {
-  FeatureCardProps,
-  DataCardProps,
-  DetailCardProps,
-  FactlistCardProps,
-  MultilinkCardProps,
-  PromoCardProps,
-  StatCardProps,
-  TextCardProps,
-} from "./Card.props";
-
-import {
-  FeatureCard,
-  DataCard,
-  DetailCard,
-  FactlistCard,
-  MultilinkCard,
-  PromoCard,
-  StatCard,
-  TextCard,
-} from ".";
+import { DataCardProps, DataCard } from "../DataCard";
+import { DetailCardProps, DetailCard } from "../DetailCard";
+import { FactlistCardProps, FactlistCard } from "../FactlistCard";
+import { FeatureCardProps, FeatureCard } from "../FeatureCard";
+import { MultilinkCardProps, MultilinkCard } from "../MultilinkCard";
+import { PromoCardProps, PromoCard } from "../PromoCard";
+import { StatCardProps, StatCard } from "../StatCard";
+import { TextCardProps, TextCard } from "../TextCard";
 
 const cardMapper: Record<string, FC<any>> = {
   stat: (props: StatCardProps) => <StatCard {...props} />,
