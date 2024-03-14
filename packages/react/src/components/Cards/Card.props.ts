@@ -4,7 +4,6 @@ import {
   CardCornerType,
   CardColor,
   CardSize,
-  CardTypes,
 } from "../../types";
 import { LinkProps, LinkListProps } from "../LinkList/LinkList.props";
 import { ProfileProps } from "../Profile/Profile.props";
