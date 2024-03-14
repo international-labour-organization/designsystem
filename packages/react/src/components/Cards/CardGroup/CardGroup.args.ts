@@ -1,6 +1,6 @@
 import { CardGroupProps } from "./CardGroup.props";
 
-const textCardGroup: CardGroupProps = {
+export const textCardGroup: CardGroupProps = {
   cards: [
     {
       title: "Why we need greater social justice",
