@@ -41,6 +41,6 @@ export { TableOfContents } from "./TableOfContents";
 export { Footer } from "./Footer";
 export { LocalNav } from "./LocalNav";
 export { Navigation } from "./Navigation";
-export { Card, CardGroup } from "./Cards";
+export { CardGroup } from "./Cards";
 export { Breadcrumb } from "./Breadcrumb";
 export { Tabs } from "./Tabs";

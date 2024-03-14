@@ -9,6 +9,11 @@ const CardGroupMeta: Meta<typeof CardGroup> = {
 
 export default CardGroupMeta;
 
+export const FeatureCardGroup: StoryObj<typeof CardGroup> = {
+  args: CardGroupArgs.featureCardGroup,
+  name: "Feature Group",
+};
+
 export const GraphicCardGroup: StoryObj<typeof CardGroup> = {
   args: CardGroupArgs.textCardGroup,
   name: "Text Group",
@@ -27,11 +32,6 @@ export const MultilinkCardGroup: StoryObj<typeof CardGroup> = {
 export const GraphicPromoCardGroup: StoryObj<typeof CardGroup> = {
   args: CardGroupArgs.promoCardGroup,
   name: "Promo Group",
-};
-
-export const FeatureCardGroup: StoryObj<typeof CardGroup> = {
-  args: CardGroupArgs.featureCardGroup,
-  name: "Feature Group",
 };
 
 export const DetailCardGroup: StoryObj<typeof CardGroup> = {
