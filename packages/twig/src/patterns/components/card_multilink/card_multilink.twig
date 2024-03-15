@@ -1,47 +1,45 @@
-{#
-  MULTILINK CARD COMPONENT
-#}
+{# card_multilink.twig #}
 
-<div class="{{prefix}}--card {{prefix}}--card__type__multilink {% if link|length > 0 %} {{prefix}}--card__action {% endif %} {{prefix}}--card__size__{{size}} {% if isvideo %} {{prefix}}--card__isvideo {% endif %} {% if linklist %} {{prefix}}--card__linklist {% endif %} {% if size == "wide" %} {{prefix}}--card__align__{{alignment}} {% endif %}">
-  {% if link|length > 0 %}
-    <a class="{{prefix}}--card--link" href="{{link}}" title="{{title}}">
-      <span class="{{prefix}}--card--link--text">{{title}}</span>
-    </a>
-  {% endif %}
-  <div class="{{prefix}}--card--wrap">
-    <div class="{{prefix}}--card--image--wrapper">
-      {% include "@components/picture/picture.twig" with {
+<div class="{{prefix}}--card {{prefix}}--card__type__multilink {% if link|length > 0 %} {{prefix}}--card__action {% endif %} {{prefix}}--card__size__{{size}} {% if isvideo %} {{prefix}}--card__isvideo {% endif %} {% if linklist %} {{prefix}}--card__linklist {% endif %} {% if size == "wide" or size == "fluid" %} {{prefix}}--card__align__{{alignment}} {% endif %}">
+	{% if link|length > 0 %}
+		<a class="{{prefix}}--card--link" href="{{link}}" title="{{title}}">
+			<span class="{{prefix}}--card--link--text">{{title}}</span>
+		</a>
+	{% endif %}
+	<div class="{{prefix}}--card--wrap">
+		<div class="{{prefix}}--card--image--wrapper">
+			{% include "@components/picture/picture.twig" with {
         image: image,
         class: "card"
       }
       %}
-    </div>
-    <div class="{{prefix}}--card--content">
-      {% if eyebrow %}
-        <p class="{{prefix}}--card--eyebrow">{{eyebrow}}</p>
-      {% endif %}
-      {% if title %}
-        <h3 class="{{prefix}}--card--title">{{title}}</h3>
-      {% endif %}
-      {% if image %}
-        <div class="{{prefix}}--card--image--wrapper">
-          {% include "@components/picture/picture.twig" with {
+		</div>
+		<div class="{{prefix}}--card--content">
+			{% if eyebrow %}
+				<p class="{{prefix}}--card--eyebrow">{{eyebrow}}</p>
+			{% endif %}
+			{% if title %}
+				<h3 class="{{prefix}}--card--title">{{title}}</h3>
+			{% endif %}
+			{% if image %}
+				<div class="{{prefix}}--card--image--wrapper">
+					{% include "@components/picture/picture.twig" with {
             image: image,
             class: "card"
           }
           %}
-        </div>
-      {% endif %}
-      {% if intro %}
-        <p class="{{prefix}}--card--intro">{{intro}}</p>
-      {% endif %}
-      {% if linklist %}
-        {% include "@components/linklist/linklist.twig" with {
+				</div>
+			{% endif %}
+			{% if intro %}
+				<p class="{{prefix}}--card--intro">{{intro}}</p>
+			{% endif %}
+			{% if linklist %}
+				{% include "@components/linklist/linklist.twig" with {
           headline: linklist.headline,
           linkgroup: linklist.linkgroup,
           prefix: prefix
         } only %}
-      {% endif %}
-    </div>
-  </div>
+			{% endif %}
+		</div>
+	</div>
 </div>

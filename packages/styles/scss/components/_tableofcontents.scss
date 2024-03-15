@@ -153,6 +153,7 @@
       margin: 0;
       outline: none;
       padding: spacing(4) spacing(4) spacing(4);
+      padding-inline-end: spacing(12);
       width: 100%;
       @include dataurlicon("stemarrow", $color-ux-labels-hover);
       @include globaltransition("background-color, border, color");
@@ -168,6 +169,7 @@
       margin: -2px 0 0 0;
       outline: none;
       padding: spacing(4) spacing(4) spacing(4);
+      padding-inline-end: spacing(12);
       width: 100%;
       @include dataurlicon(
         "stemarrow",

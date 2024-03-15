@@ -84,7 +84,7 @@ $avatar-size-lg: $row-1-lg;
         bottom: px-to-rem(1px);
         height: px-to-rem(24px);
         width: px-to-rem(24px);
-        margin-inline-start: px-to-rem(8px);
+        margin-inline-start: spacing(2);
         content: "";
         @include dataurlicon("arrowright", $color-link-text-default);
 

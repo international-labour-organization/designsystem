@@ -1,5 +1,67 @@
 # @ilo-org/react
 
+## 0.12.0
+
+### Minor Changes
+
+- 5bb16757b: Sync cards with twig
+
+### Patch Changes
+
+- Updated dependencies [94c28eae7]
+  - @ilo-org/styles@0.14.2
+
+## 0.11.0
+
+### Minor Changes
+
+- d44ee1021: Normalized video implementation for react
+- 8491bba96: Create tabs component in react
+
+### Patch Changes
+
+- Updated dependencies [d44ee1021]
+- Updated dependencies [be59e9c1f]
+  - @ilo-org/styles@0.14.1
+  - @ilo-org/themes@0.7.2
+
+## 0.10.6
+
+### Patch Changes
+
+- 460210518: Add clear button to search input field
+- Updated dependencies [ac23bf484]
+- Updated dependencies [1b9c54f99]
+- Updated dependencies [138890e7a]
+  - @ilo-org/styles@0.14.0
+
+## 0.10.5
+
+### Patch Changes
+
+- 9bf73c7bd: Fix lists containing other elements than li items to improve accessibility
+- 056754038: Revise and refactor color names with the same values and remove duplicates and replace where it was used
+- e1000fbbd: added legacy classname for react video component
+- Updated dependencies [4153f99b5]
+- Updated dependencies [c8de2b695]
+- Updated dependencies [7472dd625]
+- Updated dependencies [b3298a267]
+- Updated dependencies [bf4432d7c]
+- Updated dependencies [1ed3123ae]
+- Updated dependencies [f76a35fdc]
+- Updated dependencies [a3c872512]
+- Updated dependencies [056754038]
+- Updated dependencies [4bbac5457]
+- Updated dependencies [e1000fbbd]
+- Updated dependencies [ac58b53d2]
+- Updated dependencies [51b20d4aa]
+- Updated dependencies [5a1e32f8e]
+- Updated dependencies [52eeae214]
+- Updated dependencies [709675b79]
+  - @ilo-org/styles@0.13.3
+  - @ilo-org/brand-assets@0.4.0
+  - @ilo-org/themes@0.7.1
+
 ## 0.10.4
 
 ### Patch Changes

@@ -8,6 +8,7 @@ const searchfield: SearchFieldProps = {
     name: "search",
     placeholder: "Search Field",
     type: "search",
+    value: "",
   },
 };
 
@@ -20,6 +21,7 @@ const searchfielderror: SearchFieldProps = {
     name: "search",
     placeholder: "Search Field",
     type: "search",
+    value: "",
   },
 };
 
@@ -31,6 +33,7 @@ const searchfielddisabled: SearchFieldProps = {
     name: "search",
     placeholder: "Search Field",
     type: "search",
+    value: "",
   },
 };
 
@@ -41,6 +44,7 @@ const searchfieldlabel: SearchFieldProps = {
     name: "search",
     placeholder: "Search Field",
     type: "search",
+    value: "",
   },
 };
 
@@ -51,6 +55,7 @@ const searchfieldhelper: SearchFieldProps = {
     name: "search",
     placeholder: "Search Field",
     type: "search",
+    value: "",
   },
 };
 

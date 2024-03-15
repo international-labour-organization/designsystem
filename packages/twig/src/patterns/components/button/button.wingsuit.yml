@@ -23,16 +23,18 @@ button:
       preview: ""
       required: false
     target:
-      type: string
+      type: object
       label: target
       description: Should the button open in a new tab? If so, include the name of the tab. Only evaluated if the url field is populated.
       preview: "true"
       required: false
     icon:
-      type: string
+      type: object
       label: Icon
-      description: optional icon to include in button
-      preview: false
+      description: Optional icon to include in button. See the `Icon` component for a full list of arguments
+      preview:
+        name: "add"
+        size: 24
       required: false
     className:
       type: string

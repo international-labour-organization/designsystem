@@ -1,5 +1,71 @@
 # @ilo-org/twig
 
+## 0.16.2
+
+### Patch Changes
+
+- 4ed63c1a1: Fix bug in Multilink Card that prevented `alignment` property from being applied was size was set to `fluid`.
+- Updated dependencies [94c28eae7]
+  - @ilo-org/styles@0.14.2
+
+## 0.16.1
+
+### Patch Changes
+
+- Updated dependencies [d44ee1021]
+- Updated dependencies [be59e9c1f]
+  - @ilo-org/styles@0.14.1
+  - @ilo-org/themes@0.7.2
+
+## 0.16.0
+
+### Minor Changes
+
+- 138890e7a: implemented new icon component
+
+### Patch Changes
+
+- ac23bf484: Add clear button to search input field
+- fd26dbafc: Enable Button to use newly refactored Icon component
+- db2ecaf48: Correct the way the Table of Contents passes properties to the Open and Close buttons.
+- Updated dependencies [ac23bf484]
+- Updated dependencies [1b9c54f99]
+- Updated dependencies [138890e7a]
+  - @ilo-org/styles@0.14.0
+
+## 0.15.0
+
+### Minor Changes
+
+- 4153f99b5: Removed black bars from youtube ebedded video
+- 1ed3123ae: Re-implemented video.js styles
+
+### Patch Changes
+
+- 9bf73c7bd: Fix lists containing other elements than li items to improve accessibility
+- a3c872512: separated labels for breadcrumbs
+- 056754038: Revise and refactor color names with the same values and remove duplicates and replace where it was used
+- e1000fbbd: added legacy classname for react video component
+- Updated dependencies [4153f99b5]
+- Updated dependencies [c8de2b695]
+- Updated dependencies [7472dd625]
+- Updated dependencies [b3298a267]
+- Updated dependencies [bf4432d7c]
+- Updated dependencies [1ed3123ae]
+- Updated dependencies [f76a35fdc]
+- Updated dependencies [a3c872512]
+- Updated dependencies [056754038]
+- Updated dependencies [4bbac5457]
+- Updated dependencies [e1000fbbd]
+- Updated dependencies [ac58b53d2]
+- Updated dependencies [51b20d4aa]
+- Updated dependencies [5a1e32f8e]
+- Updated dependencies [52eeae214]
+- Updated dependencies [709675b79]
+  - @ilo-org/styles@0.13.3
+  - @ilo-org/brand-assets@0.4.0
+  - @ilo-org/themes@0.7.1
+
 ## 0.14.6
 
 ### Patch Changes

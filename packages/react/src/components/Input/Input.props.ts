@@ -60,4 +60,6 @@ export interface InputProps {
    * The input's type.
    */
   type: TextInputTypes;
+
+  value: string;
 }

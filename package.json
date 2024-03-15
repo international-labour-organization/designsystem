@@ -15,9 +15,10 @@
     "ci:publish": "pnpm changeset publish",
     "ci:changeset": "npx changeset",
     "check:types": "pnpm turbo run check",
-    "clean": "pnpm clean:deps && pnpm clean:build",
-    "clean:deps": "rm -rf pnpm-lock.yaml node_modules && pnpm -r exec rm -rf node_modules",
-    "clean:build": "pnpm -r exec rm -rf build lib dist .turbo storybook-static es svg umd && rm -rf packages/icons/scss",
+    "clean": "pnpm clean:build && pnpm clean:deps",
+    "clean:deps": "rimraf pnpm-lock.yaml && pnpm -r exec rimraf node_modules && rimraf node_modules",
+    "clean:build": "pnpm -r exec rimraf build lib dist .turbo storybook-static es svg umd && rimraf packages/icons/scss packages/styles/css",
+    "clean:test": "rimraf summarize.js",
     "format": "pnpm turbo run format:fix",
     "lint": "pnpm turbo run lint:fix",
     "prepare": "node ./prepare.js",
@@ -25,12 +26,14 @@
     "react:build:docs": "pnpm turbo run build:docs --filter=@ilo-org/react...",
     "react:build:lib": "pnpm turbo run build:lib --filter react... ",
     "react:dev:docs": "pnpm --filter react storybook",
+    "react:dev:prep": "pnpm react:install && pnpm react:build:lib",
     "test:all": "pnpm turbo run test",
     "twig:install": "pnpm clean && pnpm config set dedupe-peer-dependents=false && pnpm --filter twig... install",
     "fix:pnpm-filter": "pnpm config set dedupe-peer-dependents=false",
     "twig:build:docs": "pnpm fix:pnpm-filter && pnpm turbo run build:docs --filter twig...",
     "twig:build:lib": "pnpm turbo run build:lib --filter twig... ",
-    "twig:dev:docs": "pnpm --filter twig storybook"
+    "twig:dev:docs": "pnpm --filter twig storybook",
+    "twig:dev:prep": "pnpm twig:install && pnpm twig:build:lib"
   },
   "postinstall": "manypkg check",
   "repository": {
@@ -57,6 +60,7 @@
     "husky": "^7.0.4",
     "lint-staged": "^13.1.0",
     "prettier": "^2.8.8",
+    "rimraf": "^3.0.2",
     "rollup": "^3.23.0",
     "turbo": "1.7.4",
     "typescript": "4.9.3"

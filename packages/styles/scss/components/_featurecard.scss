@@ -73,7 +73,6 @@
         border-top: px-to-rem(2px) solid $brand-ilo-grey-light;
         margin-left: px-to-rem(-24px);
         margin-right: px-to-rem(-24px);
-        margin-top: px-to-rem(34px);
         position: relative;
         z-index: 2;
 
@@ -181,7 +180,7 @@
         display: flex;
         flex: 1 1 auto;
         flex-direction: column;
-        padding: spacing(6) spacing(6) spacing(10);
+        padding: spacing(6) spacing(6) spacing(2) spacing(6);
       }
 
       &#{$self}__linklist {
@@ -192,14 +191,7 @@
 
       #{$self}--title {
         @include font-styles("headline-5");
-        @include textmargin(
-          "margin-bottom",
-          40px,
-          "headline-5",
-          "display",
-          "body-eyebrow",
-          "copy"
-        );
+        margin-bottom: spacing(6);
         font-family: $fonts-display;
         font-weight: 700;
         flex: 1;
@@ -218,7 +210,7 @@
       }
 
       #{$self}--date {
-        margin-bottom: 0;
+        margin-bottom: spacing(8);
         margin-top: auto;
       }
     }

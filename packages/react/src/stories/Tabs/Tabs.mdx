@@ -1,0 +1,17 @@
+import { Meta, Story, Canvas, ArgsTable, Unstyled } from "@storybook/blocks";
+import * as TabsStories from "./Tabs.stories.tsx";
+import { Tabs } from "../../components";
+
+<Meta title="Tabs" of={TabsStories} />
+
+# Tabs
+
+The Tabs component displays content that is subdivided into sections, providing an interface for toggling visually between sections.
+
+<Canvas>
+  <Story of={TabsStories.Default} />
+</Canvas>
+
+## Default Props
+
+<ArgsTable of={Tabs} />
