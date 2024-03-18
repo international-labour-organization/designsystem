@@ -84,7 +84,8 @@ const Pagination: FC<PaginationProps> = ({
       </div>
 
       <p className={`${baseClass}--page`}>
-        <span>{currentPage + 1}</span> {pageCountPreposition}{" "}
+        <span>{currentPage + 1}</span>
+        <span>{pageCountPreposition}</span>
         <span>{totalPages}</span>
       </p>
 
