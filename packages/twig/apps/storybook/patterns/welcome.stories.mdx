@@ -11,33 +11,30 @@ import { version } from "../../../package.json";
 />
 
 <div class="welcome">
-  <div class="welcome--wrapper">
-    <div class="welcome--text">
-      <h1 class="welcome--title">ILO Design System</h1>
-      <h3 class="welcome--subtitle">Twig Components</h3>
-      <span class="welcome--version">v{version}</span>
-    </div>
-    <div class="welcome--logo">
-      <img src="/images/twig.svg" alt="Twig Icon" />
-    </div>
-  </div>
+  <h1 class="welcome--title">ILO Design System</h1>
+  <h3 class="welcome--subtitle">
+    <img src="/images/twig.svg" alt="Twig Icon" />
+    Twig Components
+  </h3>
+  <span class="welcome--version">v{version}</span>
   <a
     class="ilo--button ilo--button--large ilo--button--primary optionalclass"
     href="?path=/docs/getting-started--page"
     target="true"
     rel="noopener noreferrer"
-    style={{ margin: "1rem 20px 0 0" }}
   >
     <span class="link__label">Get started</span>
   </a>
-  <div
-    class="triangle triangle1"
-    onMouseOver={(e) => {
-      if (!e.target.classList.contains("spinning")) {
-        e.target.classList.add("spinning");
-      }
-    }}
-  ></div>
-  <div class="triangle triangle2"></div>
-  <div class="triangle triangle3"></div>
+  <div>
+    <div
+      class="triangle triangle1"
+      onMouseOver={(e) => {
+        if (!e.target.classList.contains("spinning")) {
+          e.target.classList.add("spinning");
+        }
+      }}
+    ></div>
+    <div class="triangle triangle2"></div>
+    <div class="triangle triangle3"></div>
+  </div>
 </div>
