@@ -1,4 +1,4 @@
-// The build file for Twig package - this copies the twigs from where Storybook needs them to a more convenient folder for use in a CMS
+// This copies twig templates and yml wingsuit files from where Storybook needs them to a more convenient folder for use in a CMS
 const fs = require("fs");
 const path = require("path");
 const theme = require("@ilo-org/themes/tokens/theme/base.json");
@@ -22,7 +22,7 @@ const traverseDirectory = (directory) => {
     if (fs.statSync(absolute).isDirectory()) {
       traverseDirectory(absolute);
     } else {
-      if (ext === ".twig" || (ext === ".js" && file !== "index.js")) {
+      if (ext === ".twig" || ext === ".yml") {
         let filepath = directory
           .replace(`src/`, `dist/`)
           .replace("patterns/", "")
@@ -48,10 +48,10 @@ const traverseDirectory = (directory) => {
   }
 };
 
-const processTwigs = async () => {
+const copyTemplates = async () => {
   await checkFolder(`./dist/`);
   await checkFolder(`./dist/components/`);
   traverseDirectory(srcpath);
 };
 
-processTwigs();
+copyTemplates();
