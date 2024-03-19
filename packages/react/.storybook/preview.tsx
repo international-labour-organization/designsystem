@@ -17,7 +17,7 @@ export const parameters = {
   options: {
     storySort: {
       method: "alphabetical",
-      order: ["Introduction", "GettingStarted"],
+      order: ["Welcome", "GettingStarted"],
       locales: "en-US",
     },
   },
