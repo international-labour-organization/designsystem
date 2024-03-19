@@ -1,5 +1,5 @@
 import { configure, initJsBehaviors } from "@wingsuit-designsystem/storybook";
-import { addDecorator, addParameters } from "@storybook/react";
+import { addParameters } from "@storybook/react";
 import "./styles.scss";
 
 const namespaces = require("../../src/namespaces");
