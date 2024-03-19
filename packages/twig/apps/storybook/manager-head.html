@@ -62,4 +62,31 @@
   button.tabbutton:focus {
     border-bottom-color: var(--ilo-light-blue);
   }
+
+  .realm {
+    width: 100%;
+    background: transparent;
+    box-sizing: border-box;
+    text-align: left;
+    font-size: 0.8rem;
+    border-top: 1px solid #D3DCE3;
+    padding-top: 5px;
+    color: #1E2DBE;
+    font-weight: 600;
+    font-family: "Nunito Sans", sans-serif;
+    margin-top: -10px
+  }
 </style>
+
+<script>
+  window.addEventListener("load", function () {
+    const sidebar = document.querySelector(".sidebar-header");
+    const customLabel = document.createElement("div");
+    customLabel.classList.add("realm");
+    customLabel.textContent = "Twig Components";
+
+    if (sidebar) {
+      sidebar.insertAdjacentElement("afterend", customLabel);
+    }
+  });
+</script>
