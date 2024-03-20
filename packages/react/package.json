@@ -48,7 +48,6 @@
   "license": "Apache-2.0",
   "main": "lib/cjs/index.js",
   "module": "lib/esm/index.js",
-  "type": "module",
   "types": "lib/types/react/src/index.d.ts",
   "jest": {
     "moduleNameMapper": {
