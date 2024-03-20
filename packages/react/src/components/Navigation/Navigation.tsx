@@ -82,7 +82,7 @@ const Navigation: FC<NavigationProps> = ({
         </div>
       </div>
       <div className={`${baseClass}--navigation`}>
-        <div className={`${baseClass}--inner`}>
+        <div className={`${baseClass}--inner ${prefix}--container`}>
           <div className={`${prefix}--mobile--nav`}>
             <div className={`${prefix}--mobile--nav--logo`}>
               <a href={siteurl} className={`${baseClass}--logo-link`}>
@@ -115,7 +115,7 @@ const Navigation: FC<NavigationProps> = ({
               </button>
             </div>
             <div className={`${prefix}--mobile--nav--language--select`}>
-              <div className={`${baseClass}--inner`}>
+              <div className={`${baseClass}--inner ${prefix}--container`}>
                 <div className={`${prefix}--mobile--subnav--menu`}>
                   <button
                     className={`${prefix}--mobile--subnav--back`}
@@ -193,7 +193,7 @@ const Navigation: FC<NavigationProps> = ({
             className={`${prefix}--subnav`}
             aria-labelledby="secondary-navigation"
           >
-            <div className={`${prefix}--subnav--inner`}>
+            <div className={`${prefix}--subnav--inner ${prefix}--container`}>
               <div className={`${prefix}--mobile--subnav`}>
                 <div className={`${prefix}--mobile--subnav--menu`}>
                   <button
@@ -231,7 +231,7 @@ const Navigation: FC<NavigationProps> = ({
           </nav>
         )}
         <div className={`${prefix}--search-box`}>
-          <div className={`${prefix}--header--inner`}>
+          <div className={`${prefix}--header--inner ${prefix}--container`}>
             <SearchField
               input={searchfield?.input}
               action={searchfield?.action}
