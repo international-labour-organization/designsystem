@@ -1,5 +1,22 @@
 # @ilo-org/react
 
+## 0.13.0
+
+### Minor Changes
+
+- 16e117853: Refactor card group to fix styles and use individual card components
+
+### Patch Changes
+
+- de97f52fc: removed extra dirs from bundle
+- 10dadfad7: Fix design bug in pagination for rtl
+- 53c5be426: Sync footer and navigation markup with twig
+- 65f03a82a: Fix tagline on navigation
+- Updated dependencies [7e1460a88]
+- Updated dependencies [10dadfad7]
+- Updated dependencies [5bc989f5d]
+  - @ilo-org/styles@0.15.0
+
 ## 0.12.0
 
 ### Minor Changes
