@@ -17,27 +17,15 @@ const basic: FooterProps = {
     {
       links: [
         {
-          label: "Link One",
+          label: "Contact us",
           url: "https://www.ilo.org",
         },
         {
-          label: "Link Two",
+          label: "Contact us",
           url: "https://www.ilo.org",
         },
         {
-          label: "Link Three",
-          url: "https://www.ilo.org",
-        },
-        {
-          label: "Link Four",
-          url: "https://www.ilo.org",
-        },
-        {
-          label: "Link Five",
-          url: "https://www.ilo.org",
-        },
-        {
-          label: "Link Six",
+          label: "Contact us",
           url: "https://www.ilo.org",
         },
       ],
@@ -45,7 +33,7 @@ const basic: FooterProps = {
   ],
   socialmedia: socialMediaArgs,
   subscribe: {
-    label: "Subscribe",
+    label: "Subscribe for updates",
     url: "https://www.ilo.org",
   },
   legal: "© 1996-2023 International Labour Organization (ILO)",
