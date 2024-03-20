@@ -37,7 +37,7 @@ export const textCardGroup: CardGroupProps = {
       },
     },
   ],
-  cardcount: "two",
+  cardCount: "two",
   type: "text",
   cta: {
     label: "Discover our unique mission",
@@ -88,7 +88,7 @@ const statCardGroup: CardGroupProps = {
       },
     },
   ],
-  cardcount: "four",
+  cardCount: "four",
   type: "stat",
   cta: {
     label: "Discover our unique mission",
@@ -162,7 +162,7 @@ const multilinkCardGroup: CardGroupProps = {
     },
   ],
   type: "multilink",
-  cardcount: "two",
+  cardCount: "two",
   cta: {
     label: "Discover our unique mission",
     url: "https://www.ilo.org",
@@ -218,7 +218,7 @@ const promoCardGroup: CardGroupProps = {
     },
   ],
   type: "promo",
-  cardcount: "two",
+  cardCount: "two",
   cta: {
     label: "Discover our unique mission",
     url: "https://www.ilo.org",
@@ -332,7 +332,7 @@ const featureCardGroup: CardGroupProps = {
       },
     },
   ],
-  cardcount: "three",
+  cardCount: "three",
   type: "feature",
   cta: {
     label: "Discover our unique mission",
@@ -370,7 +370,7 @@ const detailCardGroup: CardGroupProps = {
     },
   ],
   type: "detail",
-  cardcount: "two",
+  cardCount: "two",
   cta: {
     label: "Discover our unique mission",
     url: "https://www.ilo.org",
@@ -401,7 +401,7 @@ const factListCardGroup: CardGroupProps = {
     },
   ],
   type: "factlist",
-  cardcount: "two",
+  cardCount: "two",
   cta: {
     label: "Discover our unique mission",
     url: "https://www.ilo.org",
@@ -746,7 +746,7 @@ const dataCardGroup: CardGroupProps = {
       },
     },
   ],
-  cardcount: "four",
+  cardCount: "four",
   type: "data",
   cta: {
     label: "Discover our unique mission",

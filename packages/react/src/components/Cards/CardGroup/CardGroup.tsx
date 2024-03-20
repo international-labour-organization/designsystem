@@ -2,34 +2,34 @@ import { FC } from "react";
 import classnames from "classnames";
 import useGlobalSettings from "../../../hooks/useGlobalSettings";
 import { CardGroupProps } from "./CardGroup.props";
-import { DataCardProps, DataCard } from "../DataCard";
-import { DetailCardProps, DetailCard } from "../DetailCard";
-import { FactlistCardProps, FactlistCard } from "../FactlistCard";
-import { FeatureCardProps, FeatureCard } from "../FeatureCard";
-import { MultilinkCardProps, MultilinkCard } from "../MultilinkCard";
-import { PromoCardProps, PromoCard } from "../PromoCard";
-import { StatCardProps, StatCard } from "../StatCard";
-import { TextCardProps, TextCard } from "../TextCard";
+import { DataCard } from "../DataCard";
+import { DetailCard } from "../DetailCard";
+import { FactlistCard } from "../FactlistCard";
+import { FeatureCard } from "../FeatureCard";
+import { MultilinkCard } from "../MultilinkCard";
+import { PromoCard } from "../PromoCard";
+import { StatCard } from "../StatCard";
+import { TextCard } from "../TextCard";
 
-const cardMapper: Record<string, FC<any>> = {
-  stat: (props: StatCardProps) => <StatCard {...props} />,
-  multilink: (props: MultilinkCardProps) => <MultilinkCard {...props} />,
-  text: (props: TextCardProps) => <TextCard {...props} />,
-  promo: (props: PromoCardProps) => <PromoCard {...props} />,
-  feature: (props: FeatureCardProps) => <FeatureCard {...props} />,
-  detail: (props: DetailCardProps) => <DetailCard {...props} />,
-  factlist: (props: FactlistCardProps) => <FactlistCard {...props} />,
-  data: (props: DataCardProps) => <DataCard {...props} />,
+const cardMapper: Record<string, React.FC> = {
+  stat: StatCard,
+  multilink: MultilinkCard,
+  text: TextCard,
+  promo: PromoCard,
+  feature: FeatureCard,
+  detail: DetailCard,
+  factlist: FactlistCard,
+  data: DataCard,
 };
 
-const CardGroup: FC<CardGroupProps> = ({ cards, cardcount, cta, type }) => {
+const CardGroup: FC<CardGroupProps> = ({ cards, cardCount, cta, type }) => {
   const Cards = cardMapper[type];
   const { prefix } = useGlobalSettings();
 
   const baseClass = `${prefix}--cardgroup`;
   const cardGroupClasses = classnames(
     baseClass,
-    `${baseClass}__count__${cardcount}`
+    `${baseClass}__count__${cardCount}`
   );
 
   return (
