@@ -32,6 +32,7 @@ export const parameters = {
     canvas: { title: "Code", hidden: false },
   },
   viewMode: "docs",
+  layout: "padded",
   docs: {
     theme: theme,
     source: {

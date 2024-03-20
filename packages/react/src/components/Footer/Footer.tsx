@@ -26,7 +26,7 @@ const Footer: FC<FooterProps> = ({
 
   return (
     <footer className={footerClasses}>
-      <div className={`${baseClass}--main`}>
+      <div className={`${baseClass}--main ${prefix}--container`}>
         <div className="site--info">
           <img className={`${baseClass}--logo`} src={logo} alt="ILO Logo" />
           <h3 className={`${baseClass}--headline`}>{tagline}</h3>
@@ -46,47 +46,51 @@ const Footer: FC<FooterProps> = ({
             <LinkList linkgroup={linkgroup} theme="dark"></LinkList>
           </nav>
         )}
-        {(socialmedia || subscribe) && (
+        {socialmedia && (
           <div className="connect">
-            {socialmedia && (
-              <div className="social--links">
-                <SocialMedia {...socialmedia} theme="dark" />
-              </div>
-            )}
-            {subscribe && (
-              <Button
-                label={subscribe?.label}
-                url={subscribe?.url}
-                type="primary"
-                size="large"
-                target="_blank"
-              ></Button>
-            )}
+            <div className="social--links">
+              <SocialMedia {...socialmedia} theme="dark" />
+            </div>
+          </div>
+        )}
+        {subscribe && (
+          <div className="subscribe">
+            <Button
+              label={subscribe?.label}
+              url={subscribe?.url}
+              type="primary"
+              size="large"
+              target="_blank"
+            ></Button>
           </div>
         )}
       </div>
       <div className={`${baseClass}--secondary`}>
-        <div className="legal">{legal}</div>
-        {secondarylinks && (
-          <nav className="secondarylinks">
-            <ul className="secondarylinks--list">
-              {secondarylinks.map((link, i) => (
-                <li className="secondarylinks--list--item">
-                  <a
-                    key={i}
-                    href={link.url}
-                    className="secondarylinks--list--link"
-                  >
-                    {link?.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </nav>
-        )}
-        <a href={anchorlink?.url} className="anchorlink">
-          {anchorlink?.label}
-        </a>
+        <div className={`${prefix}--container`}>
+          <div className={`${baseClass}--secondary--details`}>
+            <div className="legal">{legal}</div>
+            {secondarylinks && (
+              <nav className="secondarylinks">
+                <ul className="secondarylinks--list">
+                  {secondarylinks.map((link, i) => (
+                    <li className="secondarylinks--list--item">
+                      <a
+                        key={i}
+                        href={link.url}
+                        className="secondarylinks--list--link"
+                      >
+                        {link?.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
+            )}
+          </div>
+          <a href={anchorlink?.url} className="anchorlink">
+            {anchorlink?.label}
+          </a>
+        </div>
       </div>
     </footer>
   );

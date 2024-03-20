@@ -1,5 +1,14 @@
 import { EVENTS, ARIA } from "@ilo-org/utils";
 
+const FOCUSABLE_SELECTORS = [
+  "a",
+  "button",
+  "input",
+  "select",
+  "textarea",
+  "[tabindex]:not([tabindex='-1'])",
+];
+
 /**
  * The Accordion module which handles rendering field labels inline on a form.
  *
@@ -91,6 +100,12 @@ export default class Accordion {
       });
     }
 
+    if (this.accordionPanels.length > 0) {
+      this.accordionPanels.forEach((panel) => {
+        this.handleTabIndex(panel, "REMOVE");
+      });
+    }
+
     return this;
   }
 
@@ -147,7 +162,8 @@ export default class Accordion {
     element.parentElement
       .querySelector(".ilo--accordion--button")
       .setAttribute(ARIA.EXPANDED, "false");
-    element.setAttribute(ARIA.HIDDEN, "false");
+    element.setAttribute(ARIA.HIDDEN, "true");
+    this.handleTabIndex(element, "REMOVE");
   }
 
   /**
@@ -161,7 +177,24 @@ export default class Accordion {
     element.parentElement
       .querySelector(".ilo--accordion--button")
       .setAttribute(ARIA.EXPANDED, "true");
-    element.setAttribute(ARIA.HIDDEN, "true");
+    element.setAttribute(ARIA.HIDDEN, "false");
     element.classList.add("ilo--accordion--panel--open");
+    this.handleTabIndex(element, "ADD");
+  }
+
+  /**
+   *
+   * @param {HTMLElement} element - REQUIRED - the accordion panel to be adjusted
+   * @param {('ADD' | 'REMOVE')} mode - REQUIRED -  weather to set or remove tabindex
+   */
+  handleTabIndex(element, mode) {
+    element.querySelectorAll(FOCUSABLE_SELECTORS.join(", ")).forEach((item) => {
+      if (mode === "ADD") {
+        item.removeAttribute("tabindex");
+        return;
+      }
+
+      item.setAttribute("tabindex", "-1");
+    });
   }
 }
