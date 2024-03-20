@@ -1,5 +1,17 @@
 # @ilo-org/twig
 
+## 0.16.3
+
+### Patch Changes
+
+- 9a326f047: fixed accordion a11y
+- 77fbf565d: Fix lighthouse accessibility audit error of tabs attributes not matching their roles
+- 10dadfad7: Fix design bug in pagination for rtl
+- Updated dependencies [7e1460a88]
+- Updated dependencies [10dadfad7]
+- Updated dependencies [5bc989f5d]
+  - @ilo-org/styles@0.15.0
+
 ## 0.16.2
 
 ### Patch Changes

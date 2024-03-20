@@ -1,5 +1,16 @@
 # @ilo-org/styles
 
+## 0.15.0
+
+### Minor Changes
+
+- 5bc989f5d: removed legacy build dir
+
+### Patch Changes
+
+- 7e1460a88: reoragnised css reset with normalisaiton
+- 10dadfad7: Fix design bug in pagination for rtl
+
 ## 0.14.2
 
 ### Patch Changes
