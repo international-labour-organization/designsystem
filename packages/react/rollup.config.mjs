@@ -27,10 +27,12 @@ const config = {
     {
       dir: "lib/esm",
       format: "esm",
+      exports: "auto",
     },
     {
       dir: "lib/cjs",
       format: "cjs",
+      exports: "auto",
     },
   ],
 };
