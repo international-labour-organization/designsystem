@@ -186,7 +186,7 @@
     padding: spacing(19) 0 spacing(9) spacing(8); // check
     position: relative;
     width: fit-content;
-    @include dataurlicon("triangle", $color-ux-background-default);
+    @include cornercut(72px, 40px);
 
     p {
       color: $color-font-blockquote;
@@ -353,6 +353,7 @@
       background-size: px-to-rem(86px) px-to-rem(48px);
       margin: spacing(8) 0 spacing(19) 0;
       padding: spacing(16) 0 spacing(12) spacing(12);
+      @include cornercut(86px, 48px);
 
       p {
         margin-bottom: spacing(6);
@@ -406,7 +407,7 @@
     blockquote {
       background-position: -1px -1px;
       padding: spacing(14) spacing(8) spacing(9) 0;
-      @include dataurlicon("trianglereverse", $color-ux-background-default);
+      @include cornercut(72px, 40px, "left");
 
       p {
         padding: 0 0 0 spacing(12);
@@ -426,6 +427,10 @@
 
       @include breakpoint("medium") {
         padding: spacing(15) spacing(12) spacing(12) 0;
+
+        blockquote {
+          @include cornercut(86px, 48px, "left");
+        }
       }
     }
   }
