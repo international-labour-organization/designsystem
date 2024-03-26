@@ -99,7 +99,7 @@
       "body-small",
       "copy"
     );
-    @include font-styles("rich-text-heading-1");
+    @include font-styles("rich-text-heading-1-md");
   }
 
   h2 {
@@ -111,7 +111,7 @@
       "body-small",
       "copy"
     );
-    @include font-styles("rich-text-heading-2");
+    @include font-styles("rich-text-heading-2-md");
   }
 
   h3 {
@@ -123,7 +123,7 @@
       "body-small",
       "copy"
     );
-    @include font-styles("rich-text-heading-3");
+    @include font-styles("rich-text-heading-3-md");
   }
 
   h4 {
@@ -135,7 +135,7 @@
       "body-small",
       "copy"
     );
-    @include font-styles("rich-text-heading-4");
+    @include font-styles("rich-text-heading-4-md");
   }
 
   h5 {
@@ -147,7 +147,7 @@
       "body-small",
       "copy"
     );
-    @include font-styles("rich-text-heading-5");
+    @include font-styles("rich-text-heading-5-md");
   }
 
   ul,
@@ -253,7 +253,7 @@
         "body-large",
         "copy"
       );
-      @include font-styles("rich-text-heading-1-md");
+      @include font-styles("rich-text-heading-1");
     }
 
     h2 {
@@ -265,7 +265,7 @@
         "body-large",
         "copy"
       );
-      @include font-styles("rich-text-heading-2-md");
+      @include font-styles("rich-text-heading-2");
     }
 
     h3 {
@@ -277,7 +277,7 @@
         "body-large",
         "copy"
       );
-      @include font-styles("rich-text-heading-3-md");
+      @include font-styles("rich-text-heading-3");
     }
 
     h4 {
@@ -289,7 +289,7 @@
         "body-large",
         "copy"
       );
-      @include font-styles("rich-text-heading-4-md");
+      @include font-styles("rich-text-heading-4");
     }
 
     h5 {
@@ -301,7 +301,7 @@
         "body-large",
         "copy"
       );
-      @include font-styles("rich-text-heading-5-md");
+      @include font-styles("rich-text-heading-5");
     }
 
     p {
