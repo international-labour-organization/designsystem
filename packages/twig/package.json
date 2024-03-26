@@ -20,6 +20,27 @@
     "designsystem",
     "components"
   ],
+  "contributors": [
+    {
+      "name": "Justin Smith",
+      "email": "smithj@ilo.org",
+      "url": "https://github.com/justintemps"
+    },
+    {
+      "name": "Prabashwara Seneviratne",
+      "url": "https://www.bash.lk"
+    },
+    {
+      "name": "Shashika Boteju",
+      "email": "Shashikaboteju3@gmail.com",
+      "url": "https://github.com/Shashika6"
+    },
+    {
+      "name": "Giorgi Kapanadze",
+      "email": "doublegkapanadze@gmail.com",
+      "url": "https://github.com/ggkapanadze"
+    }
+  ],
   "scripts": {
     "storybook": "node importprefix.js && node importsvgs.js && start-storybook --config-dir apps/storybook",
     "build:docs": "node importprefix.js && node importsvgs.js && build-storybook --config-dir apps/storybook -o ./storybook-static",
