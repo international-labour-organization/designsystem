@@ -24,7 +24,7 @@
 						{% if not loop.first and not loop.last %}
 							<li class="{{prefix}}--breadcrumb--item">
 								<a href="{{link.url}}" class="{{prefix}}--breadcrumb--link">
-									<span class="{{prefix}}--breadcrumb--link--label--dropdown">{{link.label}}</span>
+									<span class="{{prefix}}--breadcrumb--link--label--dropdown {{prefix}}--breadcrumb--link--label">{{link.label}}</span>
 								</a>
 							</li>
 						{% endif %}

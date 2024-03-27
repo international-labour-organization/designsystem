@@ -1,6 +1,8 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { MultilinkCard } from "../../components/Cards";
-import CardArgs from "../../components/Cards/Card.args";
+import {
+  MultilinkCard,
+  MultilinkCardArgs,
+} from "../../components/Cards/MultilinkCard";
 import {
   ArgTypes,
   Description,
@@ -41,6 +43,6 @@ const CardMeta: Meta<typeof MultilinkCard> = {
 export default CardMeta;
 
 export const MultilinkCardDefault: StoryObj<typeof MultilinkCard> = {
-  args: CardArgs.multilinkCard,
+  args: MultilinkCardArgs,
   name: "Default",
 };

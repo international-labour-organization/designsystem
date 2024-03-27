@@ -1,6 +1,8 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { FeatureCard } from "../../components/Cards";
-import CardArgs from "../../components/Cards/Card.args";
+import {
+  FeatureCard,
+  FeatureCardArgs,
+} from "../../components/Cards/FeatureCard";
 import {
   ArgTypes,
   Description,
@@ -48,7 +50,7 @@ const CardMeta: Meta<typeof FeatureCard> = {
 export default CardMeta;
 
 export const FeatureCardDefault: StoryObj<typeof FeatureCard> = {
-  args: CardArgs.featureCard,
+  args: FeatureCardArgs,
   name: "Default",
   render: (args) => <FeatureCard {...args} />,
 };
