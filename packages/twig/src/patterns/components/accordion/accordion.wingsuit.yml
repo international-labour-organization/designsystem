@@ -37,8 +37,8 @@ accordion:
       label: Allow Multiple Expanded
       description: Allow mutiple accordion items to be expandable at once.
       options:
-        true: True
-        false: False
+        "true": True
+        "false": False
       preview: "true"
       required: false
 

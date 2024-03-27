@@ -27,8 +27,8 @@ tags:
       label: Allow Multiple Active
       description: Allow mutiple tag items to be active at once.
       options:
-        true: True
-        false: False
+        "true": True
+        "false": False
       preview: true
       required: false
     tagType:

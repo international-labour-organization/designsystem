@@ -30,8 +30,8 @@ readmore:
       label: Open At Start
       description: should the read more be open at page load?
       options:
-        true: "true"
-        false: false
+        "true": "true"
+        "false": false
       preview: false
       required: true
   visibility: storybook

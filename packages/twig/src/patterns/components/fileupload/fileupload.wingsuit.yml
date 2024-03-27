@@ -72,8 +72,8 @@ fileupload:
       description: If the user can select multiple files.
       preview: false
       options:
-        true: true
-        false: false
+        "true": true
+        "false": false
     disabled:
       type: boolean
       label: Disabled

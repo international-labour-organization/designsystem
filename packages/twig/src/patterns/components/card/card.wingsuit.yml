@@ -149,8 +149,8 @@ card:
       required: false
       preview: true
       options:
-        true: True
-        false: False
+        "true": True
+        "false": False
     size:
       type: select
       label: Size

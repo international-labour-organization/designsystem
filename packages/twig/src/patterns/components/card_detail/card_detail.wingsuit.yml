@@ -67,5 +67,5 @@ detailcard:
       description: Whether the card should display a video icon (for Feature card)
       preview: false
       options:
-        true: True
-        false: False
+        "true": True
+        "false": False

@@ -12,8 +12,8 @@ cardgroup:
       required: false
       preview: false
       options:
-        true: True
-        false: False
+        "true": True
+        "false": False
     cardcount:
       type: select
       label: collapsed
