@@ -34,9 +34,6 @@
     }
   ],
   "license": "Apache-2.0",
-  "files": [
-    "dist"
-  ],
   "types": "dist/types/index.d.ts",
   "exports": {
     ".": {

@@ -38,10 +38,6 @@
   "publishConfig": {
     "access": "public"
   },
-  "files": [
-    "scss",
-    "svg"
-  ],
   "scripts": {
     "build": "pnpm run clean && node tasks/build.js",
     "build:lib": "pnpm build",

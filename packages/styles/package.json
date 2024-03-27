@@ -42,10 +42,6 @@
   },
   "author": "@justintemps, @johnpauldavis, @avrilpearl, @ghlost",
   "license": "Apache-2.0",
-  "files": [
-    "scss",
-    "css"
-  ],
   "dependencies": {
     "@ilo-org/fonts": "workspace:*",
     "@ilo-org/icons": "workspace:*",
