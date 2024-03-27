@@ -5,7 +5,7 @@ icon:
   description: A component for displaying an svg icon.
   settings:
     name:
-      type: string
+      type: value
       label: Name
       description: The name of the icon to display. <strong style="font-weight:bold">The name should match SVG file</strong>, see available icons in the <a target="_blank" href="https://github.com/international-labour-organization/designsystem/tree/develop/packages/icons/src/svg">@ilo-org/icons</a> package
       preview: "arrowright"
@@ -22,7 +22,7 @@ icon:
       preview: "24"
       required: false
     color:
-      type: string
+      type: value
       label: Fill
       description: The fill color of the icon in hex
       preview: "#000000"
