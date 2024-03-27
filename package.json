@@ -5,9 +5,6 @@
   "license": "Apache-2.0",
   "main": "index.js",
   "packageManager": "pnpm@8.6.0",
-  "engines": {
-    "pnpm": "8.6.0"
-  },
   "contributors": [
     {
       "name": "Justin Smith",
@@ -28,6 +25,30 @@
       "email": "doublegkapanadze@gmail.com",
       "url": "https://github.com/ggkapanadze"
     }
+  ],
+  "engines": {
+    "pnpm": "8.6.0"
+  },
+  "files": [
+    "config/**/*",
+    "packages/**/LICENSE",
+    "packages/**/OFL.txt",
+    "packages/**/README.md",
+    "packages/**/dist/**/*",
+    "packages/**/build/**/*",
+    "packages/**/es/**/*",
+    "packages/**/lib/**/*",
+    "packages/**/umd/**/*",
+    "packages/fonts/assets/**/*",
+    "packages/fonts/font-css/**/*",
+    "packages/fonts/**/*.scss",
+    "packages/icon-build-helpers/src/**/*",
+    "packages/icons/svg/**/*",
+    "packages/icons/**/metadata.json",
+    "packags/icons-react/next/**/*",
+    "packages/styles/css/**/*",
+    "packages/styles/scss/**/*",
+    "packages/themes/tokens/**/*"
   ],
   "scripts": {
     "build:libs": "turbo run build:lib -v",
