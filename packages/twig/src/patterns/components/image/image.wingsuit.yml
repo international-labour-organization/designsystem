@@ -52,6 +52,6 @@ image:
       preview: false
       required: false
       options:
-        True: true
-        False: "false"
+        "true": true
+        "false": "false"
   visibility: storybook

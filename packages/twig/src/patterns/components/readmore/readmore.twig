@@ -8,7 +8,7 @@
   {% set btnlabel = buttonlabel.opened %}
 {% endif %}
 
-<div class="{{prefix}}--read-more" data-excerpt="{{excerpt|raw}}" data-fulltext="{{fulltext|raw}}" data-closed="{{buttonlabel.closed}}" data-opened="{{buttonlabel.opened}}" data-loadcomponent="ReadMore" data-prefix="{{prefix}}">
+<div class="{{prefix}}--read-more" data-excerpt="{{excerpt|escape}}" data-fulltext="{{fulltext|escape}}" data-closed="{{buttonlabel.closed}}" data-opened="{{buttonlabel.opened}}" data-loadcomponent="ReadMore" data-prefix="{{prefix}}">
   {% include "@components/richtext/richtext.twig" with {
     content: content,
   } %}

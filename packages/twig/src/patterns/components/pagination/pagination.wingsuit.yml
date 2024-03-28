@@ -9,7 +9,8 @@ pagination:
       label: Current page
       description: current page number that the user is on, zero-indexed
       required: true
-      preview: "0"
+      preview: 0
+      escape: false
     firstPageUrl:
       type: string
       label: First Page link
@@ -69,5 +70,6 @@ pagination:
       label: Total Pages
       description: The number of total pages
       required: true
-      preview: "8"
+      preview: 8
+      escape: false
   visibility: storybook
