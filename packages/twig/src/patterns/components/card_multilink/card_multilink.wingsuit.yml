@@ -61,6 +61,11 @@ multilinkcard:
       label: Title
       description: Title field for the card
       preview: Advancing social justice
+    titleElement:
+      type: string
+      label: Title Element
+      description: HTML element used for the title
+      required: false
   settings:
     alignment:
       type: select

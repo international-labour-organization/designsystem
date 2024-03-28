@@ -1,10 +1,15 @@
-import { ThemeTypes, CardSize } from "../../../types";
+import { ThemeTypes, CardSize, HeadingTypes } from "../../../types";
 
 export type FactlistCardProps = {
   /**
    * The title of the card
    */
   title: string;
+
+  /**
+   * HTML element used for the title
+   */
+  titleElement?: HeadingTypes;
 
   /**
    * Will render the card to appear on light or dark backgrounds
