@@ -1,4 +1,9 @@
-import { ThemeTypes, CardCornerType, CardSize } from "../../../types";
+import {
+  ThemeTypes,
+  CardCornerType,
+  CardSize,
+  HeadingTypes,
+} from "../../../types";
 import { LinkProps } from "../../LinkList/LinkList.props";
 
 export type PromoCardProps = {
@@ -15,7 +20,7 @@ export type PromoCardProps = {
   /**
    * HTML element used for the title
    */
-  titleElement?: keyof JSX.IntrinsicElements;
+  titleElement?: HeadingTypes;
 
   /**
    * Will render the card to appear on light or dark backgrounds

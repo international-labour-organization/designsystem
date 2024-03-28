@@ -1,4 +1,4 @@
-import { ThemeTypes, CardSize, EventDate } from "../../../types";
+import { ThemeTypes, CardSize, EventDate, HeadingTypes } from "../../../types";
 
 import { LinkListProps } from "../../LinkList/LinkList.props";
 export type FeatureCardProps = {
@@ -17,7 +17,7 @@ export type FeatureCardProps = {
   /**
    * HTML element used for the title
    */
-  titleElement?: keyof JSX.IntrinsicElements;
+  titleElement?: HeadingTypes;
 
   /**
    * Will render the card to appear on light or dark backgrounds

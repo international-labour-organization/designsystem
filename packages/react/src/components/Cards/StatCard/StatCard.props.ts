@@ -1,4 +1,4 @@
-import { CardColor, CardSize } from "../../../types";
+import { CardColor, CardSize, HeadingTypes } from "../../../types";
 import { LinkProps } from "../../LinkList/LinkList.props";
 
 export type StatCardProps = {
@@ -10,7 +10,7 @@ export type StatCardProps = {
   /**
    * HTML element used for the title
    */
-  titleElement?: keyof JSX.IntrinsicElements;
+  titleElement?: HeadingTypes;
 
   /**
    * Background color of stat card
