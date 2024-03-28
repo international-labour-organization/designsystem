@@ -1,29 +1,35 @@
-{#
-  LIST COMPONENT
-#}
-<div class="ilo--list ilo--list--{% if ordered == 'ordered' %}ordered{% endif %}{{alignment|default('') }}">
-  {% if title %}
-    <h5 class="ilo--list__title">{{ title }}</h5>
-  {% endif %}
-  {% if ordered == "ordered" %}
-    <ol data-loadcomponent="List">
-      {% for item in items %}
-        {% include "@components/list/list-item.twig" with {
-          label: item.label,
-          content: item.content,
-          id: item.id,
-        } only %}
-      {% endfor %}
-    </ol>
-  {% else %}
-    <ul class="ilo--list--{{ alignment|default('') }}" data-loadcomponent="List">
-      {% for item in items %}
-        {% include "@components/list/list-item.twig" with {
-          label: item.label,
-          content: item.content,
-          id: item.id,
-        } only %}
-      {% endfor %}
-    </ul>
-  {% endif %}
+{# list.twig #}
+
+{% if not ordered %}
+	{% set ordered = "unstyled" %}
+{% endif %}
+
+
+<div class="{{prefix}}--list {% if ordered == 'unstyled' %} {{prefix}}--list__unstyled {% endif %} {% if alignment == 'horizontal' %} {{prefix}}--list__horizontal {% endif %}">
+	{% if title %}
+		<h2 class="{{prefix}}--list--title">{{ title }}</h2>
+	{% endif %}
+	{% if ordered == "ordered" %}
+		<ol>
+			{% for item in items %}
+				{% include "@components/list/list-item.twig" with {
+				prefix: prefix,
+				label: item.label,
+				content: item.content,
+				id: item.id,
+			} only %}
+			{% endfor %}
+		</ol>
+	{% else %}
+		<ul>
+			{% for item in items %}
+				{% include "@components/list/list-item.twig" with {
+				prefix: prefix,
+				label: item.label,
+				content: item.content,
+				id: item.id,
+			} only %}
+			{% endfor %}
+		</ul>
+	{% endif %}
 </div>

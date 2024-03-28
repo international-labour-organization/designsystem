@@ -3,63 +3,71 @@
 @import "../mixins";
 
 .ilo--list {
-  &--ordered {
-    list-style: decimal;
-  }
+  $c: &;
 
-  &--unordered {
-    list-style: initial;
-    list-style-type: none;
+  ol {
+    counter-reset: item;
 
     li {
+      counter-increment: item;
+      display: table;
+    }
+
+    li::before {
+      content: counter(item) ".";
+      display: table-cell;
+      text-align: right;
+      padding-inline-end: spacing(2);
+    }
+  }
+
+  ul {
+    li {
+      position: relative;
+      padding-inline-start: spacing(6);
+
       &::before {
         content: "";
-        display: inline-block;
-        height: px-to-rem(14px);
-        left: px-to-rem(-12px);
         position: absolute;
-        top: 6px;
+        height: px-to-rem(14px);
         width: px-to-rem(12px);
+        top: px-to-rem(6px);
         @include dataurlicon("listarrow", $color-base-neutrals-light);
-      }
-      margin-left: spacing(3);
-      padding-left: spacing(2);
-      position: relative;
-    }
-  }
+        background-repeat: no-repeat;
 
-  &--unstyled {
-    list-style: none;
+        // Left takes precedence in LTR layouts
+        // Right takes precents in RTL layouts
+        left: 0;
+        right: 0;
 
-    .ilo--list__item {
-      margin-left: 0;
-      padding-left: 0;
-    }
-  }
+        [dir="rtl"] & {
+          transform: rotate(180deg);
+        }
 
-  &--horizontal {
-    li {
-      &::before {
-        content: none;
+        @include breakpoint("medium") {
+          top: px-to-rem(7px);
+        }
       }
     }
-    display: flex;
-    list-style: none;
+  }
 
-    .ilo--list__title {
-      margin-bottom: spacing(2);
-      margin-right: spacing(9);
+  li {
+    @include font-styles("body-small");
+    font-family: $fonts-copy;
+    margin-bottom: spacing(4);
+
+    b,
+    strong {
+      font-weight: 700;
+      letter-spacing: $type-label-small-letter-spacing;
     }
 
-    .ilo--list__item {
-      margin-bottom: spacing(2);
-      margin-left: 0;
-      margin-right: spacing(10);
-      padding-left: 0;
+    @include breakpoint("medium") {
+      @include font-styles("base");
     }
   }
 
-  &__title {
+  &--title {
     @include font-styles("headline-6");
     margin-bottom: spacing(6);
     font-family: $fonts-display;
@@ -70,22 +78,35 @@
     }
   }
 
-  &__item {
-    @include font-styles("body-small");
+  &__unstyled {
+    ol,
+    ul {
+      list-style: none;
 
-    font-family: $fonts-copy;
-    margin-bottom: spacing(4);
-    margin-left: spacing(5);
-    padding-left: spacing(1);
-
-    b,
-    strong {
-      font-weight: 700;
-      letter-spacing: $type-label-small-letter-spacing;
+      li {
+        padding-inline-start: 0;
+        &::before {
+          content: none;
+        }
+      }
     }
+  }
 
-    @include breakpoint("medium") {
-      @include font-styles("base");
+  &__horizontal {
+    &,
+    ul,
+    ol {
+      display: flex;
+      flex-flow: row;
+      list-style: none;
+      gap: spacing(10);
+
+      li {
+        padding: 0;
+        &::before {
+          content: none;
+        }
+      }
     }
   }
 }
