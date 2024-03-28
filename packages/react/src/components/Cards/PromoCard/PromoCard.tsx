@@ -12,6 +12,7 @@ const PromoCard: FC<PromoCardProps> = ({
   intro,
   link,
   cta,
+  titleElement: TitleElement,
 }) => {
   const { prefix } = useGlobalSettings();
 
@@ -40,7 +41,13 @@ const PromoCard: FC<PromoCardProps> = ({
         <div className={`${baseClass}--wrap`}>
           <div className={`${baseClass}--content`}>
             {eyebrow && <p className={`${baseClass}--eyebrow`}>{eyebrow}</p>}
-            {title && <h2 className={`${baseClass}--title`}>{title}</h2>}
+            {title && TitleElement ? (
+              <TitleElement className={`${baseClass}--title`}>
+                {title}
+              </TitleElement>
+            ) : (
+              <p className={`${baseClass}--title`}>{title}</p>
+            )}
             {intro && <p className={`${baseClass}--intro`}>{intro}</p>}
             {cta && cta.label && (
               <a
