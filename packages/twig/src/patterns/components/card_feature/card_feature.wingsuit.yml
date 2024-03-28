@@ -50,6 +50,11 @@ featurecard:
       label: Title
       description: Title field for the card
       preview: Can digital technology be an equality machine?
+    titleElement:
+      type: string
+      label: Title Element
+      description: HTML element used for the title
+      required: false
   settings:
     isvideo:
       type: select

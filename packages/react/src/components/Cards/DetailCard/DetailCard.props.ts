@@ -12,6 +12,11 @@ export type DetailCardProps = {
   title: string;
 
   /**
+   * HTML element used for the title
+   */
+  titleElement?: keyof JSX.IntrinsicElements;
+
+  /**
    * Introductory text in the card
    */
   intro?: string;

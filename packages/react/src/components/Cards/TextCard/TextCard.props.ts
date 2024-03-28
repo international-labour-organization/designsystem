@@ -14,6 +14,11 @@ export type TextCardProps = {
   title: string;
 
   /**
+   * HTML element used for the title
+   */
+  titleElement?: keyof JSX.IntrinsicElements;
+
+  /**
    * Will render the card to appear on light or dark backgrounds
    */
   theme?: ThemeTypes;

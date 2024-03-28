@@ -6,6 +6,16 @@ export type StatCardProps = {
    * The title of the card
    */
   title: string;
+
+  /**
+   * HTML element used for the title
+   */
+  titleElement?: keyof JSX.IntrinsicElements;
+
+  /**
+   * Background color of stat card
+   */
+
   color?: CardColor;
 
   /**

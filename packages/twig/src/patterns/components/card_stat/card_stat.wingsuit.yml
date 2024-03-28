@@ -10,6 +10,11 @@ statcard:
       label: Title
       description: The headline for the statistic
       preview: "Global employment growth down by half in 2023"
+    titleElement:
+      type: string
+      label: Title Element
+      description: HTML element used for the title
+      required: false
     intro:
       type: string
       label: Intro

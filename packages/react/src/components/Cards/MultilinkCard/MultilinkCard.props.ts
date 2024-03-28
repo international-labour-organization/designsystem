@@ -15,6 +15,11 @@ export type MultilinkCardProps = {
   title: string;
 
   /**
+   * HTML element used for the title
+   */
+  titleElement?: keyof JSX.IntrinsicElements;
+
+  /**
    * How big should the card be
    */
   size?: CardSize;

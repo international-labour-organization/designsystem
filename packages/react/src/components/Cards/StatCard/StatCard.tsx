@@ -10,6 +10,7 @@ const StatCard: FC<StatCardProps> = ({
   size = "standard",
   intro,
   source,
+  titleElement: TitleElement,
 }) => {
   const { prefix } = useGlobalSettings();
 
@@ -24,7 +25,13 @@ const StatCard: FC<StatCardProps> = ({
     <div className={cardClasses}>
       <div className={`${baseClass}--wrap`}>
         <div className={`${baseClass}--content`}>
-          {title && <h5 className={`${baseClass}--title`}>{title}</h5>}
+          {title && TitleElement ? (
+            <TitleElement className={`${baseClass}--title`}>
+              {title}
+            </TitleElement>
+          ) : (
+            <p className={`${baseClass}--title`}>{title}</p>
+          )}
           {intro && <p className={`${baseClass}--intro`}>{intro}</p>}
           {source && <Link url={source.url}>{source.label}</Link>}
         </div>

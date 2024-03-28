@@ -93,7 +93,7 @@
             margin-bottom: spacing(2);
 
             @include breakpoint("medium") {
-              @include font-styles("headline-3");
+              @include font-styles("headline-2");
             }
           }
 
@@ -112,7 +112,7 @@
         @include font-styles("headline-4");
 
         @include breakpoint("medium") {
-          @include font-styles("headline-3");
+          @include font-styles("headline-2");
         }
       }
 
