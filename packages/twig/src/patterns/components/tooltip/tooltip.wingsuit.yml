@@ -28,8 +28,8 @@ tooltip:
       label: Icon
       description: does this tooltip have the "info" icon?
       options:
-        true: "true"
-        false: false
+        "true": "true"
+        "false": "false"
       preview: "true"
       required: true
     icontheme:

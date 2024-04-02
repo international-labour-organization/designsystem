@@ -64,16 +64,10 @@ To build storybook
 pnpm build:storybook
 ```
 
-To build and start storybook
+To build the package for distribution
 
 ```bash
-pnpm build
-```
-
-To build Twigs to be used in a CMS like Drupal (this will output Twigs and necessary JavaScript to a `/dist` folder.)
-
-```bash
-pnpm output
+pnpm build:lib
 ```
 
 This package imports the `prefix` from the `themes` package; to manually import it, run
