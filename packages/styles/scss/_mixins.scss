@@ -412,3 +412,77 @@
     $spacing-hero-card-corner-cut-height-sm
     auto;
 }
+
+// ======================================
+// List with markers that don't get chopped
+// off by containers with overflow: hidden;
+// Applies list styles to the List component
+// and also lists in RichText.
+// ======================================
+
+@mixin invincible-list {
+  // Ordered list shows numbers
+  ol {
+    counter-reset: item;
+
+    li {
+      counter-increment: item;
+      display: table;
+    }
+
+    li::before {
+      content: counter(item) ".";
+      display: table-cell;
+      text-align: right;
+      padding-inline-end: spacing(2);
+    }
+  }
+
+  // Unordered list shows triangles
+  ul {
+    li {
+      position: relative;
+      padding-inline-start: spacing(6);
+
+      &::before {
+        content: "";
+        position: absolute;
+        height: px-to-rem(14px);
+        width: px-to-rem(12px);
+        top: px-to-rem(6px);
+        @include dataurlicon("listarrow", $color-base-neutrals-light);
+        background-repeat: no-repeat;
+
+        // Left takes precedence in LTR layouts
+        // Right takes precents in RTL layouts
+        left: 0;
+        right: 0;
+
+        // We have to rotate the bullet in RTL
+        [dir="rtl"] & {
+          transform: rotate(180deg);
+        }
+
+        @include breakpoint("medium") {
+          top: px-to-rem(7px);
+        }
+      }
+    }
+  }
+
+  li {
+    @include font-styles("body-small");
+    font-family: $fonts-copy;
+    margin-bottom: spacing(4);
+
+    b,
+    strong {
+      font-weight: 700;
+      letter-spacing: $type-label-small-letter-spacing;
+    }
+
+    @include breakpoint("medium") {
+      @include font-styles("base");
+    }
+  }
+}

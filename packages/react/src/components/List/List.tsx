@@ -1,40 +1,35 @@
 import classNames from "classnames";
-import { FC, useState } from "react";
+import { FC } from "react";
 import useGlobalSettings from "../../hooks/useGlobalSettings";
 import { ListProps } from "./List.props";
-import { ListContext } from "./ListCtx";
 
 const List: FC<ListProps> = ({
   children,
   className,
-  alignment,
-  ordered,
+  alignment = "default",
+  ordered = "unstyled",
   title,
 }) => {
   const { prefix } = useGlobalSettings();
   const baseClass = `${prefix}--list`;
-  const [activeItems] = useState<string[]>([]);
+  const unstyledClass = `${baseClass}__unstyled`;
+  const horizontalClass = `${baseClass}__horizontal`;
+  const titleClass = `${baseClass}--title`;
 
-  const listClasses = classNames(className, {
-    [baseClass]: true,
-    [`${baseClass}--${alignment}`]: alignment,
-    [`${baseClass}--${ordered}`]: true,
+  const listClasses = classNames(className, baseClass, {
+    [unstyledClass]: ordered === "unstyled",
+    [horizontalClass]: alignment === "horizontal",
   });
 
   return (
-    <ListContext.Provider
-      value={{
-        activeItems,
-      }}
-    >
-      <div className={listClasses}>
-        {title && <h5 className={`${baseClass}__title`}>{title}</h5>}
-        {ordered && ordered === "ordered" && <ol>{children}</ol>}
-        {ordered && ordered !== "ordered" && (
-          <ul className={`${baseClass}--${alignment}`}>{children}</ul>
-        )}
-      </div>
-    </ListContext.Provider>
+    <div className={listClasses}>
+      {title && <h2 className={titleClass}>{title}</h2>}
+      {ordered && ordered === "ordered" ? (
+        <ol>{children}</ol>
+      ) : (
+        <ul>{children}</ul>
+      )}
+    </div>
   );
 };
 

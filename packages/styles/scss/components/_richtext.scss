@@ -150,35 +150,6 @@
     @include font-styles("rich-text-heading-5-md");
   }
 
-  ul,
-  ol {
-    li {
-      margin-bottom: spacing(8);
-      margin-left: spacing(5);
-      padding-left: spacing(3);
-      position: relative;
-    }
-
-    margin-bottom: spacing(8);
-  }
-
-  ul {
-    li {
-      margin-left: spacing(3);
-
-      &::before {
-        content: "";
-        display: inline-block;
-        height: px-to-rem(14px);
-        left: px-to-rem(-12px);
-        position: absolute;
-        top: 6px;
-        width: px-to-rem(12px);
-        @include dataurlicon("listarrow", $color-base-neutrals-light);
-      }
-    }
-  }
-
   blockquote {
     background-color: $color-ux-background-highlight;
     background-position: right top;
@@ -232,6 +203,9 @@
       @include dataurlicon("quote", $color-font-blockquote);
     }
   }
+
+  // Repeat list styles from the list component
+  @include invincible-list;
 
   @include breakpoint("medium") {
     @include font-styles("base");
@@ -384,28 +358,6 @@
       border-right: 3px solid #b8c4cc;
       padding-left: 0;
       padding-right: spacing(2);
-    }
-
-    ul,
-    ol {
-      li {
-        margin-left: 0;
-        margin-right: spacing(5);
-        padding-left: 0;
-        padding-right: spacing(3);
-      }
-    }
-
-    ul {
-      li {
-        margin-right: spacing(3);
-
-        &::before {
-          left: auto;
-          right: px-to-rem(-12px);
-          @include dataurlicon("listarrowreverse");
-        }
-      }
     }
 
     blockquote {
