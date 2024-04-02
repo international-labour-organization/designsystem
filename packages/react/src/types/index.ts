@@ -65,6 +65,12 @@ export type CardTypes =
   | "detail"
   | "factlist"
   | "data";
+
+export type EventDate = {
+  unix?: string;
+  human?: string;
+};
+
 export interface FormFieldProps<T> {
   /**
    * The input's onChange callback.

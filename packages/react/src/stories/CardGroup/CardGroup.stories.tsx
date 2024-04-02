@@ -1,6 +1,6 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { CardGroup } from "../../components/Cards";
-import CardGroupArgs from "../../components/Cards/CardGroup.args";
+import CardGroup from "../../components/Cards/CardGroup/CardGroup";
+import CardGroupArgs from "../../components/Cards/CardGroup/CardGroup.args";
 
 const CardGroupMeta: Meta<typeof CardGroup> = {
   title: "Components/Cards/CardGroup",
@@ -8,6 +8,11 @@ const CardGroupMeta: Meta<typeof CardGroup> = {
 };
 
 export default CardGroupMeta;
+
+export const FeatureCardGroup: StoryObj<typeof CardGroup> = {
+  args: CardGroupArgs.featureCardGroup,
+  name: "Feature Group",
+};
 
 export const GraphicCardGroup: StoryObj<typeof CardGroup> = {
   args: CardGroupArgs.textCardGroup,
@@ -27,11 +32,6 @@ export const MultilinkCardGroup: StoryObj<typeof CardGroup> = {
 export const GraphicPromoCardGroup: StoryObj<typeof CardGroup> = {
   args: CardGroupArgs.promoCardGroup,
   name: "Promo Group",
-};
-
-export const FeatureCardGroup: StoryObj<typeof CardGroup> = {
-  args: CardGroupArgs.featureCardGroup,
-  name: "Feature Group",
 };
 
 export const DetailCardGroup: StoryObj<typeof CardGroup> = {

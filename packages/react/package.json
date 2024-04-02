@@ -1,6 +1,6 @@
 {
   "name": "@ilo-org/react",
-  "version": "0.12.0",
+  "version": "0.13.0",
   "description": "React components for the ILO's Design System",
   "keywords": [
     "ui_patterns",
@@ -8,6 +8,27 @@
     "react",
     "designsystem",
     "components"
+  ],
+  "contributors": [
+    {
+      "name": "Justin Smith",
+      "email": "smithj@ilo.org",
+      "url": "https://github.com/justintemps"
+    },
+    {
+      "name": "Prabashwara Seneviratne",
+      "url": "https://www.bash.lk"
+    },
+    {
+      "name": "Shashika Boteju",
+      "email": "Shashikaboteju3@gmail.com",
+      "url": "https://github.com/Shashika6"
+    },
+    {
+      "name": "Giorgi Kapanadze",
+      "email": "doublegkapanadze@gmail.com",
+      "url": "https://github.com/ggkapanadze"
+    }
   ],
   "homepage": "https://react.ui.ilo.org",
   "repository": {
@@ -48,7 +69,6 @@
   "license": "Apache-2.0",
   "main": "lib/cjs/index.js",
   "module": "lib/esm/index.js",
-  "type": "module",
   "types": "lib/types/react/src/index.d.ts",
   "jest": {
     "moduleNameMapper": {
@@ -125,7 +145,7 @@
     "@types/node": "^17.0.45",
     "@types/react": "^17.0.11",
     "@types/react-dom": "^17.0.20",
-    "@types/video.js": "7",
+    "@types/video.js": "7.3.57",
     "http-server": "^14.1.0",
     "identity-obj-proxy": "^3.0.0",
     "jest-environment-jsdom": "27.5.1",

@@ -1,6 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { DataCard } from "../../components/Cards";
-import CardArgs from "../../components/Cards/Card.args";
+import { DataCard, DataCardArgs } from "../../components/Cards/DataCard";
 import {
   ArgTypes,
   Description,
@@ -41,6 +40,6 @@ const CardMeta: Meta<typeof DataCard> = {
 export default CardMeta;
 
 export const DataCardDefault: StoryObj<typeof DataCard> = {
-  args: CardArgs.dataCard,
+  args: DataCardArgs,
   name: "Default",
 };

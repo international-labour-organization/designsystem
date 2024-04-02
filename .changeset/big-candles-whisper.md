@@ -2,4 +2,4 @@
 "@ilo-org/react": patch
 ---
 
-Fix tagline on navigation
+Update video.js types

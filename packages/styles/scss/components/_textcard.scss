@@ -19,11 +19,11 @@
         @include cornercut(72px, 40px, left);
       }
 
-      [class$="profile--contents--light"] * {
+      [class$="profile__theme__light"] * {
         color: $color-base-neutrals-dark;
       }
 
-      [class$="profile--contents--dark"] * {
+      [class$="profile__theme__dark"] * {
         color: $color-base-neutrals-white;
       }
 
@@ -35,7 +35,7 @@
 
         border-color: $brand-ilo-blue;
 
-        [class*="profile--contents"] * {
+        [class*="profile__theme"] * {
           color: $color-base-blue-medium;
         }
       }

@@ -76,6 +76,6 @@ export const decorators: Decorator[] = [
 export const globalTypes = {
   rtlDirection: {
     description: "HTML dir attribute",
-    defaultValue: "ltr",
+    defaultValue: false,
   },
 };
