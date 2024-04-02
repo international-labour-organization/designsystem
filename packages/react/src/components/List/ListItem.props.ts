@@ -1,12 +1,5 @@
 import { ReactNode } from "react";
 
-export interface ListItemContextProps {
-  /**
-   * The list item's unique id.
-   */
-  id: string;
-}
-
 export interface ListItemProps {
   /**
    * Specify the id of the List item.

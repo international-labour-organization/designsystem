@@ -1,5 +1,4 @@
 import { ReactElement } from "react";
-import { HeadingLevel, ListAlignment, ListOrder } from "../../types";
 import { ListItemProps } from "./ListItem.props";
 
 export interface ListProps {
@@ -11,12 +10,12 @@ export interface ListProps {
   /**
    * Declare ordered, unordered or unstyled
    */
-  ordered?: ListOrder;
+  ordered?: "unordered" | "ordered" | "unstyled";
 
   /**
    * Declare horizontal or default
    */
-  alignment?: ListAlignment;
+  alignment?: "default" | "horizontal";
 
   /**
    * Specify an optional title
@@ -27,11 +26,4 @@ export interface ListProps {
    * Specify an optional className to be added to your accordion.
    */
   className?: string;
-}
-
-export interface ListContextProps {
-  activeItems: string[];
-  alignment?: ListAlignment;
-  ordered?: ListOrder;
-  headingLevel?: HeadingLevel;
 }
