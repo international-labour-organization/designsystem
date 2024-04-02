@@ -1,5 +1,31 @@
 # @ilo-org/react
 
+## 0.14.0
+
+### Minor Changes
+
+- 977e15006: Fixes a bug where some distribution assets weren't getting included in Design System packages while a lot of non-essential development assets were. At the same time, this removes some `src` directories from the packages which some consumers might have been using.
+
+### Patch Changes
+
+- 0d38e6428: Update video.js types
+- f226b7be3: added home screen
+- 8e6c502a7: Fixes some layout issues in List that caused parts of the list item numbers to get chopped off in ordered lists when they were rendered in containers with hidden overflow, as well as some incorrect rendering in RTL layouts.
+- f5a78ab73: Fix profile hover in dark mode in text card
+- 92f05c1fe: commonjs module resolution
+- Updated dependencies [3ceaceaa3]
+- Updated dependencies [13bcd92df]
+- Updated dependencies [8e6c502a7]
+- Updated dependencies [f5a78ab73]
+- Updated dependencies [d0a08d7c3]
+- Updated dependencies [977e15006]
+  - @ilo-org/styles@0.16.0
+  - @ilo-org/brand-assets@0.5.0
+  - @ilo-org/fonts@0.2.0
+  - @ilo-org/icons-react@0.1.0
+  - @ilo-org/themes@0.8.0
+  - @ilo-org/utils@0.1.0
+
 ## 0.13.0
 
 ### Minor Changes

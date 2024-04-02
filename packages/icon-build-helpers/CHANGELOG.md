@@ -1,5 +1,11 @@
 # @ilo-org/icon-build-helpers
 
+## 0.1.0
+
+### Minor Changes
+
+- 977e15006: Fixes a bug where some distribution assets weren't getting included in Design System packages while a lot of non-essential development assets were. At the same time, this removes some `src` directories from the packages which some consumers might have been using.
+
 ## 0.0.4
 
 ### Patch Changes
