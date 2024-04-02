@@ -2,7 +2,7 @@ list:
   namespace: Components/Content
   use: "@components/list/list.twig"
   label: List
-  description: The List component renders a styled list of text items
+  description: The List component renders a styled list of text items. In addition to the List styles made available in the RichText component, the List component also includes unstyled and horizontally aligned lists.
   fields:
     title:
       type: text

@@ -43,9 +43,10 @@ const ListMeta: Meta<typeof List> = {
         <>
           <Title />
           <Description>
-            The list component allows the user to show and hide sections of
-            related content on a page. Click the lists below to expand/collapse
-            the list content.
+            The List component renders a styled list of text items. In addition
+            to the List styles made available in the RichText component, the
+            List component also includes unstyled and horizontally aligned
+            lists.
           </Description>
           <Primary />
           <Subheading>Size Prop</Subheading>
