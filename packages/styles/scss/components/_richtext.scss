@@ -41,6 +41,10 @@
     );
   }
 
+  article {
+    margin-bottom: spacing(14);
+  }
+
   iframe {
     margin-bottom: spacing(14);
   }
@@ -95,7 +99,7 @@
       "body-small",
       "copy"
     );
-    @include font-styles("rich-text-heading-1");
+    @include font-styles("rich-text-heading-1-md");
   }
 
   h2 {
@@ -107,7 +111,7 @@
       "body-small",
       "copy"
     );
-    @include font-styles("rich-text-heading-2");
+    @include font-styles("rich-text-heading-2-md");
   }
 
   h3 {
@@ -119,7 +123,7 @@
       "body-small",
       "copy"
     );
-    @include font-styles("rich-text-heading-3");
+    @include font-styles("rich-text-heading-3-md");
   }
 
   h4 {
@@ -131,7 +135,7 @@
       "body-small",
       "copy"
     );
-    @include font-styles("rich-text-heading-4");
+    @include font-styles("rich-text-heading-4-md");
   }
 
   h5 {
@@ -143,36 +147,7 @@
       "body-small",
       "copy"
     );
-    @include font-styles("rich-text-heading-5");
-  }
-
-  ul,
-  ol {
-    li {
-      margin-bottom: spacing(8);
-      margin-left: spacing(5);
-      padding-left: spacing(3);
-      position: relative;
-    }
-
-    margin-bottom: spacing(8);
-  }
-
-  ul {
-    li {
-      margin-left: spacing(3);
-
-      &::before {
-        content: "";
-        display: inline-block;
-        height: px-to-rem(14px);
-        left: px-to-rem(-12px);
-        position: absolute;
-        top: 6px;
-        width: px-to-rem(12px);
-        @include dataurlicon("listarrow", $color-base-neutrals-light);
-      }
-    }
+    @include font-styles("rich-text-heading-5-md");
   }
 
   blockquote {
@@ -186,7 +161,7 @@
     padding: spacing(19) 0 spacing(9) spacing(8); // check
     position: relative;
     width: fit-content;
-    @include dataurlicon("triangle", $color-ux-background-default);
+    @include cornercut(72px, 40px);
 
     p {
       color: $color-font-blockquote;
@@ -229,6 +204,9 @@
     }
   }
 
+  // Repeat list styles from the list component
+  @include invincible-list;
+
   @include breakpoint("medium") {
     @include font-styles("base");
 
@@ -249,7 +227,7 @@
         "body-large",
         "copy"
       );
-      @include font-styles("rich-text-heading-1-md");
+      @include font-styles("rich-text-heading-1");
     }
 
     h2 {
@@ -261,7 +239,7 @@
         "body-large",
         "copy"
       );
-      @include font-styles("rich-text-heading-2-md");
+      @include font-styles("rich-text-heading-2");
     }
 
     h3 {
@@ -273,7 +251,7 @@
         "body-large",
         "copy"
       );
-      @include font-styles("rich-text-heading-3-md");
+      @include font-styles("rich-text-heading-3");
     }
 
     h4 {
@@ -285,7 +263,7 @@
         "body-large",
         "copy"
       );
-      @include font-styles("rich-text-heading-4-md");
+      @include font-styles("rich-text-heading-4");
     }
 
     h5 {
@@ -297,7 +275,7 @@
         "body-large",
         "copy"
       );
-      @include font-styles("rich-text-heading-5-md");
+      @include font-styles("rich-text-heading-5");
     }
 
     p {
@@ -353,6 +331,7 @@
       background-size: px-to-rem(86px) px-to-rem(48px);
       margin: spacing(8) 0 spacing(19) 0;
       padding: spacing(16) 0 spacing(12) spacing(12);
+      @include cornercut(86px, 48px);
 
       p {
         margin-bottom: spacing(6);
@@ -381,32 +360,10 @@
       padding-right: spacing(2);
     }
 
-    ul,
-    ol {
-      li {
-        margin-left: 0;
-        margin-right: spacing(5);
-        padding-left: 0;
-        padding-right: spacing(3);
-      }
-    }
-
-    ul {
-      li {
-        margin-right: spacing(3);
-
-        &::before {
-          left: auto;
-          right: px-to-rem(-12px);
-          @include dataurlicon("listarrowreverse");
-        }
-      }
-    }
-
     blockquote {
       background-position: -1px -1px;
       padding: spacing(14) spacing(8) spacing(9) 0;
-      @include dataurlicon("trianglereverse", $color-ux-background-default);
+      @include cornercut(72px, 40px, "left");
 
       p {
         padding: 0 0 0 spacing(12);
@@ -426,6 +383,10 @@
 
       @include breakpoint("medium") {
         padding: spacing(15) spacing(12) spacing(12) 0;
+
+        blockquote {
+          @include cornercut(86px, 48px, "left");
+        }
       }
     }
   }

@@ -17,7 +17,7 @@ export const parameters = {
   options: {
     storySort: {
       method: "alphabetical",
-      order: ["Introduction", "GettingStarted"],
+      order: ["Welcome", "GettingStarted"],
       locales: "en-US",
     },
   },
@@ -76,6 +76,6 @@ export const decorators: Decorator[] = [
 export const globalTypes = {
   rtlDirection: {
     description: "HTML dir attribute",
-    defaultValue: "ltr",
+    defaultValue: false,
   },
 };

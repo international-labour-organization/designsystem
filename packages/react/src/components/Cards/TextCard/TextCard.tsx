@@ -49,7 +49,7 @@ const TextCard: FC<TextCardProps> = ({
                 link={profile.link}
                 name={profile.name}
                 role={profile.role}
-                className={`${prefix}--profile--contents--${theme}`}
+                className={`${prefix}--profile__theme__${theme}`}
               />
             )}
           </div>
