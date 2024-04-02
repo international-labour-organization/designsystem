@@ -45,10 +45,10 @@ promocard:
       label: cornercut
       description: Sets the cornercut of the card. If not set, the card will appear as `square`.
       required: false
-      preview: true
+      preview: "true"
       options:
-        true: True
-        false: False
+        "true": "true"
+        "false": "false"
     size:
       type: select
       label: Size

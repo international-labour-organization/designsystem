@@ -49,9 +49,9 @@ image:
       type: select
       label: Is Hero
       description: Is this image in a hero? If true, and credit exists, will display credit in a title attribute
-      preview: false
+      preview: "false"
       required: false
       options:
-        True: true
-        False: "false"
+        "true": "true"
+        "false": "false"
   visibility: storybook

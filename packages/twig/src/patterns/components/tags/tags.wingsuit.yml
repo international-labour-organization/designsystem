@@ -25,11 +25,11 @@ tags:
     allowMultipleActive:
       type: select
       label: Allow Multiple Active
-      description: Allow mutiple tag items to be active at once.
+      description: Allow multiple tag items to be active at once.
       options:
-        true: True
-        false: False
-      preview: true
+        "true": "true"
+        "false": "false"
+      preview: "true"
       required: false
     tagType:
       type: select

@@ -10,10 +10,10 @@ cardgroup:
       label: collapsed
       description: Optionally collapses margins between the cards.
       required: false
-      preview: false
+      preview: "false"
       options:
-        true: True
-        false: False
+        "true": "true"
+        "false": "false"
     cardcount:
       type: select
       label: collapsed

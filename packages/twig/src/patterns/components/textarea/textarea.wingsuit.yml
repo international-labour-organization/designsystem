@@ -111,8 +111,8 @@ textarea:
       label: Spellcheck
       description: The spellcheck state of the text area.
       options:
-        true: true
-        false: false
+        "true": "true"
+        "false": "false"
         default: default
       preview: default
     wrap:

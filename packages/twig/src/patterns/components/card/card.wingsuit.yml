@@ -115,6 +115,13 @@ card:
       label: Title
       description: The main title of the card. Used by all cards except for the `Data Card`.
       preview: Can digital technology be an equality machine?
+    source:
+      type: object
+      label: Source
+      description: A stylized link used only by the `Stat Card` to indicate the source of a statistic.
+      preview:
+        label: "World Employment and Social Outlook: Trends 2023"
+        url: "https://www.ilo.org/global/research/global-reports/weso/WCMS_865332/lang--en/index.htm"
   settings:
     alignment:
       type: select
@@ -147,10 +154,10 @@ card:
       label: cornercut
       description: Allows user to set the cornercut of the card. This is only used by the `Promo Card`.
       required: false
-      preview: true
+      preview: "true"
       options:
-        true: True
-        false: False
+        "true": "true"
+        "false": "false"
     size:
       type: select
       label: Size
@@ -162,13 +169,6 @@ card:
         narrow: narrow
         wide: wide
         fluid: fluid
-    source:
-      type: object
-      label: Source
-      description: A stylized link used only by the `Stat Card` to indicate the source of a statistic.
-      preview:
-        label: "World Employment and Social Outlook: Trends 2023"
-        url: "https://www.ilo.org/global/research/global-reports/weso/WCMS_865332/lang--en/index.htm"
     theme:
       type: select
       label: Theme
@@ -221,7 +221,6 @@ card:
         type: data
       fields:
         eyebrow: Flagship report
-    image:
     stat:
       label: Stat Card
       settings:
