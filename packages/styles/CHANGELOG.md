@@ -1,5 +1,23 @@
 # @ilo-org/styles
 
+## 0.16.0
+
+### Minor Changes
+
+- 977e15006: Fixes a bug where some distribution assets weren't getting included in Design System packages while a lot of non-essential development assets were. At the same time, this removes some `src` directories from the packages which some consumers might have been using.
+
+### Patch Changes
+
+- 3ceaceaa3: Add spacing within articles in rich text
+- 13bcd92df: Make cornercut transparent in pullquote
+- 8e6c502a7: Fixes some layout issues in List that caused parts of the list item numbers to get chopped off in ordered lists when they were rendered in containers with hidden overflow, as well as some incorrect rendering in RTL layouts.
+- f5a78ab73: Fix profile hover in dark mode in text card
+- d0a08d7c3: Fix incorrect heading styles in richtext
+- Updated dependencies [977e15006]
+  - @ilo-org/fonts@0.2.0
+  - @ilo-org/icons@0.3.0
+  - @ilo-org/themes@0.8.0
+
 ## 0.15.0
 
 ### Minor Changes
