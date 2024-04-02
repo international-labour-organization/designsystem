@@ -31,7 +31,7 @@ readmore:
       description: should the read more be open at page load?
       options:
         "true": "true"
-        "false": false
-      preview: false
+        "false": "false"
+      preview: "false"
       required: true
   visibility: storybook

@@ -72,7 +72,7 @@ button:
       required: false
       options:
         "true": "true"
-        "false": false
+        "false": "false"
       preview: "false"
     kind:
       type: select
@@ -99,8 +99,8 @@ button:
       description: Is this an icon-only button?
       options:
         "true": "true"
-        "false": false
-      preview: false
+        "false": "false"
+      preview: "false"
       required: false
     opensmodal:
       type: select
@@ -108,7 +108,7 @@ button:
       description: Does this button trigger open a modal?
       options:
         "true": "true"
-        "false": false
-      preview: false
+        "false": "false"
+      preview: "false"
       required: false
   visibility: storybook

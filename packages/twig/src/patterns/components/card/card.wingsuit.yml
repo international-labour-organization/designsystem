@@ -154,10 +154,10 @@ card:
       label: cornercut
       description: Allows user to set the cornercut of the card. This is only used by the `Promo Card`.
       required: false
-      preview: true
+      preview: "true"
       options:
-        "true": True
-        "false": False
+        "true": "true"
+        "false": "false"
     size:
       type: select
       label: Size

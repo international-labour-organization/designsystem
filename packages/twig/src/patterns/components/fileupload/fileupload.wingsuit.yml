@@ -70,10 +70,10 @@ fileupload:
       type: boolean
       label: Multiple
       description: If the user can select multiple files.
-      preview: false
+      preview: "false"
       options:
-        "true": true
-        "false": false
+        "true": "true"
+        "false": "false"
     disabled:
       type: boolean
       label: Disabled

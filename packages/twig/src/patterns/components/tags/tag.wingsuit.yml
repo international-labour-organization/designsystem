@@ -27,9 +27,9 @@ tag:
       label: Default Active
       description: The tag loads in an active state
       options:
-        "true": True
-        "false": False
-      preview: false
+        "true": "true"
+        "false": "false"
+      preview: "false"
       required: false
     tagType:
       type: type

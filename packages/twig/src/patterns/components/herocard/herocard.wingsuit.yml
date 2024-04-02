@@ -27,8 +27,8 @@ herocard:
       label: Cornercut
       description: Whether the card show have its right or left corner cut
       options:
-        "false": false
         "true": "true"
+        "false": "false"
       preview: "true"
   fields:
     url:

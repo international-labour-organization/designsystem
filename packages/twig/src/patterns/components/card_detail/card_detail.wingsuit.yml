@@ -65,7 +65,7 @@ detailcard:
       type: select
       label: Is a Video
       description: Whether the card should display a video icon (for Feature card)
-      preview: false
+      preview: "false"
       options:
-        "true": True
-        "false": False
+        "true": "true"
+        "false": "false"

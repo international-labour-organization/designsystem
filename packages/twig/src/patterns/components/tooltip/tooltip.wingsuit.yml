@@ -29,7 +29,7 @@ tooltip:
       description: does this tooltip have the "info" icon?
       options:
         "true": "true"
-        "false": false
+        "false": "false"
       preview: "true"
       required: true
     icontheme:

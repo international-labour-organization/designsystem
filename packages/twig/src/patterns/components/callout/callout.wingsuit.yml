@@ -55,10 +55,10 @@ callout:
       type: select
       label: Is Collapsible?
       description: Whether or not the callout is collapsible
-      required: true
+      required: "true"
       options:
-        "true": True
-        "false": False
+        "true": "true"
+        "false": "false"
       preview: false
     isOpen:
       type: select
@@ -66,7 +66,7 @@ callout:
       description: Whether or not a collapsible callout is open on page load. If callout is not collapsible then the callout will be open always.
       required: false
       options:
-        "true": True
-        "false": False
-      preview: true
+        "true": "true"
+        "false": "false"
+      preview: "true"
   visibility: storybook
