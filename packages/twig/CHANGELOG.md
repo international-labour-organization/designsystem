@@ -1,5 +1,33 @@
 # @ilo-org/twig
 
+## 0.17.0
+
+### Minor Changes
+
+- 62ac366e3: Started publishing bundled js and compiled css for each component to npm
+- 977e15006: Fixes a bug where some distribution assets weren't getting included in Design System packages while a lot of non-essential development assets were. At the same time, this removes some `src` directories from the packages which some consumers might have been using.
+- 7728f1f64: Fix Wingsuit definition making sure that they can be properly read by an actual Drupal site. Also, remove excessive use of "|raw".
+- d3bc4af8f: Fixed the substitution of the prefix
+
+### Patch Changes
+
+- 8e6c502a7: Fixes some layout issues in List that caused parts of the list item numbers to get chopped off in ordered lists when they were rendered in containers with hidden overflow, as well as some incorrect rendering in RTL layouts.
+- 977e15006: Refactor of how Twig outputs templates and bundles JavaScript for components
+- 83c0b3682: Add styling to links in breadcrumb
+- 24957c9f5: added home screen
+- Updated dependencies [3ceaceaa3]
+- Updated dependencies [13bcd92df]
+- Updated dependencies [8e6c502a7]
+- Updated dependencies [f5a78ab73]
+- Updated dependencies [d0a08d7c3]
+- Updated dependencies [977e15006]
+  - @ilo-org/styles@0.16.0
+  - @ilo-org/brand-assets@0.5.0
+  - @ilo-org/fonts@0.2.0
+  - @ilo-org/icons@0.3.0
+  - @ilo-org/themes@0.8.0
+  - @ilo-org/utils@0.1.0
+
 ## 0.16.3
 
 ### Patch Changes
