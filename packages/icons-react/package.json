@@ -2,6 +2,12 @@
   "name": "@ilo-org/icons-react",
   "description": "React components for icons in digital and software products using ILO's Design System",
   "version": "0.1.0",
+  "files": [
+    "es/**/*",
+    "lib/**/*",
+    "umd/**/*",
+    "next/**/*"
+  ],
   "contributors": [
     {
       "name": "Justin Smith",

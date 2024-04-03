@@ -7,6 +7,10 @@
     "url": "https://github.com/international-labour-organization/designsystem.git",
     "directory": "packages/styles"
   },
+  "files": [
+    "css/**/*",
+    "scss/**/*"
+  ],
   "contributors": [
     {
       "name": "Justin Smith",

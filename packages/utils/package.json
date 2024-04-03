@@ -2,6 +2,9 @@
   "name": "@ilo-org/utils",
   "description": "JS Utils for products using ILO's Design System",
   "version": "0.1.0",
+  "files": [
+    "lib/**/*"
+  ],
   "contributors": [
     {
       "name": "Justin Smith",
