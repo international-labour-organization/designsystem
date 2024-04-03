@@ -1,5 +1,11 @@
 # @ilo-org/typescript-config
 
+## 0.1.1
+
+### Patch Changes
+
+- f1f08712a: Re-set files field in package.json of the package rather than at the monorepo root
+
 ## 0.1.0
 
 ### Minor Changes
