@@ -1,5 +1,15 @@
 # @ilo-org/styles
 
+## 0.16.1
+
+### Patch Changes
+
+- f1f08712a: Re-set files field in package.json of the package rather than at the monorepo root
+- Updated dependencies [f1f08712a]
+  - @ilo-org/fonts@0.2.1
+  - @ilo-org/icons@0.3.1
+  - @ilo-org/themes@0.8.1
+
 ## 0.16.0
 
 ### Minor Changes

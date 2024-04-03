@@ -1,5 +1,13 @@
 # @ilo-org/icons
 
+## 0.3.1
+
+### Patch Changes
+
+- f1f08712a: Re-set files field in package.json of the package rather than at the monorepo root
+- Updated dependencies [f1f08712a]
+  - @ilo-org/icon-build-helpers@0.1.1
+
 ## 0.3.0
 
 ### Minor Changes
