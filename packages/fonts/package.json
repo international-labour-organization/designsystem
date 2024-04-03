@@ -5,6 +5,11 @@
   "license": "Apache-2.0",
   "main": "lib/index.js",
   "module": "es/index.js",
+  "files": [
+    "assets/**/*",
+    "font-css/**/*",
+    "OFL.txt"
+  ],
   "publishConfig": {
     "access": "public"
   },

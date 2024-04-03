@@ -9,6 +9,9 @@
     "designsystem",
     "components"
   ],
+  "files": [
+    "lib/**/*"
+  ],
   "contributors": [
     {
       "name": "Justin Smith",
