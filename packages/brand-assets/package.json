@@ -12,6 +12,12 @@
   },
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
+  "files": [
+    "es/**/*",
+    "lib/**/*",
+    "umd/**/*",
+    "dist/**/*"
+  ],
   "contributors": [
     {
       "name": "Justin Smith",

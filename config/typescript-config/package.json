@@ -7,6 +7,9 @@
     "type": "git",
     "url": "git+https://github.com/international-labour-organization/designsystem.git"
   },
+  "files": [
+    "*.{js,ts,json}"
+  ],
   "publishConfig": {
     "access": "public"
   },
