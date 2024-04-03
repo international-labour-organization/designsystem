@@ -9,6 +9,7 @@ const FactlistCard: FC<FactlistCardProps> = ({
   theme = "narrow",
   size,
   list,
+  titleElement: TitleElement,
 }) => {
   const { prefix } = useGlobalSettings();
 
@@ -23,7 +24,13 @@ const FactlistCard: FC<FactlistCardProps> = ({
     <div className={cardClasses}>
       <div className={`${baseClass}--wrap`}>
         <div className={`${baseClass}--content`}>
-          {title && <h5 className={`${baseClass}--title`}>{title}</h5>}
+          {title && TitleElement ? (
+            <TitleElement className={`${baseClass}--title`}>
+              {title}
+            </TitleElement>
+          ) : (
+            <p className={`${baseClass}--title`}>{title}</p>
+          )}
           {list && (
             <List alignment="default" ordered="unordered">
               {list.map((item, index) => (

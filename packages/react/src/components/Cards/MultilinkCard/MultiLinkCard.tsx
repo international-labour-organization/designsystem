@@ -14,6 +14,7 @@ const MultilinkCard: FC<MultilinkCardProps> = ({
   link,
   linklist,
   image,
+  titleElement: TitleElement,
 }) => {
   const { prefix } = useGlobalSettings();
 
@@ -48,7 +49,13 @@ const MultilinkCard: FC<MultilinkCardProps> = ({
         )}
         <div className={`${baseClass}--content`}>
           {eyebrow && <p className={`${baseClass}--eyebrow`}>{eyebrow}</p>}
-          {title && <h5 className={`${baseClass}--title`}>{title}</h5>}
+          {title && TitleElement ? (
+            <TitleElement className={`${baseClass}--title`}>
+              {title}
+            </TitleElement>
+          ) : (
+            <p className={`${baseClass}--title`}>{title}</p>
+          )}
           {image && (
             <div className={`${baseClass}--image--wrapper`}>
               <picture>

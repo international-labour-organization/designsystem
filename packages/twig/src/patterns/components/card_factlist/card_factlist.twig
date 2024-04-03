@@ -5,8 +5,8 @@
   <div class="{{prefix}}--card--wrap">
     <div class="{{prefix}}--card--content">
       {% if title %}
-        <h3 class="{{prefix}}--card--title">{{title}}</h3>
-      {% endif %}
+        <{{ titleElement|default('p') }} class="{{ prefix }}--card--title">{{ title }}</{{ titleElement|default('p') }}>
+      {% endif %}   
       {% if list %}
         {% include "@components/list/list.twig" with {
           title: list.title,

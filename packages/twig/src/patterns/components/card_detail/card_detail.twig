@@ -21,8 +21,8 @@
         <p class="{{prefix}}--card--eyebrow">{{eyebrow}}</p>
       {% endif %}
       {% if title %}
-        <h3 class="{{prefix}}--card--title">{{title}}</h3>
-      {% endif %}
+        <{{ titleElement|default('p') }} class="{{ prefix }}--card--title">{{ title }}</{{ titleElement|default('p') }}>
+      {% endif %}   
       {% if intro %}
         <p class="{{prefix}}--card--intro">{{intro}}</p>
       {% endif %}

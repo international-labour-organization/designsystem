@@ -12,6 +12,7 @@ const TextCard: FC<TextCardProps> = ({
   date,
   profile,
   link,
+  titleElement: TitleElement,
 }) => {
   const { prefix } = useGlobalSettings();
 
@@ -36,7 +37,13 @@ const TextCard: FC<TextCardProps> = ({
         <div className={`${baseClass}--wrap`}>
           <div className={`${baseClass}--content`}>
             {eyebrow && <p className={`${baseClass}--eyebrow`}>{eyebrow}</p>}
-            {title && <h5 className={`${baseClass}--title`}>{title}</h5>}
+            {title && TitleElement ? (
+              <TitleElement className={`${baseClass}--title`}>
+                {title}
+              </TitleElement>
+            ) : (
+              <p className={`${baseClass}--title`}>{title}</p>
+            )}
             {date && (
               <time className={`${baseClass}--date`} dateTime={date.unix}>
                 {date.human}
