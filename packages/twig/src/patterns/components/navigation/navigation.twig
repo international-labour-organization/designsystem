@@ -8,7 +8,7 @@
 		{% if languagecontextmenu.links is not empty %}
 			<div class="{{prefix}}--language-switcher">
 				<div class="{{prefix}}--language-switcher--wrap">
-					<button class="{{prefix}}--language-switcher--button" type="button">
+					<button tabindex="2" class="{{prefix}}--language-switcher--button" type="button">
 						{{languagelabel}}
 					</button>
 		{% include '@components/contextmenu/contextmenu.twig' with {
@@ -25,7 +25,7 @@
 	<!-- /.{{prefix}}--header--utility-bar -->
 	<div class="{{prefix}}--header--logo-bar">
 		<div class="{{prefix}}--header--inner {{ prefix }}--container">
-			<a href="{{siteurl}}" class="{{prefix}}--header--logo-link">
+			<a tabindex="1" href="{{siteurl}}" class="{{prefix}}--header--logo-link">
 				<img class="{{prefix}}--header--logo" src="{{logo.image}}" alt="{{logo.alt}}">
 			</a>
 			<p class="{{prefix}}--header--logo-tagline">

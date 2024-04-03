@@ -657,8 +657,8 @@
   }
 
   .ilo--context-menu {
+    display: none;
     opacity: 0;
-    visibility: hidden;
     position: absolute;
     right: 0;
     top: calc(100% + 12px);
@@ -668,20 +668,21 @@
     .ilo--context--open &,
     .ilo--language-switcher:focus-within &,
     &:focus-within {
+      display: block;
       opacity: 1;
-      visibility: visible;
       z-index: 1;
     }
   }
 
-  .ilo--language-switcher--button:focus + .ilo--context-menu {
+  .ilo--language-switcher--button:focus {
+    display: block;
     opacity: 1;
-    visibility: visible;
     z-index: 1;
   }
 }
 
 .ilo--subnav {
+  display: none;
   background: $brand-ilo-white;
   height: 100%;
   left: 0;
@@ -693,6 +694,7 @@
   width: 100%;
 
   .ilo--subnav--open & {
+    display: block;
     transform: translateX(0);
   }
 
@@ -854,6 +856,7 @@
 }
 
 .ilo--search-box {
+  display: none;
   background: $brand-ilo-white;
   left: 0;
   position: absolute;
@@ -863,6 +866,7 @@
   width: 100%;
 
   .ilo--search--open & {
+    display: block;
     transform: translateX(0);
   }
 

@@ -56,6 +56,7 @@ const Navigation: FC<NavigationProps> = ({
         <div className={`${prefix}--language-switcher`}>
           <div className={`${prefix}--language-switcher--wrap`}>
             <button
+              tabIndex={2}
               className={`${prefix}--language-switcher--button`}
               type="button"
             >
@@ -67,7 +68,7 @@ const Navigation: FC<NavigationProps> = ({
       </div>
       <div className={`${baseClass}--logo-bar`}>
         <div className={`${baseClass}--inner ${prefix}--container`}>
-          <a href={siteurl} className={`${baseClass}--logo-link`}>
+          <a tabIndex={1} href={siteurl} className={`${baseClass}--logo-link`}>
             <img className={`${baseClass}--logo`} src={logo} alt="ILO Logo" />
           </a>
           <p className={`${baseClass}--logo-tagline`}>
