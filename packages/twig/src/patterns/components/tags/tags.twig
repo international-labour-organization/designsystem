@@ -6,7 +6,7 @@
     {% include "@components/tags/tag.twig" with {
       content: item.content,
       defaultActive: item.defaultActive,
-      id: item.id,
+      id: item.elementId,
       prefix: prefix,
       tagType: tagType,
       url: item.url|default(null),
