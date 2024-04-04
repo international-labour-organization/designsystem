@@ -1,5 +1,16 @@
 # @ilo-org/twig
 
+## 0.18.0
+
+### Minor Changes
+
+- eb68f11b6: Field "id" was renamed to "elementId" on "tag" and "list" components. This was necessary since "id" is a reserved Drupal word. This also impacts the "tags" component, since it includes several "tag"s.
+
+### Patch Changes
+
+- eb68f11b6: Add missing labels and namespace on component definitions.
+- 50e299b79: Make sure subcomponents are exported from the same directory as components
+
 ## 0.17.1
 
 ### Patch Changes
