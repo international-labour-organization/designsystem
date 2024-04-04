@@ -12,6 +12,7 @@ textinput:
       preview: "Insert your name here"
     tooltip:
       type: string
+      label: Tooltip
       description: The tooltip for the form element.
       preview: "This is a tooltip"
     helper:

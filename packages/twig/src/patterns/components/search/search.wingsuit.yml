@@ -11,6 +11,7 @@ searchfield:
       description: The label for the form element.
     tooltip:
       type: string
+      label: Tooltip
       description: The tooltip for the form element.
     helper:
       type: text
