@@ -22,7 +22,7 @@ componentDirs.forEach((dir) => {
       // Substitute the prefix
       const formatted = filedata
         .replace(/{{prefix}}/g, theme.themeprefix.value)
-        .replace(/prefix/g, `'${theme.themeprefix.value}'`);
+        .replace(/prefix ~/g, `'${theme.themeprefix.value}' ~`);
       // Then write it to the component directory in the dist folder
       fs.ensureDirSync(`dist/components/${componentName}`);
       fs.writeFileSync(
