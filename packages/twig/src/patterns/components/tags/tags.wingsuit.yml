@@ -11,15 +11,15 @@ tags:
       required: true
       preview:
         - content: content 1
-          id: tag1
+          elementId: tag1
           defaultActive: true
           url: https://www.google.com/
         - content: content 2
-          id: tag2
+          elementId: tag2
           defaultActive: true
           url: https://www.google.com/
         - content: content 3
-          id: tag3
+          elementId: tag3
           defaultActive: false
   settings:
     allowMultipleActive:

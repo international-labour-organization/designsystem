@@ -1,5 +1,5 @@
 dropdown:
-  namespace: components/Forms
+  namespace: Components/Forms
   use: "@components/dropdown/dropdown.twig"
   label: Dropdown
   description: The Dropdown displays a select element with options, and is most
@@ -13,6 +13,7 @@ dropdown:
       preview: "Select a country"
     tooltip:
       type: string
+      label: Tooltip
       description: The tooltip for the form element.
     helper:
       type: text

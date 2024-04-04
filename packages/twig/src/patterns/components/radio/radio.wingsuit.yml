@@ -14,6 +14,7 @@ radio:
       preview: "Do you agree to these terms?"
     tooltip:
       type: string
+      label: Tooltip
       description: The tooltip for the form element.
     helper:
       type: text
