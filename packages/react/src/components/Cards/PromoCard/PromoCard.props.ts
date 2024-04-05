@@ -20,7 +20,7 @@ export type PromoCardProps = {
   /**
    * HTML element used for the title
    */
-  titleElement?: HeadingTypes;
+  titleLevel?: HeadingTypes;
 
   /**
    * Will render the card to appear on light or dark backgrounds

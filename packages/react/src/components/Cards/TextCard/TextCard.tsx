@@ -12,7 +12,7 @@ const TextCard: FC<TextCardProps> = ({
   date,
   profile,
   link,
-  titleElement: TitleElement,
+  titleLevel: TitleElement,
 }) => {
   const { prefix } = useGlobalSettings();
 

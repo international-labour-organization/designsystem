@@ -14,7 +14,7 @@ const FeatureCard: FC<FeatureCardProps> = ({
   link,
   linklist,
   image,
-  titleElement: TitleElement,
+  titleLevel: TitleElement,
 }) => {
   const { prefix } = useGlobalSettings();
 

@@ -12,7 +12,7 @@ const PromoCard: FC<PromoCardProps> = ({
   intro,
   link,
   cta,
-  titleElement: TitleElement,
+  titleLevel: TitleElement,
 }) => {
   const { prefix } = useGlobalSettings();
 

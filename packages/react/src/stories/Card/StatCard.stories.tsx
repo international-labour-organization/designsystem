@@ -21,7 +21,7 @@ const CardMeta: Meta<typeof StatCard> = {
       options: ["standard", "fluid"],
       control: { type: "radio" },
     },
-    titleElement: {
+    titleLevel: {
       options: ["p", "h1", "h2", "h3", "h4", "h5"],
       control: { type: "select" },
     },

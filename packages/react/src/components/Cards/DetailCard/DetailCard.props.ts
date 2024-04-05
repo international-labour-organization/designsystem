@@ -14,7 +14,7 @@ export type DetailCardProps = {
   /**
    * HTML element used for the title
    */
-  titleElement?: HeadingTypes;
+  titleLevel?: HeadingTypes;
 
   /**
    * Introductory text in the card

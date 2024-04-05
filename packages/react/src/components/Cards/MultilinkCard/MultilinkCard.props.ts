@@ -17,7 +17,7 @@ export type MultilinkCardProps = {
   /**
    * HTML element used for the title
    */
-  titleElement?: HeadingTypes;
+  titleLevel?: HeadingTypes;
 
   /**
    * How big should the card be

@@ -14,7 +14,7 @@ const MultilinkCard: FC<MultilinkCardProps> = ({
   link,
   linklist,
   image,
-  titleElement: TitleElement,
+  titleLevel: TitleElement,
 }) => {
   const { prefix } = useGlobalSettings();
 

@@ -10,7 +10,7 @@ const StatCard: FC<StatCardProps> = ({
   size = "standard",
   intro,
   source,
-  titleElement: TitleElement,
+  titleLevel: TitleElement,
 }) => {
   const { prefix } = useGlobalSettings();
 

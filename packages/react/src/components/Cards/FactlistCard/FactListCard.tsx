@@ -9,7 +9,7 @@ const FactlistCard: FC<FactlistCardProps> = ({
   theme = "narrow",
   size,
   list,
-  titleElement: TitleElement,
+  titleLevel: TitleElement,
 }) => {
   const { prefix } = useGlobalSettings();
 

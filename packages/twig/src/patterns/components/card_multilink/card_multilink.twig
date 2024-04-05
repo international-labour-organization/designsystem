@@ -18,9 +18,9 @@
 			{% if eyebrow %}
 				<p class="{{prefix}}--card--eyebrow">{{eyebrow}}</p>
 			{% endif %}
-		    {% if title %}
-        		<{{ titleElement|default('p') }} class="{{ prefix }}--card--title">{{ title }}</{{ titleElement|default('p') }}>
-      		{% endif %}   
+			{% if title %}
+				<{{titleLevel|default('p')}} class="{{ prefix }}--card--title">{{ title }}</{{titleLevel|default('p')}}>
+			{% endif %}
 			{% if image %}
 				<div class="{{prefix}}--card--image--wrapper">
 					{% include "@components/picture/picture.twig" with {

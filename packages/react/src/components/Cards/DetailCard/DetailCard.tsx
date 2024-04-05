@@ -12,7 +12,7 @@ const DetailCard: FC<DetailCardProps> = ({
   eventdetails,
   link,
   image,
-  titleElement: TitleElement,
+  titleLevel: TitleElement,
 }) => {
   const { prefix } = useGlobalSettings();
   const baseClass = `${prefix}--card`;

@@ -4,9 +4,9 @@
 <div class="{{prefix}}--card {{prefix}}--card__type__stat {{prefix}}--card__color__{{color}} {{prefix}}--card__size__{{size}}">
 	<div class="{{prefix}}--card--wrap">
 		<div class="{{prefix}}--card--content">
-		    {% if title %}
-        		<{{ titleElement|default('p') }} class="{{ prefix }}--card--title">{{ title }}</{{ titleElement|default('p') }}>
-      		{% endif %}  
+			{% if title %}
+				<{{titleLevel|default('p')}} class="{{ prefix }}--card--title">{{ title }}</{{titleLevel|default('p')}}>
+			{% endif %}
 			{% if intro %}
 				<p class="{{prefix}}--card--intro">{{intro}}</p>
 			{% endif %}

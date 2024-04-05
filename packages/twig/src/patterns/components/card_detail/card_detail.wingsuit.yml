@@ -69,7 +69,7 @@ detailcard:
       options:
         "true": "true"
         "false": "false"
-    titleElement:
+    titleLevel:
       type: select
       label: Title Element
       description: HTML element used for the title
