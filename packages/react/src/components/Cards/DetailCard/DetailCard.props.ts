@@ -1,4 +1,4 @@
-import { CardSize, EventDate } from "../../../types";
+import { CardSize, EventDate, HeadingTypes } from "../../../types";
 
 export type DetailCardProps = {
   /**
@@ -10,6 +10,11 @@ export type DetailCardProps = {
    * The title of the card
    */
   title: string;
+
+  /**
+   * HTML element used for the title
+   */
+  titleLevel?: HeadingTypes;
 
   /**
    * Introductory text in the card

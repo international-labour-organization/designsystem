@@ -53,6 +53,18 @@ cardgroup:
       options:
         dark: Dark
         light: Light
+    titleLevel:
+      type: select
+      label: TitleLevel
+      description: Sets the heading level of the title for all of the cards. This is not applied to Data Cards which do not have titles
+      preview: p
+      options:
+        p: p
+        h1: h1
+        h2: h2
+        h3: h3
+        h4: h4
+        h5: h5
     type:
       type: select
       label: Type

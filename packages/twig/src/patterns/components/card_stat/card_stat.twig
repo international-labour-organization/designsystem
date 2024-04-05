@@ -5,7 +5,7 @@
 	<div class="{{prefix}}--card--wrap">
 		<div class="{{prefix}}--card--content">
 			{% if title %}
-				<h3 class="{{prefix}}--card--title">{{title}}</h3>
+				<{{titleLevel|default('p')}} class="{{ prefix }}--card--title">{{ title }}</{{titleLevel|default('p')}}>
 			{% endif %}
 			{% if intro %}
 				<p class="{{prefix}}--card--intro">{{intro}}</p>
