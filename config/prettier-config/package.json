@@ -1,6 +1,6 @@
 {
   "name": "@ilo-org/prettier-config",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Prettier config for ILO Design System",
   "main": "index.js",
   "repository": {
@@ -8,6 +8,9 @@
     "url": "git+https://github.com/international-labour-organization/designsystem.git",
     "directory": "config/prettier-config"
   },
+  "files": [
+    "*.{js,ts,json}"
+  ],
   "keywords": [
     "ilo-design-system",
     "prettier"

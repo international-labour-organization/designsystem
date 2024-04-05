@@ -1,4 +1,5 @@
 navigation:
+  namespace: Components/Navigation
   use: "@components/navigation/navigation.twig"
   label: Navigation
   description: The Navigation component

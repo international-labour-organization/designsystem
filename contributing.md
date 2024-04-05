@@ -224,3 +224,29 @@ Checks to see if multiple packages are using different version of the same depen
 ```bash
 pnpm check:deps
 ```
+
+## Conventions
+
+### Twig
+
+Components in the Twig package must follow the following naming conventions and be placed in the appropriate folders. See the below example where "component" can be substituted with the name of the component.
+
+```
+patterns
+└── components
+    ├── component
+    │   ├── sub-component.twig
+    │   ├── component.behavior.js
+    │   ├── component.js
+    │   ├── component.stories.jsx
+    │   ├── component.twig
+    │   ├── component.wingsuit.yml
+    │   └── index.js
+```
+
+In this example:
+
+- The name of the component directory and the main component twig file are the same: `component`
+- `component.js` exports a single JavaScript class which determines the behaviour of the component
+- `component.behavior.js` attaches an instance of the Component class from `component.js` to an instance of the component rendered by the Twig file
+- `component.wingsuit.yml` is a [Drupal UI pattern definition](https://ui-patterns.readthedocs.io/en/8.x-1.x/content/patterns-definition.html)

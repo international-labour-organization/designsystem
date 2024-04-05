@@ -1,5 +1,18 @@
 # @ilo-org/react
 
+## 0.14.1
+
+### Patch Changes
+
+- f1f08712a: Re-set files field in package.json of the package rather than at the monorepo root
+- Updated dependencies [f1f08712a]
+  - @ilo-org/brand-assets@0.5.1
+  - @ilo-org/fonts@0.2.1
+  - @ilo-org/icons-react@0.1.1
+  - @ilo-org/styles@0.16.1
+  - @ilo-org/themes@0.8.1
+  - @ilo-org/utils@0.1.1
+
 ## 0.14.0
 
 ### Minor Changes
