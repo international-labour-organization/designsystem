@@ -7,12 +7,18 @@ import { FeatureCardProps } from "../FeatureCard";
 import { DetailCardProps } from "../DetailCard";
 import { FactlistCardProps } from "../FactlistCard";
 import { DataCardProps } from "../DataCard";
+import { HeadingTypes } from "../../../types";
 
 export interface CommonCardGroupProps {
   /**
    * Number of cards in the group
    */
   cardCount: string;
+
+  /**
+   * Set the title level for all the cards in the group
+   */
+  titleLevel?: HeadingTypes;
 
   /**
    * A Button to display after all the cards in the group
@@ -64,6 +70,7 @@ export interface FactlistCardGroup extends CommonCardGroupProps {
 
 export interface DataCardGroup extends CommonCardGroupProps {
   type: "data";
+  titleLevel?: never;
   cards: DataCardProps[];
 }
 
