@@ -19,7 +19,7 @@
 				<p class="{{prefix}}--card--eyebrow">{{eyebrow}}</p>
 			{% endif %}
 			{% if title %}
-				<h3 class="{{prefix}}--card--title">{{title}}</h3>
+				<{{titleLevel|default('p')}} class="{{ prefix }}--card--title">{{ title }}</{{titleLevel|default('p')}}>
 			{% endif %}
 			{% if image %}
 				<div class="{{prefix}}--card--image--wrapper">
