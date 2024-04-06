@@ -28,6 +28,10 @@ const CardGroup: FC<CardGroupProps> = ({
   cardCount,
   cta,
   type,
+  alignment,
+  size,
+  theme,
+  collapsed = false,
 }) => {
   const Card = cardMapper[type];
   const { prefix } = useGlobalSettings();
@@ -35,7 +39,10 @@ const CardGroup: FC<CardGroupProps> = ({
   const baseClass = `${prefix}--cardgroup`;
   const cardGroupClasses = classnames(
     baseClass,
-    `${baseClass}__count__${cardCount}`
+    `${baseClass}__count__${cardCount}`,
+    {
+      [`${baseClass}__collapsed`]: collapsed,
+    }
   );
 
   return (
@@ -43,7 +50,14 @@ const CardGroup: FC<CardGroupProps> = ({
       <div className={`${baseClass}--inner`}>
         {cards &&
           cards.map((card, index) => (
-            <Card key={index} {...card} titleLevel={titleLevel} />
+            <Card
+              key={index}
+              {...card}
+              size={size}
+              theme={theme}
+              alignment={alignment}
+              titleLevel={titleLevel}
+            />
           ))}
       </div>
       {cta && (

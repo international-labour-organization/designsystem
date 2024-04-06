@@ -8,7 +8,7 @@ const MultilinkCard: FC<MultilinkCardProps> = ({
   isvideo,
   eyebrow,
   title,
-  size = "narrow",
+  size = "standard",
   alignment,
   intro,
   link,

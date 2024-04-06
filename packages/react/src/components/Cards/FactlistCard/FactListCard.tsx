@@ -6,8 +6,8 @@ import { List, ListItem } from "../../List";
 
 const FactlistCard: FC<FactlistCardProps> = ({
   title,
-  theme = "narrow",
-  size,
+  theme,
+  size = "narrow",
   list,
   titleLevel: TitleElement,
 }) => {
