@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { FC, useCallback, useEffect, useState } from "react";
 import useGlobalSettings from "../../hooks/useGlobalSettings";
 import { ContextMenu } from "../ContextMenu";
 import { SearchField } from "../SearchField";
@@ -31,9 +31,9 @@ const Navigation: FC<NavigationProps> = ({
   const baseClass = `${prefix}--header`;
   const NavigationClasses = classnames(baseClass, {
     [`${prefix}--mobile--open`]: toggleMenuOpen,
-    [`${prefix}--select--open`]: toggleLanguageOpen,
     [`${prefix}--search--open`]: toggleSearchOpen,
     [`${prefix}--subnav--open`]: toggleSubnavOpen,
+    [`${prefix}--select--open`]: toggleLanguageOpen,
     [`${prefix}--context--open`]: toggleLanguageOpen,
   });
 
@@ -41,9 +41,9 @@ const Navigation: FC<NavigationProps> = ({
     setMenuToggleOpen(!toggleMenuOpen);
   };
 
-  const handleLanguageToggle = () => {
+  const handleLanguageToggle = useCallback(() => {
     setLanguageToggleOpen(!toggleLanguageOpen);
-  };
+  }, [toggleLanguageOpen]);
 
   const handleSearchToggle = () => {
     if (toggleSearchOpen) {
@@ -65,6 +65,17 @@ const Navigation: FC<NavigationProps> = ({
     setTimeout(() => setSubnavToggleOpen(true), 10);
   };
 
+  useEffect(() => {
+    if (window) {
+      if (toggleLanguageOpen) {
+        window.addEventListener("click", handleLanguageToggle);
+      } else {
+        window.removeEventListener("click", handleLanguageToggle);
+      }
+      return () => window.removeEventListener("click", handleLanguageToggle);
+    }
+  }, [toggleLanguageOpen, handleLanguageToggle]);
+
   return (
     <header className={NavigationClasses}>
       <div className={`${baseClass}--utility-bar`}>
@@ -73,6 +84,7 @@ const Navigation: FC<NavigationProps> = ({
             <button
               className={`${prefix}--language-switcher--button`}
               type="button"
+              onClick={handleLanguageToggle}
             >
               {languagelabel}
             </button>
