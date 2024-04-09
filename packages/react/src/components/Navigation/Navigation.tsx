@@ -23,7 +23,9 @@ const Navigation: FC<NavigationProps> = ({
 
   const [toggleMenuOpen, setMenuToggleOpen] = useState(false);
   const [toggleSearchOpen, setSearchToggleOpen] = useState(false);
+  const [searchTabbable, setSearchTabbable] = useState(false);
   const [toggleSubnavOpen, setSubnavToggleOpen] = useState(false);
+  const [subnavTabbable, setSubnavTabbable] = useState(false);
   const [toggleLanguageOpen, setLanguageToggleOpen] = useState(false);
 
   const baseClass = `${prefix}--header`;
@@ -32,6 +34,7 @@ const Navigation: FC<NavigationProps> = ({
     [`${prefix}--select--open`]: toggleLanguageOpen,
     [`${prefix}--search--open`]: toggleSearchOpen,
     [`${prefix}--subnav--open`]: toggleSubnavOpen,
+    [`${prefix}--context--open`]: toggleLanguageOpen,
   });
 
   const handleMenuToggle = () => {
@@ -43,11 +46,23 @@ const Navigation: FC<NavigationProps> = ({
   };
 
   const handleSearchToggle = () => {
-    setSearchToggleOpen(!toggleSearchOpen);
+    if (toggleSearchOpen) {
+      setSearchToggleOpen(false);
+      setTimeout(() => setSearchTabbable(false), 225);
+      return;
+    }
+    setSearchTabbable(true);
+    setTimeout(() => setSearchToggleOpen(true), 10);
   };
 
   const handleSubnavToggle = () => {
-    setSubnavToggleOpen(!toggleSubnavOpen);
+    if (toggleSubnavOpen) {
+      setSubnavToggleOpen(false);
+      setTimeout(() => setSubnavTabbable(false), 125);
+      return;
+    }
+    setSubnavTabbable(true);
+    setTimeout(() => setSubnavToggleOpen(true), 10);
   };
 
   return (
@@ -56,7 +71,6 @@ const Navigation: FC<NavigationProps> = ({
         <div className={`${prefix}--language-switcher`}>
           <div className={`${prefix}--language-switcher--wrap`}>
             <button
-              tabIndex={2}
               className={`${prefix}--language-switcher--button`}
               type="button"
             >
@@ -68,7 +82,7 @@ const Navigation: FC<NavigationProps> = ({
       </div>
       <div className={`${baseClass}--logo-bar`}>
         <div className={`${baseClass}--inner ${prefix}--container`}>
-          <a tabIndex={1} href={siteurl} className={`${baseClass}--logo-link`}>
+          <a href={siteurl} className={`${baseClass}--logo-link`}>
             <img className={`${baseClass}--logo`} src={logo} alt="ILO Logo" />
           </a>
           <p className={`${baseClass}--logo-tagline`}>
@@ -191,6 +205,7 @@ const Navigation: FC<NavigationProps> = ({
         </div>
         {subnav && (
           <nav
+            style={{ display: subnavTabbable ? "block" : "none" }}
             className={`${prefix}--subnav`}
             aria-labelledby="secondary-navigation"
           >
@@ -231,7 +246,10 @@ const Navigation: FC<NavigationProps> = ({
             </div>
           </nav>
         )}
-        <div className={`${prefix}--search-box`}>
+        <div
+          style={{ display: searchTabbable ? "block" : "none" }}
+          className={`${prefix}--search-box`}
+        >
           <div className={`${prefix}--header--inner ${prefix}--container`}>
             <SearchField
               input={searchfield?.input}
