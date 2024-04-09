@@ -1,10 +1,53 @@
 import { Meta, StoryObj } from "@storybook/react";
 import CardGroup from "../../components/Cards/CardGroup/CardGroup";
 import CardGroupArgs from "../../components/Cards/CardGroup/CardGroup.args";
+import {
+  ArgTypes,
+  Description,
+  Primary,
+  Stories,
+  Title,
+} from "@storybook/blocks";
 
 const CardGroupMeta: Meta<typeof CardGroup> = {
   title: "Components/Cards/CardGroup",
   component: CardGroup,
+  tags: ["autodocs"],
+  argTypes: {
+    alignment: {
+      options: ["left", "right"],
+      control: { type: "select" },
+    },
+    size: {
+      options: ["standard", "narrow", "wide", "fluid"],
+      control: { type: "select" },
+    },
+    cardCount: {
+      options: ["one", "two", "three", "four"],
+      control: { type: "select" },
+    },
+    theme: {
+      options: ["light", "dark"],
+      control: { type: "select" },
+    },
+    titleLevel: {
+      options: ["p", "h1", "h2", "h3", "h4", "h5"],
+      control: { type: "select" },
+    },
+  },
+  parameters: {
+    docs: {
+      page: () => (
+        <>
+          <Title>Card Group</Title>
+          <Description>Renders a group of cards</Description>
+          <Primary />
+          <ArgTypes of={CardGroupMeta} />
+          <Stories />
+        </>
+      ),
+    },
+  },
 };
 
 export default CardGroupMeta;
@@ -27,6 +70,12 @@ export const StatCardGroup: StoryObj<typeof CardGroup> = {
 export const MultilinkCardGroup: StoryObj<typeof CardGroup> = {
   args: CardGroupArgs.multilinkCardGroup,
   name: "Multilink Group",
+  argTypes: {
+    alignment: {
+      options: ["left", "right"],
+      control: { type: "select" },
+    },
+  },
 };
 
 export const GraphicPromoCardGroup: StoryObj<typeof CardGroup> = {

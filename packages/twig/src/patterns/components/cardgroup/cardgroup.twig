@@ -2,14 +2,14 @@
   CARDGROUP COMPONENT
 #}
 {% if not cardcount%}
-  {% set cardcount = "three" %}
+	{% set cardcount = "three" %}
 {% endif %}
 
 <div class="{{prefix}}--cardgroup {{prefix}}--cardgroup__count__{{cardcount}} {% if collapsed %} {{prefix}}--cardgroup__collapsed {% endif %}">
-  <div class="{{prefix}}--cardgroup--inner">
-    {% for card in group %}
-      <div class="{{prefix}}--cardgroup--card">
-        {% include "@components/card/card.twig" with {
+	<div class="{{prefix}}--cardgroup--inner">
+		{% for card in group %}
+			<div class="{{prefix}}--cardgroup--card">
+				{% include "@components/card/card.twig" with {
           size: size,
           theme: theme,
           type: type,
@@ -24,23 +24,21 @@
           linklist: card.linklist,
           list: card.list,
           title: card.title,
+          titleLevel: titleLevel,
           alignment: alignment,
           color: card.color,
           cornercut: card.cornercut,
           source: card.source,
           prefix: prefix
         } only %}
-      </div>
-      {% endfor %}
-  </div>
-  {% if cta %}
-    <div class="{{prefix}}--cardgroup--button-wrap">
-      <a
-        class="{{prefix}}--button {{prefix}}--button--medium {{prefix}}--button--secondary"
-        href="{{cta.url}}"
-      >
-        <span class="button__label">{{ cta.label }}</span>
-      </a>
-    </div>
-    {% endif %}
+			</div>
+		{% endfor %}
+	</div>
+	{% if cta %}
+		<div class="{{prefix}}--cardgroup--button-wrap">
+			<a class="{{prefix}}--button {{prefix}}--button--medium {{prefix}}--button--secondary" href="{{cta.url}}">
+				<span class="button__label">{{ cta.label }}</span>
+			</a>
+		</div>
+	{% endif %}
 </div>

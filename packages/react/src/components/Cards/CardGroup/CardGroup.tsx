@@ -11,7 +11,7 @@ import { PromoCard } from "../PromoCard";
 import { StatCard } from "../StatCard";
 import { TextCard } from "../TextCard";
 
-const cardMapper: Record<string, React.FC> = {
+const cardMapper: Record<string, React.FC<any>> = {
   stat: StatCard,
   multilink: MultilinkCard,
   text: TextCard,
@@ -22,20 +22,43 @@ const cardMapper: Record<string, React.FC> = {
   data: DataCard,
 };
 
-const CardGroup: FC<CardGroupProps> = ({ cards, cardCount, cta, type }) => {
-  const Cards = cardMapper[type];
+const CardGroup: FC<CardGroupProps> = ({
+  cards,
+  titleLevel = "p",
+  cardCount,
+  cta,
+  type,
+  alignment,
+  size,
+  theme,
+  collapsed = false,
+}) => {
+  const Card = cardMapper[type];
   const { prefix } = useGlobalSettings();
 
   const baseClass = `${prefix}--cardgroup`;
   const cardGroupClasses = classnames(
     baseClass,
-    `${baseClass}__count__${cardCount}`
+    `${baseClass}__count__${cardCount}`,
+    {
+      [`${baseClass}__collapsed`]: collapsed,
+    }
   );
 
   return (
     <div className={cardGroupClasses}>
       <div className={`${baseClass}--inner`}>
-        {cards && cards.map((card, index) => <Cards key={index} {...card} />)}
+        {cards &&
+          cards.map((card, index) => (
+            <Card
+              key={index}
+              {...card}
+              size={size}
+              theme={theme}
+              alignment={alignment}
+              titleLevel={titleLevel}
+            />
+          ))}
       </div>
       {cta && (
         <div className={`${baseClass}--button-wrap`}>

@@ -12,9 +12,9 @@ const DetailCard: FC<DetailCardProps> = ({
   eventdetails,
   link,
   image,
+  titleLevel: TitleElement,
 }) => {
   const { prefix } = useGlobalSettings();
-
   const baseClass = `${prefix}--card`;
 
   const cardClasses = classnames(baseClass, `${baseClass}__type__detail`, {
@@ -43,7 +43,13 @@ const DetailCard: FC<DetailCardProps> = ({
         )}
         <div className={`${baseClass}--content`}>
           {eyebrow && <p className={`${baseClass}--eyebrow`}>{eyebrow}</p>}
-          {title && <h5 className={`${baseClass}--title`}>{title}</h5>}
+          {title && TitleElement ? (
+            <TitleElement className={`${baseClass}--title`}>
+              {title}
+            </TitleElement>
+          ) : (
+            <p className={`${baseClass}--title`}>{title}</p>
+          )}
           {intro && <p className={`${baseClass}--intro`}>{intro}</p>}
           {date && (
             <time className={`${baseClass}--date`} dateTime={date.unix}>

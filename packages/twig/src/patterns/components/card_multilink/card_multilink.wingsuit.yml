@@ -89,3 +89,15 @@ multilinkcard:
         narrow: narrow
         wide: wide
         fluid: fluid
+    titleLevel:
+      type: select
+      label: Title Element
+      description: HTML element used for the title
+      required: false
+      options:
+        p: p
+        h1: h1
+        h2: h2
+        h3: h3
+        h4: h4
+        h5: h5

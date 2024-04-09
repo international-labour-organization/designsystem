@@ -8,10 +8,10 @@
 		{% if languagecontextmenu.links is not empty %}
 			<div class="{{prefix}}--language-switcher">
 				<div class="{{prefix}}--language-switcher--wrap">
-					<button class="{{prefix}}--language-switcher--button" type="button">
+					<button tabindex="2" class="{{prefix}}--language-switcher--button" type="button">
 						{{languagelabel}}
 					</button>
-		{% include '@components/contextmenu/contextmenu.twig' with {
+					{% include '@components/contextmenu/contextmenu.twig' with {
             links: languagecontextmenu.links,
             prefix: prefix
           }
@@ -20,12 +20,12 @@
 				<!-- /.{{prefix}}--language-switcher--wrap -->
 			</div>
 			<!-- /.{{prefix}}--language-switcher -->
-		{% endif %}  
+		{% endif %}
 	</div>
 	<!-- /.{{prefix}}--header--utility-bar -->
 	<div class="{{prefix}}--header--logo-bar">
 		<div class="{{prefix}}--header--inner {{ prefix }}--container">
-			<a href="{{siteurl}}" class="{{prefix}}--header--logo-link">
+			<a tabindex="1" href="{{siteurl}}" class="{{prefix}}--header--logo-link">
 				<img class="{{prefix}}--header--logo" src="{{logo.image}}" alt="{{logo.alt}}">
 			</a>
 			<p class="{{prefix}}--header--logo-tagline">
@@ -39,7 +39,9 @@
 
 	<!-- /.{{prefix}}--header--logo-bar -->
 	<div class="{{prefix}}--header--navigation">
-		<div class="{{prefix}}--header--inner {{ prefix }}--container">
+		<div
+			class="{{prefix}}--header--inner {{ prefix }}--container">
+			<!-- /.{{prefix}}--mobile--nav -->
 			<div class="{{prefix}}--mobile--nav">
 				<div class="{{prefix}}--mobile--nav--logo">
 					<a href="{{siteurl}}" class="{{prefix}}--header--logo-link">
@@ -50,7 +52,7 @@
 				<!-- /.{{prefix}}--mobile--logo -->
 				<div class="{{prefix}}--mobile--nav--search">
 					{% block mobileSearch %}
-					{% include '@components/form/form.twig' with {
+						{% include '@components/form/form.twig' with {
             attributes: {
               action: searchfield.action,
               "aria-label": label,
@@ -74,29 +76,27 @@
 						<button class="{{prefix}}--mobile--nav--language--switcher--button" type="button">{{languagelabel}}</button>
 					</div>
 				{% endif %}
-					<!-- /.{{prefix}}--mobile--nav--language--switcher -->
-					<div class="{{prefix}}--mobile--nav--language--select">
-						<div class="{{prefix}}--header--inner {{ prefix }}--container">
-							<div class="{{prefix}}--mobile--subnav--menu">
-								<button class="{{prefix}}--mobile--subnav--back" type="button">{{subnav.mobilebacklabel}}</button>
-								<button class="{{prefix}}--header--menu--close">{{subnav.mobilecloselabel}}</button>
-								<h6 class="{{prefix}}--mobile--subnav--label">{{languagelabel}}</h6>
-							</div>
-							<!-- /{{prefix}}--mobile--subnav--menu -->
-							<ul class="{{prefix}}--nav--set">
-								{% for item in languagecontextmenu.links %}
-									<li class="{{prefix}}--nav--items">
-										<a href="{{item.url}}" class="{{prefix}}--nav--link {{prefix}}--nav--language">
-											{{item.label}}
-										</a>
-									</li>
-								{% endfor %}
-							</ul>
+				<!-- /.{{prefix}}--mobile--nav--language--switcher -->
+				<div class="{{prefix}}--mobile--nav--language--select">
+					<div class="{{prefix}}--header--inner {{ prefix }}--container">
+						<div class="{{prefix}}--mobile--subnav--menu">
+							<button class="{{prefix}}--mobile--subnav--back" type="button">{{subnav.mobilebacklabel}}</button>
+							<button class="{{prefix}}--header--menu--close">{{subnav.mobilecloselabel}}</button>
+							<h6 class="{{prefix}}--mobile--subnav--label">{{languagelabel}}</h6>
 						</div>
+						<!-- /{{prefix}}--mobile--subnav--menu -->
+						<ul class="{{prefix}}--nav--set">
+							{% for item in languagecontextmenu.links %}
+								<li class="{{prefix}}--nav--items">
+									<a href="{{item.url}}" class="{{prefix}}--nav--link {{prefix}}--nav--language">
+										{{item.label}}
+									</a>
+								</li>
+							{% endfor %}
+						</ul>
 					</div>
 				</div>
-			
-			<!-- /.{{prefix}}--mobile--nav -->
+			</div>
 			<nav class="{{prefix}}--nav" aria-labelledby="primary-navigation">
 				<h2 class="{{prefix}}--nav--label" id="primary-navigation">{{primarynav.navlabel}}</h2>
 				<ul class="{{prefix}}--nav--set">
@@ -146,7 +146,7 @@
 		<div class="{{prefix}}--search-box">
 			<div class="{{prefix}}--header--inner {{ prefix }}--container">
 				{% block desktopSearch %}
-				{% include '@components/form/form.twig' with {
+					{% include '@components/form/form.twig' with {
             attributes: {
               action: searchfield.action,
               "aria-label": label,

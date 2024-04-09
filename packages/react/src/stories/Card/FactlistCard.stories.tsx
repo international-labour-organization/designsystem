@@ -24,6 +24,10 @@ const CardMeta: Meta<typeof FactlistCard> = {
       options: ["wide", "narrow", "fluid"],
       control: { type: "radio" },
     },
+    titleLevel: {
+      options: ["p", "h1", "h2", "h3", "h4", "h5"],
+      control: { type: "select" },
+    },
   },
   parameters: {
     docs: {

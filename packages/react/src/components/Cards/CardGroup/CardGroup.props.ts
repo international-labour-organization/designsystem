@@ -7,17 +7,55 @@ import { FeatureCardProps } from "../FeatureCard";
 import { DetailCardProps } from "../DetailCard";
 import { FactlistCardProps } from "../FactlistCard";
 import { DataCardProps } from "../DataCard";
+import {
+  HeadingTypes,
+  CardSize,
+  ThemeTypes,
+  CardAlignment,
+} from "../../../types";
 
 export interface CommonCardGroupProps {
   /**
-   * Number of cards in the group
+   *Collapsed - Optionally collapses margins between the cards.
+   *Option keys: true, false
+   */
+
+  collapsed?: boolean;
+
+  /**
+   *Number of cards in the group
    */
   cardCount: string;
 
   /**
-   * A Button to display after all the cards in the group
+   *Size - Sets the layout of the cards in the group. See the Card component for more info on this setting, which has different effects on the different types of cards.
+   *Option keys: standard, narrow, wide, fluid
+   */
+
+  size: CardSize;
+
+  /**
+   *Alignment - Positions the image to the right or to the left of the content when the card is displayed in a wide or fluid size. Has no effect if the card is displayed in a standard or narrow size. Only used by `Multilink Card`.
+   *Option keys: left, right
+   */
+
+  alignment?: CardAlignment;
+
+  /**
+   *Set the title level for all the cards in the group
+   */
+  titleLevel?: HeadingTypes;
+
+  /**
+   *A Button to display after all the cards in the group
    */
   cta?: LinkProps;
+
+  /**
+   *Theme - Sets all of the cards to appear as either light or dark. Used by all card groups except for Multilink Card, Data Card and Stat Card.
+   *Option keys: dark, light
+   */
+  theme?: ThemeTypes;
 }
 
 export interface StatCardGroup extends CommonCardGroupProps {
@@ -64,6 +102,7 @@ export interface FactlistCardGroup extends CommonCardGroupProps {
 
 export interface DataCardGroup extends CommonCardGroupProps {
   type: "data";
+  titleLevel?: never;
   cards: DataCardProps[];
 }
 

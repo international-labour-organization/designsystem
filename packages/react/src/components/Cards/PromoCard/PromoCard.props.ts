@@ -1,4 +1,9 @@
-import { ThemeTypes, CardCornerType, CardSize } from "../../../types";
+import {
+  ThemeTypes,
+  CardCornerType,
+  CardSize,
+  HeadingTypes,
+} from "../../../types";
 import { LinkProps } from "../../LinkList/LinkList.props";
 
 export type PromoCardProps = {
@@ -11,6 +16,11 @@ export type PromoCardProps = {
    * The title of the card
    */
   title: string;
+
+  /**
+   * HTML element used for the title
+   */
+  titleLevel?: HeadingTypes;
 
   /**
    * Will render the card to appear on light or dark backgrounds
