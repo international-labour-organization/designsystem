@@ -1,5 +1,21 @@
 # @ilo-org/react
 
+## 0.15.0
+
+### Minor Changes
+
+- 86850a6b7: Address accessibility issues with the heading order of cards by changing the default element used to render the title from an `<h3>` to `<p>`. Additionaly add an optional prop that allows for configuration of the title element if needed.
+
+### Patch Changes
+
+- 0606bc8b6: Sync cardgroup control options with twig and update the layout to facilitate the options. Additionaly update the cardgroup args data and props
+- 7165c322e: Fix tab navigation order and accessibility issues in navigation component
+- 600c568f7: removed legacy video player hook
+- Updated dependencies [86850a6b7]
+- Updated dependencies [1a5f3b3a0]
+- Updated dependencies [7165c322e]
+  - @ilo-org/styles@1.0.0
+
 ## 0.14.1
 
 ### Patch Changes
