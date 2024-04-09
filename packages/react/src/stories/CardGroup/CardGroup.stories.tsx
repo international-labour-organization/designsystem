@@ -14,6 +14,22 @@ const CardGroupMeta: Meta<typeof CardGroup> = {
   component: CardGroup,
   tags: ["autodocs"],
   argTypes: {
+    alignment: {
+      options: ["left", "right"],
+      control: { type: "select" },
+    },
+    size: {
+      options: ["standard", "narrow", "wide", "fluid"],
+      control: { type: "select" },
+    },
+    cardCount: {
+      options: ["one", "two", "three", "four"],
+      control: { type: "select" },
+    },
+    theme: {
+      options: ["light", "dark"],
+      control: { type: "select" },
+    },
     titleLevel: {
       options: ["p", "h1", "h2", "h3", "h4", "h5"],
       control: { type: "select" },
@@ -54,6 +70,12 @@ export const StatCardGroup: StoryObj<typeof CardGroup> = {
 export const MultilinkCardGroup: StoryObj<typeof CardGroup> = {
   args: CardGroupArgs.multilinkCardGroup,
   name: "Multilink Group",
+  argTypes: {
+    alignment: {
+      options: ["left", "right"],
+      control: { type: "select" },
+    },
+  },
 };
 
 export const GraphicPromoCardGroup: StoryObj<typeof CardGroup> = {

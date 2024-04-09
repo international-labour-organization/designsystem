@@ -73,6 +73,7 @@ export const textCardGroup: CardGroupProps = {
   ],
   cardCount: "three",
   type: "text",
+  size: "narrow",
   cta: {
     label: "Discover our unique mission",
     url: "https://www.ilo.org",
@@ -124,6 +125,7 @@ const statCardGroup: CardGroupProps = {
     },
   ],
   cardCount: "three",
+  size: "narrow",
   type: "stat",
   cta: {
     label: "Discover our unique mission",
@@ -257,6 +259,7 @@ const multilinkCardGroup: CardGroupProps = {
   ],
   type: "multilink",
   cardCount: "three",
+  size: "standard",
   cta: {
     label: "Discover our unique mission",
     url: "https://www.ilo.org",
@@ -266,7 +269,6 @@ const multilinkCardGroup: CardGroupProps = {
 const promoCardGroup: CardGroupProps = {
   cards: [
     {
-      size: "standard",
       title: "ILO welcomes first global agreement on working conditions",
       eyebrow: "Report",
       theme: "dark",
@@ -280,7 +282,6 @@ const promoCardGroup: CardGroupProps = {
       },
     },
     {
-      size: "standard",
       title: "Renewable energy jobs hits 12.7 million globally",
       eyebrow: "High-level meeting",
       theme: "dark",
@@ -294,7 +295,6 @@ const promoCardGroup: CardGroupProps = {
       },
     },
     {
-      size: "standard",
       title: "ILO welcomes G7 call to make a just transition",
       eyebrow: "Podcast",
       theme: "dark",
@@ -308,7 +308,6 @@ const promoCardGroup: CardGroupProps = {
       },
     },
     {
-      size: "standard",
       title: "Telangana and Andhra Pradesh launch pre-departure handbook",
       eyebrow: "High-level meeting",
       theme: "dark",
@@ -324,6 +323,7 @@ const promoCardGroup: CardGroupProps = {
   ],
   type: "promo",
   cardCount: "three",
+  size: "standard",
   cta: {
     label: "Discover our unique mission",
     url: "https://www.ilo.org",
@@ -421,6 +421,7 @@ const featureCardGroup: CardGroupProps = {
   ],
   cardCount: "three",
   type: "feature",
+  size: "narrow",
   cta: {
     label: "Discover our unique mission",
     url: "https://www.ilo.org",
@@ -484,6 +485,7 @@ const detailCardGroup: CardGroupProps = {
   ],
   type: "detail",
   cardCount: "three",
+  size: "narrow",
   cta: {
     label: "Discover our unique mission",
     url: "https://www.ilo.org",
@@ -532,6 +534,7 @@ const factListCardGroup: CardGroupProps = {
   ],
   type: "factlist",
   cardCount: "three",
+  size: "narrow",
   cta: {
     label: "Discover our unique mission",
     url: "https://www.ilo.org",
@@ -541,7 +544,7 @@ const factListCardGroup: CardGroupProps = {
 const dataCardGroup: CardGroupProps = {
   cards: [
     {
-      size: "standard",
+      size: "narrow",
       eyebrow: "Press release",
       image: "/small.jpg",
       columns: "one",
@@ -604,7 +607,6 @@ const dataCardGroup: CardGroupProps = {
       },
     },
     {
-      size: "standard",
       eyebrow: "Report",
       image: "/small.jpg",
       columns: "one",
@@ -663,7 +665,6 @@ const dataCardGroup: CardGroupProps = {
       },
     },
     {
-      size: "standard",
       eyebrow: "Meeting",
       image: "/small.jpg",
       columns: "one",
@@ -718,7 +719,6 @@ const dataCardGroup: CardGroupProps = {
       },
     },
     {
-      size: "standard",
       eyebrow: "Meeting",
       image: "/small.jpg",
       columns: "one",
@@ -787,6 +787,7 @@ const dataCardGroup: CardGroupProps = {
   ],
   cardCount: "three",
   type: "data",
+  size: "narrow",
   cta: {
     label: "Discover our unique mission",
     url: "https://www.ilo.org",
