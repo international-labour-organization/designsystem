@@ -14,6 +14,10 @@ const CardGroupMeta: Meta<typeof CardGroup> = {
   component: CardGroup,
   tags: ["autodocs"],
   argTypes: {
+    alignment: {
+      options: ["left", "right"],
+      control: { type: "select" },
+    },
     size: {
       options: ["standard", "narrow", "wide", "fluid"],
       control: { type: "select" },
