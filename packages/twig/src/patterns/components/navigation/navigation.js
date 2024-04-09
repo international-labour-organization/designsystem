@@ -213,24 +213,27 @@ export default class Navigation {
       });
     }
 
-    // Click events in the searchBox should not bubble up to the body
-    this.searchBox.addEventListener(
-      EVENTS.CLICK,
-      (ev) => {
-        ev.stopPropagation();
-      },
-      false
-    );
+    if (this.searchBox) {
+      // Click events in the searchBox should not bubble up to the body
+      this.searchBox.addEventListener(
+        EVENTS.CLICK,
+        (ev) => {
+          ev.stopPropagation();
+        },
+        false
+      );
+    }
 
-    // Click events in the subNav should not bubble up to the body
-    this.subNav.addEventListener(
-      EVENTS.CLICK,
-      (ev) => {
-        ev.stopPropagation();
-      },
-      false
-    );
-
+    if (this.subNav) {
+      // Click events in the subNav should not bubble up to the body
+      this.subNav.addEventListener(
+        EVENTS.CLICK,
+        (ev) => {
+          ev.stopPropagation();
+        },
+        false
+      );
+    }
     window.addEventListener(EVENTS.RESIZE, (e) => {
       if (window.innerWidth >= 1024) {
         this.onResize(e);
