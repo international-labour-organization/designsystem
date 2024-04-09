@@ -1,5 +1,16 @@
 # @ilo-org/styles
 
+## 1.0.0
+
+### Major Changes
+
+- 1a5f3b3a0: 🎉 Version 1 Release
+
+### Patch Changes
+
+- 86850a6b7: Address accessibility issues with the heading order of cards by changing the default element used to render the title from an `<h3>` to `<p>`. Additionaly add an optional prop that allows for configuration of the title element if needed.
+- 7165c322e: Fix tab navigation order and accessibility issues in navigation component
+
 ## 0.16.1
 
 ### Patch Changes
