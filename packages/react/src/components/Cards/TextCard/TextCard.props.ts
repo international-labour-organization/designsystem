@@ -1,4 +1,4 @@
-import { ThemeTypes, CardSize, EventDate } from "../../../types";
+import { ThemeTypes, CardSize, EventDate, HeadingTypes } from "../../../types";
 
 import { ProfileProps } from "../../Profile/Profile.props";
 
@@ -12,6 +12,11 @@ export type TextCardProps = {
    * The title of the card
    */
   title: string;
+
+  /**
+   * HTML element used for the title
+   */
+  titleLevel?: HeadingTypes;
 
   /**
    * Will render the card to appear on light or dark backgrounds

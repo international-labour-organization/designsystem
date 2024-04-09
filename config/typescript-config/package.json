@@ -1,12 +1,15 @@
 {
   "name": "@ilo-org/typescript-config",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Typescript configuration for ILO Design System",
   "main": "tsconfig.json",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/international-labour-organization/designsystem.git"
   },
+  "files": [
+    "*.{js,ts,json}"
+  ],
   "publishConfig": {
     "access": "public"
   },

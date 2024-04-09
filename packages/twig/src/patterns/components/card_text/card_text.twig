@@ -3,23 +3,23 @@
 #}
 
 <div class="{{prefix}}--card--wrapper">
-  <div class="{{prefix}}--card {{prefix}}--card__type__text {{prefix}}--card__size__{{ size }} {{prefix}}--card__action {{prefix}}--card__theme__{{theme}}">
-    <a class="{{prefix}}--card--link" href="{{link}}" title="{{title}}">
-      <span class="{{prefix}}--card--link--text">{{title}}</span>
-    </a>
-    <div class="{{prefix}}--card--wrap">
-      <div class="{{prefix}}--card--content">
-        {% if eyebrow %}
-          <p class="{{prefix}}--card--eyebrow">{{eyebrow}}</p>
-        {% endif %}
-        {% if title %}
-          <h3 class="{{prefix}}--card--title">{{title}}</h3>
-        {% endif %}
-        {% if date %}
-          <time class="{{prefix}}--card--date" datetime="{{date.unix}}">{{date.human}}</time>
-        {% endif %}
-        {% if profile %}
-          {% include "@components/profile/profile.twig" with {
+	<div class="{{prefix}}--card {{prefix}}--card__type__text {{prefix}}--card__size__{{ size }} {{prefix}}--card__action {{prefix}}--card__theme__{{theme}}">
+		<a class="{{prefix}}--card--link" href="{{link}}" title="{{title}}">
+			<span class="{{prefix}}--card--link--text">{{title}}</span>
+		</a>
+		<div class="{{prefix}}--card--wrap">
+			<div class="{{prefix}}--card--content">
+				{% if eyebrow %}
+					<p class="{{prefix}}--card--eyebrow">{{eyebrow}}</p>
+				{% endif %}
+				{% if title %}
+					<{{titleLevel|default('p')}} class="{{ prefix }}--card--title">{{ title }}</{{titleLevel|default('p')}}>
+				{% endif %}
+				{% if date %}
+					<time class="{{prefix}}--card--date" datetime="{{date.unix}}">{{date.human}}</time>
+				{% endif %}
+				{% if profile %}
+					{% include "@components/profile/profile.twig" with {
             avatar: profile.avatar,
             description: profile.description,
             link: profile.link,
@@ -28,8 +28,8 @@
             prefix: prefix,
             theme: theme,
           } only %}
-        {% endif %}
-      </div>
-    </div>
-  </div>
+				{% endif %}
+			</div>
+		</div>
+	</div>
 </div>

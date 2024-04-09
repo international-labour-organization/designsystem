@@ -29,28 +29,6 @@
   "engines": {
     "pnpm": "8.6.0"
   },
-  "files": [
-    "config/*/*.{js,ts,json}",
-    "{packages,config}/*/package.json",
-    "{packages,config}/*/LICENSE",
-    "{packages,config}/*/OFL.txt",
-    "{packages,config}/*/README.md",
-    "{packages,config}/*/dist/**/*",
-    "{packages,config}/*/build/**/*",
-    "{packages,config}/*/es/**/*",
-    "{packages,config}/*/lib/**/*",
-    "{packages,config}/*/umd/**/*",
-    "packages/fonts/assets/**/*",
-    "packages/fonts/font-css/**/*",
-    "packages/fonts/**/*.scss",
-    "packages/icon-build-helpers/src/**/*",
-    "packages/icons/svg/**/*",
-    "packages/icons/**/metadata.json",
-    "packags/icons-react/next/**/*",
-    "packages/styles/css/**/*",
-    "packages/styles/scss/**/*",
-    "packages/themes/tokens/**/*"
-  ],
   "scripts": {
     "build:libs": "turbo run build:lib -v",
     "check:deps": "manypkg check",

@@ -1,7 +1,14 @@
 {
   "name": "@ilo-org/icons",
   "description": "Icons for digital and software products using ILO's Design System",
-  "version": "0.3.0",
+  "version": "0.3.1",
+  "files": [
+    "es/**/*",
+    "lib/**/*",
+    "umd/**/*",
+    "build/**/*",
+    "svg/**/*"
+  ],
   "contributors": [
     {
       "name": "Justin Smith",

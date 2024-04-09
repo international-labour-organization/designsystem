@@ -10,7 +10,7 @@ list:
       description: The list item's collapsed content.
       preview:
         faker: lorem.word
-    id:
+    elementId:
       type: text
       label: ID
       description: The list item's id.

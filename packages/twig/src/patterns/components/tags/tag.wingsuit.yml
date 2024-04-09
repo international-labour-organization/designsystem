@@ -1,7 +1,8 @@
 tag:
+  namespace: Components/Navigation
   use: "@components/tags/tag.twig"
   label: Tag
-  description: A display or interactable tag
+  description: A display an interactive tag
   fields:
     content:
       type: text
@@ -9,7 +10,7 @@ tag:
       description: The tag text content.
       preview:
         faker: lorem.word
-    id:
+    elementId:
       type: text
       label: ID
       description: The tag's id.
@@ -32,7 +33,7 @@ tag:
       preview: "false"
       required: false
     tagType:
-      type: type
+      type: select
       label: Tag Type
       description: The type of tag. Anchor and button have potential user interactions where display is static.
       options:

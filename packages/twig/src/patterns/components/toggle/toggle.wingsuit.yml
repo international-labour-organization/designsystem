@@ -14,6 +14,7 @@ toggle:
       preview: Accept cookies
     tooltip:
       type: string
+      label: Tooltip
       description: The tooltip for the form element.
     helper:
       type: text

@@ -1,7 +1,7 @@
 {
   "name": "@ilo-org/icon-build-helpers",
   "description": "Build helpers for ILO's Design System icon library",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "license": "Apache-2.0",
   "main": "src/index.js",
   "repository": {
@@ -9,6 +9,9 @@
     "url": "https://github.com/international-labour-organization/designsystem.git",
     "directory": "packages/icon-build-helpers"
   },
+  "files": [
+    "src/**/*"
+  ],
   "contributors": [
     {
       "name": "Justin Smith",

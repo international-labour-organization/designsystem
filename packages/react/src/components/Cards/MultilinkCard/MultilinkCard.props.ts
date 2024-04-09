@@ -1,4 +1,4 @@
-import { CardAlignment, CardSize } from "../../../types";
+import { CardAlignment, CardSize, HeadingTypes } from "../../../types";
 import { LinkListProps } from "../../LinkList/LinkList.props";
 
 export type MultilinkCardProps = {
@@ -13,6 +13,11 @@ export type MultilinkCardProps = {
    * The title of the card
    */
   title: string;
+
+  /**
+   * HTML element used for the title
+   */
+  titleLevel?: HeadingTypes;
 
   /**
    * How big should the card be
