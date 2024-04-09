@@ -347,7 +347,14 @@ export default class Navigation {
   handleSearchButtonClickOn(e) {
     e.stopImmediatePropagation();
     // e.stopPropagation();
-    this.element.classList.add(`${this.prefix}--search--open`);
+
+    // Cross-browser hack to make sure the element has display
+    // before the next class is added so the transition will work
+    this.searchBox.style.display = "block";
+    window.setTimeout(() => {
+      this.element.classList.add(`${this.prefix}--search--open`);
+    }, 10);
+
     window.addEventListener(
       EVENTS.KEY_DOWN,
       (ev) => this.keyPress(ev, this.searchButtonClickOff),
@@ -370,6 +377,12 @@ export default class Navigation {
   handleSearchButtonClickOff(e) {
     e.stopImmediatePropagation();
     this.element.classList.remove(`${this.prefix}--search--open`);
+
+    // Hiden from tab navigation after transition
+    window.setTimeout(() => {
+      this.searchBox.style.display = "none";
+    }, 225);
+
     window.removeEventListener(
       EVENTS.KEY_DOWN,
       (ev) => this.keyPress(ev, this.searchButtonClickOff),
@@ -422,7 +435,14 @@ export default class Navigation {
    */
   handleSubnavClickOn(e) {
     e.stopImmediatePropagation();
-    this.element.classList.add(`${this.prefix}--subnav--open`);
+    this.subNav.style.display = "block";
+
+    // Cross-browser hack to make sure the element has display
+    // before the next class is added so the transition will work
+    window.setTimeout(() => {
+      this.element.classList.add(`${this.prefix}--subnav--open`);
+    }, 10);
+
     window.addEventListener(
       EVENTS.KEY_DOWN,
       (ev) => this.keyPress(ev, this.subnavClickOff),
@@ -444,6 +464,11 @@ export default class Navigation {
   handleSubnavClickOff(e) {
     e.stopImmediatePropagation();
     this.element.classList.remove(`${this.prefix}--subnav--open`);
+
+    window.setTimeout(() => {
+      this.subNav.style.display = "none";
+    }, 150);
+
     window.removeEventListener(
       EVENTS.KEY_DOWN,
       (ev) => this.keyPress(ev, this.subnavClickOff),
@@ -502,7 +527,6 @@ export default class Navigation {
     e.stopImmediatePropagation();
     this.element.classList.remove(`${this.prefix}--mobile--open`);
     this.element.classList.remove(`${this.prefix}--subnav--open`);
-
     this.body.classList.remove(`${this.prefix}--menu--open`);
 
     return this;

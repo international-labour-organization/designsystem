@@ -1,4 +1,4 @@
-import { FC, useState } from "react";
+import { FC, useCallback, useEffect, useState } from "react";
 import useGlobalSettings from "../../hooks/useGlobalSettings";
 import { ContextMenu } from "../ContextMenu";
 import { SearchField } from "../SearchField";
@@ -23,32 +23,58 @@ const Navigation: FC<NavigationProps> = ({
 
   const [toggleMenuOpen, setMenuToggleOpen] = useState(false);
   const [toggleSearchOpen, setSearchToggleOpen] = useState(false);
+  const [searchTabbable, setSearchTabbable] = useState(false);
   const [toggleSubnavOpen, setSubnavToggleOpen] = useState(false);
+  const [subnavTabbable, setSubnavTabbable] = useState(false);
   const [toggleLanguageOpen, setLanguageToggleOpen] = useState(false);
 
   const baseClass = `${prefix}--header`;
   const NavigationClasses = classnames(baseClass, {
     [`${prefix}--mobile--open`]: toggleMenuOpen,
-    [`${prefix}--select--open`]: toggleLanguageOpen,
     [`${prefix}--search--open`]: toggleSearchOpen,
     [`${prefix}--subnav--open`]: toggleSubnavOpen,
+    [`${prefix}--select--open`]: toggleLanguageOpen,
+    [`${prefix}--context--open`]: toggleLanguageOpen,
   });
 
   const handleMenuToggle = () => {
     setMenuToggleOpen(!toggleMenuOpen);
   };
 
-  const handleLanguageToggle = () => {
+  const handleLanguageToggle = useCallback(() => {
     setLanguageToggleOpen(!toggleLanguageOpen);
-  };
+  }, [toggleLanguageOpen]);
 
   const handleSearchToggle = () => {
-    setSearchToggleOpen(!toggleSearchOpen);
+    if (toggleSearchOpen) {
+      setSearchToggleOpen(false);
+      setTimeout(() => setSearchTabbable(false), 225);
+      return;
+    }
+    setSearchTabbable(true);
+    setTimeout(() => setSearchToggleOpen(true), 10);
   };
 
   const handleSubnavToggle = () => {
-    setSubnavToggleOpen(!toggleSubnavOpen);
+    if (toggleSubnavOpen) {
+      setSubnavToggleOpen(false);
+      setTimeout(() => setSubnavTabbable(false), 125);
+      return;
+    }
+    setSubnavTabbable(true);
+    setTimeout(() => setSubnavToggleOpen(true), 10);
   };
+
+  useEffect(() => {
+    if (window) {
+      if (toggleLanguageOpen) {
+        window.addEventListener("click", handleLanguageToggle);
+      } else {
+        window.removeEventListener("click", handleLanguageToggle);
+      }
+      return () => window.removeEventListener("click", handleLanguageToggle);
+    }
+  }, [toggleLanguageOpen, handleLanguageToggle]);
 
   return (
     <header className={NavigationClasses}>
@@ -58,6 +84,7 @@ const Navigation: FC<NavigationProps> = ({
             <button
               className={`${prefix}--language-switcher--button`}
               type="button"
+              onClick={handleLanguageToggle}
             >
               {languagelabel}
             </button>
@@ -190,6 +217,7 @@ const Navigation: FC<NavigationProps> = ({
         </div>
         {subnav && (
           <nav
+            style={{ display: subnavTabbable ? "block" : "none" }}
             className={`${prefix}--subnav`}
             aria-labelledby="secondary-navigation"
           >
@@ -230,7 +258,10 @@ const Navigation: FC<NavigationProps> = ({
             </div>
           </nav>
         )}
-        <div className={`${prefix}--search-box`}>
+        <div
+          style={{ display: searchTabbable ? "block" : "none" }}
+          className={`${prefix}--search-box`}
+        >
           <div className={`${prefix}--header--inner ${prefix}--container`}>
             <SearchField
               input={searchfield?.input}
