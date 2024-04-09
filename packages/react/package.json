@@ -54,7 +54,8 @@
       "import": "./lib/esm/hooks/*.js",
       "require": "./lib/cjs/hooks/*.js",
       "types": "./lib/types/react/src/hooks/index.d.ts"
-    }
+    },
+    "./styles/": "./lib/styles/"
   },
   "typesVersions": {
     "*": {
@@ -80,7 +81,7 @@
   },
   "scripts": {
     "build": "pnpm build:lib",
-    "build:lib": "rollup -c",
+    "build:lib": "rollup -c && npm run copy:styles",
     "build:docs": "storybook build",
     "check": "tsc --noEmit --p tsconfig.build.json",
     "dev:lib": "rollup --config --configDevelop -w",
@@ -90,6 +91,7 @@
     "lint:fix": "eslint . --fix",
     "storybook": "storybook dev -p 6006",
     "storybook:static": "http-server ./storybook-static",
+    "copy:styles": "node copystyles.js",
     "test": "NODE_OPTIONS=--experimental-vm-modules SKIP_PREFLIGHT_CHECK=true react-scripts test --watchAll=false --setupFilesAfterEnv ./src/setup.ts"
   },
   "browserslist": {
