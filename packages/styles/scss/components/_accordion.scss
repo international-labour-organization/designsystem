@@ -79,6 +79,13 @@
     [dir="rtl"] & {
       background-position: calc(0% + px-to-rem(6px)) center;
     }
+
+    p {
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
   }
 
   &--panel {
