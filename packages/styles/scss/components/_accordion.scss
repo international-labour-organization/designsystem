@@ -16,7 +16,7 @@
     width: 100%;
     margin: 0;
     padding: spacing(4) 0;
-    padding-inline-end: spacing(4);
+    padding-inline-end: spacing(11);
 
     background-color: $color-ux-background-default;
     background-position: calc(100% - px-to-rem(6px)) center;
@@ -38,7 +38,7 @@
     &--large {
       @include font-styles("headline-6");
       padding: spacing(5) 0;
-      padding-inline-end: spacing(4);
+      padding-inline-end: spacing(11);
     }
 
     &:hover,
@@ -64,7 +64,7 @@
       &--large {
         @include font-styles("headline-6");
         padding: spacing(5) 0;
-        padding-inline-end: spacing(4);
+        padding-inline-end: spacing(11);
       }
     }
 
