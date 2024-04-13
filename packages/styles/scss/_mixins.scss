@@ -244,7 +244,7 @@
   color: map-get($color, "link", "text", "default");
   font-size: inherit;
   font-weight: inherit;
-  line-height: inherit;
+  line-height: 1.7;
   text-decoration: underline;
   text-underline-offset: px-to-rem(6px);
   text-decoration-thickness: px-to-rem(1.5px);
