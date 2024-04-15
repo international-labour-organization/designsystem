@@ -76,6 +76,8 @@ export default class Modal {
    * @chainable
    */
   enable() {
+    if (!this.OpenButton || !this.CloseButton) return this;
+
     this.OpenButton.addEventListener(EVENTS.CLICK, () =>
       this.OpenButtonHandler()
     );
