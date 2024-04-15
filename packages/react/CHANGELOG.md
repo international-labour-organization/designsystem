@@ -1,5 +1,18 @@
 # @ilo-org/react
 
+## 0.16.0
+
+### Minor Changes
+
+- 80fcce82c: Started exporting CSS files from the styles package in the react package
+
+### Patch Changes
+
+- Updated dependencies [5e1e3bc22]
+- Updated dependencies [597e7cc74]
+- Updated dependencies [7bc83b731]
+  - @ilo-org/styles@1.0.1
+
 ## 0.15.0
 
 ### Minor Changes

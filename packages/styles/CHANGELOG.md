@@ -1,5 +1,13 @@
 # @ilo-org/styles
 
+## 1.0.1
+
+### Patch Changes
+
+- 5e1e3bc22: Fix accordion button text overlapping plus/minus icon
+- 597e7cc74: Fix Hero responsive layout
+- 7bc83b731: Showing tabs titles always in one line.
+
 ## 1.0.0
 
 ### Major Changes
