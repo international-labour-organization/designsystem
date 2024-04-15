@@ -373,10 +373,10 @@
   background: map-get($color, "tooltip", "dark", "background");
   height: $height;
   width: $width;
-
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 
   &::after {
     content: "";
