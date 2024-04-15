@@ -1,5 +1,15 @@
 # @ilo-org/twig
 
+## 1.0.1
+
+### Patch Changes
+
+- 1dc0d22d1: added defensive checks for the modal and navigation components
+- Updated dependencies [5e1e3bc22]
+- Updated dependencies [597e7cc74]
+- Updated dependencies [7bc83b731]
+  - @ilo-org/styles@1.0.1
+
 ## 1.0.0
 
 ### Major Changes
