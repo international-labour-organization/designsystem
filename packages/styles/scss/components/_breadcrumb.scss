@@ -51,6 +51,7 @@
 
       &--dropdown {
         font-family: $fonts-copy;
+        @include font-styles("body-xxs");
       }
     }
 
