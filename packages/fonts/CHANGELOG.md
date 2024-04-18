@@ -1,5 +1,11 @@
 # @ilo-org/fonts
 
+## 0.2.2
+
+### Patch Changes
+
+- fdf83a353: Set correct font weight for Arabic bold fonts
+
 ## 0.2.1
 
 ### Patch Changes
