@@ -115,14 +115,14 @@
       }
 
       &--label {
-        display: -webkit-box;
-        -webkit-line-clamp: 1;
-        -webkit-box-orient: vertical;
         overflow: hidden;
         padding-top: spacing(1);
+        white-space: nowrap;
+        text-overflow: ellipsis;
       }
 
       &--item {
+        overflow: hidden;
         display: block;
         width: 100%;
 
