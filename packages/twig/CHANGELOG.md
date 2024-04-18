@@ -1,5 +1,19 @@
 # @ilo-org/twig
 
+## 1.0.2
+
+### Patch Changes
+
+- 389fb2e37: Fix icons not showing in tabs by using the new twig icon component
+- 329e927cb: Fix long breadcrumb links not wrapping correctly on small devices
+- Updated dependencies [990deb1b5]
+- Updated dependencies [fdf83a353]
+- Updated dependencies [329e927cb]
+- Updated dependencies [ce1bd16a6]
+- Updated dependencies [66a22bd35]
+  - @ilo-org/styles@1.0.2
+  - @ilo-org/fonts@0.2.2
+
 ## 1.0.1
 
 ### Patch Changes
