@@ -1,5 +1,16 @@
 # @ilo-org/styles
 
+## 1.0.2
+
+### Patch Changes
+
+- 990deb1b5: Reduce the sharpness of the edge of the language switcher button as it becomes too sharp during the hover effect
+- 329e927cb: Fix long breadcrumb links not wrapping correctly on small devices
+- ce1bd16a6: Better solution for keeping tab labels on one line
+- 66a22bd35: In tabs, make sure long label doesn't cover up icon
+- Updated dependencies [fdf83a353]
+  - @ilo-org/fonts@0.2.2
+
 ## 1.0.1
 
 ### Patch Changes
