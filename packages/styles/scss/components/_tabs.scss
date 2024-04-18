@@ -71,6 +71,7 @@
         font-family: $fonts-display;
         font-weight: 600;
         display: flex;
+        gap: spacing(1);
         height: px-to-rem(60px);
         justify-content: flex-start;
         padding-left: spacing(2);
@@ -88,13 +89,13 @@
         &.icon {
           .ilo--icon {
             height: px-to-rem(16px);
-            margin-right: px-to-rem(5px);
             order: 1;
             width: px-to-rem(16px);
           }
 
           .ilo--tabs--selection--label {
             order: 2;
+            flex: 1 1;
           }
         }
 
@@ -115,14 +116,14 @@
       }
 
       &--label {
-        display: -webkit-box;
-        -webkit-line-clamp: 1;
-        -webkit-box-orient: vertical;
         overflow: hidden;
         padding-top: spacing(1);
+        white-space: nowrap;
+        text-overflow: ellipsis;
       }
 
       &--item {
+        overflow: hidden;
         display: block;
         width: 100%;
 

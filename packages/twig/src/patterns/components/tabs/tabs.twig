@@ -10,7 +10,10 @@
           <a href="#tab--{{tabids[loop.index - 1]}}" class="{{prefix}}--tabs--selection--button{% if item.icon is defined %} icon{% endif %}" aria-controls="tab--{{tabids[loop.index - 1]}}" role="tab" tabindex="0" {% if loop.index == 1 %}aria-selected="true"{% else %}aria-selected="false"{% endif %} title="{{item.label}}">
             <span class="{{prefix}}--tabs--selection--label">{{item.label}}</span>
             {% if item.icon is defined %}
-              {% include '@components/icon/icon.twig' with {icon: item.icon} %}
+              {% include '@components/icon/icon.twig' with {
+               name: item.icon,
+               size: '24'
+              } %}
             {% endif %}
           </a>
         </li>

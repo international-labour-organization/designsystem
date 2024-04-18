@@ -7,9 +7,10 @@ tabs:
     items:
       type: object
       label: Items
-      description: The items and labels for each tab
+      description: The items and labels for each tab. Each item takes a `label` property which gives the tag a name, a `component` property which specifies the kind of component the tab should render, and the `componentdata` which contains the data that will be passed to that component. You can also include an optional `icon` component with the name of the icon to render next to the label.
       preview:
         - label: "Tab Label With A Really Really Lenghty Title Even Though We Do Not Recommend Such A Lengthy Title"
+          icon: "info"
           component: "image"
           componentdata:
             alt: "My alt text"
@@ -33,137 +34,5 @@ tabs:
     default:
       label: Default
       description: the default settings for the Tabs
-    withicon:
-      label: With Icon
-      description: Tabs with Icons
-      fields:
-        items:
-          - label: "Tab One"
-            component: "image"
-            componentdata:
-              alt: "My alt text"
-              caption: "my image caption"
-              credit: "Photo: copyright 2022 Person S. Name"
-              url:
-                - breakpoint: 0
-                  src: "https://place-hold.it/400x300?text=Tab One Image"
-                - breakpoint: 800
-                  src: "https://place-hold.it/800x600?text=Tab One tImage"
-                - breakpoint: 1200
-                  src: "https://place-hold.it/1200x900?text=Tab One Image"
-                - breakpoint: 1440
-                  src: "https://place-hold.it/1600x1200?text=Tab One Image"
-            icon: error
-          - label: "Tab Two"
-            component: "image"
-            componentdata:
-              alt: "My alt text"
-              caption: "my image caption"
-              credit: "Photo: copyright 2022 Person S. Name"
-              url:
-                - breakpoint: 0
-                  src: "https://place-hold.it/400x300?text=Tab Two Image"
-                - breakpoint: 800
-                  src: "https://place-hold.it/800x600?text=Tab Two Image"
-                - breakpoint: 1200
-                  src: "https://place-hold.it/1200x900?text=Tab Two Image"
-                - breakpoint: 1440
-                  src: "https://place-hold.it/1600x1200?text=Tab Two Image"
-            icon: error
-          - label: "Tab Three"
-            component: "image"
-            componentdata:
-              alt: "My alt text"
-              caption: "my image caption"
-              credit: "Photo: copyright 2022 Person S. Name"
-              url:
-                - breakpoint: 0
-                  src: "https://place-hold.it/400x300?text=Tab Three Image"
-                - breakpoint: 800
-                  src: "https://place-hold.it/800x600?text=Tab Three Image"
-                - breakpoint: 1200
-                  src: "https://place-hold.it/1200x900?text=Tab Three Image"
-                - breakpoint: 1440
-                  src: "https://place-hold.it/1600x1200?text=Tab Three Image"
-            icon: error
-    fiveitems:
-      label: Five Items
-      description: Tab component with five items
-      fields:
-        items:
-          - label: "Tab One"
-            component: "image"
-            componentdata:
-              alt: "My alt text"
-              caption: "my image caption"
-              credit: "Photo: copyright 2022 Person S. Name"
-              url:
-                - breakpoint: 0
-                  src: "https://place-hold.it/400x300?text=Tab One Image"
-                - breakpoint: 800
-                  src: "https://place-hold.it/800x600?text=Tab One tImage"
-                - breakpoint: 1200
-                  src: "https://place-hold.it/1200x900?text=Tab One Image"
-                - breakpoint: 1440
-                  src: "https://place-hold.it/1600x1200?text=Tab One Image"
-          - label: "Tab Two"
-            component: "image"
-            componentdata:
-              alt: "My alt text"
-              caption: "my image caption"
-              credit: "Photo: copyright 2022 Person S. Name"
-              url:
-                - breakpoint: 0
-                  src: "https://place-hold.it/400x300?text=Tab Two Image"
-                - breakpoint: 800
-                  src: "https://place-hold.it/800x600?text=Tab Two Image"
-                - breakpoint: 1200
-                  src: "https://place-hold.it/1200x900?text=Tab Two Image"
-                - breakpoint: 1440
-                  src: "https://place-hold.it/1600x1200?text=Tab Two Image"
-          - label: "Tab Three"
-            component: "image"
-            componentdata:
-              alt: "My alt text"
-              caption: "my image caption"
-              credit: "Photo: copyright 2022 Person S. Name"
-              url:
-                - breakpoint: 0
-                  src: "https://place-hold.it/400x300?text=Tab Three Image"
-                - breakpoint: 800
-                  src: "https://place-hold.it/800x600?text=Tab Three Image"
-                - breakpoint: 1200
-                  src: "https://place-hold.it/1200x900?text=Tab Three Image"
-                - breakpoint: 1440
-                  src: "https://place-hold.it/1600x1200?text=Tab Three Image"
-          - label: "Tab Four Has A Really Lenghthy Title Which Might Get Truncated"
-            component: "image"
-            componentdata:
-              alt: "My alt text"
-              caption: "my image caption"
-              credit: "Photo: copyright 2022 Person S. Name"
-              url:
-                - breakpoint: 0
-                  src: "https://place-hold.it/400x300?text=Tab Four Image"
-                - breakpoint: 800
-                  src: "https://place-hold.it/800x600?text=Tab Four Image"
-                - breakpoint: 1200
-                  src: "https://place-hold.it/1200x900?text=Tab Four Image"
-                - breakpoint: 1440
-                  src: "https://place-hold.it/1600x1200?text=Tab Four Image"
-          - label: "Tab Five"
-            component: "image"
-            componentdata:
-              alt: "My alt text"
-              caption: "my image caption"
-              credit: "Photo: copyright 2022 Person S. Name"
-              url:
-                - breakpoint: 0
-                  src: "https://place-hold.it/400x300?text=Tab Five Image"
-                - breakpoint: 800
-                  src: "https://place-hold.it/800x600?text=Tab Five Image"
-                - breakpoint: 1200
-                  src: "https://place-hold.it/1200x900?text=Tab Five Image"
-                - breakpoint: 1440
-                  src: "https://place-hold.it/1600x1200?text=Tab Five Image"
+
   visibility: storybook
