@@ -1,17 +1,17 @@
 {#
   CALLOUT COMPONENT
 #}
-<div class="{{prefix}}--callout {{prefix}}--callout--{{alert}} {% if isCollapsible == "true" and isOpen == "true" %} {{prefix}}--callout--open {% endif %} {% if isCollapsible == "true" %} {{prefix}}--callout--collapse {% endif %}" data-loadcomponent="Callout">
+<div class="{{prefix}}--callout {{prefix}}--callout--{{alert}} {% if isCollapsible|boolval and isOpen|boolval %} {{prefix}}--callout--open {% endif %} {% if isCollapsible|boolval %} {{prefix}}--callout--collapse {% endif %}" data-loadcomponent="Callout">
 	<div class="{{prefix}}--callout--sidebar">
 		<span class="{{prefix}}--callout--icon icon icon--{{alert}}"></span>
 	</div>
 	<div class="{{prefix}}--callout--content">
 		<div class="{{prefix}}--callout--header">
 			<h5 class="{{prefix}}--callout--title">{{ title }}</h5>
-			{% if isCollapsible == "true" %}
+			{% if isCollapsible|boolval %}
 				<button class="{{prefix}}--callout--toggle" type="button" data-open="{{ toggleOpenLabel }}" data-closed="{{ toggleClosedLabel }}">
 					<span class="{{prefix}}--callout--button-text">
-						{% if isOpen %}
+						{% if isOpen|boolval %}
 							{{ toggleOpenLabel }}
 						{% else %}
 							{{ toggleClosedLabel }}

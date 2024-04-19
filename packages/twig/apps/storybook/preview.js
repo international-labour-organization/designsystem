@@ -28,11 +28,10 @@ addParameters({
 
 const renderer = new TwingRenderer();
 const environment = renderer.getEnvironment();
-const boolval = (value) => Boolean(value);
+const boolval = (string) => (string === "false" ? false : !!string);
 environment.addFilter(
   new TwingFilter("boolval", (value) => Promise.resolve(boolval(value)))
 );
-
 configure(
   module,
   [
