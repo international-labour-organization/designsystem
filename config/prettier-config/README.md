@@ -2,20 +2,10 @@
 
 > Prettier config for the ILO Design System. These docs are a WIP.
 
-## Getting starteds
-
-To install `@ilo-org/prettier-config` in your project, you will need to run the
-following command using [npm](https://www.npmjs.com/):
+## Getting started
 
 ```bash
 npm install -D @ilo-org/prettier-config
-```
-
-If you prefer [Yarn](https://yarnpkg.com/en/), use the following command
-instead:
-
-```bash
-yarn add -D @ilo-org/prettier-config
 ```
 
 ## Usage
