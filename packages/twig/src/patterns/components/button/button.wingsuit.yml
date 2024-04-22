@@ -20,7 +20,7 @@ button:
       type: string
       label: url
       description: The url for the button if it's a link
-      preview: ""
+      preview: "http://example.com"
       required: false
     target:
       type: object
@@ -66,14 +66,11 @@ button:
         icononly: Icon Only
       preview: "primary"
     disabled:
-      type: select
+      type: boolean
       label: Disabled
       description: The disabled state of the button.
       required: false
-      options:
-        "true": "true"
-        "false": "false"
-      preview: "false"
+      preview: false
     kind:
       type: select
       label: Kind
@@ -94,21 +91,15 @@ button:
       preview: left
       required: false
     icononly:
-      type: select
+      type: boolean
       label: Icon Only
       description: Is this an icon-only button?
-      options:
-        "true": "true"
-        "false": "false"
-      preview: "false"
+      preview: false
       required: false
     opensmodal:
-      type: select
+      type: boolean
       label: Opens Modal
       description: Does this button trigger open a modal?
-      options:
-        "true": "true"
-        "false": "false"
-      preview: "false"
+      preview: false
       required: false
   visibility: storybook
