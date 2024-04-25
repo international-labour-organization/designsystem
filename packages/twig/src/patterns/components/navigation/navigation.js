@@ -470,7 +470,7 @@ export default class Navigation {
 
     window.setTimeout(() => {
       this.subNav.style.display = "none";
-    }, 150);
+    }, 225);
 
     window.removeEventListener(
       EVENTS.KEY_DOWN,
