@@ -1,5 +1,11 @@
 # @ilo-org/themes
 
+## 0.9.0
+
+### Minor Changes
+
+- 7a37d7e6d: Remove Accordion color token
+
 ## 0.8.1
 
 ### Patch Changes
