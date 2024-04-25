@@ -58,7 +58,7 @@ const Navigation: FC<NavigationProps> = ({
   const handleSubnavToggle = () => {
     if (toggleSubnavOpen) {
       setSubnavToggleOpen(false);
-      setTimeout(() => setSubnavTabbable(false), 125);
+      setTimeout(() => setSubnavTabbable(false), 225);
       return;
     }
     setSubnavTabbable(true);
