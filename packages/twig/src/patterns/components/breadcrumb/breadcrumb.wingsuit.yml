@@ -4,14 +4,13 @@ breadcrumb:
   label: Breadcrumb
   description: A component for displaying links in a "breadcrumb" ux
   fields:
-    home:
-      type: object
-      label: Home
-      description: url and label for link to site home page
-      required: true
-      preview:
-        label: "Home"
-        url: "/"
+    buttonlabel:
+      type: string
+      label: buttonlabel
+      description: The `aria-label` value for the button that toggles the context menu when the Breadcrumbs are collapsed
+      required: false
+      default: "Toggle links"
+      preview: "Toggle links"
     links:
       type: object
       label: Home
