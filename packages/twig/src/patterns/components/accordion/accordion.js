@@ -130,7 +130,7 @@ export default class Accordion {
     const panel = panelbutton
       .closest(".ilo--accordion--item")
       .querySelector(".ilo--accordion--panel");
-    const isopen = panel.classList.contains("ilo--accordion--panel--open");
+    const isopen = panel.classList.contains("ilo--accordion--panel__open");
 
     if (!this.multipleExpanded) {
       this.accordionPanels.forEach((item) => {
@@ -158,7 +158,7 @@ export default class Accordion {
    * @chainable
    */
   collapseSection(element) {
-    element.classList.remove("ilo--accordion--panel--open");
+    element.classList.remove("ilo--accordion--panel__open");
     element.parentElement
       .querySelector(".ilo--accordion--button")
       .setAttribute(ARIA.EXPANDED, "false");
@@ -178,7 +178,7 @@ export default class Accordion {
       .querySelector(".ilo--accordion--button")
       .setAttribute(ARIA.EXPANDED, "true");
     element.setAttribute(ARIA.HIDDEN, "false");
-    element.classList.add("ilo--accordion--panel--open");
+    element.classList.add("ilo--accordion--panel__open");
     this.handleTabIndex(element, "ADD");
   }
 

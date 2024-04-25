@@ -18,7 +18,7 @@ import {
 import { brand } from "@ilo-org/themes/tokens/brand/base.json";
 
 const LogoMeta: Meta<typeof Logo> = {
-  title: "Components/Brand/Logo",
+  title: "Components/Media/Logo",
   component: Logo,
   tags: ["autodocs"],
   argTypes: {

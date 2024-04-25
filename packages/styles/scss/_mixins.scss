@@ -339,18 +339,33 @@
 @mixin cornercut(
   $width: $spacing-padding-8,
   $height: $spacing-padding-5,
-  $dir: "right"
+  $dir: "right",
+  $side: "top"
 ) {
-  clip-path: polygon(
-    0 0,
-    calc(100% - $width) 0,
-    100% $height,
-    100% 100%,
-    0 100%
-  );
+  @if ($side == "top") {
+    @if ($dir == "right") {
+      clip-path: polygon(
+        0 0,
+        calc(100% - $width) 0,
+        100% $height,
+        100% 100%,
+        0 100%
+      );
+    }
 
-  @if ($dir == "left") {
-    clip-path: polygon($width 0, 100% 0, 100% 100%, 0 100%, 0 $height);
+    @if ($dir == "left") {
+      clip-path: polygon($width 0, 100% 0, 100% 100%, 0 100%, 0 $height);
+    }
+  }
+
+  @if ($side == "bottom") {
+    @if ($dir == "right") {
+      clip-path: polygon(0 0, 100% 0, calc(100% - $width) $height, 0 100%);
+    }
+
+    @if ($dir == "left") {
+      clip-path: polygon(0 0, 100% 0, 100% $height, $width 100%);
+    }
   }
 }
 
