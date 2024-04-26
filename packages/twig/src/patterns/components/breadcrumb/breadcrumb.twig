@@ -33,7 +33,7 @@
 							</li>
 						{% endfor %}
 					</ol>
-					<button aria-label="{{buttonlabel|default('More links')}}" aria-expanded="false" controls="{{prefix}}--breadcrumb--menu" class="{{prefix}}--breadcrumb--context--button"></button>
+					<button aria-label="{{buttonlabel|default('More links')}}" aria-expanded="false" aria-controls="{{prefix}}--breadcrumb--menu" class="{{prefix}}--breadcrumb--context--button"></button>
 				</li>
 			{% endif %}
 			{# Render the last one outside the context area #}
@@ -46,7 +46,7 @@
 			{% endif %}
 		</ol>
 	</div>
-	<div class="{{prefix}}--breadcrumb--context--menu" id="{{prefix}}--breadcrumb--menu">
+	<div class="{{prefix}}--breadcrumb--context--menu" id="{{prefix}}--breadcrumb--menu" hidden>
 		{% include '@components/contextmenu/contextmenu.twig' with {
 			links: contextLinks,
 			prefix: prefix

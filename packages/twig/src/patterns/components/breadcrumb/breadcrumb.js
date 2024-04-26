@@ -227,6 +227,7 @@ export default class Breadcrumb {
    */
   openContextMenu() {
     this.contextMenu.classList.add(this.contextMenuVisibleClass);
+    this.contextMenu.removeAttribute("hidden");
     this.contextButton.setAttribute("aria-expanded", "true");
     this.positionContextMenu();
     return this;
@@ -240,7 +241,8 @@ export default class Breadcrumb {
    */
   closeContextMenu() {
     this.contextMenu.classList.remove(this.contextMenuVisibleClass);
-    this.contextButton.setAttribute("aria-expanded", "false");
+    this.contextMenu.setAttribute("hidden", "");
+    this.contextButton.setAttribute("aria-expanded", "");
   }
 
   /**
