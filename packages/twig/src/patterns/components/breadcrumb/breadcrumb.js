@@ -187,6 +187,7 @@ export default class Breadcrumb {
         if (document.activeElement === this.contextButton) {
           e.preventDefault();
           this.focusContextMenuItemFirstLink();
+          return this;
         }
 
         // If the last context menu item is focused then the next focusable
@@ -195,6 +196,7 @@ export default class Breadcrumb {
           e.preventDefault();
           this.focusBreadcrumbsLastLink();
           this.closeContextMenu();
+          return this;
         }
       }
     }
@@ -211,8 +213,8 @@ export default class Breadcrumb {
   positionContextMenu() {
     const buttonRect = this.contextButton.getBoundingClientRect();
     const buttonCenterX = buttonRect.left + buttonRect.width / 2;
-    const contextMenuWidth = this.contextMenu.offsetWidth;
-    const navStart = buttonCenterX - contextMenuWidth / 2;
+    const contextMenuItemsWidth = this.contextMenuItems.offsetWidth;
+    const navStart = buttonCenterX - contextMenuItemsWidth / 2;
     const navTop = buttonRect.bottom + 16;
     this.contextMenu.style.left = navStart + "px";
     this.contextMenu.style.top = navTop + "px";
@@ -228,7 +230,7 @@ export default class Breadcrumb {
   openContextMenu() {
     this.contextMenu.classList.add(this.contextMenuVisibleClass);
     this.contextMenu.removeAttribute("hidden");
-    this.contextButton.setAttribute("aria-expanded", "true");
+    this.contextButton.setAttribute("aria-expanded", true);
     this.positionContextMenu();
     return this;
   }
@@ -241,8 +243,8 @@ export default class Breadcrumb {
    */
   closeContextMenu() {
     this.contextMenu.classList.remove(this.contextMenuVisibleClass);
-    this.contextMenu.setAttribute("hidden", "");
-    this.contextButton.setAttribute("aria-expanded", "");
+    this.contextMenu.setAttribute("hidden", "hidden");
+    this.contextButton.setAttribute("aria-expanded", false);
   }
 
   /**
