@@ -1,80 +1,98 @@
-import { FC, useState, useEffect } from "react";
+/* eslint-disable jsx-a11y/anchor-has-content */
+/* This is a good rule in general, but disabling here because the link has an aria-label */
+
+import { FC, useState } from "react";
 import useGlobalSettings from "../../hooks/useGlobalSettings";
 import classnames from "classnames";
-import { BreadcrumbProps } from "./Breadcrumb.props";
+import { BreadcrumbProps, BreadcrumbItemProps } from "./Breadcrumb.props";
 import { ContextMenu } from "../ContextMenu";
 
-const Breadcrumb: FC<BreadcrumbProps> = ({ home, links }) => {
+const BreadcrumbItem: FC<BreadcrumbItemProps> = ({
+  url,
+  label,
+  className,
+  labelShown = true,
+}) => {
   const { prefix } = useGlobalSettings();
 
-  const [showContextMenu, enableContextMenu] = useState(false);
-  const [toggleMenuOpen, setContextMenuToggleOpen] = useState(false);
+  const [contextMenuOpen, setContextMenuOpen] = useState(false);
 
-  const handleScreenResize = () => {
-    enableContextMenu(window.innerWidth <= 1024); // turn on context menu when screen is resized to a smaller size
-  };
+  const baseClass = `${prefix}--breadcrumb--item`;
+  const linkClass = `${prefix}--breadcrumb--link`;
+  const labelClass = `${linkClass}--label`;
 
-  useEffect(() => {
-    window.addEventListener("resize", handleScreenResize);
-    handleScreenResize();
-
-    return () => {
-      window.removeEventListener("resize", handleScreenResize);
-    };
-  }, []);
-
-  const handleContextMenuToggle = () => {
-    setContextMenuToggleOpen(!toggleMenuOpen);
-  };
-
-  const showContext = links.length > 4 || showContextMenu ? true : false;
-
-  const baseClass = `${prefix}--breadcrumb`;
-  const BreadcrumbClasses = classnames(baseClass);
-
-  const lastLink = links[links.length - 1];
-  const menuLinks = links.slice(0, -1);
+  const breadcrumbLinkClass = classnames(baseClass, className);
 
   return (
-    <nav
-      className={`${BreadcrumbClasses} ${showContext ? " contextmenu" : ""}`}
-    >
-      <ol className={`${baseClass}--items`}>
-        <li className={`${baseClass}--item home`}>
-          <a className={`${baseClass}--link`} href={home.url}>
-            <span className={`${baseClass}--link--label`}>{home.label}</span>
-          </a>
-        </li>
-        <li
-          className={`${baseClass}--item--context`}
-          onClick={handleContextMenuToggle}
-        >
-          <ul
-            className={`${baseClass}--items context--menu ${
-              toggleMenuOpen ? " open" : ""
-            }`}
-          >
-            {showContext && <ContextMenu links={menuLinks}></ContextMenu>}
-            {!showContext &&
-              menuLinks.map((link, index) => (
-                <li className={`${baseClass}--item`} key={index}>
-                  <a href={link.url} className={`${baseClass}--link`}>
-                    <span className={`${baseClass}--link--label`}>
-                      {link.label}
-                    </span>
-                  </a>
-                </li>
-              ))}
-          </ul>
-        </li>
-        <li className={`${baseClass}--item final`}>
-          <a className={`${baseClass}--link`} href={lastLink.url}>
-            <span className={`${baseClass}--link--label`}>
-              {lastLink.label}
-            </span>
-          </a>
-        </li>
-      </ol>
+    <li className={breadcrumbLinkClass}>
+      {labelShown ? (
+        <a className={linkClass} href={url}>
+          <span className={labelClass}>{label}</span>
+        </a>
+      ) : (
+        <a aria-label={label} className={linkClass} href={url}></a>
+      )}
+    </li>
+  );
+};
+
+const Breadcrumb: FC<BreadcrumbProps> = ({ className, links, buttonLabel }) => {
+  const { prefix } = useGlobalSettings();
+
+  const baseClass = `${prefix}--breadcrumb`;
+  const innerClass = `${baseClass}--inner`;
+  const itemsClass = `${baseClass}--items`;
+  const itemClass = `${baseClass}--item`;
+  const itemFirstClass = `${itemClass}__first`;
+  const contextClass = `${baseClass}--context`;
+  const buttonClass = `${contextClass}--button`;
+  const controlsId = `${baseClass}--menu`;
+
+  const breadcrumbClass = classnames(baseClass, className);
+
+  const firstLink = links[0];
+  const contextLinks = links.slice(1, links.length - 1);
+  const lastLink = links[links.length];
+
+  return (
+    <nav className={breadcrumbClass}>
+      <div className={innerClass}>
+        <ol className={itemsClass}>
+          <BreadcrumbItem
+            url={firstLink.url}
+            label={firstLink.label}
+            labelShown={false}
+            className={itemFirstClass}
+          />
+          {contextLinks && contextLinks.length > 0 ? (
+            <li className={contextClass}>
+              <ol className={itemsClass}>
+                {contextLinks.map((contextLink) => (
+                  <BreadcrumbItem
+                    url={contextLink.url}
+                    label={contextLink.label}
+                  />
+                ))}
+              </ol>
+              <button
+                aria-label={buttonLabel}
+                aria-expanded="false"
+                aria-controls={controlsId}
+                className={buttonClass}
+              ></button>
+            </li>
+          ) : null}
+          {lastLink && (
+            <BreadcrumbItem url={lastLink.url} label={lastLink.label} />
+          )}
+        </ol>
+      </div>
+      <div
+        className="{{prefix}}--breadcrumb--context--menu"
+        id="{{prefix}}--breadcrumb--menu"
+      >
+        <ContextMenu />
+      </div>
     </nav>
   );
 };
