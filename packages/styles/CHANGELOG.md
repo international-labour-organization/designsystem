@@ -1,5 +1,11 @@
 # @ilo-org/styles
 
+## 1.0.4
+
+### Patch Changes
+
+- 0c695f735: Make sure Breadcrumb stays within its container
+
 ## 1.0.3
 
 ### Patch Changes
