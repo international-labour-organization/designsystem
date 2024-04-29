@@ -1,5 +1,13 @@
 # @ilo-org/twig
 
+## 1.0.4
+
+### Patch Changes
+
+- 607b6abb4: Small accessibility fixes to the Breadcrumb
+- Updated dependencies [0c695f735]
+  - @ilo-org/styles@1.0.4
+
 ## 1.0.3
 
 ### Patch Changes
