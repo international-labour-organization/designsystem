@@ -69,22 +69,6 @@
 //
 // Useful for using color variables with inline CSS SVGs
 // =========================================
-@function encodecolor($string) {
-  @if type-of($string) == "color" and str-index(#{$string}, "#") == 1 {
-    $hex: str-slice(ie-hex-str($string), 4);
-    $string: unquote("#{$hex}");
-
-    @return "%23" + $string;
-  }
-
-  @return $string;
-}
-
-// =========================================
-// Encode color strings
-//
-// Useful for using color variables with inline CSS SVGs
-// =========================================
 @function colortodataurlicon($name, $color) {
   $icon: map-get($icons, $name);
   $fill: "currentColor";
