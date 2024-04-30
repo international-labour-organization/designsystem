@@ -1,11 +1,12 @@
 @use "../tokens" as *;
 @use "../functions" as *;
 @import "../mixins";
+@import "../config";
 
-.ilo--callout {
+.#{$prefix}--callout {
   display: flex;
   transition: max-height 225ms ease-out;
-  $self: &;
+  $callout: &;
 
   &--collapse:not(.ilo--callout--open) {
     max-height: 64px;
@@ -16,40 +17,43 @@
     max-height: 300px;
     overflow: hidden;
 
-    #{$self}--toggle--icon {
+    #{$callout}--toggle--icon {
       transform: translateY(-50%) rotate(180deg);
     }
   }
 
-  &--sidebar {
+  &__sidebar {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: spacing(5) spacing(2);
     width: px-to-rem(40px);
 
-    #{$self}--icon {
+    #{$callout}__icon {
       margin: spacing(1);
     }
   }
 
-  &--content {
+  &__content {
     padding: spacing(6);
     width: 100%;
-    font-size: px-to-rem(14.93px);
+    font-size: px-to-rem(14px);
   }
 
-  &--header {
+  &__header {
     display: flex;
     justify-content: space-between;
-    padding-bottom: spacing(3);
+    padding-block-end: spacing(3);
   }
 
-  &--title {
+  &__title {
     @include font-styles("nav-bold-b");
-
     font-family: $fonts-display;
     font-weight: 700;
+  }
+
+  &__description {
+    font-weight: 400;
   }
 
   &--toggle {
@@ -61,10 +65,10 @@
     cursor: pointer;
     font-family: $fonts-display;
     font-weight: 500;
-    padding-right: spacing(8);
+    padding-inline-end: spacing(8);
     position: relative;
 
-    &--icon {
+    &__icon {
       @include dataurlicon("arrow", $brand-ilo-dark-blue);
 
       background-position: right;
@@ -80,8 +84,8 @@
     }
   }
 
-  &--footer {
-    padding-top: spacing(5);
+  &__footer {
+    padding-block-start: spacing(5);
   }
 
   .icon {
@@ -91,59 +95,55 @@
     height: 16px;
     width: 16px;
 
-    &--error {
+    &__error {
       background-color: $color-ux-notification-type-error;
-
       @include dataurlicon("error", $color-ux-notification-icon);
     }
 
-    &--info {
+    &__info {
       background-color: $color-ux-notification-type-info;
-
       @include dataurlicon("info", $color-ux-notification-icon);
     }
 
-    &--success {
+    &__success {
       background-color: $color-ux-notification-type-success;
-
       @include dataurlicon("success", $color-ux-notification-icon);
     }
 
-    &--warning {
+    &__warning {
       background-color: $color-ux-notification-type-warning;
-
       @include dataurlicon("warning", $color-ux-notification-icon);
     }
   }
 
-  &--error {
+  &__error {
     background: $brand-ilo-ramp-red;
 
-    #{$self}--sidebar {
+    #{$callout}__sidebar {
       background: $brand-ilo-red;
     }
   }
 
-  &--info {
+  &__info {
     background: $brand-ilo-ramp-blue;
 
-    #{$self}--sidebar {
+    #{$callout}__sidebar {
       background: $brand-ilo-blue;
     }
   }
 
-  &--success {
+  &__success {
     background: $brand-ilo-ramp-green;
 
-    #{$self}--sidebar {
+    #{$callout}__sidebar {
       background: $brand-ilo-green;
     }
   }
 
-  &--warning {
+  &__warning {
     background: $brand-ilo-ramp-yellow;
 
-    #{$self}--sidebar {
+    #{$callout}__sidebar {
       background: $brand-ilo-yellow;
     }
   }

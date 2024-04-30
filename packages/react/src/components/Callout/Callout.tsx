@@ -28,12 +28,12 @@ const Callout: FC<CalloutProps> = ({
 
   const calloutClasses = classNames(className, {
     [baseClass]: true,
-    [`${baseClass}--${type}`]: type,
+    [`${baseClass}__${type}`]: type,
     [`${baseClass}--open`]: toggleOpen,
     [`${baseClass}--collapse`]: isCollapsible,
   });
 
-  const iconClasses = `icon icon--${type}`;
+  const iconClasses = `icon icon__${type}`;
 
   const ctaprops: ButtonProps = {
     callback: undefined,
@@ -53,12 +53,12 @@ const Callout: FC<CalloutProps> = ({
 
   return (
     <div className={calloutClasses}>
-      <div className={`${baseClass}--sidebar`}>
+      <div className={`${baseClass}__sidebar`}>
         <span className={iconClasses}></span>
       </div>
-      <div className={`${baseClass}--content`}>
-        <div className={`${baseClass}--header`}>
-          <h5 className={`${baseClass}--headline`}>{headline}</h5>
+      <div className={`${baseClass}__content`}>
+        <div className={`${baseClass}__header`}>
+          <h5 className={`${baseClass}__title`}>{headline}</h5>
           {isCollapsible && (
             <button
               className={`${baseClass}--toggle`}
@@ -70,7 +70,7 @@ const Callout: FC<CalloutProps> = ({
             </button>
           )}
         </div>
-        <p className={`${baseClass}--copy`}>{copy}</p>
+        <p className={`${baseClass}__description`}>{copy}</p>
         {cta && <Button {...ctaprops} />}
       </div>
     </div>
