@@ -17,33 +17,6 @@
 }
 
 // ======================================
-// Vertical Align
-// ======================================
-
-@mixin vertical-align {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-// ======================================
-// Horizontal Align
-// ======================================
-
-@mixin horizontal-align {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-@mixin vertical-horizontal-align {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-// ======================================
 // Visually Hidden
 //
 // Visually hide the element from the
@@ -60,16 +33,6 @@
   position: absolute;
   clip: rect(0 0 0 0);
   overflow: hidden;
-}
-
-// ======================================
-// Ellipsis
-// ======================================
-
-@mixin ellipsis {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 
 // ======================================
@@ -132,19 +95,6 @@
 }
 
 // ======================================
-// Spacing Values
-// ======================================
-
-@mixin spacingvalues($type, $mappath, $location, $state: "default") {
-  #{$type}: px-to-rem(
-      map-get($spacing, $location, $mappath, $state, $type, "top")
-    )
-    px-to-rem(map-get($spacing, $location, $mappath, $state, $type, "right"))
-    px-to-rem(map-get($spacing, $location, $mappath, $state, $type, "bottom"))
-    px-to-rem(map-get($spacing, $location, $mappath, $state, $type, "left"));
-}
-
-// ======================================
 // Border Values
 // ======================================
 
@@ -195,17 +145,6 @@
 
 @mixin dataurlicon($name, $color: $color-base-neutrals-black) {
   background-image: url("#{colortodataurlicon($name, $color)}");
-}
-
-// ======================================
-// Icon Button
-// ======================================
-
-@mixin iconbutton($name, $height, $width, $color: $color-base-neutrals-black) {
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: $width $height;
-  @include dataurlicon($name, $color);
 }
 
 // ======================================
@@ -339,18 +278,33 @@
 @mixin cornercut(
   $width: $spacing-padding-8,
   $height: $spacing-padding-5,
-  $dir: "right"
+  $dir: "right",
+  $side: "top"
 ) {
-  clip-path: polygon(
-    0 0,
-    calc(100% - $width) 0,
-    100% $height,
-    100% 100%,
-    0 100%
-  );
+  @if ($side == "top") {
+    @if ($dir == "right") {
+      clip-path: polygon(
+        0 0,
+        calc(100% - $width) 0,
+        100% $height,
+        100% 100%,
+        0 100%
+      );
+    }
 
-  @if ($dir == "left") {
-    clip-path: polygon($width 0, 100% 0, 100% 100%, 0 100%, 0 $height);
+    @if ($dir == "left") {
+      clip-path: polygon($width 0, 100% 0, 100% 100%, 0 100%, 0 $height);
+    }
+  }
+
+  @if ($side == "bottom") {
+    @if ($dir == "right") {
+      clip-path: polygon(0 0, 100% 0, calc(100% - $width) $height, 0 100%);
+    }
+
+    @if ($dir == "left") {
+      clip-path: polygon(0 0, 100% 0, 100% $height, $width 100%);
+    }
   }
 }
 

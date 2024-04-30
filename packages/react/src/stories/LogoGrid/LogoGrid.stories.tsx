@@ -14,7 +14,7 @@ import {
 } from "../../components/LogoGrid/LogoGrid.args";
 
 const LogoMeta: Meta<typeof LogoGrid> = {
-  title: "Components/Brand/LogoGrid",
+  title: "Components/Media/LogoGrid",
   component: LogoGrid,
   tags: ["autodocs"],
   parameters: {

@@ -4,18 +4,8 @@
 
 ## Getting started
 
-To install `@ilo-org/eslint-config` in your project, you will need to run the
-following command using [npm](https://www.npmjs.com/):
-
 ```bash
 npm install -D @ilo-org/eslint-config
-```
-
-If you prefer [Yarn](https://yarnpkg.com/en/), use the following command
-instead:
-
-```bash
-yarn add -D @ilo-org/eslint-config
 ```
 
 ## Usage
@@ -27,6 +17,33 @@ You can use `@ilo-org/eslint-config` in your project by extending it in your
 {
   "extends": ["@ilo-org/eslint-config"]
 }
+```
+
+## TypeScript
+
+To use this configuration in a project with Typescript, you can add an `overrides` property to your `.eslintrc`. Here's an example:
+
+```cjs
+// .eslintrc.cjs
+
+module.exports = {
+  extends: ["@ilo-org/eslint-config"],
+  ignorePatterns: ["node_modules/"],
+  overrides: [
+    /* =================== */
+    /* TypeScript Settings */
+    /* =================== */
+    {
+      // Which files the override will apply to relative to the package root
+      files: ["**/*.{ts,tsx}"],
+      extends: ["@ilo-org/eslint-config/typescript"],
+      // Your typescript parser options
+      parserOptions: {
+        project: ["./tsconfig.json"],
+      },
+    },
+  ],
+};
 ```
 
 ## 📝 License

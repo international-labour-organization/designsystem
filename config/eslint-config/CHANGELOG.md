@@ -1,5 +1,11 @@
 # @ilo-org/eslint-config
 
+## 1.0.0
+
+### Major Changes
+
+- b44994ae2: 🎉 Version 1 Release
+
 ## 0.2.1
 
 ### Patch Changes

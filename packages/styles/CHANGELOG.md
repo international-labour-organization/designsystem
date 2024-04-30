@@ -1,5 +1,21 @@
 # @ilo-org/styles
 
+## 1.0.4
+
+### Patch Changes
+
+- 0c695f735: Make sure Breadcrumb stays within its container
+
+## 1.0.3
+
+### Patch Changes
+
+- 878ce3fc0: Refactors the Breadcrumb Twig template. The `home` field will soon be deprecated, it will still work, but users should switch to passing in all of the links to the `links` field. The first `link` will be rendered as a house icon. This also fixes several accessibility issues with the Breadcrumb, including adding a `buttonlabel` prop for the context ellipsis that appears when the Breadcrumbs are collapsed.
+- 680c0b71c: Change Context Menu from an unordered to an ordered list
+- 7a37d7e6d: Clean up accordion styles and use standard class names
+- Updated dependencies [7a37d7e6d]
+  - @ilo-org/themes@0.9.0
+
 ## 1.0.2
 
 ### Patch Changes

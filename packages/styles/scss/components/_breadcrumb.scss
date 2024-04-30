@@ -2,68 +2,93 @@
 @use "../functions" as *;
 @use "../animations" as *;
 @import "../mixins";
+@import "../config";
 
-.ilo--breadcrumb {
+.#{$prefix}--breadcrumb {
+  $breadcrumb: &;
+
   position: relative;
   z-index: 10;
 
-  &--items {
-    align-items: center;
-    background-color: $color-base-neutrals-white;
+  &--inner {
     display: inline-flex;
-    justify-content: flex-start;
-    padding-block: spacing(4);
-    padding-inline-end: 0;
+    // Local variable set in the Hero for alignment
     padding-inline-start: var(--breadcrumb-padding);
-    position: relative;
-    &.context--menu {
-      padding: 0;
+    padding-inline-end: spacing(12);
+    padding-block: spacing(4);
+    background-color: $color-base-neutrals-white;
+    @include cornercut(spacing(12), 100%, "right", "bottom");
+
+    [dir="rtl"] & {
+      @include cornercut(spacing(12), 100%, "left", "bottom");
     }
   }
 
-  &--link {
+  &--items,
+  &--context {
     align-items: center;
-    background-position: right;
-    background-repeat: no-repeat;
-    color: map-get($color, "link", "text", "default");
     display: inline-flex;
-    height: px-to-rem(16px);
-    padding-block: 0;
-    padding-inline-start: spacing(4);
-    padding-inline-end: spacing(6);
-    text-decoration: none;
-    text-decoration-thickness: px-to-rem($borders-base);
+    justify-content: flex-start;
+    list-style: none;
+  }
+
+  &--item,
+  &--context__collapse {
+    background-repeat: no-repeat;
     @include dataurlicon("breadcrumbdivider", $color-link-text-default);
+    background-position: left;
+    padding-inline: spacing(6) spacing(4);
 
     [dir="rtl"] & {
-      background-position: left;
+      background-position: right;
+      background-repeat: no-repeat;
       @include dataurlicon("breadcrumbdividerrtl", $color-link-text-default);
     }
+  }
 
-    &--label {
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      max-width: 40ch;
-      font-family: $fonts-copy;
-      font-weight: 400;
-      @include font-styles("body-xxs");
+  &--context {
+    $context: &;
+    position: relative;
 
-      &--dropdown {
-        font-family: $fonts-copy;
-        @include font-styles("body-xxs");
+    &--button {
+      display: none;
+      padding: 0;
+      margin: 0;
+      border: none;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-size: 16px 4px;
+      position: relative;
+      width: px-to-rem(42px);
+      height: px-to-rem(16px);
+      @include dataurlicon("elipsis", $color-link-text-default);
+
+      &:hover {
+        cursor: pointer;
+        @include dataurlicon("elipsis", $color-base-blue-medium);
       }
     }
 
-    &:hover,
-    &:focus {
-      color: map-get($color, "link", "text", "hover");
-      text-decoration: underline;
-      text-decoration-thickness: px-to-rem($borders-base);
-      @include dataurlicon("breadcrumbdivider", $color-link-text-hover);
+    &--menu {
+      display: none;
+      position: fixed;
+      width: px-to-rem(120px);
+      z-index: 10;
 
-      [dir="rtl"] & {
-        @include dataurlicon("breadcrumbdividerrtl", $color-link-text-hover);
+      &__visible {
+        display: inline-block;
+      }
+    }
+
+    &__collapse {
+      padding-inline: spacing(3) spacing(1);
+
+      #{$breadcrumb}--items {
+        display: none;
+      }
+
+      #{$context}--button {
+        display: inline-block;
       }
     }
   }
@@ -71,19 +96,32 @@
   &--item {
     align-items: center;
     display: flex;
-    height: px-to-rem(16px);
 
-    &.home {
+    &__first {
       align-items: center;
       display: flex;
       position: relative;
+      // Make sure arrow doesn't appear before house even in RTL
+      background: none !important;
+      // Make sure the outline is visible when focused
+      padding-inline-start: 2px;
 
-      .ilo--breadcrumb--link {
-        &--label {
-          @include isVisuallyHidden();
+      &:hover,
+      &:focus {
+        #{$breadcrumb}--link {
+          &:after {
+            @include dataurlicon("home", $color-link-text-hover);
+          }
         }
+      }
 
-        &:before {
+      #{$breadcrumb}--link {
+        background: none;
+        width: px-to-rem(16px);
+        height: px-to-rem(16px);
+        position: relative;
+
+        &:after {
           background-position: center center;
           background-repeat: no-repeat;
           content: "";
@@ -95,207 +133,34 @@
           width: px-to-rem(16px);
           @include dataurlicon("home", $color-link-text-default);
         }
-
-        [dir="rtl"] & {
-          &:before {
-            left: initial;
-            right: 0;
-          }
-        }
       }
+    }
+  }
+
+  &--link {
+    display: inline-flex;
+    align-items: center;
+    color: $color-link-text-default;
+    height: px-to-rem(16px);
+    padding-block: 0;
+    text-decoration: none;
+
+    &--label {
+      white-space: nowrap;
+      overflow-x: clip;
+      text-overflow: ellipsis;
+      max-width: 30ch;
+      font-family: $fonts-copy;
+      font-weight: 400;
+      @include font-styles("body-xxs");
 
       &:hover,
       &:focus {
-        .ilo--breadcrumb--link {
-          &:before {
-            @include dataurlicon("home", $color-link-text-hover);
-          }
-        }
+        color: $color-link-text-hover;
+        text-decoration: underline;
+        text-underline-offset: px-to-rem(4px);
+        text-decoration-thickness: px-to-rem(2px);
       }
     }
-
-    &.final {
-      .ilo--breadcrumb--link {
-        background-image: none;
-      }
-    }
-  }
-
-  .ilo--breadcrumb--item--context {
-    align-items: flex-start;
-    display: flex;
-    height: px-to-rem(16px);
-  }
-
-  &.contextmenu {
-    .ilo--breadcrumb--item--context {
-      background-position: center center;
-      background-repeat: no-repeat;
-      background-size: 16px 4px;
-      position: relative;
-      width: px-to-rem(42px);
-      @include dataurlicon("elipsis", $color-link-text-default);
-
-      &:hover {
-        cursor: pointer;
-        @include dataurlicon("elipsis", $color-base-blue-medium);
-      }
-
-      &:after {
-        background-position: center center;
-        background-repeat: no-repeat;
-        content: "";
-        display: block;
-        height: px-to-rem(16px);
-        right: -7px;
-        position: absolute;
-        top: 0;
-        width: px-to-rem(16px);
-        @include dataurlicon("breadcrumbdivider", $color-link-text-default);
-
-        [dir="rtl"] & {
-          right: auto;
-          left: -7px;
-          @include dataurlicon(
-            "breadcrumbdividerrtl",
-            $color-link-text-default
-          );
-        }
-      }
-
-      .context--menu {
-        border-radius: px-to-rem(2px);
-        background-color: $color-ux-background-highlight;
-        display: inline-block;
-        left: px-to-rem(-40px);
-        opacity: 0;
-        position: absolute;
-        top: calc(100% + 24px);
-        width: px-to-rem(120px);
-        z-index: 10;
-        @include globaltransition("opacity");
-
-        &.open {
-          opacity: 1;
-          @include globaltransition("opacity");
-        }
-
-        &:before {
-          background-position: top center;
-          background-repeat: no-repeat;
-          background-size: contain;
-          @include dataurlicon(
-            "halfsquaretriangle",
-            $color-ux-background-highlight
-          );
-          content: "";
-          height: px-to-rem(12px);
-          position: absolute;
-          left: 50%;
-          top: -#{px-to-rem(6px)};
-          transform: translateX(-50%) rotate(135deg);
-          width: px-to-rem(12px);
-        }
-
-        &:hover {
-          cursor: pointer;
-        }
-
-        .ilo--breadcrumb--item {
-          display: inline-block;
-          height: auto;
-          padding: 0 spacing(2);
-          position: relative;
-          width: 100%;
-
-          &:last-of-type a {
-            border-bottom: none;
-          }
-
-          &:hover,
-          &:focus {
-            background-color: $color-base-blue-light;
-            text-decoration: none;
-
-            .ilo--breadcrumb--link {
-              text-decoration: underline;
-              text-decoration-thickness: px-to-rem($borders-base);
-            }
-          }
-
-          &.endsection {
-            border-bottom: px-to-rem($borders-base) solid
-              $color-base-neutrals-white;
-
-            .ilo--context-menu--link {
-              border-bottom: none;
-            }
-          }
-        }
-
-        .ilo--breadcrumb--link {
-          background: none;
-          border-bottom: px-to-rem($borders-base) solid
-            $color-base-neutrals-white;
-          color: map-get($color, "link", "text", "default");
-          display: inline-block;
-          font-family: $fonts-copy;
-          font-weight: map-get($type, "weights", "section");
-          height: auto;
-          padding: spacing(4) 0;
-          text-decoration: none;
-          width: 100%;
-          @include font-styles("body-xxs");
-
-          &:visited {
-            color: map-get($color, "link", "text", "default");
-          }
-
-          &:active {
-            color: map-get($color, "link", "text", "active");
-            outline: none;
-          }
-
-          &:hover,
-          &:focus {
-            color: map-get($color, "link", "text", "hover");
-            outline: none;
-            text-decoration: underline;
-            text-decoration-thickness: px-to-rem($borders-base);
-          }
-        }
-      }
-    }
-  }
-
-  &--items {
-    &:after {
-      background: linear-gradient(to bottom right, white 50%, transparent 50%);
-      content: "";
-      display: inline-block;
-      height: 47px;
-      position: absolute;
-      right: -47px;
-      top: 0;
-      width: 47px;
-
-      [dir="rtl"] & {
-        right: auto;
-        left: -47px;
-        transform: scaleX(-1);
-      }
-    }
-
-    &.context--menu {
-      &:after {
-        content: none;
-      }
-    }
-  }
-
-  // @TODO: This shouldn't be here, we should handle this through Storybook configuation
-  &.storybook {
-    background-color: $brand-ilo-grey-ui;
-    height: 100vh;
   }
 }

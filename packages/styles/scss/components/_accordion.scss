@@ -1,43 +1,44 @@
 @use "../tokens" as *;
 @use "../functions" as *;
 @import "../mixins";
+@import "../config";
 
-.ilo--accordion {
+.#{$prefix}--accordion {
+  // This provides a reference to the outerclass within nested declarations
+  $accordion: &;
+
+  // Accordion contents can add lots of height so the transition timing can't
+  // be too fast which is why we're using a custom value here.
   $transition-timing: 500ms;
+
+  // If the accordion item is scrollable, then this is its max-height
   $scroll-max-height: 300px;
-  margin-right: spacing(1);
 
   &--button {
     display: flex;
-    align-items: center;
     flex-direction: row;
     justify-content: space-between;
-    text-align: start;
     width: 100%;
     margin: 0;
-    padding: spacing(4) 0;
+    padding-block: spacing(4);
     padding-inline-end: spacing(11);
-
     background-color: $color-ux-background-default;
     background-position: calc(100% - px-to-rem(6px)) center;
     background-repeat: no-repeat;
     background-size: px-to-rem(24px) px-to-rem(24px);
-
     border: none;
-    border-top: 2px solid map-get($color, "accordion", "border");
-
+    border-top: 2px solid $color-base-neutrals-lighter;
     fill: $color-ux-labels-actionable;
     font-family: $fonts-display;
     color: $color-ux-labels-actionable;
-    font-weight: map-get($type, "weights", "section");
-    @include font-styles("label-medium");
-
+    font-weight: $type-weights-section;
     transition: all $transition-timing ease-in-out;
+    @include font-styles("label-medium");
     @include dataurlicon("add", $color-ux-labels-actionable);
 
-    &--large {
+    &__large {
       @include font-styles("headline-6");
-      padding: spacing(5) 0;
+      padding-block: spacing(5);
       padding-inline-end: spacing(11);
     }
 
@@ -46,8 +47,8 @@
       background-color: $color-ux-background-hover;
       border-top-color: $color-ux-borders-hover;
       color: $color-ux-labels-hover;
-      cursor: pointer;
       fill: $color-ux-labels-hover;
+      cursor: pointer;
 
       &[aria-expanded="true"] {
         @include dataurlicon("minus", $color-ux-labels-hover);
@@ -60,8 +61,7 @@
 
     @include breakpoint("medium") {
       @include font-styles("label-medium");
-
-      &--large {
+      &__large {
         @include font-styles("headline-6");
         padding: spacing(5) 0;
         padding-inline-end: spacing(11);
@@ -88,12 +88,12 @@
     transition: all $transition-timing cubic-bezier(0, 1, 0, 1);
     overflow: hidden;
 
-    .ilo--accordion--innerpanel {
+    #{$accordion}--innerpanel {
       padding-bottom: spacing(9);
       padding-top: spacing(2);
     }
 
-    &--open {
+    &__open {
       max-height: 100vh;
       transition: all $transition-timing ease-in-out;
 
