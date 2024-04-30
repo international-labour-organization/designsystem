@@ -14,7 +14,7 @@
 	<div class="{{ fileUploadClasses|join(' ') }}">
 		<label class="{{ inputClass }}">
 			{{ placeholder }}
-			<input id="{{ id|default(name) }}" name="{{ name }}" {% if disabled %} disabled {% endif %} {% if multiple %} multiple {% endif %} placeholder="{{ placeholder }}" {% if required %} required {% endif %} type="file" data-label="{{ placeholder }}" aria-describedby="{{ ariaDescribedBy }}" {% if accept %} accept="{{ accept }}" {% endif %} data-loadcomponent="FileUpload" data-prefix="{{prefix}}"/>
+			<input id="{{ id|default(name) }}" name="{{ name }}" {% if disabled %} disabled {% endif %} {% if multiple|boolval %} multiple {% endif %} placeholder="{{ placeholder }}" {% if required %} required {% endif %} type="file" data-label="{{ placeholder }}" aria-describedby="{{ ariaDescribedBy }}" {% if accept %} accept="{{ accept }}" {% endif %} data-loadcomponent="FileUpload" data-prefix="{{prefix}}"/>
 		</label>
 	</div>
 {% endblock %}

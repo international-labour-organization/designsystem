@@ -24,13 +24,10 @@ tooltip:
       preview: "<a href='https://www.google.com/'>This is testing for the tooltip</a>"
   settings:
     icon:
-      type: select
+      type: boolean
       label: Icon
       description: does this tooltip have the "info" icon?
-      options:
-        "true": "true"
-        "false": "false"
-      preview: "true"
+      preview: true
       required: true
     icontheme:
       type: select

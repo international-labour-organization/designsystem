@@ -14,7 +14,7 @@ contextmenu:
           url: "http://www.google.com"
         - label: Link Two
           url: "http://www.google.com"
-        - endsection: "true"
+        - endsection: true
           label: Link Three Ends A Section
           url: "http://www.google.com"
         - label: Link Four

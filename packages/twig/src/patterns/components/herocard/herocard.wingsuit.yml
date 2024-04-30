@@ -23,13 +23,10 @@ herocard:
         transparent: transparent
       preview: "solid"
     cornercut:
-      type: select
-      label: Cornercut
+      type: boolean
+      label: Corner cut
       description: Whether the card show have its right or left corner cut
-      options:
-        "true": "true"
-        "false": "false"
-      preview: "true"
+      preview: true
   fields:
     url:
       type: string

@@ -3,7 +3,7 @@
 #}
 {% set content = excerpt %}
 {% set btnlabel = buttonlabel.closed %}
-{% if openatstart is defined and openatstart == 'true' %}
+{% if openatstart|boolval %}
   {% set content = fulltext %}
   {% set btnlabel = buttonlabel.opened %}
 {% endif %}

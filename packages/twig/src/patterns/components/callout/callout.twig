@@ -11,7 +11,7 @@
 			{% if isCollapsible|boolval %}
 				<button class="{{prefix}}--callout--toggle" type="button" data-open="{{ toggleOpenLabel }}" data-closed="{{ toggleClosedLabel }}">
 					<span class="{{prefix}}--callout--button-text">
-						{% if isOpen|boolval %}
+						{% if isOpen %}
 							{{ toggleOpenLabel }}
 						{% else %}
 							{{ toggleClosedLabel }}

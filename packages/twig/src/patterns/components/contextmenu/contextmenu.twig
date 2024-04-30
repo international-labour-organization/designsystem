@@ -3,7 +3,7 @@
 #}
 <ul class="{{prefix}}--context-menu">
   {% for link in links %}
-  <li class="{{prefix}}--context-menu--item{% if link.endsection == 'true' %} endsection{% endif %}">
+  <li class="{{prefix}}--context-menu--item{{ link.endsection|boolval ? ' endsection'}}">
     <a href="{{link.url}}" class="{{prefix}}--context-menu--link">
       <span class="{{prefix}}--context-menu--label">{{link.label}}</span>
     </a>
