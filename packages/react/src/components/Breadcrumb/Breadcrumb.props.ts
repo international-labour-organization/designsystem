@@ -34,5 +34,5 @@ export interface BreadcrumbProps {
   /**
    * Specify the links to be displayed in the Breadcrumb
    */
-  links: BreadcrumbLinkProps[];
+  links: BreadcrumbItemProps[];
 }
