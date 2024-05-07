@@ -56,7 +56,9 @@
     "format": "prettier --check . --ignore-path ../../.prettierignore",
     "format:fix": "prettier --write . --ignore-path ../../.prettierignore",
     "import:prefix": "node importprefix.js",
-    "import:svgs": "node importsvgs.js"
+    "import:svgs": "node importsvgs.js",
+    "start:theme": "docker compose up -d",
+    "cy:open": "cypress open"
   },
   "dependencies": {
     "@ilo-org/brand-assets": "workspace:*",

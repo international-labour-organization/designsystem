@@ -91,6 +91,7 @@
     #{$accordion}--innerpanel {
       padding-bottom: spacing(9);
       padding-top: spacing(2);
+      padding-inline-end: spacing(8);
     }
 
     &__open {
@@ -100,7 +101,6 @@
       &#{$panel}__scroll {
         max-height: $scroll-max-height;
         overflow-y: auto;
-        padding-right: spacing(8);
       }
     }
   }

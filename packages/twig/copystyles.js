@@ -11,6 +11,6 @@ componentCssFiles.forEach((file) => {
 });
 
 fs.copySync(
-  "node_modules/@ilo-org/styles/css/global.css",
+  "node_modules/@ilo-org/styles/css/index.css",
   "dist/global/styles.css"
 );
