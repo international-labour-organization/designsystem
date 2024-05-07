@@ -1,5 +1,14 @@
 # @ilo-org/twig
 
+## 1.0.5
+
+### Patch Changes
+
+- 6d4864df6: Added cypress test setup with theme container
+- Updated dependencies [222e46d61]
+- Updated dependencies [c80b5ea55]
+  - @ilo-org/styles@1.0.5
+
 ## 1.0.4
 
 ### Patch Changes

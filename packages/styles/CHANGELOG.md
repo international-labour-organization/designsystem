@@ -1,5 +1,12 @@
 # @ilo-org/styles
 
+## 1.0.5
+
+### Patch Changes
+
+- 222e46d61: Fix accordion text moving inside panel when it is expanding by having constant padding when it is both closed and open
+- c80b5ea55: Clean up unused functions,mixins,maps,variabls or keyframes in animation/function/mixin files
+
 ## 1.0.4
 
 ### Patch Changes
