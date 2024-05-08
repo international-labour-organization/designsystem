@@ -20,7 +20,7 @@ button:
       type: string
       label: url
       description: The url for the button if it's a link
-      preview: "http://example.com"
+      preview: ""
       required: false
     target:
       type: object

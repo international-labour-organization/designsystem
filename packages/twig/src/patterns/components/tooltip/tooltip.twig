@@ -3,8 +3,8 @@
 {% set icontheme = icontheme|default("light") %}
 {% set theme = theme|default("dark") %}
 
-<div class="{{prefix}}--tooltip--wrapper {% if icon and icon != "false" %} {{prefix}}--tooltip--wrapper__icon {{prefix}}--tooltip--wrapper__icon__theme__{{icontheme}} {% endif %}" role="status" aria-live="polite" aria-relevant="additions" data-loadcomponent="Tooltip" data-prefix="{{prefix}}">
-	{% if not icon or icon == "false" %}
+<div class="{{prefix}}--tooltip--wrapper {% if icon|boolval %} {{prefix}}--tooltip--wrapper__icon {{prefix}}--tooltip--wrapper__icon__theme__{{icontheme}} {% endif %}" role="status" aria-live="polite" aria-relevant="additions" data-loadcomponent="Tooltip" data-prefix="{{prefix}}">
+	{% if not icon|boolval %}
 		{{ children }}
 	{% endif %}
 	<span data-id={{tooltipId}} id="tooltip" role="tooltip" class="{{prefix}}--tooltip {{prefix}}--tooltip--{{theme}}" data-alignment="left" >
