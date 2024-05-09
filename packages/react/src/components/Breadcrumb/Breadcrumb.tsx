@@ -135,6 +135,7 @@ const Breadcrumb: FC<BreadcrumbProps> = ({ className, links, buttonLabel }) => {
     if (!buttonRef.current || !ctxMenuRef.current) {
       return;
     }
+
     if (isMenuCollapsed && isCtxMenuOpen) {
       const buttonRect = buttonRef.current.getBoundingClientRect();
       const buttonCenterX = buttonRect.left + buttonRect.width / 2;
@@ -174,6 +175,10 @@ const Breadcrumb: FC<BreadcrumbProps> = ({ className, links, buttonLabel }) => {
 
   // handle tab navigation when the context menu is open
   useEffect(() => {
+    if (!buttonRef.current || !ctxMenuRef.current) {
+      return;
+    }
+
     function handleKeyDown(event: KeyboardEvent) {
       if (!isCtxMenuOpen || !isMenuCollapsed) {
         return;
