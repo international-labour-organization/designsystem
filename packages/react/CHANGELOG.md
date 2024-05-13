@@ -1,5 +1,11 @@
 # @ilo-org/react
 
+## 0.17.0
+
+### Minor Changes
+
+- f127ae16e: Aligns the Breadcrumb component with the Twig implementation which also fixes several accessibility issues.
+
 ## 0.16.4
 
 ### Patch Changes
