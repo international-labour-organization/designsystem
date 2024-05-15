@@ -6,14 +6,11 @@ cardgroup:
   visibility: storybook
   settings:
     collapsed:
-      type: select
+      type: boolean
       label: collapsed
       description: Optionally collapses margins between the cards.
       required: false
-      preview: "false"
-      options:
-        "true": "true"
-        "false": "false"
+      preview: false
     cardcount:
       type: select
       label: collapsed

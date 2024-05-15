@@ -45,7 +45,7 @@ hero:
         title: "Child labour"
         theme: "dark"
         background: "solid"
-        cornercut: "true"
+        cornercut: true
         eyebrow: ILO Topics
         socialmedia:
           icons:
@@ -164,7 +164,7 @@ hero:
           datecopy: "11 February 2021"
           theme: "light"
           background: "solid"
-          cornercut: "true"
+          cornercut: true
           eyebrow: Women in management
           socialmedia:
             icons:

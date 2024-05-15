@@ -92,21 +92,15 @@ table:
           - "01/01/2023"
   settings:
     zebra:
-      type: select
+      type: boolean
       label: Zebra Striping
       description: Should the table display zebra striping?
-      options:
-        "true": "true"
-        "false": "false"
-      preview: "false"
+      preview: false
       required: false
     smallrows:
-      type: select
+      type: boolean
       label: Small Rows
       description: Should the table have rows with a smaller height?
-      options:
-        "true": "true"
-        "false": "false"
-      preview: "false"
+      preview: false
       required: false
   visibility: storybook

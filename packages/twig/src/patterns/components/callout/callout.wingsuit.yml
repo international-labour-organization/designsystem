@@ -52,21 +52,15 @@ callout:
         warning: Warning
       preview: "info"
     isCollapsible:
-      type: select
+      type: boolean
       label: Is Collapsible?
       description: Whether or not the callout is collapsible
-      required: "true"
-      options:
-        "true": "true"
-        "false": "false"
+      required: true
       preview: false
     isOpen:
-      type: select
+      type: boolean
       label: Is Open
       description: Whether or not a collapsible callout is open on page load. If callout is not collapsible then the callout will be open always.
       required: false
-      options:
-        "true": "true"
-        "false": "false"
-      preview: "true"
+      preview: true
   visibility: storybook

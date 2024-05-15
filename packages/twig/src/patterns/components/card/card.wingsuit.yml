@@ -150,14 +150,11 @@ card:
         two: two
       preview: "one"
     cornercut:
-      type: select
-      label: cornercut
-      description: Allows user to set the cornercut of the card. This is only used by the `Promo Card`.
+      type: boolean
+      label: Corner cut
+      description: Allows user to display a corner cut on the card. This is only used by the `Promo Card`.
       required: false
-      preview: "true"
-      options:
-        "true": "true"
-        "false": "false"
+      preview: true
     size:
       type: select
       label: Size

@@ -37,6 +37,12 @@ In the root of your custom theme, run the following command:
 
 ⚠️ Note that the two libraries are versioned separately so you'll want to make sure that you're always using the latest versions of both to ensure they're both in sync. You should see an installation warning if you try to install incompatible versions.
 
+## Required Twig extensions
+
+As from `1.2.0` we make use of the `|boolvar` Twig filter: you need to have this filter available in your Twig environment for the component to work correctly.
+
+An implementation of the `|boolvar` Twig filter can be found in the [PHP Syntax for Twig](https://github.com/squirrelphp/twig-php-syntax) project. If you are a user of the [ILO Base Theme](https://github.com/international-labour-organization/ilo_base_theme), the twig extension above will be automatically made available to you as from version `0.2.0`.
+
 ## Usage
 
 Now that you have installed the component library, you'll need to expose them so that you can integrate them into your templates.

@@ -117,7 +117,7 @@ navigation:
             url: "https://www.ilo.org"
           - label: Link Two
             url: "https://www.ilo.org"
-          - endsection: "true"
+          - endsection: true
             label: Link Three Ends A Section
             url: "https://www.ilo.org"
           - label: Link Four
