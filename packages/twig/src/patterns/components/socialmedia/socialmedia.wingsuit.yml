@@ -22,6 +22,15 @@ socialmedia:
         center: center
       preview: start
       defaultValue: start
+    iconSize:
+      type: select
+      label: Icon size
+      description: The size of the social media icons
+      options:
+        normal: normal
+        large: large
+      preview: normal
+      defaultValue: normal
   fields:
     headline:
       type: string

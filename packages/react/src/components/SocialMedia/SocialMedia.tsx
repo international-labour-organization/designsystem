@@ -8,6 +8,7 @@ const SocialMedia: React.FC<SocialMediaProps> = ({
   justify = "start",
   headline,
   icons,
+  iconSize = "normal",
 }) => {
   const { prefix } = useGlobalSettings();
 
@@ -22,6 +23,7 @@ const SocialMedia: React.FC<SocialMediaProps> = ({
   const listClass = `${baseClass}--list`;
   const listItemClass = `${listClass}--item`;
   const iconClass = `${listItemClass}--icon`;
+  const iconSizeClass = `${listItemClass}--icon__${iconSize}`;
 
   return (
     <div className={classes}>
@@ -31,7 +33,11 @@ const SocialMedia: React.FC<SocialMediaProps> = ({
           <li className={listItemClass}>
             <a
               title={item.label}
-              className={classnames(iconClass, `${iconClass}__${item.icon}`)}
+              className={classnames(
+                iconClass,
+                iconSizeClass,
+                `${iconClass}__${item.icon}`
+              )}
               href={item.url}
             >
               {item.label}
