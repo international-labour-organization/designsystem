@@ -62,13 +62,10 @@ detailcard:
         wide: wide
         fluid: fluid
     isvideo:
-      type: select
+      type: boolean
       label: Is a Video
       description: Whether the card should display a video icon (for Feature card)
-      preview: "false"
-      options:
-        "true": "true"
-        "false": "false"
+      preview: false
     titleLevel:
       type: select
       label: Title Element

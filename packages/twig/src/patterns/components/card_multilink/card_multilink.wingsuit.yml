@@ -71,13 +71,10 @@ multilinkcard:
         left: Left
         right: Right
     isvideo:
-      type: select
+      type: boolean
       label: is a Video
       description: Whether the card should display a video icon (for Feature card)
-      preview: "false"
-      options:
-        "true": "true"
-        "false": "false"
+      preview: false
     size:
       type: select
       label: Size

@@ -31,13 +31,13 @@ linklist:
           links:
             - label: Section 2 Link One
               url: "http://www.google.com"
-            - indented: "true"
+            - indented: true
               label: Section 2 Link Two
               url: "http://www.google.com"
-            - indented: "true"
+            - indented: true
               label: Section 2 Link Three
               url: "http://www.google.com"
-            - indented: "true"
+            - indented: true
               label: Section 2 Link Four
               url: "http://www.google.com"
             - label: Section 2 Link Five Is Slightly Longer
