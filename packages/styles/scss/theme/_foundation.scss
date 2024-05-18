@@ -33,4 +33,15 @@
   --ilo-color-turquoise: rgba(5, 210, 210, 1);
 
   --ilo-color-purple: rgba(150, 10, 85, 1);
+
+  /**
+    * Sizing
+    */
+  --ilo-breakpoint-xs: 320px;
+  --ilo-breakpoint-sm: 414px;
+  --ilo-breakpoint-md: 610px;
+  --ilo-breakpoint-lg: 1024px;
+  --ilo-breakpoint-xl: 1168px;
+  --ilo-breakpoint-xxl: 1440px;
+  --ilo-border-radius: calc(px-to-rem(2) * var(--ilo-scale));
 }
