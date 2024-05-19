@@ -44,7 +44,7 @@ export type SizeTypes = "small" | "medium" | "large";
 export type TagTypes = "anchor" | "display" | "button";
 export type SocialTypes =
   | "facebook"
-  | "twitter"
+  | "x"
   | "instagram"
   | "linkedin"
   | "youtube"

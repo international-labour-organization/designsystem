@@ -51,9 +51,9 @@ npm install -S @ilo-org/icons
 | `triangle`                    | ![](./src/svg/triangle.svg)                    |
 | `triangledecoration`          | ![](./src/svg/triangledecoration.svg)          |
 | `trianglereverse`             | ![](./src/svg/trianglereverse.svg)             |
-| `twitter`                     | ![](./src/svg/twitter.svg)                     |
 | `volume`                      | ![](./src/svg/volume.svg)                      |
 | `warning`                     | ![](./src/svg/warning.svg)                     |
+| `x`                           | ![](./src/svg/x.svg)                           |
 | `youtube`                     | ![](./src/svg/youtube.svg)                     |
 
 ## Contributing

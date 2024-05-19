@@ -11,9 +11,9 @@ export const defaultArgs: SocialMediaProps = {
       label: "Facebook",
     },
     {
-      icon: "twitter",
-      url: "https://twitter.com/#!/ilo",
-      label: "Twitter",
+      icon: "x",
+      url: "https://x.com/ilo",
+      label: "x",
     },
     {
       icon: "instagram",
