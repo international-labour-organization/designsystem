@@ -232,12 +232,6 @@
     - ILO Icons
   sizes:
     - glyph
-- name: twitter
-  friendly_name: twitter
-  aliases:
-    - ILO Icons
-  sizes:
-    - glyph
 - name: volume
   friendly_name: volume
   aliases:
@@ -264,6 +258,12 @@
     - glyph
 - name: tiktok
   friendly_name: tiktok
+  aliases:
+    - ILO Icons
+  sizes:
+    - glyph
+- name: x
+  friendly_name: x
   aliases:
     - ILO Icons
   sizes:

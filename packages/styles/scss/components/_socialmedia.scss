@@ -95,11 +95,11 @@
           }
         }
 
-        &__twitter {
-          @include get-icon("twitter");
+        &__x {
+          @include get-icon("x");
 
           #{$c}__theme__dark & {
-            @include get-icon("twitter", "dark");
+            @include get-icon("x", "dark");
           }
         }
 
