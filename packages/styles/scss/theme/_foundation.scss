@@ -1,5 +1,16 @@
 :root {
-  --ilo-prefix: "ilo";
+  /**
+    * Typography
+    */
+  --ilo-scale: 1; // default scale for the design system
+  --ilo-font-family: Overpass, Noto Sans, Noto Sans CJK JP, Yu Gothic,
+    Hiragino Sans, TakaoPGothic, PingFang SC, Microsoft YaHei, 微软雅黑,
+    sans-serif;
+  --ilo-font-copy: Noto Sans, Noto Sans CJK JP, Yu Gothic, Hiragino Sans,
+    TakaoPGothic, PingFang SC, Microsoft YaHei, 微软雅黑, sans-serif;
+  --ilo-font-family-headings: var(--ilo-font-family);
+  --ilo-font-family-monospace: monospace;
+  --ilo-line-height: 1.46;
 
   /**
     * Colors
@@ -46,4 +57,9 @@
   --ilo-breakpoint-xl: 1168px;
   --ilo-breakpoint-xxl: 1440px;
   --ilo-border-radius: calc(px-to-rem(2) * var(--ilo-scale));
+
+  /**
+    * Spacing
+    */
+  --ilo-spacing-base: calc(px-to-rem(4) * var(--ilo-scale));
 }
