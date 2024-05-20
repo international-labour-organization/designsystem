@@ -4,6 +4,7 @@ export const defaultArgs: SocialMediaProps = {
   headline: "Follow us on social media",
   theme: "light",
   justify: "start",
+  iconSize: "normal",
   icons: [
     {
       icon: "facebook",

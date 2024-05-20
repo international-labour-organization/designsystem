@@ -42,4 +42,9 @@ export interface SocialMediaProps {
    * Specify the icons to display.
    */
   icons: SocialMediaIcons[];
+
+  /**
+   * The size of the social media icons
+   */
+  iconSize: "normal" | "large";
 }
