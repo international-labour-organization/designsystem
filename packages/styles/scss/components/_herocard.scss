@@ -9,7 +9,7 @@
   position: relative;
   padding: $spacing-hero-card-padding-y-sm $spacing-hero-card-padding-x-sm;
 
-  @include breakpoint("large") {
+  @include breakpoint("lg") {
     padding-block: $spacing-hero-card-padding-y-lg;
     padding-inline-end: $spacing-hero-card-padding-x-lg;
     padding-inline-start: var(--card-padding-start);
@@ -29,7 +29,7 @@
       color: map-get($color, "hero", "card", "light", "color");
       background: map-get($color, "hero", "card", "light", "background");
 
-      @include breakpoint("large") {
+      @include breakpoint("lg") {
         &.ilo--hero-card__background__semi-transparent {
           background: rgba(
             map-get($color, "hero", "card", "light", "background"),
@@ -43,7 +43,7 @@
       background: map-get($color, "hero", "card", "dark", "background");
       color: map-get($color, "hero", "card", "dark", "color");
 
-      @include breakpoint("large") {
+      @include breakpoint("lg") {
         &.ilo--hero-card__background__semi-transparent {
           background: rgba(
             map-get($color, "hero", "card", "dark", "background"),
@@ -53,7 +53,7 @@
       }
     }
 
-    @include breakpoint("large") {
+    @include breakpoint("lg") {
       &__dark.ilo--hero-card__background__transparent,
       &__light.ilo--hero-card__background__transparent {
         color: map-get($color, "hero", "card", "dark", "color");
@@ -82,7 +82,7 @@
       );
     }
 
-    @include breakpoint("large") {
+    @include breakpoint("lg") {
       @include cornercut(
         $spacing-hero-card-corner-cut-width-lg,
         $spacing-hero-card-corner-cut-height-lg
@@ -139,7 +139,7 @@
     @include font-styles("body-small");
     margin-bottom: px-to-rem(28px);
 
-    @include breakpoint("large") {
+    @include breakpoint("lg") {
       @include font-styles("base");
     }
   }
@@ -158,7 +158,7 @@
     font-family: $fonts-display;
     font-weight: 700;
 
-    @include breakpoint("large") {
+    @include breakpoint("lg") {
       @include font-styles("headline-2");
     }
   }

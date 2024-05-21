@@ -111,7 +111,7 @@
     }
   }
 
-  @include breakpoint("large") {
+  @include breakpoint("lg") {
     --card-width: 625px;
     --corner-cut-height: #{$spacing-hero-card-corner-cut-height-lg};
     --breadcrumbs-height: 48px;
@@ -375,7 +375,7 @@
       }
     }
 
-    @include breakpoint("large") {
+    @include breakpoint("lg") {
       &__card-align__bottom {
         &#{$c}__card-justify__start,
         &#{$c}__card-justify__offset {

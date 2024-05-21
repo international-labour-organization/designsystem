@@ -418,7 +418,7 @@
           transform: rotate(180deg);
         }
 
-        @include breakpoint("medium") {
+        @include breakpoint("md") {
           top: px-to-rem(7px);
         }
       }
@@ -436,7 +436,7 @@
       letter-spacing: $type-label-small-letter-spacing;
     }
 
-    @include breakpoint("medium") {
+    @include breakpoint("md") {
       @include font-styles("base");
     }
   }

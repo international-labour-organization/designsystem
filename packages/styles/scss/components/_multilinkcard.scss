@@ -24,11 +24,11 @@
         }
       }
 
-      @include breakpoint("medium") {
+      @include breakpoint("md") {
         padding: spacing(10);
       }
 
-      @include breakpoint("large") {
+      @include breakpoint("lg") {
         padding: spacing(14) spacing(12);
       }
 
@@ -37,7 +37,7 @@
         margin-bottom: spacing(8);
         color: $brand-ilo-black;
 
-        @include breakpoint("medium") {
+        @include breakpoint("md") {
           @include font-styles("headline-4");
         }
       }
@@ -47,7 +47,7 @@
         margin-bottom: spacing(8);
         color: $brand-ilo-black;
 
-        @include breakpoint("medium") {
+        @include breakpoint("md") {
           @include font-styles("base");
         }
       }
@@ -75,14 +75,14 @@
           }
 
           #{$self}--title {
-            @include breakpoint("medium") {
+            @include breakpoint("md") {
               @include font-styles("headline-5");
               margin-bottom: spacing(6);
             }
           }
 
           #{$self}--intro {
-            @include breakpoint("medium") {
+            @include breakpoint("md") {
               @include font-styles("body-small");
               margin-bottom: spacing(6);
             }
@@ -99,7 +99,7 @@
             margin-bottom: spacing(3);
           }
 
-          @include breakpoint("medium") {
+          @include breakpoint("md") {
             padding: spacing(14) spacing(12);
 
             &#{$self}__align__right {

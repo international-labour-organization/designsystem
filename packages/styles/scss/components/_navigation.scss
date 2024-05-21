@@ -17,7 +17,7 @@
     width: 100%;
   }
 
-  @include breakpoint("large") {
+  @include breakpoint("lg") {
     overflow: visible;
   }
 
@@ -50,7 +50,7 @@
       background-size: 32px;
     }
 
-    @include breakpoint("large") {
+    @include breakpoint("lg") {
       display: none;
     }
 
@@ -78,7 +78,7 @@
         background-size: 32px;
       }
 
-      @include breakpoint("large") {
+      @include breakpoint("lg") {
         display: none;
       }
     }
@@ -88,7 +88,7 @@
     display: block;
     height: spacing(14);
 
-    @include breakpoint("large") {
+    @include breakpoint("lg") {
       height: spacing(18);
     }
 
@@ -97,7 +97,7 @@
       padding: spacing(4) 0;
       width: auto;
 
-      @include breakpoint("large") {
+      @include breakpoint("lg") {
         padding: 0 0 spacing(6);
       }
     }
@@ -113,7 +113,7 @@
       justify-content: space-between;
     }
 
-    @include breakpoint("large") {
+    @include breakpoint("lg") {
       background: $brand-ilo-blue;
     }
   }
@@ -178,17 +178,17 @@
           }
         }
 
-        @include breakpoint("large") {
+        @include breakpoint("lg") {
           display: flex;
         }
       }
 
-      @include breakpoint("large") {
+      @include breakpoint("lg") {
         padding: 0;
       }
     }
 
-    @include breakpoint("large") {
+    @include breakpoint("lg") {
       background: $brand-ilo-blue;
       display: flex;
       justify-content: flex-end;
@@ -205,7 +205,7 @@
       visibility: hidden;
     }
 
-    @include breakpoint("large") {
+    @include breakpoint("lg") {
       display: flex;
       justify-content: space-between;
       padding: 0 spacing(5);
@@ -235,12 +235,12 @@
     }
 
     .ilo--header--local & {
-      @include breakpoint("large") {
+      @include breakpoint("lg") {
         display: none;
       }
     }
 
-    @include breakpoint("large") {
+    @include breakpoint("lg") {
       background: $brand-ilo-dark-blue;
       overflow: visible;
       position: static;
@@ -258,7 +258,7 @@
     padding: spacing(4) 0;
     text-align: right;
 
-    @include breakpoint("large") {
+    @include breakpoint("lg") {
       display: block;
     }
 
@@ -274,7 +274,7 @@
 .ilo--nav {
   width: 100%;
 
-  @include breakpoint("large") {
+  @include breakpoint("lg") {
     width: auto;
   }
 
@@ -291,7 +291,7 @@
   &--set {
     width: 100%;
 
-    @include breakpoint("large") {
+    @include breakpoint("lg") {
       display: flex;
       width: auto;
     }
@@ -302,7 +302,7 @@
     font-family: $fonts-display;
     font-weight: 500;
 
-    @include breakpoint("large") {
+    @include breakpoint("lg") {
       display: flex;
       align-items: center;
 
@@ -326,7 +326,7 @@
       text-decoration: none;
     }
 
-    @include breakpoint("large") {
+    @include breakpoint("lg") {
       background: $brand-ilo-dark-blue;
       color: $brand-ilo-white;
       display: inline-block;
@@ -386,7 +386,7 @@
       }
     }
 
-    @include breakpoint("large") {
+    @include breakpoint("lg") {
       @include dataurlicon("add", $brand-ilo-white);
       @include font-styles("nav-bold-b-sm");
 
@@ -440,12 +440,12 @@
     justify-content: space-between;
 
     [dir="rtl"] {
-      @include breakpoint("large") {
+      @include breakpoint("lg") {
         padding: 0 max((100% - 1260px) / 2, 20px) 0 0;
       }
     }
 
-    @include breakpoint("large") {
+    @include breakpoint("lg") {
       padding: 0 32px 0 max((100% - 1260px) / 2, 20px);
     }
 
@@ -466,7 +466,7 @@
     &--set {
       display: none;
 
-      @include breakpoint("large") {
+      @include breakpoint("lg") {
         display: flex;
         justify-content: space-between;
       }
@@ -578,7 +578,7 @@
     }
   }
 
-  @include breakpoint("large") {
+  @include breakpoint("lg") {
     display: none;
   }
 }
@@ -694,7 +694,7 @@
     transform: translateX(0);
   }
 
-  @include breakpoint("large") {
+  @include breakpoint("lg") {
     height: auto;
     left: 0;
     padding: spacing(8) 0;
@@ -717,7 +717,7 @@
   }
 
   &--inner {
-    @include breakpoint("large") {
+    @include breakpoint("lg") {
       display: flex;
       justify-content: space-between;
     }
@@ -728,7 +728,7 @@
     grid-template-columns: 1fr;
     width: 100%;
 
-    @include breakpoint("large") {
+    @include breakpoint("lg") {
       grid-auto-flow: column;
       grid-template-columns: repeat(5, 1fr);
       grid-template-rows: repeat(5, 1fr);
@@ -756,7 +756,7 @@
 }
 
 .ilo--mobile--subnav {
-  @include breakpoint("large") {
+  @include breakpoint("lg") {
     display: none;
   }
 
@@ -829,7 +829,7 @@
       }
     }
 
-    @include breakpoint("large") {
+    @include breakpoint("lg") {
       display: none;
     }
   }
@@ -862,7 +862,7 @@
     transform: translateX(0);
   }
 
-  @include breakpoint("large") {
+  @include breakpoint("lg") {
     filter: drop-shadow(0px 0.8px 1.6px rgba(30, 45, 190, 0.038))
       drop-shadow(0px 4px 8px rgba(30, 45, 190, 0.054))
       drop-shadow(0px 10px 20px rgba(30, 45, 190, 0.08));
@@ -904,7 +904,7 @@
 .ilo--search {
   display: none;
 
-  @include breakpoint("large") {
+  @include breakpoint("lg") {
     display: flex;
   }
 

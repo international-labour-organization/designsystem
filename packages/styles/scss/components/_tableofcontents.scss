@@ -46,7 +46,7 @@
       width: 100vw;
       z-index: 10001;
 
-      @include breakpoint("large") {
+      @include breakpoint("lg") {
         padding: 0;
       }
     }
@@ -63,7 +63,7 @@
     }
   }
 
-  @include breakpoint("large") {
+  @include breakpoint("lg") {
     display: block;
 
     & > * {
@@ -94,7 +94,7 @@
       }
     }
 
-    @include breakpoint("large") {
+    @include breakpoint("lg") {
       display: none;
 
       &.show {

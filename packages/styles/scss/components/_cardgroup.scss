@@ -13,7 +13,7 @@
   }
 
   &__count {
-    @include breakpoint("large") {
+    @include breakpoint("lg") {
       &__one {
         #{$c}--inner {
           grid-template-columns: 1fr;
