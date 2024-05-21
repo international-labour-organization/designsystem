@@ -57,11 +57,13 @@
 // =========================================
 
 @function spacing($size) {
-  $scaled: $size * $spacing-root;
+  $scaled: calc(#{$size} * var(--ilo-spacing-base));
+
   @if ($size % 1 != 0) {
-    $scaled: round($size) * $spacing-root;
+    $scaled: calc(#{round($size)} * var(--ilo-spacing-base));
   }
-  @return px-to-rem($scaled);
+
+  @return $scaled;
 }
 
 // =========================================
