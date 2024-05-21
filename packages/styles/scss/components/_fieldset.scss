@@ -22,7 +22,7 @@
     @include textmargin("margin-bottom", $gap, "label-medium", "display", 0, 0);
 
     .ilo--tooltip--wrapper {
-      top: math.div(spacing(1), 2);
+      top: calc(#{spacing(1)} / 2);
     }
   }
 
