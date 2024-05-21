@@ -29,7 +29,7 @@ jobs:
         ports:
           - 8082:80
         credentials:
-          username: "justintemps"
+          username: ${{ github.repository_owner }}
           password: ${{ secrets.ILO_BASE_THEME_TOKEN }}
 
     steps:
