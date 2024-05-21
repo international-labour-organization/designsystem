@@ -1,5 +1,11 @@
 # @ilo-org/icons
 
+## 0.4.0
+
+### Minor Changes
+
+- e3e9d14a5: Add new X icon and remove the legacy twitter icon
+
 ## 0.3.1
 
 ### Patch Changes
