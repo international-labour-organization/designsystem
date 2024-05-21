@@ -4,6 +4,7 @@ export const defaultArgs: SocialMediaProps = {
   headline: "Follow us on social media",
   theme: "light",
   justify: "start",
+  iconSize: "normal",
   icons: [
     {
       icon: "facebook",
@@ -11,9 +12,9 @@ export const defaultArgs: SocialMediaProps = {
       label: "Facebook",
     },
     {
-      icon: "twitter",
-      url: "https://twitter.com/#!/ilo",
-      label: "Twitter",
+      icon: "x",
+      url: "https://x.com/ilo",
+      label: "x",
     },
     {
       icon: "instagram",

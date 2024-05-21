@@ -67,6 +67,12 @@
         width: px-to-rem($icon-size + 8px);
         transition: all 0.1s ease-in-out;
 
+        &__large {
+          background-size: auto px-to-rem(24px);
+          height: px-to-rem(36px);
+          width: px-to-rem(36px);
+        }
+
         &:hover {
           background-color: map-get(
             $color,
@@ -95,11 +101,11 @@
           }
         }
 
-        &__twitter {
-          @include get-icon("twitter");
+        &__x {
+          @include get-icon("x");
 
           #{$c}__theme__dark & {
-            @include get-icon("twitter", "dark");
+            @include get-icon("x", "dark");
           }
         }
 
