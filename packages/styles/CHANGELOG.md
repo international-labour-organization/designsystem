@@ -1,5 +1,14 @@
 # @ilo-org/styles
 
+## 1.0.6
+
+### Patch Changes
+
+- e3e9d14a5: Refactor legacy twitter social media icon with the new X icon
+- a514679a8: Add new option to change size of icon in the social media component
+- Updated dependencies [e3e9d14a5]
+  - @ilo-org/icons@0.4.0
+
 ## 1.0.5
 
 ### Patch Changes

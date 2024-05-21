@@ -1,5 +1,18 @@
 # @ilo-org/react
 
+## 0.17.1
+
+### Patch Changes
+
+- e3e9d14a5: Refactor legacy twitter social media icon with the new X icon
+- a514679a8: Add new option to change size of icon in the social media component
+- Updated dependencies [e3e9d14a5]
+- Updated dependencies [a514679a8]
+- Updated dependencies [46d8998a4]
+  - @ilo-org/styles@1.0.6
+  - @ilo-org/brand-assets@0.5.2
+  - @ilo-org/icons-react@0.1.2
+
 ## 0.17.0
 
 ### Minor Changes
