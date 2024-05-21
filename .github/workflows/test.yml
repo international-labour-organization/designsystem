@@ -22,6 +22,15 @@ jobs:
       matrix:
         node-version: [16.14.0]
         os: [ubuntu-latest, macos-latest]
+    
+    services:
+      theme:
+        image: ghcr.io/international-labour-organization/ilo_base_theme:1.x
+        ports:
+          - 8082:80
+        credentials:
+          username: "justintemps"
+          password: ${{ secrets.ILO_BASE_THEME_TOKEN }}
 
     steps:
       - name: Check out code
