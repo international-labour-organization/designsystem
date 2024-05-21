@@ -62,4 +62,18 @@
     * Spacing
     */
   --ilo-spacing-base: calc(px-to-rem(4) * var(--ilo-scale));
+
+  /**
+    * transition
+    */
+  --ilo-transition-duration: 150ms;
+  --ilo-transition-timing-function: ease-out;
+
+  /**
+    * Border
+    */
+  --ilo-border-xs: calc(px-to-rem(1) * var(--ilo-scale));
+  --ilo-border-sm: calc(px-to-rem(1.5) * var(--ilo-scale));
+  --ilo-border-md: calc(px-to-rem(2) * var(--ilo-scale));
+  --ilo-border-lg: calc(px-to-rem(4) * var(--ilo-scale));
 }
