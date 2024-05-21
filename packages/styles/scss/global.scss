@@ -4,8 +4,8 @@
 // Load the css resets
 @use "reset";
 
-//Import type styles
-@use "typography";
-
 //Theme Foundation
 @use "theme";
+
+//Import type styles
+@use "typography";
