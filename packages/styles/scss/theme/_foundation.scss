@@ -1,3 +1,5 @@
+@use "../functions" as *;
+
 :root {
   /**
     * Typography
@@ -56,12 +58,12 @@
   --ilo-breakpoint-lg: 1024px;
   --ilo-breakpoint-xl: 1168px;
   --ilo-breakpoint-xxl: 1440px;
-  --ilo-border-radius: calc(px-to-rem(2) * var(--ilo-scale));
+  --ilo-border-radius: calc(#{px-to-rem(2)} * var(--ilo-scale));
 
   /**
     * Spacing
     */
-  --ilo-spacing-base: calc(px-to-rem(4) * var(--ilo-scale));
+  --ilo-spacing-base: calc(#{px-to-rem(4)} * var(--ilo-scale));
 
   /**
     * transition
@@ -72,8 +74,8 @@
   /**
     * Border
     */
-  --ilo-border-xs: calc(px-to-rem(1) * var(--ilo-scale));
-  --ilo-border-sm: calc(px-to-rem(1.5) * var(--ilo-scale));
-  --ilo-border-md: calc(px-to-rem(2) * var(--ilo-scale));
-  --ilo-border-lg: calc(px-to-rem(4) * var(--ilo-scale));
+  --ilo-border-xs: calc(#{px-to-rem(1)} * var(--ilo-scale));
+  --ilo-border-sm: calc(#{px-to-rem(1.5)} * var(--ilo-scale));
+  --ilo-border-md: calc(#{px-to-rem(2)} * var(--ilo-scale));
+  --ilo-border-lg: calc(#{px-to-rem(4)} * var(--ilo-scale));
 }
