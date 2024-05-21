@@ -1,5 +1,17 @@
 @use "../functions" as *;
 
+/**
+  * Breakpoints are defined in scss because they can't be referenced as a css variables
+  */
+$breakpoints-foundation: (
+  xs: 320px,
+  small: 414px,
+  md: 610px,
+  lg: 1024px,
+  xl: 1168px,
+  xxl: 1140px,
+);
+
 :root {
   /**
     * Typography
@@ -52,12 +64,12 @@
   /**
     * Sizing
     */
-  --ilo-breakpoint-xs: 320px;
-  --ilo-breakpoint-sm: 414px;
-  --ilo-breakpoint-md: 610px;
-  --ilo-breakpoint-lg: 1024px;
-  --ilo-breakpoint-xl: 1168px;
-  --ilo-breakpoint-xxl: 1440px;
+  --ilo-breakpoint-xs: #{map-get($breakpoints-foundation, "xs")};
+  --ilo-breakpoint-sm: #{map-get($breakpoints-foundation, "sm")};
+  --ilo-breakpoint-md: #{map-get($breakpoints-foundation, "md")};
+  --ilo-breakpoint-lg: #{map-get($breakpoints-foundation, "lg")};
+  --ilo-breakpoint-xl: #{map-get($breakpoints-foundation, "xl")};
+  --ilo-breakpoint-xxl: #{map-get($breakpoints-foundation, "xxl")};
   --ilo-border-radius: calc(#{px-to-rem(2)} * var(--ilo-scale));
 
   /**

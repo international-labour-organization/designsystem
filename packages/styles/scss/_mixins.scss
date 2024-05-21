@@ -3,6 +3,7 @@
 //*------------------------------------*/
 @use "tokens" as *;
 @use "functions" as *;
+@use "theme/foundation" as *;
 
 // ======================================
 // Output font styles
@@ -40,15 +41,15 @@
 // ======================================
 
 @mixin breakpoint($breakpoint, $max: false) {
-  @if map-has-key($breakpoints, $breakpoint) {
+  @if map-has-key($breakpoints-foundation, $breakpoint) {
     @if not $max {
-      @media screen and (min-width: map-get($breakpoints, $breakpoint)) {
+      @media screen and (min-width: map-get($breakpoints-foundation, $breakpoint)) {
         @content;
       }
     }
 
     @if $max {
-      @media screen and (max-width: #{map-get($breakpoints, $breakpoint) - 1px}) {
+      @media screen and (max-width: #{map-get($breakpoints-foundation, $breakpoint) - 1px}) {
         @content;
       }
     }
