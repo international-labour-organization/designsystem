@@ -16,6 +16,7 @@
     padding-inline-start: var(--breadcrumb-padding);
     padding-inline-end: spacing(12);
     padding-block: spacing(4);
+    padding-left: spacing(5);
     background-color: $color-base-neutrals-white;
     @include cornercut(spacing(12), 100%, "right", "bottom");
 
