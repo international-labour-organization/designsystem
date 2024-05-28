@@ -27,6 +27,8 @@ jobs:
         credentials:
           username: ${{ github.repository_owner }}
           password: ${{ secrets.ILO_BASE_THEME_TOKEN }}
+        volumes:
+          - ${{ github.workspace }}/packages/twig/dist:/opt/drupal/test/
 
     steps:
       - name: Check out code
