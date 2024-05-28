@@ -58,7 +58,9 @@
     "import:prefix": "node importprefix.js",
     "import:svgs": "node importsvgs.js",
     "start:theme": "docker compose up -d",
-    "cy:open": "cypress open"
+    "cy:open": "cypress open",
+    "cy:run": "cypress run",
+    "test": "cypress run"
   },
   "dependencies": {
     "@ilo-org/brand-assets": "workspace:*",
