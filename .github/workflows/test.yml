@@ -61,7 +61,7 @@ jobs:
         run: |
           echo "${{ secrets.ILO_BASE_THEME_TOKEN }}" | docker login ghcr.io -u "${{ github.repository_owner }}" --password-stdin
           docker run -d --name theme -p 8082:80 ghcr.io/international-labour-organization/ilo_base_theme:1.x
-          sleep 10
+          sleep 20
 
       - name: Test
         run: pnpm test:all
