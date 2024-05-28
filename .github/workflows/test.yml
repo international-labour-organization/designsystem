@@ -19,16 +19,16 @@ jobs:
     #  TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
     #  TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
     
-    services:
-      theme:
-        image: ghcr.io/international-labour-organization/ilo_base_theme:1.x
-        ports:
-          - 8082:80
-        credentials:
-          username: ${{ github.repository_owner }}
-          password: ${{ secrets.ILO_BASE_THEME_TOKEN }}
-        volumes:
-          - ${{ github.workspace }}/packages/twig/dist:/opt/drupal/test/
+    # services:
+    #   theme:
+    #     image: ghcr.io/international-labour-organization/ilo_base_theme:1.x
+    #     ports:
+    #       - 8082:80
+    #     credentials:
+    #       username: ${{ github.repository_owner }}
+    #       password: ${{ secrets.ILO_BASE_THEME_TOKEN }}
+    #     volumes:
+    #       - ${{ github.workspace }}/packages/twig/dist:/opt/drupal/test/
 
     steps:
       - name: Check out code
@@ -57,10 +57,11 @@ jobs:
       - name: Check types
         run: pnpm check:types
 
-      # - name: Run theme container
-      #   run: |
-      #     docker run -d --name theme -p 8082:80 ghcr.io/international-labour-organization/ilo_base_theme:1.x
-      #     sleep 10
+      - name: Run theme container
+        run: |
+          echo "${{ secrets.ILO_BASE_THEME_TOKEN }}" | docker login ghcr.io -u "${{ github.repository_owner }}" --password-stdin
+          docker run -d --name theme -p 8082:80 ghcr.io/international-labour-organization/ilo_base_theme:1.x
+          sleep 10
 
       - name: Test
         run: pnpm test:all
