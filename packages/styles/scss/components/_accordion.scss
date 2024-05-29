@@ -44,14 +44,14 @@
 
     &:hover,
     &:focus {
-      background-color: $color-ux-background-hover;
       border-top-color: $color-ux-borders-hover;
       color: $color-ux-labels-hover;
       fill: $color-ux-labels-hover;
       cursor: pointer;
 
       &[aria-expanded="true"] {
-        @include dataurlicon("minus", $color-ux-labels-hover);
+        color: $brand-ilo-dark-blue;
+        @include dataurlicon("minus", $brand-ilo-dark-blue);
       }
 
       &[aria-expanded="false"] {
@@ -69,7 +69,9 @@
     }
 
     &[aria-expanded="true"] {
-      @include dataurlicon("minus", $color-ux-labels-actionable);
+      background-color: $color-base-blue-light;
+      color: $brand-ilo-blue;
+      @include dataurlicon("minus", $brand-ilo-blue);
     }
 
     &[aria-expanded="false"] {
