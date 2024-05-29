@@ -2,4 +2,4 @@
 "@ilo-org/styles": patch
 ---
 
-Add appropriate padding to iframes in richtext
+Add appropriate margin to iframes in richtext
