@@ -1,5 +1,12 @@
 # @ilo-org/styles
 
+## 1.0.7
+
+### Patch Changes
+
+- f76f43a5f: Improve accordion expanded interactions by refactoring active and hover states
+- dd519d704: Add appropriate margin to iframes in richtext
+
 ## 1.0.6
 
 ### Patch Changes
