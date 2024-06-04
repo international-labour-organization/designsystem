@@ -13,33 +13,49 @@ on:
 jobs:
   test:
     name: Build and Test
-    runs-on: ${{ matrix.os }}
+    runs-on: 'ubuntu-latest'
     # To use Remote Caching, uncomment the next lines and follow the steps below.
     # env:
     #  TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
     #  TURBO_TEAM: ${{ secrets.TURBO_TEAM }}
-    strategy:
-      matrix:
-        node-version: [16.14.0]
-        os: [ubuntu-latest, macos-latest]
 
     steps:
       - name: Check out code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           fetch-depth: 2
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 16.14.0
 
       - name: Setup pnpm
-        uses: pnpm/action-setup@v2.0.1
+        uses: pnpm/action-setup@v4
         with:
           version: 8.6.0
 
-      - name: Setup Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v2
-        with:
-          node-version: ${{ matrix.node-version }}
-          cache: "pnpm"
+      - name: Get pnpm store directory
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
 
+      - uses: actions/cache@v4
+        name: Setup pnpm cache
+        with:
+          path: ${{ env.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      - name: Cache Cypress binary
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/Cypress
+          key: cypress-${{ runner.os }}-cypress-${{ github.ref }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            cypress-${{ runner.os }}-cypress-${{ github.ref }}-${{ hashFiles('**/package-lock.json') }}
+      
       - name: Install dependencies
         run: pnpm install
 
@@ -48,6 +64,12 @@ jobs:
 
       - name: Check types
         run: pnpm check:types
+
+      # Note: This takes a while to start after the image is pulled
+      - name: Run theme container
+        run: |
+          echo "${{ secrets.ILO_BASE_THEME_TOKEN }}" | docker login ghcr.io -u "${{ github.repository_owner }}" --password-stdin
+          docker run -d --name theme -p 8082:80 -v "${{ github.workspace }}"/packages/twig/dist/components:/opt/drupal/modules/ilo_base_theme_companion/dist/components -v "${{ github.workspace }}"/packages/twig/dist/global/styles.css:/opt/drupal/modules/ilo_base_theme_companion/dist/index.css ghcr.io/international-labour-organization/ilo_base_theme:1.x
 
       - name: Test
         run: pnpm test:all
