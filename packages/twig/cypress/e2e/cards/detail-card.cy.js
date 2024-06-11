@@ -1,11 +1,11 @@
-describe("Card", () => {
-  it("renders the feature card correctly", () => {
-    cy.visit("/patterns/card");
-    cy.getPreview("feature").within(() => {
+describe("Detail card", () => {
+  it("renders the detail card correctly", () => {
+    cy.visit("/patterns/detailcard");
+    cy.getPreview("detailcard").within(() => {
       cy.contains("Podcast");
       cy.contains("Can digital technology be an equality machine?");
-      cy.contains("20 September 2022");
-      cy.contains("Read more");
+      cy.contains("A toxic combination");
+      cy.contains("20 September 2022 | Geneva");
 
       cy.get("picture").within(() => {
         cy.get("source").should("have.length", 3);
