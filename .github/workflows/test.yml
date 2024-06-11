@@ -52,9 +52,9 @@ jobs:
         uses: actions/cache@v4
         with:
           path: ~/.cache/Cypress
-          key: cypress-${{ runner.os }}-cypress-${{ github.ref }}-${{ hashFiles('**/package-lock.json') }}
+          key: ${{ runner.os }}-cypress-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
-            cypress-${{ runner.os }}-cypress-${{ github.ref }}-${{ hashFiles('**/package-lock.json') }}
+            ${{ runner.os }}-cypress-
       
       - name: Install dependencies
         run: pnpm install
