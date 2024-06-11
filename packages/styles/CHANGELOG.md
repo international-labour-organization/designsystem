@@ -1,5 +1,11 @@
 # @ilo-org/styles
 
+## 1.0.8
+
+### Patch Changes
+
+- 201fde019: Fix multi-line link decoration from breaking in RichText component
+
 ## 1.0.7
 
 ### Patch Changes
