@@ -9,6 +9,11 @@
 
   a {
     @include linkstyles();
+    background: none;
+
+    &:hover {
+      background: none;
+    }
   }
 
   img {

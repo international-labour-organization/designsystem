@@ -58,7 +58,9 @@
     "import:prefix": "node importprefix.js",
     "import:svgs": "node importsvgs.js",
     "start:theme": "docker compose up -d",
-    "cy:open": "cypress open"
+    "cy:open": "cypress open",
+    "cy:run": "cypress run",
+    "test": "cypress run"
   },
   "dependencies": {
     "@ilo-org/brand-assets": "workspace:*",
@@ -97,6 +99,7 @@
     "@wingsuit-designsystem/storybook": "1.2.7",
     "autoprefixer": "^10.4.13",
     "cross-env": "^7.0.3",
+    "cypress": "^13.10.0",
     "eslint": "^8.41.0",
     "file-loader": "^6.2.0",
     "fs": "0.0.1-security",
