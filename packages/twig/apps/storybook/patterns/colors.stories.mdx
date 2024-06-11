@@ -4,7 +4,8 @@ import {
   ColorItem,
   Subtitle,
 } from "@storybook/addon-docs/blocks";
-const colors = require("../../../src/tokens/exports/_colors.scss");
+
+// const colors = require("../../../src/tokens/exports/\_colors.scss");
 
 <Meta
   title="Tokens/Colors"
@@ -15,9 +16,9 @@ const colors = require("../../../src/tokens/exports/_colors.scss");
 
 <Subtitle>ILO Brand Colors</Subtitle>
 <ColorPalette>
-  {Object.keys(colors).map((key) => {
+  {/* {Object.keys(colors).map((key) => {
     const color = typeof colors[key] === "string" ? [colors[key]] : colors[key];
     const title = `.${key}`;
     return <ColorItem key={key} title={title} colors={color} />;
-  })}
+  })} */}
 </ColorPalette>

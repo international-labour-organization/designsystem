@@ -1,7 +1,18 @@
 const namespaces = require("./src/namespaces");
 
 module.exports = {
-  presets: ["@wingsuit-designsystem/preset-scss"],
+  presets: [
+    // "@wingsuit-designsystem/preset-tailwind", // If you use tailwind
+    "@wingsuit-designsystem/preset-scss", // If you use SCSS
+    "@wingsuit-designsystem/preset-lint",
+    "@wingsuit-designsystem/preset-twing",
+    "@wingsuit-designsystem/preset-placeholder",
+    "@wingsuit-designsystem/preset-storybook",
+    "@wingsuit-designsystem/preset-drupal",
+    "@wingsuit-designsystem/preset-icon",
+    "@wingsuit-designsystem/preset-icon-spritemap",
+    "@wingsuit-designsystem/preset-imagemin",
+  ],
   designSystems: {
     ilo: {
       path: "src",

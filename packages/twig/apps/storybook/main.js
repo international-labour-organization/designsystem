@@ -1,27 +1,51 @@
-const wingsuitCore = require("@wingsuit-designsystem/core");
+import { resolveConfig, stories } from "@wingsuit-designsystem/core";
 
-module.exports = {
-  addons: [
-    "@storybook/addon-docs",
-    "@storybook/addon-viewport",
-    "@storybook/addon-controls",
-    "@storybook/addon-links",
-    "@storybook/addon-backgrounds",
-    "@storybook/addon-postcss",
-    "storybook-addon-rtl-direction",
-  ],
-  staticDirs: [
-    {
-      from: "../../node_modules/@ilo-org/brand-assets/dist/assets/",
-      to: "/brand-assets",
+const appName = "storybook";
+const appConfig = resolveConfig(appName);
+const postCss = require("postcss");
+
+export default {
+  framework: {
+    name: "@storybook/react-webpack5",
+    options: {
+      builder: {
+        /** This don't work */
+        lazyCompilation: false,
+        fsCache: false,
+      },
     },
-    { from: "../../node_modules/@ilo-org/fonts/font-css", to: "/fonts" },
-  ],
-  webpackFinal: (config) => {
-    const final = wingsuitCore.getAppPack(
-      wingsuitCore.resolveConfig("storybook"),
-      [config]
-    );
-    return final;
   },
+  typescript: { reactDocgen: false },
+  docs: {
+    autodocs: "tag",
+    defaultName: "Docs",
+  },
+  stories: [
+    "./patterns/**/*.mdx",
+    "../../source/default/patterns/**/*.stories.wingsuit.jsx",
+    "../../source/default/patterns/**/*.stories.jsx",
+    "./patterns/**/*.stories.wingsuit.jsx",
+    "./patterns/**/*.stories.jsx",
+    "../src/patterns/**/*.stories.wingsuit.jsx",
+    ...stories(appConfig, ["icon", "placeholder"]),
+  ],
+  addons: [
+    "@storybook/addon-links",
+    "@storybook/addon-essentials",
+    {
+      name: "@storybook/addon-styling",
+      options: {
+        postCss: {
+          implementation: postCss,
+        },
+      },
+    },
+    "storybook-addon-theme-provider",
+    {
+      name: "@wingsuit-designsystem/storybook",
+      options: {
+        appName: appName,
+      },
+    },
+  ],
 };
