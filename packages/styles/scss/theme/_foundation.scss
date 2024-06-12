@@ -1,16 +1,5 @@
 @use "../functions" as *;
-
-/**
-  * Breakpoints are defined in scss because they can't be referenced as a css variables
-  */
-$breakpoints-foundation: (
-  xs: 320px,
-  small: 414px,
-  md: 610px,
-  lg: 1024px,
-  xl: 1168px,
-  xxl: 1140px,
-);
+@use "./breakpoints" as *;
 
 :root {
   /**
