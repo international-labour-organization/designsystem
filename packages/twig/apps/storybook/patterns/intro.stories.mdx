@@ -21,7 +21,40 @@ import LinkTo from "@storybook/addon-links/react";
   </h1>
 </div>
 
-Welcome to the ILO Design System Twig component library. This resource is crafted to assist developers in creating accessible, user-friendly websites for Drupal that with the International Labour Organization's Visual Identity. The library offers a variety of easy-to-use components tailored for these popular platforms, ensuring both compliance with web accessibility standards and a cohesive visual style. Components are responsive and are ready-made for RTL layouts.
+Welcome to the ILO Design System Twig component library. This resource is crafted to assist developers in creating accessible,
+user-friendly websites for Drupal that with the International Labour Organization's Visual Identity.
+The library offers a variety of easy-to-use components tailored for these popular platforms, ensuring both compliance
+with web accessibility standards and a cohesive visual style. Components are responsive and are ready-made for RTL layouts.
+
+## How to use it on a Drupal site
+
+The recommended way of using the Twig component library on a Drupal site is by installing the [ILO Base Theme](https://github.com/international-labour-organization/ilo_base_theme).
+Please refer to the projects [installation instruction](https://github.com/international-labour-organization/ilo_base_theme?tab=readme-ov-file#installation)
+for more information on how to correctly install the theme.
+
+The theme exposes relevant Twig components as UI patterns, by using the [UI Pattern](https://www.drupal.org/project/ui_patterns) module.
+If you Drupal site has already a theme, you can still use the patterns by [enabling the theme's companion module](https://github.com/international-labour-organization/ilo_base_theme?tab=readme-ov-file#use-the-components-without-the-base-theme).
+
+You can render a component as a pattern by using the following notation:
+
+```
+{{ pattern([pattern ID], [pattern fields and/or settings], [pattern variant]) }}
+```
+
+For example, you can render a featured card as follows:
+
+```twig
+{{ pattern('card', {
+  title: "My card title",
+  link: "https://example.com",
+  size: 'fluid',
+}, 'feature') }}
+```
+
+Please make sure you read the disclaimer on [patterns and cache metadata](https://github.com/international-labour-organization/ilo_base_theme?tab=readme-ov-file#patterns-and-cache-metadata)
+before rendering data coming from Drupal render arrays.
+
+For any other information on how to work with UI patterns, please refer to the module's [official documentation](https://www.drupal.org/docs/contributed-modules/ui-patterns).
 
 ## Requirements
 
