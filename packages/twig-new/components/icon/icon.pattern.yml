@@ -1,0 +1,29 @@
+icon:
+  namespace: Components/User Interface
+  use: "@components/icon/icon.twig"
+  label: Icon
+  description: A component for displaying an svg icon.
+  settings:
+    name:
+      type: value
+      label: Name
+      description: The name of the icon to display. <strong style="font-weight:bold">The name should match SVG file</strong>, see available icons in the <a target="_blank" href="https://github.com/international-labour-organization/designsystem/tree/develop/packages/icons/src/svg">@ilo-org/icons</a> package
+      preview: "arrowright"
+      required: true
+    size:
+      type: select
+      label: Size
+      description: The size of the icon in pixels
+      options:
+        16: 16
+        20: 20
+        24: 24
+        32: 32
+      preview: "24"
+      required: false
+    color:
+      type: value
+      label: Fill
+      description: The fill color of the icon in hex
+      preview: "#000000"
+      required: false
