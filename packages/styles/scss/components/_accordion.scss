@@ -59,7 +59,7 @@
       }
     }
 
-    @include breakpoint("medium") {
+    @include breakpoint("md") {
       @include font-styles("label-medium");
       &__large {
         @include font-styles("headline-6");

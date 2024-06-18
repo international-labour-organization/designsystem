@@ -28,7 +28,7 @@
 .ilo--h1 {
   @include font-styles("headline-2");
 
-  @include breakpoint("medium") {
+  @include breakpoint("md") {
     @include font-styles("headline-1");
   }
 }
@@ -36,7 +36,7 @@
 .ilo--h2 {
   @include font-styles("headline-3");
 
-  @include breakpoint("medium") {
+  @include breakpoint("md") {
     @include font-styles("headline-2");
   }
 }
@@ -44,7 +44,7 @@
 .ilo--h3 {
   @include font-styles("headline-4");
 
-  @include breakpoint("medium") {
+  @include breakpoint("md") {
     @include font-styles("headline-3");
   }
 }
@@ -52,7 +52,7 @@
 .ilo--h4 {
   @include font-styles("headline-5");
 
-  @include breakpoint("medium") {
+  @include breakpoint("md") {
     @include font-styles("headline-4");
   }
 }
@@ -60,7 +60,7 @@
 .ilo--h5 {
   @include font-styles("headline-6");
 
-  @include breakpoint("medium") {
+  @include breakpoint("md") {
     @include font-styles("headline-5");
   }
 }
@@ -68,7 +68,7 @@
 .ilo--h6 {
   @include font-styles("headline-6");
 
-  @include breakpoint("medium") {
+  @include breakpoint("md") {
     @include font-styles("headline-6");
   }
 }

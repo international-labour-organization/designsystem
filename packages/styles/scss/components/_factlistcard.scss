@@ -15,7 +15,7 @@
 
       @include cornercut(72px, 40px);
 
-      @include breakpoint("large") {
+      @include breakpoint("lg") {
         padding: spacing(12) spacing(10) spacing(14);
       }
 
@@ -25,7 +25,7 @@
 
           padding: spacing(12) spacing(10) spacing(14);
 
-          @include breakpoint("medium") {
+          @include breakpoint("md") {
             @include cornercut(87px, 48px);
           }
         }
@@ -80,7 +80,7 @@
           "copy"
         );
 
-        @include breakpoint("large") {
+        @include breakpoint("lg") {
           @include font-styles("headline-4");
           @include textmargin(
             "margin-bottom",

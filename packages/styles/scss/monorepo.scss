@@ -6,6 +6,9 @@
 // Load the css resets
 @use "reset";
 
+//Theme Foundation
+@use "theme";
+
 //Import type styles
 @use "typographymonorepo";
 

@@ -247,7 +247,7 @@
     }
   }
 
-  @include breakpoint("medium") {
+  @include breakpoint("md") {
     &--main {
       display: grid;
       grid-template-columns: minmax(0, 50%) minmax(0, 50%);
@@ -295,7 +295,7 @@
     }
   }
 
-  @include breakpoint("large") {
+  @include breakpoint("lg") {
     @include footer-triangle(top-right);
 
     &--main {
@@ -392,7 +392,7 @@
       }
     }
 
-    @include breakpoint("medium") {
+    @include breakpoint("md") {
       &--main {
         grid-template-areas:
           "address site-info"
@@ -402,7 +402,7 @@
       }
     }
 
-    @include breakpoint("large") {
+    @include breakpoint("lg") {
       @include footer-triangle(top-left);
 
       &--main {

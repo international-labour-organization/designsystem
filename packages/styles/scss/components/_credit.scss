@@ -29,7 +29,7 @@
     width: px-to-rem($spacing-ux-credit-height);
   }
 
-  @include breakpoint("large", true) {
+  @include breakpoint("lg", true) {
     width: 75%;
 
     &--label {
@@ -88,7 +88,7 @@
       transform: scaleX(-1);
     }
 
-    @include breakpoint("large", true) {
+    @include breakpoint("lg", true) {
       &--label {
         left: auto;
         right: 0;
