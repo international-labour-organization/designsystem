@@ -22,7 +22,7 @@ describe("linklist", () => {
 
   it("checks if links render as expected", () => {
     cy.get("@linkListSection").within(() => {
-      cy.get(".ilo--social-media")
+      cy.get(".ilo--link-list--links--item")
         .should("exist")
         .first()
         .find("a")
