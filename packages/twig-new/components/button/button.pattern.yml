@@ -1,0 +1,105 @@
+button:
+  namespace: Components/User Interface
+  use: "@components/button/button.twig"
+  label: Button
+  description: A button or a link styled like a button.
+  fields:
+    label:
+      type: string
+      label: Label
+      description: The label for the button
+      preview: "Button"
+      required: true
+    name:
+      type: string
+      label: Name
+      description: The name for the button
+      preview: "button"
+      required: false
+    url:
+      type: string
+      label: url
+      description: The url for the button if it's a link
+      preview: ""
+      required: false
+    target:
+      type: object
+      label: target
+      description: Should the button open in a new tab? If so, include the name of the tab. Only evaluated if the url field is populated.
+      preview: "true"
+      required: false
+    icon:
+      type: object
+      label: Icon
+      description: Optional icon to include in button. See the `Icon` component for a full list of arguments
+      preview:
+        name: "add"
+        size: 24
+      required: false
+    className:
+      type: string
+      label: Class name
+      description: optional class name
+      preview: "optionalclass"
+      required: false
+  settings:
+    size:
+      type: select
+      label: Size
+      description: The size of the button.
+      required: true
+      options:
+        small: Small
+        medium: Medium
+        large: Large
+      preview: "large"
+    type:
+      type: select
+      label: Type
+      description: The type of button.
+      required: true
+      options:
+        primary: Primary
+        secondary: Secondary
+        tertiary: Tertiary
+        alert: Alert
+        icononly: Icon Only
+      preview: "primary"
+    disabled:
+      type: boolean
+      label: Disabled
+      description: The disabled state of the button.
+      required: false
+      preview: false
+    kind:
+      type: select
+      label: Kind
+      description: What kind of functionality does the button have?
+      required: false
+      options:
+        button: button
+        reset: reset
+        submit: submit
+      preview: "button"
+    iconPosition:
+      type: select
+      label: Icon Position
+      description: if there's an icon, where is it in the button?
+      options:
+        left: left
+        right: right
+      preview: left
+      required: false
+    icononly:
+      type: boolean
+      label: Icon Only
+      description: Is this an icon-only button?
+      preview: false
+      required: false
+    opensmodal:
+      type: boolean
+      label: Opens Modal
+      description: Does this button trigger open a modal?
+      preview: false
+      required: false
+  visibility: storybook
