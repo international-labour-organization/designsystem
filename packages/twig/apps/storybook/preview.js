@@ -20,7 +20,12 @@ addParameters({
   options: {
     storySort: {
       method: "alphabetical",
-      order: ["Welcome", "Intro", "Tokens", ["Colors", "Typography"]],
+      order: [
+        "Welcome",
+        "Get Started",
+        ["Introduction", "Use with Drupal"],
+        "Components",
+      ],
       locales: "en-US",
     },
   },
