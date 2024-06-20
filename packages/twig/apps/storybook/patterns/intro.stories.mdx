@@ -26,14 +26,149 @@ user-friendly websites for Drupal that with the International Labour Organizatio
 The library offers a variety of easy-to-use components tailored for these popular platforms, ensuring both compliance
 with web accessibility standards and a cohesive visual style. Components are responsive and are ready-made for RTL layouts.
 
+# Table of Contents
+
+1. [How to use it on a Drupal site](#how-to-use-it-on-a-drupal-site)
+1. [Installation](#installation)
+1. [Use the base theme](#use-the-base-theme)
+1. [Use the components without the base theme](#use-the-components-without-the-base-theme)
+1. [Patterns and cache metadata](#patterns-and-cache-metadata)
+1. [How to use it on a generic PHP project](#how-to-use-it-on-a-generic-php-project)
+1. [Requirements](#requirements)
+1. [Installation](#installation-1)
+1. [Required Twig extensions](#required-twig-extensions)
+1. [Usage](#usage)
+1. [Bundle JavaScript](#bundle-javascript)
+1. [Bundle CSS](#bundle-css)
+1. [Populating the theme.libraries.yml file](#populating-the-themelibrariesyml-file)
+
 ## How to use it on a Drupal site
 
-The recommended way of using the Twig component library on a Drupal site is by installing the [ILO Base Theme](https://github.com/international-labour-organization/ilo_base_theme).
-Please refer to the projects [installation instruction](https://github.com/international-labour-organization/ilo_base_theme?tab=readme-ov-file#installation)
-for more information on how to correctly install the theme.
+The recommended way of using the Twig component library on a Drupal site is by installing the [ILO Base Theme][11].
+The theme is structured in the following way:
+
+- A very basic base theme, with not much in it at the moment. This will change in the future as more and more default
+  Drupal templates (e.g. tabs, forms, etc.) will be provided by default, complying with the ILO Design System.
+- A theme companion module `ilo_base_theme_companion`, which exposes all compatible ILO Design System components as Drupal patterns.
+  Check the [UI Patterns][6] and the [UI Patterns Settings][7] modules for more information.
+
+The theme requires the companion module to be enabled, while one could enable the companion module without enabling the base theme.
 
 The theme exposes relevant Twig components as UI patterns, by using the [UI Pattern](https://www.drupal.org/project/ui_patterns) module.
 If you Drupal site has already a theme, you can still use the patterns by [enabling the theme's companion module](https://github.com/international-labour-organization/ilo_base_theme?tab=readme-ov-file#use-the-components-without-the-base-theme).
+
+### Installation
+
+The recommended way of installing the ILO Base Theme is via [Composer][4].
+
+Before proceeding, please note that theme releases are built by a continuous integration system, and include code coming
+from third-party libraries, such as [ILO Design System][1] templates and other assets. Simply Running `composer require international-labour-organization/ilo_base_theme`
+will download the raw theme source code, which misses required third-party code.
+
+In order to instruct Composer to download the actual built artifact, you need to require and configure the
+[Composer Artifacts][5] project.
+
+To do so, run:
+
+```
+composer require openeuropa/composer-artifacts
+```
+
+Then add the following section in your project's `composer.json`:
+
+```
+    "extra": {
+        "artifacts": {
+            "international-labour-organization/ilo_base_theme": {
+                "dist": {
+                    "url": "https://github.com/{name}/releases/download/{pretty-version}/{project-name}-{pretty-version}.zip",
+                    "type": "zip"
+                }
+            }
+        },
+    }
+```
+
+Once you are done, run:
+
+```bash
+composer require international-labour-organization/ilo_base_theme
+```
+
+This will download the fully built artifact, as opposed to the raw theme source code.
+
+### Use the base theme
+
+In order to enable the theme in your project perform the following steps:
+
+1. Enable the **ILO base theme companion** module
+2. Enable the **ILO base theme** and set it as default
+
+```
+./vendor/bin/drush en ilo_base_theme_companion
+./vendor/bin/drush theme:enable ilo_base_theme
+./vendor/bin/drush config-set system.theme default ilo_base_theme
+```
+
+### Use the components without the base theme
+
+If you already have a theme, and you just want to use the design system components, just enable the companion module,
+without enabling the theme, like so:
+
+```
+./vendor/bin/drush en ilo_base_theme_companion
+```
+
+The full list of components is available at `/patterns`.
+
+### Patterns and cache metadata
+
+Displaying render arrays using patterns requires a careful handing of the render array's cache metadata. For example,
+if you want to use the `card` pattern to render a news content type teaser, you would typically do the following:
+
+```twig
+{{ pattern('card', {
+  title: content.title,
+  link: content.field_link['#url'],
+  size: 'fluid',
+}, 'feature') }}
+```
+
+The problem with the above is that cache tags and contexts (for example from the link at `field_link`) are not bubbled up correctly.
+
+In order to solve the issue it is recommended to explicitly bubble up the cache metadata of the render array at hand.
+You can do that by using the `|cache_metadata` filter exposed by the [Twig Tweak][9] module, as shown below:
+
+```twig
+{{ pattern('card', {
+  title: content.title,
+  link: content.field_link['#url'],
+  size: 'fluid',
+}, 'feature') }}
+
+{{ content|cache_metadata }}
+```
+
+Another recommended module to keep in mind, when working with patterns, is the [Twig Field Value][10], which can help with
+accessing properties and subfields of render arrays and entities when passing them over to patterns.
+
+## How to use it on a generic PHP project
+
+### Requirements
+
+The Design System comprises a series of packages that you can install from the [npm](https://www.npmjs.com/) registry directly into your custom theme. As such, you'll need to have `npm` or similar package manager (`yarn` or `pnpm`) installed in your environment.
+
+### Installation
+
+You will want to install the latest versions of both `@ilo-org/twig` and `@ilo-org/styles`. The first includes all of the Twig and JavaScript files that you'll need to use the component, whereas the second includes the stylesheets that you'll need to render them.
+
+In the root of your custom theme, run the following command:
+
+`$ npm i @ilo-org/twig @ilo-org/styles`
+
+⚠️ Note that the two libraries are versioned separately so you'll want to make sure that you're always using the latest versions of both to ensure they're both in sync. You should see an installation warning if you try to install incompatible versions.
+
+### Required Twig extensions
 
 You can render a component as a pattern by using the following notation:
 
@@ -56,27 +191,11 @@ before rendering data coming from Drupal render arrays.
 
 For any other information on how to work with UI patterns, please refer to the module's [official documentation](https://www.drupal.org/docs/contributed-modules/ui-patterns).
 
-## Requirements
-
-The Design System comprises a series of packages that you can install from the [npm](https://www.npmjs.com/) registry directly into your custom theme. As such, you'll need to have `npm` or similar package manager (`yarn` or `pnpm`) installed in your environment.
-
-## Installation
-
-You will want to install the latest versions of both `@ilo-org/twig` and `@ilo-org/styles`. The first includes all of the Twig and JavaScript files that you'll need to use the component, whereas the second includes the stylesheets that you'll need to render them.
-
-In the root of your custom theme, run the following command:
-
-`$ npm i @ilo-org/twig @ilo-org/styles`
-
-⚠️ Note that the two libraries are versioned separately so you'll want to make sure that you're always using the latest versions of both to ensure they're both in sync. You should see an installation warning if you try to install incompatible versions.
-
-## Required Twig extensions
-
 As from `1.2.0` we make use of the `|boolvar` Twig filter: you need to have this filter available in your Twig environment for the component to work correctly.
 
 An implementation of the `|boolvar` Twig filter can be found in the [PHP Syntax for Twig](https://github.com/squirrelphp/twig-php-syntax) project. If you are a user of the [ILO Base Theme](https://github.com/international-labour-organization/ilo_base_theme), the twig extension above will be automatically made available to you as from version `0.2.0`.
 
-## Usage
+### Usage
 
 Now that you have installed the component library, you'll need to expose them so that you can integrate them into your templates.
 
@@ -221,3 +340,15 @@ function theme_library_info_build() {
   return $libraries;
 }
 ```
+
+[1]: https://github.com/international-labour-organization/designsystem
+[2]: https://github.com/openeuropa/task-runner
+[3]: https://docs.docker.com/compose
+[4]: https://getcomposer.org/
+[5]: https://github.com/openeuropa/composer-artifacts
+[6]: https://www.drupal.org/project/ui_patterns
+[7]: https://www.drupal.org/project/ui_patterns_settings
+[8]: https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry#authenticating-with-a-personal-access-token-classic
+[9]: https://www.drupal.org/project/twig_tweak
+[10]: https://www.drupal.org/project/twig_field_value
+[11]: https://github.com/international-labour-organization/ilo_base_theme
