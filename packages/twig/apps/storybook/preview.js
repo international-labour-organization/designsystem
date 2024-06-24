@@ -19,7 +19,6 @@ addParameters({
   },
   options: {
     storySort: {
-      method: "alphabetical",
       order: [
         "Welcome",
         "Get Started",
