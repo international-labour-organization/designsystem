@@ -1,5 +1,11 @@
 # @ilo-org/styles
 
+## 1.1.0
+
+### Minor Changes
+
+- f8e19c9af: Add foundation file for the new theming
+
 ## 1.0.8
 
 ### Patch Changes

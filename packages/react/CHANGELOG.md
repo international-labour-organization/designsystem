@@ -1,5 +1,14 @@
 # @ilo-org/react
 
+## 0.17.4
+
+### Patch Changes
+
+- Updated dependencies [f8e19c9af]
+- Updated dependencies [5af35c3e3]
+  - @ilo-org/styles@1.1.0
+  - @ilo-org/brand-assets@0.5.3
+
 ## 0.17.3
 
 ### Patch Changes
