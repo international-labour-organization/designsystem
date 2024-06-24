@@ -185,6 +185,6 @@
   }
 
   .ilo--tooltip--wrapper {
-    bottom: math.div(spacing(1), 2);
+    bottom: calc(#{spacing(1)}, 2);
   }
 }

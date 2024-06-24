@@ -10,7 +10,7 @@
     &__stat {
       --max-width: #{px-to-rem(343px)};
 
-      @include breakpoint("medium", true) {
+      @include breakpoint("md", true) {
         --max-width: 100%;
       }
 

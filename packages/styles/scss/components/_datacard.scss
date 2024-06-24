@@ -25,7 +25,7 @@
         row-gap: px-to-rem(26px);
       }
 
-      @include breakpoint("medium") {
+      @include breakpoint("md") {
         padding: spacing(12);
 
         &__columns {
@@ -92,7 +92,7 @@
           @include cornercut(72px, 40px);
           padding: spacing(10) spacing(6) spacing(14);
 
-          @include breakpoint("medium", true) {
+          @include breakpoint("md", true) {
             --max-width: 100%;
           }
         }

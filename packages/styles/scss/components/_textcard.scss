@@ -40,7 +40,7 @@
         }
       }
 
-      @include breakpoint("medium", true) {
+      @include breakpoint("md", true) {
         --max-width: 100%;
       }
 
@@ -57,7 +57,7 @@
 
           padding: spacing(10) spacing(6) spacing(8);
 
-          @include breakpoint("medium", true) {
+          @include breakpoint("md", true) {
             --max-width: 100%;
           }
 
@@ -101,7 +101,7 @@
           "copy"
         );
 
-        @include breakpoint("medium") {
+        @include breakpoint("md") {
           @include font-styles("headline-5");
           @include textmargin(
             "margin-bottom",

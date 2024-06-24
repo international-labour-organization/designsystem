@@ -13,7 +13,7 @@
       &__narrow {
         --max-width: #{px-to-rem(343px)};
 
-        @include breakpoint("medium", true) {
+        @include breakpoint("md", true) {
           --max-width: 100%;
         }
       }
@@ -39,11 +39,11 @@
       padding: spacing(10) spacing(6);
       width: 100%;
 
-      @include breakpoint("medium") {
+      @include breakpoint("md") {
         padding: spacing(12);
       }
 
-      @include breakpoint("large") {
+      @include breakpoint("lg") {
         padding: spacing(16) spacing(18);
       }
 
@@ -92,7 +92,7 @@
             @include font-styles("headline-4");
             margin-bottom: spacing(2);
 
-            @include breakpoint("medium") {
+            @include breakpoint("md") {
               @include font-styles("headline-2");
             }
           }
@@ -111,7 +111,7 @@
       #{$self}--title {
         @include font-styles("headline-4");
 
-        @include breakpoint("medium") {
+        @include breakpoint("md") {
           @include font-styles("headline-2");
         }
       }
@@ -120,7 +120,7 @@
         @include font-styles("body-small");
         margin-bottom: spacing(8);
 
-        @include breakpoint("medium") {
+        @include breakpoint("md") {
           @include font-styles("base");
         }
       }

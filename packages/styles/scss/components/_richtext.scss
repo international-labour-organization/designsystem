@@ -207,7 +207,7 @@
   // Repeat list styles from the list component
   @include invincible-list;
 
-  @include breakpoint("medium") {
+  @include breakpoint("md") {
     @include font-styles("base");
 
     h1,
@@ -384,7 +384,7 @@
         transform: scaleX(-1);
       }
 
-      @include breakpoint("medium") {
+      @include breakpoint("md") {
         padding: spacing(15) spacing(12) spacing(12) 0;
 
         blockquote {

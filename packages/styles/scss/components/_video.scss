@@ -115,7 +115,7 @@
           color: $color-ux-video-controls-default-icon;
         }
 
-        @include breakpoint("large") {
+        @include breakpoint("lg") {
           width: px-to-rem(80px);
           flex-direction: column;
           height: px-to-rem(124px);
