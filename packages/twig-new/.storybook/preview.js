@@ -1,9 +1,9 @@
 import "@ilo-org/styles/css/index.css";
-import { DrupalDecorator } from "./decorators/drupal";
+import { BehaviorDecorator } from "@ilo-org/maestro/sb";
 
 /** @type { import('@storybook/html').Preview } */
 const preview = {
-  decorators: [DrupalDecorator],
+  decorators: [BehaviorDecorator],
   parameters: {
     controls: {
       matchers: {
