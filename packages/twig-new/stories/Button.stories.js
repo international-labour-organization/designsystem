@@ -1,15 +1,17 @@
 import Button from "../components/button/button.twig";
 import ButtonPatterns from "../components/button/button.pattern.yml";
+import { Maestro } from "@ilo-org/maestro";
 
-import { compose } from "../src/bridge/index";
-
-const { root, Default } = compose(Button, ButtonPatterns);
+const story = Maestro.create(Button, ButtonPatterns);
 
 const Meta = {
   title: "Components/User Interfaces/Button",
   tags: ["autodocs"],
-  ...root,
+  ...story.meta,
 };
 
+const [Default] = story.stories;
+
 export default Meta;
+
 export { Default };
