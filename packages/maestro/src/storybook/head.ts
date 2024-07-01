@@ -1,4 +1,4 @@
-import { HEAD } from "./templates/head";
+import { HEAD } from "./templates/drupal-global";
 
 function head(previous: string) {
   return `
