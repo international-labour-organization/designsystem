@@ -275,7 +275,13 @@ importers:
       twig:
         specifier: ^1.16.0
         version: 1.17.1
+      zod:
+        specifier: ^3.23.8
+        version: 3.23.8
     devDependencies:
+      '@storybook/html':
+        specifier: ^8.1.9
+        version: 8.1.9(prettier@3.3.2)
       '@types/node':
         specifier: ^17.0.45
         version: 17.0.45
@@ -765,6 +771,9 @@ importers:
       '@ilo-org/styles':
         specifier: workspace:*
         version: link:../styles
+      '@ilo-org/utils':
+        specifier: workspace:*
+        version: link:../utils
     devDependencies:
       '@chromatic-com/storybook':
         specifier: ^1.5.0
@@ -46441,7 +46450,6 @@ packages:
 
   /zod@3.23.8:
     resolution: {integrity: sha512-XBx9AXhXktjUqnepgTiE5flcKIYWi/rme0Eaj+5Y0lftuGBq+jyRu/md4WnuxqgP1ubdpNCsYEYPxrzVHD8d6g==}
-    dev: true
 
   /zwitch@1.0.5:
     resolution: {integrity: sha512-V50KMwwzqJV0NpZIZFwfOD5/lyny3WlSzRiXgA0G7VUnRlqttta1L6UQIHzd6EuBY/cHGfwTIck7w1yH6Q5zUw==}
