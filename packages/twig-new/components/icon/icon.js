@@ -1,5 +1,4 @@
 import * as Icons from "@ilo-org/icons";
-console.log("FROM ICON");
 
 const SIZING = [16, 20, 24, 32];
 const DEFAULT_SIZE = 24;
