@@ -33,20 +33,29 @@ function stories(pattern: UIPatternValue): MaestroStory["stories"] {
   for (const [key, variant] of Object.entries(pattern.variants)) {
     if (key === "default") continue;
     const merged = Object.assign({}, variant.fields, variant.settings);
+    const args = Object.assign(
+      {},
+      defaultStory.args,
+      Object.entries(merged).reduce<Record<string, unknown>>(
+        (acc, [key, value]) => {
+          acc[key] = value;
+
+          return acc;
+        },
+        {}
+      )
+    );
+
     const story: StoryObj = {
       storyName: variant.label,
-      args: Object.assign(
-        {},
-        defaultStory.args,
-        Object.entries(merged).reduce<Record<string, unknown>>(
-          (acc, [key, value]) => {
-            acc[key] = value;
-
-            return acc;
+      args,
+      parameters: {
+        docs: {
+          source: {
+            code: code(pattern.use, args),
           },
-          {}
-        )
-      ),
+        },
+      },
     };
 
     stories.push(story);
