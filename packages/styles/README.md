@@ -4,6 +4,9 @@ The Styles package provides the stylesheets which are used to style the componen
 
 The styles are written in [SCSS](https://sass-lang.com/), so you can also import the SCSS files and include them in your own SASS workflow.
 
+[!TIP]
+This styles in this package are also shipped directly from [@ilo-org/twig](../twig/) or [@ilo-org/react](../react/) packages. If you are using those libraries, you do not have to install this. See documentation for each on instructions on how to import styles.
+
 ## Installation
 
 ```bash
