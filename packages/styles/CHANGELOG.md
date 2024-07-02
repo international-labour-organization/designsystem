@@ -1,5 +1,11 @@
 # @ilo-org/styles
 
+## 1.1.1
+
+### Patch Changes
+
+- 97dbd5fd2: Include theme variable definitions in main css bundle
+
 ## 1.1.0
 
 ### Minor Changes
