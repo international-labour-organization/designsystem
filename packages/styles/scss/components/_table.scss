@@ -42,7 +42,7 @@
       background-color: $color-ux-table-content-background;
       border-left: px-to-rem(1px) solid $color-base-neutrals-lighter;
       border-bottom: px-to-rem(2px) solid $color-base-neutrals-lighter;
-      font-family: $fonts-display;
+      font-family: var(--ilo-fonts-display);
       font-weight: 700;
       @include font-styles("body-xs");
       letter-spacing: -0.02em;
@@ -154,7 +154,7 @@
   &--headline {
     align-items: center;
     display: flex;
-    font-family: $fonts-display;
+    font-family: var(--ilo-fonts-display);
     font-weight: 700;
     margin-bottom: spacing(2);
     @include font-styles("headline-6");

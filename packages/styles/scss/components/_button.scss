@@ -5,7 +5,7 @@
 
 .ilo--button {
   display: inline-block;
-  font-family: $fonts-display;
+  font-family: var(--ilo-fonts-display);
   font-weight: map-get($type, "weights", "label");
   padding: 0;
   @include borderradius("button");

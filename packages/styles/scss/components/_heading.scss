@@ -9,7 +9,7 @@
 .ilo--h5,
 .ilo--h6 {
   color: inherit;
-  font-family: $fonts-display;
+  font-family: var(--ilo-fonts-display);
   font-weight: 700;
 
   &--default {

@@ -49,7 +49,7 @@ $avatar-size-lg: $row-1-lg;
   }
 
   &--name {
-    font-family: $fonts-display;
+    font-family: var(--ilo-fonts-display);
   }
 
   &--role {
@@ -65,7 +65,7 @@ $avatar-size-lg: $row-1-lg;
   &--link {
     $link: &;
 
-    font-family: $fonts-display;
+    font-family: var(--ilo-fonts-display);
     grid-column: 1 / -1;
 
     a {
