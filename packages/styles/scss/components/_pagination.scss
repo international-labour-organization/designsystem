@@ -15,7 +15,7 @@
     border-radius: 2px;
     color: map-get($color, "ux", "pagination", "default", "icon");
     display: inline-block;
-    font-family: $fonts-display;
+    font-family: var(--ilo-fonts-display);
     height: px-to-rem(40px);
     overflow: hidden;
     position: relative;

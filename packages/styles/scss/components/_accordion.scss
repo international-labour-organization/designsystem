@@ -29,7 +29,7 @@
     border: none;
     border-top: 2px solid $color-base-neutrals-lighter;
     fill: $color-ux-labels-actionable;
-    font-family: $fonts-display;
+    font-family: var(--ilo-fonts-display);
     color: $color-ux-labels-actionable;
     font-weight: $type-weights-section;
     transition: all $transition-timing ease-in-out;

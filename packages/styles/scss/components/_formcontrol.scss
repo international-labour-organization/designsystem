@@ -140,7 +140,7 @@
       }
 
       &__medium {
-        font-family: $fonts-display;
+        font-family: var(--ilo-fonts-display);
         font-size: px-to-rem(map-get($type, "label-medium", "size"));
         letter-spacing: px-to-rem(
           map-get($type, "label-medium", "letter-spacing")
@@ -150,7 +150,7 @@
       }
 
       &__large {
-        font-family: $fonts-display;
+        font-family: var(--ilo-fonts-display);
         font-size: px-to-rem(map-get($type, "label-large", "size"));
         letter-spacing: px-to-rem(
           map-get($type, "label-large", "letter-spacing")
