@@ -6,11 +6,23 @@
     * Typography
     */
   --ilo-scale: 1; // default scale for the design system
-  --ilo-fonts-display: Overpass, Noto Sans, Noto Sans CJK JP, Yu Gothic,
-    Hiragino Sans, TakaoPGothic, PingFang SC, Microsoft YaHei, 微软雅黑,
+
+  // Display Font Families
+  --ilo-fonts-display: Overpass, Noto Sans, sans-serif;
+
+  // Chinese and Japanese system fonts
+  --ilo-fonts-display-zh: PingFang SC, Microsoft YaHei, 微软雅黑, sans-serif;
+  --ilo-fonts-display-jp: Noto Sans CJK JP, Yu Gothic, Hiragino Sans,
+    TakaoPGothic, sans-serif;
+
+  // Copy font families
+  --ilo-fonts-copy: Noto Sans, sans-serif;
+
+  // Chinese and Japanese system fonts
+  --ilo-fonts-copy-zh: PingFang SC, Microsoft YaHei, 微软雅黑, sans-serif;
+  --ilo-fonts-copy-jp: Noto Sans CJK JP, Yu Gothic, Hiragino Sans, TakaoPGothic,
     sans-serif;
-  --ilo-fonts-copy: Noto Sans, Noto Sans CJK JP, Yu Gothic, Hiragino Sans,
-    TakaoPGothic, PingFang SC, Microsoft YaHei, 微软雅黑, sans-serif;
+
   --ilo-fonts-monospace: monospace;
   --ilo-line-height: 1.46;
 
