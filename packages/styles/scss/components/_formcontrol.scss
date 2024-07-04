@@ -130,7 +130,7 @@
 
     &__size {
       &__small {
-        font-family: $fonts-copy;
+        font-family: var(--ilo-fonts-copy);
         font-size: px-to-rem(map-get($type, "label-small", "size"));
         letter-spacing: px-to-rem(
           map-get($type, "label-small", "letter-spacing")
@@ -180,7 +180,7 @@
   &--helper {
     grid-area: helper;
     color: $color-base-neutrals-medium;
-    font-family: $fonts-copy;
+    font-family: var(--ilo-fonts-copy);
     @include font-styles("body-xxs");
   }
 

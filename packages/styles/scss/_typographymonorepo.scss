@@ -11,7 +11,9 @@
 html,
 body {
   color: $color-font-base;
-  font: #{$type-base-size}/#{$type-base-line-height} $fonts-copy;
+  font-family: var(--ilo-fonts-copy);
+  font-size: $type-base-size;
+  line-height: $type-base-line-height;
   letter-spacing: $type-base-letter-spacing;
   -webkit-font-smoothing: antialiased;
 }

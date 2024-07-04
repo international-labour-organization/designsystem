@@ -160,7 +160,7 @@
   .secondarylinks {
     color: $color-base-neutrals-medium;
     display: inline;
-    font-family: $fonts-copy;
+    font-family: var(--ilo-fonts-copy);
     @include font-styles("body-xxs");
   }
 
