@@ -29,18 +29,14 @@ h5 {
 
 // Set Chinese system fonts
 html[lang="zh"] {
-  :root {
-    --ilo-fonts-display: var(--ilo-fonts-display-zh);
-    --ilo-fonts-copy: var(--ilo-fonts-copy-zh);
-  }
+  --ilo-fonts-display: var(--ilo-fonts-display-zh);
+  --ilo-fonts-copy: var(--ilo-fonts-copy-zh);
 }
 
 // Set Japanese system fonts
 html[lang="jp"] {
-  :root {
-    --ilo-fonts-display: var(--ilo-fonts-display-jp);
-    --ilo-fonts-copy: var(--ilo-fonts-copy-jp);
-  }
+  --ilo-fonts-display: var(--ilo-fonts-display-jp);
+  --ilo-fonts-copy: var(--ilo-fonts-copy-jp);
 }
 
 /// Suggested font weights to be used in product
