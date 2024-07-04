@@ -82,7 +82,7 @@
 
   &--helper,
   &__error {
-    font-family: $fonts-copy;
+    font-family: var(--ilo-fonts-copy);
     @include font-styles("body-xxs");
     @include textmargin(
       "margin-top",

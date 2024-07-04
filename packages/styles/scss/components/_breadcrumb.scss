@@ -150,7 +150,7 @@
       overflow-x: clip;
       text-overflow: ellipsis;
       max-width: 30ch;
-      font-family: $fonts-copy;
+      font-family: var(--ilo-fonts-copy);
       font-weight: 400;
       @include font-styles("body-xxs");
 
