@@ -17,6 +17,31 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h5 {
+  font-family: var(--ilo-fonts-display);
+}
+
+// Set Chinese system fonts
+html[lang="zh"] {
+  :root {
+    --ilo-fonts-display: var(--ilo-fonts-display-zh);
+    --ilo-fonts-copy: var(--ilo-fonts-copy-zh);
+  }
+}
+
+// Set Japanese system fonts
+html[lang="jp"] {
+  :root {
+    --ilo-fonts-display: var(--ilo-fonts-display-jp);
+    --ilo-fonts-copy: var(--ilo-fonts-copy-jp);
+  }
+}
+
 /// Suggested font weights to be used in product
 /// @type Map
 /// @access public

@@ -49,7 +49,7 @@
     "react:dev:docs": "pnpm --filter react storybook",
     "react:dev:prep": "pnpm react:install && pnpm react:build:lib",
     "test:all": "pnpm turbo run test",
-    "twig:install": "pnpm clean && pnpm config set dedupe-peer-dependents=false && pnpm --filter twig... install",
+    "twig:install": "pnpm config set dedupe-peer-dependents=false && pnpm --filter twig... install",
     "fix:pnpm-filter": "pnpm config set dedupe-peer-dependents=false",
     "twig:build:docs": "pnpm fix:pnpm-filter && pnpm turbo run build:docs --filter twig...",
     "twig:build:lib": "pnpm turbo run build:lib --filter twig... ",
