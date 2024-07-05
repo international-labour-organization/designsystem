@@ -1,17 +1,17 @@
 import { z } from "zod";
 
-import { UIPFieldTypes } from "./definitions";
+import { UIPatternFieldTypes } from "./definitions";
 
 const field = z.object({
   type: z.union([
-    z.literal(UIPFieldTypes.String),
-    z.literal(UIPFieldTypes.Value),
-    z.literal(UIPFieldTypes.Number),
-    z.literal(UIPFieldTypes.Bool),
-    z.literal(UIPFieldTypes.Select),
-    z.literal(UIPFieldTypes.Checkbox),
-    z.literal(UIPFieldTypes.Radio),
-    z.literal(UIPFieldTypes.Object),
+    z.literal(UIPatternFieldTypes.String),
+    z.literal(UIPatternFieldTypes.Value),
+    z.literal(UIPatternFieldTypes.Number),
+    z.literal(UIPatternFieldTypes.Bool),
+    z.literal(UIPatternFieldTypes.Select),
+    z.literal(UIPatternFieldTypes.Checkbox),
+    z.literal(UIPatternFieldTypes.Radio),
+    z.literal(UIPatternFieldTypes.Object),
   ]),
   label: z.string(),
   description: z.string(),

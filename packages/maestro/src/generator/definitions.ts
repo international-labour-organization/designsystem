@@ -1,5 +1,5 @@
-// UIP = UI Patterns
-enum UIPFieldTypes {
+// UIPattern = UI Patterns
+enum UIPatternFieldTypes {
   String = "string",
   Value = "value",
   Number = "number",
@@ -26,15 +26,16 @@ type ControlType =
   | "date"
   | "text";
 
-const UIPFieldToStorybookType: Record<UIPFieldTypes, ControlType> = {
-  [UIPFieldTypes.String]: "text",
-  [UIPFieldTypes.Value]: "text",
-  [UIPFieldTypes.Number]: "number",
-  [UIPFieldTypes.Bool]: "boolean",
-  [UIPFieldTypes.Select]: "select",
-  [UIPFieldTypes.Checkbox]: "boolean",
-  [UIPFieldTypes.Radio]: "radio",
-  [UIPFieldTypes.Object]: "object",
-};
+const UIPatternFieldToStorybookType: Record<UIPatternFieldTypes, ControlType> =
+  {
+    [UIPatternFieldTypes.String]: "text",
+    [UIPatternFieldTypes.Value]: "text",
+    [UIPatternFieldTypes.Number]: "number",
+    [UIPatternFieldTypes.Bool]: "boolean",
+    [UIPatternFieldTypes.Select]: "select",
+    [UIPatternFieldTypes.Checkbox]: "boolean",
+    [UIPatternFieldTypes.Radio]: "radio",
+    [UIPatternFieldTypes.Object]: "object",
+  };
 
-export { UIPFieldTypes, UIPFieldToStorybookType };
+export { UIPatternFieldTypes, UIPatternFieldToStorybookType };

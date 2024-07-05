@@ -1,5 +1,8 @@
 import { UIPatternValue } from "./schema";
-import { UIPFieldToStorybookType, UIPFieldTypes } from "./definitions";
+import {
+  UIPatternFieldToStorybookType,
+  UIPatternFieldTypes,
+} from "./definitions";
 
 import { MaestroStory } from ".";
 
@@ -11,7 +14,7 @@ function types(pattern: UIPatternValue): ArgTypes {
 
   for (const [key, value] of Object.entries(props)) {
     switch (value.type) {
-      case UIPFieldTypes.Select: {
+      case UIPatternFieldTypes.Select: {
         if (!value.options) {
           throw new Error("Select field must have options");
         }
@@ -19,7 +22,7 @@ function types(pattern: UIPatternValue): ArgTypes {
         const options = Object.keys(value.options);
         argTypes[key] = {
           control: {
-            type: UIPFieldToStorybookType[value.type] as "select",
+            type: UIPatternFieldToStorybookType[value.type] as "select",
             labels: options,
           },
           options: options,
@@ -28,14 +31,14 @@ function types(pattern: UIPatternValue): ArgTypes {
 
         break;
       }
-      case UIPFieldTypes.Radio: {
+      case UIPatternFieldTypes.Radio: {
         if (!value.options) {
           throw new Error("Radio field must have options");
         }
 
         argTypes[key] = {
           control: {
-            type: UIPFieldToStorybookType[value.type] as "radio",
+            type: UIPatternFieldToStorybookType[value.type] as "radio",
             labels: Object.keys(value.options),
           },
           description: value.description,
@@ -45,7 +48,7 @@ function types(pattern: UIPatternValue): ArgTypes {
       default: {
         argTypes[key] = {
           control: {
-            type: UIPFieldToStorybookType[value.type],
+            type: UIPatternFieldToStorybookType[value.type],
           },
           description: value.description,
         };
