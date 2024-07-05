@@ -1,5 +1,5 @@
 import "@ilo-org/styles/css/index.css";
-import { BehaviorDecorator } from "@ilo-org/maestro/sb";
+import { BehaviorDecorator } from "@ilo-org/maestro/storybook";
 
 /** @type { import('@storybook/html').Preview } */
 const preview = {

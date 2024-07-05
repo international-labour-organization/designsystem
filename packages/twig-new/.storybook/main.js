@@ -2,7 +2,7 @@ import { join, dirname } from "path";
 import { mergeConfig } from "vite";
 import alternate from "./vite.config.js";
 
-import { head } from "@ilo-org/maestro/sb";
+import { head } from "@ilo-org/maestro/storybook";
 
 /**
  * This function is used to resolve the absolute path of a package.

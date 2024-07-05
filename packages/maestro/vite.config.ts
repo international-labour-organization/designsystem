@@ -7,7 +7,7 @@ export default defineConfig({
   plugins: [dts()],
   build: {
     lib: {
-      entry: ["src/index.ts", "src/vite.ts", "src/sb.ts"],
+      entry: ["src/index.ts", "src/vite.ts", "src/storybook.ts"],
       formats: ["es"],
     },
     target: "esnext",
