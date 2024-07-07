@@ -3,6 +3,7 @@
 //*------------------------------------*/
 @use "tokens" as *;
 @use "functions" as *;
+@use "theme/breakpoints" as *;
 
 // ======================================
 // Output font styles
@@ -14,33 +15,6 @@
   font-size: map-get($type, $stylename, "size");
   letter-spacing: map-get($type, $stylename, "letter-spacing");
   line-height: map-get($type, $stylename, "line-height");
-}
-
-// ======================================
-// Vertical Align
-// ======================================
-
-@mixin vertical-align {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-}
-
-// ======================================
-// Horizontal Align
-// ======================================
-
-@mixin horizontal-align {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-@mixin vertical-horizontal-align {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 }
 
 // ======================================
@@ -63,29 +37,19 @@
 }
 
 // ======================================
-// Ellipsis
-// ======================================
-
-@mixin ellipsis {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-// ======================================
 // Breakpoint
 // ======================================
 
 @mixin breakpoint($breakpoint, $max: false) {
-  @if map-has-key($breakpoints, $breakpoint) {
+  @if map-has-key($breakpoints-foundation, $breakpoint) {
     @if not $max {
-      @media screen and (min-width: map-get($breakpoints, $breakpoint)) {
+      @media screen and (min-width: map-get($breakpoints-foundation, $breakpoint)) {
         @content;
       }
     }
 
     @if $max {
-      @media screen and (max-width: #{map-get($breakpoints, $breakpoint) - 1px}) {
+      @media screen and (max-width: #{map-get($breakpoints-foundation, $breakpoint) - 1px}) {
         @content;
       }
     }
@@ -129,19 +93,6 @@
       )
     );
   }
-}
-
-// ======================================
-// Spacing Values
-// ======================================
-
-@mixin spacingvalues($type, $mappath, $location, $state: "default") {
-  #{$type}: px-to-rem(
-      map-get($spacing, $location, $mappath, $state, $type, "top")
-    )
-    px-to-rem(map-get($spacing, $location, $mappath, $state, $type, "right"))
-    px-to-rem(map-get($spacing, $location, $mappath, $state, $type, "bottom"))
-    px-to-rem(map-get($spacing, $location, $mappath, $state, $type, "left"));
 }
 
 // ======================================
@@ -195,17 +146,6 @@
 
 @mixin dataurlicon($name, $color: $color-base-neutrals-black) {
   background-image: url("#{colortodataurlicon($name, $color)}");
-}
-
-// ======================================
-// Icon Button
-// ======================================
-
-@mixin iconbutton($name, $height, $width, $color: $color-base-neutrals-black) {
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: $width $height;
-  @include dataurlicon($name, $color);
 }
 
 // ======================================
@@ -478,7 +418,7 @@
           transform: rotate(180deg);
         }
 
-        @include breakpoint("medium") {
+        @include breakpoint("md") {
           top: px-to-rem(7px);
         }
       }
@@ -496,7 +436,7 @@
       letter-spacing: $type-label-small-letter-spacing;
     }
 
-    @include breakpoint("medium") {
+    @include breakpoint("md") {
       @include font-styles("base");
     }
   }

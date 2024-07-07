@@ -9,6 +9,11 @@
 
   a {
     @include linkstyles();
+    background: none;
+
+    &:hover {
+      background: none;
+    }
   }
 
   img {
@@ -22,7 +27,6 @@
   p + figure,
   p + img,
   p + blockquote,
-  p + iframe,
   ul + img,
   ol + img,
   dl + img,
@@ -41,12 +45,8 @@
     );
   }
 
-  article {
-    margin-bottom: spacing(14);
-  }
-
   iframe {
-    margin-bottom: spacing(14);
+    margin-block: spacing(8) spacing(14);
   }
 
   figure {
@@ -207,7 +207,7 @@
   // Repeat list styles from the list component
   @include invincible-list;
 
-  @include breakpoint("medium") {
+  @include breakpoint("md") {
     @include font-styles("base");
 
     h1,
@@ -292,7 +292,6 @@
     p + figure,
     p + img,
     p + blockquote,
-    p + iframe,
     ul + img,
     ol + img,
     dl + img,
@@ -313,6 +312,10 @@
 
     hr {
       margin-bottom: spacing(19);
+    }
+
+    iframe {
+      margin-block: calc(spacing(9) + px-to-rem(2)) spacing(14);
     }
 
     figure {
@@ -381,7 +384,7 @@
         transform: scaleX(-1);
       }
 
-      @include breakpoint("medium") {
+      @include breakpoint("md") {
         padding: spacing(15) spacing(12) spacing(12) 0;
 
         blockquote {

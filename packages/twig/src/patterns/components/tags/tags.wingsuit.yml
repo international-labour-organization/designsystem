@@ -23,13 +23,10 @@ tags:
           defaultActive: false
   settings:
     allowMultipleActive:
-      type: select
+      type: boolean
       label: Allow Multiple Active
       description: Allow multiple tag items to be active at once.
-      options:
-        "true": "true"
-        "false": "false"
-      preview: "true"
+      preview: true
       required: false
     tagType:
       type: select

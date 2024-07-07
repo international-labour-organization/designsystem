@@ -26,12 +26,9 @@ readmore:
       required: true
   settings:
     openatstart:
-      type: select
+      type: boolean
       label: Open At Start
       description: should the read more be open at page load?
-      options:
-        "true": "true"
-        "false": "false"
-      preview: "false"
+      preview: false
       required: true
   visibility: storybook

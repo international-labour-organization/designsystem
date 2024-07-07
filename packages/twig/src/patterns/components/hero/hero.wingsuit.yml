@@ -45,16 +45,16 @@ hero:
         title: "Child labour"
         theme: "dark"
         background: "solid"
-        cornercut: "true"
+        cornercut: true
         eyebrow: ILO Topics
         socialmedia:
           icons:
             - label: "Facebook"
               url: "https://www.facebook.com/ilo.org"
               icon: "facebook"
-            - label: "Twitter"
-              url: "https://www.twitter.com/ilo.org"
-              icon: "twitter"
+            - label: "X"
+              url: "https://www.x.com/ilo.org"
+              icon: "x"
             - label: "Linkedin"
               url: "https://www.linkedin.com/company/international-labour-organization-ilo"
               icon: "linkedin"
@@ -164,16 +164,16 @@ hero:
           datecopy: "11 February 2021"
           theme: "light"
           background: "solid"
-          cornercut: "true"
+          cornercut: true
           eyebrow: Women in management
           socialmedia:
             icons:
               - label: "Facebook"
                 url: "https://www.facebook.com/ilo.org"
                 icon: "facebook"
-              - label: "Twitter"
-                url: "https://www.twitter.com/ilo.org"
-                icon: "twitter"
+              - label: "X"
+                url: "https://www.x.com/ilo.org"
+                icon: "x"
               - label: "Linkedin"
                 url: "https://www.linkedin.com/company/international-labour-organization-ilo"
                 icon: "linkedin"

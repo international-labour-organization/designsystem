@@ -5,7 +5,7 @@
 	{% set cardcount = "three" %}
 {% endif %}
 
-<div class="{{prefix}}--cardgroup {{prefix}}--cardgroup__count__{{cardcount}} {% if collapsed %} {{prefix}}--cardgroup__collapsed {% endif %}">
+<div class="{{prefix}}--cardgroup {{prefix}}--cardgroup__count__{{cardcount}} {% if collapsed|boolval %} {{prefix}}--cardgroup__collapsed {% endif %}">
 	<div class="{{prefix}}--cardgroup--inner">
 		{% for card in group %}
 			<div class="{{prefix}}--cardgroup--card">

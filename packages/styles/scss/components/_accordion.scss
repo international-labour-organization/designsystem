@@ -44,14 +44,14 @@
 
     &:hover,
     &:focus {
-      background-color: $color-ux-background-hover;
       border-top-color: $color-ux-borders-hover;
       color: $color-ux-labels-hover;
       fill: $color-ux-labels-hover;
       cursor: pointer;
 
       &[aria-expanded="true"] {
-        @include dataurlicon("minus", $color-ux-labels-hover);
+        color: $brand-ilo-dark-blue;
+        @include dataurlicon("minus", $brand-ilo-dark-blue);
       }
 
       &[aria-expanded="false"] {
@@ -59,7 +59,7 @@
       }
     }
 
-    @include breakpoint("medium") {
+    @include breakpoint("md") {
       @include font-styles("label-medium");
       &__large {
         @include font-styles("headline-6");
@@ -69,7 +69,9 @@
     }
 
     &[aria-expanded="true"] {
-      @include dataurlicon("minus", $color-ux-labels-actionable);
+      background-color: $color-base-blue-light;
+      color: $brand-ilo-blue;
+      @include dataurlicon("minus", $brand-ilo-blue);
     }
 
     &[aria-expanded="false"] {
@@ -91,6 +93,7 @@
     #{$accordion}--innerpanel {
       padding-bottom: spacing(9);
       padding-top: spacing(2);
+      padding-inline-end: spacing(8);
     }
 
     &__open {
@@ -100,7 +103,6 @@
       &#{$panel}__scroll {
         max-height: $scroll-max-height;
         overflow-y: auto;
-        padding-right: spacing(8);
       }
     }
   }

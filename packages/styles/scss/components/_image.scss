@@ -34,7 +34,7 @@
     left: 0;
     position: absolute;
 
-    @include breakpoint("large") {
+    @include breakpoint("lg") {
       bottom: -#{px-to-rem(4px)};
     }
   }

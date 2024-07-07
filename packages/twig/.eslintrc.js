@@ -6,6 +6,7 @@ module.exports = {
     jQuery: true,
     _: true,
     BUILD_TARGET: true,
+    cy: true,
   },
   ignorePatterns: [
     "dist/",

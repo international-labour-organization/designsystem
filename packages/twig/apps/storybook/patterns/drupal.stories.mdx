@@ -1,0 +1,123 @@
+<Meta
+  title="Get started/Use with Drupal"
+  parameters={{ viewMode: "docs", previewTabs: { canvas: { hidden: true } } }}
+/>
+
+# Use with Drupal
+
+The recommended way of using the Twig component library in a Drupal site is by installing the [ILO Base Theme][11].
+
+The theme is structured in the following way:
+
+- A theme companion module `ilo_base_theme_companion`, which exposes all compatible ILO Design System components as Drupal patterns. Check the [UI Patterns][6] and the [UI Patterns Settings][7] modules for more information.
+- A very basic base theme, with not much in it at the moment. This will change in the future as more and more default Drupal templates (e.g. tabs, forms, etc.) will be provided by default, complying with the ILO Design System.
+
+The theme requires the companion module to be enabled, while one could enable the companion module without enabling the base theme.
+
+The theme exposes relevant Twig components as UI patterns, by using the [UI Pattern](https://www.drupal.org/project/ui_patterns) module.
+
+If your Drupal site has already a theme, you can still use the patterns by [enabling the theme's companion module](https://github.com/international-labour-organization/ilo_base_theme?tab=readme-ov-file#use-the-components-without-the-base-theme).
+
+## Installation
+
+The recommended way of installing the ILO Base Theme is via [Composer][4].
+
+Before proceeding, please note that theme releases are built by a continuous integration system, and include code coming from third-party libraries, such as [ILO Design System][1] templates and other assets.
+
+Simply Running `composer require international-labour-organization/ilo_base_theme` will download the raw theme source code, which misses required third-party code.
+
+In order to instruct Composer to download the actual built artifact, you need to require and configure the
+[Composer Artifacts][5] project.
+
+To do so, run:
+
+```
+composer require openeuropa/composer-artifacts
+```
+
+Then add the following section in your project's `composer.json`:
+
+```
+    "extra": {
+        "artifacts": {
+            "international-labour-organization/ilo_base_theme": {
+                "dist": {
+                    "url": "https://github.com/{name}/releases/download/{pretty-version}/{project-name}-{pretty-version}.zip",
+                    "type": "zip"
+                }
+            }
+        },
+    }
+```
+
+Afterwards, run:
+
+```bash
+composer require international-labour-organization/ilo_base_theme
+```
+
+This will download the fully built artifact, as opposed to the raw theme source code.
+
+## Use the base theme
+
+In order to enable the theme in your project perform the following steps:
+
+1. Enable the **ILO base theme companion** module
+2. Enable the **ILO base theme** and set it as default
+
+```
+./vendor/bin/drush en ilo_base_theme_companion
+./vendor/bin/drush theme:enable ilo_base_theme
+./vendor/bin/drush config-set system.theme default ilo_base_theme
+```
+
+## Use the components without the base theme
+
+If you already have a theme, and you just want to use the design system components, just enable the companion module, without enabling the theme, like so:
+
+```
+./vendor/bin/drush en ilo_base_theme_companion
+```
+
+The full list of components is available at `/patterns`.
+
+## Patterns and cache metadata
+
+Displaying render arrays using patterns requires a careful handing of the render array's cache metadata. For example,
+if you want to use the `card` pattern to render a news content type teaser, you would typically do the following:
+
+```twig
+{{ pattern('card', {
+  title: content.title,
+  link: content.field_link['#url'],
+  size: 'fluid',
+}, 'feature') }}
+```
+
+The problem with the above is that cache tags and contexts (for example from the link at `field_link`) are not bubbled up correctly.
+
+In order to solve the issue it is recommended to explicitly bubble up the cache metadata of the render array at hand. You can do that by using the `|cache_metadata` filter exposed by the [Twig Tweak][9] module, as shown below:
+
+```twig
+{{ pattern('card', {
+  title: content.title,
+  link: content.field_link['#url'],
+  size: 'fluid',
+}, 'feature') }}
+
+{{ content|cache_metadata }}
+```
+
+Another recommended module to keep in mind when working with patterns, is the [Twig Field Value][10], which can help with accessing properties and subfields of render arrays and entities when passing them over to patterns.
+
+[1]: https://github.com/international-labour-organization/designsystem
+[2]: https://github.com/openeuropa/task-runner
+[3]: https://docs.docker.com/compose
+[4]: https://getcomposer.org/
+[5]: https://github.com/openeuropa/composer-artifacts
+[6]: https://www.drupal.org/project/ui_patterns
+[7]: https://www.drupal.org/project/ui_patterns_settings
+[8]: https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry#authenticating-with-a-personal-access-token-classic
+[9]: https://www.drupal.org/project/twig_tweak
+[10]: https://www.drupal.org/project/twig_field_value
+[11]: https://github.com/international-labour-organization/ilo_base_theme

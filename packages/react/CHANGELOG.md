@@ -1,5 +1,63 @@
 # @ilo-org/react
 
+## 0.17.5
+
+### Patch Changes
+
+- Updated dependencies [97dbd5fd2]
+  - @ilo-org/styles@1.1.1
+
+## 0.17.4
+
+### Patch Changes
+
+- Updated dependencies [f8e19c9af]
+- Updated dependencies [5af35c3e3]
+  - @ilo-org/styles@1.1.0
+  - @ilo-org/brand-assets@0.5.3
+
+## 0.17.3
+
+### Patch Changes
+
+- Updated dependencies [201fde019]
+  - @ilo-org/styles@1.0.8
+
+## 0.17.2
+
+### Patch Changes
+
+- Updated dependencies [f76f43a5f]
+- Updated dependencies [dd519d704]
+  - @ilo-org/styles@1.0.7
+
+## 0.17.1
+
+### Patch Changes
+
+- e3e9d14a5: Refactor legacy twitter social media icon with the new X icon
+- a514679a8: Add new option to change size of icon in the social media component
+- Updated dependencies [e3e9d14a5]
+- Updated dependencies [a514679a8]
+- Updated dependencies [46d8998a4]
+  - @ilo-org/styles@1.0.6
+  - @ilo-org/brand-assets@0.5.2
+  - @ilo-org/icons-react@0.1.2
+
+## 0.17.0
+
+### Minor Changes
+
+- f127ae16e: Aligns the Breadcrumb component with the Twig implementation which also fixes several accessibility issues.
+
+## 0.16.4
+
+### Patch Changes
+
+- Updated dependencies [222e46d61]
+- Updated dependencies [c80b5ea55]
+  - @ilo-org/styles@1.0.5
+
 ## 0.16.3
 
 ### Patch Changes

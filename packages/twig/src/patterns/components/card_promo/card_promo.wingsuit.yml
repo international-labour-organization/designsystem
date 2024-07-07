@@ -41,14 +41,11 @@ promocard:
       preview: Can digital technology be an equality machine?
   settings:
     cornercut:
-      type: select
+      type: boolean
       label: cornercut
       description: Sets the cornercut of the card. If not set, the card will appear as `square`.
       required: false
-      preview: "true"
-      options:
-        "true": "true"
-        "false": "false"
+      preview: true
     size:
       type: select
       label: Size

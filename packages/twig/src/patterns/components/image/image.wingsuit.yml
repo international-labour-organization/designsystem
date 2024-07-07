@@ -46,12 +46,9 @@ image:
           src: "/images/large.jpg"
   settings:
     ishero:
-      type: select
+      type: boolean
       label: Is Hero
       description: Is this image in a hero? If true, and credit exists, will display credit in a title attribute
-      preview: "false"
+      preview: false
       required: false
-      options:
-        "true": "true"
-        "false": "false"
   visibility: storybook

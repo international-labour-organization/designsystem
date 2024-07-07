@@ -1,11 +1,7 @@
 import { BreadcrumbProps } from "./Breadcrumb.props";
 
 const basic: BreadcrumbProps = {
-  home: {
-    indented: false,
-    label: "Home",
-    url: "/",
-  },
+  buttonLabel: "More Links",
   links: [
     {
       label: "Link One",
@@ -27,11 +23,7 @@ const basic: BreadcrumbProps = {
 };
 
 const fiveLinks: BreadcrumbProps = {
-  home: {
-    indented: false,
-    label: "Home",
-    url: "/",
-  },
+  buttonLabel: "More Links",
   links: [
     {
       label: "Link One",

@@ -57,27 +57,13 @@
 // =========================================
 
 @function spacing($size) {
-  $scaled: $size * $spacing-root;
+  $scaled: calc(#{$size} * var(--ilo-spacing-base));
+
   @if ($size % 1 != 0) {
-    $scaled: round($size) * $spacing-root;
-  }
-  @return px-to-rem($scaled);
-}
-
-// =========================================
-// Encode color strings
-//
-// Useful for using color variables with inline CSS SVGs
-// =========================================
-@function encodecolor($string) {
-  @if type-of($string) == "color" and str-index(#{$string}, "#") == 1 {
-    $hex: str-slice(ie-hex-str($string), 4);
-    $string: unquote("#{$hex}");
-
-    @return "%23" + $string;
+    $scaled: calc(#{round($size)} * var(--ilo-spacing-base));
   }
 
-  @return $string;
+  @return $scaled;
 }
 
 // =========================================

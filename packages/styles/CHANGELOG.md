@@ -1,5 +1,46 @@
 # @ilo-org/styles
 
+## 1.1.1
+
+### Patch Changes
+
+- 97dbd5fd2: Include theme variable definitions in main css bundle
+
+## 1.1.0
+
+### Minor Changes
+
+- f8e19c9af: Add foundation file for the new theming
+
+## 1.0.8
+
+### Patch Changes
+
+- 201fde019: Fix multi-line link decoration from breaking in RichText component
+
+## 1.0.7
+
+### Patch Changes
+
+- f76f43a5f: Improve accordion expanded interactions by refactoring active and hover states
+- dd519d704: Add appropriate margin to iframes in richtext
+
+## 1.0.6
+
+### Patch Changes
+
+- e3e9d14a5: Refactor legacy twitter social media icon with the new X icon
+- a514679a8: Add new option to change size of icon in the social media component
+- Updated dependencies [e3e9d14a5]
+  - @ilo-org/icons@0.4.0
+
+## 1.0.5
+
+### Patch Changes
+
+- 222e46d61: Fix accordion text moving inside panel when it is expanding by having constant padding when it is both closed and open
+- c80b5ea55: Clean up unused functions,mixins,maps,variabls or keyframes in animation/function/mixin files
+
 ## 1.0.4
 
 ### Patch Changes

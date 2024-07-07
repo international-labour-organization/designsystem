@@ -1,5 +1,65 @@
 # @ilo-org/twig
 
+## 1.1.5
+
+### Patch Changes
+
+- Updated dependencies [97dbd5fd2]
+  - @ilo-org/styles@1.1.1
+
+## 1.1.4
+
+### Patch Changes
+
+- Updated dependencies [f8e19c9af]
+- Updated dependencies [5af35c3e3]
+  - @ilo-org/styles@1.1.0
+  - @ilo-org/brand-assets@0.5.3
+
+## 1.1.3
+
+### Patch Changes
+
+- Updated dependencies [201fde019]
+  - @ilo-org/styles@1.0.8
+
+## 1.1.2
+
+### Patch Changes
+
+- Updated dependencies [f76f43a5f]
+- Updated dependencies [dd519d704]
+  - @ilo-org/styles@1.0.7
+
+## 1.1.1
+
+### Patch Changes
+
+- e3e9d14a5: Refactor legacy twitter social media icon with the new X icon
+- a514679a8: Add new option to change size of icon in the social media component
+- Updated dependencies [e3e9d14a5]
+- Updated dependencies [a514679a8]
+- Updated dependencies [e3e9d14a5]
+- Updated dependencies [46d8998a4]
+  - @ilo-org/styles@1.0.6
+  - @ilo-org/icons@0.4.0
+  - @ilo-org/brand-assets@0.5.2
+
+## 1.1.0
+
+### Minor Changes
+
+- eea20bf9e: We have introduced the |boolval filter across several components, so that we can start using actual boolean values on fields and settings. This keeps backwards compatibility when passing "true" or "false" as strings.
+
+## 1.0.5
+
+### Patch Changes
+
+- 6d4864df6: Added cypress test setup with theme container
+- Updated dependencies [222e46d61]
+- Updated dependencies [c80b5ea55]
+  - @ilo-org/styles@1.0.5
+
 ## 1.0.4
 
 ### Patch Changes

@@ -22,6 +22,15 @@ socialmedia:
         center: center
       preview: start
       defaultValue: start
+    iconSize:
+      type: select
+      label: Icon size
+      description: The size of the social media icons
+      options:
+        normal: normal
+        large: large
+      preview: normal
+      defaultValue: normal
   fields:
     headline:
       type: string
@@ -34,9 +43,9 @@ socialmedia:
       label: icons
       description: The social media icons to display. Each icon has an `icon` corresponding to the name of a social network icon in lowercase, a `label` that is displayed as a tooltip, and a `url` that is the link to the social media page.
       preview:
-        - icon: "twitter"
-          label: "Twitter"
-          url: "https://twitter.com/#!/ilo"
+        - icon: "x"
+          label: "X"
+          url: "https://x.com/ilo"
         - icon: "facebook"
           label: "Facebook"
           url: "https://www.facebook.com/ilo.org"

@@ -33,13 +33,10 @@ accordion:
         large: Large
       preview: small
     allowMultipleExpanded:
-      type: select
+      type: boolean
       label: Allow Multiple Expanded
-      description: Allow mutiple accordion items to be expandable at once.
-      options:
-        "true": "true"
-        "false": "false"
-      preview: "true"
+      description: Allow multiple accordion items to be expandable at once.
+      preview: true
       required: false
   variants:
     default:

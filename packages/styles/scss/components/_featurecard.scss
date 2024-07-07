@@ -104,7 +104,7 @@
         &__fluid {
           --max-width: #{px-to-rem(754px)};
 
-          @include breakpoint("medium") {
+          @include breakpoint("md") {
             #{$self}--wrap {
               flex-direction: row;
             }

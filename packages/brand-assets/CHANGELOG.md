@@ -1,5 +1,17 @@
 # @ilo-org/brand-assets
 
+## 0.5.3
+
+### Patch Changes
+
+- 5af35c3e3: Replace apple touch icon png
+
+## 0.5.2
+
+### Patch Changes
+
+- 46d8998a4: Replace small favicon with 96x96 version that should look good everywhere
+
 ## 0.5.1
 
 ### Patch Changes
