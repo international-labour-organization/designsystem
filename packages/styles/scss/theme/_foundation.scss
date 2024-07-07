@@ -50,6 +50,12 @@
 
   --ilo-color-purple: rgba(150, 10, 85, 1);
 
+  --ilo-color-ux-notification-icon: var(--ilo-color-white);
+  --ilo-color-ux-notification-type-error: var(--ilo-color-red);
+  --ilo-color-ux-notification-type-info: var(--ilo-color-blue);
+  --ilo-color-ux-notification-type-success: var(--ilo-color-green);
+  --ilo-color-ux-notification-type-warning: var(--ilo-color-yellow);
+
   /**
     * Sizing
     */

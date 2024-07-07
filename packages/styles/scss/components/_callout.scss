@@ -61,7 +61,7 @@
 
     background: none;
     border: none;
-    color: $brand-ilo-dark-blue;
+    color: var(--ilo-color-blue-dark);
     cursor: pointer;
     font-family: $fonts-display;
     font-weight: 500;
@@ -69,7 +69,7 @@
     position: relative;
 
     &__icon {
-      @include dataurlicon("arrow", $brand-ilo-dark-blue);
+      @include dataurlicon("arrow", var(--ilo-color-blue-dark));
 
       background-position: right;
       background-repeat: no-repeat;
@@ -96,55 +96,55 @@
     width: 16px;
 
     &__error {
-      background-color: $color-ux-notification-type-error;
+      background-color: var(--ilo-color-ux-notification-type-error);
       @include dataurlicon("error", $color-ux-notification-icon);
     }
 
     &__info {
-      background-color: $color-ux-notification-type-info;
+      background-color: var(--ilo-color-ux-notification-type-info);
       @include dataurlicon("info", $color-ux-notification-icon);
     }
 
     &__success {
-      background-color: $color-ux-notification-type-success;
+      background-color: var(--ilo-color-ux-notification-type-success);
       @include dataurlicon("success", $color-ux-notification-icon);
     }
 
     &__warning {
-      background-color: $color-ux-notification-type-warning;
+      background-color: var(--ilo-color-ux-notification-type-warning);
       @include dataurlicon("warning", $color-ux-notification-icon);
     }
   }
 
   &__error {
-    background: $brand-ilo-ramp-red;
+    background: var(--ilo-color-red-ramp);
 
     #{$callout}__sidebar {
-      background: $brand-ilo-red;
+      background: var(--ilo-color-red);
     }
   }
 
   &__info {
-    background: $brand-ilo-ramp-blue;
+    background: var(--ilo-color-blue-ramp);
 
     #{$callout}__sidebar {
-      background: $brand-ilo-blue;
+      background: var(--ilo-color-blue);
     }
   }
 
   &__success {
-    background: $brand-ilo-ramp-green;
+    background: var(--ilo-ramp-green);
 
     #{$callout}__sidebar {
-      background: $brand-ilo-green;
+      background: var(--ilo-color-green);
     }
   }
 
   &__warning {
-    background: $brand-ilo-ramp-yellow;
+    background: var(--ilo-color-yellow-ramp);
 
     #{$callout}__sidebar {
-      background: $brand-ilo-yellow;
+      background: var(--ilo-color-yellow);
     }
   }
 }
