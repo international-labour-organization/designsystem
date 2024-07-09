@@ -179,23 +179,23 @@
 
   &__primary {
     background-color: var(--ilo-color-yellow);
-    border: var(--ilo-border-base) var(--ilo-color-yellow) solid;
+    border: var(--ilo-border-md) var(--ilo-color-yellow) solid;
     color: var(--ilo-button-labels-actionable-color);
   }
 
   &__secondary {
     background-color: var(--ilo-color-background-default);
-    border: var(--ilo-border-base) var(--ilo-color-borders-default) solid;
+    border: var(--ilo-border-md) var(--ilo-color-borders-default) solid;
     color: var(--ilo-button-labels-actionable-color);
 
     &:hover {
       background-color: var(--ilo-color-background-hover);
-      border: var(--ilo-border-base) var(--ilo-color-borders-hover) solid;
+      border: var(--ilo-border-md) var(--ilo-color-borders-hover) solid;
     }
 
     &:active {
       background-color: var(--ilo-color-background-active);
-      border: var(--ilo-border-base) var(--ilo-color-borders-active) solid;
+      border: var(--ilo-border-md) var(--ilo-color-borders-active) solid;
       box-shadow: none;
       color: var(--ilo-button-labels-active-color);
     }
@@ -203,31 +203,31 @@
 
   &__tertiary {
     background-color: var(--ilo-color-background-highlight);
-    border: var(--ilo-border-base) var(--ilo-color-background-highlight) solid;
+    border: var(--ilo-border-md) var(--ilo-color-background-highlight) solid;
     color: var(--ilo-button-labels-actionable-color);
   }
 
   &__alert {
     background-color: var(--ilo-color-red-dark);
-    border: var(--ilo-border-base) var(--ilo-color-red-dark) solid;
+    border: var(--ilo-border-md) var(--ilo-color-red-dark) solid;
     color: var(--ilo-button-labels-alert-color);
 
     &:hover {
       background-color: var(--ilo-color-background-hover);
-      border: var(--ilo-border-base) var(--ilo-color-borders-hover) solid;
+      border: var(--ilo-border-md) var(--ilo-color-borders-hover) solid;
       color: var(--ilo-button-labels-hover-color);
     }
 
     &:focus {
       background-color: var(--ilo-color-background-focus);
-      border: var(--ilo-border-base) var(--ilo-color-borders-focus) solid;
+      border: var(--ilo-border-md) var(--ilo-color-borders-focus) solid;
       color: var(--ilo-button-labels-focus-color);
       outline: none;
     }
 
     &:active {
       background-color: var(--ilo-color-background-active);
-      border: var(--ilo-border-base) var(--ilo-color-borders-active) solid;
+      border: var(--ilo-border-md) var(--ilo-color-borders-active) solid;
       box-shadow: none;
       color: var(--ilo-button-labels-active-color);
     }
@@ -235,7 +235,7 @@
 
   &:focus {
     background-color: var(--ilo-color-background-focus);
-    border: var(--ilo-border-base) var(--ilo-color-borders-focus) solid;
+    border: var(--ilo-border-md) var(--ilo-color-borders-focus) solid;
     box-shadow: 4px 4px 0 1px var(--ilo-color-borders-focus) inset,
       -4px -4px 0 1px var(--ilo-color-borders-focus) inset;
     color: var(--ilo-button-labels-focus-color);
@@ -250,7 +250,7 @@
 
   &:hover {
     background-color: var(--ilo-color-background-hover);
-    border: var(--ilo-border-base) var(--ilo-color-borders-hover) solid;
+    border: var(--ilo-border-md) var(--ilo-color-borders-hover) solid;
     box-shadow: none;
     color: var(--ilo-button-labels-hover-color);
     cursor: pointer;
@@ -259,7 +259,7 @@
 
   &:active {
     background-color: var(--ilo-color-background-active);
-    border: var(--ilo-border-base) var(--ilo-color-borders-active) solid;
+    border: var(--ilo-border-md) var(--ilo-color-borders-active) solid;
     box-shadow: none;
     color: var(--ilo-button-labels-active-color);
     @include globaltransition("color, background-color, border-color");

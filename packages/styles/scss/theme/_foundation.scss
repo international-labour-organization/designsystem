@@ -105,6 +105,4 @@
   --ilo-border-sm: calc(#{px-to-rem(1.5)} * var(--ilo-scale));
   --ilo-border-md: calc(#{px-to-rem(2)} * var(--ilo-scale));
   --ilo-border-lg: calc(#{px-to-rem(4)} * var(--ilo-scale));
-
-  --ilo-border-base: var(--ilo-border-md);
 }
