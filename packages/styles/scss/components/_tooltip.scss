@@ -8,7 +8,7 @@
   $arrow-width: calc(spacing(2) - px-to-rem(1));
 
   @include font-styles("body-xs");
-  font-family: $fonts-copy;
+  font-family: var(--ilo-fonts-copy);
   font-weight: 400;
   background: map-get($color, "tooltip", "default", "background");
   border: none;

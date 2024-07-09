@@ -9,7 +9,7 @@
     border: none;
     border-top: solid $borders-base $color-base-blue-light;
     color: $color-ux-labels-actionable;
-    font-family: $fonts-display;
+    font-family: var(--ilo-fonts-display);
     height: px-to-rem(56px);
     margin-top: spacing(8);
     padding: spacing(4) spacing(7) spacing(4) spacing(0);

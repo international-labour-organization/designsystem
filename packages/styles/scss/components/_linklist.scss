@@ -5,7 +5,7 @@
 
 .ilo--link-list {
   &--headline {
-    font-family: $fonts-display;
+    font-family: var(--ilo-fonts-display);
     font-weight: map-get($type, "weights", "label");
     @include font-styles("headline-5");
     @include textmargin("margin-bottom", 30px, "headline-5", "display", 0, 0);
@@ -13,7 +13,7 @@
 
   &--links {
     &--headline {
-      font-family: $fonts-display;
+      font-family: var(--ilo-fonts-display);
       font-weight: map-get($type, "weights", "label");
       @include font-styles("headline-6");
       @include textmargin("margin-bottom", 27px, "headline-6", "display", 0, 0);
@@ -84,7 +84,7 @@
     border-bottom: px-to-rem($borders-base) solid $color-base-neutrals-lighter;
     color: map-get($color, "link", "text", "default");
     display: block;
-    font-family: $fonts-display;
+    font-family: var(--ilo-fonts-display);
     font-weight: map-get($type, "weights", "section");
     @include font-styles("body-small");
     padding-top: spacing(4);
