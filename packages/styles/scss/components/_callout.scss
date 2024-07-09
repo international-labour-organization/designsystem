@@ -48,7 +48,7 @@
 
   &__title {
     @include font-styles("nav-bold-b");
-    font-family: $fonts-display;
+    font-family: var(--ilo-font-family);
     font-weight: 700;
   }
 
@@ -63,7 +63,7 @@
     border: none;
     color: var(--ilo-color-blue-dark);
     cursor: pointer;
-    font-family: $fonts-display;
+    font-family: var(--ilo-font-family);
     font-weight: 500;
     padding-inline-end: spacing(8);
     position: relative;
