@@ -27,13 +27,13 @@ h5 {
 }
 
 // Set Chinese system fonts
-html[lang="zh"] {
+html[lang*="zh"] {
   --ilo-fonts-display: var(--ilo-fonts-display-zh);
   --ilo-fonts-copy: var(--ilo-fonts-copy-zh);
 }
 
 // Set Japanese system fonts
-html[lang="jp"] {
+html[lang*="ja"] {
   --ilo-fonts-display: var(--ilo-fonts-display-jp);
   --ilo-fonts-copy: var(--ilo-fonts-copy-jp);
 }
