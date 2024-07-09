@@ -16,7 +16,7 @@
   @include bordervalues("input", "formelements");
   border-radius: 0;
   box-sizing: content-box;
-  font-family: $fonts-copy;
+  font-family: var(--ilo-fonts-copy);
   font-weight: map-get($type, "weights", "section");
   @include font-styles("label-medium");
   height: px-to-rem(45px);

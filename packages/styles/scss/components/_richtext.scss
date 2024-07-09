@@ -3,7 +3,7 @@
 @import "../mixins";
 
 .ilo--richtext {
-  font-family: $fonts-copy;
+  font-family: var(--ilo-fonts-copy);
   font-weight: 400;
   @include font-styles("base");
 
@@ -85,7 +85,7 @@
   h3,
   h4,
   h5 {
-    font-family: $fonts-display;
+    font-family: var(--ilo-fonts-display);
     font-weight: 700;
     margin-top: spacing(14);
   }
@@ -156,7 +156,7 @@
     background-repeat: no-repeat;
     background-size: px-to-rem(72px) px-to-rem(40px);
     display: block;
-    font-family: $fonts-display;
+    font-family: var(--ilo-fonts-display);
     margin: spacing(6) 0 spacing(10) 0;
     padding: spacing(19) 0 spacing(9) spacing(8); // check
     position: relative;

@@ -192,7 +192,7 @@
       #{$self}--title {
         @include font-styles("headline-5");
         margin-bottom: spacing(6);
-        font-family: $fonts-display;
+        font-family: var(--ilo-fonts-display);
         font-weight: 700;
         flex: 1;
       }

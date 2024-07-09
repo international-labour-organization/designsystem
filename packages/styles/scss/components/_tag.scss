@@ -19,7 +19,7 @@
   border: none;
   color: map-get($color, "tag", "text", "default");
   display: inline-block;
-  font-family: map-get($fonts, "display");
+  font-family: var(--ilo-fonts-display);
   font-weight: 500;
   padding: spacing(2) spacing(3);
   text-decoration: none;

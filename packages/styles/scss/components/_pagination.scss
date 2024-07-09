@@ -15,7 +15,7 @@
     border-radius: 2px;
     color: map-get($color, "ux", "pagination", "default", "icon");
     display: inline-block;
-    font-family: $fonts-display;
+    font-family: var(--ilo-fonts-display);
     height: px-to-rem(40px);
     overflow: hidden;
     position: relative;
@@ -227,7 +227,7 @@
     gap: spacing(1);
     @include font-styles("nav-md-sm");
     margin-inline-end: spacing(2);
-    font-family: $fonts-copy;
+    font-family: var(--ilo-fonts-copy);
     font-weight: 400;
     line-height: 45px;
 

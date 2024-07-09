@@ -67,7 +67,7 @@
 
       #{$self}--intro {
         color: $brand-ilo-dark-blue;
-        font-family: $fonts-display;
+        font-family: var(--ilo-fonts-display);
         @include font-styles("base");
         @include textmargin("margin-bottom", 35px, "nav-md-sm", "copy", 0, 0);
         width: 100%;

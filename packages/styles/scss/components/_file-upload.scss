@@ -18,7 +18,7 @@
     color: map-get($color, "ux", "labels", "actionable");
     content: attr(data-label);
     display: inline-block;
-    font-family: $fonts-display;
+    font-family: var(--ilo-fonts-display);
     font-weight: map-get($type, "weights", "label");
     @include borderradius("button");
     @include boxpadding("button", "medium");
@@ -88,7 +88,7 @@
     background-color: $color-formelements-uploadedfile-default-background;
     @include bordervalues("uploadedfile", "formelements", "default");
     box-sizing: border-box;
-    font-family: $fonts-display;
+    font-family: var(--ilo-fonts-display);
     font-weight: map-get($type, "weights", "section");
     @include font-styles("label-medium");
     height: px-to-rem(48px);
