@@ -1,5 +1,5 @@
 ---
-"@ilo-org/themes": minor
+"@ilo-org/themes": patch
 ---
 
-Remove font family tokens
+Updated font family token to utilize the foundation variable. This change ensures backward compatibility as the current value will eventually be deprecated.
