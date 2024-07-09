@@ -96,23 +96,23 @@
     width: 16px;
 
     &__error {
-      background-color: var(--ilo-color-ux-notification-type-error);
-      @include dataurlicon("error", $color-ux-notification-icon);
+      background-color: var(--ilo-color-notification-type-error);
+      @include dataurlicon("error", "white");
     }
 
     &__info {
-      background-color: var(--ilo-color-ux-notification-type-info);
-      @include dataurlicon("info", $color-ux-notification-icon);
+      background-color: var(--ilo-color-notification-type-info);
+      @include dataurlicon("info", "white");
     }
 
     &__success {
-      background-color: var(--ilo-color-ux-notification-type-success);
-      @include dataurlicon("success", $color-ux-notification-icon);
+      background-color: var(--ilo-color-notification-type-success);
+      @include dataurlicon("success", "white");
     }
 
     &__warning {
-      background-color: var(--ilo-color-ux-notification-type-warning);
-      @include dataurlicon("warning", $color-ux-notification-icon);
+      background-color: var(--ilo-color-notification-type-warning);
+      @include dataurlicon("warning", "white");
     }
   }
 
