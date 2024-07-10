@@ -29,10 +29,11 @@ const Button: FC<ButtonProps> = ({
 
   const ButtonClasses = classNames(className, {
     [baseClass]: true,
-    [`${baseClass}--${size}`]: size,
-    [`${baseClass}--${type}`]: type,
-    [`icon icon__position--${icoPos}`]: icon && !icononly,
-    [`icon icon--only`]: icon && icononly,
+    [`${baseClass}__${size}`]: size,
+    [`${baseClass}__${type}`]: type,
+    [`${baseClass}--icon ${baseClass}--icon--position__${icoPos}`]:
+      icon && !icononly,
+    [`${baseClass}--icon ${baseClass}--icon--only`]: icon && icononly,
   });
 
   /**

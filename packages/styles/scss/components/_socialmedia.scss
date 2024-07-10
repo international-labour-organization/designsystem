@@ -36,7 +36,7 @@
 
   &--headline {
     color: map-get($color, "socialmedia", $default-theme, "headline", "color");
-    font-family: $fonts-display;
+    font-family: var(--ilo-fonts-display);
     font-weight: map-get($type, "weights", "label");
     @include font-styles("body-small");
     @include textmargin("margin-bottom", 28px, "body-small", "display", 0, 0);

@@ -427,7 +427,7 @@
 
   li {
     @include font-styles("body-small");
-    font-family: $fonts-copy;
+    font-family: var(--ilo-fonts-copy);
     margin-bottom: spacing(4);
 
     b,

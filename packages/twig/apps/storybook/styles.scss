@@ -1,12 +1,13 @@
 @import "@ilo-org/themes/build/scss/tokens";
-@import "@ilo-org/styles/scss/monorepo";
+@import "@ilo-org/styles/scss/monorepo.scss";
 
 h1,
 h2,
 h3,
 h4,
-h5 {
-  font-family: "Overpass", sans-serif !important;
+h5,
+h6 {
+  font-family: var(--ilo-fonts-display) !important;
 }
 
 button[title="Zoom in"]:hover,
