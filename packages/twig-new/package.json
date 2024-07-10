@@ -31,6 +31,7 @@
     "@ilo-org/icons": "workspace:*",
     "@ilo-org/maestro": "workspace:*",
     "@ilo-org/styles": "workspace:*",
-    "@ilo-org/utils": "workspace:*"
+    "@ilo-org/utils": "workspace:*",
+    "@popperjs/core": "^2.11.8"
   }
 }
