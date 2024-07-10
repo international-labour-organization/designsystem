@@ -1,5 +1,11 @@
 # @ilo-org/themes
 
+## 0.9.1
+
+### Patch Changes
+
+- d560f1a86: Updated font family token to utilize the foundation variable. This change ensures backward compatibility as the current value will eventually be deprecated.
+
 ## 0.9.0
 
 ### Minor Changes
