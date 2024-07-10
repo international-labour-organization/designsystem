@@ -1,5 +1,5 @@
-import Button from "../components/button/button.twig";
-import ButtonPatterns from "../components/button/button.pattern.yml";
+import Button from "../src/components/button/button.twig";
+import ButtonPatterns from "../src/components/button/button.pattern.yml";
 import { Maestro } from "@ilo-org/maestro";
 
 const story = Maestro.create(Button, ButtonPatterns);
