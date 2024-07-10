@@ -3,6 +3,8 @@
 import { execSync } from "child_process";
 import { existsSync, mkdirSync, readdirSync, unlinkSync } from "fs";
 import { argv } from "process";
+import ejs from "ejs";
+import { template } from "./template.js";
 
 if (argv.length < 3) {
   console.error("Usage: node migrate-twig <component-name>");
@@ -53,6 +55,15 @@ try {
   } else {
     console.warn(`wingsuit.yml not found in ${newComponentPath}.`);
   }
+
+  const output = ejs.render(template, {
+    component: componentName,
+    componentTitle:
+      componentName.charAt(0).toUpperCase() + componentName.slice(1),
+  });
+  console.log(output);
+
+  // Create new stories file
 } catch (error) {
   console.error(`Error: ${error.message}`);
   process.exit(1);
