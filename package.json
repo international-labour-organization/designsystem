@@ -54,7 +54,8 @@
     "twig:build:docs": "pnpm fix:pnpm-filter && pnpm turbo run build:docs --filter twig...",
     "twig:build:lib": "pnpm turbo run build:lib --filter twig... ",
     "twig:dev:docs": "pnpm --filter twig storybook",
-    "twig:dev:prep": "pnpm twig:install && pnpm twig:build:lib"
+    "twig:dev:prep": "pnpm twig:install && pnpm twig:build:lib",
+    "migrate-twig": "migrate-twig"
   },
   "postinstall": "manypkg check",
   "repository": {
