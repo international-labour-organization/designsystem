@@ -2,6 +2,8 @@ import { join, dirname } from "path";
 import { mergeConfig } from "vite";
 import alternate from "./vite.config.js";
 
+import { head } from "@ilo-org/maestro/storybook";
+
 /**
  * This function is used to resolve the absolute path of a package.
  * It is needed in projects that use Yarn PnP or are set up within a monorepo.
@@ -32,13 +34,6 @@ const config = {
   viteFinal: (config) => {
     return mergeConfig(alternate, config);
   },
-  previewHead: (head) => {
-    return `
-      ${head}
-      <script>
-        window.Drupal = window.Drupal || { behaviors: {} };
-      </script>
-    `;
-  },
+  previewHead: head,
 };
 export default config;

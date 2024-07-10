@@ -10,7 +10,7 @@ describe("<Callout>", () => {
   it("Should render Callout headline with content.", () => {
     const { container } = render(<Callout {...calloutArgs.baseArgs} />);
     expect(container.children[0]).not.toBeNull();
-    const headlineElement = document.querySelector('[class*="--headline"]');
+    const headlineElement = document.querySelector('[class*="__title"]');
     console.log(headlineElement);
     expect(headlineElement?.textContent).toEqual(
       calloutArgs.baseArgs.headline as string
@@ -20,7 +20,7 @@ describe("<Callout>", () => {
   it("Should render Callout copy with content.", () => {
     const { container } = render(<Callout {...calloutArgs.baseArgs} />);
     expect(container.children[0]).not.toBeNull();
-    const copyElement = document.querySelector('[class*="--copy"]');
+    const copyElement = document.querySelector('[class*="__description"]');
     expect(copyElement?.textContent).toEqual(calloutArgs.baseArgs.copy);
   });
 

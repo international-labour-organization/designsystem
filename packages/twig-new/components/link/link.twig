@@ -1,0 +1,8 @@
+{#
+  LINK COMPONENT
+#}
+<a class="{{prefix}}--link {{prefix}}--link--{{theme}}" href="{{url}}"{% if target %} target={{target}}{% endif %}{% if target == "_blank" %} rel="noopener noreferrer"{% endif %}>
+  {% if label %}
+    <span className="link__label">{{label}}</span>
+  {% endif %}
+</a>

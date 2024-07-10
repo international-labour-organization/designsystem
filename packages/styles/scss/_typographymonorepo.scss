@@ -11,35 +11,32 @@
 html,
 body {
   color: $color-font-base;
-  font: #{$type-base-size}/#{$type-base-line-height} $fonts-copy;
+  font-family: var(--ilo-fonts-copy);
+  font-size: #{$type-base-size};
+  line-height: #{$type-base-line-height};
   letter-spacing: $type-base-letter-spacing;
   -webkit-font-smoothing: antialiased;
 }
 
-/// Font family fallbacks for: Overpass, Noto Sans
-/// @type Map
-/// @access public
-/// @group @carbon/type
-$font-families: (
-  "display": unquote("#{$fonts-display}, sans-serif"),
-  "copy": unquote("#{$fonts-copy}, sans-serif"),
-) !default;
-
-/// Get the font-family for a font
-/// @param {String} $name
-/// @return {String}
-/// @access public
-/// @group @carbon/type
-@function font-family($name) {
-  @return map-get($font-families, $name);
+h1,
+h2,
+h3,
+h4,
+h5,
+h5 {
+  font-family: var(--ilo-fonts-display);
 }
 
-/// Include the `font-family` definition for the given name in your selector
-/// @param {String} $name
-/// @access public
-/// @group @carbon/type
-@mixin font-family($name) {
-  font-family: font-family($name);
+// Set Chinese system fonts
+html[lang*="zh"] {
+  --ilo-fonts-display: var(--ilo-fonts-display-zh);
+  --ilo-fonts-copy: var(--ilo-fonts-copy-zh);
+}
+
+// Set Japanese system fonts
+html[lang*="ja"] {
+  --ilo-fonts-display: var(--ilo-fonts-display-jp);
+  --ilo-fonts-copy: var(--ilo-fonts-copy-jp);
 }
 
 /// Suggested font weights to be used in product

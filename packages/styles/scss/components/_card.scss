@@ -159,7 +159,7 @@
 
   &--title {
     color: $brand-ilo-dark-blue;
-    font-family: $fonts-display;
+    font-family: var(--ilo-fonts-display);
     font-weight: 700;
     @include font-styles("headline-5");
     @include textmargin(

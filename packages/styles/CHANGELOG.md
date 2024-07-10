@@ -1,5 +1,32 @@
 # @ilo-org/styles
 
+## 1.2.0
+
+### Minor Changes
+
+- 7558808c2: Font family declarations are now made using tokens set in the style foundation file rather than using tokens from the themes package.
+- 7558808c2: Chinese and Japanese font family declarations are now set using foundation variables based on the global lang attribute (e.g., <html lang="zh">). Previously, we relied on fallbacks in a universal font-family value, which caused some Chinese characters to be rendered in Japanese.
+
+### Patch Changes
+
+- 66a0bc4c2: Fix icon position to properly align with button label
+- 66a0bc4c2: CSS housekeeping for button component
+- 963ca6f0b: CSS housekeeping for callout component and sync styles with design
+- Updated dependencies [d560f1a86]
+  - @ilo-org/themes@0.9.1
+
+## 1.1.1
+
+### Patch Changes
+
+- 97dbd5fd2: Include theme variable definitions in main css bundle
+
+## 1.1.0
+
+### Minor Changes
+
+- f8e19c9af: Add foundation file for the new theming
+
 ## 1.0.8
 
 ### Patch Changes

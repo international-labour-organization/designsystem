@@ -1,5 +1,36 @@
 # @ilo-org/react
 
+## 0.17.6
+
+### Patch Changes
+
+- 66a0bc4c2: CSS housekeeping for button component
+- 963ca6f0b: CSS housekeeping for callout component and sync styles with design
+- Updated dependencies [66a0bc4c2]
+- Updated dependencies [66a0bc4c2]
+- Updated dependencies [7558808c2]
+- Updated dependencies [d560f1a86]
+- Updated dependencies [963ca6f0b]
+- Updated dependencies [7558808c2]
+  - @ilo-org/styles@1.2.0
+  - @ilo-org/themes@0.9.1
+
+## 0.17.5
+
+### Patch Changes
+
+- Updated dependencies [97dbd5fd2]
+  - @ilo-org/styles@1.1.1
+
+## 0.17.4
+
+### Patch Changes
+
+- Updated dependencies [f8e19c9af]
+- Updated dependencies [5af35c3e3]
+  - @ilo-org/styles@1.1.0
+  - @ilo-org/brand-assets@0.5.3
+
 ## 0.17.3
 
 ### Patch Changes
