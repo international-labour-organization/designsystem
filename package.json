@@ -85,10 +85,5 @@
     "rollup": "^3.23.0",
     "turbo": "1.7.4",
     "typescript": "4.9.3"
-  },
-  "pnpm": {
-    "patchedDependencies": {
-      "vite-plugin-twig-drupal@1.3.0": "patches/vite-plugin-twig-drupal@1.3.0.patch"
-    }
   }
 }
