@@ -2,23 +2,35 @@
 @use "../functions" as *;
 @import "../animations";
 @import "../mixins";
+@import "../config";
 
-.ilo--button {
+.#{$prefix}--button {
+  --ilo-button-label-weight: 700;
+  --ilo-button-labels-actionable-color: var(--ilo-color-blue-dark);
+  --ilo-button-labels-active-color: var(--ilo-color-blue-light);
+  --ilo-button-labels-alert-color: var(--ilo-color-white);
+  --ilo-button-labels-hover-color: var(--ilo-color-blue);
+
+  // This provides a reference to the outerclass within nested declarations
+  $button: &;
   display: inline-block;
   font-family: var(--ilo-fonts-display);
-  font-weight: map-get($type, "weights", "label");
+  font-weight: var(--ilo-button-label-weight);
   padding: 0;
-  @include borderradius("button");
+  border-radius: var(--ilo-border-md);
+  @include globaltransition("color, background-color, border-color");
 
   .link__label,
   .button__label {
     display: inline-block;
+    position: relative;
+    top: px-to-rem(2px);
   }
 
-  &.icon {
+  &--icon {
     position: relative;
 
-    .ilo--icon {
+    .#{$prefix}--icon {
       height: 100%;
       max-height: px-to-rem(32px);
       max-width: px-to-rem(32px);
@@ -26,25 +38,25 @@
       width: 100%;
     }
 
-    &.icon__position--left {
+    &--position__left {
       .link__label,
       .button__label {
-        padding-left: spacing(12);
+        padding-inline-start: spacing(6);
       }
 
-      .ilo--icon {
+      .#{$prefix}--icon {
         left: px-to-rem(13px);
         top: px-to-rem(7px);
       }
     }
 
-    &.icon__position--right {
+    &--position__right {
       .link__label,
       .button__label {
-        padding-right: spacing(12);
+        padding-inline-end: spacing(6);
       }
 
-      .ilo--icon {
+      .#{$prefix}--icon {
         right: px-to-rem(13px);
         top: px-to-rem(7px);
       }
@@ -57,269 +69,204 @@
     }
   }
 
-  &--large {
-    .link__label,
-    .button__label {
-      padding: spacing(3) spacing(6);
-      @include font-styles("button-large");
-    }
+  &__large {
+    padding: spacing(3) spacing(6);
+    @include font-styles("button-large");
 
-    &.icon--only {
+    &.#{$prefix}--button--icon--only {
       height: px-to-rem(45px);
       width: px-to-rem(45px);
+      padding: unset;
 
-      .ilo--icon {
+      .#{$prefix}--icon {
         left: px-to-rem(4.5px);
         top: px-to-rem(4.5px);
       }
     }
   }
 
-  &--medium {
-    .link__label,
-    .button__label {
-      padding: spacing(2) spacing(5);
-      @include font-styles("button-medium");
+  &__medium {
+    padding: spacing(2) spacing(5);
+    @include font-styles("button-medium");
+
+    .#{$prefix}--icon {
+      max-height: px-to-rem(30px);
+      max-width: px-to-rem(30px);
+      position: absolute;
     }
 
-    &.icon {
-      .ilo--icon {
-        max-height: px-to-rem(30px);
-        max-width: px-to-rem(30px);
-        position: absolute;
+    &.#{$prefix}--button--icon--position__left {
+      .link__label,
+      .button__label {
+        padding-inline-start: spacing(6);
       }
 
-      &.icon__position--left {
-        .link__label,
-        .button__label {
-          padding-left: spacing(11);
-        }
-
-        .ilo--icon {
-          left: px-to-rem(10px);
-          top: px-to-rem(3px);
-        }
-      }
-
-      &.icon__position--right {
-        .link__label,
-        .button__label {
-          padding-right: spacing(11);
-        }
-
-        .ilo--icon {
-          right: px-to-rem(10px);
-          top: px-to-rem(3px);
-        }
+      .#{$prefix}--icon {
+        left: px-to-rem(10px);
+        top: px-to-rem(3px);
       }
     }
 
-    &.icon--only {
+    &.#{$prefix}--button--icon--position__right {
+      .link__label,
+      .button__label {
+        padding-inline-end: spacing(6);
+      }
+
+      .#{$prefix}--icon {
+        right: px-to-rem(10px);
+        top: px-to-rem(3px);
+      }
+    }
+
+    &.#{$prefix}--button--icon--only {
       height: px-to-rem(36px);
       width: px-to-rem(36px);
+      padding: unset;
 
-      .ilo--icon {
+      .#{$prefix}--icon {
         left: px-to-rem(2px);
         top: px-to-rem(2px);
       }
     }
   }
 
-  &--small {
-    .link__label,
-    .button__label {
-      padding: spacing(1) spacing(4);
-      @include font-styles("button-small");
+  &__small {
+    padding: spacing(1) spacing(4);
+    @include font-styles("button-small");
+
+    .#{$prefix}--icon {
+      max-height: px-to-rem(28px);
+      max-width: px-to-rem(28px);
+      position: absolute;
     }
 
-    &.icon {
-      .ilo--icon {
-        max-height: px-to-rem(28px);
-        max-width: px-to-rem(28px);
-        position: absolute;
+    &.#{$prefix}--button--icon--position__left {
+      .link__label,
+      .button__label {
+        padding-inline-start: spacing(5);
       }
 
-      &.icon__position--left {
-        .link__label,
-        .button__label {
-          padding-left: spacing(9);
-        }
-
-        .ilo--icon {
-          left: px-to-rem(6px);
-          top: px-to-rem(1px);
-        }
-      }
-
-      &.icon__position--right {
-        .link__label,
-        .button__label {
-          padding-right: spacing(9);
-        }
-
-        .ilo--icon {
-          right: px-to-rem(6px);
-          top: px-to-rem(1px);
-        }
+      .#{$prefix}--icon {
+        left: px-to-rem(6px);
+        top: 0;
       }
     }
 
-    &.icon--only {
+    &.#{$prefix}--button--icon--position__right {
+      .link__label,
+      .button__label {
+        padding-inline-end: spacing(9);
+      }
+
+      .#{$prefix}--icon {
+        right: 6;
+        top: 0;
+      }
+    }
+
+    &.#{$prefix}--button--icon--only {
       height: px-to-rem(26px);
       width: px-to-rem(26px);
+      padding: unset;
 
-      .ilo--icon {
+      .#{$prefix}--icon {
         left: px-to-rem(0.5px);
         top: px-to-rem(0.5px);
       }
     }
   }
 
-  &--primary {
-    background-color: map-get($color, "ux", "background", "attention");
-    border: map-get($borders, "base")
-      map-get($color, "ux", "borders", "attention") solid;
-    color: map-get($color, "ux", "labels", "actionable");
+  &__primary {
+    background-color: var(--ilo-color-yellow);
+    border: var(--ilo-border-md) var(--ilo-color-yellow) solid;
+    color: var(--ilo-button-labels-actionable-color);
+  }
+
+  &__secondary {
+    background-color: var(--ilo-color-background-default);
+    border: var(--ilo-border-md) var(--ilo-color-borders-default) solid;
+    color: var(--ilo-button-labels-actionable-color);
+
+    &:hover {
+      background-color: var(--ilo-color-background-hover);
+      border: var(--ilo-border-md) var(--ilo-color-borders-hover) solid;
+    }
+
+    &:active {
+      background-color: var(--ilo-color-background-active);
+      border: var(--ilo-border-md) var(--ilo-color-borders-active) solid;
+      box-shadow: none;
+      color: var(--ilo-button-labels-active-color);
+    }
+  }
+
+  &__tertiary {
+    background-color: var(--ilo-color-background-highlight);
+    border: var(--ilo-border-md) var(--ilo-color-background-highlight) solid;
+    color: var(--ilo-button-labels-actionable-color);
+  }
+
+  &__alert {
+    background-color: var(--ilo-color-red-dark);
+    border: var(--ilo-border-md) var(--ilo-color-red-dark) solid;
+    color: var(--ilo-button-labels-alert-color);
+
+    &:hover {
+      background-color: var(--ilo-color-background-hover);
+      border: var(--ilo-border-md) var(--ilo-color-borders-hover) solid;
+      color: var(--ilo-button-labels-hover-color);
+    }
+
+    &:focus {
+      background-color: var(--ilo-color-background-focus);
+      border: var(--ilo-border-md) var(--ilo-color-borders-focus) solid;
+      color: var(--ilo-button-labels-focus-color);
+      outline: none;
+    }
+
+    &:active {
+      background-color: var(--ilo-color-background-active);
+      border: var(--ilo-border-md) var(--ilo-color-borders-active) solid;
+      box-shadow: none;
+      color: var(--ilo-button-labels-active-color);
+    }
   }
 
   &:focus {
-    background-color: map-get($color, "ux", "background", "focus");
-    border: map-get($borders, "base") map-get($color, "ux", "borders", "focus")
-      solid;
-    box-shadow: 4px 4px 0 1px map-get($color, "ux", "borders", "focus") inset,
-      -4px -4px 0 1px map-get($color, "ux", "borders", "focus") inset;
-    color: map-get($color, "ux", "labels", "focus");
+    background-color: var(--ilo-color-background-focus);
+    border: var(--ilo-border-md) var(--ilo-color-borders-focus) solid;
+    box-shadow: 4px 4px 0 1px var(--ilo-color-borders-focus) inset,
+      -4px -4px 0 1px var(--ilo-color-borders-focus) inset;
+    color: var(--ilo-button-labels-focus-color);
     outline: none;
     @include globaltransition("color, background-color, border-color");
 
-    &.ilo--button--small {
-      box-shadow: 3px 3px 0 1px map-get($color, "ux", "borders", "focus") inset,
-        -3px -3px 0 1px map-get($color, "ux", "borders", "focus") inset;
+    &.#{$prefix}--small {
+      box-shadow: 3px 3px 0 1px var(--ilo-color-borders-focus) inset,
+        -3px -3px 0 1px var(--ilo-color-borders-focus) inset;
     }
   }
 
   &:hover {
-    background-color: map-get($color, "ux", "background", "hover");
-    border: map-get($borders, "base") map-get($color, "ux", "borders", "hover")
-      solid;
+    background-color: var(--ilo-color-background-hover);
+    border: var(--ilo-border-md) var(--ilo-color-borders-hover) solid;
     box-shadow: none;
-    color: map-get($color, "ux", "labels", "hover");
+    color: var(--ilo-button-labels-hover-color);
     cursor: pointer;
     @include globaltransition("color, background-color, border-color");
-
-    &.ilo--button--small {
-      box-shadow: none;
-    }
   }
 
   &:active {
-    background-color: map-get($color, "ux", "background", "active");
-    border: map-get($borders, "base") map-get($color, "ux", "borders", "active")
-      solid;
+    background-color: var(--ilo-color-background-active);
+    border: var(--ilo-border-md) var(--ilo-color-borders-active) solid;
     box-shadow: none;
-    color: map-get($color, "ux", "labels", "active");
+    color: var(--ilo-button-labels-active-color);
     @include globaltransition("color, background-color, border-color");
-
-    &.ilo--button--small {
-      box-shadow: none;
-    }
   }
 
   &:disabled {
-    opacity: map-get($opacity, "disabled");
+    opacity: $opacity-disabled;
     pointer-events: none;
-  }
-
-  &--secondary {
-    background-color: map-get($color, "ux", "background", "default");
-    border: map-get($borders, "small")
-      map-get($color, "ux", "borders", "default") solid;
-    color: map-get($color, "ux", "labels", "actionable");
-    @include globaltransition("color, background-color, border-color");
-
-    &:hover {
-      background-color: map-get($color, "ux", "background", "hover");
-      border: map-get($borders, "small")
-        map-get($color, "ux", "borders", "hover") solid;
-      @include globaltransition("color, background-color, border-color");
-    }
-
-    &:active {
-      background-color: map-get($color, "ux", "background", "active");
-      border: map-get($borders, "base")
-        map-get($color, "ux", "borders", "active") solid;
-      box-shadow: none;
-      color: map-get($color, "ux", "labels", "active");
-      @include globaltransition("color, background-color, border-color");
-
-      &.ilo--button--small {
-        box-shadow: none;
-      }
-    }
-  }
-
-  &--tertiary {
-    background-color: map-get($color, "ux", "background", "highlight");
-    border: map-get($borders, "base")
-      map-get($color, "ux", "background", "highlight") solid;
-    color: map-get($color, "ux", "labels", "actionable");
-    @include globaltransition("color, background-color, border-color");
-  }
-
-  &--alert {
-    background-color: map-get($color, "ux", "background", "alert");
-    border: map-get($borders, "small") map-get($color, "ux", "borders", "alert")
-      solid;
-    color: map-get($color, "ux", "labels", "alert");
-    @include globaltransition("color, background-color, border-color");
-
-    &:hover {
-      background-color: map-get($color, "ux", "background", "hover");
-      border: map-get($borders, "small")
-        map-get($color, "ux", "borders", "hover") solid;
-      color: map-get($color, "ux", "labels", "hover");
-      @include globaltransition("color, background-color, border-color");
-    }
-
-    &:focus {
-      background-color: map-get($color, "ux", "background", "focus");
-      border: map-get($borders, "base")
-        map-get($color, "ux", "borders", "focus") solid;
-      color: map-get($color, "ux", "labels", "focus");
-      outline: none;
-      @include globaltransition("color, background-color, border-color");
-    }
-
-    &:active {
-      background-color: map-get($color, "ux", "background", "active");
-      border: map-get($borders, "base")
-        map-get($color, "ux", "borders", "active") solid;
-      box-shadow: none;
-      color: map-get($color, "ux", "labels", "active");
-      @include globaltransition("color, background-color, border-color");
-
-      &.ilo--button--small {
-        box-shadow: none;
-      }
-    }
-  }
-}
-
-[id*="story--components-button"] div {
-  .ilo--button {
-    margin-right: 10px;
-    margin-bottom: 10px;
-
-    &--large.icon--only {
-      transform: translateY(-6px);
-    }
-
-    &--medium.icon--only {
-      transform: translateY(-5px);
-    }
-
-    &--small.icon--only {
-      transform: translateY(-5px);
-    }
   }
 }

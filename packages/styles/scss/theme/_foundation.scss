@@ -42,7 +42,7 @@
   --ilo-color-gray-charcoal: rgba(45, 45, 45, 1);
   --ilo-color-gray-accessible: rgba(109, 109, 109, 1);
   --ilo-color-gray-light: rgba(237, 240, 242, 1);
-  --ilo-color-gray-ui: rgba(184, 196, 204, 1);
+  --ilo-color-gray-base: rgba(184, 196, 204, 1);
 
   --ilo-color-red: rgba(250, 60, 75, 1);
   --ilo-color-red-light: rgba(254, 216, 219, 1);
@@ -65,6 +65,16 @@
   --ilo-color-notification-type-info: var(--ilo-color-blue);
   --ilo-color-notification-type-success: var(--ilo-color-green);
   --ilo-color-notification-type-warning: var(--ilo-color-yellow);
+  --ilo-color-background-default: var(--ilo-color-white);
+  --ilo-color-background-active: var(--ilo-color-blue);
+  --ilo-color-background-highlight: var(--ilo-color-gray-light);
+  --ilo-color-background-hover: var(--ilo-color-blue-lighter);
+  --ilo-color-background-focus: var(--ilo-color-white);
+
+  --ilo-color-borders-default: var(--ilo-color-gray-base);
+  --ilo-color-borders-hover: var(--ilo-color-blue);
+  --ilo-color-borders-active: var(--ilo-color-blue);
+  --ilo-color-borders-focus: var(--ilo-color-yellow);
 
   /**
     * Sizing
