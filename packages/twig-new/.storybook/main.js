@@ -18,6 +18,7 @@ const config = {
     "../stories/**/*.mdx",
     "../stories/**/*.stories.@(js|jsx|mjs|ts|tsx)",
   ],
+  staticDirs: ["../public"],
   core: {
     builder: "@storybook/builder-vite",
   },

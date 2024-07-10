@@ -14,6 +14,7 @@
     "@storybook/addon-interactions": "^8.1.9",
     "@storybook/addon-links": "^8.1.9",
     "@storybook/blocks": "^8.1.9",
+    "@storybook/builder-vite": "^8.1.9",
     "@storybook/html": "^8.1.9",
     "@storybook/html-vite": "^8.1.9",
     "@storybook/test": "^8.1.9",
@@ -23,14 +24,13 @@
     "twig": "^1.16.0",
     "vite": "^5.2.0",
     "vite-plugin-twig-drupal": "^1.3.0",
-    "zod": "^3.23.8",
-    "@storybook/builder-vite": "^8.1.9"
+    "zod": "^3.23.8"
   },
   "dependencies": {
-    "@ilo-org/styles": "workspace:*",
     "@ilo-org/fonts": "workspace:*",
     "@ilo-org/icons": "workspace:*",
     "@ilo-org/maestro": "workspace:*",
+    "@ilo-org/styles": "workspace:*",
     "@ilo-org/utils": "workspace:*"
   }
 }
