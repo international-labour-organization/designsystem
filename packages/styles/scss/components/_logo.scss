@@ -37,7 +37,7 @@
     color: var(--logo-theme-color);
     font-size: var(--logo-font-size);
     line-height: var(--logo-font-size);
-    font-family: $fonts-display;
+    font-family: var(--ilo-fonts-display);
     font-weight: 700;
     display: inline-flex;
     justify-content: flex-start;

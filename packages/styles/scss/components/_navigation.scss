@@ -141,7 +141,7 @@
           border: none;
           color: $brand-ilo-white;
           cursor: pointer;
-          font-family: $fonts-display;
+          font-family: var(--ilo-fonts-display);
           font-weight: 500;
           padding: spacing(4) spacing(4) spacing(4) spacing(9);
           text-decoration: none;
@@ -253,7 +253,7 @@
     @include font-styles("headline-6");
     color: $brand-ilo-white;
     display: none;
-    font-family: $fonts-display;
+    font-family: var(--ilo-fonts-display);
     font-weight: 700;
     padding: spacing(4) 0;
     text-align: right;
@@ -299,7 +299,7 @@
 
   &--items {
     @include font-styles("nav-md");
-    font-family: $fonts-display;
+    font-family: var(--ilo-fonts-display);
     font-weight: 500;
 
     @include breakpoint("lg") {
@@ -355,7 +355,7 @@
     color: $brand-ilo-dark-blue;
     cursor: pointer;
     display: block;
-    font-family: $fonts-display;
+    font-family: var(--ilo-fonts-display);
     font-weight: 500;
     padding: spacing(4) spacing(9) spacing(4) spacing(2);
     line-height: 24px;
@@ -475,7 +475,7 @@
     &--item {
       @include font-styles("nav-md");
       color: $brand-ilo-white;
-      font-family: $fonts-display;
+      font-family: var(--ilo-fonts-display);
       font-weight: 500;
     }
 
@@ -542,7 +542,7 @@
     color: $brand-ilo-dark-blue;
     cursor: pointer;
     display: block;
-    font-family: $fonts-display;
+    font-family: var(--ilo-fonts-display);
     font-weight: 500;
     padding: spacing(4) spacing(9) spacing(4) spacing(2);
     line-height: 16px;
@@ -633,7 +633,7 @@
     color: $brand-ilo-white;
     cursor: pointer;
     display: block;
-    font-family: $fonts-display;
+    font-family: var(--ilo-fonts-display);
     font-weight: 500;
     padding: spacing(2) 30px spacing(2) spacing(10);
     transition: all 150ms ease-out;
@@ -740,7 +740,7 @@
     background: $brand-ilo-white;
     color: $brand-ilo-dark-blue;
     display: flex;
-    font-family: $fonts-display;
+    font-family: var(--ilo-fonts-display);
     font-weight: 500;
     padding: 18px spacing(2);
     text-decoration: none;
@@ -773,7 +773,7 @@
     border: none;
     color: $brand-ilo-dark-blue;
     cursor: pointer;
-    font-family: $fonts-display;
+    font-family: var(--ilo-fonts-display);
     font-weight: 500;
     padding: spacing(5) spacing(4) spacing(4) spacing(8);
     position: relative;
@@ -838,7 +838,7 @@
     @include font-styles("headline-6");
     border-bottom: 3px solid $brand-ilo-grey-light;
     color: $brand-ilo-black;
-    font-family: $fonts-display;
+    font-family: var(--ilo-fonts-display);
     font-weight: 700;
     margin-bottom: spacing(4);
     padding: spacing(5) spacing(2);

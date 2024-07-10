@@ -4,187 +4,35 @@ import { getStorybook, storiesOf } from "@storybook/react";
 import LinkTo from "@storybook/addon-links/react";
 
 <Meta
-  title="Getting Started"
+  title="Get Started/Introduction"
   parameters={{ viewMode: "docs", previewTabs: { canvas: { hidden: true } } }}
 />
 
-<div style={{ paddingTop: "40px", color: "inherit" }}>
-  <h1
-    style={{
-      fontFamily: "Overpass",
-      fontSize: "45.56px",
-      fontWeight: "700",
-      marginBottom: "40px",
-    }}
-  >
-    Getting Started
-  </h1>
-</div>
+# ILO Design System Twig Components
 
-Welcome to the ILO Design System Twig component library. This resource is crafted to assist developers in creating accessible, user-friendly websites for Drupal that with the International Labour Organization's Visual Identity. The library offers a variety of easy-to-use components tailored for these popular platforms, ensuring both compliance with web accessibility standards and a cohesive visual style. Components are responsive and are ready-made for RTL layouts.
+Welcome to the ILO Design System Twig Component Library. This resource is designed to help developers build accessible, user friendly websites powered by Drupal or other PHP frameworks that implement the [ILO's Visual Identity](https://brand.ilo.org).
 
-## Requirements
+## Getting started
 
-The Design System comprises a series of packages that you can install from the [npm](https://www.npmjs.com/) registry directly into your custom theme. As such, you'll need to have `npm` or similar package manager (`yarn` or `pnpm`) installed in your environment.
+While our components are designed to be used with Drupal, they can also be used with any other project that uses Twig as a template engine. Follow the instructions below to get started:
 
-## Installation
+- [Use with Drupal](/docs/get-started-use-with-drupal--page)
+- [Use as an npm package](/docs/get-started-use-npm-package--page)
 
-You will want to install the latest versions of both `@ilo-org/twig` and `@ilo-org/styles`. The first includes all of the Twig and JavaScript files that you'll need to use the component, whereas the second includes the stylesheets that you'll need to render them.
+## Why you should use these components
 
-In the root of your custom theme, run the following command:
+### Brand compliance
 
-`$ npm i @ilo-org/twig @ilo-org/styles`
+Our components are designed to be fully compliant with the ILO's Visual Identity. This means that you can be confident that your website will be consistent with the ILO's brand guidelines.
 
-⚠️ Note that the two libraries are versioned separately so you'll want to make sure that you're always using the latest versions of both to ensure they're both in sync. You should see an installation warning if you try to install incompatible versions.
+### Accessibility
 
-## Required Twig extensions
+All of our components are designed to be accessible to all users, including those with disabilities.
 
-As from `1.2.0` we make use of the `|boolvar` Twig filter: you need to have this filter available in your Twig environment for the component to work correctly.
+### Responsive RTL layouts
 
-An implementation of the `|boolvar` Twig filter can be found in the [PHP Syntax for Twig](https://github.com/squirrelphp/twig-php-syntax) project. If you are a user of the [ILO Base Theme](https://github.com/international-labour-organization/ilo_base_theme), the twig extension above will be automatically made available to you as from version `0.2.0`.
+Our components are designed to be fully responsive and adaptive to right-to-left (RTL) layouts for languages such as Arabic.
 
-## Usage
+### Support
 
-Now that you have installed the component library, you'll need to expose them so that you can integrate them into your templates.
-
-### Bundle JavaScript
-
-You'll want to start by moving the components' JavaScript to a distribution folder where you can serve it as static assets. The easiest way to do this is with a JavaScript bundler like [Rollup.js](https://rollupjs.org/). Here's a sample configuration to illustrate.
-
-```js
-import { nodeResolve } from "@rollup/plugin-node-resolve";
-import commonjs from "@rollup/plugin-commonjs";
-import { globSync } from "glob";
-
-const designSystemEntries = globSync(
-  "node_modules/@ilo-org/twig/dist/components/**"
-);
-
-export default () => {
-  return designSystemEntries.map((entry) => {
-    return {
-      input: entry,
-      output: {
-        dir: "dist/js",
-        compact: true,
-        format: "umd",
-        name: entry.match(/([^\/]+)\.js$/)[1],
-      },
-      plugins: [nodeResolve(), commonjs()],
-    };
-  });
-};
-```
-
-This will output all of the Components JavaScript files into a `dist/js` directory so you'll have a list of both the component JavaScript and the `Drupal.behavior` declarations that you'll need to attach them to components.
-
-```tree
-📦js
- ┣ 📜accordion.behavior.js
- ┣ 📜accordion.js
- ┣ 📜breadcrumb.behavior.js
- ┣ 📜breadcrumb.js
- ┣ 📜callout.behavior.js
- ┣ 📜callout.js
- ...
-```
-
-### Bundle CSS
-
-The CSS files are available in the 'dist/css' subdirectories:
-
-```tree
-📦css
- ┣ 📂00-base
- ┃ ┣ 📜base.css
- ┣ 📂01-paragraphs
- ┃ ┣ 📜paragraphs.css
- ┃ ┗ 📜breadcrumb.css
- ┣ 📂02-templates
- ┃ ┣ 📜maintenance-page.css
- ...
-```
-
-### Populating the theme.libraries.yml file
-
-The theme.libraries.yml should first include the base CSS file:
-
-```yaml
-base:
-  css:
-    theme:
-      dist/css/00-base/base.css: {}
-      node_modules/@ilo-org/styles/css/global.css: {}
-      node_modules/@ilo-org/styles/css/components/container.css: {}
-```
-
-Then, for each component, you have to declare the CSS file in the theme.libraries.yml file. For example, for the breadcrumb component:
-
-```yaml
-breadcrumb:
-  css:
-    theme:
-      dist/css/01-paragraphs/breadcrumb.css: {}
-```
-
-With the 'dist' directory in your theme, you have to declare the components in the theme.libraries.yml file. For example, for the breadcrumb component:
-
-```yaml
-breadcrumb:
-  css:
-    theme:
-      dist/css/01-paragraphs/breadcrumb.css: {}
-  embeds:
-    js:
-      dist/js/embeds.js: { defer: true }
-```
-
-The documentation for the theme.libraries.yml file is available [here](https://www.drupal.org/docs/8/creating-custom-modules/adding-stylesheets-css-and-javascript-js-to-a-drupal-8-module).
-
-In the template file of the component, you have to declare the component in the Twig file. For example, for the breadcrumb component:
-
-```twig
-{{ attach_library('ilo/breadcrumb') }}
-
-{% include '@ilo-org/twig/breadcrumb/breadcrumb.twig' with {
-  home: breadcrumb_home,
-  links: breadcrumb_links,
-} %}
-```
-
-A helper function in your theme.theme file to aggregate all .behavior.js files:
-
-```php
-/**
-* Implements hook_library_info_build().
-*
-* Generate libraries for all components if they don't already exist.
-* The library name will mapped be the name of the source CSS / JS file,
-* e.g. site_header.css will be mapped to `{THEME}/site_header`.
-*
-*/
-function theme_library_info_build() {
-  // Define libraries based on the components.
-  $extensions = ['css'];
-  $directory = 'themes/custom/ilo/node_modules/@ilo-org/styles/css/components';
-  $css = 'node_modules/@ilo-org/styles/css/components';
-  $js = 'dist/js';
-  $extensions = array_map('preg_quote', $extensions);
-  $extensions = implode('|', $extensions);
-  $file_scan = \Drupal::service('file_system')->scanDirectory($directory, "/{$extensions}$/");
-  $libraries = [];
-  foreach ($file_scan as $file) {
-    $libraries[$file->name]['css'] = [
-      'component' => [
-        $css . '/' . $file->name . '.css' => [],
-      ],
-    ];
-  if (file_exists('themes/custom/ilo/' . $js . '/' . $file->name . '.behavior.js')) {
-    $libraries[$file->name]['js'] = [
-      $js . '/' . $file->name . '.behavior.js' => [],
-    ];
-  }
-
-  return $libraries;
-}
-```
+Our components are actively maintained and supported by the ILO's Department of Communication. We are committed to providing long-term support for this project including continual updates and improvements. If you have any questions or need help, please [contact us](ilonews@ilo.org).

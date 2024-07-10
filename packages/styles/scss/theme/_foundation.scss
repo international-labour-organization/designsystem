@@ -6,13 +6,24 @@
     * Typography
     */
   --ilo-scale: 1; // default scale for the design system
-  --ilo-font-family: Overpass, Noto Sans, Noto Sans CJK JP, Yu Gothic,
-    Hiragino Sans, TakaoPGothic, PingFang SC, Microsoft YaHei, 微软雅黑,
+
+  // Display Font Families
+  --ilo-fonts-display: Overpass, Noto Sans, sans-serif;
+
+  // Chinese and Japanese system fonts
+  --ilo-fonts-display-zh: PingFang SC, Microsoft YaHei, 微软雅黑, sans-serif;
+  --ilo-fonts-display-jp: Noto Sans CJK JP, Yu Gothic, Hiragino Sans,
+    TakaoPGothic, sans-serif;
+
+  // Copy font families
+  --ilo-fonts-copy: Noto Sans, sans-serif;
+
+  // Chinese and Japanese system fonts
+  --ilo-fonts-copy-zh: PingFang SC, Microsoft YaHei, 微软雅黑, sans-serif;
+  --ilo-fonts-copy-jp: Noto Sans CJK JP, Yu Gothic, Hiragino Sans, TakaoPGothic,
     sans-serif;
-  --ilo-font-copy: Noto Sans, Noto Sans CJK JP, Yu Gothic, Hiragino Sans,
-    TakaoPGothic, PingFang SC, Microsoft YaHei, 微软雅黑, sans-serif;
-  --ilo-font-family-headings: var(--ilo-font-family);
-  --ilo-font-family-monospace: monospace;
+
+  --ilo-fonts-monospace: monospace;
   --ilo-line-height: 1.46;
 
   /**
@@ -31,7 +42,7 @@
   --ilo-color-gray-charcoal: rgba(45, 45, 45, 1);
   --ilo-color-gray-accessible: rgba(109, 109, 109, 1);
   --ilo-color-gray-light: rgba(237, 240, 242, 1);
-  --ilo-color-gray-ui: rgba(184, 196, 204, 1);
+  --ilo-color-gray-base: rgba(184, 196, 204, 1);
 
   --ilo-color-red: rgba(250, 60, 75, 1);
   --ilo-color-red-light: rgba(254, 216, 219, 1);
@@ -49,6 +60,21 @@
   --ilo-color-turquoise: rgba(5, 210, 210, 1);
 
   --ilo-color-purple: rgba(150, 10, 85, 1);
+
+  --ilo-color-notification-type-error: var(--ilo-color-red);
+  --ilo-color-notification-type-info: var(--ilo-color-blue);
+  --ilo-color-notification-type-success: var(--ilo-color-green);
+  --ilo-color-notification-type-warning: var(--ilo-color-yellow);
+  --ilo-color-background-default: var(--ilo-color-white);
+  --ilo-color-background-active: var(--ilo-color-blue);
+  --ilo-color-background-highlight: var(--ilo-color-gray-light);
+  --ilo-color-background-hover: var(--ilo-color-blue-lighter);
+  --ilo-color-background-focus: var(--ilo-color-white);
+
+  --ilo-color-borders-default: var(--ilo-color-gray-base);
+  --ilo-color-borders-hover: var(--ilo-color-blue);
+  --ilo-color-borders-active: var(--ilo-color-blue);
+  --ilo-color-borders-focus: var(--ilo-color-yellow);
 
   /**
     * Sizing

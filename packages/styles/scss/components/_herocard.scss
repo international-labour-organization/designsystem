@@ -155,7 +155,7 @@
       "copy"
     );
 
-    font-family: $fonts-display;
+    font-family: var(--ilo-fonts-display);
     font-weight: 700;
 
     @include breakpoint("lg") {

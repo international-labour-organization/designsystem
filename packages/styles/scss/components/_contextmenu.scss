@@ -59,7 +59,7 @@
     border-bottom: px-to-rem($borders-base) solid $color-base-neutrals-white;
     color: map-get($color, "link", "text", "default");
     display: inline-block;
-    font-family: $fonts-copy;
+    font-family: var(--ilo-fonts-copy);
     font-weight: map-get($type, "weights", "section");
     padding: spacing(4) spacing(2);
     text-decoration: none;

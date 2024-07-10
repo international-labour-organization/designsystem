@@ -68,7 +68,7 @@
         background-color: $color-base-neutrals-lighter;
         border-bottom: px-to-rem(3px) solid $color-base-neutrals-white;
         color: $color-ux-labels-actionable;
-        font-family: $fonts-display;
+        font-family: var(--ilo-fonts-display);
         font-weight: 600;
         display: flex;
         gap: spacing(1);
