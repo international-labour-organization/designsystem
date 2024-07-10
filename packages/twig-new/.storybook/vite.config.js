@@ -6,7 +6,7 @@ import { UIPatterns } from "@ilo-org/maestro/plugin";
 export default defineConfig({
   plugins: UIPatterns({
     namespaces: {
-      components: join(__dirname, "..", "components"),
+      components: join(__dirname, "..", "src/components"),
     },
     globals: {
       prefix: "ilo",
