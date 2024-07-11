@@ -9,6 +9,7 @@ import {
   renameFiles,
   getPatternProps,
   titleCase,
+  createStory,
 } from "./tasks/index.js";
 
 if (argv.length < 3) {
@@ -20,9 +21,10 @@ const componentName = argv[2];
 const oldComponentPath = `packages/twig/src/patterns/components/${componentName}`;
 const oldPatternFile = `${componentName}.wingsuit.yml`;
 
-const newComponentsDir = `packages/twig-new/components`;
+const newComponentsDir = `packages/twig-new/src/components`;
 const newComponentPath = `${newComponentsDir}/${componentName}`;
-// const newStoriesPath = "packages/twig-new/stories";
+const newStoriesPath = "packages/twig-new/stories";
+const newStoryPath = `${newStoriesPath}/${componentName}.stories.js`;
 const newPatternFile = `${componentName}.pattern.yml`;
 const newPatternPath = `${newComponentPath}/${newPatternFile}`;
 
@@ -61,8 +63,8 @@ try {
   const patternsImport = componentImport + "Patterns";
 
   // Relative paths to the Twig component in the project from the story
-  const pathToTwig = `../components/${componentName}/${componentName}.twig`;
-  const pathToPatterns = `../components/${componentName}/${newPatternFile}`;
+  const pathToTwig = `../src/components/${componentName}/${componentName}.twig`;
+  const pathToPatterns = `../src/components/${componentName}/${newPatternFile}`;
 
   // Get the props we need from the pattern
   const patternProps = getPatternProps(
@@ -88,7 +90,7 @@ try {
   // Title of the story
   const storyTitle = `${namespace}/${label}`;
 
-  const output = ejs.render(template, {
+  const story = ejs.render(template, {
     componentImport,
     patternsImport,
     pathToPatterns,
@@ -97,7 +99,7 @@ try {
     variantStories,
   });
 
-  console.log(output);
+  createStory(newStoryPath, story);
 
   // Create new stories file
 } catch (error) {
