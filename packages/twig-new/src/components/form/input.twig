@@ -1,0 +1,10 @@
+{# text-input.twig #}
+{% extends "@components/form/formcontrol.twig" %}
+
+{% set baseClass = prefix ~ "--text-input" %}
+{% set inputClass = [baseClass] %}
+{% if error %}
+	{% set inputClass = inputClass|merge([baseClass ~ "__error"]) %}
+{% endif %}
+
+<input id="{{ id ? id : name }}" name="{{ name }}" {% if disabled %} disabled {% endif %} placeholder="{{ placeholder }}" {% if required %} required {% endif %} type="{{ type }}" class="{{ inputClass|join(' ') }}" {% if pattern %} pattern="{{ pattern }}" {% endif %} {% if ariaDescribedBy %} aria-describedby="{{ ariaDescribedBy }}" {% endif %}/>

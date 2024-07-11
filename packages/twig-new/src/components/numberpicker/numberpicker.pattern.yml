@@ -1,0 +1,92 @@
+numberpicker:
+  namespace: Components/Forms
+  use: "@components/numberpicker/numberpicker.twig"
+  label: Number Picker
+  description: The Number Picker component is used to select a number from a range.
+  visibility: storybook
+  fields:
+    label:
+      type: string
+      label: Label
+      description: The label for the form element.
+      preview: "Pick a number"
+    tooltip:
+      type: string
+      label: Tooltip
+      description: The tooltip for the form element.
+    helper:
+      type: string
+      label: Helper Text
+      description: The helper text for the form element.
+    id:
+      type: string
+      label: ID
+      description: The ID of the input.
+    name:
+      type: string
+      label: Name
+      description: The name of the input.
+    class:
+      type: string
+      label: Class
+      description: The class of the form field.
+      preview: checkbox
+      default: ""
+    placeholder:
+      type: string
+      label: Placeholder
+      description: The placeholder of the form field.
+      preview: "0 - 100"
+    min:
+      type: number
+      label: Min
+      description: The minimum value of the form field.
+      preview: 0
+    max:
+      type: number
+      label: Max
+      description: The maximum value of the form field.
+      preview: 100
+    step:
+      type: number
+      label: Step
+      description: The step value of the form field.
+      preview: 1
+  settings:
+    labelPlacement:
+      type: select
+      label: Label Placement
+      description: The placement of the label for the form element.
+      preview: "top"
+      options:
+        start: start
+        end: end
+        top: top
+        bottom: bottom
+    labelSize:
+      type: select
+      label: Label Size
+      description: The size of the label for the form element.
+      preview: medium
+      options:
+        small: small
+        medium: medium
+        large: large
+    disabled:
+      type: boolean
+      label: Disabled
+      description: The disabled state of the form element.
+      preview: false
+      default: false
+    required:
+      type: boolean
+      label: Required
+      description: The required state of the form element.
+      preview: false
+      default: false
+    error:
+      type: boolean
+      label: Error
+      description: Adds an error state to the form control.
+      preview: false
+      default: false

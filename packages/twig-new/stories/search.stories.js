@@ -1,0 +1,16 @@
+import Search from "../src/components/search/search.twig";
+import SearchPatterns from "../src/components/search/search.pattern.yml";
+import { Maestro } from "@ilo-org/maestro";
+
+const story = Maestro.create(Search, SearchPatterns);
+
+const Meta = {
+  title: "Components/Forms/Search",
+  tags: ["autodocs"],
+  ...story.meta,
+};
+
+const [Default] = story.stories;
+
+export default Meta;
+export { Default };
