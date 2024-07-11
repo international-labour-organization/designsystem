@@ -8,6 +8,7 @@ import {
   removeFiles,
   renameFiles,
   getPatternProps,
+  titleCase,
 } from "./tasks/index.js";
 
 if (argv.length < 3) {
@@ -54,8 +55,7 @@ try {
   }
 
   // The name of the React component as we'll import it in the story
-  const componentImport =
-    componentName.charAt(0).toUpperCase() + componentName.slice(1);
+  const componentImport = titleCase(componentName);
 
   // The name of the Pattern as we'll import it into the story
   const patternsImport = componentImport + "Patterns";
@@ -73,9 +73,19 @@ try {
   );
 
   // The props that we needed
-  const { namespace, label, variants } = patternProps;
+  let { namespace, label, variants } = patternProps;
 
-  // Title
+  // Get the variant names
+  if (variants) {
+    variants = Object.keys(variants);
+  } else {
+    variants = ["Default"];
+  }
+
+  // Title case our variants so they can be stories
+  const variantStories = variants.map((variant) => titleCase(variant));
+
+  // Title of the story
   const storyTitle = `${namespace}/${label}`;
 
   const output = ejs.render(template, {
@@ -84,7 +94,7 @@ try {
     pathToPatterns,
     pathToTwig,
     storyTitle,
-    variants: variants || "Default",
+    variantStories,
   });
 
   console.log(output);

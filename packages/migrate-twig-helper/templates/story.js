@@ -11,5 +11,7 @@ export const template = `
     ...story.meta,
   };
 
+  const [ <%= variantStories.join(", ") %> ] = story.stories;
+
   export default Meta;
 `;
