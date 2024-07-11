@@ -1,5 +1,5 @@
-import Accordion from "../components/accordion/accordion.twig";
-import AccordionPatterns from "../components/accordion/accordion.pattern.yml";
+import Accordion from "../src/components/accordion/accordion.twig";
+import AccordionPatterns from "../src/components/accordion/accordion.pattern.yml";
 import { Maestro } from "@ilo-org/maestro";
 
 const story = Maestro.create(Accordion, AccordionPatterns);
