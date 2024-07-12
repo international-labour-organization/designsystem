@@ -5,7 +5,7 @@ import { Maestro } from "@ilo-org/maestro";
 const story = Maestro.create(Button, ButtonPatterns);
 
 const Meta = {
-  title: "Components/User Interfaces/Button",
+  title: "Components/User Interface/Button",
   tags: ["autodocs"],
   ...story.meta,
 };

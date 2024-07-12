@@ -5,7 +5,7 @@ import { Maestro } from "@ilo-org/maestro";
 const story = Maestro.create(Icon, IconPatterns);
 
 const Meta = {
-  title: "Components/User Interfaces/Icon",
+  title: "Components/User Interface/Icon",
   tags: ["autodocs"],
   ...story.meta,
 };
