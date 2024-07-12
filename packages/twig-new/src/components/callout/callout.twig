@@ -1,0 +1,41 @@
+{#
+  CALLOUT COMPONENT
+#}
+<div class="{{prefix}}--callout {{prefix}}--callout__{{alert}} {% if isCollapsible|boolval and isOpen|boolval %} {{prefix}}--callout--open {% endif %} {% if isCollapsible|boolval %} {{prefix}}--callout--collapse {% endif %}" data-loadcomponent="Callout">
+	<div class="{{prefix}}--callout__sidebar">
+		<span class="{{prefix}}--callout--icon icon icon__{{alert}}"></span>
+	</div>
+	<div class="{{prefix}}--callout__content">
+		<div class="{{prefix}}--callout__header">
+			<h5 class="{{prefix}}--callout__title">{{ title }}</h5>
+			{% if isCollapsible|boolval %}
+				<button class="{{prefix}}--callout--toggle" type="button" data-open="{{ toggleOpenLabel }}" data-closed="{{ toggleClosedLabel }}">
+					<span class="{{prefix}}--callout--button-text">
+						{% if isOpen %}
+							{{ toggleOpenLabel }}
+						{% else %}
+							{{ toggleClosedLabel }}
+						{% endif %}
+					</span>
+					<span class="{{prefix}}--callout--toggle--icon" role="presentation"></span>
+				</button>
+			{% endif %}
+		</div>
+		<p class="{{prefix}}--callout__description">{{ content }}</p>
+		{% if button %}
+			<div class="{{prefix}}--callout__footer">
+				{% include '@components/button/button.twig' with {
+          label: button.label,
+          url: button.url,
+          target: button.target,
+          icon: button.icon,
+          className: button.className,
+          icon: button.icon,
+          iconPosition: button.iconPosition,
+          size: "small",
+          type: "secondary",
+        } %}
+			</div>
+		{% endif %}
+	</div>
+</div>
