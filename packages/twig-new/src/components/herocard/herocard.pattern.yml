@@ -1,0 +1,68 @@
+herocard:
+  namespace: Components/Content
+  use: "@components/herocard/herocard.twig"
+  label: Hero Card
+  description: The Hero Card includes the title, intro, date, and social links for the hero
+  id: herocard
+  settings:
+    theme:
+      type: select
+      label: Theme
+      description: The theme of the hero card.
+      options:
+        light: light
+        dark: dark
+      preview: "dark"
+    background:
+      type: select
+      label: Background
+      description: Should the background be solid, semi-transparent or transparent
+      options:
+        solid: solid
+        semi-transparent: semi-transparent
+        transparent: transparent
+      preview: "solid"
+    cornercut:
+      type: boolean
+      label: Corner cut
+      description: Whether the card show have its right or left corner cut
+      preview: true
+  fields:
+    url:
+      type: string
+      label: URL
+      description: Optional URL for the hero card. If provided, the title will be a link.
+      preview: null
+    datecopy:
+      type: string
+      label: Date copy
+      description: Date byline copy
+      preview: "11 February 2021"
+    eyebrow:
+      type: string
+      label: Eyebrow
+      description: Copy for the eyebrow of the card
+      preview: "Gender equality"
+    intro:
+      type: string
+      label: Intro
+      description: Intro text for the hero
+      preview: "Over the last three decades, global supply chains have been a key entry point for women to enter the formal workforce."
+    socialmedia:
+      type: object
+      label: Social media links
+      description: The social links to include in the hero
+      preview:
+        icons:
+          - label: "Facebook"
+            url: "https://www.facebook.com/"
+            icon: "facebook"
+          - label: "Linkedin"
+            url: "https://www.linkedin.com/"
+            icon: "linkedin"
+    title:
+      type: string
+      label: Title
+      description: This is the title for the hero card
+      preview: "How to achieve gender equality in global garment supply chains"
+  visibility: storybook

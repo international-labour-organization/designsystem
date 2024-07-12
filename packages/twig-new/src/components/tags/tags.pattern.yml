@@ -1,0 +1,42 @@
+tags:
+  namespace: Components/User Interface
+  use: "@components/tags/tags.twig"
+  label: Tags
+  description: A group of tags
+  fields:
+    items:
+      type: object
+      label: Items
+      description: An array of tag data to implement a Tag component
+      required: true
+      preview:
+        - content: content 1
+          elementId: tag1
+          defaultActive: true
+          url: https://www.google.com/
+        - content: content 2
+          elementId: tag2
+          defaultActive: true
+          url: https://www.google.com/
+        - content: content 3
+          elementId: tag3
+          defaultActive: false
+  settings:
+    allowMultipleActive:
+      type: boolean
+      label: Allow Multiple Active
+      description: Allow multiple tag items to be active at once.
+      preview: true
+      required: false
+    tagType:
+      type: select
+      label: Tag Type
+      description: Type of tags
+      options:
+        anchor: Anchor
+        button: Button
+        display: Display
+        reset: Reset
+      preview: display
+      required: true
+  visibility: storybook

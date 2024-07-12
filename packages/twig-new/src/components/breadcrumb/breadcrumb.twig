@@ -1,0 +1,55 @@
+{# breadcrumb.twig #}
+
+{# If a home field is passed, it will be used as the first link #}
+{# THE `HOME` FIELD WILL BE DEPRECATED IN FUTURE VERSIONS AND SHOULD NOT BE USED #}
+{% if home %}
+	{% set firstlink = home %}
+	{% set contextLinks = links|slice(0, items|length - 1) %}
+{% endif %}
+
+{% if not home %}
+	{% set firstlink = links|first %}
+	{% set contextLinks = links|slice(1, items|length - 1) %}
+{% endif %}
+
+{% set lastlink = links|last %}
+
+<nav class="{{prefix}}--breadcrumb {% if className %}{{className}}{% endif %}" data-prefix="{{prefix}}" data-loadcomponent="Breadcrumb">
+	<div class="{{prefix}}--breadcrumb--inner">
+		<ol class="{{prefix}}--breadcrumb--items" id="{{prefix}}--breadcrumb--container">
+			{# Render the first link on its own as a custom icon #}
+			<li class="{{prefix}}--breadcrumb--item {{prefix}}--breadcrumb--item__first">
+				<a aria-label="{{firstlink.label}}" class="{{prefix}}--breadcrumb--link" href="{{firstlink.url}}"></a>
+			</li>
+			{# Render all but the first and last items in the context area #}
+			{% if contextLinks|length > 0 %}
+				<li class="{{prefix}}--breadcrumb--context">
+					<ol class="{{prefix}}--breadcrumb--items">
+						{% for link in contextLinks %}
+							<li class="{{prefix}}--breadcrumb--item">
+								<a href="{{link.url}}" class="{{prefix}}--breadcrumb--link">
+									<span class="{{prefix}}--breadcrumb--link--label">{{link.label}}</span>
+								</a>
+							</li>
+						{% endfor %}
+					</ol>
+					<button aria-label="{{buttonlabel|default('More links')}}" aria-expanded="false" aria-controls="{{prefix}}--breadcrumb--menu" class="{{prefix}}--breadcrumb--context--button"></button>
+				</li>
+			{% endif %}
+			{# Render the last one outside the context area #}
+			{% if links|length > 1 %}
+				<li class="{{prefix}}--breadcrumb--item">
+					<a class="{{prefix}}--breadcrumb--link" href="{{lastlink.url}}">
+						<span class="{{prefix}}--breadcrumb--link--label">{{lastlink.label}}</span>
+					</a>
+				</li>
+			{% endif %}
+		</ol>
+	</div>
+	<div class="{{prefix}}--breadcrumb--context--menu" id="{{prefix}}--breadcrumb--menu" hidden>
+		{% include '@components/contextmenu/contextmenu.twig' with {
+			links: contextLinks,
+			prefix: prefix
+		} only %}
+	</div>
+</nav>

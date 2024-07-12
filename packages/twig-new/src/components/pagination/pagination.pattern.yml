@@ -1,0 +1,75 @@
+pagination:
+  namespace: Components/Navigation
+  use: "@components/pagination/pagination.twig"
+  label: Pagination
+  description: The Pagination component breaks content into pages for easier navigation with intuitive controls like 'Previous' and 'Next' buttons.
+  fields:
+    currentPage:
+      type: number
+      label: Current page
+      description: current page number that the user is on, zero-indexed
+      required: true
+      preview: 0
+      escape: false
+    firstPageUrl:
+      type: string
+      label: First Page link
+      description: Link to the first page
+      required: true
+      preview: "https://www.ilo.org"
+    firstPageTitle:
+      type: string
+      label: First Page Title
+      description: Title label for the first page
+      required: true
+      preview: "First"
+    lastPageUrl:
+      type: string
+      label: Last Page link
+      description: Link to the last page
+      required: true
+      preview: "https://www.ilo.org"
+    lastPageTitle:
+      type: string
+      label: Last Page Title
+      description: Title label for the last page
+      required: true
+      preview: "Last"
+    nextPageUrl:
+      type: string
+      label: Next Page link
+      description: Link to the next page
+      required: true
+      preview: "https://www.ilo.org"
+    nextPageTitle:
+      type: string
+      label: Next Page Title
+      description: Title label for the next page
+      required: true
+      preview: "Next"
+    prevPageUrl:
+      type: string
+      label: Prev Page link
+      description: Link to the prev page
+      required: true
+      preview: "https://www.ilo.org"
+    prevPageTitle:
+      type: string
+      label: Prev Page Title
+      description: Title label for the prev page
+      required: true
+      preview: "Previous"
+    pageCountPreposition:
+      type: string
+      label: Page Count Preposition
+      description: Linking word for the page count
+      required: true
+      preview: "of"
+    totalPages:
+      type: number
+      label: Total Pages
+      description: The number of total pages
+      required: true
+      preview: 8
+      escape: false
+  visibility: storybook
