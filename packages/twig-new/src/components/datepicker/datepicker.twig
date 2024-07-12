@@ -1,0 +1,20 @@
+{# datepicker.twig #}
+
+{% extends "@components/form/formcontrol.twig" %}
+
+
+{# Default values and input preparation #}
+{% set disabled = disabled|default(false) %}
+{% set inputClass = prefix ~ '--input' %}
+{% set baseClass = prefix ~ '--datepicker' %}
+{% set datePickerClasses = [inputClass, baseClass] %}
+
+{% if error %}
+	{% set datePickerClasses = datePickerClasses|merge(['error']) %}
+{% endif %}
+
+{% block formfield %}
+
+	<input type="date" id="{{ id|default(name) }}" name="{{ name }}" {% if onBlur %} onblur="{{ onBlur }}" {% endif %} {% if disabled %} disabled {% endif %} placeholder="{{ placeholder|default('') }}" {% if required %} required {% endif %} class="{{ datePickerClasses|join(' ') }}" {% if max %} max="{{ max }}" {% endif %} {% if min %} min="{{ min }}" {% endif %} {% if step %} step="{{ step }}" {% endif %} {% if ariaDescribedBy %} aria-describedby="{{ ariaDescribedBy }}" {% endif %}/>
+
+{% endblock %}
