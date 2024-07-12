@@ -1,0 +1,49 @@
+{#
+  PAGINATION COMPONENT
+#}
+<div class="{{prefix}}--pagination icon icon--{{type}}">
+  <div class="{{prefix}}--pagination--previous-set">
+    <a
+      class="{{prefix}}--pagination--first-page {{prefix}}--pagination--link {% if currentPage == 0 %}{{prefix}}--pagination--disable{% endif %}"
+      href="{{ firstPageUrl }}"
+      title="{{ firstPageTitle }}"
+    >
+      {{ firstPageTitle }}
+    </a>
+
+    <a
+      class="{{prefix}}--pagination--prev-page {{prefix}}--pagination--link {% if currentPage == 0 %}{{prefix}}--pagination--disable{% endif %}"
+      href="{{ prevPageUrl }}"
+      title="{{ prevPageTitle }}"
+    >
+      {{ prevPageTitle }}
+    </a>
+  </div>
+
+  <p class="{{prefix}}--pagination--page">
+    {% set currentPageZeroIndex = currentPage * 1 %}
+    {% set currentPageIndex = currentPageZeroIndex + 1 %}
+
+    <span>{{currentPageIndex}}</span> 
+    <span>{{pageCountPreposition}}</span>
+    <span>{{totalPages}}</span>
+  </p>
+
+  <div class="{{prefix}}--next-set">
+    <a
+      class="{{prefix}}--pagination--next-page {{prefix}}--pagination--link {% if currentPageIndex == totalPages %}{{prefix}}--pagination--disable{% endif %}"
+      href="{{ nextPageUrl }}"
+      title="{{ nextPageTitle }}"
+    >
+      {{ nextPageTitle }}
+    </a>
+
+    <a
+      class="{{prefix}}--pagination--last-page {{prefix}}--pagination--link {% if currentPageIndex == totalPages %}{{prefix}}--pagination--disable{% endif %}"
+      href="{{ lastPageUrl }}"
+      title="{{ lastPageTitle }}"
+    >
+      {{ lastPageTitle }}
+    </a>
+  </div>
+</div>
