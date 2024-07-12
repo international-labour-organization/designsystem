@@ -1,0 +1,35 @@
+breadcrumb:
+  namespace: Components/Navigation
+  use: "@components/breadcrumb/breadcrumb.twig"
+  label: Breadcrumb
+  description: A component for displaying links in a "breadcrumb" ux
+  fields:
+    buttonlabel:
+      type: string
+      label: buttonlabel
+      description: The `aria-label` value for the button that toggles the context menu when the Breadcrumbs are collapsed
+      required: false
+      default: "Toggle links"
+      preview: "Toggle links"
+    links:
+      type: object
+      label: Home
+      description: the links to display in the breadcrumb
+      required: true
+      preview:
+        - label: "Link One"
+          url: "/linkone"
+        - label: "Link Two"
+          url: "/linktwo"
+        - label: "Link Three a long link that will wrap to the next line"
+          url: "/linkthree"
+        - label: "Link Four"
+          url: "/linkfour"
+        - label: "Link Five"
+          url: "/linkfive"
+    className:
+      type: string
+      label: className
+      description: optional class name
+      preview: "storybook"
+  visibility: storybook

@@ -1,0 +1,182 @@
+hero:
+  use: "@components/hero/hero.twig"
+  namespace: Components/Content
+  label: Hero
+  description: The Hero is an attention-grabbing section of a web page designed to engage users and create a memorable first impression.
+  fields:
+    image:
+      label: Image
+      type: object
+      description: The image to display in the hero. The image will be cropped to fit the hero's aspect ratio.
+      preview:
+        alt: Lorem ipsum
+        loading: lazy
+        url:
+          - breakpoint: 0
+            src: "/images/hero.jpg"
+          - breakpoint: 768
+            src: "/images/hero.jpg"
+    breadcrumb:
+      label: Bread crumbs
+      description: The breadcrumb navigation to display in the hero.
+      type: object
+      preview:
+        home:
+          label: "Home"
+          url: "/"
+        links:
+          - label: "Link One"
+            url: "/linkone"
+          - label: "Link Two"
+            url: "/linktwo"
+          - label: "Link Three"
+            url: "/linkthree"
+          - label: "Link Four"
+            url: "/linkfour"
+          - label: "Link Five"
+            url: "/linkfive"
+          - label: "Link Six"
+            url: "/linksix"
+    herocard:
+      label: Hero Card
+      type: object
+      description: The hero card to display in the hero. See docs on the Hero Card component for more information about the fields.
+      preview:
+        title: "Child labour"
+        theme: "dark"
+        background: "solid"
+        cornercut: true
+        eyebrow: ILO Topics
+        socialmedia:
+          icons:
+            - label: "Facebook"
+              url: "https://www.facebook.com/ilo.org"
+              icon: "facebook"
+            - label: "X"
+              url: "https://www.x.com/ilo.org"
+              icon: "x"
+            - label: "Linkedin"
+              url: "https://www.linkedin.com/company/international-labour-organization-ilo"
+              icon: "linkedin"
+    caption:
+      label: Caption
+      type: object
+      description: The credit and caption information about the image. Appears as a tooltip.
+      preview:
+        label: A metalurgy worker at a manufacturing plant in Viet Nam. © ILO/Minh Quang
+  settings:
+    gap:
+      label: Gap
+      description: The color of the gap between the bottom of the hero image and the bottom of the card if there is one. In practice, this is the background color of the entire Hero component which will usually only be visible in that space.
+      type: select
+      options:
+        transparent: transparent
+        white: white
+        light: light
+        dark: dark
+    justify:
+      label: Justify
+      description: Sets the horizontal alignment of the hero card. `start` is on the left in LTR layouts and on the right in RTL layouts.
+      type: select
+      options:
+        start: start
+        offset: offset
+        center: center
+      preview: "start"
+    align:
+      label: Align
+      description: Sets the vertical alignment of the hero card.
+      type: select
+      options:
+        baseline: baseline
+        center: center
+        bottom: bottom
+      preview: "baseline"
+    postersize:
+      label: Poster Size
+      description: Sets the size of the image poster.
+      type: select
+      options:
+        small: small
+        medium: medium
+        large: large
+        xlarge: xlarge
+      preview: large
+    cardsize:
+      label: Card Size
+      description: Sets the width of the hero card.
+      type: select
+      options:
+        small: small
+        medium: medium
+        large: large
+        xlarge: xlarge
+        xxlarge: xxlarge
+      preview: small
+    background:
+      type: select
+      label: Background
+      description: Should the background be solid, semi-transparent or transparent
+      options:
+        solid: solid
+        semi-transparent: semi-transparent
+        transparent: transparent
+      preview: "solid"
+    theme:
+      type: select
+      label: Theme
+      description: The theme of the hero card.
+      options:
+        light: light
+        dark: dark
+      preview: "dark"
+  variants:
+    default:
+      label: Default
+    homepage:
+      label: Homepage
+      description: The hero variant for the homepage.
+      settings:
+        align: "center"
+        justify: "start"
+        postersize: "large"
+        cardsize: "medium"
+      fields:
+        breadcrumb: null
+        herocard:
+          title: "ILO welcomes G7 call to make a just transition to a green economy happen"
+          url: "https://www.ilo.org"
+          theme: "dark"
+          background: "semi-transparent"
+          cornercut: false
+          eyebrow: UN General Assembly
+    article:
+      label: Article
+      settings:
+        align: "bottom"
+        justify: "center"
+        postersize: "xlarge"
+        cardsize: "large"
+      fields:
+        breadcrumb: null
+        herocard:
+          title: "When a woman becomes a boss in a man's world"
+          datecopy: "11 February 2021"
+          theme: "light"
+          background: "solid"
+          cornercut: true
+          eyebrow: Women in management
+          socialmedia:
+            icons:
+              - label: "Facebook"
+                url: "https://www.facebook.com/ilo.org"
+                icon: "facebook"
+              - label: "X"
+                url: "https://www.x.com/ilo.org"
+                icon: "x"
+              - label: "Linkedin"
+                url: "https://www.linkedin.com/company/international-labour-organization-ilo"
+                icon: "linkedin"
+        caption:
+          label: A metalurgy worker at a manufacturing plant in Viet Nam. © ILO/Minh Quang
+  visibility: storybook
