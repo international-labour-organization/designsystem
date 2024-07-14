@@ -1,0 +1,224 @@
+card:
+  namespace: Components/Cards
+  use: "@components/card/card.twig"
+  label: Card
+  description: Cards display prominent content of a page. This component is a wrapper around all of the card types in the design system except for the Hero Card. To use it, pass a `type` setting to the card and then pass the appropriate fields for that card type. For more information about the settings you can pass to each card type, see the documentation for that card.
+  visibility: storybook
+  fields:
+    cta:
+      type: object
+      label: cta
+      description: Renders a call to action button at the bottom of the card. This should include a `url` property for the link and a `label` property for the link text. Used by the `Feature Card`, `Promo Card` and `DataCard` types.
+      preview:
+        label: "Read more"
+        url: "https://www.ilo.org/"
+    dataset:
+      type: object
+      label: Dataset object
+      description: Array of Content (label, copy), Files object (optional headline, array of items with label and url) and Links object (optional headline, array of items with label and url). Only used by `Data Card`.
+      preview:
+        content:
+          items:
+            - label: Date of publication
+              copy: 17 March 2022
+        files:
+          headline: Files for download
+          items:
+            - label: PDF 3.2 MB
+              url: "https://www.ilo.org"
+            - label: EPUB 5.8 MB
+              url: "https://www.ilo.org"
+            - label: MOBI 2.4 MB
+              url: "https://www.ilo.org"
+        links:
+          headline: Also available in
+          items:
+            - label: English
+              url: "https://www.ilo.org/search?q=link"
+            - label: Español
+              url: "https://www.ilo.org/search?q=hyperlink"
+            - label: Français
+              url: "https://www.ilo.org/search?q=url"
+    date:
+      type: object
+      label: Date
+      description: Date copy (human and Unix). Used by all cards except for the `Promo Card` and `Stat Card`.
+      preview:
+        human: 20 September 2022
+        unix: 1670389200
+    dateExtra:
+      type: string
+      label: dateExtra
+      description: Strong date copy that could include other information such as the location of an event. Only used by `Details Card`.
+      preview: 20 September 2023 | Geneva
+    eyebrow:
+      type: string
+      label: Eyebrow
+      description: Text appears above the title providing extra context. Used by all cards except for the `Feature Card`, `Text Card`, `Detail Card`, `Promo Card` and `Data Card`.
+      preview: "Podcast"
+    image:
+      type: object
+      label: Image
+      description: Image settings for the card. This should include a `url`, which is an array of objects with an `src` property pointing to the image file and a `breakpoint` property which is either a number indicating the minimum viewport width at which the image should be displayed or a media query. It can also contain an `alt` property for the image's alt text and a `loading` property for the image's loading attribute. Used by `Detail Card`, `Feature Card`, `Multilink Card` and `Data Card`
+      preview:
+        alt: "Image alt text"
+        loading: "lazy"
+        url:
+          - breakpoint: "(min-width: 0px)"
+            src: "/images/small.jpg"
+          - breakpoint: "(min-width: 800px)"
+            src: "/images/medium.jpg"
+          - breakpoint: "(min-width: 1200px)"
+            src: "/images/large.jpg"
+          - breakpoint: "(min-width: 1440px)"
+            src: "/images/large.jpg"
+    intro:
+      type: string
+      label: Intro
+      description: Intro text usually follows the Title providing more information about the Card. Used by `Text Card`, `Detail Card`, `Promo Card`, `Multilink Card` and`Stat Card`.
+      preview: "A toxic combination of mutually-reinforcing crises – inflation, debt, food and fuel price rises, geopolitical tensions and conflict, climate change – are threatening to increase poverty, inequality and discrimination worldwide."
+    link:
+      type: string
+      label: Link
+      description: The primary link for the card, activated by clicking on the card itself. Used by all cards except for the `Data Card`, `Stat Card` and `Facts Card`.
+      preview: "https://www.ilo.org/"
+    linklist:
+      type: object
+      label: Link List
+      description: Displays a list of links. See the `Link` component for more details on settings. Only used by the `Multilink Card`.
+      preview:
+        linkgroup:
+          - links:
+              - label: Read the press release
+                url: "https://www.ilo.org"
+              - label: See the statement
+                url: "https://www.ilo.org"
+              - label: Remarks to G7 Openening Session
+                url: "https://www.ilo.org"
+    list:
+      type: object
+      label: List
+      description: List of facts or statistics. See the `List` component for a full list of options. Only used by `Factlist Card`.
+      preview:
+        settings:
+          - ordered: unordered
+          - alignment: default
+        items:
+          - content: "Global employment growth will be only 1.0 per cent in 2023, less than half the level in 2022."
+            id: "list1"
+          - content: "The labour market deterioration is mainly due to emerging geopolitical tensions and the Ukraine conflict."
+            id: "list2"
+          - content: "The current slowdown means that many workers will have to accept lower quality jobs, often at very low pay."
+            id: "list3"
+    title:
+      type: string
+      label: Title
+      description: The main title of the card. Used by all cards except for the `Data Card`.
+      preview: Can digital technology be an equality machine?
+    source:
+      type: object
+      label: Source
+      description: A stylized link used only by the `Stat Card` to indicate the source of a statistic.
+      preview:
+        label: "World Employment and Social Outlook: Trends 2023"
+        url: "https://www.ilo.org/global/research/global-reports/weso/WCMS_865332/lang--en/index.htm"
+  settings:
+    alignment:
+      type: select
+      label: Alignment
+      description: Positions the image to the right or to the left of the content when the card is displayed in a `wide` or `fluid` size. Has no effect if the card is displayed in a `standard` or `narrow` size. Only used by `Multilink Card`.
+      preview: "left"
+      options:
+        left: Left
+        right: Right
+    color:
+      type: select
+      label: Color
+      description: Used to set the color of `Stat Card`.
+      options:
+        turquoise: turquoise
+        green: green
+        yellow: yellow
+        blue: blue
+      preview: "blue"
+    columns:
+      type: select
+      label: columns
+      description: Displays the data in one or two columns when the size is set to `wide` or `fluid`. If not set, the card will appear as `one`. Only used by `Data Card`.
+      options:
+        one: one
+        two: two
+      preview: "one"
+    cornercut:
+      type: boolean
+      label: Corner cut
+      description: Allows user to display a corner cut on the card. This is only used by the `Promo Card`.
+      required: false
+      preview: true
+    size:
+      type: select
+      label: Size
+      description: Sets the size of the card. If a card has two options, `standard` and `fluid` are used and `standard` is the default. If it has three options, `narrow`, `wide` and `fluid` are used and `narrow` is the default. If it has all four options `standard` is the default. `fluid` makes the card stretch to fit the size of its container. If the size is set to `fluid`, other styles from `wide` will be used.
+      required: false
+      preview: "standard"
+      options:
+        standard: standard
+        narrow: narrow
+        wide: wide
+        fluid: fluid
+    theme:
+      type: select
+      label: Theme
+      description: Sets the card to appear as either light or dark. Used by all cards except for `Multilink Card`, `Data Card` and `Stat Card`.
+      required: false
+      preview: "dark"
+      options:
+        dark: Dark
+        light: Light
+    type:
+      type: select
+      label: Type
+      description: Sets the type of card to render.
+      preview: "feature"
+      options:
+        feature: Feature
+        text: Text
+        detail: Detail
+        promo: Promo
+        multilink: Multilink
+        data: Data
+        stat: Stat
+        factlist: Factlist
+  variants:
+    basic:
+      label: Default
+    feature:
+      label: Feature Card
+      settings:
+        type: feature
+    text:
+      label: Text Card
+      settings:
+        type: text
+    detail:
+      label: Detail Card
+      settings:
+        type: detail
+    promo:
+      label: Promo Card
+      settings:
+        type: promo
+    multilink:
+      label: Multilink Card
+      settings:
+        type: multilink
+    data:
+      label: Data Card
+      settings:
+        type: data
+      fields:
+        eyebrow: Flagship report
+    stat:
+      label: Stat Card
+      settings:
+        type: stat

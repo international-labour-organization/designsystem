@@ -5,7 +5,7 @@ import { Maestro } from "@ilo-org/maestro";
 const story = Maestro.create(CardMultiLink, CardMultiLinkPatterns);
 
 const Meta = {
-  title: "Components/Cards/Multilink Card",
+  title: "Components/Cards/Multi Link Card",
   tags: ["autodocs"],
   ...story.meta,
 };

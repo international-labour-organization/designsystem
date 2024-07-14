@@ -1,8 +1,8 @@
-import Card_factlist from "../src/components/card_factlist/card_factlist.twig";
-import Card_factlistPatterns from "../src/components/card_factlist/card_factlist.pattern.yml";
+import CardFactList from "../src/components/card_factlist/card_factlist.twig";
+import CardFactListPatterns from "../src/components/card_factlist/card_factlist.pattern.yml";
 import { Maestro } from "@ilo-org/maestro";
 
-const story = Maestro.create(Card_factlist, Card_factlistPatterns);
+const story = Maestro.create(CardFactList, CardFactListPatterns);
 
 const Meta = {
   title: "Components/Cards/Fact List Card",
