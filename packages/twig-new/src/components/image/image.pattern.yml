@@ -1,0 +1,54 @@
+image:
+  namespace: Components/Media
+  use: "@components/image/image.twig"
+  label: Image
+  description: A component for displaying an image.
+  fields:
+    alt:
+      type: string
+      label: Alt
+      description: alt text for the image
+      required: true
+      preview: "My alt text"
+    caption:
+      type: string
+      label: Caption
+      description: string
+      preview: "Women construction workers in Nepal build roads and bridges as part of a National Rural Transport Programme co-sponsored by the ILO."
+    credit:
+      type: string
+      label: Credit
+      description: string
+      preview: "© Marcel Crozet/ILO"
+      required: true
+    loading:
+      type: string
+      label: Loading
+      description: The loading attribute for the image
+      required: false
+      preview: "lazy"
+      options:
+        Lazy: lazy
+        Eager: eager
+    url:
+      type: object
+      label: URL
+      description: The image url(s), and at which breakpoint each should be displayed. This is a list of objects, each with a breakpoint and src property. The `src`` property is the url of the image, and the `breakpoint` property can be either a media query string or an integer that will be supplied to a `min-width` media query. The first url object in the list is the default image, and will be used if no other breakpoint matches.
+      required: true
+      preview:
+        - breakpoint: "(min-width: 0px)"
+          src: "/images/small.jpg"
+        - breakpoint: "(min-width: 800px)"
+          src: "/images/medium.jpg"
+        - breakpoint: "(min-width: 1200px)"
+          src: "/images/large.jpg"
+        - breakpoint: "(min-width: 1440px)"
+          src: "/images/large.jpg"
+  settings:
+    ishero:
+      type: boolean
+      label: Is Hero
+      description: Is this image in a hero? If true, and credit exists, will display credit in a title attribute
+      preview: false
+      required: false
+  visibility: storybook

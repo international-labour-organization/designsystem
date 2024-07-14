@@ -1,0 +1,24 @@
+{#
+  CARD COMPONENT
+#}
+{% if type == "" %}
+  {% set type = variant %}
+{% endif %}
+
+{% if type == "data" %}
+  {% include "@components/card_data/card_data.twig" %}
+{% elseif type == "detail" %}
+  {% include "@components/card_detail/card_detail.twig" %}
+{% elseif type == "factlist" %}
+  {% include "@components/card_factlist/card_factlist.twig" %}
+{% elseif type == "feature" %}
+  {% include "@components/card_feature/card_feature.twig" %}
+{% elseif type == "multilink" %}
+  {% include "@components/card_multilink/card_multilink.twig" %}
+{% elseif type == "promo" %}
+  {% include "@components/card_promo/card_promo.twig" %}
+{% elseif type == "stat" %}
+  {% include "@components/card_stat/card_stat.twig" %}
+{% elseif type == "text" %}
+  {% include "@components/card_text/card_text.twig" %}
+{% endif %}

@@ -32,6 +32,8 @@
     "@ilo-org/maestro": "workspace:*",
     "@ilo-org/styles": "workspace:*",
     "@ilo-org/utils": "workspace:*",
-    "@popperjs/core": "^2.11.8"
+    "@popperjs/core": "^2.11.8",
+    "video.js": "^7.21.2",
+    "videojs-youtube": "^3.0.1"
   }
 }

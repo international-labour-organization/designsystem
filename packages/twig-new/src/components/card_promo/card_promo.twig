@@ -1,0 +1,35 @@
+{#
+  PROMO CARD COMPONENT
+#}
+
+<div class="{{prefix}}--card--wrapper {{prefix}}--card--wrapper__type__promo {{prefix}}--card--wrapper__type__promo__size__{{ size }}">
+	<div class="{{prefix}}--card {{prefix}}--card__type__promo {{prefix}}--card__size__{{ size }} {{prefix}}--card__action {{prefix}}--card__theme__{{theme}} {% if cornercut|boolval %}{{prefix}}--card__cornercut{% endif %}">
+		<a class="{{prefix}}--card--link" href="{{link}}" title="{{title}}">
+			<span class="{{prefix}}--card--link--text">{{title}}</span>
+		</a>
+		<div class="{{prefix}}--card--wrap">
+			<div class="{{prefix}}--card--content">
+				{% if eyebrow %}
+					<p class="{{prefix}}--card--eyebrow">{{eyebrow}}</p>
+				{% endif %}
+				{% if title %}
+					<{{titleLevel|default('p')}} class="{{ prefix }}--card--title">{{ title }}</{{titleLevel|default('p')}}>
+				{% endif %}
+				{% if intro %}
+					<p class="{{prefix}}--card--intro">{{intro}}</p>
+				{% endif %}
+				{% if cta %}
+					<div class="{{prefix}}--card--cta">
+						{% include "@components/button/button.twig" with {
+              size: "medium",
+              url: cta.url,
+              label: cta.label,
+              type: "primary",
+              prefix: prefix,
+            } only %}
+					</div>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+</div>

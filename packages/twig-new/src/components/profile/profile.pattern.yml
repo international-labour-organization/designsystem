@@ -1,0 +1,46 @@
+profile:
+  namespace: Components/Content
+  use: "@components/profile/profile.twig"
+  label: Profile
+  description: The Profile component is used to display information about a person.
+  fields:
+    avatar:
+      type: string
+      label: Avatar
+      description: The avatar for the profile
+      required: true
+      preview: "/images/ilo-dg.jpg"
+    description:
+      type: string
+      label: Description
+      description: An optional plain-text description (e.g. a short bio)
+      preview: "Gilbert F. Houngbo was elected as the ILO’s 11th Director-General by the organization’s Governing Body in March 2022. "
+    link:
+      type: object
+      label: Link
+      description: An optional url and label for a link associated with the profile
+      preview:
+        label: "Learn more"
+        url: "https://www.ilo.org"
+    name:
+      type: string
+      label: Name
+      description: The name of the person associated with the profile
+      preview: "Gilbert F. Houngbo"
+      required: true
+    role:
+      type: string
+      label: Role
+      description: An optional plain-text field indicating the person's role in the organization
+      preview: "ILO Director-General"
+  settings:
+    theme:
+      type: select
+      label: Theme
+      description: The theme for the profile styles
+      required: false
+      options:
+        light: Light
+        dark: Dark
+      preview: "light"
+  visibility: storybook
