@@ -1,0 +1,60 @@
+list:
+  namespace: Components/Content
+  use: "@components/list/list.twig"
+  label: List
+  description: The List component renders a styled list of text items. In addition to the List styles made available in the RichText component, the List component also includes unstyled and horizontally aligned lists.
+  fields:
+    title:
+      type: string
+      label: Label
+      description: The list item's heading.
+      preview: Facts about the ILO
+    items:
+      type: object
+      label: Items
+      description: Array of the list items
+      required: true
+      preview:
+        - content: The International Labour Organization (ILO) was founded in 1919 as part of the League of Nations to promote workers' rights, encourage decent employment opportunities, and enhance social protection.
+          elementId: item1
+        - content: The ILO aims to promote rights at work, encourage decent job opportunities, enhance social protection, and strengthen dialogue on work-related issues.
+          elementId: item2
+        - content: The ILO advocates for social justice and internationally recognized human and labor rights.
+          elementId: item3
+        - content: The ILO develops international labor standards in the form of conventions and recommendations to improve working conditions and labor rights.
+          elementId: item4
+        - content: The ILO is unique in its tripartite structure that includes representatives from government, employer, and worker organizations.
+          elementId: item5
+        - content: The ILO works to eradicate child labor, targeting the worst forms of child labor through conventions and action programs.
+          elementId: item6
+        - content: The ILO promotes gender equality and empowers women through targeted policies and programs.
+          elementId: item7
+        - content: The ILO’s Decent Work agenda aims to secure fair income, safety at work, social protection, and respect for workers' rights.
+          elementId: item8
+        - content: The ILO provides research and data on global employment trends and labor market issues to inform policy development.
+          elementId: item9
+        - content: The ILO offers training and education programs to improve occupational skills and competencies.
+          elementId: item10
+        - content: The annual International Labor Conference is where ILO members convene to discuss and create labor standards.
+          elementId: item11
+  settings:
+    ordered:
+      type: select
+      label: Ordered
+      description: The order for the list. `Ordered` uses numbers, `unordered` uses arrow indicators and `unstyled` doesn't have anything but spacing. `unstyled` is the default.
+      required: false
+      options:
+        ordered: Ordered
+        unordered: Unordered
+        unstyled: Unstyled
+      preview: "unstyled"
+    alignment:
+      type: select
+      label: Alignment
+      description: Is the list displayed horizontally? Usually used for shorter items inside a list.
+      options:
+        default: Default
+        horizontal: Horizontal
+      preview: "default"
+      required: false
+  visibility: storybook

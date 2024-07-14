@@ -1,0 +1,19 @@
+list:
+  namespace: Components/Content
+  use: "@components/list/list-item.twig"
+  label: List Item
+  description: A list item.
+  fields:
+    content:
+      type: text
+      label: Content
+      description: The list item's collapsed content.
+      preview:
+        faker: lorem.word
+    elementId:
+      type: text
+      label: ID
+      description: The list item's id.
+      preview:
+        faker: lorem.word
+  visibility: storybook
