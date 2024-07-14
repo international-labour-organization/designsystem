@@ -1,0 +1,82 @@
+video:
+  namespace: Components/Media
+  use: "@components/video/video.twig"
+  label: Video
+  description: A component for displaying a video, source from either a server or YouTube.
+  fields:
+    alt:
+      type: string
+      label: Alt
+      description: alt text for the image
+      required: true
+      preview: "The ILO logo animates into view"
+    caption:
+      type: string
+      label: Caption
+      description: string
+      preview: "The ILO brings together governments, employers and workers to set labour standards and promote decent work."
+    url:
+      type: object
+      label: URL
+      description: The image url(s), and at which breakpoint each should be displayed.
+      required: true
+      preview:
+        - breakpoint: 0
+          src: "/images/media-file-poster.jpg"
+        - breakpoint: 800
+          src: "/images/media-file-poster.jpg"
+        - breakpoint: 1200
+          src: "/images/media-file-poster.jpg"
+        - breakpoint: 1440
+          src: "/images/media-file-poster.jpg"
+    video:
+      type: object
+      label: Video
+      description: video player settings
+      required: true
+      preview:
+        controls:
+          fullscreen: "Fullscreen"
+          play: "Play"
+          pause: "Pause"
+          volume: "Volume"
+        src: "/images/video-example.mp4"
+        tracks: null
+
+youtube_video:
+  namespace: Components/Media
+  use: "@components/video/video.twig"
+  label: Youtube Video
+  description: A component for displaying a video, source from YouTube.
+  fields:
+    alt:
+      type: string
+      label: Alt
+      description: alt text for the image
+      required: true
+      preview: "The ILO logo animates into view"
+    caption:
+      type: string
+      label: Caption
+      description: string
+      preview: "The ILO brings together governments, employers and workers to set labour standards and promote decent work."
+    video:
+      type: object
+      label: Video
+      description: video player settings
+      required: true
+      preview:
+        controls:
+          fullscreen: "Fullscreen"
+          play: "Play"
+          pause: "Pause"
+          volume: "Volume"
+        src: "https://www.youtube.com/watch?v=55xQTgUJqhQ&ab_channel=InternationalLabourOrganization"
+        tracks: null
+    vjsType:
+      type: string
+      label: Source Type
+      description: The source type of video, required for youtube embedded videos
+      required: false
+      preview: "video/youtube"
+  visibility: storybook
