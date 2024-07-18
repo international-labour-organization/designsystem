@@ -1,5 +1,5 @@
 import { Meta } from "@storybook/blocks";
-import "../../storybook-static/sb-common-assets/welcome.scss";
+import "../../public/styles/welcome.scss";
 import { version } from "../../package.json";
 
 <Meta
@@ -10,10 +10,7 @@ import { version } from "../../package.json";
 <div class="welcome">
   <h1 class="welcome--title">ILO Design System</h1>
   <h3 class="welcome--subtitle">
-    <img
-      src="../../storybook-static/sb-common-assets/twig.svg"
-      alt="Twig Icon"
-    />
+    <img src="../../public/images/twig.svg" alt="Twig Icon" />
     <span class="welcome--subtitle">Twig Components</span>
   </h3>
   <span class="welcome--version">v{version}</span>
