@@ -9,6 +9,11 @@ import { BehaviorDecorator } from "@ilo-org/maestro/storybook";
 const preview = {
   decorators: [BehaviorDecorator],
   parameters: {
+    options: {
+      storySort: {
+        order: ["Welcome", "Get started", ["Introduction"], "Components"],
+      },
+    },
     controls: {
       matchers: {
         color: /(background|color)$/i,
