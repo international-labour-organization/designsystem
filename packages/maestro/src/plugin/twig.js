@@ -8,7 +8,7 @@
  */
 
 import { resolve, dirname } from "node:path";
-import { existsSync } from "node:fs";
+import { existsSync, readdirSync } from "node:fs";
 
 import Twig from "twig";
 
@@ -49,10 +49,26 @@ const resolveFile = (directory, file) => {
   return resolve(directory, file);
 };
 
+const isDynamic = (token) => {
+  const type = token.token?.type;
+
+  if (type === "Twig.logic.type.include") {
+    const { stack } = token.token;
+    if (stack.length > 1 && stack.find((item) => item.value === "~")) {
+      return true;
+    }
+  }
+
+  return false;
+};
+
 const pluckIncludes = (tokens) => {
   return [
     ...tokens
-      .filter((token) => includeTokenTypes.includes(token.token?.type))
+      .filter((token) => {
+        const type = token.token?.type;
+        return includeTokenTypes.includes(type) && !isDynamic(token);
+      })
       .reduce(
         (carry, token) => [
           ...carry,
@@ -88,6 +104,14 @@ const resolveJS = (directory) => {
   if (!existsSync(resolve(directory, `${componentName}.${ext}`))) return;
 
   return resolve(directory, `${componentName}.${ext}`);
+};
+
+const getNonDynamicIncludes = (namespace, dynamics) => {
+  const items = readdirSync(namespace);
+
+  return items
+    .filter((item) => !dynamics.includes(item))
+    .map((item) => `@components/${item}/${item}.twig`);
 };
 
 const compileTemplate = (id, file, { namespaces }) => {
@@ -151,6 +175,15 @@ const plugin = (options = {}) => {
           frameworkInclude = `import React from 'react'`;
           frameworkTransform = `const frameworkTransform = (html) => React.createElement('div', {dangerouslySetInnerHTML: {'__html': html}});;`;
         }
+
+        let isDynamic = false;
+
+        if (options.dynamics) {
+          isDynamic = options.dynamics.some((dynamic) =>
+            id.endsWith(`${dynamic}.twig`)
+          );
+        }
+
         let embed,
           embeddedIncludes,
           functions,
@@ -169,6 +202,13 @@ const plugin = (options = {}) => {
           }
           code = result.code;
           includes = result.includes;
+          if (isDynamic) {
+            includes = getNonDynamicIncludes(
+              options.namespaces.components,
+              options.dynamics
+            );
+          }
+
           const includePromises = [];
           const jsBundle = resolveJS(dirname(id));
           const processIncludes = (template) => {
@@ -230,6 +270,7 @@ const plugin = (options = {}) => {
         } catch (e) {
           return errorHandler(id)(e);
         }
+
         const output = `
         import Twig, { twig } from 'twig';
         import DrupalAttribute from 'drupal-attribute';
