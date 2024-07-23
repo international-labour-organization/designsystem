@@ -63,7 +63,7 @@ jobs:
       - name: Run theme container
         run: |
           echo "${{ secrets.ILO_BASE_THEME_TOKEN }}" | docker login ghcr.io -u "${{ github.repository_owner }}" --password-stdin
-          docker run -d --name theme -p 8082:80 -v "${{ github.workspace }}"/packages/twig/dist/components:/opt/drupal/modules/ilo_base_theme_companion/dist/components -v "${{ github.workspace }}"/packages/twig/dist/global/styles.css:/opt/drupal/modules/ilo_base_theme_companion/dist/index.css ghcr.io/international-labour-organization/ilo_base_theme:1.x
+          docker run -d --name theme -p 8082:80 -v "${{ github.workspace }}"/packages/twig/dist/components:/opt/drupal/modules/ilo_base_theme_companion/dist/components -v "${{ github.workspace }}"/packages/twig/dist/global/styles.css:/opt/drupal/modules/ilo_base_theme_companion/dist/index.css ghcr.io/international-labour-organization/ilo_base_theme:0.x
 
       - name: Test
         run: pnpm test:all

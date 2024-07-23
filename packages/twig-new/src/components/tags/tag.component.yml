@@ -8,12 +8,12 @@ tag:
       type: text
       label: Content
       description: The tag text content.
-      preview: content
+      preview: tag
     elementId:
       type: text
       label: ID
       description: The tag's id.
-      preview: contentId
+      preview: elementId
     url:
       type: text
       label: URL

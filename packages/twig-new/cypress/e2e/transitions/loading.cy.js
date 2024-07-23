@@ -1,4 +1,4 @@
-//WIP
+//To-do :- Will be done along with the variants in #1100
 describe("loading", () => {
   beforeEach(() => {
     cy.visit("/patterns/loading");
