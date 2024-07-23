@@ -8,12 +8,10 @@ list:
       type: text
       label: Content
       description: The list item's collapsed content.
-      preview:
-        faker: lorem.word
+      preview: content
     elementId:
       type: text
       label: ID
       description: The list item's id.
-      preview:
-        faker: lorem.word
+      preview: contentId
   visibility: storybook
