@@ -843,6 +843,9 @@ importers:
       storybook:
         specifier: ^8.1.9
         version: 8.1.9(react-dom@16.14.0)(react@16.14.0)
+      storybook-addon-rtl:
+        specifier: ^1.0.0
+        version: 1.0.0
       twig:
         specifier: ^1.16.0
         version: 1.16.0
@@ -39833,6 +39836,10 @@ packages:
       '@storybook/theming': 7.6.6(react-dom@17.0.2)(react@17.0.2)
       react: 17.0.2
       react-dom: 17.0.2(react@17.0.2)
+    dev: true
+
+  /storybook-addon-rtl@1.0.0:
+    resolution: {integrity: sha512-pGbNx0KhzqxDfjJQ/IOJYKOmLD0tVV0vjEtTcPmU5mgwzlWxLcbiEGn6q73yvSwV/KIzpH8zNNJVWYRrdWPNEQ==}
     dev: true
 
   /storybook@6.5.16(eslint@8.41.0)(react-dom@16.14.0)(react@16.14.0)(typescript@4.9.3):
