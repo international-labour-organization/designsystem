@@ -3,9 +3,14 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "files": [
+    "dist/**/*"
+  ],
   "scripts": {
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "start:theme": "docker compose up -d",
+    "cy:open": "cypress open"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^1.5.0",
@@ -30,10 +35,11 @@
     "@ilo-org/fonts": "workspace:*",
     "@ilo-org/icons": "workspace:*",
     "@ilo-org/maestro": "workspace:*",
-    "@ilo-org/themes": "workspace:*",
     "@ilo-org/styles": "workspace:*",
+    "@ilo-org/themes": "workspace:*",
     "@ilo-org/utils": "workspace:*",
     "@popperjs/core": "^2.11.8",
+    "cypress": "^13.10.0",
     "video.js": "^7.21.2",
     "videojs-youtube": "^3.0.1"
   }
