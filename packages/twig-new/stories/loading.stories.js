@@ -1,5 +1,5 @@
 import Loading from "../src/components/loading/loading.twig";
-import LoadingPatterns from "../src/components/loading/loading.pattern.yml";
+import LoadingPatterns from "../src/components/loading/loading.component.yml";
 import { Maestro } from "@ilo-org/maestro";
 
 const story = Maestro.create(Loading, LoadingPatterns);

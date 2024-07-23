@@ -1,5 +1,5 @@
 import LinkList from "../src/components/linklist/linklist.twig";
-import LinkListPatterns from "../src/components/linklist/linklist.pattern.yml";
+import LinkListPatterns from "../src/components/linklist/linklist.component.yml";
 import { Maestro } from "@ilo-org/maestro";
 
 const story = Maestro.create(LinkList, LinkListPatterns);

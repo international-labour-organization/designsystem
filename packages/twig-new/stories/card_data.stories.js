@@ -1,5 +1,5 @@
 import CardData from "../src/components/card_data/card_data.twig";
-import CardDataPatterns from "../src/components/card_data/card_data.pattern.yml";
+import CardDataPatterns from "../src/components/card_data/card_data.component.yml";
 import { Maestro } from "@ilo-org/maestro";
 
 const story = Maestro.create(CardData, CardDataPatterns);

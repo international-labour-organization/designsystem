@@ -1,5 +1,5 @@
 import Dropdown from "../src/components/dropdown/dropdown.twig";
-import DropdownPatterns from "../src/components/dropdown/dropdown.pattern.yml";
+import DropdownPatterns from "../src/components/dropdown/dropdown.component.yml";
 import { Maestro } from "@ilo-org/maestro";
 
 const story = Maestro.create(Dropdown, DropdownPatterns);

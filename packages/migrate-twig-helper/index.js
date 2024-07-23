@@ -25,7 +25,7 @@ const newComponentsDir = `packages/twig-new/src/components`;
 const newComponentPath = `${newComponentsDir}/${componentName}`;
 const newStoriesPath = "packages/twig-new/stories";
 const newStoryPath = `${newStoriesPath}/${componentName}.stories.js`;
-const newPatternFile = `${componentName}.pattern.yml`;
+const newPatternFile = `${componentName}.component.yml`;
 const newPatternPath = `${newComponentPath}/${newPatternFile}`;
 
 try {

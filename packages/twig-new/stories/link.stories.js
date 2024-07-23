@@ -1,5 +1,5 @@
 import Link from "../src/components/link/link.twig";
-import LinkPatterns from "../src/components/link/link.pattern.yml";
+import LinkPatterns from "../src/components/link/link.component.yml";
 import { Maestro } from "@ilo-org/maestro";
 
 const story = Maestro.create(Link, LinkPatterns);

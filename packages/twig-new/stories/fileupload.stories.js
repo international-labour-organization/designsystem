@@ -1,5 +1,5 @@
 import Fileupload from "../src/components/fileupload/fileupload.twig";
-import FileuploadPatterns from "../src/components/fileupload/fileupload.pattern.yml";
+import FileuploadPatterns from "../src/components/fileupload/fileupload.component.yml";
 import { Maestro } from "@ilo-org/maestro";
 
 const story = Maestro.create(Fileupload, FileuploadPatterns);

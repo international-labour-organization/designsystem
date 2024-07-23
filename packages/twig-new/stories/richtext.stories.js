@@ -1,5 +1,5 @@
 import Richtext from "../src/components/richtext/richtext.twig";
-import RichtextPatterns from "../src/components/richtext/richtext.pattern.yml";
+import RichtextPatterns from "../src/components/richtext/richtext.component.yml";
 import { Maestro } from "@ilo-org/maestro";
 
 const story = Maestro.create(Richtext, RichtextPatterns);

@@ -1,5 +1,5 @@
 import Socialmedia from "../src/components/socialmedia/socialmedia.twig";
-import SocialmediaPatterns from "../src/components/socialmedia/socialmedia.pattern.yml";
+import SocialmediaPatterns from "../src/components/socialmedia/socialmedia.component.yml";
 import { Maestro } from "@ilo-org/maestro";
 
 const story = Maestro.create(Socialmedia, SocialmediaPatterns);

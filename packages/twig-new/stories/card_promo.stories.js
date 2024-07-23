@@ -1,5 +1,5 @@
 import CardPromo from "../src/components/card_promo/card_promo.twig";
-import CardPromoPatterns from "../src/components/card_promo/card_promo.pattern.yml";
+import CardPromoPatterns from "../src/components/card_promo/card_promo.component.yml";
 import { Maestro } from "@ilo-org/maestro";
 
 const story = Maestro.create(CardPromo, CardPromoPatterns);

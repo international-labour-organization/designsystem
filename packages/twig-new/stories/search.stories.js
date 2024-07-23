@@ -1,5 +1,5 @@
 import Search from "../src/components/search/search.twig";
-import SearchPatterns from "../src/components/search/search.pattern.yml";
+import SearchPatterns from "../src/components/search/search.component.yml";
 import { Maestro } from "@ilo-org/maestro";
 
 const story = Maestro.create(Search, SearchPatterns);

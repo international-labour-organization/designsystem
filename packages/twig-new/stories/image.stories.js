@@ -1,5 +1,5 @@
 import Image from "../src/components/image/image.twig";
-import ImagePatterns from "../src/components/image/image.pattern.yml";
+import ImagePatterns from "../src/components/image/image.component.yml";
 import { Maestro } from "@ilo-org/maestro";
 
 const story = Maestro.create(Image, ImagePatterns);

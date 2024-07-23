@@ -1,5 +1,5 @@
 import Herocard from "../src/components/herocard/herocard.twig";
-import HerocardPatterns from "../src/components/herocard/herocard.pattern.yml";
+import HerocardPatterns from "../src/components/herocard/herocard.component.yml";
 import { Maestro } from "@ilo-org/maestro";
 
 const story = Maestro.create(Herocard, HerocardPatterns);

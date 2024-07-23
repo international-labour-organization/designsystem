@@ -1,5 +1,5 @@
 import Datepicker from "../src/components/datepicker/datepicker.twig";
-import DatepickerPatterns from "../src/components/datepicker/datepicker.pattern.yml";
+import DatepickerPatterns from "../src/components/datepicker/datepicker.component.yml";
 import { Maestro } from "@ilo-org/maestro";
 
 const story = Maestro.create(Datepicker, DatepickerPatterns);

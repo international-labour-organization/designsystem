@@ -1,5 +1,5 @@
 import Textinput from "../src/components/textinput/textinput.twig";
-import TextinputPatterns from "../src/components/textinput/textinput.pattern.yml";
+import TextinputPatterns from "../src/components/textinput/textinput.component.yml";
 import { Maestro } from "@ilo-org/maestro";
 
 const story = Maestro.create(Textinput, TextinputPatterns);

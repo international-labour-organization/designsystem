@@ -1,5 +1,5 @@
 import Breadcrumb from "../src/components/breadcrumb/breadcrumb.twig";
-import BreadcrumbPatterns from "../src/components/breadcrumb/breadcrumb.pattern.yml";
+import BreadcrumbPatterns from "../src/components/breadcrumb/breadcrumb.component.yml";
 import { Maestro } from "@ilo-org/maestro";
 
 const story = Maestro.create(Breadcrumb, BreadcrumbPatterns);
