@@ -1,5 +1,5 @@
 import Table from "../src/components/table/table.twig";
-import TablePatterns from "../src/components/table/table.pattern.yml";
+import TablePatterns from "../src/components/table/table.component.yml";
 import { Maestro } from "@ilo-org/maestro";
 
 const story = Maestro.create(Table, TablePatterns);

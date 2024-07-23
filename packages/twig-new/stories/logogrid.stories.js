@@ -1,5 +1,5 @@
 import Logogrid from "../src/components/logogrid/logogrid.twig";
-import LogogridPatterns from "../src/components/logogrid/logogrid.pattern.yml";
+import LogogridPatterns from "../src/components/logogrid/logogrid.component.yml";
 import { Maestro } from "@ilo-org/maestro";
 
 const story = Maestro.create(Logogrid, LogogridPatterns);

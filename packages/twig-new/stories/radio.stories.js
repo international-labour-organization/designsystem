@@ -1,5 +1,5 @@
 import Radio from "../src/components/radio/radio.twig";
-import RadioPatterns from "../src/components/radio/radio.pattern.yml";
+import RadioPatterns from "../src/components/radio/radio.component.yml";
 import { Maestro } from "@ilo-org/maestro";
 
 const story = Maestro.create(Radio, RadioPatterns);

@@ -1,5 +1,5 @@
 import Readmore from "../src/components/readmore/readmore.twig";
-import ReadmorePatterns from "../src/components/readmore/readmore.pattern.yml";
+import ReadmorePatterns from "../src/components/readmore/readmore.component.yml";
 import { Maestro } from "@ilo-org/maestro";
 
 const story = Maestro.create(Readmore, ReadmorePatterns);

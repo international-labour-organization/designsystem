@@ -1,5 +1,5 @@
 import Navigation from "../src/components/navigation/navigation.twig";
-import NavigationPatterns from "../src/components/navigation/navigation.pattern.yml";
+import NavigationPatterns from "../src/components/navigation/navigation.component.yml";
 import { Maestro } from "@ilo-org/maestro";
 
 const story = Maestro.create(Navigation, NavigationPatterns);
