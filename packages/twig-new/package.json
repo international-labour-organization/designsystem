@@ -10,7 +10,9 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "start:theme": "docker compose up -d",
-    "cy:open": "cypress open"
+    "cy:open": "cypress open",
+    "cy:run": "cypress run",
+    "test": "cypress run"
   },
   "devDependencies": {
     "@chromatic-com/storybook": "^1.5.0",
