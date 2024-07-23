@@ -1,5 +1,5 @@
 import List from "../src/components/list/list.twig";
-import ListPatterns from "../src/components/list/list.pattern.yml";
+import ListPatterns from "../src/components/list/list.component.yml";
 import { Maestro } from "@ilo-org/maestro";
 
 const story = Maestro.create(List, ListPatterns);

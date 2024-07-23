@@ -1,5 +1,5 @@
 import Profile from "../src/components/profile/profile.twig";
-import ProfilePatterns from "../src/components/profile/profile.pattern.yml";
+import ProfilePatterns from "../src/components/profile/profile.component.yml";
 import { Maestro } from "@ilo-org/maestro";
 
 const story = Maestro.create(Profile, ProfilePatterns);

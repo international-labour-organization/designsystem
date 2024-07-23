@@ -1,5 +1,5 @@
 import Tableofcontents from "../src/components/tableofcontents/tableofcontents.twig";
-import TableofcontentsPatterns from "../src/components/tableofcontents/tableofcontents.pattern.yml";
+import TableofcontentsPatterns from "../src/components/tableofcontents/tableofcontents.component.yml";
 import { Maestro } from "@ilo-org/maestro";
 
 const story = Maestro.create(Tableofcontents, TableofcontentsPatterns);

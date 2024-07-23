@@ -1,5 +1,5 @@
 import CardFeature from "../src/components/card_feature/card_feature.twig";
-import CardFeaturePatterns from "../src/components/card_feature/card_feature.pattern.yml";
+import CardFeaturePatterns from "../src/components/card_feature/card_feature.component.yml";
 import { Maestro } from "@ilo-org/maestro";
 
 const story = Maestro.create(CardFeature, CardFeaturePatterns);

@@ -1,5 +1,5 @@
 import Hero from "../src/components/hero/hero.twig";
-import HeroPatterns from "../src/components/hero/hero.pattern.yml";
+import HeroPatterns from "../src/components/hero/hero.component.yml";
 import { Maestro } from "@ilo-org/maestro";
 
 const story = Maestro.create(Hero, HeroPatterns);

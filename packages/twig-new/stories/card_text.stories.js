@@ -1,5 +1,5 @@
 import CardText from "../src/components/card_text/card_text.twig";
-import CardTextPatterns from "../src/components/card_text/card_text.pattern.yml";
+import CardTextPatterns from "../src/components/card_text/card_text.component.yml";
 import { Maestro } from "@ilo-org/maestro";
 
 const story = Maestro.create(CardText, CardTextPatterns);

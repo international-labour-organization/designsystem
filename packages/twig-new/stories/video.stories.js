@@ -1,5 +1,5 @@
 import Video from "../src/components/video/video.twig";
-import VideoPatterns from "../src/components/video/video.pattern.yml";
+import VideoPatterns from "../src/components/video/video.component.yml";
 import { Maestro } from "@ilo-org/maestro";
 
 const story = Maestro.create(Video, VideoPatterns);

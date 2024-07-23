@@ -779,6 +779,9 @@ importers:
       '@ilo-org/styles':
         specifier: workspace:*
         version: link:../styles
+      '@ilo-org/themes':
+        specifier: workspace:*
+        version: link:../themes
       '@ilo-org/utils':
         specifier: workspace:*
         version: link:../utils

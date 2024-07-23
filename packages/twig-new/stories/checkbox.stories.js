@@ -1,5 +1,5 @@
 import Checkbox from "../src/components/checkbox/checkbox.twig";
-import CheckboxPatterns from "../src/components/checkbox/checkbox.pattern.yml";
+import CheckboxPatterns from "../src/components/checkbox/checkbox.component.yml";
 import { Maestro } from "@ilo-org/maestro";
 
 const story = Maestro.create(Checkbox, CheckboxPatterns);

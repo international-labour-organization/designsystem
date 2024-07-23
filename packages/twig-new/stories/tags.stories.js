@@ -1,5 +1,5 @@
 import Tags from "../src/components/tags/tags.twig";
-import TagsPatterns from "../src/components/tags/tags.pattern.yml";
+import TagsPatterns from "../src/components/tags/tags.component.yml";
 import { Maestro } from "@ilo-org/maestro";
 
 const story = Maestro.create(Tags, TagsPatterns);
