@@ -1,5 +1,5 @@
 import ContextMenu from "../src/components/contextmenu/contextmenu.twig";
-import ContextMenuPatterns from "../src/components/contextmenu/contextmenu.pattern.yml";
+import ContextMenuPatterns from "../src/components/contextmenu/contextmenu.component.yml";
 import { Maestro } from "@ilo-org/maestro";
 
 const story = Maestro.create(ContextMenu, ContextMenuPatterns);

@@ -1,5 +1,5 @@
 import Notification from "../src/components/notification/notification.twig";
-import NotificationPatterns from "../src/components/notification/notification.pattern.yml";
+import NotificationPatterns from "../src/components/notification/notification.component.yml";
 import { Maestro } from "@ilo-org/maestro";
 
 const story = Maestro.create(Notification, NotificationPatterns);

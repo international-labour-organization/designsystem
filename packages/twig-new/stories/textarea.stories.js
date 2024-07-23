@@ -1,5 +1,5 @@
 import Textarea from "../src/components/textarea/textarea.twig";
-import TextareaPatterns from "../src/components/textarea/textarea.pattern.yml";
+import TextareaPatterns from "../src/components/textarea/textarea.component.yml";
 import { Maestro } from "@ilo-org/maestro";
 
 const story = Maestro.create(Textarea, TextareaPatterns);

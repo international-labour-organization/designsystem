@@ -1,5 +1,5 @@
 import CardMultiLink from "../src/components/card_multilink/card_multilink.twig";
-import CardMultiLinkPatterns from "../src/components/card_multilink/card_multilink.pattern.yml";
+import CardMultiLinkPatterns from "../src/components/card_multilink/card_multilink.component.yml";
 import { Maestro } from "@ilo-org/maestro";
 
 const story = Maestro.create(CardMultiLink, CardMultiLinkPatterns);

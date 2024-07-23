@@ -1,5 +1,5 @@
 import Form from "../src/components/form/form.twig";
-import FormPatterns from "../src/components/form/form.pattern.yml";
+import FormPatterns from "../src/components/form/form.component.yml";
 import { Maestro } from "@ilo-org/maestro";
 
 const story = Maestro.create(Form, FormPatterns);

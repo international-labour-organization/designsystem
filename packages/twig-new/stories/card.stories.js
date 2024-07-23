@@ -1,5 +1,5 @@
 import Card from "../src/components/card/card.twig";
-import CardPatterns from "../src/components/card/card.pattern.yml";
+import CardPatterns from "../src/components/card/card.component.yml";
 import { Maestro } from "@ilo-org/maestro";
 
 const story = Maestro.create(Card, CardPatterns);
