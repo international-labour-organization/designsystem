@@ -11,5 +11,6 @@ export default defineConfig({
     globals: {
       prefix: "ilo",
     },
+    dynamics: ["modal", "tabs"],
   }),
 });
