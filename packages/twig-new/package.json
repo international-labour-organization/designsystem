@@ -17,7 +17,9 @@
     "@storybook/builder-vite": "^8.1.9",
     "@storybook/html": "^8.1.9",
     "@storybook/html-vite": "^8.1.9",
+    "@storybook/manager-api": "^8.1.9",
     "@storybook/test": "^8.1.9",
+    "@storybook/theming": "^8.1.9",
     "drupal-attribute": "^1.0.2",
     "drupal-twig-extensions": "^1.0.0-beta.5",
     "storybook": "^8.1.9",
@@ -27,11 +29,12 @@
     "zod": "^3.23.8"
   },
   "dependencies": {
+    "@ilo-org/brand-assets": "workspace:*",
     "@ilo-org/fonts": "workspace:*",
     "@ilo-org/icons": "workspace:*",
     "@ilo-org/maestro": "workspace:*",
-    "@ilo-org/themes": "workspace:*",
     "@ilo-org/styles": "workspace:*",
+    "@ilo-org/themes": "workspace:*",
     "@ilo-org/utils": "workspace:*",
     "@popperjs/core": "^2.11.8",
     "video.js": "^7.21.2",
