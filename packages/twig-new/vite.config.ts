@@ -10,11 +10,11 @@ export default defineConfig({
     copy({
       targets: [
         {
-          src: "src/components/**/**.pattern.yml",
+          src: "src/components/**/**.component.yml",
           dest: "dist/components/",
           rename: (name, extension, fullPath) => {
             const componentFolder = fullPath.match(
-              /(.*)\/(.*)\/(.*).pattern.yml$/
+              /(.*)\/(.*)\/(.*).component.yml$/
             )?.[2];
             return `${componentFolder}/${name}.${extension}`;
           },
