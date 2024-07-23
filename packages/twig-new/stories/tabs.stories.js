@@ -1,5 +1,5 @@
 import Tabs from "../src/components/tabs/tabs.twig";
-import TabsPatterns from "../src/components/tabs/tabs.pattern.yml";
+import TabsPatterns from "../src/components/tabs/tabs.component.yml";
 import { Maestro } from "@ilo-org/maestro";
 
 const story = Maestro.create(Tabs, TabsPatterns);

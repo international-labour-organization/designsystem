@@ -1,5 +1,5 @@
 import Modal from "../src/components/modal/modal.twig";
-import ModalPatterns from "../src/components/modal/modal.pattern.yml";
+import ModalPatterns from "../src/components/modal/modal.component.yml";
 import { Maestro } from "@ilo-org/maestro";
 
 const story = Maestro.create(Modal, ModalPatterns);
