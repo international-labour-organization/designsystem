@@ -46,8 +46,8 @@
   ],
   "scripts": {
     "build:lib": "rollup -c",
+    "build:docs": "storybook build -o ./storybook-static",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build",
     "start:theme": "docker compose up -d",
     "cy:open": "cypress open",
     "test": "cypress run",
