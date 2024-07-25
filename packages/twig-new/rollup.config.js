@@ -12,7 +12,7 @@ const behaviorBuildConfigs = behaviorFiles.map((behaviorFile) => ({
   input: behaviorFile,
   output: {
     dir: "dist",
-    format: "umd",
+    format: "iife",
     entryFileNames: (chunkInfo) => {
       const componentFolder = chunkInfo.facadeModuleId?.match(
         /(.*)\/(.*)\/(.*).behavior.js$/
