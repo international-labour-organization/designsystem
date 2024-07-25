@@ -1,4 +1,4 @@
-//WIP
+//To-do :- Will be done along with the variants in #1100
 describe("modal", () => {
   beforeEach(() => {
     cy.visit("/patterns/modal");
@@ -7,7 +7,7 @@ describe("modal", () => {
 
   it("renders the modal correctly", () => {
     /*
-      WIP will be skipping this one as the modal doesn't render as expected
+      Will be skipping this one as the modal doesn't render as expected
       */
   });
 });
