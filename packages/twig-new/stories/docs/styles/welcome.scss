@@ -1,6 +1,6 @@
 @import "@ilo-org/themes/build/scss/tokens";
 
-#docs-root:has(.welcome) {
+#storybook-docs:has(.welcome) {
   position: relative;
   overflow: hidden;
 }
