@@ -8,20 +8,17 @@ tag:
       type: text
       label: Content
       description: The tag text content.
-      preview:
-        faker: lorem.word
+      preview: tag
     elementId:
       type: text
       label: ID
       description: The tag's id.
-      preview:
-        faker: lorem.word
+      preview: elementId
     url:
       type: text
       label: URL
       description: The tag's url reference
-      preview:
-        faker: https://www.google.com/
+      preview: https://www.google.com/
   settings:
     defaultActive:
       type: boolean

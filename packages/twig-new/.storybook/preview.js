@@ -11,7 +11,12 @@ const preview = {
   parameters: {
     options: {
       storySort: {
-        order: ["Welcome", "Get started", ["Introduction"], "Components"],
+        order: [
+          "ILO Design System for Twig",
+          "Get started",
+          ["Introduction"],
+          "Components",
+        ],
       },
     },
     controls: {

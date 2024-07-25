@@ -10,7 +10,7 @@ navigation:
       description: Logo for the nav
       required: true
       preview:
-        image: "public/images/logo_en_horizontal_white.svg"
+        image: "images/logo_en_horizontal_white.svg"
         alt: Logo
     mobilelogo:
       type: object
@@ -18,7 +18,7 @@ navigation:
       description: Logo for the nav
       required: true
       preview:
-        image: "packages/twig-new/public/images/logo_en_horizontal_blue.svg"
+        image: "images/logo_en_horizontal_blue.svg"
         alt: Logo
     siteurl:
       type: string

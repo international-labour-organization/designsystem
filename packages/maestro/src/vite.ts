@@ -6,6 +6,7 @@ import twig from "./plugin/twig";
 type Options = {
   namespaces: Record<string, string>;
   globals?: Record<string, unknown>;
+  dynamics?: string[];
 };
 
 function UIPatterns(options: Options) {
@@ -14,6 +15,7 @@ function UIPatterns(options: Options) {
     twig({
       namespaces: options.namespaces,
       globalContext: options.globals,
+      dynamics: options.dynamics,
       functions: {
         boolval: (instance: typeof Twig) =>
           //@ts-expect-error typedefintions are wrong
