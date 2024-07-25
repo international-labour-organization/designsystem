@@ -60,13 +60,8 @@ const copyConfig = copy({
           .replace(/prefix ~/g, `'${theme.themeprefix.value}' ~`),
     },
     {
-      src: "node_modules/@ilo-org/styles/css/components/**",
+      src: "node_modules/@ilo-org/styles/css/*",
       dest: "dist/styles",
-    },
-    {
-      src: "node_modules/@ilo-org/styles/css/index.css",
-      dest: "dist/global/",
-      rename: "styles.css",
     },
   ],
   hook: "writeBundle",
