@@ -50,7 +50,6 @@
     "build-storybook": "storybook build",
     "start:theme": "docker compose up -d",
     "cy:open": "cypress open",
-    "cy:run": "cypress run",
     "test": "cypress run",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
