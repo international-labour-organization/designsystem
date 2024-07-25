@@ -19,9 +19,10 @@ const [
 ] = story.stories;
 
 export default Meta;
-export { Default, Two_Columns, Two_Columns_No_Image, Two_Columns_No_Links };
-
-No_Image.storyName = "No Image";
-Two_Columns.storyName = "Two Columns";
-Two_Columns_No_Image.storyName = "Two Columns No Image";
-Two_Columns_No_Links.storyName = "Two Columns No Links";
+export {
+  Default,
+  No_Image,
+  Two_Columns,
+  Two_Columns_No_Image,
+  Two_Columns_No_Links,
+};

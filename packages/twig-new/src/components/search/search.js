@@ -1,4 +1,4 @@
-import { EVENTS, ARIA } from "@ilo-org/utils";
+import { EVENTS } from "@ilo-org/utils";
 
 /**
  * The Search module which handles the clear button.
@@ -87,7 +87,7 @@ export default class Search {
   /**
    * Onclick interaction with the clear button
    */
-  onClick(e) {
+  onClick() {
     this.searchInputField.value = "";
     this.searchButton.classList.remove("show");
   }

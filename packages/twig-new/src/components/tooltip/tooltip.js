@@ -4,7 +4,7 @@
  * @class Tooltip
  */
 
-import { createPopper, right } from "@popperjs/core";
+import { createPopper } from "@popperjs/core";
 
 export default class Tooltip {
   /**
@@ -111,7 +111,7 @@ export default class Tooltip {
     return this;
   }
 
-  postMouseOver(hoverRect) {
+  postMouseOver() {
     const ttNode = this.tooltip;
     this.setMaxWidthAndClass(this.tooltip);
     if (ttNode != null) {
