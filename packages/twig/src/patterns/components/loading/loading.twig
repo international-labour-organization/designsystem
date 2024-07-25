@@ -1,8 +1,0 @@
-{#
-  LOADING COMPONENT
-#}
-<div class="storybook {{prefix}}--loading {{prefix}}--loading--{{size}} {{prefix}}--loading--{{status}}" role="alert" aria-live="assertive" data-loadcomponent="Loading" data-prefix="{{prefix}}">
-  {% if message or loadedmessage %}
-    <p class="{{prefix}}--loading--copy">{% if message and not status == 'loaded' %}{{message}}{% endif %}{% if loadedmessage and status == 'loaded' %}{{loadedmessage}}{% endif %}</p>
-  {% endif %}
-</div>

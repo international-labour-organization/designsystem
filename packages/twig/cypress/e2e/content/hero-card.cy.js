@@ -1,4 +1,4 @@
-//WIP
+//To-do :- Will be done along with the variants in #1100
 describe("Hero Card", () => {
   beforeEach(() => {
     cy.visit("/patterns/herocard");
@@ -7,7 +7,7 @@ describe("Hero Card", () => {
 
   it("renders the hero card correctly", () => {
     /*
-    WIP will be skipping this one as the hero card doesn't render as expected
+    Will be skipping this one as the hero card doesn't render as expected
     */
   });
 });

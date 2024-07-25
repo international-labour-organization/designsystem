@@ -1,9 +1,9 @@
 version: '3'
 services:
     backend:
-        image: "ghcr.io/international-labour-organization/ilo_base_theme:1.x"
+        image: "ghcr.io/international-labour-organization/ilo_base_theme:0.x"
         ports:
             - 8082:80
         volumes:
             - ./dist/components:/opt/drupal/modules/ilo_base_theme_companion/dist/components/
-            - ./dist/global/styles.css:/opt/drupal/modules/ilo_base_theme_companion/dist/index.css
+            - ./dist/styles/index.css:/opt/drupal/modules/ilo_base_theme_companion/dist/index.css
