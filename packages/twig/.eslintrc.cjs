@@ -5,5 +5,6 @@ module.exports = {
     Drupal: true,
     cy: true,
   },
-  ignorePatterns: ["dist/"],
+  // Ignoring rollup.config until eslint update
+  ignorePatterns: ["dist/", "rollup.config.js"],
 };
