@@ -28,7 +28,7 @@
   ],
   "engines": {
     "pnpm": "8.6.0",
-    "node": ">=20"
+    "node": "20.16.0"
   },
   "scripts": {
     "build:libs": "turbo run build:lib -v",
