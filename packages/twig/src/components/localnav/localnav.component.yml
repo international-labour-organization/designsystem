@@ -15,7 +15,7 @@ localnav:
       description: Logo for the nav
       required: true
       preview:
-        image: "/images/logo_en_horizontal_white.svg"
+        image: "images/logo_en_horizontal_white.svg"
         alt: Logo
     siteurl:
       type: string
