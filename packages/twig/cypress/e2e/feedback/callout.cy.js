@@ -6,8 +6,8 @@ describe("callout", () => {
 
   it("renders the callout correctly", () => {
     cy.get("@calloutSection").within(() => {
-      cy.contains("Optional Title");
-      cy.contains("Button");
+      cy.contains("This is a callout component");
+      cy.contains("Take action");
     });
   });
 });

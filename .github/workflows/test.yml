@@ -24,11 +24,11 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 2
-      
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 16.14.0
+          node-version: 20.16.0
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
@@ -49,7 +49,7 @@ jobs:
           key: ${{ runner.os }}-cache-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
             ${{ runner.os }}-cache-
-      
+
       - name: Install dependencies
         run: pnpm install
 
@@ -63,7 +63,7 @@ jobs:
       - name: Run theme container
         run: |
           echo "${{ secrets.ILO_BASE_THEME_TOKEN }}" | docker login ghcr.io -u "${{ github.repository_owner }}" --password-stdin
-          docker run -d --name theme -p 8082:80 -v "${{ github.workspace }}"/packages/twig/dist/components:/opt/drupal/modules/ilo_base_theme_companion/dist/components -v "${{ github.workspace }}"/packages/twig/dist/global/styles.css:/opt/drupal/modules/ilo_base_theme_companion/dist/index.css ghcr.io/international-labour-organization/ilo_base_theme:1.x
+          docker run -d --name theme -p 8082:80 -v "${{ github.workspace }}"/packages/twig/dist/components:/opt/drupal/modules/ilo_base_theme_companion/dist/components -v "${{ github.workspace }}"/packages/twig/dist/styles/index.css:/opt/drupal/modules/ilo_base_theme_companion/dist/index.css ghcr.io/international-labour-organization/ilo_base_theme:preview-gh-26-twig-migration-2
 
       - name: Test
         run: pnpm test:all

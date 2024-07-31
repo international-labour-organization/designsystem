@@ -1,0 +1,30 @@
+import { Meta } from "@storybook/blocks";
+import "./styles/welcome.scss";
+import { version } from "../../package.json";
+
+<Meta
+  title="ILO Design System for Twig / Welcome"
+  parameters={{ viewMode: "docs", previewTabs: { canvas: { hidden: true } } }}
+/>
+
+<div className="welcome">
+  <h1 className="welcome--title">ILO Design System</h1>
+  <h3 className="welcome--subtitle">
+    <img src="images/twig.svg" alt="Twig Icon" />
+    <span className="welcome--subtitle">Twig Components</span>
+  </h3>
+  <span className="welcome--version">v{version}</span>
+  <a
+    className="ilo--button ilo--button--large ilo--button--primary"
+    href="/docs/get-started-introduction--page"
+    target="true"
+    rel="noopener noreferrer"
+  >
+    <span className="link__label">Get started</span>
+  </a>
+  <div>
+    <div className="triangle triangle1"></div>
+    <div className="triangle triangle2"></div>
+    <div className="triangle triangle3"></div>
+  </div>
+</div>

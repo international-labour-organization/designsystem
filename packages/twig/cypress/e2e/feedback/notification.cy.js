@@ -1,4 +1,3 @@
-//WIP
 describe("notification", () => {
   beforeEach(() => {
     cy.visit("/patterns/notification");

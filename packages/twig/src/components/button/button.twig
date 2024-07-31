@@ -1,0 +1,28 @@
+{#
+  BUTTON COMPONENT
+#}
+{% if url %}
+	<a class="{{prefix}}--button ilo--button__{{size}} {{prefix}}--button__{{type}}{% if icon %} {{prefix}}--button--icon {{prefix}}--button--icon--position__{{iconPosition}}{% endif %}{% if icononly|boolval %} {{prefix}}--button--icon--only{% endif %}{% if className %} {{className}}{% endif %}" href="{{url}}" {% if target is defined and target != 'false' %} target="{{target}}" rel="noopener noreferrer" {% endif %} {{ disabled|boolval ? ' disabled' }}>
+		<span class="link__label">{{label}}</span>
+		{% if icon %}
+			{% include '@components/icon/icon.twig' with {
+					prefix: prefix,
+					name: icon.name,
+					size: icon.size,
+					color: icon.color
+				} only %}
+		{% endif %}
+	</a>
+{% else %}
+	<button class="{{prefix}}--button ilo--button__{{size}} {{prefix}}--button__{{type}}{% if icon %} {{prefix}}--button--icon {{prefix}}--button--icon--position__{{iconPosition}}{% endif %}{% if icononly|boolval %} {{prefix}}--button--icon--only{% endif %}{% if className %} {{className}}{% endif %}" {% if kind %} type="{{kind}}" {% endif %} {% if opensmodal %} aria-haspopup="dialog" {% endif %} {{ disabled|boolval ? ' disabled' }}>
+		<span class="button__label">{{label}}</span>
+		{% if icon %}
+			{% include '@components/icon/icon.twig' with {
+					prefix: prefix,
+					name: icon.name,
+					size: icon.size,
+					color: icon.color
+				} only %}
+		{% endif %}
+	</button>
+{% endif %}
