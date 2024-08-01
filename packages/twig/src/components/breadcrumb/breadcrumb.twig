@@ -1,15 +1,14 @@
 {# breadcrumb.twig #}
-
 {# If a home field is passed, it will be used as the first link #}
 {# THE `HOME` FIELD WILL BE DEPRECATED IN FUTURE VERSIONS AND SHOULD NOT BE USED #}
 {% if home %}
 	{% set firstlink = home %}
-	{% set contextLinks = links|slice(0, items|length - 1) %}
+	{% set contextLinks = links|slice(0, links|length - 1) %}
 {% endif %}
 
 {% if not home %}
 	{% set firstlink = links|first %}
-	{% set contextLinks = links|slice(1, items|length - 1) %}
+	{% set contextLinks = links|slice(1, links|length - 1) %}
 {% endif %}
 
 {% set lastlink = links|last %}
