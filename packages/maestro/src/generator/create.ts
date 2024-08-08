@@ -34,7 +34,7 @@ function parameters(
   pattern: UIPatternValue
 ): MaestroStory["meta"]["parameters"] {
   return {
-    layout: "centered",
+    layout: "padded",
     docs: {
       description: {
         component: pattern.description,
