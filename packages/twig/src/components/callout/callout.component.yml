@@ -1,0 +1,65 @@
+callout:
+  namespace: Components/Feedback
+  use: "@components/callout/callout.twig"
+  label: Callout
+  description: The Callout component highlights important information or messages. Its ensures that critical content stands out, capturing the user’s attention effectively.
+  fields:
+    button:
+      type: object
+      label: Button
+      description: Fields to pass to the button if there is one
+      required: false
+      preview:
+        label: Take action
+        url: "https://www.ilo.org"
+        target: "_blank"
+        icon: false
+        className: "optionalclass"
+    content:
+      type: string
+      label: Content
+      description: The callout's content
+      preview: It's job is to bring users' attention to something important that they might not otherwise have known. I can also have a call to action.
+    title:
+      type: string
+      label: Notification Title
+      description: Title for the notification
+      preview: This is a callout component
+      required: false
+    toggleOpenLabel:
+      type: string
+      label: Open Label for the collapse toggle
+      description: If there is a collapse toggle, this is the label
+      preview: "More"
+      required: false
+    toggleClosedLabel:
+      type: string
+      label: Closed Label for the collapse toggle
+      description: If there is a collapse toggle, this is the label
+      preview: "Less"
+      required: false
+  settings:
+    alert:
+      type: select
+      label: Alert
+      description: Alert type
+      required: true
+      options:
+        info: Info
+        error: Error
+        success: Success
+        warning: Warning
+      preview: "info"
+    isCollapsible:
+      type: boolean
+      label: Is Collapsible?
+      description: Whether or not the callout is collapsible
+      required: true
+      preview: false
+    isOpen:
+      type: boolean
+      label: Is Open
+      description: Whether or not a collapsible callout is open on page load. If callout is not collapsible then the callout will be open always.
+      required: false
+      preview: true
+  visibility: storybook

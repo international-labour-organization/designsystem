@@ -93,19 +93,9 @@ npm -i -g pnpm@8.6.0
 
 ### Installing Storybook dependencies
 
-You can install all of the project dependencies with `pnpm install`. This is sufficient for building the `twig` and `react` libraries.
-
-However, if you want to run the Storybook documentation sites for either `twig` or `react`, you will need to run a specific install script for either package in order to avoid dependency conflicts.
-
 ```bash
-pnpm react:install
+pnpm install
 ```
-
-```bash
-pnpm twig:install
-```
-
-These will clean out all project installation and build files (`node_modules`, `pnpm-lock.json`, `dist/`, etc.) and install all project dependencies for either `react` or `twig`. That includes dependencies for all of the other packages in the project that the `react` and `twig` packages depend on.
 
 ### React and Twig Libraries
 
@@ -135,12 +125,6 @@ Build React Storybook and dependent packages
 pnpm react:build:docs
 ```
 
-Shortcut to only install and build React deps for development
-
-```bash
-pnpm react:dev:prep
-```
-
 Start React storybook in dev mode
 
 ```bash
@@ -151,12 +135,6 @@ Build Twig Storybook and dependent packages
 
 ```bash
 pnpm twig:build:docs
-```
-
-Shortcut to only install and build Twig deps for development
-
-```bash
-pnpm twig:dev:prep
 ```
 
 Start Twig storybook in dev mode

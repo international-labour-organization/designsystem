@@ -1,0 +1,106 @@
+footer:
+  namespace: Components/Navigation
+  use: "@components/footer/footer.twig"
+  label: Footer
+  description: A component for displaying a page's footer
+  fields:
+    logo:
+      type: object
+      label: action
+      description: A URL and alt text for the site logo
+      preview:
+        alt: "My alt text"
+        url: "/images/logo_en_horizontal_white.svg"
+      required: true
+    tagline:
+      type: string
+      label: tagline
+      description: the tagline for the site
+      preview: "Advancing social justice, promoting decent work"
+    subtagline:
+      type: string
+      label: subtagline
+      description: a sub-tagline for the site
+      preview: "ILO is a specialized agency of the United Nations"
+    address:
+      type: object
+      label: address
+      description: "any number of strings in an address"
+      preview:
+        - "International Labour Organization"
+        - "4 route des Morillons"
+        - "CH-1211 Genève 22"
+        - "Switzerland"
+    linkgroup:
+      type: object
+      label: links
+      description: "up to six links"
+      preview:
+        - links:
+            - label: "Contact us"
+              url: "https://www.ilo.org"
+            - label: "Contact us"
+              url: "https://www.ilo.org"
+            - label: "Contact us"
+              url: "https://www.ilo.org"
+    socialmedia:
+      type: object
+      label: social
+      description: "Links to social media"
+      preview:
+        headline: "Stay informed"
+        icons:
+          - icon: "x"
+            label: "X"
+            url: "https://x.com/ilo"
+          - icon: "facebook"
+            label: "Facebook"
+            url: "https://www.facebook.com/ilo.org"
+          - icon: "linkedin"
+            label: "LinkedIn"
+            url: "https://www.linkedin.com/company/international-labour-organization-ilo"
+          - icon: "instagram"
+            label: "Instagram"
+            url: "https://www.instagram.com/ilo.org/"
+          - icon: "tiktok"
+            label: "TikTok"
+            url: "https://www.tiktok.com/@ilo"
+          - icon: "flickr"
+            label: "Flickr"
+            url: "https://www.flickr.com/photos/ilopictures/albums"
+          - icon: "youtube"
+            label: "YouTube"
+            url: "https://www.youtube.com/channel/UCrlcu5KChYyHwXlIeD7oLUg"
+    subscribe:
+      type: object
+      label: subscribe
+      description: "a link to a subscribe form"
+      preview:
+        label: "Subscribe for updates"
+        url: "https://www.ilo.org"
+    legal:
+      type: string
+      label: legal
+      description: "a string with legal information"
+      preview: "© 1996-2022 International Labour Organization (ILO)"
+    secondarylinks:
+      type: object
+      label: secondarylinks
+      description: "up to six links"
+      preview:
+        - label: "Rights and permissions"
+          url: "http://www.cnn.com"
+        - label: "Privacy policy"
+          url: "http://www.bing.com"
+        - label: "Fraud alert"
+          url: "http://www.yahoo.com"
+        - label: "Disclaimer"
+          url: "http://www.askjeeves.com"
+    anchorlink:
+      type: object
+      label: anchorlink
+      description: "an anchor href and label for navigating to another section on the page"
+      preview:
+        label: "Back to top"
+        href: "#anchor"
+  visibility: storybook

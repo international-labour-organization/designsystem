@@ -8,7 +8,7 @@ describe("navigation", () => {
     cy.get("@navigationSection").within(() => {
       cy.get("img")
         .should("have.attr", "src")
-        .and("include", "/brand-assets/logo_en_horizontal_white.svg");
+        .and("include", "images/logo_en_horizontal_white.svg");
       cy.contains("English");
       cy.contains("Topics");
       cy.contains("Countries");

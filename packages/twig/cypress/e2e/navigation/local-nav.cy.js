@@ -8,7 +8,7 @@ describe("local nav", () => {
     cy.get("@localNavSection").within(() => {
       cy.get("img")
         .should("have.attr", "src")
-        .and("include", "/brand-assets/logo_en_horizontal_white.svg");
+        .and("include", "images/logo_en_horizontal_white.svg");
 
       cy.contains("Menu Item 1");
       cy.contains("Menu Item 2");
