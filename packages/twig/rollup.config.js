@@ -47,6 +47,17 @@ const copyConfig = copy({
       },
     },
     {
+      src: "src/components/**/**.component.yml",
+      dest: "dist/components/",
+      rename: (name, extension, fullPath) => {
+        const componentFolder = fullPath.match(
+          /(.*)\/(.*)\/(.*).component.yml$/
+        )?.[2];
+        const componentName = name.split(".").at();
+        return `${componentFolder}/${componentName}.wingsuit.${extension}`;
+      },
+    },
+    {
       src: "src/components/**/**.twig",
       dest: "dist/components/",
       rename: (name, extension, fullPath) => {
