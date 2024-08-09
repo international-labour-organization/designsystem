@@ -4,6 +4,7 @@ import "@ilo-org/fonts/font-css/fonts-google.css";
 import "@ilo-org/styles/scss/index.scss";
 import "@ilo-org/styles/scss/global.scss";
 import { BehaviorDecorator } from "@ilo-org/maestro/storybook";
+import "./styles.scss";
 
 /** @type { import('@storybook/html').Preview } */
 const preview = {
