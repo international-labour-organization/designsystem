@@ -1,0 +1,38 @@
+import { Meta } from "@storybook/blocks";
+import { Button } from "../../components/Button";
+import "./styles/welcome.scss";
+import { version } from "../../../package.json";
+
+<Meta
+  title="ILO Design System for React / Welcome"
+  parameters={{ viewMode: "docs", previewTabs: { canvas: { hidden: true } } }}
+/>
+
+<div className="welcome">
+  <h1 className="welcome--title">ILO Design System</h1>
+  <h3 className="welcome--subtitle">
+    <img src="/react.svg" alt="React Icon" />
+    <span>React Components</span>
+  </h3>
+  <span className="welcome--version">v{version}</span>
+  <a
+    className="ilo--button ilo--button--large ilo--button--primary optionalclassName"
+    href="/?path=/docs/getting-started--overview"
+    target="true"
+    rel="noopener noreferrer"
+  >
+    <span className="link__label">Get started</span>
+  </a>
+</div>
+<div className="triangles">
+  <div
+    className="triangle triangle1"
+    onMouseOver={(e) => {
+      if (!e.target.classList.contains("spinning")) {
+        e.target.classList.add("spinning");
+      }
+    }}
+  ></div>
+  <div className="triangle triangle2"></div>
+  <div className="triangle triangle3"></div>
+</div>
