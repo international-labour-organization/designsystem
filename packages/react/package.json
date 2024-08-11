@@ -134,7 +134,7 @@
     "@storybook/addon-interactions": "^8.1.9",
     "@storybook/addon-links": "^8.1.9",
     "@storybook/builder-vite": "^8.1.9",
-    "@storybook/node-logger": "^8.2.8",
+    "@storybook/node-logger": "^8.1.9",
     "@storybook/blocks": "^8.1.9",
     "@storybook/manager-api": "^8.1.9",
     "@storybook/preset-scss": "^1.0.3",
@@ -173,7 +173,7 @@
     "ts-dedent": "^2.2.0",
     "ts-jest": "^29.1.1",
     "tslib": "^2.3.1",
-    "vite": "^4.5.3"
+    "vite": "^5.2.0"
   },
   "peerDependencies": {
     "react": ">16",
