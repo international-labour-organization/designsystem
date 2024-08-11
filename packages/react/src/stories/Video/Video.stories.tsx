@@ -3,7 +3,7 @@ import {
   Title,
   Description,
   Primary,
-  ArgsTable,
+  ArgTypes,
   Subheading,
 } from "@storybook/addon-docs";
 import { Video } from "../../components/Video";
@@ -32,7 +32,7 @@ const VideoMeta: Meta<typeof Video> = {
           </Description>
           <Primary />
           <Subheading>Default props</Subheading>
-          <ArgsTable />
+          <ArgTypes />
         </>
       ),
     },

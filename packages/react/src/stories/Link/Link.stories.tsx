@@ -4,7 +4,7 @@ import {
   Subtitle,
   Description,
   Primary,
-  ArgsTable,
+  ArgTypes,
   Stories,
   Subheading,
 } from "@storybook/addon-docs";
@@ -46,7 +46,7 @@ const LinkMeta: Meta<typeof Link> = {
           <Description>{themeDoc}</Description>
           <Stories title="Examples"></Stories>
           <Subheading>Default Props</Subheading>
-          <ArgsTable />
+          <ArgTypes />
         </>
       ),
     },

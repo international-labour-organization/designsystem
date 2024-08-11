@@ -4,7 +4,7 @@ import {
   Description,
   Primary,
   Stories,
-  ArgsTable,
+  ArgTypes,
   Subheading,
 } from "@storybook/addon-docs";
 import { SocialMedia } from "../../components/SocialMedia";
@@ -35,7 +35,7 @@ const SocialMediaMeta: Meta<SocialMediaProps> = {
           <Primary />
           <Stories title="Examples"></Stories>
           <Subheading>Default props</Subheading>
-          <ArgsTable />
+          <ArgTypes />
         </>
       ),
     },
