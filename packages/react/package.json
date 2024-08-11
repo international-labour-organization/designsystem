@@ -91,8 +91,7 @@
     "lint:fix": "eslint . --fix",
     "storybook": "storybook dev -p 6006",
     "storybook:static": "http-server ./storybook-static",
-    "copy:styles": "node copystyles.js",
-    "test": "NODE_OPTIONS=--experimental-vm-modules SKIP_PREFLIGHT_CHECK=true react-scripts test --watchAll=false --setupFilesAfterEnv ./src/setup.ts"
+    "copy:styles": "node copystyles.js"
   },
   "browserslist": {
     "production": [
