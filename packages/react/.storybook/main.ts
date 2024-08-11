@@ -36,6 +36,12 @@ const config: StorybookConfig = {
       },
     },
   },
+  viteFinal: (config) => {
+    config.optimizeDeps = {
+      include: ["@storybook/addon-docs"],
+    };
+    return config;
+  },
 };
 
 export default config;
