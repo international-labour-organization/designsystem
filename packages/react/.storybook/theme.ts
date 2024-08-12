@@ -1,5 +1,5 @@
 import { create } from "@storybook/theming/create";
-//@ts-ignore
+//@ts-ignore brand assets have wrong type declarations
 import ilo_logo from "@ilo-org/brand-assets/logo_en_horizontal_blue.svg";
 import brandColors from "@ilo-org/themes/tokens/brand/base.json";
 
