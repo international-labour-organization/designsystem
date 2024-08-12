@@ -5,13 +5,6 @@ import theme from "./theme";
 import "./styles.scss";
 import { brand } from "@ilo-org/themes/tokens/brand/base.json";
 
-export const globalTypes = {
-  rtlDirection: {
-    description: "HTML dir attribute",
-    defaultValue: false,
-  },
-};
-
 const preview: Preview = {
   decorators: [
     (Story) => (
