@@ -1,5 +1,16 @@
 # @ilo-org/twig
 
+## 1.2.1
+
+### Patch Changes
+
+- 33e6e5661: Refactor the Navigation component to automatically focus the Search Input field when the Search button is clicked.
+- Updated dependencies [72159bb1a]
+  - @ilo-org/brand-assets@1.0.0
+  - @ilo-org/fonts@1.0.0
+  - @ilo-org/icons@1.0.0
+  - @ilo-org/styles@1.2.1
+
 ## 1.2.0
 
 ### Minor Changes

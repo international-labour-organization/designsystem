@@ -1,5 +1,16 @@
 # @ilo-org/react
 
+## 0.17.7
+
+### Patch Changes
+
+- 33e6e5661: Refactor the Navigation component to automatically focus the Search Input field when the Search button is clicked.
+- Updated dependencies [72159bb1a]
+  - @ilo-org/brand-assets@1.0.0
+  - @ilo-org/fonts@1.0.0
+  - @ilo-org/icons-react@1.0.0
+  - @ilo-org/styles@1.2.1
+
 ## 0.17.6
 
 ### Patch Changes

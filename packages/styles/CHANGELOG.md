@@ -1,5 +1,13 @@
 # @ilo-org/styles
 
+## 1.2.1
+
+### Patch Changes
+
+- Updated dependencies [72159bb1a]
+  - @ilo-org/fonts@1.0.0
+  - @ilo-org/icons@1.0.0
+
 ## 1.2.0
 
 ### Minor Changes
