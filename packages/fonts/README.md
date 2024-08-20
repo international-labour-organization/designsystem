@@ -1,6 +1,6 @@
 # ILO Design System - Fonts Package
 
-This package includes the ILO's brand fonts and typeface declarations. Fore more information about typography at the ILO, see the [ILO Brand Hub](https://brand.ilo.org/d/XdDMx745iKTL/visual-identity#/typography/fonts).
+This package includes the ILO's brand fonts and typeface declarations. Fore more information about typography at the ILO, see the [ILO Brand Hub](https://brand.ilo.org/document/2#/typography/fonts).
 
 ## Usage
 
@@ -82,11 +82,27 @@ else
 endif
 ```
 
-## Non-Latin Fonts
+## Non-Latin Languages
 
-This pacakge also includes, as an example, Noto Sans Arabic.
+### Arabic
+
+This pacakge also includes Noto Sans Arabic.
 
 | font-family | font-weight | font-style | file                |
 | ----------- | ----------- | ---------- | ------------------- |
 | "Noto Sans" | normal      | normal     | NotoSansArabic      |
 | "Noto Sans" | 700         | normal     | NotoSansArabic-Bold |
+
+## Chinese & Japense
+
+Chinese and Japanese webfonts are very large and not often used. As such, when using the ILO Design System in a Chines or Japanese website, we recommend using the following system fonts:
+
+### Chinese
+
+`PingFang SC, Microsoft YaHei, 微软雅黑, sans-serif`
+
+### Japanese
+
+`Noto Sans CJK JP, Yu Gothic, Hiragino Sans`
+
+Note: These font-family declarations are already included in the [@ilo-org/styles](../styles/) package. You will probably not have to make them yourself.
