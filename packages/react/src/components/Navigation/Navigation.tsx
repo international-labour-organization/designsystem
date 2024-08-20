@@ -1,4 +1,4 @@
-import { FC, useCallback, useEffect, useState } from "react";
+import { FC, useCallback, useEffect, useState, useRef } from "react";
 import useGlobalSettings from "../../hooks/useGlobalSettings";
 import { ContextMenu } from "../ContextMenu";
 import { SearchField } from "../SearchField";
@@ -37,6 +37,14 @@ const Navigation: FC<NavigationProps> = ({
     [`${prefix}--context--open`]: toggleLanguageOpen,
   });
 
+  const searchInputRef = useRef<HTMLInputElement>(null);
+
+  const handleSearchInputFocus = () => {
+    if (searchInputRef.current) {
+      searchInputRef.current.focus();
+    }
+  };
+
   const handleMenuToggle = () => {
     setMenuToggleOpen(!toggleMenuOpen);
   };
@@ -53,6 +61,7 @@ const Navigation: FC<NavigationProps> = ({
     }
     setSearchTabbable(true);
     setTimeout(() => setSearchToggleOpen(true), 10);
+    setTimeout(() => handleSearchInputFocus(), 50);
   };
 
   const handleSubnavToggle = () => {
@@ -266,6 +275,7 @@ const Navigation: FC<NavigationProps> = ({
             <SearchField
               input={searchfield?.input}
               action={searchfield?.action}
+              ref={searchInputRef}
             ></SearchField>
           </div>
         </div>
