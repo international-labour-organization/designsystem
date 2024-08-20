@@ -1,5 +1,17 @@
 # @ilo-org/icons-react
 
+## 1.0.0
+
+### Major Changes
+
+- 72159bb1a: Stable release with no changes from the last zero version
+
+### Patch Changes
+
+- Updated dependencies [72159bb1a]
+  - @ilo-org/icon-build-helpers@1.0.0
+  - @ilo-org/icons@1.0.0
+
 ## 0.1.2
 
 ### Patch Changes
