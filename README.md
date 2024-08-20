@@ -2,7 +2,7 @@
 <img src="./packages/brand-assets/src/assets/logo_en_dds_horizontal_white.svg#gh-dark-mode-only" width="400"  alt="ILO Digital Design System" />
 <img src="./packages/brand-assets/src/assets/logo_en_dds_horizontal_blue.svg#gh-light-mode-only" width="400"  alt="ILO Digital Design System" />
 </p>
- 
+
 <p align="center">
   <a href="https://brand.ilo.org/designsystem">🚀 Go to website</a>
   &ensp;|&ensp;
@@ -39,7 +39,7 @@ In addition to the two component libraries mentioned above, this monorepo includ
 | [@ilo-org/themes](./packages/themes/README.md)                         | Style tokens for stylesheets             | <img src="https://img.shields.io/npm/v/@ilo-org/themes" />             |
 | [@ilo-org/twig](./packages/twig/README.md)                             | Twig component library                   | <img src="https://img.shields.io/npm/v/@ilo-org/twig" />               |
 | [@ilo-org/utils](./packages/utils/README.md)                           | Shared utilities                         | <img src="https://img.shields.io/npm/v/@ilo-org/utils" />              |
-|                                                                        |
+| [@ilo-org/maestro](./packages/maestro/README.md)                       | Storybook helpers for Twig               | <img src="https://img.shields.io/npm/v/@ilo-org/maestro" /> |
 
 ## Code quality
 
