@@ -1,5 +1,11 @@
 # @ilo-org/brand-assets
 
+## 1.0.0
+
+### Major Changes
+
+- 72159bb1a: Stable release with no changes from the last zero version
+
 ## 0.5.3
 
 ### Patch Changes
