@@ -43,3 +43,23 @@ logogrid:
         - label: "UN Refugees"
           src: "/images/unhcr-logo.svg"
           url: "https://www.unhcr.org/"
+
+        - label: "European Union"
+          src: "/images/eu-logo.png"
+          url: "https://commission.europa.eu/aid-development-cooperation-fundamental-rights_en"
+
+        - label: "Germany Federal Ministry for Economic Cooperation and Development"
+          src: "/images/germany-logo.png"
+          url: "https://www.bmz.de/en"
+
+        - label: "Nestle"
+          src: "/images/nestle-logo.png"
+          url: "https://www.nestle.com"
+
+        - label: "The Swedish International Development Cooperation Agency"
+          src: "/images/sweden-logo.png"
+          url: "https://www.sida.se/en"
+
+        - label: "The New York Times"
+          src: "/images/nyt-logo.png"
+          url: "https://www.nytimes.com"
