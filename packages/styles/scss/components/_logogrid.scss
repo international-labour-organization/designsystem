@@ -4,11 +4,12 @@
 
 .ilo--logo-grid {
   $c: &;
+  --grid-gap: #{px-to-rem(16px)};
 
   &--logos {
     display: flex;
     flex-flow: row wrap;
-    grid-gap: px-to-rem(16px);
+    grid-gap: var(--grid-gap);
   }
 
   &--link {
@@ -24,14 +25,33 @@
   }
 
   &--item {
+    --flex-half-width: 0 0 calc(50% - var(--grid-gap));
+    --flex-third-width: 0 0 calc(33% - var(--grid-gap));
+
     display: flex;
     align-items: center;
     justify-content: center;
     height: px-to-rem(134px);
     flex: 100%;
+    padding: 0 12px;
 
-    @include breakpoint("small") {
-      flex: 0 0 px-to-rem(238px);
+    @include breakpoint(sm) {
+      flex: var(--flex-half-width);
+    }
+
+    @include breakpoint(md) {
+      // For one or two items, take up half the available space
+      flex: var(--flex-half-width);
+
+      // For three or more items, take up 1/3 the available space
+      &:nth-child(n + 3) {
+        flex: var(--flex-third-width);
+      }
+
+      // Override the flex basis for the first two items if there are more than three
+      #{$c}--logos:has(&:nth-child(n + 3)) > & {
+        flex: var(--flex-third-width);
+      }
     }
 
     #{$c}__theme__light & {
@@ -43,10 +63,10 @@
     }
 
     img {
-      width: auto;
+      width: 100%;
       height: auto;
-      max-width: px-to-rem(150px);
-      max-height: px-to-rem(50px);
+      max-width: px-to-rem(180px);
+      max-height: px-to-rem(106px);
     }
   }
 }
