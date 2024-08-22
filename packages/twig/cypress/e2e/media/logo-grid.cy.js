@@ -47,4 +47,16 @@ describe("logo grid", () => {
       });
     });
   });
+
+  it("at large breakpoints ensure that there are 3 grid items in a row when there are 3 or more items.", () => {
+    cy.get(".ilo--logo-grid--logos").then(($container) => {
+      const containerWidth = $container.outerWidth();
+      cy.get(".ilo--logo-grid--item").should("have.length.gte", 3);
+      cy.get(".ilo--logo-grid--item").each(($item) => {
+        const itemWidth = $item.outerWidth();
+        const itemsPerRow = containerWidth / itemWidth;
+        expect(itemsPerRow).to.be.gte(3).and.to.be.lt(4);
+      });
+    });
+  });
 });
