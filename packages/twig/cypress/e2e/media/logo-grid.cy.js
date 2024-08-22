@@ -51,12 +51,26 @@ describe("logo grid", () => {
   it("at large breakpoints ensure that there are 3 grid items in a row when there are 3 or more items.", () => {
     cy.get(".ilo--logo-grid--logos").then(($container) => {
       const containerWidth = $container.outerWidth();
+
+      // Ensure there are at least 3 items
       cy.get(".ilo--logo-grid--item").should("have.length.gte", 3);
-      cy.get(".ilo--logo-grid--item").each(($item) => {
-        const itemWidth = $item.outerWidth();
-        const itemsPerRow = containerWidth / itemWidth;
-        expect(itemsPerRow).to.be.gte(3).and.to.be.lt(4);
-      });
+
+      // Collect the widths of all items
+      const itemWidths = [];
+
+      cy.get(".ilo--logo-grid--item")
+        .each(($item) => {
+          const itemWidth = $item.outerWidth();
+          itemWidths.push(itemWidth);
+
+          const itemsPerRow = containerWidth / itemWidth;
+          expect(itemsPerRow).to.be.gte(3).and.to.be.lt(4);
+        })
+        .then(() => {
+          // Check if all item widths are the same
+          expect(itemWidths.every((width) => width === itemWidths[0])).to.be
+            .true;
+        });
     });
   });
 });
