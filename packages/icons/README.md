@@ -21,6 +21,7 @@ npm install -S @ilo-org/icons
 | `close`                       | ![](./src/svg/close.svg)                       |
 | `copyright`                   | ![](./src/svg/copyright.svg)                   |
 | `doublearrow`                 | ![](./src/svg/doublearrow.svg)                 |
+| `download`                    | ![](./src/svg/download.svg)                    |
 | `elipsis`                     | ![](./src/svg/elipsis.svg)                     |
 | `equilateraltriangle`         | ![](./src/svg/equilateraltriangle.svg)         |
 | `error`                       | ![](./src/svg/error.svg)                       |
