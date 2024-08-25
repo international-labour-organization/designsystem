@@ -9,10 +9,7 @@
   $icon-size: $spacing-spacing-4;
 
   @mixin get-icon($icon, $theme: $default-theme) {
-    @include dataurlicon(
-      $icon,
-      map-get($color, "socialmedia", $theme, "icon", "color")
-    );
+    @include dataurlicon($icon, rgba(30, 45, 190, 1));
 
     &:hover {
       @include dataurlicon(
