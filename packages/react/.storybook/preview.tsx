@@ -12,29 +12,6 @@ const preview: Preview = {
         <Story />
       </GlobalProvider>
     ),
-    // Wraps components in story mode
-    (Story, ctx) => {
-      // Should this story be rendered in full width?
-      const fullWidthStories = ["footer", "localnav", "navigation", "hero"];
-      const isFullWidth = fullWidthStories.some((story) =>
-        ctx.title.toLocaleLowerCase().includes(story)
-      );
-
-      if (ctx.viewMode === "story") {
-        if (isFullWidth) {
-          return <Story />;
-        }
-
-        return (
-          <div className="story-decorator-wrapper ">
-            <div className="story-decorator">
-              <Story />
-            </div>
-          </div>
-        );
-      }
-      return <Story />;
-    },
   ],
   parameters: {
     actions: { argTypesRegex: "^on[A-Z].*" },
