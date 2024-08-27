@@ -4,7 +4,7 @@ import {
   Description,
   Primary,
   Stories,
-  ArgsTable,
+  ArgTypes,
   Subheading,
 } from "@storybook/addon-docs";
 import { Empty } from "../../components/Empty";
@@ -26,7 +26,7 @@ const EmptyMeta: Meta<typeof Empty> = {
           <Primary />
           <Stories title="Examples" />
           <Subheading>Default Props</Subheading>
-          <ArgsTable />
+          <ArgTypes />
         </>
       ),
     },

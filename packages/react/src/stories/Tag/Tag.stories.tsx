@@ -3,7 +3,7 @@ import {
   Title,
   Description,
   Primary,
-  ArgsTable,
+  ArgTypes,
   Stories,
   Subheading,
 } from "@storybook/addon-docs";
@@ -45,7 +45,7 @@ const TagMeta: Meta<typeof Tag> = {
           <Description>{themeDoc}</Description>
           <Stories title="Examples"></Stories>
           <Subheading>Default props</Subheading>
-          <ArgsTable />
+          <ArgTypes />
         </>
       ),
     },

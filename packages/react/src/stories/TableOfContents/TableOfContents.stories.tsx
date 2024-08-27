@@ -4,7 +4,7 @@ import {
   Description,
   Primary,
   Stories,
-  ArgsTable,
+  ArgTypes,
   Subheading,
 } from "@storybook/addon-docs";
 import { TableOfContents } from "../../components/TableOfContents";
@@ -31,7 +31,7 @@ const TableOfContentsMeta: Meta<TableOfContentsProps> = {
           <Primary />
           <Stories title="Examples"></Stories>
           <Subheading>Default props</Subheading>
-          <ArgsTable />
+          <ArgTypes />
         </>
       ),
     },

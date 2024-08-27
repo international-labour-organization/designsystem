@@ -3,7 +3,7 @@ import {
   Title,
   Description,
   Primary,
-  ArgsTable,
+  ArgTypes,
   Stories,
   Subheading,
 } from "@storybook/addon-docs";
@@ -56,14 +56,14 @@ const HeadingMeta: Meta<typeof Heading> = {
         <>
           <Title />
           <Primary />
-          <ArgsTable />
+          <ArgTypes />
           <Subheading>Heading Level Prop</Subheading>
           <Description>{headingDoc}</Description>
           <Subheading>Color Prop</Subheading>
           <Description>{typeDoc}</Description>
           <Stories title="Examples" />
           <Subheading>Default Props</Subheading>
-          <ArgsTable />
+          <ArgTypes />
         </>
       ),
     },

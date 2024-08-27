@@ -4,7 +4,7 @@ import {
   Subheading,
   Description,
   Primary,
-  ArgsTable,
+  ArgTypes,
   Stories,
 } from "@storybook/addon-docs";
 import { Notification } from "../../components/Notification";
@@ -65,7 +65,7 @@ const NotificationMeta: Meta<typeof Notification> = {
           <Description>{placementDoc}</Description>
           <Stories title="Examples"></Stories>
           <Subheading>Default props</Subheading>
-          <ArgsTable />
+          <ArgTypes />
         </>
       ),
     },
