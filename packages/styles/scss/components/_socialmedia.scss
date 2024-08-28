@@ -7,9 +7,10 @@
   $c: &;
   $default-theme: "light";
   $icon-size: $spacing-spacing-4;
+  $ilo-color-blue: "rgba(30, 45, 190, 1)";
 
   @mixin get-icon($icon, $theme: $default-theme) {
-    @include dataurlicon($icon, rgba(30, 45, 190, 1));
+    @include dataurlicon($icon, $ilo-color-blue);
 
     &:hover {
       @include dataurlicon(
