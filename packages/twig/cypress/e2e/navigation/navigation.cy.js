@@ -35,7 +35,7 @@ describe("navigation", () => {
       .should("have.attr", "style", "display: block;");
   });
 
-  it("check if search works as expected", () => {
+  it("check if search works as expected and check for focus when search button is clicked", () => {
     cy.get(".ilo--search--open").should("not.exist");
 
     cy.get(".ilo--search--button")
@@ -43,6 +43,7 @@ describe("navigation", () => {
       .click()
       .then(() => {
         cy.get(".ilo--search--open").should("exist");
+        cy.get("input").should("be.focused");
       });
   });
 });
