@@ -36,12 +36,12 @@
 	</div>
 	{% if cta %}
 		<div class="{{prefix}}--cardgroup--button-wrap">
-				{% include '@components/button/button.twig' with {
+		  {% include '@components/button/button.twig' with {
           label: cta.label,
           url: cta.url,
           size: "medium",
           type: "secondary",
-        } %}
+      } %}
 		</div>
 	{% endif %}
 </div>
