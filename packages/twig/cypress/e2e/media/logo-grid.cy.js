@@ -34,7 +34,7 @@ describe("logo grid", () => {
     });
   });
 
-  it("at small breakpoint, shows items taking up half container width", () => {
+  it("should ensure that at the small breakpoint, the container width is equal to 2 items plus the gap", () => {
     cy.viewport("iphone-6+");
     cy.get(".ilo--logo-grid--logos").then(($container) => {
       const containerWidth = $container.outerWidth();
@@ -46,7 +46,7 @@ describe("logo grid", () => {
     });
   });
 
-  it("at large breakpoints ensure that there are 3 grid items in a row when there are 3 or more items.", () => {
+  it("should ensure that at large breakpoints with more than 3 items, the container width is equal to 3 items plus the gap", () => {
     cy.get(".ilo--logo-grid--logos").then(($container) => {
       const containerWidth = $container.outerWidth();
       cy.get(".ilo--logo-grid--item").each(($item) => {
