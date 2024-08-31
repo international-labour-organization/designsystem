@@ -1,5 +1,3 @@
-const { isExportDeclaration } = require("typescript");
-
 describe("logo grid", () => {
   beforeEach(() => {
     cy.visit("/patterns/logogrid");
@@ -42,8 +40,8 @@ describe("logo grid", () => {
       const containerWidth = $container.outerWidth();
       cy.get(".ilo--logo-grid--item").each(($item) => {
         const itemWidth = $item.outerWidth();
-        // Item takes up half the width minus the grid gap
-        expect(itemWidth).to.equal(containerWidth / 2 - 16);
+        // check if the container width is equal to 2 of the items and its gap
+        expect(containerWidth).to.equal(itemWidth * 2 + 16);
       });
     });
   });
@@ -53,8 +51,8 @@ describe("logo grid", () => {
       const containerWidth = $container.outerWidth();
       cy.get(".ilo--logo-grid--item").each(($item) => {
         const itemWidth = $item.outerWidth();
-        // Item takes up half the width minus the grid gap
-        expect(itemWidth).to.equal(containerWidth / 3 - 32);
+        // check if the container width is equal to 3 of the items and its gap
+        expect(containerWidth).to.equal(Math.round(itemWidth * 3 + 32));
       });
     });
   });
