@@ -16,7 +16,17 @@
     }
 
     @include breakpoint(md) {
-      grid-template-columns: repeat(3, 1fr);
+      &:only-child {
+        grid-template-columns: 1fr;
+      }
+
+      &:has(> :nth-child(2)) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      &:has(> :nth-child(3)) {
+        grid-template-columns: repeat(3, 1fr);
+      }
     }
   }
 
@@ -39,24 +49,7 @@
     height: px-to-rem(134px);
     padding: 0 12px;
 
-    @include breakpoint(sm) {
-      grid-column: span 1;
-    }
-
-    @include breakpoint(md) {
-      // For one or two items, take up half the available space
-      grid-column: span 2;
-
-      // For three or more items, take up 1/3 the available space
-      &:nth-child(n + 3) {
-        grid-column: span 1;
-      }
-
-      // Override the column span for all items if there are more than three
-      #{$c}--logos:has(&:nth-child(n + 3)) > & {
-        grid-column: span 1;
-      }
-    }
+    grid-column: span 1;
 
     #{$c}__theme__light & {
       background-color: map-get($color, "ux", "background", "highlight");
