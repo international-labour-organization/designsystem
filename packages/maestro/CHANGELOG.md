@@ -1,5 +1,11 @@
 # @ilo-org/maestro
 
+## 1.0.1
+
+### Patch Changes
+
+- b6a508863: Update docs and license
+
 ## 1.0.0
 
 ### Major Changes

@@ -1,5 +1,20 @@
 # @ilo-org/twig
 
+## 1.2.2
+
+### Patch Changes
+
+- 2c2813c0a: Make image optional in multilink card
+- eb517686e: Refactor search input to be queried by tag instead of class
+- bc007770d: Refactor cardgroup to use button component for cta instead of using button css classes
+- Updated dependencies [2c2813c0a]
+- Updated dependencies [a318aa4e6]
+- Updated dependencies [b6a508863]
+- Updated dependencies [e6d93b5ab]
+  - @ilo-org/styles@1.2.2
+  - @ilo-org/icons@1.1.0
+  - @ilo-org/maestro@1.0.1
+
 ## 1.2.1
 
 ### Patch Changes
