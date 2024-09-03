@@ -1,5 +1,16 @@
 # @ilo-org/react
 
+## 0.17.8
+
+### Patch Changes
+
+- 2c2813c0a: Make image optional in multilink card
+- bc007770d: Refactor cardgroup to use button component for cta instead of using button css classes
+- Updated dependencies [2c2813c0a]
+- Updated dependencies [e6d93b5ab]
+  - @ilo-org/styles@1.2.2
+  - @ilo-org/icons-react@1.0.1
+
 ## 0.17.7
 
 ### Patch Changes
