@@ -56,4 +56,22 @@ describe("logo grid", () => {
       });
     });
   });
+
+  it("should ensure that at large breakpoints with less than 3 items, the container width is equal to 2 items plus the gap", () => {
+    cy.get(".ilo--logo-grid--item").each(($item, index) => {
+      if (index > 1) {
+        $item.remove();
+      }
+    });
+
+    cy.get(".ilo--logo-grid--logos").then(($container) => {
+      const containerWidth = $container.outerWidth();
+      cy.get(".ilo--logo-grid--item").each(($item) => {
+        const itemWidth = $item.outerWidth();
+        // check if the container width is equal to 2 of the items and its gap
+        expect(containerWidth).to.equal(itemWidth * 2 + 16);
+      });
+    });
+    ``;
+  });
 });
