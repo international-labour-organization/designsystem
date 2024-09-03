@@ -1,5 +1,11 @@
 # @ilo-org/icons
 
+## 1.1.0
+
+### Minor Changes
+
+- a318aa4e6: Add download icon to package
+
 ## 1.0.0
 
 ### Major Changes
