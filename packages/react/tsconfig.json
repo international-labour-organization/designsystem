@@ -3,6 +3,8 @@
   "exclude": ["node_modules", "lib", "storybook-static"],
   "compilerOptions": {
     "types": ["jest", "node"],
-    "module": "ESNext"
+    "module": "ESNext",
+    "declaration": false,
+    "declarationDir": null
   }
 }

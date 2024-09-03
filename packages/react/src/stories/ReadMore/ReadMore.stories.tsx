@@ -4,7 +4,7 @@ import {
   Subheading,
   Description,
   Primary,
-  ArgsTable,
+  ArgTypes,
   Stories,
 } from "@storybook/addon-docs";
 import { ReadMore } from "../../components/ReadMore";
@@ -39,7 +39,7 @@ const ReadMoreMeta: Meta<typeof ReadMore> = {
           <Description>{stateDoc}</Description>
           <Stories title="Examples"></Stories>
           <Subheading>Default Props</Subheading>
-          <ArgsTable />
+          <ArgTypes />
         </>
       ),
     },

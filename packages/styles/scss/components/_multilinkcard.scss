@@ -125,6 +125,14 @@
                 display: none;
               }
             }
+
+            &#{$self}--no-image {
+              --max-width: #{px-to-rem(920px)};
+
+              #{$self}--content {
+                width: 100%;
+              }
+            }
           }
         }
       }

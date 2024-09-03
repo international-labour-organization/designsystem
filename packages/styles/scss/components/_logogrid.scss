@@ -4,11 +4,24 @@
 
 .ilo--logo-grid {
   $c: &;
+  --grid-gap: #{px-to-rem(16px)};
 
   &--logos {
-    display: flex;
-    flex-flow: row wrap;
-    grid-gap: px-to-rem(16px);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--grid-gap);
+
+    @include breakpoint(sm) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include breakpoint(md) {
+      grid-template-columns: repeat(2, 1fr);
+
+      &:has(> :nth-child(3)) {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
   }
 
   &--link {
@@ -28,11 +41,9 @@
     align-items: center;
     justify-content: center;
     height: px-to-rem(134px);
-    flex: 100%;
+    padding: 0 12px;
 
-    @include breakpoint("small") {
-      flex: 0 0 px-to-rem(238px);
-    }
+    grid-column: span 1;
 
     #{$c}__theme__light & {
       background-color: map-get($color, "ux", "background", "highlight");
@@ -43,10 +54,11 @@
     }
 
     img {
-      width: auto;
+      width: 100%;
       height: auto;
-      max-width: px-to-rem(150px);
-      max-height: px-to-rem(50px);
+      max-width: px-to-rem(180px);
+      max-height: px-to-rem(106px);
+      object-fit: contain;
     }
   }
 }

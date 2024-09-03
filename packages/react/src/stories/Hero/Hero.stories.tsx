@@ -3,7 +3,7 @@ import {
   Title,
   Description,
   Primary,
-  ArgsTable,
+  ArgTypes,
   Stories,
   Subheading,
 } from "@storybook/blocks";
@@ -26,7 +26,7 @@ const HeroMeta: Meta<typeof Hero> = {
           <Primary />
           <Stories title="Examples" />
           <Subheading>Default Props</Subheading>
-          <ArgsTable />
+          <ArgTypes />
         </>
       ),
     },

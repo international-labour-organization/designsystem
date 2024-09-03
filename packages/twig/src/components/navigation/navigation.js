@@ -67,7 +67,7 @@ export default class Navigation {
       `.${this.prefix}--search--button`
     );
     this.searchBox = this.element.querySelector(`.${this.prefix}--search-box`);
-    this.searchInput = this.searchBox.querySelector(`.${this.prefix}--input`);
+    this.searchInput = this.searchBox.querySelector("input");
     this.contextButton = this.element.querySelector(
       `.${this.prefix}--language-switcher--button`
     );

@@ -6,7 +6,6 @@ import {
   Primary,
   Stories,
   Subheading,
-  ArgsTable,
   ArgTypes,
 } from "@storybook/addon-docs";
 import { NumberPicker } from "../../components";

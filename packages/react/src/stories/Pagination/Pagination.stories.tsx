@@ -4,7 +4,7 @@ import {
   Subheading,
   Description,
   Primary,
-  ArgsTable,
+  ArgTypes,
   Stories,
 } from "@storybook/addon-docs";
 import { Pagination } from "../../components/Pagination";
@@ -38,7 +38,7 @@ const PaginationMeta: Meta<typeof Pagination> = {
           <Description>{typeDoc}</Description>
           <Stories title="Examples"></Stories>
           <Subheading>Default props</Subheading>
-          <ArgsTable />
+          <ArgTypes />
         </>
       ),
     },

@@ -1,6 +1,7 @@
 import { FC } from "react";
 import classnames from "classnames";
 import useGlobalSettings from "../../../hooks/useGlobalSettings";
+import { Button } from "../../Button";
 import { CardGroupProps } from "./CardGroup.props";
 import { DataCard } from "../DataCard";
 import { DetailCard } from "../DetailCard";
@@ -62,12 +63,13 @@ const CardGroup: FC<CardGroupProps> = ({
       </div>
       {cta && (
         <div className={`${baseClass}--button-wrap`}>
-          <a
-            className={`${prefix}--button ${prefix}--button--medium ${prefix}--button--secondary`}
-            href={cta.url}
-          >
-            <span className="button__label">{cta.label}</span>
-          </a>
+          <Button
+            kind="button"
+            type="secondary"
+            size="medium"
+            label={cta.label}
+            url={cta.url}
+          />
         </div>
       )}
     </div>

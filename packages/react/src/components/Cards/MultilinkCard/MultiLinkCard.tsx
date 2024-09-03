@@ -26,6 +26,7 @@ const MultilinkCard: FC<MultilinkCardProps> = ({
     [`${baseClass}__size__${size}`]: size,
     [`${baseClass}__isvideo`]: isvideo,
     [`${baseClass}__linklist`]: linklist,
+    [`${baseClass}__no-image`]: !image,
   });
 
   return (

@@ -5,7 +5,7 @@ import {
   Primary,
   Stories,
   Subheading,
-  ArgsTable,
+  ArgTypes,
 } from "@storybook/addon-docs";
 import { Profile } from "../../components/Profile";
 import { ProfileProps } from "../../components/Profile/Profile.props";
@@ -26,7 +26,7 @@ const ProfileMeta: Meta<typeof Profile> = {
           <Primary />
           <Stories title="Examples"></Stories>
           <Subheading>Default props</Subheading>
-          <ArgsTable></ArgsTable>
+          <ArgTypes></ArgTypes>
         </>
       ),
     },

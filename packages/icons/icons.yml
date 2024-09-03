@@ -64,6 +64,12 @@
     - ILO Icons
   sizes:
     - glyph
+- name: download
+  friendly_name: download
+  aliases:
+    - ILO Icons
+  sizes:
+    - glyph
 - name: elipsis
   friendly_name: elipsis
   aliases:

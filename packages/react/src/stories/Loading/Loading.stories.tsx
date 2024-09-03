@@ -5,7 +5,7 @@ import {
   Primary,
   Stories,
   Subheading,
-  ArgsTable,
+  ArgTypes,
 } from "@storybook/addon-docs";
 import { Loading } from "../../components/Loading";
 import { LoadingProps } from "../../components/Loading/Loading.props";
@@ -58,7 +58,7 @@ const LoadingMeta: Meta<typeof Loading> = {
           <Description>{sizeDoc}</Description>
           <Stories title="Examples"></Stories>
           <Subheading>Default props</Subheading>
-          <ArgsTable />
+          <ArgTypes />
         </>
       ),
     },

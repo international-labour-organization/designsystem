@@ -6,7 +6,7 @@ import {
   Primary,
   Stories,
   Subheading,
-  ArgsTable,
+  ArgTypes,
 } from "@storybook/addon-docs";
 import { ContextMenu } from "../../components/ContextMenu";
 import { ContextMenuProps } from "../../components/ContextMenu/ContextMenu.props";
@@ -41,7 +41,7 @@ const ContextMenuMeta: Meta<typeof ContextMenu> = {
           <Description>{propsDoc}</Description>
           <Stories title="Examples"></Stories>
           <Subheading>Default Props</Subheading>
-          <ArgsTable />
+          <ArgTypes />
         </>
       ),
     },

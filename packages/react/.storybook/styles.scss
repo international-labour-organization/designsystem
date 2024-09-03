@@ -1,6 +1,7 @@
 @import "@ilo-org/themes/build/scss/tokens";
 @import "@ilo-org/styles/scss/monorepo";
 
+p,
 h1,
 h2,
 h3,
@@ -10,17 +11,21 @@ h6 {
   font-family: var(--ilo-fonts-display) !important;
 }
 
+body {
+  font-family: var(--ilo-fonts-copy) !important;
+}
+
 button[title="Zoom in"]:hover,
 button[title="Zoom out"]:hover,
 button[title="Reset zoom"]:hover {
-  color: $brand-ilo-dark-blue;
-  background-color: $brand-ilo-light-blue;
+  color: var(--ilo-color-blue-dark);
+  background-color: var(--ilo-color-blue-light);
 }
 
 a[class*="ilo--button"] {
-  color: $brand-ilo-dark-blue;
+  color: var(--ilo-color-blue-dark);
 
   &:hover {
-    color: $brand-ilo-blue;
+    color: var(--ilo-color-blue);
   }
 }

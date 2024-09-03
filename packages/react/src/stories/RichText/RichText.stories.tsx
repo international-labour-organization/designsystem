@@ -3,7 +3,7 @@ import {
   Title,
   Description,
   Primary,
-  ArgsTable,
+  ArgTypes,
   Stories,
   Subheading,
 } from "@storybook/addon-docs";
@@ -32,7 +32,7 @@ const RichTextMeta: Meta<typeof RichText> = {
           <Primary />
           <Stories title="Examples"></Stories>
           <Subheading>Default props</Subheading>
-          <ArgsTable />
+          <ArgTypes />
         </>
       ),
     },
