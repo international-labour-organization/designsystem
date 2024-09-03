@@ -19,6 +19,7 @@ module.exports = {
     //@TODO: Remove this once type errors in tests and args files are fixed
     "src/__tests__",
     "src/components/**/*.args.ts",
+    "vite.config.ts",
   ],
 
   overrides: [
