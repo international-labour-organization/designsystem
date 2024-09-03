@@ -1,5 +1,22 @@
 # @ilo-org/styles
 
+## 1.2.2
+
+### Patch Changes
+
+- 2c2813c0a: Make image optional in multilink card
+- e6d93b5ab: Fixes the logo grid sizing so that wide, narrow logos take up more of the available space.
+- Updated dependencies [a318aa4e6]
+  - @ilo-org/icons@1.1.0
+
+## 1.2.1
+
+### Patch Changes
+
+- Updated dependencies [72159bb1a]
+  - @ilo-org/fonts@1.0.0
+  - @ilo-org/icons@1.0.0
+
 ## 1.2.0
 
 ### Minor Changes

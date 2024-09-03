@@ -67,6 +67,7 @@ export default class Navigation {
       `.${this.prefix}--search--button`
     );
     this.searchBox = this.element.querySelector(`.${this.prefix}--search-box`);
+    this.searchInput = this.searchBox.querySelector("input");
     this.contextButton = this.element.querySelector(
       `.${this.prefix}--language-switcher--button`
     );
@@ -357,6 +358,11 @@ export default class Navigation {
     window.setTimeout(() => {
       this.element.classList.add(`${this.prefix}--search--open`);
     }, 10);
+
+    // Wait for searchinput field to appear
+    setTimeout(() => {
+      this.searchInput.focus();
+    }, 50);
 
     window.addEventListener(
       EVENTS.KEY_DOWN,

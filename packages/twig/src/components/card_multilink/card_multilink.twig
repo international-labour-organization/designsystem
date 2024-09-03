@@ -1,12 +1,13 @@
 {# card_multilink.twig #}
 
-<div class="{{prefix}}--card {{prefix}}--card__type__multilink {% if link|length > 0 %} {{prefix}}--card__action {% endif %} {{prefix}}--card__size__{{size}} {% if isvideo|boolval %} {{prefix}}--card__isvideo {% endif %} {% if linklist %} {{prefix}}--card__linklist {% endif %} {% if size == "wide" or size == "fluid" %} {{prefix}}--card__align__{{alignment}} {% endif %}">
+<div class="{{prefix}}--card {{prefix}}--card__type__multilink {% if link|length > 0 %} {{prefix}}--card__action {% endif %} {{prefix}}--card__size__{{size}} {% if isvideo|boolval %} {{prefix}}--card__isvideo {% endif %} {% if linklist %} {{prefix}}--card__linklist {% endif %} {% if size == "wide" or size == "fluid" %} {{prefix}}--card__align__{{alignment}} {% endif %} {% if not image %} {{prefix}}--card--no-image {% endif %}">
 	{% if link|length > 0 %}
 		<a class="{{prefix}}--card--link" href="{{link}}" title="{{title}}">
 			<span class="{{prefix}}--card--link--text">{{title}}</span>
 		</a>
 	{% endif %}
 	<div class="{{prefix}}--card--wrap">
+		{% if image %}
 		<div class="{{prefix}}--card--image--wrapper">
 			{% include "@components/picture/picture.twig" with {
         image: image,
@@ -14,6 +15,7 @@
       }
       %}
 		</div>
+			{% endif %}
 		<div class="{{prefix}}--card--content">
 			{% if eyebrow %}
 				<p class="{{prefix}}--card--eyebrow">{{eyebrow}}</p>
