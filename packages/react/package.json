@@ -42,14 +42,15 @@
   },
   "exports": {
     ".": {
-      "types": "./dist/types/index.d.ts",
-      "import": "./dist/esm/index.js",
-      "default": "./dist/cjs/index.js"
+      "types": "./lib/types/index.d.ts",
+      "import": "./lib/esm/index.js",
+      "default": "./lib/cjs/index.js"
     },
-    "./styles/": "./dist/styles/"
+    "./styles/": "./lib/styles/"
   },
+  "sideEffects": false,
   "license": "Apache-2.0",
-  "types": "./dist/types/index.d.ts",
+  "types": "./lib/types/index.d.ts",
   "jest": {
     "moduleNameMapper": {
       ".+\\.(css|styl|less|sass|scss|png|jpg|svg|ttf|woff|woff2)$": "identity-obj-proxy"
@@ -60,7 +61,7 @@
     "build:lib": "tsc --noEmit --project tsconfig.build.json && vite build",
     "build:docs": "storybook build",
     "check": "tsc --noEmit --p tsconfig.build.json",
-    "dev:lib": "vite dev",
+    "dev:lib": "vite build --watch",
     "format": "prettier --check . --ignore-path ../../.prettierignore",
     "format:fix": "prettier --write . --ignore-path ../../.prettierignore",
     "lint": "eslint .",
@@ -139,8 +140,8 @@
     "vite-plugin-static-copy": "^1.0.6"
   },
   "peerDependencies": {
-    "react": ">16",
-    "react-dom": ">16"
+    "react": ">17",
+    "react-dom": ">17"
   },
   "publishConfig": {
     "access": "public"

@@ -40,7 +40,6 @@ export default defineConfig({
   root: "./",
   publicDir: false,
   build: {
-    minify: false,
     emptyOutDir: true,
     outDir: OUT_DIR,
     lib: {
