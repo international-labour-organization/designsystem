@@ -51,11 +51,6 @@
   "sideEffects": false,
   "license": "Apache-2.0",
   "types": "./lib/types/index.d.ts",
-  "jest": {
-    "moduleNameMapper": {
-      ".+\\.(css|styl|less|sass|scss|png|jpg|svg|ttf|woff|woff2)$": "identity-obj-proxy"
-    }
-  },
   "scripts": {
     "build": "pnpm build:lib",
     "build:lib": "tsc --noEmit --project tsconfig.build.json && vite build",
@@ -113,28 +108,16 @@
     "@storybook/react": "^8.1.9",
     "@storybook/react-vite": "^8.1.9",
     "@storybook/theming": "^8.1.9",
-    "@testing-library/jest-dom": "5.16.5",
-    "@testing-library/react": "^12.1.2",
-    "@testing-library/user-event": "^13.5.0",
-    "@types/jest": "^27.4.1",
     "@types/mdx": "^2.0.3",
     "@types/node": "^17.0.45",
     "@types/video.js": "7.3.57",
     "@vitejs/plugin-react": "^4.3.1",
     "glob": "^10.3.10",
     "http-server": "^14.1.0",
-    "identity-obj-proxy": "^3.0.0",
-    "jest-environment-jsdom": "27.5.1",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",
-    "react-scripts": "^5.0.1",
-    "remark-gfm": "^3.0.1",
-    "screenfull": "^5.2.0",
     "storybook": "^8.1.9",
     "storybook-addon-rtl": "^1.0.0",
-    "ts-dedent": "^2.2.0",
-    "ts-jest": "^29.1.1",
-    "tslib": "^2.3.1",
     "vite": "^5.2.0",
     "vite-plugin-dts": "^3.9.1",
     "vite-plugin-static-copy": "^1.0.6"
