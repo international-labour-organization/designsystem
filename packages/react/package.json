@@ -63,7 +63,6 @@
     "lint:fix": "eslint . --fix",
     "storybook": "storybook dev -p 6006",
     "storybook:static": "http-server ./storybook-static",
-    "coverage": "vitest run --coverage",
     "test": "vitest",
     "test:ui": "vitest --ui"
   },
