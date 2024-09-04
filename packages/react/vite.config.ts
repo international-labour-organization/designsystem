@@ -1,9 +1,12 @@
-import { defineConfig } from "vite";
+import type { UserConfig as VitestUserConfig } from "vitest/config";
+import { defineConfig, UserConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import dts from "vite-plugin-dts";
 import { viteStaticCopy } from "vite-plugin-static-copy";
 import { globSync } from "glob";
 import { PreRenderedChunk } from "rollup";
+
+type ViteConfig = UserConfig & { test: VitestUserConfig["test"] };
 
 const OUT_DIR = "lib";
 
@@ -21,7 +24,7 @@ function names({ facadeModuleId }: PreRenderedChunk) {
   return "_store/[name].js";
 }
 
-export default defineConfig({
+const config: ViteConfig = {
   plugins: [
     react(),
     dts({
@@ -38,6 +41,11 @@ export default defineConfig({
     }),
   ],
   root: "./",
+  test: {
+    environment: "jsdom",
+    setupFiles: ["./vitest.setup.ts"],
+    include: ["tests/**/*.test.{ts,tsx}"],
+  },
   publicDir: false,
   build: {
     emptyOutDir: true,
@@ -69,4 +77,6 @@ export default defineConfig({
       ],
     },
   },
-});
+};
+
+export default defineConfig(config as UserConfig);
