@@ -15,16 +15,23 @@ import { version } from "../../package.json";
   </h3>
   <span className="welcome--version">v{version}</span>
   <a
-    className="ilo--button ilo--button--large ilo--button--primary"
+    className="ilo--link ilo--link--dark"
     href="/docs/get-started-introduction--page"
     target="true"
     rel="noopener noreferrer"
   >
     <span className="link__label">Get started</span>
   </a>
-  <div>
-    <div className="triangle triangle1"></div>
-    <div className="triangle triangle2"></div>
-    <div className="triangle triangle3"></div>
-  </div>
+</div>
+<div className="triangles">
+  <div
+    className="triangle triangle1"
+    onMouseOver={(e) => {
+      if (!e.target.classList.contains("spinning")) {
+        e.target.classList.add("spinning");
+      }
+    }}
+  ></div>
+  <div className="triangle triangle2"></div>
+  <div className="triangle triangle3"></div>
 </div>

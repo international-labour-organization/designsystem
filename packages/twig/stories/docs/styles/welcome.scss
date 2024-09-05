@@ -11,11 +11,12 @@
 
   .welcome {
     margin-top: 5px;
-    background-color: $brand-ilo-dark-blue;
-    display: flex;
+    display: inline-flex;
     flex-direction: column;
     align-items: baseline;
     gap: 5px;
+    z-index: 1;
+    position: relative;
 
     &--title {
       color: $brand-ilo-white;
@@ -23,11 +24,13 @@
 
     &--subtitle {
       color: #a0cb29;
-      font-size: 1.5rem;
       margin-bottom: 0;
       display: flex;
       align-items: flex-end;
       gap: 5px;
+      span {
+        font-size: 1.5rem;
+      }
 
       img {
         width: 25px;
@@ -51,6 +54,7 @@
     width: 0;
     height: 0;
     border-style: solid;
+    z-index: 0;
   }
 
   .triangle1 {
@@ -68,14 +72,13 @@
     border-color: transparent transparent transparent $brand-ilo-blue;
     top: 150px;
     left: 50%;
-    animation: drift-1 60s infinite;
+    animation: drift-1 75s infinite;
 
     @media (max-width: 768px) {
       border-width: 100px 0 100px 160px;
       top: 60%;
       left: 45%;
       z-index: 2;
-      animation: none;
     }
 
     @media (max-width: 375px) {
@@ -90,13 +93,12 @@
     border-color: transparent transparent transparent $brand-ilo-dark-red;
     top: -40px;
     right: -60px;
-    animation: drift-2 60s infinite;
+    animation: drift-2 75s infinite;
 
     @media (max-width: 768px) {
       border-width: 170px 0 170px 280px;
       top: 40%;
       left: 20%;
-      animation: none;
     }
 
     @media (max-width: 375px) {
