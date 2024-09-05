@@ -1,3 +1,9 @@
+/**
+* This file is an opinionated reset that is based on https://nicolas-cusan.github.io/destyle.css/
+* it aims to provide a clean layer for styling, the reset should be used with normalize.css in order to create
+* a normalized base
+**/
+
 *,
 ::before,
 ::after {
