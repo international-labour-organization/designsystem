@@ -35,4 +35,6 @@ export interface TooltipProps {
    * Describe the background theme of the tooltip
    */
   iconTheme?: Required<TooltipIconThemes>;
+
+  children?: React.ReactNode;
 }

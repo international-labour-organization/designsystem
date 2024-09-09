@@ -1,3 +1,4 @@
+import { ReactNode } from "react";
 import { IconProps } from "../Icon/Icon.props";
 export interface TabsProps {
   /**
@@ -9,5 +10,5 @@ export interface TabsProps {
 export interface TabItem {
   icon?: IconProps;
   label: Required<string>;
-  content: Required<any>;
+  content: Required<ReactNode>;
 }
