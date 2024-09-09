@@ -11,9 +11,8 @@
     "lib",
     "storybook-static",
     "src/stories",
-    "src/__tests__",
     "**/*.args.ts",
-    "src/setup.ts",
-    "scripts"
+    "scripts",
+    "vitest.setup.ts"
   ]
 }
