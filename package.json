@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "A design system for the International Labour Organization",
   "license": "Apache-2.0",
-  "main": "index.js",
+  "type":"module",
   "packageManager": "pnpm@8.6.0",
   "contributors": [
     {
@@ -43,7 +43,7 @@
     "clean:test": "rimraf summarize.js",
     "format": "pnpm turbo run format:fix",
     "lint": "pnpm turbo run lint:fix",
-    "prepare": "node ./prepare.js",
+    "prepare": "node .husky/install.js",
     "react:build:docs": "pnpm turbo run build:docs --filter=@ilo-org/react...",
     "react:build:lib": "pnpm turbo run build:lib --filter react... ",
     "react:dev:docs": "pnpm --filter react storybook",
