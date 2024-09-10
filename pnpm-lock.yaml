@@ -72,7 +72,7 @@ importers:
   config/prettier-config:
     dependencies:
       prettier:
-        specifier: '>=2'
+        specifier: 3.x
         version: 2.8.8
 
   config/typescript-config: {}
