@@ -19,6 +19,8 @@ module.exports = {
     //@TODO: Remove this once type errors in tests and args files are fixed
     "src/__tests__",
     "src/components/**/*.args.ts",
+    "vite.config.ts",
+    "vitest.setup.ts",
   ],
 
   overrides: [
@@ -27,7 +29,7 @@ module.exports = {
     /* =================== */
     {
       // Which files the override will apply to relative to the package root
-      files: ["**/*.{ts,tsx}"],
+      files: ["{src,tests}/**/*.{ts,tsx}"],
       extends: ["@ilo-org/eslint-config/typescript"],
       // The typescript parser options for this package, which will be different
       // from other packages
