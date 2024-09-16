@@ -10,6 +10,24 @@
     - ILO Icons
   sizes:
     - glyph
+- name: arrowdown
+  friendly_name: arrowdown
+  aliases:
+    - ILO Icons
+  sizes:
+    - glyph
+- name: arrowgotoleft
+  friendly_name: arrowgotoleft
+  aliases:
+    - ILO Icons
+  sizes:
+    - glyph    
+- name: arrowgotoright
+  friendly_name: arrowgotoright
+  aliases:
+    - ILO Icons
+  sizes:
+    - glyph    
 - name: arrowleft
   friendly_name: arrowleft
   aliases:
@@ -22,6 +40,12 @@
     - ILO Icons
   sizes:
     - glyph
+- name: arrowsort
+  friendly_name: arrowsort
+  aliases:
+    - ILO Icons
+  sizes:
+    - glyph    
 - name: breadcrumbdivider
   friendly_name: breadcrumbdivider
   aliases:
@@ -40,8 +64,44 @@
     - ILO Icons
   sizes:
     - glyph
+- name: calendar
+  friendly_name: calendar
+  aliases:
+    - ILO Icons
+  sizes:
+    - glyph
+- name: caretleft
+  friendly_name: caretleft
+  aliases:
+    - ILO Icons
+  sizes:
+    - glyph    
+- name: caretup
+  friendly_name: caretup
+  aliases:
+    - ILO Icons
+  sizes:
+    - glyph 
 - name: checkmark
   friendly_name: checkmark
+  aliases:
+    - ILO Icons
+  sizes:
+    - glyph
+- name: chevronleft
+  friendly_name: chevronleft
+  aliases:
+    - ILO Icons
+  sizes:
+    - glyph
+- name: chevronright
+  friendly_name: chevronright
+  aliases:
+    - ILO Icons
+  sizes:
+    - glyph
+- name: chevronup
+  friendly_name: chevronip
   aliases:
     - ILO Icons
   sizes:
@@ -52,6 +112,18 @@
     - ILO Icons
   sizes:
     - glyph
+- name: closedcaptions
+  friendly_name: closedcaptions
+  aliases:
+    - ILO Icons
+  sizes:
+    - glyph
+- name: conference
+  friendly_name: conference
+  aliases:
+    - ILO Icons
+  sizes:
+    - glyph    
 - name: copyright
   friendly_name: copyright
   aliases:
@@ -136,6 +208,12 @@
     - ILO Icons
   sizes:
     - glyph
+- name: launch
+  friendly_name: launch
+  aliases:
+    - ILO Icons
+  sizes:
+    - glyph
 - name: linkedin
   friendly_name: linkedin
   aliases:
@@ -148,12 +226,12 @@
     - ILO Icons
   sizes:
     - glyph
-- name: listarrowreverse
-  friendly_name: listarrowsreverse
+- name: mail
+  friendly_name: mail
   aliases:
     - ILO Icons
   sizes:
-    - glyph
+    - glyph    
 - name: minus
   friendly_name: minus
   aliases:
@@ -162,6 +240,18 @@
     - glyph
 - name: muted
   friendly_name: muted
+  aliases:
+    - ILO Icons
+  sizes:
+    - glyph
+- name: notificationinfo
+  friendly_name: notificationinfo
+  aliases:
+    - ILO Icons
+  sizes:
+    - glyph
+- name: online
+  friendly_name: online
   aliases:
     - ILO Icons
   sizes:
@@ -178,6 +268,12 @@
     - ILO Icons
   sizes:
     - glyph
+- name: pin
+  friendly_name: pin
+  aliases:
+    - ILO Icons
+  sizes:
+    - glyph    
 - name: play
   friendly_name: play
   aliases:
@@ -190,20 +286,32 @@
     - ILO Icons
   sizes:
     - glyph
-- name: scalenerighttriangle
-  friendly_name: scalenerighttriangle
-  aliases:
-    - ILO Icons
-  sizes:
-    - glyph
-- name: scalenerighttrianglereverse
-  friendly_name: scalenerighttrianglereverse
-  aliases:
-    - ILO Icons
-  sizes:
-    - glyph
 - name: search
   friendly_name: search
+  aliases:
+    - ILO Icons
+  sizes:
+    - glyph
+- name: send
+  friendly_name: send
+  aliases:
+    - ILO Icons
+  sizes:
+    - glyph
+- name: settings
+  friendly_name: settings
+  aliases:
+    - ILO Icons
+  sizes:
+    - glyph
+- name: share
+  friendly_name: share
+  aliases:
+    - ILO Icons
+  sizes:
+    - glyph
+- name: statistics
+  friendly_name: statistics
   aliases:
     - ILO Icons
   sizes:
@@ -216,24 +324,6 @@
     - glyph
 - name: success
   friendly_name: success
-  aliases:
-    - ILO Icons
-  sizes:
-    - glyph
-- name: triangle
-  friendly_name: triangle
-  aliases:
-    - ILO Icons
-  sizes:
-    - glyph
-- name: trianglereverse
-  friendly_name: trianglereverse
-  aliases:
-    - ILO Icons
-  sizes:
-    - glyph
-- name: triangledecoration
-  friendly_name: triangledecoration
   aliases:
     - ILO Icons
   sizes:
@@ -268,6 +358,12 @@
     - ILO Icons
   sizes:
     - glyph
+- name: upload
+  friendly_name: upload
+  aliases:
+    - ILO Icons
+  sizes:
+    - glyph    
 - name: x
   friendly_name: x
   aliases:
