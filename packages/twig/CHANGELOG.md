@@ -1,5 +1,11 @@
 # @ilo-org/twig
 
+## 1.2.3
+
+### Patch Changes
+
+- a15094e82: Fixed bug where the last link in the Breadcrumb was rendering twice
+
 ## 1.2.2
 
 ### Patch Changes
