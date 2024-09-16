@@ -3,12 +3,12 @@
 {# THE `HOME` FIELD WILL BE DEPRECATED IN FUTURE VERSIONS AND SHOULD NOT BE USED #}
 {% if home %}
 	{% set firstlink = home %}
-	{% set contextLinks = links|slice(0, links|length - 1) %}
+	{% set contextLinks = links|slice(0, links|length - 2) %}
 {% endif %}
 
 {% if not home %}
 	{% set firstlink = links|first %}
-	{% set contextLinks = links|slice(1, links|length - 1) %}
+	{% set contextLinks = links|slice(1, links|length - 2) %}
 {% endif %}
 
 {% set lastlink = links|last %}
