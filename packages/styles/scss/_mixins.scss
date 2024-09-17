@@ -405,7 +405,7 @@
         height: px-to-rem(14px);
         width: px-to-rem(12px);
         top: px-to-rem(6px);
-        @include dataurlicon("listarrow", $color-base-neutrals-light);
+        @include dataurlicon("caretright", $color-base-neutrals-light);
         background-repeat: no-repeat;
 
         // Left takes precedence in LTR layouts

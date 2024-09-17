@@ -50,10 +50,7 @@
           transform: translateY(-50%) rotate(-90deg);
           transform-origin: center;
           width: px-to-rem(12px);
-          @include dataurlicon(
-            "equilateraltriangle",
-            $color-base-neutrals-light
-          );
+          @include dataurlicon("caretdown", $color-base-neutrals-light);
         }
 
         [dir="rtl"] & {
@@ -71,7 +68,7 @@
       &:hover,
       &:focus {
         .ilo--link-list--label:before {
-          @include dataurlicon("equilateraltriangle", $color-link-text-hover);
+          @include dataurlicon("caretdown", $color-link-text-hover);
         }
       }
     }
@@ -135,7 +132,7 @@
 
     .ilo--link-list--label {
       &:before {
-        @include dataurlicon("equilateraltriangle", $color-base-neutrals-white);
+        @include dataurlicon("caretdown", $color-base-neutrals-white);
       }
     }
 

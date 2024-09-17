@@ -37,7 +37,7 @@
 
         #{$self}--date-extra {
           &::before {
-            @include dataurlicon("equilateraltriangle", $brand-ilo-blue);
+            @include dataurlicon("caretdown", $brand-ilo-blue);
           }
         }
       }
@@ -149,7 +149,7 @@
           top: 50%;
           transform: rotate(-90deg) translateX(50%);
           width: px-to-rem(12px);
-          @include dataurlicon("equilateraltriangle", $brand-ilo-black);
+          @include dataurlicon("caretdown", $brand-ilo-black);
         }
       }
 

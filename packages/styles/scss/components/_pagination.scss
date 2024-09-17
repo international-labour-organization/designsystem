@@ -63,7 +63,7 @@
       transform: translate(-50%, -50%) rotate(180deg);
 
       @include dataurlicon(
-        "doublearrow",
+        "arrowgotoright",
         map-get($color, "ux", "pagination", "default", "icon")
       );
     }
@@ -71,7 +71,7 @@
     &:hover {
       &::before {
         @include dataurlicon(
-          "doublearrow",
+          "arrowgotoright",
           map-get($color, "ux", "pagination", "hover", "icon")
         );
       }
@@ -91,7 +91,7 @@
 
         &::before {
           @include dataurlicon(
-            "doublearrow",
+            "arrowgotoright",
             map-get($color, "ux", "pagination", "default", "icon")
           );
         }
@@ -105,7 +105,7 @@
       width: px-to-rem(10px);
 
       @include dataurlicon(
-        "paginationarrow",
+        "arrowright",
         map-get($color, "ux", "pagination", "default", "icon")
       );
     }
@@ -113,7 +113,7 @@
     &:hover {
       &::before {
         @include dataurlicon(
-          "paginationarrow",
+          "arrowright",
           map-get($color, "ux", "pagination", "hover", "icon")
         );
       }
@@ -133,7 +133,7 @@
 
         &::before {
           @include dataurlicon(
-            "paginationarrow",
+            "arrowright",
             map-get($color, "ux", "pagination", "default", "icon")
           );
         }
@@ -147,7 +147,7 @@
       width: px-to-rem(10px);
 
       @include dataurlicon(
-        "paginationarrow",
+        "arrowright",
         map-get($color, "ux", "pagination", "default", "icon")
       );
     }
@@ -155,7 +155,7 @@
     &:hover {
       &::before {
         @include dataurlicon(
-          "paginationarrow",
+          "arrowright",
           map-get($color, "ux", "pagination", "hover", "icon")
         );
       }
@@ -175,7 +175,7 @@
 
         &::before {
           @include dataurlicon(
-            "paginationarrow",
+            "arrowright",
             map-get($color, "ux", "pagination", "default", "icon")
           );
         }
@@ -186,7 +186,7 @@
   &--last-page {
     &::before {
       @include dataurlicon(
-        "doublearrow",
+        "arrowgotoright",
         map-get($color, "ux", "pagination", "default", "icon")
       );
     }
@@ -194,7 +194,7 @@
     &:hover {
       &::before {
         @include dataurlicon(
-          "doublearrow",
+          "arrowgotoright",
           map-get($color, "ux", "pagination", "hover", "icon")
         );
       }
@@ -214,7 +214,7 @@
 
         &::before {
           @include dataurlicon(
-            "paginationarrow",
+            "arrowright",
             map-get($color, "ux", "pagination", "default", "icon")
           );
         }

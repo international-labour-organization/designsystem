@@ -243,10 +243,7 @@
               background-position: top left;
               background-repeat: no-repeat;
               background-size: contain;
-              @include dataurlicon(
-                "equilateraltriangle",
-                $color-base-neutrals-dark
-              );
+              @include dataurlicon("caretdown", $color-base-neutrals-dark);
               content: "";
               height: px-to-rem(12px);
               position: absolute;
@@ -271,11 +268,11 @@
 
       // Mute Button
       .vjs-mute-control {
-        @include videobutton("volume");
+        @include videobutton("videosoundon");
         height: px-to-rem(40px);
 
         &[title="Unmute"] {
-          @include videobutton("muted");
+          @include videobutton("videosoundoff");
         }
       }
 

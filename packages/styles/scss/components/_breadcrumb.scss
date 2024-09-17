@@ -42,7 +42,7 @@
     [dir="rtl"] & {
       background-position: right;
       background-repeat: no-repeat;
-      @include dataurlicon("breadcrumbdividerrtl", $color-link-text-default);
+      @include dataurlicon("arrowleft", $color-link-text-default);
     }
   }
 
@@ -61,11 +61,11 @@
       position: relative;
       width: px-to-rem(42px);
       height: px-to-rem(16px);
-      @include dataurlicon("elipsis", $color-link-text-default);
+      @include dataurlicon("dotmenu", $color-link-text-default);
 
       &:hover {
         cursor: pointer;
-        @include dataurlicon("elipsis", $color-base-blue-medium);
+        @include dataurlicon("dotmenu", $color-base-blue-medium);
       }
     }
 

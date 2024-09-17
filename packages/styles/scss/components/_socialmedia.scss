@@ -94,58 +94,58 @@
         }
 
         &__facebook {
-          @include get-icon("facebook");
+          @include get-icon("socialfacebook");
 
           #{$c}__theme__dark & {
-            @include get-icon("facebook", "dark");
+            @include get-icon("socialfacebook", "dark");
           }
         }
 
         &__x {
-          @include get-icon("x");
+          @include get-icon("socialx");
 
           #{$c}__theme__dark & {
-            @include get-icon("x", "dark");
+            @include get-icon("socialx", "dark");
           }
         }
 
         &__instagram {
-          @include get-icon("instagram");
+          @include get-icon("socialinstagram");
 
           #{$c}__theme__dark & {
-            @include get-icon("instagram", "dark");
+            @include get-icon("socialinstagram", "dark");
           }
         }
 
         &__youtube {
-          @include get-icon("youtube");
+          @include get-icon("socialyoutube");
 
           #{$c}__theme__dark & {
-            @include get-icon("youtube", "dark");
+            @include get-icon("socialyoutube", "dark");
           }
         }
 
         &__linkedin {
-          @include get-icon("linkedin");
+          @include get-icon("sociallinkedin");
 
           #{$c}__theme__dark & {
-            @include get-icon("linkedin", "dark");
+            @include get-icon("sociallinkedin", "dark");
           }
         }
 
         &__flickr {
-          @include get-icon("flickr");
+          @include get-icon("socialflickr");
 
           #{$c}__theme__dark & {
-            @include get-icon("flickr", "dark");
+            @include get-icon("socialflickr", "dark");
           }
         }
 
         &__tiktok {
-          @include get-icon("tiktok");
+          @include get-icon("socialtiktok");
 
           #{$c}__theme__dark & {
-            @include get-icon("tiktok", "dark");
+            @include get-icon("socialtiktok", "dark");
           }
         }
       }

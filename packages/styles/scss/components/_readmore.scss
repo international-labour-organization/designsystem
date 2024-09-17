@@ -29,7 +29,7 @@
       transform: translateY(-50%);
       transform-origin: center center;
       width: px-to-rem(24px);
-      @include dataurlicon("arrow", $color-ux-labels-actionable);
+      @include dataurlicon("arrowdown", $color-ux-labels-actionable);
     }
 
     &:hover {
@@ -40,7 +40,7 @@
       @include globaltransition("color, background-color, border-color");
 
       &:after {
-        @include dataurlicon("arrow", $color-ux-labels-hover);
+        @include dataurlicon("arrowdown", $color-ux-labels-hover);
       }
     }
 
