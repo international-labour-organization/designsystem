@@ -1,3 +1,4 @@
+/* eslint-disable cypress/unsafe-to-chain-command */
 describe("navigation", () => {
   beforeEach(() => {
     cy.visit("/patterns/navigation");

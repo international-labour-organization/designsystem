@@ -41,6 +41,7 @@ describe("local nav", () => {
       .should("have.attr", "href", "https://www.ilo.org/");
 
     // Main menu
+    // eslint-disable-next-line cypress/unsafe-to-chain-command
     cy.get(".ilo--language-switcher--button")
       .click()
       .then(() => {
