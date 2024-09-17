@@ -4,12 +4,6 @@
     - ILO Icons
   sizes:
     - glyph
-- name: arrow
-  friendly_name: arrow
-  aliases:
-    - ILO Icons
-  sizes:
-    - glyph
 - name: arrowdown
   friendly_name: arrowdown
   aliases:
@@ -45,19 +39,13 @@
   aliases:
     - ILO Icons
   sizes:
-    - glyph    
-- name: breadcrumbdivider
-  friendly_name: breadcrumbdivider
+    - glyph
+- name: arrowup
+  friendly_name: arrowup
   aliases:
     - ILO Icons
   sizes:
-    - glyph
-- name: breadcrumbdividerrtl
-  friendly_name: breadcrumbdividerrtl
-  aliases:
-    - ILO Icons
-  sizes:
-    - glyph
+    - glyph 
 - name: burger
   friendly_name: burger
   aliases:
@@ -70,20 +58,38 @@
     - ILO Icons
   sizes:
     - glyph
+- name: caretdown
+  friendly_name: caretdown
+  aliases:
+    - ILO Icons
+  sizes:
+    - glyph    
 - name: caretleft
   friendly_name: caretleft
   aliases:
     - ILO Icons
   sizes:
-    - glyph    
+    - glyph 
+- name: caretright
+  friendly_name: caretright
+  aliases:
+    - ILO Icons
+  sizes:
+    - glyph       
 - name: caretup
   friendly_name: caretup
   aliases:
     - ILO Icons
   sizes:
     - glyph 
-- name: checkmark
-  friendly_name: checkmark
+- name: check
+  friendly_name: check
+  aliases:
+    - ILO Icons
+  sizes:
+    - glyph
+- name: chevrondown
+  friendly_name: chevrondown
   aliases:
     - ILO Icons
   sizes:
@@ -130,38 +136,14 @@
     - ILO Icons
   sizes:
     - glyph
-- name: doublearrow
-  friendly_name: doublearrow
+- name: dotmenu
+  friendly_name: dotmenu
   aliases:
     - ILO Icons
   sizes:
     - glyph
 - name: download
   friendly_name: download
-  aliases:
-    - ILO Icons
-  sizes:
-    - glyph
-- name: elipsis
-  friendly_name: elipsis
-  aliases:
-    - ILO Icons
-  sizes:
-    - glyph
-- name: equilateraltriangle
-  friendly_name: equilateraltriangle
-  aliases:
-    - ILO Icons
-  sizes:
-    - glyph
-- name: error
-  friendly_name: error
-  aliases:
-    - ILO Icons
-  sizes:
-    - glyph
-- name: facebook
-  friendly_name: facebook
   aliases:
     - ILO Icons
   sizes:
@@ -178,12 +160,6 @@
     - ILO Icons
   sizes:
     - glyph
-- name: global
-  friendly_name: global
-  aliases:
-    - ILO Icons
-  sizes:
-    - glyph
 - name: halfsquaretriangle
   friendly_name: halfsquaretriangle
   aliases:
@@ -196,32 +172,14 @@
     - ILO Icons
   sizes:
     - glyph
-- name: info
-  friendly_name: info
-  aliases:
-    - ILO Icons
-  sizes:
-    - glyph
-- name: instagram
-  friendly_name: instagram
-  aliases:
-    - ILO Icons
-  sizes:
-    - glyph
 - name: launch
   friendly_name: launch
   aliases:
     - ILO Icons
   sizes:
     - glyph
-- name: linkedin
-  friendly_name: linkedin
-  aliases:
-    - ILO Icons
-  sizes:
-    - glyph
-- name: listarrow
-  friendly_name: listarrow
+- name: language
+  friendly_name: language
   aliases:
     - ILO Icons
   sizes:
@@ -238,8 +196,8 @@
     - ILO Icons
   sizes:
     - glyph
-- name: muted
-  friendly_name: muted
+- name: notificationerror
+  friendly_name: notificationerror
   aliases:
     - ILO Icons
   sizes:
@@ -250,14 +208,26 @@
     - ILO Icons
   sizes:
     - glyph
-- name: online
-  friendly_name: online
+- name: notificationinfooutlined
+  friendly_name: notificationinfooutlined
   aliases:
     - ILO Icons
   sizes:
     - glyph
-- name: paginationarrow
-  friendly_name: paginationarrow
+- name: notificationsuccess
+  friendly_name: notificationsuccess
+  aliases:
+    - ILO Icons
+  sizes:
+    - glyph
+- name: notificationwarning
+  friendly_name: notificationwarning
+  aliases:
+    - ILO Icons
+  sizes:
+    - glyph
+- name: online
+  friendly_name: online
   aliases:
     - ILO Icons
   sizes:
@@ -310,50 +280,68 @@
     - ILO Icons
   sizes:
     - glyph
+- name: socialfacebook
+  friendly_name: socialfacebook
+  aliases:
+    - ILO Icons
+  sizes:
+    - glyph
+- name: socialflickr
+  friendly_name: socialflickr
+  aliases:
+    - ILO Icons
+  sizes:
+    - glyph
+- name: socialinstagram
+  friendly_name: socialinstagram
+  aliases:
+    - ILO Icons
+  sizes:
+    - glyph
+- name: sociallinkedin
+  friendly_name: sociallinkedin
+  aliases:
+    - ILO Icons
+  sizes:
+    - glyph
+- name: socialrss
+  friendly_name: socialrss
+  aliases:
+    - ILO Icons
+  sizes:
+    - glyph
+- name: socialtiktok
+  friendly_name: socialtiktok
+  aliases:
+    - ILO Icons
+  sizes:
+    - glyph
+- name: socialx
+  friendly_name: socialx
+  aliases:
+    - ILO Icons
+  sizes:
+    - glyph
+- name: socialyoutube
+  friendly_name: socialyoutube
+  aliases:
+    - ILO Icons
+  sizes:
+    - glyph
 - name: statistics
   friendly_name: statistics
   aliases:
     - ILO Icons
   sizes:
     - glyph
-- name: stemarrow
-  friendly_name: stemarrow
+- name: videosoundoff
+  friendly_name: videosoundoff
   aliases:
     - ILO Icons
   sizes:
     - glyph
-- name: success
-  friendly_name: success
-  aliases:
-    - ILO Icons
-  sizes:
-    - glyph
-- name: volume
-  friendly_name: volume
-  aliases:
-    - ILO Icons
-  sizes:
-    - glyph
-- name: warning
-  friendly_name: warning
-  aliases:
-    - ILO Icons
-  sizes:
-    - glyph
-- name: youtube
-  friendly_name: youtube
-  aliases:
-    - ILO Icons
-  sizes:
-    - glyph
-- name: flickr
-  friendly_name: flickr
-  aliases:
-    - ILO Icons
-  sizes:
-    - glyph
-- name: tiktok
-  friendly_name: tiktok
+- name: videosoundon
+  friendly_name: videosoundon
   aliases:
     - ILO Icons
   sizes:
@@ -364,9 +352,3 @@
     - ILO Icons
   sizes:
     - glyph    
-- name: x
-  friendly_name: x
-  aliases:
-    - ILO Icons
-  sizes:
-    - glyph

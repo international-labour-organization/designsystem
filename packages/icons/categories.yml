@@ -4,18 +4,21 @@ categories:
       - name: Controls
         members:
           - add
-          - arrow
+          - arrowdown
           - arrowgotoleft
+          - arrowgotoright
           - arrowleft
           - arrowright
           - arrowsort
-          - breadcrumbdivider
-          - breadcrumbdividerrtl
+          - arrowup
           - burger
           - calendar
+          - caretdown
           - caretleft
+          - caretright
           - caretup
-          - checkmark
+          - check
+          - chevrondown
           - chevronleft
           - chevronright
           - chevronup
@@ -23,28 +26,22 @@ categories:
           - closedcaptions
           - conference
           - copyright
+          - dotmenu
           - download
-          - doublearrow
-          - elipsis
-          - equilateraltriangle
-          - error
-          - facebook
           - footertriangle
           - fullscreen
-          - global
           - halfsquaretriangle
           - home
-          - info
           - launch
-          - linkedin
-          - instagram
-          - listarrow
+          - language
           - mail
           - minus
-          - muted
+          - notificationerror
           - notificationinfo
+          - notificationinfooutlined
+          - notificationsuccess
+          - notificationwarning
           - online
-          - paginationarrow
           - pause
           - pin
           - play
@@ -53,13 +50,15 @@ categories:
           - send
           - settings
           - share
+          - socialfacebook
+          - socialflickr
+          - socialinstagram
+          - sociallinkedin
+          - socialrss
+          - socialtiktok
+          - socialx
+          - socialyoutube
           - statistics
-          - stemarrow
-          - success
           - upload
-          - volume
-          - warning
-          - youtube
-          - flickr
-          - tiktok
-          - x
+          - videosoundoff
+          - videosoundon
