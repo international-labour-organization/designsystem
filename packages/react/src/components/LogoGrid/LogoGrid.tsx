@@ -43,7 +43,7 @@ const LogoGrid: React.FC<LogoGridProps> = ({ logos, theme = "light" }) => {
     <div className={logoGridClass}>
       <div className={`${baseClass}--logos`}>
         {logos.map((logo) => (
-          <LogoGridItem {...logo} />
+          <LogoGridItem key={logo.label} {...logo} />
         ))}
       </div>
     </div>

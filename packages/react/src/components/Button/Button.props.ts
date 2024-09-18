@@ -10,7 +10,7 @@ export interface ButtonProps {
   /**
    * Specify the callback of your Button.
    */
-  callback?: (e: React.MouseEvent<Element, MouseEvent>) => any;
+  callback?: (e: React.MouseEvent<Element, MouseEvent>) => unknown;
 
   /**
    * Specify the content of your Button.

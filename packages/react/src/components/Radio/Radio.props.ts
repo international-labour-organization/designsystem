@@ -1,5 +1,4 @@
-import { ChoiceFieldProps } from "../../types";
-import { LabelledFormFieldProps } from "../../types";
+import { ChoiceFieldProps, LabelledFormFieldProps } from "../../types";
 
 export type RadioProps = ChoiceFieldProps<HTMLInputElement>;
 

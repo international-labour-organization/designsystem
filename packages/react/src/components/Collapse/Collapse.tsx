@@ -1,3 +1,6 @@
+/* @ESLINT-DEBT During new eslint refactoring this file was omitted because of heavy type refactoring */
+/* eslint-disable */
+
 import classNames from "classnames";
 import { cloneElement, forwardRef, useMemo } from "react";
 import Transition, {

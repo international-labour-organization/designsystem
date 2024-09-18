@@ -21,7 +21,7 @@ export interface SearchFieldProps {
   /**
    * The search field submit button's click function.
    */
-  callback?: (e: React.MouseEvent<HTMLInputElement, MouseEvent>) => any;
+  callback?: (e: React.MouseEvent<HTMLInputElement, MouseEvent>) => unknown;
 
   /**
    * Specify an optional className to be added to your Button.

@@ -17,8 +17,10 @@ export default function getDefaultDimensionValue(
   const value = elem[offset];
   const margins = MARGINS[dimension];
 
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-return
   return (
     // @ts-ignore
+    // eslint-disable-next-line @typescript-eslint/restrict-plus-operands
     value +
     // @ts-ignore
     parseInt(css(elem, margins[0]), 10) +

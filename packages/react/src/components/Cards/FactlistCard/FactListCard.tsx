@@ -16,7 +16,7 @@ const FactlistCard: FC<FactlistCardProps> = ({
   const baseClass = `${prefix}--card`;
 
   const cardClasses = classnames(baseClass, `${baseClass}__type__factlist`, {
-    [`${baseClass}__size__${size}`]: size,
+    [`${baseClass}__size__${size as string}`]: size,
     [`${baseClass}__theme__${theme}`]: theme,
   });
 
@@ -34,7 +34,7 @@ const FactlistCard: FC<FactlistCardProps> = ({
           {list && (
             <List alignment="default" ordered="unordered">
               {list.map((item, index) => (
-                <ListItem id={`list${index}`}>
+                <ListItem id={`list${index}`} key={`${item}`}>
                   <p>{item}</p>
                 </ListItem>
               ))}

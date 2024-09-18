@@ -14,7 +14,7 @@ export interface AccordionProps {
   /**
    * Callback to onButtonClick event;
    */
-  onButtonClick?: (e: MouseEvent<HTMLButtonElement>, i: any) => void;
+  onButtonClick?: (e: MouseEvent<HTMLButtonElement>, i: unknown) => void;
 
   /**
    * Allow multiple accordions to be expanded at once, default value is false
@@ -37,5 +37,5 @@ export interface AccordionContextProps {
   getUpdatedItems: typeof getUpdatedItems;
   setActiveItems: Dispatch<SetStateAction<string[]>>;
   allowMultipleExpanded: boolean;
-  onButtonClick?: (e: MouseEvent<HTMLButtonElement>, i: any) => void;
+  onButtonClick?: (e: MouseEvent<HTMLButtonElement>, i: unknown) => void;
 }

@@ -1,3 +1,5 @@
+/* @ESLINT-DEBT During new eslint refactoring this file was omitted because of heavy type refactoring */
+/* eslint-disable */
 import { FC } from "react";
 import classnames from "classnames";
 import useGlobalSettings from "../../../hooks/useGlobalSettings";

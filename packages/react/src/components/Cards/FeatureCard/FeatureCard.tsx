@@ -22,7 +22,7 @@ const FeatureCard: FC<FeatureCardProps> = ({
 
   const cardClasses = classnames(baseClass, `${baseClass}__type__feature`, {
     [`${baseClass}__action`]: link,
-    [`${baseClass}__size__${size}`]: size,
+    [`${baseClass}__size__${size as string}`]: size,
     [`${baseClass}__isvideo`]: isvideo,
     [`${baseClass}__linklist`]: linklist,
     [`${baseClass}__theme__${theme}`]: theme,
