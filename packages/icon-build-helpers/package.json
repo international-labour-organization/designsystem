@@ -45,10 +45,11 @@
   "scripts": {
     "format": "prettier --check . --ignore-path ../../.prettierignore",
     "format:fix": "prettier --write . --ignore-path ../../.prettierignore",
-    "lint": "eslint --ext .js,.ts,.tsx",
-    "lint:fix": "eslint --ext .js,.ts,.tsx --fix"
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
   },
   "devDependencies": {
+    "@ilo-org/eslint-config": "workspace:*",
     "@babel/generator": "^7.21.9",
     "@babel/preset-env": "^7.21.5",
     "@babel/preset-react": "^7.18.6",
