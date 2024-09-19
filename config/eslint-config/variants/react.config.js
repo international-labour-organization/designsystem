@@ -43,7 +43,14 @@ const ReactConfig = {
 
 export default [
   ...baseTsConfig,
-  react.configs.flat.recommended,
+  {
+    ...react.configs.flat.recommended,
+    settings: {
+      react: {
+        version: "18",
+      },
+    },
+  },
   react.configs.flat["jsx-runtime"],
   a11y.flatConfigs.recommended,
   ReactConfig,

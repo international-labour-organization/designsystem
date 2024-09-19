@@ -12,7 +12,7 @@ const BaseJSConfig = {
     },
   },
   rules: {
-    "no-console": "warn",
+    "no-console": ["warn", { allow: ["warn", "error"] }],
     "prettier/prettier": "error",
     "no-duplicate-imports": "warn",
     "no-await-in-loop": "warn",

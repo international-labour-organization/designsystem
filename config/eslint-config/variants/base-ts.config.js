@@ -2,10 +2,7 @@ import BaseJSConfig from "./base-js.config.js";
 import ts from "typescript-eslint";
 import { resolve } from "path";
 
-const TSConfigs = [
-  resolve(process.cwd(), "tsconfig.build.json"),
-  resolve(process.cwd(), "tsconfig.json"),
-];
+const tsconfigPath = resolve(process.cwd(), "tsconfig.json");
 
 const RecommendedTSConfig = ts.configs.recommendedTypeChecked.map((config) => ({
   ...config,
@@ -13,7 +10,7 @@ const RecommendedTSConfig = ts.configs.recommendedTypeChecked.map((config) => ({
   languageOptions: {
     ...config.languageOptions,
     parserOptions: {
-      project: TSConfigs,
+      project: tsconfigPath,
     },
   },
 }));
@@ -28,7 +25,7 @@ const BaseTSConfig = {
     parser: ts.parser,
     parserOptions: {
       sourceType: "module",
-      project: TSConfigs,
+      project: tsconfigPath,
     },
   },
   rules: {
@@ -53,10 +50,10 @@ const BaseTSConfig = {
 export default ts.config(
   ...BaseJSConfig,
   ...RecommendedTSConfig,
-  BaseTSConfig,
   {
     // disable type-aware linting on JS files
     files: ["**/*.js"],
     ...ts.configs.disableTypeChecked,
-  }
+  },
+  BaseTSConfig
 );
