@@ -41,8 +41,8 @@
     "build:docs": "pnpm build",
     "format": "prettier --check . --ignore-path ../../.prettierignore",
     "format:fix": "prettier --write . --ignore-path ../../.prettierignore",
-    "lint": "eslint --ext .js,.ts,.tsx",
-    "lint:fix": "eslint --ext .js,.ts,.tsx --fix"
+    "lint": "eslint",
+    "lint:fix": "eslint --fix"
   },
   "author": "@johnpauldavis, @avrilpearl, @ghlost, @justintemps",
   "license": "Apache-2.0",

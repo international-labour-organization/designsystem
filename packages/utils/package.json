@@ -59,7 +59,7 @@
     "build:lib": "pnpm build",
     "build:docs": "pnpm build",
     "lint": "eslint .",
-    "lint:fix": "eslint . --ext .ts --fix",
+    "lint:fix": "eslint . --fix",
     "test": "jest --coverage",
     "types": "tsc"
   },
