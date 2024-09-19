@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "A design system for the International Labour Organization",
   "license": "Apache-2.0",
-  "type":"module",
+  "type": "module",
   "packageManager": "pnpm@8.6.0",
   "contributors": [
     {
@@ -74,10 +74,10 @@
   "dependencies": {
     "@changesets/cli": "^2.25.0",
     "@manypkg/cli": "^0.19.2",
-    "eslint": "^8.41.0",
+    "eslint": "^9.0.0",
     "husky": "^7.0.4",
     "lint-staged": "^13.1.0",
-    "prettier": "^2.8.8",
+    "prettier": "^3.0.0",
     "rimraf": "^3.0.2",
     "rollup": "^3.23.0",
     "turbo": "1.7.4",
