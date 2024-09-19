@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Prettier config for ILO Design System",
   "main": "index.js",
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/international-labour-organization/designsystem.git",
