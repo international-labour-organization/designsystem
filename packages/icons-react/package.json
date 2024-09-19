@@ -53,8 +53,8 @@
     "clean": "rimraf es lib umd next",
     "format": "prettier --check . --ignore-path ../../.prettierignore",
     "format:fix": "prettier --write . --ignore-path ../../.prettierignore",
-    "lint": "eslint --ext .js,.ts,.tsx",
-    "lint:fix": "eslint --ext .js,.ts,.tsx --fix",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "postinstall": "carbon-telemetry collect --install"
   },
   "peerDependencies": {
@@ -69,6 +69,7 @@
     "@ilo-org/icons": "workspace:*"
   },
   "devDependencies": {
+    "@ilo-org/eslint-config": "workspace:*",
     "@babel/plugin-transform-react-constant-elements": "^7.17.6",
     "@babel/preset-env": "^7.21.5",
     "@babel/preset-react": "^7.18.6",
