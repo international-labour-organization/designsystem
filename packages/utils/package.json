@@ -58,8 +58,6 @@
     "build": "rollup -c",
     "build:lib": "pnpm build",
     "build:docs": "pnpm build",
-    "format": "prettier --check . --ignore-path ../../.prettierignore",
-    "format:fix": "prettier --write . --ignore-path ../../.prettierignore",
     "lint": "eslint .",
     "lint:fix": "eslint . --ext .ts --fix",
     "test": "jest --coverage",

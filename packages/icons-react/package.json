@@ -51,8 +51,6 @@
     "build:lib": "pnpm build",
     "build:docs": "pnpm build",
     "clean": "rimraf es lib umd next",
-    "format": "prettier --check . --ignore-path ../../.prettierignore",
-    "format:fix": "prettier --write . --ignore-path ../../.prettierignore",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "postinstall": "carbon-telemetry collect --install"
