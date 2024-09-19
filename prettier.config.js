@@ -1,3 +1,3 @@
-"use strict";
-const config = require("./config/prettier-config/index.js");
-module.exports = config;
+import PrettierConfig from "./config/prettier-config/index.js";
+
+export default PrettierConfig;
