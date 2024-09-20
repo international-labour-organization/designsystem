@@ -12,11 +12,11 @@ npm install -D @ilo-org/eslint-config
 
 `@ilo-org/eslint-config` provides a list of ESLint flat configurations:
 
-| Config Name | Description             | Internal Extends |
-| ----------- | ----------------------- | ---------------- |
-| js          | Base JavaScript config  | ⛔               |
-| ts          | Base Typescript config  | `js`             |
-| react       | React Typescript config | `ts` -> `js`     |
+| Config Name | Description                           | Internal Extends |
+| ----------- | ------------------------------------- | ---------------- |
+| js          | Base JavaScript config                | ⛔               |
+| recommended | Recommended configuration `js` + `ts` | `js`             |
+| react       | React Typescript config               | `ts` -> `js`     |
 
 You can use any configuration you like by simply including it inside your eslint config
 
@@ -25,7 +25,7 @@ Just export it
 ```js
 import configs from "@ilo-org/eslint-config";
 
-export default configs.ts;
+export default configs.recommended;
 ```
 
 or extend and add your own
@@ -34,7 +34,7 @@ or extend and add your own
 import configs from "@ilo-org/eslint-config";
 
 export default [
-  configs.ts,
+  ...configs.recommended,
   {
     rules: {
       "no-console": "warn",

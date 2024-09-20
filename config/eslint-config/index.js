@@ -3,9 +3,11 @@ import ts from "./variants/base-ts.config.js";
 import react from "./variants/react.config.js";
 import storybook from "./variants/storybook-js.config.js";
 
-export default {
+const configs = {
   js,
-  ts,
+  recommended: ts,
   react,
   storybook,
 };
+
+export default configs;

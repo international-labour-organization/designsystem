@@ -5,4 +5,4 @@ const UtilsConfig = {
   ignores: ["src/tests/"],
 };
 
-export default [...configs.ts, UtilsConfig];
+export default [...configs.recommended, UtilsConfig];

@@ -10,10 +10,10 @@ The `@ilo-org/eslint-config` package now uses ESLint 9 and exports only flat con
 
 Here are the available configs:
 
-| Config Name | Description            | Internal Extends |
-| ----------- | ---------------------- | ---------------- |
-| js          | Base JavaScript config | ⛔               |
-| ts          | Base TypeScript config | `js`             |
-| react       | React config           | `ts` -> `js`     |
+| Config Name | Description                      | Internal Extends |
+| ----------- | -------------------------------- | ---------------- |
+| js          | Base JavaScript config           | ⛔               |
+| recommended | Recommended one with `js` + `ts` | `js`             |
+| react       | React config                     | `ts` -> `js`     |
 
 Make sure to check out the [ESLint 9 migration guide](https://eslint.org/docs/latest/use/migrate-to-9.0.0) for details on updating your configuration.
