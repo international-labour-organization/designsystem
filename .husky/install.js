@@ -10,7 +10,7 @@ if (process.env.CI === "true") {
   process.exit(0);
 }
 
-const husky = await import("husky")
+const husky = await import("husky");
 process.stdout.write("husky - Installing Git hooks \n");
 
 husky.default.install();
