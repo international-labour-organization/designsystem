@@ -1,3 +1,8 @@
 import configs from "@ilo-org/eslint-config";
 
-export default configs.ts;
+/** @type {import("eslint").Linter.Config} */
+const UtilsConfig = {
+  ignores: ["src/tests/"],
+};
+
+export default [...configs.ts, UtilsConfig];
