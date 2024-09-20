@@ -10,41 +10,54 @@ npm install -D @ilo-org/eslint-config
 
 ## Usage
 
-You can use `@ilo-org/eslint-config` in your project by extending it in your
-`eslint` configuration. For example, if we had an `.eslintrc` file:
+`@ilo-org/eslint-config` provides a list of ESLint flat configurations:
 
-```json
-{
-  "extends": ["@ilo-org/eslint-config"]
-}
+| Config Name | Description             | Internal Extends |
+| ----------- | ----------------------- | ---------------- |
+| js          | Base JavaScript config  | ⛔               |
+| ts          | Base Typescript config  | `js`             |
+| react       | React Typescript config | `ts` -> `js`     |
+
+You can use any configuration you like by simply including it inside your eslint config
+
+Just export it
+
+```js
+import configs from "@ilo-org/eslint-config";
+
+export default configs.ts;
 ```
 
-## TypeScript
+or extend and add your own
 
-To use this configuration in a project with Typescript, you can add an `overrides` property to your `.eslintrc`. Here's an example:
+```js
+import configs from "@ilo-org/eslint-config";
 
-```cjs
-// .eslintrc.cjs
-
-module.exports = {
-  extends: ["@ilo-org/eslint-config"],
-  ignorePatterns: ["node_modules/"],
-  overrides: [
-    /* =================== */
-    /* TypeScript Settings */
-    /* =================== */
-    {
-      // Which files the override will apply to relative to the package root
-      files: ["**/*.{ts,tsx}"],
-      extends: ["@ilo-org/eslint-config/typescript"],
-      // Your typescript parser options
-      parserOptions: {
-        project: ["./tsconfig.json"],
-      },
+export default [
+  configs.ts,
+  {
+    rules: {
+      "no-console": "warn",
     },
-  ],
-};
+  },
+];
 ```
+
+## Opinionated rules
+
+| Rule                                              | Status | Description                                                     |
+| ------------------------------------------------- | ------ | --------------------------------------------------------------- |
+| "prettier/prettier"                               | 🚨     | Is strong about formatting                                      |
+| "no-console"                                      | 🚧     | Prevents the use of `console.log` but allows `warn` and `error` |
+| "no-duplicate-imports"                            | 🚧     | Prevents duplicate imports                                      |
+| "no-await-in-loop"                                | 🚧     | Prevents `await` inside loops                                   |
+| "no-unused-vars"                                  | 🚧     | Prevents unused variables but allows `_` to be ignored          |
+| "@typescript-eslint/class-literal-property-style" | 🚧     | Normalizes class literal properties                             |
+| "@typescript-eslint/no-duplicate-enum-values"     | 🚧     |                                                                 |
+| "@typescript-eslint/prefer-for-of"                | 🚧     | Enforces the use of `for-of`                                    |
+| "@typescript-eslint/consistent-type-definitions"  | 🚧     | `interface` is preferred                                        |
+| "@typescript-eslint/ban-ts-comments"              | ✅     |                                                                 |
+| "@typescript-eslint/ban-ts-ignores"               | ✅     |                                                                 |
 
 ## 📝 License
 
