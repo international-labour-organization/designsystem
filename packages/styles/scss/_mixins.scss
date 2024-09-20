@@ -402,9 +402,9 @@
       &::before {
         content: "";
         position: absolute;
-        height: px-to-rem(14px);
-        width: px-to-rem(12px);
-        top: px-to-rem(6px);
+        height: px-to-rem(24px);
+        width: px-to-rem(24px);
+        top: px-to-rem(2px);
         @include dataurlicon("caretright", $color-base-neutrals-light);
         background-repeat: no-repeat;
 
@@ -416,10 +416,6 @@
         // We have to rotate the bullet in RTL
         [dir="rtl"] & {
           transform: rotate(180deg);
-        }
-
-        @include breakpoint("md") {
-          top: px-to-rem(7px);
         }
       }
     }

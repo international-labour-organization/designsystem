@@ -34,7 +34,7 @@
 
       .ilo--link-list--label {
         display: block;
-        padding-left: spacing(5);
+        padding-left: spacing(8);
         position: relative;
 
         &:before {
@@ -43,13 +43,13 @@
           background-size: contain;
           content: "";
           display: block;
-          height: px-to-rem(12px);
+          height: px-to-rem(24px);
+          width: px-to-rem(24px);
           left: 0;
           position: absolute;
           top: 50%;
           transform: translateY(-50%) rotate(-90deg);
           transform-origin: center;
-          width: px-to-rem(12px);
           @include dataurlicon("caretdown", $color-base-neutrals-light);
         }
 
