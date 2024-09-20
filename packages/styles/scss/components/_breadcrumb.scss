@@ -35,7 +35,7 @@
   &--item,
   &--context__collapse {
     background-repeat: no-repeat;
-    @include dataurlicon("breadcrumbdivider", $color-link-text-default);
+    @include dataurlicon("arrowright", $color-link-text-default);
     background-position: left;
     padding-inline: spacing(6) spacing(4);
 
