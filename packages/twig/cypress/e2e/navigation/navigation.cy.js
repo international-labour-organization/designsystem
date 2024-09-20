@@ -1,4 +1,5 @@
-/* eslint-disable cypress/unsafe-to-chain-command */
+/* @ESLINT-DEBT During new eslint refactoring this file was omitted because of heavy type refactoring */
+/* eslint-disable */
 describe("navigation", () => {
   beforeEach(() => {
     cy.visit("/patterns/navigation");
