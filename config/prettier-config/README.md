@@ -14,10 +14,9 @@ You can use this prettier configuration by creating a `prettier.config.js` file
 in the root of project and using this package in the following way:
 
 ```js
-"use strict";
+import prettierConfig from "@ilo-org/prettier-config";
 
-const prettierConfig = require("@ilo-org/prettier-config");
-module.exports = prettierConfig;
+export default prettierConfig;
 ```
 
 ## 📝 License
