@@ -1,5 +1,11 @@
 # @ilo-org/twig
 
+## 1.2.4
+
+### Patch Changes
+
+- 8a9ac6a5f: Adds backward compatibility to the socialmedia component which in 1.1.1 removed the twitter icon and replaced it with X. With this, passing `twitter` to as an argument to the icon field will render an X icon.
+
 ## 1.2.3
 
 ### Patch Changes
