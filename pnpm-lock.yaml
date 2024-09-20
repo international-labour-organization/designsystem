@@ -668,8 +668,8 @@ importers:
         specifier: ^7.0.2
         version: 7.0.2(rollup@2.79.1)
       ts-jest:
-        specifier: ^29.2.5
-        version: 29.2.5(@babel/core@7.25.2)(jest@27.5.1)(typescript@4.9.3)
+        specifier: ^27.1.5
+        version: 27.1.5(@babel/core@7.21.8)(@types/jest@27.5.2)(jest@27.5.1)(typescript@4.9.3)
       tslib:
         specifier: ^2.3.1
         version: 2.3.1
@@ -4698,18 +4698,6 @@ packages:
       chalk: 4.1.2
     dev: true
 
-  /@jest/types@29.6.3:
-    resolution: {integrity: sha512-u3UPsIilWKOM3F9CXtrG8LEJmNxwoCQC/XVj4IKYXvvpx7QIi/Kg1LI5uDmDpKlac62NUtX7eLjRh+jVZcLOzw==}
-    engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
-    dependencies:
-      '@jest/schemas': 29.6.3
-      '@types/istanbul-lib-coverage': 2.0.6
-      '@types/istanbul-reports': 3.0.4
-      '@types/node': 20.16.0
-      '@types/yargs': 17.0.33
-      chalk: 4.1.2
-    dev: true
-
   /@joshwooding/vite-plugin-react-docgen-typescript@0.3.1(typescript@4.9.3)(vite@5.3.1):
     resolution: {integrity: sha512-pdoMZ9QaPnVlSM+SdU/wgg0nyD/8wQ7y90ttO2CMCyrrm7RxveYIJ5eNfjPaoMFqW41LZra7QO9j+xV4Y18Glw==}
     peerDependencies:
@@ -7758,12 +7746,6 @@ packages:
 
   /@types/yargs@16.0.9:
     resolution: {integrity: sha512-tHhzvkFXZQeTECenFoRljLBYPZJ7jAVxqqtEI0qTLOmuultnFp4I9yKE17vTuhf7BkhCu7I4XuemPgikDVuYqA==}
-    dependencies:
-      '@types/yargs-parser': 21.0.3
-    dev: true
-
-  /@types/yargs@17.0.33:
-    resolution: {integrity: sha512-WpxBCKWPLr4xSsHgz511rFJAM+wS28w2zEO1QDNY5zM/S8ok70NNfztH0xwhqKyaK0OHCbN98LDAZuy1ctxDkA==}
     dependencies:
       '@types/yargs-parser': 21.0.3
     dev: true
@@ -14688,19 +14670,7 @@ packages:
     engines: {node: ^10.13.0 || ^12.13.0 || ^14.15.0 || >=15.0.0}
     dependencies:
       '@jest/types': 27.5.1
-      '@types/node': 20.16.0
-      chalk: 4.1.2
-      ci-info: 3.9.0
-      graceful-fs: 4.2.11
-      picomatch: 2.3.1
-    dev: true
-
-  /jest-util@29.7.0:
-    resolution: {integrity: sha512-z6EbKajIpqGKU56y5KBUgy1dt1ihhQJgWzUlZHArA/+X2ad7Cb5iF+AK1EWVL/Bo7Rz9uurpqw6SiBCefUbCGA==}
-    engines: {node: ^14.15.0 || ^16.10.0 || >=18.0.0}
-    dependencies:
-      '@jest/types': 29.6.3
-      '@types/node': 20.16.0
+      '@types/node': 17.0.45
       chalk: 4.1.2
       ci-info: 3.9.0
       graceful-fs: 4.2.11
@@ -19555,42 +19525,39 @@ packages:
     engines: {node: '>=6.10'}
     dev: true
 
-  /ts-jest@29.2.5(@babel/core@7.25.2)(jest@27.5.1)(typescript@4.9.3):
-    resolution: {integrity: sha512-KD8zB2aAZrcKIdGk4OwpJggeLcH1FgrICqDSROWqlnJXGCXK4Mn6FcdK2B6670Xr73lHMG1kHw8R87A0ecZ+vA==}
-    engines: {node: ^14.15.0 || ^16.10.0 || ^18.0.0 || >=20.0.0}
+  /ts-jest@27.1.5(@babel/core@7.21.8)(@types/jest@27.5.2)(jest@27.5.1)(typescript@4.9.3):
+    resolution: {integrity: sha512-Xv6jBQPoBEvBq/5i2TeSG9tt/nqkbpcurrEG1b+2yfBrcJelOZF9Ml6dmyMh7bcW9JyFbRYpR5rxROSlBLTZHA==}
+    engines: {node: ^10.13.0 || ^12.13.0 || ^14.15.0 || >=15.0.0}
     hasBin: true
     peerDependencies:
       '@babel/core': '>=7.0.0-beta.0 <8'
-      '@jest/transform': ^29.0.0
-      '@jest/types': ^29.0.0
-      babel-jest: ^29.0.0
+      '@types/jest': ^27.0.0
+      babel-jest: '>=27.0.0 <28'
       esbuild: '*'
-      jest: ^29.0.0
-      typescript: '>=4.3 <6'
+      jest: ^27.0.0
+      typescript: '>=3.8 <5.0'
     peerDependenciesMeta:
       '@babel/core':
         optional: true
-      '@jest/transform':
-        optional: true
-      '@jest/types':
+      '@types/jest':
         optional: true
       babel-jest:
         optional: true
       esbuild:
         optional: true
     dependencies:
-      '@babel/core': 7.25.2
+      '@babel/core': 7.21.8
+      '@types/jest': 27.5.2
       bs-logger: 0.2.6
-      ejs: 3.1.10
       fast-json-stable-stringify: 2.1.0
       jest: 27.5.1
-      jest-util: 29.7.0
+      jest-util: 27.5.1
       json5: 2.2.3
       lodash.memoize: 4.1.2
       make-error: 1.3.6
       semver: 7.6.3
       typescript: 4.9.3
-      yargs-parser: 21.1.1
+      yargs-parser: 20.2.9
     dev: true
 
   /tsconfig-paths@4.2.0:
@@ -21020,6 +20987,7 @@ packages:
   /yargs-parser@21.1.1:
     resolution: {integrity: sha512-tVpsJW7DdjecAiFpbIB1e3qxIQsE6NoPc5/eTdrbbIC4h0LVsWhnoa3g+m2HclBIujHzsxZ4VJVA+GUuc2/LBw==}
     engines: {node: '>=12'}
+    dev: false
 
   /yargs-parser@5.0.1:
     resolution: {integrity: sha512-wpav5XYiddjXxirPoCTUPbqM0PXvJ9hiBMvuJgInvo4/lAOTZzUprArw17q2O1P2+GHhbBr18/iQwjL5Z9BqfA==}
