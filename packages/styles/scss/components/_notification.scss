@@ -53,9 +53,9 @@
     width: calc(100% - 40px);
 
     &:before {
-      background-position: center px-to-rem(24px);
+      background-position: center px-to-rem(22px);
       background-repeat: no-repeat;
-      background-size: px-to-rem(16px);
+      background-size: px-to-rem(24px);
       content: "";
       display: block;
       height: 100%;
@@ -72,22 +72,28 @@
 
       .icon--error & {
         background-color: $color-ux-notification-type-error;
-        @include dataurlicon("error", $color-ux-notification-icon);
+        @include dataurlicon("notificationerror", $color-ux-notification-icon);
       }
 
       .icon--info & {
         background-color: $color-ux-notification-type-info;
-        @include dataurlicon("info", $color-ux-notification-icon);
+        @include dataurlicon("notificationinfo", $color-ux-notification-icon);
       }
 
       .icon--success & {
         background-color: $color-ux-notification-type-success;
-        @include dataurlicon("success", $color-ux-notification-icon);
+        @include dataurlicon(
+          "notificationsuccess",
+          $color-ux-notification-icon
+        );
       }
 
       .icon--warning & {
         background-color: $color-ux-notification-type-warning;
-        @include dataurlicon("warning", $color-ux-notification-icon);
+        @include dataurlicon(
+          "notificationwarning",
+          $color-ux-notification-icon
+        );
       }
     }
   }
