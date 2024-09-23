@@ -92,8 +92,8 @@
     background-repeat: no-repeat;
     background-size: contain;
     display: block;
-    height: 16px;
-    width: 16px;
+    height: px-to-rem(24px);
+    width: px-to-rem(24px);
 
     &__error {
       background-color: var(--ilo-color-notification-type-error);
@@ -102,7 +102,7 @@
 
     &__info {
       background-color: var(--ilo-color-notification-type-info);
-      @include dataurlicon("notificationinfooutlined", "white");
+      @include dataurlicon("notificationinfo", "white");
     }
 
     &__success {

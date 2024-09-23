@@ -35,7 +35,7 @@ const withIcon: TabsProps = {
     {
       icon: {
         hidden: false,
-        name: "info",
+        name: "notificationinfooutlined",
       },
       label:
         "Tab Label With A Really Really Lenghty Title Even Though We Do Not Recommend Such A Lengthy Title",
@@ -56,7 +56,7 @@ const withIcon: TabsProps = {
     {
       icon: {
         hidden: false,
-        name: "info",
+        name: "notificationinfooutlined",
       },
       label: "Tab Label 2",
       content: (
