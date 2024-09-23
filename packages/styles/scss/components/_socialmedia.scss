@@ -6,7 +6,6 @@
 .ilo--social-media {
   $c: &;
   $default-theme: "light";
-  $icon-size: $spacing-spacing-4;
 
   @mixin get-icon($icon, $theme: $default-theme) {
     @include dataurlicon(
@@ -59,16 +58,14 @@
       &--icon {
         background-position: center;
         background-repeat: no-repeat;
-        background-size: auto #{$icon-size};
         text-indent: -999px;
         border-radius: 2px;
         display: inline-block;
-        height: px-to-rem($icon-size + 8px);
-        width: px-to-rem($icon-size + 8px);
+        height: px-to-rem(24px);
+        width: px-to-rem(24px);
         transition: all 0.1s ease-in-out;
 
         &__large {
-          background-size: auto px-to-rem(24px);
           height: px-to-rem(36px);
           width: px-to-rem(36px);
         }
