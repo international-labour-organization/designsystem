@@ -37,7 +37,11 @@
 
         #{$self}--date-extra {
           &::before {
-            @include dataurlicon("caretdown", $brand-ilo-blue);
+            @include dataurlicon("caretright", $brand-ilo-blue);
+
+            [dir="rtl"] & {
+              @include dataurlicon("caretleft", $brand-ilo-blue);
+            }
           }
         }
       }
@@ -136,20 +140,24 @@
       #{$self}--date-extra {
         @include font-styles("body-small");
         margin-bottom: 0;
-        padding-left: spacing(6);
+        padding-inline-start: spacing(5);
         position: relative;
 
         &::before {
           background-repeat: no-repeat;
           content: "";
           display: inline-block;
-          height: px-to-rem(14px);
-          left: 0;
+          height: px-to-rem(24px);
+          left: -8px;
+          bottom: 1px;
           position: absolute;
-          top: 50%;
-          transform: rotate(-90deg) translateX(50%);
-          width: px-to-rem(12px);
-          @include dataurlicon("caretdown", $brand-ilo-black);
+          width: px-to-rem(24px);
+          @include dataurlicon("caretright", $brand-ilo-black);
+
+          [dir="rtl"] & {
+            @include dataurlicon("caretleft", $brand-ilo-black);
+            right: -8px;
+          }
         }
       }
 
