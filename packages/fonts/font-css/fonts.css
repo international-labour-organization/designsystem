@@ -62,7 +62,8 @@
 @font-face {
   font-family: "Noto Sans";
   src: url("../assets/NotoSans.eot");
-  src: url("../assets/NotoSans.eot?#iefix") format("embedded-opentype"),
+  src:
+    url("../assets/NotoSans.eot?#iefix") format("embedded-opentype"),
     url("../assets/NotoSans.woff2") format("woff2"),
     url("../assets/NotoSans.woff") format("woff"),
     url("../assets/NotoSans.ttf") format("truetype");
@@ -74,7 +75,8 @@
 @font-face {
   font-family: "Noto Sans";
   src: url("../assets/NotoSans-Italic.eot");
-  src: url("../assets/NotoSans-Italic.eot?#iefix") format("embedded-opentype"),
+  src:
+    url("../assets/NotoSans-Italic.eot?#iefix") format("embedded-opentype"),
     url("../assets/NotoSans-Italic.woff2") format("woff2"),
     url("../assets/NotoSans-Italic.woff") format("woff"),
     url("../assets/NotoSans-Italic.ttf") format("truetype");
@@ -88,7 +90,8 @@
 @font-face {
   font-family: "Noto Sans";
   src: url("../assets/NotoSans-Bold.eot");
-  src: url("../assets/NotoSans-Bold.eot?#iefix") format("embedded-opentype"),
+  src:
+    url("../assets/NotoSans-Bold.eot?#iefix") format("embedded-opentype"),
     url("../assets/NotoSans-Bold.woff2") format("woff2"),
     url("../assets/NotoSans-Bold.woff") format("woff"),
     url("../assets/NotoSans-Bold.ttf") format("truetype");
@@ -100,8 +103,8 @@
 @font-face {
   font-family: "Noto Sans";
   src: url("../assets/NotoSans-BoldItalic.eot");
-  src: url("../assets/NotoSans-BoldItalic.eot?#iefix")
-      format("embedded-opentype"),
+  src:
+    url("../assets/NotoSans-BoldItalic.eot?#iefix") format("embedded-opentype"),
     url("../assets/NotoSans-BoldItalic.woff2") format("woff2"),
     url("../assets/NotoSans-BoldItalic.woff") format("woff"),
     url("../assets/NotoSans-BoldItalic.ttf") format("truetype");
