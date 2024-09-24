@@ -6,7 +6,6 @@ Drupal.behaviors.notification = {
       document.querySelectorAll(`[data-loadcomponent="Notification"]`),
       (element) => {
         if (!element.dataset.jsProcessed) {
-          // eslint-disable-next-line no-console
           new Notification(element);
           element.dataset.jsProcessed = true;
         }

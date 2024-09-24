@@ -1,5 +1,4 @@
-import { FormFieldProps } from "../../types";
-import { LabelledFormFieldProps } from "../../types";
+import { FormFieldProps, LabelledFormFieldProps } from "../../types";
 
 export interface FileUploadProps extends FormFieldProps<HTMLInputElement> {
   /**

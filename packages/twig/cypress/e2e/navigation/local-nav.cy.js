@@ -1,3 +1,5 @@
+/* @ESLINT-DEBT During new eslint refactoring this file was omitted because of heavy type refactoring */
+/* eslint-disable */
 describe("local nav", () => {
   beforeEach(() => {
     cy.visit("/patterns/localnav");
@@ -40,7 +42,6 @@ describe("local nav", () => {
       .find("a")
       .should("have.attr", "href", "https://www.ilo.org/");
 
-    // Main menu
     cy.get(".ilo--language-switcher--button")
       .click()
       .then(() => {

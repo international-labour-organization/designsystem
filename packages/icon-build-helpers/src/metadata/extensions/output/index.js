@@ -129,7 +129,7 @@ const output = (options = defaultOptions) => {
  * @param {string} [original]
  * @returns {object}
  */
-async function createDescriptor(name, data, size, original) {
+async function createDescriptor(name, data, size, _original) {
   const info = await parse(data, name);
   const { attrs } = info;
   const descriptor = {
@@ -180,9 +180,7 @@ async function parse(svg, name) {
   try {
     return convert(root.content[0]);
   } catch (error) {
-    // eslint-disable-next-line no-console
     console.log(error);
-    // eslint-disable-next-line no-console
     console.log(`Error parsing icon with name: ${name}`);
   }
 }

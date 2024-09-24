@@ -5,7 +5,7 @@ export interface TagProps {
   /**
    * Callback to event;
    */
-  callback?: (e: React.MouseEvent<HTMLButtonElement>) => any;
+  callback?: (e: React.MouseEvent<HTMLButtonElement>) => unknown;
 
   /**
    * Specify the label for the tag

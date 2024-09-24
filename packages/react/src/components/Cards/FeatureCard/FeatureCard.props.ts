@@ -1,7 +1,8 @@
 import { ThemeTypes, CardSize, EventDate, HeadingTypes } from "../../../types";
 
 import { LinkListProps } from "../../LinkList/LinkList.props";
-export type FeatureCardProps = {
+
+export interface FeatureCardProps {
   isvideo?: boolean;
 
   /**
@@ -40,4 +41,4 @@ export type FeatureCardProps = {
    * The image to show in the card
    */
   image?: string;
-};
+}

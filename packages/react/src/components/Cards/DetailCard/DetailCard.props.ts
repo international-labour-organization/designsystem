@@ -1,6 +1,6 @@
 import { CardSize, EventDate, HeadingTypes } from "../../../types";
 
-export type DetailCardProps = {
+export interface DetailCardProps {
   /**
    * A line of text that appears as a small heading above the title of the card
    */
@@ -45,4 +45,4 @@ export type DetailCardProps = {
    * How big should the card be
    */
   size?: Omit<CardSize, "standard">;
-};
+}

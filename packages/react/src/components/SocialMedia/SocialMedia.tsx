@@ -30,7 +30,7 @@ const SocialMedia: React.FC<SocialMediaProps> = ({
       {headline && <h5 className={headlineClass}>{headline}</h5>}
       <ul className={listClass}>
         {icons.map((item) => (
-          <li className={listItemClass}>
+          <li className={listItemClass} key={item.url}>
             <a
               title={item.label}
               className={classnames(

@@ -57,8 +57,6 @@
     "build:docs": "storybook build",
     "check": "tsc --noEmit --p tsconfig.build.json",
     "dev:lib": "vite build --watch",
-    "format": "prettier --check . --ignore-path ../../.prettierignore",
-    "format:fix": "prettier --write . --ignore-path ../../.prettierignore",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "storybook": "storybook dev -p 6006",

@@ -6,7 +6,6 @@ Drupal.behaviors.loading = {
       document.querySelectorAll(`[data-loadcomponent="Loading"]`),
       (element) => {
         if (!element.dataset.jsProcessed) {
-          // eslint-disable-next-line no-console
           new Loading(element);
           element.dataset.jsProcessed = true;
         }

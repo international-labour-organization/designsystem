@@ -6,7 +6,7 @@ import {
 } from "../../../types";
 import { LinkProps } from "../../LinkList/LinkList.props";
 
-export type PromoCardProps = {
+export interface PromoCardProps {
   /**
    * A line of text that appears as a small heading above the title of the card
    */
@@ -43,4 +43,4 @@ export type PromoCardProps = {
   intro?: string;
   link?: string;
   cta?: LinkProps;
-};
+}

@@ -18,7 +18,7 @@ const StatCard: FC<StatCardProps> = ({
 
   const cardClasses = classnames(baseClass, `${baseClass}__type__stat`, {
     [`${baseClass}__color__${color}`]: color,
-    [`${baseClass}__size__${size}`]: size,
+    [`${baseClass}__size__${size as string}`]: size,
   });
 
   return (

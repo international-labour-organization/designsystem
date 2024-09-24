@@ -29,14 +29,15 @@ const Accordion: FC<AccordionProps> = ({
     const expandedOnLoad = allowMultipleExpanded
       ? defaultAccordionsExpanded
       : defaultAccordionsExpanded.length > 0
-      ? [defaultAccordionsExpanded[0]]
-      : defaultAccordionsExpanded;
+        ? [defaultAccordionsExpanded[0]]
+        : defaultAccordionsExpanded;
     setActiveItems(expandedOnLoad);
-  }, [defaultAccordionsExpandedString, allowMultipleExpanded]); //eslint-disable-line react-hooks/exhaustive-deps
+  }, [defaultAccordionsExpandedString, allowMultipleExpanded]);
 
   if (children) {
     const ids: string[] = [];
     Children.forEach(children, (child: ReactElement) => {
+      // eslint-disable-next-line @typescript-eslint/no-unsafe-argument, @typescript-eslint/no-unsafe-member-access
       ids.push(child.props.id);
     });
     if (checkArrayDuplicates(ids)) {

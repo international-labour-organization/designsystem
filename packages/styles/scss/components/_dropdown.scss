@@ -28,9 +28,13 @@
   white-space: nowrap;
   width: calc(100% - 78px);
 
-  background-position: calc(100% - 14px) center, 100% center;
+  background-position:
+    calc(100% - 14px) center,
+    100% center;
   background-repeat: no-repeat;
-  background-size: 24px 24px, 102px 100%;
+  background-size:
+    24px 24px,
+    102px 100%;
   background-image: url("#{colortodataurlicon('arrow', $color-ux-labels-actionable)}"),
     linear-gradient(
       to right,
@@ -94,9 +98,13 @@
   }
 
   &:active {
-    background-position: calc(100% - 14px) center, 100% center;
+    background-position:
+      calc(100% - 14px) center,
+      100% center;
     background-repeat: no-repeat;
-    background-size: 24px 24px, 102px 100%;
+    background-size:
+      24px 24px,
+      102px 100%;
     background-image: url("#{colortodataurlicon('arrow', $color-ux-labels-actionable)}"),
       linear-gradient(
         to right,
@@ -129,7 +137,9 @@
   }
   [dir="rtl"] & {
     padding: 0 spacing(4) 0 spacing(14);
-    background-position: calc(0% + 14px) center, 0% center;
+    background-position:
+      calc(0% + 14px) center,
+      0% center;
     background-image: url("#{colortodataurlicon('arrow', $color-ux-labels-actionable)}"),
       linear-gradient(
         to left,

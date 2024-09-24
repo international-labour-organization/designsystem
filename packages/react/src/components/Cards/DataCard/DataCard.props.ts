@@ -1,7 +1,7 @@
 import { CardSize } from "../../../types";
 import { LinkProps } from "../../LinkList/LinkList.props";
 
-export type DataCardProps = {
+export interface DataCardProps {
   /**
    * A line of text that appears as a small heading at the top of the card
    */
@@ -26,7 +26,7 @@ export type DataCardProps = {
    * Make the content appear in one or two columns. Only applies when the size is set to `wide` or `fluid`
    */
   columns?: string;
-};
+}
 
 interface CardDataset {
   content?: DataContent;

@@ -6,7 +6,6 @@ Drupal.behaviors.callout = {
       document.querySelectorAll(`[data-loadcomponent="Callout"]`),
       (element) => {
         if (!element.dataset.jsProcessed) {
-          // eslint-disable-next-line no-console
           new Callout(element);
           element.dataset.jsProcessed = true;
         }

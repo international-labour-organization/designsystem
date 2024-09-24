@@ -4,6 +4,7 @@ import { Preview } from "@storybook/react";
 import theme from "./theme";
 import "./styles.scss";
 import { brand } from "@ilo-org/themes/tokens/brand/base.json";
+import React from "react";
 
 const preview: Preview = {
   decorators: [

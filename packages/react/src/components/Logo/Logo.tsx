@@ -1,3 +1,5 @@
+/* @ESLINT-DEBT During new eslint refactoring this file was omitted because of heavy type refactoring */
+/* eslint-disable */
 import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { useGlobalSettings } from "../../hooks";
 import { InnerLogoProps, LogoProps } from "./Logo.props";
