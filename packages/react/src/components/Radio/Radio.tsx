@@ -36,7 +36,6 @@ const Radio = React.forwardRef<HTMLInputElement, RadioProps>(
     const { ariaDescribedBy } = formControlCtx;
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-      console.log(e.target.value);
       if (onChange) {
         onChange(e);
       }

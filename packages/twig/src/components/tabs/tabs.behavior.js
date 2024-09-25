@@ -7,7 +7,6 @@ Drupal.behaviors.tabs = {
       document.querySelectorAll(`[data-loadcomponent="Tabs"]`),
       (element) => {
         if (!element.dataset.jsProcessed) {
-          // eslint-disable-next-line no-console
           new Tabs(element);
           element.dataset.jsProcessed = true;
         }
@@ -17,7 +16,6 @@ Drupal.behaviors.tabs = {
       document.querySelectorAll(`[data-loadcomponent="Tooltip"]`),
       (element) => {
         if (!element.dataset.jsProcessed) {
-          // eslint-disable-next-line no-console
           new Tooltip(element);
           element.dataset.jsProcessed = true;
         }

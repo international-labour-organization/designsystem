@@ -1,3 +1,5 @@
+/* @ESLINT-DEBT During new eslint refactoring this file was omitted because of heavy type refactoring */
+/* eslint-disable */
 import classNames from "classnames";
 import { Children, FC, ReactElement, useEffect, useState } from "react";
 import useGlobalSettings from "../../hooks/useGlobalSettings";
@@ -26,7 +28,7 @@ const TagSet: FC<TagSetProps> = ({
       ? [defaultTagActive[0]]
       : defaultTagActive;
     setActiveItems(tagOnLoad);
-  }, [defaultTagActiveString, allowMultipleActive]); //eslint-disable-line react-hooks/exhaustive-deps
+  }, [defaultTagActiveString, allowMultipleActive]);
 
   if (children) {
     const ids: string[] = [];

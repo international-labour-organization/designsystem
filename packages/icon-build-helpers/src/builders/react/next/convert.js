@@ -5,21 +5,21 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-'use strict';
+"use strict";
 
-const t = require('@babel/types');
-const convertStylesStringToObject = require('./stylesStringToObject');
+const t = require("@babel/types");
+const convertStylesStringToObject = require("./stylesStringToObject");
 
 function jsToAST(value) {
-  if (typeof value === 'string') {
+  if (typeof value === "string") {
     return t.stringLiteral(value);
   }
 
-  if (typeof value === 'number') {
+  if (typeof value === "number") {
     return t.numericLiteral(value);
   }
 
-  if (typeof value === 'boolean') {
+  if (typeof value === "boolean") {
     return t.booleanLiteral(value);
   }
 
@@ -28,14 +28,14 @@ function jsToAST(value) {
   }
 
   if (value === undefined) {
-    return t.identifier('undefined');
+    return t.identifier("undefined");
   }
 
   if (Array.isArray(value)) {
     return t.arrayExpression(value.map(jsToAST));
   }
 
-  if (typeof value === 'object') {
+  if (typeof value === "object") {
     return t.objectExpression(
       Object.entries(value).map(([key, value]) => {
         return t.objectProperty(t.identifier(key), jsToAST(value));
@@ -47,8 +47,8 @@ function jsToAST(value) {
 }
 
 function svgToJSX(node) {
-  if (node.type === 'element') {
-    if (node.tagName === 'svg') {
+  if (node.type === "element") {
+    if (node.tagName === "svg") {
       return {
         svgProps: node.attributes,
         children: node.children.map(svgToJSX),
@@ -56,8 +56,8 @@ function svgToJSX(node) {
     }
 
     const { tagName } = node;
-    const attributeAllowlist = new Set(['data-icon-path']);
-    const attributeDenylist = ['data', 'aria'];
+    const attributeAllowlist = new Set(["data-icon-path"]);
+    const attributeDenylist = ["data", "aria"];
     const attributes = Object.entries(node.attributes)
       .filter(([key]) => {
         if (attributeAllowlist.has(key)) {
@@ -66,13 +66,13 @@ function svgToJSX(node) {
         return attributeDenylist.every((prefix) => !key.startsWith(prefix));
       })
       .map(([key, value]) => {
-        if (t.jSXIdentifier(key).name === 'style') {
+        if (t.jSXIdentifier(key).name === "style") {
           return t.jSXAttribute(
             t.jSXIdentifier(key),
             t.jSXExpressionContainer(convertStylesStringToObject(value))
           );
         }
-        if (typeof value === 'string') {
+        if (typeof value === "string") {
           return t.jSXAttribute(t.jSXIdentifier(key), t.stringLiteral(value));
         }
         return t.jSXAttribute(

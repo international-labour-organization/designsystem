@@ -6,7 +6,6 @@ Drupal.behaviors.icon = {
       document.querySelectorAll(`[data-loadcomponent="Icon"]`),
       (element) => {
         if (!element.dataset.jsProcessed) {
-          // eslint-disable-next-line no-console
           new Icon(element);
           element.dataset.jsProcessed = true;
         }

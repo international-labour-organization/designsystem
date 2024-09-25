@@ -1,5 +1,4 @@
-import { LinkGroupProps } from "../LinkList/LinkList.props";
-import { LinkProps } from "../LinkList/LinkList.props";
+import { LinkGroupProps, LinkProps } from "../LinkList/LinkList.props";
 import { SocialMediaProps } from "../SocialMedia";
 
 export interface FooterProps {

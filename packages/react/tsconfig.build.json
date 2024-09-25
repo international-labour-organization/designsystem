@@ -2,6 +2,8 @@
   "extends": "@ilo-org/typescript-config",
   "include": ["src/**/*"],
   "compilerOptions": {
+    "jsx": "react-jsx",
+    "lib": ["dom", "dom.iterable", "es2017"],
     "types": ["node"],
     "declaration": true,
     "declarationDir": "lib/types"

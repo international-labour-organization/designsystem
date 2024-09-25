@@ -5,27 +5,27 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-'use strict';
+"use strict";
 
 const babelConfig = {
   babelrc: false,
   exclude: /node_modules/,
   presets: [
     [
-      '@babel/preset-env',
+      "@babel/preset-env",
       {
         targets: {
-          browsers: ['extends browserslist-config-carbon'],
+          browsers: ["extends browserslist-config-carbon"],
         },
       },
     ],
-    '@babel/preset-react',
+    "@babel/preset-react",
   ],
   plugins: [
-    '@babel/plugin-transform-react-constant-elements',
-    'babel-plugin-dev-expression',
+    "@babel/plugin-transform-react-constant-elements",
+    "babel-plugin-dev-expression",
   ],
-  babelHelpers: 'bundled',
+  babelHelpers: "bundled",
 };
 
 module.exports = {

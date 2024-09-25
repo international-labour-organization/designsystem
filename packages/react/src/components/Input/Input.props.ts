@@ -4,7 +4,7 @@ export interface InputProps {
   /**
    * The input's onChange callback.
    */
-  callback?: (e: React.ChangeEvent<HTMLInputElement>) => any;
+  callback?: (e: React.ChangeEvent<HTMLInputElement>) => unknown;
 
   /**
    * Specify an optional className to be added to your input.

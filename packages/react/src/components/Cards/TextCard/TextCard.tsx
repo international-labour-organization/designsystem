@@ -22,7 +22,7 @@ const TextCard: FC<TextCardProps> = ({
 
   const cardClasses = classnames(baseClass, `${baseClass}__type__text`, {
     [`${baseClass}__action`]: link,
-    [`${baseClass}__size__${size}`]: size,
+    [`${baseClass}__size__${size as string}`]: size,
     [`${baseClass}__theme__${theme}`]: theme,
   });
 

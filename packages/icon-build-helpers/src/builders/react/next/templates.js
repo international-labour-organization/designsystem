@@ -5,9 +5,9 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-'use strict';
+"use strict";
 
-const { default: template } = require('@babel/template');
+const { default: template } = require("@babel/template");
 
 const banner = `/**
  *
@@ -25,7 +25,7 @@ const jsx = template.expression(
     )
   `,
   {
-    plugins: ['jsx'],
+    plugins: ["jsx"],
   }
 );
 
@@ -40,7 +40,7 @@ const component = template(
     %%moduleName%%.propTypes = iconPropTypes;
   `,
   {
-    plugins: ['jsx'],
+    plugins: ["jsx"],
   }
 );
 

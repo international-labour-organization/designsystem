@@ -2,7 +2,7 @@ import { ThemeTypes, CardSize, EventDate, HeadingTypes } from "../../../types";
 
 import { ProfileProps } from "../../Profile/Profile.props";
 
-export type TextCardProps = {
+export interface TextCardProps {
   /**
    * A line of text that appears as a small heading above the title of the card
    */
@@ -34,4 +34,4 @@ export type TextCardProps = {
   date?: EventDate;
   profile: ProfileProps;
   link?: string;
-};
+}

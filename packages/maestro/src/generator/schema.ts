@@ -16,7 +16,7 @@ const field = z.object({
   label: z.string(),
   description: z.string(),
   required: z.boolean().optional(),
-  preview: z.any(),
+  preview: z.unknown(),
   options: z
     .union([z.record(z.string()).optional(), z.record(z.number()).optional()])
     .optional(),

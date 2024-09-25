@@ -22,10 +22,12 @@ const AccordionPanel: FC<AccordionPanelProps> = ({
     [`${baseClass}--open`]: open,
   });
 
-  const ref = useRef<HTMLInputElement>();
+  const ref = useRef<HTMLInputElement>(null);
 
   useLayoutEffect(() => {
-    ref.current && setPanelHeight(ref.current.scrollHeight);
+    if (ref.current) {
+      setPanelHeight(ref.current.scrollHeight);
+    }
   });
 
   return (
@@ -34,8 +36,8 @@ const AccordionPanel: FC<AccordionPanelProps> = ({
       id={`panel-${id}`}
       aria-labelledby={`button-${id}`}
       role="region"
-      ref={ref as any}
-      style={{ ["--height" as any]: `${panelHeight}px` }}
+      ref={ref}
+      style={{ ["--height" as string]: `${panelHeight}px` }}
       {...rest}
     >
       <div className={`${prefix}--accordion--innerpanel`}>{children}</div>

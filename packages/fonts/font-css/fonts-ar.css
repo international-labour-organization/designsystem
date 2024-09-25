@@ -8,7 +8,8 @@
   font-family: "Noto Sans";
   src: url("../assets/Noto_Sans_Arabic/NotoSansArabic-Regular.ttf")
     format("truetype");
-  src: url("../assets/Noto_Sans_Arabic/NotoSansArabic-Regular.eot?#iefix")
+  src:
+    url("../assets/Noto_Sans_Arabic/NotoSansArabic-Regular.eot?#iefix")
       format("embedded-opentype"),
     url("../assets/Noto_Sans_Arabic/NotoSansArabic-Regular.woff2")
       format("woff2"),
@@ -25,7 +26,8 @@
   font-family: "Noto Sans";
   src: url("../assets/Noto_Sans_Arabic/NotoSansArabic-Regular.ttf")
     format("truetype");
-  src: url("../assets/Noto_Sans_Arabic/NotoSansArabic-Regular.eot?#iefix")
+  src:
+    url("../assets/Noto_Sans_Arabic/NotoSansArabic-Regular.eot?#iefix")
       format("embedded-opentype"),
     url("../assets/Noto_Sans_Arabic/NotoSansArabic-Regular.woff2")
       format("woff2"),
@@ -43,7 +45,8 @@
   font-family: "Noto Sans";
   src: url("../assets/Noto_Sans_Arabic/NotoSansArabic-Bold.ttf")
     format("truetype");
-  src: url("../assets/Noto_Sans_Arabic/NotoSansArabic-Bold.eot?#iefix")
+  src:
+    url("../assets/Noto_Sans_Arabic/NotoSansArabic-Bold.eot?#iefix")
       format("embedded-opentype"),
     url("../assets/Noto_Sans_Arabic/NotoSansArabic-Bold.woff2") format("woff2"),
     url("../assets/Noto_Sans_Arabic/NotoSansArabic-Bold.woff") format("woff"),
@@ -58,7 +61,8 @@
   font-family: "Noto Sans";
   src: url("../assets/Noto_Sans_Arabic/NotoSansArabic-Bold.ttf")
     format("truetype");
-  src: url("../assets/Noto_Sans_Arabic/NotoSansArabic-Bold.eot?#iefix")
+  src:
+    url("../assets/Noto_Sans_Arabic/NotoSansArabic-Bold.eot?#iefix")
       format("embedded-opentype"),
     url("../assets/Noto_Sans_Arabic/NotoSansArabic-Bold.woff2") format("woff2"),
     url("../assets/Noto_Sans_Arabic/NotoSansArabic-Bold.woff") format("woff"),
