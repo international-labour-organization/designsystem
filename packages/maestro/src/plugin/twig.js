@@ -219,7 +219,7 @@ const plugin = (options = {}) => {
             if (!seen.includes(template)) {
               includePromises.push(
                 // eslint-disable-next-line no-async-promise-executor
-                new Promise(async (resolve, reject) => {
+                new Promise(async (resolve, _reject) => {
                   const { includes, code } = await compileTemplate(
                     template,
                     file,

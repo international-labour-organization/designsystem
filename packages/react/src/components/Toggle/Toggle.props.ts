@@ -1,5 +1,4 @@
-import { FormFieldProps } from "../../types";
-import { LabelledFormFieldProps } from "../../types";
+import { FormFieldProps, LabelledFormFieldProps } from "../../types";
 
 export interface ToggleProps extends FormFieldProps<HTMLInputElement> {
   /**
@@ -21,7 +20,7 @@ export interface ToggleProps extends FormFieldProps<HTMLInputElement> {
   /**
    * OnClick handler for the input element.
    */
-  onClick?: (event: React.MouseEvent<HTMLInputElement>) => any;
+  onClick?: (event: React.MouseEvent<HTMLInputElement>) => unknown;
 }
 
 export type LabelledToggleProps = LabelledFormFieldProps<ToggleProps>;

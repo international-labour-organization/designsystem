@@ -53,10 +53,8 @@
     "build": "rollup -c",
     "build:lib": "pnpm build",
     "build:docs": "pnpm build",
-    "format": "prettier --check . --ignore-path ../../.prettierignore",
-    "format:fix": "prettier --write . --ignore-path ../../.prettierignore",
-    "lint": "eslint --ext .js,.ts,.tsx",
-    "lint:fix": "eslint --ext .js,.ts,.tsx --fix"
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix"
   },
   "devDependencies": {
     "@ilo-org/eslint-config": "workspace:*",

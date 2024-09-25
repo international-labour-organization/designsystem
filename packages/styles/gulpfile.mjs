@@ -4,7 +4,7 @@ import dartSass from "sass";
 import rename from "gulp-rename";
 import cleanCSS from "gulp-clean-css";
 import { deleteAsync } from "del";
-import cssnano from "gulp-cssnano";
+import cssnano from "cssnano";
 import postcss from "gulp-postcss";
 import sourcemaps from "gulp-sourcemaps";
 
@@ -51,8 +51,13 @@ gulp.task("compile components into css", function () {
 gulp.task("minify css components", function () {
   return gulp
     .src(`${COMPILED_COMPONENTS}/*.css`)
-    .pipe(postcss())
-    .pipe(cssnano({ zindex: false }))
+    .pipe(
+      postcss([
+        cssnano({
+          zindex: false,
+        }),
+      ])
+    )
     .pipe(gulp.dest(COMPILED_COMPONENTS));
 });
 
@@ -80,8 +85,13 @@ gulp.task("bundle main css", function () {
 gulp.task("minify main css bundle", function () {
   return gulp
     .src(`${SRC}/*.css`)
-    .pipe(postcss())
-    .pipe(cssnano({ zindex: false }))
+    .pipe(
+      postcss([
+        cssnano({
+          zindex: false,
+        }),
+      ])
+    )
     .pipe(gulp.dest(BUILD));
 });
 

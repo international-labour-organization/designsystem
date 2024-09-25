@@ -6,7 +6,6 @@ Drupal.behaviors.breadcrumb = {
       document.querySelectorAll(`[data-loadcomponent="Breadcrumb"]`),
       (element) => {
         if (!element.dataset.jsProcessed) {
-          // eslint-disable-next-line no-console
           new Breadcrumb(element);
           element.dataset.jsProcessed = true;
         }

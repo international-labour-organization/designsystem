@@ -44,9 +44,7 @@ const VideoPlayer = forwardRef<VideoPlayerRef, VideoPlayerProps>(
           /**
            * If youtube is true, it will default to the youtube video
            */
-          sources: [
-            { type: youtube ? "video/youtube" : undefined, src: src as string },
-          ],
+          sources: [{ type: youtube ? "video/youtube" : undefined, src: src }],
           dataSetup: {
             techOrder: ["youtube"],
           },

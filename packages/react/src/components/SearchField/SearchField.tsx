@@ -64,7 +64,11 @@ const SearchField: FC<
             className={`${prefix}--input`}
             ref={ref}
           />
-          <span onClick={handleClearButtonClick} className={clearButtonClass}>
+          <span
+            onClick={handleClearButtonClick}
+            className={clearButtonClass}
+            role="presentation"
+          >
             <Icon name="close" hidden={true} />
           </span>
         </div>

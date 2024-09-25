@@ -72,13 +72,9 @@ const Footer: FC<FooterProps> = ({
             {secondarylinks && (
               <nav className="secondarylinks">
                 <ul className="secondarylinks--list">
-                  {secondarylinks.map((link, i) => (
-                    <li className="secondarylinks--list--item">
-                      <a
-                        key={i}
-                        href={link.url}
-                        className="secondarylinks--list--link"
-                      >
+                  {secondarylinks.map((link) => (
+                    <li className="secondarylinks--list--item" key={link.url}>
+                      <a href={link.url} className="secondarylinks--list--link">
                         {link?.label}
                       </a>
                     </li>

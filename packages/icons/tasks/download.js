@@ -8,9 +8,6 @@
 "use strict";
 
 const { svgExporter } = require("@un/figma-connect");
-const path = require("path");
-const rimraf = require("rimraf");
-const fs = require("fs");
 
 async function build() {
   /*rimraf.sync('./src');
@@ -19,6 +16,6 @@ async function build() {
 }
 
 build().catch((error) => {
-  console.log(error);
+  console.error(error);
   process.exit(1);
 });

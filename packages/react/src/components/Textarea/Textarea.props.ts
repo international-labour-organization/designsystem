@@ -1,10 +1,9 @@
-import { FormFieldProps } from "../../types";
-import { LabelledFormFieldProps } from "../../types";
+import { FormFieldProps, LabelledFormFieldProps } from "../../types";
 export interface TextareaProps extends FormFieldProps<HTMLTextAreaElement> {
   /**
    * The Textarea's onChange callback.
    */
-  onChange?: (e: React.ChangeEvent<HTMLTextAreaElement>) => any;
+  onChange?: (e: React.ChangeEvent<HTMLTextAreaElement>) => unknown;
 
   /**
    * Activate automatic spelling correction and processing of text substitutions

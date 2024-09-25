@@ -1,5 +1,11 @@
-"use strict";
+import js from "./variants/base-js.config.js";
+import ts from "./variants/base-ts.config.js";
+import react from "./variants/react.config.js";
 
-module.exports = {
-  extends: [require.resolve("./base")],
+const configs = {
+  js,
+  recommended: ts,
+  react,
 };
+
+export default configs;

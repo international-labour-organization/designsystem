@@ -1,6 +1,6 @@
 import { ThemeTypes, CardSize, HeadingTypes } from "../../../types";
 
-export type FactlistCardProps = {
+export interface FactlistCardProps {
   /**
    * The title of the card
    */
@@ -21,4 +21,4 @@ export type FactlistCardProps = {
    */
   size?: Omit<CardSize, "standard">;
   list?: string[];
-};
+}

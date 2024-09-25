@@ -1,7 +1,7 @@
 import { CardAlignment, CardSize, HeadingTypes } from "../../../types";
 import { LinkListProps } from "../../LinkList/LinkList.props";
 
-export type MultilinkCardProps = {
+export interface MultilinkCardProps {
   isvideo?: boolean;
 
   /**
@@ -32,4 +32,4 @@ export type MultilinkCardProps = {
    * The image to show in the card
    */
   image?: string;
-};
+}

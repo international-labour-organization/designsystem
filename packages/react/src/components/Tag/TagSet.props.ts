@@ -11,7 +11,10 @@ export interface TagSetProps {
   /**
    * Callback to onButtonClick event;
    */
-  onButtonClick?: (e: React.MouseEvent<HTMLButtonElement>, i: number) => any;
+  onButtonClick?: (
+    e: React.MouseEvent<HTMLButtonElement>,
+    i: number
+  ) => unknown;
 
   /**
    * Specify the content of your Tag.

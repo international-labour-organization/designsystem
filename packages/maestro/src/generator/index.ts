@@ -4,17 +4,17 @@ import { create } from "./create";
 
 export type MaestroComponent = (props: Record<string, unknown>) => string;
 export type MaestroPattern = Record<string, unknown>;
-export type MaestroStory = {
+export interface MaestroStory {
   meta: Meta;
   stories: StoryObj[];
-};
+}
 
-type MaestroType = {
+interface MaestroType {
   create: (
     component: MaestroComponent,
     pattern: MaestroPattern
   ) => MaestroStory;
-};
+}
 
 const Maestro: MaestroType = {
   create,
