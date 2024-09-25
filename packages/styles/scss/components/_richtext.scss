@@ -1,62 +1,16 @@
 @use "../tokens" as *;
 @use "../functions" as *;
+@import "./blockquote";
 @import "../mixins";
 
-@mixin element-margins($spacing) {
-  blockquote,
-  figure,
-  hr,
-  iframe,
-  ol,
-  ul,
-  video {
-    margin-block: $spacing;
-  }
-}
-
 .ilo--richtext {
-  a {
-    @include linkstyles();
-    background: none;
-
-    &:hover {
-      background: none;
-    }
-  }
-
-  img {
-    width: 100%;
-  }
-
-  @include element-margins(spacing(14));
-
-  figure {
-    width: 100%;
-  }
-
-  figcaption {
-    border-left: 3px solid #b8c4cc;
-    color: $color-font-caption;
-    font-weight: 400;
+  & > * {
     margin-top: spacing(4);
-    padding-left: spacing(2);
-    @include font-styles("image-caption");
-  }
+    margin-bottom: spacing(4);
 
-  em,
-  i {
-    font-style: italic;
-  }
-
-  strong,
-  b {
-    font-weight: 700;
-  }
-
-  hr {
-    background-color: var(--ilo-color-borders-default);
-    border: none;
-    height: px-to-rem(4px);
+    &:first-child {
+      margin-top: 0;
+    }
   }
 
   h1,
@@ -65,12 +19,18 @@
   h4,
   h5 {
     font-weight: 700;
-    // Headings have 56px top margin and 16px bottom margin
-    margin-block: spacing(14) spacing(4);
+    margin-top: spacing(14);
   }
 
-  p {
-    margin-block: spacing(14) spacing(4);
+  blockquote,
+  video,
+  audio,
+  iframe,
+  figure,
+  hr,
+  pre {
+    margin-top: spacing(14);
+    margin-bottom: spacing(14);
   }
 
   h1 {
@@ -93,68 +53,89 @@
     @include font-styles("rich-text-heading-5-md");
   }
 
-  blockquote {
-    background-color: $color-ux-background-highlight;
-    background-position: right top;
-    background-repeat: no-repeat;
-    background-size: px-to-rem(72px) px-to-rem(40px);
-    display: block;
-    font-family: var(--ilo-fonts-display);
-    padding: spacing(19) 0 spacing(9) spacing(8); // check
-    position: relative;
-    width: fit-content;
-    @include cornercut(72px, 40px);
+  // Italic and bold styles
+  em,
+  i {
+    font-style: italic;
+  }
 
-    p {
-      color: $color-font-blockquote;
-      font-weight: 300;
-      padding: 0 spacing(12) 0 0;
-      position: relative;
-      @include font-styles("pull-quote-sm");
+  strong,
+  b {
+    font-weight: 700;
+  }
 
-      &:after {
-        background-repeat: no-repeat;
-        bottom: 0;
-        content: "";
-        display: inline-block;
-        height: px-to-rem(20px);
-        position: absolute;
-        right: 0;
-        transform: scaleX(-1);
-        width: px-to-rem(26.5px);
-        @include dataurlicon("quote", $color-font-blockquote);
-      }
-    }
+  // Link styles
+  a {
+    @include linkstyles();
+    background: none;
 
-    cite {
-      color: $color-font-cite;
-      font-weight: 400;
-      @include font-styles("pull-quote-cite");
-    }
-
-    &:before {
-      background-repeat: no-repeat;
-      content: "";
-      display: inline-block;
-      height: px-to-rem(40px);
-      left: 0;
-      position: absolute;
-      width: px-to-rem(53px);
-      top: 0;
-      @include dataurlicon("quote", $color-font-blockquote);
+    &:hover {
+      background: none;
     }
   }
 
-  // Repeat list styles from the list component
+  // Image styles
+  img {
+    width: 100%;
+  }
+
+  // Figure styles
+  figure {
+    width: 100%;
+  }
+
+  // Figcaption styles
+  figcaption {
+    border-left: 3px solid #b8c4cc;
+    color: $color-font-caption;
+    font-weight: 400;
+    margin-top: spacing(4);
+    padding-left: spacing(2);
+    @include font-styles("image-caption");
+  }
+
+  // Horizontal rule (hr) styles
+  hr {
+    background-color: var(--ilo-color-borders-default);
+    border: none;
+    height: px-to-rem(4px);
+  }
+
+  // Blockquote styles
+  @include blockquote;
+
+  // List styles (invincible list)
   @include invincible-list;
 
+  // Responsive styles for medium breakpoint
   @include breakpoint("md") {
+    & > * {
+      margin-top: spacing(6);
+      margin-bottom: spacing(6);
+
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+
     h1,
     h2,
     h3,
     h4,
     h5 {
-      margin-block: spacing(16) spacing(6);
+      font-weight: 700;
+      margin-top: spacing(16);
+    }
+
+    blockquote,
+    video,
+    audio,
+    iframe,
+    figure,
+    hr,
+    pre {
+      margin-top: spacing(16);
+      margin-bottom: spacing(16);
     }
 
     h1 {
@@ -177,72 +158,18 @@
       @include font-styles("rich-text-heading-5");
     }
 
-    @include element-margins(spacing(16));
-
     figure {
       width: 100%;
     }
-
-    blockquote {
-      background-size: px-to-rem(86px) px-to-rem(48px);
-      padding: spacing(16) 0 spacing(12) spacing(12);
-      @include cornercut(86px, 48px);
-
-      p {
-        margin-bottom: spacing(6);
-        padding: 0 spacing(12) 0 0;
-        position: relative;
-        @include font-styles("pull-quote-lg");
-
-        &:after {
-          height: px-to-rem(24px);
-          width: px-to-rem(32px);
-        }
-      }
-
-      &:before {
-        height: px-to-rem(48px);
-        width: px-to-rem(64px);
-      }
-    }
   }
 
+  // RTL (Right-to-left) support
   [dir="rtl"] & {
     figcaption {
       border-left: none;
       border-right: 3px solid #b8c4cc;
       padding-left: 0;
       padding-right: spacing(2);
-    }
-
-    blockquote {
-      background-position: -1px -1px;
-      padding: spacing(14) spacing(8) spacing(9) 0;
-      @include cornercut(72px, 40px, "left");
-
-      p {
-        padding: 0 0 0 spacing(12);
-
-        &:after {
-          left: 0;
-          right: auto;
-          transform: scaleX(1);
-        }
-      }
-
-      &:before {
-        left: auto;
-        right: 0;
-        transform: scaleX(-1);
-      }
-
-      @include breakpoint("md") {
-        padding: spacing(15) spacing(12) spacing(12) 0;
-
-        blockquote {
-          @include cornercut(86px, 48px, "left");
-        }
-      }
     }
   }
 }
