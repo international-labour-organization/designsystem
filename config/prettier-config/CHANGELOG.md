@@ -1,5 +1,13 @@
 # @ilo-org/prettier-config
 
+## 2.0.0
+
+### Major Changes
+
+- 93e6ddf24: ### Prettier 3 Upgrade
+
+  We've upgraded to Prettier 3. This is a breaking change because Prettier 3 introduces several updates and deprecations that might impact your current formatting setup.
+
 ## 1.0.0
 
 ### Major Changes

@@ -1,5 +1,13 @@
 # @ilo-org/styles
 
+## 1.2.3
+
+### Patch Changes
+
+- 340494e61: Replace deprecated gulp-cssnano with cssnano via postcss for minifying production stylesheets
+- 340494e61: fixed tooltip placement divison
+  - @ilo-org/icons@1.1.0
+
 ## 1.2.2
 
 ### Patch Changes
