@@ -25,8 +25,8 @@ const TagSet: FC<TagSetProps> = ({
     const tagOnLoad = allowMultipleActive
       ? defaultTagActive
       : defaultTagActive.length > 0
-        ? [defaultTagActive[0]]
-        : defaultTagActive;
+      ? [defaultTagActive[0]]
+      : defaultTagActive;
     setActiveItems(tagOnLoad);
   }, [defaultTagActiveString, allowMultipleActive]);
 
