@@ -1,7 +1,7 @@
 import { CardColor, CardSize, HeadingTypes } from "../../../types";
 import { LinkProps } from "../../LinkList/LinkList.props";
 
-export type StatCardProps = {
+export interface StatCardProps {
   /**
    * The title of the card
    */
@@ -28,4 +28,4 @@ export type StatCardProps = {
    */
   intro?: string;
   source?: LinkProps;
-};
+}

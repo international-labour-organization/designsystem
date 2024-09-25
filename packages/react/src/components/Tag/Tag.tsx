@@ -49,7 +49,6 @@ const Tag: FC<TagProps> = ({
     }
   };
 
-  // @ts-ignore
   const renderButton = () => {
     let button;
 

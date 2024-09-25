@@ -1,6 +1,5 @@
 import { Ref, forwardRef } from "react";
-import { ToggleProps } from "./Toggle.props";
-import { LabelledToggleProps } from "./Toggle.props";
+import { ToggleProps, LabelledToggleProps } from "./Toggle.props";
 import { useGlobalSettings } from "../../hooks";
 import classnames from "classnames";
 import FormControl, { useFormControl } from "../FormControl/FormControl";

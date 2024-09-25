@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/anchor-has-content */
 /* This is a good rule in general, but disabling here because the link has an aria-label */
 
 import {

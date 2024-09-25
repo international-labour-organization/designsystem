@@ -6,7 +6,6 @@ Drupal.behaviors.tooltip = {
       document.querySelectorAll(`[data-loadcomponent="Tooltip"]`),
       (element) => {
         if (!element.dataset.jsProcessed) {
-          // eslint-disable-next-line no-console
           new Tooltip(element);
           element.dataset.jsProcessed = true;
         }

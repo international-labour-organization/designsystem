@@ -6,7 +6,6 @@ Drupal.behaviors.media = {
       document.querySelectorAll(`[data-loadcomponent="Video"]`),
       (element) => {
         if (!element.dataset.jsProcessed) {
-          // eslint-disable-next-line no-console
           new Video(element);
           element.dataset.jsProcessed = true;
         }

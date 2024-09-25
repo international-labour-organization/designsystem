@@ -1,5 +1,4 @@
 declare global {
-  // eslint-disable-next-line @typescript-eslint/consistent-type-definitions
   interface Window {
     Drupal: {
       behaviors: Record<string, { attach: () => void }>;

@@ -1,3 +1,6 @@
+/* @ESLINT-DEBT During new eslint refactoring this file was omitted because of heavy type refactoring */
+/* eslint-disable */
+
 import { createElement, FC } from "react";
 import useGlobalSettings from "../../hooks/useGlobalSettings";
 import { IconProps } from "./Icon.props";

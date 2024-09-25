@@ -16,7 +16,7 @@ const DataCard: FC<DataCardProps> = ({
   const baseClass = `${prefix}--card`;
 
   const cardClasses = classnames(baseClass, `${baseClass}__type__data`, {
-    [`${baseClass}__size__${size}`]: size,
+    [`${baseClass}__size__${size as string}`]: size,
     [`${baseClass}__type__data__columns__${columns}`]: columns,
   });
 
@@ -40,7 +40,7 @@ const DataCard: FC<DataCardProps> = ({
             dataset.content &&
             dataset.content.items &&
             dataset.content.items.map((item) => (
-              <div className={`${baseClass}--area--content`}>
+              <div className={`${baseClass}--area--content`} key={item.label}>
                 <p className={`${baseClass}__type__data--content-label`}>
                   {item.label}
                 </p>
@@ -60,6 +60,7 @@ const DataCard: FC<DataCardProps> = ({
                     className={`${baseClass}--data--file ${prefix}--button ${prefix}--button--primary ${prefix}--button--small`}
                     href={item.url}
                     download
+                    key={item.url}
                   >
                     <span className="button__label">{item.label}</span>
                   </a>
@@ -77,6 +78,7 @@ const DataCard: FC<DataCardProps> = ({
                     <a
                       className={`${baseClass}--cta ${prefix}--button ${prefix}--button--medium ${prefix}--button--secondary`}
                       href={item.url}
+                      key={item.url}
                     >
                       <span className="link__label">{item.label}</span>
                     </a>

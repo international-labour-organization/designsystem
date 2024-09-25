@@ -1,5 +1,8 @@
-import { FormFieldProps, TextInputTypes } from "../../types";
-import { LabelledFormFieldProps } from "../../types";
+import {
+  FormFieldProps,
+  TextInputTypes,
+  LabelledFormFieldProps,
+} from "../../types";
 export interface TextInputProps extends FormFieldProps<HTMLInputElement> {
   /**
    * Optional pattern attribute for phone numbers, zip codes, etc.

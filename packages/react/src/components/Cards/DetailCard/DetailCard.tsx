@@ -19,7 +19,7 @@ const DetailCard: FC<DetailCardProps> = ({
 
   const cardClasses = classnames(baseClass, `${baseClass}__type__detail`, {
     [`${baseClass}__action`]: link,
-    [`${baseClass}__size__${size}`]: size,
+    [`${baseClass}__size__${size as string}`]: size,
   });
 
   return (

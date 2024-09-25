@@ -65,21 +65,21 @@ export type CardTypes =
   | "data";
 
 export type HeadingTypes = "p" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
-export type EventDate = {
+export interface EventDate {
   unix?: string;
   human?: string;
-};
+}
 
 export interface FormFieldProps<T> {
   /**
    * The input's onChange callback.
    */
-  onChange?: (e: React.ChangeEvent<T>) => any;
+  onChange?: (e: React.ChangeEvent<T>) => unknown;
 
   /**
    * The input's onBlur callback.
    */
-  onBlur?: (e: React.FocusEvent<T>) => any;
+  onBlur?: (e: React.FocusEvent<T>) => unknown;
 
   /**
    * Specify an optional className to be added to your input.

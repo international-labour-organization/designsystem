@@ -2,7 +2,7 @@ export interface PaginationProps {
   /**
    * Specify the callback of your Button.
    */
-  callback: (e: React.MouseEvent<Element, MouseEvent>) => any;
+  callback: (e: React.MouseEvent<Element, MouseEvent>) => unknown;
 
   /**
    * Specify an optional className to be added to your Pagination component.
