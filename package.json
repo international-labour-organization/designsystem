@@ -38,7 +38,7 @@
     "ci:changeset": "npx changeset",
     "check:types": "pnpm turbo run check",
     "clean": "pnpm clean:build && pnpm clean:deps",
-    "clean:deps": "rimraf pnpm-lock.yaml && pnpm -r exec rimraf node_modules && rimraf node_modules",
+    "clean:deps": "pnpm -r exec rimraf node_modules && rimraf node_modules",
     "clean:build": "pnpm -r exec rimraf build lib dist .turbo storybook-static es svg umd && rimraf packages/icons/scss packages/styles/css",
     "clean:test": "rimraf summarize.js",
     "format": "pnpm turbo run format:fix",
