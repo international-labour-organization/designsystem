@@ -1,5 +1,17 @@
 # @ilo-org/twig
 
+## 1.2.5
+
+### Patch Changes
+
+- Updated dependencies [340494e61]
+- Updated dependencies [340494e61]
+  - @ilo-org/styles@1.2.3
+  - @ilo-org/brand-assets@1.0.0
+  - @ilo-org/utils@0.1.1
+  - @ilo-org/icons@1.1.0
+  - @ilo-org/maestro@1.0.1
+
 ## 1.2.4
 
 ### Patch Changes
