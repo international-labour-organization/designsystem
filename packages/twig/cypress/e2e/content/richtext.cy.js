@@ -6,7 +6,7 @@ describe("Richtext", () => {
 
   describe("Check desktop margins", () => {
     beforeEach(() => {
-      // Ensure we are in desktop mode (you can adjust the viewport size as needed)
+      // Ensure we are in desktop mode
       cy.viewport(1280, 720);
     });
 
@@ -88,8 +88,8 @@ describe("Richtext", () => {
         });
     });
 
-    it("Blockquote, figure, and iframe elements have 64px top and bottom margin", () => {
-      const elements = ["blockquote", "figure", "iframe"];
+    it("Blockquote, figure, and article elements have 64px top and bottom margin", () => {
+      const elements = ["blockquote", "figure", "article"];
 
       // Loop through each element type and check the calculated margin-top and margin-bottom
       elements.forEach((element) => {
@@ -198,8 +198,8 @@ describe("Richtext", () => {
         });
     });
 
-    it("Blockquote, figure, and iframe elements have 56px top and bottom margin", () => {
-      const elements = ["blockquote", "figure", "iframe"];
+    it("Blockquote, figure, and article elements have 56px top and bottom margin", () => {
+      const elements = ["blockquote", "figure", "article"];
 
       // Loop through each element type and check the calculated margin-top and margin-bottom
       elements.forEach((element) => {
@@ -221,6 +221,85 @@ describe("Richtext", () => {
             });
           });
       });
+    });
+  });
+
+  describe("Utility classes", () => {
+    beforeEach(() => {
+      // Ensure we are in desktop mode
+    });
+
+    it("should display an iframe with a 16:9 aspect ratio", () => {
+      cy.get("@richtextSection")
+        .find(".responsive-video-embed")
+        .then(($el) => {
+          // Get the width of the element
+          const width = $el.width();
+          // Calculate the expected padding-bottom in pixels
+          const expectedPaddingBottom = (width * 9) / 16;
+
+          // Assert the CSS styles
+          cy.wrap($el)
+            .should("have.css", "position", "relative")
+            .and("have.css", "padding-bottom")
+            .then((paddingBottom) => {
+              // Convert the padding-bottom value (which is in 'px') to a number
+              const actualPaddingBottom = parseFloat(paddingBottom);
+              // Assert that the actual padding-bottom is close to the expected value
+              expect(actualPaddingBottom).to.be.closeTo(
+                expectedPaddingBottom,
+                1
+              ); // Allow small margin for rounding
+            });
+        });
+
+      // Ensure the iframe inside the wrapper is positioned and sized correctly
+      cy.get("@richtextSection")
+        .find(".responsive-video-embed iframe")
+        .then(($iframe) => {
+          const top = $iframe.css("top");
+          const left = $iframe.css("left");
+          const width = $iframe.width();
+          const height = $iframe.height();
+
+          // Assert top and left are close to 0px
+          expect(parseFloat(top)).to.be.closeTo(0, 1); // Allow a small margin for rounding
+          expect(parseFloat(left)).to.be.closeTo(0, 1);
+
+          // Assert width and height are close to 100% of the container
+          cy.wrap($iframe)
+            .parent()
+            .then(($parent) => {
+              const parentWidth = $parent.width();
+              const parentHeight = parseFloat($parent.css("padding-bottom"));
+              expect(width).to.be.closeTo(parentWidth, 1); // Allow small rounding margin
+              expect(height).to.be.closeTo(parentHeight, 1);
+            });
+        });
+    });
+
+    it("should resize the iframe responsively", () => {
+      // Check initial viewport size
+      cy.viewport(1280, 720); // Standard 16:9 screen
+      cy.get("@richtextSection")
+        .find(".responsive-video-embed")
+        .then(($iframeWrapper) => {
+          const initialWidth = $iframeWrapper.width();
+          const initialHeight = parseFloat(
+            $iframeWrapper.css("padding-bottom")
+          );
+          expect(initialHeight / initialWidth).to.be.closeTo(9 / 16, 0.01); // Check 16:9 ratio
+        });
+
+      // Resize viewport and check again
+      cy.viewport(800, 600); // Change viewport size
+      cy.get("@richtextSection")
+        .find(".responsive-video-embed")
+        .then(($iframeWrapper) => {
+          const newWidth = $iframeWrapper.width();
+          const newHeight = parseFloat($iframeWrapper.css("padding-bottom"));
+          expect(newHeight / newWidth).to.be.closeTo(9 / 16, 0.01); // Should still maintain 16:9 ratio
+        });
     });
   });
 });
