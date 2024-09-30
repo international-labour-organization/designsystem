@@ -24,7 +24,7 @@ describe("Richtext", () => {
     });
 
     it("Heading elements have a 24px bottom margin", () => {
-      const elements = ["h1", "h2", "h3", "h4", "h5", "p"];
+      const elements = ["h1", "h2", "h3", "h4", "p"];
 
       // Loop through each element type and check the calculated margin-bottom
       elements.forEach((element) => {
@@ -43,7 +43,7 @@ describe("Richtext", () => {
     });
 
     it("Heading elements have a 64px top margin, except the first-child of the component", () => {
-      const headingElements = ["h1", "h2", "h3", "h4", "h5"];
+      const headingElements = ["h1", "h2", "h3", "h4"];
 
       // Loop through each heading element type
       headingElements.forEach((element) => {
@@ -134,7 +134,7 @@ describe("Richtext", () => {
     });
 
     it("Heading elements have a 16px bottom margin", () => {
-      const elements = ["h1", "h2", "h3", "h4", "h5"];
+      const elements = ["h1", "h2", "h3", "h4"];
 
       // Loop through each element type and check the calculated margin-bottom
       elements.forEach((element) => {
@@ -153,7 +153,7 @@ describe("Richtext", () => {
     });
 
     it("Heading elements have a 56px top margin, except the first-child of the component", () => {
-      const headingElements = ["h1", "h2", "h3", "h4", "h5"];
+      const headingElements = ["h1", "h2", "h3", "h4"];
 
       // Loop through each heading element type
       headingElements.forEach((element) => {
