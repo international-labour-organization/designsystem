@@ -18,7 +18,7 @@
   h3,
   h4,
   h5 {
-    font-weight: 700;
+    font-weight: var(--ilo-font-weight-bold);
     margin-top: spacing(14);
   }
 
@@ -34,23 +34,36 @@
   }
 
   h1 {
-    @include font-styles("rich-text-heading-1-md");
+    font-size: var(--ilo-font-size-4xlg);
+    line-height: var(--ilo-line-height-sm);
+    letter-spacing: var(--ilo-letter-spacing-xsm);
   }
 
   h2 {
-    @include font-styles("rich-text-heading-2-md");
+    font-size: var(--ilo-font-size-xlg);
+    line-height: var(--ilo-line-height-md);
+    letter-spacing: var(--ilo-letter-spacing-xsm);
   }
 
   h3 {
-    @include font-styles("rich-text-heading-3-md");
+    font-size: var(--ilo-font-size-lg);
+    line-height: var(--ilo-line-height-lg);
+    letter-spacing: var(--ilo-letter-spacing-sm);
   }
 
-  h4 {
-    @include font-styles("rich-text-heading-4-md");
+  h4,
+  h5,
+  h6 {
+    font-size: var(--ilo-font-size-md);
+    line-height: var(--ilo-line-height-xlg);
+    letter-spacing: var(--ilo-letter-spacing-sm);
   }
 
-  h5 {
-    @include font-styles("rich-text-heading-5-md");
+  p {
+    font-weight: var(--ilo-font-weight-regular);
+    font-size: var(--ilo-font-size-md);
+    line-height: var(--ilo-line-height-2xlg);
+    letter-spacing: var(--ilo-letter-spacing-md);
   }
 
   // Italic and bold styles
@@ -140,7 +153,6 @@
     h3,
     h4,
     h5 {
-      font-weight: 700;
       margin-top: spacing(16);
     }
 
@@ -156,23 +168,30 @@
     }
 
     h1 {
-      @include font-styles("rich-text-heading-1");
+      font-size: var(--ilo-font-size-5xlg);
+      line-height: var(--ilo-line-height-xsm);
+      letter-spacing: var(--ilo-letter-spacing-xsm);
     }
 
     h2 {
-      @include font-styles("rich-text-heading-2");
+      font-size: var(--ilo-font-size-3xlg);
     }
 
     h3 {
-      @include font-styles("rich-text-heading-3");
+      font-size: var(--ilo-font-size-xlg);
+      line-height: var(--ilo-line-height-md);
+      letter-spacing: var(--ilo-letter-spacing-xsm);
     }
 
-    h4 {
-      @include font-styles("rich-text-heading-4");
+    h4,
+    h5,
+    h6 {
+      font-size: var(--ilo-font-size-lg);
+      line-height: var(--ilo-line-height-lg);
     }
 
-    h5 {
-      @include font-styles("rich-text-heading-5");
+    p {
+      font-size: var(--ilo-font-size-lg);
     }
 
     figure {
