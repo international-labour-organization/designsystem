@@ -1,5 +1,11 @@
 # @ilo-org/twig
 
+## 1.2.6
+
+### Patch Changes
+
+- b63faa7c3: Data Cards can pass a `target` to buttons rendered by `dataset.files.items`. This fixes some inconsistent handling in cases where those links were pointing to files.
+
 ## 1.2.5
 
 ### Patch Changes
