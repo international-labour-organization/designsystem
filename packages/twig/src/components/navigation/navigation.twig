@@ -142,30 +142,29 @@
 				<!-- /.{{prefix}}--subnav--inner -->
 			</nav>
 		{% endif %}
-
+	</div>
+	<!-- /.{{prefix}}--header--navigation -->
 		<div class="{{prefix}}--search-box">
 			<div class="{{prefix}}--header--inner {{ prefix }}--container">
 				{% block desktopSearch %}
 					{% include '@components/form/form.twig' with {
-            attributes: {
-              action: searchfield.action,
-              "aria-label": label,
-              "data-search": "true",
-            },
-            fieldsets: [{
-              fields: [{
-                type: "search",
-                placeholder: searchfield.input.placeholder,
-                name: searchfield.input.name,
-                id: searchfield.input.id,
-              }]
-            }]
-          }
-          %}
+						attributes: {
+						action: searchfield.action,
+						"aria-label": label,
+						"data-search": "true",
+						},
+						fieldsets: [{
+						fields: [{
+							type: "search",
+							placeholder: searchfield.input.placeholder,
+							name: searchfield.input.name,
+							id: searchfield.input.id,
+						}]
+						}]
+						}
+					%}
 				{% endblock %}
 			</div>
 		</div>
 		<!-- /.{{prefix}}--search-box -->
-	</div>
-	<!-- /.{{prefix}}--header--navigation -->
 </header>

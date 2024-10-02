@@ -267,17 +267,17 @@ const Navigation: FC<NavigationProps> = ({
             </div>
           </nav>
         )}
-        <div
-          style={{ display: searchTabbable ? "block" : "none" }}
-          className={`${prefix}--search-box`}
-        >
-          <div className={`${prefix}--header--inner ${prefix}--container`}>
-            <SearchField
-              input={searchfield?.input}
-              action={searchfield?.action}
-              ref={searchInputRef}
-            ></SearchField>
-          </div>
+      </div>
+      <div
+        style={{ display: searchTabbable ? "block" : "none" }}
+        className={`${prefix}--search-box`}
+      >
+        <div className={`${prefix}--header--inner ${prefix}--container`}>
+          <SearchField
+            input={searchfield?.input}
+            action={searchfield?.action}
+            ref={searchInputRef}
+          ></SearchField>
         </div>
       </div>
     </header>
