@@ -8,7 +8,7 @@ datacard:
     dataset:
       type: object
       label: Dataset object
-      description: Array of Content (label, copy), Files object (optional headline, array of items with label and url) and Links object (optional headline, array of items with label and url)
+      description: Array of Content (label, copy), Files object (optional headline, array of items with label, url and target) and Links object (optional headline, array of items with label and url)
       preview:
         content:
           items:
@@ -21,8 +21,10 @@ datacard:
           items:
             - label: PDF 3.2 MB
               url: "https://www.ilo.org"
+              target: "_blank"
             - label: EPUB 5.8 MB
               url: "https://www.ilo.org"
+              target: "_parent"
             - label: MOBI 2.4 MB
               url: "https://www.ilo.org"
         cta:
