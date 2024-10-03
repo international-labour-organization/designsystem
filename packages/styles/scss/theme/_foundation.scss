@@ -83,16 +83,17 @@
   /**
     * Font-size
     */
-  --ilo-font-size-2xsm: #{px-to-rem(10)};
-  --ilo-font-size-xsm: #{px-to-rem(12)};
-  --ilo-font-size-sm: #{px-to-rem(14)};
-  --ilo-font-size-md: #{px-to-rem(16)};
-  --ilo-font-size-lg: #{px-to-rem(18)};
-  --ilo-font-size-xlg: #{px-to-rem(24)};
-  --ilo-font-size-2xlg: #{px-to-rem(28)};
-  --ilo-font-size-3xlg: #{px-to-rem(32)};
-  --ilo-font-size-4xlg: #{px-to-rem(36)};
-  --ilo-font-size-5xlg: #{px-to-rem(44)};
+
+  --ilo-font-size-2xsm: calc(#{px-to-rem(10)} * var(--ilo-scale));
+  --ilo-font-size-xsm: calc(#{px-to-rem(12)} * var(--ilo-scale));
+  --ilo-font-size-sm: calc(#{px-to-rem(14)} * var(--ilo-scale));
+  --ilo-font-size-md: calc(#{px-to-rem(16)} * var(--ilo-scale));
+  --ilo-font-size-lg: calc(#{px-to-rem(18)} * var(--ilo-scale));
+  --ilo-font-size-xlg: calc(#{px-to-rem(24)} * var(--ilo-scale));
+  --ilo-font-size-2xlg: calc(#{px-to-rem(28)} * var(--ilo-scale));
+  --ilo-font-size-3xlg: calc(#{px-to-rem(32)} * var(--ilo-scale));
+  --ilo-font-size-4xlg: calc(#{px-to-rem(36)} * var(--ilo-scale));
+  --ilo-font-size-5xlg: calc(#{px-to-rem(44)} * var(--ilo-scale));
 
   /**
     * Font-weight
