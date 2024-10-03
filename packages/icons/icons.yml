@@ -10,18 +10,18 @@
     - ILO Icons
   sizes:
     - glyph
-- name: arrowgotoleft
-  friendly_name: arrowgotoleft
+- name: chevrongoleft
+  friendly_name: chevrongoleft
   aliases:
     - ILO Icons
   sizes:
-    - glyph    
-- name: arrowgotoright
-  friendly_name: arrowgotoright
+    - glyph
+- name: chevrongoright
+  friendly_name: chevrongoright
   aliases:
     - ILO Icons
   sizes:
-    - glyph    
+    - glyph
 - name: arrowleft
   friendly_name: arrowleft
   aliases:
@@ -45,7 +45,7 @@
   aliases:
     - ILO Icons
   sizes:
-    - glyph 
+    - glyph
 - name: burger
   friendly_name: burger
   aliases:
@@ -63,25 +63,25 @@
   aliases:
     - ILO Icons
   sizes:
-    - glyph    
+    - glyph
 - name: caretleft
   friendly_name: caretleft
   aliases:
     - ILO Icons
   sizes:
-    - glyph 
+    - glyph
 - name: caretright
   friendly_name: caretright
   aliases:
     - ILO Icons
   sizes:
-    - glyph       
+    - glyph
 - name: caretup
   friendly_name: caretup
   aliases:
     - ILO Icons
   sizes:
-    - glyph 
+    - glyph
 - name: check
   friendly_name: check
   aliases:
@@ -129,7 +129,7 @@
   aliases:
     - ILO Icons
   sizes:
-    - glyph    
+    - glyph
 - name: copyright
   friendly_name: copyright
   aliases:
@@ -189,7 +189,7 @@
   aliases:
     - ILO Icons
   sizes:
-    - glyph    
+    - glyph
 - name: minus
   friendly_name: minus
   aliases:
@@ -243,7 +243,7 @@
   aliases:
     - ILO Icons
   sizes:
-    - glyph    
+    - glyph
 - name: play
   friendly_name: play
   aliases:
@@ -351,4 +351,4 @@
   aliases:
     - ILO Icons
   sizes:
-    - glyph    
+    - glyph
