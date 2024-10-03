@@ -21,9 +21,9 @@
   }
 
   &--caption {
-    border-left: px-to-rem(3px) solid $color-ux-caption-border-left;
-    color: $color-font-caption;
-    font-weight: 400;
+    border-left: var(--ilo-border-lg) solid var(--ilo-color-borders-default);
+    color: var(--ilo-color-gray-accessible);
+    font-weight: var(--ilo-font-weight-regular);
     margin-top: spacing(4);
     padding-left: spacing(2);
     @include font-styles("image-caption");
@@ -42,7 +42,7 @@
   [dir="rtl"] & {
     .ilo--image--caption {
       border-left: none;
-      border-right: 3px solid #b8c4cc;
+      border-right: var(--ilo-border-lg) solid var(--ilo-color-borders-default);
       padding-left: 0;
       padding-right: spacing(2);
     }
