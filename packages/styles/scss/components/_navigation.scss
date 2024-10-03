@@ -8,6 +8,30 @@
   position: relative;
   z-index: 4;
 
+  &::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    background-color: var(--ilo-color-blue-dark-ramp);
+    visibility: hidden;
+    transition:
+      opacity 225ms ease-out,
+      visibility 0s 225ms;
+    z-index: 500;
+  }
+
+  &.ilo--search--open {
+    &::after {
+      opacity: 1;
+      visibility: visible;
+      transition: opacity 225ms ease-out;
+    }
+  }
+
   &.ilo--mobile--open {
     height: 100%;
     left: 0;
@@ -114,6 +138,8 @@
     }
 
     @include breakpoint("lg") {
+      position: relative;
+      z-index: 999;
       background: $brand-ilo-blue;
     }
   }
@@ -121,6 +147,9 @@
   &--utility-bar {
     display: none;
     min-height: px-to-rem(24px);
+    position: relative;
+    z-index: 999;
+
     &--local {
       background: $brand-ilo-blue;
       display: flex;
@@ -230,6 +259,7 @@
       visibility 225ms 0ms;
     width: 100%;
     visibility: hidden;
+    z-index: 999;
 
     .ilo--header.ilo--mobile--open & {
       transform: translateX(0);
@@ -245,7 +275,7 @@
     @include breakpoint("lg") {
       background: $brand-ilo-dark-blue;
       overflow: visible;
-      position: static;
+      position: relative;
       transform: none;
       visibility: visible;
     }
@@ -864,6 +894,7 @@
   .ilo--search--open & {
     visibility: visible;
     transform: translateX(0);
+    z-index: 999;
   }
 
   @include breakpoint("lg") {
