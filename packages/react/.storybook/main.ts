@@ -22,6 +22,13 @@ const config: StorybookConfig = {
     getAbsolutePath("@storybook/addon-essentials"),
     getAbsolutePath("@storybook/addon-interactions"),
     getAbsolutePath("storybook-addon-rtl"),
+    {
+      name: "@storybook/addon-docs",
+      options: {
+        transcludeMarkdown: true,
+        configureJSX: true,
+      },
+    },
   ],
   framework: {
     name: getAbsolutePath("@storybook/react-vite"),

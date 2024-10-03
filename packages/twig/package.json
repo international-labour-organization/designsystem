@@ -61,6 +61,7 @@
     "@rollup/plugin-commonjs": "^23.0.2",
     "@rollup/plugin-node-resolve": "^15.0.1",
     "@rollup/plugin-swc": "^0.3.1",
+    "@storybook/addon-docs": "^8.1.9",
     "@storybook/addon-essentials": "^8.1.9",
     "@storybook/addon-interactions": "^8.1.9",
     "@storybook/addon-links": "^8.1.9",

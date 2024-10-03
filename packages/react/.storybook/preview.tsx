@@ -26,7 +26,12 @@ const preview: Preview = {
     options: {
       storySort: {
         method: "alphabetical",
-        order: ["ILO Design System for React", "Getting Started"],
+        order: [
+          "ILO Design System for React",
+          "Getting Started",
+          ["Introduction"],
+          "Components",
+        ],
         locales: "en-US",
       },
     },
@@ -42,12 +47,6 @@ const preview: Preview = {
     },
     viewMode: "docs",
     layout: "padded",
-    docs: {
-      theme: theme,
-      source: {
-        excludeDecorators: true,
-      },
-    },
   },
 };
 
