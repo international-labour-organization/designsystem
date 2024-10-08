@@ -48,7 +48,20 @@
   &--list {
     display: inline-flex;
     flex-flow: row wrap;
-    gap: spacing(4);
+    gap: spacing(5);
+    $list: &;
+
+    &__size {
+      &__large {
+        gap: spacing(6);
+
+        & #{$list}--item--icon {
+          height: px-to-rem(28px);
+          width: px-to-rem(28px);
+          background-size: px-to-rem(22px);
+        }
+      }
+    }
 
     &--item {
       display: inline-block;
@@ -58,17 +71,14 @@
       &--icon {
         background-position: center;
         background-repeat: no-repeat;
+
+        background-size: px-to-rem(20px);
         text-indent: -999px;
         border-radius: 2px;
         display: inline-block;
         height: px-to-rem(24px);
         width: px-to-rem(24px);
         transition: all 0.1s ease-in-out;
-
-        &__large {
-          height: px-to-rem(36px);
-          width: px-to-rem(36px);
-        }
 
         &:hover {
           background-color: map-get(
@@ -91,58 +101,58 @@
         }
 
         &__facebook {
-          @include get-icon("socialfacebook");
+          @include get-icon("facebook");
 
           #{$c}__theme__dark & {
-            @include get-icon("socialfacebook", "dark");
+            @include get-icon("facebook", "dark");
           }
         }
 
         &__x {
-          @include get-icon("socialx");
+          @include get-icon("x_twitter");
 
           #{$c}__theme__dark & {
-            @include get-icon("socialx", "dark");
+            @include get-icon("x_twitter", "dark");
           }
         }
 
         &__instagram {
-          @include get-icon("socialinstagram");
+          @include get-icon("instagram");
 
           #{$c}__theme__dark & {
-            @include get-icon("socialinstagram", "dark");
+            @include get-icon("instagram", "dark");
           }
         }
 
         &__youtube {
-          @include get-icon("socialyoutube");
+          @include get-icon("youtube");
 
           #{$c}__theme__dark & {
-            @include get-icon("socialyoutube", "dark");
+            @include get-icon("youtube", "dark");
           }
         }
 
         &__linkedin {
-          @include get-icon("sociallinkedin");
+          @include get-icon("linkedin");
 
           #{$c}__theme__dark & {
-            @include get-icon("sociallinkedin", "dark");
+            @include get-icon("linkedin", "dark");
           }
         }
 
         &__flickr {
-          @include get-icon("socialflickr");
+          @include get-icon("flickr");
 
           #{$c}__theme__dark & {
-            @include get-icon("socialflickr", "dark");
+            @include get-icon("flickr", "dark");
           }
         }
 
         &__tiktok {
-          @include get-icon("socialtiktok");
+          @include get-icon("tiktok");
 
           #{$c}__theme__dark & {
-            @include get-icon("socialtiktok", "dark");
+            @include get-icon("tiktok", "dark");
           }
         }
       }

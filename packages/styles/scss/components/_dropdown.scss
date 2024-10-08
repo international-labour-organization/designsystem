@@ -35,7 +35,7 @@
   background-size:
     24px 24px,
     102px 100%;
-  background-image: url("#{colortodataurlicon('arrowdown', $color-ux-labels-actionable)}"),
+  background-image: url("#{colortodataurlicon('chevron_down', $color-ux-labels-actionable)}"),
     linear-gradient(
       to right,
       transparent 0%,
@@ -62,7 +62,7 @@
     );
     @include bordervalues("input", "formelements", "hover");
     border-left-width: 2px;
-    background-image: url("#{colortodataurlicon('arrowdown', $color-ux-labels-hover)}"),
+    background-image: url("#{colortodataurlicon('chevron_down', $color-ux-labels-hover)}"),
       linear-gradient(
         to right,
         transparent 0%,
@@ -85,7 +85,7 @@
     );
     @include bordervalues("input", "formelements", "focus");
     border-left-width: 2px;
-    background-image: url("#{colortodataurlicon('arrowdown', $color-ux-labels-hover)}"),
+    background-image: url("#{colortodataurlicon('chevron_down', $color-ux-labels-hover)}"),
       linear-gradient(
         to right,
         transparent 0%,
@@ -105,7 +105,7 @@
     background-size:
       24px 24px,
       102px 100%;
-    background-image: url("#{colortodataurlicon('arrowdown', $color-ux-labels-actionable)}"),
+    background-image: url("#{colortodataurlicon('chevron_down', $color-ux-labels-actionable)}"),
       linear-gradient(
         to right,
         transparent 0%,
@@ -140,7 +140,7 @@
     background-position:
       calc(0% + 14px) center,
       0% center;
-    background-image: url("#{colortodataurlicon('arrowdown', $color-ux-labels-actionable)}"),
+    background-image: url("#{colortodataurlicon('chevron_down', $color-ux-labels-actionable)}"),
       linear-gradient(
         to left,
         transparent 0%,

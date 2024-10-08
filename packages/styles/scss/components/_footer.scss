@@ -13,7 +13,7 @@
   position: absolute;
   width: 28.8%;
   z-index: 0;
-  @include dataurlicon("footertriangle", $color-base-blue-medium);
+  @include dataurlicon("triangle_top", $color-base-blue-medium);
 }
 
 @mixin footer-triangle($position: bottom-right) {
@@ -231,7 +231,7 @@
       transform: rotateX(180deg);
       transform-origin: center;
       width: px-to-rem(24px);
-      @include dataurlicon("arrowdown", $color-ux-labels-actionable);
+      @include dataurlicon("chevron_down", $color-ux-labels-actionable);
     }
 
     &:hover {
@@ -242,7 +242,7 @@
       @include globaltransition("color, background-color, border-color");
 
       &:after {
-        @include dataurlicon("arrowdown", $color-ux-labels-hover);
+        @include dataurlicon("chevron_down", $color-ux-labels-hover);
       }
     }
   }

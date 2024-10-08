@@ -25,7 +25,7 @@ const disabled: ButtonProps = {
 };
 const link: ButtonProps = {
   type: "primary",
-  icon: "arrowright",
+  icon: "caret_right",
   iconPosition: "right",
   label: "Visit ilo.org",
   url: "https://www.ilo.org",
