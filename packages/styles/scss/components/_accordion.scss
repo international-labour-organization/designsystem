@@ -25,7 +25,7 @@
     background-color: $color-ux-background-default;
     background-position: calc(100% - px-to-rem(6px)) center;
     background-repeat: no-repeat;
-    background-size: px-to-rem(24px) px-to-rem(24px);
+    background-size: px-to-rem(14px) px-to-rem(14px);
     border: none;
     border-top: 2px solid $color-base-neutrals-lighter;
     fill: $color-ux-labels-actionable;
@@ -34,7 +34,7 @@
     font-weight: $type-weights-section;
     transition: all $transition-timing ease-in-out;
     @include font-styles("label-medium");
-    @include dataurlicon("add", $color-ux-labels-actionable);
+    @include dataurlicon("plus", $color-ux-labels-actionable);
 
     &__large {
       @include font-styles("headline-6");
@@ -55,7 +55,7 @@
       }
 
       &[aria-expanded="false"] {
-        @include dataurlicon("add", $color-ux-labels-hover);
+        @include dataurlicon("plus", $color-ux-labels-hover);
       }
     }
 
@@ -75,7 +75,7 @@
     }
 
     &[aria-expanded="false"] {
-      @include dataurlicon("add", $color-ux-labels-actionable);
+      @include dataurlicon("plus", $color-ux-labels-actionable);
     }
 
     [dir="rtl"] & {
