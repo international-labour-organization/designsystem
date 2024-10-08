@@ -22,4 +22,39 @@ describe("Data card", () => {
         });
       });
   });
+
+  it("ensures all file buttons have a target property", () => {
+    cy.visit("/patterns/datacard");
+    cy.getPreview("datacard")
+      .first()
+      .within(() => {
+        cy.get(".ilo--card__type__data--content-files")
+          .find("a, button")
+          .each(($el) => {
+            cy.wrap($el).should("have.attr", "target");
+          });
+      });
+  });
+
+  it("Ensures file buttons have the correct target", () => {
+    cy.visit("/patterns/datacard");
+    cy.getPreview("datacard")
+      .first()
+      .within(() => {
+        cy.get(".ilo--card__type__data--content-files")
+          .find("a, button")
+          .eq(0) // First element
+          .should("have.attr", "target", "_blank");
+
+        cy.get(".ilo--card__type__data--content-files")
+          .find("a, button")
+          .eq(1) // Second element
+          .should("have.attr", "target", "_parent");
+
+        cy.get(".ilo--card__type__data--content-files")
+          .find("a, button")
+          .eq(2) // Third element
+          .should("have.attr", "target", "_self");
+      });
+  });
 });
