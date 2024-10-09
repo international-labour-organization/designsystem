@@ -14,7 +14,7 @@ describe("button", () => {
       cy.get("span").should("have.text", "Button");
       cy.get("svg")
         .should("have.attr", "data-size", "24")
-        .should("have.attr", "data-name", "add");
+        .should("have.attr", "data-name", "plus");
     });
   });
 });
