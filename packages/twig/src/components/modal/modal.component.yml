@@ -12,7 +12,9 @@ modal:
         size: "medium"
         type: "tertiary"
         label: "Close Button"
-        icon: close
+        icon:
+          name: close
+          size: 24
         iconPos: center
         icononly: true
         className: "modal--close"
