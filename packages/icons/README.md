@@ -11,11 +11,11 @@ npm install -S @ilo-org/icons
 | Icon Name                  | Image                                       |
 | -------------------------- | ------------------------------------------- |
 | `add`                      | ![](./src/svg/add.svg)                      |
-| `arrowdown`                | ![](./src/svg/arrowdown.svg)                |
+| `chevron_down`             | ![](./src/svg/chevron_down.svg)             |
 | `arrowgotoleft`            | ![](./src/svg/arrowgotoleft.svg)            |
 | `arrowgotoright`           | ![](./src/svg/arrowgotoright.svg)           |
 | `arrowleft`                | ![](./src/svg/arrowleft.svg)                |
-| `arrowright`               | ![](./src/svg/arrowright.svg)               |
+| `caret_right`              | ![](./src/svg/caret_right.svg)              |
 | `arrowsort`                | ![](./src/svg/arrowsort.svg)                |
 | `arrowup`                  | ![](./src/svg/arrowup.svg)                  |
 | `burger`                   | ![](./src/svg/burger.svg)                   |
@@ -32,7 +32,7 @@ npm install -S @ilo-org/icons
 | `close`                    | ![](./src/svg/close.svg)                    |
 | `closedcaptions`           | ![](./src/svg/closedcaptions.svg)           |
 | `copyright`                | ![](./src/svg/copyright.svg)                |
-| `dotmenu`                  | ![](./src/svg/dotmenu.svg)                  |
+| `dot_menu`                 | ![](./src/svg/dot_menu.svg)                 |
 | `download`                 | ![](./src/svg/download.svg)                 |
 | `footertriangle`           | ![](./src/svg/footertriangle.svg)           |
 | `fullscreen`               | ![](./src/svg/fullscreen.svg)               |

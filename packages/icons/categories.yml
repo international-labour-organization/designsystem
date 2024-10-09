@@ -3,62 +3,60 @@ categories:
     subcategories:
       - name: Controls
         members:
-          - add
-          - arrowdown
-          - chevrongoleft
-          - chevrongoright
-          - arrowleft
-          - arrowright
-          - arrowsort
-          - arrowup
+          - arrow_down
+          - arrow_left
+          - arrow_right
+          - arrow_sort
+          - arrow_up
           - burger
           - calendar
-          - caretdown
-          - caretleft
-          - caretright
-          - caretup
+          - caret_down
+          - caret_left
+          - caret_right
+          - caret_up
           - check
-          - chevrondown
-          - chevronleft
-          - chevronright
-          - chevronup
+          - chevron_down
+          - chevron_left
+          - chevron_right
+          - chevron_up
           - close
-          - closedcaptions
-          - conference
+          - closed_captions
           - copyright
-          - dotmenu
+          - dot_menu
+          - double_chevron_left
+          - double_chevron_right
           - download
-          - footertriangle
+          - facebook
+          - flickr
           - fullscreen
-          - halfsquaretriangle
+          - globe
           - home
+          - instagram
           - launch
-          - language
+          - linkedin
           - mail
+          - meeting
           - minus
-          - notificationerror
-          - notificationinfo
-          - notificationinfooutlined
-          - notificationsuccess
-          - notificationwarning
-          - online
+          - notification_error
+          - notification_info
+          - notification_info_outlined
+          - notification_success
+          - notification_warning
           - pause
           - pin
-          - play
-          - quote
+          - plus
+          - rss
           - search
           - send
           - settings
           - share
-          - socialfacebook
-          - socialflickr
-          - socialinstagram
-          - sociallinkedin
-          - socialrss
-          - socialtiktok
-          - socialx
-          - socialyoutube
-          - statistics
+          - sound_off
+          - sound_on
+          - stats
+          - stream
+          - tiktok
+          - time
+          - triangle_right
           - upload
-          - videosoundoff
-          - videosoundon
+          - x_twitter
+          - youtube

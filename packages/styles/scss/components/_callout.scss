@@ -69,7 +69,7 @@
     position: relative;
 
     &__icon {
-      @include dataurlicon("arrowdown", $brand-ilo-dark-blue);
+      @include dataurlicon("chevron_down", $brand-ilo-dark-blue);
 
       background-position: right;
       background-repeat: no-repeat;

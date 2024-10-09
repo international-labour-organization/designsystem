@@ -105,7 +105,7 @@
       width: px-to-rem(10px);
 
       @include dataurlicon(
-        "arrowright",
+        "caret_right",
         map-get($color, "ux", "pagination", "default", "icon")
       );
     }
@@ -113,7 +113,7 @@
     &:hover {
       &::before {
         @include dataurlicon(
-          "arrowright",
+          "caret_right",
           map-get($color, "ux", "pagination", "hover", "icon")
         );
       }
@@ -133,7 +133,7 @@
 
         &::before {
           @include dataurlicon(
-            "arrowright",
+            "caret_right",
             map-get($color, "ux", "pagination", "default", "icon")
           );
         }
@@ -147,7 +147,7 @@
       width: px-to-rem(10px);
 
       @include dataurlicon(
-        "arrowright",
+        "caret_right",
         map-get($color, "ux", "pagination", "default", "icon")
       );
     }
@@ -155,7 +155,7 @@
     &:hover {
       &::before {
         @include dataurlicon(
-          "arrowright",
+          "caret_right",
           map-get($color, "ux", "pagination", "hover", "icon")
         );
       }
@@ -175,7 +175,7 @@
 
         &::before {
           @include dataurlicon(
-            "arrowright",
+            "caret_right",
             map-get($color, "ux", "pagination", "default", "icon")
           );
         }
@@ -214,7 +214,7 @@
 
         &::before {
           @include dataurlicon(
-            "arrowright",
+            "caret_right",
             map-get($color, "ux", "pagination", "default", "icon")
           );
         }

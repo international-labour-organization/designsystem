@@ -55,7 +55,8 @@
                   size: "small",
                   url: item.url,
                   label: item.label,
-                  prefix: prefix
+                  prefix: prefix,
+									target: item.target|default('_self')
                 } only %}
 							{% endfor %}
 						</div>

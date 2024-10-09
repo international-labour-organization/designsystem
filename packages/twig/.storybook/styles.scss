@@ -1,20 +1,19 @@
 @import "@ilo-org/themes/build/scss/tokens";
 @import "@ilo-org/styles/scss/monorepo";
 
-p,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: var(--ilo-fonts-display) !important;
+.sbdocs {
+  h1.sbdocs-title {
+    font-family: var(--ilo-fonts-display);
+    font-weight: 700;
+  }
+
+  h1.sbdocs-title + p {
+    font-family: var(--ilo-fonts-copy);
+    font-size: 16px;
+  }
 }
 
-body {
-  font-family: var(--ilo-fonts-copy) !important;
-}
-
+body,
 button[title="Zoom in"]:hover,
 button[title="Zoom out"]:hover,
 button[title="Reset zoom"]:hover {

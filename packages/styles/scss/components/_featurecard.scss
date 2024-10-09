@@ -23,7 +23,7 @@
 
           &--link {
             color: $brand-ilo-white;
-            @include dataurlicon("arrowright", $brand-ilo-white);
+            @include dataurlicon("caret_right", $brand-ilo-white);
 
             [dir="rtl"] & {
               @include dataurlicon("arrowleft", $brand-ilo-white);
@@ -37,7 +37,7 @@
           .ilo--link-list {
             &--link {
               color: $brand-ilo-blue;
-              @include dataurlicon("arrowright", $brand-ilo-blue);
+              @include dataurlicon("caret_right", $brand-ilo-blue);
 
               [dir="rtl"] & {
                 @include dataurlicon("arrowleft", $brand-ilo-blue);

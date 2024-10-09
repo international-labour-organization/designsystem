@@ -146,6 +146,7 @@
 
 @mixin dataurlicon($name, $color: $color-base-neutrals-black) {
   background-image: url("#{colortodataurlicon($name, $color)}");
+  background-repeat: no-repeat;
 }
 
 // ======================================
@@ -402,10 +403,10 @@
       &::before {
         content: "";
         position: absolute;
-        height: px-to-rem(24px);
-        width: px-to-rem(24px);
-        top: px-to-rem(2px);
-        @include dataurlicon("caretright", $color-base-neutrals-light);
+        height: px-to-rem(12px);
+        width: px-to-rem(8px);
+        top: spacing(2);
+        @include dataurlicon("caret_right", $color-base-neutrals-light);
         background-repeat: no-repeat;
 
         // Left takes precedence in LTR layouts
