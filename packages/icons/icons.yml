@@ -159,15 +159,15 @@
   sizes:
     - glyph
 
-- name: facebook
-  friendly_name: facebook
+- name: social_facebook
+  friendly_name: social_facebook
   aliases:
     - ILO Icons
   sizes:
     - glyph
 
-- name: flickr
-  friendly_name: flickr
+- name: social_flickr
+  friendly_name: social_flickr
   aliases:
     - ILO Icons
   sizes:
@@ -194,8 +194,8 @@
   sizes:
     - glyph
 
-- name: instagram
-  friendly_name: instagram
+- name: social_instagram
+  friendly_name: social_instagram
   aliases:
     - ILO Icons
   sizes:
@@ -208,8 +208,8 @@
   sizes:
     - glyph
 
-- name: linkedin
-  friendly_name: linkedin
+- name: social_linkedin
+  friendly_name: social_linkedin
   aliases:
     - ILO Icons
   sizes:
@@ -292,8 +292,8 @@
   sizes:
     - glyph
 
-- name: rss
-  friendly_name: rss
+- name: social_rss
+  friendly_name: social_rss
   aliases:
     - ILO Icons
   sizes:
@@ -341,8 +341,8 @@
   sizes:
     - glyph
 
-- name: stats
-  friendly_name: stats
+- name: statistics
+  friendly_name: statistics
   aliases:
     - ILO Icons
   sizes:
@@ -355,8 +355,8 @@
   sizes:
     - glyph
 
-- name: tiktok
-  friendly_name: tiktok
+- name: social_tiktok
+  friendly_name: social_tiktok
   aliases:
     - ILO Icons
   sizes:
@@ -383,15 +383,15 @@
   sizes:
     - glyph
 
-- name: x_twitter
-  friendly_name: x_twitter
+- name: social_x
+  friendly_name: social_x
   aliases:
     - ILO Icons
   sizes:
     - glyph
 
-- name: youtube
-  friendly_name: youtube
+- name: social_youtube
+  friendly_name: social_youtube
   aliases:
     - ILO Icons
   sizes:
