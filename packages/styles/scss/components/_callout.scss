@@ -97,22 +97,22 @@
 
     &__error {
       background-color: var(--ilo-color-notification-type-error);
-      @include dataurlicon("notificationerror", "white");
+      @include dataurlicon("notification_error", "white");
     }
 
     &__info {
       background-color: var(--ilo-color-notification-type-info);
-      @include dataurlicon("notificationinfo", "white");
+      @include dataurlicon("notification_info", "white");
     }
 
     &__success {
       background-color: var(--ilo-color-notification-type-success);
-      @include dataurlicon("notificationsuccess", "white");
+      @include dataurlicon("notification_success", "white");
     }
 
     &__warning {
       background-color: var(--ilo-color-notification-type-warning);
-      @include dataurlicon("notificationwarning", "white");
+      @include dataurlicon("notification_warning", "white");
     }
   }
 

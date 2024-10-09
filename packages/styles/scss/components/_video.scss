@@ -95,12 +95,15 @@
           }
 
           .vjs-play-control {
-            @include dataurlicon("play", $color-ux-video-controls-hover-icon);
+            @include dataurlicon(
+              "triangle_right",
+              $color-ux-video-controls-hover-icon
+            );
           }
         }
 
         .vjs-play-control {
-          @include videobutton("play");
+          @include videobutton("triangle_right");
         }
 
         .vjs-duration {
@@ -121,7 +124,7 @@
           height: px-to-rem(124px);
           gap: px-to-rem(4px);
           .vjs-play-control {
-            @include videobutton("play", "big");
+            @include videobutton("triangle_right", "big");
           }
         }
       }
@@ -163,11 +166,11 @@
 
     // Play Button
     .vjs-play-control {
-      @include videobutton("play");
+      @include videobutton("triangle_right");
       margin-right: px-to-rem(2px);
       &.vjs-paused,
       &.vjs-ended {
-        @include videobutton("play");
+        @include videobutton("triangle_right");
       }
 
       &.vjs-playing {
@@ -243,7 +246,7 @@
               background-position: top left;
               background-repeat: no-repeat;
               background-size: contain;
-              @include dataurlicon("caretdown", $color-base-neutrals-dark);
+              @include dataurlicon("caret_down", $color-base-neutrals-dark);
               content: "";
               height: px-to-rem(12px);
               position: absolute;
