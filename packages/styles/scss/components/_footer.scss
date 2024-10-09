@@ -3,62 +3,6 @@
 @import "../animations";
 @import "../mixins";
 
-// Properties common to the footer triangle whever they appear
-@mixin footer-triangle-props {
-  background-size: contain;
-  background-repeat: no-repeat;
-  content: "";
-  height: 100%;
-  min-width: 409.5px;
-  position: absolute;
-  width: 28.8%;
-  z-index: 0;
-  @include dataurlicon("triangle_top", $color-base-blue-medium);
-}
-
-@mixin footer-triangle($position: bottom-right) {
-  // The triangle is placed as an after element on
-  // the main footer element on desktop and as a before
-  // element on mobile
-  @if ($position == top-right) {
-    &:after {
-      @include footer-triangle-props;
-      background-position: right top;
-      bottom: auto;
-      top: 0;
-      right: 0;
-      transform: scaleY(1);
-    }
-  }
-
-  @if ($position == bottom-right) {
-    &:before {
-      @include footer-triangle-props;
-      bottom: 0;
-      right: 0;
-      transform: scaleY(-1);
-    }
-  }
-
-  @if ($position == top-left) {
-    &:after {
-      @include footer-triangle-props;
-      top: 0;
-      left: 0;
-      transform: scaleY(1) scaleX(-1);
-    }
-  }
-
-  @if ($position == bottom-left) {
-    &:before {
-      @include footer-triangle-props;
-      bottom: 0;
-      left: 0;
-      transform: scaleY(-1) scaleX(-1);
-    }
-  }
-}
-
 .ilo--footer {
   $c: &;
 
@@ -71,8 +15,6 @@
   &--main {
     padding: spacing(10) spacing(8) spacing(12);
     position: relative;
-
-    @include footer-triangle(bottom-right);
 
     &:after {
       content: "";
@@ -296,8 +238,6 @@
   }
 
   @include breakpoint("lg") {
-    @include footer-triangle(top-right);
-
     &--main {
       display: grid;
       grid-template-columns: 0.25fr 0.33fr 0.09fr 0.33fr;
@@ -377,10 +317,6 @@
 
   /* RTL Styles */
   &[dir="rtl"] & {
-    &--main {
-      @include footer-triangle(bottom-left);
-    }
-
     .secondarylinks--list--item {
       &:before {
         content: none;
@@ -403,8 +339,6 @@
     }
 
     @include breakpoint("lg") {
-      @include footer-triangle(top-left);
-
       &--main {
         grid-template-columns: 0.33fr 0.09fr 0.33fr 0.25fr;
         grid-template-areas:
