@@ -22,14 +22,18 @@
     @include textmargin("margin-bottom", $gap, "label-medium", "display", 0, 0);
 
     .ilo--tooltip--wrapper {
-      top: calc(#{spacing(1)} / 2);
+      top: px-to-rem(-1px);
     }
   }
 
   &--legend {
     font-family: var(--ilo-fonts-display);
     font-weight: map-get($type, "weights", "label");
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
     @include font-styles("label-medium");
+    line-height: px-to-rem(20px);
   }
 
   &--direction__column {

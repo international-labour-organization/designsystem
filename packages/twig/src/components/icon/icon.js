@@ -111,7 +111,11 @@ export default class Icon {
    * @param {string} size
    */
   getIconConfig(name, size) {
-    const nameUpper = name.charAt(0).toUpperCase() + name.slice(1);
+    // Convert name with underscores into PascalCase
+    const nameUpper = name
+      .split("_")
+      .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
+      .join("");
 
     return Icons[`${nameUpper}${size}`];
   }

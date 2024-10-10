@@ -139,7 +139,7 @@
     position: relative;
     text-decoration: none;
     width: calc(100% - 16px);
-    @include dataurlicon("stemarrow", $color-ux-labels-actionable);
+    @include dataurlicon("arrow_down", $color-ux-labels-actionable);
     @include font-styles("label-medium");
     @include globaltransition("background-color, border, color");
 
@@ -155,7 +155,7 @@
       padding: spacing(4) spacing(4) spacing(4);
       padding-inline-end: spacing(12);
       width: 100%;
-      @include dataurlicon("stemarrow", $color-ux-labels-hover);
+      @include dataurlicon("arrow_down", $color-ux-labels-hover);
       @include globaltransition("background-color, border, color");
     }
 
@@ -172,7 +172,7 @@
       padding-inline-end: spacing(12);
       width: 100%;
       @include dataurlicon(
-        "stemarrow",
+        "arrow_down",
         $color-ux-tableofcontents-items-active-icon
       );
       z-index: 5;

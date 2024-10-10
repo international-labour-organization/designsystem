@@ -43,7 +43,7 @@
         background-position: top left;
         background-repeat: no-repeat;
         background-size: contain;
-        @include dataurlicon("equilateraltriangle", $color-base-neutrals-dark);
+        @include dataurlicon("caretdown", $color-base-neutrals-dark);
         content: "";
         height: px-to-rem(map-get($spacing, "padding-1-5"));
         position: absolute;
@@ -95,10 +95,7 @@
 
         &:after {
           background-position: top right;
-          @include dataurlicon(
-            "equilateraltriangle",
-            $color-base-neutrals-dark
-          );
+          @include dataurlicon("caretdown", $color-base-neutrals-dark);
           left: auto;
           right: calc(#{px-to-rem(map-get($spacing, "padding-1-5"))} / 2);
         }

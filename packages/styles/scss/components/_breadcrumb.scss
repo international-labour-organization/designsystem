@@ -16,7 +16,7 @@
     padding-inline-start: var(--breadcrumb-padding);
     padding-inline-end: spacing(12);
     padding-block: spacing(4);
-    background-color: $color-base-neutrals-white;
+    background-color: var(--ilo-color-white);
     @include cornercut(spacing(12), 100%, "right", "bottom");
 
     [dir="rtl"] & {
@@ -34,15 +34,26 @@
 
   &--item,
   &--context__collapse {
-    background-repeat: no-repeat;
-    @include dataurlicon("breadcrumbdivider", $color-link-text-default);
-    background-position: left;
-    padding-inline: spacing(6) spacing(4);
+    padding-inline: spacing(7) spacing(1);
+    position: relative;
+
+    &:before {
+      content: "";
+      left: 0;
+      position: absolute;
+      background-repeat: no-repeat;
+      @include dataurlicon("chevron_right", $color-link-text-default);
+      background-position: left;
+      background-size: px-to-rem(24px);
+      height: px-to-rem(24px);
+      width: px-to-rem(24px);
+    }
 
     [dir="rtl"] & {
       background-position: right;
       background-repeat: no-repeat;
-      @include dataurlicon("breadcrumbdividerrtl", $color-link-text-default);
+      background-size: px-to-rem(24px);
+      @include dataurlicon("chevron_left", $color-link-text-default);
     }
   }
 
@@ -57,15 +68,15 @@
       border: none;
       background-position: center center;
       background-repeat: no-repeat;
-      background-size: 16px 4px;
       position: relative;
-      width: px-to-rem(42px);
-      height: px-to-rem(16px);
-      @include dataurlicon("elipsis", $color-link-text-default);
+      width: px-to-rem(24px);
+      height: px-to-rem(24px);
+      background-size: px-to-rem(24px);
+      @include dataurlicon("dot_menu", $color-link-text-default);
 
       &:hover {
         cursor: pointer;
-        @include dataurlicon("elipsis", $color-base-blue-medium);
+        @include dataurlicon("dot_menu", $color-base-blue-medium);
       }
     }
 
@@ -81,7 +92,7 @@
     }
 
     &__collapse {
-      padding-inline: spacing(3) spacing(1);
+      padding-inline: spacing(6) 0;
 
       #{$breadcrumb}--items {
         display: none;
@@ -101,16 +112,23 @@
       align-items: center;
       display: flex;
       position: relative;
-      // Make sure arrow doesn't appear before house even in RTL
-      background: none !important;
       // Make sure the outline is visible when focused
       padding-inline-start: 2px;
+      width: px-to-rem(24px);
+      height: px-to-rem(24px);
+
+      // No chevron befor the home icon
+      &:before {
+        content: none;
+      }
 
       &:hover,
       &:focus {
         #{$breadcrumb}--link {
           &:after {
             @include dataurlicon("home", $color-link-text-hover);
+            width: px-to-rem(24px);
+            height: px-to-rem(24px);
           }
         }
       }
@@ -126,11 +144,11 @@
           background-repeat: no-repeat;
           content: "";
           display: block;
-          height: px-to-rem(16px);
           left: 0;
-          position: absolute;
           top: 0;
-          width: px-to-rem(16px);
+          height: px-to-rem(24px);
+          width: px-to-rem(24px);
+          background-size: px-to-rem(24px);
           @include dataurlicon("home", $color-link-text-default);
         }
       }

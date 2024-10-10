@@ -3,12 +3,12 @@
     {% if headline %}
         <h5 class="{{ prefix }}--social-media--headline">{{ headline }}</h5>
     {% endif %}
-    <ul class="{{ prefix }}--social-media--list">
+    <ul class="{{ prefix }}--social-media--list {{ prefix }}--social-media--list__size__{{ iconSize|default("normal") }}">
         {% for item in icons %}
             {# @TODO: Get rid of this during the next major release#}
             {% set iconName = item.icon == 'twitter' ? 'x' : item.icon %}
             <li class="{{ prefix }}--social-media--list--item">
-                <a class="{{ prefix }}--social-media--list--item--icon {{ prefix }}--social-media--list--item--icon__{{ iconSize|default("normal") }} {{ prefix }}--social-media--list--item--icon__{{ iconName }}" href="{{ item.url }}" title="{{ item.label|capitalize }}" target="_blank">
+                <a class="{{ prefix }}--social-media--list--item--icon {{ prefix }}--social-media--list--item--icon__{{ iconName }}" href="{{ item.url }}" title="{{ item.label|capitalize }}" target="_blank">
                     {{ item.label|capitalize }}
                 </a>
             </li>

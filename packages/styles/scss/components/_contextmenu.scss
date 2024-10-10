@@ -4,37 +4,35 @@
 
 .ilo--context-menu {
   border-radius: px-to-rem(2px);
-  background-color: $color-ux-background-highlight;
+  background-color: var(--ilo-color-gray-light);
   display: inline-block;
   position: relative;
   width: auto;
   list-style: none;
 
   &:before {
-    background-position: top center;
-    background-repeat: no-repeat;
-    background-size: contain;
-    @include dataurlicon("halfsquaretriangle", $color-ux-background-highlight);
     content: "";
-    height: px-to-rem(12px);
     position: absolute;
-    left: 50%;
-    top: -#{px-to-rem(6px)};
-    transform: translateX(-50%) rotate(135deg);
-    width: px-to-rem(12px);
+    left: calc(50% - 5px);
+    top: px-to-rem(-5px);
+    width: 0;
+    height: 0;
+    border-left: px-to-rem(10px) solid transparent;
+    border-right: px-to-rem(10px) solid transparent;
+    border-bottom: px-to-rem(12px) solid var(--ilo-color-gray-light);
   }
 
   &--item {
     padding: 0 spacing(2);
 
     &:first-of-type {
-      border-top-left-radius: 2px;
-      border-top-right-radius: 2px;
+      border-top-left-radius: px-to-rem(2px);
+      border-top-right-radius: px-to-rem(2px);
     }
 
     &:last-of-type {
-      border-bottom-left-radius: 2px;
-      border-bottom-right-radius: 2px;
+      border-bottom-left-radius: px-to-rem(2px);
+      border-bottom-right-radius: px-to-rem(2px);
 
       a {
         border-bottom: none;
@@ -43,11 +41,11 @@
 
     &:hover,
     &:focus {
-      background-color: $color-base-blue-light;
+      background-color: var(--ilo-color-blue-lighter);
     }
 
     &.endsection {
-      border-bottom: px-to-rem(3px) solid $color-base-neutrals-white;
+      border-bottom: px-to-rem(3px) solid var(--ilo-color-white);
 
       .ilo--context-menu--link {
         border-bottom: none;
@@ -56,8 +54,8 @@
   }
 
   &--link {
-    border-bottom: px-to-rem($borders-base) solid $color-base-neutrals-white;
-    color: map-get($color, "link", "text", "default");
+    border-bottom: px-to-rem($borders-base) solid var(--ilo-color-white);
+    color: var(--ilo-color-blue-dark);
     display: inline-block;
     font-family: var(--ilo-fonts-copy);
     font-weight: map-get($type, "weights", "section");
@@ -67,18 +65,14 @@
     @include font-styles("body-xxs");
     letter-spacing: -0.1px;
 
-    &:visited {
-      color: map-get($color, "link", "text", "default");
-    }
-
     &:active {
-      color: map-get($color, "link", "text", "active");
+      color: var(--ilo-color-blue);
       outline: none;
     }
 
     &:hover,
     &:focus {
-      color: map-get($color, "link", "text", "hover");
+      color: var(--ilo-color-blue);
       outline: none;
       text-decoration: underline;
       text-decoration-thickness: px-to-rem($borders-base);
