@@ -23,10 +23,10 @@
 
           &--link {
             color: $brand-ilo-white;
-            @include dataurlicon("caret_right", $brand-ilo-white);
+            @include dataurlicon("chevron_right", $brand-ilo-white);
 
             [dir="rtl"] & {
-              @include dataurlicon("arrowleft", $brand-ilo-white);
+              @include dataurlicon("chevron_left", $brand-ilo-white);
             }
           }
         }
@@ -37,10 +37,10 @@
           .ilo--link-list {
             &--link {
               color: $brand-ilo-blue;
-              @include dataurlicon("caret_right", $brand-ilo-blue);
+              @include dataurlicon("chevron_right", $brand-ilo-blue);
 
               [dir="rtl"] & {
-                @include dataurlicon("arrowleft", $brand-ilo-blue);
+                @include dataurlicon("chevron_left", $brand-ilo-blue);
               }
             }
           }

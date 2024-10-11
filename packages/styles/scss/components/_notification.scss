@@ -72,18 +72,18 @@
 
       .icon--error & {
         background-color: $color-ux-notification-type-error;
-        @include dataurlicon("notificationerror", $color-ux-notification-icon);
+        @include dataurlicon("notification_error", $color-ux-notification-icon);
       }
 
       .icon--info & {
         background-color: $color-ux-notification-type-info;
-        @include dataurlicon("notificationinfo", $color-ux-notification-icon);
+        @include dataurlicon("notification_info", $color-ux-notification-icon);
       }
 
       .icon--success & {
         background-color: $color-ux-notification-type-success;
         @include dataurlicon(
-          "notificationsuccess",
+          "notification_success",
           $color-ux-notification-icon
         );
       }
@@ -91,7 +91,7 @@
       .icon--warning & {
         background-color: $color-ux-notification-type-warning;
         @include dataurlicon(
-          "notificationwarning",
+          "notification_warning",
           $color-ux-notification-icon
         );
       }

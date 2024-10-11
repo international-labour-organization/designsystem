@@ -37,10 +37,10 @@
 
         #{$self}--date-extra {
           &::before {
-            @include dataurlicon("caretright", $brand-ilo-blue);
+            @include dataurlicon("caret_right", $brand-ilo-blue);
 
             [dir="rtl"] & {
-              @include dataurlicon("caretleft", $brand-ilo-blue);
+              @include dataurlicon("caret_left", $brand-ilo-blue);
             }
           }
         }
@@ -149,13 +149,13 @@
           display: inline-block;
           height: px-to-rem(24px);
           left: -8px;
-          bottom: 1px;
+          top: 0;
           position: absolute;
           width: px-to-rem(24px);
-          @include dataurlicon("caretright", $brand-ilo-black);
+          @include dataurlicon("caret_right", $brand-ilo-black);
 
           [dir="rtl"] & {
-            @include dataurlicon("caretleft", $brand-ilo-black);
+            @include dataurlicon("caret_left", $brand-ilo-black);
             right: -8px;
           }
         }

@@ -45,6 +45,7 @@
       background-repeat: no-repeat;
       background-size: contain;
       background-position: center center;
+      background-size: 24px;
       @include dataurlicon("check", $color-base-neutrals-lighter);
     }
 
