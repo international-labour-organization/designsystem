@@ -1,5 +1,5 @@
 ---
-"@ilo-org/styles": feat
+"@ilo-org/styles": minor
 ---
 
 - Harmonize spacing in Richtext component with designs. This will have a sligh impact on the appearance of RichText content.
