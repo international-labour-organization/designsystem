@@ -6,7 +6,6 @@
 .ilo--social-media {
   $c: &;
   $default-theme: "light";
-  $icon-size: $spacing-spacing-4;
 
   @mixin get-icon($icon, $theme: $default-theme) {
     @include dataurlicon(
@@ -49,7 +48,19 @@
   &--list {
     display: inline-flex;
     flex-flow: row wrap;
-    gap: spacing(4);
+    gap: spacing(5);
+    $list: &;
+
+    &__size {
+      &__large {
+        gap: spacing(6);
+
+        & #{$list}--item--icon {
+          height: px-to-rem(36px);
+          width: px-to-rem(36px);
+        }
+      }
+    }
 
     &--item {
       display: inline-block;
@@ -59,19 +70,13 @@
       &--icon {
         background-position: center;
         background-repeat: no-repeat;
-        background-size: auto #{$icon-size};
+
         text-indent: -999px;
         border-radius: 2px;
         display: inline-block;
-        height: px-to-rem($icon-size + 8px);
-        width: px-to-rem($icon-size + 8px);
+        height: px-to-rem(24px);
+        width: px-to-rem(24px);
         transition: all 0.1s ease-in-out;
-
-        &__large {
-          background-size: auto px-to-rem(24px);
-          height: px-to-rem(36px);
-          width: px-to-rem(36px);
-        }
 
         &:hover {
           background-color: map-get(
@@ -94,58 +99,58 @@
         }
 
         &__facebook {
-          @include get-icon("facebook");
+          @include get-icon("social_facebook");
 
           #{$c}__theme__dark & {
-            @include get-icon("facebook", "dark");
+            @include get-icon("social_facebook", "dark");
           }
         }
 
         &__x {
-          @include get-icon("x");
+          @include get-icon("social_x");
 
           #{$c}__theme__dark & {
-            @include get-icon("x", "dark");
+            @include get-icon("social_x", "dark");
           }
         }
 
         &__instagram {
-          @include get-icon("instagram");
+          @include get-icon("social_instagram");
 
           #{$c}__theme__dark & {
-            @include get-icon("instagram", "dark");
+            @include get-icon("social_instagram", "dark");
           }
         }
 
         &__youtube {
-          @include get-icon("youtube");
+          @include get-icon("social_youtube");
 
           #{$c}__theme__dark & {
-            @include get-icon("youtube", "dark");
+            @include get-icon("social_youtube", "dark");
           }
         }
 
         &__linkedin {
-          @include get-icon("linkedin");
+          @include get-icon("social_linkedin");
 
           #{$c}__theme__dark & {
-            @include get-icon("linkedin", "dark");
+            @include get-icon("social_linkedin", "dark");
           }
         }
 
         &__flickr {
-          @include get-icon("flickr");
+          @include get-icon("social_flickr");
 
           #{$c}__theme__dark & {
-            @include get-icon("flickr", "dark");
+            @include get-icon("social_flickr", "dark");
           }
         }
 
         &__tiktok {
-          @include get-icon("tiktok");
+          @include get-icon("social_tiktok");
 
           #{$c}__theme__dark & {
-            @include get-icon("tiktok", "dark");
+            @include get-icon("social_tiktok", "dark");
           }
         }
       }

@@ -1,68 +1,72 @@
 @use "../tokens" as *;
 @use "../functions" as *;
+@import "./blockquote";
 @import "../mixins";
 
 .ilo--richtext {
-  font-family: var(--ilo-fonts-copy);
-  font-weight: 400;
-  @include font-styles("base");
+  & > * {
+    margin-top: spacing(4);
+    margin-bottom: spacing(4);
 
-  a {
-    @include linkstyles();
-    background: none;
-
-    &:hover {
-      background: none;
+    &:first-child {
+      margin-top: 0;
     }
   }
 
-  img {
-    width: 100%;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    font-weight: var(--ilo-font-weight-bold);
+    margin-top: spacing(14);
   }
 
-  p {
-    margin-bottom: spacing(6);
-  }
-
-  p + figure,
-  p + img,
-  p + blockquote,
-  ul + img,
-  ol + img,
-  dl + img,
-  p + hr,
-  ul + hr,
-  ol + hr,
-  dl + hr,
-  blockquote + hr {
-    @include textmargin(
-      "margin-top",
-      map-get($spacing, "padding-7"),
-      "body-small",
-      "copy",
-      0,
-      0
-    );
-  }
-
-  iframe {
-    margin-block: spacing(8) spacing(14);
-  }
-
-  figure {
-    width: 100%;
+  blockquote,
+  video,
+  audio,
+  figure,
+  hr,
+  article,
+  pre {
+    margin-top: spacing(14);
     margin-bottom: spacing(14);
   }
 
-  figcaption {
-    border-left: 3px solid #b8c4cc;
-    color: $color-font-caption;
-    font-weight: 400;
-    margin-top: spacing(4);
-    padding-left: spacing(2);
-    @include font-styles("image-caption");
+  h1 {
+    font-size: var(--ilo-font-size-4xlg);
+    line-height: var(--ilo-line-height-sm);
+    letter-spacing: var(--ilo-letter-spacing-xsm);
   }
 
+  h2 {
+    font-size: var(--ilo-font-size-xlg);
+    line-height: var(--ilo-line-height-md);
+    letter-spacing: var(--ilo-letter-spacing-xsm);
+  }
+
+  h3 {
+    font-size: var(--ilo-font-size-lg);
+    line-height: var(--ilo-line-height-lg);
+    letter-spacing: var(--ilo-letter-spacing-sm);
+  }
+
+  h4,
+  h5,
+  h6 {
+    font-size: var(--ilo-font-size-md);
+    line-height: var(--ilo-line-height-xlg);
+    letter-spacing: var(--ilo-letter-spacing-sm);
+  }
+
+  p {
+    font-weight: var(--ilo-font-weight-regular);
+    font-size: var(--ilo-font-size-md);
+    line-height: var(--ilo-line-height-2xlg);
+    letter-spacing: var(--ilo-letter-spacing-md);
+  }
+
+  // Italic and bold styles
   em,
   i {
     font-style: italic;
@@ -73,142 +77,76 @@
     font-weight: 700;
   }
 
+  // Link styles
+  a {
+    @include linkstyles();
+    background: none;
+
+    &:hover {
+      background: none;
+    }
+  }
+
+  // Image styles
+  img {
+    width: 100%;
+  }
+
+  // Figure styles
+  figure {
+    width: 100%;
+  }
+
+  // Figcaption styles
+  figcaption {
+    border-left: var(--ilo-border-lg) solid var(--ilo-color-borders-default);
+    color: var(--ilo-color-gray-accessible);
+    font-weight: var(--ilo-font-weight-regular);
+    margin-top: spacing(4);
+    padding-left: spacing(2);
+    @include font-styles("image-caption");
+  }
+
+  // Horizontal rule (hr) styles
   hr {
-    background-color: $color-ux-horizontal-rule-default;
+    background-color: var(--ilo-color-borders-default);
     border: none;
     height: px-to-rem(4px);
-    margin-bottom: spacing(14);
   }
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5 {
-    font-family: var(--ilo-fonts-display);
-    font-weight: 700;
-    margin-top: spacing(14);
-  }
-
-  h1 {
-    @include textmargin(
-      "margin-bottom",
-      map-get($spacing, "padding-4"),
-      "headline-2",
-      "display",
-      "body-small",
-      "copy"
-    );
-    @include font-styles("rich-text-heading-1-md");
-  }
-
-  h2 {
-    @include textmargin(
-      "margin-bottom",
-      map-get($spacing, "padding-4"),
-      "headline-3",
-      "display",
-      "body-small",
-      "copy"
-    );
-    @include font-styles("rich-text-heading-2-md");
-  }
-
-  h3 {
-    @include textmargin(
-      "margin-bottom",
-      map-get($spacing, "padding-3"),
-      "headline-4",
-      "display",
-      "body-small",
-      "copy"
-    );
-    @include font-styles("rich-text-heading-3-md");
-  }
-
-  h4 {
-    @include textmargin(
-      "margin-bottom",
-      map-get($spacing, "padding-3"),
-      "headline-5",
-      "display",
-      "body-small",
-      "copy"
-    );
-    @include font-styles("rich-text-heading-4-md");
-  }
-
-  h5 {
-    @include textmargin(
-      "margin-bottom",
-      map-get($spacing, "padding-3"),
-      "headline-6",
-      "display",
-      "body-small",
-      "copy"
-    );
-    @include font-styles("rich-text-heading-5-md");
-  }
-
-  blockquote {
-    background-color: $color-ux-background-highlight;
-    background-position: right top;
-    background-repeat: no-repeat;
-    background-size: px-to-rem(72px) px-to-rem(40px);
-    display: block;
-    font-family: var(--ilo-fonts-display);
-    margin: spacing(6) 0 spacing(10) 0;
-    padding: spacing(19) 0 spacing(9) spacing(8); // check
+  .responsive-video-embed {
     position: relative;
-    width: fit-content;
-    @include cornercut(72px, 40px);
-
-    p {
-      color: $color-font-blockquote;
-      font-weight: 300;
-      margin-bottom: spacing(6);
-      padding: 0 spacing(12) 0 0;
-      position: relative;
-      @include font-styles("pull-quote-sm");
-
-      &:after {
-        background-repeat: no-repeat;
-        bottom: 0;
-        content: "";
-        display: inline-block;
-        height: px-to-rem(20px);
-        position: absolute;
-        right: 0;
-        transform: scaleX(-1);
-        width: px-to-rem(26.5px);
-        @include dataurlicon("quote", $color-font-blockquote);
-      }
-    }
-
-    cite {
-      color: $color-font-cite;
-      font-weight: 400;
-      @include font-styles("pull-quote-cite");
-    }
-
-    &:before {
-      background-repeat: no-repeat;
-      content: "";
-      display: inline-block;
-      height: px-to-rem(40px);
-      left: 0;
-      position: absolute;
-      width: px-to-rem(53px);
-      top: 0;
-      @include dataurlicon("quote", $color-font-blockquote);
-    }
+    width: 100%;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
   }
 
-  // Repeat list styles from the list component
+  .responsive-video-embed iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0; /* Optional: to remove iframe border */
+  }
+
+  // Blockquote styles
+  @include blockquote;
+
+  // List styles (invincible list)
   @include invincible-list;
 
+  // Responsive styles for medium breakpoint
   @include breakpoint("md") {
-    @include font-styles("base");
+    & > * {
+      margin-top: spacing(6);
+      margin-bottom: spacing(6);
+
+      &:first-child {
+        margin-top: 0;
+      }
+    }
 
     h1,
     h2,
@@ -218,179 +156,56 @@
       margin-top: spacing(16);
     }
 
+    blockquote,
+    video,
+    audio,
+    figure,
+    article,
+    hr,
+    pre {
+      margin-top: spacing(16);
+      margin-bottom: spacing(16);
+    }
+
     h1 {
-      @include textmargin(
-        "margin-bottom",
-        map-get($spacing, "padding-5"),
-        "headline-1",
-        "display",
-        "body-large",
-        "copy"
-      );
-      @include font-styles("rich-text-heading-1");
+      font-size: var(--ilo-font-size-5xlg);
+      line-height: var(--ilo-line-height-xsm);
+      letter-spacing: var(--ilo-letter-spacing-xsm);
     }
 
     h2 {
-      @include textmargin(
-        "margin-bottom",
-        map-get($spacing, "padding-5"),
-        "headline-2",
-        "display",
-        "body-large",
-        "copy"
-      );
-      @include font-styles("rich-text-heading-2");
+      font-size: var(--ilo-font-size-3xlg);
     }
 
     h3 {
-      @include textmargin(
-        "margin-bottom",
-        map-get($spacing, "padding-4"),
-        "headline-3",
-        "display",
-        "body-large",
-        "copy"
-      );
-      @include font-styles("rich-text-heading-3");
+      font-size: var(--ilo-font-size-xlg);
+      line-height: var(--ilo-line-height-md);
+      letter-spacing: var(--ilo-letter-spacing-xsm);
     }
 
-    h4 {
-      @include textmargin(
-        "margin-bottom",
-        map-get($spacing, "padding-4"),
-        "headline-4",
-        "display",
-        "body-large",
-        "copy"
-      );
-      @include font-styles("rich-text-heading-4");
-    }
-
-    h5 {
-      @include textmargin(
-        "margin-bottom",
-        map-get($spacing, "padding-4"),
-        "headline-5",
-        "display",
-        "body-large",
-        "copy"
-      );
-      @include font-styles("rich-text-heading-5");
+    h4,
+    h5,
+    h6 {
+      font-size: var(--ilo-font-size-lg);
+      line-height: var(--ilo-line-height-lg);
     }
 
     p {
-      @include textmargin(
-        "margin-bottom",
-        map-get($spacing, "padding-3"),
-        "body-large",
-        "copy",
-        "body-large",
-        "copy"
-      );
-    }
-
-    p + figure,
-    p + img,
-    p + blockquote,
-    ul + img,
-    ol + img,
-    dl + img,
-    p + hr,
-    ul + hr,
-    ol + hr,
-    dl + hr,
-    blockquote + hr {
-      @include textmargin(
-        "margin-top",
-        map-get($spacing, "padding-8"),
-        "body-large",
-        "copy",
-        0,
-        0
-      );
-    }
-
-    hr {
-      margin-bottom: spacing(19);
-    }
-
-    iframe {
-      margin-block: calc(spacing(9) + px-to-rem(2)) spacing(14);
+      font-size: var(--ilo-font-size-lg);
     }
 
     figure {
       width: 100%;
-      @include textmargin(
-        "margin-bottom",
-        map-get($spacing, "padding-8"),
-        "body-large",
-        "copy",
-        0,
-        0
-      );
-    }
-
-    blockquote {
-      background-size: px-to-rem(86px) px-to-rem(48px);
-      margin: spacing(8) 0 spacing(19) 0;
-      padding: spacing(16) 0 spacing(12) spacing(12);
-      @include cornercut(86px, 48px);
-
-      p {
-        margin-bottom: spacing(6);
-        padding: 0 spacing(12) 0 0;
-        position: relative;
-        @include font-styles("pull-quote-lg");
-
-        &:after {
-          height: px-to-rem(24px);
-          width: px-to-rem(32px);
-        }
-      }
-
-      &:before {
-        height: px-to-rem(48px);
-        width: px-to-rem(64px);
-      }
     }
   }
 
+  // RTL (Right-to-left) support
   [dir="rtl"] & {
     figcaption {
       border-left: none;
-      border-right: 3px solid #b8c4cc;
+      border-right: var(--ilo-border-lg) solid var(--ilo-color-borders-default);
       padding-left: 0;
       padding-right: spacing(2);
-    }
-
-    blockquote {
-      background-position: -1px -1px;
-      padding: spacing(14) spacing(8) spacing(9) 0;
-      @include cornercut(72px, 40px, "left");
-
-      p {
-        padding: 0 0 0 spacing(12);
-
-        &:after {
-          left: 0;
-          right: auto;
-          transform: scaleX(1);
-        }
-      }
-
-      &:before {
-        left: auto;
-        right: 0;
-        transform: scaleX(-1);
-      }
-
-      @include breakpoint("md") {
-        padding: spacing(15) spacing(12) spacing(12) 0;
-
-        blockquote {
-          @include cornercut(86px, 48px, "left");
-        }
-      }
     }
   }
 }

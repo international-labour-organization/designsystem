@@ -69,7 +69,7 @@
     position: relative;
 
     &__icon {
-      @include dataurlicon("arrow", $brand-ilo-dark-blue);
+      @include dataurlicon("chevron_down", $brand-ilo-dark-blue);
 
       background-position: right;
       background-repeat: no-repeat;
@@ -92,27 +92,27 @@
     background-repeat: no-repeat;
     background-size: contain;
     display: block;
-    height: 16px;
-    width: 16px;
+    height: px-to-rem(24px);
+    width: px-to-rem(24px);
 
     &__error {
       background-color: var(--ilo-color-notification-type-error);
-      @include dataurlicon("error", "white");
+      @include dataurlicon("notification_error", "white");
     }
 
     &__info {
       background-color: var(--ilo-color-notification-type-info);
-      @include dataurlicon("info", "white");
+      @include dataurlicon("notification_info", "white");
     }
 
     &__success {
       background-color: var(--ilo-color-notification-type-success);
-      @include dataurlicon("success", "white");
+      @include dataurlicon("notification_success", "white");
     }
 
     &__warning {
       background-color: var(--ilo-color-notification-type-warning);
-      @include dataurlicon("warning", "white");
+      @include dataurlicon("notification_warning", "white");
     }
   }
 

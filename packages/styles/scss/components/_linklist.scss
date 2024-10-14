@@ -34,7 +34,7 @@
 
       .ilo--link-list--label {
         display: block;
-        padding-left: spacing(5);
+        padding-left: spacing(8);
         position: relative;
 
         &:before {
@@ -43,17 +43,14 @@
           background-size: contain;
           content: "";
           display: block;
-          height: px-to-rem(12px);
+          height: px-to-rem(24px);
+          width: px-to-rem(24px);
           left: 0;
           position: absolute;
           top: 50%;
           transform: translateY(-50%) rotate(-90deg);
           transform-origin: center;
-          width: px-to-rem(12px);
-          @include dataurlicon(
-            "equilateraltriangle",
-            $color-base-neutrals-light
-          );
+          @include dataurlicon("chevrondown", $color-base-neutrals-light);
         }
 
         [dir="rtl"] & {
@@ -71,7 +68,7 @@
       &:hover,
       &:focus {
         .ilo--link-list--label:before {
-          @include dataurlicon("equilateraltriangle", $color-link-text-hover);
+          @include dataurlicon("chevrondown", $color-link-text-hover);
         }
       }
     }
@@ -91,7 +88,7 @@
     padding-bottom: spacing(4);
     padding-inline-end: spacing(8);
     text-decoration: none;
-    @include dataurlicon("arrowright", $color-link-text-default);
+    @include dataurlicon("chevron_right", $color-link-text-default);
     @include globaltransition("color, background-color, border-color");
 
     &:visited {
@@ -112,7 +109,7 @@
       background-color: $color-base-blue-light;
       color: map-get($color, "link", "text", "hover");
       outline: none;
-      @include dataurlicon("arrowright", $color-link-text-hover);
+      @include dataurlicon("chevron_right", $color-link-text-hover);
       @include globaltransition("color, background-color, border-color");
     }
 
@@ -135,13 +132,13 @@
 
     .ilo--link-list--label {
       &:before {
-        @include dataurlicon("equilateraltriangle", $color-base-neutrals-white);
+        @include dataurlicon("chevrondown", $color-base-neutrals-white);
       }
     }
 
     .ilo--link-list--link {
       border-bottom: px-to-rem($borders-base) solid rgba(237, 240, 242, 0.4);
-      @include dataurlicon("arrowright", $color-base-neutrals-white);
+      @include dataurlicon("chevron_right", $color-base-neutrals-white);
 
       .ilo--link-list--label {
         color: $color-base-neutrals-white;
@@ -166,7 +163,7 @@
       &:hover,
       &:focus {
         outline: none;
-        @include dataurlicon("arrowright", $color-base-blue-medium);
+        @include dataurlicon("chevron_right", $color-base-blue-medium);
 
         .ilo--link-list--label {
           color: $color-base-blue-medium;

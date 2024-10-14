@@ -45,7 +45,8 @@
       background-repeat: no-repeat;
       background-size: contain;
       background-position: center center;
-      @include dataurlicon("checkmark", $color-base-neutrals-lighter);
+      background-size: 24px;
+      @include dataurlicon("check", $color-base-neutrals-lighter);
     }
 
     &:after {

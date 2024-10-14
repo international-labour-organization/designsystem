@@ -146,13 +146,14 @@
 
 @mixin dataurlicon($name, $color: $color-base-neutrals-black) {
   background-image: url("#{colortodataurlicon($name, $color)}");
+  background-repeat: no-repeat;
 }
 
 // ======================================
 // Video Button
 // ======================================
 @mixin videobutton($name, $size: "standard") {
-  $height: if($size == "big", 48px, 24px);
+  $height: if($size == "big", 72px, 32px);
   $box: if($size == "big", 80px, 40px);
   $width: $height;
   $color: $color-ux-video-controls-default-icon;
@@ -397,15 +398,15 @@
   ul {
     li {
       position: relative;
-      padding-inline-start: spacing(6);
+      padding-inline-start: spacing(8);
 
       &::before {
         content: "";
         position: absolute;
-        height: px-to-rem(14px);
-        width: px-to-rem(12px);
-        top: px-to-rem(6px);
-        @include dataurlicon("listarrow", $color-base-neutrals-light);
+        height: px-to-rem(24px);
+        width: px-to-rem(24px);
+        top: spacing(1);
+        @include dataurlicon("caret_right", $color-base-neutrals-light);
         background-repeat: no-repeat;
 
         // Left takes precedence in LTR layouts
@@ -416,10 +417,6 @@
         // We have to rotate the bullet in RTL
         [dir="rtl"] & {
           transform: rotate(180deg);
-        }
-
-        @include breakpoint("md") {
-          top: px-to-rem(7px);
         }
       }
     }
