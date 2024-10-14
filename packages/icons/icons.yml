@@ -292,6 +292,13 @@
   sizes:
     - glyph
 
+- name: quote
+  friendly_name: quote
+  aliases:
+    - ILO Icons
+  sizes:
+    - glyph
+
 - name: social_rss
   friendly_name: social_rss
   aliases:
