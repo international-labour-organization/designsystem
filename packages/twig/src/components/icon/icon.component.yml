@@ -7,7 +7,7 @@ icon:
     name:
       type: value
       label: Name
-      description: The name of the icon to display. <strong style="font-weight:bold">The name should match SVG file</strong>, see available icons in the <a target="_blank" href="https://github.com/international-labour-organization/designsystem/tree/develop/packages/icons/src/svg">@ilo-org/icons</a> package
+      description: The name of the icon to display.
       preview: "chevron_up"
       required: true
     size:
