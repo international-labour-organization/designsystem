@@ -8,68 +8,66 @@ npm install -S @ilo-org/icons
 
 ## Icons
 
-| Icon Name                  | Image                                       |
-| -------------------------- | ------------------------------------------- |
-| `add`                      | ![](./src/svg/add.svg)                      |
-| `chevron_down`             | ![](./src/svg/chevron_down.svg)             |
-| `arrowgotoleft`            | ![](./src/svg/arrowgotoleft.svg)            |
-| `arrowgotoright`           | ![](./src/svg/arrowgotoright.svg)           |
-| `arrowleft`                | ![](./src/svg/arrowleft.svg)                |
-| `caret_right`              | ![](./src/svg/caret_right.svg)              |
-| `arrowsort`                | ![](./src/svg/arrowsort.svg)                |
-| `arrowup`                  | ![](./src/svg/arrowup.svg)                  |
-| `burger`                   | ![](./src/svg/burger.svg)                   |
-| `calendar`                 | ![](./src/svg/calendar.svg)                 |
-| `caretdown`                | ![](./src/svg/caretdown.svg)                |
-| `caretleft`                | ![](./src/svg/caretleft.svg)                |
-| `caretright`               | ![](./src/svg/caretright.svg)               |
-| `caretUp`                  | ![](./src/svg/caretUp.svg)                  |
-| `check`                    | ![](./src/svg/check.svg)                    |
-| `chevrondown`              | ![](./src/svg/chevrondown.svg)              |
-| `chevronleft`              | ![](./src/svg/chevronleft.svg)              |
-| `chevronright`             | ![](./src/svg/chevronright.svg)             |
-| `chevronup`                | ![](./src/svg/chevronup.svg)                |
-| `close`                    | ![](./src/svg/close.svg)                    |
-| `closedcaptions`           | ![](./src/svg/closedcaptions.svg)           |
-| `copyright`                | ![](./src/svg/copyright.svg)                |
-| `dot_menu`                 | ![](./src/svg/dot_menu.svg)                 |
-| `download`                 | ![](./src/svg/download.svg)                 |
-| `footertriangle`           | ![](./src/svg/footertriangle.svg)           |
-| `fullscreen`               | ![](./src/svg/fullscreen.svg)               |
-| `halfsquaretriangle`       | ![](./src/svg/halfsquaretriangle.svg)       |
-| `home`                     | ![](./src/svg/home.svg)                     |
-| `launch`                   | ![](./src/svg/launch.svg)                   |
-| `language`                 | ![](./src/svg/language.svg)                 |
-| `linkedin`                 | ![](./src/svg/linkedin.svg)                 |
-| `mail`                     | ![](./src/svg/mail.svg)                     |
-| `minus`                    | ![](./src/svg/minus.svg)                    |
-| `notificationerror`        | ![](./src/svg/notificationerror.svg)        |
-| `notificationinfo`         | ![](./src/svg/notificationinfo.svg)         |
-| `notificationinfooutlined` | ![](./src/svg/notificationinfooutlined.svg) |
-| `notificationsuccess`      | ![](./src/svg/notificationsuccess.svg)      |
-| `notificationwarning`      | ![](./src/svg/notificationwarning.svg)      |
-| `online`                   | ![](./src/svg/online.svg)                   |
-| `pause`                    | ![](./src/svg/pause.svg)                    |
-| `pin`                      | ![](./src/svg/pin.svg)                      |
-| `play`                     | ![](./src/svg/play.svg)                     |
-| `quote`                    | ![](./src/svg/quote.svg)                    |
-| `search`                   | ![](./src/svg/search.svg)                   |
-| `send`                     | ![](./src/svg/send.svg)                     |
-| `settings`                 | ![](./src/svg/settings.svg)                 |
-| `share`                    | ![](./src/svg/share.svg)                    |
-| `socialfacebook`           | ![](./src/svg/socialfacebook.svg)           |
-| `socialflickr`             | ![](./src/svg/socialflickr.svg)             |
-| `socialinstagram`          | ![](./src/svg/socialinstagram.svg)          |
-| `sociallinkedin`           | ![](./src/svg/sociallinkedin.svg)           |
-| `socialrss`                | ![](./src/svg/socialrss.svg)                |
-| `socialtiktok`             | ![](./src/svg/socialtiktok.svg)             |
-| `socialx`                  | ![](./src/svg/socialx.svg)                  |
-| `socialyoutube`            | ![](./src/svg/socialyoutube.svg)            |
-| `statistics`               | ![](./src/svg/statistics.svg)               |
-| `upload`                   | ![](./src/svg/upload.svg)                   |
-| `videosoundoff`            | ![](./src/svg/videosoundoff.svg)            |
-| `videosoundon`             | ![](./src/svg/videosoundon.svg)             |
-| `warning`                  | ![](./src/svg/warning.svg)                  |
+| Icon Name                    | Image                                                                           |
+| ---------------------------- | ------------------------------------------------------------------------------- |
+| `arrow_down`                 | <img src="./src/svg/arrow_down.svg" width="24px" height="24px">                 |
+| `arrow_left`                 | <img src="./src/svg/arrow_left.svg" width="24px" height="24px">                 |
+| `arrow_right`                | <img src="./src/svg/arrow_right.svg" width="24px" height="24px">                |
+| `arrow_sort`                 | <img src="./src/svg/arrow_sort.svg" width="24px" height="24px">                 |
+| `arrow_up`                   | <img src="./src/svg/arrow_up.svg" width="24px" height="24px">                   |
+| `burger`                     | <img src="./src/svg/burger.svg" width="24px" height="24px">                     |
+| `calendar`                   | <img src="./src/svg/calendar.svg" width="24px" height="24px">                   |
+| `caret_down`                 | <img src="./src/svg/caret_down.svg" width="24px" height="24px">                 |
+| `caret_left`                 | <img src="./src/svg/caret_left.svg" width="24px" height="24px">                 |
+| `caret_right`                | <img src="./src/svg/caret_right.svg" width="24px" height="24px">                |
+| `caret_up`                   | <img src="./src/svg/caret_up.svg" width="24px" height="24px">                   |
+| `check`                      | <img src="./src/svg/check.svg" width="24px" height="24px">                      |
+| `chevron_down`               | <img src="./src/svg/chevron_down.svg" width="24px" height="24px">               |
+| `chevron_left`               | <img src="./src/svg/chevron_left.svg" width="24px" height="24px">               |
+| `chevron_right`              | <img src="./src/svg/chevron_right.svg" width="24px" height="24px">              |
+| `chevron_up`                 | <img src="./src/svg/chevron_up.svg" width="24px" height="24px">                 |
+| `close`                      | <img src="./src/svg/close.svg" width="24px" height="24px">                      |
+| `closed_captions`            | <img src="./src/svg/closed_captions.svg" width="24px" height="24px">            |
+| `copyright`                  | <img src="./src/svg/copyright.svg" width="24px" height="24px">                  |
+| `dot_menu`                   | <img src="./src/svg/dot_menu.svg" width="24px" height="24px">                   |
+| `double_chevron_left`        | <img src="./src/svg/double_chevron_left.svg" width="24px" height="24px">        |
+| `double_chevron_right`       | <img src="./src/svg/double_chevron_right.svg" width="24px" height="24px">       |
+| `download`                   | <img src="./src/svg/download.svg" width="24px" height="24px">                   |
+| `fullscreen`                 | <img src="./src/svg/fullscreen.svg" width="24px" height="24px">                 |
+| `globe`                      | <img src="./src/svg/globe.svg" width="24px" height="24px">                      |
+| `home`                       | <img src="./src/svg/home.svg" width="24px" height="24px">                       |
+| `launch`                     | <img src="./src/svg/launch.svg" width="24px" height="24px">                     |
+| `mail`                       | <img src="./src/svg/mail.svg" width="24px" height="24px">                       |
+| `meeting`                    | <img src="./src/svg/meeting.svg" width="24px" height="24px">                    |
+| `minus`                      | <img src="./src/svg/minus.svg" width="24px" height="24px">                      |
+| `notification_error`         | <img src="./src/svg/notification_error.svg" width="24px" height="24px">         |
+| `notification_info`          | <img src="./src/svg/notification_info.svg" width="24px" height="24px">          |
+| `notification_info_outlined` | <img src="./src/svg/notification_info_outlined.svg" width="24px" height="24px"> |
+| `notification_success`       | <img src="./src/svg/notification_success.svg" width="24px" height="24px">       |
+| `notification_warning`       | <img src="./src/svg/notification_warning.svg" width="24px" height="24px">       |
+| `pause`                      | <img src="./src/svg/pause.svg" width="24px" height="24px">                      |
+| `pin`                        | <img src="./src/svg/pin.svg" width="24px" height="24px">                        |
+| `plus`                       | <img src="./src/svg/plus.svg" width="24px" height="24px">                       |
+| `quote`                      | <img src="./src/svg/quote.svg" width="24px" height="24px">                      |
+| `search`                     | <img src="./src/svg/search.svg" width="24px" height="24px">                     |
+| `send`                       | <img src="./src/svg/send.svg" width="24px" height="24px">                       |
+| `settings`                   | <img src="./src/svg/settings.svg" width="24px" height="24px">                   |
+| `share`                      | <img src="./src/svg/share.svg" width="24px" height="24px">                      |
+| `sound_off`                  | <img src="./src/svg/sound_off.svg" width="24px" height="24px">                  |
+| `sound_on`                   | <img src="./src/svg/sound_on.svg" width="24px" height="24px">                   |
+| `statistics`                 | <img src="./src/svg/statistics.svg" width="24px" height="24px">                 |
+| `social_facebook`            | <img src="./src/svg/social_facebook.svg" width="24px" height="24px">            |
+| `social_flickr`              | <img src="./src/svg/social_flickr.svg" width="24px" height="24px">              |
+| `social_instagram`           | <img src="./src/svg/social_instagram.svg" width="24px" height="24px">           |
+| `social_linkedin`            | <img src="./src/svg/social_linkedin.svg" width="24px" height="24px">            |
+| `social_rss`                 | <img src="./src/svg/social_rss.svg" width="24px" height="24px">                 |
+| `social_tiktok`              | <img src="./src/svg/social_tiktok.svg" width="24px" height="24px">              |
+| `social_x`                   | <img src="./src/svg/social_x.svg" width="24px" height="24px">                   |
+| `social_youtube`             | <img src="./src/svg/social_youtube.svg" width="24px" height="24px">             |
+| `stream`                     | <img src="./src/svg/stream.svg" width="24px" height="24px">                     |
+| `time`                       | <img src="./src/svg/time.svg" width="24px" height="24px">                       |
+| `triangle_right`             | <img src="./src/svg/triangle_right.svg" width="24px" height="24px">             |
+| `upload`                     | <img src="./src/svg/upload.svg" width="24px" height="24px">                     |
 
 ## Contributing
 

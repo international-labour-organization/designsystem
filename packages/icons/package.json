@@ -54,16 +54,18 @@
     "clean": "rimraf es lib build-info.json metadata.json",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "prepublishOnly": "pnpm run build"
+    "prepublishOnly": "pnpm run build",
+    "update-readme": "node ./update_readme.js"
   },
   "dependencies": {
     "@ilo-org/icon-build-helpers": "workspace:*"
   },
   "devDependencies": {
-    "@ilo-org/eslint-config": "workspace:*",
     "@babel/preset-env": "^7.21.5",
+    "@ilo-org/eslint-config": "workspace:*",
     "@un/figma-connect": "^0.0.7",
     "browserslist-config-carbon": "^10.6.1",
+    "js-yaml": "^3.13.1",
     "rimraf": "^3.0.2"
   }
 }

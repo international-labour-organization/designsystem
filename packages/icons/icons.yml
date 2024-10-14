@@ -159,20 +159,6 @@
   sizes:
     - glyph
 
-- name: social_facebook
-  friendly_name: social_facebook
-  aliases:
-    - ILO Icons
-  sizes:
-    - glyph
-
-- name: social_flickr
-  friendly_name: social_flickr
-  aliases:
-    - ILO Icons
-  sizes:
-    - glyph
-
 - name: fullscreen
   friendly_name: fullscreen
   aliases:
@@ -194,22 +180,8 @@
   sizes:
     - glyph
 
-- name: social_instagram
-  friendly_name: social_instagram
-  aliases:
-    - ILO Icons
-  sizes:
-    - glyph
-
 - name: launch
   friendly_name: launch
-  aliases:
-    - ILO Icons
-  sizes:
-    - glyph
-
-- name: social_linkedin
-  friendly_name: social_linkedin
   aliases:
     - ILO Icons
   sizes:
@@ -299,13 +271,6 @@
   sizes:
     - glyph
 
-- name: social_rss
-  friendly_name: social_rss
-  aliases:
-    - ILO Icons
-  sizes:
-    - glyph
-
 - name: search
   friendly_name: search
   aliases:
@@ -355,8 +320,36 @@
   sizes:
     - glyph
 
-- name: stream
-  friendly_name: stream
+- name: social_facebook
+  friendly_name: social_facebook
+  aliases:
+    - ILO Icons
+  sizes:
+    - glyph
+
+- name: social_flickr
+  friendly_name: social_flickr
+  aliases:
+    - ILO Icons
+  sizes:
+    - glyph
+
+- name: social_instagram
+  friendly_name: social_instagram
+  aliases:
+    - ILO Icons
+  sizes:
+    - glyph
+
+- name: social_linkedin
+  friendly_name: social_linkedin
+  aliases:
+    - ILO Icons
+  sizes:
+    - glyph
+
+- name: social_rss
+  friendly_name: social_rss
   aliases:
     - ILO Icons
   sizes:
@@ -364,6 +357,27 @@
 
 - name: social_tiktok
   friendly_name: social_tiktok
+  aliases:
+    - ILO Icons
+  sizes:
+    - glyph
+
+- name: social_x
+  friendly_name: social_x
+  aliases:
+    - ILO Icons
+  sizes:
+    - glyph
+
+- name: social_youtube
+  friendly_name: social_youtube
+  aliases:
+    - ILO Icons
+  sizes:
+    - glyph
+
+- name: stream
+  friendly_name: stream
   aliases:
     - ILO Icons
   sizes:
@@ -385,20 +399,6 @@
 
 - name: upload
   friendly_name: upload
-  aliases:
-    - ILO Icons
-  sizes:
-    - glyph
-
-- name: social_x
-  friendly_name: social_x
-  aliases:
-    - ILO Icons
-  sizes:
-    - glyph
-
-- name: social_youtube
-  friendly_name: social_youtube
   aliases:
     - ILO Icons
   sizes:
