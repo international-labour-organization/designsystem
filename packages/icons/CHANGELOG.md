@@ -1,5 +1,12 @@
 # @ilo-org/icons
 
+## 2.0.0
+
+### Major Changes
+
+- 058345637: - Replaces all of the icons in the Icons package and replaces them with standardised versions that are all the same size, with the minor exception of the `Quote` icon. This required sizing changes to icons and affects the appearance of many components.
+  - Pattern definitions for `modal` and `tabs` were adjusted to use the new icon settings.
+
 ## 1.1.0
 
 ### Minor Changes
