@@ -65,7 +65,7 @@
 
         &:after {
           background-color: $color-base-neutrals-lighter;
-          background-image: url("#{colortodataurlicon("arrow", $color-ux-labels-actionable)}");
+          background-image: url("#{colortodataurlicon('chevron_down', $color-ux-labels-actionable)}");
           background-position: center center;
           background-repeat: no-repeat;
           background-size: 75%;
@@ -87,7 +87,7 @@
 
           &:after {
             background-color: $color-base-blue-light;
-            background-image: url("#{colortodataurlicon("arrow", $color-base-blue-medium)}");
+            background-image: url("#{colortodataurlicon('chevron_down', $color-base-blue-medium)}");
           }
         }
 

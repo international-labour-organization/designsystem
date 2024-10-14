@@ -86,10 +86,10 @@ $avatar-size-lg: $row-1-lg;
         width: px-to-rem(24px);
         margin-inline-start: spacing(2);
         content: "";
-        @include dataurlicon("arrowright", $color-link-text-default);
+        @include dataurlicon("chevron_right", $color-link-text-default);
 
         [dir="rtl"] & {
-          @include dataurlicon("arrowleft", $color-link-text-default);
+          @include dataurlicon("chevron_left", $color-link-text-default);
         }
       }
     }
@@ -101,10 +101,10 @@ $avatar-size-lg: $row-1-lg;
         outline: none;
 
         &:after {
-          @include dataurlicon("arrowright", $color-link-text-hover);
+          @include dataurlicon("chevron_right", $color-link-text-hover);
 
           [dir="rtl"] & {
-            @include dataurlicon("arrowleft", $color-link-text-hover);
+            @include dataurlicon("chevron_left", $color-link-text-hover);
           }
         }
       }
@@ -118,10 +118,13 @@ $avatar-size-lg: $row-1-lg;
       #{$c}--link {
         &--label {
           &:after {
-            @include dataurlicon("arrowright", $color-base-neutrals-lighter);
+            @include dataurlicon("chevron_right", $color-base-neutrals-lighter);
 
             [dir="rtl"] & {
-              @include dataurlicon("arrowleft", $color-base-neutrals-lighter);
+              @include dataurlicon(
+                "chevron_left",
+                $color-base-neutrals-lighter
+              );
             }
           }
         }
@@ -137,10 +140,10 @@ $avatar-size-lg: $row-1-lg;
             outline: none;
 
             &:after {
-              @include dataurlicon("arrowright", $brand-ilo-turquoise);
+              @include dataurlicon("chevron_right", $brand-ilo-turquoise);
 
               [dir="rtl"] & {
-                @include dataurlicon("arrowleft", $brand-ilo-turquoise);
+                @include dataurlicon("chevron_left", $brand-ilo-turquoise);
               }
             }
           }

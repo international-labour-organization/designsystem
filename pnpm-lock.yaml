@@ -212,6 +212,9 @@ importers:
       browserslist-config-carbon:
         specifier: ^10.6.1
         version: 10.6.1
+      js-yaml:
+        specifier: ^3.13.1
+        version: 3.13.1
       rimraf:
         specifier: ^3.0.2
         version: 3.0.2

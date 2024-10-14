@@ -3,49 +3,61 @@ categories:
     subcategories:
       - name: Controls
         members:
-          - add
-          - arrow
-          - arrowleft
-          - arrowright
-          - breadcrumbdivider
-          - breadcrumbdividerrtl
+          - arrow_down
+          - arrow_left
+          - arrow_right
+          - arrow_sort
+          - arrow_up
           - burger
-          - checkmark
+          - calendar
+          - caret_down
+          - caret_left
+          - caret_right
+          - caret_up
+          - check
+          - chevron_down
+          - chevron_left
+          - chevron_right
+          - chevron_up
           - close
+          - closed_captions
           - copyright
+          - dot_menu
+          - double_chevron_left
+          - double_chevron_right
           - download
-          - doublearrow
-          - elipsis
-          - equilateraltriangle
-          - error
-          - facebook
-          - footertriangle
+          - social_facebook
+          - social_flickr
           - fullscreen
-          - global
-          - halfsquaretriangle
+          - globe
           - home
-          - info
-          - linkedin
-          - instagram
-          - listarrow
-          - listarrowreverse
+          - social_instagram
+          - launch
+          - social_linkedin
+          - mail
+          - meeting
           - minus
-          - muted
-          - paginationarrow
+          - notification_error
+          - notification_info
+          - notification_info_outlined
+          - notification_success
+          - notification_warning
           - pause
-          - play
+          - pin
+          - plus
           - quote
-          - scalenerighttriangle
-          - scalenerighttrianglereverse
+          - social_rss
           - search
-          - stemarrow
-          - success
-          - triangle
-          - triangledecoration
-          - trianglereverse
-          - volume
-          - warning
-          - youtube
-          - flickr
-          - tiktok
-          - x
+          - send
+          - settings
+          - share
+          - sound_off
+          - sound_on
+          - statistics
+          - stream
+          - social_tiktok
+          - time
+          - triangle_right
+          - upload
+          - social_x
+          - social_youtube
