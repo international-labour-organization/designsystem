@@ -1,5 +1,16 @@
 # @ilo-org/react
 
+## 0.18.2
+
+### Patch Changes
+
+- 058345637: - Replaces all of the icons in the Icons package and replaces them with standardised versions that are all the same size, with the minor exception of the `Quote` icon. This required sizing changes to icons and affects the appearance of many components.
+  - Pattern definitions for `modal` and `tabs` were adjusted to use the new icon settings.
+- Updated dependencies [058345637]
+- Updated dependencies [57715d1ce]
+  - @ilo-org/styles@1.3.0
+  - @ilo-org/icons-react@1.0.2
+
 ## 0.18.1
 
 ### Patch Changes
