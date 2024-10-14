@@ -1,5 +1,19 @@
 # @ilo-org/twig
 
+## 1.3.0
+
+### Minor Changes
+
+- 058345637: - Replaces all of the icons in the Icons package and replaces them with standardised versions that are all the same size, with the minor exception of the `Quote` icon. This required sizing changes to icons and affects the appearance of many components.
+  - Pattern definitions for `modal` and `tabs` were adjusted to use the new icon settings.
+
+### Patch Changes
+
+- Updated dependencies [058345637]
+- Updated dependencies [57715d1ce]
+  - @ilo-org/icons@2.0.0
+  - @ilo-org/styles@1.3.0
+
 ## 1.2.6
 
 ### Patch Changes
