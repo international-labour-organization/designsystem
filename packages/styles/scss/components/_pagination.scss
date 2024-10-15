@@ -10,10 +10,10 @@
   $self: &;
 
   &--link {
-    background: map-get($color, "ux", "pagination", "default", "background");
+    background: var(--ilo-color-gray-light);
     border: none;
     border-radius: 2px;
-    color: map-get($color, "ux", "pagination", "default", "icon");
+    color: var(--ilo-color-blue-dark);
     display: inline-block;
     font-family: var(--ilo-fonts-display);
     height: px-to-rem(40px);
@@ -28,31 +28,26 @@
       content: "";
       display: inline-block;
       left: 50%;
-      height: px-to-rem(16px);
+      height: px-to-rem(20px);
       position: absolute;
       top: 50%;
       transform: translate(-50%, -50%);
       transform-origin: center center;
-      width: px-to-rem(16px);
+      width: px-to-rem(20px);
     }
 
     &:hover {
-      background: map-get($color, "ux", "pagination", "hover", "background");
-      color: map-get($color, "ux", "pagination", "hover", "icon");
+      background: var(--ilo-color-blue-lighter);
+      color: var(--ilo-color-blue);
     }
 
     &.ilo--pagination--disable {
       opacity: 0.45;
       cursor: unset;
+      pointer-events: none;
 
       &:hover {
-        background: map-get(
-          $color,
-          "ux",
-          "pagination",
-          "default",
-          "background"
-        );
+        background: var(--ilo-color-gray-light);
       }
     }
   }
@@ -63,7 +58,7 @@
       transform: translate(-50%, -50%) rotate(180deg);
 
       @include dataurlicon(
-        "arrowgotoright",
+        "double_chevron_right",
         map-get($color, "ux", "pagination", "default", "icon")
       );
     }
@@ -71,7 +66,7 @@
     &:hover {
       &::before {
         @include dataurlicon(
-          "arrowgotoright",
+          "double_chevron_right",
           map-get($color, "ux", "pagination", "hover", "icon")
         );
       }
@@ -81,17 +76,11 @@
       opacity: 0.45;
 
       &:hover {
-        background: map-get(
-          $color,
-          "ux",
-          "pagination",
-          "default",
-          "background"
-        );
+        background: var(--ilo-color-gray-light);
 
         &::before {
           @include dataurlicon(
-            "arrowgotoright",
+            "double_chevron_right",
             map-get($color, "ux", "pagination", "default", "icon")
           );
         }
@@ -102,10 +91,10 @@
   &--prev-page {
     &::before {
       transform: translate(-50%, -50%) rotate(180deg);
-      width: px-to-rem(10px);
+      width: px-to-rem(20px);
 
       @include dataurlicon(
-        "caret_right",
+        "chevron_right",
         map-get($color, "ux", "pagination", "default", "icon")
       );
     }
@@ -113,7 +102,7 @@
     &:hover {
       &::before {
         @include dataurlicon(
-          "caret_right",
+          "chevron_right",
           map-get($color, "ux", "pagination", "hover", "icon")
         );
       }
@@ -123,17 +112,11 @@
       opacity: 0.45;
 
       &:hover {
-        background: map-get(
-          $color,
-          "ux",
-          "pagination",
-          "default",
-          "background"
-        );
+        background: var(--ilo-color-gray-light);
 
         &::before {
           @include dataurlicon(
-            "caret_right",
+            "chevron_right",
             map-get($color, "ux", "pagination", "default", "icon")
           );
         }
@@ -144,10 +127,10 @@
   &--next-page {
     &::before {
       transform: translate(-50%, -50%) rotate(0);
-      width: px-to-rem(10px);
+      width: px-to-rem(20px);
 
       @include dataurlicon(
-        "caret_right",
+        "chevron_right",
         map-get($color, "ux", "pagination", "default", "icon")
       );
     }
@@ -155,7 +138,7 @@
     &:hover {
       &::before {
         @include dataurlicon(
-          "caret_right",
+          "chevron_right",
           map-get($color, "ux", "pagination", "hover", "icon")
         );
       }
@@ -165,17 +148,11 @@
       opacity: 0.45;
 
       &:hover {
-        background: map-get(
-          $color,
-          "ux",
-          "pagination",
-          "default",
-          "background"
-        );
+        background: var(--ilo-color-gray-light);
 
         &::before {
           @include dataurlicon(
-            "caret_right",
+            "chevron_right",
             map-get($color, "ux", "pagination", "default", "icon")
           );
         }
@@ -186,7 +163,7 @@
   &--last-page {
     &::before {
       @include dataurlicon(
-        "arrowgotoright",
+        "double_chevron_right",
         map-get($color, "ux", "pagination", "default", "icon")
       );
     }
@@ -194,7 +171,7 @@
     &:hover {
       &::before {
         @include dataurlicon(
-          "arrowgotoright",
+          "double_chevron_right",
           map-get($color, "ux", "pagination", "hover", "icon")
         );
       }
@@ -204,17 +181,11 @@
       opacity: 0.45;
 
       &:hover {
-        background: map-get(
-          $color,
-          "ux",
-          "pagination",
-          "default",
-          "background"
-        );
+        background: var(--ilo-color-gray-light);
 
         &::before {
           @include dataurlicon(
-            "caret_right",
+            "chevron_right",
             map-get($color, "ux", "pagination", "default", "icon")
           );
         }
