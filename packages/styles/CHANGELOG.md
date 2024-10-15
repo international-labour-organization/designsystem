@@ -1,5 +1,11 @@
 # @ilo-org/styles
 
+## 1.3.1
+
+### Patch Changes
+
+- eac2922b5: Fixed pagination not rendering correctly and allowing clicks on disabled links
+
 ## 1.3.0
 
 ### Minor Changes
