@@ -1,5 +1,12 @@
 # @ilo-org/react
 
+## 0.18.3
+
+### Patch Changes
+
+- Updated dependencies [eac2922b5]
+  - @ilo-org/styles@1.3.1
+
 ## 0.18.2
 
 ### Patch Changes
