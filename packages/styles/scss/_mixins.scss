@@ -149,6 +149,13 @@
   background-repeat: no-repeat;
 }
 
+@mixin icon($name, $color: black) {
+  $icon: map-get($icons, $name);
+  mask-image: url("#{$icon}");
+  mask-repeat: no-repeat;
+  background-color: $color;
+}
+
 // ======================================
 // Video Button
 // ======================================
