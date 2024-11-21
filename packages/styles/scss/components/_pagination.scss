@@ -57,18 +57,12 @@
     &::before {
       transform: translate(-50%, -50%) rotate(180deg);
 
-      @include dataurlicon(
-        "double_chevron_right",
-        map-get($color, "ux", "pagination", "default", "icon")
-      );
+      @include icon("double_chevron_right", var(--ilo-color-blue-dark));
     }
 
     &:hover {
       &::before {
-        @include dataurlicon(
-          "double_chevron_right",
-          map-get($color, "ux", "pagination", "hover", "icon")
-        );
+        @include icon("double_chevron_right", var(--ilo-color-blue));
       }
     }
 
@@ -79,10 +73,7 @@
         background: var(--ilo-color-gray-light);
 
         &::before {
-          @include dataurlicon(
-            "double_chevron_right",
-            map-get($color, "ux", "pagination", "default", "icon")
-          );
+          @include icon("double_chevron_right", var(--ilo-color-blue-dark));
         }
       }
     }
@@ -93,18 +84,12 @@
       transform: translate(-50%, -50%) rotate(180deg);
       width: px-to-rem(20px);
 
-      @include dataurlicon(
-        "chevron_right",
-        map-get($color, "ux", "pagination", "default", "icon")
-      );
+      @include icon("chevron_right", var(--ilo-color-blue-dark));
     }
 
     &:hover {
       &::before {
-        @include dataurlicon(
-          "chevron_right",
-          map-get($color, "ux", "pagination", "hover", "icon")
-        );
+        @include icon("chevron_right", var(--ilo-color-blue));
       }
     }
 
@@ -115,10 +100,7 @@
         background: var(--ilo-color-gray-light);
 
         &::before {
-          @include dataurlicon(
-            "chevron_right",
-            map-get($color, "ux", "pagination", "default", "icon")
-          );
+          @include icon("chevron_right", var(--ilo-color-blue-dark));
         }
       }
     }
@@ -129,18 +111,12 @@
       transform: translate(-50%, -50%) rotate(0);
       width: px-to-rem(20px);
 
-      @include dataurlicon(
-        "chevron_right",
-        map-get($color, "ux", "pagination", "default", "icon")
-      );
+      @include icon("chevron_right", var(--ilo-color-blue-dark));
     }
 
     &:hover {
       &::before {
-        @include dataurlicon(
-          "chevron_right",
-          map-get($color, "ux", "pagination", "hover", "icon")
-        );
+        @include icon("chevron_right", var(--ilo-color-blue));
       }
     }
 
@@ -151,10 +127,7 @@
         background: var(--ilo-color-gray-light);
 
         &::before {
-          @include dataurlicon(
-            "chevron_right",
-            map-get($color, "ux", "pagination", "default", "icon")
-          );
+          @include icon("chevron_right", var(--ilo-color-blue-dark));
         }
       }
     }
@@ -162,18 +135,12 @@
 
   &--last-page {
     &::before {
-      @include dataurlicon(
-        "double_chevron_right",
-        map-get($color, "ux", "pagination", "default", "icon")
-      );
+      @include icon("double_chevron_right", var(--ilo-color-blue-dark));
     }
 
     &:hover {
       &::before {
-        @include dataurlicon(
-          "double_chevron_right",
-          map-get($color, "ux", "pagination", "hover", "icon")
-        );
+        @include icon("double_chevron_right", var(--ilo-color-blue));
       }
     }
 
@@ -184,10 +151,7 @@
         background: var(--ilo-color-gray-light);
 
         &::before {
-          @include dataurlicon(
-            "chevron_right",
-            map-get($color, "ux", "pagination", "default", "icon")
-          );
+          @include icon("chevron_right", var(--ilo-color-blue-dark));
         }
       }
     }
