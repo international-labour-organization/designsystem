@@ -69,7 +69,7 @@
     position: relative;
 
     &__icon {
-      @include dataurlicon("chevron_down", $brand-ilo-dark-blue);
+      @include icon("chevron_down", var(--ilo-color-blue-dark));
 
       background-position: right;
       background-repeat: no-repeat;
@@ -96,23 +96,19 @@
     width: px-to-rem(24px);
 
     &__error {
-      background-color: var(--ilo-color-notification-type-error);
-      @include dataurlicon("notification_error", "white");
+      @include icon("notification_error", var(--ilo-color-white));
     }
 
     &__info {
-      background-color: var(--ilo-color-notification-type-info);
-      @include dataurlicon("notification_info", "white");
+      @include icon("notification_info", var(--ilo-color-white));
     }
 
     &__success {
-      background-color: var(--ilo-color-notification-type-success);
-      @include dataurlicon("notification_success", "white");
+      @include icon("notification_success", var(--ilo-color-white));
     }
 
     &__warning {
-      background-color: var(--ilo-color-notification-type-warning);
-      @include dataurlicon("notification_warning", "white");
+      @include icon("notification_warning", var(--ilo-color-white));
     }
   }
 
