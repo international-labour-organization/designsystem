@@ -45,6 +45,7 @@ const LinkList: FC<LinkListProps> = ({
                         <span className={`${baseClass}--label`}>
                           {link.label}
                         </span>
+                        <span className={`${baseClass}--icon`} />
                       </a>
                     </li>
                   ))}
