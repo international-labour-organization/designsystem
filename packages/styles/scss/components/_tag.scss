@@ -88,7 +88,7 @@
 
     &.icon__position--right {
       .ilo--icon {
-        @include dataurlicon("close", map-get($color, "tag", "text", "active"));
+        @include icon("close", var(--ilo-color-blue-dark));
         background-position: center;
         background-repeat: no-repeat;
         background-size: contain;
@@ -111,10 +111,7 @@
 
       &.icon__position--right {
         .ilo--icon {
-          @include dataurlicon(
-            "close",
-            map-get($color, "tag", "text", "hover")
-          );
+          @include icon("close", var(--ilo-color-blue));
         }
       }
     }
@@ -148,7 +145,7 @@
 
     &.icon__position--right {
       .ilo--icon {
-        @include dataurlicon("close", map-get($color, "tag", "text", "active"));
+        @include icon("close", var(--ilo-color-blue-dark));
 
         height: 100%;
         max-height: 28px;
@@ -169,10 +166,7 @@
 
       &.icon__position--right {
         .ilo--icon {
-          @include dataurlicon(
-            "close",
-            map-get($color, "tag", "text", "hover")
-          );
+          @include icon("close", var(--ilo-color-blue));
         }
       }
     }
