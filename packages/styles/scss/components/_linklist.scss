@@ -4,6 +4,9 @@
 @import "../mixins";
 
 .ilo--link-list {
+  --ilo-link-list-color-icon: var(--ilo-color-blue-dark);
+  --ilo-link-list-color-indent-icon: var(--ilo-color-gray-base);
+
   &--headline {
     font-family: var(--ilo-fonts-display);
     font-weight: map-get($type, "weights", "label");
@@ -33,14 +36,10 @@
       padding-left: spacing(8);
 
       .ilo--link-list--label {
-        display: block;
         padding-left: spacing(8);
         position: relative;
 
         &:before {
-          background-position: left center;
-          background-repeat: no-repeat;
-          background-size: contain;
           content: "";
           display: block;
           height: px-to-rem(24px);
@@ -48,15 +47,16 @@
           left: 0;
           position: absolute;
           top: 50%;
-          transform: translateY(-50%) rotate(-90deg);
+          transform: translateY(-50%);
           transform-origin: center;
-          @include dataurlicon("chevrondown", $color-base-neutrals-light);
+          @include icon("caret_right", var(--ilo-link-list-color-indent-icon));
         }
 
         [dir="rtl"] & {
           padding-right: spacing(6);
           &:before {
-            transform: translateY(-50%) rotate(90deg);
+            @include icon("caret_left", var(--ilo-link-list-color-indent-icon));
+            transform: translateY(-50%);
             left: unset;
             right: 0;
           }
@@ -67,28 +67,29 @@
       & .ilo--link-list--link:focus,
       &:hover,
       &:focus {
-        .ilo--link-list--label:before {
-          @include dataurlicon("chevrondown", $color-link-text-hover);
-        }
+        --ilo-link-list-color-indent-icon: var(--ilo-color-blue);
       }
     }
   }
 
+  .ilo--link-list--icon {
+    @include icon("chevron_right", var(--ilo-link-list-color-icon));
+    width: px-to-rem(24px);
+    height: px-to-rem(24px);
+  }
+
   &--link {
-    background-position: calc(100% - 4px) center;
-    background-repeat: no-repeat;
-    background-size: px-to-rem(24px) px-to-rem(24px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     border-bottom: px-to-rem($borders-base) solid $color-base-neutrals-lighter;
     color: map-get($color, "link", "text", "default");
-    display: block;
     font-family: var(--ilo-fonts-display);
     font-weight: map-get($type, "weights", "section");
     @include font-styles("body-small");
     padding-top: spacing(4);
     padding-bottom: spacing(4);
-    padding-inline-end: spacing(8);
     text-decoration: none;
-    @include dataurlicon("chevron_right", $color-link-text-default);
     @include globaltransition("color, background-color, border-color");
 
     &:visited {
@@ -104,41 +105,32 @@
 
     &:hover,
     &:focus {
+      --ilo-link-list-color-icon: var(--ilo-color-blue);
       border-bottom: px-to-rem($borders-base) solid
         map-get($color, "link", "text", "hover");
       background-color: $color-base-blue-light;
       color: map-get($color, "link", "text", "hover");
       outline: none;
-      @include dataurlicon("chevron_right", $color-link-text-hover);
       @include globaltransition("color, background-color, border-color");
     }
 
     [dir="rtl"] & {
-      background-position: px-to-rem(4px) center;
-      @include dataurlicon("arrowleft", $color-link-text-default);
-
-      &:hover,
-      &:focus {
-        @include dataurlicon("arrowleft", $color-link-text-hover);
+      .ilo--link-list--icon {
+        @include icon("chevron_left", var(--ilo-link-list-color-icon));
       }
     }
   }
 
   &--dark {
+    --ilo-link-list-color-icon: var(--ilo-color-white);
+    --ilo-link-list-color-indent-icon: var(--ilo-color-white);
     .ilo--link-list--headline,
     .ilo--link-list--links--headline {
       color: $color-base-neutrals-white;
     }
 
-    .ilo--link-list--label {
-      &:before {
-        @include dataurlicon("chevrondown", $color-base-neutrals-white);
-      }
-    }
-
     .ilo--link-list--link {
       border-bottom: px-to-rem($borders-base) solid rgba(237, 240, 242, 0.4);
-      @include dataurlicon("chevron_right", $color-base-neutrals-white);
 
       .ilo--link-list--label {
         color: $color-base-neutrals-white;
@@ -163,27 +155,12 @@
       &:hover,
       &:focus {
         outline: none;
-        @include dataurlicon("chevron_right", $color-base-blue-medium);
 
         .ilo--link-list--label {
           color: $color-base-blue-medium;
           @include globaltransition("color");
         }
       }
-
-      [dir="rtl"] & {
-        background-position: px-to-rem(4px) center;
-        @include dataurlicon("arrowleft", $color-base-neutrals-white);
-
-        &:hover,
-        &:focus {
-          @include dataurlicon("arrowleft", $color-base-blue-medium);
-        }
-      }
     }
   }
-}
-
-.wingsuit-body .ilo--link-list--dark {
-  background-color: $color-base-blue-dark;
 }

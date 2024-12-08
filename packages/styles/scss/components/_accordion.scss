@@ -4,6 +4,8 @@
 @import "../config";
 
 .#{$prefix}--accordion {
+  --ilo-accordion-color-icon: var(--ilo-color-blue-dark);
+
   // This provides a reference to the outerclass within nested declarations
   $accordion: &;
 
@@ -14,6 +16,11 @@
   // If the accordion item is scrollable, then this is its max-height
   $scroll-max-height: 300px;
 
+  &--icon {
+    width: 24px;
+    height: 24px;
+  }
+
   &--button {
     display: flex;
     flex-direction: row;
@@ -21,42 +28,40 @@
     width: 100%;
     margin: 0;
     padding-block: spacing(4);
-    padding-inline-end: spacing(11);
+    padding-inline-end: spacing(1);
     background-color: $color-ux-background-default;
-    background-position: calc(100% - px-to-rem(6px)) center;
-    background-repeat: no-repeat;
-    background-size: px-to-rem(24px) px-to-rem(24px);
     border: none;
     border-top: 2px solid $color-base-neutrals-lighter;
-    fill: $color-ux-labels-actionable;
     font-family: var(--ilo-fonts-display);
     color: $color-ux-labels-actionable;
     font-weight: $type-weights-section;
     transition: all $transition-timing ease-in-out;
     @include font-styles("label-medium");
-    @include dataurlicon("plus", $color-ux-labels-actionable);
 
     &__large {
       @include font-styles("headline-6");
       padding-block: spacing(5);
-      padding-inline-end: spacing(11);
+    }
+
+    &[aria-expanded="true"] {
+      background-color: $color-base-blue-light;
+      #{$accordion}--icon {
+        @include icon("minus", var(--ilo-color-blue));
+      }
+    }
+
+    &[aria-expanded="false"] {
+      #{$accordion}--icon {
+        @include icon("plus", var(--ilo-color-blue-dark));
+      }
     }
 
     &:hover,
     &:focus {
+      --ilo-accordion-color-icon: var(--ilo-color-blue);
       border-top-color: $color-ux-borders-hover;
       color: $color-ux-labels-hover;
-      fill: $color-ux-labels-hover;
       cursor: pointer;
-
-      &[aria-expanded="true"] {
-        color: $brand-ilo-dark-blue;
-        @include dataurlicon("minus", $brand-ilo-dark-blue);
-      }
-
-      &[aria-expanded="false"] {
-        @include dataurlicon("plus", $color-ux-labels-hover);
-      }
     }
 
     @include breakpoint("md") {
@@ -64,22 +69,7 @@
       &__large {
         @include font-styles("headline-6");
         padding: spacing(5) 0;
-        padding-inline-end: spacing(11);
       }
-    }
-
-    &[aria-expanded="true"] {
-      background-color: $color-base-blue-light;
-      color: $brand-ilo-blue;
-      @include dataurlicon("minus", $brand-ilo-blue);
-    }
-
-    &[aria-expanded="false"] {
-      @include dataurlicon("plus", $color-ux-labels-actionable);
-    }
-
-    [dir="rtl"] & {
-      background-position: calc(0% + px-to-rem(6px)) center;
     }
   }
 

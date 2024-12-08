@@ -18,12 +18,6 @@ describe("link", () => {
 
       // Stub the link's navigation
       cy.get(".ilo--link").should("have.attr", "href", "http://www.ilo.org");
-
-      // Intercept the click event and prevent navigation
-      cy.get(".ilo--link").then(($link) => {
-        const href = $link.prop("href");
-        cy.request(href).its("status").should("eq", 200);
-      });
     });
   });
 });

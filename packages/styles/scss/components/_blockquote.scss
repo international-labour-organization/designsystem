@@ -27,7 +27,6 @@ It could eventually be used for a standalone blockquote component.
       @include font-styles("pull-quote-sm");
 
       &:after {
-        background-repeat: no-repeat;
         bottom: 0;
         content: "";
         display: inline-block;
@@ -36,7 +35,7 @@ It could eventually be used for a standalone blockquote component.
         right: 0;
         transform: scaleX(-1);
         width: px-to-rem(26.5px);
-        @include dataurlicon("quote", $color-font-blockquote);
+        @include icon("quote", var(--ilo-color-purple));
       }
     }
 
@@ -47,7 +46,6 @@ It could eventually be used for a standalone blockquote component.
     }
 
     &:before {
-      background-repeat: no-repeat;
       content: "";
       display: inline-block;
       height: px-to-rem(40px);
@@ -55,7 +53,7 @@ It could eventually be used for a standalone blockquote component.
       position: absolute;
       width: px-to-rem(53px);
       top: 0;
-      @include dataurlicon("quote", $color-font-blockquote);
+      @include icon("quote", var(--ilo-color-purple));
     }
 
     @include breakpoint("md") {
