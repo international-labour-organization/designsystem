@@ -1,5 +1,13 @@
 # @ilo-org/twig
 
+## 1.3.2
+
+### Patch Changes
+
+- dd8e77ac1: fixed the localnav menu issue for responsive screens
+- Updated dependencies [76d200189]
+  - @ilo-org/styles@1.3.2
+
 ## 1.3.1
 
 ### Patch Changes
