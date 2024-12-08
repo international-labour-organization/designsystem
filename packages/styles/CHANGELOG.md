@@ -1,5 +1,11 @@
 # @ilo-org/styles
 
+## 1.3.2
+
+### Patch Changes
+
+- 76d200189: reworked linklist icon placement
+
 ## 1.3.1
 
 ### Patch Changes
