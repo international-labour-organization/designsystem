@@ -8,10 +8,7 @@
   $default-theme: "light";
 
   @mixin get-icon($icon, $theme: $default-theme) {
-    @include dataurlicon(
-      $icon,
-      map-get($color, "socialmedia", $theme, "icon", "color")
-    );
+    @include dataurlicon($icon, var(--ilo-color-blue));
 
     &:hover {
       @include dataurlicon(
