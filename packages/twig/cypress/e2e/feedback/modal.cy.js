@@ -1,7 +1,7 @@
 //To-do :- Will be done along with the variants in #1100
 describe("modal", () => {
   beforeEach(() => {
-    cy.visit("/patterns/modal");
+    cy.visit("/admin/appearance/ui/patterns/modal");
     cy.getPreview("modal").first().as("modalSection");
   });
 

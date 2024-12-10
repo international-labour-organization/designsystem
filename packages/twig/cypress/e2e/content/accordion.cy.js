@@ -1,6 +1,6 @@
 describe("Accordion", () => {
   beforeEach(() => {
-    cy.visit("/patterns/accordion");
+    cy.visit("/admin/appearance/ui/patterns/accordion");
     cy.getPreview("accordion").first().as("accordionSection");
   });
 

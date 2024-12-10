@@ -1,6 +1,6 @@
 describe("readmore", () => {
   beforeEach(() => {
-    cy.visit("/patterns/readmore");
+    cy.visit("/admin/appearance/ui/patterns/readmore");
     cy.getPreview("readmore").first().as("readMoreSection");
   });
 
@@ -12,11 +12,13 @@ describe("readmore", () => {
   });
 
   it("check if the read more button works as expected", () => {
-    cy.get(".ilo--read-more--open").should("not.exist");
-    cy.contains("Close").should("not.exist");
+    cy.get("@readMoreSection").within(() => {
+      cy.get(".ilo--read-more--open").should("not.exist");
+      cy.contains("Close").should("not.exist");
 
-    cy.get("button").should("exist").click();
-    cy.contains("Close").should("exist");
-    cy.get(".ilo--read-more--open").should("exist");
+      cy.get("button").should("exist").click();
+      cy.contains("Close").should("exist");
+      cy.get(".ilo--read-more--open").should("exist");
+    });
   });
 });

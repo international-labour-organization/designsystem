@@ -1,7 +1,7 @@
 //To-do :- Will be done along with the variants in #1100
 describe("Hero Card", () => {
   beforeEach(() => {
-    cy.visit("/patterns/herocard");
+    cy.visit("/admin/appearance/ui/patterns/herocard");
     cy.getPreview("herocard").first().as("heroCardSection");
   });
 

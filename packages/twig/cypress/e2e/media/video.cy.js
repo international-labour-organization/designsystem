@@ -1,6 +1,6 @@
 describe("video", () => {
   beforeEach(() => {
-    cy.visit("/patterns/video");
+    cy.visit("/admin/appearance/ui/patterns/video");
     cy.getPreview("video").first().as("videoSection");
   });
 

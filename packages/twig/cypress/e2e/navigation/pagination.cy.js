@@ -1,6 +1,6 @@
 describe("pagination", () => {
   beforeEach(() => {
-    cy.visit("/patterns/pagination");
+    cy.visit("/admin/appearance/ui/patterns/pagination");
     cy.getPreview("pagination").first().as("paginationSection");
   });
 

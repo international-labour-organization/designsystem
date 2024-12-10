@@ -1,6 +1,6 @@
 describe("Multilink card", () => {
   it("renders the feature card correctly", () => {
-    cy.visit("/patterns/multilinkcard");
+    cy.visit("/admin/appearance/ui/patterns/multilinkcard");
     cy.getPreview("multilinkcard").within(() => {
       cy.contains("Podcast");
       cy.contains("Advancing social justice");

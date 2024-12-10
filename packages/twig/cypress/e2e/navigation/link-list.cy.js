@@ -1,6 +1,6 @@
 describe("linklist", () => {
   beforeEach(() => {
-    cy.visit("/patterns/linklist");
+    cy.visit("/admin/appearance/ui/patterns/linklist");
     cy.getPreview("linklist").first().as("linkListSection");
   });
 

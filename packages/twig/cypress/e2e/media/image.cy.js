@@ -1,6 +1,6 @@
 describe("image", () => {
   beforeEach(() => {
-    cy.visit("/patterns/image");
+    cy.visit("/admin/appearance/ui/patterns/image");
     cy.getPreview("image").first().as("imageSection");
   });
 

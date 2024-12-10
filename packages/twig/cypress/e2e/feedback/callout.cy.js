@@ -1,6 +1,6 @@
 describe("callout", () => {
   beforeEach(() => {
-    cy.visit("/patterns/callout");
+    cy.visit("/admin/appearance/ui/patterns/callout");
     cy.getPreview("callout").first().as("calloutSection");
   });
 

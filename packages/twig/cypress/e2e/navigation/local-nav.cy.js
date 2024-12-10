@@ -2,7 +2,7 @@
 /* eslint-disable */
 describe("local nav", () => {
   beforeEach(() => {
-    cy.visit("/patterns/localnav");
+    cy.visit("/admin/appearance/ui/patterns/localnav");
     cy.getPreview("localnav").first().as("localNavSection");
   });
 
@@ -37,15 +37,17 @@ describe("local nav", () => {
 
   it("check if context menu works as expected", () => {
     // Logo
-    cy.get(".ilo--nav--local--logo-wrapper")
-      .should("exist")
-      .find("a")
-      .should("have.attr", "href", "https://www.ilo.org/");
+    cy.get("@localNavSection").within(() => {
+      cy.get(".ilo--nav--local--logo-wrapper")
+        .should("exist")
+        .find("a")
+        .should("have.attr", "href", "https://www.ilo.org/");
 
-    cy.get(".ilo--language-switcher--button")
-      .click()
-      .then(() => {
-        cy.get(".ilo--context-menu").should("exist");
-      });
+      cy.get(".ilo--language-switcher--button")
+        .click()
+        .then(() => {
+          cy.get(".ilo--context-menu").should("exist");
+        });
+    });
   });
 });

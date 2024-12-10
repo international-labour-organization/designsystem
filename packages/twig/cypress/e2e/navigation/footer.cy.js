@@ -1,6 +1,6 @@
 describe("footer", () => {
   beforeEach(() => {
-    cy.visit("/patterns/footer");
+    cy.visit("/admin/appearance/ui/patterns/footer");
     cy.getPreview("footer").first().as("footerSection");
   });
 

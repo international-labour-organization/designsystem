@@ -1,6 +1,6 @@
 describe("Feature card", () => {
   it("renders the feature card correctly", () => {
-    cy.visit("/patterns/featurecard");
+    cy.visit("/admin/appearance/ui/patterns/featurecard");
     cy.getPreview("featurecard").within(() => {
       cy.contains("Podcast");
       cy.contains("Can digital technology be an equality machine?");
