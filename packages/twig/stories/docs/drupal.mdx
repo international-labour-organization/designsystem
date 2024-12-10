@@ -4,26 +4,26 @@ import { Meta } from "@storybook/blocks";
 
 # Use with Drupal
 
-The recommended way of using the Twig component library in a Drupal site is by installing the [ILO Base Theme][11].
+The recommended way of using the Twig component library in a Drupal site is by installing the [ILO Base Theme][1].
 
 The theme is structured in the following way:
 
-- A theme companion module `ilo_base_theme_companion`, which exposes all compatible ILO Design System components as Drupal patterns. Check the [UI Patterns][6] and the [UI Patterns Settings][7] modules for more information.
-- A very basic base theme, with not much in it at the moment. This will change in the future as more and more default Drupal templates (e.g. tabs, forms, etc.) will be provided by default, complying with the ILO Design System.
+- A Drupal base theme providing pre-styled core Drupal elements (such as forms, tabs, and navigation), all adhering to the ILO’s design guidelines.
+- A theme companion module `ilo_base_theme_companion`, which exposes all compatible ILO Design System components as Drupal patterns.
+  Check the [UI Patterns][2] and the [UI Patterns Settings][3] modules for more information.
 
 The theme requires the companion module to be enabled, while one could enable the companion module without enabling the base theme.
 
-The theme exposes relevant Twig components as UI patterns, by using the [UI Pattern](https://www.drupal.org/project/ui_patterns) module.
-
-If your Drupal site has already a theme, you can still use the patterns by [enabling the theme's companion module](https://github.com/international-labour-organization/ilo_base_theme?tab=readme-ov-file#use-the-components-without-the-base-theme).
+Enabling only the companion module is useful for projects that already have the ILO Design System integrated but have not yet
+adopted patterns, allowing for incremental adoption of the base theme's pattern-based approach.
 
 ## Installation
 
 The recommended way of installing the ILO Base Theme is via [Composer][4].
 
-Before proceeding, please note that theme releases are built by a continuous integration system, and include code coming from third-party libraries, such as [ILO Design System][1] templates and other assets.
-
-Simply Running `composer require international-labour-organization/ilo_base_theme` will download the raw theme source code, which misses required third-party code.
+Before proceeding, please note that theme releases are built by a continuous integration system, and include code coming
+from third-party libraries, such as ILO Design System templates and other assets. Simply Running `composer require international-labour-organization/ilo_base_theme`
+will download the raw theme source code, which misses required third-party code.
 
 In order to instruct Composer to download the actual built artifact, you need to require and configure the
 [Composer Artifacts][5] project.
@@ -49,7 +49,7 @@ Then add the following section in your project's `composer.json`:
     }
 ```
 
-Afterwards, run:
+Once you are done, run:
 
 ```bash
 composer require international-labour-organization/ilo_base_theme
@@ -78,7 +78,21 @@ If you already have a theme, and you just want to use the design system componen
 ./vendor/bin/drush en ilo_base_theme_companion
 ```
 
-The full list of components is available at `/patterns`.
+The full list of components is available at `/admin/appearance/ui/patterns`.
+
+## Opinionated components
+
+### The `hero` component
+
+The `hero` component generates a breadcrumb trail based on the current route and ensures proper caching for the breadcrumb metadata.
+
+### The `navigation` component
+
+The ILO base theme has specific conventions for handling the main menu. When the companion module is enabled, a "More"
+link is automatically created. This menu link serves to group all links under the header's expandable "More" panel.
+If the "More" link does not contain any child items, it will not be displayed.
+
+In case of a multilingual site, the `navigation` component also includes a multilingual language switcher links.
 
 ## Patterns and cache metadata
 
@@ -95,7 +109,8 @@ if you want to use the `card` pattern to render a news content type teaser, you 
 
 The problem with the above is that cache tags and contexts (for example from the link at `field_link`) are not bubbled up correctly.
 
-In order to solve the issue it is recommended to explicitly bubble up the cache metadata of the render array at hand. You can do that by using the `|cache_metadata` filter exposed by the [Twig Tweak][9] module, as shown below:
+In order to solve the issue it is recommended to explicitly bubble up the cache metadata of the render array at hand.
+You can do that by using the `|cache_metadata` filter exposed by the [Twig Tweak][6] module, as shown below:
 
 ```twig
 {{ pattern('card', {
@@ -107,16 +122,21 @@ In order to solve the issue it is recommended to explicitly bubble up the cache 
 {{ content|cache_metadata }}
 ```
 
-Another recommended module to keep in mind when working with patterns, is the [Twig Field Value][10], which can help with accessing properties and subfields of render arrays and entities when passing them over to patterns.
+Another recommended module to keep in mind, when working with patterns, is the [Twig Field Value][7], which can help with
+accessing properties and subfields of render arrays and entities when passing them over to patterns.
 
-[1]: https://github.com/international-labour-organization/designsystem
-[2]: https://github.com/openeuropa/task-runner
-[3]: https://docs.docker.com/compose
+## Handling Forms
+
+The ILO Design System includes comprehensive styles for forms to ensure consistency and usability across the platform.
+However, due to the internal workings of Drupal's Form API, UI Patterns cannot be directly used to style forms.
+
+Instead, the ILO Base Theme adopts a traditional Drupal templating approach to style forms, this involves applying
+relevant ILO Design System classes directly to Drupal form templates.
+
+[1]: https://github.com/international-labour-organization/ilo_base_theme
+[2]: https://www.drupal.org/project/ui_patterns
+[3]: https://www.drupal.org/project/ui_patterns_settings
 [4]: https://getcomposer.org/
 [5]: https://github.com/openeuropa/composer-artifacts
-[6]: https://www.drupal.org/project/ui_patterns
-[7]: https://www.drupal.org/project/ui_patterns_settings
-[8]: https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-container-registry#authenticating-with-a-personal-access-token-classic
-[9]: https://www.drupal.org/project/twig_tweak
-[10]: https://www.drupal.org/project/twig_field_value
-[11]: https://github.com/international-labour-organization/ilo_base_theme
+[6]: https://www.drupal.org/project/twig_tweak
+[7]: https://www.drupal.org/project/twig_field_value
