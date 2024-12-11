@@ -1,6 +1,6 @@
 describe("logo grid", () => {
   beforeEach(() => {
-    cy.visit("/patterns/logogrid");
+    cy.visit("/admin/appearance/ui/patterns/logogrid");
     cy.getPreview("logogrid").first().as("logoGridSection");
   });
 

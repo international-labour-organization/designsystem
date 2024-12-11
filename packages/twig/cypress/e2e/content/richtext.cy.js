@@ -1,6 +1,6 @@
 describe("Richtext", () => {
   beforeEach(() => {
-    cy.visit("/patterns/richtext");
+    cy.visit("/admin/appearance/ui/patterns/richtext");
     cy.getPreview("richtext").first().as("richtextSection");
   });
 

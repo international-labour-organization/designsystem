@@ -1,6 +1,6 @@
 describe("button", () => {
   beforeEach(() => {
-    cy.visit("/patterns/button");
+    cy.visit("/admin/appearance/ui/patterns/button");
     cy.getPreview("button").first().as("buttonSection");
   });
 

@@ -1,6 +1,6 @@
 describe("icon", () => {
   beforeEach(() => {
-    cy.visit("/patterns/icon");
+    cy.visit("/admin/appearance/ui/patterns/icon");
     cy.getPreview("icon").first().as("iconSection");
   });
 

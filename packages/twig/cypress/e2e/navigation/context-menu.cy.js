@@ -1,6 +1,6 @@
 describe("context menu", () => {
   beforeEach(() => {
-    cy.visit("/patterns/contextmenu");
+    cy.visit("/admin/appearance/ui/patterns/contextmenu");
     cy.getPreview("contextmenu").first().as("contextMenuSection");
   });
 

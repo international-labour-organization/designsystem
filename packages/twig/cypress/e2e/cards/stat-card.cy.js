@@ -1,6 +1,6 @@
 describe("Stat card", () => {
   it("renders the text card correctly", () => {
-    cy.visit("/patterns/statcard");
+    cy.visit("/admin/appearance/ui/patterns/statcard");
     cy.getPreview("statcard").within(() => {
       cy.contains("Global employment growth down by half in 2023");
       cy.contains("The current global economic slowdown");

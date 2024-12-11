@@ -1,6 +1,6 @@
 describe("Profile", () => {
   beforeEach(() => {
-    cy.visit("/patterns/profile");
+    cy.visit("/admin/appearance/ui/patterns/profile");
     cy.getPreview("profile").first().as("profileSection");
   });
 

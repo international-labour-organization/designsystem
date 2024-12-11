@@ -1,6 +1,6 @@
 describe("tabs", () => {
   beforeEach(() => {
-    cy.visit("/patterns/tabs");
+    cy.visit("/admin/appearance/ui/patterns/tabs");
     cy.getPreview("tabs").first().as("tabsSection");
   });
 

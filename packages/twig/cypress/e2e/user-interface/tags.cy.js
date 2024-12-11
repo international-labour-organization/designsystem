@@ -1,6 +1,6 @@
 describe("tags", () => {
   beforeEach(() => {
-    cy.visit("/patterns/tags");
+    cy.visit("/admin/appearance/ui/patterns/tags");
     cy.getPreview("tags").first().as("tagsSection");
   });
 
