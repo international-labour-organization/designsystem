@@ -1,6 +1,6 @@
 describe("tableofcontents", () => {
   beforeEach(() => {
-    cy.visit("/patterns/tableofcontents");
+    cy.visit("/admin/appearance/ui/patterns/tableofcontents");
     cy.getPreview("tableofcontents").first().as("tableOfContentsSection");
   });
 

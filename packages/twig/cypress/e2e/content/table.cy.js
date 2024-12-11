@@ -1,6 +1,6 @@
 describe("Table", () => {
   beforeEach(() => {
-    cy.visit("/patterns/table");
+    cy.visit("/admin/appearance/ui/patterns/table");
     cy.getPreview("table").first().as("tableSection");
   });
 

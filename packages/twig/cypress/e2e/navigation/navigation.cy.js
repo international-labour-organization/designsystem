@@ -2,7 +2,7 @@
 /* eslint-disable */
 describe("navigation", () => {
   beforeEach(() => {
-    cy.visit("/patterns/navigation");
+    cy.visit("/admin/appearance/ui/patterns/navigation");
     cy.getPreview("navigation").first().as("navigationSection");
   });
 
@@ -22,30 +22,34 @@ describe("navigation", () => {
   });
 
   it("check if subnav works as expected", () => {
-    cy.get(".ilo--subnav--open").should("not.exist");
+    cy.get("@navigationSection").within(() => {
+      cy.get(".ilo--subnav--open").should("not.exist");
 
-    cy.get(".ilo--nav--trigger")
-      .should("exist")
-      .click()
-      .then(() => {
-        // Check if .ilo--subnav--open element exists after the click
-        cy.get(".ilo--subnav--open").should("exist");
-      });
+      cy.get(".ilo--nav--trigger")
+        .should("exist")
+        .click()
+        .then(() => {
+          // Check if .ilo--subnav--open element exists after the click
+          cy.get(".ilo--subnav--open").should("exist");
+        });
 
-    cy.get(".ilo--subnav")
-      .should("exist")
-      .should("have.attr", "style", "display: block;");
+      cy.get(".ilo--subnav")
+        .should("exist")
+        .should("have.attr", "style", "display: block;");
+    });
   });
 
   it("check if search works as expected and check for focus when search button is clicked", () => {
-    cy.get(".ilo--search--open").should("not.exist");
+    cy.get("@navigationSection").within(() => {
+      cy.get(".ilo--search--open").should("not.exist");
 
-    cy.get(".ilo--search--button")
-      .should("exist")
-      .click()
-      .then(() => {
-        cy.get(".ilo--search--open").should("exist");
-        cy.get("input").should("be.focused");
-      });
+      cy.get(".ilo--search--button")
+        .should("exist")
+        .click()
+        .then(() => {
+          cy.get(".ilo--search--open").should("exist");
+          cy.get("input").should("be.focused");
+        });
+    });
   });
 });

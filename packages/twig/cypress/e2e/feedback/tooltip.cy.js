@@ -1,6 +1,6 @@
 describe("tooltip", () => {
   beforeEach(() => {
-    cy.visit("/patterns/tooltip");
+    cy.visit("/admin/appearance/ui/patterns/tooltip");
     cy.getPreview("tooltip").first().as("tooltipSection");
   });
 

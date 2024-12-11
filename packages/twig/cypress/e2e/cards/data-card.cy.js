@@ -1,6 +1,6 @@
 describe("Data card", () => {
   it("renders the data card correctly", () => {
-    cy.visit("/patterns/datacard");
+    cy.visit("/admin/appearance/ui/patterns/datacard");
     cy.getPreview("datacard")
       .first()
       .within(() => {
@@ -24,7 +24,7 @@ describe("Data card", () => {
   });
 
   it("ensures all file buttons have a target property", () => {
-    cy.visit("/patterns/datacard");
+    cy.visit("/admin/appearance/ui/patterns/datacard");
     cy.getPreview("datacard")
       .first()
       .within(() => {
@@ -37,7 +37,7 @@ describe("Data card", () => {
   });
 
   it("Ensures file buttons have the correct target", () => {
-    cy.visit("/patterns/datacard");
+    cy.visit("/admin/appearance/ui/patterns/datacard");
     cy.getPreview("datacard")
       .first()
       .within(() => {

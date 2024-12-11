@@ -1,6 +1,6 @@
 describe("notification", () => {
   beforeEach(() => {
-    cy.visit("/patterns/notification");
+    cy.visit("/admin/appearance/ui/patterns/notification");
     cy.getPreview("notification").first().as("notificationSection");
   });
 
