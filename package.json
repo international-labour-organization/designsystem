@@ -40,17 +40,17 @@
     "clean": "pnpm clean:build && pnpm clean:deps",
     "clean:deps": "pnpm -r exec rimraf node_modules && rimraf node_modules",
     "clean:build": "pnpm -r exec rimraf build lib dist .turbo storybook-static es svg umd && rimraf packages/icons/scss packages/styles/css",
-    "clean:test": "rimraf summarize.js",
     "format": "pnpm turbo run format:fix",
-    "lint": "pnpm turbo run lint:fix",
+    "lint": "pnpm turbo run lint",
+    "lint:fix": "pnpm turbo run lint:fix",
     "prepare": "node .husky/install.js",
-    "react:build:docs": "pnpm turbo run build:docs --filter=@ilo-org/react...",
-    "react:build:lib": "pnpm turbo run build:lib --filter react... ",
-    "react:dev:docs": "pnpm --filter react storybook",
+    "react:build:docs": "pnpm turbo run @ilo-org/react#build:docs",
+    "react:build:lib": "pnpm turbo run @ilo-org/react#build:lib",
+    "react:dev:docs": "pnpm turbo run @ilo-org/react#storybook",
     "test:all": "pnpm turbo run test",
-    "twig:build:docs": "pnpm turbo run build:docs --filter twig...",
-    "twig:build:lib": "pnpm turbo run build:lib --filter twig... ",
-    "twig:dev:docs": "pnpm --filter twig storybook"
+    "twig:build:docs": "pnpm turbo run @ilo-org/twig#build:docs",
+    "twig:build:lib": "pnpm turbo run @ilo-org/twig#build:lib",
+    "twig:dev:docs": "pnpm turbo run @ilo-org/twig#storybook"
   },
   "postinstall": "manypkg check",
   "repository": {
@@ -79,7 +79,7 @@
     "prettier": "^3.0.0",
     "rimraf": "^3.0.2",
     "rollup": "^3.23.0",
-    "turbo": "1.7.4",
+    "turbo": "2.3.3",
     "typescript": "^4.9.3"
   }
 }

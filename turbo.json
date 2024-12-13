@@ -1,6 +1,6 @@
 {
   "$schema": "https://turborepo.org/schema.json",
-  "pipeline": {
+  "tasks": {
     "build:lib": {
       "dependsOn": ["^build:lib"],
       "outputs": [
@@ -8,24 +8,10 @@
         "svg/**",
         "umd/**",
         "dist/**",
+        "next/**",
         "lib/**",
         "build/**",
-        "scss/tokens/**",
-        "metadata.json"
-      ]
-    },
-    "build:docs": {
-      "dependsOn": ["^build:docs"],
-      "outputs": [
-        "es/**",
-        "svg/**",
-        "umd/**",
-        "dist/**",
-        "lib/**",
-        "build/**",
-        "scss/tokens/**",
-        "metadata.json",
-        "storybook-static/**"
+        "css/**"
       ]
     },
     "test": {
@@ -37,6 +23,35 @@
     },
     "lint:fix": {
       "outputs": []
+    },
+    "build:docs": {
+      "dependsOn": ["build:lib"],
+      "outputs": ["storybook-static/**"]
+    },
+    "@ilo-org/twig#storybook": {
+      "dependsOn": [
+        "@ilo-org/maestro#build:lib",
+        "@ilo-org/styles#build:lib",
+        "@ilo-org/icons#build:lib",
+        "@ilo-org/brand-assets#build:lib",
+        "@ilo-org/fonts#build:lib",
+        "@ilo-org/utils#build:lib",
+        "@ilo-org/themes#build:lib"
+      ],
+      "persistent": true,
+      "cache": false
+    },
+    "@ilo-org/react#dev:storybook": {
+      "dependsOn": [
+        "@ilo-org/styles#build:lib",
+        "@ilo-org/icons#build:lib",
+        "@ilo-org/brand-assets#build:lib",
+        "@ilo-org/fonts#build:lib",
+        "@ilo-org/utils#build:lib",
+        "@ilo-org/themes#build:lib"
+      ],
+      "persistent": true,
+      "cache": false
     },
     "check": {
       "outputs": []
