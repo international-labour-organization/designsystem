@@ -1,10 +1,8 @@
-/* @ESLINT-DEBT During new eslint refactoring this file was omitted because of heavy type refactoring */
-/* eslint-disable */
 import { FC } from "react";
 import classnames from "classnames";
 import useGlobalSettings from "../../../hooks/useGlobalSettings";
 import { Button } from "../../Button";
-import { CardGroupProps } from "./CardGroup.props";
+import { CardGroupComponentProps, CardGroupProps } from "./CardGroup.props";
 import { DataCard } from "../DataCard";
 import { DetailCard } from "../DetailCard";
 import { FactlistCard } from "../FactlistCard";
@@ -14,7 +12,7 @@ import { PromoCard } from "../PromoCard";
 import { StatCard } from "../StatCard";
 import { TextCard } from "../TextCard";
 
-const cardMapper: Record<string, React.FC<any>> = {
+const cardMapper: Record<string, React.FC<CardGroupComponentProps>> = {
   stat: StatCard,
   multilink: MultilinkCard,
   text: TextCard,

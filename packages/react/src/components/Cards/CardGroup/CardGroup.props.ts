@@ -106,6 +106,16 @@ export interface DataCardGroup extends CommonCardGroupProps {
   cards: DataCardProps[];
 }
 
+export type CardGroupComponentProps =
+  | StatCardProps
+  | MultilinkCardProps
+  | TextCardProps
+  | PromoCardProps
+  | FeatureCardProps
+  | DetailCardProps
+  | FactlistCardProps
+  | DataCardProps;
+
 export type CardGroupProps =
   | StatCardGroup
   | MultilinkCardGroup
