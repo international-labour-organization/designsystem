@@ -29,8 +29,8 @@ const Accordion: FC<AccordionProps> = ({
     const expandedOnLoad = allowMultipleExpanded
       ? defaultAccordionsExpanded
       : defaultAccordionsExpanded.length > 0
-      ? [defaultAccordionsExpanded[0]]
-      : defaultAccordionsExpanded;
+        ? [defaultAccordionsExpanded[0]]
+        : defaultAccordionsExpanded;
     setActiveItems(expandedOnLoad);
   }, [defaultAccordionsExpandedString, allowMultipleExpanded]);
 

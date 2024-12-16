@@ -47,9 +47,7 @@
     "access": "public"
   },
   "scripts": {
-    "build": "pnpm run clean && node tasks/build.js",
-    "build:lib": "pnpm build",
-    "build:docs": "pnpm build",
+    "build:lib": "pnpm run clean && node tasks/build.js",
     "clean": "rimraf es lib umd next",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",

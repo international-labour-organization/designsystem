@@ -36,9 +36,7 @@
     "access": "public"
   },
   "scripts": {
-    "build": "gulp",
-    "build:lib": "pnpm build",
-    "build:docs": "pnpm build",
+    "build:lib": "gulp",
     "format": "prettier --check . --ignore-path ../../.prettierignore",
     "format:fix": "prettier --write . --ignore-path ../../.prettierignore",
     "lint": "eslint",

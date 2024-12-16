@@ -50,9 +50,7 @@
     "./*": "./dist/assets/*"
   },
   "scripts": {
-    "build": "rollup -c",
-    "build:lib": "pnpm build",
-    "build:docs": "pnpm build",
+    "build:lib": "rollup -c",
     "lint": "eslint .",
     "lint:fix": "eslint --fix"
   },

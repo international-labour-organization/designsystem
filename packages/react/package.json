@@ -52,7 +52,6 @@
   "license": "Apache-2.0",
   "types": "./lib/types/index.d.ts",
   "scripts": {
-    "build": "pnpm build:lib",
     "build:lib": "tsc --noEmit --project tsconfig.build.json && vite build",
     "build:docs": "storybook build",
     "check": "tsc --noEmit --p tsconfig.build.json",
