@@ -1,6 +1,3 @@
-/* @ESLINT-DEBT During new eslint refactoring this file was omitted because of heavy type refactoring */
-/* eslint-disable */
-
 /**
  * Safe chained function
  *
@@ -10,10 +7,12 @@
  * @param {function} functions to chain
  * @returns {function|null}
  */
-function createChainedFunction(...funcs: any[]) {
+function createChainedFunction<T extends (...args: unknown[]) => void>(
+  ...funcs: (T | null | undefined)[]
+): T | null {
   return funcs
-    .filter((f) => f != null)
-    .reduce((acc, f) => {
+    .filter((f): f is T => f != null)
+    .reduce<T | null>((acc, f) => {
       if (typeof f !== "function") {
         throw new Error(
           "Invalid Argument Type, must only provide functions, undefined, or null."
@@ -22,12 +21,12 @@ function createChainedFunction(...funcs: any[]) {
 
       if (acc === null) return f;
 
-      return function chainedFunction(...args: any[]) {
-        // @ts-ignore
+      return function chainedFunction(...args: Parameters<T>): void {
+        //@ts-expect-error
         acc.apply(this, args);
-        // @ts-ignore
+        //@ts-expect-error
         f.apply(this, args);
-      };
+      } as T;
     }, null);
 }
 
