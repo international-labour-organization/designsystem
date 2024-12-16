@@ -1,10 +1,10 @@
-/* @ESLINT-DEBT During new eslint refactoring this file was omitted because of heavy type refactoring */
-/* eslint-disable */
-
 import { createElement, FC } from "react";
 import useGlobalSettings from "../../hooks/useGlobalSettings";
 import { IconProps } from "./Icon.props";
 import * as icons from "@ilo-org/icons-react";
+
+// This is a workaround because @ilo-org/icons-react does not correct have type declarations
+const Icons = icons as Record<string, React.ElementType>;
 
 const Icon: FC<IconProps> = ({ hidden, name, size }) => {
   const { prefix } = useGlobalSettings();
@@ -12,17 +12,16 @@ const Icon: FC<IconProps> = ({ hidden, name, size }) => {
   const ariaHidden = hidden ? "hidden" : "";
   const iconsize = size || 24;
 
-  const icon = name
-    ? createElement(
-        icons[`${name.charAt(0).toUpperCase() + name.slice(1)}${iconsize}`],
-        {
-          "aria-hidden": ariaHidden,
-          className: baseClass,
-        }
-      )
-    : false;
+  if (!name) {
+    return null;
+  }
 
-  return <>{icon}</>;
+  const machineName = `${name.charAt(0).toUpperCase() + name.slice(1)}${iconsize}`;
+
+  return createElement(Icons[machineName as keyof typeof Icon], {
+    "aria-hidden": ariaHidden,
+    className: baseClass,
+  });
 };
 
 export default Icon;
