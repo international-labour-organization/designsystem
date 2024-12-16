@@ -1,5 +1,3 @@
-/* @ESLINT-DEBT During new eslint refactoring this file was omitted because of heavy type refactoring */
-/* eslint-disable */
 import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { useGlobalSettings } from "../../hooks";
 import { InnerLogoProps, LogoProps } from "./Logo.props";
@@ -161,7 +159,7 @@ const BaseLogo: React.FC<InnerLogoProps> = ({
 
   // Set inline CSS including variables on the outer figure element
   const getStyle = (): React.CSSProperties => {
-    const conditionalStyles: any = {};
+    const conditionalStyles: Record<string, string | number> = {};
     // Add CSS vars if this is a sub-brand
     if (hasSubbrand) {
       conditionalStyles["--logo-image-height"] = `${imageHeight}px`;
@@ -174,7 +172,7 @@ const BaseLogo: React.FC<InnerLogoProps> = ({
       conditionalStyles.width = `${size}px`;
     }
     // User styles may be overriden
-    return { userStyles, ...conditionalStyles };
+    return { ...userStyles, ...conditionalStyles };
   };
 
   const getImageSrc = () => {
