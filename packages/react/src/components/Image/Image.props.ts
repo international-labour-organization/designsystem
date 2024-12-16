@@ -1,4 +1,4 @@
-interface ImageUrl {
+export interface ImageUrl {
   /**
    * Specify the breakpoint at which this image src should be used
    */
