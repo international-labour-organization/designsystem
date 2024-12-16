@@ -41,7 +41,7 @@
       "persistent": true,
       "cache": false
     },
-    "@ilo-org/react#dev:storybook": {
+    "@ilo-org/react#storybook": {
       "dependsOn": [
         "@ilo-org/styles#build:lib",
         "@ilo-org/icons#build:lib",
