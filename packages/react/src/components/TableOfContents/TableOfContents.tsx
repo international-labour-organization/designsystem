@@ -1,9 +1,7 @@
-/* @ESLINT-DEBT During new eslint refactoring this file was omitted because of heavy type refactoring */
-/* eslint-disable */
 import { FC } from "react";
 import classNames from "classnames";
 import useGlobalSettings from "../../hooks/useGlobalSettings";
-import { TableOfContentsProps } from "./TableOfContents.props";
+import { AnchorLink, TableOfContentsProps } from "./TableOfContents.props";
 
 const TableOfContents: FC<TableOfContentsProps> = ({ className, items }) => {
   const { prefix } = useGlobalSettings();
@@ -17,7 +15,7 @@ const TableOfContents: FC<TableOfContentsProps> = ({ className, items }) => {
     <nav className={TableOfContentsClasses}>
       <ul className={`${baseClass}--list`}>
         {items &&
-          items.map((item: any, index: any) => {
+          items.map((item: AnchorLink, index: number) => {
             return (
               <li className={`${baseClass}--list--item`} key={index}>
                 <a className={`${baseClass}--link`} href={item.href}>

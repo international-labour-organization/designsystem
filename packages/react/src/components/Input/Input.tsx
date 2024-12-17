@@ -1,6 +1,3 @@
-/* @ESLINT-DEBT During new eslint refactoring this file was omitted because of heavy type refactoring */
-/* eslint-disable */
-
 import React, { forwardRef, FC } from "react";
 import classNames from "classnames";
 import useGlobalSettings from "../../hooks/useGlobalSettings";
@@ -47,11 +44,11 @@ const Input: FC<InputProps & React.RefAttributes<HTMLInputElement>> =
       return (
         <Fieldset>
           <FormElement
-            elemid={name as any}
-            label={label as any}
-            helper={helper as any}
-            error={error as any}
-            required={required as any}
+            elemid={name!}
+            label={label}
+            helper={helper as string}
+            error={error as string}
+            required={required as boolean}
             tooltip={tooltip}
           >
             <input
@@ -60,7 +57,7 @@ const Input: FC<InputProps & React.RefAttributes<HTMLInputElement>> =
               onChange={handleChange}
               disabled={disabled}
               placeholder={placeholder}
-              required={required as any}
+              required={required as boolean}
               type={type}
               value={value}
               className={InputClasses}

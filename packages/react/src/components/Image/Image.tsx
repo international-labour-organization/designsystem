@@ -1,10 +1,7 @@
-/* @ESLINT-DEBT During new eslint refactoring this file was omitted because of heavy type refactoring */
-/* eslint-disable */
-
 import { FC } from "react";
 import classNames from "classnames";
 import useGlobalSettings from "../../hooks/useGlobalSettings";
-import { ImageProps } from "./Image.props";
+import { ImageProps, ImageUrl } from "./Image.props";
 import { Credit } from "../Credit";
 
 const Image: FC<ImageProps> = ({ alt, caption, className, credit, url }) => {
@@ -29,13 +26,10 @@ const Image: FC<ImageProps> = ({ alt, caption, className, credit, url }) => {
         <picture className={imgClasses}>
           {url &&
             url
-              .sort(
-                (a: any, b: any) =>
-                  parseFloat(a.breakpoint) - parseFloat(b.breakpoint)
-              )
+              .sort((a: ImageUrl, b: ImageUrl) => a.breakpoint - b.breakpoint)
               .slice(1)
               .reverse()
-              .map((item: any, index: any) => (
+              .map((item: ImageUrl, index: number) => (
                 <source
                   srcSet={item.src}
                   media={`(min-width: ${item.breakpoint}px)`}

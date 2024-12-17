@@ -1,8 +1,5 @@
-/* @ESLINT-DEBT During new eslint refactoring this file was omitted because of heavy type refactoring */
-/* eslint-disable */
-
 import classNames from "classnames";
-import { cloneElement, forwardRef, useMemo } from "react";
+import { cloneElement, forwardRef, ReactElement, useMemo } from "react";
 import Transition, {
   ENTERED,
   ENTERING,
@@ -23,7 +20,7 @@ const collapseStyles = {
   [ENTERED]: "collapse show",
 };
 
-const Collapse = forwardRef<Transition<any>, CollapseProps>(
+const Collapse = forwardRef<Transition<unknown>, CollapseProps>(
   (
     {
       dimension = "height",
@@ -63,7 +60,7 @@ const Collapse = forwardRef<Transition<any>, CollapseProps>(
             `scroll${computedDimension[0].toUpperCase()}${computedDimension.slice(
               1
             )}` as keyof HTMLElement;
-          elem.style[computedDimension] = `${elem[scroll]}px`;
+          elem.style[computedDimension] = `${elem[scroll] as number}px`;
           elem.style.transitionDuration = `${timeout + 50}ms`;
         }, onEntering),
       [computedDimension, onEntering, timeout]
@@ -119,8 +116,8 @@ const Collapse = forwardRef<Transition<any>, CollapseProps>(
             ...innerProps,
             className: classNames(
               className,
-              children.props.className,
-              collapseStyles[state],
+              (children as ReactElement<{ className: string }>).props.className,
+              collapseStyles[state as keyof typeof collapseStyles],
               computedDimension === "width" && "collapse-horizontal"
             ),
           });
