@@ -89,12 +89,8 @@
           }
 
           #{$self}--title {
-            @include font-styles("headline-4");
+            @include font-styles("headline-5");
             margin-bottom: spacing(2);
-
-            @include breakpoint("md") {
-              @include font-styles("headline-2");
-            }
           }
 
           #{$self}--intro {
