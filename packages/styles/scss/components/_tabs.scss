@@ -83,7 +83,12 @@
         &[aria-selected="true"] {
           background-color: $color-base-neutrals-white;
           border-top: px-to-rem(3px) solid $color-ux-labels-actionable;
+          pointer-events: none;
           @include globaltransition("color, background-color, border-color");
+        }
+
+        &[aria-selected="false"]:not(:hover) {
+          border-top: px-to-rem(3px) solid transparent;
         }
 
         &.icon {
@@ -171,6 +176,40 @@
           width: min(calc(var(--tabscount) / 1 * 100%), 100%);
         }
       }
+    }
+  }
+}
+
+// This was proposed by base theme but isn't implemented in the design system yet
+.ilo--tabs--secondary {
+  display: flex;
+  flex-wrap: wrap;
+  margin-block: 2rem;
+  gap: 10px;
+
+  .ilo--tabs--selection--button {
+    display: block;
+    padding: 0.2em 1em;
+    font-size: 16px;
+    font-weight: 600;
+    color: #230050;
+    text-decoration: none;
+
+    &[aria-selected="false"] {
+      border-bottom: 2px solid transparent;
+      background-color: var(--ilo-color-background-highlight);
+
+      &:hover {
+        color: var(--ilo-color-blue);
+        border-bottom-color: var(--ilo-color-blue);
+        background-color: var(--ilo-color-background-hover);
+      }
+    }
+
+    &[aria-selected="true"] {
+      color: var(--ilo-color-blue-dark);
+      border-bottom: 2px solid var(--ilo-color-blue-dark);
+      pointer-events: none;
     }
   }
 }
