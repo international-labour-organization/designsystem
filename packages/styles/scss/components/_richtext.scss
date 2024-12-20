@@ -109,9 +109,9 @@
 
   // Horizontal rule (hr) styles
   hr {
-    background-color: var(--ilo-color-borders-default);
+    background-color: var(--ilo-color-gray-light);
     border: none;
-    height: px-to-rem(4px);
+    height: px-to-rem(3px);
   }
 
   .responsive-video-embed {
