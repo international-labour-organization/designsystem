@@ -198,56 +198,66 @@
   text-decoration: underline;
   text-underline-offset: px-to-rem(6px);
   text-decoration-thickness: px-to-rem(1.5px);
+  text-decoration-color: var(--ilo-color-blue);
   padding-bottom: spacing(1);
 
   &:visited {
     background: map-get($color, "link", "background", "visited");
     color: map-get($color, "link", "text", "visited");
+    text-decoration-color: var(--ilo-color-purple);
   }
 
   &:hover {
     background: map-get($color, "link", "background", "hover");
     color: map-get($color, "link", "text", "hover");
     text-decoration-thickness: 3px;
+    text-decoration-color: var(--ilo-color-blue);
   }
 
   &:active {
     background: map-get($color, "link", "background", "active");
     color: map-get($color, "link", "text", "active");
     text-decoration-thickness: 3px;
+    text-decoration-color: var(--ilo-color-blue-dark);
   }
 
   &:focus {
     background: map-get($color, "link", "background", "focus");
     color: map-get($color, "link", "text", "focus");
     text-decoration-thickness: 3px;
+    text-decoration-color: var(--ilo-color-blue-dark);
   }
 
   &--dark {
     background: map-get($color, "link", "background-dark", "default");
     color: map-get($color, "link", "text-dark", "default");
+    text-decoration-color: var(--ilo-color-gray-light);
 
     &:visited {
       background: map-get($color, "link", "background-dark", "visited");
       color: map-get($color, "link", "text-dark", "visited");
+      text-decoration-color: var(--ilo-color-gray-base);
     }
 
     &:hover {
       background: map-get($color, "link", "background-dark", "hover");
       color: map-get($color, "link", "text-dark", "hover");
       text-decoration-thickness: 3px;
+      text-decoration-color: var(--ilo-color-blue);
     }
 
     &:active {
       background: map-get($color, "link", "background-dark", "active");
       color: map-get($color, "link", "text-dark", "active");
       text-decoration-thickness: 3px;
+      text-decoration-color: var(--ilo-color-blue-dark);
     }
 
     &:focus {
       background: map-get($color, "link", "background-dark", "focus");
       color: map-get($color, "link", "text-dark", "focus");
       text-decoration-thickness: 3px;
+      text-decoration-color: var(--ilo-color-blue-dark);
     }
   }
 
