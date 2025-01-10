@@ -1,5 +1,16 @@
 # @ilo-org/react
 
+## 0.18.5
+
+### Patch Changes
+
+- a0242e580: removed broken types
+- Updated dependencies [7f86da271]
+- Updated dependencies [8c8bc2bd3]
+- Updated dependencies [41117516c]
+- Updated dependencies [75e30e1b0]
+  - @ilo-org/styles@1.3.3
+
 ## 0.18.4
 
 ### Patch Changes
