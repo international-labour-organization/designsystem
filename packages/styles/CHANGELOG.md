@@ -1,5 +1,14 @@
 # @ilo-org/styles
 
+## 1.3.3
+
+### Patch Changes
+
+- 7f86da271: added tab improvements by base theme
+- 8c8bc2bd3: adjusted horizontal rule styles
+- 41117516c: updated link decoration color
+- 75e30e1b0: adjusted fontsize for the narrow promo card
+
 ## 1.3.2
 
 ### Patch Changes
