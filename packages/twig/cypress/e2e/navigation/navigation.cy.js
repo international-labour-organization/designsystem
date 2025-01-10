@@ -1,5 +1,3 @@
-/* @ESLINT-DEBT During new eslint refactoring this file was omitted because of heavy type refactoring */
-/* eslint-disable */
 describe("navigation", () => {
   beforeEach(() => {
     cy.visit("/admin/appearance/ui/patterns/navigation");
@@ -25,13 +23,8 @@ describe("navigation", () => {
     cy.get("@navigationSection").within(() => {
       cy.get(".ilo--subnav--open").should("not.exist");
 
-      cy.get(".ilo--nav--trigger")
-        .should("exist")
-        .click()
-        .then(() => {
-          // Check if .ilo--subnav--open element exists after the click
-          cy.get(".ilo--subnav--open").should("exist");
-        });
+      cy.get(".ilo--nav--trigger").should("exist").click();
+      cy.get(".ilo--subnav--open").should("exist");
 
       cy.get(".ilo--subnav")
         .should("exist")
@@ -43,13 +36,9 @@ describe("navigation", () => {
     cy.get("@navigationSection").within(() => {
       cy.get(".ilo--search--open").should("not.exist");
 
-      cy.get(".ilo--search--button")
-        .should("exist")
-        .click()
-        .then(() => {
-          cy.get(".ilo--search--open").should("exist");
-          cy.get("input").should("be.focused");
-        });
+      cy.get(".ilo--search--button").should("exist").click();
+      cy.get(".ilo--search--open").should("exist");
+      cy.get("input").should("be.focused");
     });
   });
 });

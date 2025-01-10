@@ -1,5 +1,3 @@
-/* @ESLINT-DEBT During new eslint refactoring this file was omitted because of heavy type refactoring */
-/* eslint-disable */
 import classNames from "classnames";
 import { Children, FC, ReactElement, useEffect, useState } from "react";
 import useGlobalSettings from "../../hooks/useGlobalSettings";
@@ -25,15 +23,16 @@ const TagSet: FC<TagSetProps> = ({
     const tagOnLoad = allowMultipleActive
       ? defaultTagActive
       : defaultTagActive.length > 0
-      ? [defaultTagActive[0]]
-      : defaultTagActive;
+        ? [defaultTagActive[0]]
+        : defaultTagActive;
     setActiveItems(tagOnLoad);
   }, [defaultTagActiveString, allowMultipleActive]);
 
   if (children) {
     const ids: string[] = [];
-    Children.forEach(children, (child: ReactElement) => {
-      ids.push(child.props.id);
+    Children.forEach(children, (child) => {
+      const element = child as ReactElement<{ id: string }>;
+      ids.push(element.props.id);
     });
     if (checkArrayDuplicates(ids)) {
       console.warn("Warning: Tags must have unique ids.");

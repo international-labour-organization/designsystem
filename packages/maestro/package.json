@@ -30,9 +30,7 @@
   },
   "scripts": {
     "dev": "vite build --watch",
-    "build": "tsc && vite build",
-    "build:lib": "pnpm build",
-    "build:docs": "pnpm build",
+    "build:lib": "tsc && vite build",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"
   },
