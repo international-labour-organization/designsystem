@@ -14,11 +14,13 @@ export type AccordionItemProps = {
    */
   label: string;
 
+  className?: string;
+
   children: ReactNode;
 };
 
 const AccordionItem = forwardRef<HTMLLIElement, AccordionItemProps>(
-  ({ value, children, label }, ref) => {
+  ({ value, children, label, className }, ref) => {
     const { prefix } = useGlobalSettings();
     const context = useContext(AccordionContext);
 
@@ -44,7 +46,10 @@ const AccordionItem = forwardRef<HTMLLIElement, AccordionItemProps>(
     }
 
     return (
-      <li ref={ref} className={`${prefix}--accordion-item`}>
+      <li
+        ref={ref}
+        className={classNames(`${prefix}--accordion-item`, className)}
+      >
         <div className={`${prefix}--h3`}></div>
         <button
           onClick={handleClick}

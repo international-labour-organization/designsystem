@@ -6,6 +6,7 @@ import {
   useState,
 } from "react";
 import { useGlobalSettings } from "../../hooks";
+import classNames from "classnames";
 
 export type AccordionProps = {
   /**
@@ -33,6 +34,8 @@ export type AccordionProps = {
    */
   scrollable?: boolean;
 
+  className?: string;
+
   children: ReactNode;
 };
 
@@ -57,6 +60,7 @@ const Accordion = forwardRef<HTMLUListElement, AccordionProps>(
       value: controlledValue,
       onChange,
       children,
+      className,
     },
     ref
   ) => {
@@ -80,7 +84,7 @@ const Accordion = forwardRef<HTMLUListElement, AccordionProps>(
       <AccordionContext.Provider
         value={{ size, multiple, scrollable, value, onChange: handleChange }}
       >
-        <ul ref={ref} className={`${prefix}--accordion`}>
+        <ul ref={ref} className={classNames(`${prefix}--accordion`, className)}>
           {children}
         </ul>
       </AccordionContext.Provider>
