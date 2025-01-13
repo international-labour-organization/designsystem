@@ -1,9 +1,4 @@
-export {
-  Accordion,
-  AccordionButton,
-  AccordionItem,
-  AccordionPanel,
-} from "./Accordion";
+export { Accordion } from "./Accordion";
 export { Form } from "./Form";
 export { Collapse } from "./Collapse";
 export { Empty } from "./Empty";

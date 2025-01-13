@@ -1,63 +1,91 @@
-import { getUpdatedItems } from "@ilo-org/utils";
-import classNames from "classnames";
-import { Children, FC, ReactElement, useEffect, useState } from "react";
-import useGlobalSettings from "../../hooks/useGlobalSettings";
-import { checkArrayDuplicates } from "../../utils/checkArrayDuplicates";
-import { AccordionProps } from "./Accordion.props";
-import { AccordionContext } from "./AccordionCtx";
+import {
+  createContext,
+  forwardRef,
+  ReactNode,
+  useCallback,
+  useState,
+} from "react";
+import { useGlobalSettings } from "../../hooks";
 
-const Accordion: FC<AccordionProps> = ({
-  children,
-  allowMultipleExpanded = false,
-  onButtonClick,
-  defaultAccordionsExpanded = [],
-  className,
-}) => {
-  const { prefix } = useGlobalSettings();
-  const baseClass = `${prefix}--accordion`;
-  const [activeItems, setActiveItems] = useState<string[]>([]);
+export type AccordionProps = {
+  /**
+   * The size of the accordion default is small
+   */
+  size?: "small" | "large";
 
-  const accordionClasses = classNames(className, {
-    [baseClass]: true,
-  });
+  /**
+   * Whether or not multiple accordion items can be expanded at the same time default is true
+   */
+  multiple?: boolean;
 
-  const defaultAccordionsExpandedString = JSON.stringify(
-    defaultAccordionsExpanded
-  );
+  /**
+   * The value of the accordion, when multiple is true this should be an array of strings
+   */
+  value?: string | string[];
 
-  useEffect(() => {
-    const expandedOnLoad = allowMultipleExpanded
-      ? defaultAccordionsExpanded
-      : defaultAccordionsExpanded.length > 0
-        ? [defaultAccordionsExpanded[0]]
-        : defaultAccordionsExpanded;
-    setActiveItems(expandedOnLoad);
-  }, [defaultAccordionsExpandedString, allowMultipleExpanded]);
+  /**
+   * The callback function that is called when the value of the accordion changes
+   */
+  onChange?: (value: string | string[]) => void;
 
-  if (children) {
-    const ids: string[] = [];
-    Children.forEach(children, (child: ReactElement) => {
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-argument, @typescript-eslint/no-unsafe-member-access
-      ids.push(child.props.id);
-    });
-    if (checkArrayDuplicates(ids)) {
-      console.warn("Warning: Accordion items must have unique ids.");
-    }
-  }
+  /**
+   * Whether or not the accordion panel should be scrollable default is false
+   */
+  scrollable?: boolean;
 
-  return (
-    <AccordionContext.Provider
-      value={{
-        activeItems,
-        setActiveItems,
-        getUpdatedItems,
-        allowMultipleExpanded,
-        onButtonClick,
-      }}
-    >
-      <ul className={accordionClasses}>{children}</ul>
-    </AccordionContext.Provider>
-  );
+  children: ReactNode;
 };
 
-export default Accordion;
+type AccordionContextValue = {
+  size: "small" | "large";
+  multiple: boolean;
+  value: string | string[];
+  scrollable?: boolean;
+  onChange: (value: string | string[]) => void;
+};
+
+const AccordionContext = createContext<AccordionContextValue | undefined>(
+  undefined
+);
+
+const Accordion = forwardRef<HTMLUListElement, AccordionProps>(
+  (
+    {
+      size = "small",
+      scrollable = false,
+      multiple = true,
+      value: controlledValue,
+      onChange,
+      children,
+    },
+    ref
+  ) => {
+    const { prefix } = useGlobalSettings();
+    const [value, setValue] = useState<string | string[]>(
+      controlledValue || multiple ? [] : ""
+    );
+
+    const handleChange = useCallback(
+      (updated: string | string[]) => {
+        if (onChange) {
+          onChange(updated);
+        } else {
+          setValue(updated);
+        }
+      },
+      [onChange, setValue]
+    );
+
+    return (
+      <AccordionContext.Provider
+        value={{ size, multiple, scrollable, value, onChange: handleChange }}
+      >
+        <ul ref={ref} className={`${prefix}--accordion`}>
+          {children}
+        </ul>
+      </AccordionContext.Provider>
+    );
+  }
+);
+
+export { AccordionContext, Accordion };

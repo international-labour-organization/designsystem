@@ -1,27 +1,73 @@
+import { forwardRef, ReactNode, useContext } from "react";
+import { AccordionContext } from "./Accordion";
+import { useGlobalSettings } from "../../hooks";
 import classNames from "classnames";
-import { FC } from "react";
-import useGlobalSettings from "../../hooks/useGlobalSettings";
-import { AccordionItemContext } from "./AccordionCtx";
-import { AccordionItemProps } from "./AccordionItem.props";
 
-const AccordionItem: FC<AccordionItemProps> = ({
-  children,
-  id,
-  className,
-  ...rest
-}) => {
-  const { prefix } = useGlobalSettings();
-  const baseClass = `${prefix}--accordion--item`;
-  const accordionItemClasses = classNames(className, {
-    [baseClass]: true,
-  });
-  return (
-    <AccordionItemContext.Provider value={{ id }}>
-      <li className={accordionItemClasses} {...rest}>
-        {children}
-      </li>
-    </AccordionItemContext.Provider>
-  );
+export type AccordionItemProps = {
+  /**
+   * The value of the accordion item
+   */
+  value: string;
+
+  /**
+   * The label of the accordion item
+   */
+  label: string;
+
+  children: ReactNode;
 };
 
-export default AccordionItem;
+const AccordionItem = forwardRef<HTMLLIElement, AccordionItemProps>(
+  ({ value, children, label }, ref) => {
+    const { prefix } = useGlobalSettings();
+    const context = useContext(AccordionContext);
+
+    if (!context) {
+      throw new Error("AccordionItem must be used within an Accordion");
+    }
+    const { value: selectedValue, onChange, multiple, scrollable } = context;
+    const isSelected = multiple
+      ? (selectedValue as string[]).includes(value)
+      : selectedValue === value;
+
+    function handleClick() {
+      if (multiple) {
+        const selected = selectedValue as string[];
+        const newValue = isSelected
+          ? selected.filter((v) => v !== value)
+          : [...selected, value];
+
+        onChange(newValue);
+      } else {
+        onChange(isSelected ? "" : value);
+      }
+    }
+
+    return (
+      <li ref={ref} className={`${prefix}--accordion-item`}>
+        <div className={`${prefix}--h3`}></div>
+        <button
+          onClick={handleClick}
+          className={`${prefix}--accordion--button ${prefix}--accordion--button__${context.size}`}
+          aria-expanded={isSelected}
+          aria-controls={value}
+        >
+          <span className={`${prefix}--accordion--label`}>{label}</span>
+          <span className={`${prefix}--accordion--icon`}></span>
+        </button>
+        <div
+          className={classNames(`${prefix}--accordion--panel`, {
+            [`${prefix}--accordion--panel__open`]: isSelected,
+            [`${prefix}--accordion--panel__scroll`]: scrollable,
+          })}
+          role="region"
+          aria-hidden={!isSelected}
+        >
+          <div className={`${prefix}--accordion--innerpanel`}>{children}</div>
+        </div>
+      </li>
+    );
+  }
+);
+
+export { AccordionItem };

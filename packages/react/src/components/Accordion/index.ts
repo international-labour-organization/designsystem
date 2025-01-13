@@ -1,4 +1,6 @@
-export { default as AccordionButton } from "./AccordionButton";
-export { default as AccordionPanel } from "./AccordionPanel";
-export { default as AccordionItem } from "./AccordionItem";
-export { default as Accordion } from "./Accordion";
+import { Accordion as AccordionCore } from "./Accordion";
+import { AccordionItem } from "./AccordionItem";
+
+const Accordion = Object.assign(AccordionCore, { Item: AccordionItem });
+
+export { Accordion };
