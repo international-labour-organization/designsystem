@@ -10,7 +10,7 @@
     &__factlist {
       --max-width: #{px-to-rem(375px)};
 
-      border-bottom: px-to-rem(3px) solid $brand-ilo-grey-ui;
+      border-bottom: px-to-rem(3px) solid var(--ilo-color-gray-base);
       padding: spacing(10) spacing(6) spacing(12);
 
       @include cornercut(72px, 40px);
@@ -40,56 +40,33 @@
 
       &#{$self}__theme {
         &__dark {
-          border-bottom: px-to-rem(3px) solid $color-base-red-medium;
+          border-bottom: px-to-rem(3px) solid var(--ilo-color-red);
 
-          #{$self}--title {
-            color: $brand-ilo-white;
-          }
-
-          .ilo--list__item {
-            color: $brand-ilo-white;
-
+          .ilo--list--item {
             &:last-of-type {
               margin-bottom: 0;
             }
           }
 
-          &:hover,
-          &:focus,
-          &:focus-within {
-            #{$self}--title {
-              color: $brand-ilo-white;
-            }
+          color: var(--ilo-color-white);
 
-            .ilo--list__item {
-              color: $brand-ilo-white;
-            }
+          #{$self}--title {
+            color: var(--ilo-color-white);
           }
         }
       }
 
       #{$self}--title {
         color: $brand-ilo-black;
-        @include font-styles("headline-5");
-        @include textmargin(
-          "margin-bottom",
-          32px,
-          "headline-5",
-          "display",
-          "body-small",
-          "copy"
-        );
+        font-size: var(--ilo-font-size-xlg);
+        line-height: var(--ilo-line-height-md);
+        letter-spacing: var(--ilo-letter-spacing-xsm);
+        font-weight: var(--ilo-font-weight-bold);
+        margin-bottom: spacing(4);
 
-        @include breakpoint("lg") {
-          @include font-styles("headline-4");
-          @include textmargin(
-            "margin-bottom",
-            40px,
-            "headline-4",
-            "display",
-            "base",
-            "copy"
-          );
+        @include breakpoint("md") {
+          font-size: var(--ilo-font-size-3xlg);
+          margin-bottom: spacing(6);
         }
       }
     }

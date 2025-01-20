@@ -9,11 +9,10 @@
 			{% endif %}
 			{% if list %}
 				{% include "@components/list/list.twig" with {
-          title: list.title,
-          ordered: list.ordered,
-          alignment: list.alignment,
+          ordered: "unordered",
           items: list.items,
           prefix: prefix,
+					theme: theme
         } only %}
 			{% endif %}
 		</div>
