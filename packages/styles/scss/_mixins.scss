@@ -395,7 +395,22 @@
 // and also lists in RichText.
 // ======================================
 
-@mixin invincible-list {
+@mixin invincible-list($bullet-color: rgba(184, 196, 204, 1)) {
+  li {
+    position: relative;
+    padding-inline-start: spacing(8);
+    font-family: var(--ilo-fonts-copy);
+    font-weight: var(--ilo-font-weight-regular);
+    font-size: var(--ilo-font-size-md);
+    line-height: var(--ilo-line-height-2xlg);
+    margin-bottom: spacing(4);
+
+    @include breakpoint("md") {
+      font-size: var(--ilo-font-size-lg);
+      margin-bottom: spacing(4);
+    }
+  }
+
   // Ordered list shows numbers
   ol {
     counter-reset: item;
@@ -416,17 +431,15 @@
   // Unordered list shows triangles
   ul {
     li {
-      position: relative;
-      padding-inline-start: spacing(8);
-
       &::before {
         content: "";
         position: absolute;
         height: px-to-rem(24px);
         width: px-to-rem(24px);
         top: spacing(1);
-        @include dataurlicon("caret_right", $color-base-neutrals-light);
+        // --ilo-color-gray-base
         background-repeat: no-repeat;
+        @include dataurlicon("caret_right", $bullet-color);
 
         // Left takes precedence in LTR layouts
         // Right takes precents in RTL layouts
@@ -438,22 +451,6 @@
           transform: rotate(180deg);
         }
       }
-    }
-  }
-
-  li {
-    @include font-styles("body-small");
-    font-family: var(--ilo-fonts-copy);
-    margin-bottom: spacing(4);
-
-    b,
-    strong {
-      font-weight: 700;
-      letter-spacing: $type-label-small-letter-spacing;
-    }
-
-    @include breakpoint("md") {
-      @include font-styles("base");
     }
   }
 }
