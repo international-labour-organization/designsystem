@@ -398,55 +398,51 @@
 @mixin invincible-list($bullet-color: rgba(184, 196, 204, 1)) {
   li {
     position: relative;
-    padding-inline-start: spacing(8);
+    padding-inline-start: spacing(4);
+    margin-bottom: spacing(4);
     font-family: var(--ilo-fonts-copy);
     font-weight: var(--ilo-font-weight-regular);
     font-size: var(--ilo-font-size-md);
     line-height: var(--ilo-line-height-2xlg);
-    margin-bottom: spacing(4);
 
     @include breakpoint("md") {
       font-size: var(--ilo-font-size-lg);
-      margin-bottom: spacing(4);
     }
   }
 
-  // Ordered list shows numbers
+  // Ordered list styles
   ol {
     counter-reset: item;
 
     li {
       counter-increment: item;
       display: table;
-    }
 
-    li::before {
-      content: counter(item) ".";
-      display: table-cell;
-      text-align: right;
-      padding-inline-end: spacing(2);
+      &::before {
+        content: counter(item) ".";
+        display: table-cell;
+        text-align: right;
+        padding-inline-end: spacing(2);
+      }
     }
   }
 
-  // Unordered list shows triangles
+  // Unordered list styles
   ul {
     li {
+      display: table;
+
       &::before {
         content: "";
-        position: absolute;
+        display: table-cell;
+        text-align: right;
+        padding-inline-end: spacing(2);
         height: px-to-rem(24px);
-        width: px-to-rem(24px);
-        top: spacing(1);
-        // --ilo-color-gray-base
+        width: px-to-rem(26px);
         background-repeat: no-repeat;
         @include dataurlicon("caret_right", $bullet-color);
 
-        // Left takes precedence in LTR layouts
-        // Right takes precents in RTL layouts
-        left: 0;
-        right: 0;
-
-        // We have to rotate the bullet in RTL
+        // Adjust for RTL
         [dir="rtl"] & {
           transform: rotate(180deg);
         }
