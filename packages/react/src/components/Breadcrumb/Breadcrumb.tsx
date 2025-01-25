@@ -1,294 +1,161 @@
-/* This is a good rule in general, but disabling here because the link has an aria-label */
+import { forwardRef, useId, useLayoutEffect, useRef, useState } from "react";
+import classNames from "classnames";
 
-import {
-  FC,
-  useState,
-  useEffect,
-  useLayoutEffect,
-  useCallback,
-  useRef,
-} from "react";
 import useGlobalSettings from "../../hooks/useGlobalSettings";
-import classnames from "classnames";
-import { BreadcrumbProps, BreadcrumbItemProps } from "./Breadcrumb.props";
 import { ContextMenu } from "../ContextMenu";
+import { BreadcrumbItem, BreadcrumbItemProps } from "./BreadcrumbItem";
 
-const BreadcrumbItem: FC<BreadcrumbItemProps> = ({
-  url,
-  label,
-  className,
-  labelShown = true,
-}) => {
-  const { prefix } = useGlobalSettings();
+export type BreadcrumbProps = {
+  /**
+   * An additional classname to add to the outer most element of the component
+   */
+  className?: string;
 
-  const baseClass = `${prefix}--breadcrumb--item`;
-  const linkClass = `${prefix}--breadcrumb--link`;
-  const labelClass = `${linkClass}--label`;
+  /**
+   * The accessible label to apply to the ellipsis button that appears when the Breadcrumb is collapsed
+   */
+  buttonLabel: string;
 
-  const breadcrumbLinkClass = classnames(baseClass, className);
-
-  return (
-    <li className={breadcrumbLinkClass}>
-      {labelShown ? (
-        <a className={linkClass} href={url}>
-          <span className={labelClass}>{label}</span>
-        </a>
-      ) : (
-        <a aria-label={label} className={linkClass} href={url}></a>
-      )}
-    </li>
-  );
+  /**
+   * Specify the links to be displayed in the Breadcrumb
+   */
+  links: BreadcrumbItemProps[];
 };
 
-const Breadcrumb: FC<BreadcrumbProps> = ({ className, links, buttonLabel }) => {
-  const { prefix } = useGlobalSettings();
+const Breadcrumb = forwardRef<HTMLElement, BreadcrumbProps>(
+  ({ className, links, buttonLabel }, ref) => {
+    const { prefix } = useGlobalSettings();
+    const id = useId();
 
-  // State
-  const [isCtxMenuOpen, setIsCtxMenuOpen] = useState(false);
-  const [ctxMenuPosition, setCtxMenuPosition] = useState({
-    start: 0,
-    top: 0,
-  });
-  const [isMenuCollapsed, setIsMenuCollapsed] = useState(false);
+    const [isCtxMenuOpen, setIsCtxMenuOpen] = useState(false);
+    const [isCollapsed, setIsCollapsed] = useState(false);
 
-  // Refs
-  const breadcrumbsRef = useRef<HTMLOListElement>(null);
-  const breadcrumbsWidth = useRef<number>(0);
-  const buttonRef = useRef<HTMLButtonElement>(null);
-  const ctxMenuRef = useRef<HTMLOListElement>(null);
+    const fullBreadcrumbWidth = useRef<number>(0);
+    const ctxButtonRef = useRef<HTMLButtonElement>(null);
+    const ctxContainerRef = useRef<HTMLDivElement>(null);
+    const listRef = useRef<HTMLOListElement>(null);
 
-  // Shortcuts to classnames
-  const baseClass = `${prefix}--breadcrumb`;
-  const innerClass = `${baseClass}--inner`;
-  const itemsClass = `${baseClass}--items`;
-  const itemClass = `${baseClass}--item`;
-  const itemFirstClass = `${itemClass}__first`;
-  const contextClass = `${baseClass}--context`;
-  const contextCollapsedClass = `${contextClass}__collapse`;
-  const contextId = `${baseClass}--menu`;
-  const buttonClass = `${contextClass}--button`;
+    useLayoutEffect(() => {
+      fullBreadcrumbWidth.current = listRef.current!.offsetWidth;
+    }, []);
 
-  // Dynamic classnames
-  const breadcrumbClass = classnames(baseClass, className);
-  const contextItemsClass = classnames(contextClass, {
-    [contextCollapsedClass]: isMenuCollapsed,
-  });
-  const contextMenuClass = classnames(`${contextClass}--menu`, {
-    [`${contextClass}--menu__visible`]: isCtxMenuOpen,
-  });
-
-  // Handlers
-  function handleButtonClick() {
-    setIsCtxMenuOpen(!isCtxMenuOpen);
-  }
-
-  const collapseMenu = useCallback(
-    (collapse: boolean) => {
-      if (collapse && !isMenuCollapsed) {
-        setIsMenuCollapsed(true);
+    useLayoutEffect(() => {
+      function handleClickOutside(event: MouseEvent) {
+        if (
+          ctxButtonRef.current &&
+          ctxContainerRef.current &&
+          !ctxButtonRef.current.contains(event.target as Node) &&
+          !ctxContainerRef.current.contains(event.target as Node)
+        ) {
+          setIsCtxMenuOpen(false);
+        }
       }
 
-      if (!collapse && isMenuCollapsed) {
-        setIsMenuCollapsed(false);
-      }
-    },
-    [isMenuCollapsed]
-  );
+      const observer = new ResizeObserver((entries) => {
+        const entry = entries.at(0)!;
+        const shouldCollapse =
+          fullBreadcrumbWidth.current >= entry.contentRect.width / 1.5;
 
-  // Get the width of the breadcrumbs and store it in a ref
-  useLayoutEffect(() => {
-    const breadcrumbs = breadcrumbsRef?.current;
-    if (!breadcrumbs || !window || !document) {
-      return;
-    }
-    breadcrumbsWidth.current = breadcrumbs.offsetWidth;
-  }, []);
+        setIsCollapsed((prev) => {
+          if (prev !== shouldCollapse) {
+            return shouldCollapse;
+          }
+          return prev;
+        });
+      });
 
-  // Collapse or uncollapse the Context Menu depending on body width
-  useLayoutEffect(() => {
-    const breadcrumbs = breadcrumbsRef?.current;
+      document.addEventListener("mousedown", handleClickOutside);
+      observer.observe(document.body);
 
-    if (!breadcrumbs || !window || !document) {
-      return;
-    }
+      return () => {
+        document.removeEventListener("mousedown", handleClickOutside);
+        observer.disconnect();
+      };
+    }, [id, prefix]);
 
-    const observer = new ResizeObserver((entries) => {
-      const bodyWidth = entries[0].contentRect.width;
-
-      if (breadcrumbsWidth.current >= bodyWidth / 1.5) {
-        collapseMenu(true);
-      } else {
-        collapseMenu(false);
-      }
-    });
-
-    observer.observe(document.body);
-
-    return () => {
-      observer.disconnect();
-    };
-  }, [collapseMenu]);
-
-  // Position the Context Menu right below the button
-  useLayoutEffect(() => {
-    if (!buttonRef.current || !ctxMenuRef.current) {
-      return;
-    }
-
-    if (isMenuCollapsed && isCtxMenuOpen) {
-      const buttonRect = buttonRef.current.getBoundingClientRect();
-      const buttonCenterX = buttonRect.left + buttonRect.width / 2;
-      const contextMenuWidth = ctxMenuRef.current.offsetWidth;
-      const navStart = buttonCenterX - contextMenuWidth / 2;
-      const navTop = buttonRect.bottom + 16;
-      setCtxMenuPosition({ start: navStart, top: navTop });
-    }
-  }, [isMenuCollapsed, isCtxMenuOpen]);
-
-  // If the ContextMenu is open, close it if the user clicks outside of it
-  useEffect(() => {
-    function handleClickOutside(event: MouseEvent) {
-      if (
-        isCtxMenuOpen &&
-        ctxMenuRef.current &&
-        !ctxMenuRef.current.contains(event.target as Node) &&
-        buttonRef.current &&
-        !buttonRef.current.contains(event.target as Node)
-      ) {
-        setIsCtxMenuOpen(false);
-      }
-    }
-    document.addEventListener("mousedown", handleClickOutside);
-
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [isMenuCollapsed, isCtxMenuOpen]);
-
-  // Close the context menu if the breadcrumbs should un-collapse
-  useEffect(() => {
-    if (isCtxMenuOpen && !isMenuCollapsed) {
-      setIsCtxMenuOpen(false);
-    }
-  }, [isMenuCollapsed, isCtxMenuOpen]);
-
-  // handle tab navigation when the context menu is open
-  useEffect(() => {
-    if (!buttonRef.current || !ctxMenuRef.current) {
-      return;
-    }
-
-    function handleKeyDown(event: KeyboardEvent) {
-      if (!isCtxMenuOpen || !isMenuCollapsed) {
+    useLayoutEffect(() => {
+      if (!ctxButtonRef.current || !ctxContainerRef.current) {
         return;
       }
 
-      if (event.key === "Tab") {
-        const links = ctxMenuRef.current?.querySelectorAll("a");
-        const lastBreadCrumb =
-          breadcrumbsRef.current?.lastElementChild?.querySelector("a");
+      if (isCtxMenuOpen) {
+        const buttonRect = ctxButtonRef.current.getBoundingClientRect();
+        const ctxMenuFirstChild = ctxContainerRef.current
+          .firstChild as HTMLOListElement;
 
-        if (!links || !lastBreadCrumb) {
-          return;
-        }
+        const ctxMenuRect = ctxMenuFirstChild.getBoundingClientRect();
+        const left =
+          buttonRect.left + buttonRect.width / 2 - ctxMenuRect.width / 2 - 5;
+        const top = buttonRect.bottom + 16;
 
-        const firstLink = links[0];
-        const lastLink = links[links.length - 1];
-
-        // If the user is tabbing...
-        if (!event.shiftKey) {
-          // If the context button is focused then the next focusable item
-          // should be the first item in the context menu
-          if (document.activeElement === buttonRef.current) {
-            event.preventDefault();
-            firstLink.focus();
-            return;
-          }
-
-          // If the last context item is focused then the focus should go to
-          // the last breadcrumb item
-          if (document.activeElement === lastLink) {
-            event.preventDefault();
-            lastBreadCrumb.focus();
-          }
-        }
-
-        // If the user is shift-tabbing...
-        if (event.shiftKey) {
-          // If the first item is focused then the focus should go back to the context button
-          if (event.shiftKey && document.activeElement === firstLink) {
-            event.preventDefault();
-            buttonRef?.current?.focus();
-          }
-
-          // If the focus is on the last breadcrumb item then the focus should go
-          // to the last item in the context menu
-          if (event.shiftKey && document.activeElement === lastBreadCrumb) {
-            event.preventDefault();
-            lastLink.focus();
-          }
-        }
+        ctxContainerRef.current.style.left = `${left}px`;
+        ctxContainerRef.current.style.top = `${top}px`;
       }
+    }, [isCtxMenuOpen]);
+
+    if (links.length < 2) {
+      throw new Error(
+        `Breadcrumb component requires at least two links, but received ${links.length}`
+      );
     }
 
-    document.addEventListener("keydown", handleKeyDown);
+    const firstLink = links.at(0);
+    const contextLinks = links.slice(1, -1);
+    const lastLink = links.at(-1);
 
-    return () => {
-      document.removeEventListener("keydown", handleKeyDown);
-    };
-  });
+    return (
+      <nav className={classNames(`${prefix}--breadcrumb`, className)} ref={ref}>
+        <div className={`${prefix}--breadcrumb--inner`}>
+          <ol
+            className={`${prefix}--breadcrumb--items`}
+            id={`${prefix}--breadcrumb--items-${id}`}
+            ref={listRef}
+          >
+            <BreadcrumbItem
+              first
+              url={firstLink!.url}
+              label={firstLink!.label}
+            />
+            {contextLinks.length > 0 && (
+              <li
+                className={classNames(`${prefix}--breadcrumb--context`, {
+                  [`${prefix}--breadcrumb--context__collapse`]: isCollapsed,
+                })}
+              >
+                <ol className={`${prefix}--breadcrumb--items`}>
+                  {contextLinks.map((contextLink) => (
+                    <BreadcrumbItem
+                      url={contextLink.url}
+                      label={contextLink.label}
+                      key={`${contextLink.label}-${contextLink.url}`}
+                    />
+                  ))}
+                </ol>
+                <button
+                  onClick={() => setIsCtxMenuOpen(!isCtxMenuOpen)}
+                  aria-label={buttonLabel}
+                  aria-expanded={isCtxMenuOpen}
+                  aria-controls={`${prefix}--breadcrumb--menu-${id}`}
+                  className={`${prefix}--breadcrumb--context--button`}
+                  ref={ctxButtonRef}
+                ></button>
+              </li>
+            )}
+            <BreadcrumbItem url={lastLink!.url} label={lastLink!.label} />
+          </ol>
+        </div>
+        <div
+          className={classNames(`${prefix}--breadcrumb--context--menu`, {
+            [`${prefix}--breadcrumb--context--menu__visible`]: isCtxMenuOpen,
+          })}
+          id={`${prefix}--breadcrumb--menu-${id}`}
+          ref={ctxContainerRef}
+        >
+          <ContextMenu links={contextLinks} />
+        </div>
+      </nav>
+    );
+  }
+);
 
-  // Separate out the links into first, context and last
-  const firstLink = links[0];
-  const contextLinks = links.slice(1, links.length - 1);
-  const lastLink = links[links.length - 1];
-
-  return (
-    <nav className={breadcrumbClass}>
-      <div className={innerClass}>
-        <ol className={itemsClass} ref={breadcrumbsRef}>
-          <BreadcrumbItem
-            url={firstLink.url}
-            label={firstLink.label}
-            labelShown={false}
-            className={itemFirstClass}
-          />
-          {contextLinks && contextLinks.length > 0 ? (
-            <li className={contextItemsClass}>
-              <ol className={itemsClass}>
-                {contextLinks.map((contextLink, i) => (
-                  <BreadcrumbItem
-                    url={contextLink.url}
-                    label={contextLink.label}
-                    key={i}
-                  />
-                ))}
-              </ol>
-              <button
-                aria-label={buttonLabel}
-                aria-expanded={isCtxMenuOpen}
-                aria-controls={contextId}
-                className={buttonClass}
-                onClick={handleButtonClick}
-                ref={buttonRef}
-              ></button>
-            </li>
-          ) : null}
-          {lastLink && (
-            <BreadcrumbItem url={lastLink.url} label={lastLink.label} />
-          )}
-        </ol>
-      </div>
-      <div
-        className={contextMenuClass}
-        id={contextId}
-        hidden={!isCtxMenuOpen}
-        style={{ left: ctxMenuPosition.start, top: ctxMenuPosition.top }}
-      >
-        <ContextMenu links={contextLinks} ref={ctxMenuRef} />
-      </div>
-    </nav>
-  );
-};
-
-export default Breadcrumb;
+export { Breadcrumb };
