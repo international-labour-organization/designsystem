@@ -29,6 +29,7 @@ export { Tooltip } from "./Tooltip";
 export { Checkbox } from "./Checkbox";
 export { DatePicker } from "./DatePicker";
 export { Hero } from "./Hero";
+export { HeroCard } from "./HeroCard";
 export { LinkList } from "./LinkList";
 export { Pagination } from "./Pagination";
 export { SearchField } from "./SearchField";
