@@ -1,52 +1,114 @@
-import classnames from "classnames";
+import classNames from "classnames";
+import { forwardRef } from "react";
+
+import { SocialTypes } from "../../types";
 import { useGlobalSettings } from "../../hooks";
-import { SocialMediaProps } from "./SocialMedia.props";
 
-const SocialMedia: React.FC<SocialMediaProps> = ({
-  className,
-  theme = "light",
-  justify = "start",
-  headline,
-  icons,
-  iconSize = "normal",
-}) => {
-  const { prefix } = useGlobalSettings();
+export type SocialMediaIcons = {
+  /**
+   * The name of the icon to display
+   */
+  icon: SocialTypes;
 
-  // Classes to be applied to the outer element
-  const baseClass = `${prefix}--social-media`;
-  const themeClass = `${baseClass}__theme__${theme}`;
-  const justifyClass = `${baseClass}__justify__${justify}`;
-  const classes = classnames(baseClass, themeClass, justifyClass, className);
+  /**
+   * The url to link to
+   */
+  url: string;
 
-  // Classes to be applied to inner elements
-  const headlineClass = `${baseClass}--headline`;
-  const listClass = `${baseClass}--list`;
-  const listItemClass = `${listClass}--item`;
-  const iconClass = `${listItemClass}--icon`;
-  const iconSizeClass = `${listItemClass}--icon__${iconSize}`;
+  /**
+   * The alt text of the link
+   */
+  label: string;
 
-  return (
-    <div className={classes}>
-      {headline && <h5 className={headlineClass}>{headline}</h5>}
-      <ul className={listClass}>
-        {icons.map((item) => (
-          <li className={listItemClass} key={item.url}>
-            <a
-              title={item.label}
-              className={classnames(
-                iconClass,
-                iconSizeClass,
-                `${iconClass}__${item.icon}`
-              )}
-              href={item.url}
-            >
-              {item.label}
-            </a>
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
+  className?: string;
 };
 
-export default SocialMedia;
+export type SocialMediaProps = {
+  /**
+   * An optional headline to display above the icons
+   */
+  headline?: string;
+
+  /**
+   * Specify an optional className to be added to your SocialMedia.
+   */
+  className?: string;
+
+  /**
+   * Specify the theme of the SocialMedia.
+   */
+  theme?: "light" | "dark";
+
+  /**
+   * The justification of the icons
+   */
+  justify?: "start" | "center";
+
+  /**
+   * Specify the icons to display.
+   */
+  icons: SocialMediaIcons[];
+
+  /**
+   * The size of the social media icons
+   */
+  iconSize: "normal" | "large";
+};
+
+const SocialMedia = forwardRef<HTMLDivElement, SocialMediaProps>(
+  (
+    {
+      className,
+      theme = "light",
+      justify = "start",
+      headline,
+      icons,
+      iconSize = "normal",
+    },
+    ref
+  ) => {
+    const { prefix } = useGlobalSettings();
+
+    const baseClass = `${prefix}--social-media`;
+
+    return (
+      <div
+        className={classNames(
+          baseClass,
+          `${baseClass}__theme__${theme}`,
+          `${baseClass}__justify__${justify}`,
+          className
+        )}
+        ref={ref}
+      >
+        {headline && <h5 className={`${baseClass}--headline`}>{headline}</h5>}
+        <ul
+          className={classNames(
+            `${baseClass}--list`,
+            `${baseClass}--list__size__${iconSize}`
+          )}
+        >
+          {icons.map((item) => (
+            <li
+              className={classNames(`${baseClass}--list--item`, item.className)}
+              key={item.url}
+            >
+              <a
+                title={item.label}
+                className={classNames(
+                  `${baseClass}--list--item--icon`,
+                  `${baseClass}--list--item--icon__${item.icon}`
+                )}
+                href={item.url}
+              >
+                {item.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    );
+  }
+);
+
+export { SocialMedia };
