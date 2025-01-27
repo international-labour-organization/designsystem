@@ -5,6 +5,7 @@ import {
   useCallback,
   MouseEvent,
   FocusEvent,
+  useState,
 } from "react";
 import classNames from "classnames";
 import { createPopper, Instance as PopperInstance } from "@popperjs/core";
@@ -54,6 +55,7 @@ const Tooltip = forwardRef<HTMLDivElement, TooltipProps>(
       className,
       children,
       label,
+      isVisible,
     },
     ref
   ) => {
@@ -61,6 +63,8 @@ const Tooltip = forwardRef<HTMLDivElement, TooltipProps>(
     const baseClass = `${prefix}--tooltip`;
     const tooltipRef = useRef<HTMLDivElement>(null);
     const popperRef = useRef<PopperInstance | null>(null);
+    const [isShown, setIsShown] = useState<boolean>(!!isVisible);
+
     const id = useId();
 
     const handleShow = useCallback(
@@ -84,7 +88,7 @@ const Tooltip = forwardRef<HTMLDivElement, TooltipProps>(
               },
             ],
           });
-          tooltipRef.current.setAttribute("aria-hidden", "false");
+          setIsShown(true);
         }
       },
       []
@@ -96,8 +100,13 @@ const Tooltip = forwardRef<HTMLDivElement, TooltipProps>(
         popperRef.current = null;
       }
       if (tooltipRef.current) {
-        tooltipRef.current.setAttribute("aria-hidden", "true");
+        setIsShown(false);
       }
+    }, []);
+
+    const isLongTooltip = useCallback(() => {
+      const tooltipText = tooltipRef.current?.textContent?.trim() || "";
+      return tooltipText.length > 50;
     }, []);
 
     return (
@@ -123,10 +132,12 @@ const Tooltip = forwardRef<HTMLDivElement, TooltipProps>(
           ref={tooltipRef}
           className={classNames(baseClass, {
             [`${baseClass}--${theme}`]: theme,
+            [`${baseClass}--visible`]: isShown,
+            [`${baseClass}--long`]: isLongTooltip(),
           })}
           data-id={`tooltip-${id}`}
           role="tooltip"
-          aria-hidden="true"
+          aria-hidden={!isShown}
         >
           <span
             data-popper-arrow
