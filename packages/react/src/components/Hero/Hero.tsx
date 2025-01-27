@@ -93,7 +93,6 @@ const Hero = forwardRef<HTMLDivElement, HeroProps>(
       return image?.url.sort((a, b) => a.breakpoint - b.breakpoint);
     }, [image]);
 
-    console.log(image, "HERe");
     return (
       <div
         ref={ref}

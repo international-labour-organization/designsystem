@@ -60,6 +60,8 @@ const Default: StoryObj<HeroProps> = {
       },
     },
     caption: {
+      icon: true,
+      theme: "dark",
       label:
         "A metalurgy worker at a manufacturing plant in Viet Nam. © ILO/Minh Quang",
     },
@@ -123,6 +125,8 @@ const Article: StoryObj<HeroProps> = {
       },
     },
     caption: {
+      icon: true,
+      theme: "dark",
       label:
         "A metalurgy worker at a manufacturing plant in Viet Nam. © ILO/Minh Quang",
     },
