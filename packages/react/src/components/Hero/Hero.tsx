@@ -4,9 +4,8 @@ import classNames from "classnames";
 import useGlobalSettings from "../../hooks/useGlobalSettings";
 import { ImageProps } from "../Image/Image.props";
 import { Breadcrumb, BreadcrumbProps } from "../Breadcrumb";
-import { Tooltip } from "../Tooltip";
+import { Tooltip, TooltipProps } from "../Tooltip";
 import { HeroCard, HeroCardProps } from "../HeroCard";
-import { TooltipProps } from "../Tooltip/Tooltip.props";
 import { ThemeTypes } from "../../types";
 
 export type HeroProps = {

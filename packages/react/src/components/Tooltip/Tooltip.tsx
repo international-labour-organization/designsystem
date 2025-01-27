@@ -44,6 +44,11 @@ export type TooltipProps = {
    */
   isVisible?: boolean;
 
+  /**
+   * Specify an optional id for the Tooltip
+   */
+  id?: string;
+
   children?: React.ReactNode;
 };
 const Tooltip = forwardRef<HTMLDivElement, TooltipProps>(
@@ -56,6 +61,7 @@ const Tooltip = forwardRef<HTMLDivElement, TooltipProps>(
       children,
       label,
       isVisible,
+      id,
     },
     ref
   ) => {
@@ -65,7 +71,7 @@ const Tooltip = forwardRef<HTMLDivElement, TooltipProps>(
     const popperRef = useRef<PopperInstance | null>(null);
     const [isShown, setIsShown] = useState<boolean>(!!isVisible);
 
-    const id = useId();
+    const rid = useId();
 
     const handleShow = useCallback(
       (event: MouseEvent<HTMLDivElement> | FocusEvent<HTMLDivElement>) => {
@@ -125,7 +131,7 @@ const Tooltip = forwardRef<HTMLDivElement, TooltipProps>(
         onMouseLeave={handleHide}
         onFocus={handleShow}
         onBlur={handleHide}
-        id={`tooltip-${id}`}
+        id={id || `tooltip-${rid}`}
       >
         {!icon && children}
         <span
@@ -135,7 +141,7 @@ const Tooltip = forwardRef<HTMLDivElement, TooltipProps>(
             [`${baseClass}--visible`]: isShown,
             [`${baseClass}--long`]: isLongTooltip(),
           })}
-          data-id={`tooltip-${id}`}
+          data-id={id || `tooltip-${rid}`}
           role="tooltip"
           aria-hidden={!isShown}
         >
