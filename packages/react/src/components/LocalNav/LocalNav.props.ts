@@ -1,4 +1,4 @@
-import { LinkProps, ContextMenuProps } from "../ContextMenu/ContextMenu.props";
+// import { LinkProps, ContextMenuProps } from "../ContextMenu/ContextMenu.props";
 import { LogoProps } from "../Logo/Logo.props";
 
 export interface LocalNavProps {
@@ -20,7 +20,7 @@ export interface LocalNavProps {
   /**
    * Specify the main link for the LocalNav
    */
-  mainlink?: LinkProps;
+  // mainlink?: LinkProps;
 
   /**
    * Specify the menu close label for the LocalNav
@@ -35,7 +35,7 @@ export interface LocalNavProps {
   /**
    * Specify the language context menu for the LocalNav
    */
-  languagecontextmenu?: ContextMenuProps;
+  // languagecontextmenu?: ContextMenuProps;
 }
 
 interface PrimaryNavProps {
@@ -52,5 +52,5 @@ interface PrimaryNavProps {
   /**
    * Specify the social links
    */
-  items?: Required<Array<LinkProps>>;
+  // items?: Required<Array<LinkProps>>;
 }
