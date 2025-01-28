@@ -57,4 +57,11 @@ list:
         horizontal: Horizontal
       preview: "default"
       required: false
+    theme:
+      type: select
+      label: Theme
+      description: The theme of the list `light` or `dark`
+      options:
+        light: light
+        dark: dark
   visibility: storybook

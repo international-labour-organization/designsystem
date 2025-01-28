@@ -3,16 +3,28 @@
 @import "../mixins";
 
 .ilo--list {
-  @include invincible-list;
-
   &--title {
-    @include font-styles("headline-6");
-    margin-bottom: spacing(6);
-    font-family: var(--ilo-fonts-display);
-    font-weight: 700;
+    font-size: var(--ilo-font-size-xlg);
+    line-height: var(--ilo-line-height-md);
+    letter-spacing: var(--ilo-letter-spacing-xsm);
+    font-weight: var(--ilo-font-weight-bold);
+    margin-bottom: spacing(4);
 
-    @include breakpoint("md") {
-      @include font-styles("headline-5");
+    @include breakpoint("lg") {
+      font-size: var(--ilo-font-size-3xlg);
+      margin-bottom: spacing(6);
+    }
+  }
+
+  &__theme {
+    &__light {
+      color: var(--ilo-color-gray-charcoal);
+      @include invincible-list;
+    }
+
+    &__dark {
+      color: var(--ilo-color-white);
+      @include invincible-list(rgba(255, 255, 255, 1));
     }
   }
 

@@ -1,0 +1,24 @@
+{
+  "title": "Fact List",
+  "list": {
+    "items": [
+      {
+        "content": "Fact 1: Example detail about the first fact.",
+        "id": "fact-1"
+      },
+      {
+        "content": "Fact 2: Another interesting detail.",
+        "id": "fact-2"
+      },
+      {
+        "content": "Fact 3: Final piece of information.",
+        "id": "fact-3"
+      }
+    ]
+  },
+  "settings": {
+    "theme": "dark",
+    "size": "narrow",
+    "titleLevel": "h2"
+  }
+}

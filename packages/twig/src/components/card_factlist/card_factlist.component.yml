@@ -13,11 +13,8 @@ factlistcard:
     list:
       type: object
       label: List
-      description: List of facts or statistics. See the List component for a full list of options.
+      description: List of facts or statistics. Each item takes a `content` property with the text of the list and an optional `id` property.
       preview:
-        settings:
-          - ordered: unordered
-          - alignment: default
         items:
           - content: "Global employment growth will be only 1.0 per cent in 2023, less than half the level in 2022."
             id: "list1"
@@ -40,7 +37,7 @@ factlistcard:
       label: Theme
       description: Sets the card to appear as either light or dark. If not set, the card will inherit the theme of its parent.
       required: false
-      preview: "light"
+      preview: "dark"
       options:
         dark: Dark
         light: Light
