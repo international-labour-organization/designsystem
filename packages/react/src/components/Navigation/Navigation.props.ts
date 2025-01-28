@@ -1,4 +1,4 @@
-import { LinkProps, ContextMenuProps } from "../ContextMenu/ContextMenu.props";
+// import { LinkProps, ContextMenuProps } from "../ContextMenu/ContextMenu.props";
 import { SearchFieldProps } from "../SearchField/SearchField.props";
 
 export interface NavigationProps {
@@ -60,7 +60,7 @@ export interface NavigationProps {
   /**
    * Specify the language context menu for the Navigation
    */
-  languagecontextmenu?: ContextMenuProps;
+  // languagecontextmenu?: ContextMenuProps;
 }
 
 interface PrimaryNavProps {
@@ -77,7 +77,7 @@ interface PrimaryNavProps {
   /**
    * Specify the links
    */
-  items?: Required<Array<LinkProps>>;
+  // items?: Required<Array<LinkProps>>;
 }
 
 interface SubNavProps {
@@ -104,7 +104,7 @@ interface SubNavProps {
   /**
    * Specify the subnav links
    */
-  items?: Required<Array<LinkProps>>;
+  // items?: Required<Array<LinkProps>>;
 }
 
 interface TaglineProps {

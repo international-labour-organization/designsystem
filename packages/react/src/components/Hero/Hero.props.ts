@@ -1,5 +1,5 @@
 import { ThemeTypes } from "../../types";
-import { BreadcrumbProps } from "../Breadcrumb/Breadcrumb.props";
+import { BreadcrumbProps } from "../Breadcrumb";
 import { ImageProps } from "../Image/Image.props";
 import { TooltipProps } from "../Tooltip/Tooltip.props";
 import { HeroCardProps } from "./HeroCard.props";
