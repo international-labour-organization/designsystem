@@ -27,7 +27,7 @@ describe("Factlist card", () => {
     cy.get("@card")
       .should("have.class", "ilo--card__theme__dark")
       .and("be.visible")
-      .and("have.css", "color", "rgba(255, 255, 255, 1)"); // Check text color
+      .and("have.css", "color", "rgb(255, 255, 255)"); // Check text color
 
     // Check :before pseudo-element color
     cy.get("@card").then(($el) => {
@@ -35,7 +35,7 @@ describe("Factlist card", () => {
         $el[0],
         "::before"
       ).color;
-      expect(pseudoElementColor).to.eq("rgba(255, 255, 255, 1)");
+      expect(pseudoElementColor).to.eq("rgb(255, 255, 255)");
     });
   });
 });
