@@ -13,7 +13,7 @@ on:
 jobs:
   test:
     name: Build and Test
-    runs-on: 'ubuntu-latest'
+    runs-on: "ubuntu-latest"
     # To use Remote Caching, uncomment the next lines and follow the steps below.
     # env:
     #  TURBO_TOKEN: ${{ secrets.TURBO_TOKEN }}
@@ -63,7 +63,7 @@ jobs:
       - name: Run theme container
         run: |
           echo "${{ secrets.ILO_BASE_THEME_TOKEN }}" | docker login ghcr.io -u "${{ github.repository_owner }}" --password-stdin
-          docker run -d --name theme -p 8082:80 -v "${{ github.workspace }}"/packages/twig/dist/components:/opt/drupal/modules/ilo_base_theme_companion/dist/components -v "${{ github.workspace }}"/packages/twig/dist/styles/index.css:/opt/drupal/modules/ilo_base_theme_companion/dist/index.css ghcr.io/international-labour-organization/ilo_base_theme:1.x
+          docker run -d --name theme -p 8082:80 -v "${{ github.workspace }}"/packages/twig/dist/components:/opt/drupal/modules/ilo_base_theme_companion/dist/components -v "${{ github.workspace }}"/packages/twig/dist/styles/index.css:/opt/drupal/modules/ilo_base_theme_companion/dist/css/index.css ghcr.io/international-labour-organization/ilo_base_theme:1.x
 
       - name: Test
         run: pnpm test:all
