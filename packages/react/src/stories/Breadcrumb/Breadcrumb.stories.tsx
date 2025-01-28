@@ -1,20 +1,25 @@
 import { Meta, StoryObj } from "@storybook/react";
 import { Breadcrumb } from "../../components/Breadcrumb";
-import BreadcrumbArgs from "../../components/Breadcrumb/Breadcrumb.args";
+import { BreadcrumbProps } from "../../components/Breadcrumb/Breadcrumb";
 
-const BreadcrumbMeta: Meta<typeof Breadcrumb> = {
+const meta: Meta<typeof Breadcrumb> = {
   title: "Components/Navigation/Breadcrumb",
   component: Breadcrumb,
 };
 
-export default BreadcrumbMeta;
-
-export const BasicBreadcrumb: StoryObj<typeof Breadcrumb> = {
-  args: BreadcrumbArgs.basic,
-  name: "Basic",
+const Default: StoryObj<BreadcrumbProps> = {
+  args: {
+    buttonLabel: "More Links",
+    links: [
+      { label: "Link One", url: "http://ilo.org" },
+      { label: "Link Two", url: "http://ilo.org" },
+      { label: "Link Three", url: "http://ilo.org" },
+      { label: "Link Four", url: "http://ilo.org" },
+      { label: "Link Five", url: "http://ilo.org" },
+      { label: "Link Five", url: "http://ilo.org" },
+    ],
+  },
 };
 
-export const FiveLinksBreadcrumb: StoryObj<typeof Breadcrumb> = {
-  args: BreadcrumbArgs.fiveLinks,
-  name: "Five Links",
-};
+export default meta;
+export { Default };
