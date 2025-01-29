@@ -1,119 +1,160 @@
-import React, { FC, useState, useRef } from "react";
+import {
+  useRef,
+  useId,
+  forwardRef,
+  useCallback,
+  MouseEvent,
+  FocusEvent,
+  useState,
+} from "react";
 import classNames from "classnames";
-import useGlobalSettings from "../../hooks/useGlobalSettings";
-import { TooltipProps } from "./Tooltip.props";
 import { createPopper, Instance as PopperInstance } from "@popperjs/core";
 
-const Tooltip: FC<TooltipProps> = ({
-  className,
-  children,
-  icon,
-  label,
-  iconTheme,
-  theme,
-  id,
-}) => {
-  const { prefix } = useGlobalSettings();
-  const baseClass = `${prefix}--tooltip`;
-  const [isVisible, setIsVisible] = useState<boolean>(false);
-  const tooltipRef = useRef<HTMLDivElement>(null);
-  const popperInstanceRef = useRef<PopperInstance | null>(null);
+import useGlobalSettings from "../../hooks/useGlobalSettings";
+import { TooltipThemes, TooltipIconThemes } from "../../types";
 
-  const isLongTooltip = () => {
-    const tooltipText = (
-      tooltipRef.current?.textContent ||
-      tooltipRef.current?.innerText ||
-      ""
-    ).trim();
-    return tooltipText.length > 50;
-  };
+export type TooltipProps = {
+  /**
+   * Set the label for the tooltip
+   */
+  label: string;
 
-  const tooltipClasses = classNames(className, {
-    [baseClass]: true,
-    [`${baseClass}--${theme}`]: theme,
-    [`${baseClass}--visible`]: isVisible,
-    [`${baseClass}--long`]: isLongTooltip(),
-  });
+  /**
+   * Describe the theme of the tooltip
+   */
+  theme?: TooltipThemes;
 
-  const tooltipArrowClasses = classNames(
-    `${baseClass}--arrow`,
-    `${baseClass}--arrow--placement-negative`
-  );
+  /**
+   * Describe the background theme of the tooltip
+   */
+  iconTheme?: TooltipIconThemes;
 
-  const iconClasses = classNames(className, `${baseClass}--wrapper`, {
-    [`${baseClass}--wrapper__icon ${baseClass}--wrapper__icon__theme__${theme}`]:
-      icon,
-    [`${baseClass}--wrapper__icon__theme__${theme}`]: iconTheme,
-  });
+  /**
+   * Specify an optional className to be added to your Tooltip.
+   */
+  className?: string;
 
-  const handleOnMouseOver: React.MouseEventHandler<HTMLDivElement> = (e) => {
-    const target = e.currentTarget;
-    if (target && tooltipRef.current) {
-      const popperInstance = createPopper(target, tooltipRef.current, {
-        placement: "top",
-        modifiers: [
-          {
-            name: "offset",
-            options: {
-              offset: [0, 12], // Adjust offset as needed
-            },
-          },
-          {
-            name: "flip",
-            enabled: true,
-          },
-          {
-            name: "preventOverflow",
-            enabled: true,
-          },
-        ],
-      });
+  /**
+   * Should the tooltip appear on hover of an info icon?
+   */
+  icon?: boolean;
 
-      popperInstanceRef.current = popperInstance;
+  /**
+   * Set whether the tooltip is visible or not
+   */
+  isVisible?: boolean;
 
-      setIsVisible(true);
-    }
-  };
+  /**
+   * Specify an optional id for the Tooltip
+   */
+  id?: string;
 
-  const handleOnMouseOut = () => {
-    if (popperInstanceRef.current) {
-      popperInstanceRef.current.destroy();
-    }
-    setIsVisible(false);
-  };
-
-  const handleOnFocus: React.FocusEventHandler<HTMLDivElement> = (e) => {
-    handleOnMouseOver(e as unknown as React.MouseEvent<HTMLDivElement>);
-  };
-
-  return (
-    <div
-      className={iconClasses}
-      onMouseOver={handleOnMouseOver}
-      onFocus={handleOnFocus}
-      onMouseOut={handleOnMouseOut}
-      onBlur={handleOnMouseOut}
-      id={id}
-    >
-      {!icon && <>{children}</>}
-      <span
-        className={tooltipClasses}
-        ref={tooltipRef}
-        data-id={id}
-        id="tooltip"
-        role="tooltip"
-        aria-hidden={!isVisible}
-      >
-        <span
-          data-popper-arrow
-          className={tooltipArrowClasses}
-          data-placement="negative"
-          role="presentation"
-        />
-        {label}
-      </span>
-    </div>
-  );
+  children?: React.ReactNode;
 };
+const Tooltip = forwardRef<HTMLDivElement, TooltipProps>(
+  (
+    {
+      icon = true,
+      iconTheme = "light",
+      theme = "dark",
+      className,
+      children,
+      label,
+      isVisible,
+      id,
+    },
+    ref
+  ) => {
+    const { prefix } = useGlobalSettings();
+    const baseClass = `${prefix}--tooltip`;
+    const tooltipRef = useRef<HTMLDivElement>(null);
+    const popperRef = useRef<PopperInstance | null>(null);
+    const [isShown, setIsShown] = useState<boolean>(!!isVisible);
 
-export default Tooltip;
+    const rid = useId();
+
+    const handleShow = useCallback(
+      (event: MouseEvent<HTMLDivElement> | FocusEvent<HTMLDivElement>) => {
+        const target = event.currentTarget;
+        if (target && tooltipRef.current) {
+          popperRef.current = createPopper(target, tooltipRef.current, {
+            placement: "top",
+            modifiers: [
+              {
+                name: "offset",
+                options: { offset: [0, 12] },
+              },
+              {
+                name: "flip",
+                enabled: true,
+              },
+              {
+                name: "preventOverflow",
+                enabled: true,
+              },
+            ],
+          });
+          setIsShown(true);
+        }
+      },
+      []
+    );
+
+    const handleHide = useCallback(() => {
+      if (popperRef.current) {
+        popperRef.current.destroy();
+        popperRef.current = null;
+      }
+      if (tooltipRef.current) {
+        setIsShown(false);
+      }
+    }, []);
+
+    const isLongTooltip = useCallback(() => {
+      const tooltipText = tooltipRef.current?.textContent?.trim() || "";
+      return tooltipText.length > 50;
+    }, []);
+
+    return (
+      <div
+        ref={ref}
+        className={classNames(
+          `${baseClass}--wrapper`,
+          {
+            [`${baseClass}--wrapper__icon`]: icon,
+            [`${baseClass}--wrapper__icon__theme__${theme}`]: icon && theme,
+            [`${baseClass}--wrapper__icon__theme__${iconTheme}`]: iconTheme,
+          },
+          className
+        )}
+        onMouseEnter={handleShow}
+        onMouseLeave={handleHide}
+        onFocus={handleShow}
+        onBlur={handleHide}
+        id={id || `tooltip-${rid}`}
+      >
+        {!icon && children}
+        <span
+          ref={tooltipRef}
+          className={classNames(baseClass, {
+            [`${baseClass}--${theme}`]: theme,
+            [`${baseClass}--visible`]: isShown,
+            [`${baseClass}--long`]: isLongTooltip(),
+          })}
+          data-id={id || `tooltip-${rid}`}
+          role="tooltip"
+          aria-hidden={!isShown}
+        >
+          <span
+            data-popper-arrow
+            className={`${baseClass}--arrow ${baseClass}--arrow--placement-negative`}
+            data-placement="negative"
+            role="presentation"
+          />
+          {label}
+        </span>
+      </div>
+    );
+  }
+);
+export { Tooltip };

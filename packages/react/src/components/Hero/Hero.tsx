@@ -1,94 +1,152 @@
-import { FC } from "react";
-import classnames from "classnames";
+import { forwardRef, useMemo } from "react";
+import classNames from "classnames";
+
 import useGlobalSettings from "../../hooks/useGlobalSettings";
-import { HeroProps } from "./Hero.props";
-import HeroCard from "./HeroCard";
 import { ImageProps } from "../Image/Image.props";
-import { Breadcrumb } from "../Breadcrumb";
-import { Tooltip } from "../Tooltip";
+import { Breadcrumb, BreadcrumbProps } from "../Breadcrumb";
+import { Tooltip, TooltipProps } from "../Tooltip";
+import { HeroCard, HeroCardProps } from "../HeroCard";
+import { ThemeTypes } from "../../types";
 
-const HeroImage: FC<ImageProps> = ({ url, alt }) => {
-  const { prefix } = useGlobalSettings();
+export type HeroProps = {
+  /**
+   * Vertical alignment of the hero card
+   */
+  align?: "center" | "bottom" | "baseline";
 
-  const imageClass = `${prefix}--card--image`;
+  /**
+   * Props to pass to the breadcrumb if there is one
+   */
+  breadcrumb?: BreadcrumbProps;
 
-  // Sort the urls by breakpoint
-  const sortedUrls = url.sort((a, b) => a.breakpoint - b.breakpoint);
+  /**
+   * Caption to render in the hero card
+   */
+  caption?: TooltipProps;
 
-  const defaultSrc = sortedUrls[sortedUrls.length - 1].src;
+  /**
+   * Size the of hero card
+   */
+  cardSize?: "small" | "medium" | "large" | "xlarge" | "xxlarge";
 
-  return (
-    <figure className="hero--image">
-      <picture>
-        {sortedUrls.map((img) => (
-          <source
-            srcSet={img.src}
-            media={`(min-width: ${img.breakpoint}px)`}
-            key={img.breakpoint}
-          />
-        ))}
-        <img className={imageClass} src={defaultSrc} alt={alt} />
-      </picture>
-    </figure>
-  );
+  /**
+   * Specify an optional className to be added to your Hero component.
+   */
+  className?: string;
+
+  /**
+   * Props for the image for the hero
+   */
+  image?: ImageProps;
+
+  /**
+   * How to justify the hero card
+   */
+  justify?: "start" | "center" | "offset";
+
+  /**
+   * Props for the card for the hero
+   */
+  heroCard: HeroCardProps;
+
+  /**
+   * Color of the gap space between bottom of the hero image and bottom of the card
+   */
+  gap?: "white" | "transparent" | "dark" | "light";
+
+  /**
+   * The size of the poster image
+   */
+  posterSize?: "small" | "medium" | "large" | "xlarge";
+
+  /**
+   * Theme for the card
+   */
+  theme?: ThemeTypes;
 };
 
-const Hero: FC<HeroProps> = ({
-  justify = "start",
-  align = "baseline",
-  cardSize = "small",
-  posterSize = "large",
-  theme = "dark",
-  image,
-  breadcrumb,
-  heroCard,
-  caption,
-  gap,
-}) => {
-  const baseClass = "hero";
-  const justifyClass = `${baseClass}__card-justify__${justify}`;
-  const alignClass = `${baseClass}__card-align__${align}`;
-  const cardSizeClass = `${baseClass}__card-size__${cardSize}`;
-  const posterSizeClass = `${baseClass}__poster-size__${posterSize}`;
-  const themeClass = `${baseClass}__card-theme__${theme}`;
-  const gapClass = `${baseClass}__gap__${gap}`;
+const Hero = forwardRef<HTMLDivElement, HeroProps>(
+  (
+    {
+      className,
+      justify = "start",
+      align = "baseline",
+      cardSize = "small",
+      posterSize = "large",
+      theme = "dark",
+      image,
+      breadcrumb,
+      heroCard,
+      caption,
+      gap,
+    },
+    ref
+  ) => {
+    const { prefix } = useGlobalSettings();
 
-  const heroClasses = classnames(
-    baseClass,
-    justifyClass,
-    alignClass,
-    cardSizeClass,
-    posterSizeClass,
-    themeClass,
-    { [gapClass]: !!gap }
-  );
-  return (
-    <div className={heroClasses}>
-      <div className="hero--background">
-        {image && <HeroImage {...image} />}
-      </div>
-      {breadcrumb && (
-        <>
-          <div className="hero--breadcrumbs">
-            <div className="hero--breadcrumbs--wrapper">
+    const baseClass = `hero`;
+
+    const orderedImages = useMemo(() => {
+      if (!image) return [];
+
+      return image?.url.sort((a, b) => a.breakpoint - b.breakpoint);
+    }, [image]);
+
+    return (
+      <div
+        ref={ref}
+        className={classNames(
+          baseClass,
+          `${baseClass}__card-justify__${justify}`,
+          `${baseClass}__card-align__${align}`,
+          `${baseClass}__card-size__${cardSize}`,
+          `${baseClass}__poster-size__${posterSize}`,
+          `${baseClass}__card-theme__${theme}`,
+          { [`${baseClass}__gap__${gap}`]: gap },
+          className
+        )}
+      >
+        <div className={`${baseClass}--background`}>
+          {image && (
+            <figure className={`${baseClass}--image`}>
+              <picture>
+                {orderedImages.map((img) => (
+                  <source
+                    key={img.breakpoint}
+                    srcSet={img.src}
+                    media={`(min-width: ${img.breakpoint}px)`}
+                  />
+                ))}
+                <img
+                  className={`${prefix}-${baseClass}--image`}
+                  src={orderedImages.at(-1)!.src}
+                  alt={image.alt}
+                />
+              </picture>
+            </figure>
+          )}
+        </div>
+        {breadcrumb && (
+          <div className={`${baseClass}--breadcrumbs`}>
+            <div className={`${baseClass}--breadcrumbs--wrapper`}>
               <Breadcrumb {...breadcrumb} />
             </div>
           </div>
-        </>
-      )}
-      <div className="hero--card-offset"></div>
-      <div className="hero--card">
-        <HeroCard {...heroCard} />
-      </div>
-      {caption && (
-        <div className="hero--caption">
-          <div className="hero--caption--wrapper">
-            <Tooltip {...caption} />
-          </div>
+        )}
+        <div className={`${baseClass}--card-offset`} />
+        <div className={`${baseClass}--card`}>
+          <HeroCard {...heroCard} />
         </div>
-      )}
-    </div>
-  );
-};
+        {caption && (
+          <div className={`${baseClass}--caption`}>
+            <div className={`${baseClass}--caption--wrapper`}>
+              <Tooltip {...caption} />
+            </div>
+          </div>
+        )}
+      </div>
+    );
+  }
+);
 
-export default Hero;
+export { Hero };
