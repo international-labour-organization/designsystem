@@ -1,5 +1,14 @@
 # @ilo-org/styles
 
+## 1.3.4
+
+### Patch Changes
+
+- 46abf411f: Fix breadcrumb showing multiple chevrons in RTL
+- 2bd377203: Factlist card now appears correctly when dark theme is set
+- 2bd377203: List has a dark theme property which correctly determines text and bullet color
+- 19d169619: Fix the alignment between ordered and unordered lists
+
 ## 1.3.3
 
 ### Patch Changes
