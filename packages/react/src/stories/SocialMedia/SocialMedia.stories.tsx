@@ -1,60 +1,66 @@
 import { Meta, StoryObj } from "@storybook/react";
-import {
-  Title,
-  Description,
-  Primary,
-  Stories,
-  ArgTypes,
-  Subheading,
-} from "@storybook/addon-docs";
-import { SocialMedia } from "../../components/SocialMedia";
-import { SocialMediaProps } from "../../components/SocialMedia/SocialMedia.props";
-import {
-  defaultArgs,
-  centredArgs,
-  darkArgs,
-} from "../../components/SocialMedia/SocialMedia.args";
-import { brand } from "@ilo-org/themes/tokens/brand/base.json";
 
-console.log(brand);
+import { SocialMedia, SocialMediaProps } from "../../components/SocialMedia";
 
-const SocialMediaMeta: Meta<SocialMediaProps> = {
+const meta: Meta<typeof SocialMedia> = {
   title: "Components/Navigation/SocialMedia",
   component: SocialMedia,
   tags: ["autodocs"],
   parameters: {
     docs: {
-      page: () => (
-        <>
-          <Title />
-          <Description>
-            The Social Media component displays a list of social media icons. It
-            can have a light or a dark theme and can be aligned to the start or
-            center of its container.
-          </Description>
-          <Primary />
-          <Stories title="Examples"></Stories>
-          <Subheading>Default props</Subheading>
-          <ArgTypes />
-        </>
-      ),
+      description: {
+        component: `The Social Media component displays a list of social media icons.
+        It can have a light or a dark theme and can be aligned to the start or center of its container.`,
+      },
     },
   },
 };
 
-export default SocialMediaMeta;
-
-export const Default: StoryObj<typeof SocialMedia> = {
-  args: defaultArgs,
-};
-
-export const Dark: StoryObj<typeof SocialMedia> = {
-  args: darkArgs,
-  parameters: {
-    backgrounds: { default: "dark" },
+const Default: StoryObj<SocialMediaProps> = {
+  args: {
+    headline: "Follow us on social media",
+    theme: "light",
+    justify: "start",
+    iconSize: "normal",
+    icons: [
+      {
+        icon: "facebook",
+        url: "https://www.facebook.com/ilo.org",
+        label: "Facebook",
+      },
+      {
+        icon: "x",
+        url: "https://x.com/ilo",
+        label: "x",
+      },
+      {
+        icon: "instagram",
+        url: "https://www.instagram.com/ilo.org/",
+        label: "Instagram",
+      },
+      {
+        icon: "linkedin",
+        url: "https://www.linkedin.com/company/international-labour-organization-ilo",
+        label: "LinkedIn",
+      },
+      {
+        icon: "youtube",
+        url: "https://www.youtube.com/channel/UCQsVmhSa4X-G3lHlUtejzLA",
+        label: "YouTube",
+      },
+      {
+        icon: "tiktok",
+        url: "https://www.tiktok.com/@ilo",
+        label: "TikTok",
+      },
+      {
+        icon: "flickr",
+        url: "https://www.flickr.com/photos/ilopictures/albums",
+        label: "TikTok",
+      },
+    ],
   },
 };
 
-export const Centred: StoryObj<typeof SocialMedia> = {
-  args: centredArgs,
-};
+export default meta;
+export { Default };

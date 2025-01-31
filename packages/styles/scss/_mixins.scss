@@ -395,65 +395,58 @@
 // and also lists in RichText.
 // ======================================
 
-@mixin invincible-list {
-  // Ordered list shows numbers
+@mixin invincible-list($bullet-color: rgba(184, 196, 204, 1)) {
+  li {
+    position: relative;
+    padding-inline-start: spacing(4);
+    margin-bottom: spacing(4);
+    font-family: var(--ilo-fonts-copy);
+    font-weight: var(--ilo-font-weight-regular);
+    font-size: var(--ilo-font-size-md);
+    line-height: var(--ilo-line-height-2xlg);
+
+    @include breakpoint("md") {
+      font-size: var(--ilo-font-size-lg);
+    }
+  }
+
+  // Ordered list styles
   ol {
     counter-reset: item;
 
     li {
       counter-increment: item;
       display: table;
-    }
-
-    li::before {
-      content: counter(item) ".";
-      display: table-cell;
-      text-align: right;
-      padding-inline-end: spacing(2);
-    }
-  }
-
-  // Unordered list shows triangles
-  ul {
-    li {
-      position: relative;
-      padding-inline-start: spacing(8);
 
       &::before {
-        content: "";
-        position: absolute;
-        height: px-to-rem(24px);
-        width: px-to-rem(24px);
-        top: spacing(1);
-        @include dataurlicon("caret_right", $color-base-neutrals-light);
-        background-repeat: no-repeat;
-
-        // Left takes precedence in LTR layouts
-        // Right takes precents in RTL layouts
-        left: 0;
-        right: 0;
-
-        // We have to rotate the bullet in RTL
-        [dir="rtl"] & {
-          transform: rotate(180deg);
-        }
+        content: counter(item) ".";
+        display: table-cell;
+        text-align: right;
+        padding-inline-end: spacing(2);
       }
     }
   }
 
-  li {
-    @include font-styles("body-small");
-    font-family: var(--ilo-fonts-copy);
-    margin-bottom: spacing(4);
+  // Unordered list styles
+  ul {
+    li {
+      display: table;
 
-    b,
-    strong {
-      font-weight: 700;
-      letter-spacing: $type-label-small-letter-spacing;
-    }
+      &::before {
+        content: "";
+        display: table-cell;
+        text-align: right;
+        padding-inline-end: spacing(2);
+        height: px-to-rem(24px);
+        width: px-to-rem(26px);
+        background-repeat: no-repeat;
+        @include dataurlicon("caret_right", $bullet-color);
 
-    @include breakpoint("md") {
-      @include font-styles("base");
+        // Adjust for RTL
+        [dir="rtl"] & {
+          transform: rotate(180deg);
+        }
+      }
     }
   }
 }

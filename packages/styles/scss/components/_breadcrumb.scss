@@ -43,17 +43,15 @@
       position: absolute;
       background-repeat: no-repeat;
       @include dataurlicon("chevron_right", $color-link-text-default);
-      background-position: left;
       background-size: px-to-rem(24px);
       height: px-to-rem(24px);
       width: px-to-rem(24px);
-    }
 
-    [dir="rtl"] & {
-      background-position: right;
-      background-repeat: no-repeat;
-      background-size: px-to-rem(24px);
-      @include dataurlicon("chevron_left", $color-link-text-default);
+      [dir="rtl"] & {
+        left: auto;
+        right: 0;
+        @include dataurlicon("chevron_left", $color-link-text-default);
+      }
     }
   }
 

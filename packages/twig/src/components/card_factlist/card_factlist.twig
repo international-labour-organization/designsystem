@@ -1,6 +1,4 @@
-{#
-  FACT LIST CARD COMPONENT
-#}
+{# card_factlist.twig #}
 <div class="{{prefix}}--card {{prefix}}--card__type__factlist {{prefix}}--card__size__{{size}} {{prefix}}--card__theme__{{theme}}">
 	<div class="{{prefix}}--card--wrap">
 		<div class="{{prefix}}--card--content">
@@ -9,11 +7,10 @@
 			{% endif %}
 			{% if list %}
 				{% include "@components/list/list.twig" with {
-          title: list.title,
-          ordered: list.ordered,
-          alignment: list.alignment,
+          ordered: "unordered",
           items: list.items,
           prefix: prefix,
+					theme: theme
         } only %}
 			{% endif %}
 		</div>

@@ -1,10 +1,10 @@
 import { FooterProps } from "./Footer.props";
-import ilo_logo_white from "@ilo-org/brand-assets/logo_en_horizontal_white.svg";
-import { darkArgs as socialMediaArgs } from "../SocialMedia/SocialMedia.args";
+// import ilo_logo_white from "@ilo-org/brand-assets/logo_en_horizontal_white.svg";
+// import { darkArgs as socialMediaArgs } from "../SocialMedia/SocialMedia.args";
 
 const basic: FooterProps = {
   className: "footer",
-  logo: ilo_logo_white,
+  // logo: ilo_logo_white,
   tagline: "Advancing social justice, promoting decent work",
   subtagline: "ILO is a specialized agency of the United Nations",
   address: [
@@ -31,7 +31,7 @@ const basic: FooterProps = {
       ],
     },
   ],
-  socialmedia: socialMediaArgs,
+  // socialmedia: socialMediaArgs,
   subscribe: {
     label: "Subscribe for updates",
     url: "https://www.ilo.org",
