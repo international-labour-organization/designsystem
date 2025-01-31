@@ -1,5 +1,22 @@
 # @ilo-org/react
 
+## 0.19.0
+
+### Minor Changes
+
+- bd2986c8b: reimplemented an Accordion component
+- b45c8d190: restructured the context menu component
+- bd100f9c2: restructured the breadcrumb component
+- 7617ebf01: resturctued SocialMedia, Hero, HeroCard and Tooltip components
+
+### Patch Changes
+
+- Updated dependencies [46abf411f]
+- Updated dependencies [2bd377203]
+- Updated dependencies [2bd377203]
+- Updated dependencies [19d169619]
+  - @ilo-org/styles@1.3.4
+
 ## 0.18.5
 
 ### Patch Changes

@@ -1,5 +1,17 @@
 # @ilo-org/twig
 
+## 1.3.4
+
+### Patch Changes
+
+- 2bd377203: Factlist card now appears correctly when dark theme is set
+- 2bd377203: List has a dark theme property which correctly determines text and bullet color
+- Updated dependencies [46abf411f]
+- Updated dependencies [2bd377203]
+- Updated dependencies [2bd377203]
+- Updated dependencies [19d169619]
+  - @ilo-org/styles@1.3.4
+
 ## 1.3.3
 
 ### Patch Changes
