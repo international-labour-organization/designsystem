@@ -63,16 +63,15 @@ const LinkList = forwardRef<HTMLDivElement, LinkListProps>(
     return (
       <div
         ref={ref}
-        className={classNames(baseClass, className, {
-          [`${baseClass}--theme--${theme}`]: theme,
-        })}
-        data-loadcomponent="LinkList"
-        data-prefix={prefix}
+        className={classNames(baseClass, className, `${baseClass}--${theme}`)}
       >
         {headline && <h3 className={`${baseClass}--headline`}>{headline}</h3>}
         <ul className={`${baseClass}--linkgroups`}>
-          {linkgroup.map((group, index) => (
-            <li key={index} className={`${baseClass}--linkgroups-item`}>
+          {linkgroup.map((group, groupIndex) => (
+            <li
+              key={`linkgroup-${groupIndex}`}
+              className={`${baseClass}--linkgroups-item`}
+            >
               {group.headline && (
                 <h4 className={`${baseClass}--links--headline`}>
                   {group.headline}
@@ -81,7 +80,7 @@ const LinkList = forwardRef<HTMLDivElement, LinkListProps>(
               <ul className={`${baseClass}--links`}>
                 {group.links.map((link, linkIndex) => (
                   <li
-                    key={linkIndex}
+                    key={`link-${linkIndex}`}
                     className={classNames(`${baseClass}--links--item`, {
                       indented: link.indented,
                     })}
