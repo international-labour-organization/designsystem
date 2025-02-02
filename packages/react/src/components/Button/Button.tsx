@@ -1,4 +1,9 @@
-import { ButtonHTMLAttributes, forwardRef, ReactNode } from "react";
+import {
+  ButtonHTMLAttributes,
+  ForwardedRef,
+  forwardRef,
+  ReactNode,
+} from "react";
 import classNames from "classnames";
 
 import useGlobalSettings from "../../hooks/useGlobalSettings";
@@ -56,7 +61,7 @@ export type ButtonProps = Omit<
   };
 };
 
-const Button = forwardRef<HTMLButtonElement, ButtonProps>(
+const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonProps>(
   (
     {
       children,
@@ -88,6 +93,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
     if (link) {
       return (
         <Link
+          ref={ref as ForwardedRef<HTMLAnchorElement>}
           className={rootClasses}
           target={link.target}
           url={link.url}
@@ -103,7 +109,7 @@ const Button = forwardRef<HTMLButtonElement, ButtonProps>(
 
     return (
       <button
-        ref={ref}
+        ref={ref as ForwardedRef<HTMLButtonElement>}
         className={rootClasses}
         disabled={disabled}
         style={style}
