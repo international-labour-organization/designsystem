@@ -395,11 +395,16 @@
 // and also lists in RichText.
 // ======================================
 
-@mixin invincible-list($bullet-color: rgba(184, 196, 204, 1)) {
+@mixin invincible-list($bullet-color: var(--ilo-color-gray-base)) {
   li {
     position: relative;
-    padding-inline-start: spacing(4);
     margin-bottom: spacing(4);
+    display: table;
+    border-collapse: separate;
+    border-spacing: spacing(3) 0;
+    margin-left: calc(spacing(3) * -1);
+    margin-right: calc(spacing(3) * -1);
+
     font-family: var(--ilo-fonts-copy);
     font-weight: var(--ilo-font-weight-regular);
     font-size: var(--ilo-font-size-md);
@@ -416,13 +421,12 @@
 
     li {
       counter-increment: item;
-      display: table;
 
       &::before {
         content: counter(item) ".";
         display: table-cell;
         text-align: right;
-        padding-inline-end: spacing(2);
+        width: px-to-rem(26px);
       }
     }
   }
@@ -430,17 +434,11 @@
   // Unordered list styles
   ul {
     li {
-      display: table;
-
       &::before {
         content: "";
         display: table-cell;
-        text-align: right;
-        padding-inline-end: spacing(2);
-        height: px-to-rem(24px);
         width: px-to-rem(26px);
-        background-repeat: no-repeat;
-        @include dataurlicon("caret_right", $bullet-color);
+        @include icon("caret_right", $bullet-color);
 
         // Adjust for RTL
         [dir="rtl"] & {
