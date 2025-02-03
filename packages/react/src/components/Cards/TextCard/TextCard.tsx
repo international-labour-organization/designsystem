@@ -57,7 +57,7 @@ const TextCard = forwardRef<HTMLDivElement, TextCardProps>(
     {
       className,
       title,
-      theme,
+      theme = "light",
       size = "narrow",
       date,
       profile,
@@ -72,7 +72,6 @@ const TextCard = forwardRef<HTMLDivElement, TextCardProps>(
     const baseClass = `${prefix}--card`;
 
     const wrapperClass = classNames(`${baseClass}--wrapper`, className);
-
     const cardClasses = classNames(baseClass, `${baseClass}__type__text`, {
       [`${baseClass}__action`]: link,
       [`${baseClass}__size__${String(size)}`]: size,
