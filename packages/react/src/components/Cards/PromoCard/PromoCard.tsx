@@ -1,67 +1,129 @@
-import { FC } from "react";
-import classnames from "classnames";
+import { forwardRef } from "react";
+import classNames from "classnames";
+
 import useGlobalSettings from "../../../hooks/useGlobalSettings";
-import { PromoCardProps } from "./PromoCard.props";
+import {
+  CardCornerType,
+  CardSize,
+  HeadingTypes,
+  ThemeTypes,
+} from "../../../types";
+import { LinkProps } from "../../Link";
+import { Button } from "../../Button";
 
-const PromoCard: FC<PromoCardProps> = ({
-  eyebrow,
-  title,
-  theme,
-  size = "narrow",
-  cornercut,
-  intro,
-  link,
-  cta,
-  titleLevel: TitleElement,
-}) => {
-  const { prefix } = useGlobalSettings();
+export type PromoCardProps = {
+  /**
+   * A line of text that appears as a small heading above the title of the card
+   */
+  eyebrow?: string;
 
-  const baseClass = `${prefix}--card`;
+  /**
+   * The title of the card
+   */
+  title: string;
 
-  const wrapperClass = classnames(
-    `${baseClass}--wrapper`,
-    `${baseClass}--wrapper__type__promo ${baseClass}--wrapper__type__promo__size__${size}`
-  );
+  /**
+   * HTML element used for the title
+   */
+  titleLevel?: HeadingTypes;
 
-  const cardClasses = classnames(baseClass, `${baseClass}__type__promo`, {
-    [`${baseClass}__cornercut`]: cornercut,
-    [`${baseClass}__action`]: link,
-    [`${baseClass}__size__${size}`]: size,
-    [`${baseClass}__theme__${theme}`]: theme,
-  });
+  /**
+   * Will render the card to appear on light or dark backgrounds
+   */
+  theme?: ThemeTypes;
 
-  return (
-    <div className={wrapperClass}>
-      <div className={cardClasses}>
-        {link && (
+  /**
+   * How big should the card be
+   */
+  size?: CardSize;
+
+  /**
+   * Apply an optional corner cut to the top of the card
+   */
+  cornercut?: CardCornerType;
+
+  /**
+   * Introductory text in the card
+   */
+  intro?: string;
+
+  /**
+   * Source link for the card
+   */
+  link?: string;
+
+  /**
+   * Call to action link
+   */
+  cta?: LinkProps;
+
+  /**
+   * Specify an optional className to be added to your PromoCard.
+   */
+  className?: string;
+};
+
+const PromoCard = forwardRef<HTMLDivElement, PromoCardProps>(
+  (
+    {
+      className,
+      title,
+      theme = "light",
+      size = "narrow",
+      cornercut,
+      intro,
+      link,
+      cta,
+      titleLevel: TitleElement = "p",
+      eyebrow,
+    },
+    ref
+  ) => {
+    const { prefix } = useGlobalSettings();
+
+    const baseClass = `${prefix}--card`;
+
+    const wrapperClass = classNames(
+      `${baseClass}--wrapper`,
+      className,
+      `${baseClass}--wrapper__type__promo`,
+      `${baseClass}--wrapper__type__promo__size__${size}`
+    );
+    const cardClasses = classNames(baseClass, `${baseClass}__type__promo`, {
+      [`${baseClass}__action`]: link,
+      [`${baseClass}__size__${String(size)}`]: size,
+      [`${baseClass}__theme__${theme}`]: theme,
+      [`${baseClass}__cornercut`]: cornercut,
+    });
+
+    return (
+      <div className={wrapperClass} ref={ref}>
+        <div className={cardClasses}>
           <a className={`${baseClass}--link`} href={link} title={title}>
             <span className={`${baseClass}--link--text`}>{title}</span>
           </a>
-        )}
-        <div className={`${baseClass}--wrap`}>
-          <div className={`${baseClass}--content`}>
-            {eyebrow && <p className={`${baseClass}--eyebrow`}>{eyebrow}</p>}
-            {title && TitleElement ? (
+          <div className={`${baseClass}--wrap`}>
+            <div className={`${baseClass}--content`}>
+              {eyebrow && <p className={`${baseClass}--eyebrow`}>{eyebrow}</p>}
               <TitleElement className={`${baseClass}--title`}>
                 {title}
               </TitleElement>
-            ) : (
-              <p className={`${baseClass}--title`}>{title}</p>
-            )}
-            {intro && <p className={`${baseClass}--intro`}>{intro}</p>}
-            {cta && cta.label && (
-              <a
-                className={`${baseClass}--cta ${prefix}--button ${prefix}--button--medium ${prefix}--button--primary`}
-                href={cta.url}
-              >
-                <span className="link__label">{cta.label}</span>
-              </a>
-            )}
+              {intro && <p className={`${baseClass}--intro`}>{intro}</p>}
+              {cta?.label && (
+                <div className={`${baseClass}--cta`}>
+                  <Button
+                    link={{ url: cta.url, label: cta.label }}
+                    size="medium"
+                    type="primary"
+                  />
+                </div>
+              )}
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  );
-};
+    );
+  }
+);
 
-export default PromoCard;
+export { PromoCard };
