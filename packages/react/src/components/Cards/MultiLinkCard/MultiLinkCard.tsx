@@ -114,7 +114,6 @@ const MultiLinkCard = forwardRef<HTMLDivElement, MultiLinkCardProps>(
           )}
           <div className={`${baseClass}--content`}>
             {eyebrow && <p className={`${baseClass}--eyebrow`}>{eyebrow}</p>}
-
             <TitleElement className={`${baseClass}--title`}>
               {title}
             </TitleElement>
