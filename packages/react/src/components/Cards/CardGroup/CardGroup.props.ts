@@ -1,6 +1,6 @@
 import { LinkProps } from "../../LinkList/LinkList.props";
 import { StatCardProps } from "../StatCard";
-import { MultilinkCardProps } from "../MultilinkCard";
+import { MultilinkCardProps } from "../MultiLinkCard";
 import { TextCardProps } from "../TextCard";
 import { PromoCardProps } from "../PromoCard";
 import { FeatureCardProps } from "../FeatureCard";
