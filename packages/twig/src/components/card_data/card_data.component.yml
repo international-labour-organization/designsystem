@@ -90,7 +90,7 @@ datacard:
     columns:
       type: select
       label: Columns
-      description: Displays the data in one or two columns. If not set, the card will appear as `one`.
+      description: Displays the data in one or two columns. If not set, the card will appear as `one`. Only applies when size is set to `wide` or `fluid`.
       required: false
       preview: one
       options:

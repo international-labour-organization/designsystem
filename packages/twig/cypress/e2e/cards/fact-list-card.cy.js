@@ -11,25 +11,23 @@ describe("Factlist card", () => {
   });
 
   it("renders the title and list items correctly", () => {
-    cy.get(".ilo--card--title") // Adjust selector based on actual structure
-      .should("contain", fixture.title);
-    cy.get("ul > li").should("have.length", fixture.list.items.length); // Adjust length to match test data
+    cy.get(".ilo--card--title").should("contain", fixture.title);
+    cy.get("ul > li").should("have.length", fixture.list.items.length);
   });
 
   it("applies the correct theme class", () => {
     cy.get("@card").should(
       "have.class",
       `ilo--card__theme__${fixture.settings.theme}`
-    ); // Adjust class name if needed
+    );
   });
 
   it("ensures text and :before pseudo-elements are white in the dark theme", () => {
     cy.get("@card")
       .should("have.class", "ilo--card__theme__dark")
       .and("be.visible")
-      .and("have.css", "color", "rgb(255, 255, 255)"); // Check text color
+      .and("have.css", "color", "rgb(255, 255, 255)");
 
-    // Check :before pseudo-element color
     cy.get("@card").then(($el) => {
       const pseudoElementColor = window.getComputedStyle(
         $el[0],
