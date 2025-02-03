@@ -24,7 +24,7 @@
 
     &__dark {
       color: var(--ilo-color-white);
-      @include invincible-list(rgba(255, 255, 255, 1));
+      @include invincible-list(var(--ilo-color-white));
     }
   }
 
