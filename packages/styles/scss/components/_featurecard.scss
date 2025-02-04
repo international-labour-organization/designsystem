@@ -10,40 +10,30 @@
     &__feature {
       --max-width: #{px-to-rem(412px)};
 
-      border-bottom: px-to-rem(3px) solid $brand-ilo-grey-ui;
+      border-bottom: px-to-rem(3px) solid var(--ilo-color-gray-base);
       display: flex;
       margin-top: 0;
       position: relative;
 
-      &#{$self}__theme__dark {
-        border-bottom: px-to-rem(3px) solid $color-base-red-medium;
-
+      &:hover,
+      &:focus,
+      &:focus-within {
         .ilo--link-list {
-          border-top: 2px solid rgba($brand-ilo-grey-light, 0.25);
+          &--label {
+            color: var(--ilo-color-blue) !important;
+          }
 
-          &--link {
-            color: $brand-ilo-white;
-            @include dataurlicon("chevron_right", $brand-ilo-white);
-
-            [dir="rtl"] & {
-              @include dataurlicon("chevron_left", $brand-ilo-white);
-            }
+          &--icon {
+            background-color: var(--ilo-color-blue);
           }
         }
+      }
 
-        &:hover,
-        &:focus,
-        &:focus-within {
-          .ilo--link-list {
-            &--link {
-              color: $brand-ilo-blue;
-              @include dataurlicon("chevron_right", $brand-ilo-blue);
+      &#{$self}__theme__dark {
+        border-bottom: px-to-rem(3px) solid var(--ilo-color-red);
 
-              [dir="rtl"] & {
-                @include dataurlicon("chevron_left", $brand-ilo-blue);
-              }
-            }
-          }
+        .ilo--link-list {
+          border-top: 2px solid var(--ilo-color-gray-light-semi-transparent);
         }
       }
 
@@ -54,8 +44,8 @@
       &:hover,
       &:focus,
       &:focus-within {
-        background-color: $brand-ilo-white;
-        border-bottom: px-to-rem(3px) solid $brand-ilo-blue;
+        background-color: var(--ilo-color-white);
+        border-bottom: px-to-rem(3px) solid var(--ilo-color-blue);
         @include card-drop-shadow;
 
         picture::before {
@@ -70,7 +60,7 @@
       }
 
       .ilo--link-list {
-        border-top: px-to-rem(2px) solid $brand-ilo-grey-light;
+        border-top: px-to-rem(2px) solid var(--ilo-color-gray-light);
         margin-left: px-to-rem(-24px);
         margin-right: px-to-rem(-24px);
         position: relative;
@@ -158,7 +148,7 @@
         position: relative;
 
         &::before {
-          background-color: $brand-ilo-blue;
+          background-color: var(--ilo-color-blue);
           content: "";
           display: block;
           height: 100%;
