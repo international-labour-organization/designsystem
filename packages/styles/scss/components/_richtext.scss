@@ -132,7 +132,9 @@
   }
 
   // Blockquote styles
-  @include blockquote;
+  blockquote {
+    @include blockquote;
+  }
 
   // List styles (invincible list)
   @include invincible-list;

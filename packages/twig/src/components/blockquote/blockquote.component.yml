@@ -1,0 +1,17 @@
+blockquote:
+  namespace: Components/Content
+  use: "@components/blockquote/blockquote.twig"
+  label: Blockquote
+  description: The Blockquote component is used to display quoted text with proper attribution, helping to highlight references and citations effectively.
+  fields:
+    quote:
+      type: string
+      label: Quote
+      description: The main quoted text content.
+      preview: "The fundamental ideas that forged the ILO one hundred and three years ago still underpin the global pledge to leave no one behind."
+    cite:
+      type: string
+      label: Citation
+      description: The source or author of the quote.
+      preview: ILO Director-General Gilbert F. Houngbo
+  visibility: storybook

@@ -1,110 +1,117 @@
 @use "../tokens" as *;
 @use "../functions" as *;
 @import "../mixins";
+@import "../config";
 
 /**
-This mixin is used in _richtext.scss component to style blockquotes.
-It could eventually be used for a standalone blockquote component.
+This mixin is also used in _richtext.scss component to style blockquotes.
 **/
 @mixin blockquote {
-  blockquote {
-    background-color: $color-ux-background-highlight;
-    background-position: right top;
-    background-repeat: no-repeat;
-    background-size: px-to-rem(72px) px-to-rem(40px);
-    display: block;
-    font-family: var(--ilo-fonts-display);
-    padding: spacing(19) 0 spacing(9) spacing(8); // check
+  background-color: var(--ilo-color-blue-lighter);
+  background-position: right top;
+  background-repeat: no-repeat;
+  background-size: px-to-rem(72px) px-to-rem(40px);
+  display: block;
+  font-family: var(--ilo-fonts-display);
+  padding: spacing(19) 0 spacing(9) spacing(8); // check
+  position: relative;
+  width: fit-content;
+  border-bottom: px-to-rem(3px) solid var(--ilo-color-gray-base);
+  @include cornercut(72px, 40px);
+
+  p {
+    color: var(--ilo-color-purple);
+    font-weight: 300;
+    padding: 0 spacing(12) 0 0;
     position: relative;
-    width: fit-content;
-    @include cornercut(72px, 40px);
+    @include font-styles("pull-quote-sm");
+
+    &:after {
+      bottom: 0;
+      content: "";
+      display: inline-block;
+      height: px-to-rem(20px);
+      position: absolute;
+      right: 0;
+      transform: scaleX(-1);
+      width: px-to-rem(26.5px);
+      @include icon("quote", var(--ilo-color-purple));
+    }
+  }
+
+  cite {
+    color: var(--ilo-color-gray-accessible);
+    font-weight: 400;
+    // @include font-styles("pull-quote-cite");
+    font-size: var(--ilo-font-size-sm);
+    line-height: 135%;
+    letter-spacing: 0;
+    font-style: normal;
+  }
+
+  &:before {
+    content: "";
+    display: inline-block;
+    height: px-to-rem(40px);
+    left: 0;
+    position: absolute;
+    width: px-to-rem(53px);
+    top: 0;
+    @include icon("quote", var(--ilo-color-purple));
+  }
+
+  @include breakpoint("md") {
+    background-size: px-to-rem(86px) px-to-rem(48px);
+    padding: spacing(16) 0 spacing(12) spacing(12);
+    @include cornercut(86px, 48px);
 
     p {
-      color: $color-font-blockquote;
-      font-weight: 300;
+      margin-bottom: spacing(6);
       padding: 0 spacing(12) 0 0;
       position: relative;
-      @include font-styles("pull-quote-sm");
+      @include font-styles("pull-quote-lg");
 
       &:after {
-        bottom: 0;
-        content: "";
-        display: inline-block;
-        height: px-to-rem(20px);
-        position: absolute;
-        right: 0;
-        transform: scaleX(-1);
-        width: px-to-rem(26.5px);
-        @include icon("quote", var(--ilo-color-purple));
+        height: px-to-rem(24px);
+        width: px-to-rem(32px);
       }
-    }
-
-    cite {
-      color: $color-font-cite;
-      font-weight: 400;
-      @include font-styles("pull-quote-cite");
     }
 
     &:before {
-      content: "";
-      display: inline-block;
-      height: px-to-rem(40px);
-      left: 0;
-      position: absolute;
-      width: px-to-rem(53px);
-      top: 0;
-      @include icon("quote", var(--ilo-color-purple));
+      height: px-to-rem(48px);
+      width: px-to-rem(64px);
+    }
+  }
+
+  [dir="rtl"] & {
+    background-position: -1px -1px;
+    padding: spacing(14) spacing(8) spacing(9) 0;
+    @include cornercut(72px, 40px, "left");
+
+    p {
+      padding: 0 0 0 spacing(12);
+
+      &:after {
+        left: 0;
+        right: auto;
+        transform: scaleX(1);
+      }
+    }
+
+    &:before {
+      left: auto;
+      right: 0;
+      transform: scaleX(-1);
     }
 
     @include breakpoint("md") {
-      background-size: px-to-rem(86px) px-to-rem(48px);
-      padding: spacing(16) 0 spacing(12) spacing(12);
-      @include cornercut(86px, 48px);
+      padding: spacing(15) spacing(12) spacing(12) 0;
 
-      p {
-        margin-bottom: spacing(6);
-        padding: 0 spacing(12) 0 0;
-        position: relative;
-        @include font-styles("pull-quote-lg");
-
-        &:after {
-          height: px-to-rem(24px);
-          width: px-to-rem(32px);
-        }
-      }
-
-      &:before {
-        height: px-to-rem(48px);
-        width: px-to-rem(64px);
-      }
-    }
-
-    [dir="rtl"] & {
-      background-position: -1px -1px;
-      padding: spacing(14) spacing(8) spacing(9) 0;
-      @include cornercut(72px, 40px, "left");
-
-      p {
-        padding: 0 0 0 spacing(12);
-
-        &:after {
-          left: 0;
-          right: auto;
-          transform: scaleX(1);
-        }
-      }
-
-      &:before {
-        left: auto;
-        right: 0;
-        transform: scaleX(-1);
-      }
-
-      @include breakpoint("md") {
-        padding: spacing(15) spacing(12) spacing(12) 0;
-
-        @include cornercut(86px, 48px, "left");
-      }
+      @include cornercut(86px, 48px, "left");
     }
   }
+}
+
+.ilo--blockquote {
+  @include blockquote;
 }
