@@ -1,36 +1,70 @@
+import { forwardRef, HTMLAttributes, ReactNode } from "react";
 import classNames from "classnames";
-import { FC } from "react";
-import useGlobalSettings from "../../hooks/useGlobalSettings";
-import { ListProps } from "./List.props";
 
-const List: FC<ListProps> = ({
-  children,
-  className,
-  alignment = "default",
-  ordered = "unstyled",
-  title,
-}) => {
-  const { prefix } = useGlobalSettings();
-  const baseClass = `${prefix}--list`;
-  const unstyledClass = `${baseClass}__unstyled`;
-  const horizontalClass = `${baseClass}__horizontal`;
-  const titleClass = `${baseClass}--title`;
+import { useGlobalSettings } from "../../hooks";
 
-  const listClasses = classNames(className, baseClass, {
-    [unstyledClass]: ordered === "unstyled",
-    [horizontalClass]: alignment === "horizontal",
-  });
+export type ListProps = HTMLAttributes<HTMLDivElement> & {
+  /**
+   * The content of the list
+   */
+  children: ReactNode;
 
-  return (
-    <div className={listClasses}>
-      {title && <h2 className={titleClass}>{title}</h2>}
-      {ordered && ordered === "ordered" ? (
-        <ol>{children}</ol>
-      ) : (
-        <ul>{children}</ul>
-      )}
-    </div>
-  );
+  /**
+   * Specify an optional className to be added to your list.
+   */
+  className?: string;
+
+  /**
+   * The alignment of the list items
+   */
+  alignment?: "default" | "horizontal";
+
+  /**
+   * The type of list
+   */
+  ordered?: "unstyled" | "ordered";
+
+  /**
+   * The title of the list
+   */
+  title?: string;
+
+  /**
+   * The theme of the list
+   */
+  theme?: "light" | "dark";
 };
 
-export default List;
+const List = forwardRef<HTMLDivElement, ListProps>(
+  (
+    {
+      children,
+      className,
+      alignment = "default",
+      ordered = "unstyled",
+      title,
+      theme = "light",
+      ...rest
+    },
+    ref
+  ) => {
+    const { prefix } = useGlobalSettings();
+
+    const baseClass = `${prefix}--list`;
+
+    const listClasses = classNames(className, baseClass, {
+      [`${baseClass}__unstyled`]: ordered === "unstyled",
+      [`${baseClass}__horizontal`]: alignment === "horizontal",
+      [`${baseClass}__theme__${theme}`]: theme,
+    });
+
+    return (
+      <div className={listClasses} ref={ref} {...rest}>
+        {title && <h2 className={`${baseClass}--title`}>{title}</h2>}
+        {ordered === "ordered" ? <ol>{children}</ol> : <ul>{children}</ul>}
+      </div>
+    );
+  }
+);
+
+export { List };

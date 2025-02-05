@@ -1,167 +1,89 @@
-import { StoryFn, Meta } from "@storybook/react";
-import {
-  Title,
-  Description,
-  Primary,
-  ArgTypes,
-  Stories,
-  Subheading,
-} from "@storybook/blocks";
-import { List, ListItem } from "../../components/List";
-import { ListProps } from "../../components/List/List.props";
+import { Meta, StoryFn, StoryObj } from "@storybook/react";
+import { List, ListProps } from "../../components/List";
 
-const sizeDoc = `
-By changing the \`ordered\` prop you can use switch from a \`<ol>\` to a \`<ul>\`
-
-| ordered   |  Description  |
-|----------|-------------|
-| \`ordered\` | make a \`<ol>\` |
-| \`unordered\` | make a \`<ul>\`   |
-| \`unstyled\` | make a \`<ul>\` without markers  |
-`;
-
-const ListMeta: Meta<typeof List> = {
+const meta: Meta<typeof List> = {
   title: "Components/Content/List",
-  tags: ["autodocs"],
   component: List,
+  tags: ["autodocs"],
   argTypes: {
     alignment: {
-      options: ["horizontal", "default"],
+      options: ["default", "horizontal"],
       control: { type: "select" },
     },
     ordered: {
       options: ["ordered", "unordered", "unstyled"],
       control: { type: "select" },
     },
-  },
-  subcomponents: {
-    ListItem,
-  },
-  parameters: {
-    docs: {
-      page: () => (
-        <>
-          <Title />
-          <Description>
-            The List component renders a styled list of text items. In addition
-            to the List styles made available in the RichText component, the
-            List component also includes unstyled and horizontally aligned
-            lists.
-          </Description>
-          <Primary />
-          <Subheading>Size Prop</Subheading>
-          <Description>{sizeDoc}</Description>
-          <Stories title="Examples"></Stories>
-          <Subheading>Default Props</Subheading>
-          <ArgTypes />
-        </>
-      ),
+    theme: {
+      options: ["light", "dark"],
+      control: { type: "select" },
     },
   },
 };
 
-export default ListMeta;
+const Template: StoryFn<ListProps> = (args: ListProps) => {
+  return (
+    <List {...args}>
+      <List.Item>
+        The International Labour Organization (ILO) was founded in 1919 as part
+        of the League of Nations to promote workers' rights, encourage decent
+        employment opportunities, and enhance social protection.
+      </List.Item>
+      <List.Item>
+        The ILO aims to promote rights at work, encourage decent job
+        opportunities, enhance social protection, and strengthen dialogue on
+        work-related issues.
+      </List.Item>
+      <List.Item>
+        The ILO advocates for social justice and internationally recognized
+        human and labor rights.
+      </List.Item>
+      <List.Item>
+        The ILO develops international labor standards in the form of
+        conventions and recommendations to improve working conditions and labor
+        rights.
+      </List.Item>
+      <List.Item>
+        The ILO is unique in its tripartite structure that includes
+        representatives from government, employer, and worker organizations.
+      </List.Item>
+      <List.Item>
+        The ILO works to eradicate child labor, targeting the worst forms of
+        child labor through conventions and action programs.
+      </List.Item>
+      <List.Item>
+        The ILO promotes gender equality and empowers women through targeted
+        policies and programs.
+      </List.Item>
+      <List.Item>
+        The ILO’s Decent Work agenda aims to secure fair income, safety at work,
+        social protection, and respect for workers' rights.
+      </List.Item>
+      <List.Item>
+        The ILO provides research and data on global employment trends and labor
+        market issues to inform policy development.
+      </List.Item>
+      <List.Item>
+        The ILO offers training and education programs to improve occupational
+        skills and competencies.
+      </List.Item>
+      <List.Item>
+        The annual International Labor Conference is where ILO members convene
+        to discuss and create labor standards.
+      </List.Item>
+    </List>
+  );
+};
 
-const longTitle =
-  "Four strategic objectives at the heart of the Decent Work agenda";
+const Default: StoryObj<ListProps> = {
+  render: Template,
+  args: {
+    title: "Facts about the ILO",
+    ordered: "unstyled",
+    alignment: "default",
+    theme: "light",
+  },
+};
 
-const shortTitle = "The Decent Work agenda";
-
-const OrderedTemplate: StoryFn<ListProps> = () => (
-  <List title={longTitle} ordered="ordered">
-    <ListItem id="ordered1">
-      <p>
-        Set and promote standards and fundamental principles and rights at work
-      </p>
-    </ListItem>
-    <ListItem id="ordered2">
-      <p>
-        Create greater opportunities for women and men to decent employment and
-        income
-      </p>
-    </ListItem>
-    <ListItem id="ordered3">
-      <p>Enhance the coverage and effectiveness of social protection for all</p>
-    </ListItem>
-    <ListItem id="ordered4">
-      <p>Strengthen tripartism and social dialogue</p>
-    </ListItem>
-  </List>
-);
-
-const UnorderedTemplate: StoryFn<ListProps> = () => (
-  <List title={longTitle} ordered="unordered">
-    <ListItem id="unordered1">
-      <p>
-        Set and promote standards and fundamental principles and rights at work{" "}
-      </p>
-    </ListItem>
-    <ListItem id="unordered2">
-      <p>
-        Create greater opportunities for women and men to decent employment and
-        income
-      </p>
-    </ListItem>
-    <ListItem id="unordered3">
-      <p>Enhance the coverage and effectiveness of social protection for all</p>
-    </ListItem>
-    <ListItem id="unordered4">
-      <p>Strengthen tripartism and social dialogue</p>
-    </ListItem>
-  </List>
-);
-
-const UnstyledTemplate: StoryFn<ListProps> = () => (
-  <List title={longTitle} ordered="unstyled">
-    <ListItem id="unstyled1">
-      <p>
-        Set and promote standards and fundamental principles and rights at work{" "}
-      </p>
-    </ListItem>
-    <ListItem id="unstyled2">
-      <p>
-        Create greater opportunities for women and men to decent employment and
-        income
-      </p>
-    </ListItem>
-    <ListItem id="unstyled3">
-      <p>Enhance the coverage and effectiveness of social protection for all</p>
-    </ListItem>
-    <ListItem id="unstyled4">
-      <p>Strengthen tripartism and social dialogue</p>
-    </ListItem>
-  </List>
-);
-
-const HorizontalTemplate: StoryFn<ListProps> = () => (
-  <List title={shortTitle} alignment="horizontal" ordered="unstyled">
-    <ListItem id="horizontal1">
-      <p>Labour standards</p>
-    </ListItem>
-    <ListItem id="horizontal2">
-      <p>Employment</p>
-    </ListItem>
-    <ListItem id="horizontal3">
-      <p>Social protection</p>
-    </ListItem>
-    <ListItem id="horizontal4">
-      <p>Tripartism</p>
-    </ListItem>
-  </List>
-);
-
-export const ListOrdered: StoryFn<ListProps> = OrderedTemplate.bind({});
-
-export const ListUnordered: StoryFn<ListProps> = UnorderedTemplate.bind({});
-
-export const ListUnstyled: StoryFn<ListProps> = UnstyledTemplate.bind({});
-
-export const ListHorizontal: StoryFn<ListProps> = HorizontalTemplate.bind({});
-
-ListOrdered.storyName = "Ordered";
-
-ListUnordered.storyName = "Unordered";
-
-ListUnstyled.storyName = "Unstyled";
-
-ListHorizontal.storyName = "Horizontal";
+export default meta;
+export { Default };

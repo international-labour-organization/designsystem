@@ -1,17 +1,32 @@
+import { forwardRef, HTMLAttributes, ReactNode } from "react";
 import classNames from "classnames";
-import { FC } from "react";
-import useGlobalSettings from "../../hooks/useGlobalSettings";
-import { ListItemProps } from "./ListItem.props";
 
-const ListItem: FC<ListItemProps> = ({ children, className, ...rest }) => {
-  const { prefix } = useGlobalSettings();
-  const baseClass = `${prefix}--list--item`;
-  const listItemClasses = classNames(className, baseClass);
-  return (
-    <li className={listItemClasses} {...rest}>
-      {children}
-    </li>
-  );
+import useGlobalSettings from "../../hooks/useGlobalSettings";
+
+export type ListItemProps = HTMLAttributes<HTMLLIElement> & {
+  /**
+   * Specify the content of your ListItem.
+   */
+  children: ReactNode;
+
+  /**
+   * Specify an optional className to be added to your ListItem.
+   */
+  className?: string;
 };
 
-export default ListItem;
+const ListItem = forwardRef<HTMLLIElement, ListItemProps>(
+  ({ children, className, ...rest }, ref) => {
+    const { prefix } = useGlobalSettings();
+    const baseClass = `${prefix}--list--item`;
+    const listItemClasses = classNames(className, baseClass);
+
+    return (
+      <li className={listItemClasses} ref={ref} {...rest}>
+        {children}
+      </li>
+    );
+  }
+);
+
+export { ListItem };
