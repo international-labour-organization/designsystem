@@ -22,7 +22,7 @@ export type ListProps = HTMLAttributes<HTMLDivElement> & {
   /**
    * The type of list
    */
-  ordered?: "unstyled" | "ordered";
+  ordered?: "unstyled" | "ordered" | "unordered";
 
   /**
    * The title of the list

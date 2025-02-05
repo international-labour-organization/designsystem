@@ -3,6 +3,7 @@ import classnames from "classnames";
 
 import useGlobalSettings from "../../../hooks/useGlobalSettings";
 import { CardSize, HeadingTypes, ThemeTypes } from "../../../types";
+import { List } from "../../List";
 
 export type FactListCardProps = {
   /**
@@ -71,13 +72,13 @@ const FactListCard = forwardRef<HTMLDivElement, FactListCardProps>(
                 {title}
               </TitleElement>
             )}
-            <ul className={`${prefix}--list ${prefix}--list__unordered`}>
-              {list.map((item, index) => (
-                <li key={index} className={`${prefix}--list--item`}>
-                  {item}
-                </li>
+            <List alignment="default" ordered="unordered" theme={theme}>
+              {list.map((item) => (
+                <List.Item key={item}>
+                  <p>{item}</p>
+                </List.Item>
               ))}
-            </ul>
+            </List>
           </div>
         </div>
       </div>
