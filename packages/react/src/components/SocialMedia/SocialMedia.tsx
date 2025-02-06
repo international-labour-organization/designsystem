@@ -1,59 +1,7 @@
 import classNames from "classnames";
 import { forwardRef } from "react";
-
-import { SocialTypes } from "../../types";
+import { SocialMediaProps } from "./SocialMedia.props";
 import { useGlobalSettings } from "../../hooks";
-
-export type SocialMediaIcons = {
-  /**
-   * The name of the icon to display
-   */
-  icon: SocialTypes;
-
-  /**
-   * The url to link to
-   */
-  url: string;
-
-  /**
-   * The alt text of the link
-   */
-  label: string;
-
-  className?: string;
-};
-
-export type SocialMediaProps = {
-  /**
-   * An optional headline to display above the icons
-   */
-  headline?: string;
-
-  /**
-   * Specify an optional className to be added to your SocialMedia.
-   */
-  className?: string;
-
-  /**
-   * Specify the theme of the SocialMedia.
-   */
-  theme?: "light" | "dark";
-
-  /**
-   * The justification of the icons
-   */
-  justify?: "start" | "center";
-
-  /**
-   * Specify the icons to display.
-   */
-  icons: SocialMediaIcons[];
-
-  /**
-   * The size of the social media icons
-   */
-  iconSize: "normal" | "large";
-};
 
 const SocialMedia = forwardRef<HTMLDivElement, SocialMediaProps>(
   (
@@ -111,4 +59,4 @@ const SocialMedia = forwardRef<HTMLDivElement, SocialMediaProps>(
   }
 );
 
-export { SocialMedia };
+export default SocialMedia;
