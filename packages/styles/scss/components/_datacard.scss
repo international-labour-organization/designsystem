@@ -18,6 +18,17 @@
       position: relative;
       width: 100%;
 
+      &--content {
+        &-links-list {
+          display: flex;
+          flex-wrap: wrap;
+        }
+
+        &-link.ilo--link {
+          margin-bottom: 0px !important;
+        }
+      }
+
       #{$self}--content {
         display: grid;
         grid-template-columns: 1fr;

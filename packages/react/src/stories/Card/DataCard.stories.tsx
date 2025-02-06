@@ -25,6 +25,7 @@ const meta: Meta<typeof DataCard> = {
 };
 
 const Default: StoryObj<DataCardProps> = {
+  name: "Default",
   args: {
     eyebrow: "Flagship report",
     size: "narrow",
@@ -80,6 +81,7 @@ const Default: StoryObj<DataCardProps> = {
 };
 
 const NoImage: StoryObj<DataCardProps> = {
+  name: "No Image",
   args: {
     eyebrow: "Flagship report",
     size: "narrow",
@@ -134,6 +136,7 @@ const NoImage: StoryObj<DataCardProps> = {
 };
 
 const TwoColumns: StoryObj<DataCardProps> = {
+  name: "Two Columns",
   args: {
     eyebrow: "Flagship report",
     size: "wide",
@@ -190,6 +193,7 @@ const TwoColumns: StoryObj<DataCardProps> = {
 };
 
 const TwoColumnsNoImage: StoryObj<DataCardProps> = {
+  name: "Two Columns No Image",
   args: {
     eyebrow: "Flagship report",
     size: "wide",
@@ -245,6 +249,7 @@ const TwoColumnsNoImage: StoryObj<DataCardProps> = {
 };
 
 const TwoColumnsNoLinks: StoryObj<DataCardProps> = {
+  name: "Two Columns No Links",
   args: {
     eyebrow: "Flagship report",
     size: "wide",
