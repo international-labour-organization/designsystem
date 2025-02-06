@@ -42,14 +42,15 @@ const Link = forwardRef<HTMLAnchorElement, LinkProps>(
     ref
   ) => {
     const { prefix } = useGlobalSettings();
-    const baseClass =
-      typeof className !== "undefined" && className.includes("button")
-        ? ""
-        : `${prefix}--link`;
+    let baseClass = `${prefix}--link`;
+
+    if (className?.includes("button")) {
+      baseClass = "";
+    }
 
     const linkClasses = classNames(className, {
       [baseClass]: true,
-      [`${baseClass}--${theme}`]: theme,
+      [`${baseClass}--${theme}`]: baseClass && theme,
     });
 
     return (
@@ -58,7 +59,7 @@ const Link = forwardRef<HTMLAnchorElement, LinkProps>(
         className={linkClasses}
         href={url}
         target={target}
-        rel={target ? "noopener noreferrer" : ""}
+        rel={target ? "noopener noreferrer" : undefined}
         {...props}
       >
         {label && <span className="link__label">{label}</span>}
