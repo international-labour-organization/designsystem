@@ -26,13 +26,13 @@ multilinkcard:
         loading: "lazy"
         url:
           - breakpoint: "(min-width: 0px)"
-            src: "/images/small.jpg"
+            src: "/images/publication.jpg"
           - breakpoint: "(min-width: 800px)"
-            src: "/images/medium.jpg"
+            src: "/images/publication.jpg"
           - breakpoint: "(min-width: 1200px)"
-            src: "/images/large.jpg"
+            src: "/images/publication.jpg"
           - breakpoint: "(min-width: 1440px)"
-            src: "/images/large.jpg"
+            src: "/images/publication.jpg"
     intro:
       type: string
       label: Intro

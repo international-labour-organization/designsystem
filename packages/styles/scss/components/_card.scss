@@ -14,6 +14,10 @@
   max-width: var(--max-width);
   flex: 1 1 var(--max-width);
 
+  * {
+    @include globaltransition("color, background-color, border-color, opacity");
+  }
+
   &__size__fluid {
     --max-width: 100% !important;
   }
@@ -105,15 +109,11 @@
     top: 0;
     width: 100%;
     z-index: 2;
-    @include globaltransition("color, background-color, border-color, opacity");
 
     &:hover,
     &:focus,
     &:focus-within {
       outline: none;
-      @include globaltransition(
-        "color, background-color, border-color, opacity"
-      );
 
       + #{$self}--wrap {
         #{$self}--eyebrow {
@@ -122,6 +122,10 @@
 
         #{$self}--title {
           color: $brand-ilo-blue;
+        }
+
+        #{$self}--image--wrapper {
+          background-color: var(--ilo-color-blue-ramp);
         }
 
         #{$self}--intro {
@@ -147,13 +151,11 @@
     color: $brand-ilo-purple;
     @include font-styles("body-small");
     margin-bottom: spacing(3);
-    @include globaltransition("color");
 
     #{$self}--link:hover &,
     #{$self}--link:focus &,
     #{$self}--link:focus-within & {
       color: $brand-ilo-blue;
-      @include globaltransition("color");
     }
   }
 
@@ -170,27 +172,23 @@
       "body-small",
       "copy"
     );
-    @include globaltransition("color");
 
     #{$self}--link:hover &,
     #{$self}--link:focus &,
     #{$self}--link:focus-within & {
       color: $brand-ilo-blue;
-      @include globaltransition("color");
     }
   }
 
   &--intro {
     color: $brand-ilo-black;
     @include font-styles("body-small");
-    @include globaltransition("color");
     margin-bottom: spacing(8);
 
     #{$self}--link:hover &,
     #{$self}--link:focus &,
     #{$self}--link:focus-within & {
       color: $brand-ilo-blue;
-      @include globaltransition("color");
     }
   }
 
@@ -198,13 +196,11 @@
     color: $brand-ilo-grey-accessible;
     @include font-styles("body-small");
     @include textmargin("margin-bottom", 30px, "body-small", "copy", 0, 0);
-    @include globaltransition("color");
 
     #{$self}--link:hover &,
     #{$self}--link:focus &,
     #{$self}--link:focus-within & {
       color: $brand-ilo-blue;
-      @include globaltransition("color");
     }
   }
 
