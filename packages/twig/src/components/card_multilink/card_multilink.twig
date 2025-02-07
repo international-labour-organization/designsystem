@@ -8,14 +8,16 @@
 	{% endif %}
 	<div class="{{prefix}}--card--wrap">
 		{% if image %}
-		<div class="{{prefix}}--card--image--wrapper">
-			{% include "@components/picture/picture.twig" with {
-        image: image,
-        class: "card"
-      }
-      %}
+			<div class="{{prefix}}--card--image--wrapper">
+				<div class="{{prefix}}--card--image--wrapper--inner">
+					{% include "@components/picture/picture.twig" with {
+						image: image,
+						class: "card"
+					}
+					%}
+				</div>
 		</div>
-			{% endif %}
+		{% endif %}
 		<div class="{{prefix}}--card--content">
 			{% if eyebrow %}
 				<p class="{{prefix}}--card--eyebrow">{{eyebrow}}</p>
@@ -25,11 +27,13 @@
 			{% endif %}
 			{% if image %}
 				<div class="{{prefix}}--card--image--wrapper">
-					{% include "@components/picture/picture.twig" with {
-            image: image,
-            class: "card"
-          }
-          %}
+					<div class="{{prefix}}--card--image--wrapper--inner">
+						{% include "@components/picture/picture.twig" with {
+							image: image,
+							class: "card"
+						}
+						%}
+					</div>
 				</div>
 			{% endif %}
 			{% if intro %}
