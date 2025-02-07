@@ -190,8 +190,6 @@ card:
         stat: Stat
         factlist: Factlist
   variants:
-    basic:
-      label: Default
     feature:
       label: Feature Card
       settings:
