@@ -1,9 +1,9 @@
 import { forwardRef } from "react";
 import classNames from "classnames";
 
-import useGlobalSettings from "../../../hooks/useGlobalSettings";
-import { Link, LinkProps } from "../../Link";
-import { CardColor, CardSize, HeadingTypes, ThemeTypes } from "../../../types";
+import useGlobalSettings from "../../hooks/useGlobalSettings";
+import { Link, LinkProps } from "../Link";
+import { CardColor, CardSize, HeadingTypes, ThemeTypes } from "../../types";
 
 export interface StatCardProps {
   /**

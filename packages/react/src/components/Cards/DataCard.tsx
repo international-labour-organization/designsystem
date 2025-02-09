@@ -1,10 +1,10 @@
 import classNames from "classnames";
 import { forwardRef, Fragment } from "react";
 
-import useGlobalSettings from "../../../hooks/useGlobalSettings";
-import { Link, LinkProps } from "../../Link";
-import { CardSize } from "../../../types";
-import { Button } from "../../Button";
+import useGlobalSettings from "../../hooks/useGlobalSettings";
+import { Link, LinkProps } from "../Link";
+import { CardSize } from "../../types";
+import { Button } from "../Button";
 
 export type DataCardProps = {
   /**

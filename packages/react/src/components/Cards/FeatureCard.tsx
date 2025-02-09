@@ -1,9 +1,9 @@
 import { forwardRef } from "react";
 import classNames from "classNames";
 
-import useGlobalSettings from "../../../hooks/useGlobalSettings";
-import { LinkList, LinkListProps } from "../../LinkList";
-import { CardSize, EventDate, HeadingTypes, ThemeTypes } from "../../../types";
+import useGlobalSettings from "../../hooks/useGlobalSettings";
+import { LinkList, LinkListProps } from "../LinkList";
+import { CardSize, EventDate, HeadingTypes, ThemeTypes } from "../../types";
 
 export type FeatureCardProps = {
   isVideo?: boolean;

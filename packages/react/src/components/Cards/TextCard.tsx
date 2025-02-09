@@ -1,17 +1,11 @@
-import { forwardRef } from "react";
 import classNames from "classnames";
+import { forwardRef } from "react";
 
-import useGlobalSettings from "../../../hooks/useGlobalSettings";
-import {
-  CardCornerType,
-  CardSize,
-  HeadingTypes,
-  ThemeTypes,
-} from "../../../types";
-import { LinkProps } from "../../Link";
-import { Button } from "../../Button";
+import useGlobalSettings from "../../hooks/useGlobalSettings";
+import { Profile, ProfileProps } from "../Profile";
+import { CardSize, EventDate, HeadingTypes, ThemeTypes } from "../../types";
 
-export type PromoCardProps = {
+export type TextCardProps = {
   /**
    * A line of text that appears as a small heading above the title of the card
    */
@@ -35,45 +29,39 @@ export type PromoCardProps = {
   /**
    * How big should the card be
    */
-  size?: CardSize;
+  size?: Omit<CardSize, "standard">;
 
   /**
-   * Apply an optional corner cut to the top of the card
+   * Specify the event Date, in both human and Unix format.
    */
-  cornercut?: CardCornerType;
+  date?: EventDate;
 
   /**
-   * Introductory text in the card
+   * Profile information to be displayed on the card
    */
-  intro?: string;
+  profile: ProfileProps;
 
   /**
-   * Source link for the card
+   * Specify the URL for the card link
    */
   link?: string;
 
   /**
-   * Call to action link
-   */
-  cta?: LinkProps;
-
-  /**
-   * Specify an optional className to be added to your PromoCard.
+   * Specify an optional className to be added to your TextCard.
    */
   className?: string;
 };
 
-const PromoCard = forwardRef<HTMLDivElement, PromoCardProps>(
+const TextCard = forwardRef<HTMLDivElement, TextCardProps>(
   (
     {
       className,
       title,
       theme = "light",
       size = "narrow",
-      cornercut,
-      intro,
+      date,
+      profile,
       link,
-      cta,
       titleLevel: TitleElement = "p",
       eyebrow,
     },
@@ -83,17 +71,11 @@ const PromoCard = forwardRef<HTMLDivElement, PromoCardProps>(
 
     const baseClass = `${prefix}--card`;
 
-    const wrapperClass = classNames(
-      `${baseClass}--wrapper`,
-      className,
-      `${baseClass}--wrapper__type__promo`,
-      `${baseClass}--wrapper__type__promo__size__${size}`
-    );
-    const cardClasses = classNames(baseClass, `${baseClass}__type__promo`, {
+    const wrapperClass = classNames(`${baseClass}--wrapper`, className);
+    const cardClasses = classNames(baseClass, `${baseClass}__type__text`, {
       [`${baseClass}__action`]: link,
       [`${baseClass}__size__${String(size)}`]: size,
       [`${baseClass}__theme__${theme}`]: theme,
-      [`${baseClass}__cornercut`]: cornercut,
     });
 
     return (
@@ -108,15 +90,20 @@ const PromoCard = forwardRef<HTMLDivElement, PromoCardProps>(
               <TitleElement className={`${baseClass}--title`}>
                 {title}
               </TitleElement>
-              {intro && <p className={`${baseClass}--intro`}>{intro}</p>}
-              {cta?.label && (
-                <div className={`${baseClass}--cta`}>
-                  <Button
-                    link={{ url: cta.url, label: cta.label }}
-                    size="medium"
-                    type="primary"
-                  />
-                </div>
+              {date && (
+                <time className={`${baseClass}--date`} dateTime={date.unix}>
+                  {date.human}
+                </time>
+              )}
+              {profile && (
+                <Profile
+                  avatar={profile.avatar}
+                  description={profile.description}
+                  link={profile.link}
+                  name={profile.name}
+                  role={profile.role}
+                  theme={theme}
+                />
               )}
             </div>
           </div>
@@ -126,4 +113,4 @@ const PromoCard = forwardRef<HTMLDivElement, PromoCardProps>(
   }
 );
 
-export { PromoCard };
+export { TextCard };

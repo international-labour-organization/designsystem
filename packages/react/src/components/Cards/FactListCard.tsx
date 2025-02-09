@@ -1,9 +1,9 @@
 import { forwardRef } from "react";
 import classnames from "classnames";
 
-import useGlobalSettings from "../../../hooks/useGlobalSettings";
-import { CardSize, HeadingTypes, ThemeTypes } from "../../../types";
-import { List } from "../../List";
+import { CardSize, HeadingTypes, ThemeTypes } from "../../types";
+import useGlobalSettings from "../../hooks/useGlobalSettings";
+import { List } from "../List";
 
 export type FactListCardProps = {
   /**
