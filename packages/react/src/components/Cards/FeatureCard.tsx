@@ -1,5 +1,5 @@
 import { forwardRef } from "react";
-import classNames from "classNames";
+import classNames from "classnames";
 
 import useGlobalSettings from "../../hooks/useGlobalSettings";
 import { LinkList, LinkListProps } from "../LinkList";
