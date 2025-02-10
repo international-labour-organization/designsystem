@@ -1,16 +1,22 @@
-import React from "react";
-import { BlockquoteProps } from "./Blockquote.props";
+import { forwardRef } from "react";
 import useGlobalSettings from "../../hooks/useGlobalSettings";
 
-const Blockquote: React.FC<BlockquoteProps> = ({ quote, cite }) => {
-  const { prefix } = useGlobalSettings();
+export interface BlockquoteProps {
+  quote: string;
+  cite: string;
+}
 
-  return (
-    <blockquote className={`${prefix}--blockquote`}>
-      <p>{quote}</p>
-      <cite>{cite}</cite>
-    </blockquote>
-  );
-};
+const Blockquote = forwardRef<HTMLQuoteElement, BlockquoteProps>(
+  ({ quote, cite }, ref) => {
+    const { prefix } = useGlobalSettings();
 
-export default Blockquote;
+    return (
+      <blockquote ref={ref} className={`${prefix}--blockquote`}>
+        <p>{quote}</p>
+        <cite>{cite}</cite>
+      </blockquote>
+    );
+  }
+);
+
+export { Blockquote };

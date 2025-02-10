@@ -1,15 +1,6 @@
 import { Meta, StoryObj } from "@storybook/react";
 import { Blockquote } from "../../components/Blockquote";
 
-import {
-  ArgTypes,
-  Description,
-  Heading,
-  Primary,
-  Stories,
-  Title,
-} from "@storybook/blocks";
-
 const BlockquoteMeta: Meta<typeof Blockquote> = {
   title: "Components/Content/Blockquote",
   component: Blockquote,
@@ -32,19 +23,8 @@ const BlockquoteMeta: Meta<typeof Blockquote> = {
   },
   parameters: {
     docs: {
-      page: () => (
-        <>
-          <Title />
-          <Description>
-            The Blockquote component is used to display a quoted text along with
-            a citation.
-          </Description>
-          <Primary />
-          <Heading>Props</Heading>
-          <ArgTypes of={BlockquoteMeta} />
-          <Stories />
-        </>
-      ),
+      description:
+        "The Blockquote component is used to display a quoted text along with a citation",
     },
   },
 };
