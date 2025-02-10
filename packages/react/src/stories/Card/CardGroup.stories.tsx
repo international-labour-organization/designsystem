@@ -17,7 +17,7 @@ import { Default as TextCardDefault } from "./TextCard.stories";
 import { Default as PromoCardDefault } from "./PromoCard.stories";
 import { Default as FeatureCardDefault } from "./FeatureCard.stories";
 import { Default as DetailCardDefault } from "./DetailCard.stories";
-import { Default as FactListCardDefault } from "./FactListCard.stories";
+import { Default as FactListCardDefault } from "./FactlistCard.stories";
 import { Default as DataCardDefault } from "./DataCard.stories";
 
 const meta: Meta<typeof CardGroup> = {
