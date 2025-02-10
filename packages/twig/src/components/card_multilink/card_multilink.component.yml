@@ -86,6 +86,15 @@ multilinkcard:
         narrow: narrow
         wide: wide
         fluid: fluid
+    theme:
+      type: select
+      label: Theme
+      description: Sets the theme of the card, either `light` or `blue`. Defaults to `light`.
+      required: false
+      preview: "light"
+      options:
+        light: light
+        blue: blue
     titleLevel:
       type: select
       label: Title Element

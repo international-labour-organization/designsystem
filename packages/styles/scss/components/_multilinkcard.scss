@@ -6,6 +6,12 @@
 .ilo--card {
   $self: &;
 
+  &__theme__blue#{&}__type__multilink {
+    #{$self}--image--wrapper {
+      background-color: var(--ilo-color-white);
+    }
+  }
+
   &__type {
     &__multilink {
       --standard-spacing: #{spacing(8)};

@@ -1,0 +1,39 @@
+{
+  "title": "Advancing social justice",
+  "date": {
+    "human": "20 September 2022",
+    "unix": 1670389200
+  },
+  "eyebrow": "Podcast",
+  "image": {
+    "alt": "Image alt text",
+    "loading": "lazy",
+    "url": [
+      {
+        "breakpoint": "(min-width: 0px)",
+        "src": "/images/publication.jpg"
+      },
+      {
+        "breakpoint": "(min-width: 800px)",
+        "src": "/images/publication.jpg"
+      },
+      {
+        "breakpoint": "(min-width: 1200px)",
+        "src": "/images/publication.jpg"
+      },
+      {
+        "breakpoint": "(min-width: 1440px)",
+        "src": "/images/publication.jpg"
+      }
+    ]
+  },
+  "size": "wide",
+  "intro": "As the United Nations agency for the world of work, the ILO sets international labour standards, promotes rights at work and encourages decent employment opportunities, the enhancement of social protection and the strengthening of dialogue on work-related issues.",
+  "link": "https://www.ilo.org",
+  "settings": {
+    "isvideo": true,
+    "theme": "light",
+    "titleLevel": "h2",
+    "alignment": "left"
+  }
+}
