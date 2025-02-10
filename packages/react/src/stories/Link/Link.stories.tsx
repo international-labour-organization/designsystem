@@ -16,7 +16,6 @@ const meta: Meta<LinkProps> = {
 
 const Default: StoryObj<LinkProps> = {
   args: {
-    children: "Default Link",
     url: "https://example.com",
     label: "Default Link",
     theme: "light",
