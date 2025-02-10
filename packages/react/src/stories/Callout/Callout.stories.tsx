@@ -1,8 +1,10 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { Callout, calloutArgs } from "../../components/Callout";
 
-const CalloutMeta: Meta<typeof Callout> = {
+import { Callout, CalloutProps } from "../../components/Callout";
+
+const meta: Meta<typeof Callout> = {
   title: "Components/Feedback/Callout",
+  tags: ["autodocs"],
   component: Callout,
   argTypes: {
     isCollapsible: {
@@ -18,26 +20,26 @@ const CalloutMeta: Meta<typeof Callout> = {
       control: { type: "select" },
     },
   },
+  parameters: {
+    docs: {
+      description: {
+        component: `The Callout component is used to highlight important information.
+        It can be collapsible and can display different types of messages such as info, error, success, and warning.`,
+      },
+    },
+  },
 };
 
-export default CalloutMeta;
-
-export const InfoCallout: StoryObj<typeof Callout> = {
-  args: calloutArgs.baseArgs,
+const Default: StoryObj<CalloutProps> = {
+  args: {
+    headline: "This is a callout component",
+    copy: "It's job is to bring users' attention to something important that they might not otherwise have known. I can also have a call to action.",
+    type: "info",
+    isCollapsible: false,
+    isOpen: true,
+  },
   name: "Info",
 };
 
-export const SuccessCallout: StoryObj<typeof Callout> = {
-  args: calloutArgs.success,
-  name: "Success",
-};
-
-export const WarningCallout: StoryObj<typeof Callout> = {
-  args: calloutArgs.warning,
-  name: "Warning",
-};
-
-export const ErrorCallout: StoryObj<typeof Callout> = {
-  args: calloutArgs.error,
-  name: "Error",
-};
+export default meta;
+export { Default };

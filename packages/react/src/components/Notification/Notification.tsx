@@ -1,78 +1,140 @@
-import { FC, useState } from "react";
+import { forwardRef, useState } from "react";
 import classNames from "classnames";
 import useGlobalSettings from "../../hooks/useGlobalSettings";
-import { NotificationProps } from "./Notification.props";
-import { ButtonProps } from "../Button/Button.props";
 import { Button } from "../Button";
+import { NotificationPlacement, NotificationTypes } from "../../types";
 
-const Notification: FC<NotificationProps> = ({
-  className,
-  closelabel,
-  copy,
-  cta,
-  headline,
-  placement,
-  timestamp,
-  type,
-}) => {
-  const { prefix } = useGlobalSettings();
+export type NotificationProps = {
+  /**
+   * Specify an optional className to be added to your Notification component.
+   */
+  className?: string;
 
-  const [display, setDisplay] = useState(true);
+  /**
+   * Specify the label for the close button
+   */
+  closelabel?: string;
 
-  const baseClass = `${prefix}--notification`;
-  const notificationClasses = classNames(className, {
-    [baseClass]: true,
-    [`${baseClass}--${placement}`]: placement,
-    [`icon icon--${type}`]: type,
-  });
+  /**
+   * Specify the copy
+   */
+  copy: string;
 
-  const ctaprops: ButtonProps = {
-    callback: () => {},
-    className: `${baseClass}--cta`,
-    children: false,
-    label: cta?.label,
-    size: "small",
-    type: "secondary",
-    url: cta?.url,
+  /**
+   * Specify the settings for an option CTA
+   */
+  cta?: {
+    /**
+     * Specify the label of the CTA
+     */
+    label: string;
+
+    /**
+     * Specify the url of the CTA
+     */
+    url: string;
   };
 
   /**
-   * On click, close
+   * Specify the headline
    */
-  const handleClick = () => {
-    setDisplay(false);
+  headline?: Required<string>;
+
+  /**
+   * Specify whether the notification is inline in the DOM or absolutely-positioned at a higher z-index
+   */
+  placement?: NotificationPlacement;
+
+  /**
+   * Specify an optional timestamp
+   */
+  timestamp?: {
+    /**
+     * Specify the human-readable time
+     */
+    human: string;
+
+    /**
+     * Specify the UNIX timestamp
+     */
+    unix: string;
   };
 
-  return (
-    <>
-      {display && (
-        <div
-          className={notificationClasses}
-          role="status"
-          aria-live="polite"
-          aria-relevant="additions"
-        >
-          <div className={`${baseClass}--content`}>
-            <h2 className={`${baseClass}--headline`}>{headline}</h2>
-            <p className={`${baseClass}--copy`}>{copy}</p>
-            {timestamp && (
-              <time className={`${baseClass}--date`} dateTime={timestamp.unix}>
-                {timestamp.human}
-              </time>
-            )}
-            {cta && <Button {...ctaprops} />}
-          </div>
-          <button
-            className={`${baseClass}--close`}
-            type="button"
-            onClick={() => handleClick()}
-          >
-            <span>{closelabel}</span>
-          </button>
-        </div>
-      )}
-    </>
-  );
+  /**
+   * Specify the icon for the Notification
+   */
+  type?: NotificationTypes;
 };
 
-export default Notification;
+const Notification = forwardRef<HTMLDivElement, NotificationProps>(
+  (
+    {
+      className,
+      closelabel = "Close",
+      copy,
+      cta,
+      headline,
+      placement,
+      timestamp,
+      type,
+    },
+    ref
+  ) => {
+    const { prefix } = useGlobalSettings();
+    const [display, setDisplay] = useState(true);
+
+    const baseClass = `${prefix}--notification`;
+    const notificationClasses = classNames(baseClass, className, {
+      [`${baseClass}--${placement}`]: placement,
+      [`icon icon--${type}`]: type,
+    });
+
+    return (
+      <>
+        {display && (
+          <div
+            className={notificationClasses}
+            role="status"
+            aria-live="polite"
+            aria-relevant="additions"
+            ref={ref}
+          >
+            <div className={`${baseClass}--content`}>
+              <h2 className={`${baseClass}--headline`}>{headline}</h2>
+              <p className={`${baseClass}--copy`}>{copy}</p>
+              {timestamp && (
+                <time
+                  className={`${baseClass}--date`}
+                  dateTime={timestamp.unix}
+                >
+                  {timestamp.human}
+                </time>
+              )}
+              {cta && (
+                <div className={`${baseClass}__footer`}>
+                  <Button
+                    type="secondary"
+                    size="small"
+                    link={{
+                      url: cta.url,
+                      label: cta.label,
+                    }}
+                  />
+                </div>
+              )}
+            </div>
+            <button
+              className={`${baseClass}--close`}
+              type="button"
+              onClick={() => setDisplay(false)}
+            >
+              <span>{closelabel}</span>
+            </button>
+          </div>
+        )}
+      </>
+    );
+  }
+);
+
+export { Notification };

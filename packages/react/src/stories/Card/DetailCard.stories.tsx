@@ -1,20 +1,20 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { DetailCard, DetailCardArgs } from "../../components/Cards/DetailCard";
-import {
-  ArgTypes,
-  Description,
-  Primary,
-  Stories,
-  Title,
-} from "@storybook/blocks";
+import { DetailCard, DetailCardProps } from "../../components/Cards/DetailCard";
 
-const CardMeta: Meta<typeof DetailCard> = {
+const meta: Meta<typeof DetailCard> = {
   title: "Components/Cards/Detail Card",
   component: DetailCard,
   tags: ["autodocs"],
+  parameters: {
+    docs: {
+      description: {
+        component: `A detail card component for displaying links to content. It can have an image, title, link, intro text and date.`,
+      },
+    },
+  },
   argTypes: {
     size: {
-      options: ["wide", "narrow", "fluid"],
+      options: ["narrow", "wide", "fluid"],
       control: { type: "radio" },
     },
     titleLevel: {
@@ -22,24 +22,23 @@ const CardMeta: Meta<typeof DetailCard> = {
       control: { type: "select" },
     },
   },
-  parameters: {
-    docs: {
-      page: () => (
-        <>
-          <Title>Card</Title>
-          <Description>Cards display prominent content of a page.</Description>
-          <Primary />
-          <ArgTypes of={CardMeta} />
-          <Stories />
-        </>
-      ),
-    },
+};
+
+const Default: StoryObj<DetailCardProps> = {
+  args: {
+    title: "Can digital technology be an equality machine?",
+    eyebrow: "Podcast",
+    details: "20 September 2022 | Geneva",
+    theme: "light",
+    link: "https://www.ilo.org/",
+    image: "medium.jpg",
+    intro:
+      "A toxic combination of mutually-reinforcing crises – inflation, debt, food and fuel price rises, geopolitical tensions and conflict, climate change – are threatening to increase poverty, inequality and discrimination worldwide.",
+    size: "narrow",
+    isVideo: false,
+    titleLevel: "h2",
   },
 };
 
-export default CardMeta;
-
-export const DetailCardDefault: StoryObj<typeof DetailCard> = {
-  args: DetailCardArgs,
-  name: "Default",
-};
+export default meta;
+export { Default };

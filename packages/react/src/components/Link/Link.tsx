@@ -1,42 +1,72 @@
-import { FC } from "react";
+import { forwardRef, AnchorHTMLAttributes, ReactNode } from "react";
 import classNames from "classnames";
+
 import useGlobalSettings from "../../hooks/useGlobalSettings";
-import { LinkProps } from "./Link.props";
+import { LinkTypes } from "../../types";
 
-const Link: FC<LinkProps> = ({
-  children,
-  className,
-  label,
-  target,
-  theme = "light",
-  url,
-  style,
-  ...rest
-}) => {
-  const { prefix } = useGlobalSettings();
-  const baseClass =
-    typeof className !== "undefined" && className.includes("button")
-      ? ""
-      : `${prefix}--link`;
+export type LinkProps = AnchorHTMLAttributes<HTMLAnchorElement> & {
+  /**
+   * Specify the url for the link's href
+   */
+  url: string;
 
-  const linkClasses = classNames(className, {
-    [baseClass]: true,
-    [`${baseClass}--${theme}`]: theme,
-  });
+  /**
+   * Specify the content of your Link.
+   */
+  children?: ReactNode;
 
-  return (
-    <a
-      className={linkClasses}
-      href={url}
-      target={target}
-      rel={target ? "noopener noreferrer" : ""}
-      style={style}
-      {...rest}
-    >
-      {label && <span className="link__label">{label}</span>}
-      {children}
-    </a>
-  );
+  /**
+   * Specify the label for the link
+   */
+  label?: string;
+
+  /**
+   * Specify the target for the link
+   */
+  target?: string;
+
+  /**
+   * Specify an optional className to be added to your Link.
+   */
+  theme?: LinkTypes;
+
+  /**
+   * Specify an optional className to be added to your Link.
+   */
+  className?: string;
 };
 
-export default Link;
+const Link = forwardRef<HTMLAnchorElement, LinkProps>(
+  (
+    { children, className, label, target, theme = "light", url, ...props },
+    ref
+  ) => {
+    const { prefix } = useGlobalSettings();
+    let baseClass = `${prefix}--link`;
+
+    if (className?.includes("button")) {
+      baseClass = "";
+    }
+
+    const linkClasses = classNames(className, {
+      [baseClass]: true,
+      [`${baseClass}--${theme}`]: baseClass && theme,
+    });
+
+    return (
+      <a
+        ref={ref}
+        className={linkClasses}
+        href={url}
+        target={target}
+        rel={target ? "noopener noreferrer" : undefined}
+        {...props}
+      >
+        {label && <span className="link__label">{label}</span>}
+        {children}
+      </a>
+    );
+  }
+);
+
+export { Link };

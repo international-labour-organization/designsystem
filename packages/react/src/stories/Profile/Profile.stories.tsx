@@ -1,64 +1,35 @@
-import { StoryFn, Meta } from "@storybook/react";
-import {
-  Title,
-  Description,
-  Primary,
-  Stories,
-  Subheading,
-  ArgTypes,
-} from "@storybook/addon-docs";
-import { Profile } from "../../components/Profile";
-import { ProfileProps } from "../../components/Profile/Profile.props";
-import profileArgs from "../../components/Profile/Profile.args";
+import { Meta, StoryObj } from "@storybook/react";
 
-const ProfileMeta: Meta<typeof Profile> = {
+import { Profile, ProfileProps } from "../../components/Profile";
+
+const meta: Meta<typeof Profile> = {
   title: "Components/Content/Profile",
   component: Profile,
   tags: ["autodocs"],
   parameters: {
     docs: {
-      page: () => (
-        <>
-          <Title />
-          <Description>
-            The Profile component is used to display information about a person.
-          </Description>
-          <Primary />
-          <Stories title="Examples"></Stories>
-          <Subheading>Default props</Subheading>
-          <ArgTypes></ArgTypes>
-        </>
-      ),
+      description: {
+        component:
+          "The Profile component is used to display information about a person.",
+      },
     },
   },
-} as Meta<typeof Profile>;
+};
 
-export default ProfileMeta;
+const Default: StoryObj<ProfileProps> = {
+  args: {
+    avatar: "/ilo-dg.jpg",
+    className: "storybook",
+    name: "Gilbert F. Houngbo",
+    description:
+      "Gilbert F. Houngbo was elected as the ILO’s 11th Director-General by the organization’s Governing Body in March 2022.",
+    link: {
+      label: "Learn more",
+      url: "https://www.ilo.org",
+    },
+    role: "ILO Director-General",
+  },
+};
 
-const ProfileTemplate: StoryFn<ProfileProps> = (args) => <Profile {...args} />;
-
-export const Basic: StoryFn<ProfileProps> = ProfileTemplate.bind({});
-
-export const HasAll: StoryFn<ProfileProps> = ProfileTemplate.bind({});
-
-export const HasDescription: StoryFn<ProfileProps> = ProfileTemplate.bind({});
-
-export const HasLink: StoryFn<ProfileProps> = ProfileTemplate.bind({});
-
-export const HasRole: StoryFn<ProfileProps> = ProfileTemplate.bind({});
-
-// enumerate the props for the variations on the Profile component
-Basic.args = profileArgs.basic;
-Basic.storyName = "Basic";
-
-HasAll.args = profileArgs.hasall;
-HasAll.storyName = "Detailed";
-
-HasDescription.args = profileArgs.hasdescription;
-HasDescription.storyName = "Description";
-
-HasLink.args = profileArgs.haslink;
-HasLink.storyName = "Link";
-
-HasRole.args = profileArgs.hasrole;
-HasRole.storyName = "Role";
+export default meta;
+export { Default };

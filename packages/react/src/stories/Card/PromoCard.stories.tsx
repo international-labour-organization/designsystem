@@ -1,52 +1,36 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { PromoCard, PromoCardArgs } from "../../components/Cards/PromoCard";
-import {
-  ArgTypes,
-  Description,
-  Primary,
-  Stories,
-  Title,
-} from "@storybook/blocks";
 
-const CardMeta: Meta<typeof PromoCard> = {
+import { PromoCard, PromoCardProps } from "../../components/Cards/PromoCard";
+
+const meta: Meta<typeof PromoCard> = {
   title: "Components/Cards/Promo Card",
   component: PromoCard,
   tags: ["autodocs"],
-  argTypes: {
-    theme: {
-      options: ["dark", "light"],
-      control: { type: "radio" },
-    },
-    cornercut: {
-      control: { type: "boolean" },
-    },
-    size: {
-      options: ["wide", "standard", "narrow", "fluid"],
-      control: { type: "radio" },
-    },
-    titleLevel: {
-      options: ["p", "h1", "h2", "h3", "h4", "h5"],
-      control: { type: "select" },
-    },
-  },
   parameters: {
     docs: {
-      page: () => (
-        <>
-          <Title>Card</Title>
-          <Description>Cards display prominent content of a page.</Description>
-          <Primary />
-          <ArgTypes of={CardMeta} />
-          <Stories />
-        </>
-      ),
+      description: {
+        component: `The Promo Card component displays a card with promotional content, including a title, eyebrow, intro text, and call to action.`,
+      },
     },
   },
 };
 
-export default CardMeta;
-
-export const PromoCardDefault: StoryObj<typeof PromoCard> = {
-  args: PromoCardArgs,
-  name: "Default",
+const Default: StoryObj<PromoCardProps> = {
+  args: {
+    title: "Can digital technology be an equality machine?",
+    eyebrow: "Podcast",
+    intro:
+      "A toxic combination of mutually-reinforcing crises – inflation, debt, food and fuel price rises, geopolitical tensions and conflict, climate change – are threatening to increase poverty, inequality and discrimination worldwide.",
+    theme: "light",
+    size: "standard",
+    cornercut: true,
+    link: "https://www.ilo.org/",
+    cta: {
+      label: "Read the press release",
+      url: "https://www.ilo.org/global/about-the-ilo/newsroom/news/WCMS_846303/lang--en/index.htm",
+    },
+  },
 };
+
+export default meta;
+export { Default };

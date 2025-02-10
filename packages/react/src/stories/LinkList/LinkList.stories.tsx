@@ -1,60 +1,57 @@
-import { StoryFn, Meta } from "@storybook/react";
-import { Title, Description, Primary, Stories } from "@storybook/addon-docs";
-import { LinkList } from "../../components/LinkList";
-import { LinkListProps } from "../../components/LinkList/LinkList.props";
-import linkListArgs from "./LinkList.args";
+import { Meta } from "@storybook/react";
+import { LinkList, LinkListProps } from "../../components/LinkList";
 
-const LinkListMeta: Meta<typeof LinkList> = {
+const meta: Meta<typeof LinkList> = {
   title: "Components/Navigation/LinkList",
   component: LinkList,
   tags: ["autodocs"],
-  argTypes: {
-    theme: {
-      options: ["light", "dark"],
-      control: { type: "select" },
-    },
-  },
-  parameters: {
-    docs: {
-      page: () => (
-        <>
-          <Title />
-          <Description>
-            The Link List component is used to display a meaingfully-grouped set
-            of links.
-          </Description>
-          <Primary />
-          <Stories title="Examples"></Stories>
-        </>
-      ),
-    },
+};
+
+const Default: Meta<LinkListProps> = {
+  args: {
+    headline: "Link List Headline",
+    linkgroup: [
+      {
+        headline: "Section Headline",
+        links: [
+          { label: "Link One", url: "http://www.google.com" },
+          { label: "Link Two", url: "http://www.google.com" },
+          { label: "Link Three", url: "http://www.google.com" },
+          { label: "Link Four", url: "http://www.google.com" },
+          {
+            label: "Link Five Is Slightly Longer",
+            url: "http://www.google.com",
+          },
+        ],
+      },
+      {
+        headline: "Section 2 (With Indents)",
+        links: [
+          { label: "Section 2 Link One", url: "http://www.google.com" },
+          {
+            indented: true,
+            label: "Section 2 Link Two",
+            url: "http://www.google.com",
+          },
+          {
+            indented: true,
+            label: "Section 2 Link Three",
+            url: "http://www.google.com",
+          },
+          {
+            indented: true,
+            label: "Section 2 Link Four",
+            url: "http://www.google.com",
+          },
+          {
+            label: "Section 2 Link Five Is Slightly Longer",
+            url: "http://www.google.com",
+          },
+        ],
+      },
+    ],
   },
 };
 
-export default LinkListMeta;
-
-const LinkListTemplate: StoryFn<LinkListProps> = (args) => (
-  <LinkList {...args} />
-);
-
-export const Basic: StoryFn<LinkListProps> = LinkListTemplate.bind({});
-
-export const WithIndented: StoryFn<LinkListProps> = LinkListTemplate.bind({});
-
-export const WithSections: StoryFn<LinkListProps> = LinkListTemplate.bind({});
-
-export const WithSectionsIndented: StoryFn<LinkListProps> =
-  LinkListTemplate.bind({});
-
-// enumerate the props for the variations on the LinkList component
-Basic.args = linkListArgs.basic;
-Basic.storyName = "Basic";
-
-WithIndented.args = linkListArgs.withindented;
-WithIndented.storyName = "Indentation";
-
-WithSections.args = linkListArgs.withsections;
-WithSections.storyName = "Sections";
-
-WithSectionsIndented.args = linkListArgs.withsectionsindented;
-WithSectionsIndented.storyName = "Sections and indentation";
+export default meta;
+export { Default };

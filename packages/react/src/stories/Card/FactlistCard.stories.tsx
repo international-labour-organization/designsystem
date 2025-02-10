@@ -1,52 +1,35 @@
 import { Meta, StoryObj } from "@storybook/react";
 import {
-  FactlistCard,
-  FactlistCardArgs,
-} from "../../components/Cards/FactlistCard";
-import {
-  ArgTypes,
-  Description,
-  Primary,
-  Stories,
-  Title,
-} from "@storybook/blocks";
+  FactListCard,
+  FactListCardProps,
+} from "../../components/Cards/FactListCard";
 
-const CardMeta: Meta<typeof FactlistCard> = {
-  title: "Components/Cards/Factlist Card",
-  component: FactlistCard,
+const meta: Meta<typeof FactListCard> = {
+  title: "Components/Cards/Fact List Card",
+  component: FactListCard,
   tags: ["autodocs"],
-  argTypes: {
-    theme: {
-      options: ["dark", "light"],
-      control: { type: "radio" },
-    },
-    size: {
-      options: ["wide", "narrow", "fluid"],
-      control: { type: "radio" },
-    },
-    titleLevel: {
-      options: ["p", "h1", "h2", "h3", "h4", "h5"],
-      control: { type: "select" },
-    },
-  },
   parameters: {
     docs: {
-      page: () => (
-        <>
-          <Title>Card</Title>
-          <Description>Cards display prominent content of a page.</Description>
-          <Primary />
-          <ArgTypes of={CardMeta} />
-          <Stories />
-        </>
-      ),
+      description: {
+        component: `A Fact List Card is a card that displays a list of facts or statistics.`,
+      },
     },
   },
 };
 
-export default CardMeta;
-
-export const FactListCardDefault: StoryObj<typeof FactlistCard> = {
-  args: FactlistCardArgs,
-  name: "Default",
+const Default: StoryObj<FactListCardProps> = {
+  args: {
+    title: "Can digital technology be an equality machine?",
+    list: [
+      "Global employment growth will be only 1.0 per cent in 2023, less than half the level in 2022.",
+      "The labour market deterioration is mainly due to emerging geopolitical tensions and the Ukraine conflict.",
+      "The current slowdown means that many workers will have to accept lower quality jobs, often at very low pay.",
+    ],
+    theme: "dark",
+    size: "narrow",
+    titleLevel: "h2",
+  },
 };
+
+export default meta;
+export { Default };

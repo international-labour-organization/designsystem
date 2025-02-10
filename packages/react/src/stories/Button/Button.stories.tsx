@@ -1,68 +1,72 @@
-import { Button, buttonArgs } from "../../components/Button";
-import { Meta, StoryObj } from "@storybook/react";
+import { Meta, StoryFn, StoryObj } from "@storybook/react";
 
-const argTypes = {
-  size: {
-    options: ["large", "medium", "small"],
-    control: { type: "select" },
-  },
-  type: {
-    options: ["primary", "secondary", "tertiary", "alert"],
-    control: { type: "select" },
-  },
-  icononly: {
-    options: [true, false],
-    control: { type: "boolean" },
-  },
-  iconPosition: {
-    options: ["left", "center", "right"],
-    control: { type: "select" },
-  },
-  opensmodal: {
-    options: [true, false],
-    control: { type: "boolean" },
-  },
-};
+import { Button, ButtonProps } from "../../components/Button";
 
-const ButtonMeta: Meta<typeof Button> = {
+const meta: Meta<ButtonProps> = {
   title: "Components/User Interface/Button",
   component: Button,
-  argTypes,
+  tags: ["autodocs"],
+  parameters: {
+    docs: {
+      description: {
+        component: `A button or a link styled like a button`,
+      },
+    },
+  },
+};
+const Template: StoryFn = (args: ButtonProps) => {
+  return <Button {...args} />;
 };
 
-export default ButtonMeta;
-
-export const PrimaryBtn: StoryObj<typeof Button> = {
-  args: buttonArgs.primary,
-  name: "Primary",
+const Default: StoryObj<ButtonProps> = {
+  render: Template,
+  args: {
+    children: "Default Button",
+  },
 };
 
-export const SecondaryBtn: StoryObj<typeof Button> = {
-  args: buttonArgs.secondary,
-  name: "Secondary",
+const Secondary: StoryObj<ButtonProps> = {
+  render: Template,
+  args: {
+    children: "Secondary Button",
+    type: "secondary",
+  },
 };
 
-export const TertiaryBtn: StoryObj<typeof Button> = {
-  args: buttonArgs.tertiary,
-  name: "Tertiary",
+const Small: StoryObj<ButtonProps> = {
+  render: Template,
+  args: {
+    children: "Large Button",
+    size: "small",
+  },
 };
 
-export const AlertBtn: StoryObj<typeof Button> = {
-  args: buttonArgs.alert,
-  name: "Alert",
+const WithIcon: StoryObj<ButtonProps> = {
+  render: Template,
+  args: {
+    children: "Button with Icon",
+    icon: { name: "check" },
+  },
 };
 
-export const IconBtn: StoryObj<typeof Button> = {
-  args: buttonArgs.icon,
-  name: "Icon",
+const IconOnly: StoryObj<ButtonProps> = {
+  render: Template,
+  args: {
+    children: "Icon Only Button",
+    icon: { name: "close", only: true },
+  },
 };
 
-export const DisabledBtn: StoryObj<typeof Button> = {
-  args: buttonArgs.disabled,
-  name: "Disabled",
+const AsLink: StoryObj<ButtonProps> = {
+  render: Template,
+  args: {
+    link: {
+      url: "https://ilo.org",
+      label: "Link Button",
+      target: "_blank",
+    },
+  },
 };
 
-export const LinkBtn: StoryObj<typeof Button> = {
-  name: "Link",
-  args: buttonArgs.link,
-};
+export default meta;
+export { Default, Secondary, Small, WithIcon, IconOnly, AsLink };
