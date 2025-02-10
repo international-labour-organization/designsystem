@@ -320,6 +320,13 @@
   sizes:
     - glyph
 
+- name: social_bluesky
+  friendly_name: social_bluesky
+  aliases:
+    - ILO Icons
+  sizes:
+    - glyph
+
 - name: social_facebook
   friendly_name: social_facebook
   aliases:
@@ -357,6 +364,20 @@
 
 - name: social_tiktok
   friendly_name: social_tiktok
+  aliases:
+    - ILO Icons
+  sizes:
+    - glyph
+
+- name: social_wechat
+  friendly_name: social_wechat
+  aliases:
+    - ILO Icons
+  sizes:
+    - glyph
+
+- name: social_weibo
+  friendly_name: social_weibo
   aliases:
     - ILO Icons
   sizes:

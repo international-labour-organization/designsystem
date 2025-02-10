@@ -153,6 +153,30 @@
             @include get-icon("social_tiktok", "dark");
           }
         }
+
+        &__bluesky {
+          @include get-icon("social_bluesky");
+
+          #{$c}__theme__dark & {
+            @include get-icon("social_bluesky", "dark");
+          }
+        }
+
+        &__weibo {
+          @include get-icon("social_weibo");
+
+          #{$c}__theme__dark & {
+            @include get-icon("social_weibo", "dark");
+          }
+        }
+
+        &__wechat {
+          @include get-icon("social_wechat");
+
+          #{$c}__theme__dark & {
+            @include get-icon("social_wechat", "dark");
+          }
+        }
       }
     }
   }
