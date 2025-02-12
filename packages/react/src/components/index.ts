@@ -41,3 +41,4 @@ export { CardGroup } from "./Cards/CardGroup";
 export { Breadcrumb } from "./Breadcrumb";
 export { Tabs } from "./Tabs";
 export * from "./Cards";
+export * from "./LanguageToggle";
