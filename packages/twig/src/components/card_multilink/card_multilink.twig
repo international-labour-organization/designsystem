@@ -14,13 +14,11 @@
 	<div class="{{prefix}}--card--wrap">
 		{% if image %}
 			<div class="{{prefix}}--card--image--wrapper">
-				<div class="{{prefix}}--card--image--wrapper--inner">
-					{% include "@components/picture/picture.twig" with {
-						image: image,
-						class: "card"
-					}
-					%}
-				</div>
+				{% include "@components/picture/picture.twig" with {
+					image: image,
+					class: "card"
+				}
+				%}
 		</div>
 		{% endif %}
 		<div class="{{prefix}}--card--content">
@@ -32,13 +30,11 @@
 			{% endif %}
 			{% if image %}
 				<div class="{{prefix}}--card--image--wrapper">
-					<div class="{{prefix}}--card--image--wrapper--inner">
-						{% include "@components/picture/picture.twig" with {
-							image: image,
-							class: "card"
-						}
-						%}
-					</div>
+					{% include "@components/picture/picture.twig" with {
+						image: image,
+						class: "card"
+					}
+					%}
 				</div>
 			{% endif %}
 			{% if intro %}
@@ -48,7 +44,7 @@
 				{% include "@components/linklist/linklist.twig" with {
           headline: linklist.headline,
           linkgroup: linklist.linkgroup,
-          prefix: prefix
+          prefix: prefix,
         } only %}
 			{% endif %}
 		</div>
