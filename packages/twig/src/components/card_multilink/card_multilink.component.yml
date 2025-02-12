@@ -89,12 +89,12 @@ multilinkcard:
     theme:
       type: select
       label: Theme
-      description: Sets the theme of the card, either `light` or `blue`. Defaults to `light`.
+      description: Sets the theme of the card, either `light` or `soft`. Defaults to `light`.
       required: false
       preview: "light"
       options:
         light: light
-        blue: blue
+        soft: soft
     titleLevel:
       type: select
       label: Title Element
