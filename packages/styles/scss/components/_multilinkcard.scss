@@ -165,7 +165,7 @@
   }
 
   // Make list links white on hover when blue theme is set
-  &__theme__blue#{&}__type__multilink {
+  &__theme__soft#{&}__type__multilink {
     .ilo--link-list {
       a {
         &:hover {
