@@ -61,7 +61,7 @@ export type MultiLinkCardProps = {
   /**
    * Specify a theme for the component, either `light` or `blue`
    */
-  theme?: "light" | "blue";
+  theme?: "light" | "soft";
 };
 
 const MultiLinkCard = forwardRef<HTMLDivElement, MultiLinkCardProps>(

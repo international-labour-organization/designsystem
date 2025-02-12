@@ -71,13 +71,13 @@ describe("MultiLinkCard Component", () => {
         {...defaultProps}
         alignment="right"
         size="wide"
-        theme="blue"
+        theme="soft"
       />
     );
     const card = screen.getAllByRole("link")[0].parentElement;
     expect(card).toHaveClass("ilo--card__align__right");
     expect(card).toHaveClass("ilo--card__size__wide");
-    expect(card).toHaveClass("ilo--card__theme__blue");
+    expect(card).toHaveClass("ilo--card__theme__soft");
   });
 
   it("renders the link when provided", () => {
