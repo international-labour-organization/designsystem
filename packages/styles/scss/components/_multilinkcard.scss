@@ -8,6 +8,8 @@
 
   &__type {
     &__multilink {
+      --standard-spacing: #{spacing(8)};
+      --narrow-spacing: #{spacing(6)};
       // Defaults to standard size
       --max-width: #{px-to-rem(536px)};
 
@@ -15,27 +17,35 @@
 
       #{$self}--image--wrapper {
         display: none;
+        background-color: var(--ilo-color-blue-lighter);
+        height: 0;
+        overflow: hidden;
+        padding-top: 56.25%;
+        position: relative;
+        margin-bottom: var(--standard-spacing);
+        position: relative;
+
+        picture,
+        img {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          height: auto;
+          width: 100%;
+        }
       }
 
       #{$self}--content {
         #{$self}--image--wrapper {
           display: block;
-          margin-bottom: spacing(8);
         }
-      }
-
-      @include breakpoint("md") {
-        padding: spacing(10);
-      }
-
-      @include breakpoint("lg") {
-        padding: spacing(14) spacing(12);
       }
 
       #{$self}--title {
         @include font-styles("headline-5");
-        margin-bottom: spacing(8);
-        color: $brand-ilo-black;
+        margin-bottom: var(--standard-spacing);
+        color: var(--ilo-color-gray-charcoal);
 
         @include breakpoint("md") {
           @include font-styles("headline-4");
@@ -44,8 +54,8 @@
 
       #{$self}--intro {
         @include font-styles("body-small");
-        margin-bottom: spacing(8);
-        color: $brand-ilo-black;
+        margin-bottom: var(--standard-spacing);
+        color: var(--ilo-color-gray-charcoal);
 
         @include breakpoint("md") {
           @include font-styles("base");
@@ -55,7 +65,6 @@
       &#{$self}__size {
         &__standard {
           --max-width: #{px-to-rem(536px)};
-
           padding: spacing(12) spacing(10);
         }
 
@@ -70,21 +79,21 @@
           #{$self}--content {
             #{$self}--image--wrapper {
               display: block;
-              margin-bottom: spacing(6);
+              margin-bottom: var(--narrow-spacing);
             }
           }
 
           #{$self}--title {
             @include breakpoint("md") {
               @include font-styles("headline-5");
-              margin-bottom: spacing(6);
+              margin-bottom: var(--narrow-spacing);
             }
           }
 
           #{$self}--intro {
             @include breakpoint("md") {
               @include font-styles("body-small");
-              margin-bottom: spacing(6);
+              margin-bottom: var(--narrow-spacing);
             }
           }
         }
@@ -104,23 +113,26 @@
 
             &#{$self}__align__right {
               #{$self}--wrap {
-                flex-direction: row-reverse;
+                grid-template-areas: "content image";
               }
             }
 
             #{$self}--wrap {
-              display: flex;
-              column-gap: px-to-rem(32px);
+              display: grid;
+              grid-template-areas: "image content";
+              grid-template-columns: 1fr 1fr;
+              gap: px-to-rem(32px);
             }
 
             #{$self}--image--wrapper {
-              display: block;
-              width: 50%;
+              grid-area: image;
+              display: inline-block;
+              margin-bottom: 0;
+              width: 100%;
             }
 
             #{$self}--content {
-              width: 50%;
-
+              grid-area: content;
               #{$self}--image--wrapper {
                 display: none;
               }
@@ -140,6 +152,25 @@
       .ilo--link-list {
         position: relative;
         z-index: 3;
+      }
+
+      @include breakpoint("md") {
+        padding: spacing(10);
+      }
+
+      @include breakpoint("lg") {
+        padding: spacing(14) spacing(12);
+      }
+    }
+  }
+
+  // Make list links white on hover when blue theme is set
+  &__theme__blue#{&}__type__multilink {
+    .ilo--link-list {
+      a {
+        &:hover {
+          background-color: var(--ilo-color-white);
+        }
       }
     }
   }
