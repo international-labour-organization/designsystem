@@ -57,6 +57,11 @@ export type MultiLinkCardProps = {
    * Specify an optional className to be added to your TextCard.
    */
   className?: string;
+
+  /**
+   * Specify a theme for the component, either `light` or `blue`
+   */
+  theme?: "light" | "blue";
 };
 
 const MultiLinkCard = forwardRef<HTMLDivElement, MultiLinkCardProps>(
@@ -73,6 +78,7 @@ const MultiLinkCard = forwardRef<HTMLDivElement, MultiLinkCardProps>(
       titleLevel: TitleElement = "p",
       eyebrow,
       isVideo,
+      theme = "light",
     },
     ref
   ) => {
@@ -90,6 +96,7 @@ const MultiLinkCard = forwardRef<HTMLDivElement, MultiLinkCardProps>(
         [`${baseClass}__size__${size}`]: size,
         [`${baseClass}__isvideo`]: isVideo,
         [`${baseClass}--no-image`]: !image,
+        [`${baseClass}__theme__${theme}`]: theme,
       }
     );
 
@@ -129,12 +136,7 @@ const MultiLinkCard = forwardRef<HTMLDivElement, MultiLinkCardProps>(
               </div>
             )}
             {intro && <p className={`${baseClass}--intro`}>{intro}</p>}
-            {linklist && (
-              <LinkList
-                headline={linklist.headline}
-                linkgroup={linklist.linkgroup}
-              />
-            )}
+            {linklist && <LinkList {...linklist} />}
           </div>
         </div>
       </div>
