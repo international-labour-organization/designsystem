@@ -1,5 +1,25 @@
 # @ilo-org/react
 
+## 0.20.0
+
+### Minor Changes
+
+- 86555c6a6: **Blockquote:** Creates a new standalone component for the Blockquote which was already available as a styled element in **Richtext** but can now be used separately on its own.
+- 2e8b79155: synced the part of react components with twig
+- 7d41bcb13: **LanguageToggler:** A new stand-alone component for setting languages
+
+### Patch Changes
+
+- 758dcc8db: **SocialMedia:** Add icons for Bluesky, Weibo and WeChat
+- Updated dependencies [4084b9adc]
+- Updated dependencies [67995d20c]
+- Updated dependencies [47f56d71f]
+- Updated dependencies [74929064d]
+- Updated dependencies [7d41bcb13]
+- Updated dependencies [16e30c518]
+  - @ilo-org/styles@1.4.0
+  - @ilo-org/icons-react@1.0.3
+
 ## 0.19.0
 
 ### Minor Changes

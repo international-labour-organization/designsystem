@@ -1,5 +1,28 @@
 # @ilo-org/twig
 
+## 1.4.0
+
+### Minor Changes
+
+- 74929064d: **Blockquote:** Creates a new standalone component for the Blockquote which was already available as a styled element in **Richtext** but can now be used separately on its own. This also adjusts the styles of the Blockquote in line with design changes.
+
+### Patch Changes
+
+- 2d99f2d62: **Card:** Removed the basic variant from the pattern definition because it was preventing the other variants from rendering correctly
+- 4084b9adc: **Multilink Card:** This fixes image sizing and spacing within the card so that the image will always appear in a 16x9 box regardless of the orientation. It also adds a white and blue theme that can be used to add different background colors to the card.
+- 67995d20c: **Feature Card:** Fix some bugs that occured using dark theme
+- 8b3cf4ee3: **Data Card:** can only have two columns if `size` is set to `wide` or `narrow`
+- 47f56d71f: **SocialMedia:** Add icons for Bluesky, Weibo and WeChat.
+- Updated dependencies [79857079d]
+- Updated dependencies [4084b9adc]
+- Updated dependencies [67995d20c]
+- Updated dependencies [47f56d71f]
+- Updated dependencies [74929064d]
+- Updated dependencies [7d41bcb13]
+- Updated dependencies [16e30c518]
+  - @ilo-org/icons@2.1.0
+  - @ilo-org/styles@1.4.0
+
 ## 1.3.4
 
 ### Patch Changes
