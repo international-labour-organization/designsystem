@@ -52,7 +52,7 @@
     "clean": "rimraf es lib build-info.json metadata.json",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "prepublishOnly": "pnpm run build",
+    "prepublishOnly": "pnpm run build:lib",
     "update-readme": "node ./update_readme.js"
   },
   "dependencies": {
