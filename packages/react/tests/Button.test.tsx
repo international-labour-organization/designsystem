@@ -6,7 +6,7 @@ import { Button } from "../src/components/Button";
 
 describe("Classic <Button />", () => {
   it("should render with the correct label", () => {
-    render(<Button label="Action Button" />);
+    render(<Button> Action Button </Button>);
     const element = screen.getByText(/Action Button/i);
 
     expect(element).toBeInTheDocument();
@@ -35,7 +35,7 @@ describe("Classic <Button />", () => {
 
   it("should fire the callback", async () => {
     const handleClick = vi.fn();
-    render(<Button label="Click Me" callback={handleClick} />);
+    render(<Button onClick={handleClick}>Click Me</Button>);
     const element = screen.getByText(/Click Me/i);
     await userEvent.click(element);
 
@@ -45,7 +45,7 @@ describe("Classic <Button />", () => {
 
 describe("Icon <Button />", () => {
   it("should render with the svg element", () => {
-    render(<Button icon="close" label="Icon button" />);
+    render(<Button icon={{ name: "close" }}>Icon button</Button>);
     const element = screen.getByRole("button");
 
     expect(element).toContainHTML("<svg ");
@@ -54,7 +54,13 @@ describe("Icon <Button />", () => {
 
 describe("Link <Button />", () => {
   render(
-    <Button url="https://example.com" label="Link button" target="_blank" />
+    <Button
+      link={{
+        url: "https://example.com",
+        label: "Link button",
+        target: "_blank",
+      }}
+    />
   );
   const element = screen.getByRole("link");
 

@@ -1,49 +1,32 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { StatCard, StatCardArgs } from "../../components/Cards/StatCard";
-import {
-  ArgTypes,
-  Description,
-  Primary,
-  Stories,
-  Title,
-} from "@storybook/blocks";
 
-const CardMeta: Meta<typeof StatCard> = {
+import { StatCard, StatCardProps } from "../../components/Cards/StatCard";
+
+const meta: Meta<typeof StatCard> = {
   title: "Components/Cards/Stat Card",
   component: StatCard,
   tags: ["autodocs"],
-  argTypes: {
-    color: {
-      options: ["turquoise", "green", "yellow", "blue"],
-      control: { type: "select" },
-    },
-    size: {
-      options: ["standard", "fluid"],
-      control: { type: "radio" },
-    },
-    titleLevel: {
-      options: ["p", "h1", "h2", "h3", "h4", "h5"],
-      control: { type: "select" },
-    },
-  },
   parameters: {
     docs: {
-      page: () => (
-        <>
-          <Title>Card</Title>
-          <Description>Cards display prominent content of a page.</Description>
-          <Primary />
-          <ArgTypes of={CardMeta} />
-          <Stories />
-        </>
-      ),
+      description: {
+        component: `The Stat Card component displays a card with statistical content, including a title, intro text, and source link.`,
+      },
     },
   },
 };
 
-export default CardMeta;
-
-export const StatCardDefault: StoryObj<typeof StatCard> = {
-  args: StatCardArgs,
-  name: "Default",
+const Default: StoryObj<StatCardProps> = {
+  args: {
+    title: "Global employment growth down by half in 2023",
+    intro:
+      "The current global economic slowdown is likely to force more workers to accept lower quality, poorly paid jobs which lack job security and social protection, so accentuating inequalities exacerbated by the COVID-19 crisis.",
+    color: "blue",
+    source: {
+      label: "World Employment and Social Outlook: Trends 2023",
+      url: "https://www.ilo.org/global/research/global-reports/weso/WCMS_865332/lang--en/index.htm",
+    },
+  },
 };
+
+export default meta;
+export { Default };

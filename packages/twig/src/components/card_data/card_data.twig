@@ -1,6 +1,12 @@
 {# card_data.twig #}
 
+{# Defaults to one column #}
 {% if not columns %}
+	{% set columns = "one" %}
+{% endif %}
+
+{# size overrides column if it's set to 'narrow' #}
+{% if size == "narrow" %}
 	{% set columns = "one" %}
 {% endif %}
 

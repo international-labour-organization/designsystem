@@ -1,60 +1,50 @@
 import { Meta, StoryObj } from "@storybook/react";
+
 import {
   FeatureCard,
-  FeatureCardArgs,
+  FeatureCardProps,
 } from "../../components/Cards/FeatureCard";
-import {
-  ArgTypes,
-  Description,
-  Primary,
-  Stories,
-  Title,
-} from "@storybook/blocks";
 
-const CardMeta: Meta<typeof FeatureCard> = {
+const meta: Meta<typeof FeatureCard> = {
   title: "Components/Cards/Feature Card",
   component: FeatureCard,
   tags: ["autodocs"],
-  argTypes: {
-    theme: {
-      options: ["dark", "light"],
-      control: { type: "radio" },
-    },
-    size: {
-      options: ["wide", "narrow", "fluid"],
-      control: { type: "radio" },
-    },
-    titleLevel: {
-      options: ["p", "h1", "h2", "h3", "h4", "h5"],
-      control: { type: "select" },
-    },
-  },
   parameters: {
     docs: {
-      page: () => (
-        <>
-          <Title>Card</Title>
-          <Description>
-            Cards display prominent content of a page. This component is a
-            wrapper around all of the card types in the design system except for
-            the Hero Card. To use it, pass a `type` setting to the card and then
-            pass the appropriate fields for that card type. For more information
-            about the settings you can pass to each card type, see the
-            documentation for that card.
-          </Description>
-          <Primary />
-          <ArgTypes of={CardMeta} />
-          <Stories />
-        </>
-      ),
+      description: {
+        component: `The Feature Card component displays a card with a title, image, and optional link list.`,
+      },
     },
   },
 };
 
-export default CardMeta;
-
-export const FeatureCardDefault: StoryObj<typeof FeatureCard> = {
-  args: FeatureCardArgs,
-  name: "Default",
-  render: (args) => <FeatureCard {...args} />,
+const Default: StoryObj<FeatureCardProps> = {
+  args: {
+    title: "Can digital technology be an equality machine?",
+    eyebrow: "Podcast",
+    date: {
+      human: "20 September 2022",
+      unix: "1670389200",
+    },
+    theme: "light",
+    link: "https://www.ilo.org/",
+    image: "/large.jpg",
+    size: "narrow",
+    isVideo: false,
+    linklist: {
+      linkgroup: [
+        {
+          links: [
+            {
+              label: "Read More",
+              url: "https://www.ilo.org",
+            },
+          ],
+        },
+      ],
+    },
+  },
 };
+
+export default meta;
+export { Default };

@@ -1,60 +1,86 @@
-describe("Data card", () => {
-  it("renders the data card correctly", () => {
-    cy.visit("/admin/appearance/ui/patterns/datacard");
-    cy.getPreview("datacard")
-      .first()
-      .within(() => {
-        cy.contains("Flagship report");
-        cy.contains("Date of publication");
-        cy.contains("17 March 2022");
-        cy.contains("Files for download");
-        cy.contains("PDF 3.2 MB");
+import fixture from "../../fixtures/datacard.json";
 
-        cy.contains("Also available in");
-        cy.contains("English");
-        cy.contains("Español");
+const url = `/pattern-preview?id=datacard&fields=${encodeURI(
+  JSON.stringify(fixture)
+)}`;
 
-        cy.get("picture").within(() => {
-          cy.get("source").should("have.length", 1);
-          cy.get("source")
-            .should("have.attr", "srcset")
-            .and("include", "/images/publication.jpg");
-        });
-      });
+describe("Factlist card", () => {
+  beforeEach(() => {
+    cy.visit(url);
+    cy.get(".ilo--card__type__data").as("card");
   });
 
-  it("ensures all file buttons have a target property", () => {
-    cy.visit("/admin/appearance/ui/patterns/datacard");
-    cy.getPreview("datacard")
-      .first()
-      .within(() => {
-        cy.get(".ilo--card__type__data--content-files")
-          .find("a, button")
-          .each(($el) => {
-            cy.wrap($el).should("have.attr", "target");
-          });
-      });
+  it("should be the right size", () => {
+    cy.get("@card").should("have.class", `ilo--card__size__${fixture.size}`);
   });
 
-  it("Ensures file buttons have the correct target", () => {
-    cy.visit("/admin/appearance/ui/patterns/datacard");
-    cy.getPreview("datacard")
-      .first()
-      .within(() => {
-        cy.get(".ilo--card__type__data--content-files")
-          .find("a, button")
-          .eq(0) // First element
-          .should("have.attr", "target", "_blank");
+  it("should have the right number of columns", () => {
+    cy.get("@card").should(
+      "have.class",
+      `ilo--card__type__data__columns__${fixture.columns}`
+    );
+  });
 
-        cy.get(".ilo--card__type__data--content-files")
-          .find("a, button")
-          .eq(1) // Second element
-          .should("have.attr", "target", "_parent");
+  it("should display an image if provided", () => {
+    if (fixture.image) {
+      cy.get("@card").find(".ilo--card--image").should("exist");
+    } else {
+      cy.get("@card").find(".ilo--card--image").should("not.exist");
+    }
+  });
 
-        cy.get(".ilo--card__type__data--content-files")
-          .find("a, button")
-          .eq(2) // Third element
-          .should("have.attr", "target", "_self");
-      });
+  it("should display an eyebrow if provided", () => {
+    if (fixture.eyebrow) {
+      cy.get("@card")
+        .find(".ilo--card--eyebrow")
+        .should("exist")
+        .and("contain", fixture.eyebrow);
+    } else {
+      cy.get("@card").find(".ilo--card--eyebrow").should("not.exist");
+    }
+  });
+
+  it("should display the correct number of content items", () => {
+    if (fixture.dataset.content) {
+      cy.get("@card")
+        .find(".ilo--card--area--content")
+        .should("have.length", fixture.dataset.content.items.length);
+    }
+  });
+
+  it("should display the correct number of file links if provided", () => {
+    if (fixture.dataset.files) {
+      cy.get("@card")
+        .find(".ilo--card__type__data--content-files")
+        .find("a")
+        .should("have.length", fixture.dataset.files.items.length);
+    }
+  });
+
+  it("should display the correct number of generic links if provided", () => {
+    if (fixture.dataset.links) {
+      cy.get("@card")
+        .find(".ilo--card__type__data--content-links")
+        .find("a")
+        .should("have.length", fixture.dataset.links.items.length);
+    }
+  });
+
+  it("should display the correct number of CTA links if provided", () => {
+    if (fixture.dataset.cta) {
+      cy.get("@card")
+        .find(".ilo--card__type__data--content-cta")
+        .find("a")
+        .should("have.length", fixture.dataset.cta.items.length);
+    }
+  });
+
+  it("if the card has size narrow, it should only have one column", () => {
+    const narrowFixture = { ...fixture, size: "narrow" };
+    const narrowUrl = `/pattern-preview?id=datacard&fields=${encodeURI(
+      JSON.stringify(narrowFixture)
+    )}`;
+    cy.visit(narrowUrl);
+    cy.get("@card").should("have.class", "ilo--card__type__data__columns__one");
   });
 });

@@ -1,0 +1,77 @@
+@use "../tokens" as *;
+@use "../functions" as *;
+@import "../mixins";
+
+.ilo--language-toggle {
+  --ilo--language-toggle-color: var(--ilo-color-white);
+  --ilo--language-toggle-color-hover: var(--ilo-color-blue);
+  --ilo--language-toggle-bg: transparent;
+  --ilo--language-toggle-bg-hover: transparent;
+
+  &--dark {
+    --ilo--language-toggle-color: var(--ilo-color-blue-dark);
+    --ilo--language-toggle-color-hover: var(--ilo-color-white);
+  }
+
+  &:hover,
+  &--open {
+    --ilo--language-toggle-color: var(--ilo--language-toggle-color-hover);
+    --ilo--language-toggle-bg: var(--ilo--language-toggle-bg-hover);
+  }
+
+  &--container {
+    all: unset;
+    display: flex;
+    align-items: center;
+    gap: px-to-rem(4px);
+    cursor: pointer;
+    width: fit-content;
+    background-color: var(--ilo--language-toggle-bg);
+
+    &:hover {
+      background-color: var(--ilo--language-toggle-bg-hover);
+    }
+  }
+
+  &--icon {
+    display: block;
+    width: px-to-rem(24px);
+    height: px-to-rem(24px);
+    @include icon("globe", var(--ilo--language-toggle-color));
+  }
+
+  &--arrow {
+    display: block;
+    width: px-to-rem(24px);
+    height: px-to-rem(24px);
+    @include icon("chevron_down", var(--ilo--language-toggle-color));
+  }
+
+  &--action {
+    color: var(--ilo--language-toggle-color);
+
+    //move this when the new typography is ready ##896
+    font-weight: 700;
+    font-size: px-to-rem(14px);
+    line-height: 135%;
+    letter-spacing: -2%;
+  }
+
+  &--context-menu {
+    position: absolute;
+    margin-top: spacing(2);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition:
+      opacity 0.3s ease,
+      visibility 0.3s ease,
+      transform 0.3s ease;
+
+    &__open {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+  }
+}

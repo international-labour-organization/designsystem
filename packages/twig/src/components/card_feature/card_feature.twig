@@ -28,6 +28,7 @@
 			{% endif %}
 			{% if cta %}
 				{% include "@components/linklist/linklist.twig" with {
+					theme: theme,
           linkgroup: [{
             links: [cta]
           }],

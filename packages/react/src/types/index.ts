@@ -49,7 +49,10 @@ export type SocialTypes =
   | "linkedin"
   | "youtube"
   | "tiktok"
-  | "flickr";
+  | "flickr"
+  | "wechat"
+  | "weibo"
+  | "bluesky";
 export type CardColor = "turquoise" | "green" | "yellow" | "blue";
 export type CardSize = "wide" | "standard" | "narrow" | "fluid";
 export type CardCornerType = boolean;

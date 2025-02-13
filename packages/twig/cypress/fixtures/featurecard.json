@@ -1,0 +1,29 @@
+{
+  "cta": {
+    "label": "Read more",
+    "url": "https://www.ilo.org/",
+    "date": {
+      "human": "20 September 2022",
+      "unix": 1670389200
+    }
+  },
+  "eyebrow": "Podcast",
+  "image": {
+    "alt": "Image alt text",
+    "loading": "lazy",
+    "url": [
+      {
+        "breakpoint": "(min-width: 0px)",
+        "src": "/images/small.jpg"
+      }
+    ]
+  },
+  "link": "https://www.ilo.org/",
+  "title": "Title of the feature card",
+  "settings": {
+    "isvideo": false,
+    "size": "narrow",
+    "theme": "light",
+    "titleLevel": "h3"
+  }
+}

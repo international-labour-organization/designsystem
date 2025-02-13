@@ -8,11 +8,15 @@
   $transition-timing: 250ms;
   box-sizing: border-box;
   position: relative;
-  background-color: map-get($color, "base", "neutrals", "white");
+  background-color: var(--ilo-color-white);
 
   // Max width is set in the invididual card types unless fluid
   max-width: var(--max-width);
   flex: 1 1 var(--max-width);
+
+  * {
+    @include globaltransition("color, background-color, border-color, opacity");
+  }
 
   &__size__fluid {
     --max-width: 100% !important;
@@ -21,40 +25,42 @@
   &__action:hover,
   &__action:focus,
   &__action:focus-within {
-    background: $brand-ilo-white;
+    // background: var(--ilo-color-white);
     outline: none;
     text-decoration: none;
 
-    &#{$self}__dark {
-      background: $brand-ilo-white;
-    }
+    // &#{$self}__dark {
+    //   background: var(--ilo-color-white);
+    // }
 
     #{$self}--eyebrow,
     #{$self}--title,
     #{$self}--intro,
     #{$self}--date,
     #{$self}--date-extra {
-      color: $brand-ilo-blue;
+      color: var(--ilo-color-blue);
     }
   }
 
   &__theme {
     &__light {
-      background: $brand-ilo-white;
+      background: var(--ilo-color-white);
     }
 
     &__dark {
-      background: $brand-ilo-dark-blue;
-      transition: background $transition-timing ease-out;
+      background: var(--ilo-color-blue-dark);
 
       #{$self}--eyebrow,
       #{$self}--title,
       #{$self}--intro,
       #{$self}--date,
       #{$self}--eventdate {
-        color: $brand-ilo-grey-light;
-        transition: color $transition-timing ease-out;
+        color: var(--ilo-color-gray-light);
       }
+    }
+
+    &__soft {
+      background: var(--ilo-color-blue-lighter);
     }
   }
 
@@ -62,9 +68,8 @@
     #{$self}--image--wrapper {
       position: relative;
 
-      &::before {
-        @include dataurlicon("play", $brand-ilo-grey-light);
-        background-color: $brand-ilo-black;
+      &::before,
+      &::after {
         background-position: center;
         background-size: 18px 20px;
         background-repeat: no-repeat;
@@ -76,6 +81,14 @@
         top: 0;
         width: 40px;
         z-index: 1;
+      }
+
+      &::before {
+        background-color: var(--ilo-color-gray-charcoal);
+      }
+
+      &::after {
+        @include icon("caret_right", var(--ilo-color-gray-light));
       }
     }
   }
@@ -105,35 +118,31 @@
     top: 0;
     width: 100%;
     z-index: 2;
-    @include globaltransition("color, background-color, border-color, opacity");
 
     &:hover,
     &:focus,
     &:focus-within {
       outline: none;
-      @include globaltransition(
-        "color, background-color, border-color, opacity"
-      );
 
       + #{$self}--wrap {
         #{$self}--eyebrow {
-          color: $brand-ilo-blue;
+          color: var(--ilo-color-blue);
         }
 
         #{$self}--title {
-          color: $brand-ilo-blue;
+          color: var(--ilo-color-blue);
         }
 
         #{$self}--intro {
-          color: $brand-ilo-blue;
+          color: var(--ilo-color-blue);
         }
 
         #{$self}--date {
-          color: $brand-ilo-blue;
+          color: var(--ilo-color-blue);
         }
 
         #{$self}--eventdate {
-          color: $brand-ilo-blue;
+          color: var(--ilo-color-blue);
         }
       }
     }
@@ -147,18 +156,16 @@
     color: $brand-ilo-purple;
     @include font-styles("body-small");
     margin-bottom: spacing(3);
-    @include globaltransition("color");
 
     #{$self}--link:hover &,
     #{$self}--link:focus &,
     #{$self}--link:focus-within & {
-      color: $brand-ilo-blue;
-      @include globaltransition("color");
+      color: var(--ilo-color-blue);
     }
   }
 
   &--title {
-    color: $brand-ilo-dark-blue;
+    color: var(--ilo-color-blue-dark);
     font-family: var(--ilo-fonts-display);
     font-weight: 700;
     @include font-styles("headline-5");
@@ -170,27 +177,23 @@
       "body-small",
       "copy"
     );
-    @include globaltransition("color");
 
     #{$self}--link:hover &,
     #{$self}--link:focus &,
     #{$self}--link:focus-within & {
-      color: $brand-ilo-blue;
-      @include globaltransition("color");
+      color: var(--ilo-color-blue);
     }
   }
 
   &--intro {
-    color: $brand-ilo-black;
+    color: var(--ilo-color-gray-charcoal);
     @include font-styles("body-small");
-    @include globaltransition("color");
     margin-bottom: spacing(8);
 
     #{$self}--link:hover &,
     #{$self}--link:focus &,
     #{$self}--link:focus-within & {
-      color: $brand-ilo-blue;
-      @include globaltransition("color");
+      color: var(--ilo-color-blue);
     }
   }
 
@@ -198,13 +201,11 @@
     color: $brand-ilo-grey-accessible;
     @include font-styles("body-small");
     @include textmargin("margin-bottom", 30px, "body-small", "copy", 0, 0);
-    @include globaltransition("color");
 
     #{$self}--link:hover &,
     #{$self}--link:focus &,
     #{$self}--link:focus-within & {
-      color: $brand-ilo-blue;
-      @include globaltransition("color");
+      color: var(--ilo-color-blue);
     }
   }
 
