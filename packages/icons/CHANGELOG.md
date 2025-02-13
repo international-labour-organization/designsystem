@@ -1,5 +1,11 @@
 # @ilo-org/icons
 
+## 2.1.0
+
+### Minor Changes
+
+- 79857079d: Add icons for Bluesky, Weibo and WeChat
+
 ## 2.0.0
 
 ### Major Changes
