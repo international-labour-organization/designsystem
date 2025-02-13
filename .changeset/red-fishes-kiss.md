@@ -1,5 +1,6 @@
 ---
 "@ilo-org/react": minor
+"@ilo-org/styles": minor
 ---
 
-Implemented a new LanguageToggler component
+**LanguageToggler:** A new stand-alone component for setting languages
