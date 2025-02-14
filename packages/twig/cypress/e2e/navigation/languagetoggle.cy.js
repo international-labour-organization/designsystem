@@ -37,7 +37,7 @@ describe("Language Toggle", () => {
   it("has the correct theme applied", () => {
     cy.get("@languageToggle").should(
       "have.class",
-      `ilo--language-toggle--${fixture.settings.theme}`
+      `ilo--language-toggle__theme__${fixture.settings.theme}`
     );
   });
 
