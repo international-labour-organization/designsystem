@@ -1,0 +1,43 @@
+languagetoggle:
+  namespace: Components/Navigation
+  use: "@components/languagetoggle/languagetoggle.twig"
+  label: Language Toggle
+  description: The Language Toggle allows users to switch between different language versions of a website.
+  fields:
+    language:
+      label: Language
+      type: string
+      description: The current language selected
+      preview: English
+    links:
+      type: object
+      label: Links
+      description: The context menu item items.
+      preview:
+        - label: English
+          url: "http://www.ilo.org"
+        - label: français
+          url: "http://www.ilo.org/fr"
+        - label: español
+          url: "http://www.ilo.org/es"
+        - label: italiano
+          url: "http://www.ilo.org/it"
+  settings:
+    hideicon:
+      type: boolean
+      label: Hide Icon
+      description: Hides the icon
+      required: false
+      preview: false
+      default: false
+    theme:
+      type: select
+      label: Theme
+      description: Sets the Language Card to appear as either light or dark.
+      preview: "dark"
+      default: "light"
+      required: false
+      options:
+        dark: Dark
+        light: Light
+  visibility: storybook
