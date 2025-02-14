@@ -42,7 +42,8 @@ const LanguageToggle = forwardRef<HTMLDivElement, LanguageToggleProps>(
   ) => {
     const { prefix } = useGlobalSettings();
 
-    const [isCtxMenuOpen, setIsCtxMenuOpen] = useState(true);
+    // Context menu is hidden by default
+    const [isCtxMenuOpen, setIsCtxMenuOpen] = useState(false);
 
     const containerRef = useRef<HTMLButtonElement>(null);
     const contextMenuRef = useRef<HTMLDivElement>(null);
@@ -83,9 +84,14 @@ const LanguageToggle = forwardRef<HTMLDivElement, LanguageToggleProps>(
     return (
       <div
         ref={ref}
-        className={classNames(baseClass, className, `${baseClass}--${theme}`, {
-          [`${baseClass}--open`]: isCtxMenuOpen,
-        })}
+        className={classNames(
+          baseClass,
+          className,
+          `${baseClass}__theme__${theme}`,
+          {
+            [`${baseClass}__open`]: isCtxMenuOpen,
+          }
+        )}
         {...rest}
       >
         <button
@@ -94,6 +100,8 @@ const LanguageToggle = forwardRef<HTMLDivElement, LanguageToggleProps>(
           onClick={() => {
             setIsCtxMenuOpen(!isCtxMenuOpen);
           }}
+          aria-controls={`${baseClass}--context-menu`}
+          aria-expanded={isCtxMenuOpen}
         >
           {!hideIcon && <span className={`${baseClass}--icon`} />}
           <span className={`${baseClass}--action`}>{language}</span>
@@ -101,9 +109,12 @@ const LanguageToggle = forwardRef<HTMLDivElement, LanguageToggleProps>(
         </button>
         {options && (
           <div
+            role="menu"
+            id={`${baseClass}--context-menu`}
             className={classNames(`${baseClass}--context-menu`, {
               [`${baseClass}--context-menu__open`]: isCtxMenuOpen,
             })}
+            hidden={!isCtxMenuOpen}
             ref={contextMenuRef}
           >
             <ContextMenu links={options} />
