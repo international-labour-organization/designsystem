@@ -53,6 +53,7 @@
     width: px-to-rem(24px);
     height: px-to-rem(24px);
     @include icon("globe", var(--ilo--language-toggle-color));
+    margin-top: -3px;
   }
 
   &--arrow {
@@ -60,12 +61,14 @@
     width: px-to-rem(24px);
     height: px-to-rem(24px);
     @include icon("chevron_down", var(--ilo--language-toggle-color));
+    margin-top: -3px;
   }
 
   &--action {
     color: var(--ilo--language-toggle-color);
 
     //move this when the new typography is ready ##896
+    font-family: var(--ilo-fonts-display);
     font-weight: 700;
     font-size: px-to-rem(14px);
     line-height: 135%;
