@@ -2,7 +2,7 @@ import { useGlobalSettings } from "../../../hooks";
 import { MenuItem } from "../SubsiteNav";
 
 type CompactMenuListProps = {
-  menu: MenuItem[];
+  menu: (MenuItem & { marked?: boolean })[];
 };
 
 const CompactMenuList = ({ menu }: CompactMenuListProps) => {
@@ -17,6 +17,7 @@ const CompactMenuList = ({ menu }: CompactMenuListProps) => {
           <a href={item.handler as string} className={`${baseClass}__link`}>
             {item.label}
           </a>
+          {item.marked && <span className={`${baseClass}__marked`} />}
         </li>
       ))}
     </ul>

@@ -11,6 +11,7 @@
     padding: 13px spacing(2);
     display: flex;
     align-items: center;
+    justify-content: space-between;
     color: var(--ilo-color-blue-dark);
     border-bottom: 2px solid transparent;
 
@@ -25,5 +26,11 @@
     @include typography("highlight-medium");
     text-decoration: none;
     color: inherit;
+  }
+
+  &__marked {
+    width: px-to-rem(24px);
+    height: px-to-rem(24px);
+    @include icon("check", var(--ilo-color-blue-dark));
   }
 }

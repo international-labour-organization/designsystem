@@ -67,6 +67,28 @@
       text-decoration: none;
       color: var(--ilo-color-blue-dark);
     }
+
+    &-language {
+      @include typography("highlight-medium");
+      padding: spacing(4) 0;
+      width: 100%;
+      border: none;
+      display: flex;
+      justify-content: space-between;
+
+      &__label {
+        color: var(--ilo-color-blue-dark);
+      }
+
+      &__icon {
+        display: block;
+        width: px-to-rem(24px);
+        height: px-to-rem(24px);
+        margin-top: -3px;
+
+        @include icon("globe", var(--ilo-color-blue-dark));
+      }
+    }
   }
 
   &__more {

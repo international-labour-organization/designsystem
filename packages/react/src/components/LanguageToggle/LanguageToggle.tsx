@@ -11,7 +11,7 @@ import classNames from "classnames";
 import { ThemeTypes } from "../../types";
 import { ContextMenu, ContextMenuProps } from "../ContextMenu";
 
-export type LanguageToggleProps = HTMLAttributes<HTMLDivElement> & {
+export type LanguageToggleProps = {
   /**
    * The language string to display
    */
@@ -35,14 +35,16 @@ export type LanguageToggleProps = HTMLAttributes<HTMLDivElement> & {
   className?: string;
 };
 
-const LanguageToggle = forwardRef<HTMLDivElement, LanguageToggleProps>(
+const LanguageToggle = forwardRef<
+  HTMLDivElement,
+  HTMLAttributes<HTMLDivElement> & LanguageToggleProps
+>(
   (
     { className, language, theme = "light", hideIcon, options, ...rest },
     ref
   ) => {
     const { prefix } = useGlobalSettings();
 
-    // Context menu is hidden by default
     const [isCtxMenuOpen, setIsCtxMenuOpen] = useState(false);
 
     const containerRef = useRef<HTMLButtonElement>(null);

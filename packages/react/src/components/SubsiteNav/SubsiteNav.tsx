@@ -98,7 +98,12 @@ export type SubsiteNavProps = {
     /**
      * The language toggler pros
      */
-    language?: LanguageToggleProps;
+    language?: LanguageToggleProps & {
+      /**
+       * The label to display for the language toggle, used for mobile
+       */
+      label: string;
+    };
 
     /**
      * The search bar props

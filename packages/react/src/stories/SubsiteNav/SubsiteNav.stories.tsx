@@ -43,6 +43,7 @@ const Default: StoryObj<SubsiteNavProps> = {
             url: "https://ilo.org",
           },
         ],
+        label: "Language",
       },
       search: {
         type: "redirect",

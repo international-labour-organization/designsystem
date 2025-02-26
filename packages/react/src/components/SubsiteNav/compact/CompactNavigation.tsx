@@ -1,8 +1,9 @@
 import { useGlobalSettings } from "../../../hooks";
 import { SubsiteNavProps } from "..";
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import { CompactMenuList } from "./CompactMenuList";
 import { CompactDrawer } from "./CompactDrawer";
+import { CompactLanguageList } from "./CompactLanguageList";
 
 type CompactNavigationProps = {
   /**
@@ -30,10 +31,15 @@ const CompactNavigation = ({
   const { prefix } = useGlobalSettings();
 
   const [isMoreOpen, setIsMoreOpen] = useState(false);
-  const [isLanguageOpen] = useState(false);
+  const [isLanguageOpen, setIsLanguageOpen] = useState(false);
+
+  const closeNested = useCallback(() => {
+    setIsMoreOpen(false);
+    setIsLanguageOpen(false);
+  }, []);
 
   const baseClass = `${prefix}--nav-compact`;
-  // const isNested = isMoreOpen || isLanguageOpen;
+  const isNested = isMoreOpen || isLanguageOpen;
   const facadeItems = items.slice(0, 5);
   const moreItems = items.slice(5);
 
@@ -59,7 +65,7 @@ const CompactNavigation = ({
               <span className={`${baseClass}__widgets-search__label`}>
                 {widgets.search.label}
               </span>
-              <span className={`${baseClass}__widgets-search__icon`}></span>
+              <span className={`${baseClass}__widgets-search__icon`} />
             </a>
           )}
           {widgets?.link && (
@@ -69,6 +75,17 @@ const CompactNavigation = ({
             >
               {widgets.link.label}
             </a>
+          )}
+          {widgets?.language && (
+            <button
+              className={`${baseClass}__widgets-language`}
+              onClick={() => setIsLanguageOpen(true)}
+            >
+              <span className={`${baseClass}__widgets-language__label`}>
+                {widgets.language.label}: {widgets.language.language}
+              </span>
+              <span className={`${baseClass}__widgets-language__icon`} />
+            </button>
           )}
         </div>
       }
@@ -86,19 +103,28 @@ const CompactNavigation = ({
         header={
           <button
             className={`${baseClass}__nested__header`}
-            onClick={() => setIsMoreOpen(false)}
+            onClick={closeNested}
           >
             <span className={`${baseClass}__nested__header__icon`} />
             {labels.backToMenu}
           </button>
         }
         widgets={
-          <span className={`${baseClass}__nested__title`}>{labels.more}</span>
+          <span className={`${baseClass}__nested__title`}>
+            {isMoreOpen ? labels.more : widgets?.language?.label}
+          </span>
         }
-        isOpen={isMoreOpen}
-        onClose={() => setIsMoreOpen(false)}
+        isOpen={isNested}
+        onClose={closeNested}
       >
-        <CompactMenuList menu={moreItems} />
+        {isMoreOpen ? (
+          <CompactMenuList menu={moreItems} />
+        ) : (
+          <CompactLanguageList
+            selected={widgets?.language?.language || ""}
+            options={widgets?.language?.options}
+          />
+        )}
       </CompactDrawer>
     </CompactDrawer>
   );
