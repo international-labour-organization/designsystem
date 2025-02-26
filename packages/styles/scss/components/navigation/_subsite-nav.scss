@@ -54,10 +54,9 @@
 
     &-name {
       padding-inline-start: spacing(4);
-      font-weight: 700;
-      font-size: px-to-rem(16px); // ??
-      line-height: 125%;
       color: var(--ilo-color-white);
+      @include typography("heading-3");
+      font-size: px-to-rem(16px); //Designs have wrong config
     }
   }
 
@@ -79,11 +78,8 @@
     }
 
     &-link {
+      @include typography("highlight-medium");
       color: var(--ilo-color-white);
-      font-family: var(--ilo-fonts-display);
-      font-weight: 500;
-      line-height: 125%;
-      font-size: px-to-rem(16px);
       text-decoration: none;
       position: relative;
       padding-bottom: 2px;
@@ -121,14 +117,12 @@
       cursor: pointer;
       display: flex;
       gap: spacing(1);
+      margin-top: -3px;
       justify-content: center;
       align-items: center;
       padding: spacing(2) spacing(4) spacing(1);
       color: var(--ilo-color-white);
-      font-family: var(--ilo-fonts-display);
-      font-weight: 500;
-      line-height: 125%;
-      font-size: px-to-rem(16px);
+      @include typography("highlight-medium-bold");
 
       &-icon {
         width: px-to-rem(20px);
@@ -196,12 +190,9 @@
     }
 
     &-link {
+      @include typography("highlight-small-bold");
       height: 100%;
       text-decoration: none;
-      font-family: var(--ilo-fonts-display);
-      font-weight: 700;
-      font-size: px-to-rem(14px);
-      line-height: 135%;
       color: var(--ilo-color-blue-dark);
       display: flex;
       align-items: center;

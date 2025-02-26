@@ -22,9 +22,7 @@
   }
 
   &__link {
-    font-family: var(--ilo-fonts-display);
-    font-weight: 500;
-    line-height: 135%;
+    @include typography("highlight-medium");
     text-decoration: none;
     color: inherit;
   }

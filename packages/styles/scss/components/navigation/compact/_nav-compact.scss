@@ -30,7 +30,7 @@
   &__name {
     padding-inline-start: spacing(4);
     font-weight: 700;
-    font-size: px-to-rem(16px);
+    font-size: px-to-rem(13);
     line-height: 125%;
     color: var(--ilo-color-blue-dark);
   }
@@ -45,9 +45,7 @@
       cursor: pointer;
 
       &__label {
-        font-family: var(--ilo-fonts-display);
-        font-weight: 500;
-        line-height: 135%;
+        @include typography("highlight-medium");
         color: var(--ilo-color-blue-dark);
       }
 
@@ -62,13 +60,11 @@
     }
 
     &-link {
+      @include typography("highlight-medium");
       padding: spacing(4) 0;
       width: 100%;
       display: block;
       text-decoration: none;
-      font-family: var(--ilo-fonts-display);
-      font-weight: 500;
-      line-height: 135%;
       color: var(--ilo-color-blue-dark);
     }
   }
@@ -82,9 +78,7 @@
     justify-content: space-between;
     color: var(--ilo-color-blue-dark);
     border-bottom: 2px solid transparent;
-    font-family: var(--ilo-fonts-display);
-    font-weight: 500;
-    line-height: 135%;
+    @include typography("highlight-medium");
 
     &:hover {
       background-color: var(--ilo-color-blue-lighter);
@@ -125,9 +119,7 @@
       align-items: center;
       color: var(--ilo-color-blue-dark);
       border-bottom: 2px solid transparent;
-      font-family: var(--ilo-fonts-display);
-      font-weight: 500;
-      line-height: 135%;
+      @include typography("highlight-medium");
 
       &:hover {
         --ilo-nav_compact-close_icon-color: var(--ilo-color-blue);
@@ -138,9 +130,7 @@
     }
 
     &__title {
-      font-family: var(--ilo-fonts-display);
-      font-weight: 700;
-      line-height: 135%;
+      @include typography("heading-4", true);
       color: var(--ilo-color-gray-charcoal);
     }
   }

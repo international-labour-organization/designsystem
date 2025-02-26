@@ -13,15 +13,12 @@
   }
 
   &__item {
+    @include typography("highlight-medium");
     width: px-to-rem(280px);
     padding: spacing(4) spacing(2);
     text-decoration: none;
     text-overflow: ellipsis;
     color: var(--ilo-color-blue-dark);
-    font-family: var(--ilo-fonts-display);
-    font-weight: 500;
-    font-size: px-to-rem(16px);
-    line-height: 135%;
     transition:
       color 0.3s ease,
       background-color 0.3s ease;
