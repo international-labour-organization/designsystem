@@ -5,7 +5,7 @@
 <ul class="ilo--tags"">
   {% for item in items %}
   <li class="ilo--tag--item">
-    {% include "@components/tags/tag.twig" with {
+    {% include "@components/tag/tag.twig" with {
       content: item.content,
       elementId: item.elementId,
       prefix: prefix,
