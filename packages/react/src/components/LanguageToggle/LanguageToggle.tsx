@@ -46,7 +46,7 @@ const LanguageToggle = forwardRef<HTMLDivElement, LanguageToggleProps>(
     const [isCtxMenuOpen, setIsCtxMenuOpen] = useState(false);
 
     const containerRef = useRef<HTMLButtonElement>(null);
-    const contextMenuRef = useRef<HTMLDivElement>(null);
+    const contextMenuRef = useRef<HTMLOListElement>(null);
 
     const baseClass = `${prefix}--language-toggle`;
 
@@ -108,17 +108,14 @@ const LanguageToggle = forwardRef<HTMLDivElement, LanguageToggleProps>(
           <span className={`${baseClass}--arrow`} />
         </button>
         {options && (
-          <div
-            role="menu"
-            id={`${baseClass}--context-menu`}
+          <ContextMenu
+            withPortal={true}
+            ref={contextMenuRef}
+            links={options}
             className={classNames(`${baseClass}--context-menu`, {
               [`${baseClass}--context-menu__open`]: isCtxMenuOpen,
             })}
-            hidden={!isCtxMenuOpen}
-            ref={contextMenuRef}
-          >
-            <ContextMenu links={options} />
-          </div>
+          />
         )}
       </div>
     );
