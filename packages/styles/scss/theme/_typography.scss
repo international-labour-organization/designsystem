@@ -1,0 +1,53 @@
+:root {
+  // Display Font Families
+  --ilo-fonts-display: Overpass, Noto Sans, sans-serif;
+
+  // Chinese and Japanese system fonts
+  --ilo-fonts-display-zh: PingFang SC, Microsoft YaHei, 微软雅黑, sans-serif;
+  --ilo-fonts-display-jp: Noto Sans CJK JP, Yu Gothic, Hiragino Sans,
+    TakaoPGothic, sans-serif;
+
+  // Copy font families
+  --ilo-fonts-copy: Noto Sans, sans-serif;
+
+  // Chinese and Japanese system fonts
+  --ilo-fonts-copy-zh: PingFang SC, Microsoft YaHei, 微软雅黑, sans-serif;
+  --ilo-fonts-copy-jp: Noto Sans CJK JP, Yu Gothic, Hiragino Sans, TakaoPGothic,
+    sans-serif;
+
+  --ilo-fonts-monospace: monospace;
+  --ilo-line-height: 1.46;
+
+  // Font Sizes
+  --ilo-font-size-2xsm: px-to-rem(10px);
+  --ilo-font-size-xsm: px-to-rem(12px);
+  --ilo-font-size-sm: px-to-rem(14px);
+  --ilo-font-size-md: px-to-rem(16px);
+  --ilo-font-size-lg: px-to-rem(18px);
+  --ilo-font-size-xlg: px-to-rem(24px);
+  --ilo-font-size-2xlg: px-to-rem(28px);
+  --ilo-font-size-3xlg: px-to-rem(32px);
+  --ilo-font-size-4xlg: px-to-rem(36px);
+  --ilo-font-size-5xlg: px-to-rem(44px);
+
+  // Font Weight
+  --ilo-font-weight-light: 300;
+  --ilo-font-weight-regular: 400;
+  --ilo-font-weight-medium: 500;
+  --ilo-font-weight-bold: 700;
+
+  // Line Height
+  --ilo-line-height-xsm: 1.15;
+  --ilo-line-height-sm: 1.2;
+  --ilo-line-height-md: 1.25;
+  --ilo-line-height-lg: 1.3;
+  --ilo-line-height-xlg: 1.35;
+  --ilo-line-height-2xlg: 1.45;
+  --ilo-line-height-3xlg: 1.5;
+
+  // Letter Spacing
+  --ilo-letter-spacing-xsm: -3.5%;
+  --ilo-letter-spacing-sm: -2%;
+  --ilo-letter-spacing-md: 0;
+  --ilo-letter-spacing-lg: 2%;
+}
