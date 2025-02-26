@@ -1,6 +1,7 @@
-import { forwardRef } from "react";
+import { forwardRef, useId } from "react";
 import classNames from "classnames";
 import useGlobalSettings from "../../hooks/useGlobalSettings";
+import { createPortal } from "react-dom";
 
 export type LinkProps = {
   /**
@@ -31,15 +32,22 @@ export type ContextMenuProps = {
    * Specify the links to be displayed in the Context Menu
    */
   links: Array<LinkProps>;
+
+  /**
+   * Specify whether the Context Menu should be rendered in a portal
+   */
+  withPortal?: boolean;
 };
 
 const ContextMenu = forwardRef<HTMLOListElement, ContextMenuProps>(
-  ({ className, links }, ref) => {
+  ({ className, links, withPortal = false }, ref) => {
     const { prefix } = useGlobalSettings();
+    const id = useId();
 
-    return (
+    const Component = (
       <ol
         className={classNames(`${prefix}--context-menu`, className)}
+        id={`${prefix}--context-menu-${id}`}
         ref={ref}
       >
         {links.map((link) => (
@@ -59,6 +67,12 @@ const ContextMenu = forwardRef<HTMLOListElement, ContextMenuProps>(
         ))}
       </ol>
     );
+
+    if (!withPortal) {
+      return Component;
+    }
+
+    return createPortal(Component, document.body);
   }
 );
 
