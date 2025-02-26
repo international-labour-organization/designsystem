@@ -2,7 +2,7 @@ tags:
   namespace: Components/User Interface
   use: "@components/tags/tags.twig"
   label: Tags
-  description: A group of tags
+  description: A group of tags that can function as buttons, anchor links, or static display labels.
   fields:
     items:
       type: object
@@ -10,23 +10,30 @@ tags:
       description: An array of tag data to implement a Tag component
       required: true
       preview:
-        - content: content 1
+        - content: Apprenticeships
           elementId: tag1
-          defaultActive: true
-          url: https://www.google.com/
-        - content: content 2
+          url: https://www.ilo.org/
+          disabled: false
+        - content: Artificial Intelligence
           elementId: tag2
-          defaultActive: true
-          url: https://www.google.com/
-        - content: content 3
+          url: https://www.ilo.org/
+          disabled: false
+        - content: Care economy
           elementId: tag3
-          defaultActive: false
+          disabled: false
+        - content: Child labour
+          elementId: tag4
+          disabled: true
+        - content: Cooperatives
+          elementId: tag4
+          disabled: true
   settings:
-    allowMultipleActive:
+    showIcon:
       type: boolean
-      label: Allow Multiple Active
-      description: Allow multiple tag items to be active at once.
-      preview: true
+      label: showicon
+      description: Optionally shows a `close` icon. Useful if the icon is removed by clicking on it. The position of the icon is set by the `rtl` attribute of the parent or page.
+      preview: false
+      default: false
       required: false
     tagType:
       type: select
@@ -38,5 +45,6 @@ tags:
         display: Display
         reset: Reset
       preview: display
+      default: display
       required: true
   visibility: storybook

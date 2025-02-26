@@ -1,15 +1,20 @@
-{#
-  TAGS COMPONENT
-#}
-<ul class="ilo--tags" data-loadcomponent="Tag" data-multipleactive="{{ allowMultipleActive|default(true) }}">
+{# tags.twig #}
+{% set tagType = tagType|default("display") %}
+{% set showIcon = showIcon|default(false) %}
+
+<ul class="ilo--tags"">
   {% for item in items %}
+  <li class="ilo--tag--item">
     {% include "@components/tags/tag.twig" with {
       content: item.content,
-      defaultActive: item.defaultActive,
-      id: item.elementId,
+      elementId: item.elementId,
       prefix: prefix,
       tagType: tagType,
+      showIcon: showIcon,
       url: item.url|default(null),
+      defaultActive: item.defaultActive,
+      disabled: item.disabled
     } only %}
   {% endfor %}
+  </li>
 </ul>
