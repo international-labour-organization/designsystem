@@ -41,4 +41,4 @@ export { Breadcrumb } from "./Breadcrumb";
 export { Tabs } from "./Tabs";
 export * from "./Cards";
 export * from "./LanguageToggle";
-export * from "./SubsiteNav";
+export * from "./Nav";

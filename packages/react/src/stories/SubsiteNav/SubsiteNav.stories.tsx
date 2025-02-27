@@ -1,5 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { SubsiteNav, SubsiteNavProps } from "../../components/SubsiteNav";
+import { SubsiteNav, SubsiteNavProps } from "../../components/Nav";
 
 const meta: Meta<typeof SubsiteNav> = {
   title: "Components/Navigation/SubsiteNav",
