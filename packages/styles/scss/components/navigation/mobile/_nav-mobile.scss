@@ -3,7 +3,7 @@
 @import "../../../mixins";
 @import "../../../config";
 
-.ilo--nav-compact {
+.ilo--nav-mobile {
   &__branding {
     display: flex;
     align-items: center;
@@ -119,7 +119,7 @@
   }
 
   &__nested {
-    .ilo--nav-compact-drawer__header {
+    .ilo--nav-mobile-drawer__header {
       padding-block: spacing(2);
     }
 
@@ -166,6 +166,6 @@
   }
 }
 
-.ilo--nav-compact-drawer.ilo--nav-compact__nested {
+.ilo--nav-mobile-drawer.ilo--nav-mobile__nested {
   z-index: 3;
 }

@@ -1,13 +1,13 @@
 import { useCallback, useState } from "react";
 
 import { useGlobalSettings } from "../../../hooks";
-import { CompactMenuList } from "./CompactMenuList";
-import { CompactDrawer } from "./CompactDrawer";
-import { CompactLanguageList } from "./CompactLanguageList";
+import { MobileMenuList } from "./MobileMenuList";
+import { MobileDrawer } from "./MobileDrawer";
+import { MobileLanguageList } from "./MobileLanguageList";
 import { NavigationLink } from "../NavigationLink";
 import { SubsiteNavCoreProps } from "../Navigation.props";
 
-type CompactNavigationProps = {
+type MobileNavigationProps = {
   /**
    * Whether the navigation is open or not
    */
@@ -21,7 +21,7 @@ type CompactNavigationProps = {
   navigationProps: Omit<SubsiteNavCoreProps, "type">;
 };
 
-const CompactNavigation = ({
+const MobileNavigation = ({
   isOpen,
   navigationProps: {
     branding,
@@ -29,7 +29,7 @@ const CompactNavigation = ({
     widgets,
   },
   onClose,
-}: CompactNavigationProps) => {
+}: MobileNavigationProps) => {
   const { prefix } = useGlobalSettings();
 
   const [isMoreOpen, setIsMoreOpen] = useState(false);
@@ -40,13 +40,13 @@ const CompactNavigation = ({
     setIsLanguageOpen(false);
   }, []);
 
-  const baseClass = `${prefix}--nav-compact`;
+  const baseClass = `${prefix}--nav-mobile`;
   const isNested = isMoreOpen || isLanguageOpen;
   const facadeItems = items.slice(0, 5);
   const moreItems = items.slice(5);
 
   return (
-    <CompactDrawer
+    <MobileDrawer
       isOpen={isOpen}
       onClose={onClose}
       header={
@@ -96,7 +96,7 @@ const CompactNavigation = ({
         </div>
       }
     >
-      <CompactMenuList menu={facadeItems} />
+      <MobileMenuList menu={facadeItems} />
       <button
         className={`${baseClass}__more`}
         onClick={() => setIsMoreOpen(true)}
@@ -107,7 +107,7 @@ const CompactNavigation = ({
         {labels.more}
         <span className={`${baseClass}__more__icon`} />
       </button>
-      <CompactDrawer
+      <MobileDrawer
         className={`${baseClass}__nested`}
         header={
           <button
@@ -129,17 +129,17 @@ const CompactNavigation = ({
         aria-modal="true"
       >
         {isMoreOpen ? (
-          <CompactMenuList menu={moreItems} id="more-items" />
+          <MobileMenuList menu={moreItems} id="more-items" />
         ) : (
-          <CompactLanguageList
+          <MobileLanguageList
             selected={widgets?.language?.language || ""}
             options={widgets?.language?.options}
             id="language-list"
           />
         )}
-      </CompactDrawer>
-    </CompactDrawer>
+      </MobileDrawer>
+    </MobileDrawer>
   );
 };
 
-export { CompactNavigation };
+export { MobileNavigation };

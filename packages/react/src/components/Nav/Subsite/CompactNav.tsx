@@ -1,17 +1,11 @@
-import {
-  forwardRef,
-  useEffect,
-  useImperativeHandle,
-  useRef,
-  useState,
-} from "react";
+import { forwardRef, useImperativeHandle, useRef, useState } from "react";
+import classNames from "classnames";
 
 import { useBreakpoint, useGlobalSettings } from "../../../hooks";
-import classNames from "classnames";
 import { NavigationDropdown } from "../NavigationDropdown";
 import { NavigationMenuGrid } from "../NavigationMenuGrid";
 import { LanguageToggle } from "../../LanguageToggle";
-import { CompactNavigation } from "../compact/CompactNavigation";
+import { MobileNavigation } from "../mobile/MobileNavigation";
 import { CompactNavProps } from "../Navigation.props";
 import { NavigationLink } from "../NavigationLink";
 
@@ -34,13 +28,6 @@ const CompactNav = forwardRef<HTMLElement, CompactNavProps>(
     const headerRef = useRef<HTMLElement>(null);
 
     useImperativeHandle(ref, () => headerRef.current as HTMLElement);
-
-    useEffect(() => {
-      const target = document.querySelector<HTMLDivElement>(
-        `#ilo--language-toggle--context-menu`
-      );
-      if (!target) return;
-    }, []);
 
     const baseClass = `${prefix}--subsite-nav-compact`;
 
@@ -142,7 +129,7 @@ const CompactNav = forwardRef<HTMLElement, CompactNavProps>(
         <NavigationDropdown isOpen={isMoreOpen} navRef={headerRef}>
           <NavigationMenuGrid menu={moreItems} />
         </NavigationDropdown>
-        <CompactNavigation
+        <MobileNavigation
           isOpen={isCompactOpen}
           onClose={() => {
             setIsCompactOpen(false);

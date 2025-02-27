@@ -3,7 +3,7 @@ import { useGlobalSettings } from "../../../hooks";
 import { createPortal } from "react-dom";
 import classNames from "classnames";
 
-type CompactDrawerProps = {
+type MobileDrawerProps = {
   /**
    * Whether the drawer is open or not
    */
@@ -32,18 +32,18 @@ type CompactDrawerProps = {
   className?: string;
 };
 
-const CompactDrawer = ({
+const MobileDrawer = ({
   isOpen,
   onClose,
   header,
   widgets,
   children,
   className,
-}: CompactDrawerProps) => {
+}: MobileDrawerProps) => {
   const { prefix } = useGlobalSettings();
   const id = useId();
 
-  const baseClass = `${prefix}--nav-compact-drawer`;
+  const baseClass = `${prefix}--nav-mobile-drawer`;
 
   return createPortal(
     <div
@@ -71,4 +71,4 @@ const CompactDrawer = ({
   );
 };
 
-export { CompactDrawer };
+export { MobileDrawer };
