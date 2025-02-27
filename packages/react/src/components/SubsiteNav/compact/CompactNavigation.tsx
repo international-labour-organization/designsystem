@@ -1,6 +1,7 @@
+import { useCallback, useState } from "react";
+
 import { useGlobalSettings } from "../../../hooks";
 import { SubsiteNavProps } from "..";
-import { useCallback, useState } from "react";
 import { CompactMenuList } from "./CompactMenuList";
 import { CompactDrawer } from "./CompactDrawer";
 import { CompactLanguageList } from "./CompactLanguageList";
@@ -61,6 +62,7 @@ const CompactNavigation = ({
             <a
               className={`${baseClass}__widgets-search`}
               href={widgets.search.url}
+              aria-label="Search"
             >
               <span className={`${baseClass}__widgets-search__label`}>
                 {widgets.search.label}
@@ -72,6 +74,7 @@ const CompactNavigation = ({
             <a
               className={`${baseClass}__widgets-link`}
               href={widgets.link.handler as string}
+              aria-label={widgets.link.label}
             >
               {widgets.link.label}
             </a>
@@ -80,6 +83,9 @@ const CompactNavigation = ({
             <button
               className={`${baseClass}__widgets-language`}
               onClick={() => setIsLanguageOpen(true)}
+              aria-expanded={isLanguageOpen}
+              aria-controls="language-list"
+              aria-label="Select language"
             >
               <span className={`${baseClass}__widgets-language__label`}>
                 {widgets.language.label}: {widgets.language.language}
@@ -94,6 +100,9 @@ const CompactNavigation = ({
       <button
         className={`${baseClass}__more`}
         onClick={() => setIsMoreOpen(true)}
+        aria-expanded={isMoreOpen}
+        aria-controls="more-items"
+        aria-label="More items"
       >
         {labels.more}
         <span className={`${baseClass}__more__icon`} />
@@ -104,6 +113,7 @@ const CompactNavigation = ({
           <button
             className={`${baseClass}__nested__header`}
             onClick={closeNested}
+            aria-label="Back to menu"
           >
             <span className={`${baseClass}__nested__header__icon`} />
             {labels.backToMenu}
@@ -116,13 +126,15 @@ const CompactNavigation = ({
         }
         isOpen={isNested}
         onClose={closeNested}
+        aria-modal="true"
       >
         {isMoreOpen ? (
-          <CompactMenuList menu={moreItems} />
+          <CompactMenuList menu={moreItems} id="more-items" />
         ) : (
           <CompactLanguageList
             selected={widgets?.language?.language || ""}
             options={widgets?.language?.options}
+            id="language-list"
           />
         )}
       </CompactDrawer>

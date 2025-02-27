@@ -184,6 +184,8 @@ const SubsiteNav = forwardRef<HTMLElement, SubsiteNavProps>(
                   [`${baseClass}__menu-more`]: true,
                   [`${baseClass}__menu-more--open`]: isMoreOpen,
                 })}
+                aria-expanded={isMoreOpen}
+                aria-haspopup="menu"
               >
                 {labels.more}
                 <span className={`${baseClass}__menu-more-icon`}></span>
@@ -217,6 +219,7 @@ const SubsiteNav = forwardRef<HTMLElement, SubsiteNavProps>(
                   <a
                     href={widgets.search.url}
                     className={`${baseClass}__widget-bar-search`}
+                    aria-label={widgets.search.label}
                   >
                     {widgets.search.label}
                   </a>
@@ -227,6 +230,7 @@ const SubsiteNav = forwardRef<HTMLElement, SubsiteNavProps>(
           <button
             className={`${baseClass}__burger`}
             aria-label="Toggle navigation"
+            aria-expanded={isCompactOpen}
             onClick={() => setIsCompactOpen(!isCompactOpen)}
           >
             <span className={`${baseClass}__burger-icon`}></span>

@@ -2,7 +2,6 @@ import { useRef, memo, useEffect, RefObject } from "react";
 import { createPortal } from "react-dom";
 import { useGlobalSettings } from "../../hooks";
 import classNames from "classnames";
-import React from "react";
 
 type NavigationDropdownProps = {
   /**

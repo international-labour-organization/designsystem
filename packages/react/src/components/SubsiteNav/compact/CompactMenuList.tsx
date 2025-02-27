@@ -1,3 +1,4 @@
+import { HTMLAttributes } from "react";
 import { useGlobalSettings } from "../../../hooks";
 import { MenuItem } from "../SubsiteNav";
 
@@ -5,7 +6,9 @@ type CompactMenuListProps = {
   menu: (MenuItem & { marked?: boolean })[];
 };
 
-const CompactMenuList = ({ menu }: CompactMenuListProps) => {
+const CompactMenuList = ({
+  menu,
+}: HTMLAttributes<HTMLUListElement> & CompactMenuListProps) => {
   const { prefix } = useGlobalSettings();
 
   const baseClass = `${prefix}--nav-compact-menu`;

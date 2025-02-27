@@ -1,3 +1,4 @@
+import { HTMLAttributes } from "react";
 import { LanguageToggleProps } from "../../LanguageToggle";
 import { CompactMenuList } from "./CompactMenuList";
 
@@ -9,7 +10,7 @@ type CompactLanguageListProps = {
 const CompactLanguageList = ({
   options,
   selected,
-}: CompactLanguageListProps) => {
+}: HTMLAttributes<HTMLUListElement> & CompactLanguageListProps) => {
   const transformed =
     options?.map((option) => ({
       label: option.label,

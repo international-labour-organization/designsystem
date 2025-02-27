@@ -131,6 +131,13 @@
         margin-top: -3px;
 
         @include icon("chevron_left", var(--ilo-nav_compact-close_icon-color));
+
+        [dir="rtl"] & {
+          @include icon(
+            "chevron_right",
+            var(--ilo-nav_compact-close_icon-color)
+          );
+        }
       }
 
       padding-block: spacing(2);
