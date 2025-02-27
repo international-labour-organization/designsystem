@@ -3,7 +3,7 @@
 @import "../../mixins";
 @import "../../config";
 
-.ilo--subsite-nav {
+.ilo--subsite-nav-compact {
   position: relative;
   height: px-to-rem(70px);
   background-color: var(--ilo-color-blue);
@@ -206,11 +206,6 @@
     &-language {
       .ilo--language-toggle__theme__dark {
         --ilo--language-toggle-color-hover: var(--ilo-color-blue);
-
-        // TODO: remove after context menu becomes relative to body
-        #ilo--language-toggle--context-menu {
-          left: 0 !important;
-        }
       }
       position: relative;
       height: 100%;

@@ -1,107 +1,31 @@
 import {
   forwardRef,
-  ReactNode,
   useEffect,
   useImperativeHandle,
   useRef,
   useState,
 } from "react";
 
-import { useBreakpoint, useGlobalSettings } from "../../hooks";
+import { useBreakpoint, useGlobalSettings } from "../../../hooks";
 import classNames from "classnames";
-import { NavigationDropdown } from "./NavigationDropdown";
-import { NavigationMenuGrid } from "./NavigationMenuGrid";
-import { LanguageToggle, LanguageToggleProps } from "../LanguageToggle";
-import { CompactNavigation } from "./compact/CompactNavigation";
-import { NavigationLinkProps } from "./Navigation.props";
-import { NavigationLink } from "./NavigationLink";
+import { NavigationDropdown } from "../NavigationDropdown";
+import { NavigationMenuGrid } from "../NavigationMenuGrid";
+import { LanguageToggle } from "../../LanguageToggle";
+import { CompactNavigation } from "../compact/CompactNavigation";
+import { CompactNavProps } from "../Navigation.props";
+import { NavigationLink } from "../NavigationLink";
 
-export type SubsiteNavProps = {
-  /**
-   * The type of SubsiteNav to render
-   */
-  type?: "compact"; // | "complex";
-
-  branding: {
-    /**
-     * The branding to display in the SubsiteNav like a primary logo
-     */
-    logo: ReactNode;
-
-    /**
-     * The branding to display in the SubsiteNav like a secondary logo, if not provided, the primary logo will be used
-     */
-    compactLogo?: ReactNode;
-
-    /**
-     * The site or product name
-     */
-    name: string;
-
-    /**
-     * The handler to call when the branding is clicked
-     */
-    onClick?: () => void;
-  };
-
-  /**
-   * The menu configuration
-   */
-  menu: {
-    /**
-     * The navigation items to display
-     */
-    items: NavigationLinkProps[];
-
-    labels: {
-      /**
-       * The label to display for the more button
-       */
-      more?: string;
-
-      /**
-       * The label to display for the back to menu button
-       */
-      backToMenu?: string;
-    };
-  };
-
-  /**
-   * The widgets to display in the SubsiteNav
-   */
-  widgets?: {
-    /**
-     * The link inside the widget bar
-     */
-    link?: NavigationLinkProps;
-
-    /**
-     * The language toggler pros
-     */
-    language?: LanguageToggleProps & {
-      /**
-       * The label to display for the language toggle, used for mobile
-       */
-      label: string;
-    };
-
-    /**
-     * The search bar props
-     */
-    search?: {
-      type: "redirect"; // | "input";
-      url: string;
-
-      /**
-       * The label to display for the search bar
-       */
-      label?: string;
-    };
-  };
-};
-
-const SubsiteNav = forwardRef<HTMLElement, SubsiteNavProps>(
-  ({ branding, menu: { items, labels }, widgets }, ref) => {
+const CompactNav = forwardRef<HTMLElement, CompactNavProps>(
+  (
+    {
+      props: {
+        branding,
+        menu: { items, labels },
+        widgets,
+      },
+    },
+    ref
+  ) => {
     const { prefix } = useGlobalSettings();
     const { breakpoint } = useBreakpoint();
     const [isMoreOpen, setIsMoreOpen] = useState(false);
@@ -118,7 +42,7 @@ const SubsiteNav = forwardRef<HTMLElement, SubsiteNavProps>(
       if (!target) return;
     }, []);
 
-    const baseClass = `${prefix}--subsite-nav`;
+    const baseClass = `${prefix}--subsite-nav-compact`;
 
     const isAboveXL = ["xl", "xxl"].includes(breakpoint || "md");
     const sliceIndex = isAboveXL ? 4 : 2;
@@ -237,4 +161,4 @@ const SubsiteNav = forwardRef<HTMLElement, SubsiteNavProps>(
   }
 );
 
-export { SubsiteNav };
+export { CompactNav };

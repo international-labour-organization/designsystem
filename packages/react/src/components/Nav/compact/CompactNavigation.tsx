@@ -1,11 +1,11 @@
 import { useCallback, useState } from "react";
 
 import { useGlobalSettings } from "../../../hooks";
-import { SubsiteNavProps } from "..";
 import { CompactMenuList } from "./CompactMenuList";
 import { CompactDrawer } from "./CompactDrawer";
 import { CompactLanguageList } from "./CompactLanguageList";
 import { NavigationLink } from "../NavigationLink";
+import { SubsiteNavCoreProps } from "../Navigation.props";
 
 type CompactNavigationProps = {
   /**
@@ -18,7 +18,7 @@ type CompactNavigationProps = {
    */
   onClose?: () => void;
 
-  navigationProps: Omit<SubsiteNavProps, "type">;
+  navigationProps: Omit<SubsiteNavCoreProps, "type">;
 };
 
 const CompactNavigation = ({
