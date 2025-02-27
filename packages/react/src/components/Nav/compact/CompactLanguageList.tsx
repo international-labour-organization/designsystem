@@ -14,13 +14,10 @@ const CompactLanguageList = ({
   const transformed =
     options?.map((option) => ({
       label: option.label,
-      handler: option.url,
+      href: option.url,
     })) || [];
 
-  const menu = [
-    { label: selected, handler: "#", marked: true },
-    ...transformed,
-  ];
+  const menu = [{ label: selected, href: "#", isActive: true }, ...transformed];
 
   return <CompactMenuList menu={menu} />;
 };

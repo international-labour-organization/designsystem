@@ -1,9 +1,10 @@
 import { HTMLAttributes } from "react";
 import { useGlobalSettings } from "../../../hooks";
-import { MenuItem } from "../SubsiteNav";
+import { NavigationLinkProps } from "../Navigation.props";
+import { NavigationLink } from "../NavigationLink";
 
 type CompactMenuListProps = {
-  menu: (MenuItem & { marked?: boolean })[];
+  menu: NavigationLinkProps[];
 };
 
 const CompactMenuList = ({
@@ -17,10 +18,12 @@ const CompactMenuList = ({
     <ul className={`${baseClass}`}>
       {menu.map((item, index) => (
         <li key={index} className={`${baseClass}__item`}>
-          <a href={item.handler as string} className={`${baseClass}__link`}>
-            {item.label}
-          </a>
-          {item.marked && <span className={`${baseClass}__marked`} />}
+          <NavigationLink
+            label={item.label}
+            href={item.href as string}
+            className={`${baseClass}__link`}
+          />
+          {item.isActive && <span className={`${baseClass}__marked`} />}
         </li>
       ))}
     </ul>

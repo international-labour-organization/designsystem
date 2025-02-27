@@ -13,23 +13,8 @@ import { NavigationDropdown } from "./NavigationDropdown";
 import { NavigationMenuGrid } from "./NavigationMenuGrid";
 import { LanguageToggle, LanguageToggleProps } from "../LanguageToggle";
 import { CompactNavigation } from "./compact/CompactNavigation";
-
-export type MenuItem = {
-  /**
-   * The label to display for the item
-   */
-  label: string;
-
-  /**
-   * The handler, either a function to navigate to when the item is clicked or a url,
-   */
-  handler: (() => void) | string;
-
-  /**
-   * The class name to apply to the item
-   */
-  className?: string;
-};
+import { NavigationLinkProps } from "./Navigation.props";
+import { NavigationLink } from "./NavigationLink";
 
 export type SubsiteNavProps = {
   /**
@@ -66,12 +51,7 @@ export type SubsiteNavProps = {
     /**
      * The navigation items to display
      */
-    items: (MenuItem & {
-      /**
-       * Whether the item is currently active
-       */
-      isActive?: boolean;
-    })[];
+    items: NavigationLinkProps[];
 
     labels: {
       /**
@@ -93,7 +73,7 @@ export type SubsiteNavProps = {
     /**
      * The link inside the widget bar
      */
-    link?: MenuItem;
+    link?: NavigationLinkProps;
 
     /**
      * The language toggler pros
@@ -163,17 +143,18 @@ const SubsiteNav = forwardRef<HTMLElement, SubsiteNavProps>(
             </div>
             <ul className={`${baseClass}__menu`}>
               {facadeItems.map((item) => (
-                <li key={item.label} className={`${baseClass}__menu-item`}>
-                  <a
-                    href={item.handler as string}
+                <li
+                  key={item.label?.toString()}
+                  className={`${baseClass}__menu-item`}
+                >
+                  <NavigationLink
+                    {...item}
                     className={classNames({
                       [`${baseClass}__menu-link`]: true,
                       [`${baseClass}__menu-link--active`]: item.isActive,
                       [item.className || ""]: item.className,
                     })}
-                  >
-                    {item.label}
-                  </a>
+                  />
                 </li>
               ))}
             </ul>
@@ -197,12 +178,11 @@ const SubsiteNav = forwardRef<HTMLElement, SubsiteNavProps>(
               <span className={`${baseClass}__widget-bar-corner`}></span>
               <div className={`${baseClass}__widget-bar-content`}>
                 {widgets.link && (
-                  <a
+                  <NavigationLink
                     className={`${baseClass}__widget-bar-link`}
-                    href={widgets.link.handler as string}
-                  >
-                    {widgets.link.label}
-                  </a>
+                    href={widgets.link.href}
+                    label={widgets.link.label}
+                  />
                 )}
                 {widgets.language && (
                   <div className={`${baseClass}__widget-bar-language`}>
@@ -216,13 +196,12 @@ const SubsiteNav = forwardRef<HTMLElement, SubsiteNavProps>(
                   </div>
                 )}
                 {widgets.search && (
-                  <a
+                  <NavigationLink
                     href={widgets.search.url}
                     className={`${baseClass}__widget-bar-search`}
+                    label={widgets.search.label}
                     aria-label={widgets.search.label}
-                  >
-                    {widgets.search.label}
-                  </a>
+                  />
                 )}
               </div>
             </div>

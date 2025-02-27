@@ -5,6 +5,7 @@ import { SubsiteNavProps } from "..";
 import { CompactMenuList } from "./CompactMenuList";
 import { CompactDrawer } from "./CompactDrawer";
 import { CompactLanguageList } from "./CompactLanguageList";
+import { NavigationLink } from "../NavigationLink";
 
 type CompactNavigationProps = {
   /**
@@ -71,13 +72,12 @@ const CompactNavigation = ({
             </a>
           )}
           {widgets?.link && (
-            <a
+            <NavigationLink
               className={`${baseClass}__widgets-link`}
-              href={widgets.link.handler as string}
+              href={widgets.link.href}
               aria-label={widgets.link.label}
-            >
-              {widgets.link.label}
-            </a>
+              label={widgets.link.label}
+            />
           )}
           {widgets?.language && (
             <button

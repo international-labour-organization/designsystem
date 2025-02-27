@@ -1,8 +1,9 @@
 import { useGlobalSettings } from "../../hooks";
-import { MenuItem } from "./SubsiteNav";
+import { NavigationLinkProps } from "./Navigation.props";
+import { NavigationLink } from "./NavigationLink";
 
 type NavigationMenuGridProps = {
-  menu: MenuItem[];
+  menu: NavigationLinkProps[];
 };
 
 const NavigationMenuGrid = ({ menu }: NavigationMenuGridProps) => {
@@ -20,13 +21,12 @@ const NavigationMenuGrid = ({ menu }: NavigationMenuGridProps) => {
       {chunked.map((chunk, columnIndex) => (
         <div key={columnIndex} className={`${baseClass}__column`}>
           {chunk.map((item) => (
-            <a
-              key={item.label}
+            <NavigationLink
+              key={item.label?.toString()}
               className={`${baseClass}__item`}
-              href={item.handler as string}
-            >
-              {item.label}
-            </a>
+              href={item.href}
+              label={item.label}
+            />
           ))}
         </div>
       ))}
