@@ -71,6 +71,7 @@
     &-language {
       @include typography("highlight-medium");
       padding: spacing(4) 0;
+      cursor: pointer;
       width: 100%;
       border: none;
       display: flex;

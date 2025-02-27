@@ -126,7 +126,7 @@ const SubsiteNav = forwardRef<HTMLElement, SubsiteNavProps>(
     const moreItems = items.slice(sliceIndex);
 
     return (
-      <header ref={ref || headerRef} className={baseClass}>
+      <header ref={headerRef} className={baseClass}>
         <div className={`${baseClass}__container`}>
           <nav className={`${baseClass}__nav`}>
             <div

@@ -76,6 +76,7 @@
   }
 
   &--context-menu {
+    z-index: 5;
     position: absolute;
     margin-top: spacing(2);
     opacity: 0;
