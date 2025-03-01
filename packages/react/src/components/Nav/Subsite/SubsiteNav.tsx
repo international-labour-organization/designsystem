@@ -2,9 +2,10 @@ import { forwardRef } from "react";
 
 import { SubsiteNavProps } from "../Navigation.props";
 import { CompactNav } from "./CompactNav";
+import { ComplexNav } from "./ComplexNav";
 
 const ComponentMap = {
-  complex: CompactNav,
+  complex: ComplexNav,
   compact: CompactNav,
 };
 

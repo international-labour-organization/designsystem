@@ -1,0 +1,91 @@
+@use "../../tokens" as *;
+@use "../../functions" as *;
+@import "../../mixins";
+@import "../../config";
+
+.ilo--nav-menu {
+  display: flex;
+  align-items: center;
+  gap: spacing(12);
+
+  @include breakpoint("xl", true) {
+    gap: spacing(6);
+  }
+
+  &__list {
+    display: flex;
+    gap: spacing(12);
+    align-items: center;
+
+    @include breakpoint("xl", true) {
+      gap: spacing(6);
+    }
+  }
+
+  &__item {
+    display: flex;
+  }
+
+  &__link {
+    @include typography("highlight-medium");
+    color: var(--ilo-color-white);
+    text-decoration: none;
+    position: relative;
+    padding-bottom: 2px;
+    text-wrap: nowrap;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: var(--ilo-color-white);
+      transition: width 0.3s ease;
+    }
+
+    &--active,
+    &:hover,
+    &:focus,
+    &:active {
+      &::after {
+        width: 100%;
+      }
+    }
+  }
+
+  &__more {
+    @include breakpoint("lg", true) {
+      display: none;
+    }
+
+    --ilo-nav_menu-icon-color: var(--ilo-color-white);
+    border: 1px solid var(--ilo-color-white);
+    border-radius: var(--ilo-border-radius);
+    cursor: pointer;
+    display: flex;
+    gap: spacing(1);
+    margin-top: -3px;
+    justify-content: center;
+    align-items: center;
+    padding: spacing(2) spacing(4) spacing(1);
+    color: var(--ilo-color-white);
+    @include typography("highlight-medium-bold");
+
+    &-icon {
+      width: px-to-rem(20px);
+      height: px-to-rem(20px);
+      margin-top: -3px;
+      @include icon("plus", var(--ilo-nav_menu-icon-color));
+    }
+
+    &--open,
+    &:hover,
+    &:active {
+      --ilo-nav_menu-icon-color: var(--ilo-color-blue);
+      background-color: var(--ilo-color-blue-lighter);
+      color: var(--ilo-color-blue);
+    }
+  }
+}

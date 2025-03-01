@@ -25,7 +25,29 @@ const Compact: StoryObj<SubsiteNavProps> = {
 const Complex: StoryObj<SubsiteNavProps> = {
   args: {
     type: "complex",
-    props: SubsiteNavArgs,
+    props: {
+      ...SubsiteNavArgs,
+      branding: {
+        ...SubsiteNavArgs.branding,
+        logo: {
+          ...SubsiteNavArgs.branding.logo,
+          main: (
+            <img
+              src="/logo_en_horizontal_blue_dark.svg"
+              alt="Logo"
+              width={200}
+            />
+          ),
+          mobile: (
+            <img src="/logo_en_horizontal_white.svg" alt="Logo" width={105} />
+          ),
+        },
+        tag: {
+          main: "Advancing social justice, promoting decent work",
+          sub: "ILO is a specialized agency of the United Nations",
+        },
+      },
+    },
   },
 };
 

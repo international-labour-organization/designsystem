@@ -52,7 +52,7 @@ const MobileNavigation = ({
       header={
         <div className={`${baseClass}__branding`}>
           <div className={`${baseClass}__logo`}>
-            {branding.compactLogo || branding.logo}
+            {branding.logo.drawer || branding.logo.main}
           </div>
           <h3 className={`${baseClass}__name`}>{branding.name}</h3>
         </div>

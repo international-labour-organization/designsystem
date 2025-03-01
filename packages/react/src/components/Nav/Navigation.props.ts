@@ -18,44 +18,19 @@ export interface NavigationLinkProps {
   component?: ElementType;
 }
 
-enum SubsiteNavTypes {
-  Compact = "compact",
-  Complex = "complex",
-}
-
-interface SubsiteNavBranding {
-  /**
-   * The branding to display in the SubsiteNav like a primary logo
-   */
-  logo: ReactNode;
-
-  /**
-   * The branding to display in the SubsiteNav like a secondary logo, if not provided, the primary logo will be used
-   */
-  compactLogo?: ReactNode;
-
-  /**
-   * The site or product name
-   */
-  name: string;
-
-  /**
-   * The handler to call when the branding is clicked
-   */
-  onClick?: () => void;
-}
-
 export interface SubsiteNavCoreProps {
   branding: {
     /**
      * The branding to display in the SubsiteNav like a primary logo
      */
-    logo: ReactNode;
+    logo: {
+      main: ReactNode;
 
-    /**
-     * The branding to display in the SubsiteNav like a secondary logo, if not provided, the primary logo will be used
-     */
-    compactLogo?: ReactNode;
+      /**
+       * The logo to display in the drawer
+       */
+      drawer?: ReactNode;
+    };
 
     /**
      * The site or product name
@@ -140,8 +115,14 @@ export interface ComplexNavProps {
   type?: "complex";
 
   props: SubsiteNavCoreProps & {
-    menu: {
-      // The tagline
+    branding: {
+      logo: SubsiteNavCoreProps["branding"]["logo"] & {
+        /**
+         * The logo to display for the mobile screens
+         */
+        mobile?: ReactNode;
+      };
+      // The Tagline to display in the SubsiteNav
       tag?: {
         main: string;
         sub?: string;
