@@ -33,8 +33,7 @@ button:
       label: Icon
       description: Optional icon to include in button. See the `Icon` component for a full list of arguments
       preview:
-        name: "plus"
-        size: 24
+        name: "calendar"
       required: false
     className:
       type: string
