@@ -1,16 +1,16 @@
 import { HTMLAttributes } from "react";
 import { LanguageToggleProps } from "../../LanguageToggle";
-import { CompactMenuList } from "./CompactMenuList";
+import { MobileMenuList } from "./MobileMenuList";
 
-type CompactLanguageListProps = {
+type MobileLanguageListProps = {
   options: LanguageToggleProps["options"];
   selected: string;
 };
 
-const CompactLanguageList = ({
+const MobileLanguageList = ({
   options,
   selected,
-}: HTMLAttributes<HTMLUListElement> & CompactLanguageListProps) => {
+}: HTMLAttributes<HTMLUListElement> & MobileLanguageListProps) => {
   const transformed =
     options?.map((option) => ({
       label: option.label,
@@ -19,7 +19,7 @@ const CompactLanguageList = ({
 
   const menu = [{ label: selected, href: "#", isActive: true }, ...transformed];
 
-  return <CompactMenuList menu={menu} />;
+  return <MobileMenuList menu={menu} />;
 };
 
-export { CompactLanguageList };
+export { MobileLanguageList };

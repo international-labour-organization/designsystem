@@ -3,7 +3,7 @@
 @import "../../mixins";
 @import "../../config";
 
-.ilo--subsite-nav {
+.ilo--subsite-nav-compact {
   position: relative;
   height: px-to-rem(70px);
   background-color: var(--ilo-color-blue);
@@ -65,79 +65,8 @@
     align-items: center;
     gap: px-to-rem(48px);
 
-    @include breakpoint("xl", true) {
-      gap: px-to-rem(24px);
-    }
-
     @include breakpoint("lg", true) {
       display: none;
-    }
-
-    &-item {
-      display: flex;
-    }
-
-    &-link {
-      @include typography("highlight-medium");
-      color: var(--ilo-color-white);
-      text-decoration: none;
-      position: relative;
-      padding-bottom: 2px;
-      text-wrap: nowrap;
-
-      &::after {
-        content: "";
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 0;
-        height: 2px;
-        background-color: var(--ilo-color-white);
-        transition: width 0.3s ease;
-      }
-
-      &--active,
-      &:hover,
-      &:focus,
-      &:active {
-        &::after {
-          width: 100%;
-        }
-      }
-    }
-
-    &-more {
-      @include breakpoint("lg", true) {
-        display: none;
-      }
-
-      --ilo-subsite-nav-more-button-icon: var(--ilo-color-white);
-      border: 1px solid var(--ilo-color-white);
-      border-radius: var(--ilo-border-radius);
-      cursor: pointer;
-      display: flex;
-      gap: spacing(1);
-      margin-top: -3px;
-      justify-content: center;
-      align-items: center;
-      padding: spacing(2) spacing(4) spacing(1);
-      color: var(--ilo-color-white);
-      @include typography("highlight-medium-bold");
-
-      &-icon {
-        width: px-to-rem(20px);
-        height: px-to-rem(20px);
-        margin-top: -3px;
-        @include icon("plus", var(--ilo-subsite-nav-more-button-icon));
-      }
-
-      &--open,
-      &:hover,
-      &:active {
-        --ilo-subsite-nav-more-button-icon: var(--ilo-color-blue);
-        background-color: var(--ilo-color-white);
-        color: var(--ilo-color-blue);
-      }
     }
   }
 
@@ -206,11 +135,6 @@
     &-language {
       .ilo--language-toggle__theme__dark {
         --ilo--language-toggle-color-hover: var(--ilo-color-blue);
-
-        // TODO: remove after context menu becomes relative to body
-        #ilo--language-toggle--context-menu {
-          left: 0 !important;
-        }
       }
       position: relative;
       height: 100%;
@@ -235,6 +159,12 @@
   }
 
   &__burger {
+    display: none;
+
+    @include breakpoint("lg", true) {
+      display: flex;
+    }
+
     --ilo-subsite-nav-burger-icon: var(--ilo-color-white);
     margin-block: px-to-rem(20px);
     display: flex;

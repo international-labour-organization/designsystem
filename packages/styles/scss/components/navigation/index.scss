@@ -1,4 +1,6 @@
-@use "subsite-nav";
+@use "nav-menu";
+@use "nav-compact";
+@use "nav-complex";
 @use "nav-dropdown";
 @use "nav-grid";
-@use "compact";
+@use "mobile";

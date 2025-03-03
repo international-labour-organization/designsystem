@@ -3,16 +3,16 @@ import { useGlobalSettings } from "../../../hooks";
 import { NavigationLinkProps } from "../Navigation.props";
 import { NavigationLink } from "../NavigationLink";
 
-type CompactMenuListProps = {
+type MobileMenuListProps = {
   menu: NavigationLinkProps[];
 };
 
-const CompactMenuList = ({
+const MobileMenuList = ({
   menu,
-}: HTMLAttributes<HTMLUListElement> & CompactMenuListProps) => {
+}: HTMLAttributes<HTMLUListElement> & MobileMenuListProps) => {
   const { prefix } = useGlobalSettings();
 
-  const baseClass = `${prefix}--nav-compact-menu`;
+  const baseClass = `${prefix}--nav-mobile-menu`;
 
   return (
     <ul className={`${baseClass}`}>
@@ -30,4 +30,4 @@ const CompactMenuList = ({
   );
 };
 
-export { CompactMenuList };
+export { MobileMenuList };
