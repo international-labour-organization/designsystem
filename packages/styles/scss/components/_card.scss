@@ -9,44 +9,41 @@
   box-sizing: border-box;
   position: relative;
   background-color: var(--ilo-color-white);
-
-  // Max width is set in the invididual card types unless fluid
   max-width: var(--max-width);
   flex: 1 1 var(--max-width);
 
   * {
-    @include globaltransition("color, background-color, border-color, opacity");
+    @include globaltransition(
+      "color, background-color, border-color, opacity, fill"
+    );
   }
 
   &__size__fluid {
     --max-width: 100% !important;
   }
 
-  &__action:hover,
-  &__action:focus,
-  &__action:focus-within {
-    // background: var(--ilo-color-white);
-    outline: none;
-    text-decoration: none;
-
-    // &#{$self}__dark {
-    //   background: var(--ilo-color-white);
-    // }
-
-    #{$self}--eyebrow,
-    #{$self}--title,
-    #{$self}--intro,
-    #{$self}--date,
-    #{$self}--date-extra {
-      color: var(--ilo-color-blue);
+  // Action states: hover, focus, focus-within
+  &__action {
+    &:hover,
+    &:focus,
+    &:focus-within {
+      outline: none;
+      text-decoration: none;
+      #{$self}--eyebrow,
+      #{$self}--title,
+      #{$self}--intro,
+      #{$self}--date,
+      #{$self}--date-extra {
+        color: var(--ilo-color-blue);
+      }
     }
   }
 
+  // Themes
   &__theme {
     &__light {
       background: var(--ilo-color-white);
     }
-
     &__dark {
       background: var(--ilo-color-blue-dark);
 
@@ -57,36 +54,52 @@
       #{$self}--eventdate {
         color: var(--ilo-color-gray-light);
       }
-    }
 
+      #{$self}--link {
+        &:hover,
+        &:focus,
+        &:focus-within {
+          + #{$self}--wrap {
+            #{$self}--eyebrow,
+            #{$self}--title,
+            #{$self}--intro,
+            #{$self}--date,
+            #{$self}--eventdate,
+            #{$self}--content--item,
+            #{$self}--content--item .ilo--icon {
+              color: var(--ilo-color-gray-light);
+              fill: var(--ilo-color-gray-light);
+            }
+          }
+        }
+      }
+    }
     &__soft {
       background: var(--ilo-color-blue-lighter);
     }
   }
 
+  // Video style
   &__isvideo {
     #{$self}--image--wrapper {
       position: relative;
-
       &::before,
       &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 40px;
+        width: 40px;
+        z-index: 1;
         background-position: center;
         background-size: 18px 20px;
         background-repeat: no-repeat;
-        content: "";
-        display: block;
-        height: 40px;
-        left: 0;
-        position: absolute;
-        top: 0;
-        width: 40px;
-        z-index: 1;
       }
-
       &::before {
         background-color: var(--ilo-color-gray-charcoal);
       }
-
       &::after {
         @include icon("caret_right", var(--ilo-color-gray-light));
       }
@@ -100,7 +113,6 @@
   &--wrapper {
     max-width: var(--max-width);
     transition: filter $transition-timing ease-out;
-
     &:hover,
     &:focus,
     &:focus-within {
@@ -108,58 +120,47 @@
     }
   }
 
+  // Link overlay that triggers hover styles on siblings
   &--link {
     background: none;
     color: transparent;
-    height: 100%;
-    left: 0;
     position: absolute;
-    text-decoration: none;
     top: 0;
+    left: 0;
     width: 100%;
+    height: 100%;
+    text-decoration: none;
     z-index: 2;
-
     &:hover,
     &:focus,
     &:focus-within {
       outline: none;
-
       + #{$self}--wrap {
-        #{$self}--eyebrow {
+        #{$self}--eyebrow,
+        #{$self}--title,
+        #{$self}--intro,
+        #{$self}--date,
+        #{$self}--eventdate,
+        #{$self}--content--item,
+        #{$self}--content--item .ilo--icon {
           color: var(--ilo-color-blue);
-        }
-
-        #{$self}--title {
-          color: var(--ilo-color-blue);
-        }
-
-        #{$self}--intro {
-          color: var(--ilo-color-blue);
-        }
-
-        #{$self}--date {
-          color: var(--ilo-color-blue);
-        }
-
-        #{$self}--eventdate {
-          color: var(--ilo-color-blue);
+          fill: var(--ilo-color-blue);
         }
       }
     }
-
     &--text {
       @include isVisuallyHidden();
     }
   }
 
+  // Create a variable to hold the common link hover selector for typography elements
+  $link-hover: "#{$self}--link:hover &, #{$self}--link:focus &, #{$self}--link:focus-within &";
+
   &--eyebrow {
     color: $brand-ilo-purple;
     @include font-styles("body-small");
     margin-bottom: spacing(3);
-
-    #{$self}--link:hover &,
-    #{$self}--link:focus &,
-    #{$self}--link:focus-within & {
+    #{ $link-hover } {
       color: var(--ilo-color-blue);
     }
   }
@@ -177,10 +178,7 @@
       "body-small",
       "copy"
     );
-
-    #{$self}--link:hover &,
-    #{$self}--link:focus &,
-    #{$self}--link:focus-within & {
+    #{ $link-hover } {
       color: var(--ilo-color-blue);
     }
   }
@@ -189,10 +187,7 @@
     color: var(--ilo-color-gray-charcoal);
     @include font-styles("body-small");
     margin-bottom: spacing(8);
-
-    #{$self}--link:hover &,
-    #{$self}--link:focus &,
-    #{$self}--link:focus-within & {
+    #{ $link-hover } {
       color: var(--ilo-color-blue);
     }
   }
@@ -201,10 +196,7 @@
     color: $brand-ilo-grey-accessible;
     @include font-styles("body-small");
     @include textmargin("margin-bottom", 30px, "body-small", "copy", 0, 0);
-
-    #{$self}--link:hover &,
-    #{$self}--link:focus &,
-    #{$self}--link:focus-within & {
+    #{ $link-hover } {
       color: var(--ilo-color-blue);
     }
   }
@@ -215,8 +207,8 @@
   }
 
   &--picture {
-    max-width: 100%;
     width: 100%;
+    max-width: 100%;
   }
 
   &--cta {
