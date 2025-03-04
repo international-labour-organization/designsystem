@@ -10,67 +10,43 @@
     &__feature {
       --max-width: #{px-to-rem(412px)};
 
-      border-bottom: px-to-rem(3px) solid var(--ilo-color-gray-base);
       display: flex;
       margin-top: 0;
       position: relative;
 
-      &:hover,
-      &:focus,
-      &:focus-within {
-        .ilo--link-list {
-          &--label {
-            color: var(--ilo-color-blue) !important;
-          }
+      #{$self}--image--wrapper {
+        height: 0;
+        overflow: hidden;
+        padding-top: 56.25%;
+        width: 100%;
 
-          &--icon {
-            background-color: var(--ilo-color-blue);
-          }
+        img {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          height: auto;
+          width: 100%;
         }
       }
 
-      &#{$self}__theme__dark {
-        border-bottom: px-to-rem(3px) solid var(--ilo-color-red);
-
-        .ilo--link-list {
-          border-top: 2px solid var(--ilo-color-gray-light-semi-transparent);
-        }
+      #{$self}--content {
+        display: flex;
+        flex: 1 1 auto;
+        flex-direction: column;
+        padding: spacing(6) spacing(6) spacing(2) spacing(6);
       }
 
-      picture::before {
-        @include globaltransition("opacity");
+      #{$self}--eyebrow {
+        margin-bottom: spacing(4);
       }
 
-      &:hover,
-      &:focus,
-      &:focus-within {
-        background-color: var(--ilo-color-white);
-        border-bottom: px-to-rem(3px) solid var(--ilo-color-blue);
-        @include card-drop-shadow;
-
-        picture::before {
-          opacity: 0.4;
-          z-index: 1;
-          @include globaltransition("opacity");
-        }
-
-        #{$self}--picture {
-          filter: saturate(0);
-        }
+      #{$self}--title {
+        margin-bottom: spacing(6);
       }
 
-      .ilo--link-list {
-        border-top: px-to-rem(2px) solid var(--ilo-color-gray-light);
-        margin-left: px-to-rem(-24px);
-        margin-right: px-to-rem(-24px);
-        position: relative;
-        z-index: 2;
-
-        &--link,
-        &--link:hover {
-          border-bottom: none;
-          padding-inline: spacing(6) spacing(2);
-        }
+      #{$self}--date {
+        margin-bottom: spacing(8);
       }
 
       &#{$self}__size {
@@ -101,18 +77,22 @@
 
             #{$self}--content {
               display: flex;
-              flex-direction: row;
               flex-wrap: wrap;
               position: relative;
               width: 50%;
             }
 
             #{$self}--image--wrapper {
+              padding: 0;
+              height: initial;
               width: 50%;
             }
 
-            #{$self}--image {
+            img {
               object-fit: cover;
+              max-width: initial;
+              height: 100%;
+              width: 100%;
             }
 
             #{$self}--date {
@@ -142,66 +122,36 @@
         width: 100%;
       }
 
-      picture {
-        display: flex;
-        height: 100%;
-        position: relative;
-
-        &::before {
-          background-color: var(--ilo-color-blue);
-          content: "";
-          display: block;
-          height: 100%;
-          left: 0;
-          opacity: 0;
-          position: absolute;
-          top: 0;
-          transition: opacity 150ms ease-in-out;
-          width: 100%;
-          z-index: -1;
-        }
-
-        img {
-          object-fit: cover;
-        }
+      #{$self}--title {
+        @include font-styles("headline-5");
+        font-family: var(--ilo-fonts-display);
+        font-weight: 700;
       }
 
-      #{$self}--content {
-        display: flex;
-        flex: 1 1 auto;
-        flex-direction: column;
-        padding: spacing(6) spacing(6) spacing(2) spacing(6);
-      }
-
+      // Not sure what's going on down here...
       &#{$self}__linklist {
         #{$self}--content {
           padding-bottom: 0;
         }
       }
 
-      #{$self}--title {
-        @include font-styles("headline-5");
-        margin-bottom: spacing(6);
-        font-family: var(--ilo-fonts-display);
-        font-weight: 700;
-        flex: 1;
+      .ilo--link-list {
+        border-top: px-to-rem(2px) solid var(--ilo-color-gray-light);
+        margin: 0 px-to-rem(-24px);
+        position: relative;
+        z-index: 2;
+
+        &--link,
+        &--link:hover {
+          padding-inline: spacing(6) spacing(2);
+          border-bottom: none;
+        }
       }
 
-      #{$self}--eyebrow {
-        @include font-styles("body-eyebrow");
-        @include textmargin(
-          "margin-bottom",
-          10px,
-          "body-eyebrow",
-          "copy",
-          "headline-5",
-          "display"
-        );
-      }
-
-      #{$self}--date {
-        margin-bottom: spacing(8);
-        margin-top: auto;
+      &#{$self}__theme__dark {
+        .ilo--link-list {
+          border-top: 2px solid var(--ilo-color-gray-light-semi-transparent);
+        }
       }
     }
   }

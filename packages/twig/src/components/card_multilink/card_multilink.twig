@@ -5,7 +5,7 @@
 	{% set theme = "light" %}
 {% endif %}
 
-<div class="{{prefix}}--card {{prefix}}--card__theme__{{theme}} {{prefix}}--card__type__multilink {% if link|length > 0 %} {{prefix}}--card__action {% endif %} {{prefix}}--card__size__{{size}} {% if isvideo|boolval %} {{prefix}}--card__isvideo {% endif %} {% if linklist %} {{prefix}}--card__linklist {% endif %} {% if size == "wide" or size == "fluid" %} {{prefix}}--card__align__{{alignment}} {% endif %} {% if not image %} {{prefix}}--card--no-image {% endif %}">
+<div class="{{prefix}}--card {{prefix}}--card__theme__{{theme}} {{prefix}}--card__type__multilink {% if link|length > 0 %} {% endif %} {{prefix}}--card__size__{{size}} {% if isvideo|boolval %} {{prefix}}--card__isvideo {% endif %} {% if linklist %} {{prefix}}--card__linklist {% endif %} {% if size == "wide" or size == "fluid" %} {{prefix}}--card__align__{{alignment}} {% endif %} {% if not image %} {{prefix}}--card--no-image {% endif %}">
 	{% if link|length > 0 %}
 		<a class="{{prefix}}--card--link" href="{{link}}" title="{{title}}">
 			<span class="{{prefix}}--card--link--text">{{title}}</span>

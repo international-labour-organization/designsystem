@@ -131,6 +131,11 @@
         max-width: 200px;
       }
 
+      #{$self}--picture {
+        max-width: 100%;
+        width: 100%;
+      }
+
       &--content-label {
         @include font-styles("body-xs");
         @include textmargin(

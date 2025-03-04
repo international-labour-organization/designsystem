@@ -9,76 +9,10 @@
   &__type {
     &__score {
       --max-width: #{px-to-rem(412px)};
-      border-bottom: px-to-rem(3px) solid var(--ilo-color-gray-base);
+
       display: flex;
       margin-top: 0;
       position: relative;
-      @include globaltransition("border-bottom");
-
-      // Hover & Focus Styles
-      &:hover,
-      &:focus,
-      &:focus-within {
-        background-color: var(--ilo-color-white);
-        border-bottom: px-to-rem(3px) solid var(--ilo-color-blue);
-        @include card-drop-shadow;
-
-        #{$self}--image--wrapper {
-          &::before {
-            opacity: 0.4;
-          }
-        }
-
-        #{$self}--picture {
-          filter: saturate(0);
-        }
-      }
-
-      &#{$self}__theme__dark {
-        border-bottom: px-to-rem(3px) solid var(--ilo-color-red);
-
-        #{$self}--content--item {
-          color: var(--ilo-color-white);
-        }
-
-        &:hover,
-        &:focus,
-        &:focus-within {
-          background-color: var(--ilo-color-blue-dark);
-        }
-      }
-
-      // Image wrapper
-      #{$self}--image--wrapper {
-        background-color: var(--ilo-color-blue-lighter);
-        height: 0;
-        overflow: hidden;
-        padding-top: 56.25%;
-        position: relative;
-        margin-bottom: var(--standard-spacing);
-
-        &::before {
-          content: "";
-          position: absolute;
-          background-color: var(--ilo-color-blue);
-          height: 100%;
-          width: 100%;
-          z-index: 1;
-          top: 0;
-          left: 0;
-          opacity: 0;
-          @include globaltransition("opacity");
-        }
-      }
-
-      picture {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        height: auto;
-        width: 100%;
-      }
 
       // Content Layout
       #{$self}--wrap {
@@ -93,6 +27,23 @@
         flex-direction: column;
         padding: spacing(6) spacing(6) spacing(8) spacing(6);
         gap: spacing(6);
+        width: 100%;
+      }
+
+      #{$self}--image--wrapper {
+        height: 0;
+        overflow: hidden;
+        padding-top: 56.25%;
+        width: 100%;
+
+        img {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          height: auto;
+          width: 100%;
+        }
       }
 
       #{$self}--title {
@@ -102,7 +53,6 @@
       }
 
       #{$self}--eyebrow {
-        @include font-styles("body-eyebrow");
         margin: 0;
       }
 
@@ -121,12 +71,6 @@
       }
 
       #{$self}--content--item {
-        // Body small
-        font-weight: var(--ilo-font-weight-regular);
-        color: var(--ilo-color-gray-accessible);
-        font-size: var(--ilo-font-size-sm);
-        line-height: var(--ilo-line-height-xlg);
-        letter-spacing: var(--ilo-letter-spacing-md);
         display: flex;
         flex-flow: row nowrap;
         justify-content: flex-start;
@@ -134,20 +78,8 @@
         gap: spacing(2);
       }
 
-      // Sizing Modifiers
       &#{$self}__size {
-        &__narrow {
-          #{$self}--wrap {
-            display: flex;
-            flex-wrap: wrap;
-            width: 100%;
-          }
-
-          #{$self}--content,
-          #{$self}--image--wrapper {
-            width: 100%;
-          }
-        }
+        // narrow is the default
 
         &__wide,
         &__fluid {
@@ -168,11 +100,7 @@
               width: 50%;
             }
 
-            picture {
-              height: 100%;
-            }
-
-            #{$self}--picture {
+            img {
               object-fit: cover;
               max-width: initial;
               height: 100%;

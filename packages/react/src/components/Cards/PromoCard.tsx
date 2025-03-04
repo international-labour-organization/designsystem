@@ -90,7 +90,6 @@ const PromoCard = forwardRef<HTMLDivElement, PromoCardProps>(
       `${baseClass}--wrapper__type__promo__size__${size}`
     );
     const cardClasses = classNames(baseClass, `${baseClass}__type__promo`, {
-      [`${baseClass}__action`]: link,
       [`${baseClass}__size__${String(size)}`]: size,
       [`${baseClass}__theme__${theme}`]: theme,
       [`${baseClass}__cornercut`]: cornercut,

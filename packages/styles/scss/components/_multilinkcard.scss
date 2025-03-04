@@ -12,8 +12,18 @@
       --narrow-spacing: #{spacing(6)};
       // Defaults to standard size
       --max-width: #{px-to-rem(536px)};
-
       padding: spacing(6);
+
+      // Unset properties we set in the card component
+      border: unset;
+      &:has(
+          .ilo--card--link:hover,
+          .ilo--card--link:focus,
+          .ilo--card--link:focus-within
+        ) {
+        border: unset;
+        filter: unset;
+      }
 
       #{$self}--image--wrapper {
         display: none;
