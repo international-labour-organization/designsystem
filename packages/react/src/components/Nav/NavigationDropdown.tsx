@@ -1,4 +1,4 @@
-import { useRef, memo, useEffect, RefObject } from "react";
+import { useRef, memo, useEffect, RefObject, useCallback } from "react";
 import { createPortal } from "react-dom";
 import { useGlobalSettings } from "../../hooks";
 import classNames from "classnames";
@@ -34,22 +34,22 @@ const NavigationDropdownBare = ({
 
   const baseClass = `${prefix}--nav-dropdown`;
 
-  useEffect(() => {
-    function update() {
-      if (!wrapperRef?.current || !navRef?.current) {
-        return;
-      }
-      const navRect = navRef.current.getBoundingClientRect();
-      wrapperRef.current.style.top = `${navRect.bottom}px`;
-      wrapperRef.current.style.width = `${navRect.width}px`;
+  const updatePosition = useCallback(() => {
+    if (!wrapperRef?.current || !navRef?.current) {
+      return;
     }
+    const navRect = navRef.current.getBoundingClientRect();
+    wrapperRef.current.style.top = `${navRect.bottom}px`;
+    wrapperRef.current.style.width = `${navRect.width}px`;
+  }, [navRef]);
 
-    update();
+  useEffect(() => {
+    updatePosition();
 
-    window.addEventListener("resize", update);
+    window.addEventListener("resize", updatePosition);
 
     return () => {
-      window.removeEventListener("resize", update);
+      window.removeEventListener("resize", updatePosition);
     };
   }, [navRef]);
 
