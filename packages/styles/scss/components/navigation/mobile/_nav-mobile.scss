@@ -1,0 +1,171 @@
+@use "../../../tokens" as *;
+@use "../../../functions" as *;
+@import "../../../mixins";
+@import "../../../config";
+
+.ilo--nav-mobile {
+  &__branding {
+    display: flex;
+    align-items: center;
+    height: px-to-rem(38px);
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    padding-inline-end: spacing(4);
+    border-right: 1px solid var(--ilo-color-blue-dark);
+
+    [dir="rtl"] & {
+      padding-inline-start: spacing(4);
+      border-right: none;
+      border-left: 1px solid var(--ilo-color-blue-dark);
+    }
+
+    img {
+      height: 100%;
+    }
+  }
+
+  &__name {
+    padding-inline-start: spacing(4);
+    font-weight: 700;
+    font-size: px-to-rem(13);
+    line-height: 125%;
+    color: var(--ilo-color-blue-dark);
+  }
+
+  &__widgets {
+    &-search {
+      padding: spacing(4) 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      text-decoration: none;
+      cursor: pointer;
+
+      &__label {
+        @include typography("highlight-medium");
+        color: var(--ilo-color-blue-dark);
+      }
+
+      &__icon {
+        display: block;
+        width: px-to-rem(24px);
+        height: px-to-rem(24px);
+        margin-top: -3px;
+
+        @include icon("search", var(--ilo-color-blue-dark));
+      }
+    }
+
+    &-link {
+      @include typography("highlight-medium");
+      padding: spacing(4) 0;
+      width: 100%;
+      display: block;
+      text-decoration: none;
+      color: var(--ilo-color-blue-dark);
+    }
+
+    &-language {
+      @include typography("highlight-medium");
+      padding: spacing(4) 0;
+      cursor: pointer;
+      width: 100%;
+      border: none;
+      display: flex;
+      justify-content: space-between;
+
+      &__label {
+        color: var(--ilo-color-blue-dark);
+      }
+
+      &__icon {
+        display: block;
+        width: px-to-rem(24px);
+        height: px-to-rem(24px);
+        margin-top: -3px;
+
+        @include icon("globe", var(--ilo-color-blue-dark));
+      }
+    }
+  }
+
+  &__more {
+    width: 100%;
+    border: none;
+    padding: 13px spacing(2);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--ilo-color-blue-dark);
+    border-bottom: 2px solid transparent;
+    @include typography("highlight-medium");
+
+    &:hover {
+      background-color: var(--ilo-color-blue-lighter);
+      color: var(--ilo-color-blue);
+      border-bottom-color: var(--ilo-color-blue);
+    }
+
+    &__icon {
+      display: block;
+      width: px-to-rem(24px);
+      height: px-to-rem(24px);
+
+      @include icon("chevron_right", var(--ilo-color-blue-dark));
+    }
+  }
+
+  &__nested {
+    .ilo--nav-mobile-drawer__header {
+      padding-block: spacing(2);
+    }
+
+    &__header {
+      --ilo-nav_compact-close_icon-color: var(--ilo-color-blue-dark);
+      &__icon {
+        display: block;
+        width: px-to-rem(24px);
+        height: px-to-rem(24px);
+        margin-top: -3px;
+
+        @include icon("chevron_left", var(--ilo-nav_compact-close_icon-color));
+
+        [dir="rtl"] & {
+          @include icon(
+            "chevron_right",
+            var(--ilo-nav_compact-close_icon-color)
+          );
+        }
+      }
+
+      padding-block: spacing(2);
+      width: 100%;
+      border: none;
+      display: flex;
+      gap: spacing(2);
+      align-items: center;
+      color: var(--ilo-color-blue-dark);
+      border-bottom: 2px solid transparent;
+      @include typography("highlight-medium");
+
+      &:hover {
+        --ilo-nav_compact-close_icon-color: var(--ilo-color-blue);
+        background-color: var(--ilo-color-blue-lighter);
+        color: var(--ilo-color-blue);
+        border-bottom-color: var(--ilo-color-blue);
+      }
+    }
+
+    &__title {
+      @include typography("heading-4", true);
+      color: var(--ilo-color-gray-charcoal);
+    }
+  }
+}
+
+.ilo--nav-mobile-drawer.ilo--nav-mobile__nested {
+  z-index: 3;
+}

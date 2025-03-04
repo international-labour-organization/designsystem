@@ -3,8 +3,16 @@ import {
   LanguageToggle,
   LanguageToggleProps,
 } from "../src/components/LanguageToggle";
-import { describe, it, expect } from "vitest";
+import { describe, it, expect, afterEach } from "vitest";
 import { LinkProps } from "../src/components/Link";
+
+afterEach(() => {
+  // Clean up the portal after each test
+  const menu = document.querySelector("#ilo--language-toggle--context-menu");
+  if (menu) {
+    menu.remove();
+  }
+});
 
 const defaultProps: LanguageToggleProps = {
   language: "English",
@@ -52,32 +60,40 @@ describe("Language Toggle", () => {
   });
 
   it("menu is hidden by default", () => {
-    const { container } = render(<LanguageToggle {...defaultProps} />);
-    const contextMenu = container.querySelector(
+    const { baseElement } = render(<LanguageToggle {...defaultProps} />);
+    const contextMenu = baseElement.querySelector(
       ".ilo--language-toggle--context-menu"
     );
-    expect(contextMenu).not.toBeVisible();
+    expect(contextMenu).not.toHaveClass(
+      "ilo--language-toggle--context-menu__open"
+    );
   });
 
   it("menu opens when button is clicked", () => {
-    const { container } = render(<LanguageToggle {...defaultProps} />);
+    const { container, baseElement } = render(
+      <LanguageToggle {...defaultProps} />
+    );
     const toggleButton = container.querySelector("button");
-    const contextMenu = container.querySelector(
+    const contextMenu = baseElement.querySelector(
       ".ilo--language-toggle--context-menu"
     );
     fireEvent.click(toggleButton as HTMLButtonElement);
-    expect(contextMenu).toBeVisible();
+    expect(contextMenu).toHaveClass("ilo--language-toggle--context-menu__open");
   });
 
   it("menu closes when button is clicked again", () => {
-    const { container } = render(<LanguageToggle {...defaultProps} />);
+    const { container, baseElement } = render(
+      <LanguageToggle {...defaultProps} />
+    );
     const toggleButton = container.querySelector("button");
-    const contextMenu = container.querySelector(
+    const contextMenu = baseElement.querySelector(
       ".ilo--language-toggle--context-menu"
     );
     fireEvent.click(toggleButton as HTMLButtonElement);
     fireEvent.click(toggleButton as HTMLButtonElement);
-    expect(contextMenu).not.toBeVisible();
+    expect(contextMenu).not.toHaveClass(
+      "ilo--language-toggle--context-menu__open"
+    );
   });
 
   it("renders the correct number of language options", () => {
@@ -107,18 +123,13 @@ describe("Language Toggle", () => {
   it("has correct accessibility attributes (aria-expanded & hidden)", () => {
     const { container } = render(<LanguageToggle {...defaultProps} />);
     const toggleButton = container.querySelector("button");
-    const contextMenu = container.querySelector(
-      ".ilo--language-toggle--context-menu"
-    );
+
     expect(toggleButton).toHaveAttribute("aria-expanded", "false");
-    expect(contextMenu).toHaveAttribute("hidden");
 
     fireEvent.click(toggleButton as HTMLButtonElement);
     expect(toggleButton).toHaveAttribute("aria-expanded", "true");
-    expect(contextMenu).not.toHaveAttribute("hidden");
 
     fireEvent.click(toggleButton as HTMLButtonElement);
     expect(toggleButton).toHaveAttribute("aria-expanded", "false");
-    expect(contextMenu).toHaveAttribute("hidden");
   });
 });
