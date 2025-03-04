@@ -1,0 +1,186 @@
+@use "../../tokens" as *;
+@use "../../functions" as *;
+@import "../../mixins";
+@import "../../config";
+
+.ilo--subsite-nav-compact {
+  position: relative;
+  height: px-to-rem(70px);
+  background-color: var(--ilo-color-blue);
+  overflow: hidden;
+
+  &__container {
+    max-width: px-to-rem(1296px);
+    height: inherit;
+    margin-left: auto;
+    margin-right: auto;
+    padding-inline: spacing(4);
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    gap: px-to-rem(48px);
+
+    @include breakpoint("xl", true) {
+      gap: px-to-rem(24px);
+    }
+  }
+
+  &__branding {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    &-logo {
+      display: flex;
+      align-items: center;
+      height: px-to-rem(38px);
+      padding-inline-end: spacing(4);
+      border-right: 1px solid var(--ilo-color-white);
+
+      [dir="rtl"] & {
+        padding-inline-start: spacing(4);
+        border-right: none;
+        border-left: 1px solid var(--ilo-color-white);
+      }
+
+      img {
+        height: 100%;
+      }
+    }
+
+    &-name {
+      padding-inline-start: spacing(4);
+      color: var(--ilo-color-white);
+      @include typography("heading-3");
+      font-size: px-to-rem(16px); //Designs have wrong config
+    }
+  }
+
+  &__menu {
+    display: flex;
+    align-items: center;
+    gap: px-to-rem(48px);
+
+    @include breakpoint("lg", true) {
+      display: none;
+    }
+  }
+
+  &__widget-bar {
+    background-color: var(--ilo-color-blue-lighter);
+    height: px-to-rem(48px);
+    position: relative;
+    display: flex;
+
+    @include breakpoint("lg", true) {
+      display: none;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 100%;
+      width: 100vw;
+      height: 100%;
+      background-color: var(--ilo-color-blue-lighter);
+      z-index: 1;
+
+      [dir="rtl"] & {
+        left: auto;
+        right: 100%;
+      }
+    }
+
+    &-corner {
+      display: block;
+      background-color: var(--ilo-color-blue);
+      width: px-to-rem(48px);
+      height: px-to-rem(48px);
+      @include cornercut(spacing(10), 100%);
+      transform: skewY(0.001deg);
+
+      [dir="rtl"] & {
+        @include cornercut(spacing(10), 100%, "left");
+      }
+    }
+
+    &-content {
+      height: inherit;
+      width: 100%;
+      display: flex;
+      gap: px-to-rem(12px);
+      padding-inline: spacing(3);
+      align-items: center;
+    }
+
+    &-link {
+      @include typography("highlight-small-bold");
+      height: 100%;
+      text-decoration: none;
+      color: var(--ilo-color-blue-dark);
+      display: flex;
+      align-items: center;
+      text-wrap: nowrap;
+
+      &:hover {
+        color: var(--ilo-color-blue);
+      }
+    }
+
+    &-language {
+      .ilo--language-toggle__theme__dark {
+        --ilo--language-toggle-color-hover: var(--ilo-color-blue);
+      }
+      position: relative;
+      height: 100%;
+      display: flex;
+      align-items: center;
+    }
+
+    &-search {
+      --ilo-subsite-nav-widget-bar-search-color: var(--ilo-color-blue-dark);
+      height: 100%;
+      display: flex;
+      align-items: center;
+      width: px-to-rem(24px);
+      height: px-to-rem(24px);
+
+      @include icon("search", var(--ilo-subsite-nav-widget-bar-search-color));
+
+      &:hover {
+        --ilo-subsite-nav-widget-bar-search-color: var(--ilo-color-blue);
+      }
+    }
+  }
+
+  &__burger {
+    display: none;
+
+    @include breakpoint("lg", true) {
+      display: flex;
+    }
+
+    --ilo-subsite-nav-burger-icon: var(--ilo-color-white);
+    margin-block: px-to-rem(20px);
+    display: flex;
+    align-items: center;
+    border: none;
+    cursor: pointer;
+
+    &-icon {
+      width: px-to-rem(32px);
+      height: px-to-rem(32px);
+      @include icon("burger", var(--ilo-subsite-nav-burger-icon));
+    }
+
+    &:hover {
+      --ilo-subsite-nav-burger-icon: var(--ilo-color-blue);
+      background-color: var(--ilo-color-white);
+    }
+  }
+}

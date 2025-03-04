@@ -64,6 +64,9 @@ const DataCard = forwardRef<HTMLDivElement, DataCardProps>(
   ) => {
     const { prefix } = useGlobalSettings();
 
+    // Force the card to render in one column if size is narrow
+    const cols = size === "narrow" ? "one" : columns;
+
     const baseClass = `${prefix}--card`;
 
     const cardClasses = classNames(
@@ -72,7 +75,7 @@ const DataCard = forwardRef<HTMLDivElement, DataCardProps>(
       className,
       {
         [`${baseClass}__size__${String(size)}`]: size,
-        [`${baseClass}__type__data__columns__${columns}`]: columns,
+        [`${baseClass}__type__data__columns__${cols}`]: cols,
       }
     );
 

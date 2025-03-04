@@ -271,11 +271,11 @@
 
       // Mute Button
       .vjs-mute-control {
-        @include videobutton("videosoundon");
+        @include videobutton("sound_on");
         height: px-to-rem(40px);
 
         &[title="Unmute"] {
-          @include videobutton("videosoundoff");
+          @include videobutton("sound_off");
         }
       }
 
