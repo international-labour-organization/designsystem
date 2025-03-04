@@ -1,5 +1,18 @@
 # @ilo-org/twig
 
+## 1.5.0
+
+### Minor Changes
+
+- 9b761264f: **LanguageToggle:** A new standalone component to handle setting languages
+
+### Patch Changes
+
+- Updated dependencies [1f428b504]
+- Updated dependencies [1d9596ea3]
+- Updated dependencies [9fdfb26cf]
+  - @ilo-org/styles@1.5.0
+
 ## 1.4.0
 
 ### Minor Changes

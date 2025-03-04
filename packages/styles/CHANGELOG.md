@@ -1,5 +1,18 @@
 # @ilo-org/styles
 
+## 1.5.0
+
+### Minor Changes
+
+- 1d9596ea3: **SubsiteNav**: A brand new component to handle the various navigation use cases, with two `compact` and `complex` modes. It replaces the old `LocalNav` component.
+  **ContextMenu**: Now supports rendering into a react portal
+  **LocalNav**: Deprecated in favor of `SubsiteNav`
+
+### Patch Changes
+
+- 1f428b504: **LanguageToggle:** Fix accessibility issues and BEM classnames
+- 9fdfb26cf: **Video:** Fix volume button not appearing
+
 ## 1.4.0
 
 ### Minor Changes
