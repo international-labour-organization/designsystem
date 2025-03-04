@@ -41,6 +41,12 @@ button:
       description: optional class name
       preview: "optionalclass"
       required: false
+    elementId:
+      type: string
+      label: ID
+      description: optional id
+      preview: "optionalid"
+      required: false
   settings:
     size:
       type: select
