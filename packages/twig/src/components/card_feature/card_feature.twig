@@ -1,6 +1,8 @@
-{#
-  FEATURE CARD COMPONENT
-#}
+{# card_feature.twig #}
+
+{% set theme = theme|default("light") %}
+{% set titleLevel = titleLevel|default(p) %}
+{% set size = size|default("narrow") %}
 
 <div class="{{prefix}}--card {{prefix}}--card__type__feature {{prefix}}--card__theme__{{theme}} {{prefix}}--card__size__{{ size }} {% if isvideo|boolval %} {{prefix}}--card__isvideo {% endif %} {% if cta %} {{prefix}}--card__linklist {% endif %}">
 	<a class="{{prefix}}--card--link" href="{{link}}" title="{{title}}">
@@ -26,7 +28,7 @@
 			{% if date %}
 				<time class="{{prefix}}--card--date" datetime="{{date.unix}}">{{date.human}}</time>
 			{% endif %}
-			{% if cta %}
+			{% if cta and size == "narrow" %}
 				{% include "@components/linklist/linklist.twig" with {
 					theme: theme,
           linkgroup: [{
@@ -37,4 +39,13 @@
 			{% endif %}
 		</div>
 	</div>
+		{% if cta and size == "wide" or size == "fluid" %}
+			{% include "@components/linklist/linklist.twig" with {
+				theme: theme,
+				linkgroup: [{
+					links: [cta]
+				}],
+				prefix: prefix
+			} only %}
+		{% endif %}
 </div>
