@@ -2,7 +2,7 @@
   DETAIL CARD COMPONENT
 #}
 
-<div class="{{prefix}}--card {{prefix}}--card__type__detail {{prefix}}--card__size__{{size}} {% if isvideo|boolval %} {{prefix}}--card__isvideo {% endif %}">
+<div class="{{prefix}}--card {{prefix}}--card__type__detail {{prefix}}--card__size__{{size}} {% if isvideo|boolval %} {{prefix}}--card__isvideo {% endif %} {{prefix}}--card__theme__light">
 	<a class="{{prefix}}--card--link" href="{{link}}" title="{{title}}">
 		<span class="{{prefix}}--card--link--text">{{title}}</span>
 	</a>
@@ -30,7 +30,14 @@
 				<time class="{{prefix}}--card--date" datetime="{{date.unix}}">{{date.human}}</time>
 			{% endif %}
 			{% if dateExtra %}
-				<p class="{{prefix}}--card--date-extra">{{dateExtra}}</p>
+				<p class="{{prefix}}--card--date-extra">
+					{% include "@components/icon/icon.twig" with {
+						name: "triangle_right",
+						size: 20,
+						color: "var(--ilo-color-gray-charcoal)"
+					} %}
+					{{dateExtra}}
+				</p>
 			{% endif %}
 		</div>
 	</div>
