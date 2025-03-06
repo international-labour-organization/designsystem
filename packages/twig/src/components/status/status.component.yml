@@ -1,0 +1,33 @@
+status:
+  namespace: Components/User Interface
+  use: "@components/status/status.twig"
+  label: Status
+  description: A component for showing the status of an event or changing item of content.
+  fields:
+    content:
+      type: string
+      label: Content
+      description: The text content of the tag.
+      preview: Event status
+      required: true
+    elementId:
+      type: string
+      label: ElementId
+      description: An `id` attribute that will be passed directly to the underlying HTML element.
+      preview: active
+      required: false
+  settings:
+    statusType:
+      type: select
+      label: StatusType
+      description: The type of status to display
+      required: false
+      default: active
+      options:
+        active: Active
+        info: Info
+        alert: Alert
+        subtle: Subtle Alert
+        inactive: Inactive
+      preview: "active"
+  visibility: storybook

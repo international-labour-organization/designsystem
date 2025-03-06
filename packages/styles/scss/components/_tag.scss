@@ -3,179 +3,89 @@
 @use "../animations" as *;
 @import "../mixins";
 
-.ilo--tag-set {
-  list-style: none;
-
-  &__item {
-    display: inline-block;
-    margin: spacing(1);
-  }
+.ilo--tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: spacing(2);
 }
 
 .ilo--tag {
-  @include font-styles("nav-md-sm");
-
-  background: map-get($color, "tag", "background", "default");
-  border: none;
-  color: map-get($color, "tag", "text", "default");
-  display: inline-block;
-  font-family: var(--ilo-fonts-display);
-  font-weight: 500;
+  // Layout
+  box-sizing: border-box;
+  height: px-to-rem(35px);
+  display: inline-flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  margin: 0;
   padding: spacing(2) spacing(3);
-  text-decoration: none;
-  $self: &;
-  @include globaltransition("color, background-color, border-color");
-  max-width: $widths-tags-max-width;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 
-  &--active {
-    background: map-get($color, "tag", "background", "active");
-    color: map-get($color, "tag", "text", "active");
-    outline: none;
+  // Font styles
+  font-family: var(--ilo-fonts-display);
+  font-size: var(--ilo-font-size-sm);
+  font-weight: var(--ilo-font-weight-medium);
+  line-height: var(--ilo-line-height-xlg);
+  letter-spacing: var(--ilo-letter-spacing-sm);
+
+  // Colors and border
+  color: var(--ilo-color-blue-dark);
+  fill: var(--ilo-color-blue-dark);
+  background-color: var(--ilo-color-gray-light);
+  border-color: var(--ilo-color-gray-light);
+  border-width: px-to-rem(1.5px);
+  border-style: solid;
+  border-radius: px-to-rem(2px);
+  @include globaltransition("color background-color border-color fill");
+
+  &__disabled {
+    color: var(--ilo-color-gray-accessible);
+    fill: var(--ilo-color-gray-accessible);
   }
 
-  &--anchor {
-    cursor: unset;
-    pointer-events: none;
-
-    &.ilo--tag--active {
-      background: map-get($color, "tag", "background", "active");
-      color: map-get($color, "tag", "text", "active");
+  &__type {
+    &__button,
+    &__reset,
+    &__anchor {
+      box-shadow: none;
+      appearance: none;
       cursor: pointer;
       outline: none;
 
-      &:hover {
-        background: map-get($color, "tag", "background", "hover");
-        color: map-get($color, "tag", "text", "hover");
-        text-decoration: none;
-        @include globaltransition("color, background-color, border-color");
+      &:disabled {
+        pointer-events: none;
       }
 
+      &:focus-visible {
+        outline: 1px solid var(--ilo-color-blue);
+      }
+    }
+
+    &__button,
+    &__anchor {
+      &:hover,
       &:focus {
-        background: map-get($color, "tag", "background", "focus");
-        color: map-get($color, "tag", "text", "focus");
-        outline: none;
-        @include globaltransition("color, background-color, border-color");
+        background-color: var(--ilo-color-blue-lighter);
+        border-color: var(--ilo-color-blue-lighter);
+        color: var(--ilo-color-blue);
+        fill: var(--ilo-color-blue);
       }
+    }
 
-      &.ilo--tag--active {
-        pointer-events: auto;
-      }
+    &__anchor {
+      text-decoration: none;
+    }
+
+    &__reset {
+      background-color: var(--ilo-color-white);
+      border-color: var(--ilo-color-gray-base);
+      color: var(--ilo-color-blue-dark);
+      fill: var(--ilo-color-blue-dark);
     }
   }
 
-  &--button {
-    @include font-styles("label-small");
-
-    cursor: pointer;
-    display: none;
-    opacity: 0;
-    padding-right: spacing(9);
+  .ilo--icon {
+    bottom: px-to-rem(2px);
+    fill: inherit;
     position: relative;
-    visibility: hidden;
-
-    &.ilo--tag--active {
-      background: map-get($color, "tag", "background", "active");
-      color: map-get($color, "tag", "text", "active");
-      display: block;
-      opacity: 1;
-      outline: none;
-      visibility: visible;
-      @include globaltransition("color, background-color, border-color");
-    }
-
-    &.icon__position--right {
-      .ilo--icon {
-        @include icon("close", var(--ilo-color-blue-dark));
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: contain;
-        height: 100%;
-        max-height: 24px;
-        max-width: 24px;
-        position: absolute;
-        right: 10px;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 100%;
-      }
-    }
-
-    &:hover {
-      background: map-get($color, "tag", "background", "hover");
-      color: map-get($color, "tag", "text", "hover");
-      text-decoration: none;
-      @include globaltransition("color, background-color, border-color");
-
-      &.icon__position--right {
-        .ilo--icon {
-          @include icon("close", var(--ilo-color-blue));
-        }
-      }
-    }
-
-    &:focus {
-      background: map-get($color, "tag", "background", "focus");
-      color: map-get($color, "tag", "text", "focus");
-      outline: none;
-    }
-  }
-
-  &--reset {
-    @include font-styles("label-small");
-    padding: calc(spacing(2) - px-to-rem(1.5)) calc(spacing(3) - px-to-rem(1.5));
-    cursor: pointer;
-    display: none;
-    opacity: 0;
-    position: relative;
-    visibility: hidden;
-
-    &.ilo--tag--active {
-      background: $color-base-neutrals-white;
-      border: 1.5px solid $color-base-neutrals-light;
-      color: map-get($color, "tag", "text", "active");
-      display: block;
-      opacity: 1;
-      outline: none;
-      visibility: visible;
-      @include globaltransition("color, background-color, border-color");
-    }
-
-    &.icon__position--right {
-      .ilo--icon {
-        @include icon("close", var(--ilo-color-blue-dark));
-
-        height: 100%;
-        max-height: 28px;
-        max-width: 28px;
-        position: absolute;
-        right: 5px;
-        top: 5px;
-        width: 100%;
-      }
-    }
-
-    &:hover {
-      background: map-get($color, "tag", "background", "hover");
-      border: 1.5px solid map-get($color, "tag", "background", "hover");
-      color: map-get($color, "tag", "text", "hover");
-      text-decoration: none;
-      @include globaltransition("color, background-color, border-color");
-
-      &.icon__position--right {
-        .ilo--icon {
-          @include icon("close", var(--ilo-color-blue));
-        }
-      }
-    }
-
-    &:focus {
-      background: map-get($color, "tag", "background", "focus");
-      border: 1.5px solid map-get($color, "tag", "background", "focus");
-      color: map-get($color, "tag", "text", "focus");
-      outline: none;
-    }
+    margin-inline-start: px-to-rem(2px);
   }
 }

@@ -1,0 +1,35 @@
+{# tag.twig #}
+
+{# Default active will be deprecated in future versions and should not be used #}
+{% set defaultActive = defaultActive|default(true) %}
+{% set tagType = tagType|default("display") %}
+{% set disabled = (disabled is not defined and defaultActive) ? false : disabled|default(false) %}
+{% set enabledClass = disabled ? "disabled" : "enabled" %}
+{% set showIcon = showIcon|default(false) %}
+
+{% set icon %}
+  {% if showIcon %}
+    {% include "@components/icon/icon.twig" with {
+      "name": "Close",
+      "size": "20",
+      "color": "var(--ilo-color-blue-dark)"
+    } %}
+  {% endif %}
+{% endset %}
+
+{% if tagType == "button" or tagType == "reset" %}
+  <button class="{{prefix}}--tag {{prefix}}--tag__{{enabledClass}} {{prefix}}--tag__type__{{tagType}}" id="{{ elementId }}" {% if disabled %}disabled{% endif %}>
+    {{content}}
+    {{ icon }}
+  </button>
+{% elseif tagType == "anchor" %}
+  <a class="{{prefix}}--tag {{prefix}}--tag__{{enabledClass}} {{prefix}}--tag__type__anchor" id="{{ elementId }}" href="{{ url }}" {% if disabled %}disabled{% endif %}>
+    {{content}}
+    {{ icon }}
+  </a>
+{% elseif tagType == "display" %}
+  <span class="{{prefix}}--tag {{prefix}}--tag__{{enabledClass}} {{prefix}}--tag__type__display" id="{{ elementId }}">
+    {{content}}
+    {{ icon }}
+  </span>
+{% endif %}
