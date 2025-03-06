@@ -22,6 +22,10 @@
   border-radius: var(--ilo-border-md);
   text-decoration: none;
 
+  [class*="__label"] {
+    white-space: nowrap;
+  }
+
   &--icon {
     position: relative;
 

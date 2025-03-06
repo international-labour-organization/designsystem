@@ -65,7 +65,7 @@
 
         &--cta {
           display: flex;
-          flex-flow: row nowrap;
+          flex-flow: row wrap;
           gap: spacing(2);
         }
       }
@@ -125,12 +125,21 @@
           #{$self}--content {
             padding: spacing(3) spacing(4);
             display: grid;
-            grid-template-columns: min-content 1fr 1fr;
-            grid-template-rows: 1fr auto;
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(3, auto);
             gap: spacing(4);
             grid-template-areas:
-              "title title cta"
-              "status content content";
+              "title"
+              "cta"
+              "status"
+              "content";
+
+            @include breakpoint("md") {
+              grid-template-columns: min-content 1fr 1fr;
+              grid-template-areas:
+                "title title cta"
+                "status content content";
+            }
 
             .ilo--status {
               grid-area: status;
@@ -150,7 +159,10 @@
 
             #{$self}--area--cta {
               grid-area: cta;
-              justify-content: flex-end;
+
+              @include breakpoint("md") {
+                justify-content: flex-end;
+              }
             }
           }
         }

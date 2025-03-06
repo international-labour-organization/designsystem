@@ -11,6 +11,7 @@
       --max-width: #{px-to-rem(412px)};
 
       display: flex;
+      flex-flow: column;
       margin-top: 0;
       position: relative;
 
@@ -64,6 +65,10 @@
           #{$self}--image--wrapper {
             width: 100%;
           }
+
+          .ilo--link-list {
+            margin: 0 px-to-rem(-24px);
+          }
         }
 
         &__wide,
@@ -109,8 +114,7 @@
             }
 
             .ilo--link-list {
-              width: calc(100% + 48px);
-              align-self: flex-end;
+              width: 100%;
             }
           }
         }
@@ -137,7 +141,11 @@
 
       .ilo--link-list {
         border-top: px-to-rem(2px) solid var(--ilo-color-gray-light);
-        margin: 0 px-to-rem(-24px);
+
+        a {
+          border-bottom: none;
+        }
+
         position: relative;
         z-index: 2;
 

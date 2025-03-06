@@ -3,19 +3,14 @@
 @use "../animations" as *;
 @import "../mixins";
 
+$card-transitions: "color, background-color, border-color, opacity, fill, filter";
+
 $link-hover-selectors: ".ilo--card--link:hover, .ilo--card--link:focus, .ilo--card--link:focus-within";
 
-@mixin link-hover {
+@mixin card-link-hover {
   &:has(#{$link-hover-selectors}) {
     @content;
   }
-}
-
-@mixin card-drop-shadow {
-  filter: drop-shadow(0px -4px 16px rgba(30, 45, 190, 0.05))
-    drop-shadow(0px 10px 20px rgba(30, 45, 190, 0.08))
-    drop-shadow(0px 4px 8px rgba(30, 45, 190, 0.05))
-    drop-shadow(0px 0.8px 1.6px rgba(30, 45, 190, 0.04));
 }
 
 .ilo--card {
@@ -30,12 +25,10 @@ $link-hover-selectors: ".ilo--card--link:hover, .ilo--card--link:focus, .ilo--ca
   @include globaltransition("border-bottom, filter");
 
   * {
-    @include globaltransition(
-      "color, background-color, border-color, opacity, fill, filter"
-    );
+    @include globaltransition($card-transitions);
   }
 
-  @include link-hover {
+  @include card-link-hover {
     @include card-drop-shadow;
 
     #{$self}--image--wrapper::before {
@@ -51,8 +44,14 @@ $link-hover-selectors: ".ilo--card--link:hover, .ilo--card--link:focus, .ilo--ca
     height: 100%;
   }
 
+  // The outer element for cards with corner cut
   &--wrapper {
     max-width: var(--max-width);
+    @include globaltransition($card-transitions);
+
+    @include card-link-hover {
+      @include card-drop-shadow;
+    }
   }
 
   &--image--wrapper {
@@ -132,14 +131,15 @@ $link-hover-selectors: ".ilo--card--link:hover, .ilo--card--link:focus, .ilo--ca
       background: var(--ilo-color-white);
       border-bottom: px-to-rem(3px) solid var(--ilo-color-gray-base);
 
-      @include link-hover {
+      @include card-link-hover {
         border-bottom: px-to-rem(3px) solid var(--ilo-color-blue);
 
         #{$self}--eyebrow,
         #{$self}--title,
         #{$self}--intro,
         #{$self}--date,
-        #{$self}--content--item {
+        #{$self}--content--item,
+        .ilo--profile {
           color: var(--ilo-color-blue);
 
           .ilo--icon {
@@ -152,6 +152,10 @@ $link-hover-selectors: ".ilo--card--link:hover, .ilo--card--link:focus, .ilo--ca
     &__dark {
       background: var(--ilo-color-blue-dark);
       border-bottom: px-to-rem(3px) solid var(--ilo-color-red);
+
+      @include card-link-hover {
+        border-bottom: px-to-rem(3px) solid var(--ilo-color-white);
+      }
 
       #{$self}--title {
         color: var(--ilo-color-white);
