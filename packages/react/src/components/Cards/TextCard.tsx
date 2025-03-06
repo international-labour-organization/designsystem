@@ -73,7 +73,6 @@ const TextCard = forwardRef<HTMLDivElement, TextCardProps>(
 
     const wrapperClass = classNames(`${baseClass}--wrapper`, className);
     const cardClasses = classNames(baseClass, `${baseClass}__type__text`, {
-      [`${baseClass}__action`]: link,
       [`${baseClass}__size__${String(size)}`]: size,
       [`${baseClass}__theme__${theme}`]: theme,
     });
