@@ -72,6 +72,8 @@ const ContextMenu = forwardRef<HTMLOListElement, ContextMenuProps>(
       return Component;
     }
 
+    if (typeof document === "undefined") return null;
+
     return createPortal(Component, document.body);
   }
 );

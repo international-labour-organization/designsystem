@@ -9,7 +9,7 @@ export { Tag } from "./Tag";
 export { Button } from "./Button";
 export { ContextMenu } from "./ContextMenu";
 export { Fieldset } from "./Fieldset";
-export { GlobalProvider } from "./GlobalProvider";
+export * from "./GlobalProvider";
 export { Notification } from "./Notification";
 export { ReadMore } from "./ReadMore";
 export { Textarea } from "./Textarea";
