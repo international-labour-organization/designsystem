@@ -10,34 +10,13 @@
     &__text {
       --max-width: #{px-to-rem(301px)};
 
-      border-bottom: px-to-rem(3px) solid $brand-ilo-grey-ui;
+      // border-bottom: px-to-rem(3px) solid var(--ilo-color-gray-accessible);
       padding: spacing(10) spacing(6) spacing(8);
 
       @include cornercut(72px, 40px);
 
       [dir="rtl"] & {
         @include cornercut(72px, 40px, left);
-      }
-
-      [class$="profile__theme__light"] * {
-        color: $color-base-neutrals-dark;
-      }
-
-      [class$="profile__theme__dark"] * {
-        color: $color-base-neutrals-white;
-      }
-
-      &:hover,
-      &:focus,
-      &:focus-within {
-        @include card-drop-shadow;
-        @include globaltransition(border-color);
-
-        border-color: $brand-ilo-blue;
-
-        [class*="profile__theme"] * {
-          color: $color-base-blue-medium;
-        }
       }
 
       @include breakpoint("md", true) {
@@ -76,7 +55,7 @@
       }
 
       &#{$self}__dark {
-        border-bottom: px-to-rem(3px) solid $color-base-red-medium;
+        border-bottom: px-to-rem(3px) solid var(--ilo-color-red);
       }
 
       #{$self}--eyebrow {

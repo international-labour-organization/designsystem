@@ -330,17 +330,6 @@
 }
 
 // ======================================
-// Dropshadow for cards
-// ======================================
-
-@mixin card-drop-shadow {
-  filter: drop-shadow(0px -4px 16px rgba(30, 45, 190, 0.05))
-    drop-shadow(0px 10px 20px rgba(30, 45, 190, 0.08))
-    drop-shadow(0px 4px 8px rgba(30, 45, 190, 0.05))
-    drop-shadow(0px 0.8px 1.6px rgba(30, 45, 190, 0.04));
-}
-
-// ======================================
 // Background box for a caption icon tooltip (see Hero)
 // ======================================
 

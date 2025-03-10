@@ -1,0 +1,41 @@
+{
+  "title": "Employment Rate Trends",
+  "elementId": "employment-card",
+  "link": "https://www.ilo.org/reports",
+  "image": {
+    "alt": "Image alt text",
+    "url": [
+      { "breakpoint": "(min-width: 0px)", "src": "https://www.placeholder/400" }
+    ]
+  },
+  "eyebrow": "Latest Data",
+  "status": {
+    "content": "Updated",
+    "statusType": "info"
+  },
+  "dataset": {
+    "content": {
+      "items": [
+        {
+          "icon": "calendar",
+          "label": "Published: January 2024",
+          "unix": "1704067200"
+        }
+      ]
+    },
+    "cta": {
+      "items": [
+        {
+          "icon": "download",
+          "label": "Download Report"
+        }
+      ]
+    }
+  },
+  "settings": {
+    "isvideo": false,
+    "size": "wide",
+    "theme": "dark",
+    "titleLevel": "h3"
+  }
+}
