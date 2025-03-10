@@ -3,6 +3,13 @@
 @use "../animations" as *;
 @import "../mixins";
 
+@mixin card-drop-shadow {
+  filter: drop-shadow(0px -4px 16px rgba(30, 45, 190, 0.05))
+    drop-shadow(0px 10px 20px rgba(30, 45, 190, 0.08))
+    drop-shadow(0px 4px 8px rgba(30, 45, 190, 0.05))
+    drop-shadow(0px 0.8px 1.6px rgba(30, 45, 190, 0.04));
+}
+
 $card-transitions: "color, background-color, border-color, opacity, fill, filter";
 
 $link-hover-selectors: ".ilo--card--link:hover, .ilo--card--link:focus, .ilo--card--link:focus-within";
@@ -138,6 +145,7 @@ $link-hover-selectors: ".ilo--card--link:hover, .ilo--card--link:focus, .ilo--ca
         #{$self}--title,
         #{$self}--intro,
         #{$self}--date,
+        #{$self}--date-extra,
         #{$self}--content--item,
         .ilo--profile {
           color: var(--ilo-color-blue);
