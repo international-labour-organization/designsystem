@@ -1,5 +1,22 @@
 # @ilo-org/react
 
+## 0.21.0
+
+### Minor Changes
+
+- 1d9596ea3: **SubsiteNav**: A brand new component to handle the various navigation use cases, with two `compact` and `complex` modes. It replaces the old `LocalNav` component.
+  **ContextMenu**: Now supports rendering into a react portal
+  **LocalNav**: Deprecated in favor of `SubsiteNav`
+
+### Patch Changes
+
+- 2d975de9f: **LanguageToggle:** Fixes some accessibility issues
+- 6bbd8004c: **DataCard:** Can only have two columns if size is set to `wide` or `fluid`
+- Updated dependencies [1f428b504]
+- Updated dependencies [1d9596ea3]
+- Updated dependencies [9fdfb26cf]
+  - @ilo-org/styles@1.5.0
+
 ## 0.20.0
 
 ### Minor Changes

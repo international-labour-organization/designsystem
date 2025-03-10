@@ -437,3 +437,170 @@
     }
   }
 }
+
+@mixin typography($variant, $mobile: false) {
+  @if $variant ==
+    "heading-1" or
+    $variant ==
+    "heading-2" or
+    $variant ==
+    "heading-3" or
+    $variant ==
+    "heading-4" or
+    $variant ==
+    "blockquote" or
+    str-index($variant, "highlight") !=
+    null
+  {
+    font-family: var(--ilo-fonts-display);
+  } @else {
+    font-family: var(--ilo-fonts-copy);
+  }
+
+  @if $variant == "heading-1" {
+    font-size: var(--ilo-font-size-5xlg);
+    font-weight: var(--ilo-font-weight-bold);
+    line-height: var(--ilo-line-height-xsm);
+    letter-spacing: var(--ilo-letter-spacing-xsm);
+    @if $mobile {
+      font-size: var(--ilo-font-size-4xlg);
+      line-height: var(--ilo-line-height-sm);
+    }
+  } @else if $variant == "heading-2" {
+    font-size: var(--ilo-font-size-3xlg);
+    font-weight: var(--ilo-font-weight-bold);
+    line-height: var(--ilo-line-height-md);
+    letter-spacing: var(--ilo-letter-spacing-xsm);
+    @if $mobile {
+      font-size: var(--ilo-font-size-xlg);
+    }
+  } @else if $variant == "heading-3" {
+    font-size: var(--ilo-font-size-xlg);
+    font-weight: var(--ilo-font-weight-bold);
+    line-height: var(--ilo-line-height-md);
+    letter-spacing: var(--ilo-letter-spacing-xsm);
+    @if $mobile {
+      font-size: var(--ilo-font-size-lg);
+      line-height: var(--ilo-line-height-lg);
+    }
+  } @else if $variant == "heading-4" {
+    font-size: var(--ilo-font-size-lg);
+    font-weight: var(--ilo-font-weight-bold);
+    line-height: var(--ilo-line-height-lg);
+    letter-spacing: var(--ilo-letter-spacing-sm);
+    @if $mobile {
+      font-size: var(--ilo-font-size-md);
+      line-height: var(--ilo-line-height-xlg);
+    }
+  } @else if $variant == "blockquote" {
+    font-size: var(--ilo-font-size-4xlg);
+    font-weight: var(--ilo-font-weight-light);
+    line-height: var(--ilo-line-height-sm);
+    letter-spacing: var(--ilo-letter-spacing-xsm);
+    @if $mobile {
+      font-size: var(--ilo-font-size-2xlg);
+      line-height: var(--ilo-line-height-md);
+    }
+  } @else if $variant == "highlight-large" {
+    font-size: var(--ilo-font-size-lg);
+    font-weight: var(--ilo-font-weight-medium);
+    line-height: var(--ilo-line-height-lg);
+    letter-spacing: var(--ilo-letter-spacing-sm);
+    @if $mobile {
+      font-size: var(--ilo-font-size-md);
+      line-height: var(--ilo-line-height-lg);
+    }
+  } @else if $variant == "highlight-medium" {
+    font-size: var(--ilo-font-size-md);
+    font-weight: var(--ilo-font-weight-medium);
+    line-height: var(--ilo-line-height-xlg);
+    letter-spacing: var(--ilo-letter-spacing-sm);
+    @if $mobile {
+      font-size: var(--ilo-font-size-sm);
+      line-height: var(--ilo-line-height-xlg);
+    }
+  } @else if $variant == "highlight-medium-bold" {
+    font-size: var(--ilo-font-size-md);
+    font-weight: var(--ilo-font-weight-bold);
+    line-height: var(--ilo-line-height-xlg);
+    letter-spacing: var(--ilo-letter-spacing-sm);
+    @if $mobile {
+      font-size: var(--ilo-font-size-sm);
+      line-height: var(--ilo-line-height-xlg);
+    }
+  } @else if $variant == "highlight-small" {
+    font-size: var(--ilo-font-size-sm);
+    font-weight: var(--ilo-font-weight-medium);
+    line-height: var(--ilo-line-height-xlg);
+    letter-spacing: var(--ilo-letter-spacing-sm);
+    @if $mobile {
+      font-size: var(--ilo-font-size-sm);
+      line-height: var(--ilo-line-height-xlg);
+    }
+  } @else if $variant == "highlight-small-bold" {
+    font-size: var(--ilo-font-size-sm);
+    font-weight: var(--ilo-font-weight-bold);
+    line-height: var(--ilo-line-height-xlg);
+    letter-spacing: var(--ilo-letter-spacing-sm);
+    @if $mobile {
+      font-size: var(--ilo-font-size-sm);
+      line-height: var(--ilo-line-height-xlg);
+    }
+  } @else if $variant == "body-xlarge" {
+    font-size: var(--ilo-font-size-xlg);
+    font-weight: var(--ilo-font-weight-regular);
+    line-height: var(--ilo-line-height-2xlg);
+    letter-spacing: var(--ilo-letter-spacing-md);
+    @if $mobile {
+      font-size: var(--ilo-font-size-lg);
+      line-height: var(--ilo-line-height-2xlg);
+    }
+  } @else if $variant == "body-large" {
+    font-size: var(--ilo-font-size-lg);
+    font-weight: var(--ilo-font-weight-regular);
+    line-height: var(--ilo-line-height-2xlg);
+    letter-spacing: var(--ilo-letter-spacing-md);
+    @if $mobile {
+      font-size: var(--ilo-font-size-md);
+      line-height: var(--ilo-line-height-2xlg);
+    }
+  } @else if $variant == "body-medium" {
+    font-size: var(--ilo-font-size-md);
+    font-weight: var(--ilo-font-weight-regular);
+    line-height: var(--ilo-line-height-2xlg);
+    letter-spacing: var(--ilo-letter-spacing-md);
+    @if $mobile {
+      font-size: var(--ilo-font-size-md);
+      line-height: var(--ilo-line-height-2xlg);
+    }
+  } @else if $variant == "body-small" {
+    font-size: var(--ilo-font-size-sm);
+    font-weight: var(--ilo-font-weight-regular);
+    line-height: var(--ilo-line-height-xlg);
+    letter-spacing: var(--ilo-letter-spacing-md);
+    @if $mobile {
+      font-size: var(--ilo-font-size-sm);
+      line-height: var(--ilo-line-height-xlg);
+    }
+  } @else if $variant == "body-xsmall" {
+    font-size: var(--ilo-font-size-xsm);
+    font-weight: var(--ilo-font-weight-regular);
+    line-height: var(--ilo-line-height-xlg);
+    letter-spacing: var(--ilo-letter-spacing-md);
+    @if $mobile {
+      font-size: var(--ilo-font-size-xsm);
+      line-height: var(--ilo-line-height-xlg);
+    }
+  } @else if $variant == "body-2xsmall" {
+    font-size: var(--ilo-font-size-2xsm);
+    font-weight: var(--ilo-font-weight-regular);
+    line-height: var(--ilo-line-height-3xlg);
+    letter-spacing: var(--ilo-letter-spacing-md);
+    @if $mobile {
+      font-size: var(--ilo-font-size-2xsm);
+      line-height: var(--ilo-line-height-3xlg);
+    }
+  } @else {
+    @error "Typography variant '#{$variant}' not recognized";
+  }
+}
