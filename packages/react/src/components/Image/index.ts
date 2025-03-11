@@ -1,2 +1,2 @@
 export { default as Image } from "./Image";
-export type { ImageProps } from "./Image.props.ts";
+export type { ImageProps } from "./Image.props";
