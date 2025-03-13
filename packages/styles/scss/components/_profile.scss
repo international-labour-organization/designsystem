@@ -3,40 +3,39 @@
 @import "../animations";
 @import "../mixins";
 
-$row-1-lg: 64px;
-$avatar-size-lg: $row-1-lg;
-
 .ilo--profile {
   $c: &;
 
+  $row-1-lg: #{px-to-rem(64px)};
+  $row-1-sm: #{px-to-rem(48px)};
+
+  --row-1-height: #{$row-1-lg};
+
   display: grid;
   grid-template-columns: min-content 1fr;
-  grid-template-rows: minmax($row-1-lg, auto) auto;
+  grid-template-rows: repeat(minmax(var(--row-1-height), auto));
   max-width: px-to-rem(343px);
   width: 100%;
+  row-gap: spacing(5);
+  column-gap: spacing(4);
 
   &--avatar {
     grid-row: 1;
     border-radius: 50%;
+    height: var(--row-1-height);
+    width: var(--row-1-height);
   }
 
   figcaption {
-    box-sizing: border-box;
-    grid-row: 1;
-    grid-column-end: -1;
     display: flex;
     flex-flow: column;
     justify-content: center;
-    align-items: start;
+    grid-row: 1;
+    grid-column-end: -1;
   }
 
   &--figcaption--content {
-    box-sizing: border-box;
     width: 100%;
-    display: flex;
-    flex-flow: column;
-    justify-content: center;
-    align-items: start;
     position: relative;
 
     &:after {
@@ -44,20 +43,25 @@ $avatar-size-lg: $row-1-lg;
       position: absolute;
       bottom: -12px;
       width: 100%;
-      border-bottom: 2px solid $color-base-neutrals-lighter;
+      border-bottom: 2px solid var(--ilo-color-gray-light);
+    }
+
+    #{$c}__size__small &::after {
+      content: none;
     }
   }
 
   &--name {
-    font-family: var(--ilo-fonts-display);
+    @include typography("highlight-medium-bold");
   }
 
-  &--role {
-    font-family: var(--ilo-fonts-copy);
+  &--role,
+  &--description {
+    @include typography("body-small");
+    color: var(--ilo-color-gray-accessible);
   }
 
   &--description {
-    font-family: var(--ilo-fonts-copy);
     grid-row: 2;
     grid-column: 1 / -1;
   }
@@ -65,118 +69,74 @@ $avatar-size-lg: $row-1-lg;
   &--link {
     $link: &;
 
-    font-family: var(--ilo-fonts-display);
+    $icon: "[class*='icon']";
+
+    @include typography("highlight-medium");
+    color: var(--ilo-color-dark-blue);
     grid-column: 1 / -1;
 
     a {
+      display: inline-flex;
       text-decoration: none;
-      color: map-get($color, "link", "text", "default");
-      display: inline-block;
+      flex-flow: row nowrap;
+      align-items: center;
+      gap: spacing(2);
+      @include globaltransition("color");
+
+      &:hover,
+      &:focus,
+      &:focus-within {
+        color: var(--ilo-color-blue);
+      }
+    }
+
+    #{$icon} {
+      position: relative;
+      bottom: px-to-rem(1px);
+
+      [dir="rtl"] & {
+        transform: rotate(180deg);
+      }
     }
 
     &--label {
       display: flex;
       flex-flow: row nowrap;
       align-items: center;
+    }
+  }
 
-      &:after {
-        position: relative;
-        bottom: px-to-rem(1px);
-        height: px-to-rem(24px);
-        width: px-to-rem(24px);
-        margin-inline-start: spacing(2);
-        content: "";
-        @include dataurlicon("chevron_right", $color-link-text-default);
+  &__size {
+    &__small {
+      --row-1-height: #{$row-1-sm};
+      column-gap: spacing(3);
 
-        [dir="rtl"] & {
-          @include dataurlicon("chevron_left", $color-link-text-default);
-        }
+      #{$c}--name {
+        @include typography("highlight-small-bold");
       }
     }
 
-    a:hover,
-    a:focus {
-      #{$link}--label {
-        color: map-get($color, "link", "text", "hover");
-        outline: none;
-
-        &:after {
-          @include dataurlicon("chevron_right", $color-link-text-hover);
-
-          [dir="rtl"] & {
-            @include dataurlicon("chevron_left", $color-link-text-hover);
-          }
-        }
-      }
+    &__large {
+      --row-1-height: #{$row-1-lg};
     }
   }
 
   &__theme {
     &__dark {
-      color: $color-base-neutrals-lighter;
+      color: var(--ilo-color-white);
 
-      #{$c}--link {
-        &--label {
-          &:after {
-            @include dataurlicon("chevron_right", $color-base-neutrals-lighter);
-
-            [dir="rtl"] & {
-              @include dataurlicon(
-                "chevron_left",
-                $color-base-neutrals-lighter
-              );
-            }
-          }
-        }
-
-        a {
-          color: $color-base-neutrals-lighter;
-        }
-
-        a:hover,
-        a:focus {
-          #{$c}--link--label {
-            color: $brand-ilo-turquoise;
-            outline: none;
-
-            &:after {
-              @include dataurlicon("chevron_right", $brand-ilo-turquoise);
-
-              [dir="rtl"] & {
-                @include dataurlicon("chevron_left", $brand-ilo-turquoise);
-              }
-            }
-          }
+      #{$c}--figcaption--content {
+        &:after {
+          border-color: var(--ilo-color-white);
         }
       }
-    }
-  }
 
-  &__size {
-    &__large {
-      #{$c}--avatar {
-        width: px-to-rem($avatar-size-lg);
-        height: px-to-rem($avatar-size-lg);
-        margin-inline-end: spacing(4);
-      }
-
-      #{$c}--name {
-        font-weight: map-get($type, "weights", "label");
-        @include font-styles("body-small");
-      }
-
-      #{$c}--role {
-        @include font-styles("body-xs");
-      }
-
-      #{$c}--description {
-        @include font-styles("body-xs");
-        padding-block-start: spacing(5);
-      }
-
-      #{$c}--link {
-        @include font-styles("body-small");
-        padding-block-start: spacing(6);
+      #{$c}--name,
+      #{$c}--role,
+      #{$c}--description,
+      #{$c}--link,
+      a {
+        color: var(--ilo-color-white);
       }
     }
   }

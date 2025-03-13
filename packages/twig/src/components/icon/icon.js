@@ -56,6 +56,7 @@ export default class Icon {
         `Icon size ${size} is not supported. Defaulting to ${DEFAULT_SIZE}px`
       );
       size = DEFAULT_SIZE;
+      this.element.dataset.size = size;
     }
 
     if (!name) {

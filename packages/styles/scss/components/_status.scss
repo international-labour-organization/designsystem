@@ -1,0 +1,51 @@
+@use "../tokens" as *;
+@use "../functions" as *;
+@use "../animations" as *;
+@import "../mixins";
+
+.ilo--status {
+  // Layout
+  box-sizing: border-box;
+  height: px-to-rem(35px);
+  display: inline-flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  margin: 0;
+  padding: spacing(2) spacing(3);
+  width: fit-content;
+
+  // Font styles
+  font-family: var(--ilo-fonts-display);
+  font-size: var(--ilo-font-size-sm);
+  font-weight: var(--ilo-font-weight-medium);
+  line-height: var(--ilo-line-height-xlg);
+  letter-spacing: var(--ilo-letter-spacing-sm);
+
+  // Colors and border
+  color: var(--ilo-color-blue-dark);
+  background-color: var(--ilo-color-green-light);
+  border-radius: px-to-rem(2px);
+  @include globaltransition("color background-color border-color fill");
+
+  &__type {
+    &__active {
+      background-color: var(--ilo-color-green-light);
+    }
+
+    &__info {
+      background-color: var(--ilo-color-blue-lighter);
+    }
+
+    &__alert {
+      background-color: var(--ilo-color-red);
+    }
+
+    &__subtle {
+      background-color: var(--ilo-color-red-light);
+    }
+
+    &__inactive {
+      background-color: var(--ilo-color-gray-light);
+    }
+  }
+}

@@ -7,3 +7,4 @@ export * from "./FactListCard";
 export * from "./DetailCard";
 export * from "./DataCard";
 export * from "./CardGroup";
+export * from "./ScoreCard";

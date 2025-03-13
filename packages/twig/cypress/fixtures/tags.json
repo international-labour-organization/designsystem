@@ -1,0 +1,24 @@
+{
+  "showIcon": true,
+  "tagType": "anchor",
+  "items": [
+    {
+      "content": "Child labour",
+      "elementId": "child-labour",
+      "url": "https://www.ilo.org",
+      "disabled": false
+    },
+    {
+      "content": "Apprenticeships",
+      "elementId": "apprenticeships",
+      "url": "https://www.ilo.org",
+      "disabled": false
+    },
+    {
+      "content": "Cooperatives",
+      "elementId": "coops",
+      "url": "https://www.ilo.org",
+      "disabled": true
+    }
+  ]
+}

@@ -92,7 +92,6 @@ const MultiLinkCard = forwardRef<HTMLDivElement, MultiLinkCardProps>(
       `${baseClass}__type__multilink`,
       {
         [`${baseClass}__align__${alignment}`]: alignment,
-        [`${baseClass}__action`]: link,
         [`${baseClass}__size__${size}`]: size,
         [`${baseClass}__isvideo`]: isVideo,
         [`${baseClass}--no-image`]: !image,

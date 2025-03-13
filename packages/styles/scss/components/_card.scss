@@ -3,93 +3,47 @@
 @use "../animations" as *;
 @import "../mixins";
 
+@mixin card-drop-shadow {
+  filter: drop-shadow(0px -4px 16px rgba(30, 45, 190, 0.05))
+    drop-shadow(0px 10px 20px rgba(30, 45, 190, 0.08))
+    drop-shadow(0px 4px 8px rgba(30, 45, 190, 0.05))
+    drop-shadow(0px 0.8px 1.6px rgba(30, 45, 190, 0.04));
+}
+
+$card-transitions: "color, background-color, border-color, opacity, fill, filter";
+
+$link-hover-selectors: ".ilo--card--link:hover, .ilo--card--link:focus, .ilo--card--link:focus-within";
+
+@mixin card-link-hover {
+  &:has(#{$link-hover-selectors}) {
+    @content;
+  }
+}
+
 .ilo--card {
   $self: &;
   $transition-timing: 250ms;
+
   box-sizing: border-box;
   position: relative;
   background-color: var(--ilo-color-white);
-
-  // Max width is set in the invididual card types unless fluid
   max-width: var(--max-width);
   flex: 1 1 var(--max-width);
+  @include globaltransition("border-bottom, filter");
 
   * {
-    @include globaltransition("color, background-color, border-color, opacity");
+    @include globaltransition($card-transitions);
   }
 
-  &__size__fluid {
-    --max-width: 100% !important;
-  }
+  @include card-link-hover {
+    @include card-drop-shadow;
 
-  &__action:hover,
-  &__action:focus,
-  &__action:focus-within {
-    // background: var(--ilo-color-white);
-    outline: none;
-    text-decoration: none;
-
-    // &#{$self}__dark {
-    //   background: var(--ilo-color-white);
-    // }
-
-    #{$self}--eyebrow,
-    #{$self}--title,
-    #{$self}--intro,
-    #{$self}--date,
-    #{$self}--date-extra {
-      color: var(--ilo-color-blue);
-    }
-  }
-
-  &__theme {
-    &__light {
-      background: var(--ilo-color-white);
+    #{$self}--image--wrapper::before {
+      opacity: 0.4;
     }
 
-    &__dark {
-      background: var(--ilo-color-blue-dark);
-
-      #{$self}--eyebrow,
-      #{$self}--title,
-      #{$self}--intro,
-      #{$self}--date,
-      #{$self}--eventdate {
-        color: var(--ilo-color-gray-light);
-      }
-    }
-
-    &__soft {
-      background: var(--ilo-color-blue-lighter);
-    }
-  }
-
-  &__isvideo {
-    #{$self}--image--wrapper {
-      position: relative;
-
-      &::before,
-      &::after {
-        background-position: center;
-        background-size: 18px 20px;
-        background-repeat: no-repeat;
-        content: "";
-        display: block;
-        height: 40px;
-        left: 0;
-        position: absolute;
-        top: 0;
-        width: 40px;
-        z-index: 1;
-      }
-
-      &::before {
-        background-color: var(--ilo-color-gray-charcoal);
-      }
-
-      &::after {
-        @include icon("caret_right", var(--ilo-color-gray-light));
-      }
+    #{$self}--picture {
+      filter: saturate(0);
     }
   }
 
@@ -97,55 +51,42 @@
     height: 100%;
   }
 
+  // The outer element for cards with corner cut
   &--wrapper {
     max-width: var(--max-width);
-    transition: filter $transition-timing ease-out;
+    @include globaltransition($card-transitions);
 
-    &:hover,
-    &:focus,
-    &:focus-within {
+    @include card-link-hover {
       @include card-drop-shadow;
+    }
+  }
+
+  &--image--wrapper {
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      background-color: var(--ilo-color-blue);
+      height: 100%;
+      width: 100%;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      @include globaltransition("opacity");
     }
   }
 
   &--link {
     background: none;
     color: transparent;
-    height: 100%;
-    left: 0;
     position: absolute;
-    text-decoration: none;
     top: 0;
+    left: 0;
     width: 100%;
+    height: 100%;
+    text-decoration: none;
     z-index: 2;
-
-    &:hover,
-    &:focus,
-    &:focus-within {
-      outline: none;
-
-      + #{$self}--wrap {
-        #{$self}--eyebrow {
-          color: var(--ilo-color-blue);
-        }
-
-        #{$self}--title {
-          color: var(--ilo-color-blue);
-        }
-
-        #{$self}--intro {
-          color: var(--ilo-color-blue);
-        }
-
-        #{$self}--date {
-          color: var(--ilo-color-blue);
-        }
-
-        #{$self}--eventdate {
-          color: var(--ilo-color-blue);
-        }
-      }
-    }
 
     &--text {
       @include isVisuallyHidden();
@@ -153,74 +94,129 @@
   }
 
   &--eyebrow {
-    color: $brand-ilo-purple;
-    @include font-styles("body-small");
-    margin-bottom: spacing(3);
-
-    #{$self}--link:hover &,
-    #{$self}--link:focus &,
-    #{$self}--link:focus-within & {
-      color: var(--ilo-color-blue);
-    }
+    color: var(--ilo-color-purple);
+    @include typography("body-small");
+    margin-bottom: spacing(4);
   }
 
   &--title {
-    color: var(--ilo-color-blue-dark);
-    font-family: var(--ilo-fonts-display);
-    font-weight: 700;
-    @include font-styles("headline-5");
-    @include textmargin(
-      "margin-bottom",
-      10px,
-      "headline-5",
-      "display",
-      "body-small",
-      "copy"
-    );
-
-    #{$self}--link:hover &,
-    #{$self}--link:focus &,
-    #{$self}--link:focus-within & {
-      color: var(--ilo-color-blue);
-    }
+    color: var(--ilo-color-dark-blue);
+    @include typography("heading-4");
+    margin-bottom: spacing(6);
   }
 
   &--intro {
     color: var(--ilo-color-gray-charcoal);
-    @include font-styles("body-small");
-    margin-bottom: spacing(8);
-
-    #{$self}--link:hover &,
-    #{$self}--link:focus &,
-    #{$self}--link:focus-within & {
-      color: var(--ilo-color-blue);
-    }
+    @include typography("body-large");
   }
 
   &--date {
-    color: $brand-ilo-grey-accessible;
-    @include font-styles("body-small");
-    @include textmargin("margin-bottom", 30px, "body-small", "copy", 0, 0);
-
-    #{$self}--link:hover &,
-    #{$self}--link:focus &,
-    #{$self}--link:focus-within & {
-      color: var(--ilo-color-blue);
-    }
+    color: var(--ilo-gray-accessible);
+    @include typography("body-small");
+    margin-bottom: spacing(6);
   }
 
   &--event-date {
-    @include font-styles("body-small");
-    @include textmargin("margin-bottom", 30px, "body-small", "copy", 0, 0);
+    @include typography("body-small");
   }
 
-  &--picture {
-    max-width: 100%;
-    width: 100%;
+  &--content--item {
+    @include typography("body-small");
   }
 
   &--cta {
     position: relative;
     z-index: 2;
+  }
+
+  &__theme {
+    &__light {
+      background: var(--ilo-color-white);
+      border-bottom: px-to-rem(3px) solid var(--ilo-color-gray-base);
+    }
+
+    &__soft {
+      background: var(--ilo-color-blue-lighter);
+    }
+
+    &__light,
+    &__soft {
+      @include card-link-hover {
+        border-bottom: px-to-rem(3px) solid var(--ilo-color-blue);
+
+        #{$self}--eyebrow,
+        #{$self}--title,
+        #{$self}--intro,
+        #{$self}--date,
+        #{$self}--date-extra,
+        #{$self}--content--item,
+        .ilo--profile {
+          color: var(--ilo-color-blue);
+
+          .ilo--icon {
+            fill: var(--ilo-color-blue);
+          }
+        }
+      }
+    }
+
+    &__dark {
+      background: var(--ilo-color-blue-dark);
+      border-bottom: px-to-rem(3px) solid var(--ilo-color-red);
+
+      @include card-link-hover {
+        border-bottom: px-to-rem(3px) solid var(--ilo-color-white);
+      }
+
+      #{$self}--title {
+        color: var(--ilo-color-white);
+      }
+
+      #{$self}--eyebrow,
+      #{$self}--intro,
+      #{$self}--date,
+      #{$self}--content--item {
+        color: var(--ilo-color-gray-light);
+      }
+
+      #{$self}--content--item {
+        .ilo--icon {
+          fill: var(--ilo-color-gray-light);
+        }
+      }
+    }
+  }
+
+  &__size {
+    &__fluid {
+      --max-width: 100% !important;
+    }
+  }
+
+  // Video style
+  &__isvideo {
+    #{$self}--image--wrapper {
+      position: relative;
+      &::before,
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 40px;
+        width: 40px;
+        z-index: 1;
+        background-position: center;
+        background-size: 18px 20px;
+        background-repeat: no-repeat;
+      }
+      &::before {
+        background-color: var(--ilo-color-gray-charcoal);
+      }
+      &::after {
+        @include icon("caret_right", var(--ilo-color-gray-light));
+      }
+    }
   }
 }
