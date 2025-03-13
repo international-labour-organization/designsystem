@@ -23,7 +23,7 @@ const colorArgtype = {
 };
 
 export default {
-  title: "Components/Icon",
+  title: "Components/User Interface/Icon",
   component: Icon,
   tags: ["autodocs"],
   argTypes: {

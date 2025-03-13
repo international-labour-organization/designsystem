@@ -8,7 +8,7 @@ import classNames from "classnames";
 
 import useGlobalSettings from "../../hooks/useGlobalSettings";
 import { Link } from "../Link";
-import { Icon } from "../Icon";
+import { Icon, IconProps } from "../Icon";
 import { ButtonTypes, PositionTypes, SizeTypes } from "../../types";
 
 export type ButtonProps = Omit<
@@ -38,6 +38,17 @@ export type ButtonProps = Omit<
   /**
    * Specify if the button should be rendered as link
    */
+
+  /**
+   * Specify the position of the icon
+   */
+  iconPosition?: PositionTypes;
+
+  /**
+   * Specify if the button renders an icon only
+   */
+  icononly?: boolean;
+
   link?: {
     /**
      * Specify the url for the Button's href
@@ -54,11 +65,8 @@ export type ButtonProps = Omit<
      */
     target?: string;
   };
-  icon?: {
-    name: string;
-    position?: PositionTypes;
-    only?: boolean;
-  };
+
+  icon?: IconProps;
 };
 
 const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonProps>(
@@ -73,6 +81,8 @@ const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonProps>(
       style,
       name,
       link,
+      iconPosition = "left",
+      icononly = false,
       ...props
     },
     ref
@@ -85,9 +95,9 @@ const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonProps>(
       [baseClass]: true,
       [`${baseClass}__${size}`]: size,
       [`${baseClass}__${type}`]: type,
-      [`${baseClass}--icon ${baseClass}--icon--position__${icon?.position || "left"}`]:
-        icon && !icon.only,
-      [`${baseClass}--icon ${baseClass}--icon--only`]: icon && icon.only,
+      [`${baseClass}--icon ${baseClass}--icon--position__${iconPosition}`]:
+        icon && !icononly,
+      [`${baseClass}--icon ${baseClass}--icon--only`]: icon && icononly,
     });
 
     if (link) {
@@ -101,7 +111,7 @@ const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonProps>(
           style={style}
           // Link has no disabled state
         >
-          {icon && <Icon name={icon.name} hidden={true} />}
+          {icon && <Icon {...icon} />}
           {children}
         </Link>
       );
@@ -116,8 +126,8 @@ const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonProps>(
         name={name}
         {...props}
       >
+        {icon && <Icon {...icon} />}
         <span className="button__label">{children}</span>
-        {icon && <Icon name={icon.name} hidden={true} />}
       </button>
     );
   }
