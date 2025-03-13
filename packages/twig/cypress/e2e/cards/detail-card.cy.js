@@ -52,16 +52,19 @@ describe("Card Detail Component", () => {
     }
   });
 
-  it("should display the correct date", () => {
-    if (fixture.date) {
-      cy.get("@card")
-        .find(".ilo--card--date")
-        .should("contain.text", fixture.date.human);
-      cy.get("@card")
-        .find(".ilo--card--date")
-        .should("have.attr", "datetime", fixture.date.unix);
-    } else {
+  it("should not display date if dateExtra is provided", () => {
+    if (fixture.dateExtra) {
       cy.get("@card").find(".ilo--card--date").should("not.exist");
+    }
+  });
+
+  it("should show date extra if provided", () => {
+    if (fixture.dateExtra) {
+      cy.get("@card")
+        .find(".ilo--card--date-extra")
+        .should("contain.text", fixture.dateExtra);
+    } else {
+      cy.get("@card").find(".ilo--card--date-extra").should("not.exist");
     }
   });
 
