@@ -1,5 +1,43 @@
 # @ilo-org/react
 
+## 0.22.0
+
+### Minor Changes
+
+- a3e986077: **Status:** Adding new `<Status />` component to show the state of changing content
+- c3539921d: **Picture:** Add new Picture component for responsive general purpose responsive images
+- c8ade62a5: **Button**
+
+  - Replace `icon.position` prop with `iconPosition`
+  - Replace `icon.only` with `iconOnly`
+  - `icon` now passess all props to the underlying `<Icon />` component
+  - Make sure the `icon` renders in the correct position vis-a-vis the label
+
+- 798931969: **ScoreCard:** Introducing the `<ScoreCard />` component which shows information about content that changes over time
+
+### Patch Changes
+
+- f17d74482: **Cards:** Remove needless class
+- 6fc248b22: **Icon**
+
+  - Add a `color` prop to the Icon so it can be styled correctly
+  - Add `className` and `id` props in case those are needed
+  - Correctly type the accepted values for Icon sizes
+  - Add Icon documentation to Storybook
+
+- Updated dependencies [5da6ec816]
+- Updated dependencies [1f1160f94]
+- Updated dependencies [ea11b2f23]
+- Updated dependencies [99a2429bb]
+- Updated dependencies [a2e0e1498]
+- Updated dependencies [1f1160f94]
+- Updated dependencies [c69acd279]
+- Updated dependencies [177e8adce]
+- Updated dependencies [274984e76]
+- Updated dependencies [525322e47]
+- Updated dependencies [584d975a2]
+  - @ilo-org/styles@1.6.0
+
 ## 0.21.0
 
 ### Minor Changes

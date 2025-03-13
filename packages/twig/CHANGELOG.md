@@ -1,5 +1,54 @@
 # @ilo-org/twig
 
+## 1.6.0
+
+### Minor Changes
+
+- 1f1160f94: **Status:** Introducing a new component that can be used to show the status of an event or other changing item of content.
+- 1f1160f94: **Tags/Tag:** Complete refactor with some impact on usage and appearance:
+
+  - The `defaultActive` setting of `Tag` is deprecated in favor of `disabled`, which will override it if both are used. `defaultAcive` should no longer be used going forward.
+  - The `iconPosition` setting of `Tag` is removed. The icon will now be rendered after the label according to the `direction` context.
+  - The `showIcon` setting and `elementId` field of `Tag` are now correctly passed from `Tags` to `Tag`.
+  - The `Tag` component is moved into its own folder `@components/tag`
+  - All JavaScript for `Tag` is removed, it's now rendered entirely on the server.
+  - Documentation for using the `tag` alone has been added to Storybook.
+
+- 525322e47: **Score Card:** Introduce new card for showing details about events with changing status.
+
+### Patch Changes
+
+- 9627997bc: **Icon:** Fix bug that prevented component from sizing correctly
+- 9df5eecdb: **Feature Card:** Set default values that weren't set before
+- 74ec65792: **DetailCard:** Do not show `date` field if `dateExtra` is also used.
+- f3d5fde44: **Feature Card:** Updated markup to show additional CTA on its own line beneath the card content
+- fa96ab5e8: **Icon:** Add `aria-hidden` attribute so decorate icons won't be perceived by screen readers.
+- 5da6ec816: **Button**
+
+  - Set appropriate defaults for button and icon sizing.
+  - Add `elementId` field so the element can targetted
+
+- c69acd279: **Profile**
+
+  - Implement `size` setting which was missing.
+  - When `size` is `small`, the Profile does not show a `role`, `description` or `link`
+  - Adjust styles and layout to sync with design changes
+  - Fully implement `dark` theme
+
+- 584d975a2: **Detail Card:** Refactor styles and update appearance
+- Updated dependencies [5da6ec816]
+- Updated dependencies [1f1160f94]
+- Updated dependencies [ea11b2f23]
+- Updated dependencies [99a2429bb]
+- Updated dependencies [a2e0e1498]
+- Updated dependencies [1f1160f94]
+- Updated dependencies [c69acd279]
+- Updated dependencies [177e8adce]
+- Updated dependencies [274984e76]
+- Updated dependencies [525322e47]
+- Updated dependencies [584d975a2]
+  - @ilo-org/styles@1.6.0
+
 ## 1.5.0
 
 ### Minor Changes
