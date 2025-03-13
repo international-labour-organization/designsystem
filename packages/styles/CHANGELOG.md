@@ -1,5 +1,11 @@
 # @ilo-org/styles
 
+## 1.6.1
+
+### Patch Changes
+
+- a0af0f6bf: **Tag:** Make sure disabled tags can't be actioned when they are links
+
 ## 1.6.0
 
 ### Minor Changes
