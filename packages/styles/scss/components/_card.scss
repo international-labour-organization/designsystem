@@ -95,37 +95,33 @@ $link-hover-selectors: ".ilo--card--link:hover, .ilo--card--link:focus, .ilo--ca
 
   &--eyebrow {
     color: var(--ilo-color-purple);
-    @include font-styles("body-eyebrow");
+    @include typography("body-small");
+    margin-bottom: spacing(4);
   }
 
   &--title {
     color: var(--ilo-color-dark-blue);
-    font-family: var(--ilo-fonts-display);
-    font-weight: 700;
-    @include font-styles("headline-5");
+    @include typography("heading-4");
+    margin-bottom: spacing(6);
   }
 
   &--intro {
     color: var(--ilo-color-gray-charcoal);
-    @include font-styles("body-small");
+    @include typography("body-large");
   }
 
   &--date {
     color: var(--ilo-gray-accessible);
-    @include font-styles("body-small");
+    @include typography("body-small");
+    margin-bottom: spacing(6);
   }
 
   &--event-date {
-    @include font-styles("body-small");
+    @include typography("body-small");
   }
 
   &--content--item {
-    // Replace this with new font mixins
-    font-weight: var(--ilo-font-weight-regular);
-    color: var(--ilo-color-gray-accessible);
-    font-size: var(--ilo-font-size-sm);
-    line-height: var(--ilo-line-height-xlg);
-    letter-spacing: var(--ilo-letter-spacing-md);
+    @include typography("body-small");
   }
 
   &--cta {
@@ -137,7 +133,14 @@ $link-hover-selectors: ".ilo--card--link:hover, .ilo--card--link:focus, .ilo--ca
     &__light {
       background: var(--ilo-color-white);
       border-bottom: px-to-rem(3px) solid var(--ilo-color-gray-base);
+    }
 
+    &__soft {
+      background: var(--ilo-color-blue-lighter);
+    }
+
+    &__light,
+    &__soft {
       @include card-link-hover {
         border-bottom: px-to-rem(3px) solid var(--ilo-color-blue);
 
@@ -181,10 +184,6 @@ $link-hover-selectors: ".ilo--card--link:hover, .ilo--card--link:focus, .ilo--ca
           fill: var(--ilo-color-gray-light);
         }
       }
-    }
-
-    &__soft {
-      background: var(--ilo-color-blue-lighter);
     }
   }
 
