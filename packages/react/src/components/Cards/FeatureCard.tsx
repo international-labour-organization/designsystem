@@ -85,7 +85,6 @@ const FeatureCard = forwardRef<HTMLDivElement, FeatureCardProps>(
       className,
       `${baseClass}__type__feature`,
       {
-        [`${baseClass}__action`]: link,
         [`${baseClass}__size__${String(size)}`]: size,
         [`${baseClass}__theme__${theme}`]: theme,
         [`${baseClass}__isvideo`]: isVideo,

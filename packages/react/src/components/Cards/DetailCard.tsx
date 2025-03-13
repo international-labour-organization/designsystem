@@ -92,7 +92,6 @@ const DetailCard = forwardRef<HTMLDivElement, DetailCardProps>(
       `${baseClass}__type__detail`,
       className,
       {
-        [`${baseClass}__action`]: link,
         [`${baseClass}__size__${String(size)}`]: size,
         [`${baseClass}__theme__${theme}`]: theme,
         [`${baseClass}__isvideo`]: isVideo,

@@ -13,56 +13,38 @@
 
   // This provides a reference to the outerclass within nested declarations
   $button: &;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: spacing(2);
   font-family: var(--ilo-fonts-display);
   font-weight: var(--ilo-button-label-weight);
-  padding: 0;
   border-radius: var(--ilo-border-md);
-  @include globaltransition("color, background-color, border-color");
+  text-decoration: none;
 
-  .link__label,
-  .button__label {
-    display: inline-block;
-    position: relative;
-    top: px-to-rem(2px);
+  [class*="__label"] {
+    white-space: nowrap;
   }
 
   &--icon {
     position: relative;
 
     .#{$prefix}--icon {
-      height: 100%;
-      max-height: px-to-rem(32px);
-      max-width: px-to-rem(32px);
-      position: absolute;
-      width: 100%;
-    }
-
-    &--position__left {
-      .link__label,
-      .button__label {
-        padding-inline-start: spacing(6);
-      }
-
-      .#{$prefix}--icon {
-        left: px-to-rem(13px);
-        top: px-to-rem(7px);
-      }
+      position: relative;
+      bottom: px-to-rem(2px);
     }
 
     &--position__right {
-      .link__label,
-      .button__label {
-        padding-inline-end: spacing(6);
-      }
-
-      .#{$prefix}--icon {
-        right: px-to-rem(13px);
-        top: px-to-rem(7px);
-      }
+      flex-direction: row-reverse;
     }
 
     &--only {
+      padding: unset !important;
+
+      .#{$prefix}--icon {
+        bottom: 0 !important;
+      }
+
       .button__label {
         @include isVisuallyHidden();
       }
@@ -71,109 +53,35 @@
 
   &__large {
     padding: spacing(3) spacing(6);
+    height: px-to-rem(52px);
     @include font-styles("button-large");
 
     &.#{$prefix}--button--icon--only {
-      height: px-to-rem(45px);
-      width: px-to-rem(45px);
-      padding: unset;
-
-      .#{$prefix}--icon {
-        left: px-to-rem(4.5px);
-        top: px-to-rem(4.5px);
-      }
+      width: px-to-rem(52px);
     }
   }
 
   &__medium {
     padding: spacing(2) spacing(5);
+    height: px-to-rem(44px);
     @include font-styles("button-medium");
 
-    .#{$prefix}--icon {
-      max-height: px-to-rem(30px);
-      max-width: px-to-rem(30px);
-      position: absolute;
-    }
-
-    &.#{$prefix}--button--icon--position__left {
-      .link__label,
-      .button__label {
-        padding-inline-start: spacing(6);
-      }
-
-      .#{$prefix}--icon {
-        left: px-to-rem(10px);
-        top: px-to-rem(3px);
-      }
-    }
-
-    &.#{$prefix}--button--icon--position__right {
-      .link__label,
-      .button__label {
-        padding-inline-end: spacing(6);
-      }
-
-      .#{$prefix}--icon {
-        right: px-to-rem(10px);
-        top: px-to-rem(3px);
-      }
-    }
-
     &.#{$prefix}--button--icon--only {
-      height: px-to-rem(36px);
-      width: px-to-rem(36px);
-      padding: unset;
-
-      .#{$prefix}--icon {
-        left: px-to-rem(2px);
-        top: px-to-rem(2px);
-      }
+      width: px-to-rem(44px);
     }
   }
 
   &__small {
     padding: spacing(1) spacing(4);
+    height: px-to-rem(32px);
     @include font-styles("button-small");
 
-    .#{$prefix}--icon {
-      max-height: px-to-rem(28px);
-      max-width: px-to-rem(28px);
-      position: absolute;
-    }
-
-    &.#{$prefix}--button--icon--position__left {
-      .link__label,
-      .button__label {
-        padding-inline-start: spacing(5);
-      }
-
-      .#{$prefix}--icon {
-        left: px-to-rem(6px);
-        top: 0;
-      }
-    }
-
-    &.#{$prefix}--button--icon--position__right {
-      .link__label,
-      .button__label {
-        padding-inline-end: spacing(9);
-      }
-
-      .#{$prefix}--icon {
-        right: 6;
-        top: 0;
-      }
-    }
-
     &.#{$prefix}--button--icon--only {
-      height: px-to-rem(26px);
-      width: px-to-rem(26px);
-      padding: unset;
+      width: px-to-rem(32px);
+    }
 
-      .#{$prefix}--icon {
-        left: px-to-rem(0.5px);
-        top: px-to-rem(0.5px);
-      }
+    .#{$prefix}--icon {
+      bottom: px-to-rem(1px);
     }
   }
 

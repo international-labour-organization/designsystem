@@ -5,22 +5,34 @@
 	{% if avatar %}
 		<img class="{{prefix}}--profile--avatar" src="{{avatar}}" alt="{{alt|default(defaultAlt)}}">
 	{% endif %}
-	<figcaption>
-		<div class="{{prefix}}--profile--figcaption--content">
-			<div class="{{prefix}}--profile--name">{{name}}</div>
-			{% if role %}
-				<div class="{{prefix}}--profile--role">{{role}}</div>
+		{% if size == "small" %}
+			<figcaption class="{{prefix}}--profile--figcaption--content">
+				<div class="{{prefix}}--profile--name">{{name}}</div>
+			</figcaption>
+		{% endif %}
+		{% if size == "large" %}
+			<figcaption>
+				<div class="{{prefix}}--profile--figcaption--content">
+					<div class="{{prefix}}--profile--name">{{name}}</div>
+					{% if role %}
+						<div class="{{prefix}}--profile--role">{{role}}</div>
+					{% endif %}
+				</div>
+			</figcaption>
+			{% if description %}
+				<p class="{{prefix}}--profile--description">{{description}}</p>
 			{% endif %}
-		</div>
-	</figcaption>
-	{% if description %}
-		<p class="{{prefix}}--profile--description">{{description}}</p>
-	{% endif %}
-	{% if link and link.url and link.label %}
-		<div class="{{prefix}}--profile--link">
-			<a href={{link.url}} target="__blank" rel="noopener noreferrer">
-				<span class="{{prefix}}--profile--link--label">{{link.label}}</span>
-			</a>
-		</div>
-	{% endif %}
+			{% if link and link.url and link.label %}
+				<div class="{{prefix}}--profile--link">
+					<a href={{link.url}} target="__blank" rel="noopener noreferrer">
+						<span class="{{prefix}}--profile--link--label">{{link.label}}</span>
+						{% include "@components/icon/icon.twig" with {
+							name: "chevron_right",
+							size: 24,
+							prefix: prefix
+						} %}
+					</a>
+				</div>
+			{% endif %}
+		{% endif %}
 </figure>

@@ -1,0 +1,71 @@
+{# card_score.twig #}
+
+{% set theme = theme|default("light") %}
+{% set titleLevel = titleLevel|default(p) %}
+{% set size = size|default("narrow") %}
+{% set iconColor = "var(--ilo-color-gray-accessible)" %}
+
+{% if theme == "dark" %}
+	{% set iconColor = "var(--ilo-color-white)" %}
+{% endif %}
+
+<div class="{{prefix}}--card {{prefix}}--card__type__score {{prefix}}--card__theme__{{theme}} {{prefix}}--card__size__{{ size }} {% if isvideo|boolval %} {{prefix}}--card__isvideo {% endif %}">
+	<a class="{{prefix}}--card--link" href="{{link}}" title="{{title}}">
+		<span class="{{prefix}}--card--link--text">{{title}}</span>
+	</a>
+	<div class="{{prefix}}--card--wrap">
+		{% if image and size != "simple"  %}
+			<div class="{{prefix}}--card--image--wrapper">
+				{% include "@components/picture/picture.twig" with {
+          image: image,
+          class: "card"
+        }
+      %}
+			</div>
+		{% endif %}
+		<div class="{{prefix}}--card--content">
+			{% if status %}
+				{% include "@components/status/status.twig" with {
+					content: status.content,
+					statusType: status.statusType
+				} %}
+			{% endif %}
+			{% if eyebrow and size != "simple" %}
+				<p class="{{prefix}}--card--eyebrow">{{eyebrow}}</p>
+			{% endif %}
+			{% if title %}
+				<{{titleLevel|default('p')}} class="{{ prefix }}--card--title">{{ title }}</{{titleLevel|default('p')}}>
+			{% endif %}
+			{% if dataset.content %}
+				<div class="{{prefix}}--card--area--content">
+				{% for item in dataset.content.items %}
+						<div class="{{prefix}}--card--content--item">
+							{% include "@components/icon/icon.twig" with {
+								name: item.icon,
+								size: 20,
+								color: iconColor
+							} %}
+							<span datetime="{{item.unix}}">{{item.label}}</span>
+						</div>
+				{% endfor %}
+				</div>
+			{% endif %}
+			{% if dataset.content %}
+				<div class="{{prefix}}--card--area--cta">
+					{% for item in dataset.cta.items %}
+						<div class="{{prefix}}--card--cta">
+							{% include "@components/button/button.twig" with {
+								icon: {name: item.icon, size: 16},
+								label: item.label,
+								prefix: prefix,
+								type: "secondary",
+								size: "small",
+								iconPosition: "left",
+							} %}
+					</div>
+					{% endfor %}
+				</div>
+			{% endif %}
+		</div>
+	</div>
+</div>

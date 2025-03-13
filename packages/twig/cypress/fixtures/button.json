@@ -1,0 +1,14 @@
+{
+  "label": "Click Me",
+  "elementId": "my-button",
+  "url": "https://www.ilo.org",
+  "icon": "calendar",
+  "settings": {
+    "size": "medium",
+    "type": "primary",
+    "iconPosition": "left",
+    "icononly": false,
+    "disabled": false,
+    "opensmodal": true
+  }
+}

@@ -1,9 +1,7 @@
-{#
-  FEATURE CARD COMPONENT
-#}
+{# card_text.twig #}
 
 <div class="{{prefix}}--card--wrapper">
-	<div class="{{prefix}}--card {{prefix}}--card__type__text {{prefix}}--card__size__{{ size }} {{prefix}}--card__action {{prefix}}--card__theme__{{theme}}">
+	<div class="{{prefix}}--card {{prefix}}--card__type__text {{prefix}}--card__size__{{ size }} {{prefix}}--card__theme__{{theme}}">
 		<a class="{{prefix}}--card--link" href="{{link}}" title="{{title}}">
 			<span class="{{prefix}}--card--link--text">{{title}}</span>
 		</a>
@@ -21,11 +19,9 @@
 				{% if profile %}
 					{% include "@components/profile/profile.twig" with {
             avatar: profile.avatar,
-            description: profile.description,
-            link: profile.link,
             name: profile.name,
-            role: profile.role,
             prefix: prefix,
+						size: "small",
             theme: theme,
           } only %}
 				{% endif %}

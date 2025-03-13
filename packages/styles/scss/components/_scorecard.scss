@@ -1,0 +1,177 @@
+@use "../tokens" as *;
+@use "../functions" as *;
+@use "../animations" as *;
+@import "../mixins";
+
+.ilo--card {
+  $self: &;
+
+  &__type {
+    &__score {
+      --max-width: #{px-to-rem(412px)};
+
+      display: flex;
+      margin-top: 0;
+      position: relative;
+
+      // Content Layout
+      #{$self}--wrap {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+      }
+
+      #{$self}--content {
+        display: flex;
+        flex: 1 1 auto;
+        flex-direction: column;
+        padding: spacing(6) spacing(6) spacing(8) spacing(6);
+        width: 100%;
+      }
+
+      #{$self}--image--wrapper {
+        height: 0;
+        overflow: hidden;
+        padding-top: 56.25%;
+        width: 100%;
+
+        img {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          height: auto;
+          width: 100%;
+        }
+      }
+
+      .ilo--status {
+        margin-bottom: spacing(6);
+      }
+
+      #{$self}--eyebrow {
+        margin-bottom: spacing(4);
+      }
+
+      #{$self}--title {
+        @include font-styles("headline-5");
+        font-family: var(--ilo-fonts-display);
+        font-weight: 700;
+        margin-bottom: spacing(6);
+      }
+
+      #{$self}--area {
+        &--content {
+          display: flex;
+          flex-flow: column;
+          gap: spacing(2);
+          margin-bottom: spacing(6);
+        }
+
+        &--cta {
+          display: flex;
+          flex-flow: row wrap;
+          gap: spacing(2);
+        }
+      }
+
+      #{$self}--content--item {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: flex-start;
+        align-items: center;
+        gap: spacing(2);
+      }
+
+      &#{$self}__size {
+        // narrow is the default
+
+        &__wide,
+        &__fluid {
+          --max-width: #{px-to-rem(754px)};
+
+          @include breakpoint("md") {
+            #{$self}--wrap {
+              flex-direction: row;
+            }
+
+            #{$self}--content {
+              width: 50%;
+            }
+
+            #{$self}--image--wrapper {
+              padding: 0;
+              height: initial;
+              width: 50%;
+            }
+
+            img {
+              object-fit: cover;
+              max-width: initial;
+              height: 100%;
+              width: 100%;
+            }
+
+            #{$self}--date,
+            #{$self}--eyebrow,
+            #{$self}--title {
+              width: 100%;
+            }
+
+            #{$self}--date {
+              align-self: flex-end;
+            }
+          }
+        }
+
+        &__simple {
+          --max-width: #{px-to-rem(754px)};
+
+          #{$self}--content {
+            padding: spacing(3) spacing(4);
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(3, auto);
+            gap: spacing(4);
+            grid-template-areas:
+              "title"
+              "cta"
+              "status"
+              "content";
+
+            @include breakpoint("md") {
+              grid-template-columns: min-content 1fr 1fr;
+              grid-template-areas:
+                "title title cta"
+                "status content content";
+            }
+
+            .ilo--status {
+              grid-area: status;
+            }
+
+            #{$self}--title {
+              grid-area: title;
+              font-size: var(--ilo-font-size-lg);
+              line-height: var(--ilo-line-height-lg);
+              letter-spacing: var(--ilo-letter-spacing-sm);
+            }
+
+            #{$self}--area--content {
+              grid-area: content;
+              flex-flow: row wrap;
+            }
+
+            #{$self}--area--cta {
+              grid-area: cta;
+
+              @include breakpoint("md") {
+                justify-content: flex-end;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
