@@ -40,6 +40,7 @@
   &__disabled {
     color: var(--ilo-color-gray-accessible);
     fill: var(--ilo-color-gray-accessible);
+    pointer-events: none;
   }
 
   &__type {
