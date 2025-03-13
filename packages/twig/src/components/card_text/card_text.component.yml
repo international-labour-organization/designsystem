@@ -25,11 +25,10 @@ textcard:
     profile:
       type: object
       label: Profile
-      description: Optional profile of the author who created the content
+      description: Optional profile of the author who created the content. Uses only the `avatar` and `name` properties from the  `Profile` component.
       preview:
         avatar: "/images/ilo-dg.jpg"
         name: "Gilbert F. Houngbo"
-        role: "ILO Director-General"
     title:
       type: string
       label: Title

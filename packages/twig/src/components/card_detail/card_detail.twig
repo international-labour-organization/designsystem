@@ -24,7 +24,7 @@
 			{% if intro %}
 				<p class="{{prefix}}--card--intro">{{intro}}</p>
 			{% endif %}
-			{% if date %}
+			{% if date and not dateExtra %}
 				<time class="{{prefix}}--card--date" datetime="{{date.unix}}">{{date.human}}</time>
 			{% endif %}
 			{% if dateExtra %}

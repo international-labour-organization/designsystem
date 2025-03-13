@@ -8,14 +8,14 @@ detailcard:
     date:
       type: object
       label: Date
-      description: Date copy readable for both humans and machines
+      description: Date copy readable for both humans and machines. Will not be shown if `dateExtra` is also used.
       preview:
         human: 20 September 2025
         unix: "1741276180"
     dateExtra:
       type: string
       label: dateExtra
-      description: Strong date copy that could include other information such as the location of an event.
+      description: Strong date copy that could include other information such as the location of an event. Overrides the `date` field.
       preview: 20 September 2025 | Kuala Lumpur, Malaysia
     eyebrow:
       type: string
