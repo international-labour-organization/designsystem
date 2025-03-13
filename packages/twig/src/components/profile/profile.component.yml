@@ -43,4 +43,14 @@ profile:
         light: Light
         dark: Dark
       preview: "light"
+    size:
+      type: select
+      label: Size
+      description: The size of the profile
+      required: false
+      preview: "large"
+      options:
+        small: Small
+        large: Large
+
   visibility: storybook
