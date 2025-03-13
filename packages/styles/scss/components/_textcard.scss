@@ -41,15 +41,7 @@
           }
 
           #{$self}--title {
-            @include font-styles("headline-6");
-            @include textmargin(
-              "margin-bottom",
-              40px,
-              "headline-6",
-              "display",
-              "base",
-              "copy"
-            );
+            @include typography("heading-4");
           }
         }
       }
@@ -58,44 +50,16 @@
         border-bottom: px-to-rem(3px) solid var(--ilo-color-red);
       }
 
-      #{$self}--eyebrow {
-        @include textmargin(
-          "margin-bottom",
-          24px,
-          "base",
-          "copy",
-          "headline-5",
-          "display"
-        );
-      }
-
       #{$self}--title {
-        @include font-styles("headline-6");
-        @include textmargin(
-          "margin-bottom",
-          40px,
-          "headline-6",
-          "display",
-          "base",
-          "copy"
-        );
+        @include typography("heading-4");
 
         @include breakpoint("md") {
-          @include font-styles("headline-5");
-          @include textmargin(
-            "margin-bottom",
-            40px,
-            "headline-5",
-            "display",
-            "base",
-            "copy"
-          );
+          @include typography("heading-3");
         }
       }
 
       #{$self}--date {
         display: block;
-        @include textmargin("margin-bottom", 32px, "base", "copy", 0, 0);
       }
 
       #{$self}--content {

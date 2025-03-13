@@ -19,11 +19,9 @@
 				{% if profile %}
 					{% include "@components/profile/profile.twig" with {
             avatar: profile.avatar,
-            description: profile.description,
-            link: profile.link,
             name: profile.name,
-            role: profile.role,
             prefix: prefix,
+						size: "small",
             theme: theme,
           } only %}
 				{% endif %}
