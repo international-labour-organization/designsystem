@@ -76,6 +76,8 @@
   }
 
   &--context-menu {
+    left: 0;
+    top: 0;
     z-index: 5;
     position: absolute;
     margin-top: spacing(2);
