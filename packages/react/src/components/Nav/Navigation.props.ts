@@ -10,7 +10,7 @@ export interface NavigationLinkProps {
 
   label: ReactNode;
 
-  isActive?: boolean;
+  isActive?: boolean | (() => boolean);
 
   /**
    * The component to render the link
@@ -95,6 +95,8 @@ export interface SubsiteNavCoreProps {
        * The label to display for the search bar
        */
       label?: string;
+
+      component?: ElementType;
     };
   };
 }

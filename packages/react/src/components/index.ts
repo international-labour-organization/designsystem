@@ -34,7 +34,7 @@ export { Icon } from "./Icon";
 export { List } from "./List";
 export { Profile } from "./Profile";
 export { TableOfContents } from "./TableOfContents";
-export { Footer } from "./Footer";
+export * from "./Footer";
 export { Navigation } from "./Navigation";
 export { CardGroup } from "./Cards/CardGroup";
 export { Breadcrumb } from "./Breadcrumb";
