@@ -29,6 +29,7 @@ const ComplexNav = forwardRef<HTMLElement, ComplexNavProps>(
       mobile: [isCompactOpen, setIsCompactOpen],
       isDesktop: isAboveXL,
       ref: headerRef,
+      isClient,
     } = useNavSetup({ menu: items, split: { desktop: 6, mobile: 5 } });
 
     useImperativeHandle(ref, () => headerRef.current as HTMLElement);
@@ -52,7 +53,7 @@ const ComplexNav = forwardRef<HTMLElement, ComplexNavProps>(
                   className={`${baseClass}__widgets-bar__link`}
                 />
               )}
-              {widgets?.language && (
+              {widgets?.language && isClient && (
                 <LanguageToggle
                   className={`${baseClass}__widgets-bar__language`}
                   {...widgets.language}
@@ -117,15 +118,21 @@ const ComplexNav = forwardRef<HTMLElement, ComplexNavProps>(
                 {branding.name}
               </h3>
             </div>
-            <NavigationMenu
-              className={`${baseClass}__nav-menu`}
-              menu={facadeItems}
-              more={{
-                label: labels.more,
-                onClick: () => setIsMoreOpen(!isMoreOpen),
-                isOpen: isMoreOpen,
-              }}
-            />
+            {facadeItems && (
+              <NavigationMenu
+                className={`${baseClass}__nav-menu`}
+                menu={facadeItems}
+                more={
+                  moreItems.length
+                    ? {
+                        label: labels.more,
+                        onClick: () => setIsMoreOpen(!isMoreOpen),
+                        isOpen: isMoreOpen,
+                      }
+                    : undefined
+                }
+              />
+            )}
             {widgets?.search && (
               <a
                 className={`${baseClass}__nav-search`}
@@ -145,23 +152,27 @@ const ComplexNav = forwardRef<HTMLElement, ComplexNavProps>(
             </button>
           </nav>
         </div>
-        <NavigationDropdown isOpen={isMoreOpen} navRef={headerRef}>
-          <NavigationMenuGrid menu={moreItems} />
-        </NavigationDropdown>
-        <MobileNavigation
-          isOpen={isCompactOpen}
-          onClose={() => {
-            setIsCompactOpen(false);
-          }}
-          navigationProps={{
-            widgets,
-            branding,
-            menu: {
-              items,
-              labels,
-            },
-          }}
-        />
+        {moreItems && isClient && (
+          <NavigationDropdown isOpen={isMoreOpen} navRef={headerRef}>
+            <NavigationMenuGrid menu={moreItems} />
+          </NavigationDropdown>
+        )}
+        {isClient && (
+          <MobileNavigation
+            isOpen={isCompactOpen}
+            onClose={() => {
+              setIsCompactOpen(false);
+            }}
+            navigationProps={{
+              widgets,
+              branding,
+              menu: {
+                items,
+                labels,
+              },
+            }}
+          />
+        )}
       </header>
     );
   }

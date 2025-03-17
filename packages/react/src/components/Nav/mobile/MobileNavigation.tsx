@@ -97,16 +97,18 @@ const MobileNavigation = ({
       }
     >
       <MobileMenuList menu={facadeItems} />
-      <button
-        className={`${baseClass}__more`}
-        onClick={() => setIsMoreOpen(true)}
-        aria-expanded={isMoreOpen}
-        aria-controls="more-items"
-        aria-label="More items"
-      >
-        {labels.more}
-        <span className={`${baseClass}__more__icon`} />
-      </button>
+      {!!moreItems.length && (
+        <button
+          className={`${baseClass}__more`}
+          onClick={() => setIsMoreOpen(true)}
+          aria-expanded={isMoreOpen}
+          aria-controls="more-items"
+          aria-label="More items"
+        >
+          {labels.more}
+          <span className={`${baseClass}__more__icon`} />
+        </button>
+      )}
       <MobileDrawer
         className={`${baseClass}__nested`}
         header={

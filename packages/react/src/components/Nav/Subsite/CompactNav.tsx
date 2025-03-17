@@ -28,6 +28,7 @@ const CompactNav = forwardRef<HTMLElement, CompactNavProps>(
       mobile: [isCompactOpen, setIsCompactOpen],
       isDesktop: isAboveXL,
       ref: headerRef,
+      isClient,
     } = useNavSetup({ menu: items, split: { desktop: 4, mobile: 2 } });
 
     useImperativeHandle(ref, () => headerRef.current as HTMLElement);
@@ -53,11 +54,15 @@ const CompactNav = forwardRef<HTMLElement, CompactNavProps>(
             <NavigationMenu
               className={`${baseClass}__menu`}
               menu={facadeItems}
-              more={{
-                label: labels.more,
-                onClick: () => setIsMoreOpen(!isMoreOpen),
-                isOpen: isMoreOpen,
-              }}
+              more={
+                moreItems.length
+                  ? {
+                      label: labels.more,
+                      onClick: () => setIsMoreOpen(!isMoreOpen),
+                      isOpen: isMoreOpen,
+                    }
+                  : undefined
+              }
             />
           </nav>
           {widgets && (
@@ -71,7 +76,7 @@ const CompactNav = forwardRef<HTMLElement, CompactNavProps>(
                     label={widgets.link.label}
                   />
                 )}
-                {widgets.language && (
+                {widgets.language && isClient && (
                   <div className={`${baseClass}__widget-bar-language`}>
                     <LanguageToggle
                       theme="dark"
@@ -100,23 +105,27 @@ const CompactNav = forwardRef<HTMLElement, CompactNavProps>(
             <span className={`${baseClass}__burger-icon`}></span>
           </button>
         </div>
-        <NavigationDropdown isOpen={isMoreOpen} navRef={headerRef}>
-          <NavigationMenuGrid menu={moreItems} />
-        </NavigationDropdown>
-        <MobileNavigation
-          isOpen={isCompactOpen}
-          onClose={() => {
-            setIsCompactOpen(false);
-          }}
-          navigationProps={{
-            widgets,
-            branding,
-            menu: {
-              items,
-              labels,
-            },
-          }}
-        />
+        {moreItems && isClient && (
+          <NavigationDropdown isOpen={isMoreOpen} navRef={headerRef}>
+            <NavigationMenuGrid menu={moreItems} />
+          </NavigationDropdown>
+        )}
+        {isClient && (
+          <MobileNavigation
+            isOpen={isCompactOpen}
+            onClose={() => {
+              setIsCompactOpen(false);
+            }}
+            navigationProps={{
+              widgets,
+              branding,
+              menu: {
+                items,
+                labels,
+              },
+            }}
+          />
+        )}
       </header>
     );
   }
