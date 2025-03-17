@@ -1,10 +1,4 @@
-import {
-  forwardRef,
-  HTMLAttributes,
-  useLayoutEffect,
-  useRef,
-  useState,
-} from "react";
+import { forwardRef, HTMLAttributes, useEffect, useRef, useState } from "react";
 
 import { useGlobalSettings } from "../../hooks";
 import classNames from "classnames";
@@ -52,7 +46,7 @@ const LanguageToggle = forwardRef<
 
     const baseClass = `${prefix}--language-toggle`;
 
-    useLayoutEffect(() => {
+    useEffect(() => {
       function handleClickOutside(event: MouseEvent) {
         if (!contextMenuRef.current || !containerRef.current) return;
 
@@ -71,7 +65,7 @@ const LanguageToggle = forwardRef<
       };
     });
 
-    useLayoutEffect(() => {
+    useEffect(() => {
       if (!containerRef.current || !contextMenuRef.current) return;
 
       if (isCtxMenuOpen) {
