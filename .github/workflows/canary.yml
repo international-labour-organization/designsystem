@@ -1,0 +1,71 @@
+name: Canary Release
+
+on:
+  push:
+    branches:
+      - canary
+
+env:
+  CI: true
+  PNPM_CACHE_FOLDER: .pnpm-store
+
+concurrency: ${{ github.workflow }}-${{ github.ref }}
+
+jobs:
+  release-canary:
+    name: Canary Release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 20.16.0
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2.0.1
+        with:
+          version: 9.14.2
+
+      - name: Add auth token to .npmrc
+        run: |
+          cat << EOF > "$HOME/.npmrc"
+            //registry.npmjs.org/:_authToken=$NPM_TOKEN
+          EOF
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+      - name: Setup pnpm config
+        run: pnpm config set store-dir $PNPM_CACHE_FOLDER
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Build
+        run: pnpm build:libs
+
+      - name: Create and publish canary versions
+        run: |
+          # Get short commit hash for snapshot tag
+          COMMIT_HASH=$(git rev-parse --short HEAD)
+
+          # Create .changeset/pre.json for snapshot releases if it doesn't exist
+          if [ ! -f .changeset/pre.json ]; then
+            echo '{"mode": "exit", "tag": "canary"}' > .changeset/pre.json
+          fi
+
+          # Enter pre mode if not already
+          pnpm changeset pre enter canary
+
+          # Create snapshot release
+          pnpm changeset version --snapshot canary-${COMMIT_HASH}
+
+          # Publish with canary tag
+          pnpm publish --tag canary --no-git-checks
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
