@@ -1,4 +1,11 @@
-import { Dispatch, RefObject, SetStateAction, useRef, useState } from "react";
+import {
+  Dispatch,
+  RefObject,
+  SetStateAction,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 import { useBreakpoint } from "../../hooks";
 
 import { NavigationLinkProps } from "./Navigation.props";
@@ -20,12 +27,14 @@ interface UseNavSetupResponse {
   mobile: [boolean, Dispatch<SetStateAction<boolean>>];
   ref: RefObject<HTMLElement>;
   isDesktop: boolean;
+  isClient: boolean;
 }
 
 function useNavSetup({ menu, split }: UseNavSetupArgs): UseNavSetupResponse {
   const { breakpoint } = useBreakpoint();
   const [more, setMore] = useState(false);
   const [mobile, setMobile] = useState(false);
+  const [isClient, setIsClient] = useState(false);
 
   const ref = useRef<HTMLElement>(null);
 
@@ -34,11 +43,16 @@ function useNavSetup({ menu, split }: UseNavSetupArgs): UseNavSetupResponse {
   const facade = menu.slice(0, sliceIndex);
   const moreItems = menu.slice(sliceIndex);
 
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
   return {
     menu: { facade, more: moreItems },
     more: [more, setMore],
     mobile: [mobile, setMobile],
     isDesktop: isAboveXL,
+    isClient,
     ref,
   };
 }

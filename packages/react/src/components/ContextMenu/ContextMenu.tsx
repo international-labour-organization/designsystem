@@ -1,4 +1,4 @@
-import { forwardRef, useId } from "react";
+import { ElementType, forwardRef, useId } from "react";
 import classNames from "classnames";
 import useGlobalSettings from "../../hooks/useGlobalSettings";
 import { createPortal } from "react-dom";
@@ -20,6 +20,9 @@ export type LinkProps = {
   url: string;
 
   className?: string;
+
+  component?: ElementType;
+  componentProps?: Record<string, unknown>;
 };
 
 export type ContextMenuProps = {
@@ -50,21 +53,35 @@ const ContextMenu = forwardRef<HTMLOListElement, ContextMenuProps>(
         id={`${prefix}--context-menu-${id}`}
         ref={ref}
       >
-        {links.map((link) => (
-          <li
-            className={classNames(`${prefix}--context-menu--item`, {
-              endsection: link.endsection,
-              className: link.className,
-            })}
-            key={`${link.label}-${link.url}`}
-          >
-            <a href={link.url} className={`${prefix}--context-menu--link`}>
-              <span className={`${prefix}--context-menu--label`}>
-                {link.label}
-              </span>
-            </a>
-          </li>
-        ))}
+        {links.map((link) => {
+          return (
+            <li
+              className={classNames(`${prefix}--context-menu--item`, {
+                endsection: link.endsection,
+                className: link.className,
+              })}
+              key={`${link.label}-${link.url}`}
+            >
+              {link.component ? (
+                <link.component
+                  className={`${prefix}--context-menu--link`}
+                  href={link.url}
+                  {...link.componentProps}
+                >
+                  <span className={`${prefix}--context-menu--label`}>
+                    {link.label}
+                  </span>
+                </link.component>
+              ) : (
+                <a href={link.url} className={`${prefix}--context-menu--link`}>
+                  <span className={`${prefix}--context-menu--label`}>
+                    {link.label}
+                  </span>
+                </a>
+              )}
+            </li>
+          );
+        })}
       </ol>
     );
 

@@ -1,4 +1,4 @@
-import { forwardRef, useId, useLayoutEffect, useRef, useState } from "react";
+import { forwardRef, useId, useEffect, useRef, useState } from "react";
 import classNames from "classnames";
 
 import useGlobalSettings from "../../hooks/useGlobalSettings";
@@ -35,11 +35,11 @@ const Breadcrumb = forwardRef<HTMLElement, BreadcrumbProps>(
     const ctxContainerRef = useRef<HTMLDivElement>(null);
     const listRef = useRef<HTMLOListElement>(null);
 
-    useLayoutEffect(() => {
+    useEffect(() => {
       fullBreadcrumbWidth.current = listRef.current!.offsetWidth;
     }, []);
 
-    useLayoutEffect(() => {
+    useEffect(() => {
       function handleClickOutside(event: MouseEvent) {
         if (
           ctxButtonRef.current &&
@@ -73,7 +73,7 @@ const Breadcrumb = forwardRef<HTMLElement, BreadcrumbProps>(
       };
     }, [id, prefix]);
 
-    useLayoutEffect(() => {
+    useEffect(() => {
       if (!ctxButtonRef.current || !ctxContainerRef.current) {
         return;
       }
