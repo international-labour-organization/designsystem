@@ -1,5 +1,13 @@
 # @ilo-org/react
 
+## 0.22.2
+
+### Patch Changes
+
+- 6082b9eae: minor adjustments for the SSR support
+- Updated dependencies [6082b9eae]
+  - @ilo-org/styles@1.6.2
+
 ## 0.22.1
 
 ### Patch Changes
