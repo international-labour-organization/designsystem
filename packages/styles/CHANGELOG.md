@@ -1,5 +1,11 @@
 # @ilo-org/styles
 
+## 1.6.2
+
+### Patch Changes
+
+- 6082b9eae: minor adjustments for the SSR support
+
 ## 1.6.1
 
 ### Patch Changes
