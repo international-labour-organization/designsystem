@@ -199,8 +199,8 @@
         "site-info links"
         "site-info connect"
         "site-info subscribe";
-      align-content: start;
-      align-items: start;
+      align-content: flex-start;
+      align-items: flex-start;
       padding: spacing(10) spacing(5) spacing(24);
     }
 
@@ -270,8 +270,8 @@
     }
 
     .ilo--button {
-      align-self: start;
-      justify-self: start;
+      align-self: flex-start;
+      justify-self: flex-start;
     }
 
     .address {

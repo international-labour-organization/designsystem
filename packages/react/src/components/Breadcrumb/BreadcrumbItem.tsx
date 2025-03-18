@@ -1,4 +1,4 @@
-import { forwardRef } from "react";
+import { ElementType, forwardRef } from "react";
 import classNames from "classnames";
 
 import { useGlobalSettings } from "../../hooks";
@@ -23,10 +23,41 @@ export type BreadcrumbItemProps = {
    * Specify whether this link is the first in the Breadcrumb
    */
   first?: boolean;
+
+  component?: ElementType;
+  componentProps?: Record<string, unknown>;
+};
+
+const BreadcrumbLink = ({
+  component: Component,
+  componentProps,
+  first,
+  label,
+  url,
+}: BreadcrumbItemProps) => {
+  const { prefix } = useGlobalSettings();
+  const child = (
+    <span className={`${prefix}--breadcrumb--link--label`}>{label}</span>
+  );
+  const common = {
+    href: url,
+    className: `${prefix}--breadcrumb--link`,
+    ["aria-label"]: label,
+  };
+
+  if (Component) {
+    return (
+      <Component {...common} {...componentProps}>
+        {!first && child}
+      </Component>
+    );
+  }
+
+  return <a {...common}>{!first && child}</a>;
 };
 
 const BreadcrumbItem = forwardRef<HTMLLIElement, BreadcrumbItemProps>(
-  ({ url, label, className, first }, ref) => {
+  ({ url, label, className, first, ...rest }, ref) => {
     const { prefix } = useGlobalSettings();
 
     return (
@@ -38,17 +69,7 @@ const BreadcrumbItem = forwardRef<HTMLLIElement, BreadcrumbItemProps>(
         })}
         ref={ref}
       >
-        <a
-          className={`${prefix}--breadcrumb--link`}
-          href={url}
-          aria-label={label}
-        >
-          {!first && (
-            <span className={`${prefix}--breadcrumb--link--label`}>
-              {label}
-            </span>
-          )}
-        </a>
+        <BreadcrumbLink label={label} url={url} first={first} {...rest} />
       </li>
     );
   }

@@ -45,6 +45,8 @@ const MobileDrawer = ({
 
   const baseClass = `${prefix}--nav-mobile-drawer`;
 
+  if (typeof document === "undefined") return null;
+
   return createPortal(
     <div
       id={`${baseClass}__${id}`}

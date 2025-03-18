@@ -21,18 +21,22 @@ const NavigationMenu = ({ className, menu, more }: NavigationMenuProps) => {
   return (
     <div className={classNames(baseClass, className)}>
       <ul className={`${baseClass}__list`}>
-        {menu.map((item) => (
-          <li key={item.label?.toString()} className={`${baseClass}__item`}>
-            <NavigationLink
-              {...item}
-              className={classNames({
-                [`${baseClass}__link`]: true,
-                [`${baseClass}__link--active`]: item.isActive,
-                [item.className || ""]: item.className,
-              })}
-            />
-          </li>
-        ))}
+        {menu.map(({ isActive, ...item }) => {
+          const active = typeof isActive === "function" ? isActive() : isActive;
+
+          return (
+            <li key={item.label?.toString()} className={`${baseClass}__item`}>
+              <NavigationLink
+                {...item}
+                className={classNames({
+                  [`${baseClass}__link`]: true,
+                  [`${baseClass}__link--active`]: active,
+                  [item.className || ""]: item.className,
+                })}
+              />
+            </li>
+          );
+        })}
       </ul>
       {more && (
         <button

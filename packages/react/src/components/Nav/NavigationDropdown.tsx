@@ -53,6 +53,8 @@ const NavigationDropdownBare = ({
     };
   }, [navRef]);
 
+  if (typeof document === "undefined") return null;
+
   return createPortal(
     <div
       ref={wrapperRef}
