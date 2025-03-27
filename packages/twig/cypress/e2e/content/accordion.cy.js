@@ -1,25 +1,64 @@
-describe("Accordion", () => {
+import fixture from "../../fixtures/accordion.json";
+
+const url = `/pattern-preview?id=accordion&fields=${encodeURI(
+  JSON.stringify(fixture)
+)}`;
+
+describe("accordion", () => {
   beforeEach(() => {
-    cy.visit("/admin/appearance/ui/patterns/accordion");
-    cy.getPreview("accordion").first().as("accordionSection");
+    cy.visit(url);
+    cy.get(".ilo--accordion").first().as("accordion");
   });
 
-  it("renders the accordion correctly", () => {
-    cy.get("@accordionSection").within(() => {
-      cy.contains("Topics");
-      cy.contains("Sectors");
+  it("should render all accordion items", () => {
+    cy.get("@accordion").within(() => {
+      cy.get(".ilo--accordion--item").should("have.length", 3);
     });
   });
 
-  it("checks if accordion panel is opening on button click", () => {
-    cy.get("@accordionSection").within(() => {
-      cy.get(".ilo--accordion--panel--open").should("not.exist");
-      cy.get(".ilo--accordion--button").first().click();
-      cy.contains("Employment Promotion");
-      cy.contains("Social Protection");
-      cy.get(".ilo--accordion--panel")
+  it("should use id from fixture for accordion items", () => {
+    cy.get("@accordion").within(() => {
+      cy.get(".ilo--accordion--item").each(($item, index) => {
+        cy.wrap($item).should("have.attr", "id", fixture.items[index].id);
+      });
+    });
+  });
+
+  it("should assign correct IDs to accordion items", () => {
+    cy.get("@accordion").within(() => {
+      cy.get(".ilo--accordion--item").each(($item, index) => {
+        cy.wrap($item).should("have.attr", "id", `accordion-${index + 1}`);
+      });
+    });
+  });
+
+  it("should expand first item by default", () => {
+    cy.get("@accordion").within(() => {
+      cy.get(".ilo--accordion--item")
         .first()
-        .and("have.attr", "aria-hidden", "false");
+        .find(".ilo--accordion--panel")
+        .should("have.class", "ilo--accordion--panel__open");
+    });
+  });
+
+  it("should toggle content when clicking header", () => {
+    cy.get("@accordion").within(() => {
+      cy.get(".ilo--accordion--item").eq(1).as("secondItem");
+      cy.get("@secondItem").find("button").click();
+      cy.get("@secondItem")
+        .find(".ilo--accordion--panel")
+        .should("have.class", "ilo--accordion--panel__open");
+    });
+  });
+
+  it("should allow multiple items to be expanded", () => {
+    cy.get("@accordion").within(() => {
+      cy.get("button").each(($button) => {
+        if (!$button.attr("aria-expanded")) {
+          cy.wrap($button).click();
+        }
+      });
+      cy.get(".ilo--accordion--panel__open").should("have.length", 3);
     });
   });
 });
