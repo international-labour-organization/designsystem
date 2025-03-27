@@ -1,0 +1,29 @@
+{
+  "items": [
+    {
+      "id": "accordion-1",
+      "label": "First accordion item",
+      "content": "<p>Content for the first accordion item</p>",
+      "defaultExpanded": true,
+      "scroll": false
+    },
+    {
+      "id": "accordion-2",
+      "label": "Second accordion item",
+      "content": "<p>Content for the second accordion item</p>",
+      "defaultExpanded": false,
+      "scroll": false
+    },
+    {
+      "id": "accordion-3",
+      "label": "Third accordion item",
+      "content": "<p>Content for the third accordion item</p>",
+      "defaultExpanded": false,
+      "scroll": true
+    }
+  ],
+  "prefix": "ilo",
+  "size": "default",
+  "headingLevel": 3,
+  "allowMultipleExpanded": true
+}
