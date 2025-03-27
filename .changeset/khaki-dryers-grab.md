@@ -2,4 +2,4 @@
 "@ilo-org/react": patch
 ---
 
-new value prop for TextInput component
+Value prop for the `TextInput` component
