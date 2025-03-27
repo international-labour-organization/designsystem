@@ -1,5 +1,11 @@
 # @ilo-org/twig
 
+## 1.6.3
+
+### Patch Changes
+
+- 46a8a7323: **Accordion:** Support configurable anchor tags for accordion items.
+
 ## 1.6.2
 
 ### Patch Changes
