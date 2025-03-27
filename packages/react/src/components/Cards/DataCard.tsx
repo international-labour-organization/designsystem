@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import { forwardRef, Fragment } from "react";
+import { forwardRef, Fragment, ReactNode } from "react";
 
 import useGlobalSettings from "../../hooks/useGlobalSettings";
 import { Link, LinkProps } from "../Link";
@@ -29,7 +29,7 @@ export type DataCardProps = {
     content?: {
       items: Array<{
         label: string;
-        copy: string;
+        copy: string | ReactNode;
       }>;
     };
     files?: {

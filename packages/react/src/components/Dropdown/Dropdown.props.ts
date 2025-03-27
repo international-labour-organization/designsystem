@@ -47,6 +47,11 @@ export interface DropdownProps extends FormFieldProps<HTMLSelectElement> {
    * The Dropdown's default selection; should match one of the values in `options`
    */
   value?: string;
+
+  /**
+   * The default value of the select element
+   */
+  defaultValue?: string;
 }
 
 export type LabelledDropdownProps = LabelledFormFieldProps<DropdownProps>;
