@@ -1,48 +1,89 @@
-describe("tabs", () => {
+import fixture from "../../fixtures/tabs.json";
+
+const url = `/pattern-preview?id=tabs&fields=${encodeURI(
+  JSON.stringify(fixture)
+)}`;
+
+console.log(url);
+
+describe("Tabs Component", () => {
   beforeEach(() => {
-    cy.visit("/admin/appearance/ui/patterns/tabs");
-    cy.getPreview("tabs").first().as("tabsSection");
+    cy.visit(url);
+    cy.get(".ilo--tabs").as("tabs");
   });
 
-  it("renders the tabs component correctly", () => {
-    cy.get("@tabsSection").within(() => {
-      cy.contains("Tab Label With A Really");
-      cy.contains("Tab Label 2");
-      cy.contains("Women construction workers in Nepal");
+  it("should render the tabs component with correct number of items", () => {
+    cy.get("@tabs")
+      .find(".ilo--tabs--selection--item")
+      .should("have.length", fixture.items.length);
+  });
 
-      cy.get("picture").within(() => {
-        cy.get("source").should("have.length", 3);
-        cy.get("source")
-          .should("have.attr", "srcset")
-          .and("include", "/images/large.jpg");
-        cy.get("img")
-          .should("have.attr", "src")
-          .and("include", "/images/small.jpg");
-      });
+  it("should render tab labels correctly", () => {
+    fixture.items.forEach((item, index) => {
+      cy.get("@tabs")
+        .find(".ilo--tabs--selection--label")
+        .eq(index)
+        .should("contain", item.label);
     });
   });
 
-  it("checks if tab switch works as expected", () => {
-    cy.get("@tabsSection").within(() => {
-      // Check if first tab is selected
+  it("should show first tab content by default", () => {
+    cy.get("@tabs")
+      .find("[role='tabpanel']")
+      .first()
+      .should("have.attr", "aria-expanded", "true");
+  });
 
-      cy.get(".ilo--tabs--selection--button")
-        .first()
-        .should("have.attr", "aria-selected", "true");
+  it("should switch content when clicking different tabs", () => {
+    // Click second tab
+    cy.get("@tabs").find(".ilo--tabs--selection--button").eq(1).click();
 
-      // Fetch second tab and click it
+    // First tab panel should be hidden
+    cy.get("@tabs")
+      .find("[role='tabpanel']")
+      .first()
+      .should("have.attr", "aria-expanded", "false");
 
-      cy.get(".ilo--tabs--selection--button")
-        .should("exist")
-        .eq(1)
-        .should("have.attr", "aria-selected", "false")
-        .click();
+    // Second tab panel should be visible
+    cy.get("@tabs")
+      .find("[role='tabpanel']")
+      .eq(1)
+      .should("have.attr", "aria-expanded", "true");
+  });
 
-      // Check if second tab is selected after click
+  it("should render icons when provided", () => {
+    const fixtureWithIcons = {
+      ...fixture,
+      items: fixture.items.map((item) => ({
+        ...item,
+        icon: "notification_info_outlined",
+      })),
+    };
 
-      cy.get(".ilo--tabs--selection--button")
-        .eq(1)
-        .should("have.attr", "aria-selected", "true");
+    cy.visit(
+      `/pattern-preview?id=tabs&fields=${encodeURI(
+        JSON.stringify(fixtureWithIcons)
+      )}`
+    );
+
+    cy.get("@tabs")
+      .find(".ilo--tabs--selection--button")
+      .should("have.class", "icon");
+
+    cy.get("@tabs").find(".ilo--icon").should("exist");
+  });
+
+  it("should apply the correct theme class", () => {
+    const themes = ["light", "dark"];
+
+    themes.forEach((theme) => {
+      cy.visit(
+        `/pattern-preview?id=tabs&fields=${encodeURI(
+          JSON.stringify({ ...fixture, settings: { theme } })
+        )}`
+      );
+
+      cy.get(`.ilo--tabs`).should("have.class", `ilo--tabs__theme__${theme}`);
     });
   });
 });
