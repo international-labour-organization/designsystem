@@ -53,19 +53,16 @@ jobs:
           # Get short commit hash for snapshot tag
           COMMIT_HASH=$(git rev-parse --short HEAD)
 
-          # Create .changeset/pre.json for snapshot releases if it doesn't exist
-          if [ ! -f .changeset/pre.json ]; then
-            echo '{"mode": "exit", "tag": "canary"}' > .changeset/pre.json
+          # Make sure we're not in pre mode (exit if we are)
+          if [ -f .changeset/pre.json ]; then
+            pnpm changeset pre exit
           fi
 
-          # Enter pre mode if not already
-          pnpm changeset pre enter canary
-
-          # Create snapshot release
+          # Create snapshot release with commit hash
           pnpm changeset version --snapshot canary-${COMMIT_HASH}
 
-          # Publish with canary tag
-          pnpm publish --tag canary --no-git-checks
+          # Publish with canary tag (using changeset publish to respect workspace config)
+          pnpm changeset publish --tag canary --no-git-checks
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}

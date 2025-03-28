@@ -16,6 +16,7 @@ const Dropdown = forwardRef<HTMLSelectElement, DropdownProps>((props, ref) => {
     options,
     required,
     value,
+    defaultValue,
     form,
     multiple,
     selectSize,
@@ -51,6 +52,7 @@ const Dropdown = forwardRef<HTMLSelectElement, DropdownProps>((props, ref) => {
         onChange={handleChange}
         onBlur={onBlur}
         disabled={disabled}
+        defaultValue={defaultValue}
         className={dropdownClasses}
         value={currentvalue}
         form={form}

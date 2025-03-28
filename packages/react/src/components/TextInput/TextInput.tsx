@@ -15,6 +15,7 @@ const TextInput = React.forwardRef<HTMLInputElement, TextInputProps>(
       placeholder,
       required,
       pattern,
+      value,
       disabled = false,
       type = "text",
     },
@@ -32,6 +33,7 @@ const TextInput = React.forwardRef<HTMLInputElement, TextInputProps>(
 
     return (
       <input
+        value={value}
         ref={ref}
         id={id ? id : name}
         name={name}

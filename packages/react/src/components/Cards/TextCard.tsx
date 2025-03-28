@@ -39,7 +39,7 @@ export type TextCardProps = {
   /**
    * Profile information to be displayed on the card
    */
-  profile: ProfileProps;
+  profile?: ProfileProps;
 
   /**
    * Specify the URL for the card link

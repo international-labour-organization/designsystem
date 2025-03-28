@@ -5,6 +5,8 @@ export interface TabsProps {
    * Specify the items inside a tab
    */
   items: Required<Array<TabItem>>;
+
+  className?: string;
 }
 
 export interface TabItem {

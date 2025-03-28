@@ -10,6 +10,7 @@ export { Button } from "./Button";
 export { ContextMenu } from "./ContextMenu";
 export { Fieldset } from "./Fieldset";
 export * from "./GlobalProvider";
+export * from "./TextInput";
 export { Notification } from "./Notification";
 export { ReadMore } from "./ReadMore";
 export { Textarea } from "./Textarea";

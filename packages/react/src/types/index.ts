@@ -1,3 +1,4 @@
+import { ReactNode } from "react";
 import { FormControlPublicProps } from "../components/FormControl/FormControl.props";
 
 // export type AccordionSize = "small" | "large";
@@ -70,7 +71,7 @@ export type CardTypes =
 export type HeadingTypes = "p" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
 export interface EventDate {
   unix?: string;
-  human?: string;
+  human?: string | ReactNode;
 }
 
 export interface FormFieldProps<T> {
