@@ -83,8 +83,6 @@ export default class Tabs {
    * @chainable
    */
   enable() {
-    this.element.classList.add("tabs--js");
-
     Array.from(this.tabButtons).forEach((button) => {
       button.addEventListener(EVENTS.CLICK, (e) => this.OnClickHandler(e));
       button.addEventListener(EVENTS.KEY_DOWN, (e) => this.KeyPressHandler(e));

@@ -14,6 +14,12 @@ const meta: Meta<typeof Profile> = {
       },
     },
   },
+  argTypes: {
+    theme: {
+      control: "radio",
+      options: ["light", "dark"],
+    },
+  },
 };
 
 const Default: StoryObj<ProfileProps> = {

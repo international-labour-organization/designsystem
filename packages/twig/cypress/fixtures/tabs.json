@@ -1,0 +1,27 @@
+{
+  "items": [
+    {
+      "label": "Tab 1",
+      "component": "image",
+      "componentdata": {
+        "alt": "My alt text",
+        "caption": "Women construction workers in Nepal build roads and bridges as part of a National Rural Transport Programme co-sponsored by the ILO.",
+        "credit": "© Marcel Crozet/ILO",
+        "url": [
+          {
+            "breakpoint": 0,
+            "src": "/images/small.jpg"
+          }
+        ]
+      }
+    },
+    {
+      "label": "Tab 2",
+      "component": "richtext",
+      "componentdata": { "content": "<div>Hello world</div>" }
+    }
+  ],
+  "settings": {
+    "theme": "light"
+  }
+}

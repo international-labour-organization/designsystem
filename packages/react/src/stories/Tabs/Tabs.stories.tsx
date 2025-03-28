@@ -5,6 +5,14 @@ import TabsArgs from "../../components/Tabs/Tabs.args";
 const TabsMeta: Meta<typeof Tabs> = {
   title: "Components/User Interface/Tabs",
   component: Tabs,
+  argTypes: {
+    theme: {
+      control: "select",
+      options: ["light", "dark"],
+      description: "Theme of the tabs component",
+      defaultValue: "light",
+    },
+  },
 };
 
 export default TabsMeta;

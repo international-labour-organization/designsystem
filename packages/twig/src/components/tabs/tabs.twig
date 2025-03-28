@@ -1,12 +1,13 @@
+{% set theme = theme|default('light') %}
 {% set uid = "now"|date('Uv') %}
 {% set tabids = [] %}
 {% for item in items %}
   {% set tabids = tabids|merge([random(100000)]) %}
 {% endfor %}
-<div class="{{prefix}}--tabs" data-prefix="{{prefix}}" id="tabs--{{uid}}" data-loadcomponent="Tabs">
+<div class="{{prefix}}--tabs {{prefix}}--tabs__theme__{{theme}}" data-prefix="{{prefix}}" id="tabs--{{uid}}" data-loadcomponent="Tabs">
     <ul class="{{prefix}}--tabs--selection" aria-controls="tabs--{{uid}}" role="tablist" style="--tabscount: {{items|length}};">
       {% for item in items %}
-        <li class="{{prefix}}--tabs--selection--item" role="presentation"> {# changed role to presentation for list item #}
+        <li class="{{prefix}}--tabs--selection--item" role="presentation">
           <a href="#tab--{{tabids[loop.index - 1]}}" class="{{prefix}}--tabs--selection--button{% if item.icon is defined %} icon{% endif %}" aria-controls="tab--{{tabids[loop.index - 1]}}" role="tab" tabindex="0" {% if loop.index == 1 %}aria-selected="true"{% else %}aria-selected="false"{% endif %} title="{{item.label}}">
             <span class="{{prefix}}--tabs--selection--label">{{item.label}}</span>
             {% if item.icon is defined %}
