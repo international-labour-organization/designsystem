@@ -4,8 +4,6 @@ const url = `/pattern-preview?id=tabs&fields=${encodeURI(
   JSON.stringify(fixture)
 )}`;
 
-console.log(url);
-
 describe("Tabs Component", () => {
   beforeEach(() => {
     cy.visit(url);
