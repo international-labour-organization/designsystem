@@ -67,6 +67,11 @@ export type ButtonProps = Omit<
   };
 
   icon?: IconProps;
+
+  /**
+   * True if the button is type submit
+   */
+  submit?: boolean;
 };
 
 const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonProps>(
@@ -83,6 +88,7 @@ const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonProps>(
       link,
       iconPosition = "left",
       icononly = false,
+      submit = false,
       ...props
     },
     ref
@@ -125,6 +131,7 @@ const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonProps>(
         style={style}
         name={name}
         {...props}
+        type={submit ? "submit" : "button"}
       >
         {icon && <Icon {...icon} />}
         <span className="button__label">{children}</span>
