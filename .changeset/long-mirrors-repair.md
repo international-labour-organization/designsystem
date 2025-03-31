@@ -3,8 +3,8 @@
 "@ilo-org/styles": patch
 ---
 
-- Width for link-list label
-- Submit prop for the `Button` component
-- `DataCard` can recive `copy` as ReactNode
-- `Dropdown` can recive default value
-- `className` support for `Tabs`
+- **LinkList:** Change width
+- **Button:** Add submit prop
+- **DataCard:** Can receive `copy` as ReactNode
+- **Dropdown:** Can receive default value
+- **Tabs:** Can receive custom `className`
