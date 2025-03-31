@@ -4,7 +4,7 @@ import classnames from "classnames";
 import { TabsProps } from "./Tabs.props";
 import { Icon } from "../Icon";
 
-const Tabs: FC<TabsProps> = ({ items, className }) => {
+const Tabs: FC<TabsProps> = ({ items, className, theme = "light" }) => {
   const [activeTab, setActiveTab] = useState(0);
 
   const handleTabClick = (
@@ -18,19 +18,24 @@ const Tabs: FC<TabsProps> = ({ items, className }) => {
   const { prefix } = useGlobalSettings();
 
   const baseClass = `${prefix}--tabs`;
-  const tabsClasses = classnames(baseClass, className);
+  const tabsClasses = classnames(
+    baseClass,
+    className,
+    `${baseClass}__theme__${theme}`
+  );
 
   return (
-    <div className={`${tabsClasses} tabs--js`}>
-      <ul className={`${baseClass}--selection`} role="tablist">
+    <div className={tabsClasses}>
+      <ul className={`${baseClass}--selection`} role="tablist" tabIndex={0}>
         {items.map((tab, index) => (
           <li
             key={`#tab--${index}`}
-            role="tab"
+            role="presentation"
             className={`${baseClass}--selection--item ${
               activeTab === index ? "active" : ""
             }`}
             onClick={(e) => handleTabClick(index, e)}
+            id={`tab--${index}`}
           >
             <a
               href={`#tab--${index}`}
@@ -41,6 +46,7 @@ const Tabs: FC<TabsProps> = ({ items, className }) => {
               aria-controls={`tab--${index}`}
               aria-selected={index === activeTab ? true : false}
               title={tab.label}
+              tabIndex={index === activeTab ? 0 : -1}
             >
               <span className={`${baseClass}--selection--label`}>
                 {tab.label}
@@ -52,7 +58,14 @@ const Tabs: FC<TabsProps> = ({ items, className }) => {
           </li>
         ))}
       </ul>
-      <div className={`${baseClass}--content`}>{items[activeTab].content}</div>
+      <div
+        className={`${baseClass}--content`}
+        role="tabpanel"
+        aria-labelledby={`tab--${activeTab}`}
+        tabIndex={0}
+      >
+        {items[activeTab].content}
+      </div>
     </div>
   );
 };

@@ -81,7 +81,7 @@
       flex-flow: row nowrap;
       align-items: center;
       gap: spacing(2);
-      @include globaltransition("color");
+      @include globaltransition("color background-color");
 
       &:hover,
       &:focus,
@@ -137,6 +137,10 @@
       #{$c}--link,
       a {
         color: var(--ilo-color-white);
+      }
+
+      a:hover {
+        background-color: var(--ilo-color-blue-lighter);
       }
     }
   }
