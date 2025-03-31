@@ -3,6 +3,7 @@ import classNames from "classnames";
 
 import useGlobalSettings from "../../hooks/useGlobalSettings";
 import { ThemeTypes, SizeTypes } from "../../types";
+import { Icon } from "../Icon";
 
 export type ProfileProps = {
   /**
@@ -84,7 +85,7 @@ const Profile = forwardRef<HTMLElement, ProfileProps>(
         <img
           className={`${baseClass}--avatar`}
           src={avatar}
-          alt={`Avatar for ${name}`}
+          alt={`Photo of ${name}`}
         />
         <figcaption>
           <div className={`${baseClass}--figcaption--content`}>
@@ -99,6 +100,7 @@ const Profile = forwardRef<HTMLElement, ProfileProps>(
           <div className={`${baseClass}--link`}>
             <a href={link.url} target="__blank" rel="noopener noreferrer">
               <span className={`${baseClass}--link--label`}>{link.label}</span>
+              <Icon name="ChevronRight" size={24} hidden={true} />
             </a>
           </div>
         )}

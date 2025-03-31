@@ -4,212 +4,134 @@
 @import "../mixins";
 
 .ilo--tabs {
-  border-bottom: px-to-rem(3px) solid $color-base-neutrals-lighter;
-  border-left: px-to-rem(3px) solid $color-base-neutrals-lighter;
-  border-right: px-to-rem(3px) solid $color-base-neutrals-lighter;
-
-  &:not(.tabs--js) {
-    .ilo--tabs--selection {
-      margin-bottom: spacing(6);
-
-      &--button {
-        background: map-get($color, "link", "background", "default");
-        border-bottom: $widths-border-sm solid
-          map-get($color, "link", "underline", "default");
-        color: map-get($color, "link", "text", "default");
-        font-size: inherit;
-        font-weight: inherit;
-        line-height: inherit;
-        text-decoration: none;
-        @include globaltransition("color, background-color, border-color");
-
-        &:visited {
-          background: map-get($color, "link", "background", "visited");
-          border-bottom: $widths-border-sm solid
-            map-get($color, "link", "underline", "visited");
-          color: map-get($color, "link", "text", "visited");
-        }
-
-        &:hover {
-          background: map-get($color, "link", "background", "hover");
-          border-bottom: $widths-border-med solid
-            map-get($color, "link", "underline", "hover");
-          color: map-get($color, "link", "text", "hover");
-          text-decoration: none;
-          @include globaltransition("color, background-color, border-color");
-        }
-
-        &:active {
-          background: map-get($color, "link", "background", "default");
-          border-bottom: $widths-border-sm solid
-            map-get($color, "link", "underline", "default");
-          color: map-get($color, "link", "text", "default");
-          outline: none;
-        }
-
-        &:focus {
-          background: map-get($color, "link", "background", "default");
-          border-bottom: $widths-border-sm solid
-            map-get($color, "link", "underline", "default");
-          color: map-get($color, "link", "text", "default");
-          outline: none;
-        }
-      }
-    }
+  &__theme__light {
+    --ilo-tabs-selection-bg-color: var(--ilo-color-white);
+    --ilo-tabs-btn-bg-color: var(--ilo-color-gray-light);
+    --ilo-tabs-btn-bg-color-hover: var(--ilo-color-blue-lighter);
+    --ilo-tabs-btn-bg-color-selected: var(--ilo-color-white);
+    --ilo-tabs-btn-border-top-hover: var(--ilo-color-blue);
+    --ilo-tabs-btn-border-top-selected: var(--ilo-color-blue-dark);
+    --ilo-tabs-btn-color: var(--ilo-color-blue-dark);
+    --ilo-tabs-btn-color-hover: var(--ilo-color-blue);
+    --ilo-tabs-content-bg-color: var(--ilo-color-white);
   }
 
-  &.tabs--js {
-    .ilo--tabs--selection {
-      --tabscount: 1;
-      display: block;
-
-      &--button {
-        align-items: center;
-        background-color: $color-base-neutrals-lighter;
-        border-bottom: px-to-rem(3px) solid $color-base-neutrals-white;
-        color: $color-ux-labels-actionable;
-        font-family: var(--ilo-fonts-display);
-        font-weight: 600;
-        display: flex;
-        gap: spacing(1);
-        height: px-to-rem(60px);
-        justify-content: flex-start;
-        padding-left: spacing(2);
-        padding-right: spacing(6);
-        text-decoration: none;
-        @include font-styles("label-medium");
-        @include globaltransition("color, background-color, border-color");
-
-        &[aria-selected="true"] {
-          background-color: $color-base-neutrals-white;
-          border-top: px-to-rem(3px) solid $color-ux-labels-actionable;
-          pointer-events: none;
-          @include globaltransition("color, background-color, border-color");
-        }
-
-        &[aria-selected="false"]:not(:hover) {
-          border-top: px-to-rem(3px) solid transparent;
-        }
-
-        &.icon {
-          .ilo--icon {
-            height: px-to-rem(16px);
-            order: 1;
-            width: px-to-rem(16px);
-          }
-
-          .ilo--tabs--selection--label {
-            order: 2;
-            flex: 1 1;
-          }
-        }
-
-        &:hover,
-        &[aria-selected="true"]:hover {
-          background-color: $color-base-blue-light;
-          color: $color-base-blue-medium;
-          outline: none;
-          border-top: px-to-rem(3px) solid $color-base-blue-medium;
-          @include globaltransition("color, background-color, border-color");
-        }
-      }
-
-      &--label {
-        overflow: hidden;
-        padding-top: spacing(1);
-        white-space: nowrap;
-        text-overflow: ellipsis;
-      }
-
-      &--item {
-        overflow: hidden;
-        display: block;
-        width: 100%;
-
-        &:last-of-type {
-          .ilo--tabs--selection--button {
-            border-bottom: none;
-            border-right: none;
-          }
-        }
-      }
-    }
-
-    .ilo--tabs--content {
-      background-color: $color-base-neutrals-white;
-      padding: spacing(10) spacing(6) spacing(14) spacing(6);
-
-      [aria-expanded="false"] {
-        display: none;
-      }
-
-      [aria-expanded="true"] {
-        display: block;
-      }
-    }
-
-    @include breakpoint("md") {
-      .ilo--tabs--content {
-        padding: spacing(10) spacing(16) spacing(16) spacing(16);
-      }
-
-      .ilo--tabs--selection {
-        display: flex;
-        max-width: 100%;
-        overflow-x: hidden;
-        overflow-y: hidden;
-
-        &--button {
-          border-bottom: none;
-          border-right: px-to-rem(5px) solid $color-base-neutrals-white;
-        }
-
-        &--item {
-          width: min(calc(var(--tabscount) / 1 * 100%), 100%);
-        }
-      }
-    }
-
-    @include breakpoint("lg") {
-      .ilo--tabs--selection {
-        &--item {
-          width: min(calc(var(--tabscount) / 1 * 100%), 100%);
-        }
-      }
-    }
+  &__theme__dark {
+    --ilo-tabs-selection-bg-color: var(--ilo-color-blue-dark);
+    --ilo-tabs-btn-bg-color: var(--ilo-color-blue-ramp);
+    --ilo-tabs-btn-bg-color-hover: var(--ilo-color-blue-dark);
+    --ilo-tabs-btn-bg-color-selected: var(--ilo-color-blue-dark);
+    --ilo-tabs-btn-border-top-selected: var(--ilo-color-white);
+    --ilo-tabs-btn-color: var(--ilo-color-white);
+    --ilo-tabs-btn-color-hover: var(--ilo-color-white);
+    --ilo-tabs-content-bg-color: var(--ilo-color-blue-dark);
   }
-}
 
-// This was proposed by base theme but isn't implemented in the design system yet
-.ilo--tabs--secondary {
-  display: flex;
-  flex-wrap: wrap;
-  margin-block: 2rem;
-  gap: 10px;
+  * {
+    @include globaltransition("color, background-color, border-color");
+  }
 
-  .ilo--tabs--selection--button {
+  .ilo--tabs--selection {
+    --tabscount: 1;
     display: block;
-    padding: 0.2em 1em;
-    font-size: 16px;
-    font-weight: 600;
-    color: #230050;
-    text-decoration: none;
+    background-color: var(--ilo-tabs-selection-bg-color);
 
-    &[aria-selected="false"] {
-      border-bottom: 2px solid transparent;
-      background-color: var(--ilo-color-background-highlight);
+    &--button {
+      align-items: center;
+      background-color: var(--ilo-tabs-btn-bg-color);
+      border-top-width: px-to-rem(3px);
+      border-top-style: solid;
+      border-top-color: transparent;
+      color: var(--ilo-tabs-btn-color);
+      font-family: var(--ilo-fonts-display);
+      font-weight: 600;
+      display: flex;
+      gap: spacing(1);
+      height: px-to-rem(60px);
+      justify-content: flex-start;
+      padding-left: spacing(2);
+      padding-right: spacing(6);
+      text-decoration: none;
+      @include typography("highlight-large");
+
+      // Selected
+      &[aria-selected="true"] {
+        background-color: var(--ilo-tabs-btn-bg-color-selected);
+        border-top-color: var(--ilo-tabs-btn-border-top-selected);
+      }
 
       &:hover {
-        color: var(--ilo-color-blue);
-        border-bottom-color: var(--ilo-color-blue);
-        background-color: var(--ilo-color-background-hover);
+        background-color: var(--ilo-tabs-btn-bg-color-hover);
+        border-top-color: var(--ilo-tabs-btn-border-top-hover);
+        color: var(--ilo-tabs-btn-color-hover);
+      }
+
+      &[aria-selected="true"] {
+        pointer-events: none;
+      }
+
+      &.icon {
+        .ilo--icon {
+          height: px-to-rem(16px);
+          order: 1;
+          width: px-to-rem(16px);
+        }
+
+        .ilo--tabs--selection--label {
+          order: 2;
+          flex: 1 1;
+        }
       }
     }
 
-    &[aria-selected="true"] {
-      color: var(--ilo-color-blue-dark);
-      border-bottom: 2px solid var(--ilo-color-blue-dark);
-      pointer-events: none;
+    &--label {
+      overflow: hidden;
+      padding-top: spacing(1);
+      white-space: nowrap;
+      text-overflow: ellipsis;
+    }
+
+    &--item {
+      overflow: hidden;
+      display: block;
+      width: 100%;
+
+      &:last-of-type {
+        .ilo--tabs--selection--button {
+          border-bottom: none;
+          border-right: none;
+        }
+      }
+    }
+  }
+
+  .ilo--tabs--content {
+    background-color: var(--ilo-tabs-content-bg-color);
+    padding: spacing(10) spacing(6) spacing(14) spacing(6);
+
+    [aria-expanded="false"] {
+      display: none;
+    }
+
+    [aria-expanded="true"] {
+      display: block;
+    }
+  }
+
+  @include breakpoint("md") {
+    .ilo--tabs--content {
+      padding: spacing(10) spacing(16) spacing(16) spacing(16);
+    }
+
+    .ilo--tabs--selection {
+      display: flex;
+      flex-flow: row nowrap;
+      gap: spacing(1);
+      max-width: 100%;
+
+      &--item {
+        width: min(calc(var(--tabscount) / 1 * 100%), 100%);
+      }
     }
   }
 }
