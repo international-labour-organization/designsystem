@@ -4,7 +4,8 @@ import classnames from "classnames";
 import { TabsProps } from "./Tabs.props";
 import { Icon } from "../Icon";
 
-const Tabs: FC<TabsProps> = ({ items, theme = "light" }) => {
+const Tabs: FC<TabsProps> = ({ items, className, theme = "light" }) => {
+
   const [activeTab, setActiveTab] = useState(0);
 
   const handleTabClick = (
@@ -18,7 +19,7 @@ const Tabs: FC<TabsProps> = ({ items, theme = "light" }) => {
   const { prefix } = useGlobalSettings();
 
   const baseClass = `${prefix}--tabs`;
-  const tabsClasses = classnames(baseClass, `${baseClass}__theme__${theme}`);
+  const tabsClasses = classnames(baseClass, classname, `${baseClass}__theme__${theme}`);
 
   return (
     <div className={tabsClasses}>
