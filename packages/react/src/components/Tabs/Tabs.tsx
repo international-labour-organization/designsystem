@@ -21,7 +21,7 @@ const Tabs: FC<TabsProps> = ({ items, theme = "light" }) => {
   const tabsClasses = classnames(baseClass, `${baseClass}__theme__${theme}`);
 
   return (
-    <div className={`${tabsClasses} tabs--js`}>
+    <div className={tabsClasses}>
       <ul className={`${baseClass}--selection`} role="tablist" tabIndex={0}>
         {items.map((tab, index) => (
           <li
