@@ -5,26 +5,26 @@
 
 .ilo--tabs {
   &__theme__light {
-    --selection-background-color: var(--ilo-color-white);
-    --button-background-color: var(--ilo-color-gray-light);
-    --button-background-color-hover: var(--ilo-color-blue-lighter);
-    --button-background-color-selected: var(--ilo-color-white);
-    --button-border-top-hover: var(--ilo-color-blue);
-    --button-border-top-selected: var(--ilo-color-blue-dark);
-    --button-color: var(--ilo-color-blue-dark);
-    --button-color-hover: var(--ilo-color-blue);
-    --content-background-color: var(--ilo-color-white);
+    --ilo-tabs-selection-bg-color: var(--ilo-color-white);
+    --ilo-tabs-btn-bg-color: var(--ilo-color-gray-light);
+    --ilo-tabs-btn-bg-color-hover: var(--ilo-color-blue-lighter);
+    --ilo-tabs-btn-bg-color-selected: var(--ilo-color-white);
+    --ilo-tabs-btn-border-top-hover: var(--ilo-color-blue);
+    --ilo-tabs-btn-border-top-selected: var(--ilo-color-blue-dark);
+    --ilo-tabs-btn-color: var(--ilo-color-blue-dark);
+    --ilo-tabs-btn-color-hover: var(--ilo-color-blue);
+    --ilo-tabs-content-bg-color: var(--ilo-color-white);
   }
 
   &__theme__dark {
-    --selection-background-color: var(--ilo-color-blue-dark);
-    --button-background-color: var(--ilo-color-blue-ramp);
-    --button-background-color-hover: var(--ilo-color-blue-dark);
-    --button-background-color-selected: var(--ilo-color-blue-dark);
-    --button-border-top-selected: var(--ilo-color-white);
-    --button-color: var(--ilo-color-white);
-    --button-color-hover: var(--ilo-color-white);
-    --content-background-color: var(--ilo-color-blue-dark);
+    --ilo-tabs-selection-bg-color: var(--ilo-color-blue-dark);
+    --ilo-tabs-btn-bg-color: var(--ilo-color-blue-ramp);
+    --ilo-tabs-btn-bg-color-hover: var(--ilo-color-blue-dark);
+    --ilo-tabs-btn-bg-color-selected: var(--ilo-color-blue-dark);
+    --ilo-tabs-btn-border-top-selected: var(--ilo-color-white);
+    --ilo-tabs-btn-color: var(--ilo-color-white);
+    --ilo-tabs-btn-color-hover: var(--ilo-color-white);
+    --ilo-tabs-content-bg-color: var(--ilo-color-blue-dark);
   }
 
   * {
@@ -34,15 +34,15 @@
   .ilo--tabs--selection {
     --tabscount: 1;
     display: block;
-    background-color: var(--selection-background-color);
+    background-color: var(--ilo-tabs-selection-bg-color);
 
     &--button {
       align-items: center;
-      background-color: var(--button-background-color);
+      background-color: var(--ilo-tabs-btn-bg-color);
       border-top-width: px-to-rem(3px);
       border-top-style: solid;
       border-top-color: transparent;
-      color: var(--button-color);
+      color: var(--ilo-tabs-btn-color);
       font-family: var(--ilo-fonts-display);
       font-weight: 600;
       display: flex;
@@ -56,14 +56,14 @@
 
       // Selected
       &[aria-selected="true"] {
-        background-color: var(--button-background-color-selected);
-        border-top-color: var(--button-border-top-selected);
+        background-color: var(--ilo-tabs-btn-bg-color-selected);
+        border-top-color: var(--ilo-tabs-btn-border-top-selected);
       }
 
       &:hover {
-        background-color: var(--button-background-color-hover);
-        border-top-color: var(--button-border-top-hover);
-        color: var(--button-color-hover);
+        background-color: var(--ilo-tabs-btn-bg-color-hover);
+        border-top-color: var(--ilo-tabs-btn-border-top-hover);
+        color: var(--ilo-tabs-btn-color-hover);
       }
 
       &[aria-selected="true"] {
@@ -106,7 +106,7 @@
   }
 
   .ilo--tabs--content {
-    background-color: var(--content-background-color);
+    background-color: var(--ilo-tabs-content-bg-color);
     padding: spacing(10) spacing(6) spacing(14) spacing(6);
 
     [aria-expanded="false"] {
