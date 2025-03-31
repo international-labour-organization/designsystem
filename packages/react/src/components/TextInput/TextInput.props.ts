@@ -18,6 +18,8 @@ export interface TextInputProps extends FormFieldProps<HTMLInputElement> {
    * The input's type.
    */
   type: TextInputTypes;
+
+  value?: string;
 }
 
 export type LabelledTextInputProps = LabelledFormFieldProps<TextInputProps>;

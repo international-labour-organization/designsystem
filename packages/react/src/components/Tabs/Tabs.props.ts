@@ -9,9 +9,14 @@ export interface TabsProps {
   items: TabItem[];
 
   /**
-   * Specify the theme for the tabs
+   * Give the component a `light` or `dark` theme
    */
   theme?: ThemeTypes;
+  
+  /**
+   * Add an optional className to the Tabs
+   */
+  className?: string;
 }
 
 export interface TabItem {

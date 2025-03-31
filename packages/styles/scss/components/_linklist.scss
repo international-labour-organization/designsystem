@@ -78,6 +78,10 @@
     height: px-to-rem(24px);
   }
 
+  .ilo--link-list--label {
+    flex-basis: 90%;
+  }
+
   &--link {
     display: flex;
     justify-content: space-between;
