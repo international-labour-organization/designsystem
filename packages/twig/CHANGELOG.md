@@ -1,5 +1,26 @@
 # @ilo-org/twig
 
+## 1.7.1
+
+### Patch Changes
+
+- 83c331510: **Card/CardGroup:** Add support for `ScoreCard`
+- Updated dependencies [a50d0ad83]
+  - @ilo-org/styles@1.7.1
+
+## 1.7.0
+
+### Minor Changes
+
+- a748e1247: **Tabs:** Now supports `dark` theme
+
+### Patch Changes
+
+- Updated dependencies [92d199971]
+- Updated dependencies [a748e1247]
+- Updated dependencies [105d40f7a]
+  - @ilo-org/styles@1.7.0
+
 ## 1.6.3
 
 ### Patch Changes

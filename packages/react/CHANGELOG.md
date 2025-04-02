@@ -1,5 +1,32 @@
 # @ilo-org/react
 
+## 0.23.1
+
+### Patch Changes
+
+- Updated dependencies [a50d0ad83]
+  - @ilo-org/styles@1.7.1
+
+## 0.23.0
+
+### Minor Changes
+
+- a748e1247: **Tabs:** Now supports `dark` theme
+
+### Patch Changes
+
+- 05cf5839d: **TextInput:** Gets value prop
+- 92d199971: - **LinkList:** Change width
+  - **Button:** Add submit prop
+  - **DataCard:** Can receive `copy` as ReactNode
+  - **Dropdown:** Can receive default value
+  - **Tabs:** Can receive custom `className`
+- 88fd21e2b: **Profile:** Add chevron to link and make some accessibility improvements.
+- Updated dependencies [92d199971]
+- Updated dependencies [a748e1247]
+- Updated dependencies [105d40f7a]
+  - @ilo-org/styles@1.7.0
+
 ## 0.22.2
 
 ### Patch Changes

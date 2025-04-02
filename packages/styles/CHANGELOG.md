@@ -1,5 +1,26 @@
 # @ilo-org/styles
 
+## 1.7.1
+
+### Patch Changes
+
+- a50d0ad83: **DetailCard:** Fix bug that distorted image width
+
+## 1.7.0
+
+### Minor Changes
+
+- a748e1247: **Tabs:** Now supports `dark` theme
+
+### Patch Changes
+
+- 92d199971: - **LinkList:** Change width
+  - **Button:** Add submit prop
+  - **DataCard:** Can receive `copy` as ReactNode
+  - **Dropdown:** Can receive default value
+  - **Tabs:** Can receive custom `className`
+- 105d40f7a: **Profile:** Fix dark theme link hover background color
+
 ## 1.6.2
 
 ### Patch Changes
