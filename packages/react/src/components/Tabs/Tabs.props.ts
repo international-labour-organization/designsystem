@@ -12,11 +12,16 @@ export interface TabsProps {
    * Give the component a `light` or `dark` theme
    */
   theme?: ThemeTypes;
-  
+
   /**
    * Add an optional className to the Tabs
    */
   className?: string;
+
+  /**
+   * Specify the default active tab
+   */
+  defaultActiveTab?: number;
 }
 
 export interface TabItem {
