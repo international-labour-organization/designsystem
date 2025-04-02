@@ -15,7 +15,7 @@ card:
     dataset:
       type: object
       label: Dataset object
-      description: Array of Content (label, copy), Files object (optional headline, array of items with label and url) and Links object (optional headline, array of items with label and url). Only used by `Data Card`.
+      description: Array of Content (label, copy), Files object (optional headline, array of items with label and url) and Links object (optional headline, array of items with label and url). Only by `Data Card` and `Stat Card`. Check each card to see which kind of dataset is used.
       preview:
         content:
           items:
@@ -39,6 +39,16 @@ card:
               url: "https://www.ilo.org/search?q=hyperlink"
             - label: Français
               url: "https://www.ilo.org/search?q=url"
+        cta:
+          - label: Read more
+            url: "https://www.ilo.org/"
+            icon: "chevron_right"
+          - label: Read more
+            url: "https://www.ilo.org/"
+            icon: "chevron_right"
+          - label: Read more
+            url: "https://www.ilo.org/"
+            icon: "chevron_right"
     date:
       type: object
       label: Date
@@ -122,6 +132,14 @@ card:
       preview:
         label: "World Employment and Social Outlook: Trends 2023"
         url: "https://www.ilo.org/global/research/global-reports/weso/WCMS_865332/lang--en/index.htm"
+    status:
+      type: object
+      label: Status
+      description: Status settings for the card. Used by the `Score Card`.
+      preview:
+        content: "Good"
+        statusType: "success"
+
   settings:
     alignment:
       type: select
