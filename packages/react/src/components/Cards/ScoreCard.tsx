@@ -1,4 +1,4 @@
-import { forwardRef } from "react";
+import { forwardRef, ReactNode } from "react";
 import classNames from "classnames";
 
 import useGlobalSettings from "../../hooks/useGlobalSettings";
@@ -59,7 +59,7 @@ export type ScoreCardProps = {
   content?: {
     items: {
       icon: string;
-      label: string;
+      label: string | ReactNode;
       unix?: string;
     }[];
   };
@@ -70,11 +70,14 @@ export type ScoreCardProps = {
   cta?: {
     items: React.ReactElement<ButtonProps>[];
   };
+
+  className?: string;
 };
 
 const ScoreCard = forwardRef<HTMLDivElement, ScoreCardProps>(
   (
     {
+      className,
       theme = "light",
       titleLevel: TitleElement = "p",
       size = "narrow",
@@ -104,7 +107,7 @@ const ScoreCard = forwardRef<HTMLDivElement, ScoreCardProps>(
     });
 
     return (
-      <div className={cardClasses} ref={ref}>
+      <div className={classNames(cardClasses, className)} ref={ref}>
         <a className={`${baseClass}--link`} href={link} title={title}>
           <span className={`${baseClass}--link--text`}>{title}</span>
         </a>
