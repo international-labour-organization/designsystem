@@ -21,4 +21,6 @@
   {% include "@components/card_stat/card_stat.twig" %}
 {% elseif type == "text" %}
   {% include "@components/card_text/card_text.twig" %}
+{% elseif type == "score" %}
+  {% include "@components/card_score/card_score.twig" %}
 {% endif %}
