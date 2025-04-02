@@ -76,6 +76,7 @@ cardgroup:
         data: Data
         stat: Stat
         factlist: Factlist
+        score: Score
   fields:
     group:
       type: object
