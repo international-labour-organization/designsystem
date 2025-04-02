@@ -1,5 +1,11 @@
 # @ilo-org/styles
 
+## 1.7.1
+
+### Patch Changes
+
+- a50d0ad83: **DetailCard:** Fix bug that distorted image width
+
 ## 1.7.0
 
 ### Minor Changes

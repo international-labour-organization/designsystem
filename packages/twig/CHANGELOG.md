@@ -1,5 +1,13 @@
 # @ilo-org/twig
 
+## 1.7.1
+
+### Patch Changes
+
+- 83c331510: **Card/CardGroup:** Add support for `ScoreCard`
+- Updated dependencies [a50d0ad83]
+  - @ilo-org/styles@1.7.1
+
 ## 1.7.0
 
 ### Minor Changes
