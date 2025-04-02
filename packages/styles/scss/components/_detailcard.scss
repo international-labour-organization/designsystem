@@ -92,7 +92,7 @@
             padding: spacing(8) spacing(4) spacing(8) spacing(0);
 
             #{$self}--image--wrapper {
-              flex: 1 0 18%;
+              flex: 0 0 px-to-rem(100px);
               height: 100%;
               margin: 0;
             }
@@ -115,7 +115,7 @@
             }
 
             #{$self}--image--wrapper {
-              flex: 1 0 27%;
+              flex: 0 0 px-to-rem(196px);
             }
           }
 
