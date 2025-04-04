@@ -12,13 +12,6 @@ promocard:
       preview:
         label: "Read the press release"
         url: "https://www.ilo.org/global/about-the-ilo/newsroom/news/WCMS_846303/lang--en/index.htm"
-    date:
-      type: object
-      label: Date
-      description: Date copy (human and Unix)
-      preview:
-        human: 20 September 2022
-        unix: 1670389200
     eyebrow:
       type: string
       label: Eyebrow

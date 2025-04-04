@@ -8,7 +8,9 @@
 
   &__type {
     &__detail {
-      --max-width: #{px-to-rem(343px)};
+      // Card will take up 100% of the width of the container
+      // in mobile view for all sizes
+      --max-width: 100%;
 
       border-bottom: px-to-rem(3px) solid var(--ilo-color-gray-light);
       padding: spacing(8) spacing(4);
@@ -39,13 +41,7 @@
       }
 
       #{$self}--title {
-        padding: 0 0 spacing(2) 0;
-        @include font-styles("headline-6");
-        @include breakpoint("lg") {
-          #{$self}__size__wide & {
-            @include font-styles("headline-6");
-          }
-        }
+        margin-bottom: spacing(2);
       }
 
       #{$self}--intro {
@@ -53,16 +49,12 @@
       }
 
       #{$self}--date {
-        font-size: var(--ilo-font-size-sm);
-        line-height: var(--ilo-line-height-xlg);
-        letter-spacing: var(--ilo-letter-spacing-md);
+        @include typography("body-small");
         color: var(--ilo-color-gray-accessible);
       }
 
       #{$self}--date-extra {
-        font-size: var(--ilo-font-size-md);
-        line-height: var(--ilo-line-height-2xlg);
-        letter-spacing: var(--ilo-letter-spacing-md);
+        @include typography("body-medium");
         color: var(--ilo-color-gray-charcoal);
         gap: spacing(2);
 
@@ -82,13 +74,20 @@
 
       &#{$self}__size {
         &__narrow {
-          --max-width: #{px-to-rem(343px)};
+          @include breakpoint("md") {
+            --max-width: #{px-to-rem(343px)};
+          }
+        }
+
+        &__wide {
+          @include breakpoint("md") {
+            --max-width: #{px-to-rem(745px)};
+          }
         }
 
         &__wide,
         &__fluid {
           @include breakpoint("md") {
-            --max-width: #{px-to-rem(745px)};
             padding: spacing(8) spacing(4) spacing(8) spacing(0);
 
             #{$self}--image--wrapper {
@@ -117,11 +116,9 @@
             #{$self}--image--wrapper {
               flex: 0 0 px-to-rem(196px);
             }
-          }
 
-          #{$self}--title {
-            @include breakpoint("lg") {
-              @include font-styles("headline-5");
+            #{$self}--title {
+              @include typography("heading-3");
             }
           }
         }
