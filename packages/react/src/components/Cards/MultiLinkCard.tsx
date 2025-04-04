@@ -1,4 +1,4 @@
-import { forwardRef } from "react";
+import { forwardRef, isValidElement, ReactNode } from "react";
 import classNames from "classnames";
 
 import useGlobalSettings from "../../hooks/useGlobalSettings";
@@ -36,7 +36,7 @@ export type MultiLinkCardProps = {
   /**
    * Introductory text in the card
    */
-  intro?: string;
+  intro?: ReactNode;
 
   /**
    * Link to the card
@@ -134,7 +134,12 @@ const MultiLinkCard = forwardRef<HTMLDivElement, MultiLinkCardProps>(
                 </picture>
               </div>
             )}
-            {intro && <p className={`${baseClass}--intro`}>{intro}</p>}
+            {intro &&
+              (isValidElement(intro) ? (
+                <div className={`${baseClass}--intro`}>{intro}</div>
+              ) : (
+                <p className={`${baseClass}--intro`}>{intro}</p>
+              ))}
             {linklist && <LinkList {...linklist} />}
           </div>
         </div>

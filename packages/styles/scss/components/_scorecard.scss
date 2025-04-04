@@ -54,10 +54,9 @@
       }
 
       #{$self}--title {
-        @include font-styles("headline-5");
-        font-family: var(--ilo-fonts-display);
-        font-weight: 700;
+        @include typography("heading-3");
         margin-bottom: spacing(6);
+        color: var(--ilo-color-blue-dark);
       }
 
       #{$self}--area {
@@ -152,9 +151,7 @@
 
             #{$self}--title {
               grid-area: title;
-              font-size: var(--ilo-font-size-lg);
-              line-height: var(--ilo-line-height-lg);
-              letter-spacing: var(--ilo-letter-spacing-sm);
+              @include typography("heading-4");
             }
 
             #{$self}--area--content {

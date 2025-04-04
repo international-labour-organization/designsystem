@@ -4,8 +4,13 @@ import classnames from "classnames";
 import { TabsProps } from "./Tabs.props";
 import { Icon } from "../Icon";
 
-const Tabs: FC<TabsProps> = ({ items, className, theme = "light" }) => {
-  const [activeTab, setActiveTab] = useState(0);
+const Tabs: FC<TabsProps> = ({
+  items,
+  className,
+  theme = "light",
+  defaultActiveTab = 0,
+}) => {
+  const [activeTab, setActiveTab] = useState(defaultActiveTab);
 
   const handleTabClick = (
     index: SetStateAction<number>,
