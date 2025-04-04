@@ -107,7 +107,7 @@ $link-hover-selectors: ".ilo--card--link:hover, .ilo--card--link:focus, .ilo--ca
 
   &--intro {
     color: var(--ilo-color-gray-charcoal);
-    @include typography("body-large");
+    @include typography("body-medium");
   }
 
   &--date {
