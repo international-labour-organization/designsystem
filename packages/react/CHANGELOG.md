@@ -1,5 +1,20 @@
 # @ilo-org/react
 
+## 0.23.2
+
+### Patch Changes
+
+- 14dad84ee: **Tab:** Default value for the active tab
+- 1bc5f9674: **ScoreCard:** Add `ReactNode` support
+  **MultilinkCard::** Add `ReactNode` support
+- Updated dependencies [264a5ebf3]
+- Updated dependencies [2f7dab95a]
+- Updated dependencies [3041e7607]
+- Updated dependencies [b648f80f5]
+- Updated dependencies [6366c87e6]
+- Updated dependencies [8069f6fbd]
+  - @ilo-org/styles@1.7.2
+
 ## 0.23.1
 
 ### Patch Changes

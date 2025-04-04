@@ -1,5 +1,19 @@
 # @ilo-org/twig
 
+## 1.7.2
+
+### Patch Changes
+
+- 4973a9803: **PromoCard:** Remove unused `date` field from pattern definition
+- 15ecd11cb: **PromoCard:** Correctly set default `size` as `standard`
+- Updated dependencies [264a5ebf3]
+- Updated dependencies [2f7dab95a]
+- Updated dependencies [3041e7607]
+- Updated dependencies [b648f80f5]
+- Updated dependencies [6366c87e6]
+- Updated dependencies [8069f6fbd]
+  - @ilo-org/styles@1.7.2
+
 ## 1.7.1
 
 ### Patch Changes
