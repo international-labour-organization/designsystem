@@ -2,4 +2,5 @@
 "@ilo-org/react": patch
 ---
 
-`ReactNode` support for the `Score` and `MultiLink` cards
+**ScoreCard:** Add `ReactNode` support
+**MultilinkCard::** Add `ReactNode` support
