@@ -1,5 +1,26 @@
 # @ilo-org/styles
 
+## 1.7.2
+
+### Patch Changes
+
+- 264a5ebf3: **PromoCard:**
+
+  - Correct `font-size` in mobile view and when `size` is set to `narrow`
+  - Refactor and correct sizing and layout
+
+- 2f7dab95a: **ScoreCard:** Corrected typography
+- 3041e7607: **Card:** Fix the color of card titles
+  **Profile:** Fix the color of link titles
+- b648f80f5: **Tag:** Fix hover color when `tagType` is `reset`
+- 6366c87e6: **Card:** Change intro font size
+  **DetailCard:**
+
+  - Make card full width in mobile view
+  - Fix font styles
+
+- 8069f6fbd: **CardGroup:** Allow to set the width of cards that it contains
+
 ## 1.7.1
 
 ### Patch Changes
