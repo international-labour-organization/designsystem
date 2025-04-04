@@ -72,7 +72,7 @@
     $icon: "[class*='icon']";
 
     @include typography("highlight-medium");
-    color: var(--ilo-color-dark-blue);
+    color: var(--ilo-color-blue-dark);
     grid-column: 1 / -1;
 
     a {

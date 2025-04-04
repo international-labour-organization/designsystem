@@ -7,14 +7,12 @@
   $self: &;
 
   &--wrapper__type__promo {
-    --max-width: #{px-to-rem(634px)};
+    --max-width: 100%;
 
     &__size {
       &__narrow {
-        --max-width: #{px-to-rem(343px)};
-
-        @include breakpoint("md", true) {
-          --max-width: 100%;
+        @include breakpoint("md") {
+          --max-width: #{px-to-rem(343px)};
         }
       }
 
@@ -34,91 +32,71 @@
 
   &__type {
     &__promo {
-      // --max-width: #{px-to-rem(343px)};
-
       padding: spacing(10) spacing(6);
       width: 100%;
 
-      @include breakpoint("md") {
-        padding: spacing(12);
-      }
-
-      @include breakpoint("lg") {
-        padding: spacing(16) spacing(18);
-      }
-
       #{$self}--title {
-        margin-bottom: spacing(3);
+        @include typography("heading-3");
+        margin-bottom: spacing(2);
+      }
+
+      #{$self}--intro {
+        @include typography("body-medium");
+        margin-bottom: spacing(8);
+      }
+
+      &#{$self}__cornercut {
+        @include cornercut(72px, 40px);
+
+        [dir="rtl"] & {
+          @include cornercut(72px, 40px left);
+        }
       }
 
       &#{$self}__size {
-        &__standard {
-          padding: spacing(12);
+        @include breakpoint("md") {
+          &__standard,
+          &__wide,
+          &__fluid {
+            padding: spacing(12);
 
-          &#{$self}__cornercut {
-            @include cornercut(87px, 48px);
+            #{$self}--title {
+              @include typography("heading-2");
+              margin-bottom: spacing(3);
+            }
 
-            [dir="rtl"] & {
-              @include cornercut(87px, 48px, left);
+            #{$self}--intro {
+              @include typography("body-large");
+            }
+
+            &#{$self}__cornercut {
+              @include cornercut(87px, 48px);
+
+              [dir="rtl"] & {
+                @include cornercut(87px, 48px, left);
+              }
             }
           }
         }
 
-        &__wide,
-        &__fluid {
-          padding: spacing(16) spacing(18);
+        @include breakpoint("lg") {
+          &__wide,
+          &__fluid {
+            padding: spacing(16) spacing(18);
+            &#{$self}__cornercut {
+              @include cornercut(116px, 64px);
 
-          &#{$self}__cornercut {
-            @include cornercut(116px, 64px);
-
-            [dir="rtl"] & {
-              @include cornercut(116px, 64px, left);
+              [dir="rtl"] & {
+                @include cornercut(116px, 64px, left);
+              }
             }
-          }
-        }
-
-        &__narrow {
-          padding: spacing(10) spacing(6);
-
-          &#{$self}__cornercut {
-            @include cornercut(72px, 40px);
-
-            [dir="rtl"] & {
-              @include cornercut(72px, 40px left);
-            }
-          }
-
-          #{$self}--title {
-            @include font-styles("headline-5");
-            margin-bottom: spacing(2);
-          }
-
-          #{$self}--intro {
-            @include font-styles("body-small");
           }
         }
       }
 
       &#{$self}__theme__light:not(:hover) #{$self}--title {
-        color: $brand-ilo-black;
+        color: var(--ilo-color-gray-charcoal);
         @include globaltransition("color");
-      }
-
-      #{$self}--title {
-        @include font-styles("headline-4");
-
-        @include breakpoint("md") {
-          @include font-styles("headline-2");
-        }
-      }
-
-      #{$self}--intro {
-        @include font-styles("body-small");
-        margin-bottom: spacing(8);
-
-        @include breakpoint("md") {
-          @include font-styles("base");
-        }
       }
     }
   }

@@ -100,14 +100,14 @@ $link-hover-selectors: ".ilo--card--link:hover, .ilo--card--link:focus, .ilo--ca
   }
 
   &--title {
-    color: var(--ilo-color-dark-blue);
+    color: var(--ilo-color-blue-dark);
     @include typography("heading-4");
     margin-bottom: spacing(6);
   }
 
   &--intro {
     color: var(--ilo-color-gray-charcoal);
-    @include typography("body-large");
+    @include typography("body-medium");
   }
 
   &--date {

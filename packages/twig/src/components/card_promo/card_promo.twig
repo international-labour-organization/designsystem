@@ -1,6 +1,8 @@
-{#
-  PROMO CARD COMPONENT
-#}
+{# card_promo.twig #}
+
+{# Set default size to standard #}
+{% set size = size|default("standard") %}
+
 
 <div class="{{prefix}}--card--wrapper {{prefix}}--card--wrapper__type__promo {{prefix}}--card--wrapper__type__promo__size__{{ size }}">
 	<div class="{{prefix}}--card {{prefix}}--card__type__promo {{prefix}}--card__size__{{ size }} {{prefix}}--card__theme__{{theme}} {% if cornercut|boolval %}{{prefix}}--card__cornercut{% endif %}">

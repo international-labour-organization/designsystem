@@ -20,12 +20,7 @@
   padding: spacing(2) spacing(3);
   width: fit-content;
 
-  // Font styles
-  font-family: var(--ilo-fonts-display);
-  font-size: var(--ilo-font-size-sm);
-  font-weight: var(--ilo-font-weight-medium);
-  line-height: var(--ilo-line-height-xlg);
-  letter-spacing: var(--ilo-letter-spacing-sm);
+  @include typography("highlight-small");
 
   // Colors and border
   color: var(--ilo-color-blue-dark);
@@ -62,6 +57,7 @@
     }
 
     &__button,
+    &__reset,
     &__anchor {
       &:hover,
       &:focus {
@@ -85,7 +81,7 @@
   }
 
   .ilo--icon {
-    bottom: px-to-rem(2px);
+    bottom: px-to-rem(1px);
     fill: inherit;
     position: relative;
     margin-inline-start: px-to-rem(2px);
