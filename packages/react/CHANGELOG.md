@@ -1,5 +1,12 @@
 # @ilo-org/react
 
+## 0.23.3
+
+### Patch Changes
+
+- 21fcdebb2: **DetailCard:** Add an option to swap the link component
+  **ScoreCard:** Add an option to swap the link component
+
 ## 0.23.2
 
 ### Patch Changes
