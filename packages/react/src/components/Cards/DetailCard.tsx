@@ -1,5 +1,11 @@
 import classNames from "classnames";
-import { forwardRef } from "react";
+import {
+  ElementType,
+  forwardRef,
+  isValidElement,
+  ReactNode,
+  createElement,
+} from "react";
 import useGlobalSettings from "../../hooks/useGlobalSettings";
 import { CardSize, EventDate, HeadingTypes, ThemeTypes } from "../../types";
 
@@ -42,12 +48,17 @@ export type DetailCardProps = {
   /**
    * Intro text for the card
    */
-  intro?: string;
+  intro?: string | ReactNode;
 
   /**
    * Specify the URL for the card link
    */
   link?: string;
+
+  /**
+   * Specify the component to use for the link
+   */
+  linkComponent?: ElementType;
 
   /**
    * Specify the image for the card
@@ -80,6 +91,7 @@ const DetailCard = forwardRef<HTMLDivElement, DetailCardProps>(
       intro,
       image,
       isVideo = false,
+      linkComponent,
     },
     ref
   ) => {
@@ -98,13 +110,19 @@ const DetailCard = forwardRef<HTMLDivElement, DetailCardProps>(
       }
     );
 
+    const Link = createElement(
+      linkComponent || "a",
+      {
+        className: `${baseClass}--link`,
+        href: link,
+        title,
+      },
+      <span className={`${baseClass}--link--text`}>{title}</span>
+    );
+
     return (
       <div className={cardClasses} ref={ref}>
-        {link && (
-          <a className={`${baseClass}--link`} href={link} title={title}>
-            <span className={`${baseClass}--link--text`}>{title}</span>
-          </a>
-        )}
+        {link && Link}
         <div className={`${baseClass}--wrap`}>
           {image && (
             <div className={`${baseClass}--image--wrapper`}>
@@ -124,7 +142,12 @@ const DetailCard = forwardRef<HTMLDivElement, DetailCardProps>(
                 {title}
               </TitleElement>
             )}
-            {intro && <p className={`${baseClass}--intro`}>{intro}</p>}
+            {intro &&
+              (isValidElement(intro) ? (
+                <div className={`${baseClass}--intro`}>{intro}</div>
+              ) : (
+                <p className={`${baseClass}--intro`}>{intro}</p>
+              ))}
             {date && (
               <time className={`${baseClass}--date`} dateTime={date.unix}>
                 {date.human}

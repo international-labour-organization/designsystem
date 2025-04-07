@@ -1,4 +1,4 @@
-import { forwardRef, ReactNode } from "react";
+import { createElement, ElementType, forwardRef, ReactNode } from "react";
 import classNames from "classnames";
 
 import useGlobalSettings from "../../hooks/useGlobalSettings";
@@ -27,6 +27,11 @@ export type ScoreCardProps = {
    * The link URL for the card.
    */
   link: string;
+
+  /**
+   * Specify the component to use for the link
+   */
+  linkComponent?: ElementType;
 
   /**
    * The title text for the card.
@@ -82,6 +87,7 @@ const ScoreCard = forwardRef<HTMLDivElement, ScoreCardProps>(
       titleLevel: TitleElement = "p",
       size = "narrow",
       link,
+      linkComponent,
       title,
       isVideo = false,
       image,
@@ -106,11 +112,19 @@ const ScoreCard = forwardRef<HTMLDivElement, ScoreCardProps>(
       [`${baseClass}__isvideo`]: isVideo,
     });
 
+    const Link = createElement(
+      linkComponent || "a",
+      {
+        href: link,
+        title,
+        className: `${baseClass}--link`,
+      },
+      <span className={`${baseClass}--link--text`}>{title}</span>
+    );
+
     return (
       <div className={classNames(cardClasses, className)} ref={ref}>
-        <a className={`${baseClass}--link`} href={link} title={title}>
-          <span className={`${baseClass}--link--text`}>{title}</span>
-        </a>
+        {Link}
         <div className={`${baseClass}--wrap`}>
           {image && size !== "simple" && (
             <div className={`${baseClass}--image--wrapper`}>
