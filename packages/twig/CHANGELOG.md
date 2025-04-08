@@ -1,5 +1,13 @@
 # @ilo-org/twig
 
+## 1.7.3
+
+### Patch Changes
+
+- 20d48f5a3: **Callout:** Fix unreadable background color and some other minor issues
+- Updated dependencies [20d48f5a3]
+  - @ilo-org/styles@1.7.3
+
 ## 1.7.2
 
 ### Patch Changes

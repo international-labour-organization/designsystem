@@ -1,5 +1,11 @@
 # @ilo-org/styles
 
+## 1.7.3
+
+### Patch Changes
+
+- 20d48f5a3: **Callout:** Fix unreadable background color and some other minor issues
+
 ## 1.7.2
 
 ### Patch Changes
