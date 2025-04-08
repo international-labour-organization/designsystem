@@ -141,7 +141,7 @@ export default class Callout {
       ? this.toggleLabelOpen
       : this.toggleLabelClosed;
 
-    this.element.classList.toggle("ilo--callout--open");
+    this.element.classList.toggle("ilo--callout__open");
     this.toggleLabel.innerText = label;
 
     return this;

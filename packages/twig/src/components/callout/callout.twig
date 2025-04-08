@@ -1,13 +1,11 @@
-{#
-  CALLOUT COMPONENT
-#}
-<div class="{{prefix}}--callout {{prefix}}--callout__{{alert}} {% if isCollapsible|boolval and isOpen|boolval %} {{prefix}}--callout--open {% endif %} {% if isCollapsible|boolval %} {{prefix}}--callout--collapse {% endif %}" data-loadcomponent="Callout">
-	<div class="{{prefix}}--callout__sidebar">
-		<span class="{{prefix}}--callout--icon icon icon__{{alert}}"></span>
+{# callout.twig #}
+<div class="{{prefix}}--callout {{prefix}}--callout__{{alert}} {% if isCollapsible|boolval and isOpen|boolval %} {{prefix}}--callout__open {% endif %} {% if isCollapsible|boolval %} {{prefix}}--callout__collapse {% endif %}" data-loadcomponent="Callout">
+	<div class="{{prefix}}--callout--sidebar">
+		<span class="{{prefix}}--callout--icon {{prefix}}--callout--icon__alert__{{alert}}"></span>
 	</div>
-	<div class="{{prefix}}--callout__content">
-		<div class="{{prefix}}--callout__header">
-			<h5 class="{{prefix}}--callout__title">{{ title }}</h5>
+	<div class="{{prefix}}--callout--content">
+		<div class="{{prefix}}--callout--header">
+			<h5 class="{{prefix}}--callout--title">{{ title }}</h5>
 			{% if isCollapsible|boolval %}
 				<button class="{{prefix}}--callout--toggle" type="button" data-open="{{ toggleOpenLabel }}" data-closed="{{ toggleClosedLabel }}">
 					<span class="{{prefix}}--callout--button-text">
@@ -21,9 +19,9 @@
 				</button>
 			{% endif %}
 		</div>
-		<p class="{{prefix}}--callout__description">{{ content }}</p>
+		<p class="{{prefix}}--callout--description">{{ content }}</p>
 		{% if button %}
-			<div class="{{prefix}}--callout__footer">
+			<div class="{{prefix}}--callout--footer">
 				{% include '@components/button/button.twig' with {
           label: button.label,
           url: button.url,
