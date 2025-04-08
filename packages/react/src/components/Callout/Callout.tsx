@@ -36,7 +36,7 @@ export type CalloutProps = {
   isCollapsible?: boolean;
 
   /**
-   * Specify if callout is open (only important for collapsible items)
+   * Specify if callout is open by default (only important for collapsible items)
    */
   isOpen?: boolean;
 
@@ -82,20 +82,22 @@ const Callout = forwardRef<HTMLDivElement, CalloutProps>(
 
     const calloutClasses = classNames(baseClass, className, {
       [`${baseClass}__${type}`]: type,
-      [`${baseClass}--open`]: toggleOpen,
-      [`${baseClass}--collapse`]: isCollapsible,
+      [`${baseClass}__open`]: toggleOpen,
+      [`${baseClass}__collapse`]: isCollapsible,
     });
 
     const toggleLabel = toggleOpen ? toggleOpenLabel : toggleClosedLabel;
 
     return (
       <div className={calloutClasses} ref={ref}>
-        <div className={`${baseClass}__sidebar`}>
-          <span className={`${baseClass}--icon icon icon__${type}`}></span>
+        <div className={`${baseClass}--sidebar`}>
+          <span
+            className={`${baseClass}--icon ${baseClass}--icon__alert__${type}`}
+          ></span>
         </div>
-        <div className={`${baseClass}__content`}>
-          <div className={`${baseClass}__header`}>
-            <h5 className={`${baseClass}__title`}>{headline}</h5>
+        <div className={`${baseClass}--content`}>
+          <div className={`${baseClass}--header`}>
+            <h5 className={`${baseClass}--title`}>{headline}</h5>
             {isCollapsible && (
               <button
                 className={`${baseClass}--toggle`}
@@ -113,9 +115,9 @@ const Callout = forwardRef<HTMLDivElement, CalloutProps>(
               </button>
             )}
           </div>
-          <p className={`${baseClass}__description`}>{copy}</p>
+          <p className={`${baseClass}--description`}>{copy}</p>
           {cta && (
-            <div className={`${baseClass}__footer`}>
+            <div className={`${baseClass}--footer`}>
               <Button
                 type="secondary"
                 size="small"
