@@ -1,5 +1,11 @@
 # @ilo-org/twig
 
+## 1.7.4
+
+### Patch Changes
+
+- 24d56f42c: **Accordion:** Fix issue where accordion item icon wasn't getting rendered by default
+
 ## 1.7.3
 
 ### Patch Changes
