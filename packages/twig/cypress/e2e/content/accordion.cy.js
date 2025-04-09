@@ -54,11 +54,21 @@ describe("accordion", () => {
   it("should allow multiple items to be expanded", () => {
     cy.get("@accordion").within(() => {
       cy.get("button").each(($button) => {
-        if (!$button.attr("aria-expanded")) {
+        if ($button.attr("aria-expanded") === "false") {
           cy.wrap($button).click();
         }
       });
       cy.get(".ilo--accordion--panel__open").should("have.length", 3);
+    });
+  });
+
+  it("should have aria-expanded attribute on accordion item buttons", () => {
+    cy.get("@accordion").within(() => {
+      cy.get(".ilo--accordion--item button").each(($button) => {
+        cy.wrap($button)
+          .should("have.attr", "aria-expanded")
+          .and("be.oneOf", ["true", "false"]);
+      });
     });
   });
 });

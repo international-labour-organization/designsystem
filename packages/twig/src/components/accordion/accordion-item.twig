@@ -4,12 +4,13 @@
 {% set id = id %}
 {% set button_id = 'button-' ~ id %}
 {% set panel_id = 'panel-' ~ id %}
+{% set defaultExpanded = defaultExpanded|default(false) %}
 {% set expanded_class = defaultExpanded ? prefix ~ '--accordion--panel__open' : '' %}
 {% set scroll_class = scroll ? prefix ~ '--accordion--panel__scroll' : '' %}
 
 <li class="{{prefix}}--accordion--item" id="{{ id }}">
 	<div class="ilo--h3">
-		<button class="{{prefix}}--accordion--button {{prefix}}--accordion--button__{{ size|default('small') }}" aria-expanded="{{ defaultExpanded }}" aria-controls="{{ panel_id }}" id="{{ button_id }}">
+		<button class="{{prefix}}--accordion--button {{prefix}}--accordion--button__{{ size|default('small') }}" aria-expanded="{{ defaultExpanded ? 'true' : 'false' }}" aria-controls="{{ panel_id }}" id="{{ button_id }}">
 			<span class="{{prefix}}--accordion--label">{{label}}</span>
 			<span class="{{prefix}}--accordion--icon"></span>
 		</button>
