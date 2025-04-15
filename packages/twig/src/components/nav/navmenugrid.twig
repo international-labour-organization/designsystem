@@ -1,0 +1,16 @@
+{# navmenugrid.twig #}
+
+{% set prefix = prefix|default('ilo') %}
+{% set base_class = prefix ~ '--nav-menu-grid' %}
+
+<div class="{{ base_class }}">
+  {% for chunk in menu|batch(5) %}
+    <div class="{{ base_class }}__column">
+      {% for item in chunk %}
+        <a href="{{ item.href }}" class="{{ base_class }}__item">
+          {{ item.label }}
+        </a>
+      {% endfor %}
+    </div>
+  {% endfor %}
+</div>

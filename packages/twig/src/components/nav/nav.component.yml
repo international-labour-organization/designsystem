@@ -1,0 +1,90 @@
+nav:
+  namespace: Components/Nav
+  use: "@components/nav/navcomplex.twig"
+  label: Nav Complex
+  description: A complex navigation component with branding, widgets, and menu sections
+  fields:
+    prefix:
+      type: string
+      label: Prefix
+      description: CSS class prefix
+      preview: "ilo"
+    branding:
+      type: object
+      label: Branding
+      description: Branding elements including logo and name
+      required: true
+      preview:
+        logo:
+          main: "images/logo_en_horizontal_blue_dark.svg"
+          mobile: "images/logo_en_horizontal_blue_dark.svg"
+        name: "Subsite Name"
+        tag:
+          main: "Advancing social justice, promoting decent work"
+          sub: "ILO is a specialized agency of the United Nations"
+    widgets:
+      type: object
+      label: Widgets
+      description: Widgets section including link and language toggle
+      preview:
+        link:
+          href: "https://example.com"
+          label: "Go to main ILO website"
+        language:
+          label: "Language"
+          links:
+            - label: "English"
+              url: "https://example.com/en"
+            - label: "Français"
+              url: "https://example.com/fr"
+    facadeItems:
+      type: object
+      label: Facade Menu Items
+      description: Primary menu items displayed in the main navigation
+      preview:
+        - href: "https://www.ilo.org/"
+          label: "Item 1"
+          isActive: false
+        - href: "https://www.ilo.org/"
+          label: "Item 2"
+          isActive: false
+        - href: "https://www.ilo.org/"
+          label: "Item 3"
+          isActive: false
+        - href: "https://www.ilo.org/"
+          label: "Item 4"
+          isActive: false
+        - href: "https://www.ilo.org/"
+          label: "Item 5"
+          isActive: false
+    moreItems:
+      type: object
+      label: More Menu Items
+      description: Additional menu items displayed in the dropdown
+      preview:
+        - href: "https://example.com/more1"
+          label: "More Item 1"
+        - href: "https://example.com/more2"
+          label: "More Item 2"
+    labels:
+      type: object
+      label: Labels
+      description: Text labels used throughout the navigation
+      preview:
+        more: "More"
+    isMoreOpen:
+      type: boolean
+      label: More Menu Open
+      description: Whether the more menu dropdown is open
+      preview: false
+    isCompactOpen:
+      type: boolean
+      label: Mobile Menu Open
+      description: Whether the mobile menu is open
+      preview: false
+    isAboveXL:
+      type: boolean
+      label: Above XL Breakpoint
+      description: Whether the viewport is above the XL breakpoint
+      preview: true
+  visibility: storybook
