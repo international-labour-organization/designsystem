@@ -3,7 +3,7 @@
 {% set prefix = prefix|default('ilo') %}
 {% set base_class = prefix ~ '--subsite-nav-complex' %}
 
-<header class="{{ base_class }}">
+<header class="{{ base_class }}" data-loadcomponent="Nav" data-prefix="{{prefix}}">
   <div class="{{ base_class }}-bg--light">
     <div class="{{ base_class }}__widgets {{ base_class }}__container">
       <span class="{{ base_class }}__widgets-bar-corner"></span>
@@ -67,7 +67,6 @@
           menu: facadeItems,
           more: moreItems|length ? {
             label: labels.more,
-            isOpen: isMoreOpen
           } : null,
           prefix: prefix
         } only %}
@@ -75,7 +74,6 @@
 
       {% if moreItems|length %}
         {% include "@components/nav/navdropdown.twig" with {
-          isOpen: isMoreOpen,
           menu: moreItems,
           prefix: prefix
         } only %}
