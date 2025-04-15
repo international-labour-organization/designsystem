@@ -1,0 +1,92 @@
+{# navcomplex.twig #}
+
+{% set prefix = prefix|default('ilo') %}
+{% set base_class = prefix ~ '--subsite-nav-complex' %}
+
+<header class="{{ base_class }}">
+  <div class="{{ base_class }}-bg--light">
+    <div class="{{ base_class }}__widgets {{ base_class }}__container">
+      <span class="{{ base_class }}__widgets-bar-corner"></span>
+      <span class="{{ base_class }}__widgets-bar">
+        {% if widgets.link %}
+          <a href="{{ widgets.link.href }}" class="{{ base_class }}__widgets-bar__link">
+            {{ widgets.link.label }}
+          </a>
+        {% endif %}
+        {% if widgets.language %}
+          {% include "@components/languagetoggle/languagetoggle.twig" with {
+            className: base_class ~ '__widgets-bar__language',
+            hideIcon: false,
+            language: "English",
+            links: widgets.language.links,
+          } %}
+        {% endif %}
+      </span>
+    </div>
+  </div>
+
+  <div class="{{ base_class }}-bg--light">
+    <div class="{{ base_class }}__branding {{ base_class }}__container">
+      <div class="{{ base_class }}__branding-main">
+        <div
+          class="{{ base_class }}__branding-main__logo"
+          role="button"
+          tabindex="0"
+          aria-label="Branding"
+        >
+          <img class="{{ base_class }}__branding-main__logo-img" src="{{ branding.logo.main }}" alt="{{ branding.logo.alt }}">
+        </div>
+        <h3 class="{{ base_class }}__branding-main__name">{{ branding.name }}</h3>
+      </div>
+      <div class="{{ base_class }}__branding-tag">
+        <h4 class="{{ base_class }}__branding-tag__main">{{ branding.tag.main }}</h4>
+        {% if branding.tag.sub %}
+          <span class="{{ base_class }}__branding-tag__sub">{{ branding.tag.sub }}</span>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+  <div class="{{ base_class }}-bg--dark">
+    <nav class="{{ base_class }}__nav {{ base_class }}__container">
+      <div class="{{ base_class }}__nav-mobile">
+        <div
+          class="{{ base_class }}__nav-mobile__logo"
+          role="button"
+          tabindex="0"
+          aria-label="Branding"
+        >
+          {{ branding.logo.mobile }}
+        </div>
+        <h3 class="{{ base_class }}__nav-mobile__name">{{ branding.name }}</h3>
+      </div>
+
+      {% if facadeItems %}
+        {% include "@components/nav/navmenu.twig" with {
+          className: base_class ~ '__nav-menu',
+          menu: facadeItems,
+          more: moreItems|length ? {
+            label: labels.more,
+            isOpen: isMoreOpen
+          } : null,
+          prefix: prefix
+        } only %}
+      {% endif %}
+
+      {% if moreItems|length %}
+        {% include "@components/nav/navdropdown.twig" with {
+          isOpen: isMoreOpen,
+          menu: moreItems,
+          prefix: prefix
+        } only %}
+      {% endif %}
+      {#
+      {% include "@components/nav/mobilenav.twig" with {
+        isOpen: isCompactOpen,
+        menu: menu.items,
+        prefix: prefix
+      } only %}
+      #}
+    </nav>
+  </div>
+</header>

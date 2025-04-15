@@ -133,6 +133,8 @@
 
       &__logo img {
         height: 100%;
+        max-height: px-to-rem(72px);
+        width: px-to-rem(200px);
         padding-inline-end: spacing(4);
         border-inline-end: 1px solid var(--ilo-color-blue-dark);
       }

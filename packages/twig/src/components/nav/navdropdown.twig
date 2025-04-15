@@ -1,0 +1,23 @@
+{# navdropdown.twig #}
+
+{% set prefix = prefix|default('ilo') %}
+{% set base_class = prefix ~ '--nav-dropdown' %}
+
+<div class="{{ base_class }} {{ className|default('') }}">
+  <button
+    class="{{ base_class }}__button {% if isOpen %}{{ base_class }}__button--open{% endif %}"
+    aria-expanded="{{ isOpen ? 'true' : 'false' }}"
+    aria-haspopup="menu"
+  >
+    {{ label }}
+  </button>
+
+  {% if isOpen %}
+    <div class="{{ base_class }}__content">
+      {% include "@components/nav/navmenugrid.twig" with {
+        menu: menu,
+        prefix: prefix
+      } only %}
+    </div>
+  {% endif %}
+</div>
