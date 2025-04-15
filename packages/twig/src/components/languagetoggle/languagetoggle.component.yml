@@ -4,6 +4,11 @@ languagetoggle:
   label: Language Toggle
   description: The Language Toggle allows users to switch between different language versions of a website.
   fields:
+    className:
+      type: string
+      label: Class Name
+      description: Optional additional CSS class to be added to the component
+      preview: "custom-class"
     language:
       label: Language
       type: string
