@@ -94,5 +94,9 @@
       visibility: visible;
       transform: translateY(0);
     }
+
+    &:focus {
+      outline: none;
+    }
   }
 }

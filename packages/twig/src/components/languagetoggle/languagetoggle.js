@@ -149,33 +149,28 @@ export default class LanguageToggle extends StatefulComponent {
     const lastFocusableElement =
       focusableElements[focusableElements.length - 1];
 
-    // Handle keyboard navigation within the context menu
-    this.element.addEventListener("keydown", (event) => {
-      if (event.key === "Escape") {
-        this.state.contextMenuIsOpen = false;
-      }
+    setTimeout(() => {
+      this.contextMenu.focus();
 
-      // If focus is outside the menu, move it to first element
-      if (!focusableElements.includes(document.activeElement)) {
-        console.log("outside");
-        event.preventDefault();
-        firstFocusableElement.focus();
-        return;
-      }
+      this.contextMenu.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") {
+          this.state.contextMenuIsOpen = false;
+        }
 
-      // Shift+Tab on first element -> focus last element
-      if (event.shiftKey && document.activeElement === firstFocusableElement) {
-        console.log("shift tab");
-        event.preventDefault();
-        lastFocusableElement.focus();
-        return;
-      }
-
-      // Tab on last element -> focus first element
-      if (!event.shiftKey && document.activeElement === lastFocusableElement) {
-        event.preventDefault();
-        firstFocusableElement.focus();
-      }
-    });
+        // Tab trap for focusable elements
+        if (event.key === "Tab") {
+          if (
+            event.shiftKey &&
+            document.activeElement === firstFocusableElement
+          ) {
+            event.preventDefault();
+            lastFocusableElement.focus();
+          } else if (document.activeElement === lastFocusableElement) {
+            event.preventDefault();
+            firstFocusableElement.focus();
+          }
+        }
+      });
+    }, 100);
   }
 }
