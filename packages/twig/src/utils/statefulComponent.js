@@ -21,7 +21,7 @@ export default class StatefulComponent {
     this.initialState = initialState;
     this.state = this.setupState(this.initialState);
 
-    this.init();
+    this.#init();
   }
 
   /**
@@ -29,7 +29,7 @@ export default class StatefulComponent {
    *
    * @private
    */
-  init() {
+  #init() {
     this.setupState = this.setupState.bind(this);
   }
 
