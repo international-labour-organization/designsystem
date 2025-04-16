@@ -4,14 +4,15 @@
 {% set theme = theme|default("light") %}
 
 <div class="{{ prefix }}--language-toggle {{ prefix }}--language-toggle__theme__{{ theme }} {{ className|default('') }}" data-prefix="{{prefix}}" data-loadcomponent="LanguageToggle">
-    <button class="{{ prefix }}--language-toggle--container" aria-expanded="false" aria-controls="{{prefix}}--language-toggle--context-menu">
-      {% if not hideicon %}
-        <span class="{{ prefix }}--language-toggle--icon"></span>
-      {% endif %}
-      <span class="{{ prefix }}--language-toggle--action">{{ language }}</span>
-      <span class="{{ prefix }}--language-toggle--arrow"></span>
-    </button>
-    <div role="menu" class="{{ prefix }}--language-toggle--context-menu" id="{{prefix}}--language-toggle--context-menu" hidden>
+  <button class="{{ prefix }}--language-toggle--container" aria-expanded="false" aria-controls="{{prefix}}--language-toggle--context-menu">
+    {% if not hideicon %}
+      <span class="{{ prefix }}--language-toggle--icon"></span>
+    {% endif %}
+    <span class="{{ prefix }}--language-toggle--action">{{ language }}</span>
+    <span class="{{ prefix }}--language-toggle--arrow"></span>
+  </button>
+  <template id="{{prefix}}--language-toggle--context-menu">
+    <div role="menu" class="{{ prefix }}--language-toggle--context-menu">
       {% if links %}
         {% include "@components/contextmenu/contextmenu.twig" with {
           links: links,
@@ -19,4 +20,6 @@
         } only %}
       {% endif %}
     </div>
+  </template>
 </div>
+
