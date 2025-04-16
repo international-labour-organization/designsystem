@@ -156,6 +156,7 @@ export default class Nav extends StatefulComponent {
   }
 
   handleEscapeKey(event) {
+    if (!this.state.dropDownIsOpen) return;
     if (event.key === "Escape") {
       this.state.dropDownIsOpen = false;
     }

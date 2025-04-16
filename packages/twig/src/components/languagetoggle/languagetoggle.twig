@@ -11,8 +11,8 @@
     <span class="{{ prefix }}--language-toggle--action">{{ language }}</span>
     <span class="{{ prefix }}--language-toggle--arrow"></span>
   </button>
-  <template id="{{prefix}}--language-toggle--context-menu">
-    <div role="menu" class="{{ prefix }}--language-toggle--context-menu">
+  <template id="{{prefix}}--language-toggle--context-menu--template">
+    <div class="{{ prefix }}--language-toggle--context-menu" id="{{prefix}}--language-toggle--context-menu">
       {% if links %}
         {% include "@components/contextmenu/contextmenu.twig" with {
           links: links,
