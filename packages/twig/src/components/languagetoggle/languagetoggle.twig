@@ -12,7 +12,7 @@
     <span class="{{ prefix }}--language-toggle--arrow"></span>
   </button>
   <template id="{{prefix}}--language-toggle--context-menu--template">
-    <div class="{{ prefix }}--language-toggle--context-menu" id="{{prefix}}--language-toggle--context-menu">
+    <div class="{{ prefix }}--language-toggle--context-menu" id="{{prefix}}--language-toggle--context-menu" tabindex="0">
       {% if links %}
         {% include "@components/contextmenu/contextmenu.twig" with {
           links: links,
