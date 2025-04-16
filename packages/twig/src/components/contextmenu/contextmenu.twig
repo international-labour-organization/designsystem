@@ -1,7 +1,9 @@
-{#
-  CONTEXT MENU COMPONENT
-#}
-<ol class="{{prefix}}--context-menu">
+{% set className = className|default('') %}
+{% set id = id|default('') %}
+
+
+{# contextmenu.twig #}
+<ol role="menu" class="{{prefix}}--context-menu {{className}}" id="{{id}}">
 	{% for link in links %}
 		<li class="{{prefix}}--context-menu--item{{ link.endsection|boolval ? ' endsection'}}">
 			<a href="{{link.url}}" class="{{prefix}}--context-menu--link">
