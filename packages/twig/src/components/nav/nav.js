@@ -1,15 +1,22 @@
-export default class Nav {
-  constructor(element) {
-    this.element = element;
-    this.prefix = this.element.dataset.prefix;
+import StatefulComponent from "../../utils/statefulComponent";
 
+/**
+ * A component that manages a dropdown menu for navigation purposes.
+ *
+ * @extends StatefulComponent
+ */
+export default class Nav extends StatefulComponent {
+  constructor(element) {
     // Initial state
-    this.initialState = {
+    const initialState = {
       dropDownIsOpen: false,
     };
 
-    // State changes manage interactivity
-    this.state = this.setupState(this.initialState);
+    // Initialize the component
+    super(element, initialState);
+
+    // Prefix
+    this.prefix = this.element.dataset.prefix;
 
     // This is a reference to the dropdown template that has the content
     this.dropdownContent = null;
@@ -28,26 +35,6 @@ export default class Nav {
       .handleStateChange();
   }
 
-  setupState(initialState = {}) {
-    return new Proxy(initialState, {
-      set: (target, prop, value) => {
-        if (value !== target[prop]) {
-          target[prop] = value;
-          this.element?.dispatchEvent(
-            new CustomEvent("stateChange", {
-              detail: {
-                prop,
-                value,
-                state: this.state,
-              },
-            })
-          );
-          return true;
-        }
-      },
-    });
-  }
-
   cacheDomReferences() {
     this.dropdownButton = this.element.querySelector(
       `.${this.prefix}--nav-menu__more`
@@ -62,7 +49,6 @@ export default class Nav {
   }
 
   bindHandlers() {
-    this.setupState = this.setupState.bind(this);
     this.handleDropdownClick = this.handleDropdownClick.bind(this);
     this.handleOpenDropdown = this.handleOpenDropdown.bind(this);
     this.handleCloseDropdown = this.handleCloseDropdown.bind(this);
