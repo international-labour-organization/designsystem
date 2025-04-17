@@ -1,6 +1,18 @@
 import StatefulComponent from "../../utils/statefulComponent";
 
+/**
+ * A language toggle component that provides a dropdown menu for language selection.
+ * This component extends StatefulComponent to manage its open/closed state and
+ * provides keyboard navigation and focus management for accessibility.
+ *
+ * @extends StatefulComponent
+ */
 export default class LanguageToggle extends StatefulComponent {
+  /**
+   * Creates a new LanguageToggle instance
+   *
+   * @param {HTMLElement} element - The root element of the language toggle component
+   */
   constructor(element) {
     // Initialize state for our component
     const initialState = {
@@ -21,6 +33,12 @@ export default class LanguageToggle extends StatefulComponent {
     this.init();
   }
 
+  /**
+   * Initializes the component by setting up DOM references, binding event handlers,
+   * enabling event listeners, and registering state change handlers.
+   *
+   * @returns {LanguageToggle} The instance for method chaining
+   */
   init() {
     this.cacheDomReferences()
       .bindHandlers()
@@ -29,6 +47,11 @@ export default class LanguageToggle extends StatefulComponent {
     return this;
   }
 
+  /**
+   * Caches references to DOM elements needed by the component
+   *
+   * @returns {LanguageToggle} The instance for method chaining
+   */
   cacheDomReferences() {
     this.contextMenuTemplate = this.element.querySelector(
       `#${this.prefix}--context-menu--template`
@@ -40,6 +63,11 @@ export default class LanguageToggle extends StatefulComponent {
     return this;
   }
 
+  /**
+   * Binds all event handler methods to the component instance
+   *
+   * @returns {LanguageToggle} The instance for method chaining
+   */
   bindHandlers() {
     this.handleFocusTrap = this.handleFocusTrap.bind(this);
     this.registerStateHandlers = this.registerStateHandlers.bind(this);
@@ -52,6 +80,11 @@ export default class LanguageToggle extends StatefulComponent {
     return this;
   }
 
+  /**
+   * Registers handlers for state changes
+   *
+   * @returns {LanguageToggle} The instance for method chaining
+   */
   registerStateHandlers() {
     this.registerStateHandler("contextMenuIsOpen", (value) => {
       if (value) {
@@ -63,17 +96,33 @@ export default class LanguageToggle extends StatefulComponent {
     return this;
   }
 
+  /**
+   * Enables event listeners for user interactions
+   *
+   * @returns {LanguageToggle} The instance for method chaining
+   */
   enableHandlers() {
     this.contextButton.addEventListener("click", this.handleClick);
     return this;
   }
 
+  /**
+   * Handles click events on the toggle button
+   *
+   * @param {MouseEvent} e - The click event
+   * @returns {LanguageToggle} The instance for method chaining
+   */
   handleClick(e) {
     e.stopPropagation();
     this.state.contextMenuIsOpen = !this.state.contextMenuIsOpen;
     return this;
   }
 
+  /**
+   * Opens the context menu and sets up necessary event listeners
+   *
+   * @returns {LanguageToggle} The instance for method chaining
+   */
   handleOpenContextMenu() {
     this.contextMenuContent = this.contextMenuTemplate.content.cloneNode(true);
     document.body.appendChild(this.contextMenuContent);
@@ -94,6 +143,9 @@ export default class LanguageToggle extends StatefulComponent {
     return this;
   }
 
+  /**
+   * Closes the context menu and cleans up event listeners
+   */
   handleCloseContextMenu() {
     this.contextMenu.classList.remove(this.contextMenuVisibleClass);
     this.contextMenu.remove();
@@ -102,6 +154,9 @@ export default class LanguageToggle extends StatefulComponent {
     window.removeEventListener("resize", this.positionContextMenu);
   }
 
+  /**
+   * Positions the context menu relative to the toggle button
+   */
   positionContextMenu() {
     const containerRect = this.element.getBoundingClientRect();
     const contextMenuRect = this.contextMenu.getBoundingClientRect();
@@ -109,6 +164,11 @@ export default class LanguageToggle extends StatefulComponent {
     this.contextMenu.style.top = `${containerRect.bottom}px`;
   }
 
+  /**
+   * Handles clicks outside the context menu to close it
+   *
+   * @param {MouseEvent} event - The click event
+   */
   handleOutsideClick(event) {
     if (
       this.state.contextMenuIsOpen &&
@@ -119,6 +179,11 @@ export default class LanguageToggle extends StatefulComponent {
     }
   }
 
+  /**
+   * Manages keyboard focus within the context menu
+   *
+   * @param {KeyboardEvent} event - The keyboard event
+   */
   handleFocusTrap(event) {
     // Get all focusable elements in the context menu
     const focusableElements = Array.from(
@@ -144,6 +209,9 @@ export default class LanguageToggle extends StatefulComponent {
     }
   }
 
+  /**
+   * Sets up keyboard navigation for the context menu
+   */
   handleTabNavigation() {
     // Browser hack to make sure that the context menu is in the DOM
     // and done transitioning before we try to focus it
