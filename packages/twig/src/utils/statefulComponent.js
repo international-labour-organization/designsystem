@@ -1,6 +1,6 @@
 /**
  * A base class that provides state management functionality for components.
- * It creates a reactive state system that automatically dispatches events when state changes.
+ * It creates a reactive state system that triggers handlers automatically when state changes.
  *
  * This class is useful when you need to:
  * - Track component state changes
