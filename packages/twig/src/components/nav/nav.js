@@ -32,7 +32,8 @@ export default class Nav extends StatefulComponent {
     this.cacheDomReferences()
       .bindHandlers()
       .enableHandlers()
-      .handleStateChange();
+      .registerStateHandlers();
+    return this;
   }
 
   cacheDomReferences() {
@@ -49,12 +50,15 @@ export default class Nav extends StatefulComponent {
   }
 
   bindHandlers() {
+    this.handleTabNavigation = this.handleTabNavigation.bind(this);
+    this.handleFocusTrap = this.handleFocusTrap.bind(this);
     this.handleDropdownClick = this.handleDropdownClick.bind(this);
     this.handleOpenDropdown = this.handleOpenDropdown.bind(this);
     this.handleCloseDropdown = this.handleCloseDropdown.bind(this);
     this.handleResizeDropdown = this.handleResizeDropdown.bind(this);
     this.handleEscapeKey = this.handleEscapeKey.bind(this);
     this.handleOutsideClick = this.handleOutsideClick.bind(this);
+    this.registerStateHandlers = this.registerStateHandlers.bind(this);
     return this;
   }
 
@@ -64,17 +68,12 @@ export default class Nav extends StatefulComponent {
     return this;
   }
 
-  handleStateChange() {
-    this.element.addEventListener("stateChange", (event) => {
-      const prop = event.detail.prop;
-      const value = event.detail.value;
-
-      if (prop === "dropDownIsOpen") {
-        if (value) {
-          this.handleOpenDropdown();
-        } else {
-          this.handleCloseDropdown();
-        }
+  registerStateHandlers() {
+    this.registerStateHandler("dropDownIsOpen", (value) => {
+      if (value) {
+        this.handleOpenDropdown();
+      } else {
+        this.handleCloseDropdown();
       }
     });
     return this;
@@ -106,6 +105,8 @@ export default class Nav extends StatefulComponent {
 
     // Add open class to the dropdown button
     this.dropdownButton?.classList.add(`${this.prefix}--nav-menu__more--open`);
+
+    this.handleTabNavigation();
   }
 
   handleCloseDropdown() {
@@ -127,8 +128,6 @@ export default class Nav extends StatefulComponent {
       // Remove content from body
       this.dropdown?.remove();
       this.dropdownContent = null;
-      // Set isOpen to false
-      this.dropdownIsOpen = false;
     }, 250);
   }
 
@@ -138,11 +137,7 @@ export default class Nav extends StatefulComponent {
   }
 
   handleDropdownClick() {
-    if (!this.state.dropDownIsOpen) {
-      this.state.dropDownIsOpen = true;
-    } else {
-      this.state.dropDownIsOpen = false;
-    }
+    this.state.dropDownIsOpen = !this.state.dropDownIsOpen;
   }
 
   handleOutsideClick(event) {
@@ -160,5 +155,34 @@ export default class Nav extends StatefulComponent {
     if (event.key === "Escape") {
       this.state.dropDownIsOpen = false;
     }
+  }
+
+  handleFocusTrap(event) {
+    const focusableElements = Array.from(this.dropdown.querySelectorAll("a"));
+    const firstFocusableElement = focusableElements[0];
+    const lastFocusableElement =
+      focusableElements[focusableElements.length - 1];
+
+    if (event.key === "Escape") {
+      this.state.dropDownIsOpen = false;
+      this.dropdownButton.focus();
+    }
+
+    if (event.key === "Tab") {
+      if (event.shiftKey && document.activeElement === firstFocusableElement) {
+        event.preventDefault();
+        lastFocusableElement.focus();
+      } else if (document.activeElement === lastFocusableElement) {
+        event.preventDefault();
+        firstFocusableElement.focus();
+      }
+    }
+  }
+
+  handleTabNavigation() {
+    setTimeout(() => {
+      this.dropdown.focus();
+      this.dropdown.addEventListener("keydown", this.handleFocusTrap);
+    }, 100);
   }
 }
