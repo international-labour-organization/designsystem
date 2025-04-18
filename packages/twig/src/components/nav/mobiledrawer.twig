@@ -1,0 +1,31 @@
+
+
+{% set prefix = prefix|default('ilo') %}
+{% set base_class = prefix ~ '--nav-mobile-drawer' %}
+
+<template id="{{ base_class }}__template">
+  <div class="{{ base_class }} {{ className }}">
+    <div class="{{ base_class }}__header">
+      <div class="{{ base_class }}__header-main">
+        <div class="{{ base_class }}__branding">
+          <div class="{{ base_class }}__logo">
+             <img class="{{ base_class }}__nav-mobile__logo-img" src="{{ branding.logo.mobile }}" alt="{{ branding.logo.alt }}">
+          </div>
+          <h3 class="{{ base_class }}__name">{{ branding.name }}</h3>
+        </div>
+      </div>
+      <button
+        class="{{ base_class }}__header-close"
+        aria-label="Close navigation"
+      >
+        <span class="{{ base_class }}__header-close__icon"></span>
+      </button>
+    </div>
+    <div class="{{ base_class }}__container">
+      <div class="{{ base_class }}__widgets">
+        Widgets widgets widgets
+      </div>
+      Children children children
+    </div>
+  </div>
+</template>

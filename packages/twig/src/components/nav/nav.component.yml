@@ -17,7 +17,8 @@ nav:
       preview:
         logo:
           main: "images/logo_en_horizontal_blue_dark.svg"
-          mobile: "images/logo_en_horizontal_blue_dark.svg"
+          mobile: "images/logo_en_horizontal_white.svg"
+          alt: "ILO Logo"
         name: "Subsite Name"
         tag:
           main: "Advancing social justice, promoting decent work"
@@ -28,15 +29,18 @@ nav:
       description: Widgets section including link and language toggle
       preview:
         link:
-          href: "https://example.com"
+          href: "https://www.ilo.org"
           label: "Go to main ILO website"
         language:
           label: "Language"
           links:
             - label: "English"
-              url: "https://example.com/en"
+              url: "https://www.ilo.org/en"
             - label: "Français"
-              url: "https://example.com/fr"
+              url: "https://www.ilo.org/fr"
+        search:
+          label: "Search"
+          url: "https://www.ilo.org/search"
     facadeItems:
       type: object
       label: Facade Menu Items
@@ -62,9 +66,9 @@ nav:
       label: More Menu Items
       description: Additional menu items displayed in the dropdown
       preview:
-        - href: "https://example.com/more1"
+        - href: "https://www.ilo.org/more1"
           label: "More Item 1"
-        - href: "https://example.com/more2"
+        - href: "https://www.ilo.org/more2"
           label: "More Item 2"
     labels:
       type: object

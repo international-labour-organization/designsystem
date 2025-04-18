@@ -1,0 +1,14 @@
+{# mobilemenulist.twig #}
+
+{% set prefix = prefix|default('ilo') %}
+{% set base_class = prefix ~ '--nav-mobile-menu-list' %}
+
+<ul class="{{ base_class }}">
+  {% for item in menu %}
+    <li class="{{ base_class }}__item {% if item.isActive %}{{ base_class }}__item--active{% endif %}">
+      <a href="{{ item.href }}" class="{{ base_class }}__link">
+        {{ item.label }}
+      </a>
+    </li>
+  {% endfor %}
+</ul>

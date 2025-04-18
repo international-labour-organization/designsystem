@@ -10,6 +10,7 @@ export default class Nav extends StatefulComponent {
     // Initial state
     const initialState = {
       dropDownIsOpen: false,
+      mobileDrawerIsOpen: false,
     };
 
     // Initialize the component
@@ -18,11 +19,11 @@ export default class Nav extends StatefulComponent {
     // Prefix
     this.prefix = this.element.dataset.prefix;
 
-    // This is a reference to the dropdown template that has the content
-    this.dropdownContent = null;
-
     // This is a reference to the actual dropdown once it gets rendered
     this.dropdown = null;
+
+    // This is a reference to the actual mobile drawer once it gets rendered
+    this.mobileDrawer = null;
 
     // Initialize the component
     this.init();
@@ -32,7 +33,8 @@ export default class Nav extends StatefulComponent {
     this.cacheDomReferences()
       .bindHandlers()
       .enableHandlers()
-      .registerStateHandlers();
+      .registerStateHandlers()
+      .renderTemplates();
     return this;
   }
 
@@ -43,28 +45,32 @@ export default class Nav extends StatefulComponent {
     this.dropdownTemplate = this.element.querySelector(
       `#${this.prefix}--nav-dropdown__template`
     );
-    this.dropdownContainer = this.element.querySelector(
-      `.${this.prefix}--nav-dropdown`
+    this.burger = this.element.querySelector(
+      `.${this.prefix}--subsite-nav-complex__nav-burger`
+    );
+    this.mobileDrawerTemplate = this.element.querySelector(
+      `#${this.prefix}--nav-mobile-drawer__template`
     );
     return this;
   }
 
   bindHandlers() {
+    this.handleBurgerClick = this.handleBurgerClick.bind(this);
+    this.handleOpenMobileDrawer = this.handleOpenMobileDrawer.bind(this);
     this.handleTabNavigation = this.handleTabNavigation.bind(this);
     this.handleFocusTrap = this.handleFocusTrap.bind(this);
     this.handleDropdownClick = this.handleDropdownClick.bind(this);
     this.handleOpenDropdown = this.handleOpenDropdown.bind(this);
     this.handleCloseDropdown = this.handleCloseDropdown.bind(this);
     this.handleResizeDropdown = this.handleResizeDropdown.bind(this);
-    this.handleEscapeKey = this.handleEscapeKey.bind(this);
     this.handleOutsideClick = this.handleOutsideClick.bind(this);
     this.registerStateHandlers = this.registerStateHandlers.bind(this);
     return this;
   }
 
   enableHandlers() {
-    this.dropdownButton?.addEventListener("click", this.handleDropdownClick);
-    this.element.addEventListener("keydown", this.handleEscapeKey);
+    this.dropdownButton.addEventListener("click", this.handleDropdownClick);
+    this.burger.addEventListener("click", this.handleBurgerClick);
     return this;
   }
 
@@ -76,21 +82,41 @@ export default class Nav extends StatefulComponent {
         this.handleCloseDropdown();
       }
     });
+
+    this.registerStateHandler("mobileDrawerIsOpen", (value) => {
+      if (value) {
+        this.handleOpenMobileDrawer();
+      }
+    });
     return this;
   }
 
-  handleOpenDropdown() {
+  renderTemplates() {
     // Clone the template content
-    this.dropdownContent = this.dropdownTemplate.content.cloneNode(true);
+    const dropdownContent = this.dropdownTemplate.content.cloneNode(true);
 
     // Append template content to the body
-    document.body.appendChild(this.dropdownContent);
+    document.body.appendChild(dropdownContent);
 
     // Get a reference to the rendered dropdown (not the template)
     this.dropdown = document.body.querySelector(
       `.${this.prefix}--nav-dropdown`
     );
 
+    // Clone the template content
+    this.mobileDrawerContent =
+      this.mobileDrawerTemplate.content.cloneNode(true);
+
+    // Append template content to the body
+    document.body.appendChild(this.mobileDrawerContent);
+
+    // Get a reference to the rendered mobile drawer (not the template)
+    this.mobileDrawer = document.body.querySelector(
+      `.${this.prefix}--nav-mobile-drawer`
+    );
+  }
+
+  handleOpenDropdown() {
     // Resize the dropdown
     this.handleResizeDropdown();
 
@@ -123,12 +149,6 @@ export default class Nav extends StatefulComponent {
 
     // Remove event listener from the window
     window.removeEventListener("click", this.handleOutsideClick);
-
-    setTimeout(() => {
-      // Remove content from body
-      this.dropdown?.remove();
-      this.dropdownContent = null;
-    }, 250);
   }
 
   handleResizeDropdown() {
@@ -146,13 +166,6 @@ export default class Nav extends StatefulComponent {
       !this.element?.contains(event.target) &&
       !this.dropdown?.contains(event.target)
     ) {
-      this.state.dropDownIsOpen = false;
-    }
-  }
-
-  handleEscapeKey(event) {
-    if (!this.state.dropDownIsOpen) return;
-    if (event.key === "Escape") {
       this.state.dropDownIsOpen = false;
     }
   }
@@ -184,5 +197,13 @@ export default class Nav extends StatefulComponent {
       this.dropdown.focus();
       this.dropdown.addEventListener("keydown", this.handleFocusTrap);
     }, 100);
+  }
+
+  handleBurgerClick() {
+    this.state.mobileDrawerIsOpen = !this.state.mobileDrawerIsOpen;
+  }
+
+  handleOpenMobileDrawer() {
+    this.mobileDrawer?.classList.add(`${this.prefix}--nav-mobile-drawer--open`);
   }
 }

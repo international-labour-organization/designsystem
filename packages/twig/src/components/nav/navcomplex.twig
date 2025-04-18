@@ -2,6 +2,8 @@
 
 {% set prefix = prefix|default('ilo') %}
 {% set base_class = prefix ~ '--subsite-nav-complex' %}
+{% set mobile_drawer_class = prefix ~ '--nav-mobile-drawer' %}
+
 
 <header class="{{ base_class }}" data-loadcomponent="Nav" data-prefix="{{prefix}}">
   <div class="{{ base_class }}-bg--light">
@@ -56,7 +58,7 @@
           tabindex="0"
           aria-label="Branding"
         >
-          {{ branding.logo.mobile }}
+          <img class="{{ base_class }}__nav-mobile__logo-img" src="{{ branding.logo.mobile }}" alt="{{ branding.logo.alt }}">
         </div>
         <h3 class="{{ base_class }}__nav-mobile__name">{{ branding.name }}</h3>
       </div>
@@ -78,13 +80,25 @@
           prefix: prefix
         } only %}
       {% endif %}
-      {#
-      {% include "@components/nav/mobilenav.twig" with {
-        isOpen: isCompactOpen,
+
+      {% if widgets.search %}
+        <a href="{{ widgets.search.url }}" class="{{ base_class }}__nav-search" aria-label="{{ widgets.search.label }}">
+          <span class="{{ base_class }}__nav-search__icon"></span>
+        </a>
+      {% endif %}
+
+      <button class="{{ base_class }}__nav-burger" aria-label="Toggle navigation" aria-expanded="false" aria-haspopup="menu">
+        <span class="{{ base_class }}__nav-burger__icon"></span>
+      </button>
+
+      {% include "@components/nav/mobiledrawer.twig" with {
         menu: menu.items,
-        prefix: prefix
+        prefix: prefix,
+        branding: branding,
+        widgets: widgets,
+        labels: labels,
       } only %}
-      #}
+
     </nav>
   </div>
 </header>
