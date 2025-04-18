@@ -2,16 +2,17 @@
 
 {% set prefix = prefix|default('ilo') %}
 {% set base_class = prefix ~ '--nav-mobile-drawer' %}
+{% set mobile_class = prefix ~ '--nav-mobile' %}
 
 <template id="{{ base_class }}__template">
   <div class="{{ base_class }} {{ className }}">
     <div class="{{ base_class }}__header">
       <div class="{{ base_class }}__header-main">
-        <div class="{{ base_class }}__branding">
-          <div class="{{ base_class }}__logo">
-             <img class="{{ base_class }}__nav-mobile__logo-img" src="{{ branding.logo.mobile }}" alt="{{ branding.logo.alt }}">
+        <div class="{{ mobile_class }}__branding">
+          <div class="{{ mobile_class }}__logo">
+             <img src="{{ branding.logo.drawer }}" alt="{{ branding.logo.alt }}" width="105">
           </div>
-          <h3 class="{{ base_class }}__name">{{ branding.name }}</h3>
+          <h3 class="{{ mobile_class }}__name">{{ branding.name }}</h3>
         </div>
       </div>
       <button
