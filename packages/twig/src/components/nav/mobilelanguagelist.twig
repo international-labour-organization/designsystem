@@ -1,0 +1,22 @@
+{# mobilelanguagelist.twig #}
+
+{% set prefix = prefix|default('ilo') %}
+{% set base_class = prefix ~ '--nav-mobile-language-list' %}
+
+{% set menu = [
+  {
+    label: selected,
+    href: '#',
+    isActive: true
+  }
+]|merge(options|default([])|map(option => {
+    return {
+      label: option.label,
+      href: option.url
+    }
+  })) %}
+
+{% include "@components/nav/mobilemenulist.twig" with {
+  menu: menu,
+  prefix: prefix
+} only %}
