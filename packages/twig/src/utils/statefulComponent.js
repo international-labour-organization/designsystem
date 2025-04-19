@@ -1,12 +1,8 @@
 /**
- * A base class that provides state management functionality for components.
+ * A base class that provides simple state management functionality for components.
  * It creates a reactive state system that triggers handlers automatically when state changes.
  *
- * This class is useful when you need to:
- * - Track component state changes
- * - React to state updates via event listeners
- * - Share state management logic across multiple components
- * - Create reactive UI components that respond to state changes
+ * This is useful for components that can have multiple different states.
  *
  * @example
  * // Example subclass implementation
@@ -139,17 +135,6 @@ export default class StatefulComponent {
           if (handlers) {
             handlers.forEach((handler) => handler(value, prop));
           }
-
-          this.element.dispatchEvent(
-            new CustomEvent("stateChange", {
-              detail: {
-                prop,
-                value,
-                state: this.state,
-              },
-            })
-          );
-          return true;
         }
       },
     });
