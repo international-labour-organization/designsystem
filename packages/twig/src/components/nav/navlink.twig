@@ -1,8 +1,0 @@
-{# navlink.twig #}
-
-{% set prefix = prefix|default('ilo') %}
-{% set base_class = prefix ~ '--nav-link' %}
-
-<a href="{{ href }}" class="{{ base_class }} {{ className|default('') }}">
-  {{ label }}
-</a>
