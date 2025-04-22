@@ -11,6 +11,7 @@ export default class Nav extends StatefulComponent {
     const initialState = {
       dropDownIsOpen: false,
       mobileDrawerIsOpen: false,
+      nestedMobileDrawerIsOpen: false,
     };
 
     // Initialize the component
