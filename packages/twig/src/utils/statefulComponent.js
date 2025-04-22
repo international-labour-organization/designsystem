@@ -136,6 +136,7 @@ export default class StatefulComponent {
             handlers.forEach((handler) => handler(value, prop));
           }
         }
+        return true;
       },
     });
   }
