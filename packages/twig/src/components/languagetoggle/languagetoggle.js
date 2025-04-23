@@ -1,4 +1,5 @@
 import StatefulComponent from "../../utils/statefulComponent";
+import createFocusTrap from "../../utils/createFocusTrap";
 
 /**
  * A language toggle component that provides a dropdown menu for language selection.
@@ -189,24 +190,11 @@ export default class LanguageToggle extends StatefulComponent {
     const focusableElements = Array.from(
       this.contextMenu.querySelectorAll("a")
     );
-    const firstFocusableElement = focusableElements[0];
-    const lastFocusableElement =
-      focusableElements[focusableElements.length - 1];
 
-    if (event.key === "Escape") {
+    createFocusTrap(event, focusableElements, () => {
       this.state.contextMenuIsOpen = false;
       this.contextButton.focus();
-    }
-
-    if (event.key === "Tab") {
-      if (event.shiftKey && document.activeElement === firstFocusableElement) {
-        event.preventDefault();
-        lastFocusableElement.focus();
-      } else if (document.activeElement === lastFocusableElement) {
-        event.preventDefault();
-        firstFocusableElement.focus();
-      }
-    }
+    });
   }
 
   /**
