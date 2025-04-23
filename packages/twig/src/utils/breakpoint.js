@@ -44,10 +44,6 @@ export function createBreakpointObserver(callback) {
    * Checks if breakpoint has changed and fires callback if needed
    */
   function checkBreakpoint() {
-    if (timeoutId) {
-      window.cancelAnimationFrame(timeoutId);
-    }
-
     timeoutId = window.requestAnimationFrame(() => {
       const newBreakpoint = getCurrentBreakpoint();
 
@@ -59,49 +55,29 @@ export function createBreakpointObserver(callback) {
   }
 
   /**
-   * Starts observing DOM changes
+   * Starts observing viewport size changes
    */
   function start() {
-    // Create a MutationObserver to watch for changes that might affect breakpoints
-    observer = new MutationObserver((mutations) => {
-      // Check if any mutation might affect the viewport width
-      const hasRelevantChange = mutations.some((mutation) => {
-        // Check if the mutation is in the body or affects styles
-        return (
-          mutation.target === document.body ||
-          (mutation.type === "attributes" && mutation.attributeName === "style")
-        );
-      });
-
-      if (hasRelevantChange) {
-        checkBreakpoint();
-      }
+    // Create a ResizeObserver to watch for viewport size changes
+    observer = new ResizeObserver(() => {
+      checkBreakpoint();
     });
 
-    // Start observing the document body for changes
-    observer.observe(document.body, {
-      attributes: true,
-      childList: true,
-      subtree: true,
-      attributeFilter: ["style"],
-    });
-
-    // Also observe window resize as a fallback
-    window.addEventListener("resize", checkBreakpoint);
+    // Start observing the document body for size changes
+    observer.observe(document.body);
 
     // Initial callback with current breakpoint
     callback(currentBreakpoint);
   }
 
   /**
-   * Stops observing DOM changes
+   * Stops observing viewport size changes
    */
   function stop() {
     if (observer) {
       observer.disconnect();
       observer = null;
     }
-    window.removeEventListener("resize", checkBreakpoint);
     if (timeoutId) {
       window.cancelAnimationFrame(timeoutId);
       timeoutId = null;
