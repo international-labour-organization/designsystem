@@ -90,22 +90,31 @@
         <span class="{{ base_class }}__nav-burger__icon"></span>
       </button>
 
-      {% include "@components/nav/mobile/mobiledrawer_primary.twig" with {
-        menu: menu.items,
+      {% include "@components/nav/mobile/mobiledrawer_main.twig" with {
+        menu: facadeItems,
         prefix: prefix,
         branding: branding,
         widgets: widgets,
         labels: labels,
-        id: "primary",
+        id: "main",
       } only %}
 
-      {% include "@components/nav/mobile/mobiledrawer_secondary.twig" with {
-        menu: menu.items,
+       {% include "@components/nav/mobile/mobiledrawer_languages.twig" with {
+        menu: moreItems,
         prefix: prefix,
         branding: branding,
         widgets: widgets,
         labels: labels,
-        id: "secondary",
+        id: "languages",
+      } only %}
+
+      {% include "@components/nav/mobile/mobiledrawer_more.twig" with {
+        menu: moreItems,
+        prefix: prefix,
+        branding: branding,
+        widgets: widgets,
+        labels: labels,
+        id: "more",
       } only %}
 
     </nav>

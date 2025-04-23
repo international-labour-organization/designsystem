@@ -10,7 +10,8 @@ export default class MobileNav extends StatefulComponent {
     // Initial state
     const initialState = {
       mobDrawerIsOpen: false,
-      secondaryMobDrawerIsOpen: false,
+      languagesMobDrawerIsOpen: false,
+      moreMobDrawerIsOpen: false,
     };
 
     // Initialize the component
@@ -22,8 +23,8 @@ export default class MobileNav extends StatefulComponent {
     // References to elements that get rendered dynamically on the client
     this.mobileDrawer = null;
     this.mobileDrawerClose = null;
-    this.secondaryMobileDrawer = null;
-    this.secondaryMobileDrawerClose = null;
+    this.languagesMobileDrawer = null;
+    this.languagesMobileDrawerClose = null;
     this.mobileLanguageButton = null;
     this.burger = null;
 
@@ -43,27 +44,19 @@ export default class MobileNav extends StatefulComponent {
 
   // Render elements that only get rendered on the client
   renderClientContent() {
-    const mobileDrawerPrimaryTemplate = this.element.querySelector(
-      `#${this.prefix}--nav-mobile-drawer__template__primary`
-    );
+    // Get all mobile drawer templates in the order they appear in the DOM
+    const mobileDrawerTemplates = [
+      `${this.prefix}--nav-mobile-drawer__template__main`,
+      `${this.prefix}--nav-mobile-drawer__template__languages`,
+      `${this.prefix}--nav-mobile-drawer__template__more`,
+    ];
 
-    // Clone the template content
-    const mobileDrawerPrimaryContent =
-      mobileDrawerPrimaryTemplate.content.cloneNode(true);
-
-    // Append template content to the body
-    document.body.appendChild(mobileDrawerPrimaryContent);
-
-    const mobileDrawerSecondaryTemplate = this.element.querySelector(
-      `#${this.prefix}--nav-mobile-drawer__template__secondary`
-    );
-
-    // Clone the template content
-    const mobileDrawerSecondaryContent =
-      mobileDrawerSecondaryTemplate.content.cloneNode(true);
-
-    // Append template content to the body
-    document.body.appendChild(mobileDrawerSecondaryContent);
+    // Append each template's content to the body in order
+    mobileDrawerTemplates.forEach((templateId) => {
+      const template = this.element.querySelector(`#${templateId}`);
+      const content = template.content.cloneNode(true);
+      document.body.appendChild(content);
+    });
 
     return this;
   }
@@ -76,7 +69,17 @@ export default class MobileNav extends StatefulComponent {
 
     // Get a reference to the rendered mobile drawer (not the template)
     this.mobileDrawer = document.body.querySelector(
-      `#${this.prefix}--nav-mobile-drawer__primary`
+      `#${this.prefix}--nav-mobile-drawer__main`
+    );
+
+    // Get a reference to the rendered mobile drawer menu home button once it gets rendered
+    this.menuHomeButtons = document.body.querySelectorAll(
+      `.${this.prefix}--nav-mobile__nested__header`
+    );
+
+    // Get a reference to all of the close buttons
+    this.mobileDrawerCloseButtons = document.body.querySelectorAll(
+      `.${this.prefix}--nav-mobile-drawer__header-close`
     );
 
     // Get a reference to the rendered mobile language button once it gets rendered
@@ -85,29 +88,31 @@ export default class MobileNav extends StatefulComponent {
     );
 
     // Get a reference to the rendered mobile drawer (not the template)
-    this.secondaryMobileDrawer = document.body.querySelector(
-      `#${this.prefix}--nav-mobile-drawer__secondary`
+    this.languagesMobileDrawer = document.body.querySelector(
+      `#${this.prefix}--nav-mobile-drawer__languages`
     );
 
-    // Get a reference to the rendered mobile drawer close button once it gets rendered
-    this.secondaryMobileDrawerClose = this.secondaryMobileDrawer.querySelector(
-      `.${this.prefix}--nav-mobile-drawer__header-close`
+    // Get a reference to the rendered mobile drawer more (not the template)
+    this.moreMobileDrawer = document.body.querySelector(
+      `#${this.prefix}--nav-mobile-drawer__more`
     );
 
-    // Get a reference to all of the close buttons
-    this.mobileDrawerCloseButtons = document.body.querySelectorAll(
-      `.${this.prefix}--nav-mobile-drawer__header-close`
+    // Get a reference to the rendered mobile drawer more button once it gets rendered
+    this.mobileMoreButton = this.mobileDrawer.querySelector(
+      `.${this.prefix}--nav-mobile__more`
     );
 
     return this;
   }
 
   bindHandlers() {
+    this.handleMenuHomeButtonClick = this.handleMenuHomeButtonClick.bind(this);
+    this.handleMoreButtonClick = this.handleMoreButtonClick.bind(this);
     this.handleLanguageButtonClick = this.handleLanguageButtonClick.bind(this);
-    this.handleCloseSecondaryMobileDrawer =
-      this.handleCloseSecondaryMobileDrawer.bind(this);
-    this.handleOpenSecondaryMobileDrawer =
-      this.handleOpenSecondaryMobileDrawer.bind(this);
+    this.handleCloseLanguagesMobileDrawer =
+      this.handleCloseLanguagesMobileDrawer.bind(this);
+    this.handleOpenLanguagesMobileDrawer =
+      this.handleOpenLanguagesMobileDrawer.bind(this);
     this.handleCloseMobileDrawer = this.handleCloseMobileDrawer.bind(this);
     this.handleMobileDrawerClose = this.handleMobileDrawerClose.bind(this);
     this.handleBurgerClick = this.handleBurgerClick.bind(this);
@@ -117,14 +122,28 @@ export default class MobileNav extends StatefulComponent {
   }
 
   enableHandlers() {
+    // Add click handler for burger menu toggle
     this.burger.addEventListener("click", this.handleBurgerClick);
-    this.mobileDrawerCloseButtons.forEach((button) => {
-      button.addEventListener("click", this.handleMobileDrawerClose);
-    });
+
+    // Add click handler for language selector
     this.mobileLanguageButton.addEventListener(
       "click",
       this.handleLanguageButtonClick
     );
+
+    // Add click handler for more menu button
+    this.mobileMoreButton.addEventListener("click", this.handleMoreButtonClick);
+
+    // Add click handlers for all close buttons
+    this.mobileDrawerCloseButtons.forEach((button) => {
+      button.addEventListener("click", this.handleMobileDrawerClose);
+    });
+
+    // Add click handlers for menu home buttons
+    this.menuHomeButtons.forEach((button) => {
+      button.addEventListener("click", this.handleMenuHomeButtonClick);
+    });
+
     return this;
   }
 
@@ -137,23 +156,45 @@ export default class MobileNav extends StatefulComponent {
       }
     });
 
-    this.registerStateHandler("secondaryMobDrawerIsOpen", (value) => {
+    this.registerStateHandler("languagesMobDrawerIsOpen", (value) => {
       if (value) {
-        this.handleOpenSecondaryMobileDrawer();
+        this.handleOpenLanguagesMobileDrawer();
       } else {
-        this.handleCloseSecondaryMobileDrawer();
+        this.handleCloseLanguagesMobileDrawer();
+      }
+    });
+
+    this.registerStateHandler("moreMobDrawerIsOpen", (value) => {
+      if (value) {
+        this.handleOpenMoreMobileDrawer();
+      } else {
+        this.handleCloseMoreMobileDrawer();
       }
     });
     return this;
   }
 
   handleBurgerClick() {
-    this.state.mobDrawerIsOpen = !this.state.mobDrawerIsOpen;
+    this.state.mobDrawerIsOpen = true;
+  }
+
+  handleLanguageButtonClick() {
+    this.state.languagesMobDrawerIsOpen = true;
+  }
+
+  handleMoreButtonClick() {
+    this.state.moreMobDrawerIsOpen = true;
+  }
+
+  handleMenuHomeButtonClick() {
+    this.state.languagesMobDrawerIsOpen = false;
+    this.state.moreMobDrawerIsOpen = false;
   }
 
   handleMobileDrawerClose() {
     this.state.mobDrawerIsOpen = false;
-    this.state.secondaryMobDrawerIsOpen = false;
+    this.state.languagesMobDrawerIsOpen = false;
+    this.state.moreMobDrawerIsOpen = false;
   }
 
   handleOpenMobileDrawer() {
@@ -166,18 +207,26 @@ export default class MobileNav extends StatefulComponent {
     );
   }
 
-  handleLanguageButtonClick() {
-    this.state.secondaryMobDrawerIsOpen = true;
-  }
-
-  handleOpenSecondaryMobileDrawer() {
-    this.secondaryMobileDrawer.classList.add(
+  handleOpenLanguagesMobileDrawer() {
+    this.languagesMobileDrawer.classList.add(
       `${this.prefix}--nav-mobile-drawer--open`
     );
   }
 
-  handleCloseSecondaryMobileDrawer() {
-    this.secondaryMobileDrawer?.classList.remove(
+  handleCloseLanguagesMobileDrawer() {
+    this.languagesMobileDrawer?.classList.remove(
+      `${this.prefix}--nav-mobile-drawer--open`
+    );
+  }
+
+  handleOpenMoreMobileDrawer() {
+    this.moreMobileDrawer.classList.add(
+      `${this.prefix}--nav-mobile-drawer--open`
+    );
+  }
+
+  handleCloseMoreMobileDrawer() {
+    this.moreMobileDrawer?.classList.remove(
       `${this.prefix}--nav-mobile-drawer--open`
     );
   }
