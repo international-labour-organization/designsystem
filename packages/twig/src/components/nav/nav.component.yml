@@ -78,19 +78,4 @@ nav:
       description: Text labels used throughout the navigation
       preview:
         more: "More"
-    isMoreOpen:
-      type: boolean
-      label: More Menu Open
-      description: Whether the more menu dropdown is open
-      preview: false
-    isCompactOpen:
-      type: boolean
-      label: Mobile Menu Open
-      description: Whether the mobile menu is open
-      preview: false
-    isAboveXL:
-      type: boolean
-      label: Above XL Breakpoint
-      description: Whether the viewport is above the XL breakpoint
-      preview: true
   visibility: storybook
