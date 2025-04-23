@@ -44,6 +44,13 @@ export default class Nav extends StatefulComponent {
       console.log(this.state.isMobile);
     });
 
+    // Set up a ResizeObserver to track nav element width changes
+    this.resizeObserver = new ResizeObserver(() => {
+      if (this.state.dropDownIsOpen) {
+        this.handleResizeDropdown();
+      }
+    });
+
     // Initialize the component
     this.init();
   }
@@ -181,8 +188,8 @@ export default class Nav extends StatefulComponent {
     // Resize the dropdown
     this.handleResizeDropdown();
 
-    // Add an event listener to the window to resize the dropdown when the window is resized
-    window.addEventListener("resize", this.handleResizeDropdown);
+    // Start observing the nav element for width changes
+    this.resizeObserver.observe(this.element);
 
     // Add an event listener to the window to close the dropdown when the user clicks outside of it
     window.addEventListener("click", this.handleOutsideClick);
@@ -209,8 +216,8 @@ export default class Nav extends StatefulComponent {
       `${this.prefix}--nav-menu__more--open`
     );
 
-    // Remove event listener from the window
-    window.removeEventListener("resize", this.handleResizeDropdown);
+    // Stop observing the nav element
+    this.resizeObserver.disconnect();
 
     // Remove event listener from the window
     window.removeEventListener("click", this.handleOutsideClick);
