@@ -99,21 +99,19 @@
         id: "main",
       } only %}
 
-       {% include "@components/nav/mobile/mobiledrawer_languages.twig" with {
-        menu: moreItems,
+       {% include "@components/nav/mobile/mobiledrawer_nested.twig" with {
+        menu: widgets.language.links,
         prefix: prefix,
-        branding: branding,
-        widgets: widgets,
-        labels: labels,
+        title: labels.language,
+        menu_home: labels.home,
         id: "languages",
       } only %}
 
-      {% include "@components/nav/mobile/mobiledrawer_more.twig" with {
+      {% include "@components/nav/mobile/mobiledrawer_nested.twig" with {
         menu: moreItems,
         prefix: prefix,
-        branding: branding,
-        widgets: widgets,
-        labels: labels,
+        title: labels.more,
+        menu_home: labels.home,
         id: "more",
       } only %}
 
