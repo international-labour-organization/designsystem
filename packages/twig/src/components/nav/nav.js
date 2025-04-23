@@ -26,7 +26,7 @@ export default class Nav extends StatefulComponent {
     // Initial state
     const initialState = {
       dropDownIsOpen: false,
-      breakpoint: "md",
+      isDesktop: true,
     };
 
     // Initialize the component
@@ -40,7 +40,8 @@ export default class Nav extends StatefulComponent {
 
     // Set up a breakpoint observer to track viewport size changes
     this.breakpointObserver = createBreakpointObserver((breakpoint) => {
-      this.state.breakpoint = breakpoint;
+      this.state.isDesktop = ["xl", "xxl"].includes(breakpoint);
+      console.log(this.state.isMobile);
     });
 
     // Initialize the component
@@ -155,7 +156,7 @@ export default class Nav extends StatefulComponent {
       }
     });
 
-    this.registerStateHandler("breakpoint", this.handleBreakpointChange);
+    this.registerStateHandler("isDesktop", this.handleBreakpointChange);
 
     return this;
   }
@@ -164,10 +165,10 @@ export default class Nav extends StatefulComponent {
    * Handles the breakpoint change event.
    * Closes the dropdown if the breakpoint is "md", "sm", or "xs".
    *
-   * @param {string} breakpoint - The current breakpoint
+   * @param {boolean} isDesktop - Whether the current breakpoint is desktop
    */
-  handleBreakpointChange(breakpoint) {
-    if (!["xl", "xxl"].includes(breakpoint)) {
+  handleBreakpointChange(isDesktop) {
+    if (!isDesktop) {
       this.state.dropDownIsOpen = false;
     }
   }

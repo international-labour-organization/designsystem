@@ -1,4 +1,4 @@
-import { StatefulComponent } from "../../../utils";
+import { StatefulComponent, createBreakpointObserver } from "../../../utils";
 
 /**
  * A component that manages mobile navigation functionality including drawers and interactions.
@@ -21,6 +21,7 @@ export default class MobileNav extends StatefulComponent {
   constructor(element) {
     // Initial state
     const initialState = {
+      isMobile: false,
       mobDrawerIsOpen: false,
       languagesMobDrawerIsOpen: false,
       moreMobDrawerIsOpen: false,
@@ -40,6 +41,11 @@ export default class MobileNav extends StatefulComponent {
     this.mobileLanguageButton = null;
     this.burger = null;
 
+    // Set up a breakpoint observer to track viewport size changes
+    this.breakpointObserver = createBreakpointObserver((breakpoint) => {
+      this.state.isMobile = !["xl", "xxl"].includes(breakpoint);
+    });
+
     // Initialize the component
     this.init();
   }
@@ -56,9 +62,19 @@ export default class MobileNav extends StatefulComponent {
       .cacheDomReferences()
       .bindHandlers()
       .enableHandlers()
-      .registerStateHandlers();
+      .registerStateHandlers()
+      .startBreakpointObserver();
 
     return this;
+  }
+
+  /**
+   * Starts the breakpoint observer.
+   *
+   * @returns {MobileNav} Returns the instance for method chaining
+   */
+  startBreakpointObserver() {
+    this.breakpointObserver.start();
   }
 
   /**
@@ -142,6 +158,7 @@ export default class MobileNav extends StatefulComponent {
    * @returns {MobileNav} Returns the instance for method chaining
    */
   bindHandlers() {
+    this.handleBreakpointChange = this.handleBreakpointChange.bind(this);
     this.handleMenuHomeButtonClick = this.handleMenuHomeButtonClick.bind(this);
     this.handleMoreButtonClick = this.handleMoreButtonClick.bind(this);
     this.handleLanguageButtonClick = this.handleLanguageButtonClick.bind(this);
@@ -219,6 +236,9 @@ export default class MobileNav extends StatefulComponent {
         this.handleCloseMoreMobileDrawer();
       }
     });
+
+    this.registerStateHandler("isMobile", this.handleBreakpointChange);
+
     return this;
   }
 
@@ -321,5 +341,19 @@ export default class MobileNav extends StatefulComponent {
     this.moreMobileDrawer?.classList.remove(
       `${this.prefix}--nav-mobile-drawer--open`
     );
+  }
+
+  /**
+   * Handles the breakpoint change event.
+   * Closes all mobile drawers when the breakpoint is "xl" or "xxl".
+   *
+   * @param {string} breakpoint - The current breakpoint
+   */
+  handleBreakpointChange(isMobile) {
+    if (!isMobile) {
+      this.state.mobDrawerIsOpen = false;
+      this.state.languagesMobDrawerIsOpen = false;
+      this.state.moreMobDrawerIsOpen = false;
+    }
   }
 }
