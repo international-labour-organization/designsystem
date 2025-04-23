@@ -8,7 +8,7 @@
  * @returns {void}
  */
 
-export default function createFocusTrap(
+export function createFocusTrap(
   event,
   focusableElements,
   escapeCallBack = (event) => {},
