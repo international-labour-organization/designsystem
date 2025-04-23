@@ -55,7 +55,7 @@ nav:
       preview:
         - href: "https://www.ilo.org/"
           label: "Menu Item 1"
-          isActive: false
+          isActive: true
         - href: "https://www.ilo.org/"
           label: "Menu Item 2"
           isActive: false
