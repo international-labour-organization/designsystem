@@ -4,11 +4,6 @@ nav:
   label: NavComplex
   description: A complex navigation component with branding, widgets, and menu sections
   fields:
-    prefix:
-      type: string
-      label: Prefix
-      description: CSS class prefix
-      preview: "ilo"
     branding:
       type: object
       label: Branding
@@ -40,6 +35,16 @@ nav:
               url: "https://www.ilo.org/en"
             - label: "Français"
               url: "https://www.ilo.org/fr"
+            - label: "Español"
+              url: "https://www.ilo.org/es"
+            - label: "العربية"
+              url: "https://www.ilo.org/ar"
+            - label: "中文"
+              url: "https://www.ilo.org/ru"
+            - label: "Português"
+              url: "https://www.ilo.org/pt"
+            - label: "Italiano"
+              url: "https://www.ilo.org/it"
         search:
           label: "Search"
           url: "https://www.ilo.org/search"
@@ -49,19 +54,19 @@ nav:
       description: Primary menu items displayed in the main navigation
       preview:
         - href: "https://www.ilo.org/"
-          label: "Item 1"
+          label: "Menu Item 1"
           isActive: false
         - href: "https://www.ilo.org/"
-          label: "Item 2"
+          label: "Menu Item 2"
           isActive: false
         - href: "https://www.ilo.org/"
-          label: "Item 3"
+          label: "Menu Item 3"
           isActive: false
         - href: "https://www.ilo.org/"
-          label: "Item 4"
+          label: "Menu Item 4"
           isActive: false
         - href: "https://www.ilo.org/"
-          label: "Item 5"
+          label: "Menu Item 5"
           isActive: false
     moreItems:
       type: object
@@ -72,10 +77,24 @@ nav:
           label: "More Item 1"
         - href: "https://www.ilo.org/more2"
           label: "More Item 2"
+        - href: "https://www.ilo.org/more3"
+          label: "More Item 3"
+        - href: "https://www.ilo.org/more4"
+          label: "More Item 4"
+        - href: "https://www.ilo.org/more5"
+          label: "More Item 5"
+        - href: "https://www.ilo.org/more6"
+          label: "More Item 6"
+        - href: "https://www.ilo.org/more7"
+          label: "More Item 7"
+        - href: "https://www.ilo.org/more8"
+          label: "More Item 8"
     labels:
       type: object
       label: Labels
       description: Text labels used throughout the navigation
       preview:
         more: "More"
+        language: "Language"
+        home: "Menu home"
   visibility: storybook
