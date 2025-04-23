@@ -1,5 +1,9 @@
-import StatefulComponent from "../../utils/statefulComponent";
-import createFocusTrap from "../../utils/createFocusTrap";
+import {
+  StatefulComponent,
+  createFocusTrap,
+  createBreakpointObserver,
+} from "../../utils";
+
 /**
  * A component that manages desktop navigation for complex sites with many navigation options. It handles:
  * - Primary navigation items
@@ -22,6 +26,7 @@ export default class Nav extends StatefulComponent {
     // Initial state
     const initialState = {
       dropDownIsOpen: false,
+      breakpoint: "md",
     };
 
     // Initialize the component
@@ -33,6 +38,11 @@ export default class Nav extends StatefulComponent {
     // References to elements that get rendered dynamically on the client
     this.dropdown = null;
 
+    // Set up a breakpoint observer to track viewport size changes
+    this.breakpointObserver = createBreakpointObserver((breakpoint) => {
+      this.state.breakpoint = breakpoint;
+    });
+
     // Initialize the component
     this.init();
   }
@@ -40,7 +50,7 @@ export default class Nav extends StatefulComponent {
   /**
    * Initializes the component by setting up all necessary functionality.
    * This includes rendering client-side content, caching DOM references,
-   * binding event handlers, and registering state handlers.
+   * binding event handlers, registering state handlers and starting the breakpoint observer .
    *
    * @returns {Nav} Returns the instance for method chaining
    */
@@ -49,9 +59,19 @@ export default class Nav extends StatefulComponent {
       .cacheDomReferences()
       .bindHandlers()
       .enableHandlers()
-      .registerStateHandlers();
+      .registerStateHandlers()
+      .startBreakpointObserver();
 
     return this;
+  }
+
+  /**
+   * Starts the breakpoint observer.
+   *
+   * @returns {Nav} Returns the instance for method chaining
+   */
+  startBreakpointObserver() {
+    this.breakpointObserver.start();
   }
 
   /**
@@ -99,6 +119,7 @@ export default class Nav extends StatefulComponent {
    * @returns {Nav} Returns the instance for method chaining
    */
   bindHandlers() {
+    this.handleBreakpointChange = this.handleBreakpointChange.bind(this);
     this.handleDropdownClick = this.handleDropdownClick.bind(this);
     this.handleOpenDropdown = this.handleOpenDropdown.bind(this);
     this.handleCloseDropdown = this.handleCloseDropdown.bind(this);
@@ -106,7 +127,6 @@ export default class Nav extends StatefulComponent {
     this.handleOutsideClick = this.handleOutsideClick.bind(this);
     this.handleTabNavigation = this.handleTabNavigation.bind(this);
     this.handleFocusTrap = this.handleFocusTrap.bind(this);
-    this.registerStateHandlers = this.registerStateHandlers.bind(this);
     return this;
   }
 
@@ -134,7 +154,22 @@ export default class Nav extends StatefulComponent {
         this.handleCloseDropdown();
       }
     });
+
+    this.registerStateHandler("breakpoint", this.handleBreakpointChange);
+
     return this;
+  }
+
+  /**
+   * Handles the breakpoint change event.
+   * Closes the dropdown if the breakpoint is "md", "sm", or "xs".
+   *
+   * @param {string} breakpoint - The current breakpoint
+   */
+  handleBreakpointChange(breakpoint) {
+    if (!["xl", "xxl"].includes(breakpoint)) {
+      this.state.dropDownIsOpen = false;
+    }
   }
 
   /**
