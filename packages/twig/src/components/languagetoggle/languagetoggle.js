@@ -1,5 +1,4 @@
-import StatefulComponent from "../../utils/statefulComponent";
-import createFocusTrap from "../../utils/createFocusTrap";
+import { StatefulComponent, createFocusTrap } from "../../utils";
 
 /**
  * A language toggle component that provides a dropdown menu for language selection.

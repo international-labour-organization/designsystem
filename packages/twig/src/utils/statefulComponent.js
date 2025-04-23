@@ -57,7 +57,7 @@
  *
  * @class StatefulComponent
  */
-export default class StatefulComponent {
+export class StatefulComponent {
   /**
    * Creates a new StatefulComponent instance
    *

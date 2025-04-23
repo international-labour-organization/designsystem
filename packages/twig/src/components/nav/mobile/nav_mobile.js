@@ -1,4 +1,4 @@
-import StatefulComponent from "../../../utils/statefulComponent";
+import { StatefulComponent, createBreakpointObserver } from "../../../utils";
 
 /**
  * A component that manages mobile navigation functionality including drawers and interactions.
