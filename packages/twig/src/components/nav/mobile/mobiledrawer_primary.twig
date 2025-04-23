@@ -1,4 +1,4 @@
-{% extends "@components/nav/mobiledrawer.twig" %}
+{% extends "@components/nav/mobile/mobiledrawer_layout.twig" %}
 
 {% block mobile_drawer_header %}
   <div class="{{ mobile_class }}__branding">
@@ -29,4 +29,8 @@
       <span class="{{ mobile_class }}__widgets-language__icon" />
     </button>
   {% endif %}
+{% endblock %}
+
+{% block mobile_drawer_content %}
+  Content content content
 {% endblock %}

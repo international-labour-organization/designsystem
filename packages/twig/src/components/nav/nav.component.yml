@@ -1,7 +1,7 @@
 nav:
   namespace: Components/Nav
-  use: "@components/nav/navcomplex.twig"
-  label: Nav Complex
+  use: "@components/nav/nav_complex.twig"
+  label: NavComplex
   description: A complex navigation component with branding, widgets, and menu sections
   fields:
     prefix:

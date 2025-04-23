@@ -1,4 +1,4 @@
-import Navigation from "../src/components/nav/navcomplex.twig";
+import Navigation from "../src/components/nav/nav_complex.twig";
 import NavigationPatterns from "../src/components/nav/nav.component.yml";
 import { Maestro } from "@ilo-org/maestro";
 
