@@ -1,11 +1,11 @@
-import Navigation from "../src/components/nav/nav_complex.twig";
+import Navigation from "../src/components/nav/nav.twig";
 import NavigationPatterns from "../src/components/nav/nav.component.yml";
 import { Maestro } from "@ilo-org/maestro";
 
 const story = Maestro.create(Navigation, NavigationPatterns);
 
 const Meta = {
-  title: "Components/Navigation/NavComplex",
+  title: "Components/Navigation/Nav",
   tags: ["autodocs"],
   ...story.meta,
 };

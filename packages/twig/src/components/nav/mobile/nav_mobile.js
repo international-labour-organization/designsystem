@@ -110,10 +110,10 @@ export default class MobileNav extends StatefulComponent {
    * @returns {MobileNav} Returns the instance for method chaining
    */
   cacheDomReferences() {
-    // Get a reference to the rendered burger (not the template)
-    this.burger = this.element.querySelector(
-      `.${this.prefix}--subsite-nav-complex__nav-burger`
-    );
+    // Find any element with a class that ends with __nav-burger
+    // This is necessary because the burger has different classes
+    // for the compact and complex themes
+    this.burger = this.element.querySelector(`[class$="burger"]`);
 
     // Get a reference to the rendered mobile drawer (not the template)
     this.mobileDrawer = document.body.querySelector(

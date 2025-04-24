@@ -1,0 +1,106 @@
+{# navcompact.twig #}
+
+{% set prefix = prefix|default('ilo') %}
+{% set base_class = prefix ~ '--subsite-nav-compact' %}
+
+<header class="{{ base_class }}" data-loadcomponent="Nav" data-prefix="{{prefix}}">
+  <div class="{{ base_class }}__container">
+    <nav class="{{ base_class }}__nav">
+      <div
+        class="{{ base_class }}__branding"
+        role="button"
+        aria-label="Branding"
+        tabindex="0"
+      >
+        <div class="{{ base_class }}__branding-logo">
+          <img src="{{ branding.logo.mobile }}" alt="{{ branding.logo.alt }}">
+        </div>
+        <h3 class="{{ base_class }}__branding-name">{{ branding.name }}</h3>
+      </div>
+
+      {% if facadeItems %}
+        {% include "@components/nav/navmenu.twig" with {
+          className: base_class ~ '__menu',
+          menu: facadeItems,
+          more: moreItems|length ? {
+            label: labels.more,
+          } : null,
+          prefix: prefix
+        } only %}
+      {% endif %}
+    </nav>
+
+    {% if widgets %}
+      <div class="{{ base_class }}__widget-bar">
+        <span class="{{ base_class }}__widget-bar-corner"></span>
+        <div class="{{ base_class }}__widget-bar-content">
+          {% if widgets.link %}
+            <a href="{{ widgets.link.href }}" class="{{ base_class }}__widget-bar-link">
+              {{ widgets.link.label }}
+            </a>
+          {% endif %}
+
+          {% if widgets.language %}
+            <div class="{{ base_class }}__widget-bar-language">
+              {% include "@components/languagetoggle/languagetoggle.twig" with {
+                className: base_class ~ '__widget-bar-language',
+                hideIcon: false,
+                language: widgets.language.language,
+                links: widgets.language.links,
+                theme: 'dark',
+              } %}
+           </div>
+          {% endif %}
+
+          {% if widgets.search %}
+            <a href="{{ widgets.search.url }}" class="{{ base_class }}__widget-bar-search" aria-label="{{ widgets.search.label }}">
+              <span class="{{ base_class }}__widget-bar-search__icon"></span>
+            </a>
+          {% endif %}
+        </div>
+      </div>
+    {% endif %}
+
+    <button class="{{ base_class }}__burger" aria-label="Toggle navigation" aria-expanded="false" aria-haspopup="menu" aria-controls="{{ prefix }}--nav-mobile-drawer__main">
+      <span class="{{ base_class }}__burger-icon"></span>
+    </button>
+  </div>
+
+  {% if moreItems %}
+    {% include "@components/nav/navdropdown.twig" with {
+      menu: moreItems,
+      prefix: prefix
+    } only %}
+  {% endif %}
+
+  {% include "@components/nav/mobile/mobiledrawer_main.twig" with {
+    menu: facadeItems,
+    prefix: prefix,
+    branding: branding,
+    widgets: widgets,
+    labels: labels,
+    showMoreButton: moreItems|length,
+    id: "main",
+  } only %}
+
+  {% if widgets.language.links|length %}
+    {% include "@components/nav/mobile/mobiledrawer_nested.twig" with {
+      menu: widgets.language.links,
+      prefix: prefix,
+      title: labels.language,
+      menu_home: labels.home,
+      isActiveLabel: widgets.language.language,
+      id: "languages",
+    } only %}
+  {% endif %}
+
+  {% if moreItems|length %}
+    {% include "@components/nav/mobile/mobiledrawer_nested.twig" with {
+      menu: moreItems,
+      prefix: prefix,
+      title: labels.more,
+      menu_home: labels.home,
+      id: "more",
+    } only %}
+  {% endif %}
+</header>

@@ -1,7 +1,7 @@
 nav:
   namespace: Components/Nav
-  use: "@components/nav/nav_complex.twig"
-  label: NavComplex
+  use: "@components/nav/nav.twig"
+  label: Nav
   description: A complex navigation component with branding, widgets, and menu sections
   fields:
     branding:
@@ -65,14 +65,6 @@ nav:
           label: "Menu Item 3"
           isActive: false
           className: "test"
-        - href: "https://www.ilo.org/"
-          label: "Menu Item 4"
-          isActive: false
-          className: "test"
-        - href: "https://www.ilo.org/"
-          label: "Menu Item 5"
-          isActive: false
-          className: "test"
     moreItems:
       type: object
       label: More Menu Items
@@ -102,4 +94,13 @@ nav:
         more: "More"
         language: "Language"
         home: "Menu home"
+  settings:
+    type:
+      type: select
+      label: Type
+      description: What kind of navigation component to render
+      options:
+        compact: "Compact"
+        complex: "Complex"
+      preview: "complex"
   visibility: storybook
