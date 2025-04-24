@@ -5,7 +5,7 @@ import { Maestro } from "@ilo-org/maestro";
 const story = Maestro.create(Navigation, NavigationPatterns);
 
 const Meta = {
-  title: "Components/Navigation/Nav",
+  title: "Components/Navigation/SubsiteNav",
   tags: ["autodocs"],
   ...story.meta,
 };

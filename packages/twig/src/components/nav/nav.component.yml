@@ -1,7 +1,7 @@
 nav:
   namespace: Components/Nav
   use: "@components/nav/nav.twig"
-  label: Nav
+  label: SubsiteNav
   description: A complex navigation component with branding, widgets, and menu sections
   fields:
     branding:
