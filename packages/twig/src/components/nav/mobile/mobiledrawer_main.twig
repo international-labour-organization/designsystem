@@ -46,5 +46,7 @@
     prefix: prefix,
   } only %}
 
-  <button class="{{ mobile_class }}__more" aria-expanded="false" aria-controls="more-items" aria-label="More items">More<span class="{{ mobile_class }}__more__icon"></span></button>
+  {% if showMoreButton %}
+    <button class="{{ mobile_class }}__more" aria-expanded="false" aria-controls="more-items" aria-label="More items">More<span class="{{ mobile_class }}__more__icon"></span></button>
+  {% endif %}
 {% endblock %}
