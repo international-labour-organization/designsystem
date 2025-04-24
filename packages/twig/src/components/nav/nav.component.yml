@@ -95,12 +95,12 @@ nav:
         language: "Language"
         home: "Menu home"
   settings:
-    type:
-      type: select
+    navtype:
       label: Type
+      type: select
       description: What kind of navigation component to render
       options:
-        compact: "Compact"
-        complex: "Complex"
+        compact: compact
+        complex: complex
       preview: "complex"
   visibility: storybook
