@@ -6,7 +6,7 @@
 <template id="{{ prefix }}--nav-dropdown__template">
   <div class="{{ base_class }} {{ className|default("") }}" id="{{ base_class }}" tabindex="0">
     <div class="{{ base_class }}__container">
-      {% include "@components/nav/navmenugrid.twig" with {
+      {% include "@components/nav/desktop/navmenugrid.twig" with {
         menu: menu,
         prefix: prefix
       } only %}
