@@ -3,11 +3,11 @@
 {% set prefix = prefix|default('ilo') %}
 {% set base_class = prefix ~ '--nav-menu' %}
 
-<div class="{{ base_class }} {{ className|default('') }}">
+<div class="{{ base_class }} {{ className }}">
   <ul class="{{ base_class }}__list">
     {% for item in menu %}
-      <li class="{{ base_class }}__item">
-        <a href="{{ item.href }}" class="{{ base_class }}__link {% if item.isActive %}{{ base_class }}__link--active{% endif %} {{ item.className|default('') }}">
+      <li class="{{ base_class }}__item {{ item.className }}">
+        <a href="{{ item.href }}" class="{{ base_class }}__link">
           {{ item.label }}
         </a>
       </li>
@@ -15,10 +15,11 @@
   </ul>
   {% if more %}
     <button
-      class="{{ base_class }}__more {% if more.isOpen %}{{ base_class }}__more--open{% endif %}"
-      aria-expanded="{{ more.isOpen ? 'true' : 'false' }}"
+      class="{{ base_class }}__more"
+      aria-expanded="false"
       aria-haspopup="menu"
-    >
+      aria-controls="{{ prefix }}--nav-dropdown"
+      id="{{ prefix }}--nav-dropdown__button">
       {{ more.label }}
       <span class="{{ base_class }}__more-icon"></span>
     </button>

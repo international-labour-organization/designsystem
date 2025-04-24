@@ -56,18 +56,23 @@ nav:
         - href: "https://www.ilo.org/"
           label: "Menu Item 1"
           isActive: true
+          className: "test"
         - href: "https://www.ilo.org/"
           label: "Menu Item 2"
           isActive: false
+          className: "test"
         - href: "https://www.ilo.org/"
           label: "Menu Item 3"
           isActive: false
+          className: "test"
         - href: "https://www.ilo.org/"
           label: "Menu Item 4"
           isActive: false
+          className: "test"
         - href: "https://www.ilo.org/"
           label: "Menu Item 5"
           isActive: false
+          className: "test"
     moreItems:
       type: object
       label: More Menu Items
