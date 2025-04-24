@@ -63,7 +63,7 @@
       </div>
 
       {% if facadeItems %}
-        {% include "@components/nav/navmenu.twig" with {
+        {% include "@components/nav/desktop/navmenu.twig" with {
           className: base_class ~ '__nav-menu',
           menu: facadeItems,
           more: moreItems|length ? {
@@ -74,7 +74,7 @@
       {% endif %}
 
       {% if moreItems|length %}
-        {% include "@components/nav/navdropdown.twig" with {
+        {% include "@components/nav/desktop/navdropdown.twig" with {
           menu: moreItems,
           prefix: prefix
         } only %}
