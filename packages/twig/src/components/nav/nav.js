@@ -41,7 +41,6 @@ export default class Nav extends StatefulComponent {
     // Set up a breakpoint observer to track viewport size changes
     this.breakpointObserver = createBreakpointObserver((breakpoint) => {
       this.state.isDesktop = ["xl", "xxl"].includes(breakpoint);
-      console.log(this.state.isMobile);
     });
 
     // Set up a ResizeObserver to track nav element width changes
@@ -197,6 +196,9 @@ export default class Nav extends StatefulComponent {
     // Add open class to the dropdown
     this.dropdown?.classList.add(`${this.prefix}--nav-dropdown--open`);
 
+    // Add aria-expanded="true" to the dropdown button
+    this.dropdownButton.setAttribute("aria-expanded", "true");
+
     // Add open class to the dropdown button
     this.dropdownButton?.classList.add(`${this.prefix}--nav-menu__more--open`);
 
@@ -215,6 +217,9 @@ export default class Nav extends StatefulComponent {
     this.dropdownButton?.classList.remove(
       `${this.prefix}--nav-menu__more--open`
     );
+
+    // Remove aria-expanded="true" from the dropdown button
+    this.dropdownButton.setAttribute("aria-expanded", "false");
 
     // Stop observing the nav element
     this.resizeObserver.disconnect();

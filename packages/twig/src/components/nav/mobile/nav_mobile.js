@@ -247,6 +247,7 @@ export default class MobileNav extends StatefulComponent {
    * Opens the main mobile drawer when the burger menu is clicked.
    */
   handleBurgerClick() {
+    this.burger.setAttribute("aria-expanded", "true");
     this.state.mobDrawerIsOpen = true;
   }
 
@@ -290,6 +291,7 @@ export default class MobileNav extends StatefulComponent {
    * Adds the appropriate class to show the drawer.
    */
   handleOpenMobileDrawer() {
+    this.mobileDrawer.inert = false;
     this.mobileDrawer?.classList.add(`${this.prefix}--nav-mobile-drawer--open`);
   }
 
@@ -298,9 +300,11 @@ export default class MobileNav extends StatefulComponent {
    * Removes the appropriate class to hide the drawer.
    */
   handleCloseMobileDrawer() {
+    this.mobileDrawer.inert = true;
     this.mobileDrawer?.classList.remove(
       `${this.prefix}--nav-mobile-drawer--open`
     );
+    this.burger.setAttribute("aria-expanded", "false");
   }
 
   /**
@@ -308,6 +312,9 @@ export default class MobileNav extends StatefulComponent {
    * Adds the appropriate class to show the languages drawer.
    */
   handleOpenLanguagesMobileDrawer() {
+    this.languagesMobileDrawer.inert = false;
+    this.mobileDrawer.inert = true;
+    this.mobileLanguageButton.setAttribute("aria-expanded", "true");
     this.languagesMobileDrawer.classList.add(
       `${this.prefix}--nav-mobile-drawer--open`
     );
@@ -318,6 +325,9 @@ export default class MobileNav extends StatefulComponent {
    * Removes the appropriate class to hide the languages drawer.
    */
   handleCloseLanguagesMobileDrawer() {
+    this.languagesMobileDrawer.inert = true;
+    this.mobileDrawer.inert = false;
+    this.mobileLanguageButton.setAttribute("aria-expanded", "false");
     this.languagesMobileDrawer?.classList.remove(
       `${this.prefix}--nav-mobile-drawer--open`
     );
@@ -328,6 +338,9 @@ export default class MobileNav extends StatefulComponent {
    * Adds the appropriate class to show the more options drawer.
    */
   handleOpenMoreMobileDrawer() {
+    this.moreMobileDrawer.inert = false;
+    this.mobileDrawer.inert = true;
+    this.mobileMoreButton.setAttribute("aria-expanded", "true");
     this.moreMobileDrawer.classList.add(
       `${this.prefix}--nav-mobile-drawer--open`
     );
@@ -338,6 +351,9 @@ export default class MobileNav extends StatefulComponent {
    * Removes the appropriate class to hide the more options drawer.
    */
   handleCloseMoreMobileDrawer() {
+    this.moreMobileDrawer.inert = true;
+    this.mobileDrawer.inert = false;
+    this.mobileMoreButton.setAttribute("aria-expanded", "false");
     this.moreMobileDrawer?.classList.remove(
       `${this.prefix}--nav-mobile-drawer--open`
     );

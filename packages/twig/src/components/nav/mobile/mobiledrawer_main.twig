@@ -20,11 +20,18 @@
   {% endif %}
 
   {% if widgets.link %}
-    <a class="{{ mobile_class }}__widgets-link" href="{{ widgets.link.href }}" aria-label="{{ widgets.link.label }}">{{ widgets.link.label }}</a>
+    <a class="{{ mobile_class }}__widgets-link" href="{{ widgets.link.href }}">{{ widgets.link.label }}</a>
   {% endif %}
 
   {% if widgets.language %}
-    <button class="{{ mobile_class }}__widgets-language" aria-label="{{ widgets.language.label }}">
+    <button
+      class="{{ mobile_class }}__widgets-language"
+      aria-label="{{ widgets.language.label }}"
+      aria-expanded="false"
+      aria-haspopup="menu"
+      aria-controls="{{ prefix }}--nav-mobile-drawer__languages"
+      id="{{ prefix }}--nav-mobile-drawer__languages__button"
+    >
       <span class="{{ mobile_class }}__widgets-language__label">
         {{ widgets.language.label }}: {{ widgets.language.language }}
       </span>

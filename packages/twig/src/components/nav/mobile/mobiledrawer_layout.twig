@@ -5,7 +5,7 @@
 {% set className = className|default("") %}
 
 <template id="{{ base_class }}__template__{{ id }}">
-  <div class="{{ base_class }} {{ className }}" id="{{ base_class }}__{{ id }}">
+  <div class="{{ base_class }} {{ className }}" id="{{ base_class }}__{{ id }}" inert>
     <div class="{{ base_class }}__header">
       <div class="{{ base_class }}__header-main">
         {{ block("mobile_drawer_header") }}
