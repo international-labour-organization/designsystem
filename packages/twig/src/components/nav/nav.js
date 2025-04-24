@@ -92,10 +92,12 @@ export default class Nav extends StatefulComponent {
       `#${this.prefix}--nav-dropdown__template`
     );
     // Clone the template content
-    const dropdownContent = dropdownTemplate.content.cloneNode(true);
+    if (dropdownTemplate) {
+      const dropdownContent = dropdownTemplate.content.cloneNode(true);
 
-    // Append template content to the body
-    document.body.appendChild(dropdownContent);
+      // Append template content to the body
+      document.body.appendChild(dropdownContent);
+    }
 
     return this;
   }
@@ -143,7 +145,9 @@ export default class Nav extends StatefulComponent {
    * @returns {Nav} Returns the instance for method chaining
    */
   enableHandlers() {
-    this.dropdownButton.addEventListener("click", this.handleDropdownClick);
+    if (this.dropdownButton) {
+      this.dropdownButton.addEventListener("click", this.handleDropdownClick);
+    }
     return this;
   }
 

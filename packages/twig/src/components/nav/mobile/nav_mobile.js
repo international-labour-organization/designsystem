@@ -94,8 +94,10 @@ export default class MobileNav extends StatefulComponent {
     // Append each template's content to the body in order
     mobileDrawerTemplates.forEach((templateId) => {
       const template = this.element.querySelector(`#${templateId}`);
-      const content = template.content.cloneNode(true);
-      document.body.appendChild(content);
+      if (template) {
+        const content = template.content.cloneNode(true);
+        document.body.appendChild(content);
+      }
     });
 
     return this;
@@ -185,13 +187,20 @@ export default class MobileNav extends StatefulComponent {
     this.burger.addEventListener("click", this.handleBurgerClick);
 
     // Add click handler for language selector
-    this.mobileLanguageButton.addEventListener(
-      "click",
-      this.handleLanguageButtonClick
-    );
+    if (this.mobileLanguageButton) {
+      this.mobileLanguageButton.addEventListener(
+        "click",
+        this.handleLanguageButtonClick
+      );
+    }
 
-    // Add click handler for more menu button
-    this.mobileMoreButton.addEventListener("click", this.handleMoreButtonClick);
+    if (this.mobileMoreButton) {
+      // Add click handler for more menu button
+      this.mobileMoreButton.addEventListener(
+        "click",
+        this.handleMoreButtonClick
+      );
+    }
 
     // Add click handlers for all close buttons
     this.mobileDrawerCloseButtons.forEach((button) => {

@@ -96,25 +96,30 @@
         branding: branding,
         widgets: widgets,
         labels: labels,
+        showMoreButton: moreItems|length,
         id: "main",
       } only %}
 
+      {% if widgets.language.links|length %}
        {% include "@components/nav/mobile/mobiledrawer_nested.twig" with {
         menu: widgets.language.links,
         prefix: prefix,
         title: labels.language,
         menu_home: labels.home,
-        isActiveLabel: widgets.language.language,
-        id: "languages",
-      } only %}
+          isActiveLabel: widgets.language.language,
+          id: "languages",
+        } only %}
+      {% endif %}
 
-      {% include "@components/nav/mobile/mobiledrawer_nested.twig" with {
-        menu: moreItems,
-        prefix: prefix,
-        title: labels.more,
-        menu_home: labels.home,
-        id: "more",
-      } only %}
+      {% if moreItems|length %}
+        {% include "@components/nav/mobile/mobiledrawer_nested.twig" with {
+          menu: moreItems,
+          prefix: prefix,
+          title: labels.more,
+          menu_home: labels.home,
+          id: "more",
+        } only %}
+      {% endif %}
 
     </nav>
   </div>
