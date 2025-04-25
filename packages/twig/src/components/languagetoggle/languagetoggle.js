@@ -149,6 +149,7 @@ export default class LanguageToggle extends StatefulComponent {
   handleCloseContextMenu() {
     this.contextMenu.classList.remove(this.contextMenuVisibleClass);
     this.contextMenu.remove();
+    this.contextButton.setAttribute("aria-expanded", "false");
     this.contextMenu.removeEventListener("keydown", this.handleFocusTrap);
     window.removeEventListener("click", this.handleOutsideClick);
     window.removeEventListener("resize", this.positionContextMenu);
