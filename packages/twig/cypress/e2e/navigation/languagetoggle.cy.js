@@ -11,9 +11,6 @@ describe("Language Toggle", () => {
     cy.get("@languageToggle")
       .find("button.ilo--language-toggle--container")
       .as("toggleButton");
-    cy.get("@languageToggle")
-      .find(".ilo--language-toggle--context-menu")
-      .as("contextMenu");
   });
 
   it("renders the language label correctly", () => {
@@ -41,19 +38,15 @@ describe("Language Toggle", () => {
     );
   });
 
-  it("menu is hidden by default", () => {
-    cy.get("@languageToggle")
-      .find(".ilo--language-toggle--context-menu")
-      .should("be.hidden");
+  it("menu is not rendered by default", () => {
+    cy.get(".ilo--language-toggle--context-menu").should("not.exist");
   });
 
   it("menu opens when button is clicked", () => {
     cy.get("@languageToggle")
       .find("button.ilo--language-toggle--container")
       .click();
-    cy.get("@languageToggle")
-      .find(".ilo--language-toggle--context-menu")
-      .should("be.visible");
+    cy.get(".ilo--language-toggle--context-menu").should("be.visible");
   });
 
   it("menu closes when button is clicked again", () => {
@@ -63,42 +56,40 @@ describe("Language Toggle", () => {
     cy.get("@languageToggle")
       .find("button.ilo--language-toggle--container")
       .click();
-    cy.get("@languageToggle")
-      .find(".ilo--language-toggle--context-menu")
-      .should("be.hidden");
+    cy.get(".ilo--language-toggle--context-menu").should("not.exist");
   });
 
   it("renders the correct number of language options", () => {
     if (fixture.links) {
-      cy.get("@languageToggle")
-        .find(".ilo--language-toggle--context-menu a")
-        .should("have.length", fixture.links.length);
+      cy.get("@languageToggle").click();
+      cy.get(".ilo--language-toggle--context-menu a").should(
+        "have.length",
+        fixture.links.length
+      );
     }
   });
 
   it("ensures each language option has a valid href", () => {
     if (fixture.links) {
-      cy.get("@languageToggle")
-        .find(".ilo--language-toggle--context-menu a")
-        .each(($link) => {
-          cy.wrap($link).should("have.attr", "href").and("not.be.empty");
-        });
+      cy.get("@languageToggle").click();
+      cy.get(".ilo--language-toggle--context-menu a").each(($link) => {
+        cy.wrap($link).should("have.attr", "href").and("not.be.empty");
+      });
     }
   });
 
   it("has correct accessibility attributes (aria-expanded & hidden)", () => {
     // By default, aria-expanded should be false and hidden should be present
     cy.get("@toggleButton").should("have.attr", "aria-expanded", "false");
-    cy.get("@contextMenu").should("have.attr", "hidden");
 
     // After clicking, aria-expanded should be true and hidden should be removed
     cy.get("@toggleButton").click();
     cy.get("@toggleButton").should("have.attr", "aria-expanded", "true");
-    cy.get("@contextMenu").should("not.have.attr", "hidden");
+    cy.get(".ilo--language-toggle--context-menu").should("be.visible");
 
     // After clicking again, it should revert to default state
     cy.get("@toggleButton").click();
     cy.get("@toggleButton").should("have.attr", "aria-expanded", "false");
-    cy.get("@contextMenu").should("have.attr", "hidden");
+    cy.get(".ilo--language-toggle--context-menu").should("not.exist");
   });
 });
