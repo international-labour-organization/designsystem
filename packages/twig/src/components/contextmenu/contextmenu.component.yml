@@ -23,12 +23,10 @@ contextmenu:
           url: "http://www.google.com"
     className:
       type: string
-      label: Class Name
+      label: className
       description: Additional CSS class name(s) to add to the context menu
-      required: false
-    id:
+    contextMenuId:
       type: string
-      label: ID
+      label: contextMenuId
       description: Optional HTML ID attribute for the context menu element
-      required: false
   visibility: storybook
