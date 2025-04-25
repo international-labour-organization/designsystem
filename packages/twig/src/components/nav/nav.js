@@ -238,7 +238,8 @@ export default class Nav extends StatefulComponent {
    */
   handleResizeDropdown() {
     this.dropdown.style.width = `${this.element.offsetWidth}px`;
-    this.dropdown.style.top = `${this.element.offsetHeight}px`;
+    this.dropdown.style.left = `${this.element.getBoundingClientRect().left}px`;
+    this.dropdown.style.top = `${this.element.getBoundingClientRect().bottom}px`;
   }
 
   /**
