@@ -4,6 +4,11 @@
  *
  * This is useful for components that can have multiple different states.
  *
+ * Important: State updates must be done through reassignment. This means:
+ * - Arrays must be cloned and replaced to be updated
+ * - Objects must be cloned and replaced to be updated
+ * - Direct mutations of arrays/objects will not trigger state updates
+ *
  * @example
  * // Example subclass implementation
  * class MyComponent extends StatefulComponent {
@@ -49,10 +54,24 @@
  *     return this;
  *   }
  *
- *   // Example method that updates state
+ *   // Example methods that update state correctly
  *   toggle() {
  *     this.state.isOpen = !this.state.isOpen;
  *   }
+ *
+ *   // Correct way to update an array
+ *   addItem(newItem) {
+ *     this.state.items = [...this.state.items, newItem];
+ *   }
+ *
+ *   // Correct way to update an object
+ *   updateUser(userData) {
+ *     this.state.user = { ...this.state.user, ...userData };
+ *   }
+ *
+ *   // Incorrect way to update state (will not trigger updates):
+ *   // this.state.items.push(newItem); // ❌
+ *   // this.state.user.name = 'John';  // ❌
  * }
  *
  * @class StatefulComponent
