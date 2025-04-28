@@ -57,7 +57,7 @@
  *
  * @class StatefulComponent
  */
-export default class StatefulComponent {
+export class StatefulComponent {
   /**
    * Creates a new StatefulComponent instance
    *
@@ -136,6 +136,7 @@ export default class StatefulComponent {
             handlers.forEach((handler) => handler(value, prop));
           }
         }
+        return true;
       },
     });
   }
