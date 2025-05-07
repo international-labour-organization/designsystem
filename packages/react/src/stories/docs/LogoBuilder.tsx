@@ -1,7 +1,7 @@
 import { useState, useRef } from "react";
 import { Logo } from "../../components/Logo";
 import * as brandAssets from "@ilo-org/brand-assets";
-import { toPng, toSvg } from "html-to-image";
+import { toPng, toSvg, toPixelData } from "html-to-image";
 import {
   Fieldset,
   Dropdown,
@@ -52,8 +52,14 @@ export const LogoBuilder = () => {
   const [size, setSize] = useState(400);
   const logoRef = useRef<HTMLDivElement>(null);
 
-  const handleDownload = async (format: "png" | "svg") => {
+  const handleDownload = async (format: "png" | "svg" | "cropped-png") => {
     if (!logoRef.current) return;
+
+    if (format === "cropped-png") {
+      const pixelData = await toPixelData(logoRef.current);
+      console.log(pixelData);
+      return;
+    }
 
     try {
       const dataUrl =
@@ -142,19 +148,24 @@ export const LogoBuilder = () => {
         </Form>
 
         <div
-          ref={logoRef}
           style={{
             display: "inline-block",
             background: "transparent",
+            border: "1px solid red",
           }}
         >
-          <Logo
-            src={logoOptions[selectedLogo][theme]?.href as string}
-            alt="International Labour Organization"
-            subbrand={subbrand}
-            size={size}
-            theme={theme}
-          />
+          <div
+            ref={logoRef}
+            style={{ border: "1px solid blue", display: "inline-block" }}
+          >
+            <Logo
+              src={logoOptions[selectedLogo][theme]?.href as string}
+              alt="International Labour Organization"
+              subbrand={subbrand}
+              size={size}
+              theme={theme}
+            />
+          </div>
         </div>
 
         <div style={{ display: "flex", gap: "1rem" }}>
@@ -163,6 +174,12 @@ export const LogoBuilder = () => {
           </Button>
           <Button onClick={() => handleDownload("png")} type="secondary">
             Download PNG
+          </Button>
+          <Button
+            onClick={() => handleDownload("cropped-png")}
+            type="secondary"
+          >
+            Download Cropped PNG
           </Button>
         </div>
       </div>
