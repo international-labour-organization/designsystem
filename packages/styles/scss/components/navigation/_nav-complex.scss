@@ -83,18 +83,9 @@
         text-decoration: none;
         color: var(--ilo-color-white);
 
-        &:hover {
-          background-color: var(--ilo-color-blue-lighter);
-          color: var(--ilo-color-blue);
-        }
-      }
-
-      &__language {
-        &:hover {
-          height: 100%;
-          display: flex;
-          align-items: center;
-          background-color: var(--ilo-color-blue-lighter);
+        &:hover,
+        &:focus {
+          background-color: var(--ilo-color-blue-dark);
         }
       }
     }
@@ -171,6 +162,7 @@
     }
 
     &-menu {
+      height: 100%;
       @include breakpoint("lg", true) {
         display: none;
       }
