@@ -1,15 +1,49 @@
 import { useState, useRef } from "react";
 import { Logo } from "../../components/Logo";
-import en_blue from "@ilo-org/brand-assets/logo_en_horizontal_blue.svg";
-import en_white from "@ilo-org/brand-assets/logo_en_horizontal_white.svg";
-import fr_blue from "@ilo-org/brand-assets/logo_fr_horizontal_blue.svg";
-import fr_white from "@ilo-org/brand-assets/logo_fr_horizontal_white.svg";
-import es_blue from "@ilo-org/brand-assets/logo_es_horizontal_blue.svg";
-import es_white from "@ilo-org/brand-assets/logo_es_horizontal_white.svg";
+import * as brandAssets from "@ilo-org/brand-assets";
 import { toPng, toSvg } from "html-to-image";
+import {
+  Fieldset,
+  Dropdown,
+  TextInput,
+  NumberPicker,
+  Form,
+  Button,
+} from "../../components";
+import { OptionProps } from "../../components/Dropdown/Dropdown.props";
 
 type LogoVariant = "en" | "fr" | "es";
 type Theme = "light" | "dark";
+
+// Get a list of logos from the brand-assets package
+const logos = Object.keys(brandAssets).filter(
+  (key) => key.includes("svg") && key.includes("logo")
+);
+
+// Create a map of logos with the language as the key and the logo as the value
+const logoOptions = logos.reduce(
+  (acc, logo) => {
+    const language = logo.split("_")[1];
+    const color = logo.match(/(blue|white)/)?.[1];
+    if (!color) return acc;
+    const theme = color === "blue" ? "light" : "dark";
+    if (!acc[language]) {
+      acc[language] = {};
+    }
+    acc[language][theme] = brandAssets[logo as keyof typeof brandAssets];
+    return acc;
+  },
+  {} as Record<string, { light?: URL; dark?: URL }>
+);
+
+// Create language options using Intl.DisplayNames
+const languageOptions = Object.keys(logoOptions).map((langCode) => {
+  const languageNames = new Intl.DisplayNames(["en"], { type: "language" });
+  return {
+    value: langCode,
+    label: languageNames.of(langCode),
+  };
+});
 
 export const LogoBuilder = () => {
   const [selectedLogo, setSelectedLogo] = useState<LogoVariant>("en");
@@ -17,12 +51,6 @@ export const LogoBuilder = () => {
   const [theme, setTheme] = useState<Theme>("light");
   const [size, setSize] = useState(400);
   const logoRef = useRef<HTMLDivElement>(null);
-
-  const logoOptions = {
-    en: { light: en_blue, dark: en_white },
-    fr: { light: fr_blue, dark: fr_white },
-    es: { light: es_blue, dark: es_white },
-  } as const;
 
   const handleDownload = async (format: "png" | "svg") => {
     if (!logoRef.current) return;
@@ -43,104 +71,100 @@ export const LogoBuilder = () => {
   };
 
   return (
-    <div style={{ maxWidth: "800px", margin: "0 auto", padding: "2rem" }}>
-      <div style={{ marginBottom: "2rem" }}>
-        <label style={{ display: "block", marginBottom: "0.5rem" }}>
-          Logo Variant:
-          <select
-            value={selectedLogo}
-            onChange={(e) => setSelectedLogo(e.target.value as LogoVariant)}
-            style={{ marginLeft: "1rem" }}
-          >
-            <option value="en">English</option>
-            <option value="fr">French</option>
-            <option value="es">Spanish</option>
-          </select>
-        </label>
-
-        <label style={{ display: "block", marginBottom: "0.5rem" }}>
-          Subbrand Text:
-          <input
-            type="text"
-            value={subbrand}
-            onChange={(e) => setSubbrand(e.target.value)}
-            placeholder="Enter subbrand text"
-            style={{ marginLeft: "1rem" }}
-          />
-        </label>
-
-        <label style={{ display: "block", marginBottom: "0.5rem" }}>
-          Theme:
-          <select
-            value={theme}
-            onChange={(e) => setTheme(e.target.value as Theme)}
-            style={{ marginLeft: "1rem" }}
-          >
-            <option value="light">Light</option>
-            <option value="dark">Dark</option>
-          </select>
-        </label>
-
-        <label style={{ display: "block", marginBottom: "0.5rem" }}>
-          Size (px):
-          <input
-            type="number"
-            value={size}
-            onChange={(e) => setSize(Number(e.target.value))}
-            min="100"
-            max="800"
-            style={{ marginLeft: "1rem" }}
-          />
-        </label>
-      </div>
-
+    <div
+      className="ilo--logo-builder"
+      style={{
+        display: "grid",
+        placeItems: "center",
+        width: "100%",
+        padding: "2rem",
+      }}
+    >
       <div
-        ref={logoRef}
         style={{
-          padding: "2rem",
-          background: theme === "dark" ? "#1a1a1a" : "#ffffff",
-          borderRadius: "8px",
-          marginBottom: "2rem",
           display: "flex",
-          justifyContent: "center",
+          flexDirection: "column",
+          gap: "2rem",
+          maxWidth: "800px",
         }}
       >
-        <Logo
-          src={logoOptions[selectedLogo]}
-          alt="International Labour Organization"
-          subbrand={subbrand}
-          size={size}
-          theme={theme}
-        />
-      </div>
+        <div className="ilo--richtext">
+          <h1>Logo Builder</h1>
+          <p>
+            The Logo builder allows you to create a logo for your project. You
+            can choose the logo variant, the theme, and the size. You can also
+            add a subbrand text to the logo.
+          </p>
+        </div>
+        <Form theme="light" style={{ width: "100%", maxWidth: "750px" }}>
+          <Fieldset wrap="wrap" direction="row" style={{ width: "100%" }}>
+            <Dropdown
+              label="Language"
+              name="logo-language"
+              options={languageOptions as OptionProps[]}
+              value={selectedLogo}
+              onChange={(e) => setSelectedLogo(e.target.value as LogoVariant)}
+              style={{ flex: "1 1 30%" }}
+            />
+            <Dropdown
+              label="Theme"
+              name="theme"
+              options={[
+                { label: "Light", value: "light" },
+                { label: "Dark", value: "dark" },
+              ]}
+              value={theme}
+              onChange={(e) => setTheme(e.target.value as Theme)}
+              style={{ flex: "1 1 30%" }}
+            />
 
-      <div style={{ display: "flex", gap: "1rem" }}>
-        <button
-          onClick={() => handleDownload("png")}
+            <NumberPicker
+              label="Size"
+              tooltip="Width in pixels"
+              name="size"
+              value={size}
+              onChange={(e) => setSize(Number(e.target.value))}
+              style={{ flex: "1 1 30%" }}
+            />
+          </Fieldset>
+          <Fieldset wrap="wrap" direction="row" style={{ width: "100%" }}>
+            <TextInput
+              type="text"
+              label="Sub-brand"
+              tooltip="The sub-brand text to be displayed next to the logo"
+              name="subbrand"
+              value={subbrand}
+              onChange={(e) => setSubbrand(e.target.value)}
+              placeholder="Enter subrand name"
+              style={{ flex: "0 1 32%" }}
+            />
+          </Fieldset>
+        </Form>
+
+        <div
+          ref={logoRef}
           style={{
-            padding: "0.75rem 1.5rem",
-            background: "#007bff",
-            color: "white",
-            border: "none",
-            borderRadius: "4px",
-            cursor: "pointer",
+            display: "inline-block",
+            background: "transparent",
           }}
         >
-          Download PNG
-        </button>
-        <button
-          onClick={() => handleDownload("svg")}
-          style={{
-            padding: "0.75rem 1.5rem",
-            background: "#28a745",
-            color: "white",
-            border: "none",
-            borderRadius: "4px",
-            cursor: "pointer",
-          }}
-        >
-          Download SVG
-        </button>
+          <Logo
+            src={logoOptions[selectedLogo][theme]?.href as string}
+            alt="International Labour Organization"
+            subbrand={subbrand}
+            size={size}
+            theme={theme}
+          />
+        </div>
+
+        <div style={{ display: "flex", gap: "1rem" }}>
+          <Button onClick={() => handleDownload("svg")} type="secondary">
+            Download SVG
+          </Button>
+          <Button onClick={() => handleDownload("png")} type="secondary">
+            Download PNG
+          </Button>
+        </div>
       </div>
     </div>
   );

@@ -21,6 +21,7 @@ const NumberPicker = React.forwardRef<HTMLInputElement, NumberPickerProps>(
       max,
       min,
       step,
+      value,
     },
     ref
   ) => {
@@ -61,6 +62,7 @@ const NumberPicker = React.forwardRef<HTMLInputElement, NumberPickerProps>(
         max={max}
         min={min}
         step={step}
+        value={value}
       />
     );
   }

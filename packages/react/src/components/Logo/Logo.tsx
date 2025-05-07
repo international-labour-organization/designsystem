@@ -96,7 +96,7 @@ const BaseLogo: React.FC<InnerLogoProps> = ({
       observer.current.observe(imageEl);
       return () => observer.current.unobserve(imageEl);
     }
-  }, [imageLoaded]);
+  }, [imageLoaded, subbrand]);
 
   // Gets the font size necessary for the lockup text to fill the
   // the lockup container as much as possible without overflowing.

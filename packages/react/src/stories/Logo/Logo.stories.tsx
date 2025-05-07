@@ -2,7 +2,7 @@ import { Meta, StoryObj } from "@storybook/react";
 import { Logo } from "../../components/Logo";
 import {
   Title,
-  Description,
+  Markdown,
   Primary,
   Stories,
   Subheading,
@@ -50,49 +50,49 @@ const LogoMeta: Meta<typeof Logo> = {
       page: () => (
         <>
           <Title />
-          <Description>
+          <Markdown>
             The Logo component renders an image representing an organization. It
             can be shown on a light or dark background (theme) and may include
             an sub-brand, which appears in a "lockup" next to the main logo.
-          </Description>
+          </Markdown>
           <Primary />
           <Subheading>Why use this component?</Subheading>
-          <Description>
+          <Markdown>
             The `Logo` component provides a standard interface for rendering
             brand-compliant logos in different contexts and backgrounds. It can
             be rendered at fixed or fluid sizes (widths) and offers a convenient
             way of handling `light` and `dark` themes (backgrounds).
-          </Description>
-          <Description>
+          </Markdown>
+          <Markdown>
             It's especially handy for implementing sub-brands, which can be
             added by means of a single `subbrand` prop. This takes a `string`
             (the name of the sub-brand) and renders it as a responsive lockup
             that resizes dynamically together with the logo. This allows you to
             treat a `Logo` with subbrand as if it were a single image.
-          </Description>
+          </Markdown>
           <Subheading>Theme</Subheading>
-          <Description>
+          <Markdown>
             The `theme` prop determines whether the logo should be rendered on a
             `light` or `dark` background. In order to work, the `src` prop
             should be an object with `light` and `dark` properties that point to
             the image files you want to use in either scenario. [See
             example](/story/components-brand-logo--dark-theme).
-          </Description>
+          </Markdown>
           <Subheading>Sub-brands</Subheading>
-          <Description>
+          <Markdown>
             Add a sub-brand by passing a `string` to the `subbrand` prop with
             the text to appear in the lockup space next to the logo. The
             font-size of the subbrand will resize automatically to fill the
             available space without overflowing the lockup. The lockup is
             responsive, so you can treat the component like an image. [See
             example](/story/components-brand-logo--long-subrand).
-          </Description>
+          </Markdown>
           <Subheading>Size</Subheading>
-          <Description>
+          <Markdown>
             Pass a `number` to the `size` prop to set a fixed with on the Logo
             component or use `fluid` if you want the component to fill the
             available space from its parent.
-          </Description>
+          </Markdown>
           <Stories title="Examples"></Stories>
           <ArgTypes of={LogoMeta} />
         </>
