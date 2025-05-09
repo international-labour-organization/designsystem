@@ -15,13 +15,8 @@
 
   &__list {
     display: flex;
-    // gap: spacing(12);
     align-items: center;
     height: 100%;
-
-    @include breakpoint("xl", true) {
-      // gap: spacing(6);
-    }
   }
 
   &__item {

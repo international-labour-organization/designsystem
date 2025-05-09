@@ -16,12 +16,6 @@
     }
   }
 
-  &:hover,
-  &__open {
-    --ilo--language-toggle-color: var(--ilo--language-toggle-color-hover);
-    --ilo--language-toggle-bg: var(--ilo--language-toggle-bg-hover);
-  }
-
   display: inline-block;
   height: 100%;
 
@@ -39,18 +33,19 @@
     box-shadow: none;
     appearance: none;
     cursor: pointer;
-
     display: flex;
     align-items: center;
     gap: px-to-rem(4px);
     cursor: pointer;
     width: fit-content;
     background-color: var(--ilo--language-toggle-bg);
+    color: var(--ilo--language-toggle-color);
 
     &:hover,
-    &:focus {
-      color: var(--ilo--language-toggle-color-hover);
-      background-color: var(--ilo--language-toggle-bg-hover);
+    &:focus,
+    &__open {
+      --ilo--language-toggle-color: var(--ilo--language-toggle-color-hover);
+      --ilo--language-toggle-bg: var(--ilo--language-toggle-bg-hover);
     }
   }
 
@@ -72,8 +67,6 @@
 
   &--action {
     color: var(--ilo--language-toggle-color);
-
-    //move this when the new typography is ready ##896
     font-family: var(--ilo-fonts-display);
     font-weight: 700;
     font-size: px-to-rem(14px);

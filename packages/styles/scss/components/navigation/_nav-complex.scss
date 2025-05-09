@@ -216,9 +216,10 @@
         cursor: pointer;
       }
 
-      &:hover {
-        --ilo-subsite_nav_complex-search-color: var(--ilo-color-blue);
-        background-color: var(--ilo-color-blue-lighter);
+      &:hover,
+      &:focus {
+        --ilo-subsite_nav_complex-search-color: var(--ilo-color-white);
+        background-color: var(--ilo-color-blue-dark);
       }
     }
 
