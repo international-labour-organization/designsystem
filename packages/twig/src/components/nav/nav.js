@@ -64,7 +64,6 @@ export default class Nav extends StatefulComponent {
   init() {
     this.renderClientContent()
       .cacheDomReferences()
-      .bindHandlers()
       .enableHandlers()
       .registerStateHandlers()
       .startBreakpointObserver();
@@ -77,9 +76,10 @@ export default class Nav extends StatefulComponent {
    *
    * @returns {Nav} Returns the instance for method chaining
    */
-  startBreakpointObserver() {
+  startBreakpointObserver = () => {
     this.breakpointObserver.start();
-  }
+    return this;
+  };
 
   /**
    * Renders elements that are only needed on the client side.
@@ -87,7 +87,7 @@ export default class Nav extends StatefulComponent {
    *
    * @returns {Nav} Returns the instance for method chaining
    */
-  renderClientContent() {
+  renderClientContent = () => {
     const dropdownTemplate = this.element.querySelector(
       `#${this.prefix}--nav-dropdown__template`
     );
@@ -100,7 +100,7 @@ export default class Nav extends StatefulComponent {
     }
 
     return this;
-  }
+  };
 
   /**
    * Caches references to DOM elements that will be used throughout the component.
@@ -108,7 +108,7 @@ export default class Nav extends StatefulComponent {
    *
    * @returns {Nav} Returns the instance for method chaining
    */
-  cacheDomReferences() {
+  cacheDomReferences = () => {
     this.dropdownButton = this.element.querySelector(
       `.${this.prefix}--nav-menu__more`
     );
@@ -119,37 +119,19 @@ export default class Nav extends StatefulComponent {
     );
 
     return this;
-  }
-
-  /**
-   * Binds all event handler methods to the component instance.
-   * This ensures that 'this' context is preserved when handlers are called.
-   *
-   * @returns {Nav} Returns the instance for method chaining
-   */
-  bindHandlers() {
-    this.handleBreakpointChange = this.handleBreakpointChange.bind(this);
-    this.handleDropdownClick = this.handleDropdownClick.bind(this);
-    this.handleOpenDropdown = this.handleOpenDropdown.bind(this);
-    this.handleCloseDropdown = this.handleCloseDropdown.bind(this);
-    this.handleResizeDropdown = this.handleResizeDropdown.bind(this);
-    this.handleOutsideClick = this.handleOutsideClick.bind(this);
-    this.handleTabNavigation = this.handleTabNavigation.bind(this);
-    this.handleFocusTrap = this.handleFocusTrap.bind(this);
-    return this;
-  }
+  };
 
   /**
    * Enables event listeners for the component's interactive elements.
    *
    * @returns {Nav} Returns the instance for method chaining
    */
-  enableHandlers() {
+  enableHandlers = () => {
     if (this.dropdownButton) {
       this.dropdownButton.addEventListener("click", this.handleDropdownClick);
     }
     return this;
-  }
+  };
 
   /**
    * Registers state change handlers for the component.
@@ -157,7 +139,7 @@ export default class Nav extends StatefulComponent {
    *
    * @returns {Nav} Returns the instance for method chaining
    */
-  registerStateHandlers() {
+  registerStateHandlers = () => {
     this.registerStateHandler("dropDownIsOpen", (value) => {
       if (value) {
         this.handleOpenDropdown();
@@ -169,7 +151,7 @@ export default class Nav extends StatefulComponent {
     this.registerStateHandler("isDesktop", this.handleBreakpointChange);
 
     return this;
-  }
+  };
 
   /**
    * Handles the breakpoint change event.
@@ -177,17 +159,17 @@ export default class Nav extends StatefulComponent {
    *
    * @param {boolean} isDesktop - Whether the current breakpoint is desktop
    */
-  handleBreakpointChange(isDesktop) {
+  handleBreakpointChange = (isDesktop) => {
     if (!isDesktop) {
       this.state.dropDownIsOpen = false;
     }
-  }
+  };
 
   /**
    * Handles the opening of the dropdown menu.
    * Sets up necessary event listeners and applies appropriate classes.
    */
-  handleOpenDropdown() {
+  handleOpenDropdown = () => {
     // Resize the dropdown
     this.handleResizeDropdown();
 
@@ -207,13 +189,13 @@ export default class Nav extends StatefulComponent {
     this.dropdownButton?.classList.add(`${this.prefix}--nav-menu__more--open`);
 
     this.handleTabNavigation();
-  }
+  };
 
   /**
    * Handles the closing of the dropdown menu.
    * Removes event listeners and appropriate classes.
    */
-  handleCloseDropdown() {
+  handleCloseDropdown = () => {
     // Remove open class from the dropdown
     this.dropdown?.classList.remove(`${this.prefix}--nav-dropdown--open`);
 
@@ -230,24 +212,24 @@ export default class Nav extends StatefulComponent {
 
     // Remove event listener from the window
     window.removeEventListener("click", this.handleOutsideClick);
-  }
+  };
 
   /**
    * Adjusts the dropdown's position and size based on the parent element.
    * Ensures the dropdown aligns properly with its parent navigation element.
    */
-  handleResizeDropdown() {
+  handleResizeDropdown = () => {
     this.dropdown.style.width = `${this.element.offsetWidth}px`;
     this.dropdown.style.left = `${this.element.getBoundingClientRect().left}px`;
     this.dropdown.style.top = `${this.element.getBoundingClientRect().bottom}px`;
-  }
+  };
 
   /**
    * Toggles the dropdown's open/closed state when the dropdown button is clicked.
    */
-  handleDropdownClick() {
+  handleDropdownClick = () => {
     this.state.dropDownIsOpen = !this.state.dropDownIsOpen;
-  }
+  };
 
   /**
    * Handles clicks outside of the dropdown and its parent element.
@@ -255,7 +237,7 @@ export default class Nav extends StatefulComponent {
    *
    * @param {MouseEvent} event - The click event object
    */
-  handleOutsideClick(event) {
+  handleOutsideClick = (event) => {
     if (
       this.state.dropDownIsOpen &&
       !this.element?.contains(event.target) &&
@@ -263,7 +245,7 @@ export default class Nav extends StatefulComponent {
     ) {
       this.state.dropDownIsOpen = false;
     }
-  }
+  };
 
   /**
    * Manages keyboard navigation within the dropdown.
@@ -271,21 +253,21 @@ export default class Nav extends StatefulComponent {
    *
    * @param {KeyboardEvent} event - The keyboard event object
    */
-  handleFocusTrap(event) {
+  handleFocusTrap = (event) => {
     createFocusTrap(event, this.dropdown.querySelectorAll("a"), () => {
       this.state.dropDownIsOpen = false;
       this.dropdownButton.focus();
     });
-  }
+  };
 
   /**
    * Sets up keyboard navigation for the dropdown.
    * Focuses the dropdown and adds keyboard event listeners.
    */
-  handleTabNavigation() {
+  handleTabNavigation = () => {
     setTimeout(() => {
       this.dropdown.focus();
       this.dropdown.addEventListener("keydown", this.handleFocusTrap);
     }, 100);
-  }
+  };
 }

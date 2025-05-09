@@ -57,25 +57,25 @@ export default class MobileNav extends StatefulComponent {
    *
    * @returns {MobileNav} Returns the instance for method chaining
    */
-  init() {
+  init = () => {
     this.renderClientContent()
       .cacheDomReferences()
-      .bindHandlers()
       .enableHandlers()
       .registerStateHandlers()
       .startBreakpointObserver();
 
     return this;
-  }
+  };
 
   /**
    * Starts the breakpoint observer.
    *
    * @returns {MobileNav} Returns the instance for method chaining
    */
-  startBreakpointObserver() {
+  startBreakpointObserver = () => {
     this.breakpointObserver.start();
-  }
+    return this;
+  };
 
   /**
    * Renders elements that are only needed on the client side.
@@ -83,7 +83,7 @@ export default class MobileNav extends StatefulComponent {
    *
    * @returns {MobileNav} Returns the instance for method chaining
    */
-  renderClientContent() {
+  renderClientContent = () => {
     // Get all mobile drawer templates in the order they appear in the DOM
     const mobileDrawerTemplates = [
       `${this.prefix}--nav-mobile-drawer__template__main`,
@@ -101,7 +101,7 @@ export default class MobileNav extends StatefulComponent {
     });
 
     return this;
-  }
+  };
 
   /**
    * Caches references to DOM elements that will be used throughout the component.
@@ -109,7 +109,7 @@ export default class MobileNav extends StatefulComponent {
    *
    * @returns {MobileNav} Returns the instance for method chaining
    */
-  cacheDomReferences() {
+  cacheDomReferences = () => {
     // Find any element with a class that ends with __nav-burger
     // This is necessary because the burger has different classes
     // for the compact and complex themes
@@ -151,30 +151,7 @@ export default class MobileNav extends StatefulComponent {
     );
 
     return this;
-  }
-
-  /**
-   * Binds all event handler methods to the component instance.
-   * This ensures that 'this' context is preserved when handlers are called.
-   *
-   * @returns {MobileNav} Returns the instance for method chaining
-   */
-  bindHandlers() {
-    this.handleBreakpointChange = this.handleBreakpointChange.bind(this);
-    this.handleMenuHomeButtonClick = this.handleMenuHomeButtonClick.bind(this);
-    this.handleMoreButtonClick = this.handleMoreButtonClick.bind(this);
-    this.handleLanguageButtonClick = this.handleLanguageButtonClick.bind(this);
-    this.handleCloseLanguagesMobileDrawer =
-      this.handleCloseLanguagesMobileDrawer.bind(this);
-    this.handleOpenLanguagesMobileDrawer =
-      this.handleOpenLanguagesMobileDrawer.bind(this);
-    this.handleCloseMobileDrawer = this.handleCloseMobileDrawer.bind(this);
-    this.handleMobileDrawerClose = this.handleMobileDrawerClose.bind(this);
-    this.handleBurgerClick = this.handleBurgerClick.bind(this);
-    this.handleOpenMobileDrawer = this.handleOpenMobileDrawer.bind(this);
-    this.registerStateHandlers = this.registerStateHandlers.bind(this);
-    return this;
-  }
+  };
 
   /**
    * Enables event listeners for the component's interactive elements.
@@ -182,7 +159,7 @@ export default class MobileNav extends StatefulComponent {
    *
    * @returns {MobileNav} Returns the instance for method chaining
    */
-  enableHandlers() {
+  enableHandlers = () => {
     // Add click handler for burger menu toggle
     this.burger.addEventListener("click", this.handleBurgerClick);
 
@@ -213,7 +190,7 @@ export default class MobileNav extends StatefulComponent {
     });
 
     return this;
-  }
+  };
 
   /**
    * Registers state change handlers for the component.
@@ -221,7 +198,7 @@ export default class MobileNav extends StatefulComponent {
    *
    * @returns {MobileNav} Returns the instance for method chaining
    */
-  registerStateHandlers() {
+  registerStateHandlers = () => {
     this.registerStateHandler("mobDrawerIsOpen", (value) => {
       if (value) {
         this.handleOpenMobileDrawer();
@@ -249,124 +226,124 @@ export default class MobileNav extends StatefulComponent {
     this.registerStateHandler("isMobile", this.handleBreakpointChange);
 
     return this;
-  }
+  };
 
   /**
    * Handles the burger menu click event.
    * Opens the main mobile drawer when the burger menu is clicked.
    */
-  handleBurgerClick() {
+  handleBurgerClick = () => {
     this.burger.setAttribute("aria-expanded", "true");
     this.state.mobDrawerIsOpen = true;
-  }
+  };
 
   /**
    * Handles the language button click event.
    * Opens the languages mobile drawer when the language button is clicked.
    */
-  handleLanguageButtonClick() {
+  handleLanguageButtonClick = () => {
     this.state.languagesMobDrawerIsOpen = true;
-  }
+  };
 
   /**
    * Handles the more button click event.
    * Opens the more options mobile drawer when the more button is clicked.
    */
-  handleMoreButtonClick() {
+  handleMoreButtonClick = () => {
     this.state.moreMobDrawerIsOpen = true;
-  }
+  };
 
   /**
    * Handles the menu home button click event.
    * Closes the languages and more drawers when returning to the main menu.
    */
-  handleMenuHomeButtonClick() {
+  handleMenuHomeButtonClick = () => {
     this.state.languagesMobDrawerIsOpen = false;
     this.state.moreMobDrawerIsOpen = false;
-  }
+  };
 
   /**
    * Handles the mobile drawer close button click event.
    * Closes all mobile drawers when the close button is clicked.
    */
-  handleMobileDrawerClose() {
+  handleMobileDrawerClose = () => {
     this.state.mobDrawerIsOpen = false;
     this.state.languagesMobDrawerIsOpen = false;
     this.state.moreMobDrawerIsOpen = false;
-  }
+  };
 
   /**
    * Handles opening the main mobile drawer.
    * Adds the appropriate class to show the drawer.
    */
-  handleOpenMobileDrawer() {
+  handleOpenMobileDrawer = () => {
     this.mobileDrawer.inert = false;
     this.mobileDrawer?.classList.add(`${this.prefix}--nav-mobile-drawer--open`);
-  }
+  };
 
   /**
    * Handles closing the main mobile drawer.
    * Removes the appropriate class to hide the drawer.
    */
-  handleCloseMobileDrawer() {
+  handleCloseMobileDrawer = () => {
     this.mobileDrawer.inert = true;
     this.mobileDrawer?.classList.remove(
       `${this.prefix}--nav-mobile-drawer--open`
     );
     this.burger.setAttribute("aria-expanded", "false");
-  }
+  };
 
   /**
    * Handles opening the languages mobile drawer.
    * Adds the appropriate class to show the languages drawer.
    */
-  handleOpenLanguagesMobileDrawer() {
+  handleOpenLanguagesMobileDrawer = () => {
     this.languagesMobileDrawer.inert = false;
     this.mobileDrawer.inert = true;
     this.mobileLanguageButton.setAttribute("aria-expanded", "true");
     this.languagesMobileDrawer.classList.add(
       `${this.prefix}--nav-mobile-drawer--open`
     );
-  }
+  };
 
   /**
    * Handles closing the languages mobile drawer.
    * Removes the appropriate class to hide the languages drawer.
    */
-  handleCloseLanguagesMobileDrawer() {
+  handleCloseLanguagesMobileDrawer = () => {
     this.languagesMobileDrawer.inert = true;
     this.mobileDrawer.inert = false;
     this.mobileLanguageButton.setAttribute("aria-expanded", "false");
     this.languagesMobileDrawer?.classList.remove(
       `${this.prefix}--nav-mobile-drawer--open`
     );
-  }
+  };
 
   /**
    * Handles opening the more options mobile drawer.
    * Adds the appropriate class to show the more options drawer.
    */
-  handleOpenMoreMobileDrawer() {
+  handleOpenMoreMobileDrawer = () => {
     this.moreMobileDrawer.inert = false;
     this.mobileDrawer.inert = true;
     this.mobileMoreButton.setAttribute("aria-expanded", "true");
     this.moreMobileDrawer.classList.add(
       `${this.prefix}--nav-mobile-drawer--open`
     );
-  }
+  };
 
   /**
    * Handles closing the more options mobile drawer.
    * Removes the appropriate class to hide the more options drawer.
    */
-  handleCloseMoreMobileDrawer() {
+  handleCloseMoreMobileDrawer = () => {
     this.moreMobileDrawer.inert = true;
     this.mobileDrawer.inert = false;
     this.mobileMoreButton.setAttribute("aria-expanded", "false");
     this.moreMobileDrawer?.classList.remove(
       `${this.prefix}--nav-mobile-drawer--open`
     );
-  }
+  };
 
   /**
    * Handles the breakpoint change event.
@@ -374,11 +351,11 @@ export default class MobileNav extends StatefulComponent {
    *
    * @param {string} breakpoint - The current breakpoint
    */
-  handleBreakpointChange(isMobile) {
+  handleBreakpointChange = (isMobile) => {
     if (!isMobile) {
       this.state.mobDrawerIsOpen = false;
       this.state.languagesMobDrawerIsOpen = false;
       this.state.moreMobDrawerIsOpen = false;
     }
-  }
+  };
 }

@@ -34,25 +34,21 @@ export default class LanguageToggle extends StatefulComponent {
   }
 
   /**
-   * Initializes the component by setting up DOM references, binding event handlers,
-   * enabling event listeners, and registering state change handlers.
+   * Initializes the component by setting up DOM references and registering state change handlers.
    *
    * @returns {LanguageToggle} The instance for method chaining
    */
-  init() {
-    this.cacheDomReferences()
-      .bindHandlers()
-      .enableHandlers()
-      .registerStateHandlers();
+  init = () => {
+    this.cacheDomReferences().enableHandlers().registerStateHandlers();
     return this;
-  }
+  };
 
   /**
    * Caches references to DOM elements needed by the component
    *
    * @returns {LanguageToggle} The instance for method chaining
    */
-  cacheDomReferences() {
+  cacheDomReferences = () => {
     this.contextMenuTemplate = this.element.querySelector(
       `#${this.prefix}--context-menu--template`
     );
@@ -61,31 +57,14 @@ export default class LanguageToggle extends StatefulComponent {
     );
 
     return this;
-  }
-
-  /**
-   * Binds all event handler methods to the component instance
-   *
-   * @returns {LanguageToggle} The instance for method chaining
-   */
-  bindHandlers() {
-    this.handleFocusTrap = this.handleFocusTrap.bind(this);
-    this.registerStateHandlers = this.registerStateHandlers.bind(this);
-    this.handleTabNavigation = this.handleTabNavigation.bind(this);
-    this.handleOutsideClick = this.handleOutsideClick.bind(this);
-    this.handleOpenContextMenu = this.handleOpenContextMenu.bind(this);
-    this.handleCloseContextMenu = this.handleCloseContextMenu.bind(this);
-    this.positionContextMenu = this.positionContextMenu.bind(this);
-    this.handleClick = this.handleClick.bind(this);
-    return this;
-  }
+  };
 
   /**
    * Registers handlers for state changes
    *
    * @returns {LanguageToggle} The instance for method chaining
    */
-  registerStateHandlers() {
+  registerStateHandlers = () => {
     this.registerStateHandler("contextMenuIsOpen", (value) => {
       if (value) {
         this.handleOpenContextMenu();
@@ -94,17 +73,17 @@ export default class LanguageToggle extends StatefulComponent {
       }
     });
     return this;
-  }
+  };
 
   /**
    * Enables event listeners for user interactions
    *
    * @returns {LanguageToggle} The instance for method chaining
    */
-  enableHandlers() {
+  enableHandlers = () => {
     this.contextButton.addEventListener("click", this.handleClick);
     return this;
-  }
+  };
 
   /**
    * Handles click events on the toggle button
@@ -112,18 +91,18 @@ export default class LanguageToggle extends StatefulComponent {
    * @param {MouseEvent} e - The click event
    * @returns {LanguageToggle} The instance for method chaining
    */
-  handleClick(e) {
+  handleClick = (e) => {
     e.stopPropagation();
     this.state.contextMenuIsOpen = !this.state.contextMenuIsOpen;
     return this;
-  }
+  };
 
   /**
    * Opens the context menu and sets up necessary event listeners
    *
    * @returns {LanguageToggle} The instance for method chaining
    */
-  handleOpenContextMenu() {
+  handleOpenContextMenu = () => {
     this.contextMenuContent = this.contextMenuTemplate.content.cloneNode(true);
     document.body.appendChild(this.contextMenuContent);
     this.contextMenu = document.body.querySelector(
@@ -141,36 +120,36 @@ export default class LanguageToggle extends StatefulComponent {
     this.handleTabNavigation();
 
     return this;
-  }
+  };
 
   /**
    * Closes the context menu and cleans up event listeners
    */
-  handleCloseContextMenu() {
+  handleCloseContextMenu = () => {
     this.contextMenu.classList.remove(this.contextMenuVisibleClass);
     this.contextMenu.remove();
     this.contextButton.setAttribute("aria-expanded", "false");
     this.contextMenu.removeEventListener("keydown", this.handleFocusTrap);
     window.removeEventListener("click", this.handleOutsideClick);
     window.removeEventListener("resize", this.positionContextMenu);
-  }
+  };
 
   /**
    * Positions the context menu relative to the toggle button
    */
-  positionContextMenu() {
+  positionContextMenu = () => {
     const containerRect = this.element.getBoundingClientRect();
     const contextMenuRect = this.contextMenu.getBoundingClientRect();
     this.contextMenu.style.left = `${containerRect.left + (containerRect.width - contextMenuRect.width) / 2}px`;
     this.contextMenu.style.top = `${containerRect.bottom}px`;
-  }
+  };
 
   /**
    * Handles clicks outside the context menu to close it
    *
    * @param {MouseEvent} event - The click event
    */
-  handleOutsideClick(event) {
+  handleOutsideClick = (event) => {
     if (
       this.state.contextMenuIsOpen &&
       !this.element?.contains(event.target) &&
@@ -178,14 +157,14 @@ export default class LanguageToggle extends StatefulComponent {
     ) {
       this.state.contextMenuIsOpen = false;
     }
-  }
+  };
 
   /**
    * Manages keyboard focus within the context menu
    *
    * @param {KeyboardEvent} event - The keyboard event
    */
-  handleFocusTrap(event) {
+  handleFocusTrap = (event) => {
     // Get all focusable elements in the context menu
     const focusableElements = Array.from(
       this.contextMenu.querySelectorAll("a")
@@ -195,17 +174,17 @@ export default class LanguageToggle extends StatefulComponent {
       this.state.contextMenuIsOpen = false;
       this.contextButton.focus();
     });
-  }
+  };
 
   /**
    * Sets up keyboard navigation for the context menu
    */
-  handleTabNavigation() {
+  handleTabNavigation = () => {
     // Browser hack to make sure that the context menu is in the DOM
     // and done transitioning before we try to focus it
     setTimeout(() => {
       this.contextMenu.focus();
       this.contextMenu.addEventListener("keydown", this.handleFocusTrap);
     }, 100);
-  }
+  };
 }
