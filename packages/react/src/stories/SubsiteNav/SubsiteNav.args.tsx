@@ -1,12 +1,9 @@
 const SubsiteNavArgs = {
   branding: {
     logo: {
-      main: <img src="/logo_en_horizontal_white.svg" alt="Logo" width={105} />,
-      drawer: (
-        <img src="/logo_en_horizontal_blue_dark.svg" alt="Logo" width={105} />
-      ),
+      main: <img src="/ilo-live-logo-en-light.png" alt="Logo" />,
+      drawer: <img src="/ilo-live-logo-en-dark.png" alt="Logo" />,
     },
-    name: "Subsite Name",
     onClick: () => {
       window.location.href = "https://ilo.org";
     },

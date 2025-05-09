@@ -54,7 +54,6 @@ const MobileNavigation = ({
           <div className={`${baseClass}__logo`}>
             {branding.logo.drawer || branding.logo.main}
           </div>
-          <h3 className={`${baseClass}__name`}>{branding.name}</h3>
         </div>
       }
       widgets={
