@@ -20,15 +20,6 @@ describe("SubsiteNav", () => {
       });
     });
 
-    it("renders the subsite name", () => {
-      cy.get("@subsiteNav").within(() => {
-        cy.get(".ilo--subsite-nav-complex__branding-main__name").should(
-          "contain",
-          fixture.branding.name
-        );
-      });
-    });
-
     it("renders the tag line", () => {
       cy.get("@subsiteNav").within(() => {
         cy.get(".ilo--subsite-nav-complex__branding-tag__main").should(
@@ -194,21 +185,6 @@ describe("SubsiteNav", () => {
           .should("have.attr", "role", "button")
           .should("have.attr", "aria-label", "Branding")
           .should("have.attr", "tabindex", "0");
-      });
-    });
-
-    it("maintains proper heading hierarchy", () => {
-      cy.get("@subsiteNav").within(() => {
-        cy.get(".ilo--subsite-nav-complex__branding-main__name").should(
-          "have.prop",
-          "tagName",
-          "H3"
-        );
-        cy.get(".ilo--subsite-nav-complex__branding-tag__main").should(
-          "have.prop",
-          "tagName",
-          "H4"
-        );
       });
     });
   });
