@@ -1,5 +1,53 @@
 # @ilo-org/styles
 
+## 1.7.3
+
+### Patch Changes
+
+- 20d48f5a3: **Callout:** Fix unreadable background color and some other minor issues
+
+## 1.7.2
+
+### Patch Changes
+
+- 264a5ebf3: **PromoCard:**
+
+  - Correct `font-size` in mobile view and when `size` is set to `narrow`
+  - Refactor and correct sizing and layout
+
+- 2f7dab95a: **ScoreCard:** Corrected typography
+- 3041e7607: **Card:** Fix the color of card titles
+  **Profile:** Fix the color of link titles
+- b648f80f5: **Tag:** Fix hover color when `tagType` is `reset`
+- 6366c87e6: **Card:** Change intro font size
+  **DetailCard:**
+
+  - Make card full width in mobile view
+  - Fix font styles
+
+- 8069f6fbd: **CardGroup:** Allow to set the width of cards that it contains
+
+## 1.7.1
+
+### Patch Changes
+
+- a50d0ad83: **DetailCard:** Fix bug that distorted image width
+
+## 1.7.0
+
+### Minor Changes
+
+- a748e1247: **Tabs:** Now supports `dark` theme
+
+### Patch Changes
+
+- 92d199971: - **LinkList:** Change width
+  - **Button:** Add submit prop
+  - **DataCard:** Can receive `copy` as ReactNode
+  - **Dropdown:** Can receive default value
+  - **Tabs:** Can receive custom `className`
+- 105d40f7a: **Profile:** Fix dark theme link hover background color
+
 ## 1.6.2
 
 ### Patch Changes

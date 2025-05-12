@@ -1,12 +1,13 @@
 @use "../tokens" as *;
 @use "../functions" as *;
 @import "../mixins";
+@import "../animations";
 
 .ilo--language-toggle {
   --ilo--language-toggle-color: var(--ilo-color-white);
-  --ilo--language-toggle-color-hover: var(--ilo-color-blue);
+  --ilo--language-toggle-color-hover: var(--ilo-color-white);
   --ilo--language-toggle-bg: transparent;
-  --ilo--language-toggle-bg-hover: transparent;
+  --ilo--language-toggle-bg-hover: var(--ilo-color-blue-dark);
 
   &__theme {
     &__dark {
@@ -15,16 +16,13 @@
     }
   }
 
-  &:hover,
-  &__open {
-    --ilo--language-toggle-color: var(--ilo--language-toggle-color-hover);
-    --ilo--language-toggle-bg: var(--ilo--language-toggle-bg-hover);
-  }
-
   display: inline-block;
+  height: 100%;
 
   &--container {
-    // Button unsets to perserve accessibility
+    @include globaltransition("background-color, color");
+
+    height: 100%;
     background: none;
     border: none;
     padding: 0;
@@ -35,16 +33,19 @@
     box-shadow: none;
     appearance: none;
     cursor: pointer;
-
     display: flex;
     align-items: center;
     gap: px-to-rem(4px);
     cursor: pointer;
     width: fit-content;
     background-color: var(--ilo--language-toggle-bg);
+    color: var(--ilo--language-toggle-color);
 
-    &:hover {
-      background-color: var(--ilo--language-toggle-bg-hover);
+    &:hover,
+    &:focus,
+    &__open {
+      --ilo--language-toggle-color: var(--ilo--language-toggle-color-hover);
+      --ilo--language-toggle-bg: var(--ilo--language-toggle-bg-hover);
     }
   }
 
@@ -66,8 +67,6 @@
 
   &--action {
     color: var(--ilo--language-toggle-color);
-
-    //move this when the new typography is ready ##896
     font-family: var(--ilo-fonts-display);
     font-weight: 700;
     font-size: px-to-rem(14px);
@@ -93,6 +92,10 @@
       opacity: 1;
       visibility: visible;
       transform: translateY(0);
+    }
+
+    &:focus {
+      outline: none;
     }
   }
 }

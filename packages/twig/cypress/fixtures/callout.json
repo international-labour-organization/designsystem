@@ -1,0 +1,19 @@
+{
+  "title": "Important Notice",
+  "content": "This is the main content of the callout component that can contain rich text and other HTML elements",
+  "button": {
+    "label": "Take action",
+    "url": "https://www.ilo.org",
+    "target": "_blank",
+    "icon": false,
+    "className": "optionalclass"
+  },
+  "toggleOpenLabel": "Less",
+  "toggleClosedLabel": "More",
+  "settings": {
+    "alert": "info",
+    "prefix": "ilo",
+    "isCollapsible": true,
+    "isOpen": false
+  }
+}

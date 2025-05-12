@@ -37,6 +37,8 @@ const Default: StoryObj<CalloutProps> = {
     type: "info",
     isCollapsible: false,
     isOpen: true,
+    toggleOpenLabel: "Less",
+    toggleClosedLabel: "More",
   },
   name: "Info",
 };

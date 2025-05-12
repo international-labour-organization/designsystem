@@ -49,7 +49,6 @@ const CompactNav = forwardRef<HTMLElement, CompactNavProps>(
               <div className={`${baseClass}__branding-logo`}>
                 {branding.logo.main}
               </div>
-              <h3 className={`${baseClass}__branding-name`}>{branding.name}</h3>
             </div>
             <NavigationMenu
               className={`${baseClass}__menu`}

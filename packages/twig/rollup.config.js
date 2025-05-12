@@ -58,11 +58,15 @@ const copyConfig = copy({
       },
     },
     {
-      src: "src/components/**/**.twig",
+      src: "src/components/**/*.twig",
       dest: "dist/components/",
       rename: (name, extension, fullPath) => {
-        const componentFolder = fullPath.match(/(.*)\/(.*)\/(.*).twig$/)?.[2];
-        return `${componentFolder}/${name}.${extension}`;
+        // Extract the full path after src/components/
+        const pathMatch = fullPath.match(/src\/components\/(.*)\/(.*)\.twig$/);
+        if (!pathMatch) return `${name}.${extension}`;
+
+        const [_, componentPath, fileName] = pathMatch;
+        return `${componentPath}/${fileName}.${extension}`;
       },
       transform: (contents, path) =>
         contents

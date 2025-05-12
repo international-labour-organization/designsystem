@@ -1,0 +1,20 @@
+{# mobilemenulist.twig #}
+
+{# List items can have url or href attribute #}
+
+{% set prefix = prefix|default("ilo") %}
+{% set base_class = prefix ~ "--nav-mobile-menu" %}
+{% set isActiveLabel = isActiveLabel|default(null) %}
+
+<ul class="{{ base_class }}">
+  {% for item in menu %}
+    {% set url = item.url|default(item.href|default('')) %}
+    {% set isActive = isActiveLabel is not null ? isActiveLabel == item.label : item.isActive %}
+    <li class="{{ base_class }}__item {% if isActive %}{{ base_class }}__item--active{% endif %}">
+      <a href="{{ url }}" class="{{ base_class }}__link">
+        {{ item.label }}
+      </a>
+      {% if isActive %}<span class="{{ base_class }}__marked"></span>{% endif %}
+    </li>
+  {% endfor %}
+</ul>

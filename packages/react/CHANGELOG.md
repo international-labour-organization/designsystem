@@ -1,5 +1,62 @@
 # @ilo-org/react
 
+## 0.23.4
+
+### Patch Changes
+
+- 20d48f5a3: **Callout:** Fix unreadable background color and some other minor issues
+- Updated dependencies [20d48f5a3]
+  - @ilo-org/styles@1.7.3
+
+## 0.23.3
+
+### Patch Changes
+
+- 21fcdebb2: **DetailCard:** Add an option to swap the link component
+  **ScoreCard:** Add an option to swap the link component
+
+## 0.23.2
+
+### Patch Changes
+
+- 14dad84ee: **Tab:** Default value for the active tab
+- 1bc5f9674: **ScoreCard:** Add `ReactNode` support
+  **MultilinkCard::** Add `ReactNode` support
+- Updated dependencies [264a5ebf3]
+- Updated dependencies [2f7dab95a]
+- Updated dependencies [3041e7607]
+- Updated dependencies [b648f80f5]
+- Updated dependencies [6366c87e6]
+- Updated dependencies [8069f6fbd]
+  - @ilo-org/styles@1.7.2
+
+## 0.23.1
+
+### Patch Changes
+
+- Updated dependencies [a50d0ad83]
+  - @ilo-org/styles@1.7.1
+
+## 0.23.0
+
+### Minor Changes
+
+- a748e1247: **Tabs:** Now supports `dark` theme
+
+### Patch Changes
+
+- 05cf5839d: **TextInput:** Gets value prop
+- 92d199971: - **LinkList:** Change width
+  - **Button:** Add submit prop
+  - **DataCard:** Can receive `copy` as ReactNode
+  - **Dropdown:** Can receive default value
+  - **Tabs:** Can receive custom `className`
+- 88fd21e2b: **Profile:** Add chevron to link and make some accessibility improvements.
+- Updated dependencies [92d199971]
+- Updated dependencies [a748e1247]
+- Updated dependencies [105d40f7a]
+  - @ilo-org/styles@1.7.0
+
 ## 0.22.2
 
 ### Patch Changes

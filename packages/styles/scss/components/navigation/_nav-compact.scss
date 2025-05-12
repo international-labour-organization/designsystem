@@ -35,35 +35,20 @@
     cursor: pointer;
 
     &-logo {
-      display: flex;
-      align-items: center;
       height: px-to-rem(38px);
-      padding-inline-end: spacing(4);
-      border-right: 1px solid var(--ilo-color-white);
-
-      [dir="rtl"] & {
-        padding-inline-start: spacing(4);
-        border-right: none;
-        border-left: 1px solid var(--ilo-color-white);
-      }
+      width: auto;
 
       img {
         height: 100%;
       }
-    }
-
-    &-name {
-      padding-inline-start: spacing(4);
-      color: var(--ilo-color-white);
-      @include typography("heading-3");
-      font-size: px-to-rem(16px); //Designs have wrong config
     }
   }
 
   &__menu {
     display: flex;
     align-items: center;
-    gap: px-to-rem(48px);
+    height: 100%;
+    // gap: px-to-rem(48px);
 
     @include breakpoint("lg", true) {
       display: none;
@@ -113,8 +98,6 @@
       height: inherit;
       width: 100%;
       display: flex;
-      gap: px-to-rem(12px);
-      padding-inline: spacing(3);
       align-items: center;
     }
 
@@ -126,34 +109,46 @@
       display: flex;
       align-items: center;
       text-wrap: nowrap;
+      padding-inline: spacing(3);
 
-      &:hover {
-        color: var(--ilo-color-blue);
+      &:hover,
+      &:focus {
+        background-color: var(--ilo-color-blue-dark);
+        color: var(--ilo-color-white);
       }
     }
 
     &-language {
-      .ilo--language-toggle__theme__dark {
-        --ilo--language-toggle-color-hover: var(--ilo-color-blue);
-      }
       position: relative;
       height: 100%;
       display: flex;
       align-items: center;
+
+      button {
+        padding-inline: spacing(3);
+      }
     }
 
     &-search {
       --ilo-subsite-nav-widget-bar-search-color: var(--ilo-color-blue-dark);
       height: 100%;
-      display: flex;
+      display: inline-flex;
       align-items: center;
-      width: px-to-rem(24px);
-      height: px-to-rem(24px);
+      padding-inline: spacing(3);
 
-      @include icon("search", var(--ilo-subsite-nav-widget-bar-search-color));
+      &:after {
+        content: "";
+        display: flex;
+        align-items: center;
+        width: px-to-rem(24px);
+        height: px-to-rem(24px);
+        @include icon("search", var(--ilo-subsite-nav-widget-bar-search-color));
+      }
 
-      &:hover {
-        --ilo-subsite-nav-widget-bar-search-color: var(--ilo-color-blue);
+      &:hover,
+      &:focus {
+        --ilo-subsite-nav-widget-bar-search-color: var(--ilo-color-white);
+        background-color: var(--ilo-color-blue-dark);
       }
     }
   }
