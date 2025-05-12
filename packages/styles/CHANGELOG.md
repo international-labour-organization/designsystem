@@ -1,5 +1,17 @@
 # @ilo-org/styles
 
+## 1.8.0
+
+### Minor Changes
+
+- aac20fcb0: **Nav:** Remove styles for dynamic subsite name in Nav.
+
+### Patch Changes
+
+- aac20fcb0: **LanguageToggle:** Accessibility improvements
+- 1bc3951da: **SubsiteNav:** Update styles and fix some accessibility issues
+- a54793235: **ScoreCard:** Fix dark theme issues and minor style issues
+
 ## 1.7.3
 
 ### Patch Changes
