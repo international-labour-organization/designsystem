@@ -19,5 +19,4 @@
 		<input id="{{ id is defined ? id : name }}" name="{{ name }}" type="radio" {% if defaultChecked is defined and defaultChecked %} defaultchecked {% endif %} {% if checked is defined and checked %} checked {% endif %} {% if ariaDescribedBy is defined %} aria-describedby="{{ ariaDescribedBy }}" {% endif %} {% if checked is defined and checked %} checked {% endif %} value="{{ value }}" {% if disabled is defined and disabled %} disabled {% endif %} {% if required is defined and required %} required {% endif %}/>
 		<span class="{{ controlClass }}"></span>
 	</div>
-
 {% endblock %}

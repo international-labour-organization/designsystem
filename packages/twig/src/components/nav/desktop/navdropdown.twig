@@ -1,0 +1,15 @@
+{# navdropdown.twig #}
+
+{% set prefix = prefix|default("ilo") %}
+{% set base_class = prefix ~ "--nav-dropdown" %}
+
+<template id="{{ prefix }}--nav-dropdown__template">
+  <div class="{{ base_class }} {{ className|default("") }}" id="{{ base_class }}" tabindex="0">
+    <div class="{{ base_class }}__container">
+      {% include "@components/nav/desktop/navmenugrid.twig" with {
+        menu: menu,
+        prefix: prefix
+      } only %}
+    </div>
+  </div>
+</template>

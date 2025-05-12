@@ -21,4 +21,12 @@ contextmenu:
           url: "http://www.google.com"
         - label: Link Five Is Slightly Longer
           url: "http://www.google.com"
+    className:
+      type: string
+      label: className
+      description: Additional CSS class name(s) to add to the context menu
+    contextMenuId:
+      type: string
+      label: contextMenuId
+      description: Optional HTML ID attribute for the context menu element
   visibility: storybook

@@ -1,0 +1,51 @@
+{% extends "@components/nav/mobile/mobiledrawer_layout.twig" %}
+
+{% block mobile_drawer_header %}
+  <div class="{{ mobile_class }}__branding">
+    <div class="{{ mobile_class }}__logo">
+      <img src="{{ branding.logo.drawer }}" alt="{{ branding.logo.alt }}">
+    </div>
+  </div>
+{% endblock %}
+
+{% block mobile_drawer_widgets %}
+  {% if widgets.search %}
+    <a class="{{ mobile_class }}__widgets-search" href="{{ widgets.search.url }}" aria-label="{{ widgets.search.label }}">
+      <span class="{{ mobile_class }}__widgets-search__label">
+        {{ widgets.search.label }}
+      </span>
+      <span class="{{ mobile_class }}__widgets-search__icon" />
+    </a>
+  {% endif %}
+
+  {% if widgets.link %}
+    <a class="{{ mobile_class }}__widgets-link" href="{{ widgets.link.href }}">{{ widgets.link.label }}</a>
+  {% endif %}
+
+  {% if widgets.language %}
+    <button
+      class="{{ mobile_class }}__widgets-language"
+      aria-label="{{ widgets.language.label }}"
+      aria-expanded="false"
+      aria-haspopup="menu"
+      aria-controls="{{ prefix }}--nav-mobile-drawer__languages"
+      id="{{ prefix }}--nav-mobile-drawer__languages__button"
+    >
+      <span class="{{ mobile_class }}__widgets-language__label">
+        {{ widgets.language.label }}: {{ widgets.language.language }}
+      </span>
+      <span class="{{ mobile_class }}__widgets-language__icon" />
+    </button>
+  {% endif %}
+{% endblock %}
+
+{% block mobile_drawer_content %}
+  {% include "@components/nav/mobile/mobilemenulist.twig" with {
+    menu: menu,
+    prefix: prefix,
+  } only %}
+
+  {% if showMoreButton %}
+    <button class="{{ mobile_class }}__more" aria-expanded="false" aria-controls="more-items" aria-label="More items">More<span class="{{ mobile_class }}__more__icon"></span></button>
+  {% endif %}
+{% endblock %}

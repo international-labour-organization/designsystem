@@ -81,9 +81,6 @@ const ComplexNav = forwardRef<HTMLElement, ComplexNavProps>(
               >
                 {branding.logo.main}
               </div>
-              <h3 className={`${baseClass}__branding-main__name`}>
-                {branding.name}
-              </h3>
             </div>
             <div className={`${baseClass}__branding-tag`}>
               <h4 className={`${baseClass}__branding-tag__main`}>
@@ -114,9 +111,6 @@ const ComplexNav = forwardRef<HTMLElement, ComplexNavProps>(
               >
                 {branding.logo.mobile}
               </div>
-              <h3 className={`${baseClass}__nav-mobile__name`}>
-                {branding.name}
-              </h3>
             </div>
             {facadeItems && (
               <NavigationMenu

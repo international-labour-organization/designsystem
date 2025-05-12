@@ -7,32 +7,16 @@
   &__branding {
     display: flex;
     align-items: center;
-    height: px-to-rem(38px);
   }
 
   &__logo {
     display: flex;
     align-items: center;
-    padding-inline-end: spacing(4);
-    border-right: 1px solid var(--ilo-color-blue-dark);
-
-    [dir="rtl"] & {
-      padding-inline-start: spacing(4);
-      border-right: none;
-      border-left: 1px solid var(--ilo-color-blue-dark);
-    }
+    height: px-to-rem(38px);
 
     img {
       height: 100%;
     }
-  }
-
-  &__name {
-    padding-inline-start: spacing(4);
-    font-weight: 700;
-    font-size: px-to-rem(13);
-    line-height: 125%;
-    color: var(--ilo-color-blue-dark);
   }
 
   &__widgets {

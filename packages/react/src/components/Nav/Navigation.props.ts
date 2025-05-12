@@ -33,11 +33,6 @@ export interface SubsiteNavCoreProps {
     };
 
     /**
-     * The site or product name
-     */
-    name: string;
-
-    /**
      * The handler to call when the branding is clicked
      */
     onClick?: () => void;
