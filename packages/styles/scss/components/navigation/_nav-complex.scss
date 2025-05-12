@@ -83,18 +83,9 @@
         text-decoration: none;
         color: var(--ilo-color-white);
 
-        &:hover {
-          background-color: var(--ilo-color-blue-lighter);
-          color: var(--ilo-color-blue);
-        }
-      }
-
-      &__language {
-        &:hover {
-          height: 100%;
-          display: flex;
-          align-items: center;
-          background-color: var(--ilo-color-blue-lighter);
+        &:hover,
+        &:focus {
+          background-color: var(--ilo-color-blue-dark);
         }
       }
     }
@@ -133,8 +124,8 @@
 
       &__logo img {
         height: 100%;
-        padding-inline-end: spacing(4);
-        border-inline-end: 1px solid var(--ilo-color-blue-dark);
+        height: px-to-rem(72px);
+        width: auto;
       }
 
       &__name {
@@ -169,6 +160,7 @@
     }
 
     &-menu {
+      height: 100%;
       @include breakpoint("lg", true) {
         display: none;
       }
@@ -185,19 +177,12 @@
 
       &__logo {
         padding-inline-end: spacing(4);
-        border-inline-end: 1px solid var(--ilo-color-white);
         height: px-to-rem(38px);
 
         img {
           height: 100%;
+          width: auto;
         }
-      }
-
-      &__name {
-        padding-inline-start: spacing(4);
-        color: var(--ilo-color-white);
-        @include typography("heading-3");
-        font-size: px-to-rem(16px); //Designs have wrong config
       }
     }
 
@@ -222,9 +207,10 @@
         cursor: pointer;
       }
 
-      &:hover {
-        --ilo-subsite_nav_complex-search-color: var(--ilo-color-blue);
-        background-color: var(--ilo-color-blue-lighter);
+      &:hover,
+      &:focus {
+        --ilo-subsite_nav_complex-search-color: var(--ilo-color-white);
+        background-color: var(--ilo-color-blue-dark);
       }
     }
 

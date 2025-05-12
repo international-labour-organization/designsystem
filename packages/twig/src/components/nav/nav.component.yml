@@ -1,0 +1,105 @@
+nav:
+  namespace: Components/Nav
+  use: "@components/nav/nav.twig"
+  label: SubsiteNav
+  description: A complex navigation component with branding, widgets, and menu sections
+  fields:
+    branding:
+      type: object
+      label: Branding
+      description: Branding elements including logo and name
+      required: true
+      preview:
+        logo:
+          main: "images/ilo-live-logo-en-dark.png"
+          mobile: "images/ilo-live-logo-en-light.png"
+          drawer: "images/ilo-live-logo-en-dark.png"
+          alt: "ILO Logo"
+        tag:
+          main: "Advancing social justice, promoting decent work"
+          sub: "ILO is a specialized agency of the United Nations"
+    widgets:
+      type: object
+      label: Widgets
+      description: Widgets section including link and language toggle
+      preview:
+        link:
+          href: "https://www.ilo.org"
+          label: "Go to main ILO website"
+        language:
+          label: "Language"
+          language: "English"
+          links:
+            - label: "English"
+              url: "https://www.ilo.org/en"
+            - label: "Français"
+              url: "https://www.ilo.org/fr"
+            - label: "Español"
+              url: "https://www.ilo.org/es"
+            - label: "العربية"
+              url: "https://www.ilo.org/ar"
+            - label: "中文"
+              url: "https://www.ilo.org/ru"
+            - label: "Português"
+              url: "https://www.ilo.org/pt"
+            - label: "Italiano"
+              url: "https://www.ilo.org/it"
+        search:
+          label: "Search"
+          url: "https://www.ilo.org/search"
+    facadeItems:
+      type: object
+      label: Facade Menu Items
+      description: Primary menu items displayed in the main navigation
+      preview:
+        - href: "https://www.ilo.org/"
+          label: "Menu Item 1"
+          isActive: true
+          className: "test"
+        - href: "https://www.ilo.org/"
+          label: "Menu Item 2"
+          isActive: false
+          className: "test"
+        - href: "https://www.ilo.org/"
+          label: "Menu Item 3"
+          isActive: false
+          className: "test"
+    moreItems:
+      type: object
+      label: More Menu Items
+      description: Additional menu items displayed in the dropdown
+      preview:
+        - href: "https://www.ilo.org/more1"
+          label: "More Item 1"
+        - href: "https://www.ilo.org/more2"
+          label: "More Item 2"
+        - href: "https://www.ilo.org/more3"
+          label: "More Item 3"
+        - href: "https://www.ilo.org/more4"
+          label: "More Item 4"
+        - href: "https://www.ilo.org/more5"
+          label: "More Item 5"
+        - href: "https://www.ilo.org/more6"
+          label: "More Item 6"
+        - href: "https://www.ilo.org/more7"
+          label: "More Item 7"
+        - href: "https://www.ilo.org/more8"
+          label: "More Item 8"
+    labels:
+      type: object
+      label: Labels
+      description: Text labels used throughout the navigation
+      preview:
+        more: "More"
+        language: "Language"
+        home: "Menu home"
+  settings:
+    navtype:
+      label: Type
+      type: select
+      description: What kind of navigation component to render
+      options:
+        compact: compact
+        complex: complex
+      preview: "complex"
+  visibility: storybook

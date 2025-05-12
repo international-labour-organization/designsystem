@@ -1,0 +1,25 @@
+{% extends "@components/nav/mobile/mobiledrawer_layout.twig" %}
+{% set prefix = prefix|default("ilo") %}
+{% set menu_home = menu_home|default("Menu home") %}
+{% set menu_title = title|default("Title") %}
+{% set isActiveLabel = isActiveLabel|default(null) %}
+
+{% block mobile_drawer_header %}
+  <div class="{{ mobile_class}}-drawer__header-main">
+    <button class="{{ mobile_class}}__nested__header" aria-label="Back to menu">
+      <span class="{{ mobile_class}}__nested__header__icon"></span>{{ menu_home }}
+    </button>
+  </div>
+{% endblock %}
+
+{% block mobile_drawer_widgets %}
+  <span class="{{ mobile_class}}__nested__title">{{ menu_title }}</span>
+{% endblock %}
+
+{% block mobile_drawer_content %}
+  {% include "@components/nav/mobile/mobilemenulist.twig" with {
+    menu: menu,
+    prefix: prefix,
+    isActiveLabel: isActiveLabel,
+  } only %}
+{% endblock %}
