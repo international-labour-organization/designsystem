@@ -1,5 +1,22 @@
 # @ilo-org/twig
 
+## 1.8.0
+
+### Minor Changes
+
+- 4a718ea43: **Nav:** This version introduces a new `Nav` component which will eventually take the place of [Navigation](https://twig.ui.ilo.org/?path=/docs/components-navigation-navigation--docs). This version implements the `SubsiteNav` variant, which supports `complex` and `compact` navigation menus for subsites. In future versions, it will support the navigation of flagship sites as well, taking the place of [Navigation](https://twig.ui.ilo.org/?path=/docs/components-navigation-navigation--docs) which will be deprecated.
+
+### Patch Changes
+
+- bde0a5ee3: **LanguageToggle:** Can take an optional `className` component
+- 4a718ea43: **ContextMenu:** Now accepts `className` field.
+- 4a718ea43: **LanguageToggle:** Accessibility improvements
+- Updated dependencies [aac20fcb0]
+- Updated dependencies [1bc3951da]
+- Updated dependencies [a54793235]
+- Updated dependencies [aac20fcb0]
+  - @ilo-org/styles@1.8.0
+
 ## 1.7.4
 
 ### Patch Changes
