@@ -31,20 +31,12 @@ const Complex: StoryObj<SubsiteNavProps> = {
         ...SubsiteNavArgs.branding,
         logo: {
           ...SubsiteNavArgs.branding.logo,
-          main: (
-            <img
-              src="/logo_en_horizontal_blue_dark.svg"
-              alt="Logo"
-              width={200}
-            />
-          ),
-          mobile: (
-            <img src="/logo_en_horizontal_white.svg" alt="Logo" width={105} />
-          ),
+          main: <img src="/ilo-live-logo-en-dark.png" alt="Logo" />,
+          mobile: <img src="/ilo-live-logo-en-light.png" alt="Logo" />,
         },
         tag: {
-          main: "Advancing social justice, promoting decent work",
-          sub: "ILO is a specialized agency of the United Nations",
+          main: "Live events that shape the future of work",
+          sub: "The official livestream platform of the ILO",
         },
       },
     },

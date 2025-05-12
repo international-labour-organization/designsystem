@@ -35,28 +35,12 @@
     cursor: pointer;
 
     &-logo {
-      display: flex;
-      align-items: center;
       height: px-to-rem(38px);
-      padding-inline-end: spacing(4);
-      border-right: 1px solid var(--ilo-color-white);
-
-      [dir="rtl"] & {
-        padding-inline-start: spacing(4);
-        border-right: none;
-        border-left: 1px solid var(--ilo-color-white);
-      }
+      width: auto;
 
       img {
         height: 100%;
       }
-    }
-
-    &-name {
-      padding-inline-start: spacing(4);
-      color: var(--ilo-color-white);
-      @include typography("heading-3");
-      font-size: px-to-rem(16px); //Designs have wrong config
     }
   }
 

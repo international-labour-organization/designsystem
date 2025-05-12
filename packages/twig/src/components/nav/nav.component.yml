@@ -11,11 +11,10 @@ nav:
       required: true
       preview:
         logo:
-          main: "images/logo_en_horizontal_blue_dark.svg"
-          mobile: "images/logo_en_horizontal_white.svg"
-          drawer: "images/logo_en_horizontal_blue_dark.svg"
+          main: "images/ilo-live-logo-en-dark.png"
+          mobile: "images/ilo-live-logo-en-light.png"
+          drawer: "images/ilo-live-logo-en-dark.png"
           alt: "ILO Logo"
-        name: "Subsite Name"
         tag:
           main: "Advancing social justice, promoting decent work"
           sub: "ILO is a specialized agency of the United Nations"
