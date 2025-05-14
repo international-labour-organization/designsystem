@@ -1,0 +1,34 @@
+logo:
+  namespace: Components/Logo
+  use: "@components/logo/logo.twig"
+  label: Logo
+  description: A logo component that can optionally be wrapped in a link
+  fields:
+    src:
+      type: string
+      label: Image Source
+      description: The source URL of the logo image
+      preview: "images/logo_en_horizontal_blue_dark.svg"
+    alt:
+      type: string
+      label: Alt Text
+      description: Alternative text for the logo image
+      preview: "ILO Logo"
+    link:
+      type: object
+      label: Link
+      description: Optional link configuration for the logo
+      preview:
+        href: "https://www.ilo.org"
+        label: "ILO Live Homepage"
+    className:
+      type: string
+      label: Wrapper Class
+      description: CSS class for the logo wrapper element
+      preview: "ilo--logo"
+    imgClassName:
+      type: string
+      label: Image Class
+      description: CSS class for the logo image element
+      preview: "ilo--logo__img"
+  visibility: storybook
