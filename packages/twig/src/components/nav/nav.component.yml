@@ -15,6 +15,9 @@ nav:
           mobile: "images/ilo-live-logo-en-light.png"
           drawer: "images/ilo-live-logo-en-dark.png"
           alt: "ILO Logo"
+          link:
+            href: "https://live.ilo.org"
+            label: "ILO Live Homepage"
         tag:
           main: "Advancing social justice, promoting decent work"
           sub: "ILO is a specialized agency of the United Nations"
