@@ -1,0 +1,27 @@
+{# logo.twig #}
+
+{% set prefix = prefix|default('ilo') %}
+{% set base_class = className|default(prefix ~ '--logo') %}
+{% set img_class = imgClassName|default(base_class ~ '__img') %}
+
+{% if link and link.href %}
+  <a
+    href="{{ link.href }}"
+    class="{{ base_class }} {{ base_class }}--link"
+    {% if link.label %}
+      aria-label="{{ link.label }}"
+    {% endif %}
+  >
+    <img
+      class="{{ img_class }}"
+      src="{{ src }}"
+      alt="{{ alt }}"
+    >
+  </a>
+{% else %}
+  <img
+    class="{{ base_class }} {{ img_class }}"
+    src="{{ src }}"
+    alt="{{ alt }}"
+  >
+{% endif %}

@@ -15,6 +15,47 @@ describe("MobileNav", () => {
     it("should render the burger menu button", () => {
       cy.get("[class$='burger']").should("exist");
     });
+
+    it("renders the mobile logo with correct attributes", () => {
+      cy.get(".ilo--subsite-nav-complex__nav-mobile__logo")
+        .should("exist")
+        .and("have.class", "ilo--subsite-nav-complex__nav-mobile__logo")
+        .first(() => {
+          cy.get("img")
+            .should("exist")
+            .and("have.attr", "src", fixture.branding.logo.mobile)
+            .and("have.attr", "alt", fixture.branding.logo.alt)
+            .and(
+              "have.class",
+              "ilo--subsite-nav-complex__nav-mobile__logo-img"
+            );
+        });
+    });
+
+    it("wraps the mobile logo in a link when link data is provided", () => {
+      cy.get(".ilo--subsite-nav-complex__nav-mobile__logo--link")
+        .first()
+        .should("match", "a")
+        .and("have.attr", "href", fixture.branding.logo.link.href)
+        .and("have.attr", "aria-label", fixture.branding.logo.link.label);
+    });
+
+    it("renders the mobile logo without a link when no link data is provided", () => {
+      // Create a modified fixture without the logo link
+      const fixtureWithoutLink = { ...fixture };
+      delete fixtureWithoutLink.branding.logo.link;
+
+      cy.visit(
+        `/pattern-preview?id=nav&fields=${encodeURI(
+          JSON.stringify(fixtureWithoutLink)
+        )}`
+      );
+
+      cy.get(".ilo--subsite-nav-complex__nav-mobile__logo")
+        .should("match", "img")
+        .and("not.match", "a")
+        .and("have.class", "ilo--subsite-nav-complex__nav-mobile__logo-img");
+    });
   });
 
   describe("Main Drawer", () => {
