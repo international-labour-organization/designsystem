@@ -4,7 +4,11 @@
       "main": "images/logo_en_horizontal_blue_dark.svg",
       "mobile": "images/logo_en_horizontal_white.svg",
       "drawer": "images/logo_en_horizontal_blue_dark.svg",
-      "alt": "ILO Logo"
+      "alt": "ILO Logo",
+      "link": {
+        "href": "https://www.ilo.org",
+        "label": "ILO Homepage"
+      }
     },
     "name": "Subsite Name",
     "tag": {

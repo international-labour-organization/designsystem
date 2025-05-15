@@ -13,7 +13,14 @@
         tabindex="0"
       >
         <div class="{{ base_class }}__branding-logo">
-          <img src="{{ branding.logo.mobile }}" alt="{{ branding.logo.alt }}">
+          {% include "@components/logo/logo.twig" with {
+            src: branding.logo.mobile,
+            alt: branding.logo.alt,
+            link: branding.logo.link,
+            className: base_class ~ '__branding-logo',
+            imgClassName: base_class ~ '__branding-logo-img',
+            prefix: prefix
+          } %}
         </div>
       </div>
 
