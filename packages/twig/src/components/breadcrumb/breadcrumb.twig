@@ -13,7 +13,9 @@
 
 {% set lastlink = links|last %}
 
-<nav class="{{prefix}}--breadcrumb {% if className %}{{className}}{% endif %}" data-prefix="{{prefix}}" data-loadcomponent="Breadcrumb">
+{% set theme = theme|default("light") %}
+
+<nav class="{{prefix}}--breadcrumb {% if className %}{{className}}{% endif %} {{prefix}}--breadcrumb__theme__{{theme}}" data-prefix="{{prefix}}" data-loadcomponent="Breadcrumb">
 	<div class="{{prefix}}--breadcrumb--inner">
 		<ol class="{{prefix}}--breadcrumb--items" id="{{prefix}}--breadcrumb--container">
 			{# Render the first link on its own as a custom icon #}

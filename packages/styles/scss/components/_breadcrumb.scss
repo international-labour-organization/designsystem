@@ -7,8 +7,20 @@
 .#{$prefix}--breadcrumb {
   $breadcrumb: &;
 
+  --ilo-breadcrumb-background-color: var(--ilo-color-white);
+  --ilo-breadcrumb-link-color: var(--ilo-color-blue-dark);
+  --ilo-breadcrumb-link-hover-color: var(--ilo-color-blue);
+
   position: relative;
   z-index: 10;
+
+  &__theme {
+    &__dark {
+      --ilo-breadcrumb-background-color: var(--ilo-color-blue-dark);
+      --ilo-breadcrumb-link-color: var(--ilo-color-white);
+      --ilo-breadcrumb-link-hover-color: var(--ilo-color-white);
+    }
+  }
 
   &--inner {
     display: inline-flex;
@@ -16,7 +28,7 @@
     padding-inline-start: var(--breadcrumb-padding);
     padding-inline-end: spacing(12);
     padding-block: spacing(4);
-    background-color: var(--ilo-color-white);
+    background-color: var(--ilo-breadcrumb-background-color);
     @include cornercut(spacing(12), 100%, "right", "bottom");
 
     [dir="rtl"] & {
@@ -42,7 +54,7 @@
       left: 0;
       position: absolute;
       background-repeat: no-repeat;
-      @include dataurlicon("chevron_right", $color-link-text-default);
+      @include icon("chevron_right", var(--ilo-breadcrumb-link-color));
       background-size: px-to-rem(24px);
       height: px-to-rem(24px);
       width: px-to-rem(24px);
@@ -50,7 +62,7 @@
       [dir="rtl"] & {
         left: auto;
         right: 0;
-        @include dataurlicon("chevron_left", $color-link-text-default);
+        @include icon("chevron_left", var(--ilo-breadcrumb-link-color));
       }
     }
   }
@@ -70,11 +82,11 @@
       width: px-to-rem(24px);
       height: px-to-rem(24px);
       background-size: px-to-rem(24px);
-      @include dataurlicon("dot_menu", $color-link-text-default);
+      @include icon("dot_menu", var(--ilo-breadcrumb-link-color));
 
       &:hover {
         cursor: pointer;
-        @include dataurlicon("dot_menu", $color-base-blue-medium);
+        @include icon("dot_menu", var(--ilo-breadcrumb-link-hover-color));
       }
     }
 
@@ -115,39 +127,30 @@
       width: px-to-rem(24px);
       height: px-to-rem(24px);
 
-      // No chevron befor the home icon
+      // No chevron before the home icon
       &:before {
         content: none;
       }
 
-      &:hover,
-      &:focus {
-        #{$breadcrumb}--link {
-          &:after {
-            @include dataurlicon("home", $color-link-text-hover);
-            width: px-to-rem(24px);
-            height: px-to-rem(24px);
-          }
-        }
-      }
-
       #{$breadcrumb}--link {
-        background: none;
-        width: px-to-rem(16px);
-        height: px-to-rem(16px);
+        height: 24px;
+        width: 24px;
         position: relative;
 
+        &:hover,
+        &:focus {
+          &:after {
+            @include icon("home", var(--ilo-breadcrumb-link-hover-color));
+          }
+        }
+
         &:after {
-          background-position: center center;
-          background-repeat: no-repeat;
           content: "";
           display: block;
-          left: 0;
-          top: 0;
-          height: px-to-rem(24px);
-          width: px-to-rem(24px);
-          background-size: px-to-rem(24px);
-          @include dataurlicon("home", $color-link-text-default);
+          height: 24px;
+          width: 24px;
+          position: relative;
+          @include icon("home", var(--ilo-breadcrumb-link-color));
         }
       }
     }
@@ -156,7 +159,7 @@
   &--link {
     display: inline-flex;
     align-items: center;
-    color: $color-link-text-default;
+    color: var(--ilo-breadcrumb-link-color);
     height: px-to-rem(16px);
     padding-block: 0;
     text-decoration: none;
@@ -172,7 +175,7 @@
 
       &:hover,
       &:focus {
-        color: $color-link-text-hover;
+        color: var(--ilo-breadcrumb-link-hover-color);
         text-decoration: underline;
         text-underline-offset: px-to-rem(4px);
         text-decoration-thickness: px-to-rem(2px);

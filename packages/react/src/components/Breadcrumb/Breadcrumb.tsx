@@ -4,6 +4,7 @@ import classNames from "classnames";
 import useGlobalSettings from "../../hooks/useGlobalSettings";
 import { ContextMenu } from "../ContextMenu";
 import { BreadcrumbItem, BreadcrumbItemProps } from "./BreadcrumbItem";
+import { ThemeTypes } from "../../types";
 
 export type BreadcrumbProps = {
   /**
@@ -20,10 +21,15 @@ export type BreadcrumbProps = {
    * Specify the links to be displayed in the Breadcrumb
    */
   links: BreadcrumbItemProps[];
+
+  /**
+   * Specify the theme of the Breadcrumb
+   */
+  theme?: ThemeTypes;
 };
 
 const Breadcrumb = forwardRef<HTMLElement, BreadcrumbProps>(
-  ({ className, links, buttonLabel }, ref) => {
+  ({ className, links, buttonLabel, theme = "light" }, ref) => {
     const { prefix } = useGlobalSettings();
     const id = useId();
 
@@ -34,6 +40,14 @@ const Breadcrumb = forwardRef<HTMLElement, BreadcrumbProps>(
     const ctxButtonRef = useRef<HTMLButtonElement>(null);
     const ctxContainerRef = useRef<HTMLDivElement>(null);
     const listRef = useRef<HTMLOListElement>(null);
+
+    const breadcrumbClassNames = classNames(
+      `${prefix}--breadcrumb`,
+      className,
+      {
+        [`${prefix}--breadcrumb__theme__${theme}`]: theme,
+      }
+    );
 
     useEffect(() => {
       fullBreadcrumbWidth.current = listRef.current!.offsetWidth;
@@ -104,7 +118,7 @@ const Breadcrumb = forwardRef<HTMLElement, BreadcrumbProps>(
     const lastLink = links.at(-1);
 
     return (
-      <nav className={classNames(`${prefix}--breadcrumb`, className)} ref={ref}>
+      <nav className={breadcrumbClassNames} ref={ref}>
         <div className={`${prefix}--breadcrumb--inner`}>
           <ol
             className={`${prefix}--breadcrumb--items`}
