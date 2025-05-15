@@ -5,6 +5,12 @@ import { BreadcrumbProps } from "../../components/Breadcrumb/Breadcrumb";
 const meta: Meta<typeof Breadcrumb> = {
   title: "Components/Navigation/Breadcrumb",
   component: Breadcrumb,
+  argTypes: {
+    theme: {
+      control: "select",
+      options: ["light", "dark"],
+    },
+  },
 };
 
 const Default: StoryObj<BreadcrumbProps> = {
