@@ -75,6 +75,7 @@ const FormControl: FC<FormControlProps> = ({
   error,
   disabled,
   fieldId,
+  theme = "light",
   labelSize = "medium",
   labelPlacement = "top",
 }) => {
@@ -113,11 +114,13 @@ const FormControl: FC<FormControlProps> = ({
   const errorClass = `${baseClass}__error`;
   const disabledClass = `${baseClass}__disabled`;
   const labelPlacementClass = `${baseClass}__label-placement__${labelPlacement}`;
+  const themeClass = `${baseClass}__theme__${theme}`;
 
   const formControlClass = classnames(
     baseClass,
     className,
     labelPlacementClass,
+    themeClass,
     [{ [errorClass]: error }, { [disabledClass]: disabled }]
   );
 

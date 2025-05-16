@@ -3,6 +3,7 @@ import { DropdownProps } from "../Dropdown/Dropdown.props";
 import { InputProps } from "../Input/Input.props";
 import { TextareaProps } from "../Textarea";
 import { ToggleProps } from "../Toggle";
+import { ThemeTypes } from "../../types";
 
 export interface FormControlPublicProps {
   /**
@@ -54,6 +55,11 @@ export interface FormControlPublicProps {
    * Optional text to render in a tooltip
    */
   tooltip?: string;
+
+  /**
+   * Theme to use for the FormControl
+   */
+  theme?: ThemeTypes;
 }
 
 export interface FormControlPrivateProps {
