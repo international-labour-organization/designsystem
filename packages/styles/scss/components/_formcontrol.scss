@@ -6,9 +6,9 @@
 .ilo--form-control {
   $c: &;
 
-  --ilo-color-label: var(--ilo-color-gray-charcoal);
-  --ilo-color-helper: var(--ilo-color-gray-accessible);
-  --ilo-color-error: var(--ilo-color-red-dark);
+  --ilo-form-control-label-color: var(--ilo-color-gray-charcoal);
+  --ilo-form-control-helper-color: var(--ilo-color-gray-accessible);
+  --ilo-form-control-error-color: var(--ilo-color-red-dark);
 
   grid-area: input;
   display: inline-grid;
@@ -18,14 +18,14 @@
 
   &__theme {
     &__light {
-      --ilo-color-label: var(--ilo-color-gray-charcoal);
-      --ilo-color-helper: var(--ilo-color-gray-accessible);
-      --ilo-color-error: var(--ilo-color-red-dark);
+      --ilo-form-control-label-color: var(--ilo-color-gray-charcoal);
+      --ilo-form-control-helper-color: var(--ilo-color-gray-accessible);
+      --ilo-form-control-error-color: var(--ilo-color-red-dark);
     }
     &__dark {
-      --ilo-color-label: var(--ilo-color-white);
-      --ilo-color-helper: var(--ilo-color-white);
-      --ilo-color-error: var(--ilo-color-red-dark);
+      --ilo-form-control-label-color: var(--ilo-color-white);
+      --ilo-form-control-helper-color: var(--ilo-color-white);
+      --ilo-form-control-error-color: var(--ilo-color-red-dark);
     }
   }
 
@@ -133,12 +133,12 @@
 
   &__error {
     #{$c}--helper {
-      color: var(--ilo-color-error);
+      color: var(--ilo-form-control-error-color);
     }
   }
 
   &--label {
-    color: var(--ilo-color-label);
+    color: var(--ilo-form-control-label-color);
     grid-area: label;
     display: flex;
     flex-flow: row nowrap;
@@ -196,7 +196,7 @@
 
   &--helper {
     grid-area: helper;
-    color: var(--ilo-color-helper);
+    color: var(--ilo-form-control-helper-color);
     font-family: var(--ilo-fonts-copy);
     @include font-styles("body-xxs");
   }
