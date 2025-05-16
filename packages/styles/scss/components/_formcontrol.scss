@@ -6,11 +6,28 @@
 .ilo--form-control {
   $c: &;
 
+  --ilo-color-label: var(--ilo-color-gray-charcoal);
+  --ilo-color-helper: var(--ilo-color-gray-accessible);
+  --ilo-color-error: var(--ilo-color-red-dark);
+
   grid-area: input;
   display: inline-grid;
   grid-template-rows: auto;
   grid-template-columns: auto;
   gap: spacing(2);
+
+  &__theme {
+    &__light {
+      --ilo-color-label: var(--ilo-color-gray-charcoal);
+      --ilo-color-helper: var(--ilo-color-gray-accessible);
+      --ilo-color-error: var(--ilo-color-red-dark);
+    }
+    &__dark {
+      --ilo-color-label: var(--ilo-color-white);
+      --ilo-color-helper: var(--ilo-color-white);
+      --ilo-color-error: var(--ilo-color-red-dark);
+    }
+  }
 
   &__label-placement {
     // Label is to the flex start of form element
@@ -116,12 +133,12 @@
 
   &__error {
     #{$c}--helper {
-      color: $color-base-red-dark;
+      color: var(--ilo-color-error);
     }
   }
 
   &--label {
-    color: $color-base-neutrals-black;
+    color: var(--ilo-color-label);
     grid-area: label;
     display: flex;
     flex-flow: row nowrap;
@@ -179,7 +196,7 @@
 
   &--helper {
     grid-area: helper;
-    color: $color-base-neutrals-medium;
+    color: var(--ilo-color-helper);
     font-family: var(--ilo-fonts-copy);
     @include font-styles("body-xxs");
   }

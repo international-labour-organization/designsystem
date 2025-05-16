@@ -275,6 +275,12 @@ export const formControlArgTypes = {
       },
     },
   },
+  theme: {
+    description: "The theme of the Component",
+    defaultValue: "light",
+    control: "select",
+    options: ["light", "dark"],
+  },
 };
 
 export const labelledFormFieldArgTypes = (element: string) => ({
