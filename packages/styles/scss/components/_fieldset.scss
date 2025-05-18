@@ -4,6 +4,25 @@
 @import "../mixins";
 
 .ilo--fieldset {
+  --ilo-fieldset-legend-color: var(--ilo-color-gray-charcoal);
+  --ilo-fieldset-helper-color: var(--ilo-color-gray-accessible);
+  --ilo-fieldset-error-color: var(--ilo-color-red-dark);
+
+  &__theme {
+    &__light {
+      --ilo-fieldset-legend-color: var(--ilo-color-gray-charcoal);
+      --ilo-fieldset-helper-color: var(--ilo-color-gray-accessible);
+      --ilo-fieldset-error-color: var(--ilo-color-red-dark);
+    }
+    &__dark {
+      --ilo-fieldset-legend-color: var(--ilo-color-yellow);
+      --ilo-fieldset-helper-color: var(--ilo-color-white);
+      --ilo-fieldset-error-color: var(--ilo-color-red-dark);
+    }
+  }
+
+  appearance: none;
+  $c: &;
   $gap: 24px;
   box-sizing: border-box;
 
@@ -14,9 +33,6 @@
     flex-direction: $value;
     @include textmargin("gap", $gap, "label-medium", "display", 0, 0);
   }
-
-  appearance: none;
-  $c: &;
 
   &--legend-wrapper {
     @include textmargin("margin-bottom", $gap, "label-medium", "display", 0, 0);
@@ -33,6 +49,7 @@
     flex-flow: row nowrap;
     align-items: center;
     @include font-styles("label-medium");
+    color: var(--ilo-fieldset-legend-color);
     line-height: px-to-rem(20px);
   }
 
@@ -99,11 +116,11 @@
   }
 
   &--helper {
-    color: $color-base-neutrals-medium;
+    color: var(--ilo-fieldset-helper-color);
   }
 
   &__error {
-    color: $color-base-red-dark;
+    color: var(--ilo-fieldset-error-color);
   }
 
   &__disabled {

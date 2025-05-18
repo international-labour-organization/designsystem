@@ -5,6 +5,16 @@
 .ilo--form {
   $gap: spacing(8);
   $c: &;
+  --ilo-form-legend-color: var(--ilo-color-gray-charcoal);
+
+  &__theme {
+    &__light {
+      --ilo-form-legend-color: var(--ilo-color-gray-charcoal);
+    }
+    &__dark {
+      --ilo-form-legend-color: var(--ilo-color-white);
+    }
+  }
 
   box-sizing: border-box;
   display: flex;
@@ -13,34 +23,14 @@
   flex-direction: column;
   appearance: none;
   gap: $gap;
-  color: $color-base-neutrals-black;
-
-  &__theme {
-    &__light {
-      color: $color-base-neutrals-black;
-
-      label,
-      p {
-        color: $color-base-neutrals-black;
-      }
-    }
-
-    &__dark {
-      color: $color-base-neutrals-lighter;
-
-      label,
-      p {
-        color: $color-base-neutrals-lighter;
-      }
-
-      legend {
-        color: $color-base-yellow;
-      }
-    }
-  }
 
   &__disabled {
     opacity: 0.5;
     pointer-events: none;
+  }
+
+  // Twig uses h2 for the form headline but React doesn't have one
+  h2 {
+    color: var(--ilo-form-legend-color);
   }
 }
