@@ -122,7 +122,6 @@ const Tooltip = forwardRef<HTMLDivElement, TooltipProps>(
           `${baseClass}--wrapper`,
           {
             [`${baseClass}--wrapper__icon`]: icon,
-            [`${baseClass}--wrapper__icon__theme__${theme}`]: icon && theme,
             [`${baseClass}--wrapper__icon__theme__${iconTheme}`]: iconTheme,
           },
           className

@@ -1,23 +1,46 @@
+import fixture from "../../fixtures/breadcrumb.json";
+
+const url = `/pattern-preview?id=breadcrumb&fields=${encodeURI(
+  JSON.stringify(fixture)
+)}`;
+
 describe("breadcrumb", () => {
   beforeEach(() => {
-    cy.visit("/admin/appearance/ui/patterns/breadcrumb");
-    cy.getPreview("breadcrumb").first().as("breadcrumbSection");
+    cy.visit(url);
+    cy.get(".ilo--breadcrumb").as("breadcrumb");
   });
 
-  it("should render five links in desktop view", () => {
-    cy.viewport(1280, 720);
-    cy.get("@breadcrumbSection").within(() => {
-      cy.get(".ilo--breadcrumb--link").should("have.length", 5);
+  it("should render the correct number of links", () => {
+    cy.get("@breadcrumb").within(() => {
+      cy.get(".ilo--breadcrumb--link").should(
+        "have.length",
+        fixture.links.length
+      );
     });
   });
 
-  it("should render the first link with an :after pseudo-element that has a background image", () => {
+  it("should render the first link as a home icon", () => {
     cy.get(".ilo--breadcrumb--item__first .ilo--breadcrumb--link").then(
       ($el) => {
         const afterContent = window.getComputedStyle($el[0], "::after");
-        expect(afterContent.getPropertyValue("background-image")).to.not.equal(
+        expect(afterContent.getPropertyValue("mask-image")).to.not.equal(
           "none"
         );
+        expect(afterContent.getPropertyValue("width")).to.equal("24px");
+        expect(afterContent.getPropertyValue("height")).to.equal("24px");
+      }
+    );
+  });
+
+  it("should render chevron icons between links", () => {
+    cy.get(".ilo--breadcrumb--item:not(.ilo--breadcrumb--item__first)").each(
+      ($item) => {
+        const beforeContent = window.getComputedStyle($item[0], "::before");
+        expect(beforeContent.getPropertyValue("mask-image")).to.not.equal(
+          "none"
+        );
+        expect(beforeContent.getPropertyValue("width")).to.equal("24px");
+        expect(beforeContent.getPropertyValue("height")).to.equal("24px");
       }
     );
   });
@@ -28,16 +51,32 @@ describe("breadcrumb", () => {
   });
 
   it("should have the correct number of links in the context menu", () => {
-    cy.get("@breadcrumbSection").within(() => {
-      cy.get(".ilo--context-menu--item").should("have.length", 3);
+    cy.get("@breadcrumb").within(() => {
+      // Middle links (excluding first and last)
+      const middleLinksCount = fixture.links.length - 2;
+      cy.get(".ilo--context-menu--item").should(
+        "have.length",
+        middleLinksCount
+      );
     });
   });
 
   it("should render context menu links when the context button is clicked in mobile view", () => {
     cy.viewport(375, 1200);
-    cy.get("@breadcrumbSection").within(() => {
+    cy.get("@breadcrumb").within(() => {
       cy.get(".ilo--breadcrumb--context--button").click();
       cy.get(".ilo--breadcrumb--context--menu").should("not.be.hidden");
     });
+  });
+
+  it("should apply the correct theme class", () => {
+    cy.get("@breadcrumb").should(
+      "have.class",
+      `ilo--breadcrumb__theme__${fixture.settings.theme}`
+    );
+  });
+
+  it("should apply corner cut to the inner container", () => {
+    cy.get(".ilo--breadcrumb--inner").should("have.css", "clip-path");
   });
 });

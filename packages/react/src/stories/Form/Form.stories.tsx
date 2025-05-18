@@ -36,7 +36,7 @@ export const Example: StoryObj<typeof Form> = {
 
   render: (args) => (
     <Form {...args} style={{ width: "100%" }} onSubmit={handleSubmit}>
-      <h3>Request to attend the International Labour Conference</h3>
+      <h2>Request to attend the International Labour Conference</h2>
       <Fieldset
         legend="Personal information"
         wrap="wrap"

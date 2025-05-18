@@ -3,6 +3,16 @@ breadcrumb:
   use: "@components/breadcrumb/breadcrumb.twig"
   label: Breadcrumb
   description: A component for displaying links in a "breadcrumb" ux
+  settings:
+    theme:
+      type: select
+      label: Theme
+      description: The theme of the breadcrumb
+      required: false
+      preview: light
+      options:
+        light: light
+        dark: dark
   fields:
     buttonlabel:
       type: string

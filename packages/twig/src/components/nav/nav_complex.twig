@@ -35,7 +35,14 @@
           tabindex="0"
           aria-label="Branding"
         >
-          <img class="{{ base_class }}__branding-main__logo-img" src="{{ branding.logo.main }}" alt="{{ branding.logo.alt }}">
+          {% include "@components/logo/logo.twig" with {
+            src: branding.logo.main,
+            alt: branding.logo.alt,
+            link: branding.logo.link,
+            className: base_class ~ '__branding-main__logo',
+            imgClassName: base_class ~ '__branding-main__logo-img',
+            prefix: prefix
+          } %}
         </div>
       </div>
       <div class="{{ base_class }}__branding-tag">
@@ -56,7 +63,14 @@
           tabindex="0"
           aria-label="Branding"
         >
-          <img class="{{ base_class }}__nav-mobile__logo-img" src="{{ branding.logo.mobile }}" alt="{{ branding.logo.alt }}">
+          {% include "@components/logo/logo.twig" with {
+            src: branding.logo.mobile,
+            alt: branding.logo.alt,
+            link: branding.logo.link,
+            className: base_class ~ '__nav-mobile__logo',
+            imgClassName: base_class ~ '__nav-mobile__logo-img',
+            prefix: prefix
+          } %}
         </div>
       </div>
 

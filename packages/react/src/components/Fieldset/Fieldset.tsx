@@ -3,6 +3,7 @@ import classNames from "classnames";
 import useGlobalSettings from "../../hooks/useGlobalSettings";
 import { FieldsetProps } from "./Fieldset.props";
 import { Tooltip } from "../Tooltip";
+import { useFormContext } from "../Form/Form";
 
 type FieldsetContextType = {
   hasError: boolean;
@@ -28,9 +29,12 @@ const Fieldset: FC<FieldsetProps> = ({
   disabled = false,
   wrap = "nowrap",
   direction = "column",
+  theme = "light",
   ...props
 }) => {
   const { prefix } = useGlobalSettings();
+  const { theme: formTheme } = useFormContext();
+  const fieldsetTheme = formTheme || theme;
 
   const [hasError, setHasError] = useState(false);
 
@@ -40,12 +44,14 @@ const Fieldset: FC<FieldsetProps> = ({
   const helperClass = `${baseClass}--helper`;
   const errorClass = `${baseClass}__error`;
   const disabledClass = `${baseClass}__disabled`;
+  const themeClass = `${baseClass}__theme__${fieldsetTheme}`;
 
   const fieldsetClasses = classNames(
     className,
     baseClass,
     wrapClass,
     directionClass,
+    themeClass,
     {
       [disabledClass]: disabled,
     }
@@ -76,7 +82,8 @@ const Fieldset: FC<FieldsetProps> = ({
                   className={`${baseClass}--legend--tooltip`}
                   icon={true}
                   label={tooltip}
-                  theme={"dark"}
+                  theme={fieldsetTheme}
+                  iconTheme={fieldsetTheme}
                 ></Tooltip>
               )}
             </legend>

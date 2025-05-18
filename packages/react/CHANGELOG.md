@@ -1,5 +1,19 @@
 # @ilo-org/react
 
+## 0.24.0
+
+### Minor Changes
+
+- 4a718ea43: **SubsiteNav:** Shows the subsite logo as a single image rather than rendering the subbrand name separately from the logo image.
+
+### Patch Changes
+
+- Updated dependencies [aac20fcb0]
+- Updated dependencies [1bc3951da]
+- Updated dependencies [a54793235]
+- Updated dependencies [aac20fcb0]
+  - @ilo-org/styles@1.8.0
+
 ## 0.23.4
 
 ### Patch Changes

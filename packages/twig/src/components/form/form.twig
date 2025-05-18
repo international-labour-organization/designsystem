@@ -1,15 +1,18 @@
 {# form.twig #}
 
-{% set baseClass = prefix ~ "--form" %}
+{% set theme = theme|default('light') %}
 
-{% set formControlClass = [baseClass, class] %}
+{% set baseClass = prefix ~ "--form" %}
+{% set themeClass = baseClass ~ "__theme__" ~ theme %}
+
+{% set formControlClass = [baseClass, themeClass, class] %}
 
 <form class="{{ formControlClass|join(' ') }}" data-loadcomponent="Form" {%- for key, value in attributes|default({} ) -%} {{- ' ' ~ key ~ '="' ~ value|e('html_attr') ~ '"' -}} {%- endfor -%}>
 	{% if headline %}
 		<h2>{{ headline }}</h2>
 	{% endif %}
 	{% for fieldset in fieldsets %}
-		{% include "@components/form/fieldset.twig" with fieldset|merge({ "prefix": prefix }) only %}
+		{% include "@components/form/fieldset.twig" with fieldset|merge({ "prefix": prefix, "theme": theme }) only %}
 	{% endfor %}
 	{% if submit %}
 		{% include "@components/button/button.twig" with submit|merge({
