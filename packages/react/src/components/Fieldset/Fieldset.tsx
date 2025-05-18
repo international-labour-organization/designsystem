@@ -82,7 +82,8 @@ const Fieldset: FC<FieldsetProps> = ({
                   className={`${baseClass}--legend--tooltip`}
                   icon={true}
                   label={tooltip}
-                  theme={"dark"}
+                  theme={fieldsetTheme}
+                  iconTheme={fieldsetTheme}
                 ></Tooltip>
               )}
             </legend>

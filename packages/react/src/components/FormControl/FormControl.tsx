@@ -153,7 +153,8 @@ const FormControl: FC<FormControlProps> = ({
               className={`${baseClass}--legend--tooltip`}
               icon={true}
               label={tooltip}
-              theme={"dark"}
+              theme={formControlTheme === "dark" ? "light" : "dark"}
+              iconTheme={formControlTheme}
             />
           )}
         </span>

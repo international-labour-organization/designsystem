@@ -38,7 +38,8 @@
 						{% include '@components/tooltip/tooltip.twig' with {
 							"icon": true,
 							"label": tooltip,
-							"theme": "dark",
+							"icontheme": theme,
+							"theme": theme == "dark" ? "light" : "dark",
 							"prefix": prefix,
 							"tooltipId": tooltip
 						} only %}
