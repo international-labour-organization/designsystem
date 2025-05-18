@@ -4,6 +4,14 @@ form:
   label: Form
   description: The Form component provides users with a complete interface that combines all of the form elements in the design system together with a some configuration options for laying them out together.
   visibility: storybook
+  settings:
+    theme:
+      type: select
+      label: Theme
+      description: The theme of the form. Also sets the theme of the form's children. Defaults to `light`.
+      options:
+        light: light
+        dark: dark
   fields:
     headline:
       type: string

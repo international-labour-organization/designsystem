@@ -1,7 +1,5 @@
 ---
-"@ilo-org/react": patch
-"@ilo-org/styles": patch
 "@ilo-org/twig": patch
 ---
 
-**FormControl:** Supports dark theme
+**Form**: Adds a `theme` field that sets the theme for all form elements. Default setting for `theme` is `light`.
