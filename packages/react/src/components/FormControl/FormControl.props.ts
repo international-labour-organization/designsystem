@@ -57,7 +57,7 @@ export interface FormControlPublicProps {
   tooltip?: string;
 
   /**
-   * Theme to use for the FormControl
+   * Theme to use for the FormControl. This will be overridden by the theme of the Form.
    */
   theme?: ThemeTypes;
 }

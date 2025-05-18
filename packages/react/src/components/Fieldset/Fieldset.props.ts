@@ -30,4 +30,9 @@ export interface FieldsetProps extends HTMLProps<HTMLFieldSetElement> {
    * How the Fieldset children will wrap
    */
   wrap?: "reverse" | "nowrap" | "wrap" | "wrap-reverse";
+
+  /**
+   * The theme of the Fieldset. This will be overridden by the theme of the Form.
+   */
+  theme?: "light" | "dark";
 }
