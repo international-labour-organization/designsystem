@@ -11,6 +11,7 @@ import {
 import { useGlobalSettings } from "../../hooks";
 import { Tooltip } from "../Tooltip";
 import { FormControlProps } from "./FormControl.props";
+import { useFormContext } from "../Form/Form";
 
 interface AllyFields {
   tooltip?: string;
@@ -75,10 +76,14 @@ const FormControl: FC<FormControlProps> = ({
   error,
   disabled,
   fieldId,
+  theme = "light",
   labelSize = "medium",
   labelPlacement = "top",
 }) => {
   const { prefix } = useGlobalSettings();
+  const { theme: formTheme } = useFormContext();
+
+  const formControlTheme = formTheme || theme;
 
   // Classes applied to the outer container
   const baseClass = `${prefix}--form-control`;
@@ -113,11 +118,13 @@ const FormControl: FC<FormControlProps> = ({
   const errorClass = `${baseClass}__error`;
   const disabledClass = `${baseClass}__disabled`;
   const labelPlacementClass = `${baseClass}__label-placement__${labelPlacement}`;
+  const themeClass = `${baseClass}__theme__${formControlTheme}`;
 
   const formControlClass = classnames(
     baseClass,
     className,
     labelPlacementClass,
+    themeClass,
     [{ [errorClass]: error }, { [disabledClass]: disabled }]
   );
 
@@ -146,7 +153,8 @@ const FormControl: FC<FormControlProps> = ({
               className={`${baseClass}--legend--tooltip`}
               icon={true}
               label={tooltip}
-              theme={"dark"}
+              theme={formControlTheme === "dark" ? "light" : "dark"}
+              iconTheme={formControlTheme}
             />
           )}
         </span>
