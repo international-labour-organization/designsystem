@@ -5,11 +5,11 @@
 .ilo--form {
   $gap: spacing(8);
   $c: &;
-  --ilo-form-legend-color: var(--ilo-color-gray-charcoal);
+  --ilo-form-legend-color: var(--ilo-color-blue-dark);
 
   &__theme {
     &__light {
-      --ilo-form-legend-color: var(--ilo-color-gray-charcoal);
+      --ilo-form-legend-color: var(--ilo-color-blue-dark);
     }
     &__dark {
       --ilo-form-legend-color: var(--ilo-color-white);
@@ -23,6 +23,7 @@
   flex-direction: column;
   appearance: none;
   gap: $gap;
+  color: var(--ilo-color-gray-charcoal);
 
   &__disabled {
     opacity: 0.5;
