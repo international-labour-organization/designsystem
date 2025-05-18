@@ -9,7 +9,10 @@ import {
   Title,
 } from "@storybook/blocks";
 import { Fieldset } from "../../components";
-import { RadioProps } from "../../components/Radio/Radio.props";
+import {
+  LabelledRadioProps,
+  RadioProps,
+} from "../../components/Radio/Radio.props";
 import { FieldsetProps } from "../../components/Fieldset/Fieldset.props";
 import { labelledChoiceFieldArgTypes } from "../../types/forms.args";
 
@@ -45,10 +48,10 @@ const fieldsetArgs: FieldsetProps = {
   errorMessage: "You must choose a topic",
 };
 
-export const Default: StoryObj<RadioProps> = {
+export const Default: StoryObj<LabelledRadioProps> = {
   args: RadioArgs.basic,
   render: (args) => (
-    <Fieldset {...fieldsetArgs}>
+    <Fieldset {...fieldsetArgs} theme={args.theme || "light"}>
       <Radio
         {...args}
         id="Radio-1"
@@ -89,10 +92,10 @@ export const Default: StoryObj<RadioProps> = {
   ),
 };
 
-export const CheckedByDefault: StoryObj<RadioProps> = {
+export const CheckedByDefault: StoryObj<LabelledRadioProps> = {
   args: RadioArgs.basic,
   render: (args) => (
-    <Fieldset {...fieldsetArgs}>
+    <Fieldset {...fieldsetArgs} theme={args.theme || "light"}>
       <Radio
         {...args}
         id="Radio-1"
@@ -134,13 +137,14 @@ export const CheckedByDefault: StoryObj<RadioProps> = {
   ),
 };
 
-export const Helper: StoryObj<RadioProps> = {
+export const Helper: StoryObj<LabelledRadioProps> = {
   args: RadioArgs.basic,
   render: (args) => (
     <Fieldset
       {...fieldsetArgs}
       legend="Which organization was established in 1919 to promote workers’ rights and address labor issues on an international scale?"
       helper="Hint, it's the oldest of the four organizations."
+      theme={args.theme || "light"}
     >
       <Radio
         {...args}
@@ -182,7 +186,7 @@ export const Helper: StoryObj<RadioProps> = {
   ),
 };
 
-export const Error: StoryObj<RadioProps> = {
+export const Error: StoryObj<LabelledRadioProps> = {
   args: RadioArgs.basic,
   render: (args) => (
     <Fieldset
@@ -190,6 +194,7 @@ export const Error: StoryObj<RadioProps> = {
       legend="Which organization was established in 1919 to promote workers’ rights and address labor issues on an international scale?"
       helper="Hint, it's the oldest of the four organizations."
       errorMessage="The correct answer is the International Labour Organization."
+      theme={args.theme || "light"}
     >
       <Radio
         {...args}
