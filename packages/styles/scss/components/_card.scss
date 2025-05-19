@@ -141,6 +141,10 @@ $link-hover-selectors: ".ilo--card--link:hover, .ilo--card--link:focus, .ilo--ca
 
     &__light,
     &__soft {
+      #{$self}--date-extra {
+        color: var(--ilo-color-gray-charcoal);
+      }
+
       @include card-link-hover {
         border-bottom: px-to-rem(3px) solid var(--ilo-color-blue);
 
@@ -175,6 +179,7 @@ $link-hover-selectors: ".ilo--card--link:hover, .ilo--card--link:focus, .ilo--ca
       #{$self}--eyebrow,
       #{$self}--intro,
       #{$self}--date,
+      #{$self}--date-extra,
       #{$self}--content--item {
         color: var(--ilo-color-gray-light);
       }
