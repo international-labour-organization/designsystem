@@ -54,6 +54,15 @@ detailcard:
       description: Title field for the card
       preview: Can digital technology be an equality machine?
   settings:
+    theme:
+      type: select
+      label: Theme
+      description: The theme of the card
+      required: false
+      preview: "light"
+      options:
+        light: "light"
+        dark: "dark"
     size:
       type: select
       label: size
