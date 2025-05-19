@@ -8,6 +8,7 @@ import {
 } from "react";
 import useGlobalSettings from "../../hooks/useGlobalSettings";
 import { CardSize, EventDate, HeadingTypes, ThemeTypes } from "../../types";
+import { Icon } from "../Icon";
 
 export type DetailCardProps = {
   /**
@@ -148,12 +149,17 @@ const DetailCard = forwardRef<HTMLDivElement, DetailCardProps>(
               ) : (
                 <p className={`${baseClass}--intro`}>{intro}</p>
               ))}
-            {date && (
+            {date && !details && (
               <time className={`${baseClass}--date`} dateTime={date.unix}>
                 {date.human}
               </time>
             )}
-            {details && <p className={`${baseClass}--date-extra`}>{details}</p>}
+            {details && (
+              <p className={`${baseClass}--date-extra`}>
+                <Icon name="TriangleRight" size={20} />
+                {details}
+              </p>
+            )}
           </div>
         </div>
       </div>

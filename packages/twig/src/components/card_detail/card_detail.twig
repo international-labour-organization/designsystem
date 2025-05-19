@@ -1,6 +1,9 @@
 {# card_detail.twig #}
 
-<div class="{{prefix}}--card {{prefix}}--card__type__detail {{prefix}}--card__size__{{size}} {% if isvideo|boolval %} {{prefix}}--card__isvideo {% endif %} {{prefix}}--card__theme__light">
+{% set theme = theme|default("light") %}
+{% set iconColor = theme == "light" ? "var(--ilo-color-gray-charcoal)" : "var(--ilo-color-gray-light)" %}
+
+<div class="{{prefix}}--card {{prefix}}--card__type__detail {{prefix}}--card__size__{{size}} {% if isvideo|boolval %} {{prefix}}--card__isvideo {% endif %} {{prefix}}--card__theme__{{theme}}">
 	<a class="{{prefix}}--card--link" href="{{link}}" title="{{title}}">
 		<span class="{{prefix}}--card--link--text">{{title}}</span>
 	</a>
@@ -32,7 +35,7 @@
 					{% include "@components/icon/icon.twig" with {
 						name: "triangle_right",
 						size: 20,
-						color: "var(--ilo-color-gray-charcoal)"
+						color: iconColor
 					} %}
 					{{dateExtra}}
 				</p>

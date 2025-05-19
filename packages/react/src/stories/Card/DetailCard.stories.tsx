@@ -13,6 +13,10 @@ const meta: Meta<typeof DetailCard> = {
     },
   },
   argTypes: {
+    theme: {
+      options: ["light", "dark"],
+      control: { type: "select" },
+    },
     size: {
       options: ["narrow", "wide", "fluid"],
       control: { type: "radio" },
