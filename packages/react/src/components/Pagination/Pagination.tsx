@@ -17,13 +17,14 @@ const Pagination: FC<PaginationProps> = ({
   prevPageUrl,
   prevPageTitle = "Previous page",
   totalPages,
+  theme = "light",
 }) => {
   const { prefix } = useGlobalSettings();
 
   const baseClass = `${prefix}--pagination`;
-  const paginationClasses = classNames(className, {
-    [baseClass]: true,
-  });
+  const themeClass = `${baseClass}__theme__${theme}`;
+
+  const paginationClasses = classNames(className, baseClass, themeClass);
 
   const isFirst = currentPage === 0;
   const isLast = currentPage + 1 === totalPages;

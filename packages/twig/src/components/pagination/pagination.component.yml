@@ -3,6 +3,14 @@ pagination:
   use: "@components/pagination/pagination.twig"
   label: Pagination
   description: The Pagination component breaks content into pages for easier navigation with intuitive controls like 'Previous' and 'Next' buttons.
+  settings:
+    theme:
+      type: select
+      label: Theme
+      description: The theme of the pagination
+      options:
+        light: "light"
+        dark: "dark"
   fields:
     currentPage:
       type: number
