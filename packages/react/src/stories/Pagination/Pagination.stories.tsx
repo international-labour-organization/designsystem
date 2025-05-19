@@ -22,7 +22,12 @@ const PaginationMeta: Meta<typeof Pagination> = {
   title: "Components/Navigation/Pagination",
   component: Pagination,
   tags: ["autodocs"],
-  argTypes: {},
+  argTypes: {
+    theme: {
+      control: "select",
+      options: ["dark", "light"],
+    },
+  },
   parameters: {
     docs: {
       page: () => (
