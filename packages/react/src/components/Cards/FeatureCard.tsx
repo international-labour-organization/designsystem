@@ -121,7 +121,7 @@ const FeatureCard = forwardRef<HTMLDivElement, FeatureCardProps>(
                 {date.human}
               </time>
             )}
-            {linklist && (
+            {linklist && size === "narrow" && (
               <LinkList
                 headline={linklist.headline}
                 linkgroup={linklist.linkgroup}
@@ -130,6 +130,13 @@ const FeatureCard = forwardRef<HTMLDivElement, FeatureCardProps>(
             )}
           </div>
         </div>
+        {linklist && (size === "wide" || size === "fluid") && (
+          <LinkList
+            headline={linklist.headline}
+            linkgroup={linklist.linkgroup}
+            theme={theme}
+          />
+        )}
       </div>
     );
   }
