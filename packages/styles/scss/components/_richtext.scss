@@ -4,6 +4,30 @@
 @import "../mixins";
 
 .ilo--richtext {
+  --ilo-richtext-color: var(--ilo-color-blue-dark);
+  --ilo-richtext-figcaption-color: var(--ilo-color-gray-accessible);
+  --ilo-richtext-hr-color: var(--ilo-color-gray-light);
+  --ilo-richtext-link-color: var(--ilo-color-purple);
+  --ilo-richtext-link-visited-color: var(--ilo-color-purple);
+
+  &__theme__light {
+    --ilo-richtext-color: var(--ilo-color-blue-dark);
+    --ilo-richtext-figcaption-color: var(--ilo-color-gray-accessible);
+    --ilo-richtext-hr-color: var(--ilo-color-gray-light);
+    --ilo-richtext-link-color: var(--ilo-color-purple);
+    --ilo-richtext-link-visited-color: var(--ilo-color-purple);
+  }
+
+  &__theme__dark {
+    --ilo-richtext-color: var(--ilo-color-white);
+    --ilo-richtext-figcaption-color: var(--ilo-color-gray-light);
+    --ilo-richtext-hr-color: var(--ilo-color-gray-light);
+    --ilo-richtext-link-color: var(--ilo-color-blue-medium);
+    --ilo-richtext-link-visited-color: var(--ilo-color-blue-medium);
+  }
+
+  color: var(--ilo-richtext-color);
+
   & > * {
     margin-top: spacing(4);
     margin-bottom: spacing(4);
@@ -100,7 +124,7 @@
   // Figcaption styles
   figcaption {
     border-left: var(--ilo-border-lg) solid var(--ilo-color-borders-default);
-    color: var(--ilo-color-gray-accessible);
+    color: var(--ilo-richtext-figcaption-color);
     font-weight: var(--ilo-font-weight-regular);
     margin-top: spacing(4);
     padding-left: spacing(2);
@@ -109,7 +133,7 @@
 
   // Horizontal rule (hr) styles
   hr {
-    background-color: var(--ilo-color-gray-light);
+    background-color: var(--ilo-richtext-hr-color);
     border: none;
     height: px-to-rem(3px);
   }
