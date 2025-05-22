@@ -12,8 +12,8 @@
 
       --max-width: #{px-to-rem(600px)};
 
-      background: $brand-ilo-light-blue;
-      border-bottom: px-to-rem(3px) solid $brand-ilo-ramp-blue;
+      background: var(--ilo-color-blue-lighter);
+      border-bottom: px-to-rem(3px) solid var(--ilo-color-blue-light);
       padding: spacing(12) spacing(10) spacing(14);
       position: relative;
       width: 100%;
@@ -137,16 +137,9 @@
       }
 
       &--content-label {
-        @include font-styles("body-xs");
-        @include textmargin(
-          "margin-bottom",
-          13px,
-          "body-xs",
-          "copy",
-          "headline-5",
-          "display"
-        );
-        color: $brand-ilo-grey-accessible;
+        @include typography("body-small");
+        margin-block-end: spacing(2);
+        color: var(--ilo-color-gray-accessible);
       }
 
       #{$self}--eyebrow {
@@ -154,14 +147,19 @@
       }
 
       &--content-copy {
-        @include font-styles("headline-5");
-        color: $brand-ilo-black;
-        font-family: var(--ilo-fonts-display);
-        font-weight: 500;
+        @include typography("body-large");
+        color: var(--ilo-color-gray-charcoal);
+
+        @include breakpoint("md") {
+          #{$self}__size__wide &,
+          #{$self}__size__fluid & {
+            @include typography("body-xlarge");
+          }
+        }
       }
 
       [class*="ilo--link"] {
-        @include font-styles("headline-6");
+        @include typography("body-large");
         line-height: 1.8;
         margin-inline-end: px-to-rem(12px);
         margin-bottom: px-to-rem(12px);
