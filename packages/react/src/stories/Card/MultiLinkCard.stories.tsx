@@ -9,6 +9,23 @@ const meta: Meta<typeof MultiLinkCard> = {
   title: "Components/Cards/Multilink Card",
   component: MultiLinkCard,
   tags: ["autodocs"],
+  argTypes: {
+    theme: {
+      control: "select",
+      options: ["light", "soft"],
+    },
+    size: {
+      control: "select",
+      options: ["standard", "narrow", "wide", "fluid"],
+    },
+    alignment: {
+      control: "select",
+      options: ["left", "right"],
+    },
+    isVideo: {
+      control: "boolean",
+    },
+  },
   parameters: {
     docs: {
       description: {
