@@ -1,5 +1,17 @@
 # @ilo-org/styles
 
+## 1.8.1
+
+### Patch Changes
+
+- bae6e5b67: **RichText:** Add basic support for `dark` theme
+- 09698a437: **Form:** Form element wrappers '.ilo--form', '.ilo--fieldset' and '.ilo--form-control' now support `dark` theme. The default configuration for `theme` remains `light`.
+- 2ec653271: **DetailCard:** Dark theme fixes
+- cf345502b: **FeatureCard:** Ensure image takes up full container even if it's not 16x9
+- 336c02945: **Breadcrumb:** Enable `dark` theme
+- 6c671d7c8: **Pagination:** Correctly supports `dark` theme
+- 9b681708e: **DataCard:** Match styles applied to designs.
+
 ## 1.8.0
 
 ### Minor Changes

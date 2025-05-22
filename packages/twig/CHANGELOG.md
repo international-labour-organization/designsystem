@@ -1,5 +1,23 @@
 # @ilo-org/twig
 
+## 1.8.2
+
+### Patch Changes
+
+- 5acf809ab: **DetailCard:** Correctly supports dark theme
+- ceab17f19: **Form**: Adds a `theme` field that sets the theme for all form elements. Default setting for `theme` is `light`.
+- bae6e5b67: **RichText:** Add basic support for `dark` theme
+- 336c02945: **Breadcrumb:** Enable `dark` theme
+- 6c671d7c8: **Pagination:** Correctly supports `dark` theme
+- Updated dependencies [bae6e5b67]
+- Updated dependencies [09698a437]
+- Updated dependencies [2ec653271]
+- Updated dependencies [cf345502b]
+- Updated dependencies [336c02945]
+- Updated dependencies [6c671d7c8]
+- Updated dependencies [9b681708e]
+  - @ilo-org/styles@1.8.1
+
 ## 1.8.1
 
 ### Patch Changes

@@ -1,5 +1,24 @@
 # @ilo-org/react
 
+## 0.24.1
+
+### Patch Changes
+
+- 2df830ce5: **Form:** Form component has `theme` prop which controls the `theme` value for all of its children. `theme` can still be set for individual form elements, but only when they're not rendered as children of `Form`, which will otherwise override their settings. Default setting for `theme` is `light`.
+- 3e34c62e8: **DetailCard:** Show icon with details. Make sure `details` and `date` can't both be rendered.
+- bae6e5b67: **RichText:** Add basic support for `dark` theme
+- 336c02945: **Breadcrumb:** Enable `dark` theme
+- 6c671d7c8: **Pagination:** Correctly supports `dark` theme
+- 5c9d4fba8: **FeatureCard:** `linklist` appears beneath the rest of card when `size` is `fluid` or `wide`.
+- Updated dependencies [bae6e5b67]
+- Updated dependencies [09698a437]
+- Updated dependencies [2ec653271]
+- Updated dependencies [cf345502b]
+- Updated dependencies [336c02945]
+- Updated dependencies [6c671d7c8]
+- Updated dependencies [9b681708e]
+  - @ilo-org/styles@1.8.1
+
 ## 0.24.0
 
 ### Minor Changes
