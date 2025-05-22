@@ -9,6 +9,16 @@ const meta: Meta<typeof FeatureCard> = {
   title: "Components/Cards/Feature Card",
   component: FeatureCard,
   tags: ["autodocs"],
+  argTypes: {
+    size: {
+      control: "select",
+      options: ["narrow", "wide", "fluid"],
+    },
+    theme: {
+      control: "select",
+      options: ["light", "dark"],
+    },
+  },
   parameters: {
     docs: {
       description: {

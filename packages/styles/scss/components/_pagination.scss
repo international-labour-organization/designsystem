@@ -3,6 +3,18 @@
 @import "../mixins";
 
 .ilo--pagination {
+  --ilo-pagination-page-color: var(--ilo-color-blue-dark);
+
+  &__theme {
+    &__dark {
+      --ilo-pagination-page-color: var(--ilo-color-white);
+    }
+
+    &__light {
+      --ilo-pagination-page-color: var(--ilo-color-blue-dark);
+    }
+  }
+
   display: flex;
   justify-content: space-between;
   margin-bottom: spacing(10);
@@ -160,9 +172,10 @@
   &--page {
     display: flex;
     gap: spacing(1);
-    @include font-styles("nav-md-sm");
+    @include typography("highlight-small");
     margin-inline-end: spacing(2);
     font-family: var(--ilo-fonts-copy);
+    color: var(--ilo-pagination-page-color);
     font-weight: 400;
     line-height: 45px;
 

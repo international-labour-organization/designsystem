@@ -55,7 +55,6 @@
 
       #{$self}--date-extra {
         @include typography("body-medium");
-        color: var(--ilo-color-gray-charcoal);
         gap: spacing(2);
 
         // this makes sure the para will be indented

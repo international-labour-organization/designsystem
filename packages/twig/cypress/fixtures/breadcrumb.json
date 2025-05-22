@@ -1,0 +1,28 @@
+{
+  "links": [
+    {
+      "url": "/home",
+      "label": "Home"
+    },
+    {
+      "url": "/section",
+      "label": "Section"
+    },
+    {
+      "url": "/subsection",
+      "label": "Subsection"
+    },
+    {
+      "url": "/page",
+      "label": "Current Page"
+    },
+    {
+      "url": "/final",
+      "label": "Final Page"
+    }
+  ],
+  "buttonLabel": "Show more",
+  "settings": {
+    "theme": "light"
+  }
+}

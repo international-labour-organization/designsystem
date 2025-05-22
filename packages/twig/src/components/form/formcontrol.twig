@@ -59,7 +59,10 @@
 {% set showError = error and errorMessage %}
 {% set showHelper = not showError and helper %}
 
-<div class="{{ formControlClass|join(' ') }}" {% if style %} style="{{ style }}" {% endif %}>
+{% set theme = theme|default("light") %}
+{% set themeClass = baseClass ~ "__theme__" ~ theme %}
+
+<div class="{{ formControlClass|join(' ') }} {{ themeClass }}" {% if style %} style="{{ style }}" {% endif %}>
 	{% if label %}
 		<span class="{{ labelClass|join(' ') }}">
 			{% block label %}
@@ -69,7 +72,8 @@
 				{% include '@components/tooltip/tooltip.twig' with {
 				"icon": true,
 				"label": tooltip,
-				"theme": "dark",
+				"theme": "light",
+				"icontheme": "light",
 				"prefix": prefix,
 				"tooltipId": tooltipId
 			} only %}

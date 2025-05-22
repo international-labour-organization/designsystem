@@ -63,4 +63,9 @@ export interface PaginationProps {
    * total number of pages that are available
    */
   totalPages: number;
+
+  /**
+   * theme of the pagination
+   */
+  theme?: "dark" | "light";
 }

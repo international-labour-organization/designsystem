@@ -21,7 +21,7 @@ const DropdownMeta: Meta<typeof Dropdown> = {
       description:
         "A string providing a hint for a user agent's autocomplete feature.",
       control: {
-        type: "string",
+        type: "text",
       },
       table: {
         type: {
@@ -33,7 +33,7 @@ const DropdownMeta: Meta<typeof Dropdown> = {
       description:
         "The id of the form that the dropdown belongs to if it isn't nested in a form element",
       control: {
-        type: "string",
+        type: "text",
       },
       table: {
         type: {
@@ -78,7 +78,7 @@ const DropdownMeta: Meta<typeof Dropdown> = {
     value: {
       description: "The value of the dropdown",
       control: {
-        type: "string",
+        type: "text",
       },
       table: {
         type: {

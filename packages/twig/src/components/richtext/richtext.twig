@@ -1,6 +1,7 @@
-{#
-  RICH TEXT COMPONENT
-#}
-<div class="{{prefix}}--richtext">
+{# richtext.twig #}
+
+{% set theme = theme|default("light") %}
+
+<div class="{{prefix}}--richtext {{prefix}}--richtext__theme__{{theme}}">
   {{content}}
 </div>
