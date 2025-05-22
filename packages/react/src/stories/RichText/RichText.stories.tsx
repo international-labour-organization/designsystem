@@ -19,12 +19,7 @@ const RichTextMeta: Meta<typeof RichText> = {
   title: "Components/Content/RichText",
   component: RichText,
   tags: ["autodocs"],
-  argTypes: {
-    theme: {
-      control: "select",
-      options: ["light", "dark"],
-    },
-  },
+  argTypes: {},
   parameters: {
     docs: {
       page: () => (

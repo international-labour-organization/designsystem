@@ -3,16 +3,13 @@ import classNames from "classnames";
 import useGlobalSettings from "../../hooks/useGlobalSettings";
 import { RichTextProps } from "./RichText.props";
 
-const RichText: FC<RichTextProps> = ({
-  className,
-  content,
-  theme = "light",
-}) => {
+const RichText: FC<RichTextProps> = ({ className, content }) => {
   const { prefix } = useGlobalSettings();
   const baseClass = `${prefix}--richtext`;
-  const themeClass = `${baseClass}__theme__${theme}`;
 
-  const richTextClasses = classNames(className, baseClass, themeClass);
+  const richTextClasses = classNames(className, {
+    [baseClass]: true,
+  });
 
   return (
     <div
