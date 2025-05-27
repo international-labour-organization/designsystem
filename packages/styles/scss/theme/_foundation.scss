@@ -63,7 +63,6 @@
   /**
     * Font-size
     */
-
   --ilo-font-size-2xsm: calc(#{px-to-rem(10)} * var(--ilo-scale));
   --ilo-font-size-xsm: calc(#{px-to-rem(12)} * var(--ilo-scale));
   --ilo-font-size-sm: calc(#{px-to-rem(14)} * var(--ilo-scale));
@@ -119,4 +118,31 @@
   --ilo-border-sm: calc(#{px-to-rem(1.5)} * var(--ilo-scale));
   --ilo-border-md: calc(#{px-to-rem(2)} * var(--ilo-scale));
   --ilo-border-lg: calc(#{px-to-rem(4)} * var(--ilo-scale));
+
+  /**
+    * Links
+    */
+  --ilo-link-color-default-light: var(--ilo-color-blue-dark);
+  --ilo-link-color-default-dark: var(--ilo-color-white);
+
+  --ilo-link-color-visited-light: var(--ilo-color-purple);
+  --ilo-link-color-visited-dark: var(--ilo-color-gray-base);
+
+  --ilo-link-color-hover-light: var(--ilo-color-blue);
+  --ilo-link-color-hover-dark: var(--ilo-color-blue);
+
+  --ilo-link-color-active-light: var(--ilo-color-blue-dark);
+  --ilo-link-color-active-dark: var(--ilo-color-blue-dark);
+
+  --ilo-link-color-focus-light: var(--ilo-color-blue-dark);
+  --ilo-link-color-focus-dark: var(--ilo-color-blue-dark);
+
+  --ilo-link-background-default-light: transparent;
+  --ilo-link-background-default-dark: transparent;
+
+  --ilo-link-background-hover-light: transparent;
+  --ilo-link-background-hover-dark: var(--ilo-color-white);
+
+  --ilo-link-background-focus-light: var(--ilo-color-yellow);
+  --ilo-link-background-focus-dark: var(--ilo-color-yellow);
 }

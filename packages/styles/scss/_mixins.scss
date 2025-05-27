@@ -189,106 +189,57 @@
 // Link styles
 // ======================================
 
-@mixin linkstyles() {
-  background: map-get($color, "link", "background", "default");
-  color: map-get($color, "link", "text", "default");
+@mixin linkstyles($theme: "light") {
+  $color-default: var(--ilo-link-color-default-light);
+  $color-visited: var(--ilo-link-color-visited-light);
+  $color-hover: var(--ilo-link-color-hover-light);
+  $color-active: var(--ilo-link-color-active-light);
+  $color-focus: var(--ilo-link-color-focus-light);
+  $background-default: var(--ilo-link-background-default-light);
+  $background-hover: var(--ilo-link-background-hover-light);
+  $background-focus: var(--ilo-link-background-focus-light);
+
+  @if ($theme == "dark") {
+    $color-default: var(--ilo-link-color-default-dark);
+    $color-visited: var(--ilo-link-color-visited-dark);
+    $color-hover: var(--ilo-link-color-hover-dark);
+    $background-default: var(--ilo-link-background-default-dark);
+    $background-hover: var(--ilo-link-background-hover-dark);
+    $background-focus: var(--ilo-link-background-focus-dark);
+  }
+
+  // Default styles
   font-size: inherit;
   font-weight: inherit;
   line-height: inherit;
   text-decoration: underline;
-  text-underline-offset: px-to-rem(6px);
-  text-decoration-thickness: px-to-rem(1.5px);
-  text-decoration-color: var(--ilo-color-blue);
-  padding-bottom: spacing(1);
+  background: transparent;
+  text-decoration-thickness: #{px-to-rem(1px)};
+  text-underline-offset: #{px-to-rem(6px)};
+  padding-bottom: #{spacing(1)};
+
+  color: $color-default;
+  text-decoration-color: $color-default;
 
   &:visited {
-    background: map-get($color, "link", "background", "visited");
-    color: map-get($color, "link", "text", "visited");
-    text-decoration-color: var(--ilo-color-purple);
+    color: $color-visited;
+    text-decoration-color: $color-visited;
   }
 
   &:hover {
-    background: map-get($color, "link", "background", "hover");
-    color: map-get($color, "link", "text", "hover");
-    text-decoration-thickness: 3px;
-    text-decoration-color: var(--ilo-color-blue);
+    color: $color-hover;
+    background-color: $background-hover;
+    text-decoration-color: $color-hover;
+    text-decoration-thickness: #{px-to-rem(3px)};
   }
 
-  &:active {
-    background: map-get($color, "link", "background", "active");
-    color: map-get($color, "link", "text", "active");
-    text-decoration-thickness: 3px;
-    text-decoration-color: var(--ilo-color-blue-dark);
-  }
-
+  &:active,
   &:focus {
-    background: map-get($color, "link", "background", "focus");
-    color: map-get($color, "link", "text", "focus");
-    text-decoration-thickness: 3px;
-    text-decoration-color: var(--ilo-color-blue-dark);
-  }
-
-  &--dark {
-    background: map-get($color, "link", "background-dark", "default");
-    color: map-get($color, "link", "text-dark", "default");
-    text-decoration-color: var(--ilo-color-gray-light);
-
-    &:visited {
-      background: map-get($color, "link", "background-dark", "visited");
-      color: map-get($color, "link", "text-dark", "visited");
-      text-decoration-color: var(--ilo-color-gray-base);
-    }
-
-    &:hover {
-      background: map-get($color, "link", "background-dark", "hover");
-      color: map-get($color, "link", "text-dark", "hover");
-      text-decoration-thickness: 3px;
-      text-decoration-color: var(--ilo-color-blue);
-    }
-
-    &:active {
-      background: map-get($color, "link", "background-dark", "active");
-      color: map-get($color, "link", "text-dark", "active");
-      text-decoration-thickness: 3px;
-      text-decoration-color: var(--ilo-color-blue-dark);
-    }
-
-    &:focus {
-      background: map-get($color, "link", "background-dark", "focus");
-      color: map-get($color, "link", "text-dark", "focus");
-      text-decoration-thickness: 3px;
-      text-decoration-color: var(--ilo-color-blue-dark);
-    }
-  }
-
-  &--footer {
-    @include font-styles("body-xxs");
-
-    background: map-get($color, "link", "background-footer", "default");
-    color: map-get($color, "link", "text-footer", "default");
-
-    &:visited {
-      background: map-get($color, "link", "background-footer", "visited");
-      color: map-get($color, "link", "text-footer", "visited");
-    }
-
-    &:hover {
-      background: map-get($color, "link", "background-footer", "hover");
-      color: map-get($color, "link", "text-footer", "hover");
-      text-decoration-thickness: 3px;
-    }
-
-    &:active {
-      background: map-get($color, "link", "background-footer", "active");
-      color: map-get($color, "link", "text-footer", "active");
-      text-decoration-thickness: 3px;
-    }
-
-    &:focus {
-      background: map-get($color, "link", "background-footer", "focus");
-      color: map-get($color, "link", "text-footer", "focus");
-      text-decoration-thickness: 3px;
-    }
+    color: $color-focus;
+    text-decoration-color: $color-focus;
+    text-decoration-thickness: #{px-to-rem(3px)};
+    background-color: $background-focus;
+    outline: none;
   }
 }
 
