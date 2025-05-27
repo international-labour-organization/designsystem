@@ -16,6 +16,10 @@
     --ilo-richtext-hr-color: var(--ilo-color-gray-light);
     --ilo-richtext-link-color: var(--ilo-color-purple);
     --ilo-richtext-link-visited-color: var(--ilo-color-purple);
+
+    a {
+      @include linkstyles("light");
+    }
   }
 
   &__theme__dark {
@@ -24,6 +28,10 @@
     --ilo-richtext-hr-color: var(--ilo-color-gray-light);
     --ilo-richtext-link-color: var(--ilo-color-blue-medium);
     --ilo-richtext-link-visited-color: var(--ilo-color-blue-medium);
+
+    a {
+      @include linkstyles("dark");
+    }
   }
 
   color: var(--ilo-richtext-color);
@@ -99,16 +107,6 @@
   strong,
   b {
     font-weight: 700;
-  }
-
-  // Link styles
-  a {
-    @include linkstyles();
-    background: none;
-
-    &:hover {
-      background: none;
-    }
   }
 
   // Image styles

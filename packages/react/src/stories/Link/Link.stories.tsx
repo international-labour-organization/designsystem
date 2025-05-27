@@ -5,6 +5,12 @@ const meta: Meta<LinkProps> = {
   title: "Components/Navigation/Link",
   component: Link,
   tags: ["autodocs"],
+  argTypes: {
+    theme: {
+      control: "select",
+      options: ["light", "dark"],
+    },
+  },
   parameters: {
     docs: {
       description: {

@@ -30,7 +30,6 @@ export type TextInputTypes =
   | "url";
 export type Language = "en" | "fr" | "es";
 export type LabelTypes = "default" | "actionable" | "light";
-export type LinkTypes = "light" | "dark" | "footer" | "button";
 export type LinkListThemes = "light" | "dark";
 export type TooltipThemes = "light" | "dark";
 export type TooltipIconThemes = "light" | "dark";

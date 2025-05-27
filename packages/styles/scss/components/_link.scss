@@ -2,5 +2,11 @@
 @use "../mixins" as *;
 
 .ilo--link {
-  @include linkstyles();
+  &__theme__light {
+    @include linkstyles("light");
+  }
+
+  &__theme__dark {
+    @include linkstyles("dark");
+  }
 }
