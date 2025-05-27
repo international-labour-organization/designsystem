@@ -1,5 +1,13 @@
 # @ilo-org/twig
 
+## 1.8.3
+
+### Patch Changes
+
+- 746eff08a: **Link:** Align styles with designs and fix appearance in `dark` theme.
+- Updated dependencies [746eff08a]
+  - @ilo-org/styles@1.8.2
+
 ## 1.8.2
 
 ### Patch Changes

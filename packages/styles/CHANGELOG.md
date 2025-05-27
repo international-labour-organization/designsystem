@@ -1,5 +1,11 @@
 # @ilo-org/styles
 
+## 1.8.2
+
+### Patch Changes
+
+- 746eff08a: **Link:** Align styles with designs and fix appearance in `dark` theme.
+
 ## 1.8.1
 
 ### Patch Changes
