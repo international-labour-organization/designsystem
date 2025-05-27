@@ -2,7 +2,7 @@ import { forwardRef, AnchorHTMLAttributes, ReactNode } from "react";
 import classNames from "classnames";
 
 import useGlobalSettings from "../../hooks/useGlobalSettings";
-import { LinkTypes } from "../../types";
+import { ThemeTypes } from "../../types";
 
 export type LinkProps = AnchorHTMLAttributes<HTMLAnchorElement> & {
   /**
@@ -28,7 +28,7 @@ export type LinkProps = AnchorHTMLAttributes<HTMLAnchorElement> & {
   /**
    * Specify an optional className to be added to your Link.
    */
-  theme?: LinkTypes;
+  theme?: ThemeTypes;
 
   /**
    * Specify an optional className to be added to your Link.
@@ -48,10 +48,11 @@ const Link = forwardRef<HTMLAnchorElement, LinkProps>(
       baseClass = "";
     }
 
-    const linkClasses = classNames(className, {
-      [baseClass]: true,
-      [`${baseClass}--${theme}`]: baseClass && theme,
-    });
+    const linkClasses = classNames(
+      baseClass,
+      `${baseClass}__theme__${theme}`,
+      className
+    );
 
     return (
       <a
