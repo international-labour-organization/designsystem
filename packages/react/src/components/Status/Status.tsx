@@ -28,11 +28,13 @@ export type StatusProps = {
 const Status = forwardRef<HTMLSpanElement, StatusProps>(
   ({ statusType = "active", content, elementId, className }, ref) => {
     const { prefix } = useGlobalSettings();
+    const baseClass = `${prefix}--status`;
 
-    const statusClasses = classNames(className, {
-      [`${prefix}--status`]: true,
-      [`${prefix}--status__type__${statusType}`]: statusType,
-    });
+    const statusClasses = classNames(
+      baseClass,
+      className,
+      `${baseClass}__type__${statusType}`
+    );
 
     return (
       <span className={statusClasses} id={elementId} ref={ref}>
