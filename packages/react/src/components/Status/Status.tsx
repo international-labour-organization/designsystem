@@ -12,7 +12,7 @@ export type StatusProps = {
   /**
    * The content inside the status component.
    */
-  content: string;
+  content: string | React.ReactNode;
 
   /**
    * The ID of the status element.
