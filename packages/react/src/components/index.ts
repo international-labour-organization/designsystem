@@ -39,6 +39,7 @@ export * from "./Footer";
 export { Navigation } from "./Navigation";
 export { CardGroup } from "./Cards/CardGroup";
 export { Breadcrumb } from "./Breadcrumb";
+export { Status } from "./Status";
 export { Tabs } from "./Tabs";
 export * from "./Cards";
 export * from "./LanguageToggle";
