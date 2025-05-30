@@ -1,5 +1,14 @@
 # @ilo-org/react
 
+## 0.24.4
+
+### Patch Changes
+
+- f0f6468df: **Loading:** Update styles and add `dark` theme
+- Updated dependencies [366192cd7]
+- Updated dependencies [f0f6468df]
+  - @ilo-org/styles@1.8.4
+
 ## 0.24.3
 
 ### Patch Changes
