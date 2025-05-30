@@ -17,6 +17,14 @@ loading:
       preview: "Completed"
       required: true
   settings:
+    theme:
+      type: select
+      label: Theme
+      description: The theme of the loader
+      required: true
+      options:
+        light: Light
+        dark: Dark
     size:
       type: select
       label: Size
