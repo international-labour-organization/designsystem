@@ -1,8 +1,43 @@
-{#
-  LOADING COMPONENT
-#}
-<div class="storybook {{prefix}}--loading {{prefix}}--loading--{{size}} {{prefix}}--loading--{{status}}" role="alert" aria-live="assertive" data-loadcomponent="Loading" data-prefix="{{prefix}}">
-  {% if message or loadedmessage %}
-    <p class="{{prefix}}--loading--copy">{% if message and not status == 'loaded' %}{{message}}{% endif %}{% if loadedmessage and status == 'loaded' %}{{loadedmessage}}{% endif %}</p>
+{# loading.twig #}
+<div class="{{prefix}}--loading {{prefix}}--loading__theme__{{theme|default('light')}} {% if size %}{{prefix}}--loading__size__{{size}}{% endif %} {% if status %}{{prefix}}--loading--{{status}}{% endif %}" role="alert" aria-live="assertive">
+  {% if status == 'loading' %}
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      xmlSpace="preserve"
+      viewBox="0 0 107.7 107.7"
+      class="{{prefix}}--loading__loading"
+    >
+      <circle
+        cx="53.8"
+        cy="53.7"
+        r="53.9"
+        fill="var(--ilo-loading-loading-circle)"
+      />
+      <path
+        d="M101.8 53.7c0-10.8-3.6-21.2-10.3-29.7-6.7-8.5-16-14.4-26.5-17s-21.5-1.4-31.3 3.1C23.9 14.7 16 22.4 11.1 32c-4.9 9.6-6.4 20.6-4.3 31.2 2.1 10.6 7.7 20.1 15.9 27.1s18.5 11 29.3 11.5c10.8.4 21.4-2.8 30.1-9.1l-4.7-6.4c-7.3 5.3-16.1 8-25.1 7.6-9-.4-17.6-3.7-24.5-9.6-6.8-5.9-11.5-13.9-13.3-22.7-1.8-8.8-.5-18 3.6-26S28.9 21.2 37 17.4c8.2-3.8 17.4-4.7 26.1-2.6 8.8 2.1 16.5 7.1 22.1 14.2s8.6 15.8 8.6 24.8h8z"
+        fill="var(--ilo-loading-loading-line)"
+      />
+      <path
+        d="m97.8 74.9 9.5-17.2h-19l9.5 17.2z"
+        fill="var(--ilo-loading-loading-pointer)"
+      />
+    </svg>
+  {% endif %}
+
+  {% if status == 'loaded' or status == 'idle' %}
+    <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 97 96">
+      <path
+        d="M.237 48c0-26.51 21.49-48 48-48s48 21.49 48 48-21.49 48-48 48-48-21.49-48-48Z"
+        fill="var(--ilo-loading-loaded-circle)"
+      />
+      <path
+        d="M20.237 48c0-15.464 12.536-28 28-28 15.463 0 28 12.536 28 28s-12.536 28-28 28-28-12.536-28-28Z"
+        fill="var(--ilo-loading-loaded-cirlce-inner)"
+      />
+      <path
+        d="m44.037 50.8-5.6-5.6-4.2 4.2 9.8 9.8 18.2-18.2-4.2-4.2-14 14Z"
+        fill="var(--ilo-loading-loaded-check)"
+      />
+    </svg>
   {% endif %}
 </div>

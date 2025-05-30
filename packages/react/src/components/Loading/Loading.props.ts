@@ -1,4 +1,8 @@
-import { LoadingStatus, LoadingSize } from "../../types";
+import { ThemeTypes } from "../../types";
+
+export type LoadingStatus = "loading" | "loaded" | "idle";
+
+export type LoadingSize = "small" | "large";
 
 export interface LoadingProps {
   /**
@@ -7,17 +11,17 @@ export interface LoadingProps {
   className?: string;
 
   /**
-   * Specify the loading message
-   */
-  message?: string;
-
-  /**
    * Specify the loader's size
    */
-  size?: Required<LoadingSize>;
+  size: LoadingSize;
 
   /**
    * Specify the loading status
    */
-  status?: Required<LoadingStatus>;
+  status: LoadingStatus;
+
+  /**
+   * Specify the theme of the loading component
+   */
+  theme?: ThemeTypes;
 }
