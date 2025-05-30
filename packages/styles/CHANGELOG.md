@@ -1,5 +1,17 @@
 # @ilo-org/styles
 
+## 1.8.3
+
+### Patch Changes
+
+- 698e54099: **ScoreCard:** Fix small layout issues in ScoreCard with size `simple`
+
+## 1.8.2
+
+### Patch Changes
+
+- 746eff08a: **Link:** Align styles with designs and fix appearance in `dark` theme.
+
 ## 1.8.1
 
 ### Patch Changes

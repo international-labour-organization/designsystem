@@ -1,5 +1,25 @@
 # @ilo-org/react
 
+## 0.24.3
+
+### Patch Changes
+
+- 6e347beac: **Status:**
+
+  - Correctly export from library
+  - `content` prop accepts `React.ReactNode` as well as string
+
+- Updated dependencies [698e54099]
+  - @ilo-org/styles@1.8.3
+
+## 0.24.2
+
+### Patch Changes
+
+- 746eff08a: **Link:** Align styles with designs and fix appearance in `dark` theme.
+- Updated dependencies [746eff08a]
+  - @ilo-org/styles@1.8.2
+
 ## 0.24.1
 
 ### Patch Changes
