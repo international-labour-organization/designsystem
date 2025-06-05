@@ -8,6 +8,7 @@ import {
   FeatureCardProps,
   MultiLinkCardProps,
   PromoCardProps,
+  ScoreCardProps,
   StatCardProps,
   TextCardProps,
 } from "../../components/Cards";
@@ -19,6 +20,7 @@ import { Default as FeatureCardDefault } from "./FeatureCard.stories";
 import { Default as DetailCardDefault } from "./DetailCard.stories";
 import { Default as FactListCardDefault } from "./FactlistCard.stories";
 import { Default as DataCardDefault } from "./DataCard.stories";
+import { Default as ScoreCardDefault } from "./ScoreCard.stories";
 
 const meta: Meta<typeof CardGroup> = {
   title: "Components/Cards/CardGroup",
@@ -154,6 +156,19 @@ const DataCardGroup: StoryObj<CardGroupProps<"data">> = {
   },
 };
 
+const ScoreCardGroup: StoryObj<CardGroupProps<"score">> = {
+  name: "Score Card Group",
+  args: {
+    type: "score",
+    group: [
+      ScoreCardDefault.args as ScoreCardProps,
+      ScoreCardDefault.args as ScoreCardProps,
+      ScoreCardDefault.args as ScoreCardProps,
+    ],
+    cardCount: "three",
+  },
+};
+
 export default meta;
 export {
   StatCardGroup,
@@ -164,4 +179,5 @@ export {
   DetailCardGroup,
   FactListCardGroup,
   DataCardGroup,
+  ScoreCardGroup,
 };

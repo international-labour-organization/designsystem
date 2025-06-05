@@ -12,6 +12,7 @@ import { FeatureCard, FeatureCardProps } from "./FeatureCard";
 import { DetailCard, DetailCardProps } from "./DetailCard";
 import { FactListCard, FactListCardProps } from "./FactListCard";
 import { DataCard, DataCardProps } from "./DataCard";
+import { ScoreCard, ScoreCardProps } from "./ScoreCard";
 import { LinkProps } from "../Link";
 
 type CardPropsMap = {
@@ -23,6 +24,7 @@ type CardPropsMap = {
   detail: DetailCardProps;
   factlist: FactListCardProps;
   data: DataCardProps;
+  score: ScoreCardProps;
 };
 
 type CardGroupComponentProps<T extends CardTypes> = CardPropsMap[T];
@@ -35,7 +37,7 @@ export type CardGroupProps<T extends CardTypes> = {
   collapsed?: boolean;
 };
 
-const cardMapper: Record<CardTypes, ExoticComponent> = {
+const cardMapper: Record<CardTypes, ExoticComponent<any>> = {
   stat: StatCard,
   multilink: MultiLinkCard,
   text: TextCard,
@@ -44,6 +46,7 @@ const cardMapper: Record<CardTypes, ExoticComponent> = {
   detail: DetailCard,
   factlist: FactListCard,
   data: DataCard,
+  score: ScoreCard,
 };
 
 const CardGroup = forwardRef<HTMLDivElement, CardGroupProps<CardTypes>>(
