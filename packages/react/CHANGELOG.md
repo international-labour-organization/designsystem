@@ -1,5 +1,15 @@
 # @ilo-org/react
 
+## 0.24.5
+
+### Patch Changes
+
+- 918c826cc: **CardGroup:** Add support for `ScoreCard`
+- Updated dependencies [c306f6922]
+- Updated dependencies [bfb0fdac3]
+  - @ilo-org/brand-assets@1.0.1
+  - @ilo-org/styles@1.8.5
+
 ## 0.24.4
 
 ### Patch Changes
