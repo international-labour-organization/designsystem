@@ -1,5 +1,11 @@
 # @ilo-org/styles
 
+## 1.8.5
+
+### Patch Changes
+
+- bfb0fdac3: **ScoreCard:** Correctly align cta's to bottom of the card
+
 ## 1.8.4
 
 ### Patch Changes
