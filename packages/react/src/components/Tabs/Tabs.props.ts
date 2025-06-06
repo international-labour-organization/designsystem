@@ -22,6 +22,11 @@ export interface TabsProps {
    * Specify the default active tab
    */
   defaultActiveTab?: number;
+
+  /**
+   * Allows you to override the default tab behaviour and set the active tab programatically
+   */
+  activeTab?: number;
 }
 
 export interface TabItem {
