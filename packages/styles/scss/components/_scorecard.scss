@@ -77,6 +77,8 @@
 
         &--cta {
           display: flex;
+          flex: 1 1 auto;
+          align-items: flex-end;
           flex-flow: row wrap;
           gap: spacing(2);
         }

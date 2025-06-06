@@ -63,6 +63,7 @@ export type CardTypes =
   | "feature"
   | "detail"
   | "factlist"
+  | "score"
   | "data";
 
 export type HeadingTypes = "p" | "h1" | "h2" | "h3" | "h4" | "h5" | "h6";

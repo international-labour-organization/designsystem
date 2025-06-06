@@ -1,5 +1,23 @@
 # @ilo-org/twig
 
+## 1.8.6
+
+### Patch Changes
+
+- Updated dependencies [c306f6922]
+- Updated dependencies [bfb0fdac3]
+  - @ilo-org/brand-assets@1.0.1
+  - @ilo-org/styles@1.8.5
+
+## 1.8.5
+
+### Patch Changes
+
+- f0f6468df: **Loading:** Update styles and add `dark` theme
+- Updated dependencies [366192cd7]
+- Updated dependencies [f0f6468df]
+  - @ilo-org/styles@1.8.4
+
 ## 1.8.4
 
 ### Patch Changes

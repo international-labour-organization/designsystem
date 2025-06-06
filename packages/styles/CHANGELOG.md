@@ -1,5 +1,18 @@
 # @ilo-org/styles
 
+## 1.8.5
+
+### Patch Changes
+
+- bfb0fdac3: **ScoreCard:** Correctly align cta's to bottom of the card
+
+## 1.8.4
+
+### Patch Changes
+
+- 366192cd7: **Credit** & **Navigation:** Remove broken icons
+- f0f6468df: **Loading:** Update styles and add `dark` theme
+
 ## 1.8.3
 
 ### Patch Changes

@@ -1,5 +1,11 @@
 # @ilo-org/brand-assets
 
+## 1.0.1
+
+### Patch Changes
+
+- c306f6922: Add apple touch precomposed and maskable 192x192 and 512x512 icon.
+
 ## 1.0.0
 
 ### Major Changes
