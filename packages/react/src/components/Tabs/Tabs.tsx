@@ -1,4 +1,4 @@
-import { FC, SetStateAction, useState } from "react";
+import { FC, SetStateAction, useEffect, useState } from "react";
 import useGlobalSettings from "../../hooks/useGlobalSettings";
 import classnames from "classnames";
 import { TabsProps } from "./Tabs.props";
@@ -9,14 +9,25 @@ const Tabs: FC<TabsProps> = ({
   className,
   theme = "light",
   defaultActiveTab = 0,
+  activeTab,
 }) => {
-  const [activeTab, setActiveTab] = useState(defaultActiveTab);
+  const [currentTab, setCurrentTab] = useState(defaultActiveTab);
+
+  useEffect(() => {
+    if (
+      typeof activeTab === "number" &&
+      activeTab >= 0 &&
+      activeTab <= items.length - 1
+    ) {
+      setCurrentTab(activeTab);
+    }
+  }, [activeTab, items]);
 
   const handleTabClick = (
     index: SetStateAction<number>,
     e: React.MouseEvent<HTMLElement>
   ) => {
-    setActiveTab(index);
+    setCurrentTab(index);
     e.preventDefault();
   };
 
@@ -37,7 +48,7 @@ const Tabs: FC<TabsProps> = ({
             key={`#tab--${index}`}
             role="presentation"
             className={`${baseClass}--selection--item ${
-              activeTab === index ? "active" : ""
+              currentTab === index ? "active" : ""
             }`}
             onClick={(e) => handleTabClick(index, e)}
             id={`tab--${index}`}
@@ -49,9 +60,9 @@ const Tabs: FC<TabsProps> = ({
               }`}
               role="tab"
               aria-controls={`tab--${index}`}
-              aria-selected={index === activeTab ? true : false}
+              aria-selected={index === currentTab ? true : false}
               title={tab.label}
-              tabIndex={index === activeTab ? 0 : -1}
+              tabIndex={index === currentTab ? 0 : -1}
             >
               <span className={`${baseClass}--selection--label`}>
                 {tab.label}
@@ -66,10 +77,10 @@ const Tabs: FC<TabsProps> = ({
       <div
         className={`${baseClass}--content`}
         role="tabpanel"
-        aria-labelledby={`tab--${activeTab}`}
+        aria-labelledby={`tab--${currentTab}`}
         tabIndex={0}
       >
-        {items[activeTab].content}
+        {items[currentTab].content}
       </div>
     </div>
   );
