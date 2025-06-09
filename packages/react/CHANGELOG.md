@@ -1,5 +1,11 @@
 # @ilo-org/react
 
+## 0.24.6
+
+### Patch Changes
+
+- 4702ebfaf: **Tabs:** Allow `activeTab` to be programatically set via props
+
 ## 0.24.5
 
 ### Patch Changes
