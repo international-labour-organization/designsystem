@@ -7,6 +7,27 @@
 // Load the theme vars and fonts
 @use "@ilo-org/themes/build/scss/tokens" as *;
 
+// Set Arabic fonts
+:root[lang*="ar"],
+[lang*="ar"] {
+  --ilo-fonts-display: var(--ilo-fonts-display-ar);
+  --ilo-fonts-copy: var(--ilo-fonts-copy-ar);
+}
+
+// Set Chinese system fonts
+:root[lang*="zh"],
+[lang*="zh"] {
+  --ilo-fonts-display: var(--ilo-fonts-display-zh);
+  --ilo-fonts-copy: var(--ilo-fonts-copy-zh);
+}
+
+// Set Japanese system fonts
+:root[lang*="ja"],
+[lang*="ja"] {
+  --ilo-fonts-display: var(--ilo-fonts-display-jp);
+  --ilo-fonts-copy: var(--ilo-fonts-copy-jp);
+}
+
 html,
 body {
   color: $color-font-base;
@@ -26,14 +47,6 @@ h5 {
   font-family: var(--ilo-fonts-display);
 }
 
-// Set Chinese system fonts
-html[lang*="zh"] {
-  --ilo-fonts-display: var(--ilo-fonts-display-zh);
-  --ilo-fonts-copy: var(--ilo-fonts-copy-zh);
-}
-
-// Set Japanese system fonts
-html[lang*="ja"] {
-  --ilo-fonts-display: var(--ilo-fonts-display-jp);
-  --ilo-fonts-copy: var(--ilo-fonts-copy-jp);
-}
+/* p {
+  font-family: var(--ilo-fonts-copy);
+} */

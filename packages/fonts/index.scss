@@ -4,8 +4,6 @@
 
 /* --- Overpass Medium --- */
 
-/* --- Overpass Medium --- */
-
 @font-face {
   font-display: swap;
   font-family: "Overpass";
@@ -116,5 +114,60 @@
     url("~@ilo-org/fonts/assets/NotoSans-BoldItalic.ttf") format("truetype");
   font-weight: 700;
   font-style: italic;
+  font-display: swap;
+}
+
+/* --------------------------- */
+/* -------- Vazirmatn -------- */
+/* --------------------------- */
+
+/* --- Vazirmatn Normal --- */
+
+@font-face {
+  font-family: "Vazirmatn";
+  src:
+    url("~@ilo-org/fonts/assets/Vazirmatn-Regular.ttf") format("truetype"),
+    url("~@ilo-org/fonts/assets/Vazirmatn-Regular.woff2") format("woff2"),
+    url("~@ilo-org/fonts/assets/Vazirmatn-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* -- Vazirmatn Regular Also gets used for Italic in Arabic */
+@font-face {
+  font-family: "Vazirmatn";
+  src:
+    url("~@ilo-org/fonts/assets/Vazirmatn-Regular.ttf") format("truetype"),
+    url("~@ilo-org/fonts/assets/Vazirmatn-Regular.woff2") format("woff2"),
+    url("~@ilo-org/fonts/assets/Vazirmatn-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* --- Vazirmatn SemiBold --- */
+
+@font-face {
+  font-family: "Vazirmatn";
+  src:
+    url("~@ilo-org/fonts/assets/Vazirmatn-SemiBold.ttf") format("truetype"),
+    url("~@ilo-org/fonts/assets/Vazirmatn-SemiBold.woff2") format("woff2"),
+    url("~@ilo-org/fonts/assets/Vazirmatn-SemiBold.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* --- Vazirmatn Bold --- */
+
+@font-face {
+  font-family: "Vazirmatn";
+  src:
+    url("~@ilo-org/fonts/assets/Vazirmatn-Bold.ttf") format("truetype"),
+    url("~@ilo-org/fonts/assets/Vazirmatn-Bold.woff2") format("woff2"),
+    url("~@ilo-org/fonts/assets/Vazirmatn-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
   font-display: swap;
 }

@@ -1,8 +1,8 @@
 <!-- .storybook/manager-head.html -->
 <style>
-  @import url("/fonts/fonts-google.css");
   @import url("https://fonts.googleapis.com/css2?family=Overpass&display=swap");
   @import url("https://fonts.googleapis.com/css2?family=Fira Code&display=swap");
+  @import url("node_modules/@ilo-org/styles/css/global.css");
 </style>
 
 <!-- Canonical URL -->
@@ -13,7 +13,26 @@
 
 <!-- Fonts -->
 <style>
-  .sidebar-container, .docblock-argstable-body, .docblock-argstable-head {
+  body {
+    line-height: 1;
+  }
+  button {
+    font: initial;
+  }
+
+  .sidebar-container,
+  .docblock-argstable-body,
+  .docblock-argstable-head {
     font-family: "Overpass", sans-serif !important; /* Customize the sidebar font */
+  }
+
+  .sb-bar button[title] {
+    color: var(--ilo-color-white);
+    background: none;
+  }
+
+  .sb-bar button[title]:hover {
+    background: var(--ilo-color-yellow);
+    color: var(--ilo-color-blue-dark);
   }
 </style>

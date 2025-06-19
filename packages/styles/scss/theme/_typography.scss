@@ -1,16 +1,14 @@
 :root {
   // Display Font Families
   --ilo-fonts-display: Overpass, Noto Sans, sans-serif;
-
-  // Chinese and Japanese system fonts
+  --ilo-fonts-display-ar: Vazirmatn, sans-serif;
   --ilo-fonts-display-zh: PingFang SC, Microsoft YaHei, 微软雅黑, sans-serif;
   --ilo-fonts-display-jp: Noto Sans CJK JP, Yu Gothic, Hiragino Sans,
     TakaoPGothic, sans-serif;
 
   // Copy font families
   --ilo-fonts-copy: Noto Sans, sans-serif;
-
-  // Chinese and Japanese system fonts
+  --ilo-fonts-copy-ar: Vazirmatn, sans-serif;
   --ilo-fonts-copy-zh: PingFang SC, Microsoft YaHei, 微软雅黑, sans-serif;
   --ilo-fonts-copy-jp: Noto Sans CJK JP, Yu Gothic, Hiragino Sans, TakaoPGothic,
     sans-serif;
