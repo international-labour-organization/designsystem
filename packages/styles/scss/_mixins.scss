@@ -411,11 +411,11 @@
   @if $variant == "heading-1" {
     font-size: var(--ilo-font-size-5xlg);
     font-weight: var(--ilo-font-weight-bold);
-    line-height: var(--ilo-line-height-xsm);
+    line-height: var(--ilo-line-height-md);
     letter-spacing: var(--ilo-letter-spacing-xsm);
     @if $mobile {
       font-size: var(--ilo-font-size-4xlg);
-      line-height: var(--ilo-line-height-sm);
+      line-height: var(--ilo-line-height-md);
     }
   } @else if $variant == "heading-2" {
     font-size: var(--ilo-font-size-3xlg);
@@ -446,7 +446,7 @@
   } @else if $variant == "blockquote" {
     font-size: var(--ilo-font-size-4xlg);
     font-weight: var(--ilo-font-weight-light);
-    line-height: var(--ilo-line-height-sm);
+    line-height: var(--ilo-line-height-md);
     letter-spacing: var(--ilo-letter-spacing-xsm);
     @if $mobile {
       font-size: var(--ilo-font-size-2xlg);
