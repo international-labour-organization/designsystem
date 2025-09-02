@@ -18,7 +18,8 @@
 
 @mixin image-caption-dark-styles {
   figcaption {
-    color: var(--ilo-color-gray-light);
+    color: var(--ilo-color-white);
+    border-inline-color: var(--ilo-color-gray-light-semi-transparent);
   }
 }
 
@@ -54,10 +55,15 @@
       bottom: -#{px-to-rem(4px)};
     }
   }
+
   [dir="rtl"] & {
     .ilo--credit {
       left: auto;
       right: 0;
     }
+  }
+
+  &__theme__dark {
+    @include image-caption-dark-styles;
   }
 }

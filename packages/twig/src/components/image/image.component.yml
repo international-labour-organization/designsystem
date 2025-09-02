@@ -51,4 +51,11 @@ image:
       description: Is this image in a hero? If true, and credit exists, will display credit in a title attribute
       preview: false
       required: false
+    theme:
+      type: select
+      label: Theme
+      description: The theme to be used for the Image component.
+      options:
+        light: light
+        dark: dark
   visibility: storybook

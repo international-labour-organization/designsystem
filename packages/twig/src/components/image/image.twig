@@ -1,7 +1,8 @@
 {#
   IMAGE COMPONENT
 #}
-<figure class="{{prefix}}--image" data-prefix="{{prefix}}">
+{% set theme = theme|default("light") %}
+<figure class="{{prefix}}--image {{prefix}}--image__theme__{{theme}}" data-prefix="{{prefix}}">
   <div class="image {{prefix}}--image--wrapper">
     <picture {% if credit and ishero and ishero != 'false' %}title="{{credit}}"{% endif %}>
       {% for img in url|reverse %}
