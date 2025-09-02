@@ -2,6 +2,20 @@
 @use "../functions" as *;
 @import "../mixins";
 
+@mixin image-caption-styles {
+  figcaption {
+    border-inline-start: var(--ilo-border-lg) solid
+      var(--ilo-color-borders-default);
+    color: var(--ilo-color-gray-accessible);
+    font-size: var(--ilo-font-size-sm);
+    line-height: var(--ilo-line-height-xlg);
+    font-weight: var(--ilo-font-weight-regular);
+    letter-spacing: var(--ilo-letter-spacing-md);
+    margin-top: spacing(4);
+    padding-inline-start: spacing(2);
+  }
+}
+
 .ilo--image {
   position: relative;
 
@@ -20,15 +34,6 @@
     width: 100%;
   }
 
-  &--caption {
-    border-left: var(--ilo-border-lg) solid var(--ilo-color-borders-default);
-    color: var(--ilo-color-gray-accessible);
-    font-weight: var(--ilo-font-weight-regular);
-    margin-top: spacing(4);
-    padding-left: spacing(2);
-    @include font-styles("image-caption");
-  }
-
   .ilo--credit {
     bottom: 0;
     left: 0;
@@ -40,16 +45,11 @@
   }
 
   [dir="rtl"] & {
-    .ilo--image--caption {
-      border-left: none;
-      border-right: var(--ilo-border-lg) solid var(--ilo-color-borders-default);
-      padding-left: 0;
-      padding-right: spacing(2);
-    }
-
     .ilo--credit {
       left: auto;
       right: 0;
     }
   }
+
+  @include image-caption-styles;
 }

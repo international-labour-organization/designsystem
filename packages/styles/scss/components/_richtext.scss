@@ -1,6 +1,7 @@
 @use "../tokens" as *;
 @use "../functions" as *;
 @import "./blockquote";
+@import "./image";
 @import "../mixins";
 
 .ilo--richtext {
@@ -119,15 +120,7 @@
     width: 100%;
   }
 
-  // Figcaption styles
-  figcaption {
-    border-left: var(--ilo-border-lg) solid var(--ilo-color-borders-default);
-    color: var(--ilo-richtext-figcaption-color);
-    font-weight: var(--ilo-font-weight-regular);
-    margin-top: spacing(4);
-    padding-left: spacing(2);
-    @include font-styles("image-caption");
-  }
+  @include image-caption-styles;
 
   // Horizontal rule (hr) styles
   hr {
@@ -220,16 +213,6 @@
 
     figure {
       width: 100%;
-    }
-  }
-
-  // RTL (Right-to-left) support
-  [dir="rtl"] & {
-    figcaption {
-      border-left: none;
-      border-right: var(--ilo-border-lg) solid var(--ilo-color-borders-default);
-      padding-left: 0;
-      padding-right: spacing(2);
     }
   }
 }
