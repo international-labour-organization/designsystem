@@ -12,18 +12,10 @@ const Image: FC<ImageProps> = ({ alt, caption, className, credit, url }) => {
     [baseClass]: true,
   });
 
-  const imgClasses = classNames("", {
-    [`${baseClass}--img`]: true,
-  });
-
-  const captionClasses = classNames("", {
-    [`${baseClass}--caption`]: true,
-  });
-
   return (
     <figure className={imageClasses}>
       <div className={`${imageClasses}--wrapper`}>
-        <picture className={imgClasses}>
+        <picture>
           {url &&
             url
               .sort((a: ImageUrl, b: ImageUrl) => a.breakpoint - b.breakpoint)
@@ -40,7 +32,7 @@ const Image: FC<ImageProps> = ({ alt, caption, className, credit, url }) => {
         </picture>
         {credit && <Credit credit={credit} />}
       </div>
-      {caption && <figcaption className={captionClasses}>{caption}</figcaption>}
+      {caption && <figcaption>{caption}</figcaption>}
     </figure>
   );
 };

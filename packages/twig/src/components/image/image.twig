@@ -3,7 +3,7 @@
 #}
 <figure class="{{prefix}}--image" data-prefix="{{prefix}}">
   <div class="image {{prefix}}--image--wrapper">
-    <picture class="{{prefix}}--image--img" {% if credit and ishero and ishero != 'false' %}title="{{credit}}"{% endif %}>
+    <picture {% if credit and ishero and ishero != 'false' %}title="{{credit}}"{% endif %}>
       {% for img in url|reverse %}
         {% if loop.last == false  %}
           {% if img.breakpoint matches '/^\\d+$/' %}

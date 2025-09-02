@@ -16,6 +16,23 @@
   }
 }
 
+@mixin image-caption-dark-styles {
+  figcaption {
+    color: var(--ilo-color-gray-light);
+  }
+}
+
+@mixin image-styles {
+  figure {
+    width: 100%;
+    line-height: 0;
+  }
+
+  img {
+    width: 100%;
+  }
+}
+
 .ilo--image {
   position: relative;
 
@@ -25,14 +42,8 @@
     width: 100%;
   }
 
-  &--img {
-    line-height: 0;
-  }
-
-  &--img,
-  img {
-    width: 100%;
-  }
+  @include image-styles;
+  @include image-caption-styles;
 
   .ilo--credit {
     bottom: 0;
@@ -43,13 +54,10 @@
       bottom: -#{px-to-rem(4px)};
     }
   }
-
   [dir="rtl"] & {
     .ilo--credit {
       left: auto;
       right: 0;
     }
   }
-
-  @include image-caption-styles;
 }

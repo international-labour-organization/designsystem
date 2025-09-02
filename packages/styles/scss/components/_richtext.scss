@@ -6,14 +6,12 @@
 
 .ilo--richtext {
   --ilo-richtext-color: var(--ilo-color-blue-dark);
-  --ilo-richtext-figcaption-color: var(--ilo-color-gray-accessible);
   --ilo-richtext-hr-color: var(--ilo-color-gray-light);
   --ilo-richtext-link-color: var(--ilo-color-purple);
   --ilo-richtext-link-visited-color: var(--ilo-color-purple);
 
   &__theme__light {
     --ilo-richtext-color: var(--ilo-color-blue-dark);
-    --ilo-richtext-figcaption-color: var(--ilo-color-gray-accessible);
     --ilo-richtext-hr-color: var(--ilo-color-gray-light);
     --ilo-richtext-link-color: var(--ilo-color-purple);
     --ilo-richtext-link-visited-color: var(--ilo-color-purple);
@@ -25,7 +23,6 @@
 
   &__theme__dark {
     --ilo-richtext-color: var(--ilo-color-white);
-    --ilo-richtext-figcaption-color: var(--ilo-color-gray-light);
     --ilo-richtext-hr-color: var(--ilo-color-gray-light);
     --ilo-richtext-link-color: var(--ilo-color-blue-medium);
     --ilo-richtext-link-visited-color: var(--ilo-color-blue-medium);
@@ -33,6 +30,8 @@
     a {
       @include linkstyles("dark");
     }
+
+    @include image-caption-dark-styles;
   }
 
   color: var(--ilo-richtext-color);
@@ -110,16 +109,7 @@
     font-weight: 700;
   }
 
-  // Image styles
-  img {
-    width: 100%;
-  }
-
-  // Figure styles
-  figure {
-    width: 100%;
-  }
-
+  @include image-styles;
   @include image-caption-styles;
 
   // Horizontal rule (hr) styles
@@ -209,10 +199,6 @@
 
     p {
       font-size: var(--ilo-font-size-lg);
-    }
-
-    figure {
-      width: 100%;
     }
   }
 }
