@@ -1,9 +1,10 @@
 {#
   IMAGE COMPONENT
 #}
-<figure class="{{prefix}}--image" data-prefix="{{prefix}}">
+{% set theme = theme|default("light") %}
+<figure class="{{prefix}}--image {{prefix}}--image__theme__{{theme}}" data-prefix="{{prefix}}">
   <div class="image {{prefix}}--image--wrapper">
-    <picture class="{{prefix}}--image--img" {% if credit and ishero and ishero != 'false' %}title="{{credit}}"{% endif %}>
+    <picture {% if credit and ishero and ishero != 'false' %}title="{{credit}}"{% endif %}>
       {% for img in url|reverse %}
         {% if loop.last == false  %}
           {% if img.breakpoint matches '/^\\d+$/' %}
@@ -24,6 +25,6 @@
     {% endif %}
   </div>
   {% if caption %}
-    <figcaption class="{{prefix}}--image--caption">{{caption}}</figcaption>
+    <figcaption>{{caption}}</figcaption>
   {% endif %}
 </figure>

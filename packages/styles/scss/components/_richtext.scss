@@ -1,18 +1,17 @@
 @use "../tokens" as *;
 @use "../functions" as *;
 @import "./blockquote";
+@import "./image";
 @import "../mixins";
 
 .ilo--richtext {
   --ilo-richtext-color: var(--ilo-color-blue-dark);
-  --ilo-richtext-figcaption-color: var(--ilo-color-gray-accessible);
   --ilo-richtext-hr-color: var(--ilo-color-gray-light);
   --ilo-richtext-link-color: var(--ilo-color-purple);
   --ilo-richtext-link-visited-color: var(--ilo-color-purple);
 
   &__theme__light {
     --ilo-richtext-color: var(--ilo-color-blue-dark);
-    --ilo-richtext-figcaption-color: var(--ilo-color-gray-accessible);
     --ilo-richtext-hr-color: var(--ilo-color-gray-light);
     --ilo-richtext-link-color: var(--ilo-color-purple);
     --ilo-richtext-link-visited-color: var(--ilo-color-purple);
@@ -24,7 +23,6 @@
 
   &__theme__dark {
     --ilo-richtext-color: var(--ilo-color-white);
-    --ilo-richtext-figcaption-color: var(--ilo-color-gray-light);
     --ilo-richtext-hr-color: var(--ilo-color-gray-light);
     --ilo-richtext-link-color: var(--ilo-color-blue-medium);
     --ilo-richtext-link-visited-color: var(--ilo-color-blue-medium);
@@ -32,6 +30,8 @@
     a {
       @include linkstyles("dark");
     }
+
+    @include image-caption-dark-styles;
   }
 
   color: var(--ilo-richtext-color);
@@ -109,25 +109,8 @@
     font-weight: 700;
   }
 
-  // Image styles
-  img {
-    width: 100%;
-  }
-
-  // Figure styles
-  figure {
-    width: 100%;
-  }
-
-  // Figcaption styles
-  figcaption {
-    border-left: var(--ilo-border-lg) solid var(--ilo-color-borders-default);
-    color: var(--ilo-richtext-figcaption-color);
-    font-weight: var(--ilo-font-weight-regular);
-    margin-top: spacing(4);
-    padding-left: spacing(2);
-    @include font-styles("image-caption");
-  }
+  @include image-styles;
+  @include image-caption-styles;
 
   // Horizontal rule (hr) styles
   hr {
@@ -216,20 +199,6 @@
 
     p {
       font-size: var(--ilo-font-size-lg);
-    }
-
-    figure {
-      width: 100%;
-    }
-  }
-
-  // RTL (Right-to-left) support
-  [dir="rtl"] & {
-    figcaption {
-      border-left: none;
-      border-right: var(--ilo-border-lg) solid var(--ilo-color-borders-default);
-      padding-left: 0;
-      padding-right: spacing(2);
     }
   }
 }

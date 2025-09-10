@@ -1,5 +1,6 @@
 @use "../tokens" as *;
 @use "../functions" as *;
+@import "./image";
 @import "../mixins";
 
 .ilo--video {
@@ -17,15 +18,6 @@
     width: 100%;
   }
 
-  &--caption {
-    border-left: px-to-rem(3px) solid $color-ux-caption-border-left;
-    color: $color-font-caption;
-    font-weight: 400;
-    margin-top: spacing(4);
-    padding-left: spacing(2);
-    @include font-styles("image-caption");
-  }
-
   &--element {
     height: auto;
     object-fit: cover;
@@ -37,6 +29,8 @@
     position: relative;
     overflow: hidden;
   }
+
+  @include image-caption-styles;
 
   // ? drupal style reset issue
   button {
@@ -337,14 +331,5 @@
         }
       }
     }
-  }
-}
-
-[dir="rtl"] {
-  .ilo--video--caption {
-    border-left: none;
-    border-right: 3px solid #b8c4cc;
-    padding-left: 0;
-    padding-right: spacing(2);
   }
 }
