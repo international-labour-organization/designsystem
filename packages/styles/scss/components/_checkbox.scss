@@ -1,90 +1,128 @@
-@use "../tokens" as *;
 @use "../functions" as *;
 @import "../mixins";
 
+// =============================================================================
+// CHECKBOX COMPONENT
+// =============================================================================
+
 .ilo--checkbox {
+  // Reset default appearance
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
   border: none;
+
+  // Layout
   display: grid;
-  height: px-to-rem(24px);
-  margin: 0;
   position: relative;
   place-content: center;
+
+  // Dimensions
   width: px-to-rem(24px);
+  height: px-to-rem(24px);
+
+  // Spacing
+  margin: 0;
+
+  // Visual
   transform: none;
   cursor: pointer;
 
+  // Inner checkmark (::before pseudo-element)
+  // ---------------------------------------------------------------------------
   &:before {
     content: "";
-    background-color: $color-base-neutrals-light;
-    height: px-to-rem(16px);
-    left: px-to-rem(4px);
+
+    // Layout
     position: absolute;
+    left: px-to-rem(4px);
     top: px-to-rem(4px);
-    width: px-to-rem(16px);
     z-index: 1;
+
+    // Dimensions
+    width: px-to-rem(16px);
+    height: px-to-rem(16px);
+
+    // Visual
+    background-color: var(--ilo-color-gray-base);
   }
 
+  // Outer border/background (::after pseudo-element)
+  // ---------------------------------------------------------------------------
   &:after {
     content: "";
-    background-color: $color-base-neutrals-light;
-    border: px-to-rem(4px) solid $color-base-neutrals-light;
-    height: px-to-rem(24px);
-    left: 0;
+
+    // Layout
     position: absolute;
+    left: 0;
     top: 0;
-    width: px-to-rem(24px);
     z-index: 0;
+
+    // Dimensions
+    width: px-to-rem(24px);
+    height: px-to-rem(24px);
+
+    // Visual
+    background-color: var(--ilo-color-gray-base);
+    border: px-to-rem(4px) solid var(--ilo-color-gray-base);
   }
 
+  // Checked state
+  // ---------------------------------------------------------------------------
   &:checked {
     &:before {
-      background-color: $color-base-blue-dark;
+      // Visual
+      background-color: var(--ilo-color-blue-dark);
       background-repeat: no-repeat;
-      background-size: contain;
       background-position: center center;
-      background-size: 24px;
-      @include dataurlicon("check", $color-base-neutrals-lighter);
+      background-size: px-to-rem(24px);
+
+      // Icon
+      @include icon("check", var(--ilo-color-gray-light));
     }
 
     &:after {
-      background-color: $color-base-blue-dark;
-      border-color: $color-base-blue-dark;
+      // Visual
+      background-color: var(--ilo-color-blue-dark);
+      border-color: var(--ilo-color-dark-blue);
     }
   }
 
+  // Focus state
+  // ---------------------------------------------------------------------------
   &:focus {
+    outline: none;
+
     &:after {
-      background-color: $color-base-yellow;
-      border-color: $color-base-yellow;
+      border-color: var(--ilo-color-yellow);
     }
 
     &:checked {
       &:after {
-        border-color: $color-base-yellow;
+        border-color: var(--ilo-color-yellow);
       }
     }
-
-    outline: none;
   }
 
+  // Disabled state
+  // ---------------------------------------------------------------------------
   &:disabled {
     opacity: 0.45;
     pointer-events: none;
   }
 
+  // Error/Invalid state
+  // ---------------------------------------------------------------------------
   &:invalid,
   &__error,
   &__error & {
     &:after {
-      border-color: $color-base-red-medium;
+      border-color: var(--ilo-color-red);
     }
 
     &:checked {
       &:after {
-        border-color: $color-base-blue-dark;
+        border-color: var(--ilo-color-dark-blue);
       }
     }
   }
