@@ -12,6 +12,13 @@
 [lang*="ar"] {
   --ilo-fonts-display: var(--ilo-fonts-display-ar);
   --ilo-fonts-copy: var(--ilo-fonts-copy-ar);
+
+  // Letter spacing overrides for Arabic. Different letter spacing values cause incorrect
+  // glpyhs to be rendered. See https://github.com/international-labour-organization/designsystem/issues/1547
+  --ilo-letter-spacing-xsm: 0;
+  --ilo-letter-spacing-sm: 0;
+  --ilo-letter-spacing-md: 0;
+  --ilo-letter-spacing-lg: 0;
 }
 
 // Set Chinese system fonts
