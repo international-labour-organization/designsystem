@@ -2,7 +2,7 @@ import { FC } from "react";
 import classNames from "classnames";
 import useGlobalSettings from "../../hooks/useGlobalSettings";
 import { ImageProps, ImageUrl } from "./Image.props";
-import { Credit } from "../Credit";
+import { Tooltip } from "../Tooltip";
 
 const Image: FC<ImageProps> = ({ alt, caption, className, credit, url }) => {
   const { prefix } = useGlobalSettings();
@@ -30,7 +30,11 @@ const Image: FC<ImageProps> = ({ alt, caption, className, credit, url }) => {
               ))}
           {url && <img src={url[0].src} alt={alt} />}
         </picture>
-        {credit && <Credit credit={credit} />}
+        {credit && (
+          <div className={`${imageClasses}--credit`}>
+            <Tooltip label={credit} iconTheme="dark" />
+          </div>
+        )}
       </div>
       {caption && <figcaption>{caption}</figcaption>}
     </figure>

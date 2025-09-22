@@ -46,18 +46,15 @@
   @include image-styles;
   @include image-caption-styles;
 
-  .ilo--credit {
+  &--credit {
+    @include caption-icon-wrapper("right", 30px, 27px);
     bottom: 0;
     left: 0;
     position: absolute;
-
-    @include breakpoint("lg") {
-      bottom: -#{px-to-rem(4px)};
-    }
   }
 
   [dir="rtl"] & {
-    .ilo--credit {
+    &--credit {
       left: auto;
       right: 0;
     }
