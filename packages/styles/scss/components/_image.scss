@@ -47,14 +47,16 @@
   @include image-caption-styles;
 
   &--credit {
-    @include caption-icon-wrapper("right", 30px, 27px);
+    @include caption-icon-wrapper("right", 32px, 24px);
+    position: absolute;
     bottom: 0;
     left: 0;
-    position: absolute;
   }
 
   [dir="rtl"] & {
     &--credit {
+      @include caption-icon-wrapper("left", 32px, 24px);
+      position: absolute;
       left: auto;
       right: 0;
     }
