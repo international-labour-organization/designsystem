@@ -285,7 +285,8 @@
 // ======================================
 
 @mixin caption-icon-wrapper($dir: "right", $width, $height) {
-  background: map-get($color, "tooltip", "dark", "background");
+  --caption-bg-color: var(--ilo-color-gray-charcoal);
+  background: var(--caption-bg-color);
   height: $height;
   width: $width;
   display: flex;
@@ -304,18 +305,14 @@
     @if ($dir == "right") {
       left: 100%;
       border-right: none;
-      border-left: calc(#{$height} - 4px)
-        solid
-        map-get($color, "tooltip", "dark", "background");
+      border-left: calc(#{$height} - 4px) solid var(--caption-bg-color);
     }
 
     @if ($dir == "left") {
       left: auto;
       right: 100%;
       border-left: none;
-      border-right: calc(#{$height} - 4px)
-        solid
-        map-get($color, "tooltip", "dark", "background");
+      border-right: calc(#{$height} - 4px) solid var(--caption-bg-color);
     }
   }
 }
