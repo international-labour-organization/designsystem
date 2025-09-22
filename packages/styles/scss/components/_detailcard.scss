@@ -64,10 +64,27 @@
         text-indent: px-to-rem(-24px);
 
         .ilo--icon {
-          display: inline-block;
           position: relative;
           vertical-align: sub;
           top: px-to-rem(1px);
+        }
+      }
+
+      #{$self}--icon-left {
+        display: none;
+      }
+
+      #{$self}--icon-right {
+        display: inline-block;
+      }
+
+      [dir="rtl"] & {
+        #{$self}--icon-left {
+          display: inline-block;
+        }
+
+        #{$self}--icon-right {
+          display: none;
         }
       }
 
