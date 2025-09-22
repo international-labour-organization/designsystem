@@ -47,18 +47,41 @@
   @include image-caption-styles;
 
   &--credit {
-    @include caption-icon-wrapper("right", 32px, 24px);
+    @include caption-icon-wrapper("right", auto, 24px);
     position: absolute;
     bottom: 0;
     left: 0;
   }
 
+  &--tooltip {
+    padding-left: spacing(2);
+    padding-right: spacing(1);
+  }
+
+  &--label {
+    display: none;
+    font-size: var(--ilo-font-size-xsm);
+    line-height: var(--ilo-line-height-xsm);
+    color: var(--ilo-color-gray-light);
+    padding-left: spacing(3);
+    padding-right: spacing(2);
+  }
+
   [dir="rtl"] & {
     &--credit {
-      @include caption-icon-wrapper("left", 32px, 24px);
+      @include caption-icon-wrapper("left", auto, 24px);
       position: absolute;
       left: auto;
       right: 0;
+    }
+  }
+
+  @include breakpoint("lg") {
+    &--label {
+      display: block;
+    }
+    &--tooltip {
+      display: none;
     }
   }
 

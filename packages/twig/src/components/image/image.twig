@@ -19,13 +19,18 @@
     {% if not ishero or ishero =='false' %}
       {% if credit %}
       <div class="{{prefix}}--image--credit">
-        {% include '@components/tooltip/tooltip.twig' with {
-						prefix: prefix,
-						label: credit,
-						icon: true,
-						theme: theme,
-						icontheme: theme == 'dark' ? 'light' : 'dark'
-					} only %}
+        <div class="{{prefix}}--image--tooltip">
+          {% include '@components/tooltip/tooltip.twig' with {
+              prefix: prefix,
+              label: credit,
+              icon: true,
+              theme: theme,
+              icontheme: theme == 'dark' ? 'light' : 'dark'
+            } only %}
+        </div>
+        <div class="{{prefix}}--image--label">
+          {{credit}}
+        </div>
       </div>
       {% endif %}
     {% endif %}
