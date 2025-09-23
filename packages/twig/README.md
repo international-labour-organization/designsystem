@@ -21,7 +21,12 @@ This package provides the implementation of the Design System using [Twig](https
   - You can use [nvm](https://github.com/nvm-sh/nvm) to manage your Node.js versions
 - [pnpm](https://pnpm.io/) installed globally or via corepack >= 9.14.0
 
-Before running any of the commands below, make sure to run `pnpm build:libs` from the monorepo root to build all necessary packages.
+### Getting Started
+
+Before running any of the commands below, make sure to:
+
+1. Run `pnpm install` from the monorepo root to install all dependencies
+2. Run `pnpm build:libs` from the monorepo root to build all necessary packages
 
 | Command                | Description                                                  |
 | ---------------------- | ------------------------------------------------------------ |
