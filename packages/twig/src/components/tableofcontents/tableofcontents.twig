@@ -15,24 +15,24 @@
 				type: openbutton_type,
 				label: openbutton_label,
 				opensmodal: true,
-        className: "toc--modal--open"
+				className: "toc--modal--open"
 			} only %}
 		</div>
 		<div class="{{prefix}}--table-of-contents--modal">
 			<h3 class="{{prefix}}--table-of-contents--headline">{{headline}}</h3>
 			{% include '@components/button/button.twig' with {
 				prefix: prefix,
-        size: "large",
-        type: "tertiary",
-				label: closebutton_label,
-        icon: {
-          name: "close",
-          size: 24,
-        },
-        iconPos: "center",
-        icononly: true,
-        className: "toc--modal--close"
-      } only %}
+				size: "large",
+				type: "tertiary",
+						label: closebutton_label,
+				icon: {
+				name: "close",
+				size: 24,
+				},
+				iconPos: "center",
+				icononly: true,
+				className: "toc--modal--close"
+			} only %}
 		</div>
 		<nav class="{{prefix}}--table-of-contents">
 			<ul class="{{prefix}}--table-of-contents--list">
