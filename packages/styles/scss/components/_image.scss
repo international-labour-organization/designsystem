@@ -90,7 +90,7 @@
     @include image-caption-dark-styles;
 
     #{$self}--credit {
-      --caption-bg-color: var(--ilo-color-white);
+      --ilo-caption-icon-wrapper-bg-color: var(--ilo-color-white);
     }
 
     #{$self}--label {
