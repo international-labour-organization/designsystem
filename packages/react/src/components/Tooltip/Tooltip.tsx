@@ -131,6 +131,7 @@ const Tooltip = forwardRef<HTMLDivElement, TooltipProps>(
         onFocus={handleShow}
         onBlur={handleHide}
         id={id || `tooltip-${rid}`}
+        data-testid="tooltip-trigger"
       >
         {!icon && children}
         <span
