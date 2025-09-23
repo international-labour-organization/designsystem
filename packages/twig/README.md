@@ -15,19 +15,25 @@ This package provides the implementation of the Design System using [Twig](https
 
 ## Available Commands
 
-Make sure to have a node version 20 or higher installed. You can use [nvm](https://github.com/nvm-sh/nvm) to manage your Node.js versions.
+### Prerequisites
 
-| Command               | Description                                                  |
-| --------------------- | ------------------------------------------------------------ |
-| `npm run build:lib`   | Builds the library                                           |
-| `npm run build:docs`  | Generates static Storybook documentation                     |
-| `npm run storybook`   | Starts Storybook development server on port 6006             |
-| `npm run start:theme` | Starts Docker containers in detached mode(Used in tests)     |
-| `npm run cr:theme`    | Rebuilds Drupal cache inside Docker container(Used in tests) |
-| `npm run cy:open`     | Opens Cypress test runner(Used in tests)                     |
-| `npm run test`        | Runs Cypress tests in headless mode(Used in tests)           |
-| `npm run lint`        | Runs ESLint to check code quality                            |
-| `npm run lint:fix`    | Runs ESLint with automatic fixes                             |
+- Node.js version 20 or higher
+  - You can use [nvm](https://github.com/nvm-sh/nvm) to manage your Node.js versions
+- [pnpm](https://pnpm.io/) installed globally or via corepack >= 9.14.0
+
+Before running any of the commands below, make sure to run `pnpm build:libs` from the monorepo root to build all necessary packages.
+
+| Command                | Description                                                  |
+| ---------------------- | ------------------------------------------------------------ |
+| `pnpm run build:lib`   | Builds the library                                           |
+| `pnpm run build:docs`  | Generates static Storybook documentation                     |
+| `pnpm run storybook`   | Starts Storybook development server on port 6006             |
+| `pnpm run start:theme` | Starts Docker containers in detached mode(Used in tests)     |
+| `pnpm run cr:theme`    | Rebuilds Drupal cache inside Docker container(Used in tests) |
+| `pnpm run cy:open`     | Opens Cypress test runner(Used in tests)                     |
+| `pnpm run test`        | Runs Cypress tests in headless mode(Used in tests)           |
+| `pnpm run lint`        | Runs ESLint to check code quality                            |
+| `pnpm run lint:fix`    | Runs ESLint with automatic fixes                             |
 
 ## Development
 
