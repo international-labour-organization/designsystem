@@ -35,7 +35,14 @@
 					{% include "@components/icon/icon.twig" with {
 						name: "triangle_right",
 						size: 20,
-						color: iconColor
+						color: iconColor,
+						class: prefix ~ "--card--icon-right"
+					} %}
+					{% include "@components/icon/icon.twig" with {
+						name: "triangle_left",
+						size: 20,
+						color: iconColor,
+						class: prefix ~ "--card--icon-left"
 					} %}
 					{{dateExtra}}
 				</p>

@@ -156,7 +156,16 @@ const DetailCard = forwardRef<HTMLDivElement, DetailCardProps>(
             )}
             {details && (
               <p className={`${baseClass}--date-extra`}>
-                <Icon name="TriangleRight" size={20} />
+                <Icon
+                  name="TriangleRight"
+                  size={20}
+                  className={`${baseClass}--icon-right`}
+                />
+                <Icon
+                  name="TriangleLeft"
+                  size={20}
+                  className={`${baseClass}--icon-left`}
+                />
                 {details}
               </p>
             )}
