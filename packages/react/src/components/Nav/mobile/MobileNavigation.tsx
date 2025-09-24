@@ -5,7 +5,7 @@ import { MobileMenuList } from "./MobileMenuList";
 import { MobileDrawer } from "./MobileDrawer";
 import { MobileLanguageList } from "./MobileLanguageList";
 import { NavigationLink } from "../NavigationLink";
-import { SubsiteNavCoreProps } from "../Navigation.props";
+import { NavCoreProps } from "../Navigation.props";
 
 type MobileNavigationProps = {
   /**
@@ -18,7 +18,7 @@ type MobileNavigationProps = {
    */
   onClose?: () => void;
 
-  navigationProps: Omit<SubsiteNavCoreProps, "type">;
+  navigationProps: Omit<NavCoreProps, "type">;
 };
 
 const MobileNavigation = ({

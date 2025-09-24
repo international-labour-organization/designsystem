@@ -18,7 +18,7 @@ export interface NavigationLinkProps {
   component?: ElementType;
 }
 
-export interface SubsiteNavCoreProps {
+export interface NavCoreProps {
   branding: {
     /**
      * The branding to display in the SubsiteNav like a primary logo
@@ -102,7 +102,7 @@ export interface CompactNavProps {
    */
   type?: "compact";
 
-  props: SubsiteNavCoreProps;
+  props: NavCoreProps;
 }
 
 export interface ComplexNavProps {
@@ -111,9 +111,9 @@ export interface ComplexNavProps {
    */
   type?: "complex";
 
-  props: SubsiteNavCoreProps & {
+  props: NavCoreProps & {
     branding: {
-      logo: SubsiteNavCoreProps["branding"]["logo"] & {
+      logo: NavCoreProps["branding"]["logo"] & {
         /**
          * The logo to display for the mobile screens
          */
@@ -124,6 +124,16 @@ export interface ComplexNavProps {
         main: string;
         sub?: string;
       };
+    };
+  };
+}
+
+export interface MainNavProps extends NavCoreProps {
+  widgets: Omit<NonNullable<NavCoreProps["widgets"]>, "link">;
+  branding: NavCoreProps["branding"] & {
+    tag: {
+      main: string;
+      sub?: string;
     };
   };
 }
