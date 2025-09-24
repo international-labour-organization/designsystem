@@ -28,17 +28,17 @@ Before running any of the commands below, make sure to:
 1. Run `pnpm install` from the monorepo root to install all dependencies
 2. Run `pnpm build:libs` from the monorepo root to build all necessary packages
 
-| Command                | Description                                                  |
-| ---------------------- | ------------------------------------------------------------ |
-| `pnpm run build:lib`   | Builds the library                                           |
-| `pnpm run build:docs`  | Generates static Storybook documentation                     |
-| `pnpm run storybook`   | Starts Storybook development server on port 6006             |
-| `pnpm run start:theme` | Starts Docker containers in detached mode(Used in tests)     |
-| `pnpm run cr:theme`    | Rebuilds Drupal cache inside Docker container(Used in tests) |
-| `pnpm run cy:open`     | Opens Cypress test runner(Used in tests)                     |
-| `pnpm run test`        | Runs Cypress tests in headless mode(Used in tests)           |
-| `pnpm run lint`        | Runs ESLint to check code quality                            |
-| `pnpm run lint:fix`    | Runs ESLint with automatic fixes                             |
+| Command            | Description                                                  |
+| ------------------ | ------------------------------------------------------------ |
+| `pnpm build:lib`   | Builds the library                                           |
+| `pnpm build:docs`  | Generates static Storybook documentation                     |
+| `pnpm storybook`   | Starts Storybook development server on port 6006             |
+| `pnpm start:theme` | Starts Docker containers in detached mode(Used in tests)     |
+| `pnpm cr:theme`    | Rebuilds Drupal cache inside Docker container(Used in tests) |
+| `pnpm cy:open`     | Opens Cypress test runner(Used in tests)                     |
+| `pnpm test`        | Runs Cypress tests in headless mode(Used in tests)           |
+| `pnpm lint`        | Runs ESLint to check code quality                            |
+| `pnpm lint:fix`    | Runs ESLint with automatic fixes                             |
 
 ## Development
 
