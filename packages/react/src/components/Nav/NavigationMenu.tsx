@@ -11,15 +11,25 @@ type NavigationMenuProps = {
     onClick: () => void;
     isOpen: boolean;
   };
+  light?: boolean;
 };
 
-const NavigationMenu = ({ className, menu, more }: NavigationMenuProps) => {
+const NavigationMenu = ({
+  className,
+  menu,
+  more,
+  light = false,
+}: NavigationMenuProps) => {
   const { prefix } = useGlobalSettings();
 
   const baseClass = `${prefix}--nav-menu`;
 
   return (
-    <div className={classNames(baseClass, className)}>
+    <div
+      className={classNames(baseClass, className, {
+        [`${baseClass}--light`]: light,
+      })}
+    >
       <ul className={`${baseClass}__list`}>
         {menu.map(({ isActive, ...item }) => {
           const active = typeof isActive === "function" ? isActive() : isActive;
