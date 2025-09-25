@@ -418,6 +418,13 @@
   sizes:
     - glyph
 
+- name: triangle_left
+  friendly_name: triangle_left
+  aliases:
+    - ILO Icons
+  sizes:
+    - glyph
+
 - name: upload
   friendly_name: upload
   aliases:

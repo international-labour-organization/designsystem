@@ -285,7 +285,8 @@
 // ======================================
 
 @mixin caption-icon-wrapper($dir: "right", $width, $height) {
-  background: map-get($color, "tooltip", "dark", "background");
+  --ilo-caption-icon-wrapper-bg-color: var(--ilo-color-gray-charcoal);
+  background: var(--ilo-caption-icon-wrapper-bg-color);
   height: $height;
   width: $width;
   display: flex;
@@ -306,7 +307,7 @@
       border-right: none;
       border-left: calc(#{$height} - 4px)
         solid
-        map-get($color, "tooltip", "dark", "background");
+        var(--ilo-caption-icon-wrapper-bg-color);
     }
 
     @if ($dir == "left") {
@@ -315,7 +316,7 @@
       border-left: none;
       border-right: calc(#{$height} - 4px)
         solid
-        map-get($color, "tooltip", "dark", "background");
+        var(--ilo-caption-icon-wrapper-bg-color);
     }
   }
 }

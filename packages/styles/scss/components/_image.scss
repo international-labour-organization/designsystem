@@ -2,7 +2,40 @@
 @use "../functions" as *;
 @import "../mixins";
 
+@mixin image-caption-styles {
+  figcaption {
+    border-inline-start: var(--ilo-border-lg) solid
+      var(--ilo-color-borders-default);
+    color: var(--ilo-color-gray-accessible);
+    font-size: var(--ilo-font-size-sm);
+    line-height: var(--ilo-line-height-xlg);
+    font-weight: var(--ilo-font-weight-regular);
+    letter-spacing: var(--ilo-letter-spacing-md);
+    margin-top: spacing(4);
+    padding-inline-start: spacing(2);
+  }
+}
+
+@mixin image-caption-dark-styles {
+  figcaption {
+    color: var(--ilo-color-white);
+    border-inline-color: var(--ilo-color-gray-light-semi-transparent);
+  }
+}
+
+@mixin image-styles {
+  figure {
+    width: 100%;
+    line-height: 0;
+  }
+
+  img {
+    width: 100%;
+  }
+}
+
 .ilo--image {
+  $self: &;
   position: relative;
 
   &--wrapper {
@@ -11,45 +44,57 @@
     width: 100%;
   }
 
-  &--img {
-    line-height: 0;
-  }
+  @include image-styles;
+  @include image-caption-styles;
 
-  &--img,
-  img {
-    width: 100%;
-  }
-
-  &--caption {
-    border-left: var(--ilo-border-lg) solid var(--ilo-color-borders-default);
-    color: var(--ilo-color-gray-accessible);
-    font-weight: var(--ilo-font-weight-regular);
-    margin-top: spacing(4);
-    padding-left: spacing(2);
-    @include typography("body-small");
-  }
-
-  .ilo--credit {
+  &--credit {
+    @include caption-icon-wrapper("right", auto, 24px);
+    position: absolute;
     bottom: 0;
     left: 0;
-    position: absolute;
+  }
 
-    @include breakpoint("lg") {
-      bottom: -#{px-to-rem(4px)};
-    }
+  &--tooltip {
+    padding-left: spacing(2);
+    padding-right: spacing(1);
+  }
+
+  &--label {
+    display: none;
+    font-size: var(--ilo-font-size-xsm);
+    line-height: var(--ilo-line-height-xsm);
+    color: var(--ilo-color-gray-light);
+    padding-left: spacing(3);
+    padding-right: spacing(2);
   }
 
   [dir="rtl"] & {
-    .ilo--image--caption {
-      border-left: none;
-      border-right: var(--ilo-border-lg) solid var(--ilo-color-borders-default);
-      padding-left: 0;
-      padding-right: spacing(2);
-    }
-
-    .ilo--credit {
+    &--credit {
+      @include caption-icon-wrapper("left", auto, 24px);
+      position: absolute;
       left: auto;
       right: 0;
+    }
+  }
+
+  @include breakpoint("lg") {
+    &--label {
+      display: block;
+    }
+    &--tooltip {
+      display: none;
+    }
+  }
+
+  &__theme__dark {
+    @include image-caption-dark-styles;
+
+    #{$self}--credit {
+      --ilo-caption-icon-wrapper-bg-color: var(--ilo-color-white);
+    }
+
+    #{$self}--label {
+      color: var(--ilo-color-gray-charcoal);
     }
   }
 }

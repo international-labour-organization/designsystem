@@ -15,7 +15,6 @@ export { Notification } from "./Notification";
 export { ReadMore } from "./ReadMore";
 export { Textarea } from "./Textarea";
 export { Callout } from "./Callout";
-export { Credit } from "./Credit";
 export { FileUpload } from "./FileUpload";
 export { Heading } from "./Heading";
 export { Link } from "./Link";

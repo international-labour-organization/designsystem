@@ -2,28 +2,28 @@ import { FC } from "react";
 import classNames from "classnames";
 import useGlobalSettings from "../../hooks/useGlobalSettings";
 import { ImageProps, ImageUrl } from "./Image.props";
-import { Credit } from "../Credit";
+import { Tooltip } from "../Tooltip";
 
-const Image: FC<ImageProps> = ({ alt, caption, className, credit, url }) => {
+const Image: FC<ImageProps> = ({
+  alt,
+  caption,
+  className,
+  credit,
+  url,
+  theme,
+}) => {
   const { prefix } = useGlobalSettings();
   const baseClass = `${prefix}--image`;
 
   const imageClasses = classNames(className, {
     [baseClass]: true,
-  });
-
-  const imgClasses = classNames("", {
-    [`${baseClass}--img`]: true,
-  });
-
-  const captionClasses = classNames("", {
-    [`${baseClass}--caption`]: true,
+    [`${baseClass}__theme__${theme}`]: theme,
   });
 
   return (
     <figure className={imageClasses}>
-      <div className={`${imageClasses}--wrapper`}>
-        <picture className={imgClasses}>
+      <div className={`${baseClass}--wrapper`}>
+        <picture>
           {url &&
             url
               .sort((a: ImageUrl, b: ImageUrl) => a.breakpoint - b.breakpoint)
@@ -38,9 +38,19 @@ const Image: FC<ImageProps> = ({ alt, caption, className, credit, url }) => {
               ))}
           {url && <img src={url[0].src} alt={alt} />}
         </picture>
-        {credit && <Credit credit={credit} />}
+        {credit && (
+          <div className={`${baseClass}--credit`}>
+            <div className={`${baseClass}--tooltip`}>
+              <Tooltip
+                label={credit}
+                iconTheme={theme === "dark" ? "light" : "dark"}
+              />
+            </div>
+            <div className={`${baseClass}--label`}>{credit}</div>
+          </div>
+        )}
       </div>
-      {caption && <figcaption className={captionClasses}>{caption}</figcaption>}
+      {caption && <figcaption>{caption}</figcaption>}
     </figure>
   );
 };

@@ -1,9 +1,10 @@
 {#
   IMAGE COMPONENT
 #}
-<figure class="{{prefix}}--image" data-prefix="{{prefix}}">
+{% set theme = theme|default("light") %}
+<figure class="{{prefix}}--image {{prefix}}--image__theme__{{theme}}" data-prefix="{{prefix}}">
   <div class="image {{prefix}}--image--wrapper">
-    <picture class="{{prefix}}--image--img" {% if credit and ishero and ishero != 'false' %}title="{{credit}}"{% endif %}>
+    <picture {% if credit and ishero and ishero != 'false' %}title="{{credit}}"{% endif %}>
       {% for img in url|reverse %}
         {% if loop.last == false  %}
           {% if img.breakpoint matches '/^\\d+$/' %}
@@ -17,13 +18,24 @@
     </picture>
     {% if not ishero or ishero =='false' %}
       {% if credit %}
-      <span class="{{prefix}}--credit">
-        <span class="{{prefix}}--credit--label">{{credit}}</span>
-      </span>
+      <div class="{{prefix}}--image--credit">
+        <div class="{{prefix}}--image--tooltip">
+          {% include '@components/tooltip/tooltip.twig' with {
+              prefix: prefix,
+              label: credit,
+              icon: true,
+              theme: theme,
+              icontheme: theme == 'dark' ? 'light' : 'dark'
+            } only %}
+        </div>
+        <div class="{{prefix}}--image--label">
+          {{credit}}
+        </div>
+      </div>
       {% endif %}
     {% endif %}
   </div>
   {% if caption %}
-    <figcaption class="{{prefix}}--image--caption">{{caption}}</figcaption>
+    <figcaption>{{caption}}</figcaption>
   {% endif %}
 </figure>
