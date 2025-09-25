@@ -46,7 +46,6 @@
       font-family: var(--ilo-fonts-display);
       font-weight: 700;
       @include typography("body-small");
-      letter-spacing: -0.02em;
       padding: spacing(4) spacing(2);
       pointer-events: none;
       text-align: left;
