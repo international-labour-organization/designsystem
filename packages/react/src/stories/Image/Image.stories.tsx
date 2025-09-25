@@ -17,7 +17,12 @@ The \`url\` prop expects an array of object each containing a \`breakpoint\` and
 const ImageMeta: Meta<typeof Image> = {
   title: "Components/Media/Image",
   component: Image,
-  argTypes: {},
+  argTypes: {
+    theme: {
+      control: "select",
+      options: ["light", "dark"],
+    },
+  },
   tags: ["autodocs"],
   parameters: {
     docs: {

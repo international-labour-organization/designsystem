@@ -132,7 +132,7 @@
 
         &--link {
           @include dataurlicon("chevron_left", $brand-ilo-white);
-          @include font-styles("language-switcher");
+          @include typography("body-small");
           appearance: none;
           background-color: inherit;
           background-position: px-to-rem(12px) 50%;
@@ -141,8 +141,6 @@
           border: none;
           color: $brand-ilo-white;
           cursor: pointer;
-          font-family: var(--ilo-fonts-display);
-          font-weight: 500;
           padding: spacing(4) spacing(4) spacing(4) spacing(9);
           text-decoration: none;
           transition: all 150ms ease-out;
@@ -252,7 +250,7 @@
   }
 
   &--logo-tagline {
-    @include font-styles("headline-6");
+    @include typography("highlight-large");
     color: $brand-ilo-white;
     display: none;
     font-family: var(--ilo-fonts-display);
@@ -265,10 +263,9 @@
     }
 
     &--small {
-      @include font-styles("tagline");
+      @include typography("body-xsmall");
       color: $brand-ilo-ramp-blue;
       display: block;
-      font-weight: 500;
     }
   }
 }
@@ -300,9 +297,7 @@
   }
 
   &--items {
-    @include font-styles("nav-md");
-    font-family: var(--ilo-fonts-display);
-    font-weight: 500;
+    @include typography("highlight-medium");
 
     @include breakpoint("lg") {
       display: flex;
@@ -347,7 +342,7 @@
 
   &--trigger {
     @include dataurlicon("chevron_right", $brand-ilo-dark-blue);
-    @include font-styles("nav-md");
+    @include typography("highlight-medium");
 
     appearance: none;
     background-color: $brand-ilo-white;
@@ -359,8 +354,6 @@
     color: $brand-ilo-dark-blue;
     cursor: pointer;
     display: block;
-    font-family: var(--ilo-fonts-display);
-    font-weight: 500;
     padding: spacing(4) spacing(9) spacing(4) spacing(2);
     line-height: 24px;
     text-align: left;
@@ -392,7 +385,7 @@
 
     @include breakpoint("lg") {
       @include dataurlicon("plus", $brand-ilo-white);
-      @include font-styles("nav-bold-b-sm");
+      @include typography("highlight-medium-bold");
 
       background-color: $brand-ilo-dark-blue;
       background-position: 90% 55%;
@@ -403,7 +396,6 @@
       color: $brand-ilo-white;
       cursor: pointer;
       display: inline-block;
-      font-weight: 700;
       margin-left: spacing(5);
       padding: 7px spacing(8) 5px 15px;
       text-align: center;
@@ -477,10 +469,8 @@
     }
 
     &--item {
-      @include font-styles("nav-md");
+      @include typography("highlight-medium");
       color: $brand-ilo-white;
-      font-family: var(--ilo-fonts-display);
-      font-weight: 500;
     }
 
     &--link {
@@ -534,7 +524,7 @@
 
   &--language--switcher--button {
     @include dataurlicon("globe", $brand-ilo-dark-blue);
-    @include font-styles("nav-md");
+    @include typography("highlight-medium");
 
     appearance: none;
     background-color: $brand-ilo-white;
@@ -547,7 +537,6 @@
     cursor: pointer;
     display: block;
     font-family: var(--ilo-fonts-display);
-    font-weight: 500;
     padding: spacing(4) spacing(9) spacing(4) spacing(2);
     line-height: 16px;
     text-align: left;
@@ -626,7 +615,7 @@
   }
 
   &--button {
-    @include font-styles("image-credit");
+    @include typography("body-xsmall");
     @include dataurlicon("globe", $brand-ilo-white);
     appearance: none;
     background-color: $brand-ilo-dark-blue;
@@ -740,12 +729,10 @@
   }
 
   &--link {
-    @include font-styles("nav-md");
+    @include typography("highlight-medium");
     background: $brand-ilo-white;
     color: $brand-ilo-dark-blue;
     display: flex;
-    font-family: var(--ilo-fonts-display);
-    font-weight: 500;
     padding: 18px spacing(2);
     text-decoration: none;
     transition: all 150ms ease-out;
@@ -772,13 +759,11 @@
   }
 
   &--back {
-    @include font-styles("nav-md");
+    @include typography("highlight-medium");
     background-color: $brand-ilo-white;
     border: none;
     color: $brand-ilo-dark-blue;
     cursor: pointer;
-    font-family: var(--ilo-fonts-display);
-    font-weight: 500;
     padding: spacing(5) spacing(4) spacing(4) spacing(8);
     position: relative;
     transition: all 150ms ease-out;
@@ -839,7 +824,7 @@
   }
 
   &--label {
-    @include font-styles("headline-6");
+    @include typography("highlight-large");
     border-bottom: 3px solid $brand-ilo-grey-light;
     color: $brand-ilo-black;
     font-family: var(--ilo-fonts-display);

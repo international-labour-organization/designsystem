@@ -1,154 +1,82 @@
-@use "../tokens" as *;
 @use "../functions" as *;
 @import "../mixins";
+@import "../animations";
 
 .ilo--dropdown {
-  -webkit-appearance: none;
-  -moz-appearance: none;
+  &--wrapper {
+    --ilo-dropdown-background-color: var(--ilo-color-white);
+    --ilo-dropdown-background-color-active: var(--ilo-color-blue-lighter);
+    --ilo-dropdown-color: var(--ilo-color-gray-accessible);
+    --ilo-dropdown-height: #{px-to-rem(48px)};
+    --ilo-dropdown-border-color: var(--ilo-color-gray-base);
+    --ilo-dropdown-button-background-color: var(--ilo-color-gray-light);
+    --ilo-dropdown-button-icon-color: var(--ilo-color-blue-dark);
+    --ilo-dropdown-button-icon-size: calc(var(--ilo-dropdown-height) / 2);
+    --ilo-dropdown-button-icon-offset: calc(
+      var(--ilo-dropdown-button-icon-size) / 2
+    );
+
+    display: inline-block;
+    position: relative;
+
+    &:before {
+      content: "";
+      pointer-events: none;
+      position: absolute;
+      border: 2px solid var(--ilo-dropdown-border-color);
+      background-color: var(--ilo-dropdown-button-background-color);
+      height: var(--ilo-dropdown-height);
+      width: var(--ilo-dropdown-height);
+      right: 0;
+      @include globaltransition("background-color");
+    }
+
+    &:has(select:hover):before {
+      background-color: var(--ilo-dropdown-background-color-active);
+    }
+
+    &:after {
+      content: "";
+      pointer-events: none;
+      position: absolute;
+      height: var(--ilo-dropdown-button-icon-size);
+      width: var(--ilo-dropdown-button-icon-size);
+      right: var(--ilo-dropdown-button-icon-offset);
+      top: var(--ilo-dropdown-button-icon-offset);
+      @include icon("chevron_down", var(--ilo-dropdown-button-icon-color));
+    }
+  }
+
   appearance: none;
-  background-color: map-get(
-    $color,
-    "formelements",
-    "input",
-    "default",
-    "background"
-  );
-  @include bordervalues("input", "formelements");
-  border-radius: 0;
-  box-sizing: content-box;
-  font-family: var(--ilo-fonts-copy);
-  font-weight: map-get($type, "weights", "section");
-  @include font-styles("label-medium");
-  height: px-to-rem(45px);
+  box-sizing: border-box;
+  background-color: var(--ilo-dropdown-background-color);
+  height: var(--ilo-dropdown-height);
+  color: var(--ilo-dropdown-color);
+  width: 100%;
   margin: spacing(0);
-  outline: none;
-  overflow: hidden;
   padding: 0 spacing(14) 0 spacing(4);
   text-overflow: ellipsis;
   white-space: nowrap;
-  width: calc(100% - 78px);
+  outline: none;
+  overflow: hidden;
+  cursor: pointer;
+  border: 2px solid var(--ilo-dropdown-border-color);
+  @include typography("body-medium");
+  @include globaltransition("background-color, border-color, color");
 
-  background-position:
-    calc(100% - 14px) center,
-    100% center;
-  background-repeat: no-repeat;
-  background-size:
-    24px 24px,
-    102px 100%;
-  background-image: url("#{colortodataurlicon('chevron_down', $color-ux-labels-actionable)}"),
-    linear-gradient(
-      to right,
-      transparent 0%,
-      transparent calc(50% - 0.81px),
-      $color-formelements-input-default-border-left calc(50% - 0.8px),
-      $color-formelements-input-default-border-left calc(50% + 0.8px),
-      rgba(237, 240, 242, 1) calc(50% + 0.81px),
-      rgba(237, 240, 242, 1) 100%
-    );
+  &:hover,
+  &:focus,
+  &:active {
+    border-left-color: var(--ilo-color-blue);
+    border-left-width: px-to-rem(3px);
+    padding-left: calc(#{spacing(4)} - #{px-to-rem(1px)});
+    background-color: var(--ilo-dropdown-background-color-active);
+    --ilo-dropdown-color: var(--ilo-color-gray-charcoal);
+  }
 
   option {
-    width: calc(100% - 48px);
+    width: 100%;
     text-overflow: ellipsis;
     overflow: hidden;
-  }
-
-  &:hover {
-    background-color: map-get(
-      $color,
-      "formelements",
-      "input",
-      "hover",
-      "background"
-    );
-    @include bordervalues("input", "formelements", "hover");
-    border-left-width: 2px;
-    background-image: url("#{colortodataurlicon('chevron_down', $color-ux-labels-hover)}"),
-      linear-gradient(
-        to right,
-        transparent 0%,
-        transparent calc(50% - 0.81px),
-        $color-formelements-input-default-border-left calc(50% - 0.8px),
-        $color-formelements-input-default-border-left calc(50% + 0.8px),
-        transparent calc(50% + 0.81px),
-        transparent 100%
-      );
-    cursor: pointer;
-  }
-
-  &:focus {
-    background-color: map-get(
-      $color,
-      "formelements",
-      "input",
-      "focus",
-      "background"
-    );
-    @include bordervalues("input", "formelements", "focus");
-    border-left-width: 2px;
-    background-image: url("#{colortodataurlicon('chevron_down', $color-ux-labels-hover)}"),
-      linear-gradient(
-        to right,
-        transparent 0%,
-        transparent calc(50% - 0.81px),
-        $color-formelements-input-default-border-left calc(50% - 0.8px),
-        $color-formelements-input-default-border-left calc(50% + 0.8px),
-        transparent calc(50% + 0.81px),
-        transparent 100%
-      );
-  }
-
-  &:active {
-    background-position:
-      calc(100% - 14px) center,
-      100% center;
-    background-repeat: no-repeat;
-    background-size:
-      24px 24px,
-      102px 100%;
-    background-image: url("#{colortodataurlicon('chevron_down', $color-ux-labels-actionable)}"),
-      linear-gradient(
-        to right,
-        transparent 0%,
-        transparent calc(50% - 0.81px),
-        $color-formelements-input-default-border-left calc(50% - 0.8px),
-        $color-formelements-input-default-border-left calc(50% + 0.8px),
-        rgba(237, 240, 242, 1) calc(50% + 0.81px),
-        rgba(237, 240, 242, 1) 100%
-      );
-    @include bordervalues("input", "formelements");
-  }
-
-  &:disabled {
-    opacity: 0.45;
-    pointer-events: none;
-  }
-
-  &:invalid,
-  &.error,
-  .error & {
-    background-color: map-get(
-      $color,
-      "formelements",
-      "input",
-      "error",
-      "background"
-    );
-    @include bordervalues("input", "formelements", "error");
-  }
-  [dir="rtl"] & {
-    padding: 0 spacing(4) 0 spacing(14);
-    background-position:
-      calc(0% + 14px) center,
-      0% center;
-    background-image: url("#{colortodataurlicon('chevron_down', $color-ux-labels-actionable)}"),
-      linear-gradient(
-        to left,
-        transparent 0%,
-        transparent calc(50% - 0.81px),
-        $color-formelements-input-default-border-right calc(50% - 0.8px),
-        $color-formelements-input-default-border-right calc(50% + 0.8px),
-        rgba(237, 240, 242, 1) calc(50% + 0.81px),
-        rgba(237, 240, 242, 1) 100%
-      );
   }
 }

@@ -1,9 +1,9 @@
-import { FC, useState, forwardRef } from "react";
+import { FC, useState, forwardRef, useId } from "react";
 import classNames from "classnames";
 import useGlobalSettings from "../../hooks/useGlobalSettings";
 import { SearchFieldProps } from "./SearchField.props";
-import { Input } from "../Input";
 import { Icon } from "../Icon";
+import { FormControl } from "../FormControl";
 
 const SearchField: FC<
   SearchFieldProps & React.RefAttributes<HTMLInputElement>
@@ -16,12 +16,10 @@ const SearchField: FC<
     const clearButtonClass = `${baseClass}--clear-button ${
       searchValue.trim() !== "" && "show"
     }`;
-    const fieldSetClass = `${prefix}--fieldset`;
+    const rId = useId();
+    const fieldId = input?.id || rId;
 
-    const SearchFieldClasses = classNames(className, {
-      [baseClass]: true,
-      [`haslabel`]: input?.label,
-    });
+    const fieldSetClass = `${prefix}--fieldset`;
 
     const handleClick: React.MouseEventHandler<HTMLInputElement> = (e) => {
       if (callback) {
@@ -48,36 +46,42 @@ const SearchField: FC<
     }
 
     return inputHasType ? (
-      <form className={SearchFieldClasses} action={action}>
-        <div className={fieldSetClass}>
-          <Input
-            id={input?.id}
-            name={input?.name}
-            disabled={input?.disabled}
-            callback={onKeyPress}
-            error={input?.error}
-            helper={input?.helper}
-            label={input?.label}
-            placeholder={input?.placeholder}
-            type={input?.type}
-            value={searchValue}
-            className={`${prefix}--input`}
-            ref={ref}
-          />
-          <span
-            onClick={handleClearButtonClick}
-            className={clearButtonClass}
-            role="presentation"
-          >
-            <Icon name="close" hidden={true} />
-          </span>
-        </div>
-        <input
-          className={buttonClass}
-          disabled={input?.disabled}
-          type="submit"
-          onClick={handleClick}
-        />
+      <form action={action}>
+        <FormControl
+          fieldId={fieldId}
+          error={!!input?.error}
+          helper={input?.helper || ""}
+          label={input?.label || ""}
+          style={{ width: "100%" }}
+        >
+          <div className={classNames(className, baseClass)}>
+            <div className={fieldSetClass}>
+              <input
+                className={`${prefix}--text-input`}
+                id={fieldId}
+                name={input.name}
+                onChange={onKeyPress}
+                placeholder={input?.placeholder}
+                value={searchValue}
+                ref={ref}
+                disabled={input?.disabled}
+              />
+              <span
+                onClick={handleClearButtonClick}
+                className={clearButtonClass}
+                role="presentation"
+              >
+                <Icon name="close" hidden={true} />
+              </span>
+            </div>
+            <input
+              className={buttonClass}
+              disabled={input?.disabled}
+              type="submit"
+              onClick={handleClick}
+            />
+          </div>
+        </FormControl>
       </form>
     ) : null;
   }

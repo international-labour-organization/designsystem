@@ -50,7 +50,7 @@
     color: $color-base-neutrals-white;
     font-family: var(--ilo-fonts-display);
     font-weight: map-get($type, "weights", "label");
-    @include font-styles("body-small");
+    @include typography("highlight-medium-bold");
     line-height: px-to-rem(21.6px);
     @include textmargin(
       "margin-bottom",
@@ -68,7 +68,7 @@
     font-family: var(--ilo-fonts-display);
     font-weight: map-get($type, "weights", "section");
     margin-top: spacing(1);
-    @include font-styles("body-xxs");
+    @include typography("body-xsmall");
     line-height: px-to-rem(18.56px);
     margin-bottom: spacing(12);
   }
@@ -79,7 +79,7 @@
 
   .address--line {
     color: $color-base-neutrals-white;
-    @include font-styles("body-xxs");
+    @include typography("body-xsmall");
     @include textmargin(
       "margin-bottom",
       8px,
@@ -103,7 +103,7 @@
     color: $color-base-neutrals-medium;
     display: inline;
     font-family: var(--ilo-fonts-copy);
-    @include font-styles("body-xxs");
+    @include typography("body-xsmall");
   }
 
   .secondarylinks--list,
@@ -152,7 +152,7 @@
     flex-flow: row nowrap;
     color: $color-ux-labels-actionable;
     font-family: var(--ilo-fonts-display);
-    @include font-styles("label-medium");
+    @include typography("highlight-medium");
     position: relative;
     text-decoration: none;
     width: max-content;

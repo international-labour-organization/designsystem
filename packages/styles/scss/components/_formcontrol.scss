@@ -147,40 +147,21 @@
 
     &__size {
       &__small {
-        font-family: var(--ilo-fonts-copy);
-        font-size: px-to-rem(map-get($type, "label-small", "size"));
-        letter-spacing: px-to-rem(
-          map-get($type, "label-small", "letter-spacing")
-        );
-        line-height: px-to-rem(map-get($type, "label-small", "line-height"));
-        font-weight: 400;
+        @include typography("highlight-small-bold");
       }
 
       &__medium {
-        font-family: var(--ilo-fonts-display);
-        font-size: px-to-rem(map-get($type, "label-medium", "size"));
-        letter-spacing: px-to-rem(
-          map-get($type, "label-medium", "letter-spacing")
-        );
-        line-height: px-to-rem(map-get($type, "label-medium", "line-height"));
-        font-weight: 700;
+        @include typography("highlight-medium-bold");
       }
 
       &__large {
-        font-family: var(--ilo-fonts-display);
-        font-size: px-to-rem(map-get($type, "label-large", "size"));
-        letter-spacing: px-to-rem(
-          map-get($type, "label-large", "letter-spacing")
-        );
-        line-height: px-to-rem(map-get($type, "label-large", "line-height"));
-        font-weight: 700;
+        @include typography("highlight-large");
       }
     }
 
     label {
       font-family: inherit;
       font-size: inherit;
-      letter-spacing: inherit;
       line-height: inherit;
       font-weight: inherit;
     }
@@ -198,7 +179,7 @@
     grid-area: helper;
     color: var(--ilo-form-control-helper-color);
     font-family: var(--ilo-fonts-copy);
-    @include font-styles("body-xxs");
+    @include typography("body-xsmall");
   }
 
   .ilo--tooltip--wrapper {

@@ -3,95 +3,127 @@
 @import "../mixins";
 @import "../config";
 
-.#{$prefix}--accordion {
-  --ilo-accordion-color-icon: var(--ilo-color-blue-dark);
+// =============================================================================
+// ACCORDION COMPONENT
+// =============================================================================
 
-  // This provides a reference to the outerclass within nested declarations
+.#{$prefix}--accordion {
+  // CSS Custom Properties
+  // ---------------------------------------------------------------------------
+  --ilo-accordion-color-icon: var(--ilo-color-blue-dark);
+  --ilo-accordion-transition-timing: 500ms; // Slower timing for smooth height transitions
+  --ilo-accordion-scroll-max-height: 300px;
+
   $accordion: &;
 
-  // Accordion contents can add lots of height so the transition timing can't
-  // be too fast which is why we're using a custom value here.
-  $transition-timing: 500ms;
-
-  // If the accordion item is scrollable, then this is its max-height
-  $scroll-max-height: 300px;
-
+  // Icon Styles
+  // ---------------------------------------------------------------------------
   &--icon {
     width: 24px;
     height: 24px;
   }
 
+  // Label Styles
+  // ---------------------------------------------------------------------------
+  &--label {
+    flex: 1;
+    padding-right: 10px;
+  }
+
+  // Button Styles
+  // ---------------------------------------------------------------------------
   &--button {
+    // Layout
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     width: 100%;
     margin: 0;
+
+    // Spacing
     padding-block: spacing(4);
     padding-inline-end: spacing(1);
-    background-color: $color-ux-background-default;
-    border: none;
-    border-top: 2px solid $color-base-neutrals-lighter;
-    font-family: var(--ilo-fonts-display);
-    color: $color-ux-labels-actionable;
-    font-weight: $type-weights-section;
-    transition: all $transition-timing ease-in-out;
-    @include font-styles("label-medium");
 
+    // Visual
+    background-color: var(--ilo-color-white);
+    border: none;
+    border-top: 2px solid var(--ilo-color-gray-light);
+    color: var(--ilo-color-blue-dark);
+
+    // Animation
+    transition: all var(--ilo-accordion-transition-timing) ease-in-out;
+
+    // Typography
+    @include typography("highlight-medium");
+
+    // Large variant
     &__large {
-      @include font-styles("headline-6");
+      @include typography("highlight-large");
       padding-block: spacing(5);
     }
 
+    // Expanded state
     &[aria-expanded="true"] {
-      background-color: $color-base-blue-light;
+      background-color: var(--ilo-color-blue-lighter);
+
       #{$accordion}--icon {
         @include icon("minus", var(--ilo-color-blue));
       }
     }
 
+    // Collapsed state
     &[aria-expanded="false"] {
       #{$accordion}--icon {
         @include icon("plus", var(--ilo-color-blue-dark));
       }
     }
 
+    // Interactive states
     &:hover,
     &:focus {
       --ilo-accordion-color-icon: var(--ilo-color-blue);
-      border-top-color: $color-ux-borders-hover;
-      color: $color-ux-labels-hover;
+      border-top-color: var(--ilo-color-blue);
+      color: var(--ilo-color-blue);
       cursor: pointer;
     }
 
+    // Responsive adjustments
     @include breakpoint("md") {
-      @include font-styles("label-medium");
+      @include typography("highlight-medium");
+
       &__large {
-        @include font-styles("headline-6");
+        @include typography("highlight-large");
         padding: spacing(5) 0;
       }
     }
   }
 
+  // Panel Styles
+  // ---------------------------------------------------------------------------
   &--panel {
     $panel: &;
 
+    // Collapsed state
     max-height: 0;
-    transition: all $transition-timing cubic-bezier(0, 1, 0, 1);
     overflow: hidden;
+    transition: all var(--ilo-accordion-transition-timing)
+      cubic-bezier(0, 1, 0, 1);
 
+    // Inner panel content
     #{$accordion}--innerpanel {
-      padding-bottom: spacing(9);
       padding-top: spacing(2);
+      padding-bottom: spacing(9);
       padding-inline-end: spacing(8);
     }
 
+    // Open state
     &__open {
       max-height: 100vh;
-      transition: all $transition-timing ease-in-out;
+      transition: all var(--ilo-accordion-transition-timing) ease-in-out;
 
+      // Scrollable variant
       &#{$panel}__scroll {
-        max-height: $scroll-max-height;
+        max-height: var(--ilo-accordion-scroll-max-height);
         overflow-y: auto;
       }
     }

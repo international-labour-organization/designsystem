@@ -1,4 +1,4 @@
-import React, { forwardRef, useState } from "react";
+import React, { forwardRef } from "react";
 import classNames from "classnames";
 import { useGlobalSettings } from "../../hooks";
 import { DropdownProps, LabelledDropdownProps } from "./Dropdown.props";
@@ -32,10 +32,7 @@ const Dropdown = forwardRef<HTMLSelectElement, DropdownProps>((props, ref) => {
     [`error`]: error,
   });
 
-  const [currentvalue, setValue] = useState(value);
-
   const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    setValue(e.target.value);
     if (onChange) {
       onChange(e);
     }
@@ -54,7 +51,7 @@ const Dropdown = forwardRef<HTMLSelectElement, DropdownProps>((props, ref) => {
         disabled={disabled}
         defaultValue={defaultValue}
         className={dropdownClasses}
-        value={currentvalue}
+        value={value}
         form={form}
         multiple={multiple}
         size={selectSize}

@@ -17,7 +17,7 @@
   box-sizing: border-box;
   font-family: var(--ilo-fonts-copy);
   font-weight: map-get($type, "weights", "section");
-  @include font-styles("label-medium");
+  @include typography("highlight-medium");
   height: px-to-rem(48px);
   margin: spacing(0);
   max-width: 100%;

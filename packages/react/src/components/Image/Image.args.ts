@@ -24,6 +24,7 @@ const imageArgs: ImageProps = {
       src: "/large.jpg",
     },
   ],
+  theme: "light",
 };
 
 export default imageArgs;

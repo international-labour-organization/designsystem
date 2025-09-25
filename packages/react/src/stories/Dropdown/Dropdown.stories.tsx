@@ -88,6 +88,12 @@ const DropdownMeta: Meta<typeof Dropdown> = {
     },
     ...labelledFormFieldArgTypes("HTMLSelectElement"),
   },
+  render: (args) => {
+    // Storybook passes an empty string when the value is empty which makes the Dropdown a controlled component
+    // Set it to undefined to make it uncontrolled
+    const value = args.value === "" ? undefined : args.value;
+    return <Dropdown {...args} value={value} />;
+  },
   parameters: {
     docs: {
       page: () => (

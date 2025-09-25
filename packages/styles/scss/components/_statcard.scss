@@ -53,7 +53,7 @@
 
       #{$self}--title {
         color: $brand-ilo-dark-blue;
-        @include font-styles("headline-3");
+        @include typography("heading-2");
         @include textmargin(
           "margin-bottom",
           24px,
@@ -68,7 +68,7 @@
       #{$self}--intro {
         color: $brand-ilo-dark-blue;
         font-family: var(--ilo-fonts-display);
-        @include font-styles("base");
+        @include typography("highlight-medium");
         @include textmargin("margin-bottom", 35px, "nav-md-sm", "copy", 0, 0);
         width: 100%;
       }
@@ -82,7 +82,7 @@
       }
 
       .ilo--link {
-        @include font-styles("image-credit");
+        @include typography("body-xsmall");
         line-height: px-to-rem(24px);
       }
     }
