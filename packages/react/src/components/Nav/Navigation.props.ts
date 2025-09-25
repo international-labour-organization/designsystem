@@ -1,5 +1,6 @@
 import { ElementType, ReactNode } from "react";
 import { LanguageToggleProps } from "../LanguageToggle";
+import { SearchFieldProps } from "../SearchField/SearchField.props";
 
 export interface NavigationLinkProps {
   href?: string;
@@ -17,6 +18,23 @@ export interface NavigationLinkProps {
    */
   component?: ElementType;
 }
+
+interface RedirectSearchProps {
+  type: "redirect";
+  url: string;
+  /**
+   * The label to display for the search bar
+   */
+  label?: string;
+  component?: ElementType;
+}
+
+type InputSearchProps = {
+  type: "input";
+} & (
+  | { field: SearchFieldProps; component?: never }
+  | { field?: never; component: ElementType }
+);
 
 export interface NavCoreProps {
   branding: {
@@ -82,17 +100,7 @@ export interface NavCoreProps {
     /**
      * The search bar props
      */
-    search?: {
-      type: "redirect"; // | "input";
-      url: string;
-
-      /**
-       * The label to display for the search bar
-       */
-      label?: string;
-
-      component?: ElementType;
-    };
+    search?: RedirectSearchProps | InputSearchProps;
   };
 }
 
@@ -102,8 +110,30 @@ export interface CompactNavProps {
    */
   type?: "compact";
 
-  props: NavCoreProps;
+  props: NavCoreProps & {
+    widgets: NavCoreProps["widgets"] & {
+      search: RedirectSearchProps;
+    };
+  };
 }
+
+type GeneralNavProps = NavCoreProps & {
+  branding: {
+    logo: NavCoreProps["branding"]["logo"] & {
+      /**
+       * The logo to display for the mobile screens
+       */
+      mobile?: ReactNode;
+    };
+    /**
+     * The Tagline
+     */
+    tag?: {
+      main: string;
+      sub?: string;
+    };
+  };
+};
 
 export interface ComplexNavProps {
   /**
@@ -111,30 +141,16 @@ export interface ComplexNavProps {
    */
   type?: "complex";
 
-  props: NavCoreProps & {
-    branding: {
-      logo: NavCoreProps["branding"]["logo"] & {
-        /**
-         * The logo to display for the mobile screens
-         */
-        mobile?: ReactNode;
-      };
-      // The Tagline to display in the SubsiteNav
-      tag?: {
-        main: string;
-        sub?: string;
-      };
+  props: GeneralNavProps & {
+    widgets: NavCoreProps["widgets"] & {
+      search: RedirectSearchProps;
     };
   };
 }
 
-export interface MainNavProps extends NavCoreProps {
-  widgets: Omit<NonNullable<NavCoreProps["widgets"]>, "link">;
-  branding: NavCoreProps["branding"] & {
-    tag: {
-      main: string;
-      sub?: string;
-    };
+export interface MainNavProps extends GeneralNavProps {
+  widgets: Omit<NonNullable<NavCoreProps["widgets"]>, "link"> & {
+    search: InputSearchProps;
   };
 }
 
