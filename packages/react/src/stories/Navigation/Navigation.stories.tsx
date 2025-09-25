@@ -1,15 +1,24 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { Navigation } from "../../components/Navigation";
-import NavigationArgs from "../../components/Navigation/Navigation.args";
+import { Navigation } from "../../components/Nav/Navigation";
+import { MainNavProps } from "../../components/Nav/Navigation.props";
+import { MainNavArgs } from "./Navigation.args";
 
-const NavigationMeta: Meta<typeof Navigation> = {
+const meta: Meta<typeof Navigation> = {
   title: "Components/Navigation/Navigation",
   component: Navigation,
+  tags: ["autodocs"],
+  parameters: {
+    docs: {
+      description: {
+        component: "The Main Navigation component",
+      },
+    },
+  },
 };
 
-export default NavigationMeta;
-
-export const BasicNavigation: StoryObj<typeof Navigation> = {
-  args: NavigationArgs.basic,
-  name: "Basic",
+const Default: StoryObj<MainNavProps> = {
+  args: MainNavArgs,
 };
+
+export default meta;
+export { Default };
