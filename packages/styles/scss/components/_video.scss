@@ -234,7 +234,7 @@
             position: absolute;
             bottom: calc(300% + 12px);
             width: 70px;
-            @include font-styles("image-credit");
+            @include typography("body-xsmall");
 
             &:after {
               background-position: top left;
