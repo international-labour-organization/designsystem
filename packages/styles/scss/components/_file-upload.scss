@@ -22,7 +22,7 @@
     font-weight: map-get($type, "weights", "label");
     @include borderradius("button");
     @include boxpadding("button", "medium");
-    @include font-styles("label-medium");
+    @include typography("highlight-medium");
 
     .ilo--form__theme__dark & {
       color: map-get($color, "ux", "labels", "actionable");
@@ -90,7 +90,7 @@
     box-sizing: border-box;
     font-family: var(--ilo-fonts-display);
     font-weight: map-get($type, "weights", "section");
-    @include font-styles("label-medium");
+    @include typography("highlight-medium");
     height: px-to-rem(48px);
     outline: none;
     padding: spacing(3) spacing(3) spacing(4);

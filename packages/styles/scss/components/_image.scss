@@ -26,7 +26,7 @@
     font-weight: var(--ilo-font-weight-regular);
     margin-top: spacing(4);
     padding-left: spacing(2);
-    @include font-styles("image-caption");
+    @include typography("body-small");
   }
 
   .ilo--credit {

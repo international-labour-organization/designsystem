@@ -36,10 +36,10 @@
     color: $color-ux-labels-actionable;
     font-weight: $type-weights-section;
     transition: all $transition-timing ease-in-out;
-    @include font-styles("label-medium");
+    @include typography("highlight-medium");
 
     &__large {
-      @include font-styles("headline-6");
+      @include typography("highlight-large");
       padding-block: spacing(5);
     }
 
@@ -65,9 +65,10 @@
     }
 
     @include breakpoint("md") {
-      @include font-styles("label-medium");
+      @include typography("highlight-medium");
+
       &__large {
-        @include font-styles("headline-6");
+        @include typography("highlight-large");
         padding: spacing(5) 0;
       }
     }

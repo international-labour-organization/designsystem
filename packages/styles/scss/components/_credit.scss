@@ -9,7 +9,7 @@
   height: px-to-rem($spacing-ux-credit-height);
   padding: 0;
   position: relative;
-  @include font-styles("image-credit");
+  @include typography("body-xsmall");
 
   &--label {
     background-color: $color-ux-credit-background;

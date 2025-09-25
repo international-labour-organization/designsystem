@@ -198,7 +198,7 @@
     grid-area: helper;
     color: var(--ilo-form-control-helper-color);
     font-family: var(--ilo-fonts-copy);
-    @include font-styles("body-xxs");
+    @include typography("body-xsmall");
   }
 
   .ilo--tooltip--wrapper {
