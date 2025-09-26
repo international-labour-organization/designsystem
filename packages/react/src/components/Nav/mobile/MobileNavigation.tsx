@@ -6,6 +6,7 @@ import { MobileDrawer } from "./MobileDrawer";
 import { MobileLanguageList } from "./MobileLanguageList";
 import { NavigationLink } from "../NavigationLink";
 import { NavCoreProps } from "../Navigation.props";
+import { SearchField } from "../../SearchField";
 
 type MobileNavigationProps = {
   /**
@@ -18,7 +19,7 @@ type MobileNavigationProps = {
    */
   onClose?: () => void;
 
-  navigationProps: Omit<NavCoreProps, "type">;
+  navigationProps: NavCoreProps;
 };
 
 const MobileNavigation = ({
@@ -58,7 +59,7 @@ const MobileNavigation = ({
       }
       widgets={
         <div className={`${baseClass}__widgets`}>
-          {widgets?.search && (
+          {widgets?.search?.type === "redirect" && (
             <a
               className={`${baseClass}__widgets-search`}
               href={widgets.search.url}
@@ -69,6 +70,15 @@ const MobileNavigation = ({
               </span>
               <span className={`${baseClass}__widgets-search__icon`} />
             </a>
+          )}
+          {widgets?.search?.type === "input" && (
+            <div className={`${baseClass}__widgets-search-input`}>
+              {widgets.search.field ? (
+                <SearchField {...widgets.search.field} />
+              ) : (
+                widgets.search.component
+              )}
+            </div>
           )}
           {widgets?.link && (
             <NavigationLink
