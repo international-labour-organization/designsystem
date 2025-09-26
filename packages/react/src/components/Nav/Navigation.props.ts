@@ -33,7 +33,7 @@ type InputSearchProps = {
   type: "input";
 } & (
   | { field: SearchFieldProps; component?: never }
-  | { field?: never; component: ElementType }
+  | { field?: never; component: ReactNode }
 );
 
 export interface NavCoreProps {

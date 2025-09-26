@@ -58,11 +58,13 @@ const NavigationDropdownBare = ({
   return createPortal(
     <div
       ref={wrapperRef}
-      className={classNames({
-        [baseClass]: true,
-        [`${baseClass}--open`]: isOpen,
-        className,
-      })}
+      className={classNames(
+        {
+          [baseClass]: true,
+          [`${baseClass}--open`]: isOpen,
+        },
+        className
+      )}
     >
       <div className={`${baseClass}__container`}>{children}</div>
     </div>,
