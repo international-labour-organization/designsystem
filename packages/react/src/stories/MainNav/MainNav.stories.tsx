@@ -3,7 +3,7 @@ import { MainNav, MainNavProps } from "../../components/Nav";
 import { MainNavArgs } from "./MainNav.args";
 
 const meta: Meta<typeof MainNav> = {
-  title: "Components/Navigation/Navigation",
+  title: "Components/Navigation/MainNav",
   component: MainNav,
   tags: ["autodocs"],
   parameters: {
