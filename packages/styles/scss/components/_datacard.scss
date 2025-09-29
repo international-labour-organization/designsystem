@@ -19,7 +19,7 @@
       width: 100%;
 
       &#{$self}__loading {
-        --skeleton-element-bg-color: var(--ilo-color-gray-base);
+        --ilo-skeleton-element-background-color: var(--ilo-color-gray-base);
         background-color: var(--ilo-color-gray-light);
       }
 

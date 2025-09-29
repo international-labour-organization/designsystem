@@ -561,7 +561,7 @@
 @mixin skeleton-element($height, $width) {
   height: px-to-rem($height);
   width: $width;
-  background: var(--skeleton-element-bg-color);
+  background: var(--ilo-skeleton-element-background-color);
 
   @include pulse-animation();
 }

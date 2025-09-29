@@ -45,7 +45,7 @@
 
       &#{$self}__loading {
         background-color: var(--ilo-color-gray-base);
-        border-bottom-color: var(--skeleton-element-bg-color);
+        border-bottom-color: var(--ilo-skeleton-element-background-color);
       }
 
       #{$self}--content {
