@@ -1,73 +1,54 @@
 /* ---------------------------------- */
-/* -------- Noto Sans Arabic -------- */
+/* -------- Vazirmatn -------- */
 /* ---------------------------------- */
 
-/* --- Noto Sans Normal --- */
+/* --- Vazirmatn Normal --- */
 
 @font-face {
-  font-family: "Noto Sans";
-  src: url("../assets/Noto_Sans_Arabic/NotoSansArabic-Regular.ttf")
-    format("truetype");
+  font-family: "Vazirmatn";
   src:
-    url("../assets/Noto_Sans_Arabic/NotoSansArabic-Regular.eot?#iefix")
-      format("embedded-opentype"),
-    url("../assets/Noto_Sans_Arabic/NotoSansArabic-Regular.woff2")
-      format("woff2"),
-    url("../assets/Noto_Sans_Arabic/NotoSansArabic-Regular.woff") format("woff"),
-    url("../assets/Noto_Sans_Arabic/NotoSansArabic-Regular.ttf")
-      format("truetype");
+    url("../assets/Vazirmatn-Regular.ttf") format("truetype"),
+    url("../assets/Vazirmatn-Regular.woff2") format("woff2"),
+    url("../assets/Vazirmatn-Regular.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 
-/* -- Noto Sans Regualr Also gets used for Italic in Arabic */
+/* -- Vazirmatn Regualr Also gets used for Italic in Arabic */
 @font-face {
-  font-family: "Noto Sans";
-  src: url("../assets/Noto_Sans_Arabic/NotoSansArabic-Regular.ttf")
-    format("truetype");
+  font-family: "Vazirmatn";
   src:
-    url("../assets/Noto_Sans_Arabic/NotoSansArabic-Regular.eot?#iefix")
-      format("embedded-opentype"),
-    url("../assets/Noto_Sans_Arabic/NotoSansArabic-Regular.woff2")
-      format("woff2"),
-    url("../assets/Noto_Sans_Arabic/NotoSansArabic-Regular.woff") format("woff"),
-    url("../assets/Noto_Sans_Arabic/NotoSansArabic-Regular.ttf")
-      format("truetype");
+    url("../assets/Vazirmatn-Regular.ttf") format("truetype"),
+    url("../assets/Vazirmatn-Regular.woff2") format("woff2"),
+    url("../assets/Vazirmatn-Regular.woff") format("woff");
   font-weight: normal;
   font-style: italic;
   font-display: swap;
 }
 
-/* --- Noto Sans 700 --- */
+/* --- Vazirmatn SemiBold --- */
 
 @font-face {
-  font-family: "Noto Sans";
-  src: url("../assets/Noto_Sans_Arabic/NotoSansArabic-Bold.ttf")
-    format("truetype");
+  font-family: "Vazirmatn";
   src:
-    url("../assets/Noto_Sans_Arabic/NotoSansArabic-Bold.eot?#iefix")
-      format("embedded-opentype"),
-    url("../assets/Noto_Sans_Arabic/NotoSansArabic-Bold.woff2") format("woff2"),
-    url("../assets/Noto_Sans_Arabic/NotoSansArabic-Bold.woff") format("woff"),
-    url("../assets/Noto_Sans_Arabic/NotoSansArabic-Bold.ttf") format("truetype");
-  font-weight: 700;
+    url("../assets/Vazirmatn-SemiBold.ttf") format("truetype"),
+    url("../assets/Vazirmatn-SemiBold.woff2") format("woff2"),
+    url("../assets/Vazirmatn-SemiBold.woff") format("woff");
+  font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 
-/* -- Noto Sans Bold also gets used for Bold Italic in Arabic */
+/* --- Vazirmatn Bold --- */
+
 @font-face {
-  font-family: "Noto Sans";
-  src: url("../assets/Noto_Sans_Arabic/NotoSansArabic-Bold.ttf")
-    format("truetype");
+  font-family: "Vazirmatn";
   src:
-    url("../assets/Noto_Sans_Arabic/NotoSansArabic-Bold.eot?#iefix")
-      format("embedded-opentype"),
-    url("../assets/Noto_Sans_Arabic/NotoSansArabic-Bold.woff2") format("woff2"),
-    url("../assets/Noto_Sans_Arabic/NotoSansArabic-Bold.woff") format("woff"),
-    url("../assets/Noto_Sans_Arabic/NotoSansArabic-Bold.ttf") format("truetype");
+    url("../assets/Vazirmatn-Bold.ttf") format("truetype"),
+    url("../assets/Vazirmatn-Bold.woff2") format("woff2"),
+    url("../assets/Vazirmatn-Bold.woff") format("woff");
   font-weight: 700;
-  font-style: italic;
+  font-style: normal;
   font-display: swap;
 }
