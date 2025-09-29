@@ -1,5 +1,33 @@
 # @ilo-org/react
 
+## 0.25.0
+
+### Minor Changes
+
+- 85599c276: An update to `@ilo-org/fonts` has changed the Arabic font from Noto Sans Arabic to Vazirmatn.
+
+### Patch Changes
+
+- 67780ea10: Fixed the display of image credit and added theme support to Image component
+  **Image:** Fixed image caption and implemented theme support
+- a268f06b7: **Dropdown:** fixed value not updating after initial render
+- c150ba6e0: **Detail Card:** RTL arrow support
+- b3fca61cd: **Search Field:** fixed label layout
+- Updated dependencies [85599c276]
+- Updated dependencies [e90383924]
+- Updated dependencies [a59bbc896]
+- Updated dependencies [3d05543f8]
+- Updated dependencies [67780ea10]
+- Updated dependencies [85599c276]
+- Updated dependencies [4b4bee4e3]
+- Updated dependencies [18ac64c26]
+- Updated dependencies [6f2fdf93a]
+- Updated dependencies [fc7bb0652]
+- Updated dependencies [210c25d7d]
+  - @ilo-org/fonts@2.0.0
+  - @ilo-org/styles@1.9.0
+  - @ilo-org/icons-react@1.0.4
+
 ## 0.24.6
 
 ### Patch Changes
