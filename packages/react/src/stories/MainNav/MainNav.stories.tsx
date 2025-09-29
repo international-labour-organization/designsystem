@@ -1,11 +1,10 @@
 import { Meta, StoryObj } from "@storybook/react";
-import { Navigation } from "../../components/Nav/Navigation";
-import { MainNavProps } from "../../components/Nav/Navigation.props";
-import { MainNavArgs } from "./Navigation.args";
+import { MainNav, MainNavProps } from "../../components/Nav";
+import { MainNavArgs } from "./MainNav.args";
 
-const meta: Meta<typeof Navigation> = {
+const meta: Meta<typeof MainNav> = {
   title: "Components/Navigation/Navigation",
-  component: Navigation,
+  component: MainNav,
   tags: ["autodocs"],
   parameters: {
     docs: {

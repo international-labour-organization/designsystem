@@ -31,9 +31,14 @@ const MainNavArgs: MainNavProps = {
       label: "Language",
     },
     search: {
-      type: "redirect",
-      url: "https://ilo.org",
-      label: "Search",
+      type: "input",
+      field: {
+        input: {
+          type: "search",
+          value: "",
+          placeholder: "Search Field",
+        },
+      },
     },
   },
   menu: {
@@ -42,54 +47,56 @@ const MainNavArgs: MainNavProps = {
       backToMenu: "Menu home",
     },
     items: [
+      // Primary navigation items
       {
-        label: "Menu Item 1",
-        href: "https://ilo.org",
+        label: "Topics",
+        href: "https://www.ilo.org",
         isActive: true,
       },
       {
-        label: "Menu Item 2",
-        href: "https://ilo.org",
+        label: "Countries",
+        href: "https://www.ilo.org",
       },
       {
-        label: "Menu Item 3",
-        href: "https://ilo.org",
+        label: "Standards",
+        href: "https://www.ilo.org",
       },
       {
-        label: "Menu Item 4",
-        href: "https://ilo.org",
+        label: "Statistics",
+        href: "https://www.ilo.org",
       },
       {
-        label: "Menu Item 5",
-        href: "https://ilo.org",
+        label: "About",
+        href: "https://www.ilo.org",
+      },
+      // Secondary navigation items
+      {
+        label: "News",
+        href: "https://www.ilo.org",
       },
       {
-        label: "Menu Item 6",
-        href: "https://ilo.org",
+        label: "Meeting & Events",
+        href: "https://www.ilo.org",
       },
       {
-        label: "Menu Item 7",
-        href: "https://ilo.org",
+        label: "Publications",
+        href: "https://www.ilo.org",
       },
       {
-        label: "Menu Item 8",
-        href: "https://ilo.org",
+        label: "Projects",
+        href: "https://www.ilo.org",
       },
       {
-        label: "Menu Item 9",
-        href: "https://ilo.org",
+        label: "Partners",
+        href: "https://www.ilo.org",
       },
       {
-        label: "Menu Item 10",
-        href: "https://ilo.org",
+        label: "Industries & Sectors",
+        href: "https://www.ilo.org",
       },
       {
-        label: "Menu Item 11",
-        href: "https://ilo.org",
-      },
-      {
-        label: "Menu Item 12",
-        href: "https://ilo.org",
+        label: "About the ILO",
+        href: "https://www.ilo.org",
       },
     ],
   },
