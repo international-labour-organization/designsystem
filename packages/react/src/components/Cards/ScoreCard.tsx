@@ -76,6 +76,11 @@ export type ScoreCardProps = {
     items: React.ReactElement<ButtonProps>[];
   };
 
+  /**
+   * Show the loading skeleton
+   */
+  loading?: boolean;
+
   className?: string;
 };
 
@@ -95,6 +100,7 @@ const ScoreCard = forwardRef<HTMLDivElement, ScoreCardProps>(
       eyebrow,
       content,
       cta,
+      loading,
     },
     ref
   ) => {
@@ -124,46 +130,66 @@ const ScoreCard = forwardRef<HTMLDivElement, ScoreCardProps>(
 
     return (
       <div className={classNames(cardClasses, className)} ref={ref}>
-        {Link}
-        <div className={`${baseClass}--wrap`}>
-          {image && size !== "simple" && (
-            <div className={`${baseClass}--image--wrapper`}>
-              <Picture {...image} />
+        {loading && (
+          <div className={`${baseClass}--wrap`}>
+            <div className={`${baseClass}--skeleton--image`} />
+            <div className={`${baseClass}--content`}>
+              <div className={`${baseClass}--skeleton--eyebrow`} />
+              <div className={`${baseClass}--skeleton--title`} />
+              <div className={`${baseClass}--skeleton--date`} />
             </div>
-          )}
-          <div className={`${baseClass}--content`}>
-            {status && (
-              <Status content={status.content} statusType={status.statusType} />
-            )}
-            {eyebrow && size !== "simple" && (
-              <p className={`${baseClass}--eyebrow`}>{eyebrow}</p>
-            )}
-            {title && (
-              <TitleElement className={`${baseClass}--title`}>
-                {title}
-              </TitleElement>
-            )}
-            {content && (
-              <div className={`${baseClass}--area--content`}>
-                {content.items?.map((item, index) => (
-                  <div key={index} className={`${baseClass}--content--item`}>
-                    <Icon name={item.icon} size={20} color={iconColor} />
-                    <span>{item.label}</span>
-                  </div>
-                ))}
-              </div>
-            )}
-            {cta && (
-              <div className={`${baseClass}--area--cta`}>
-                {cta.items.map((ButtonComponent, index) => (
-                  <div key={index} className={`${baseClass}--cta`}>
-                    {ButtonComponent}
-                  </div>
-                ))}
-              </div>
-            )}
           </div>
-        </div>
+        )}
+        {!loading && (
+          <>
+            {Link}
+            <div className={`${baseClass}--wrap`}>
+              {image && size !== "simple" && (
+                <div className={`${baseClass}--image--wrapper`}>
+                  <Picture {...image} />
+                </div>
+              )}
+              <div className={`${baseClass}--content`}>
+                {status && (
+                  <Status
+                    content={status.content}
+                    statusType={status.statusType}
+                  />
+                )}
+                {eyebrow && size !== "simple" && (
+                  <p className={`${baseClass}--eyebrow`}>{eyebrow}</p>
+                )}
+                {title && (
+                  <TitleElement className={`${baseClass}--title`}>
+                    {title}
+                  </TitleElement>
+                )}
+                {content && (
+                  <div className={`${baseClass}--area--content`}>
+                    {content.items?.map((item, index) => (
+                      <div
+                        key={index}
+                        className={`${baseClass}--content--item`}
+                      >
+                        <Icon name={item.icon} size={20} color={iconColor} />
+                        <span>{item.label}</span>
+                      </div>
+                    ))}
+                  </div>
+                )}
+                {cta && (
+                  <div className={`${baseClass}--area--cta`}>
+                    {cta.items.map((ButtonComponent, index) => (
+                      <div key={index} className={`${baseClass}--cta`}>
+                        {ButtonComponent}
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </div>
+          </>
+        )}
       </div>
     );
   }

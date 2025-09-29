@@ -86,6 +86,7 @@ const Default: StoryObj<ScoreCardProps> = {
         </Button>,
       ],
     },
+    loading: false,
   },
 };
 
