@@ -45,8 +45,7 @@
       border-bottom: px-to-rem(2px) solid $color-base-neutrals-lighter;
       font-family: var(--ilo-fonts-display);
       font-weight: 700;
-      @include font-styles("body-xs");
-      letter-spacing: -0.02em;
+      @include typography("body-small");
       padding: spacing(4) spacing(2);
       pointer-events: none;
       text-align: left;
@@ -112,7 +111,7 @@
       border-bottom: px-to-rem(2px) solid $color-base-neutrals-lighter;
       font-family: var(--ilo-fonts-copy);
       font-weight: 400;
-      @include font-styles("body-xs");
+      @include typography("body-small");
       outline: 0;
       padding: spacing(4) spacing(2) spacing(5);
       position: relative;
@@ -158,7 +157,7 @@
     font-family: var(--ilo-fonts-display);
     font-weight: 700;
     margin-bottom: spacing(2);
-    @include font-styles("headline-6");
+    @include typography("highlight-large");
 
     .ilo--tooltip--wrapper {
       margin-left: spacing(1);
@@ -169,7 +168,7 @@
     color: $color-base-neutrals-medium;
     font-family: var(--ilo-fonts-copy);
     font-weight: 400;
-    @include font-styles("body-xxs");
+    @include typography("body-xsmall");
 
     a {
       @include linkstyles();

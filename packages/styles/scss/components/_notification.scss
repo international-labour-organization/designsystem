@@ -100,7 +100,7 @@
 
   &--headline {
     font-weight: 700;
-    @include font-styles("body-small");
+    @include typography("highlight-medium-bold");
 
     margin-bottom: spacing(3);
 
@@ -113,7 +113,7 @@
 
   &--copy {
     font-weight: 400;
-    @include font-styles("body-xs");
+    @include typography("body-small");
 
     @include breakpoint("md") {
       .ilo--notification--inline & {
@@ -134,7 +134,7 @@
     color: $color-base-neutrals-medium;
     display: block;
     font-weight: 400;
-    @include font-styles("body-xs");
+    @include typography("body-small");
 
     @include breakpoint("md") {
       .ilo--notification--inline & {
