@@ -1,5 +1,34 @@
 # @ilo-org/twig
 
+## 1.9.0
+
+### Minor Changes
+
+- 85599c276: An update to `@ilo-org/fonts` has changed the Arabic font from Noto Sans Arabic to Vazirmatn.
+
+### Patch Changes
+
+- 67780ea10: Fixed the display of image credit and added theme support to Image component
+  **Image:** Fixed image caption and implemented theme support
+- a0c63938b: **Icon:** Class passing support
+  **Detail Card:** RTL arrow icon
+- 4b4bee4e3: **TableOfContents:** fixed hover behavior for lengthy items
+- Updated dependencies [85599c276]
+- Updated dependencies [e90383924]
+- Updated dependencies [a59bbc896]
+- Updated dependencies [3d05543f8]
+- Updated dependencies [f226fd559]
+- Updated dependencies [67780ea10]
+- Updated dependencies [85599c276]
+- Updated dependencies [4b4bee4e3]
+- Updated dependencies [18ac64c26]
+- Updated dependencies [6f2fdf93a]
+- Updated dependencies [fc7bb0652]
+- Updated dependencies [210c25d7d]
+  - @ilo-org/fonts@2.0.0
+  - @ilo-org/styles@1.9.0
+  - @ilo-org/icons@2.2.0
+
 ## 1.8.6
 
 ### Patch Changes
