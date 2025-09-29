@@ -1,5 +1,11 @@
 # @ilo-org/icons
 
+## 2.2.0
+
+### Minor Changes
+
+- f226fd559: New `triangle_left` icon added
+
 ## 2.1.0
 
 ### Minor Changes
