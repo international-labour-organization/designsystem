@@ -50,6 +50,11 @@ export type TextCardProps = {
    * Specify an optional className to be added to your TextCard.
    */
   className?: string;
+
+  /**
+   * Show the loading skeleton
+   */
+  loading?: boolean;
 };
 
 const TextCard = forwardRef<HTMLDivElement, TextCardProps>(
@@ -64,6 +69,7 @@ const TextCard = forwardRef<HTMLDivElement, TextCardProps>(
       link,
       titleLevel: TitleElement = "p",
       eyebrow,
+      loading,
     },
     ref
   ) => {
@@ -80,32 +86,48 @@ const TextCard = forwardRef<HTMLDivElement, TextCardProps>(
     return (
       <div className={wrapperClass} ref={ref}>
         <div className={cardClasses}>
-          <a className={`${baseClass}--link`} href={link} title={title}>
-            <span className={`${baseClass}--link--text`}>{title}</span>
-          </a>
-          <div className={`${baseClass}--wrap`}>
-            <div className={`${baseClass}--content`}>
-              {eyebrow && <p className={`${baseClass}--eyebrow`}>{eyebrow}</p>}
-              <TitleElement className={`${baseClass}--title`}>
-                {title}
-              </TitleElement>
-              {date && (
-                <time className={`${baseClass}--date`} dateTime={date.unix}>
-                  {date.human}
-                </time>
-              )}
-              {profile && (
-                <Profile
-                  avatar={profile.avatar}
-                  description={profile.description}
-                  link={profile.link}
-                  name={profile.name}
-                  role={profile.role}
-                  theme={theme}
-                />
-              )}
+          {loading && (
+            <div className={`${baseClass}--wrap`}>
+              <div className={`${baseClass}--content`}>
+                <div className={`${baseClass}--skeleton--eyebrow`} />
+                <div className={`${baseClass}--skeleton--title`} />
+                <div className={`${baseClass}--skeleton--date`} />
+                <div className={`${baseClass}--skeleton--profile`} />
+              </div>
             </div>
-          </div>
+          )}
+          {!loading && (
+            <>
+              <a className={`${baseClass}--link`} href={link} title={title}>
+                <span className={`${baseClass}--link--text`}>{title}</span>
+              </a>
+              <div className={`${baseClass}--wrap`}>
+                <div className={`${baseClass}--content`}>
+                  {eyebrow && (
+                    <p className={`${baseClass}--eyebrow`}>{eyebrow}</p>
+                  )}
+                  <TitleElement className={`${baseClass}--title`}>
+                    {title}
+                  </TitleElement>
+                  {date && (
+                    <time className={`${baseClass}--date`} dateTime={date.unix}>
+                      {date.human}
+                    </time>
+                  )}
+                  {profile && (
+                    <Profile
+                      avatar={profile.avatar}
+                      description={profile.description}
+                      link={profile.link}
+                      name={profile.name}
+                      role={profile.role}
+                      theme={theme}
+                    />
+                  )}
+                </div>
+              </div>
+            </>
+          )}
         </div>
       </div>
     );

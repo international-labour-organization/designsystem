@@ -32,6 +32,7 @@ const Default: StoryObj<TextCardProps> = {
       name: "Gilbert Houngbo",
       role: "ILO Director-General",
     },
+    loading: false,
   },
 };
 

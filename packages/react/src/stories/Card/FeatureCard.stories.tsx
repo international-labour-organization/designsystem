@@ -53,6 +53,7 @@ const Default: StoryObj<FeatureCardProps> = {
         },
       ],
     },
+    loading: false,
   },
 };
 

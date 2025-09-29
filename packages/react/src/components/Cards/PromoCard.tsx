@@ -61,6 +61,11 @@ export type PromoCardProps = {
    * Specify an optional className to be added to your PromoCard.
    */
   className?: string;
+
+  /**
+   * Show the loading skeleton
+   */
+  loading?: boolean;
 };
 
 const PromoCard = forwardRef<HTMLDivElement, PromoCardProps>(
@@ -76,6 +81,7 @@ const PromoCard = forwardRef<HTMLDivElement, PromoCardProps>(
       cta,
       titleLevel: TitleElement = "p",
       eyebrow,
+      loading,
     },
     ref
   ) => {
@@ -98,27 +104,43 @@ const PromoCard = forwardRef<HTMLDivElement, PromoCardProps>(
     return (
       <div className={wrapperClass} ref={ref}>
         <div className={cardClasses}>
-          <a className={`${baseClass}--link`} href={link} title={title}>
-            <span className={`${baseClass}--link--text`}>{title}</span>
-          </a>
-          <div className={`${baseClass}--wrap`}>
-            <div className={`${baseClass}--content`}>
-              {eyebrow && <p className={`${baseClass}--eyebrow`}>{eyebrow}</p>}
-              <TitleElement className={`${baseClass}--title`}>
-                {title}
-              </TitleElement>
-              {intro && <p className={`${baseClass}--intro`}>{intro}</p>}
-              {cta?.label && (
-                <div className={`${baseClass}--cta`}>
-                  <Button
-                    link={{ url: cta.url, label: cta.label }}
-                    size="medium"
-                    type="primary"
-                  />
-                </div>
-              )}
+          {loading && (
+            <div className={`${baseClass}--wrap`}>
+              <div className={`${baseClass}--skeleton--eyebrow`} />
+              <div className={`${baseClass}--skeleton--title-1`} />
+              <div className={`${baseClass}--skeleton--title-2`} />
+              <div className={`${baseClass}--skeleton--intro-1`} />
+              <div className={`${baseClass}--skeleton--intro-2`} />
+              <div className={`${baseClass}--skeleton--intro-3`} />
             </div>
-          </div>
+          )}
+          {!loading && (
+            <>
+              <a className={`${baseClass}--link`} href={link} title={title}>
+                <span className={`${baseClass}--link--text`}>{title}</span>
+              </a>
+              <div className={`${baseClass}--wrap`}>
+                <div className={`${baseClass}--content`}>
+                  {eyebrow && (
+                    <p className={`${baseClass}--eyebrow`}>{eyebrow}</p>
+                  )}
+                  <TitleElement className={`${baseClass}--title`}>
+                    {title}
+                  </TitleElement>
+                  {intro && <p className={`${baseClass}--intro`}>{intro}</p>}
+                  {cta?.label && (
+                    <div className={`${baseClass}--cta`}>
+                      <Button
+                        link={{ url: cta.url, label: cta.label }}
+                        size="medium"
+                        type="primary"
+                      />
+                    </div>
+                  )}
+                </div>
+              </div>
+            </>
+          )}
         </div>
       </div>
     );

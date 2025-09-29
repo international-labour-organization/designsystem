@@ -3,6 +3,7 @@
 //*------------------------------------*/
 @use "tokens" as *;
 @use "functions" as *;
+@use "animations" as *;
 @use "theme/breakpoints" as *;
 
 // ======================================
@@ -555,4 +556,12 @@
   } @else {
     @error "Typography variant '#{$variant}' not recognized";
   }
+}
+
+@mixin skeleton-element($height, $width) {
+  height: px-to-rem($height);
+  width: $width;
+  background: var(--skeleton-element-bg-color);
+
+  @include pulse-animation();
 }

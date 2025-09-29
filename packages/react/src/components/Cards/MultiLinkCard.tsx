@@ -62,6 +62,11 @@ export type MultiLinkCardProps = {
    * Specify a theme for the component, either `light` or `blue`
    */
   theme?: "light" | "soft";
+
+  /**
+   * Show the loading skeleton
+   */
+  loading?: boolean;
 };
 
 const MultiLinkCard = forwardRef<HTMLDivElement, MultiLinkCardProps>(
@@ -79,6 +84,7 @@ const MultiLinkCard = forwardRef<HTMLDivElement, MultiLinkCardProps>(
       eyebrow,
       isVideo,
       theme = "light",
+      loading,
     },
     ref
   ) => {
@@ -101,48 +107,69 @@ const MultiLinkCard = forwardRef<HTMLDivElement, MultiLinkCardProps>(
 
     return (
       <div className={cardClasses} ref={ref}>
-        {link && (
-          <a className={`${baseClass}--link`} href={link} title={title}>
-            <span className={`${baseClass}--link--text`}>{title}</span>
-          </a>
-        )}
-        <div className={`${baseClass}--wrap`}>
-          {image && (
-            <div className={`${baseClass}--image--wrapper`}>
-              <picture>
-                <img
-                  src={image}
-                  alt={title}
-                  className={`${baseClass}--picture`}
-                />
-              </picture>
+        {loading && (
+          <div className={`${baseClass}--wrap`}>
+            <div className={`${baseClass}--skeleton--column-image`} />
+            <div className={`${baseClass}--content`}>
+              <div className={`${baseClass}--skeleton--eyebrow`} />
+              <div className={`${baseClass}--skeleton--title-1`} />
+              <div className={`${baseClass}--skeleton--title-2`} />
+              <div className={`${baseClass}--skeleton--row-image`} />
+              <div className={`${baseClass}--skeleton--intro-1`} />
+              <div className={`${baseClass}--skeleton--intro-2`} />
+              <div className={`${baseClass}--skeleton--intro-3`} />
+              <div className={`${baseClass}--skeleton--intro-4`} />
             </div>
-          )}
-          <div className={`${baseClass}--content`}>
-            {eyebrow && <p className={`${baseClass}--eyebrow`}>{eyebrow}</p>}
-            <TitleElement className={`${baseClass}--title`}>
-              {title}
-            </TitleElement>
-            {image && (
-              <div className={`${baseClass}--image--wrapper`}>
-                <picture>
-                  <img
-                    src={image}
-                    alt={title}
-                    className={`${baseClass}--picture`}
-                  />
-                </picture>
-              </div>
-            )}
-            {intro &&
-              (isValidElement(intro) ? (
-                <div className={`${baseClass}--intro`}>{intro}</div>
-              ) : (
-                <p className={`${baseClass}--intro`}>{intro}</p>
-              ))}
-            {linklist && <LinkList {...linklist} />}
           </div>
-        </div>
+        )}
+        {!loading && (
+          <>
+            {link && (
+              <a className={`${baseClass}--link`} href={link} title={title}>
+                <span className={`${baseClass}--link--text`}>{title}</span>
+              </a>
+            )}
+            <div className={`${baseClass}--wrap`}>
+              {image && (
+                <div className={`${baseClass}--image--wrapper`}>
+                  <picture>
+                    <img
+                      src={image}
+                      alt={title}
+                      className={`${baseClass}--picture`}
+                    />
+                  </picture>
+                </div>
+              )}
+              <div className={`${baseClass}--content`}>
+                {eyebrow && (
+                  <p className={`${baseClass}--eyebrow`}>{eyebrow}</p>
+                )}
+                <TitleElement className={`${baseClass}--title`}>
+                  {title}
+                </TitleElement>
+                {image && (
+                  <div className={`${baseClass}--image--wrapper`}>
+                    <picture>
+                      <img
+                        src={image}
+                        alt={title}
+                        className={`${baseClass}--picture`}
+                      />
+                    </picture>
+                  </div>
+                )}
+                {intro &&
+                  (isValidElement(intro) ? (
+                    <div className={`${baseClass}--intro`}>{intro}</div>
+                  ) : (
+                    <p className={`${baseClass}--intro`}>{intro}</p>
+                  ))}
+                {linklist && <LinkList {...linklist} />}
+              </div>
+            </div>
+          </>
+        )}
       </div>
     );
   }

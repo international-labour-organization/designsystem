@@ -75,6 +75,11 @@ export type DetailCardProps = {
    * Specify an optional className to be added to your DetailCard.
    */
   className?: string;
+
+  /**
+   * Show the loading skeleton
+   */
+  loading?: boolean;
 };
 
 const DetailCard = forwardRef<HTMLDivElement, DetailCardProps>(
@@ -93,6 +98,7 @@ const DetailCard = forwardRef<HTMLDivElement, DetailCardProps>(
       image,
       isVideo = false,
       linkComponent,
+      loading,
     },
     ref
   ) => {
@@ -123,54 +129,77 @@ const DetailCard = forwardRef<HTMLDivElement, DetailCardProps>(
 
     return (
       <div className={cardClasses} ref={ref}>
-        {link && Link}
-        <div className={`${baseClass}--wrap`}>
-          {image && (
+        {loading && (
+          <div className={`${baseClass}--wrap`}>
             <div className={`${baseClass}--image--wrapper`}>
-              <picture>
-                <img
-                  className={`${baseClass}--picture`}
-                  src={image}
-                  alt={title}
-                />
-              </picture>
+              <div className={`${baseClass}--skeleton--image`} />
             </div>
-          )}
-          <div className={`${baseClass}--content`}>
-            {eyebrow && <p className={`${baseClass}--eyebrow`}>{eyebrow}</p>}
-            {title && (
-              <TitleElement className={`${baseClass}--title`}>
-                {title}
-              </TitleElement>
-            )}
-            {intro &&
-              (isValidElement(intro) ? (
-                <div className={`${baseClass}--intro`}>{intro}</div>
-              ) : (
-                <p className={`${baseClass}--intro`}>{intro}</p>
-              ))}
-            {date && !details && (
-              <time className={`${baseClass}--date`} dateTime={date.unix}>
-                {date.human}
-              </time>
-            )}
-            {details && (
-              <p className={`${baseClass}--date-extra`}>
-                <Icon
-                  name="TriangleRight"
-                  size={20}
-                  className={`${baseClass}--icon-right`}
-                />
-                <Icon
-                  name="TriangleLeft"
-                  size={20}
-                  className={`${baseClass}--icon-left`}
-                />
-                {details}
-              </p>
-            )}
+            <div className={`${baseClass}--content`}>
+              <div className={`${baseClass}--skeleton--eyebrow`} />
+              <div className={`${baseClass}--skeleton--title-1`} />
+              <div className={`${baseClass}--skeleton--title-2`} />
+              <div className={`${baseClass}--skeleton--intro-1`} />
+              <div className={`${baseClass}--skeleton--intro-2`} />
+              <div className={`${baseClass}--skeleton--intro-3`} />
+              <div className={`${baseClass}--skeleton--intro-4`} />
+              <div className={`${baseClass}--skeleton--intro-5`} />
+            </div>
           </div>
-        </div>
+        )}
+        {!loading && (
+          <>
+            {link && Link}
+            <div className={`${baseClass}--wrap`}>
+              {image && (
+                <div className={`${baseClass}--image--wrapper`}>
+                  <picture>
+                    <img
+                      className={`${baseClass}--picture`}
+                      src={image}
+                      alt={title}
+                    />
+                  </picture>
+                </div>
+              )}
+              <div className={`${baseClass}--content`}>
+                {eyebrow && (
+                  <p className={`${baseClass}--eyebrow`}>{eyebrow}</p>
+                )}
+                {title && (
+                  <TitleElement className={`${baseClass}--title`}>
+                    {title}
+                  </TitleElement>
+                )}
+                {intro &&
+                  (isValidElement(intro) ? (
+                    <div className={`${baseClass}--intro`}>{intro}</div>
+                  ) : (
+                    <p className={`${baseClass}--intro`}>{intro}</p>
+                  ))}
+                {date && !details && (
+                  <time className={`${baseClass}--date`} dateTime={date.unix}>
+                    {date.human}
+                  </time>
+                )}
+                {details && (
+                  <p className={`${baseClass}--date-extra`}>
+                    <Icon
+                      name="TriangleRight"
+                      size={20}
+                      className={`${baseClass}--icon-right`}
+                    />
+                    <Icon
+                      name="TriangleLeft"
+                      size={20}
+                      className={`${baseClass}--icon-left`}
+                    />
+                    {details}
+                  </p>
+                )}
+              </div>
+            </div>
+          </>
+        )}
       </div>
     );
   }

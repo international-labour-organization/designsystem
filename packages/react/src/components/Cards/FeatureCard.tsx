@@ -57,6 +57,11 @@ export type FeatureCardProps = {
    * Specify an optional className to be added to your TextCard.
    */
   className?: string;
+
+  /**
+   * Show the loading skeleton
+   */
+  loading?: boolean;
 };
 
 const FeatureCard = forwardRef<HTMLDivElement, FeatureCardProps>(
@@ -73,6 +78,7 @@ const FeatureCard = forwardRef<HTMLDivElement, FeatureCardProps>(
       titleLevel: TitleElement = "p",
       eyebrow,
       isVideo,
+      loading,
     },
     ref
   ) => {
@@ -94,48 +100,64 @@ const FeatureCard = forwardRef<HTMLDivElement, FeatureCardProps>(
 
     return (
       <div className={cardClasses} ref={ref}>
-        {link && (
-          <a className={`${baseClass}--link`} href={link} title={title}>
-            <span className={`${baseClass}--link--text`}>{title}</span>
-          </a>
-        )}
-        <div className={`${baseClass}--wrap`}>
-          {image && (
-            <div className={`${baseClass}--image--wrapper`}>
-              <picture>
-                <img
-                  src={image}
-                  alt={title}
-                  className={`${baseClass}--picture`}
-                />
-              </picture>
+        {loading && (
+          <div className={`${baseClass}--wrap`}>
+            <div className={`${baseClass}--skeleton--image`} />
+            <div className={`${baseClass}--content`}>
+              <div className={`${baseClass}--skeleton--eyebrow`} />
+              <div className={`${baseClass}--skeleton--title`} />
+              <div className={`${baseClass}--skeleton--date`} />
             </div>
-          )}
-          <div className={`${baseClass}--content`}>
-            {eyebrow && <p className={`${baseClass}--eyebrow`}>{eyebrow}</p>}
-            <TitleElement className={`${baseClass}--title`}>
-              {title}
-            </TitleElement>
-            {date && (
-              <time className={`${baseClass}--date`} dateTime={date.unix}>
-                {date.human}
-              </time>
+          </div>
+        )}
+        {!loading && (
+          <>
+            {link && (
+              <a className={`${baseClass}--link`} href={link} title={title}>
+                <span className={`${baseClass}--link--text`}>{title}</span>
+              </a>
             )}
-            {linklist && size === "narrow" && (
+            <div className={`${baseClass}--wrap`}>
+              {image && (
+                <div className={`${baseClass}--image--wrapper`}>
+                  <picture>
+                    <img
+                      src={image}
+                      alt={title}
+                      className={`${baseClass}--picture`}
+                    />
+                  </picture>
+                </div>
+              )}
+              <div className={`${baseClass}--content`}>
+                {eyebrow && (
+                  <p className={`${baseClass}--eyebrow`}>{eyebrow}</p>
+                )}
+                <TitleElement className={`${baseClass}--title`}>
+                  {title}
+                </TitleElement>
+                {date && (
+                  <time className={`${baseClass}--date`} dateTime={date.unix}>
+                    {date.human}
+                  </time>
+                )}
+                {linklist && size === "narrow" && (
+                  <LinkList
+                    headline={linklist.headline}
+                    linkgroup={linklist.linkgroup}
+                    theme={theme}
+                  />
+                )}
+              </div>
+            </div>
+            {linklist && (size === "wide" || size === "fluid") && (
               <LinkList
                 headline={linklist.headline}
                 linkgroup={linklist.linkgroup}
                 theme={theme}
               />
             )}
-          </div>
-        </div>
-        {linklist && (size === "wide" || size === "fluid") && (
-          <LinkList
-            headline={linklist.headline}
-            linkgroup={linklist.linkgroup}
-            theme={theme}
-          />
+          </>
         )}
       </div>
     );

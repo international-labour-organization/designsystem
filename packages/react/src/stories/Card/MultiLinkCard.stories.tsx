@@ -59,6 +59,7 @@ const Default: StoryObj<MultiLinkCardProps> = {
         },
       ],
     },
+    loading: false,
   },
 };
 

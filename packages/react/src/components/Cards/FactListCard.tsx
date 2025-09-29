@@ -35,6 +35,11 @@ export type FactListCardProps = {
    * Specify an optional className to be added to your FactListCard.
    */
   className?: string;
+
+  /**
+   * Show the loading skeleton
+   */
+  loading?: boolean;
 };
 
 const FactListCard = forwardRef<HTMLDivElement, FactListCardProps>(
@@ -46,6 +51,7 @@ const FactListCard = forwardRef<HTMLDivElement, FactListCardProps>(
       list,
       titleLevel: TitleElement = "p",
       className,
+      loading,
     },
     ref
   ) => {
@@ -67,18 +73,44 @@ const FactListCard = forwardRef<HTMLDivElement, FactListCardProps>(
       <div className={cardClasses} ref={ref}>
         <div className={`${baseClass}--wrap`}>
           <div className={`${baseClass}--content`}>
-            {title && (
-              <TitleElement className={`${prefix}--card--title`}>
-                {title}
-              </TitleElement>
+            {loading && (
+              <>
+                <div className={`${baseClass}--skeleton--title`} />
+                <List alignment="default" ordered="unordered" theme={theme}>
+                  <List.Item>
+                    <div className={`${baseClass}--skeleton--list-item`} />
+                  </List.Item>
+                  <List.Item>
+                    <div className={`${baseClass}--skeleton--list-item`} />
+                  </List.Item>
+                  <List.Item>
+                    <div className={`${baseClass}--skeleton--list-item`} />
+                  </List.Item>
+                  <List.Item>
+                    <div className={`${baseClass}--skeleton--list-item`} />
+                  </List.Item>
+                  <List.Item>
+                    <div className={`${baseClass}--skeleton--list-item`} />
+                  </List.Item>
+                </List>
+              </>
             )}
-            <List alignment="default" ordered="unordered" theme={theme}>
-              {list.map((item) => (
-                <List.Item key={item}>
-                  <p>{item}</p>
-                </List.Item>
-              ))}
-            </List>
+            {!loading && (
+              <>
+                {title && (
+                  <TitleElement className={`${prefix}--card--title`}>
+                    {title}
+                  </TitleElement>
+                )}
+                <List alignment="default" ordered="unordered" theme={theme}>
+                  {list.map((item) => (
+                    <List.Item key={item}>
+                      <p>{item}</p>
+                    </List.Item>
+                  ))}
+                </List>
+              </>
+            )}
           </div>
         </div>
       </div>

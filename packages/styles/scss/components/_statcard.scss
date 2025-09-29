@@ -43,12 +43,36 @@
         }
       }
 
+      &#{$self}__loading {
+        background-color: var(--ilo-color-gray-base);
+        border-bottom-color: var(--skeleton-element-bg-color);
+      }
+
       #{$self}--content {
         display: flex;
         flex-flow: column;
         align-items: flex-start;
         justify-content: flex-start;
         height: 100%;
+      }
+
+      #{$self}--skeleton--title {
+        @include skeleton-element(32px, 70%);
+      }
+
+      #{$self}--skeleton--intro-1 {
+        @include skeleton-element(16px, 90%);
+        margin-top: spacing(4);
+      }
+
+      #{$self}--skeleton--intro-2 {
+        @include skeleton-element(16px, 80%);
+        margin-top: spacing(2);
+      }
+
+      #{$self}--skeleton--source {
+        @include skeleton-element(10px, 50%);
+        margin-top: spacing(8);
       }
 
       #{$self}--title {

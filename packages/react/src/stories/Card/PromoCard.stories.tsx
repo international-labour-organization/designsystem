@@ -29,6 +29,7 @@ const Default: StoryObj<PromoCardProps> = {
       label: "Read the press release",
       url: "https://www.ilo.org/global/about-the-ilo/newsroom/news/WCMS_846303/lang--en/index.htm",
     },
+    loading: false,
   },
 };
 

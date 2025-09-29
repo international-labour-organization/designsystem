@@ -77,6 +77,7 @@ const Default: StoryObj<DataCardProps> = {
         ],
       },
     },
+    loading: false,
   },
 };
 

@@ -28,6 +28,7 @@ const Default: StoryObj<FactListCardProps> = {
     theme: "dark",
     size: "narrow",
     titleLevel: "h2",
+    loading: false,
   },
 };
 

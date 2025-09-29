@@ -46,6 +46,11 @@ export interface StatCardProps {
    * Specify an optional className to be added to your StatCard.
    */
   className?: string;
+
+  /**
+   * Show the loading skeleton
+   */
+  loading?: boolean;
 }
 
 const StatCard = forwardRef<HTMLDivElement, StatCardProps>(
@@ -59,6 +64,7 @@ const StatCard = forwardRef<HTMLDivElement, StatCardProps>(
       intro,
       source,
       titleLevel: TitleElement = "p",
+      loading,
     },
     ref
   ) => {
@@ -71,6 +77,7 @@ const StatCard = forwardRef<HTMLDivElement, StatCardProps>(
       [`${baseClass}__size__${String(size)}`]: size,
       [`${baseClass}__theme__${theme}`]: theme,
       [`${baseClass}__color__${color}`]: color,
+      [`${baseClass}__loading`]: loading,
     });
 
     return (
@@ -78,16 +85,28 @@ const StatCard = forwardRef<HTMLDivElement, StatCardProps>(
         <div className={cardClasses}>
           <div className={`${baseClass}--wrap`}>
             <div className={`${baseClass}--content`}>
-              <TitleElement className={`${baseClass}--title`}>
-                {title}
-              </TitleElement>
-              {intro && <p className={`${baseClass}--intro`}>{intro}</p>}
-              {source && (
-                <Link
-                  className={`${baseClass}--source`}
-                  url={source.url}
-                  label={source.label}
-                />
+              {loading && (
+                <>
+                  <div className={`${baseClass}--skeleton--title`} />
+                  <div className={`${baseClass}--skeleton--intro-1`} />
+                  <div className={`${baseClass}--skeleton--intro-2`} />
+                  <div className={`${baseClass}--skeleton--source`} />
+                </>
+              )}
+              {!loading && (
+                <>
+                  <TitleElement className={`${baseClass}--title`}>
+                    {title}
+                  </TitleElement>
+                  {intro && <p className={`${baseClass}--intro`}>{intro}</p>}
+                  {source && (
+                    <Link
+                      className={`${baseClass}--source`}
+                      url={source.url}
+                      label={source.label}
+                    />
+                  )}
+                </>
               )}
             </div>
           </div>

@@ -25,6 +25,7 @@ const Default: StoryObj<StatCardProps> = {
       label: "World Employment and Social Outlook: Trends 2023",
       url: "https://www.ilo.org/global/research/global-reports/weso/WCMS_865332/lang--en/index.htm",
     },
+    loading: false,
   },
 };
 

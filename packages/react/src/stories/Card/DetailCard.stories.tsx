@@ -41,6 +41,7 @@ const Default: StoryObj<DetailCardProps> = {
     size: "narrow",
     isVideo: false,
     titleLevel: "h2",
+    loading: false,
   },
 };
 
