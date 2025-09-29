@@ -1,8 +1,8 @@
-@use "../../tokens" as *;
-@use "../../functions" as *;
-@import "../../mixins";
-@import "../../config";
-@import "../../animations";
+@use "../../../tokens" as *;
+@use "../../../functions" as *;
+@import "../../../mixins";
+@import "../../../config";
+@import "../../../animations";
 
 .ilo--nav-menu {
   display: flex;

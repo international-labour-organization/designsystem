@@ -1,7 +1,7 @@
-@use "../../../tokens" as *;
-@use "../../../functions" as *;
-@import "../../../mixins";
-@import "../../../config";
+@use "../../../../tokens" as *;
+@use "../../../../functions" as *;
+@import "../../../../mixins";
+@import "../../../../config";
 
 .ilo--nav-mobile-menu {
   display: flex;
