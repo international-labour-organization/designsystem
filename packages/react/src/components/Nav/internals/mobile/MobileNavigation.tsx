@@ -4,7 +4,7 @@ import { useGlobalSettings } from "../../../hooks";
 import { MobileMenuList } from "./MobileMenuList";
 import { MobileDrawer } from "./MobileDrawer";
 import { MobileLanguageList } from "./MobileLanguageList";
-import { NavigationLink } from "../NavigationLink";
+import { NavigationLink } from "../internals/NavigationLink";
 import { NavCoreProps } from "../Navigation.props";
 import { SearchField } from "../../SearchField";
 

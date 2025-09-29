@@ -1,5 +1,5 @@
-import { useGlobalSettings } from "../../hooks";
-import { NavigationLinkProps } from "./Navigation.props";
+import { useGlobalSettings } from "../../../hooks";
+import { NavigationLinkProps } from "../Navigation.props";
 import { NavigationLink } from "./NavigationLink";
 
 type NavigationMenuGridProps = {

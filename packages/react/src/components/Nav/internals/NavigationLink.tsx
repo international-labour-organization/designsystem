@@ -1,4 +1,4 @@
-import { NavigationLinkProps } from "./Navigation.props";
+import { NavigationLinkProps } from "../Navigation.props";
 
 const NavigationLink = (props: NavigationLinkProps) => {
   const { label, component: Component, ...rest } = props;
