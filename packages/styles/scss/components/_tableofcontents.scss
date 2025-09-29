@@ -28,9 +28,7 @@
     border-bottom: px-to-rem(3px) solid $color-base-neutrals-lighter;
     margin-bottom: spacing(6);
     margin-top: spacing(2);
-    @include font-styles("base");
-    font-family: var(--ilo-fonts-display);
-    font-weight: 700;
+    @include typography("heading-3");
     padding-bottom: spacing(4);
   }
 
@@ -130,7 +128,7 @@
     padding: spacing(4) spacing(4) spacing(4);
     text-decoration: none;
     @include dataurlicon("arrow_down", $color-ux-labels-actionable);
-    @include font-styles("label-medium");
+    @include typography("highlight-medium");
     @include globaltransition("background-color, border, color");
 
     &:hover,

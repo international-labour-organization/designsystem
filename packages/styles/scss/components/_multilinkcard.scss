@@ -55,22 +55,22 @@
       }
 
       #{$self}--title {
-        @include font-styles("headline-5");
+        @include typography("heading-2", true);
         margin-bottom: var(--standard-spacing);
         color: var(--ilo-color-gray-charcoal);
 
         @include breakpoint("md") {
-          @include font-styles("headline-4");
+          @include typography("heading-2");
         }
       }
 
       #{$self}--intro {
-        @include font-styles("body-small");
+        @include typography("body-large", true);
         margin-bottom: var(--standard-spacing);
         color: var(--ilo-color-gray-charcoal);
 
         @include breakpoint("md") {
-          @include font-styles("base");
+          @include typography("body-large");
         }
       }
 
@@ -97,14 +97,14 @@
 
           #{$self}--title {
             @include breakpoint("md") {
-              @include font-styles("headline-5");
+              @include typography("heading-3", true);
               margin-bottom: var(--narrow-spacing);
             }
           }
 
           #{$self}--intro {
             @include breakpoint("md") {
-              @include font-styles("body-small");
+              @include typography("body-medium", true);
               margin-bottom: var(--narrow-spacing);
             }
           }

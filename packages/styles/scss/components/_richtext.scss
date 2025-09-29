@@ -50,7 +50,6 @@
   h3,
   h4,
   h5 {
-    font-weight: var(--ilo-font-weight-bold);
     margin-top: spacing(14);
   }
 
@@ -66,36 +65,25 @@
   }
 
   h1 {
-    font-size: var(--ilo-font-size-4xlg);
-    line-height: var(--ilo-line-height-sm);
-    letter-spacing: var(--ilo-letter-spacing-xsm);
+    @include typography("heading-1", true);
   }
 
   h2 {
-    font-size: var(--ilo-font-size-xlg);
-    line-height: var(--ilo-line-height-md);
-    letter-spacing: var(--ilo-letter-spacing-xsm);
+    @include typography("heading-2", true);
   }
 
   h3 {
-    font-size: var(--ilo-font-size-lg);
-    line-height: var(--ilo-line-height-lg);
-    letter-spacing: var(--ilo-letter-spacing-sm);
+    @include typography("heading-3", true);
   }
 
   h4,
   h5,
   h6 {
-    font-size: var(--ilo-font-size-md);
-    line-height: var(--ilo-line-height-xlg);
-    letter-spacing: var(--ilo-letter-spacing-sm);
+    @include typography("heading-4", true);
   }
 
   p {
-    font-weight: var(--ilo-font-weight-regular);
-    font-size: var(--ilo-font-size-md);
-    line-height: var(--ilo-line-height-2xlg);
-    letter-spacing: var(--ilo-letter-spacing-md);
+    @include typography("body-large", true);
   }
 
   // Italic and bold styles
@@ -175,30 +163,25 @@
     }
 
     h1 {
-      font-size: var(--ilo-font-size-5xlg);
-      line-height: var(--ilo-line-height-xsm);
-      letter-spacing: var(--ilo-letter-spacing-xsm);
+      @include typography("heading-1");
     }
 
     h2 {
-      font-size: var(--ilo-font-size-3xlg);
+      @include typography("heading-2");
     }
 
     h3 {
-      font-size: var(--ilo-font-size-xlg);
-      line-height: var(--ilo-line-height-md);
-      letter-spacing: var(--ilo-letter-spacing-xsm);
+      @include typography("heading-3");
     }
 
     h4,
     h5,
     h6 {
-      font-size: var(--ilo-font-size-lg);
-      line-height: var(--ilo-line-height-lg);
+      @include typography("heading-4");
     }
 
     p {
-      font-size: var(--ilo-font-size-lg);
+      @include typography("body-large");
     }
   }
 }

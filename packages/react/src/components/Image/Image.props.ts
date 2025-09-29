@@ -1,3 +1,5 @@
+import { ThemeTypes } from "../../types";
+
 export interface ImageUrl {
   /**
    * Specify the breakpoint at which this image src should be used
@@ -40,4 +42,9 @@ export interface ImageProps {
    * Value to pass to lading attribute
    */
   loading?: "lazy" | "eager";
+
+  /**
+   * Will render the component to appear on light or dark backgrounds
+   */
+  theme?: ThemeTypes;
 }

@@ -6,18 +6,6 @@
 @use "theme/breakpoints" as *;
 
 // ======================================
-// Output font styles
-// ======================================
-/// Retrieve the usual font styles for a given type styling
-/// @param {String} $stylename - the name of the style to get
-/// @return {CSS} font size, line-height, and letter-spacing for this type style
-@mixin font-styles($stylename) {
-  font-size: map-get($type, $stylename, "size");
-  letter-spacing: map-get($type, $stylename, "letter-spacing");
-  line-height: map-get($type, $stylename, "line-height");
-}
-
-// ======================================
 // Visually Hidden
 //
 // Visually hide the element from the
@@ -285,7 +273,8 @@
 // ======================================
 
 @mixin caption-icon-wrapper($dir: "right", $width, $height) {
-  background: map-get($color, "tooltip", "dark", "background");
+  --ilo-caption-icon-wrapper-bg-color: var(--ilo-color-gray-charcoal);
+  background: var(--ilo-caption-icon-wrapper-bg-color);
   height: $height;
   width: $width;
   display: flex;
@@ -306,7 +295,7 @@
       border-right: none;
       border-left: calc(#{$height} - 4px)
         solid
-        map-get($color, "tooltip", "dark", "background");
+        var(--ilo-caption-icon-wrapper-bg-color);
     }
 
     @if ($dir == "left") {
@@ -315,7 +304,7 @@
       border-left: none;
       border-right: calc(#{$height} - 4px)
         solid
-        map-get($color, "tooltip", "dark", "background");
+        var(--ilo-caption-icon-wrapper-bg-color);
     }
   }
 }
@@ -411,11 +400,11 @@
   @if $variant == "heading-1" {
     font-size: var(--ilo-font-size-5xlg);
     font-weight: var(--ilo-font-weight-bold);
-    line-height: var(--ilo-line-height-xsm);
+    line-height: var(--ilo-line-height-md);
     letter-spacing: var(--ilo-letter-spacing-xsm);
     @if $mobile {
       font-size: var(--ilo-font-size-4xlg);
-      line-height: var(--ilo-line-height-sm);
+      line-height: var(--ilo-line-height-md);
     }
   } @else if $variant == "heading-2" {
     font-size: var(--ilo-font-size-3xlg);
@@ -446,7 +435,7 @@
   } @else if $variant == "blockquote" {
     font-size: var(--ilo-font-size-4xlg);
     font-weight: var(--ilo-font-weight-light);
-    line-height: var(--ilo-line-height-sm);
+    line-height: var(--ilo-line-height-md);
     letter-spacing: var(--ilo-letter-spacing-xsm);
     @if $mobile {
       font-size: var(--ilo-font-size-2xlg);

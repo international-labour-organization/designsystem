@@ -171,7 +171,7 @@
       max-width: 30ch;
       font-family: var(--ilo-fonts-copy);
       font-weight: 400;
-      @include font-styles("body-xxs");
+      @include typography("body-xsmall");
 
       &:hover,
       &:focus {
