@@ -1,12 +1,12 @@
 import { useCallback, useState } from "react";
 
-import { useGlobalSettings } from "../../../hooks";
+import { useGlobalSettings } from "../../../../hooks";
 import { MobileMenuList } from "./MobileMenuList";
 import { MobileDrawer } from "./MobileDrawer";
 import { MobileLanguageList } from "./MobileLanguageList";
-import { NavigationLink } from "../internals/NavigationLink";
-import { NavCoreProps } from "../Navigation.props";
-import { SearchField } from "../../SearchField";
+import { NavigationLink } from "../NavigationLink";
+import { NavCoreProps } from "../../Navigation.props";
+import { SearchField } from "../../../SearchField";
 
 type MobileNavigationProps = {
   /**

@@ -1,7 +1,7 @@
 import { HTMLAttributes } from "react";
-import { useGlobalSettings } from "../../../hooks";
-import { NavigationLinkProps } from "../Navigation.props";
-import { NavigationLink } from "../internals/NavigationLink";
+import { useGlobalSettings } from "../../../../hooks";
+import { NavigationLinkProps } from "../../Navigation.props";
+import { NavigationLink } from "../NavigationLink";
 
 type MobileMenuListProps = {
   menu: NavigationLinkProps[];

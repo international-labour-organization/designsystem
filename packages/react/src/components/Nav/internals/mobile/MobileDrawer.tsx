@@ -1,5 +1,5 @@
 import { ReactNode, useId } from "react";
-import { useGlobalSettings } from "../../../hooks";
+import { useGlobalSettings } from "../../../../hooks";
 import { createPortal } from "react-dom";
 import classNames from "classnames";
 

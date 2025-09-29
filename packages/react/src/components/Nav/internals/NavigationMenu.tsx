@@ -1,7 +1,7 @@
 import classNames from "classnames";
 import { useGlobalSettings } from "../../../hooks";
 import { NavigationLinkProps } from "../Navigation.props";
-import { NavigationLink } from "../NavigationLink";
+import { NavigationLink } from "./NavigationLink";
 
 type NavigationMenuProps = {
   className?: string;
