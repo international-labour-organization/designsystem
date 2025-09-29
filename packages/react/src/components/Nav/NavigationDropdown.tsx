@@ -1,4 +1,12 @@
-import { useRef, memo, useEffect, RefObject, useCallback } from "react";
+import {
+  useRef,
+  memo,
+  useEffect,
+  RefObject,
+  useCallback,
+  forwardRef,
+  useImperativeHandle,
+} from "react";
 import { createPortal } from "react-dom";
 import { useGlobalSettings } from "../../hooks";
 import classNames from "classnames";
@@ -22,15 +30,15 @@ type NavigationDropdownProps = {
   children?: React.ReactNode;
 };
 
-const NavigationDropdownBare = ({
-  isOpen,
-  className,
-  navRef,
-  children,
-}: NavigationDropdownProps) => {
+const NavigationDropdownBare = forwardRef<
+  HTMLDivElement,
+  NavigationDropdownProps
+>(({ isOpen, className, navRef, children }, ref) => {
   const { prefix } = useGlobalSettings();
 
   const wrapperRef = useRef<HTMLDivElement>(null);
+
+  useImperativeHandle(ref, () => wrapperRef.current!, []);
 
   const baseClass = `${prefix}--nav-dropdown`;
 
@@ -51,7 +59,7 @@ const NavigationDropdownBare = ({
     return () => {
       window.removeEventListener("resize", updatePosition);
     };
-  }, [navRef]);
+  }, [updatePosition]);
 
   if (typeof document === "undefined") return null;
 
@@ -70,7 +78,7 @@ const NavigationDropdownBare = ({
     </div>,
     document.body
   );
-};
+});
 
 const NavigationDropdown = memo(NavigationDropdownBare);
 
