@@ -1,0 +1,54 @@
+import { expect, describe, it } from "vitest";
+import { render, screen } from "@testing-library/react";
+import { StatCard } from "../src/components/Cards/StatCard";
+
+const defaultProps = {
+  title: "Test coverage has improved dramatically",
+  intro:
+    "The recent improvements to test infrastructure has led us to increase our test coverage significantly.",
+  source: {
+    label: "Test source",
+    url: "https://www.example.com/test-source",
+  },
+};
+
+describe("StatCard", () => {
+  it("should render correctly", () => {
+    render(<StatCard {...defaultProps} />);
+
+    const title = screen.getByText(defaultProps.title);
+    expect(title).toBeVisible();
+
+    const intro = screen.getByText(defaultProps.intro);
+    expect(intro).toBeVisible();
+
+    const sourceLink = screen.getByRole("link", {
+      name: defaultProps.source.label,
+    });
+    expect(sourceLink).toBeVisible();
+    expect(sourceLink).toHaveAttribute("href", defaultProps.source.url);
+  });
+
+  it("should display loading skeleton correctly", () => {
+    const loadingProps = { ...defaultProps, loading: true };
+    render(<StatCard {...loadingProps} />);
+
+    // The skeleton elements should be present
+    const skeletonElements = document.querySelectorAll(
+      "[class*='ilo--card--skeleton--']"
+    );
+    expect(skeletonElements).toHaveLength(4);
+
+    // The actual content should not be present
+    const title = screen.queryByText(defaultProps.title);
+    expect(title).not.toBeInTheDocument();
+
+    const intro = screen.queryByText(defaultProps.intro);
+    expect(intro).not.toBeInTheDocument();
+
+    const sourceLink = screen.queryByRole("link", {
+      name: defaultProps.source.label,
+    });
+    expect(sourceLink).not.toBeInTheDocument();
+  });
+});
