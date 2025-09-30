@@ -1,20 +1,21 @@
 import { expect, describe, it } from "vitest";
 import { render, screen } from "@testing-library/react";
-import { DetailCard } from "../src/components/Cards/DetailCard";
+import { PromoCard } from "../src/components/Cards/PromoCard";
 
 const defaultProps = {
-  title: "Why we need tests",
+  title: "Do we need tests?",
   eyebrow: "Test",
-  details: "30 October 2025 | Testland",
-  link: "https://www.example.com",
-  image: "test.jpg",
   intro: "Tests are a vital yet often neglected part of software development.",
-  titleLevel: "h2" as const,
+  link: "https://www.example.com/",
+  cta: {
+    label: "Read the article",
+    url: "https://www.example.com/article",
+  },
 };
 
-describe("DetailCard", () => {
+describe("PromoCard", () => {
   it("should render correctly", () => {
-    render(<DetailCard {...defaultProps} />);
+    render(<PromoCard {...defaultProps} />);
 
     // The first element returned is the stub text for the wrapper link
     const title = screen.getAllByText(defaultProps.title);
@@ -23,29 +24,28 @@ describe("DetailCard", () => {
     const eyebrow = screen.getByText(defaultProps.eyebrow);
     expect(eyebrow).toBeVisible();
 
-    const details = screen.getByText(defaultProps.details);
-    expect(details).toBeVisible();
+    const intro = screen.getByText(defaultProps.intro);
+    expect(intro).toBeVisible();
 
     const link = screen.getByRole("link", { name: defaultProps.title });
     expect(link).toHaveAttribute("href", defaultProps.link);
 
-    const image = screen.getByRole("img", { name: defaultProps.title });
-    expect(image).toBeVisible();
-    expect(image).toHaveAttribute("src", defaultProps.image);
-
-    const intro = screen.getByText(defaultProps.intro);
-    expect(intro).toBeVisible();
+    const ctaButton = screen.getByRole("link", {
+      name: defaultProps.cta.label,
+    });
+    expect(ctaButton).toBeVisible();
+    expect(ctaButton).toHaveAttribute("href", defaultProps.cta.url);
   });
 
   it("should display loading skeleton correctly", () => {
     const loadingProps = { ...defaultProps, loading: true };
-    render(<DetailCard {...loadingProps} />);
+    render(<PromoCard {...loadingProps} />);
 
     // The skeleton elements should be present
     const skeletonElements = document.querySelectorAll(
       "[class*='ilo--card--skeleton--']"
     );
-    expect(skeletonElements).toHaveLength(9);
+    expect(skeletonElements).toHaveLength(6);
 
     // The actual content should not be present
     const title = screen.queryByText(defaultProps.title);
@@ -54,10 +54,12 @@ describe("DetailCard", () => {
     const eyebrow = screen.queryByText(defaultProps.eyebrow);
     expect(eyebrow).not.toBeInTheDocument();
 
-    const details = screen.queryByText(defaultProps.details);
-    expect(details).not.toBeInTheDocument();
-
     const intro = screen.queryByText(defaultProps.intro);
     expect(intro).not.toBeInTheDocument();
+
+    const ctaButton = screen.queryByRole("link", {
+      name: defaultProps.cta.label,
+    });
+    expect(ctaButton).not.toBeInTheDocument();
   });
 });

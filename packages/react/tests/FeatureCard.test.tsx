@@ -9,7 +9,6 @@ const defaultProps = {
     human: "30 October 2025",
     unix: "1759227495",
   },
-  theme: "light" as const,
   link: "https://www.example.com/",
   image: "/test.jpg",
   size: "narrow",
