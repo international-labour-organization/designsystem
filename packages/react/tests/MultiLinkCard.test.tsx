@@ -1,18 +1,14 @@
 import { render, screen } from "@testing-library/react";
-// import userEvent from "@testing-library/user-event";
 import { describe, it, expect } from "vitest";
-import {
-  MultiLinkCard,
-  MultiLinkCardProps,
-} from "../src/components/Cards/MultiLinkCard";
+import { MultiLinkCard } from "../src/components/Cards/MultiLinkCard";
 
-const defaultProps: MultiLinkCardProps = {
+const defaultProps = {
   title: "Advancing social justice",
   eyebrow: "Podcast",
   intro:
     "As the United Nations agency for the world of work, the ILO sets international labour standards, promotes rights at work and encourages decent employment opportunities, the enhancement of social protection and the strengthening of dialogue on work-related issues.",
-  size: "standard",
-  alignment: "left",
+  size: "standard" as const,
+  alignment: "left" as const,
   link: "https://www.ilo.org/",
   image: "/hero.jpg",
   linklist: {
@@ -46,14 +42,12 @@ describe("MultiLinkCard Component", () => {
 
   it("displays the eyebrow text when provided", () => {
     render(<MultiLinkCard {...defaultProps} />);
-    expect(
-      screen.getByText(defaultProps.eyebrow as string)
-    ).toBeInTheDocument();
+    expect(screen.getByText(defaultProps.eyebrow)).toBeInTheDocument();
   });
 
   it("renders the intro text correctly", () => {
     render(<MultiLinkCard {...defaultProps} />);
-    expect(screen.getByText(defaultProps.intro as string)).toBeInTheDocument();
+    expect(screen.getByText(defaultProps.intro)).toBeInTheDocument();
   });
 
   it("renders the image(s) with correct alt text", () => {
@@ -104,5 +98,31 @@ describe("MultiLinkCard Component", () => {
     expect(
       screen.getByText("Remarks to G7 Opening Session")
     ).toBeInTheDocument();
+  });
+
+  it("should display loading skeleton correctly", () => {
+    const loadingProps = { ...defaultProps, loading: true };
+    render(<MultiLinkCard {...loadingProps} />);
+
+    // The skeleton elements should be present
+    const skeletonElements = document.querySelectorAll(
+      "[class*='ilo--card--skeleton--']"
+    );
+    expect(skeletonElements).toHaveLength(9);
+
+    // The actual content should not be present
+    const title = screen.queryByText(defaultProps.title);
+    expect(title).not.toBeInTheDocument();
+
+    const eyebrow = screen.queryByText(defaultProps.eyebrow);
+    expect(eyebrow).not.toBeInTheDocument();
+
+    const intro = screen.queryByText(defaultProps.intro);
+    expect(intro).not.toBeInTheDocument();
+
+    const linklistItem = screen.queryByRole("link", {
+      name: defaultProps.linklist.linkgroup[0].links[0].label,
+    });
+    expect(linklistItem).not.toBeInTheDocument();
   });
 });
