@@ -1,10 +1,10 @@
 import { render, screen } from "@testing-library/react";
 import { describe, it, expect } from "vitest";
-import { DataCard, DataCardProps } from "../src/components/Cards/DataCard";
+import { DataCard } from "../src/components/Cards/DataCard";
 
-const defaultProps: DataCardProps = {
+const defaultProps = {
   eyebrow: "Flagship report",
-  size: "narrow",
+  size: "narrow" as const,
   image: "/publication.jpg",
   dataset: {
     content: {
@@ -122,5 +122,29 @@ describe("DataCard Component", () => {
     );
     const outerDiv = container.firstChild;
     expect(outerDiv).toHaveClass("ilo--card__type__data__columns__one");
+  });
+
+  it("should display loading skeleton correctly", () => {
+    const loadingProps = { ...defaultProps, loading: true };
+    render(<DataCard {...loadingProps} />);
+
+    // The skeleton elements should be present
+    const skeletonElements = document.querySelectorAll(
+      "[class*='ilo--card--skeleton--']"
+    );
+    expect(skeletonElements).toHaveLength(8);
+
+    // The actual content should not be present
+    const eyebrow = screen.queryByText(defaultProps.eyebrow);
+    expect(eyebrow).not.toBeInTheDocument();
+
+    const contentLabels = screen.queryByText("Date of publication");
+    expect(contentLabels).not.toBeInTheDocument();
+
+    const ctaHeadline = screen.queryByText("Read online");
+    expect(ctaHeadline).not.toBeInTheDocument();
+
+    const linksHeadline = screen.queryByText("Also available in");
+    expect(linksHeadline).not.toBeInTheDocument();
   });
 });
