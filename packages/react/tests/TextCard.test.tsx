@@ -17,7 +17,6 @@ const defaultProps = {
     name: "Test man",
     role: "Tester",
   },
-  loading: false,
 };
 
 describe("TextCard", () => {
