@@ -1,15 +1,11 @@
 @use "../../tokens" as *;
 @use "../../functions" as *;
+@use "./internal/nav-shared" as *;
 @import "../../mixins";
 @import "../../config";
 
 .ilo--main-nav {
-  position: relative;
-  overflow: hidden;
-
-  @include breakpoint("lg", true) {
-    height: px-to-rem(70px);
-  }
+  @include nav-base;
 
   &-bg {
     &--dark {
@@ -26,183 +22,66 @@
   }
 
   &__container {
-    max-width: px-to-rem(1296px);
-    margin-left: auto;
-    margin-right: auto;
-    padding-inline: spacing(4);
+    @include nav-container;
   }
 
   &__widgets {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    height: px-to-rem(32px);
-    position: relative;
-    padding-inline-end: 0;
-
-    @include breakpoint("lg", true) {
-      display: none;
+    @include nav-widgets-bar-content;
+    &::after {
+      background-color: var(--ilo-color-blue-dark);
     }
 
     &-bar-corner {
-      display: block;
-      background-color: var(--ilo-color-blue-dark);
-      width: px-to-rem(32px);
-      height: px-to-rem(32px);
-      clip-path: polygon(0 0, 100% 0, 99% 100%);
-      margin-right: -1px;
-      transform: skewY(0.001deg);
-
-      [dir="rtl"] & {
-        @include cornercut(spacing(10), 100%, "left");
-        margin-right: 0;
-        margin-left: -1px;
-        clip-path: polygon(0 0, 100% 0, 1% 100%);
-      }
+      @include nav-widgets-corner(var(--ilo-color-blue-dark));
     }
 
     &-bar {
-      background-color: var(--ilo-color-blue-dark);
-      height: 100%;
-      display: flex;
-      align-items: center;
-      gap: spacing(4);
-      padding-inline-end: spacing(4);
-      height: px-to-rem(32px);
+      @include nav-widgets-bar(var(--ilo-color-blue-dark));
 
       &__link {
-        @include typography("highlight-small-bold");
-        height: inherit;
-        display: flex;
-        align-items: center;
-        padding-inline: spacing(2);
-        text-decoration: none;
-        color: var(--ilo-color-white);
-
-        &:hover,
-        &:focus {
-          background-color: var(--ilo-color-blue-dark);
-        }
-      }
-    }
-
-    &::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 100%;
-      width: 100vw;
-      height: 100%;
-      background-color: var(--ilo-color-blue-dark);
-      z-index: 1;
-
-      [dir="rtl"] & {
-        left: auto;
-        right: 100%;
+        @include nav-widgets-link(var(--ilo-color-blue-dark));
       }
     }
   }
 
   &__branding {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-bottom: spacing(6);
-
-    @include breakpoint("lg", true) {
-      display: none;
-    }
+    @include nav-branding;
 
     &-main {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
-      &__logo img {
-        height: 100%;
-        height: px-to-rem(72px);
-        width: auto;
-      }
-
-      &__name {
-        @include typography("heading-2");
-        padding-inline-start: spacing(4);
-      }
+      @include nav-branding-main;
     }
 
     &-tag {
-      display: flex;
-      flex-direction: column;
-      text-align: right;
+      @include nav-branding-tag;
 
       &__main {
-        @include typography("heading-4");
         color: white;
       }
 
       &__sub {
-        @include typography("body-xsmall");
         color: var(--ilo-color-blue-light);
       }
     }
   }
 
   &__nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: px-to-rem(64px);
-
-    @include breakpoint("lg", true) {
-      height: px-to-rem(70px);
-    }
+    @include nav-core;
 
     &-menu {
-      height: 100%;
-      @include breakpoint("lg", true) {
-        display: none;
-      }
+      @include nav-menu;
     }
 
     &-mobile {
-      justify-content: center;
-      align-items: center;
-      display: none;
-
-      @include breakpoint("lg", true) {
-        display: flex;
-      }
-
-      &__logo {
-        padding-inline-end: spacing(4);
-        height: px-to-rem(38px);
-
-        img {
-          height: 100%;
-          width: auto;
-        }
-      }
+      @include nav-mobile;
     }
 
     &-search {
       --ilo-subsite_nav_complex-search-color: var(--ilo-color-white);
-      height: 100%;
-      display: flex;
-      align-items: center;
-      padding-inline: spacing(2);
+      @include nav-search;
       border: none;
-
-      @include breakpoint("lg", true) {
-        display: none;
-      }
-
-      display: flex;
 
       &__icon {
         @include icon("search", var(--ilo-subsite_nav_complex-search-color));
-        width: px-to-rem(32px);
-        height: px-to-rem(32px);
-        cursor: pointer;
       }
 
       &:hover,
@@ -213,27 +92,31 @@
     }
 
     &-burger {
-      display: none;
-
-      @include breakpoint("lg", true) {
-        display: flex;
-      }
+      @include nav-burger;
 
       --ilo-subsite_nav_complex-burger-color: var(--ilo-color-white);
-      margin-block: px-to-rem(20px);
-      align-items: center;
-      border: none;
-      cursor: pointer;
 
       &__icon {
-        width: px-to-rem(32px);
-        height: px-to-rem(32px);
         @include icon("burger", var(--ilo-subsite_nav_complex-burger-color));
       }
 
       &:hover {
         --ilo-subsite-nav-burger-icon: var(--ilo-color-blue);
         background-color: var(--ilo-color-white);
+      }
+    }
+
+    &-search-dropdown {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      form {
+        width: px-to-rem(620px);
+      }
+
+      .ilo--form-control {
+        padding-top: spacing(20);
+        padding-bottom: spacing(22);
       }
     }
   }
