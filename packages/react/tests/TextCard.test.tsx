@@ -1,37 +1,28 @@
 import { expect, describe, it } from "vitest";
 import { render, screen } from "@testing-library/react";
-import { FeatureCard } from "../src/components/Cards/FeatureCard";
+import { TextCard } from "../src/components/Cards/TextCard";
 
 const defaultProps = {
-  title: "Will this card render correctly?",
+  title: "Why we need tests",
   eyebrow: "Test",
   date: {
     human: "30 October 2025",
     unix: "1759227495",
   },
   theme: "light" as const,
-  link: "https://www.example.com/",
-  image: "/test.jpg",
-  size: "narrow",
-  isVideo: false,
-  linklist: {
-    linkgroup: [
-      {
-        links: [
-          {
-            label: "Read More",
-            url: "https://www.example.com/more",
-          },
-        ],
-      },
-    ],
+  link: "https://www.example.com",
+  profile: {
+    avatar: "/test-man.jpg",
+    description: "Test man is a sample character for testing this card.",
+    name: "Test man",
+    role: "Tester",
   },
   loading: false,
 };
 
-describe("FeatureCard", () => {
+describe("TextCard", () => {
   it("should render correctly", () => {
-    render(<FeatureCard {...defaultProps} />);
+    render(<TextCard {...defaultProps} />);
 
     // The first element returned is the stub text for the wrapper link
     const title = screen.getAllByText(defaultProps.title);
@@ -47,21 +38,21 @@ describe("FeatureCard", () => {
     const link = screen.getByRole("link", { name: defaultProps.title });
     expect(link).toHaveAttribute("href", defaultProps.link);
 
-    const image = screen.getByRole("img", { name: defaultProps.title });
-    expect(image).toBeVisible();
-    expect(image).toHaveAttribute("src", defaultProps.image);
+    const profileName = screen.getByText(defaultProps.profile.name);
+    expect(profileName).toBeVisible();
 
-    const linklistItem = screen.getByRole("link", { name: "Read More" });
-    expect(linklistItem).toBeVisible();
-    expect(linklistItem).toHaveAttribute(
-      "href",
-      defaultProps.linklist.linkgroup[0].links[0].url
+    const profileRole = screen.getByText(defaultProps.profile.role);
+    expect(profileRole).toBeVisible();
+
+    const profileDescription = screen.getByText(
+      defaultProps.profile.description
     );
+    expect(profileDescription).toBeVisible();
   });
 
   it("should display loading skeleton correctly", () => {
     const loadingProps = { ...defaultProps, loading: true };
-    render(<FeatureCard {...loadingProps} />);
+    render(<TextCard {...loadingProps} />);
 
     // The skeleton elements should be present
     const skeletonElements = document.querySelectorAll(
@@ -79,7 +70,7 @@ describe("FeatureCard", () => {
     const date = screen.queryByText(defaultProps.date.human);
     expect(date).not.toBeInTheDocument();
 
-    const linklistItem = screen.queryByRole("link", { name: "Read More" });
-    expect(linklistItem).not.toBeInTheDocument();
+    const profileName = screen.queryByText(defaultProps.profile.name);
+    expect(profileName).not.toBeInTheDocument();
   });
 });
