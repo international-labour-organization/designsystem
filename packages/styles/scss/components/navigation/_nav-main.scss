@@ -114,6 +114,11 @@
         width: px-to-rem(620px);
       }
 
+      .ilo--form-control,
+      .ilo--fieldset {
+        width: 100%;
+      }
+
       .ilo--form-control {
         padding-top: spacing(20);
         padding-bottom: spacing(22);
