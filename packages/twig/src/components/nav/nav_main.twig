@@ -1,0 +1,139 @@
+{# navcomplex.twig #}
+
+{% set prefix = prefix|default('ilo') %}
+{% set base_class = prefix ~ '--main-nav' %}
+{% set mobile_drawer_class = prefix ~ '--nav-mobile-drawer' %}
+
+<header class="{{ base_class }}" data-loadcomponent="Nav" data-prefix="{{prefix}}">
+	<div class="{{ base_class }}-bg--dark">
+		<div class="{{ base_class }}__widgets {{ base_class }}__container">
+			<span class="{{ base_class }}__widgets-bar-corner"></span>
+			<span class="{{ base_class }}__widgets-bar">
+				{% if widgets.link %}
+					<a href="{{ widgets.link.href }}" class="{{ base_class }}__widgets-bar__link">
+						{{ widgets.link.label }}
+					</a>
+				{% endif %}
+				{% if widgets.language %}
+					{% include "@components/languagetoggle/languagetoggle.twig" with {
+            className: base_class ~ '__widgets-bar__language',
+            hideIcon: false,
+            language: widgets.language.language,
+            links: widgets.language.links,
+          } %}
+				{% endif %}
+			</span>
+		</div>
+	</div>
+
+	<div class="{{ base_class }}-bg--dark">
+		<div class="{{ base_class }}__branding {{ base_class }}__container">
+			<div class="{{ base_class }}__branding-main">
+				<div class="{{ base_class }}__branding-main__logo" role="button" tabindex="0" aria-label="Branding">
+					{% include "@components/logo/logo.twig" with {
+            src: branding.logo.main,
+            alt: branding.logo.alt,
+            link: branding.logo.link,
+            className: base_class ~ '__branding-main__logo',
+            imgClassName: base_class ~ '__branding-main__logo-img',
+            prefix: prefix
+          } %}
+				</div>
+			</div>
+			<div class="{{ base_class }}__branding-tag">
+				<h4 class="{{ base_class }}__branding-tag__main">{{ branding.tag.main }}</h4>
+				{% if branding.tag.sub %}
+					<span class="{{ base_class }}__branding-tag__sub">{{ branding.tag.sub }}</span>
+				{% endif %}
+			</div>
+		</div>
+	</div>
+
+	<div class="{{ base_class }}-bg--darker">
+		<nav class="{{ base_class }}__nav {{ base_class }}__container">
+			<div class="{{ base_class }}__nav-mobile">
+				<div class="{{ base_class }}__nav-mobile__logo" role="button" tabindex="0" aria-label="Branding">
+					{% include "@components/logo/logo.twig" with {
+            src: branding.logo.mobile,
+            alt: branding.logo.alt,
+            link: branding.logo.link,
+            className: base_class ~ '__nav-mobile__logo',
+            imgClassName: base_class ~ '__nav-mobile__logo-img',
+            prefix: prefix
+          } %}
+				</div>
+			</div>
+
+			{% if facadeItems %}
+				{% include "@components/nav/desktop/navmenu.twig" with {
+          className: base_class ~ '__nav-menu',
+          menu: facadeItems,
+          more: moreItems|length ? {
+            label: labels.more,
+          } : null,
+          prefix: prefix,
+					light: true
+        } only %}
+			{% endif %}
+
+			{% if moreItems|length %}
+				{% include "@components/nav/desktop/navdropdown.twig" with {
+          menu: moreItems,
+          prefix: prefix,
+					className: prefix ~ '__nav-extra-menu'
+        } only %}
+			{% endif %}
+
+			<button class="{{ base_class }}__nav-search" aria-label="Open search"
+			  aria-extanded="false"
+				aria-haspopup="menu"
+				aria-controls="{{ prefix }}__extra-"
+			>
+				<span class="{{ base_class }}__nav-search__icon"></span>
+			</button>
+
+			{% include "@components/nav/desktop/navsearch.twig" with {
+          prefix: prefix,
+          search: widgets.search,
+						className: base_class ~ '__nav-extra-search ' ~ prefix ~ '--main-nav__nav-search-dropdown'
+        } only %}
+
+			<button class="{{ base_class }}__nav-burger" aria-label="Toggle navigation" aria-expanded="false" aria-haspopup="menu" aria-controls="{{ prefix }}--nav-mobile-drawer__main">
+				<span class="{{ base_class }}__nav-burger__icon"></span>
+			</button>
+
+			{% include "@components/nav/mobile/mobiledrawer_main.twig" with {
+        menu: facadeItems,
+        prefix: prefix,
+        branding: branding,
+        widgets: widgets,
+        labels: labels,
+        showMoreButton: moreItems|length,
+        inputSearch: true,
+        id: "main",
+      } only %}
+
+			{% if widgets.language.links|length %}
+				{% include "@components/nav/mobile/mobiledrawer_nested.twig" with {
+        menu: widgets.language.links,
+        prefix: prefix,
+        title: labels.language,
+        menu_home: labels.home,
+          isActiveLabel: widgets.language.language,
+          id: "languages",
+        } only %}
+			{% endif %}
+
+			{% if moreItems|length %}
+				{% include "@components/nav/mobile/mobiledrawer_nested.twig" with {
+          menu: moreItems,
+          prefix: prefix,
+          title: labels.more,
+          menu_home: labels.home,
+          id: "more",
+        } only %}
+			{% endif %}
+
+		</nav>
+	</div>
+</header>
