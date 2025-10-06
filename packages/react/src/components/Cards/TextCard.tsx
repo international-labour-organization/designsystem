@@ -112,4 +112,49 @@ const TextCard = forwardRef<HTMLDivElement, TextCardProps>(
   }
 );
 
-export { TextCard };
+export type TextCardSkeletonProps = {
+  /**
+   * Will render the card to appear on light or dark backgrounds
+   */
+  theme?: ThemeTypes;
+
+  /**
+   * How big should the card be
+   */
+  size?: Omit<CardSize, "standard">;
+
+  /**
+   * Specify an optional className to be added to your TextCardSkeleton.
+   */
+  className?: string;
+};
+
+const TextCardSkeleton: React.FC<TextCardSkeletonProps> = ({
+  className,
+  size,
+  theme,
+}) => {
+  const { prefix } = useGlobalSettings();
+  const baseClass = `${prefix}--card`;
+  const wrapperClass = classNames(`${baseClass}--wrapper`, className);
+  const cardClasses = classNames(baseClass, `${baseClass}__type__text`, {
+    [`${baseClass}__size__${String(size)}`]: size,
+    [`${baseClass}__theme__${theme}`]: theme,
+  });
+  return (
+    <div className={wrapperClass}>
+      <div className={cardClasses}>
+        <div className={`${baseClass}--wrap`}>
+          <div className={`${baseClass}--content`}>
+            <div className={`${baseClass}--skeleton--eyebrow`} />
+            <div className={`${baseClass}--skeleton--title`} />
+            <div className={`${baseClass}--skeleton--date`} />
+            <div className={`${baseClass}--skeleton--profile`} />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export { TextCard, TextCardSkeleton };
