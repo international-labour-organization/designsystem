@@ -176,4 +176,58 @@ const DetailCard = forwardRef<HTMLDivElement, DetailCardProps>(
   }
 );
 
-export { DetailCard };
+export type DetailCardSkeletonProps = {
+  /**
+   * Specify an optional className to be added to your DetailCardSkeleton.
+   */
+  className?: string;
+
+  /**
+   * Will render the card to appear on light or dark backgrounds
+   */
+  theme?: ThemeTypes;
+
+  /**
+   * How big should the card be
+   */
+  size?: Omit<CardSize, "standard">;
+};
+
+const DetailCardSkeleton: React.FC<DetailCardSkeletonProps> = ({
+  className,
+  theme = "light",
+  size = "narrow",
+}) => {
+  const { prefix } = useGlobalSettings();
+  const baseClass = `${prefix}--card`;
+  const cardClasses = classNames(
+    baseClass,
+    `${baseClass}__type__detail`,
+    className,
+    {
+      [`${baseClass}__size__${String(size)}`]: size,
+      [`${baseClass}__theme__${theme}`]: theme,
+    }
+  );
+  return (
+    <div className={cardClasses}>
+      <div className={`${baseClass}--wrap`}>
+        <div className={`${baseClass}--image--wrapper`}>
+          <div className={`${baseClass}--skeleton--image`} />
+        </div>
+        <div className={`${baseClass}--content`}>
+          <div className={`${baseClass}--skeleton--eyebrow`} />
+          <div className={`${baseClass}--skeleton--title-1`} />
+          <div className={`${baseClass}--skeleton--title-2`} />
+          <div className={`${baseClass}--skeleton--intro-1`} />
+          <div className={`${baseClass}--skeleton--intro-2`} />
+          <div className={`${baseClass}--skeleton--intro-3`} />
+          <div className={`${baseClass}--skeleton--intro-4`} />
+          <div className={`${baseClass}--skeleton--intro-5`} />
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export { DetailCard, DetailCardSkeleton };
