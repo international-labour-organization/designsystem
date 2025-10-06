@@ -35,6 +35,34 @@
       padding: spacing(10) spacing(6);
       width: 100%;
 
+      #{$self}--skeleton--eyebrow {
+        @include skeleton-element(12px, 60px);
+      }
+
+      #{$self}--skeleton--title-1 {
+        @include skeleton-element(24px, 80%);
+        margin-top: spacing(4);
+      }
+
+      #{$self}--skeleton--title-2 {
+        @include skeleton-element(24px, 90%);
+        margin-top: spacing(2);
+      }
+
+      #{$self}--skeleton--intro-1 {
+        @include skeleton-element(14px, 78%);
+        margin-top: spacing(4);
+      }
+      #{$self}--skeleton--intro-2 {
+        @include skeleton-element(14px, 70%);
+        margin-top: spacing(2);
+      }
+
+      #{$self}--skeleton--intro-3 {
+        @include skeleton-element(14px, 78%);
+        margin-top: spacing(2);
+      }
+
       #{$self}--title {
         @include typography("heading-3");
         margin-bottom: spacing(2);
