@@ -48,13 +48,13 @@ export default class Nav extends StatefulComponent {
     });
 
     // Set up a ResizeObserver to track nav element width changes
-    this.resizeObserver = new ResizeObserver(() => {
+    this.menuResizeObserver = new ResizeObserver(() => {
       if (this.state.dropDownIsOpen) {
         this.handleResize(this.dropdown);
       }
     });
 
-    this.resizeObserver = new ResizeObserver(() => {
+    this.searchResizeObserver = new ResizeObserver(() => {
       if (this.state.searchIsOpen) {
         this.handleResize(this.inputSearch);
       }
@@ -216,12 +216,14 @@ export default class Nav extends StatefulComponent {
         button: this.dropdownButton,
         stateKey: "dropDownIsOpen",
         otherStateKey: "searchIsOpen",
+        resizeObserver: this.menuResizeObserver,
       },
       search: {
         element: this.inputSearch,
         button: this.inputSearchButton,
         stateKey: "searchIsOpen",
         otherStateKey: "dropDownIsOpen",
+        resizeObserver: this.searchResizeObserver,
       },
     };
 
@@ -246,7 +248,7 @@ export default class Nav extends StatefulComponent {
     this.handleResize(config.element);
 
     // Start observing the nav element for width changes
-    this.resizeObserver.observe(this.element);
+    config.resizeObserver.observe(this.element);
 
     // Add an event listener to the window to close the dropdown when the user clicks outside of it
     window.addEventListener("click", this.handleOutsideClick);
@@ -279,7 +281,7 @@ export default class Nav extends StatefulComponent {
 
     // Only disconnect observer and remove listener if no dropdown is open
     if (!this.state.dropDownIsOpen && !this.state.searchIsOpen) {
-      this.resizeObserver.disconnect();
+      config.resizeObserver.disconnect();
       window.removeEventListener("click", this.handleOutsideClick);
     }
   };
