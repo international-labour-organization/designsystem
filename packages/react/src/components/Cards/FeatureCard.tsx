@@ -142,4 +142,51 @@ const FeatureCard = forwardRef<HTMLDivElement, FeatureCardProps>(
   }
 );
 
-export { FeatureCard };
+export type FeatureCardSkeletonProps = {
+  /**
+   * Specify an optional className to be added to your FeatureCardSkeleton.
+   */
+  className?: string;
+
+  /**
+   * Will render the card to appear on light or dark backgrounds
+   */
+  theme?: ThemeTypes;
+
+  /**
+   * How big should the card be
+   */
+  size?: Omit<CardSize, "standard">;
+};
+
+const FeatureCardSkeleton: React.FC<FeatureCardSkeletonProps> = ({
+  className,
+  size,
+  theme,
+}) => {
+  const { prefix } = useGlobalSettings();
+  const baseClass = `${prefix}--card`;
+  const cardClasses = classNames(
+    baseClass,
+    className,
+    `${baseClass}__type__feature`,
+    {
+      [`${baseClass}__size__${String(size)}`]: size,
+      [`${baseClass}__theme__${theme}`]: theme,
+    }
+  );
+  return (
+    <div className={cardClasses}>
+      <div className={`${baseClass}--wrap`}>
+        <div className={`${baseClass}--skeleton--image`} />
+        <div className={`${baseClass}--content`}>
+          <div className={`${baseClass}--skeleton--eyebrow`} />
+          <div className={`${baseClass}--skeleton--title`} />
+          <div className={`${baseClass}--skeleton--date`} />
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export { FeatureCard, FeatureCardSkeleton };
