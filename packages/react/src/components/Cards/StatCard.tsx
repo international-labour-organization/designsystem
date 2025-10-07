@@ -96,4 +96,52 @@ const StatCard = forwardRef<HTMLDivElement, StatCardProps>(
     );
   }
 );
-export { StatCard };
+
+export type StatCardSkeletonProps = {
+  /**
+   * Specify an optional className to be added to your StatCardSkeleton.
+   */
+  className?: string;
+
+  /**
+   * Will render the card to appear on light or dark backgrounds
+   */
+  theme?: ThemeTypes;
+
+  /**
+   * How big should the card be
+   */
+  size?: Omit<CardSize, "narrow" | "wide">;
+};
+
+const StatCardSkeleton: React.FC<StatCardSkeletonProps> = ({
+  className,
+  theme = "light",
+  size = "standard",
+}) => {
+  const { prefix } = useGlobalSettings();
+  const baseClass = `${prefix}--card`;
+  const wrapperClass = classNames(`${baseClass}--wrapper`, className);
+  const cardClasses = classNames(baseClass, `${baseClass}__type__stat`, {
+    [`${baseClass}__size__${String(size)}`]: size,
+    [`${baseClass}__theme__${theme}`]: theme,
+    [`${baseClass}__loading`]: true,
+  });
+
+  return (
+    <div className={wrapperClass}>
+      <div className={cardClasses}>
+        <div className={`${baseClass}--wrap`}>
+          <div className={`${baseClass}--content`}>
+            <div className={`${baseClass}--skeleton--title`} />
+            <div className={`${baseClass}--skeleton--intro-1`} />
+            <div className={`${baseClass}--skeleton--intro-2`} />
+            <div className={`${baseClass}--skeleton--source`} />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export { StatCard, StatCardSkeleton };
