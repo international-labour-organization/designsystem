@@ -86,4 +86,66 @@ const FactListCard = forwardRef<HTMLDivElement, FactListCardProps>(
   }
 );
 
-export { FactListCard };
+export type FactListCardSkeletonProps = {
+  /**
+   * Specify an optional className to be added to your FactListCardSkeleton.
+   */
+  className?: string;
+
+  /**
+   * Will render the card to appear on light or dark backgrounds
+   */
+  theme?: ThemeTypes;
+
+  /**
+   * How big should the card be
+   */
+  size?: Omit<CardSize, "standard">;
+};
+
+const FactListCardSkeleton: React.FC<FactListCardSkeletonProps> = ({
+  className,
+  theme = "light",
+  size = "narrow",
+}) => {
+  const { prefix } = useGlobalSettings();
+  const baseClass = `${prefix}--card`;
+  const cardClasses = classnames(
+    baseClass,
+    `${baseClass}__type__factlist`,
+    className,
+    {
+      [`${baseClass}__size__${size as string}`]: size,
+      [`${baseClass}__theme__${theme}`]: theme,
+    }
+  );
+
+  return (
+    <div className={cardClasses}>
+      <div className={`${baseClass}--wrap`}>
+        <div className={`${baseClass}--content`}>
+          <div className={`${baseClass}--skeleton--title`} />
+          <List alignment="default" ordered="unordered" theme={theme}>
+            <List.Item>
+              <div className={`${baseClass}--skeleton--list-item`} />
+            </List.Item>
+            <List.Item>
+              <div className={`${baseClass}--skeleton--list-item`} />
+            </List.Item>
+            <List.Item>
+              <div className={`${baseClass}--skeleton--list-item`} />
+            </List.Item>
+            <List.Item>
+              <div className={`${baseClass}--skeleton--list-item`} />
+            </List.Item>
+            <List.Item>
+              <div className={`${baseClass}--skeleton--list-item`} />
+            </List.Item>
+          </List>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export { FactListCard, FactListCardSkeleton };
