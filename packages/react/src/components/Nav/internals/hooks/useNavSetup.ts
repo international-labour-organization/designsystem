@@ -6,9 +6,9 @@ import {
   useRef,
   useState,
 } from "react";
-import { useBreakpoint } from "../../hooks";
+import { useBreakpoint } from "../../../../hooks";
 
-import { NavigationLinkProps } from "./Navigation.props";
+import { NavigationLinkProps } from "../../Navigation.props";
 
 interface UseNavSetupArgs {
   menu: NavigationLinkProps[];

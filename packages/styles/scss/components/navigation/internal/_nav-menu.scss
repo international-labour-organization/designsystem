@@ -1,13 +1,14 @@
-@use "../../tokens" as *;
-@use "../../functions" as *;
-@import "../../mixins";
-@import "../../config";
-@import "../../animations";
+@use "../../../tokens" as *;
+@use "../../../functions" as *;
+@import "../../../mixins";
+@import "../../../config";
+@import "../../../animations";
 
 .ilo--nav-menu {
   display: flex;
   align-items: center;
   gap: spacing(12);
+  $self: &;
 
   @include breakpoint("xl", true) {
     gap: spacing(6);
@@ -46,6 +47,18 @@
     }
   }
 
+  &--light {
+    #{$self}__link {
+      &--active,
+      &:hover,
+      &:focus,
+      &:active {
+        color: var(--ilo-color-blue);
+        background-color: var(--ilo-color-white);
+      }
+    }
+  }
+
   &__more {
     @include globaltransition("background-color, border-color");
 
@@ -80,6 +93,20 @@
       outline: none;
       border-color: var(--ilo-color-blue-dark);
       background-color: var(--ilo-color-blue-dark);
+    }
+  }
+
+  &--light {
+    #{$self}__more {
+      &--open,
+      &:hover,
+      &:focus,
+      &:active {
+        --ilo-nav_menu-icon-color: var(--ilo-color-blue);
+        color: var(--ilo-color-blue);
+        border-color: var(--ilo-color-white);
+        background-color: var(--ilo-color-white);
+      }
     }
   }
 }

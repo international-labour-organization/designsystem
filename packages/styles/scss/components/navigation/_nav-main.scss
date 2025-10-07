@@ -4,16 +4,20 @@
 @import "../../mixins";
 @import "../../config";
 
-.ilo--subsite-nav-complex {
+.ilo--main-nav {
   @include nav-base;
 
   &-bg {
-    &--light {
-      background-color: var(--ilo-color-blue-lighter);
-    }
-
     &--dark {
       background-color: var(--ilo-color-blue);
+    }
+
+    &--darker {
+      background-color: var(--ilo-color-blue-dark);
+
+      @include breakpoint("lg", true) {
+        background-color: var(--ilo-color-blue);
+      }
     }
   }
 
@@ -23,21 +27,20 @@
 
   &__widgets {
     @include nav-widgets-bar-content;
+    &::after {
+      background-color: var(--ilo-color-blue-dark);
+    }
 
     &-bar-corner {
-      @include nav-widgets-corner(var(--ilo-color-blue));
+      @include nav-widgets-corner(var(--ilo-color-blue-dark));
     }
 
     &-bar {
-      @include nav-widgets-bar(var(--ilo-color-blue));
+      @include nav-widgets-bar(var(--ilo-color-blue-dark));
 
       &__link {
         @include nav-widgets-link(var(--ilo-color-blue-dark));
       }
-    }
-
-    &::after {
-      background-color: var(--ilo-color-blue);
     }
   }
 
@@ -50,6 +53,14 @@
 
     &-tag {
       @include nav-branding-tag;
+
+      &__main {
+        color: white;
+      }
+
+      &__sub {
+        color: var(--ilo-color-blue-light);
+      }
     }
   }
 
@@ -65,9 +76,9 @@
     }
 
     &-search {
-      @include nav-search;
       --ilo-subsite_nav_complex-search-color: var(--ilo-color-white);
-      text-decoration: none;
+      @include nav-search;
+      border: none;
 
       &__icon {
         @include icon("search", var(--ilo-subsite_nav_complex-search-color));
@@ -75,13 +86,14 @@
 
       &:hover,
       &:focus {
-        --ilo-subsite_nav_complex-search-color: var(--ilo-color-white);
-        background-color: var(--ilo-color-blue-dark);
+        --ilo-subsite_nav_complex-search-color: var(--ilo-color-blue);
+        background-color: var(--ilo-color-white);
       }
     }
 
     &-burger {
       @include nav-burger;
+
       --ilo-subsite_nav_complex-burger-color: var(--ilo-color-white);
 
       &__icon {
@@ -89,8 +101,22 @@
       }
 
       &:hover {
-        --ilo-subsite_nav_complex-burger-color: var(--ilo-color-blue);
+        --ilo-subsite-nav-burger-icon: var(--ilo-color-blue);
         background-color: var(--ilo-color-white);
+      }
+    }
+
+    &-search-dropdown {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      form {
+        width: px-to-rem(620px);
+      }
+
+      .ilo--form-control {
+        padding-top: spacing(20);
+        padding-bottom: spacing(22);
       }
     }
   }

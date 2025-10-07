@@ -1,5 +1,5 @@
 import { HTMLAttributes } from "react";
-import { LanguageToggleProps } from "../../LanguageToggle";
+import { LanguageToggleProps } from "../../../LanguageToggle";
 import { MobileMenuList } from "./MobileMenuList";
 
 type MobileLanguageListProps = {

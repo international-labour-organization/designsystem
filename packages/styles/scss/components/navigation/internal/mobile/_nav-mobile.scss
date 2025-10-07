@@ -1,7 +1,7 @@
-@use "../../../tokens" as *;
-@use "../../../functions" as *;
-@import "../../../mixins";
-@import "../../../config";
+@use "../../../../tokens" as *;
+@use "../../../../functions" as *;
+@import "../../../../mixins";
+@import "../../../../config";
 
 .ilo--nav-mobile {
   &__branding {
@@ -41,6 +41,18 @@
 
         @include icon("search", var(--ilo-color-blue-dark));
       }
+    }
+
+    &-search-input {
+      // Form control overrides can be deleted when form control hides label conditionally
+      .ilo--form-control {
+        display: inline;
+      }
+      .ilo--form-control--label {
+        display: none;
+      }
+
+      padding-block: spacing(5);
     }
 
     &-link {

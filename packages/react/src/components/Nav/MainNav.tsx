@@ -1,27 +1,18 @@
-import { forwardRef, useImperativeHandle } from "react";
+import { forwardRef, useImperativeHandle, useRef, useState } from "react";
 import classNames from "classnames";
 
-import { useGlobalSettings } from "../../../hooks";
-import { NavigationDropdown } from "../internals/NavigationDropdown";
-import { NavigationMenuGrid } from "../internals/NavigationMenuGrid";
-import { LanguageToggle } from "../../LanguageToggle";
-import { MobileNavigation } from "../internals/mobile/MobileNavigation";
-import { ComplexNavProps } from "../Navigation.props";
-import { NavigationLink } from "../internals/NavigationLink";
-import { useNavSetup } from "../internals/hooks/useNavSetup";
-import { NavigationMenu } from "../internals/NavigationMenu";
+import { useGlobalSettings, useOutsideClick } from "../../hooks";
+import { useNavSetup } from "./internals/hooks/useNavSetup";
+import { MainNavProps } from "./Navigation.props";
+import { LanguageToggle } from "../LanguageToggle";
+import { NavigationDropdown } from "./internals/NavigationDropdown";
+import { NavigationMenuGrid } from "./internals/NavigationMenuGrid";
+import { MobileNavigation } from "./internals/mobile/MobileNavigation";
+import { NavigationMenu } from "./internals/NavigationMenu";
+import { SearchField } from "../SearchField";
 
-const ComplexNav = forwardRef<HTMLElement, ComplexNavProps>(
-  (
-    {
-      props: {
-        branding,
-        menu: { items, labels },
-        widgets,
-      },
-    },
-    ref
-  ) => {
+const MainNav = forwardRef<HTMLElement, MainNavProps>(
+  ({ branding, menu: { items, labels }, widgets }, ref) => {
     const { prefix } = useGlobalSettings();
     const {
       menu: { facade: facadeItems, more: moreItems },
@@ -30,14 +21,23 @@ const ComplexNav = forwardRef<HTMLElement, ComplexNavProps>(
       isDesktop: isAboveXL,
       ref: headerRef,
       isClient,
-    } = useNavSetup({ menu: items, split: { desktop: 6, mobile: 5 } });
+    } = useNavSetup({ menu: items, split: { desktop: 5, mobile: 5 } });
+    const [isSearchOpen, setIsSearchOpen] = useState(false);
+    const searchButtonRef = useRef<HTMLButtonElement>(null);
+    const searchDropdownRef = useRef<HTMLDivElement>(null);
 
+    useOutsideClick(searchButtonRef, () => {
+      if (isSearchOpen) {
+        setIsSearchOpen(false);
+      }
+    }, [searchDropdownRef]);
     useImperativeHandle(ref, () => headerRef.current as HTMLElement);
 
-    const baseClass = `${prefix}--subsite-nav-complex`;
+    const baseClass = `${prefix}--main-nav`;
+
     return (
       <header ref={headerRef} className={baseClass}>
-        <div className={classNames(`${baseClass}-bg--light`)}>
+        <div className={classNames(`${baseClass}-bg--dark`)}>
           <div
             className={classNames(
               `${baseClass}__widgets`,
@@ -46,25 +46,18 @@ const ComplexNav = forwardRef<HTMLElement, ComplexNavProps>(
           >
             <span className={`${baseClass}__widgets-bar-corner`}></span>
             <span className={`${baseClass}__widgets-bar`}>
-              {widgets?.link && (
-                <NavigationLink
-                  href={widgets.link.href}
-                  label={widgets.link.label}
-                  className={`${baseClass}__widgets-bar__link`}
-                />
-              )}
               {widgets?.language && isClient && (
                 <LanguageToggle
                   className={`${baseClass}__widgets-bar__language`}
-                  {...widgets.language}
                   hideIcon={!isAboveXL}
+                  {...widgets.language}
                 />
               )}
             </span>
           </div>
         </div>
 
-        <div className={classNames(`${baseClass}-bg--light`)}>
+        <div className={classNames(`${baseClass}-bg--dark`)}>
           <div
             className={classNames(
               `${baseClass}__branding`,
@@ -94,7 +87,8 @@ const ComplexNav = forwardRef<HTMLElement, ComplexNavProps>(
             </div>
           </div>
         </div>
-        <div className={classNames(`${baseClass}-bg--dark`)}>
+
+        <div className={classNames(`${baseClass}-bg--darker`)}>
           <nav
             className={classNames(
               `${baseClass}__nav`,
@@ -114,13 +108,17 @@ const ComplexNav = forwardRef<HTMLElement, ComplexNavProps>(
             </div>
             {facadeItems && (
               <NavigationMenu
+                light
                 className={`${baseClass}__nav-menu`}
                 menu={facadeItems}
                 more={
                   moreItems.length
                     ? {
                         label: labels.more,
-                        onClick: () => setIsMoreOpen(!isMoreOpen),
+                        onClick: () => {
+                          if (isSearchOpen) setIsSearchOpen(false);
+                          setIsMoreOpen(!isMoreOpen);
+                        },
                         isOpen: isMoreOpen,
                       }
                     : undefined
@@ -128,13 +126,17 @@ const ComplexNav = forwardRef<HTMLElement, ComplexNavProps>(
               />
             )}
             {widgets?.search && (
-              <a
+              <button
                 className={`${baseClass}__nav-search`}
-                href={widgets.search.url}
-                aria-label={widgets.search.label}
+                ref={searchButtonRef}
+                onClick={() => {
+                  if (isMoreOpen) setIsMoreOpen(false);
+
+                  setIsSearchOpen(!isSearchOpen);
+                }}
               >
                 <span className={`${baseClass}__nav-search__icon`} />
-              </a>
+              </button>
             )}
             <button
               className={`${baseClass}__nav-burger`}
@@ -151,6 +153,18 @@ const ComplexNav = forwardRef<HTMLElement, ComplexNavProps>(
             <NavigationMenuGrid menu={moreItems} />
           </NavigationDropdown>
         )}
+        <NavigationDropdown
+          ref={searchDropdownRef}
+          isOpen={isSearchOpen}
+          navRef={headerRef}
+          className={`${baseClass}__nav-search-dropdown`}
+        >
+          {widgets.search.field ? (
+            <SearchField {...widgets.search.field} />
+          ) : (
+            widgets.search.component
+          )}
+        </NavigationDropdown>
         {isClient && (
           <MobileNavigation
             isOpen={isCompactOpen}
@@ -172,4 +186,4 @@ const ComplexNav = forwardRef<HTMLElement, ComplexNavProps>(
   }
 );
 
-export { ComplexNav };
+export { MainNav };
