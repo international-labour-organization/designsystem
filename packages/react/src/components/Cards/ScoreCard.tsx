@@ -169,4 +169,47 @@ const ScoreCard = forwardRef<HTMLDivElement, ScoreCardProps>(
   }
 );
 
-export { ScoreCard };
+export type ScoreCardSkeletonProps = {
+  /**
+   * The theme of the card.
+   */
+  theme?: "light" | "dark";
+
+  /**
+   * The size of the card.
+   */
+  size?: "narrow" | "wide" | "fluid";
+
+  /**
+   * Specify an optional className to be added to your ScoreCardSkeleton.
+   */
+  className?: string;
+};
+
+const ScoreCardSkeleton: React.FC<ScoreCardSkeletonProps> = ({
+  className,
+  theme = "light",
+  size = "narrow",
+}) => {
+  const { prefix } = useGlobalSettings();
+  const baseClass = `${prefix}--card`;
+  const cardClasses = classNames(baseClass, `${baseClass}__type__score`, {
+    [`${baseClass}__theme__${theme}`]: theme,
+    [`${baseClass}__size__${size}`]: size,
+  });
+
+  return (
+    <div className={classNames(cardClasses, className)}>
+      <div className={`${baseClass}--wrap`}>
+        <div className={`${baseClass}--skeleton--image`} />
+        <div className={`${baseClass}--content`}>
+          <div className={`${baseClass}--skeleton--eyebrow`} />
+          <div className={`${baseClass}--skeleton--title`} />
+          <div className={`${baseClass}--skeleton--date`} />
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export { ScoreCard, ScoreCardSkeleton };
