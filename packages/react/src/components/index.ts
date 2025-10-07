@@ -39,6 +39,7 @@ export { CardGroup } from "./Cards/CardGroup";
 export { Breadcrumb } from "./Breadcrumb";
 export { Status } from "./Status";
 export { Tabs } from "./Tabs";
+export { AudioPlayer } from "./AudioPlayer";
 export * from "./Cards";
 export * from "./LanguageToggle";
 export * from "./Nav";

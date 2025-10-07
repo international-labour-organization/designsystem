@@ -1,0 +1,54 @@
+@use "../functions" as *;
+
+.ilo--audio-player {
+  &--body {
+    display: flex;
+    color: var(--ilo-color-gray-light);
+    background-color: var(--ilo-color-gray-charcoal);
+    padding: spacing(3);
+  }
+  &--left {
+    flex: 1;
+  }
+  &--track-name {
+    font-size: var(--ilo-font-size-sm);
+    font-weight: var(--ilo-font-weight-medium);
+    line-height: var(--ilo-line-height-sm);
+  }
+  &--track-details {
+    display: flex;
+    font-size: var(--ilo-font-size-xsm);
+    line-height: var(--ilo-line-height-xsm);
+  }
+  &--track-creator::before {
+    content: "•";
+    margin-right: spacing(2);
+  }
+  &--track-creator {
+    margin-left: spacing(2);
+  }
+  &--center {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &--right {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+  }
+  &--duration-played {
+    font-size: var(--ilo-font-size-sm);
+    line-height: var(--ilo-line-height-sm);
+  }
+  &--duration-total {
+    font-size: var(--ilo-font-size-xsm);
+    line-height: var(--ilo-line-height-xsm);
+  }
+  &--volume {
+    display: flex;
+    align-items: center;
+    padding: 0 spacing(2);
+  }
+}
