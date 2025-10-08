@@ -14,7 +14,7 @@ export type LanguageToggleProps = {
   /**
    * Specify an optional className to be added to your LanguageToggle component.
    */
-  theme?: ThemeTypes;
+  theme?: ThemeTypes | "dark-blue";
 
   /**
    * Hide the glob icon
@@ -83,10 +83,7 @@ const LanguageToggle = forwardRef<
         className={classNames(
           baseClass,
           className,
-          `${baseClass}__theme__${theme}`,
-          {
-            [`${baseClass}__open`]: isCtxMenuOpen,
-          }
+          `${baseClass}__theme__${theme}`
         )}
         {...rest}
       >

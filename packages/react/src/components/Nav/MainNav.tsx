@@ -50,6 +50,7 @@ const MainNav = forwardRef<HTMLElement, MainNavProps>(
                 <LanguageToggle
                   className={`${baseClass}__widgets-bar__language`}
                   hideIcon={!isAboveXL}
+                  theme="dark-blue"
                   {...widgets.language}
                 />
               )}
