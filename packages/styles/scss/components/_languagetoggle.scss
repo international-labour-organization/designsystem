@@ -14,6 +14,12 @@
       --ilo--language-toggle-color: var(--ilo-color-blue-dark);
       --ilo--language-toggle-color-hover: var(--ilo-color-white);
     }
+
+    &__dark-blue {
+      --ilo--language-toggle-color: var(--ilo-color-white);
+      --ilo--language-toggle-color-hover: var(--ilo-color-blue);
+      --ilo--language-toggle-bg-hover: var(--ilo-color-white);
+    }
   }
 
   display: inline-block;
@@ -43,7 +49,7 @@
 
     &:hover,
     &:focus,
-    &__open {
+    &[aria-expanded="true"] {
       --ilo--language-toggle-color: var(--ilo--language-toggle-color-hover);
       --ilo--language-toggle-bg: var(--ilo--language-toggle-bg-hover);
     }
