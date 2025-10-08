@@ -217,6 +217,7 @@ export default class Nav extends StatefulComponent {
         stateKey: "dropDownIsOpen",
         otherStateKey: "searchIsOpen",
         resizeObserver: this.menuResizeObserver,
+        focusTrapHandler: this.handleMenuFocusTrap,
       },
       search: {
         element: this.inputSearch,
@@ -224,6 +225,7 @@ export default class Nav extends StatefulComponent {
         stateKey: "searchIsOpen",
         otherStateKey: "dropDownIsOpen",
         resizeObserver: this.searchResizeObserver,
+        focusTrapHandler: this.handleSearchFocusTrap,
       },
     };
 
@@ -259,7 +261,7 @@ export default class Nav extends StatefulComponent {
     // Add aria-expanded="true" to the button
     config.button.setAttribute("aria-expanded", "true");
 
-    this.handleTabNavigation(config.element);
+    this.handleTabNavigation(config);
   };
 
   /**
@@ -326,7 +328,7 @@ export default class Nav extends StatefulComponent {
    *
    * @param {KeyboardEvent} event - The keyboard event object
    */
-  handleFocusTrap = (event) => {
+  handleMenuFocusTrap = (event) => {
     createFocusTrap(event, this.dropdown.querySelectorAll("a"), () => {
       this.state.dropDownIsOpen = false;
       this.dropdownButton.focus();
@@ -334,13 +336,24 @@ export default class Nav extends StatefulComponent {
   };
 
   /**
+   * Handles focus trapping within the search input.
+   * @param {KeyboardEvent} event - The keyboard event object
+   */
+  handleSearchFocusTrap = (event) => {
+    createFocusTrap(event, this.inputSearch.querySelectorAll("input"), () => {
+      this.state.searchIsOpen = false;
+      this.inputSearchButton.focus();
+    });
+  };
+
+  /**
    * Sets up keyboard navigation for the dropdown.
    * Focuses the dropdown and adds keyboard event listeners.
    */
-  handleTabNavigation = () => {
+  handleTabNavigation = (config) => {
     setTimeout(() => {
-      this.dropdown.focus();
-      this.dropdown.addEventListener("keydown", this.handleFocusTrap);
+      config.element.focus();
+      config.element.addEventListener("keydown", config.focusTrapHandler);
     }, 100);
   };
 }
