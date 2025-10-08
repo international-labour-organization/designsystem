@@ -9,11 +9,6 @@
 		<div class="{{ base_class }}__widgets {{ base_class }}__container">
 			<span class="{{ base_class }}__widgets-bar-corner"></span>
 			<span class="{{ base_class }}__widgets-bar">
-				{% if widgets.link %}
-					<a href="{{ widgets.link.href }}" class="{{ base_class }}__widgets-bar__link">
-						{{ widgets.link.label }}
-					</a>
-				{% endif %}
 				{% if widgets.language %}
 					{% include "@components/languagetoggle/languagetoggle.twig" with {
             className: base_class ~ '__widgets-bar__language',
