@@ -340,6 +340,9 @@ importers:
       dom-helpers:
         specifier: ^5.2.1
         version: 5.2.1
+      merge-refs:
+        specifier: ^2.0.0
+        version: 2.0.0(@types/react@18.3.3)
       nanoid:
         specifier: ^3.3.6
         version: 3.3.6
@@ -391,7 +394,7 @@ importers:
         version: 8.1.9(@types/react-dom@18.3.0)(@types/react@18.3.3)(prettier@3.3.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@storybook/builder-vite':
         specifier: ^8.1.9
-        version: 8.1.9(prettier@3.6.2)(typescript@5.4.2)(vite@5.4.20(@types/node@20.16.0)(sass@1.62.1)(terser@5.44.0))(webpack-sources@3.3.3)
+        version: 8.1.9(prettier@3.3.3)(typescript@5.4.2)(vite@5.4.20(@types/node@20.16.0)(sass@1.62.1)(terser@5.44.0))(webpack-sources@3.3.3)
       '@storybook/manager-api':
         specifier: ^8.1.9
         version: 8.1.9(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
@@ -7044,6 +7047,14 @@ packages:
   merge-descriptors@1.0.1:
     resolution: {integrity: sha512-cCi6g3/Zr1iqQi6ySbseM1Xvooa98N0w31jzUYrXPX2xqObmFGHJ0tQ5u74H3mVh7wLouTseZyYIq39g8cNp1w==}
 
+  merge-refs@2.0.0:
+    resolution: {integrity: sha512-3+B21mYK2IqUWnd2EivABLT7ueDhb0b8/dGK8LoFQPrU61YITeCMn14F7y7qZafWNZhUEKb24cJdiT5Wxs3prg==}
+    peerDependencies:
+      '@types/react': ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
+    peerDependenciesMeta:
+      '@types/react':
+        optional: true
+
   merge-stream@2.0.0:
     resolution: {integrity: sha512-abv/qOcuPfk3URPfDzmZU1LKmuw8kT+0nIHvKrKgFrwifol/doWcdA4ZqsWQ8ENrFKkd67Mfpo/LovbIUsbt3w==}
 
@@ -10162,7 +10173,7 @@ snapshots:
       '@babel/traverse': 7.25.6
       '@babel/types': 7.25.6
       convert-source-map: 1.9.0
-      debug: 4.3.7(supports-color@8.1.1)
+      debug: 4.3.7
       gensync: 1.0.0-beta.2
       json5: 2.2.3
       semver: 6.3.1
@@ -10182,7 +10193,7 @@ snapshots:
       '@babel/traverse': 7.25.6
       '@babel/types': 7.25.6
       convert-source-map: 2.0.0
-      debug: 4.3.7(supports-color@8.1.1)
+      debug: 4.3.7
       gensync: 1.0.0-beta.2
       json5: 2.2.3
       semver: 6.3.1
@@ -10279,7 +10290,7 @@ snapshots:
       '@babel/core': 7.25.2
       '@babel/helper-compilation-targets': 7.25.2
       '@babel/helper-plugin-utils': 7.24.8
-      debug: 4.3.7(supports-color@8.1.1)
+      debug: 4.3.7
       lodash.debounce: 4.0.8
       resolve: 1.22.8
     transitivePeerDependencies:
@@ -11636,7 +11647,7 @@ snapshots:
       '@babel/parser': 7.25.6
       '@babel/template': 7.25.0
       '@babel/types': 7.25.6
-      debug: 4.3.7(supports-color@8.1.1)
+      debug: 4.3.7
       globals: 11.12.0
     transitivePeerDependencies:
       - supports-color
@@ -12058,7 +12069,7 @@ snapshots:
   '@eslint/eslintrc@3.1.0':
     dependencies:
       ajv: 6.12.6
-      debug: 4.3.7(supports-color@8.1.1)
+      debug: 4.3.7
       espree: 10.1.0
       globals: 14.0.0
       ignore: 5.3.2
@@ -12097,7 +12108,7 @@ snapshots:
   '@humanwhocodes/config-array@0.12.3':
     dependencies:
       '@humanwhocodes/object-schema': 2.0.3
-      debug: 4.3.7(supports-color@8.1.1)
+      debug: 4.3.7
       minimatch: 3.1.2
     transitivePeerDependencies:
       - supports-color
@@ -13310,6 +13321,27 @@ snapshots:
       - prettier
       - supports-color
 
+  '@storybook/builder-manager@8.1.9(prettier@3.3.3)':
+    dependencies:
+      '@fal-works/esbuild-plugin-global-externals': 2.1.2
+      '@storybook/core-common': 8.1.9(prettier@3.3.3)
+      '@storybook/manager': 8.1.9
+      '@storybook/node-logger': 8.1.9
+      '@types/ejs': 3.1.5
+      '@yarnpkg/esbuild-plugin-pnp': 3.0.0-rc.15(esbuild@0.20.2)
+      browser-assert: 1.2.1
+      ejs: 3.1.10
+      esbuild: 0.20.2
+      esbuild-plugin-alias: 0.2.1
+      express: 4.19.2
+      fs-extra: 11.2.0
+      process: 0.11.10
+      util: 0.12.5
+    transitivePeerDependencies:
+      - encoding
+      - prettier
+      - supports-color
+
   '@storybook/builder-manager@8.1.9(prettier@3.6.2)':
     dependencies:
       '@fal-works/esbuild-plugin-global-externals': 2.1.2
@@ -13330,6 +13362,34 @@ snapshots:
       - encoding
       - prettier
       - supports-color
+
+  '@storybook/builder-vite@8.1.9(prettier@3.3.3)(typescript@5.4.2)(vite@5.4.20(@types/node@20.16.0)(sass@1.62.1)(terser@5.44.0))(webpack-sources@3.3.3)':
+    dependencies:
+      '@storybook/channels': 8.1.9
+      '@storybook/client-logger': 8.1.9
+      '@storybook/core-common': 8.1.9(prettier@3.3.3)
+      '@storybook/core-events': 8.1.9
+      '@storybook/csf-plugin': 8.1.9(webpack-sources@3.3.3)
+      '@storybook/node-logger': 8.1.9
+      '@storybook/preview': 8.1.9
+      '@storybook/preview-api': 8.1.9
+      '@storybook/types': 8.1.9
+      '@types/find-cache-dir': 3.2.1
+      browser-assert: 1.2.1
+      es-module-lexer: 1.5.4
+      express: 4.19.2
+      find-cache-dir: 3.3.2
+      fs-extra: 11.2.0
+      magic-string: 0.30.11
+      ts-dedent: 2.2.0
+      vite: 5.4.20(@types/node@20.16.0)(sass@1.62.1)(terser@5.44.0)
+    optionalDependencies:
+      typescript: 5.4.2
+    transitivePeerDependencies:
+      - encoding
+      - prettier
+      - supports-color
+      - webpack-sources
 
   '@storybook/builder-vite@8.1.9(prettier@3.6.2)(typescript@5.4.2)(vite@5.4.20(@types/node@20.16.0)(sass@1.62.1)(terser@5.44.0))(webpack-sources@3.3.3)':
     dependencies:
@@ -13375,10 +13435,10 @@ snapshots:
       '@storybook/codemod': 8.1.9
       '@storybook/core-common': 8.1.9(prettier@3.3.3)
       '@storybook/core-events': 8.1.9
-      '@storybook/core-server': 8.1.9(prettier@3.6.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@storybook/core-server': 8.1.9(prettier@3.3.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@storybook/csf-tools': 8.1.9
       '@storybook/node-logger': 8.1.9
-      '@storybook/telemetry': 8.1.9(prettier@3.6.2)
+      '@storybook/telemetry': 8.1.9(prettier@3.3.3)
       '@storybook/types': 8.1.9
       '@types/semver': 7.5.8
       '@yarnpkg/fslib': 2.10.3
@@ -13533,6 +13593,62 @@ snapshots:
     dependencies:
       '@storybook/csf': 0.1.11
       ts-dedent: 2.2.0
+
+  '@storybook/core-server@8.1.9(prettier@3.3.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+    dependencies:
+      '@aw-web-design/x-default-browser': 1.4.126
+      '@babel/core': 7.25.2
+      '@babel/parser': 7.25.6
+      '@discoveryjs/json-ext': 0.5.7
+      '@storybook/builder-manager': 8.1.9(prettier@3.3.3)
+      '@storybook/channels': 8.1.9
+      '@storybook/core-common': 8.1.9(prettier@3.3.3)
+      '@storybook/core-events': 8.1.9
+      '@storybook/csf': 0.1.11
+      '@storybook/csf-tools': 8.1.9
+      '@storybook/docs-mdx': 3.1.0-next.0
+      '@storybook/global': 5.0.0
+      '@storybook/manager': 8.1.9
+      '@storybook/manager-api': 8.1.9(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@storybook/node-logger': 8.1.9
+      '@storybook/preview-api': 8.1.9
+      '@storybook/telemetry': 8.1.9(prettier@3.3.3)
+      '@storybook/types': 8.1.9
+      '@types/detect-port': 1.3.5
+      '@types/diff': 5.2.2
+      '@types/node': 18.19.50
+      '@types/pretty-hrtime': 1.0.3
+      '@types/semver': 7.5.8
+      better-opn: 3.0.2
+      chalk: 4.1.2
+      cli-table3: 0.6.5
+      compression: 1.7.4
+      detect-port: 1.6.1
+      diff: 5.2.0
+      express: 4.19.2
+      fs-extra: 11.2.0
+      globby: 14.0.2
+      lodash: 4.17.21
+      open: 8.4.2
+      pretty-hrtime: 1.0.3
+      prompts: 2.4.2
+      read-pkg-up: 7.0.1
+      semver: 7.6.3
+      telejson: 7.2.0
+      tiny-invariant: 1.3.3
+      ts-dedent: 2.2.0
+      util: 0.12.5
+      util-deprecate: 1.0.2
+      watchpack: 2.4.2
+      ws: 8.18.0
+    transitivePeerDependencies:
+      - bufferutil
+      - encoding
+      - prettier
+      - react
+      - react-dom
+      - supports-color
+      - utf-8-validate
 
   '@storybook/core-server@8.1.9(prettier@3.6.2)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
@@ -13743,7 +13859,7 @@ snapshots:
     dependencies:
       '@joshwooding/vite-plugin-react-docgen-typescript': 0.3.1(typescript@5.4.2)(vite@5.4.20(@types/node@20.16.0)(sass@1.62.1)(terser@5.44.0))
       '@rollup/pluginutils': 5.1.0(rollup@4.50.1)
-      '@storybook/builder-vite': 8.1.9(prettier@3.6.2)(typescript@5.4.2)(vite@5.4.20(@types/node@20.16.0)(sass@1.62.1)(terser@5.44.0))(webpack-sources@3.3.3)
+      '@storybook/builder-vite': 8.1.9(prettier@3.3.3)(typescript@5.4.2)(vite@5.4.20(@types/node@20.16.0)(sass@1.62.1)(terser@5.44.0))(webpack-sources@3.3.3)
       '@storybook/node-logger': 8.1.9
       '@storybook/react': 8.1.9(prettier@3.3.3)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.4.2)
       '@storybook/types': 8.1.9
@@ -13802,6 +13918,21 @@ snapshots:
       '@storybook/client-logger': 8.1.9
       memoizerific: 1.11.3
       qs: 6.13.0
+
+  '@storybook/telemetry@8.1.9(prettier@3.3.3)':
+    dependencies:
+      '@storybook/client-logger': 8.1.9
+      '@storybook/core-common': 8.1.9(prettier@3.3.3)
+      '@storybook/csf-tools': 8.1.9
+      chalk: 4.1.2
+      detect-package-manager: 2.0.1
+      fetch-retry: 5.0.6
+      fs-extra: 11.2.0
+      read-pkg-up: 7.0.1
+    transitivePeerDependencies:
+      - encoding
+      - prettier
+      - supports-color
 
   '@storybook/telemetry@8.1.9(prettier@3.6.2)':
     dependencies:
@@ -14599,7 +14730,7 @@ snapshots:
 
   agent-base@7.1.1:
     dependencies:
-      debug: 4.3.7(supports-color@8.1.1)
+      debug: 4.3.7
     transitivePeerDependencies:
       - supports-color
 
@@ -15942,11 +16073,19 @@ snapshots:
     dependencies:
       ms: 2.0.0
 
+  debug@3.2.7:
+    dependencies:
+      ms: 2.1.3
+
   debug@3.2.7(supports-color@8.1.1):
     dependencies:
       ms: 2.1.3
     optionalDependencies:
       supports-color: 8.1.1
+
+  debug@4.3.7:
+    dependencies:
+      ms: 2.1.3
 
   debug@4.3.7(supports-color@8.1.1):
     dependencies:
@@ -16097,7 +16236,7 @@ snapshots:
   detect-port@1.6.1:
     dependencies:
       address: 1.2.2
-      debug: 4.3.7(supports-color@8.1.1)
+      debug: 4.3.7
     transitivePeerDependencies:
       - supports-color
 
@@ -16407,7 +16546,7 @@ snapshots:
 
   esbuild-register@3.6.0(esbuild@0.20.2):
     dependencies:
-      debug: 4.3.7(supports-color@8.1.1)
+      debug: 4.3.7
       esbuild: 0.20.2
     transitivePeerDependencies:
       - supports-color
@@ -16585,7 +16724,7 @@ snapshots:
       ajv: 6.12.6
       chalk: 4.1.2
       cross-spawn: 7.0.3
-      debug: 4.3.7(supports-color@8.1.1)
+      debug: 4.3.7
       escape-string-regexp: 4.0.0
       eslint-scope: 8.0.2
       eslint-visitor-keys: 4.0.0
@@ -17661,7 +17800,7 @@ snapshots:
   http-proxy-agent@7.0.2:
     dependencies:
       agent-base: 7.1.1
-      debug: 4.3.7(supports-color@8.1.1)
+      debug: 4.3.7
     transitivePeerDependencies:
       - supports-color
 
@@ -17713,7 +17852,7 @@ snapshots:
   https-proxy-agent@7.0.5:
     dependencies:
       agent-base: 7.1.1
-      debug: 4.3.7(supports-color@8.1.1)
+      debug: 4.3.7
     transitivePeerDependencies:
       - supports-color
 
@@ -19083,7 +19222,7 @@ snapshots:
       cli-truncate: 3.1.0
       colorette: 2.0.20
       commander: 9.5.0
-      debug: 4.3.7(supports-color@8.1.1)
+      debug: 4.3.7
       execa: 6.1.0
       lilconfig: 2.0.6
       listr2: 5.0.8(enquirer@2.4.1)
@@ -19356,6 +19495,10 @@ snapshots:
       yargs-parser: 18.1.3
 
   merge-descriptors@1.0.1: {}
+
+  merge-refs@2.0.0(@types/react@18.3.3):
+    optionalDependencies:
+      '@types/react': 18.3.3
 
   merge-stream@2.0.0: {}
 
@@ -20020,7 +20163,7 @@ snapshots:
   portfinder@1.0.32:
     dependencies:
       async: 2.6.4
-      debug: 3.2.7(supports-color@8.1.1)
+      debug: 3.2.7
       mkdirp: 0.5.6
     transitivePeerDependencies:
       - supports-color
@@ -22178,7 +22321,7 @@ snapshots:
   vite-node@2.0.5(@types/node@20.16.0)(sass@1.62.1)(terser@5.44.0):
     dependencies:
       cac: 6.7.14
-      debug: 4.3.7(supports-color@8.1.1)
+      debug: 4.3.7
       pathe: 1.1.2
       tinyrainbow: 1.2.0
       vite: 5.4.20(@types/node@20.16.0)(sass@1.62.1)(terser@5.44.0)
@@ -22215,7 +22358,7 @@ snapshots:
       '@microsoft/api-extractor': 7.43.0(@types/node@20.16.0)
       '@rollup/pluginutils': 5.1.0(rollup@4.50.1)
       '@vue/language-core': 1.8.27(typescript@5.4.2)
-      debug: 4.3.7(supports-color@8.1.1)
+      debug: 4.3.7
       kolorist: 1.8.0
       magic-string: 0.30.11
       typescript: 5.4.2
@@ -22256,7 +22399,7 @@ snapshots:
       '@vitest/spy': 2.0.5
       '@vitest/utils': 2.0.5
       chai: 5.1.1
-      debug: 4.3.7(supports-color@8.1.1)
+      debug: 4.3.7
       execa: 8.0.1
       magic-string: 0.30.11
       pathe: 1.1.2
