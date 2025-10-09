@@ -17,6 +17,26 @@ Object.defineProperty(window, "matchMedia", {
   })),
 });
 
+Object.defineProperty(HTMLElement.prototype, "offsetParent", {
+  get() {
+    for (let element = this; element; element = element.parentNode) {
+      if (element.style?.display?.toLowerCase() === "none") {
+        return null;
+      }
+    }
+
+    if (this.stye?.position?.toLowerCase() === "fixed") {
+      return null;
+    }
+
+    if (this.tagName.toLowerCase() in ["html", "body"]) {
+      return null;
+    }
+
+    return this.parentNode;
+  },
+});
+
 afterEach(() => {
   cleanup();
 });
