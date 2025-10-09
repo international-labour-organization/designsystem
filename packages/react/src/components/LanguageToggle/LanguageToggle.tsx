@@ -108,6 +108,8 @@ const LanguageToggle = forwardRef<
             className={classNames(`${baseClass}--context-menu`, {
               [`${baseClass}--context-menu__open`]: isCtxMenuOpen,
             })}
+            isOpen={isCtxMenuOpen}
+            onClose={() => setIsCtxMenuOpen(false)}
           />
         )}
       </div>

@@ -2,6 +2,8 @@ import { ElementType, forwardRef, useId } from "react";
 import classNames from "classnames";
 import useGlobalSettings from "../../hooks/useGlobalSettings";
 import { createPortal } from "react-dom";
+import { useFocusTrap } from "../../hooks";
+import mergeRefs from "merge-refs";
 
 export type LinkProps = {
   /**
@@ -40,18 +42,37 @@ export type ContextMenuProps = {
    * Specify whether the Context Menu should be rendered in a portal
    */
   withPortal?: boolean;
+
+  /**
+   * Callback function when the Context Menu is closed;
+   */
+  onClose?: () => void;
+
+  /**
+   * Whether the Context Menu is open
+   */
+  isOpen: boolean;
 };
 
 const ContextMenu = forwardRef<HTMLOListElement, ContextMenuProps>(
-  ({ className, links, withPortal = false }, ref) => {
+  ({ className, links, withPortal = false, onClose, isOpen }, ref) => {
     const { prefix } = useGlobalSettings();
     const id = useId();
+    const focusTrapRef = useFocusTrap<HTMLOListElement>({
+      isActive: isOpen,
+      restoreFocus: true,
+      onEscape: () => {
+        if (onClose) {
+          onClose();
+        }
+      },
+    });
 
     const Component = (
       <ol
         className={classNames(`${prefix}--context-menu`, className)}
         id={`${prefix}--context-menu-${id}`}
-        ref={ref}
+        ref={mergeRefs(ref, focusTrapRef)}
       >
         {links.map((link) => {
           return (
