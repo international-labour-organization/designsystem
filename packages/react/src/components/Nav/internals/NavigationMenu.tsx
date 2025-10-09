@@ -58,7 +58,6 @@ const NavigationMenu = ({
             [`${baseClass}__more--open`]: more.isOpen,
           })}
           aria-expanded={more.isOpen}
-          aria-haspopup="menu"
           aria-controls={more.controls}
         >
           {more.label}

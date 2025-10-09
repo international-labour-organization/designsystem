@@ -152,6 +152,7 @@ const MainNav = forwardRef<HTMLElement, MainNavProps>(
                   setIsSearchOpen(!isSearchOpen);
                 }}
                 aria-controls={`${baseClass}_${cid}_search_dropdown`}
+                aria-expanded={isSearchOpen}
               >
                 <span className={`${baseClass}__nav-search__icon`} />
               </button>

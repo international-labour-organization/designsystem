@@ -99,6 +99,8 @@ const NavigationDropdownBare = forwardRef<
         },
         className
       )}
+      aria-hidden={!isOpen}
+      role="menu"
       {...props}
     >
       <div className={`${baseClass}__container`}>{children}</div>
