@@ -49,6 +49,7 @@ const MobileNavigation = ({
   return (
     <MobileDrawer
       isOpen={isOpen}
+      isNestedOpen={isNested}
       onClose={onClose}
       header={
         <div className={`${baseClass}__branding`}>
