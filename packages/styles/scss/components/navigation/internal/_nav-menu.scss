@@ -88,7 +88,6 @@
 
     &--open,
     &:hover,
-    &:focus,
     &:active {
       outline: none;
       border-color: var(--ilo-color-blue-dark);
@@ -100,7 +99,6 @@
     #{$self}__more {
       &--open,
       &:hover,
-      &:focus,
       &:active {
         --ilo-nav_menu-icon-color: var(--ilo-color-blue);
         color: var(--ilo-color-blue);

@@ -84,8 +84,7 @@
         @include icon("search", var(--ilo-subsite_nav_complex-search-color));
       }
 
-      &:hover,
-      &:focus {
+      &:hover {
         --ilo-subsite_nav_complex-search-color: var(--ilo-color-blue);
         background-color: var(--ilo-color-white);
       }
