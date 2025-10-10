@@ -129,7 +129,7 @@
       }
 
       #{$self}--title {
-        @include font-styles("headline-5");
+        @include typography("heading-3");
         font-family: var(--ilo-fonts-display);
         font-weight: 700;
       }

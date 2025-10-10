@@ -10,7 +10,7 @@
   &--headline {
     font-family: var(--ilo-fonts-display);
     font-weight: map-get($type, "weights", "label");
-    @include font-styles("headline-5");
+    @include typography("heading-3");
     @include textmargin("margin-bottom", 30px, "headline-5", "display", 0, 0);
   }
 
@@ -18,7 +18,7 @@
     &--headline {
       font-family: var(--ilo-fonts-display);
       font-weight: map-get($type, "weights", "label");
-      @include font-styles("headline-6");
+      @include typography("highlight-large");
       @include textmargin("margin-bottom", 27px, "headline-6", "display", 0, 0);
       @include textmargin(
         "margin-top",
@@ -90,7 +90,7 @@
     color: map-get($color, "link", "text", "default");
     font-family: var(--ilo-fonts-display);
     font-weight: map-get($type, "weights", "section");
-    @include font-styles("body-small");
+    @include typography("highlight-medium-bold");
     padding-top: spacing(4);
     padding-bottom: spacing(4);
     text-decoration: none;

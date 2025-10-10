@@ -1,5 +1,36 @@
 # @ilo-org/styles
 
+## 1.9.0
+
+### Minor Changes
+
+- 85599c276: An update to `@ilo-org/fonts` has changed the Arabic font from Noto Sans Arabic to Vazirmatn.
+- 18ac64c26: This fixes a weird bug with Vazirmatn whereby practically any `letter-spacing` value will cause incorrect glyphs to be rendered. The fix is to override all `letter-spacing` values that we use with other languages to `0`.
+
+### Patch Changes
+
+- e90383924: **accordion:** fix collapsing open/close icon when accordion titles are long.
+- a59bbc896: **Dropdown:** Slight changes to color as a result of css refactor, also to align with designs.
+- 3d05543f8: **HeroCard:** Minor fixes to typography and spacing
+- 67780ea10: Fixed the display of image credit and added theme support to Image component
+  **Image:** Fixed image caption and implemented theme support
+- 4b4bee4e3: **TableOfContents:** fixed hover behavior for lengthy items
+- 6f2fdf93a: **Detail Card:** RTL styles support for the arrow icon
+- fc7bb0652: **Richtext:** Increase line-height of h1
+  **Blockquote:** Increase line-height of quote text
+- 210c25d7d: Implemented mixins for images and image captions and synced components with design.
+
+  **Image:** synced image caption with design
+
+  **RichText:** synced image caption with design
+
+  **Video:** synced image caption with design
+
+- Updated dependencies [85599c276]
+- Updated dependencies [f226fd559]
+  - @ilo-org/fonts@2.0.0
+  - @ilo-org/icons@2.2.0
+
 ## 1.8.5
 
 ### Patch Changes

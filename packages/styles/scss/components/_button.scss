@@ -54,7 +54,7 @@
   &__large {
     padding: spacing(3) spacing(6);
     height: px-to-rem(52px);
-    @include font-styles("button-large");
+    @include typography("heading-4");
 
     &.#{$prefix}--button--icon--only {
       width: px-to-rem(52px);
@@ -64,7 +64,7 @@
   &__medium {
     padding: spacing(2) spacing(5);
     height: px-to-rem(44px);
-    @include font-styles("button-medium");
+    @include typography("highlight-medium-bold");
 
     &.#{$prefix}--button--icon--only {
       width: px-to-rem(44px);
@@ -74,7 +74,7 @@
   &__small {
     padding: spacing(1) spacing(4);
     height: px-to-rem(32px);
-    @include font-styles("button-small");
+    @include typography("highlight-small-bold");
 
     &.#{$prefix}--button--icon--only {
       width: px-to-rem(32px);

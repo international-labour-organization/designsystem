@@ -9,16 +9,16 @@ interface FocusTrapOptions {
 }
 
 const FOCUSABLE_SELECTORS = [
-  "a[href]:not([disabled])",
-  "button:not([disabled])",
-  "textarea:not([disabled])",
-  'input[type="text"]:not([disabled])',
-  'input[type="radio"]:not([disabled])',
-  'input[type="checkbox"]:not([disabled])',
-  'input[type="search"]:not([disabled])',
-  'input[type="submit"]:not([disabled])',
-  "select:not([disabled])",
-  '[tabindex]:not([tabindex="-1"]):not([disabled])',
+  `a[href]:not([disabled])`,
+  `button:not([disabled])`,
+  `textarea:not([disabled])`,
+  `input[type="text"]:not([disabled])`,
+  `input[type="radio"]:not([disabled])`,
+  `input[type="checkbox"]:not([disabled])`,
+  `input[type="search"]:not([disabled])`,
+  `input[type="submit"]:not([disabled])`,
+  `select:not([disabled])`,
+  `[tabindex]:not([tabindex="-1"]):not([disabled])`,
 ];
 
 function useFocusTrap<T extends HTMLElement>(

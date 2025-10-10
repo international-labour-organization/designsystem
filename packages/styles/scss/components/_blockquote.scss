@@ -4,37 +4,40 @@
 @import "../config";
 
 /**
-This mixin is also used in _richtext.scss component to style blockquotes.
-**/
+ * This mixin is also used in _richtext.scss component to style blockquotes.
+ */
 @mixin blockquote {
+  // Layout & background
   background-color: var(--ilo-color-blue-lighter);
   background-position: right top;
   background-repeat: no-repeat;
   background-size: px-to-rem(72px) px-to-rem(40px);
   display: block;
-  font-family: var(--ilo-fonts-display);
-  padding: spacing(19) 0 spacing(9) spacing(8); // check
-  position: relative;
   width: fit-content;
+  position: relative;
   border-bottom: px-to-rem(3px) solid var(--ilo-color-gray-base);
   @include cornercut(72px, 40px);
 
+  // Typography & spacing
+  font-family: var(--ilo-fonts-display);
+  padding: spacing(19) 0 spacing(9) spacing(8);
+
   p {
+    @include typography("blockquote", true);
     color: var(--ilo-color-purple);
-    font-weight: 300;
     padding: 0 spacing(12) 0 0;
+    margin-bottom: spacing(6);
     position: relative;
-    @include font-styles("pull-quote-sm");
 
     &:after {
-      bottom: 0;
       content: "";
       display: inline-block;
-      height: px-to-rem(20px);
       position: absolute;
+      bottom: 0;
       right: 0;
-      transform: scaleX(-1);
       width: px-to-rem(26.5px);
+      height: px-to-rem(20px);
+      transform: scaleX(-1);
       @include icon("quote", var(--ilo-color-purple));
     }
   }
@@ -42,21 +45,20 @@ This mixin is also used in _richtext.scss component to style blockquotes.
   cite {
     color: var(--ilo-color-gray-accessible);
     font-weight: 400;
-    // @include font-styles("pull-quote-cite");
     font-size: var(--ilo-font-size-sm);
     line-height: 135%;
-    letter-spacing: 0;
+    letter-spacing: var(--ilo-letter-spacing-md);
     font-style: normal;
   }
 
   &:before {
     content: "";
     display: inline-block;
-    height: px-to-rem(40px);
-    left: 0;
     position: absolute;
-    width: px-to-rem(53px);
     top: 0;
+    left: 0;
+    width: px-to-rem(53px);
+    height: px-to-rem(40px);
     @include icon("quote", var(--ilo-color-purple));
   }
 
@@ -66,20 +68,19 @@ This mixin is also used in _richtext.scss component to style blockquotes.
     @include cornercut(86px, 48px);
 
     p {
-      margin-bottom: spacing(6);
       padding: 0 spacing(12) 0 0;
       position: relative;
-      @include font-styles("pull-quote-lg");
+      @include typography("blockquote", false);
 
       &:after {
-        height: px-to-rem(24px);
         width: px-to-rem(32px);
+        height: px-to-rem(24px);
       }
     }
 
     &:before {
-      height: px-to-rem(48px);
       width: px-to-rem(64px);
+      height: px-to-rem(48px);
     }
   }
 
@@ -106,7 +107,6 @@ This mixin is also used in _richtext.scss component to style blockquotes.
 
     @include breakpoint("md") {
       padding: spacing(15) spacing(12) spacing(12) 0;
-
       @include cornercut(86px, 48px, "left");
     }
   }
