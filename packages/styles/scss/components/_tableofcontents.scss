@@ -1,10 +1,9 @@
-@use "../tokens" as *;
 @use "../animations" as *;
 @use "../functions" as *;
 @import "../mixins";
 
 .ilo--table-of-contents {
-  background-color: $color-ux-tableofcontents-items-default-background;
+  background-color: var(--ilo-color-gray-light);
   display: none;
   padding: 0;
 
@@ -25,7 +24,7 @@
   }
 
   &--headline {
-    border-bottom: px-to-rem(3px) solid $color-base-neutrals-lighter;
+    border-bottom: px-to-rem(3px) solid var(--ilo-color-gray-light);
     margin-bottom: spacing(6);
     margin-top: spacing(2);
     @include typography("heading-3");
@@ -115,41 +114,40 @@
   }
 
   &--link {
-    background-color: transparent;
-    background-position: calc(100% - 16px) center;
-    background-repeat: no-repeat;
-    background-size: px-to-rem(24px) px-to-rem(24px);
-    border-bottom: $color-ux-tableofcontents-items-default-border px-to-rem(2px)
-      solid;
-    color: $color-ux-labels-actionable;
-    display: block;
+    position: relative;
+    border-bottom: var(--ilo-color-white) px-to-rem(2px) solid;
+    color: var(--ilo-color-blue-dark);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     font-family: var(--ilo-fonts-display);
     font-weight: 500;
     padding: spacing(4) spacing(4) spacing(4);
     text-decoration: none;
-    @include dataurlicon("arrow_down", $color-ux-labels-actionable);
     @include typography("highlight-medium");
     @include globaltransition("background-color, border, color");
 
+    &:after {
+      content: "";
+      @include icon("arrow_down", var(--ilo-color-blue-dark));
+      height: px-to-rem(24px);
+      width: px-to-rem(24px);
+    }
+
     &:hover,
     &:focus {
-      background-color: $color-ux-tableofcontents-items-hover-background;
-      border-bottom: $color-ux-tableofcontents-items-hover-border px-to-rem(2px)
-        solid;
-      color: $color-ux-labels-hover;
-      @include dataurlicon("arrow_down", $color-ux-labels-hover);
-      @include globaltransition("background-color, border, color");
+      background-color: var(--ilo-color-blue-lighter);
+      border-bottom: var(--ilo-color-blue) px-to-rem(2px) solid;
+      &:after {
+        @include icon("arrow_down", var(--ilo-color-blue));
+      }
     }
 
     &:active {
-      background-color: $color-ux-tableofcontents-items-active-background;
-      border-bottom: $color-ux-tableofcontents-items-active-border
-        px-to-rem(2px) solid;
-      color: $color-ux-tableofcontents-items-active-color;
-      @include dataurlicon(
-        "arrow_down",
-        $color-ux-tableofcontents-items-active-icon
-      );
+      background-color: var(--ilo-color-white);
+      &:after {
+        @include icon("arrow_down", var(--ilo-color-blue-dark));
+      }
     }
   }
 
