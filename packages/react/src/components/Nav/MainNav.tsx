@@ -1,5 +1,6 @@
 import {
   forwardRef,
+  useEffect,
   useId,
   useImperativeHandle,
   useRef,
@@ -45,6 +46,12 @@ const MainNav = forwardRef<HTMLElement, MainNavProps>(
       }
     );
     useImperativeHandle(ref, () => headerRef.current as HTMLElement);
+
+    useEffect(() => {
+      if (!isAboveXL) {
+        setIsSearchOpen(false);
+      }
+    }, [isAboveXL]);
 
     const baseClass = `${prefix}--main-nav`;
 
