@@ -47,6 +47,12 @@ function useNavSetup({ menu, split }: UseNavSetupArgs): UseNavSetupResponse {
     setIsClient(true);
   }, []);
 
+  useEffect(() => {
+    if (!isAboveXL) {
+      setMore(false);
+    }
+  }, [isAboveXL]);
+
   return {
     menu: { facade, more: moreItems },
     more: [more, setMore],

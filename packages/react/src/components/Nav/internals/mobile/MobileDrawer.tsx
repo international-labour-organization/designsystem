@@ -1,5 +1,5 @@
 import { ReactNode, useId } from "react";
-import { useGlobalSettings } from "../../../../hooks";
+import { useFocusTrap, useGlobalSettings } from "../../../../hooks";
 import { createPortal } from "react-dom";
 import classNames from "classnames";
 
@@ -29,6 +29,11 @@ type MobileDrawerProps = {
    */
   children: ReactNode;
 
+  /**
+   * Whether any nested menu is open
+   */
+  isNestedOpen?: boolean;
+
   className?: string;
 };
 
@@ -39,9 +44,18 @@ const MobileDrawer = ({
   widgets,
   children,
   className,
+  isNestedOpen = false,
 }: MobileDrawerProps) => {
   const { prefix } = useGlobalSettings();
   const id = useId();
+  const focusTrapRef = useFocusTrap<HTMLDivElement>({
+    isActive: isOpen && !isNestedOpen,
+    onEscape: () => {
+      if (onClose) {
+        onClose();
+      }
+    },
+  });
 
   const baseClass = `${prefix}--nav-mobile-drawer`;
 
@@ -53,6 +67,11 @@ const MobileDrawer = ({
       className={classNames(baseClass, className, {
         [`${baseClass}--open`]: isOpen,
       })}
+      ref={focusTrapRef}
+      aria-hidden={!isOpen}
+      aria-modal="true"
+      role="dialog"
+      tabIndex={isOpen ? -1 : undefined}
     >
       <div className={`${baseClass}__header`}>
         <div className={`${baseClass}__header-main`}>{header}</div>

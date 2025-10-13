@@ -3,7 +3,9 @@ import { useEffect } from "react";
 function useOutsideClick<T extends HTMLElement>(
   ref: React.RefObject<T>,
   onClickOutside: () => void,
-  exceptions: React.RefObject<HTMLElement>[] = []
+  config: {
+    exceptions?: (React.RefObject<HTMLElement> | HTMLElement | Element)[];
+  }
 ) {
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
@@ -13,9 +15,21 @@ function useOutsideClick<T extends HTMLElement>(
         return;
       }
 
-      const isClickInException = exceptions.some((exception) =>
-        exception.current?.contains(target)
-      );
+      if (!config.exceptions || !config.exceptions.length) {
+        return;
+      }
+
+      const isClickInException = config.exceptions
+        .filter(Boolean)
+        .some((exception) => {
+          if (
+            exception instanceof HTMLElement ||
+            exception instanceof Element
+          ) {
+            return exception.contains(target);
+          }
+          return exception.current?.contains(target);
+        });
 
       if (!isClickInException) {
         onClickOutside();
@@ -26,7 +40,7 @@ function useOutsideClick<T extends HTMLElement>(
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
     };
-  }, [ref, onClickOutside, exceptions]);
+  }, [ref, onClickOutside, config.exceptions]);
 }
 
 export default useOutsideClick;

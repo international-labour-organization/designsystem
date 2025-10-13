@@ -6,16 +6,27 @@ import {
   useCallback,
   forwardRef,
   useImperativeHandle,
+  HTMLAttributes,
 } from "react";
 import { createPortal } from "react-dom";
-import { useGlobalSettings } from "../../../hooks";
+import {
+  useGlobalSettings,
+  useOutsideClick,
+  useFocusTrap,
+} from "../../../hooks";
 import classNames from "classnames";
+import mergeRefs from "merge-refs";
 
-type NavigationDropdownProps = {
+type NavigationDropdownProps = HTMLAttributes<HTMLDivElement> & {
   /**
    * Whether the dropdown is open
    */
   isOpen: boolean;
+
+  /**
+   * Callback function to be called when the dropdown is closed
+   */
+  onClose?: () => void;
 
   /**
    * The ref to the navigation element
@@ -33,12 +44,27 @@ type NavigationDropdownProps = {
 const NavigationDropdownBare = forwardRef<
   HTMLDivElement,
   NavigationDropdownProps
->(({ isOpen, className, navRef, children }, ref) => {
+>(({ isOpen, className, navRef, children, onClose, ...props }, ref) => {
   const { prefix } = useGlobalSettings();
+  const focusTrapRef = useFocusTrap<HTMLDivElement>({
+    isActive: isOpen,
+    onEscape: onClose,
+  });
 
   const wrapperRef = useRef<HTMLDivElement>(null);
 
   useImperativeHandle(ref, () => wrapperRef.current!, []);
+  useOutsideClick(
+    wrapperRef,
+    () => {
+      if (isOpen && onClose) {
+        onClose();
+      }
+    },
+    {
+      exceptions: [document.querySelector(`[aria-controls="${props.id}"]`)!],
+    }
+  );
 
   const baseClass = `${prefix}--nav-dropdown`;
 
@@ -65,7 +91,7 @@ const NavigationDropdownBare = forwardRef<
 
   return createPortal(
     <div
-      ref={wrapperRef}
+      ref={mergeRefs(focusTrapRef, wrapperRef)}
       className={classNames(
         {
           [baseClass]: true,
@@ -73,6 +99,9 @@ const NavigationDropdownBare = forwardRef<
         },
         className
       )}
+      aria-hidden={!isOpen}
+      role="menu"
+      {...props}
     >
       <div className={`${baseClass}__container`}>{children}</div>
     </div>,

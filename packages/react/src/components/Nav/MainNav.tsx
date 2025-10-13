@@ -1,4 +1,11 @@
-import { forwardRef, useImperativeHandle, useRef, useState } from "react";
+import {
+  forwardRef,
+  useEffect,
+  useId,
+  useImperativeHandle,
+  useRef,
+  useState,
+} from "react";
 import classNames from "classnames";
 
 import { useGlobalSettings, useOutsideClick } from "../../hooks";
@@ -22,16 +29,29 @@ const MainNav = forwardRef<HTMLElement, MainNavProps>(
       ref: headerRef,
       isClient,
     } = useNavSetup({ menu: items, split: { desktop: 5, mobile: 5 } });
+    const cid = useId();
     const [isSearchOpen, setIsSearchOpen] = useState(false);
     const searchButtonRef = useRef<HTMLButtonElement>(null);
     const searchDropdownRef = useRef<HTMLDivElement>(null);
 
-    useOutsideClick(searchButtonRef, () => {
-      if (isSearchOpen) {
+    useOutsideClick(
+      searchButtonRef,
+      () => {
+        if (isSearchOpen) {
+          setIsSearchOpen(false);
+        }
+      },
+      {
+        exceptions: [searchDropdownRef],
+      }
+    );
+    useImperativeHandle(ref, () => headerRef.current as HTMLElement);
+
+    useEffect(() => {
+      if (!isAboveXL) {
         setIsSearchOpen(false);
       }
-    }, [searchDropdownRef]);
-    useImperativeHandle(ref, () => headerRef.current as HTMLElement);
+    }, [isAboveXL]);
 
     const baseClass = `${prefix}--main-nav`;
 
@@ -115,12 +135,14 @@ const MainNav = forwardRef<HTMLElement, MainNavProps>(
                 more={
                   moreItems.length
                     ? {
+                        id: `${baseClass}_${cid}_more_button`,
                         label: labels.more,
                         onClick: () => {
                           if (isSearchOpen) setIsSearchOpen(false);
                           setIsMoreOpen(!isMoreOpen);
                         },
                         isOpen: isMoreOpen,
+                        controls: `${baseClass}_${cid}_dropdown`,
                       }
                     : undefined
                 }
@@ -128,6 +150,7 @@ const MainNav = forwardRef<HTMLElement, MainNavProps>(
             )}
             {widgets?.search && (
               <button
+                id={`${baseClass}_${cid}_search_button`}
                 className={`${baseClass}__nav-search`}
                 ref={searchButtonRef}
                 onClick={() => {
@@ -135,6 +158,8 @@ const MainNav = forwardRef<HTMLElement, MainNavProps>(
 
                   setIsSearchOpen(!isSearchOpen);
                 }}
+                aria-controls={`${baseClass}_${cid}_search_dropdown`}
+                aria-expanded={isSearchOpen}
               >
                 <span className={`${baseClass}__nav-search__icon`} />
               </button>
@@ -150,7 +175,12 @@ const MainNav = forwardRef<HTMLElement, MainNavProps>(
           </nav>
         </div>
         {moreItems && isClient && (
-          <NavigationDropdown isOpen={isMoreOpen} navRef={headerRef}>
+          <NavigationDropdown
+            isOpen={isMoreOpen}
+            navRef={headerRef}
+            onClose={() => setIsMoreOpen(false)}
+            id={`${baseClass}_${cid}_dropdown`}
+          >
             <NavigationMenuGrid menu={moreItems} />
           </NavigationDropdown>
         )}
@@ -159,6 +189,8 @@ const MainNav = forwardRef<HTMLElement, MainNavProps>(
           isOpen={isSearchOpen}
           navRef={headerRef}
           className={`${baseClass}__nav-search-dropdown`}
+          id={`${baseClass}_${cid}_search_dropdown`}
+          onClose={() => setIsSearchOpen(false)}
         >
           {widgets.search.field ? (
             <SearchField {...widgets.search.field} />

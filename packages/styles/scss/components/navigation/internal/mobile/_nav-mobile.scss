@@ -20,6 +20,10 @@
   }
 
   &__widgets {
+    display: flex;
+    flex-direction: column;
+    margin: px-to-rem(2px);
+
     &-search {
       padding: spacing(4) 0;
       display: flex;

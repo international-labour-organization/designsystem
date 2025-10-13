@@ -10,6 +10,8 @@ type NavigationMenuProps = {
     label?: string;
     onClick: () => void;
     isOpen: boolean;
+    controls?: string;
+    id?: string;
   };
   light?: boolean;
 };
@@ -56,7 +58,7 @@ const NavigationMenu = ({
             [`${baseClass}__more--open`]: more.isOpen,
           })}
           aria-expanded={more.isOpen}
-          aria-haspopup="menu"
+          aria-controls={more.controls}
         >
           {more.label}
           <span className={`${baseClass}__more-icon`}></span>

@@ -1,4 +1,4 @@
-import { forwardRef, useImperativeHandle } from "react";
+import { forwardRef, useId, useImperativeHandle } from "react";
 import classNames from "classnames";
 
 import { useGlobalSettings } from "../../../hooks";
@@ -31,6 +31,7 @@ const ComplexNav = forwardRef<HTMLElement, ComplexNavProps>(
       ref: headerRef,
       isClient,
     } = useNavSetup({ menu: items, split: { desktop: 6, mobile: 5 } });
+    const cid = useId();
 
     useImperativeHandle(ref, () => headerRef.current as HTMLElement);
 
@@ -122,6 +123,7 @@ const ComplexNav = forwardRef<HTMLElement, ComplexNavProps>(
                         label: labels.more,
                         onClick: () => setIsMoreOpen(!isMoreOpen),
                         isOpen: isMoreOpen,
+                        controls: `${baseClass}_${cid}_dropdown`,
                       }
                     : undefined
                 }
@@ -147,7 +149,12 @@ const ComplexNav = forwardRef<HTMLElement, ComplexNavProps>(
           </nav>
         </div>
         {moreItems && isClient && (
-          <NavigationDropdown isOpen={isMoreOpen} navRef={headerRef}>
+          <NavigationDropdown
+            id={`${baseClass}_${cid}_dropdown`}
+            isOpen={isMoreOpen}
+            navRef={headerRef}
+            onClose={() => setIsMoreOpen(false)}
+          >
             <NavigationMenuGrid menu={moreItems} />
           </NavigationDropdown>
         )}
