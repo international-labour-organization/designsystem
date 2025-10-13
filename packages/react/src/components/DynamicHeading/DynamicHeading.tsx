@@ -1,8 +1,8 @@
 import { HTMLAttributes, ReactNode } from "react";
 import { HeadingTypes } from "../../types";
 
-interface DynamicHeadingProps extends HTMLAttributes<HTMLHeadElement> {
-  level: Extract<HeadingTypes, "h1" | "h2" | "h3" | "h4" | "h5" | "h6">;
+interface DynamicHeadingProps extends HTMLAttributes<HTMLElement> {
+  level: HeadingTypes;
   children: ReactNode;
 }
 
