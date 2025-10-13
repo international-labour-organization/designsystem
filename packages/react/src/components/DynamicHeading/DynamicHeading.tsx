@@ -8,7 +8,7 @@ interface DynamicHeadingProps extends HTMLAttributes<HTMLHeadElement> {
 }
 
 function DynamicHeading({ level, children, ...props }: DynamicHeadingProps) {
-  const Tag = `h${level}` as keyof Pick<JSX.IntrinsicElements, TitleLevel>;
+  const Tag = level;
 
   return <Tag {...props}>{children}</Tag>;
 }
