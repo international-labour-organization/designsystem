@@ -89,7 +89,7 @@
           }
 
           .vjs-play-control {
-            @include dataurlicon(
+            @include icon(
               "triangle_right",
               $color-ux-video-controls-hover-icon
             );
@@ -237,16 +237,13 @@
             @include typography("body-xsmall");
 
             &:after {
-              background-position: top left;
-              background-repeat: no-repeat;
-              background-size: contain;
-              @include dataurlicon("caret_down", $color-base-neutrals-dark);
+              @include icon("caret_down", var(--ilo-color-gray-charcoal));
               content: "";
-              height: px-to-rem(12px);
+              height: px-to-rem(24px);
               position: absolute;
-              left: calc(50% - 6px);
-              bottom: -#{px-to-rem(12px)};
-              width: px-to-rem(12px);
+              left: calc(50% - 12x);
+              bottom: -#{px-to-rem(14px)};
+              width: px-to-rem(24px);
             }
           }
         }

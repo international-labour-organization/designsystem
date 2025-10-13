@@ -80,20 +80,28 @@
     cursor: pointer;
 
     &__icon {
-      background-repeat: no-repeat;
-      background-size: cover;
+      position: relative;
       height: px-to-rem(20px);
-      min-width: px-to-rem(20px);
-      @include dataurlicon(
-        "notification_info_outlined",
-        $color-ux-labels-actionable
-      );
+      width: px-to-rem(20px);
+
+      &:after {
+        content: "";
+        position: absolute;
+        height: px-to-rem(20px);
+        width: px-to-rem(20px);
+        @include icon(
+          "notification_info_outlined",
+          var(--ilo-color-gray-charcoal)
+        );
+      }
 
       &#{&}__theme__dark {
-        @include dataurlicon(
-          "notification_info_outlined",
-          $color-tooltip-dark-icon
-        );
+        &:after {
+          @include icon(
+            "notification_info_outlined",
+            var(--ilo-color-gray-light)
+          );
+        }
       }
     }
   }

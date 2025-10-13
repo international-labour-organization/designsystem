@@ -3,23 +3,65 @@
 @import "../mixins";
 @import "../animations";
 
+@mixin notification-stripe($color) {
+  background: linear-gradient(
+    to right,
+    $color 40px,
+    var(--ilo-color-white) 40px
+  );
+}
+
+@mixin notification-icon($icon) {
+  &:before {
+    content: "";
+    position: absolute;
+    top: px-to-rem(24px);
+    left: px-to-rem(10px);
+    height: px-to-rem(20px);
+    width: px-to-rem(20px);
+    @include icon($icon, var(--ilo-color-white));
+  }
+}
+
 .ilo--notification {
-  background-color: $color-ux-notification-background;
+  background-color: var(--ilo-color-white);
   box-shadow:
     0px 0.8px 1.6px rgba(30, 45, 190, 0.038),
     0px 4px 8px rgba(30, 45, 190, 0.054),
     0px 10px 20px rgba(30, 45, 190, 0.08),
     0px -4px 16px rgba(30, 45, 190, 0.054);
   border-radius: 2px;
-  color: $color-ux-notification-text;
+  color: var(--ilo-color-gray-charcoal);
   position: relative;
 
+  &__type {
+    &__info {
+      @include notification-icon("notification_info");
+      @include notification-stripe(var(--ilo-color-blue));
+    }
+
+    &__error {
+      @include notification-icon("notification_error");
+      @include notification-stripe(var(--ilo-color-red));
+    }
+
+    &__success {
+      @include notification-icon("notification_success");
+      @include notification-stripe(var(--ilo-color-green));
+    }
+
+    &__warning {
+      @include notification-icon("notification_warning");
+      @include notification-stripe(var(--ilo-color-yellow));
+    }
+  }
+
   &--dialog {
-    max-width: 340px;
+    max-width: px-to-rem(340px);
     width: 100%;
 
     @include breakpoint("md") {
-      max-width: 490px;
+      max-width: px-to-rem(490px);
     }
 
     .ilo--notification--content {
@@ -28,7 +70,7 @@
   }
 
   &--inline {
-    max-width: 340px;
+    max-width: px-to-rem(340px);
 
     .ilo--notification--content {
       padding: spacing(6);
@@ -52,48 +94,9 @@
     position: relative;
     width: calc(100% - 40px);
 
-    &:before {
-      background-position: center px-to-rem(22px);
-      background-repeat: no-repeat;
-      background-size: px-to-rem(24px);
-      content: "";
-      display: block;
-      height: 100%;
-      left: -40px;
-      position: absolute;
-      width: px-to-rem(40px);
-      top: 0;
-
-      @include breakpoint("md") {
-        .ilo--notification--inline & {
-          background-position: center;
-        }
-      }
-
-      .icon--error & {
-        background-color: $color-ux-notification-type-error;
-        @include dataurlicon("notification_error", $color-ux-notification-icon);
-      }
-
-      .icon--info & {
-        background-color: $color-ux-notification-type-info;
-        @include dataurlicon("notification_info", $color-ux-notification-icon);
-      }
-
-      .icon--success & {
-        background-color: $color-ux-notification-type-success;
-        @include dataurlicon(
-          "notification_success",
-          $color-ux-notification-icon
-        );
-      }
-
-      .icon--warning & {
-        background-color: $color-ux-notification-type-warning;
-        @include dataurlicon(
-          "notification_warning",
-          $color-ux-notification-icon
-        );
+    @include breakpoint("md") {
+      .ilo--notification--inline & {
+        background-position: center;
       }
     }
   }
@@ -131,9 +134,8 @@
   }
 
   &--date {
-    color: $color-base-neutrals-medium;
+    color: var(--ilo-color-gray-accessible);
     display: block;
-    font-weight: 400;
     @include typography("body-small");
 
     @include breakpoint("md") {
@@ -162,23 +164,32 @@
   }
 
   &--close {
-    background-color: $color-ux-background-highlight;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: px-to-rem(24px);
+    background-color: var(--ilo-color-gray-light);
     border: none;
     height: px-to-rem(40px);
     position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     right: 0;
     top: 0;
     width: px-to-rem(40px);
-    @include dataurlicon("close", $color-ux-labels-actionable);
+    cursor: pointer;
+
+    &:after {
+      content: "";
+      width: px-to-rem(30px);
+      height: px-to-rem(30px);
+      @include icon("close", var(--ilo-color-blue-dark));
+    }
 
     &:hover,
     &:focus {
-      background-color: $color-ux-background-hover;
-      cursor: pointer;
-      @include dataurlicon("close", $color-ux-labels-hover);
+      background-color: var(--ilo-color-blue-lighter);
+
+      &:after {
+        @include icon("close", var(--ilo-color-blue));
+      }
     }
 
     span {
