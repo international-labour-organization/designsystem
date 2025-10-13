@@ -1,5 +1,4 @@
-import { SocialTypes } from "../../types";
-import { TitleLevel } from "../DynamicHeading/DynamicHeading";
+import { HeadingTypes, SocialTypes } from "../../types";
 
 export interface SocialMediaIcons {
   /**
@@ -57,5 +56,5 @@ export interface SocialMediaProps {
   /**
    *
    */
-  titleLevel?: Extract<TitleLevel, "h2" | "h3" | "h4" | "h5">;
+  titleLevel?: Extract<HeadingTypes, "h2" | "h3" | "h4" | "h5">;
 }

@@ -1,8 +1,8 @@
 import { forwardRef } from "react";
 import classNames from "classnames";
 import useGlobalSettings from "../../hooks/useGlobalSettings";
-import { LinkListThemes } from "../../types";
-import { DynamicHeading, TitleLevel } from "../DynamicHeading/DynamicHeading";
+import { HeadingTypes, LinkListThemes } from "../../types";
+import { DynamicHeading } from "../DynamicHeading/DynamicHeading";
 
 export type LinkProps = {
   /**
@@ -47,7 +47,7 @@ export type LinkListProps = {
   /**
    * Specify the title level for the headline (h2-h5)
    */
-  titleLevel?: Extract<TitleLevel, "h2" | "h3" | "h4" | "h5">;
+  titleLevel?: Extract<HeadingTypes, "h2" | "h3" | "h4" | "h5">;
 
   /**
    * Specify the links to be displayed in the Link List

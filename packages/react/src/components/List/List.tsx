@@ -2,7 +2,8 @@ import { forwardRef, HTMLAttributes, ReactNode } from "react";
 import classNames from "classnames";
 
 import { useGlobalSettings } from "../../hooks";
-import { DynamicHeading, TitleLevel } from "../DynamicHeading/DynamicHeading";
+import { DynamicHeading } from "../DynamicHeading/DynamicHeading";
+import { HeadingTypes } from "../../types";
 
 export type ListProps = HTMLAttributes<HTMLDivElement> & {
   /**
@@ -33,7 +34,7 @@ export type ListProps = HTMLAttributes<HTMLDivElement> & {
   /**
    * The level of the title
    */
-  titleLevel?: Extract<TitleLevel, "h2" | "h3" | "h4" | "h5">;
+  titleLevel?: Extract<HeadingTypes, "h2" | "h3" | "h4" | "h5">;
 
   /**
    * The theme of the list

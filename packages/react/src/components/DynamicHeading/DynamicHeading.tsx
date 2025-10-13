@@ -1,9 +1,8 @@
 import { HTMLAttributes, ReactNode } from "react";
-
-export type TitleLevel = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+import { HeadingTypes } from "../../types";
 
 interface DynamicHeadingProps extends HTMLAttributes<HTMLHeadElement> {
-  level: TitleLevel;
+  level: Extract<HeadingTypes, "h1" | "h2" | "h3" | "h4" | "h5" | "h6">;
   children: ReactNode;
 }
 
