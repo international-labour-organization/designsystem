@@ -6,6 +6,8 @@ import { Picture, PictureProps } from "../Picture";
 import { Status, StatusProps } from "../Status";
 import { Icon } from "../Icon";
 import { ButtonProps } from "../Button";
+import { DynamicHeading } from "../DynamicHeading/DynamicHeading";
+import { HeadingTypes } from "../../types";
 
 export type ScoreCardProps = {
   /**
@@ -16,7 +18,7 @@ export type ScoreCardProps = {
   /**
    * The title level (h1, h2, h3, p, etc.).
    */
-  titleLevel?: keyof JSX.IntrinsicElements;
+  titleLevel?: HeadingTypes;
 
   /**
    * The size of the card.
@@ -84,7 +86,7 @@ const ScoreCard = forwardRef<HTMLDivElement, ScoreCardProps>(
     {
       className,
       theme = "light",
-      titleLevel: TitleElement = "p",
+      titleLevel = "p",
       size = "narrow",
       link,
       linkComponent,
@@ -139,9 +141,12 @@ const ScoreCard = forwardRef<HTMLDivElement, ScoreCardProps>(
               <p className={`${baseClass}--eyebrow`}>{eyebrow}</p>
             )}
             {title && (
-              <TitleElement className={`${baseClass}--title`}>
+              <DynamicHeading
+                level={titleLevel}
+                className={`${baseClass}--title`}
+              >
                 {title}
-              </TitleElement>
+              </DynamicHeading>
             )}
             {content && (
               <div className={`${baseClass}--area--content`}>

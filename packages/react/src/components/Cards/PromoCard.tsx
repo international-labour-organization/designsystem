@@ -10,6 +10,7 @@ import {
 } from "../../types";
 import { LinkProps } from "../Link";
 import { Button } from "../Button";
+import { DynamicHeading } from "../DynamicHeading/DynamicHeading";
 
 export type PromoCardProps = {
   /**
@@ -74,7 +75,7 @@ const PromoCard = forwardRef<HTMLDivElement, PromoCardProps>(
       intro,
       link,
       cta,
-      titleLevel: TitleElement = "p",
+      titleLevel = "p",
       eyebrow,
     },
     ref
@@ -104,9 +105,12 @@ const PromoCard = forwardRef<HTMLDivElement, PromoCardProps>(
           <div className={`${baseClass}--wrap`}>
             <div className={`${baseClass}--content`}>
               {eyebrow && <p className={`${baseClass}--eyebrow`}>{eyebrow}</p>}
-              <TitleElement className={`${baseClass}--title`}>
+              <DynamicHeading
+                level={titleLevel}
+                className={`${baseClass}--title`}
+              >
                 {title}
-              </TitleElement>
+              </DynamicHeading>
               {intro && <p className={`${baseClass}--intro`}>{intro}</p>}
               {cta?.label && (
                 <div className={`${baseClass}--cta`}>

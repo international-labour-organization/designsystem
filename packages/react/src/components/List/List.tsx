@@ -2,6 +2,8 @@ import { forwardRef, HTMLAttributes, ReactNode } from "react";
 import classNames from "classnames";
 
 import { useGlobalSettings } from "../../hooks";
+import { DynamicHeading } from "../DynamicHeading/DynamicHeading";
+import { HeadingTypes } from "../../types";
 
 export type ListProps = HTMLAttributes<HTMLDivElement> & {
   /**
@@ -30,6 +32,11 @@ export type ListProps = HTMLAttributes<HTMLDivElement> & {
   title?: string;
 
   /**
+   * The level of the title
+   */
+  titleLevel?: Extract<HeadingTypes, "h2" | "h3" | "h4" | "h5">;
+
+  /**
    * The theme of the list
    */
   theme?: "light" | "dark";
@@ -44,6 +51,7 @@ const List = forwardRef<HTMLDivElement, ListProps>(
       ordered = "unstyled",
       title,
       theme = "light",
+      titleLevel = "h2",
       ...rest
     },
     ref
@@ -60,7 +68,11 @@ const List = forwardRef<HTMLDivElement, ListProps>(
 
     return (
       <div className={listClasses} ref={ref} {...rest}>
-        {title && <h2 className={`${baseClass}--title`}>{title}</h2>}
+        {title && (
+          <DynamicHeading level={titleLevel} className={`${baseClass}--title`}>
+            {title}
+          </DynamicHeading>
+        )}
         {ordered === "ordered" ? <ol>{children}</ol> : <ul>{children}</ul>}
       </div>
     );

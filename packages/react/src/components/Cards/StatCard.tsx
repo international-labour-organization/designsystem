@@ -3,6 +3,7 @@ import classNames from "classnames";
 
 import useGlobalSettings from "../../hooks/useGlobalSettings";
 import { Link, LinkProps } from "../Link";
+import { DynamicHeading } from "../DynamicHeading/DynamicHeading";
 import { CardColor, CardSize, HeadingTypes, ThemeTypes } from "../../types";
 
 export interface StatCardProps {
@@ -58,7 +59,7 @@ const StatCard = forwardRef<HTMLDivElement, StatCardProps>(
       color,
       intro,
       source,
-      titleLevel: TitleElement = "p",
+      titleLevel = "p",
     },
     ref
   ) => {
@@ -78,9 +79,12 @@ const StatCard = forwardRef<HTMLDivElement, StatCardProps>(
         <div className={cardClasses}>
           <div className={`${baseClass}--wrap`}>
             <div className={`${baseClass}--content`}>
-              <TitleElement className={`${baseClass}--title`}>
+              <DynamicHeading
+                level={titleLevel}
+                className={`${baseClass}--title`}
+              >
                 {title}
-              </TitleElement>
+              </DynamicHeading>
               {intro && <p className={`${baseClass}--intro`}>{intro}</p>}
               {source && (
                 <Link

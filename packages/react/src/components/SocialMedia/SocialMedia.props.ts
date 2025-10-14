@@ -1,4 +1,4 @@
-import { SocialTypes } from "../../types";
+import { HeadingTypes, SocialTypes } from "../../types";
 
 export interface SocialMediaIcons {
   /**
@@ -52,4 +52,9 @@ export interface SocialMediaProps {
    * The size of the social media icons
    */
   iconSize: "normal" | "large";
+
+  /**
+   *
+   */
+  titleLevel?: Extract<HeadingTypes, "h2" | "h3" | "h4" | "h5">;
 }

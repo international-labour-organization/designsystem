@@ -3,6 +3,7 @@ import classNames from "classnames";
 
 import useGlobalSettings from "../../hooks/useGlobalSettings";
 import { LinkList, LinkListProps } from "../LinkList";
+import { DynamicHeading } from "../DynamicHeading/DynamicHeading";
 import { CardSize, EventDate, HeadingTypes, ThemeTypes } from "../../types";
 
 export type FeatureCardProps = {
@@ -70,7 +71,7 @@ const FeatureCard = forwardRef<HTMLDivElement, FeatureCardProps>(
       link,
       linklist,
       image,
-      titleLevel: TitleElement = "p",
+      titleLevel = "p",
       eyebrow,
       isVideo,
     },
@@ -113,9 +114,12 @@ const FeatureCard = forwardRef<HTMLDivElement, FeatureCardProps>(
           )}
           <div className={`${baseClass}--content`}>
             {eyebrow && <p className={`${baseClass}--eyebrow`}>{eyebrow}</p>}
-            <TitleElement className={`${baseClass}--title`}>
+            <DynamicHeading
+              level={titleLevel}
+              className={`${baseClass}--title`}
+            >
               {title}
-            </TitleElement>
+            </DynamicHeading>
             {date && (
               <time className={`${baseClass}--date`} dateTime={date.unix}>
                 {date.human}

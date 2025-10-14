@@ -1,9 +1,11 @@
 {#
   LINK LIST COMPONENT
 #}
+{% set titleLevel = titleLevel|default('h3') %}
+
 <div class="{{prefix}}--link-list {{prefix}}--link-list--{{theme}}" data-loadcomponent="LinkList" data-prefix="{{prefix}}">
   {% if headline %}
-    <h3 class="{{prefix}}--link-list--headline">{{headline}}</h3>
+    <{{titleLevel}} class="{{prefix}}--link-list--headline">{{headline}}</{{titleLevel}}>
   {% endif %}
   <ul class="{{prefix}}--link-list--linkgroups">
     {% for group in linkgroup %}

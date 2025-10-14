@@ -8,10 +8,11 @@
 	{% set theme = "light" %}
 {% endif %}
 
+{% set titleLevel = titleLevel|default('h2') %}
 
 <div class="{{prefix}}--list {% if ordered == 'unstyled' %} {{prefix}}--list__unstyled {% endif %} {% if alignment == 'horizontal' %} {{prefix}}--list__horizontal {% endif %} {{prefix}}--list__theme__{{theme}}">
 	{% if title %}
-		<h2 class="{{prefix}}--list--title">{{ title }}</h2>
+		<{{ titleLevel }} class="{{prefix}}--list--title">{{ title }}</{{ titleLevel }}>
 	{% endif %}
 	{% if ordered == "ordered" %}
 		<ol>

@@ -1,7 +1,8 @@
 import { forwardRef } from "react";
 import classNames from "classnames";
 import useGlobalSettings from "../../hooks/useGlobalSettings";
-import { LinkListThemes } from "../../types";
+import { HeadingTypes, LinkListThemes } from "../../types";
+import { DynamicHeading } from "../DynamicHeading/DynamicHeading";
 
 export type LinkProps = {
   /**
@@ -44,6 +45,11 @@ export type LinkListProps = {
   headline?: string;
 
   /**
+   * Specify the title level for the headline (h2-h5)
+   */
+  titleLevel?: Extract<HeadingTypes, "h2" | "h3" | "h4" | "h5">;
+
+  /**
    * Specify the links to be displayed in the Link List
    */
   linkgroup: Array<LinkGroupProps>;
@@ -55,7 +61,10 @@ export type LinkListProps = {
 };
 
 const LinkList = forwardRef<HTMLDivElement, LinkListProps>(
-  ({ className, headline, linkgroup, theme = "light" }, ref) => {
+  (
+    { className, headline, linkgroup, theme = "light", titleLevel = "h3" },
+    ref
+  ) => {
     const { prefix } = useGlobalSettings();
 
     const baseClass = `${prefix}--link-list`;
@@ -65,7 +74,14 @@ const LinkList = forwardRef<HTMLDivElement, LinkListProps>(
         ref={ref}
         className={classNames(baseClass, className, `${baseClass}--${theme}`)}
       >
-        {headline && <h3 className={`${baseClass}--headline`}>{headline}</h3>}
+        {headline && (
+          <DynamicHeading
+            level={titleLevel}
+            className={`${baseClass}--headline`}
+          >
+            {headline}
+          </DynamicHeading>
+        )}
         <ul className={`${baseClass}--linkgroups`}>
           {linkgroup.map((group, groupIndex) => (
             <li

@@ -4,6 +4,7 @@ import classnames from "classnames";
 import { CardSize, HeadingTypes, ThemeTypes } from "../../types";
 import useGlobalSettings from "../../hooks/useGlobalSettings";
 import { List } from "../List";
+import { DynamicHeading } from "../DynamicHeading/DynamicHeading";
 
 export type FactListCardProps = {
   /**
@@ -44,7 +45,7 @@ const FactListCard = forwardRef<HTMLDivElement, FactListCardProps>(
       theme = "light",
       size = "narrow",
       list,
-      titleLevel: TitleElement = "p",
+      titleLevel = "p",
       className,
     },
     ref
@@ -68,9 +69,12 @@ const FactListCard = forwardRef<HTMLDivElement, FactListCardProps>(
         <div className={`${baseClass}--wrap`}>
           <div className={`${baseClass}--content`}>
             {title && (
-              <TitleElement className={`${prefix}--card--title`}>
+              <DynamicHeading
+                level={titleLevel}
+                className={`${prefix}--card--title`}
+              >
                 {title}
-              </TitleElement>
+              </DynamicHeading>
             )}
             <List alignment="default" ordered="unordered" theme={theme}>
               {list.map((item) => (
