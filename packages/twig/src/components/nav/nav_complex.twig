@@ -88,7 +88,8 @@
       {% if moreItems|length %}
         {% include "@components/nav/desktop/navdropdown.twig" with {
           menu: moreItems,
-          prefix: prefix
+          prefix: prefix,
+					className: prefix ~ '__nav-extra-menu'
         } only %}
       {% endif %}
 
@@ -136,4 +137,3 @@
     </nav>
   </div>
 </header>
-

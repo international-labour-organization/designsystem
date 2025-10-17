@@ -1,7 +1,9 @@
 {# socialmedia.twig #}
+{% set titleLevel = titleLevel|default('h5') %}
+
 <div class="{{ prefix }}--social-media {{ prefix }}--social-media__theme__{{ theme|default("light") }} {{ prefix }}--social-media__justify__{{ align|default("start") }}">
     {% if headline %}
-        <h5 class="{{ prefix }}--social-media--headline">{{ headline }}</h5>
+        <{{ titleLevel }} class="{{ prefix }}--social-media--headline">{{ headline }}</{{ titleLevel }}>
     {% endif %}
     <ul class="{{ prefix }}--social-media--list {{ prefix }}--social-media--list__size__{{ iconSize|default("normal") }}">
         {% for item in icons %}

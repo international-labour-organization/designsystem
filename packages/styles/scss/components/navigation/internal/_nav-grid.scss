@@ -1,0 +1,31 @@
+@use "../../../tokens" as *;
+@use "../../../functions" as *;
+@import "../../../mixins";
+@import "../../../config";
+
+.ilo--nav-menu-grid {
+  display: flex;
+  gap: spacing(8);
+
+  &__column {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__item {
+    @include typography("highlight-medium");
+    width: px-to-rem(280px);
+    padding: spacing(4) spacing(2);
+    text-decoration: none;
+    text-overflow: ellipsis;
+    color: var(--ilo-color-blue-dark);
+    transition:
+      color 0.3s ease,
+      background-color 0.3s ease;
+
+    &:hover {
+      color: var(--ilo-color-blue);
+      background-color: var(--ilo-color-blue-lighter);
+    }
+  }
+}

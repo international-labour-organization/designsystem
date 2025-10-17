@@ -1,0 +1,24 @@
+{# navsearch.twig #}
+{% set prefix = prefix|default("ilo") %}
+{% set base_class = prefix ~ "--nav-dropdown" %}
+
+<template id="{{ prefix }}--nav-search__template">
+	<div class="{{ base_class }} {{ className|default("") }}" id="{{ base_class }}" tabindex="0">
+		<div class="{{ base_class }}__container">
+			{% include '@components/form/form.twig' with {
+        attributes: {
+          action: search.url,
+          "aria-label": search.label,
+          "data-search": "true",
+        },
+        fieldsets: [{
+          fields: [{
+            type: "search",
+            placeholder: search.label,
+            id: prefix ~ '__widgets-search-input-field',
+          }]
+        }]
+      } %}
+		</div>
+	</div>
+</template>

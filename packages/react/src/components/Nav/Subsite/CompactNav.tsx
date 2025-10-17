@@ -1,14 +1,14 @@
 import { forwardRef, useImperativeHandle } from "react";
 
 import { useGlobalSettings } from "../../../hooks";
-import { NavigationDropdown } from "../NavigationDropdown";
-import { NavigationMenuGrid } from "../NavigationMenuGrid";
+import { NavigationDropdown } from "../internals/NavigationDropdown";
+import { NavigationMenuGrid } from "../internals/NavigationMenuGrid";
 import { LanguageToggle } from "../../LanguageToggle";
-import { MobileNavigation } from "../mobile/MobileNavigation";
+import { MobileNavigation } from "../internals/mobile/MobileNavigation";
 import { CompactNavProps } from "../Navigation.props";
-import { NavigationLink } from "../NavigationLink";
-import { useNavSetup } from "../useNavSetup";
-import { NavigationMenu } from "../NavigationMenu";
+import { NavigationLink } from "../internals/NavigationLink";
+import { useNavSetup } from "../internals/hooks/useNavSetup";
+import { NavigationMenu } from "../internals/NavigationMenu";
 
 const CompactNav = forwardRef<HTMLElement, CompactNavProps>(
   (

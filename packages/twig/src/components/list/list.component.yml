@@ -64,4 +64,15 @@ list:
       options:
         light: light
         dark: dark
+    titleLevel:
+      type: select
+      label: Headline Title Level
+      description: Select the title level for the headline.
+      required: false
+      options:
+          h2: h2
+          h3: h3
+          h4: h4
+          h5: h5
+      preview: "h2"
   visibility: storybook

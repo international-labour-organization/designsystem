@@ -10,7 +10,7 @@ const Meta = {
   ...story.meta,
 };
 
-const [Default] = story.stories;
+const [Default, Compact, Complex, Main] = story.stories;
 
 export default Meta;
-export { Default };
+export { Default, Compact, Complex, Main };

@@ -21,8 +21,9 @@ const Default: StoryObj<HeroProps> = {
       alt: "Lorem ipsum",
       loading: "lazy",
       url: [
-        { breakpoint: 0, src: "/hero.jpg" },
-        { breakpoint: 768, src: "/hero.jpg" },
+        { breakpoint: 1280, src: "/xlarge-hero.jpg" },
+        { breakpoint: 1024, src: "/large-hero.jpg" },
+        { breakpoint: 0, src: "/mobile2x-hero.jpg" },
       ],
     },
     breadcrumb: {

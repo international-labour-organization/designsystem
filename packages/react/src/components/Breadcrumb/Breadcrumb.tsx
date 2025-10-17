@@ -165,7 +165,7 @@ const Breadcrumb = forwardRef<HTMLElement, BreadcrumbProps>(
           id={`${prefix}--breadcrumb--menu-${id}`}
           ref={ctxContainerRef}
         >
-          <ContextMenu links={contextLinks} />
+          <ContextMenu links={contextLinks} isOpen={isCtxMenuOpen} />
         </div>
       </nav>
     );

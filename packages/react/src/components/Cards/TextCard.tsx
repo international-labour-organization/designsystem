@@ -3,6 +3,7 @@ import { forwardRef } from "react";
 
 import useGlobalSettings from "../../hooks/useGlobalSettings";
 import { Profile, ProfileProps } from "../Profile";
+import { DynamicHeading } from "../DynamicHeading/DynamicHeading";
 import { CardSize, EventDate, HeadingTypes, ThemeTypes } from "../../types";
 
 export type TextCardProps = {
@@ -62,7 +63,7 @@ const TextCard = forwardRef<HTMLDivElement, TextCardProps>(
       date,
       profile,
       link,
-      titleLevel: TitleElement = "p",
+      titleLevel = "p",
       eyebrow,
     },
     ref
@@ -86,9 +87,12 @@ const TextCard = forwardRef<HTMLDivElement, TextCardProps>(
           <div className={`${baseClass}--wrap`}>
             <div className={`${baseClass}--content`}>
               {eyebrow && <p className={`${baseClass}--eyebrow`}>{eyebrow}</p>}
-              <TitleElement className={`${baseClass}--title`}>
+              <DynamicHeading
+                level={titleLevel}
+                className={`${baseClass}--title`}
+              >
                 {title}
-              </TitleElement>
+              </DynamicHeading>
               {date && (
                 <time className={`${baseClass}--date`} dateTime={date.unix}>
                   {date.human}

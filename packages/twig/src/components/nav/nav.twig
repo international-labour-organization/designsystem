@@ -1,5 +1,7 @@
 {% if navtype == 'compact' %}
   {% include '@components/nav/nav_compact.twig' %}
-{% else %}
+{% elseif navtype == 'complex' %}
   {% include '@components/nav/nav_complex.twig' %}
+{% else %}
+  {% include '@components/nav/nav_main.twig' %}
 {% endif %}

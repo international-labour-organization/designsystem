@@ -9,14 +9,33 @@
 {% endblock %}
 
 {% block mobile_drawer_widgets %}
-  {% if widgets.search %}
-    <a class="{{ mobile_class }}__widgets-search" href="{{ widgets.search.url }}" aria-label="{{ widgets.search.label }}">
-      <span class="{{ mobile_class }}__widgets-search__label">
-        {{ widgets.search.label }}
-      </span>
-      <span class="{{ mobile_class }}__widgets-search__icon" />
-    </a>
-  {% endif %}
+	{# Search Widget #}
+	{% if inputSearch|boolval %}
+		<div class="{{ mobile_class }}__widgets-search-input">
+			{% include '@components/form/form.twig' with {
+      attributes: {
+        action: widgets.search.url,
+        "aria-label": widgets.search.label,
+        "data-search": "true",
+      },
+      fieldsets: [{
+        fields: [{
+          type: "search",
+          placeholder: widgets.search.label,
+          id: prefix|default("ilo") ~ '__widgets-search-input-field',
+        }]
+      }]
+    }
+    %}
+		</div>
+	{% elseif widgets.search %}
+		<a class="{{ mobile_class }}__widgets-search" href="{{ widgets.search.url }}" aria-label="{{ widgets.search.label }}">
+			<span class="{{ mobile_class }}__widgets-search__label">
+				{{ widgets.search.label }}
+			</span>
+			<span class="{{ mobile_class }}__widgets-search__icon"/>
+		</a>
+	{% endif %}
 
   {% if widgets.link %}
     <a class="{{ mobile_class }}__widgets-link" href="{{ widgets.link.href }}">{{ widgets.link.label }}</a>

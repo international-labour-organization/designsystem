@@ -26,6 +26,7 @@ export default class Nav extends StatefulComponent {
     // Initial state
     const initialState = {
       dropDownIsOpen: false,
+      searchIsOpen: false,
       isDesktop: true,
     };
 
@@ -38,15 +39,24 @@ export default class Nav extends StatefulComponent {
     // References to elements that get rendered dynamically on the client
     this.dropdown = null;
 
+    // References to element that is rendered dynamically in `nav_main.twig`
+    this.inputSearch = null;
+
     // Set up a breakpoint observer to track viewport size changes
     this.breakpointObserver = createBreakpointObserver((breakpoint) => {
       this.state.isDesktop = ["xl", "xxl"].includes(breakpoint);
     });
 
     // Set up a ResizeObserver to track nav element width changes
-    this.resizeObserver = new ResizeObserver(() => {
+    this.menuResizeObserver = new ResizeObserver(() => {
       if (this.state.dropDownIsOpen) {
-        this.handleResizeDropdown();
+        this.handleResize(this.dropdown);
+      }
+    });
+
+    this.searchResizeObserver = new ResizeObserver(() => {
+      if (this.state.searchIsOpen) {
+        this.handleResize(this.inputSearch);
       }
     });
 
@@ -88,15 +98,18 @@ export default class Nav extends StatefulComponent {
    * @returns {Nav} Returns the instance for method chaining
    */
   renderClientContent = () => {
-    const dropdownTemplate = this.element.querySelector(
-      `#${this.prefix}--nav-dropdown__template`
-    );
-    // Clone the template content
-    if (dropdownTemplate) {
-      const dropdownContent = dropdownTemplate.content.cloneNode(true);
+    const items = [
+      `#${this.prefix}--nav-dropdown__template`,
+      `#${this.prefix}--nav-search__template`,
+    ];
 
-      // Append template content to the body
-      document.body.appendChild(dropdownContent);
+    for (const templateSelector of items) {
+      const template = document.querySelector(templateSelector);
+
+      if (template) {
+        const content = template.content.cloneNode(true);
+        document.body.appendChild(content);
+      }
     }
 
     return this;
@@ -113,9 +126,17 @@ export default class Nav extends StatefulComponent {
       `.${this.prefix}--nav-menu__more`
     );
 
+    this.inputSearchButton = this.element.querySelector(
+      `.${this.prefix}--main-nav__nav-search`
+    );
+
     // Get a reference to the rendered dropdown (not the template)
     this.dropdown = document.body.querySelector(
-      `.${this.prefix}--nav-dropdown`
+      `.${this.prefix}__nav-extra-menu.${this.prefix}--nav-dropdown`
+    );
+
+    this.inputSearch = document.body.querySelector(
+      `.${this.prefix}--main-nav__nav-extra-search.${this.prefix}--nav-dropdown`
     );
 
     return this;
@@ -128,7 +149,15 @@ export default class Nav extends StatefulComponent {
    */
   enableHandlers = () => {
     if (this.dropdownButton) {
-      this.dropdownButton.addEventListener("click", this.handleDropdownClick);
+      this.dropdownButton.addEventListener("click", () => {
+        this.state.dropDownIsOpen = !this.state.dropDownIsOpen;
+      });
+    }
+
+    if (this.inputSearchButton) {
+      this.inputSearchButton.addEventListener("click", () => {
+        this.state.searchIsOpen = !this.state.searchIsOpen;
+      });
     }
     return this;
   };
@@ -142,9 +171,17 @@ export default class Nav extends StatefulComponent {
   registerStateHandlers = () => {
     this.registerStateHandler("dropDownIsOpen", (value) => {
       if (value) {
-        this.handleOpenDropdown();
+        this.handleOpen("dropdown");
       } else {
-        this.handleCloseDropdown();
+        this.handleClose("dropdown");
+      }
+    });
+
+    this.registerStateHandler("searchIsOpen", (value) => {
+      if (value) {
+        this.handleOpen("search");
+      } else {
+        this.handleClose("search");
       }
     });
 
@@ -162,73 +199,103 @@ export default class Nav extends StatefulComponent {
   handleBreakpointChange = (isDesktop) => {
     if (!isDesktop) {
       this.state.dropDownIsOpen = false;
+      this.state.searchIsOpen = false;
     }
   };
 
   /**
-   * Handles the opening of the dropdown menu.
-   * Sets up necessary event listeners and applies appropriate classes.
+   * Gets the configuration for a dropdown type.
+   *
+   * @param {string} type - The dropdown type ('dropdown' or 'search')
+   * @returns {Object} Configuration object for the dropdown
    */
-  handleOpenDropdown = () => {
+  getDropdownConfig = (type) => {
+    const configs = {
+      dropdown: {
+        element: this.dropdown,
+        button: this.dropdownButton,
+        stateKey: "dropDownIsOpen",
+        otherStateKey: "searchIsOpen",
+        resizeObserver: this.menuResizeObserver,
+        focusTrapHandler: this.handleMenuFocusTrap,
+      },
+      search: {
+        element: this.inputSearch,
+        button: this.inputSearchButton,
+        stateKey: "searchIsOpen",
+        otherStateKey: "dropDownIsOpen",
+        resizeObserver: this.searchResizeObserver,
+        focusTrapHandler: this.handleSearchFocusTrap,
+      },
+    };
+
+    return configs[type];
+  };
+
+  /**
+   * General method to handle opening any dropdown.
+   * Sets up necessary event listeners and applies appropriate classes.
+   *
+   * @param {string} type - The dropdown type ('dropdown' or 'search')
+   */
+  handleOpen = (type) => {
+    const config = this.getDropdownConfig(type);
+
+    if (!config.element || !config.button) return;
+
+    // Close the other dropdown
+    this.state[config.otherStateKey] = false;
+
     // Resize the dropdown
-    this.handleResizeDropdown();
+    this.handleResize(config.element);
 
     // Start observing the nav element for width changes
-    this.resizeObserver.observe(this.element);
+    config.resizeObserver.observe(this.element);
 
     // Add an event listener to the window to close the dropdown when the user clicks outside of it
     window.addEventListener("click", this.handleOutsideClick);
 
     // Add open class to the dropdown
-    this.dropdown?.classList.add(`${this.prefix}--nav-dropdown--open`);
+    config.element.classList.add(`${this.prefix}--nav-dropdown--open`);
 
-    // Add aria-expanded="true" to the dropdown button
-    this.dropdownButton.setAttribute("aria-expanded", "true");
+    // Add aria-expanded="true" to the button
+    config.button.setAttribute("aria-expanded", "true");
 
-    // Add open class to the dropdown button
-    this.dropdownButton?.classList.add(`${this.prefix}--nav-menu__more--open`);
-
-    this.handleTabNavigation();
+    this.handleTabNavigation(config);
   };
 
   /**
-   * Handles the closing of the dropdown menu.
+   * General method to handle closing any dropdown.
    * Removes event listeners and appropriate classes.
+   *
+   * @param {string} type - The dropdown type ('dropdown' or 'search')
    */
-  handleCloseDropdown = () => {
+  handleClose = (type) => {
+    const config = this.getDropdownConfig(type);
+
+    if (!config.element || !config.button) return;
+
     // Remove open class from the dropdown
-    this.dropdown?.classList.remove(`${this.prefix}--nav-dropdown--open`);
+    config.element.classList.remove(`${this.prefix}--nav-dropdown--open`);
 
-    // Remove open class from the dropdown button
-    this.dropdownButton?.classList.remove(
-      `${this.prefix}--nav-menu__more--open`
-    );
+    // Remove aria-expanded="true" from the button
+    config.button.setAttribute("aria-expanded", "false");
 
-    // Remove aria-expanded="true" from the dropdown button
-    this.dropdownButton.setAttribute("aria-expanded", "false");
-
-    // Stop observing the nav element
-    this.resizeObserver.disconnect();
-
-    // Remove event listener from the window
-    window.removeEventListener("click", this.handleOutsideClick);
+    // Only disconnect observer and remove listener if no dropdown is open
+    if (!this.state.dropDownIsOpen && !this.state.searchIsOpen) {
+      config.resizeObserver.disconnect();
+      window.removeEventListener("click", this.handleOutsideClick);
+    }
   };
 
   /**
-   * Adjusts the dropdown's position and size based on the parent element.
-   * Ensures the dropdown aligns properly with its parent navigation element.
+   * Resizes the given element to match the dimensions of the nav element.
+   * @param {HTMLElement} element - The element to resize
    */
-  handleResizeDropdown = () => {
-    this.dropdown.style.width = `${this.element.offsetWidth}px`;
-    this.dropdown.style.left = `${this.element.getBoundingClientRect().left}px`;
-    this.dropdown.style.top = `${this.element.getBoundingClientRect().bottom}px`;
-  };
-
-  /**
-   * Toggles the dropdown's open/closed state when the dropdown button is clicked.
-   */
-  handleDropdownClick = () => {
-    this.state.dropDownIsOpen = !this.state.dropDownIsOpen;
+  handleResize = (element) => {
+    element.style.width = `${this.element.offsetWidth}px`;
+    element.style.left = `${this.element.getBoundingClientRect().left}px`;
+    element.style.top = `${this.element.getBoundingClientRect().bottom}px`;
   };
 
   /**
@@ -245,6 +312,14 @@ export default class Nav extends StatefulComponent {
     ) {
       this.state.dropDownIsOpen = false;
     }
+
+    if (
+      this.state.searchIsOpen &&
+      !this.element?.contains(event.target) &&
+      !this.inputSearch?.contains(event.target)
+    ) {
+      this.state.searchIsOpen = false;
+    }
   };
 
   /**
@@ -253,7 +328,7 @@ export default class Nav extends StatefulComponent {
    *
    * @param {KeyboardEvent} event - The keyboard event object
    */
-  handleFocusTrap = (event) => {
+  handleMenuFocusTrap = (event) => {
     createFocusTrap(event, this.dropdown.querySelectorAll("a"), () => {
       this.state.dropDownIsOpen = false;
       this.dropdownButton.focus();
@@ -261,13 +336,24 @@ export default class Nav extends StatefulComponent {
   };
 
   /**
+   * Handles focus trapping within the search input.
+   * @param {KeyboardEvent} event - The keyboard event object
+   */
+  handleSearchFocusTrap = (event) => {
+    createFocusTrap(event, this.inputSearch.querySelectorAll("input"), () => {
+      this.state.searchIsOpen = false;
+      this.inputSearchButton.focus();
+    });
+  };
+
+  /**
    * Sets up keyboard navigation for the dropdown.
    * Focuses the dropdown and adds keyboard event listeners.
    */
-  handleTabNavigation = () => {
+  handleTabNavigation = (config) => {
     setTimeout(() => {
-      this.dropdown.focus();
-      this.dropdown.addEventListener("keydown", this.handleFocusTrap);
+      config.element.focus();
+      config.element.addEventListener("keydown", config.focusTrapHandler);
     }, 100);
   };
 }

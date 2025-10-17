@@ -18,9 +18,6 @@ nav:
           link:
             href: "https://live.ilo.org"
             label: "ILO Live Homepage"
-        tag:
-          main: "Advancing social justice, promoting decent work"
-          sub: "ILO is a specialized agency of the United Nations"
     widgets:
       type: object
       label: Widgets
@@ -104,5 +101,67 @@ nav:
       options:
         compact: compact
         complex: complex
-      preview: "complex"
+        main: main
+      preview: "compact"
+
+  variants:
+    default:
+      label: Default
+    compact:
+      label: Compact
+    complex:
+      label: Complex
+      fields:
+        navtype: complex
+        branding:
+          tag:
+            main: "Advancing social justice, promoting decent work"
+            sub: "ILO is a specialized agency of the United Nations"
+          logo:
+            main: "images/ilo-live-logo-en-dark.png"
+            mobile: "images/ilo-live-logo-en-light.png"
+            drawer: "images/ilo-live-logo-en-dark.png"
+            alt: "ILO Logo"
+            link:
+              href: "https://live.ilo.org"
+              label: "ILO Live Homepage"
+    main:
+      label: Main
+      fields:
+        navtype: main
+        branding:
+          tag:
+            main: "Advancing social justice, promoting decent work"
+            sub: "ILO is a specialized agency of the United Nations"
+          logo:
+            main: "images/logo_en_horizontal_white.svg"
+            mobile: "images/logo_en_horizontal_white.svg"
+            drawer: "images/logo_en_horizontal_blue.svg"
+            alt: "ILO Logo"
+            link:
+              href: "https://live.ilo.org"
+              label: "ILO Live Homepage"
+        widgets:
+          language:
+            label: "Language"
+            language: "English"
+            links:
+              - label: "English"
+                url: "https://www.ilo.org/en"
+              - label: "Français"
+                url: "https://www.ilo.org/fr"
+              - label: "Español"
+                url: "https://www.ilo.org/es"
+              - label: "العربية"
+                url: "https://www.ilo.org/ar"
+              - label: "中文"
+                url: "https://www.ilo.org/ru"
+              - label: "Português"
+                url: "https://www.ilo.org/pt"
+              - label: "Italiano"
+                url: "https://www.ilo.org/it"
+          search:
+            label: "Search"
+            url: "https://www.ilo.org/search"
+
   visibility: storybook

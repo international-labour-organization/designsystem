@@ -65,6 +65,7 @@ const SearchField: FC<
                 value={searchValue}
                 ref={ref}
                 disabled={input?.disabled}
+                type="search"
               />
               <span
                 onClick={handleClearButtonClick}

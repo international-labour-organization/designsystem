@@ -7,6 +7,7 @@ import {
   createElement,
 } from "react";
 import useGlobalSettings from "../../hooks/useGlobalSettings";
+import { DynamicHeading } from "../DynamicHeading/DynamicHeading";
 import { CardSize, EventDate, HeadingTypes, ThemeTypes } from "../../types";
 import { Icon } from "../Icon";
 
@@ -87,7 +88,7 @@ const DetailCard = forwardRef<HTMLDivElement, DetailCardProps>(
       date,
       details,
       link,
-      titleLevel: TitleElement = "p",
+      titleLevel = "p",
       eyebrow,
       intro,
       image,
@@ -139,9 +140,12 @@ const DetailCard = forwardRef<HTMLDivElement, DetailCardProps>(
           <div className={`${baseClass}--content`}>
             {eyebrow && <p className={`${baseClass}--eyebrow`}>{eyebrow}</p>}
             {title && (
-              <TitleElement className={`${baseClass}--title`}>
+              <DynamicHeading
+                level={titleLevel}
+                className={`${baseClass}--title`}
+              >
                 {title}
-              </TitleElement>
+              </DynamicHeading>
             )}
             {intro &&
               (isValidElement(intro) ? (

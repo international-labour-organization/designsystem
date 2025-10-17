@@ -3,6 +3,7 @@ import classNames from "classnames";
 
 import useGlobalSettings from "../../hooks/useGlobalSettings";
 import { LinkList, LinkListProps } from "../LinkList";
+import { DynamicHeading } from "../DynamicHeading/DynamicHeading";
 import { CardAlignment, CardSize, HeadingTypes } from "../../types";
 
 export type MultiLinkCardProps = {
@@ -75,7 +76,7 @@ const MultiLinkCard = forwardRef<HTMLDivElement, MultiLinkCardProps>(
       link,
       linklist,
       image,
-      titleLevel: TitleElement = "p",
+      titleLevel = "p",
       eyebrow,
       isVideo,
       theme = "light",
@@ -120,9 +121,12 @@ const MultiLinkCard = forwardRef<HTMLDivElement, MultiLinkCardProps>(
           )}
           <div className={`${baseClass}--content`}>
             {eyebrow && <p className={`${baseClass}--eyebrow`}>{eyebrow}</p>}
-            <TitleElement className={`${baseClass}--title`}>
+            <DynamicHeading
+              level={titleLevel}
+              className={`${baseClass}--title`}
+            >
               {title}
-            </TitleElement>
+            </DynamicHeading>
             {image && (
               <div className={`${baseClass}--image--wrapper`}>
                 <picture>
