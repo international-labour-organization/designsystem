@@ -89,7 +89,7 @@ const Hero = forwardRef<HTMLDivElement, HeroProps>(
     const orderedImages = useMemo(() => {
       if (!image) return [];
 
-      return image?.url.sort((a, b) => a.breakpoint - b.breakpoint);
+      return image?.url.sort((a, b) => b.breakpoint - a.breakpoint);
     }, [image]);
 
     return (
