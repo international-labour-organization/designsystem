@@ -1,7 +1,7 @@
 categories:
   - name: Actions
     subcategories:
-      - name: Controls
+      - name: Navigation
         members:
           - arrow_down
           - arrow_left
@@ -9,32 +9,46 @@ categories:
           - arrow_sort
           - arrow_up
           - burger
-          - calendar
           - caret_down
           - caret_left
           - caret_right
           - caret_up
-          - check
           - chevron_down
           - chevron_left
           - chevron_right
           - chevron_up
+          - double_chevron_left
+          - double_chevron_right
+          - triangle_right
+          - triangle_left
+
+      - name: Media Controls
+        members:
+          - ffbackward_15
+          - fforward_15
+          - play
+          - skip_next
+          - skip_previous
+          - pause
+          - sound_off
+          - sound_on
+          - stream
+
+      - name: Interface
+        members:
+          - calendar
+          - check
           - close
           - closed_captions
           - copyright
           - dot_menu
-          - double_chevron_left
-          - double_chevron_right
           - download
-          - social_facebook
-          - social_flickr
           - fullscreen
           - globe
           - home
-          - social_instagram
           - launch
-          - social_linkedin
           - mail
+          - map
           - meeting
           - minus
           - notification_error
@@ -42,26 +56,35 @@ categories:
           - notification_info_outlined
           - notification_success
           - notification_warning
-          - pause
           - pin
           - plus
           - quote
-          - social_rss
+          - reduce
           - search
+          - search_more
           - send
           - settings
           - share
-          - sound_off
-          - sound_on
           - statistics
-          - stream
-          - social_tiktok
           - time
-          - triangle_right
-          - triangle_left
+          - transcript
           - upload
-          - social_x
-          - social_youtube
+          - video
+          - image
+          - zoom
+
+      - name: Social Media
+        members:
+          - social_apple_podcasts
           - social_bluesky
+          - social_facebook
+          - social_flickr
+          - social_instagram
+          - social_linkedin
+          - social_rss
+          - social_spotify
+          - social_tiktok
           - social_wechat
           - social_weibo
+          - social_x
+          - social_youtube
