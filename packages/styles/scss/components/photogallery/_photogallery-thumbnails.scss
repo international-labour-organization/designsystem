@@ -1,0 +1,75 @@
+@use "../../tokens" as *;
+@use "../../functions" as *;
+@import "../../mixins";
+@import "../../config";
+
+.ilo--photo-gallery-thumbnails {
+  --ilo-photo_gallery-thumbnails-width: 90px;
+
+  @include breakpoint("md") {
+    --ilo-photo_gallery-thumbnails-width: 142px;
+  }
+
+  margin-top: spacing(6);
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: spacing(2);
+  overflow: hidden;
+
+  &__thumbnail {
+    width: var(--ilo-photo_gallery-thumbnails-width);
+    position: relative;
+    border: none;
+    cursor: pointer;
+    background-color: var(--ilo-color-gray-light);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &--selected {
+      z-index: 2;
+
+      &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          0deg,
+          rgba(30, 45, 190, 0.4) 0%,
+          rgba(30, 45, 190, 0.4) 100%
+        );
+        pointer-events: none;
+        border-bottom: px-to-rem(4) solid var(--ilo-color-blue);
+      }
+    }
+  }
+
+  img {
+    width: var(--ilo-photo_gallery-thumbnails-width);
+    aspect-ratio: 16 / 9;
+    object-fit: contain;
+  }
+
+  &__see-all {
+    flex-shrink: 0;
+    width: var(--ilo-photo_gallery-thumbnails-width);
+    aspect-ratio: 16 / 9;
+    background-color: var(--ilo-color-blue-dark);
+    border: none;
+    outline: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+
+    &-label {
+      @include typography("highlight-small-bold");
+      color: var(--ilo-color-blue-dark);
+      text-align: center;
+      background-color: var(--ilo-color-gray-light);
+      padding: spacing(2) spacing(4) spacing(1) spacing(4);
+      border-radius: var(--ilo-border-radius);
+    }
+  }
+}
