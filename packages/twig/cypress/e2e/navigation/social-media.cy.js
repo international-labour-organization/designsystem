@@ -30,13 +30,13 @@ describe("Social Media", () => {
       .should("have.length", fixture.icons.length);
   });
 
-  it("should ensure each icon has a background image with a data url", () => {
+  it("should ensure each icon has a mask image with a data url", () => {
     cy.visit(url);
     cy.get("@socialMedia")
       .find("ul.ilo--social-media--list li a")
       .each(($icon) => {
         cy.wrap($icon)
-          .should("have.css", "background-image")
+          .should("have.css", "mask-image")
           .and("match", /url\(.+\)/);
       });
   });
