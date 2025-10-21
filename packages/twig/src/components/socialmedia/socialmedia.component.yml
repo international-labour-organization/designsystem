@@ -84,6 +84,12 @@ socialmedia:
         - icon: "wechat"
           label: "WeChat"
           url: "https://weixin.qq.com"
+        - icon: "spotify"
+          label: "Spotify"
+          url: "https://open.spotify.com/user/iloorg"
+        - icon: "apple_podcasts"
+          label: "Apple Podcasts"
+          url: "https://podcasts.apple.com"
 
       required: true
   visibility: storybook
