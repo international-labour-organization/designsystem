@@ -1,18 +1,17 @@
 import { Meta, StoryObj } from "@storybook/react";
 
-import {
-  PromoCardSkeleton,
-  PromoCardSkeletonProps,
-} from "../../components/Cards/PromoCard";
+import { PromoCard } from "../../components/Cards/PromoCard";
 
-const meta: Meta<typeof PromoCardSkeleton> = {
+type PromoCardSkeletonProps = React.ComponentProps<typeof PromoCard.Skeleton>;
+
+const meta: Meta<typeof PromoCard.Skeleton> = {
   title: "Components/Cards/Card Skeletons/Promo Card Skeleton",
-  component: PromoCardSkeleton,
+  component: PromoCard.Skeleton,
   tags: ["autodocs"],
   argTypes: {
     size: {
       control: "select",
-      options: ["narrow", "wide", "fluid"],
+      options: ["narrow", "wide", "fluid", "standard"],
     },
     theme: {
       control: "select",

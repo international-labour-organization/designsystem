@@ -1,13 +1,10 @@
 import { Meta, StoryObj } from "@storybook/react";
 
-import {
-  ScoreCardSkeleton,
-  ScoreCardSkeletonProps,
-} from "../../components/Cards/ScoreCard";
+import { ScoreCard } from "../../components/Cards/ScoreCard";
 
-const meta: Meta<typeof ScoreCardSkeleton> = {
+const meta: Meta<typeof ScoreCard.Skeleton> = {
   title: "Components/Cards/Card Skeletons/Score Card Skeleton",
-  component: ScoreCardSkeleton,
+  component: ScoreCard.Skeleton,
   tags: ["autodocs"],
   argTypes: {
     size: {
@@ -28,7 +25,7 @@ const meta: Meta<typeof ScoreCardSkeleton> = {
   },
 };
 
-const Default: StoryObj<ScoreCardSkeletonProps> = {
+const Default: StoryObj<React.ComponentProps<typeof ScoreCard.Skeleton>> = {
   args: {
     theme: "light",
     size: "narrow",

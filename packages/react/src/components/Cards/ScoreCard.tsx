@@ -212,4 +212,8 @@ const ScoreCardSkeleton: React.FC<ScoreCardSkeletonProps> = ({
   );
 };
 
-export { ScoreCard, ScoreCardSkeleton };
+const ScoreCardCombined = Object.assign(ScoreCard, {
+  Skeleton: ScoreCardSkeleton,
+});
+
+export { ScoreCardCombined as ScoreCard };

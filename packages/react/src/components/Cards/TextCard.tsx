@@ -157,4 +157,8 @@ const TextCardSkeleton: React.FC<TextCardSkeletonProps> = ({
   );
 };
 
-export { TextCard, TextCardSkeleton };
+const TextCardCombined = Object.assign(TextCard, {
+  Skeleton: TextCardSkeleton,
+});
+
+export { TextCardCombined as TextCard };

@@ -176,4 +176,8 @@ const PromoCardSkeleton: React.FC<PromoCardSkeletonProps> = ({
   );
 };
 
-export { PromoCard, PromoCardSkeleton };
+const PromoCardCombined = Object.assign(PromoCard, {
+  Skeleton: PromoCardSkeleton,
+});
+
+export { PromoCardCombined as PromoCard };

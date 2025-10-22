@@ -29,4 +29,14 @@ describe("FactListCard", () => {
     const listItems = screen.getAllByRole("listitem");
     expect(listItems).toHaveLength(defaultProps.list.length);
   });
+
+  it("should display loading skeleton correctly", () => {
+    render(<FactListCard.Skeleton />);
+
+    // The skeleton elements should be present
+    const skeletonElements = document.querySelectorAll(
+      "[class*='ilo--card--skeleton--']"
+    );
+    expect(skeletonElements).toHaveLength(6);
+  });
 });

@@ -230,4 +230,8 @@ const DetailCardSkeleton: React.FC<DetailCardSkeletonProps> = ({
   );
 };
 
-export { DetailCard, DetailCardSkeleton };
+const DetailCardCombined = Object.assign(DetailCard, {
+  Skeleton: DetailCardSkeleton,
+});
+
+export { DetailCardCombined as DetailCard };

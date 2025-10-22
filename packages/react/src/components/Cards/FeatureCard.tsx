@@ -189,4 +189,8 @@ const FeatureCardSkeleton: React.FC<FeatureCardSkeletonProps> = ({
   );
 };
 
-export { FeatureCard, FeatureCardSkeleton };
+const FeatureCardCombined = Object.assign(FeatureCard, {
+  Skeleton: FeatureCardSkeleton,
+});
+
+export { FeatureCardCombined as FeatureCard };

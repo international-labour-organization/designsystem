@@ -148,4 +148,8 @@ const FactListCardSkeleton: React.FC<FactListCardSkeletonProps> = ({
   );
 };
 
-export { FactListCard, FactListCardSkeleton };
+const FactListCardCombined = Object.assign(FactListCard, {
+  Skeleton: FactListCardSkeleton,
+});
+
+export { FactListCardCombined as FactListCard };

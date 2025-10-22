@@ -56,4 +56,14 @@ describe("FeatureCard", () => {
       defaultProps.linklist.linkgroup[0].links[0].url
     );
   });
+
+  it("should display loading skeleton correctly", () => {
+    render(<FeatureCard.Skeleton />);
+
+    // The skeleton elements should be present
+    const skeletonElements = document.querySelectorAll(
+      "[class*='ilo--card--skeleton--']"
+    );
+    expect(skeletonElements).toHaveLength(4);
+  });
 });

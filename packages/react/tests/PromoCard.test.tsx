@@ -36,4 +36,14 @@ describe("PromoCard", () => {
     expect(ctaButton).toBeVisible();
     expect(ctaButton).toHaveAttribute("href", defaultProps.cta.url);
   });
+
+  it("should display loading skeleton correctly", () => {
+    render(<PromoCard.Skeleton />);
+
+    // The skeleton elements should be present
+    const skeletonElements = document.querySelectorAll(
+      "[class*='ilo--card--skeleton--']"
+    );
+    expect(skeletonElements).toHaveLength(6);
+  });
 });

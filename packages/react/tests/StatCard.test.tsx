@@ -28,4 +28,14 @@ describe("StatCard", () => {
     expect(sourceLink).toBeVisible();
     expect(sourceLink).toHaveAttribute("href", defaultProps.source.url);
   });
+
+  it("should display loading skeleton correctly", () => {
+    render(<StatCard.Skeleton />);
+
+    // The skeleton elements should be present
+    const skeletonElements = document.querySelectorAll(
+      "[class*='ilo--card--skeleton--']"
+    );
+    expect(skeletonElements).toHaveLength(4);
+  });
 });

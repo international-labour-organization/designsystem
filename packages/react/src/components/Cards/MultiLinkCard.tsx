@@ -209,4 +209,8 @@ const MultiLinkCardSkeleton: React.FC<MultiLinkCardSkeletonProps> = ({
   );
 };
 
-export { MultiLinkCard, MultiLinkCardSkeleton };
+const MultiLinkCardCombined = Object.assign(MultiLinkCard, {
+  Skeleton: MultiLinkCardSkeleton,
+});
+
+export { MultiLinkCardCombined as MultiLinkCard };

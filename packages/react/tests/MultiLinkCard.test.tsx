@@ -99,4 +99,14 @@ describe("MultiLinkCard Component", () => {
       screen.getByText("Remarks to G7 Opening Session")
     ).toBeInTheDocument();
   });
+
+  it("should display loading skeleton correctly", () => {
+    render(<MultiLinkCard.Skeleton />);
+
+    // The skeleton elements should be present
+    const skeletonElements = document.querySelectorAll(
+      "[class*='ilo--card--skeleton--']"
+    );
+    expect(skeletonElements).toHaveLength(9);
+  });
 });

@@ -1,13 +1,13 @@
 import { Meta, StoryObj } from "@storybook/react";
 
 import {
-  DetailCardSkeleton,
+  DetailCard,
   DetailCardSkeletonProps,
 } from "../../components/Cards/DetailCard";
 
-const meta: Meta<typeof DetailCardSkeleton> = {
+const meta: Meta<typeof DetailCard.Skeleton> = {
   title: "Components/Cards/Card Skeletons/Detail Card Skeleton",
-  component: DetailCardSkeleton,
+  component: DetailCard.Skeleton,
   tags: ["autodocs"],
   argTypes: {
     size: {

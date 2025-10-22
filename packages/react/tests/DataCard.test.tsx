@@ -123,4 +123,14 @@ describe("DataCard Component", () => {
     const outerDiv = container.firstChild;
     expect(outerDiv).toHaveClass("ilo--card__type__data__columns__one");
   });
+
+  it("should display loading skeleton correctly", () => {
+    render(<DataCard.Skeleton />);
+
+    // The skeleton elements should be present
+    const skeletonElements = document.querySelectorAll(
+      "[class*='ilo--card--skeleton--']"
+    );
+    expect(skeletonElements).toHaveLength(8);
+  });
 });

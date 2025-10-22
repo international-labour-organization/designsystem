@@ -144,4 +144,8 @@ const StatCardSkeleton: React.FC<StatCardSkeletonProps> = ({
   );
 };
 
-export { StatCard, StatCardSkeleton };
+const StatCardCombined = Object.assign(StatCard, {
+  Skeleton: StatCardSkeleton,
+});
+
+export { StatCardCombined as StatCard };

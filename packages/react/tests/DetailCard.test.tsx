@@ -36,4 +36,14 @@ describe("DetailCard", () => {
     const intro = screen.getByText(defaultProps.intro);
     expect(intro).toBeVisible();
   });
+
+  it("should display loading skeleton correctly", () => {
+    render(<DetailCard.Skeleton />);
+
+    // The skeleton elements should be present
+    const skeletonElements = document.querySelectorAll(
+      "[class*='ilo--card--skeleton--']"
+    );
+    expect(skeletonElements).toHaveLength(9);
+  });
 });

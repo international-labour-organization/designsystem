@@ -1,13 +1,13 @@
 import { Meta, StoryObj } from "@storybook/react";
 
 import {
-  MultiLinkCardSkeleton,
+  MultiLinkCard,
   MultiLinkCardSkeletonProps,
 } from "../../components/Cards/MultiLinkCard";
 
-const meta: Meta<typeof MultiLinkCardSkeleton> = {
+const meta: Meta<typeof MultiLinkCard.Skeleton> = {
   title: "Components/Cards/Card Skeletons/Multilink Card Skeleton",
-  component: MultiLinkCardSkeleton,
+  component: MultiLinkCard.Skeleton,
   tags: ["autodocs"],
   argTypes: {
     size: {

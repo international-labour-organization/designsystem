@@ -47,4 +47,14 @@ describe("TextCard", () => {
     );
     expect(profileDescription).toBeVisible();
   });
+
+  it("should display loading skeleton correctly", () => {
+    render(<TextCard.Skeleton />);
+
+    // The skeleton elements should be present
+    const skeletonElements = document.querySelectorAll(
+      "[class*='--card--skeleton--']"
+    );
+    expect(skeletonElements).toHaveLength(4);
+  });
 });

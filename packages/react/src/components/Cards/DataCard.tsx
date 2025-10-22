@@ -272,4 +272,8 @@ const DataCardSkeleton: React.FC<DataCardSkeletonProps> = ({
   );
 };
 
-export { DataCard, DataCardSkeleton };
+const DataCardCombined = Object.assign(DataCard, {
+  Skeleton: DataCardSkeleton,
+});
+
+export { DataCardCombined as DataCard };

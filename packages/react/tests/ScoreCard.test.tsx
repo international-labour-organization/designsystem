@@ -41,4 +41,14 @@ describe("ScoreCard", () => {
     const content2 = screen.getByText(defaultProps.content.items[1].label);
     expect(content2).toBeVisible();
   });
+
+  it("should display loading skeleton correctly", () => {
+    render(<ScoreCard.Skeleton />);
+
+    // The skeleton elements should be present
+    const skeletonElements = document.querySelectorAll(
+      "[class*='ilo--card--skeleton--']"
+    );
+    expect(skeletonElements).toHaveLength(4);
+  });
 });
