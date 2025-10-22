@@ -1,7 +1,7 @@
 import { EmblaCarouselType } from "embla-carousel/components/EmblaCarousel";
-import { HTMLAttributes, useCallback } from "react";
-import { useGlobalSettings } from "../../hooks";
+import { HTMLAttributes, useCallback, useEffect } from "react";
 import classNames from "classnames";
+import { useGlobalSettings } from "../../hooks";
 
 type PhotoGalleryControlsProps = HTMLAttributes<HTMLDivElement> & {
   onNext: () => void;
@@ -41,6 +41,41 @@ function usePhotoGalleryControls(emblaApi: EmblaCarouselType | undefined) {
     onPrevButtonClick,
     onNextButtonClick,
   };
+}
+
+function useKeyboardControls(
+  emblaApi: EmblaCarouselType | undefined,
+  enabled: boolean = true
+) {
+  const onKeyDown = useCallback(
+    (event: KeyboardEvent) => {
+      if (!emblaApi) return;
+      if (!enabled) return;
+
+      switch (event.key) {
+        case "ArrowLeft":
+          emblaApi.scrollPrev();
+          event.preventDefault();
+          break;
+        case "ArrowRight":
+          emblaApi.scrollNext();
+          event.preventDefault();
+          break;
+        default:
+          break;
+      }
+    },
+    [emblaApi, enabled]
+  );
+
+  useEffect(() => {
+    document.addEventListener("keydown", onKeyDown);
+    return () => {
+      document.removeEventListener("keydown", onKeyDown);
+    };
+  }, [onKeyDown]);
+
+  return { onKeyDown };
 }
 
 function PhotoGalleryControls({
@@ -91,4 +126,4 @@ function PhotoGalleryControls({
   );
 }
 
-export { PhotoGalleryControls, usePhotoGalleryControls };
+export { PhotoGalleryControls, usePhotoGalleryControls, useKeyboardControls };

@@ -98,5 +98,23 @@ const Default: StoryObj<PhotoGalleryProps> = {
   ],
 };
 
+const WithKeyboardControls: StoryObj<PhotoGalleryProps> = Object.assign(
+  {},
+  Default,
+  {
+    args: {
+      ...Default.args,
+      withKeyboardControls: true,
+    },
+  }
+);
+
+const Portrait: StoryObj<PhotoGalleryProps> = Object.assign({}, Default, {
+  args: {
+    ...Default.args,
+    fit: "contain",
+  },
+});
+
 export default meta;
-export { Default };
+export { Default, Portrait, WithKeyboardControls };

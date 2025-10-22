@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/no-noninteractive-tabindex */
 import useEmblaCarousel from "embla-carousel-react";
 import { PictureProps } from "../Picture";
 import { useGlobalSettings } from "../../hooks";
@@ -6,6 +7,7 @@ import { Image } from "../Image";
 import { useEffect, useState } from "react";
 import {
   PhotoGalleryControls,
+  useKeyboardControls,
   usePhotoGalleryControls,
 } from "./PhotoGalleryControls";
 import { PhotoGalleryThumbnails } from "./PhotoGalleryThumbnails";
@@ -20,9 +22,14 @@ export type PhotoGalleryItem = PictureProps & {
 export interface PhotoGalleryProps {
   items: PhotoGalleryItem[];
   fit?: "cover" | "contain" | "fill";
+  withKeyboardControls?: boolean;
 }
 
-function PhotoGallery({ items, fit = "cover" }: PhotoGalleryProps) {
+function PhotoGallery({
+  items,
+  fit = "cover",
+  withKeyboardControls = false,
+}: PhotoGalleryProps) {
   const { prefix } = useGlobalSettings();
   const [emblaRef, emblaAPI] = useEmblaCarousel({
     loop: true,
@@ -51,8 +58,10 @@ function PhotoGallery({ items, fit = "cover" }: PhotoGalleryProps) {
     };
   }, [emblaAPI]);
 
+  useKeyboardControls(emblaAPI, withKeyboardControls && !isLightboxOpen);
+
   return (
-    <div className={baseClass}>
+    <div className={baseClass} tabIndex={0}>
       <div className={`${baseClass}__core`}>
         <div className={`${coreClass}__controls`}>
           <PhotoGalleryControls
@@ -102,10 +111,11 @@ function PhotoGallery({ items, fit = "cover" }: PhotoGalleryProps) {
       >
         <LightBoxGallery
           items={items}
-          initialIndex={index}
+          parentIndex={index}
           onSelect={(index) => {
             emblaAPI?.scrollTo(index);
           }}
+          isActive={isLightboxOpen}
         />
       </LightBox>
     </div>

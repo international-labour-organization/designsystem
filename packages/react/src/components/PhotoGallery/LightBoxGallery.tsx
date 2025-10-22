@@ -7,25 +7,28 @@ import { PhotoGalleryItem } from "./PhotoGallery";
 import { useGlobalSettings } from "../../hooks";
 import {
   PhotoGalleryControls,
+  useKeyboardControls,
   usePhotoGalleryControls,
 } from "./PhotoGalleryControls";
 
 interface LightBoxProps {
   items: PhotoGalleryItem[];
-  initialIndex?: number;
+  parentIndex?: number;
   onSelect?: (index: number) => void;
+  isActive?: boolean;
 }
 
 function LightBoxGallery({
   items,
-  initialIndex = 0,
+  parentIndex = 0,
   onSelect: parentOnSelect,
+  isActive,
 }: LightBoxProps) {
   const { prefix } = useGlobalSettings();
-  const [currentIndex, setCurrentIndex] = useState(initialIndex);
+  const [currentIndex, setCurrentIndex] = useState(parentIndex);
   const [emblaRef, emblaAPI] = useEmblaCarousel({
     loop: true,
-    startIndex: initialIndex,
+    startIndex: parentIndex,
     direction: document.dir === "rtl" ? "rtl" : "ltr",
     duration: 30,
   });
@@ -56,12 +59,14 @@ function LightBoxGallery({
   useEffect(() => {
     if (!emblaAPI) return;
 
-    emblaAPI.on("select", onSelect);
+    emblaAPI.on("select", onSelect).on("reInit", onSelect);
 
     return () => {
-      emblaAPI.off("select", onSelect);
+      emblaAPI.off("select", onSelect).off("reInit", onSelect);
     };
   }, [emblaAPI]);
+
+  useKeyboardControls(emblaAPI, isActive);
 
   return (
     <div className={baseClass}>
@@ -97,9 +102,9 @@ function LightBoxGallery({
       </div>
       <div className={`${baseClass}__bar`}>
         <div className={`${baseClass}__extra`}>
-          <caption className={`${baseClass}__extra-text`}>
+          <p className={`${baseClass}__extra-text`}>
             {items[currentIndex]?.caption}
-          </caption>
+          </p>
           <PhotoGalleryControls
             onNext={controls.onNextButtonClick}
             onPrev={controls.onPrevButtonClick}

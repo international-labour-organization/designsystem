@@ -1,6 +1,6 @@
 import { ReactNode, useEffect } from "react";
 import { createPortal } from "react-dom";
-import { useGlobalSettings } from "../../hooks";
+import { useFocusTrap, useGlobalSettings } from "../../hooks";
 import classNames from "classnames";
 import { Icon } from "../Icon";
 
@@ -12,6 +12,13 @@ interface LightBoxProps {
 
 function LightBox({ isOpen, onClose, children }: LightBoxProps) {
   const { prefix } = useGlobalSettings();
+  const focusTrapRef = useFocusTrap<HTMLDivElement>({
+    isActive: isOpen,
+    onEscape: () => {
+      onClose();
+    },
+    restoreFocus: true,
+  });
   const baseClass = `${prefix}--lightbox`;
 
   useEffect(() => {
@@ -48,7 +55,7 @@ function LightBox({ isOpen, onClose, children }: LightBoxProps) {
       onClick={handleBackdropClick}
       role="dialog"
       aria-modal="true"
-      aria-hidden={!isOpen}
+      ref={focusTrapRef}
     >
       <div className={`${baseClass}__backdrop`} />
       <div className={`${baseClass}__container`}>
