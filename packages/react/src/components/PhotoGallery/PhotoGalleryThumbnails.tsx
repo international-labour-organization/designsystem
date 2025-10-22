@@ -78,7 +78,10 @@ function PhotoGalleryThumbnails({
           }`}
           onClick={() => onSelect?.(index)}
         >
-          <img src={item.url as string} alt={item.caption} />
+          <img
+            src={item.url as string}
+            alt={item.credit || `Thumbnail ${index + 1}`}
+          />
         </button>
       ))}
       <button className={`${baseClass}__see-all`} onClick={() => onSeeAll?.()}>

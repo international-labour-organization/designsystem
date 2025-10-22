@@ -5,8 +5,8 @@ import classNames from "classnames";
 import { Icon } from "../Icon";
 
 interface LightBoxProps {
-  isOpen: boolean; // Required - always controlled
-  onClose: () => void; // Required - always controlled
+  isOpen: boolean;
+  onClose: () => void;
   children: ReactNode;
 }
 

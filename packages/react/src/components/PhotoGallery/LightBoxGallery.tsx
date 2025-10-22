@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/no-noninteractive-tabindex */
 import { useEffect, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import classNames from "classnames";
@@ -65,7 +66,7 @@ function LightBoxGallery({
   return (
     <div className={baseClass}>
       <div className={coreClass}>
-        <div className={`${coreClass}__viewport`} ref={emblaRef}>
+        <div className={`${coreClass}__viewport`} ref={emblaRef} tabIndex={0}>
           <div className={`${coreClass}__container`}>
             {items.map((item, index) => (
               <div className={`${coreClass}__slide`} key={index}>

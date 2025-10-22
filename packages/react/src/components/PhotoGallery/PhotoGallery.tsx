@@ -9,6 +9,8 @@ import {
   usePhotoGalleryControls,
 } from "./PhotoGalleryControls";
 import { PhotoGalleryThumbnails } from "./PhotoGalleryThumbnails";
+import { LightBox } from "./LightBox";
+import { LightBoxGallery } from "./LightBoxGallery";
 
 export type PhotoGalleryItem = PictureProps & {
   credit?: string;
@@ -27,13 +29,10 @@ function PhotoGallery({ items, fit = "cover" }: PhotoGalleryProps) {
     direction: document.dir === "rtl" ? "rtl" : "ltr",
     duration: 30,
   });
-  const {
-    onFirstButtonClick,
-    onLastButtonClick,
-    onPrevButtonClick,
-    onNextButtonClick,
-  } = usePhotoGalleryControls(emblaAPI);
+  const controls = usePhotoGalleryControls(emblaAPI);
   const [index, setIndex] = useState(0);
+  const [isLightboxOpen, setIsLightboxOpen] = useState(false);
+
   const baseClass = `${prefix}--photo-gallery`;
   const coreClass = `${baseClass}__core`;
 
@@ -57,10 +56,10 @@ function PhotoGallery({ items, fit = "cover" }: PhotoGalleryProps) {
       <div className={`${baseClass}__core`}>
         <div className={`${coreClass}__controls`}>
           <PhotoGalleryControls
-            onNext={onNextButtonClick}
-            onPrev={onPrevButtonClick}
-            onFirst={onFirstButtonClick}
-            onLast={onLastButtonClick}
+            onNext={controls.onNextButtonClick}
+            onPrev={controls.onPrevButtonClick}
+            onFirst={controls.onFirstButtonClick}
+            onLast={controls.onLastButtonClick}
             indicator={{ current: index + 1, total: items.length }}
           />
         </div>
@@ -93,7 +92,22 @@ function PhotoGallery({ items, fit = "cover" }: PhotoGalleryProps) {
         onSelect={(index) => {
           emblaAPI?.scrollTo(index);
         }}
+        onSeeAll={() => {
+          setIsLightboxOpen(true);
+        }}
       />
+      <LightBox
+        isOpen={isLightboxOpen}
+        onClose={() => setIsLightboxOpen(false)}
+      >
+        <LightBoxGallery
+          items={items}
+          initialIndex={index}
+          onSelect={(index) => {
+            emblaAPI?.scrollTo(index);
+          }}
+        />
+      </LightBox>
     </div>
   );
 }

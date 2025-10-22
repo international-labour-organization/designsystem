@@ -149,6 +149,12 @@
       display: flex;
       align-items: center;
       justify-content: center;
+      cursor: pointer;
+
+      &:focus {
+        outline: px-to-rem(2px) solid var(--ilo-color-blue);
+        outline-offset: px-to-rem(2px);
+      }
 
       @include breakpoint("md") {
         width: px-to-rem(160px);
