@@ -34,12 +34,38 @@
     }
 
     &__image {
+      .ilo--image--wrapper {
+        position: relative;
+
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          height: 35%;
+          background: linear-gradient(
+              0deg,
+              rgba(45, 45, 45, 0.6) 0%,
+              rgba(45, 45, 45, 0) 24.88%
+            )
+            transparent;
+          pointer-events: none;
+          z-index: 1;
+        }
+      }
+
+      .ilo--image--credit {
+        z-index: 2;
+      }
+
       img {
         width: 100%;
         object-fit: contain;
         height: inherit;
         background-color: var(--ilo-color-gray-light);
         height: var(--ilo-photo_gallery-target-height);
+        position: relative;
       }
 
       &--contain {

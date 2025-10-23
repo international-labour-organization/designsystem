@@ -10,12 +10,11 @@
   &__core {
     margin: auto;
     width: 100%;
-    height: 80vh;
+    height: 80dvh;
 
     &__viewport {
       overflow: hidden;
       width: 100%;
-      height: 80vh;
     }
 
     &__container {
@@ -32,7 +31,7 @@
       justify-content: center;
       align-items: center;
       overflow: visible;
-      height: 80vh;
+      height: 80dvh;
     }
 
     &__image-wrapper {
@@ -75,14 +74,14 @@
       }
 
       img {
-        height: 80vh;
+        height: 80dvh;
         object-fit: contain;
       }
     }
   }
 
   &__bar {
-    height: 20vh;
+    height: 20dvh;
     background-color: rgba(0, 0, 0, 0.7);
   }
 
