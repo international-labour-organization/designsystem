@@ -36,7 +36,15 @@
 
     &__image-wrapper {
       position: relative;
-      height: 100%;
+      display: flex;
+      align-items: center;
+      width: 100%;
+
+      @include breakpoint("md") {
+        display: block;
+        height: 100%;
+        width: auto;
+      }
 
       &-credit {
         position: absolute;
@@ -46,6 +54,7 @@
         height: 25px;
         display: flex;
         @include typography("body-xsmall");
+        margin-bottom: -1px;
 
         [dir="rtl"] & {
           left: auto;
@@ -65,17 +74,29 @@
           height: px-to-rem(25px);
           background-color: var(--ilo-color-gray-charcoal);
           clip-path: polygon(0 0, 0% 100%, 100% 100%);
+          margin-left: px-to-rem(-0.5px);
+
+          @include breakpoint("md") {
+            margin-left: 0;
+            margin-right: 0;
+          }
 
           [dir="rtl"] & {
-            margin-left: 0;
             clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+            margin-left: 0;
+            margin-right: px-to-rem(-0.5px);
           }
         }
       }
 
       img {
-        height: 80dvh;
+        width: 100%;
         object-fit: contain;
+
+        @include breakpoint("md") {
+          height: 80dvh;
+          aspect-ratio: unset;
+        }
       }
     }
   }
@@ -83,14 +104,33 @@
   &__bar {
     height: 20dvh;
     background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @include breakpoint("md") {
+      justify-content: space-evenly;
+    }
+  }
+
+  &__caption {
+    display: block;
+
+    @include breakpoint("md") {
+      display: none;
+    }
   }
 
   &__extra {
+    display: none;
     height: px-to-rem(80px);
     padding: spacing(4) spacing(10);
-    display: flex;
     align-items: center;
     justify-content: space-between;
+
+    @include breakpoint("md") {
+      display: flex;
+    }
 
     &-text {
       color: var(--ilo-color-white);
@@ -183,6 +223,15 @@
           border-bottom: px-to-rem(4) solid var(--ilo-color-blue);
         }
       }
+    }
+  }
+
+  &__controls {
+    display: block;
+    padding: spacing(4);
+
+    @include breakpoint("md") {
+      display: none;
     }
   }
 }
