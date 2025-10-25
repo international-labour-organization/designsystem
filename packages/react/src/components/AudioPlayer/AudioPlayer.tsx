@@ -42,7 +42,14 @@ export const AudioPlayer: React.FC<AudioPlayerProps> = ({
 
   return (
     <div className={audioPlayerClasses}>
-      <div className={`${baseClass}--progress`} />
+      <div className={`${baseClass}--volume-modal`}>
+        <div className={`${baseClass}--volume-track`}>
+          <div className={`${baseClass}--volume-track-filled`} />
+        </div>
+      </div>
+      <div className={`${baseClass}--progress-bar`}>
+        <div className={`${baseClass}--progress-complete`}></div>
+      </div>
       <div className={`${baseClass}--body`}>
         <div className={`${baseClass}--left`}>
           <p className={`${baseClass}--track-name`}>{name}</p>
@@ -53,7 +60,13 @@ export const AudioPlayer: React.FC<AudioPlayerProps> = ({
         </div>
         <div className={`${baseClass}--center`}>
           <Icon name="Ffbackward_15" />
-          <Icon name="TriangleRight" size={32} />
+          <div className={`${baseClass}--play-button`}>
+            <Icon
+              className={`${baseClass}--play-icon`}
+              name="TriangleRight"
+              size={32}
+            />
+          </div>
           <Icon name="Fforward_15" />
         </div>
         <div className={`${baseClass}--right`}>
@@ -61,8 +74,9 @@ export const AudioPlayer: React.FC<AudioPlayerProps> = ({
             <p className={`${baseClass}--duration-played`}>00:10</p>
             <p className={`${baseClass}--duration-total`}>59:59</p>
           </div>
+          <div className={`${baseClass}--separator`}></div>
           <div className={`${baseClass}--volume`}>
-            <Icon name="SoundOn" />
+            <Icon className={`${baseClass}--volume-icon`} name="SoundOn" />
           </div>
         </div>
       </div>
