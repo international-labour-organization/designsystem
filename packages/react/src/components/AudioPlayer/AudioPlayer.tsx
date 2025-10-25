@@ -1,4 +1,5 @@
 import classNames from "classnames";
+import { useState } from "react";
 import { Icon } from "../Icon";
 import useGlobalSettings from "../../hooks/useGlobalSettings";
 
@@ -37,16 +38,12 @@ export const AudioPlayer: React.FC<AudioPlayerProps> = ({
 }) => {
   const { prefix } = useGlobalSettings();
   const baseClass = `${prefix}--audio-player`;
-
   const audioPlayerClasses = classNames(baseClass, className);
+
+  const [showVolumeModal, setShowVolumeModal] = useState(false);
 
   return (
     <div className={audioPlayerClasses}>
-      <div className={`${baseClass}--volume-modal`}>
-        <div className={`${baseClass}--volume-track`}>
-          <div className={`${baseClass}--volume-track-filled`} />
-        </div>
-      </div>
       <div className={`${baseClass}--progress-bar`}>
         <div className={`${baseClass}--progress-complete`}></div>
       </div>
@@ -75,8 +72,24 @@ export const AudioPlayer: React.FC<AudioPlayerProps> = ({
             <p className={`${baseClass}--duration-total`}>59:59</p>
           </div>
           <div className={`${baseClass}--separator`}></div>
-          <div className={`${baseClass}--volume`}>
+          <button
+            className={classNames(
+              `${baseClass}--volume`,
+              showVolumeModal && `${baseClass}--volume__active`
+            )}
+            onClick={() => setShowVolumeModal(!showVolumeModal)}
+          >
             <Icon className={`${baseClass}--volume-icon`} name="SoundOn" />
+          </button>
+        </div>
+        <div
+          className={classNames(
+            `${baseClass}--volume-modal`,
+            showVolumeModal && `${baseClass}--volume-modal__visible`
+          )}
+        >
+          <div className={`${baseClass}--volume-track`}>
+            <div className={`${baseClass}--volume-track-filled`} />
           </div>
         </div>
       </div>

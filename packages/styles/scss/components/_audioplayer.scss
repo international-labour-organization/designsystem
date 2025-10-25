@@ -2,7 +2,6 @@
 
 .ilo--audio-player {
   position: relative;
-  z-index: 1;
 
   &--progress-bar {
     height: px-to-rem(8px);
@@ -89,11 +88,14 @@
     align-items: center;
     padding: spacing(2) spacing(2);
     cursor: pointer;
+    border: none;
   }
-  &--volume:hover {
+  &--volume:hover,
+  &--volume__active {
     background-color: var(--ilo-color-brand-100);
   }
-  &--volume:hover &--volume-icon {
+  &--volume:hover &--volume-icon,
+  &--volume__active &--volume-icon {
     color: var(--ilo-color-brand-600);
   }
   &--volume-modal {
@@ -107,6 +109,10 @@
     padding: spacing(2);
     display: flex;
     justify-content: center;
+    visibility: hidden;
+  }
+  &--volume-modal__visible {
+    visibility: visible;
   }
   &--volume-track {
     height: 100%;
