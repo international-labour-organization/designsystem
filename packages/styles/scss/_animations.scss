@@ -2,7 +2,6 @@
 //    $ANIMATIONS
 //*------------------------------------*/
 @use "tokens" as *;
-@import "mixins";
 
 // ======================================
 // Global transition
@@ -37,5 +36,30 @@
     -moz-transform: rotate(360deg);
     -webkit-transform: rotate(360deg);
     transform: rotate(360deg);
+  }
+}
+
+// ======================================
+// Animation for loading skeletons
+// ======================================
+@mixin pulse-animation() {
+  animation-name: pulse;
+  animation-delay: 0.5s;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.4;
+  }
+
+  100% {
+    opacity: 1;
   }
 }

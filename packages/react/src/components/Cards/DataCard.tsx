@@ -3,10 +3,15 @@ import { forwardRef, Fragment, ReactNode } from "react";
 
 import useGlobalSettings from "../../hooks/useGlobalSettings";
 import { Link, LinkProps } from "../Link";
-import { CardSize } from "../../types";
+import { CardSize, ThemeTypes } from "../../types";
 import { Button } from "../Button";
 
 export type DataCardProps = {
+  /**
+   * Will render the card to appear on light or dark backgrounds
+   */
+  theme?: ThemeTypes;
+
   /**
    * A line of text that appears as a small heading at the top of the card
    */
@@ -59,7 +64,15 @@ export type DataCardProps = {
 
 const DataCard = forwardRef<HTMLDivElement, DataCardProps>(
   (
-    { eyebrow, size = "narrow", image, dataset, columns = "one", className },
+    {
+      theme = "light",
+      eyebrow,
+      size = "narrow",
+      image,
+      dataset,
+      columns = "one",
+      className,
+    },
     ref
   ) => {
     const { prefix } = useGlobalSettings();
@@ -76,6 +89,7 @@ const DataCard = forwardRef<HTMLDivElement, DataCardProps>(
       {
         [`${baseClass}__size__${String(size)}`]: size,
         [`${baseClass}__type__data__columns__${cols}`]: cols,
+        [`${baseClass}__theme__${theme}`]: theme,
       }
     );
 
@@ -188,4 +202,78 @@ const DataCard = forwardRef<HTMLDivElement, DataCardProps>(
   }
 );
 
-export { DataCard };
+export type DataCardSkeletonProps = {
+  /**
+   * Specify an optional className to be added to your DataCardSkeleton.
+   */
+  className?: string;
+
+  /**
+   * Will render the card to appear on light or dark backgrounds
+   */
+  theme?: ThemeTypes;
+
+  /**
+   * How big should the card be
+   */
+  size?: Omit<CardSize, "standard">;
+
+  /**
+   * Make the content appear in one or two columns. Only applies when the size is set to `wide` or `fluid`
+   */
+  columns?: "one" | "two";
+};
+
+const DataCardSkeleton: React.FC<DataCardSkeletonProps> = ({
+  className,
+  theme = "light",
+  size = "narrow",
+  columns = "one",
+}) => {
+  const { prefix } = useGlobalSettings();
+  const cols = size === "narrow" ? "one" : columns;
+  const baseClass = `${prefix}--card`;
+  const cardClasses = classNames(
+    baseClass,
+    `${baseClass}__type__data`,
+    className,
+    {
+      [`${baseClass}__size__${String(size)}`]: size,
+      [`${baseClass}__type__data__columns__${cols}`]: cols,
+      [`${baseClass}__theme__${theme}`]: theme,
+      [`${baseClass}__loading`]: true,
+    }
+  );
+  const contentClass = `${baseClass}--content`;
+
+  return (
+    <div className={cardClasses}>
+      <div className={`${baseClass}--wrap`}>
+        <div className={contentClass}>
+          <div className={`${baseClass}--area--image`}>
+            <div className={`${baseClass}--skeleton--eyebrow`} />
+            <div className={`${baseClass}--skeleton--image`} />
+          </div>
+          <div className={`${baseClass}--area--content`}>
+            <div className={`${baseClass}--skeleton--label`} />
+            <div className={`${baseClass}--skeleton--copy`} />
+          </div>
+          <div className={`${baseClass}--area--content`}>
+            <div className={`${baseClass}--skeleton--label`} />
+            <div className={`${baseClass}--skeleton--copy`} />
+          </div>
+          <div className={`${baseClass}--area--content`}>
+            <div className={`${baseClass}--skeleton--label`} />
+            <div className={`${baseClass}--skeleton--copy`} />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const DataCardCombined = Object.assign(DataCard, {
+  Skeleton: DataCardSkeleton,
+});
+
+export { DataCardCombined as DataCard };

@@ -3,6 +3,7 @@ import classNames from "classnames";
 
 import useGlobalSettings from "../../hooks/useGlobalSettings";
 import { LinkList, LinkListProps } from "../LinkList";
+import { DynamicHeading } from "../DynamicHeading/DynamicHeading";
 import { CardAlignment, CardSize, HeadingTypes } from "../../types";
 
 export type MultiLinkCardProps = {
@@ -75,7 +76,7 @@ const MultiLinkCard = forwardRef<HTMLDivElement, MultiLinkCardProps>(
       link,
       linklist,
       image,
-      titleLevel: TitleElement = "p",
+      titleLevel = "p",
       eyebrow,
       isVideo,
       theme = "light",
@@ -120,9 +121,12 @@ const MultiLinkCard = forwardRef<HTMLDivElement, MultiLinkCardProps>(
           )}
           <div className={`${baseClass}--content`}>
             {eyebrow && <p className={`${baseClass}--eyebrow`}>{eyebrow}</p>}
-            <TitleElement className={`${baseClass}--title`}>
+            <DynamicHeading
+              level={titleLevel}
+              className={`${baseClass}--title`}
+            >
               {title}
-            </TitleElement>
+            </DynamicHeading>
             {image && (
               <div className={`${baseClass}--image--wrapper`}>
                 <picture>
@@ -148,4 +152,69 @@ const MultiLinkCard = forwardRef<HTMLDivElement, MultiLinkCardProps>(
   }
 );
 
-export { MultiLinkCard };
+export type MultiLinkCardSkeletonProps = {
+  /**
+   * Specify an optional className to be added to your MultiLinkCardSkeleton.
+   */
+  className?: string;
+
+  /**
+   * How big should the card be
+   */
+  size?: CardSize;
+
+  /**
+   * How should the card be aligned
+   */
+  alignment?: CardAlignment;
+
+  /**
+   * Specify a theme for the component, either `light` or `blue`
+   */
+  theme?: "light" | "soft";
+};
+
+const MultiLinkCardSkeleton: React.FC<MultiLinkCardSkeletonProps> = ({
+  className,
+  size = "standard",
+  alignment,
+  theme = "light",
+}) => {
+  const { prefix } = useGlobalSettings();
+  const baseClass = `${prefix}--card`;
+
+  const cardClasses = classNames(
+    baseClass,
+    className,
+    `${baseClass}__type__multilink`,
+    {
+      [`${baseClass}__align__${alignment}`]: alignment,
+      [`${baseClass}__size__${size}`]: size,
+      [`${baseClass}__theme__${theme}`]: theme,
+    }
+  );
+
+  return (
+    <div className={cardClasses}>
+      <div className={`${baseClass}--wrap`}>
+        <div className={`${baseClass}--skeleton--column-image`} />
+        <div className={`${baseClass}--content`}>
+          <div className={`${baseClass}--skeleton--eyebrow`} />
+          <div className={`${baseClass}--skeleton--title-1`} />
+          <div className={`${baseClass}--skeleton--title-2`} />
+          <div className={`${baseClass}--skeleton--row-image`} />
+          <div className={`${baseClass}--skeleton--intro-1`} />
+          <div className={`${baseClass}--skeleton--intro-2`} />
+          <div className={`${baseClass}--skeleton--intro-3`} />
+          <div className={`${baseClass}--skeleton--intro-4`} />
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const MultiLinkCardCombined = Object.assign(MultiLinkCard, {
+  Skeleton: MultiLinkCardSkeleton,
+});
+
+export { MultiLinkCardCombined as MultiLinkCard };

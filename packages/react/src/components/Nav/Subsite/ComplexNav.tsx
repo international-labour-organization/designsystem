@@ -1,15 +1,15 @@
-import { forwardRef, useImperativeHandle } from "react";
+import { forwardRef, useId, useImperativeHandle } from "react";
 import classNames from "classnames";
 
 import { useGlobalSettings } from "../../../hooks";
-import { NavigationDropdown } from "../NavigationDropdown";
-import { NavigationMenuGrid } from "../NavigationMenuGrid";
+import { NavigationDropdown } from "../internals/NavigationDropdown";
+import { NavigationMenuGrid } from "../internals/NavigationMenuGrid";
 import { LanguageToggle } from "../../LanguageToggle";
-import { MobileNavigation } from "../mobile/MobileNavigation";
+import { MobileNavigation } from "../internals/mobile/MobileNavigation";
 import { ComplexNavProps } from "../Navigation.props";
-import { NavigationLink } from "../NavigationLink";
-import { useNavSetup } from "../useNavSetup";
-import { NavigationMenu } from "../NavigationMenu";
+import { NavigationLink } from "../internals/NavigationLink";
+import { useNavSetup } from "../internals/hooks/useNavSetup";
+import { NavigationMenu } from "../internals/NavigationMenu";
 
 const ComplexNav = forwardRef<HTMLElement, ComplexNavProps>(
   (
@@ -31,6 +31,7 @@ const ComplexNav = forwardRef<HTMLElement, ComplexNavProps>(
       ref: headerRef,
       isClient,
     } = useNavSetup({ menu: items, split: { desktop: 6, mobile: 5 } });
+    const cid = useId();
 
     useImperativeHandle(ref, () => headerRef.current as HTMLElement);
 
@@ -122,6 +123,7 @@ const ComplexNav = forwardRef<HTMLElement, ComplexNavProps>(
                         label: labels.more,
                         onClick: () => setIsMoreOpen(!isMoreOpen),
                         isOpen: isMoreOpen,
+                        controls: `${baseClass}_${cid}_dropdown`,
                       }
                     : undefined
                 }
@@ -147,7 +149,12 @@ const ComplexNav = forwardRef<HTMLElement, ComplexNavProps>(
           </nav>
         </div>
         {moreItems && isClient && (
-          <NavigationDropdown isOpen={isMoreOpen} navRef={headerRef}>
+          <NavigationDropdown
+            id={`${baseClass}_${cid}_dropdown`}
+            isOpen={isMoreOpen}
+            navRef={headerRef}
+            onClose={() => setIsMoreOpen(false)}
+          >
             <NavigationMenuGrid menu={moreItems} />
           </NavigationDropdown>
         )}

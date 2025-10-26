@@ -4,6 +4,7 @@ import classnames from "classnames";
 import { CardSize, HeadingTypes, ThemeTypes } from "../../types";
 import useGlobalSettings from "../../hooks/useGlobalSettings";
 import { List } from "../List";
+import { DynamicHeading } from "../DynamicHeading/DynamicHeading";
 
 export type FactListCardProps = {
   /**
@@ -44,7 +45,7 @@ const FactListCard = forwardRef<HTMLDivElement, FactListCardProps>(
       theme = "light",
       size = "narrow",
       list,
-      titleLevel: TitleElement = "p",
+      titleLevel = "p",
       className,
     },
     ref
@@ -68,9 +69,12 @@ const FactListCard = forwardRef<HTMLDivElement, FactListCardProps>(
         <div className={`${baseClass}--wrap`}>
           <div className={`${baseClass}--content`}>
             {title && (
-              <TitleElement className={`${prefix}--card--title`}>
+              <DynamicHeading
+                level={titleLevel}
+                className={`${prefix}--card--title`}
+              >
                 {title}
-              </TitleElement>
+              </DynamicHeading>
             )}
             <List alignment="default" ordered="unordered" theme={theme}>
               {list.map((item) => (
@@ -86,4 +90,70 @@ const FactListCard = forwardRef<HTMLDivElement, FactListCardProps>(
   }
 );
 
-export { FactListCard };
+export type FactListCardSkeletonProps = {
+  /**
+   * Specify an optional className to be added to your FactListCardSkeleton.
+   */
+  className?: string;
+
+  /**
+   * Will render the card to appear on light or dark backgrounds
+   */
+  theme?: ThemeTypes;
+
+  /**
+   * How big should the card be
+   */
+  size?: Omit<CardSize, "standard">;
+};
+
+const FactListCardSkeleton: React.FC<FactListCardSkeletonProps> = ({
+  className,
+  theme = "light",
+  size = "narrow",
+}) => {
+  const { prefix } = useGlobalSettings();
+  const baseClass = `${prefix}--card`;
+  const cardClasses = classnames(
+    baseClass,
+    `${baseClass}__type__factlist`,
+    className,
+    {
+      [`${baseClass}__size__${size as string}`]: size,
+      [`${baseClass}__theme__${theme}`]: theme,
+    }
+  );
+
+  return (
+    <div className={cardClasses}>
+      <div className={`${baseClass}--wrap`}>
+        <div className={`${baseClass}--content`}>
+          <div className={`${baseClass}--skeleton--title`} />
+          <List alignment="default" ordered="unordered" theme={theme}>
+            <List.Item>
+              <div className={`${baseClass}--skeleton--list-item`} />
+            </List.Item>
+            <List.Item>
+              <div className={`${baseClass}--skeleton--list-item`} />
+            </List.Item>
+            <List.Item>
+              <div className={`${baseClass}--skeleton--list-item`} />
+            </List.Item>
+            <List.Item>
+              <div className={`${baseClass}--skeleton--list-item`} />
+            </List.Item>
+            <List.Item>
+              <div className={`${baseClass}--skeleton--list-item`} />
+            </List.Item>
+          </List>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const FactListCardCombined = Object.assign(FactListCard, {
+  Skeleton: FactListCardSkeleton,
+});
+
+export { FactListCardCombined as FactListCard };

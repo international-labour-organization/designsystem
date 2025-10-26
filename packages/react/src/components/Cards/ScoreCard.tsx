@@ -6,6 +6,8 @@ import { Picture, PictureProps } from "../Picture";
 import { Status, StatusProps } from "../Status";
 import { Icon } from "../Icon";
 import { ButtonProps } from "../Button";
+import { DynamicHeading } from "../DynamicHeading/DynamicHeading";
+import { HeadingTypes } from "../../types";
 
 export type ScoreCardProps = {
   /**
@@ -16,7 +18,7 @@ export type ScoreCardProps = {
   /**
    * The title level (h1, h2, h3, p, etc.).
    */
-  titleLevel?: keyof JSX.IntrinsicElements;
+  titleLevel?: HeadingTypes;
 
   /**
    * The size of the card.
@@ -84,7 +86,7 @@ const ScoreCard = forwardRef<HTMLDivElement, ScoreCardProps>(
     {
       className,
       theme = "light",
-      titleLevel: TitleElement = "p",
+      titleLevel = "p",
       size = "narrow",
       link,
       linkComponent,
@@ -139,9 +141,12 @@ const ScoreCard = forwardRef<HTMLDivElement, ScoreCardProps>(
               <p className={`${baseClass}--eyebrow`}>{eyebrow}</p>
             )}
             {title && (
-              <TitleElement className={`${baseClass}--title`}>
+              <DynamicHeading
+                level={titleLevel}
+                className={`${baseClass}--title`}
+              >
                 {title}
-              </TitleElement>
+              </DynamicHeading>
             )}
             {content && (
               <div className={`${baseClass}--area--content`}>
@@ -169,4 +174,51 @@ const ScoreCard = forwardRef<HTMLDivElement, ScoreCardProps>(
   }
 );
 
-export { ScoreCard };
+export type ScoreCardSkeletonProps = {
+  /**
+   * The theme of the card.
+   */
+  theme?: "light" | "dark";
+
+  /**
+   * The size of the card.
+   */
+  size?: "narrow" | "wide" | "fluid";
+
+  /**
+   * Specify an optional className to be added to your ScoreCardSkeleton.
+   */
+  className?: string;
+};
+
+const ScoreCardSkeleton: React.FC<ScoreCardSkeletonProps> = ({
+  className,
+  theme = "light",
+  size = "narrow",
+}) => {
+  const { prefix } = useGlobalSettings();
+  const baseClass = `${prefix}--card`;
+  const cardClasses = classNames(baseClass, `${baseClass}__type__score`, {
+    [`${baseClass}__theme__${theme}`]: theme,
+    [`${baseClass}__size__${size}`]: size,
+  });
+
+  return (
+    <div className={classNames(cardClasses, className)}>
+      <div className={`${baseClass}--wrap`}>
+        <div className={`${baseClass}--skeleton--image`} />
+        <div className={`${baseClass}--content`}>
+          <div className={`${baseClass}--skeleton--eyebrow`} />
+          <div className={`${baseClass}--skeleton--title`} />
+          <div className={`${baseClass}--skeleton--date`} />
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const ScoreCardCombined = Object.assign(ScoreCard, {
+  Skeleton: ScoreCardSkeleton,
+});
+
+export { ScoreCardCombined as ScoreCard };

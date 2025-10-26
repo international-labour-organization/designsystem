@@ -5,6 +5,7 @@ import {
 } from "../src/components/LanguageToggle";
 import { describe, it, expect, afterEach } from "vitest";
 import { LinkProps } from "../src/components/Link";
+import { userEvent } from "@testing-library/user-event";
 
 afterEach(() => {
   // Clean up the portal after each test
@@ -131,5 +132,50 @@ describe("Language Toggle", () => {
 
     fireEvent.click(toggleButton as HTMLButtonElement);
     expect(toggleButton).toHaveAttribute("aria-expanded", "false");
+  });
+
+  it("should trap focus within the language menu when opened", async () => {
+    const { container, baseElement } = render(
+      <LanguageToggle {...defaultProps} />
+    );
+
+    const toggleButton = container.querySelector("button");
+    fireEvent.click(toggleButton as HTMLButtonElement);
+
+    const contextMenu = baseElement.querySelector(
+      ".ilo--language-toggle--context-menu"
+    ) as HTMLElement;
+
+    expect(contextMenu).toHaveClass("ilo--language-toggle--context-menu__open");
+
+    const focusableElements = contextMenu.querySelectorAll(
+      [
+        "a[href]:not([disabled])",
+        "button:not([disabled])",
+        "textarea:not([disabled])",
+        'input[type="text"]:not([disabled])',
+        'input[type="radio"]:not([disabled])',
+        'input[type="checkbox"]:not([disabled])',
+        'input[type="search"]:not([disabled])',
+        'input[type="submit"]:not([disabled])',
+        "select:not([disabled])",
+        '[tabindex]:not([tabindex="-1"]):not([disabled])',
+      ].join(",")
+    );
+
+    expect(focusableElements.length).toBeGreaterThan(0);
+
+    const firstElement = focusableElements[0] as HTMLElement;
+    const lastElement = focusableElements[
+      focusableElements.length - 1
+    ] as HTMLElement;
+
+    expect(firstElement).toHaveFocus();
+
+    await userEvent.tab({ shift: true });
+    expect(lastElement).toHaveFocus();
+
+    await userEvent.tab();
+    expect(firstElement).toHaveFocus();
   });
 });

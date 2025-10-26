@@ -3,6 +3,7 @@ import { forwardRef } from "react";
 
 import useGlobalSettings from "../../hooks/useGlobalSettings";
 import { Profile, ProfileProps } from "../Profile";
+import { DynamicHeading } from "../DynamicHeading/DynamicHeading";
 import { CardSize, EventDate, HeadingTypes, ThemeTypes } from "../../types";
 
 export type TextCardProps = {
@@ -62,7 +63,7 @@ const TextCard = forwardRef<HTMLDivElement, TextCardProps>(
       date,
       profile,
       link,
-      titleLevel: TitleElement = "p",
+      titleLevel = "p",
       eyebrow,
     },
     ref
@@ -86,9 +87,12 @@ const TextCard = forwardRef<HTMLDivElement, TextCardProps>(
           <div className={`${baseClass}--wrap`}>
             <div className={`${baseClass}--content`}>
               {eyebrow && <p className={`${baseClass}--eyebrow`}>{eyebrow}</p>}
-              <TitleElement className={`${baseClass}--title`}>
+              <DynamicHeading
+                level={titleLevel}
+                className={`${baseClass}--title`}
+              >
                 {title}
-              </TitleElement>
+              </DynamicHeading>
               {date && (
                 <time className={`${baseClass}--date`} dateTime={date.unix}>
                   {date.human}
@@ -112,4 +116,53 @@ const TextCard = forwardRef<HTMLDivElement, TextCardProps>(
   }
 );
 
-export { TextCard };
+export type TextCardSkeletonProps = {
+  /**
+   * Will render the card to appear on light or dark backgrounds
+   */
+  theme?: ThemeTypes;
+
+  /**
+   * How big should the card be
+   */
+  size?: Omit<CardSize, "standard">;
+
+  /**
+   * Specify an optional className to be added to your TextCardSkeleton.
+   */
+  className?: string;
+};
+
+const TextCardSkeleton: React.FC<TextCardSkeletonProps> = ({
+  className,
+  size,
+  theme,
+}) => {
+  const { prefix } = useGlobalSettings();
+  const baseClass = `${prefix}--card`;
+  const wrapperClass = classNames(`${baseClass}--wrapper`, className);
+  const cardClasses = classNames(baseClass, `${baseClass}__type__text`, {
+    [`${baseClass}__size__${String(size)}`]: size,
+    [`${baseClass}__theme__${theme}`]: theme,
+  });
+  return (
+    <div className={wrapperClass}>
+      <div className={cardClasses}>
+        <div className={`${baseClass}--wrap`}>
+          <div className={`${baseClass}--content`}>
+            <div className={`${baseClass}--skeleton--eyebrow`} />
+            <div className={`${baseClass}--skeleton--title`} />
+            <div className={`${baseClass}--skeleton--date`} />
+            <div className={`${baseClass}--skeleton--profile`} />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const TextCardCombined = Object.assign(TextCard, {
+  Skeleton: TextCardSkeleton,
+});
+
+export { TextCardCombined as TextCard };

@@ -230,3 +230,214 @@ describe("SubsiteNav", () => {
     });
   });
 });
+
+describe("MainNav", () => {
+  const mainNavFixtures = Object.assign({}, fixture, {
+    navtype: "main",
+    branding: {
+      tag: {
+        main: "Advancing social justice, promoting decent work",
+        sub: "ILO is a specialized agency of the United Nations",
+      },
+      logo: {
+        main: "images/logo_en_horizontal_white.svg",
+        mobile: "images/logo_en_horizontal_white.svg",
+        drawer: "images/logo_en_horizontal_blue.svg",
+        alt: "ILO Logo",
+        link: {
+          href: "https://live.ilo.org",
+          label: "ILO Live Homepage",
+        },
+      },
+    },
+  });
+
+  const mainNavUrl = `/pattern-preview?id=nav&fields=${encodeURI(
+    JSON.stringify(mainNavFixtures)
+  )}`;
+
+  beforeEach(() => {
+    cy.visit(mainNavUrl);
+    cy.get(".ilo--main-nav").as("mainNav");
+  });
+
+  describe("Initial Render", () => {
+    it("renders the main navigation with branding", () => {
+      cy.get("@mainNav").within(() => {
+        cy.get(".ilo--main-nav__branding").should("exist");
+        cy.get(".ilo--main-nav__branding-main__logo-img")
+          .should("exist")
+          .and("have.attr", "src", mainNavFixtures.branding.logo.main)
+          .and("have.attr", "alt", mainNavFixtures.branding.logo.alt);
+        cy.get(".ilo--main-nav__branding-tag__main").should(
+          "contain",
+          mainNavFixtures.branding.tag.main
+        );
+        cy.get(".ilo--main-nav__branding-tag__sub").should(
+          "contain",
+          mainNavFixtures.branding.tag.sub
+        );
+      });
+    });
+  });
+
+  describe("Dropdown Interactions", () => {
+    it("opens navigation dropdown when clicking more button", () => {
+      cy.get("@mainNav").within(() => {
+        cy.get(".ilo--nav-menu__more").click();
+      });
+
+      cy.get(".ilo--nav-dropdown").should("be.visible");
+      cy.get(".ilo__nav-extra-menu").should("exist");
+      cy.get(".ilo--nav-menu__more").should(
+        "have.attr",
+        "aria-expanded",
+        "true"
+      );
+    });
+
+    it("opens search dropdown when clicking search button", () => {
+      cy.get("@mainNav").within(() => {
+        cy.get(".ilo--main-nav__nav-search").click();
+      });
+
+      cy.get(".ilo--nav-dropdown").should("be.visible");
+      cy.get(".ilo--main-nav__nav-search-dropdown").should("exist");
+      cy.get(".ilo--main-nav__nav-search").should(
+        "have.attr",
+        "aria-expanded",
+        "true"
+      );
+    });
+
+    it("closes navigation dropdown when search dropdown opens", () => {
+      cy.get("@mainNav").within(() => {
+        cy.get(".ilo--nav-menu__more").click();
+      });
+      cy.get(".ilo__nav-extra-menu").should("be.visible");
+      cy.get(".ilo--nav-menu__more").should(
+        "have.attr",
+        "aria-expanded",
+        "true"
+      );
+
+      cy.get("@mainNav").within(() => {
+        cy.get(".ilo--main-nav__nav-search").click();
+      });
+
+      cy.get(".ilo__nav-extra-menu").should("not.be.visible");
+      cy.get(".ilo--main-nav__nav-search-dropdown").should("be.visible");
+      cy.get(".ilo--nav-menu__more").should(
+        "have.attr",
+        "aria-expanded",
+        "false"
+      );
+      cy.get(".ilo--main-nav__nav-search").should(
+        "have.attr",
+        "aria-expanded",
+        "true"
+      );
+    });
+
+    it("closes search dropdown when navigation dropdown opens", () => {
+      cy.get("@mainNav").within(() => {
+        cy.get(".ilo--main-nav__nav-search").click();
+      });
+      cy.get(".ilo--main-nav__nav-search-dropdown").should("be.visible");
+      cy.get(".ilo--main-nav__nav-search").should(
+        "have.attr",
+        "aria-expanded",
+        "true"
+      );
+
+      cy.get("@mainNav").within(() => {
+        cy.get(".ilo--nav-menu__more").click();
+      });
+
+      cy.get(".ilo--main-nav__nav-search-dropdown").should("not.be.visible");
+      cy.get(".ilo__nav-extra-menu").should("be.visible");
+      cy.get(".ilo--main-nav__nav-search").should(
+        "have.attr",
+        "aria-expanded",
+        "false"
+      );
+      cy.get(".ilo--nav-menu__more").should(
+        "have.attr",
+        "aria-expanded",
+        "true"
+      );
+    });
+
+    it("closes both dropdowns when clicking outside", () => {
+      cy.get("@mainNav").within(() => {
+        cy.get(".ilo--nav-menu__more").click();
+      });
+      cy.get(".ilo--nav-dropdown").should("be.visible");
+
+      cy.get("body").click(0, 0);
+      cy.get(".ilo--nav-dropdown").should("not.be.visible");
+      cy.get(".ilo--nav-menu__more").should(
+        "have.attr",
+        "aria-expanded",
+        "false"
+      );
+
+      cy.get("@mainNav").within(() => {
+        cy.get(".ilo--main-nav__nav-search").click();
+      });
+      cy.get(".ilo--nav-dropdown").should("be.visible");
+
+      cy.get("body").click(0, 0);
+      cy.get(".ilo--nav-dropdown").should("not.be.visible");
+      cy.get(".ilo--main-nav__nav-search").should(
+        "have.attr",
+        "aria-expanded",
+        "false"
+      );
+    });
+
+    it("toggles navigation dropdown on multiple clicks", () => {
+      cy.get("@mainNav").within(() => {
+        cy.get(".ilo--nav-menu__more").click();
+      });
+      cy.get(".ilo--nav-dropdown").should("be.visible");
+      cy.get(".ilo--nav-menu__more").should(
+        "have.attr",
+        "aria-expanded",
+        "true"
+      );
+
+      cy.get("@mainNav").within(() => {
+        cy.get(".ilo--nav-menu__more").click();
+      });
+      cy.get(".ilo--nav-dropdown").should("not.be.visible");
+      cy.get(".ilo--nav-menu__more").should(
+        "have.attr",
+        "aria-expanded",
+        "false"
+      );
+    });
+
+    it("toggles search dropdown on multiple clicks", () => {
+      cy.get("@mainNav").within(() => {
+        cy.get(".ilo--main-nav__nav-search").click();
+      });
+      cy.get(".ilo--nav-dropdown").should("be.visible");
+      cy.get(".ilo--main-nav__nav-search").should(
+        "have.attr",
+        "aria-expanded",
+        "true"
+      );
+
+      cy.get("@mainNav").within(() => {
+        cy.get(".ilo--main-nav__nav-search").click();
+      });
+      cy.get(".ilo--nav-dropdown").should("not.be.visible");
+      cy.get(".ilo--main-nav__nav-search").should(
+        "have.attr",
+        "aria-expanded",
+        "false"
+      );
+    });
+  });
+});

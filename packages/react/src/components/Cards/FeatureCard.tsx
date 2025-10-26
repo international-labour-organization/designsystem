@@ -3,6 +3,7 @@ import classNames from "classnames";
 
 import useGlobalSettings from "../../hooks/useGlobalSettings";
 import { LinkList, LinkListProps } from "../LinkList";
+import { DynamicHeading } from "../DynamicHeading/DynamicHeading";
 import { CardSize, EventDate, HeadingTypes, ThemeTypes } from "../../types";
 
 export type FeatureCardProps = {
@@ -70,7 +71,7 @@ const FeatureCard = forwardRef<HTMLDivElement, FeatureCardProps>(
       link,
       linklist,
       image,
-      titleLevel: TitleElement = "p",
+      titleLevel = "p",
       eyebrow,
       isVideo,
     },
@@ -113,9 +114,12 @@ const FeatureCard = forwardRef<HTMLDivElement, FeatureCardProps>(
           )}
           <div className={`${baseClass}--content`}>
             {eyebrow && <p className={`${baseClass}--eyebrow`}>{eyebrow}</p>}
-            <TitleElement className={`${baseClass}--title`}>
+            <DynamicHeading
+              level={titleLevel}
+              className={`${baseClass}--title`}
+            >
               {title}
-            </TitleElement>
+            </DynamicHeading>
             {date && (
               <time className={`${baseClass}--date`} dateTime={date.unix}>
                 {date.human}
@@ -142,4 +146,55 @@ const FeatureCard = forwardRef<HTMLDivElement, FeatureCardProps>(
   }
 );
 
-export { FeatureCard };
+export type FeatureCardSkeletonProps = {
+  /**
+   * Specify an optional className to be added to your FeatureCardSkeleton.
+   */
+  className?: string;
+
+  /**
+   * Will render the card to appear on light or dark backgrounds
+   */
+  theme?: ThemeTypes;
+
+  /**
+   * How big should the card be
+   */
+  size?: Omit<CardSize, "standard">;
+};
+
+const FeatureCardSkeleton: React.FC<FeatureCardSkeletonProps> = ({
+  className,
+  size,
+  theme,
+}) => {
+  const { prefix } = useGlobalSettings();
+  const baseClass = `${prefix}--card`;
+  const cardClasses = classNames(
+    baseClass,
+    className,
+    `${baseClass}__type__feature`,
+    {
+      [`${baseClass}__size__${String(size)}`]: size,
+      [`${baseClass}__theme__${theme}`]: theme,
+    }
+  );
+  return (
+    <div className={cardClasses}>
+      <div className={`${baseClass}--wrap`}>
+        <div className={`${baseClass}--skeleton--image`} />
+        <div className={`${baseClass}--content`}>
+          <div className={`${baseClass}--skeleton--eyebrow`} />
+          <div className={`${baseClass}--skeleton--title`} />
+          <div className={`${baseClass}--skeleton--date`} />
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const FeatureCardCombined = Object.assign(FeatureCard, {
+  Skeleton: FeatureCardSkeleton,
+});
+
+export { FeatureCardCombined as FeatureCard };

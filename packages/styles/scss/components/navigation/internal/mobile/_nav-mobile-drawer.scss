@@ -1,0 +1,60 @@
+@use "../../../../tokens" as *;
+@use "../../../../functions" as *;
+@import "../../../../mixins";
+@import "../../../../config";
+
+.ilo--nav-mobile-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--ilo-color-white);
+  transform: translateX(100%);
+  transition: transform 225ms ease-in-out;
+  z-index: 2;
+
+  &--open {
+    transform: translateX(0);
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: spacing(4);
+    color: var(--ilo-color-white);
+
+    &-main {
+      display: flex;
+      align-items: center;
+      flex-grow: 1;
+      gap: spacing(4);
+    }
+
+    &-close {
+      border: none;
+      background-color: var(--ilo-color-gray-light);
+      width: px-to-rem(32px);
+      height: px-to-rem(32px);
+      margin-top: -3px;
+
+      &__icon {
+        display: block;
+        width: px-to-rem(32px);
+        height: px-to-rem(32px);
+        @include icon("close", var(--ilo-color-blue-dark));
+      }
+    }
+  }
+  &__container {
+    padding: spacing(4);
+  }
+
+  &__widgets {
+    padding-bottom: spacing(4);
+    margin-bottom: spacing(4);
+    border-bottom: 4px solid var(--ilo-color-gray-light);
+    overflow-y: auto;
+  }
+}

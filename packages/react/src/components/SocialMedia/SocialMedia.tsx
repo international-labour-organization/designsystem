@@ -2,6 +2,7 @@ import classNames from "classnames";
 import { forwardRef } from "react";
 import { SocialMediaProps } from "./SocialMedia.props";
 import { useGlobalSettings } from "../../hooks";
+import { DynamicHeading } from "../DynamicHeading/DynamicHeading";
 
 const SocialMedia = forwardRef<HTMLDivElement, SocialMediaProps>(
   (
@@ -12,6 +13,7 @@ const SocialMedia = forwardRef<HTMLDivElement, SocialMediaProps>(
       headline,
       icons,
       iconSize = "normal",
+      titleLevel = "h5",
     },
     ref
   ) => {
@@ -29,7 +31,14 @@ const SocialMedia = forwardRef<HTMLDivElement, SocialMediaProps>(
         )}
         ref={ref}
       >
-        {headline && <h5 className={`${baseClass}--headline`}>{headline}</h5>}
+        {headline && (
+          <DynamicHeading
+            level={titleLevel}
+            className={`${baseClass}--headline`}
+          >
+            {headline}
+          </DynamicHeading>
+        )}
         <ul
           className={classNames(
             `${baseClass}--list`,

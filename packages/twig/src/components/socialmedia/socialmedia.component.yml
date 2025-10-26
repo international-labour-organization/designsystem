@@ -31,6 +31,17 @@ socialmedia:
         large: large
       preview: normal
       defaultValue: normal
+    titleLevel:
+      type: select
+      label: Headline Title Level
+      description: Select the title level for the headline.
+      required: false
+      options:
+        h2: h2
+        h3: h3
+        h4: h4
+        h5: h5
+      preview: "h5"
   fields:
     headline:
       type: string
@@ -73,6 +84,15 @@ socialmedia:
         - icon: "wechat"
           label: "WeChat"
           url: "https://weixin.qq.com"
+        - icon: "spotify"
+          label: "Spotify"
+          url: "https://open.spotify.com/user/iloorg"
+        - icon: "apple_podcasts"
+          label: "Apple Podcasts"
+          url: "https://podcasts.apple.com"
+        - icon: "rss"
+          label: "RSS"
+          url: "https://ilo.org/rss.xml"
 
       required: true
   visibility: storybook

@@ -18,6 +18,29 @@
       position: relative;
       width: 100%;
 
+      &#{$self}__loading {
+        --ilo-skeleton-element-background-color: var(--ilo-color-gray-base);
+        background-color: var(--ilo-color-gray-light);
+      }
+
+      #{$self}--skeleton--eyebrow {
+        @include skeleton-element(12px, 20%);
+      }
+
+      #{$self}--skeleton--image {
+        @include skeleton-element(279px, 200px);
+        margin-top: spacing(8);
+      }
+
+      #{$self}--skeleton--label {
+        @include skeleton-element(14px, 20%);
+      }
+
+      #{$self}--skeleton--copy {
+        @include skeleton-element(14px, 100%);
+        margin-top: spacing(2);
+      }
+
       &--content {
         &-links-list {
           display: flex;

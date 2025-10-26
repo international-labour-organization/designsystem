@@ -10,6 +10,7 @@ import {
 } from "../../types";
 import { LinkProps } from "../Link";
 import { Button } from "../Button";
+import { DynamicHeading } from "../DynamicHeading/DynamicHeading";
 
 export type PromoCardProps = {
   /**
@@ -74,7 +75,7 @@ const PromoCard = forwardRef<HTMLDivElement, PromoCardProps>(
       intro,
       link,
       cta,
-      titleLevel: TitleElement = "p",
+      titleLevel = "p",
       eyebrow,
     },
     ref
@@ -104,9 +105,12 @@ const PromoCard = forwardRef<HTMLDivElement, PromoCardProps>(
           <div className={`${baseClass}--wrap`}>
             <div className={`${baseClass}--content`}>
               {eyebrow && <p className={`${baseClass}--eyebrow`}>{eyebrow}</p>}
-              <TitleElement className={`${baseClass}--title`}>
+              <DynamicHeading
+                level={titleLevel}
+                className={`${baseClass}--title`}
+              >
                 {title}
-              </TitleElement>
+              </DynamicHeading>
               {intro && <p className={`${baseClass}--intro`}>{intro}</p>}
               {cta?.label && (
                 <div className={`${baseClass}--cta`}>
@@ -125,4 +129,59 @@ const PromoCard = forwardRef<HTMLDivElement, PromoCardProps>(
   }
 );
 
-export { PromoCard };
+export type PromoCardSkeletonProps = {
+  /**
+   * Specify an optional className to be added to your PromoCardSkeleton.
+   */
+  className?: string;
+
+  /**
+   * Will render the card to appear on light or dark backgrounds
+   */
+  theme?: ThemeTypes;
+
+  /**
+   * How big should the card be
+   */
+  size?: CardSize;
+};
+
+const PromoCardSkeleton: React.FC<PromoCardSkeletonProps> = ({
+  className,
+  theme = "light",
+  size = "narrow",
+}) => {
+  const { prefix } = useGlobalSettings();
+  const baseClass = `${prefix}--card`;
+  const wrapperClass = classNames(
+    `${baseClass}--wrapper`,
+    className,
+    `${baseClass}--wrapper__type__promo`,
+    `${baseClass}--wrapper__type__promo__size__${size}`
+  );
+  const cardClasses = classNames(baseClass, `${baseClass}__type__promo`, {
+    [`${baseClass}__size__${String(size)}`]: size,
+    [`${baseClass}__theme__${theme}`]: theme,
+  });
+
+  return (
+    <div className={wrapperClass}>
+      <div className={cardClasses}>
+        <div className={`${baseClass}--wrap`}>
+          <div className={`${baseClass}--skeleton--eyebrow`} />
+          <div className={`${baseClass}--skeleton--title-1`} />
+          <div className={`${baseClass}--skeleton--title-2`} />
+          <div className={`${baseClass}--skeleton--intro-1`} />
+          <div className={`${baseClass}--skeleton--intro-2`} />
+          <div className={`${baseClass}--skeleton--intro-3`} />
+        </div>
+      </div>
+    </div>
+  );
+};
+
+const PromoCardCombined = Object.assign(PromoCard, {
+  Skeleton: PromoCardSkeleton,
+});
+
+export { PromoCardCombined as PromoCard };

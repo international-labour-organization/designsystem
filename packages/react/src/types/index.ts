@@ -50,7 +50,10 @@ export type SocialTypes =
   | "flickr"
   | "wechat"
   | "weibo"
-  | "bluesky";
+  | "bluesky"
+  | "spotify"
+  | "apple_podcasts"
+  | "rss";
 export type CardColor = "turquoise" | "green" | "yellow" | "blue";
 export type CardSize = "wide" | "standard" | "narrow" | "fluid";
 export type CardCornerType = boolean;
