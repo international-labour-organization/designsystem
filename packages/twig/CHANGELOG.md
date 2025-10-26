@@ -1,5 +1,23 @@
 # @ilo-org/twig
 
+## 1.10.0
+
+### Minor Changes
+
+- c85faa3ce: **MainNav**: New navigation component that will replace the old `Navigation` one
+- ac6bccd14: **List**: Dynamic title level support added via `titleLevel` variable (defaults to `h2`).
+  **LinkList**: Dynamic title level support added via `titleLevel` variable (defaults to `h3`).
+  **SocialMedia**: Dynamic title level support added via `titleLevel` variable (defaults to `h5`).
+
+### Patch Changes
+
+- Updated dependencies [f430e7f13]
+- Updated dependencies [450c1901e]
+- Updated dependencies [758f543a1]
+- Updated dependencies [1cfa21a41]
+  - @ilo-org/styles@1.10.0
+  - @ilo-org/icons@2.3.0
+
 ## 1.9.0
 
 ### Minor Changes
