@@ -1,5 +1,22 @@
 # @ilo-org/styles
 
+## 1.10.0
+
+### Minor Changes
+
+- f430e7f13: **MainNav**: New main navigation styles;
+- 758f543a1: **Cards:** Each card now has a loading skeleton that can be used in React.
+
+  ```tsx
+  <Card.Skeleton {...args}>
+  ```
+
+### Patch Changes
+
+- 1cfa21a41: **SocialMedia:** Add `spotify`, `apple_podcasts` and `rss` to social media options
+- Updated dependencies [450c1901e]
+  - @ilo-org/icons@2.3.0
+
 ## 1.9.0
 
 ### Minor Changes
