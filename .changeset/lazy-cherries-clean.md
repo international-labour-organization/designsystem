@@ -1,15 +1,10 @@
 ---
 "@ilo-org/react": minor
-"@ilo-org/styles": patch
+"@ilo-org/styles": minor
 ---
 
-Implemented loading skeleton components for cards.
-**FeatureCardSkeleton:** added
-**TextCardSkeleton:** added
-**DetailCardSkeleton:** added
-**PromoCardSkeleton:** added
-**MultiLinkCardSkeleton:** added
-**DataCardSkeleton:** added
-**FactsListCardSkeleton:** added
-**StatsCardSkeleton:** added
-**ScoreCardSkeleton:** added
+**Cards:** Each card now has a loading skeleton that can be used in React.
+
+```tsx
+<Card.Skeleton {...args}>
+```
