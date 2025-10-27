@@ -146,6 +146,16 @@ export const AudioPlayer: React.FC<AudioPlayerProps> = ({
     }
   };
 
+  const handleVolumeChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const newVolume = Number(event.target.value) / 100;
+    dispatch({ type: "SET_VOLUME", volume: newVolume });
+  };
+  useEffect(() => {
+    if (audioRef.current) {
+      audioRef.current.volume = state.volume;
+    }
+  }, [state.volume]);
+
   return (
     <div className={audioPlayerClasses}>
       <div
@@ -159,9 +169,11 @@ export const AudioPlayer: React.FC<AudioPlayerProps> = ({
       >
         <div
           className={`${baseClass}--progress-complete`}
-          style={{
-            width: `${getProgressPercentage(state.currentTime, state.totalTime)}%`,
-          }}
+          style={
+            {
+              "--progress": `${getProgressPercentage(state.currentTime, state.totalTime)}%`,
+            } as React.CSSProperties
+          }
         />
       </div>
       <div className={`${baseClass}--body`}>
@@ -215,9 +227,21 @@ export const AudioPlayer: React.FC<AudioPlayerProps> = ({
             </p>
           </div>
           <div className={`${baseClass}--separator`}></div>
-          <button className={`${baseClass}--volume`}>
-            <Icon className={`${baseClass}--volume-icon`} name="SoundOn" />
-          </button>
+          <Icon className={`${baseClass}--volume-icon`} name="SoundOn" />
+          <input
+            type="range"
+            className={`${baseClass}--volume-slider`}
+            style={
+              {
+                "--progress": `${state.volume * 100}%`,
+              } as React.CSSProperties
+            }
+            value={state.volume * 100}
+            onChange={handleVolumeChange}
+            min={0}
+            max={100}
+            step={10}
+          ></input>
         </div>
       </div>
       <audio
