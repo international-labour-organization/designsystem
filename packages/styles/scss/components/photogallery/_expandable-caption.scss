@@ -1,0 +1,114 @@
+@use "../../tokens" as *;
+@use "../../functions" as *;
+@import "../../mixins";
+@import "../../config";
+
+.ilo--photo-gallery-expandable-caption {
+  position: relative;
+  $self: &;
+  min-height: px-to-rem(56px);
+
+  &__preview {
+    padding: spacing(4);
+    min-height: px-to-rem(56px);
+    display: flex;
+    justify-content: space-between;
+    gap: spacing(1);
+    align-items: center;
+    color: var(--ilo-color-white);
+    animation: slideDown 0.2s ease-out;
+  }
+
+  &__text {
+    @include typography("body-xsmall");
+    line-height: normal;
+    position: relative;
+    padding-left: spacing(4);
+    flex: 1;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin: 0;
+
+    [dir="rtl"] & {
+      padding-left: 0;
+      padding-right: spacing(4);
+      text-align: right;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: px-to-rem(3px);
+      height: 100%;
+      background-color: var(--ilo-color-gray-light);
+
+      [dir="rtl"] & {
+        left: auto;
+        right: 0;
+      }
+    }
+  }
+
+  &__toggle {
+    border: none;
+    outline: none;
+    width: px-to-rem(24px);
+    height: px-to-rem(24px);
+    background: transparent;
+    color: var(--ilo-color-white);
+    cursor: pointer;
+    flex-shrink: 0;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  &--expanded {
+    #{$self}__preview {
+      overflow: visible;
+      white-space: normal;
+      text-overflow: unset;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.8);
+      color: var(--ilo-color-white);
+      animation: slideUp 0.2s ease-out;
+      align-items: flex-start;
+    }
+
+    #{$self}__text {
+      overflow: visible;
+      white-space: normal;
+      text-overflow: unset;
+    }
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

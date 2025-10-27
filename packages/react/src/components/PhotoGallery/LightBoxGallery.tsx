@@ -10,6 +10,7 @@ import {
   useKeyboardControls,
   usePhotoGalleryControls,
 } from "./PhotoGalleryControls";
+import { ExpandableCaption } from "./ExpandableCaption";
 
 interface LightBoxProps {
   items: PhotoGalleryItem[];
@@ -101,6 +102,12 @@ function LightBoxGallery({
         </div>
       </div>
       <div className={`${baseClass}__bar`}>
+        {items[currentIndex]?.caption && isActive && (
+          <ExpandableCaption
+            caption={items[currentIndex].caption}
+            className={`${baseClass}__caption`}
+          />
+        )}
         <div className={`${baseClass}__extra`}>
           <p className={`${baseClass}__extra-text`}>
             {items[currentIndex]?.caption}
@@ -134,6 +141,15 @@ function LightBoxGallery({
               ))}
             </div>
           </div>
+        </div>
+        <div className={`${baseClass}__controls`}>
+          <PhotoGalleryControls
+            onNext={controls.onNextButtonClick}
+            onPrev={controls.onPrevButtonClick}
+            onFirst={controls.onFirstButtonClick}
+            onLast={controls.onLastButtonClick}
+            indicator={{ current: currentIndex + 1, total: items.length }}
+          />
         </div>
       </div>
     </div>

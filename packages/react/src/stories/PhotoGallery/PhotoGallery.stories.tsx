@@ -19,7 +19,8 @@ const Default: StoryObj<PhotoGalleryProps> = {
     items: [
       {
         url: "/medium.jpg",
-        caption: "Lorem ipsum dolor sit amet consectetur adipiscing elit.",
+        caption:
+          "Lorem ipsum dolor sit amet consectetur adipiscing elit, Lorem ipsum dolor sit amet consectetur adipiscing elit, and then is some random text to make it longer. Lorem ipsum dolor sit amet consectetur adipiscing elit.",
         credit: "Photo by John Doe",
       },
       {
