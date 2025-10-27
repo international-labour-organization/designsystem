@@ -10,7 +10,6 @@
   }
   &--progress-complete {
     height: 100%;
-    width: 40%;
     background-color: var(--ilo-color-yellow-500);
     position: absolute;
     top: 0;
@@ -50,6 +49,10 @@
     align-items: center;
     gap: spacing(3);
   }
+  &--skip-button {
+    border: none;
+    display: flex;
+  }
   &--play-button {
     display: flex;
     align-items: center;
@@ -57,6 +60,7 @@
     border-radius: 50%;
     cursor: pointer;
     padding: spacing(1);
+    border: none;
   }
   &--play-button:hover {
     background-color: var(--ilo-color-brand-100);
