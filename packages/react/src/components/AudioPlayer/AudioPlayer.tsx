@@ -137,13 +137,30 @@ export const AudioPlayer: React.FC<AudioPlayerProps> = ({
     }
   };
 
+  const handleProgressBarClick = (event: React.MouseEvent<HTMLDivElement>) => {
+    if (audioRef.current) {
+      const rect = event.currentTarget.getBoundingClientRect();
+      const clickX = event.clientX - rect.left;
+      const newTime = (clickX / rect.width) * state.totalTime;
+      audioRef.current.currentTime = newTime;
+    }
+  };
+
   return (
     <div className={audioPlayerClasses}>
-      <div className={`${baseClass}--progress-bar`}>
+      <div
+        role="progressbar"
+        tabIndex={-1}
+        aria-valuenow={state.currentTime}
+        aria-valuemin={0}
+        aria-valuemax={state.totalTime}
+        className={`${baseClass}--progress-bar`}
+        onClick={handleProgressBarClick}
+      >
         <div
           className={`${baseClass}--progress-complete`}
           style={{
-            width: getProgressPercentage(state.currentTime, state.totalTime),
+            width: `${getProgressPercentage(state.currentTime, state.totalTime)}%`,
           }}
         />
       </div>
