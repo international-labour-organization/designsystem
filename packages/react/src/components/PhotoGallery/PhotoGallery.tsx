@@ -23,12 +23,14 @@ export interface PhotoGalleryProps {
   items: PhotoGalleryItem[];
   fit?: "cover" | "contain" | "fill";
   withKeyboardControls?: boolean;
+  thubmnailColumns?: 1 | 2;
 }
 
 function PhotoGallery({
   items,
   fit = "cover",
   withKeyboardControls = false,
+  thubmnailColumns = 1,
 }: PhotoGalleryProps) {
   const { prefix } = useGlobalSettings();
   const [emblaRef, emblaAPI] = useEmblaCarousel({
@@ -96,6 +98,7 @@ function PhotoGallery({
         </div>
       </div>
       <PhotoGalleryThumbnails
+        columns={thubmnailColumns}
         items={items}
         selected={index}
         onSelect={(index) => {

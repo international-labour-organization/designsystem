@@ -16,6 +16,7 @@
   justify-content: space-between;
   gap: spacing(2);
   overflow: hidden;
+  flex-wrap: wrap;
 
   &__thumbnail {
     width: var(--ilo-photo_gallery-thumbnails-width);
