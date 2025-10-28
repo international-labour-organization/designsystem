@@ -78,8 +78,8 @@ function LightBoxGallery({
               <div className={`${coreClass}__slide`} key={index}>
                 <figure className={`${coreClass}__image-wrapper`}>
                   <img
-                    src={item.url as string}
-                    alt={item.credit || `Photo ${index + 1}`}
+                    src={item.src}
+                    alt={item.alt || item.credit || `Photo ${index + 1}`}
                   />
                   {item.credit && (
                     <figcaption
@@ -133,8 +133,8 @@ function LightBoxGallery({
                     onClick={() => onThumbnailClick(index)}
                   >
                     <img
-                      src={item.url as string}
-                      alt={item.credit || `Thumbnail ${index + 1}`}
+                      src={item.src}
+                      alt={item.alt || item.credit || `Thumbnail ${index + 1}`}
                     />
                   </button>
                 </div>

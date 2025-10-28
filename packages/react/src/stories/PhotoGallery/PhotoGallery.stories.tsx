@@ -18,75 +18,95 @@ const Default: StoryObj<PhotoGalleryProps> = {
   args: {
     items: [
       {
-        url: "/medium.jpg",
+        src: "/medium.jpg",
         caption:
-          "Lorem ipsum dolor sit amet consectetur adipiscing elit, Lorem ipsum dolor sit amet consectetur adipiscing elit, and then is some random text to make it longer. Lorem ipsum dolor sit amet consectetur adipiscing elit.",
+          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
         credit: "Photo by John Doe",
+        alt: "Lorem ipsum dolor sit amet",
       },
       {
-        url: "/hero.jpg",
+        src: "/hero.jpg",
         caption: "Lorem ipsum dolor sit amet consectetur adipiscing elit.",
         credit: "Photo by Jane Smith",
+        alt: "Lorem ipsum dolor sit amet",
       },
       {
-        url: "/ilo-headquarters-portrait.png",
-        caption: "Lorem ipsum dolor sit amet consectetur adipiscing elit.",
-        credit: "Photo by Alex Johnson",
-      },
-      {
-        url: "/medium.jpg",
-        caption: "Lorem ipsum dolor sit amet consectetur adipiscing elit.",
-        credit: "Photo by John Doe",
-      },
-      {
-        url: "/medium.jpg",
-        caption: "Lorem ipsum dolor sit amet consectetur adipiscing elit.",
-        credit: "Photo by John Doe",
-      },
-      {
-        url: "/medium.jpg",
-        caption: "Lorem ipsum dolor sit amet consectetur adipiscing elit.",
-        credit: "Photo by John Doe",
-      },
-      {
-        url: "/medium.jpg",
-        caption: "Lorem ipsum dolor sit amet consectetur adipiscing elit.",
-        credit: "Photo by John Doe",
-      },
-      {
-        url: "/medium.jpg",
-        caption: "Lorem ipsum dolor sit amet consectetur adipiscing elit.",
-        credit: "Photo by John Doe",
-      },
-      {
-        url: "/hero.jpg",
+        src: "/hero.jpg",
         caption: "Lorem ipsum dolor sit amet consectetur adipiscing elit.",
         credit: "Photo by Jane Smith",
+        alt: "Lorem ipsum dolor sit amet",
       },
       {
-        url: "/ilo-headquarters-portrait.png",
+        src: "/ilo-headquarters-portrait.png",
         caption: "Lorem ipsum dolor sit amet consectetur adipiscing elit.",
         credit: "Photo by Alex Johnson",
+        alt: "Lorem ipsum dolor sit amet",
       },
       {
-        url: "/medium.jpg",
+        src: "/medium.jpg",
         caption: "Lorem ipsum dolor sit amet consectetur adipiscing elit.",
         credit: "Photo by John Doe",
+        alt: "Lorem ipsum dolor sit amet",
       },
       {
-        url: "/medium.jpg",
+        src: "/medium.jpg",
         caption: "Lorem ipsum dolor sit amet consectetur adipiscing elit.",
         credit: "Photo by John Doe",
+        alt: "Lorem ipsum dolor sit amet",
       },
       {
-        url: "/medium.jpg",
+        src: "/medium.jpg",
         caption: "Lorem ipsum dolor sit amet consectetur adipiscing elit.",
         credit: "Photo by John Doe",
+        alt: "Lorem ipsum dolor sit amet",
       },
       {
-        url: "/medium.jpg",
+        src: "/medium.jpg",
         caption: "Lorem ipsum dolor sit amet consectetur adipiscing elit.",
         credit: "Photo by John Doe",
+        alt: "Lorem ipsum dolor sit amet",
+      },
+      {
+        src: "/medium.jpg",
+        caption: "Lorem ipsum dolor sit amet consectetur adipiscing elit.",
+        credit: "Photo by John Doe",
+        alt: "Lorem ipsum dolor sit amet",
+      },
+      {
+        src: "/hero.jpg",
+        caption: "Lorem ipsum dolor sit amet consectetur adipiscing elit.",
+        credit: "Photo by Jane Smith",
+        alt: "Lorem ipsum dolor sit amet",
+      },
+      {
+        src: "/ilo-headquarters-portrait.png",
+        caption: "Lorem ipsum dolor sit amet consectetur adipiscing elit.",
+        credit: "Photo by Alex Johnson",
+        alt: "Lorem ipsum dolor sit amet",
+      },
+      {
+        src: "/medium.jpg",
+        caption: "Lorem ipsum dolor sit amet consectetur adipiscing elit.",
+        credit: "Photo by John Doe",
+        alt: "Lorem ipsum dolor sit amet",
+      },
+      {
+        src: "/medium.jpg",
+        caption: "Lorem ipsum dolor sit amet consectetur adipiscing elit.",
+        credit: "Photo by John Doe",
+        alt: "Lorem ipsum dolor sit amet",
+      },
+      {
+        src: "/medium.jpg",
+        caption: "Lorem ipsum dolor sit amet consectetur adipiscing elit.",
+        credit: "Photo by John Doe",
+        alt: "Lorem ipsum dolor sit amet",
+      },
+      {
+        src: "/medium.jpg",
+        caption: "Lorem ipsum dolor sit amet consectetur adipiscing elit.",
+        credit: "Photo by John Doe",
+        alt: "Lorem ipsum dolor sit amet",
       },
     ],
   },
@@ -117,5 +137,29 @@ const Portrait: StoryObj<PhotoGalleryProps> = Object.assign({}, Default, {
   },
 });
 
+const TwoColumnThumbnails: StoryObj<PhotoGalleryProps> = Object.assign(
+  {},
+  Default,
+  {
+    args: {
+      ...Default.args,
+      thubmnailColumns: 2,
+    },
+  }
+);
+
+const WithoutCaption: StoryObj<PhotoGalleryProps> = Object.assign({}, Default, {
+  args: {
+    ...Default.args,
+    captionView: "hidden",
+  },
+});
+
 export default meta;
-export { Default, Portrait, WithKeyboardControls };
+export {
+  Default,
+  Portrait,
+  WithKeyboardControls,
+  TwoColumnThumbnails,
+  WithoutCaption,
+};

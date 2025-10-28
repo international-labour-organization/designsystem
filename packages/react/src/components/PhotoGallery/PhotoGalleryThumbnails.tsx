@@ -69,7 +69,12 @@ function PhotoGalleryThumbnails({
   );
 
   return (
-    <div className={baseClass} ref={wrapperRef} id={`${baseClass}--${cid}`}>
+    <div
+      className={baseClass}
+      ref={wrapperRef}
+      id={`${baseClass}--${cid}`}
+      style={{ flexWrap: columns > 1 ? "wrap" : "nowrap" }}
+    >
       {toDisplay.map((item, index) => (
         <button
           key={index}
@@ -78,10 +83,7 @@ function PhotoGalleryThumbnails({
           }`}
           onClick={() => onSelect?.(index)}
         >
-          <img
-            src={item.url as string}
-            alt={item.credit || `Thumbnail ${index + 1}`}
-          />
+          <img src={item.src} alt={item.credit || `Thumbnail ${index + 1}`} />
         </button>
       ))}
       <button className={`${baseClass}__see-all`} onClick={() => onSeeAll?.()}>

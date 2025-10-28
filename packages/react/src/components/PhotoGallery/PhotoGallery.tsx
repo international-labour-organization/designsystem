@@ -1,10 +1,9 @@
 /* eslint-disable jsx-a11y/no-noninteractive-tabindex */
 import useEmblaCarousel from "embla-carousel-react";
-import { PictureProps } from "../Picture";
 import { useGlobalSettings } from "../../hooks";
 import classNames from "classnames";
 import { Image } from "../Image";
-import { useEffect, useState } from "react";
+import { ImgHTMLAttributes, useEffect, useState } from "react";
 import {
   PhotoGalleryControls,
   useKeyboardControls,
@@ -14,9 +13,11 @@ import { PhotoGalleryThumbnails } from "./PhotoGalleryThumbnails";
 import { LightBox } from "./LightBox";
 import { LightBoxGallery } from "./LightBoxGallery";
 
-export type PhotoGalleryItem = PictureProps & {
+export type PhotoGalleryItem = ImgHTMLAttributes<HTMLImageElement> & {
   credit?: string;
   caption?: string;
+  src: string;
+  alt: string;
 };
 
 export interface PhotoGalleryProps {
@@ -24,6 +25,7 @@ export interface PhotoGalleryProps {
   fit?: "cover" | "contain" | "fill";
   withKeyboardControls?: boolean;
   thubmnailColumns?: 1 | 2;
+  captionView?: "visible" | "hidden" | "ifExists";
 }
 
 function PhotoGallery({
@@ -31,6 +33,7 @@ function PhotoGallery({
   fit = "cover",
   withKeyboardControls = false,
   thubmnailColumns = 1,
+  captionView = "visible",
 }: PhotoGalleryProps) {
   const { prefix } = useGlobalSettings();
   const [emblaRef, emblaAPI] = useEmblaCarousel({
@@ -78,25 +81,32 @@ function PhotoGallery({
           <div className={`${coreClass}__container`}>
             {items.map((item, index) => (
               <div className={`${coreClass}__slide`} key={index}>
-                <Image
-                  caption={item.caption}
-                  credit={item.credit}
-                  url={[
-                    {
-                      src: item.url as string,
-                      breakpoint: 800,
-                    },
-                  ]}
+                <div
                   className={classNames(
                     `${coreClass}__image`,
                     `${coreClass}__image--${fit}`
                   )}
-                />
+                >
+                  <Image
+                    credit={item.credit}
+                    url={[
+                      {
+                        src: item.src,
+                        breakpoint: 800,
+                      },
+                    ]}
+                  />
+                </div>
               </div>
             ))}
           </div>
         </div>
       </div>
+      {captionView !== "hidden" &&
+        (captionView === "visible" ||
+        (captionView === "ifExists" && items[index].caption) ? (
+          <div className={`${baseClass}__caption`}>{items[index].caption}</div>
+        ) : null)}
       <PhotoGalleryThumbnails
         columns={thubmnailColumns}
         items={items}

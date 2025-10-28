@@ -6,6 +6,9 @@
 .ilo--photo-gallery {
   --ilo-photo_gallery-target-height: 210px;
   background-color: var(--ilo-color-white);
+  display: flex;
+  flex-direction: column;
+  gap: spacing(4);
 
   @include breakpoint("md") {
     --ilo-photo_gallery-target-height: 420px;
@@ -91,7 +94,7 @@
       position: absolute;
       z-index: 2;
       right: spacing(4);
-      bottom: calc(px-to-rem(35px) + px-to-rem(10px));
+      bottom: px-to-rem(10px);
       visibility: hidden;
       opacity: 0;
       transition:
@@ -107,6 +110,35 @@
     &:hover &__controls {
       visibility: visible;
       opacity: 1;
+    }
+  }
+
+  &__caption {
+    @include typography("body-small");
+    color: var(--ilo-color-gray-accessible);
+    padding-left: spacing(4);
+    position: relative;
+
+    [dir="rtl"] & {
+      padding-left: 0;
+      padding-right: spacing(4);
+      text-align: right;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: px-to-rem(3px);
+      height: 100%;
+      background-color: var(--ilo-color-gray-base);
+
+      [dir="rtl"] & {
+        left: auto;
+        right: 0;
+      }
     }
   }
 }
