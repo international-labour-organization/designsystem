@@ -227,7 +227,10 @@ export const AudioPlayer: React.FC<AudioPlayerProps> = ({
             </p>
           </div>
           <div className={`${baseClass}--separator`}></div>
-          <Icon className={`${baseClass}--volume-icon`} name="SoundOn" />
+          <Icon
+            className={`${baseClass}--volume-icon`}
+            name={state.volume === 0 ? "SoundOff" : "SoundOn"}
+          />
           <input
             type="range"
             className={`${baseClass}--volume-slider`}
