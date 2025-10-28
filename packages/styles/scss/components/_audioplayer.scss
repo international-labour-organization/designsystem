@@ -1,8 +1,7 @@
 @use "../functions" as *;
+@import "../mixins";
 
 .ilo--audio-player {
-  position: relative;
-
   &--progress-bar {
     height: px-to-rem(8px);
     background-color: var(--ilo-color-gray-accessible);
@@ -19,14 +18,22 @@
     left: 0;
   }
   &--body {
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      "left left"
+      "center right";
     align-items: center;
     color: var(--ilo-color-gray-light);
     background-color: var(--ilo-color-gray-charcoal);
-    padding: spacing(3);
+    padding: spacing(3) 0;
+    row-gap: spacing(3);
   }
   &--left {
-    flex: 1;
+    grid-area: left;
+    border-bottom: 1px solid var(--ilo-color-gray-accessible);
+    padding: 0 spacing(3) spacing(3) spacing(3);
   }
   &--track-name {
     font-size: var(--ilo-font-size-sm);
@@ -42,15 +49,19 @@
     content: "•";
     margin-right: spacing(2);
   }
+  &--track-programme {
+    text-wrap: nowrap;
+  }
   &--track-creator {
     margin-left: spacing(2);
+    text-wrap: nowrap;
   }
   &--center {
-    flex: 1;
+    grid-area: center;
     display: flex;
-    justify-content: center;
     align-items: center;
     gap: spacing(3);
+    padding-left: spacing(3);
   }
   &--skip-button {
     border: none;
@@ -72,10 +83,11 @@
     color: var(--ilo-color-brand-800);
   }
   &--right {
-    flex: 1;
+    grid-area: right;
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    padding-right: spacing(3);
   }
   &--duration-played {
     font-size: var(--ilo-font-size-sm);
@@ -96,6 +108,7 @@
     background: var(--ilo-color-yellow-500);
     border-radius: 4px;
     height: 4px;
+    width: 30%;
     background: linear-gradient(
       to right,
       var(--ilo-color-yellow-500) 0%,
@@ -115,5 +128,21 @@
     border-radius: 50%;
     cursor: pointer;
     margin-top: -2px; // Center thumb on track
+  }
+
+  @include breakpoint("md") {
+    &--body {
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: auto;
+      grid-template-areas: "left center right";
+    }
+    &--left {
+      border-bottom: none;
+      padding: 0 0 0 spacing(3);
+    }
+    &--center {
+      justify-content: center;
+      padding: 0;
+    }
   }
 }
