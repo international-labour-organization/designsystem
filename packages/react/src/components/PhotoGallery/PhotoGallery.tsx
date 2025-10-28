@@ -12,6 +12,7 @@ import {
 import { PhotoGalleryThumbnails } from "./PhotoGalleryThumbnails";
 import { LightBox } from "./LightBox";
 import { LightBoxGallery } from "./LightBoxGallery";
+import { Icon } from "../Icon";
 
 export type PhotoGalleryItem = ImgHTMLAttributes<HTMLImageElement> & {
   credit?: string;
@@ -68,6 +69,14 @@ function PhotoGallery({
   return (
     <div className={baseClass} tabIndex={0}>
       <div className={`${baseClass}__core`}>
+        <button
+          className={`${coreClass}__zoom`}
+          type="button"
+          onClick={() => setIsLightboxOpen(true)}
+          aria-label="Open lightbox"
+        >
+          <Icon name="fullscreen" size={32} />
+        </button>
         <div className={`${coreClass}__controls`}>
           <PhotoGalleryControls
             onNext={controls.onNextButtonClick}

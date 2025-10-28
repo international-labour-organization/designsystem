@@ -111,6 +111,32 @@
       visibility: visible;
       opacity: 1;
     }
+
+    &__zoom {
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: 2;
+      background: var(--ilo-color-gray-light);
+      border: none;
+      width: px-to-rem(40px);
+      height: px-to-rem(40px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--ilo-color-blue-dark);
+      cursor: pointer;
+
+      &:hover {
+        background: var(--ilo-color-blue-lighter);
+        color: var(--ilo-color-blue);
+      }
+
+      &:focus {
+        outline: 2px solid var(--ilo-color-blue);
+        outline-offset: 2px;
+      }
+    }
   }
 
   &__caption {
