@@ -19,19 +19,31 @@ const Default: StoryObj<PhotoGalleryProps> = {
     items: [
       {
         src: "/medium.jpg",
+        caption: "Lorem ipsum dolor sit amet consectetur adipiscing elit.",
+        credit: "Photo by John Doe",
+        alt: "Lorem ipsum dolor sit amet",
+      },
+      {
+        src: "/hero.jpg",
+        caption: "Lorem ipsum dolor sit amet consectetur adipiscing elit.",
+        credit: "Photo by Jane Smith",
+        alt: "Lorem ipsum dolor sit amet",
+      },
+      {
+        src: "/ilo-headquarters.jpg",
+        caption: "Lorem ipsum dolor sit amet consectetur adipiscing elit.",
+        credit: "Photo by John Doe",
+        alt: "Lorem ipsum dolor sit amet",
+      },
+      {
+        src: "/16x9.jpg",
         caption:
           "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
         credit: "Photo by John Doe",
         alt: "Lorem ipsum dolor sit amet",
       },
       {
-        src: "/hero.jpg",
-        caption: "Lorem ipsum dolor sit amet consectetur adipiscing elit.",
-        credit: "Photo by Jane Smith",
-        alt: "Lorem ipsum dolor sit amet",
-      },
-      {
-        src: "/hero.jpg",
+        src: "/media-file-poster.jpg",
         caption: "Lorem ipsum dolor sit amet consectetur adipiscing elit.",
         credit: "Photo by Jane Smith",
         alt: "Lorem ipsum dolor sit amet",
@@ -49,31 +61,26 @@ const Default: StoryObj<PhotoGalleryProps> = {
         alt: "Lorem ipsum dolor sit amet",
       },
       {
-        src: "/medium.jpg",
-        caption: "Lorem ipsum dolor sit amet consectetur adipiscing elit.",
-        credit: "Photo by John Doe",
-        alt: "Lorem ipsum dolor sit amet",
-      },
-      {
-        src: "/medium.jpg",
-        caption: "Lorem ipsum dolor sit amet consectetur adipiscing elit.",
-        credit: "Photo by John Doe",
-        alt: "Lorem ipsum dolor sit amet",
-      },
-      {
-        src: "/medium.jpg",
-        caption: "Lorem ipsum dolor sit amet consectetur adipiscing elit.",
-        credit: "Photo by John Doe",
-        alt: "Lorem ipsum dolor sit amet",
-      },
-      {
-        src: "/medium.jpg",
-        caption: "Lorem ipsum dolor sit amet consectetur adipiscing elit.",
-        credit: "Photo by John Doe",
-        alt: "Lorem ipsum dolor sit amet",
-      },
-      {
         src: "/hero.jpg",
+        caption: "Lorem ipsum dolor sit amet consectetur adipiscing elit.",
+        credit: "Photo by Jane Smith",
+        alt: "Lorem ipsum dolor sit amet",
+      },
+      {
+        src: "/ilo-headquarters.jpg",
+        caption: "Lorem ipsum dolor sit amet consectetur adipiscing elit.",
+        credit: "Photo by John Doe",
+        alt: "Lorem ipsum dolor sit amet",
+      },
+      {
+        src: "/16x9.jpg",
+        caption:
+          "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+        credit: "Photo by John Doe",
+        alt: "Lorem ipsum dolor sit amet",
+      },
+      {
+        src: "/media-file-poster.jpg",
         caption: "Lorem ipsum dolor sit amet consectetur adipiscing elit.",
         credit: "Photo by Jane Smith",
         alt: "Lorem ipsum dolor sit amet",
@@ -82,30 +89,6 @@ const Default: StoryObj<PhotoGalleryProps> = {
         src: "/ilo-headquarters-portrait.png",
         caption: "Lorem ipsum dolor sit amet consectetur adipiscing elit.",
         credit: "Photo by Alex Johnson",
-        alt: "Lorem ipsum dolor sit amet",
-      },
-      {
-        src: "/medium.jpg",
-        caption: "Lorem ipsum dolor sit amet consectetur adipiscing elit.",
-        credit: "Photo by John Doe",
-        alt: "Lorem ipsum dolor sit amet",
-      },
-      {
-        src: "/medium.jpg",
-        caption: "Lorem ipsum dolor sit amet consectetur adipiscing elit.",
-        credit: "Photo by John Doe",
-        alt: "Lorem ipsum dolor sit amet",
-      },
-      {
-        src: "/medium.jpg",
-        caption: "Lorem ipsum dolor sit amet consectetur adipiscing elit.",
-        credit: "Photo by John Doe",
-        alt: "Lorem ipsum dolor sit amet",
-      },
-      {
-        src: "/medium.jpg",
-        caption: "Lorem ipsum dolor sit amet consectetur adipiscing elit.",
-        credit: "Photo by John Doe",
         alt: "Lorem ipsum dolor sit amet",
       },
     ],
