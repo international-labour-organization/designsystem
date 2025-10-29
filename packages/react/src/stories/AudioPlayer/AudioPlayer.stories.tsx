@@ -17,7 +17,7 @@ const meta: Meta<typeof AudioPlayer> = {
 const Default: StoryObj = {
   name: "Default",
   args: {
-    src: "https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3",
+    src: "/audio-example.mp3",
     name: "Sample Track",
     programme: "Sample Programme",
     creator: "Sample Creator",
