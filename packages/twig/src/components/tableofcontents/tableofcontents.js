@@ -1,5 +1,3 @@
-import { EVENTS } from "@ilo-org/utils";
-
 /**
  * The TableOfContents module which handles control and display of a TableOfContents dialog
  *
@@ -90,14 +88,12 @@ export default class TableOfContents {
    * @chainable
    */
   enable() {
-    this.OpenButton.addEventListener(EVENTS.CLICK, () =>
-      this.OpenButtonHandler()
-    );
-    this.CloseButton.addEventListener(EVENTS.CLICK, () => this.CloseHandler());
+    this.OpenButton.addEventListener("click", () => this.OpenButtonHandler());
+    this.CloseButton.addEventListener("click", () => this.CloseHandler());
 
     if (this.tocItems.length > 0) {
       this.tocItems.forEach((link) => {
-        link.addEventListener(EVENTS.CLICK, () => this.linkClickHandler());
+        link.addEventListener("click", () => this.linkClickHandler());
       });
     }
 
@@ -119,7 +115,7 @@ export default class TableOfContents {
       this.modalUx.classList.add("fadein");
       this.toc.classList.add("fadein");
     }, 125);
-    window.addEventListener(EVENTS.KEY_DOWN, (e) => this.KeyPressHandler(e));
+    window.addEventListener("keydown", (e) => this.KeyPressHandler(e));
 
     return this;
   }
@@ -139,7 +135,7 @@ export default class TableOfContents {
       this.element.classList.remove("show");
       this.trigger.classList.remove("hide");
     }, 125);
-    window.removeEventListener(EVENTS.KEY_DOWN, (e) => this.KeyPressHandler(e));
+    window.removeEventListener("keydown", (e) => this.KeyPressHandler(e));
 
     return this;
   }

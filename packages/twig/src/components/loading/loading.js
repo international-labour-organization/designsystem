@@ -1,10 +1,8 @@
-import { EVENTS } from "@ilo-org/utils";
-
 /**
  * The Loading module which handles rendering field labels inline on a form.
  *
  * To use this, you'll need to have the Javascript that's making the API call send custom events equal to
- * the constants EVENTS.ITEMSLOADED and EVENTS.ITEMSLOADING to the document. Send EVENTS.ITEMSLOADING when the  * API call is made, and EVENTS.ITEMSLOADED when the data has successfully loaded.
+ * the constants "itemsloaded" and "itemsloading" to the document. Send "itemsloading" when the  * API call is made, and "itemsloaded" when the data has successfully loaded.
  *
  * @class Loading
  */
@@ -66,8 +64,8 @@ export default class Loading {
    * @chainable
    */
   enable() {
-    document.addEventListener(EVENTS.ITEMSLOADING, () => this.LoadingHandler);
-    document.addEventListener(EVENTS.ITEMSLOADED, () => this.LoadedHandler);
+    document.addEventListener("itemsloading", () => this.LoadingHandler);
+    document.addEventListener("itemsloaded", () => this.LoadedHandler);
 
     return this;
   }
