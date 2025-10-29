@@ -33,7 +33,8 @@
   &--left {
     grid-area: left;
     border-bottom: 1px solid var(--ilo-color-gray-accessible);
-    padding: 0 spacing(3) spacing(3) spacing(3);
+    padding-inline: spacing(3);
+    padding-block-end: spacing(3);
   }
   &--track-name {
     font-size: var(--ilo-font-size-sm);
@@ -61,7 +62,7 @@
     display: flex;
     align-items: center;
     gap: spacing(3);
-    padding-left: spacing(3);
+    padding-inline-start: spacing(3);
   }
   &--skip-button {
     border: none;
@@ -87,7 +88,7 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    padding-right: spacing(3);
+    padding-inline-end: spacing(3);
   }
   &--duration-played {
     font-size: var(--ilo-font-size-sm);
@@ -138,7 +139,8 @@
     }
     &--left {
       border-bottom: none;
-      padding: 0 0 0 spacing(3);
+      padding-inline: spacing(3) 0;
+      padding-block: 0;
     }
     &--center {
       justify-content: center;
