@@ -104,7 +104,7 @@ function LightBoxGallery({
       <div className={`${baseClass}__bar`}>
         {items[currentIndex]?.caption && isActive && (
           <ExpandableCaption
-            caption={items[currentIndex].caption}
+            caption={items[currentIndex].caption!}
             className={`${baseClass}__caption`}
           />
         )}
