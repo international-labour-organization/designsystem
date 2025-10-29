@@ -193,6 +193,7 @@ export const AudioPlayer: React.FC<AudioPlayerProps> = ({
           </button>
           <button
             className={`${baseClass}--play-button`}
+            aria-label={state.playing ? "Pause" : "Play"}
             onClick={togglePlaying}
           >
             {!state.playing && (
