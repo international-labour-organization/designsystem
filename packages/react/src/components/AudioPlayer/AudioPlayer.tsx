@@ -95,17 +95,15 @@ export const AudioPlayer: React.FC<AudioPlayerProps> = ({
 
   // Example: handle play/pause
   const togglePlaying = () => {
-    dispatch({ type: "TOGGLE_PLAYING" });
-  };
-  useEffect(() => {
     if (audioRef.current) {
-      if (state.playing) {
+      if (!state.playing) {
         audioRef.current.play();
       } else {
         audioRef.current.pause();
       }
     }
-  }, [state.playing]);
+    dispatch({ type: "TOGGLE_PLAYING" });
+  };
 
   const handleLoadedMetadata = () => {
     if (audioRef.current) {
@@ -148,13 +146,11 @@ export const AudioPlayer: React.FC<AudioPlayerProps> = ({
 
   const handleVolumeChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const newVolume = Number(event.target.value) / 100;
+    if (audioRef.current) {
+      audioRef.current.volume = newVolume;
+    }
     dispatch({ type: "SET_VOLUME", volume: newVolume });
   };
-  useEffect(() => {
-    if (audioRef.current) {
-      audioRef.current.volume = state.volume;
-    }
-  }, [state.volume]);
 
   return (
     <div className={audioPlayerClasses}>
@@ -188,6 +184,7 @@ export const AudioPlayer: React.FC<AudioPlayerProps> = ({
           <button
             className={`${baseClass}--skip-button`}
             onClick={handleSkipBackward}
+            aria-label="Rewind 15 seconds"
           >
             <Icon name="Ffbackward_15" />
           </button>
@@ -214,6 +211,7 @@ export const AudioPlayer: React.FC<AudioPlayerProps> = ({
           <button
             className={`${baseClass}--skip-button`}
             onClick={handleSkipForward}
+            aria-label="Fast forward 15 seconds"
           >
             <Icon name="Fforward_15" />
           </button>
