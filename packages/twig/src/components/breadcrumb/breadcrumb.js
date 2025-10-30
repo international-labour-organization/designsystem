@@ -107,7 +107,7 @@ export default class Breadcrumb {
     window.addEventListener("resize", (e) => this.onResize(e));
     if (this.contextButton) {
       // When the context button gets clicked
-      this.contextButton.addEventListener(EVENTS.CLICK, (e) => this.onClick(e));
+      this.contextButton.addEventListener("click", (e) => this.onClick(e));
 
       // We only need the keydown handler to manage tab navigation when the
       // context menu is visible
