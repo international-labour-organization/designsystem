@@ -217,4 +217,7 @@ const MultiLinkCardCombined = Object.assign(MultiLinkCard, {
   Skeleton: MultiLinkCardSkeleton,
 });
 
+MultiLinkCardCombined.displayName = "MultiLinkCard";
+MultiLinkCardCombined.Skeleton.displayName = "MultiLinkCard.Skeleton";
+
 export { MultiLinkCardCombined as MultiLinkCard };

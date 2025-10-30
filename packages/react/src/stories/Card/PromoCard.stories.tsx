@@ -32,5 +32,14 @@ const Default: StoryObj<PromoCardProps> = {
   },
 };
 
+const Skeleton: StoryObj<PromoCardProps> = {
+  name: "Skeleton",
+  args: {
+    theme: "light",
+    size: "narrow",
+  },
+  render: (props) => <PromoCard.Skeleton {...props} />,
+};
+
 export default meta;
-export { Default };
+export { Default, Skeleton };

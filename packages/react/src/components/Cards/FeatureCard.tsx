@@ -197,4 +197,7 @@ const FeatureCardCombined = Object.assign(FeatureCard, {
   Skeleton: FeatureCardSkeleton,
 });
 
+FeatureCardCombined.displayName = "FeatureCard";
+FeatureCardCombined.Skeleton.displayName = "FeatureCard.Skeleton";
+
 export { FeatureCardCombined as FeatureCard };

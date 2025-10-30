@@ -184,4 +184,7 @@ const PromoCardCombined = Object.assign(PromoCard, {
   Skeleton: PromoCardSkeleton,
 });
 
+PromoCardCombined.displayName = "PromoCard";
+PromoCardCombined.Skeleton.displayName = "PromoCard.Skeleton";
+
 export { PromoCardCombined as PromoCard };

@@ -221,4 +221,7 @@ const ScoreCardCombined = Object.assign(ScoreCard, {
   Skeleton: ScoreCardSkeleton,
 });
 
+ScoreCardCombined.displayName = "ScoreCard";
+ScoreCardCombined.Skeleton.displayName = "ScoreCard.Skeleton";
+
 export { ScoreCardCombined as ScoreCard };
