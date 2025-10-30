@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import { useEffect, useReducer, useRef } from "react";
+import { useReducer, useRef } from "react";
 import { Icon } from "../Icon";
 import useGlobalSettings from "../../hooks/useGlobalSettings";
 
@@ -97,7 +97,7 @@ export const AudioPlayer: React.FC<AudioPlayerProps> = ({
   const togglePlaying = () => {
     if (audioRef.current) {
       if (!state.playing) {
-        audioRef.current.play();
+        void audioRef.current.play();
       } else {
         audioRef.current.pause();
       }
