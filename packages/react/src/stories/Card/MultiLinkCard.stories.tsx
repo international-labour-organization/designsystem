@@ -62,5 +62,15 @@ const Default: StoryObj<MultiLinkCardProps> = {
   },
 };
 
+const Skeleton: StoryObj<MultiLinkCardProps> = {
+  name: "Skeleton",
+  args: {
+    theme: "light",
+    size: "standard",
+    alignment: "left",
+  },
+  render: (props) => <MultiLinkCard.Skeleton {...props} />,
+};
+
 export default meta;
-export { Default };
+export { Default, Skeleton };

@@ -238,4 +238,7 @@ const DetailCardCombined = Object.assign(DetailCard, {
   Skeleton: DetailCardSkeleton,
 });
 
+DetailCardCombined.displayName = "DetailCard";
+DetailCardCombined.Skeleton.displayName = "DetailCard.Skeleton";
+
 export { DetailCardCombined as DetailCard };

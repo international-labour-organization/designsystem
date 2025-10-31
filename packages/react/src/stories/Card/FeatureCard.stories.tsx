@@ -56,5 +56,13 @@ const Default: StoryObj<FeatureCardProps> = {
   },
 };
 
+const Skeleton: StoryObj<FeatureCardProps> = {
+  args: {
+    theme: "light",
+    size: "narrow",
+  },
+  render: (props) => <FeatureCard.Skeleton {...props} />,
+};
+
 export default meta;
-export { Default };
+export { Default, Skeleton };
