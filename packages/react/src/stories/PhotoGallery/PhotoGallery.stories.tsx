@@ -126,7 +126,7 @@ const TwoColumnThumbnails: StoryObj<PhotoGalleryProps> = Object.assign(
   {
     args: {
       ...Default.args,
-      thubmnailColumns: 2,
+      thubmnailRows: 2,
     },
   }
 );

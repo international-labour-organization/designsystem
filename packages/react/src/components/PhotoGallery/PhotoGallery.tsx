@@ -25,7 +25,7 @@ export interface PhotoGalleryProps {
   items: PhotoGalleryItem[];
   fit?: "cover" | "contain" | "fill";
   withKeyboardControls?: boolean;
-  thubmnailColumns?: 1 | 2;
+  thubmnailRows?: 1 | 2;
   captionView?: "visible" | "hidden" | "ifExists";
 }
 
@@ -33,7 +33,7 @@ function PhotoGallery({
   items,
   fit = "cover",
   withKeyboardControls = false,
-  thubmnailColumns = 1,
+  thubmnailRows = 1,
   captionView = "visible",
 }: PhotoGalleryProps) {
   const { prefix } = useGlobalSettings();
@@ -117,7 +117,7 @@ function PhotoGallery({
           <div className={`${baseClass}__caption`}>{items[index].caption}</div>
         ) : null)}
       <PhotoGalleryThumbnails
-        columns={thubmnailColumns}
+        columns={thubmnailRows}
         items={items}
         selected={index}
         onSelect={(index) => {
