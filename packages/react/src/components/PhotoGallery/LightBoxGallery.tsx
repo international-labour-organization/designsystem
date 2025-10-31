@@ -15,7 +15,7 @@ import { ExpandableCaption } from "./ExpandableCaption";
 interface LightBoxProps {
   items: PhotoGalleryItem[];
   parentIndex?: number;
-  onSelect?: (index: number) => void;
+  onSelect: (index: number) => void;
   isActive?: boolean;
 }
 
@@ -27,9 +27,9 @@ function LightBoxGallery({
 }: LightBoxProps) {
   const { prefix } = useGlobalSettings();
   const [currentIndex, setCurrentIndex] = useState(parentIndex);
+
   const [emblaRef, emblaAPI] = useEmblaCarousel({
     loop: true,
-    startIndex: parentIndex,
     direction: document.dir === "rtl" ? "rtl" : "ltr",
     duration: 30,
   });
@@ -47,9 +47,10 @@ function LightBoxGallery({
 
   const onSelect = () => {
     if (!emblaAPI || !thumbAPI) return;
-    setCurrentIndex(emblaAPI.selectedScrollSnap());
-    parentOnSelect?.(emblaAPI.selectedScrollSnap());
-    thumbAPI.scrollTo(emblaAPI.selectedScrollSnap());
+    const index = emblaAPI.selectedScrollSnap();
+    setCurrentIndex(index);
+    parentOnSelect(index);
+    thumbAPI.scrollTo(index);
   };
 
   const onThumbnailClick = (index: number) => {
@@ -63,8 +64,15 @@ function LightBoxGallery({
     emblaAPI.on("select", onSelect).on("reInit", onSelect);
 
     return () => {
-      emblaAPI.off("select", onSelect).off("reInit", onSelect);
+      emblaAPI.off("select", onSelect);
     };
+  }, [emblaAPI]);
+
+  useEffect(() => {
+    if (!emblaAPI) return;
+
+    // Sync parent index on
+    emblaAPI.scrollTo(parentIndex, true);
   }, [emblaAPI]);
 
   useKeyboardControls(emblaAPI, isActive);

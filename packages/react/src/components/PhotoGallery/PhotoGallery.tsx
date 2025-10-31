@@ -131,14 +131,16 @@ function PhotoGallery({
         isOpen={isLightboxOpen}
         onClose={() => setIsLightboxOpen(false)}
       >
-        <LightBoxGallery
-          items={items}
-          parentIndex={index}
-          onSelect={(index) => {
-            emblaAPI?.scrollTo(index);
-          }}
-          isActive={isLightboxOpen}
-        />
+        {isLightboxOpen && (
+          <LightBoxGallery
+            items={items}
+            parentIndex={index}
+            onSelect={(index) => {
+              emblaAPI?.scrollTo(index);
+            }}
+            isActive={isLightboxOpen}
+          />
+        )}
       </LightBox>
     </div>
   );
