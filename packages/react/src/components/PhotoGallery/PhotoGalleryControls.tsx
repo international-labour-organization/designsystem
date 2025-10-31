@@ -1,7 +1,7 @@
-import { EmblaCarouselType } from "embla-carousel/components/EmblaCarousel";
 import { HTMLAttributes, useCallback, useEffect } from "react";
 import classNames from "classnames";
 import { useGlobalSettings } from "../../hooks";
+import { UseEmblaCarouselType } from "embla-carousel-react";
 
 type PhotoGalleryControlsProps = HTMLAttributes<HTMLDivElement> & {
   onNext: () => void;
@@ -14,7 +14,9 @@ type PhotoGalleryControlsProps = HTMLAttributes<HTMLDivElement> & {
   };
 };
 
-function usePhotoGalleryControls(emblaApi: EmblaCarouselType | undefined) {
+type EmblaCarouselType = UseEmblaCarouselType[1];
+
+function usePhotoGalleryControls(emblaApi: EmblaCarouselType) {
   const onPrevButtonClick = useCallback(() => {
     if (!emblaApi) return;
     emblaApi.scrollPrev();
