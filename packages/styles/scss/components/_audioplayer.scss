@@ -117,6 +117,15 @@
       var(--ilo-color-gray-accessible) var(--progress, 50%),
       var(--ilo-color-gray-accessible) 100%
     );
+    [dir="rtl"] & {
+      background: linear-gradient(
+        to left,
+        var(--ilo-color-yellow-500) 0%,
+        var(--ilo-color-yellow-500) var(--progress, 50%),
+        var(--ilo-color-gray-accessible) var(--progress, 50%),
+        var(--ilo-color-gray-accessible) 100%
+      );
+    }
   }
   &--volume-slider::-webkit-slider-thumb {
     // Reset default styles

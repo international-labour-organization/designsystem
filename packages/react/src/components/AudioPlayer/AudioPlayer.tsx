@@ -37,24 +37,32 @@ const initialState = {
   volume: 1,
 };
 
+enum AudioPlayerActionType {
+  INITIALIZE = "INITIALIZE",
+  SET_PLAYING = "SET_PLAYING",
+  UPDATE_TIME = "UPDATE_TIME",
+  SEEK_TO = "SEEK_TO",
+  SET_VOLUME = "SET_VOLUME",
+}
+
 type AudioPlayerAction =
-  | { type: "INITIALIZE"; totalTime: number }
-  | { type: "TOGGLE_PLAYING" }
-  | { type: "UPDATE_TIME"; time: number }
-  | { type: "SEEK_TO"; time: number }
-  | { type: "SET_VOLUME"; volume: number };
+  | { type: AudioPlayerActionType.INITIALIZE; totalTime: number }
+  | { type: AudioPlayerActionType.SET_PLAYING; playing: boolean }
+  | { type: AudioPlayerActionType.UPDATE_TIME; time: number }
+  | { type: AudioPlayerActionType.SEEK_TO; time: number }
+  | { type: AudioPlayerActionType.SET_VOLUME; volume: number };
 
 const reducer = (state: typeof initialState, action: AudioPlayerAction) => {
   switch (action.type) {
-    case "INITIALIZE":
+    case AudioPlayerActionType.INITIALIZE:
       return { ...state, totalTime: action.totalTime };
-    case "TOGGLE_PLAYING":
-      return { ...state, playing: !state.playing };
-    case "UPDATE_TIME":
+    case AudioPlayerActionType.SET_PLAYING:
+      return { ...state, playing: action.playing };
+    case AudioPlayerActionType.UPDATE_TIME:
       return { ...state, currentTime: action.time };
-    case "SEEK_TO":
+    case AudioPlayerActionType.SEEK_TO:
       return { ...state, currentTime: action.time };
-    case "SET_VOLUME":
+    case AudioPlayerActionType.SET_VOLUME:
       return { ...state, volume: action.volume };
     default:
       return state;
@@ -93,27 +101,42 @@ export const AudioPlayer: React.FC<AudioPlayerProps> = ({
 
   const audioRef = useRef<HTMLAudioElement>(null);
 
-  // Example: handle play/pause
   const togglePlaying = () => {
     if (audioRef.current) {
       if (!state.playing) {
         void audioRef.current.play();
+        dispatch({ type: AudioPlayerActionType.SET_PLAYING, playing: true });
       } else {
         audioRef.current.pause();
+        dispatch({ type: AudioPlayerActionType.SET_PLAYING, playing: false });
       }
     }
-    dispatch({ type: "TOGGLE_PLAYING" });
+  };
+
+  // Handle audio playback controls embedded in the browser
+  const handlePlay = () => {
+    dispatch({ type: AudioPlayerActionType.SET_PLAYING, playing: true });
+  };
+
+  const handlePause = () => {
+    dispatch({ type: AudioPlayerActionType.SET_PLAYING, playing: false });
   };
 
   const handleLoadedMetadata = () => {
     if (audioRef.current) {
-      dispatch({ type: "INITIALIZE", totalTime: audioRef.current.duration });
+      dispatch({
+        type: AudioPlayerActionType.INITIALIZE,
+        totalTime: audioRef.current.duration,
+      });
     }
   };
 
   const handleTimeUpdate = () => {
     if (audioRef.current) {
-      dispatch({ type: "UPDATE_TIME", time: audioRef.current.currentTime });
+      dispatch({
+        type: AudioPlayerActionType.UPDATE_TIME,
+        time: audioRef.current.currentTime,
+      });
     }
   };
 
@@ -149,7 +172,7 @@ export const AudioPlayer: React.FC<AudioPlayerProps> = ({
     if (audioRef.current) {
       audioRef.current.volume = newVolume;
     }
-    dispatch({ type: "SET_VOLUME", volume: newVolume });
+    dispatch({ type: AudioPlayerActionType.SET_VOLUME, volume: newVolume });
   };
 
   return (
@@ -193,20 +216,11 @@ export const AudioPlayer: React.FC<AudioPlayerProps> = ({
             aria-label={state.playing ? "Pause" : "Play"}
             onClick={togglePlaying}
           >
-            {!state.playing && (
-              <Icon
-                className={`${baseClass}--play-icon`}
-                name="TriangleRight"
-                size={32}
-              />
-            )}
-            {state.playing && (
-              <Icon
-                className={`${baseClass}--play-icon`}
-                name="Pause"
-                size={32}
-              />
-            )}
+            <Icon
+              className={`${baseClass}--play-icon`}
+              name={state.playing ? "Pause" : "TriangleRight"}
+              size={32}
+            />
           </button>
           <button
             className={`${baseClass}--skip-button`}
@@ -252,6 +266,8 @@ export const AudioPlayer: React.FC<AudioPlayerProps> = ({
         preload="metadata"
         onLoadedMetadata={handleLoadedMetadata}
         onTimeUpdate={handleTimeUpdate}
+        onPlay={handlePlay}
+        onPause={handlePause}
       />
     </div>
   );
