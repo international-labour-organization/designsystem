@@ -1,5 +1,5 @@
 import classNames from "classnames";
-import { useReducer, useRef } from "react";
+import { useEffect, useReducer, useRef } from "react";
 import { Icon } from "../Icon";
 import useGlobalSettings from "../../hooks/useGlobalSettings";
 
@@ -28,6 +28,11 @@ export interface AudioPlayerProps {
    * The name of the creator of the audio track
    */
   creator: string;
+
+  /**
+   * Callback function that is invoked when the audio track ends
+   */
+  onEnded?: () => void;
 }
 
 const initialState = {
@@ -92,6 +97,7 @@ export const AudioPlayer: React.FC<AudioPlayerProps> = ({
   programme,
   creator,
   src,
+  onEnded,
 }) => {
   const { prefix } = useGlobalSettings();
   const baseClass = `${prefix}--audio-player`;
@@ -174,6 +180,27 @@ export const AudioPlayer: React.FC<AudioPlayerProps> = ({
     }
     dispatch({ type: AudioPlayerActionType.SET_VOLUME, volume: newVolume });
   };
+
+  // Make the component behave better in multi-track scenarios
+  useEffect(() => {
+    // Reset current time when src changes
+    if (audioRef.current) {
+      audioRef.current.currentTime = 0;
+      dispatch({ type: AudioPlayerActionType.UPDATE_TIME, time: 0 });
+
+      // Retain playing state if already playing
+      if (state.playing) {
+        void audioRef.current.play();
+      }
+
+      // The audio element automatically pauses when src changes
+      // Sync that state to the reducer
+      dispatch({
+        type: AudioPlayerActionType.SET_PLAYING,
+        playing: !audioRef.current.paused,
+      });
+    }
+  }, [src]);
 
   return (
     <div className={audioPlayerClasses}>
@@ -268,6 +295,7 @@ export const AudioPlayer: React.FC<AudioPlayerProps> = ({
         onTimeUpdate={handleTimeUpdate}
         onPlay={handlePlay}
         onPause={handlePause}
+        onEnded={onEnded}
       />
     </div>
   );
