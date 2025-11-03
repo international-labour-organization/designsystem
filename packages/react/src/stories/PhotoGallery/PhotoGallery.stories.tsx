@@ -138,6 +138,26 @@ const WithoutCaption: StoryObj<PhotoGalleryProps> = Object.assign({}, Default, {
   },
 });
 
+const SeparateSources: StoryObj<PhotoGalleryProps> = Object.assign(
+  {},
+  Default,
+  {
+    args: {
+      items: [
+        {
+          src: "/gallery-small.jpg",
+          sources: {
+            gallery: "/gallery-small.jpg",
+            thumbnail: "/gallery-small.jpg",
+            lightbox: "/gallery-extra.jpg",
+          },
+        },
+        ...Default.args?.items!,
+      ],
+    },
+  }
+);
+
 export default meta;
 export {
   Default,
@@ -145,4 +165,5 @@ export {
   WithKeyboardControls,
   TwoColumnThumbnails,
   WithoutCaption,
+  SeparateSources,
 };

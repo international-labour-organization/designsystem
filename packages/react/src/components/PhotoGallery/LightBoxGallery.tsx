@@ -86,7 +86,7 @@ function LightBoxGallery({
               <div className={`${coreClass}__slide`} key={index}>
                 <figure className={`${coreClass}__image-wrapper`}>
                   <img
-                    src={item.src}
+                    src={item.sources?.lightbox || item.src}
                     alt={item.alt || item.credit || `Photo ${index + 1}`}
                   />
                   {item.credit && (
@@ -141,8 +141,9 @@ function LightBoxGallery({
                     onClick={() => onThumbnailClick(index)}
                   >
                     <img
-                      src={item.src}
+                      src={item.sources?.thumbnail || item.src}
                       alt={item.alt || item.credit || `Thumbnail ${index + 1}`}
+                      loading="lazy"
                     />
                   </button>
                 </div>

@@ -19,6 +19,11 @@ export type PhotoGalleryItem = ImgHTMLAttributes<HTMLImageElement> & {
   caption?: string;
   src: string;
   alt: string;
+  sources?: {
+    gallery: string;
+    thumbnail?: string;
+    lightbox?: string;
+  };
 };
 
 export interface PhotoGalleryProps {
@@ -100,7 +105,7 @@ function PhotoGallery({
                     credit={item.credit}
                     url={[
                       {
-                        src: item.src,
+                        src: item.sources?.gallery || item.src,
                         breakpoint: 800,
                       },
                     ]}
