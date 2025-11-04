@@ -14,7 +14,7 @@
   opacity: 0;
   align-items: center;
   justify-content: center;
-  padding: spacing(4);
+  background-color: var(--ilo-color-gray-charcoal);
 
   &--open {
     display: flex;
@@ -32,13 +32,14 @@
 
   &__container {
     position: relative;
-    width: 100dvw;
-    height: 100dvh;
+    width: 100svw;
+    height: 100%;
   }
 
   &__content {
     position: relative;
     z-index: 1;
+    height: 100%;
   }
 
   &__close {
