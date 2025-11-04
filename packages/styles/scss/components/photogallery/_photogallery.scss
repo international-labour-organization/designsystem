@@ -91,6 +91,7 @@
     }
 
     &__controls {
+      display: none;
       position: absolute;
       z-index: 2;
       right: spacing(4);
@@ -104,6 +105,10 @@
       [dir="rtl"] & {
         right: auto;
         left: spacing(4);
+      }
+
+      @include breakpoint("md") {
+        display: flex;
       }
     }
 
