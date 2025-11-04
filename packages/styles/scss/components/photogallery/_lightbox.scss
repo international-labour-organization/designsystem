@@ -57,8 +57,8 @@
     cursor: pointer;
 
     &:hover {
-      background: var(--ilo-color-gray-light);
-      color: var(--ilo-color-blue-dark);
+      background: var(--ilo-color-blue-lighter);
+      color: var(--ilo-color-blue);
     }
 
     &:focus {

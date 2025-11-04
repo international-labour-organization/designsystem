@@ -80,7 +80,7 @@ function PhotoGallery({
           onClick={() => setIsLightboxOpen(true)}
           aria-label="Open lightbox"
         >
-          <Icon name="fullscreen" size={32} />
+          <Icon name="fullscreen" size={24} />
         </button>
         <div className={`${coreClass}__controls`}>
           <PhotoGalleryControls
