@@ -149,6 +149,9 @@
     color: var(--ilo-color-gray-accessible);
     padding-left: spacing(4);
     position: relative;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 
     [dir="rtl"] & {
       padding-left: 0;

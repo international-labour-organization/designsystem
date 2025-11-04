@@ -151,6 +151,7 @@ const SeparateSources: StoryObj<PhotoGalleryProps> = Object.assign(
             thumbnail: "/gallery-small.jpg",
             lightbox: "/gallery-extra.jpg",
           },
+          caption: "Photo with separate sources",
         },
         ...Default.args?.items!,
       ],
