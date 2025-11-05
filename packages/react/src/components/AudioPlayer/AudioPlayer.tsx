@@ -164,6 +164,18 @@ export const AudioPlayer: React.FC<AudioPlayerProps> = ({
     }
   };
 
+  const handleVolumeClick = () => {
+    if (audioRef.current) {
+      if (state.volume === 0) {
+        audioRef.current.volume = 1;
+        dispatch({ type: AudioPlayerActionType.SET_VOLUME, volume: 1 });
+      } else {
+        audioRef.current.volume = 0;
+        dispatch({ type: AudioPlayerActionType.SET_VOLUME, volume: 0 });
+      }
+    }
+  };
+
   const handleProgressBarClick = (event: React.MouseEvent<HTMLDivElement>) => {
     if (audioRef.current) {
       const rect = event.currentTarget.getBoundingClientRect();
@@ -267,10 +279,12 @@ export const AudioPlayer: React.FC<AudioPlayerProps> = ({
             </p>
           </div>
           <div className={`${baseClass}--separator`}></div>
-          <Icon
+          <button
             className={`${baseClass}--volume-icon`}
-            name={state.volume === 0 ? "SoundOff" : "SoundOn"}
-          />
+            onClick={handleVolumeClick}
+          >
+            <Icon name={state.volume === 0 ? "SoundOff" : "SoundOn"} />
+          </button>
           <input
             type="range"
             className={`${baseClass}--volume-slider`}

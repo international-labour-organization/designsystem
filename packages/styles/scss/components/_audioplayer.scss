@@ -16,6 +16,7 @@
     position: absolute;
     top: 0;
     left: 0;
+    transition: width 0.5s;
   }
   &--body {
     display: grid;
@@ -25,7 +26,7 @@
       "left left"
       "center right";
     align-items: center;
-    color: var(--ilo-color-gray-light);
+    color: var(--ilo-color-white);
     background-color: var(--ilo-color-gray-charcoal);
     padding: spacing(3) 0;
     row-gap: spacing(3);
@@ -39,12 +40,13 @@
   &--track-name {
     font-size: var(--ilo-font-size-sm);
     font-weight: var(--ilo-font-weight-medium);
-    line-height: var(--ilo-line-height-sm);
+    line-height: var(--ilo-line-height-lg);
   }
   &--track-details {
     display: flex;
     font-size: var(--ilo-font-size-xsm);
-    line-height: var(--ilo-line-height-xsm);
+    line-height: var(--ilo-line-height-xlg);
+    color: var(--ilo-color-gray-light);
   }
   &--track-creator::before {
     content: "•";
@@ -61,12 +63,18 @@
     grid-area: center;
     display: flex;
     align-items: center;
-    gap: spacing(3);
+    gap: spacing(1);
     padding-inline-start: spacing(3);
   }
   &--skip-button {
     border: none;
     display: flex;
+    cursor: pointer;
+    padding: spacing(2);
+  }
+  &--skip-button:hover {
+    background-color: var(--ilo-color-brand-100);
+    color: var(--ilo-color-brand-600);
   }
   &--play-button {
     display: flex;
@@ -90,18 +98,32 @@
     align-items: center;
     padding-inline-end: spacing(3);
   }
+  &--duration {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
   &--duration-played {
     font-size: var(--ilo-font-size-sm);
-    line-height: var(--ilo-line-height-sm);
+    font-weight: var(--ilo-font-weight-bold);
+    line-height: var(--ilo-line-height-lg);
   }
   &--duration-total {
-    font-size: var(--ilo-font-size-xsm);
-    line-height: var(--ilo-line-height-xsm);
+    color: var(--ilo-color-gray-light);
+    font-size: var(--ilo-font-size-2xsm);
+    line-height: var(--ilo-line-height-2xlg);
   }
   &--separator {
     height: 32px;
     border-left: 1px solid var(--ilo-color-gray-accessible);
     margin: spacing(1) spacing(3);
+  }
+  &--volume-icon {
+    border: none;
+    background: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
   }
   &--volume-slider {
     --progress: 100%;
@@ -109,7 +131,7 @@
     background: var(--ilo-color-yellow-500);
     border-radius: 4px;
     height: 4px;
-    width: 30%;
+    width: 50%;
     background: linear-gradient(
       to right,
       var(--ilo-color-yellow-500) 0%,
@@ -154,6 +176,9 @@
     &--center {
       justify-content: center;
       padding: 0;
+    }
+    &--volume-slider {
+      width: 40%;
     }
   }
 }
