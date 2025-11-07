@@ -248,7 +248,7 @@ export const AudioPlayer: React.FC<AudioPlayerProps> = ({
             onClick={handleSkipBackward}
             aria-label="Rewind 15 seconds"
           >
-            <Icon name="Ffbackward_15" />
+            <Icon name="SkipBackward15" />
           </button>
           <button
             className={`${baseClass}--play-button`}
@@ -266,7 +266,7 @@ export const AudioPlayer: React.FC<AudioPlayerProps> = ({
             onClick={handleSkipForward}
             aria-label="Fast forward 15 seconds"
           >
-            <Icon name="Fforward_15" />
+            <Icon name="SkipForward15" />
           </button>
         </div>
         <div className={`${baseClass}--right`}>

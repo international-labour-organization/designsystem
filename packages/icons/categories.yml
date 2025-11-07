@@ -24,8 +24,6 @@ categories:
 
       - name: Media Controls
         members:
-          - ffbackward_15
-          - fforward_15
           - play
           - skip_next
           - skip_previous
@@ -33,6 +31,8 @@ categories:
           - sound_off
           - sound_on
           - stream
+          - skip_backward15
+          - skip_forward15
 
       - name: Interface
         members:
