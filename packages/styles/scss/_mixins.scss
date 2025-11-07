@@ -310,11 +310,11 @@
   }
 }
 
-@mixin hero-grid-rows($min-height: $spacing-hero-image-min-height) {
+@mixin hero-grid-rows($min-height: var(--hero-image-min-height)) {
   grid-template-rows:
     minmax($min-height, 1fr)
-    $spacing-hero-tooltip-height
-    $spacing-hero-card-corner-cut-height-sm
+    var(--hero-tooltip-height)
+    var(--hero-card-corner-cut-height-sm)
     auto;
 }
 
