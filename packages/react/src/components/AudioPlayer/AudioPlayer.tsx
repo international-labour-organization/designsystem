@@ -281,6 +281,7 @@ export const AudioPlayer: React.FC<AudioPlayerProps> = ({
           <div className={`${baseClass}--separator`}></div>
           <button
             className={`${baseClass}--volume-icon`}
+            aria-label={state.volume === 0 ? "Unmute" : "Mute"}
             onClick={handleVolumeClick}
           >
             <Icon name={state.volume === 0 ? "SoundOff" : "SoundOn"} />
