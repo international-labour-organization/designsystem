@@ -70,7 +70,22 @@ npm install -S @ilo-org/icons
 | `stream`                     | <img src="./src/svg/stream.svg" width="24px" height="24px">                     |
 | `time`                       | <img src="./src/svg/time.svg" width="24px" height="24px">                       |
 | `triangle_right`             | <img src="./src/svg/triangle_right.svg" width="24px" height="24px">             |
+| `triangle_left`              | <img src="./src/svg/triangle_left.svg" width="24px" height="24px">              |
 | `upload`                     | <img src="./src/svg/upload.svg" width="24px" height="24px">                     |
+| `ffbackward_15`              | <img src="./src/svg/ffbackward_15.svg" width="24px" height="24px">              |
+| `fforward_15`                | <img src="./src/svg/fforward_15.svg" width="24px" height="24px">                |
+| `image`                      | <img src="./src/svg/image.svg" width="24px" height="24px">                      |
+| `map`                        | <img src="./src/svg/map.svg" width="24px" height="24px">                        |
+| `play`                       | <img src="./src/svg/play.svg" width="24px" height="24px">                       |
+| `reduce`                     | <img src="./src/svg/reduce.svg" width="24px" height="24px">                     |
+| `search_more`                | <img src="./src/svg/search_more.svg" width="24px" height="24px">                |
+| `skip_next`                  | <img src="./src/svg/skip_next.svg" width="24px" height="24px">                  |
+| `skip_previous`              | <img src="./src/svg/skip_previous.svg" width="24px" height="24px">              |
+| `social_apple_podcasts`      | <img src="./src/svg/social_apple_podcasts.svg" width="24px" height="24px">      |
+| `social_spotify`             | <img src="./src/svg/social_spotify.svg" width="24px" height="24px">             |
+| `transcript`                 | <img src="./src/svg/transcript.svg" width="24px" height="24px">                 |
+| `video`                      | <img src="./src/svg/video.svg" width="24px" height="24px">                      |
+| `zoom`                       | <img src="./src/svg/zoom.svg" width="24px" height="24px">                       |
 
 ## Contributing
 
