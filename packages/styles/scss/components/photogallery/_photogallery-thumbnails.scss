@@ -15,7 +15,20 @@
   justify-content: space-between;
   gap: spacing(2);
   overflow: hidden;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+
+  &__carousel {
+    overflow: hidden;
+  }
+
+  &__container {
+    display: flex;
+    gap: spacing(2);
+  }
+
+  &__slide {
+    display: flex;
+  }
 
   &__thumbnail {
     width: var(--ilo-photo_gallery-thumbnails-width);

@@ -1,94 +1,64 @@
+import useEmblaCarousel from "embla-carousel-react";
+import { useEffect, useId, useRef } from "react";
+import classNames from "classnames";
 import { useGlobalSettings } from "../../hooks";
 import { PhotoGalleryItem } from "./PhotoGallery";
-import { useEffect, useId, useRef, useState } from "react";
 
 interface PhotoGalleryThumbnailsProps {
   items: PhotoGalleryItem[];
   selected: number;
-  columns?: number;
   onSelect?: (index: number) => void;
   onSeeAll?: () => void;
   seeAllLabel?: string;
 }
 
-const THUMBNAIL_WIDTH_VARIABLE = "--ilo-photo_gallery-thumbnails-width";
-
 function PhotoGalleryThumbnails({
   items,
   selected,
-  columns = 1,
   onSelect,
   onSeeAll,
   seeAllLabel = "See all",
 }: PhotoGalleryThumbnailsProps) {
   const { prefix } = useGlobalSettings();
   const cid = useId();
-  const thumbnailWidth = useRef<number>(145);
   const wrapperRef = useRef<HTMLDivElement>(null);
-  const [amount, setAmount] = useState<number>(0);
+  const [thumbRef, thumbAPI] = useEmblaCarousel({
+    containScroll: "keepSnaps",
+    direction: document.dir === "rtl" ? "rtl" : "ltr",
+    dragFree: true,
+    duration: 30,
+  });
+
+  useEffect(() => {
+    if (!thumbAPI) return;
+
+    thumbAPI.scrollTo(selected);
+  }, [thumbAPI, selected]);
 
   const baseClass = `${prefix}--photo-gallery-thumbnails`;
 
-  useEffect(() => {
-    if (!wrapperRef.current) return;
-
-    const styles = getComputedStyle(wrapperRef.current);
-    const variable = parseInt(
-      styles.getPropertyValue(THUMBNAIL_WIDTH_VARIABLE).trim()
-    );
-    if (variable) {
-      thumbnailWidth.current = variable;
-    }
-  }, [wrapperRef]);
-
-  useEffect(() => {
-    if (!wrapperRef.current || !thumbnailWidth.current) return;
-
-    function updateThumbnailAmount() {
-      const styles = getComputedStyle(wrapperRef.current!);
-      const thumbnailWidth = parseInt(
-        styles.getPropertyValue(THUMBNAIL_WIDTH_VARIABLE).trim()
-      );
-      if (!wrapperRef.current) return;
-      const wrapperWidth = wrapperRef.current.offsetWidth;
-      setAmount(Math.floor(wrapperWidth / thumbnailWidth));
-    }
-
-    updateThumbnailAmount();
-
-    window.addEventListener("resize", updateThumbnailAmount);
-
-    return () => {
-      window.removeEventListener("resize", updateThumbnailAmount);
-    };
-  }, [wrapperRef, thumbnailWidth]);
-
-  const toDisplay = items.slice(
-    0,
-    Math.min(amount * columns, items.length) - 1
-  );
-
   return (
-    <div
-      className={baseClass}
-      ref={wrapperRef}
-      id={`${baseClass}--${cid}`}
-      style={{ flexWrap: columns > 1 ? "wrap" : "nowrap" }}
-    >
-      {toDisplay.map((item, index) => (
-        <button
-          key={index}
-          className={`${baseClass}__thumbnail ${
-            index === selected ? `${baseClass}__thumbnail--selected` : ""
-          }`}
-          onClick={() => onSelect?.(index)}
-        >
-          <img
-            src={item.sources?.thumbnail || item.src}
-            alt={item.credit || `Thumbnail ${index + 1}`}
-          />
-        </button>
-      ))}
+    <div className={baseClass} ref={wrapperRef} id={`${baseClass}--${cid}`}>
+      <div className={`${baseClass}__carousel`} ref={thumbRef}>
+        <div className={`${baseClass}__container`}>
+          {items.map((item, index) => (
+            <div className={`${baseClass}__slide`} key={index}>
+              <button
+                type="button"
+                className={classNames(`${baseClass}__thumbnail`, {
+                  [`${baseClass}__thumbnail--selected`]: index === selected,
+                })}
+                onClick={() => onSelect?.(index)}
+              >
+                <img
+                  src={item.sources?.thumbnail || item.src}
+                  alt={item.credit || `Thumbnail ${index + 1}`}
+                />
+              </button>
+            </div>
+          ))}
+        </div>
+      </div>
       <button className={`${baseClass}__see-all`} onClick={() => onSeeAll?.()}>
         <span className={`${baseClass}__see-all-label`}>{seeAllLabel}</span>
       </button>

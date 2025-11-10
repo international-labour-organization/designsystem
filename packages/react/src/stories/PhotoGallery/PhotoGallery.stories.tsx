@@ -120,17 +120,6 @@ const Portrait: StoryObj<PhotoGalleryProps> = Object.assign({}, Default, {
   },
 });
 
-const TwoColumnThumbnails: StoryObj<PhotoGalleryProps> = Object.assign(
-  {},
-  Default,
-  {
-    args: {
-      ...Default.args,
-      thubmnailRows: 2,
-    },
-  }
-);
-
 const WithoutCaption: StoryObj<PhotoGalleryProps> = Object.assign({}, Default, {
   args: {
     ...Default.args,
@@ -164,7 +153,6 @@ export {
   Default,
   Portrait,
   WithKeyboardControls,
-  TwoColumnThumbnails,
   WithoutCaption,
   SeparateSources,
 };
