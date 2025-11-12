@@ -86,7 +86,13 @@
       border-radius: var(--ilo-border-radius);
     }
 
-    &:hover &-label {
+    &:hover,
+    &:focus {
+      background-color: var(--ilo-color-blue-ramp);
+    }
+
+    &:hover &-label,
+    &:focus &-label {
       background-color: var(--ilo-color-blue-lighter);
       color: var(--ilo-color-blue);
     }
