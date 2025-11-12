@@ -107,15 +107,11 @@ export default class AudioPlayer extends StatefulComponent {
   bindEventHandlers() {
     // Audio element events
     this.audio.addEventListener("loadedmetadata", () => {
-      if (this.audio) {
-        this.state.totalTime = this.audio.duration;
-      }
+      this.state.totalTime = this.audio.duration;
     });
 
     this.audio.addEventListener("timeupdate", () => {
-      if (this.audio) {
-        this.state.currentTime = this.audio.currentTime;
-      }
+      this.state.currentTime = this.audio.currentTime;
     });
 
     this.audio.addEventListener("play", () => {
@@ -132,13 +128,7 @@ export default class AudioPlayer extends StatefulComponent {
 
     // Control buttons events
     this.playButton.addEventListener("click", () => {
-      if (!this.state.playing) {
-        this.audio.play().catch((error) => {
-          console.error("Error playing audio:", error);
-        });
-      } else {
-        this.audio.pause();
-      }
+      this.state.playing = !this.state.playing;
     });
 
     this.skipBackwardButton.addEventListener("click", () => {
@@ -154,17 +144,14 @@ export default class AudioPlayer extends StatefulComponent {
 
     this.volumeButton.addEventListener("click", () => {
       if (this.state.volume === 0) {
-        this.audio.volume = 1;
         this.state.volume = 1;
       } else {
-        this.audio.volume = 0;
         this.state.volume = 0;
       }
     });
 
     this.volumeSlider.addEventListener("input", (event) => {
       const newVolume = Number(event.target.value) / 100;
-      this.audio.volume = newVolume;
       this.state.volume = newVolume;
     });
 
@@ -199,10 +186,16 @@ export default class AudioPlayer extends StatefulComponent {
     });
 
     this.registerStateHandler("playing", (playing) => {
+      if (playing) {
+        this.audio.play();
+      } else {
+        this.audio.pause();
+      }
       this.playButton.setAttribute("aria-label", playing ? "Pause" : "Play");
     });
 
     this.registerStateHandler("volume", (volume) => {
+      this.audio.volume = volume;
       this.volumeSlider.value = volume * 100;
       this.volumeSlider.style.setProperty("--progress", `${volume * 100}%`);
       this.volumeButton.setAttribute(
