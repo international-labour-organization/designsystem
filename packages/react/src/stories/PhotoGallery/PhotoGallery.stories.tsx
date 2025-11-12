@@ -2,7 +2,7 @@ import { Meta, StoryObj } from "@storybook/react/*";
 import { PhotoGallery, PhotoGalleryProps } from "../../components/PhotoGallery";
 
 const meta: Meta<PhotoGalleryProps> = {
-  title: "Components/Content/PhotoGallery",
+  title: "Components/Media/PhotoGallery",
   component: PhotoGallery,
   tags: ["autodocs"],
   parameters: {
