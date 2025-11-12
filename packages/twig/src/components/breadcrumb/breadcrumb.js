@@ -1,5 +1,3 @@
-import { EVENTS } from "@ilo-org/utils";
-
 /**
  * The Breadcrumb module which handles rendering field labels inline on a form.
  *
@@ -106,10 +104,10 @@ export default class Breadcrumb {
    */
   enable() {
     // Handle resizing events
-    window.addEventListener(EVENTS.RESIZE, (e) => this.onResize(e));
+    window.addEventListener("resize", (e) => this.onResize(e));
     if (this.contextButton) {
       // When the context button gets clicked
-      this.contextButton.addEventListener(EVENTS.CLICK, (e) => this.onClick(e));
+      this.contextButton.addEventListener("click", (e) => this.onClick(e));
 
       // We only need the keydown handler to manage tab navigation when the
       // context menu is visible

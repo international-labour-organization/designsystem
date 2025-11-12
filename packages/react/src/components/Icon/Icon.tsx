@@ -29,6 +29,7 @@ const Icon: FC<IconProps> = ({
 
   return createElement(Icons[machineName as keyof typeof Icon], {
     "aria-hidden": ariaHidden,
+    "data-testid": `${name.toLowerCase()}-icon`,
     className: iconClass,
     id: id,
     fill: color || "currentColor",

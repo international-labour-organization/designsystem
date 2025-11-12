@@ -1,0 +1,184 @@
+@use "../functions" as *;
+@import "../mixins";
+
+.ilo--audio-player {
+  &--progress-bar {
+    height: px-to-rem(8px);
+    background-color: var(--ilo-color-gray-accessible);
+    position: relative;
+    cursor: pointer;
+  }
+  &--progress-complete {
+    --progress: 0%;
+    width: var(--progress);
+    height: 100%;
+    background-color: var(--ilo-color-yellow-500);
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: width 0.5s;
+  }
+  &--body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      "left left"
+      "center right";
+    align-items: center;
+    color: var(--ilo-color-white);
+    background-color: var(--ilo-color-gray-charcoal);
+    padding: spacing(3) 0;
+    row-gap: spacing(3);
+  }
+  &--left {
+    grid-area: left;
+    border-bottom: 1px solid var(--ilo-color-gray-accessible);
+    padding-inline: spacing(3);
+    padding-block-end: spacing(3);
+  }
+  &--track-name {
+    font-size: var(--ilo-font-size-sm);
+    font-weight: var(--ilo-font-weight-medium);
+    line-height: var(--ilo-line-height-lg);
+  }
+  &--track-details {
+    display: flex;
+    font-size: var(--ilo-font-size-xsm);
+    line-height: var(--ilo-line-height-xlg);
+    color: var(--ilo-color-gray-light);
+  }
+  &--track-creator::before {
+    content: "•";
+    margin-right: spacing(2);
+  }
+  &--track-programme {
+    text-wrap: nowrap;
+  }
+  &--track-creator {
+    margin-left: spacing(2);
+    text-wrap: nowrap;
+  }
+  &--center {
+    grid-area: center;
+    display: flex;
+    align-items: center;
+    gap: spacing(1);
+    padding-inline-start: spacing(3);
+  }
+  &--skip-button {
+    border: none;
+    display: flex;
+    cursor: pointer;
+    padding: spacing(2);
+  }
+  &--skip-button:hover {
+    background-color: var(--ilo-color-brand-100);
+    color: var(--ilo-color-brand-600);
+  }
+  &--play-button {
+    display: flex;
+    align-items: center;
+    background-color: var(--ilo-color-yellow-500);
+    border-radius: 50%;
+    cursor: pointer;
+    padding: spacing(1);
+    border: none;
+  }
+  &--play-button:hover {
+    background-color: var(--ilo-color-brand-100);
+  }
+  &--play-icon {
+    color: var(--ilo-color-brand-800);
+  }
+  &--right {
+    grid-area: right;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-inline-end: spacing(3);
+  }
+  &--duration {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+  &--duration-played {
+    font-size: var(--ilo-font-size-sm);
+    font-weight: var(--ilo-font-weight-bold);
+    line-height: var(--ilo-line-height-lg);
+  }
+  &--duration-total {
+    color: var(--ilo-color-gray-light);
+    font-size: var(--ilo-font-size-2xsm);
+    line-height: var(--ilo-line-height-2xlg);
+  }
+  &--separator {
+    height: 32px;
+    border-left: 1px solid var(--ilo-color-gray-accessible);
+    margin: spacing(1) spacing(3);
+  }
+  &--volume-icon {
+    border: none;
+    background: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  }
+  &--volume-slider {
+    --progress: 100%;
+    margin-left: spacing(1);
+    background: var(--ilo-color-yellow-500);
+    border-radius: 4px;
+    height: 4px;
+    width: 50%;
+    background: linear-gradient(
+      to right,
+      var(--ilo-color-yellow-500) 0%,
+      var(--ilo-color-yellow-500) var(--progress, 50%),
+      var(--ilo-color-gray-accessible) var(--progress, 50%),
+      var(--ilo-color-gray-accessible) 100%
+    );
+    [dir="rtl"] & {
+      background: linear-gradient(
+        to left,
+        var(--ilo-color-yellow-500) 0%,
+        var(--ilo-color-yellow-500) var(--progress, 50%),
+        var(--ilo-color-gray-accessible) var(--progress, 50%),
+        var(--ilo-color-gray-accessible) 100%
+      );
+    }
+  }
+  &--volume-slider::-webkit-slider-thumb {
+    // Reset default styles
+    border: none;
+    -webkit-appearance: none;
+
+    width: 16px;
+    height: 16px;
+    background: var(--ilo-color-gray-light);
+    border-radius: 50%;
+    cursor: pointer;
+    margin-top: -2px; // Center thumb on track
+  }
+
+  @include breakpoint("md") {
+    &--body {
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: auto;
+      grid-template-areas: "left center right";
+    }
+    &--left {
+      border-bottom: none;
+      padding-inline: spacing(3) 0;
+      padding-block: 0;
+    }
+    &--center {
+      justify-content: center;
+      padding: 0;
+    }
+    &--volume-slider {
+      width: 40%;
+    }
+  }
+}

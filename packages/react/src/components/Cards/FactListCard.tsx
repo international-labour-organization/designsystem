@@ -156,4 +156,7 @@ const FactListCardCombined = Object.assign(FactListCard, {
   Skeleton: FactListCardSkeleton,
 });
 
+FactListCardCombined.displayName = "FactListCard";
+FactListCardCombined.Skeleton.displayName = "FactListCard.Skeleton";
+
 export { FactListCardCombined as FactListCard };

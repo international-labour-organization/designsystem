@@ -276,4 +276,7 @@ const DataCardCombined = Object.assign(DataCard, {
   Skeleton: DataCardSkeleton,
 });
 
+DataCardCombined.displayName = "DataCard";
+DataCardCombined.Skeleton.displayName = "DataCard.Skeleton";
+
 export { DataCardCombined as DataCard };
