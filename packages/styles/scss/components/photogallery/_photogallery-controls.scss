@@ -32,6 +32,7 @@
     width: px-to-rem(40px);
     position: relative;
     text-indent: -999%;
+    cursor: pointer;
 
     &::before {
       content: "";
