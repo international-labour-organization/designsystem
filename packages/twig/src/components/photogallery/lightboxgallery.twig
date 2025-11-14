@@ -1,0 +1,62 @@
+<div class="{{prefix}}--lightbox-gallery" data-lightbox-gallery>
+	<div class="{{prefix}}--lightbox-gallery__core">
+		<div class="{{prefix}}--lightbox-gallery__core__viewport" data-embla-lightbox-viewport tabindex="0">
+			<div class="{{prefix}}--lightbox-gallery__core__container">
+				{% for item in items %}
+					<div class="{{prefix}}--lightbox-gallery__core__slide" data-index="{{loop.index0}}">
+						<figure class="{{prefix}}--lightbox-gallery__core__image-wrapper">
+							<img src="{{item.sources.lightbox|default(item.src)}}" alt="{{item.alt|default(item.credit|default('Photo ' ~ loop.index))}}"/>
+							{% if item.credit %}
+								<figcaption class="{{prefix}}--lightbox-gallery__core__image-wrapper-credit">
+									<span class="{{prefix}}--lightbox-gallery__core__image-wrapper-credit-text">
+										{{item.credit}}
+									</span>
+									<span class="{{prefix}}--lightbox-gallery__core__image-wrapper-credit-corner"></span>
+								</figcaption>
+							{% endif %}
+						</figure>
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+
+	<div
+		class="{{prefix}}--lightbox-gallery__bar">
+		{# Expandable caption #}
+		<div class="{{prefix}}--lightbox-gallery__caption" data-lightbox-caption></div>
+
+		{# Extra info section #}
+		<div class="{{prefix}}--lightbox-gallery__extra">
+			<p class="{{prefix}}--lightbox-gallery__extra-text" data-lightbox-caption-text></p>
+			<div class="{{prefix}}--lightbox-gallery__extra-controls">
+				{% include '@components/photogallery/photogallerycontrols.twig' with {
+          prefix: prefix,
+        } %}
+			</div>
+		</div>
+
+		{# Thumbnails carousel in lightbox #}
+		<div class="{{prefix}}--lightbox-gallery__thumbnails">
+			<div class="{{prefix}}--lightbox-gallery__thumbnails__carousel" data-embla-lightbox-thumbs>
+				<div class="{{prefix}}--lightbox-gallery__thumbnails__container">
+					{% for item in items %}
+						<div class="{{prefix}}--lightbox-gallery__thumbnails__slide">
+							<button class="{{prefix}}--lightbox-gallery__thumbnails__image" data-lightbox-thumbnail-index="{{loop.index0}}" type="button">
+								<img src="{{item.sources.thumbnail|default(item.src)}}" alt="{{item.alt|default(item.credit|default('Thumbnail ' ~ loop.index))}}" loading="lazy"/>
+							</button>
+						</div>
+					{% endfor %}
+				</div>
+			</div>
+		</div>
+
+		{# Controls at bottom #}
+		<div class="{{prefix}}--lightbox-gallery__controls">
+			{% include '@components/photogallery/photogallerycontrols.twig' with {
+        prefix: prefix,
+        galleryId: galleryId ~ '-lightbox-bottom'
+      } %}
+		</div>
+	</div>
+</div>
