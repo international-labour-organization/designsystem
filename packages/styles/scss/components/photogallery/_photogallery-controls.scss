@@ -1,0 +1,97 @@
+@use "../../tokens" as *;
+@use "../../functions" as *;
+@import "../../mixins";
+@import "../../config";
+
+.ilo--photo-gallery-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: spacing(4);
+
+  &__page {
+    display: flex;
+    gap: spacing(1);
+    @include typography("highlight-small");
+    font-family: var(--ilo-fonts-copy);
+    color: var(--ilo-color-white);
+  }
+
+  &__previous-set,
+  &__next-set {
+    display: flex;
+    gap: spacing(2);
+  }
+
+  &__item {
+    background: var(--ilo-color-gray-light);
+    border: none;
+    border-radius: 2px;
+    color: var(--ilo-color-blue-dark);
+    height: px-to-rem(40px);
+    width: px-to-rem(40px);
+    position: relative;
+    text-indent: -999%;
+    cursor: pointer;
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      height: px-to-rem(20px);
+      width: px-to-rem(20px);
+      background-repeat: no-repeat;
+    }
+
+    &:hover {
+      background: var(--ilo-color-blue-lighter);
+      color: var(--ilo-color-blue);
+    }
+  }
+
+  &__first {
+    &::before {
+      transform: translate(-50%, -50%) rotate(180deg);
+      @include icon("double_chevron_right", var(--ilo-color-blue-dark));
+    }
+
+    &:hover::before {
+      @include icon("double_chevron_right", var(--ilo-color-blue));
+    }
+  }
+
+  &__prev {
+    &::before {
+      @include icon("chevron_right", var(--ilo-color-blue-dark));
+      transform: translate(-50%, -50%) rotate(180deg);
+    }
+
+    &:hover::before {
+      @include icon("chevron_right", var(--ilo-color-blue));
+    }
+  }
+
+  &__next {
+    &::before {
+      @include icon("chevron_right", var(--ilo-color-blue-dark));
+      transform: translate(-50%, -50%);
+    }
+
+    &:hover::before {
+      @include icon("chevron_right", var(--ilo-color-blue));
+    }
+  }
+
+  &__last {
+    &::before {
+      @include icon("double_chevron_right", var(--ilo-color-blue-dark));
+      transform: translate(-50%, -50%);
+    }
+
+    &:hover::before {
+      @include icon("double_chevron_right", var(--ilo-color-blue));
+    }
+  }
+}
