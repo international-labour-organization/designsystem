@@ -102,6 +102,9 @@ export default class PhotoGallery extends StatefulComponent {
     this.lightboxThumbButtons = this.lightbox.querySelectorAll(
       "[data-lightbox-thumbnail-index]"
     );
+    this.lightboxDesktopCaption = this.lightbox.querySelector(
+      "[data-lightbox-caption-text]"
+    );
 
     return this;
   }
@@ -367,8 +370,6 @@ export default class PhotoGallery extends StatefulComponent {
    * @param {number} index
    */
   updateCaption(index) {
-    if (!this.captionContainer || this.state.captionView === "hidden") return;
-
     const slide = this.slides[index];
     if (!slide) return;
 
@@ -376,6 +377,11 @@ export default class PhotoGallery extends StatefulComponent {
       `.ilo--photo-gallery__core__caption-raw`
     ).textContent;
 
+    if (this.lightboxDesktopCaption) {
+      this.lightboxDesktopCaption.textContent = caption ? caption : "";
+    }
+
+    if (!this.captionContainer || this.state.captionView === "hidden") return;
     if (
       this.state.captionView === "visible" ||
       (this.state.captionView === "ifExists" && caption)
