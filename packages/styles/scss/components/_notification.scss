@@ -1,17 +1,16 @@
-@use "../tokens" as *;
 @use "../functions" as *;
 @import "../mixins";
 @import "../animations";
 
 .ilo--notification {
-  background-color: $color-ux-notification-background;
+  background-color: var(--ilo-color-white);
   box-shadow:
     0px 0.8px 1.6px rgba(30, 45, 190, 0.038),
     0px 4px 8px rgba(30, 45, 190, 0.054),
     0px 10px 20px rgba(30, 45, 190, 0.08),
     0px -4px 16px rgba(30, 45, 190, 0.054);
   border-radius: 2px;
-  color: $color-ux-notification-text;
+  color: var(--ilo-color-gray-charcoal);
   position: relative;
 
   &--dialog {
@@ -71,29 +70,23 @@
       }
 
       .icon--error & {
-        background-color: $color-ux-notification-type-error;
-        @include dataurlicon("notification_error", $color-ux-notification-icon);
+        background-color: var(--ilo-color-notification-type-error);
+        @include dataurlicon("notification_error", rgba(255, 255, 255, 1));
       }
 
       .icon--info & {
-        background-color: $color-ux-notification-type-info;
-        @include dataurlicon("notification_info", $color-ux-notification-icon);
+        background-color: var(--ilo-color-notification-type-info);
+        @include dataurlicon("notification_info", rgba(255, 255, 255, 1));
       }
 
       .icon--success & {
-        background-color: $color-ux-notification-type-success;
-        @include dataurlicon(
-          "notification_success",
-          $color-ux-notification-icon
-        );
+        background-color: var(--ilo-color-notification-type-success);
+        @include dataurlicon("notification_success", rgba(255, 255, 255, 1));
       }
 
       .icon--warning & {
-        background-color: $color-ux-notification-type-warning;
-        @include dataurlicon(
-          "notification_warning",
-          $color-ux-notification-icon
-        );
+        background-color: var(--ilo-color-notification-type-warning);
+        @include dataurlicon("notification_warning", rgba(255, 255, 255, 1));
       }
     }
   }
@@ -131,7 +124,7 @@
   }
 
   &--date {
-    color: $color-base-neutrals-medium;
+    color: var(--ilo-color-gray-accessible);
     display: block;
     font-weight: 400;
     @include typography("body-small");
@@ -162,7 +155,7 @@
   }
 
   &--close {
-    background-color: $color-ux-background-highlight;
+    background-color: var(--ilo-color-background-highlight);
     background-position: center;
     background-repeat: no-repeat;
     background-size: px-to-rem(24px);
@@ -172,13 +165,13 @@
     right: 0;
     top: 0;
     width: px-to-rem(40px);
-    @include dataurlicon("close", $color-ux-labels-actionable);
+    @include dataurlicon("close", rgba(35, 0, 80, 1));
 
     &:hover,
     &:focus {
-      background-color: $color-ux-background-hover;
+      background-color: var(--ilo-color-background-hover);
       cursor: pointer;
-      @include dataurlicon("close", $color-ux-labels-hover);
+      @include dataurlicon("close", rgba(210, 213, 242, 1));
     }
 
     span {
