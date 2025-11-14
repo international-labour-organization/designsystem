@@ -1,0 +1,71 @@
+{# "cover"  | "contain" | "fill" #}
+{% set fit = fit|default('cover') %}
+{% set with_keyboard_controls = with_keyboard_controls|default(false) %}
+{# "visible" | "hidden" | "ifExists" #}
+{% set caption_view = caption_view|default('visible') %}
+{% set see_all_label = see_all_label|default('See all') %}
+{% set prefix = prefix|default('ilo') %}
+
+{% set base_class = prefix ~ "--photo-gallery" %}
+{% set core_class = base_class ~ "__core" %}
+
+<div class={{base_class}} data-prefix="{{prefix}}" data-loadcomponent="PhotoGallery" data-with-keyboard-controls="{{with_keyboard_controls ? 'true' : 'false'}}" data-caption-view="{{caption_view}}" data-see-all-label="{{see_all_label}}" tabindex="0">
+	<div class={{core_class}}>
+		<button class={{core_class ~ "__zoom"}} type="button" aria-label="Open lightbox" data-action="open-lightbox">
+			{% include '@components/icon/icon.twig' with {
+        name: 'fullscreen',
+        size: '24'
+      } %}
+		</button>
+
+		{# Controls #}
+		<div class={{core_class ~ "__controls"}}>
+			{% include '@components/photogallery/photogallerycontrols.twig' with {
+        prefix: prefix,
+        gallery_id: gallery_id
+      } %}
+		</div>
+
+		{# Main carousel viewport #}
+		<div class="{{core_class}}__viewport" data-embla-viewport>
+			<div class="{{core_class}}__container" data-embla-container>
+				{% for item in items %}
+					<div class="{{core_class}}__slide" data-index="{{loop.index0}}">
+						<div class="{{core_class}}__image {{core_class}}__image--{{fit}}">
+							{% include '@components/image/image.twig' with {
+                  prefix: prefix,
+                  url: [{
+                    src: item.sources.gallery|default(item.src),
+                    breakpoint: 800
+                  }],
+                  credit: item.credit,
+                  alt: item.alt
+                  } %}
+						</div>
+						<p class="{{core_class}}__caption-raw" hidden>{{item.caption}}</p>
+					</div>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+
+	{# Caption #}
+	{% if caption_view != 'hidden' %}
+		<div class="{{prefix}}--photo-gallery__caption"></div>
+	{% endif %}
+
+
+	{# Thumbnails  #}
+	{% include '@components/photogallery/photogallerythumbnails.twig' with {
+		prefix: prefix,
+		items: items,
+		see_all_label: see_all_label
+	} %}
+
+	{# Lightbox #}
+	{% include '@components/photogallery/lightbox.twig' with {
+		prefix: prefix,
+		items: items,
+		gallery_id: gallery_id
+	} %}
+</div>

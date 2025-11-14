@@ -1,0 +1,20 @@
+{% set see_all_label = see_all_label|default('See all') %}
+{% set prefix = prefix|default('ilo') %}
+{% set base_class  = prefix ~ "--photo-gallery-thumbnails" %}
+
+<div class="{{base_class}}">
+	<div class="{{base_class}}__carousel" data-embla-thumbnails>
+		<div class="{{base_class}}__container">
+			{% for item in items %}
+				<div class="{{base_class}}__slide">
+					<button type="button" class="{{base_class}}__thumbnail" data-thumbnail-index="{{loop.index0}}">
+						<img src="{{item.sources.thumbnail|default(item.src)}}" alt="{{item.credit|default('Thumbnail ' ~ loop.index)}}" loading="lazy"/>
+					</button>
+				</div>
+			{% endfor %}
+		</div>
+	</div>
+	<button class="{{base_class}}__see-all" data-action="see-all" type="button">
+		<span class="{{base_class}}__see-all-label">{{see_all_label}}</span>
+	</button>
+</div>
