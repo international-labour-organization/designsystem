@@ -22,11 +22,11 @@
   }
 
   &--nav {
-    background: $brand-ilo-dark-blue;
+    background: var(--ilo-color-blue-dark);
   }
 
   &--menu {
-    @include dataurlicon("burger", $brand-ilo-white);
+    @include dataurlicon("burger", rgba(255, 255, 255, 1));
     align-self: center;
     background-color: transparent;
     background-position: center;
@@ -43,8 +43,8 @@
 
     &:hover,
     &:focus {
-      @include dataurlicon("burger", $brand-ilo-blue);
-      background-color: $brand-ilo-light-blue;
+      @include dataurlicon("burger", rgba(30, 45, 190, 1));
+      background-color: var(--ilo-color-blue-lighter);
       background-position: center;
       background-repeat: no-repeat;
       background-size: 32px;
@@ -55,8 +55,8 @@
     }
 
     &--close {
-      @include dataurlicon("close", $brand-ilo-dark-blue);
-      background-color: $brand-ilo-grey-light;
+      @include dataurlicon("close", rgba(35, 0, 80, 1));
+      background-color: var(--ilo-color-gray-light);
       background-position: center;
       background-repeat: no-repeat;
       background-size: 32px;
@@ -71,8 +71,8 @@
 
       &:hover,
       &:focus {
-        @include dataurlicon("close", $brand-ilo-blue);
-        background-color: $brand-ilo-light-blue;
+        @include dataurlicon("close", rgba(30, 45, 190, 1));
+        background-color: var(--ilo-color-blue-lighter);
         background-position: center;
         background-repeat: no-repeat;
         background-size: 32px;
@@ -104,7 +104,7 @@
   }
 
   &--logo-bar {
-    background: $brand-ilo-blue;
+    background: var(--ilo-color-blue);
     display: flex;
     width: 100%;
 
@@ -114,7 +114,7 @@
     }
 
     @include breakpoint("lg") {
-      background: $brand-ilo-blue;
+      background: var(--ilo-color-blue);
     }
   }
 
@@ -122,7 +122,7 @@
     display: none;
     min-height: px-to-rem(24px);
     &--local {
-      background: $brand-ilo-blue;
+      background: var(--ilo-color-blue);
       display: flex;
       justify-content: space-between;
       padding: 0 spacing(5);
@@ -131,7 +131,7 @@
         display: none;
 
         &--link {
-          @include dataurlicon("chevron_left", $brand-ilo-white);
+          @include dataurlicon("chevron_left", rgba(255, 255, 255, 1));
           @include typography("body-small");
           appearance: none;
           background-color: inherit;
@@ -139,7 +139,7 @@
           background-repeat: no-repeat;
           background-size: px-to-rem(24px);
           border: none;
-          color: $brand-ilo-white;
+          color: var(--ilo-color-white);
           cursor: pointer;
           padding: spacing(4) spacing(4) spacing(4) spacing(9);
           text-decoration: none;
@@ -152,21 +152,21 @@
 
           &:focus,
           &:hover {
-            @include dataurlicon("chevron_left", $brand-ilo-blue);
-            background-color: $brand-ilo-light-blue;
-            color: $brand-ilo-blue;
+            @include dataurlicon("chevron_left", rgba(30, 45, 190, 1));
+            background-color: var(--ilo-color-blue-lighter);
+            color: var(--ilo-color-blue);
           }
 
           [dir="rtl"] {
-            @include dataurlicon("chevron_right", $brand-ilo-white);
+            @include dataurlicon("chevron_right", rgba(255, 255, 255, 1));
             background-position: calc(100% - 16px) 50%;
             padding: 16px 36px 16px 16px;
 
             &:focus,
             &:hover {
-              @include dataurlicon("chevron_right", $brand-ilo-blue);
-              background-color: $brand-ilo-light-blue;
-              color: $brand-ilo-blue;
+              @include dataurlicon("chevron_right", rgba(30, 45, 190, 1));
+              background-color: var(--ilo-color-blue-lighter);
+              color: var(--ilo-color-blue);
             }
           }
 
@@ -187,7 +187,7 @@
     }
 
     @include breakpoint("lg") {
-      background: $brand-ilo-blue;
+      background: var(--ilo-color-blue);
       display: flex;
       justify-content: flex-end;
       width: 100%;
@@ -215,7 +215,7 @@
   }
 
   &--navigation {
-    background: $brand-ilo-white;
+    background: var(--ilo-color-white);
     height: 100%;
     left: 0;
     overflow-x: hidden;
@@ -241,7 +241,7 @@
     }
 
     @include breakpoint("lg") {
-      background: $brand-ilo-dark-blue;
+      background: var(--ilo-color-blue-dark);
       overflow: visible;
       position: static;
       transform: none;
@@ -251,7 +251,7 @@
 
   &--logo-tagline {
     @include typography("highlight-large");
-    color: $brand-ilo-white;
+    color: var(--ilo-color-white);
     display: none;
     font-family: var(--ilo-fonts-display);
     font-weight: 700;
@@ -264,7 +264,7 @@
 
     &--small {
       @include typography("body-xsmall");
-      color: $brand-ilo-ramp-blue;
+      color: var(--ilo-color-blue-light);
       display: block;
     }
   }
@@ -310,7 +310,7 @@
   }
 
   &--link {
-    color: $brand-ilo-dark-blue;
+    color: var(--ilo-color-blue-dark);
     display: block;
     padding: spacing(4) spacing(9) spacing(4) spacing(2);
     text-decoration: none;
@@ -320,38 +320,38 @@
 
     &:hover,
     &:focus {
-      background: $brand-ilo-light-blue;
-      color: $brand-ilo-blue;
+      background: var(--ilo-color-blue-lighter);
+      color: var(--ilo-color-blue);
       text-decoration: none;
     }
 
     @include breakpoint("lg") {
-      background: $brand-ilo-dark-blue;
-      color: $brand-ilo-white;
+      background: var(--ilo-color-blue-dark);
+      color: var(--ilo-color-white);
       display: inline-block;
       padding: 21.5px spacing(6) 20.5px;
 
       &:hover,
       &:focus {
-        background: $brand-ilo-light-blue;
-        color: $brand-ilo-blue;
+        background: var(--ilo-color-blue-lighter);
+        color: var(--ilo-color-blue);
         text-decoration: none;
       }
     }
   }
 
   &--trigger {
-    @include dataurlicon("chevron_right", $brand-ilo-dark-blue);
+    @include dataurlicon("chevron_right", rgba(35, 0, 80, 1));
     @include typography("highlight-medium");
 
     appearance: none;
-    background-color: $brand-ilo-white;
+    background-color: var(--ilo-color-white);
     background-position: calc(100% - 16px) 55%;
     background-repeat: no-repeat;
     background-size: 24px;
     background-position-y: center;
     border: none;
-    color: $brand-ilo-dark-blue;
+    color: var(--ilo-color-blue-dark);
     cursor: pointer;
     display: block;
     padding: spacing(4) spacing(9) spacing(4) spacing(2);
@@ -362,14 +362,14 @@
 
     &:focus,
     &:hover {
-      @include dataurlicon("chevron_right", $brand-ilo-blue);
-      background-color: $brand-ilo-light-blue;
-      color: $brand-ilo-blue;
+      @include dataurlicon("chevron_right", rgba(30, 45, 190, 1));
+      background-color: var(--ilo-color-blue-lighter);
+      color: var(--ilo-color-blue);
     }
 
     [dir="rtl"] & {
-      @include dataurlicon("chevron_left", $brand-ilo-dark-blue);
-      background-color: $brand-ilo-white;
+      @include dataurlicon("chevron_left", rgba(35, 0, 80, 1));
+      background-color: var(--ilo-color-white);
       background-position: 16px 55%;
       background-repeat: no-repeat;
       background-size: 24px;
@@ -377,23 +377,23 @@
 
       &:focus,
       &:hover {
-        @include dataurlicon("chevron_left", $brand-ilo-blue);
-        background-color: $brand-ilo-light-blue;
-        color: $brand-ilo-blue;
+        @include dataurlicon("chevron_left", rgba(30, 45, 190, 1));
+        background-color: var(--ilo-color-blue-lighter);
+        color: var(--ilo-color-blue);
       }
     }
 
     @include breakpoint("lg") {
-      @include dataurlicon("plus", $brand-ilo-white);
+      @include dataurlicon("plus", rgba(255, 255, 255, 1));
       @include typography("highlight-medium-bold");
 
-      background-color: $brand-ilo-dark-blue;
+      background-color: var(--ilo-color-blue-dark);
       background-position: 90% 55%;
       background-repeat: no-repeat;
       background-size: 20px;
-      border: 1.5px solid rgba($brand-ilo-grey-ui, 0.5);
+      border: 1.5px solid rgba(184, 196, 204, 0.5);
       border-radius: 2px;
-      color: $brand-ilo-white;
+      color: var(--ilo-color-white);
       cursor: pointer;
       display: inline-block;
       margin-left: spacing(5);
@@ -404,15 +404,15 @@
 
       &:focus,
       &:hover {
-        @include dataurlicon("plus", $brand-ilo-blue);
-        background-color: $brand-ilo-white;
-        border-color: $brand-ilo-white;
-        color: $brand-ilo-blue;
+        @include dataurlicon("plus", rgba(30, 45, 190, 1));
+        background-color: var(--ilo-color-white);
+        border-color: var(--ilo-color-white);
+        color: var(--ilo-color-blue);
       }
 
       [dir="rtl"] & {
-        @include dataurlicon("plus", $brand-ilo-white);
-        background-color: $brand-ilo-dark-blue;
+        @include dataurlicon("plus", rgba(255, 255, 255, 1));
+        background-color: var(--ilo-color-blue-dark);
         background-repeat: no-repeat;
         background-size: 20px;
         background-position: 10% 55%;
@@ -420,9 +420,9 @@
 
         &:focus,
         &:hover {
-          @include dataurlicon("plus", $brand-ilo-blue);
-          background-color: $brand-ilo-white;
-          color: $brand-ilo-blue;
+          @include dataurlicon("plus", rgba(30, 45, 190, 1));
+          background-color: var(--ilo-color-white);
+          color: var(--ilo-color-blue);
         }
       }
     }
@@ -470,12 +470,12 @@
 
     &--item {
       @include typography("highlight-medium");
-      color: $brand-ilo-white;
+      color: var(--ilo-color-white);
     }
 
     &--link {
       background: inherit;
-      color: $brand-ilo-white;
+      color: var(--ilo-color-white);
       padding: 0 spacing(6);
       height: 100%;
       text-decoration: none;
@@ -488,15 +488,15 @@
 
       &:hover,
       &:focus {
-        background: $brand-ilo-light-blue;
-        color: $brand-ilo-blue;
+        background: var(--ilo-color-blue-lighter);
+        color: var(--ilo-color-blue);
       }
     }
   }
 }
 
 .ilo--mobile--nav {
-  border-bottom: 3px solid $brand-ilo-grey-light;
+  border-bottom: 3px solid var(--ilo-color-gray-light);
   margin-bottom: spacing(4);
   padding-bottom: spacing(4);
 
@@ -507,7 +507,7 @@
   }
 
   &--language--select {
-    background: $brand-ilo-white;
+    background: var(--ilo-color-white);
     left: 0;
     height: 100%;
     padding: 0 0 spacing(8);
@@ -523,17 +523,17 @@
   }
 
   &--language--switcher--button {
-    @include dataurlicon("globe", $brand-ilo-dark-blue);
+    @include dataurlicon("globe", rgba(35, 0, 80, 1));
     @include typography("highlight-medium");
 
     appearance: none;
-    background-color: $brand-ilo-white;
+    background-color: var(--ilo-color-white);
     background-position: calc(100% - 16px) 55%;
     background-repeat: no-repeat;
     background-size: 24px;
     background-position-y: center;
     border: none;
-    color: $brand-ilo-dark-blue;
+    color: var(--ilo-color-blue-dark);
     cursor: pointer;
     display: block;
     font-family: var(--ilo-fonts-display);
@@ -545,9 +545,9 @@
 
     &:focus,
     &:hover {
-      @include dataurlicon("globe", $brand-ilo-blue);
-      background-color: $brand-ilo-light-blue;
-      color: $brand-ilo-blue;
+      @include dataurlicon("globe", rgba(30, 45, 190, 1));
+      background-color: var(--ilo-color-blue-lighter);
+      color: var(--ilo-color-blue);
     }
 
     [dir="rtl"] & {
@@ -577,17 +577,17 @@
 }
 
 .ilo--language-switcher {
-  background: $brand-ilo-dark-blue;
+  background: var(--ilo-color-blue-dark);
   display: flex;
-  padding: 0 max((100% - $layout-max-width) / 2, $layout-padding) 0 0;
+  padding: 0 max((100% - #{px-to-rem(1300px)}) / 2, #{px-to-rem(20px)}) 0 0;
   position: relative;
 
   [dir="rtl"] & {
-    padding: 0 0 0 max((100% - $layout-max-width) / 2, $layout-padding);
+    padding: 0 0 0 max((100% - #{px-to-rem(1300px)}) / 2, #{px-to-rem(20px)});
   }
 
   &::before {
-    background: $brand-ilo-dark-blue;
+    background: var(--ilo-color-blue-dark);
     clip-path: polygon(0 0, 100% 0, 97% 100%);
     content: "";
     display: block;
@@ -616,14 +616,14 @@
 
   &--button {
     @include typography("body-xsmall");
-    @include dataurlicon("globe", $brand-ilo-white);
+    @include dataurlicon("globe", rgba(255, 255, 255, 1));
     appearance: none;
-    background-color: $brand-ilo-dark-blue;
+    background-color: var(--ilo-color-blue-dark);
     background-repeat: no-repeat;
     background-position: px-to-rem(12px) center;
     background-size: px-to-rem(24px);
     border: none;
-    color: $brand-ilo-white;
+    color: var(--ilo-color-white);
     cursor: pointer;
     display: block;
     font-family: var(--ilo-fonts-display);
@@ -633,9 +633,9 @@
 
     &:hover,
     &:focus {
-      @include dataurlicon("globe", $brand-ilo-blue);
-      background-color: $brand-ilo-light-blue;
-      color: $brand-ilo-blue;
+      @include dataurlicon("globe", rgba(30, 45, 190, 1));
+      background-color: var(--ilo-color-blue-lighter);
+      color: var(--ilo-color-blue);
     }
 
     [dir="rtl"] & {
@@ -672,7 +672,7 @@
 .ilo--subnav {
   display: none;
   visibility: hidden;
-  background: $brand-ilo-white;
+  background: var(--ilo-color-white);
   height: 100%;
   left: 0;
   padding: 0 0 spacing(8);
@@ -697,7 +697,7 @@
     z-index: -1;
 
     .ilo--header.ilo--subnav--open & {
-      border-bottom: px-to-rem(3px) solid $color-base-neutrals-light;
+      border-bottom: px-to-rem(3px) solid var(--ilo-color-gray-base);
       filter: drop-shadow(0px 0.8px 1.6px rgba(30, 45, 190, 0.038))
         drop-shadow(0px 4px 8px rgba(30, 45, 190, 0.054))
         drop-shadow(0px 10px 20px rgba(30, 45, 190, 0.08));
@@ -730,8 +730,8 @@
 
   &--link {
     @include typography("highlight-medium");
-    background: $brand-ilo-white;
-    color: $brand-ilo-dark-blue;
+    background: var(--ilo-color-white);
+    color: var(--ilo-color-blue-dark);
     display: flex;
     padding: 18px spacing(2);
     text-decoration: none;
@@ -739,8 +739,8 @@
 
     &:hover,
     &:focus {
-      background: $brand-ilo-light-blue;
-      color: $brand-ilo-blue;
+      background: var(--ilo-color-blue-lighter);
+      color: var(--ilo-color-blue);
       text-decoration: none;
     }
   }
@@ -760,16 +760,16 @@
 
   &--back {
     @include typography("highlight-medium");
-    background-color: $brand-ilo-white;
+    background-color: var(--ilo-color-white);
     border: none;
-    color: $brand-ilo-dark-blue;
+    color: var(--ilo-color-blue-dark);
     cursor: pointer;
     padding: spacing(5) spacing(4) spacing(4) spacing(8);
     position: relative;
     transition: all 150ms ease-out;
 
     &::before {
-      @include dataurlicon("chevron_left", $brand-ilo-dark-blue);
+      @include dataurlicon("chevron_left", rgba(35, 0, 80, 1));
       background-position: 10% center;
       background-repeat: no-repeat;
       background-size: 24px;
@@ -787,7 +787,7 @@
       padding: spacing(5) spacing(8) spacing(4) spacing(4);
 
       &::before {
-        @include dataurlicon("chevron_right", $brand-ilo-dark-blue);
+        @include dataurlicon("chevron_right", rgba(35, 0, 80, 1));
         background-position: 10% center;
         background-repeat: no-repeat;
         background-size: 24px;
@@ -798,11 +798,11 @@
 
     &:hover,
     &:focus {
-      background-color: $brand-ilo-light-blue;
-      color: $brand-ilo-blue;
+      background-color: var(--ilo-color-blue-lighter);
+      color: var(--ilo-color-blue);
 
       &::before {
-        @include dataurlicon("chevron_left", $brand-ilo-blue);
+        @include dataurlicon("chevron_left", rgba(30, 45, 190, 1));
         background-position: 10% center;
         background-repeat: no-repeat;
         background-size: 24px;
@@ -810,7 +810,7 @@
 
       [dir="rtl"] & {
         &::before {
-          @include dataurlicon("chevron_right", $brand-ilo-blue);
+          @include dataurlicon("chevron_right", rgba(30, 45, 190, 1));
           background-position: 10% center;
           background-repeat: no-repeat;
           background-size: 24px;
@@ -825,8 +825,8 @@
 
   &--label {
     @include typography("highlight-large");
-    border-bottom: 3px solid $brand-ilo-grey-light;
-    color: $brand-ilo-black;
+    border-bottom: 3px solid var(--ilo-color-gray-light);
+    color: var(--ilo-color-gray-charcoal);
     font-family: var(--ilo-fonts-display);
     font-weight: 700;
     margin-bottom: spacing(4);
@@ -838,7 +838,7 @@
 .ilo--search-box {
   display: none;
   visibility: hidden;
-  background: $brand-ilo-white;
+  background: var(--ilo-color-white);
   left: 0;
   position: absolute;
   top: 0;
@@ -898,7 +898,7 @@
   }
 
   &--button {
-    @include dataurlicon("search", $brand-ilo-white);
+    @include dataurlicon("search", rgba(255, 255, 255, 1));
     appearance: none;
     background-color: transparent;
     background-position: center;
@@ -914,21 +914,21 @@
 
     &:hover,
     &:focus {
-      @include dataurlicon("search", $brand-ilo-blue);
-      background-color: $brand-ilo-light-blue;
+      @include dataurlicon("search", rgba(30, 45, 190, 1));
+      background-color: var(--ilo-color-blue-lighter);
     }
 
     .ilo--search--open & {
-      @include dataurlicon("close", $brand-ilo-dark-blue);
-      background-color: $brand-ilo-white;
+      @include dataurlicon("close", rgba(35, 0, 80, 1));
+      background-color: var(--ilo-color-white);
       background-position: center;
       background-repeat: no-repeat;
       background-size: 32px 32px;
 
       &:hover,
       &:focus {
-        @include dataurlicon("close", $brand-ilo-blue);
-        background-color: $brand-ilo-light-blue;
+        @include dataurlicon("close", rgba(30, 45, 190, 1));
+        background-color: var(--ilo-color-blue-lighter);
       }
     }
   }
