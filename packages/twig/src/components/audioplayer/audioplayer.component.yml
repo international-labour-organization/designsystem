@@ -1,0 +1,34 @@
+audioplayer:
+  namespace: Components/Media
+  use: "@components/audioplayer/audioplayer.twig"
+  label: Audio Player
+  description: A component for playing audio files.
+  visibility: storybook
+  fields:
+    src:
+      type: string
+      label: Audio source
+      description: Path to the audio file
+      required: true
+      preview: "/audio/audio-example.mp3"
+    name:
+      type: string
+      label: Track name
+      description: The name of the audio track
+      required: true
+      preview: "Sample Track"
+    programme:
+      type: string
+      label: Programme
+      description: The name of the programme
+      required: true
+      preview: "Sample Programme"
+    creator:
+      type: string
+      label: Creator
+      description: The name of the creator
+      required: true
+      preview: "Sample Creator"
+  variants:
+    default:
+      label: Default

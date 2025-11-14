@@ -80,6 +80,7 @@
     display: flex;
     align-items: center;
     background-color: var(--ilo-color-yellow-500);
+    color: var(--ilo-color-brand-800);
     border-radius: 50%;
     cursor: pointer;
     padding: spacing(1);
@@ -88,8 +89,17 @@
   &--play-button:hover {
     background-color: var(--ilo-color-brand-100);
   }
-  &--play-icon {
-    color: var(--ilo-color-brand-800);
+  [aria-label="Play"] &--play-icon {
+    display: block;
+  }
+  [aria-label="Play"] &--pause-icon {
+    display: none;
+  }
+  [aria-label="Pause"] &--play-icon {
+    display: none;
+  }
+  [aria-label="Pause"] &--pause-icon {
+    display: block;
   }
   &--right {
     grid-area: right;
@@ -124,6 +134,18 @@
     cursor: pointer;
     display: flex;
     align-items: center;
+  }
+  [aria-label="Mute"] &--sound-on-icon {
+    display: block;
+  }
+  [aria-label="Mute"] &--sound-off-icon {
+    display: none;
+  }
+  [aria-label="Unmute"] &--sound-on-icon {
+    display: none;
+  }
+  [aria-label="Unmute"] &--sound-off-icon {
+    display: block;
   }
   &--volume-slider {
     --progress: 100%;
