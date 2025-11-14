@@ -51,7 +51,9 @@ function PhotoGalleryThumbnails({
                 onClick={() => onSelect?.(index)}
               >
                 <img
-                  src={item.sources?.thumbnail || item.src}
+                  src={
+                    typeof item.src === "string" ? item.src : item.src.thumbnail
+                  }
                   alt={item.credit || `Thumbnail ${index + 1}`}
                 />
               </button>

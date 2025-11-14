@@ -14,16 +14,20 @@ import { LightBox } from "./LightBox";
 import { LightBoxGallery } from "./LightBoxGallery";
 import { Icon } from "../Icon";
 
-export type PhotoGalleryItem = ImgHTMLAttributes<HTMLImageElement> & {
+type PhotoGallerySrc = {
+  gallery: string;
+  thumbnail: string;
+  lightbox: string;
+};
+
+export type PhotoGalleryItem = Omit<
+  ImgHTMLAttributes<HTMLImageElement>,
+  "src"
+> & {
   credit?: string;
   caption?: string;
-  src: string;
+  src: PhotoGallerySrc | string;
   alt: string;
-  sources?: {
-    gallery: string;
-    thumbnail?: string;
-    lightbox?: string;
-  };
 };
 
 export interface PhotoGalleryProps {
@@ -103,7 +107,10 @@ function PhotoGallery({
                     credit={item.credit}
                     url={[
                       {
-                        src: item.sources?.gallery || item.src,
+                        src:
+                          typeof item.src === "string"
+                            ? item.src
+                            : item.src.gallery,
                         breakpoint: 800,
                       },
                     ]}

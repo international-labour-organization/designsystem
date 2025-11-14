@@ -134,8 +134,7 @@ const SeparateSources: StoryObj<PhotoGalleryProps> = Object.assign(
     args: {
       items: [
         {
-          src: "/gallery-small.jpg",
-          sources: {
+          src: {
             gallery: "/gallery-small.jpg",
             thumbnail: "/gallery-small.jpg",
             lightbox: "/gallery-extra.jpg",
