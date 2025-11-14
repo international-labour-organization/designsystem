@@ -543,6 +543,9 @@ importers:
       cypress:
         specifier: ^14.3.2
         version: 14.3.2
+      embla-carousel:
+        specifier: ^8.6.0
+        version: 8.6.0
       video.js:
         specifier: ^7.21.2
         version: 7.21.2
