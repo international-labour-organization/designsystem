@@ -105,6 +105,15 @@ export default class PhotoGallery extends StatefulComponent {
     this.lightboxDesktopCaption = this.lightbox.querySelector(
       "[data-lightbox-caption-text]"
     );
+    this.lightBoxMobileCaptionContainer = this.lightbox.querySelector(
+      `.${this.prefix}--photo-gallery-expandable-caption`
+    );
+    this.lightboxMobileCaption = this.lightbox.querySelector(
+      "[data-caption-text-mobile]"
+    );
+    this.lightboxMobileCaptionExpandBtn = this.lightbox.querySelector(
+      "[data-action='expand-mobile-caption']"
+    );
 
     return this;
   }
@@ -262,6 +271,16 @@ export default class PhotoGallery extends StatefulComponent {
       });
     }
 
+    if (this.lightboxMobileCaptionExpandBtn && this.lightboxMobileCaption) {
+      this.lightboxMobileCaptionExpandBtn.addEventListener("click", (event) => {
+        const isExpanded =
+          event.currentTarget.getAttribute("aria-expanded") === "true";
+        event.currentTarget.setAttribute("aria-expanded", String(!isExpanded));
+        this.lightBoxMobileCaptionContainer.classList.toggle(
+          `${this.prefix}--photo-gallery-expandable-caption--expanded`
+        );
+      });
+    }
     if (this.state.withKeyboardControls) {
       document.addEventListener("keydown", this.onKeyDown);
     }
@@ -381,13 +400,28 @@ export default class PhotoGallery extends StatefulComponent {
       this.lightboxDesktopCaption.textContent = caption ? caption : "";
     }
 
+    if (this.lightboxMobileCaption) {
+      this.lightboxMobileCaption.textContent = caption ? caption : "";
+
+      if (this.lightboxMobileCaptionExpandBtn) {
+        const isCaptionOverflowing =
+          this.lightboxMobileCaption.scrollWidth >
+          this.lightboxMobileCaption.clientWidth;
+
+        this.lightboxMobileCaptionExpandBtn.style.display = isCaptionOverflowing
+          ? "block"
+          : "none";
+      }
+    }
+
     if (!this.captionContainer || this.state.captionView === "hidden") return;
+
     if (
       this.state.captionView === "visible" ||
       (this.state.captionView === "ifExists" && caption)
     ) {
       this.captionContainer.textContent = caption ? caption : "";
-      this.captionContainer.style.display = caption ? "" : "none";
+      this.captionContainer.style.display = caption ? "block" : "none";
     } else {
       this.captionContainer.style.display = "none";
     }
@@ -400,7 +434,6 @@ export default class PhotoGallery extends StatefulComponent {
     if (!this.lightbox) return;
 
     this.lightbox.classList.add(`${this.prefix}--lightbox--open`);
-    this.lightbox.setAttribute("aria-hidden", "false");
     document.body.style.overflow = "hidden";
 
     const closeBtn = this.lightbox.querySelector(

@@ -23,8 +23,18 @@
 
 	<div
 		class="{{prefix}}--lightbox-gallery__bar">
-		{# Expandable caption #}
-		<div class="{{prefix}}--lightbox-gallery__caption" data-lightbox-caption></div>
+		{# Expandable caption (mobile) #}
+		<div class="{{prefix}}--photo-gallery-expandable-caption">
+			<div class="{{prefix}}--photo-gallery-expandable-caption__preview">
+				<p class="{{prefix}}--photo-gallery-expandable-caption__text" data-caption-text-mobile></p>
+				<button class="{{prefix}}--photo-gallery-expandable-caption__toggle" data-action="expand-mobile-caption" aria-expanded="false" aria-label="Expand caption" type="button" hidden>
+					{% include '@components/icon/icon.twig' with {
+								name: 'chevron_up',
+								size: '20'
+						} %}
+				</button>
+			</div>
+		</div>
 
 		{# Extra info section #}
 		<div class="{{prefix}}--lightbox-gallery__extra">
@@ -54,8 +64,8 @@
 		{# Controls at bottom #}
 		<div class="{{prefix}}--lightbox-gallery__controls">
 			{% include '@components/photogallery/photogallerycontrols.twig' with {
-        prefix: prefix,
-      } %}
+					prefix: prefix,
+				} %}
 		</div>
 	</div>
 </div>
