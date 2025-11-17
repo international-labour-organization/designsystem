@@ -3,7 +3,7 @@
 		<div class="{{prefix}}--lightbox-gallery__core__viewport" data-embla-lightbox-viewport tabindex="0">
 			<div class="{{prefix}}--lightbox-gallery__core__container">
 				{% for item in items %}
-					<div class="{{prefix}}--lightbox-gallery__core__slide" data-index="{{loop.index0}}">
+					<div class="{{prefix}}--lightbox-gallery__core__slide">
 						<figure class="{{prefix}}--lightbox-gallery__core__image-wrapper">
 							<img src="{{item.sources.lightbox|default(item.src)}}" alt="{{item.alt|default(item.credit|default('Photo ' ~ loop.index))}}"/>
 							{% if item.credit %}
@@ -40,7 +40,7 @@
 		<div class="{{prefix}}--lightbox-gallery__extra">
 			<p class="{{prefix}}--lightbox-gallery__extra-text" data-lightbox-caption-text></p>
 			<div class="{{prefix}}--lightbox-gallery__extra-controls">
-				{% include '@components/photogallery/photogallerycontrols.twig' with {
+				{% include '@components/photogallery/photogallery_controls.twig' with {
           prefix: prefix,
         } %}
 			</div>
@@ -63,7 +63,7 @@
 
 		{# Controls at bottom #}
 		<div class="{{prefix}}--lightbox-gallery__controls">
-			{% include '@components/photogallery/photogallerycontrols.twig' with {
+			{% include '@components/photogallery/photogallery_controls.twig' with {
 					prefix: prefix,
 				} %}
 		</div>

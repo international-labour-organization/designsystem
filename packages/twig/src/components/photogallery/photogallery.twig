@@ -20,7 +20,7 @@
 
 		{# Controls #}
 		<div class={{core_class ~ "__controls"}}>
-			{% include '@components/photogallery/photogallerycontrols.twig' with {
+			{% include '@components/photogallery/photogallery_controls.twig' with {
         prefix: prefix,
         gallery_id: gallery_id
       } %}
@@ -28,7 +28,7 @@
 
 		{# Main carousel viewport #}
 		<div class="{{core_class}}__viewport" data-embla-viewport>
-			<div class="{{core_class}}__container" data-embla-container>
+			<div class="{{core_class}}__container">
 				{% for item in items %}
 					<div class="{{core_class}}__slide" data-index="{{loop.index0}}">
 						<div class="{{core_class}}__image {{core_class}}__image--{{fit}}">
@@ -56,7 +56,7 @@
 
 
 	{# Thumbnails  #}
-	{% include '@components/photogallery/photogallerythumbnails.twig' with {
+	{% include '@components/photogallery/photogallery_thumbnails.twig' with {
 		prefix: prefix,
 		items: items,
 		see_all_label: see_all_label
