@@ -138,7 +138,7 @@ export default class PhotoGallery extends StatefulComponent {
    */
   registerStateHandlers() {
     this.registerStateHandler("currentIndex", (index) => {
-      this.updateUI(index);
+      this.sync(index);
     });
 
     this.registerStateHandler("isLightboxOpen", (isOpen) => {
@@ -205,8 +205,8 @@ export default class PhotoGallery extends StatefulComponent {
       });
     }
 
-    this.updateCaption(this.state.currentIndex);
-    this.updateUI(this.state.currentIndex);
+    this.syncCaption(this.state.currentIndex);
+    this.sync(this.state.currentIndex);
 
     return this;
   }
@@ -281,9 +281,8 @@ export default class PhotoGallery extends StatefulComponent {
         );
       });
     }
-    if (this.state.withKeyboardControls) {
-      document.addEventListener("keydown", this.onKeyDown);
-    }
+
+    document.addEventListener("keydown", this.onKeyDown);
 
     return this;
   }
@@ -320,7 +319,7 @@ export default class PhotoGallery extends StatefulComponent {
    * @param {KeyboardEvent} event
    */
   onKeyDown(event) {
-    if (!this.state.withKeyboardControls || this.state.isLightboxOpen) return;
+    if (!this.state.withKeyboardControls && !this.state.isLightboxOpen) return;
 
     switch (event.key) {
       case "ArrowLeft":
@@ -335,18 +334,17 @@ export default class PhotoGallery extends StatefulComponent {
   }
 
   /**
-   * Update UI based on current index
+   * Sync the rest of UI based on current index
    *
    * @param {number} index
    */
-  updateUI(index) {
+  sync(index) {
     if (this.controls.totals.current.length) {
       this.controls.totals.current.forEach((el) => {
         el.textContent = index + 1;
       });
     }
 
-    // Update thumbnail selection
     if (this.thumbButtons) {
       this.thumbButtons.forEach((btn, i) => {
         const baseClass = `${this.prefix}--photo-gallery-thumbnails__thumbnail`;
@@ -380,15 +378,15 @@ export default class PhotoGallery extends StatefulComponent {
       this.lightBoxCarouselThumb.scrollTo(index);
     }
 
-    this.updateCaption(index);
+    this.syncCaption(index);
   }
 
   /**
-   * Update caption text
+   * Update captions
    *
    * @param {number} index
    */
-  updateCaption(index) {
+  syncCaption(index) {
     const slide = this.slides[index];
     if (!slide) return;
 
