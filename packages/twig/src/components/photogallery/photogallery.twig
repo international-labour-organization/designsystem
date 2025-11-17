@@ -22,7 +22,6 @@
 		<div class={{core_class ~ "__controls"}}>
 			{% include '@components/photogallery/photogallery_controls.twig' with {
         prefix: prefix,
-        gallery_id: gallery_id
       } %}
 		</div>
 
@@ -35,7 +34,7 @@
 							{% include '@components/image/image.twig' with {
                   prefix: prefix,
                   url: [{
-                    src: item.sources.gallery|default(item.src),
+										src: item.src.gallery|default(item.src),
                     breakpoint: 800
                   }],
                   credit: item.credit,
@@ -66,6 +65,5 @@
 	{% include '@components/photogallery/lightbox.twig' with {
 		prefix: prefix,
 		items: items,
-		gallery_id: gallery_id
 	} %}
 </div>

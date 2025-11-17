@@ -536,7 +536,6 @@ export default class PhotoGallery extends StatefulComponent {
     if (!this.lightbox) return;
 
     this.lightbox.classList.add(`${this.prefix}--lightbox--open`);
-    this.lightbox.setAttribute("aria-hidden", "false");
     document.body.style.overflow = "hidden";
 
     const closeBtn = this.lightbox.querySelector(
@@ -571,7 +570,6 @@ export default class PhotoGallery extends StatefulComponent {
     if (!this.lightbox) return;
 
     this.lightbox.classList.remove(`${this.prefix}--lightbox--open`);
-    this.lightbox.setAttribute("aria-hidden", "true");
     document.body.style.overflow = "";
 
     // Clean up event listeners

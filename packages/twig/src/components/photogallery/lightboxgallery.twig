@@ -5,7 +5,7 @@
 				{% for item in items %}
 					<div class="{{prefix}}--lightbox-gallery__core__slide">
 						<figure class="{{prefix}}--lightbox-gallery__core__image-wrapper">
-							<img src="{{item.sources.lightbox|default(item.src)}}" alt="{{item.alt|default(item.credit|default('Photo ' ~ loop.index))}}"/>
+							<img src="{{item.src.lightbox|default(item.src)}}" alt="{{item.alt|default(item.credit|default('Photo ' ~ loop.index))}}"/>
 							{% if item.credit %}
 								<figcaption class="{{prefix}}--lightbox-gallery__core__image-wrapper-credit">
 									<span class="{{prefix}}--lightbox-gallery__core__image-wrapper-credit-text">
@@ -53,7 +53,7 @@
 					{% for item in items %}
 						<div class="{{prefix}}--lightbox-gallery__thumbnails__slide">
 							<button class="{{prefix}}--lightbox-gallery__thumbnails__image" data-lightbox-thumbnail-index="{{loop.index0}}" type="button">
-								<img src="{{item.sources.thumbnail|default(item.src)}}" alt="{{item.alt|default(item.credit|default('Thumbnail ' ~ loop.index))}}" loading="lazy"/>
+								<img src="{{item.src.thumbnail|default(item.src)}}" alt="{{item.alt|default(item.credit|default('Thumbnail ' ~ loop.index))}}" loading="lazy"/>
 							</button>
 						</div>
 					{% endfor %}
