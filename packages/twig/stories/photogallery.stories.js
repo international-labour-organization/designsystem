@@ -31,11 +31,10 @@ const SeparateSources = {
   args: {
     items: [
       {
-        src: "/gallery-small.jpg",
-        sources: {
-          gallery: "/gallery-small.jpg",
-          thumbnail: "/gallery-small.jpg",
-          lightbox: "/gallery-extra.jpg",
+        src: {
+          gallery: "/images/gallery-small.jpg",
+          thumbnail: "/images/gallery-small.jpg",
+          lightbox: "/images/gallery-extra.jpg",
         },
         caption: "Photo with separate sources",
         alt: "Photo with separate sources",
