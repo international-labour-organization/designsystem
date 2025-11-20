@@ -1,4 +1,3 @@
-@use "../tokens" as *;
 @use "../functions" as *;
 @use "../animations" as *;
 @import "../mixins";
@@ -14,7 +13,7 @@
         --max-width: 100%;
       }
 
-      border-bottom: px-to-rem(3px) solid $brand-ilo-purple;
+      border-bottom: px-to-rem(3px) solid var(--ilo-color-purple);
       padding: spacing(10) spacing(6) spacing(8);
       position: relative;
       width: 100%;
@@ -27,19 +26,19 @@
 
       &#{$self}__color {
         &__blue {
-          background: $brand-ilo-light-blue;
+          background: var(--ilo-color-blue-lighter);
         }
 
         &__yellow {
-          background: $brand-ilo-yellow;
+          background: var(--ilo-color-yellow);
         }
 
         &__green {
-          background: $brand-ilo-green;
+          background: var(--ilo-color-green);
         }
 
         &__turquoise {
-          background: $brand-ilo-turquoise;
+          background: var(--ilo-color-turquoise);
         }
       }
 
@@ -76,7 +75,7 @@
       }
 
       #{$self}--title {
-        color: $brand-ilo-dark-blue;
+        color: var(--ilo-color-blue-dark);
         @include typography("heading-2");
         @include textmargin(
           "margin-bottom",
@@ -90,7 +89,7 @@
       }
 
       #{$self}--intro {
-        color: $brand-ilo-dark-blue;
+        color: var(--ilo-color-blue-dark);
         font-family: var(--ilo-fonts-display);
         @include typography("highlight-medium");
         @include textmargin("margin-bottom", 35px, "nav-md-sm", "copy", 0, 0);

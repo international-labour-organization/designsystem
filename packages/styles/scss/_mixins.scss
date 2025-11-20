@@ -154,23 +154,23 @@
   $height: if($size == "big", 72px, 32px);
   $box: if($size == "big", 80px, 40px);
   $width: $height;
-  $color: $color-ux-video-controls-default-icon;
+  $icon-color-default: rgba(237, 240, 242, 1);
+  $icon-color-hover: rgba(30, 45, 190, 1);
 
   cursor: pointer;
   border: none;
-  background-color: $color-ux-video-controls-default-background;
+  background-color: var(--ilo-color-gray-charcoal);
   width: $box;
   height: $box;
   background-position: center center;
   background-repeat: no-repeat;
   background-size: $width $height;
-  @include dataurlicon($name, $color);
+  @include dataurlicon($name, $icon-color-default);
 
   &:hover,
   &:focus {
-    background-color: $color-ux-video-controls-hover-background;
-    $color: $color-ux-video-controls-hover-icon;
-    @include dataurlicon($name, $color);
+    background-color: var(--ilo-color-blue-light);
+    @include dataurlicon($name, $icon-color-hover);
   }
 }
 

@@ -1,4 +1,3 @@
-@use "../tokens" as *;
 @use "../functions" as *;
 @use "../animations" as *;
 @import "../mixins";
@@ -10,7 +9,7 @@
   @include typography("body-small");
   font-family: var(--ilo-fonts-copy);
   font-weight: 400;
-  background: map-get($color, "tooltip", "default", "background");
+  background: var(--ilo-color-white);
   border: none;
   border-radius: px-to-rem(2px);
   display: inline-block;
@@ -18,7 +17,7 @@
     drop-shadow(0px 4px 8px rgba(30, 45, 190, 0.054))
     drop-shadow(0px 10px 20px rgba(30, 45, 190, 0.08))
     drop-shadow(0px -4px 16px rgba(30, 45, 190, 0.054));
-  color: map-get($color, "tooltip", "default", "text");
+  color: var(--ilo-color-gray-charcoal);
   opacity: 0;
   padding: spacing(2) spacing(4) spacing(3);
   position: absolute;
@@ -84,38 +83,35 @@
       background-size: cover;
       height: px-to-rem(20px);
       min-width: px-to-rem(20px);
-      @include dataurlicon(
-        "notification_info_outlined",
-        $color-ux-labels-actionable
-      );
+      @include icon("notification_info_outlined", var(--ilo-color-blue));
 
       &#{&}__theme__dark {
-        @include dataurlicon(
+        @include icon(
           "notification_info_outlined",
-          $color-tooltip-dark-icon
+          var(--ilo-color-gray-light)
         );
       }
     }
   }
 
   &--dark {
-    background: map-get($color, "tooltip", "dark", "background");
-    color: map-get($color, "tooltip", "dark", "text");
+    background: var(--ilo-color-gray-charcoal);
+    color: var(--ilo-color-gray-light);
 
     &.ilo--tooltip--arrow {
-      border-bottom-color: map-get($color, "tooltip", "dark", "background");
+      border-bottom-color: var(--ilo-color-gray-charcoal);
     }
 
     &.ilo--tooltip--arrow {
-      border-top-color: map-get($color, "tooltip", "dark", "background");
+      border-top-color: var(--ilo-color-gray-charcoal);
     }
 
     &.ilo--tooltip--arrow {
-      border-left-color: map-get($color, "tooltip", "dark", "background");
+      border-left-color: var(--ilo-color-gray-charcoal);
     }
 
     &.ilo--tooltip--arrow {
-      border-right-color: map-get($color, "tooltip", "dark", "background");
+      border-right-color: var(--ilo-color-gray-charcoal);
     }
   }
 }

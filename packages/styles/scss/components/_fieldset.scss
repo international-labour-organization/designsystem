@@ -1,4 +1,3 @@
-@use "../tokens" as *;
 @use "../functions" as *;
 @use "sass:math";
 @import "../mixins";
@@ -31,11 +30,11 @@
     justify-content: flex-start;
     align-items: flex-start;
     flex-direction: $value;
-    @include textmargin("gap", $gap, "label-medium", "display", 0, 0);
+    gap: px-to-rem($gap);
   }
 
   &--legend-wrapper {
-    @include textmargin("margin-bottom", $gap, "label-medium", "display", 0, 0);
+    margin-bottom: px-to-rem($gap);
 
     .ilo--tooltip--wrapper {
       top: px-to-rem(-1px);
@@ -44,7 +43,7 @@
 
   &--legend {
     font-family: var(--ilo-fonts-display);
-    font-weight: map-get($type, "weights", "label");
+    font-weight: var(--ilo-font-weight-bold);
     display: flex;
     flex-flow: row nowrap;
     align-items: center;
@@ -105,14 +104,7 @@
   &__error {
     font-family: var(--ilo-fonts-copy);
     @include typography("body-xsmall");
-    @include textmargin(
-      "margin-top",
-      map-get($spacing, "padding-1-5"),
-      "body-xxs",
-      "copy",
-      0,
-      0
-    );
+    margin-top: px-to-rem(6px);
   }
 
   &--helper {
