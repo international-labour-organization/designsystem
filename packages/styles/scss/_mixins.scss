@@ -46,45 +46,6 @@
 }
 
 // ======================================
-// Text Margin
-//
-// calculates reduced margin to account
-// for line-height and descenders
-// ======================================
-
-@mixin textmargin(
-  $margin,
-  $marginval,
-  $stylename,
-  $descender,
-  $stylename2: false,
-  $descender2: false
-) {
-  @if $stylename2 != false {
-    #{$margin}: px-to-rem(
-      margin-adjust(
-        $marginval,
-        map-get($type, "descenders", $descender),
-        map-get($type, $stylename, "size"),
-        map-get($type, $stylename, "line-height")
-      )
-    );
-  } @else {
-    #{$margin}: px-to-rem(
-      margin-adjust(
-        $marginval,
-        map-get($type, "descenders", $descender),
-        map-get($type, $stylename, "size"),
-        map-get($type, $stylename, "line-height"),
-        map-get($type, "descenders", $descender2),
-        map-get($type, $stylename2, "size"),
-        map-get($type, $stylename2, "line-height")
-      )
-    );
-  }
-}
-
-// ======================================
 // Border Values
 // ======================================
 

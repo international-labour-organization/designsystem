@@ -77,22 +77,15 @@
       #{$self}--title {
         color: var(--ilo-color-blue-dark);
         @include typography("heading-2");
-        @include textmargin(
-          "margin-bottom",
-          24px,
-          "headline-3",
-          "display",
-          0,
-          0
-        );
         width: 100%;
+        margin-bottom: spacing(3);
       }
 
       #{$self}--intro {
         color: var(--ilo-color-blue-dark);
         font-family: var(--ilo-fonts-display);
         @include typography("highlight-medium");
-        @include textmargin("margin-bottom", 35px, "nav-md-sm", "copy", 0, 0);
+        margin-bottom: spacing(8);
         width: 100%;
       }
 
