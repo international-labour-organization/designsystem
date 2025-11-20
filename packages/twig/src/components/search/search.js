@@ -1,101 +1,150 @@
+import { StatefulComponent } from "../../utils";
+
 /**
- * The Search module which handles the clear button.
+ * Search component that manages the clear button visibility/state for search input fields.
  *
  * @class Search
+ * @extends StatefulComponent
  */
-export default class Search {
+export default class Search extends StatefulComponent {
   /**
-   * Search constructor which assigns the element passed into the constructor
-   * to the `this.element` property for later reference
-   *
-   * @param {HTMLElement} element - REQUIRED - the module's container
+   * @param {HTMLElement} element Root element of the search component
    */
   constructor(element) {
-    /**
-     * Reference to the DOM element that is the root of the component
-     * @property {Object}
-     */
-    this.element = element;
-    this.multipleExpanded = false;
+    const initialState = {
+      inputValue: "",
+    };
 
-    // Initialize the view
+    super(element, initialState);
     this.init();
   }
 
   /**
-   * Initializes the view by calling the functions to
-   * create DOM references, setup event handlers and
-   * then create the event listeners
+   * Initializes the component by caching references, binding handlers,
+   * registering state listeners, wiring events, and syncing initial state.
    *
-   * @return {Object} Search A reference to the instance of the class
-   * @chainable
+   * @returns {Search}
    */
   init() {
-    this.cacheDomReferences().setupHandlers().enable();
-
-    return this;
+    return this.cacheDomReferences()
+      .bindHandlers()
+      .registerStateHandlers()
+      .enable()
+      .syncInitialState();
   }
 
   /**
-   * Find all necessary DOM elements used in the view and cache them
+   * Cache DOM references needed for interaction.
    *
-   * @return {Object} Search A reference to the instance of the class
-   * @chainable
+   * @returns {Search}
    */
-  cacheDomReferences() {
-    /**
-     * The field that a user interacts with on a form
-     * @type {Object}
-     */
-    this.searchButton = this.element.querySelector(
+  cacheDomReferences = () => {
+    this.clearButton = this.element.querySelector(
       ".ilo--searchfield--clear-button"
     );
-    this.searchInputField = this.element.querySelector(".ilo--input");
+    this.inputField = this.element.querySelector(".ilo--input");
     return this;
-  }
+  };
 
   /**
-   * Bind event handlers with the proper context of `this`.
+   * Bind class methods to preserve context.
    *
-   * @return {Object} Search A reference to the current instance of the class
-   * @chainable
+   * @returns {Search}
    */
-  setupHandlers() {
-    this.onClick = this.onClick.bind(this);
-    this.KeyPressHandler = this.onKeyPress.bind(this);
+  bindHandlers = () => {
+    this.handleClearClick = this.handleClearClick.bind(this);
+    this.handleInputKeyUp = this.handleInputKeyUp.bind(this);
     return this;
-  }
+  };
 
   /**
-   * Creates event listeners to enable interaction with view
+   * Register listeners for state changes.
    *
-   * @return {Object} Search A reference to the instance of the class
-   * @chainable
+   * @returns {Search}
    */
-  enable() {
-    this.searchButton.addEventListener("click", this.onClick.bind(this));
-    this.searchInputField.addEventListener(
-      "keyup",
-      this.onKeyPress.bind(this, this.searchButton)
-    );
+  registerStateHandlers = () => {
+    this.registerStateHandler("inputValue", this.handleInputValueChange);
+    return this;
+  };
+
+  /**
+   * Attach DOM listeners.
+   *
+   * @returns {Search}
+   */
+  enable = () => {
+    if (this.clearButton) {
+      this.clearButton.addEventListener("click", this.handleClearClick);
+    }
+
+    if (this.inputField) {
+      this.inputField.addEventListener("keyup", this.handleInputKeyUp);
+    }
 
     return this;
+  };
+
+  /**
+   * Sync the state with any pre-filled input value (e.g., from server-side rendering).
+   *
+   * @returns {Search}
+   */
+  syncInitialState = () => {
+    if (this.inputField) {
+      this.state.inputValue = this.inputField.value.trim();
+    }
+    return this;
+  };
+
+  /**
+   * Handle click on the clear button by resetting the input.
+   */
+  handleClearClick() {
+    if (!this.inputField) return;
+    this.state.inputValue = "";
+    this.inputField.focus();
   }
 
   /**
-   * Onclick interaction with the clear button
+   * Handle keyup events to maintain the latest input value.
+   *
+   * @param {KeyboardEvent} event
    */
-  onClick() {
-    this.searchInputField.value = "";
-    this.searchButton.classList.remove("show");
+  handleInputKeyUp(event) {
+    this.state.inputValue = event.target.value;
   }
 
-  onKeyPress(searchButton, e) {
-    const inputValue = e.target.value.trim();
-    if (inputValue !== "") {
-      this.searchButton.classList.add("show");
+  /**
+   * Keep the input element and clear button visibility synced with state changes.
+   *
+   * @param {string} value
+   */
+  handleInputValueChange = (value = "") => {
+    this.toggleClearButton(value);
+    this.updateInputField(value);
+  };
+
+  /**
+   * Update the DOM input value if needed.
+   *
+   * @param {string} value
+   */
+  updateInputField = (value = "") => {
+    if (!this.inputField || this.inputField.value === value) return;
+    this.inputField.value = value;
+  };
+
+  /**
+   * Toggle the visibility of the clear button.
+   *
+   * @param {string} value Current value of the search input
+   */
+  toggleClearButton(value) {
+    if (!this.clearButton) return;
+    if (value?.trim()) {
+      this.clearButton.classList.add("show");
     } else {
-      this.searchButton.classList.remove("show");
+      this.clearButton.classList.remove("show");
     }
   }
 }
