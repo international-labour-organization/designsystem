@@ -1,0 +1,179 @@
+@use "../../tokens" as *;
+@use "../../functions" as *;
+@import "../../mixins";
+@import "../../config";
+
+.ilo--photo-gallery {
+  --ilo-photo_gallery-target-height: 210px;
+  background-color: var(--ilo-color-white);
+  display: flex;
+  flex-direction: column;
+  gap: spacing(4);
+
+  @include breakpoint("md") {
+    --ilo-photo_gallery-target-height: 420px;
+  }
+
+  &__core {
+    margin: auto;
+    position: relative;
+
+    &__viewport {
+      overflow: hidden;
+      width: 100%;
+    }
+
+    &__container {
+      display: flex;
+      touch-action: pan-y pinch-zoom;
+      margin-left: calc(spacing(5) * -1);
+    }
+
+    &__slide {
+      transform: translate3d(0, 0, 0);
+      flex: 0 0 100%;
+      min-width: 0;
+      padding-left: spacing(5);
+    }
+
+    &__image {
+      .ilo--image--wrapper {
+        position: relative;
+
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          height: 35%;
+          background: linear-gradient(
+              0deg,
+              rgba(45, 45, 45, 0.6) 0%,
+              rgba(45, 45, 45, 0) 24.88%
+            )
+            transparent;
+          pointer-events: none;
+          z-index: 1;
+        }
+      }
+
+      .ilo--image--credit {
+        z-index: 2;
+      }
+
+      img {
+        width: 100%;
+        object-fit: contain;
+        height: inherit;
+        background-color: var(--ilo-color-gray-light);
+        height: var(--ilo-photo_gallery-target-height);
+        position: relative;
+      }
+
+      &--contain {
+        img {
+          object-fit: contain;
+        }
+      }
+
+      &--cover {
+        img {
+          object-fit: cover;
+        }
+      }
+
+      &--fill {
+        img {
+          object-fit: fill;
+        }
+      }
+    }
+
+    &__controls {
+      display: none;
+      position: absolute;
+      z-index: 2;
+      right: spacing(4);
+      bottom: px-to-rem(10px);
+      visibility: hidden;
+      opacity: 0;
+      transition:
+        opacity 0.2s ease-in-out,
+        visibility 0.2s ease-in-out;
+
+      [dir="rtl"] & {
+        right: auto;
+        left: spacing(4);
+      }
+
+      @include breakpoint("md") {
+        display: flex;
+      }
+    }
+
+    &:hover &__controls {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    &__zoom {
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: 2;
+      background: var(--ilo-color-gray-light);
+      border: none;
+      width: px-to-rem(40px);
+      height: px-to-rem(40px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--ilo-color-blue-dark);
+      cursor: pointer;
+      border-radius: var(--ilo-border-radius);
+
+      &:hover {
+        background: var(--ilo-color-blue-lighter);
+        color: var(--ilo-color-blue);
+      }
+
+      &:focus {
+        outline: 2px solid var(--ilo-color-blue);
+        outline-offset: 2px;
+      }
+    }
+  }
+
+  &__caption {
+    @include typography("body-small");
+    color: var(--ilo-color-gray-accessible);
+    padding-left: spacing(4);
+    position: relative;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+    [dir="rtl"] & {
+      padding-left: 0;
+      padding-right: spacing(4);
+      text-align: right;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: px-to-rem(3px);
+      height: 100%;
+      background-color: var(--ilo-color-gray-base);
+
+      [dir="rtl"] & {
+        left: auto;
+        right: 0;
+      }
+    }
+  }
+}

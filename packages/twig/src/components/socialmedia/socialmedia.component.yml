@@ -90,6 +90,9 @@ socialmedia:
         - icon: "apple_podcasts"
           label: "Apple Podcasts"
           url: "https://podcasts.apple.com"
+        - icon: "rss"
+          label: "RSS"
+          url: "https://ilo.org/rss.xml"
 
       required: true
   visibility: storybook

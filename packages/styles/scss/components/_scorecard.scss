@@ -29,6 +29,25 @@
         width: 100%;
       }
 
+      #{$self}--skeleton--image {
+        @include skeleton-element(232px, 100%);
+      }
+
+      #{$self}--skeleton--eyebrow {
+        @include skeleton-element(12px, 20%);
+      }
+
+      #{$self}--skeleton--title {
+        @include skeleton-element(24px, 80%);
+        margin-top: spacing(4);
+      }
+
+      #{$self}--skeleton--date {
+        @include skeleton-element(24px, 60%);
+        margin-top: spacing(4);
+        margin-bottom: spacing(8);
+      }
+
       #{$self}--image--wrapper {
         height: 0;
         overflow: hidden;
@@ -106,6 +125,10 @@
           @include breakpoint("md") {
             #{$self}--wrap {
               flex-direction: row;
+            }
+
+            #{$self}--skeleton--image {
+              width: 50%;
             }
 
             #{$self}--content {

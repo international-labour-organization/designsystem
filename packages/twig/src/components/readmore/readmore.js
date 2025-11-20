@@ -1,5 +1,3 @@
-import { EVENTS } from "@ilo-org/utils";
-
 /**
  * The ReadMore module which handles rendering field labels inline on a form.
  *
@@ -94,7 +92,7 @@ export default class ReadMore {
    * @chainable
    */
   enable() {
-    this.ReadMoreButton.addEventListener(EVENTS.CLICK, () => this.onClick());
+    this.ReadMoreButton.addEventListener("click", () => this.onClick());
 
     return this;
   }

@@ -1,0 +1,103 @@
+{% set prefix = prefix|default('ilo') %}
+{% set base_class = prefix ~ "--audio-player" %}
+
+<div class="{{base_class}}" data-loadcomponent="AudioPlayer" data-prefix="{{prefix}}">
+	<div 
+		role="progressbar"
+		tabindex="-1"
+		aria-valuenow="0"
+		aria-valuemin="0"
+		aria-valuemax="100"
+		class="{{base_class}}--progress-bar"
+	>
+		<div
+			class="{{base_class}}--progress-complete"
+		>
+        </div>
+	</div>
+	<div class="{{base_class}}--body">
+		<div class="{{base_class}}--left">
+			<p class="{{base_class}}--track-name">{{ name }}</p>
+			<div class="{{base_class}}--track-details">
+				<span class="{{base_class}}--track-programme">{{ programme }}</span>
+				<span class="{{base_class}}--track-creator">{{ creator }}</span>
+			</div>
+		</div>
+		<div class="{{base_class}}--center">
+			<button
+				class="{{base_class}}--skip-button {{base_class}}--skip-backward"
+				aria-label="Rewind 15 seconds"
+			>
+				{% include "@components/icon/icon.twig" with {
+					name: "skip_backward15",
+					size: 24,
+					prefix: prefix
+				} only %}
+			</button>
+			<button
+				class="{{base_class}}--play-button"
+				aria-label="Play"
+			>
+				{% include "@components/icon/icon.twig" with {
+					name: "triangle_right",
+					size: 32,
+					class: base_class ~ "--play-icon",
+					prefix: prefix
+				} only %}
+				{% include "@components/icon/icon.twig" with {
+					name: "pause",
+					size: 32,
+					class: base_class ~ "--pause-icon",
+					prefix: prefix
+				} only %}
+			</button>
+			<button
+				class="{{base_class}}--skip-button {{base_class}}--skip-forward"
+				aria-label="Fast forward 15 seconds"
+			>
+				{% include "@components/icon/icon.twig" with {
+					name: "skip_forward15",
+					size: 24,
+					prefix: prefix
+				} only %}
+			</button>
+		</div>
+		<div class="{{base_class}}--right">
+			<div class="{{base_class}}--duration">
+				<p class="{{base_class}}--duration-played">00:00</p>
+				<p class="{{base_class}}--duration-total">00:00</p>
+			</div>
+			<div class="{{base_class}}--separator"></div>
+			<button
+				class="{{base_class}}--volume-icon"
+				aria-label="Mute"
+			>
+				{% include "@components/icon/icon.twig" with {
+					name: "sound_on",
+					size: 24,
+					prefix: prefix,
+					class: base_class ~ "--sound-on-icon",
+				} only %}
+				{% include "@components/icon/icon.twig" with {
+					name: "sound_off",
+					size: 24,
+					prefix: prefix,
+					class: base_class ~ "--sound-off-icon",
+				} only %}
+			</button>
+			<input
+				type="range"
+				class="{{base_class}}--volume-slider"
+				value="100"
+				min="0"
+				max="100"
+				step="10"
+			/>
+		</div>
+	</div>
+	<audio
+		class="{{base_class}}--audio"
+		src="{{ src }}"
+		preload="metadata"
+	></audio>
+</div>

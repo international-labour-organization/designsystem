@@ -1,5 +1,3 @@
-import { EVENTS, ARIA } from "@ilo-org/utils";
-
 const FOCUSABLE_SELECTORS = [
   "a",
   "button",
@@ -96,7 +94,7 @@ export default class Accordion {
   enable() {
     if (this.accordionButtons.length > 0) {
       this.accordionButtons.forEach((button) => {
-        button.addEventListener(EVENTS.CLICK, (e) => this.onClick(e));
+        button.addEventListener("click", (e) => this.onClick(e));
       });
     }
 
@@ -161,8 +159,8 @@ export default class Accordion {
     element.classList.remove("ilo--accordion--panel__open");
     element.parentElement
       .querySelector(".ilo--accordion--button")
-      .setAttribute(ARIA.EXPANDED, "false");
-    element.setAttribute(ARIA.HIDDEN, "true");
+      .setAttribute("aria-expanded", "false");
+    element.setAttribute("aria-hidden", "true");
     this.handleTabIndex(element, "REMOVE");
   }
 
@@ -176,8 +174,8 @@ export default class Accordion {
   expandSection(element) {
     element.parentElement
       .querySelector(".ilo--accordion--button")
-      .setAttribute(ARIA.EXPANDED, "true");
-    element.setAttribute(ARIA.HIDDEN, "false");
+      .setAttribute("aria-expanded", "true");
+    element.setAttribute("aria-hidden", "false");
     element.classList.add("ilo--accordion--panel__open");
     this.handleTabIndex(element, "ADD");
   }

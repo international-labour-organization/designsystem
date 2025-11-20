@@ -1,6 +1,6 @@
 {
   "name": "@ilo-org/twig",
-  "version": "1.9.0",
+  "version": "1.10.0",
   "type": "module",
   "files": [
     "dist/**/*"
@@ -93,7 +93,6 @@
     "@ilo-org/maestro": "workspace:*",
     "@ilo-org/styles": "workspace:*",
     "@ilo-org/themes": "workspace:*",
-    "@ilo-org/utils": "workspace:*",
     "@popperjs/core": "^2.11.8",
     "cypress": "^14.3.2",
     "video.js": "^7.21.2",

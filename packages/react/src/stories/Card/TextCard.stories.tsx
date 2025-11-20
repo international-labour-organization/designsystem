@@ -24,7 +24,7 @@ const Default: StoryObj<TextCardProps> = {
       unix: "1670389200",
     },
     theme: "light",
-    link: "https:/www.ilo.org",
+    link: "https://www.ilo.org",
     profile: {
       avatar: "/ilo-dg.jpg",
       description:
@@ -35,5 +35,14 @@ const Default: StoryObj<TextCardProps> = {
   },
 };
 
+const Skeleton: StoryObj<TextCardProps> = {
+  name: "Skeleton",
+  args: {
+    theme: "light",
+    size: "narrow",
+  },
+  render: (props) => <TextCard.Skeleton {...props} />,
+};
+
 export default meta;
-export { Default };
+export { Default, Skeleton };

@@ -3,7 +3,6 @@ import classNames from "classnames";
 import useGlobalSettings from "../../hooks/useGlobalSettings";
 import { TagProps } from "./Tag.props";
 import { Icon } from "../Icon";
-import { getUpdatedItems } from "@ilo-org/utils";
 import { TagSetContext } from "./TagCtx";
 
 const Tag: FC<TagProps> = ({
@@ -36,13 +35,14 @@ const Tag: FC<TagProps> = ({
    * On click, get id of clicked item, and set that item in state to 'active', all others to 'closed'
    */
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-    setActiveItems(
-      getUpdatedItems({
-        id,
-        itemStatuses: activeItems,
-        allowMultipleExpanded: allowMultipleActive,
-      })
-    );
+    const isActive = activeItems.includes(id);
+    const updatedItems = isActive
+      ? activeItems.filter((itemId) => itemId !== id)
+      : allowMultipleActive
+        ? [...activeItems, id]
+        : [id];
+
+    setActiveItems(updatedItems);
     visible = false;
     if (callback) {
       callback(e);

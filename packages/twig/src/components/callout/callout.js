@@ -1,5 +1,3 @@
-import { EVENTS } from "@ilo-org/utils";
-
 /**
  * The Callout module which handles rendering field labels inline on a form.
  *
@@ -89,11 +87,11 @@ export default class Callout {
    */
   enable() {
     if (this.toggle) {
-      this.toggle.addEventListener(EVENTS.CLICK, this.onToggle);
+      this.toggle.addEventListener("click", this.onToggle);
     }
 
     if (this.button) {
-      this.button.addEventListener(EVENTS.CLICK, this.onClick);
+      this.button.addEventListener("click", this.onClick);
     }
 
     return this;

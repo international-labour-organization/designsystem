@@ -1,5 +1,3 @@
-import { EVENTS } from "@ilo-org/utils";
-
 /**
  * The Search module which handles the clear button.
  *
@@ -75,7 +73,7 @@ export default class Search {
    * @chainable
    */
   enable() {
-    this.searchButton.addEventListener(EVENTS.CLICK, this.onClick.bind(this));
+    this.searchButton.addEventListener("click", this.onClick.bind(this));
     this.searchInputField.addEventListener(
       "keyup",
       this.onKeyPress.bind(this, this.searchButton)

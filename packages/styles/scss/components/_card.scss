@@ -133,6 +133,7 @@ $link-hover-selectors: ".ilo--card--link:hover, .ilo--card--link:focus, .ilo--ca
     &__light {
       background: var(--ilo-color-white);
       border-bottom: px-to-rem(3px) solid var(--ilo-color-gray-base);
+      --ilo-skeleton-element-background-color: var(--ilo-color-gray-light);
     }
 
     &__soft {

@@ -1,5 +1,3 @@
-import { EVENTS } from "@ilo-org/utils";
-
 /**
  * The Notification module which handles rendering field labels inline on a form.
  *
@@ -78,7 +76,7 @@ export default class Notification {
    * @chainable
    */
   enable() {
-    this.CloseButton.addEventListener(EVENTS.CLICK, () => this.onClick());
+    this.CloseButton.addEventListener("click", () => this.onClick());
 
     return this;
   }

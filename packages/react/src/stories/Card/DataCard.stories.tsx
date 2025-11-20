@@ -8,7 +8,7 @@ const meta: Meta<typeof DataCard> = {
   parameters: {
     docs: {
       description: {
-        component: `A data card component for organising data about things like publications or events.`,
+        component: `A data card component for organizing data about things like publications or events.`,
       },
     },
   },
@@ -269,5 +269,22 @@ const TwoColumnsNoLinks: StoryObj<DataCardProps> = {
   },
 };
 
+const Skeleton: StoryObj<DataCardProps> = {
+  name: "Skeleton",
+  args: {
+    theme: "light",
+    size: "narrow",
+    columns: "one",
+  },
+  render: (props) => <DataCard.Skeleton {...props} />,
+};
+
 export default meta;
-export { Default, NoImage, TwoColumns, TwoColumnsNoImage, TwoColumnsNoLinks };
+export {
+  Default,
+  NoImage,
+  TwoColumns,
+  TwoColumnsNoImage,
+  TwoColumnsNoLinks,
+  Skeleton,
+};

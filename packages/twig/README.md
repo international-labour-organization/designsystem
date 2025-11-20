@@ -5,7 +5,6 @@ This package provides the implementation of the Design System using [Twig](https
 - [@ilo-org/themes](./packages/themes)
 - [@ilo-org/fonts](./packages/fonts)
 - [@ilo-org/styles](./packages/styles)
-- [@ilo-org/utils](./packages/utils)
 - [@ilo-org/icons](./packages/icons)
 
 ## Drupal Integration

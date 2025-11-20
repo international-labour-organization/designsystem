@@ -50,6 +50,25 @@
         border-bottom: px-to-rem(3px) solid var(--ilo-color-red);
       }
 
+      #{$self}--skeleton--eyebrow {
+        @include skeleton-element(12px, 20%);
+      }
+
+      #{$self}--skeleton--title {
+        @include skeleton-element(14px, 90%);
+        margin-top: spacing(4);
+      }
+
+      #{$self}--skeleton--date {
+        @include skeleton-element(14px, 100%);
+        margin-top: spacing(2);
+      }
+
+      #{$self}--skeleton--profile {
+        @include skeleton-element(14px, 80%);
+        margin-top: spacing(2);
+      }
+
       #{$self}--title {
         @include typography("heading-4");
 

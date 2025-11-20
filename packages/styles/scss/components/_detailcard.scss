@@ -16,6 +16,48 @@
       padding: spacing(8) spacing(4);
       position: relative;
 
+      #{$self}--skeleton--image {
+        @include skeleton-element(64px, 100%);
+      }
+
+      #{$self}--skeleton--eyebrow {
+        @include skeleton-element(12px, 20%);
+      }
+
+      #{$self}--skeleton--title-1 {
+        @include skeleton-element(14px, 90%);
+        margin-top: spacing(4);
+      }
+
+      #{$self}--skeleton--title-2 {
+        @include skeleton-element(14px, 100%);
+        margin-top: spacing(2);
+      }
+
+      #{$self}--skeleton--intro-1 {
+        @include skeleton-element(14px, 80%);
+        margin-top: spacing(4);
+      }
+      #{$self}--skeleton--intro-2 {
+        @include skeleton-element(14px, 85%);
+        margin-top: spacing(2);
+      }
+
+      #{$self}--skeleton--intro-3 {
+        @include skeleton-element(14px, 90%);
+        margin-top: spacing(2);
+      }
+
+      #{$self}--skeleton--intro-4 {
+        @include skeleton-element(14px, 75%);
+        margin-top: spacing(2);
+      }
+
+      #{$self}--skeleton--intro-5 {
+        @include skeleton-element(14px, 35%);
+        margin-top: spacing(2);
+      }
+
       #{$self}--wrap {
         display: flex;
         flex-flow: column;
@@ -103,6 +145,41 @@
 
         &__wide,
         &__fluid {
+          #{$self}--content {
+            flex: 1;
+          }
+
+          #{$self}--skeleton--image {
+            @include skeleton-element(130px, 100%);
+          }
+
+          #{$self}--skeleton--title-1 {
+            @include skeleton-element(14px, 80%);
+          }
+
+          #{$self}--skeleton--title-2 {
+            display: none;
+          }
+
+          #{$self}--skeleton--intro-1 {
+            @include skeleton-element(14px, 90%);
+          }
+          #{$self}--skeleton--intro-2 {
+            @include skeleton-element(14px, 85%);
+          }
+
+          #{$self}--skeleton--intro-3 {
+            @include skeleton-element(14px, 86%);
+          }
+
+          #{$self}--skeleton--intro-4 {
+            @include skeleton-element(14px, 50%);
+          }
+
+          #{$self}--skeleton--intro-5 {
+            display: none;
+          }
+
           @include breakpoint("md") {
             padding: spacing(8) spacing(4) spacing(8) spacing(0);
 

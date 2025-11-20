@@ -31,5 +31,14 @@ const Default: StoryObj<FactListCardProps> = {
   },
 };
 
+const Skeleton: StoryObj<FactListCardProps> = {
+  name: "Skeleton",
+  args: {
+    theme: "light",
+    size: "narrow",
+  },
+  render: (props) => <FactListCard.Skeleton {...props} />,
+};
+
 export default meta;
-export { Default };
+export { Default, Skeleton };

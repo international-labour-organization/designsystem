@@ -177,6 +177,14 @@
             @include get-icon("social_wechat", "dark");
           }
         }
+
+        &__rss {
+          @include get-icon("social_rss");
+
+          #{$c}__theme__dark & {
+            @include get-icon("social_rss", "dark");
+          }
+        }
       }
     }
   }

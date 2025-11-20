@@ -1,5 +1,3 @@
-import { EVENTS, ARIA, MISC } from "@ilo-org/utils";
-
 /**
  * The Table module which handles rendering field labels inline on a form.
  *
@@ -142,11 +140,11 @@ export default class Table {
     this.element.classList.add("table--js");
 
     Array.from(this.thCells).forEach((thcell) => {
-      thcell.addEventListener(EVENTS.CLICK, (e) => this.ClickThHandler(e));
+      thcell.addEventListener("click", (e) => this.ClickThHandler(e));
     });
 
     Array.from(this.tdCells).forEach((tdcell) => {
-      tdcell.addEventListener(EVENTS.CLICK, (e) => this.ClickTdHandler(e));
+      tdcell.addEventListener("click", (e) => this.ClickTdHandler(e));
     });
 
     return this;
@@ -164,17 +162,17 @@ export default class Table {
       // set/remove aria-sort attribute
       if (thcell === e.target) {
         if (
-          typeof thcell.getAttribute(ARIA.SORT) === "undefined" ||
-          thcell.getAttribute(ARIA.SORT) === MISC.DESCENDING
+          typeof thcell.getAttribute("aria-sort") === "undefined" ||
+          thcell.getAttribute("aria-sort") === "descending"
         ) {
-          thcell.setAttribute(ARIA.SORT, MISC.ASCENDING);
-          this.sortColumn(index, MISC.ASCENDING);
+          thcell.setAttribute("aria-sort", "ascending");
+          this.sortColumn(index, "ascending");
         } else {
-          thcell.setAttribute(ARIA.SORT, MISC.DESCENDING);
-          this.sortColumn(index, MISC.DESCENDING);
+          thcell.setAttribute("aria-sort", "descending");
+          this.sortColumn(index, "descending");
         }
       } else {
-        thcell.removeAttribute(ARIA.SORT);
+        thcell.removeAttribute("aria-sort");
       }
     });
 
@@ -257,7 +255,7 @@ export default class Table {
    */
   compare(sortdirection) {
     return function (a, b) {
-      if (sortdirection === MISC.ASCENDING) {
+      if (sortdirection === "ascending") {
         if (a.value === b.value) {
           return 0;
         } else {

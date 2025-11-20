@@ -56,6 +56,16 @@
         }
       }
 
+      #{$self}--skeleton--title {
+        @include skeleton-element(20px, 60%);
+        margin-bottom: spacing(4);
+      }
+
+      #{$self}--skeleton--list-item {
+        @include skeleton-element(16px, 95%);
+        display: table-cell;
+      }
+
       #{$self}--title {
         color: $brand-ilo-black;
         font-size: var(--ilo-font-size-xlg);

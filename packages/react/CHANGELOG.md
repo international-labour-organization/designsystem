@@ -1,5 +1,34 @@
 # @ilo-org/react
 
+## 0.26.0
+
+### Minor Changes
+
+- f430e7f13: **MainNav**: New navigation component that replaces the old `Navigation` one with new search functionality;
+  **useClickOutside**: New hook that detects clicks outside of the passed ref and triggers the callback; also support exceptions;
+- 758f543a1: **Cards:** Each card now has a loading skeleton that can be used in React.
+
+  ```tsx
+  <Card.Skeleton {...args}>
+  ```
+
+- 35a3e3113: **List**: Dynamic title level support added via `titleLevel` variable (defaults to `h2`).
+  **LinkList**: Dynamic title level support added via `titleLevel` variable (defaults to `h3`).
+  **SocialMedia**: Dynamic title level support added via `titleLevel` variable (defaults to `h5`).
+
+### Patch Changes
+
+- bf9ae68f5: **Hero:** Fix issue that prevented responsive images from rendering correctly
+- a615f018e: **ContextMenu**: FocusTrap support added
+  **MainNav**: Improved a11y and focus management
+  **SubsiteNav**: Improved a11y and focus management
+- d9b111aac: **SocialMedia:** Add RSS to social media
+- Updated dependencies [f430e7f13]
+- Updated dependencies [758f543a1]
+- Updated dependencies [1cfa21a41]
+  - @ilo-org/styles@1.10.0
+  - @ilo-org/icons-react@1.0.5
+
 ## 0.25.0
 
 ### Minor Changes

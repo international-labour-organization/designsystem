@@ -1,5 +1,3 @@
-import { EVENTS } from "@ilo-org/utils";
-
 /**
  * The FileUpload module which handles rendering field labels inline on a form.
  *
@@ -75,7 +73,7 @@ export default class FileUpload {
    * @chainable
    */
   enable() {
-    this.element.addEventListener(EVENTS.CHANGE, (e) => this.onChange(e));
+    this.element.addEventListener("change", (e) => this.onChange(e));
 
     return this;
   }

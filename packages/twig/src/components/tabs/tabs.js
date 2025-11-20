@@ -1,5 +1,3 @@
-import { EVENTS, ARIA } from "@ilo-org/utils";
-
 /**
  * The Tabs module which handles rendering field labels inline on a form.
  *
@@ -84,13 +82,13 @@ export default class Tabs {
    */
   enable() {
     Array.from(this.tabButtons).forEach((button) => {
-      button.addEventListener(EVENTS.CLICK, (e) => this.OnClickHandler(e));
-      button.addEventListener(EVENTS.KEY_DOWN, (e) => this.KeyPressHandler(e));
+      button.addEventListener("click", (e) => this.OnClickHandler(e));
+      button.addEventListener("keydown", (e) => this.KeyPressHandler(e));
 
       if (!this.firstTab) {
-        this.firstTab = button.getAttribute(ARIA.CONTROLS);
+        this.firstTab = button.getAttribute("aria-controls");
       }
-      this.lastTab = button.getAttribute(ARIA.CONTROLS);
+      this.lastTab = button.getAttribute("aria-controls");
     });
 
     return this;
@@ -104,7 +102,7 @@ export default class Tabs {
    */
   onClick(e) {
     e.preventDefault();
-    const tabid = e.currentTarget.getAttribute(ARIA.CONTROLS);
+    const tabid = e.currentTarget.getAttribute("aria-controls");
     this.selectTab(tabid);
 
     return this;
@@ -118,7 +116,7 @@ export default class Tabs {
    */
   onKeyPress(e) {
     let flag = false;
-    const tabid = e.currentTarget.getAttribute(ARIA.CONTROLS);
+    const tabid = e.currentTarget.getAttribute("aria-controls");
 
     switch (e.key) {
       case "ArrowLeft":
@@ -161,17 +159,17 @@ export default class Tabs {
    */
   selectTab(tabid) {
     const selectedTab = this.element.querySelector(
-      `[${ARIA.CONTROLS}="${tabid}"]`
+      `[aria-controls="${tabid}"]`
     );
     Array.from(this.tabPanels).forEach((panel) => {
-      panel.setAttribute(ARIA.EXPANDED, false);
+      panel.setAttribute("aria-expanded", false);
     });
     Array.from(this.tabButtons).forEach((button) => {
-      button.setAttribute(ARIA.SELECTED, false);
+      button.setAttribute("aria-selected", false);
     });
     selectedTab.focus();
-    selectedTab.setAttribute(ARIA.SELECTED, true);
-    document.getElementById(tabid).setAttribute(ARIA.EXPANDED, true);
+    selectedTab.setAttribute("aria-selected", true);
+    document.getElementById(tabid).setAttribute("aria-expanded", true);
 
     return this;
   }

@@ -66,5 +66,10 @@ export const socialMediaArgs: SocialMediaProps = {
       label: "iTunes",
       url: "https://www.apple.com/itunes/",
     },
+    {
+      icon: "rss",
+      label: "RSS",
+      url: "https://ilo.org/rss.xml",
+    },
   ],
 };
