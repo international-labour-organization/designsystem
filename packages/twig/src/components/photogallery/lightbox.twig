@@ -1,0 +1,28 @@
+<div
+  class="{{prefix}}--lightbox"
+  data-lightbox
+  role="dialog"
+  aria-modal="true"
+>
+  <div class="{{prefix}}--lightbox__backdrop"></div>
+  <div class="{{prefix}}--lightbox__container">
+    <button
+      class="{{prefix}}--lightbox__close"
+      aria-label="Close lightbox"
+      type="button"
+      data-action="close-lightbox"
+    >
+      {% include '@components/icon/icon.twig' with {
+        name: 'close',
+        size: '32'
+      } %}
+    </button>
+    <div class="{{prefix}}--lightbox__content">
+      {% include '@components/photogallery/lightboxgallery.twig' with {
+        prefix: prefix,
+        items: items,
+        galleryId: galleryId
+      } %}
+    </div>
+  </div>
+</div>

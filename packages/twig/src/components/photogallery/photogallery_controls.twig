@@ -1,0 +1,20 @@
+{% set prefix = prefix|default('ilo') %}
+{% set base_class = prefix ~ "--photo-gallery-controls" %}
+
+<div class="{{base_class}}">
+	<div class="{{base_class}}__previous-set">
+		<button aria-label="First Photo" class="{{base_class}}__first {{base_class}}__item" type="button" data-action="first"></button>
+		<button aria-label="Previous Photo" class="{{base_class}}__prev {{base_class}}__item" type="button" data-action="prev"></button>
+	</div>
+	<p aria-label="Current Photo" class="{{base_class}}__page">
+		<span data-current>1</span>
+		<span>
+			of
+		</span>
+		<span data-total>0</span>
+	</p>
+	<div class="{{base_class}}__next-set">
+		<button aria-label="Next Photo" class="{{base_class}}__next {{base_class}}__item" type="button" data-action="next"></button>
+		<button aria-label="Last Photo" class="{{base_class}}__last {{base_class}}__item" type="button" data-action="last"></button>
+	</div>
+</div>
