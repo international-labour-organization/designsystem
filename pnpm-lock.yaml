@@ -325,9 +325,6 @@ importers:
       '@ilo-org/styles':
         specifier: workspace:*
         version: link:../styles
-      '@ilo-org/themes':
-        specifier: workspace:*
-        version: link:../themes
       '@popperjs/core':
         specifier: ^2.11.8
         version: 2.11.8
@@ -531,9 +528,6 @@ importers:
       '@ilo-org/styles':
         specifier: workspace:*
         version: link:../styles
-      '@ilo-org/themes':
-        specifier: workspace:*
-        version: link:../themes
       '@popperjs/core':
         specifier: ^2.11.8
         version: 2.11.8
