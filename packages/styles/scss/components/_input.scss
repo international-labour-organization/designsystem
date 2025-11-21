@@ -2,11 +2,9 @@
 @import "../mixins";
 
 .ilo--input {
-  -webkit-appearance: none;
-  -moz-appearance: none;
   appearance: none;
   background-color: var(--ilo-color-white);
-  @include bordervalues("input", "formelements");
+  border: var(--ilo-border-md) solid var(--ilo-color-gray-base);
   box-sizing: border-box;
   font-family: var(--ilo-fonts-copy);
   font-weight: var(--ilo-font-weight-medium);
@@ -19,7 +17,7 @@
 
   &:focus {
     background-color: var(--ilo-color-blue-lighter);
-    @include bordervalues("input", "formelements", "focus");
+    border: var(--ilo-border-md) solid var(--ilo-color-gray-base);
     padding-left: spacing(3);
     outline: none;
   }
@@ -33,6 +31,7 @@
   &.error,
   .error & {
     background-color: var(--ilo-color-white);
-    @include bordervalues("input", "formelements", "error");
+    border: var(--ilo-border-md) solid var(--ilo-color-gray-base);
+    border-left: px-to-rem(3px) solid var(--ilo-color-red-dark);
   }
 }

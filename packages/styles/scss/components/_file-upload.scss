@@ -18,8 +18,9 @@
     display: inline-block;
     font-family: var(--ilo-fonts-display);
     font-weight: var(--ilo-font-weight-bold);
-    @include borderradius("button");
-    @include boxpadding("button", "medium");
+    border-radius: px-to-rem(2px);
+    padding-inline: px-to-rem(18px);
+    padding-block: px-to-rem(7px);
     @include typography("highlight-medium");
 
     .ilo--form__theme__dark & {

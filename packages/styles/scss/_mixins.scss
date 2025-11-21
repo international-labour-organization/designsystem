@@ -46,51 +46,6 @@
 }
 
 // ======================================
-// Border Values
-// ======================================
-
-@mixin bordervalues($mappath, $location, $state: "default") {
-  border-bottom: px-to-rem(
-      map-get($spacing, $location, $mappath, $state, "border", "bottom")
-    )
-    solid map-get($color, $location, $mappath, $state, "border", "bottom");
-  border-left: px-to-rem(
-      map-get($spacing, $location, $mappath, $state, "border", "left")
-    )
-    solid map-get($color, $location, $mappath, $state, "border", "left");
-  border-right: px-to-rem(
-      map-get($spacing, $location, $mappath, $state, "border", "right")
-    )
-    solid map-get($color, $location, $mappath, $state, "border", "right");
-  border-top: px-to-rem(
-      map-get($spacing, $location, $mappath, $state, "border", "top")
-    )
-    solid map-get($color, $location, $mappath, $state, "border", "top");
-}
-
-// ======================================
-// Border Radius Values
-// ======================================
-
-@mixin borderradius($mappath) {
-  border-bottom-left-radius: map-get($radius, $mappath, "bottom-left");
-  border-bottom-right-radius: map-get($radius, $mappath, "bottom-right");
-  border-top-left-radius: map-get($radius, $mappath, "top-left");
-  border-top-right-radius: map-get($radius, $mappath, "top-right");
-}
-
-// ======================================
-// Box Padding Values
-// ======================================
-
-@mixin boxpadding($mappath, $size) {
-  padding-bottom: map-get($spacing, "boxpadding", $mappath, $size, "bottom");
-  padding-left: map-get($spacing, "boxpadding", $mappath, $size, "left");
-  padding-right: map-get($spacing, "boxpadding", $mappath, $size, "right");
-  padding-top: map-get($spacing, "boxpadding", $mappath, $size, "top");
-}
-
-// ======================================
 // Data URL Icon
 // ======================================
 
@@ -98,6 +53,10 @@
   background-image: url("#{colortodataurlicon($name, $color)}");
   background-repeat: no-repeat;
 }
+
+// ======================================
+// Icon
+// ======================================
 
 @mixin icon($name, $color: black) {
   $icon: map-get($icons, $name);
@@ -339,6 +298,10 @@
     }
   }
 }
+
+// ======================================
+// Typography
+// ======================================
 
 @mixin typography($variant, $mobile: false) {
   @if $variant ==
