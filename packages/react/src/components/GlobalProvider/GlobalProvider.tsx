@@ -1,10 +1,9 @@
-import { themeprefix } from "@ilo-org/themes/tokens/theme/base.json";
 import { FC } from "react";
 import { GlobalProviderContext } from "./GlobalCtx";
 import { GlobalProviderProps } from "./GlobalProvider.props";
 
 const GlobalProvider: FC<GlobalProviderProps> = ({
-  prefix = themeprefix.value,
+  prefix = "ilo",
   children,
 }) => {
   return (
