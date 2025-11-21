@@ -1,7 +1,9 @@
+@use "./config" as *;
+
 //*------------------------------------*\
 //    $FUNCTIONS
 //*------------------------------------*/
-@use "tokens" as *;
+@use "icons" as *;
 // ======================================
 // String Replace
 // ======================================
@@ -44,7 +46,7 @@
   @if index($px, "%") {
     @return $px;
   } @else {
-    @return math.div(strip-units($px), strip-units($type-base-size)) * 1rem;
+    @return math.div(strip-units($px), strip-units($base-font-size)) * 1rem;
   }
 }
 

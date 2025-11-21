@@ -1,7 +1,7 @@
 //*------------------------------------*\
 //    $MIXINS
 //*------------------------------------*/
-@use "tokens" as *;
+@use "icons" as *;
 @use "functions" as *;
 @use "animations" as *;
 @use "theme/breakpoints" as *;
@@ -47,6 +47,7 @@
 
 // ======================================
 // Data URL Icon
+// @TODO: Deprecate all usage of dataurlicon and replace with icon mixin
 // ======================================
 
 @mixin dataurlicon($name, $color: $color-base-neutrals-black) {
