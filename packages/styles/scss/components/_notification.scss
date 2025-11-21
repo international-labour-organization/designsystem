@@ -2,6 +2,25 @@
 @import "../mixins";
 @import "../animations";
 
+$notification-types: (
+  "error": (
+    background: var(--ilo-color-notification-type-error),
+    icon: "notification_error",
+  ),
+  "info": (
+    background: var(--ilo-color-notification-type-info),
+    icon: "notification_info",
+  ),
+  "success": (
+    background: var(--ilo-color-notification-type-success),
+    icon: "notification_success",
+  ),
+  "warning": (
+    background: var(--ilo-color-notification-type-warning),
+    icon: "notification_warning",
+  ),
+);
+
 .ilo--notification {
   background-color: var(--ilo-color-white);
   box-shadow:
@@ -9,16 +28,16 @@
     0px 4px 8px rgba(30, 45, 190, 0.054),
     0px 10px 20px rgba(30, 45, 190, 0.08),
     0px -4px 16px rgba(30, 45, 190, 0.054);
-  border-radius: 2px;
+  border-radius: px-to-rem(2px);
   color: var(--ilo-color-gray-charcoal);
   position: relative;
 
   &--dialog {
-    max-width: 340px;
+    max-width: px-to-rem(340px);
     width: 100%;
 
     @include breakpoint("md") {
-      max-width: 490px;
+      max-width: px-to-rem(490px);
     }
 
     .ilo--notification--content {
@@ -27,7 +46,7 @@
   }
 
   &--inline {
-    max-width: 340px;
+    max-width: px-to-rem(340px);
 
     .ilo--notification--content {
       padding: spacing(6);
@@ -40,8 +59,35 @@
         max-width: 100%;
         display: flex;
         justify-content: space-evenly;
-        align-items: center;
+        align-items: baseline;
         padding: spacing(4) spacing(16) spacing(4) spacing(6);
+
+        &:after {
+          top: px-to-rem(18px);
+        }
+      }
+
+      .ilo--notification--headline {
+        margin-bottom: 0;
+      }
+
+      .ilo--notification--copy {
+        margin-inline-start: spacing(6);
+        margin-bottom: 0;
+
+        &:not(:last-child) {
+          flex-grow: 1;
+        }
+      }
+
+      .ilo--notification--date {
+        padding-inline: spacing(6);
+        margin: 0;
+      }
+
+      .ilo--notification--cta {
+        margin-left: spacing(6);
+        bottom: px-to-rem(1px);
       }
     }
   }
@@ -49,44 +95,36 @@
   &--content {
     margin-left: spacing(10);
     position: relative;
-    width: calc(100% - 40px);
+    width: calc(100% - px-to-rem(40px));
 
     &:before {
-      background-position: center px-to-rem(22px);
-      background-repeat: no-repeat;
-      background-size: px-to-rem(24px);
       content: "";
       display: block;
       height: 100%;
-      left: -40px;
+      left: px-to-rem(-40px);
       position: absolute;
       width: px-to-rem(40px);
       top: 0;
+    }
 
-      @include breakpoint("md") {
-        .ilo--notification--inline & {
-          background-position: center;
+    &:after {
+      content: "";
+      position: absolute;
+      top: px-to-rem(22px);
+      left: px-to-rem(-32px);
+      width: px-to-rem(24px);
+      height: px-to-rem(24px);
+    }
+
+    @each $type, $config in $notification-types {
+      .icon--#{$type} & {
+        &:before {
+          background-color: map-get($config, background);
         }
-      }
 
-      .icon--error & {
-        background-color: var(--ilo-color-notification-type-error);
-        @include dataurlicon("notification_error", rgba(255, 255, 255, 1));
-      }
-
-      .icon--info & {
-        background-color: var(--ilo-color-notification-type-info);
-        @include dataurlicon("notification_info", rgba(255, 255, 255, 1));
-      }
-
-      .icon--success & {
-        background-color: var(--ilo-color-notification-type-success);
-        @include dataurlicon("notification_success", rgba(255, 255, 255, 1));
-      }
-
-      .icon--warning & {
-        background-color: var(--ilo-color-notification-type-warning);
-        @include dataurlicon("notification_warning", rgba(255, 255, 255, 1));
+        &:after {
+          @include icon(map-get($config, icon), var(--ilo-color-white));
+        }
       }
     }
   }
@@ -96,31 +134,12 @@
     @include typography("highlight-medium-bold");
 
     margin-bottom: spacing(3);
-
-    @include breakpoint("md") {
-      .ilo--notification--inline & {
-        margin-bottom: 0;
-      }
-    }
   }
 
   &--copy {
     font-weight: 400;
     @include typography("body-small");
-
-    @include breakpoint("md") {
-      .ilo--notification--inline & {
-        margin-left: spacing(6);
-      }
-    }
-
-    &:not(:last-child) {
-      @include breakpoint("md") {
-        .ilo--notification--inline & {
-          flex-grow: 1;
-        }
-      }
-    }
+    margin-bottom: spacing(4);
   }
 
   &--date {
@@ -129,53 +148,20 @@
     font-weight: 400;
     @include typography("body-small");
 
-    @include breakpoint("md") {
-      .ilo--notification--inline & {
-        margin-left: spacing(4);
-      }
-    }
-
     &:not(:last-child) {
-      margin-bottom: spacing(5);
-    }
-
-    @include breakpoint("md") {
-      .ilo--notification--inline & {
-        margin-bottom: 0;
-      }
+      margin-bottom: spacing(4);
     }
   }
 
   &--cta {
-    @include breakpoint("md") {
-      .ilo--notification--inline & {
-        margin-left: spacing(6);
-      }
-    }
+    position: relative;
   }
 
   &--close {
     background-color: var(--ilo-color-background-highlight);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: px-to-rem(24px);
     border: none;
-    height: px-to-rem(40px);
     position: absolute;
     right: 0;
     top: 0;
-    width: px-to-rem(40px);
-    @include dataurlicon("close", rgba(35, 0, 80, 1));
-
-    &:hover,
-    &:focus {
-      background-color: var(--ilo-color-background-hover);
-      cursor: pointer;
-      @include dataurlicon("close", rgba(210, 213, 242, 1));
-    }
-
-    span {
-      @include isVisuallyHidden();
-    }
   }
 }

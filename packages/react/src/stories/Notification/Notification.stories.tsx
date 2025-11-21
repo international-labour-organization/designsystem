@@ -31,6 +31,10 @@ const Default: StoryObj<NotificationProps> = {
     type: "info",
     placement: "inline",
     closelabel: "Close",
+    timestamp: {
+      human: "7 December 2022",
+      unix: "1716393600",
+    },
     cta: {
       label: "Optional CTA",
       url: "http://www.google.com",
