@@ -171,7 +171,7 @@
     // Fullscreen control
     .vjs-fullscreen-control {
       order: 5;
-      @include videobutton("fullscreen", "standard");
+      @include videobutton("fullscreen");
     }
 
     // Duration Bar
@@ -326,6 +326,12 @@
           }
         }
       }
+    }
+  }
+
+  .vjs-fullscreen {
+    .vjs-fullscreen-control {
+      @include videobutton("reduce");
     }
   }
 }

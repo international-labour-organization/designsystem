@@ -1,0 +1,253 @@
+@use "../../tokens" as *;
+@use "../../functions" as *;
+@import "../../mixins";
+@import "../../config";
+
+.ilo--lightbox-gallery {
+  display: flex;
+  flex-direction: column;
+  height: inherit;
+
+  &__core {
+    width: 100%;
+    height: 70svh;
+
+    @include breakpoint("md") {
+      height: 80svh;
+    }
+
+    &__viewport {
+      overflow: hidden;
+      width: 100%;
+    }
+
+    &__container {
+      display: flex;
+      touch-action: pan-y pinch-zoom;
+      margin-left: calc(spacing(5) * -1);
+    }
+
+    &__slide {
+      transform: translate3d(0, 0, 0);
+      flex: 0 0 100%;
+      padding-left: spacing(5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: visible;
+      height: 70svh;
+
+      @include breakpoint("md") {
+        height: 80svh;
+      }
+    }
+
+    &__image-wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
+      width: 100%;
+
+      @include breakpoint("md") {
+        display: block;
+        height: 100%;
+        width: auto;
+      }
+
+      &-credit {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        color: var(--ilo-color-white);
+        height: 25px;
+        display: flex;
+        @include typography("body-xsmall");
+        margin-bottom: -1px;
+
+        [dir="rtl"] & {
+          left: auto;
+          right: 0;
+        }
+
+        &-text {
+          padding: spacing(1) spacing(3);
+          display: flex;
+          align-items: center;
+          background-color: var(--ilo-color-gray-charcoal);
+        }
+
+        &-corner {
+          display: block;
+          width: px-to-rem(25px);
+          height: px-to-rem(25px);
+          background-color: var(--ilo-color-gray-charcoal);
+          clip-path: polygon(0 0, 0% 100%, 100% 100%);
+          margin-left: px-to-rem(-0.5px);
+
+          @include breakpoint("md") {
+            margin-left: 0;
+            margin-right: 0;
+          }
+
+          [dir="rtl"] & {
+            clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+            margin-left: 0;
+            margin-right: px-to-rem(-0.5px);
+          }
+        }
+      }
+
+      img {
+        width: 100%;
+        object-fit: contain;
+
+        @include breakpoint("md") {
+          height: 70svh;
+
+          @include breakpoint("md") {
+            height: 80svh;
+          }
+          aspect-ratio: unset;
+        }
+      }
+    }
+  }
+
+  &__bar {
+    height: 30svh;
+
+    @include breakpoint("md") {
+      height: 20svh;
+    }
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    @include breakpoint("md") {
+      justify-content: space-evenly;
+    }
+  }
+
+  &__caption {
+    display: block;
+
+    @include breakpoint("md") {
+      display: none;
+    }
+  }
+
+  &__extra {
+    display: none;
+    height: px-to-rem(80px);
+    padding: spacing(4) spacing(10);
+    align-items: center;
+    justify-content: space-between;
+
+    @include breakpoint("md") {
+      display: flex;
+    }
+
+    &-text {
+      color: var(--ilo-color-white);
+      @include typography("body-small");
+      position: relative;
+      padding-left: spacing(4);
+      text-align: left;
+      flex-basis: 70%;
+
+      [dir="rtl"] & {
+        padding-left: 0;
+        padding-right: spacing(4);
+        text-align: right;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: px-to-rem(3px);
+        height: 100%;
+        background-color: var(--ilo-color-gray-light);
+
+        [dir="rtl"] & {
+          left: auto;
+          right: 0;
+        }
+      }
+    }
+  }
+
+  &__thumbnails {
+    &__carousel {
+      overflow: hidden;
+      padding-inline: spacing(2);
+    }
+
+    &__container {
+      display: flex;
+      gap: spacing(2);
+    }
+
+    &__slide {
+      display: flex;
+    }
+
+    &__image {
+      position: relative;
+      width: px-to-rem(90px);
+      border: none;
+      outline: none;
+      background-color: var(--ilo-color-gray-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+
+      &:focus {
+        outline: px-to-rem(2px) solid var(--ilo-color-blue);
+        outline-offset: px-to-rem(2px);
+      }
+
+      @include breakpoint("md") {
+        width: px-to-rem(160px);
+      }
+
+      img {
+        height: inherit;
+        width: inherit;
+        aspect-ratio: 16/9;
+        object-fit: contain;
+      }
+
+      &--selected {
+        z-index: 2;
+
+        &::after {
+          width: inherit;
+          content: "";
+          position: absolute;
+          inset: 0;
+          background: linear-gradient(
+            0deg,
+            rgba(30, 45, 190, 0.4) 0%,
+            rgba(30, 45, 190, 0.4) 100%
+          );
+          pointer-events: none;
+          border-bottom: px-to-rem(4) solid var(--ilo-color-blue);
+        }
+      }
+    }
+  }
+
+  &__controls {
+    display: block;
+    padding: spacing(4);
+
+    @include breakpoint("md") {
+      display: none;
+    }
+  }
+}
