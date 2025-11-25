@@ -103,28 +103,28 @@ export default class PhotoGallery extends StatefulComponent {
 
     /** Lightbox */
     this.zoomBtn = this.element.querySelector('[data-action="open-lightbox"]');
-    this.lightbox = this.element.querySelector("[data-lightbox]");
+    this.lightBox = this.element.querySelector("[data-lightbox]");
 
-    if (this.lightbox) {
-      this.lightboxGalleryViewport = this.lightbox.querySelector(
+    if (this.lightBox) {
+      this.lightBoxGalleryViewport = this.lightBox.querySelector(
         "[data-embla-lightbox-viewport]"
       );
-      this.lightBoxGalleryThumbsViewport = this.lightbox.querySelector(
+      this.lightBoxGalleryThumbsViewport = this.lightBox.querySelector(
         "[data-embla-lightbox-thumbs]"
       );
-      this.lightboxThumbButtons = this.lightbox.querySelectorAll(
+      this.lightBoxThumbButtons = this.lightBox.querySelectorAll(
         "[data-lightbox-thumbnail-index]"
       );
-      this.lightboxDesktopCaption = this.lightbox.querySelector(
+      this.lightBoxDesktopCaption = this.lightBox.querySelector(
         "[data-lightbox-caption-text]"
       );
-      this.lightBoxMobileCaptionContainer = this.lightbox.querySelector(
+      this.lightBoxMobileCaptionContainer = this.lightBox.querySelector(
         `.${this.prefix}--photo-gallery-expandable-caption`
       );
-      this.lightboxMobileCaption = this.lightbox.querySelector(
+      this.lightBoxMobileCaption = this.lightBox.querySelector(
         "[data-caption-text-mobile]"
       );
-      this.lightboxMobileCaptionExpandBtn = this.lightbox.querySelector(
+      this.lightBoxMobileCaptionExpandBtn = this.lightBox.querySelector(
         "[data-action='expand-mobile-caption']"
       );
     }
@@ -143,6 +143,7 @@ export default class PhotoGallery extends StatefulComponent {
     this.onKeyDown = this.onKeyDown.bind(this);
     this.onMobileCaptionToggle = this.onMobileCaptionToggle.bind(this);
     this.onOpenLightbox = this.onOpenLightbox.bind(this);
+    this.onLightboxSelect = this.onLightboxSelect.bind(this);
 
     return this;
   }
@@ -214,11 +215,13 @@ export default class PhotoGallery extends StatefulComponent {
         );
       }
 
-      if (this.lightboxGalleryViewport) {
+      if (this.lightBoxGalleryViewport) {
         this.lightBoxCarousel = EmblaCarousel(
-          this.lightboxGalleryViewport,
+          this.lightBoxGalleryViewport,
           this.getCarouselOptions("lightbox")
         );
+
+        this.lightBoxCarousel.on("select", this.onLightboxSelect);
       }
 
       if (this.lightBoxGalleryThumbsViewport) {
@@ -315,8 +318,8 @@ export default class PhotoGallery extends StatefulComponent {
       });
     }
 
-    if (this.lightboxThumbButtons) {
-      this.lightboxThumbButtons.forEach((btn) => {
+    if (this.lightBoxThumbButtons) {
+      this.lightBoxThumbButtons.forEach((btn) => {
         this.addTrackedListener(btn, "click", this.onThumbnailClick);
       });
     }
@@ -331,9 +334,9 @@ export default class PhotoGallery extends StatefulComponent {
     }
 
     // Mobile caption expand
-    if (this.lightboxMobileCaptionExpandBtn && this.lightboxMobileCaption) {
+    if (this.lightBoxMobileCaptionExpandBtn && this.lightBoxMobileCaption) {
       this.addTrackedListener(
-        this.lightboxMobileCaptionExpandBtn,
+        this.lightBoxMobileCaptionExpandBtn,
         "click",
         this.onMobileCaptionToggle
       );
@@ -352,6 +355,15 @@ export default class PhotoGallery extends StatefulComponent {
     if (!this.mainCarousel) return;
     const index = this.mainCarousel.selectedScrollSnap();
     this.state.currentIndex = index;
+  }
+
+  /**
+   * Handle lightbox carousel selection change
+   */
+  onLightboxSelect() {
+    if (!this.lightBoxCarousel || !this.mainCarousel) return;
+    const index = this.lightBoxCarousel.selectedScrollSnap();
+    this.mainCarousel.scrollTo(index);
   }
 
   /**
@@ -462,10 +474,10 @@ export default class PhotoGallery extends StatefulComponent {
     }
 
     // Update lightbox thumbnail selection
-    if (this.lightboxThumbButtons) {
+    if (this.lightBoxThumbButtons) {
       this.updateThumbnailSelection(
         index,
-        this.lightboxThumbButtons,
+        this.lightBoxThumbButtons,
         `${this.prefix}--lightbox-gallery__thumbnails__image`
       );
     }
@@ -497,19 +509,19 @@ export default class PhotoGallery extends StatefulComponent {
     const caption = captionElement ? captionElement.textContent : "";
 
     // Update lightbox captions
-    if (this.lightboxDesktopCaption) {
-      this.lightboxDesktopCaption.textContent = caption;
+    if (this.lightBoxDesktopCaption) {
+      this.lightBoxDesktopCaption.textContent = caption;
     }
 
-    if (this.lightboxMobileCaption) {
-      this.lightboxMobileCaption.textContent = caption;
+    if (this.lightBoxMobileCaption) {
+      this.lightBoxMobileCaption.textContent = caption;
 
-      if (this.lightboxMobileCaptionExpandBtn) {
+      if (this.lightBoxMobileCaptionExpandBtn) {
         const isCaptionOverflowing =
-          this.lightboxMobileCaption.scrollWidth >
-          this.lightboxMobileCaption.clientWidth;
+          this.lightBoxMobileCaption.scrollWidth >
+          this.lightBoxMobileCaption.clientWidth;
 
-        this.lightboxMobileCaptionExpandBtn.style.display = isCaptionOverflowing
+        this.lightBoxMobileCaptionExpandBtn.style.display = isCaptionOverflowing
           ? "block"
           : "none";
       }
@@ -533,12 +545,12 @@ export default class PhotoGallery extends StatefulComponent {
    * Open lightbox
    */
   openLightbox() {
-    if (!this.lightbox) return;
+    if (!this.lightBox) return;
 
-    this.lightbox.classList.add(`${this.prefix}--lightbox--open`);
+    this.lightBox.classList.add(`${this.prefix}--lightbox--open`);
     document.body.style.overflow = "hidden";
 
-    const closeBtn = this.lightbox.querySelector(
+    const closeBtn = this.lightBox.querySelector(
       '[data-action="close-lightbox"]'
     );
 
@@ -560,20 +572,20 @@ export default class PhotoGallery extends StatefulComponent {
     document.addEventListener("keydown", this.boundEscapeHandler);
 
     // Focus management - focus the lightbox
-    this.lightbox.focus();
+    this.lightBox.focus();
   }
 
   /**
    * Close lightbox
    */
   closeLightbox() {
-    if (!this.lightbox) return;
+    if (!this.lightBox) return;
 
-    this.lightbox.classList.remove(`${this.prefix}--lightbox--open`);
+    this.lightBox.classList.remove(`${this.prefix}--lightbox--open`);
     document.body.style.overflow = "";
 
     // Clean up event listeners
-    const closeBtn = this.lightbox.querySelector(
+    const closeBtn = this.lightBox.querySelector(
       '[data-action="close-lightbox"]'
     );
 
