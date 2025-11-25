@@ -165,4 +165,7 @@ const TextCardCombined = Object.assign(TextCard, {
   Skeleton: TextCardSkeleton,
 });
 
+TextCardCombined.displayName = "TextCard";
+TextCardCombined.Skeleton.displayName = "TextCard.Skeleton";
+
 export { TextCardCombined as TextCard };

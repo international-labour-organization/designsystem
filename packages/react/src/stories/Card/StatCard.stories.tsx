@@ -28,5 +28,14 @@ const Default: StoryObj<StatCardProps> = {
   },
 };
 
+const Skeleton: StoryObj<StatCardProps> = {
+  name: "Skeleton",
+  args: {
+    theme: "light",
+    size: "standard",
+  },
+  render: (props) => <StatCard.Skeleton {...props} />,
+};
+
 export default meta;
-export { Default };
+export { Default, Skeleton };

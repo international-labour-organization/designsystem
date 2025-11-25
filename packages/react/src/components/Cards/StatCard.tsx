@@ -152,4 +152,7 @@ const StatCardCombined = Object.assign(StatCard, {
   Skeleton: StatCardSkeleton,
 });
 
+StatCardCombined.displayName = "StatCard";
+StatCardCombined.Skeleton.displayName = "StatCard.Skeleton";
+
 export { StatCardCombined as StatCard };

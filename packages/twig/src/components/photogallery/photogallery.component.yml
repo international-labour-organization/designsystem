@@ -1,0 +1,111 @@
+photogallery:
+  namespace: Components/Media
+  use: "@components/photogallery/photogallery.twig"
+  label: Photo Gallery
+  description: The PhotoGallery component displays a gallery of photos.
+  fields:
+    items:
+      type: object
+      label: Gallery Items
+      description: Array of photo items to display in the gallery. Each item should have src, alt, and optionally credit, caption, and sources properties.
+      required: true
+      preview:
+        - src: "/images/medium.jpg"
+          alt: "Lorem ipsum dolor sit amet"
+          credit: "Photo by John Doe"
+          caption: "Lorem ipsum dolor sit amet consectetur adipiscing elit."
+        - src: "/images/hero.jpg"
+          alt: "Lorem ipsum dolor sit amet"
+          credit: "Photo by Jane Smith"
+          caption: "Lorem ipsum dolor sit amet consectetur adipiscing elit."
+        - src: "/images/ilo-headquarters.jpg"
+          alt: "Lorem ipsum dolor sit amet"
+          credit: "Photo by John Doe"
+          caption: "Lorem ipsum dolor sit amet consectetur adipiscing elit."
+        - src: "/images/16x9.jpg"
+          alt: "Lorem ipsum dolor sit amet"
+          credit: "Photo by John Doe"
+          caption: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+        - src: "/images/media-file-poster.jpg"
+          alt: "Lorem ipsum dolor sit amet"
+          credit: "Photo by Jane Smith"
+          caption: "Lorem ipsum dolor sit amet consectetur adipiscing elit."
+        - src: "/images/ilo-headquarters-portrait.png"
+          alt: "Lorem ipsum dolor sit amet"
+          credit: "Photo by Alex Johnson"
+          caption: "Lorem ipsum dolor sit amet consectetur adipiscing elit."
+        - src: "/images/medium.jpg"
+          alt: "Lorem ipsum dolor sit amet"
+          credit: "Photo by John Doe"
+          caption: "Lorem ipsum dolor sit amet consectetur adipiscing elit."
+        - src: "/images/hero.jpg"
+          alt: "Lorem ipsum dolor sit amet"
+          credit: "Photo by Jane Smith"
+          caption: "Lorem ipsum dolor sit amet consectetur adipiscing elit."
+        - src: "/images/ilo-headquarters.jpg"
+          alt: "Lorem ipsum dolor sit amet"
+          credit: "Photo by John Doe"
+          caption: "Lorem ipsum dolor sit amet consectetur adipiscing elit."
+        - src: "/images/16x9.jpg"
+          alt: "Lorem ipsum dolor sit amet"
+          credit: "Photo by John Doe"
+          caption: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+        - src: "/images/media-file-poster.jpg"
+          alt: "Lorem ipsum dolor sit amet"
+          credit: "Photo by Jane Smith"
+          caption: "Lorem ipsum dolor sit amet consectetur adipiscing elit."
+        - src: "/images/ilo-headquarters-portrait.png"
+          alt: "Lorem ipsum dolor sit amet"
+          credit: "Photo by Alex Johnson"
+          caption: "Lorem ipsum dolor sit amet consectetur adipiscing elit."
+    see_all_label:
+      type: string
+      label: See All Label
+      description: Label for the see all button in thumbnails
+      preview: "See all"
+
+  settings:
+    fit:
+      type: select
+      label: Image Fit
+      description: How images should fit in the container
+      options:
+        cover: cover
+        contain: contain
+        fill: fill
+      preview: cover
+    with_keyboard_controls:
+      type: boolean
+      label: Keyboard Controls
+      description: Enable keyboard navigation with arrow keys
+      preview: false
+    caption_view:
+      type: select
+      label: Caption Visibility
+      description: Control caption display behavior
+      options:
+        visible: visible
+        hidden: hidden
+        ifExists: ifExists
+      preview: visible
+
+  variants:
+    default:
+      label: Default
+    with_keyboard:
+      label: With Keyboard Controls
+      description: Photo gallery with keyboard navigation enabled
+      fields:
+        with_keyboard_controls: true
+    contain:
+      label: Contain Fit
+      description: Images fit within container maintaining aspect ratio
+      fields:
+        fit: contain
+    no_captions:
+      label: No Captions
+      description: Photo gallery with captions hidden
+      fields:
+        caption_view: hidden
+
+  visibility: storybook
