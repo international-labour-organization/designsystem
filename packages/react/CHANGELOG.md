@@ -1,5 +1,20 @@
 # @ilo-org/react
 
+## 0.27.0
+
+### Minor Changes
+
+- c5be524ab: **PhotoGallery**: We're introducing a new component for displaying collections of photos. Check it out!
+- 1e6a3ddb3: **Audioplayer**: We added a new component for playing audio files. Check it out!
+
+### Patch Changes
+
+- d2c64b9d6: We are deprecating the `@ilo-org/utils` package. In this release, we removed the dependency from both the `@ilo-org/react` and `@ilo-org/twig` packages. If you're using `@ilo-org/utils` be aware that it won't be maintained anymore and the values and functions it exported will no longer be used by the Design System.
+- Updated dependencies [3bff82092]
+- Updated dependencies [dd5bce4ca]
+  - @ilo-org/styles@1.10.1
+  - @ilo-org/icons-react@1.0.6
+
 ## 0.26.0
 
 ### Minor Changes

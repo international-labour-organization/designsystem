@@ -1,5 +1,12 @@
 # @ilo-org/icons-react
 
+## 1.0.6
+
+### Patch Changes
+
+- Updated dependencies [38242132e]
+  - @ilo-org/icons@2.4.0
+
 ## 1.0.5
 
 ### Patch Changes
