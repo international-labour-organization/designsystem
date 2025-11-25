@@ -1,5 +1,11 @@
 # @ilo-org/icons
 
+## 2.4.0
+
+### Minor Changes
+
+- 38242132e: Renamed `ffbackward_15` to `skip_backward15` and `fforward_15` to `skip_forward15`
+
 ## 2.3.0
 
 ### Minor Changes
