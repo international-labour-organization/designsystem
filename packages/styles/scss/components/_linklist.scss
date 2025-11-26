@@ -18,8 +18,7 @@
       font-family: var(--ilo-fonts-display);
       font-weight: var(--ilo-font-weight-bold);
       @include typography("highlight-large");
-      margin-bottom: px-to-rem(27px);
-      margin-top: spacing(12);
+      margin: spacing(10) 0 spacing(5);
     }
   }
 
