@@ -222,7 +222,8 @@
         object-fit: contain;
       }
 
-      &--selected {
+      &--selected,
+      &:hover {
         z-index: 2;
 
         &::after {

@@ -50,6 +50,8 @@ const preview = {
         wrapper.dir = context.globals.dir;
       }
 
+      document.dir = context.globals.dir || "ltr";
+
       wrapper.appendChild(Story());
 
       return wrapper;

@@ -1,5 +1,14 @@
 # @ilo-org/styles
 
+## 1.10.1
+
+### Patch Changes
+
+- 3bff82092: **Foundation:** Use `em` values instead of percents for `letter-spacing` tokens. See #1708 for details.
+- dd5bce4ca: **Video**: fixed fullscreen button icon when fullscreen is enabled
+- Updated dependencies [38242132e]
+  - @ilo-org/icons@2.4.0
+
 ## 1.10.0
 
 ### Minor Changes

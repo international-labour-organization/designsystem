@@ -16,7 +16,6 @@ jobs:
     name: Release
     runs-on: ubuntu-latest
     steps:
-
       - name: Checkout code repository
         uses: actions/checkout@v3
         with:
@@ -28,7 +27,7 @@ jobs:
           node-version: 20.16.0
 
       - name: Install pnpm
-        uses: pnpm/action-setup@v2.0.1
+        uses: pnpm/action-setup@v4
         with:
           version: 9.14.2
 
