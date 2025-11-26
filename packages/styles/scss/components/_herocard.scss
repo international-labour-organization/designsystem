@@ -3,6 +3,14 @@
 
 .ilo--hero-card {
   $c: &;
+  --hero-card-padding-y-sm: 40px;
+  --hero-card-padding-x-sm: 16px;
+  --hero-card-padding-y-lg: 56px;
+  --hero-card-padding-x-lg: 32px;
+  --hero-card-corner-cut-width-sm: 72px;
+  --hero-card-corner-cut-height-sm: 40px;
+  --hero-card-corner-cut-width-lg: 116px;
+  --hero-card-corner-cut-height-lg: 64px;
 
   height: 100%;
   position: relative;
