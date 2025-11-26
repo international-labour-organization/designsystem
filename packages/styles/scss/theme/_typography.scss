@@ -19,7 +19,7 @@
   --ilo-line-height: 1.46;
 
   // Font Sizes
-  --ilo-font-size-base: px-to-rem($base-font-size);
+  --ilo-font-size-base: #{$base-font-size};
   --ilo-font-size-2xsm: px-to-rem(10px);
   --ilo-font-size-xsm: px-to-rem(12px);
   --ilo-font-size-sm: px-to-rem(14px);
