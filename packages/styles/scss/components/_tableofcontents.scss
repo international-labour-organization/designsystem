@@ -125,16 +125,30 @@
     font-weight: 500;
     padding: spacing(4) spacing(4) spacing(4);
     text-decoration: none;
-    @include icon("arrow_down", var(--ilo-color-blue-dark));
     @include typography("highlight-medium");
     @include globaltransition("background-color, border, color");
+    position: relative;
+
+    &:after {
+      content: "";
+      display: block;
+      width: px-to-rem(24px);
+      height: px-to-rem(24px);
+      position: absolute;
+      right: spacing(4);
+      top: 50%;
+      transform: translateY(-50%);
+      @include icon("arrow_down", var(--ilo-color-blue-dark));
+    }
 
     &:hover,
     &:focus {
       background-color: var(--ilo-color-blue-lighter);
-      border-bottom: px-to-rem(2px) solid var(--ilo-color-blue-medium);
-      color: var(--ilo-color-blue-medium);
-      @include icon("arrow_down", var(--ilo-color-blue-medium));
+      border-bottom: px-to-rem(2px) solid var(--ilo-color-blue);
+      color: var(--ilo-color-blue);
+      &:after {
+        @include icon("arrow_down", var(--ilo-color-blue));
+      }
       @include globaltransition("background-color, border, color");
     }
 
@@ -142,7 +156,9 @@
       background-color: var(--ilo-color-white);
       border-bottom: px-to-rem(2px) solid var(--ilo-color-blue-dark);
       color: var(--ilo-color-blue-dark);
-      @include icon("arrow_down", var(--ilo-color-blue-dark));
+      &:after {
+        @include icon("arrow_down", var(--ilo-color-blue-dark));
+      }
     }
   }
 
