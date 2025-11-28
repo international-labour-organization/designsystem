@@ -6,6 +6,12 @@
   --ilo-scale: 1; // default scale for the design system
 
   /**
+    * Layout
+  */
+  --ilo-layout-max-width: #{px-to-rem(1300px)};
+  --ilo-layout-padding: #{px-to-rem(20px)};
+
+  /**
     * Colors
     */
   --ilo-color-white: rgba(255, 255, 255, 1);

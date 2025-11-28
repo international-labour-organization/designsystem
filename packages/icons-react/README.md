@@ -130,7 +130,3 @@ check out our [Contributing Guide](/.github/CONTRIBUTING.md)! 👀
 ## Acknowledgements
 
 This package is heavily inspired by [@carbon/icons-react](https://github.com/carbon-design-system/carbon/tree/main/packages/icons-react)
-
-## 📝 License
-
-Licensed under the [MIT](/LICENSE).

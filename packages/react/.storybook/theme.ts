@@ -1,9 +1,6 @@
 import { create } from "@storybook/theming/create";
 //@ts-ignore brand assets have wrong type declarations
 import ilo_logo from "@ilo-org/brand-assets/logo_en_horizontal_blue.svg";
-import brandColors from "@ilo-org/themes/tokens/brand/base.json";
-
-const { brand } = brandColors;
 
 export default create({
   base: "light",
@@ -12,34 +9,35 @@ export default create({
   brandImage: ilo_logo,
   brandTarget: "_self",
 
-  colorPrimary: brand["ilo-dark-blue"].value,
-  colorSecondary: brand["ilo-blue"].value,
+  // Values from packages/styles/scss/theme/_foundation.scss
+  colorPrimary: "rgba(35, 0, 80, 1)", // --ilo-color-blue-dark
+  colorSecondary: "rgba(30, 45, 190, 1)", // --ilo-color-blue
 
   // UI
-  appBg: brand["ilo-light-blue"].value,
-  appContentBg: brand["ilo-white"].value,
-  appBorderColor: brand["ilo-grey-ui"].value,
+  appBg: "rgba(235, 245, 253, 1)", // --ilo-color-blue-lighter
+  appContentBg: "rgba(255, 255, 255, 1)", // --ilo-color-white
+  appBorderColor: "rgba(184, 196, 204, 1)", // --ilo-color-gray-base
   appBorderRadius: 0,
 
   fontBase: "'Noto Sans', sans-serif",
   fontCode: "'Fira Code', monospace",
 
   // Text colors
-  textColor: brand["ilo-dark-blue"].value,
-  textInverseColor: brand["ilo-white"].value,
-  textMutedColor: brand["ilo-grey-accessible"].value,
+  textColor: "rgba(35, 0, 80, 1)", // --ilo-color-blue-dark
+  textInverseColor: "rgba(255, 255, 255, 1)", // --ilo-color-white
+  textMutedColor: "rgba(109, 109, 109, 1)", // --ilo-color-gray-accessible
 
   // Toolbar default and active colors
-  barTextColor: brand["ilo-white"].value,
-  barSelectedColor: brand["ilo-yellow"].value,
-  barBg: brand["ilo-dark-blue"].value,
+  barTextColor: "rgba(255, 255, 255, 1)", // --ilo-color-white
+  barSelectedColor: "rgba(255, 205, 45, 1)", // --ilo-color-yellow
+  barBg: "rgba(35, 0, 80, 1)", // --ilo-color-blue-dark
 
-  buttonBg: brand["ilo-white"].value,
-  buttonBorder: brand["ilo-grey-ui"].value,
-  booleanBg: brand["ilo-light-blue"].value,
-  booleanSelectedBg: brand["ilo-white"].value,
-  inputBg: brand["ilo-light-blue"].value,
-  inputBorder: brand["ilo-grey-ui"].value,
-  inputTextColor: brand["ilo-dark-blue"].value,
+  buttonBg: "rgba(255, 255, 255, 1)", // --ilo-color-white
+  buttonBorder: "rgba(184, 196, 204, 1)", // --ilo-color-gray-base
+  booleanBg: "rgba(235, 245, 253, 1)", // --ilo-color-blue-lighter
+  booleanSelectedBg: "rgba(255, 255, 255, 1)", // --ilo-color-white
+  inputBg: "rgba(235, 245, 253, 1)", // --ilo-color-blue-lighter
+  inputBorder: "rgba(184, 196, 204, 1)", // --ilo-color-gray-base
+  inputTextColor: "rgba(35, 0, 80, 1)", // --ilo-color-blue-dark
   inputBorderRadius: 3,
 });

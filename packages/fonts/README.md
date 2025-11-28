@@ -37,7 +37,7 @@ If you need to import the fonts for Google for some reason, you can also do this
 
 ## Fonts included
 
-This package includes a subset of [Overpass](https://fonts.google.com/specimen/Overpass) and [Noto Sans](https://fonts.google.com/noto/specimen/Noto+Sans) fonts used in ILO projects.
+This package includes a subset of [Overpass](https://fonts.google.com/specimen/Overpass), [Noto Sans](https://fonts.google.com/noto/specimen/Noto+Sans), and [Vazirmatn](https://fonts.google.com/specimen/Vazirmatn) fonts used in ILO projects.
 
 | font-family | font-weight | font-style | file                    |
 | ----------- | ----------- | ---------- | ----------------------- |
@@ -50,6 +50,9 @@ This package includes a subset of [Overpass](https://fonts.google.com/specimen/O
 | "Noto Sans" | normal      | italic     | NotoSans-Italic         |
 | "Noto Sans" | 700         | normal     | NotoSans-Bold           |
 | "Noto Sans" | 700         | italic     | NotoSans-BoldItalic     |
+| "Vazirmatn" | normal      | normal     | Vazirmatn-Regular       |
+| "Vazirmatn" | normal      | italic     | Vazirmatn-Regular       |
+| "Vazirmatn" | 700         | normal     | Vazirmatn-Bold          |
 
 ### Formats
 
@@ -64,11 +67,11 @@ All fonts-face declarations include files in the following formats:
 
 This pacakge includes a directory named `fonts-css` which contains raw css for importing font stacks. Included as of now:
 
-| character set | font-family      |
-| ------------- | ---------------- |
-| Latin         | Noto Sans        |
-| Latin         | Overpass         |
-| Arabic        | Noto Sans Arabic |
+| character set | font-family |
+| ------------- | ----------- |
+| Latin         | Noto Sans   |
+| Latin         | Overpass    |
+| Arabic        | Vazirmatn   |
 
 (Note there is no Arabic character set for `Overpass`).
 
@@ -86,12 +89,12 @@ endif
 
 ### Arabic
 
-This pacakge also includes Noto Sans Arabic.
+This package includes [Vazirmatn](https://fonts.google.com/specimen/Vazirmatn), a modern Arabic typeface that provides excellent readability and proper rendering of Arabic text. Vazirmatn replaced Noto Sans Arabic to resolve line-height issues and ensure consistent typography across all languages.
 
-| font-family | font-weight | font-style | file                |
-| ----------- | ----------- | ---------- | ------------------- |
-| "Noto Sans" | normal      | normal     | NotoSansArabic      |
-| "Noto Sans" | 700         | normal     | NotoSansArabic-Bold |
+| font-family | font-weight | font-style | file              |
+| ----------- | ----------- | ---------- | ----------------- |
+| "Vazirmatn" | normal      | normal     | Vazirmatn-Regular |
+| "Vazirmatn" | 700         | normal     | Vazirmatn-Bold    |
 
 ## Chinese & Japense
 

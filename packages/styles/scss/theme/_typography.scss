@@ -1,3 +1,5 @@
+@use "../config" as *;
+
 :root {
   // Display Font Families
   --ilo-fonts-display: Overpass, Noto Sans, sans-serif;
@@ -17,6 +19,7 @@
   --ilo-line-height: 1.46;
 
   // Font Sizes
+  --ilo-font-size-base: #{$base-font-size};
   --ilo-font-size-2xsm: px-to-rem(10px);
   --ilo-font-size-xsm: px-to-rem(12px);
   --ilo-font-size-sm: px-to-rem(14px);
@@ -35,6 +38,7 @@
   --ilo-font-weight-bold: 700;
 
   // Line Height
+  --ilo-line-height-base: 27.24px;
   --ilo-line-height-xsm: 1.15;
   --ilo-line-height-sm: 1.2;
   --ilo-line-height-md: 1.25;

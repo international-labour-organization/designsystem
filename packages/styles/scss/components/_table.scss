@@ -1,15 +1,14 @@
-@use "../tokens" as *;
 @use "../functions" as *;
 @import "../mixins";
 
 .ilo--table {
-  background-color: $color-ux-table-background;
+  background-color: var(--ilo-color-blue-ramp);
   padding: spacing(20);
   position: relative;
 
   &--header {
-    background-color: $color-ux-table-content-background;
-    border-bottom: px-to-rem(2px) solid $color-base-neutrals-lighter;
+    background-color: var(--ilo-color-white);
+    border-bottom: px-to-rem(2px) solid var(--ilo-color-gray-light);
     padding: spacing(4) spacing(2) spacing(5) spacing(2);
   }
 
@@ -26,7 +25,7 @@
   }
 
   &--head {
-    background-color: $color-ux-table-content-background;
+    background-color: var(--ilo-color-white);
     box-shadow:
       0px 0.8px 1.6px rgba(30, 45, 190, 0.038),
       0px 4px 8px rgba(30, 45, 190, 0.054),
@@ -40,9 +39,9 @@
     z-index: 2;
 
     &--cell {
-      background-color: $color-ux-table-content-background;
-      border-left: px-to-rem(1px) solid $color-base-neutrals-lighter;
-      border-bottom: px-to-rem(2px) solid $color-base-neutrals-lighter;
+      background-color: var(--ilo-color-white);
+      border-left: px-to-rem(1px) solid var(--ilo-color-gray-light);
+      border-bottom: px-to-rem(2px) solid var(--ilo-color-gray-light);
       font-family: var(--ilo-fonts-display);
       font-weight: 700;
       @include typography("body-small");
@@ -63,8 +62,8 @@
         position: relative;
 
         &:after {
-          background-color: $color-base-neutrals-lighter;
-          background-image: url("#{colortodataurlicon('chevron_down', $color-ux-labels-actionable)}");
+          background-color: var(--ilo-color-gray-light);
+          background-image: url("#{colortodataurlicon('chevron_down', rgba(35, 0, 80, 1))}");
           background-position: center center;
           background-repeat: no-repeat;
           background-size: 75%;
@@ -79,14 +78,14 @@
         }
 
         &:hover {
-          background-color: $color-base-blue-light;
-          border-bottom: px-to-rem(2px) solid $color-base-blue-medium;
-          color: $color-base-blue-medium;
+          background-color: var(--ilo-color-blue-lighter);
+          border-bottom: px-to-rem(2px) solid var(--ilo-color-blue-medium);
+          color: var(--ilo-color-blue);
           cursor: pointer;
 
           &:after {
-            background-color: $color-base-blue-light;
-            background-image: url("#{colortodataurlicon('chevron_down', $color-base-blue-medium)}");
+            background-color: var(--ilo-color-blue-lighter);
+            background-image: url("#{colortodataurlicon('chevron_down', rgba(210, 213, 242, 1))}");
           }
         }
 
@@ -101,14 +100,14 @@
   }
 
   &--body {
-    background-color: $color-ux-table-cell-background;
+    background-color: var(--ilo-color-white);
 
     &--row.selected {
-      background-color: $color-ux-table-hover-background;
+      background-color: var(--ilo-color-background-hover);
     }
 
     &--cell {
-      border-bottom: px-to-rem(2px) solid $color-base-neutrals-lighter;
+      border-bottom: px-to-rem(2px) solid var(--ilo-color-gray-light);
       font-family: var(--ilo-fonts-copy);
       font-weight: 400;
       @include typography("body-small");
@@ -129,20 +128,20 @@
       }
 
       &:hover {
-        background-color: $color-ux-table-hover-background;
-        border-bottom: 2px solid $color-ux-labels-hover;
-        color: $color-ux-labels-hover;
+        background-color: var(--ilo-color-background-hover);
+        border-bottom: 2px solid var(--ilo-color-blue-medium);
+        color: var(--ilo-color-blue);
       }
 
       &.selected {
-        background-color: $color-ux-table-selected-background;
-        border-bottom: 2px solid $color-ux-labels-hover;
-        color: $color-ux-labels-hover;
+        background-color: var(--ilo-color-blue-ramp);
+        border-bottom: 2px solid var(--ilo-color-blue-medium);
+        color: var(--ilo-color-blue-medium);
         cursor: pointer;
       }
 
       &.column--selected {
-        background-color: $color-ux-table-hover-background;
+        background-color: var(--ilo-color-background-hover);
       }
 
       a {
@@ -165,7 +164,7 @@
   }
 
   &--description {
-    color: $color-base-neutrals-medium;
+    color: var(--ilo-color-gray-accessible);
     font-family: var(--ilo-fonts-copy);
     font-weight: 400;
     @include typography("body-xsmall");
@@ -177,28 +176,28 @@
 
   &--zebra {
     .ilo--table--body--row:nth-child(odd) {
-      background-color: $color-ux-table-zebra-background;
+      background-color: var(--ilo-color-background-highlight);
 
       &:hover,
       &:focus {
-        background-color: $color-ux-table-zebra-background;
+        background-color: var(--ilo-color-background-highlight);
       }
 
       .ilo--table--body--cell {
-        border-left: px-to-rem(1px) solid $color-base-neutrals-white;
+        border-left: px-to-rem(1px) solid var(--ilo-color-white);
 
         &:hover,
         &:focus {
-          background-color: $color-ux-table-selected-background;
+          background-color: var(--ilo-color-blue-ramp);
         }
       }
 
       &.selected {
         .ilo--table--body--cell {
-          background-color: $color-ux-table-hover-background;
+          background-color: var(--ilo-color-background-hover);
 
           &.selected {
-            background-color: $color-ux-table-selected-background;
+            background-color: var(--ilo-color-blue-ramp);
           }
         }
       }

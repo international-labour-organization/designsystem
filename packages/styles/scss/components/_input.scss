@@ -1,22 +1,13 @@
-@use "../tokens" as *;
 @use "../functions" as *;
 @import "../mixins";
 
 .ilo--input {
-  -webkit-appearance: none;
-  -moz-appearance: none;
   appearance: none;
-  background-color: map-get(
-    $color,
-    "formelements",
-    "input",
-    "default",
-    "background"
-  );
-  @include bordervalues("input", "formelements");
+  background-color: var(--ilo-color-white);
+  border: var(--ilo-border-md) solid var(--ilo-color-gray-base);
   box-sizing: border-box;
   font-family: var(--ilo-fonts-copy);
-  font-weight: map-get($type, "weights", "section");
+  font-weight: var(--ilo-font-weight-medium);
   @include typography("highlight-medium");
   height: px-to-rem(48px);
   margin: spacing(0);
@@ -25,14 +16,8 @@
   width: 100%;
 
   &:focus {
-    background-color: map-get(
-      $color,
-      "formelements",
-      "input",
-      "focus",
-      "background"
-    );
-    @include bordervalues("input", "formelements", "focus");
+    background-color: var(--ilo-color-blue-lighter);
+    border: var(--ilo-border-md) solid var(--ilo-color-gray-base);
     padding-left: spacing(3);
     outline: none;
   }
@@ -45,13 +30,8 @@
   &:invalid,
   &.error,
   .error & {
-    background-color: map-get(
-      $color,
-      "formelements",
-      "input",
-      "error",
-      "background"
-    );
-    @include bordervalues("input", "formelements", "error");
+    background-color: var(--ilo-color-white);
+    border: var(--ilo-border-md) solid var(--ilo-color-gray-base);
+    border-left: px-to-rem(3px) solid var(--ilo-color-red-dark);
   }
 }
