@@ -2,14 +2,13 @@
 
 This package provides the implementation of the Design System using [Twig](https://twig.symfony.com/). It also includes a [Storybook](https://storybook.js.org/) project for documentation and development of the components in the system. Storybook and twig integration is done by the internal [Maestro](https://github.com/international-labour-organization/designsystem/tree/develop/packages/maestro). It has dependencies on the following other @ilo-org packages:
 
-- [@ilo-org/themes](./packages/themes)
 - [@ilo-org/fonts](./packages/fonts)
 - [@ilo-org/styles](./packages/styles)
 - [@ilo-org/icons](./packages/icons)
 
 ## Drupal Integration
 
-- For the Drupal integration, please refer to the [Main Documentation](https://twig.ui.ilo.org/?path=/docs/get-started-use-with-drupal--docs)
+- For Drupal integration, please refer to the [Main Documentation](https://twig.ui.ilo.org/?path=/docs/get-started-use-with-drupal--docs)
 - [Drupal Base Theme](https://github.com/international-labour-organization/ilo_base_theme)
 
 ## Available Commands
