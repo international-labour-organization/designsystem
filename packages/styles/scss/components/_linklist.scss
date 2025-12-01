@@ -18,7 +18,7 @@
     &--headline {
       font-family: var(--ilo-fonts-display);
       font-weight: map-get($type, "weights", "label");
-      @include typography("highlight-large");
+      @include typography("heading-4");
       @include textmargin("margin-bottom", 27px, "headline-6", "display", 0, 0);
       @include textmargin(
         "margin-top",
@@ -90,7 +90,7 @@
     color: map-get($color, "link", "text", "default");
     font-family: var(--ilo-fonts-display);
     font-weight: map-get($type, "weights", "section");
-    @include typography("highlight-medium-bold");
+    @include typography("highlight-medium");
     padding-top: spacing(4);
     padding-bottom: spacing(4);
     text-decoration: none;
