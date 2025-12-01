@@ -1,5 +1,12 @@
 # @ilo-org/styles
 
+## 1.10.2
+
+### Patch Changes
+
+- 8e8765baa: **TableOfContents:** Fix text overlapping arrow icon
+- 69a5029d8: **LinkList:** Fix incorrect font-sizes and weights
+
 ## 1.10.1
 
 ### Patch Changes

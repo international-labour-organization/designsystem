@@ -1,5 +1,14 @@
 # @ilo-org/twig
 
+## 1.11.1
+
+### Patch Changes
+
+- 014b07f72: **Navigation:** This component will be deprecated in favor of `SubsiteNav` with `type=main`. It will now show a deprecation warning in the console.
+- Updated dependencies [8e8765baa]
+- Updated dependencies [69a5029d8]
+  - @ilo-org/styles@1.10.2
+
 ## 1.11.0
 
 ### Minor Changes
