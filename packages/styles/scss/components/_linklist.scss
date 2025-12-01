@@ -15,8 +15,6 @@
 
   &--links {
     &--headline {
-      font-family: var(--ilo-fonts-display);
-      font-weight: var(--ilo-font-weight-bold);
       @include typography("highlight-large");
       margin: spacing(10) 0 spacing(5);
     }
@@ -79,9 +77,7 @@
     align-items: center;
     border-bottom: var(--ilo-border-md) solid var(--ilo-color-gray-light);
     color: var(--ilo-link-color-default-light);
-    font-family: var(--ilo-fonts-display);
-    font-weight: var(--ilo-font-weight-medium);
-    @include typography("highlight-medium-bold");
+    @include typography("highlight-medium");
     padding-top: spacing(4);
     padding-bottom: spacing(4);
     text-decoration: none;
