@@ -15,7 +15,6 @@ import {
   withLongSubbrand,
   fluidWidth,
 } from "../../components/Logo/Logo.args";
-import { brand } from "@ilo-org/themes/tokens/brand/base.json";
 
 const LogoMeta: Meta<typeof Logo> = {
   title: "Components/Media/Logo",
@@ -146,7 +145,7 @@ export const DarkTheme: StoryObj<typeof Logo> = {
   parameters: {
     backgrounds: {
       default: "ilo",
-      values: [{ name: "ilo", value: brand["ilo-dark-blue"].value }],
+      values: [{ name: "ilo", value: "rgba(35, 0, 80, 1)" }], // --ilo-color-blue-dark
     },
   },
 };
@@ -157,7 +156,7 @@ export const FluidWidth: StoryObj<typeof Logo> = {
   parameters: {
     backgrounds: {
       default: "ilo",
-      values: [{ name: "ilo", value: brand["ilo-dark-blue"].value }],
+      values: [{ name: "ilo", value: "rgba(35, 0, 80, 1)" }], // --ilo-color-blue-dark
     },
   },
   argTypes: {

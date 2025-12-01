@@ -21,7 +21,7 @@ const SearchField: FC<
 
     const fieldSetClass = `${prefix}--fieldset`;
 
-    const handleClick: React.MouseEventHandler<HTMLInputElement> = (e) => {
+    const handleClick: React.MouseEventHandler<HTMLButtonElement> = (e) => {
       if (callback) {
         callback(e);
       }
@@ -75,7 +75,7 @@ const SearchField: FC<
                 <Icon name="close" hidden={true} />
               </span>
             </div>
-            <input
+            <button
               className={buttonClass}
               disabled={input?.disabled}
               type="submit"

@@ -1,91 +1,83 @@
-# ILO Design System - Icons Package
+# ILO Design System - Icons
+
+> This package only ships raw icon **assets**. The recommended way to use ILO icons in production is through the Icon components that already ship with our component libraries.
+
+## Prefer Icon Components
+
+- ⚛️ [React Icon component docs](https://react.ui.ilo.org/?path=/docs/components-user-interface-icon--docs)
+- 🌿 [Twig Icon component docs](https://twig.ui.ilo.org/?path=/docs/components-user-interface-icon--docs)
+
+Those component packages (`@ilo-org/react` and `@ilo-org/twig`) already depend on the correct asset pipeline, handle accessibility, and stay up to date automatically. Install this package directly only when you need to consume the underlying files (for example, during a custom build or CMS integration).
+
+## Icons Gallery
+
+The ILO Design System includes over 70 icons for a wide variety of use cases. [See the complete list](http://localhost:6006/?path=/docs/components-user-interface-icon--docs#list-of-icons).
 
 ## Installation
 
 ```bash
-npm install -S @ilo-org/icons
+npm install @ilo-org/icons
 ```
 
-## Icons
+## Export formats
 
-| Icon Name                    | Image                                                                           |
-| ---------------------------- | ------------------------------------------------------------------------------- |
-| `arrow_down`                 | <img src="./src/svg/arrow_down.svg" width="24px" height="24px">                 |
-| `arrow_left`                 | <img src="./src/svg/arrow_left.svg" width="24px" height="24px">                 |
-| `arrow_right`                | <img src="./src/svg/arrow_right.svg" width="24px" height="24px">                |
-| `arrow_sort`                 | <img src="./src/svg/arrow_sort.svg" width="24px" height="24px">                 |
-| `arrow_up`                   | <img src="./src/svg/arrow_up.svg" width="24px" height="24px">                   |
-| `burger`                     | <img src="./src/svg/burger.svg" width="24px" height="24px">                     |
-| `calendar`                   | <img src="./src/svg/calendar.svg" width="24px" height="24px">                   |
-| `caret_down`                 | <img src="./src/svg/caret_down.svg" width="24px" height="24px">                 |
-| `caret_left`                 | <img src="./src/svg/caret_left.svg" width="24px" height="24px">                 |
-| `caret_right`                | <img src="./src/svg/caret_right.svg" width="24px" height="24px">                |
-| `caret_up`                   | <img src="./src/svg/caret_up.svg" width="24px" height="24px">                   |
-| `check`                      | <img src="./src/svg/check.svg" width="24px" height="24px">                      |
-| `chevron_down`               | <img src="./src/svg/chevron_down.svg" width="24px" height="24px">               |
-| `chevron_left`               | <img src="./src/svg/chevron_left.svg" width="24px" height="24px">               |
-| `chevron_right`              | <img src="./src/svg/chevron_right.svg" width="24px" height="24px">              |
-| `chevron_up`                 | <img src="./src/svg/chevron_up.svg" width="24px" height="24px">                 |
-| `close`                      | <img src="./src/svg/close.svg" width="24px" height="24px">                      |
-| `closed_captions`            | <img src="./src/svg/closed_captions.svg" width="24px" height="24px">            |
-| `copyright`                  | <img src="./src/svg/copyright.svg" width="24px" height="24px">                  |
-| `dot_menu`                   | <img src="./src/svg/dot_menu.svg" width="24px" height="24px">                   |
-| `double_chevron_left`        | <img src="./src/svg/double_chevron_left.svg" width="24px" height="24px">        |
-| `double_chevron_right`       | <img src="./src/svg/double_chevron_right.svg" width="24px" height="24px">       |
-| `download`                   | <img src="./src/svg/download.svg" width="24px" height="24px">                   |
-| `fullscreen`                 | <img src="./src/svg/fullscreen.svg" width="24px" height="24px">                 |
-| `globe`                      | <img src="./src/svg/globe.svg" width="24px" height="24px">                      |
-| `home`                       | <img src="./src/svg/home.svg" width="24px" height="24px">                       |
-| `launch`                     | <img src="./src/svg/launch.svg" width="24px" height="24px">                     |
-| `mail`                       | <img src="./src/svg/mail.svg" width="24px" height="24px">                       |
-| `meeting`                    | <img src="./src/svg/meeting.svg" width="24px" height="24px">                    |
-| `minus`                      | <img src="./src/svg/minus.svg" width="24px" height="24px">                      |
-| `notification_error`         | <img src="./src/svg/notification_error.svg" width="24px" height="24px">         |
-| `notification_info`          | <img src="./src/svg/notification_info.svg" width="24px" height="24px">          |
-| `notification_info_outlined` | <img src="./src/svg/notification_info_outlined.svg" width="24px" height="24px"> |
-| `notification_success`       | <img src="./src/svg/notification_success.svg" width="24px" height="24px">       |
-| `notification_warning`       | <img src="./src/svg/notification_warning.svg" width="24px" height="24px">       |
-| `pause`                      | <img src="./src/svg/pause.svg" width="24px" height="24px">                      |
-| `pin`                        | <img src="./src/svg/pin.svg" width="24px" height="24px">                        |
-| `plus`                       | <img src="./src/svg/plus.svg" width="24px" height="24px">                       |
-| `quote`                      | <img src="./src/svg/quote.svg" width="24px" height="24px">                      |
-| `search`                     | <img src="./src/svg/search.svg" width="24px" height="24px">                     |
-| `send`                       | <img src="./src/svg/send.svg" width="24px" height="24px">                       |
-| `settings`                   | <img src="./src/svg/settings.svg" width="24px" height="24px">                   |
-| `share`                      | <img src="./src/svg/share.svg" width="24px" height="24px">                      |
-| `sound_off`                  | <img src="./src/svg/sound_off.svg" width="24px" height="24px">                  |
-| `sound_on`                   | <img src="./src/svg/sound_on.svg" width="24px" height="24px">                   |
-| `statistics`                 | <img src="./src/svg/statistics.svg" width="24px" height="24px">                 |
-| `social_bluesky`             | <img src="./src/svg/social_bluesky.svg" width="24px" height="24px">             |
-| `social_facebook`            | <img src="./src/svg/social_facebook.svg" width="24px" height="24px">            |
-| `social_flickr`              | <img src="./src/svg/social_flickr.svg" width="24px" height="24px">              |
-| `social_instagram`           | <img src="./src/svg/social_instagram.svg" width="24px" height="24px">           |
-| `social_linkedin`            | <img src="./src/svg/social_linkedin.svg" width="24px" height="24px">            |
-| `social_rss`                 | <img src="./src/svg/social_rss.svg" width="24px" height="24px">                 |
-| `social_tiktok`              | <img src="./src/svg/social_tiktok.svg" width="24px" height="24px">              |
-| `social_wechat`              | <img src="./src/svg/social_wechat.svg" width="24px" height="24px">              |
-| `social_weibo`               | <img src="./src/svg/social_weibo.svg" width="24px" height="24px">               |
-| `social_x`                   | <img src="./src/svg/social_x.svg" width="24px" height="24px">                   |
-| `social_youtube`             | <img src="./src/svg/social_youtube.svg" width="24px" height="24px">             |
-| `stream`                     | <img src="./src/svg/stream.svg" width="24px" height="24px">                     |
-| `time`                       | <img src="./src/svg/time.svg" width="24px" height="24px">                       |
-| `triangle_right`             | <img src="./src/svg/triangle_right.svg" width="24px" height="24px">             |
-| `triangle_left`              | <img src="./src/svg/triangle_left.svg" width="24px" height="24px">              |
-| `upload`                     | <img src="./src/svg/upload.svg" width="24px" height="24px">                     |
-| `skip_backward15`            | <img src="./src/svg/skip_backward15.svg" width="24px" height="24px">            |
-| `skip_forward15`             | <img src="./src/svg/skip_forward15.svg" width="24px" height="24px">             |
-| `image`                      | <img src="./src/svg/image.svg" width="24px" height="24px">                      |
-| `map`                        | <img src="./src/svg/map.svg" width="24px" height="24px">                        |
-| `play`                       | <img src="./src/svg/play.svg" width="24px" height="24px">                       |
-| `reduce`                     | <img src="./src/svg/reduce.svg" width="24px" height="24px">                     |
-| `search_more`                | <img src="./src/svg/search_more.svg" width="24px" height="24px">                |
-| `skip_next`                  | <img src="./src/svg/skip_next.svg" width="24px" height="24px">                  |
-| `skip_previous`              | <img src="./src/svg/skip_previous.svg" width="24px" height="24px">              |
-| `social_apple_podcasts`      | <img src="./src/svg/social_apple_podcasts.svg" width="24px" height="24px">      |
-| `social_spotify`             | <img src="./src/svg/social_spotify.svg" width="24px" height="24px">             |
-| `transcript`                 | <img src="./src/svg/transcript.svg" width="24px" height="24px">                 |
-| `video`                      | <img src="./src/svg/video.svg" width="24px" height="24px">                      |
-| `zoom`                       | <img src="./src/svg/zoom.svg" width="24px" height="24px">                       |
+All icons share the same naming convention (`arrow_down`, `social_linkedin`, etc.). You can explore the catalog in Storybook (links above) or by browsing the `svg/` folder inside this package. We expose the assets in three formats to cover different build pipelines.
+
+### 1. CSS data URLs
+
+`@ilo-org/icons/build/scss/icons.scss` exports a Sass map named `$icons`, where every entry is a `data:` URL string. This is the easiest way to inject icons via CSS pseudo-elements.
+
+```scss
+@use "@ilo-org/icons/build/scss/icons" as ilo-icons;
+
+.ilo-link::after {
+  content: "";
+  width: 1.25rem;
+  height: 1.25rem;
+  background: no-repeat center/contain map-get(ilo-icons.$icons, "arrow_right");
+}
+```
+
+### 2. JavaScript SVG objects
+
+Every icon/size combination is available as a plain JavaScript object that describes the SVG tree. ES modules live under `@ilo-org/icons/es/<icon>/<size>.js` and CommonJS copies are under `lib/`. These objects are useful when you need to render icons in a framework-agnostic way.
+
+```js
+import ArrowDown24 from "@ilo-org/icons/es/arrow_down/24";
+
+function renderIcon(icon) {
+  const svgNS = "http://www.w3.org/2000/svg";
+  const svg = document.createElementNS(svgNS, icon.elem);
+  Object.entries(icon.attrs).forEach(([attr, value]) => {
+    svg.setAttribute(attr, value);
+  });
+  icon.content?.forEach((child) => {
+    const node = document.createElementNS(svgNS, child.elem);
+    Object.entries(child.attrs || {}).forEach(([attr, value]) => {
+      node.setAttribute(attr, value);
+    });
+    svg.appendChild(node);
+  });
+  return svg;
+}
+
+document.querySelector("#cta").append(renderIcon(ArrowDown24));
+```
+
+### 3. Raw SVG files
+
+The actual SVG source files are published under `@ilo-org/icons/svg/<icon>.svg`. Load them however your toolchain prefers:
+
+- bundlers that support the `?raw` convention:
+
+  ```js
+  import arrowDownSvg from "@ilo-org/icons/svg/arrow_down.svg?raw";
+  element.innerHTML = arrowDownSvg;
+  ```
+
+- build scripts, CMS pipelines, or Drupal themes can read the file directly from `node_modules/@ilo-org/icons/svg`.
+
+Because these are static files, you can also copy them into a CDN or asset pipeline if you need to reference them outside of a bundler.
 
 ## Contributing
 

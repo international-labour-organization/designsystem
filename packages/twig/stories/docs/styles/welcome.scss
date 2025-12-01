@@ -1,12 +1,10 @@
-@import "@ilo-org/themes/build/scss/tokens";
-
 #storybook-docs:has(.welcome) {
   position: relative;
   overflow: hidden;
 }
 
 .sbdocs:has(.welcome) {
-  background-color: $brand-ilo-dark-blue;
+  background-color: rgba(35, 0, 80, 1);
   overflow: hidden;
 
   .welcome {
@@ -19,11 +17,11 @@
     position: relative;
 
     &--title {
-      color: $brand-ilo-white;
+      color: rgba(255, 255, 255, 1); // --ilo-color-white
     }
 
     &--subtitle {
-      color: #a0cb29;
+      color: rgba(160, 203, 41, 1); // --ilo-color-green
       margin-bottom: 0;
       display: flex;
       align-items: flex-end;
@@ -40,7 +38,7 @@
 
     &--version {
       font-size: 0.8rem;
-      color: #d2d2d2;
+      color: rgba(210, 210, 210, 1); // --ilo-color-gray-light
       font-family: monospace;
       margin-bottom: 16px;
     }
@@ -61,7 +59,7 @@
   .triangle1 {
     margin-top: 70px;
     border-width: 110px 0 110px 190px;
-    border-color: transparent transparent transparent #22147c;
+    border-color: transparent transparent transparent rgba(35, 0, 80, 1); // --ilo-color-blue-dark
 
     @media (max-width: 768px) {
       display: none;
@@ -70,7 +68,7 @@
 
   .triangle2 {
     border-width: 400px 0 500px 900px;
-    border-color: transparent transparent transparent $brand-ilo-blue;
+    border-color: transparent transparent transparent rgba(30, 45, 190, 1); // --ilo-color-blue
     top: 150px;
     left: 50%;
     animation: drift-1 75s infinite;
@@ -91,7 +89,7 @@
 
   .triangle3 {
     border-width: 300px 0 300px 500px;
-    border-color: transparent transparent transparent $brand-ilo-dark-red;
+    border-color: transparent transparent transparent rgba(200, 48, 60, 1); // --ilo-color-red-dark
     top: -40px;
     right: -60px;
     animation: drift-2 75s infinite;

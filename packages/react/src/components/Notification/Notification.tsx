@@ -111,25 +111,27 @@ const Notification = forwardRef<HTMLDivElement, NotificationProps>(
                 </time>
               )}
               {cta && (
-                <div className={`${baseClass}__footer`}>
-                  <Button
-                    type="secondary"
-                    size="small"
-                    link={{
-                      url: cta.url,
-                      label: cta.label,
-                    }}
-                  />
-                </div>
+                <Button
+                  className={`${baseClass}--cta`}
+                  type="secondary"
+                  size="small"
+                  link={{
+                    url: cta.url,
+                    label: cta.label,
+                  }}
+                />
               )}
             </div>
-            <button
+            <Button
               className={`${baseClass}--close`}
-              type="button"
               onClick={() => setDisplay(false)}
+              type="secondary"
+              size="small"
+              icononly={true}
+              icon={{ name: "close" }}
             >
               <span>{closelabel}</span>
-            </button>
+            </Button>
           </div>
         )}
       </>
