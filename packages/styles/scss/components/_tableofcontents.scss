@@ -125,7 +125,8 @@
     display: block;
     font-family: var(--ilo-fonts-display);
     font-weight: 500;
-    padding: spacing(4) spacing(4) spacing(4);
+    padding-block: spacing(4);
+    padding-inline: spacing(4) spacing(12);
     text-decoration: none;
     @include dataurlicon("arrow_down", $color-ux-labels-actionable);
     @include typography("highlight-medium");

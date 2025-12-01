@@ -22,6 +22,7 @@ const config: StorybookConfig = {
     getAbsolutePath("@storybook/addon-essentials"),
     getAbsolutePath("@storybook/addon-interactions"),
     getAbsolutePath("storybook-addon-rtl"),
+    getAbsolutePath("@chromatic-com/storybook"),
     {
       name: "@storybook/addon-docs",
       options: {
