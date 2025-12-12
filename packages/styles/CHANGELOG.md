@@ -1,5 +1,17 @@
 # @ilo-org/styles
 
+## 1.11.0
+
+### Minor Changes
+
+- 70500d207: We have removed the dependecy on the `@ilo-org/themes` package, which will soon be deprecated.
+- 2f571182b: **Hero/HeroCard:** Remove theme package variables
+
+### Patch Changes
+
+- 0cc87c1e8: **Notification:** Fixed layout issues and appearance of cta
+- beab2eec1: **SearchField:** Refactor to improve styling and performance
+
 ## 1.10.2
 
 ### Patch Changes
