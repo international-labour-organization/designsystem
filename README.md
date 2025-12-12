@@ -59,7 +59,9 @@ However, if you need to use logos, you will need to install [`@ilo-org/brand-ass
 
 ## Packages
 
-In addition to the two component libraries mentioned above, this monorepo includes packages that provide the styles, assets, and utilities both libraries need to operate. Again, because the component libraries already include everything (except logos) you need to start a new project, you generally shouldn't install these packages individually.
+In addition to the two component libraries mentioned above, this monorepo includes packages that provide the styles, assets, and utilities both libraries need to operate. Again, because the component libraries already include everything (except logos) you need to start a new project, you generally shouldn't install these packages individually. Only installing `@ilo-org/react` or `@ilo-org/twig` should give you everything you need.
+
+The one exception is the `@ilo-org/brand-assets` package which includes assets like logos that don't come bundled in with the main design system packages.
 
 | Package                                                                | Description                              | Current version                                                        |
 | ---------------------------------------------------------------------- | ---------------------------------------- | ---------------------------------------------------------------------- |
