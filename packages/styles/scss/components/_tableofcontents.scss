@@ -1,10 +1,9 @@
-@use "../tokens" as *;
 @use "../animations" as *;
 @use "../functions" as *;
 @import "../mixins";
 
 .ilo--table-of-contents {
-  background-color: $color-ux-tableofcontents-items-default-background;
+  background-color: var(--ilo-color-gray-light);
   display: none;
   padding: 0;
 
@@ -25,7 +24,7 @@
   }
 
   &--headline {
-    border-bottom: px-to-rem(3px) solid $color-base-neutrals-lighter;
+    border-bottom: px-to-rem(3px) solid var(--ilo-color-gray-light);
     margin-bottom: spacing(6);
     margin-top: spacing(2);
     @include typography("heading-3");
@@ -119,38 +118,48 @@
     background-position: calc(100% - 16px) center;
     background-repeat: no-repeat;
     background-size: px-to-rem(24px) px-to-rem(24px);
-    border-bottom: $color-ux-tableofcontents-items-default-border px-to-rem(2px)
-      solid;
-    color: $color-ux-labels-actionable;
+    border-bottom: px-to-rem(2px) solid var(--ilo-color-white);
+    color: var(--ilo-color-blue-dark);
     display: block;
     font-family: var(--ilo-fonts-display);
     font-weight: 500;
     padding-block: spacing(4);
     padding-inline: spacing(4) spacing(12);
     text-decoration: none;
-    @include dataurlicon("arrow_down", $color-ux-labels-actionable);
     @include typography("highlight-medium");
     @include globaltransition("background-color, border, color");
+    position: relative;
+
+    &:after {
+      content: "";
+      display: block;
+      width: px-to-rem(24px);
+      height: px-to-rem(24px);
+      position: absolute;
+      right: spacing(4);
+      top: 50%;
+      transform: translateY(-50%);
+      @include icon("arrow_down", var(--ilo-color-blue-dark));
+    }
 
     &:hover,
     &:focus {
-      background-color: $color-ux-tableofcontents-items-hover-background;
-      border-bottom: $color-ux-tableofcontents-items-hover-border px-to-rem(2px)
-        solid;
-      color: $color-ux-labels-hover;
-      @include dataurlicon("arrow_down", $color-ux-labels-hover);
+      background-color: var(--ilo-color-blue-lighter);
+      border-bottom: px-to-rem(2px) solid var(--ilo-color-blue);
+      color: var(--ilo-color-blue);
+      &:after {
+        @include icon("arrow_down", var(--ilo-color-blue));
+      }
       @include globaltransition("background-color, border, color");
     }
 
     &:active {
-      background-color: $color-ux-tableofcontents-items-active-background;
-      border-bottom: $color-ux-tableofcontents-items-active-border
-        px-to-rem(2px) solid;
-      color: $color-ux-tableofcontents-items-active-color;
-      @include dataurlicon(
-        "arrow_down",
-        $color-ux-tableofcontents-items-active-icon
-      );
+      background-color: var(--ilo-color-white);
+      border-bottom: px-to-rem(2px) solid var(--ilo-color-blue-dark);
+      color: var(--ilo-color-blue-dark);
+      &:after {
+        @include icon("arrow_down", var(--ilo-color-blue-dark));
+      }
     }
   }
 

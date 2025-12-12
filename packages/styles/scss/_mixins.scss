@@ -1,7 +1,7 @@
 //*------------------------------------*\
 //    $MIXINS
 //*------------------------------------*/
-@use "tokens" as *;
+@use "icons" as *;
 @use "functions" as *;
 @use "animations" as *;
 @use "theme/breakpoints" as *;
@@ -46,97 +46,18 @@
 }
 
 // ======================================
-// Text Margin
-//
-// calculates reduced margin to account
-// for line-height and descenders
-// ======================================
-
-@mixin textmargin(
-  $margin,
-  $marginval,
-  $stylename,
-  $descender,
-  $stylename2: false,
-  $descender2: false
-) {
-  @if $stylename2 != false {
-    #{$margin}: px-to-rem(
-      margin-adjust(
-        $marginval,
-        map-get($type, "descenders", $descender),
-        map-get($type, $stylename, "size"),
-        map-get($type, $stylename, "line-height")
-      )
-    );
-  } @else {
-    #{$margin}: px-to-rem(
-      margin-adjust(
-        $marginval,
-        map-get($type, "descenders", $descender),
-        map-get($type, $stylename, "size"),
-        map-get($type, $stylename, "line-height"),
-        map-get($type, "descenders", $descender2),
-        map-get($type, $stylename2, "size"),
-        map-get($type, $stylename2, "line-height")
-      )
-    );
-  }
-}
-
-// ======================================
-// Border Values
-// ======================================
-
-@mixin bordervalues($mappath, $location, $state: "default") {
-  border-bottom: px-to-rem(
-      map-get($spacing, $location, $mappath, $state, "border", "bottom")
-    )
-    solid map-get($color, $location, $mappath, $state, "border", "bottom");
-  border-left: px-to-rem(
-      map-get($spacing, $location, $mappath, $state, "border", "left")
-    )
-    solid map-get($color, $location, $mappath, $state, "border", "left");
-  border-right: px-to-rem(
-      map-get($spacing, $location, $mappath, $state, "border", "right")
-    )
-    solid map-get($color, $location, $mappath, $state, "border", "right");
-  border-top: px-to-rem(
-      map-get($spacing, $location, $mappath, $state, "border", "top")
-    )
-    solid map-get($color, $location, $mappath, $state, "border", "top");
-}
-
-// ======================================
-// Border Radius Values
-// ======================================
-
-@mixin borderradius($mappath) {
-  border-bottom-left-radius: map-get($radius, $mappath, "bottom-left");
-  border-bottom-right-radius: map-get($radius, $mappath, "bottom-right");
-  border-top-left-radius: map-get($radius, $mappath, "top-left");
-  border-top-right-radius: map-get($radius, $mappath, "top-right");
-}
-
-// ======================================
-// Box Padding Values
-// ======================================
-
-@mixin boxpadding($mappath, $size) {
-  padding-bottom: map-get($spacing, "boxpadding", $mappath, $size, "bottom");
-  padding-left: map-get($spacing, "boxpadding", $mappath, $size, "left");
-  padding-right: map-get($spacing, "boxpadding", $mappath, $size, "right");
-  padding-top: map-get($spacing, "boxpadding", $mappath, $size, "top");
-}
-
-// ======================================
 // Data URL Icon
+// @TODO: Deprecate all usage of dataurlicon and replace with icon mixin
 // ======================================
 
 @mixin dataurlicon($name, $color: $color-base-neutrals-black) {
   background-image: url("#{colortodataurlicon($name, $color)}");
   background-repeat: no-repeat;
 }
+
+// ======================================
+// Icon
+// ======================================
 
 @mixin icon($name, $color: black) {
   $icon: map-get($icons, $name);
@@ -145,33 +66,6 @@
   -webkit-mask-image: url("#{$icon}");
   -webkit-mask-repeat: no-repeat;
   background-color: $color;
-}
-
-// ======================================
-// Video Button
-// ======================================
-@mixin videobutton($name, $size: "standard") {
-  $height: if($size == "big", 72px, 32px);
-  $box: if($size == "big", 80px, 40px);
-  $width: $height;
-  $color: $color-ux-video-controls-default-icon;
-
-  cursor: pointer;
-  border: none;
-  background-color: $color-ux-video-controls-default-background;
-  width: $box;
-  height: $box;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: $width $height;
-  @include dataurlicon($name, $color);
-
-  &:hover,
-  &:focus {
-    background-color: $color-ux-video-controls-hover-background;
-    $color: $color-ux-video-controls-hover-icon;
-    @include dataurlicon($name, $color);
-  }
 }
 
 // ======================================
@@ -310,11 +204,11 @@
   }
 }
 
-@mixin hero-grid-rows($min-height: $spacing-hero-image-min-height) {
+@mixin hero-grid-rows($min-height: var(--hero-image-min-height)) {
   grid-template-rows:
     minmax($min-height, 1fr)
-    $spacing-hero-tooltip-height
-    $spacing-hero-card-corner-cut-height-sm
+    var(--hero-tooltip-height)
+    var(--hero-card-corner-cut-height-sm)
     auto;
 }
 
@@ -378,6 +272,10 @@
     }
   }
 }
+
+// ======================================
+// Typography
+// ======================================
 
 @mixin typography($variant, $mobile: false) {
   @if $variant ==

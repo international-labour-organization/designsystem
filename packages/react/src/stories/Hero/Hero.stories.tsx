@@ -87,7 +87,7 @@ const Homepage: StoryObj<HeroProps> = {
         "ILO welcomes G7 call to make a just transition to a green economy happen",
       url: "https://www.ilo.org",
       theme: "dark",
-      background: "semi-transparent",
+      background: "solid",
       cornercut: false,
       eyebrow: "UN General Assembly",
     },

@@ -1,11 +1,10 @@
 # ILO Design System - Styles
 
-The Styles package provides the stylesheets which are used to style the components in other packages. It includes both the styles for the individual components as well as bundled stylesheets for the entire design system. Both scss and compiled css files are exported from the package.
+The Styles package provides the stylesheets which are used to style the components in other packages. It includes both the styles for the individual components as well as bundled stylesheets for the entire design system. Both SCSS and compiled CSS files are exported from the package.
 
 The styles are written in [SCSS](https://sass-lang.com/), so you can also import the SCSS files and include them in your own SASS workflow.
 
-[!TIP]
-This styles in this package are also shipped directly from [@ilo-org/twig](../twig/) or [@ilo-org/react](../react/) packages. If you are using those libraries, you do not have to install this. See documentation for each on instructions on how to import styles.
+> [!WARNING] > **Do not use this package directly.** If you are using [@ilo-org/twig](../twig/) or [@ilo-org/react](../react/) packages, you should import styles from those packages instead. The classnames in this package are internal implementation details and are not part of the public API. They may change at any time without being considered a breaking change. Always use the component APIs provided by the React or Twig packages rather than directly referencing CSS classnames from this package.
 
 ## Installation
 
@@ -15,45 +14,113 @@ npm i @ilo-org/styles
 
 ## Usage
 
-### Include the bundled stylesheet
+### Bundled Stylesheets
 
-If you're going to use all or most of the components in the Design System, the easiest thing to do is to include the bundled stylesheet, which includes all of the styles for all of the components.
+The package provides several bundled stylesheets depending on your needs:
 
-To do this, you can copy the file `@ilo-org/styles/css/index.css` to a place where you're hosting static files via build command and include it from there.
+- **`index.css`** - Complete bundle including all components, global styles, resets, and typography
+- **`monorepo.css`** - Version for use within the monorepo (uses different typography setup)
+- **`global.css`** - Global styles only (resets, theme, typography) without component styles
 
-You can also import compiled CSS files for the individual components, which can be fetched or included from `@ilo-org/styles/css/components` directory.
+#### Using the Complete Bundle
 
-Here's an example which uses Webpack to output CSS files together with components from the Design System's [React package](../react).
+If you're going to use all or most of the components in the Design System, the easiest approach is to include the complete bundled stylesheet.
+
+**HTML:**
+
+```html
+<link rel="stylesheet" href="node_modules/@ilo-org/styles/css/index.css" />
+```
+
+**JavaScript/TypeScript (with bundler):**
+
+```javascript
+import "@ilo-org/styles/css/index.css";
+```
+
+**SCSS:**
+
+```scss
+@import "@ilo-org/styles/css/index.css";
+```
+
+#### Using Individual Component Styles
+
+You can import compiled CSS files for individual components from the `@ilo-org/styles/css/components` directory. This is useful for code splitting or when you only need specific components.
+
+**JavaScript/TypeScript (with bundler):**
 
 ```jsx
 import React from "react";
 import { Accordion } from "@ilo-org/react";
-import "@ilo-org/styles/css/components/accordion";
+import "@ilo-org/styles/css/components/accordion.css";
 
 const MyAccordion = (props) => {
-  return <Accordion {...props}>
-}
+  return <Accordion {...props} />;
+};
 ```
 
-### Use the source files directly
+**HTML:**
 
-If you're already using SASS, then you can also import the SCSS files directly into your project and include them into your own SASS bundle.
+```html
+<link
+  rel="stylesheet"
+  href="node_modules/@ilo-org/styles/css/components/accordion.css"
+/>
+```
 
-Note that if you're doing this, you will also need to import the `@ilo-org/themes` package to ensure the SASS files have access to the style tokens they need.
+> [!IMPORTANT]
+> If you're importing CSS for individual components, remember to include the global styles as well. These are styles which are not scoped to any particular component, but which are needed for the components to work properly.
 
-```SCSS
+**Include global styles:**
+
+```javascript
+import "@ilo-org/styles/css/global.css";
+import "@ilo-org/styles/css/components/accordion.css";
+```
+
+### Using Source SCSS Files
+
+If you're already using SASS, you can import the SCSS files directly into your project and include them in your own SASS bundle. This gives you more control over compilation and allows you to customize the styles.
+
+> [!NOTE]
+> If you're using the SCSS source files, you will also need to import the `@ilo-org/themes` package to ensure the SASS files have access to the style tokens they need.
+
+#### Import All Styles
+
+```scss
 @import "@ilo-org/themes/build/scss/tokens";
 @import "@ilo-org/styles/scss";
 ```
 
-As above, if you don't need styles for the whole design system, you can also import SCSS files from individual components.
+#### Import Individual Component Styles
 
-```SCSS
+```scss
+@import "@ilo-org/themes/build/scss/tokens";
 @import "@ilo-org/styles/scss/components/accordion";
 ```
 
-### Remember to include global styles
+#### Import Global Styles Only
 
-If you're importing CSS for individual components, remember to include the global styles as well. These are styles which are not scoped to any particular component, but which are needed for the components to work properly.
+```scss
+@import "@ilo-org/themes/build/scss/tokens";
+@import "@ilo-org/styles/scss/global";
+```
 
-You can import the global styles from `@ilo-org/styles/scss/global` or from `@ilo-org/styles/css/global`.
+## Available Files
+
+### CSS Files
+
+- `css/index.css` - Complete bundle with all components
+- `css/monorepo.css` - Monorepo-specific bundle
+- `css/global.css` - Global styles only (resets, theme, typography)
+- `css/components/*.css` - Individual component stylesheets
+
+### SCSS Files
+
+- `scss/index.scss` - Complete SCSS bundle
+- `scss/monorepo.scss` - Monorepo-specific SCSS bundle
+- `scss/global.scss` - Global SCSS styles only
+- `scss/components/*.scss` - Individual component SCSS files
+- `scss/theme/` - Theme foundation files (breakpoints, typography, etc.)
+- `scss/_*.scss` - Utility files (mixins, functions, config, etc.)

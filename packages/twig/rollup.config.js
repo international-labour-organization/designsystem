@@ -4,8 +4,6 @@ import commonjs from "@rollup/plugin-commonjs";
 import swc from "@rollup/plugin-swc";
 import copy from "rollup-plugin-copy";
 
-import theme from "@ilo-org/themes/tokens/theme/base.json" assert { type: "json" };
-
 const behaviorFiles = globSync("src/components/**/**.behavior.js");
 
 const behaviorBuildConfigs = behaviorFiles.map((behaviorFile) => ({
@@ -71,8 +69,10 @@ const copyConfig = copy({
       transform: (contents, path) =>
         contents
           .toString()
-          .replace(/{{prefix}}/g, theme.themeprefix.value)
-          .replace(/prefix ~/g, `'${theme.themeprefix.value}' ~`),
+          // @TODO: We need to find a way to set this dynamically for
+          // theming purposes now that the themes package has been deprecated
+          .replace(/{{prefix}}/g, "ilo")
+          .replace(/prefix ~/g, `'ilo' ~`),
     },
     {
       src: "node_modules/@ilo-org/styles/css/*",

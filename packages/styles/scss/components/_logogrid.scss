@@ -1,4 +1,3 @@
-@use "../tokens" as *;
 @use "../functions" as *;
 @import "../mixins";
 
@@ -31,7 +30,7 @@
     #{$c}__theme__light &,
     #{$c}__theme__dark & {
       &:hover {
-        background-color: map-get($color, "ux", "background", "hover");
+        background-color: var(--ilo-color-background-hover);
       }
     }
   }
@@ -46,11 +45,11 @@
     grid-column: span 1;
 
     #{$c}__theme__light & {
-      background-color: map-get($color, "ux", "background", "highlight");
+      background-color: var(--ilo-color-background-highlight);
     }
 
     #{$c}__theme__dark & {
-      background-color: map-get($color, "ux", "background", "default");
+      background-color: var(--ilo-color-background-default);
     }
 
     img {

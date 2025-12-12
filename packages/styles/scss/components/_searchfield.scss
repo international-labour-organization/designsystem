@@ -1,4 +1,3 @@
-@use "../tokens" as *;
 @use "../functions" as *;
 @import "../mixins";
 
@@ -15,52 +14,37 @@
   }
 
   &--button {
-    background-color: map-get(
-      $color,
-      "formelements",
-      "inputbutton",
-      "default",
-      "background"
-    );
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: px-to-rem(24px) px-to-rem(24px);
-    @include bordervalues("inputbutton", "formelements");
-    height: px-to-rem(48px);
-    width: px-to-rem(46px);
-    text-indent: -9999px;
-    @include dataurlicon(
-      "search",
-      $color-formelements-inputbutton-default-color
-    );
+    border-right: var(--ilo-border-md) solid var(--ilo-color-gray-base);
+    border-top: var(--ilo-border-md) solid var(--ilo-color-gray-base);
+    border-bottom: var(--ilo-border-md) solid var(--ilo-color-gray-base);
+    background-color: var(--ilo-color-gray-light);
+    border-left: 0;
+    height: 100%;
+    width: px-to-rem(48px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
 
+    &:after {
+      content: "";
+      position: relative;
+      display: inline-block;
+      height: px-to-rem(24px);
+      width: px-to-rem(24px);
+      @include icon("search", var(--ilo-color-blue-dark));
+    }
+
+    &:hover,
     &:focus {
-      background-color: map-get(
-        $color,
-        "formelements",
-        "inputbutton",
-        "hover",
-        "background"
-      );
-      cursor: pointer;
-      @include dataurlicon(
-        "search",
-        $color-formelements-inputbutton-hover-color
-      );
+      background-color: var(--ilo-color-blue-lighter);
     }
 
     &:active {
-      background-color: map-get(
-        $color,
-        "formelements",
-        "inputbutton",
-        "active",
-        "background"
-      );
-      @include dataurlicon(
-        "search",
-        $color-formelements-inputbutton-active-color
-      );
+      background-color: var(--ilo-color-blue);
+      &:after {
+        @include icon("search", var(--ilo-color-white));
+      }
     }
 
     .haslabel & {
@@ -96,8 +80,7 @@
   [dir="rtl"] & {
     .ilo--searchfield {
       &--button {
-        border-left: px-to-rem(2px) solid
-          $color-formelements-inputbutton-default-border-left;
+        border-left: px-to-rem(2px) solid var(--ilo-color-gray-base);
         border-right: 0;
       }
       &--clear-button {
