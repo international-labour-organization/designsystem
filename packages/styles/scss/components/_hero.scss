@@ -1,15 +1,27 @@
-@use "../tokens" as *;
 @use "../functions" as *;
 @import "../mixins";
 
 .hero {
   $c: &;
 
+  // Shared spacing values for Hero and HeroCard components
+  --hero-card-padding-y-sm: #{spacing(10)};
+  --hero-card-padding-y-lg: #{px-to-rem(56px)};
+  --hero-card-padding-x-sm: #{spacing(4)};
+  --hero-card-padding-x-lg: #{px-to-rem(71px)};
+  --hero-card-corner-cut-width-sm: #{px-to-rem(72px)};
+  --hero-card-corner-cut-width-lg: #{px-to-rem(116px)};
+  --hero-card-corner-cut-height-sm: #{px-to-rem(40px)};
+  --hero-card-corner-cut-height-lg: #{px-to-rem(64px)};
+  --hero-tooltip-width: #{px-to-rem(30px)};
+  --hero-tooltip-height: #{px-to-rem(27px)};
+  --hero-image-min-height: #{px-to-rem(216px)};
+
   // Additional offset to add for justify: offset
   --added-offset: 0px;
 
   // Total offset from the edge of the window
-  --base-offset: calc(((100vw - #{$layout-max-width}) / 2));
+  --base-offset: calc(((100vw - #{px-to-rem(1300px)}) / 2));
 
   // Breadcrumb offset. This is used directly by the breadcrumb component
   // Ensures the Breadcrumb aligns to the starting edge of a 1300px content
@@ -19,37 +31,34 @@
   // Card padding defaults to a fixed value. But it's a CSS variable
   // so that we can make it squeezy when the card is justified `start`
   // or `offset`
-  --card-padding-start: #{$spacing-hero-card-padding-x-lg};
+  --card-padding-start: var(--hero-card-padding-x-lg);
 
   // Squeezy padding makes it so we can have a flexible padding value
   // that will be somewhere between 16px and the card's fixed padding
   // depending on how far the card is from the edge of the screen
   $squeezy-padding-start: max(
-    16px,
-    min(
-      var(--base-offset) + var(--added-offset),
-      #{$spacing-hero-card-padding-x-lg}
-    )
+    #{spacing(4)},
+    min(var(--base-offset) + var(--added-offset), var(--hero-card-padding-x-lg))
   );
 
   // Card offset from the edge of the window minus the card's fixed padding
   $card-offset: calc(
-    var(--base-offset) - #{$spacing-hero-card-padding-x-lg} + var(--added-offset)
+    var(--base-offset) - var(--hero-card-padding-x-lg) + var(--added-offset)
   );
 
   // The height of the corner cut
-  --corner-cut-height: #{$spacing-hero-card-corner-cut-height-sm};
+  --corner-cut-height: var(--hero-card-corner-cut-height-sm);
 
   width: 100%;
   display: grid;
   position: relative;
   grid-template-columns: 1fr;
   overflow: hidden;
-  @include hero-grid-rows(1rem);
+  @include hero-grid-rows(var(--hero-image-min-height));
 
   &--image {
     display: grid;
-    @include hero-grid-rows();
+    @include hero-grid-rows(var(--hero-image-min-height));
   }
 
   &__gap {
@@ -58,21 +67,21 @@
     }
 
     &__white {
-      background-color: $brand-ilo-white;
+      background-color: var(--ilo-color-white);
     }
 
     &__light {
-      background-color: $brand-ilo-light-blue;
+      background-color: var(--ilo-color-blue-lighter);
     }
 
     &__dark {
-      background-color: $brand-ilo-dark-blue;
+      background-color: var(--ilo-color-blue-dark);
     }
   }
 
   &--background {
     display: grid;
-    background-color: map-get($color, "base", "blue", "light");
+    background-color: var(--ilo-color-blue-lighter);
     position: relative;
     grid-area: 1 / 1 / 4 / 2;
 
@@ -105,15 +114,15 @@
     &--wrapper {
       @include caption-icon-wrapper(
         "right",
-        $spacing-hero-tooltip-width,
-        $spacing-hero-tooltip-height
+        var(--hero-tooltip-width),
+        var(--hero-tooltip-height)
       );
     }
   }
 
   @include breakpoint("lg") {
     --card-width: 625px;
-    --corner-cut-height: #{$spacing-hero-card-corner-cut-height-lg};
+    --corner-cut-height: var(--hero-card-corner-cut-height-lg);
     --breadcrumbs-height: 48px;
     --image-gap: 240px;
 
@@ -121,12 +130,12 @@
     --row-1-lg: var(--breadcrumbs-height);
     --row-2-lg: calc(var(--image-gap) - var(--breadcrumbs-height));
     --row-3-lg: auto;
-    --row-4-lg: #{$spacing-hero-tooltip-height};
+    --row-4-lg: var(--hero-tooltip-height);
     --row-5-lg: 72px;
 
     --col-1-lg: 0;
     --col-2-lg: var(--card-width);
-    --col-3-lg: #{$spacing-hero-tooltip-width};
+    --col-3-lg: var(--hero-tooltip-width);
     --col-4-lg: 1fr;
 
     grid-template-rows:
@@ -195,15 +204,15 @@
       &__center {
         --col-1-lg: calc((100% - var(--card-width)) / 2);
         --col-4-lg: calc(
-          ((100% - var(--card-width)) / 2) - #{$spacing-hero-tooltip-width}
+          ((100% - var(--card-width)) / 2) - var(--hero-tooltip-width)
         );
       }
     }
 
     &__card-align {
       &__center {
-        --row-4-lg: calc(72px - #{$spacing-hero-tooltip-height});
-        --row-5-lg: #{$spacing-hero-tooltip-height};
+        --row-4-lg: calc(#{px-to-rem(72px)} - var(--hero-tooltip-height));
+        --row-5-lg: var(--hero-tooltip-height);
       }
 
       &__bottom {
@@ -225,44 +234,29 @@
     &__card-theme {
       &__dark {
         #{$c}--card-offset {
-          background-color: map-get($color, "base", "blue", "dark");
+          background-color: var(--ilo-color-blue-dark);
           position: relative;
-          box-shadow: 0.3px 0 0 0 map-get($color, "base", "blue", "dark");
+          box-shadow: 0.3px 0 0 0 var(--ilo-color-blue-dark);
         }
 
         &[class*="semi-transparent"] {
           #{$c}--card-offset {
-            background: rgba(
-              map-get($color, "hero", "card", "dark", "background"),
-              $opacity-semi-transparent
-            );
-            box-shadow: 0.3px 0 0 0
-              rgba(
-                map-get($color, "hero", "card", "dark", "background"),
-                $opacity-semi-transparent
-              );
+            background: rgba(35, 0, 80, 0.6);
+            box-shadow: 0.3px 0 0 0 rgba(35, 0, 80, 0.6);
           }
         }
       }
 
       &__light {
         #{$c}--card-offset {
-          background: map-get($color, "hero", "card", "light", "background");
-          box-shadow: 0.3px 0 0 0
-            map-get($color, "hero", "card", "light", "background");
+          background: var(--ilo-color-white);
+          box-shadow: 0.3px 0 0 0 var(--ilo-color-white);
         }
 
         &[class*="semi-transparent"] {
           #{$c}--card-offset {
-            background: rgba(
-              map-get($color, "hero", "card", "light", "background"),
-              $opacity-semi-transparent
-            );
-            box-shadow: 0.3px 0 0 0
-              rgba(
-                map-get($color, "hero", "card", "light", "background"),
-                $opacity-semi-transparent
-              );
+            background: rgba(255, 255, 255, 0.6);
+            box-shadow: 0.3px 0 0 0 rgba(255, 255, 255, 0.6);
           }
         }
       }
@@ -345,8 +339,8 @@
         #{$c}--caption--wrapper {
           @include caption-icon-wrapper(
             "right",
-            $spacing-hero-tooltip-width,
-            $spacing-hero-tooltip-height
+            var(--hero-tooltip-width),
+            var(--hero-tooltip-height)
           );
 
           position: absolute;
@@ -363,8 +357,8 @@
       &--wrapper {
         @include caption-icon-wrapper(
           "left",
-          $spacing-hero-tooltip-width,
-          $spacing-hero-tooltip-height
+          var(--hero-tooltip-width),
+          var(--hero-tooltip-height)
         );
         right: 0;
         position: absolute;
@@ -378,8 +372,8 @@
           #{$c}--caption--wrapper {
             @include caption-icon-wrapper(
               "left",
-              $spacing-hero-tooltip-width,
-              $spacing-hero-tooltip-height
+              var(--hero-tooltip-width),
+              var(--hero-tooltip-height)
             );
 
             position: absolute;

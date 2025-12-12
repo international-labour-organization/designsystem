@@ -63,7 +63,7 @@ form:
               placeholder: Juan
               labelPlacement: top
               labelSize: small
-              style: "flex: 1 0 49%"
+              style: "flex: 1 0 48%"
               class: my--formfield--class
             - type: textinput
               name: last-name
@@ -71,7 +71,7 @@ form:
               placeholder: Martinez
               labelPlacement: top
               labelSize: small
-              style: "flex: 1 0 49%"
+              style: "flex: 1 0 48%"
               class: my--formfield--class
         - legend: What world of work topics interest you?
           direction: row

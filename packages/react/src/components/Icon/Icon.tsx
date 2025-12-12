@@ -27,6 +27,11 @@ const Icon: FC<IconProps> = ({
 
   const machineName = `${name.charAt(0).toUpperCase() + name.slice(1)}${iconsize}`;
 
+  if (!Icons[machineName as keyof typeof Icon]) {
+    console.warn(`Icon ${name} not found`);
+    return null;
+  }
+
   return createElement(Icons[machineName as keyof typeof Icon], {
     "aria-hidden": ariaHidden,
     "data-testid": `${name.toLowerCase()}-icon`,

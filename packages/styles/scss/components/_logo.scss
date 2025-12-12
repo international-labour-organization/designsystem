@@ -1,5 +1,3 @@
-@use "../tokens" as *;
-
 .ilo--logo {
   &--visibility--hidden {
     visibility: hidden;
@@ -12,11 +10,11 @@
 
   &--theme {
     &--light {
-      --logo-theme-color: #{$brand-ilo-blue};
+      --logo-theme-color: var(--ilo-color-blue);
     }
 
     &--dark {
-      --logo-theme-color: #{$brand-ilo-white};
+      --logo-theme-color: var(--ilo-color-white);
     }
   }
 

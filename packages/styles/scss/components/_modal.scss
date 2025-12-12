@@ -1,4 +1,3 @@
-@use "../tokens" as *;
 @use "../functions" as *;
 @import "../mixins";
 @import "../animations";
@@ -45,7 +44,7 @@
   }
 
   &--contents {
-    background-color: $color-base-neutrals-white;
+    background-color: var(--ilo-color-white);
     left: 0;
     position: absolute;
     margin: 0 4.2%;

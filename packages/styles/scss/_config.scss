@@ -4,3 +4,9 @@
 /// @type String
 /// @group config
 $prefix: "ilo" !default;
+
+/// The base font size for the design system
+/// @access public
+/// @type Number
+/// @group config
+$base-font-size: 18.66px;

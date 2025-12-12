@@ -42,12 +42,10 @@
     "lint": "eslint",
     "lint:fix": "eslint --fix"
   },
-  "author": "@justintemps, @johnpauldavis, @avrilpearl, @ghlost",
   "license": "Apache-2.0",
   "dependencies": {
     "@ilo-org/fonts": "workspace:*",
-    "@ilo-org/icons": "workspace:*",
-    "@ilo-org/themes": "workspace:*"
+    "@ilo-org/icons": "workspace:*"
   },
   "devDependencies": {
     "cssnano": "^7.0.6",

@@ -1,4 +1,3 @@
-@use "../tokens" as *;
 @use "../functions" as *;
 @import "../mixins";
 
@@ -22,8 +21,8 @@
 
   &--control:before {
     content: "";
-    background-color: $color-base-neutrals-light;
-    border: px-to-rem(4px) solid $color-base-neutrals-light;
+    background-color: var(--ilo-color-gray-base);
+    border: px-to-rem(4px) solid var(--ilo-color-gray-base);
     border-radius: 50%;
     height: px-to-rem(18px);
     left: px-to-rem(3px);
@@ -36,7 +35,7 @@
 
   &--control:after {
     content: "";
-    background-color: $color-base-neutrals-light;
+    background-color: var(--ilo-color-gray-base);
     border-radius: 50%;
     height: px-to-rem(24px);
     left: 0;
@@ -48,16 +47,16 @@
   }
 
   input:checked + &--control:before {
-    background-color: $color-base-blue-light;
-    border-color: $color-base-blue-dark;
+    background-color: var(--ilo-color-blue-lighter);
+    border-color: var(--ilo-color-blue-dark);
   }
 
   input:checked + &--control:after {
-    background-color: $color-base-blue-dark;
+    background-color: var(--ilo-color-blue-dark);
   }
 
   input:focus + &--control:after {
-    background-color: $color-base-yellow;
+    background-color: var(--ilo-color-yellow);
   }
 
   input:disabled + &--control:after,
@@ -67,6 +66,6 @@
 
   input:invalid + &--control:after,
   &__error &--control:after {
-    background-color: $color-base-red-medium;
+    background-color: var(--ilo-color-red);
   }
 }

@@ -1,7 +1,33 @@
-@use "../tokens" as *;
 @use "../functions" as *;
 @import "./image";
 @import "../mixins";
+
+// ======================================
+// Video Button
+// ======================================
+@mixin videobutton($name, $size: "standard") {
+  $height: if($size == "big", 72px, 32px);
+  $box: if($size == "big", 80px, 40px);
+  $width: $height;
+  $icon-color-default: rgba(237, 240, 242, 1);
+  $icon-color-hover: rgba(30, 45, 190, 1);
+
+  cursor: pointer;
+  border: none;
+  background-color: var(--ilo-color-gray-charcoal);
+  width: $box;
+  height: $box;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: $width $height;
+  @include dataurlicon($name, $icon-color-default);
+
+  &:hover,
+  &:focus {
+    background-color: var(--ilo-color-blue-light);
+    @include dataurlicon($name, $icon-color-hover);
+  }
+}
 
 .ilo--video {
   width: 100%;
@@ -84,15 +110,12 @@
         &:focus {
           .vjs-duration,
           .vjs-play-control {
-            background-color: $color-ux-video-controls-hover-background;
-            color: $color-ux-video-controls-hover-icon;
+            background-color: var(--ilo-color-blue-light);
+            color: var(--ilo-color-blue);
           }
 
           .vjs-play-control {
-            @include dataurlicon(
-              "triangle_right",
-              $color-ux-video-controls-hover-icon
-            );
+            @include dataurlicon("triangle_right", rgba(30, 45, 190, 1));
           }
         }
 
@@ -108,8 +131,8 @@
           font-size: px-to-rem(14px);
           height: px-to-rem(40px);
           width: px-to-rem(80px);
-          background-color: $color-ux-video-controls-default-background;
-          color: $color-ux-video-controls-default-icon;
+          background-color: var(--ilo-color-gray-charcoal);
+          color: var(--ilo-color-gray-light);
         }
 
         @include breakpoint("lg") {
@@ -182,7 +205,7 @@
     .vjs-progress-control {
       order: 2;
       margin-right: px-to-rem(2px);
-      background-color: $color-ux-video-controls-default-background;
+      background-color: var(--ilo-color-gray-charcoal);
       flex-grow: 1;
 
       .vjs-mouse-display {
@@ -204,7 +227,7 @@
       }
 
       .vjs-play-progress {
-        background-color: $color-ux-video-controls-hover-background;
+        background-color: var(--ilo-color-blue-light);
         z-index: 15;
 
         .vjs-time-tooltip {
@@ -213,7 +236,7 @@
       }
 
       .vjs-load-progress {
-        background-color: $color-base-neutrals-light;
+        background-color: var(--ilo-color-gray-base);
         z-index: 15;
       }
 
@@ -223,11 +246,11 @@
           position: relative;
 
           .vjs-time-tooltip {
-            color: $brand-ilo-grey-light;
+            color: var(--ilo-color-gray-light);
             font-size: px-to-rem(14px);
             height: px-to-rem(32px);
             align-items: center;
-            background-color: $color-ux-credit-background;
+            background-color: var(--ilo-color-gray-charcoal);
             display: flex;
             justify-content: center;
             right: 0;
@@ -240,7 +263,7 @@
               background-position: top left;
               background-repeat: no-repeat;
               background-size: contain;
-              @include dataurlicon("caret_down", $color-base-neutrals-dark);
+              @include dataurlicon("caret_down", rgba(45, 45, 45, 1));
               content: "";
               height: px-to-rem(12px);
               position: absolute;
@@ -282,8 +305,8 @@
 
       // Volume rocker
       .vjs-volume-control {
-        background: $color-ux-video-controls-hover-background;
-        border-left: px-to-rem(3px) solid rgb(184, 196, 204);
+        background: var(--ilo-color-blue-light);
+        border-left: px-to-rem(3px) solid var(--ilo-color-gray-base);
         display: none;
         height: px-to-rem(40px);
         position: absolute;
@@ -307,7 +330,7 @@
           height: px-to-rem(4px);
           position: absolute;
           width: 100%;
-          background-color: $color-base-neutrals-light;
+          background-color: var(--ilo-color-gray-base);
         }
 
         .vjs-volume-level {
@@ -315,11 +338,11 @@
           left: 0;
           top: 0;
           position: absolute;
-          background-color: $color-ux-video-controls-hover-icon;
+          background-color: var(--ilo-color-blue);
 
           &:before {
             content: "";
-            background: $color-ux-video-controls-hover-icon;
+            background: var(--ilo-color-blue);
             border-radius: 50%;
             height: px-to-rem(16px);
             width: px-to-rem(16px);

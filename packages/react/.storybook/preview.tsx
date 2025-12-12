@@ -1,15 +1,12 @@
 import { GlobalProvider } from "../src/components/GlobalProvider";
-import { themeprefix } from "@ilo-org/themes/tokens/theme/base.json";
 import { Preview } from "@storybook/react";
-import theme from "./theme";
 import "./styles.scss";
-import { brand } from "@ilo-org/themes/tokens/brand/base.json";
 import React from "react";
 
 const preview: Preview = {
   decorators: [
     (Story) => (
-      <GlobalProvider prefix={themeprefix.value}>
+      <GlobalProvider prefix="ilo">
         <Story />
       </GlobalProvider>
     ),
@@ -38,7 +35,7 @@ const preview: Preview = {
     backgrounds: {
       values: [
         { name: "light", value: "white" },
-        { name: "dark", value: brand["ilo-dark-blue"].value },
+        { name: "dark", value: "rgba(35, 0, 80, 1)" }, // --ilo-color-blue-dark
       ],
     },
     previewTabs: {
