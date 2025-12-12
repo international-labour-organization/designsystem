@@ -1,22 +1,49 @@
-import { Meta } from "@storybook/blocks";
+import { Meta, Unstyled } from "@storybook/blocks";
 
 <Meta title="Get started/Use npm package" />
+
+<Unstyled>
+<div className="ilo--richtext ilo--richtext__theme__light">
 
 # Use as npm package
 
 The Twig Component Library is distributed as a package on npm called [@ilo-org/twig](https://www.npmjs.com/package/@ilo-org/twig) and can be used in any project that uses Twig as a templating engine.
 
+## Prerequisites
+
+Before installing the package, ensure you have:
+
+- **Node.js** and **npm** (or **yarn**/**pnpm**) installed
+- A **Twig** templating environment set up in your project
+- A build system configured to handle CSS and JavaScript assets (e.g., Webpack, Vite, Rollup, or similar)
+
 ## Installation
 
-`npm install @ilo-org/twig`
+Install the package using npm:
 
-## Structure
+```bash
+npm install @ilo-org/twig
+```
 
-The Twig package comes with everything that you need to render Twig components, including JavaScript and CSS.However, it's up to the developer to determine how to bundle and distribute those assets.
+Or using yarn:
+
+```bash
+yarn add @ilo-org/twig
+```
+
+Or using pnpm:
+
+```bash
+pnpm add @ilo-org/twig
+```
+
+## Package Structure
+
+The Twig package comes with everything you need to render Twig components, including JavaScript and CSS. However, it's up to the developer to determine how to bundle and distribute those assets.
 
 ### Components
 
-The components are located in the `@ilo-org/twig/dist/components` directory. The component folders are structured like this:
+The components are located in the `@ilo-org/twig/dist/components` directory. Each component folder contains all the necessary files for that component:
 
 ```
 📦accordion
@@ -26,19 +53,104 @@ The components are located in the `@ilo-org/twig/dist/components` directory. The
  ┗ 📜accordion.twig
 ```
 
-In this example, `accordion.css` has the styles for the accordion component, `accordion.behavior.js` has the JavaScript for the accordion component, and `accordion.twig` is the Twig template for the accordion component.
+In this example:
+
+- `accordion.twig` is the main Twig template for the accordion component
+- `accordion-item.twig` is a sub-component template used by the accordion
+- `accordion.css` contains the styles for the accordion component
+- `accordion.behavior.js` contains the JavaScript functionality for the accordion component
 
 ### Global Stylesheet
 
-You can either bundle the stylesheets for the components into a single file or include the global stylesheet for all of the components:
+You can either bundle individual component stylesheets into a single file or include the global stylesheet that contains styles for all components:
 
-`@ilo-org/twig/dist/global/styles.css`
+```
+@ilo-org/twig/dist/global/styles.css
+```
 
-### Required Twig extensions
+The global stylesheet includes all component styles and is the recommended approach for most projects.
 
-As from 1.2.0 we make use of the `|boolvar` Twig filter: you need to have this filter available in your Twig environment for the component to work correctly. An implementation of the |boolvar Twig filter can be found in the [PHP Syntax for Twig](https://github.com/squirrelphp/twig-php-syntax) project.
+### Additional Assets
+
+The package also includes:
+
+- **Component metadata**: YAML files (`.component.yml`) with component documentation and configuration
+- **Styles**: Additional CSS files in `@ilo-org/twig/dist/styles`
+
+## Configuration
+
+### Setting up Twig Namespaces
+
+To use the `@components` namespace in your Twig templates, you need to configure your Twig environment to recognize this namespace. The namespace should point to the components directory in the installed package.
+
+#### PHP/Twig Example
+
+```php
+$loader = new \Twig\Loader\FilesystemLoader();
+$loader->addPath('node_modules/@ilo-org/twig/dist/components', 'components');
+$twig = new \Twig\Environment($loader);
+```
+
+#### Node.js/Twig.js Example
+
+```javascript
+const Twig = require("twig");
+Twig.extend(function (Twig) {
+  Twig.path.addPath("node_modules/@ilo-org/twig/dist/components", "components");
+});
+```
+
+### Required Twig Extensions
+
+As of version 1.2.0, the components make use of the `|boolvar` Twig filter. You need to have this filter available in your Twig environment for the components to work correctly.
+
+An implementation of the `|boolvar` Twig filter can be found in the [PHP Syntax for Twig](https://github.com/squirrelphp/twig-php-syntax) project.
+
+The `|boolvar` filter converts a value to a boolean, which is useful for conditional rendering in templates.
+
+## Asset Bundling
+
+### CSS Bundling
+
+You have two main options for including styles:
+
+1. **Use the global stylesheet** (recommended for most projects):
+
+   ```javascript
+   import "@ilo-org/twig/dist/global/styles.css";
+   ```
+
+2. **Import individual component stylesheets** (for tree-shaking optimization):
+   ```javascript
+   import "@ilo-org/twig/dist/components/accordion/accordion.css";
+   import "@ilo-org/twig/dist/components/button/button.css";
+   // ... other component styles
+   ```
+
+### JavaScript Bundling
+
+Component JavaScript files (`.behavior.js`) should be imported where needed. You can:
+
+1. **Import individual behavior files**:
+
+   ```javascript
+   import "@ilo-org/twig/dist/components/accordion/accordion.behavior.js";
+   ```
+
+2. **Create a bundle** that imports all behaviors you need:
+   ```javascript
+   // behaviors.js
+   import "@ilo-org/twig/dist/components/accordion/accordion.behavior.js";
+   import "@ilo-org/twig/dist/components/modal/modal.behavior.js";
+   import "@ilo-org/twig/dist/components/tabs/tabs.behavior.js";
+   // ... other behaviors
+   ```
 
 ## Usage
+
+Once configured, you can include components in your Twig templates using the `@components` namespace:
+
+### Basic Example
 
 ```twig
 {% include '@components/accordion/accordion.twig' with {
@@ -54,3 +166,93 @@ As from 1.2.0 we make use of the `|boolvar` Twig filter: you need to have this f
   ]
 } %}
 ```
+
+### Example with Additional Options
+
+```twig
+{% include '@components/button/button.twig' with {
+  text: 'Click me',
+  variant: 'primary',
+  size: 'large',
+  url: 'https://example.com'
+} %}
+```
+
+### Example with Nested Components
+
+```twig
+{% include '@components/card/card.twig' with {
+  title: 'Card Title',
+  content: 'Card content goes here',
+  image: {
+    src: '/path/to/image.jpg',
+    alt: 'Card image'
+  },
+  link: {
+    url: '/path/to/page',
+    text: 'Read more'
+  }
+} %}
+```
+
+## Version Management
+
+The package follows [semantic versioning](https://semver.org/). To check the installed version:
+
+```bash
+npm list @ilo-org/twig
+```
+
+To update to the latest version:
+
+```bash
+npm update @ilo-org/twig
+```
+
+To install a specific version:
+
+```bash
+npm install @ilo-org/twig@1.12.0
+```
+
+## Troubleshooting
+
+### Components Not Found
+
+If you're getting errors about components not being found:
+
+1. Verify that the `@components` namespace is correctly configured in your Twig environment
+2. Check that the path points to `node_modules/@ilo-org/twig/dist/components`
+3. Ensure the package is installed: `npm list @ilo-org/twig`
+
+### Styles Not Loading
+
+If component styles aren't appearing:
+
+1. Verify that the CSS files are being imported in your build process
+2. Check that the global stylesheet path is correct: `@ilo-org/twig/dist/global/styles.css`
+3. Ensure your build tool is configured to process CSS files from `node_modules`
+
+### JavaScript Not Working
+
+If component JavaScript functionality isn't working:
+
+1. Verify that the `.behavior.js` files are being imported and bundled
+2. Check the browser console for JavaScript errors
+3. Ensure that the JavaScript is loaded before the component markup is rendered
+
+### Missing `|boolvar` Filter
+
+If you encounter errors about the `|boolvar` filter:
+
+1. Install and configure the [PHP Syntax for Twig](https://github.com/squirrelphp/twig-php-syntax) extension
+2. Ensure the filter is registered in your Twig environment before rendering components
+
+## Next Steps
+
+- Explore available components in the [component library](/docs/get-started-introduction--page)
+- Learn about [using the components with Drupal](/docs/get-started-use-with-drupal--page) if you're working on a Drupal project
+- Check the [changelog](/docs/get-started-changelog--page) for updates and breaking changes
+
+</div>
+</Unstyled>
