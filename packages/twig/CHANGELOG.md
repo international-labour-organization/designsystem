@@ -1,5 +1,21 @@
 # @ilo-org/twig
 
+## 1.12.0
+
+### Minor Changes
+
+- 990a3586c: We have removed the dependecy on the `@ilo-org/themes` package, which will soon be deprecated.
+
+### Patch Changes
+
+- 0cc87c1e8: **Notification:** Fixed layout issues and appearance of cta
+- beab2eec1: **SearchField:** Refactor to improve styling and performance
+- Updated dependencies [70500d207]
+- Updated dependencies [0cc87c1e8]
+- Updated dependencies [beab2eec1]
+- Updated dependencies [2f571182b]
+  - @ilo-org/styles@1.11.0
+
 ## 1.11.1
 
 ### Patch Changes
