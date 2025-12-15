@@ -63,7 +63,8 @@ const preview = {
         order: [
           "ILO Design System for Twig",
           "Get started",
-          ["Introduction"],
+          ["Introduction", "Base Theme", "Custom Theme", "Changelog"],
+          "Examples",
           "Components",
         ],
       },
