@@ -4,6 +4,10 @@ import { Maestro } from "@ilo-org/maestro";
 
 const story = Maestro.create(Button, ButtonPatterns);
 
+story.meta.parameters.githubLink = {
+  url: "/button/button.twig",
+};
+
 const Meta = {
   title: "Components/User Interface/Button",
   tags: ["autodocs"],

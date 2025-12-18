@@ -4,6 +4,10 @@ import { Maestro } from "@ilo-org/maestro";
 
 const story = Maestro.create(Blockquote, BlockquotePatterns);
 
+story.meta.parameters.githubLink = {
+  url: "/blockquote/blockquote.twig",
+};
+
 const Meta = {
   title: "Components/Content/Blockquote",
   tags: ["autodocs"],

@@ -4,6 +4,10 @@ import { Maestro } from "@ilo-org/maestro";
 
 const story = Maestro.create(Fileupload, FileuploadPatterns);
 
+story.meta.parameters.githubLink = {
+  url: "/fileupload/fileupload.twig",
+};
+
 const Meta = {
   title: "Components/Forms/File Upload",
   tags: ["autodocs"],

@@ -4,6 +4,10 @@ import { Maestro } from "@ilo-org/maestro";
 
 const story = Maestro.create(Pagination, PaginationPatterns);
 
+story.meta.parameters.githubLink = {
+  url: "/pagination/pagination.twig",
+};
+
 const Meta = {
   title: "Components/Navigation/Pagination",
   tags: ["autodocs"],

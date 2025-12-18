@@ -4,6 +4,10 @@ import { Maestro } from "@ilo-org/maestro";
 
 const story = Maestro.create(Toggle, TogglePatterns);
 
+story.meta.parameters.githubLink = {
+  url: "/toggle/toggle.twig",
+};
+
 const Meta = {
   title: "Components/Forms/Toggle",
   tags: ["autodocs"],

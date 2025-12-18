@@ -4,6 +4,10 @@ import { Maestro } from "@ilo-org/maestro";
 
 const story = Maestro.create(Hero, HeroPatterns);
 
+story.meta.parameters.githubLink = {
+  url: "/hero/hero.twig",
+};
+
 const Meta = {
   title: "Components/Content/Hero",
   tags: ["autodocs"],
