@@ -58,6 +58,7 @@
   },
   "devDependencies": {
     "@chromatic-com/storybook": "3.2.7",
+    "@etchteam/storybook-addon-github-link": "^1.0.1",
     "@ilo-org/eslint-config": "workspace:*",
     "@ilo-org/react": "workspace:*",
     "@modyfi/vite-plugin-yaml": "^1.1.0",

@@ -27,6 +27,7 @@ const config = {
     getAbsolutePath("@storybook/addon-essentials"),
     getAbsolutePath("@chromatic-com/storybook"),
     getAbsolutePath("@storybook/addon-interactions"),
+    getAbsolutePath("@etchteam/storybook-addon-github-link"),
     {
       name: "@storybook/addon-docs",
       options: {

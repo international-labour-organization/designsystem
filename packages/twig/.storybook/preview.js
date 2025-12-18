@@ -75,6 +75,10 @@ const preview = {
         date: /Date$/i,
       },
     },
+    githubLink: {
+      baseURL:
+        "https://github.com/international-labour-organization/designsystem/blob/develop/packages/twig/src/components/",
+    },
   },
 };
 

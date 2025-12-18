@@ -553,9 +553,15 @@ importers:
       '@chromatic-com/storybook':
         specifier: 3.2.7
         version: 3.2.7(react@18.3.1)(storybook@8.6.14(prettier@3.6.2))
+      '@etchteam/storybook-addon-github-link':
+        specifier: ^1.0.1
+        version: 1.0.1
       '@ilo-org/eslint-config':
         specifier: workspace:*
         version: link:../../config/eslint-config
+      '@ilo-org/react':
+        specifier: workspace:*
+        version: link:../react
       '@modyfi/vite-plugin-yaml':
         specifier: ^1.1.0
         version: 1.1.0(rollup@3.23.0)(vite@5.4.21(@types/node@20.16.0)(sass@1.62.1)(terser@5.44.0))
@@ -1897,6 +1903,9 @@ packages:
   '@eslint/plugin-kit@0.1.0':
     resolution: {integrity: sha512-autAXT203ixhqei9xt+qkYOvY8l6LAFIdT2UXc/RPNeUVfqRF1BV94GTJyVPFKT8nFM6MyVJhjLj9E8JWvf5zQ==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
+
+  '@etchteam/storybook-addon-github-link@1.0.1':
+    resolution: {integrity: sha512-U7VWG3Cq3DUy1txLXtIBX153aVAZmmTzCUnQ4XH3U4Wldg0kEdKdYl/04Yd31Y02EBvRNSmHUxptKxe+KZuTUw==}
 
   '@gulp-sourcemaps/identity-map@2.0.1':
     resolution: {integrity: sha512-Tb+nSISZku+eQ4X1lAkevcQa+jknn/OVUgZ3XCxEKIsLsqYuPoJwJOPQeaOk75X3WPftb29GWY1eqE7GLsXb1Q==}
@@ -11213,6 +11222,8 @@ snapshots:
   '@eslint/plugin-kit@0.1.0':
     dependencies:
       levn: 0.4.1
+
+  '@etchteam/storybook-addon-github-link@1.0.1': {}
 
   '@gulp-sourcemaps/identity-map@2.0.1':
     dependencies:

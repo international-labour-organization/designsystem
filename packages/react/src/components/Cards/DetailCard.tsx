@@ -48,6 +48,11 @@ export type DetailCardProps = {
   details?: string;
 
   /**
+   * Additional date information (alias for details, matches Twig template)
+   */
+  dateExtra?: string;
+
+  /**
    * Intro text for the card
    */
   intro?: string | ReactNode;
@@ -87,6 +92,7 @@ const DetailCard = forwardRef<HTMLDivElement, DetailCardProps>(
       size = "narrow",
       date,
       details,
+      dateExtra,
       link,
       titleLevel = "p",
       eyebrow,
@@ -153,12 +159,12 @@ const DetailCard = forwardRef<HTMLDivElement, DetailCardProps>(
               ) : (
                 <p className={`${baseClass}--intro`}>{intro}</p>
               ))}
-            {date && !details && (
+            {date && !(dateExtra || details) && (
               <time className={`${baseClass}--date`} dateTime={date.unix}>
                 {date.human}
               </time>
             )}
-            {details && (
+            {(dateExtra || details) && (
               <p className={`${baseClass}--date-extra`}>
                 <Icon
                   name="TriangleRight"
@@ -170,7 +176,7 @@ const DetailCard = forwardRef<HTMLDivElement, DetailCardProps>(
                   size={20}
                   className={`${baseClass}--icon-left`}
                 />
-                {details}
+                {dateExtra || details}
               </p>
             )}
           </div>
