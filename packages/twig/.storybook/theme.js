@@ -1,5 +1,7 @@
 import { create } from "@storybook/theming/create";
 import ilo_logo from "@ilo-org/brand-assets/logo_en_horizontal_blue.svg";
+import "@ilo-org/styles/css/global.css";
+import "./manager.css";
 
 export default create({
   base: "light",
