@@ -1,5 +1,11 @@
 # @ilo-org/react
 
+## 0.28.1
+
+### Patch Changes
+
+- d1539937f: **DetailCard:** Make sure `dateExtra` gets correctly rendered
+
 ## 0.28.0
 
 ### Minor Changes
