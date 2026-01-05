@@ -4,6 +4,10 @@ import { Maestro } from "@ilo-org/maestro";
 
 const story = Maestro.create(Modal, ModalPatterns);
 
+story.meta.parameters.githubLink = {
+  url: "/modal/modal.twig",
+};
+
 const Meta = {
   title: "Components/Feedback/Modal",
   tags: ["autodocs"],

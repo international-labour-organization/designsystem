@@ -1,0 +1,57 @@
+import { Meta, Unstyled } from "@storybook/blocks";
+import { DetailCard } from "@ilo-org/react";
+
+<Meta title="Examples/Drupal" />
+
+<Unstyled>
+<div className="ilo--richtext ilo--richtext__theme__light">
+
+# Drupal Sites
+
+The ILO Design System for Twig is currently in production in the ILO's <a href="https://www.ilo.org">main website</a> and is a requirement for all new Drupal projects undertaken at the ILO. We are in the process of migrating many legacy sites to Drupal that will also adopt the Design System.
+
+</div>
+
+<div style={{ marginBottom: "1.5rem" }}>
+
+<DetailCard
+  title="Main ILO Website"
+  link="https://www.ilo.org"
+  size="fluid"
+  image="images/ilo-org.png"
+  intro="The ILO's main website and most important online asset. This flagship website serves as the primary digital gateway to the International Labour Organization, providing access to news, publications, research, and resources related to decent work and social justice worldwide."
+/>
+
+<DetailCard
+  title="Digital Labour Platform Tracker"
+  link="https://digitallabour.ilo.org"
+  size="fluid"
+  image="images/digital-labour.png"
+  intro="This policy tracker aims to provide a comprehensive overview of global policies, legislation, collective bargaining agreements, and judicial decisions related to digital labour platforms. The site showcases how the design system's components can be used to create complex, data-rich interfaces while maintaining clarity and usability."
+/>
+
+<DetailCard
+  title="ILO Global Business and Disability Network"
+  link="https://www.businessanddisability.org"
+  size="fluid"
+  image="images/gbdn.png"
+  intro="The ILO Global Business and Disability Network supports companies on their journey to become inclusive of persons with disabilities by providing technical guidance and facilitating peer-to-peer exchange among businesses."
+/>
+
+</div>
+
+<div className="ilo--richtext ilo--richtext__theme__light">
+
+## Building Your Own
+
+Ready to build a website using the ILO Design System? Get started by:
+
+- <a href="/docs/get-started-introduction--page">Introduction</a> to understand
+  what's included
+- Choosing your integration method: <a href="/docs/get-started-use-with-drupal--page">Drupal</a> or <a href="/docs/get-started-use-npm-package--page">npm package</a>
+- Exploring the component library to see what's available
+
+Have questions or need help? Feel free to open an issue on our <a href="https://github.com/international-labour-organization/designsystem/issues">GitHub repository</a> or <a href="mailto:ilonews@ilo.org">contact us by email</a>.
+
+</div>
+</Unstyled>

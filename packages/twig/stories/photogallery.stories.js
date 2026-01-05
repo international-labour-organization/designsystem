@@ -4,6 +4,10 @@ import { Maestro } from "@ilo-org/maestro";
 
 const story = Maestro.create(PhotoGallery, PhotoGalleryPatterns);
 
+story.meta.parameters.githubLink = {
+  url: "/photogallery/photogallery.twig",
+};
+
 const Meta = {
   title: "Components/Media/PhotoGallery",
   tags: ["autodocs"],

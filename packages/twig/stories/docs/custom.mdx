@@ -1,0 +1,293 @@
+import { Meta, Unstyled } from "@storybook/blocks";
+
+<Meta title="Get started/Custom Theme" />
+
+<Unstyled>
+<div className="ilo--richtext ilo--richtext__theme__light">
+
+# Custom Drupal Theme
+
+While the [ILO Base Theme](/docs/get-started-use-with-drupal--page) provides a ready-made solution for Drupal projects, you may want to create your own custom theme using the npm package. This approach gives you full control over your theme's structure and allows you to integrate the ILO Design System components directly into your custom theme.
+
+## Prerequisites
+
+Before getting started, ensure you have:
+
+- **Drupal 9+** or **Drupal 10+**
+- **Node.js** and **npm** (or **yarn** / **pnpm**)
+- A custom Drupal theme created under `themes/custom`
+- Basic knowledge of Drupal theming and Twig templates
+
+## Installation
+
+Navigate to your custom theme directory and install the package:
+
+```bash
+cd themes/custom/your_theme_name
+npm install @ilo-org/twig
+```
+
+Or using yarn:
+
+```bash
+yarn add @ilo-org/twig
+```
+
+Or using pnpm:
+
+```bash
+pnpm add @ilo-org/twig
+```
+
+## Theme Structure
+
+Your custom theme should follow the standard Drupal theme structure. A typical setup looks like this:
+
+```
+themes/custom/your_theme_name/
+├── your_theme_name.info.yml
+├── your_theme_name.libraries.yml
+├── your_theme_name.theme
+├── templates/
+│   └── (Twig templates)
+├── node_modules/
+│   └── @ilo-org/
+│       └── twig/
+│           └── dist/
+│               ├── components/
+│               └── global/
+└── package.json
+```
+
+## Configure Twig Namespaces
+
+To use the `@components` namespace in Drupal Twig templates, register it using supported Drupal APIs.
+
+### Recommended (Drupal 10.1+): `info.yml`
+
+Drupal 10.1 and newer support Twig namespaces directly in the theme info file.
+
+```yaml
+name: Your Theme Name
+type: theme
+core_version_requirement: ^10 || ^11
+
+twig:
+  namespaces:
+    components: node_modules/@ilo-org/twig/dist/components
+```
+
+Clear caches after adding this:
+
+```bash
+./vendor/bin/drush cache:rebuild
+```
+
+### Alternative: `hook_theme_registry_alter()`
+
+If you cannot use `info.yml`, you can add the namespace programmatically.
+
+```php
+/**
+ * Implements hook_theme_registry_alter().
+ */
+function your_theme_name_theme_registry_alter(array &$theme_registry) {
+  $theme_path = \Drupal::service('extension.path.resolver')
+    ->getPath('theme', 'your_theme_name');
+
+  \Drupal::service('twig.loader')
+    ->addPath($theme_path . '/node_modules/@ilo-org/twig/dist/components', 'components');
+}
+```
+
+## Configure Asset Libraries
+
+Define CSS and JavaScript assets in `your_theme_name.libraries.yml`.
+
+### Global Styles (Recommended)
+
+```yaml
+global-styles:
+  css:
+    theme:
+      node_modules/@ilo-org/twig/dist/global/styles.css: {}
+```
+
+### Individual Component Libraries
+
+```yaml
+accordion:
+  css:
+    theme:
+      node_modules/@ilo-org/twig/dist/components/accordion/accordion.css: {}
+  js:
+    node_modules/@ilo-org/twig/dist/components/accordion/accordion.behavior.js:
+      {}
+
+button:
+  css:
+    theme:
+      node_modules/@ilo-org/twig/dist/components/button/button.css: {}
+  js:
+    node_modules/@ilo-org/twig/dist/components/button/button.behavior.js: {}
+```
+
+## Attaching Libraries in Templates
+
+Attach only the libraries you need:
+
+```twig
+{{ attach_library('your_theme_name/global-styles') }}
+{{ attach_library('your_theme_name/accordion') }}
+```
+
+## Required Twig Filters
+
+Some components rely on the `|boolvar` Twig filter.
+
+### Install Twig Tweak
+
+The `|boolvar` filter is provided by the **Twig Tweak** module.
+
+```bash
+composer require drupal/twig_tweak
+./vendor/bin/drush en twig_tweak
+```
+
+Clear cache afterward:
+
+```bash
+./vendor/bin/drush cache:rebuild
+```
+
+## Using Components in Templates
+
+### Basic Example
+
+```twig
+{{ attach_library('your_theme_name/accordion') }}
+
+{% include '@components/accordion/accordion.twig' with {
+  items: [
+    { title: 'Item 1', content: 'Content 1' },
+    { title: 'Item 2', content: 'Content 2' }
+  ]
+} %}
+```
+
+### Using Drupal Content
+
+```twig
+{{ attach_library('your_theme_name/card') }}
+
+{% include '@components/card/card.twig' with {
+  title: node.label,
+  content: content.body|render,
+  image: {
+    src: file_url(node.field_image.entity.uri.value),
+    alt: node.field_image.alt
+  },
+  link: {
+    url: path('entity.node.canonical', {'node': node.id}),
+    text: 'Read more'
+  }
+} %}
+```
+
+### Block Template Example
+
+```twig
+{{ attach_library('your_theme_name/button') }}
+
+{% include '@components/button/button.twig' with {
+  text: 'Click me',
+  variant: 'primary',
+  size: 'large',
+  url: path('<front>')
+} %}
+```
+
+## Cache Metadata
+
+When rendering Drupal content, bubble cache metadata correctly:
+
+```twig
+{% include '@components/card/card.twig' with {
+  title: content.title,
+  link: content.field_link['#url'],
+} %}
+
+{{ content|cache_metadata }}
+```
+
+## Asset Processing (Optional)
+
+Drupal can serve assets directly from `node_modules`. For advanced optimization, you may bundle assets using tools like Vite or Webpack.
+
+### Example: Vite
+
+```js
+import { defineConfig } from "vite";
+import { resolve } from "path";
+
+export default defineConfig({
+  build: {
+    outDir: "dist",
+    rollupOptions: {
+      input: {
+        main: resolve(__dirname, "src/main.js"),
+      },
+    },
+  },
+});
+```
+
+```js
+// src/main.js
+import "@ilo-org/twig/dist/global/styles.css";
+import "@ilo-org/twig/dist/components/accordion/accordion.behavior.js";
+```
+
+## Version Management
+
+Check the installed version:
+
+```bash
+npm list @ilo-org/twig
+```
+
+Update to the latest version:
+
+```bash
+npm update @ilo-org/twig
+```
+
+Install a specific version:
+
+```bash
+npm install @ilo-org/twig@1.12.0
+```
+
+Clear Drupal caches after updates:
+
+```bash
+./vendor/bin/drush cache:rebuild
+```
+
+## Best Practices
+
+- **Do not commit `node_modules`**; use lock files and CI installs
+- **Define assets in `libraries.yml`**
+- **Attach libraries explicitly**
+- **Clear caches after changes**
+- **Test across environments**
+
+## Next Steps
+
+- Explore the [component library](/docs/get-started-introduction--page)
+- Review the [ILO Base Theme](/docs/get-started-use-with-drupal--page)
+- Check the [changelog](/docs/get-started-changelog--page)
+- Read Drupal’s [theming documentation](https://www.drupal.org/docs/theming-drupal)
+
+</div>
+</Unstyled>

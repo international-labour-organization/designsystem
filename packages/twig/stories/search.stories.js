@@ -4,6 +4,10 @@ import { Maestro } from "@ilo-org/maestro";
 
 const story = Maestro.create(Search, SearchPatterns);
 
+story.meta.parameters.githubLink = {
+  url: "/search/search.twig",
+};
+
 const Meta = {
   title: "Components/Forms/Search",
   tags: ["autodocs"],

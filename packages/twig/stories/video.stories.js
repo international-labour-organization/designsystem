@@ -4,6 +4,10 @@ import { Maestro } from "@ilo-org/maestro";
 
 const story = Maestro.create(Video, VideoPatterns);
 
+story.meta.parameters.githubLink = {
+  url: "/video/video.twig",
+};
+
 const Meta = {
   title: "Components/Media/Video",
   tags: ["autodocs"],

@@ -4,6 +4,10 @@ import { Maestro } from "@ilo-org/maestro";
 
 const story = Maestro.create(Socialmedia, SocialmediaPatterns);
 
+story.meta.parameters.githubLink = {
+  url: "/socialmedia/socialmedia.twig",
+};
+
 const Meta = {
   title: "Components/Navigation/Social Media",
   tags: ["autodocs"],

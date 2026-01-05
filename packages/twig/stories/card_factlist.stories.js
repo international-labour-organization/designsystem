@@ -4,6 +4,10 @@ import { Maestro } from "@ilo-org/maestro";
 
 const story = Maestro.create(CardFactList, CardFactListPatterns);
 
+story.meta.parameters.githubLink = {
+  url: "/card_factlist/card_factlist.twig",
+};
+
 const Meta = {
   title: "Components/Cards/Fact List Card",
   tags: ["autodocs"],

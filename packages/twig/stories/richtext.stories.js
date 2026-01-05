@@ -4,6 +4,10 @@ import { Maestro } from "@ilo-org/maestro";
 
 const story = Maestro.create(Richtext, RichtextPatterns);
 
+story.meta.parameters.githubLink = {
+  url: "/richtext/richtext.twig",
+};
+
 const component = `
 <p>A component that applies the Design System's typography and spacing to generic content, like the kind created with a WYSIWYG editor.</p>
 <h2>Usage</h2>

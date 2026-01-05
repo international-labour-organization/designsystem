@@ -4,6 +4,10 @@ import { Maestro } from "@ilo-org/maestro";
 
 const story = Maestro.create(Tooltip, TooltipPatterns);
 
+story.meta.parameters.githubLink = {
+  url: "/tooltip/tooltip.twig",
+};
+
 const Meta = {
   title: "Components/Feedback/Tooltip",
   tags: ["autodocs"],

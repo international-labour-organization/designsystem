@@ -4,6 +4,10 @@ import { Maestro } from "@ilo-org/maestro";
 
 const story = Maestro.create(LanguageToggle, LanguageTogglePatterns);
 
+story.meta.parameters.githubLink = {
+  url: "/languagetoggle/languagetoggle.twig",
+};
+
 const Meta = {
   title: "Components/Navigation/LanguageToggle",
   tags: ["autodocs"],
