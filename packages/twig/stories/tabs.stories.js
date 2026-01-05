@@ -4,6 +4,10 @@ import { Maestro } from "@ilo-org/maestro";
 
 const story = Maestro.create(Tabs, TabsPatterns);
 
+story.meta.parameters.githubLink = {
+  url: "/tabs/tabs.twig",
+};
+
 const Meta = {
   title: "Components/User Interface/Tabs",
   tags: ["autodocs"],

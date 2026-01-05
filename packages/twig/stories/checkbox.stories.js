@@ -4,6 +4,10 @@ import { Maestro } from "@ilo-org/maestro";
 
 const story = Maestro.create(Checkbox, CheckboxPatterns);
 
+story.meta.parameters.githubLink = {
+  url: "/checkbox/checkbox.twig",
+};
+
 const Meta = {
   title: "Components/Forms/Checkbox",
   tags: ["autodocs"],

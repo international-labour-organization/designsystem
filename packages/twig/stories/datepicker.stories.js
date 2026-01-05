@@ -4,6 +4,10 @@ import { Maestro } from "@ilo-org/maestro";
 
 const story = Maestro.create(Datepicker, DatepickerPatterns);
 
+story.meta.parameters.githubLink = {
+  url: "/datepicker/datepicker.twig",
+};
+
 const Meta = {
   title: "Components/Forms/Date Picker",
   tags: ["autodocs"],

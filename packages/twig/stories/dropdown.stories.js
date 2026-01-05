@@ -4,6 +4,10 @@ import { Maestro } from "@ilo-org/maestro";
 
 const story = Maestro.create(Dropdown, DropdownPatterns);
 
+story.meta.parameters.githubLink = {
+  url: "/dropdown/dropdown.twig",
+};
+
 const Meta = {
   title: "Components/Forms/Dropdown",
   tags: ["autodocs"],

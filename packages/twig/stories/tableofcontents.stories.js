@@ -4,6 +4,10 @@ import { Maestro } from "@ilo-org/maestro";
 
 const story = Maestro.create(Tableofcontents, TableofcontentsPatterns);
 
+story.meta.parameters.githubLink = {
+  url: "/tableofcontents/tableofcontents.twig",
+};
+
 const Meta = {
   title: "Components/Navigation/Table Of Contents",
   tags: ["autodocs"],

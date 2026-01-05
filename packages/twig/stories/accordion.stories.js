@@ -4,6 +4,10 @@ import { Maestro } from "@ilo-org/maestro";
 
 const story = Maestro.create(Accordion, AccordionPatterns);
 
+story.meta.parameters.githubLink = {
+  url: "/accordion/accordion.twig",
+};
+
 const Meta = {
   title: "Components/Content/Accordion",
   tags: ["autodocs"],
