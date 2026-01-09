@@ -59,6 +59,19 @@ const searchfieldhelper: SearchFieldProps = {
   },
 };
 
+const searchfielddynamic: SearchFieldProps = {
+  callback: () => {},
+  onInputChange: (value: string) => {
+    console.log("Dynamic search triggered:", value);
+  },
+  input: {
+    name: "search",
+    placeholder: "Type to search dynamically...",
+    type: "search",
+    value: "",
+  },
+};
+
 /**
  * Sample prop definitions for SearchField's enumerable properties (imported in stories and test)
  */
@@ -68,6 +81,7 @@ const SearchFieldArgs = {
   searchfielddisabled,
   searchfieldlabel,
   searchfieldhelper,
+  searchfielddynamic,
 };
 
 export default SearchFieldArgs;

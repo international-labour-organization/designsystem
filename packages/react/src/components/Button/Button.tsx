@@ -107,18 +107,31 @@ const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonProps>(
     });
 
     if (link) {
+      const iconElement = icon && <Icon {...icon} />;
+      const labelElement = (
+        <span className="button__label">{children || link.label}</span>
+      );
+
       return (
         <Link
           ref={ref as ForwardedRef<HTMLAnchorElement>}
           className={rootClasses}
           target={link.target}
           url={link.url}
-          label={link.label}
           style={style}
           // Link has no disabled state
         >
-          {icon && <Icon {...icon} />}
-          {children}
+          {iconPosition === "right" ? (
+            <>
+              {labelElement}
+              {iconElement}
+            </>
+          ) : (
+            <>
+              {iconElement}
+              {labelElement}
+            </>
+          )}
         </Link>
       );
     }

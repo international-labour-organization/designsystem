@@ -32,4 +32,11 @@ export interface SearchFieldProps {
    * Specify the properties of the search field input
    */
   input?: InputProps;
+
+  /**
+   * Callback function triggered on input change for dynamic search.
+   * Receives the current search value as the user types, enabling
+   * real-time search functionality.
+   */
+  onInputChange?: (value: string) => void;
 }
