@@ -8,11 +8,12 @@ import { FormControl } from "../FormControl";
 const SearchField: FC<
   SearchFieldProps & React.RefAttributes<HTMLInputElement>
 > = forwardRef<HTMLInputElement, SearchFieldProps>(
-  ({ action, callback, className, input }, ref) => {
+  ({ action, callback, className, input, onInputChange }, ref) => {
     const [searchValue, setSearchValue] = useState("");
     const { prefix } = useGlobalSettings();
     const baseClass = `${prefix}--searchfield`;
     const buttonClass = `${baseClass}--button`;
+    const formClass = `${baseClass}--form`;
     const clearButtonClass = `${baseClass}--clear-button ${
       searchValue.trim() !== "" && "show"
     }`;
@@ -34,9 +35,13 @@ const SearchField: FC<
       setSearchValue("");
     };
 
-    // Update search value on input
+    // Update search value on input and trigger dynamic search callback
     const onKeyPress: React.ChangeEventHandler<HTMLInputElement> = (e) => {
-      setSearchValue(e.target.value);
+      const newValue = e.target.value;
+      setSearchValue(newValue);
+      if (onInputChange) {
+        onInputChange(newValue);
+      }
     };
 
     const inputHasType = !!input?.type;
@@ -46,7 +51,7 @@ const SearchField: FC<
     }
 
     return inputHasType ? (
-      <form action={action}>
+      <form action={action} className={formClass} style={{ display: "flex" }}>
         <FormControl
           fieldId={fieldId}
           error={!!input?.error}

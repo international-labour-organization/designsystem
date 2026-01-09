@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { StoryFn, Meta } from "@storybook/react";
 import {
   Title,
@@ -89,3 +90,33 @@ export const SearchFieldHelper: StoryFn<SearchFieldProps> =
 // enumerate the props for the default search field
 SearchFieldHelper.args = SearchFieldArgs.searchfieldhelper;
 SearchFieldHelper.storyName = "Helper";
+
+/**
+ * Dynamic Search Template
+ *
+ * Demonstrates the onInputChange callback for real-time search functionality
+ */
+const DynamicSearchTemplate: StoryFn<SearchFieldProps> = (args) => {
+  const [searchResults, setSearchResults] = useState<string>("");
+
+  const handleInputChange = (value: string) => {
+    // Simulate dynamic search - in real usage, this would trigger an API call or filter data
+    setSearchResults(value ? `Searching for: "${value}"` : "");
+  };
+
+  return (
+    <div style={{ width: "100%", maxWidth: "600px" }}>
+      <SearchField {...args} onInputChange={handleInputChange} />
+      {searchResults && (
+        <p style={{ marginTop: "1rem", color: "#666" }}>{searchResults}</p>
+      )}
+    </div>
+  );
+};
+
+export const SearchFieldDynamic: StoryFn<SearchFieldProps> =
+  DynamicSearchTemplate.bind({});
+
+// enumerate the props for the dynamic search field
+SearchFieldDynamic.args = SearchFieldArgs.searchfielddynamic;
+SearchFieldDynamic.storyName = "Dynamic Search";
