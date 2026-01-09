@@ -1,5 +1,16 @@
 # @ilo-org/react
 
+## 0.28.2
+
+### Patch Changes
+
+- 22cc3cae8: **SearchField:**
+
+  - Add `onInputChange` prop that handles events every time the user changes the input value
+  - Fix layout issue affecting alignment of the SearchField with other form elements
+
+- 06b4453dc: **Button:** Fix icon position bug when button is a link
+
 ## 0.28.1
 
 ### Patch Changes
