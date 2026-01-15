@@ -1,5 +1,11 @@
 # @ilo-org/react
 
+## 0.28.3
+
+### Patch Changes
+
+- 159803b46: **Video:** Fix issue preventing component to work with React 18 StrictMode. More details [here](https://github.com/videojs/video.js/issues/7746)
+
 ## 0.28.2
 
 ### Patch Changes
