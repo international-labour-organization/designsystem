@@ -86,8 +86,9 @@
     padding-bottom: 56.25%;
   }
 
-  // Initial state
-  &--element:not(.vjs-has-started) {
+  // Initial and ended state
+  &--element:not(.vjs-has-started),
+  &--element.vjs-ended {
     .vjs-poster {
       background-size: cover;
       object-fit: cover;
@@ -121,6 +122,10 @@
 
         .vjs-play-control {
           @include videobutton("triangle_right");
+
+          &.vjs-paused {
+            @include videobutton("triangle_right");
+          }
         }
 
         .vjs-duration {
@@ -142,6 +147,10 @@
           gap: px-to-rem(4px);
           .vjs-play-control {
             @include videobutton("triangle_right", "big");
+
+            &.vjs-paused {
+              @include videobutton("triangle_right", "big");
+            }
           }
         }
       }
