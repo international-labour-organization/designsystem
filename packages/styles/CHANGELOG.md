@@ -1,5 +1,11 @@
 # @ilo-org/styles
 
+## 1.11.1
+
+### Patch Changes
+
+- 385f4b98c: **Video:** Fix bug where restarting the player caused play button to resize
+
 ## 1.11.0
 
 ### Minor Changes
