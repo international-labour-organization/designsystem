@@ -7,8 +7,8 @@ const video = videojs as unknown as ILOVideo;
 
 const VideoPlayer = forwardRef<VideoPlayerRef, VideoPlayerProps>(
   ({ src, poster, youtube }, ref) => {
-    const videoNode = useRef<HTMLVideoElement>(null);
-    const player = useRef<videojs.Player>();
+    const placeholderRef = useRef<HTMLDivElement>(null);
+    const player = useRef<videojs.Player | undefined>(undefined);
 
     useImperativeHandle(
       ref,
@@ -21,8 +21,16 @@ const VideoPlayer = forwardRef<VideoPlayerRef, VideoPlayerProps>(
     );
 
     useEffect(() => {
-      if (videoNode.current) {
-        player.current = video(videoNode.current, {
+      if (!placeholderRef.current) {
+        return;
+      }
+
+      if (!player.current) {
+        const videoElement = document.createElement("video");
+        videoElement.className = "ilo--video--element";
+        placeholderRef.current.appendChild(videoElement);
+
+        player.current = video(videoElement, {
           autoplay: false,
           controls: true,
           preload: "auto",
@@ -50,17 +58,29 @@ const VideoPlayer = forwardRef<VideoPlayerRef, VideoPlayerProps>(
           },
           liveTracker: false,
         });
+      } else {
+        player.current.poster(poster?.src || "");
+        player.current.src([
+          { type: youtube ? "video/youtube" : undefined, src: src },
+        ]);
       }
+    }, [poster?.src, src, youtube]);
+
+    useEffect(() => {
       return () => {
         if (player.current) {
           player.current.dispose();
+          player.current = undefined;
+        }
+        if (placeholderRef.current) {
+          placeholderRef.current.innerHTML = "";
         }
       };
-    }, [poster?.src, src, youtube]);
+    }, []);
 
     return (
       <div className="ilo--videoplayer">
-        <video ref={videoNode} className="ilo--video--element" />
+        <div ref={placeholderRef} />
       </div>
     );
   }
