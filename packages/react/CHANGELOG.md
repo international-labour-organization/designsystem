@@ -1,5 +1,11 @@
 # @ilo-org/react
 
+## 0.28.5
+
+### Patch Changes
+
+- c764da793: **NumberPicker:** Add missing `value` prop
+
 ## 0.28.4
 
 ### Patch Changes
