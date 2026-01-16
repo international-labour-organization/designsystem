@@ -19,6 +19,11 @@ export interface NumberPickerProps extends FormFieldProps<HTMLInputElement> {
    * The step value of the input.
    * */
   step?: number;
+
+  /**
+   * The value of the input.
+   */
+  value?: number;
 }
 
 export type LabelledNumberPickerProps =
