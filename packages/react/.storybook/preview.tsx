@@ -27,6 +27,7 @@ const preview: Preview = {
           "ILO Design System for React",
           "Getting Started",
           ["Introduction"],
+          "Utilities",
           "Components",
         ],
         locales: "en-US",
