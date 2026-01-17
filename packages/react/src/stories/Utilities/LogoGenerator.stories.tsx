@@ -168,14 +168,17 @@ const LogoGenerator = () => {
 
   return (
     <div
-      className="sb-unstyled ilo--richtext ilo--richtext__theme__light"
+      className="sb-unstyled"
       style={{
         padding: "40px",
         maxWidth: "1000px",
         margin: "0 auto",
       }}
     >
-      <header style={{ marginBottom: "40px" }}>
+      <header
+        className="ilo--richtext ilo--richtext__theme__light"
+        style={{ marginBottom: "40px" }}
+      >
         <h1>Download logos</h1>
         <p style={{ color: "var(--ilo-color-gray-accessible)" }}>
           Configure and download the official ILO logo for your specific needs.
