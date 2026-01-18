@@ -1,4 +1,6 @@
 .ilo--logo {
+  display: flex;
+
   &--visibility--hidden {
     visibility: hidden;
   }
@@ -43,7 +45,7 @@
 
     &--image {
       height: 100%;
-      width: 50%;
+      width: 60%;
     }
 
     &--lock-up {
@@ -53,7 +55,7 @@
       flex-flow: row nowrap;
       align-items: center;
       justify-content: flex-start;
-      width: 50%;
+      width: 40%;
       bottom: var(--lockup-bottom-offset);
 
       &--separator {
