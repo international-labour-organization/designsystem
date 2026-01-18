@@ -286,9 +286,8 @@ const LogoGenerator = () => {
           <div
             ref={logoRef}
             style={{
-              padding: "20px",
               backgroundColor: "transparent",
-              fontFamily: "Inter, system-ui, -apple-system, sans-serif",
+              display: "flex",
               // Filter to make logo black if color is set to black
               filter: color === "black" ? "grayscale(1) brightness(0)" : "none",
             }}
