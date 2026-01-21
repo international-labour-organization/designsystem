@@ -222,20 +222,18 @@
 @mixin invincible-list($bullet-color: var(--ilo-color-gray-base)) {
   li {
     position: relative;
-    margin-bottom: spacing(4);
+    margin-bottom: spacing(3);
     display: table;
     border-collapse: separate;
     border-spacing: spacing(3) 0;
     margin-left: calc(spacing(3) * -1);
     margin-right: calc(spacing(3) * -1);
 
-    font-family: var(--ilo-fonts-copy);
-    font-weight: var(--ilo-font-weight-regular);
-    font-size: var(--ilo-font-size-md);
-    line-height: var(--ilo-line-height-2xlg);
+    @include typography("body-large", true);
 
-    @include breakpoint("md") {
-      font-size: var(--ilo-font-size-lg);
+    @include breakpoint("lg") {
+      @include typography("body-large", false);
+      margin-bottom: spacing(4);
     }
   }
 
