@@ -1,5 +1,13 @@
 # @ilo-org/react
 
+## 0.28.8
+
+### Patch Changes
+
+- b647b985b: **List:** Update heading and list item styles
+- Updated dependencies [b647b985b]
+  - @ilo-org/styles@1.11.3
+
 ## 0.28.7
 
 ### Patch Changes

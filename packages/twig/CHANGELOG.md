@@ -1,5 +1,14 @@
 # @ilo-org/twig
 
+## 1.12.3
+
+### Patch Changes
+
+- b647b985b: **List:** Update heading and list item styles
+- 718776194: **CardGroup:** Make sure `isvideo` gets passed to cards.
+- Updated dependencies [b647b985b]
+  - @ilo-org/styles@1.11.3
+
 ## 1.12.2
 
 ### Patch Changes

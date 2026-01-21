@@ -1,5 +1,11 @@
 # @ilo-org/styles
 
+## 1.11.3
+
+### Patch Changes
+
+- b647b985b: **List:** Update heading and list item styles
+
 ## 1.11.2
 
 ### Patch Changes
