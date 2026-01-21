@@ -1,5 +1,11 @@
 # @ilo-org/styles
 
+## 1.11.2
+
+### Patch Changes
+
+- 1bf3be5ee: **Logo:** Tweak to logo component needed for logo generator to size logos correctly
+
 ## 1.11.1
 
 ### Patch Changes

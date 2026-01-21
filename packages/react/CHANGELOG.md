@@ -1,5 +1,18 @@
 # @ilo-org/react
 
+## 0.28.7
+
+### Patch Changes
+
+- Updated dependencies [1bf3be5ee]
+  - @ilo-org/styles@1.11.2
+
+## 0.28.6
+
+### Patch Changes
+
+- ce9a5bfb3: **Logo:** Avoid re-rendering loop when small changes to the component occur
+
 ## 0.28.5
 
 ### Patch Changes
