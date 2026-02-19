@@ -1,5 +1,11 @@
 # @ilo-org/icons
 
+## 2.4.1
+
+### Patch Changes
+
+- 429094e31: **Transcript:** Correct lines that should have currentColor
+
 ## 2.4.0
 
 ### Minor Changes
