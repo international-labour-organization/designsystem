@@ -1,5 +1,12 @@
 # @ilo-org/styles
 
+## 1.11.4
+
+### Patch Changes
+
+- Updated dependencies [429094e31]
+  - @ilo-org/icons@2.4.1
+
 ## 1.11.3
 
 ### Patch Changes

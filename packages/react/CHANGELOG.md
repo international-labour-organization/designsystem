@@ -1,5 +1,13 @@
 # @ilo-org/react
 
+## 0.28.9
+
+### Patch Changes
+
+- 02123f571: **List/ListItem:** Correctly export `ListItem`, it wasn't getting exported before
+  - @ilo-org/icons-react@1.0.7
+  - @ilo-org/styles@1.11.4
+
 ## 0.28.8
 
 ### Patch Changes
