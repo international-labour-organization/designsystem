@@ -1,4 +1,4 @@
-import { forwardRef } from "react";
+import { forwardRef, type ComponentType } from "react";
 import classnames from "classnames";
 import useGlobalSettings from "../../hooks/useGlobalSettings";
 import { Button } from "../Button";
@@ -51,7 +51,9 @@ const cardMapper = {
 
 const CardGroup = forwardRef<HTMLDivElement, CardGroupProps<CardTypes>>(
   ({ type, group, cardCount = "one", cta, collapsed = false }, ref) => {
-    const CardComponent = cardMapper[type];
+    const CardComponent = cardMapper[type] as ComponentType<
+      CardPropsMap[CardTypes]
+    >;
     const { prefix } = useGlobalSettings();
 
     const baseClass = `${prefix}--cardgroup`;
