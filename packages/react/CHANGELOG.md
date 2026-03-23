@@ -1,5 +1,16 @@
 # @ilo-org/react
 
+## 1.0.0
+
+### Major Changes
+
+- 6db2d35e2: ILO Design System React package is now in production in multiple applications and is now in version 1
+
+### Patch Changes
+
+- Updated dependencies [4994ea207]
+  - @ilo-org/styles@1.12.0
+
 ## 0.28.9
 
 ### Patch Changes
