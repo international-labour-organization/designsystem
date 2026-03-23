@@ -1,5 +1,11 @@
 # @ilo-org/styles
 
+## 1.12.0
+
+### Minor Changes
+
+- 4994ea207: Add new colour theme tokens to the `/scss/theme/_foundation.scss` file. Learn more about the [ILO Design System colors](packages/styles/scss/theme/_foundation.scss).
+
 ## 1.11.4
 
 ### Patch Changes
