@@ -11,8 +11,8 @@
 export function createFocusTrap(
   event,
   focusableElements,
-  escapeCallBack = (event) => {},
-  tabCallBack = (event) => {}
+  escapeCallBack = (_event) => {},
+  tabCallBack = (_event) => {}
 ) {
   const firstFocusableElement = focusableElements[0];
   const lastFocusableElement = focusableElements[focusableElements.length - 1];

@@ -64,7 +64,6 @@ function replaceInReadme(tableContent) {
 
     // Write the updated content back to README.md
     fs.writeFileSync(readmeFilePath, readmeContent, "utf8");
-    console.log("README.md updated successfully!");
   } catch (e) {
     console.error(`Failed to read or update README.md: ${e}`);
   }
@@ -77,7 +76,7 @@ function main() {
     const iconTable = generateIconTable(icons);
     replaceInReadme(iconTable);
   } else {
-    console.log("No icons to process.");
+    console.warn("No icons to process.");
   }
 }
 

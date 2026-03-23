@@ -85,7 +85,7 @@ describe("Card Detail Component", () => {
         .should("have.attr", "alt", fixture.image.alt)
         .and("have.attr", "loading", fixture.image.loading);
 
-      fixture.image.url.forEach(({ breakpoint, src }) => {
+      fixture.image.url.forEach(({ breakpoint: _breakpoint, src }) => {
         cy.get("@card")
           .find(".ilo--card--image--wrapper img")
           .should("have.attr", "src")

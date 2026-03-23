@@ -1,4 +1,4 @@
-import { ExoticComponent, forwardRef } from "react";
+import { forwardRef } from "react";
 import classnames from "classnames";
 import useGlobalSettings from "../../hooks/useGlobalSettings";
 import { Button } from "../Button";
@@ -37,7 +37,7 @@ export type CardGroupProps<T extends CardTypes> = {
   collapsed?: boolean;
 };
 
-const cardMapper: Record<CardTypes, ExoticComponent<any>> = {
+const cardMapper = {
   stat: StatCard,
   multilink: MultiLinkCard,
   text: TextCard,

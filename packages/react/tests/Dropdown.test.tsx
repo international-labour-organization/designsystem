@@ -53,7 +53,7 @@ describe("Dropdown", () => {
     expect(select).toHaveValue("3");
     expect(handleChange).toHaveBeenCalledWith(
       expect.objectContaining({
-        target: expect.objectContaining({ value: "3" }),
+        target: expect.objectContaining({ value: "3" }) as { value: string },
       })
     );
   });
