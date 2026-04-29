@@ -16,7 +16,6 @@ export interface SearchFieldInputProps {
   label?: string;
   name?: string;
   placeholder?: string;
-  value: string;
 }
 
 export interface SearchFieldProps
@@ -35,11 +34,6 @@ export interface SearchFieldProps
    * The search field submit button's click function.
    */
   callback?: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => unknown;
-
-  /**
-   * Initial value of the search input
-   */
-  value?: string;
 
   /**
    * Placeholder text for the search input

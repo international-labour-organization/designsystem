@@ -29,7 +29,6 @@ const SearchField: FC<
       labelSize,
       tooltip,
       theme,
-      value,
       placeholder,
       name,
       id,
@@ -39,7 +38,6 @@ const SearchField: FC<
   ) => {
     // Top-level props win; fall back to the deprecated `input` prop so
     // existing consumers keep working unchanged.
-    const resolvedValue = value ?? input?.value ?? "";
     const resolvedPlaceholder = placeholder ?? input?.placeholder;
     const resolvedName = name ?? input?.name;
     const resolvedLabel = label ?? input?.label ?? "";
@@ -52,7 +50,7 @@ const SearchField: FC<
     // preserve the prior behavior of `input.disabled` (input/button only).
     const inputDisabled = disabled ?? input?.disabled;
 
-    const [searchValue, setSearchValue] = useState<string>(resolvedValue);
+    const [searchValue, setSearchValue] = useState<string>("");
     const { prefix } = useGlobalSettings();
     const baseClass = `${prefix}--searchfield`;
     const buttonClass = `${baseClass}--button`;
