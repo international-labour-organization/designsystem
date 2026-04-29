@@ -1,17 +1,13 @@
 import { ReactElement } from "react";
 import { TextInputTypes, FieldTypes } from "../../types";
 import { DropdownProps } from "../Dropdown/Dropdown.props";
-import { InputProps } from "../Input/Input.props";
 import { TextareaProps } from "../Textarea/Textarea.props";
 
 export interface FormElementProps {
   /**
    * Specify the content of your FormElement.
    */
-  children:
-    | ReactElement<InputProps>
-    | ReactElement<DropdownProps>
-    | ReactElement<TextareaProps>;
+  children: ReactElement<DropdownProps> | ReactElement<TextareaProps>;
 
   /**
    * Specify an optional className to be added to your FormElement component.
