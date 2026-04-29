@@ -9,8 +9,8 @@ const SearchField: FC<
   SearchFieldProps & React.RefAttributes<HTMLInputElement>
 > = forwardRef<HTMLInputElement, SearchFieldProps>(
   ({ action, callback, className, input, onInputChange }, ref) => {
-    const [searchValue, setSearchValue] = useState("");
     const { prefix } = useGlobalSettings();
+    const [searchValue, setSearchValue] = useState<string>(input?.value || "");
     const baseClass = `${prefix}--searchfield`;
     const buttonClass = `${baseClass}--button`;
     const formClass = `${baseClass}--form`;
@@ -37,7 +37,7 @@ const SearchField: FC<
 
     // Update search value on input and trigger dynamic search callback
     const onKeyPress: React.ChangeEventHandler<HTMLInputElement> = (e) => {
-      const newValue = e.target.value;
+      const newValue = e.target?.value as string;
       setSearchValue(newValue);
       if (onInputChange) {
         onInputChange(newValue);
