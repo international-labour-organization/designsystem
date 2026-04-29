@@ -61,5 +61,8 @@ export interface InputProps {
    */
   type: TextInputTypes;
 
-  value: string;
+  /**
+   * The input's value.
+   */
+  value?: string;
 }
