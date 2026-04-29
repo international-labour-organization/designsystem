@@ -25,10 +25,10 @@ const TextInput = React.forwardRef<HTMLInputElement, TextInputProps>(
     const formControlCtx = useFormControl();
     const { ariaDescribedBy } = formControlCtx;
 
-    const baseClass = `${prefix}--text-input`;
+    const baseClass = `${prefix}--input`;
 
     const inputClass = classNames(baseClass, {
-      [`${baseClass}__error`]: error,
+      error: error,
     });
 
     return (
