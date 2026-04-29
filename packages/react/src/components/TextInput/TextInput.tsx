@@ -16,6 +16,7 @@ const TextInput = React.forwardRef<HTMLInputElement, TextInputProps>(
       required,
       pattern,
       value,
+      size = "large",
       disabled = false,
       type = "text",
     },
@@ -29,6 +30,7 @@ const TextInput = React.forwardRef<HTMLInputElement, TextInputProps>(
 
     const inputClass = classNames(baseClass, {
       error: error,
+      [`${baseClass}__size__${size}`]: size,
     });
 
     return (
@@ -55,7 +57,7 @@ const LabelledTextInput = React.forwardRef<
   HTMLInputElement,
   LabelledTextInputProps
 >((props, ref) => {
-  const { style, inputStyle, className, ...rest } = props;
+  const { style, inputStyle, className, size, ...rest } = props;
   const fieldId = props.id ? props.id : props.name;
 
   return (
@@ -63,9 +65,10 @@ const LabelledTextInput = React.forwardRef<
       fieldId={fieldId}
       style={style}
       className={className}
+      labelSize={size}
       {...rest}
     >
-      <TextInput ref={ref} style={inputStyle} {...rest} />
+      <TextInput ref={ref} style={inputStyle} size={size} {...rest} />
     </FormControl>
   );
 });

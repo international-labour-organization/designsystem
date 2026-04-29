@@ -20,6 +20,7 @@ const Dropdown = forwardRef<HTMLSelectElement, DropdownProps>((props, ref) => {
     form,
     multiple,
     selectSize,
+    size = "large",
   } = props;
 
   const { prefix } = useGlobalSettings();
@@ -28,9 +29,14 @@ const Dropdown = forwardRef<HTMLSelectElement, DropdownProps>((props, ref) => {
 
   const baseClass = `${prefix}--dropdown`;
 
-  const dropdownClasses = classNames(baseClass, {
-    [`error`]: error,
+  const dropdownClasses = classNames(baseClass, `${baseClass}__size__${size}`, {
+    error: error,
   });
+
+  const wrapperClasses = classNames(
+    `${baseClass}--wrapper`,
+    `${baseClass}--wrapper__size__${size}`
+  );
 
   const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     if (onChange) {
@@ -39,7 +45,7 @@ const Dropdown = forwardRef<HTMLSelectElement, DropdownProps>((props, ref) => {
   };
 
   return (
-    <div className={`${baseClass}--wrapper`}>
+    <div className={wrapperClasses}>
       <select
         ref={ref}
         id={id ? id : name}
@@ -75,7 +81,7 @@ const Dropdown = forwardRef<HTMLSelectElement, DropdownProps>((props, ref) => {
 
 const LabelledDropdown = forwardRef<HTMLSelectElement, LabelledDropdownProps>(
   (props, ref) => {
-    const { style, inputStyle, className, ...rest } = props;
+    const { style, inputStyle, className, size, ...rest } = props;
     const fieldId = props.id ? props.id : props.name;
 
     return (
@@ -83,9 +89,10 @@ const LabelledDropdown = forwardRef<HTMLSelectElement, LabelledDropdownProps>(
         fieldId={fieldId}
         style={style}
         className={className}
+        labelSize={size}
         {...rest}
       >
-        <Dropdown ref={ref} style={inputStyle} {...rest} />
+        <Dropdown ref={ref} style={inputStyle} size={size} {...rest} />
       </FormControl>
     );
   }

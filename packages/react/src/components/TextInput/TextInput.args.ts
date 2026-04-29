@@ -13,6 +13,13 @@ export const basic: LabelledTextInputProps = {
   placeholder: "This is a text field",
   required: false,
   type: "text",
+  size: "large",
+};
+
+export const small: LabelledTextInputProps = {
+  ...basic,
+  size: "small",
+  labelSize: "small",
 };
 
 export const isdisabled: LabelledTextInputProps = {

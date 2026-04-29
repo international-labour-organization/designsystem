@@ -33,6 +33,7 @@ const SearchField: FC<
       placeholder,
       name,
       id,
+      size = "large",
     },
     ref
   ) => {
@@ -96,15 +97,24 @@ const SearchField: FC<
           label={resolvedLabel}
           disabled={disabled}
           labelPlacement={labelPlacement}
-          labelSize={labelSize}
+          labelSize={labelSize ?? size}
           tooltip={tooltip}
           theme={theme}
           style={{ width: "100%", ...style }}
         >
-          <div className={classNames(className, baseClass)}>
+          <div
+            className={classNames(
+              className,
+              baseClass,
+              `${baseClass}__size__${size}`
+            )}
+          >
             <div className={fieldSetClass}>
               <input
-                className={`${prefix}--input`}
+                className={classNames(
+                  `${prefix}--input`,
+                  `${prefix}--input__size__${size}`
+                )}
                 id={fieldId}
                 name={resolvedName}
                 onChange={onKeyPress}
