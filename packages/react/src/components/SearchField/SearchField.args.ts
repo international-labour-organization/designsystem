@@ -5,7 +5,6 @@ const searchfield: SearchFieldProps = {
   disabled: false,
   name: "search",
   placeholder: "Search Field",
-  value: "",
 };
 
 const searchfielderror: SearchFieldProps = {
@@ -15,7 +14,6 @@ const searchfielderror: SearchFieldProps = {
   errorMessage: "Error message",
   name: "search",
   placeholder: "Search Field",
-  value: "",
 };
 
 const searchfielddisabled: SearchFieldProps = {
@@ -23,7 +21,6 @@ const searchfielddisabled: SearchFieldProps = {
   disabled: true,
   name: "search",
   placeholder: "Search Field",
-  value: "",
 };
 
 const searchfieldlabel: SearchFieldProps = {
@@ -31,7 +28,6 @@ const searchfieldlabel: SearchFieldProps = {
   label: "Search Field",
   name: "search",
   placeholder: "Search Field",
-  value: "",
 };
 
 const searchfieldhelper: SearchFieldProps = {
@@ -39,7 +35,6 @@ const searchfieldhelper: SearchFieldProps = {
   helper: "Search Field Helper text",
   name: "search",
   placeholder: "Search Field",
-  value: "",
 };
 
 const searchfielddynamic: SearchFieldProps = {
@@ -49,7 +44,6 @@ const searchfielddynamic: SearchFieldProps = {
   },
   name: "search",
   placeholder: "Type to search dynamically...",
-  value: "",
 };
 
 /**
