@@ -2,61 +2,39 @@ import { SearchFieldProps } from "./SearchField.props";
 
 const searchfield: SearchFieldProps = {
   callback: () => {},
-  input: {
-    callback: () => {},
-    disabled: false,
-    name: "search",
-    placeholder: "Search Field",
-    type: "search",
-    value: "",
-  },
+  disabled: false,
+  name: "search",
+  placeholder: "Search Field",
 };
 
 const searchfielderror: SearchFieldProps = {
   callback: () => {},
-  input: {
-    callback: () => {},
-    disabled: false,
-    error: "Error message",
-    name: "search",
-    placeholder: "Search Field",
-    type: "search",
-    value: "",
-  },
+  disabled: false,
+  error: true,
+  errorMessage: "Error message",
+  name: "search",
+  placeholder: "Search Field",
 };
 
 const searchfielddisabled: SearchFieldProps = {
   callback: () => {},
-  input: {
-    callback: () => {},
-    disabled: true,
-    name: "search",
-    placeholder: "Search Field",
-    type: "search",
-    value: "",
-  },
+  disabled: true,
+  name: "search",
+  placeholder: "Search Field",
 };
 
 const searchfieldlabel: SearchFieldProps = {
   callback: () => {},
-  input: {
-    label: "Search Field",
-    name: "search",
-    placeholder: "Search Field",
-    type: "search",
-    value: "",
-  },
+  label: "Search Field",
+  name: "search",
+  placeholder: "Search Field",
 };
 
 const searchfieldhelper: SearchFieldProps = {
   callback: () => {},
-  input: {
-    helper: "Search Field Helper text",
-    name: "search",
-    placeholder: "Search Field",
-    type: "search",
-    value: "",
-  },
+  helper: "Search Field Helper text",
+  name: "search",
+  placeholder: "Search Field",
 };
 
 const searchfielddynamic: SearchFieldProps = {
@@ -64,12 +42,8 @@ const searchfielddynamic: SearchFieldProps = {
   onInputChange: (value: string) => {
     console.log("Dynamic search triggered:", value);
   },
-  input: {
-    name: "search",
-    placeholder: "Type to search dynamically...",
-    type: "search",
-    value: "",
-  },
+  name: "search",
+  placeholder: "Type to search dynamically...",
 };
 
 /**
