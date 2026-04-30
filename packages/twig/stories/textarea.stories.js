@@ -4,6 +4,10 @@ import { Maestro } from "@ilo-org/maestro";
 
 const story = Maestro.create(Textarea, TextareaPatterns);
 
+story.meta.parameters.githubLink = {
+  url: "/textarea/textarea.twig",
+};
+
 const Meta = {
   title: "Components/Forms/Text Area",
   tags: ["autodocs"],

@@ -4,6 +4,10 @@ import { Maestro } from "@ilo-org/maestro";
 
 const story = Maestro.create(Breadcrumb, BreadcrumbPatterns);
 
+story.meta.parameters.githubLink = {
+  url: "/breadcrumb/breadcrumb.twig",
+};
+
 const Meta = {
   title: "Components/Navigation/Breadcrumb",
   tags: ["autodocs"],

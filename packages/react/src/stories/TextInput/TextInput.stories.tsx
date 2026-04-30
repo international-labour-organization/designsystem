@@ -54,6 +54,11 @@ export const Basic: StoryObj<typeof TextInput> = {
   args: TextInputArgs.basic,
 };
 
+export const Small: StoryObj<typeof TextInput> = {
+  args: TextInputArgs.small,
+  render: (props) => <TextInput {...props} />,
+};
+
 export const WithLabel: StoryObj<typeof TextInput> = {
   args: TextInputArgs.basic,
   render: (props) => <TextInput {...props} />,

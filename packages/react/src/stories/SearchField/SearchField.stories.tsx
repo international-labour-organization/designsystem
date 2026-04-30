@@ -1,4 +1,5 @@
-import { StoryFn, Meta } from "@storybook/react";
+import { useState } from "react";
+import { Meta, StoryObj } from "@storybook/react";
 import {
   Title,
   Description,
@@ -7,8 +8,6 @@ import {
   Stories,
 } from "@storybook/blocks";
 import { SearchField } from "../../components/SearchField";
-import { Input } from "../../components/Input";
-import { SearchFieldProps } from "../../components/SearchField/SearchField.props";
 import SearchFieldArgs from "../../components/SearchField/SearchField.args";
 
 const SearchFieldMeta: Meta<typeof SearchField> = {
@@ -16,21 +15,17 @@ const SearchFieldMeta: Meta<typeof SearchField> = {
   component: SearchField,
   tags: ["autodocs"],
   argTypes: {},
-  subcomponents: {
-    Input,
-  },
   parameters: {
     componentSubtitle: "Component",
     docs: {
+      description: {
+        component:
+          "The SearchField component displays a single search input and a button. It fires a callback function passed to it as the callback prop onChange of the field, and another callback function onClick of the button.",
+      },
       page: () => (
         <>
           <Title />
-          <Description>
-            The SearchField component displays a single search input and a
-            button. It fires a callback function passed to it as the callback
-            prop onChange of the field, and another callback function onClick of
-            the button.
-          </Description>
+          <Description />
           <Primary />
           <Stories title="Examples"></Stories>
           <ArgTypes />
@@ -42,50 +37,79 @@ const SearchFieldMeta: Meta<typeof SearchField> = {
 
 export default SearchFieldMeta;
 
-/**
- * SearchField Template
- *
- * create a Storybook template for this component
- *
- *@param (Object) args - props to be passed to the component
- */
-const SearchFieldTemplate: StoryFn<SearchFieldProps> = (args) => (
-  <div style={{ width: "100%", maxWidth: "600px" }}>
-    <SearchField {...args} />
-  </div>
-);
+type Story = StoryObj<typeof SearchField>;
 
-export const SearchFieldDefault: StoryFn<SearchFieldProps> =
-  SearchFieldTemplate.bind({});
+export const Default: Story = {
+  args: SearchFieldArgs.searchfield,
+  render: (args) => (
+    <div style={{ width: "100%", maxWidth: "600px" }}>
+      <SearchField {...args} />
+    </div>
+  ),
+};
 
-// enumerate the props for the default search field
-SearchFieldDefault.args = SearchFieldArgs.searchfield;
-SearchFieldDefault.storyName = "Default";
+export const Error: Story = {
+  args: SearchFieldArgs.searchfielderror,
+  render: (args) => (
+    <div style={{ width: "100%", maxWidth: "600px" }}>
+      <SearchField {...args} />
+    </div>
+  ),
+};
 
-export const SearchFieldError: StoryFn<SearchFieldProps> =
-  SearchFieldTemplate.bind({});
+export const Disabled: Story = {
+  args: SearchFieldArgs.searchfielddisabled,
+  render: (args) => (
+    <div style={{ width: "100%", maxWidth: "600px" }}>
+      <SearchField {...args} />
+    </div>
+  ),
+};
 
-// enumerate the props for the default search field
-SearchFieldError.args = SearchFieldArgs.searchfielderror;
-SearchFieldError.storyName = "Error";
+export const Labelled: Story = {
+  args: SearchFieldArgs.searchfieldlabel,
+  render: (args) => (
+    <div style={{ width: "100%", maxWidth: "600px" }}>
+      <SearchField {...args} />
+    </div>
+  ),
+};
 
-export const SearchFieldDisabled: StoryFn<SearchFieldProps> =
-  SearchFieldTemplate.bind({});
+export const Helper: Story = {
+  args: SearchFieldArgs.searchfieldhelper,
+  render: (args) => (
+    <div style={{ width: "100%", maxWidth: "600px" }}>
+      <SearchField {...args} />
+    </div>
+  ),
+};
 
-// enumerate the props for the default search field
-SearchFieldDisabled.args = SearchFieldArgs.searchfielddisabled;
-SearchFieldDisabled.storyName = "Disabled";
+export const Small: Story = {
+  args: SearchFieldArgs.searchfieldsmall,
+  render: (args) => (
+    <div style={{ width: "100%", maxWidth: "600px" }}>
+      <SearchField {...args} />
+    </div>
+  ),
+};
 
-export const SearchFieldLabel: StoryFn<SearchFieldProps> =
-  SearchFieldTemplate.bind({});
+export const DynamicSearch: Story = {
+  name: "Dynamic Search",
+  args: SearchFieldArgs.searchfielddynamic,
+  render: (args) => {
+    const [searchResults, setSearchResults] = useState<string>("");
 
-// enumerate the props for the default search field
-SearchFieldLabel.args = SearchFieldArgs.searchfieldlabel;
-SearchFieldLabel.storyName = "Labelled";
+    const handleInputChange = (value: string) => {
+      setSearchResults(value ? `Searching for: "${value}"` : "");
+    };
 
-export const SearchFieldHelper: StoryFn<SearchFieldProps> =
-  SearchFieldTemplate.bind({});
-
-// enumerate the props for the default search field
-SearchFieldHelper.args = SearchFieldArgs.searchfieldhelper;
-SearchFieldHelper.storyName = "Helper";
+    return (
+      <div style={{ width: "100%", maxWidth: "600px" }}>
+        <SearchField {...args} onInputChange={handleInputChange} />
+        {searchResults && (
+          <p style={{ marginTop: "1rem", color: "#666" }}>{searchResults}</p>
+        )}
+      </div>
+    );
+  },
+};

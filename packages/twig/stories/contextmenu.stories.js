@@ -4,6 +4,10 @@ import { Maestro } from "@ilo-org/maestro";
 
 const story = Maestro.create(ContextMenu, ContextMenuPatterns);
 
+story.meta.parameters.githubLink = {
+  url: "/contextmenu/contextmenu.twig",
+};
+
 const Meta = {
   title: "Components/Navigation/Context Menu",
   tags: ["autodocs"],

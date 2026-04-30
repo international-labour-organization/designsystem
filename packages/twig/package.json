@@ -1,6 +1,6 @@
 {
   "name": "@ilo-org/twig",
-  "version": "1.11.0",
+  "version": "1.12.5",
   "type": "module",
   "files": [
     "dist/**/*"
@@ -58,7 +58,9 @@
   },
   "devDependencies": {
     "@chromatic-com/storybook": "3.2.7",
+    "@etchteam/storybook-addon-github-link": "^1.0.1",
     "@ilo-org/eslint-config": "workspace:*",
+    "@ilo-org/react": "workspace:*",
     "@modyfi/vite-plugin-yaml": "^1.1.0",
     "@rollup/plugin-commonjs": "^23.0.2",
     "@rollup/plugin-node-resolve": "^15.0.1",
@@ -94,7 +96,6 @@
     "@ilo-org/icons": "workspace:*",
     "@ilo-org/maestro": "workspace:*",
     "@ilo-org/styles": "workspace:*",
-    "@ilo-org/themes": "workspace:*",
     "@popperjs/core": "^2.11.8",
     "cypress": "^14.3.2",
     "embla-carousel": "^8.6.0",

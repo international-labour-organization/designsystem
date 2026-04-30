@@ -58,6 +58,12 @@ const BaseLogo: React.FC<InnerLogoProps> = ({
   // Initial height of the image when it's loaded
   const initialImageHeight = useRef<null | number>(null);
 
+  // Track the latest image height to avoid re-render loops from sub-pixel changes
+  const lastImageHeight = useRef(0);
+
+  // Track last font size ratio to avoid redundant state updates
+  const lastFontSizeRatio = useRef(0);
+
   // Has the image loaded or not
   const [imageLoaded, setImageLoaded] = useState(false);
 
@@ -75,10 +81,14 @@ const BaseLogo: React.FC<InnerLogoProps> = ({
   const observer = useRef(
     new ResizeObserver((entries) => {
       const { height } = entries[0].contentRect;
+      const nextHeight = Math.round(height * 10) / 10;
       if (!initialImageHeight.current) {
-        initialImageHeight.current = height;
+        initialImageHeight.current = nextHeight;
       }
-      setImageHeight(height);
+      if (Math.abs(nextHeight - lastImageHeight.current) >= 0.1) {
+        lastImageHeight.current = nextHeight;
+        setImageHeight(nextHeight);
+      }
     })
   );
 
@@ -122,7 +132,10 @@ const BaseLogo: React.FC<InnerLogoProps> = ({
         maxSize: initialImageHeight.current,
       });
       const ratio = fullFontSize / initialImageHeight.current;
-      setfontSizeRatio(ratio);
+      if (Math.abs(ratio - lastFontSizeRatio.current) >= 0.001) {
+        lastFontSizeRatio.current = ratio;
+        setfontSizeRatio(ratio);
+      }
     }
   }
 

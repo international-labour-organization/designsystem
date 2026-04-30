@@ -1,5 +1,55 @@
 # @ilo-org/styles
 
+## 1.12.0
+
+### Minor Changes
+
+- 4994ea207: Add new colour theme tokens to the `/scss/theme/_foundation.scss` file. Learn more about the [ILO Design System colors](packages/styles/scss/theme/_foundation.scss).
+
+## 1.11.4
+
+### Patch Changes
+
+- Updated dependencies [429094e31]
+  - @ilo-org/icons@2.4.1
+
+## 1.11.3
+
+### Patch Changes
+
+- b647b985b: **List:** Update heading and list item styles
+
+## 1.11.2
+
+### Patch Changes
+
+- 1bf3be5ee: **Logo:** Tweak to logo component needed for logo generator to size logos correctly
+
+## 1.11.1
+
+### Patch Changes
+
+- 385f4b98c: **Video:** Fix bug where restarting the player caused play button to resize
+
+## 1.11.0
+
+### Minor Changes
+
+- 70500d207: We have removed the dependecy on the `@ilo-org/themes` package, which will soon be deprecated.
+- 2f571182b: **Hero/HeroCard:** Remove theme package variables
+
+### Patch Changes
+
+- 0cc87c1e8: **Notification:** Fixed layout issues and appearance of cta
+- beab2eec1: **SearchField:** Refactor to improve styling and performance
+
+## 1.10.2
+
+### Patch Changes
+
+- 8e8765baa: **TableOfContents:** Fix text overlapping arrow icon
+- 69a5029d8: **LinkList:** Fix incorrect font-sizes and weights
+
 ## 1.10.1
 
 ### Patch Changes

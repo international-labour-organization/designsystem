@@ -1,4 +1,3 @@
-@use "../tokens" as *;
 @use "../functions" as *;
 @import "../mixins";
 
@@ -54,7 +53,7 @@
   }
 
   &--link {
-    border-bottom: px-to-rem($borders-base) solid var(--ilo-color-white);
+    border-bottom: var(--ilo-border-md) solid var(--ilo-color-white);
     color: var(--ilo-color-blue-dark);
     display: inline-block;
     padding: spacing(4) spacing(2);
@@ -72,7 +71,7 @@
       color: var(--ilo-color-blue);
       outline: none;
       text-decoration: underline;
-      text-decoration-thickness: px-to-rem($borders-base);
+      text-decoration-thickness: var(--ilo-border-md);
     }
   }
 }

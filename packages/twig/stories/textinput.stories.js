@@ -4,6 +4,10 @@ import { Maestro } from "@ilo-org/maestro";
 
 const story = Maestro.create(Textinput, TextinputPatterns);
 
+story.meta.parameters.githubLink = {
+  url: "/textinput/textinput.twig",
+};
+
 const Meta = {
   title: "Components/Forms/Text Input",
   tags: ["autodocs"],

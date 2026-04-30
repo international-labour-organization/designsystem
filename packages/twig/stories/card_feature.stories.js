@@ -4,6 +4,10 @@ import { Maestro } from "@ilo-org/maestro";
 
 const story = Maestro.create(CardFeature, CardFeaturePatterns);
 
+story.meta.parameters.githubLink = {
+  url: "/card_feature/card_feature.twig",
+};
+
 const Meta = {
   title: "Components/Cards/Feature Card",
   tags: ["autodocs"],

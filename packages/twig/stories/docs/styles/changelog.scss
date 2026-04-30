@@ -1,9 +1,11 @@
 .changelog {
   border: 1px solid var(--ilo-color-blue-ramp);
   padding: 20px;
+
   h2 {
     color: var(--ilo-color-blue);
     border-color: var(--ilo-color-blue-ramp);
+    margin: 0 0 1rem;
 
     &:after {
       content: "";
@@ -15,19 +17,21 @@
 
   h3 {
     color: var(--ilo-color-blue-dark);
+    margin: 0 0 1rem;
   }
 
   ul {
     list-style: none;
     padding-left: 1.5em;
     color: var(--ilo-color-gray-charcoal) !important;
-    margin-bottom: 40px;
+    margin-bottom: 1.5rem;
 
     li {
       position: relative;
       padding-left: 1.5em;
       font-family: monospace;
       font-size: 13px;
+      margin: 0 0 0.5rem;
 
       &::before {
         content: "\25B6";

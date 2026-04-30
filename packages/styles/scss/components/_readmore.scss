@@ -1,14 +1,13 @@
-@use "../tokens" as *;
 @use "../functions" as *;
 @import "../animations";
 @import "../mixins";
 
 .ilo--read-more {
   &--button {
-    background: map-get($color, "ux", "readmore", "default", "background");
+    background: transparent;
     border: none;
-    border-top: solid $borders-base $color-base-blue-light;
-    color: $color-ux-labels-actionable;
+    border-top: var(--ilo-border-md) solid var(--ilo-color-blue-lighter);
+    color: var(--ilo-color-blue-dark);
     font-family: var(--ilo-fonts-display);
     height: px-to-rem(56px);
     margin-top: spacing(8);
@@ -29,18 +28,18 @@
       transform: translateY(-50%);
       transform-origin: center center;
       width: px-to-rem(24px);
-      @include dataurlicon("chevron_down", $color-ux-labels-actionable);
+      @include icon("chevron_down", var(--ilo-color-blue-dark));
     }
 
     &:hover {
-      background: map-get($color, "ux", "readmore", "hover", "background");
-      border-top: solid $borders-base $color-base-blue-medium;
-      color: $color-ux-labels-hover;
+      background: var(--ilo-color-blue-lighter);
+      border-top: var(--ilo-border-md) solid var(--ilo-color-blue);
+      color: var(--ilo-color-blue);
       cursor: pointer;
       @include globaltransition("color, background-color, border-color");
 
       &:after {
-        @include dataurlicon("chevron_down", $color-ux-labels-hover);
+        @include icon("chevron_down", var(--ilo-color-blue));
       }
     }
 

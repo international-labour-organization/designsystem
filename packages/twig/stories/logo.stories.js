@@ -4,6 +4,10 @@ import { Maestro } from "@ilo-org/maestro";
 
 const story = Maestro.create(Logo, LogoPatterns);
 
+story.meta.parameters.githubLink = {
+  url: "/logo/logo.twig",
+};
+
 const Meta = {
   title: "Components/Media/Logo",
   tags: ["autodocs"],

@@ -4,6 +4,10 @@ import { Maestro } from "@ilo-org/maestro";
 
 const story = Maestro.create(Callout, CalloutPatterns);
 
+story.meta.parameters.githubLink = {
+  url: "/callout/callout.twig",
+};
+
 const Meta = {
   title: "Components/Feedback/Callout",
   tags: ["autodocs"],

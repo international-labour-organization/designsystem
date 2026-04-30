@@ -21,6 +21,7 @@ const NumberPicker = React.forwardRef<HTMLInputElement, NumberPickerProps>(
       max,
       min,
       step,
+      value,
     },
     ref
   ) => {
@@ -34,7 +35,7 @@ const NumberPicker = React.forwardRef<HTMLInputElement, NumberPickerProps>(
     const hasError = !disabled && !!error;
 
     const numberPickerClasses = classNames(inputClass, baseClass, {
-      error: hasError,
+      [`${inputClass}__error`]: hasError,
     });
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -45,6 +46,7 @@ const NumberPicker = React.forwardRef<HTMLInputElement, NumberPickerProps>(
 
     return (
       <input
+        value={value}
         ref={ref}
         id={id ? id : name}
         name={name}

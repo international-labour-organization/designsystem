@@ -4,6 +4,10 @@ import { Maestro } from "@ilo-org/maestro";
 
 const story = Maestro.create(Logogrid, LogogridPatterns);
 
+story.meta.parameters.githubLink = {
+  url: "/logogrid/logogrid.twig",
+};
+
 const Meta = {
   title: "Components/Media/Logo Grid",
   tags: ["autodocs"],

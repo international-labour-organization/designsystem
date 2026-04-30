@@ -4,6 +4,10 @@ import { Maestro } from "@ilo-org/maestro";
 
 const story = Maestro.create(Image, ImagePatterns);
 
+story.meta.parameters.githubLink = {
+  url: "/image/image.twig",
+};
+
 const Meta = {
   title: "Components/Media/Image",
   tags: ["autodocs"],

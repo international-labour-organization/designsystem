@@ -1,8 +1,11 @@
-import { Meta } from "@storybook/blocks";
+import { Meta, Unstyled } from "@storybook/blocks";
 
-<Meta title="Get started/Use with Drupal" />
+<Meta title="Get started/Base Theme" />
 
-# Use with Drupal
+<Unstyled>
+<div className="ilo--richtext ilo--richtext__theme__light">
+
+# Drupal Base Theme
 
 The recommended way of using the Twig component library in a Drupal site is by installing the [ILO Base Theme][1].
 
@@ -82,11 +85,11 @@ The full list of components is available at `/admin/appearance/ui/patterns`.
 
 ## Opinionated components
 
-### The `hero` component
+### The hero component
 
 The `hero` component generates a breadcrumb trail based on the current route and ensures proper caching for the breadcrumb metadata.
 
-### The `navigation` component
+### The navigation component
 
 The ILO base theme has specific conventions for handling the main menu. When the companion module is enabled, a "More"
 link is automatically created. This menu link serves to group all links under the header's expandable "More" panel.
@@ -140,3 +143,6 @@ relevant ILO Design System classes directly to Drupal form templates.
 [5]: https://github.com/openeuropa/composer-artifacts
 [6]: https://www.drupal.org/project/twig_tweak
 [7]: https://www.drupal.org/project/twig_field_value
+
+</div>
+</Unstyled>

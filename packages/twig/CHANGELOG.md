@@ -1,5 +1,68 @@
 # @ilo-org/twig
 
+## 1.12.5
+
+### Patch Changes
+
+- Updated dependencies [4994ea207]
+  - @ilo-org/styles@1.12.0
+
+## 1.12.4
+
+### Patch Changes
+
+- Updated dependencies [429094e31]
+  - @ilo-org/icons@2.4.1
+  - @ilo-org/styles@1.11.4
+
+## 1.12.3
+
+### Patch Changes
+
+- b647b985b: **List:** Update heading and list item styles
+- 718776194: **CardGroup:** Make sure `isvideo` gets passed to cards.
+- Updated dependencies [b647b985b]
+  - @ilo-org/styles@1.11.3
+
+## 1.12.2
+
+### Patch Changes
+
+- Updated dependencies [1bf3be5ee]
+  - @ilo-org/styles@1.11.2
+
+## 1.12.1
+
+### Patch Changes
+
+- Updated dependencies [385f4b98c]
+  - @ilo-org/styles@1.11.1
+
+## 1.12.0
+
+### Minor Changes
+
+- 990a3586c: We have removed the dependecy on the `@ilo-org/themes` package, which will soon be deprecated.
+
+### Patch Changes
+
+- 0cc87c1e8: **Notification:** Fixed layout issues and appearance of cta
+- beab2eec1: **SearchField:** Refactor to improve styling and performance
+- Updated dependencies [70500d207]
+- Updated dependencies [0cc87c1e8]
+- Updated dependencies [beab2eec1]
+- Updated dependencies [2f571182b]
+  - @ilo-org/styles@1.11.0
+
+## 1.11.1
+
+### Patch Changes
+
+- 014b07f72: **Navigation:** This component will be deprecated in favor of `SubsiteNav` with `type=main`. It will now show a deprecation warning in the console.
+- Updated dependencies [8e8765baa]
+- Updated dependencies [69a5029d8]
+  - @ilo-org/styles@1.10.2
+
 ## 1.11.0
 
 ### Minor Changes

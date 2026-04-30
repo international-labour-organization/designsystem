@@ -1,35 +1,72 @@
-import { InputProps } from "../Input/Input.props";
+import { FormControlPublicProps } from "../FormControl/FormControl.props";
 
-export interface ButtonProps {
+/**
+ * @deprecated Pass these properties at the top level of `SearchFieldProps`
+ * instead. This shape will be removed in a future major release.
+ */
+export interface SearchFieldInputProps {
+  disabled?: boolean;
   /**
-   * The button's label.
+   * @deprecated Use the top-level `error` (boolean) together with
+   * `errorMessage` (string) instead.
    */
-  label: Required<string>;
+  error?: string | false;
+  helper?: string | false;
+  id?: string;
+  label?: string;
+  name?: string;
+  placeholder?: string;
 }
 
-export interface SearchFieldProps {
+export interface SearchFieldProps
+  extends Omit<FormControlPublicProps, "label"> {
+  /**
+   * The FormControl's label. Optional on SearchField.
+   */
+  label?: string;
+
   /**
    * Specify the action attribute for the search form
    */
   action?: string;
 
   /**
-   * Specify the properties of the submit button
-   */
-  button?: Required<ButtonProps>;
-
-  /**
    * The search field submit button's click function.
    */
-  callback?: (e: React.MouseEvent<HTMLInputElement, MouseEvent>) => unknown;
+  callback?: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => unknown;
 
   /**
-   * Specify an optional className to be added to your Button.
+   * Placeholder text for the search input
    */
-  className?: string;
+  placeholder?: string;
 
   /**
-   * Specify the properties of the search field input
+   * Name attribute for the search input
    */
-  input?: InputProps;
+  name?: string;
+
+  /**
+   * Id attribute for the search input. Defaults to an auto-generated id.
+   */
+  id?: string;
+
+  /**
+   * The search field's size.
+   */
+  size?: "small" | "large";
+
+  /**
+   * @deprecated Pass `value`, `placeholder`, `label`, `name`, `id`, `helper`,
+   * `disabled`, `error`, and `errorMessage` at the top level of
+   * `SearchFieldProps` instead. This prop will be removed in a future
+   * major release.
+   */
+  input?: SearchFieldInputProps;
+
+  /**
+   * Callback function triggered on input change for dynamic search.
+   * Receives the current search value as the user types, enabling
+   * real-time search functionality.
+   */
+  onInputChange?: (value: string) => void;
 }

@@ -4,6 +4,10 @@ import { Maestro } from "@ilo-org/maestro";
 
 const story = Maestro.create(Navigation, NavigationPatterns);
 
+story.meta.parameters.githubLink = {
+  url: "/navigation/navigation.twig",
+};
+
 const Meta = {
   title: "Components/Navigation/Navigation",
   tags: ["autodocs"],

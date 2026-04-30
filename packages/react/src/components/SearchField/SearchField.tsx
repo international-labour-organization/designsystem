@@ -5,23 +5,67 @@ import { SearchFieldProps } from "./SearchField.props";
 import { Icon } from "../Icon";
 import { FormControl } from "../FormControl";
 
+// @TODO Remove the deprecated `input` prop (and SearchFieldInputProps) in
+// the next major release. Until then, the merge logic below preserves
+// backward compatibility for consumers still passing `input={{ ... }}`.
+
 const SearchField: FC<
   SearchFieldProps & React.RefAttributes<HTMLInputElement>
 > = forwardRef<HTMLInputElement, SearchFieldProps>(
-  ({ action, callback, className, input }, ref) => {
-    const [searchValue, setSearchValue] = useState("");
+  (
+    {
+      action,
+      callback,
+      className,
+      input,
+      onInputChange,
+      label,
+      helper,
+      error,
+      errorMessage,
+      disabled,
+      style,
+      labelPlacement,
+      labelSize,
+      tooltip,
+      theme,
+      placeholder,
+      name,
+      id,
+      size = "large",
+    },
+    ref
+  ) => {
+    // Top-level props win; fall back to the deprecated `input` prop so
+    // existing consumers keep working unchanged.
+    const resolved = {
+      placeholder: placeholder ?? input?.placeholder,
+      name: name ?? input?.name,
+      label: label ?? input?.label ?? "",
+      helper: helper ?? (input?.helper || undefined),
+      error: error ?? !!input?.error,
+      errorMessage:
+        errorMessage ??
+        (typeof input?.error === "string" ? input.error : undefined),
+      // Only forwarded to the input/button — FormControl still receives the
+      // top-level `disabled` to preserve the prior behavior.
+      inputDisabled: disabled ?? input?.disabled,
+    };
+
+    const [searchValue, setSearchValue] = useState<string>("");
     const { prefix } = useGlobalSettings();
     const baseClass = `${prefix}--searchfield`;
     const buttonClass = `${baseClass}--button`;
+    const formClass = `${baseClass}--form`;
     const clearButtonClass = `${baseClass}--clear-button ${
       searchValue.trim() !== "" && "show"
     }`;
     const rId = useId();
-    const fieldId = input?.id || rId;
+    const fieldId = id ?? input?.id ?? rId;
 
     const fieldSetClass = `${prefix}--fieldset`;
 
-    const handleClick: React.MouseEventHandler<HTMLInputElement> = (e) => {
+    const handleClick: React.MouseEventHandler<HTMLButtonElement> = (e) => {
       if (callback) {
         callback(e);
       }
@@ -34,37 +78,50 @@ const SearchField: FC<
       setSearchValue("");
     };
 
-    // Update search value on input
+    // Update search value on input and trigger dynamic search callback
     const onKeyPress: React.ChangeEventHandler<HTMLInputElement> = (e) => {
-      setSearchValue(e.target.value);
+      const newValue = e.target?.value as string;
+      setSearchValue(newValue);
+      if (onInputChange) {
+        onInputChange(newValue);
+      }
     };
 
-    const inputHasType = !!input?.type;
-
-    if (!inputHasType) {
-      throw new Error("SearchField: Input must have type prop");
-    }
-
-    return inputHasType ? (
-      <form action={action}>
+    return (
+      <form action={action} className={formClass} style={{ display: "flex" }}>
         <FormControl
           fieldId={fieldId}
-          error={!!input?.error}
-          helper={input?.helper || ""}
-          label={input?.label || ""}
-          style={{ width: "100%" }}
+          error={resolved.error}
+          errorMessage={resolved.errorMessage}
+          helper={resolved.helper}
+          label={resolved.label}
+          disabled={disabled}
+          labelPlacement={labelPlacement}
+          labelSize={labelSize ?? size}
+          tooltip={tooltip}
+          theme={theme}
+          style={{ width: "100%", ...style }}
         >
-          <div className={classNames(className, baseClass)}>
+          <div
+            className={classNames(
+              className,
+              baseClass,
+              `${baseClass}__size__${size}`
+            )}
+          >
             <div className={fieldSetClass}>
               <input
-                className={`${prefix}--text-input`}
+                className={classNames(
+                  `${prefix}--input`,
+                  `${prefix}--input__size__${size}`
+                )}
                 id={fieldId}
-                name={input.name}
+                name={resolved.name}
                 onChange={onKeyPress}
-                placeholder={input?.placeholder}
+                placeholder={resolved.placeholder}
                 value={searchValue}
                 ref={ref}
-                disabled={input?.disabled}
+                disabled={resolved.inputDisabled}
                 type="search"
               />
               <span
@@ -75,16 +132,16 @@ const SearchField: FC<
                 <Icon name="close" hidden={true} />
               </span>
             </div>
-            <input
+            <button
               className={buttonClass}
-              disabled={input?.disabled}
+              disabled={resolved.inputDisabled}
               type="submit"
               onClick={handleClick}
             />
           </div>
         </FormControl>
       </form>
-    ) : null;
+    );
   }
 );
 

@@ -3,6 +3,20 @@ import userEvent from "@testing-library/user-event";
 import { describe, it, expect, vi, beforeEach } from "vitest";
 import { AudioPlayer } from "../src/components/AudioPlayer/AudioPlayer";
 
+interface AudioMock {
+  currentTime: number;
+  duration: number;
+  volume: number;
+  play: () => Promise<void>;
+  pause: () => void;
+}
+
+declare global {
+  interface HTMLMediaElement {
+    _mock: AudioMock;
+  }
+}
+
 const sampleProps = {
   src: "/test-audio.mp3",
   name: "Test Track",
@@ -23,25 +37,25 @@ beforeEach(() => {
 
   Object.defineProperty(window.HTMLMediaElement.prototype, "duration", {
     get() {
-      return this._mock.duration;
+      return (this as HTMLMediaElement)._mock.duration;
     },
   });
 
   Object.defineProperty(window.HTMLMediaElement.prototype, "currentTime", {
     get() {
-      return this._mock.currentTime;
+      return (this as HTMLMediaElement)._mock.currentTime;
     },
     set(time: number) {
-      this._mock.currentTime = time;
+      (this as HTMLMediaElement)._mock.currentTime = time;
     },
   });
 
   Object.defineProperty(window.HTMLMediaElement.prototype, "volume", {
     get() {
-      return this._mock.volume;
+      return (this as HTMLMediaElement)._mock.volume;
     },
     set(volume: number) {
-      this._mock.volume = volume;
+      (this as HTMLMediaElement)._mock.volume = volume;
     },
   });
 

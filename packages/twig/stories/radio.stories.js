@@ -4,6 +4,10 @@ import { Maestro } from "@ilo-org/maestro";
 
 const story = Maestro.create(Radio, RadioPatterns);
 
+story.meta.parameters.githubLink = {
+  url: "/radio/radio.twig",
+};
+
 const Meta = {
   title: "Components/Forms/Radio",
   tags: ["autodocs"],

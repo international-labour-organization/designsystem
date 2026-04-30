@@ -19,6 +19,10 @@
     display: inline-block;
     position: relative;
 
+    &__size__small {
+      --ilo-dropdown-height: #{px-to-rem(32px)};
+    }
+
     &:before {
       content: "";
       pointer-events: none;
@@ -67,16 +71,26 @@
   &:hover,
   &:focus,
   &:active {
-    border-left-color: var(--ilo-color-blue);
-    border-left-width: px-to-rem(3px);
-    padding-left: calc(#{spacing(4)} - #{px-to-rem(1px)});
+    border-inline-start-color: var(--ilo-color-blue);
+    box-shadow: inset px-to-rem(1px) 0 0 0 var(--ilo-color-blue);
     background-color: var(--ilo-dropdown-background-color-active);
     --ilo-dropdown-color: var(--ilo-color-gray-charcoal);
+  }
+
+  [dir="rtl"] &:hover,
+  [dir="rtl"] &:focus,
+  [dir="rtl"] &:active {
+    box-shadow: inset px-to-rem(-1px) 0 0 0 var(--ilo-color-blue);
   }
 
   option {
     width: 100%;
     text-overflow: ellipsis;
     overflow: hidden;
+  }
+
+  &__size__small {
+    padding: 0 spacing(11) 0 spacing(3);
+    @include typography("body-xsmall");
   }
 }

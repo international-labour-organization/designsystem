@@ -1,6 +1,6 @@
-@use "../tokens" as *;
-
 .ilo--logo {
+  display: flex;
+
   &--visibility--hidden {
     visibility: hidden;
   }
@@ -12,11 +12,11 @@
 
   &--theme {
     &--light {
-      --logo-theme-color: #{$brand-ilo-blue};
+      --logo-theme-color: var(--ilo-color-blue);
     }
 
     &--dark {
-      --logo-theme-color: #{$brand-ilo-white};
+      --logo-theme-color: var(--ilo-color-white);
     }
   }
 
@@ -45,7 +45,7 @@
 
     &--image {
       height: 100%;
-      width: 50%;
+      width: 60%;
     }
 
     &--lock-up {
@@ -55,7 +55,7 @@
       flex-flow: row nowrap;
       align-items: center;
       justify-content: flex-start;
-      width: 50%;
+      width: 40%;
       bottom: var(--lockup-bottom-offset);
 
       &--separator {

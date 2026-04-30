@@ -2,61 +2,57 @@ import { SearchFieldProps } from "./SearchField.props";
 
 const searchfield: SearchFieldProps = {
   callback: () => {},
-  input: {
-    callback: () => {},
-    disabled: false,
-    name: "search",
-    placeholder: "Search Field",
-    type: "search",
-    value: "",
-  },
+  disabled: false,
+  name: "search",
+  placeholder: "Search Field",
 };
 
 const searchfielderror: SearchFieldProps = {
   callback: () => {},
-  input: {
-    callback: () => {},
-    disabled: false,
-    error: "Error message",
-    name: "search",
-    placeholder: "Search Field",
-    type: "search",
-    value: "",
-  },
+  disabled: false,
+  error: true,
+  errorMessage: "Error message",
+  name: "search",
+  placeholder: "Search Field",
 };
 
 const searchfielddisabled: SearchFieldProps = {
   callback: () => {},
-  input: {
-    callback: () => {},
-    disabled: true,
-    name: "search",
-    placeholder: "Search Field",
-    type: "search",
-    value: "",
-  },
+  disabled: true,
+  name: "search",
+  placeholder: "Search Field",
 };
 
 const searchfieldlabel: SearchFieldProps = {
   callback: () => {},
-  input: {
-    label: "Search Field",
-    name: "search",
-    placeholder: "Search Field",
-    type: "search",
-    value: "",
-  },
+  label: "Search Field",
+  name: "search",
+  placeholder: "Search Field",
 };
 
 const searchfieldhelper: SearchFieldProps = {
   callback: () => {},
-  input: {
-    helper: "Search Field Helper text",
-    name: "search",
-    placeholder: "Search Field",
-    type: "search",
-    value: "",
+  helper: "Search Field Helper text",
+  name: "search",
+  placeholder: "Search Field",
+};
+
+const searchfielddynamic: SearchFieldProps = {
+  callback: () => {},
+  onInputChange: (value: string) => {
+    console.log("Dynamic search triggered:", value);
   },
+  name: "search",
+  placeholder: "Type to search dynamically...",
+};
+
+const searchfieldsmall: SearchFieldProps = {
+  callback: () => {},
+  label: "Search",
+  name: "search",
+  placeholder: "Search Field",
+  size: "small",
+  value: "",
 };
 
 /**
@@ -68,6 +64,8 @@ const SearchFieldArgs = {
   searchfielddisabled,
   searchfieldlabel,
   searchfieldhelper,
+  searchfielddynamic,
+  searchfieldsmall,
 };
 
 export default SearchFieldArgs;

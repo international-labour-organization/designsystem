@@ -1,4 +1,3 @@
-@import "@ilo-org/themes/build/scss/tokens";
 @import "@ilo-org/styles/scss/monorepo";
 
 .sbdocs {
@@ -10,6 +9,17 @@
   h1.sbdocs-title + p {
     font-family: var(--ilo-fonts-copy);
     font-size: 16px;
+  }
+
+  pre {
+    margin-block: 0;
+  }
+
+  code {
+    padding-inline: 0.25rem;
+    padding-block: 0.5rem;
+    font-weight: 700;
+    font-size: 0.8em;
   }
 }
 

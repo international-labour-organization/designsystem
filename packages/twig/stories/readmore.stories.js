@@ -4,6 +4,10 @@ import { Maestro } from "@ilo-org/maestro";
 
 const story = Maestro.create(Readmore, ReadmorePatterns);
 
+story.meta.parameters.githubLink = {
+  url: "/readmore/readmore.twig",
+};
+
 const Meta = {
   title: "Components/User Interface/Read More",
   tags: ["autodocs"],

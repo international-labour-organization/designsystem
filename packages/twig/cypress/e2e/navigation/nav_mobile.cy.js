@@ -71,9 +71,8 @@ describe("MobileNav", () => {
     });
 
     it("updates burger menu aria-expanded attribute when drawer is opened/closed", () => {
-      cy.get("[class$='burger']")
-        .click()
-        .should("have.attr", "aria-expanded", "true");
+      cy.get("[class$='burger']").click();
+      cy.get("[class$='burger']").should("have.attr", "aria-expanded", "true");
       cy.get(".ilo--nav-mobile-drawer__header-close").first().click();
       cy.get("[class$='burger']").should("have.attr", "aria-expanded", "false");
     });

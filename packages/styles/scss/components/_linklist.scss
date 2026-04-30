@@ -1,4 +1,3 @@
-@use "../tokens" as *;
 @use "../functions" as *;
 @import "../animations";
 @import "../mixins";
@@ -9,25 +8,15 @@
 
   &--headline {
     font-family: var(--ilo-fonts-display);
-    font-weight: map-get($type, "weights", "label");
+    font-weight: var(--ilo-font-weight-bold);
     @include typography("heading-3");
-    @include textmargin("margin-bottom", 30px, "headline-5", "display", 0, 0);
+    margin-bottom: px-to-rem(30px);
   }
 
   &--links {
     &--headline {
-      font-family: var(--ilo-fonts-display);
-      font-weight: map-get($type, "weights", "label");
-      @include typography("heading-4");
-      @include textmargin("margin-bottom", 27px, "headline-6", "display", 0, 0);
-      @include textmargin(
-        "margin-top",
-        $spacing-spacing-12,
-        "headline-6",
-        "display",
-        0,
-        0
-      );
+      @include typography("highlight-large");
+      margin: spacing(10) 0 spacing(5);
     }
   }
 
@@ -86,10 +75,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: px-to-rem($borders-base) solid $color-base-neutrals-lighter;
-    color: map-get($color, "link", "text", "default");
-    font-family: var(--ilo-fonts-display);
-    font-weight: map-get($type, "weights", "section");
+    border-bottom: var(--ilo-border-md) solid var(--ilo-color-gray-light);
+    color: var(--ilo-link-color-default-light);
     @include typography("highlight-medium");
     padding-top: spacing(4);
     padding-bottom: spacing(4);
@@ -97,12 +84,12 @@
     @include globaltransition("color, background-color, border-color");
 
     &:visited {
-      color: map-get($color, "link", "text", "default");
+      color: var(--ilo-link-color-default-light);
       @include globaltransition("color");
     }
 
     &:active {
-      color: map-get($color, "link", "text", "active");
+      color: var(--ilo-link-color-active-light);
       outline: none;
       @include globaltransition("color");
     }
@@ -110,10 +97,10 @@
     &:hover,
     &:focus {
       --ilo-link-list-color-icon: var(--ilo-color-blue);
-      border-bottom: px-to-rem($borders-base) solid
-        map-get($color, "link", "text", "hover");
-      background-color: $color-base-blue-light;
-      color: map-get($color, "link", "text", "hover");
+      border-bottom: var(--ilo-border-md) solid
+        var(--ilo-link-color-hover-light);
+      background-color: var(--ilo-color-blue-lighter);
+      color: var(--ilo-link-color-hover-light);
       outline: none;
       @include globaltransition("color, background-color, border-color");
     }
@@ -130,19 +117,19 @@
     --ilo-link-list-color-indent-icon: var(--ilo-color-white);
     .ilo--link-list--headline,
     .ilo--link-list--links--headline {
-      color: $color-base-neutrals-white;
+      color: var(--ilo-color-white);
     }
 
     .ilo--link-list--link {
-      border-bottom: px-to-rem($borders-base) solid rgba(237, 240, 242, 0.4);
+      border-bottom: var(--ilo-border-md) solid rgba(237, 240, 242, 0.4);
 
       .ilo--link-list--label {
-        color: $color-base-neutrals-white;
+        color: var(--ilo-color-white);
       }
 
       &:visited {
         .ilo--link-list--label {
-          color: $color-base-neutrals-white;
+          color: var(--ilo-color-white);
           @include globaltransition("color");
         }
       }
@@ -151,7 +138,7 @@
         outline: none;
 
         .ilo--link-list--label {
-          color: map-get($color, "link", "text", "active");
+          color: var(--ilo-link-color-active-light);
           @include globaltransition("color");
         }
       }
@@ -161,7 +148,7 @@
         outline: none;
 
         .ilo--link-list--label {
-          color: $color-base-blue-medium;
+          color: var(--ilo-color-blue);
           @include globaltransition("color");
         }
       }

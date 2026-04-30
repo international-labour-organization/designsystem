@@ -1,22 +1,13 @@
-@use "../tokens" as *;
 @use "../functions" as *;
 @import "../mixins";
 
 .ilo--textarea {
-  -webkit-appearance: none;
-  -moz-appearance: none;
   appearance: none;
-  background-color: map-get(
-    $color,
-    "formelements",
-    "input",
-    "default",
-    "background"
-  );
-  @include bordervalues("input", "formelements");
+  background-color: var(--ilo-color-white);
+  border: var(--ilo-border-md) solid var(--ilo-color-gray-base);
   box-sizing: border-box;
   font-family: var(--ilo-fonts-copy);
-  font-weight: map-get($type, "weights", "section");
+  font-weight: var(--ilo-font-weight-medium);
   @include typography("highlight-medium");
   height: px-to-rem(48px);
   margin: spacing(0);
@@ -29,15 +20,15 @@
   width: 100%;
 
   &:focus {
-    background-color: map-get(
-      $color,
-      "formelements",
-      "input",
-      "focus",
-      "background"
-    );
-    @include bordervalues("input", "formelements", "focus");
-    padding-left: spacing(3);
+    background-color: var(--ilo-color-blue-lighter);
+    border: var(--ilo-border-md) solid var(--ilo-color-gray-base);
+    border-inline-start-color: var(--ilo-color-blue-medium);
+    box-shadow: inset px-to-rem(1px) 0 0 0 var(--ilo-color-blue-medium);
+    outline: none;
+  }
+
+  [dir="rtl"] &:focus {
+    box-shadow: inset px-to-rem(-1px) 0 0 0 var(--ilo-color-blue-medium);
   }
 
   &:disabled {
@@ -48,13 +39,15 @@
   &:invalid,
   &__error,
   &__error & {
-    background-color: map-get(
-      $color,
-      "formelements",
-      "input",
-      "error",
-      "background"
-    );
-    @include bordervalues("input", "formelements", "error");
+    background-color: var(--ilo-color-white);
+    border: var(--ilo-border-md) solid var(--ilo-color-gray-base);
+    border-inline-start-color: var(--ilo-color-red-dark);
+    box-shadow: inset px-to-rem(1px) 0 0 0 var(--ilo-color-red-dark);
+  }
+
+  [dir="rtl"] &:invalid,
+  [dir="rtl"] &__error,
+  [dir="rtl"] &__error & {
+    box-shadow: inset px-to-rem(-1px) 0 0 0 var(--ilo-color-red-dark);
   }
 }

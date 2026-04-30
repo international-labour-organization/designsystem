@@ -4,6 +4,10 @@ import { Maestro } from "@ilo-org/maestro";
 
 const story = Maestro.create(CardMultiLink, CardMultiLinkPatterns);
 
+story.meta.parameters.githubLink = {
+  url: "/card_multilink/card_multilink.twig",
+};
+
 const Meta = {
   title: "Components/Cards/Multi Link Card",
   tags: ["autodocs"],

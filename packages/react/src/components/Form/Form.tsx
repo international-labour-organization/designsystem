@@ -1,9 +1,7 @@
-import { forwardRef } from "react";
+import { forwardRef, createContext, useContext } from "react";
 import { useGlobalSettings } from "../../hooks";
 import classNames from "classnames";
 import { FormProps } from "./Form.props";
-
-import { createContext, useContext } from "react";
 import { ThemeTypes } from "../../types";
 
 interface FormContextValue {

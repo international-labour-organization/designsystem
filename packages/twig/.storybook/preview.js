@@ -63,7 +63,8 @@ const preview = {
         order: [
           "ILO Design System for Twig",
           "Get started",
-          ["Introduction"],
+          ["Introduction", "Base Theme", "Custom Theme", "Changelog"],
+          "Examples",
           "Components",
         ],
       },
@@ -73,6 +74,10 @@ const preview = {
         color: /(background|color)$/i,
         date: /Date$/i,
       },
+    },
+    githubLink: {
+      baseURL:
+        "https://github.com/international-labour-organization/designsystem/blob/develop/packages/twig/src/components/",
     },
   },
 };

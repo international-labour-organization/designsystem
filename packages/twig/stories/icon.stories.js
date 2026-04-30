@@ -5,6 +5,10 @@ import * as Icons from "@ilo-org/icons";
 
 const story = Maestro.create(Icon, IconPatterns);
 
+story.meta.parameters.githubLink = {
+  url: "/icon/icon.twig",
+};
+
 const iconNames = new Set();
 
 for (const icon in Icons) {

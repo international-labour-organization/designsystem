@@ -2,142 +2,67 @@
 
 This package provides the implementation of the Design System using [React](https://reactjs.org). It also includes a [Storybook](https://storybook.js.org/) project for documentation and development of the components in the system. It has dependencies on the following other @ilo-org packages:
 
-- [@ilo-org/themes](./packages/themes)
-- [@ilo-org/fonts](./packages/fonts)
-- [@ilo-org/styles](./packages/styles)
-- [@ilo-org/icons](./packages/icons)
-- [@ilo-org/icons-react](./packages/icons-react)
+- [@ilo-org/fonts](../fonts)
+- [@ilo-org/styles](../styles)
+- [@ilo-org/icons](../icons)
+- [@ilo-org/icons-react](../icons-react)
 
-## Installation
+## Installation and Usage
 
-To install
+For detailed instructions on installing and using this package in your project, please visit the [Storybook documentation](https://react.ui.ilo.org). The Storybook includes:
 
-```bash
-npm i @ilo-org/react
+- Installation instructions
+- Component documentation
+- Usage examples
+- API references
+- Code samples
+
+## Styles and Fonts
+
+The `@ilo-org/react` package includes styles and fonts, so you don't need to install `@ilo-org/styles` or `@ilo-org/fonts` separately.
+
+### Importing Styles
+
+You can import styles directly from the React package:
+
+```javascript
+// Import all styles
+import "@ilo-org/react/styles/index.css";
+
+// Or import individual component styles
+import "@ilo-org/react/styles/components/button.css";
 ```
 
-To start storybook
+Alternatively, if you're using a bundler that supports CSS imports, you can reference the styles in your HTML:
 
-```bash
-pnpm storybook
+```html
+<link
+  rel="stylesheet"
+  href="node_modules/@ilo-org/react/lib/styles/index.css"
+/>
 ```
 
-To build storybook
+### Importing Fonts
 
-```bash
-pnpm build:storybook
+Fonts are included as dependencies and can be imported using your bundler:
+
+```javascript
+// JavaScript/TypeScript (with bundler support)
+import "@ilo-org/fonts";
 ```
 
-To test formatting
-
-```bash
-pnpm format
+```scss
+// SCSS
+@import "~@ilo-org/fonts";
 ```
 
-To test formatting and fix errors
+The fonts package is automatically installed as a dependency of `@ilo-org/react`, so you don't need to add it to your `package.json`.
 
-```bash
-pnpm format:fix
-```
+## Development
 
-To lint
+This section covers commands for developing and working with the React package locally. The commands provided should be run from the root of the repository.
 
-```bash
-pnpm lint
-```
-
-To test formatting and fix errors
-
-```bash
-pnpm lint:fix
-```
-
-## Questions and Feedback
-
-(TBD)
-
-## Accessibility Standards
-
-(TBD)
-
-## Contributing
-
-ILO Design System is an open-source project and we welcome your contributions! Before submitting a pull request, please take a moment to review the following guidelines.
-
-### Branches
-
-| Branch    | Purpose                            |
-| --------- | ---------------------------------- |
-| `main`    | The latest version of all packages |
-| `develop` | The next release of all packages   |
-
-### Contribution workflow
-
-1. Fork and clone the repo
-2. Create a new branch from the `develop` branch
-3. Make your changes and [add a changeset](#versioning) identifying the changes and affected packages
-4. Push your branch to the forked version of the repo
-5. Open a pull request back to the `develop` branch of the main repo
-
-### Versioning
-
-The project uses [changesets](https://github.com/changesets/changesets) to manage package versioning. All pull requests that will affect the project's semantic versioning must include a changest.
-
-See more information on [how to add a changeset](https://github.com/changesets/changesets/blob/main/docs/adding-a-changeset.md)
-
-### Conventions
-
-Contributions should respect the following conventions for branch names, commit messages and pull request descriptions
-
-#### Commits
-
-Commits should follow [Angular Commit Message Guidelines](https://github.com/angular/angular/blob/22b96b9/CONTRIBUTING.md#commit).
-
-```
-<type>(<scope>): <subject>
-```
-
-Examples:
-
-```
-fix(react): change button color on hover
-feat(twig): add button component
-ci(github): add release workflow
-perf(react): improve modal animations
-```
-
-#### Types
-
-- build: Changes that affect the build system or external dependencies (example scopes: gulp, broccoli, npm)
-- ci: Changes to our CI configuration files and scripts (example scopes: Travis, Circle, BrowserStack, SauceLabs)
-- docs: Documentation only changes
-- feat: A new feature
-- fix: A bug fix
-- perf: A code change that improves performance
-- refactor: A code change that neither fixes a bug nor adds a feature
-- style: Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)
-- test: Adding missing tests or correcting existing tests
-
-#### Scopes
-
-This should be a package name or an aspect of the project's configuration.
-
-### Branches
-
-Branch names should broadly mirror the same convention as commits.
-
-Examples:
-
-```
-feat/react/modal-wrapper
-fix/twig/modal-wrapper
-```
-
-### Pull requests
-
-Pull requests should include a descriptive name and detailed explanation of what merging the pull request will accomplish. Authors should make sure to reference Github issues that the the pull request will fix or affect.
-
-## Building the project
+### Prerequisites
 
 Use [nvm](https://github.com/nvm-sh/nvm) to make sure you have the correct version of node installed.
 
@@ -145,44 +70,74 @@ Use [nvm](https://github.com/nvm-sh/nvm) to make sure you have the correct versi
 nvm use
 ```
 
-Install [pnpm](https://pnpm.io/).
+Install [pnpm](https://pnpm.io/). Check the [package.json](../../package.json) to get the correct version.
 
 ```bash
-npm i -g pnpm
+npm i -g pnpm@9.14.4
 ```
 
-Install dependencies
+### Storybook
+
+Start Storybook in development mode:
 
 ```bash
-pnpm recursive install
+pnpm react:dev:docs
 ```
 
-Build all packages.
+Build Storybook for production:
 
 ```bash
-pnpm build:all
+pnpm react:build:docs
 ```
 
-Start React storybook
+### Building
+
+Build the library:
 
 ```bash
-pnpm start:react-storybook
+pnpm react:build:lib
 ```
 
-Start Twig storybook
+Build the library in watch mode:
 
 ```bash
-pnpm start:twig-storybook
+pnpm --filter react dev:lib
 ```
 
-Check types
+### Code Quality
+
+Lint code:
 
 ```bash
-pnpm check:types
+pnpm --filter react lint
 ```
 
-Run all tests
+Lint code and fix errors:
 
 ```bash
-pnpm test:all
+pnpm --filter react lint:fix
 ```
+
+Check TypeScript types:
+
+```bash
+pnpm --filter react check
+```
+
+### Testing
+
+Run tests:
+
+```bash
+pnpm --filter react test
+```
+
+Run tests with UI:
+
+```bash
+pnpm --filter react test:ui
+```
+
+## Contributing
+
+For contribution guidelines, please see the [Contributing Guide](../../contributing.md).

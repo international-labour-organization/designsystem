@@ -4,6 +4,10 @@ import { Maestro } from "@ilo-org/maestro";
 
 const story = Maestro.create(Loading, LoadingPatterns);
 
+story.meta.parameters.githubLink = {
+  url: "/loading/loading.twig",
+};
+
 const Meta = {
   title: "Components/Transitions/Loading",
   tags: ["autodocs"],

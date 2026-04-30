@@ -1,5 +1,105 @@
 # @ilo-org/react
 
+## 1.0.0
+
+### Major Changes
+
+- 6db2d35e2: ILO Design System React package is now in production in multiple applications and is now in version 1
+
+### Patch Changes
+
+- Updated dependencies [4994ea207]
+  - @ilo-org/styles@1.12.0
+
+## 0.28.9
+
+### Patch Changes
+
+- 02123f571: **List/ListItem:** Correctly export `ListItem`, it wasn't getting exported before
+  - @ilo-org/icons-react@1.0.7
+  - @ilo-org/styles@1.11.4
+
+## 0.28.8
+
+### Patch Changes
+
+- b647b985b: **List:** Update heading and list item styles
+- Updated dependencies [b647b985b]
+  - @ilo-org/styles@1.11.3
+
+## 0.28.7
+
+### Patch Changes
+
+- Updated dependencies [1bf3be5ee]
+  - @ilo-org/styles@1.11.2
+
+## 0.28.6
+
+### Patch Changes
+
+- ce9a5bfb3: **Logo:** Avoid re-rendering loop when small changes to the component occur
+
+## 0.28.5
+
+### Patch Changes
+
+- c764da793: **NumberPicker:** Add missing `value` prop
+
+## 0.28.4
+
+### Patch Changes
+
+- Updated dependencies [385f4b98c]
+  - @ilo-org/styles@1.11.1
+
+## 0.28.3
+
+### Patch Changes
+
+- 159803b46: **Video:** Fix issue preventing component to work with React 18 StrictMode. More details [here](https://github.com/videojs/video.js/issues/7746)
+
+## 0.28.2
+
+### Patch Changes
+
+- 22cc3cae8: **SearchField:**
+
+  - Add `onInputChange` prop that handles events every time the user changes the input value
+  - Fix layout issue affecting alignment of the SearchField with other form elements
+
+- 06b4453dc: **Button:** Fix icon position bug when button is a link
+
+## 0.28.1
+
+### Patch Changes
+
+- d1539937f: **DetailCard:** Make sure `dateExtra` gets correctly rendered
+
+## 0.28.0
+
+### Minor Changes
+
+- 990a3586c: We have removed the dependecy on the `@ilo-org/themes` package, which will soon be deprecated.
+
+### Patch Changes
+
+- 0cc87c1e8: **Notification:** Fixed layout issues and appearance of cta
+- beab2eec1: **SearchField:** Refactor to improve styling and performance
+- Updated dependencies [70500d207]
+- Updated dependencies [0cc87c1e8]
+- Updated dependencies [beab2eec1]
+- Updated dependencies [2f571182b]
+  - @ilo-org/styles@1.11.0
+
+## 0.27.1
+
+### Patch Changes
+
+- Updated dependencies [8e8765baa]
+- Updated dependencies [69a5029d8]
+  - @ilo-org/styles@1.10.2
+
 ## 0.27.0
 
 ### Minor Changes

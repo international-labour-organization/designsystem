@@ -6,54 +6,255 @@
   --ilo-scale: 1; // default scale for the design system
 
   /**
-    * Colors
+    * Layout
+  */
+  --ilo-layout-max-width: #{px-to-rem(1300px)};
+  --ilo-layout-padding: #{px-to-rem(20px)};
+
+  /**
+    * Legacy Colors (aliases pointing to new global colors)
     */
-  --ilo-color-white: rgba(255, 255, 255, 1);
-  --ilo-color-blue: rgba(30, 45, 190, 1);
-  --ilo-color-blue-lighter: rgba(235, 245, 253, 1);
-  --ilo-color-blue-light: rgba(190, 220, 250, 1);
-  --ilo-color-blue-dark: rgba(35, 0, 80, 1);
+  --ilo-color-white: var(--ilo-color-neutrals-white);
+  --ilo-color-blue: var(--ilo-color-brand-600);
+  --ilo-color-blue-lighter: var(--ilo-color-brand-100);
+  --ilo-color-blue-light: var(--ilo-color-brand-200);
+  --ilo-color-blue-dark: var(--ilo-color-brand-800);
   --ilo-color-blue-medium: rgba(210, 213, 242, 1);
-  --ilo-color-blue-ramp: rgba(33, 18, 124, 1);
-  --ilo-color-blue-dark-ramp: rgba(35, 0, 80, 0.5);
-  --ilo-color-gray-charcoal: rgba(45, 45, 45, 1);
-  --ilo-color-gray-accessible: rgba(109, 109, 109, 1);
-  --ilo-color-gray-light: rgba(237, 240, 242, 1);
+  --ilo-color-blue-ramp: var(--ilo-color-brand-700);
+  --ilo-color-blue-dark-ramp: var(--ilo-color-brand-800-transparent);
+  --ilo-color-gray-charcoal: var(--ilo-color-neutrals-black);
+  --ilo-color-gray-accessible: var(--ilo-color-neutrals-700);
+  --ilo-color-gray-light: var(--ilo-color-neutrals-200);
   --ilo-color-gray-light-semi-transparent: rgba(237, 240, 242, 0.25);
-  --ilo-color-gray-base: rgba(184, 196, 204, 1);
-  --ilo-color-red: rgba(250, 60, 75, 1);
-  --ilo-color-red-light: rgba(254, 216, 219, 1);
-  --ilo-color-red-dark: rgba(200, 48, 60, 1);
-  --ilo-color-red-ramp: rgba(250, 60, 75, 0.2);
-  --ilo-color-yellow: rgba(255, 205, 45, 1);
-  --ilo-color-yellow-light: rgba(255, 245, 200, 1);
-  --ilo-color-yellow-ramp: rgba(255, 205, 45, 0.2);
-  --ilo-color-green: rgba(140, 225, 100, 1);
-  --ilo-color-green-light: rgba(232, 249, 224, 1);
-  --ilo-color-green-ramp: rgba(140, 225, 100, 0.2);
-  --ilo-color-turquoise: rgba(5, 210, 210, 1);
-  --ilo-color-purple: rgba(150, 10, 85, 1);
+  --ilo-color-gray-base: var(--ilo-color-neutrals-500);
+  --ilo-color-red: var(--ilo-color-red-500);
+  --ilo-color-red-light: var(--ilo-color-red-100);
+  --ilo-color-red-dark: var(--ilo-color-red-600);
+  --ilo-color-red-ramp: var(--ilo-color-red-500-transparent);
+  --ilo-color-yellow: var(--ilo-color-yellow-400);
+  --ilo-color-yellow-light: var(--ilo-color-yellow-100);
+  --ilo-color-yellow-ramp: var(--ilo-color-yellow-400-transparent);
+  --ilo-color-green: var(--ilo-color-green-400);
+  --ilo-color-green-light: var(--ilo-color-green-100);
+  --ilo-color-green-ramp: var(--ilo-color-green-400-transparent);
+  --ilo-color-turquoise: var(--ilo-color-turquoise-500);
+  --ilo-color-purple: var(--ilo-color-purple-600);
 
-  /* New colors */
+  /**
+    * New Global Colors
+    */
+
+  // Brand
   --ilo-color-brand-800: rgba(35, 0, 80, 1);
+  --ilo-color-brand-800-transparent: rgba(35, 0, 80, 0.5);
+  --ilo-color-brand-700: rgba(21, 31, 133, 1);
   --ilo-color-brand-600: rgba(30, 45, 190, 1);
+  --ilo-color-brand-600-transparent: rgba(30, 45, 190, 0.4);
+  --ilo-color-brand-500: rgba(50, 100, 200, 1);
+  --ilo-color-brand-400: rgba(90, 135, 205, 1);
+  --ilo-color-brand-300: rgba(130, 175, 220, 1);
+  --ilo-color-brand-200: rgba(190, 220, 250, 1);
   --ilo-color-brand-100: rgba(235, 245, 253, 1);
+
+  // Neutrals
+  --ilo-color-neutrals-black: rgba(45, 45, 45, 1);
+  --ilo-color-neutrals-700: rgba(109, 109, 109, 1);
+  --ilo-color-neutrals-500: rgba(184, 196, 204, 1);
+  --ilo-color-neutrals-200: rgba(237, 240, 242, 1);
+  --ilo-color-neutrals-white: rgba(255, 255, 255, 1);
+
+  // Red
+  --ilo-color-red-800: rgba(125, 18, 26, 1);
+  --ilo-color-red-700: rgba(150, 36, 45, 1);
+  --ilo-color-red-600: rgba(200, 48, 60, 1);
+  --ilo-color-red-500: rgba(250, 60, 75, 1);
+  --ilo-color-red-500-transparent: rgba(250, 60, 75, 0.2);
+  --ilo-color-red-400: rgba(251, 99, 111, 1);
+  --ilo-color-red-300: rgba(252, 138, 147, 1);
+  --ilo-color-red-200: rgba(253, 177, 183, 1);
+  --ilo-color-red-100: rgba(254, 216, 219, 1);
+
+  // Yellow
+  --ilo-color-yellow-800: rgba(165, 104, 3, 1);
+  --ilo-color-yellow-700: rgba(215, 135, 0, 1);
+  --ilo-color-yellow-600: rgba(228, 148, 40, 1);
   --ilo-color-yellow-500: rgba(250, 180, 40, 1);
+  --ilo-color-yellow-400: rgba(255, 205, 45, 1);
+  --ilo-color-yellow-400-transparent: rgba(255, 205, 45, 0.2);
+  --ilo-color-yellow-300: rgba(255, 220, 108, 1);
+  --ilo-color-yellow-200: rgba(255, 235, 171, 1);
+  --ilo-color-yellow-100: rgba(255, 245, 200, 1);
 
-  --ilo-color-notification-type-error: var(--ilo-color-red);
-  --ilo-color-notification-type-info: var(--ilo-color-blue);
-  --ilo-color-notification-type-success: var(--ilo-color-green);
-  --ilo-color-notification-type-warning: var(--ilo-color-yellow);
-  --ilo-color-background-default: var(--ilo-color-white);
-  --ilo-color-background-active: var(--ilo-color-blue);
-  --ilo-color-background-highlight: var(--ilo-color-gray-light);
-  --ilo-color-background-hover: var(--ilo-color-blue-lighter);
-  --ilo-color-background-focus: var(--ilo-color-white);
+  // Green
+  --ilo-color-green-800: rgba(21, 66, 0, 1);
+  --ilo-color-green-700: rgba(56, 90, 40, 1);
+  --ilo-color-green-600: rgba(84, 135, 60, 1);
+  --ilo-color-green-500: rgba(112, 180, 80, 1);
+  --ilo-color-green-400: rgba(140, 225, 100, 1);
+  --ilo-color-green-400-transparent: rgba(140, 225, 100, 0.2);
+  --ilo-color-green-300: rgba(175, 234, 147, 1);
+  --ilo-color-green-200: rgba(209, 243, 193, 1);
+  --ilo-color-green-100: rgba(232, 249, 224, 1);
 
-  --ilo-color-borders-default: var(--ilo-color-gray-base);
-  --ilo-color-borders-hover: var(--ilo-color-blue);
-  --ilo-color-borders-active: var(--ilo-color-blue);
-  --ilo-color-borders-focus: var(--ilo-color-yellow);
+  // Turquoise
+  --ilo-color-turquoise-800: rgba(2, 84, 84, 1);
+  --ilo-color-turquoise-700: rgba(4, 147, 147, 1);
+  --ilo-color-turquoise-600: rgba(5, 189, 189, 1);
+  --ilo-color-turquoise-500: rgba(5, 210, 210, 1);
+  --ilo-color-turquoise-400: rgba(105, 228, 228, 1);
+  --ilo-color-turquoise-300: rgba(158, 242, 242, 1);
+  --ilo-color-turquoise-200: rgba(180, 250, 247, 1);
+  --ilo-color-turquoise-100: rgba(210, 251, 251, 1);
+
+  // Purple
+  --ilo-color-purple-800: rgba(95, 0, 55, 1);
+  --ilo-color-purple-700: rgba(119, 20, 73, 1);
+  --ilo-color-purple-600: rgba(150, 10, 85, 1);
+  --ilo-color-purple-500: rgba(171, 59, 119, 1);
+  --ilo-color-purple-400: rgba(203, 133, 170, 1);
+  --ilo-color-purple-300: rgba(224, 182, 204, 1);
+  --ilo-color-purple-200: rgba(240, 210, 224, 1);
+  --ilo-color-purple-100: rgba(245, 231, 238, 1);
+
+  /**
+    * Light Semantic Colors
+    */
+
+  // Text
+  --ilo-color-light-text-default: var(--ilo-color-neutrals-black);
+  --ilo-color-light-text-subtle: var(--ilo-color-neutrals-700);
+  --ilo-color-light-text-brand: var(--ilo-color-brand-800);
+  --ilo-color-light-text-accent: var(--ilo-color-purple-600);
+  --ilo-color-light-text-inverse: var(--ilo-color-neutrals-white);
+
+  // Action
+  --ilo-color-light-action-default: var(--ilo-color-brand-800);
+  --ilo-color-light-action-hover: var(--ilo-color-brand-600);
+  --ilo-color-light-action-selected: var(--ilo-color-brand-600);
+  --ilo-color-light-action-inverse: var(--ilo-color-neutrals-white);
+
+  // Icon
+  --ilo-color-light-icon-default: var(--ilo-color-neutrals-black);
+  --ilo-color-light-icon-subtle: var(--ilo-color-neutrals-500);
+  --ilo-color-light-icon-accent: var(--ilo-color-purple-600);
+  --ilo-color-light-icon-inverse: var(--ilo-color-neutrals-white);
+
+  // Border
+  --ilo-color-light-border-default: var(--ilo-color-neutrals-500);
+  --ilo-color-light-border-subtle: var(--ilo-color-neutrals-200);
+  --ilo-color-light-border-brand: var(--ilo-color-brand-600);
+  --ilo-color-light-border-brand-2: var(--ilo-color-brand-200);
+  --ilo-color-light-border-brand-3: var(--ilo-color-brand-800);
+  --ilo-color-light-border-brand-4: var(--ilo-color-purple-600);
+  --ilo-color-light-border-focus: var(--ilo-color-yellow-400);
+  --ilo-color-light-border-inverse: var(--ilo-color-neutrals-white);
+
+  // Container Background
+  --ilo-color-light-container-bg-default: var(--ilo-color-neutrals-white);
+  --ilo-color-light-container-bg-subtle: var(--ilo-color-brand-100);
+  --ilo-color-light-container-bg-brand: var(--ilo-color-brand-800);
+  --ilo-color-light-container-bg-disabled: var(--ilo-color-neutrals-200);
+
+  // Page Background
+  --ilo-color-light-page-bg-default: var(--ilo-color-neutrals-white);
+  --ilo-color-light-page-bg-subtle: var(--ilo-color-brand-100);
+
+  // Supportive Feedback
+  --ilo-color-light-feedback-error-dark: var(--ilo-color-red-600);
+  --ilo-color-light-feedback-error-default: var(--ilo-color-red-500);
+  --ilo-color-light-feedback-error-light: var(--ilo-color-red-100);
+  --ilo-color-light-feedback-warning-default: var(--ilo-color-yellow-400);
+  --ilo-color-light-feedback-warning-light: var(--ilo-color-yellow-100);
+  --ilo-color-light-feedback-success-default: var(--ilo-color-green-400);
+  --ilo-color-light-feedback-success-light: var(--ilo-color-green-100);
+  --ilo-color-light-feedback-info-default: var(--ilo-color-brand-600);
+  --ilo-color-light-feedback-info-light: var(--ilo-color-brand-200);
+
+  // Generic
+  --ilo-color-light-generic-turquoise: var(--ilo-color-turquoise-500);
+  --ilo-color-light-generic-purple: var(--ilo-color-purple-600);
+  --ilo-color-light-generic-green: var(--ilo-color-green-400);
+  --ilo-color-light-generic-yellow: var(--ilo-color-yellow-400);
+  --ilo-color-light-generic-ilo-light-blue: var(--ilo-color-brand-100);
+
+  /**
+    * Dark Semantic Colors
+    */
+
+  // Text
+  --ilo-color-dark-text-default: var(--ilo-color-neutrals-white);
+  --ilo-color-dark-text-subtle: var(--ilo-color-neutrals-200);
+  --ilo-color-dark-text-brand: var(--ilo-color-brand-200);
+  --ilo-color-dark-text-accent: var(--ilo-color-yellow-400);
+  --ilo-color-dark-text-inverse: var(--ilo-color-brand-800);
+
+  // Action
+  --ilo-color-dark-action-default: var(--ilo-color-brand-100);
+  --ilo-color-dark-action-hover: var(--ilo-color-brand-200);
+  --ilo-color-dark-action-selected: var(--ilo-color-brand-200);
+  --ilo-color-dark-action-inverse: var(--ilo-color-brand-800);
+
+  // Icon
+  --ilo-color-dark-icon-default: var(--ilo-color-neutrals-white);
+  --ilo-color-dark-icon-subtle: var(--ilo-color-neutrals-700);
+  --ilo-color-dark-icon-accent: var(--ilo-color-yellow-400);
+  --ilo-color-dark-icon-inverse: var(--ilo-color-brand-800);
+
+  // Border
+  --ilo-color-dark-border-default: var(--ilo-color-neutrals-white);
+  --ilo-color-dark-border-subtle: var(--ilo-color-neutrals-700);
+  --ilo-color-dark-border-brand: var(--ilo-color-brand-200);
+  --ilo-color-dark-border-brand-2: var(--ilo-color-brand-800);
+  --ilo-color-dark-border-brand-3: var(--ilo-color-brand-100);
+  --ilo-color-dark-border-brand-4: var(--ilo-color-yellow-400);
+  --ilo-color-dark-border-focus: var(--ilo-color-yellow-400);
+  --ilo-color-dark-border-inverse: var(--ilo-color-brand-800);
+
+  // Container Background
+  --ilo-color-dark-container-bg-default: var(--ilo-color-brand-800);
+  --ilo-color-dark-container-bg-subtle: var(--ilo-color-brand-600);
+  --ilo-color-dark-container-bg-brand: var(--ilo-color-brand-100);
+  --ilo-color-dark-container-bg-disabled: var(--ilo-color-neutrals-black);
+
+  // Page Background
+  --ilo-color-dark-page-bg-default: var(--ilo-color-brand-800);
+  --ilo-color-dark-page-bg-subtle: var(--ilo-color-neutrals-black);
+
+  // Supportive Feedback
+  --ilo-color-dark-feedback-error-dark: var(--ilo-color-red-100);
+  --ilo-color-dark-feedback-error-default: var(--ilo-color-red-500);
+  --ilo-color-dark-feedback-error-light: var(--ilo-color-red-600);
+  --ilo-color-dark-feedback-warning-default: var(--ilo-color-yellow-400);
+  --ilo-color-dark-feedback-warning-light: var(--ilo-color-yellow-800);
+  --ilo-color-dark-feedback-success-default: var(--ilo-color-green-400);
+  --ilo-color-dark-feedback-success-light: var(--ilo-color-green-800);
+  --ilo-color-dark-feedback-info-default: var(--ilo-color-brand-600);
+  --ilo-color-dark-feedback-info-light: var(--ilo-color-brand-800);
+
+  // Generic
+  --ilo-color-dark-generic-turquoise: var(--ilo-color-turquoise-500);
+  --ilo-color-dark-generic-purple: var(--ilo-color-purple-600);
+  --ilo-color-dark-generic-green: var(--ilo-color-green-400);
+  --ilo-color-dark-generic-yellow: var(--ilo-color-yellow-400);
+  --ilo-color-dark-generic-ilo-light-blue: var(--ilo-color-brand-200);
+
+  /**
+    * Legacy Semantic Aliases (preserved for backwards compatibility)
+    */
+  --ilo-color-notification-type-error: var(--ilo-color-red-500);
+  --ilo-color-notification-type-info: var(--ilo-color-brand-600);
+  --ilo-color-notification-type-success: var(--ilo-color-green-400);
+  --ilo-color-notification-type-warning: var(--ilo-color-yellow-400);
+  --ilo-color-background-default: var(--ilo-color-neutrals-white);
+  --ilo-color-background-active: var(--ilo-color-brand-600);
+  --ilo-color-background-highlight: var(--ilo-color-neutrals-200);
+  --ilo-color-background-hover: var(--ilo-color-brand-100);
+  --ilo-color-background-focus: var(--ilo-color-neutrals-white);
+
+  --ilo-color-borders-default: var(--ilo-color-neutrals-500);
+  --ilo-color-borders-hover: var(--ilo-color-brand-600);
+  --ilo-color-borders-active: var(--ilo-color-brand-600);
+  --ilo-color-borders-focus: var(--ilo-color-yellow-400);
 
   /**
     * Sizing
@@ -128,27 +329,27 @@
   /**
     * Links
     */
-  --ilo-link-color-default-light: var(--ilo-color-blue-dark);
-  --ilo-link-color-default-dark: var(--ilo-color-white);
+  --ilo-link-color-default-light: var(--ilo-color-brand-800);
+  --ilo-link-color-default-dark: var(--ilo-color-neutrals-white);
 
-  --ilo-link-color-visited-light: var(--ilo-color-purple);
-  --ilo-link-color-visited-dark: var(--ilo-color-gray-base);
+  --ilo-link-color-visited-light: var(--ilo-color-purple-600);
+  --ilo-link-color-visited-dark: var(--ilo-color-neutrals-500);
 
-  --ilo-link-color-hover-light: var(--ilo-color-blue);
-  --ilo-link-color-hover-dark: var(--ilo-color-blue);
+  --ilo-link-color-hover-light: var(--ilo-color-brand-600);
+  --ilo-link-color-hover-dark: var(--ilo-color-brand-600);
 
-  --ilo-link-color-active-light: var(--ilo-color-blue-dark);
-  --ilo-link-color-active-dark: var(--ilo-color-blue-dark);
+  --ilo-link-color-active-light: var(--ilo-color-brand-800);
+  --ilo-link-color-active-dark: var(--ilo-color-brand-800);
 
-  --ilo-link-color-focus-light: var(--ilo-color-blue-dark);
-  --ilo-link-color-focus-dark: var(--ilo-color-blue-dark);
+  --ilo-link-color-focus-light: var(--ilo-color-brand-800);
+  --ilo-link-color-focus-dark: var(--ilo-color-brand-800);
 
   --ilo-link-background-default-light: transparent;
   --ilo-link-background-default-dark: transparent;
 
   --ilo-link-background-hover-light: transparent;
-  --ilo-link-background-hover-dark: var(--ilo-color-white);
+  --ilo-link-background-hover-dark: var(--ilo-color-neutrals-white);
 
-  --ilo-link-background-focus-light: var(--ilo-color-yellow);
-  --ilo-link-background-focus-dark: var(--ilo-color-yellow);
+  --ilo-link-background-focus-light: var(--ilo-color-yellow-400);
+  --ilo-link-background-focus-dark: var(--ilo-color-yellow-400);
 }

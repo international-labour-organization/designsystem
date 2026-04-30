@@ -1,7 +1,7 @@
 {
   "name": "@ilo-org/styles",
   "description": "Styles for products using ILO's Design System",
-  "version": "1.10.1",
+  "version": "1.12.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/international-labour-organization/designsystem.git",
@@ -42,12 +42,10 @@
     "lint": "eslint",
     "lint:fix": "eslint --fix"
   },
-  "author": "@justintemps, @johnpauldavis, @avrilpearl, @ghlost",
   "license": "Apache-2.0",
   "dependencies": {
     "@ilo-org/fonts": "workspace:*",
-    "@ilo-org/icons": "workspace:*",
-    "@ilo-org/themes": "workspace:*"
+    "@ilo-org/icons": "workspace:*"
   },
   "devDependencies": {
     "cssnano": "^7.0.6",
