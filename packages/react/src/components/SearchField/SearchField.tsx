@@ -38,17 +38,19 @@ const SearchField: FC<
   ) => {
     // Top-level props win; fall back to the deprecated `input` prop so
     // existing consumers keep working unchanged.
-    const resolvedPlaceholder = placeholder ?? input?.placeholder;
-    const resolvedName = name ?? input?.name;
-    const resolvedLabel = label ?? input?.label ?? "";
-    const resolvedHelper = helper ?? (input?.helper || undefined);
-    const legacyErrorMessage =
-      typeof input?.error === "string" ? input.error : undefined;
-    const resolvedError = error ?? !!input?.error;
-    const resolvedErrorMessage = errorMessage ?? legacyErrorMessage;
-    // Only forward `disabled` to FormControl when set at the top level, to
-    // preserve the prior behavior of `input.disabled` (input/button only).
-    const inputDisabled = disabled ?? input?.disabled;
+    const resolved = {
+      placeholder: placeholder ?? input?.placeholder,
+      name: name ?? input?.name,
+      label: label ?? input?.label ?? "",
+      helper: helper ?? (input?.helper || undefined),
+      error: error ?? !!input?.error,
+      errorMessage:
+        errorMessage ??
+        (typeof input?.error === "string" ? input.error : undefined),
+      // Only forwarded to the input/button — FormControl still receives the
+      // top-level `disabled` to preserve the prior behavior.
+      inputDisabled: disabled ?? input?.disabled,
+    };
 
     const [searchValue, setSearchValue] = useState<string>("");
     const { prefix } = useGlobalSettings();
@@ -89,10 +91,10 @@ const SearchField: FC<
       <form action={action} className={formClass} style={{ display: "flex" }}>
         <FormControl
           fieldId={fieldId}
-          error={resolvedError}
-          errorMessage={resolvedErrorMessage}
-          helper={resolvedHelper}
-          label={resolvedLabel}
+          error={resolved.error}
+          errorMessage={resolved.errorMessage}
+          helper={resolved.helper}
+          label={resolved.label}
           disabled={disabled}
           labelPlacement={labelPlacement}
           labelSize={labelSize ?? size}
@@ -114,12 +116,12 @@ const SearchField: FC<
                   `${prefix}--input__size__${size}`
                 )}
                 id={fieldId}
-                name={resolvedName}
+                name={resolved.name}
                 onChange={onKeyPress}
-                placeholder={resolvedPlaceholder}
+                placeholder={resolved.placeholder}
                 value={searchValue}
                 ref={ref}
-                disabled={inputDisabled}
+                disabled={resolved.inputDisabled}
                 type="search"
               />
               <span
@@ -132,7 +134,7 @@ const SearchField: FC<
             </div>
             <button
               className={buttonClass}
-              disabled={inputDisabled}
+              disabled={resolved.inputDisabled}
               type="submit"
               onClick={handleClick}
             />
