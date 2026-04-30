@@ -2,7 +2,7 @@
 
 {% extends "@components/form/formcontrol.twig" %}
 
-{% set baseClass = prefix ~ "--text-input" %}
+{% set baseClass = prefix ~ "--input" %}
 {% set inputClass = [baseClass] %}
 {% if error %}
 	{% set inputClass = inputClass|merge([baseClass ~ "__error"]) %}
