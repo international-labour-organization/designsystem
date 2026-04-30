@@ -51,6 +51,11 @@ export interface SearchFieldProps
   id?: string;
 
   /**
+   * The search field's size.
+   */
+  size?: "small" | "large";
+
+  /**
    * @deprecated Pass `value`, `placeholder`, `label`, `name`, `id`, `helper`,
    * `disabled`, `error`, and `errorMessage` at the top level of
    * `SearchFieldProps` instead. This prop will be removed in a future

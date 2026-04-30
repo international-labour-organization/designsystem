@@ -84,6 +84,15 @@ export const Helper: Story = {
   ),
 };
 
+export const Small: Story = {
+  args: SearchFieldArgs.searchfieldsmall,
+  render: (args) => (
+    <div style={{ width: "100%", maxWidth: "600px" }}>
+      <SearchField {...args} />
+    </div>
+  ),
+};
+
 export const DynamicSearch: Story = {
   name: "Dynamic Search",
   args: SearchFieldArgs.searchfielddynamic,

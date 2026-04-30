@@ -1,6 +1,5 @@
 import { ReactElement } from "react";
 import { DropdownProps } from "../Dropdown/Dropdown.props";
-import { InputProps } from "../Input/Input.props";
 import { TextareaProps } from "../Textarea";
 import { ToggleProps } from "../Toggle";
 import { ThemeTypes } from "../../types";
@@ -70,7 +69,6 @@ export interface FormControlPrivateProps {
 
   children:
     | ReactElement<ToggleProps>
-    | ReactElement<InputProps>
     | ReactElement<DropdownProps>
     | ReactElement<TextareaProps>;
 }

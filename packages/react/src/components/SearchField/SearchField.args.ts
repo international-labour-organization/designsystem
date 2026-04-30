@@ -46,6 +46,15 @@ const searchfielddynamic: SearchFieldProps = {
   placeholder: "Type to search dynamically...",
 };
 
+const searchfieldsmall: SearchFieldProps = {
+  callback: () => {},
+  label: "Search",
+  name: "search",
+  placeholder: "Search Field",
+  size: "small",
+  value: "",
+};
+
 /**
  * Sample prop definitions for SearchField's enumerable properties (imported in stories and test)
  */
@@ -56,6 +65,7 @@ const SearchFieldArgs = {
   searchfieldlabel,
   searchfieldhelper,
   searchfielddynamic,
+  searchfieldsmall,
 };
 
 export default SearchFieldArgs;

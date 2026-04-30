@@ -19,6 +19,14 @@ export interface TextInputProps extends FormFieldProps<HTMLInputElement> {
    */
   type: TextInputTypes;
 
+  /**
+   * The input's size.
+   */
+  size?: "small" | "large";
+
+  /**
+   * The input's default value.
+   */
   value?: string;
 }
 

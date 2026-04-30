@@ -22,9 +22,13 @@
   &:focus {
     background-color: var(--ilo-color-blue-lighter);
     border: var(--ilo-border-md) solid var(--ilo-color-gray-base);
-    border-left: px-to-rem(3px) solid var(--ilo-color-blue-medium);
-    padding-left: spacing(3);
+    border-inline-start-color: var(--ilo-color-blue-medium);
+    box-shadow: inset px-to-rem(1px) 0 0 0 var(--ilo-color-blue-medium);
     outline: none;
+  }
+
+  [dir="rtl"] &:focus {
+    box-shadow: inset px-to-rem(-1px) 0 0 0 var(--ilo-color-blue-medium);
   }
 
   &:disabled {
@@ -37,6 +41,13 @@
   &__error & {
     background-color: var(--ilo-color-white);
     border: var(--ilo-border-md) solid var(--ilo-color-gray-base);
-    border-left: px-to-rem(3px) solid var(--ilo-color-red-dark);
+    border-inline-start-color: var(--ilo-color-red-dark);
+    box-shadow: inset px-to-rem(1px) 0 0 0 var(--ilo-color-red-dark);
+  }
+
+  [dir="rtl"] &:invalid,
+  [dir="rtl"] &__error,
+  [dir="rtl"] &__error & {
+    box-shadow: inset px-to-rem(-1px) 0 0 0 var(--ilo-color-red-dark);
   }
 }
