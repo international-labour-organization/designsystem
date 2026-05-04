@@ -10,7 +10,7 @@
   }
 
   .ilo--input {
-    padding-inline-end: spacing(14);
+    padding-inline-end: spacing(9);
   }
 
   &--button {
@@ -71,6 +71,10 @@
   }
 
   &__size__small {
+    .ilo--input {
+      padding-inline-end: spacing(7);
+    }
+
     .ilo--searchfield--button {
       width: px-to-rem(32px);
 
