@@ -36,6 +36,11 @@ export interface SearchFieldProps
   callback?: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => unknown;
 
   /**
+   * A callback fired when the clear button is clicked. Receives the current search value as the user clicks the clear button.
+   */
+  onClear?: (value: string) => void;
+
+  /**
    * Placeholder text for the search input
    */
   placeholder?: string;
