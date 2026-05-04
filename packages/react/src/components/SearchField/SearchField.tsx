@@ -19,6 +19,7 @@ const SearchField: FC<
       className,
       input,
       onInputChange,
+      onClear,
       label,
       helper,
       error,
@@ -76,11 +77,14 @@ const SearchField: FC<
       HTMLSpanElement
     > = () => {
       setSearchValue("");
+      if (onClear) {
+        onClear(searchValue);
+      }
     };
 
     // Update search value on input and trigger dynamic search callback
     const onKeyPress: React.ChangeEventHandler<HTMLInputElement> = (e) => {
-      const newValue = e.target?.value as string;
+      const newValue = e.target?.value;
       setSearchValue(newValue);
       if (onInputChange) {
         onInputChange(newValue);
