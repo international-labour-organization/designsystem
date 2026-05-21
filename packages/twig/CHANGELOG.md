@@ -1,5 +1,18 @@
 # @ilo-org/twig
 
+## 1.12.6
+
+### Patch Changes
+
+- 992a7398d: **textinput.twig** now uses `.ilo--input` instead of deprecated `.ilo--text-input`
+- 75c6ed884: Updated `eslint` and fixed some new linting errors
+- 5bee86a45: **TextInput:** Remove textinput.scss in favor of input.scss which has shared styles for all form elements that use text inputs
+- 8eab37b70: **SearchField:** reduce padding at the end of the input
+- Updated dependencies [f7c926ec3]
+- Updated dependencies [5bee86a45]
+- Updated dependencies [8eab37b70]
+  - @ilo-org/styles@1.13.0
+
 ## 1.12.5
 
 ### Patch Changes
