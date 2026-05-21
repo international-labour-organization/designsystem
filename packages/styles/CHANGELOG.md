@@ -1,5 +1,16 @@
 # @ilo-org/styles
 
+## 1.13.0
+
+### Minor Changes
+
+- f7c926ec3: **Dropdown, SearchField, TextInput:** Add a new `size` property that defaults to `large`. Setting `size` to `small` will render new smaller versions. We'll be adding `small` versions to the rest of the form components soon. For the time being, this prop is only available to the React version of the form elements.
+
+### Patch Changes
+
+- 5bee86a45: **TextInput:** Remove textinput.scss in favor of input.scss which has shared styles for all form elements that use text inputs
+- 8eab37b70: **SearchField:** reduce padding at the end of the input
+
 ## 1.12.0
 
 ### Minor Changes
