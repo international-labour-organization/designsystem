@@ -1,5 +1,25 @@
 # @ilo-org/react
 
+## 1.1.0
+
+### Minor Changes
+
+- f7c926ec3: **Dropdown, SearchField, TextInput:** Add a new `size` property that defaults to `large`. Setting `size` to `small` will render new smaller versions. We'll be adding `small` versions to the rest of the form components soon. For the time being, this prop is only available to the React version of the form elements.
+
+### Patch Changes
+
+- 8980f294c: **SearchField:** Add `onClear` callback
+- a1e2eb508: **Input:** Remove <Input /> component. This wasn't exported or used anyway so not a breaking change.
+- 75c6ed884: Updated `eslint` and fixed some new linting errors
+- 5bee86a45: **TextInput:** Remove textinput.scss in favor of input.scss which has shared styles for all form elements that use text inputs
+- c927bc8f0: **SearchField:** Rationalize props while conserving backwards compatibility for `input` prop, which will be deprecated in the next major release.
+- 8eab37b70: **SearchField:** reduce padding at the end of the input
+- aa29bca70: **AudioPlayer:** Fix pause button not showing on play
+- Updated dependencies [f7c926ec3]
+- Updated dependencies [5bee86a45]
+- Updated dependencies [8eab37b70]
+  - @ilo-org/styles@1.13.0
+
 ## 1.0.0
 
 ### Major Changes
