@@ -257,7 +257,12 @@ export const AudioPlayer: React.FC<AudioPlayerProps> = ({
           >
             <Icon
               className={`${baseClass}--play-icon`}
-              name={state.playing ? "Pause" : "TriangleRight"}
+              name="TriangleRight"
+              size={32}
+            />
+            <Icon
+              className={`${baseClass}--pause-icon`}
+              name="Pause"
               size={32}
             />
           </button>
@@ -284,7 +289,8 @@ export const AudioPlayer: React.FC<AudioPlayerProps> = ({
             aria-label={state.volume === 0 ? "Unmute" : "Mute"}
             onClick={handleVolumeClick}
           >
-            <Icon name={state.volume === 0 ? "SoundOff" : "SoundOn"} />
+            <Icon className={`${baseClass}--sound-on-icon`} name="SoundOn" />
+            <Icon className={`${baseClass}--sound-off-icon`} name="SoundOff" />
           </button>
           <input
             type="range"
