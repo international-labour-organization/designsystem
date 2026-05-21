@@ -1,25 +1,38 @@
 @use "../functions" as *;
 @import "../mixins";
 
+// Base styles for the .ilo--input class, applied by TextInput, NumberPicker,
+// DatePicker, and SearchField (and extended in _datepicker.scss). This is the
+// shared form-input base — keep it even though there is no standalone Input
+// component.
 .ilo--input {
   appearance: none;
   background-color: var(--ilo-color-white);
   border: var(--ilo-border-md) solid var(--ilo-color-gray-base);
   box-sizing: border-box;
-  font-family: var(--ilo-fonts-copy);
-  font-weight: var(--ilo-font-weight-medium);
-  @include typography("highlight-medium");
   height: px-to-rem(48px);
   margin: spacing(0);
   outline: none;
-  padding: spacing(4) spacing(3) spacing(4) spacing(3);
+  padding: spacing(4) spacing(3);
   width: 100%;
+  @include typography("highlight-medium");
+
+  &__size__small {
+    height: px-to-rem(32px);
+    padding: spacing(2) spacing(3);
+    @include typography("body-xsmall");
+  }
 
   &:focus {
     background-color: var(--ilo-color-blue-lighter);
     border: var(--ilo-border-md) solid var(--ilo-color-gray-base);
-    padding-left: spacing(3);
+    border-inline-start-color: var(--ilo-color-blue);
+    box-shadow: inset px-to-rem(1px) 0 0 0 var(--ilo-color-blue);
     outline: none;
+  }
+
+  [dir="rtl"] &:focus {
+    box-shadow: inset px-to-rem(-1px) 0 0 0 var(--ilo-color-blue);
   }
 
   &:disabled {
@@ -28,10 +41,15 @@
   }
 
   &:invalid,
-  &.error,
-  .error & {
+  &__error {
     background-color: var(--ilo-color-white);
     border: var(--ilo-border-md) solid var(--ilo-color-gray-base);
-    border-left: px-to-rem(3px) solid var(--ilo-color-red-dark);
+    border-inline-start-color: var(--ilo-color-red-dark);
+    box-shadow: inset px-to-rem(1px) 0 0 0 var(--ilo-color-red-dark);
+  }
+
+  [dir="rtl"] &:invalid,
+  [dir="rtl"] &__error {
+    box-shadow: inset px-to-rem(-1px) 0 0 0 var(--ilo-color-red-dark);
   }
 }

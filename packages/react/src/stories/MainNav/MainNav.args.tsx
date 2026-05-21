@@ -34,7 +34,6 @@ const MainNavArgs: MainNavProps = {
       type: "input",
       field: {
         input: {
-          type: "search",
           value: "",
           placeholder: "Search Field",
         },

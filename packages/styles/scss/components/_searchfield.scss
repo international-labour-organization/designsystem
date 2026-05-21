@@ -10,7 +10,7 @@
   }
 
   .ilo--input {
-    padding-inline-end: spacing(14);
+    padding-inline-end: spacing(9);
   }
 
   &--button {
@@ -67,6 +67,34 @@
       position: absolute;
       top: 12px;
       right: 2%;
+    }
+  }
+
+  &__size__small {
+    .ilo--input {
+      padding-inline-end: spacing(4);
+    }
+
+    .ilo--searchfield--button {
+      width: px-to-rem(32px);
+
+      &:after {
+        height: px-to-rem(16px);
+        width: px-to-rem(16px);
+      }
+    }
+
+    .ilo--searchfield--clear-button {
+      svg {
+        display: block;
+        width: px-to-rem(16px);
+        height: px-to-rem(16px);
+      }
+
+      &.show {
+        top: 50%;
+        transform: translateY(-50%);
+      }
     }
   }
 

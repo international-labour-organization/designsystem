@@ -3,6 +3,20 @@ import userEvent from "@testing-library/user-event";
 import { describe, it, expect, vi, beforeEach } from "vitest";
 import { AudioPlayer } from "../src/components/AudioPlayer/AudioPlayer";
 
+interface AudioMock {
+  currentTime: number;
+  duration: number;
+  volume: number;
+  play: () => Promise<void>;
+  pause: () => void;
+}
+
+declare global {
+  interface HTMLMediaElement {
+    _mock: AudioMock;
+  }
+}
+
 const sampleProps = {
   src: "/test-audio.mp3",
   name: "Test Track",
@@ -23,25 +37,25 @@ beforeEach(() => {
 
   Object.defineProperty(window.HTMLMediaElement.prototype, "duration", {
     get() {
-      return this._mock.duration;
+      return (this as HTMLMediaElement)._mock.duration;
     },
   });
 
   Object.defineProperty(window.HTMLMediaElement.prototype, "currentTime", {
     get() {
-      return this._mock.currentTime;
+      return (this as HTMLMediaElement)._mock.currentTime;
     },
     set(time: number) {
-      this._mock.currentTime = time;
+      (this as HTMLMediaElement)._mock.currentTime = time;
     },
   });
 
   Object.defineProperty(window.HTMLMediaElement.prototype, "volume", {
     get() {
-      return this._mock.volume;
+      return (this as HTMLMediaElement)._mock.volume;
     },
     set(volume: number) {
-      this._mock.volume = volume;
+      (this as HTMLMediaElement)._mock.volume = volume;
     },
   });
 
@@ -86,6 +100,26 @@ describe("AudioPlayer", () => {
     // Pause
     await userEvent.click(playButton);
     expect(audio._mock.pause).toHaveBeenCalled();
+  });
+
+  it("should render both play and pause icons so CSS can toggle them via aria-label", async () => {
+    render(<AudioPlayer {...sampleProps} />);
+    const playButton = screen.getByRole("button", { name: "Play" });
+
+    // Both icons must be in the DOM at all times — the SCSS swaps visibility
+    // based on the button's aria-label.
+    expect(playButton).toContainElement(
+      screen.getByTestId("triangleright-icon")
+    );
+    expect(playButton).toContainElement(screen.getByTestId("pause-icon"));
+
+    await userEvent.click(playButton);
+
+    const pausedButton = screen.getByRole("button", { name: "Pause" });
+    expect(pausedButton).toContainElement(
+      screen.getByTestId("triangleright-icon")
+    );
+    expect(pausedButton).toContainElement(screen.getByTestId("pause-icon"));
   });
 
   it("should skip forward and backward correctly", async () => {

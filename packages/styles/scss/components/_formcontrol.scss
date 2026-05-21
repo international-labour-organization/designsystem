@@ -15,6 +15,10 @@
   grid-template-columns: auto;
   gap: spacing(2);
 
+  &:has(#{$c}--label__size__small) {
+    gap: spacing(1);
+  }
+
   &__theme {
     &__light {
       --ilo-form-control-label-color: var(--ilo-color-gray-charcoal);
@@ -146,7 +150,7 @@
 
     &__size {
       &__small {
-        @include typography("highlight-small-bold");
+        @include typography("body-xsmall");
       }
 
       &__medium {

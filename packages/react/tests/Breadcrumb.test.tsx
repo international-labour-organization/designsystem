@@ -116,7 +116,7 @@ describe("Breadcrumb", () => {
     expect(button).toHaveAttribute("aria-expanded", "false");
   });
 
-  it("should handle window resize for collapsing", async () => {
+  it("should handle window resize for collapsing", () => {
     render(<Breadcrumb links={mockLinks} buttonLabel="Show more" />);
 
     // Verify ResizeObserver was initialized
@@ -129,7 +129,9 @@ describe("Breadcrumb", () => {
     window.dispatchEvent(new Event("resize"));
 
     // Cleanup should call disconnect
-    const instance = mockResizeObserver.mock.results[0].value;
+    const instance = mockResizeObserver.mock.results[0].value as {
+      disconnect: () => void;
+    };
     instance.disconnect();
     expect(mockDisconnect).toHaveBeenCalled();
   });

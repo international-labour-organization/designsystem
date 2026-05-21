@@ -23,10 +23,10 @@ describe("Profile", () => {
 
   it("should render with the avatar", () => {
     render(<Profile avatar={fixture.avatar} name={fixture.name} />);
-    const element = screen.getByRole("img") as HTMLImageElement;
+    const element = screen.getByRole("img");
     expect(element).toBeInTheDocument();
     expect(element.src).toContain(fixture.avatar);
-    expect(element.alt).toBe(`Photo of ${fixture.name}`);
+    expect(element.alt).toBe(fixture.name);
   });
 
   it("should render with the role", () => {

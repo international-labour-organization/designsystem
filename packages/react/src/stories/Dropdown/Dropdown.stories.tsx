@@ -149,3 +149,9 @@ export const WithToolTip: StoryObj<typeof Dropdown> = {
     ...dropdownArgs.hastooltip,
   },
 };
+
+export const Small: StoryObj<typeof Dropdown> = {
+  args: {
+    ...dropdownArgs.small,
+  },
+};

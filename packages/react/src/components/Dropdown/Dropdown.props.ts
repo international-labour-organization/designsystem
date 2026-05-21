@@ -44,6 +44,11 @@ export interface DropdownProps extends FormFieldProps<HTMLSelectElement> {
   selectSize?: number;
 
   /**
+   * The dropdown's size.
+   */
+  size?: "small" | "large";
+
+  /**
    * The Dropdown's default selection; should match one of the values in `options`
    */
   value?: string;

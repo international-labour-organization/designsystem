@@ -1,4 +1,4 @@
-import { ExoticComponent, forwardRef } from "react";
+import { forwardRef, type ComponentType } from "react";
 import classnames from "classnames";
 import useGlobalSettings from "../../hooks/useGlobalSettings";
 import { Button } from "../Button";
@@ -37,7 +37,7 @@ export type CardGroupProps<T extends CardTypes> = {
   collapsed?: boolean;
 };
 
-const cardMapper: Record<CardTypes, ExoticComponent<any>> = {
+const cardMapper = {
   stat: StatCard,
   multilink: MultiLinkCard,
   text: TextCard,
@@ -51,7 +51,9 @@ const cardMapper: Record<CardTypes, ExoticComponent<any>> = {
 
 const CardGroup = forwardRef<HTMLDivElement, CardGroupProps<CardTypes>>(
   ({ type, group, cardCount = "one", cta, collapsed = false }, ref) => {
-    const CardComponent = cardMapper[type];
+    const CardComponent = cardMapper[type] as ComponentType<
+      CardPropsMap[CardTypes]
+    >;
     const { prefix } = useGlobalSettings();
 
     const baseClass = `${prefix}--cardgroup`;

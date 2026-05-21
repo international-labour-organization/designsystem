@@ -82,11 +82,7 @@ const Profile = forwardRef<HTMLElement, ProfileProps>(
 
     return (
       <figure className={profileClasses} ref={ref}>
-        <img
-          className={`${baseClass}--avatar`}
-          src={avatar}
-          alt={`Photo of ${name}`}
-        />
+        <img className={`${baseClass}--avatar`} src={avatar} alt={name} />
         <figcaption>
           <div className={`${baseClass}--figcaption--content`}>
             <div className={`${baseClass}--name`}>{name}</div>

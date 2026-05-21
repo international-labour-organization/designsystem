@@ -28,7 +28,7 @@ const DatePicker = forwardRef<HTMLInputElement, DatePickerProps>(
     const baseClass = `${prefix}--datepicker`;
 
     const datePickerClasses = classNames(inputClass, baseClass, {
-      [`error`]: error,
+      [`${inputClass}__error`]: error,
     });
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {

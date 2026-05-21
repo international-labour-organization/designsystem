@@ -59,12 +59,18 @@ const isdisabled: LabelledDropdownProps = {
   disabled: true,
 };
 
+const small: LabelledDropdownProps = {
+  ...basic,
+  size: "small",
+};
+
 const DropdownArgs = {
   basic,
   haserror,
   hashelper,
   hastooltip,
   isdisabled,
+  small,
 };
 
 export default DropdownArgs;

@@ -4,6 +4,7 @@ import cypress from "eslint-plugin-cypress/flat";
 /** @type {import("eslint").Linter.Config} */
 const TwigConfig = {
   languageOptions: {
+    ecmaVersion: "latest",
     globals: {
       Drupal: 'writeable',
     },
