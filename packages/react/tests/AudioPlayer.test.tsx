@@ -110,6 +110,45 @@ describe("AudioPlayer", () => {
     expect(audio._mock.currentTime).toBe(0);
   });
 
+  it("should render the track name as plain text when no nameHref is provided", () => {
+    render(<AudioPlayer {...sampleProps} />);
+    expect(screen.queryByRole("link", { name: "Test Track" })).toBeNull();
+  });
+
+  it("should render the track name as an anchor with href when nameHref is provided", () => {
+    render(<AudioPlayer {...sampleProps} nameHref="/episodes/42" />);
+    const link = screen.getByRole("link", { name: "Test Track" });
+    expect(link.tagName).toBe("A");
+    expect(link).toHaveAttribute("href", "/episodes/42");
+  });
+
+  it("should render the track name using a custom link component, passing the URL as `to`", () => {
+    const CustomLink = ({
+      to,
+      children,
+      ...rest
+    }: {
+      to: string;
+      children: React.ReactNode;
+    }) => (
+      <a href={to} data-testid="custom-link" {...rest}>
+        {children}
+      </a>
+    );
+
+    render(
+      <AudioPlayer
+        {...sampleProps}
+        nameHref="/episodes/42"
+        nameLinkComponent={CustomLink}
+      />
+    );
+
+    const link = screen.getByTestId("custom-link");
+    expect(link).toHaveTextContent("Test Track");
+    expect(link).toHaveAttribute("href", "/episodes/42");
+  });
+
   it("should adjust volume correctly", () => {
     render(<AudioPlayer {...sampleProps} />);
     const audio = document.getElementsByTagName("audio")[0];
