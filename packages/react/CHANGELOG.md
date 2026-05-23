@@ -1,5 +1,15 @@
 # @ilo-org/react
 
+## 1.2.0
+
+### Minor Changes
+
+- f86e3eae5: **AudioPlayer:** Track name can now be rendered as a link. Pass `nameHref` to turn the name into an anchor, and optionally pass `nameLinkComponent` (e.g. React Router or Next.js `Link`) to support client-side routing. The URL is forwarded as `href` for plain anchors and as `to` for custom components.
+
+### Patch Changes
+
+- 1b6a6aefb: **Tag/TagSet:** Correctly export `TagSet`, it wasn't getting exported before
+
 ## 1.1.0
 
 ### Minor Changes
