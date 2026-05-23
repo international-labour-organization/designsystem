@@ -76,6 +76,10 @@
     --ilo-dropdown-color: var(--ilo-color-gray-charcoal);
   }
 
+  &:disabled {
+    pointer-events: none;
+  }
+
   [dir="rtl"] &:hover,
   [dir="rtl"] &:focus,
   [dir="rtl"] &:active {
