@@ -125,13 +125,6 @@
       color: var(--ilo-button-labels-hover-color);
     }
 
-    &:focus {
-      background-color: var(--ilo-color-background-focus);
-      border: var(--ilo-border-md) var(--ilo-color-borders-focus) solid;
-      color: var(--ilo-button-labels-focus-color);
-      outline: none;
-    }
-
     &:active {
       background-color: var(--ilo-color-background-active);
       border: var(--ilo-border-md) var(--ilo-color-borders-active) solid;
@@ -141,20 +134,23 @@
   }
 
   &:focus {
+    outline: none;
+  }
+
+  &:focus-visible {
     background-color: var(--ilo-color-background-focus);
     border: var(--ilo-border-md) var(--ilo-color-borders-focus) solid;
     box-shadow:
       4px 4px 0 1px var(--ilo-color-borders-focus) inset,
       -4px -4px 0 1px var(--ilo-color-borders-focus) inset;
     color: var(--ilo-button-labels-focus-color);
-    outline: none;
     @include globaltransition("color, background-color, border-color");
+  }
 
-    &.#{$prefix}--small {
-      box-shadow:
-        3px 3px 0 1px var(--ilo-color-borders-focus) inset,
-        -3px -3px 0 1px var(--ilo-color-borders-focus) inset;
-    }
+  &__small:focus-visible {
+    box-shadow:
+      3px 3px 0 1px var(--ilo-color-borders-focus) inset,
+      -3px -3px 0 1px var(--ilo-color-borders-focus) inset;
   }
 
   &:hover {
