@@ -145,12 +145,12 @@
       -4px -4px 0 1px var(--ilo-color-borders-focus) inset;
     color: var(--ilo-button-labels-focus-color);
     @include globaltransition("color, background-color, border-color");
-  }
 
-  &__small:focus-visible {
-    box-shadow:
-      3px 3px 0 1px var(--ilo-color-borders-focus) inset,
-      -3px -3px 0 1px var(--ilo-color-borders-focus) inset;
+    &.#{$prefix}--small {
+      box-shadow:
+        3px 3px 0 1px var(--ilo-color-borders-focus) inset,
+        -3px -3px 0 1px var(--ilo-color-borders-focus) inset;
+    }
   }
 
   &:hover {
