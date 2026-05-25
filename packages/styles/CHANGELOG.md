@@ -1,5 +1,12 @@
 # @ilo-org/styles
 
+## 1.13.1
+
+### Patch Changes
+
+- 14aaede60: **SubsiteNav:** Search widget now supports `type: "button"` with an `onClick` handler, in addition to the existing `redirect` and `input` variants.
+- 53744c916: Buttons: Update focus handling to remove persistent focus state
+
 ## 1.13.0
 
 ### Minor Changes
