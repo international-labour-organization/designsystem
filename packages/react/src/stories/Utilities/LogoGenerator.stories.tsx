@@ -95,20 +95,14 @@ const LogoGenerator = () => {
   const [color, setColor] = useState("blue");
   const logoRef = useRef<HTMLDivElement>(null);
 
-  /**
-   * Helper to get options for html-to-image.
-   * Firefox has a known issue parsing fonts when cloning DOM for SVG/PNG,
-   * so we skip font processing in Firefox to avoid TypeErrors.
-   */
-  const getHtmlToImageOptions = (baseOptions: any = {}) => {
-    const isFirefox = navigator.userAgent.toLowerCase().indexOf("firefox") > -1;
-    return {
-      ...baseOptions,
-      backgroundColor: "transparent",
-      cacheBust: true,
-      ...(isFirefox ? { skipFonts: true } : {}),
-    };
-  };
+  // Fonts must be embedded so the subbrand text renders at the same width
+  // it has on-screen — otherwise the export uses fallback fonts whose wider
+  // glyphs spill past the figure's right edge and get clipped by the SVG viewBox.
+  const getHtmlToImageOptions = (baseOptions: any = {}) => ({
+    ...baseOptions,
+    backgroundColor: "transparent",
+    cacheBust: true,
+  });
 
   // Generate filename based on current settings
   const getFilename = (extension: string) => {
