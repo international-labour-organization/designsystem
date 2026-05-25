@@ -29,8 +29,13 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
+      width: 100%;
       text-decoration: none;
       cursor: pointer;
+      background: none;
+      border: 0;
+      font: inherit;
+      color: inherit;
 
       &__label {
         @include typography("highlight-medium");

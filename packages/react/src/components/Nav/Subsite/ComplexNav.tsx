@@ -129,7 +129,7 @@ const ComplexNav = forwardRef<HTMLElement, ComplexNavProps>(
                 }
               />
             )}
-            {widgets?.search && (
+            {widgets?.search?.type === "redirect" && (
               <a
                 className={`${baseClass}__nav-search`}
                 href={widgets.search.url}
@@ -137,6 +137,17 @@ const ComplexNav = forwardRef<HTMLElement, ComplexNavProps>(
               >
                 <span className={`${baseClass}__nav-search__icon`} />
               </a>
+            )}
+            {widgets?.search?.type === "button" && (
+              <button
+                type="button"
+                className={`${baseClass}__nav-search`}
+                onClick={widgets.search.onClick}
+                aria-label={widgets.search.label ?? "Search"}
+                aria-haspopup="dialog"
+              >
+                <span className={`${baseClass}__nav-search__icon`} />
+              </button>
             )}
             <button
               className={`${baseClass}__nav-burger`}
