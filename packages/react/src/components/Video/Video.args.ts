@@ -14,6 +14,21 @@ const videofile: VideoProps = {
     pause: "Pause",
     volume: "Volume",
   },
+  // tracks: [
+  //   {
+  //     src: "/video-example.en.vtt",
+  //     srclang: "en",
+  //     label: "English",
+  //     kind: "captions",
+  //     default: true,
+  //   },
+  //   {
+  //     src: "/video-example.es.vtt",
+  //     srclang: "es",
+  //     label: "Spanish",
+  //     kind: "captions",
+  //   },
+  // ],
   src: "/video-example.mp4",
   youtube: false,
 };

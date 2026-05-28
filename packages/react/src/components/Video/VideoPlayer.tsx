@@ -1,12 +1,42 @@
 import { forwardRef, useEffect, useImperativeHandle, useRef } from "react";
 import "videojs-youtube";
-import { VideoPlayerProps, VideoPlayerRef } from "./VideoPlayer.props";
+import {
+  VideoPlayerProps,
+  VideoPlayerRef,
+  VideoTextTrack,
+} from "./VideoPlayer.props";
 import videojs, { ILOVideo } from "video.js";
 
 const video = videojs as unknown as ILOVideo;
 
+const toRemoteTextTrack = (
+  track: VideoTextTrack
+): videojs.TextTrackOptions => ({
+  kind: track.kind ?? "captions",
+  src: track.src,
+  srclang: track.srclang,
+  label: track.label,
+  default: Boolean(track.default),
+});
+
+const syncRemoteTextTracks = (
+  player: videojs.Player,
+  tracks?: VideoTextTrack[]
+) => {
+  const remoteTracks = player.remoteTextTracks();
+  for (let i = remoteTracks.length - 1; i >= 0; i--) {
+    player.removeRemoteTextTrack(
+      remoteTracks[i] as unknown as HTMLTrackElement
+    );
+  }
+
+  tracks?.forEach((track) => {
+    player.addRemoteTextTrack(toRemoteTextTrack(track), false);
+  });
+};
+
 const VideoPlayer = forwardRef<VideoPlayerRef, VideoPlayerProps>(
-  ({ src, poster, youtube }, ref) => {
+  ({ src, poster, youtube, tracks }, ref) => {
     const placeholderRef = useRef<HTMLDivElement>(null);
     const player = useRef<videojs.Player | undefined>(undefined);
 
@@ -42,7 +72,7 @@ const VideoPlayer = forwardRef<VideoPlayerRef, VideoPlayerProps>(
             chaptersButton: false,
             audioTrackButton: false,
             pictureInPictureToggle: false,
-            subsCapsButton: false,
+            subsCapsButton: true,
             seekToLive: false,
             liveDisplay: false,
           },
@@ -57,14 +87,16 @@ const VideoPlayer = forwardRef<VideoPlayerRef, VideoPlayerProps>(
             techOrder: ["youtube"],
           },
           liveTracker: false,
+          tracks: tracks?.map(toRemoteTextTrack),
         });
       } else {
         player.current.poster(poster?.src || "");
         player.current.src([
           { type: youtube ? "video/youtube" : undefined, src: src },
         ]);
+        syncRemoteTextTracks(player.current, tracks);
       }
-    }, [poster?.src, src, youtube]);
+    }, [poster?.src, src, tracks, youtube]);
 
     useEffect(() => {
       return () => {

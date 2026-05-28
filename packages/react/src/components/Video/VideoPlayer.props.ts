@@ -4,6 +4,34 @@ import videojs from "video.js";
 export interface VideoPlayerRef {
   player: videojs.Player | undefined;
 }
+
+export interface VideoTextTrack {
+  /**
+   * Source URL for a WebVTT track file.
+   */
+  src: string;
+
+  /**
+   * Track language code (for example "en" or "fr").
+   */
+  srclang: string;
+
+  /**
+   * Human readable language label shown in the CC menu.
+   */
+  label: string;
+
+  /**
+   * Track type rendered by Video.js.
+   */
+  kind?: "captions" | "subtitles";
+
+  /**
+   * Whether this track is selected by default.
+   */
+  default?: boolean;
+}
+
 export interface VideoPlayerControls {
   /**
    * Specify the label for the fullscreen button
@@ -48,4 +76,7 @@ export interface VideoPlayerProps {
    * if YouTube, set to true
    */
   youtube?: boolean;
+
+  // Optional closed-captions tracks
+  tracks?: VideoTextTrack[];
 }
