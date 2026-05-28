@@ -345,6 +345,17 @@
         }
       }
 
+      .vjs-menu-item[tabindex="-1"]:first-child .vjs-menu-item-text {
+        font-size: 0;
+
+        &:after {
+          @include typography("body-xsmall");
+          content: "None";
+          font-size: px-to-rem(12px);
+          line-height: px-to-rem(20px);
+        }
+      }
+
       .vjs-menu .vjs-icon-placeholder {
         display: none;
       }

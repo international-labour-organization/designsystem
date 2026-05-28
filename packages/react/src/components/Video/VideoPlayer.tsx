@@ -9,29 +9,19 @@ import videojs, { ILOVideo } from "video.js";
 
 const video = videojs as unknown as ILOVideo;
 
-const toRemoteTextTrack = (
-  track: VideoTextTrack
-): videojs.TextTrackOptions => ({
-  kind: track.kind ?? "captions",
-  src: track.src,
-  srclang: track.srclang,
-  label: track.label,
-  default: Boolean(track.default),
-});
-
-const syncRemoteTextTracks = (
-  player: videojs.Player,
-  tracks?: VideoTextTrack[]
+const appendTextTracks = (
+  videoElement: HTMLVideoElement,
+  tracks: VideoTextTrack[]
 ) => {
-  const remoteTracks = player.remoteTextTracks();
-  for (let i = remoteTracks.length - 1; i >= 0; i--) {
-    player.removeRemoteTextTrack(
-      remoteTracks[i] as unknown as HTMLTrackElement
-    );
-  }
-
-  tracks?.forEach((track) => {
-    player.addRemoteTextTrack(toRemoteTextTrack(track), false);
+  tracks.forEach((track) => {
+    const { kind, src, srclang, label, default: isDefault } = track;
+    const trackElement = document.createElement("track");
+    trackElement.kind = kind ?? "captions";
+    trackElement.src = src;
+    trackElement.srclang = srclang;
+    trackElement.label = label;
+    trackElement.default = !!isDefault;
+    videoElement.appendChild(trackElement);
   });
 };
 
@@ -58,6 +48,7 @@ const VideoPlayer = forwardRef<VideoPlayerRef, VideoPlayerProps>(
       if (!player.current) {
         const videoElement = document.createElement("video");
         videoElement.className = "ilo--video--element";
+        if (tracks?.length) appendTextTracks(videoElement, tracks);
         placeholderRef.current.appendChild(videoElement);
 
         player.current = video(videoElement, {
@@ -87,19 +78,22 @@ const VideoPlayer = forwardRef<VideoPlayerRef, VideoPlayerProps>(
             techOrder: ["youtube"],
           },
           liveTracker: false,
-          tracks: tracks?.map(toRemoteTextTrack),
         });
       } else {
         player.current.poster(poster?.src || "");
         player.current.src([
           { type: youtube ? "video/youtube" : undefined, src: src },
         ]);
-        syncRemoteTextTracks(player.current, tracks);
       }
-    }, [poster?.src, src, tracks, youtube]);
+    }, [poster?.src, src, youtube]);
 
     useEffect(() => {
       return () => {
+        const trackElements = placeholderRef.current?.querySelectorAll("track");
+        if (trackElements?.length) {
+          trackElements.forEach((trackElement) => trackElement.remove());
+        }
+
         if (player.current) {
           player.current.dispose();
           player.current = undefined;
