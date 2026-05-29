@@ -254,10 +254,26 @@
       > .vjs-menu-button .vjs-icon-placeholder:before,
       > button .vjs-icon-placeholder:before {
         @include typography("body-xsmall");
-        content: "CC";
+        content: "cc";
+        align-items: center;
+        border: px-to-rem(2px) solid currentColor;
+        border-radius: px-to-rem(1px);
+        box-sizing: border-box;
         color: currentColor;
+        display: inline-flex;
         font-weight: var(--ilo-font-weight-bold);
-        letter-spacing: 0.02em;
+        height: px-to-rem(22px);
+        justify-content: center;
+        letter-spacing: 0;
+        line-height: 1;
+        padding: 0 px-to-rem(3px);
+        text-transform: lowercase;
+        width: px-to-rem(24px);
+      }
+
+      &.vjs-lock-showing > .vjs-menu-button,
+      &.vjs-lock-showing > button {
+        border-bottom: px-to-rem(2px) solid var(--ilo-color-blue);
       }
 
       .vjs-menu {
@@ -285,12 +301,27 @@
         }
 
         &:after {
-          @include typography("body-xsmall");
-          content: "x";
+          content: "";
           color: var(--ilo-color-gray-charcoal);
+          height: px-to-rem(14px);
           position: absolute;
-          right: px-to-rem(10px);
+          right: px-to-rem(12px);
           top: px-to-rem(8px);
+          width: px-to-rem(14px);
+          background: linear-gradient(
+              45deg,
+              transparent calc(50% - 1px),
+              currentColor calc(50% - 1px),
+              currentColor calc(50% + 1px),
+              transparent calc(50% + 1px)
+            ),
+            linear-gradient(
+              -45deg,
+              transparent calc(50% - 1px),
+              currentColor calc(50% - 1px),
+              currentColor calc(50% + 1px),
+              transparent calc(50% + 1px)
+            );
         }
       }
 
