@@ -224,6 +224,7 @@
       > .vjs-menu-button,
       > button {
         @include videobutton("closed_captions");
+        touch-action: manipulation;
       }
 
       > .vjs-menu-button .vjs-icon-placeholder,
@@ -232,7 +233,9 @@
       }
 
       &.vjs-lock-showing > .vjs-menu-button,
-      &.vjs-lock-showing > button {
+      &.vjs-lock-showing > button,
+      &.ilo-cc-open > .vjs-menu-button,
+      &.ilo-cc-open > button {
         border-bottom: px-to-rem(2px) solid var(--ilo-color-blue);
       }
 
@@ -259,24 +262,33 @@
           position: absolute;
           top: px-to-rem(8px);
         }
-
-        &:after {
-          content: "";
-          height: px-to-rem(14px);
-          position: absolute;
-          right: px-to-rem(12px);
-          top: px-to-rem(8px);
-          width: px-to-rem(14px);
-          background-position: center;
-          background-repeat: no-repeat;
-          background-size: contain;
-          @include dataurlicon("close", rgba(45, 45, 45, 1));
-        }
       }
 
-      &.vjs-lock-showing .vjs-menu,
-      &:focus-within .vjs-menu {
+      .ilo-cc-menu-close-button {
+        background-color: transparent;
+        border: 0;
+        cursor: pointer;
+        height: px-to-rem(14px);
+        position: absolute;
+        right: px-to-rem(12px);
+        top: px-to-rem(8px);
+        width: px-to-rem(14px);
+        z-index: 1;
+        touch-action: manipulation;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+        @include dataurlicon("close", rgba(45, 45, 45, 1));
+      }
+
+      &.vjs-lock-showing .vjs-menu:not(.vjs-hidden),
+      &.ilo-cc-open .vjs-menu:not(.vjs-hidden),
+      &:focus-within .vjs-menu:not(.vjs-hidden) {
         display: block;
+      }
+
+      .vjs-menu.vjs-hidden {
+        display: none;
       }
 
       .vjs-menu-content {
