@@ -53,9 +53,22 @@
     &:has(select:disabled) {
       --ilo-dropdown-button-icon-color: var(--ilo-dropdown-color);
 
-      &:before,
       &:after {
         opacity: 0.45;
+      }
+
+      // manually adjusted the left border color to be slightly darker
+      &:before {
+        border-color: color-mix(
+          in srgb,
+          var(--ilo-dropdown-border-color) 45%,
+          transparent
+        );
+        border-inline-start-color: color-mix(
+          in srgb,
+          var(--ilo-dropdown-border-color) 60%,
+          transparent
+        );
       }
     }
   }
