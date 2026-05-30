@@ -4,6 +4,7 @@ import {
   VideoPlayerProps,
   VideoPlayerRef,
   VideoTextTrack,
+  defaultVideoControls,
 } from "./VideoPlayer.props";
 import videojs, { ILOVideo } from "video.js";
 
@@ -26,9 +27,10 @@ const appendTextTracks = (
 };
 
 const VideoPlayer = forwardRef<VideoPlayerRef, VideoPlayerProps>(
-  ({ src, poster, youtube, tracks }, ref) => {
+  ({ src, poster, youtube, tracks, controls }, ref) => {
     const placeholderRef = useRef<HTMLDivElement>(null);
     const player = useRef<videojs.Player | undefined>(undefined);
+    const mergedControls = { ...defaultVideoControls, ...controls };
 
     useImperativeHandle(
       ref,
@@ -105,7 +107,17 @@ const VideoPlayer = forwardRef<VideoPlayerRef, VideoPlayerProps>(
     }, []);
 
     return (
-      <div className="ilo--videoplayer">
+      <div
+        className="ilo--videoplayer"
+        style={
+          {
+            "--ilo-video-choose-subtitles": JSON.stringify(
+              mergedControls.chooseSubtitles
+            ),
+            "--ilo-video-none": JSON.stringify(mergedControls.none),
+          } as React.CSSProperties
+        }
+      >
         <div ref={placeholderRef} />
       </div>
     );

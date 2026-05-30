@@ -252,7 +252,7 @@
 
         &:before {
           @include typography("body-xsmall");
-          content: "Choose subtitles";
+          content: var(--ilo-video-choose-subtitles, "Choose subtitles");
           color: var(--ilo-color-gray-charcoal);
           font-weight: var(--ilo-font-weight-bold);
           left: px-to-rem(12px);
@@ -330,7 +330,7 @@
 
         &:after {
           @include typography("body-xsmall");
-          content: "None";
+          content: var(--ilo-video-none, "None");
           font-size: px-to-rem(12px);
           line-height: px-to-rem(20px);
         }

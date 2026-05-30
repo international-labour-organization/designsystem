@@ -20,7 +20,7 @@ export interface VideoPlayerControls {
   fullscreen: string;
 
   /**
-   * Specify the label for the  play button
+   * Specify the label for the play button
    */
   play: string;
 
@@ -33,7 +33,26 @@ export interface VideoPlayerControls {
    * Specify the label for the volume button
    */
   volume: string;
+
+  /**
+   * Specify the heading shown in the subtitles menu
+   */
+  chooseSubtitles?: string;
+
+  /**
+   * Specify the label for the option that turns subtitles off
+   */
+  none?: string;
 }
+
+export const defaultVideoControls: Required<VideoPlayerControls> = {
+  fullscreen: "Fullscreen",
+  play: "Play",
+  pause: "Pause",
+  volume: "Volume",
+  chooseSubtitles: "Choose subtitles",
+  none: "None",
+};
 
 export interface VideoPlayerProps {
   src: string;
