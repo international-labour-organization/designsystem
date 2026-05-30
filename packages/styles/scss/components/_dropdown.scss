@@ -49,6 +49,15 @@
       top: var(--ilo-dropdown-button-icon-offset);
       @include icon("chevron_down", var(--ilo-dropdown-button-icon-color));
     }
+
+    &:has(select:disabled) {
+      --ilo-dropdown-button-icon-color: var(--ilo-dropdown-color);
+
+      &:before,
+      &:after {
+        opacity: 0.45;
+      }
+    }
   }
 
   appearance: none;
@@ -78,6 +87,7 @@
 
   &:disabled {
     pointer-events: none;
+    opacity: 0.45;
   }
 
   [dir="rtl"] &:hover,
