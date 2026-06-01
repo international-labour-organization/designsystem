@@ -106,7 +106,6 @@ const VideoPlayer = forwardRef<VideoPlayerRef, VideoPlayerProps>(
       }
 
       const openClassName = "ilo-cc-open";
-      const closeButtonClassName = "ilo-cc-menu-close-button";
       const hiddenClassName = "vjs-hidden";
       const setMenuVisibility = (isOpen: boolean) => {
         subsCapsButton.classList.toggle(openClassName, isOpen);
@@ -138,36 +137,15 @@ const VideoPlayer = forwardRef<VideoPlayerRef, VideoPlayerProps>(
         }
       };
 
-      const existingCloseButton = menuPanel.querySelector<HTMLElement>(
-        `.${closeButtonClassName}`
-      );
-      const closeButton = (existingCloseButton ??
-        document.createElement("button")) as HTMLButtonElement;
-      if (!existingCloseButton) {
-        closeButton.className = closeButtonClassName;
-        closeButton.type = "button";
-        menuPanel.appendChild(closeButton);
-      }
-
-      const handleCloseButtonInteraction = (event: Event) => {
-        event.preventDefault();
-        event.stopPropagation();
-        closeMenu();
-      };
       const handleTrackChange = () => closeMenu();
 
       menuButton.addEventListener("pointerup", handleToggle);
-      closeButton.addEventListener("pointerup", handleCloseButtonInteraction);
       document.addEventListener("keydown", handleEscapeKey);
       document.addEventListener("pointerup", handleOutsideTouch);
       player.current.on("texttrackchange", handleTrackChange);
 
       return () => {
         menuButton.removeEventListener("pointerup", handleToggle);
-        closeButton.removeEventListener(
-          "pointerup",
-          handleCloseButtonInteraction
-        );
         document.removeEventListener("keydown", handleEscapeKey);
         document.removeEventListener("pointerup", handleOutsideTouch);
         player.current?.off("texttrackchange", handleTrackChange);
