@@ -35,7 +35,7 @@
       @include globaltransition("background-color");
     }
 
-    &:has(select:hover):before {
+    &:has(select:enabled:hover):before {
       background-color: var(--ilo-dropdown-background-color-active);
     }
 
@@ -49,6 +49,28 @@
       top: var(--ilo-dropdown-button-icon-offset);
       @include icon("chevron_down", var(--ilo-dropdown-button-icon-color));
     }
+
+    &:has(select:disabled) {
+      --ilo-dropdown-button-icon-color: var(--ilo-dropdown-color);
+
+      &:after {
+        opacity: 0.45;
+      }
+
+      // manually adjusted the left border color to be slightly darker
+      &:before {
+        border-color: color-mix(
+          in srgb,
+          var(--ilo-dropdown-border-color) 45%,
+          transparent
+        );
+        border-inline-start-color: color-mix(
+          in srgb,
+          var(--ilo-dropdown-border-color) 60%,
+          transparent
+        );
+      }
+    }
   }
 
   appearance: none;
@@ -58,6 +80,7 @@
   color: var(--ilo-dropdown-color);
   width: 100%;
   margin: spacing(0);
+
   padding: 0 spacing(14) 0 spacing(4);
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -68,13 +91,16 @@
   @include typography("body-medium");
   @include globaltransition("background-color, border-color, color");
 
-  &:hover,
-  &:focus,
-  &:active {
+  &:enabled:is(:hover, :focus, :active) {
     border-inline-start-color: var(--ilo-color-blue);
     box-shadow: inset px-to-rem(1px) 0 0 0 var(--ilo-color-blue);
     background-color: var(--ilo-dropdown-background-color-active);
     --ilo-dropdown-color: var(--ilo-color-gray-charcoal);
+  }
+
+  &:disabled {
+    pointer-events: none;
+    opacity: 0.45;
   }
 
   [dir="rtl"] &:hover,
