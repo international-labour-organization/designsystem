@@ -65,7 +65,7 @@ const VideoPlayer = forwardRef<VideoPlayerRef, VideoPlayerProps>(
             chaptersButton: false,
             audioTrackButton: false,
             pictureInPictureToggle: false,
-            subsCapsButton: true,
+            subsCapsButton: !!tracks?.length,
             seekToLive: false,
             liveDisplay: false,
           },

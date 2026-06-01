@@ -14,21 +14,41 @@ const videofile: VideoProps = {
     pause: "Pause",
     volume: "Volume",
   },
-  // tracks: [
-  //   {
-  //     src: "/video-example.en.vtt",
-  //     srclang: "en",
-  //     label: "English",
-  //     kind: "captions",
-  //     default: true,
-  //   },
-  //   {
-  //     src: "/video-example.es.vtt",
-  //     srclang: "es",
-  //     label: "Spanish",
-  //     kind: "captions",
-  //   },
-  // ],
+  src: "/video-example.mp4",
+  youtube: false,
+};
+
+const videofileWithCaptions: VideoProps = {
+  className: "image",
+  caption:
+    "The ILO brings together governments, employers and workers to set labour standards and promote decent work.",
+  poster: {
+    src: "/media-file-poster.jpg",
+    alt: "The ILO logo on a blue background",
+  },
+  controls: {
+    fullscreen: "Fullscreen",
+    play: "Play",
+    pause: "Pause",
+    volume: "Volume",
+    chooseSubtitles: "Choose subtitles",
+    none: "None",
+  },
+  tracks: [
+    {
+      src: "/video-example.en.vtt",
+      srclang: "en",
+      label: "English",
+      kind: "captions",
+      default: true,
+    },
+    {
+      src: "/video-example.es.vtt",
+      srclang: "es",
+      label: "Spanish",
+      kind: "captions",
+    },
+  ],
   src: "/video-example.mp4",
   youtube: false,
 };
@@ -56,6 +76,7 @@ const videoyt: VideoProps = {
  */
 const videoArgs = {
   videofile,
+  videofileWithCaptions,
   videoyt,
 };
 
