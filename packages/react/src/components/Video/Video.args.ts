@@ -31,8 +31,8 @@ const videofileWithCaptions: VideoProps = {
     play: "Play",
     pause: "Pause",
     volume: "Volume",
-    chooseSubtitles: "Choose subtitles",
-    none: "None",
+    chooseSubtitlesText: "Choose subtitles",
+    noCaptionsText: "None",
   },
   tracks: [
     {

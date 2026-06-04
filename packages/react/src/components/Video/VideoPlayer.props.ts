@@ -37,12 +37,12 @@ export interface VideoPlayerControls {
   /**
    * Specify the heading shown in the subtitles menu
    */
-  chooseSubtitles?: string;
+  chooseSubtitlesText?: string;
 
   /**
    * Specify the label for the option that turns subtitles off
    */
-  none?: string;
+  noCaptionsText?: string;
 }
 
 export const defaultVideoControls: Required<VideoPlayerControls> = {
@@ -50,8 +50,8 @@ export const defaultVideoControls: Required<VideoPlayerControls> = {
   play: "Play",
   pause: "Pause",
   volume: "Volume",
-  chooseSubtitles: "Choose subtitles",
-  none: "None",
+  chooseSubtitlesText: "Choose subtitles",
+  noCaptionsText: "None",
 };
 
 export interface VideoPlayerProps {

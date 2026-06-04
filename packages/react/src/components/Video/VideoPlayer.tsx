@@ -167,9 +167,9 @@ const VideoPlayer = forwardRef<VideoPlayerRef, VideoPlayerProps>(
         style={
           {
             "--ilo-video-choose-subtitles": JSON.stringify(
-              mergedControls.chooseSubtitles
+              mergedControls.chooseSubtitlesText
             ),
-            "--ilo-video-none": JSON.stringify(mergedControls.none),
+            "--ilo-video-none": JSON.stringify(mergedControls.noCaptionsText),
           } as React.CSSProperties
         }
       >
