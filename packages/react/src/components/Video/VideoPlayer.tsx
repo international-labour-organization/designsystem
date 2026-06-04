@@ -131,22 +131,14 @@ const VideoPlayer = forwardRef<VideoPlayerRef, VideoPlayerProps>(
         closeMenu();
       };
 
-      const handleEscapeKey = (event: KeyboardEvent) => {
-        if (event.key === "Escape") {
-          closeMenu();
-        }
-      };
-
       const handleTrackChange = () => closeMenu();
 
       menuButton.addEventListener("pointerup", handleToggle);
-      document.addEventListener("keydown", handleEscapeKey);
       document.addEventListener("pointerup", handleOutsideTouch);
       player.current.on("texttrackchange", handleTrackChange);
 
       return () => {
         menuButton.removeEventListener("pointerup", handleToggle);
-        document.removeEventListener("keydown", handleEscapeKey);
         document.removeEventListener("pointerup", handleOutsideTouch);
         player.current?.off("texttrackchange", handleTrackChange);
       };
