@@ -221,28 +221,20 @@
       position: relative;
       z-index: 30;
 
-      > .vjs-menu-button,
-      > button {
+      > .vjs-menu-button {
         @include videobutton("closed_captions");
-        touch-action: manipulation;
       }
 
-      > .vjs-menu-button .vjs-icon-placeholder,
-      > button .vjs-icon-placeholder {
-        display: none;
-      }
-
-      &.vjs-lock-showing > .vjs-menu-button,
-      &.vjs-lock-showing > button,
-      &.ilo-cc-open > .vjs-menu-button,
-      &.ilo-cc-open > button {
-        border-bottom: px-to-rem(2px) solid var(--ilo-color-blue);
+      &.vjs-hover > .vjs-menu-button,
+      &:hover > .vjs-menu-button,
+      &:focus-within > .vjs-menu-button {
+        background-color: var(--ilo-color-blue-light);
+        @include dataurlicon("closed_captions", rgba(30, 45, 190, 1));
       }
 
       .vjs-menu {
-        background: #d8e4ef;
+        background: var(--ilo-color-brand-200);
         border: 0;
-        box-shadow: 0 px-to-rem(2px) px-to-rem(8px) rgba(0, 0, 0, 0.16);
         bottom: calc(100% + #{px-to-rem(8px)});
         display: none;
         left: 50%;
@@ -253,9 +245,19 @@
         z-index: 40;
         padding-top: px-to-rem(28px);
 
+        // gap added to ensure vjs-hover persists when hovering to menu from captions button
+        &::after {
+          content: "";
+          height: px-to-rem(8px);
+          left: 0;
+          position: absolute;
+          right: 0;
+          top: 100%;
+        }
+
         &:before {
           @include typography("body-xsmall");
-          content: var(--ilo-video-choose-subtitles, "Choose subtitles");
+          content: var(--ilo-video-choose-subtitle-text, "Choose subtitles");
           color: var(--ilo-color-gray-charcoal);
           font-weight: var(--ilo-font-weight-bold);
           left: px-to-rem(12px);
@@ -264,31 +266,10 @@
         }
       }
 
-      .ilo-cc-menu-close-button {
-        background-color: transparent;
-        border: 0;
-        cursor: pointer;
-        height: px-to-rem(14px);
-        position: absolute;
-        right: px-to-rem(12px);
-        top: px-to-rem(8px);
-        width: px-to-rem(14px);
-        z-index: 1;
-        touch-action: manipulation;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: contain;
-        @include dataurlicon("close", rgba(45, 45, 45, 1));
-      }
-
-      &.vjs-lock-showing .vjs-menu:not(.vjs-hidden),
-      &.ilo-cc-open .vjs-menu:not(.vjs-hidden),
+      .vjs-menu.vjs-lock-showing:not(.vjs-hidden),
+      &.vjs-hover .vjs-menu:not(.vjs-hidden),
       &:focus-within .vjs-menu:not(.vjs-hidden) {
         display: block;
-      }
-
-      .vjs-menu.vjs-hidden {
-        display: none;
       }
 
       .vjs-menu-content {
@@ -310,14 +291,13 @@
         text-shadow: none;
         white-space: nowrap;
 
-        &:hover,
-        &:focus {
-          background: rgba(255, 255, 255, 0.35);
+        &:hover {
+          background: var(--ilo-color-neutrals-200);
         }
 
         &:before {
           background: transparent;
-          border: 2px solid #b8c7d6;
+          border: 2px solid var(--ilo-color-neutrals-500);
           border-radius: 50%;
           content: "";
           display: inline-block;
@@ -330,9 +310,9 @@
           color: var(--ilo-color-gray-charcoal);
 
           &:before {
-            border-color: #2d0065;
-            box-shadow: inset 0 0 0 px-to-rem(2px) #d8e4ef;
-            background: #2d0065;
+            border-color: var(--ilo-color-neutrals-black);
+            box-shadow: inset 0 0 0 px-to-rem(2px) var(--ilo-color-neutrals-200);
+            background: var(--ilo-color-neutrals-black);
           }
         }
       }
@@ -349,10 +329,6 @@
       }
 
       .vjs-menu .vjs-icon-placeholder {
-        display: none;
-      }
-
-      .vjs-texttrack-settings {
         display: none;
       }
     }

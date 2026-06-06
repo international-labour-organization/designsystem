@@ -90,61 +90,6 @@ const VideoPlayer = forwardRef<VideoPlayerRef, VideoPlayerProps>(
     }, [poster?.src, src, youtube]);
 
     useEffect(() => {
-      const container = placeholderRef.current;
-      if (!container || !player.current) {
-        return;
-      }
-
-      const subsCapsButton = container.querySelector(".vjs-subs-caps-button");
-      const menuButton = subsCapsButton?.querySelector(
-        ".vjs-menu-button, button"
-      );
-      const menuPanel = subsCapsButton?.querySelector(".vjs-menu");
-
-      if (!subsCapsButton || !menuButton || !menuPanel) {
-        return;
-      }
-
-      const openClassName = "ilo-cc-open";
-      const hiddenClassName = "vjs-hidden";
-      const setMenuVisibility = (isOpen: boolean) => {
-        subsCapsButton.classList.toggle(openClassName, isOpen);
-        menuPanel.classList.toggle(hiddenClassName, !isOpen);
-      };
-
-      const closeMenu = () => {
-        setMenuVisibility(false);
-      };
-
-      const handleToggle = (event: Event) => {
-        event.preventDefault();
-        event.stopPropagation();
-        const shouldOpen = menuPanel.classList.contains(hiddenClassName);
-        setMenuVisibility(shouldOpen);
-      };
-
-      const handleOutsideTouch = (event: Event) => {
-        const eventTarget = event.target as Node | null;
-        if (!eventTarget || subsCapsButton.contains(eventTarget)) {
-          return;
-        }
-        closeMenu();
-      };
-
-      const handleTrackChange = () => closeMenu();
-
-      menuButton.addEventListener("pointerup", handleToggle);
-      document.addEventListener("pointerup", handleOutsideTouch);
-      player.current.on("texttrackchange", handleTrackChange);
-
-      return () => {
-        menuButton.removeEventListener("pointerup", handleToggle);
-        document.removeEventListener("pointerup", handleOutsideTouch);
-        player.current?.off("texttrackchange", handleTrackChange);
-      };
-    }, []);
-
-    useEffect(() => {
       return () => {
         const trackElements = placeholderRef.current?.querySelectorAll("track");
         if (trackElements?.length) {
@@ -166,7 +111,7 @@ const VideoPlayer = forwardRef<VideoPlayerRef, VideoPlayerProps>(
         className="ilo--videoplayer"
         style={
           {
-            "--ilo-video-choose-subtitles": JSON.stringify(
+            "--ilo-video-choose-subtitle-text": JSON.stringify(
               mergedControls.chooseSubtitlesText
             ),
             "--ilo-video-none": JSON.stringify(mergedControls.noCaptionsText),
