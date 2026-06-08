@@ -1,4 +1,4 @@
-import { VideoPlayerControls } from "./VideoPlayer.props";
+import { VideoPlayerControls, VideoTextTrack } from "./VideoPlayer.props";
 
 export interface Poster {
   src: string;
@@ -32,4 +32,7 @@ export interface VideoProps {
    * Specify the image src for the image
    */
   poster?: Poster;
+
+  // Optional closed-caption tracks
+  tracks?: VideoTextTrack[];
 }

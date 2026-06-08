@@ -57,6 +57,14 @@ const VideoTemplate: StoryFn<VideoProps> = (args) => <Video {...args} />;
 export const VideoFileMedia: StoryFn<VideoProps> = VideoTemplate.bind({});
 
 /**
+ * Video File with Captions Instance
+ *
+ */
+export const VideoFileWithCaptions: StoryFn<VideoProps> = VideoTemplate.bind(
+  {}
+);
+
+/**
  * Video YouTube Instance
  *
  */
@@ -65,6 +73,10 @@ export const VideoYTMedia: StoryFn<VideoProps> = VideoTemplate.bind({});
 // enumerate the props for the video file option
 VideoFileMedia.args = videoArgs.videofile;
 VideoFileMedia.storyName = "Media file";
+
+// enumerate the props for the video file with captions option
+VideoFileWithCaptions.args = videoArgs.videofileWithCaptions;
+VideoFileWithCaptions.storyName = "Media with Captions";
 
 // enumerate the props for the video youtube option
 VideoYTMedia.args = videoArgs.videoyt;

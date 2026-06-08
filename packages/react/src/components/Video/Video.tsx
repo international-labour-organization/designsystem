@@ -10,13 +10,9 @@ const Video = forwardRef<VideoPlayerRef, VideoProps>(
     const { prefix } = useGlobalSettings();
     const baseClass = `${prefix}--video`;
 
-    const videoClasses = classNames(className, {
-      [baseClass]: true,
-    });
+    const videoClasses = classNames(className, [baseClass]);
 
-    const captionClasses = classNames("", {
-      [`${baseClass}--caption`]: true,
-    });
+    const captionClasses = `${baseClass}--caption`;
 
     return (
       <figure className={videoClasses}>
