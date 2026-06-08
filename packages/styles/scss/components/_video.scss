@@ -167,6 +167,10 @@
       .vjs-volume-panel {
         display: none;
       }
+
+      .vjs-subs-caps-button {
+        display: none;
+      }
     }
   }
 
@@ -208,6 +212,126 @@
     .vjs-fullscreen-control {
       order: 5;
       @include videobutton("fullscreen");
+    }
+
+    // Closed captions control
+    .vjs-subs-caps-button {
+      order: 3;
+      margin-right: px-to-rem(2px);
+      position: relative;
+      z-index: 30;
+
+      > .vjs-menu-button {
+        @include videobutton("closed_captions");
+      }
+
+      &.vjs-hover > .vjs-menu-button,
+      &:hover > .vjs-menu-button,
+      &:focus-within > .vjs-menu-button {
+        background-color: var(--ilo-color-blue-light);
+        @include dataurlicon("closed_captions", rgba(30, 45, 190, 1));
+      }
+
+      .vjs-menu {
+        background: var(--ilo-color-brand-200);
+        border: 0;
+        bottom: calc(100% + #{px-to-rem(8px)});
+        display: none;
+        left: 50%;
+        min-width: px-to-rem(190px);
+        position: absolute;
+        right: auto;
+        transform: translateX(-50%);
+        z-index: 40;
+        padding-top: px-to-rem(28px);
+
+        // gap added to ensure vjs-hover persists when hovering to menu from captions button
+        &::after {
+          content: "";
+          height: px-to-rem(8px);
+          left: 0;
+          position: absolute;
+          right: 0;
+          top: 100%;
+        }
+
+        &:before {
+          @include typography("body-xsmall");
+          content: var(--ilo-video-choose-subtitle-text, "Choose subtitles");
+          color: var(--ilo-color-gray-charcoal);
+          font-weight: var(--ilo-font-weight-bold);
+          left: px-to-rem(12px);
+          position: absolute;
+          top: px-to-rem(8px);
+        }
+      }
+
+      .vjs-menu.vjs-lock-showing:not(.vjs-hidden),
+      &.vjs-hover .vjs-menu:not(.vjs-hidden),
+      &:hover .vjs-menu:not(.vjs-hidden),
+      &:focus-within .vjs-menu:not(.vjs-hidden) {
+        display: block;
+      }
+
+      .vjs-menu-content {
+        margin: 0;
+        max-height: px-to-rem(120px);
+        overflow-y: auto;
+        padding: 0 0 px-to-rem(4px);
+      }
+
+      .vjs-menu-item {
+        @include typography("body-xsmall");
+        align-items: center;
+        color: var(--ilo-color-gray-charcoal);
+        display: flex;
+        gap: px-to-rem(8px);
+        line-height: px-to-rem(20px);
+        padding: px-to-rem(2px) px-to-rem(12px);
+        position: relative;
+        text-shadow: none;
+        white-space: nowrap;
+
+        &:hover {
+          background: var(--ilo-color-neutrals-200);
+        }
+
+        &:before {
+          background: transparent;
+          border: 2px solid var(--ilo-color-neutrals-500);
+          border-radius: 50%;
+          content: "";
+          display: inline-block;
+          height: px-to-rem(10px);
+          width: px-to-rem(10px);
+          flex-shrink: 0;
+        }
+
+        &.vjs-selected {
+          color: var(--ilo-color-gray-charcoal);
+
+          &:before {
+            border-color: var(--ilo-color-neutrals-black);
+            box-shadow: inset 0 0 0 px-to-rem(2px) var(--ilo-color-neutrals-200);
+            background: var(--ilo-color-neutrals-black);
+          }
+        }
+      }
+
+      .vjs-menu-item[tabindex="-1"]:first-child .vjs-menu-item-text {
+        font-size: 0;
+
+        &:after {
+          @include typography("body-xsmall");
+          content: var(--ilo-video-none, "None");
+          font-size: px-to-rem(12px);
+          line-height: px-to-rem(20px);
+        }
+      }
+
+      .vjs-menu .vjs-icon-placeholder {
+        display: none;
+      }
     }
 
     // Duration Bar
@@ -287,7 +411,7 @@
 
     // Volume Control
     .vjs-volume-panel {
-      order: 3;
+      order: 4;
       border-bottom: 1px solid;
       bottom: 0;
       flex-direction: column;

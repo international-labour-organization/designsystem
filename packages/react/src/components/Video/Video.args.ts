@@ -18,6 +18,41 @@ const videofile: VideoProps = {
   youtube: false,
 };
 
+const videofileWithCaptions: VideoProps = {
+  className: "image",
+  caption:
+    "The ILO brings together governments, employers and workers to set labour standards and promote decent work.",
+  poster: {
+    src: "/media-file-poster.jpg",
+    alt: "The ILO logo on a blue background",
+  },
+  controls: {
+    fullscreen: "Fullscreen",
+    play: "Play",
+    pause: "Pause",
+    volume: "Volume",
+    chooseSubtitlesText: "Choose subtitles",
+    noCaptionsText: "None",
+  },
+  tracks: [
+    {
+      src: "/video-example.en.vtt",
+      srclang: "en",
+      label: "English",
+      kind: "captions",
+      default: true,
+    },
+    {
+      src: "/video-example.es.vtt",
+      srclang: "es",
+      label: "Spanish",
+      kind: "captions",
+    },
+  ],
+  src: "/video-example.mp4",
+  youtube: false,
+};
+
 const videoyt: VideoProps = {
   caption:
     "Indigenous entrepreneur Celestina Ábalos runs a tourism business in the UNESCO World Heritage site of Quebrada de Humahuaca in northern Argentina. ©ILO/Ivar Velasquez",
@@ -41,6 +76,7 @@ const videoyt: VideoProps = {
  */
 const videoArgs = {
   videofile,
+  videofileWithCaptions,
   videoyt,
 };
 
