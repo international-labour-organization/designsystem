@@ -1,5 +1,20 @@
 # @ilo-org/styles
 
+## 1.14.0
+
+### Minor Changes
+
+- 55dfd495f: Video: Video player now supports closed captioning
+
+### Patch Changes
+
+- e30d73909: **Hero:** Removed the seam-bridging `box-shadow` on semi-transparent
+  card-offsets. With a translucent fill the shadow composited over the card's
+  own semi-transparent layer, producing a darker hairline at the offset/card
+  boundary on high-resolution screens. This is a visual change to the Hero in
+  any package that renders it.
+- 259406e97: Dropdown: Prevented focus styling being applied on hover for disabled dropdowns
+
 ## 1.13.1
 
 ### Patch Changes
