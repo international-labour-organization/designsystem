@@ -1,5 +1,17 @@
 # @ilo-org/react
 
+## 1.3.0
+
+### Minor Changes
+
+- 14aaede60: **SubsiteNav:** Search widget now supports `type: "button"` with an `onClick` handler, in addition to the existing `redirect` and `input` variants.
+
+### Patch Changes
+
+- Updated dependencies [14aaede60]
+- Updated dependencies [53744c916]
+  - @ilo-org/styles@1.13.1
+
 ## 1.2.0
 
 ### Minor Changes
