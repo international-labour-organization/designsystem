@@ -60,7 +60,9 @@ export type HeroProps = {
   posterSize?: "small" | "medium" | "large" | "xlarge";
 
   /**
-   * Theme for the card
+   * Theme for the hero. Overrides the hero card's own theme when set;
+   * otherwise defaults to `heroCard.theme`. Drives the colour of the
+   * card-offset space so it matches the card.
    */
   theme?: ThemeTypes;
 };
@@ -73,7 +75,7 @@ const Hero = forwardRef<HTMLDivElement, HeroProps>(
       align = "baseline",
       cardSize = "small",
       posterSize = "large",
-      theme = "dark",
+      theme: themeProp,
       image,
       breadcrumb,
       heroCard,
@@ -85,6 +87,14 @@ const Hero = forwardRef<HTMLDivElement, HeroProps>(
     const { prefix } = useGlobalSettings();
 
     const baseClass = `hero`;
+
+    // Mirror the Twig component: the hero's theme and background default to
+    // the hero card's own theme/background unless explicitly overridden at
+    // the Hero level. The SCSS relies on these root classes (e.g.
+    // `__card-theme__light` and `[class*="semi-transparent"]`) to colour the
+    // `--card-offset` space so it matches the card.
+    const theme = themeProp ?? heroCard.theme ?? "dark";
+    const background = heroCard.background ?? "solid";
 
     const orderedImages = useMemo(() => {
       if (!image) return [];
@@ -102,6 +112,7 @@ const Hero = forwardRef<HTMLDivElement, HeroProps>(
           `${baseClass}__card-size__${cardSize}`,
           `${baseClass}__poster-size__${posterSize}`,
           `${baseClass}__card-theme__${theme}`,
+          `${baseClass}__card-background__${background}`,
           { [`${baseClass}__gap__${gap}`]: gap },
           className
         )}
