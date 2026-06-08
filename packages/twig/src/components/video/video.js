@@ -87,6 +87,8 @@ export default class Video {
    * @chainable
    */
   start() {
+    const hasTracks = this.VideoElement.querySelectorAll("track").length > 0;
+
     this.player = videojs(this.VideoElement, {
       autoplay: false,
       controls: true,
@@ -98,11 +100,11 @@ export default class Video {
         chaptersButton: false,
         audioTrackButton: false,
         pictureInPictureToggle: false,
-        subsCapsButton: false,
+        subsCapsButton: hasTracks,
         seekToLive: false,
         liveDisplay: false,
       },
-      textTrackDisplay: false,
+      textTrackDisplay: hasTracks,
       liveTracker: false,
       errorDisplay: false,
       textTrackSettings: false,

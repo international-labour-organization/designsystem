@@ -32,7 +32,16 @@ video:
     video:
       type: object
       label: Video
-      description: video player settings
+      description: >-
+        Video player settings. Keys: `src` (video URL); optional `tracks`, an
+        array of caption/subtitle tracks shaped `{ src, srclang, label, kind,
+        default }` (when present the CC button and on-screen captions are
+        enabled); and a `controls` object of UI labels — `play`, `pause`,
+        `volume`, `fullscreen`, plus the optional captions-menu labels
+        `chooseSubtitlesText` (menu heading, defaults to "Choose subtitles")
+        and `noCaptionsText` (the "captions off" option, defaults to "None").
+        The two caption labels are applied as CSS custom properties, so they are
+        only meaningful when `tracks` are supplied.
       required: true
       preview:
         controls:
@@ -42,6 +51,32 @@ video:
           volume: "Volume"
         src: "/images/video-example.mp4"
         tracks: null
+  variants:
+    default:
+      label: Default
+    captioned:
+      label: "With captions"
+      description: "A server-sourced video with closed-caption (subtitle) tracks the viewer can switch between using the CC button."
+      fields:
+        video:
+          controls:
+            fullscreen: "Fullscreen"
+            play: "Play"
+            pause: "Pause"
+            volume: "Volume"
+            chooseSubtitlesText: "Choose subtitles"
+            noCaptionsText: "None"
+          src: "/images/video-example.mp4"
+          tracks:
+            - src: "/video-example.en.vtt"
+              srclang: "en"
+              label: "English"
+              kind: "captions"
+              default: true
+            - src: "/video-example.es.vtt"
+              srclang: "es"
+              label: "Spanish"
+              kind: "captions"
 
 youtube_video:
   namespace: Components/Media

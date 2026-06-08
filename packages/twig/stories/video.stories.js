@@ -14,7 +14,7 @@ const Meta = {
   ...story.meta,
 };
 
-const [Default] = story.stories;
+const [Default, Captioned] = story.stories;
 
 export default Meta;
-export { Default };
+export { Default, Captioned };
