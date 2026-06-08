@@ -242,7 +242,10 @@
         &[class*="semi-transparent"] {
           #{$c}--card-offset {
             background: rgba(35, 0, 80, 0.6);
-            box-shadow: 0.3px 0 0 0 rgba(35, 0, 80, 0.6);
+            // No seam-bridging box-shadow here: with a translucent fill the
+            // shadow composites over the card's own semi-transparent layer,
+            // producing a darker hairline at the offset/card boundary.
+            box-shadow: none;
           }
         }
       }
@@ -256,7 +259,9 @@
         &[class*="semi-transparent"] {
           #{$c}--card-offset {
             background: rgba(255, 255, 255, 0.6);
-            box-shadow: 0.3px 0 0 0 rgba(255, 255, 255, 0.6);
+            // See dark variant above: no box-shadow for translucent fills,
+            // otherwise the shadow doubles up into a darker seam line.
+            box-shadow: none;
           }
         }
       }
