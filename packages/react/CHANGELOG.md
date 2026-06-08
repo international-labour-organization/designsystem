@@ -1,5 +1,37 @@
 # @ilo-org/react
 
+## 1.4.0
+
+### Minor Changes
+
+- 55dfd495f: Video: Video player now supports closed captioning
+
+### Patch Changes
+
+- 5a4632702: **Hero:** Fixed the card-offset space (between the left edge of the screen
+  and the HeroCard) so it correctly matches the hero card's background and
+  theme, bringing the React component in line with the Twig implementation.
+
+  - The root element now receives a `hero__card-background__*` class derived
+    from `heroCard.background`, so the offset honours `semi-transparent` and
+    `transparent` cards. Previously this class was never emitted in React,
+    leaving the offset solid regardless of the card's background.
+  - The Hero `theme` now falls back to `heroCard.theme` when not explicitly
+    set (matching Twig's `theme|default(herocard.theme)`), so a `light` card
+    no longer renders next to a `dark` offset. An explicit `theme` on `Hero`
+    still takes precedence.
+
+- e30d73909: **Hero:** Removed the seam-bridging `box-shadow` on semi-transparent
+  card-offsets. With a translucent fill the shadow composited over the card's
+  own semi-transparent layer, producing a darker hairline at the offset/card
+  boundary on high-resolution screens. This is a visual change to the Hero in
+  any package that renders it.
+- 259406e97: Dropdown: Prevented focus styling being applied on hover for disabled dropdowns
+- Updated dependencies [e30d73909]
+- Updated dependencies [55dfd495f]
+- Updated dependencies [259406e97]
+  - @ilo-org/styles@1.14.0
+
 ## 1.3.0
 
 ### Minor Changes
