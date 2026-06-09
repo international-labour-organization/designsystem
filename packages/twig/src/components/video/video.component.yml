@@ -32,16 +32,7 @@ video:
     video:
       type: object
       label: Video
-      description: >-
-        Video player settings. Keys: `src` (video URL); optional `tracks`, an
-        array of caption/subtitle tracks shaped `{ src, srclang, label, kind,
-        default }` (when present the CC button and on-screen captions are
-        enabled); and a `controls` object of UI labels — `play`, `pause`,
-        `volume`, `fullscreen`, plus the optional captions-menu labels
-        `chooseSubtitlesText` (menu heading, defaults to "Choose subtitles")
-        and `noCaptionsText` (the "captions off" option, defaults to "None").
-        The two caption labels are applied as CSS custom properties, so they are
-        only meaningful when `tracks` are supplied.
+      description: video player settings
       required: true
       preview:
         controls:
