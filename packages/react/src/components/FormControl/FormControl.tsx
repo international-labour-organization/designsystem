@@ -1,5 +1,4 @@
 import classnames from "classnames";
-import { nanoid } from "nanoid";
 import {
   FC,
   createContext,
@@ -7,6 +6,7 @@ import {
   useEffect,
   useMemo,
   useState,
+  useId,
 } from "react";
 import { useGlobalSettings } from "../../hooks";
 import { Tooltip } from "../Tooltip";
@@ -30,15 +30,14 @@ export interface FormControlContextProps {
 }
 
 // Calculates unique IDs for the internal accessibility elements
-// TODO: When we upgrade to React 8, this should use useId instead
 function getA11yFields(
   baseClass = "",
   { tooltip, helper, errorMessage }: AllyFields = {}
 ) {
   return {
-    tooltipId: tooltip && `${baseClass}--tooltip--${nanoid()}`,
-    helperId: helper && `${baseClass}--helper--${nanoid()}`,
-    errorId: errorMessage && `${baseClass}--error--${nanoid()}`,
+    tooltipId: tooltip && `${baseClass}--tooltip--${useId()}`,
+    helperId: helper && `${baseClass}--helper--${useId()}`,
+    errorId: errorMessage && `${baseClass}--error--${useId()}`,
   };
 }
 
