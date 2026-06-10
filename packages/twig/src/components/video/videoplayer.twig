@@ -2,7 +2,21 @@
 VIDEO PLAYER SUB-COMPONENT
 #}
 {% set poster = url|last %}
-<div class="{{prefix}}--videoplayer" data-loadcomponent="Video" data-prefix="{{prefix}}" data-src="{{src}}" data-vjs-type="{{vjsType}}">
-    <video class="{{prefix}}--video--element" poster="{{poster.src}}">
-    </video>
+{% set chooseSubtitlesText = controls.chooseSubtitlesText|default("Choose subtitles") %}
+{% set noCaptionsText = controls.noCaptionsText|default("None") %}
+<div
+  class="{{prefix}}--videoplayer"
+  data-loadcomponent="Video"
+  data-prefix="{{prefix}}"
+  data-src="{{src}}"
+  data-vjs-type="{{vjsType}}"
+  style="--ilo-video-choose-subtitle-text: '{{ chooseSubtitlesText }}'; --ilo-video-none: '{{ noCaptionsText }}';"
+>
+  <video class="{{prefix}}--video--element" poster="{{poster.src}}">
+    {% if tracks %}
+      {% for track in tracks %}
+        <track kind="{{ track.kind|default('captions') }}" src="{{ track.src }}" srclang="{{ track.srclang }}" label="{{ track.label }}"{{ track.default ? ' default' : '' }}>
+      {% endfor %}
+    {% endif %}
+  </video>
 </div>
