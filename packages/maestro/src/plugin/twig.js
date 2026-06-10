@@ -34,6 +34,9 @@ const includeTokenTypes = [
   "Twig.logic.type.import",
 ];
 
+// Normalize Windows backslashes to forward slashes so paths are valid in
+// `import '...'` statements. On POSIX, path.resolve() already uses forward
+// slashes, so the replacement matches nothing and the path is unchanged.
 const toImportPath = (path) => path.replace(/\\/g, "/");
 
 const resolveFile = (directory, file) => {
