@@ -32,12 +32,13 @@ export interface FormControlContextProps {
 // Calculates unique IDs for the internal accessibility elements
 function getA11yFields(
   baseClass = "",
-  { tooltip, helper, errorMessage }: AllyFields = {}
+  { tooltip, helper, errorMessage }: AllyFields = {},
+  instanceId: string
 ) {
   return {
-    tooltipId: tooltip && `${baseClass}--tooltip--${useId()}`,
-    helperId: helper && `${baseClass}--helper--${useId()}`,
-    errorId: errorMessage && `${baseClass}--error--${useId()}`,
+    tooltipId: tooltip && `${baseClass}--tooltip--${instanceId}`,
+    helperId: helper && `${baseClass}--helper--${instanceId}`,
+    errorId: errorMessage && `${baseClass}--error--${instanceId}`,
   };
 }
 
@@ -87,10 +88,13 @@ const FormControl: FC<FormControlProps> = ({
   // Classes applied to the outer container
   const baseClass = `${prefix}--form-control`;
 
+  const instanceId = useId();
+
   // The ids of the tooltip, helper, and error only get calculated on first render
   const a11yFields = useMemo(
-    () => getA11yFields(baseClass, { helper, errorMessage, tooltip }),
-    [baseClass, helper, errorMessage, tooltip]
+    () =>
+      getA11yFields(baseClass, { helper, errorMessage, tooltip }, instanceId),
+    [baseClass, helper, errorMessage, tooltip, instanceId]
   );
 
   // The ids of the tooltip, helper, and error
