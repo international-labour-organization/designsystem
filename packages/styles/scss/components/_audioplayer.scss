@@ -41,6 +41,9 @@
     font-size: var(--ilo-font-size-sm);
     font-weight: var(--ilo-font-weight-medium);
     line-height: var(--ilo-line-height-lg);
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
   }
   &--track-details {
     display: flex;
@@ -194,6 +197,9 @@
       border-bottom: none;
       padding-inline: spacing(3) 0;
       padding-block: 0;
+    }
+    &--track-name {
+      width: 30vw;
     }
     &--center {
       justify-content: center;
