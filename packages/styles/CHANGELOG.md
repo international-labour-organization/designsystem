@@ -1,5 +1,11 @@
 # @ilo-org/styles
 
+## 1.14.2
+
+### Patch Changes
+
+- fe028afa7: AudioPlayer: Fix styling to make sure long titles will be truncated with ellipsis
+
 ## 1.14.1
 
 ### Patch Changes

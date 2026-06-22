@@ -1,5 +1,13 @@
 # @ilo-org/react
 
+## 1.4.2
+
+### Patch Changes
+
+- fe028afa7: AudioPlayer: Fix styling to make sure long titles will be truncated with ellipsis
+- Updated dependencies [fe028afa7]
+  - @ilo-org/styles@1.14.2
+
 ## 1.4.1
 
 ### Patch Changes
