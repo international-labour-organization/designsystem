@@ -38,6 +38,11 @@
     padding-block-end: spacing(3);
   }
   &--track-name {
+    // `display: block` is required for the ellipsis to apply: when `nameHref`
+    // is set the name renders as an inline `<a>`, and text-overflow/overflow
+    // are no-ops on inline elements, so long linked titles would overflow
+    // instead of truncating.
+    display: block;
     font-size: var(--ilo-font-size-sm);
     font-weight: var(--ilo-font-weight-medium);
     line-height: var(--ilo-line-height-lg);
@@ -46,7 +51,14 @@
     white-space: nowrap;
   }
   &--track-details {
-    display: flex;
+    // Block (not flex) so the combined "programme • creator" line truncates
+    // with an ellipsis when it overflows; text-overflow is a no-op on a flex
+    // container. The child spans stay inline, so the bullet separator and
+    // spacing are unchanged.
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
     font-size: var(--ilo-font-size-xsm);
     line-height: var(--ilo-line-height-xlg);
     color: var(--ilo-color-gray-light);
@@ -189,21 +201,34 @@
 
   @include breakpoint("md") {
     &--body {
-      grid-template-columns: 1fr 1fr 1fr;
+      // The center column hugs its content while the equal minmax(0, 1fr) side
+      // tracks keep it optically centered. minmax(0, 1fr) (not plain 1fr, which
+      // has an implicit min-content floor) lets the side tracks shrink below
+      // their content so the title/authors can truncate instead of pushing the
+      // center off-axis.
+      grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
       grid-template-rows: auto;
       grid-template-areas: "left center right";
     }
     &--left {
       border-bottom: none;
-      padding-inline: spacing(3) 0;
       padding-block: 0;
-    }
-    &--track-name {
-      width: 30vw;
+      // Trailing gap separating the title/authors from the centered controls.
+      // The 5vw term scales with the viewport — tighter when narrow, roomier
+      // when wide. vw (not %, which resolves against this item's own narrow grid
+      // track and so never reaches the bounds) ties the gap to viewport width so
+      // the clamp's floor (narrow `md`) and ceiling (ultra-wide) actually engage.
+      padding-inline: spacing(3) clamp(spacing(3), 4vw, spacing(11));
+      // Allow the column to shrink below its content's intrinsic width so the
+      // title/authors can truncate.
+      min-width: 0;
     }
     &--center {
       justify-content: center;
-      padding: 0;
+      // Horizontal padding gives the play controls breathing room from the
+      // title (left) and time/volume cluster (right). The center track is
+      // auto-sized, so this widens the gap on both sides while staying centered.
+      padding-block: 0;
     }
     &--volume-slider {
       width: 40%;
