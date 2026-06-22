@@ -1,5 +1,19 @@
 # @ilo-org/twig
 
+## 1.13.0
+
+### Minor Changes
+
+- 5dad8c44a: Video: Supports closed captioning
+
+### Patch Changes
+
+- d0136a568: AudioPlayer: added ellipsis to long track names
+- 53cb3e28d: Video: Update video control styles to be in sync with Figma designs
+- Updated dependencies [d0136a568]
+- Updated dependencies [53cb3e28d]
+  - @ilo-org/styles@1.14.1
+
 ## 1.12.8
 
 ### Patch Changes
