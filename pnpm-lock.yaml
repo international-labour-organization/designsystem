@@ -340,9 +340,6 @@ importers:
       merge-refs:
         specifier: ^2.0.0
         version: 2.0.0(@types/react@18.3.3)
-      nanoid:
-        specifier: ^3.3.6
-        version: 3.3.6
       react:
         specifier: 18 || 19
         version: 18.3.1
