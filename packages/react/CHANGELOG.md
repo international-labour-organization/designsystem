@@ -1,5 +1,16 @@
 # @ilo-org/react
 
+## 1.4.1
+
+### Patch Changes
+
+- d0136a568: AudioPlayer: added ellipsis to long track names
+- 53cb3e28d: Video: Update video control styles to be in sync with Figma designs
+- 8b665517b: FormControl: Use React `useId` for accessibility field IDs
+- Updated dependencies [d0136a568]
+- Updated dependencies [53cb3e28d]
+  - @ilo-org/styles@1.14.1
+
 ## 1.4.0
 
 ### Minor Changes
