@@ -1,5 +1,12 @@
 # @ilo-org/styles
 
+## 1.14.1
+
+### Patch Changes
+
+- d0136a568: AudioPlayer: added ellipsis to long track names
+- 53cb3e28d: Video: Update video control styles to be in sync with Figma designs
+
 ## 1.14.0
 
 ### Minor Changes
