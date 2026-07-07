@@ -8,9 +8,6 @@
     "url": "git+https://github.com/international-labour-organization/designsystem.git",
     "directory": "config/eslint-config"
   },
-  "files": [
-    "*.{js,ts,json}"
-  ],
   "type": "module",
   "publishConfig": {
     "access": "public"
