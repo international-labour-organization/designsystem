@@ -1,5 +1,20 @@
 # @ilo-org/twig
 
+## 1.13.2
+
+### Patch Changes
+
+- f2e25d9: Updated dependencies (pnpm-lock.yaml refresh).
+
+  Pinned the transitive dependency `human-id` to 4.1.1 via a pnpm override in the root `package.json`. Newer versions (4.2.0+) are ESM-only and crash `@changesets/write` (and therefore `npx changeset`) with `ERR_REQUIRE_ESM`, since it still loads `human-id` via CommonJS `require()`. The override can be removed once changesets ships a release that imports `human-id` as ESM.
+
+- Updated dependencies [f2e25d9]
+  - @ilo-org/maestro@1.0.2
+  - @ilo-org/styles@1.14.3
+  - @ilo-org/brand-assets@1.0.2
+  - @ilo-org/fonts@2.0.1
+  - @ilo-org/icons@2.4.2
+
 ## 1.13.1
 
 ### Patch Changes
