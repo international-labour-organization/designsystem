@@ -143,7 +143,6 @@
     box-shadow:
       4px 4px 0 1px var(--ilo-color-borders-focus) inset,
       -4px -4px 0 1px var(--ilo-color-borders-focus) inset;
-    color: var(--ilo-button-labels-focus-color);
     @include globaltransition("color, background-color, border-color");
 
     &.#{$prefix}--small {
