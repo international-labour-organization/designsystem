@@ -19,7 +19,7 @@ export type ProfileProps = {
   /**
    * Specify an avatar to be added to your Profile component. Image *must* be a perfect square. CMS backend should provide a fallback if the avatar is not populated.
    */
-  avatar: string;
+  avatar?: string;
 
   /**
    * Specify a role to be added to your Profile component.
@@ -82,7 +82,9 @@ const Profile = forwardRef<HTMLElement, ProfileProps>(
 
     return (
       <figure className={profileClasses} ref={ref}>
-        <img className={`${baseClass}--avatar`} src={avatar} alt={name} />
+        {avatar && (
+          <img className={`${baseClass}--avatar`} src={avatar} alt={name} />
+        )}
         <figcaption>
           <div className={`${baseClass}--figcaption--content`}>
             <div className={`${baseClass}--name`}>{name}</div>
