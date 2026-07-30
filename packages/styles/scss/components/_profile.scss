@@ -11,7 +11,7 @@
   --row-1-height: #{$row-1-lg};
 
   display: grid;
-  grid-template-columns: min-content 1fr;
+  grid-template-columns: auto 1fr;
   grid-template-rows: repeat(minmax(var(--row-1-height), auto));
   max-width: px-to-rem(343px);
   width: 100%;
@@ -30,7 +30,6 @@
     flex-flow: column;
     justify-content: center;
     grid-row: 1;
-    grid-column-end: -1;
   }
 
   &--figcaption--content {
