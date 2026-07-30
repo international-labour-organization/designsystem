@@ -58,6 +58,10 @@
 
   @include image-caption-styles;
 
+  &__theme__dark {
+    @include image-caption-dark-styles;
+  }
+
   // ? drupal style reset issue
   button {
     padding: 0;

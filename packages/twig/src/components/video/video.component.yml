@@ -42,6 +42,14 @@ video:
           volume: "Volume"
         src: "/images/video-example.mp4"
         tracks: null
+  settings:
+    theme:
+      type: select
+      label: Theme
+      description: The theme to be used for the Video component.
+      options:
+        light: light
+        dark: dark
   variants:
     default:
       label: Default
@@ -105,4 +113,12 @@ youtube_video:
       description: The source type of video, required for youtube embedded videos
       required: false
       preview: "video/youtube"
+  settings:
+    theme:
+      type: select
+      label: Theme
+      description: The theme to be used for the Video component.
+      options:
+        light: light
+        dark: dark
   visibility: storybook

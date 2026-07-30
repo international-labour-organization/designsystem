@@ -1,3 +1,4 @@
+import { ThemeTypes } from "../../types";
 import { VideoPlayerControls, VideoTextTrack } from "./VideoPlayer.props";
 
 export interface Poster {
@@ -35,4 +36,9 @@ export interface VideoProps {
 
   // Optional closed-caption tracks
   tracks?: VideoTextTrack[];
+
+  /**
+   * Specify the theme for the video component, either light or dark
+   */
+  theme?: ThemeTypes;
 }
