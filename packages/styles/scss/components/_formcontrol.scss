@@ -176,6 +176,10 @@
         margin-right: calc(1 * var(--ilo-spacing-base));
       }
     }
+
+    &--required {
+      color: var(--ilo-color-red-dark);
+    }
   }
 
   &--helper {

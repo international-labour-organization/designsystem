@@ -59,6 +59,11 @@ export interface FormControlPublicProps {
    * Theme to use for the FormControl. This will be overridden by the theme of the Form.
    */
   theme?: ThemeTypes;
+
+  /**
+   * Is the input required?
+   */
+  required?: boolean;
 }
 
 export interface FormControlPrivateProps {
