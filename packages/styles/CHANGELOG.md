@@ -1,5 +1,22 @@
 # @ilo-org/styles
 
+## 1.15.0
+
+### Minor Changes
+
+- 8557be2: FormControl: added asteriks to form labels when they are required
+- 69b1b79: Video: implemented theme support
+
+### Patch Changes
+
+- f8e5714: Video: removed the deprecated if statement
+- 0913d19: DatePicker: set default text color
+  FileUpload: set default text color
+  NumberPicker: set default text color
+  SearchField: set default text color
+- 9c45adb: Button: fixed button content color while focused
+- d146a79: Profile: fixed content alignment when avatar is absent
+
 ## 1.14.3
 
 ### Patch Changes

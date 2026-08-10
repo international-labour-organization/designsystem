@@ -1,5 +1,29 @@
 # @ilo-org/twig
 
+## 1.14.0
+
+### Minor Changes
+
+- 8557be2: FormControl: added asteriks to form labels when they are required
+- 69b1b79: Video: implemented theme support
+
+### Patch Changes
+
+- 0913d19: DatePicker: set default text color
+  FileUpload: set default text color
+  NumberPicker: set default text color
+  SearchField: set default text color
+- 9c45adb: Button: fixed button content color while focused
+- d146a79: Profile: fixed content alignment when avatar is absent
+- 7997326: Icon: fixed element size before svg is loaded
+- Updated dependencies [f8e5714]
+- Updated dependencies [0913d19]
+- Updated dependencies [8557be2]
+- Updated dependencies [9c45adb]
+- Updated dependencies [69b1b79]
+- Updated dependencies [d146a79]
+  - @ilo-org/styles@1.15.0
+
 ## 1.13.2
 
 ### Patch Changes
