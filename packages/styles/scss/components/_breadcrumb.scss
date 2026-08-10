@@ -6,18 +6,22 @@
 .#{$prefix}--breadcrumb {
   $breadcrumb: &;
 
-  --ilo-breadcrumb-background-color: var(--ilo-color-white);
-  --ilo-breadcrumb-link-color: var(--ilo-color-blue-dark);
-  --ilo-breadcrumb-link-hover-color: var(--ilo-color-blue);
+  --ilo-breadcrumb-background-color: var(
+    --ilo-color-light-container-bg-default
+  );
+  --ilo-breadcrumb-link-color: var(--ilo-color-light-text-brand);
+  --ilo-breadcrumb-link-hover-color: var(--ilo-color-light-action-hover);
 
   position: relative;
   z-index: 10;
 
   &__theme {
     &__dark {
-      --ilo-breadcrumb-background-color: var(--ilo-color-blue-dark);
-      --ilo-breadcrumb-link-color: var(--ilo-color-white);
-      --ilo-breadcrumb-link-hover-color: var(--ilo-color-white);
+      --ilo-breadcrumb-background-color: var(
+        --ilo-color-light-container-bg-brand
+      );
+      --ilo-breadcrumb-link-color: var(--ilo-color-light-text-inverse);
+      --ilo-breadcrumb-link-hover-color: var(--ilo-color-light-text-inverse);
     }
   }
 
