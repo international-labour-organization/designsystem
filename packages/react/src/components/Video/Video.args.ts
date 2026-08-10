@@ -16,6 +16,7 @@ const videofile: VideoProps = {
   },
   src: "/video-example.mp4",
   youtube: false,
+  theme: "light",
 };
 
 const videofileWithCaptions: VideoProps = {
@@ -51,6 +52,7 @@ const videofileWithCaptions: VideoProps = {
   ],
   src: "/video-example.mp4",
   youtube: false,
+  theme: "light",
 };
 
 const videoyt: VideoProps = {
@@ -69,6 +71,7 @@ const videoyt: VideoProps = {
   },
   src: "https://youtu.be/X72_A4_6zjU",
   youtube: true,
+  theme: "light",
 };
 
 /**

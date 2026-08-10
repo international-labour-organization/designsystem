@@ -1,8 +1,8 @@
 {#
   VIDEO COMPONENT
 #}
-
-<figure class="{{prefix}}--video" data-prefix="{{prefix}}">
+{% set theme = theme|default("light") %}
+<figure class="{{prefix}}--video {{prefix}}--video__theme__{{theme}}" data-prefix="{{prefix}}">
   <div class="{{prefix}}--video--wrapper">
     {% include "@components/video/videoplayer.twig" with {
       alt: alt,
@@ -14,5 +14,7 @@
       vjsType: vjsType
     } %}
   </div>
-  <figcaption>{{caption}}</figcaption>
+  {% if caption %}
+    <figcaption class="{{prefix}}--video--caption">{{caption}}</figcaption>
+  {% endif %}
 </figure>

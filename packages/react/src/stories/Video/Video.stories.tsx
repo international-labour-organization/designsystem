@@ -18,7 +18,12 @@ const VideoMeta: Meta<typeof Video> = {
   title: "Components/Media/Video",
   tags: ["autodocs"],
   component: Video,
-  argTypes: {},
+  argTypes: {
+    theme: {
+      control: "select",
+      options: ["light", "dark"],
+    },
+  },
   parameters: {
     docs: {
       page: () => (
