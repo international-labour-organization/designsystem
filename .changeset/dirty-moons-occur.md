@@ -1,5 +1,7 @@
 ---
 "@ilo-org/styles": patch
+"@ilo-org/twig": patch
+"@ilo-org/react": patch
 ---
 
 DatePicker: set default text color
