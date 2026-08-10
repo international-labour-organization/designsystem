@@ -4,16 +4,16 @@
 @import "../mixins";
 
 .ilo--richtext {
-  --ilo-richtext-color: var(--ilo-color-blue-dark);
-  --ilo-richtext-hr-color: var(--ilo-color-gray-light);
-  --ilo-richtext-link-color: var(--ilo-color-purple);
-  --ilo-richtext-link-visited-color: var(--ilo-color-purple);
+  --ilo-richtext-color: var(--ilo-color-light-text-brand);
+  --ilo-richtext-hr-color: var(--ilo-color-dark-text-subtle);
+  --ilo-richtext-link-color: var(--ilo-color-light-text-accent);
+  --ilo-richtext-link-visited-color: var(--ilo-color-light-text-accent);
 
   &__theme__light {
-    --ilo-richtext-color: var(--ilo-color-blue-dark);
-    --ilo-richtext-hr-color: var(--ilo-color-gray-light);
-    --ilo-richtext-link-color: var(--ilo-color-purple);
-    --ilo-richtext-link-visited-color: var(--ilo-color-purple);
+    --ilo-richtext-color: var(--ilo-color-light-text-brand);
+    --ilo-richtext-hr-color: var(--ilo-color-dark-text-subtle);
+    --ilo-richtext-link-color: var(--ilo-color-light-text-accent);
+    --ilo-richtext-link-visited-color: var(--ilo-color-light-text-accent);
 
     a {
       @include linkstyles("light");
@@ -21,8 +21,8 @@
   }
 
   &__theme__dark {
-    --ilo-richtext-color: var(--ilo-color-white);
-    --ilo-richtext-hr-color: var(--ilo-color-gray-light);
+    --ilo-richtext-color: var(--ilo-color-light-text-inverse);
+    --ilo-richtext-hr-color: var(--ilo-color-dark-text-subtle);
     --ilo-richtext-link-color: var(--ilo-color-blue-medium);
     --ilo-richtext-link-visited-color: var(--ilo-color-blue-medium);
 
