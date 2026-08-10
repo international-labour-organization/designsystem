@@ -20,7 +20,7 @@
 
   cursor: pointer;
   border: none;
-  background-color: var(--ilo-color-gray-charcoal);
+  background-color: var(--ilo-color-light-container-bg-inverse);
   width: $box;
   height: $box;
   background-position: center center;
@@ -30,7 +30,7 @@
 
   &:hover,
   &:focus {
-    background-color: var(--ilo-color-blue-light);
+    background-color: var(--ilo-color-light-feedback-info-light);
     @include dataurlicon($name, $icon-color-hover);
   }
 }
@@ -121,8 +121,8 @@
         &:focus {
           .vjs-duration,
           .vjs-play-control {
-            background-color: var(--ilo-color-blue-light);
-            color: var(--ilo-color-blue);
+            background-color: var(--ilo-color-light-feedback-info-light);
+            color: var(--ilo-color-light-action-hover);
           }
 
           .vjs-play-control {
@@ -146,8 +146,8 @@
           font-size: px-to-rem(14px);
           height: px-to-rem(40px);
           width: px-to-rem(80px);
-          background-color: var(--ilo-color-gray-charcoal);
-          color: var(--ilo-color-gray-light);
+          background-color: var(--ilo-color-light-container-bg-inverse);
+          color: var(--ilo-color-dark-text-subtle);
         }
 
         @include breakpoint("lg") {
@@ -238,12 +238,12 @@
       &.vjs-hover > .vjs-menu-button,
       &:hover > .vjs-menu-button,
       &:focus-within > .vjs-menu-button {
-        background-color: var(--ilo-color-blue-light);
+        background-color: var(--ilo-color-light-feedback-info-light);
         @include dataurlicon("closed_captions", rgba(30, 45, 190, 1));
       }
 
       .vjs-menu {
-        background: var(--ilo-color-brand-100);
+        background: var(--ilo-color-light-container-bg-subtle);
         border: 0;
         bottom: calc(100% + #{px-to-rem(8px)});
         display: none;
@@ -268,7 +268,7 @@
         &:before {
           @include typography("highlight-medium-bold");
           content: var(--ilo-video-choose-subtitle-text, "Choose subtitles");
-          color: var(--ilo-color-gray-charcoal);
+          color: var(--ilo-color-light-text-default);
           display: block;
           margin-bottom: spacing(2);
           padding-left: px-to-rem(12px);
@@ -295,7 +295,7 @@
       .vjs-menu-item {
         @include typography("body-small");
         align-items: center;
-        color: var(--ilo-color-gray-charcoal);
+        color: var(--ilo-color-light-text-default);
         display: flex;
         gap: px-to-rem(8px);
         line-height: px-to-rem(20px);
@@ -314,7 +314,7 @@
         // :after is the inner 14px dot overlaid on top.
         &:before {
           content: "";
-          background-color: var(--ilo-color-gray-base);
+          background-color: var(--ilo-color-light-container-bg-inactive);
           border-radius: 50%;
           height: px-to-rem(20px);
           width: px-to-rem(20px);
@@ -324,8 +324,8 @@
 
         &:after {
           content: "";
-          background-color: var(--ilo-color-gray-base);
-          border: px-to-rem(4px) solid var(--ilo-color-gray-base);
+          background-color: var(--ilo-color-light-container-bg-inactive);
+          border: px-to-rem(4px) solid var(--ilo-color-light-border-default);
           border-radius: 50%;
           height: px-to-rem(14px);
           width: px-to-rem(14px);
@@ -339,20 +339,20 @@
         }
 
         &.vjs-selected {
-          color: var(--ilo-color-gray-charcoal);
+          color: var(--ilo-color-light-text-default);
 
           &:before {
-            background-color: var(--ilo-color-blue-dark);
+            background-color: var(--ilo-color-light-container-bg-brand);
           }
 
           &:after {
-            background-color: var(--ilo-color-blue-lighter);
-            border-color: var(--ilo-color-blue-dark);
+            background-color: var(--ilo-color-light-container-bg-subtle);
+            border-color: var(--ilo-color-light-border-brand-3);
           }
         }
 
         &:focus:before {
-          background-color: var(--ilo-color-yellow);
+          background-color: var(--ilo-color-light-feedback-warning-default);
         }
       }
 
@@ -376,7 +376,7 @@
     .vjs-progress-control {
       order: 2;
       margin-right: px-to-rem(2px);
-      background-color: var(--ilo-color-gray-charcoal);
+      background-color: var(--ilo-color-light-container-bg-inverse);
       flex-grow: 1;
 
       .vjs-mouse-display {
@@ -398,7 +398,7 @@
       }
 
       .vjs-play-progress {
-        background-color: var(--ilo-color-blue-light);
+        background-color: var(--ilo-color-light-feedback-info-light);
         z-index: 15;
 
         .vjs-time-tooltip {
@@ -407,7 +407,7 @@
       }
 
       .vjs-load-progress {
-        background-color: var(--ilo-color-gray-base);
+        background-color: var(--ilo-color-light-container-bg-inactive);
         z-index: 15;
       }
 
@@ -417,11 +417,11 @@
           position: relative;
 
           .vjs-time-tooltip {
-            color: var(--ilo-color-gray-light);
+            color: var(--ilo-color-dark-text-subtle);
             font-size: px-to-rem(14px);
             height: px-to-rem(32px);
             align-items: center;
-            background-color: var(--ilo-color-gray-charcoal);
+            background-color: var(--ilo-color-light-container-bg-inverse);
             display: flex;
             justify-content: center;
             right: 0;
@@ -476,8 +476,8 @@
 
       // Volume rocker
       .vjs-volume-control {
-        background: var(--ilo-color-blue-light);
-        border-left: px-to-rem(3px) solid var(--ilo-color-gray-base);
+        background: var(--ilo-color-light-feedback-info-light);
+        border-left: px-to-rem(3px) solid var(--ilo-color-light-border-default);
         display: none;
         height: px-to-rem(40px);
         position: absolute;
@@ -501,7 +501,7 @@
           height: px-to-rem(4px);
           position: absolute;
           width: 100%;
-          background-color: var(--ilo-color-gray-base);
+          background-color: var(--ilo-color-light-container-bg-inactive);
         }
 
         .vjs-volume-level {
@@ -509,11 +509,11 @@
           left: 0;
           top: 0;
           position: absolute;
-          background-color: var(--ilo-color-blue);
+          background-color: var(--ilo-color-light-action-selected);
 
           &:before {
             content: "";
-            background: var(--ilo-color-blue);
+            background: var(--ilo-color-light-action-selected);
             border-radius: 50%;
             height: px-to-rem(16px);
             width: px-to-rem(16px);
