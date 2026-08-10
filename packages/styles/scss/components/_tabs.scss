@@ -4,26 +4,28 @@
 
 .ilo--tabs {
   &__theme__light {
-    --ilo-tabs-selection-bg-color: var(--ilo-color-white);
-    --ilo-tabs-btn-bg-color: var(--ilo-color-gray-light);
-    --ilo-tabs-btn-bg-color-hover: var(--ilo-color-blue-lighter);
-    --ilo-tabs-btn-bg-color-selected: var(--ilo-color-white);
-    --ilo-tabs-btn-border-top-hover: var(--ilo-color-blue);
-    --ilo-tabs-btn-border-top-selected: var(--ilo-color-blue-dark);
-    --ilo-tabs-btn-color: var(--ilo-color-blue-dark);
-    --ilo-tabs-btn-color-hover: var(--ilo-color-blue);
-    --ilo-tabs-content-bg-color: var(--ilo-color-white);
+    --ilo-tabs-selection-bg-color: var(--ilo-color-light-container-bg-default);
+    --ilo-tabs-btn-bg-color: var(--ilo-color-light-container-bg-disabled);
+    --ilo-tabs-btn-bg-color-hover: var(--ilo-color-light-container-bg-subtle);
+    --ilo-tabs-btn-bg-color-selected: var(
+      --ilo-color-light-container-bg-default
+    );
+    --ilo-tabs-btn-border-top-hover: var(--ilo-color-light-border-brand);
+    --ilo-tabs-btn-border-top-selected: var(--ilo-color-light-border-brand-3);
+    --ilo-tabs-btn-color: var(--ilo-color-light-text-brand);
+    --ilo-tabs-btn-color-hover: var(--ilo-color-light-action-hover);
+    --ilo-tabs-content-bg-color: var(--ilo-color-light-container-bg-default);
   }
 
   &__theme__dark {
-    --ilo-tabs-selection-bg-color: var(--ilo-color-blue-dark);
-    --ilo-tabs-btn-bg-color: var(--ilo-color-blue-ramp);
-    --ilo-tabs-btn-bg-color-hover: var(--ilo-color-blue-dark);
-    --ilo-tabs-btn-bg-color-selected: var(--ilo-color-blue-dark);
-    --ilo-tabs-btn-border-top-selected: var(--ilo-color-white);
-    --ilo-tabs-btn-color: var(--ilo-color-white);
-    --ilo-tabs-btn-color-hover: var(--ilo-color-white);
-    --ilo-tabs-content-bg-color: var(--ilo-color-blue-dark);
+    --ilo-tabs-selection-bg-color: var(--ilo-color-light-container-bg-brand);
+    --ilo-tabs-btn-bg-color: var(--ilo-color-brand-700);
+    --ilo-tabs-btn-bg-color-hover: var(--ilo-color-light-container-bg-brand);
+    --ilo-tabs-btn-bg-color-selected: var(--ilo-color-light-container-bg-brand);
+    --ilo-tabs-btn-border-top-selected: var(--ilo-color-light-border-inverse);
+    --ilo-tabs-btn-color: var(--ilo-color-light-text-inverse);
+    --ilo-tabs-btn-color-hover: var(--ilo-color-light-text-inverse);
+    --ilo-tabs-content-bg-color: var(--ilo-color-light-container-bg-brand);
   }
 
   * {

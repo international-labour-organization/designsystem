@@ -21,30 +21,30 @@
   letter-spacing: var(--ilo-letter-spacing-sm);
 
   // Colors and border
-  color: var(--ilo-color-blue-dark);
-  background-color: var(--ilo-color-green-light);
+  color: var(--ilo-color-light-text-brand);
+  background-color: var(--ilo-color-light-feedback-success-light);
   border-radius: px-to-rem(2px);
   @include globaltransition("color background-color border-color fill");
 
   &__type {
     &__active {
-      background-color: var(--ilo-color-green-light);
+      background-color: var(--ilo-color-light-feedback-success-light);
     }
 
     &__info {
-      background-color: var(--ilo-color-blue-lighter);
+      background-color: var(--ilo-color-light-container-bg-subtle);
     }
 
     &__alert {
-      background-color: var(--ilo-color-red);
+      background-color: var(--ilo-color-light-feedback-error-default);
     }
 
     &__subtle {
-      background-color: var(--ilo-color-red-light);
+      background-color: var(--ilo-color-light-feedback-error-light);
     }
 
     &__inactive {
-      background-color: var(--ilo-color-gray-light);
+      background-color: var(--ilo-color-light-container-bg-disabled);
     }
   }
 }

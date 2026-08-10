@@ -41,7 +41,7 @@
       position: absolute;
       bottom: -12px;
       width: 100%;
-      border-bottom: 2px solid var(--ilo-color-gray-light);
+      border-bottom: 2px solid var(--ilo-color-light-border-subtle);
     }
 
     #{$c}__size__small &::after {
@@ -56,7 +56,7 @@
   &--role,
   &--description {
     @include typography("body-small");
-    color: var(--ilo-color-gray-accessible);
+    color: var(--ilo-color-light-text-subtle);
   }
 
   &--description {
@@ -70,7 +70,7 @@
     $icon: "[class*='icon']";
 
     @include typography("highlight-medium");
-    color: var(--ilo-color-blue-dark);
+    color: var(--ilo-color-light-text-brand);
     grid-column: 1 / -1;
 
     a {
@@ -84,7 +84,7 @@
       &:hover,
       &:focus,
       &:focus-within {
-        color: var(--ilo-color-blue);
+        color: var(--ilo-color-light-action-hover);
       }
     }
 
@@ -121,11 +121,11 @@
 
   &__theme {
     &__dark {
-      color: var(--ilo-color-white);
+      color: var(--ilo-color-light-text-inverse);
 
       #{$c}--figcaption--content {
         &:after {
-          border-color: var(--ilo-color-white);
+          border-color: var(--ilo-color-light-border-inverse);
         }
       }
 
@@ -134,11 +134,11 @@
       #{$c}--description,
       #{$c}--link,
       a {
-        color: var(--ilo-color-white);
+        color: var(--ilo-color-light-text-inverse);
       }
 
       a:hover {
-        background-color: var(--ilo-color-blue-lighter);
+        background-color: var(--ilo-color-light-container-bg-subtle);
       }
     }
   }

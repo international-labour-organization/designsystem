@@ -4,8 +4,8 @@
 @mixin image-caption-styles {
   figcaption {
     border-inline-start: var(--ilo-border-lg) solid
-      var(--ilo-color-borders-default);
-    color: var(--ilo-color-gray-accessible);
+      var(--ilo-color-light-border-default);
+    color: var(--ilo-color-light-text-subtle);
     font-size: var(--ilo-font-size-sm);
     line-height: var(--ilo-line-height-xlg);
     font-weight: var(--ilo-font-weight-regular);
@@ -17,7 +17,7 @@
 
 @mixin image-caption-dark-styles {
   figcaption {
-    color: var(--ilo-color-white);
+    color: var(--ilo-color-light-text-inverse);
     border-inline-color: var(--ilo-color-gray-light-semi-transparent);
   }
 }
@@ -62,7 +62,7 @@
     display: none;
     font-size: var(--ilo-font-size-xsm);
     line-height: var(--ilo-line-height-xsm);
-    color: var(--ilo-color-gray-light);
+    color: var(--ilo-color-dark-text-subtle);
     padding-left: spacing(3);
     padding-right: spacing(2);
   }
@@ -89,11 +89,13 @@
     @include image-caption-dark-styles;
 
     #{$self}--credit {
-      --ilo-caption-icon-wrapper-bg-color: var(--ilo-color-white);
+      --ilo-caption-icon-wrapper-bg-color: var(
+        --ilo-color-light-container-bg-default
+      );
     }
 
     #{$self}--label {
-      color: var(--ilo-color-gray-charcoal);
+      color: var(--ilo-color-light-text-default);
     }
   }
 }
