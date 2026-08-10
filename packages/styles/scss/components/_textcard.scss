@@ -46,7 +46,8 @@
       }
 
       &#{$self}__dark {
-        border-bottom: px-to-rem(3px) solid var(--ilo-color-red);
+        border-bottom: px-to-rem(3px) solid
+          var(--ilo-color-light-feedback-error-default);
       }
 
       #{$self}--skeleton--eyebrow {

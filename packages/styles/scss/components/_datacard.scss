@@ -11,15 +11,17 @@
 
       --max-width: #{px-to-rem(600px)};
 
-      background: var(--ilo-color-blue-lighter);
-      border-bottom: px-to-rem(3px) solid var(--ilo-color-blue-light);
+      background: var(--ilo-color-light-container-bg-subtle);
+      border-bottom: px-to-rem(3px) solid var(--ilo-color-light-border-brand-2);
       padding: spacing(12) spacing(10) spacing(14);
       position: relative;
       width: 100%;
 
       &#{$self}__loading {
-        --ilo-skeleton-element-background-color: var(--ilo-color-gray-base);
-        background-color: var(--ilo-color-gray-light);
+        --ilo-skeleton-element-background-color: var(
+          --ilo-color-light-container-bg-inactive
+        );
+        background-color: var(--ilo-color-light-container-bg-disabled);
       }
 
       #{$self}--skeleton--eyebrow {
@@ -161,7 +163,7 @@
       &--content-label {
         @include typography("body-small");
         margin-block-end: spacing(2);
-        color: var(--ilo-color-gray-accessible);
+        color: var(--ilo-color-light-text-subtle);
       }
 
       #{$self}--eyebrow {
@@ -170,7 +172,7 @@
 
       &--content-copy {
         @include typography("body-large");
-        color: var(--ilo-color-gray-charcoal);
+        color: var(--ilo-color-light-text-default);
 
         @include breakpoint("md") {
           #{$self}__size__wide &,

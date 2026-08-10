@@ -77,11 +77,11 @@
         margin-bottom: spacing(6);
 
         #{$self}__theme__dark & {
-          color: var(--ilo-color-blue-dark);
+          color: var(--ilo-color-light-text-brand);
         }
 
         #{$self}__theme__light & {
-          color: var(--ilo-color-white);
+          color: var(--ilo-color-light-text-inverse);
         }
       }
 

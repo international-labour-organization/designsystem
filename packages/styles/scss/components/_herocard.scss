@@ -33,8 +33,8 @@
 
   &__theme {
     &__light {
-      color: var(--ilo-color-gray-charcoal);
-      background: var(--ilo-color-white);
+      color: var(--ilo-color-light-text-default);
+      background: var(--ilo-color-light-container-bg-default);
 
       @include breakpoint("lg") {
         &.ilo--hero-card__background__semi-transparent {
@@ -44,8 +44,8 @@
     }
 
     &__dark {
-      background: var(--ilo-color-blue-dark);
-      color: var(--ilo-color-white);
+      background: var(--ilo-color-light-container-bg-brand);
+      color: var(--ilo-color-light-text-inverse);
 
       @include breakpoint("lg") {
         &.ilo--hero-card__background__semi-transparent {
@@ -57,11 +57,11 @@
     @include breakpoint("lg") {
       &__dark.ilo--hero-card__background__transparent,
       &__light.ilo--hero-card__background__transparent {
-        color: var(--ilo-color-white);
+        color: var(--ilo-color-light-text-inverse);
         background: transparent;
 
         * {
-          filter: drop-shadow(1px 1px 12px var(--ilo-color-gray-charcoal));
+          filter: drop-shadow(1px 1px 12px var(--ilo-color-neutrals-black));
         }
       }
     }
@@ -100,37 +100,37 @@
   &--datecopy {
     @include typography("body-medium");
     margin-bottom: px-to-rem(28px);
-    color: var(--ilo-color-gray-accessible);
+    color: var(--ilo-color-light-text-subtle);
 
     #{$c}__theme__dark & {
-      color: var(--ilo-color-white);
+      color: var(--ilo-color-light-text-inverse);
     }
 
     #{$c}__theme__light & {
-      color: var(--ilo-color-gray-accessible);
+      color: var(--ilo-color-light-text-subtle);
     }
 
     .ilo--hero-card__background__transparent &,
     .ilo--hero-card__background__semi-transparent & {
-      color: var(--ilo-color-white);
+      color: var(--ilo-color-light-text-inverse);
     }
   }
 
   &--eyebrow {
     @include typography("body-medium");
     margin-bottom: spacing(4);
-    color: var(--ilo-color-purple);
+    color: var(--ilo-color-light-text-accent);
 
     #{$c}__theme__dark & {
-      color: var(--ilo-color-white);
+      color: var(--ilo-color-light-text-inverse);
     }
 
     #{$c}__theme__light & {
-      color: var(--ilo-color-purple);
+      color: var(--ilo-color-light-text-accent);
     }
 
     .ilo--hero-card__background__transparent & {
-      color: var(--ilo-color-white);
+      color: var(--ilo-color-light-text-inverse);
     }
   }
 
