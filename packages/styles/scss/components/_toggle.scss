@@ -36,7 +36,7 @@
 
   &__error {
     #{$c}--slider {
-      outline-color: var(--ilo-color-red) !important;
+      outline-color: var(--ilo-color-light-feedback-error-default) !important;
       outline-width: calc(var(--toggle-height) / 8);
       outline-style: solid;
     }
@@ -58,7 +58,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: var(--ilo-color-gray-base);
+    background-color: var(--ilo-color-light-container-bg-inactive);
     border-radius: calc(var(--toggle-height) / 2);
     @include globaltransition("background");
 
@@ -69,24 +69,24 @@
       width: calc(var(--toggle-height) - var(--toggle-height) / 3);
       left: calc(var(--toggle-height) / 6);
       bottom: calc(var(--toggle-height) / 6);
-      background-color: var(--ilo-color-white);
+      background-color: var(--ilo-color-light-container-bg-default);
       border-radius: 50%;
       @include globaltransition("transform, background");
     }
   }
 
   input[type="checkbox"]:checked + &--slider {
-    background-color: var(--ilo-color-blue-dark);
+    background-color: var(--ilo-color-light-container-bg-brand);
   }
 
   input[type="checkbox"]:focus + &--slider {
-    outline-color: var(--ilo-color-yellow);
+    outline-color: var(--ilo-color-light-border-focus);
     outline-width: calc(var(--toggle-height) / 8);
     outline-style: solid;
   }
 
   input:checked + &--slider:before {
     transform: translateX(calc(var(--toggle-width) - var(--toggle-height)));
-    background-color: var(--ilo-color-blue-lighter);
+    background-color: var(--ilo-color-light-container-bg-subtle);
   }
 }
