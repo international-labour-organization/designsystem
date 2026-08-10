@@ -79,6 +79,7 @@ const FormControl: FC<FormControlProps> = ({
   theme = "light",
   labelSize = "medium",
   labelPlacement = "top",
+  required,
 }) => {
   const { prefix } = useGlobalSettings();
   const { theme: formTheme } = useFormContext();
@@ -135,6 +136,7 @@ const FormControl: FC<FormControlProps> = ({
   const labelBaseClass = `${baseClass}--label`;
   const labelSizeClass = `${labelBaseClass}__size__${labelSize}`;
   const labelClass = classnames(labelBaseClass, labelSizeClass);
+  const labelRequiredClass = `${labelBaseClass}--required`;
 
   // Helper class
   const helperClass = `${baseClass}--helper`;
@@ -149,7 +151,14 @@ const FormControl: FC<FormControlProps> = ({
     <FormControlContext.Provider value={contextValue}>
       <div className={formControlClass} style={style}>
         <span className={labelClass}>
-          <label htmlFor={fieldId}>{label}</label>
+          <label htmlFor={fieldId}>
+            {label}
+            {required && (
+              <span className={labelRequiredClass} aria-hidden="true">
+                *
+              </span>
+            )}
+          </label>
           {tooltip && (
             <Tooltip
               id={tooltipId}
