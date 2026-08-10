@@ -3,7 +3,7 @@
 
 .ilo--context-menu {
   border-radius: px-to-rem(2px);
-  background-color: var(--ilo-color-gray-light);
+  background-color: var(--ilo-color-light-container-bg-disabled);
   display: inline-block;
   position: relative;
   width: auto;
@@ -18,7 +18,7 @@
     height: 0;
     border-left: px-to-rem(10px) solid transparent;
     border-right: px-to-rem(10px) solid transparent;
-    border-bottom: px-to-rem(12px) solid var(--ilo-color-gray-light);
+    border-bottom: px-to-rem(12px) solid var(--ilo-color-light-border-subtle);
   }
 
   &--item {
@@ -40,11 +40,11 @@
 
     &:hover,
     &:focus {
-      background-color: var(--ilo-color-blue-lighter);
+      background-color: var(--ilo-color-light-container-bg-subtle);
     }
 
     &.endsection {
-      border-bottom: px-to-rem(3px) solid var(--ilo-color-white);
+      border-bottom: px-to-rem(3px) solid var(--ilo-color-light-border-inverse);
 
       .ilo--context-menu--link {
         border-bottom: none;
@@ -53,8 +53,9 @@
   }
 
   &--link {
-    border-bottom: var(--ilo-border-md) solid var(--ilo-color-white);
-    color: var(--ilo-color-blue-dark);
+    border-bottom: var(--ilo-border-md) solid
+      var(--ilo-color-light-border-inverse);
+    color: var(--ilo-color-light-text-brand);
     display: inline-block;
     padding: spacing(4) spacing(2);
     text-decoration: none;
@@ -62,13 +63,13 @@
     @include typography("body-xsmall");
 
     &:active {
-      color: var(--ilo-color-blue);
+      color: var(--ilo-color-light-action-hover);
       outline: none;
     }
 
     &:hover,
     &:focus {
-      color: var(--ilo-color-blue);
+      color: var(--ilo-color-light-action-hover);
       outline: none;
       text-decoration: underline;
       text-decoration-thickness: var(--ilo-border-md);
