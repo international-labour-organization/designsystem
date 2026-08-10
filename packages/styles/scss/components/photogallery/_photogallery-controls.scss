@@ -14,7 +14,7 @@
     gap: spacing(1);
     @include typography("highlight-small");
     font-family: var(--ilo-fonts-copy);
-    color: var(--ilo-color-white);
+    color: var(--ilo-color-light-text-inverse);
 
     [dir="rtl"] & {
       flex-direction: row-reverse;
@@ -28,10 +28,10 @@
   }
 
   &__item {
-    background: var(--ilo-color-gray-light);
+    background: var(--ilo-color-light-container-bg-disabled);
     border: none;
     border-radius: 2px;
-    color: var(--ilo-color-blue-dark);
+    color: var(--ilo-color-light-text-brand);
     height: px-to-rem(40px);
     width: px-to-rem(40px);
     position: relative;
@@ -50,19 +50,25 @@
     }
 
     &:hover {
-      background: var(--ilo-color-blue-lighter);
-      color: var(--ilo-color-blue);
+      background: var(--ilo-color-light-container-bg-subtle);
+      color: var(--ilo-color-light-action-hover);
     }
   }
 
   &__first {
     &::before {
       transform: translate(-50%, -50%) rotate(180deg);
-      @include icon("double_chevron_right", var(--ilo-color-blue-dark));
+      @include icon(
+        "double_chevron_right",
+        var(--ilo-color-light-action-default)
+      );
     }
 
     &:hover::before {
-      @include icon("double_chevron_right", var(--ilo-color-blue));
+      @include icon(
+        "double_chevron_right",
+        var(--ilo-color-light-action-hover)
+      );
     }
 
     [dir="rtl"] & {
@@ -74,12 +80,12 @@
 
   &__prev {
     &::before {
-      @include icon("chevron_right", var(--ilo-color-blue-dark));
+      @include icon("chevron_right", var(--ilo-color-light-action-default));
       transform: translate(-50%, -50%) rotate(180deg);
     }
 
     &:hover::before {
-      @include icon("chevron_right", var(--ilo-color-blue));
+      @include icon("chevron_right", var(--ilo-color-light-action-hover));
     }
 
     [dir="rtl"] & {
@@ -91,12 +97,12 @@
 
   &__next {
     &::before {
-      @include icon("chevron_right", var(--ilo-color-blue-dark));
+      @include icon("chevron_right", var(--ilo-color-light-action-default));
       transform: translate(-50%, -50%);
     }
 
     &:hover::before {
-      @include icon("chevron_right", var(--ilo-color-blue));
+      @include icon("chevron_right", var(--ilo-color-light-action-hover));
     }
 
     [dir="rtl"] & {
@@ -108,12 +114,18 @@
 
   &__last {
     &::before {
-      @include icon("double_chevron_right", var(--ilo-color-blue-dark));
+      @include icon(
+        "double_chevron_right",
+        var(--ilo-color-light-action-default)
+      );
       transform: translate(-50%, -50%);
     }
 
     &:hover::before {
-      @include icon("double_chevron_right", var(--ilo-color-blue));
+      @include icon(
+        "double_chevron_right",
+        var(--ilo-color-light-action-hover)
+      );
     }
 
     [dir="rtl"] & {
