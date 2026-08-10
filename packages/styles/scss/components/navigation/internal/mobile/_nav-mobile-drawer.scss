@@ -9,7 +9,7 @@
   right: 0;
   width: 100%;
   height: 100%;
-  background-color: var(--ilo-color-white);
+  background-color: var(--ilo-color-light-container-bg-default);
   transform: translateX(100%);
   transition: transform 225ms ease-in-out;
   z-index: 2;
@@ -23,7 +23,7 @@
     justify-content: space-between;
     align-items: center;
     padding: spacing(4);
-    color: var(--ilo-color-white);
+    color: var(--ilo-color-light-text-inverse);
 
     &-main {
       display: flex;
@@ -34,7 +34,7 @@
 
     &-close {
       border: none;
-      background-color: var(--ilo-color-gray-light);
+      background-color: var(--ilo-color-light-container-bg-disabled);
       width: px-to-rem(32px);
       height: px-to-rem(32px);
       margin-top: -3px;
@@ -43,7 +43,7 @@
         display: block;
         width: px-to-rem(32px);
         height: px-to-rem(32px);
-        @include icon("close", var(--ilo-color-blue-dark));
+        @include icon("close", var(--ilo-color-light-action-default));
       }
     }
   }
@@ -54,7 +54,7 @@
   &__widgets {
     padding-bottom: spacing(4);
     margin-bottom: spacing(4);
-    border-bottom: 4px solid var(--ilo-color-gray-light);
+    border-bottom: 4px solid var(--ilo-color-light-border-subtle);
     overflow-y: auto;
   }
 }

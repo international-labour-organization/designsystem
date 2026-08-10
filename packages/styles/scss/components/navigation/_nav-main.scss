@@ -9,14 +9,14 @@
 
   &-bg {
     &--dark {
-      background-color: var(--ilo-color-blue);
+      background-color: var(--ilo-color-light-action-selected);
     }
 
     &--darker {
-      background-color: var(--ilo-color-blue-dark);
+      background-color: var(--ilo-color-light-container-bg-brand);
 
       @include breakpoint("lg", true) {
-        background-color: var(--ilo-color-blue);
+        background-color: var(--ilo-color-light-action-selected);
       }
     }
   }
@@ -28,18 +28,18 @@
   &__widgets {
     @include nav-widgets-bar-content;
     &::after {
-      background-color: var(--ilo-color-blue-dark);
+      background-color: var(--ilo-color-light-container-bg-brand);
     }
 
     &-bar-corner {
-      @include nav-widgets-corner(var(--ilo-color-blue-dark));
+      @include nav-widgets-corner(var(--ilo-color-light-container-bg-brand));
     }
 
     &-bar {
-      @include nav-widgets-bar(var(--ilo-color-blue-dark));
+      @include nav-widgets-bar(var(--ilo-color-light-container-bg-brand));
 
       &__link {
-        @include nav-widgets-link(var(--ilo-color-blue-dark));
+        @include nav-widgets-link(var(--ilo-color-light-container-bg-brand));
       }
     }
   }
@@ -59,7 +59,7 @@
       }
 
       &__sub {
-        color: var(--ilo-color-blue-light);
+        color: var(--ilo-color-dark-text-brand);
       }
     }
   }
@@ -76,7 +76,9 @@
     }
 
     &-search {
-      --ilo-subsite_nav_complex-search-color: var(--ilo-color-white);
+      --ilo-subsite_nav_complex-search-color: var(
+        --ilo-color-light-text-inverse
+      );
       @include nav-search;
       border: none;
 
@@ -85,23 +87,27 @@
       }
 
       &:hover {
-        --ilo-subsite_nav_complex-search-color: var(--ilo-color-blue);
-        background-color: var(--ilo-color-white);
+        --ilo-subsite_nav_complex-search-color: var(
+          --ilo-color-light-action-hover
+        );
+        background-color: var(--ilo-color-light-container-bg-default);
       }
     }
 
     &-burger {
       @include nav-burger;
 
-      --ilo-subsite_nav_complex-burger-color: var(--ilo-color-white);
+      --ilo-subsite_nav_complex-burger-color: var(
+        --ilo-color-light-text-inverse
+      );
 
       &__icon {
         @include icon("burger", var(--ilo-subsite_nav_complex-burger-color));
       }
 
       &:hover {
-        --ilo-subsite-nav-burger-icon: var(--ilo-color-blue);
-        background-color: var(--ilo-color-white);
+        --ilo-subsite-nav-burger-icon: var(--ilo-color-light-action-hover);
+        background-color: var(--ilo-color-light-container-bg-default);
       }
     }
 

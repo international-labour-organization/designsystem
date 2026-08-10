@@ -39,7 +39,7 @@
 
       &__label {
         @include typography("highlight-medium");
-        color: var(--ilo-color-blue-dark);
+        color: var(--ilo-color-light-text-brand);
       }
 
       &__icon {
@@ -48,7 +48,7 @@
         height: px-to-rem(24px);
         margin-top: -3px;
 
-        @include icon("search", var(--ilo-color-blue-dark));
+        @include icon("search", var(--ilo-color-light-action-default));
       }
     }
 
@@ -75,7 +75,7 @@
       width: 100%;
       display: block;
       text-decoration: none;
-      color: var(--ilo-color-blue-dark);
+      color: var(--ilo-color-light-text-brand);
     }
 
     &-language {
@@ -88,7 +88,7 @@
       justify-content: space-between;
 
       &__label {
-        color: var(--ilo-color-blue-dark);
+        color: var(--ilo-color-light-text-brand);
       }
 
       &__icon {
@@ -97,7 +97,7 @@
         height: px-to-rem(24px);
         margin-top: -3px;
 
-        @include icon("globe", var(--ilo-color-blue-dark));
+        @include icon("globe", var(--ilo-color-light-action-default));
       }
     }
   }
@@ -109,14 +109,14 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    color: var(--ilo-color-blue-dark);
+    color: var(--ilo-color-light-text-brand);
     border-bottom: 2px solid transparent;
     @include typography("highlight-medium");
 
     &:hover {
-      background-color: var(--ilo-color-blue-lighter);
-      color: var(--ilo-color-blue);
-      border-bottom-color: var(--ilo-color-blue);
+      background-color: var(--ilo-color-light-container-bg-subtle);
+      color: var(--ilo-color-light-action-hover);
+      border-bottom-color: var(--ilo-color-light-border-brand);
     }
 
     &__icon {
@@ -124,7 +124,7 @@
       width: px-to-rem(24px);
       height: px-to-rem(24px);
 
-      @include icon("chevron_right", var(--ilo-color-blue-dark));
+      @include icon("chevron_right", var(--ilo-color-light-action-default));
     }
   }
 
@@ -134,7 +134,7 @@
     }
 
     &__header {
-      --ilo-nav_compact-close_icon-color: var(--ilo-color-blue-dark);
+      --ilo-nav_compact-close_icon-color: var(--ilo-color-light-action-default);
       &__icon {
         display: block;
         width: px-to-rem(24px);
@@ -157,21 +157,21 @@
       display: flex;
       gap: spacing(2);
       align-items: center;
-      color: var(--ilo-color-blue-dark);
+      color: var(--ilo-color-light-text-brand);
       border-bottom: 2px solid transparent;
       @include typography("highlight-medium");
 
       &:hover {
-        --ilo-nav_compact-close_icon-color: var(--ilo-color-blue);
-        background-color: var(--ilo-color-blue-lighter);
-        color: var(--ilo-color-blue);
-        border-bottom-color: var(--ilo-color-blue);
+        --ilo-nav_compact-close_icon-color: var(--ilo-color-light-action-hover);
+        background-color: var(--ilo-color-light-container-bg-subtle);
+        color: var(--ilo-color-light-action-hover);
+        border-bottom-color: var(--ilo-color-light-border-brand);
       }
     }
 
     &__title {
       @include typography("heading-4", true);
-      color: var(--ilo-color-gray-charcoal);
+      color: var(--ilo-color-light-text-default);
     }
   }
 }
