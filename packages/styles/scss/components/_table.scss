@@ -2,7 +2,6 @@
 @import "../mixins";
 
 .ilo--table {
-  background-color: var(--ilo-color-brand-700);
   padding: spacing(20);
   position: relative;
 
@@ -134,7 +133,7 @@
       }
 
       &.selected {
-        background-color: var(--ilo-color-brand-700);
+        background-color: var(--ilo-color-light-action-selected);
         border-bottom: 2px solid var(--ilo-color-blue-medium);
         color: var(--ilo-color-blue-medium);
         cursor: pointer;
@@ -188,7 +187,7 @@
 
         &:hover,
         &:focus {
-          background-color: var(--ilo-color-brand-700);
+          background-color: var(--ilo-color-light-action-selected);
         }
       }
 
@@ -197,7 +196,7 @@
           background-color: var(--ilo-color-light-container-bg-subtle);
 
           &.selected {
-            background-color: var(--ilo-color-brand-700);
+            background-color: var(--ilo-color-light-action-selected);
           }
         }
       }

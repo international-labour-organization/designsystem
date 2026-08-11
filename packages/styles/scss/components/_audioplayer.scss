@@ -12,7 +12,7 @@
     --progress: 0%;
     width: var(--progress);
     height: 100%;
-    background-color: var(--ilo-color-yellow-500);
+    background-color: var(--ilo-color-light-container-bg-accent);
     position: absolute;
     top: 0;
     left: 0;
@@ -94,7 +94,7 @@
   &--play-button {
     display: flex;
     align-items: center;
-    background-color: var(--ilo-color-yellow-500);
+    background-color: var(--ilo-color-light-container-bg-accent);
     color: var(--ilo-color-light-text-brand);
     border-radius: 50%;
     cursor: pointer;
@@ -165,22 +165,22 @@
   &--volume-slider {
     --progress: 100%;
     margin-left: spacing(1);
-    background: var(--ilo-color-yellow-500);
+    background: var(--ilo-color-light-container-bg-accent);
     border-radius: 4px;
     height: 4px;
     width: 50%;
     background: linear-gradient(
       to right,
-      var(--ilo-color-yellow-500) 0%,
-      var(--ilo-color-yellow-500) var(--progress, 50%),
+      var(--ilo-color-light-container-bg-accent) 0%,
+      var(--ilo-color-light-container-bg-accent) var(--progress, 50%),
       var(--ilo-color-light-container-bg-inverse-subtle) var(--progress, 50%),
       var(--ilo-color-light-container-bg-inverse-subtle) 100%
     );
     [dir="rtl"] & {
       background: linear-gradient(
         to left,
-        var(--ilo-color-yellow-500) 0%,
-        var(--ilo-color-yellow-500) var(--progress, 50%),
+        var(--ilo-color-light-container-bg-accent) 0%,
+        var(--ilo-color-light-container-bg-accent) var(--progress, 50%),
         var(--ilo-color-light-container-bg-inverse-subtle) var(--progress, 50%),
         var(--ilo-color-light-container-bg-inverse-subtle) 100%
       );
