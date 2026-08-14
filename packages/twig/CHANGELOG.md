@@ -1,5 +1,13 @@
 # @ilo-org/twig
 
+## 1.14.1
+
+### Patch Changes
+
+- a61a59e: RichText, List: fixed vertical alignment of RTL list bullets on multiline items
+- Updated dependencies [a61a59e]
+  - @ilo-org/styles@1.15.1
+
 ## 1.14.0
 
 ### Minor Changes
