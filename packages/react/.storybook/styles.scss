@@ -16,14 +16,14 @@ body,
 button[title="Zoom in"]:hover,
 button[title="Zoom out"]:hover,
 button[title="Reset zoom"]:hover {
-  color: var(--ilo-color-blue-dark);
-  background-color: var(--ilo-color-blue-light);
+  color: var(--ilo-color-brand-800);
+  background-color: var(--ilo-color-brand-200);
 }
 
 a[class*="ilo--button"] {
-  color: var(--ilo-color-blue-dark);
+  color: var(--ilo-color-brand-800);
 
   &:hover {
-    color: var(--ilo-color-blue);
+    color: var(--ilo-color-brand-600);
   }
 }

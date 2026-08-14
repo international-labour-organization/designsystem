@@ -36,7 +36,7 @@ const preview: Preview = {
     backgrounds: {
       values: [
         { name: "light", value: "white" },
-        { name: "dark", value: "rgba(35, 0, 80, 1)" }, // --ilo-color-blue-dark
+        { name: "dark", value: "rgba(35, 0, 80, 1)" }, // --ilo-color-brand-800
       ],
     },
     previewTabs: {
