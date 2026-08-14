@@ -23,8 +23,8 @@
   &__theme__dark {
     --ilo-richtext-color: var(--ilo-color-light-text-inverse);
     --ilo-richtext-hr-color: var(--ilo-color-dark-text-subtle);
-    --ilo-richtext-link-color: var(--ilo-color-blue-medium);
-    --ilo-richtext-link-visited-color: var(--ilo-color-blue-medium);
+    --ilo-richtext-link-color: var(--ilo-color-dark-text-brand);
+    --ilo-richtext-link-visited-color: var(--ilo-color-dark-text-brand);
 
     a {
       @include linkstyles("dark");

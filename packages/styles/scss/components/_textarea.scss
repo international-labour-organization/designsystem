@@ -22,13 +22,14 @@
   &:focus {
     background-color: var(--ilo-color-light-container-bg-subtle);
     border: var(--ilo-border-md) solid var(--ilo-color-light-border-default);
-    border-inline-start-color: var(--ilo-color-blue-medium);
-    box-shadow: inset px-to-rem(1px) 0 0 0 var(--ilo-color-blue-medium);
+    border-inline-start-color: var(--ilo-color-light-border-brand-2);
+    box-shadow: inset px-to-rem(1px) 0 0 0 var(--ilo-color-light-border-brand-2);
     outline: none;
   }
 
   [dir="rtl"] &:focus {
-    box-shadow: inset px-to-rem(-1px) 0 0 0 var(--ilo-color-blue-medium);
+    box-shadow: inset px-to-rem(-1px) 0 0 0
+      var(--ilo-color-light-border-brand-2);
   }
 
   &:disabled {
