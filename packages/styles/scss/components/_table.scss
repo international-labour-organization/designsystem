@@ -2,7 +2,6 @@
 @import "../mixins";
 
 .ilo--table {
-  background-color: var(--ilo-color-brand-700);
   padding: spacing(20);
   position: relative;
 
@@ -79,13 +78,14 @@
 
         &:hover {
           background-color: var(--ilo-color-light-container-bg-subtle);
-          border-bottom: px-to-rem(2px) solid var(--ilo-color-blue-medium);
+          border-bottom: px-to-rem(2px) solid
+            var(--ilo-color-light-border-brand-2);
           color: var(--ilo-color-light-action-hover);
           cursor: pointer;
 
           &:after {
             background-color: var(--ilo-color-light-container-bg-subtle);
-            background-image: url("#{colortodataurlicon('chevron_down', rgba(210, 213, 242, 1))}");
+            background-image: url("#{colortodataurlicon('chevron_down', rgba(190, 220, 250, 1))}");
           }
         }
 
@@ -129,14 +129,14 @@
 
       &:hover {
         background-color: var(--ilo-color-light-container-bg-subtle);
-        border-bottom: 2px solid var(--ilo-color-blue-medium);
+        border-bottom: 2px solid var(--ilo-color-light-border-brand-2);
         color: var(--ilo-color-light-action-hover);
       }
 
       &.selected {
-        background-color: var(--ilo-color-brand-700);
-        border-bottom: 2px solid var(--ilo-color-blue-medium);
-        color: var(--ilo-color-blue-medium);
+        background-color: var(--ilo-color-light-action-selected);
+        border-bottom: 2px solid var(--ilo-color-dark-border-brand);
+        color: var(--ilo-color-dark-text-brand);
         cursor: pointer;
       }
 
@@ -188,7 +188,7 @@
 
         &:hover,
         &:focus {
-          background-color: var(--ilo-color-brand-700);
+          background-color: var(--ilo-color-light-action-selected);
         }
       }
 
@@ -197,7 +197,7 @@
           background-color: var(--ilo-color-light-container-bg-subtle);
 
           &.selected {
-            background-color: var(--ilo-color-brand-700);
+            background-color: var(--ilo-color-light-action-selected);
           }
         }
       }

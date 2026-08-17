@@ -1,7 +1,7 @@
 {# card_detail.twig #}
 
 {% set theme = theme|default("light") %}
-{% set iconColor = theme == "light" ? "var(--ilo-color-gray-charcoal)" : "var(--ilo-color-gray-light)" %}
+{% set iconColor = theme == "light" ? "var(--ilo-color-light-icon-default)" : "var(--ilo-color-dark-icon-default)" %}
 
 <div class="{{prefix}}--card {{prefix}}--card__type__detail {{prefix}}--card__size__{{size}} {% if isvideo|boolval %} {{prefix}}--card__isvideo {% endif %} {{prefix}}--card__theme__{{theme}}">
 	<a class="{{prefix}}--card--link" href="{{link}}" title="{{title}}">
