@@ -1,7 +1,7 @@
 ---
 "@ilo-org/styles": minor
-"@ilo-org/twig": patch
-"@ilo-org/react": patch
+"@ilo-org/twig": minor
+"@ilo-org/react": minor
 ---
 
 Migrated all component styles onto the light/dark semantic tokens and deprecated the raw colour aliases
