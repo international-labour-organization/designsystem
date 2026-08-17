@@ -3,7 +3,7 @@
 @import "../mixins";
 
 .ilo--table-of-contents {
-  background-color: var(--ilo-color-gray-light);
+  background-color: var(--ilo-color-light-container-bg-disabled);
   display: none;
   padding: 0;
 
@@ -24,7 +24,7 @@
   }
 
   &--headline {
-    border-bottom: px-to-rem(3px) solid var(--ilo-color-gray-light);
+    border-bottom: px-to-rem(3px) solid var(--ilo-color-light-border-subtle);
     margin-bottom: spacing(6);
     margin-top: spacing(2);
     @include typography("heading-3");
@@ -118,8 +118,8 @@
     background-position: calc(100% - 16px) center;
     background-repeat: no-repeat;
     background-size: px-to-rem(24px) px-to-rem(24px);
-    border-bottom: px-to-rem(2px) solid var(--ilo-color-white);
-    color: var(--ilo-color-blue-dark);
+    border-bottom: px-to-rem(2px) solid var(--ilo-color-light-border-inverse);
+    color: var(--ilo-color-light-text-brand);
     display: block;
     font-family: var(--ilo-fonts-display);
     font-weight: 500;
@@ -139,26 +139,26 @@
       right: spacing(4);
       top: 50%;
       transform: translateY(-50%);
-      @include icon("arrow_down", var(--ilo-color-blue-dark));
+      @include icon("arrow_down", var(--ilo-color-light-action-default));
     }
 
     &:hover,
     &:focus {
-      background-color: var(--ilo-color-blue-lighter);
-      border-bottom: px-to-rem(2px) solid var(--ilo-color-blue);
-      color: var(--ilo-color-blue);
+      background-color: var(--ilo-color-light-container-bg-subtle);
+      border-bottom: px-to-rem(2px) solid var(--ilo-color-light-border-brand);
+      color: var(--ilo-color-light-action-hover);
       &:after {
-        @include icon("arrow_down", var(--ilo-color-blue));
+        @include icon("arrow_down", var(--ilo-color-light-action-hover));
       }
       @include globaltransition("background-color, border, color");
     }
 
     &:active {
-      background-color: var(--ilo-color-white);
-      border-bottom: px-to-rem(2px) solid var(--ilo-color-blue-dark);
-      color: var(--ilo-color-blue-dark);
+      background-color: var(--ilo-color-light-container-bg-default);
+      border-bottom: px-to-rem(2px) solid var(--ilo-color-light-border-brand-3);
+      color: var(--ilo-color-light-text-brand);
       &:after {
-        @include icon("arrow_down", var(--ilo-color-blue-dark));
+        @include icon("arrow_down", var(--ilo-color-light-action-default));
       }
     }
   }

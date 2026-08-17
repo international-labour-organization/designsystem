@@ -3,8 +3,8 @@
 @import "../mixins";
 
 .ilo--link-list {
-  --ilo-link-list-color-icon: var(--ilo-color-blue-dark);
-  --ilo-link-list-color-indent-icon: var(--ilo-color-gray-base);
+  --ilo-link-list-color-icon: var(--ilo-color-light-action-default);
+  --ilo-link-list-color-indent-icon: var(--ilo-color-light-icon-subtle);
 
   &--headline {
     font-family: var(--ilo-fonts-display);
@@ -56,7 +56,7 @@
       & .ilo--link-list--link:focus,
       &:hover,
       &:focus {
-        --ilo-link-list-color-indent-icon: var(--ilo-color-blue);
+        --ilo-link-list-color-indent-icon: var(--ilo-color-light-action-hover);
       }
     }
   }
@@ -75,7 +75,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: var(--ilo-border-md) solid var(--ilo-color-gray-light);
+    border-bottom: var(--ilo-border-md) solid
+      var(--ilo-color-light-border-subtle);
     color: var(--ilo-link-color-default-light);
     @include typography("highlight-medium");
     padding-top: spacing(4);
@@ -96,10 +97,10 @@
 
     &:hover,
     &:focus {
-      --ilo-link-list-color-icon: var(--ilo-color-blue);
+      --ilo-link-list-color-icon: var(--ilo-color-light-action-hover);
       border-bottom: var(--ilo-border-md) solid
         var(--ilo-link-color-hover-light);
-      background-color: var(--ilo-color-blue-lighter);
+      background-color: var(--ilo-color-light-container-bg-subtle);
       color: var(--ilo-link-color-hover-light);
       outline: none;
       @include globaltransition("color, background-color, border-color");
@@ -113,23 +114,23 @@
   }
 
   &--dark {
-    --ilo-link-list-color-icon: var(--ilo-color-white);
-    --ilo-link-list-color-indent-icon: var(--ilo-color-white);
+    --ilo-link-list-color-icon: var(--ilo-color-light-icon-inverse);
+    --ilo-link-list-color-indent-icon: var(--ilo-color-light-icon-inverse);
     .ilo--link-list--headline,
     .ilo--link-list--links--headline {
-      color: var(--ilo-color-white);
+      color: var(--ilo-color-light-text-inverse);
     }
 
     .ilo--link-list--link {
       border-bottom: var(--ilo-border-md) solid rgba(237, 240, 242, 0.4);
 
       .ilo--link-list--label {
-        color: var(--ilo-color-white);
+        color: var(--ilo-color-light-text-inverse);
       }
 
       &:visited {
         .ilo--link-list--label {
-          color: var(--ilo-color-white);
+          color: var(--ilo-color-light-text-inverse);
           @include globaltransition("color");
         }
       }
@@ -148,7 +149,7 @@
         outline: none;
 
         .ilo--link-list--label {
-          color: var(--ilo-color-blue);
+          color: var(--ilo-color-light-action-hover);
           @include globaltransition("color");
         }
       }

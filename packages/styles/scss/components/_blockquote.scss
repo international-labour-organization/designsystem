@@ -7,14 +7,14 @@
  */
 @mixin blockquote {
   // Layout & background
-  background-color: var(--ilo-color-blue-lighter);
+  background-color: var(--ilo-color-light-container-bg-subtle);
   background-position: right top;
   background-repeat: no-repeat;
   background-size: px-to-rem(72px) px-to-rem(40px);
   display: block;
   width: fit-content;
   position: relative;
-  border-bottom: px-to-rem(3px) solid var(--ilo-color-gray-base);
+  border-bottom: px-to-rem(3px) solid var(--ilo-color-light-border-default);
   @include cornercut(72px, 40px);
 
   // Typography & spacing
@@ -23,7 +23,7 @@
 
   p {
     @include typography("blockquote", true);
-    color: var(--ilo-color-purple);
+    color: var(--ilo-color-light-text-accent);
     padding: 0 spacing(12) 0 0;
     margin-bottom: spacing(6);
     position: relative;
@@ -37,12 +37,12 @@
       width: px-to-rem(26.5px);
       height: px-to-rem(20px);
       transform: scaleX(-1);
-      @include icon("quote", var(--ilo-color-purple));
+      @include icon("quote", var(--ilo-color-light-icon-accent));
     }
   }
 
   cite {
-    color: var(--ilo-color-gray-accessible);
+    color: var(--ilo-color-light-text-subtle);
     font-weight: 400;
     font-size: var(--ilo-font-size-sm);
     line-height: 135%;
@@ -58,7 +58,7 @@
     left: 0;
     width: px-to-rem(53px);
     height: px-to-rem(40px);
-    @include icon("quote", var(--ilo-color-purple));
+    @include icon("quote", var(--ilo-color-light-icon-accent));
   }
 
   @include breakpoint("md") {

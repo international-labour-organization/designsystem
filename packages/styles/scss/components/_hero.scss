@@ -67,21 +67,21 @@
     }
 
     &__white {
-      background-color: var(--ilo-color-white);
+      background-color: var(--ilo-color-light-container-bg-default);
     }
 
     &__light {
-      background-color: var(--ilo-color-blue-lighter);
+      background-color: var(--ilo-color-light-container-bg-subtle);
     }
 
     &__dark {
-      background-color: var(--ilo-color-blue-dark);
+      background-color: var(--ilo-color-light-container-bg-brand);
     }
   }
 
   &--background {
     display: grid;
-    background-color: var(--ilo-color-blue-lighter);
+    background-color: var(--ilo-color-light-container-bg-subtle);
     position: relative;
     grid-area: 1 / 1 / 4 / 2;
 
@@ -234,9 +234,9 @@
     &__card-theme {
       &__dark {
         #{$c}--card-offset {
-          background-color: var(--ilo-color-blue-dark);
+          background-color: var(--ilo-color-light-container-bg-brand);
           position: relative;
-          box-shadow: 0.3px 0 0 0 var(--ilo-color-blue-dark);
+          box-shadow: 0.3px 0 0 0 var(--ilo-color-light-border-brand-3);
         }
 
         &[class*="semi-transparent"] {
@@ -252,8 +252,8 @@
 
       &__light {
         #{$c}--card-offset {
-          background: var(--ilo-color-white);
-          box-shadow: 0.3px 0 0 0 var(--ilo-color-white);
+          background: var(--ilo-color-light-container-bg-default);
+          box-shadow: 0.3px 0 0 0 var(--ilo-color-light-border-inverse);
         }
 
         &[class*="semi-transparent"] {

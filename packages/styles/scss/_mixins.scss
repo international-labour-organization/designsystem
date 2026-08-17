@@ -168,7 +168,9 @@
 // ======================================
 
 @mixin caption-icon-wrapper($dir: "right", $width, $height) {
-  --ilo-caption-icon-wrapper-bg-color: var(--ilo-color-gray-charcoal);
+  --ilo-caption-icon-wrapper-bg-color: var(
+    --ilo-color-light-container-bg-inverse
+  );
   background: var(--ilo-caption-icon-wrapper-bg-color);
   height: $height;
   width: $width;
@@ -219,7 +221,7 @@
 // and also lists in RichText.
 // ======================================
 
-@mixin invincible-list($bullet-color: var(--ilo-color-gray-base)) {
+@mixin invincible-list($bullet-color: var(--ilo-color-light-icon-subtle)) {
   li {
     position: relative;
     margin-bottom: spacing(3);

@@ -4,24 +4,24 @@
 
 .ilo--loading {
   --ilo-loading-size: #{px-to-rem(60px)};
-  --ilo-loading-loading-circle: var(--ilo-color-gray-light);
-  --ilo-loading-loading-line: var(--ilo-color-gray-base);
-  --ilo-loading-loading-pointer: var(--ilo-color-blue);
-  --ilo-loading-loaded-circle: var(--ilo-color-gray-light);
-  --ilo-loading-loaded-cirlce-inner: var(--ilo-color-blue);
-  --ilo-loading-loaded-check: var(--ilo-color-white);
+  --ilo-loading-loading-circle: var(--ilo-color-light-icon-disabled);
+  --ilo-loading-loading-line: var(--ilo-color-light-icon-subtle);
+  --ilo-loading-loading-pointer: var(--ilo-color-light-action-hover);
+  --ilo-loading-loaded-circle: var(--ilo-color-light-icon-disabled);
+  --ilo-loading-loaded-cirlce-inner: var(--ilo-color-light-action-hover);
+  --ilo-loading-loaded-check: var(--ilo-color-light-icon-inverse);
 
   width: var(--ilo-loading-size);
   height: var(--ilo-loading-size);
 
   &__theme__dark {
-    --ilo-loading-loading-circle: var(--ilo-color-blue-dark);
-    --ilo-loading-loading-line: var(--ilo-color-yellow);
-    --ilo-loading-loading-pointer: var(--ilo-color-yellow);
+    --ilo-loading-loading-circle: var(--ilo-color-light-action-default);
+    --ilo-loading-loading-line: var(--ilo-color-dark-icon-accent);
+    --ilo-loading-loading-pointer: var(--ilo-color-dark-icon-accent);
 
-    --ilo-loading-loaded-circle: var(--ilo-color-blue-dark);
-    --ilo-loading-loaded-cirlce-inner: var(--ilo-color-yellow);
-    --ilo-loading-loaded-check: var(--ilo-color-blue-dark);
+    --ilo-loading-loaded-circle: var(--ilo-color-light-action-default);
+    --ilo-loading-loaded-cirlce-inner: var(--ilo-color-dark-icon-accent);
+    --ilo-loading-loaded-check: var(--ilo-color-light-action-default);
   }
 
   &__size__small {

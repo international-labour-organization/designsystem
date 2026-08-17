@@ -27,7 +27,7 @@
 
   &__link {
     @include typography("highlight-medium");
-    color: var(--ilo-color-white);
+    color: var(--ilo-color-light-text-inverse);
     text-decoration: none;
     position: relative;
     padding-bottom: 2px;
@@ -42,7 +42,7 @@
     &:hover,
     &:focus,
     &:active {
-      background-color: var(--ilo-color-blue-dark);
+      background-color: var(--ilo-color-light-container-bg-brand);
       outline: none;
     }
   }
@@ -53,8 +53,8 @@
       &:hover,
       &:focus,
       &:active {
-        color: var(--ilo-color-blue);
-        background-color: var(--ilo-color-white);
+        color: var(--ilo-color-light-action-hover);
+        background-color: var(--ilo-color-light-container-bg-default);
       }
     }
   }
@@ -66,8 +66,8 @@
       display: none;
     }
 
-    --ilo-nav_menu-icon-color: var(--ilo-color-white);
-    border: 1px solid var(--ilo-color-white);
+    --ilo-nav_menu-icon-color: var(--ilo-color-light-icon-inverse);
+    border: 1px solid var(--ilo-color-light-border-inverse);
     border-radius: var(--ilo-border-radius);
     cursor: pointer;
     display: flex;
@@ -76,7 +76,7 @@
     justify-content: center;
     align-items: center;
     padding: spacing(2) spacing(4) spacing(1);
-    color: var(--ilo-color-white);
+    color: var(--ilo-color-light-text-inverse);
     @include typography("highlight-medium-bold");
 
     &-icon {
@@ -90,8 +90,8 @@
     &:hover,
     &:active {
       outline: none;
-      border-color: var(--ilo-color-blue-dark);
-      background-color: var(--ilo-color-blue-dark);
+      border-color: var(--ilo-color-light-border-brand-3);
+      background-color: var(--ilo-color-light-container-bg-brand);
     }
   }
 
@@ -100,10 +100,10 @@
       &--open,
       &:hover,
       &:active {
-        --ilo-nav_menu-icon-color: var(--ilo-color-blue);
-        color: var(--ilo-color-blue);
-        border-color: var(--ilo-color-white);
-        background-color: var(--ilo-color-white);
+        --ilo-nav_menu-icon-color: var(--ilo-color-light-action-hover);
+        color: var(--ilo-color-light-action-hover);
+        border-color: var(--ilo-color-light-border-inverse);
+        background-color: var(--ilo-color-light-container-bg-default);
       }
     }
   }

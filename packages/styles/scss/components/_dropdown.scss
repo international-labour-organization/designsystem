@@ -4,13 +4,19 @@
 
 .ilo--dropdown {
   &--wrapper {
-    --ilo-dropdown-background-color: var(--ilo-color-white);
-    --ilo-dropdown-background-color-active: var(--ilo-color-blue-lighter);
-    --ilo-dropdown-color: var(--ilo-color-gray-accessible);
+    --ilo-dropdown-background-color: var(
+      --ilo-color-light-container-bg-default
+    );
+    --ilo-dropdown-background-color-active: var(
+      --ilo-color-light-container-bg-subtle
+    );
+    --ilo-dropdown-color: var(--ilo-color-light-text-subtle);
     --ilo-dropdown-height: #{px-to-rem(48px)};
-    --ilo-dropdown-border-color: var(--ilo-color-gray-base);
-    --ilo-dropdown-button-background-color: var(--ilo-color-gray-light);
-    --ilo-dropdown-button-icon-color: var(--ilo-color-blue-dark);
+    --ilo-dropdown-border-color: var(--ilo-color-light-border-default);
+    --ilo-dropdown-button-background-color: var(
+      --ilo-color-light-container-bg-disabled
+    );
+    --ilo-dropdown-button-icon-color: var(--ilo-color-light-action-default);
     --ilo-dropdown-button-icon-size: calc(var(--ilo-dropdown-height) / 2);
     --ilo-dropdown-button-icon-offset: calc(
       var(--ilo-dropdown-button-icon-size) / 2
@@ -92,10 +98,10 @@
   @include globaltransition("background-color, border-color, color");
 
   &:enabled:is(:hover, :focus, :active) {
-    border-inline-start-color: var(--ilo-color-blue);
-    box-shadow: inset px-to-rem(1px) 0 0 0 var(--ilo-color-blue);
+    border-inline-start-color: var(--ilo-color-light-border-brand);
+    box-shadow: inset px-to-rem(1px) 0 0 0 var(--ilo-color-light-border-brand);
     background-color: var(--ilo-dropdown-background-color-active);
-    --ilo-dropdown-color: var(--ilo-color-gray-charcoal);
+    --ilo-dropdown-color: var(--ilo-color-light-text-default);
   }
 
   &:disabled {
@@ -106,7 +112,7 @@
   [dir="rtl"] &:hover,
   [dir="rtl"] &:focus,
   [dir="rtl"] &:active {
-    box-shadow: inset px-to-rem(-1px) 0 0 0 var(--ilo-color-blue);
+    box-shadow: inset px-to-rem(-1px) 0 0 0 var(--ilo-color-light-border-brand);
   }
 
   option {

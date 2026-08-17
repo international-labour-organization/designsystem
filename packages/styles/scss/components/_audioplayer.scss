@@ -4,7 +4,7 @@
 .ilo--audio-player {
   &--progress-bar {
     height: px-to-rem(8px);
-    background-color: var(--ilo-color-gray-accessible);
+    background-color: var(--ilo-color-light-container-bg-inverse-subtle);
     position: relative;
     cursor: pointer;
   }
@@ -12,7 +12,7 @@
     --progress: 0%;
     width: var(--progress);
     height: 100%;
-    background-color: var(--ilo-color-yellow-500);
+    background-color: var(--ilo-color-light-container-bg-accent);
     position: absolute;
     top: 0;
     left: 0;
@@ -26,14 +26,14 @@
       "left left"
       "center right";
     align-items: center;
-    color: var(--ilo-color-white);
-    background-color: var(--ilo-color-gray-charcoal);
+    color: var(--ilo-color-light-text-inverse);
+    background-color: var(--ilo-color-light-container-bg-inverse);
     padding: spacing(3) 0;
     row-gap: spacing(3);
   }
   &--left {
     grid-area: left;
-    border-bottom: 1px solid var(--ilo-color-gray-accessible);
+    border-bottom: 1px solid var(--ilo-color-dark-border-subtle);
     padding-inline: spacing(3);
     padding-block-end: spacing(3);
   }
@@ -61,7 +61,7 @@
     white-space: nowrap;
     font-size: var(--ilo-font-size-xsm);
     line-height: var(--ilo-line-height-xlg);
-    color: var(--ilo-color-gray-light);
+    color: var(--ilo-color-dark-text-subtle);
   }
   &--track-creator::before {
     content: "•";
@@ -88,21 +88,21 @@
     padding: spacing(2);
   }
   &--skip-button:hover {
-    background-color: var(--ilo-color-brand-100);
-    color: var(--ilo-color-brand-600);
+    background-color: var(--ilo-color-light-container-bg-subtle);
+    color: var(--ilo-color-light-action-hover);
   }
   &--play-button {
     display: flex;
     align-items: center;
-    background-color: var(--ilo-color-yellow-500);
-    color: var(--ilo-color-brand-800);
+    background-color: var(--ilo-color-light-container-bg-accent);
+    color: var(--ilo-color-light-text-brand);
     border-radius: 50%;
     cursor: pointer;
     padding: spacing(1);
     border: none;
   }
   &--play-button:hover {
-    background-color: var(--ilo-color-brand-100);
+    background-color: var(--ilo-color-light-container-bg-subtle);
   }
   [aria-label="Play"] &--play-icon {
     display: block;
@@ -134,13 +134,13 @@
     line-height: var(--ilo-line-height-lg);
   }
   &--duration-total {
-    color: var(--ilo-color-gray-light);
+    color: var(--ilo-color-dark-text-subtle);
     font-size: var(--ilo-font-size-2xsm);
     line-height: var(--ilo-line-height-2xlg);
   }
   &--separator {
     height: 32px;
-    border-left: 1px solid var(--ilo-color-gray-accessible);
+    border-left: 1px solid var(--ilo-color-dark-border-subtle);
     margin: spacing(1) spacing(3);
   }
   &--volume-icon {
@@ -165,24 +165,24 @@
   &--volume-slider {
     --progress: 100%;
     margin-left: spacing(1);
-    background: var(--ilo-color-yellow-500);
+    background: var(--ilo-color-light-container-bg-accent);
     border-radius: 4px;
     height: 4px;
     width: 50%;
     background: linear-gradient(
       to right,
-      var(--ilo-color-yellow-500) 0%,
-      var(--ilo-color-yellow-500) var(--progress, 50%),
-      var(--ilo-color-gray-accessible) var(--progress, 50%),
-      var(--ilo-color-gray-accessible) 100%
+      var(--ilo-color-light-container-bg-accent) 0%,
+      var(--ilo-color-light-container-bg-accent) var(--progress, 50%),
+      var(--ilo-color-light-container-bg-inverse-subtle) var(--progress, 50%),
+      var(--ilo-color-light-container-bg-inverse-subtle) 100%
     );
     [dir="rtl"] & {
       background: linear-gradient(
         to left,
-        var(--ilo-color-yellow-500) 0%,
-        var(--ilo-color-yellow-500) var(--progress, 50%),
-        var(--ilo-color-gray-accessible) var(--progress, 50%),
-        var(--ilo-color-gray-accessible) 100%
+        var(--ilo-color-light-container-bg-accent) 0%,
+        var(--ilo-color-light-container-bg-accent) var(--progress, 50%),
+        var(--ilo-color-light-container-bg-inverse-subtle) var(--progress, 50%),
+        var(--ilo-color-light-container-bg-inverse-subtle) 100%
       );
     }
   }
@@ -193,7 +193,7 @@
 
     width: 16px;
     height: 16px;
-    background: var(--ilo-color-gray-light);
+    background: var(--ilo-color-light-container-bg-disabled);
     border-radius: 50%;
     cursor: pointer;
     margin-top: -2px; // Center thumb on track

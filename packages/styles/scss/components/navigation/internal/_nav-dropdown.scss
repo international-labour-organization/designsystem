@@ -9,11 +9,11 @@
   visibility: hidden;
   opacity: 0;
   transform: translateY(-10px);
-  background-color: var(--ilo-color-white);
+  background-color: var(--ilo-color-light-container-bg-default);
   filter: drop-shadow(0px 10px 20px rgba(30, 45, 190, 0.08))
     drop-shadow(0px 4px 8px rgba(30, 45, 190, 0.05))
     drop-shadow(0px 0.8px 1.6px rgba(30, 45, 190, 0.03));
-  border-bottom: 3px solid var(--ilo-color-gray-base);
+  border-bottom: 3px solid var(--ilo-color-light-border-default);
   padding: spacing(8) spacing(18);
   z-index: 4;
 

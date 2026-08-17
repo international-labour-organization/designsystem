@@ -5,7 +5,7 @@
 
 .ilo--photo-gallery {
   --ilo-photo_gallery-target-height: 210px;
-  background-color: var(--ilo-color-white);
+  background-color: var(--ilo-color-light-container-bg-default);
   display: flex;
   flex-direction: column;
   gap: spacing(4);
@@ -66,7 +66,7 @@
         width: 100%;
         object-fit: contain;
         height: inherit;
-        background-color: var(--ilo-color-gray-light);
+        background-color: var(--ilo-color-light-container-bg-disabled);
         height: var(--ilo-photo_gallery-target-height);
         position: relative;
       }
@@ -122,24 +122,24 @@
       top: 0;
       right: 0;
       z-index: 2;
-      background: var(--ilo-color-gray-light);
+      background: var(--ilo-color-light-container-bg-disabled);
       border: none;
       width: px-to-rem(40px);
       height: px-to-rem(40px);
       display: flex;
       align-items: center;
       justify-content: center;
-      color: var(--ilo-color-blue-dark);
+      color: var(--ilo-color-light-text-brand);
       cursor: pointer;
       border-radius: var(--ilo-border-radius);
 
       &:hover {
-        background: var(--ilo-color-blue-lighter);
-        color: var(--ilo-color-blue);
+        background: var(--ilo-color-light-container-bg-subtle);
+        color: var(--ilo-color-light-action-hover);
       }
 
       &:focus {
-        outline: 2px solid var(--ilo-color-blue);
+        outline: 2px solid var(--ilo-color-light-border-brand);
         outline-offset: 2px;
       }
     }
@@ -147,7 +147,7 @@
 
   &__caption {
     @include typography("body-small");
-    color: var(--ilo-color-gray-accessible);
+    color: var(--ilo-color-light-text-subtle);
     padding-left: spacing(4);
     position: relative;
     overflow: hidden;
@@ -168,7 +168,7 @@
       transform: translateY(-50%);
       width: px-to-rem(3px);
       height: 100%;
-      background-color: var(--ilo-color-gray-base);
+      background-color: var(--ilo-color-light-container-bg-inactive);
 
       [dir="rtl"] & {
         left: auto;

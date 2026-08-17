@@ -4,14 +4,14 @@
 .ilo--form {
   $gap: spacing(8);
   $c: &;
-  --ilo-form-legend-color: var(--ilo-color-blue-dark);
+  --ilo-form-legend-color: var(--ilo-color-light-text-brand);
 
   &__theme {
     &__light {
-      --ilo-form-legend-color: var(--ilo-color-blue-dark);
+      --ilo-form-legend-color: var(--ilo-color-light-text-brand);
     }
     &__dark {
-      --ilo-form-legend-color: var(--ilo-color-white);
+      --ilo-form-legend-color: var(--ilo-color-light-text-inverse);
     }
   }
 
@@ -22,7 +22,7 @@
   flex-direction: column;
   appearance: none;
   gap: $gap;
-  color: var(--ilo-color-gray-charcoal);
+  color: var(--ilo-color-light-text-default);
 
   &__disabled {
     opacity: 0.5;

@@ -3,8 +3,8 @@
 @import "../mixins";
 
 .ilo--footer {
-  border-bottom: px-to-rem(3px) solid var(--ilo-color-gray-accessible);
-  background-color: var(--ilo-color-blue-dark);
+  border-bottom: px-to-rem(3px) solid var(--ilo-color-dark-border-subtle);
+  background-color: var(--ilo-color-light-container-bg-brand);
   position: relative;
   width: 100%;
   overflow: hidden;
@@ -15,7 +15,8 @@
 
     &:after {
       content: "";
-      border-bottom: px-to-rem(6px) solid var(--ilo-color-red);
+      border-bottom: px-to-rem(6px) solid
+        var(--ilo-color-light-feedback-error-default);
       width: 200vw;
       position: absolute;
       bottom: 0;
@@ -38,19 +39,19 @@
       padding: 0;
     }
 
-    background-color: var(--ilo-color-gray-light);
+    background-color: var(--ilo-color-light-container-bg-disabled);
     padding: spacing(8) spacing(4) 0;
     min-height: px-to-rem(56px);
   }
 
   &--headline {
-    color: var(--ilo-color-white);
+    color: var(--ilo-color-light-text-inverse);
     @include typography("highlight-medium-bold");
     margin-top: spacing(5);
   }
 
   &--subhead {
-    color: var(--ilo-color-blue-light);
+    color: var(--ilo-color-dark-text-brand);
     margin-top: spacing(1);
     margin-bottom: spacing(12);
     @include typography("body-xsmall");
@@ -61,7 +62,7 @@
   }
 
   .address--line {
-    color: var(--ilo-color-white);
+    color: var(--ilo-color-light-text-inverse);
     @include typography("body-xsmall");
   }
 
@@ -75,7 +76,7 @@
 
   .legal,
   .secondarylinks {
-    color: var(--ilo-color-gray-accessible);
+    color: var(--ilo-color-light-text-subtle);
     display: inline;
     @include typography("body-xsmall");
   }
@@ -94,24 +95,24 @@
   }
 
   .secondarylinks--list--item a {
-    color: var(--ilo-color-gray-accessible);
+    color: var(--ilo-color-light-text-subtle);
     @include globaltransition("color, border-color");
 
     &:visited {
-      color: var(--ilo-color-purple);
+      color: var(--ilo-color-light-text-accent);
     }
 
     &:hover {
-      color: var(--ilo-color-blue);
+      color: var(--ilo-color-light-action-hover);
     }
 
     &:active {
-      color: var(--ilo-color-blue-dark);
+      color: var(--ilo-color-light-text-brand);
       outline: none;
     }
 
     &:focus {
-      color: var(--ilo-color-blue-dark);
+      color: var(--ilo-color-light-text-brand);
       outline: none;
     }
   }
@@ -120,7 +121,7 @@
     // General Styles
     display: flex;
     flex-flow: row nowrap;
-    color: var(--ilo-color-blue-dark);
+    color: var(--ilo-color-light-text-brand);
     @include typography("highlight-medium");
     position: relative;
     text-decoration: none;
@@ -128,7 +129,7 @@
 
     // Mobile styles
     justify-content: center;
-    border-bottom: px-to-rem(2px) solid var(--ilo-color-gray-light);
+    border-bottom: px-to-rem(2px) solid var(--ilo-color-light-border-subtle);
     margin: spacing(3) auto 0 auto;
     padding: spacing(4);
 
@@ -142,16 +143,16 @@
       margin-left: spacing(2);
       bottom: px-to-rem(2px);
       width: px-to-rem(24px);
-      @include icon("chevron_up", var(--ilo-color-blue-dark));
+      @include icon("chevron_up", var(--ilo-color-light-action-default));
     }
 
     &:hover {
-      background: var(--ilo-color-blue-lighter);
-      border-bottom: px-to-rem(2px) solid var(--ilo-color-blue);
-      color: var(--ilo-color-blue);
+      background: var(--ilo-color-light-container-bg-subtle);
+      border-bottom: px-to-rem(2px) solid var(--ilo-color-light-border-brand);
+      color: var(--ilo-color-light-action-hover);
 
       &:after {
-        @include icon("chevron_up", var(--ilo-color-blue));
+        @include icon("chevron_up", var(--ilo-color-light-action-hover));
       }
     }
   }

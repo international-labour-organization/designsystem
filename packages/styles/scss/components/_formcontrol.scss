@@ -5,9 +5,9 @@
 .ilo--form-control {
   $c: &;
 
-  --ilo-form-control-label-color: var(--ilo-color-gray-charcoal);
-  --ilo-form-control-helper-color: var(--ilo-color-gray-accessible);
-  --ilo-form-control-error-color: var(--ilo-color-red-dark);
+  --ilo-form-control-label-color: var(--ilo-color-light-text-default);
+  --ilo-form-control-helper-color: var(--ilo-color-light-text-subtle);
+  --ilo-form-control-error-color: var(--ilo-color-light-feedback-error-dark);
 
   grid-area: input;
   display: inline-grid;
@@ -21,14 +21,18 @@
 
   &__theme {
     &__light {
-      --ilo-form-control-label-color: var(--ilo-color-gray-charcoal);
-      --ilo-form-control-helper-color: var(--ilo-color-gray-accessible);
-      --ilo-form-control-error-color: var(--ilo-color-red-dark);
+      --ilo-form-control-label-color: var(--ilo-color-light-text-default);
+      --ilo-form-control-helper-color: var(--ilo-color-light-text-subtle);
+      --ilo-form-control-error-color: var(
+        --ilo-color-light-feedback-error-dark
+      );
     }
     &__dark {
-      --ilo-form-control-label-color: var(--ilo-color-white);
-      --ilo-form-control-helper-color: var(--ilo-color-white);
-      --ilo-form-control-error-color: var(--ilo-color-red-dark);
+      --ilo-form-control-label-color: var(--ilo-color-light-text-inverse);
+      --ilo-form-control-helper-color: var(--ilo-color-light-text-inverse);
+      --ilo-form-control-error-color: var(
+        --ilo-color-light-feedback-error-dark
+      );
     }
   }
 
@@ -178,7 +182,7 @@
     }
 
     &--required {
-      color: var(--ilo-color-red-dark);
+      color: var(--ilo-color-light-feedback-error-dark);
     }
   }
 

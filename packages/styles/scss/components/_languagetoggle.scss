@@ -3,21 +3,23 @@
 @import "../animations";
 
 .ilo--language-toggle {
-  --ilo--language-toggle-color: var(--ilo-color-white);
-  --ilo--language-toggle-color-hover: var(--ilo-color-white);
+  --ilo--language-toggle-color: var(--ilo-color-light-text-inverse);
+  --ilo--language-toggle-color-hover: var(--ilo-color-light-text-inverse);
   --ilo--language-toggle-bg: transparent;
-  --ilo--language-toggle-bg-hover: var(--ilo-color-blue-dark);
+  --ilo--language-toggle-bg-hover: var(--ilo-color-light-container-bg-brand);
 
   &__theme {
     &__dark {
-      --ilo--language-toggle-color: var(--ilo-color-blue-dark);
-      --ilo--language-toggle-color-hover: var(--ilo-color-white);
+      --ilo--language-toggle-color: var(--ilo-color-light-text-brand);
+      --ilo--language-toggle-color-hover: var(--ilo-color-light-text-inverse);
     }
 
     &__dark-blue {
-      --ilo--language-toggle-color: var(--ilo-color-white);
-      --ilo--language-toggle-color-hover: var(--ilo-color-blue);
-      --ilo--language-toggle-bg-hover: var(--ilo-color-white);
+      --ilo--language-toggle-color: var(--ilo-color-light-text-inverse);
+      --ilo--language-toggle-color-hover: var(--ilo-color-light-action-hover);
+      --ilo--language-toggle-bg-hover: var(
+        --ilo-color-light-container-bg-default
+      );
     }
   }
 

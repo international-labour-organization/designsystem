@@ -4,7 +4,7 @@
 }
 
 .sbdocs:has(.welcome) {
-  background-color: rgba(35, 0, 80, 1); // --ilo-color-blue-dark
+  background-color: rgba(35, 0, 80, 1); // --ilo-color-brand-800
   overflow: hidden;
 
   .welcome {
@@ -17,11 +17,11 @@
     position: relative;
 
     &--title {
-      color: rgba(255, 255, 255, 1); // --ilo-color-white
+      color: rgba(255, 255, 255, 1); // --ilo-color-neutrals-white
     }
 
     &--subtitle {
-      color: rgba(97, 219, 251, 1); // --ilo-color-blue-light
+      color: rgba(97, 219, 251, 1);
       margin-bottom: 0;
       display: flex;
       align-items: flex-end;
@@ -38,7 +38,7 @@
 
     &--version {
       font-size: 0.8rem;
-      color: rgba(210, 210, 210, 1); // --ilo-color-gray-light
+      color: rgba(210, 210, 210, 1);
       font-family: monospace;
       margin-bottom: 16px;
     }
@@ -59,7 +59,7 @@
   .triangle1 {
     margin-top: 70px;
     border-width: 110px 0 110px 190px;
-    border-color: transparent transparent transparent rgba(35, 0, 80, 1); // --ilo-color-blue-dark
+    border-color: transparent transparent transparent rgba(35, 0, 80, 1); // --ilo-color-brand-800
 
     @media (max-width: 768px) {
       display: none;
@@ -68,7 +68,7 @@
 
   .triangle2 {
     border-width: 400px 0 500px 900px;
-    border-color: transparent transparent transparent rgba(30, 45, 190, 1); // --ilo-color-blue
+    border-color: transparent transparent transparent rgba(30, 45, 190, 1); // --ilo-color-brand-600
     top: 150px;
     left: 50%;
     animation: drift-1 75s infinite;
@@ -89,7 +89,7 @@
 
   .triangle3 {
     border-width: 300px 0 300px 500px;
-    border-color: transparent transparent transparent rgba(200, 48, 60, 1); // --ilo-color-red-dark
+    border-color: transparent transparent transparent rgba(200, 48, 60, 1); // --ilo-color-red-600
     top: -40px;
     right: -60px;
     animation: drift-2 75s infinite;

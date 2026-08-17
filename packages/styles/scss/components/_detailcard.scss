@@ -11,7 +11,7 @@
       // in mobile view for all sizes
       --max-width: 100%;
 
-      border-bottom: px-to-rem(3px) solid var(--ilo-color-gray-light);
+      border-bottom: px-to-rem(3px) solid var(--ilo-color-light-border-subtle);
       padding: spacing(8) spacing(4);
       position: relative;
 
@@ -91,7 +91,7 @@
 
       #{$self}--date {
         @include typography("body-small");
-        color: var(--ilo-color-gray-accessible);
+        color: var(--ilo-color-light-text-subtle);
       }
 
       #{$self}--date-extra {

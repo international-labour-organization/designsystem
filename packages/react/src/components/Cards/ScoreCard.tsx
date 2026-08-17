@@ -104,8 +104,8 @@ const ScoreCard = forwardRef<HTMLDivElement, ScoreCardProps>(
 
     const iconColor =
       theme === "dark"
-        ? "var(--ilo-color-white)"
-        : "var(--ilo-color-gray-accessible)";
+        ? "var(--ilo-color-dark-icon-default)"
+        : "var(--ilo-color-light-icon-default)";
 
     const baseClass = `${prefix}--card`;
     const cardClasses = classNames(baseClass, `${baseClass}__type__score`, {

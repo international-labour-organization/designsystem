@@ -22,18 +22,18 @@
   @include typography("highlight-small");
 
   // Colors and border
-  color: var(--ilo-color-blue-dark);
-  fill: var(--ilo-color-blue-dark);
-  background-color: var(--ilo-color-gray-light);
-  border-color: var(--ilo-color-gray-light);
+  color: var(--ilo-color-light-text-brand);
+  fill: var(--ilo-color-light-action-default);
+  background-color: var(--ilo-color-light-container-bg-disabled);
+  border-color: var(--ilo-color-light-border-subtle);
   border-width: px-to-rem(1.5px);
   border-style: solid;
   border-radius: px-to-rem(2px);
   @include globaltransition("color background-color border-color fill");
 
   &__disabled {
-    color: var(--ilo-color-gray-accessible);
-    fill: var(--ilo-color-gray-accessible);
+    color: var(--ilo-color-light-text-subtle);
+    fill: var(--ilo-color-dark-icon-subtle);
     pointer-events: none;
   }
 
@@ -51,7 +51,7 @@
       }
 
       &:focus-visible {
-        outline: 1px solid var(--ilo-color-blue);
+        outline: 1px solid var(--ilo-color-light-border-brand);
       }
     }
 
@@ -60,10 +60,10 @@
     &__anchor {
       &:hover,
       &:focus {
-        background-color: var(--ilo-color-blue-lighter);
-        border-color: var(--ilo-color-blue-lighter);
-        color: var(--ilo-color-blue);
-        fill: var(--ilo-color-blue);
+        background-color: var(--ilo-color-light-container-bg-subtle);
+        border-color: var(--ilo-color-dark-border-brand-3);
+        color: var(--ilo-color-light-action-hover);
+        fill: var(--ilo-color-light-action-hover);
       }
     }
 
@@ -72,10 +72,10 @@
     }
 
     &__reset {
-      background-color: var(--ilo-color-white);
-      border-color: var(--ilo-color-gray-base);
-      color: var(--ilo-color-blue-dark);
-      fill: var(--ilo-color-blue-dark);
+      background-color: var(--ilo-color-light-container-bg-default);
+      border-color: var(--ilo-color-light-border-default);
+      color: var(--ilo-color-light-text-brand);
+      fill: var(--ilo-color-light-action-default);
     }
   }
 

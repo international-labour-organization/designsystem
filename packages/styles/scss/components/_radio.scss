@@ -21,8 +21,8 @@
 
   &--control:before {
     content: "";
-    background-color: var(--ilo-color-gray-base);
-    border: px-to-rem(4px) solid var(--ilo-color-gray-base);
+    background-color: var(--ilo-color-light-container-bg-inactive);
+    border: px-to-rem(4px) solid var(--ilo-color-light-border-default);
     border-radius: 50%;
     height: px-to-rem(18px);
     left: px-to-rem(3px);
@@ -35,7 +35,7 @@
 
   &--control:after {
     content: "";
-    background-color: var(--ilo-color-gray-base);
+    background-color: var(--ilo-color-light-container-bg-inactive);
     border-radius: 50%;
     height: px-to-rem(24px);
     left: 0;
@@ -47,16 +47,16 @@
   }
 
   input:checked + &--control:before {
-    background-color: var(--ilo-color-blue-lighter);
-    border-color: var(--ilo-color-blue-dark);
+    background-color: var(--ilo-color-light-container-bg-subtle);
+    border-color: var(--ilo-color-light-border-brand-3);
   }
 
   input:checked + &--control:after {
-    background-color: var(--ilo-color-blue-dark);
+    background-color: var(--ilo-color-light-container-bg-brand);
   }
 
   input:focus + &--control:after {
-    background-color: var(--ilo-color-yellow);
+    background-color: var(--ilo-color-light-feedback-warning-default);
   }
 
   input:disabled + &--control:after,
@@ -66,6 +66,6 @@
 
   input:invalid + &--control:after,
   &__error &--control:after {
-    background-color: var(--ilo-color-red);
+    background-color: var(--ilo-color-light-feedback-error-default);
   }
 }
