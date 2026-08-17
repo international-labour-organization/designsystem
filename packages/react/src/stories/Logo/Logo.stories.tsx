@@ -145,7 +145,7 @@ export const DarkTheme: StoryObj<typeof Logo> = {
   parameters: {
     backgrounds: {
       default: "ilo",
-      values: [{ name: "ilo", value: "rgba(35, 0, 80, 1)" }], // --ilo-color-blue-dark
+      values: [{ name: "ilo", value: "rgba(35, 0, 80, 1)" }], // --ilo-color-brand-800
     },
   },
 };
@@ -156,7 +156,7 @@ export const FluidWidth: StoryObj<typeof Logo> = {
   parameters: {
     backgrounds: {
       default: "ilo",
-      values: [{ name: "ilo", value: "rgba(35, 0, 80, 1)" }], // --ilo-color-blue-dark
+      values: [{ name: "ilo", value: "rgba(35, 0, 80, 1)" }], // --ilo-color-brand-800
     },
   },
   argTypes: {

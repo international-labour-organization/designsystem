@@ -11,35 +11,35 @@ export default create({
   brandTarget: "_self",
 
   // Values from packages/styles/scss/theme/_foundation.scss
-  colorPrimary: "rgba(35, 0, 80, 1)", // --ilo-color-blue-dark
-  colorSecondary: "rgba(30, 45, 190, 1)", // --ilo-color-blue
+  colorPrimary: "rgba(35, 0, 80, 1)", // --ilo-color-brand-800
+  colorSecondary: "rgba(30, 45, 190, 1)", // --ilo-color-brand-600
 
   // UI
-  appBg: "rgba(235, 245, 253, 1)", // --ilo-color-blue-lighter
-  appContentBg: "rgba(255, 255, 255, 1)", // --ilo-color-white
-  appBorderColor: "rgba(184, 196, 204, 1)", // --ilo-color-gray-base
+  appBg: "rgba(235, 245, 253, 1)", // --ilo-color-brand-100
+  appContentBg: "rgba(255, 255, 255, 1)", // --ilo-color-neutrals-white
+  appBorderColor: "rgba(184, 196, 204, 1)", // --ilo-color-neutrals-500
   appBorderRadius: 0,
 
   fontBase: "'Noto Sans', sans-serif",
   fontCode: "'Fira Code', monospace",
 
   // Text colors
-  textColor: "rgba(35, 0, 80, 1)", // --ilo-color-blue-dark
-  textInverseColor: "rgba(255, 255, 255, 1)", // --ilo-color-white
-  textMutedColor: "rgba(109, 109, 109, 1)", // --ilo-color-gray-accessible
+  textColor: "rgba(35, 0, 80, 1)", // --ilo-color-brand-800
+  textInverseColor: "rgba(255, 255, 255, 1)", // --ilo-color-neutrals-white
+  textMutedColor: "rgba(109, 109, 109, 1)", // --ilo-color-neutrals-700
 
   // Toolbar default and active colors
-  barTextColor: "rgba(255, 255, 255, 1)", // --ilo-color-white
-  barSelectedColor: "rgba(255, 205, 45, 1)", // --ilo-color-yellow
-  barBg: "rgba(35, 0, 80, 1)", // --ilo-color-blue-dark
+  barTextColor: "rgba(255, 255, 255, 1)", // --ilo-color-neutrals-white
+  barSelectedColor: "rgba(255, 205, 45, 1)", // --ilo-color-yellow-400
+  barBg: "rgba(35, 0, 80, 1)", // --ilo-color-brand-800
 
-  buttonBg: "rgba(255, 255, 255, 1)", // --ilo-color-white
-  buttonBorder: "rgba(184, 196, 204, 1)", // --ilo-color-gray-base
-  booleanBg: "rgba(235, 245, 253, 1)", // --ilo-color-blue-lighter
-  booleanSelectedBg: "rgba(255, 255, 255, 1)", // --ilo-color-white
+  buttonBg: "rgba(255, 255, 255, 1)", // --ilo-color-neutrals-white
+  buttonBorder: "rgba(184, 196, 204, 1)", // --ilo-color-neutrals-500
+  booleanBg: "rgba(235, 245, 253, 1)", // --ilo-color-brand-100
+  booleanSelectedBg: "rgba(255, 255, 255, 1)", // --ilo-color-neutrals-white
 
-  inputBg: "rgba(235, 245, 253, 1)", // --ilo-color-blue-lighter
-  inputBorder: "rgba(184, 196, 204, 1)", // --ilo-color-gray-base
-  inputTextColor: "rgba(35, 0, 80, 1)", // --ilo-color-blue-dark
+  inputBg: "rgba(235, 245, 253, 1)", // --ilo-color-brand-100
+  inputBorder: "rgba(184, 196, 204, 1)", // --ilo-color-neutrals-500
+  inputTextColor: "rgba(35, 0, 80, 1)", // --ilo-color-brand-800
   inputBorderRadius: 3,
 });

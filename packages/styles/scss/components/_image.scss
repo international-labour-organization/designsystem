@@ -18,7 +18,7 @@
 @mixin image-caption-dark-styles {
   figcaption {
     color: var(--ilo-color-light-text-inverse);
-    border-inline-color: var(--ilo-color-gray-light-semi-transparent);
+    border-inline-color: var(--ilo-color-dark-border-subtle);
   }
 }
 

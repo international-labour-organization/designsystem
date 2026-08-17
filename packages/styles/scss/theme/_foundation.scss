@@ -18,11 +18,9 @@
     * colour plays (Text, Action, Icon, Border, Container Background, Page
     * Background, Supportive Feedback, Generic) rather than the colour itself.
     * These aliases are kept for backwards compatibility with downstream consumers
-    * and are no longer referenced by component styles.
-    *
-    * Exceptions, still in use because no semantic equivalent exists yet:
-    *   --ilo-color-blue-medium                 (_table, _textarea, _richtext)
-    *   --ilo-color-gray-light-semi-transparent (_image, _featurecard)
+    * only. Nothing inside this repo references them any more — not the component
+    * styles, not the Twig templates, not the React components, not Storybook — so
+    * the whole block can be deleted in the next major of @ilo-org/styles.
     */
   --ilo-color-white: var(--ilo-color-neutrals-white);
   --ilo-color-blue: var(--ilo-color-brand-600);
@@ -146,6 +144,7 @@
   // Icon
   --ilo-color-light-icon-default: var(--ilo-color-neutrals-black);
   --ilo-color-light-icon-subtle: var(--ilo-color-neutrals-500);
+  --ilo-color-light-icon-brand: var(--ilo-color-brand-800);
   --ilo-color-light-icon-disabled: var(--ilo-color-neutrals-200);
   --ilo-color-light-icon-accent: var(--ilo-color-purple-600);
   --ilo-color-light-icon-inverse: var(--ilo-color-neutrals-white);
@@ -212,6 +211,7 @@
   // Icon
   --ilo-color-dark-icon-default: var(--ilo-color-neutrals-white);
   --ilo-color-dark-icon-subtle: var(--ilo-color-neutrals-700);
+  --ilo-color-dark-icon-brand: var(--ilo-color-brand-200);
   --ilo-color-dark-icon-disabled: var(--ilo-color-neutrals-700);
   --ilo-color-dark-icon-accent: var(--ilo-color-yellow-400);
   --ilo-color-dark-icon-inverse: var(--ilo-color-brand-800);
