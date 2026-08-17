@@ -9,7 +9,7 @@
     &__factlist {
       --max-width: #{px-to-rem(375px)};
 
-      border-bottom: px-to-rem(3px) solid var(--ilo-color-gray-base);
+      border-bottom: px-to-rem(3px) solid var(--ilo-color-light-border-default);
       padding: spacing(10) spacing(6) spacing(12);
 
       @include cornercut(72px, 40px);
@@ -39,7 +39,8 @@
 
       &#{$self}__theme {
         &__dark {
-          border-bottom: px-to-rem(3px) solid var(--ilo-color-red);
+          border-bottom: px-to-rem(3px) solid
+            var(--ilo-color-light-feedback-error-default);
 
           .ilo--list--item {
             &:last-of-type {
@@ -47,10 +48,10 @@
             }
           }
 
-          color: var(--ilo-color-white);
+          color: var(--ilo-color-light-text-inverse);
 
           #{$self}--title {
-            color: var(--ilo-color-white);
+            color: var(--ilo-color-light-text-inverse);
           }
         }
       }
@@ -66,7 +67,7 @@
       }
 
       #{$self}--title {
-        color: var(--ilo-color-gray-charcoal);
+        color: var(--ilo-color-light-text-default);
         font-size: var(--ilo-font-size-xlg);
         line-height: var(--ilo-line-height-md);
         letter-spacing: var(--ilo-letter-spacing-xsm);

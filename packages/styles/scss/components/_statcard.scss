@@ -13,7 +13,7 @@
         --max-width: 100%;
       }
 
-      border-bottom: px-to-rem(3px) solid var(--ilo-color-purple);
+      border-bottom: px-to-rem(3px) solid var(--ilo-color-light-border-brand-4);
       padding: spacing(10) spacing(6) spacing(8);
       position: relative;
       width: 100%;
@@ -26,24 +26,24 @@
 
       &#{$self}__color {
         &__blue {
-          background: var(--ilo-color-blue-lighter);
+          background: var(--ilo-color-light-container-bg-subtle);
         }
 
         &__yellow {
-          background: var(--ilo-color-yellow);
+          background: var(--ilo-color-light-feedback-warning-default);
         }
 
         &__green {
-          background: var(--ilo-color-green);
+          background: var(--ilo-color-light-feedback-success-default);
         }
 
         &__turquoise {
-          background: var(--ilo-color-turquoise);
+          background: var(--ilo-color-light-generic-turquoise);
         }
       }
 
       &#{$self}__loading {
-        background-color: var(--ilo-color-gray-base);
+        background-color: var(--ilo-color-light-container-bg-inactive);
         border-bottom-color: var(--ilo-skeleton-element-background-color);
       }
 
@@ -75,14 +75,14 @@
       }
 
       #{$self}--title {
-        color: var(--ilo-color-blue-dark);
+        color: var(--ilo-color-light-text-brand);
         @include typography("heading-2");
         width: 100%;
         margin-bottom: spacing(3);
       }
 
       #{$self}--intro {
-        color: var(--ilo-color-blue-dark);
+        color: var(--ilo-color-light-text-brand);
         font-family: var(--ilo-fonts-display);
         @include typography("highlight-medium");
         margin-bottom: spacing(8);

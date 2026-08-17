@@ -14,10 +14,12 @@
   }
 
   &--button {
-    border-right: var(--ilo-border-md) solid var(--ilo-color-gray-base);
-    border-top: var(--ilo-border-md) solid var(--ilo-color-gray-base);
-    border-bottom: var(--ilo-border-md) solid var(--ilo-color-gray-base);
-    background-color: var(--ilo-color-gray-light);
+    border-right: var(--ilo-border-md) solid
+      var(--ilo-color-light-border-default);
+    border-top: var(--ilo-border-md) solid var(--ilo-color-light-border-default);
+    border-bottom: var(--ilo-border-md) solid
+      var(--ilo-color-light-border-default);
+    background-color: var(--ilo-color-light-container-bg-disabled);
     border-left: 0;
     height: 100%;
     width: px-to-rem(48px);
@@ -32,18 +34,18 @@
       display: inline-block;
       height: px-to-rem(24px);
       width: px-to-rem(24px);
-      @include icon("search", var(--ilo-color-blue-dark));
+      @include icon("search", var(--ilo-color-light-action-default));
     }
 
     &:hover,
     &:focus {
-      background-color: var(--ilo-color-blue-lighter);
+      background-color: var(--ilo-color-light-container-bg-subtle);
     }
 
     &:active {
-      background-color: var(--ilo-color-blue);
+      background-color: var(--ilo-color-light-action-selected);
       &:after {
-        @include icon("search", var(--ilo-color-white));
+        @include icon("search", var(--ilo-color-light-icon-inverse));
       }
     }
 
@@ -108,7 +110,7 @@
   [dir="rtl"] & {
     .ilo--searchfield {
       &--button {
-        border-left: px-to-rem(2px) solid var(--ilo-color-gray-base);
+        border-left: px-to-rem(2px) solid var(--ilo-color-light-border-default);
         border-right: 0;
       }
       &--clear-button {

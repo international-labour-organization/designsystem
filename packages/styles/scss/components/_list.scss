@@ -14,13 +14,13 @@
 
   &__theme {
     &__light {
-      color: var(--ilo-color-gray-charcoal);
+      color: var(--ilo-color-light-text-default);
       @include invincible-list;
     }
 
     &__dark {
-      color: var(--ilo-color-white);
-      @include invincible-list(var(--ilo-color-white));
+      color: var(--ilo-color-light-text-inverse);
+      @include invincible-list(var(--ilo-color-light-icon-inverse));
     }
   }
 

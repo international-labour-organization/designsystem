@@ -3,20 +3,20 @@
 @import "../mixins";
 
 .ilo--fieldset {
-  --ilo-fieldset-legend-color: var(--ilo-color-gray-charcoal);
-  --ilo-fieldset-helper-color: var(--ilo-color-gray-accessible);
-  --ilo-fieldset-error-color: var(--ilo-color-red-dark);
+  --ilo-fieldset-legend-color: var(--ilo-color-light-text-default);
+  --ilo-fieldset-helper-color: var(--ilo-color-light-text-subtle);
+  --ilo-fieldset-error-color: var(--ilo-color-light-feedback-error-dark);
 
   &__theme {
     &__light {
-      --ilo-fieldset-legend-color: var(--ilo-color-gray-charcoal);
-      --ilo-fieldset-helper-color: var(--ilo-color-gray-accessible);
-      --ilo-fieldset-error-color: var(--ilo-color-red-dark);
+      --ilo-fieldset-legend-color: var(--ilo-color-light-text-default);
+      --ilo-fieldset-helper-color: var(--ilo-color-light-text-subtle);
+      --ilo-fieldset-error-color: var(--ilo-color-light-feedback-error-dark);
     }
     &__dark {
-      --ilo-fieldset-legend-color: var(--ilo-color-yellow);
-      --ilo-fieldset-helper-color: var(--ilo-color-white);
-      --ilo-fieldset-error-color: var(--ilo-color-red-dark);
+      --ilo-fieldset-legend-color: var(--ilo-color-dark-text-accent);
+      --ilo-fieldset-helper-color: var(--ilo-color-light-text-inverse);
+      --ilo-fieldset-error-color: var(--ilo-color-light-feedback-error-dark);
     }
   }
 

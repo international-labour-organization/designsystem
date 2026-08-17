@@ -14,7 +14,7 @@
   opacity: 0;
   align-items: center;
   justify-content: center;
-  background-color: var(--ilo-color-gray-charcoal);
+  background-color: var(--ilo-color-light-container-bg-inverse);
 
   &--open {
     display: flex;
@@ -27,7 +27,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: var(--ilo-color-gray-charcoal);
+    background-color: var(--ilo-color-light-container-bg-inverse);
   }
 
   &__container {
@@ -47,23 +47,23 @@
     top: 0;
     right: 0;
     z-index: 10000;
-    background: var(--ilo-color-white);
+    background: var(--ilo-color-light-container-bg-default);
     border: none;
     width: px-to-rem(40px);
     height: px-to-rem(40px);
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--ilo-color-gray-charcoal);
+    color: var(--ilo-color-light-text-default);
     cursor: pointer;
 
     &:hover {
-      background: var(--ilo-color-blue-lighter);
-      color: var(--ilo-color-blue);
+      background: var(--ilo-color-light-container-bg-subtle);
+      color: var(--ilo-color-light-action-hover);
     }
 
     &:focus {
-      outline: 2px solid var(--ilo-color-blue);
+      outline: 2px solid var(--ilo-color-light-border-brand);
       outline-offset: 2px;
     }
   }

@@ -1,29 +1,29 @@
 .changelog {
-  border: 1px solid var(--ilo-color-blue-ramp);
+  border: 1px solid var(--ilo-color-brand-700);
   padding: 20px;
 
   h2 {
-    color: var(--ilo-color-blue);
-    border-color: var(--ilo-color-blue-ramp);
+    color: var(--ilo-color-brand-600);
+    border-color: var(--ilo-color-brand-700);
     margin: 0 0 1rem;
 
     &:after {
       content: "";
       position: absolute;
       border-left: 10px solid transparent;
-      border-top: 10px solid var(--ilo-color-red);
+      border-top: 10px solid var(--ilo-color-red-500);
     }
   }
 
   h3 {
-    color: var(--ilo-color-blue-dark);
+    color: var(--ilo-color-brand-800);
     margin: 0 0 1rem;
   }
 
   ul {
     list-style: none;
     padding-left: 1.5em;
-    color: var(--ilo-color-gray-charcoal) !important;
+    color: var(--ilo-color-neutrals-black) !important;
     margin-bottom: 1.5rem;
 
     li {
@@ -35,7 +35,7 @@
 
       &::before {
         content: "\25B6";
-        color: var(--ilo-color-purple);
+        color: var(--ilo-color-purple-600);
         position: absolute;
         left: 0;
       }
@@ -43,9 +43,9 @@
   }
 
   code {
-    background-color: var(--ilo-color-red-light) !important;
+    background-color: var(--ilo-color-red-100) !important;
     padding: 4px 7px !important;
-    border: 1px solid var(--ilo-color-red-dark) !important;
+    border: 1px solid var(--ilo-color-red-600) !important;
     border-radius: var(--ilo-border-radius) !important;
     font-family: monospace;
     font-style: italic;
@@ -56,8 +56,8 @@
   }
 
   a:not([aria-hidden="true"]) {
-    color: var(--ilo-color-blue);
+    color: var(--ilo-color-brand-600);
     text-decoration: none;
-    border-bottom: 1px solid var(--ilo-color-blue);
+    border-bottom: 1px solid var(--ilo-color-brand-600);
   }
 }

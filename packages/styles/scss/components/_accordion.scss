@@ -9,7 +9,7 @@
 .#{$prefix}--accordion {
   // CSS Custom Properties
   // ---------------------------------------------------------------------------
-  --ilo-accordion-color-icon: var(--ilo-color-blue-dark);
+  --ilo-accordion-color-icon: var(--ilo-color-light-action-default);
   --ilo-accordion-transition-timing: 500ms; // Slower timing for smooth height transitions
   --ilo-accordion-scroll-max-height: 300px;
 
@@ -44,10 +44,10 @@
     padding-inline-end: spacing(1);
 
     // Visual
-    background-color: var(--ilo-color-white);
+    background-color: var(--ilo-color-light-container-bg-default);
     border: none;
-    border-top: 2px solid var(--ilo-color-gray-light);
-    color: var(--ilo-color-blue-dark);
+    border-top: 2px solid var(--ilo-color-light-border-subtle);
+    color: var(--ilo-color-light-text-brand);
 
     // Animation
     transition: all var(--ilo-accordion-transition-timing) ease-in-out;
@@ -63,26 +63,26 @@
 
     // Expanded state
     &[aria-expanded="true"] {
-      background-color: var(--ilo-color-blue-lighter);
+      background-color: var(--ilo-color-light-container-bg-subtle);
 
       #{$accordion}--icon {
-        @include icon("minus", var(--ilo-color-blue));
+        @include icon("minus", var(--ilo-color-light-action-hover));
       }
     }
 
     // Collapsed state
     &[aria-expanded="false"] {
       #{$accordion}--icon {
-        @include icon("plus", var(--ilo-color-blue-dark));
+        @include icon("plus", var(--ilo-color-light-action-default));
       }
     }
 
     // Interactive states
     &:hover,
     &:focus {
-      --ilo-accordion-color-icon: var(--ilo-color-blue);
-      border-top-color: var(--ilo-color-blue);
-      color: var(--ilo-color-blue);
+      --ilo-accordion-color-icon: var(--ilo-color-light-action-hover);
+      border-top-color: var(--ilo-color-light-border-brand);
+      color: var(--ilo-color-light-action-hover);
       cursor: pointer;
     }
 

@@ -174,7 +174,7 @@ const LogoGenerator = () => {
         style={{ marginBottom: "40px" }}
       >
         <h1>Download logos</h1>
-        <p style={{ color: "var(--ilo-color-gray-accessible)" }}>
+        <p style={{ color: "var(--ilo-color-neutrals-700)" }}>
           Configure and download the official ILO logo for your specific needs.
         </p>
       </header>

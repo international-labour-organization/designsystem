@@ -2,13 +2,12 @@
 @import "../mixins";
 
 .ilo--table {
-  background-color: var(--ilo-color-blue-ramp);
   padding: spacing(20);
   position: relative;
 
   &--header {
-    background-color: var(--ilo-color-white);
-    border-bottom: px-to-rem(2px) solid var(--ilo-color-gray-light);
+    background-color: var(--ilo-color-light-container-bg-default);
+    border-bottom: px-to-rem(2px) solid var(--ilo-color-light-border-subtle);
     padding: spacing(4) spacing(2) spacing(5) spacing(2);
   }
 
@@ -25,7 +24,7 @@
   }
 
   &--head {
-    background-color: var(--ilo-color-white);
+    background-color: var(--ilo-color-light-container-bg-default);
     box-shadow:
       0px 0.8px 1.6px rgba(30, 45, 190, 0.038),
       0px 4px 8px rgba(30, 45, 190, 0.054),
@@ -39,9 +38,9 @@
     z-index: 2;
 
     &--cell {
-      background-color: var(--ilo-color-white);
-      border-left: px-to-rem(1px) solid var(--ilo-color-gray-light);
-      border-bottom: px-to-rem(2px) solid var(--ilo-color-gray-light);
+      background-color: var(--ilo-color-light-container-bg-default);
+      border-left: px-to-rem(1px) solid var(--ilo-color-light-border-subtle);
+      border-bottom: px-to-rem(2px) solid var(--ilo-color-light-border-subtle);
       font-family: var(--ilo-fonts-display);
       font-weight: 700;
       @include typography("body-small");
@@ -62,7 +61,7 @@
         position: relative;
 
         &:after {
-          background-color: var(--ilo-color-gray-light);
+          background-color: var(--ilo-color-light-container-bg-disabled);
           background-image: url("#{colortodataurlicon('chevron_down', rgba(35, 0, 80, 1))}");
           background-position: center center;
           background-repeat: no-repeat;
@@ -78,14 +77,15 @@
         }
 
         &:hover {
-          background-color: var(--ilo-color-blue-lighter);
-          border-bottom: px-to-rem(2px) solid var(--ilo-color-blue-medium);
-          color: var(--ilo-color-blue);
+          background-color: var(--ilo-color-light-container-bg-subtle);
+          border-bottom: px-to-rem(2px) solid
+            var(--ilo-color-light-border-brand-2);
+          color: var(--ilo-color-light-action-hover);
           cursor: pointer;
 
           &:after {
-            background-color: var(--ilo-color-blue-lighter);
-            background-image: url("#{colortodataurlicon('chevron_down', rgba(210, 213, 242, 1))}");
+            background-color: var(--ilo-color-light-container-bg-subtle);
+            background-image: url("#{colortodataurlicon('chevron_down', rgba(190, 220, 250, 1))}");
           }
         }
 
@@ -100,14 +100,14 @@
   }
 
   &--body {
-    background-color: var(--ilo-color-white);
+    background-color: var(--ilo-color-light-container-bg-default);
 
     &--row.selected {
-      background-color: var(--ilo-color-background-hover);
+      background-color: var(--ilo-color-light-container-bg-subtle);
     }
 
     &--cell {
-      border-bottom: px-to-rem(2px) solid var(--ilo-color-gray-light);
+      border-bottom: px-to-rem(2px) solid var(--ilo-color-light-border-subtle);
       font-family: var(--ilo-fonts-copy);
       font-weight: 400;
       @include typography("body-small");
@@ -128,20 +128,20 @@
       }
 
       &:hover {
-        background-color: var(--ilo-color-background-hover);
-        border-bottom: 2px solid var(--ilo-color-blue-medium);
-        color: var(--ilo-color-blue);
+        background-color: var(--ilo-color-light-container-bg-subtle);
+        border-bottom: 2px solid var(--ilo-color-light-border-brand-2);
+        color: var(--ilo-color-light-action-hover);
       }
 
       &.selected {
-        background-color: var(--ilo-color-blue-ramp);
-        border-bottom: 2px solid var(--ilo-color-blue-medium);
-        color: var(--ilo-color-blue-medium);
+        background-color: var(--ilo-color-light-action-selected);
+        border-bottom: 2px solid var(--ilo-color-dark-border-brand);
+        color: var(--ilo-color-dark-text-brand);
         cursor: pointer;
       }
 
       &.column--selected {
-        background-color: var(--ilo-color-background-hover);
+        background-color: var(--ilo-color-light-container-bg-subtle);
       }
 
       a {
@@ -164,7 +164,7 @@
   }
 
   &--description {
-    color: var(--ilo-color-gray-accessible);
+    color: var(--ilo-color-light-text-subtle);
     font-family: var(--ilo-fonts-copy);
     font-weight: 400;
     @include typography("body-xsmall");
@@ -176,28 +176,28 @@
 
   &--zebra {
     .ilo--table--body--row:nth-child(odd) {
-      background-color: var(--ilo-color-background-highlight);
+      background-color: var(--ilo-color-light-container-bg-disabled);
 
       &:hover,
       &:focus {
-        background-color: var(--ilo-color-background-highlight);
+        background-color: var(--ilo-color-light-container-bg-disabled);
       }
 
       .ilo--table--body--cell {
-        border-left: px-to-rem(1px) solid var(--ilo-color-white);
+        border-left: px-to-rem(1px) solid var(--ilo-color-light-border-inverse);
 
         &:hover,
         &:focus {
-          background-color: var(--ilo-color-blue-ramp);
+          background-color: var(--ilo-color-light-action-selected);
         }
       }
 
       &.selected {
         .ilo--table--body--cell {
-          background-color: var(--ilo-color-background-hover);
+          background-color: var(--ilo-color-light-container-bg-subtle);
 
           &.selected {
-            background-color: var(--ilo-color-blue-ramp);
+            background-color: var(--ilo-color-light-action-selected);
           }
         }
       }

@@ -25,7 +25,7 @@ $link-hover-selectors: ".ilo--card--link:hover, .ilo--card--link:focus, .ilo--ca
 
   box-sizing: border-box;
   position: relative;
-  background-color: var(--ilo-color-white);
+  background-color: var(--ilo-color-light-container-bg-default);
   max-width: var(--max-width);
   flex: 1 1 var(--max-width);
   @include globaltransition("border-bottom, filter");
@@ -65,7 +65,7 @@ $link-hover-selectors: ".ilo--card--link:hover, .ilo--card--link:focus, .ilo--ca
     &::before {
       content: "";
       position: absolute;
-      background-color: var(--ilo-color-blue);
+      background-color: var(--ilo-color-light-action-selected);
       height: 100%;
       width: 100%;
       z-index: 1;
@@ -93,19 +93,19 @@ $link-hover-selectors: ".ilo--card--link:hover, .ilo--card--link:focus, .ilo--ca
   }
 
   &--eyebrow {
-    color: var(--ilo-color-purple);
+    color: var(--ilo-color-light-text-accent);
     @include typography("body-small");
     margin-bottom: spacing(4);
   }
 
   &--title {
-    color: var(--ilo-color-blue-dark);
+    color: var(--ilo-color-light-text-brand);
     @include typography("heading-4");
     margin-bottom: spacing(6);
   }
 
   &--intro {
-    color: var(--ilo-color-gray-charcoal);
+    color: var(--ilo-color-light-text-default);
     @include typography("body-medium");
   }
 
@@ -130,23 +130,25 @@ $link-hover-selectors: ".ilo--card--link:hover, .ilo--card--link:focus, .ilo--ca
 
   &__theme {
     &__light {
-      background: var(--ilo-color-white);
-      border-bottom: px-to-rem(3px) solid var(--ilo-color-gray-base);
-      --ilo-skeleton-element-background-color: var(--ilo-color-gray-light);
+      background: var(--ilo-color-light-container-bg-default);
+      border-bottom: px-to-rem(3px) solid var(--ilo-color-light-border-default);
+      --ilo-skeleton-element-background-color: var(
+        --ilo-color-light-container-bg-disabled
+      );
     }
 
     &__soft {
-      background: var(--ilo-color-blue-lighter);
+      background: var(--ilo-color-light-container-bg-subtle);
     }
 
     &__light,
     &__soft {
       #{$self}--date-extra {
-        color: var(--ilo-color-gray-charcoal);
+        color: var(--ilo-color-light-text-default);
       }
 
       @include card-link-hover {
-        border-bottom: px-to-rem(3px) solid var(--ilo-color-blue);
+        border-bottom: px-to-rem(3px) solid var(--ilo-color-light-border-brand);
 
         #{$self}--eyebrow,
         #{$self}--title,
@@ -155,25 +157,27 @@ $link-hover-selectors: ".ilo--card--link:hover, .ilo--card--link:focus, .ilo--ca
         #{$self}--date-extra,
         #{$self}--content--item,
         .ilo--profile {
-          color: var(--ilo-color-blue);
+          color: var(--ilo-color-light-action-hover);
 
           .ilo--icon {
-            fill: var(--ilo-color-blue);
+            fill: var(--ilo-color-light-action-hover);
           }
         }
       }
     }
 
     &__dark {
-      background: var(--ilo-color-blue-dark);
-      border-bottom: px-to-rem(3px) solid var(--ilo-color-red);
+      background: var(--ilo-color-light-container-bg-brand);
+      border-bottom: px-to-rem(3px) solid
+        var(--ilo-color-light-feedback-error-default);
 
       @include card-link-hover {
-        border-bottom: px-to-rem(3px) solid var(--ilo-color-white);
+        border-bottom: px-to-rem(3px) solid
+          var(--ilo-color-light-border-inverse);
       }
 
       #{$self}--title {
-        color: var(--ilo-color-white);
+        color: var(--ilo-color-light-text-inverse);
       }
 
       #{$self}--eyebrow,
@@ -181,12 +185,12 @@ $link-hover-selectors: ".ilo--card--link:hover, .ilo--card--link:focus, .ilo--ca
       #{$self}--date,
       #{$self}--date-extra,
       #{$self}--content--item {
-        color: var(--ilo-color-gray-light);
+        color: var(--ilo-color-dark-text-subtle);
       }
 
       #{$self}--content--item {
         .ilo--icon {
-          fill: var(--ilo-color-gray-light);
+          fill: var(--ilo-color-light-icon-disabled);
         }
       }
     }
@@ -217,10 +221,10 @@ $link-hover-selectors: ".ilo--card--link:hover, .ilo--card--link:focus, .ilo--ca
         background-repeat: no-repeat;
       }
       &::before {
-        background-color: var(--ilo-color-gray-charcoal);
+        background-color: var(--ilo-color-light-container-bg-inverse);
       }
       &::after {
-        @include icon("caret_right", var(--ilo-color-gray-light));
+        @include icon("caret_right", var(--ilo-color-light-icon-disabled));
       }
     }
   }

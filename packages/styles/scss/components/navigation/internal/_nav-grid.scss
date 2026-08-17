@@ -18,14 +18,14 @@
     padding: spacing(4) spacing(2);
     text-decoration: none;
     text-overflow: ellipsis;
-    color: var(--ilo-color-blue-dark);
+    color: var(--ilo-color-light-text-brand);
     transition:
       color 0.3s ease,
       background-color 0.3s ease;
 
     &:hover {
-      color: var(--ilo-color-blue);
-      background-color: var(--ilo-color-blue-lighter);
+      color: var(--ilo-color-light-action-hover);
+      background-color: var(--ilo-color-light-container-bg-subtle);
     }
   }
 }
