@@ -1,0 +1,215 @@
+import { Meta, Unstyled } from "@storybook/blocks";
+import "./styles/docs-table.scss";
+
+<Meta title="Get started/Sass helpers" />
+
+<Unstyled>
+<div className="ilo--richtext ilo--richtext__theme__light">
+
+# Sass helpers
+
+If you write Sass, the design system exposes its functions and mixins from a single entrypoint:
+
+```scss
+@use "@ilo-org/react/styles/scss/helpers" as *;
+
+.card {
+  padding: spacing(4);
+  max-width: px-to-rem(1296px);
+
+  @include typography("body-medium");
+
+  @include breakpoint("md") {
+    padding: spacing(6);
+  }
+}
+```
+
+The entrypoint is guaranteed to emit **no CSS of its own**—it contains only functions and mixins—so it is safe to `@use` from every partial or `.module.scss` file in your project without duplicating rules into your bundle.
+
+The examples on this page load it with `as *` so the helpers can be called without a prefix. If you prefer an explicit namespace, drop the `as *` and call them as `helpers.spacing(4)`, `helpers.px-to-rem(...)`, and so on.
+
+Many of the mixins output CSS custom properties (`var(--ilo-...)`), so make sure the design system stylesheet is loaded on the page as described in [Installation](/docs/get-started-installation--docs).
+
+## Functions
+
+### `spacing($size)`
+
+Returns a length on the design system's spacing scale: `$size` multiplied by the base spacing unit, which is `4px` at the default scale. The result is a `calc()` expression built on the `--ilo-spacing-base` custom property, so spacing responds to changes in `--ilo-scale` at runtime. Non-integer sizes are rounded to the nearest integer.
+
+```scss
+.card {
+  padding: spacing(4); // 16px at the default scale
+  margin-bottom: spacing(8); // 32px at the default scale
+  margin-left: calc(spacing(3) * -1); // negative offsets work via calc()
+}
+```
+
+Prefer `spacing()` over hard-coded pixel values—it keeps vertical rhythm consistent with the components and follows the system if it is ever rescaled.
+
+### `px-to-rem($px)`
+
+Converts a pixel value to `rem`, using the design system's base font size (`18.66px`) as the root reference. Use it whenever a design spec gives you pixels but you want the value to scale with the user's font-size settings. Percentage values are returned unchanged.
+
+```scss
+.intro {
+  max-width: px-to-rem(640px);
+  text-underline-offset: px-to-rem(6px);
+}
+```
+
+## Mixins
+
+### `breakpoint($breakpoint, $max: false)`
+
+Wraps the content block in a media query for one of the design system's named breakpoints:
+
+<table className="docs-table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Width</th>
+    </tr>
+  </thead>
+  <tbody>
+    {[
+      ["xs", "320px"],
+      ["sm", "414px"],
+      ["md", "610px"],
+      ["lg", "1024px"],
+      ["xl", "1140px"],
+      ["xxl", "1168px"],
+    ].map(([name, width]) => (
+      <tr key={name}>
+        <td>
+          <code>{name}</code>
+        </td>
+        <td>
+          <code>{width}</code>
+        </td>
+      </tr>
+    ))}
+  </tbody>
+</table>
+
+By default the query is mobile-first (`min-width`). Pass `true` as the second argument to target widths **below** the breakpoint (`max-width: breakpoint − 1px`) instead:
+
+```scss
+.sidebar {
+  // From the lg breakpoint upward
+  @include breakpoint("lg") {
+    width: px-to-rem(320px);
+  }
+
+  // Below the md breakpoint
+  @include breakpoint("md", true) {
+    display: none;
+  }
+}
+```
+
+These are the same breakpoints the `useBreakpoint` hook reports from JavaScript, so Sass and React code can agree on when a layout changes.
+
+### `typography($variant, $mobile: false)`
+
+Applies a complete type style—font family, size, weight, line height, and letter spacing—from the design system's typographic scale. Headings, blockquotes, and highlights use the display font; everything else uses the copy font. The available variants:
+
+- **Headings:** `heading-1`, `heading-2`, `heading-3`, `heading-4`
+- **Body:** `body-xlarge`, `body-large`, `body-medium`, `body-small`, `body-xsmall`, `body-2xsmall`
+- **Highlights:** `highlight-large`, `highlight-medium`, `highlight-medium-bold`, `highlight-small`, `highlight-small-bold`
+- **Other:** `blockquote`
+
+Passing `true` as the second argument applies the smaller mobile sizes of the variant. The mixin does not include media queries itself, so the usual pattern is mobile-first: apply the mobile style, then restore the desktop style inside a breakpoint:
+
+```scss
+.section-title {
+  @include typography("heading-2", true);
+
+  @include breakpoint("lg") {
+    @include typography("heading-2");
+  }
+}
+```
+
+An unrecognized variant name fails the build with an `@error`, so typos are caught at compile time.
+
+### `icon($name, $color: black)`
+
+Renders one of the design system's icons as a CSS mask on the element, filled with `$color`. Because the color is applied with `background-color`, it can be any CSS color—including a custom property:
+
+```scss
+.external-link::after {
+  content: "";
+  display: inline-block;
+  width: px-to-rem(24px);
+  height: px-to-rem(24px);
+  @include icon("launch", var(--ilo-color-light-icon-brand));
+}
+```
+
+Remember to give the element a size—the mask has no intrinsic dimensions.
+
+The available icons are listed in the [Icon component documentation](/docs/components-user-interface-icon--docs). The mixin takes the same names in `snake_case`—where the Icon component takes `name="ChevronRight"`, the mixin takes `"chevron_right"`.
+
+In React code, prefer the Icon component over this mixin: it renders a real SVG with its size and accessibility attributes handled for you. Reach for the mixin when a component isn't an option—styling markup you don't control, or pseudo-elements like the list markers and link decorations the design system itself builds with it.
+
+### `linkstyles($theme: "light")`
+
+Applies the design system's full link treatment: underline, spacing, and colors for the default, `:visited`, `:hover`, `:active`, and `:focus` states, driven by the semantic link tokens. Pass `"dark"` for links that sit on a dark background:
+
+```scss
+.prose a {
+  @include linkstyles;
+}
+
+.footer a {
+  @include linkstyles("dark");
+}
+```
+
+### `isVisuallyHidden()`
+
+Hides the element visually while keeping it available to screen readers—the standard technique for skip links and text alternatives:
+
+```scss
+.skip-link:not(:focus) {
+  @include isVisuallyHidden;
+}
+```
+
+### `cornercut($width, $height, $dir: "right", $side: "top")`
+
+Clips one corner of the element diagonally with a `clip-path` polygon—the slanted corner seen on the design system's cards, heroes, and blockquotes. `$dir` (`"right"` or `"left"`) picks which corner on the `$side` (`"top"` or `"bottom"`) is cut; `$width` and `$height` control the size of the cut. Always pass `$width` and `$height` explicitly—the declared defaults reference variables that are not part of this entrypoint, so relying on them fails the build.
+
+```scss
+.promo-card {
+  @include cornercut(72px, 40px); // cut the top-right corner
+}
+
+.promo-card--flipped {
+  @include cornercut(72px, 40px, "left"); // cut the top-left corner
+}
+```
+
+### `invincible-list($bullet-color: var(--ilo-color-light-icon-subtle))`
+
+Styles the `ol`/`ul` lists inside the element the way the List and RichText components do: numbered markers for ordered lists, caret icons for unordered lists (mirrored automatically in RTL), and a table-based layout that keeps markers from being clipped by containers with `overflow: hidden`. Apply it to a wrapper around user-generated or CMS content:
+
+```scss
+.article-body {
+  @include invincible-list;
+}
+```
+
+### `skeleton-element($height, $width)`
+
+Turns the element into a loading-skeleton placeholder: a block of the given size (height in pixels, converted to rem; width as any CSS length) with the skeleton background color and a pulsing animation.
+
+```scss
+.avatar-placeholder {
+  @include skeleton-element(48px, px-to-rem(48px));
+}
+```
+
+</div>
+</Unstyled>
