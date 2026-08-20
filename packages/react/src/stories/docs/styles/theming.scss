@@ -1,0 +1,42 @@
+.theming-docs {
+  &--table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0 2.5rem;
+    font-size: 0.875rem;
+
+    th {
+      text-align: left;
+      padding: 0.5rem 0.75rem;
+      border-bottom: 2px solid var(--ilo-color-neutrals-500);
+      color: var(--ilo-color-neutrals-black);
+    }
+
+    td {
+      padding: 0.5rem 0.75rem;
+      border-bottom: 1px solid var(--ilo-color-neutrals-200);
+      vertical-align: middle;
+    }
+
+    code {
+      font-family: monospace;
+      font-size: 0.8125rem;
+      white-space: nowrap;
+    }
+  }
+
+  &--swatch {
+    display: inline-block;
+    width: 3.5rem;
+    height: 2rem;
+    border-radius: var(--ilo-border-radius);
+    border: 1px solid var(--ilo-color-neutrals-200);
+    vertical-align: middle;
+  }
+
+  &--swatch-cell {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+}

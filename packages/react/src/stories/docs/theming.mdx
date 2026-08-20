@@ -1,0 +1,416 @@
+import { Meta, Unstyled } from "@storybook/blocks";
+import "./styles/theming.scss";
+
+<Meta title="Get started/Theming" />
+
+export const Swatch = ({ token }) => (
+  <span
+    className="theming-docs--swatch"
+    style={{
+      backgroundImage: `linear-gradient(var(${token}), var(${token})), repeating-conic-gradient(rgba(45, 45, 45, 0.15) 0% 25%, transparent 0% 50%)`,
+      backgroundSize: "auto, 12px 12px",
+    }}
+  />
+);
+
+export const ColorTable = ({ colors }) => (
+  <table className="theming-docs--table">
+    <thead>
+      <tr>
+        <th>Token</th>
+        <th>Hex</th>
+        <th>RGBA</th>
+      </tr>
+    </thead>
+    <tbody>
+      {colors.map(([token, hex, rgba]) => (
+        <tr key={token}>
+          <td>
+            <span className="theming-docs--swatch-cell">
+              <Swatch token={token} />
+              <code>{token}</code>
+            </span>
+          </td>
+          <td>
+            <code>{hex}</code>
+          </td>
+          <td>
+            <code>{rgba}</code>
+          </td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+);
+
+export const SemanticTable = ({ category, rows }) => (
+  <table className="theming-docs--table">
+    <thead>
+      <tr>
+        <th>Variant</th>
+        <th>Light</th>
+        <th>Dark</th>
+      </tr>
+    </thead>
+    <tbody>
+      {rows.map(([variant, light, dark]) => (
+        <tr key={variant}>
+          <td>
+            <code>{variant}</code>
+          </td>
+          <td>
+            {light ? (
+              <span className="theming-docs--swatch-cell">
+                <Swatch token={`--ilo-color-light-${category}-${variant}`} />
+                <code>{`--ilo-color-${light}`}</code>
+              </span>
+            ) : (
+              <em>Not defined</em>
+            )}
+          </td>
+          <td>
+            {dark ? (
+              <span className="theming-docs--swatch-cell">
+                <Swatch token={`--ilo-color-dark-${category}-${variant}`} />
+                <code>{`--ilo-color-${dark}`}</code>
+              </span>
+            ) : (
+              <em>Not defined</em>
+            )}
+          </td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+);
+
+<Unstyled>
+<div className="ilo--richtext ilo--richtext__theme__light">
+
+# Color and theming
+
+The design system's color scheme is built from two layers of CSS custom properties, all defined on `:root` and shipped with the stylesheet you import from `@ilo-org/react/styles/index.css`:
+
+1. **Global colors** — the raw palette. Each color family (brand blue, neutrals, red, yellow, green, turquoise, purple) is defined as a ramp of numbered steps.
+2. **Semantic tokens** — role-based aliases that point at global colors. They describe what a color is _for_ (text, borders, backgrounds, feedback) rather than what it looks like, and each role exists in a **light** and a **dark** variant.
+
+Components never hard-code color values. They reference semantic tokens, which means you can re-theme the entire system—or a single role—by overriding a handful of custom properties. All of these tokens are defined in [`_foundation.scss`](https://github.com/international-labour-organization/designsystem/blob/develop/packages/styles/scss/theme/_foundation.scss) in the `@ilo-org/styles` package.
+
+## Global colors
+
+Every color family is a ramp from `100` (lightest) to `800` (darkest), following the pattern `--ilo-color-{family}-{step}`. Not every family defines every step, and a few steps also come in a `-transparent` variant used for overlays and tints. The neutrals family uses named endpoints (`black`, `white`) around its numbered steps.
+
+You can use global colors directly in your own styles, but prefer the [semantic tokens](#semantic-tokens) whenever a suitable role exists—they carry the design intent and make a future re-theme much cheaper.
+
+### Brand
+
+The institutional ILO blues. `brand-800` (dark blue) and `brand-600` (ILO blue) are the workhorses of the system: default action color, dark backgrounds, brand text.
+
+<ColorTable
+  colors={[
+    ["--ilo-color-brand-100", "#EBF5FD", "rgba(235, 245, 253, 1)"],
+    ["--ilo-color-brand-200", "#BEDCFA", "rgba(190, 220, 250, 1)"],
+    ["--ilo-color-brand-300", "#82AFDC", "rgba(130, 175, 220, 1)"],
+    ["--ilo-color-brand-400", "#5A87CD", "rgba(90, 135, 205, 1)"],
+    ["--ilo-color-brand-500", "#3264C8", "rgba(50, 100, 200, 1)"],
+    ["--ilo-color-brand-600", "#1E2DBE", "rgba(30, 45, 190, 1)"],
+    [
+      "--ilo-color-brand-600-transparent",
+      "#1E2DBE66",
+      "rgba(30, 45, 190, 0.4)",
+    ],
+    ["--ilo-color-brand-700", "#151F85", "rgba(21, 31, 133, 1)"],
+    ["--ilo-color-brand-800", "#230050", "rgba(35, 0, 80, 1)"],
+    ["--ilo-color-brand-800-transparent", "#23005080", "rgba(35, 0, 80, 0.5)"],
+  ]}
+/>
+
+### Neutrals
+
+Grays for text, borders, and surfaces. Note that `black` is not pure black but a dark charcoal, and the ramp only defines the steps the system actually needs.
+
+<ColorTable
+  colors={[
+    ["--ilo-color-neutrals-white", "#FFFFFF", "rgba(255, 255, 255, 1)"],
+    ["--ilo-color-neutrals-200", "#EDF0F2", "rgba(237, 240, 242, 1)"],
+    ["--ilo-color-neutrals-500", "#B8C4CC", "rgba(184, 196, 204, 1)"],
+    ["--ilo-color-neutrals-700", "#6D6D6D", "rgba(109, 109, 109, 1)"],
+    ["--ilo-color-neutrals-black", "#2D2D2D", "rgba(45, 45, 45, 1)"],
+  ]}
+/>
+
+### Red
+
+Used for error feedback.
+
+<ColorTable
+  colors={[
+    ["--ilo-color-red-100", "#FED8DB", "rgba(254, 216, 219, 1)"],
+    ["--ilo-color-red-200", "#FDB1B7", "rgba(253, 177, 183, 1)"],
+    ["--ilo-color-red-300", "#FC8A93", "rgba(252, 138, 147, 1)"],
+    ["--ilo-color-red-400", "#FB636F", "rgba(251, 99, 111, 1)"],
+    ["--ilo-color-red-500", "#FA3C4B", "rgba(250, 60, 75, 1)"],
+    ["--ilo-color-red-500-transparent", "#FA3C4B33", "rgba(250, 60, 75, 0.2)"],
+    ["--ilo-color-red-600", "#C8303C", "rgba(200, 48, 60, 1)"],
+    ["--ilo-color-red-700", "#96242D", "rgba(150, 36, 45, 1)"],
+    ["--ilo-color-red-800", "#7D121A", "rgba(125, 18, 26, 1)"],
+  ]}
+/>
+
+### Yellow
+
+Used for warning feedback, focus rings, and accents on dark backgrounds.
+
+<ColorTable
+  colors={[
+    ["--ilo-color-yellow-100", "#FFF5C8", "rgba(255, 245, 200, 1)"],
+    ["--ilo-color-yellow-200", "#FFEBAB", "rgba(255, 235, 171, 1)"],
+    ["--ilo-color-yellow-300", "#FFDC6C", "rgba(255, 220, 108, 1)"],
+    ["--ilo-color-yellow-400", "#FFCD2D", "rgba(255, 205, 45, 1)"],
+    [
+      "--ilo-color-yellow-400-transparent",
+      "#FFCD2D33",
+      "rgba(255, 205, 45, 0.2)",
+    ],
+    ["--ilo-color-yellow-500", "#FAB428", "rgba(250, 180, 40, 1)"],
+    ["--ilo-color-yellow-600", "#E49428", "rgba(228, 148, 40, 1)"],
+    ["--ilo-color-yellow-700", "#D78700", "rgba(215, 135, 0, 1)"],
+    ["--ilo-color-yellow-800", "#A56803", "rgba(165, 104, 3, 1)"],
+  ]}
+/>
+
+### Green
+
+Used for success feedback.
+
+<ColorTable
+  colors={[
+    ["--ilo-color-green-100", "#E8F9E0", "rgba(232, 249, 224, 1)"],
+    ["--ilo-color-green-200", "#D1F3C1", "rgba(209, 243, 193, 1)"],
+    ["--ilo-color-green-300", "#AFEA93", "rgba(175, 234, 147, 1)"],
+    ["--ilo-color-green-400", "#8CE164", "rgba(140, 225, 100, 1)"],
+    [
+      "--ilo-color-green-400-transparent",
+      "#8CE16433",
+      "rgba(140, 225, 100, 0.2)",
+    ],
+    ["--ilo-color-green-500", "#70B450", "rgba(112, 180, 80, 1)"],
+    ["--ilo-color-green-600", "#54873C", "rgba(84, 135, 60, 1)"],
+    ["--ilo-color-green-700", "#385A28", "rgba(56, 90, 40, 1)"],
+    ["--ilo-color-green-800", "#154200", "rgba(21, 66, 0, 1)"],
+  ]}
+/>
+
+### Turquoise
+
+A generic accent color.
+
+<ColorTable
+  colors={[
+    ["--ilo-color-turquoise-100", "#D2FBFB", "rgba(210, 251, 251, 1)"],
+    ["--ilo-color-turquoise-200", "#B4FAF7", "rgba(180, 250, 247, 1)"],
+    ["--ilo-color-turquoise-300", "#9EF2F2", "rgba(158, 242, 242, 1)"],
+    ["--ilo-color-turquoise-400", "#69E4E4", "rgba(105, 228, 228, 1)"],
+    ["--ilo-color-turquoise-500", "#05D2D2", "rgba(5, 210, 210, 1)"],
+    ["--ilo-color-turquoise-600", "#05BDBD", "rgba(5, 189, 189, 1)"],
+    ["--ilo-color-turquoise-700", "#049393", "rgba(4, 147, 147, 1)"],
+    ["--ilo-color-turquoise-800", "#025454", "rgba(2, 84, 84, 1)"],
+  ]}
+/>
+
+### Purple
+
+Used for accent text and icons in the light theme, and as a generic accent color.
+
+<ColorTable
+  colors={[
+    ["--ilo-color-purple-100", "#F5E7EE", "rgba(245, 231, 238, 1)"],
+    ["--ilo-color-purple-200", "#F0D2E0", "rgba(240, 210, 224, 1)"],
+    ["--ilo-color-purple-300", "#E0B6CC", "rgba(224, 182, 204, 1)"],
+    ["--ilo-color-purple-400", "#CB85AA", "rgba(203, 133, 170, 1)"],
+    ["--ilo-color-purple-500", "#AB3B77", "rgba(171, 59, 119, 1)"],
+    ["--ilo-color-purple-600", "#960A55", "rgba(150, 10, 85, 1)"],
+    ["--ilo-color-purple-700", "#771449", "rgba(119, 20, 73, 1)"],
+    ["--ilo-color-purple-800", "#5F0037", "rgba(95, 0, 55, 1)"],
+  ]}
+/>
+
+## Semantic tokens
+
+Semantic tokens map the global palette onto **roles**. They follow the pattern:
+
+```
+--ilo-color-{mode}-{category}-{variant}
+```
+
+- **mode** — `light` or `dark`. These are not operating-system color schemes: they describe the surface a component sits on. Components that support theming take a `theme` prop (`"light" | "dark"`) and pick the matching set of tokens. Use `theme="dark"` for components placed on a dark background. The design system does not switch themes automatically based on `prefers-color-scheme`.
+- **category** — the role family: `text`, `action`, `icon`, `border`, `container-bg`, `page-bg`, `feedback`, or `generic`.
+- **variant** — the specific role within the family, e.g. `default`, `subtle`, `brand`, `hover`, `disabled`.
+
+For example, `--ilo-color-light-text-default` is the default text color on light surfaces, and `--ilo-color-dark-text-default` is its dark-surface counterpart.
+
+The tables below list every semantic token and the global color it points to.
+
+### Text
+
+Colors for body copy, headings, and other text content.
+
+<SemanticTable
+  category="text"
+  rows={[
+    ["default", "neutrals-black", "neutrals-white"],
+    ["subtle", "neutrals-700", "neutrals-200"],
+    ["brand", "brand-800", "brand-200"],
+    ["accent", "purple-600", "yellow-400"],
+    ["inverse", "neutrals-white", "brand-800"],
+  ]}
+/>
+
+### Action
+
+Colors for interactive elements—links, buttons, and other controls—and their states.
+
+<SemanticTable
+  category="action"
+  rows={[
+    ["default", "brand-800", "brand-100"],
+    ["hover", "brand-600", "brand-200"],
+    ["selected", "brand-600", "brand-600"],
+    ["inverse", "neutrals-white", "brand-800"],
+  ]}
+/>
+
+### Icon
+
+<SemanticTable
+  category="icon"
+  rows={[
+    ["default", "neutrals-black", "neutrals-white"],
+    ["subtle", "neutrals-500", "neutrals-700"],
+    ["brand", "brand-800", "brand-200"],
+    ["disabled", "neutrals-200", "neutrals-700"],
+    ["accent", "purple-600", "yellow-400"],
+    ["inverse", "neutrals-white", "brand-800"],
+  ]}
+/>
+
+### Border
+
+Border and divider colors. `focus` is the focus-ring color, which is deliberately the same yellow in both modes.
+
+<SemanticTable
+  category="border"
+  rows={[
+    ["default", "neutrals-500", "neutrals-white"],
+    ["subtle", "neutrals-200", "neutrals-700"],
+    ["brand", "brand-600", "brand-200"],
+    ["brand-2", "brand-200", "brand-800"],
+    ["brand-3", "brand-800", "brand-100"],
+    ["brand-4", "purple-600", "yellow-400"],
+    ["focus", "yellow-400", "yellow-400"],
+    ["inverse", "neutrals-white", "brand-800"],
+  ]}
+/>
+
+### Container background
+
+Background colors for components and content containers: cards, tooltips, form fields, navigation surfaces.
+
+<SemanticTable
+  category="container-bg"
+  rows={[
+    ["default", "neutrals-white", "brand-800"],
+    ["subtle", "brand-100", "brand-600"],
+    ["brand", "brand-800", "brand-100"],
+    ["disabled", "neutrals-200", "neutrals-black"],
+    ["inactive", "neutrals-500", "neutrals-700"],
+    ["inverse-subtle", "neutrals-700", "neutrals-200"],
+    ["inverse", "neutrals-black", "neutrals-white"],
+    ["accent", "yellow-400", null],
+  ]}
+/>
+
+### Page background
+
+Background colors for the page itself, behind the components.
+
+<SemanticTable
+  category="page-bg"
+  rows={[
+    ["default", "neutrals-white", "brand-800"],
+    ["subtle", "brand-100", "neutrals-black"],
+  ]}
+/>
+
+### Supportive feedback
+
+Status colors for notifications, form validation, and alerts. Each status has a `default` shade and a `light` tint for backgrounds; errors additionally get a `dark` shade.
+
+<SemanticTable
+  category="feedback"
+  rows={[
+    ["error-dark", "red-600", "red-100"],
+    ["error-default", "red-500", "red-500"],
+    ["error-light", "red-100", "red-600"],
+    ["warning-default", "yellow-400", "yellow-400"],
+    ["warning-light", "yellow-100", "yellow-800"],
+    ["success-default", "green-400", "green-400"],
+    ["success-light", "green-100", "green-800"],
+    ["info-default", "brand-600", "brand-600"],
+    ["info-light", "brand-200", "brand-800"],
+  ]}
+/>
+
+### Generic
+
+Accent colors for illustrative and decorative use—data visualizations, category tags, and similar cases where the color carries no fixed meaning.
+
+<SemanticTable
+  category="generic"
+  rows={[
+    ["turquoise", "turquoise-500", "turquoise-500"],
+    ["purple", "purple-600", "purple-600"],
+    ["green", "green-400", "green-400"],
+    ["yellow", "yellow-400", "yellow-400"],
+    ["ilo-light-blue", "brand-100", "brand-200"],
+  ]}
+/>
+
+## Overriding tokens
+
+Because everything is a CSS custom property on `:root`, theming is a matter of redefining variables. Load your overrides **after** the design system stylesheet so they win the cascade:
+
+```css
+/* your-theme.css — imported after @ilo-org/react/styles/index.css */
+:root {
+  /* Re-brand the whole system: every semantic token that points at
+     brand-800 (actions, dark backgrounds, brand text) follows along. */
+  --ilo-color-brand-800: rgba(20, 30, 60, 1);
+
+  /* Or adjust a single role without touching the palette. */
+  --ilo-color-light-action-default: var(--ilo-color-turquoise-800);
+}
+```
+
+Two rules of thumb:
+
+- **Override global colors to re-brand.** Changing `--ilo-color-brand-800` restyles every role that references it, in both light and dark modes, while keeping the system internally consistent.
+- **Override semantic tokens to adjust a role.** If only links, or only focus rings, or only card backgrounds should change, override the semantic token for that role and leave the palette alone. Remember that most roles exist twice—override both the `light` and `dark` variants if your change should apply to both modes.
+
+Overrides don't have to be global. Scoping them to a selector re-themes just that part of the page:
+
+```css
+.campaign-section {
+  --ilo-color-light-action-default: var(--ilo-color-purple-600);
+  --ilo-color-light-action-hover: var(--ilo-color-purple-500);
+}
+```
+
+When you override a color, check the contrast of the affected roles against their backgrounds—the default palette is tuned to meet WCAG 2.1 contrast requirements, and your replacement values should be too.
+
+## Legacy aliases
+
+The stylesheet also ships a set of older color variables (`--ilo-color-blue`, `--ilo-color-gray-accessible`, `--ilo-color-background-hover`, and friends). They are **deprecated** aliases that point at the global colors above, kept only for backwards compatibility, and will be removed in the next major release of `@ilo-org/styles`. Don't use them in new code, and don't use them as override targets—nothing in the design system reads them anymore.
+
+</div>
+</Unstyled>

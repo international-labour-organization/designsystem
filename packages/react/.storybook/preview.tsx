@@ -26,7 +26,7 @@ const preview: Preview = {
         order: [
           "ILO Design System for React",
           "Get started",
-          ["Introduction", "Installation", "Changelog", "Resources"],
+          ["Introduction", "Installation", "Theming", "Changelog", "Resources"],
           "Examples",
           "Utilities",
           "Components",
