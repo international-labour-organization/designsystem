@@ -1,0 +1,493 @@
+import { Meta, Unstyled } from "@storybook/blocks";
+import { Blockquote } from "../../components/Blockquote";
+import { GlobalProvider } from "../../components/GlobalProvider";
+import "./styles/docs-table.scss";
+import "./styles/typography.scss";
+
+<Meta title="Get started/Typography" />
+
+export const Specimen = ({ variant, children }) => (
+  <div className="type-docs--specimen">
+    <code className="type-docs--specimen-label">{variant}</code>
+    {/* A div, not a p: these docs sit inside a richtext wrapper whose element
+        rules would out-specify the specimen styles. typography.scss also covers
+        the <p> that MDX wraps multi-line children in. */}
+    <div className={`type-docs--${variant}`}>{children}</div>
+  </div>
+);
+
+export const TypeTable = ({ rows }) => (
+  <table className="docs-table">
+    <thead>
+      <tr>
+        <th>Variant</th>
+        <th>Font</th>
+        <th>Weight</th>
+        <th>Size</th>
+        <th>Mobile size</th>
+        <th>Line height</th>
+      </tr>
+    </thead>
+    <tbody>
+      {rows.map(([variant, font, weight, size, mobileSize, lineHeight]) => (
+        <tr key={variant}>
+          <td>
+            <code>{variant}</code>
+          </td>
+          <td>{font}</td>
+          <td>{weight}</td>
+          <td>
+            <code>{size}</code>
+          </td>
+          <td>
+            <code>{mobileSize}</code>
+          </td>
+          <td>
+            <code>{lineHeight}</code>
+          </td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+);
+
+export const TokenTable = ({ header, rows }) => (
+  <table className="docs-table">
+    <thead>
+      <tr>
+        <th>Token</th>
+        <th>{header}</th>
+      </tr>
+    </thead>
+    <tbody>
+      {rows.map(([token, value]) => (
+        <tr key={token}>
+          <td>
+            <code>{token}</code>
+          </td>
+          <td>
+            <code>{value}</code>
+          </td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+);
+
+<Unstyled>
+<div className="ilo--richtext ilo--richtext__theme__light">
+
+# Typography
+
+The design system's typography is built from three pieces:
+
+1. **Two font families** — a display font for headings and emphasis, and a copy font for everything else, with automatic substitutions for Arabic, Chinese, and Japanese.
+2. **A typographic scale** — sixteen named type styles, applied in Sass with the `typography()` mixin and defined entirely in CSS custom properties.
+3. **The RichText component** — a wrapper that applies the whole system (type styles, links, lists, spacing) to a block of HTML you don't control, such as content from a CMS.
+
+Components apply the scale themselves—you never need to set a font on a Button or a Card. This page is about the typography of **your own** content: the headings, paragraphs, and prose that sit between the components.
+
+## Fonts
+
+The system uses two typefaces:
+
+- **Overpass** is the display font. Headings, blockquotes, and highlight styles use it.
+- **Noto Sans** is the copy font. Body text and everything else uses it.
+
+<table className="docs-table">
+  <thead>
+    <tr>
+      <th>Family</th>
+      <th>Role</th>
+      <th>Weights</th>
+    </tr>
+  </thead>
+  <tbody>
+    {[
+      [
+        "Overpass",
+        "Display — headings, blockquotes, highlights",
+        "300 · 500 · 700 (+ italics)",
+      ],
+      ["Noto Sans", "Copy — body text", "400 · 700 (+ italics)"],
+      ["Vazirmatn", "Display and copy for Arabic", "400 · 500 · 700"],
+    ].map(([family, role, weights]) => (
+      <tr key={family}>
+        <td>{family}</td>
+        <td>{role}</td>
+        <td>{weights}</td>
+      </tr>
+    ))}
+  </tbody>
+</table>
+
+### Loading the fonts
+
+The fonts are published in their own package, `@ilo-org/fonts`, and the main stylesheet **does not include them**—importing `index.css` alone gives you the type scale but renders it in fallback fonts. Import both, once, at the root of your application, as described in [Installation](/docs/get-started-installation--docs):
+
+```typescript
+import "@ilo-org/react/styles/index.css";
+import "@ilo-org/fonts/font-css/fonts.css";
+```
+
+`fonts.css` declares `@font-face` rules for Overpass and Noto Sans with `font-display: swap`, pointing at font files shipped inside the package—your bundler copies them into your build, and nothing is fetched from a CDN.
+
+If you'd rather serve the Latin fonts from Google Fonts instead of bundling them, the package provides a one-line alternative:
+
+```typescript
+import "@ilo-org/fonts/font-css/fonts-google.css";
+```
+
+For pages in Arabic, import `@ilo-org/fonts/font-css/fonts-ar.css` (instead of, or in addition to, `fonts.css`) to load Vazirmatn.
+
+### Language support
+
+The font families are never referenced directly—everything reads the tokens `--ilo-fonts-display` and `--ilo-fonts-copy`. The stylesheet remaps those tokens based on the `lang` attribute, so switching a page (or a fragment) to another script is just standard HTML:
+
+```html
+<html lang="ar">
+  <!-- The whole system now renders in Vazirmatn,
+       and letter-spacing adjustments are disabled. -->
+</html>
+```
+
+- **Arabic** (`lang="ar"`, any region variant) switches both roles to Vazirmatn and zeroes out letter spacing, which Latin-oriented tracking values would otherwise distort.
+- **Chinese** (`lang="zh"`) and **Japanese** (`lang="ja"`) switch to system font stacks (PingFang SC / Microsoft YaHei and Noto Sans CJK JP / Yu Gothic / Hiragino Sans)—no webfont download needed.
+
+The remapping applies to any element with a `lang` attribute, not just `<html>`, so a single Arabic quote inside an English page gets the right typeface automatically.
+
+### No default element styles
+
+The design system does not ship default font styles for HTML elements. The stylesheet only sets a page-level base—the copy font at the system's base size (`18.66px`) on `body`, and the display font family on headings. Beyond that, a bare `<h1>` or `<p>` gets none of the scale: no sizes, weights, spacing, list markers, or link styles.
+
+This is deliberate—it keeps the design system's prose styling from fighting your app's own—but it means styled text is always opt-in, in one of two ways:
+
+- **Wrap the content in a richtext wrapper.** The [RichText component](#the-richtext-component) (or its CSS classes, if you already have JSX) applies the full treatment to every element inside it. This is the way to get the "default" look for headings, paragraphs, lists, and links.
+- **Apply a variant yourself** with the [`typography()` mixin](#the-type-scale), for individual elements you're styling by hand.
+
+## The type scale
+
+The scale defines sixteen named variants in four groups: **headings**, **body**, **highlights** (short display-font emphasis text, e.g. labels and standfirsts), and the **blockquote** style. You apply one with the `typography()` mixin from the [Sass helpers](/docs/get-started-sass-helpers--docs) entrypoint:
+
+```scss
+@use "@ilo-org/react/styles/scss/helpers" as *;
+
+.article-title {
+  @include typography("heading-2");
+}
+```
+
+The mixin outputs a complete type style—font family, size, weight, line height, and letter spacing—with every value referencing a CSS custom property, so the result follows theme overrides and runtime scaling. Passing an unknown variant name fails the build with an `@error`, so typos are caught at compile time.
+
+### Responsive usage
+
+Each variant has a desktop and a mobile size, but the mixin **emits no media queries**—passing `true` as the second argument simply swaps in the smaller mobile values. The intended pattern is mobile-first: apply the mobile style at the top level, then restore the desktop style inside a breakpoint. This is exactly how the design system's own components use it:
+
+```scss
+.article-title {
+  @include typography("heading-2", true);
+
+  @include breakpoint("md") {
+    @include typography("heading-2");
+  }
+}
+```
+
+### Headings
+
+Headings use the display font at weight 700. Note that the variant names describe a visual size, not a document position—use whichever heading _element_ the document outline calls for, and whichever heading _style_ the design calls for.
+
+<TypeTable
+  rows={[
+    ["heading-1", "Display", "700", "44px", "36px", "125%"],
+    ["heading-2", "Display", "700", "32px", "24px", "125%"],
+    ["heading-3", "Display", "700", "24px", "18px", "125%"],
+    ["heading-4", "Display", "700", "18px", "16px", "130%"],
+  ]}
+/>
+
+<Specimen variant="heading-1">Advancing social justice</Specimen>
+<Specimen variant="heading-2">Advancing social justice</Specimen>
+<Specimen variant="heading-3">Advancing social justice</Specimen>
+<Specimen variant="heading-4">Advancing social justice</Specimen>
+
+### Body
+
+Body styles use the copy font at weight 400. `body-large` is the default paragraph style in rich text; the smaller sizes are for captions, metadata, and fine print.
+
+<TypeTable
+  rows={[
+    ["body-xlarge", "Copy", "400", "24px", "18px", "145%"],
+    ["body-large", "Copy", "400", "18px", "16px", "145%"],
+    ["body-medium", "Copy", "400", "16px", "16px", "145%"],
+    ["body-small", "Copy", "400", "14px", "14px", "135%"],
+    ["body-xsmall", "Copy", "400", "12px", "12px", "135%"],
+    ["body-2xsmall", "Copy", "400", "10px", "10px", "150%"],
+  ]}
+/>
+
+<Specimen variant="body-xlarge">
+  The International Labour Organization brings together governments, employers
+  and workers to set labour standards and promote decent work for all.
+</Specimen>
+<Specimen variant="body-large">
+  The International Labour Organization brings together governments, employers
+  and workers to set labour standards and promote decent work for all.
+</Specimen>
+<Specimen variant="body-medium">
+  The International Labour Organization brings together governments, employers
+  and workers to set labour standards and promote decent work for all.
+</Specimen>
+<Specimen variant="body-small">
+  The International Labour Organization brings together governments, employers
+  and workers to set labour standards and promote decent work for all.
+</Specimen>
+<Specimen variant="body-xsmall">
+  The International Labour Organization brings together governments, employers
+  and workers to set labour standards and promote decent work for all.
+</Specimen>
+<Specimen variant="body-2xsmall">
+  The International Labour Organization brings together governments, employers
+  and workers to set labour standards and promote decent work for all.
+</Specimen>
+
+### Highlights
+
+Highlights are short runs of display-font text at body sizes—standfirsts, card labels, navigation items, stat callouts. Each size comes in a medium (500) and, for the two smaller sizes, a bold (700) variant.
+
+<TypeTable
+  rows={[
+    ["highlight-large", "Display", "500", "18px", "16px", "130%"],
+    ["highlight-medium", "Display", "500", "16px", "14px", "135%"],
+    ["highlight-medium-bold", "Display", "700", "16px", "14px", "135%"],
+    ["highlight-small", "Display", "500", "14px", "14px", "135%"],
+    ["highlight-small-bold", "Display", "700", "14px", "14px", "135%"],
+  ]}
+/>
+
+<Specimen variant="highlight-large">Decent work for all</Specimen>
+<Specimen variant="highlight-medium">Decent work for all</Specimen>
+<Specimen variant="highlight-medium-bold">Decent work for all</Specimen>
+<Specimen variant="highlight-small">Decent work for all</Specimen>
+<Specimen variant="highlight-small-bold">Decent work for all</Specimen>
+
+### Blockquote
+
+The one variant at weight 300—large, light display text for pull quotes. Rather than applying it by hand, use the [Blockquote component](/docs/components-content-blockquote--docs), which pairs the type style with the quote's full treatment—decoration, layout, and citation:
+
+<TypeTable rows={[["blockquote", "Display", "300", "36px", "28px", "125%"]]} />
+
+```tsx
+import { Blockquote } from "@ilo-org/react";
+
+<Blockquote
+  quote="Labour is not a commodity."
+  cite="Declaration of Philadelphia, 1944"
+/>;
+```
+
+<GlobalProvider prefix="ilo">
+  <Blockquote
+    quote="Labour is not a commodity."
+    cite="Declaration of Philadelphia, 1944"
+  />
+</GlobalProvider>
+
+## Typography tokens
+
+Every value the mixin outputs is a CSS custom property defined on `:root` in [`_foundation.scss`](https://github.com/international-labour-organization/designsystem/blob/develop/packages/styles/scss/theme/_foundation.scss) and [`_typography.scss`](https://github.com/international-labour-organization/designsystem/blob/develop/packages/styles/scss/theme/_typography.scss). You can reference them directly in plain CSS when the mixin isn't available, and override them to re-theme—the same [rules of thumb](/docs/get-started-theming--docs) as for color tokens apply.
+
+### Families
+
+<TokenTable
+  header="Value"
+  rows={[
+    ["--ilo-fonts-display", "Overpass, Noto Sans, sans-serif"],
+    ["--ilo-fonts-copy", "Noto Sans, sans-serif"],
+    ["--ilo-fonts-display-ar / --ilo-fonts-copy-ar", "Vazirmatn, sans-serif"],
+    [
+      "--ilo-fonts-display-zh / --ilo-fonts-copy-zh",
+      "PingFang SC, Microsoft YaHei, sans-serif",
+    ],
+    [
+      "--ilo-fonts-display-jp / --ilo-fonts-copy-jp",
+      "Noto Sans CJK JP, Yu Gothic, Hiragino Sans, sans-serif",
+    ],
+    ["--ilo-fonts-monospace", "monospace"],
+  ]}
+/>
+
+To change the system's typefaces, override `--ilo-fonts-display` and `--ilo-fonts-copy` after the stylesheet loads—every component and every mixin output follows along.
+
+### Sizes
+
+Font sizes follow a t-shirt scale. Each token is defined as a `rem` value multiplied by `--ilo-scale` (default `1`), so the whole system can be enlarged or reduced proportionally at runtime by overriding a single variable—`--ilo-scale: 1.125` on a section makes everything in it, type and spacing alike, 12.5% larger. The pixel values below assume the default scale.
+
+<TokenTable
+  header="Size at default scale"
+  rows={[
+    ["--ilo-font-size-2xsm", "10px"],
+    ["--ilo-font-size-xsm", "12px"],
+    ["--ilo-font-size-sm", "14px"],
+    ["--ilo-font-size-md", "16px"],
+    ["--ilo-font-size-lg", "18px"],
+    ["--ilo-font-size-xlg", "24px"],
+    ["--ilo-font-size-2xlg", "28px"],
+    ["--ilo-font-size-3xlg", "32px"],
+    ["--ilo-font-size-4xlg", "36px"],
+    ["--ilo-font-size-5xlg", "44px"],
+  ]}
+/>
+
+### Weights
+
+<TokenTable
+  header="Value"
+  rows={[
+    ["--ilo-font-weight-light", "300"],
+    ["--ilo-font-weight-regular", "400"],
+    ["--ilo-font-weight-medium", "500"],
+    ["--ilo-font-weight-bold", "700"],
+  ]}
+/>
+
+### Line heights
+
+Line heights are unitless percentages, so they scale with whatever font size they're paired with.
+
+<TokenTable
+  header="Value"
+  rows={[
+    ["--ilo-line-height-xsm", "115%"],
+    ["--ilo-line-height-sm", "120%"],
+    ["--ilo-line-height-md", "125%"],
+    ["--ilo-line-height-lg", "130%"],
+    ["--ilo-line-height-xlg", "135%"],
+    ["--ilo-line-height-2xlg", "145%"],
+    ["--ilo-line-height-3xlg", "150%"],
+  ]}
+/>
+
+### Letter spacing
+
+Display text is tracked slightly tighter as it gets larger. On Arabic pages these are all reset to `0`.
+
+<TokenTable
+  header="Value"
+  rows={[
+    ["--ilo-letter-spacing-xsm", "-0.035em"],
+    ["--ilo-letter-spacing-sm", "-0.02em"],
+    ["--ilo-letter-spacing-md", "0em"],
+    ["--ilo-letter-spacing-lg", "0.02em"],
+  ]}
+/>
+
+## The RichText component
+
+The mixin covers elements you style one by one. For a whole block of prose—an article body from a CMS, rendered Markdown, a translated legal text—use **RichText**, which takes an HTML string and applies the entire typographic system to everything inside it:
+
+```tsx
+import { RichText } from "@ilo-org/react";
+
+const article = `
+  <h2>Conventions and Recommendations</h2>
+  <p>International labour standards are legal instruments drawn up by the
+  ILO's constituents, setting out basic principles and rights at work.</p>
+  <ul>
+    <li>Conventions are legally binding international treaties.</li>
+    <li>Recommendations serve as non-binding guidelines.</li>
+  </ul>
+`;
+
+export const Article = () => <RichText content={article} />;
+```
+
+### Props
+
+<table className="docs-table">
+  <thead>
+    <tr>
+      <th>Prop</th>
+      <th>Type</th>
+      <th>Default</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    {[
+      ["content", `string`, "—", "The HTML to render. Required."],
+      [
+        "theme",
+        `"light" | "dark"`,
+        `"light"`,
+        "Color scheme for the surface the text sits on.",
+      ],
+      ["className", `string`, "—", "Additional class for the wrapper."],
+    ].map(([prop, type, def, desc]) => (
+      <tr key={prop}>
+        <td>
+          <code>{prop}</code>
+        </td>
+        <td>
+          <code>{type}</code>
+        </td>
+        <td>{def === "—" ? def : <code>{def}</code>}</td>
+        <td>{desc}</td>
+      </tr>
+    ))}
+  </tbody>
+</table>
+
+### What it styles
+
+Inside the wrapper, every common prose element gets the design system's treatment:
+
+- **Headings** map onto the scale: `h1` → `heading-1`, `h2` → `heading-2`, `h3` → `heading-3`, and `h4`–`h6` → `heading-4`, each with generous top margin to separate sections.
+- **Paragraphs** are set in `body-large`.
+- **Links** get the full link treatment—underline, hover, visited, and focus states—in the colors of the chosen theme.
+- **Lists** get the system's markers: caret icons for unordered lists and styled counters for ordered lists, mirrored automatically in right-to-left scripts, and laid out so markers survive containers with `overflow: hidden`.
+- **Blockquotes** get the large light `blockquote` style; `strong`/`b` and `em`/`i` render as expected; `hr` becomes a short 3px rule; images and their captions are styled and made responsive.
+- **Vertical rhythm** is handled throughout: consistent spacing between blocks, larger before headings and around figures, and responsive sizing—mobile type below the `md` breakpoint, desktop type above.
+
+To embed a responsive 16:9 video, wrap the `iframe` in `<div class="responsive-video-embed">`.
+
+On a dark background, pass `theme="dark"` to switch the text, link, and rule colors to the dark-surface tokens:
+
+```tsx
+<RichText content={article} theme="dark" />
+```
+
+### Sanitize untrusted content
+
+RichText renders its `content` string with `dangerouslySetInnerHTML` and performs **no sanitization**. That's fine for HTML your team authors, but content from a CMS with untrusted editors—or anything user-submitted—should be run through a sanitizer such as [DOMPurify](https://github.com/cure53/DOMPurify) first:
+
+```tsx
+import DOMPurify from "dompurify";
+
+<RichText content={DOMPurify.sanitize(untrustedHtml)} />;
+```
+
+### Already have JSX?
+
+If your prose is React elements rather than an HTML string—an MDX document, or markup you compose yourself—there's no need to serialize it to a string. Apply the same classes RichText uses to a wrapper of your own and the identical styles kick in:
+
+```tsx
+<div className="ilo--richtext ilo--richtext__theme__light">
+  <h2>Conventions and Recommendations</h2>
+  <p>International labour standards are legal instruments…</p>
+</div>
+```
+
+This is how the documentation you're reading right now is styled.
+
+## Related components
+
+For structured content, the design system provides components that apply these type styles with the right markup and accessibility baked in:
+
+- **[Heading](/docs/components-content-heading--docs)** renders an `h1`–`h6` with the level as a prop, so a component can slot into any document outline.
+- **[Blockquote](/docs/components-content-blockquote--docs)** renders a pull quote with its citation in the `blockquote` style.
+- **[List](/docs/components-content-list--docs)** renders ordered, unordered, and unstyled lists with the system's markers—the same styling RichText applies to raw `ul`/`ol`.
+- **[Link](/docs/components-navigation-link--docs)** renders a standalone link with the system's link treatment in either theme.
+
+</div>
+</Unstyled>

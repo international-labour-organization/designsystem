@@ -1,0 +1,37 @@
+@use "@ilo-org/styles/scss/helpers" as *;
+
+// Live specimens for the Typography docs page. Each variant gets a class that
+// applies the real typography() mixin, mobile-first, so the specimens show
+// exactly what the mixin outputs at the current viewport.
+$type-docs-variants:
+  "heading-1", "heading-2", "heading-3", "heading-4", "body-xlarge",
+  "body-large", "body-medium", "body-small", "body-xsmall", "body-2xsmall",
+  "highlight-large", "highlight-medium", "highlight-medium-bold",
+  "highlight-small", "highlight-small-bold", "blockquote";
+
+.type-docs--specimen {
+  margin: 1.5rem 0;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--ilo-color-neutrals-200);
+
+  p {
+    margin: 0;
+  }
+}
+
+// The specimens sit inside the page's richtext wrapper, whose element rules
+// (e.g. `.ilo--richtext p`, specificity 0,1,1) would beat a bare variant class
+// (0,1,0). Scoping under the specimen container — and covering the markdown
+// paragraph MDX wraps multi-line children in — keeps the variant styles on top.
+@each $variant in $type-docs-variants {
+  .type-docs--specimen .type-docs--#{$variant} {
+    &,
+    p {
+      @include typography($variant, true);
+
+      @include breakpoint("md") {
+        @include typography($variant);
+      }
+    }
+  }
+}
