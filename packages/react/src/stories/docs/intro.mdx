@@ -1,99 +1,69 @@
-import { Meta } from "@storybook/blocks";
+import { Meta, Unstyled } from "@storybook/blocks";
 
-<Meta title="Getting Started/Introduction" />
+<Meta title="Get started/Introduction" />
 
-# Getting started
+<Unstyled>
+<div className="ilo--richtext ilo--richtext__theme__light">
 
-This website provides guidance and documentation for the ILO Design System using [React](https://reactjs.org).
+# ILO Design System React Components
 
-## Installation
+Welcome to the **ILO Design System React Component Library**—a comprehensive collection of reusable, accessible, and brand-compliant components designed to help developers build exceptional web applications that align with the [ILO's Visual Identity](https://brand.ilo.org).
 
-```bash
-$ npm i @ilo-org/react
-```
+Whether you're building a single-page application, a Next.js site, or any other React-powered project, this component library provides everything you need to create consistent, accessible, and visually cohesive digital experiences.
 
-The design system's fonts are published separately. Install them alongside the components:
+## What's included
 
-```bash
-$ npm i @ilo-org/fonts
-```
+This library offers a complete set of production-ready components, including:
 
-## Peer dependencies
+- **Content components** for displaying text, images, videos, and other media
+- **Navigation components** for menus, breadcrumbs, and site structure
+- **Form components** for user input and data collection
+- **Interactive components** like accordions, modals, and tabs
+- **Layout components** for structuring your pages
+- **React hooks** like `useBreakpoint` for responsive behavior in your own code
+- **And much more**—all designed to work seamlessly together
 
-The library expects `react` and `react-dom` (version 18 or 19) to be installed in your project.
+Each component is built with accessibility, performance, and maintainability in mind, ensuring your projects meet the highest standards of web development. The package is published as tree-shakeable ES modules, so your bundle only includes the components you actually use.
 
-```bash
-$ npm i react react-dom
-```
+## Getting started
 
-## Usage
+Getting started with the ILO Design System for React is straightforward:
 
-Import components directly from the `@ilo-org/react` package.
+- **[Installation](/docs/get-started-installation--docs)** — Install the npm package, set up the styles and fonts, and start importing components.
 
-```typescript
-import { Button } from "@ilo-org/react";
-```
+If you're working with Drupal or another PHP framework instead, the same components are available as a [Twig library](https://twig.ui.ilo.org).
 
-The package is published as tree-shakeable ES modules, so your bundler will only include the components you actually import.
+## Brand tools
 
-Hooks are exported from the same entrypoint:
+Beyond components, this Storybook includes a **[Logo Generator](/story/utilities-brand--logos)**—a utility for creating and downloading official ILO logos. Choose the language, color, and size, add an optional subbrand for programme or event branding, and export the result as SVG or PNG.
 
-```typescript
-import { useBreakpoint } from "@ilo-org/react";
-```
+## Why choose the ILO Design System?
 
-## Styles
+### Brand compliance
 
-Import the stylesheet once at the top of your application, along with the fonts:
+Our components are meticulously crafted to be fully compliant with the ILO's Visual Identity guidelines. This means you can build applications with confidence, knowing that every element—from typography to color schemes, spacing to interactions—aligns perfectly with the ILO's brand standards. No more guessing about design decisions or worrying about brand consistency.
 
-```typescript
-import "@ilo-org/react/styles/index.css";
-import "@ilo-org/fonts/font-css/fonts.css";
-```
+### Accessibility first
 
-In a Next.js project using the App Router, the root layout (`app/layout.tsx`) is the right place for these imports.
+Accessibility isn't an afterthought—it's built into every component from the ground up. All components follow WCAG 2.1 guidelines and are designed to be usable by everyone, including users with disabilities. This commitment to accessibility ensures your applications are inclusive and reach the widest possible audience.
 
-### Sass functions and mixins
+### Responsive and RTL-ready
 
-If you write Sass, the design system's functions and mixins are available from a
-single entrypoint. It emits no CSS of its own, so it is safe to `@use` from every
-`.module.scss` without duplicating rules into your bundle.
+The modern web is diverse, and so are our components. Every component is fully responsive, working beautifully on everything from mobile phones to large desktop displays. Additionally, our components support right-to-left (RTL) layouts out of the box, making them perfect for multilingual sites serving languages like Arabic, Hebrew, and others.
 
-```scss
-@use "@ilo-org/react/styles/scss/helpers" as *;
+### Production-ready
 
-.thing {
-  padding: spacing(4);
-  max-width: px-to-rem(1296px);
+These aren't prototype components—they're battle-tested, production-ready building blocks used across ILO's digital properties, including [ILO Live](https://live.ilo.org) and [The Future of Work Podcast](https://podcast.ilo.org). You're getting the same components that power real-world applications, ensuring reliability and performance.
 
-  @include breakpoint("md", true) {
-    display: none;
-  }
-}
-```
+### Active support and maintenance
 
-## Server components
+The ILO Design System is actively maintained and supported by the ILO's Department of Communication. We're committed to providing long-term support, regular updates, bug fixes, and new features. When you use these components, you're not just getting code—you're getting a partnership in building better digital experiences.
 
-The components in this library are client components, but they do not ship with the `"use client"` directive. If you're using a framework built on React Server Components, such as the Next.js App Router, re-export the components you need from a module of your own that declares the client boundary:
+Have questions or need help? Feel free to open an issue on our [GitHub repository](https://github.com/international-labour-organization/designsystem/issues). You can also <a href="mailto:ilonews@ilo.org">contact us by email.</a> We're here to help you succeed.
 
-```typescript
-// components/design-system.tsx
-"use client";
+## Next steps
 
-export { Button, Hero, Footer, Pagination } from "@ilo-org/react";
-export { useBreakpoint } from "@ilo-org/react";
-```
+Ready to dive in? Head over to the [installation guide](/docs/get-started-installation--docs), explore the components in the sidebar, and start building something amazing. Whether you're creating a new project or enhancing an existing one, the ILO Design System has the tools you need to build applications that are beautiful, accessible, and aligned with the ILO's mission of advancing social and economic justice.
 
-Then import from that module instead of from `@ilo-org/react` directly:
-
-```typescript
-import { Button } from "@/components/design-system";
-```
-
-## Contributing
-
-The ILO Design System is an open-source project. If you'd like to make a contribution, feel free to check out the [project](https://github.com/international-labour-organization/designsystem) on Github. Make sure to read the [Contribution Guidelines](https://github.com/international-labour-organization/designsystem/blob/develop/contributing.md) before making a pull request.
-
-## Issues and feature requests
-
-Please feel free to open issues or make feature requests on our Github repo.
+</div>
+</Unstyled>

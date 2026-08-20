@@ -10,6 +10,19 @@
     font-family: var(--ilo-fonts-copy);
     font-size: 16px;
   }
+
+  // Cancel the pre margins from _richtext.scss, which land inside
+  // Storybook's bordered code block and read as giant padding.
+  pre {
+    margin-block: 0;
+  }
+
+  code {
+    padding-inline: 0.25rem;
+    padding-block: 0.5rem;
+    font-weight: 700;
+    font-size: 0.8em;
+  }
 }
 
 body,
@@ -18,6 +31,12 @@ button[title="Zoom out"]:hover,
 button[title="Reset zoom"]:hover {
   color: var(--ilo-color-brand-800);
   background-color: var(--ilo-color-brand-200);
+}
+
+// Storybook renders markdown links through its own anchor component, which sets
+// the Storybook UI font (Nunito Sans) on the element itself and ignores <Unstyled>.
+.ilo--richtext a {
+  font-family: inherit;
 }
 
 a[class*="ilo--button"] {
