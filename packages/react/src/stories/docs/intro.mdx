@@ -4,7 +4,7 @@ import { Meta } from "@storybook/blocks";
 
 # Getting started
 
-This website provides guidance and documentation for the ILO Design System using [React](https://reactjs.org). These docs are a work in progress so bear with us as we add and correct them.
+This website provides guidance and documentation for the ILO Design System using [React](https://reactjs.org).
 
 ## Installation
 
@@ -12,11 +12,15 @@ This website provides guidance and documentation for the ILO Design System using
 $ npm i @ilo-org/react
 ```
 
-The default styles ship with the package, so there is nothing else to install.
+The design system's fonts are published separately. Install them alongside the components:
+
+```bash
+$ npm i @ilo-org/fonts
+```
 
 ## Peer dependencies
 
-In order to use this component library, you will need to have `react` and `react-dom` installed as a dependency.
+The library expects `react` and `react-dom` (version 18 or 19) to be installed in your project.
 
 ```bash
 $ npm i react react-dom
@@ -24,34 +28,30 @@ $ npm i react react-dom
 
 ## Usage
 
-Components can be exported directly from the `@ilo-org/react` package.
+Import components directly from the `@ilo-org/react` package.
 
 ```typescript
 import { Button } from "@ilo-org/react";
 ```
 
-This is fine if you think you're going to use all or most of the components in the library. However, if you're only going to use a few or you want to take advantage of code splitting, then you can import them individually.
+The package is published as tree-shakeable ES modules, so your bundler will only include the components you actually import.
+
+Hooks are exported from the same entrypoint:
 
 ```typescript
-import { Button } from "@ilo-org/react/Button";
+import { useBreakpoint } from "@ilo-org/react";
 ```
 
 ## Styles
 
-Styles for the library should be imported at the top of your project.
+Import the stylesheet once at the top of your application, along with the fonts:
 
 ```typescript
 import "@ilo-org/react/styles/index.css";
+import "@ilo-org/fonts/font-css/fonts.css";
 ```
 
-Or, if you'd rather link to the stylesheet directly:
-
-```html
-<link
-  rel="stylesheet"
-  href="node_modules/@ilo-org/react/lib/styles/index.css"
-/>
-```
+In a Next.js project using the App Router, the root layout (`app/layout.tsx`) is the right place for these imports.
 
 ### Sass functions and mixins
 
@@ -70,6 +70,24 @@ single entrypoint. It emits no CSS of its own, so it is safe to `@use` from ever
     display: none;
   }
 }
+```
+
+## Server components
+
+The components in this library are client components, but they do not ship with the `"use client"` directive. If you're using a framework built on React Server Components, such as the Next.js App Router, re-export the components you need from a module of your own that declares the client boundary:
+
+```typescript
+// components/design-system.tsx
+"use client";
+
+export { Button, Hero, Footer, Pagination } from "@ilo-org/react";
+export { useBreakpoint } from "@ilo-org/react";
+```
+
+Then import from that module instead of from `@ilo-org/react` directly:
+
+```typescript
+import { Button } from "@/components/design-system";
 ```
 
 ## Contributing
