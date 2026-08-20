@@ -110,7 +110,7 @@ Define CSS and JavaScript assets in `your_theme_name.libraries.yml`.
 global-styles:
   css:
     theme:
-      node_modules/@ilo-org/twig/dist/global/styles.css: {}
+      node_modules/@ilo-org/twig/dist/styles/index.css: {}
 ```
 
 ### Individual Component Libraries
@@ -244,8 +244,27 @@ export default defineConfig({
 
 ```js
 // src/main.js
-import "@ilo-org/twig/dist/global/styles.css";
+import "@ilo-org/twig/styles/index.css";
 import "@ilo-org/twig/dist/components/accordion/accordion.behavior.js";
+```
+
+### Sass functions and mixins
+
+If you write Sass, the design system's functions and mixins are available from
+a single entrypoint. It emits no CSS of its own, so it is safe to `@use` from
+any stylesheet without duplicating rules into your bundle.
+
+```scss
+@use "@ilo-org/twig/styles/scss/helpers" as *;
+
+.thing {
+  padding: spacing(4);
+  max-width: px-to-rem(1296px);
+
+  @include breakpoint("md", true) {
+    display: none;
+  }
+}
 ```
 
 ## Version Management

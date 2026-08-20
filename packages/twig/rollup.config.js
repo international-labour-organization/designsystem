@@ -78,6 +78,10 @@ const copyConfig = copy({
       src: "node_modules/@ilo-org/styles/css/*",
       dest: "dist/styles",
     },
+    {
+      src: "node_modules/@ilo-org/styles/scss/*",
+      dest: "dist/styles/scss",
+    },
   ],
   hook: "writeBundle",
   verbose: true,
