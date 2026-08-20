@@ -1,4 +1,5 @@
-import { VideoPlayerControls } from "./VideoPlayer.props";
+import { ThemeTypes } from "../../types";
+import { VideoPlayerControls, VideoTextTrack } from "./VideoPlayer.props";
 
 export interface Poster {
   src: string;
@@ -32,4 +33,12 @@ export interface VideoProps {
    * Specify the image src for the image
    */
   poster?: Poster;
+
+  // Optional closed-caption tracks
+  tracks?: VideoTextTrack[];
+
+  /**
+   * Specify the theme for the video component, either light or dark
+   */
+  theme?: ThemeTypes;
 }

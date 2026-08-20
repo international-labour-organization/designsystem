@@ -6,8 +6,8 @@
   &--button {
     background: transparent;
     border: none;
-    border-top: var(--ilo-border-md) solid var(--ilo-color-blue-lighter);
-    color: var(--ilo-color-blue-dark);
+    border-top: var(--ilo-border-md) solid var(--ilo-color-dark-border-brand-3);
+    color: var(--ilo-color-light-text-brand);
     font-family: var(--ilo-fonts-display);
     height: px-to-rem(56px);
     margin-top: spacing(8);
@@ -28,18 +28,18 @@
       transform: translateY(-50%);
       transform-origin: center center;
       width: px-to-rem(24px);
-      @include icon("chevron_down", var(--ilo-color-blue-dark));
+      @include icon("chevron_down", var(--ilo-color-light-action-default));
     }
 
     &:hover {
-      background: var(--ilo-color-blue-lighter);
-      border-top: var(--ilo-border-md) solid var(--ilo-color-blue);
-      color: var(--ilo-color-blue);
+      background: var(--ilo-color-light-container-bg-subtle);
+      border-top: var(--ilo-border-md) solid var(--ilo-color-light-border-brand);
+      color: var(--ilo-color-light-action-hover);
       cursor: pointer;
       @include globaltransition("color, background-color, border-color");
 
       &:after {
-        @include icon("chevron_down", var(--ilo-color-blue));
+        @include icon("chevron_down", var(--ilo-color-light-action-hover));
       }
     }
 

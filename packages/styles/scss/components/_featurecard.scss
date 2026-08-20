@@ -163,7 +163,7 @@
       }
 
       .ilo--link-list {
-        border-top: px-to-rem(2px) solid var(--ilo-color-gray-light);
+        border-top: px-to-rem(2px) solid var(--ilo-color-light-border-subtle);
 
         a {
           border-bottom: none;
@@ -181,7 +181,7 @@
 
       &#{$self}__theme__dark {
         .ilo--link-list {
-          border-top: 2px solid var(--ilo-color-gray-light-semi-transparent);
+          border-top: 2px solid var(--ilo-color-dark-border-subtle);
         }
       }
     }

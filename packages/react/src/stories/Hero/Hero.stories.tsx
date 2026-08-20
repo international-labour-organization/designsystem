@@ -1,10 +1,47 @@
 import { StoryObj, Meta } from "@storybook/react";
 import { Hero, HeroProps } from "../../components/Hero";
+import { HeroCardProps } from "../../components/HeroCard";
+import { ThemeTypes } from "../../types";
 
-const meta: Meta<typeof Hero> = {
+// `heroCard` is a single object prop, so Storybook renders it as one JSON
+// control with no per-field selects. These convenience args surface the
+// card's theme/background as top-level radio controls; the `render` below
+// merges them back into `heroCard`.
+type HeroStoryArgs = HeroProps & {
+  /** Convenience Storybook control that overrides `heroCard.theme`. */
+  cardTheme?: ThemeTypes;
+  /** Convenience Storybook control that overrides `heroCard.background`. */
+  cardBackground?: HeroCardProps["background"];
+};
+
+const meta: Meta<HeroStoryArgs> = {
   title: "Components/Content/Hero",
   component: Hero,
   tags: ["autodocs"],
+  argTypes: {
+    cardTheme: {
+      name: "heroCard.theme",
+      options: ["light", "dark"],
+      control: { type: "radio" },
+      table: { category: "Hero Card" },
+    },
+    cardBackground: {
+      name: "heroCard.background",
+      options: ["solid", "transparent", "semi-transparent"],
+      control: { type: "radio" },
+      table: { category: "Hero Card" },
+    },
+  },
+  render: ({ cardTheme, cardBackground, ...args }) => (
+    <Hero
+      {...args}
+      heroCard={{
+        ...args.heroCard,
+        ...(cardTheme && { theme: cardTheme }),
+        ...(cardBackground && { background: cardBackground }),
+      }}
+    />
+  ),
   parameters: {
     docs: {
       description: {
@@ -15,7 +52,7 @@ const meta: Meta<typeof Hero> = {
   },
 };
 
-const Default: StoryObj<HeroProps> = {
+const Default: StoryObj<HeroStoryArgs> = {
   args: {
     image: {
       alt: "Lorem ipsum",
@@ -74,7 +111,7 @@ const Default: StoryObj<HeroProps> = {
   },
 };
 
-const Homepage: StoryObj<HeroProps> = {
+const Homepage: StoryObj<HeroStoryArgs> = {
   args: {
     ...Default.args,
     align: "center",
@@ -94,7 +131,7 @@ const Homepage: StoryObj<HeroProps> = {
   },
 };
 
-const Article: StoryObj<HeroProps> = {
+const Article: StoryObj<HeroStoryArgs> = {
   args: {
     ...Default.args,
     align: "bottom",
@@ -134,5 +171,24 @@ const Article: StoryObj<HeroProps> = {
   },
 };
 
+const LightSemiTransparent: StoryObj<HeroStoryArgs> = {
+  parameters: {
+    docs: {
+      description: {
+        story:
+          "Light theme with a semi-transparent card and `justify: start`. The card-offset space between the left edge of the screen and the HeroCard picks up the same semi-transparent fill as the card. NOTE: the offset only appears at the `lg` breakpoint on viewports wider than ~1364px — view this in a full-width canvas.",
+      },
+    },
+  },
+  args: {
+    ...Default.args,
+    justify: "start",
+    align: "baseline",
+    gap: "transparent",
+    cardTheme: "light",
+    cardBackground: "semi-transparent",
+  },
+};
+
 export default meta;
-export { Default, Homepage, Article };
+export { Default, Homepage, Article, LightSemiTransparent };

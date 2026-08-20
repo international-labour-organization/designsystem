@@ -1,5 +1,209 @@
 # @ilo-org/twig
 
+## 1.15.0
+
+### Minor Changes
+
+- d181e58: Migrated all component styles onto the light/dark semantic tokens and deprecated the raw colour aliases
+
+  Component styles, Twig templates, React components and Storybook no longer
+  reference raw colour aliases such as `--ilo-color-white` or
+  `--ilo-color-blue-dark`. Everything now consumes the light/dark semantic sets,
+  which name the role a colour plays (Text, Action, Icon, Border, Container
+  Background, Page Background, Supportive Feedback, Generic) rather than the
+  colour itself.
+
+  ## New tokens
+
+  Added to fill roles the semantic set did not cover, as light/dark pairs:
+
+  - `--ilo-color-light-icon-brand` / `--ilo-color-dark-icon-brand`
+  - `--ilo-color-light-icon-disabled` / `--ilo-color-dark-icon-disabled`
+  - `--ilo-color-light-container-bg-inactive` / `--ilo-color-dark-container-bg-inactive`
+  - `--ilo-color-light-container-bg-inverse` / `--ilo-color-dark-container-bg-inverse`
+  - `--ilo-color-light-container-bg-inverse-subtle` / `--ilo-color-dark-container-bg-inverse-subtle`
+
+  And one light-only token, which has no dark counterpart:
+
+  - `--ilo-color-light-container-bg-accent`
+
+  ## Changed token value
+
+  `--ilo-color-dark-action-selected` now resolves to `--ilo-color-brand-600`
+  (`rgba(30, 45, 190, 1)`) instead of `--ilo-color-brand-200`
+  (`rgba(190, 220, 250, 1)`). If you consume this token directly, expect a
+  markedly deeper blue — check anything you have painted with it.
+
+  ## Deprecated aliases
+
+  These legacy aliases still resolve, so nothing breaks today, but nothing in the
+  design system uses them any more and they will be removed in the next major.
+  Prefer a light/dark semantic token that names the role you need; the global on
+  the right is the like-for-like swap if you just want the same colour.
+
+  | Deprecated                    | Currently resolves to                |
+  | ----------------------------- | ------------------------------------ |
+  | `--ilo-color-white`           | `--ilo-color-neutrals-white`         |
+  | `--ilo-color-blue`            | `--ilo-color-brand-600`              |
+  | `--ilo-color-blue-lighter`    | `--ilo-color-brand-100`              |
+  | `--ilo-color-blue-light`      | `--ilo-color-brand-200`              |
+  | `--ilo-color-blue-dark`       | `--ilo-color-brand-800`              |
+  | `--ilo-color-blue-ramp`       | `--ilo-color-brand-700`              |
+  | `--ilo-color-blue-dark-ramp`  | `--ilo-color-brand-800-transparent`  |
+  | `--ilo-color-gray-charcoal`   | `--ilo-color-neutrals-black`         |
+  | `--ilo-color-gray-accessible` | `--ilo-color-neutrals-700`           |
+  | `--ilo-color-gray-light`      | `--ilo-color-neutrals-200`           |
+  | `--ilo-color-gray-base`       | `--ilo-color-neutrals-500`           |
+  | `--ilo-color-red`             | `--ilo-color-red-500`                |
+  | `--ilo-color-red-light`       | `--ilo-color-red-100`                |
+  | `--ilo-color-red-dark`        | `--ilo-color-red-600`                |
+  | `--ilo-color-red-ramp`        | `--ilo-color-red-500-transparent`    |
+  | `--ilo-color-yellow`          | `--ilo-color-yellow-400`             |
+  | `--ilo-color-yellow-light`    | `--ilo-color-yellow-100`             |
+  | `--ilo-color-yellow-ramp`     | `--ilo-color-yellow-400-transparent` |
+  | `--ilo-color-green`           | `--ilo-color-green-400`              |
+  | `--ilo-color-green-light`     | `--ilo-color-green-100`              |
+  | `--ilo-color-green-ramp`      | `--ilo-color-green-400-transparent`  |
+  | `--ilo-color-turquoise`       | `--ilo-color-turquoise-500`          |
+  | `--ilo-color-purple`          | `--ilo-color-purple-600`             |
+
+  Two more are deprecated with no like-for-like global, because they are one-off
+  values that were never part of a ramp — pick the closest semantic token instead:
+
+  | Deprecated                                | Value                       | Suggested                  |
+  | ----------------------------------------- | --------------------------- | -------------------------- |
+  | `--ilo-color-blue-medium`                 | `rgba(210, 213, 242, 1)`    | `--ilo-color-brand-200`    |
+  | `--ilo-color-gray-light-semi-transparent` | `rgba(237, 240, 242, 0.25)` | `--ilo-color-neutrals-700` |
+
+  ## Visual changes
+
+  Most of the migration is like-for-like, but some colours now render differently:
+
+  - **Blues shift slightly.** Everywhere `--ilo-color-blue-medium`
+    (`rgba(210, 213, 242, 1)`) was used it is now `--ilo-color-brand-200`
+    (`rgba(190, 220, 250, 1)`) — a marginally brighter, less mauve blue. This
+    affects the textarea focus accent, table row hover and selected borders, the
+    table sort chevron, and rich text links in the dark theme.
+  - **Dark theme borders are now opaque.** Image captions and feature card link
+    lists take `--ilo-color-dark-border-subtle`
+    (`--ilo-color-neutrals-700`, opaque) instead of a 25%-transparent neutral, so
+    they read as a solid mid grey rather than blending into the background.
+  - **Card icons gain contrast.** Score card icons in the light theme darken from
+    `--ilo-color-neutrals-700` to black, and detail card icons in the dark theme
+    brighten from `--ilo-color-neutrals-200` to white.
+  - **Dark theme tabs.** Unselected tab buttons move from `--ilo-color-brand-700`
+    to `--ilo-color-brand-600`, a slightly brighter blue against the selected tab.
+
+### Patch Changes
+
+- Updated dependencies [d181e58]
+  - @ilo-org/styles@1.16.0
+
+## 1.14.1
+
+### Patch Changes
+
+- a61a59e: RichText, List: fixed vertical alignment of RTL list bullets on multiline items
+- Updated dependencies [a61a59e]
+  - @ilo-org/styles@1.15.1
+
+## 1.14.0
+
+### Minor Changes
+
+- 8557be2: FormControl: added asteriks to form labels when they are required
+- 69b1b79: Video: implemented theme support
+
+### Patch Changes
+
+- 0913d19: DatePicker: set default text color
+  FileUpload: set default text color
+  NumberPicker: set default text color
+  SearchField: set default text color
+- 9c45adb: Button: fixed button content color while focused
+- d146a79: Profile: fixed content alignment when avatar is absent
+- 7997326: Icon: fixed element size before svg is loaded
+- Updated dependencies [f8e5714]
+- Updated dependencies [0913d19]
+- Updated dependencies [8557be2]
+- Updated dependencies [9c45adb]
+- Updated dependencies [69b1b79]
+- Updated dependencies [d146a79]
+  - @ilo-org/styles@1.15.0
+
+## 1.13.2
+
+### Patch Changes
+
+- f2e25d9: Updated dependencies (pnpm-lock.yaml refresh).
+
+  Pinned the transitive dependency `human-id` to 4.1.1 via a pnpm override in the root `package.json`. Newer versions (4.2.0+) are ESM-only and crash `@changesets/write` (and therefore `npx changeset`) with `ERR_REQUIRE_ESM`, since it still loads `human-id` via CommonJS `require()`. The override can be removed once changesets ships a release that imports `human-id` as ESM.
+
+- Updated dependencies [f2e25d9]
+  - @ilo-org/maestro@1.0.2
+  - @ilo-org/styles@1.14.3
+  - @ilo-org/brand-assets@1.0.2
+  - @ilo-org/fonts@2.0.1
+  - @ilo-org/icons@2.4.2
+
+## 1.13.1
+
+### Patch Changes
+
+- fe028afa7: AudioPlayer: Fix styling to make sure long titles will be truncated with ellipsis
+- Updated dependencies [fe028afa7]
+  - @ilo-org/styles@1.14.2
+
+## 1.13.0
+
+### Minor Changes
+
+- 5dad8c44a: Video: Supports closed captioning
+
+### Patch Changes
+
+- d0136a568: AudioPlayer: added ellipsis to long track names
+- 53cb3e28d: Video: Update video control styles to be in sync with Figma designs
+- Updated dependencies [d0136a568]
+- Updated dependencies [53cb3e28d]
+  - @ilo-org/styles@1.14.1
+
+## 1.12.8
+
+### Patch Changes
+
+- e30d73909: **Hero:** Removed the seam-bridging `box-shadow` on semi-transparent
+  card-offsets. With a translucent fill the shadow composited over the card's
+  own semi-transparent layer, producing a darker hairline at the offset/card
+  boundary on high-resolution screens. This is a visual change to the Hero in
+  any package that renders it.
+- 259406e97: Dropdown: Prevented focus styling being applied on hover for disabled dropdowns
+- Updated dependencies [e30d73909]
+- Updated dependencies [55dfd495f]
+- Updated dependencies [259406e97]
+  - @ilo-org/styles@1.14.0
+
+## 1.12.7
+
+### Patch Changes
+
+- Updated dependencies [14aaede60]
+- Updated dependencies [53744c916]
+  - @ilo-org/styles@1.13.1
+
+## 1.12.6
+
+### Patch Changes
+
+- 992a7398d: **textinput.twig** now uses `.ilo--input` instead of deprecated `.ilo--text-input`
+- 75c6ed884: Updated `eslint` and fixed some new linting errors
+- 5bee86a45: **TextInput:** Remove textinput.scss in favor of input.scss which has shared styles for all form elements that use text inputs
+- 8eab37b70: **SearchField:** reduce padding at the end of the input
+- Updated dependencies [f7c926ec3]
+- Updated dependencies [5bee86a45]
+- Updated dependencies [8eab37b70]
+  - @ilo-org/styles@1.13.0
+
 ## 1.12.5
 
 ### Patch Changes

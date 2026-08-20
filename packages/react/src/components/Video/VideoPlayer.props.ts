@@ -4,6 +4,15 @@ import videojs from "video.js";
 export interface VideoPlayerRef {
   player: videojs.Player | undefined;
 }
+
+export interface VideoTextTrack {
+  src: string;
+  srclang: string;
+  label: string;
+  kind?: "captions" | "subtitles";
+  default?: boolean;
+}
+
 export interface VideoPlayerControls {
   /**
    * Specify the label for the fullscreen button
@@ -11,7 +20,7 @@ export interface VideoPlayerControls {
   fullscreen: string;
 
   /**
-   * Specify the label for the  play button
+   * Specify the label for the play button
    */
   play: string;
 
@@ -24,7 +33,26 @@ export interface VideoPlayerControls {
    * Specify the label for the volume button
    */
   volume: string;
+
+  /**
+   * Specify the heading shown in the subtitles menu
+   */
+  chooseSubtitlesText?: string;
+
+  /**
+   * Specify the label for the option that turns subtitles off
+   */
+  noCaptionsText?: string;
 }
+
+export const defaultVideoControls: Required<VideoPlayerControls> = {
+  fullscreen: "Fullscreen",
+  play: "Play",
+  pause: "Pause",
+  volume: "Volume",
+  chooseSubtitlesText: "Choose subtitles",
+  noCaptionsText: "None",
+};
 
 export interface VideoPlayerProps {
   src: string;
@@ -48,4 +76,5 @@ export interface VideoPlayerProps {
    * if YouTube, set to true
    */
   youtube?: boolean;
+  tracks?: VideoTextTrack[];
 }

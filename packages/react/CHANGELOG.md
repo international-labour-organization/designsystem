@@ -1,5 +1,242 @@
 # @ilo-org/react
 
+## 1.6.0
+
+### Minor Changes
+
+- d181e58: Migrated all component styles onto the light/dark semantic tokens and deprecated the raw colour aliases
+
+  Component styles, Twig templates, React components and Storybook no longer
+  reference raw colour aliases such as `--ilo-color-white` or
+  `--ilo-color-blue-dark`. Everything now consumes the light/dark semantic sets,
+  which name the role a colour plays (Text, Action, Icon, Border, Container
+  Background, Page Background, Supportive Feedback, Generic) rather than the
+  colour itself.
+
+  ## New tokens
+
+  Added to fill roles the semantic set did not cover, as light/dark pairs:
+
+  - `--ilo-color-light-icon-brand` / `--ilo-color-dark-icon-brand`
+  - `--ilo-color-light-icon-disabled` / `--ilo-color-dark-icon-disabled`
+  - `--ilo-color-light-container-bg-inactive` / `--ilo-color-dark-container-bg-inactive`
+  - `--ilo-color-light-container-bg-inverse` / `--ilo-color-dark-container-bg-inverse`
+  - `--ilo-color-light-container-bg-inverse-subtle` / `--ilo-color-dark-container-bg-inverse-subtle`
+
+  And one light-only token, which has no dark counterpart:
+
+  - `--ilo-color-light-container-bg-accent`
+
+  ## Changed token value
+
+  `--ilo-color-dark-action-selected` now resolves to `--ilo-color-brand-600`
+  (`rgba(30, 45, 190, 1)`) instead of `--ilo-color-brand-200`
+  (`rgba(190, 220, 250, 1)`). If you consume this token directly, expect a
+  markedly deeper blue — check anything you have painted with it.
+
+  ## Deprecated aliases
+
+  These legacy aliases still resolve, so nothing breaks today, but nothing in the
+  design system uses them any more and they will be removed in the next major.
+  Prefer a light/dark semantic token that names the role you need; the global on
+  the right is the like-for-like swap if you just want the same colour.
+
+  | Deprecated                    | Currently resolves to                |
+  | ----------------------------- | ------------------------------------ |
+  | `--ilo-color-white`           | `--ilo-color-neutrals-white`         |
+  | `--ilo-color-blue`            | `--ilo-color-brand-600`              |
+  | `--ilo-color-blue-lighter`    | `--ilo-color-brand-100`              |
+  | `--ilo-color-blue-light`      | `--ilo-color-brand-200`              |
+  | `--ilo-color-blue-dark`       | `--ilo-color-brand-800`              |
+  | `--ilo-color-blue-ramp`       | `--ilo-color-brand-700`              |
+  | `--ilo-color-blue-dark-ramp`  | `--ilo-color-brand-800-transparent`  |
+  | `--ilo-color-gray-charcoal`   | `--ilo-color-neutrals-black`         |
+  | `--ilo-color-gray-accessible` | `--ilo-color-neutrals-700`           |
+  | `--ilo-color-gray-light`      | `--ilo-color-neutrals-200`           |
+  | `--ilo-color-gray-base`       | `--ilo-color-neutrals-500`           |
+  | `--ilo-color-red`             | `--ilo-color-red-500`                |
+  | `--ilo-color-red-light`       | `--ilo-color-red-100`                |
+  | `--ilo-color-red-dark`        | `--ilo-color-red-600`                |
+  | `--ilo-color-red-ramp`        | `--ilo-color-red-500-transparent`    |
+  | `--ilo-color-yellow`          | `--ilo-color-yellow-400`             |
+  | `--ilo-color-yellow-light`    | `--ilo-color-yellow-100`             |
+  | `--ilo-color-yellow-ramp`     | `--ilo-color-yellow-400-transparent` |
+  | `--ilo-color-green`           | `--ilo-color-green-400`              |
+  | `--ilo-color-green-light`     | `--ilo-color-green-100`              |
+  | `--ilo-color-green-ramp`      | `--ilo-color-green-400-transparent`  |
+  | `--ilo-color-turquoise`       | `--ilo-color-turquoise-500`          |
+  | `--ilo-color-purple`          | `--ilo-color-purple-600`             |
+
+  Two more are deprecated with no like-for-like global, because they are one-off
+  values that were never part of a ramp — pick the closest semantic token instead:
+
+  | Deprecated                                | Value                       | Suggested                  |
+  | ----------------------------------------- | --------------------------- | -------------------------- |
+  | `--ilo-color-blue-medium`                 | `rgba(210, 213, 242, 1)`    | `--ilo-color-brand-200`    |
+  | `--ilo-color-gray-light-semi-transparent` | `rgba(237, 240, 242, 0.25)` | `--ilo-color-neutrals-700` |
+
+  ## Visual changes
+
+  Most of the migration is like-for-like, but some colours now render differently:
+
+  - **Blues shift slightly.** Everywhere `--ilo-color-blue-medium`
+    (`rgba(210, 213, 242, 1)`) was used it is now `--ilo-color-brand-200`
+    (`rgba(190, 220, 250, 1)`) — a marginally brighter, less mauve blue. This
+    affects the textarea focus accent, table row hover and selected borders, the
+    table sort chevron, and rich text links in the dark theme.
+  - **Dark theme borders are now opaque.** Image captions and feature card link
+    lists take `--ilo-color-dark-border-subtle`
+    (`--ilo-color-neutrals-700`, opaque) instead of a 25%-transparent neutral, so
+    they read as a solid mid grey rather than blending into the background.
+  - **Card icons gain contrast.** Score card icons in the light theme darken from
+    `--ilo-color-neutrals-700` to black, and detail card icons in the dark theme
+    brighten from `--ilo-color-neutrals-200` to white.
+  - **Dark theme tabs.** Unselected tab buttons move from `--ilo-color-brand-700`
+    to `--ilo-color-brand-600`, a slightly brighter blue against the selected tab.
+
+### Patch Changes
+
+- Updated dependencies [d181e58]
+  - @ilo-org/styles@1.16.0
+
+## 1.5.1
+
+### Patch Changes
+
+- a61a59e: RichText, List: fixed vertical alignment of RTL list bullets on multiline items
+- Updated dependencies [a61a59e]
+  - @ilo-org/styles@1.15.1
+
+## 1.5.0
+
+### Minor Changes
+
+- 8557be2: FormControl: added asteriks to form labels when they are required
+- 69b1b79: Video: implemented theme support
+
+### Patch Changes
+
+- 0913d19: DatePicker: set default text color
+  FileUpload: set default text color
+  NumberPicker: set default text color
+  SearchField: set default text color
+- 9c45adb: Button: fixed button content color while focused
+- d146a79: Profile: fixed content alignment when avatar is absent
+- Updated dependencies [f8e5714]
+- Updated dependencies [0913d19]
+- Updated dependencies [8557be2]
+- Updated dependencies [9c45adb]
+- Updated dependencies [69b1b79]
+- Updated dependencies [d146a79]
+  - @ilo-org/styles@1.15.0
+
+## 1.4.3
+
+### Patch Changes
+
+- f2e25d9: Updated dependencies (pnpm-lock.yaml refresh).
+
+  Pinned the transitive dependency `human-id` to 4.1.1 via a pnpm override in the root `package.json`. Newer versions (4.2.0+) are ESM-only and crash `@changesets/write` (and therefore `npx changeset`) with `ERR_REQUIRE_ESM`, since it still loads `human-id` via CommonJS `require()`. The override can be removed once changesets ships a release that imports `human-id` as ESM.
+
+- Updated dependencies [f2e25d9]
+  - @ilo-org/styles@1.14.3
+  - @ilo-org/brand-assets@1.0.2
+  - @ilo-org/fonts@2.0.1
+  - @ilo-org/icons-react@1.0.8
+
+## 1.4.2
+
+### Patch Changes
+
+- fe028afa7: AudioPlayer: Fix styling to make sure long titles will be truncated with ellipsis
+- Updated dependencies [fe028afa7]
+  - @ilo-org/styles@1.14.2
+
+## 1.4.1
+
+### Patch Changes
+
+- d0136a568: AudioPlayer: added ellipsis to long track names
+- 53cb3e28d: Video: Update video control styles to be in sync with Figma designs
+- 8b665517b: FormControl: Use React `useId` for accessibility field IDs
+- Updated dependencies [d0136a568]
+- Updated dependencies [53cb3e28d]
+  - @ilo-org/styles@1.14.1
+
+## 1.4.0
+
+### Minor Changes
+
+- 55dfd495f: Video: Video player now supports closed captioning
+
+### Patch Changes
+
+- 5a4632702: **Hero:** Fixed the card-offset space (between the left edge of the screen
+  and the HeroCard) so it correctly matches the hero card's background and
+  theme, bringing the React component in line with the Twig implementation.
+
+  - The root element now receives a `hero__card-background__*` class derived
+    from `heroCard.background`, so the offset honours `semi-transparent` and
+    `transparent` cards. Previously this class was never emitted in React,
+    leaving the offset solid regardless of the card's background.
+  - The Hero `theme` now falls back to `heroCard.theme` when not explicitly
+    set (matching Twig's `theme|default(herocard.theme)`), so a `light` card
+    no longer renders next to a `dark` offset. An explicit `theme` on `Hero`
+    still takes precedence.
+
+- e30d73909: **Hero:** Removed the seam-bridging `box-shadow` on semi-transparent
+  card-offsets. With a translucent fill the shadow composited over the card's
+  own semi-transparent layer, producing a darker hairline at the offset/card
+  boundary on high-resolution screens. This is a visual change to the Hero in
+  any package that renders it.
+- 259406e97: Dropdown: Prevented focus styling being applied on hover for disabled dropdowns
+- Updated dependencies [e30d73909]
+- Updated dependencies [55dfd495f]
+- Updated dependencies [259406e97]
+  - @ilo-org/styles@1.14.0
+
+## 1.3.0
+
+### Minor Changes
+
+- 14aaede60: **SubsiteNav:** Search widget now supports `type: "button"` with an `onClick` handler, in addition to the existing `redirect` and `input` variants.
+
+### Patch Changes
+
+- Updated dependencies [14aaede60]
+- Updated dependencies [53744c916]
+  - @ilo-org/styles@1.13.1
+
+## 1.2.0
+
+### Minor Changes
+
+- f86e3eae5: **AudioPlayer:** Track name can now be rendered as a link. Pass `nameHref` to turn the name into an anchor, and optionally pass `nameLinkComponent` (e.g. React Router or Next.js `Link`) to support client-side routing. The URL is forwarded as `href` for plain anchors and as `to` for custom components.
+
+### Patch Changes
+
+- 1b6a6aefb: **Tag/TagSet:** Correctly export `TagSet`, it wasn't getting exported before
+
+## 1.1.0
+
+### Minor Changes
+
+- f7c926ec3: **Dropdown, SearchField, TextInput:** Add a new `size` property that defaults to `large`. Setting `size` to `small` will render new smaller versions. We'll be adding `small` versions to the rest of the form components soon. For the time being, this prop is only available to the React version of the form elements.
+
+### Patch Changes
+
+- 8980f294c: **SearchField:** Add `onClear` callback
+- a1e2eb508: **Input:** Remove <Input /> component. This wasn't exported or used anyway so not a breaking change.
+- 75c6ed884: Updated `eslint` and fixed some new linting errors
+- 5bee86a45: **TextInput:** Remove textinput.scss in favor of input.scss which has shared styles for all form elements that use text inputs
+- c927bc8f0: **SearchField:** Rationalize props while conserving backwards compatibility for `input` prop, which will be deprecated in the next major release.
+- 8eab37b70: **SearchField:** reduce padding at the end of the input
+- aa29bca70: **AudioPlayer:** Fix pause button not showing on play
+- Updated dependencies [f7c926ec3]
+- Updated dependencies [5bee86a45]
+- Updated dependencies [8eab37b70]
+  - @ilo-org/styles@1.13.0
+
 ## 1.0.0
 
 ### Major Changes

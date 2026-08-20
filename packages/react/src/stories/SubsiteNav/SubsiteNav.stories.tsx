@@ -43,5 +43,49 @@ const Complex: StoryObj<SubsiteNavProps> = {
   },
 };
 
+const buttonSearch = {
+  type: "button" as const,
+  onClick: () => alert("Search clicked"),
+  label: "Search",
+};
+
+const CompactButton: StoryObj<SubsiteNavProps> = {
+  args: {
+    type: "compact",
+    props: {
+      ...SubsiteNavArgs,
+      widgets: {
+        ...SubsiteNavArgs.widgets,
+        search: buttonSearch,
+      },
+    },
+  },
+};
+
+const ComplexButton: StoryObj<SubsiteNavProps> = {
+  args: {
+    type: "complex",
+    props: {
+      ...SubsiteNavArgs,
+      branding: {
+        ...SubsiteNavArgs.branding,
+        logo: {
+          ...SubsiteNavArgs.branding.logo,
+          main: <img src="/ilo-live-logo-en-dark.png" alt="Logo" />,
+          mobile: <img src="/ilo-live-logo-en-light.png" alt="Logo" />,
+        },
+        tag: {
+          main: "Live events that shape the future of work",
+          sub: "The official livestream platform of the ILO",
+        },
+      },
+      widgets: {
+        ...SubsiteNavArgs.widgets,
+        search: buttonSearch,
+      },
+    },
+  },
+};
+
 export default meta;
-export { Compact, Complex };
+export { Compact, Complex, CompactButton, ComplexButton };

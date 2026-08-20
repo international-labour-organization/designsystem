@@ -15,7 +15,7 @@
     justify-content: space-between;
     gap: spacing(1);
     align-items: center;
-    color: var(--ilo-color-white);
+    color: var(--ilo-color-light-text-inverse);
     animation: slideDown 0.2s ease-out;
   }
 
@@ -44,7 +44,7 @@
       transform: translateY(-50%);
       width: px-to-rem(3px);
       height: 100%;
-      background-color: var(--ilo-color-gray-light);
+      background-color: var(--ilo-color-light-container-bg-disabled);
 
       [dir="rtl"] & {
         left: auto;
@@ -59,7 +59,7 @@
     width: px-to-rem(24px);
     height: px-to-rem(24px);
     background: transparent;
-    color: var(--ilo-color-white);
+    color: var(--ilo-color-light-text-inverse);
     cursor: pointer;
     flex-shrink: 0;
 
@@ -78,7 +78,7 @@
       left: 0;
       right: 0;
       background: rgba(0, 0, 0, 0.8);
-      color: var(--ilo-color-white);
+      color: var(--ilo-color-light-text-inverse);
       animation: slideUp 0.2s ease-out;
       align-items: flex-start;
     }

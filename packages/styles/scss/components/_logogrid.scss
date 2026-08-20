@@ -30,7 +30,7 @@
     #{$c}__theme__light &,
     #{$c}__theme__dark & {
       &:hover {
-        background-color: var(--ilo-color-background-hover);
+        background-color: var(--ilo-color-light-container-bg-subtle);
       }
     }
   }
@@ -45,11 +45,11 @@
     grid-column: span 1;
 
     #{$c}__theme__light & {
-      background-color: var(--ilo-color-background-highlight);
+      background-color: var(--ilo-color-light-container-bg-disabled);
     }
 
     #{$c}__theme__dark & {
-      background-color: var(--ilo-color-background-default);
+      background-color: var(--ilo-color-light-container-bg-default);
     }
 
     img {

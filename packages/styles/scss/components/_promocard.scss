@@ -122,7 +122,7 @@
       }
 
       &#{$self}__theme__light:not(:hover) #{$self}--title {
-        color: var(--ilo-color-gray-charcoal);
+        color: var(--ilo-color-light-text-default);
         @include globaltransition("color");
       }
     }

@@ -11,9 +11,9 @@
       width: 0;
     }
 
-    background-color: var(--ilo-color-white);
-    border: var(--ilo-border-sm) solid var(--ilo-color-gray-base);
-    color: var(--ilo-color-blue-dark);
+    background-color: var(--ilo-color-light-container-bg-default);
+    border: var(--ilo-border-sm) solid var(--ilo-color-light-border-default);
+    color: var(--ilo-color-light-text-brand);
     content: attr(data-label);
     display: inline-block;
     font-family: var(--ilo-fonts-display);
@@ -24,21 +24,21 @@
     @include typography("highlight-medium");
 
     .ilo--form__theme__dark & {
-      color: var(--ilo-color-blue-dark);
+      color: var(--ilo-color-light-text-brand);
     }
 
     &:hover {
-      background-color: var(--ilo-color-blue-lighter);
-      border: var(--ilo-border-sm) solid var(--ilo-color-blue);
+      background-color: var(--ilo-color-light-container-bg-subtle);
+      border: var(--ilo-border-sm) solid var(--ilo-color-light-border-brand);
       cursor: pointer;
-      color: var(--ilo-color-blue);
+      color: var(--ilo-color-light-action-hover);
       outline: none;
     }
 
     &:focus {
-      background-color: var(--ilo-color-white);
-      border: var(--ilo-border-sm) solid var(--ilo-color-blue);
-      color: var(--ilo-color-blue);
+      background-color: var(--ilo-color-light-container-bg-default);
+      border: var(--ilo-border-sm) solid var(--ilo-color-light-border-brand);
+      color: var(--ilo-color-light-action-hover);
       outline: none;
     }
 
@@ -47,9 +47,9 @@
     }
 
     &:active {
-      background-color: var(--ilo-color-blue);
-      border: var(--ilo-border-md) solid var(--ilo-color-blue-dark);
-      color: var(--ilo-color-white);
+      background-color: var(--ilo-color-light-action-selected);
+      border: var(--ilo-border-md) solid var(--ilo-color-light-border-brand-3);
+      color: var(--ilo-color-light-text-inverse);
     }
 
     &:disabled {
@@ -60,9 +60,10 @@
     &:invalid,
     &.error,
     .error & {
-      background-color: var(--ilo-color-white);
-      border: var(--ilo-border-md) solid var(--ilo-color-gray-base);
-      border-left: px-to-rem(3px) solid var(--ilo-color-red-dark);
+      background-color: var(--ilo-color-light-container-bg-default);
+      border: var(--ilo-border-md) solid var(--ilo-color-light-border-default);
+      border-left: px-to-rem(3px) solid
+        var(--ilo-color-light-feedback-error-dark);
     }
   }
 
@@ -76,9 +77,9 @@
 
   &--list-item {
     display: block;
-    background-color: var(--ilo-color-gray-light);
-    border: var(--ilo-border-md) solid var(--ilo-color-gray-light);
-    border-left: px-to-rem(3px) solid var(--ilo-color-blue-dark);
+    background-color: var(--ilo-color-light-container-bg-disabled);
+    border: var(--ilo-border-md) solid var(--ilo-color-light-border-subtle);
+    border-left: px-to-rem(3px) solid var(--ilo-color-light-border-brand-3);
     box-sizing: border-box;
     font-family: var(--ilo-fonts-display);
     font-weight: var(--ilo-font-weight-medium);

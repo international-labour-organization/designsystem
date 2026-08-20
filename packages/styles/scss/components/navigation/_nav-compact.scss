@@ -6,7 +6,7 @@
 .ilo--subsite-nav-compact {
   position: relative;
   height: px-to-rem(70px);
-  background-color: var(--ilo-color-blue);
+  background-color: var(--ilo-color-light-action-selected);
   overflow: hidden;
 
   &__container {
@@ -56,7 +56,7 @@
   }
 
   &__widget-bar {
-    background-color: var(--ilo-color-blue-lighter);
+    background-color: var(--ilo-color-light-container-bg-subtle);
     height: px-to-rem(48px);
     position: relative;
     display: flex;
@@ -72,7 +72,7 @@
       left: 100%;
       width: 100vw;
       height: 100%;
-      background-color: var(--ilo-color-blue-lighter);
+      background-color: var(--ilo-color-light-container-bg-subtle);
       z-index: 1;
 
       [dir="rtl"] & {
@@ -83,7 +83,7 @@
 
     &-corner {
       display: block;
-      background-color: var(--ilo-color-blue);
+      background-color: var(--ilo-color-light-action-selected);
       width: px-to-rem(48px);
       height: px-to-rem(48px);
       @include cornercut(spacing(10), 100%);
@@ -105,7 +105,7 @@
       @include typography("highlight-small-bold");
       height: 100%;
       text-decoration: none;
-      color: var(--ilo-color-blue-dark);
+      color: var(--ilo-color-light-text-brand);
       display: flex;
       align-items: center;
       text-wrap: nowrap;
@@ -113,8 +113,8 @@
 
       &:hover,
       &:focus {
-        background-color: var(--ilo-color-blue-dark);
-        color: var(--ilo-color-white);
+        background-color: var(--ilo-color-light-container-bg-brand);
+        color: var(--ilo-color-light-text-inverse);
       }
     }
 
@@ -130,11 +130,18 @@
     }
 
     &-search {
-      --ilo-subsite-nav-widget-bar-search-color: var(--ilo-color-blue-dark);
+      --ilo-subsite-nav-widget-bar-search-color: var(
+        --ilo-color-light-text-brand
+      );
       height: 100%;
       display: inline-flex;
       align-items: center;
       padding-inline: spacing(3);
+      background: none;
+      border: 0;
+      cursor: pointer;
+      font: inherit;
+      color: inherit;
 
       &:after {
         content: "";
@@ -147,8 +154,10 @@
 
       &:hover,
       &:focus {
-        --ilo-subsite-nav-widget-bar-search-color: var(--ilo-color-white);
-        background-color: var(--ilo-color-blue-dark);
+        --ilo-subsite-nav-widget-bar-search-color: var(
+          --ilo-color-light-text-inverse
+        );
+        background-color: var(--ilo-color-light-container-bg-brand);
       }
     }
   }
@@ -160,7 +169,7 @@
       display: flex;
     }
 
-    --ilo-subsite-nav-burger-icon: var(--ilo-color-white);
+    --ilo-subsite-nav-burger-icon: var(--ilo-color-light-icon-inverse);
     margin-block: px-to-rem(20px);
     align-items: center;
     border: none;
@@ -173,8 +182,8 @@
     }
 
     &:hover {
-      --ilo-subsite-nav-burger-icon: var(--ilo-color-blue);
-      background-color: var(--ilo-color-white);
+      --ilo-subsite-nav-burger-icon: var(--ilo-color-light-action-hover);
+      background-color: var(--ilo-color-light-container-bg-default);
     }
   }
 }

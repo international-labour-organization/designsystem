@@ -21,7 +21,7 @@
   }
 
   &--nav {
-    background: var(--ilo-color-blue-dark);
+    background: var(--ilo-color-light-container-bg-brand);
   }
 
   &--menu {
@@ -43,7 +43,7 @@
     &:hover,
     &:focus {
       @include dataurlicon("burger", rgba(30, 45, 190, 1));
-      background-color: var(--ilo-color-blue-lighter);
+      background-color: var(--ilo-color-light-container-bg-subtle);
       background-position: center;
       background-repeat: no-repeat;
       background-size: 32px;
@@ -55,7 +55,7 @@
 
     &--close {
       @include dataurlicon("close", rgba(35, 0, 80, 1));
-      background-color: var(--ilo-color-gray-light);
+      background-color: var(--ilo-color-light-container-bg-disabled);
       background-position: center;
       background-repeat: no-repeat;
       background-size: 32px;
@@ -71,7 +71,7 @@
       &:hover,
       &:focus {
         @include dataurlicon("close", rgba(30, 45, 190, 1));
-        background-color: var(--ilo-color-blue-lighter);
+        background-color: var(--ilo-color-light-container-bg-subtle);
         background-position: center;
         background-repeat: no-repeat;
         background-size: 32px;
@@ -103,7 +103,7 @@
   }
 
   &--logo-bar {
-    background: var(--ilo-color-blue);
+    background: var(--ilo-color-light-action-selected);
     display: flex;
     width: 100%;
 
@@ -113,7 +113,7 @@
     }
 
     @include breakpoint("lg") {
-      background: var(--ilo-color-blue);
+      background: var(--ilo-color-light-action-selected);
     }
   }
 
@@ -121,7 +121,7 @@
     display: none;
     min-height: px-to-rem(24px);
     &--local {
-      background: var(--ilo-color-blue);
+      background: var(--ilo-color-light-action-selected);
       display: flex;
       justify-content: space-between;
       padding: 0 spacing(5);
@@ -138,7 +138,7 @@
           background-repeat: no-repeat;
           background-size: px-to-rem(24px);
           border: none;
-          color: var(--ilo-color-white);
+          color: var(--ilo-color-light-text-inverse);
           cursor: pointer;
           padding: spacing(4) spacing(4) spacing(4) spacing(9);
           text-decoration: none;
@@ -152,8 +152,8 @@
           &:focus,
           &:hover {
             @include dataurlicon("chevron_left", rgba(30, 45, 190, 1));
-            background-color: var(--ilo-color-blue-lighter);
-            color: var(--ilo-color-blue);
+            background-color: var(--ilo-color-light-container-bg-subtle);
+            color: var(--ilo-color-light-action-hover);
           }
 
           [dir="rtl"] {
@@ -164,8 +164,8 @@
             &:focus,
             &:hover {
               @include dataurlicon("chevron_right", rgba(30, 45, 190, 1));
-              background-color: var(--ilo-color-blue-lighter);
-              color: var(--ilo-color-blue);
+              background-color: var(--ilo-color-light-container-bg-subtle);
+              color: var(--ilo-color-light-action-hover);
             }
           }
 
@@ -186,7 +186,7 @@
     }
 
     @include breakpoint("lg") {
-      background: var(--ilo-color-blue);
+      background: var(--ilo-color-light-action-selected);
       display: flex;
       justify-content: flex-end;
       width: 100%;
@@ -214,7 +214,7 @@
   }
 
   &--navigation {
-    background: var(--ilo-color-white);
+    background: var(--ilo-color-light-container-bg-default);
     height: 100%;
     left: 0;
     overflow-x: hidden;
@@ -240,7 +240,7 @@
     }
 
     @include breakpoint("lg") {
-      background: var(--ilo-color-blue-dark);
+      background: var(--ilo-color-light-container-bg-brand);
       overflow: visible;
       position: static;
       transform: none;
@@ -250,7 +250,7 @@
 
   &--logo-tagline {
     @include typography("highlight-large");
-    color: var(--ilo-color-white);
+    color: var(--ilo-color-light-text-inverse);
     display: none;
     font-family: var(--ilo-fonts-display);
     font-weight: 700;
@@ -263,7 +263,7 @@
 
     &--small {
       @include typography("body-xsmall");
-      color: var(--ilo-color-blue-light);
+      color: var(--ilo-color-dark-text-brand);
       display: block;
     }
   }
@@ -309,7 +309,7 @@
   }
 
   &--link {
-    color: var(--ilo-color-blue-dark);
+    color: var(--ilo-color-light-text-brand);
     display: block;
     padding: spacing(4) spacing(9) spacing(4) spacing(2);
     text-decoration: none;
@@ -319,21 +319,21 @@
 
     &:hover,
     &:focus {
-      background: var(--ilo-color-blue-lighter);
-      color: var(--ilo-color-blue);
+      background: var(--ilo-color-light-container-bg-subtle);
+      color: var(--ilo-color-light-action-hover);
       text-decoration: none;
     }
 
     @include breakpoint("lg") {
-      background: var(--ilo-color-blue-dark);
-      color: var(--ilo-color-white);
+      background: var(--ilo-color-light-container-bg-brand);
+      color: var(--ilo-color-light-text-inverse);
       display: inline-block;
       padding: 21.5px spacing(6) 20.5px;
 
       &:hover,
       &:focus {
-        background: var(--ilo-color-blue-lighter);
-        color: var(--ilo-color-blue);
+        background: var(--ilo-color-light-container-bg-subtle);
+        color: var(--ilo-color-light-action-hover);
         text-decoration: none;
       }
     }
@@ -344,13 +344,13 @@
     @include typography("highlight-medium");
 
     appearance: none;
-    background-color: var(--ilo-color-white);
+    background-color: var(--ilo-color-light-container-bg-default);
     background-position: calc(100% - 16px) 55%;
     background-repeat: no-repeat;
     background-size: 24px;
     background-position-y: center;
     border: none;
-    color: var(--ilo-color-blue-dark);
+    color: var(--ilo-color-light-text-brand);
     cursor: pointer;
     display: block;
     padding: spacing(4) spacing(9) spacing(4) spacing(2);
@@ -362,13 +362,13 @@
     &:focus,
     &:hover {
       @include dataurlicon("chevron_right", rgba(30, 45, 190, 1));
-      background-color: var(--ilo-color-blue-lighter);
-      color: var(--ilo-color-blue);
+      background-color: var(--ilo-color-light-container-bg-subtle);
+      color: var(--ilo-color-light-action-hover);
     }
 
     [dir="rtl"] & {
       @include dataurlicon("chevron_left", rgba(35, 0, 80, 1));
-      background-color: var(--ilo-color-white);
+      background-color: var(--ilo-color-light-container-bg-default);
       background-position: 16px 55%;
       background-repeat: no-repeat;
       background-size: 24px;
@@ -377,8 +377,8 @@
       &:focus,
       &:hover {
         @include dataurlicon("chevron_left", rgba(30, 45, 190, 1));
-        background-color: var(--ilo-color-blue-lighter);
-        color: var(--ilo-color-blue);
+        background-color: var(--ilo-color-light-container-bg-subtle);
+        color: var(--ilo-color-light-action-hover);
       }
     }
 
@@ -386,13 +386,13 @@
       @include dataurlicon("plus", rgba(255, 255, 255, 1));
       @include typography("highlight-medium-bold");
 
-      background-color: var(--ilo-color-blue-dark);
+      background-color: var(--ilo-color-light-container-bg-brand);
       background-position: 90% 55%;
       background-repeat: no-repeat;
       background-size: 20px;
       border: 1.5px solid rgba(184, 196, 204, 0.5);
       border-radius: 2px;
-      color: var(--ilo-color-white);
+      color: var(--ilo-color-light-text-inverse);
       cursor: pointer;
       display: inline-block;
       margin-left: spacing(5);
@@ -404,14 +404,14 @@
       &:focus,
       &:hover {
         @include dataurlicon("plus", rgba(30, 45, 190, 1));
-        background-color: var(--ilo-color-white);
-        border-color: var(--ilo-color-white);
-        color: var(--ilo-color-blue);
+        background-color: var(--ilo-color-light-container-bg-default);
+        border-color: var(--ilo-color-light-border-inverse);
+        color: var(--ilo-color-light-action-hover);
       }
 
       [dir="rtl"] & {
         @include dataurlicon("plus", rgba(255, 255, 255, 1));
-        background-color: var(--ilo-color-blue-dark);
+        background-color: var(--ilo-color-light-container-bg-brand);
         background-repeat: no-repeat;
         background-size: 20px;
         background-position: 10% 55%;
@@ -420,8 +420,8 @@
         &:focus,
         &:hover {
           @include dataurlicon("plus", rgba(30, 45, 190, 1));
-          background-color: var(--ilo-color-white);
-          color: var(--ilo-color-blue);
+          background-color: var(--ilo-color-light-container-bg-default);
+          color: var(--ilo-color-light-action-hover);
         }
       }
     }
@@ -469,12 +469,12 @@
 
     &--item {
       @include typography("highlight-medium");
-      color: var(--ilo-color-white);
+      color: var(--ilo-color-light-text-inverse);
     }
 
     &--link {
       background: inherit;
-      color: var(--ilo-color-white);
+      color: var(--ilo-color-light-text-inverse);
       padding: 0 spacing(6);
       height: 100%;
       text-decoration: none;
@@ -487,15 +487,15 @@
 
       &:hover,
       &:focus {
-        background: var(--ilo-color-blue-lighter);
-        color: var(--ilo-color-blue);
+        background: var(--ilo-color-light-container-bg-subtle);
+        color: var(--ilo-color-light-action-hover);
       }
     }
   }
 }
 
 .ilo--mobile--nav {
-  border-bottom: 3px solid var(--ilo-color-gray-light);
+  border-bottom: 3px solid var(--ilo-color-light-border-subtle);
   margin-bottom: spacing(4);
   padding-bottom: spacing(4);
 
@@ -506,7 +506,7 @@
   }
 
   &--language--select {
-    background: var(--ilo-color-white);
+    background: var(--ilo-color-light-container-bg-default);
     left: 0;
     height: 100%;
     padding: 0 0 spacing(8);
@@ -526,13 +526,13 @@
     @include typography("highlight-medium");
 
     appearance: none;
-    background-color: var(--ilo-color-white);
+    background-color: var(--ilo-color-light-container-bg-default);
     background-position: calc(100% - 16px) 55%;
     background-repeat: no-repeat;
     background-size: 24px;
     background-position-y: center;
     border: none;
-    color: var(--ilo-color-blue-dark);
+    color: var(--ilo-color-light-text-brand);
     cursor: pointer;
     display: block;
     font-family: var(--ilo-fonts-display);
@@ -545,8 +545,8 @@
     &:focus,
     &:hover {
       @include dataurlicon("globe", rgba(30, 45, 190, 1));
-      background-color: var(--ilo-color-blue-lighter);
-      color: var(--ilo-color-blue);
+      background-color: var(--ilo-color-light-container-bg-subtle);
+      color: var(--ilo-color-light-action-hover);
     }
 
     [dir="rtl"] & {
@@ -576,7 +576,7 @@
 }
 
 .ilo--language-switcher {
-  background: var(--ilo-color-blue-dark);
+  background: var(--ilo-color-light-container-bg-brand);
   display: flex;
   padding: 0 max((100% - #{px-to-rem(1300px)}) / 2, #{px-to-rem(20px)}) 0 0;
   position: relative;
@@ -586,7 +586,7 @@
   }
 
   &::before {
-    background: var(--ilo-color-blue-dark);
+    background: var(--ilo-color-light-container-bg-brand);
     clip-path: polygon(0 0, 100% 0, 97% 100%);
     content: "";
     display: block;
@@ -617,12 +617,12 @@
     @include typography("body-xsmall");
     @include dataurlicon("globe", rgba(255, 255, 255, 1));
     appearance: none;
-    background-color: var(--ilo-color-blue-dark);
+    background-color: var(--ilo-color-light-container-bg-brand);
     background-repeat: no-repeat;
     background-position: px-to-rem(12px) center;
     background-size: px-to-rem(24px);
     border: none;
-    color: var(--ilo-color-white);
+    color: var(--ilo-color-light-text-inverse);
     cursor: pointer;
     display: block;
     font-family: var(--ilo-fonts-display);
@@ -633,8 +633,8 @@
     &:hover,
     &:focus {
       @include dataurlicon("globe", rgba(30, 45, 190, 1));
-      background-color: var(--ilo-color-blue-lighter);
-      color: var(--ilo-color-blue);
+      background-color: var(--ilo-color-light-container-bg-subtle);
+      color: var(--ilo-color-light-action-hover);
     }
 
     [dir="rtl"] & {
@@ -671,7 +671,7 @@
 .ilo--subnav {
   display: none;
   visibility: hidden;
-  background: var(--ilo-color-white);
+  background: var(--ilo-color-light-container-bg-default);
   height: 100%;
   left: 0;
   padding: 0 0 spacing(8);
@@ -696,7 +696,7 @@
     z-index: -1;
 
     .ilo--header.ilo--subnav--open & {
-      border-bottom: px-to-rem(3px) solid var(--ilo-color-gray-base);
+      border-bottom: px-to-rem(3px) solid var(--ilo-color-light-border-default);
       filter: drop-shadow(0px 0.8px 1.6px rgba(30, 45, 190, 0.038))
         drop-shadow(0px 4px 8px rgba(30, 45, 190, 0.054))
         drop-shadow(0px 10px 20px rgba(30, 45, 190, 0.08));
@@ -729,8 +729,8 @@
 
   &--link {
     @include typography("highlight-medium");
-    background: var(--ilo-color-white);
-    color: var(--ilo-color-blue-dark);
+    background: var(--ilo-color-light-container-bg-default);
+    color: var(--ilo-color-light-text-brand);
     display: flex;
     padding: 18px spacing(2);
     text-decoration: none;
@@ -738,8 +738,8 @@
 
     &:hover,
     &:focus {
-      background: var(--ilo-color-blue-lighter);
-      color: var(--ilo-color-blue);
+      background: var(--ilo-color-light-container-bg-subtle);
+      color: var(--ilo-color-light-action-hover);
       text-decoration: none;
     }
   }
@@ -759,9 +759,9 @@
 
   &--back {
     @include typography("highlight-medium");
-    background-color: var(--ilo-color-white);
+    background-color: var(--ilo-color-light-container-bg-default);
     border: none;
-    color: var(--ilo-color-blue-dark);
+    color: var(--ilo-color-light-text-brand);
     cursor: pointer;
     padding: spacing(5) spacing(4) spacing(4) spacing(8);
     position: relative;
@@ -797,8 +797,8 @@
 
     &:hover,
     &:focus {
-      background-color: var(--ilo-color-blue-lighter);
-      color: var(--ilo-color-blue);
+      background-color: var(--ilo-color-light-container-bg-subtle);
+      color: var(--ilo-color-light-action-hover);
 
       &::before {
         @include dataurlicon("chevron_left", rgba(30, 45, 190, 1));
@@ -824,8 +824,8 @@
 
   &--label {
     @include typography("highlight-large");
-    border-bottom: 3px solid var(--ilo-color-gray-light);
-    color: var(--ilo-color-gray-charcoal);
+    border-bottom: 3px solid var(--ilo-color-light-border-subtle);
+    color: var(--ilo-color-light-text-default);
     font-family: var(--ilo-fonts-display);
     font-weight: 700;
     margin-bottom: spacing(4);
@@ -837,7 +837,7 @@
 .ilo--search-box {
   display: none;
   visibility: hidden;
-  background: var(--ilo-color-white);
+  background: var(--ilo-color-light-container-bg-default);
   left: 0;
   position: absolute;
   top: 0;
@@ -914,12 +914,12 @@
     &:hover,
     &:focus {
       @include dataurlicon("search", rgba(30, 45, 190, 1));
-      background-color: var(--ilo-color-blue-lighter);
+      background-color: var(--ilo-color-light-container-bg-subtle);
     }
 
     .ilo--search--open & {
       @include dataurlicon("close", rgba(35, 0, 80, 1));
-      background-color: var(--ilo-color-white);
+      background-color: var(--ilo-color-light-container-bg-default);
       background-position: center;
       background-repeat: no-repeat;
       background-size: 32px 32px;
@@ -927,7 +927,7 @@
       &:hover,
       &:focus {
         @include dataurlicon("close", rgba(30, 45, 190, 1));
-        background-color: var(--ilo-color-blue-lighter);
+        background-color: var(--ilo-color-light-container-bg-subtle);
       }
     }
   }

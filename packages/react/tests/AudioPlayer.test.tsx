@@ -102,6 +102,26 @@ describe("AudioPlayer", () => {
     expect(audio._mock.pause).toHaveBeenCalled();
   });
 
+  it("should render both play and pause icons so CSS can toggle them via aria-label", async () => {
+    render(<AudioPlayer {...sampleProps} />);
+    const playButton = screen.getByRole("button", { name: "Play" });
+
+    // Both icons must be in the DOM at all times — the SCSS swaps visibility
+    // based on the button's aria-label.
+    expect(playButton).toContainElement(
+      screen.getByTestId("triangleright-icon")
+    );
+    expect(playButton).toContainElement(screen.getByTestId("pause-icon"));
+
+    await userEvent.click(playButton);
+
+    const pausedButton = screen.getByRole("button", { name: "Pause" });
+    expect(pausedButton).toContainElement(
+      screen.getByTestId("triangleright-icon")
+    );
+    expect(pausedButton).toContainElement(screen.getByTestId("pause-icon"));
+  });
+
   it("should skip forward and backward correctly", async () => {
     render(<AudioPlayer {...sampleProps} />);
     const audio = document.getElementsByTagName("audio")[0];
@@ -122,6 +142,45 @@ describe("AudioPlayer", () => {
     });
     await userEvent.click(skipBackwardButton);
     expect(audio._mock.currentTime).toBe(0);
+  });
+
+  it("should render the track name as plain text when no nameHref is provided", () => {
+    render(<AudioPlayer {...sampleProps} />);
+    expect(screen.queryByRole("link", { name: "Test Track" })).toBeNull();
+  });
+
+  it("should render the track name as an anchor with href when nameHref is provided", () => {
+    render(<AudioPlayer {...sampleProps} nameHref="/episodes/42" />);
+    const link = screen.getByRole("link", { name: "Test Track" });
+    expect(link.tagName).toBe("A");
+    expect(link).toHaveAttribute("href", "/episodes/42");
+  });
+
+  it("should render the track name using a custom link component, passing the URL as `to`", () => {
+    const CustomLink = ({
+      to,
+      children,
+      ...rest
+    }: {
+      to: string;
+      children: React.ReactNode;
+    }) => (
+      <a href={to} data-testid="custom-link" {...rest}>
+        {children}
+      </a>
+    );
+
+    render(
+      <AudioPlayer
+        {...sampleProps}
+        nameHref="/episodes/42"
+        nameLinkComponent={CustomLink}
+      />
+    );
+
+    const link = screen.getByTestId("custom-link");
+    expect(link).toHaveTextContent("Test Track");
+    expect(link).toHaveAttribute("href", "/episodes/42");
   });
 
   it("should adjust volume correctly", () => {

@@ -67,21 +67,21 @@
     }
 
     &__white {
-      background-color: var(--ilo-color-white);
+      background-color: var(--ilo-color-light-container-bg-default);
     }
 
     &__light {
-      background-color: var(--ilo-color-blue-lighter);
+      background-color: var(--ilo-color-light-container-bg-subtle);
     }
 
     &__dark {
-      background-color: var(--ilo-color-blue-dark);
+      background-color: var(--ilo-color-light-container-bg-brand);
     }
   }
 
   &--background {
     display: grid;
-    background-color: var(--ilo-color-blue-lighter);
+    background-color: var(--ilo-color-light-container-bg-subtle);
     position: relative;
     grid-area: 1 / 1 / 4 / 2;
 
@@ -234,29 +234,34 @@
     &__card-theme {
       &__dark {
         #{$c}--card-offset {
-          background-color: var(--ilo-color-blue-dark);
+          background-color: var(--ilo-color-light-container-bg-brand);
           position: relative;
-          box-shadow: 0.3px 0 0 0 var(--ilo-color-blue-dark);
+          box-shadow: 0.3px 0 0 0 var(--ilo-color-light-border-brand-3);
         }
 
         &[class*="semi-transparent"] {
           #{$c}--card-offset {
             background: rgba(35, 0, 80, 0.6);
-            box-shadow: 0.3px 0 0 0 rgba(35, 0, 80, 0.6);
+            // No seam-bridging box-shadow here: with a translucent fill the
+            // shadow composites over the card's own semi-transparent layer,
+            // producing a darker hairline at the offset/card boundary.
+            box-shadow: none;
           }
         }
       }
 
       &__light {
         #{$c}--card-offset {
-          background: var(--ilo-color-white);
-          box-shadow: 0.3px 0 0 0 var(--ilo-color-white);
+          background: var(--ilo-color-light-container-bg-default);
+          box-shadow: 0.3px 0 0 0 var(--ilo-color-light-border-inverse);
         }
 
         &[class*="semi-transparent"] {
           #{$c}--card-offset {
             background: rgba(255, 255, 255, 0.6);
-            box-shadow: 0.3px 0 0 0 rgba(255, 255, 255, 0.6);
+            // See dark variant above: no box-shadow for translucent fills,
+            // otherwise the shadow doubles up into a darker seam line.
+            box-shadow: none;
           }
         }
       }

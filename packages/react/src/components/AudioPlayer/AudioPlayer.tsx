@@ -20,6 +20,18 @@ export interface AudioPlayerProps {
   name: string;
 
   /**
+   * Optional URL to make the track name a link
+   */
+  nameHref?: string;
+
+  /**
+   * Optional component to render the track name link with — e.g. React
+   * Router's `Link` or Next.js's `Link`. Defaults to a plain `<a>`. The
+   * URL is passed as `href` when the component is `"a"`, otherwise as `to`.
+   */
+  nameLinkComponent?: React.ElementType;
+
+  /**
    * The name of the programme that the audio track belongs to
    */
   programme: string;
@@ -94,6 +106,8 @@ const getProgressPercentage = (currentTime: number, totalTime: number) => {
 export const AudioPlayer: React.FC<AudioPlayerProps> = ({
   className,
   name,
+  nameHref,
+  nameLinkComponent: NameLinkComponent = "a",
   programme,
   creator,
   src,
@@ -236,7 +250,18 @@ export const AudioPlayer: React.FC<AudioPlayerProps> = ({
       </div>
       <div className={`${baseClass}--body`}>
         <div className={`${baseClass}--left`}>
-          <p className={`${baseClass}--track-name`}>{name}</p>
+          {nameHref ? (
+            <NameLinkComponent
+              className={`${baseClass}--track-name`}
+              {...(NameLinkComponent === "a"
+                ? { href: nameHref }
+                : { to: nameHref })}
+            >
+              {name}
+            </NameLinkComponent>
+          ) : (
+            <p className={`${baseClass}--track-name`}>{name}</p>
+          )}
           <div className={`${baseClass}--track-details`}>
             <span className={`${baseClass}--track-programme`}>{programme}</span>
             <span className={`${baseClass}--track-creator`}>{creator}</span>
@@ -257,7 +282,12 @@ export const AudioPlayer: React.FC<AudioPlayerProps> = ({
           >
             <Icon
               className={`${baseClass}--play-icon`}
-              name={state.playing ? "Pause" : "TriangleRight"}
+              name="TriangleRight"
+              size={32}
+            />
+            <Icon
+              className={`${baseClass}--pause-icon`}
+              name="Pause"
               size={32}
             />
           </button>
@@ -284,7 +314,8 @@ export const AudioPlayer: React.FC<AudioPlayerProps> = ({
             aria-label={state.volume === 0 ? "Unmute" : "Mute"}
             onClick={handleVolumeClick}
           >
-            <Icon name={state.volume === 0 ? "SoundOff" : "SoundOn"} />
+            <Icon className={`${baseClass}--sound-on-icon`} name="SoundOn" />
+            <Icon className={`${baseClass}--sound-off-icon`} name="SoundOff" />
           </button>
           <input
             type="range"

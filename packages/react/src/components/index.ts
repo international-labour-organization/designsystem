@@ -5,7 +5,7 @@ export { Empty } from "./Empty";
 export { Image } from "./Image";
 export { Loading } from "./Loading";
 export { Radio } from "./Radio";
-export { Tag } from "./Tag";
+export { Tag, TagSet } from "./Tag";
 export { Button } from "./Button";
 export { ContextMenu } from "./ContextMenu";
 export { Fieldset } from "./Fieldset";

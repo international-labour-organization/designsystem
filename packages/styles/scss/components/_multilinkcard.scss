@@ -16,10 +16,10 @@
       // Unset properties we set in the card component
       border: unset;
       &:has(
-          .ilo--card--link:hover,
-          .ilo--card--link:focus,
-          .ilo--card--link:focus-within
-        ) {
+        .ilo--card--link:hover,
+        .ilo--card--link:focus,
+        .ilo--card--link:focus-within
+      ) {
         border: unset;
         filter: unset;
       }
@@ -64,7 +64,7 @@
 
       #{$self}--image--wrapper {
         display: none;
-        background-color: var(--ilo-color-blue-lighter);
+        background-color: var(--ilo-color-light-container-bg-subtle);
         height: 0;
         overflow: hidden;
         padding-top: 56.25%;
@@ -94,7 +94,7 @@
       #{$self}--title {
         @include typography("heading-2", true);
         margin-bottom: var(--standard-spacing);
-        color: var(--ilo-color-gray-charcoal);
+        color: var(--ilo-color-light-text-default);
 
         @include breakpoint("md") {
           @include typography("heading-2");
@@ -104,7 +104,7 @@
       #{$self}--intro {
         @include typography("body-large", true);
         margin-bottom: var(--standard-spacing);
-        color: var(--ilo-color-gray-charcoal);
+        color: var(--ilo-color-light-text-default);
 
         @include breakpoint("md") {
           @include typography("body-large");
@@ -236,7 +236,7 @@
     .ilo--link-list {
       a {
         &:hover {
-          background-color: var(--ilo-color-white);
+          background-color: var(--ilo-color-light-container-bg-default);
         }
       }
     }

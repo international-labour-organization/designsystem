@@ -29,6 +29,19 @@ interface RedirectSearchProps {
   component?: ElementType;
 }
 
+export interface ButtonSearchProps {
+  type: "button";
+  /**
+   * Fired when the user activates the search trigger (click, Enter, Space).
+   */
+  onClick: () => void;
+  /**
+   * Visible label (desktop widget bar) and accessible name.
+   */
+  label?: string;
+  component?: ElementType;
+}
+
 type InputSearchProps = {
   type: "input";
 } & (
@@ -100,7 +113,7 @@ export interface NavCoreProps {
     /**
      * The search bar props
      */
-    search?: RedirectSearchProps | InputSearchProps;
+    search?: RedirectSearchProps | ButtonSearchProps | InputSearchProps;
   };
 }
 
@@ -112,7 +125,7 @@ export interface CompactNavProps {
 
   props: NavCoreProps & {
     widgets: NavCoreProps["widgets"] & {
-      search: RedirectSearchProps;
+      search: RedirectSearchProps | ButtonSearchProps;
     };
   };
 }
@@ -143,7 +156,7 @@ export interface ComplexNavProps {
 
   props: GeneralNavProps & {
     widgets: NavCoreProps["widgets"] & {
-      search: RedirectSearchProps;
+      search: RedirectSearchProps | ButtonSearchProps;
     };
   };
 }

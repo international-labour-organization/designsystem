@@ -8,15 +8,15 @@
 
   @mixin get-icon($icon, $theme: $default-theme) {
     @if $theme == "dark" {
-      @include icon($icon, var(--ilo-color-white));
+      @include icon($icon, var(--ilo-color-light-icon-inverse));
     }
 
     @if $theme == "light" {
-      @include icon($icon, var(--ilo-color-gray-accessible));
+      @include icon($icon, var(--ilo-color-dark-icon-subtle));
     }
 
     &:hover {
-      @include icon($icon, var(--ilo-color-blue));
+      @include icon($icon, var(--ilo-color-light-action-hover));
     }
   }
 
@@ -33,12 +33,12 @@
   }
 
   &--headline {
-    color: var(--ilo-color-blue-dark);
+    color: var(--ilo-color-light-text-brand);
     @include typography("highlight-medium-bold");
     margin-bottom: spacing(7);
 
     #{$c}__theme__dark & {
-      color: var(--ilo-color-white);
+      color: var(--ilo-color-light-text-inverse);
     }
   }
 
@@ -65,11 +65,11 @@
       position: relative;
 
       &:hover {
-        background-color: var(--ilo-color-blue-lighter);
+        background-color: var(--ilo-color-light-container-bg-subtle);
       }
 
       #{$c}__theme__dark &:hover {
-        background-color: var(--ilo-color-white);
+        background-color: var(--ilo-color-light-container-bg-default);
       }
 
       &--icon {

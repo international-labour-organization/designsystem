@@ -2,15 +2,15 @@
 @import "../mixins";
 
 .ilo--pagination {
-  --ilo-pagination-page-color: var(--ilo-color-blue-dark);
+  --ilo-pagination-page-color: var(--ilo-color-light-text-brand);
 
   &__theme {
     &__dark {
-      --ilo-pagination-page-color: var(--ilo-color-white);
+      --ilo-pagination-page-color: var(--ilo-color-light-text-inverse);
     }
 
     &__light {
-      --ilo-pagination-page-color: var(--ilo-color-blue-dark);
+      --ilo-pagination-page-color: var(--ilo-color-light-text-brand);
     }
   }
 
@@ -21,10 +21,10 @@
   $self: &;
 
   &--link {
-    background: var(--ilo-color-gray-light);
+    background: var(--ilo-color-light-container-bg-disabled);
     border: none;
     border-radius: 2px;
-    color: var(--ilo-color-blue-dark);
+    color: var(--ilo-color-light-text-brand);
     display: inline-block;
     font-family: var(--ilo-fonts-display);
     height: px-to-rem(40px);
@@ -48,8 +48,8 @@
     }
 
     &:hover {
-      background: var(--ilo-color-blue-lighter);
-      color: var(--ilo-color-blue);
+      background: var(--ilo-color-light-container-bg-subtle);
+      color: var(--ilo-color-light-action-hover);
     }
 
     &.ilo--pagination--disable {
@@ -58,7 +58,7 @@
       pointer-events: none;
 
       &:hover {
-        background: var(--ilo-color-gray-light);
+        background: var(--ilo-color-light-container-bg-disabled);
       }
     }
   }
@@ -68,12 +68,18 @@
     &::before {
       transform: translate(-50%, -50%) rotate(180deg);
 
-      @include icon("double_chevron_right", var(--ilo-color-blue-dark));
+      @include icon(
+        "double_chevron_right",
+        var(--ilo-color-light-action-default)
+      );
     }
 
     &:hover {
       &::before {
-        @include icon("double_chevron_right", var(--ilo-color-blue));
+        @include icon(
+          "double_chevron_right",
+          var(--ilo-color-light-action-hover)
+        );
       }
     }
 
@@ -81,10 +87,13 @@
       opacity: 0.45;
 
       &:hover {
-        background: var(--ilo-color-gray-light);
+        background: var(--ilo-color-light-container-bg-disabled);
 
         &::before {
-          @include icon("double_chevron_right", var(--ilo-color-blue-dark));
+          @include icon(
+            "double_chevron_right",
+            var(--ilo-color-light-action-default)
+          );
         }
       }
     }
@@ -95,12 +104,12 @@
       transform: translate(-50%, -50%) rotate(180deg);
       width: px-to-rem(20px);
 
-      @include icon("chevron_right", var(--ilo-color-blue-dark));
+      @include icon("chevron_right", var(--ilo-color-light-action-default));
     }
 
     &:hover {
       &::before {
-        @include icon("chevron_right", var(--ilo-color-blue));
+        @include icon("chevron_right", var(--ilo-color-light-action-hover));
       }
     }
 
@@ -108,10 +117,10 @@
       opacity: 0.45;
 
       &:hover {
-        background: var(--ilo-color-gray-light);
+        background: var(--ilo-color-light-container-bg-disabled);
 
         &::before {
-          @include icon("chevron_right", var(--ilo-color-blue-dark));
+          @include icon("chevron_right", var(--ilo-color-light-action-default));
         }
       }
     }
@@ -122,12 +131,12 @@
       transform: translate(-50%, -50%) rotate(0);
       width: px-to-rem(20px);
 
-      @include icon("chevron_right", var(--ilo-color-blue-dark));
+      @include icon("chevron_right", var(--ilo-color-light-action-default));
     }
 
     &:hover {
       &::before {
-        @include icon("chevron_right", var(--ilo-color-blue));
+        @include icon("chevron_right", var(--ilo-color-light-action-hover));
       }
     }
 
@@ -135,10 +144,10 @@
       opacity: 0.45;
 
       &:hover {
-        background: var(--ilo-color-gray-light);
+        background: var(--ilo-color-light-container-bg-disabled);
 
         &::before {
-          @include icon("chevron_right", var(--ilo-color-blue-dark));
+          @include icon("chevron_right", var(--ilo-color-light-action-default));
         }
       }
     }
@@ -146,12 +155,18 @@
 
   &--last-page {
     &::before {
-      @include icon("double_chevron_right", var(--ilo-color-blue-dark));
+      @include icon(
+        "double_chevron_right",
+        var(--ilo-color-light-action-default)
+      );
     }
 
     &:hover {
       &::before {
-        @include icon("double_chevron_right", var(--ilo-color-blue));
+        @include icon(
+          "double_chevron_right",
+          var(--ilo-color-light-action-hover)
+        );
       }
     }
 
@@ -159,10 +174,10 @@
       opacity: 0.45;
 
       &:hover {
-        background: var(--ilo-color-gray-light);
+        background: var(--ilo-color-light-container-bg-disabled);
 
         &::before {
-          @include icon("chevron_right", var(--ilo-color-blue-dark));
+          @include icon("chevron_right", var(--ilo-color-light-action-default));
         }
       }
     }

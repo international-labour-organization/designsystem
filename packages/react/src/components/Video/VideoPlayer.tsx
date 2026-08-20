@@ -1,14 +1,36 @@
 import { forwardRef, useEffect, useImperativeHandle, useRef } from "react";
 import "videojs-youtube";
-import { VideoPlayerProps, VideoPlayerRef } from "./VideoPlayer.props";
+import {
+  VideoPlayerProps,
+  VideoPlayerRef,
+  VideoTextTrack,
+  defaultVideoControls,
+} from "./VideoPlayer.props";
 import videojs, { ILOVideo } from "video.js";
 
 const video = videojs as unknown as ILOVideo;
 
+const appendTextTracks = (
+  videoElement: HTMLVideoElement,
+  tracks: VideoTextTrack[]
+) => {
+  tracks.forEach((track) => {
+    const { kind, src, srclang, label, default: isDefault } = track;
+    const trackElement = document.createElement("track");
+    trackElement.kind = kind ?? "captions";
+    trackElement.src = src;
+    trackElement.srclang = srclang;
+    trackElement.label = label;
+    trackElement.default = !!isDefault;
+    videoElement.appendChild(trackElement);
+  });
+};
+
 const VideoPlayer = forwardRef<VideoPlayerRef, VideoPlayerProps>(
-  ({ src, poster, youtube }, ref) => {
+  ({ src, poster, youtube, tracks, controls }, ref) => {
     const placeholderRef = useRef<HTMLDivElement>(null);
     const player = useRef<videojs.Player | undefined>(undefined);
+    const mergedControls = { ...defaultVideoControls, ...controls };
 
     useImperativeHandle(
       ref,
@@ -28,6 +50,7 @@ const VideoPlayer = forwardRef<VideoPlayerRef, VideoPlayerProps>(
       if (!player.current) {
         const videoElement = document.createElement("video");
         videoElement.className = "ilo--video--element";
+        if (tracks?.length) appendTextTracks(videoElement, tracks);
         placeholderRef.current.appendChild(videoElement);
 
         player.current = video(videoElement, {
@@ -42,7 +65,7 @@ const VideoPlayer = forwardRef<VideoPlayerRef, VideoPlayerProps>(
             chaptersButton: false,
             audioTrackButton: false,
             pictureInPictureToggle: false,
-            subsCapsButton: false,
+            subsCapsButton: !!tracks?.length,
             seekToLive: false,
             liveDisplay: false,
           },
@@ -68,6 +91,11 @@ const VideoPlayer = forwardRef<VideoPlayerRef, VideoPlayerProps>(
 
     useEffect(() => {
       return () => {
+        const trackElements = placeholderRef.current?.querySelectorAll("track");
+        if (trackElements?.length) {
+          trackElements.forEach((trackElement) => trackElement.remove());
+        }
+
         if (player.current) {
           player.current.dispose();
           player.current = undefined;
@@ -79,7 +107,17 @@ const VideoPlayer = forwardRef<VideoPlayerRef, VideoPlayerProps>(
     }, []);
 
     return (
-      <div className="ilo--videoplayer">
+      <div
+        className="ilo--videoplayer"
+        style={
+          {
+            "--ilo-video-choose-subtitle-text": JSON.stringify(
+              mergedControls.chooseSubtitlesText
+            ),
+            "--ilo-video-none": JSON.stringify(mergedControls.noCaptionsText),
+          } as React.CSSProperties
+        }
+      >
         <div ref={placeholderRef} />
       </div>
     );

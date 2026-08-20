@@ -72,6 +72,20 @@ const MobileNavigation = ({
               <span className={`${baseClass}__widgets-search__icon`} />
             </a>
           )}
+          {widgets?.search?.type === "button" && (
+            <button
+              type="button"
+              className={`${baseClass}__widgets-search`}
+              onClick={widgets.search.onClick}
+              aria-label={widgets.search.label ?? "Search"}
+              aria-haspopup="dialog"
+            >
+              <span className={`${baseClass}__widgets-search__label`}>
+                {widgets.search.label}
+              </span>
+              <span className={`${baseClass}__widgets-search__icon`} />
+            </button>
+          )}
           {widgets?.search?.type === "input" && (
             <div className={`${baseClass}__widgets-search-input`}>
               {widgets.search.field ? (

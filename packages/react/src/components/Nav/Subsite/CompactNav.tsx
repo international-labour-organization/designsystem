@@ -84,12 +84,21 @@ const CompactNav = forwardRef<HTMLElement, CompactNavProps>(
                     />
                   </div>
                 )}
-                {widgets.search && (
+                {widgets.search?.type === "redirect" && (
                   <NavigationLink
                     href={widgets.search.url}
                     className={`${baseClass}__widget-bar-search`}
                     label={""}
                     aria-label={widgets.search.label}
+                  />
+                )}
+                {widgets.search?.type === "button" && (
+                  <button
+                    type="button"
+                    className={`${baseClass}__widget-bar-search`}
+                    onClick={widgets.search.onClick}
+                    aria-label={widgets.search.label ?? "Search"}
+                    aria-haspopup="dialog"
                   />
                 )}
               </div>

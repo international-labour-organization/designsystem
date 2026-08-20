@@ -1,4 +1,4 @@
-import { expect, describe, it } from "vitest";
+import { expect, describe, it, vi } from "vitest";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
@@ -117,6 +117,34 @@ describe("ComplexNav", () => {
       "aria-label",
       complexNavArgs.widgets.search.label
     );
+  });
+
+  it("should render button search and fire onClick", async () => {
+    const onClick = vi.fn();
+    render(
+      <ComplexNav
+        props={{
+          ...complexNavArgs,
+          widgets: {
+            ...complexNavArgs.widgets,
+            search: { type: "button", onClick, label: "Search" },
+          },
+        }}
+      />
+    );
+
+    const searchButton = document.querySelector(
+      ".ilo--subsite-nav-complex__nav-search"
+    );
+    expect(searchButton).toBeInTheDocument();
+    expect(searchButton!.tagName).toBe("BUTTON");
+    expect(searchButton).toHaveAttribute("type", "button");
+    expect(searchButton).toHaveAttribute("aria-label", "Search");
+    expect(searchButton).toHaveAttribute("aria-haspopup", "dialog");
+    expect(searchButton).not.toHaveAttribute("href");
+
+    await userEvent.click(searchButton!);
+    expect(onClick).toHaveBeenCalledTimes(1);
   });
 
   it("should render the external link widget", () => {
@@ -291,6 +319,34 @@ describe("CompactNav", () => {
       "aria-label",
       SubsiteNavArgs.widgets.search.label
     );
+  });
+
+  it("should render button search and fire onClick", async () => {
+    const onClick = vi.fn();
+    render(
+      <CompactNav
+        props={{
+          ...SubsiteNavArgs,
+          widgets: {
+            ...SubsiteNavArgs.widgets,
+            search: { type: "button", onClick, label: "Search" },
+          },
+        }}
+      />
+    );
+
+    const searchButton = document.querySelector(
+      ".ilo--subsite-nav-compact__widget-bar-search"
+    );
+    expect(searchButton).toBeInTheDocument();
+    expect(searchButton!.tagName).toBe("BUTTON");
+    expect(searchButton).toHaveAttribute("type", "button");
+    expect(searchButton).toHaveAttribute("aria-label", "Search");
+    expect(searchButton).toHaveAttribute("aria-haspopup", "dialog");
+    expect(searchButton).not.toHaveAttribute("href");
+
+    await userEvent.click(searchButton!);
+    expect(onClick).toHaveBeenCalledTimes(1);
   });
 
   it("should render the external link widget", () => {

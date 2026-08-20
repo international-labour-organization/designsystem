@@ -58,7 +58,7 @@
         position: absolute;
         bottom: 0;
         left: 0;
-        color: var(--ilo-color-white);
+        color: var(--ilo-color-light-text-inverse);
         height: 25px;
         display: flex;
         @include typography("body-xsmall");
@@ -73,14 +73,14 @@
           padding: spacing(1) spacing(3);
           display: flex;
           align-items: center;
-          background-color: var(--ilo-color-gray-charcoal);
+          background-color: var(--ilo-color-light-container-bg-inverse);
         }
 
         &-corner {
           display: block;
           width: px-to-rem(25px);
           height: px-to-rem(25px);
-          background-color: var(--ilo-color-gray-charcoal);
+          background-color: var(--ilo-color-light-container-bg-inverse);
           clip-path: polygon(0 0, 0% 100%, 100% 100%);
           margin-left: px-to-rem(-0.5px);
 
@@ -149,7 +149,7 @@
     }
 
     &-text {
-      color: var(--ilo-color-white);
+      color: var(--ilo-color-light-text-inverse);
       @include typography("body-small");
       position: relative;
       padding-left: spacing(4);
@@ -170,7 +170,7 @@
         transform: translateY(-50%);
         width: px-to-rem(3px);
         height: 100%;
-        background-color: var(--ilo-color-gray-light);
+        background-color: var(--ilo-color-light-container-bg-disabled);
 
         [dir="rtl"] & {
           left: auto;
@@ -200,14 +200,14 @@
       width: px-to-rem(90px);
       border: none;
       outline: none;
-      background-color: var(--ilo-color-gray-light);
+      background-color: var(--ilo-color-light-container-bg-disabled);
       display: flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
 
       &:focus {
-        outline: px-to-rem(2px) solid var(--ilo-color-blue);
+        outline: px-to-rem(2px) solid var(--ilo-color-light-border-brand);
         outline-offset: px-to-rem(2px);
       }
 
@@ -237,7 +237,7 @@
             rgba(30, 45, 190, 0.4) 100%
           );
           pointer-events: none;
-          border-bottom: px-to-rem(4) solid var(--ilo-color-blue);
+          border-bottom: px-to-rem(4) solid var(--ilo-color-light-border-brand);
         }
       }
     }

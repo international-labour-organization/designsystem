@@ -7,8 +7,9 @@
 // component.
 .ilo--input {
   appearance: none;
-  background-color: var(--ilo-color-white);
-  border: var(--ilo-border-md) solid var(--ilo-color-gray-base);
+  color: var(--ilo-color-light-text-default);
+  background-color: var(--ilo-color-light-container-bg-default);
+  border: var(--ilo-border-md) solid var(--ilo-color-light-border-default);
   box-sizing: border-box;
   height: px-to-rem(48px);
   margin: spacing(0);
@@ -24,15 +25,15 @@
   }
 
   &:focus {
-    background-color: var(--ilo-color-blue-lighter);
-    border: var(--ilo-border-md) solid var(--ilo-color-gray-base);
-    border-inline-start-color: var(--ilo-color-blue);
-    box-shadow: inset px-to-rem(1px) 0 0 0 var(--ilo-color-blue);
+    background-color: var(--ilo-color-light-container-bg-subtle);
+    border: var(--ilo-border-md) solid var(--ilo-color-light-border-default);
+    border-inline-start-color: var(--ilo-color-light-border-brand);
+    box-shadow: inset px-to-rem(1px) 0 0 0 var(--ilo-color-light-border-brand);
     outline: none;
   }
 
   [dir="rtl"] &:focus {
-    box-shadow: inset px-to-rem(-1px) 0 0 0 var(--ilo-color-blue);
+    box-shadow: inset px-to-rem(-1px) 0 0 0 var(--ilo-color-light-border-brand);
   }
 
   &:disabled {
@@ -42,14 +43,16 @@
 
   &:invalid,
   &__error {
-    background-color: var(--ilo-color-white);
-    border: var(--ilo-border-md) solid var(--ilo-color-gray-base);
-    border-inline-start-color: var(--ilo-color-red-dark);
-    box-shadow: inset px-to-rem(1px) 0 0 0 var(--ilo-color-red-dark);
+    background-color: var(--ilo-color-light-container-bg-default);
+    border: var(--ilo-border-md) solid var(--ilo-color-light-border-default);
+    border-inline-start-color: var(--ilo-color-light-feedback-error-dark);
+    box-shadow: inset px-to-rem(1px) 0 0 0
+      var(--ilo-color-light-feedback-error-dark);
   }
 
   [dir="rtl"] &:invalid,
   [dir="rtl"] &__error {
-    box-shadow: inset px-to-rem(-1px) 0 0 0 var(--ilo-color-red-dark);
+    box-shadow: inset px-to-rem(-1px) 0 0 0
+      var(--ilo-color-light-feedback-error-dark);
   }
 }

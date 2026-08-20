@@ -1,5 +1,17 @@
 # @ilo-org/eslint-config
 
+## 2.1.0
+
+### Minor Changes
+
+- 8e53155: Fixed missing files in published package
+
+### Patch Changes
+
+- f2e25d9: Updated dependencies (pnpm-lock.yaml refresh).
+
+  Pinned the transitive dependency `human-id` to 4.1.1 via a pnpm override in the root `package.json`. Newer versions (4.2.0+) are ESM-only and crash `@changesets/write` (and therefore `npx changeset`) with `ERR_REQUIRE_ESM`, since it still loads `human-id` via CommonJS `require()`. The override can be removed once changesets ships a release that imports `human-id` as ESM.
+
 ## 2.0.0
 
 ### Major Changes

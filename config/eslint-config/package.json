@@ -1,6 +1,6 @@
 {
   "name": "@ilo-org/eslint-config",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "ESLint configuration for ILO Design System",
   "main": "index.js",
   "repository": {
@@ -8,9 +8,6 @@
     "url": "git+https://github.com/international-labour-organization/designsystem.git",
     "directory": "config/eslint-config"
   },
-  "files": [
-    "*.{js,ts,json}"
-  ],
   "type": "module",
   "publishConfig": {
     "access": "public"

@@ -42,6 +42,40 @@ video:
           volume: "Volume"
         src: "/images/video-example.mp4"
         tracks: null
+  settings:
+    theme:
+      type: select
+      label: Theme
+      description: The theme to be used for the Video component.
+      options:
+        light: light
+        dark: dark
+  variants:
+    default:
+      label: Default
+    captioned:
+      label: "With captions"
+      description: "A server-sourced video with closed-caption (subtitle) tracks the viewer can switch between using the CC button."
+      fields:
+        video:
+          controls:
+            fullscreen: "Fullscreen"
+            play: "Play"
+            pause: "Pause"
+            volume: "Volume"
+            chooseSubtitlesText: "Choose subtitles"
+            noCaptionsText: "None"
+          src: "/images/video-example.mp4"
+          tracks:
+            - src: "/video-example.en.vtt"
+              srclang: "en"
+              label: "English"
+              kind: "captions"
+              default: true
+            - src: "/video-example.es.vtt"
+              srclang: "es"
+              label: "Spanish"
+              kind: "captions"
 
 youtube_video:
   namespace: Components/Media
@@ -79,4 +113,12 @@ youtube_video:
       description: The source type of video, required for youtube embedded videos
       required: false
       preview: "video/youtube"
+  settings:
+    theme:
+      type: select
+      label: Theme
+      description: The theme to be used for the Video component.
+      options:
+        light: light
+        dark: dark
   visibility: storybook

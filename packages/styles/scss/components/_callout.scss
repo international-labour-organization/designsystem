@@ -22,34 +22,34 @@
   }
 
   &__error {
-    background: var(--ilo-color-red-ramp);
+    background: var(--ilo-color-light-feedback-error-light);
 
     #{$callout}--sidebar {
-      background: var(--ilo-color-red);
+      background: var(--ilo-color-light-feedback-error-default);
     }
   }
 
   &__info {
-    background: var(--ilo-color-blue-light);
+    background: var(--ilo-color-light-feedback-info-light);
 
     #{$callout}--sidebar {
-      background: var(--ilo-color-blue);
+      background: var(--ilo-color-light-action-selected);
     }
   }
 
   &__success {
-    background: var(--ilo-color-green-ramp);
+    background: var(--ilo-color-light-feedback-success-light);
 
     #{$callout}--sidebar {
-      background: var(--ilo-color-green);
+      background: var(--ilo-color-light-feedback-success-default);
     }
   }
 
   &__warning {
-    background: var(--ilo-color-yellow-ramp);
+    background: var(--ilo-color-light-feedback-warning-light);
 
     #{$callout}--sidebar {
-      background: var(--ilo-color-yellow);
+      background: var(--ilo-color-light-feedback-warning-default);
     }
   }
 
@@ -66,7 +66,7 @@
   }
 
   &--content {
-    color: var(--ilo-color-gray-charcoal);
+    color: var(--ilo-color-light-text-default);
     padding: spacing(6);
     width: 100%;
     font-size: px-to-rem(14px);
@@ -91,14 +91,14 @@
     @include typography("highlight-medium-bold");
     background: none;
     border: none;
-    color: var(--ilo-color-blue-dark);
+    color: var(--ilo-color-light-text-brand);
     cursor: pointer;
     font-weight: 500;
     padding-inline-end: spacing(8);
     position: relative;
 
     &--icon {
-      @include icon("chevron_down", var(--ilo-color-blue-dark));
+      @include icon("chevron_down", var(--ilo-color-light-action-default));
       background-position: right;
       background-repeat: no-repeat;
       display: inline-block;
@@ -125,19 +125,28 @@
 
     &__alert {
       &__error {
-        @include icon("notification_error", var(--ilo-color-white));
+        @include icon(
+          "notification_error",
+          var(--ilo-color-light-icon-inverse)
+        );
       }
 
       &__info {
-        @include icon("notification_info", var(--ilo-color-white));
+        @include icon("notification_info", var(--ilo-color-light-icon-inverse));
       }
 
       &__success {
-        @include icon("notification_success", var(--ilo-color-white));
+        @include icon(
+          "notification_success",
+          var(--ilo-color-light-icon-inverse)
+        );
       }
 
       &__warning {
-        @include icon("notification_warning", var(--ilo-color-white));
+        @include icon(
+          "notification_warning",
+          var(--ilo-color-light-icon-inverse)
+        );
       }
     }
   }

@@ -5,10 +5,10 @@
 
 .#{$prefix}--button {
   --ilo-button-label-weight: 700;
-  --ilo-button-labels-actionable-color: var(--ilo-color-blue-dark);
-  --ilo-button-labels-active-color: var(--ilo-color-blue-light);
-  --ilo-button-labels-alert-color: var(--ilo-color-white);
-  --ilo-button-labels-hover-color: var(--ilo-color-blue);
+  --ilo-button-labels-actionable-color: var(--ilo-color-light-text-brand);
+  --ilo-button-labels-active-color: var(--ilo-color-dark-text-brand);
+  --ilo-button-labels-alert-color: var(--ilo-color-light-text-inverse);
+  --ilo-button-labels-hover-color: var(--ilo-color-light-action-hover);
 
   // This provides a reference to the outerclass within nested declarations
   $button: &;
@@ -85,81 +85,78 @@
   }
 
   &__primary {
-    background-color: var(--ilo-color-yellow);
-    border: var(--ilo-border-md) var(--ilo-color-yellow) solid;
+    background-color: var(--ilo-color-light-feedback-warning-default);
+    border: var(--ilo-border-md) var(--ilo-color-light-border-focus) solid;
     color: var(--ilo-button-labels-actionable-color);
   }
 
   &__secondary {
-    background-color: var(--ilo-color-background-default);
-    border: var(--ilo-border-md) var(--ilo-color-borders-default) solid;
+    background-color: var(--ilo-color-light-container-bg-default);
+    border: var(--ilo-border-md) var(--ilo-color-light-border-default) solid;
     color: var(--ilo-button-labels-actionable-color);
 
     &:hover {
-      background-color: var(--ilo-color-background-hover);
-      border: var(--ilo-border-md) var(--ilo-color-borders-hover) solid;
+      background-color: var(--ilo-color-light-container-bg-subtle);
+      border: var(--ilo-border-md) var(--ilo-color-light-border-brand) solid;
     }
 
     &:active {
-      background-color: var(--ilo-color-background-active);
-      border: var(--ilo-border-md) var(--ilo-color-borders-active) solid;
+      background-color: var(--ilo-color-light-action-selected);
+      border: var(--ilo-border-md) var(--ilo-color-light-border-brand) solid;
       box-shadow: none;
       color: var(--ilo-button-labels-active-color);
     }
   }
 
   &__tertiary {
-    background-color: var(--ilo-color-background-highlight);
-    border: var(--ilo-border-md) var(--ilo-color-background-highlight) solid;
+    background-color: var(--ilo-color-light-container-bg-disabled);
+    border: var(--ilo-border-md) var(--ilo-color-light-container-bg-disabled)
+      solid;
     color: var(--ilo-button-labels-actionable-color);
   }
 
   &__alert {
-    background-color: var(--ilo-color-red-dark);
-    border: var(--ilo-border-md) var(--ilo-color-red-dark) solid;
+    background-color: var(--ilo-color-light-feedback-error-dark);
+    border: var(--ilo-border-md) var(--ilo-color-light-feedback-error-dark)
+      solid;
     color: var(--ilo-button-labels-alert-color);
 
     &:hover {
-      background-color: var(--ilo-color-background-hover);
-      border: var(--ilo-border-md) var(--ilo-color-borders-hover) solid;
+      background-color: var(--ilo-color-light-container-bg-subtle);
+      border: var(--ilo-border-md) var(--ilo-color-light-border-brand) solid;
       color: var(--ilo-button-labels-hover-color);
     }
 
-    &:focus {
-      background-color: var(--ilo-color-background-focus);
-      border: var(--ilo-border-md) var(--ilo-color-borders-focus) solid;
-      color: var(--ilo-button-labels-focus-color);
-      outline: none;
-    }
-
     &:active {
-      background-color: var(--ilo-color-background-active);
-      border: var(--ilo-border-md) var(--ilo-color-borders-active) solid;
+      background-color: var(--ilo-color-light-action-selected);
+      border: var(--ilo-border-md) var(--ilo-color-light-border-brand) solid;
       box-shadow: none;
       color: var(--ilo-button-labels-active-color);
     }
   }
 
   &:focus {
-    background-color: var(--ilo-color-background-focus);
-    border: var(--ilo-border-md) var(--ilo-color-borders-focus) solid;
-    box-shadow:
-      4px 4px 0 1px var(--ilo-color-borders-focus) inset,
-      -4px -4px 0 1px var(--ilo-color-borders-focus) inset;
-    color: var(--ilo-button-labels-focus-color);
     outline: none;
+  }
+
+  &:focus-visible {
+    background-color: var(--ilo-color-light-container-bg-default);
+    border: var(--ilo-border-md) var(--ilo-color-light-border-focus) solid;
+    box-shadow:
+      4px 4px 0 1px var(--ilo-color-light-border-focus) inset,
+      -4px -4px 0 1px var(--ilo-color-light-border-focus) inset;
     @include globaltransition("color, background-color, border-color");
 
     &.#{$prefix}--small {
       box-shadow:
-        3px 3px 0 1px var(--ilo-color-borders-focus) inset,
-        -3px -3px 0 1px var(--ilo-color-borders-focus) inset;
+        3px 3px 0 1px var(--ilo-color-light-border-focus) inset,
+        -3px -3px 0 1px var(--ilo-color-light-border-focus) inset;
     }
   }
 
   &:hover {
-    background-color: var(--ilo-color-background-hover);
-    border: var(--ilo-border-md) var(--ilo-color-borders-hover) solid;
+    background-color: var(--ilo-color-light-container-bg-subtle);
+    border: var(--ilo-border-md) var(--ilo-color-light-border-brand) solid;
     box-shadow: none;
     color: var(--ilo-button-labels-hover-color);
     cursor: pointer;
@@ -167,8 +164,8 @@
   }
 
   &:active {
-    background-color: var(--ilo-color-background-active);
-    border: var(--ilo-border-md) var(--ilo-color-borders-active) solid;
+    background-color: var(--ilo-color-light-action-selected);
+    border: var(--ilo-border-md) var(--ilo-color-light-border-brand) solid;
     box-shadow: none;
     color: var(--ilo-button-labels-active-color);
     @include globaltransition("color, background-color, border-color");

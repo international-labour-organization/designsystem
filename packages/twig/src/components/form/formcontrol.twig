@@ -55,6 +55,7 @@
 {% set labelSizeClass = labelBaseClass ~ "__size__" ~ labelSize|default("medium") %}
 {% set labelClass = [labelBaseClass, labelSizeClass] %}
 {% set helperClass = baseClass ~ "--helper" %}
+{% set labelRequiredClass = labelBaseClass ~ "--required" %}
 
 {% set showError = error and errorMessage %}
 {% set showHelper = not showError and helper %}
@@ -66,7 +67,7 @@
 	{% if label %}
 		<span class="{{ labelClass|join(' ') }}">
 			{% block label %}
-				<label for="{{ id }}">{{ label }}</label>
+				<label for="{{ id }}">{{ label }}{% if required %}<span class="{{ labelRequiredClass }}" aria-hidden="true">*</span>{% endif %}</label>
 			{% endblock %}
 			{% if tooltip %}
 				{% include '@components/tooltip/tooltip.twig' with {

@@ -3,10 +3,10 @@
 {% set theme = theme|default("light") %}
 {% set titleLevel = titleLevel|default(p) %}
 {% set size = size|default("narrow") %}
-{% set iconColor = "var(--ilo-color-gray-accessible)" %}
+{% set iconColor = "var(--ilo-color-light-icon-default)" %}
 
 {% if theme == "dark" %}
-	{% set iconColor = "var(--ilo-color-white)" %}
+	{% set iconColor = "var(--ilo-color-dark-icon-default)" %}
 {% endif %}
 
 <div class="{{prefix}}--card {{prefix}}--card__type__score {{prefix}}--card__theme__{{theme}} {{prefix}}--card__size__{{ size }} {% if isvideo|boolval %} {{prefix}}--card__isvideo {% endif %}">

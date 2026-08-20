@@ -12,11 +12,11 @@
 
   &--theme {
     &--light {
-      --logo-theme-color: var(--ilo-color-blue);
+      --logo-theme-color: var(--ilo-color-light-action-hover);
     }
 
     &--dark {
-      --logo-theme-color: var(--ilo-color-white);
+      --logo-theme-color: var(--ilo-color-light-text-inverse);
     }
   }
 

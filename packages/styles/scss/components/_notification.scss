@@ -4,32 +4,32 @@
 
 $notification-types: (
   "error": (
-    background: var(--ilo-color-notification-type-error),
+    background: var(--ilo-color-light-feedback-error-default),
     icon: "notification_error",
   ),
   "info": (
-    background: var(--ilo-color-notification-type-info),
+    background: var(--ilo-color-light-feedback-info-default),
     icon: "notification_info",
   ),
   "success": (
-    background: var(--ilo-color-notification-type-success),
+    background: var(--ilo-color-light-feedback-success-default),
     icon: "notification_success",
   ),
   "warning": (
-    background: var(--ilo-color-notification-type-warning),
+    background: var(--ilo-color-light-feedback-warning-default),
     icon: "notification_warning",
   ),
 );
 
 .ilo--notification {
-  background-color: var(--ilo-color-white);
+  background-color: var(--ilo-color-light-container-bg-default);
   box-shadow:
     0px 0.8px 1.6px rgba(30, 45, 190, 0.038),
     0px 4px 8px rgba(30, 45, 190, 0.054),
     0px 10px 20px rgba(30, 45, 190, 0.08),
     0px -4px 16px rgba(30, 45, 190, 0.054);
   border-radius: px-to-rem(2px);
-  color: var(--ilo-color-gray-charcoal);
+  color: var(--ilo-color-light-text-default);
   position: relative;
 
   &--dialog {
@@ -123,7 +123,10 @@ $notification-types: (
         }
 
         &:after {
-          @include icon(map-get($config, icon), var(--ilo-color-white));
+          @include icon(
+            map-get($config, icon),
+            var(--ilo-color-light-icon-inverse)
+          );
         }
       }
     }
@@ -143,7 +146,7 @@ $notification-types: (
   }
 
   &--date {
-    color: var(--ilo-color-gray-accessible);
+    color: var(--ilo-color-light-text-subtle);
     display: block;
     font-weight: 400;
     @include typography("body-small");
@@ -158,7 +161,7 @@ $notification-types: (
   }
 
   &--close {
-    background-color: var(--ilo-color-background-highlight);
+    background-color: var(--ilo-color-light-container-bg-disabled);
     border: none;
     position: absolute;
     right: 0;
