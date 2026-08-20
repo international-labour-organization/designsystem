@@ -1,14 +1,6 @@
-// ======================================
-// Global transition
-// ======================================
-/// Applies the global transition to any transitionable property
-/// @param {String} $properties - the name of the property on which to transition
-/// @return {CSS} transition for the given properties
-@mixin globaltransition($properties) {
-  transition-property: unquote($properties);
-  transition-duration: 150ms;
-  transition-timing-function: ease-out;
-}
+// Animation mixins live in their own module so that consumers can use them
+// without pulling in the keyframes below. Re-forwarded here for back-compat.
+@forward "animation-mixins";
 
 // ======================================
 // Animation of empty gradient
@@ -37,14 +29,6 @@
 // ======================================
 // Animation for loading skeletons
 // ======================================
-@mixin pulse-animation() {
-  animation-name: pulse;
-  animation-delay: 0.5s;
-  animation-duration: 2s;
-  animation-timing-function: ease-in-out;
-  animation-iteration-count: infinite;
-}
-
 @keyframes pulse {
   0% {
     opacity: 1;
