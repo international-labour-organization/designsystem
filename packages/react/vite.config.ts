@@ -37,6 +37,10 @@ const config: ViteConfig = {
           src: "node_modules/@ilo-org/styles/css/*",
           dest: "styles",
         },
+        {
+          src: "node_modules/@ilo-org/styles/scss/*",
+          dest: "styles/scss",
+        },
       ],
     }),
   ],

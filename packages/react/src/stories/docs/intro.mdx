@@ -12,11 +12,7 @@ This website provides guidance and documentation for the ILO Design System using
 $ npm i @ilo-org/react
 ```
 
-If you plan on using the default styles for the library, then you should also install the `@ilo-org/styles` package.
-
-```bash
-$ npm i @ilo-org/styles
-```
+The default styles ship with the package, so there is nothing else to install.
 
 ## Peer dependencies
 
@@ -44,8 +40,36 @@ import { Button } from "@ilo-org/react/Button";
 
 Styles for the library should be imported at the top of your project.
 
+```typescript
+import "@ilo-org/react/styles/index.css";
+```
+
+Or, if you'd rather link to the stylesheet directly:
+
 ```html
-<link rel="stylesheet" href="node_modules/@ilo-org/styles/index.css" />
+<link
+  rel="stylesheet"
+  href="node_modules/@ilo-org/react/lib/styles/index.css"
+/>
+```
+
+### Sass functions and mixins
+
+If you write Sass, the design system's functions and mixins are available from a
+single entrypoint. It emits no CSS of its own, so it is safe to `@use` from every
+`.module.scss` without duplicating rules into your bundle.
+
+```scss
+@use "@ilo-org/react/styles/scss/helpers" as *;
+
+.thing {
+  padding: spacing(4);
+  max-width: px-to-rem(1296px);
+
+  @include breakpoint("md", true) {
+    display: none;
+  }
+}
 ```
 
 ## Contributing

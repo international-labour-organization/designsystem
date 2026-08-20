@@ -1,0 +1,19 @@
+//*------------------------------------*\
+//    $HELPERS — public Sass API
+//    Functions and mixins only.
+//    Guaranteed to emit no CSS.
+//    Consumers reach this file as `@use "@ilo-org/styles/scss/helpers"` or,
+//    because @ilo-org/react republishes scss/ under styles/scss/, as
+//    `@use "@ilo-org/react/styles/scss/helpers"`.
+//*------------------------------------*/
+
+@forward "functions";
+
+// `dataurlicon` is deliberately withheld from the public API: its default
+// `$color` parameter references `$color-base-neutrals-black`, which is not
+// defined anywhere in this package. Every internal call site passes an explicit
+// colour, so the mixin is dormant there, but a consumer calling it with one
+// argument would hit an undefined-variable error. It is already marked for
+// deprecation in favour of the `icon` mixin. Consumers wanting it can still
+// reach it via `@use "@ilo-org/styles/scss/mixins.scss"`.
+@forward "mixins" hide dataurlicon;
