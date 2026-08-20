@@ -62,7 +62,7 @@ jobs:
           pnpm changeset version --snapshot canary-${COMMIT_HASH}
 
           # Publish with canary tag (using changeset publish to respect workspace config)
-          pnpm changeset publish --tag canary --no-git-checks
+          pnpm changeset publish --tag canary --no-git-tag
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
