@@ -1,132 +1,244 @@
+@use "@ilo-org/styles/scss/helpers" as *;
+
+// Every triangle on this page is built from one primitive: an aspect-ratio of
+// 2/√3 (≈ 1.1547) plus a point-up clip-path makes the shape equilateral by
+// construction at any size — three equal sides, like the three equal
+// constituents of tripartism.
+
 #storybook-docs:has(.welcome) {
   position: relative;
   overflow: hidden;
 }
 
 .sbdocs:has(.welcome) {
-  background-color: rgba(35, 0, 80, 1); // --ilo-color-brand-800
+  background-color: var(--ilo-color-dark-page-bg-default);
   overflow: hidden;
 
-  .welcome {
-    margin-top: 5px;
-    display: inline-flex;
-    flex-direction: column;
-    align-items: baseline;
-    gap: 5px;
-    z-index: 1;
-    position: relative;
+  // The docs canvas is much wider than a typical content column, so the hero
+  // type scales up beyond the standard scale on large screens. This can't use
+  // a scoped --ilo-scale override: the font-size tokens resolve their
+  // var(--ilo-scale) at :root, so a descendant override never reaches them.
 
-    &--title {
-      color: rgba(255, 255, 255, 1); // --ilo-color-neutrals-white
-    }
-
-    &--subtitle {
-      color: rgba(97, 219, 251, 1);
-      margin-bottom: 0;
-      display: flex;
-      align-items: flex-end;
-      gap: 5px;
-      span {
-        font-size: 1.5rem;
-      }
-
-      img {
-        width: 25px;
-        height: 25px;
-      }
-    }
-
-    &--version {
-      font-size: 0.8rem;
-      color: rgba(210, 210, 210, 1);
-      font-family: monospace;
-      margin-bottom: 16px;
-    }
-
-    .ilo--button {
-      margin-top: 15px;
-    }
+  // Storybook caps docs content at ~1000px; the hero is full-bleed instead,
+  // with .welcome capping its own width below.
+  &.sbdocs-content {
+    max-width: none;
   }
 
   .triangle {
     position: absolute;
-    width: 0;
-    height: 0;
-    border-style: solid;
+    aspect-ratio: 1.1547; // 2/√3: height = width × √3/2
+    clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+  }
+
+  .welcome {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 3rem;
+    min-height: 60vh;
+    padding-block: 2.5rem;
+
+    // Copy and mark sit together as one centred composition rather than
+    // being pushed to opposite edges of the wide docs canvas.
+    @include breakpoint("md") {
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      gap: clamp(3rem, 9vw, 8rem);
+    }
+
+    &--copy {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    &--title {
+      @include typography("heading-1", true);
+      // Fluid floor: heading-1's 36px mobile size overflows screens narrower
+      // than ~375px, so shrink smoothly down to 28px on the smallest phones.
+      font-size: clamp(
+        var(--ilo-font-size-2xlg),
+        9.6vw,
+        var(--ilo-font-size-4xlg)
+      );
+
+      @include breakpoint("md") {
+        @include typography("heading-1");
+        // Fluid: grows smoothly with the viewport from heading-1 (44px) up to
+        // 1.5× (66px) on the widest screens, no breakpoint steps.
+        font-size: clamp(
+          var(--ilo-font-size-5xlg),
+          calc(var(--ilo-font-size-2xlg) + 2.5vw),
+          calc(var(--ilo-font-size-5xlg) * 1.5)
+        );
+      }
+
+      margin: 0;
+      color: var(--ilo-color-dark-text-default);
+    }
+
+    &--subtitle {
+      @include typography("highlight-large", true);
+      // Well above highlight-large's 16px mobile size, so the subtitle
+      // doesn't fade next to the 36px title.
+      font-size: var(--ilo-font-size-xlg);
+
+      @include breakpoint("md") {
+        @include typography("highlight-large");
+        // Fluid companion to the title, from the mobile size up to ~32px.
+        font-size: clamp(
+          var(--ilo-font-size-xlg),
+          calc(var(--ilo-font-size-sm) + 1.1vw),
+          calc(var(--ilo-font-size-lg) * 1.8)
+        );
+      }
+
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin: 0.75rem 0 0;
+      color: var(--ilo-color-dark-text-brand);
+
+      // Storybook's docs theme forces every plain <span> to 16px via a
+      // :where(span:not(...)) rule; re-inherit the heading's size.
+      span {
+        font-size: inherit;
+      }
+    }
+
+    &--react-logo {
+      // Sized in em so it tracks the subtitle's fluid font-size.
+      width: 1.2em;
+      height: 1.2em;
+    }
+
+    &--version {
+      margin-top: 0.75rem;
+      font-family: var(--ilo-fonts-monospace);
+      font-size: var(--ilo-font-size-md);
+      color: var(--ilo-color-dark-text-subtle);
+
+      @include breakpoint("md") {
+        // Fluid: from the 16px mobile size up to ~21px on wide screens.
+        font-size: clamp(
+          var(--ilo-font-size-md),
+          calc(var(--ilo-font-size-2xsm) + 0.65vw),
+          calc(var(--ilo-font-size-sm) * 1.5)
+        );
+      }
+    }
+
+    .ilo--button {
+      margin-top: 1.8rem;
+    }
+
+    // The tripartite mark: three identical equilateral triangles — governments,
+    // workers and employers — composing one larger equilateral triangle. The
+    // negative space in the centre is itself an inverted equilateral triangle.
+    &--mark {
+      position: relative;
+      flex-shrink: 0;
+      align-self: center;
+      width: min(62vw, 250px);
+      aspect-ratio: 1.1547;
+
+      @include breakpoint("md") {
+        align-self: auto;
+        // Track the viewport so the mark keeps the same visual weight it has
+        // in the design (~30% of the hero) on any screen.
+        width: clamp(15rem, 28vw, 28rem);
+      }
+
+      .triangle {
+        width: 50%;
+      }
+    }
+
+    &--mark-gov {
+      top: 0;
+      left: 25%;
+      background-color: var(--ilo-color-brand-500);
+    }
+
+    &--mark-workers {
+      top: 50%;
+      left: 0;
+      background-color: var(--ilo-color-red-500);
+    }
+
+    &--mark-employers {
+      top: 50%;
+      left: 50%;
+      background-color: var(--ilo-color-yellow-400);
+    }
+  }
+
+  // Background: two large, faint equilateral triangles drifting slowly.
+  .triangles .triangle {
     z-index: 0;
   }
 
   .triangle1 {
-    margin-top: 70px;
-    border-width: 110px 0 110px 190px;
-    border-color: transparent transparent transparent rgba(35, 0, 80, 1); // --ilo-color-brand-800
+    width: 360px;
+    background-color: var(--ilo-color-brand-600);
+    opacity: 0.35;
+    top: 55%;
+    left: 25%;
+    transform: rotate(-8deg);
+    animation: drift-1 60s ease-in-out infinite;
 
-    @media (max-width: 768px) {
-      display: none;
+    @include breakpoint("md") {
+      width: clamp(22.5rem, 48vw, 50rem);
+      top: 36%;
+      left: 30%;
     }
   }
 
   .triangle2 {
-    border-width: 400px 0 500px 900px;
-    border-color: transparent transparent transparent rgba(30, 45, 190, 1); // --ilo-color-brand-600
-    top: 150px;
-    left: 50%;
-    animation: drift-1 75s infinite;
+    width: 200px;
+    background-color: var(--ilo-color-turquoise-500);
+    opacity: 0.12;
+    top: -8%;
+    right: -14%;
+    transform: rotate(14deg);
+    animation: drift-2 80s ease-in-out infinite;
 
-    @media (max-width: 768px) {
-      border-width: 100px 0 100px 160px;
-      top: 60%;
-      left: 45%;
-      z-index: 2;
-    }
-
-    @media (max-width: 375px) {
-      border-width: 90px 0 90px 150px;
-      top: 65%;
-      left: 40%;
-    }
-  }
-
-  .triangle3 {
-    border-width: 300px 0 300px 500px;
-    border-color: transparent transparent transparent rgba(200, 48, 60, 1); // --ilo-color-red-600
-    top: -40px;
-    right: -60px;
-    animation: drift-2 75s infinite;
-
-    @media (max-width: 768px) {
-      border-width: 170px 0 170px 280px;
-      top: 40%;
-      left: 20%;
-    }
-
-    @media (max-width: 375px) {
-      border-width: 110px 0 110px 200px;
-      top: 50%;
+    @include breakpoint("md") {
+      width: clamp(12.5rem, 26vw, 27rem);
+      top: -20%;
+      right: -6%;
     }
   }
 
   @keyframes drift-1 {
-    0% {
-      transform: translate(0, 0) scale(1);
+    0%,
+    100% {
+      transform: rotate(-8deg) translate(0, 0);
     }
     50% {
-      transform: translate(15%, -15%) scale(0.8);
-    }
-    100% {
-      transform: translate(0, 0) scale(1);
+      transform: rotate(-2deg) translate(4%, -6%);
     }
   }
 
   @keyframes drift-2 {
-    0% {
-      transform: translate(0, 0) scale(1);
+    0%,
+    100% {
+      transform: rotate(14deg) translate(0, 0);
     }
     50% {
-      transform: translate(-45%, 15%) scale(1.2);
+      transform: rotate(20deg) translate(-6%, 8%);
     }
-    100% {
-      transform: translate(0, 0) scale(1);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .triangle1,
+    .triangle2 {
+      animation: none;
     }
   }
 }
