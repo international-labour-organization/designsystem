@@ -1,7 +1,7 @@
 import { Meta, Unstyled } from "@storybook/blocks";
 import "./styles/docs-table.scss";
 
-<Meta title="Get started/Sass helpers" />
+<Meta title="Utilities/SASS Helpers" />
 
 <Unstyled>
 <div className="ilo--richtext ilo--richtext__theme__light">
@@ -29,7 +29,7 @@ The entrypoint is guaranteed to emit **no CSS of its own**—it contains only fu
 
 The examples on this page load it with `as *` so the helpers can be called without a prefix. If you prefer an explicit namespace, drop the `as *` and call them as `helpers.spacing(4)`, `helpers.px-to-rem(...)`, and so on.
 
-Many of the mixins output CSS custom properties (`var(--ilo-...)`), so make sure the design system stylesheet is loaded on the page as described in [Installation](/docs/get-started-installation--docs).
+Many of the mixins output CSS custom properties (`var(--ilo-...)`), so make sure the design system stylesheet is loaded on the page as described in [Installation](/docs/getting-started-installation--docs).
 
 ## Functions
 
@@ -133,7 +133,7 @@ Passing `true` as the second argument applies the smaller mobile sizes of the va
 
 An unrecognized variant name fails the build with an `@error`, so typos are caught at compile time.
 
-The full scale—sizes, weights, live specimens, and the tokens behind them—is documented on the [Typography](/docs/get-started-typography--docs) page.
+The full scale—sizes, weights, live specimens, and the tokens behind them—is documented on the [Typography](/docs/usage-typography--docs) page.
 
 ### `icon($name, $color: black)`
 

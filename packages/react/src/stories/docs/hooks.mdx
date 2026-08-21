@@ -1,7 +1,7 @@
 import { Meta, Unstyled } from "@storybook/blocks";
 import "./styles/docs-table.scss";
 
-<Meta title="Get started/Hooks" />
+<Meta title="Utilities/React Hooks" />
 
 <Unstyled>
 <div className="ilo--richtext ilo--richtext__theme__light">
@@ -76,7 +76,7 @@ The hook returns an object with three properties:
   </tbody>
 </table>
 
-The pixel values are read from the `--ilo-breakpoint-*` custom properties that the design system stylesheet defines, so JavaScript and CSS always agree on where a layout changes—these are the same breakpoints the Sass [`breakpoint()` mixin](/docs/get-started-sass-helpers--docs) generates media queries for. Make sure the stylesheet is loaded as described in [Installation](/docs/get-started-installation--docs); without it the hook falls back to a built-in set of defaults that may not match your CSS.
+The pixel values are read from the `--ilo-breakpoint-*` custom properties that the design system stylesheet defines, so JavaScript and CSS always agree on where a layout changes—these are the same breakpoints the Sass [`breakpoint()` mixin](/docs/utilities-sass-helpers--docs) generates media queries for. Make sure the stylesheet is loaded as described in [Installation](/docs/getting-started-installation--docs); without it the hook falls back to a built-in set of defaults that may not match your CSS.
 
 On the server, and on the client before the first `matchMedia` measurement, every property is `null`. If your markup must not flicker on hydration, pass a breakpoint name as the argument and it is reported until the real measurement arrives:
 

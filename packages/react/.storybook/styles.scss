@@ -17,11 +17,105 @@
     margin-block: 0;
   }
 
-  code {
+  // Inline code only — code blocks are themed below via .docblock-source.
+  :not(pre) > code {
     padding-inline: 0.25rem;
     padding-block: 0.5rem;
     font-weight: 700;
     font-size: 0.8em;
+    color: var(--ilo-color-brand-800);
+    background-color: var(--ilo-color-brand-100);
+    border-color: var(--ilo-color-brand-200);
+  }
+
+  /**
+    * Code blocks: dark background with Storybook's standard dark-theme
+    * syntax palette.
+    *
+    * Every code surface in the docs — MDX ``` fences and the story
+    * "Show code" source blocks — renders through Storybook's Source
+    * component: a .docblock-source wrapper around a pre.prismjs, with
+    * Prism token classes instead of inline styles. Our Storybook theme is
+    * light, so out of the box the tokens get the light palette, which is
+    * unreadable on a dark background. The hex values below are copied
+    * verbatim from the dark palette in storybook's theming/convert.ts —
+    * the same colors the source blocks would get under themes.dark. (The
+    * docs.source.dark parameter can't do this for us: it only resolves
+    * for blocks attached to a story, so plain MDX fences would stay
+    * light.) Storybook's own token colors come from emotion styles scoped
+    * to a generated class (`.css-* * .token.comment`), so the selectors
+    * here carry one extra class of specificity to win without !important.
+    */
+  .docblock-source {
+    background-color: var(--ilo-color-neutrals-black);
+    border-color: var(--ilo-color-neutrals-black);
+    color: #ededed;
+
+    .prismjs {
+      background-color: var(--ilo-color-neutrals-black);
+
+      .token {
+        &.punctuation,
+        &.operator,
+        &.function {
+          color: #ededed;
+        }
+
+        &.comment,
+        &.prolog,
+        &.doctype,
+        &.cdata {
+          color: #7c7c7c;
+        }
+
+        &.keyword,
+        &.atrule,
+        &.attr-value {
+          color: #b474dd;
+        }
+
+        &.string {
+          color: #92c379;
+        }
+
+        &.number,
+        &.boolean,
+        &.constant,
+        &.symbol,
+        &.variable,
+        &.inserted,
+        &.url {
+          color: #c6c5fe;
+        }
+
+        &.class-name {
+          color: #ffffb6;
+        }
+
+        &.tag,
+        &.selector {
+          color: #a8ff60;
+        }
+
+        &.property,
+        &.attr-name,
+        &.regex,
+        &.entity {
+          color: #96cbfe;
+        }
+      }
+
+      .language-json .token {
+        &.boolean,
+        &.number {
+          color: #b474dd;
+        }
+
+        &.property {
+          color: #ffffb6;
+        }
+      }
+    }
   }
 }
 
@@ -44,5 +138,51 @@ a[class*="ilo--button"] {
 
   &:hover {
     color: var(--ilo-color-brand-600);
+  }
+}
+
+// Design-system components embedded in the docs' richtext wrappers (e.g. the
+// Figma-reference Callouts) pick up richtext's prose styling, which is meant
+// for uncontrolled CMS HTML: h5 gets a large heading margin, p gets the
+// body-large size, and anchors get the full link treatment. Undo those leaks.
+.ilo--richtext {
+  .ilo--callout--title {
+    margin: 0;
+  }
+
+  .ilo--callout--description {
+    font-size: var(--ilo-font-size-sm);
+  }
+
+  // Restore the secondary Button look on the Callout CTA: richtext's link
+  // styles win on specificity and repaint the anchor as a prose link
+  // (underline, accent/visited colors, yellow focus background).
+  a[class*="ilo--button"] {
+    &,
+    &:visited,
+    &:hover,
+    &:active,
+    &:focus {
+      font-family: var(--ilo-fonts-display);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    &,
+    &:visited,
+    &:focus {
+      color: var(--ilo-color-light-text-brand);
+      background-color: var(--ilo-color-light-container-bg-default);
+    }
+
+    &:hover {
+      color: var(--ilo-color-light-text-brand);
+      background-color: var(--ilo-color-light-container-bg-subtle);
+    }
+
+    &:active {
+      color: var(--ilo-color-dark-text-brand);
+      background-color: var(--ilo-color-light-action-selected);
+    }
   }
 }

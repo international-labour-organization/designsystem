@@ -1,7 +1,9 @@
 import { Meta, Unstyled } from "@storybook/blocks";
+import { Callout } from "../../components/Callout";
+import { GlobalProvider } from "../../components/GlobalProvider";
 import "./styles/theming.scss";
 
-<Meta title="Get started/Theming" />
+<Meta title="Usage/Theming" />
 
 export const Swatch = ({ token }) => (
   <span
@@ -88,6 +90,18 @@ export const SemanticTable = ({ category, rows }) => (
 <div className="ilo--richtext ilo--richtext__theme__light">
 
 # Color and theming
+
+<GlobalProvider prefix="ilo">
+  <Callout
+    type="info"
+    headline="Design reference"
+    copy="The color palette and semantic tokens are specified in the ILO Foundations file in Figma."
+    cta={{
+      label: "Open in Figma",
+      url: "https://www.figma.com/design/qr8jQnxqJkRJFQnVC5PmrB/ILO-Foundations?node-id=1406-438&p=f&t=jmBo6mQs6s8X5yb9-0",
+    }}
+  />
+</GlobalProvider>
 
 The design system's color scheme is built from two layers of CSS custom properties, all defined on `:root` and shipped with the stylesheet you import from `@ilo-org/react/styles/index.css`:
 

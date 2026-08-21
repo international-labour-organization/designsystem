@@ -19,6 +19,21 @@ $type-docs-variants:
   }
 }
 
+// The variant name above each specimen, styled like inline code. A span rather
+// than <code> in the markup, so Storybook's MDX doesn't turn it into a full
+// Source block (see typography.mdx).
+.type-docs--specimen-label {
+  display: inline-block;
+  margin-bottom: 0.75rem;
+  padding: 0.125rem 0.375rem;
+  font-family: var(--ilo-fonts-monospace);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--ilo-color-brand-800);
+  background-color: var(--ilo-color-brand-100);
+  border-radius: var(--ilo-border-radius);
+}
+
 // The specimens sit inside the page's richtext wrapper, whose element rules
 // (e.g. `.ilo--richtext p`, specificity 0,1,1) would beat a bare variant class
 // (0,1,0). Scoping under the specimen container — and covering the markdown

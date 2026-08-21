@@ -1,12 +1,26 @@
 import { Meta, Unstyled } from "@storybook/blocks";
+import { Callout } from "../../components/Callout";
+import { GlobalProvider } from "../../components/GlobalProvider";
 import "./styles/docs-table.scss";
 
-<Meta title="Get started/Layouts" />
+<Meta title="Usage/Layouts" />
 
 <Unstyled>
 <div className="ilo--richtext ilo--richtext__theme__light">
 
 # Layouts
+
+<GlobalProvider prefix="ilo">
+  <Callout
+    type="info"
+    headline="Design reference"
+    copy="The spacing and sizing foundations behind these layout primitives are specified in the ILO Foundations file in Figma."
+    cta={{
+      label: "Open in Figma",
+      url: "https://www.figma.com/design/qr8jQnxqJkRJFQnVC5PmrB/ILO-Foundations?node-id=1485-257&p=f&t=jmBo6mQs6s8X5yb9-0",
+    }}
+  />
+</GlobalProvider>
 
 The design system is a component library, not a layout framework. It does not ship a grid system—there are no `Grid`, `Row`, or `Column` components, and no utility classes for building page structure. Components are designed to fill the width of whatever container you place them in, and how you arrange those containers is up to your application: plain CSS grid and flexbox work well and need no library support.
 
@@ -36,7 +50,7 @@ The stylesheet ships one layout class, `ilo--container`. It centers its content,
 </main>
 ```
 
-The width and gutters come from two theme tokens, so they can be overridden with CSS custom properties as described in [Theming](/docs/get-started-theming--docs):
+The width and gutters come from two theme tokens, so they can be overridden with CSS custom properties as described in [Theming](/docs/usage-theming--docs):
 
 <table className="docs-table">
   <thead>
@@ -103,15 +117,15 @@ The system is mobile-first: components render their small-screen layout by defau
 
 You can reach the breakpoints three ways:
 
-- **In Sass**, with the [`breakpoint` mixin](/docs/get-started-sass-helpers--docs)—the idiomatic way to write media queries that match the system.
-- **In React**, with the [`useBreakpoint` hook](/docs/get-started-hooks--docs), which reports the name of the breakpoint the viewport currently matches.
+- **In Sass**, with the [`breakpoint` mixin](/docs/utilities-sass-helpers--docs)—the idiomatic way to write media queries that match the system.
+- **In React**, with the [`useBreakpoint` hook](/docs/utilities-react-hooks--docs), which reports the name of the breakpoint the viewport currently matches.
 - **As CSS custom properties** (`--ilo-breakpoint-xs` through `--ilo-breakpoint-xxl`), for reading the values from JavaScript. Note that custom properties cannot be used inside CSS media queries—that limitation is exactly why the breakpoints also exist as a Sass mixin.
 
 The raw Sass map is not exposed by the helpers entrypoint; go through the mixin rather than hardcoding the pixel values.
 
 ## Building layouts with the Sass helpers
 
-The [Sass helpers](/docs/get-started-sass-helpers--docs) entrypoint carries what you need to write layout code that stays on the system's scale: `breakpoint` for media queries, `spacing` for gaps and margins, and `px-to-rem` for converting fixed sizes from a design spec. A typical page grid:
+The [Sass helpers](/docs/utilities-sass-helpers--docs) entrypoint carries what you need to write layout code that stays on the system's scale: `breakpoint` for media queries, `spacing` for gaps and margins, and `px-to-rem` for converting fixed sizes from a design spec. A typical page grid:
 
 ```scss
 @use "@ilo-org/react/styles/scss/helpers" as *;

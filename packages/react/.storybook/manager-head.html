@@ -18,3 +18,30 @@
     font-family: "Overpass", sans-serif !important; /* Customize the sidebar font */
   }
 </style>
+
+<!-- Expand all sidebar groups on load. Storybook only auto-expands root
+     categories; nested groups (e.g. Components/Cards) start collapsed and
+     there is no manager config for it, so we click their expander buttons
+     once the tree renders, then stop watching so manual collapse still works. -->
+<script>
+  window.addEventListener("DOMContentLoaded", () => {
+    // Expanding a group renders its children, which may contain further
+    // collapsed groups; each expansion mutates the DOM and re-triggers the
+    // observer, so it keeps clicking until a pass finds nothing left.
+    const observer = new MutationObserver(() => {
+      const menu = document.querySelector("#storybook-explorer-menu");
+      // The menu renders placeholder rows while the index loads; wait for
+      // real tree nodes before deciding there is nothing to expand.
+      if (!menu || !menu.querySelector("[data-nodetype]")) return;
+      const collapsed = menu.querySelectorAll(
+        'button[aria-expanded="false"][data-nodetype="group"]'
+      );
+      if (collapsed.length === 0) {
+        observer.disconnect();
+        return;
+      }
+      collapsed.forEach((button) => button.click());
+    });
+    observer.observe(document.body, { childList: true, subtree: true });
+  });
+</script>

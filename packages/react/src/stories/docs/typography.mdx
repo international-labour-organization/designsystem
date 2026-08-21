@@ -1,14 +1,18 @@
 import { Meta, Unstyled } from "@storybook/blocks";
 import { Blockquote } from "../../components/Blockquote";
+import { Callout } from "../../components/Callout";
 import { GlobalProvider } from "../../components/GlobalProvider";
 import "./styles/docs-table.scss";
 import "./styles/typography.scss";
 
-<Meta title="Get started/Typography" />
+<Meta title="Usage/Typography" />
 
 export const Specimen = ({ variant, children }) => (
   <div className="type-docs--specimen">
-    <code className="type-docs--specimen-label">{variant}</code>
+    {/* A span, not <code>: Storybook's MDX maps code elements to its
+        CodeOrSourceMdx block, and anything with a className renders as a
+        full Source code block, Copy button and all. */}
+    <span className="type-docs--specimen-label">{variant}</span>
     {/* A div, not a p: these docs sit inside a richtext wrapper whose element
         rules would out-specify the specimen styles. typography.scss also covers
         the <p> that MDX wraps multi-line children in. */}
@@ -79,6 +83,18 @@ export const TokenTable = ({ header, rows }) => (
 
 # Typography
 
+<GlobalProvider prefix="ilo">
+  <Callout
+    type="info"
+    headline="Design reference"
+    copy="The type scale and font families are specified in the ILO Foundations file in Figma."
+    cta={{
+      label: "Open in Figma",
+      url: "https://www.figma.com/design/qr8jQnxqJkRJFQnVC5PmrB/ILO-Foundations?node-id=6458-12248&p=f&t=jmBo6mQs6s8X5yb9-0",
+    }}
+  />
+</GlobalProvider>
+
 The design system's typography is built from three pieces:
 
 1. **Two font families** — a display font for headings and emphasis, and a copy font for everything else, with automatic substitutions for Arabic, Chinese, and Japanese.
@@ -123,7 +139,7 @@ The system uses two typefaces:
 
 ### Loading the fonts
 
-The fonts are published in their own package, `@ilo-org/fonts`, and the main stylesheet **does not include them**—importing `index.css` alone gives you the type scale but renders it in fallback fonts. Import both, once, at the root of your application, as described in [Installation](/docs/get-started-installation--docs):
+The fonts are published in their own package, `@ilo-org/fonts`, and the main stylesheet **does not include them**—importing `index.css` alone gives you the type scale but renders it in fallback fonts. Import both, once, at the root of your application, as described in [Installation](/docs/getting-started-installation--docs):
 
 ```typescript
 import "@ilo-org/react/styles/index.css";
@@ -167,7 +183,7 @@ This is deliberate—it keeps the design system's prose styling from fighting yo
 
 ## The type scale
 
-The scale defines sixteen named variants in four groups: **headings**, **body**, **highlights** (short display-font emphasis text, e.g. labels and standfirsts), and the **blockquote** style. You apply one with the `typography()` mixin from the [Sass helpers](/docs/get-started-sass-helpers--docs) entrypoint:
+The scale defines sixteen named variants in four groups: **headings**, **body**, **highlights** (short display-font emphasis text, e.g. labels and standfirsts), and the **blockquote** style. You apply one with the `typography()` mixin from the [Sass helpers](/docs/utilities-sass-helpers--docs) entrypoint:
 
 ```scss
 @use "@ilo-org/react/styles/scss/helpers" as *;
@@ -295,7 +311,7 @@ import { Blockquote } from "@ilo-org/react";
 
 ## Typography tokens
 
-Every value the mixin outputs is a CSS custom property defined on `:root` in [`_foundation.scss`](https://github.com/international-labour-organization/designsystem/blob/develop/packages/styles/scss/theme/_foundation.scss) and [`_typography.scss`](https://github.com/international-labour-organization/designsystem/blob/develop/packages/styles/scss/theme/_typography.scss). You can reference them directly in plain CSS when the mixin isn't available, and override them to re-theme—the same [rules of thumb](/docs/get-started-theming--docs) as for color tokens apply.
+Every value the mixin outputs is a CSS custom property defined on `:root` in [`_foundation.scss`](https://github.com/international-labour-organization/designsystem/blob/develop/packages/styles/scss/theme/_foundation.scss) and [`_typography.scss`](https://github.com/international-labour-organization/designsystem/blob/develop/packages/styles/scss/theme/_typography.scss). You can reference them directly in plain CSS when the mixin isn't available, and override them to re-theme—the same [rules of thumb](/docs/usage-theming--docs) as for color tokens apply.
 
 ### Families
 

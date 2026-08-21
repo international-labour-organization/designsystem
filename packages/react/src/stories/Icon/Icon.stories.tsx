@@ -1,6 +1,5 @@
-import type { CSSProperties } from "react";
 import { Meta, StoryFn } from "@storybook/react";
-import { Title, Primary, Controls } from "@storybook/blocks";
+import { Title, Primary, Controls, AnchorMdx } from "@storybook/blocks";
 import { Icon, IconProps } from "../../components/Icon";
 import * as icons from "@ilo-org/icons-react/next";
 
@@ -20,39 +19,6 @@ const colorArgtype = {
   defaultValue: "currentColor",
 };
 
-const galleryStyles: CSSProperties = {
-  display: "grid",
-  gridTemplateColumns: "repeat(auto-fill, minmax(240px, 1fr))",
-  gap: "1.5rem",
-  marginTop: "1.5rem",
-};
-
-const galleryItemStyles: CSSProperties = {
-  display: "flex",
-  flexDirection: "column",
-  alignItems: "center",
-  gap: "0.5rem",
-  padding: "0.75rem",
-  border: "1px solid #e0e0e0",
-  borderRadius: "0.5rem",
-  minHeight: "120px",
-};
-
-const IconGallery = () => (
-  <div style={galleryStyles}>
-    {iconNames
-      .filter((iconName) => iconName !== "Icon")
-      .map((iconName) => {
-        return (
-          <div key={iconName} style={galleryItemStyles}>
-            <Icon name={iconName} />
-            <code>{iconName}</code>
-          </div>
-        );
-      })}
-  </div>
-);
-
 const IconDocsPage = () => (
   <>
     <Title />
@@ -61,15 +27,12 @@ const IconDocsPage = () => (
       be rendered in different colors and sizes using props.
     </p>
     <p>
-      Below you can see all the icons currently available in the design system.
+      See the <AnchorMdx href="/docs/usage-icons--docs">Icons page</AnchorMdx>{" "}
+      for a complete list of the icons available in the design system.
     </p>
     <section>
       <Primary />
       <Controls />
-      <section>
-        <h2 id="list-of-icons">List of icons</h2>
-        <IconGallery />
-      </section>
     </section>
   </>
 );
