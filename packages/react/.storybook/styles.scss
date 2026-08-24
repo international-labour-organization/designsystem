@@ -9,6 +9,13 @@
   h1.sbdocs-title + p {
     font-family: var(--ilo-fonts-copy);
     font-size: 16px;
+
+    // Same issue as the .ilo--richtext anchor fix below: links rendered
+    // through Storybook's anchor component (e.g. AnchorMdx) set the
+    // Storybook UI font and size on the element itself.
+    a {
+      font: inherit;
+    }
   }
 
   // Cancel the pre margins from _richtext.scss, which land inside

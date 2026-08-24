@@ -24,12 +24,13 @@ const IconDocsPage = () => (
     <Title />
     <p>
       The Icon component allows you to use icons as React components. Icons can
-      be rendered in different colors and sizes using props.
-    </p>
-    <p>
-      See the <AnchorMdx href="/docs/usage-icons--docs">Icons page</AnchorMdx>{" "}
+      be rendered in different colors and sizes using props. See the{" "}
+      <AnchorMdx target="_self" href="/docs/usage-icons--docs">
+        Icons page
+      </AnchorMdx>{" "}
       for a complete list of the icons available in the design system.
     </p>
+    <p></p>
     <section>
       <Primary />
       <Controls />
