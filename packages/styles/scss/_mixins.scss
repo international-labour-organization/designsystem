@@ -47,10 +47,11 @@
 
 // ======================================
 // Data URL Icon
-// @TODO: Deprecate all usage of dataurlicon and replace with icon mixin
+// @deprecated - will be removed in future versions
 // ======================================
 
 @mixin dataurlicon($name, $color: $color-base-neutrals-black) {
+  @warn "ILO Design System: the dataurlicon mixin is deprecated and will be removed in future versions. Use the icon mixin instead";
   background-image: url("#{colortodataurlicon($name, $color)}");
   background-repeat: no-repeat;
 }
