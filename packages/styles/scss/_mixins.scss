@@ -59,13 +59,23 @@
 // Icon
 // ======================================
 
-@mixin icon($name, $color: black) {
+@mixin icon($name, $color: black, $size: null, $position: null) {
   $icon: map-get($icons, $name);
   mask-image: url("#{$icon}");
   mask-repeat: no-repeat;
   -webkit-mask-image: url("#{$icon}");
   -webkit-mask-repeat: no-repeat;
   background-color: $color;
+
+  @if $size {
+    mask-size: $size;
+    -webkit-mask-size: $size;
+  }
+
+  @if $position {
+    mask-position: $position;
+    -webkit-mask-position: $position;
+  }
 }
 
 // ======================================
