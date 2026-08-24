@@ -10,6 +10,29 @@ import { version } from "../../../package.json";
   }}
 />
 
+export const TriangleMatrix = ({ rows = 20, cols = 32 }) => (
+  <div className="triangle-matrix" aria-hidden="true">
+    {Array.from({ length: rows }, (_, row) => (
+      <div className="triangle-matrix--row" key={row}>
+        {Array.from({ length: cols }, (_, col) => {
+          const duration = 7 + Math.random() * 14;
+          return (
+            <div
+              key={col}
+              className="triangle-matrix--cell"
+              style={{
+                animationDuration: `${duration.toFixed(2)}s`,
+                animationDelay: `${(-Math.random() * duration).toFixed(2)}s`,
+                "--shimmer-peak": (0.12 + Math.random() * 0.18).toFixed(2),
+              }}
+            ></div>
+          );
+        })}
+      </div>
+    ))}
+  </div>
+);
+
 <div className="welcome">
   <div className="welcome--copy">
     <h1 className="welcome--title">ILO Design System</h1>
@@ -46,7 +69,4 @@ import { version } from "../../../package.json";
     <div className="triangle welcome--mark-employers"></div>
   </div>
 </div>
-<div className="triangles" aria-hidden="true">
-  <div className="triangle triangle1"></div>
-  <div className="triangle triangle2"></div>
-</div>
+<TriangleMatrix />

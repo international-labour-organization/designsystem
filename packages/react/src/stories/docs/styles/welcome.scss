@@ -1,9 +1,10 @@
 @use "@ilo-org/styles/scss/helpers" as *;
 
 // Every triangle on this page is built from one primitive: an aspect-ratio of
-// 2/√3 (≈ 1.1547) plus a point-up clip-path makes the shape equilateral by
+// 2/√3 (≈ 1.1547) plus a triangular clip-path makes the shape equilateral by
 // construction at any size — three equal sides, like the three equal
-// constituents of tripartism.
+// constituents of tripartism. The foreground mark points up; the background
+// matrix points down.
 
 #storybook-docs:has(.welcome) {
   position: relative;
@@ -162,7 +163,7 @@
     &--mark-gov {
       top: 0;
       left: 25%;
-      background-color: var(--ilo-color-brand-500);
+      background-color: var(--ilo-color-brand-600);
     }
 
     &--mark-workers {
@@ -178,66 +179,56 @@
     }
   }
 
-  // Background: two large, faint equilateral triangles drifting slowly.
-  .triangles .triangle {
+  // Background: a tessellated matrix of point-down triangles — the inverse of
+  // the mark — where each cell shimmers on its own randomized cycle. The
+  // random duration/delay/peak are inlined per cell by the TriangleMatrix
+  // component in welcome.mdx; negative delays start every cell mid-cycle so
+  // nothing pulses in unison on load.
+  .triangle-matrix {
+    --tri-w: clamp(3rem, 5vw, 5rem);
+
+    position: absolute;
+    inset: 0;
     z-index: 0;
-  }
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
 
-  .triangle1 {
-    width: 360px;
-    background-color: var(--ilo-color-brand-600);
-    opacity: 0.35;
-    top: 55%;
-    left: 25%;
-    transform: rotate(-8deg);
-    animation: drift-1 60s ease-in-out infinite;
+    &--row {
+      display: flex;
+      flex: none;
 
-    @include breakpoint("md") {
-      width: clamp(22.5rem, 48vw, 50rem);
-      top: 36%;
-      left: 30%;
+      // Offset alternate rows by half a triangle so the down-triangles
+      // tessellate; the negative space forms the matching up-triangles.
+      &:nth-child(even) {
+        margin-left: calc(var(--tri-w) / -2);
+      }
+    }
+
+    &--cell {
+      flex: none;
+      width: var(--tri-w);
+      aspect-ratio: 1.1547;
+      clip-path: polygon(50% 100%, 0% 0%, 100% 0%); // point-down
+      background-color: var(--ilo-color-brand-600);
+      opacity: 0.05;
+      animation: shimmer 12s ease-in-out infinite;
     }
   }
 
-  .triangle2 {
-    width: 200px;
-    background-color: var(--ilo-color-turquoise-500);
-    opacity: 0.12;
-    top: -8%;
-    right: -14%;
-    transform: rotate(14deg);
-    animation: drift-2 80s ease-in-out infinite;
-
-    @include breakpoint("md") {
-      width: clamp(12.5rem, 26vw, 27rem);
-      top: -20%;
-      right: -6%;
-    }
-  }
-
-  @keyframes drift-1 {
+  @keyframes shimmer {
     0%,
+    82%,
     100% {
-      transform: rotate(-8deg) translate(0, 0);
+      opacity: 0.05;
     }
-    50% {
-      transform: rotate(-2deg) translate(4%, -6%);
-    }
-  }
-
-  @keyframes drift-2 {
-    0%,
-    100% {
-      transform: rotate(14deg) translate(0, 0);
-    }
-    50% {
-      transform: rotate(20deg) translate(-6%, 8%);
+    91% {
+      opacity: var(--shimmer-peak, 0.25);
     }
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .triangle1,
-    .triangle2 {
+    .triangle-matrix--cell {
       animation: none;
     }
   }
