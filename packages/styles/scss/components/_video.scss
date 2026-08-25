@@ -15,23 +15,35 @@
   }
 
   $width: $height;
-  $icon-color-default: rgba(237, 240, 242, 1);
-  $icon-color-hover: rgba(30, 45, 190, 1);
 
   cursor: pointer;
   border: none;
   background-color: var(--ilo-color-light-container-bg-inverse);
   width: $box;
   height: $box;
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: $width $height;
-  @include dataurlicon($name, $icon-color-default);
+  position: relative;
+
+  &::after {
+    @include icon(
+      $name,
+      var(--ilo-color-light-icon-disabled),
+      $width $height,
+      center center
+    );
+    content: "";
+    display: block;
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
 
   &:hover,
   &:focus {
     background-color: var(--ilo-color-light-feedback-info-light);
-    @include dataurlicon($name, $icon-color-hover);
+
+    &::after {
+      background-color: var(--ilo-color-light-action-hover);
+    }
   }
 }
 
@@ -125,8 +137,8 @@
             color: var(--ilo-color-light-action-hover);
           }
 
-          .vjs-play-control {
-            @include dataurlicon("triangle_right", rgba(30, 45, 190, 1));
+          .vjs-play-control::after {
+            background-color: var(--ilo-color-light-action-hover);
           }
         }
 
@@ -239,7 +251,10 @@
       &:hover > .vjs-menu-button,
       &:focus-within > .vjs-menu-button {
         background-color: var(--ilo-color-light-feedback-info-light);
-        @include dataurlicon("closed_captions", rgba(30, 45, 190, 1));
+
+        &::after {
+          background-color: var(--ilo-color-light-action-hover);
+        }
       }
 
       .vjs-menu {
@@ -430,10 +445,12 @@
             @include typography("body-xsmall");
 
             &:after {
-              background-position: top left;
-              background-repeat: no-repeat;
-              background-size: contain;
-              @include dataurlicon("caret_down", rgba(45, 45, 45, 1));
+              @include icon(
+                "caret_down",
+                var(--ilo-color-light-icon-default),
+                contain,
+                top left
+              );
               content: "";
               height: px-to-rem(12px);
               position: absolute;
