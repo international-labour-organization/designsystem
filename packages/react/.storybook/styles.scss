@@ -1,3 +1,4 @@
+@use "@ilo-org/styles/scss/mixins" as ilo;
 @import "@ilo-org/styles/scss/monorepo";
 
 .sbdocs {
@@ -38,20 +39,6 @@
   /**
     * Code blocks: dark background with Storybook's standard dark-theme
     * syntax palette.
-    *
-    * Every code surface in the docs — MDX ``` fences and the story
-    * "Show code" source blocks — renders through Storybook's Source
-    * component: a .docblock-source wrapper around a pre.prismjs, with
-    * Prism token classes instead of inline styles. Our Storybook theme is
-    * light, so out of the box the tokens get the light palette, which is
-    * unreadable on a dark background. The hex values below are copied
-    * verbatim from the dark palette in storybook's theming/convert.ts —
-    * the same colors the source blocks would get under themes.dark. (The
-    * docs.source.dark parameter can't do this for us: it only resolves
-    * for blocks attached to a story, so plain MDX fences would stay
-    * light.) Storybook's own token colors come from emotion styles scoped
-    * to a generated class (`.css-* * .token.comment`), so the selectors
-    * here carry one extra class of specificity to win without !important.
     */
   .docblock-source {
     background-color: var(--ilo-color-neutrals-black);
@@ -134,9 +121,11 @@ button[title="Reset zoom"]:hover {
   background-color: var(--ilo-color-brand-200);
 }
 
-// Storybook renders markdown links through its own anchor component, which sets
-// the Storybook UI font (Nunito Sans) on the element itself and ignores <Unstyled>.
-.ilo--richtext a {
+// ".sbdocs ... :not(.docs-story *)" scopes this to the MDX docs prose: it
+// matches the docs pages' hand-written richtext wrappers but not story
+// previews (Storybook wraps those in .docs-story), so the RichText
+// component's own stories render untouched.
+.sbdocs .ilo--richtext:not(.docs-story *) a {
   font-family: inherit;
 }
 
@@ -148,22 +137,25 @@ a[class*="ilo--button"] {
   }
 }
 
-// Design-system components embedded in the docs' richtext wrappers (e.g. the
-// Figma-reference Callouts) pick up richtext's prose styling, which is meant
-// for uncontrolled CMS HTML: h5 gets a large heading margin, p gets the
-// body-large size, and anchors get the full link treatment. Undo those leaks.
-.ilo--richtext {
+// Scoped to docs prose (see the anchor fix above): only the docs pages'
+// hand-written richtext wrappers, never the RichText component's stories.
+.sbdocs .ilo--richtext:not(.docs-story *) {
+  // Restore the component's own title treatment (_callout.scss:
+  // "highlight-medium" + bold): richtext's h5 rule repaints it as
+  // heading-4 with prose heading margins.
   .ilo--callout--title {
+    @include ilo.typography("highlight-medium");
+    font-weight: 700;
     margin: 0;
   }
 
   .ilo--callout--description {
     font-size: var(--ilo-font-size-sm);
+    // Standalone, the description inherits the body line-height
+    // (_typography.scss); richtext's p rule overrides it with body-large's.
+    line-height: var(--ilo-line-height-base);
   }
 
-  // Restore the secondary Button look on the Callout CTA: richtext's link
-  // styles win on specificity and repaint the anchor as a prose link
-  // (underline, accent/visited colors, yellow focus background).
   a[class*="ilo--button"] {
     &,
     &:visited,
