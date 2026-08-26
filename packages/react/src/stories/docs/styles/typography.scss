@@ -1,8 +1,5 @@
 @use "@ilo-org/styles/scss/helpers" as *;
 
-// Live specimens for the Typography docs page. Each variant gets a class that
-// applies the real typography() mixin, mobile-first, so the specimens show
-// exactly what the mixin outputs at the current viewport.
 $type-docs-variants:
   "heading-1", "heading-2", "heading-3", "heading-4", "body-xlarge",
   "body-large", "body-medium", "body-small", "body-xsmall", "body-2xsmall",
@@ -19,9 +16,6 @@ $type-docs-variants:
   }
 }
 
-// The variant name above each specimen, styled like inline code. A span rather
-// than <code> in the markup, so Storybook's MDX doesn't turn it into a full
-// Source block (see typography.mdx).
 .type-docs--specimen-label {
   display: inline-block;
   margin-bottom: 0.75rem;
@@ -34,10 +28,6 @@ $type-docs-variants:
   border-radius: var(--ilo-border-radius);
 }
 
-// The specimens sit inside the page's richtext wrapper, whose element rules
-// (e.g. `.ilo--richtext p`, specificity 0,1,1) would beat a bare variant class
-// (0,1,0). Scoping under the specimen container — and covering the markdown
-// paragraph MDX wraps multi-line children in — keeps the variant styles on top.
 @each $variant in $type-docs-variants {
   .type-docs--specimen .type-docs--#{$variant} {
     &,

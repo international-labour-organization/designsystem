@@ -1,11 +1,5 @@
 @use "@ilo-org/styles/scss/helpers" as *;
 
-// Every triangle on this page is built from one primitive: an aspect-ratio of
-// 2/√3 (≈ 1.1547) plus a triangular clip-path makes the shape equilateral by
-// construction at any size — three equal sides, like the three equal
-// constituents of tripartism. The foreground mark points up; the background
-// matrix points down.
-
 #storybook-docs:has(.welcome) {
   position: relative;
   overflow: hidden;
@@ -15,13 +9,6 @@
   background-color: var(--ilo-color-dark-page-bg-default);
   overflow: hidden;
 
-  // The docs canvas is much wider than a typical content column, so the hero
-  // type scales up beyond the standard scale on large screens. This can't use
-  // a scoped --ilo-scale override: the font-size tokens resolve their
-  // var(--ilo-scale) at :root, so a descendant override never reaches them.
-
-  // Storybook caps docs content at ~1000px; the hero is full-bleed instead,
-  // with .welcome capping its own width below.
   &.sbdocs-content {
     max-width: none;
   }
@@ -43,8 +30,6 @@
     min-height: 60vh;
     padding-block: 2.5rem;
 
-    // Copy and mark sit together as one centred composition rather than
-    // being pushed to opposite edges of the wide docs canvas.
     @include breakpoint("md") {
       flex-direction: row;
       align-items: center;
@@ -60,8 +45,7 @@
 
     &--title {
       @include typography("heading-1", true);
-      // Fluid floor: heading-1's 36px mobile size overflows screens narrower
-      // than ~375px, so shrink smoothly down to 28px on the smallest phones.
+
       font-size: clamp(
         var(--ilo-font-size-2xlg),
         9.6vw,
@@ -70,8 +54,7 @@
 
       @include breakpoint("md") {
         @include typography("heading-1");
-        // Fluid: grows smoothly with the viewport from heading-1 (44px) up to
-        // 1.5× (66px) on the widest screens, no breakpoint steps.
+
         font-size: clamp(
           var(--ilo-font-size-5xlg),
           calc(var(--ilo-font-size-2xlg) + 2.5vw),
@@ -85,13 +68,11 @@
 
     &--subtitle {
       @include typography("highlight-large", true);
-      // Well above highlight-large's 16px mobile size, so the subtitle
-      // doesn't fade next to the 36px title.
+
       font-size: var(--ilo-font-size-xlg);
 
       @include breakpoint("md") {
         @include typography("highlight-large");
-        // Fluid companion to the title, from the mobile size up to ~32px.
         font-size: clamp(
           var(--ilo-font-size-xlg),
           calc(var(--ilo-font-size-sm) + 1.1vw),
@@ -105,15 +86,12 @@
       margin: 0.75rem 0 0;
       color: var(--ilo-color-dark-text-brand);
 
-      // Storybook's docs theme forces every plain <span> to 16px via a
-      // :where(span:not(...)) rule; re-inherit the heading's size.
       span {
         font-size: inherit;
       }
     }
 
     &--react-logo {
-      // Sized in em so it tracks the subtitle's fluid font-size.
       width: 1.2em;
       height: 1.2em;
     }
@@ -125,7 +103,6 @@
       color: var(--ilo-color-dark-text-subtle);
 
       @include breakpoint("md") {
-        // Fluid: from the 16px mobile size up to ~21px on wide screens.
         font-size: clamp(
           var(--ilo-font-size-md),
           calc(var(--ilo-font-size-2xsm) + 0.65vw),
@@ -138,9 +115,6 @@
       margin-top: 1.8rem;
     }
 
-    // The tripartite mark: three identical equilateral triangles — governments,
-    // workers and employers — composing one larger equilateral triangle. The
-    // negative space in the centre is itself an inverted equilateral triangle.
     &--mark {
       position: relative;
       flex-shrink: 0;
@@ -150,8 +124,6 @@
 
       @include breakpoint("md") {
         align-self: auto;
-        // Track the viewport so the mark keeps the same visual weight it has
-        // in the design (~30% of the hero) on any screen.
         width: clamp(15rem, 28vw, 28rem);
       }
 
@@ -179,11 +151,6 @@
     }
   }
 
-  // Background: a tessellated matrix of point-down triangles — the inverse of
-  // the mark — where each cell shimmers on its own randomized cycle. The
-  // random duration/delay/peak are inlined per cell by the TriangleMatrix
-  // component in welcome.mdx; negative delays start every cell mid-cycle so
-  // nothing pulses in unison on load.
   .triangle-matrix {
     --tri-w: clamp(3rem, 5vw, 5rem);
 
@@ -198,8 +165,6 @@
       display: flex;
       flex: none;
 
-      // Offset alternate rows by half a triangle so the down-triangles
-      // tessellate; the negative space forms the matching up-triangles.
       &:nth-child(even) {
         margin-left: calc(var(--tri-w) / -2);
       }
@@ -209,7 +174,7 @@
       flex: none;
       width: var(--tri-w);
       aspect-ratio: 1.1547;
-      clip-path: polygon(50% 100%, 0% 0%, 100% 0%); // point-down
+      clip-path: polygon(50% 100%, 0% 0%, 100% 0%);
       background-color: var(--ilo-color-brand-600);
       opacity: 0.05;
       animation: shimmer 12s ease-in-out infinite;
