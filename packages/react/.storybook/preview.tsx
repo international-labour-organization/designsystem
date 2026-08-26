@@ -33,7 +33,7 @@ const preview: Preview = {
         order: [
           "ILO Design System for React",
           "Getting started",
-          ["Introduction", "Installation", "Changelog"],
+          ["Introduction", "Installation", "Support", "Changelog"],
           "Usage",
           ["Layouts", "Theming", "Typography", "Icons"],
           "Components",
@@ -42,7 +42,13 @@ const preview: Preview = {
           "Brand",
           ["Logos"],
           "Design System",
-          ["Resources", "React examples", "Drupal examples"],
+          [
+            "Homepage",
+            "Figma",
+            "Drupal (Twig) Components",
+            "React examples",
+            "Drupal examples",
+          ],
         ],
         locales: "en-US",
       },
