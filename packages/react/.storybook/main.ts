@@ -27,6 +27,7 @@ const config: StorybookConfig = {
         configureJSX: true,
       },
     },
+    getAbsolutePath("@storybook/addon-mcp"),
   ],
   framework: {
     name: getAbsolutePath("@storybook/react-vite"),
