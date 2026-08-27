@@ -1,4 +1,4 @@
-import { StoryFn, Meta } from "@storybook/react";
+import { StoryFn, Meta } from "@storybook/react-vite";
 import {
   Title,
   Description,
@@ -6,7 +6,7 @@ import {
   ArgTypes,
   Stories,
   Subheading,
-} from "@storybook/addon-docs";
+} from "@storybook/addon-docs/blocks";
 import { Image } from "../../components/Image";
 import { ImageProps } from "../../components/Image/Image.props";
 import imageArgs from "../../components/Image/Image.args";

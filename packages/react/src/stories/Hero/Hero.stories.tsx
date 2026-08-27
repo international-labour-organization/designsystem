@@ -1,4 +1,4 @@
-import { StoryObj, Meta } from "@storybook/react";
+import { StoryObj, Meta } from "@storybook/react-vite";
 import { Hero, HeroProps } from "../../components/Hero";
 import { HeroCardProps } from "../../components/HeroCard";
 import { ThemeTypes } from "../../types";

@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react-vite";
 import { Dropdown, Fieldset } from "../../components";
 
 import {
@@ -8,7 +8,7 @@ import {
   Primary,
   Stories,
   Title,
-} from "@storybook/blocks";
+} from "@storybook/addon-docs/blocks";
 import { TextInput } from "../../components/TextInput";
 
 const FieldsetMeta: Meta<typeof Fieldset> = {

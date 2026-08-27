@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react-vite";
 import {
   Title,
   Subheading,
@@ -6,7 +6,7 @@ import {
   Primary,
   ArgTypes,
   Stories,
-} from "@storybook/addon-docs";
+} from "@storybook/addon-docs/blocks";
 import { ReadMore } from "../../components/ReadMore";
 import { ReadMoreProps } from "../../components/ReadMore/ReadMore.props";
 import readMoreArgs from "../../components/ReadMore/ReadMore.args";

@@ -1,5 +1,10 @@
-import { Meta, StoryFn } from "@storybook/react";
-import { Title, Primary, Controls, AnchorMdx } from "@storybook/blocks";
+import { Meta, StoryFn } from "@storybook/react-vite";
+import {
+  Title,
+  Primary,
+  Controls,
+  AnchorMdx,
+} from "@storybook/addon-docs/blocks";
 import { Icon, IconProps } from "../../components/Icon";
 import * as icons from "@ilo-org/icons-react/next";
 

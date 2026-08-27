@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react-vite";
 import { Textarea, TextareaArgs } from "../../components/Textarea";
 import {
   ArgTypes,
@@ -7,7 +7,7 @@ import {
   Stories,
   Subheading,
   Title,
-} from "@storybook/blocks";
+} from "@storybook/addon-docs/blocks";
 import { labelledFormFieldArgTypes } from "../../types/forms.args";
 
 const TextareaMeta: Meta<typeof Textarea> = {

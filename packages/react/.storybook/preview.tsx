@@ -1,17 +1,23 @@
 import { GlobalProvider } from "../src/components/GlobalProvider";
-import { Preview } from "@storybook/react";
-import { SyntaxHighlighter } from "@storybook/components";
+import { Preview } from "@storybook/react-vite";
+import { SyntaxHighlighter } from "storybook/internal/components";
 import scss from "react-syntax-highlighter/dist/esm/languages/prism/scss";
 import "./styles.scss";
 import React from "react";
 
-// Storybook's docs highlighter only registers a handful of languages out of
-// the box; scss is not one of them, so the ```scss fences in the MDX docs
-// render as plain text without this.
 SyntaxHighlighter.registerLanguage("scss", scss);
 
 const preview: Preview = {
+  globalTypes: {
+    textDirection: {
+      description: "Text direction of the preview",
+    },
+  },
   decorators: [
+    (Story, context) => {
+      context.canvasElement.dir = context.globals.textDirection ?? "ltr";
+      return <Story />;
+    },
     (Story) => (
       <GlobalProvider prefix="ilo">
         <Story />
@@ -54,10 +60,12 @@ const preview: Preview = {
       },
     },
     backgrounds: {
-      values: [
-        { name: "light", value: "white" },
-        { name: "dark", value: "rgba(35, 0, 80, 1)" }, // --ilo-color-brand-800
-      ],
+      options: {
+        light: { name: "light", value: "white" },
+
+        // --ilo-color-brand-800
+        dark: { name: "dark", value: "rgba(35, 0, 80, 1)" },
+      },
     },
     previewTabs: {
       "storybook/docs/panel": { index: -1 },

@@ -1,12 +1,12 @@
 import { useState } from "react";
-import { Meta, StoryObj } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react-vite";
 import {
   Title,
   Description,
   Primary,
   ArgTypes,
   Stories,
-} from "@storybook/blocks";
+} from "@storybook/addon-docs/blocks";
 import { SearchField } from "../../components/SearchField";
 import SearchFieldArgs from "../../components/SearchField/SearchField.args";
 

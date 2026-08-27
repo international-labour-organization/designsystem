@@ -1,5 +1,5 @@
 import { useState, useRef } from "react";
-import { Meta, StoryObj } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react-vite";
 import Logo from "../../components/Logo/Logo";
 // Import Design System components
 import TextInput from "../../components/TextInput/TextInput";
