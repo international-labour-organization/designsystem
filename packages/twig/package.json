@@ -5,6 +5,11 @@
   "files": [
     "dist/**/*"
   ],
+  "exports": {
+    "./styles/*": "./dist/styles/*",
+    "./styles/scss/helpers": "./dist/styles/scss/_helpers.scss",
+    "./*": "./*"
+  },
   "license": "Apache-2.0",
   "description": "Twig components for the ILO's Design System",
   "publishConfig": {
@@ -45,8 +50,9 @@
     }
   ],
   "scripts": {
-    "build:lib": "rollup -c",
+    "build:lib": "rollup -c && pnpm check:exports",
     "build:docs": "storybook build -o ./storybook-static",
+    "check:exports": "node scripts/check-exports.mjs",
     "storybook": "storybook dev -p 6006",
     "start:theme": "docker compose up -d",
     "cr:theme": "docker exec twig-backend-1 drush cache-rebuild",
@@ -61,6 +67,7 @@
     "@etchteam/storybook-addon-github-link": "^1.0.1",
     "@ilo-org/eslint-config": "workspace:*",
     "@ilo-org/react": "workspace:*",
+    "@ilo-org/styles": "workspace:*",
     "@modyfi/vite-plugin-yaml": "^1.1.0",
     "@rollup/plugin-commonjs": "^23.0.2",
     "@rollup/plugin-node-resolve": "^15.0.1",
@@ -95,7 +102,6 @@
     "@ilo-org/fonts": "workspace:*",
     "@ilo-org/icons": "workspace:*",
     "@ilo-org/maestro": "workspace:*",
-    "@ilo-org/styles": "workspace:*",
     "@popperjs/core": "^2.11.8",
     "cypress": "^14.3.2",
     "embla-carousel": "^8.6.0",
