@@ -72,8 +72,10 @@
 // Encode color strings
 //
 // Useful for using color variables with inline CSS SVGs
+// @deprecated - will be removed in future versions
 // =========================================
 @function colortodataurlicon($name, $color) {
+  @warn "The function colortodataurlicon is deprecated and will be removed in future versions.";
   $icon: map-get($icons, $name);
   $fill: "currentColor";
   $output: str-replace($icon, $fill, $color);
