@@ -1,6 +1,7 @@
-/**
-  * Breakpoints are defined in scss because they can't be referenced as a css variables
-  */
+// Breakpoints are defined in scss because they can't be referenced as css
+// variables. This file is part of the helpers closure, which must not emit css
+// into consumer stylesheets.
+
 $breakpoints-foundation: (
   xs: 320px,
   sm: 414px,

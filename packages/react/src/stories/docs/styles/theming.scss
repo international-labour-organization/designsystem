@@ -1,0 +1,16 @@
+.theming-docs {
+  &--swatch {
+    display: inline-block;
+    width: 3.5rem;
+    height: 2rem;
+    border-radius: var(--ilo-border-radius);
+    border: 1px solid var(--ilo-color-neutrals-200);
+    vertical-align: middle;
+  }
+
+  &--swatch-cell {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+}

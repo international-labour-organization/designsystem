@@ -326,7 +326,7 @@ const LogoGenerator = () => {
 };
 
 const meta: Meta = {
-  title: "Utilities/Brand",
+  title: "Brand/Logos",
   component: LogoGenerator,
   parameters: {
     layout: "fullscreen",

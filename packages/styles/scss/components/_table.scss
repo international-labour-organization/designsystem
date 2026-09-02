@@ -60,12 +60,8 @@
         pointer-events: auto;
         position: relative;
 
+        &:before,
         &:after {
-          background-color: var(--ilo-color-light-container-bg-disabled);
-          background-image: url("#{colortodataurlicon('chevron_down', rgba(35, 0, 80, 1))}");
-          background-position: center center;
-          background-repeat: no-repeat;
-          background-size: 75%;
           content: "";
           display: block;
           height: px-to-rem(24px);
@@ -76,6 +72,19 @@
           transform: translateY(-50%);
         }
 
+        &:before {
+          background-color: var(--ilo-color-light-container-bg-disabled);
+        }
+
+        &:after {
+          @include icon(
+            "chevron_down",
+            var(--ilo-color-light-icon-brand),
+            75%,
+            center center
+          );
+        }
+
         &:hover {
           background-color: var(--ilo-color-light-container-bg-subtle);
           border-bottom: px-to-rem(2px) solid
@@ -83,9 +92,17 @@
           color: var(--ilo-color-light-action-hover);
           cursor: pointer;
 
-          &:after {
+          &:before {
             background-color: var(--ilo-color-light-container-bg-subtle);
-            background-image: url("#{colortodataurlicon('chevron_down', rgba(190, 220, 250, 1))}");
+          }
+
+          &:after {
+            @include icon(
+              "chevron_down",
+              var(--ilo-color-dark-icon-brand),
+              75%,
+              center center
+            );
           }
         }
 

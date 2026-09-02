@@ -40,6 +40,7 @@
     "format": "prettier --check . --ignore-path ../../.prettierignore",
     "format:fix": "prettier --write . --ignore-path ../../.prettierignore",
     "lint": "eslint",
+    "test": "vitest",
     "lint:fix": "eslint --fix"
   },
   "license": "Apache-2.0",
@@ -56,6 +57,7 @@
     "gulp-rename": "^2.0.0",
     "gulp-sass": "^5.1.0",
     "gulp-sourcemaps": "^3.0.0",
-    "sass": "^1.62.1"
+    "sass": "^1.62.1",
+    "vitest": "^2.0.5"
   }
 }
