@@ -1,6 +1,6 @@
 {
   "name": "@ilo-org/react",
-  "version": "1.6.0",
+  "version": "1.7.0",
   "description": "React components for the ILO's Design System",
   "keywords": [
     "ui_patterns",
@@ -53,9 +53,10 @@
   "license": "Apache-2.0",
   "types": "./lib/types/index.d.ts",
   "scripts": {
-    "build:lib": "tsc --noEmit --project tsconfig.build.json && vite build && node scripts/check-exports.mjs",
+    "build:lib": "tsc --noEmit --project tsconfig.build.json && vite build && pnpm check:exports",
     "build:docs": "storybook build",
     "check": "tsc --noEmit --p tsconfig.build.json",
+    "check:exports": "node scripts/check-exports.mjs",
     "dev:lib": "vite build --watch",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",

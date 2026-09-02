@@ -25,12 +25,8 @@
   }
 
   &--menu {
-    @include dataurlicon("burger", rgba(255, 255, 255, 1));
     align-self: center;
     background-color: transparent;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 32px;
     border: none;
     cursor: pointer;
     height: 32px;
@@ -40,13 +36,26 @@
     transition: all 150ms ease-out;
     width: 32px;
 
+    &::before {
+      @include icon(
+        "burger",
+        var(--ilo-color-light-icon-inverse),
+        32px,
+        center
+      );
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
+
     &:hover,
     &:focus {
-      @include dataurlicon("burger", rgba(30, 45, 190, 1));
       background-color: var(--ilo-color-light-container-bg-subtle);
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: 32px;
+
+      &::before {
+        background-color: var(--ilo-color-light-action-hover);
+      }
     }
 
     @include breakpoint("lg") {
@@ -54,11 +63,7 @@
     }
 
     &--close {
-      @include dataurlicon("close", rgba(35, 0, 80, 1));
       background-color: var(--ilo-color-light-container-bg-disabled);
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: 32px;
       border: none;
       cursor: pointer;
       height: 32px;
@@ -68,13 +73,21 @@
       transition: all 150ms ease-out;
       width: 32px;
 
+      &::before {
+        @include icon("close", var(--ilo-color-light-icon-brand), 32px, center);
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+      }
+
       &:hover,
       &:focus {
-        @include dataurlicon("close", rgba(30, 45, 190, 1));
         background-color: var(--ilo-color-light-container-bg-subtle);
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: 32px;
+
+        &::before {
+          background-color: var(--ilo-color-light-action-hover);
+        }
       }
 
       @include breakpoint("lg") {
@@ -130,13 +143,9 @@
         display: none;
 
         &--link {
-          @include dataurlicon("chevron_left", rgba(255, 255, 255, 1));
           @include typography("body-small");
           appearance: none;
           background-color: inherit;
-          background-position: px-to-rem(12px) 50%;
-          background-repeat: no-repeat;
-          background-size: px-to-rem(24px);
           border: none;
           color: var(--ilo-color-light-text-inverse);
           cursor: pointer;
@@ -148,24 +157,51 @@
           display: flex;
           justify-content: center;
           align-items: center;
+          position: relative;
+
+          &::before {
+            @include icon(
+              "chevron_left",
+              var(--ilo-color-light-icon-inverse),
+              px-to-rem(24px),
+              px-to-rem(12px) 50%
+            );
+            content: "";
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+          }
 
           &:focus,
           &:hover {
-            @include dataurlicon("chevron_left", rgba(30, 45, 190, 1));
             background-color: var(--ilo-color-light-container-bg-subtle);
             color: var(--ilo-color-light-action-hover);
+
+            &::before {
+              background-color: var(--ilo-color-light-action-hover);
+            }
           }
 
           [dir="rtl"] {
-            @include dataurlicon("chevron_right", rgba(255, 255, 255, 1));
-            background-position: calc(100% - 16px) 50%;
             padding: 16px 36px 16px 16px;
+
+            &::before {
+              @include icon(
+                "chevron_right",
+                var(--ilo-color-light-icon-inverse),
+                px-to-rem(24px),
+                calc(100% - 16px) 50%
+              );
+            }
 
             &:focus,
             &:hover {
-              @include dataurlicon("chevron_right", rgba(30, 45, 190, 1));
               background-color: var(--ilo-color-light-container-bg-subtle);
               color: var(--ilo-color-light-action-hover);
+
+              &::before {
+                background-color: var(--ilo-color-light-action-hover);
+              }
             }
           }
 
@@ -340,15 +376,10 @@
   }
 
   &--trigger {
-    @include dataurlicon("chevron_right", rgba(35, 0, 80, 1));
     @include typography("highlight-medium");
 
     appearance: none;
     background-color: var(--ilo-color-light-container-bg-default);
-    background-position: calc(100% - 16px) 55%;
-    background-repeat: no-repeat;
-    background-size: 24px;
-    background-position-y: center;
     border: none;
     color: var(--ilo-color-light-text-brand);
     cursor: pointer;
@@ -358,38 +389,59 @@
     text-align: left;
     transition: all 150ms ease-out;
     width: 100%;
+    position: relative;
+
+    &::before {
+      @include icon(
+        "chevron_right",
+        var(--ilo-color-light-icon-brand),
+        24px,
+        calc(100% - 16px) center
+      );
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
 
     &:focus,
     &:hover {
-      @include dataurlicon("chevron_right", rgba(30, 45, 190, 1));
       background-color: var(--ilo-color-light-container-bg-subtle);
       color: var(--ilo-color-light-action-hover);
+
+      &::before {
+        background-color: var(--ilo-color-light-action-hover);
+      }
     }
 
     [dir="rtl"] & {
-      @include dataurlicon("chevron_left", rgba(35, 0, 80, 1));
       background-color: var(--ilo-color-light-container-bg-default);
-      background-position: 16px 55%;
-      background-repeat: no-repeat;
-      background-size: 24px;
       text-align: right;
+
+      &::before {
+        @include icon(
+          "chevron_left",
+          var(--ilo-color-light-icon-brand),
+          24px,
+          16px 55%
+        );
+      }
 
       &:focus,
       &:hover {
-        @include dataurlicon("chevron_left", rgba(30, 45, 190, 1));
         background-color: var(--ilo-color-light-container-bg-subtle);
         color: var(--ilo-color-light-action-hover);
+
+        &::before {
+          background-color: var(--ilo-color-light-action-hover);
+        }
       }
     }
 
     @include breakpoint("lg") {
-      @include dataurlicon("plus", rgba(255, 255, 255, 1));
       @include typography("highlight-medium-bold");
 
       background-color: var(--ilo-color-light-container-bg-brand);
-      background-position: 90% 55%;
-      background-repeat: no-repeat;
-      background-size: 20px;
       border: 1.5px solid rgba(184, 196, 204, 0.5);
       border-radius: 2px;
       color: var(--ilo-color-light-text-inverse);
@@ -401,27 +453,47 @@
       transition: all 150ms ease-out;
       width: auto;
 
+      &::before {
+        @include icon(
+          "plus",
+          var(--ilo-color-light-icon-inverse),
+          20px,
+          90% 55%
+        );
+      }
+
       &:focus,
       &:hover {
-        @include dataurlicon("plus", rgba(30, 45, 190, 1));
         background-color: var(--ilo-color-light-container-bg-default);
         border-color: var(--ilo-color-light-border-inverse);
         color: var(--ilo-color-light-action-hover);
+
+        &::before {
+          background-color: var(--ilo-color-light-action-hover);
+        }
       }
 
       [dir="rtl"] & {
-        @include dataurlicon("plus", rgba(255, 255, 255, 1));
         background-color: var(--ilo-color-light-container-bg-brand);
-        background-repeat: no-repeat;
-        background-size: 20px;
-        background-position: 10% 55%;
         padding: 7px 15px 5px spacing(8);
+
+        &::before {
+          @include icon(
+            "plus",
+            var(--ilo-color-light-icon-inverse),
+            20px,
+            10% 55%
+          );
+        }
 
         &:focus,
         &:hover {
-          @include dataurlicon("plus", rgba(30, 45, 190, 1));
           background-color: var(--ilo-color-light-container-bg-default);
           color: var(--ilo-color-light-action-hover);
+
+          &::before {
+            background-color: var(--ilo-color-light-action-hover);
+          }
         }
       }
     }
@@ -522,15 +594,10 @@
   }
 
   &--language--switcher--button {
-    @include dataurlicon("globe", rgba(35, 0, 80, 1));
     @include typography("highlight-medium");
 
     appearance: none;
     background-color: var(--ilo-color-light-container-bg-default);
-    background-position: calc(100% - 16px) 55%;
-    background-repeat: no-repeat;
-    background-size: 24px;
-    background-position-y: center;
     border: none;
     color: var(--ilo-color-light-text-brand);
     cursor: pointer;
@@ -541,17 +608,38 @@
     text-align: left;
     transition: all 150ms ease-out;
     width: 100%;
+    position: relative;
+
+    &::before {
+      @include icon(
+        "globe",
+        var(--ilo-color-light-icon-brand),
+        24px,
+        calc(100% - 16px) center
+      );
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
 
     &:focus,
     &:hover {
-      @include dataurlicon("globe", rgba(30, 45, 190, 1));
       background-color: var(--ilo-color-light-container-bg-subtle);
       color: var(--ilo-color-light-action-hover);
+
+      &::before {
+        background-color: var(--ilo-color-light-action-hover);
+      }
     }
 
     [dir="rtl"] & {
-      background-position: 16px 55%;
       text-align: right;
+
+      &::before {
+        mask-position: 16px 55%;
+        -webkit-mask-position: 16px 55%;
+      }
     }
   }
 
@@ -615,12 +703,8 @@
 
   &--button {
     @include typography("body-xsmall");
-    @include dataurlicon("globe", rgba(255, 255, 255, 1));
     appearance: none;
     background-color: var(--ilo-color-light-container-bg-brand);
-    background-repeat: no-repeat;
-    background-position: px-to-rem(12px) center;
-    background-size: px-to-rem(24px);
     border: none;
     color: var(--ilo-color-light-text-inverse);
     cursor: pointer;
@@ -629,17 +713,38 @@
     font-weight: 500;
     padding: spacing(2) 30px spacing(2) spacing(10);
     transition: all 150ms ease-out;
+    position: relative;
+
+    &::before {
+      @include icon(
+        "globe",
+        var(--ilo-color-light-icon-inverse),
+        px-to-rem(24px),
+        px-to-rem(12px) center
+      );
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
 
     &:hover,
     &:focus {
-      @include dataurlicon("globe", rgba(30, 45, 190, 1));
       background-color: var(--ilo-color-light-container-bg-subtle);
       color: var(--ilo-color-light-action-hover);
+
+      &::before {
+        background-color: var(--ilo-color-light-action-hover);
+      }
     }
 
     [dir="rtl"] & {
       padding: spacing(2) spacing(10) spacing(2) 30px;
-      background-position: calc(100% - px-to-rem(12px)) center;
+
+      &::before {
+        mask-position: calc(100% - #{px-to-rem(12px)}) center;
+        -webkit-mask-position: calc(100% - #{px-to-rem(12px)}) center;
+      }
     }
   }
 
@@ -768,10 +873,12 @@
     transition: all 150ms ease-out;
 
     &::before {
-      @include dataurlicon("chevron_left", rgba(35, 0, 80, 1));
-      background-position: 10% center;
-      background-repeat: no-repeat;
-      background-size: 24px;
+      @include icon(
+        "chevron_left",
+        var(--ilo-color-light-icon-brand),
+        24px,
+        10% center
+      );
       content: "";
       display: block;
       height: 24px;
@@ -786,10 +893,12 @@
       padding: spacing(5) spacing(8) spacing(4) spacing(4);
 
       &::before {
-        @include dataurlicon("chevron_right", rgba(35, 0, 80, 1));
-        background-position: 10% center;
-        background-repeat: no-repeat;
-        background-size: 24px;
+        @include icon(
+          "chevron_right",
+          var(--ilo-color-light-icon-brand),
+          24px,
+          10% center
+        );
         left: auto;
         right: 0;
       }
@@ -801,18 +910,12 @@
       color: var(--ilo-color-light-action-hover);
 
       &::before {
-        @include dataurlicon("chevron_left", rgba(30, 45, 190, 1));
-        background-position: 10% center;
-        background-repeat: no-repeat;
-        background-size: 24px;
+        background-color: var(--ilo-color-light-action-hover);
       }
 
       [dir="rtl"] & {
         &::before {
-          @include dataurlicon("chevron_right", rgba(30, 45, 190, 1));
-          background-position: 10% center;
-          background-repeat: no-repeat;
-          background-size: 24px;
+          background-color: var(--ilo-color-light-action-hover);
         }
       }
     }
@@ -897,12 +1000,8 @@
   }
 
   &--button {
-    @include dataurlicon("search", rgba(255, 255, 255, 1));
     appearance: none;
     background-color: transparent;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 32px 32px;
     border: none;
     border-radius: 0;
     cursor: pointer;
@@ -911,23 +1010,47 @@
     text-indent: -999%;
     transition: all 150ms ease-out;
 
+    &::before {
+      @include icon(
+        "search",
+        var(--ilo-color-light-icon-inverse),
+        32px 32px,
+        center
+      );
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
+
     &:hover,
     &:focus {
-      @include dataurlicon("search", rgba(30, 45, 190, 1));
       background-color: var(--ilo-color-light-container-bg-subtle);
+
+      &::before {
+        background-color: var(--ilo-color-light-action-hover);
+      }
     }
 
     .ilo--search--open & {
-      @include dataurlicon("close", rgba(35, 0, 80, 1));
       background-color: var(--ilo-color-light-container-bg-default);
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: 32px 32px;
+
+      &::before {
+        @include icon(
+          "close",
+          var(--ilo-color-light-icon-brand),
+          32px 32px,
+          center
+        );
+      }
 
       &:hover,
       &:focus {
-        @include dataurlicon("close", rgba(30, 45, 190, 1));
         background-color: var(--ilo-color-light-container-bg-subtle);
+
+        &::before {
+          background-color: var(--ilo-color-light-action-hover);
+        }
       }
     }
   }

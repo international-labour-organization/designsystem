@@ -1,6 +1,6 @@
 {
   "name": "@ilo-org/twig",
-  "version": "1.15.0",
+  "version": "1.16.0",
   "type": "module",
   "files": [
     "dist/**/*"
@@ -50,8 +50,9 @@
     }
   ],
   "scripts": {
-    "build:lib": "rollup -c && node scripts/check-exports.mjs",
+    "build:lib": "rollup -c && pnpm check:exports",
     "build:docs": "storybook build -o ./storybook-static",
+    "check:exports": "node scripts/check-exports.mjs",
     "storybook": "storybook dev -p 6006",
     "start:theme": "docker compose up -d",
     "cr:theme": "docker exec twig-backend-1 drush cache-rebuild",
