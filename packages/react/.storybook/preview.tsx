@@ -3,7 +3,7 @@ import { Preview } from "@storybook/react-vite";
 import { SyntaxHighlighter } from "storybook/internal/components";
 import scss from "react-syntax-highlighter/dist/esm/languages/prism/scss";
 import "./styles.scss";
-import React from "react";
+import React, { useEffect } from "react";
 
 SyntaxHighlighter.registerLanguage("scss", scss);
 
@@ -15,7 +15,15 @@ const preview: Preview = {
   },
   decorators: [
     (Story, context) => {
-      context.canvasElement.dir = context.globals.textDirection ?? "ltr";
+      const direction = context.globals.textDirection ?? "ltr";
+      context.canvasElement.dir = direction;
+
+      // Portalled components render into document.body, outside the canvas
+      // so the direction also has to be set on the preview document root.
+      useEffect(() => {
+        document.documentElement.dir = direction;
+      }, [direction]);
+
       return <Story />;
     },
     (Story) => (
