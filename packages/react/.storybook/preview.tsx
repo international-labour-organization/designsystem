@@ -1,7 +1,14 @@
 import { GlobalProvider } from "../src/components/GlobalProvider";
 import { Preview } from "@storybook/react";
+import { SyntaxHighlighter } from "@storybook/components";
+import scss from "react-syntax-highlighter/dist/esm/languages/prism/scss";
 import "./styles.scss";
 import React from "react";
+
+// Storybook's docs highlighter only registers a handful of languages out of
+// the box; scss is not one of them, so the ```scss fences in the MDX docs
+// render as plain text without this.
+SyntaxHighlighter.registerLanguage("scss", scss);
 
 const preview: Preview = {
   decorators: [
@@ -25,10 +32,23 @@ const preview: Preview = {
         method: "alphabetical",
         order: [
           "ILO Design System for React",
-          "Getting Started",
-          ["Introduction"],
-          "Utilities",
+          "Getting started",
+          ["Introduction", "Installation", "Support", "Changelog"],
+          "Usage",
+          ["Layouts", "Theming", "Typography", "Icons"],
           "Components",
+          "Utilities",
+          ["React Hooks", "SASS Helpers"],
+          "Brand",
+          ["Logos"],
+          "Design System",
+          [
+            "Homepage",
+            "Figma",
+            "Drupal (Twig) Components",
+            "React examples",
+            "Drupal examples",
+          ],
         ],
         locales: "en-US",
       },

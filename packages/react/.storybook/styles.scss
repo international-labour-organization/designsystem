@@ -1,3 +1,4 @@
+@use "@ilo-org/styles/scss/mixins" as ilo;
 @import "@ilo-org/styles/scss/monorepo";
 
 .sbdocs {
@@ -9,6 +10,106 @@
   h1.sbdocs-title + p {
     font-family: var(--ilo-fonts-copy);
     font-size: 16px;
+
+    // Same issue as the .ilo--richtext anchor fix below: links rendered
+    // through Storybook's anchor component (e.g. AnchorMdx) set the
+    // Storybook UI font and size on the element itself.
+    a {
+      font: inherit;
+    }
+  }
+
+  // Cancel the pre margins from _richtext.scss, which land inside
+  // Storybook's bordered code block and read as giant padding.
+  pre {
+    margin-block: 0;
+  }
+
+  // Inline code only — code blocks are themed below via .docblock-source.
+  :not(pre) > code {
+    padding-inline: 0.25rem;
+    padding-block: 0.5rem;
+    font-weight: 700;
+    font-size: 0.8em;
+    color: var(--ilo-color-brand-800);
+    background-color: var(--ilo-color-brand-100);
+    border-color: var(--ilo-color-brand-200);
+  }
+
+  /**
+    * Code blocks: dark background with Storybook's standard dark-theme
+    * syntax palette.
+    */
+  .docblock-source {
+    background-color: var(--ilo-color-neutrals-black);
+    border-color: var(--ilo-color-neutrals-black);
+    color: #ededed;
+
+    .prismjs {
+      background-color: var(--ilo-color-neutrals-black);
+
+      .token {
+        &.punctuation,
+        &.operator,
+        &.function {
+          color: #ededed;
+        }
+
+        &.comment,
+        &.prolog,
+        &.doctype,
+        &.cdata {
+          color: #7c7c7c;
+        }
+
+        &.keyword,
+        &.atrule,
+        &.attr-value {
+          color: #b474dd;
+        }
+
+        &.string {
+          color: #92c379;
+        }
+
+        &.number,
+        &.boolean,
+        &.constant,
+        &.symbol,
+        &.variable,
+        &.inserted,
+        &.url {
+          color: #c6c5fe;
+        }
+
+        &.class-name {
+          color: #ffffb6;
+        }
+
+        &.tag,
+        &.selector {
+          color: #a8ff60;
+        }
+
+        &.property,
+        &.attr-name,
+        &.regex,
+        &.entity {
+          color: #96cbfe;
+        }
+      }
+
+      .language-json .token {
+        &.boolean,
+        &.number {
+          color: #b474dd;
+        }
+
+        &.property {
+          color: #ffffb6;
+        }
+      }
+    }
   }
 }
 
@@ -20,10 +121,67 @@ button[title="Reset zoom"]:hover {
   background-color: var(--ilo-color-brand-200);
 }
 
+// ".sbdocs ... :not(.docs-story *)" scopes this to the MDX docs prose: it
+// matches the docs pages' hand-written richtext wrappers but not story
+// previews (Storybook wraps those in .docs-story), so the RichText
+// component's own stories render untouched.
+.sbdocs .ilo--richtext:not(.docs-story *) a {
+  font-family: inherit;
+}
+
 a[class*="ilo--button"] {
   color: var(--ilo-color-brand-800);
 
   &:hover {
     color: var(--ilo-color-brand-600);
+  }
+}
+
+// Scoped to docs prose (see the anchor fix above): only the docs pages'
+// hand-written richtext wrappers, never the RichText component's stories.
+.sbdocs .ilo--richtext:not(.docs-story *) {
+  // Restore the component's own title treatment (_callout.scss:
+  // "highlight-medium" + bold): richtext's h5 rule repaints it as
+  // heading-4 with prose heading margins.
+  .ilo--callout--title {
+    @include ilo.typography("highlight-medium");
+    font-weight: 700;
+    margin: 0;
+  }
+
+  .ilo--callout--description {
+    font-size: var(--ilo-font-size-sm);
+    // Standalone, the description inherits the body line-height
+    // (_typography.scss); richtext's p rule overrides it with body-large's.
+    line-height: var(--ilo-line-height-base);
+  }
+
+  a[class*="ilo--button"] {
+    &,
+    &:visited,
+    &:hover,
+    &:active,
+    &:focus {
+      font-family: var(--ilo-fonts-display);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    &,
+    &:visited,
+    &:focus {
+      color: var(--ilo-color-light-text-brand);
+      background-color: var(--ilo-color-light-container-bg-default);
+    }
+
+    &:hover {
+      color: var(--ilo-color-light-text-brand);
+      background-color: var(--ilo-color-light-container-bg-subtle);
+    }
+
+    &:active {
+      color: var(--ilo-color-dark-text-brand);
+      background-color: var(--ilo-color-light-action-selected);
+    }
   }
 }

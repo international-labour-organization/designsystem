@@ -1,81 +1,73 @@
-import { Meta } from "@storybook/blocks";
+import { Meta, Unstyled } from "@storybook/blocks";
 
-<Meta title="Getting Started/Introduction" />
+<Meta title="Getting started/Introduction" />
 
-# Getting started
+<Unstyled>
+<div className="ilo--richtext ilo--richtext__theme__light">
 
-This website provides guidance and documentation for the ILO Design System using [React](https://reactjs.org). These docs are a work in progress so bear with us as we add and correct them.
+# ILO Design System React Components
 
-## Installation
+Welcome to the **ILO Design System React Component Library**—a comprehensive collection of reusable, accessible, and brand-compliant components designed to help developers build exceptional web applications that align with the [ILO's Visual Identity](https://brand.ilo.org).
 
-```bash
-$ npm i @ilo-org/react
-```
+Whether you're building a single-page application, a Next.js site, or any other React-powered project, this component library provides everything you need to create consistent, accessible, and visually cohesive digital experiences.
 
-The default styles ship with the package, so there is nothing else to install.
+## What's included
 
-## Peer dependencies
+This library offers a complete set of production-ready components, including:
 
-In order to use this component library, you will need to have `react` and `react-dom` installed as a dependency.
+- **Content components** for displaying text, images, videos, and other media
+- **Navigation components** for menus, breadcrumbs, and site structure
+- **Form components** for user input and data collection
+- **Interactive components** like accordions, modals, and tabs
+- **Layout components** for structuring your pages
+- **React hooks** like `useBreakpoint` for responsive behavior in your own code
+- **And much more**—all designed to work seamlessly together
 
-```bash
-$ npm i react react-dom
-```
+Each component is built with accessibility, performance, and maintainability in mind, ensuring your projects meet the highest standards of web development. The package is published as tree-shakeable ES modules, so your bundle only includes the components you actually use.
 
-## Usage
+## Getting started
 
-Components can be exported directly from the `@ilo-org/react` package.
+Getting started with the ILO Design System for React is straightforward:
 
-```typescript
-import { Button } from "@ilo-org/react";
-```
+- **[Installation](/docs/getting-started-installation--docs)** — Install the npm package, set up the styles and fonts, and start importing components.
 
-This is fine if you think you're going to use all or most of the components in the library. However, if you're only going to use a few or you want to take advantage of code splitting, then you can import them individually.
+If you're working with Drupal or another PHP framework instead, the same components are available as a [Twig library](https://twig.ui.ilo.org).
 
-```typescript
-import { Button } from "@ilo-org/react/Button";
-```
+## Brand tools
 
-## Styles
+Beyond components, this Storybook includes a **[Logo Generator](/story/brand-logos--logos)**—a utility for creating and downloading official ILO logos. Choose the language, color, and size, add an optional subbrand for programme or event branding, and export the result as SVG or PNG.
 
-Styles for the library should be imported at the top of your project.
+## Why choose the ILO Design System?
 
-```typescript
-import "@ilo-org/react/styles/index.css";
-```
+### Brand compliance
 
-Or, if you'd rather link to the stylesheet directly:
+Our components are meticulously crafted to be fully compliant with the ILO's Visual Identity guidelines. This means you can build applications with confidence, knowing that every element—from typography to color schemes, spacing to interactions—aligns perfectly with the ILO's brand standards. No more guessing about design decisions or worrying about brand consistency.
 
-```html
-<link
-  rel="stylesheet"
-  href="node_modules/@ilo-org/react/lib/styles/index.css"
-/>
-```
+### Accessibility first
 
-### Sass functions and mixins
+Accessibility isn't an afterthought—it's built into every component from the ground up. All components follow WCAG 2.1 guidelines and are designed to be usable by everyone, including users with disabilities. This commitment to accessibility ensures your applications are inclusive and reach the widest possible audience.
 
-If you write Sass, the design system's functions and mixins are available from a
-single entrypoint. It emits no CSS of its own, so it is safe to `@use` from every
-`.module.scss` without duplicating rules into your bundle.
+### Responsive and RTL-ready
 
-```scss
-@use "@ilo-org/react/styles/scss/helpers" as *;
+The modern web is diverse, and so are our components. Every component is fully responsive, working beautifully on everything from mobile phones to large desktop displays. Additionally, our components support right-to-left (RTL) layouts out of the box, making them perfect for multilingual sites serving languages like Arabic, Hebrew, and others.
 
-.thing {
-  padding: spacing(4);
-  max-width: px-to-rem(1296px);
+### Production-ready
 
-  @include breakpoint("md", true) {
-    display: none;
-  }
-}
-```
+These aren't prototype components—they're battle-tested, production-ready building blocks used across ILO's digital properties, including [ILO Live](https://live.ilo.org) and [The Future of Work Podcast](https://podcast.ilo.org). You're getting the same components that power real-world applications, ensuring reliability and performance.
+
+### Active support and maintenance
+
+The ILO Design System is actively maintained and supported by the ILO's Department of Communication. We're committed to providing long-term support, regular updates, bug fixes, and new features. When you use these components, you're not just getting code—you're getting a partnership in building better digital experiences.
+
+Have questions or need help? Feel free to open an issue on our [GitHub repository](https://github.com/international-labour-organization/designsystem/issues). You can also <a href="mailto:ilonews@ilo.org">contact us by email.</a> We're here to help you succeed.
 
 ## Contributing
 
 The ILO Design System is an open-source project. If you'd like to make a contribution, feel free to check out the [project](https://github.com/international-labour-organization/designsystem) on Github. Make sure to read the [Contribution Guidelines](https://github.com/international-labour-organization/designsystem/blob/develop/contributing.md) before making a pull request.
 
-## Issues and feature requests
+## Next steps
 
-Please feel free to open issues or make feature requests on our Github repo.
+Ready to dive in? Head over to the [installation guide](/docs/getting-started-installation--docs), explore the components in the sidebar, and start building something amazing. Whether you're creating a new project or enhancing an existing one, the ILO Design System has the tools you need to build applications that are beautiful, accessible, and aligned with the ILO's mission of advancing social and economic justice.
+
+</div>
+</Unstyled>

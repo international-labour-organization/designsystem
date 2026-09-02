@@ -1,0 +1,302 @@
+import { Meta, Unstyled } from "@storybook/blocks";
+import "./styles/docs-table.scss";
+
+<Meta title="Utilities/React Hooks" />
+
+<Unstyled>
+<div className="ilo--richtext ilo--richtext__theme__light">
+
+# Hooks
+
+Besides components, `@ilo-org/react` exports the React hooks the design system is built with. They are useful when you write your own components that need to stay in step with the system—matching its breakpoints, its class-name prefix, or its interaction patterns for dropdowns and dialogs.
+
+All of them are named exports from the package root:
+
+```tsx
+import {
+  useBreakpoint,
+  useFocusTrap,
+  useGlobalSettings,
+  useOutsideClick,
+  usePrevious,
+} from "@ilo-org/react";
+```
+
+## `useBreakpoint(defaultBreakpoint?)`
+
+Reports which of the design system's named breakpoints the viewport currently matches, and re-renders the component when that changes. It is a preconfigured wrapper around [use-breakpoint](https://github.com/iiroj/use-breakpoint), listening via `window.matchMedia` rather than a resize handler.
+
+```tsx
+const Toolbar = () => {
+  const { breakpoint } = useBreakpoint();
+
+  return breakpoint === "xs" || breakpoint === "sm" ? (
+    <CompactToolbar />
+  ) : (
+    <FullToolbar />
+  );
+};
+```
+
+The hook returns an object with three properties:
+
+<table className="docs-table">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <code>breakpoint</code>
+      </td>
+      <td>
+        The name of the current breakpoint: <code>"xs"</code>, <code>"sm"</code>
+        , <code>"md"</code>, <code>"lg"</code>, <code>"xl"</code>, or{" "}
+        <code>"xxl"</code>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>minWidth</code>
+      </td>
+      <td>The lower bound of the current breakpoint, in pixels</td>
+    </tr>
+    <tr>
+      <td>
+        <code>maxWidth</code>
+      </td>
+      <td>
+        The upper bound of the current breakpoint in pixels, or{" "}
+        <code>null</code> for the largest breakpoint
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+The pixel values are read from the `--ilo-breakpoint-*` custom properties that the design system stylesheet defines, so JavaScript and CSS always agree on where a layout changes—these are the same breakpoints the Sass [`breakpoint()` mixin](/docs/utilities-sass-helpers--docs) generates media queries for. Make sure the stylesheet is loaded as described in [Installation](/docs/getting-started-installation--docs); without it the hook falls back to a built-in set of defaults that may not match your CSS.
+
+On the server, and on the client before the first `matchMedia` measurement, every property is `null`. If your markup must not flicker on hydration, pass a breakpoint name as the argument and it is reported until the real measurement arrives:
+
+```tsx
+const { breakpoint } = useBreakpoint("md");
+```
+
+Reach for CSS media queries first—they are cheaper and work without JavaScript. Use the hook when the _structure_ of the rendered output changes across breakpoints, not just its styling.
+
+## `useFocusTrap(options)`
+
+Traps keyboard focus inside a container while it is active—the behavior a modal dialog or a full-screen menu needs to be accessible. While trapped, <kbd>Tab</kbd> and <kbd>Shift</kbd>+<kbd>Tab</kbd> cycle through the focusable elements inside the container instead of escaping it, and <kbd>Escape</kbd> invokes a callback so you can close the dialog.
+
+The hook returns a **ref callback**. Attach it to the element that should contain focus:
+
+```tsx
+const Dialog = ({ isOpen, onClose, children }) => {
+  const trapRef = useFocusTrap<HTMLDivElement>({
+    isActive: isOpen,
+    onEscape: onClose,
+  });
+
+  if (!isOpen) return null;
+
+  return (
+    <div role="dialog" aria-modal="true" ref={trapRef}>
+      {children}
+      <button onClick={onClose}>Close</button>
+    </div>
+  );
+};
+```
+
+The options:
+
+<table className="docs-table">
+  <thead>
+    <tr>
+      <th>Option</th>
+      <th>Default</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <code>isActive</code>
+      </td>
+      <td>—</td>
+      <td>
+        Required. Whether the trap is engaged. Drive this from the same state
+        that shows and hides the container.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>onEscape</code>
+      </td>
+      <td>—</td>
+      <td>
+        Called when the user presses <kbd>Escape</kbd> inside the trap.
+        Typically the same handler that closes the dialog.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>onReturnFocus</code>
+      </td>
+      <td>—</td>
+      <td>Called after the trap deactivates and focus has been handed back.</td>
+    </tr>
+    <tr>
+      <td>
+        <code>autoFocus</code>
+      </td>
+      <td>
+        <code>true</code>
+      </td>
+      <td>
+        Move focus to the first focusable element in the container when the trap
+        activates.
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>restoreFocus</code>
+      </td>
+      <td>
+        <code>true</code>
+      </td>
+      <td>
+        Remember the element that was focused before the trap activated and
+        focus it again when the trap deactivates—usually the button that opened
+        the dialog.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+The trap considers links, buttons, form fields, and elements with a non-negative `tabindex` focusable, skipping anything disabled or hidden. It recomputes that list on every <kbd>Tab</kbd> press, so content that appears or disappears while the trap is open is handled correctly.
+
+## `useGlobalSettings()`
+
+Returns the design system's global settings from the nearest `GlobalProvider`—the context provider component the package exports for configuring the system app-wide. There is currently one setting:
+
+<table className="docs-table">
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Default</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <code>prefix</code>
+      </td>
+      <td>
+        <code>"ilo"</code>
+      </td>
+      <td>The prefix used in every design system CSS class name</td>
+    </tr>
+  </tbody>
+</table>
+
+Every component builds its class names from this value (`ilo--button`, `ilo--card`, …). If you write custom components that reuse design system classes, read the prefix from the hook instead of hard-coding it, and they will follow along if an app remaps it through `GlobalProvider`:
+
+```tsx
+const Callout = ({ children }) => {
+  const { prefix } = useGlobalSettings();
+
+  return <aside className={`${prefix}--callout`}>{children}</aside>;
+};
+```
+
+Outside a `GlobalProvider` the hook returns the default settings, so it is safe to call anywhere.
+
+## `useOutsideClick(ref, onClickOutside, config)`
+
+Calls a handler when the user presses the mouse down outside a given element—the standard way to dismiss a popover, dropdown, or menu when the user clicks elsewhere on the page.
+
+<table className="docs-table">
+  <thead>
+    <tr>
+      <th>Argument</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <code>ref</code>
+      </td>
+      <td>
+        A ref to the element that counts as "inside"—clicks within it never
+        trigger the handler
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>onClickOutside</code>
+      </td>
+      <td>Called when a click lands outside the element and all exceptions</td>
+    </tr>
+    <tr>
+      <td>
+        <code>config.exceptions</code>
+      </td>
+      <td>
+        Additional elements (refs or DOM elements) whose clicks should{" "}
+        <em>not</em> count as outside. Required: the handler only fires when at
+        least one exception is provided.
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+The element that toggles your popover open belongs in `exceptions`. If it isn't there, an "outside" click on the toggle closes the popover an instant before the toggle's own click handler reopens it:
+
+```tsx
+const FilterMenu = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const menuRef = useRef<HTMLDivElement>(null);
+  const buttonRef = useRef<HTMLButtonElement>(null);
+
+  useOutsideClick(menuRef, () => setIsOpen(false), {
+    exceptions: [buttonRef],
+  });
+
+  return (
+    <>
+      <button ref={buttonRef} onClick={() => setIsOpen((open) => !open)}>
+        Filters
+      </button>
+      {isOpen && <div ref={menuRef}>{/* ... */}</div>}
+    </>
+  );
+};
+```
+
+The hook listens for `mousedown` on the document, so the handler fires as soon as the press starts, before the corresponding `click` event.
+
+## `usePrevious(value)`
+
+Returns the value the argument had on the previous render, or `undefined` on the first render. Useful for reacting to a _transition_ rather than a state:
+
+```tsx
+const Pagination = ({ currentPage }) => {
+  const previousPage = usePrevious(currentPage);
+  const direction =
+    previousPage === undefined || currentPage >= previousPage
+      ? "forward"
+      : "backward";
+
+  // animate page changes in the direction of travel
+};
+```
+
+The previous value updates after every committed render, so comparing it with the current value inside an effect tells you whether—and how—the value just changed.
+
+</div>
+</Unstyled>

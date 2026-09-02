@@ -1,0 +1,107 @@
+import { Meta, Unstyled } from "@storybook/blocks";
+
+<Meta title="Getting started/Installation" />
+
+<Unstyled>
+<div className="ilo--richtext ilo--richtext__theme__light">
+
+# Installation
+
+Install the components from npm:
+
+```bash
+npm i @ilo-org/react
+```
+
+The design system's fonts are published separately. Install them alongside the components:
+
+```bash
+npm i @ilo-org/fonts
+```
+
+## Peer dependencies
+
+The library expects `react` and `react-dom` (version 18 or 19) to be installed in your project.
+
+```bash
+npm i react react-dom
+```
+
+## Usage
+
+Import components directly from the `@ilo-org/react` package.
+
+```typescript
+import { Button } from "@ilo-org/react";
+```
+
+The package is published as tree-shakeable ES modules, so your bundler will only include the components you actually import.
+
+Hooks are exported from the same entrypoint:
+
+```typescript
+import { useBreakpoint } from "@ilo-org/react";
+```
+
+## Styles
+
+Import the stylesheet once at the top of your application, along with the fonts:
+
+```typescript
+import "@ilo-org/react/styles/index.css";
+import "@ilo-org/fonts/font-css/fonts.css";
+```
+
+In a Next.js project using the App Router, the root layout (`app/layout.tsx`) is the right place for these imports.
+
+### Sass functions and mixins
+
+If you write Sass, the design system's functions and mixins are available from a
+single entrypoint. It emits no CSS of its own, so it is safe to `@use` from every
+`.module.scss` without duplicating rules into your bundle.
+
+```scss
+@use "@ilo-org/react/styles/scss/helpers" as *;
+
+.thing {
+  padding: spacing(4);
+  max-width: px-to-rem(1296px);
+
+  @include breakpoint("md", true) {
+    display: none;
+  }
+}
+```
+
+The full set of functions and mixins is documented on the [Sass helpers](/docs/utilities-sass-helpers--docs) page.
+
+## Server components
+
+The components in this library are client components, but they do not ship with the `"use client"` directive. If you're using a framework built on React Server Components, such as the Next.js App Router, re-export the components you need from a module of your own that declares the client boundary:
+
+```typescript
+// components/design-system.tsx
+"use client";
+
+export { Button, Hero, Footer, Pagination } from "@ilo-org/react";
+export { useBreakpoint } from "@ilo-org/react";
+```
+
+Then import from that module instead of from `@ilo-org/react` directly:
+
+```typescript
+import { Button } from "@/components/design-system";
+```
+
+## Issues and feature requests
+
+Please feel free to open issues or make feature requests on our [Github repo](https://github.com/international-labour-organization/designsystem/issues).
+
+## Next steps
+
+- Explore the components in the sidebar
+- Try the [Logo Generator](/story/brand-logos--logos) for brand assets
+- Check the [changelog](/docs/getting-started-changelog--docs)
+
+</div>
+</Unstyled>
