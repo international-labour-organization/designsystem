@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react-vite";
 import { Radio, RadioArgs } from "../../components/Radio";
 import {
   ArgTypes,
@@ -7,7 +7,7 @@ import {
   Primary,
   Stories,
   Title,
-} from "@storybook/blocks";
+} from "@storybook/addon-docs/blocks";
 import { Fieldset } from "../../components";
 import {
   LabelledRadioProps,

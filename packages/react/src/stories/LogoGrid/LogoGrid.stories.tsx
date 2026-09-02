@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react-vite";
 import { LogoGrid } from "../../components/LogoGrid";
 import {
   Title,
@@ -6,7 +6,7 @@ import {
   Primary,
   Stories,
   ArgTypes,
-} from "@storybook/blocks";
+} from "@storybook/addon-docs/blocks";
 import {
   defaultLogoGrid,
   darkLogoGrid,
@@ -49,8 +49,10 @@ export const basic: StoryObj<typeof LogoGrid> = {
 
 export const dark: StoryObj<typeof LogoGrid> = {
   args: darkLogoGrid,
-  parameters: {
-    backgrounds: { default: "dark" },
+  globals: {
+    backgrounds: {
+      value: "dark",
+    },
   },
 };
 

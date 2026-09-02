@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react-vite";
 import { TextInput, TextInputArgs } from "../../components/TextInput";
 import {
   ArgTypes,
@@ -7,7 +7,7 @@ import {
   Stories,
   Subheading,
   Title,
-} from "@storybook/blocks";
+} from "@storybook/addon-docs/blocks";
 import { labelledFormFieldArgTypes } from "../../types/forms.args";
 
 const TextInputMeta: Meta<typeof TextInput> = {

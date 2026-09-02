@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react-vite";
 import { ContextMenu } from "../../components";
 import { ContextMenuProps } from "../../components/ContextMenu";
 

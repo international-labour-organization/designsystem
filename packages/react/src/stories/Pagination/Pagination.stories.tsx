@@ -1,4 +1,4 @@
-import { StoryFn, Meta } from "@storybook/react";
+import { StoryFn, Meta } from "@storybook/react-vite";
 import {
   Title,
   Subheading,
@@ -6,7 +6,7 @@ import {
   Primary,
   ArgTypes,
   Stories,
-} from "@storybook/addon-docs";
+} from "@storybook/addon-docs/blocks";
 import { Pagination } from "../../components/Pagination";
 import { PaginationProps } from "../../components/Pagination/Pagination.props";
 import paginationArgs from "../../components/Pagination/Pagination.args";

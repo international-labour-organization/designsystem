@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react-vite";
 import { SubsiteNav, SubsiteNavProps } from "../../components/Nav";
 import { SubsiteNavArgs } from "./SubsiteNav.args";
 

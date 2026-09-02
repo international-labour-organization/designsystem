@@ -1,4 +1,4 @@
-import { Meta, StoryFn, StoryObj } from "@storybook/react";
+import { Meta, StoryFn, StoryObj } from "@storybook/react-vite";
 import { List, ListProps } from "../../components/List";
 
 const meta: Meta<typeof List> = {

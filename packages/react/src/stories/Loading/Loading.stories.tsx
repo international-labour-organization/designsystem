@@ -1,4 +1,4 @@
-import { StoryFn, Meta } from "@storybook/react";
+import { StoryFn, Meta } from "@storybook/react-vite";
 import {
   Title,
   Description,
@@ -6,7 +6,7 @@ import {
   Stories,
   Subheading,
   ArgTypes,
-} from "@storybook/addon-docs";
+} from "@storybook/addon-docs/blocks";
 import { Loading } from "../../components/Loading";
 import { LoadingProps } from "../../components/Loading/Loading.props";
 import loadingArgs from "../../components/Loading/Loading.args";

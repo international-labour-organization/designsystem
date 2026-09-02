@@ -1,4 +1,4 @@
-import { Meta, StoryFn } from "@storybook/react";
+import { Meta, StoryFn } from "@storybook/react-vite";
 import {
   Title,
   Description,
@@ -6,7 +6,7 @@ import {
   ArgTypes,
   Stories,
   Subheading,
-} from "@storybook/addon-docs";
+} from "@storybook/addon-docs/blocks";
 import { Heading } from "../../components/Heading";
 import { HeadingProps } from "../../components/Heading/Heading.props";
 import headingArgs from "../../components/Heading/Heading.args";
