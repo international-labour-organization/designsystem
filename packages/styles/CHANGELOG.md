@@ -1,5 +1,69 @@
 # @ilo-org/styles
 
+## 1.17.0
+
+### Minor Changes
+
+- 77d3212: Ship all stylesheets and Sass utilities with `@ilo-org/react` and `@ilo-org/twig`; drop `@ilo-org/styles` as a hard dependency
+
+  `@ilo-org/styles` gains a `scss/_helpers.scss` entrypoint that forwards the
+  design system's Sass functions and mixins from a single place. It is guaranteed
+  to emit no CSS (enforced by a test), so it is safe to `@use` from every
+  `.module.scss` without duplicating rules into the compiled bundle.
+
+  `@ilo-org/react` and `@ilo-org/twig` already shipped the compiled CSS under
+  `styles/`; they now also republish the Sass source under `styles/scss/`,
+  mirroring the layout of `@ilo-org/styles`. Everything a consumer needs —
+  compiled CSS and Sass — is therefore importable from the component library
+  itself, and `@ilo-org/styles` no longer needs to be installed or documented
+  alongside it:
+
+  ```scss
+  @use "@ilo-org/react/styles/scss/helpers" as *;
+  // or, with the Twig flavor:
+  @use "@ilo-org/twig/styles/scss/helpers" as *;
+  // or, without a component library:
+  @use "@ilo-org/styles/scss/helpers" as *;
+  ```
+
+  Changes visible to consumers:
+
+  - `@ilo-org/styles` moves from a dependency of `@ilo-org/react` and
+    `@ilo-org/twig` to a build-time devDependency, so it no longer lands in
+    consumers' dependency trees.
+  - `@ilo-org/icons` is now a dependency of `@ilo-org/react`, which the `icon`
+    mixin genuinely needs at compile time (`@ilo-org/twig` already had it).
+  - The `"./styles/"` export on `@ilo-org/react` is replaced with `"./styles/*"`
+    plus an explicit `"./styles/scss/helpers"` key. Trailing-slash exports are
+    deprecated (Node DEP0148) and were removed in Node 17 —
+    `@ilo-org/react/styles/index.css` previously failed to resolve in plain Node.
+    Existing imports keep working.
+  - `@ilo-org/twig` gains an exports map with the same `"./styles/*"` and
+    `"./styles/scss/helpers"` keys, plus a `"./*"` passthrough so that existing
+    deep imports like `@ilo-org/twig/dist/components/...` keep resolving.
+
+### Patch Changes
+
+- e12867b: - `icon()` gains two optional args, `$size` and `$position`, emitting `mask-size` / `mask-position`, both default to `null`.
+  - `table`, `video` and `navigation` now use `icon` for their icons instead of `dataurlicon`
+- f1caa8e: Split the emitting parts out of `_animations.scss`
+
+  `_animations.scss` mixed two pure mixins (`globaltransition`, `pulse-animation`)
+  with five CSS-emitting `@keyframes` blocks, and `_mixins.scss` pulled the whole
+  module in. Every stylesheet that used any mixin therefore inherited all five
+  keyframes, and because legacy `@import` chains do not dedupe, the compiled
+  bundle accumulated hundreds of duplicate copies.
+
+  The two mixins now live in a new `scss/_animation-mixins.scss`, which
+  `_mixins.scss` uses instead. `_animations.scss` keeps the keyframes and
+  `@forward`s the mixins, so the 16 component stylesheets that `@use "../animations"`
+  continue to work unchanged.
+
+  No API changes and no removed selectors — all non-keyframe CSS is byte-identical.
+  `@keyframes` blocks in the compiled `index.css` drop from 450 to 80, with all
+  five names (`emptygradient`, `pulse`, `slideDown`, `slideUp`, `spin`) intact.
+  Consumers importing `scss/mixins.scss` no longer receive any keyframes at all.
+
 ## 1.16.0
 
 ### Minor Changes
