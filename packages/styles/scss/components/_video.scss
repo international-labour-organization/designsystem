@@ -1,6 +1,6 @@
 @use "../functions" as *;
-@import "./image";
-@import "../mixins";
+@use "./image" as *;
+@use "../mixins" as *;
 
 // ======================================
 // Video Button

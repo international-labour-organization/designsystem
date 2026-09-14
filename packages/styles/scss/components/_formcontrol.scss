@@ -1,6 +1,6 @@
 @use "../functions" as *;
 @use "sass:math";
-@import "../mixins";
+@use "../mixins" as *;
 
 .ilo--form-control {
   $c: &;
