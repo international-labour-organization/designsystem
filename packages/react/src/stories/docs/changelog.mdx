@@ -1,15 +1,21 @@
 import Changelog from "../../../CHANGELOG.md?raw";
 import "./styles/changelog.scss";
-import { Meta, Markdown } from "@storybook/blocks";
+import { Meta, Markdown, Unstyled } from "@storybook/blocks";
 
-<Meta title="Getting Started / Changelog" />
+<Meta title="Getting started/Changelog" />
+
+<Unstyled>
+<div className="ilo--richtext ilo--richtext__theme__light">
 
 # Changelog
 
 The `@ilo-org/react` package follows [Semantic Versioning](https://semver.org/). This changelog lists the changes for each version of the package.
 
-🚧 Keep in mind `@ilo-org/` packages are versioned independatly.
+🚧 Keep in mind `@ilo-org/` packages are versioned independently.
 
 <div className="changelog">
   <Markdown>{Changelog.substring(Changelog.indexOf("\n") + 1)}</Markdown>
 </div>
+
+</div>
+</Unstyled>

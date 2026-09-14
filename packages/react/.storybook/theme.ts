@@ -30,6 +30,7 @@ export default create({
   // Toolbar default and active colors
   barTextColor: "rgba(255, 255, 255, 1)", // --ilo-color-neutrals-white
   barSelectedColor: "rgba(255, 205, 45, 1)", // --ilo-color-yellow-400
+  barHoverColor: "rgba(255, 205, 45, 1)", // --ilo-color-yellow-400
   barBg: "rgba(35, 0, 80, 1)", // --ilo-color-brand-800
 
   buttonBg: "rgba(255, 255, 255, 1)", // --ilo-color-neutrals-white

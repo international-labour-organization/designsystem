@@ -1,0 +1,191 @@
+import { Meta, Unstyled } from "@storybook/blocks";
+import { Callout } from "../../components/Callout";
+import { GlobalProvider } from "../../components/GlobalProvider";
+import "./styles/docs-table.scss";
+
+<Meta title="Usage/Layouts" />
+
+<Unstyled>
+<div className="ilo--richtext ilo--richtext__theme__light">
+
+# Layouts
+
+<GlobalProvider prefix="ilo">
+  <Callout
+    type="info"
+    headline="Design reference"
+    copy="The spacing and sizing foundations behind these layout primitives are specified in the ILO Foundations file in Figma."
+    cta={{
+      label: "Open in Figma",
+      url: "https://www.figma.com/design/qr8jQnxqJkRJFQnVC5PmrB/ILO-Foundations?node-id=1485-257&p=f&t=jmBo6mQs6s8X5yb9-0",
+    }}
+  />
+</GlobalProvider>
+
+The design system is a component library, not a layout framework. It does not ship a grid system—there are no `Grid`, `Row`, or `Column` components, and no utility classes for building page structure. Components are designed to fill the width of whatever container you place them in, and how you arrange those containers is up to your application: plain CSS grid and flexbox work well and need no library support.
+
+What the design system does provide are the ingredients for making your layout consistent with the components: a page container, a shared set of breakpoints, a spacing scale, and right-to-left support. This page covers each of them.
+
+Two components look like layout primitives but aren't: [CardGroup](/docs/components-cards-cardgroup--docs) and [LogoGrid](/docs/components-media-logogrid--docs) each render an internal responsive grid, but they are content components for arranging cards and logos—not general-purpose building blocks.
+
+## Article layouts
+
+The one place the design system does take on layout duties is long-form content. The [RichText component](/docs/components-content-richtext--docs) lays out an article body—text and multimedia together—without any layout code on your side. Hand it HTML (typically from a CMS) and it handles:
+
+- **Vertical rhythm**: consistent spacing between paragraphs, with extra room above headings and around figures, blockquotes, and embeds, tightening on small screens and opening up from the `md` breakpoint.
+- **Typography**: the full type scale applied to headings, body copy, and lists, including their responsive sizes.
+- **Multimedia**: images with styled captions, responsive 16:9 video embeds, and audio—sized to the text column so media and prose stay aligned.
+- **Editorial furniture**: blockquotes with the design system's angled-corner treatment, horizontal rules, and list markers that survive `overflow: hidden` containers.
+
+So for article pages, the typical structure is a `ilo--container` (or your own column) for width, and RichText for everything inside it. Reach for custom layout code only for the parts of the page that aren't flowing content—navigation, sidebars, card grids, and the like.
+
+## The page container
+
+The stylesheet ships one layout class, `ilo--container`. It centers its content, caps it at the design system's page width, and applies the standard side gutters:
+
+```tsx
+<main className="ilo--container">
+  <Hero {...heroProps} />
+  <RichText {...richTextProps} />
+</main>
+```
+
+The width and gutters come from two theme tokens, so they can be overridden with CSS custom properties as described in [Theming](/docs/usage-theming--docs):
+
+<table className="docs-table">
+  <thead>
+    <tr>
+      <th>Custom property</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <code>--ilo-layout-max-width</code>
+      </td>
+      <td>
+        <code>1300px</code> (as <code>rem</code>)
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>--ilo-layout-padding</code>
+      </td>
+      <td>
+        <code>20px</code> (as <code>rem</code>)
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+Both values are expressed in `rem`, so they scale with the user's font-size settings. The container is intentionally simple—one max-width, one gutter, no per-breakpoint steps. If your design calls for anything more elaborate, build your own container; the design system won't fight you.
+
+## Breakpoints
+
+Every responsive rule in the design system keys off the same six named breakpoints:
+
+<table className="docs-table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Width</th>
+    </tr>
+  </thead>
+  <tbody>
+    {[
+      ["xs", "320px"],
+      ["sm", "414px"],
+      ["md", "610px"],
+      ["lg", "1024px"],
+      ["xl", "1140px"],
+      ["xxl", "1168px"],
+    ].map(([name, width]) => (
+      <tr key={name}>
+        <td>
+          <code>{name}</code>
+        </td>
+        <td>
+          <code>{width}</code>
+        </td>
+      </tr>
+    ))}
+  </tbody>
+</table>
+
+The system is mobile-first: components render their small-screen layout by default and add complexity as the viewport crosses each threshold. When your own layout changes at the same breakpoints, page structure and component behavior shift together instead of at slightly different widths.
+
+You can reach the breakpoints three ways:
+
+- **In Sass**, with the [`breakpoint` mixin](/docs/utilities-sass-helpers--docs)—the idiomatic way to write media queries that match the system.
+- **In React**, with the [`useBreakpoint` hook](/docs/utilities-react-hooks--docs), which reports the name of the breakpoint the viewport currently matches.
+- **As CSS custom properties** (`--ilo-breakpoint-xs` through `--ilo-breakpoint-xxl`), for reading the values from JavaScript. Note that custom properties cannot be used inside CSS media queries—that limitation is exactly why the breakpoints also exist as a Sass mixin.
+
+The raw Sass map is not exposed by the helpers entrypoint; go through the mixin rather than hardcoding the pixel values.
+
+## Building layouts with the Sass helpers
+
+The [Sass helpers](/docs/utilities-sass-helpers--docs) entrypoint carries what you need to write layout code that stays on the system's scale: `breakpoint` for media queries, `spacing` for gaps and margins, and `px-to-rem` for converting fixed sizes from a design spec. A typical page grid:
+
+```scss
+@use "@ilo-org/react/styles/scss/helpers" as *;
+
+.article-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: spacing(6);
+
+  // Two columns with a sidebar from the lg breakpoint upward
+  @include breakpoint("lg") {
+    grid-template-columns: 2fr 1fr;
+    gap: spacing(8);
+  }
+}
+
+.article-layout__sidebar {
+  align-self: start;
+
+  @include breakpoint("lg") {
+    position: sticky;
+    top: spacing(6);
+  }
+}
+```
+
+Using `spacing()` for gaps keeps the space between your layout regions on the same rhythm as the space inside the components, and both respond together if the system is ever rescaled through `--ilo-scale`.
+
+## Right-to-left layouts
+
+Every component supports right-to-left languages out of the box. To activate RTL, set the `dir` attribute on the `html` element:
+
+```html
+<html dir="rtl" lang="ar"></html>
+```
+
+That one attribute does all the work. The stylesheet's RTL rules are ancestor selectors of the form `[dir="rtl"] .ilo--...`, so they switch on as soon as the attribute is present—paddings and alignments mirror, and directional details like list carets and the angled card corners flip to point the right way. A few components (such as the PhotoGallery carousel) also read `document.dir` from JavaScript, which is why the attribute belongs on `html` rather than on a wrapper further down the tree.
+
+There is no `dir` prop on the components and no direction context—direction is a property of the document, and the design system follows it.
+
+### RTL in your own layout code
+
+The layouts you build around the components need the same care. Two habits cover most of it:
+
+- **Prefer CSS logical properties** over physical ones: `margin-inline-start` instead of `margin-left`, `padding-inline` instead of left/right padding pairs, `inset-inline-end` instead of `right`. They flip automatically with the document direction, with no extra rules to write.
+- **Let grid and flexbox do the mirroring.** Both lay out along the inline axis, so a `grid-template-columns: 2fr 1fr` sidebar layout mirrors in RTL by itself. Avoid re-introducing direction through physical values like `text-align: left` or absolute `left`/`right` offsets.
+
+The exception among the Sass helpers is `cornercut`, which takes a physical direction and must be flipped by hand:
+
+```scss
+.promo-card {
+  @include cornercut(72px, 40px); // cut the top-right corner
+
+  [dir="rtl"] & {
+    @include cornercut(72px, 40px, "left");
+  }
+}
+```
+
+The `icon` mixin is similar: masks don't mirror on their own, so give directional icons (arrows, carets, chevrons) a `transform: scaleX(-1)` under `[dir="rtl"]`—the same technique the design system uses for its own list carets.
+
+</div>
+</Unstyled>

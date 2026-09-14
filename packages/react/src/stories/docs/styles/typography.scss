@@ -1,0 +1,42 @@
+@use "@ilo-org/styles/scss/helpers" as *;
+
+$type-docs-variants:
+  "heading-1", "heading-2", "heading-3", "heading-4", "body-xlarge",
+  "body-large", "body-medium", "body-small", "body-xsmall", "body-2xsmall",
+  "highlight-large", "highlight-medium", "highlight-medium-bold",
+  "highlight-small", "highlight-small-bold", "blockquote";
+
+.type-docs--specimen {
+  margin: 1.5rem 0;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--ilo-color-neutrals-200);
+
+  p {
+    margin: 0;
+  }
+}
+
+.type-docs--specimen-label {
+  display: inline-block;
+  margin-bottom: 0.75rem;
+  padding: 0.125rem 0.375rem;
+  font-family: var(--ilo-fonts-monospace);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--ilo-color-brand-800);
+  background-color: var(--ilo-color-brand-100);
+  border-radius: var(--ilo-border-radius);
+}
+
+@each $variant in $type-docs-variants {
+  .type-docs--specimen .type-docs--#{$variant} {
+    &,
+    p {
+      @include typography($variant, true);
+
+      @include breakpoint("md") {
+        @include typography($variant);
+      }
+    }
+  }
+}

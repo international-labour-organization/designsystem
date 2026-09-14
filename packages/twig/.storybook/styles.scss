@@ -30,6 +30,12 @@ button[title="Reset zoom"]:hover {
   background-color: var(--ilo-color-brand-200);
 }
 
+// Storybook renders markdown links through its own anchor component, which sets
+// the Storybook UI font (Nunito Sans) on the element itself and ignores <Unstyled>.
+.ilo--richtext a {
+  font-family: inherit;
+}
+
 a[class*="ilo--button"] {
   color: unset;
 

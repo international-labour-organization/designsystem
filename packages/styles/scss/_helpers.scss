@@ -1,0 +1,12 @@
+//*------------------------------------*\
+//    $HELPERS — public Sass API
+//    Functions and mixins only.
+//    Guaranteed to emit no CSS.
+//    Consumers reach this file as `@use "@ilo-org/styles/scss/helpers"` or,
+//    because @ilo-org/react & @ilo-org/twig republishes scss/ under styles/scss/, as
+//    `@use "@ilo-org/<package>/styles/scss/helpers"`.
+//*------------------------------------*/
+
+@forward "functions";
+
+@forward "mixins" hide dataurlicon;

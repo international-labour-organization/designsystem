@@ -1,5 +1,4 @@
 import { Meta } from "@storybook/blocks";
-import { Button } from "../../components/Button";
 import "./styles/welcome.scss";
 import { version } from "../../../package.json";
 
@@ -11,31 +10,63 @@ import { version } from "../../../package.json";
   }}
 />
 
+export const TriangleMatrix = ({ rows = 20, cols = 32 }) => (
+  <div className="triangle-matrix" aria-hidden="true">
+    {Array.from({ length: rows }, (_, row) => (
+      <div className="triangle-matrix--row" key={row}>
+        {Array.from({ length: cols }, (_, col) => {
+          const duration = 7 + Math.random() * 14;
+          return (
+            <div
+              key={col}
+              className="triangle-matrix--cell"
+              style={{
+                animationDuration: `${duration.toFixed(2)}s`,
+                animationDelay: `${(-Math.random() * duration).toFixed(2)}s`,
+                "--shimmer-peak": (0.12 + Math.random() * 0.18).toFixed(2),
+              }}
+            ></div>
+          );
+        })}
+      </div>
+    ))}
+  </div>
+);
+
 <div className="welcome">
-  <h1 className="welcome--title">ILO Design System</h1>
-  <h3 className="welcome--subtitle">
-    <img src="/react.svg" alt="React Icon" />
-    <span>React Components</span>
-  </h3>
-  <span className="welcome--version">v{version}</span>
-  <a
-    className="ilo--button ilo--button__small ilo--button__primary optionalclass"
-    href="/?path=/docs/getting-started-introduction--docs"
-    target="true"
-    rel="noopener noreferrer"
-  >
-    <span className="link__label">Get started</span>
-  </a>
-</div>
-<div className="triangles">
+  <div className="welcome--copy">
+    <h1 className="welcome--title">ILO Design System</h1>
+    <h3 className="welcome--subtitle">
+      <svg
+        className="welcome--react-logo"
+        viewBox="-11.5 -10.23 23 20.46"
+        aria-hidden="true"
+      >
+        <circle r="2.05" fill="currentColor" />
+        <g stroke="currentColor" strokeWidth="1" fill="none">
+          <ellipse rx="11" ry="4.2" />
+          <ellipse rx="11" ry="4.2" transform="rotate(60)" />
+          <ellipse rx="11" ry="4.2" transform="rotate(120)" />
+        </g>
+      </svg>
+      <span>React Components</span>
+    </h3>
+    <span className="welcome--version">v{version}</span>
+    <a
+      className="ilo--button ilo--button__small ilo--button__primary"
+      href="/?path=/docs/getting-started-introduction--docs"
+    >
+      <span className="link__label">Get started</span>
+    </a>
+  </div>
   <div
-    className="triangle triangle1"
-    onMouseOver={(e) => {
-      if (!e.target.classList.contains("spinning")) {
-        e.target.classList.add("spinning");
-      }
-    }}
-  ></div>
-  <div className="triangle triangle2"></div>
-  <div className="triangle triangle3"></div>
+    className="welcome--mark"
+    role="img"
+    aria-label="Three equal triangles — governments, workers and employers — composing one larger triangle"
+  >
+    <div className="triangle welcome--mark-gov"></div>
+    <div className="triangle welcome--mark-workers"></div>
+    <div className="triangle welcome--mark-employers"></div>
+  </div>
 </div>
+<TriangleMatrix />

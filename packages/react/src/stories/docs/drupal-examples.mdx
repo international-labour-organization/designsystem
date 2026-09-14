@@ -1,0 +1,68 @@
+import { Meta, Unstyled } from "@storybook/blocks";
+import { DetailCard } from "../../components/Cards";
+
+<Meta title="Design System/Drupal examples" />
+
+<Unstyled>
+<div className="ilo--richtext ilo--richtext__theme__light">
+
+# Drupal Sites
+
+The ILO Design System is also in production across the ILO's Drupal properties, built on the [Design System for Twig](https://twig.ui.ilo.org)—the same components and styles you see in this Storybook, rendered server-side. It powers the ILO's main website and is a requirement for all new Drupal projects undertaken at the ILO.
+
+</div>
+
+<div style={{ marginBottom: "1.5rem" }}>
+
+<DetailCard
+  title="Main ILO Website"
+  link="https://www.ilo.org"
+  size="fluid"
+  image="/ilo-org.png"
+  intro="The ILO's main website and most important online asset. This flagship website serves as the primary digital gateway to the International Labour Organization, providing access to news, publications, research, and resources related to decent work and social justice worldwide."
+/>
+
+<DetailCard
+  title="StoryLab"
+  link="https://lab.ilo.org/world-work-series/lifelong-learning-and-skills-future"
+  size="fluid"
+  image="/story-lab-screenshot.png"
+  intro="StoryLab is a microsite generator for the ILO's digital storytelling, powering Voices, podcasts, InfoStories and editorial series from a single CMS. Built on the design system, it adds immersive scrollytelling, full-screen media, embedded audio and interactive data visualization. This example is the 2026 World of Work Series report on lifelong learning and skills for the future."
+/>
+
+<DetailCard
+  title="Digital Labour Platform Tracker"
+  link="https://digitallabour.ilo.org"
+  size="fluid"
+  image="/digital-labour.png"
+  intro="This policy tracker aims to provide a comprehensive overview of global policies, legislation, collective bargaining agreements, and judicial decisions related to digital labour platforms. The site showcases how the design system's components can be used to create complex, data-rich interfaces while maintaining clarity and usability."
+/>
+
+<DetailCard
+  title="ILO Global Business and Disability Network"
+  link="https://www.businessanddisability.org"
+  size="fluid"
+  image="/gbdn.png"
+  intro="The ILO Global Business and Disability Network supports companies on their journey to become inclusive of persons with disabilities by providing technical guidance and facilitating peer-to-peer exchange among businesses."
+/>
+
+<DetailCard
+  title="ILO PROSPECTS Learning Portal"
+  link="https://prospectslearnings.ilo.org/"
+  size="fluid"
+  image="/prospects-learning-screenshot.jpg"
+  intro="The PROSPECTS Learning Portal gathers actionable guidance on employment and social protection interventions for forcibly displaced people and their host communities, drawn from the ILO's PROSPECTS Programme. Aimed at policymakers and practitioners working in forced displacement contexts, it brings together case studies, guidelines and a discovery tool that maps the connections between countries, interventions and cross-cutting themes."
+/>
+
+</div>
+
+<div className="ilo--richtext ilo--richtext__theme__light">
+
+## Building Your Own
+
+Building with Drupal? Head over to the [Design System for Twig documentation](https://twig.ui.ilo.org) for the base theme, custom theme guidance, and the Twig component library.
+
+Have questions or need help? Feel free to open an issue on our <a href="https://github.com/international-labour-organization/designsystem/issues">GitHub repository</a> or <a href="mailto:ilonews@ilo.org">contact us by email</a>.
+
+</div>
+</Unstyled>

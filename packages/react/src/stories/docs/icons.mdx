@@ -1,0 +1,87 @@
+import { Meta, Unstyled } from "@storybook/blocks";
+import { Callout } from "../../components/Callout";
+import { GlobalProvider } from "../../components/GlobalProvider";
+import { Icon } from "../../components/Icon";
+import * as icons from "@ilo-org/icons-react/next";
+import "./styles/docs-table.scss";
+import "./styles/icons.scss";
+
+<Meta title="Usage/Icons" />
+
+export const iconNames = Object.keys(icons)
+  .filter((name) => name !== "Icon")
+  .sort();
+
+export const IconGallery = () => (
+  <div className="icon-docs--gallery">
+    {iconNames.map((name) => (
+      <div key={name} className="icon-docs--gallery-item">
+        <Icon name={name} />
+        <span className="icon-docs--gallery-name">{name}</span>
+      </div>
+    ))}
+  </div>
+);
+
+<Unstyled>
+<div className="ilo--richtext ilo--richtext__theme__light">
+
+# Icons
+
+<GlobalProvider prefix="ilo">
+  <Callout
+    type="info"
+    headline="Design reference"
+    copy="The icon set is specified in the ILO Icons file in Figma."
+    cta={{
+      label: "Open in Figma",
+      url: "https://www.figma.com/design/szl87D4Zg4MeWXzKWMCCZO/ILO-Icons?node-id=34-1554&p=f&m=dev",
+    }}
+  />
+</GlobalProvider>
+
+The design system ships its own icon set in the `@ilo-org/icons-react` package, where every icon is a React component wrapping an inline SVG. You don't usually need to install or import that package yourself—`@ilo-org/react` depends on it and exports the [Icon component](/docs/components-user-interface-icon--docs), which renders any icon in the set by name:
+
+```tsx
+import { Icon } from "@ilo-org/react";
+
+<Icon name="Download" />;
+```
+
+Pass any name from the [list below](#all-icons). Icons are drawn at `24px` by default; the set also includes `16`, `20`, and `32` pixel versions, selected with the `size` prop. Icons render in `currentColor`—they inherit the text color of their surroundings—unless you set the `color` prop to a CSS color or a design token:
+
+```tsx
+<Icon name="Download" size={32} color="var(--ilo-color-blue-600)" />
+```
+
+An icon next to a text label that says the same thing should be hidden from screen readers with the `hidden` prop, which sets `aria-hidden` on the SVG:
+
+```tsx
+<button>
+  <Icon name="Download" hidden />
+  Download report
+</button>
+```
+
+See the [Icon component](/docs/components-user-interface-icon--docs) page for the full list of props and a live playground.
+
+## Using an icon component directly
+
+If you prefer importing icons individually—for tree-shaking, or in code that doesn't use the design system's components—`@ilo-org/icons-react` exports each icon at each size as its own component, named `{Name}{size}`. This is exactly what the Icon component renders under the hood:
+
+```tsx
+import { Download24 } from "@ilo-org/icons-react";
+
+<Download24 fill="currentColor" aria-hidden="true" />;
+```
+
+These are plain SVG components: sizing is baked in, color comes from the `fill` attribute, and accessibility attributes are up to you.
+
+## All icons
+
+Every icon in the set, with the name to pass to the Icon component's `name` prop:
+
+<IconGallery />
+
+</div>
+</Unstyled>
