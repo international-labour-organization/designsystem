@@ -1,6 +1,8 @@
 //*------------------------------------*\
 //    $MIXINS
 //*------------------------------------*/
+@use "sass:string";
+@use "sass:map";
 @use "icons" as *;
 @use "functions" as *;
 @use "animations" as *;
@@ -30,15 +32,15 @@
 // ======================================
 
 @mixin breakpoint($breakpoint, $max: false) {
-  @if map-has-key($breakpoints-foundation, $breakpoint) {
+  @if map.has-key($breakpoints-foundation, $breakpoint) {
     @if not $max {
-      @media screen and (min-width: map-get($breakpoints-foundation, $breakpoint)) {
+      @media screen and (min-width: map.get($breakpoints-foundation, $breakpoint)) {
         @content;
       }
     }
 
     @if $max {
-      @media screen and (max-width: #{map-get($breakpoints-foundation, $breakpoint) - 1px}) {
+      @media screen and (max-width: #{map.get($breakpoints-foundation, $breakpoint) - 1px}) {
         @content;
       }
     }
@@ -61,7 +63,7 @@
 // ======================================
 
 @mixin icon($name, $color: black, $size: null, $position: null) {
-  $icon: map-get($icons, $name);
+  $icon: map.get($icons, $name);
   mask-image: url("#{$icon}");
   mask-repeat: no-repeat;
   -webkit-mask-image: url("#{$icon}");
@@ -299,7 +301,7 @@
     "heading-4" or
     $variant ==
     "blockquote" or
-    str-index($variant, "highlight") !=
+    string.index($variant, "highlight") !=
     null
   {
     font-family: var(--ilo-fonts-display);
