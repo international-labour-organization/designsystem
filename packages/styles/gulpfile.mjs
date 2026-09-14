@@ -19,6 +19,7 @@ const COMPILED_COMPONENTS = `${BUILD}/components`;
 
 const PACKAGE_ROOT = path.resolve(".");
 
+// Rewrites source-map paths outside scss/ (left absolute by gulp-sass) relative to scss/
 function relativeToSrc(sourcePath) {
   const absolute = path.resolve("/", sourcePath);
 
