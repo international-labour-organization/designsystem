@@ -1,5 +1,5 @@
 @use "../functions" as *;
-@import "../mixins";
+@use "../mixins" as *;
 
 .ilo--context-menu {
   border-radius: px-to-rem(2px);

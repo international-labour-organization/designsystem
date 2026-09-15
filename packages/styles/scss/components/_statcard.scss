@@ -1,6 +1,6 @@
 @use "../functions" as *;
 @use "../animations" as *;
-@import "../mixins";
+@use "../mixins" as *;
 
 .ilo--card {
   $self: &;

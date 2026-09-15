@@ -1,5 +1,5 @@
 @use "../functions" as *;
-@import "../mixins";
+@use "../mixins" as *;
 
 // Base styles for the .ilo--input class, applied by TextInput, NumberPicker,
 // DatePicker, and SearchField (and extended in _datepicker.scss). This is the

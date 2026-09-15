@@ -1,7 +1,7 @@
 @use "../functions" as *;
-@import "../animations";
-@import "../mixins";
-@import "../config";
+@use "../animations" as *;
+@use "../mixins" as *;
+@use "../config" as *;
 
 .#{$prefix}--button {
   --ilo-button-label-weight: 700;

@@ -1,6 +1,6 @@
 @use "../functions" as *;
-@import "../mixins";
-@import "../config";
+@use "../mixins" as *;
+@use "../config" as *;
 
 // =============================================================================
 // ACCORDION COMPONENT

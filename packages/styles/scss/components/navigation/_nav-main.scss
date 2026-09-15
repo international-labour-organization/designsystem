@@ -1,8 +1,8 @@
 @use "../../icons" as *;
 @use "../../functions" as *;
 @use "./internal/nav-shared" as *;
-@import "../../mixins";
-@import "../../config";
+@use "../../mixins" as *;
+@use "../../config" as *;
 
 .ilo--main-nav {
   @include nav-base;

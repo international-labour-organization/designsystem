@@ -1,6 +1,6 @@
 @use "../functions" as *;
-@import "../mixins";
-@import "../animations";
+@use "../mixins" as *;
+@use "../animations" as *;
 
 .ilo--language-toggle {
   --ilo--language-toggle-color: var(--ilo-color-light-text-inverse);
