@@ -328,6 +328,9 @@ importers:
       '@ilo-org/icons-react':
         specifier: workspace:*
         version: link:../icons-react
+      '@ilo-org/styles':
+        specifier: workspace:*
+        version: link:../styles
       '@popperjs/core':
         specifier: ^2.11.8
         version: 2.11.8
@@ -371,9 +374,6 @@ importers:
       '@ilo-org/prettier-config':
         specifier: workspace:*
         version: link:../../config/prettier-config
-      '@ilo-org/styles':
-        specifier: workspace:*
-        version: link:../styles
       '@ilo-org/typescript-config':
         specifier: workspace:*
         version: link:../../config/typescript-config
@@ -525,6 +525,9 @@ importers:
       '@ilo-org/maestro':
         specifier: workspace:*
         version: link:../maestro
+      '@ilo-org/styles':
+        specifier: workspace:*
+        version: link:../styles
       '@popperjs/core':
         specifier: ^2.11.8
         version: 2.11.8
@@ -553,9 +556,6 @@ importers:
       '@ilo-org/react':
         specifier: workspace:*
         version: link:../react
-      '@ilo-org/styles':
-        specifier: workspace:*
-        version: link:../styles
       '@modyfi/vite-plugin-yaml':
         specifier: ^1.1.0
         version: 1.1.1(rollup@2.80.0)(vite@5.4.21(@types/node@20.19.43)(sass@1.104.1)(terser@5.51.2))
