@@ -1,4 +1,4 @@
-import { create } from "@storybook/theming/create";
+import { create } from "storybook/theming/create";
 //@ts-ignore brand assets have wrong type declarations
 import ilo_logo from "@ilo-org/brand-assets/logo_en_horizontal_blue.svg";
 

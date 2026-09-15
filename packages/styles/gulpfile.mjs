@@ -1,6 +1,7 @@
+import path from "node:path";
 import gulp from "gulp";
 import gulpSass from "gulp-sass";
-import dartSass from "sass";
+import * as dartSass from "sass";
 import rename from "gulp-rename";
 import cleanCSS from "gulp-clean-css";
 import { deleteAsync } from "del";
@@ -15,6 +16,19 @@ const TEMP = "temp";
 const BUILD = "css";
 const COMPILABLE_COMPONENTS = `${TEMP}/compilable_components`;
 const COMPILED_COMPONENTS = `${BUILD}/components`;
+
+const PACKAGE_ROOT = path.resolve(".");
+
+// Rewrites source-map paths outside scss/ (left absolute by gulp-sass) relative to scss/
+function relativeToSrc(sourcePath) {
+  const absolute = path.resolve("/", sourcePath);
+
+  if (absolute.startsWith(PACKAGE_ROOT + path.sep)) {
+    return path.relative(path.join(PACKAGE_ROOT, SRC), absolute);
+  }
+
+  return sourcePath;
+}
 
 // Copy all files in the scss folder into a temp folder that's safe to work in
 gulp.task("create temp dir", function () {
@@ -37,7 +51,7 @@ gulp.task("create temp components", function () {
 gulp.task("compile components into css", function () {
   return gulp
     .src(`${COMPILABLE_COMPONENTS}/*.scss`)
-    .pipe(sass({ includePaths: ["node_modules"] }).on("error", sass.logError))
+    .pipe(sass({ loadPaths: ["node_modules"] }).on("error", sass.logError))
     .pipe(cleanCSS())
     .pipe(
       rename(function (path) {
@@ -70,7 +84,8 @@ gulp.task("bundle main css", function () {
   return gulp
     .src(`${SRC}/*.scss`)
     .pipe(sourcemaps.init()) // Initialize source maps
-    .pipe(sass({ includePaths: ["node_modules"] }).on("error", sass.logError))
+    .pipe(sass({ loadPaths: ["node_modules"] }).on("error", sass.logError))
+    .pipe(sourcemaps.mapSources(relativeToSrc))
     .pipe(cleanCSS())
     .pipe(
       rename(function (path) {

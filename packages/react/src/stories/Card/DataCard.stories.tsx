@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react-vite";
 import { DataCard, DataCardProps } from "../../components/Cards/DataCard";
 
 const meta: Meta<typeof DataCard> = {

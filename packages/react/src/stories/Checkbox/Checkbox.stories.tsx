@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react-vite";
 import { Checkbox, CheckboxArgs } from "../../components/Checkbox";
 import { LabelledCheckboxProps } from "../../components/Checkbox/Checkbox.props";
 import {
@@ -8,7 +8,7 @@ import {
   Primary,
   Stories,
   Title,
-} from "@storybook/blocks";
+} from "@storybook/addon-docs/blocks";
 import { Fieldset } from "../../components";
 import { FieldsetProps } from "../../components/Fieldset/Fieldset.props";
 import { labelledChoiceFieldArgTypes } from "../../types/forms.args";

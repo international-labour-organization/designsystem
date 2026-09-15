@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react-vite";
 import { Breadcrumb } from "../../components/Breadcrumb";
 import { BreadcrumbProps } from "../../components/Breadcrumb/Breadcrumb";
 

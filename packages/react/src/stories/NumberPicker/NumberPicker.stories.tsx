@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react-vite";
 import {
   Title,
   Subtitle,
@@ -7,7 +7,7 @@ import {
   Stories,
   Subheading,
   ArgTypes,
-} from "@storybook/addon-docs";
+} from "@storybook/addon-docs/blocks";
 import { NumberPicker } from "../../components";
 import NumberPickerArgs from "../../components/NumberPicker/NumberPicker.args";
 import { labelledFormFieldArgTypes } from "../../types/forms.args";

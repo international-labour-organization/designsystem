@@ -1,4 +1,4 @@
-import { Meta, StoryFn, StoryObj } from "@storybook/react";
+import { Meta, StoryFn, StoryObj } from "@storybook/react-vite";
 import { AccordionProps } from "../../components/Accordion/Accordion";
 import { Accordion } from "../../components";
 

@@ -1,6 +1,6 @@
 @use "../functions" as *;
-@import "../mixins";
-@import "../animations";
+@use "../mixins" as *;
+@use "../animations" as *;
 
 .ilo--loading {
   --ilo-loading-size: #{px-to-rem(60px)};

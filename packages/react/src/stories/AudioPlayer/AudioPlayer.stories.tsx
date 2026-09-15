@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Meta, StoryObj } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react-vite";
 import { AudioPlayer } from "../../components/AudioPlayer/AudioPlayer";
 
 const meta: Meta<typeof AudioPlayer> = {

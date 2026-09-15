@@ -14,17 +14,11 @@ const config: StorybookConfig = {
     "../public",
     { from: "../node_modules/@ilo-org/fonts/font-css", to: "/fonts" },
   ],
-  core: {
-    builder: "@storybook/builder-vite",
-  },
   addons: [
     getAbsolutePath("@storybook/addon-links"),
-    getAbsolutePath("@storybook/addon-essentials"),
-    getAbsolutePath("@storybook/addon-interactions"),
-    getAbsolutePath("storybook-addon-rtl"),
     getAbsolutePath("@chromatic-com/storybook"),
     {
-      name: "@storybook/addon-docs",
+      name: getAbsolutePath("@storybook/addon-docs"),
       options: {
         transcludeMarkdown: true,
         configureJSX: true,
@@ -48,6 +42,20 @@ const config: StorybookConfig = {
     config.optimizeDeps = {
       include: ["@storybook/addon-docs"],
     };
+
+    // Vite 5 still reaches for Sass's legacy JS API, which Dart Sass removes
+    // in 2.0.0.
+    config.css = {
+      ...config.css,
+      preprocessorOptions: {
+        ...config.css?.preprocessorOptions,
+        scss: {
+          ...config.css?.preprocessorOptions?.scss,
+          api: "modern-compiler",
+        },
+      },
+    };
+
     return config;
   },
 };
