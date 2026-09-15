@@ -14,9 +14,6 @@ const config: StorybookConfig = {
     "../public",
     { from: "../node_modules/@ilo-org/fonts/font-css", to: "/fonts" },
   ],
-  core: {
-    builder: getAbsolutePath("@storybook/builder-vite"),
-  },
   addons: [
     getAbsolutePath("@storybook/addon-links"),
     getAbsolutePath("@chromatic-com/storybook"),
