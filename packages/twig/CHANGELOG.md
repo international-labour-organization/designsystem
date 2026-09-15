@@ -1,5 +1,11 @@
 # @ilo-org/twig
 
+## 1.16.1
+
+### Patch Changes
+
+- 8bf7f2f: Declare `@ilo-org/styles` as a runtime dependency again. Both packages ship the compiled styles in their build output, so this keeps them in step with every styles release.
+
 ## 1.16.0
 
 ### Minor Changes
