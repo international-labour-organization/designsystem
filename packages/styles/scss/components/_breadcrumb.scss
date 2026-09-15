@@ -1,7 +1,7 @@
 @use "../functions" as *;
 @use "../animations" as *;
-@import "../mixins";
-@import "../config";
+@use "../mixins" as *;
+@use "../config" as *;
 
 .#{$prefix}--breadcrumb {
   $breadcrumb: &;

@@ -1,3 +1,4 @@
+@use "sass:map";
 @use "../functions" as *;
 @use "./breakpoints" as *;
 @use "./typography" as *;
@@ -278,12 +279,12 @@
   /**
     * Sizing
     */
-  --ilo-breakpoint-xs: #{map-get($breakpoints-foundation, "xs")};
-  --ilo-breakpoint-sm: #{map-get($breakpoints-foundation, "sm")};
-  --ilo-breakpoint-md: #{map-get($breakpoints-foundation, "md")};
-  --ilo-breakpoint-lg: #{map-get($breakpoints-foundation, "lg")};
-  --ilo-breakpoint-xl: #{map-get($breakpoints-foundation, "xl")};
-  --ilo-breakpoint-xxl: #{map-get($breakpoints-foundation, "xxl")};
+  --ilo-breakpoint-xs: #{map.get($breakpoints-foundation, "xs")};
+  --ilo-breakpoint-sm: #{map.get($breakpoints-foundation, "sm")};
+  --ilo-breakpoint-md: #{map.get($breakpoints-foundation, "md")};
+  --ilo-breakpoint-lg: #{map.get($breakpoints-foundation, "lg")};
+  --ilo-breakpoint-xl: #{map.get($breakpoints-foundation, "xl")};
+  --ilo-breakpoint-xxl: #{map.get($breakpoints-foundation, "xxl")};
   --ilo-border-radius: calc(#{px-to-rem(2)} * var(--ilo-scale));
 
   /**

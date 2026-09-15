@@ -42,6 +42,20 @@ const config: StorybookConfig = {
     config.optimizeDeps = {
       include: ["@storybook/addon-docs"],
     };
+
+    // Vite 5 still reaches for Sass's legacy JS API, which Dart Sass removes
+    // in 2.0.0.
+    config.css = {
+      ...config.css,
+      preprocessorOptions: {
+        ...config.css?.preprocessorOptions,
+        scss: {
+          ...config.css?.preprocessorOptions?.scss,
+          api: "modern-compiler",
+        },
+      },
+    };
+
     return config;
   },
 };

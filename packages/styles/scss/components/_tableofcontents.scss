@@ -1,6 +1,6 @@
 @use "../animations" as *;
 @use "../functions" as *;
-@import "../mixins";
+@use "../mixins" as *;
 
 .ilo--table-of-contents {
   background-color: var(--ilo-color-light-container-bg-disabled);

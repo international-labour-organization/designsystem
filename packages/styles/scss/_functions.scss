@@ -1,3 +1,7 @@
+@use "sass:map";
+@use "sass:meta";
+@use "sass:string";
+@use "sass:list";
 @use "./config" as *;
 
 //*------------------------------------*\
@@ -10,12 +14,12 @@
 @use "sass:math";
 
 @function str-replace($string: "", $search, $replace: "") {
-  @if type-of($string) ==string {
-    $index: str-index($string, $search);
+  @if meta.type-of($string) ==string {
+    $index: string.index($string, $search);
     @if $index {
-      @return str-slice($string, 1, $index - 1) + $replace +
+      @return string.slice($string, 1, $index - 1) + $replace +
         str-replace(
-          str-slice($string, $index + str-length($search)),
+          string.slice($string, $index + string.length($search)),
           $search,
           $replace
         );
@@ -43,7 +47,7 @@
 // @return {*} - value in rems, with $font-size-default as base
 // ======================================
 @function px-to-rem($px) {
-  @if index($px, "%") {
+  @if list.index($px, "%") {
     @return $px;
   } @else {
     @return math.div(strip-units($px), strip-units($base-font-size)) * 1rem;
@@ -76,7 +80,7 @@
 // =========================================
 @function colortodataurlicon($name, $color) {
   @warn "The function colortodataurlicon is deprecated and will be removed in future versions.";
-  $icon: map-get($icons, $name);
+  $icon: map.get($icons, $name);
   $fill: "currentColor";
   $output: str-replace($icon, $fill, $color);
   @return $output;

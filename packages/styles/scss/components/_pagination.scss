@@ -1,5 +1,5 @@
 @use "../functions" as *;
-@import "../mixins";
+@use "../mixins" as *;
 
 .ilo--pagination {
   --ilo-pagination-page-color: var(--ilo-color-light-text-brand);

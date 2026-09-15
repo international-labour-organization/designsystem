@@ -1,6 +1,6 @@
 @use "../functions" as *;
-@import "../animations";
-@import "../mixins";
+@use "../animations" as *;
+@use "../mixins" as *;
 
 .ilo--social-media {
   $c: &;

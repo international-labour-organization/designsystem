@@ -1,7 +1,8 @@
 @use "../functions" as *;
-@import "../mixins";
+@use "../mixins" as *;
 
 .ilo--datepicker {
+  color-scheme: light;
   cursor: pointer;
 
   &::-webkit-calendar-picker-indicator {

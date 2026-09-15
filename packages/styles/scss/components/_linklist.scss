@@ -1,6 +1,6 @@
 @use "../functions" as *;
-@import "../animations";
-@import "../mixins";
+@use "../animations" as *;
+@use "../mixins" as *;
 
 .ilo--link-list {
   --ilo-link-list-color-icon: var(--ilo-color-light-action-default);
