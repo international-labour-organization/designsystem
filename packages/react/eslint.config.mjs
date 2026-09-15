@@ -8,8 +8,4 @@ const ReactConfigOverrides = {
   ignores: ["**/*.args.ts", "**/*.stories.tsx"],
 };
 
-export default [
-  ...configs.react,
-  ReactConfigOverrides,
-  ...storybook.configs["flat/recommended"]
-];
+export default [...configs.react, ReactConfigOverrides];
