@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react-vite";
 import { Notification, NotificationProps } from "../../components/Notification";
 
 const meta: Meta<typeof Notification> = {

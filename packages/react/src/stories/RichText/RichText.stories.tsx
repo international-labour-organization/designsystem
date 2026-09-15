@@ -1,4 +1,4 @@
-import { StoryFn, Meta } from "@storybook/react";
+import { StoryFn, Meta } from "@storybook/react-vite";
 import {
   Title,
   Description,
@@ -6,7 +6,7 @@ import {
   ArgTypes,
   Stories,
   Subheading,
-} from "@storybook/addon-docs";
+} from "@storybook/addon-docs/blocks";
 import { RichText } from "../../components/RichText";
 import { RichTextProps } from "../../components/RichText/RichText.props";
 import richTextArgs from "../../components/RichText/richText.args";

@@ -14,17 +14,11 @@ const config: StorybookConfig = {
     "../public",
     { from: "../node_modules/@ilo-org/fonts/font-css", to: "/fonts" },
   ],
-  core: {
-    builder: "@storybook/builder-vite",
-  },
   addons: [
     getAbsolutePath("@storybook/addon-links"),
-    getAbsolutePath("@storybook/addon-essentials"),
-    getAbsolutePath("@storybook/addon-interactions"),
-    getAbsolutePath("storybook-addon-rtl"),
     getAbsolutePath("@chromatic-com/storybook"),
     {
-      name: "@storybook/addon-docs",
+      name: getAbsolutePath("@storybook/addon-docs"),
       options: {
         transcludeMarkdown: true,
         configureJSX: true,

@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react-vite";
 import { Toggle, ToggleArgs } from "../../components/Toggle";
 import {
   ArgTypes,
@@ -7,7 +7,7 @@ import {
   Primary,
   Stories,
   Title,
-} from "@storybook/blocks";
+} from "@storybook/addon-docs/blocks";
 import { labelledChoiceFieldArgTypes } from "../../types/forms.args";
 
 const ToggleMeta: Meta<typeof Toggle> = {

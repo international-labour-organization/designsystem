@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react-vite";
 import {
   Title,
   Subtitle,
@@ -7,7 +7,7 @@ import {
   Stories,
   Subheading,
   ArgTypes,
-} from "@storybook/addon-docs";
+} from "@storybook/addon-docs/blocks";
 import { FileUpload } from "../../components";
 import fileUploadArgs from "../../components/FileUpload/FileUpload.args";
 import { labelledFormFieldArgTypes } from "../../types/forms.args";

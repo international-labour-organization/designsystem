@@ -1,15 +1,12 @@
 import React from "react";
-import { addons, types } from "@storybook/manager-api";
-import { IconButton } from "@storybook/components";
-import { GithubIcon, ShareAltIcon } from "@storybook/icons";
+import { addons, types, useGlobals } from "storybook/manager-api";
+import { IconButton } from "storybook/internal/components";
+import { GithubIcon, ShareAltIcon, TransferIcon } from "@storybook/icons";
 import theme from "./theme";
 
 const REPO_URL =
   "https://github.com/international-labour-organization/designsystem";
 
-// Sidebar entries whose label should be an external link instead of a
-// navigation item. Keys are the story ids of the placeholder docs pages in
-// src/stories/docs (the slugified Meta title).
 const EXTERNAL_LINKS: Record<string, string> = {
   "design-system-homepage": "https://brand.ilo.org/designsystem",
   "design-system-drupal-twig-components": "https://twig.ui.ilo.org",
@@ -48,6 +45,35 @@ addons.setConfig({
       );
     },
   },
+});
+
+const TextDirectionTool = () => {
+  const [globals, updateGlobals] = useGlobals();
+  const direction = globals.textDirection === "rtl" ? "rtl" : "ltr";
+
+  return (
+    <IconButton
+      key="ilo-text-direction"
+      active={direction === "rtl"}
+      title={`Switch text direction to ${
+        direction === "ltr" ? "right-to-left" : "left-to-right"
+      }`}
+      onClick={() =>
+        updateGlobals({ textDirection: direction === "ltr" ? "rtl" : "ltr" })
+      }
+    >
+      <TransferIcon />
+    </IconButton>
+  );
+};
+
+addons.register("ilo/text-direction", () => {
+  addons.add("ilo/text-direction/tool", {
+    type: types.TOOL,
+    title: "Text direction",
+    match: ({ viewMode }) => viewMode === "story" || viewMode === "docs",
+    render: TextDirectionTool,
+  });
 });
 
 addons.register("ilo/github-link", () => {

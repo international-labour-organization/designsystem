@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react-vite";
 import { MainNav, MainNavProps } from "../../components/Nav";
 import { MainNavArgs } from "./MainNav.args";
 

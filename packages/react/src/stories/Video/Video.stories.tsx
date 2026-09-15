@@ -1,11 +1,11 @@
-import { StoryFn, Meta } from "@storybook/react";
+import { StoryFn, Meta } from "@storybook/react-vite";
 import {
   Title,
   Description,
   Primary,
   ArgTypes,
   Subheading,
-} from "@storybook/addon-docs";
+} from "@storybook/addon-docs/blocks";
 import { Video } from "../../components/Video";
 import { VideoProps } from "../../components/Video/Video.props";
 import videoArgs from "../../components/Video/Video.args";

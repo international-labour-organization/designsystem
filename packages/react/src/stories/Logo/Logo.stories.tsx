@@ -1,4 +1,4 @@
-import { Meta, StoryObj } from "@storybook/react";
+import { Meta, StoryObj } from "@storybook/react-vite";
 import { Logo } from "../../components/Logo";
 import {
   Title,
@@ -7,7 +7,7 @@ import {
   Stories,
   Subheading,
   ArgTypes,
-} from "@storybook/blocks";
+} from "@storybook/addon-docs/blocks";
 import {
   basic,
   withSubBrand,
@@ -142,10 +142,18 @@ export const DarkTheme: StoryObj<typeof Logo> = {
   args: withDarkTheme,
   name: "Dark theme",
   argTypes: argTypesWithTheme,
+
   parameters: {
     backgrounds: {
-      default: "ilo",
-      values: [{ name: "ilo", value: "rgba(35, 0, 80, 1)" }], // --ilo-color-brand-800
+      options: {
+        ilo: { name: "ilo", value: "rgba(35, 0, 80, 1)" },
+      },
+    },
+  },
+
+  globals: {
+    backgrounds: {
+      value: "ilo",
     },
   },
 };
@@ -153,19 +161,29 @@ export const DarkTheme: StoryObj<typeof Logo> = {
 export const FluidWidth: StoryObj<typeof Logo> = {
   args: fluidWidth,
   name: "Fluid width",
+
   parameters: {
     backgrounds: {
-      default: "ilo",
-      values: [{ name: "ilo", value: "rgba(35, 0, 80, 1)" }], // --ilo-color-brand-800
+      options: {
+        ilo: { name: "ilo", value: "rgba(35, 0, 80, 1)" },
+      },
     },
   },
+
   argTypes: {
     size: { control: "text" },
     ...argTypesWithTheme,
   },
+
   render: (args) => (
     <div style={{ width: "600px", border: "1px dotted #fff" }}>
       <Logo {...args} />
     </div>
   ),
+
+  globals: {
+    backgrounds: {
+      value: "ilo",
+    },
+  },
 };

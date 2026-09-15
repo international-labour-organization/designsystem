@@ -1,4 +1,4 @@
-import { StoryFn, Meta } from "@storybook/react";
+import { StoryFn, Meta } from "@storybook/react-vite";
 import {
   Title,
   Description,
@@ -6,7 +6,7 @@ import {
   Stories,
   ArgTypes,
   Subheading,
-} from "@storybook/addon-docs";
+} from "@storybook/addon-docs/blocks";
 import { TableOfContents } from "../../components/TableOfContents";
 import { TableOfContentsProps } from "../../components/TableOfContents/TableOfContents.props";
 import tableOfContentsArgs from "../../components/TableOfContents/TableOfContents.args";
