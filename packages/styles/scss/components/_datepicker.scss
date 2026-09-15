@@ -2,6 +2,7 @@
 @use "../mixins" as *;
 
 .ilo--datepicker {
+  color-scheme: light;
   cursor: pointer;
 
   &::-webkit-calendar-picker-indicator {
