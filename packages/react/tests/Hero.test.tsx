@@ -145,17 +145,8 @@ describe("Hero", () => {
       fixture.image.url[fixture.image.url.length - 1].src
     );
     expect(img).toHaveAttribute("alt", fixture.image.alt);
+    expect(img).toHaveAttribute("fetchpriority", "high");
     expect(img).toHaveClass("ilo-hero--image");
-  });
-
-  it("should give the image a high fetch priority by default", () => {
-    const { container } = render(
-      <Hero heroCard={fixture.heroCard} image={fixture.image} />
-    );
-    expect(container.querySelector("img")).toHaveAttribute(
-      "fetchpriority",
-      "high"
-    );
   });
 
   it("should not render image section when no image provided", () => {
