@@ -1,5 +1,15 @@
 # @ilo-org/styles
 
+## 1.18.0
+
+### Minor Changes
+
+- 4cafb2a: Breakpoints: raised `xxl` from 1168px to 1440px
+
+### Patch Changes
+
+- 3e1aa43: Modal: centered the close button icon
+
 ## 1.17.1
 
 ### Patch Changes

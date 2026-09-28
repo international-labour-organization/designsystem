@@ -1,5 +1,17 @@
 # @ilo-org/react
 
+## 1.8.0
+
+### Minor Changes
+
+- 8576d22: Hero: added a `fetchPriority` prop (Twig: `fetchpriority`) that loads the hero image with `high` priority by default
+
+### Patch Changes
+
+- Updated dependencies [4cafb2a]
+- Updated dependencies [3e1aa43]
+  - @ilo-org/styles@1.18.0
+
 ## 1.7.1
 
 ### Patch Changes
