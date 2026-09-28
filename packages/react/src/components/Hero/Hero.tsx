@@ -1,4 +1,4 @@
-import { forwardRef, useMemo } from "react";
+import { forwardRef, useMemo, version } from "react";
 import classNames from "classnames";
 
 import useGlobalSettings from "../../hooks/useGlobalSettings";
@@ -35,6 +35,11 @@ export type HeroProps = {
   className?: string;
 
   /**
+   * Value for the hero image's fetchpriority attribute
+   */
+  fetchPriority?: "high" | "low" | "auto";
+
+  /**
    * Props for the image for the hero
    */
   image?: ImageProps;
@@ -67,6 +72,16 @@ export type HeroProps = {
   theme?: ThemeTypes;
 };
 
+// React 19 knows `fetchPriority`, React 18 only passes the lowercase
+// attribute through without a warning. `auto` is the browser default.
+function fetchPriorityAttribute(priority: HeroProps["fetchPriority"]) {
+  if (!priority || priority === "auto") return {};
+
+  return parseInt(version, 10) >= 19
+    ? { fetchPriority: priority }
+    : { fetchpriority: priority };
+}
+
 const Hero = forwardRef<HTMLDivElement, HeroProps>(
   (
     {
@@ -75,6 +90,7 @@ const Hero = forwardRef<HTMLDivElement, HeroProps>(
       align = "baseline",
       cardSize = "small",
       posterSize = "large",
+      fetchPriority = "high",
       theme: themeProp,
       image,
       breadcrumb,
@@ -132,6 +148,7 @@ const Hero = forwardRef<HTMLDivElement, HeroProps>(
                   className={`${prefix}-${baseClass}--image`}
                   src={orderedImages.at(-1)!.src}
                   alt={image.alt}
+                  {...fetchPriorityAttribute(fetchPriority)}
                 />
               </picture>
             </figure>
