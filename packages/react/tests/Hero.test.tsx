@@ -145,6 +145,7 @@ describe("Hero", () => {
       fixture.image.url[fixture.image.url.length - 1].src
     );
     expect(img).toHaveAttribute("alt", fixture.image.alt);
+    expect(img).toHaveAttribute("fetchpriority", "high");
     expect(img).toHaveClass("ilo-hero--image");
   });
 

@@ -1,0 +1,30 @@
+{
+  "settings": {
+    "prefix": "ilo",
+    "justify": "start",
+    "align": "baseline",
+    "postersize": "large",
+    "cardsize": "small"
+  },
+  "image": {
+    "alt": "Test image",
+    "url": [
+      { "breakpoint": 0, "src": "/images/small.jpg" },
+      { "breakpoint": 768, "src": "/images/medium.jpg" },
+      { "breakpoint": 1024, "src": "/images/large.jpg" },
+      { "breakpoint": 1280, "src": "/images/hero.jpg" }
+    ]
+  },
+  "breadcrumb": {
+    "home": { "label": "Home", "url": "/" },
+    "links": [{ "label": "Link One", "url": "/linkone" }]
+  },
+  "herocard": {
+    "title": "Test Title",
+    "theme": "dark",
+    "background": "solid"
+  },
+  "caption": {
+    "label": "Test caption"
+  }
+}

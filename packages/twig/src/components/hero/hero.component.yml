@@ -10,7 +10,6 @@ hero:
       description: The image to display in the hero. The image will be cropped to fit the hero's aspect ratio.
       preview:
         alt: Lorem ipsum
-        loading: lazy
         url:
           - breakpoint: 0
             src: "/images/hero.jpg"
@@ -130,6 +129,14 @@ hero:
         light: light
         dark: dark
       preview: "dark"
+    fetchpriority:
+      label: Fetch priority
+      description: The fetchpriority attribute of the hero image. Defaults to `high`.
+      type: select
+      options:
+        high: high
+        low: low
+        auto: auto
   variants:
     default:
       label: Default
