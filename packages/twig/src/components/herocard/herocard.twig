@@ -1,6 +1,9 @@
 {#
   HEROCARD COMPONENT
 #}
+{% set theme = theme|default("dark") %}
+{% set background = background|default("solid") %}
+
 <div class="{{prefix}}--hero-card {{prefix}}--hero-card__theme__{{ theme }} {{prefix}}--hero-card__background__{{ background }} {% if cornercut|boolval %} {{prefix}}--hero-card__cornercut {% endif %}">
   {% if eyebrow %}
     <p class="{{ prefix }}--hero-card--eyebrow">{{ eyebrow }}</p>

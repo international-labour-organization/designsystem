@@ -25,6 +25,7 @@ loading:
       options:
         light: Light
         dark: Dark
+      preview: "light"
     size:
       type: select
       label: Size

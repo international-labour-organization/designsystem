@@ -1,7 +1,8 @@
 {# profile.twig #}
 
+{% set size = size|default("large") %}
 {% set defaultAlt = "Photo of " ~ name %}
-<figure class="{{prefix}}--profile {{prefix}}--profile__theme__{{theme|default("light")}} {{prefix}}--profile__size__{{size|default("large")}}">
+<figure class="{{prefix}}--profile {{prefix}}--profile__theme__{{theme|default("light")}} {{prefix}}--profile__size__{{size}}">
 	{% if avatar %}
 		<img class="{{prefix}}--profile--avatar" src="{{avatar}}" alt="{{alt|default(defaultAlt)}}">
 	{% endif %}

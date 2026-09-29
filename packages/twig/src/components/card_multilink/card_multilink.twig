@@ -4,6 +4,8 @@
 {% if not theme %}
 	{% set theme = "light" %}
 {% endif %}
+{% set size = size|default("standard") %}
+{% set alignment = alignment|default("left") %}
 
 <div class="{{prefix}}--card {{prefix}}--card__theme__{{theme}} {{prefix}}--card__type__multilink {% if link|length > 0 %} {% endif %} {{prefix}}--card__size__{{size}} {% if isvideo|boolval %} {{prefix}}--card__isvideo {% endif %} {% if linklist %} {{prefix}}--card__linklist {% endif %} {% if size == "wide" or size == "fluid" %} {{prefix}}--card__align__{{alignment}} {% endif %} {% if not image %} {{prefix}}--card--no-image {% endif %}">
 	{% if link|length > 0 %}

@@ -11,6 +11,7 @@ pagination:
       options:
         light: "light"
         dark: "dark"
+      preview: "light"
   fields:
     currentPage:
       type: number

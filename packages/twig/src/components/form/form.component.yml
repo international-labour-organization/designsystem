@@ -12,6 +12,7 @@ form:
       options:
         light: light
         dark: dark
+      preview: "light"
   fields:
     headline:
       type: string
