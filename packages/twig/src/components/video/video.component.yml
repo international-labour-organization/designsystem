@@ -50,6 +50,7 @@ video:
       options:
         light: light
         dark: dark
+      preview: "light"
   variants:
     default:
       label: Default
@@ -121,4 +122,5 @@ youtube_video:
       options:
         light: light
         dark: dark
+      preview: "light"
   visibility: storybook

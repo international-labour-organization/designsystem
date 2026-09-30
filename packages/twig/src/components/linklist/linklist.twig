@@ -2,6 +2,7 @@
   LINK LIST COMPONENT
 #}
 {% set titleLevel = titleLevel|default('h3') %}
+{% set theme = theme|default('light') %}
 
 <div class="{{prefix}}--link-list {{prefix}}--link-list--{{theme}}" data-loadcomponent="LinkList" data-prefix="{{prefix}}">
   {% if headline %}

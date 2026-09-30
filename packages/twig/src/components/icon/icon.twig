@@ -1,1 +1,3 @@
+{% set size = size|default(24) %}
+{% set color = color|default("#000000") %}
 <svg class="{{prefix}}--icon{% if class %} {{class}}{% endif %}" data-name="{{name}}" data-size="{{size}}" width="{{size}}" height="{{size}}" data-color="{{color}}" data-loadcomponent="Icon" aria-hidden="true"></svg>

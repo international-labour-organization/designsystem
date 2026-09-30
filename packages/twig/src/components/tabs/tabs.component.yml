@@ -39,6 +39,7 @@ tabs:
       options:
         light: "Light"
         dark: "Dark"
+      preview: "light"
   variants:
     default:
       label: Default

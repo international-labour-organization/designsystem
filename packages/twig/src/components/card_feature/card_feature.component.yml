@@ -71,7 +71,7 @@ featurecard:
       label: Theme
       description: Sets the card to appear as either light or dark. If not set, the card will inherit the theme of its parent.
       required: false
-      preview: "dark"
+      preview: "light"
       options:
         dark: Dark
         light: Light
@@ -87,3 +87,4 @@ featurecard:
         h3: h3
         h4: h4
         h5: h5
+      preview: "p"
