@@ -15,7 +15,7 @@ This package provides the implementation of the Design System using [Twig](https
 
 ### Prerequisites
 
-- Node.js version 20 or higher
+- Node.js version 24 or higher
   - You can use [nvm](https://github.com/nvm-sh/nvm) to manage your Node.js versions
 - [pnpm](https://pnpm.io/) installed globally or via corepack >= 9.14.0
 
