@@ -137,6 +137,7 @@ hero:
         high: high
         low: low
         auto: auto
+      preview: "high"
   variants:
     default:
       label: Default

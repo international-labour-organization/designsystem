@@ -1,9 +1,7 @@
 {#
   CARD COMPONENT
 #}
-{% if type == "" %}
-  {% set type = variant %}
-{% endif %}
+{% set type = type|default(variant|default("feature")) %}
 
 {% if type == "data" %}
   {% include "@components/card_data/card_data.twig" %}

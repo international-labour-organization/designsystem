@@ -64,6 +64,7 @@ list:
       options:
         light: light
         dark: dark
+      preview: "light"
     titleLevel:
       type: select
       label: Headline Title Level

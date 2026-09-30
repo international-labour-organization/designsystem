@@ -1,4 +1,7 @@
 {# card_factlist.twig #}
+{% set size = size|default("narrow") %}
+{% set theme = theme|default("dark") %}
+
 <div class="{{prefix}}--card {{prefix}}--card__type__factlist {{prefix}}--card__size__{{size}} {{prefix}}--card__theme__{{theme}}">
 	<div class="{{prefix}}--card--wrap">
 		<div class="{{prefix}}--card--content">
