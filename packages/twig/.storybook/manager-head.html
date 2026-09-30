@@ -36,4 +36,11 @@
     background: var(--ilo-color-yellow-400) !important;
     color: var(--ilo-color-brand-800) !important;
   }
+
+  /* Storybook 9 tints the addon panel count badges with the secondary
+     color, which is unreadable against the dark bar. */
+  .sb-bar .tabbutton span + div {
+    color: var(--ilo-color-brand-800);
+    background: var(--ilo-color-brand-100);
+  }
 </style>
