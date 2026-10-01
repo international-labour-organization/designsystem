@@ -42,4 +42,5 @@ export { Tabs } from "./Tabs";
 export { AudioPlayer } from "./AudioPlayer";
 export * from "./Cards";
 export * from "./LanguageToggle";
+export * from "./Toggle";
 export * from "./Nav";
