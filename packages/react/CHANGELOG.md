@@ -1,5 +1,11 @@
 # @ilo-org/react
 
+## 1.8.1
+
+### Patch Changes
+
+- 7ab5904: Toggle: export the component and its `ToggleProps` type from the package entry point. It was previously only reachable through Storybook.
+
 ## 1.8.0
 
 ### Minor Changes
