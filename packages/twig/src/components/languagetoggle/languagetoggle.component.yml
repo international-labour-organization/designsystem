@@ -39,7 +39,7 @@ languagetoggle:
       type: select
       label: Theme
       description: Sets the Language Card to appear as either light or dark.
-      preview: "dark"
+      preview: "light"
       default: "light"
       required: false
       options:

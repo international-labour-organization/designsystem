@@ -9,6 +9,7 @@
 {% if size == "narrow" %}
 	{% set columns = "one" %}
 {% endif %}
+{% set size = size|default("narrow") %}
 
 {# Different layout options to apply depending on if the card has an image
  or if it has links. If it has two columns with image, then image goes on one side

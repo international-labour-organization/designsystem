@@ -1,3 +1,5 @@
+{% set theme = theme|default("light") %}
+
 <div class="{{prefix}}--logo-grid {{prefix}}--logo-grid__theme__{{ theme }}">
   <div class="{{prefix}}--logo-grid--logos">
     {% for logo in logos %}
