@@ -19,17 +19,11 @@ const config = {
     "../stories/**/*.stories.@(js|jsx|mjs|ts|tsx)",
   ],
   staticDirs: ["../public"],
-  core: {
-    builder: "@storybook/builder-vite",
-  },
   addons: [
     getAbsolutePath("@storybook/addon-links"),
-    getAbsolutePath("@storybook/addon-essentials"),
     getAbsolutePath("@chromatic-com/storybook"),
-    getAbsolutePath("@storybook/addon-interactions"),
-    getAbsolutePath("@etchteam/storybook-addon-github-link"),
     {
-      name: "@storybook/addon-docs",
+      name: getAbsolutePath("@storybook/addon-docs"),
       options: {
         transcludeMarkdown: true,
         configureJSX: true,
