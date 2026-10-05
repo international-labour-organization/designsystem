@@ -81,13 +81,15 @@ const HeroCard = forwardRef<HTMLDivElement, HeroCardProps>(
     return (
       <div
         ref={ref}
-        className={classNames({
-          [baseClass]: true,
-          [`${baseClass}__background__${background}`]: true,
-          [`${baseClass}__theme__${theme}`]: true,
-          [`${baseClass}__cornercut`]: cornercut,
-          className,
-        })}
+        className={classNames(
+          {
+            [baseClass]: true,
+            [`${baseClass}__background__${background}`]: true,
+            [`${baseClass}__theme__${theme}`]: true,
+            [`${baseClass}__cornercut`]: cornercut,
+          },
+          className
+        )}
       >
         {eyebrow && <p className={`${baseClass}--eyebrow`}>{eyebrow}</p>}
         <HeroCardTitle title={title} url={url} />
