@@ -74,7 +74,12 @@
       width: 32px;
 
       &::before {
-        @include icon("close", var(--ilo-color-light-icon-brand), 32px, center);
+        @include icon(
+          "close",
+          var(--ilo-color-light-icon-brand-stronger),
+          32px,
+          center
+        );
         content: "";
         position: absolute;
         inset: 0;
@@ -394,7 +399,7 @@
     &::before {
       @include icon(
         "chevron_right",
-        var(--ilo-color-light-icon-brand),
+        var(--ilo-color-light-icon-brand-stronger),
         24px,
         calc(100% - 16px) center
       );
@@ -421,7 +426,7 @@
       &::before {
         @include icon(
           "chevron_left",
-          var(--ilo-color-light-icon-brand),
+          var(--ilo-color-light-icon-brand-stronger),
           24px,
           16px 55%
         );
@@ -613,7 +618,7 @@
     &::before {
       @include icon(
         "globe",
-        var(--ilo-color-light-icon-brand),
+        var(--ilo-color-light-icon-brand-stronger),
         24px,
         calc(100% - 16px) center
       );
@@ -875,7 +880,7 @@
     &::before {
       @include icon(
         "chevron_left",
-        var(--ilo-color-light-icon-brand),
+        var(--ilo-color-light-icon-brand-stronger),
         24px,
         10% center
       );
@@ -895,7 +900,7 @@
       &::before {
         @include icon(
           "chevron_right",
-          var(--ilo-color-light-icon-brand),
+          var(--ilo-color-light-icon-brand-stronger),
           24px,
           10% center
         );
@@ -1038,7 +1043,7 @@
       &::before {
         @include icon(
           "close",
-          var(--ilo-color-light-icon-brand),
+          var(--ilo-color-light-icon-brand-stronger),
           32px 32px,
           center
         );
