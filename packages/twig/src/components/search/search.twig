@@ -16,13 +16,13 @@
 
 {% block formfield %}
 	<div data-loadcomponent="Search" class="{{ searchClass|join(" ") }}" {% if style %} style={{ style }} {% endif %}>
-		<div class="{{fieldSetClass}}">
-			<input name="{{name}}" type="{{type}}" class="{{ inputClass }}{% if error %} error{% endif %}" {% if placeholder %} placeholder="{{placeholder}}" {% endif %} {% if disabled %} disabled {% endif %} {% if required %} required {% endif %} id="{% if id %}{{id}}{% else %}{{name}}{% endif %}"/>
-			<span class="{{clearButtonClass}}" >
+		<div class="{{ fieldSetClass }}">
+			<input name="{{ name }}" type="{{ type }}" class="{{ inputClass }}{% if error %} error{% endif %}" {% if placeholder %} placeholder="{{ placeholder }}" {% endif %} {% if disabled %} disabled {% endif %} {% if required %} required {% endif %} id="{% if id %}{{ id }}{% else %}{{ name }}{% endif %}"/>
+			<span class="{{ clearButtonClass }}">
 				{% include "@components/icon/icon.twig" with {
 						"name": "Close",
 						"size": "24",
-						"color": "var(--ilo-color-light-icon-brand)"
+						"color": "var(--ilo-color-light-icon-brand-stonger)"
 				} %}
 			</span>
 		</div>
