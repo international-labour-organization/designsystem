@@ -163,7 +163,7 @@ const Hero = forwardRef<HTMLDivElement, HeroProps>(
         )}
         <div className={`${baseClass}--card-offset`} />
         <div className={`${baseClass}--card`}>
-          <HeroCard {...heroCard} />
+          <HeroCard {...heroCard} theme={theme} background={background} />
         </div>
         {caption && (
           <div className={`${baseClass}--caption`}>
