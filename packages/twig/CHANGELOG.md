@@ -1,5 +1,21 @@
 # @ilo-org/twig
 
+## 1.18.0
+
+### Minor Changes
+
+- 552dd62: **SocialMedia**: Icons in the light theme now appear as ILO blue instead of grey.
+
+### Patch Changes
+
+- e219a00: **Loading:** The background of the Complete state in the dark theme is now ILO blue
+- Updated dependencies [552dd62]
+- Updated dependencies [e219a00]
+- Updated dependencies [24f9e73]
+- Updated dependencies [ea7f0ce]
+  - @ilo-org/styles@1.19.0
+  - @ilo-org/maestro@1.0.3
+
 ## 1.17.1
 
 ### Patch Changes

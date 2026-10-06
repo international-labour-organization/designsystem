@@ -1,5 +1,20 @@
 # @ilo-org/styles
 
+## 1.19.0
+
+### Minor Changes
+
+- 552dd62: **SocialMedia**: Icons in the light theme now appear as ILO blue instead of grey.
+- ea7f0ce: **Foundation**
+
+  - change `ilo-color-light-icon-brand` from `ilo-color-brand-800` to `ilo-color-brand-600`
+  - add new `ilo-color-light-icon-brand-strong: ilo-color-brand-800`.
+  - replace old instances of `ilo-color-light-brand` with `ilo-color-light-icon-brand-strong`
+
+### Patch Changes
+
+- e219a00: **Loading:** The background of the Complete state in the dark theme is now ILO blue
+
 ## 1.18.0
 
 ### Minor Changes

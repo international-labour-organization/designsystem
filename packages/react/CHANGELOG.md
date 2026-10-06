@@ -1,5 +1,20 @@
 # @ilo-org/react
 
+## 1.9.0
+
+### Minor Changes
+
+- 552dd62: **SocialMedia**: Icons in the light theme now appear as ILO blue instead of grey.
+
+### Patch Changes
+
+- b9c054e: **Hero:** Now correctly passes its theme doen to the HeroCard
+- e219a00: **Loading:** The background of the Complete state in the dark theme is now ILO blue
+- Updated dependencies [552dd62]
+- Updated dependencies [e219a00]
+- Updated dependencies [ea7f0ce]
+  - @ilo-org/styles@1.19.0
+
 ## 1.8.1
 
 ### Patch Changes
