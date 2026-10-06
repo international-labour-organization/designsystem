@@ -6,7 +6,7 @@ import "@ilo-org/styles/scss/global.scss";
 import { BehaviorDecorator } from "@ilo-org/maestro/storybook";
 import "./styles.scss";
 
-/** @type { import('@storybook/html').Preview } */
+/** @type { import('@storybook/html-vite').Preview } */
 const preview = {
   globalTypes: {
     locale: {

@@ -19,7 +19,11 @@ vi.mock("../src/components/Tooltip", () => ({
 }));
 
 vi.mock("../src/components/HeroCard", () => ({
-  HeroCard: () => <div data-testid="hero-card">HeroCard Component</div>,
+  HeroCard: ({ theme }: { theme?: string }) => (
+    <div data-testid="hero-card" data-theme={theme}>
+      HeroCard Component
+    </div>
+  ),
 }));
 
 const fixture = {
@@ -73,6 +77,22 @@ describe("Hero", () => {
   it("should render the hero card", () => {
     render(<Hero heroCard={fixture.heroCard} />);
     expect(screen.getByTestId("hero-card")).toBeInTheDocument();
+  });
+
+  it("should pass its theme down to the hero card", () => {
+    render(<Hero heroCard={fixture.heroCard} theme="light" />);
+    expect(screen.getByTestId("hero-card")).toHaveAttribute(
+      "data-theme",
+      "light"
+    );
+  });
+
+  it("should default the hero card to the dark theme", () => {
+    render(<Hero heroCard={{ title: "Test Title" }} />);
+    expect(screen.getByTestId("hero-card")).toHaveAttribute(
+      "data-theme",
+      "dark"
+    );
   });
 
   it("should render breadcrumb when provided", () => {

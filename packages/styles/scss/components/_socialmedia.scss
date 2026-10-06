@@ -12,7 +12,7 @@
     }
 
     @if $theme == "light" {
-      @include icon($icon, var(--ilo-color-dark-icon-subtle));
+      @include icon($icon, var(--ilo-color-light-icon-brand));
     }
 
     &:hover {
