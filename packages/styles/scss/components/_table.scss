@@ -79,7 +79,7 @@
         &:after {
           @include icon(
             "chevron_down",
-            var(--ilo-color-light-icon-brand),
+            var(--ilo-color-light-icon-brand-stonger),
             75%,
             center center
           );
