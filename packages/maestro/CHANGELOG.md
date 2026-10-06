@@ -1,5 +1,11 @@
 # @ilo-org/maestro
 
+## 1.0.3
+
+### Patch Changes
+
+- 24f9e73: Updated the `@storybook/html` types Maestro is built against to Storybook 9
+
 ## 1.0.2
 
 ### Patch Changes
