@@ -1,4 +1,4 @@
-import { forwardRef, useMemo, version } from "react";
+import { forwardRef, ReactNode, useMemo, version } from "react";
 import classNames from "classnames";
 
 import useGlobalSettings from "../../hooks/useGlobalSettings";
@@ -55,6 +55,13 @@ export type HeroProps = {
   heroCard: HeroCardProps;
 
   /**
+   * Content rendered inside the hero card, after the intro and date copy
+   * and before the social media links. Passed through as the HeroCard's
+   * `children`; intended for calls to action such as Buttons.
+   */
+  heroCardChildren?: ReactNode;
+
+  /**
    * Color of the gap space between bottom of the hero image and bottom of the card
    */
   gap?: "white" | "transparent" | "dark" | "light";
@@ -95,6 +102,7 @@ const Hero = forwardRef<HTMLDivElement, HeroProps>(
       image,
       breadcrumb,
       heroCard,
+      heroCardChildren,
       caption,
       gap,
     },
@@ -163,7 +171,9 @@ const Hero = forwardRef<HTMLDivElement, HeroProps>(
         )}
         <div className={`${baseClass}--card-offset`} />
         <div className={`${baseClass}--card`}>
-          <HeroCard {...heroCard} theme={theme} background={background} />
+          <HeroCard {...heroCard} theme={theme} background={background}>
+            {heroCardChildren}
+          </HeroCard>
         </div>
         {caption && (
           <div className={`${baseClass}--caption`}>

@@ -63,6 +63,11 @@
         * {
           filter: drop-shadow(1px 1px 12px var(--ilo-color-neutrals-black));
         }
+
+        #{$c}--actions,
+        #{$c}--actions * {
+          filter: none;
+        }
       }
     }
   }
@@ -94,6 +99,18 @@
           "left"
         );
       }
+    }
+  }
+
+  &--actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: spacing(3);
+    margin-bottom: spacing(7);
+
+    &:last-child {
+      margin-bottom: 0;
     }
   }
 
