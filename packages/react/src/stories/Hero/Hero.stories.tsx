@@ -1,6 +1,7 @@
 import { StoryObj, Meta } from "@storybook/react-vite";
 import { Hero, HeroProps } from "../../components/Hero";
 import { HeroCardProps } from "../../components/HeroCard";
+import { Button } from "../../components/Button";
 import { ThemeTypes } from "../../types";
 
 // `heroCard` is a single object prop, so Storybook renders it as one JSON
@@ -190,5 +191,31 @@ const LightSemiTransparent: StoryObj<HeroStoryArgs> = {
   },
 };
 
+const WithCardActions: StoryObj<HeroStoryArgs> = {
+  name: "With card actions",
+  parameters: {
+    docs: {
+      description: {
+        story:
+          "`heroCardChildren` is passed through to the HeroCard's `children`, so calls to action render inside the card after the intro and date copy.",
+      },
+    },
+  },
+  args: {
+    ...Default.args,
+    heroCard: {
+      ...Default.args!.heroCard!,
+      intro:
+        "The ILO works with governments, employers and workers to eliminate child labour in all its forms.",
+    },
+    heroCardChildren: (
+      <>
+        <Button type="primary">Read the report</Button>
+        <Button type="secondary">Watch the video</Button>
+      </>
+    ),
+  },
+};
+
 export default meta;
-export { Default, Homepage, Article, LightSemiTransparent };
+export { Default, Homepage, Article, LightSemiTransparent, WithCardActions };
