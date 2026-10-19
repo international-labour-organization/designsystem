@@ -1,5 +1,6 @@
 import { Meta, StoryObj } from "@storybook/react-vite";
 import { HeroCard, HeroCardProps } from "../../components/HeroCard";
+import { Button } from "../../components/Button";
 
 const meta: Meta<typeof HeroCard> = {
   title: "Components/Content/HeroCard",
@@ -45,5 +46,38 @@ const Default: StoryObj<HeroCardProps> = {
   },
 };
 
+const WithActions: StoryObj<HeroCardProps> = {
+  name: "With actions",
+  parameters: {
+    docs: {
+      description: {
+        story:
+          "Pass `children` to render calls to action inside the card. They appear after the intro and date copy and before the social media links.",
+      },
+    },
+  },
+  args: {
+    ...Default.args,
+    children: (
+      <>
+        <Button type="primary">Read the report</Button>
+        <Button type="secondary">Watch the video</Button>
+      </>
+    ),
+  },
+};
+
+const WithActionsLight: StoryObj<HeroCardProps> = {
+  name: "With actions (light)",
+  args: {
+    ...WithActions.args,
+    theme: "light",
+    socialmedia: {
+      ...Default.args!.socialmedia!,
+      theme: "light",
+    },
+  },
+};
+
 export default meta;
-export { Default };
+export { Default, WithActions, WithActionsLight };

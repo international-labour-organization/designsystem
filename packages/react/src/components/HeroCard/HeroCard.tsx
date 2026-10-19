@@ -1,4 +1,4 @@
-import { forwardRef } from "react";
+import { forwardRef, ReactNode } from "react";
 import classNames from "classnames";
 
 import { ThemeTypes } from "../../types";
@@ -11,6 +11,12 @@ export type HeroCardProps = {
    * Specify whether the background should be solid, transparent or semi-transparent
    */
   background?: "solid" | "transparent" | "semi-transparent";
+
+  /**
+   * Optional content rendered after the intro and date copy, before the
+   * social media links. Intended for calls to action such as Buttons.
+   */
+  children?: ReactNode;
 
   /**
    * Specify an optional className to be added to your Hero component.
@@ -71,6 +77,7 @@ const HeroCard = forwardRef<HTMLDivElement, HeroCardProps>(
       intro,
       datecopy,
       socialmedia,
+      children,
     },
     ref
   ) => {
@@ -95,6 +102,7 @@ const HeroCard = forwardRef<HTMLDivElement, HeroCardProps>(
         <HeroCardTitle title={title} url={url} />
         {intro && <p className={`${baseClass}--intro`}>{intro}</p>}
         {datecopy && <p className={`${baseClass}--datecopy`}>{datecopy}</p>}
+        {children && <div className={`${baseClass}--actions`}>{children}</div>}
         {socialmedia && <SocialMedia {...socialmedia} theme={theme} />}
       </div>
     );

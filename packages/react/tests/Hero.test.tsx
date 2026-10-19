@@ -1,3 +1,4 @@
+import { ReactNode } from "react";
 import { expect, describe, it, vi } from "vitest";
 import { render, screen } from "@testing-library/react";
 
@@ -19,9 +20,10 @@ vi.mock("../src/components/Tooltip", () => ({
 }));
 
 vi.mock("../src/components/HeroCard", () => ({
-  HeroCard: ({ theme }: { theme?: string }) => (
+  HeroCard: ({ theme, children }: { theme?: string; children?: ReactNode }) => (
     <div data-testid="hero-card" data-theme={theme}>
       HeroCard Component
+      {children}
     </div>
   ),
 }));
@@ -92,6 +94,19 @@ describe("Hero", () => {
     expect(screen.getByTestId("hero-card")).toHaveAttribute(
       "data-theme",
       "dark"
+    );
+  });
+
+  it("should pass heroCardChildren through to the hero card", () => {
+    render(
+      <Hero
+        heroCard={fixture.heroCard}
+        heroCardChildren={<button>Call to action</button>}
+      />
+    );
+
+    expect(screen.getByTestId("hero-card")).toContainElement(
+      screen.getByRole("button", { name: "Call to action" })
     );
   });
 
