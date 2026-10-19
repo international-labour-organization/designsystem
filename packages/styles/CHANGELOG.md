@@ -1,5 +1,12 @@
 # @ilo-org/styles
 
+## 1.19.1
+
+### Patch Changes
+
+- b04a728: **HeroCard**: add `children` slot for calls to action, rendered after the intro and date copy and before the social media links.
+  **Hero**: add `heroCardChildren` pass-through to the card's `children`.
+
 ## 1.19.0
 
 ### Minor Changes
