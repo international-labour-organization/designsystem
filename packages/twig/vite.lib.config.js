@@ -1,5 +1,5 @@
+import { globSync } from "node:fs";
 import { basename, dirname, relative } from "node:path";
-import { globSync } from "glob";
 import { defineConfig } from "vite";
 import { viteStaticCopy } from "vite-plugin-static-copy";
 
