@@ -140,13 +140,21 @@
           }
 
           &#{$c}__columns__two {
-            padding: spacing(12) spacing(12) spacing(14) spacing(28);
+            padding: spacing(10) spacing(6) spacing(14);
+
+            @include breakpoint("md") {
+              padding: spacing(12) spacing(12) spacing(14) spacing(28);
+            }
           }
         }
 
         &__wide,
         &__fluid {
           @include cornercut(86px, 48px);
+
+          &#{$c}__columns__two {
+            @include cornercut(72px, 40px);
+          }
         }
       }
 
