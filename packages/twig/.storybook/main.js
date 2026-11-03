@@ -1,16 +1,7 @@
-import { join, dirname } from "path";
 import { mergeConfig } from "vite";
 import alternate from "./vite.config.js";
 
 import { head } from "@ilo-org/maestro/storybook";
-
-/**
- * This function is used to resolve the absolute path of a package.
- * It is needed in projects that use Yarn PnP or are set up within a monorepo.
- */
-function getAbsolutePath(value) {
-  return dirname(require.resolve(join(value, "package.json")));
-}
 
 /** @type { import('@storybook/html-vite').StorybookConfig } */
 const config = {
@@ -20,10 +11,10 @@ const config = {
   ],
   staticDirs: ["../public"],
   addons: [
-    getAbsolutePath("@storybook/addon-links"),
-    getAbsolutePath("@chromatic-com/storybook"),
+    "@storybook/addon-links",
+    "@chromatic-com/storybook",
     {
-      name: getAbsolutePath("@storybook/addon-docs"),
+      name: "@storybook/addon-docs",
       options: {
         transcludeMarkdown: true,
         configureJSX: true,
@@ -31,7 +22,7 @@ const config = {
     },
   ],
   framework: {
-    name: getAbsolutePath("@storybook/html-vite"),
+    name: "@storybook/html-vite",
     options: {},
   },
   viteFinal: (config) => {
