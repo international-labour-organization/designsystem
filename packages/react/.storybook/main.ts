@@ -12,6 +12,7 @@ const config: StorybookConfig = {
   addons: [
     "@storybook/addon-links",
     "@chromatic-com/storybook",
+    "@storybook/addon-mcp",
     {
       name: "@storybook/addon-docs",
       options: {
@@ -23,6 +24,9 @@ const config: StorybookConfig = {
   framework: {
     name: "@storybook/react-vite",
     options: {},
+  },
+  features: {
+    componentsManifest: true,
   },
   typescript: {
     reactDocgen: "react-docgen-typescript",
