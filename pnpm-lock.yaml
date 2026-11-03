@@ -574,6 +574,9 @@ importers:
       '@storybook/addon-links':
         specifier: 10.6.5
         version: 10.6.5(@types/react@18.3.31)(react@18.3.1)(storybook@10.6.5(@types/react@18.3.31)(prettier@3.9.9)(react@18.3.1))
+      '@storybook/addon-mcp':
+        specifier: 10.6.5
+        version: 10.6.5(storybook@10.6.5(@types/react@18.3.31)(prettier@3.9.9)(react@18.3.1))(typescript@5.9.3)
       '@storybook/html-vite':
         specifier: 10.6.5
         version: 10.6.5(storybook@10.6.5(@types/react@18.3.31)(prettier@3.9.9)(react@18.3.1))(vite@8.3.5(@types/node@22.20.5)(esbuild@0.28.2)(sass@1.105.1)(terser@5.51.2)(yaml@2.9.1))

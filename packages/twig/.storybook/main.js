@@ -13,6 +13,7 @@ const config = {
   addons: [
     "@storybook/addon-links",
     "@chromatic-com/storybook",
+    "@storybook/addon-mcp",
     {
       name: "@storybook/addon-docs",
       options: {
