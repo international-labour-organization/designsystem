@@ -16,16 +16,13 @@
   "types": "./lib",
   "exports": {
     ".": {
-      "import": "./lib/index.js",
-      "require": "./lib/index.js"
+      "import": "./lib/index.js"
     },
     "./plugin": {
-      "import": "./lib/vite.js",
-      "require": "./lib/vite.js"
+      "import": "./lib/vite.js"
     },
     "./storybook": {
-      "import": "./lib/storybook.js",
-      "require": "./lib/storybook.js"
+      "import": "./lib/storybook.js"
     }
   },
   "scripts": {
