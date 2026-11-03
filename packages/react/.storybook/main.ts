@@ -1,9 +1,4 @@
-import { dirname, join } from "path";
 import type { StorybookConfig } from "@storybook/react-vite";
-
-function getAbsolutePath(value: string): any {
-  return dirname(require.resolve(join(value, "package.json")));
-}
 
 const config: StorybookConfig = {
   stories: [
@@ -15,10 +10,10 @@ const config: StorybookConfig = {
     { from: "../node_modules/@ilo-org/fonts/font-css", to: "/fonts" },
   ],
   addons: [
-    getAbsolutePath("@storybook/addon-links"),
-    getAbsolutePath("@chromatic-com/storybook"),
+    "@storybook/addon-links",
+    "@chromatic-com/storybook",
     {
-      name: getAbsolutePath("@storybook/addon-docs"),
+      name: "@storybook/addon-docs",
       options: {
         transcludeMarkdown: true,
         configureJSX: true,
@@ -26,7 +21,7 @@ const config: StorybookConfig = {
     },
   ],
   framework: {
-    name: getAbsolutePath("@storybook/react-vite"),
+    name: "@storybook/react-vite",
     options: {},
   },
   typescript: {
