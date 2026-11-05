@@ -19,4 +19,22 @@
     font-family:
       "Overpass", sans-serif !important; /* Customize the sidebar font */
   }
+
+  /* Storybook 10 renders toolbar tools with the Button "ghost" variant, which
+     ignores the bar* colors set in theme.ts (it uses textMutedColor and
+     colorSecondary instead). Restore white icons that turn ILO yellow on
+     hover, press and when toggled on. Tabs (role="tab") still follow the
+     theme, so leave them alone. */
+  .sb-bar button:not([role="tab"]) {
+    color: rgba(255, 255, 255, 1); /* --ilo-color-neutrals-white */
+  }
+
+  .sb-bar button:not([role="tab"]):hover,
+  .sb-bar button:not([role="tab"]):active,
+  .sb-bar button:not([role="tab"])[aria-pressed="true"],
+  .sb-bar button:not([role="tab"])[aria-checked="true"],
+  .sb-bar button:not([role="tab"])[aria-expanded="true"] {
+    color: rgba(255, 205, 45, 1); /* --ilo-color-yellow-400 */
+    background: rgba(255, 205, 45, 0.15);
+  }
 </style>
