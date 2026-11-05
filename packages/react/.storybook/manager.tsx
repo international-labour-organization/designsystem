@@ -1,6 +1,6 @@
 import React from "react";
 import { addons, types, useGlobals } from "storybook/manager-api";
-import { IconButton } from "storybook/internal/components";
+import { Button, ToggleButton } from "storybook/internal/components";
 import { GithubIcon, ShareAltIcon, TransferIcon } from "@storybook/icons";
 import theme from "./theme";
 
@@ -52,10 +52,12 @@ const TextDirectionTool = () => {
   const direction = globals.textDirection === "rtl" ? "rtl" : "ltr";
 
   return (
-    <IconButton
+    <ToggleButton
       key="ilo-text-direction"
-      active={direction === "rtl"}
-      title={`Switch text direction to ${
+      variant="ghost"
+      padding="small"
+      pressed={direction === "rtl"}
+      ariaLabel={`Switch text direction to ${
         direction === "ltr" ? "right-to-left" : "left-to-right"
       }`}
       onClick={() =>
@@ -63,7 +65,7 @@ const TextDirectionTool = () => {
       }
     >
       <TransferIcon />
-    </IconButton>
+    </ToggleButton>
   );
 };
 
@@ -82,13 +84,15 @@ addons.register("ilo/github-link", () => {
     title: "GitHub repository",
     match: ({ viewMode }) => viewMode === "story" || viewMode === "docs",
     render: () => (
-      <IconButton
+      <Button
         key="ilo-github"
-        title="View the Design System on GitHub"
+        variant="ghost"
+        padding="small"
+        ariaLabel="View the Design System on GitHub"
         onClick={() => window.open(REPO_URL, "_blank", "noopener,noreferrer")}
       >
         <GithubIcon />
-      </IconButton>
+      </Button>
     ),
   });
 });

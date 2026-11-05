@@ -22,11 +22,13 @@ describe("Breadcrumb", () => {
     mockObserve = vi.fn();
     mockUnobserve = vi.fn();
     mockDisconnect = vi.fn();
-    mockResizeObserver = vi.fn().mockImplementation(() => ({
-      observe: mockObserve,
-      unobserve: mockUnobserve,
-      disconnect: mockDisconnect,
-    }));
+    mockResizeObserver = vi.fn().mockImplementation(function () {
+      return {
+        observe: mockObserve,
+        unobserve: mockUnobserve,
+        disconnect: mockDisconnect,
+      };
+    });
 
     global.ResizeObserver = mockResizeObserver;
   });

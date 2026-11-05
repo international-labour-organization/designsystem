@@ -44,6 +44,8 @@ const copyConfig = copy({
         return `${componentFolder}/${name}.${extension}`;
       },
     },
+    // TODO: Stop emitting wingsuit files
+    // https://github.com/international-labour-organization/designsystem/issues/1985
     {
       src: "src/components/**/**.component.yml",
       dest: "dist/components/",

@@ -1,16 +1,13 @@
-import type { UserConfig as VitestUserConfig } from "vitest/config";
-import { defineConfig, UserConfig } from "vite";
+import { defineConfig } from "vitest/config";
+import type { Rolldown } from "vite";
 import react from "@vitejs/plugin-react";
 import dts from "vite-plugin-dts";
 import { viteStaticCopy } from "vite-plugin-static-copy";
 import { globSync } from "glob";
-import { PreRenderedChunk } from "rollup";
-
-type ViteConfig = UserConfig & { test: VitestUserConfig["test"] };
 
 const OUT_DIR = "lib";
 
-function names({ facadeModuleId }: PreRenderedChunk) {
+function names({ facadeModuleId }: Rolldown.PreRenderedChunk) {
   if (facadeModuleId?.endsWith("src/index.ts")) {
     return "index.js";
   }
@@ -24,7 +21,7 @@ function names({ facadeModuleId }: PreRenderedChunk) {
   return "_store/[name].js";
 }
 
-const config: ViteConfig = {
+export default defineConfig({
   plugins: [
     react(),
     dts({
@@ -61,7 +58,7 @@ const config: ViteConfig = {
         "src/index.ts",
       ]),
     },
-    rollupOptions: {
+    rolldownOptions: {
       external: ["react", "react-dom", "react/jsx-runtime"],
       output: [
         {
@@ -81,6 +78,4 @@ const config: ViteConfig = {
       ],
     },
   },
-};
-
-export default defineConfig(config as UserConfig);
+});
