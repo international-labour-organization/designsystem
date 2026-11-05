@@ -1,5 +1,12 @@
 # @ilo-org/maestro
 
+## 2.0.0
+
+### Major Changes
+
+- aea069a: Updated maestro to work in pure ESM environments such as Storybook 10. Now the maestro package emits pure ESM code.
+  Updated `@storybook/html` types Maestro is built against to Storybook 10
+
 ## 1.0.3
 
 ### Patch Changes
