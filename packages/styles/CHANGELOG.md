@@ -1,5 +1,12 @@
 # @ilo-org/styles
 
+## 1.19.2
+
+### Patch Changes
+
+- 827e2bc: **DataCard:** Two-column cards are no longer indented on mobile; they use the same padding and corner cut as one-column cards
+- be843d0: **FeatureCard:** The image no longer shows a hairline at its edge when the card sits on fractional pixels
+
 ## 1.19.1
 
 ### Patch Changes

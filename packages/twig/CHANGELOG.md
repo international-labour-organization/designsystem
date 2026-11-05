@@ -1,5 +1,17 @@
 # @ilo-org/twig
 
+## 1.18.2
+
+### Patch Changes
+
+- 827e2bc: **DataCard:** Two-column cards are no longer indented on mobile; they use the same padding and corner cut as one-column cards
+- be843d0: **FeatureCard:** The image no longer shows a hairline at its edge when the card sits on fractional pixels
+- Updated dependencies [827e2bc]
+- Updated dependencies [aea069a]
+- Updated dependencies [be843d0]
+  - @ilo-org/styles@1.19.2
+  - @ilo-org/maestro@2.0.0
+
 ## 1.18.1
 
 ### Patch Changes
