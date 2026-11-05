@@ -35,11 +35,3 @@ button[title="Reset zoom"]:hover {
 .ilo--richtext a {
   font-family: inherit;
 }
-
-a[class*="ilo--button"] {
-  color: unset;
-
-  &:hover {
-    color: unset;
-  }
-}

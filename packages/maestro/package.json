@@ -16,16 +16,13 @@
   "types": "./lib",
   "exports": {
     ".": {
-      "import": "./lib/index.js",
-      "require": "./lib/index.js"
+      "import": "./lib/index.js"
     },
     "./plugin": {
-      "import": "./lib/vite.js",
-      "require": "./lib/vite.js"
+      "import": "./lib/vite.js"
     },
     "./storybook": {
-      "import": "./lib/storybook.js",
-      "require": "./lib/storybook.js"
+      "import": "./lib/storybook.js"
     }
   },
   "scripts": {
@@ -44,7 +41,7 @@
   },
   "devDependencies": {
     "@ilo-org/eslint-config": "workspace:*",
-    "@storybook/html": "9.1.20",
+    "@storybook/html": "10.6.5",
     "@types/node": "^22.12.0",
     "typescript": "^5.9.3",
     "vite": "^8.3.5",
