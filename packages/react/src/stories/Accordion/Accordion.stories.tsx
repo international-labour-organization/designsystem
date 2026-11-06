@@ -1,4 +1,5 @@
 import { Meta, StoryFn, StoryObj } from "@storybook/react-vite";
+import { fn } from "storybook/test";
 import { AccordionProps } from "../../components/Accordion/Accordion";
 import { Accordion } from "../../components";
 
@@ -6,6 +7,7 @@ const meta: Meta<typeof Accordion> = {
   title: "Components/Content/Accordion",
   component: Accordion,
   tags: ["autodocs"],
+  args: { onChange: fn() },
 };
 
 const Template: StoryFn = (args: AccordionProps) => {
@@ -45,7 +47,6 @@ const Default: StoryObj<typeof Accordion> = {
   render: Template,
   args: {
     size: "small",
-    onChange: undefined,
   },
 };
 
@@ -54,7 +55,6 @@ const Scrollable: StoryObj<typeof Accordion> = {
   args: {
     size: "small",
     scrollable: true,
-    onChange: undefined,
   },
 };
 

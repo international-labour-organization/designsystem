@@ -1,11 +1,13 @@
 import { useState } from "react";
 import { Meta, StoryObj } from "@storybook/react-vite";
+import { fn } from "storybook/test";
 import { AudioPlayer } from "../../components/AudioPlayer/AudioPlayer";
 
 const meta: Meta<typeof AudioPlayer> = {
   title: "Components/Media/AudioPlayer",
   component: AudioPlayer,
   tags: ["autodocs"],
+  args: { onEnded: fn() },
   parameters: {
     docs: {
       description: {

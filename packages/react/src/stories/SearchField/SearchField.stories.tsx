@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Meta, StoryObj } from "@storybook/react-vite";
+import { fn } from "storybook/test";
 import {
   Title,
   Description,
@@ -14,6 +15,7 @@ const SearchFieldMeta: Meta<typeof SearchField> = {
   title: "Components/User Interface/SearchField",
   component: SearchField,
   tags: ["autodocs"],
+  args: { onClear: fn(), onInputChange: fn() },
   argTypes: {},
   parameters: {
     componentSubtitle: "Component",
