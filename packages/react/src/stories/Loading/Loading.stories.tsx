@@ -9,7 +9,7 @@ import {
 } from "@storybook/addon-docs/blocks";
 import { Loading } from "../../components/Loading";
 import { LoadingProps } from "../../components/Loading/Loading.props";
-import loadingArgs from "../../components/Loading/Loading.args";
+import * as loadingArgs from "../../components/Loading/Loading.args";
 
 const statusDoc = `
 By changing the \`status\` prop you can change whether the Loading component is displaying the spinner, the completed state, or nothing at all.

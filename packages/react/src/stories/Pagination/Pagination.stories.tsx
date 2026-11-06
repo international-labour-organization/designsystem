@@ -9,7 +9,7 @@ import {
 } from "@storybook/addon-docs/blocks";
 import { Pagination } from "../../components/Pagination";
 import { PaginationProps } from "../../components/Pagination/Pagination.props";
-import paginationArgs from "../../components/Pagination/Pagination.args";
+import * as paginationArgs from "../../components/Pagination/Pagination.args";
 
 const typeDoc = `
 Generic pagination component with a first, previous, last and next button`;

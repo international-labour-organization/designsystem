@@ -1,5 +1,6 @@
 import { Meta, StoryObj } from "@storybook/react-vite";
-import { Toggle, ToggleArgs } from "../../components/Toggle";
+import { Toggle } from "../../components/Toggle";
+import * as ToggleArgs from "../../components/Toggle/Toggle.args";
 import {
   ArgTypes,
   Description,
@@ -83,7 +84,11 @@ export const Error: StoryObj<typeof Toggle> = {
 };
 
 export const Controlled: StoryObj<typeof Toggle> = {
-  args: ToggleArgs.Controlled,
+  args: {
+    ...ToggleArgs.Default,
+    onClick: () => console.log("clicked"),
+    checked: true,
+  },
 };
 
 export const Small: StoryObj<typeof Toggle> = {

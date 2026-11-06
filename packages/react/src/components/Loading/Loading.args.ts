@@ -1,24 +1,24 @@
 import { LoadingProps } from "./Loading.props";
 
-const loadinglarge: LoadingProps = {
+export const loadinglarge: LoadingProps = {
   className: "storybook",
   size: "large",
   status: "loading",
 };
 
-const loadedlarge: LoadingProps = {
+export const loadedlarge: LoadingProps = {
   className: "storybook",
   size: "large",
   status: "loaded",
 };
 
-const loadingsmall: LoadingProps = {
+export const loadingsmall: LoadingProps = {
   className: "storybook",
   size: "small",
   status: "loading",
 };
 
-const loadedsmall: LoadingProps = {
+export const loadedsmall: LoadingProps = {
   className: "storybook",
   size: "small",
   status: "loaded",

@@ -1,6 +1,6 @@
 import { LabelledNumberPickerProps } from "./NumberPicker.props";
 
-const basic: LabelledNumberPickerProps = {
+export const basic: LabelledNumberPickerProps = {
   label: "How many items would you like?",
   id: "numberpicker",
   disabled: false,
@@ -10,7 +10,7 @@ const basic: LabelledNumberPickerProps = {
   required: false,
 };
 
-const hashelper: LabelledNumberPickerProps = {
+export const hashelper: LabelledNumberPickerProps = {
   label: "How many items would you like?",
   id: "numberpicker",
   disabled: false,
@@ -20,7 +20,7 @@ const hashelper: LabelledNumberPickerProps = {
   required: false,
 };
 
-const haserror: LabelledNumberPickerProps = {
+export const haserror: LabelledNumberPickerProps = {
   label: "How many items would you like?",
   id: "numberpicker",
   disabled: false,
@@ -30,7 +30,7 @@ const haserror: LabelledNumberPickerProps = {
   required: false,
 };
 
-const hastooltip: LabelledNumberPickerProps = {
+export const hastooltip: LabelledNumberPickerProps = {
   label: "How many items would you like?",
   id: "numberpicker",
   disabled: false,

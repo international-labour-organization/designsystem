@@ -1,13 +1,13 @@
 import { SearchFieldProps } from "./SearchField.props";
 
-const searchfield: SearchFieldProps = {
+export const searchfield: SearchFieldProps = {
   callback: () => {},
   disabled: false,
   name: "search",
   placeholder: "Search Field",
 };
 
-const searchfielderror: SearchFieldProps = {
+export const searchfielderror: SearchFieldProps = {
   callback: () => {},
   disabled: false,
   error: true,
@@ -16,37 +16,28 @@ const searchfielderror: SearchFieldProps = {
   placeholder: "Search Field",
 };
 
-const searchfielddisabled: SearchFieldProps = {
+export const searchfielddisabled: SearchFieldProps = {
   callback: () => {},
   disabled: true,
   name: "search",
   placeholder: "Search Field",
 };
 
-const searchfieldlabel: SearchFieldProps = {
+export const searchfieldlabel: SearchFieldProps = {
   callback: () => {},
   label: "Search Field",
   name: "search",
   placeholder: "Search Field",
 };
 
-const searchfieldhelper: SearchFieldProps = {
+export const searchfieldhelper: SearchFieldProps = {
   callback: () => {},
   helper: "Search Field Helper text",
   name: "search",
   placeholder: "Search Field",
 };
 
-const searchfielddynamic: SearchFieldProps = {
-  callback: () => {},
-  onInputChange: (value: string) => {
-    console.log("Dynamic search triggered:", value);
-  },
-  name: "search",
-  placeholder: "Type to search dynamically...",
-};
-
-const searchfieldsmall: SearchFieldProps = {
+export const searchfieldsmall: SearchFieldProps = {
   callback: () => {},
   label: "Search",
   name: "search",
@@ -64,7 +55,6 @@ const SearchFieldArgs = {
   searchfielddisabled,
   searchfieldlabel,
   searchfieldhelper,
-  searchfielddynamic,
   searchfieldsmall,
 };
 

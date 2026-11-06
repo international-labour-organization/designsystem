@@ -1,18 +1,16 @@
 import { LabelledTextareaProps, TextareaProps } from "./Textarea.props";
 
-const placeholder =
-  "It was a cold day in April and the clocks were striking thirteen....";
-
 export const basic: LabelledTextareaProps = {
   id: "textarea",
   disabled: false,
   name: "textarea",
-  placeholder,
+  placeholder:
+    "It was a cold day in April and the clocks were striking thirteen....",
   required: false,
   spellcheck: false,
   label: "Insert your life story here",
-  labelPlacement: "top" as const,
-  labelSize: "medium" as const,
+  labelPlacement: "top",
+  labelSize: "medium",
   style: { width: "100%" },
   errorMessage: "This is an error message",
 };

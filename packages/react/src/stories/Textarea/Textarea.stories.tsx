@@ -1,5 +1,6 @@
 import { Meta, StoryObj } from "@storybook/react-vite";
-import { Textarea, TextareaArgs } from "../../components/Textarea";
+import { Textarea } from "../../components/Textarea";
+import * as TextareaArgs from "../../components/Textarea/Textarea.args";
 import {
   ArgTypes,
   Description,

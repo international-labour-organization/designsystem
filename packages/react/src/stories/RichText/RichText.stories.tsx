@@ -9,7 +9,7 @@ import {
 } from "@storybook/addon-docs/blocks";
 import { RichText } from "../../components/RichText";
 import { RichTextProps } from "../../components/RichText/RichText.props";
-import richTextArgs from "../../components/RichText/richText.args";
+import * as richTextArgs from "../../components/RichText/richText.args";
 
 /**
  * RichText Story

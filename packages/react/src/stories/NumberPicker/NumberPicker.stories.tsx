@@ -9,7 +9,7 @@ import {
   ArgTypes,
 } from "@storybook/addon-docs/blocks";
 import { NumberPicker } from "../../components";
-import NumberPickerArgs from "../../components/NumberPicker/NumberPicker.args";
+import * as NumberPickerArgs from "../../components/NumberPicker/NumberPicker.args";
 import { labelledFormFieldArgTypes } from "../../types/forms.args";
 
 const NumberPickerMeta: Meta<typeof NumberPicker> = {

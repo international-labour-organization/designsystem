@@ -43,12 +43,6 @@ export const Complex: StoryObj<SubsiteNavProps> = {
   },
 };
 
-const buttonSearch = {
-  type: "button" as const,
-  onClick: () => alert("Search clicked"),
-  label: "Search",
-};
-
 export const CompactButton: StoryObj<SubsiteNavProps> = {
   args: {
     type: "compact",
@@ -56,7 +50,11 @@ export const CompactButton: StoryObj<SubsiteNavProps> = {
       ...SubsiteNavArgs,
       widgets: {
         ...SubsiteNavArgs.widgets,
-        search: buttonSearch,
+        search: {
+          type: "button",
+          onClick: () => alert("Search clicked"),
+          label: "Search",
+        },
       },
     },
   },
@@ -81,7 +79,11 @@ export const ComplexButton: StoryObj<SubsiteNavProps> = {
       },
       widgets: {
         ...SubsiteNavArgs.widgets,
-        search: buttonSearch,
+        search: {
+          type: "button",
+          onClick: () => alert("Search clicked"),
+          label: "Search",
+        },
       },
     },
   },

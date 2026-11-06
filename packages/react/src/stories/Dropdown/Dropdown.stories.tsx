@@ -9,7 +9,7 @@ import {
   ArgTypes,
 } from "@storybook/addon-docs/blocks";
 import { Dropdown } from "../../components/Dropdown";
-import dropdownArgs from "../../components/Dropdown/Dropdown.args";
+import * as dropdownArgs from "../../components/Dropdown/Dropdown.args";
 import { labelledFormFieldArgTypes } from "../../types/forms.args";
 
 const DropdownMeta: Meta<typeof Dropdown> = {
