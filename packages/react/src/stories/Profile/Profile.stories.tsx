@@ -22,7 +22,7 @@ const meta: Meta<typeof Profile> = {
   },
 };
 
-const Default: StoryObj<ProfileProps> = {
+export const Default: StoryObj<ProfileProps> = {
   args: {
     avatar: "/ilo-dg.jpg",
     className: "storybook",
@@ -38,4 +38,3 @@ const Default: StoryObj<ProfileProps> = {
 };
 
 export default meta;
-export { Default };

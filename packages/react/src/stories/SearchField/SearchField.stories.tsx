@@ -8,7 +8,7 @@ import {
   Stories,
 } from "@storybook/addon-docs/blocks";
 import { SearchField } from "../../components/SearchField";
-import SearchFieldArgs from "../../components/SearchField/SearchField.args";
+import * as SearchFieldArgs from "../../components/SearchField/SearchField.args";
 
 const SearchFieldMeta: Meta<typeof SearchField> = {
   title: "Components/User Interface/SearchField",
@@ -95,7 +95,14 @@ export const Small: Story = {
 
 export const DynamicSearch: Story = {
   name: "Dynamic Search",
-  args: SearchFieldArgs.searchfielddynamic,
+  args: {
+    callback: () => {},
+    onInputChange: (value: string) => {
+      console.log("Dynamic search triggered:", value);
+    },
+    name: "search",
+    placeholder: "Type to search dynamically...",
+  },
   render: (args) => {
     const [searchResults, setSearchResults] = useState<string>("");
 

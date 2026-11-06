@@ -17,7 +17,7 @@ const meta: Meta<typeof Footer> = {
   },
 };
 
-const Default: StoryObj<FooterProps> = {
+export const Default: StoryObj<FooterProps> = {
   args: {
     logo: "/logo_en_horizontal_white.svg",
     tagline: "Advancing social justice, promoting decent work",
@@ -120,4 +120,3 @@ const Default: StoryObj<FooterProps> = {
 };
 
 export default meta;
-export { Default };

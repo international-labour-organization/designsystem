@@ -41,7 +41,7 @@ const Template: StoryFn = (args: AccordionProps) => {
   );
 };
 
-const Default: StoryObj<typeof Accordion> = {
+export const Default: StoryObj<typeof Accordion> = {
   render: Template,
   args: {
     size: "small",
@@ -49,7 +49,7 @@ const Default: StoryObj<typeof Accordion> = {
   },
 };
 
-const Scrollable: StoryObj<typeof Accordion> = {
+export const Scrollable: StoryObj<typeof Accordion> = {
   render: Template,
   args: {
     size: "small",
@@ -59,4 +59,3 @@ const Scrollable: StoryObj<typeof Accordion> = {
 };
 
 export default meta;
-export { Default, Scrollable };

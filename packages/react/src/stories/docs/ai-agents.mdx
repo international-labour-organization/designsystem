@@ -1,0 +1,93 @@
+import { Meta, Unstyled } from "@storybook/addon-docs/blocks";
+
+<Meta title="Getting started/AI agents" />
+
+<Unstyled>
+<div className="ilo--richtext ilo--richtext__theme__light">
+
+# Building with AI agents
+
+This Storybook ships an [MCP (Model Context Protocol)](https://modelcontextprotocol.io) server. Connect your coding agent to it and the agent can look up every component, its props and real usage snippets instead of guessing. The result is UI that uses the design system's actual API, not an approximation of it.
+
+There are two ways to give your agent access.
+
+## Option 1: Point your agent at the published manifests
+
+The published Storybook exposes two machine-readable files generated from these docs:
+
+```
+https://react.ui.ilo.org/manifests/components.json
+https://react.ui.ilo.org/manifests/docs.json
+```
+
+The components manifest lists every component with its props, default values, import statement and example snippets. The docs manifest contains the guidance pages in this Storybook: installation, theming, layouts, typography and so on.
+
+Any agent with web access can read these files directly. Add a note to your project's `CLAUDE.md`, `AGENTS.md` or equivalent so the agent knows to use them:
+
+```md
+This project uses @ilo-org/react. Before writing UI, fetch
+https://react.ui.ilo.org/manifests/components.json to find the right
+component, its props and an import snippet. Fetch
+https://react.ui.ilo.org/manifests/docs.json for installation, theming,
+layout and typography guidance. Prefer design-system components over
+hand-rolled markup.
+```
+
+No installation or configuration is needed. This is the quickest way to get started.
+
+## Option 2: Run the MCP server locally
+
+Running the Storybook locally gives your agent the full MCP tool set: listing components, reading documentation for a specific component or story, and fetching usage instructions on demand.
+
+### 1. Start the Storybook
+
+Clone the design system repository and start the React Storybook:
+
+```bash
+git clone https://github.com/international-labour-organization/designsystem.git
+cd designsystem
+nvm use
+pnpm install
+pnpm react:dev:docs
+```
+
+The MCP endpoint is now available at `http://localhost:6006/mcp`.
+
+### 2. Register the server with your agent
+
+From your own project folder, add the server to your agent. For Claude Code:
+
+```bash
+claude mcp add --transport http ilo-design-system http://localhost:6006/mcp
+```
+
+Other agents such as Cursor, VS Code Copilot, Gemini CLI and Codex accept an HTTP MCP server with the same URL. Check your agent's documentation for the exact command or configuration file.
+
+### 3. Tell the agent to use it
+
+Add an instruction to your project's `CLAUDE.md` or `AGENTS.md`:
+
+```md
+Use the ilo-design-system MCP server. Call its documentation tools to list
+components and read their props and snippets before building any UI.
+```
+
+### 4. Build
+
+Ask for what you need in plain language, for example:
+
+```
+Build a landing page with a Hero, three StatCards in a CardGroup and a Footer using the ILO Design System
+```
+
+The agent queries the server, reads the component documentation and writes code against the real API.
+
+## Tips
+
+- Install `@ilo-org/react` and its styles in your project first so the agent's imports resolve. See the [installation guide](/docs/getting-started-installation--docs).
+- Name components as they appear in this Storybook, such as `CardGroup` or `SubsiteNav`, for the most accurate results.
+- The manifests are generated from the stories, so they always match the published version of the package.
+- The manifest format is still marked as a preview by Storybook and may change between releases. Option 2 is the most robust path because the agent uses the server's tools rather than the raw JSON.
+
+</div>
+</Unstyled>

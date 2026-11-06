@@ -28,7 +28,7 @@ const meta: Meta<typeof ScoreCard> = {
   },
 };
 
-const Default: StoryObj<ScoreCardProps> = {
+export const Default: StoryObj<ScoreCardProps> = {
   args: {
     title: "Can digital technology be an equality machine?",
     eyebrow: "Podcast",
@@ -89,7 +89,7 @@ const Default: StoryObj<ScoreCardProps> = {
   },
 };
 
-const Skeleton: StoryObj<ScoreCardProps> = {
+export const Skeleton: StoryObj<ScoreCardProps> = {
   name: "Skeleton",
   args: {
     theme: "light",
@@ -99,4 +99,3 @@ const Skeleton: StoryObj<ScoreCardProps> = {
 };
 
 export default meta;
-export { Default, Skeleton };

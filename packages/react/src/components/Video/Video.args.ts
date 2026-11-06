@@ -1,6 +1,6 @@
 import { VideoProps } from "./Video.props";
 
-const videofile: VideoProps = {
+export const videofile: VideoProps = {
   className: "image",
   caption:
     "The ILO brings together governments, employers and workers to set labour standards and promote decent work.",
@@ -19,7 +19,7 @@ const videofile: VideoProps = {
   theme: "light",
 };
 
-const videofileWithCaptions: VideoProps = {
+export const videofileWithCaptions: VideoProps = {
   className: "image",
   caption:
     "The ILO brings together governments, employers and workers to set labour standards and promote decent work.",
@@ -55,7 +55,7 @@ const videofileWithCaptions: VideoProps = {
   theme: "light",
 };
 
-const videoyt: VideoProps = {
+export const videoyt: VideoProps = {
   caption:
     "Indigenous entrepreneur Celestina Ábalos runs a tourism business in the UNESCO World Heritage site of Quebrada de Humahuaca in northern Argentina. ©ILO/Ivar Velasquez",
   className: "image",

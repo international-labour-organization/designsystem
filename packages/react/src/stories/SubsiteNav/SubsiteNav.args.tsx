@@ -1,3 +1,5 @@
+import { CompactNavProps } from "../../components/Nav/Navigation.props";
+
 const SubsiteNavArgs = {
   branding: {
     logo: {
@@ -5,7 +7,7 @@ const SubsiteNavArgs = {
       drawer: <img src="/ilo-live-logo-en-dark.png" alt="Logo" />,
     },
     onClick: () => {
-      window.location.href = "https://ilo.org";
+      globalThis.location.href = "https://ilo.org";
     },
   },
   widgets: {
@@ -28,7 +30,7 @@ const SubsiteNavArgs = {
       label: "Language",
     },
     search: {
-      type: "redirect" as const,
+      type: "redirect",
       url: "https://ilo.org",
       label: "Search",
     },
@@ -90,6 +92,6 @@ const SubsiteNavArgs = {
       },
     ],
   },
-};
+} satisfies CompactNavProps["props"];
 
 export { SubsiteNavArgs };

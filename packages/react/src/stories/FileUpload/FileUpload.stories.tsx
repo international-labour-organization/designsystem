@@ -9,7 +9,7 @@ import {
   ArgTypes,
 } from "@storybook/addon-docs/blocks";
 import { FileUpload } from "../../components";
-import fileUploadArgs from "../../components/FileUpload/FileUpload.args";
+import * as fileUploadArgs from "../../components/FileUpload/FileUpload.args";
 import { labelledFormFieldArgTypes } from "../../types/forms.args";
 
 const FileUploadMeta: Meta<typeof FileUpload> = {

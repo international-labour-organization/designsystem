@@ -8,7 +8,7 @@ const MainNavArgs: MainNavProps = {
       mobile: <img src="/ilo-live-logo-en-light.png" alt="Logo" />,
     },
     onClick: () => {
-      window.location.href = "https://ilo.org";
+      globalThis.location.href = "https://ilo.org";
     },
     tag: {
       main: "Advancing social justice, promoting decent work",

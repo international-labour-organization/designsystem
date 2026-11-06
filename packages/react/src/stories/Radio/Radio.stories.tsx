@@ -1,5 +1,6 @@
 import { Meta, StoryObj } from "@storybook/react-vite";
-import { Radio, RadioArgs } from "../../components/Radio";
+import { Radio } from "../../components/Radio";
+import * as RadioArgs from "../../components/Radio/Radio.args";
 import {
   ArgTypes,
   Description,

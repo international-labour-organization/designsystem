@@ -9,7 +9,7 @@ import {
   ArgTypes,
 } from "@storybook/addon-docs/blocks";
 import { DatePicker } from "../../components";
-import DatePickerArgs from "../../components/DatePicker/DatePicker.args";
+import * as DatePickerArgs from "../../components/DatePicker/DatePicker.args";
 import { FormControlPublicProps } from "../../components/FormControl/FormControl.props";
 import { labelledFormFieldArgTypes } from "../../types/forms.args";
 
