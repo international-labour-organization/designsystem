@@ -1,4 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react-vite";
+import { fn } from "storybook/test";
 import { ContextMenu } from "../../components";
 import { ContextMenuProps } from "../../components/ContextMenu";
 
@@ -6,6 +7,7 @@ const meta: Meta<typeof ContextMenu> = {
   title: "Components/Navigation/ContextMenu",
   component: ContextMenu,
   tags: ["autodocs"],
+  args: { onClose: fn() },
 };
 
 const Default: StoryObj<ContextMenuProps> = {

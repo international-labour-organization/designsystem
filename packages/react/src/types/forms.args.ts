@@ -1,6 +1,8 @@
 // This annoying file has to exist because at the present time, react-docgen-typescript can't generate argTypes for
 // components that use forwardRef. So we have to create the argTypes manually. This only regards Form elements for the time being.
 
+import { fn } from "storybook/test";
+
 export const formFieldArgTypes = (element: string) => ({
   className: {
     description:
@@ -291,4 +293,14 @@ export const labelledFormFieldArgTypes = (element: string) => ({
 export const labelledChoiceFieldArgTypes = (element: string) => ({
   ...formControlArgTypes,
   ...choiceFieldArgTypes(element),
+});
+
+/**
+ * Explicit action spies for the handlers documented by `formFieldArgTypes`.
+ * Spread into a story meta's `args` so the Actions panel logs them (replaces
+ * the deprecated global `actions.argTypesRegex`).
+ */
+export const formFieldActionArgs = () => ({
+  onBlur: fn(),
+  onChange: fn(),
 });
