@@ -30,9 +30,14 @@ function names({ facadeModuleId }: Rolldown.PreRenderedChunk) {
  * (the real package is "video.js"). At runtime the branch is dead code, since
  * the CommonJS branch is taken first. Replacing the AMD guard with `false`
  * lets Rolldown drop the branch as dead code.
+ *
+ * The guard must also swallow a trailing `!== void 0` / `!== undefined`
+ * (store2 inside Storybook's manager-api uses that form), otherwise it turns
+ * into `false !== void 0`, which is always true and makes the AMD branch the
+ * only one left.
  */
 const UMD_AMD_GUARD =
-  /typeof define\s*===?\s*(['"])function\1\s*&&\s*(?:typeof define\.amd\s*===?\s*(['"])object\2\s*&&\s*)?define\.amd/g;
+  /typeof define\s*===?\s*(['"])function\1\s*&&\s*(?:typeof define\.amd\s*===?\s*(['"])object\2\s*&&\s*)?define\.amd(?:\s*!==?\s*(?:void 0|undefined|null))?/g;
 
 function stripAmdBranch(): Plugin {
   return {

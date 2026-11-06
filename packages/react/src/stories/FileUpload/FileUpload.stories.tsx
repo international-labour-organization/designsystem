@@ -10,12 +10,16 @@ import {
 } from "@storybook/addon-docs/blocks";
 import { FileUpload } from "../../components";
 import fileUploadArgs from "../../components/FileUpload/FileUpload.args";
-import { labelledFormFieldArgTypes } from "../../types/forms.args";
+import {
+  formFieldActionArgs,
+  labelledFormFieldArgTypes,
+} from "../../types/forms.args";
 
 const FileUploadMeta: Meta<typeof FileUpload> = {
   title: "Components/Forms/FileUpload",
   component: FileUpload,
   tags: ["autodocs"],
+  args: { ...formFieldActionArgs() },
   argTypes: {
     multiple: {
       description: "Whether or not multiple files can be uploaded",
