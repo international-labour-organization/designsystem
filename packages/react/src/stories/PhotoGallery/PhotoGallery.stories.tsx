@@ -14,7 +14,7 @@ const meta: Meta<PhotoGalleryProps> = {
   },
 };
 
-const Default: StoryObj<PhotoGalleryProps> = {
+export const Default: StoryObj<PhotoGalleryProps> = {
   args: {
     items: [
       {
@@ -102,56 +102,45 @@ const Default: StoryObj<PhotoGalleryProps> = {
   ],
 };
 
-const WithKeyboardControls: StoryObj<PhotoGalleryProps> = Object.assign(
-  {},
-  Default,
-  {
-    args: {
-      ...Default.args,
-      withKeyboardControls: true,
-    },
-  }
-);
+export const WithKeyboardControls: StoryObj<PhotoGalleryProps> = {
+  ...Default,
+  args: {
+    ...Default.args,
+    withKeyboardControls: true,
+  },
+};
 
-const Portrait: StoryObj<PhotoGalleryProps> = Object.assign({}, Default, {
+export const Portrait: StoryObj<PhotoGalleryProps> = {
+  ...Default,
   args: {
     ...Default.args,
     fit: "contain",
   },
-});
+};
 
-const WithoutCaption: StoryObj<PhotoGalleryProps> = Object.assign({}, Default, {
+export const WithoutCaption: StoryObj<PhotoGalleryProps> = {
+  ...Default,
   args: {
     ...Default.args,
     captionView: "hidden",
   },
-});
+};
 
-const SeparateSources: StoryObj<PhotoGalleryProps> = Object.assign(
-  {},
-  Default,
-  {
-    args: {
-      items: [
-        {
-          src: {
-            gallery: "/gallery-small.jpg",
-            thumbnail: "/gallery-small.jpg",
-            lightbox: "/gallery-extra.jpg",
-          },
-          caption: "Photo with separate sources",
+export const SeparateSources: StoryObj<PhotoGalleryProps> = {
+  ...Default,
+  args: {
+    items: [
+      {
+        src: {
+          gallery: "/gallery-small.jpg",
+          thumbnail: "/gallery-small.jpg",
+          lightbox: "/gallery-extra.jpg",
         },
-        ...Default.args?.items!,
-      ],
-    },
-  }
-);
+        caption: "Photo with separate sources",
+      },
+      ...Default.args?.items!,
+    ],
+  },
+};
 
 export default meta;
-export {
-  Default,
-  Portrait,
-  WithKeyboardControls,
-  WithoutCaption,
-  SeparateSources,
-};

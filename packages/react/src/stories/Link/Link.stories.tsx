@@ -20,7 +20,7 @@ const meta: Meta<LinkProps> = {
   },
 };
 
-const Default: StoryObj<LinkProps> = {
+export const Default: StoryObj<LinkProps> = {
   args: {
     url: "https://example.com",
     label: "Default Link",
@@ -29,4 +29,3 @@ const Default: StoryObj<LinkProps> = {
 };
 
 export default meta;
-export { Default };

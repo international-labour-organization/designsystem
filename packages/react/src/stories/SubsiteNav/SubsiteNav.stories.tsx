@@ -15,14 +15,14 @@ const meta: Meta<typeof SubsiteNav> = {
   },
 };
 
-const Compact: StoryObj<SubsiteNavProps> = {
+export const Compact: StoryObj<SubsiteNavProps> = {
   args: {
     type: "compact",
     props: SubsiteNavArgs,
   },
 };
 
-const Complex: StoryObj<SubsiteNavProps> = {
+export const Complex: StoryObj<SubsiteNavProps> = {
   args: {
     type: "complex",
     props: {
@@ -49,7 +49,7 @@ const buttonSearch = {
   label: "Search",
 };
 
-const CompactButton: StoryObj<SubsiteNavProps> = {
+export const CompactButton: StoryObj<SubsiteNavProps> = {
   args: {
     type: "compact",
     props: {
@@ -62,7 +62,7 @@ const CompactButton: StoryObj<SubsiteNavProps> = {
   },
 };
 
-const ComplexButton: StoryObj<SubsiteNavProps> = {
+export const ComplexButton: StoryObj<SubsiteNavProps> = {
   args: {
     type: "complex",
     props: {
@@ -88,4 +88,3 @@ const ComplexButton: StoryObj<SubsiteNavProps> = {
 };
 
 export default meta;
-export { Compact, Complex, CompactButton, ComplexButton };

@@ -15,7 +15,7 @@ const meta: Meta<typeof StatCard> = {
   },
 };
 
-const Default: StoryObj<StatCardProps> = {
+export const Default: StoryObj<StatCardProps> = {
   args: {
     title: "Global employment growth down by half in 2023",
     intro:
@@ -28,7 +28,7 @@ const Default: StoryObj<StatCardProps> = {
   },
 };
 
-const Skeleton: StoryObj<StatCardProps> = {
+export const Skeleton: StoryObj<StatCardProps> = {
   name: "Skeleton",
   args: {
     theme: "light",
@@ -38,4 +38,3 @@ const Skeleton: StoryObj<StatCardProps> = {
 };
 
 export default meta;
-export { Default, Skeleton };

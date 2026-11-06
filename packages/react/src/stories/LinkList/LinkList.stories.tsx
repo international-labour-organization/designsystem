@@ -7,7 +7,7 @@ const meta: Meta<typeof LinkList> = {
   tags: ["autodocs"],
 };
 
-const Default: Meta<LinkListProps> = {
+export const Default: Meta<LinkListProps> = {
   args: {
     headline: "Link List Headline",
     linkgroup: [
@@ -54,4 +54,3 @@ const Default: Meta<LinkListProps> = {
 };
 
 export default meta;
-export { Default };

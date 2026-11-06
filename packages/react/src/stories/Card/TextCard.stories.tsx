@@ -15,7 +15,7 @@ const meta: Meta<typeof TextCard> = {
   },
 };
 
-const Default: StoryObj<TextCardProps> = {
+export const Default: StoryObj<TextCardProps> = {
   args: {
     title: "Why we need greater social justice",
     eyebrow: "Podcast",
@@ -35,7 +35,7 @@ const Default: StoryObj<TextCardProps> = {
   },
 };
 
-const Skeleton: StoryObj<TextCardProps> = {
+export const Skeleton: StoryObj<TextCardProps> = {
   name: "Skeleton",
   args: {
     theme: "light",
@@ -45,4 +45,3 @@ const Skeleton: StoryObj<TextCardProps> = {
 };
 
 export default meta;
-export { Default, Skeleton };

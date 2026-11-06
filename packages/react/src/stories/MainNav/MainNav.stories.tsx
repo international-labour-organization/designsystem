@@ -15,9 +15,8 @@ const meta: Meta<typeof MainNav> = {
   },
 };
 
-const Default: StoryObj<MainNavProps> = {
+export const Default: StoryObj<MainNavProps> = {
   args: MainNavArgs,
 };
 
 export default meta;
-export { Default };

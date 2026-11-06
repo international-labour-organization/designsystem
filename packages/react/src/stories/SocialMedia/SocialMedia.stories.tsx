@@ -20,9 +20,8 @@ const meta: Meta<typeof SocialMedia> = {
   },
 };
 
-const Default: StoryObj<SocialMediaProps> = {
+export const Default: StoryObj<SocialMediaProps> = {
   args: socialMediaArgs,
 };
 
 export default meta;
-export { Default };

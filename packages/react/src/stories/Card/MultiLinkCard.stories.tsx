@@ -35,7 +35,7 @@ const meta: Meta<typeof MultiLinkCard> = {
   },
 };
 
-const Default: StoryObj<MultiLinkCardProps> = {
+export const Default: StoryObj<MultiLinkCardProps> = {
   args: {
     title: "Advancing social justice",
     eyebrow: "Podcast",
@@ -62,7 +62,7 @@ const Default: StoryObj<MultiLinkCardProps> = {
   },
 };
 
-const Skeleton: StoryObj<MultiLinkCardProps> = {
+export const Skeleton: StoryObj<MultiLinkCardProps> = {
   name: "Skeleton",
   args: {
     theme: "light",
@@ -73,4 +73,3 @@ const Skeleton: StoryObj<MultiLinkCardProps> = {
 };
 
 export default meta;
-export { Default, Skeleton };

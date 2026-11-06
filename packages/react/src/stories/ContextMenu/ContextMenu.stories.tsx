@@ -8,7 +8,7 @@ const meta: Meta<typeof ContextMenu> = {
   tags: ["autodocs"],
 };
 
-const Default: StoryObj<ContextMenuProps> = {
+export const Default: StoryObj<ContextMenuProps> = {
   args: {
     links: [
       { label: "Link One", url: "http://www.google.com" },
@@ -25,4 +25,3 @@ const Default: StoryObj<ContextMenuProps> = {
 };
 
 export default meta;
-export { Default };
