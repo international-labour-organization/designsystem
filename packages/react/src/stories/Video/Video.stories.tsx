@@ -8,7 +8,7 @@ import {
 } from "@storybook/addon-docs/blocks";
 import { Video } from "../../components/Video";
 import { VideoProps } from "../../components/Video/Video.props";
-import videoArgs from "../../components/Video/Video.args";
+import * as videoArgs from "../../components/Video/Video.args";
 
 /**
  * Video Story

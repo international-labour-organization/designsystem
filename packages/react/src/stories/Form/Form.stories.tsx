@@ -1,5 +1,6 @@
 import { Meta, StoryObj } from "@storybook/react-vite";
-import { Form, FormArgs } from "../../components/Form";
+import { Form } from "../../components/Form";
+import * as FormArgs from "../../components/Form/Form.args";
 
 import { Fieldset } from "../../components/Fieldset";
 import { TextInput } from "../../components/TextInput";
@@ -82,7 +83,7 @@ export const Example: StoryObj<typeof Form> = {
           tooltip="This is not a complete list of countries."
           value="Switzerland"
           style={{ flex: "1 1 30%" }}
-          options={DropdownArgs.options}
+          options={DropdownArgs.basic.options}
         />
         <NumberPicker
           label="Post code"

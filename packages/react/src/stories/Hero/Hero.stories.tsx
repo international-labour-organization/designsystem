@@ -53,7 +53,7 @@ const meta: Meta<HeroStoryArgs> = {
   },
 };
 
-const Default: StoryObj<HeroStoryArgs> = {
+export const Default: StoryObj<HeroStoryArgs> = {
   args: {
     image: {
       alt: "Lorem ipsum",
@@ -112,7 +112,7 @@ const Default: StoryObj<HeroStoryArgs> = {
   },
 };
 
-const Homepage: StoryObj<HeroStoryArgs> = {
+export const Homepage: StoryObj<HeroStoryArgs> = {
   args: {
     ...Default.args,
     align: "center",
@@ -132,7 +132,7 @@ const Homepage: StoryObj<HeroStoryArgs> = {
   },
 };
 
-const Article: StoryObj<HeroStoryArgs> = {
+export const Article: StoryObj<HeroStoryArgs> = {
   args: {
     ...Default.args,
     align: "bottom",
@@ -172,7 +172,7 @@ const Article: StoryObj<HeroStoryArgs> = {
   },
 };
 
-const LightSemiTransparent: StoryObj<HeroStoryArgs> = {
+export const LightSemiTransparent: StoryObj<HeroStoryArgs> = {
   parameters: {
     docs: {
       description: {
@@ -191,7 +191,7 @@ const LightSemiTransparent: StoryObj<HeroStoryArgs> = {
   },
 };
 
-const WithCardActions: StoryObj<HeroStoryArgs> = {
+export const WithCardActions: StoryObj<HeroStoryArgs> = {
   name: "With card actions",
   parameters: {
     docs: {
@@ -218,4 +218,3 @@ const WithCardActions: StoryObj<HeroStoryArgs> = {
 };
 
 export default meta;
-export { Default, Homepage, Article, LightSemiTransparent, WithCardActions };

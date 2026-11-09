@@ -6,7 +6,7 @@ const meta: Meta<typeof Tooltip> = {
   component: Tooltip,
   tags: ["autodocs"],
 };
-const Default: StoryObj<TooltipProps> = {
+export const Default: StoryObj<TooltipProps> = {
   args: {
     label: "Tooltip text",
     icon: true,
@@ -19,4 +19,3 @@ const Default: StoryObj<TooltipProps> = {
 };
 
 export default meta;
-export { Default };

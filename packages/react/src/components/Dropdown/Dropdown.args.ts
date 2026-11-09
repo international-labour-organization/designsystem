@@ -1,30 +1,6 @@
 import { LabelledDropdownProps } from "./Dropdown.props";
 
-export const options = [
-  { label: "Switzerland", value: "CH" },
-  { label: "Côte d'Ivoire ", value: "CI" },
-  { label: "Thailand", value: "TH" },
-  { label: "United States", value: "US" },
-  { label: "Zimbabwe", value: "ZW" },
-  { label: "Afghanistan", value: "AF" },
-  { label: "Åland Islands", value: "AX" },
-  { label: "Albania", value: "AL" },
-  { label: "Algeria", value: "DZ" },
-  { label: "American Samoa", value: "AS" },
-  { label: "Andorra", value: "AD" },
-  { label: "Angola", value: "AO" },
-  { label: "Anguilla", value: "AI" },
-  { label: "Antarctica", value: "AQ" },
-  { label: "Antigua and Barbuda", value: "AG" },
-  { label: "Argentina", value: "AR" },
-  { label: "Armenia", value: "AM" },
-  { label: "Aruba", value: "AW" },
-  { label: "Australia", value: "AU" },
-  { label: "Austria", value: "AT" },
-  { label: "Azerbaijan", value: "AZ" },
-];
-
-const basic: LabelledDropdownProps = {
+export const basic: LabelledDropdownProps = {
   label: "Select a country",
   errorMessage: "Please select a country",
   autocomplete: "false",
@@ -33,33 +9,55 @@ const basic: LabelledDropdownProps = {
   error: false,
   id: "dropdown",
   name: "dropdown",
-  options,
+  options: [
+    { label: "Switzerland", value: "CH" },
+    { label: "Côte d'Ivoire ", value: "CI" },
+    { label: "Thailand", value: "TH" },
+    { label: "United States", value: "US" },
+    { label: "Zimbabwe", value: "ZW" },
+    { label: "Afghanistan", value: "AF" },
+    { label: "Åland Islands", value: "AX" },
+    { label: "Albania", value: "AL" },
+    { label: "Algeria", value: "DZ" },
+    { label: "American Samoa", value: "AS" },
+    { label: "Andorra", value: "AD" },
+    { label: "Angola", value: "AO" },
+    { label: "Anguilla", value: "AI" },
+    { label: "Antarctica", value: "AQ" },
+    { label: "Antigua and Barbuda", value: "AG" },
+    { label: "Argentina", value: "AR" },
+    { label: "Armenia", value: "AM" },
+    { label: "Aruba", value: "AW" },
+    { label: "Australia", value: "AU" },
+    { label: "Austria", value: "AT" },
+    { label: "Azerbaijan", value: "AZ" },
+  ],
   required: false,
   value: undefined,
   style: { width: "100%" },
 };
 
-const haserror: LabelledDropdownProps = {
+export const haserror: LabelledDropdownProps = {
   ...basic,
   error: true,
 };
 
-const hashelper: LabelledDropdownProps = {
+export const hashelper: LabelledDropdownProps = {
   ...basic,
   helper: "Please select a country",
 };
 
-const hastooltip: LabelledDropdownProps = {
+export const hastooltip: LabelledDropdownProps = {
   ...basic,
   tooltip: "Please select a country",
 };
 
-const isdisabled: LabelledDropdownProps = {
+export const isdisabled: LabelledDropdownProps = {
   ...basic,
   disabled: true,
 };
 
-const small: LabelledDropdownProps = {
+export const small: LabelledDropdownProps = {
   ...basic,
   size: "small",
 };

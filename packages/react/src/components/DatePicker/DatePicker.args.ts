@@ -1,6 +1,6 @@
 import { DatePickerProps } from "./DatePicker.props";
 
-const basic: DatePickerProps = {
+export const basic: DatePickerProps = {
   id: "datepicker",
   disabled: false,
   error: false,
@@ -9,7 +9,7 @@ const basic: DatePickerProps = {
   required: false,
 };
 
-const hashelper: DatePickerProps = {
+export const hashelper: DatePickerProps = {
   id: "datepicker",
   disabled: false,
   error: false,
@@ -18,7 +18,7 @@ const hashelper: DatePickerProps = {
   required: false,
 };
 
-const haserror: DatePickerProps = {
+export const haserror: DatePickerProps = {
   id: "datepicker",
   disabled: false,
   error: true,
@@ -27,7 +27,7 @@ const haserror: DatePickerProps = {
   required: false,
 };
 
-const hastooltip: DatePickerProps = {
+export const hastooltip: DatePickerProps = {
   id: "datepicker",
   disabled: false,
   error: false,
@@ -36,7 +36,7 @@ const hastooltip: DatePickerProps = {
   required: false,
 };
 
-const hasrange: DatePickerProps = {
+export const hasrange: DatePickerProps = {
   id: "datepicker",
   disabled: false,
   error: false,

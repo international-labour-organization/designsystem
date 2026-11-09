@@ -44,7 +44,7 @@ const meta: Meta<typeof CardGroup> = {
   },
 };
 
-const StatCardGroup: StoryObj<CardGroupProps<"stat">> = {
+export const StatCardGroup: StoryObj<CardGroupProps<"stat">> = {
   name: "Stat Card Group",
   args: {
     type: "stat",
@@ -58,7 +58,7 @@ const StatCardGroup: StoryObj<CardGroupProps<"stat">> = {
   },
 };
 
-const MultiLinkCardGroup: StoryObj<CardGroupProps<"multilink">> = {
+export const MultiLinkCardGroup: StoryObj<CardGroupProps<"multilink">> = {
   name: "MultiLink Card Group",
   args: {
     type: "multilink",
@@ -72,7 +72,7 @@ const MultiLinkCardGroup: StoryObj<CardGroupProps<"multilink">> = {
   },
 };
 
-const TextCardGroup: StoryObj<CardGroupProps<"text">> = {
+export const TextCardGroup: StoryObj<CardGroupProps<"text">> = {
   name: "Text Card Group",
   args: {
     type: "text",
@@ -86,7 +86,7 @@ const TextCardGroup: StoryObj<CardGroupProps<"text">> = {
   },
 };
 
-const PromoCardGroup: StoryObj<CardGroupProps<"promo">> = {
+export const PromoCardGroup: StoryObj<CardGroupProps<"promo">> = {
   name: "Promo Card Group",
   args: {
     type: "promo",
@@ -100,7 +100,7 @@ const PromoCardGroup: StoryObj<CardGroupProps<"promo">> = {
   },
 };
 
-const FeatureCardGroup: StoryObj<CardGroupProps<"feature">> = {
+export const FeatureCardGroup: StoryObj<CardGroupProps<"feature">> = {
   name: "Feature Card Group",
   args: {
     type: "feature",
@@ -114,7 +114,7 @@ const FeatureCardGroup: StoryObj<CardGroupProps<"feature">> = {
   },
 };
 
-const DetailCardGroup: StoryObj<CardGroupProps<"detail">> = {
+export const DetailCardGroup: StoryObj<CardGroupProps<"detail">> = {
   name: "Detail Card Group",
   args: {
     type: "detail",
@@ -128,7 +128,7 @@ const DetailCardGroup: StoryObj<CardGroupProps<"detail">> = {
   },
 };
 
-const FactListCardGroup: StoryObj<CardGroupProps<"factlist">> = {
+export const FactListCardGroup: StoryObj<CardGroupProps<"factlist">> = {
   name: "FactList Card Group",
   args: {
     type: "factlist",
@@ -142,7 +142,7 @@ const FactListCardGroup: StoryObj<CardGroupProps<"factlist">> = {
   },
 };
 
-const DataCardGroup: StoryObj<CardGroupProps<"data">> = {
+export const DataCardGroup: StoryObj<CardGroupProps<"data">> = {
   name: "Data Card Group",
   args: {
     type: "data",
@@ -156,7 +156,7 @@ const DataCardGroup: StoryObj<CardGroupProps<"data">> = {
   },
 };
 
-const ScoreCardGroup: StoryObj<CardGroupProps<"score">> = {
+export const ScoreCardGroup: StoryObj<CardGroupProps<"score">> = {
   name: "Score Card Group",
   args: {
     type: "score",
@@ -170,14 +170,3 @@ const ScoreCardGroup: StoryObj<CardGroupProps<"score">> = {
 };
 
 export default meta;
-export {
-  StatCardGroup,
-  MultiLinkCardGroup,
-  TextCardGroup,
-  PromoCardGroup,
-  FeatureCardGroup,
-  DetailCardGroup,
-  FactListCardGroup,
-  DataCardGroup,
-  ScoreCardGroup,
-};

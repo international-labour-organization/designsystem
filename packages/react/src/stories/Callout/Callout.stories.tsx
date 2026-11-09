@@ -30,7 +30,7 @@ const meta: Meta<typeof Callout> = {
   },
 };
 
-const Default: StoryObj<CalloutProps> = {
+export const Default: StoryObj<CalloutProps> = {
   args: {
     headline: "This is a callout component",
     copy: "It's job is to bring users' attention to something important that they might not otherwise have known. I can also have a call to action.",
@@ -44,4 +44,3 @@ const Default: StoryObj<CalloutProps> = {
 };
 
 export default meta;
-export { Default };

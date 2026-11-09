@@ -1,6 +1,6 @@
 import { FileUploadProps, LabelledFileUploadProps } from "./FileUpload.props";
 
-const basic: LabelledFileUploadProps = {
+export const basic: LabelledFileUploadProps = {
   label: "Upload your file",
   id: "fileupload",
   disabled: false,
@@ -11,7 +11,7 @@ const basic: LabelledFileUploadProps = {
   required: false,
 };
 
-const hashelper: LabelledFileUploadProps = {
+export const hashelper: LabelledFileUploadProps = {
   label: "Upload your file",
   id: "fileupload",
   disabled: false,
@@ -22,7 +22,7 @@ const hashelper: LabelledFileUploadProps = {
   required: false,
 };
 
-const haserror: LabelledFileUploadProps = {
+export const haserror: LabelledFileUploadProps = {
   label: "Upload your file",
   id: "fileupload",
   disabled: false,
@@ -33,7 +33,7 @@ const haserror: LabelledFileUploadProps = {
   required: false,
 };
 
-const hastooltip: LabelledFileUploadProps = {
+export const hastooltip: LabelledFileUploadProps = {
   label: "Upload your file",
   id: "fileupload",
   disabled: false,
@@ -44,7 +44,7 @@ const hastooltip: LabelledFileUploadProps = {
   required: false,
 };
 
-const disabled: FileUploadProps = { ...basic, disabled: true };
+export const disabled: FileUploadProps = { ...basic, disabled: true };
 
 /**
  * Sample prop definitions FileUpload's enumerable properties (imported in stories and test)

@@ -2,7 +2,7 @@ import { LabelledCheckboxProps } from "./Checkbox.props";
 
 const NUMBER_CHECKBOXES = 3;
 
-const basic: LabelledCheckboxProps = {
+export const basic: LabelledCheckboxProps = {
   label: "Checkbox",
   className: "checkbox",
   name: "checkbox",
@@ -13,12 +13,12 @@ const basicCheckBoxes = Array(NUMBER_CHECKBOXES).map((_, i) => ({
   id: `checkbox-${i}`,
 }));
 
-const checked: LabelledCheckboxProps = {
+export const checked: LabelledCheckboxProps = {
   ...basic,
   defaultChecked: true,
 };
 
-const error: LabelledCheckboxProps = {
+export const error: LabelledCheckboxProps = {
   ...basic,
   error: true,
 };

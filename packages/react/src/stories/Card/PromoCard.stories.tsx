@@ -15,7 +15,7 @@ const meta: Meta<typeof PromoCard> = {
   },
 };
 
-const Default: StoryObj<PromoCardProps> = {
+export const Default: StoryObj<PromoCardProps> = {
   args: {
     title: "Can digital technology be an equality machine?",
     eyebrow: "Podcast",
@@ -32,7 +32,7 @@ const Default: StoryObj<PromoCardProps> = {
   },
 };
 
-const Skeleton: StoryObj<PromoCardProps> = {
+export const Skeleton: StoryObj<PromoCardProps> = {
   name: "Skeleton",
   args: {
     theme: "light",
@@ -42,4 +42,3 @@ const Skeleton: StoryObj<PromoCardProps> = {
 };
 
 export default meta;
-export { Default, Skeleton };

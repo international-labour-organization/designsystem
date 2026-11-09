@@ -24,7 +24,7 @@ const meta: Meta<typeof Notification> = {
   },
 };
 
-const Default: StoryObj<NotificationProps> = {
+export const Default: StoryObj<NotificationProps> = {
   args: {
     headline: "With CTA",
     copy: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
@@ -44,4 +44,3 @@ const Default: StoryObj<NotificationProps> = {
 };
 
 export default meta;
-export { Default };

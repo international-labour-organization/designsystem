@@ -1,5 +1,6 @@
 import { Meta, StoryObj } from "@storybook/react-vite";
-import { TextInput, TextInputArgs } from "../../components/TextInput";
+import { TextInput } from "../../components/TextInput";
+import * as TextInputArgs from "../../components/TextInput/TextInput.args";
 import {
   ArgTypes,
   Description,

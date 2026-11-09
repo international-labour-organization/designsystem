@@ -1,6 +1,6 @@
 import { PaginationProps } from "./Pagination.props";
 
-const pagination: PaginationProps = {
+export const pagination: PaginationProps = {
   className: "storybook",
   callback: () => {},
   currentPage: 1,
@@ -16,7 +16,7 @@ const pagination: PaginationProps = {
   totalPages: 8,
 };
 
-const firstDisabled: PaginationProps = {
+export const firstDisabled: PaginationProps = {
   className: "storybook",
   callback: () => {},
   currentPage: 0,

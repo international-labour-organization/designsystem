@@ -27,7 +27,7 @@ const meta: Meta<typeof LanguageToggle> = {
   },
 };
 
-const Default: StoryObj<LanguageToggleProps> = {
+export const Default: StoryObj<LanguageToggleProps> = {
   args: {
     language: "English",
     options: [
@@ -39,4 +39,3 @@ const Default: StoryObj<LanguageToggleProps> = {
 };
 
 export default meta;
-export { Default };

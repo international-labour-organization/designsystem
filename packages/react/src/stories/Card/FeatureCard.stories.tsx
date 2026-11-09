@@ -28,7 +28,7 @@ const meta: Meta<typeof FeatureCard> = {
   },
 };
 
-const Default: StoryObj<FeatureCardProps> = {
+export const Default: StoryObj<FeatureCardProps> = {
   args: {
     title: "Can digital technology be an equality machine?",
     eyebrow: "Podcast",
@@ -56,7 +56,7 @@ const Default: StoryObj<FeatureCardProps> = {
   },
 };
 
-const Skeleton: StoryObj<FeatureCardProps> = {
+export const Skeleton: StoryObj<FeatureCardProps> = {
   args: {
     theme: "light",
     size: "narrow",
@@ -65,4 +65,3 @@ const Skeleton: StoryObj<FeatureCardProps> = {
 };
 
 export default meta;
-export { Default, Skeleton };
