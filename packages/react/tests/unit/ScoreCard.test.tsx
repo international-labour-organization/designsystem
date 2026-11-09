@@ -1,21 +1,26 @@
 import { expect, describe, it } from "vitest";
 import { render, screen } from "@testing-library/react";
-import { PromoCard } from "../src/components/Cards/PromoCard";
+import { ScoreCard } from "../../src/components/Cards/ScoreCard";
 
 const defaultProps = {
-  title: "Do we need tests?",
+  title: "Improving test coverage",
   eyebrow: "Test",
-  intro: "Tests are a vital yet often neglected part of software development.",
+  status: {
+    statusType: "alert" as const,
+    content: "Live",
+  },
   link: "https://www.example.com/",
-  cta: {
-    label: "Read the article",
-    url: "https://www.example.com/article",
+  content: {
+    items: [
+      { icon: "time", label: "30 October 2025" },
+      { icon: "pin", label: "Geneva, Switzerland" },
+    ],
   },
 };
 
-describe("PromoCard", () => {
+describe("ScoreCard", () => {
   it("should render correctly", () => {
-    render(<PromoCard {...defaultProps} />);
+    render(<ScoreCard {...defaultProps} />);
 
     // The first element returned is the stub text for the wrapper link
     const title = screen.getAllByText(defaultProps.title);
@@ -24,26 +29,26 @@ describe("PromoCard", () => {
     const eyebrow = screen.getByText(defaultProps.eyebrow);
     expect(eyebrow).toBeVisible();
 
-    const intro = screen.getByText(defaultProps.intro);
-    expect(intro).toBeVisible();
+    const status = screen.getByText(defaultProps.status.content);
+    expect(status).toBeVisible();
 
     const link = screen.getByRole("link", { name: defaultProps.title });
     expect(link).toHaveAttribute("href", defaultProps.link);
 
-    const ctaButton = screen.getByRole("link", {
-      name: defaultProps.cta.label,
-    });
-    expect(ctaButton).toBeVisible();
-    expect(ctaButton).toHaveAttribute("href", defaultProps.cta.url);
+    const content1 = screen.getByText(defaultProps.content.items[0].label);
+    expect(content1).toBeVisible();
+
+    const content2 = screen.getByText(defaultProps.content.items[1].label);
+    expect(content2).toBeVisible();
   });
 
   it("should display loading skeleton correctly", () => {
-    render(<PromoCard.Skeleton />);
+    render(<ScoreCard.Skeleton />);
 
     // The skeleton elements should be present
     const skeletonElements = document.querySelectorAll(
       "[class*='ilo--card--skeleton--']"
     );
-    expect(skeletonElements).toHaveLength(6);
+    expect(skeletonElements).toHaveLength(4);
   });
 });

@@ -1,7 +1,7 @@
 import { expect, describe, it } from "vitest";
 import { render, screen } from "@testing-library/react";
 
-import { Profile } from "../src/components/Profile";
+import { Profile } from "../../src/components/Profile";
 
 const fixture = {
   avatar: "/test-avatar.jpg",

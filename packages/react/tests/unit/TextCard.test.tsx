@@ -1,6 +1,6 @@
 import { expect, describe, it } from "vitest";
 import { render, screen } from "@testing-library/react";
-import { TextCard } from "../src/components/Cards/TextCard";
+import { TextCard } from "../../src/components/Cards/TextCard";
 
 const defaultProps = {
   title: "Why we need tests",

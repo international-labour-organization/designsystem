@@ -1,6 +1,6 @@
 import { expect, describe, it } from "vitest";
 import { render, screen } from "@testing-library/react";
-import { FeatureCard } from "../src/components/Cards/FeatureCard";
+import { FeatureCard } from "../../src/components/Cards/FeatureCard";
 
 const defaultProps = {
   title: "Will this card render correctly?",
