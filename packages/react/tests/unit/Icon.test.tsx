@@ -1,7 +1,7 @@
 // Icon.test.tsx
 import { render } from "@testing-library/react";
 import { describe, it, expect } from "vitest";
-import { Icon } from "../src/components/Icon";
+import { Icon } from "../../src/components/Icon";
 
 describe("Icon component", () => {
   it("returns null if no name is provided", () => {

@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import { describe, it, expect } from "vitest";
-import { DataCard, DataCardProps } from "../src/components/Cards/DataCard";
+import { DataCard, DataCardProps } from "../../src/components/Cards/DataCard";
 
 const defaultProps: DataCardProps = {
   eyebrow: "Flagship report",

@@ -2,9 +2,9 @@ import { expect, describe, it, vi } from "vitest";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
-import { ComplexNav } from "../src/components/Nav/Subsite/ComplexNav";
-import { CompactNav } from "../src/components/Nav/Subsite/CompactNav";
-import { SubsiteNavArgs } from "../src/stories/SubsiteNav/SubsiteNav.args";
+import { ComplexNav } from "../../src/components/Nav/Subsite/ComplexNav";
+import { CompactNav } from "../../src/components/Nav/Subsite/CompactNav";
+import { SubsiteNavArgs } from "../../src/stories/SubsiteNav/SubsiteNav.args";
 
 // Complex nav specific arguments with branding tag
 const complexNavArgs = {

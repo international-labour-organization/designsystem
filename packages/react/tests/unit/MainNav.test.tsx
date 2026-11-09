@@ -2,8 +2,8 @@ import { expect, describe, it } from "vitest";
 import { render, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
-import { MainNav } from "../src/components/Nav";
-import { MainNavArgs } from "../src/stories/MainNav/MainNav.args";
+import { MainNav } from "../../src/components/Nav";
+import { MainNavArgs } from "../../src/stories/MainNav/MainNav.args";
 
 describe("MainNav", () => {
   it("should render with the correct branding", () => {

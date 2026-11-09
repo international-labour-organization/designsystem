@@ -1,11 +1,11 @@
 import { expect, describe, it, vi } from "vitest";
 import { render, screen, fireEvent } from "@testing-library/react";
 
-import { Callout } from "../src/components/Callout";
-import { CalloutTypes } from "../src/types";
+import { Callout } from "../../src/components/Callout";
+import { CalloutTypes } from "../../src/types";
 
 // Mock the useGlobalSettings hook
-vi.mock("../src/hooks/useGlobalSettings", () => ({
+vi.mock("../../src/hooks/useGlobalSettings", () => ({
   default: () => ({ prefix: "ilo" }),
 }));
 

@@ -2,7 +2,7 @@ import { expect, describe, it, vi, beforeEach } from "vitest";
 import { render, screen, fireEvent } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
-import { Breadcrumb } from "../src/components/Breadcrumb";
+import { Breadcrumb } from "../../src/components/Breadcrumb";
 
 const mockLinks = [
   { url: "/home", label: "Home" },
