@@ -50,14 +50,14 @@
     }
   ],
   "scripts": {
-    "build:lib": "rollup -c && pnpm check:exports",
+    "build:lib": "rollup -c",
     "build:docs": "storybook build -o ./storybook-static",
-    "check:exports": "node scripts/check-exports.mjs",
     "storybook": "storybook dev -p 6006",
     "start:theme": "docker compose up -d",
     "cr:theme": "docker exec twig-backend-1 drush cache-rebuild",
     "cy:open": "cypress open",
-    "test": "cypress run",
+    "test": "vitest && cypress run",
+    "vitest": "vitest",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "chromatic": "npx chromatic --build-script-name build:docs"
@@ -87,6 +87,7 @@
     "storybook": "10.6.5",
     "twig": "^1.16.0",
     "vite": "^8.3.5",
+    "vitest": "^5.0.5",
     "zod": "^3.23.8"
   },
   "dependencies": {
