@@ -10,12 +10,16 @@ import {
 } from "@storybook/addon-docs/blocks";
 import { Dropdown } from "../../components/Dropdown";
 import * as dropdownArgs from "../../components/Dropdown/Dropdown.args";
-import { labelledFormFieldArgTypes } from "../../types/forms.args";
+import {
+  formFieldActionArgs,
+  labelledFormFieldArgTypes,
+} from "../../types/forms.args";
 
 const DropdownMeta: Meta<typeof Dropdown> = {
   title: "Components/Forms/Dropdown",
   component: Dropdown,
   tags: ["autodocs"],
+  args: { ...formFieldActionArgs() },
   argTypes: {
     autocomplete: {
       description:

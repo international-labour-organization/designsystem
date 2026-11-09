@@ -9,12 +9,16 @@ import {
   Subheading,
   Title,
 } from "@storybook/addon-docs/blocks";
-import { labelledFormFieldArgTypes } from "../../types/forms.args";
+import {
+  formFieldActionArgs,
+  labelledFormFieldArgTypes,
+} from "../../types/forms.args";
 
 const TextInputMeta: Meta<typeof TextInput> = {
   title: "Components/Forms/TextInput",
   component: TextInput,
   tags: ["autodocs"],
+  args: { ...formFieldActionArgs() },
   argTypes: {
     pattern: {
       description:

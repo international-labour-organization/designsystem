@@ -11,12 +11,16 @@ import {
 import { DatePicker } from "../../components";
 import * as DatePickerArgs from "../../components/DatePicker/DatePicker.args";
 import { FormControlPublicProps } from "../../components/FormControl/FormControl.props";
-import { labelledFormFieldArgTypes } from "../../types/forms.args";
+import {
+  formFieldActionArgs,
+  labelledFormFieldArgTypes,
+} from "../../types/forms.args";
 
 const DatePickerMeta: Meta<typeof DatePicker> = {
   title: "Components/Forms/DatePicker",
   component: DatePicker,
   tags: ["autodocs"],
+  args: { ...formFieldActionArgs() },
   argTypes: {
     max: {
       description: "The maximum date that can be selected",

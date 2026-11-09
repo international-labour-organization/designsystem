@@ -10,12 +10,16 @@ import {
 } from "@storybook/addon-docs/blocks";
 import { NumberPicker } from "../../components";
 import * as NumberPickerArgs from "../../components/NumberPicker/NumberPicker.args";
-import { labelledFormFieldArgTypes } from "../../types/forms.args";
+import {
+  formFieldActionArgs,
+  labelledFormFieldArgTypes,
+} from "../../types/forms.args";
 
 const NumberPickerMeta: Meta<typeof NumberPicker> = {
   title: "Components/Forms/NumberPicker",
   component: NumberPicker,
   tags: ["autodocs"],
+  args: { ...formFieldActionArgs() },
   argTypes: {
     placeholder: {
       description: "The placeholder text for the number picker",

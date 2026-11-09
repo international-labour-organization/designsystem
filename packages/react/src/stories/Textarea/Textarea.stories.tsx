@@ -9,12 +9,16 @@ import {
   Subheading,
   Title,
 } from "@storybook/addon-docs/blocks";
-import { labelledFormFieldArgTypes } from "../../types/forms.args";
+import {
+  formFieldActionArgs,
+  labelledFormFieldArgTypes,
+} from "../../types/forms.args";
 
 const TextareaMeta: Meta<typeof Textarea> = {
   title: "Components/Forms/Textarea",
   component: Textarea,
   tags: ["autodocs"],
+  args: { ...formFieldActionArgs() },
   argTypes: {
     autocorrect: {
       description:

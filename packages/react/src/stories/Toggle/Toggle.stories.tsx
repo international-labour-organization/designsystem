@@ -1,4 +1,5 @@
 import { Meta, StoryObj } from "@storybook/react-vite";
+import { fn } from "storybook/test";
 import { Toggle } from "../../components/Toggle";
 import * as ToggleArgs from "../../components/Toggle/Toggle.args";
 import {
@@ -15,6 +16,7 @@ const ToggleMeta: Meta<typeof Toggle> = {
   title: "Components/Forms/Toggle",
   component: Toggle,
   tags: ["autodocs"],
+  args: { onClick: fn() },
   argTypes: {
     ...labelledChoiceFieldArgTypes("HTMLInputElement"),
     size: {
