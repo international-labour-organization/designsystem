@@ -1,5 +1,6 @@
 import { Meta, StoryObj } from "@storybook/react-vite";
-import { Checkbox, CheckboxArgs } from "../../components/Checkbox";
+import { Checkbox } from "../../components/Checkbox";
+import * as CheckboxArgs from "../../components/Checkbox/Checkbox.args";
 import { LabelledCheckboxProps } from "../../components/Checkbox/Checkbox.props";
 import {
   ArgTypes,

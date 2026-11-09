@@ -16,7 +16,7 @@ const meta: Meta<typeof HeroCard> = {
   },
 };
 
-const Default: StoryObj<HeroCardProps> = {
+export const Default: StoryObj<HeroCardProps> = {
   args: {
     theme: "dark",
     background: "solid",
@@ -46,7 +46,7 @@ const Default: StoryObj<HeroCardProps> = {
   },
 };
 
-const WithActions: StoryObj<HeroCardProps> = {
+export const WithActions: StoryObj<HeroCardProps> = {
   name: "With actions",
   parameters: {
     docs: {
@@ -67,7 +67,7 @@ const WithActions: StoryObj<HeroCardProps> = {
   },
 };
 
-const WithActionsLight: StoryObj<HeroCardProps> = {
+export const WithActionsLight: StoryObj<HeroCardProps> = {
   name: "With actions (light)",
   args: {
     ...WithActions.args,
@@ -80,4 +80,3 @@ const WithActionsLight: StoryObj<HeroCardProps> = {
 };
 
 export default meta;
-export { Default, WithActions, WithActionsLight };

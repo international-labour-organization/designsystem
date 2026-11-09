@@ -17,7 +17,7 @@ const meta: Meta<typeof FactListCard> = {
   },
 };
 
-const Default: StoryObj<FactListCardProps> = {
+export const Default: StoryObj<FactListCardProps> = {
   args: {
     title: "Can digital technology be an equality machine?",
     list: [
@@ -31,7 +31,7 @@ const Default: StoryObj<FactListCardProps> = {
   },
 };
 
-const Skeleton: StoryObj<FactListCardProps> = {
+export const Skeleton: StoryObj<FactListCardProps> = {
   name: "Skeleton",
   args: {
     theme: "light",
@@ -41,4 +41,3 @@ const Skeleton: StoryObj<FactListCardProps> = {
 };
 
 export default meta;
-export { Default, Skeleton };

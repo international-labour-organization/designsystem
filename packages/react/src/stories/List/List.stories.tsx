@@ -75,7 +75,7 @@ const Template: StoryFn<ListProps> = (args: ListProps) => {
   );
 };
 
-const Default: StoryObj<ListProps> = {
+export const Default: StoryObj<ListProps> = {
   render: Template,
   args: {
     title: "Facts about the ILO",
@@ -86,4 +86,3 @@ const Default: StoryObj<ListProps> = {
 };
 
 export default meta;
-export { Default };

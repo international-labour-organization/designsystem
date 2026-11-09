@@ -28,7 +28,7 @@ const meta: Meta<typeof DetailCard> = {
   },
 };
 
-const Default: StoryObj<DetailCardProps> = {
+export const Default: StoryObj<DetailCardProps> = {
   args: {
     title: "Can digital technology be an equality machine?",
     eyebrow: "Podcast",
@@ -44,7 +44,7 @@ const Default: StoryObj<DetailCardProps> = {
   },
 };
 
-const Skeleton: StoryObj<DetailCardProps> = {
+export const Skeleton: StoryObj<DetailCardProps> = {
   name: "Skeleton",
   args: {
     theme: "light",
@@ -54,4 +54,3 @@ const Skeleton: StoryObj<DetailCardProps> = {
 };
 
 export default meta;
-export { Default, Skeleton };

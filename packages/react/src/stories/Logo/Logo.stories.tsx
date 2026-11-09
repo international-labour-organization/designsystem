@@ -8,13 +8,51 @@ import {
   Subheading,
   ArgTypes,
 } from "@storybook/addon-docs/blocks";
-import {
-  basic,
-  withSubBrand,
-  withDarkTheme,
-  withLongSubbrand,
-  fluidWidth,
-} from "../../components/Logo/Logo.args";
+import { LogoProps } from "../../components/Logo/Logo.props";
+import en_blue from "@ilo-org/brand-assets/logo_en_horizontal_blue.svg";
+import en_white from "@ilo-org/brand-assets/logo_en_horizontal_white.svg";
+
+const basic: LogoProps = {
+  src: en_blue,
+  url: "https://www.ilo.org",
+  alt: "International Labour Organization",
+  size: 400,
+  target: "_blank",
+};
+
+const withTheme: LogoProps = {
+  ...basic,
+  theme: "light",
+  src: {
+    light: en_blue,
+    dark: en_white,
+  },
+};
+
+const withSubBrand: LogoProps = {
+  ...withTheme,
+  subbrand: "Voices",
+  url: "https://voices.ilo.org",
+};
+
+const withDarkTheme: LogoProps = {
+  ...withSubBrand,
+  subbrand: "Voices",
+  theme: "dark",
+  url: "https://live.ilo.org",
+};
+
+const withLongSubbrand: LogoProps = {
+  ...withTheme,
+  subbrand: "Digital Design System",
+};
+
+const fluidWidth: LogoProps = {
+  ...withDarkTheme,
+  url: "https://live.ilo.org",
+  size: "fluid",
+  subbrand: "Live",
+};
 
 const LogoMeta: Meta<typeof Logo> = {
   title: "Components/Media/Logo",

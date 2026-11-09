@@ -13,7 +13,7 @@ const meta: Meta<typeof Breadcrumb> = {
   },
 };
 
-const Default: StoryObj<BreadcrumbProps> = {
+export const Default: StoryObj<BreadcrumbProps> = {
   args: {
     buttonLabel: "More Links",
     links: [
@@ -28,4 +28,3 @@ const Default: StoryObj<BreadcrumbProps> = {
 };
 
 export default meta;
-export { Default };

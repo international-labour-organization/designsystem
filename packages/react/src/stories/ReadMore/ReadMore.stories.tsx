@@ -9,7 +9,7 @@ import {
 } from "@storybook/addon-docs/blocks";
 import { ReadMore } from "../../components/ReadMore";
 import { ReadMoreProps } from "../../components/ReadMore/ReadMore.props";
-import readMoreArgs from "../../components/ReadMore/ReadMore.args";
+import * as readMoreArgs from "../../components/ReadMore/ReadMore.args";
 
 const stateDoc = `
 By changing the \`openatstart\` prop you can set whether it should display the full text or the excerpt on component load. By default this is set to \`false\`.

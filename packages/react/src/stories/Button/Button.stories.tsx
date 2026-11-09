@@ -18,14 +18,14 @@ const Template: StoryFn = (args: ButtonProps) => {
   return <Button {...args} />;
 };
 
-const Default: StoryObj<ButtonProps> = {
+export const Default: StoryObj<ButtonProps> = {
   render: Template,
   args: {
     children: "Default Button",
   },
 };
 
-const Secondary: StoryObj<ButtonProps> = {
+export const Secondary: StoryObj<ButtonProps> = {
   render: Template,
   args: {
     children: "Secondary Button",
@@ -33,7 +33,7 @@ const Secondary: StoryObj<ButtonProps> = {
   },
 };
 
-const Small: StoryObj<ButtonProps> = {
+export const Small: StoryObj<ButtonProps> = {
   render: Template,
   args: {
     children: "Large Button",
@@ -41,7 +41,7 @@ const Small: StoryObj<ButtonProps> = {
   },
 };
 
-const WithIcon: StoryObj<ButtonProps> = {
+export const WithIcon: StoryObj<ButtonProps> = {
   render: Template,
   args: {
     children: "Button with Icon",
@@ -49,7 +49,7 @@ const WithIcon: StoryObj<ButtonProps> = {
   },
 };
 
-const IconOnly: StoryObj<ButtonProps> = {
+export const IconOnly: StoryObj<ButtonProps> = {
   render: Template,
   args: {
     children: "Icon Only Button",
@@ -57,7 +57,7 @@ const IconOnly: StoryObj<ButtonProps> = {
   },
 };
 
-const AsLink: StoryObj<ButtonProps> = {
+export const AsLink: StoryObj<ButtonProps> = {
   render: Template,
   args: {
     link: {
@@ -69,4 +69,3 @@ const AsLink: StoryObj<ButtonProps> = {
 };
 
 export default meta;
-export { Default, Secondary, Small, WithIcon, IconOnly, AsLink };

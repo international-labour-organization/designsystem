@@ -17,7 +17,7 @@ const meta: Meta<typeof AudioPlayer> = {
   },
 };
 
-const Default: StoryObj = {
+export const Default: StoryObj = {
   name: "Default",
   args: {
     src: "/audio-example.mp3",
@@ -27,7 +27,7 @@ const Default: StoryObj = {
   },
 };
 
-const MultipleTracks: StoryObj = {
+export const MultipleTracks: StoryObj = {
   name: "Multiple Tracks",
   render: () => {
     const tracks = [
@@ -77,4 +77,3 @@ const MultipleTracks: StoryObj = {
 };
 
 export default meta;
-export { Default, MultipleTracks };

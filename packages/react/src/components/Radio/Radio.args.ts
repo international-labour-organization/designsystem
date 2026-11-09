@@ -1,6 +1,6 @@
 import { RadioProps } from "./Radio.props";
 
-const basic: RadioProps = {
+export const basic: RadioProps = {
   className: "Radio",
   name: "radio",
 };

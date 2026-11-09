@@ -24,7 +24,7 @@ const meta: Meta<typeof DataCard> = {
   },
 };
 
-const Default: StoryObj<DataCardProps> = {
+export const Default: StoryObj<DataCardProps> = {
   name: "Default",
   args: {
     eyebrow: "Flagship report",
@@ -80,7 +80,7 @@ const Default: StoryObj<DataCardProps> = {
   },
 };
 
-const NoImage: StoryObj<DataCardProps> = {
+export const NoImage: StoryObj<DataCardProps> = {
   name: "No Image",
   args: {
     eyebrow: "Flagship report",
@@ -135,7 +135,7 @@ const NoImage: StoryObj<DataCardProps> = {
   },
 };
 
-const TwoColumns: StoryObj<DataCardProps> = {
+export const TwoColumns: StoryObj<DataCardProps> = {
   name: "Two Columns",
   args: {
     eyebrow: "Flagship report",
@@ -192,7 +192,7 @@ const TwoColumns: StoryObj<DataCardProps> = {
   },
 };
 
-const TwoColumnsNoImage: StoryObj<DataCardProps> = {
+export const TwoColumnsNoImage: StoryObj<DataCardProps> = {
   name: "Two Columns No Image",
   args: {
     eyebrow: "Flagship report",
@@ -248,7 +248,7 @@ const TwoColumnsNoImage: StoryObj<DataCardProps> = {
   },
 };
 
-const TwoColumnsNoLinks: StoryObj<DataCardProps> = {
+export const TwoColumnsNoLinks: StoryObj<DataCardProps> = {
   name: "Two Columns No Links",
   args: {
     eyebrow: "Flagship report",
@@ -269,7 +269,7 @@ const TwoColumnsNoLinks: StoryObj<DataCardProps> = {
   },
 };
 
-const Skeleton: StoryObj<DataCardProps> = {
+export const Skeleton: StoryObj<DataCardProps> = {
   name: "Skeleton",
   args: {
     theme: "light",
@@ -280,11 +280,3 @@ const Skeleton: StoryObj<DataCardProps> = {
 };
 
 export default meta;
-export {
-  Default,
-  NoImage,
-  TwoColumns,
-  TwoColumnsNoImage,
-  TwoColumnsNoLinks,
-  Skeleton,
-};

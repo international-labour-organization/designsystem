@@ -9,8 +9,35 @@ import {
 } from "@storybook/addon-docs/blocks";
 import { Tag, TagSet } from "../../components/Tag";
 import { TagProps } from "../../components/Tag/Tag.props";
-import tagSetArgs from "../../components/Tag/TagSet.args";
+import { TagSetProps } from "../../components/Tag/TagSet.props";
 import tagArgs from "../../components/Tag/Tag.args";
+
+const tagSetArgs: Record<"tag" | "buttonTag", TagSetProps> = {
+  tag: {
+    allowMultipleActive: true,
+    onButtonClick: (e) => {
+      console.log(e.target);
+    },
+    defaultTagActive: ["tag1", "tag2"],
+  },
+  buttonTag: {
+    allowMultipleActive: true,
+    onButtonClick: (e) => {
+      console.log(e.target);
+    },
+    defaultTagActive: [
+      "tag1",
+      "tag2",
+      "tag3",
+      "tag4",
+      "tag5",
+      "tag6",
+      "tag7",
+      "tag8",
+      "tag9",
+    ],
+  },
+};
 
 const themeDoc = `
 By changing the \`type\` prop you can set the which kind of tag to use.
