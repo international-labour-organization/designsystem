@@ -80,9 +80,15 @@ export default defineConfig({
       {
         test: {
           name: "unit",
-          include: ["tests/**/*.test.{ts,tsx}"],
+          include: ["tests/unit/**/*.test.{ts,tsx}"],
           environment: "jsdom",
           setupFiles: ["./vitest.setup.ts"],
+        },
+      },
+      {
+        test: {
+          name: "integration",
+          include: ["tests/integration/**/*.test.ts"],
         },
       },
     ],
