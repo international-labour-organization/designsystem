@@ -5,11 +5,13 @@
 	{% set cardcount = "three" %}
 {% endif %}
 
+{% set type = type|default("feature") %}
+
 <div class="{{prefix}}--cardgroup {{prefix}}--cardgroup__count__{{cardcount}} {% if collapsed|boolval %} {{prefix}}--cardgroup__collapsed {% endif %}">
 	<div class="{{prefix}}--cardgroup--inner">
 		{% for card in group %}
 			<div class="{{prefix}}--cardgroup--card">
-				{% include "@components/card/card.twig" with {
+				{% set cardprops = {
           size: size,
           theme: theme,
           type: type,
@@ -32,7 +34,26 @@
           source: card.source,
           status: card.status,
           prefix: prefix
-        } only %}
+        } %}
+				{% if type == "data" %}
+					{% include "@components/card_data/card_data.twig" with cardprops only %}
+				{% elseif type == "detail" %}
+					{% include "@components/card_detail/card_detail.twig" with cardprops only %}
+				{% elseif type == "factlist" %}
+					{% include "@components/card_factlist/card_factlist.twig" with cardprops only %}
+				{% elseif type == "feature" %}
+					{% include "@components/card_feature/card_feature.twig" with cardprops only %}
+				{% elseif type == "multilink" %}
+					{% include "@components/card_multilink/card_multilink.twig" with cardprops only %}
+				{% elseif type == "promo" %}
+					{% include "@components/card_promo/card_promo.twig" with cardprops only %}
+				{% elseif type == "score" %}
+					{% include "@components/card_score/card_score.twig" with cardprops only %}
+				{% elseif type == "stat" %}
+					{% include "@components/card_stat/card_stat.twig" with cardprops only %}
+				{% elseif type == "text" %}
+					{% include "@components/card_text/card_text.twig" with cardprops only %}
+				{% endif %}
 			</div>
 		{% endfor %}
 	</div>
