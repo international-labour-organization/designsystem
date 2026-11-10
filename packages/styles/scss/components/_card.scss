@@ -115,10 +115,6 @@ $link-hover-selectors: ".ilo--card--link:hover, .ilo--card--link:focus, .ilo--ca
     margin-bottom: spacing(6);
   }
 
-  &--event-date {
-    @include typography("body-small");
-  }
-
   &--content--item {
     @include typography("body-small");
   }
