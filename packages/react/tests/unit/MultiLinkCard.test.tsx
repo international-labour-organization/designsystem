@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import { describe, it, expect } from "vitest";
-import { MultiLinkCard } from "../src/components/Cards/MultiLinkCard";
+import { MultiLinkCard } from "../../src/components/Cards/MultiLinkCard";
 
 const defaultProps = {
   title: "Advancing social justice",

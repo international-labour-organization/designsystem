@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { render, screen, fireEvent } from "@testing-library/react";
-import { Tabs } from "../src/components/Tabs";
+import { Tabs } from "../../src/components/Tabs";
 
 describe("Tabs", () => {
   const mockItems = [

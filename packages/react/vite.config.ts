@@ -76,9 +76,22 @@ export default defineConfig({
   ],
   root: "./",
   test: {
-    environment: "jsdom",
-    setupFiles: ["./vitest.setup.ts"],
-    include: ["tests/**/*.test.{ts,tsx}"],
+    projects: [
+      {
+        test: {
+          name: "unit",
+          include: ["tests/unit/**/*.test.{ts,tsx}"],
+          environment: "jsdom",
+          setupFiles: ["./vitest.setup.ts"],
+        },
+      },
+      {
+        test: {
+          name: "integration",
+          include: ["tests/integration/**/*.test.ts"],
+        },
+      },
+    ],
   },
   publicDir: false,
   build: {

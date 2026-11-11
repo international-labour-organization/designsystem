@@ -2,9 +2,9 @@ import { render, screen, fireEvent } from "@testing-library/react";
 import {
   LanguageToggle,
   LanguageToggleProps,
-} from "../src/components/LanguageToggle";
+} from "../../src/components/LanguageToggle";
 import { describe, it, expect, afterEach } from "vitest";
-import { LinkProps } from "../src/components/Link";
+import { LinkProps } from "../../src/components/Link";
 import { userEvent } from "@testing-library/user-event";
 
 afterEach(() => {

@@ -2,24 +2,24 @@ import { ReactNode } from "react";
 import { expect, describe, it, vi } from "vitest";
 import { render, screen } from "@testing-library/react";
 
-import { Hero } from "../src/components/Hero";
-import { ThemeTypes } from "../src/types";
+import { Hero } from "../../src/components/Hero";
+import { ThemeTypes } from "../../src/types";
 
 // Mock the useGlobalSettings hook
-vi.mock("../src/hooks/useGlobalSettings", () => ({
+vi.mock("../../src/hooks/useGlobalSettings", () => ({
   default: () => ({ prefix: "ilo" }),
 }));
 
 // Mock child components
-vi.mock("../src/components/Breadcrumb", () => ({
+vi.mock("../../src/components/Breadcrumb", () => ({
   Breadcrumb: () => <div data-testid="breadcrumb">Breadcrumb Component</div>,
 }));
 
-vi.mock("../src/components/Tooltip", () => ({
+vi.mock("../../src/components/Tooltip", () => ({
   Tooltip: () => <div data-testid="tooltip">Tooltip Component</div>,
 }));
 
-vi.mock("../src/components/HeroCard", () => ({
+vi.mock("../../src/components/HeroCard", () => ({
   HeroCard: ({ theme, children }: { theme?: string; children?: ReactNode }) => (
     <div data-testid="hero-card" data-theme={theme}>
       HeroCard Component
