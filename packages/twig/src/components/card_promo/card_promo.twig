@@ -3,7 +3,7 @@
 {# Set default size to standard #}
 {% set size = size|default("standard") %}
 {% set theme = theme|default("light") %}
-{% if cornercut is not defined or cornercut is null %}{% set cornercut = true %}{% endif %}
+{% set cornercut = cornercut ?? true %}
 
 
 <div class="{{prefix}}--card--wrapper {{prefix}}--card--wrapper__type__promo {{prefix}}--card--wrapper__type__promo__size__{{ size }}">

@@ -1,7 +1,7 @@
 {# tag.twig #}
 
 {# Default active will be deprecated in future versions and should not be used #}
-{% set defaultActive = defaultActive|default(true) %}
+{% set defaultActive = defaultActive ?? true %}
 {% set tagType = tagType|default("display") %}
 {% set disabled = (disabled is not defined and defaultActive) ? false : disabled|default(false) %}
 {% set enabledClass = disabled ? "disabled" : "enabled" %}
