@@ -1,10 +1,10 @@
 import { expect, describe, it, vi } from "vitest";
 import { render, screen } from "@testing-library/react";
 
-import { HeroCard } from "../src/components/HeroCard";
+import { HeroCard } from "../../src/components/HeroCard";
 
 // Mock the useGlobalSettings hook
-vi.mock("../src/hooks/useGlobalSettings", () => ({
+vi.mock("../../src/hooks/useGlobalSettings", () => ({
   default: () => ({ prefix: "ilo" }),
 }));
 

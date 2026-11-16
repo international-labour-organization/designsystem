@@ -2,8 +2,8 @@ import { createRef } from "react";
 import { expect, describe, it, vi, beforeEach } from "vitest";
 import { render, screen, waitFor } from "@testing-library/react";
 
-import { Video } from "../src/components/Video";
-import { VideoPlayerRef } from "../src/components/Video/VideoPlayer.props";
+import { Video } from "../../src/components/Video";
+import { VideoPlayerRef } from "../../src/components/Video/VideoPlayer.props";
 
 const { mockPlayer, videojsMock } = vi.hoisted(() => {
   const mockPlayer = {
@@ -20,7 +20,7 @@ const { mockPlayer, videojsMock } = vi.hoisted(() => {
   return { mockPlayer, videojsMock };
 });
 
-vi.mock("../src/hooks/useGlobalSettings", () => ({
+vi.mock("../../src/hooks/useGlobalSettings", () => ({
   default: () => ({ prefix: "ilo" }),
 }));
 
