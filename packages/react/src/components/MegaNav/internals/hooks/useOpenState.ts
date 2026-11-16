@@ -65,7 +65,6 @@ function useOpenState({ rootRef, toggleId, delay }: UseOpenStateArgs) {
         setOpen(id);
       };
 
-      // Only the first open waits, moving to another item switches at once
       if (open) show();
       else hoverTimer.current = setTimeout(show, delay.open);
     },

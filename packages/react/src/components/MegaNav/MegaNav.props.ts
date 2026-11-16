@@ -52,8 +52,8 @@ export type MegaNavSearchConfig =
   | { field: SearchFieldProps; component?: never }
   | { field?: never; component: ReactNode };
 
-export interface MegaNavProps {
-  branding: {
+interface MegaNavConfig {
+  branding?: {
     /**
      * Where the logo links to
      */
@@ -124,9 +124,41 @@ export interface MegaNavProps {
   };
 
   className?: string;
+}
+
+export interface MegaNavProps extends MegaNavConfig {
+  branding: NonNullable<MegaNavConfig["branding"]>;
 
   /**
    * The navigation items, MegaNav.Item
+   */
+  children: ReactNode;
+}
+
+export interface MegaNavRootProps extends MegaNavConfig {
+  /**
+   * The navigation items, MegaNav.Item
+   */
+  items: ReactNode;
+
+  /**
+   * The element rendered around the pieces, "div" by default
+   */
+  as?: ElementType;
+
+  /**
+   * The pieces (MegaNav.Top, Bar, Menu, Search, Burger, Drawer) and any other content
+   */
+  children: ReactNode;
+}
+
+export interface MegaNavPieceProps {
+  className?: string;
+}
+
+export interface MegaNavBarProps extends MegaNavPieceProps {
+  /**
+   * Usually MegaNav.Menu, MegaNav.Search and MegaNav.Burger, plus any other content
    */
   children: ReactNode;
 }

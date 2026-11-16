@@ -10,7 +10,8 @@ import { MegaNavIds } from "../hooks/useIds";
 const MegaNavSearchWidget = ({ search }: { search: MegaNavSearchConfig }) =>
   search.field ? <SearchField {...search.field} /> : <>{search.component}</>;
 
-type MegaNavSearchProps = {
+type MegaNavSearchPanelProps = {
+  className?: string;
   search: MegaNavSearchConfig;
   isOpen: boolean;
   label: string;
@@ -18,13 +19,14 @@ type MegaNavSearchProps = {
   onToggle: (id: string) => void;
 };
 
-const MegaNavSearch = ({
+const MegaNavSearchPanel = ({
+  className,
   search,
   isOpen,
   label,
   ids,
   onToggle,
-}: MegaNavSearchProps) => {
+}: MegaNavSearchPanelProps) => {
   const panelRef = useRef<HTMLDivElement>(null);
   const baseClass = `${prefix}--mega-nav`;
 
@@ -37,7 +39,7 @@ const MegaNavSearch = ({
       <button
         type="button"
         id={ids.toggle("search")}
-        className={classNames(`${baseClass}__search`, {
+        className={classNames(`${baseClass}__search`, className, {
           [`${baseClass}__search--open`]: isOpen,
         })}
         aria-label={label}
@@ -59,4 +61,4 @@ const MegaNavSearch = ({
   );
 };
 
-export { MegaNavSearch, MegaNavSearchWidget };
+export { MegaNavSearchPanel, MegaNavSearchWidget };

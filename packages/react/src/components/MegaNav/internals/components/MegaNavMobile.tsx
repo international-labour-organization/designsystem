@@ -4,7 +4,11 @@ import { prefix } from "../../../../utils";
 import { MobileDrawer } from "../../../Nav/internals/mobile/MobileDrawer";
 import { MobileLanguageList } from "../../../Nav/internals/mobile/MobileLanguageList";
 
-import { MegaNavLabels, MegaNavProps } from "../../MegaNav.props";
+import {
+  MegaNavLabels,
+  MegaNavProps,
+  MegaNavRootProps,
+} from "../../MegaNav.props";
 import { useMegaNav } from "../utils/context";
 import { ParsedItem } from "../utils/parser";
 import { MegaNavSearchWidget } from "./MegaNavSearch";
@@ -33,7 +37,7 @@ type MegaNavMobileProps = {
   isOpen: boolean;
   onClose: () => void;
   items: ParsedItem[];
-  branding: MegaNavProps["branding"];
+  branding: MegaNavRootProps["branding"];
   widgets: MegaNavProps["widgets"];
   labels: Required<MegaNavLabels>;
 };
@@ -65,7 +69,7 @@ const MegaNavMobile = ({
       header={
         <div className={`${baseClass}__branding`}>
           <div className={`${baseClass}__logo`}>
-            {branding.logo.drawer || branding.logo.main}
+            {branding?.logo.drawer || branding?.logo.main}
           </div>
         </div>
       }

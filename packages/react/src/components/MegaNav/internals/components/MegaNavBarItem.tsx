@@ -11,10 +11,6 @@ import { ParsedItem } from "../utils/parser";
 type MegaNavBarItemProps = {
   item: ParsedItem;
   isOpen: boolean;
-
-  /**
-   * Moved under "More", still rendered for measuring
-   */
   isHidden: boolean;
   offset?: number;
   ids: MegaNavIds;
