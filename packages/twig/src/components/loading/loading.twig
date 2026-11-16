@@ -1,4 +1,7 @@
 {# loading.twig #}
+{% set size = size|default("large") %}
+{% set status = status|default("loading") %}
+
 <div class="{{prefix}}--loading {{prefix}}--loading__theme__{{theme|default('light')}} {% if size %}{{prefix}}--loading__size__{{size}}{% endif %} {% if status %}{{prefix}}--loading--{{status}}{% endif %}" role="alert" aria-live="assertive">
   {% if status == 'loading' %}
     <svg

@@ -2,6 +2,8 @@
 
 {% extends "@components/form/formcontrol.twig" %}
 
+{% set spellcheck = spellcheck|default("default") %}
+{% set wrap = wrap|default("off") %}
 {% set baseClass = prefix ~ '--textarea' %}
 {% set textAreaClass = [baseClass] %}
 {% if error %}

@@ -1,5 +1,6 @@
 {# callout.twig #}
 {% set alert = alert|default("info") %}
+{% if isOpen is not defined or isOpen is null %}{% set isOpen = true %}{% endif %}
 
 <div class="{{prefix}}--callout {{prefix}}--callout__{{alert}} {% if isCollapsible|boolval and isOpen|boolval %} {{prefix}}--callout__open {% endif %} {% if isCollapsible|boolval %} {{prefix}}--callout__collapse {% endif %}" data-loadcomponent="Callout">
 	<div class="{{prefix}}--callout--sidebar">

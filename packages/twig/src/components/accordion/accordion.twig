@@ -1,4 +1,5 @@
 {# accordion.twig #}
+{% if allowMultipleExpanded is not defined or allowMultipleExpanded is null %}{% set allowMultipleExpanded = true %}{% endif %}
 
 <ul class="{{prefix}}--accordion" data-loadcomponent="Accordion"{{ allowMultipleExpanded|boolval ? ' data-multipleexpanded' }}>
 	{% for item in items %}

@@ -3,6 +3,7 @@
 #}
 {% set theme = theme|default("dark") %}
 {% set background = background|default("solid") %}
+{% if cornercut is not defined or cornercut is null %}{% set cornercut = true %}{% endif %}
 
 <div class="{{prefix}}--hero-card {{prefix}}--hero-card__theme__{{ theme }} {{prefix}}--hero-card__background__{{ background }} {% if cornercut|boolval %} {{prefix}}--hero-card__cornercut {% endif %}">
   {% if eyebrow %}
