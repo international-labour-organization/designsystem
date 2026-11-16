@@ -3,6 +3,8 @@
 {% extends "@components/form/formcontrol.twig" %}
 
 {# Define the default values, these values can be overridden when the template is included or extended. #}
+{% set labelPlacement = labelPlacement|default("end") %}
+{% set labelSize = labelSize|default("small") %}
 {% set size = size|default("medium") %}
 {% set error = error|default(false) %}
 {% set disabled = disabled|default(false) %}

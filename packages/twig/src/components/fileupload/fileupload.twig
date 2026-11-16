@@ -2,6 +2,8 @@
 
 {% extends "@components/form/formcontrol.twig" %}
 
+{% set labelPlacement = labelPlacement|default("top") %}
+{% set labelSize = labelSize|default("medium") %}
 {% set baseClass = prefix ~ '--file-upload' %}
 {% set fileUploadClasses = [baseClass] %}
 {% set inputClass = baseClass ~ '--input' %}

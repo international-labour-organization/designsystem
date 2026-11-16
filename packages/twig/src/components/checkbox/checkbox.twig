@@ -2,6 +2,8 @@
 
 {% extends "@components/form/formcontrol.twig" %}
 
+{% set labelPlacement = labelPlacement|default("end") %}
+{% set labelSize = labelSize|default("small") %}
 {% set disabled = disabled|default(false) %}
 {% set baseClass = prefix ~ '--checkbox' %}
 {% set errorClass = baseClass ~ '__error' %}

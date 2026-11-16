@@ -2,6 +2,8 @@
 
 {% extends "@components/form/formcontrol.twig" %}
 
+{% set labelPlacement = labelPlacement|default("top") %}
+{% set labelSize = labelSize|default("medium") %}
 {% set disabled = disabled|default(false) %}
 {% set dropdownClass = prefix ~ '--dropdown' %}
 {% set dropdownClasses = [dropdownClass, class] %}
