@@ -4,3 +4,5 @@ export { default as getDefaultDimensionValue } from "./getDefaultDimensionValue"
 export { default as hoursMinutesSeconds } from "./hoursMinutesSeconds";
 export { default as transitionEndListener } from "./transitionEndListener";
 export { default as triggerBrowserReflow } from "./triggerBrowserReflow";
+export { prefix } from "./prefix";
+export { flattenChildren } from "./flattenChildren";
