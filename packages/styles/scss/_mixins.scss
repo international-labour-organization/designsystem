@@ -48,17 +48,6 @@
 }
 
 // ======================================
-// Data URL Icon
-// @deprecated - will be removed in future versions
-// ======================================
-
-@mixin dataurlicon($name, $color: $color-base-neutrals-black) {
-  @warn "ILO Design System: the dataurlicon mixin is deprecated and will be removed in future versions. Use the icon mixin instead";
-  background-image: url("#{colortodataurlicon($name, $color)}");
-  background-repeat: no-repeat;
-}
-
-// ======================================
 // Icon
 // ======================================
 
@@ -143,12 +132,7 @@
 // Cornercut
 // ======================================
 
-@mixin cornercut(
-  $width: $spacing-padding-8,
-  $height: $spacing-padding-5,
-  $dir: "right",
-  $side: "top"
-) {
+@mixin cornercut($width, $height, $dir: "right", $side: "top") {
   @if ($side == "top") {
     @if ($dir == "right") {
       clip-path: polygon(
