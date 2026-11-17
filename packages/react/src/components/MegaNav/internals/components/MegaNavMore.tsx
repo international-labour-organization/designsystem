@@ -1,42 +1,33 @@
 import classNames from "classnames";
-import { Ref, useState } from "react";
+import { Ref, useRef, useState } from "react";
 
 import { prefix } from "../../../../utils";
 
-import { MegaNavIds } from "../hooks/useIds";
-import { useMegaNav } from "../utils/context";
-import { ParsedItem } from "../utils/parser";
+import { usePanelOffset } from "../hooks/usePanelOffset";
+import { MegaNavCollectedItem } from "../utils/collection";
+import { useMegaNavConfig, useMegaNavStatus } from "../utils/context";
 
 type MegaNavMoreProps = {
-  items: ParsedItem[];
-  isOpen: boolean;
-  label: string;
-  ids: MegaNavIds;
-  onToggle: (id: string) => void;
-
-  /**
-   * Always rendered so its width can be measured
-   */
+  items: MegaNavCollectedItem[];
   itemRef: Ref<HTMLLIElement>;
 };
 
-const MegaNavMore = ({
-  items,
-  isOpen,
-  label,
-  ids,
-  onToggle,
-  itemRef,
-}: MegaNavMoreProps) => {
-  const { linkComponent: Link } = useMegaNav();
+const MegaNavMore = ({ items, itemRef }: MegaNavMoreProps) => {
+  const { ids, labels, toggle, linkComponent: Link } = useMegaNavConfig();
+  const { open } = useMegaNavStatus();
+  const panelRef = useRef<HTMLDivElement>(null);
+  const isOpen = open === "more";
+  const style = usePanelOffset(panelRef, isOpen, items.length);
+  const label = labels.more;
   const [selected, setSelected] = useState<string | null>(null);
 
   const baseClass = `${prefix}--mega-nav`;
   const moreClass = `${prefix}--mega-nav-more`;
+  const linksClass = `${prefix}--mega-nav-links`;
   const hasItems = items.length > 0;
-  const withMain = items.filter((item) => item.main);
+  const withLinks = items.filter((item) => item.groups.length > 0);
   const selectedItem =
-    withMain.find((item) => item.id === selected) ?? withMain[0];
+    withLinks.find((item) => item.id === selected) ?? withLinks[0];
 
   return (
     <li
@@ -53,15 +44,17 @@ const MegaNavMore = ({
         className={`${baseClass}__more`}
         aria-expanded={isOpen}
         aria-controls={ids.panel("more")}
-        onClick={() => onToggle("more")}
+        onClick={() => toggle("more")}
       >
         {label}
         <span className={`${baseClass}__more-icon`} />
       </button>
       {hasItems && (
         <div
+          ref={panelRef}
           id={ids.panel("more")}
           className={classNames(`${prefix}--mega-nav-panel`, moreClass)}
+          style={style}
           hidden={!isOpen}
         >
           <div className={`${moreClass}__items`}>
@@ -69,7 +62,7 @@ const MegaNavMore = ({
             <ul className={`${moreClass}__list`}>
               {items.map((item) => (
                 <li key={item.id}>
-                  {item.main ? (
+                  {item.groups.length > 0 ? (
                     <button
                       type="button"
                       className={classNames(`${moreClass}__entry`, {
@@ -92,9 +85,36 @@ const MegaNavMore = ({
               ))}
             </ul>
           </div>
-          <div id={ids.panel("more-main")} className={`${moreClass}__main`}>
-            {selectedItem?.main}
-          </div>
+          {selectedItem && (
+            <div
+              id={ids.panel("more-main")}
+              className={classNames(
+                `${moreClass}__main`,
+                `${prefix}--mega-nav-column`
+              )}
+            >
+              {selectedItem.groups.map((group, index) => (
+                <div key={index} className={linksClass}>
+                  {group.title && (
+                    <p className={`${linksClass}__title`}>{group.title}</p>
+                  )}
+                  <ul className={`${linksClass}__list`}>
+                    {group.links.map((link) => (
+                      <li key={link.href} className={`${linksClass}__item`}>
+                        <Link
+                          className={`${linksClass}__link`}
+                          href={link.href}
+                          target={link.target}
+                        >
+                          {link.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
       )}
     </li>

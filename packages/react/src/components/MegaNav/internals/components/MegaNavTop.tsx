@@ -4,8 +4,8 @@ import { ReactNode } from "react";
 import { prefix } from "../../../../utils";
 import { LanguageToggle } from "../../../LanguageToggle";
 
-import { MegaNavProps, MegaNavRootProps } from "../../MegaNav.props";
-import { useMegaNav } from "../utils/context";
+import { MegaNavPieceProps, MegaNavProps } from "../../MegaNav.props";
+import { useMegaNavConfig, useMegaNavStatus } from "../utils/context";
 
 type MegaNavBrandingLinkProps = {
   branding: MegaNavProps["branding"];
@@ -16,7 +16,7 @@ const MegaNavBrandingLink = ({
   branding,
   children,
 }: MegaNavBrandingLinkProps) => {
-  const { linkComponent: Link } = useMegaNav();
+  const { linkComponent: Link } = useMegaNavConfig();
 
   if (!branding.href) return <>{children}</>;
 
@@ -27,17 +27,9 @@ const MegaNavBrandingLink = ({
   );
 };
 
-type MegaNavTopContentProps = Pick<MegaNavRootProps, "branding" | "widgets"> & {
-  className?: string;
-  isClient: boolean;
-};
-
-const MegaNavTopContent = ({
-  className,
-  branding,
-  widgets,
-  isClient,
-}: MegaNavTopContentProps) => {
+const MegaNavTop = ({ className }: MegaNavPieceProps) => {
+  const { branding, widgets } = useMegaNavConfig();
+  const { isClient } = useMegaNavStatus();
   const baseClass = `${prefix}--mega-nav`;
   const containerClass = `${baseClass}__container`;
 
@@ -76,4 +68,4 @@ const MegaNavTopContent = ({
   );
 };
 
-export { MegaNavBrandingLink, MegaNavTopContent };
+export { MegaNavBrandingLink, MegaNavTop };

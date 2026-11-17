@@ -1,14 +1,37 @@
+import { useContext, useId, useRef } from "react";
+
+import useIsomorphicLayoutEffect from "../../hooks/useIsomorphicLayoutEffect";
 import { prefix } from "../../utils";
 
-import { useMegaNav } from "./internals/utils/context";
+import {
+  MegaNavItemContext,
+  MegaNavLinksContext,
+  useMegaNavConfig,
+} from "./internals/utils/context";
 import { MegaNavLinkProps } from "./MegaNav.props";
 
+const baseClass = `${prefix}--mega-nav-links`;
+
 const MegaNavLink = ({ href, target, children }: MegaNavLinkProps) => {
-  const { linkComponent: Link } = useMegaNav();
-  const baseClass = `${prefix}--mega-nav-links`;
+  const { linkComponent: Link } = useMegaNavConfig();
+  // Outside an Item or Links the link renders without being collected
+  const registerLink = useContext(MegaNavItemContext)?.registerLink;
+  const links = useContext(MegaNavLinksContext);
+  const key = useId();
+  const ref = useRef<HTMLLIElement>(null);
+
+  useIsomorphicLayoutEffect(() => {
+    const group = links?.group;
+    if (!registerLink || !group) return;
+    return registerLink(
+      key,
+      { href, label: children, target, group, title: links?.title },
+      ref.current
+    );
+  }, [registerLink, links, key, href, children, target]);
 
   return (
-    <li className={`${baseClass}__item`}>
+    <li ref={ref} className={`${baseClass}__item`}>
       <Link className={`${baseClass}__link`} href={href} target={target}>
         {children}
       </Link>

@@ -4,35 +4,24 @@ import { useEffect, useRef } from "react";
 import { prefix } from "../../../../utils";
 import { SearchField } from "../../../SearchField";
 
-import { MegaNavSearchConfig } from "../../MegaNav.props";
-import { MegaNavIds } from "../hooks/useIds";
+import { MegaNavPieceProps, MegaNavSearchConfig } from "../../MegaNav.props";
+import { useMegaNavConfig, useMegaNavStatus } from "../utils/context";
 
 const MegaNavSearchWidget = ({ search }: { search: MegaNavSearchConfig }) =>
   search.field ? <SearchField {...search.field} /> : <>{search.component}</>;
 
-type MegaNavSearchPanelProps = {
-  className?: string;
-  search: MegaNavSearchConfig;
-  isOpen: boolean;
-  label: string;
-  ids: MegaNavIds;
-  onToggle: (id: string) => void;
-};
-
-const MegaNavSearchPanel = ({
-  className,
-  search,
-  isOpen,
-  label,
-  ids,
-  onToggle,
-}: MegaNavSearchPanelProps) => {
+const MegaNavSearch = ({ className }: MegaNavPieceProps) => {
+  const { widgets, toggle, ids, labels } = useMegaNavConfig();
+  const { open } = useMegaNavStatus();
   const panelRef = useRef<HTMLDivElement>(null);
   const baseClass = `${prefix}--mega-nav`;
+  const isOpen = open === "search";
 
   useEffect(() => {
     if (isOpen) panelRef.current?.querySelector("input")?.focus();
   }, [isOpen]);
+
+  if (!widgets?.search) return null;
 
   return (
     <>
@@ -42,10 +31,10 @@ const MegaNavSearchPanel = ({
         className={classNames(`${baseClass}__search`, className, {
           [`${baseClass}__search--open`]: isOpen,
         })}
-        aria-label={label}
+        aria-label={labels.search}
         aria-expanded={isOpen}
         aria-controls={ids.panel("search")}
-        onClick={() => onToggle("search")}
+        onClick={() => toggle("search")}
       >
         <span className={`${baseClass}__search-icon`} />
       </button>
@@ -55,10 +44,10 @@ const MegaNavSearchPanel = ({
         className={`${baseClass}__search-panel`}
         hidden={!isOpen}
       >
-        <MegaNavSearchWidget search={search} />
+        <MegaNavSearchWidget search={widgets.search} />
       </div>
     </>
   );
 };
 
-export { MegaNavSearchPanel, MegaNavSearchWidget };
+export { MegaNavSearch, MegaNavSearchWidget };

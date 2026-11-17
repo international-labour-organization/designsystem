@@ -1,28 +1,29 @@
 import { forwardRef } from "react";
 
-import { asPart } from "./internals/utils/parts";
 import { MegaNavProps } from "./MegaNav.props";
 import { MegaNavColumn } from "./MegaNavColumn";
 import { MegaNavItem } from "./MegaNavItem";
 import { MegaNavLink } from "./MegaNavLink";
 import { MegaNavLinks } from "./MegaNavLinks";
-import { MegaNavMain } from "./MegaNavMain";
+import { MegaNavPanel } from "./MegaNavPanel";
 import {
   MegaNavBar,
   MegaNavBurger,
+  MegaNavContainer,
   MegaNavDrawer,
   MegaNavMenu,
   MegaNavSearch,
   MegaNavTop,
 } from "./MegaNavPieces";
 import { MegaNavRoot } from "./MegaNavRoot";
+import { MegaNavTrigger } from "./MegaNavTrigger";
 
 const MegaNavDefault = forwardRef<HTMLElement, MegaNavProps>(
   ({ children, ...props }, ref) => (
-    <MegaNavRoot {...props} ref={ref} as="header" items={children}>
+    <MegaNavRoot {...props} ref={ref} as="header">
       <MegaNavTop />
       <MegaNavBar>
-        <MegaNavMenu />
+        <MegaNavMenu>{children}</MegaNavMenu>
         <MegaNavSearch />
         <MegaNavBurger />
       </MegaNavBar>
@@ -34,18 +35,20 @@ const MegaNavDefault = forwardRef<HTMLElement, MegaNavProps>(
 MegaNavDefault.displayName = "MegaNav";
 
 const MegaNav = Object.assign(MegaNavDefault, {
-  Item: asPart("item", MegaNavItem),
-  Column: asPart("column", MegaNavColumn),
-  Main: asPart("main", MegaNavMain),
-  Links: asPart("links", MegaNavLinks),
-  Link: asPart("link", MegaNavLink),
   Root: MegaNavRoot,
   Top: MegaNavTop,
   Bar: MegaNavBar,
   Menu: MegaNavMenu,
+  Item: MegaNavItem,
+  Trigger: MegaNavTrigger,
+  Panel: MegaNavPanel,
+  Column: MegaNavColumn,
+  Links: MegaNavLinks,
+  Link: MegaNavLink,
   Search: MegaNavSearch,
   Burger: MegaNavBurger,
   Drawer: MegaNavDrawer,
+  Container: MegaNavContainer,
 });
 
 export { MegaNav };

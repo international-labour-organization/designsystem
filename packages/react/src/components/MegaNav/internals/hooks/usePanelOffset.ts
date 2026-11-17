@@ -1,15 +1,22 @@
-import { useState } from "react";
+import { CSSProperties, RefObject, useState } from "react";
 
 import useIsomorphicLayoutEffect from "../../../../hooks/useIsomorphicLayoutEffect";
 
-function usePanelOffset(panelId: string | undefined, layoutKey: unknown) {
+/**
+ * Aligns an open panel under its item, kept inside the bar
+ */
+function usePanelOffset(
+  panelRef: RefObject<HTMLElement>,
+  isOpen: boolean,
+  layoutKey?: unknown
+) {
   const [offset, setOffset] = useState<number>();
 
   useIsomorphicLayoutEffect(() => {
-    const panel = panelId ? document.getElementById(panelId) : null;
+    const panel = panelRef.current;
     const bar = panel?.offsetParent;
     const item = panel?.closest("li");
-    if (!panel || !(bar instanceof HTMLElement) || !item) return;
+    if (!isOpen || !panel || !(bar instanceof HTMLElement) || !item) return;
 
     const position = () => {
       const styles = getComputedStyle(bar);
@@ -33,9 +40,11 @@ function usePanelOffset(panelId: string | undefined, layoutKey: unknown) {
     position();
     window.addEventListener("resize", position);
     return () => window.removeEventListener("resize", position);
-  }, [panelId, layoutKey]);
+  }, [panelRef, isOpen, layoutKey]);
 
-  return offset;
+  return isOpen && offset !== undefined
+    ? ({ "--ilo-mega-nav-panel-offset": `${offset}px` } as CSSProperties)
+    : undefined;
 }
 
 export { usePanelOffset };

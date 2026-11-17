@@ -13,8 +13,17 @@ import { prefix } from "../../utils";
 
 import { useIds } from "./internals/hooks/useIds";
 import { useOpenState } from "./internals/hooks/useOpenState";
-import { MegaNavContext } from "./internals/utils/context";
-import { parseItems } from "./internals/utils/parser";
+import {
+  isDev,
+  reservedIds,
+  MegaNavCollectedItem,
+  useRegistry,
+  warn,
+} from "./internals/utils/collection";
+import {
+  MegaNavConfigContext,
+  MegaNavStatusContext,
+} from "./internals/utils/context";
 import { MegaNavLabels, MegaNavRootProps } from "./MegaNav.props";
 
 const DEFAULT_LABELS: Required<MegaNavLabels> = {
@@ -33,7 +42,6 @@ const DESKTOP_BREAKPOINTS = ["lg", "xl", "xxl"];
 const MegaNavRoot = forwardRef<HTMLElement, MegaNavRootProps>(
   (
     {
-      items: itemsProp,
       branding,
       widgets,
       labels: customLabels,
@@ -54,7 +62,15 @@ const MegaNavRoot = forwardRef<HTMLElement, MegaNavRootProps>(
     useImperativeHandle(ref, () => rootRef.current as HTMLElement);
 
     const isDesktop = DESKTOP_BREAKPOINTS.includes(breakpoint ?? "xl");
-    const items = useMemo(() => parseItems(itemsProp), [itemsProp]);
+    const [itemEntries, registerItem] = useRegistry<MegaNavCollectedItem>();
+    const items = useMemo(
+      () => itemEntries.map((entry) => entry.value),
+      [itemEntries]
+    );
+    const itemKeys = useMemo(
+      () => itemEntries.map((entry) => entry.key),
+      [itemEntries]
+    );
     const labels = useMemo(
       () => ({ ...DEFAULT_LABELS, ...customLabels }),
       [customLabels]
@@ -63,10 +79,8 @@ const MegaNavRoot = forwardRef<HTMLElement, MegaNavRootProps>(
     const openState = useOpenState({
       rootRef,
       toggleId: ids.toggle,
-      delay: {
-        open: hoverDelay?.open ?? 100,
-        close: hoverDelay?.close ?? 300,
-      },
+      openDelay: hoverDelay?.open ?? 100,
+      closeDelay: hoverDelay?.close ?? 300,
     });
     const { close } = openState;
 
@@ -75,33 +89,67 @@ const MegaNavRoot = forwardRef<HTMLElement, MegaNavRootProps>(
     }, []);
 
     useEffect(() => {
+      if (!isDev) return;
+      const seen = new Set<string>();
+      for (const { id } of items) {
+        if (reservedIds.includes(id)) {
+          warn(`the id "${id}" is reserved for the built-in ${id} button.`);
+        } else if (seen.has(id)) {
+          warn(`the id "${id}" is used by more than one item.`);
+        }
+        seen.add(id);
+      }
+    }, [items]);
+
+    useEffect(() => {
       close();
       setDrawerOpen(false);
     }, [isDesktop, close]);
 
-    const context = {
-      ...openState,
-      items,
-      branding,
-      widgets,
-      labels,
-      linkComponent,
-      ids,
-      isDesktop,
-      isClient,
-      isDrawerOpen,
-      setDrawerOpen,
-    };
+    const { open, toggle, hoverHandlers } = openState;
+
+    const config = useMemo(
+      () => ({
+        branding,
+        widgets,
+        labels,
+        linkComponent,
+        ids,
+        registerItem,
+        toggle,
+        close,
+        hoverHandlers,
+        setDrawerOpen,
+      }),
+      [
+        branding,
+        widgets,
+        labels,
+        linkComponent,
+        ids,
+        registerItem,
+        toggle,
+        close,
+        hoverHandlers,
+      ]
+    );
+
+    const status = useMemo(
+      () => ({ open, items, itemKeys, isDesktop, isClient, isDrawerOpen }),
+      [open, items, itemKeys, isDesktop, isClient, isDrawerOpen]
+    );
 
     return (
-      <MegaNavContext.Provider value={context}>
-        <Element
-          ref={rootRef}
-          className={classNames(`${prefix}--mega-nav`, className)}
-        >
-          {children}
-        </Element>
-      </MegaNavContext.Provider>
+      <MegaNavConfigContext.Provider value={config}>
+        <MegaNavStatusContext.Provider value={status}>
+          <Element
+            ref={rootRef}
+            className={classNames(`${prefix}--mega-nav`, className)}
+          >
+            {children}
+          </Element>
+        </MegaNavStatusContext.Provider>
+      </MegaNavConfigContext.Provider>
     );
   }
 );

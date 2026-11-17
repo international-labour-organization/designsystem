@@ -4,13 +4,8 @@ import { prefix } from "../../../../utils";
 import { MobileDrawer } from "../../../Nav/internals/mobile/MobileDrawer";
 import { MobileLanguageList } from "../../../Nav/internals/mobile/MobileLanguageList";
 
-import {
-  MegaNavLabels,
-  MegaNavProps,
-  MegaNavRootProps,
-} from "../../MegaNav.props";
-import { useMegaNav } from "../utils/context";
-import { ParsedItem } from "../utils/parser";
+import { useMegaNavConfig } from "../utils/context";
+import { MegaNavCollectedItem } from "../utils/collection";
 import { MegaNavSearchWidget } from "./MegaNavSearch";
 
 const menuClass = `${prefix}--nav-mobile-menu`;
@@ -22,7 +17,7 @@ type MobileLinkProps = {
 };
 
 const MobileLink = ({ href, target, children }: MobileLinkProps) => {
-  const { linkComponent: Link } = useMegaNav();
+  const { linkComponent: Link } = useMegaNavConfig();
 
   return (
     <li className={`${menuClass}__item`}>
@@ -34,22 +29,19 @@ const MobileLink = ({ href, target, children }: MobileLinkProps) => {
 };
 
 type MegaNavMobileProps = {
+  className?: string;
   isOpen: boolean;
   onClose: () => void;
-  items: ParsedItem[];
-  branding: MegaNavRootProps["branding"];
-  widgets: MegaNavProps["widgets"];
-  labels: Required<MegaNavLabels>;
+  items: MegaNavCollectedItem[];
 };
 
 const MegaNavMobile = ({
+  className,
   isOpen,
   onClose,
   items,
-  branding,
-  widgets,
-  labels,
 }: MegaNavMobileProps) => {
+  const { branding, widgets, labels } = useMegaNavConfig();
   const [nested, setNested] = useState<string | null>(null);
 
   const baseClass = `${prefix}--nav-mobile`;
@@ -62,6 +54,7 @@ const MegaNavMobile = ({
 
   return (
     <MobileDrawer
+      className={className}
       isOpen={isOpen}
       isNestedOpen={!!nested}
       onClose={close}
@@ -98,7 +91,7 @@ const MegaNavMobile = ({
     >
       <ul className={menuClass}>
         {items.map((item) =>
-          item.links.length > 0 ? (
+          item.groups.length > 0 ? (
             <li key={item.id}>
               <button
                 type="button"
@@ -151,9 +144,9 @@ const MegaNavMobile = ({
             <ul className={menuClass}>
               <MobileLink href={nestedItem.href}>{labels.overview}</MobileLink>
             </ul>
-            {nestedItem.links.map((group, index) => (
+            {nestedItem.groups.map((group, index) => (
               <ul key={index} className={menuClass}>
-                {group.map((link, linkIndex) => (
+                {group.links.map((link, linkIndex) => (
                   <MobileLink
                     key={linkIndex}
                     href={link.href}

@@ -4,7 +4,6 @@ import useIsomorphicLayoutEffect from "../../../../hooks/useIsomorphicLayoutEffe
 
 interface UseOverflowArgs {
   count: number;
-  gap: number;
   enabled: boolean;
 }
 
@@ -14,23 +13,26 @@ function getItems(list: HTMLUListElement | null) {
   );
 }
 
-function useOverflow({ count, gap, enabled }: UseOverflowArgs) {
-  const containerRef = useRef<HTMLDivElement>(null);
+function useOverflow({ count, enabled }: UseOverflowArgs) {
+  const containerRef = useRef<HTMLElement>(null);
   const listRef = useRef<HTMLUListElement>(null);
   const moreRef = useRef<HTMLLIElement>(null);
-  const [visibleCount, setVisibleCount] = useState(count);
+  const [visibleCount, setVisibleCount] = useState(Infinity);
 
   const measure = useCallback(() => {
     const container = containerRef.current;
-    // Not laid out: hidden, or no layout engine (jsdom)
     if (!enabled || !container?.clientWidth) return;
 
     const widths = getItems(listRef.current).map((item) => item.offsetWidth);
-    const available = container.clientWidth - gap;
+    const styles = getComputedStyle(container);
+    const available =
+      container.clientWidth -
+      parseFloat(styles.paddingLeft) -
+      parseFloat(styles.paddingRight);
     const total = widths.reduce((sum, width) => sum + width, 0);
 
     if (total <= available) {
-      setVisibleCount(count);
+      setVisibleCount(Infinity);
       return;
     }
 
@@ -42,7 +44,8 @@ function useOverflow({ count, gap, enabled }: UseOverflowArgs) {
       fitting++;
     }
     setVisibleCount(fitting);
-  }, [count, gap, enabled]);
+    // count re-measures once the items are collected
+  }, [count, enabled]);
 
   useIsomorphicLayoutEffect(measure, [measure]);
 
@@ -61,7 +64,7 @@ function useOverflow({ count, gap, enabled }: UseOverflowArgs) {
     containerRef,
     listRef,
     moreRef,
-    visibleCount: enabled ? visibleCount : count,
+    visibleCount: enabled ? Math.min(visibleCount, count) : count,
   };
 }
 

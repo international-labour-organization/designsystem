@@ -130,24 +130,20 @@ export interface MegaNavProps extends MegaNavConfig {
   branding: NonNullable<MegaNavConfig["branding"]>;
 
   /**
-   * The navigation items, MegaNav.Item
+   * The navigation items, MegaNav.Item, rendered in MegaNav.Menu
    */
   children: ReactNode;
 }
 
 export interface MegaNavRootProps extends MegaNavConfig {
   /**
-   * The navigation items, MegaNav.Item
-   */
-  items: ReactNode;
-
-  /**
    * The element rendered around the pieces, "div" by default
    */
   as?: ElementType;
 
   /**
-   * The pieces (MegaNav.Top, Bar, Menu, Search, Burger, Drawer) and any other content
+   * The pieces (MegaNav.Top, Bar, Menu, Search, Burger, Drawer) and any other
+   * content
    */
   children: ReactNode;
 }
@@ -156,50 +152,95 @@ export interface MegaNavPieceProps {
   className?: string;
 }
 
+export interface MegaNavContainerProps extends MegaNavPieceProps {
+  /**
+   * Content of your own, aligned with the bar and the panels
+   */
+  children: ReactNode;
+}
+
 export interface MegaNavBarProps extends MegaNavPieceProps {
+  /**
+   * Where the branding logo is shown in the bar: below desktop only ("mobile",
+   * the default), on every screen ("always"), or not at all ("none")
+   */
+  logo?: "mobile" | "always" | "none";
+
   /**
    * Usually MegaNav.Menu, MegaNav.Search and MegaNav.Burger, plus any other content
    */
   children: ReactNode;
 }
 
+export interface MegaNavMenuProps extends MegaNavPieceProps {
+  /**
+   * The navigation items, MegaNav.Item
+   */
+  children: ReactNode;
+}
+
 export interface MegaNavItemProps {
   /**
-   * Optional stable id, used for the panel ids
+   * Id to address the item with toggle() and open. Made from the label by
+   * default; "more" and "search" are reserved
    */
   id?: string;
 
+  /**
+   * The item's name, shown by the default trigger, under "More" and on mobile
+   */
   label: string;
 
+  /**
+   * The item's own page, its link under "More" and its overview on mobile
+   */
   href: string;
 
+  className?: string;
+
   /**
-   * MegaNav.Main and up to two MegaNav.Column, in any order.
-   * Without children the item is a plain link. Without MegaNav.Main it's a
-   * plain link in "More" and on mobile
+   * Usually MegaNav.Trigger and MegaNav.Panel. Without children the item is a
+   * plain link. The MegaNav.Links inside are collected for "More" and mobile
    */
   children?: ReactNode;
+}
+
+export interface MegaNavTriggerProps {
+  className?: string;
+
+  /**
+   * Content of a custom trigger button. Without it, the item's label as a
+   * link and a toggle button
+   */
+  children?: ReactNode;
+}
+
+export interface MegaNavPanelProps {
+  className?: string;
+
+  /**
+   * MegaNav.Column, up to three (two below xl), or any markup of your own
+   */
+  children: ReactNode;
 }
 
 export interface MegaNavColumnProps {
   className?: string;
 
   /**
-   * Any content, e.g. an introduction to the section or a PromoCard
-   */
-  children: ReactNode;
-}
-
-export interface MegaNavMainProps {
-  /**
-   * MegaNav.Links and any other component. On mobile only the MegaNav.Links
-   * written directly in it are shown
+   * Any content, e.g. MegaNav.Links, an introduction to the section or a
+   * PromoCard
    */
   children: ReactNode;
 }
 
 export interface MegaNavLinksProps {
+  /**
+   * Shown on desktop and under "More"
+   */
   title?: string;
+
+  className?: string;
 
   /**
    * MegaNav.Link

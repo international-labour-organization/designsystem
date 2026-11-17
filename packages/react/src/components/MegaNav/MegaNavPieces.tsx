@@ -1,48 +1,54 @@
 import classNames from "classnames";
+import { useMemo } from "react";
 
 import { prefix } from "../../utils";
 
-import { MegaNavBarItem } from "./internals/components/MegaNavBarItem";
 import { MegaNavMobile } from "./internals/components/MegaNavMobile";
 import { MegaNavMore } from "./internals/components/MegaNavMore";
-import { MegaNavSearchPanel } from "./internals/components/MegaNavSearch";
+import { MegaNavSearch } from "./internals/components/MegaNavSearch";
 import {
   MegaNavBrandingLink,
-  MegaNavTopContent,
+  MegaNavTop,
 } from "./internals/components/MegaNavTop";
 import { useOverflow } from "./internals/hooks/useOverflow";
-import { usePanelOffset } from "./internals/hooks/usePanelOffset";
-import { useMegaNav } from "./internals/utils/context";
-import { MegaNavBarProps, MegaNavPieceProps } from "./MegaNav.props";
+import {
+  MegaNavMenuContext,
+  useMegaNavConfig,
+  useMegaNavStatus,
+} from "./internals/utils/context";
+import {
+  MegaNavBarProps,
+  MegaNavContainerProps,
+  MegaNavMenuProps,
+  MegaNavPieceProps,
+} from "./MegaNav.props";
 
 const baseClass = `${prefix}--mega-nav`;
 
-// Space in px kept free between the last item and the search button
-const MORE_GAP = 128;
+const MegaNavContainer = ({ className, children }: MegaNavContainerProps) => (
+  <div className={classNames(`${baseClass}__container`, className)}>
+    {children}
+  </div>
+);
 
-const MegaNavTop = ({ className }: MegaNavPieceProps) => {
-  const { branding, widgets, isClient } = useMegaNav();
-
-  return (
-    <MegaNavTopContent
-      className={className}
-      branding={branding}
-      widgets={widgets}
-      isClient={isClient}
-    />
-  );
-};
-
-const MegaNavBar = ({ className, children }: MegaNavBarProps) => {
-  const { branding } = useMegaNav();
+const MegaNavBar = ({
+  className,
+  logo = "mobile",
+  children,
+}: MegaNavBarProps) => {
+  const { branding } = useMegaNavConfig();
 
   return (
     <div className={classNames(`${baseClass}__bar`, className)}>
       <div
         className={classNames(`${baseClass}__nav`, `${baseClass}__container`)}
       >
-        {branding && (
-          <div className={`${baseClass}__mobile-logo`}>
+        {branding && logo !== "none" && (
+          <div
+            className={classNames(`${baseClass}__mobile-logo`, {
+              [`${baseClass}__mobile-logo--always`]: logo === "always",
+            })}
+          >
             <MegaNavBrandingLink branding={branding}>
               {branding.logo.mobile || branding.logo.main}
             </MegaNavBrandingLink>
@@ -54,31 +60,18 @@ const MegaNavBar = ({ className, children }: MegaNavBarProps) => {
   );
 };
 
-const MegaNavMenu = ({ className }: MegaNavPieceProps) => {
-  const {
-    items,
-    open,
-    toggle,
-    hoverHandlers,
-    ids,
-    labels,
-    isDesktop,
-    isClient,
-  } = useMegaNav();
+const MegaNavMenu = ({ className, children }: MegaNavMenuProps) => {
+  const { labels } = useMegaNavConfig();
+  const { items, itemKeys, isDesktop, isClient } = useMegaNavStatus();
 
   const { containerRef, listRef, moreRef, visibleCount } = useOverflow({
     count: items.length,
-    gap: MORE_GAP,
     enabled: isDesktop && isClient,
   });
 
-  // An item that moved under "More" can't stay open in the bar
-  const openItem = items
-    .slice(0, visibleCount)
-    .find((item) => item.id === open && item.panel.length > 0);
-  const offset = usePanelOffset(
-    openItem && ids.panel(openItem.id),
-    visibleCount
+  const menu = useMemo(
+    () => ({ hiddenKeys: new Set(itemKeys.slice(visibleCount)) }),
+    [itemKeys, visibleCount]
   );
 
   return (
@@ -88,51 +81,18 @@ const MegaNavMenu = ({ className }: MegaNavPieceProps) => {
       aria-label={labels.nav}
     >
       <ul className={`${baseClass}__list`} ref={listRef}>
-        {items.map((item, index) => (
-          <MegaNavBarItem
-            key={item.id}
-            item={item}
-            isOpen={item === openItem}
-            isHidden={index >= visibleCount}
-            offset={offset}
-            ids={ids}
-            toggleLabel={labels.toggle(item.label)}
-            onToggle={toggle}
-            hoverHandlers={hoverHandlers}
-          />
-        ))}
-        <MegaNavMore
-          itemRef={moreRef}
-          items={items.slice(visibleCount)}
-          isOpen={open === "more"}
-          label={labels.more}
-          ids={ids}
-          onToggle={toggle}
-        />
+        <MegaNavMenuContext.Provider value={menu}>
+          {children}
+        </MegaNavMenuContext.Provider>
+        <MegaNavMore itemRef={moreRef} items={items.slice(visibleCount)} />
       </ul>
     </nav>
   );
 };
 
-const MegaNavSearch = ({ className }: MegaNavPieceProps) => {
-  const { widgets, open, toggle, ids, labels } = useMegaNav();
-
-  if (!widgets?.search) return null;
-
-  return (
-    <MegaNavSearchPanel
-      className={className}
-      search={widgets.search}
-      isOpen={open === "search"}
-      label={labels.search}
-      ids={ids}
-      onToggle={toggle}
-    />
-  );
-};
-
 const MegaNavBurger = ({ className }: MegaNavPieceProps) => {
-  const { labels, isDrawerOpen, setDrawerOpen } = useMegaNav();
+  const { labels, setDrawerOpen } = useMegaNavConfig();
+  const { isDrawerOpen } = useMegaNavStatus();
 
   return (
     <button
@@ -147,28 +107,18 @@ const MegaNavBurger = ({ className }: MegaNavPieceProps) => {
   );
 };
 
-const MegaNavDrawer = () => {
-  const {
-    items,
-    branding,
-    widgets,
-    labels,
-    isDesktop,
-    isClient,
-    isDrawerOpen,
-    setDrawerOpen,
-  } = useMegaNav();
+const MegaNavDrawer = ({ className }: MegaNavPieceProps) => {
+  const { setDrawerOpen } = useMegaNavConfig();
+  const { items, isDesktop, isClient, isDrawerOpen } = useMegaNavStatus();
 
   if (!isClient || isDesktop) return null;
 
   return (
     <MegaNavMobile
+      className={className}
       isOpen={isDrawerOpen}
       onClose={() => setDrawerOpen(false)}
       items={items}
-      branding={branding}
-      widgets={widgets}
-      labels={labels}
     />
   );
 };
@@ -176,6 +126,7 @@ const MegaNavDrawer = () => {
 export {
   MegaNavBar,
   MegaNavBurger,
+  MegaNavContainer,
   MegaNavDrawer,
   MegaNavMenu,
   MegaNavSearch,
