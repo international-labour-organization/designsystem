@@ -1,0 +1,436 @@
+@use "../../icons" as *;
+@use "../../functions" as *;
+@use "../../mixins" as *;
+@use "../../config" as *;
+@use "../../animations" as *;
+@use "./internal/nav-shared" as *;
+
+$panel-column: px-to-rem(320px);
+$panel-shadow:
+  0 px-to-rem(2px) px-to-rem(4px) rgba(30, 45, 190, 0.06),
+  0 px-to-rem(8px) px-to-rem(24px) rgba(30, 45, 190, 0.12);
+
+@mixin mega-nav-icon($name, $color, $size: 32px) {
+  display: block;
+  flex: none;
+  width: px-to-rem($size);
+  height: px-to-rem($size);
+  @include icon($name, $color);
+}
+
+.ilo--mega-nav {
+  position: relative;
+  // Clips the full-bleed widgets bar, not the panels
+  overflow-x: clip;
+
+  &__container {
+    @include nav-container;
+  }
+
+  &__top {
+    background-color: var(--ilo-color-light-action-selected);
+
+    @include breakpoint("lg", true) {
+      display: none;
+    }
+  }
+
+  &__widgets {
+    @include nav-widgets-bar-content;
+
+    &::after {
+      background-color: var(--ilo-color-light-container-bg-brand);
+    }
+
+    &-corner {
+      @include nav-widgets-corner(var(--ilo-color-light-container-bg-brand));
+    }
+
+    &-bar {
+      @include nav-widgets-bar(var(--ilo-color-light-container-bg-brand));
+    }
+  }
+
+  &__branding {
+    @include nav-branding;
+
+    &-logo {
+      display: flex;
+
+      img {
+        height: px-to-rem(72px);
+        width: auto;
+      }
+    }
+
+    &-tag {
+      @include nav-branding-tag;
+
+      &__main {
+        margin: 0;
+        color: var(--ilo-color-light-text-inverse);
+      }
+
+      &__sub {
+        color: var(--ilo-color-dark-text-brand);
+      }
+    }
+  }
+
+  &__bar {
+    background-color: var(--ilo-color-light-container-bg-brand);
+
+    @include breakpoint("lg", true) {
+      background-color: var(--ilo-color-light-action-selected);
+    }
+  }
+
+  &__nav {
+    @include nav-core;
+    position: relative;
+  }
+
+  &__mobile-logo {
+    display: none;
+    height: px-to-rem(38px);
+
+    img {
+      height: 100%;
+      width: auto;
+    }
+
+    @include breakpoint("lg", true) {
+      display: flex;
+    }
+
+    &--always {
+      display: flex;
+      flex: 0 0 auto;
+      margin-inline-end: px-to-rem(32px);
+
+      @include breakpoint("lg", true) {
+        margin-inline-end: 0;
+      }
+    }
+  }
+
+  &__menu {
+    flex: 1 1 auto;
+    min-width: 0;
+    height: 100%;
+    // Space kept free after the last item, items beyond it move under "More"
+    padding-inline-end: var(--ilo-mega-nav-menu-gap, #{px-to-rem(128px)});
+
+    @include breakpoint("lg", true) {
+      display: none;
+    }
+  }
+
+  &__list {
+    display: flex;
+    align-items: stretch;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+
+    // Still laid out so they can be measured
+    &--hidden {
+      position: absolute;
+      inset-block-start: 0;
+      inset-inline-start: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+  }
+
+  &__link {
+    @include typography("highlight-medium");
+    @include globaltransition("background-color, color");
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding-inline: spacing(4);
+    color: var(--ilo-color-light-text-inverse);
+    text-decoration: none;
+    white-space: nowrap;
+
+    &:hover,
+    &:focus-visible,
+    .ilo--mega-nav__item--open > & {
+      color: var(--ilo-color-light-action-hover);
+      background-color: var(--ilo-color-light-container-bg-default);
+      outline: none;
+    }
+    // Shadow cut at the bottom so it doesn't fall on the panel
+    .ilo--mega-nav__item--open > & {
+      transition: none;
+      position: relative;
+      z-index: 4;
+      box-shadow: $panel-shadow;
+      clip-path: inset(px-to-rem(-32px) px-to-rem(-32px) 0 px-to-rem(-32px));
+    }
+  }
+
+  &__toggle {
+    &:not(:focus-visible) {
+      @include isVisuallyHidden;
+    }
+
+    display: flex;
+    align-items: center;
+    align-self: stretch;
+    padding-inline: spacing(1);
+    border: none;
+    cursor: pointer;
+    background-color: var(--ilo-color-light-container-bg-default);
+
+    &-icon {
+      @include mega-nav-icon(
+        "chevron_down",
+        var(--ilo-color-light-action-default),
+        20px
+      );
+
+      [aria-expanded="true"] > & {
+        @include icon("chevron_up", var(--ilo-color-light-action-default));
+      }
+    }
+  }
+
+  &__item--more {
+    padding-inline: spacing(4);
+
+    &.ilo--mega-nav__item--open {
+      background-color: var(--ilo-color-light-container-bg-default);
+    }
+  }
+
+  &__more {
+    @include typography("highlight-medium-bold");
+    @include globaltransition("background-color, border-color, color");
+    --ilo-mega_nav-more-icon-color: var(--ilo-color-light-icon-inverse);
+    display: flex;
+    gap: spacing(1);
+    align-items: center;
+    padding: spacing(1) spacing(3);
+    border: 1px solid var(--ilo-color-light-border-inverse);
+    border-radius: var(--ilo-border-radius);
+    background: none;
+    color: var(--ilo-color-light-text-inverse);
+    cursor: pointer;
+    white-space: nowrap;
+
+    &-icon {
+      @include mega-nav-icon("plus", var(--ilo-mega_nav-more-icon-color), 20px);
+    }
+
+    &:hover,
+    &:focus-visible,
+    &[aria-expanded="true"] {
+      --ilo-mega_nav-more-icon-color: var(--ilo-color-light-action-hover);
+      color: var(--ilo-color-light-action-hover);
+      background-color: var(--ilo-color-light-container-bg-default);
+      border-color: var(--ilo-color-light-action-hover);
+    }
+  }
+
+  &__search {
+    @include nav-search($with-icon: false);
+    --ilo-mega_nav-search-color: var(--ilo-color-light-text-inverse);
+    flex: none;
+
+    &-icon {
+      @include mega-nav-icon("search", var(--ilo-mega_nav-search-color));
+    }
+
+    &:hover,
+    &--open {
+      --ilo-mega_nav-search-color: var(--ilo-color-light-action-hover);
+      background-color: var(--ilo-color-light-container-bg-default);
+    }
+
+    &-panel {
+      position: absolute;
+      top: 100%;
+      inset-inline: 0;
+      display: flex;
+      justify-content: center;
+      padding: spacing(20) spacing(4) spacing(22);
+      background-color: var(--ilo-color-light-container-bg-default);
+      box-shadow: $panel-shadow;
+
+      &[hidden] {
+        display: none;
+      }
+
+      form {
+        width: px-to-rem(620px);
+      }
+
+      .ilo--form-control,
+      .ilo--fieldset {
+        width: 100%;
+      }
+    }
+  }
+
+  &__burger {
+    @include nav-burger($with-icon: false);
+    --ilo-mega_nav-burger-color: var(--ilo-color-light-text-inverse);
+    background: none;
+
+    &-icon {
+      @include mega-nav-icon("burger", var(--ilo-mega_nav-burger-color));
+    }
+
+    &:hover {
+      --ilo-mega_nav-burger-color: var(--ilo-color-light-action-hover);
+      background-color: var(--ilo-color-light-container-bg-default);
+    }
+  }
+}
+
+.ilo--mega-nav-panel {
+  position: absolute;
+  top: 100%;
+  // Set by the open panel to align it under its item
+  inset-inline-start: var(--ilo-mega-nav-panel-offset, #{spacing(4)});
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: $panel-column;
+  background-color: var(--ilo-color-light-container-bg-default);
+  box-shadow: $panel-shadow;
+  z-index: 3;
+
+  &[hidden] {
+    display: none;
+  }
+
+  > * {
+    padding: spacing(8) spacing(6);
+
+    & + * {
+      border-inline-start: 1px solid var(--ilo-color-light-border-subtle);
+    }
+  }
+}
+
+.ilo--mega-nav-panel:has(> :nth-child(3)) {
+  inset-inline-end: spacing(4);
+  grid-auto-columns: minmax(0, 1fr);
+}
+
+@include breakpoint("xl", true) {
+  .ilo--mega-nav-panel > :nth-child(n + 3) {
+    display: none;
+  }
+
+  .ilo--mega-nav-panel:has(> :nth-child(3)) {
+    inset-inline-end: auto;
+    grid-auto-columns: $panel-column;
+  }
+}
+
+.ilo--mega-nav-column {
+  display: flex;
+  flex-direction: column;
+  gap: spacing(6);
+
+  .ilo--form-control,
+  .ilo--fieldset {
+    width: 100%;
+  }
+}
+
+.ilo--mega-nav-links {
+  &__title {
+    @include typography("highlight-medium-bold");
+    margin: 0 0 spacing(4);
+    color: var(--ilo-color-light-text-default);
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: spacing(1);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__link {
+    @include typography("highlight-medium");
+    display: block;
+    padding-block: spacing(2);
+    color: var(--ilo-color-light-text-brand);
+    text-decoration: none;
+
+    &:hover,
+    &:focus-visible {
+      color: var(--ilo-color-light-action-hover);
+      text-decoration: underline;
+    }
+  }
+}
+
+.ilo--mega-nav-more {
+  grid-auto-columns: $panel-column;
+
+  &__title {
+    @include typography("heading-4");
+    margin: 0 0 spacing(4);
+    color: var(--ilo-color-light-text-default);
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__entry {
+    @include typography("highlight-medium");
+    --ilo-mega_nav-entry-icon-color: var(--ilo-color-light-action-default);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: spacing(3) spacing(2);
+    border: none;
+    background: none;
+    color: var(--ilo-color-light-text-brand);
+    text-align: start;
+    text-decoration: none;
+    cursor: pointer;
+
+    &-icon {
+      @include mega-nav-icon(
+        "chevron_right",
+        var(--ilo-mega_nav-entry-icon-color),
+        24px
+      );
+
+      [dir="rtl"] & {
+        @include icon("chevron_left", var(--ilo-mega_nav-entry-icon-color));
+      }
+    }
+
+    &--selected,
+    &:hover,
+    &:focus-visible {
+      --ilo-mega_nav-entry-icon-color: var(--ilo-color-light-action-hover);
+      color: var(--ilo-color-light-action-hover);
+      background-color: var(--ilo-color-light-container-bg-subtle);
+    }
+  }
+
+  &__main {
+    min-width: 0;
+  }
+}
