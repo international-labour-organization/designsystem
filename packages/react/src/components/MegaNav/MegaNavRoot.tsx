@@ -61,7 +61,10 @@ const MegaNavRoot = forwardRef<HTMLElement, MegaNavRootProps>(
 
     useImperativeHandle(ref, () => rootRef.current as HTMLElement);
 
-    const isDesktop = DESKTOP_BREAKPOINTS.includes(breakpoint ?? "xl");
+    // No breakpoint matches on the server, or below the smallest one
+    const isDesktop = DESKTOP_BREAKPOINTS.includes(
+      breakpoint ?? (isClient ? "xs" : "xl")
+    );
     const [itemEntries, registerItem] = useRegistry<MegaNavCollectedItem>();
     const items = useMemo(
       () => itemEntries.map((entry) => entry.value),

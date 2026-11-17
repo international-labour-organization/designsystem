@@ -12,7 +12,7 @@ import { MegaNavLinkProps } from "./MegaNav.props";
 
 const baseClass = `${prefix}--mega-nav-links`;
 
-const MegaNavLink = ({ href, target, children }: MegaNavLinkProps) => {
+const MegaNavLink = ({ href, label, target, children }: MegaNavLinkProps) => {
   const { linkComponent: Link } = useMegaNavConfig();
   // Outside an Item or Links the link renders without being collected
   const registerLink = useContext(MegaNavItemContext)?.registerLink;
@@ -25,15 +25,15 @@ const MegaNavLink = ({ href, target, children }: MegaNavLinkProps) => {
     if (!registerLink || !group) return;
     return registerLink(
       key,
-      { href, label: children, target, group, title: links?.title },
+      { href, label, target, group, title: links?.title },
       ref.current
     );
-  }, [registerLink, links, key, href, children, target]);
+  }, [registerLink, links, key, href, label, target]);
 
   return (
     <li ref={ref} className={`${baseClass}__item`}>
       <Link className={`${baseClass}__link`} href={href} target={target}>
-        {children}
+        {children ?? label}
       </Link>
     </li>
   );

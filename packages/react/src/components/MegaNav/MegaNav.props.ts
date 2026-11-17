@@ -251,7 +251,15 @@ export interface MegaNavLinksProps {
 export interface MegaNavLinkProps {
   href: string;
 
+  /**
+   * The link's text, also used under "More" and on mobile
+   */
+  label: string;
+
   target?: string;
 
-  children: ReactNode;
+  /**
+   * Content shown in the panel instead of the label, such as a badge
+   */
+  children?: ReactNode;
 }

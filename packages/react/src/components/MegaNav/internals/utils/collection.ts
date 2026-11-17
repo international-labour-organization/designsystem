@@ -1,8 +1,8 @@
-import { ReactNode, useCallback, useMemo, useState } from "react";
+import { useCallback, useMemo, useState } from "react";
 
 export interface MegaNavCollectedLink {
   href: string;
-  label: ReactNode;
+  label: string;
   target?: string;
 }
 
@@ -88,8 +88,7 @@ function toId(label: string) {
   return reservedIds.includes(id) ? "" : id;
 }
 
-const isDev =
-  typeof process === "undefined" || process.env.NODE_ENV !== "production";
+const isDev = process.env.NODE_ENV !== "production";
 
 const warned = new Set<string>();
 
