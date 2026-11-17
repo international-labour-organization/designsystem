@@ -83,27 +83,21 @@ import "@ilo-org/styles/css/components/accordion.css";
 
 If you're already using SASS, you can import the SCSS files directly into your project and include them in your own SASS bundle. This gives you more control over compilation and allows you to customize the styles.
 
-> [!NOTE]
-> If you're using the SCSS source files, you will also need to import the `@ilo-org/themes` package to ensure the SASS files have access to the style tokens they need.
-
 #### Import All Styles
 
 ```scss
-@import "@ilo-org/themes/build/scss/tokens";
 @import "@ilo-org/styles/scss";
 ```
 
 #### Import Individual Component Styles
 
 ```scss
-@import "@ilo-org/themes/build/scss/tokens";
 @import "@ilo-org/styles/scss/components/accordion";
 ```
 
 #### Import Global Styles Only
 
 ```scss
-@import "@ilo-org/themes/build/scss/tokens";
 @import "@ilo-org/styles/scss/global";
 ```
 
