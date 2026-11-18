@@ -125,6 +125,60 @@
         color: var(--ilo-color-light-text-default);
         @include globaltransition("color");
       }
+
+      // With an image the card follows the ScoreCard: the image bleeds to the
+      // edges and the padding moves to the content
+      &#{$self}__hasimage {
+        padding: 0;
+
+        #{$self}--wrap {
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+        }
+
+        #{$self}--image--wrapper {
+          height: 0;
+          overflow: hidden;
+          padding-top: 56.25%;
+          width: 100%;
+
+          img {
+            position: absolute;
+            inset: 0;
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+          }
+        }
+
+        #{$self}--content {
+          display: flex;
+          flex: 1 1 auto;
+          flex-direction: column;
+          padding: spacing(6) spacing(6) spacing(8) spacing(6);
+          width: 100%;
+        }
+
+        &#{$self}__size__wide,
+        &#{$self}__size__fluid {
+          @include breakpoint("md") {
+            #{$self}--wrap {
+              flex-direction: row;
+            }
+
+            #{$self}--image--wrapper {
+              padding: 0;
+              height: initial;
+              width: 50%;
+            }
+
+            #{$self}--content {
+              width: 50%;
+            }
+          }
+        }
+      }
     }
   }
 }
