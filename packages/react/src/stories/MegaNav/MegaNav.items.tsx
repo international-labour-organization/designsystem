@@ -1,5 +1,3 @@
-import { ReactNode } from "react";
-
 import { PromoCard } from "../../components/Cards";
 import { Dropdown } from "../../components/Dropdown";
 import { MegaNav } from "../../components/MegaNav";
@@ -23,48 +21,6 @@ const regions = [
 const toHref = (label: string) =>
   `#${label.toLowerCase().replace(/[^a-z0-9]+/g, "-")}`;
 
-const SectionIntro = ({
-  href,
-  media,
-  title,
-  description,
-  cta,
-}: {
-  href: string;
-  media?: ReactNode;
-  title: string;
-  description: string;
-  cta: string;
-}) => (
-  <a
-    href={href}
-    style={{
-      display: "flex",
-      flexDirection: "column",
-      gap: "var(--ilo-spacing-base)",
-      color: "var(--ilo-color-light-text-default)",
-      textDecoration: "none",
-    }}
-  >
-    {media}
-    <strong style={{ fontSize: "1.25rem", lineHeight: 1.3 }}>{title}</strong>
-    <span style={{ fontSize: "0.875rem" }}>{description}</span>
-    <span
-      style={{
-        alignSelf: "flex-start",
-        marginTop: "calc(4 * var(--ilo-spacing-base))",
-        padding: "var(--ilo-spacing-base) calc(3 * var(--ilo-spacing-base))",
-        backgroundColor: "var(--ilo-color-light-feedback-warning-default)",
-        color: "var(--ilo-color-light-text-brand)",
-        fontWeight: 700,
-        fontSize: "0.875rem",
-      }}
-    >
-      {cta}
-    </span>
-  </a>
-);
-
 const promo = (
   <PromoCard
     eyebrow="Eyebrow"
@@ -80,22 +36,12 @@ const MegaNavItems = (
       <MegaNav.Trigger />
       <MegaNav.Panel>
         <MegaNav.Column>
-          <SectionIntro
-            href="#about"
-            media={
-              <img
-                src="/ilo-headquarters.jpg"
-                alt=""
-                style={{
-                  display: "block",
-                  width: "100%",
-                  marginBottom: "calc(6 * var(--ilo-spacing-base))",
-                }}
-              />
-            }
+          <PromoCard
+            image={{ url: "/ilo-headquarters.jpg", alt: "" }}
             title="About the ILO"
-            description="The ILO brings together governments, employers and workers of 187 Member States."
-            cta="Learn more about the ILO"
+            intro="The ILO brings together governments, employers and workers of 187 Member States."
+            link="#about"
+            cta={{ label: "Learn more about the ILO", url: "#about" }}
           />
         </MegaNav.Column>
         <MegaNav.Column>
@@ -113,11 +59,11 @@ const MegaNavItems = (
       <MegaNav.Trigger />
       <MegaNav.Panel>
         <MegaNav.Column>
-          <SectionIntro
-            href="#topics"
+          <PromoCard
             title="Topics and sectors"
-            description="The ILO brings together governments, employers and workers of 187 Member States."
-            cta="View all topics and sectors"
+            intro="The ILO brings together governments, employers and workers of 187 Member States."
+            link="#topics"
+            cta={{ label: "View all topics and sectors", url: "#topics" }}
           />
         </MegaNav.Column>
         <MegaNav.Column>
@@ -140,11 +86,11 @@ const MegaNavItems = (
       <MegaNav.Trigger />
       <MegaNav.Panel>
         <MegaNav.Column>
-          <SectionIntro
-            href="#countries"
+          <PromoCard
             title="Countries and regions"
-            description="The ILO works in more than 100 countries."
-            cta="View all countries and regions"
+            intro="The ILO works in more than 100 countries."
+            link="#countries"
+            cta={{ label: "View all countries and regions", url: "#countries" }}
           />
         </MegaNav.Column>
         <MegaNav.Column>
@@ -194,11 +140,11 @@ const MegaNavItems = (
           </MegaNav.Links>
         </MegaNav.Column>
         <MegaNav.Column>
-          <SectionIntro
-            href="#standards"
+          <PromoCard
             title="Labour standards"
-            description="International labour standards are legal instruments drawn up by the ILO's constituents."
-            cta="Browse labour standards"
+            intro="International labour standards are legal instruments drawn up by the ILO's constituents."
+            link="#standards"
+            cta={{ label: "Browse labour standards", url: "#standards" }}
           />
         </MegaNav.Column>
       </MegaNav.Panel>
