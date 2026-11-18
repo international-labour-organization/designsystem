@@ -6,10 +6,20 @@ const meta: Meta<typeof PromoCard> = {
   title: "Components/Cards/Promo Card",
   component: PromoCard,
   tags: ["autodocs"],
+  argTypes: {
+    size: {
+      control: "select",
+      options: ["narrow", "standard", "wide", "fluid"],
+    },
+    theme: {
+      control: "select",
+      options: ["light", "dark"],
+    },
+  },
   parameters: {
     docs: {
       description: {
-        component: `The Promo Card component displays a card with promotional content, including a title, eyebrow, intro text, and call to action.`,
+        component: `The Promo Card component displays a card with promotional content, including a title, eyebrow, intro text, call to action and an optional image.`,
       },
     },
   },
@@ -29,6 +39,34 @@ export const Default: StoryObj<PromoCardProps> = {
       label: "Read the press release",
       url: "https://www.ilo.org/global/about-the-ilo/newsroom/news/WCMS_846303/lang--en/index.htm",
     },
+  },
+};
+
+const image: PromoCardProps["image"] = {
+  alt: "",
+  url: [
+    { breakpoint: 0, src: "/small.jpg" },
+    { breakpoint: 800, src: "/medium.jpg" },
+    { breakpoint: 1200, src: "/medium.jpg" },
+    { breakpoint: 1440, src: "/large.jpg" },
+  ],
+};
+
+export const WithImage: StoryObj<PromoCardProps> = {
+  args: {
+    ...Default.args,
+    size: "narrow",
+    cornercut: false,
+    image,
+  },
+};
+
+export const WithImageWide: StoryObj<PromoCardProps> = {
+  args: {
+    ...Default.args,
+    size: "wide",
+    cornercut: false,
+    image,
   },
 };
 

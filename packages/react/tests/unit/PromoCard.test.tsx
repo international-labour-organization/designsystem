@@ -37,6 +37,27 @@ describe("PromoCard", () => {
     expect(ctaButton).toHaveAttribute("href", defaultProps.cta.url);
   });
 
+  it("should not render an image by default", () => {
+    const { container } = render(<PromoCard {...defaultProps} />);
+
+    expect(container.querySelector("img")).toBeNull();
+    expect(container.querySelector(".ilo--card__hasimage")).toBeNull();
+  });
+
+  it("should render an image when one is passed", () => {
+    const { container } = render(
+      <PromoCard
+        {...defaultProps}
+        image={{ url: "/image.jpg", alt: "A test image" }}
+      />
+    );
+
+    const image = screen.getByRole("img", { name: "A test image" });
+    expect(image).toHaveAttribute("src", "/image.jpg");
+    expect(image.closest(".ilo--card--image--wrapper")).not.toBeNull();
+    expect(container.querySelector(".ilo--card__hasimage")).not.toBeNull();
+  });
+
   it("should display loading skeleton correctly", () => {
     render(<PromoCard.Skeleton />);
 
