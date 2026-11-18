@@ -55,6 +55,31 @@ describe("Promo Card Component", () => {
       .should("have.attr", "href", fixture.link);
   });
 
+  it("should render with an image if provided", () => {
+    if (fixture.image) {
+      cy.get("@card").should("have.class", "ilo--card__hasimage");
+      cy.get("@card")
+        .find(".ilo--card--image--wrapper img")
+        .should("have.attr", "src", fixture.image.url[0].src)
+        .and("have.attr", "alt", fixture.image.alt);
+    } else {
+      cy.get("@card").should("not.have.class", "ilo--card__hasimage");
+      cy.get("@card").find(".ilo--card--image--wrapper").should("not.exist");
+    }
+  });
+
+  it("should not render an image when none is provided", () => {
+    const { image: _image, ...modifiedFixture } = fixture;
+
+    const modifiedUrl = `/pattern-preview?id=promocard&fields=${encodeURI(
+      JSON.stringify(modifiedFixture)
+    )}`;
+
+    cy.visit(modifiedUrl);
+    cy.get(`.ilo--card`).should("not.have.class", "ilo--card__hasimage");
+    cy.get(`.ilo--card`).find(".ilo--card--image--wrapper").should("not.exist");
+  });
+
   it("should display an eyebrow if provided", () => {
     if (fixture.eyebrow) {
       cy.get("@card")
