@@ -2,7 +2,7 @@ promocard:
   namespace: Components/Cards
   use: "@components/card_promo/card_promo.twig"
   label: Promo Card
-  description: A promo card component for displaying links to content. It can have a title, link, intro and additional call to action.
+  description: A promo card component for displaying links to content. It can have a title, link, intro, image and additional call to action.
   visibility: storybook
   fields:
     cta:
@@ -17,6 +17,10 @@ promocard:
       label: Eyebrow
       description: Eyebrow copy
       preview: "Podcast"
+    image:
+      type: object
+      label: Image
+      description: Optional image settings for the card. This should include a `url`, which is an array of objects with an `src` property pointing to the image file and a `breakpoint` property which is either a number indicating the minimum viewport width at which the image should be displayed or a media query. It can also contain an `alt` property for the image's alt text and a `loading` property for the image's loading attribute. The image is shown above the content, or beside it in `wide` and `fluid` cards on larger screens.
     intro:
       type: string
       label: Intro
@@ -72,3 +76,44 @@ promocard:
         h4: h4
         h5: h5
       preview: "p"
+  variants:
+    default:
+      label: Default
+    with_image:
+      label: With image
+      description: A narrow card with the image above the content.
+      settings:
+        size: "narrow"
+        cornercut: false
+      fields:
+        image:
+          alt: "Image alt text"
+          loading: "lazy"
+          url:
+            - breakpoint: "(min-width: 0px)"
+              src: "/images/small.jpg"
+            - breakpoint: "(min-width: 800px)"
+              src: "/images/medium.jpg"
+            - breakpoint: "(min-width: 1200px)"
+              src: "/images/large.jpg"
+            - breakpoint: "(min-width: 1440px)"
+              src: "/images/large.jpg"
+    with_image_wide:
+      label: With image wide
+      description: In `wide` and `fluid` cards the image sits beside the content on larger screens.
+      settings:
+        size: "wide"
+        cornercut: false
+      fields:
+        image:
+          alt: "Image alt text"
+          loading: "lazy"
+          url:
+            - breakpoint: "(min-width: 0px)"
+              src: "/images/small.jpg"
+            - breakpoint: "(min-width: 800px)"
+              src: "/images/medium.jpg"
+            - breakpoint: "(min-width: 1200px)"
+              src: "/images/large.jpg"
+            - breakpoint: "(min-width: 1440px)"
+              src: "/images/large.jpg"
