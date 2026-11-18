@@ -76,7 +76,7 @@
         @include cornercut(72px, 40px);
 
         [dir="rtl"] & {
-          @include cornercut(72px, 40px left);
+          @include cornercut(72px, 40px, left);
         }
       }
 
