@@ -1,6 +1,6 @@
 import { expect, describe, it } from "vitest";
 import { render, screen } from "@testing-library/react";
-import { StatCard } from "../src/components/Cards/StatCard";
+import { StatCard } from "../../src/components/Cards/StatCard";
 
 const defaultProps = {
   title: "Test coverage has improved dramatically",

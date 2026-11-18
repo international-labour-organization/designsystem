@@ -1,7 +1,7 @@
 import { expect, describe, it } from "vitest";
 import { render, screen } from "@testing-library/react";
 
-import { Blockquote } from "../src/components/Blockquote";
+import { Blockquote } from "../../src/components/Blockquote";
 
 const fixture = {
   quote: "My quote",

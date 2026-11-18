@@ -4,7 +4,7 @@ import {
   SocialMedia,
   socialMediaArgs,
   SocialMediaProps,
-} from "../src/components/SocialMedia";
+} from "../../src/components/SocialMedia";
 
 describe("SocialMedia Component", () => {
   it("renders social media icons", () => {
