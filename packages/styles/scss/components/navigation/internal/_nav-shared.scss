@@ -170,7 +170,7 @@
   }
 }
 
-@mixin nav-search {
+@mixin nav-search($with-icon: true) {
   height: 100%;
   display: flex;
   align-items: center;
@@ -186,14 +186,16 @@
     display: none;
   }
 
-  &__icon {
-    width: px-to-rem(32px);
-    height: px-to-rem(32px);
-    cursor: pointer;
+  @if $with-icon {
+    &__icon {
+      width: px-to-rem(32px);
+      height: px-to-rem(32px);
+      cursor: pointer;
+    }
   }
 }
 
-@mixin nav-burger {
+@mixin nav-burger($with-icon: true) {
   display: none;
 
   @include breakpoint("lg", true) {
@@ -205,8 +207,10 @@
   border: none;
   cursor: pointer;
 
-  &__icon {
-    width: px-to-rem(32px);
-    height: px-to-rem(32px);
+  @if $with-icon {
+    &__icon {
+      width: px-to-rem(32px);
+      height: px-to-rem(32px);
+    }
   }
 }

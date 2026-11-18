@@ -35,6 +35,11 @@ type MobileDrawerProps = {
   isNestedOpen?: boolean;
 
   className?: string;
+
+  /**
+   * Accessible name of the close button
+   */
+  closeLabel?: string;
 };
 
 const MobileDrawer = ({
@@ -45,6 +50,7 @@ const MobileDrawer = ({
   children,
   className,
   isNestedOpen = false,
+  closeLabel = "Close navigation",
 }: MobileDrawerProps) => {
   const { prefix } = useGlobalSettings();
   const id = useId();
@@ -78,7 +84,7 @@ const MobileDrawer = ({
         <button
           className={`${baseClass}__header-close`}
           onClick={onClose}
-          aria-label="Close navigation"
+          aria-label={closeLabel}
         >
           <span className={`${baseClass}__header-close__icon`}></span>
         </button>
