@@ -1,6 +1,8 @@
 {# text-input.twig #}
 {% extends "@components/form/formcontrol.twig" %}
 
+{% set labelPlacement = labelPlacement|default("start") %}
+{% set labelSize = labelSize|default("medium") %}
 {% set baseClass = prefix ~ "--text-input" %}
 {% set inputClass = [baseClass] %}
 {% if error %}

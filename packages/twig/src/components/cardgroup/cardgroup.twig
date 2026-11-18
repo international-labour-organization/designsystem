@@ -6,6 +6,8 @@
 {% endif %}
 
 {% set type = type|default("feature") %}
+{% set theme = theme|default("dark") %}
+{% set size = size|default("standard") %}
 
 <div class="{{prefix}}--cardgroup {{prefix}}--cardgroup__count__{{cardcount}} {% if collapsed|boolval %} {{prefix}}--cardgroup__collapsed {% endif %}">
 	<div class="{{prefix}}--cardgroup--inner">

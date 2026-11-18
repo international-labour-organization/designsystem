@@ -1,7 +1,7 @@
 {# card_score.twig #}
 
 {% set theme = theme|default("light") %}
-{% set titleLevel = titleLevel|default(p) %}
+{% set titleLevel = titleLevel|default("p") %}
 {% set size = size|default("narrow") %}
 {% set iconColor = "var(--ilo-color-light-icon-default)" %}
 
@@ -34,7 +34,7 @@
 				<p class="{{prefix}}--card--eyebrow">{{eyebrow}}</p>
 			{% endif %}
 			{% if title %}
-				<{{titleLevel|default('p')}} class="{{ prefix }}--card--title">{{ title }}</{{titleLevel|default('p')}}>
+				<{{titleLevel}} class="{{ prefix }}--card--title">{{ title }}</{{titleLevel|default('p')}}>
 			{% endif %}
 			{% if dataset.content %}
 				<div class="{{prefix}}--card--area--content">

@@ -40,7 +40,7 @@
 {# Classes for different form element states #}
 {% set errorClass = baseClass ~ "__error" %}
 {% set disabledClass = baseClass ~ "__disabled" %}
-{% set labelPlacementClass = baseClass ~ "__label-placement__" ~ labelPlacement|default("start") %}
+{% set labelPlacementClass = baseClass ~ "__label-placement__" ~ labelPlacement %}
 {% set formControlClass = formControlClass|merge([baseClass, class, labelPlacementClass]) %}
 
 {% if error %}
@@ -52,7 +52,7 @@
 {% endif %}
 
 {% set labelBaseClass = baseClass ~ "--label" %}
-{% set labelSizeClass = labelBaseClass ~ "__size__" ~ labelSize|default("medium") %}
+{% set labelSizeClass = labelBaseClass ~ "__size__" ~ labelSize %}
 {% set labelClass = [labelBaseClass, labelSizeClass] %}
 {% set helperClass = baseClass ~ "--helper" %}
 {% set labelRequiredClass = labelBaseClass ~ "--required" %}

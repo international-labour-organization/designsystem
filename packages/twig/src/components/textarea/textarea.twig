@@ -2,6 +2,10 @@
 
 {% extends "@components/form/formcontrol.twig" %}
 
+{% set labelPlacement = labelPlacement|default("top") %}
+{% set labelSize = labelSize|default("medium") %}
+{% set spellcheck = spellcheck|default("default") %}
+{% set wrap = wrap|default("off") %}
 {% set baseClass = prefix ~ '--textarea' %}
 {% set textAreaClass = [baseClass] %}
 {% if error %}

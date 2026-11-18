@@ -1,3 +1,5 @@
+{% set navtype = navtype|default("compact") %}
+
 {% if navtype == 'compact' %}
   {% include '@components/nav/nav_compact.twig' %}
 {% elseif navtype == 'complex' %}
