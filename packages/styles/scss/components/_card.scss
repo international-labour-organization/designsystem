@@ -110,7 +110,7 @@ $link-hover-selectors: ".ilo--card--link:hover, .ilo--card--link:focus, .ilo--ca
   }
 
   &--date {
-    color: var(--ilo-gray-accessible);
+    color: var(--ilo-color-gray-accessible);
     @include typography("body-small");
     margin-bottom: spacing(6);
   }
