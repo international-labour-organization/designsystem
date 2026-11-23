@@ -7,8 +7,8 @@
 {% set closebutton_label = closebutton.label|default("Close") %}
 
 {% if items %}
-	<div class="{{prefix}}--table-of-contents--wrapper" data-loadcomponent="TableOfContents" data-prefix="{{prefix}}">
-		<div class="{{prefix}}--table-of-contents--trigger">
+	<div class="ilo--table-of-contents--wrapper" data-loadcomponent="TableOfContents" data-prefix="ilo">
+		<div class="ilo--table-of-contents--trigger">
 			{% include '@components/button/button.twig' with {
 				prefix: prefix,
 				size: openbutton_size,
@@ -18,8 +18,8 @@
 				className: "toc--modal--open"
 			} only %}
 		</div>
-		<div class="{{prefix}}--table-of-contents--modal">
-			<h3 class="{{prefix}}--table-of-contents--headline">{{headline}}</h3>
+		<div class="ilo--table-of-contents--modal">
+			<h3 class="ilo--table-of-contents--headline">{{headline}}</h3>
 			{% include '@components/button/button.twig' with {
 				prefix: prefix,
 				size: "large",
@@ -34,11 +34,11 @@
 				className: "toc--modal--close"
 			} only %}
 		</div>
-		<nav class="{{prefix}}--table-of-contents">
-			<ul class="{{prefix}}--table-of-contents--list">
+		<nav class="ilo--table-of-contents">
+			<ul class="ilo--table-of-contents--list">
 				{% for item in items %}
-					<li class="{{prefix}}--table-of-contents--list--item">
-						<a class="{{prefix}}--table-of-contents--link" href="{{item.href}}">{{item.label}}</a>
+					<li class="ilo--table-of-contents--list--item">
+						<a class="ilo--table-of-contents--link" href="{{item.href}}">{{item.label}}</a>
 					</li>
 				{% endfor %}
 			</ul>

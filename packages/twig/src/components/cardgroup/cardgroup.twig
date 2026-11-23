@@ -9,10 +9,10 @@
 {% set theme = theme|default("dark") %}
 {% set size = size|default("standard") %}
 
-<div class="{{prefix}}--cardgroup {{prefix}}--cardgroup__count__{{cardcount}} {% if collapsed|boolval %} {{prefix}}--cardgroup__collapsed {% endif %}">
-	<div class="{{prefix}}--cardgroup--inner">
+<div class="ilo--cardgroup ilo--cardgroup__count__{{cardcount}} {% if collapsed|boolval %} ilo--cardgroup__collapsed {% endif %}">
+	<div class="ilo--cardgroup--inner">
 		{% for card in group %}
-			<div class="{{prefix}}--cardgroup--card">
+			<div class="ilo--cardgroup--card">
 				{% set cardprops = {
           size: size,
           theme: theme,
@@ -60,7 +60,7 @@
 		{% endfor %}
 	</div>
 	{% if cta %}
-		<div class="{{prefix}}--cardgroup--button-wrap">
+		<div class="ilo--cardgroup--button-wrap">
 		  {% include '@components/button/button.twig' with {
           label: cta.label,
           url: cta.url,

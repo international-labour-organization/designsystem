@@ -15,39 +15,39 @@
 
 {% set theme = theme|default("light") %}
 
-<nav class="{{prefix}}--breadcrumb {% if className %}{{className}}{% endif %} {{prefix}}--breadcrumb__theme__{{theme}}" data-prefix="{{prefix}}" data-loadcomponent="Breadcrumb">
-	<div class="{{prefix}}--breadcrumb--inner">
-		<ol class="{{prefix}}--breadcrumb--items" id="{{prefix}}--breadcrumb--container">
+<nav class="ilo--breadcrumb {% if className %}{{className}}{% endif %} ilo--breadcrumb__theme__{{theme}}" data-prefix="ilo" data-loadcomponent="Breadcrumb">
+	<div class="ilo--breadcrumb--inner">
+		<ol class="ilo--breadcrumb--items" id="ilo--breadcrumb--container">
 			{# Render the first link on its own as a custom icon #}
-			<li class="{{prefix}}--breadcrumb--item {{prefix}}--breadcrumb--item__first">
-				<a aria-label="{{firstlink.label}}" class="{{prefix}}--breadcrumb--link" href="{{firstlink.url}}"></a>
+			<li class="ilo--breadcrumb--item ilo--breadcrumb--item__first">
+				<a aria-label="{{firstlink.label}}" class="ilo--breadcrumb--link" href="{{firstlink.url}}"></a>
 			</li>
 			{# Render all but the first and last items in the context area #}
 			{% if contextLinks|length > 0 %}
-				<li class="{{prefix}}--breadcrumb--context">
-					<ol class="{{prefix}}--breadcrumb--items">
+				<li class="ilo--breadcrumb--context">
+					<ol class="ilo--breadcrumb--items">
 						{% for link in contextLinks %}
-							<li class="{{prefix}}--breadcrumb--item">
-								<a href="{{link.url}}" class="{{prefix}}--breadcrumb--link">
-									<span class="{{prefix}}--breadcrumb--link--label">{{link.label}}</span>
+							<li class="ilo--breadcrumb--item">
+								<a href="{{link.url}}" class="ilo--breadcrumb--link">
+									<span class="ilo--breadcrumb--link--label">{{link.label}}</span>
 								</a>
 							</li>
 						{% endfor %}
 					</ol>
-					<button aria-label="{{buttonlabel|default('More links')}}" aria-expanded="false" aria-controls="{{prefix}}--breadcrumb--menu" class="{{prefix}}--breadcrumb--context--button"></button>
+					<button aria-label="{{buttonlabel|default('More links')}}" aria-expanded="false" aria-controls="ilo--breadcrumb--menu" class="ilo--breadcrumb--context--button"></button>
 				</li>
 			{% endif %}
 			{# Render the last one outside the context area #}
 			{% if links|length > 1 %}
-				<li class="{{prefix}}--breadcrumb--item">
-					<a class="{{prefix}}--breadcrumb--link" href="{{lastlink.url}}">
-						<span class="{{prefix}}--breadcrumb--link--label">{{lastlink.label}}</span>
+				<li class="ilo--breadcrumb--item">
+					<a class="ilo--breadcrumb--link" href="{{lastlink.url}}">
+						<span class="ilo--breadcrumb--link--label">{{lastlink.label}}</span>
 					</a>
 				</li>
 			{% endif %}
 		</ol>
 	</div>
-	<div class="{{prefix}}--breadcrumb--context--menu" id="{{prefix}}--breadcrumb--menu" hidden>
+	<div class="ilo--breadcrumb--context--menu" id="ilo--breadcrumb--menu" hidden>
 		{% include '@components/contextmenu/contextmenu.twig' with {
 			links: contextLinks,
 			prefix: prefix

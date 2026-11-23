@@ -10,9 +10,9 @@
 
 {% set titleLevel = titleLevel|default('h2') %}
 
-<div class="{{prefix}}--list {% if ordered == 'unstyled' %} {{prefix}}--list__unstyled {% endif %} {% if alignment == 'horizontal' %} {{prefix}}--list__horizontal {% endif %} {{prefix}}--list__theme__{{theme}}">
+<div class="ilo--list {% if ordered == 'unstyled' %} ilo--list__unstyled {% endif %} {% if alignment == 'horizontal' %} ilo--list__horizontal {% endif %} ilo--list__theme__{{theme}}">
 	{% if title %}
-		<{{ titleLevel }} class="{{prefix}}--list--title">{{ title }}</{{ titleLevel }}>
+		<{{ titleLevel }} class="ilo--list--title">{{ title }}</{{ titleLevel }}>
 	{% endif %}
 	{% if ordered == "ordered" %}
 		<ol>

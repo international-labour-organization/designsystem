@@ -4,17 +4,17 @@
 {% set size = size|default("standard") %}
 {% set color = color|default("blue") %}
 
-<div class="{{prefix}}--card {{prefix}}--card__type__stat {{prefix}}--card__color__{{color}} {{prefix}}--card__size__{{size}}">
-	<div class="{{prefix}}--card--wrap">
-		<div class="{{prefix}}--card--content">
+<div class="ilo--card ilo--card__type__stat ilo--card__color__{{color}} ilo--card__size__{{size}}">
+	<div class="ilo--card--wrap">
+		<div class="ilo--card--content">
 			{% if title %}
 				<{{titleLevel|default('p')}} class="{{ prefix }}--card--title">{{ title }}</{{titleLevel|default('p')}}>
 			{% endif %}
 			{% if intro %}
-				<p class="{{prefix}}--card--intro">{{intro}}</p>
+				<p class="ilo--card--intro">{{intro}}</p>
 			{% endif %}
 			{% if source %}
-				<div class="{{prefix}}--card--source">
+				<div class="ilo--card--source">
 					{% include "@components/link/link.twig" with {
             url: source.url,
             label: source.label,

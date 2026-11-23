@@ -5,14 +5,14 @@ VIDEO PLAYER SUB-COMPONENT
 {% set chooseSubtitlesText = controls.chooseSubtitlesText|default("Choose subtitles") %}
 {% set noCaptionsText = controls.noCaptionsText|default("None") %}
 <div
-  class="{{prefix}}--videoplayer"
+  class="ilo--videoplayer"
   data-loadcomponent="Video"
-  data-prefix="{{prefix}}"
+  data-prefix="ilo"
   data-src="{{src}}"
   data-vjs-type="{{vjsType}}"
   style="--ilo-video-choose-subtitle-text: '{{ chooseSubtitlesText }}'; --ilo-video-none: '{{ noCaptionsText }}';"
 >
-  <video class="{{prefix}}--video--element" poster="{{poster.src}}">
+  <video class="ilo--video--element" poster="{{poster.src}}">
     {% if tracks %}
       {% for track in tracks %}
         <track kind="{{ track.kind|default('captions') }}" src="{{ track.src }}" srclang="{{ track.srclang }}" label="{{ track.label }}"{{ track.default ? ' default' : '' }}>

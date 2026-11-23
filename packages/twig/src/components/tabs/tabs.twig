@@ -4,12 +4,12 @@
 {% for item in items %}
   {% set tabids = tabids|merge([random(100000)]) %}
 {% endfor %}
-<div class="{{prefix}}--tabs {{prefix}}--tabs__theme__{{theme}}" data-prefix="{{prefix}}" id="tabs--{{uid}}" data-loadcomponent="Tabs">
-    <ul class="{{prefix}}--tabs--selection" aria-controls="tabs--{{uid}}" role="tablist" style="--tabscount: {{items|length}};">
+<div class="ilo--tabs ilo--tabs__theme__{{theme}}" data-prefix="ilo" id="tabs--{{uid}}" data-loadcomponent="Tabs">
+    <ul class="ilo--tabs--selection" aria-controls="tabs--{{uid}}" role="tablist" style="--tabscount: {{items|length}};">
       {% for item in items %}
-        <li class="{{prefix}}--tabs--selection--item" role="presentation">
-          <a href="#tab--{{tabids[loop.index - 1]}}" class="{{prefix}}--tabs--selection--button{% if item.icon is defined %} icon{% endif %}" aria-controls="tab--{{tabids[loop.index - 1]}}" role="tab" tabindex="0" {% if loop.index == 1 %}aria-selected="true"{% else %}aria-selected="false"{% endif %} title="{{item.label}}">
-            <span class="{{prefix}}--tabs--selection--label">{{item.label}}</span>
+        <li class="ilo--tabs--selection--item" role="presentation">
+          <a href="#tab--{{tabids[loop.index - 1]}}" class="ilo--tabs--selection--button{% if item.icon is defined %} icon{% endif %}" aria-controls="tab--{{tabids[loop.index - 1]}}" role="tab" tabindex="0" {% if loop.index == 1 %}aria-selected="true"{% else %}aria-selected="false"{% endif %} title="{{item.label}}">
+            <span class="ilo--tabs--selection--label">{{item.label}}</span>
             {% if item.icon is defined %}
               {% include '@components/icon/icon.twig' with {
                name: item.icon,
@@ -20,7 +20,7 @@
         </li>
       {% endfor %}
     </ul>
-    <div class="{{prefix}}--tabs--content">
+    <div class="ilo--tabs--content">
       {% for item in items %}
         <div id="tab--{{tabids[loop.index - 1]}}" role="tabpanel" aria-labelledby="tab--{{tabids[loop.index - 1]}}" {% if loop.index == 1 %}aria-expanded="true"{% else %}aria-expanded="false"{% endif %}>
           {% include '@components/' ~ item.component ~ '/' ~ item.component ~ '.twig' with item.componentdata %}

@@ -7,15 +7,15 @@
 {% set size = size|default("standard") %}
 {% set alignment = alignment|default("left") %}
 
-<div class="{{prefix}}--card {{prefix}}--card__theme__{{theme}} {{prefix}}--card__type__multilink {% if link|length > 0 %} {% endif %} {{prefix}}--card__size__{{size}} {% if isvideo|boolval %} {{prefix}}--card__isvideo {% endif %} {% if linklist %} {{prefix}}--card__linklist {% endif %} {% if size == "wide" or size == "fluid" %} {{prefix}}--card__align__{{alignment}} {% endif %} {% if not image %} {{prefix}}--card--no-image {% endif %}">
+<div class="ilo--card ilo--card__theme__{{theme}} ilo--card__type__multilink {% if link|length > 0 %} {% endif %} ilo--card__size__{{size}} {% if isvideo|boolval %} ilo--card__isvideo {% endif %} {% if linklist %} ilo--card__linklist {% endif %} {% if size == "wide" or size == "fluid" %} ilo--card__align__{{alignment}} {% endif %} {% if not image %} ilo--card--no-image {% endif %}">
 	{% if link|length > 0 %}
-		<a class="{{prefix}}--card--link" href="{{link}}" title="{{title}}">
-			<span class="{{prefix}}--card--link--text">{{title}}</span>
+		<a class="ilo--card--link" href="{{link}}" title="{{title}}">
+			<span class="ilo--card--link--text">{{title}}</span>
 		</a>
 	{% endif %}
-	<div class="{{prefix}}--card--wrap">
+	<div class="ilo--card--wrap">
 		{% if image %}
-			<div class="{{prefix}}--card--image--wrapper">
+			<div class="ilo--card--image--wrapper">
 				{% include "@components/picture/picture.twig" with {
 					image: image,
 					class: "card"
@@ -23,15 +23,15 @@
 				%}
 		</div>
 		{% endif %}
-		<div class="{{prefix}}--card--content">
+		<div class="ilo--card--content">
 			{% if eyebrow %}
-				<p class="{{prefix}}--card--eyebrow">{{eyebrow}}</p>
+				<p class="ilo--card--eyebrow">{{eyebrow}}</p>
 			{% endif %}
 			{% if title %}
 				<{{titleLevel|default('p')}} class="{{ prefix }}--card--title">{{ title }}</{{titleLevel|default('p')}}>
 			{% endif %}
 			{% if image %}
-				<div class="{{prefix}}--card--image--wrapper">
+				<div class="ilo--card--image--wrapper">
 					{% include "@components/picture/picture.twig" with {
 						image: image,
 						class: "card"
@@ -40,7 +40,7 @@
 				</div>
 			{% endif %}
 			{% if intro %}
-				<p class="{{prefix}}--card--intro">{{intro}}</p>
+				<p class="ilo--card--intro">{{intro}}</p>
 			{% endif %}
 			{% if linklist %}
 				{% include "@components/linklist/linklist.twig" with {

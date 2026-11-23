@@ -5,11 +5,11 @@
 #}
 
 {% if component != 'modal' %}
-	<div class="{{prefix}}--modal" data-loadcomponent="Modal" data-prefix="{{prefix}}">
+	<div class="ilo--modal" data-loadcomponent="Modal" data-prefix="ilo">
 		{% include '@components/button/button.twig' with openbutton %}
-		<div class="{{prefix}}--modal--wrapper" {% if modalLabel %} aria-label="{{modalLabel}}" {% endif %} aria-modal="true" role="alertdialog">
-			<div class="{{prefix}}--modal--background" role="presentation"></div>
-			<div class="{{prefix}}--modal--contents">
+		<div class="ilo--modal--wrapper" {% if modalLabel %} aria-label="{{modalLabel}}" {% endif %} aria-modal="true" role="alertdialog">
+			<div class="ilo--modal--background" role="presentation"></div>
+			<div class="ilo--modal--contents">
 				{% block modal_content %}
 					{% include '@components/' ~ component ~ '/' ~ component ~ '.twig' with modaldata %}
 				{% endblock %}

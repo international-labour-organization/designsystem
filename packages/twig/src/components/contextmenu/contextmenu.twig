@@ -3,11 +3,11 @@
 {% set className = className|default("") %}
 {% set contextMenuId = contextMenuId|default("") %}
 
-<ol role="menu" class="{{prefix}}--context-menu {{className}}" id="{{contextMenuId}}">
+<ol role="menu" class="ilo--context-menu {{className}}" id="{{contextMenuId}}">
 	{% for link in links %}
-		<li class="{{prefix}}--context-menu--item{{ link.endsection|boolval ? ' endsection'}}">
-			<a href="{{link.url}}" class="{{prefix}}--context-menu--link">
-				<span class="{{prefix}}--context-menu--label">{{link.label}}</span>
+		<li class="ilo--context-menu--item{{ link.endsection|boolval ? ' endsection'}}">
+			<a href="{{link.url}}" class="ilo--context-menu--link">
+				<span class="ilo--context-menu--label">{{link.label}}</span>
 			</a>
 		</li>
 	{% endfor %}

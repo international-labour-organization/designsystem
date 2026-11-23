@@ -2,29 +2,29 @@
 {% set alert = alert|default("info") %}
 {% set isOpen = isOpen ?? true %}
 
-<div class="{{prefix}}--callout {{prefix}}--callout__{{alert}} {% if isCollapsible|boolval and isOpen|boolval %} {{prefix}}--callout__open {% endif %} {% if isCollapsible|boolval %} {{prefix}}--callout__collapse {% endif %}" data-loadcomponent="Callout">
-	<div class="{{prefix}}--callout--sidebar">
-		<span class="{{prefix}}--callout--icon {{prefix}}--callout--icon__alert__{{alert}}"></span>
+<div class="ilo--callout ilo--callout__{{alert}} {% if isCollapsible|boolval and isOpen|boolval %} ilo--callout__open {% endif %} {% if isCollapsible|boolval %} ilo--callout__collapse {% endif %}" data-loadcomponent="Callout">
+	<div class="ilo--callout--sidebar">
+		<span class="ilo--callout--icon ilo--callout--icon__alert__{{alert}}"></span>
 	</div>
-	<div class="{{prefix}}--callout--content">
-		<div class="{{prefix}}--callout--header">
-			<h5 class="{{prefix}}--callout--title">{{ title }}</h5>
+	<div class="ilo--callout--content">
+		<div class="ilo--callout--header">
+			<h5 class="ilo--callout--title">{{ title }}</h5>
 			{% if isCollapsible|boolval %}
-				<button class="{{prefix}}--callout--toggle" type="button" data-open="{{ toggleOpenLabel }}" data-closed="{{ toggleClosedLabel }}">
-					<span class="{{prefix}}--callout--button-text">
+				<button class="ilo--callout--toggle" type="button" data-open="{{ toggleOpenLabel }}" data-closed="{{ toggleClosedLabel }}">
+					<span class="ilo--callout--button-text">
 						{% if isOpen %}
 							{{ toggleOpenLabel }}
 						{% else %}
 							{{ toggleClosedLabel }}
 						{% endif %}
 					</span>
-					<span class="{{prefix}}--callout--toggle--icon" role="presentation"></span>
+					<span class="ilo--callout--toggle--icon" role="presentation"></span>
 				</button>
 			{% endif %}
 		</div>
-		<p class="{{prefix}}--callout--description">{{ content }}</p>
+		<p class="ilo--callout--description">{{ content }}</p>
 		{% if button %}
-			<div class="{{prefix}}--callout--footer">
+			<div class="ilo--callout--footer">
 				{% include '@components/button/button.twig' with {
           label: button.label,
           url: button.url,

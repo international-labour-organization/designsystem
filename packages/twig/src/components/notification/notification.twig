@@ -3,12 +3,12 @@
 {% set placement = placement|default("dialog") %}
 {% set type = type|default("info") %}
 
-<div class="{{prefix}}--notification {{prefix}}--notification--{{placement}} icon icon--{{type}}" role="status" aria-live="polite" aria-relevant="additions" data-loadcomponent="Notification" data-prefix="{{prefix}}">
-  <div class="{{prefix}}--notification--content">
-    <h2 class="{{prefix}}--notification--headline">{{headline}}</h2>
-    <p class="{{prefix}}--notification--copy">{{copy}}</p>
+<div class="ilo--notification ilo--notification--{{placement}} icon icon--{{type}}" role="status" aria-live="polite" aria-relevant="additions" data-loadcomponent="Notification" data-prefix="ilo">
+  <div class="ilo--notification--content">
+    <h2 class="ilo--notification--headline">{{headline}}</h2>
+    <p class="ilo--notification--copy">{{copy}}</p>
     {% if timestamp %}
-      <time class="{{prefix}}--notification--date" datetime="{{timestamp.unix}}">{{timestamp.human}}</time>
+      <time class="ilo--notification--date" datetime="{{timestamp.unix}}">{{timestamp.human}}</time>
     {% endif %}
     {% if cta %}
       {% include "@components/button/button.twig" with {

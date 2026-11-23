@@ -12,10 +12,10 @@
         {% endif %}
       {% endif %}
     {% endfor %}
-    <img class="{{prefix}}--{{class}}--picture" src="{{image.url|reverse|last.src}}" alt="{{image.alt}}" {% if image.loading %} loading="{{ image.loading }}" {% endif %}>
+    <img class="ilo--{{class}}--picture" src="{{image.url|reverse|last.src}}" alt="{{image.alt}}" {% if image.loading %} loading="{{ image.loading }}" {% endif %}>
   </picture>
   {% else %}
   <picture>
-    <img class="{{prefix}}--{{class}}--picture" src="{{image.url}}" alt="{{image.alt}}" {% if image.loading %} loading="{{ image.loading }}" {% endif %}>
+    <img class="ilo--{{class}}--picture" src="{{image.url}}" alt="{{image.alt}}" {% if image.loading %} loading="{{ image.loading }}" {% endif %}>
   </picture>
 {% endif %}

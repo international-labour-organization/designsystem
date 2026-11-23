@@ -8,15 +8,15 @@
 {% set expanded_class = defaultExpanded ? prefix ~ '--accordion--panel__open' : '' %}
 {% set scroll_class = scroll ? prefix ~ '--accordion--panel__scroll' : '' %}
 
-<li class="{{prefix}}--accordion--item" id="{{ id }}">
+<li class="ilo--accordion--item" id="{{ id }}">
 	<div class="ilo--h3">
-		<button class="{{prefix}}--accordion--button {{prefix}}--accordion--button__{{ size|default('small') }}" aria-expanded="{{ defaultExpanded ? 'true' : 'false' }}" aria-controls="{{ panel_id }}" id="{{ button_id }}">
-			<span class="{{prefix}}--accordion--label">{{label}}</span>
-			<span class="{{prefix}}--accordion--icon"></span>
+		<button class="ilo--accordion--button ilo--accordion--button__{{ size|default('small') }}" aria-expanded="{{ defaultExpanded ? 'true' : 'false' }}" aria-controls="{{ panel_id }}" id="{{ button_id }}">
+			<span class="ilo--accordion--label">{{label}}</span>
+			<span class="ilo--accordion--icon"></span>
 		</button>
 	</div>
-	<div class="{{prefix}}--accordion--panel {{ expanded_class }} {{ scroll_class }}" id="{{ panel_id }}" aria-labelledby="{{ button_id }}" role="region" aria-hidden={{defaultExpanded ? 'false' : 'true'}}>
-		<div class="{{prefix}}--accordion--innerpanel">
+	<div class="ilo--accordion--panel {{ expanded_class }} {{ scroll_class }}" id="{{ panel_id }}" aria-labelledby="{{ button_id }}" role="region" aria-hidden={{defaultExpanded ? 'false' : 'true'}}>
+		<div class="ilo--accordion--innerpanel">
 			{{content}}
 		</div>
 	</div>

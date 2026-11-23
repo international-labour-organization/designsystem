@@ -3,12 +3,12 @@
 #}
 
 
-<header class="{{prefix}}--header" data-loadcomponent="Navigation" data-prefix="{{prefix}}">
-	<div class="{{prefix}}--header--utility-bar">
+<header class="ilo--header" data-loadcomponent="Navigation" data-prefix="ilo">
+	<div class="ilo--header--utility-bar">
 		{% if languagecontextmenu.links is not empty %}
-			<div class="{{prefix}}--language-switcher">
-				<div class="{{prefix}}--language-switcher--wrap">
-					<button tabindex="2" class="{{prefix}}--language-switcher--button" type="button">
+			<div class="ilo--language-switcher">
+				<div class="ilo--language-switcher--wrap">
+					<button tabindex="2" class="ilo--language-switcher--button" type="button">
 						{{languagelabel}}
 					</button>
 					{% include '@components/contextmenu/contextmenu.twig' with {
@@ -17,40 +17,40 @@
           }
         %}
 				</div>
-				<!-- /.{{prefix}}--language-switcher--wrap -->
+				<!-- /.ilo--language-switcher--wrap -->
 			</div>
-			<!-- /.{{prefix}}--language-switcher -->
+			<!-- /.ilo--language-switcher -->
 		{% endif %}
 	</div>
-	<!-- /.{{prefix}}--header--utility-bar -->
-	<div class="{{prefix}}--header--logo-bar">
-		<div class="{{prefix}}--header--inner {{ prefix }}--container">
-			<a tabindex="1" href="{{siteurl}}" class="{{prefix}}--header--logo-link">
-				<img class="{{prefix}}--header--logo" src="{{logo.image}}" alt="{{logo.alt}}">
+	<!-- /.ilo--header--utility-bar -->
+	<div class="ilo--header--logo-bar">
+		<div class="ilo--header--inner {{ prefix }}--container">
+			<a tabindex="1" href="{{siteurl}}" class="ilo--header--logo-link">
+				<img class="ilo--header--logo" src="{{logo.image}}" alt="{{logo.alt}}">
 			</a>
-			<p class="{{prefix}}--header--logo-tagline">
+			<p class="ilo--header--logo-tagline">
 				{{tagline.tag}}
-				<span class="{{prefix}}--header--logo-tagline--small">{{tagline.small}}</span>
+				<span class="ilo--header--logo-tagline--small">{{tagline.small}}</span>
 			</p>
-			<button class="{{prefix}}--header--menu">{{menulabel}}</button>
+			<button class="ilo--header--menu">{{menulabel}}</button>
 		</div>
-		<!-- /.{{prefix}}--header--inner -->
+		<!-- /.ilo--header--inner -->
 	</div>
 
-	<!-- /.{{prefix}}--header--logo-bar -->
-	<div class="{{prefix}}--header--navigation">
+	<!-- /.ilo--header--logo-bar -->
+	<div class="ilo--header--navigation">
 		<div
-			class="{{prefix}}--header--inner {{ prefix }}--container">
-			<!-- /.{{prefix}}--mobile--nav -->
-			<div class="{{prefix}}--mobile--nav">
-				<div class="{{prefix}}--mobile--nav--logo">
-					<a href="{{siteurl}}" class="{{prefix}}--header--logo-link">
-						<img class="{{prefix}}--header--logo" src="{{mobilelogo.image}}" alt="{{mobilelogo.alt}}">
+			class="ilo--header--inner {{ prefix }}--container">
+			<!-- /.ilo--mobile--nav -->
+			<div class="ilo--mobile--nav">
+				<div class="ilo--mobile--nav--logo">
+					<a href="{{siteurl}}" class="ilo--header--logo-link">
+						<img class="ilo--header--logo" src="{{mobilelogo.image}}" alt="{{mobilelogo.alt}}">
 					</a>
-					<button class="{{prefix}}--header--menu--close">{{menucloselabel}}</button>
+					<button class="ilo--header--menu--close">{{menucloselabel}}</button>
 				</div>
-				<!-- /.{{prefix}}--mobile--logo -->
-				<div class="{{prefix}}--mobile--nav--search">
+				<!-- /.ilo--mobile--logo -->
+				<div class="ilo--mobile--nav--search">
 					{% block mobileSearch %}
 						{% include '@components/form/form.twig' with {
             attributes: {
@@ -70,25 +70,25 @@
           %}
 					{% endblock %}
 				</div>
-				<!-- /.{{prefix}}--mobile--search -->
+				<!-- /.ilo--mobile--search -->
 				{% if languagecontextmenu.links is not empty %}
-					<div class="{{prefix}}--mobile--nav--language--switcher">
-						<button class="{{prefix}}--mobile--nav--language--switcher--button" type="button">{{languagelabel}}</button>
+					<div class="ilo--mobile--nav--language--switcher">
+						<button class="ilo--mobile--nav--language--switcher--button" type="button">{{languagelabel}}</button>
 					</div>
 				{% endif %}
-				<!-- /.{{prefix}}--mobile--nav--language--switcher -->
-				<div class="{{prefix}}--mobile--nav--language--select">
-					<div class="{{prefix}}--header--inner {{ prefix }}--container">
-						<div class="{{prefix}}--mobile--subnav--menu">
-							<button class="{{prefix}}--mobile--subnav--back" type="button">{{subnav.mobilebacklabel}}</button>
-							<button class="{{prefix}}--header--menu--close">{{subnav.mobilecloselabel}}</button>
-							<h6 class="{{prefix}}--mobile--subnav--label">{{languagelabel}}</h6>
+				<!-- /.ilo--mobile--nav--language--switcher -->
+				<div class="ilo--mobile--nav--language--select">
+					<div class="ilo--header--inner {{ prefix }}--container">
+						<div class="ilo--mobile--subnav--menu">
+							<button class="ilo--mobile--subnav--back" type="button">{{subnav.mobilebacklabel}}</button>
+							<button class="ilo--header--menu--close">{{subnav.mobilecloselabel}}</button>
+							<h6 class="ilo--mobile--subnav--label">{{languagelabel}}</h6>
 						</div>
-						<!-- /{{prefix}}--mobile--subnav--menu -->
-						<ul class="{{prefix}}--nav--set">
+						<!-- /ilo--mobile--subnav--menu -->
+						<ul class="ilo--nav--set">
 							{% for item in languagecontextmenu.links %}
-								<li class="{{prefix}}--nav--items">
-									<a href="{{item.url}}" class="{{prefix}}--nav--link {{prefix}}--nav--language">
+								<li class="ilo--nav--items">
+									<a href="{{item.url}}" class="ilo--nav--link ilo--nav--language">
 										{{item.label}}
 									</a>
 								</li>
@@ -97,54 +97,54 @@
 					</div>
 				</div>
 			</div>
-			<nav class="{{prefix}}--nav" aria-labelledby="primary-navigation">
-				<h2 class="{{prefix}}--nav--label" id="primary-navigation">{{primarynav.navlabel}}</h2>
-				<ul class="{{prefix}}--nav--set">
+			<nav class="ilo--nav" aria-labelledby="primary-navigation">
+				<h2 class="ilo--nav--label" id="primary-navigation">{{primarynav.navlabel}}</h2>
+				<ul class="ilo--nav--set">
 					{% for item in primarynav.items %}
-						<li class="{{prefix}}--nav--items">
-							<a href="{{item.link}}" class="{{prefix}}--nav--link">{{item.label}}</a>
+						<li class="ilo--nav--items">
+							<a href="{{item.link}}" class="ilo--nav--link">{{item.label}}</a>
 						</li>
 					{% endfor %}
 					{% if subnav %}
-						<li class="{{prefix}}--nav--items">
-							<button class="{{prefix}}--nav--trigger">{{subnav.buttonlabel}}</button>
+						<li class="ilo--nav--items">
+							<button class="ilo--nav--trigger">{{subnav.buttonlabel}}</button>
 						</li>
 					{% endif %}
 				</ul>
 			</nav>
-			<div class="{{prefix}}--search">
-				<button class="{{prefix}}--search--button" type="button">{{searchlabel}}</button>
+			<div class="ilo--search">
+				<button class="ilo--search--button" type="button">{{searchlabel}}</button>
 			</div>
-			<!-- /.{{prefix}}--search -->
+			<!-- /.ilo--search -->
 		</div>
-		<!-- /.{{prefix}}--header--inner -->
+		<!-- /.ilo--header--inner -->
 		{% if subnav %}
-			<nav class="{{prefix}}--subnav" aria-labelledby="secondary-navigation">
-				<div class="{{prefix}}--subnav--inner {{ prefix }}--container">
-					<div class="{{prefix}}--mobile--subnav">
-						<div class="{{prefix}}--mobile--subnav--menu">
-							<button class="{{prefix}}--mobile--subnav--back" type="button">{{subnav.mobilebacklabel}}</button>
-							<button class="{{prefix}}--header--menu--close">{{subnav.mobilecloselabel}}</button>
-							<h6 class="{{prefix}}--mobile--subnav--label">{{subnav.buttonlabel}}</h6>
+			<nav class="ilo--subnav" aria-labelledby="secondary-navigation">
+				<div class="ilo--subnav--inner {{ prefix }}--container">
+					<div class="ilo--mobile--subnav">
+						<div class="ilo--mobile--subnav--menu">
+							<button class="ilo--mobile--subnav--back" type="button">{{subnav.mobilebacklabel}}</button>
+							<button class="ilo--header--menu--close">{{subnav.mobilecloselabel}}</button>
+							<h6 class="ilo--mobile--subnav--label">{{subnav.buttonlabel}}</h6>
 						</div>
-						<!-- /{{prefix}}--mobile--subnav--menu -->
+						<!-- /ilo--mobile--subnav--menu -->
 					</div>
-					<!-- /.{{prefix}}--mobile--subnav -->
-					<h2 class="{{prefix}}--nav--label" id="secondary-navigation">{{subnav.navlabel}}</h2>
-					<ul class="{{prefix}}--subnav--set">
+					<!-- /.ilo--mobile--subnav -->
+					<h2 class="ilo--nav--label" id="secondary-navigation">{{subnav.navlabel}}</h2>
+					<ul class="ilo--subnav--set">
 						{% for item in subnav.items %}
-							<li class="{{prefix}}--subnav--items">
-								<a href="{{item.link}}" class="{{prefix}}--subnav--link">{{item.label}}</a>
+							<li class="ilo--subnav--items">
+								<a href="{{item.link}}" class="ilo--subnav--link">{{item.label}}</a>
 							</li>
 						{% endfor %}
 					</ul>
 				</div>
-				<!-- /.{{prefix}}--subnav--inner -->
+				<!-- /.ilo--subnav--inner -->
 			</nav>
 		{% endif %}
 
-		<div class="{{prefix}}--search-box">
-			<div class="{{prefix}}--header--inner {{ prefix }}--container">
+		<div class="ilo--search-box">
+			<div class="ilo--header--inner {{ prefix }}--container">
 				{% block desktopSearch %}
 					{% include '@components/form/form.twig' with {
             attributes: {
@@ -165,7 +165,7 @@
 				{% endblock %}
 			</div>
 		</div>
-		<!-- /.{{prefix}}--search-box -->
+		<!-- /.ilo--search-box -->
 	</div>
-	<!-- /.{{prefix}}--header--navigation -->
+	<!-- /.ilo--header--navigation -->
 </header>

@@ -1,35 +1,35 @@
 {#
   TABLE COMPONENT
 #}
-<div class="{{prefix}}--table{% if zebra|boolval %} {{prefix}}--table--zebra{% endif %}{% if smallrows|boolval %} {{prefix}}--table--small{% endif %}" data-prefix="{{prefix}}" data-loadcomponent="Table">
-  <header class="{{prefix}}--table--header">
-    <h3 class="{{prefix}}--table--headline">
+<div class="ilo--table{% if zebra|boolval %} ilo--table--zebra{% endif %}{% if smallrows|boolval %} ilo--table--small{% endif %}" data-prefix="ilo" data-loadcomponent="Table">
+  <header class="ilo--table--header">
+    <h3 class="ilo--table--headline">
       {{headline}}
       {% if tooltip %}
         {% include '@components/tooltip/tooltip.twig' with tooltip %}
       {% endif %}
     </h3>
     {% if description is defined %}
-    <p class="{{prefix}}--table--description">
+    <p class="ilo--table--description">
       {{description}}
     </p>
     {% endif %}
   </header>
-  <div class="{{prefix}}--table--wrapper">
-    <table class="{{prefix}}--table--content">
-      <thead class="{{prefix}}--table--head">
-        <tr class="{{prefix}}--table--head--row">
+  <div class="ilo--table--wrapper">
+    <table class="ilo--table--content">
+      <thead class="ilo--table--head">
+        <tr class="ilo--table--head--row">
         {% for column in tableheadings %}
-          <th class="{{prefix}}--table--head--cell">{{column}}</th>
+          <th class="ilo--table--head--cell">{{column}}</th>
         {% endfor %}
         </tr>
       </thead>
-      <tbody class="{{prefix}}--table--body">
+      <tbody class="ilo--table--body">
         {% for row in tabledata %}
-          <tr class="{{prefix}}--table--body--row">
+          <tr class="ilo--table--body--row">
             {% for cell in row %}
               {% set evaluate = cell|striptags|replace({'/': '', '-':'','_':'','.':'',}) %}
-              <td class="{{prefix}}--table--body--cell{% if evaluate matches '/^[0-9]+$/' %} numeric{% endif %}">{{cell}}</td>
+              <td class="ilo--table--body--cell{% if evaluate matches '/^[0-9]+$/' %} numeric{% endif %}">{{cell}}</td>
             {% endfor %}
           </tr>
         {% endfor %}

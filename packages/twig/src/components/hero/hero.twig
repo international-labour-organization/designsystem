@@ -22,7 +22,7 @@
 							{% endif %}
 						{% endif %}
 					{% endfor %}
-					<img class="{{prefix}}--card--image" src="{{image.url|reverse|last.src}}" alt="{{image.alt}}" {% if image.loading %} loading="{{ image.loading }}" {% endif %}{% if fetchpriority != "auto" %} fetchpriority="{{ fetchpriority }}" {% endif %}>
+					<img class="ilo--card--image" src="{{image.url|reverse|last.src}}" alt="{{image.alt}}" {% if image.loading %} loading="{{ image.loading }}" {% endif %}{% if fetchpriority != "auto" %} fetchpriority="{{ fetchpriority }}" {% endif %}>
 				</picture>
 			{% endif %}
 		{% endblock %}

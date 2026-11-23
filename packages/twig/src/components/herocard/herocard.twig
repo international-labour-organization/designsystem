@@ -5,7 +5,7 @@
 {% set background = background|default("solid") %}
 {% set cornercut = cornercut ?? true %}
 
-<div class="{{prefix}}--hero-card {{prefix}}--hero-card__theme__{{ theme }} {{prefix}}--hero-card__background__{{ background }} {% if cornercut|boolval %} {{prefix}}--hero-card__cornercut {% endif %}">
+<div class="ilo--hero-card ilo--hero-card__theme__{{ theme }} ilo--hero-card__background__{{ background }} {% if cornercut|boolval %} ilo--hero-card__cornercut {% endif %}">
   {% if eyebrow %}
     <p class="{{ prefix }}--hero-card--eyebrow">{{ eyebrow }}</p>
   {% endif %}

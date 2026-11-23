@@ -2,10 +2,10 @@
 
 {% set theme = theme|default("light") %}
 
-<div class="{{prefix}}--pagination icon icon--{{type}} {{prefix}}--pagination__theme__{{theme}}">
-  <div class="{{prefix}}--pagination--previous-set">
+<div class="ilo--pagination icon icon--{{type}} ilo--pagination__theme__{{theme}}">
+  <div class="ilo--pagination--previous-set">
     <a
-      class="{{prefix}}--pagination--first-page {{prefix}}--pagination--link {% if currentPage == 0 %}{{prefix}}--pagination--disable{% endif %}"
+      class="ilo--pagination--first-page ilo--pagination--link {% if currentPage == 0 %}ilo--pagination--disable{% endif %}"
       href="{{ firstPageUrl }}"
       title="{{ firstPageTitle }}"
     >
@@ -13,7 +13,7 @@
     </a>
 
     <a
-      class="{{prefix}}--pagination--prev-page {{prefix}}--pagination--link {% if currentPage == 0 %}{{prefix}}--pagination--disable{% endif %}"
+      class="ilo--pagination--prev-page ilo--pagination--link {% if currentPage == 0 %}ilo--pagination--disable{% endif %}"
       href="{{ prevPageUrl }}"
       title="{{ prevPageTitle }}"
     >
@@ -21,7 +21,7 @@
     </a>
   </div>
 
-  <p class="{{prefix}}--pagination--page">
+  <p class="ilo--pagination--page">
     {% set currentPageZeroIndex = currentPage * 1 %}
     {% set currentPageIndex = currentPageZeroIndex + 1 %}
 
@@ -30,9 +30,9 @@
     <span>{{totalPages}}</span>
   </p>
 
-  <div class="{{prefix}}--next-set">
+  <div class="ilo--next-set">
     <a
-      class="{{prefix}}--pagination--next-page {{prefix}}--pagination--link {% if currentPageIndex == totalPages %}{{prefix}}--pagination--disable{% endif %}"
+      class="ilo--pagination--next-page ilo--pagination--link {% if currentPageIndex == totalPages %}ilo--pagination--disable{% endif %}"
       href="{{ nextPageUrl }}"
       title="{{ nextPageTitle }}"
     >
@@ -40,7 +40,7 @@
     </a>
 
     <a
-      class="{{prefix}}--pagination--last-page {{prefix}}--pagination--link {% if currentPageIndex == totalPages %}{{prefix}}--pagination--disable{% endif %}"
+      class="ilo--pagination--last-page ilo--pagination--link {% if currentPageIndex == totalPages %}ilo--pagination--disable{% endif %}"
       href="{{ lastPageUrl }}"
       title="{{ lastPageTitle }}"
     >
