@@ -5,8 +5,8 @@
 {% set button_id = 'button-' ~ id %}
 {% set panel_id = 'panel-' ~ id %}
 {% set defaultExpanded = defaultExpanded|default(false) %}
-{% set expanded_class = defaultExpanded ? prefix ~ '--accordion--panel__open' : '' %}
-{% set scroll_class = scroll ? prefix ~ '--accordion--panel__scroll' : '' %}
+{% set expanded_class = defaultExpanded ? 'ilo--accordion--panel__open' : '' %}
+{% set scroll_class = scroll ? 'ilo--accordion--panel__scroll' : '' %}
 
 <li class="ilo--accordion--item" id="{{ id }}">
 	<div class="ilo--h3">

@@ -2,8 +2,7 @@
 
 {# List items can have url or href attribute #}
 
-{% set prefix = prefix|default("ilo") %}
-{% set base_class = prefix ~ "--nav-mobile-menu" %}
+{% set base_class = "ilo--nav-mobile-menu" %}
 {% set isActiveLabel = isActiveLabel|default(null) %}
 
 <ul class="{{ base_class }}">

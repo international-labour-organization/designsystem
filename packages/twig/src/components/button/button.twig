@@ -21,7 +21,6 @@
 	<a class="ilo--button ilo--button__{{size}} ilo--button__{{type}}{% if icon %} ilo--button--icon ilo--button--icon--position__{{iconPosition}}{% endif %}{% if icononly|boolval %} ilo--button--icon--only{% endif %}{% if className %} {{className}}{% endif %}" {%if elementId%}id="{{elementId}}"{%endif%} href="{{url}}" {% if target is defined and target != 'false' %} target="{{target}}" rel="noopener noreferrer" {% endif %} {{ disabled|boolval ? ' disabled' }}>
 		{% if icon %}
 			{% include '@components/icon/icon.twig' with {
-					prefix: prefix,
 					name: icon.name,
 					size: iconSize,
 					color: icon.color
@@ -33,7 +32,6 @@
 	<button class="ilo--button ilo--button__{{size}} ilo--button__{{type}}{% if icon %} ilo--button--icon ilo--button--icon--position__{{iconPosition}}{% endif %}{% if icononly|boolval %} ilo--button--icon--only{% endif %}{% if className %} {{className}}{% endif %}" {%if elementId%}id="{{elementId}}"{%endif%} {% if kind %} type="{{kind}}" {% endif %} {% if opensmodal %} aria-haspopup="dialog" {% endif %} {{ disabled|boolval ? ' disabled' }}>
 		{% if icon %}
 			{% include '@components/icon/icon.twig' with {
-					prefix: prefix,
 					name: icon.name,
 					size: iconSize,
 					color: icon.color

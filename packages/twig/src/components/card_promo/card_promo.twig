@@ -33,12 +33,11 @@
 				{% if cta %}
 					<div class="ilo--card--cta">
 						{% include "@components/button/button.twig" with {
-              size: "medium",
-              url: cta.url,
-              label: cta.label,
-              type: "primary",
-              prefix: prefix,
-            } only %}
+							size: "medium",
+							url: cta.url,
+							label: cta.label,
+							type: "primary",
+						} only %}
 					</div>
 				{% endif %}
 			</div>

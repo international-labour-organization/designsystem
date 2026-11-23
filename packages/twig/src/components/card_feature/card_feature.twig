@@ -31,11 +31,10 @@
 			{% if cta and size == "narrow" %}
 				{% include "@components/linklist/linklist.twig" with {
 					theme: theme,
-          linkgroup: [{
-            links: [cta]
-          }],
-          prefix: prefix
-        } only %}
+					linkgroup: [{
+						links: [cta]
+					}]
+        		} only %}
 			{% endif %}
 		</div>
 	</div>
@@ -44,8 +43,7 @@
 				theme: theme,
 				linkgroup: [{
 					links: [cta]
-				}],
-				prefix: prefix
+				}]
 			} only %}
 		{% endif %}
 </div>

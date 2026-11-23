@@ -1,5 +1,4 @@
 {% extends "@components/nav/mobile/mobiledrawer_layout.twig" %}
-{% set prefix = prefix|default("ilo") %}
 {% set menu_home = menu_home|default("Menu home") %}
 {% set menu_title = title|default("Title") %}
 {% set isActiveLabel = isActiveLabel|default(null) %}
@@ -19,7 +18,6 @@
 {% block mobile_drawer_content %}
   {% include "@components/nav/mobile/mobilemenulist.twig" with {
     menu: menu,
-    prefix: prefix,
     isActiveLabel: isActiveLabel,
   } only %}
 {% endblock %}

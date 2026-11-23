@@ -10,11 +10,10 @@
 			{% endif %}
 			{% if list %}
 				{% include "@components/list/list.twig" with {
-          ordered: "unordered",
-          items: list.items,
-          prefix: prefix,
+					ordered: "unordered",
+					items: list.items,
 					theme: theme
-        } only %}
+        		} only %}
 			{% endif %}
 		</div>
 	</div>

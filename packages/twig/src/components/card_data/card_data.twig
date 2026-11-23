@@ -62,7 +62,6 @@
                   size: "small",
                   url: item.url,
                   label: item.label,
-                  prefix: prefix,
 									target: item.target|default('_self')
                 } only %}
 							{% endfor %}
@@ -80,8 +79,7 @@
                     type: "secondary",
                     size: "small",
                     url: item.url,
-                    label: item.label,
-                    prefix: prefix
+                    label: item.label
                   } only %}
 							{% endfor %}
 						</div>
@@ -96,8 +94,7 @@
 							{% for item in dataset.links.items %}
 								{% include "@components/link/link.twig" with {
                   url: item.url,
-                  label: item.label,
-                  prefix: prefix
+                  label: item.label
                 } only %}
 							{% endfor %}
 						</div>

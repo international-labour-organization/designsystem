@@ -15,7 +15,7 @@
 {% set ariaDescribedBy = ariaDescribedBy|default("") %}
 
 {# Calculate dynamic classes based on the passed values. #}
-{% set baseClass = prefix ~ "--input--toggle" %}
+{% set baseClass = "ilo--input--toggle" %}
 {% set sliderClass = baseClass ~ "--slider" %}
 {% set toggleClass = [baseClass, class, baseClass ~ "__size__" ~ size] %}
 

@@ -44,10 +44,9 @@
 			{% endif %}
 			{% if linklist %}
 				{% include "@components/linklist/linklist.twig" with {
-          headline: linklist.headline,
-          linkgroup: linklist.linkgroup,
-          prefix: prefix,
-        } only %}
+					headline: linklist.headline,
+					linkgroup: linklist.linkgroup,
+				} only %}
 			{% endif %}
 		</div>
 	</div>

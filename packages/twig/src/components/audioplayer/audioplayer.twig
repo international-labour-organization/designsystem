@@ -1,5 +1,4 @@
-{% set prefix = prefix|default('ilo') %}
-{% set base_class = prefix ~ "--audio-player" %}
+{% set base_class = "ilo--audio-player" %}
 
 <div class="{{base_class}}" data-loadcomponent="AudioPlayer">
 	<div 
@@ -30,8 +29,7 @@
 			>
 				{% include "@components/icon/icon.twig" with {
 					name: "skip_backward15",
-					size: 24,
-					prefix: prefix
+					size: 24
 				} only %}
 			</button>
 			<button
@@ -41,14 +39,12 @@
 				{% include "@components/icon/icon.twig" with {
 					name: "triangle_right",
 					size: 32,
-					class: base_class ~ "--play-icon",
-					prefix: prefix
+					class: base_class ~ "--play-icon"
 				} only %}
 				{% include "@components/icon/icon.twig" with {
 					name: "pause",
 					size: 32,
-					class: base_class ~ "--pause-icon",
-					prefix: prefix
+					class: base_class ~ "--pause-icon"
 				} only %}
 			</button>
 			<button
@@ -57,8 +53,7 @@
 			>
 				{% include "@components/icon/icon.twig" with {
 					name: "skip_forward15",
-					size: 24,
-					prefix: prefix
+					size: 24
 				} only %}
 			</button>
 		</div>
@@ -75,13 +70,11 @@
 				{% include "@components/icon/icon.twig" with {
 					name: "sound_on",
 					size: 24,
-					prefix: prefix,
 					class: base_class ~ "--sound-on-icon",
 				} only %}
 				{% include "@components/icon/icon.twig" with {
 					name: "sound_off",
 					size: 24,
-					prefix: prefix,
 					class: base_class ~ "--sound-off-icon",
 				} only %}
 			</button>

@@ -16,10 +16,9 @@
 			{% if source %}
 				<div class="ilo--card--source">
 					{% include "@components/link/link.twig" with {
-            url: source.url,
-            label: source.label,
-            prefix: prefix
-          } only %}
+						url: source.url,
+						label: source.label
+					} only %}
 				</div>
 			{% endif %}
 		</div>

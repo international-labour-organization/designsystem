@@ -6,7 +6,7 @@
 {% set labelSize = labelSize|default("medium") %}
 {% set spellcheck = spellcheck|default("default") %}
 {% set wrap = wrap|default("off") %}
-{% set baseClass = prefix ~ '--textarea' %}
+{% set baseClass = 'ilo--textarea' %}
 {% set textAreaClass = [baseClass] %}
 {% if error %}
 	{% set textAreaClass = textAreaClass|merge([baseClass ~ "__error"]) %}

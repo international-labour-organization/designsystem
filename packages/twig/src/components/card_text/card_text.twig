@@ -21,12 +21,11 @@
 				{% endif %}
 				{% if profile %}
 					{% include "@components/profile/profile.twig" with {
-            avatar: profile.avatar,
-            name: profile.name,
-            prefix: prefix,
+						avatar: profile.avatar,
+						name: profile.name,
 						size: "small",
-            theme: theme,
-          } only %}
+						theme: theme,
+					} only %}
 				{% endif %}
 			</div>
 		</div>

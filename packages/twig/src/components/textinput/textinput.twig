@@ -4,7 +4,7 @@
 
 {% set labelPlacement = labelPlacement|default("top") %}
 {% set labelSize = labelSize|default("medium") %}
-{% set baseClass = prefix ~ "--input" %}
+{% set baseClass = "ilo--input" %}
 {% set inputClass = [baseClass] %}
 {% if error %}
 	{% set inputClass = inputClass|merge([baseClass ~ "__error"]) %}

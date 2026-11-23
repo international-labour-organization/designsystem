@@ -40,9 +40,7 @@
 		<div class="ilo--lightbox-gallery__extra">
 			<p class="ilo--lightbox-gallery__extra-text" data-lightbox-caption-text></p>
 			<div class="ilo--lightbox-gallery__extra-controls">
-				{% include '@components/photogallery/photogallery_controls.twig' with {
-          prefix: prefix,
-        } %}
+				{% include '@components/photogallery/photogallery_controls.twig' %}
 			</div>
 		</div>
 
@@ -63,9 +61,7 @@
 
 		{# Controls at bottom #}
 		<div class="ilo--lightbox-gallery__controls">
-			{% include '@components/photogallery/photogallery_controls.twig' with {
-					prefix: prefix,
-				} %}
+			{% include '@components/photogallery/photogallery_controls.twig' %}
 		</div>
 	</div>
 </div>

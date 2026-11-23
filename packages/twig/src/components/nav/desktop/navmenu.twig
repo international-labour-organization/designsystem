@@ -1,7 +1,6 @@
 {# navmenu.twig #}
 
-{% set prefix = prefix|default('ilo') %}
-{% set base_class = prefix ~ '--nav-menu' %}
+{% set base_class = 'ilo--nav-menu' %}
 <div class="{{ base_class }} {{ className }} {% if light|boolval %}{{ base_class }}--light{% endif %}">
   <ul class="{{ base_class }}__list">
     {% for item in menu %}

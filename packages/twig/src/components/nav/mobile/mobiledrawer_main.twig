@@ -22,7 +22,7 @@
         fields: [{
           type: "search",
           placeholder: widgets.search.label,
-          id: prefix|default("ilo") ~ '__widgets-search-input-field',
+          id: 'ilo__widgets-search-input-field',
         }]
       }]
     }
@@ -61,7 +61,6 @@
 {% block mobile_drawer_content %}
   {% include "@components/nav/mobile/mobilemenulist.twig" with {
     menu: menu,
-    prefix: prefix,
   } only %}
 
   {% if showMoreButton %}
