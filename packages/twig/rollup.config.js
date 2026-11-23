@@ -55,13 +55,6 @@ const copyConfig = copy({
         const [_, componentPath, fileName] = pathMatch;
         return `${componentPath}/${fileName}.${extension}`;
       },
-      transform: (contents, path) =>
-        contents
-          .toString()
-          // @TODO: We need to find a way to set this dynamically for
-          // theming purposes now that the themes package has been deprecated
-          .replace(/{{prefix}}/g, "ilo")
-          .replace(/prefix ~/g, `'ilo' ~`),
     },
     {
       src: "node_modules/@ilo-org/styles/css/*",
