@@ -1,5 +1,7 @@
 ---
 "@ilo-org/styles": patch
+"@ilo-org/twig": patch
+"@ilo-org/react": patch
 ---
 
 Cards: Fixed color of date text
