@@ -18,9 +18,6 @@ export default class TableOfContents {
      */
     this.element = element;
 
-    // get the theme prefix
-    this.prefix = this.element.dataset.prefix;
-
     // Initialize the view
     this.init();
   }
@@ -53,14 +50,12 @@ export default class TableOfContents {
     this.OpenButton = this.element.querySelector(`.toc--modal--open`);
     this.CloseButton = this.element.querySelector(`.toc--modal--close`);
     this.trigger = this.element.querySelector(
-      `.${this.prefix}--table-of-contents--trigger`
+      ".ilo--table-of-contents--trigger"
     );
-    this.modalUx = this.element.querySelector(
-      `.${this.prefix}--table-of-contents--modal`
-    );
-    this.toc = this.element.querySelector(`.${this.prefix}--table-of-contents`);
+    this.modalUx = this.element.querySelector(".ilo--table-of-contents--modal");
+    this.toc = this.element.querySelector(".ilo--table-of-contents");
     this.tocItems = this.element.querySelectorAll(
-      `.${this.prefix}--table-of-contents--link`
+      ".ilo--table-of-contents--link"
     );
 
     return this;

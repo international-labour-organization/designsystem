@@ -33,9 +33,6 @@ export default class Nav extends StatefulComponent {
     // Initialize the component
     super(element, initialState);
 
-    // Prefix
-    this.prefix = this.element.dataset.prefix;
-
     // References to elements that get rendered dynamically on the client
     this.dropdown = null;
 
@@ -99,8 +96,8 @@ export default class Nav extends StatefulComponent {
    */
   renderClientContent = () => {
     const items = [
-      `#${this.prefix}--nav-dropdown__template`,
-      `#${this.prefix}--nav-search__template`,
+      "#ilo--nav-dropdown__template",
+      "#ilo--nav-search__template",
     ];
 
     for (const templateSelector of items) {
@@ -122,21 +119,19 @@ export default class Nav extends StatefulComponent {
    * @returns {Nav} Returns the instance for method chaining
    */
   cacheDomReferences = () => {
-    this.dropdownButton = this.element.querySelector(
-      `.${this.prefix}--nav-menu__more`
-    );
+    this.dropdownButton = this.element.querySelector(".ilo--nav-menu__more");
 
     this.inputSearchButton = this.element.querySelector(
-      `.${this.prefix}--main-nav__nav-search`
+      ".ilo--main-nav__nav-search"
     );
 
     // Get a reference to the rendered dropdown (not the template)
     this.dropdown = document.body.querySelector(
-      `.${this.prefix}__nav-extra-menu.${this.prefix}--nav-dropdown`
+      ".ilo__nav-extra-menu.ilo--nav-dropdown"
     );
 
     this.inputSearch = document.body.querySelector(
-      `.${this.prefix}--main-nav__nav-extra-search.${this.prefix}--nav-dropdown`
+      ".ilo--main-nav__nav-extra-search.ilo--nav-dropdown"
     );
 
     return this;
@@ -256,7 +251,7 @@ export default class Nav extends StatefulComponent {
     window.addEventListener("click", this.handleOutsideClick);
 
     // Add open class to the dropdown
-    config.element.classList.add(`${this.prefix}--nav-dropdown--open`);
+    config.element.classList.add("ilo--nav-dropdown--open");
 
     // Add aria-expanded="true" to the button
     config.button.setAttribute("aria-expanded", "true");
@@ -276,7 +271,7 @@ export default class Nav extends StatefulComponent {
     if (!config.element || !config.button) return;
 
     // Remove open class from the dropdown
-    config.element.classList.remove(`${this.prefix}--nav-dropdown--open`);
+    config.element.classList.remove("ilo--nav-dropdown--open");
 
     // Remove aria-expanded="true" from the button
     config.button.setAttribute("aria-expanded", "false");

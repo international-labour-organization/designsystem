@@ -4,7 +4,7 @@
 {% set titleLevel = titleLevel|default('h3') %}
 {% set theme = theme|default('light') %}
 
-<div class="ilo--link-list ilo--link-list--{{theme}}" data-loadcomponent="LinkList" data-prefix="ilo">
+<div class="ilo--link-list ilo--link-list--{{theme}}" data-loadcomponent="LinkList">
   {% if headline %}
     <{{titleLevel}} class="ilo--link-list--headline">{{headline}}</{{titleLevel}}>
   {% endif %}

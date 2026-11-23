@@ -20,9 +20,7 @@ export default class Video {
      */
     this.element = element;
 
-    // get the theme prefix
-    this.prefix = this.element.dataset.prefix;
-    this.controlsprefix = `${this.prefix}--video--controls`;
+    this.controlsprefix = "ilo--video--controls";
 
     // Initialize the view
     this.init();
@@ -53,9 +51,7 @@ export default class Video {
      * The button for toggling Read More state
      * @type {Object}
      */
-    this.VideoElement = this.element.querySelector(
-      `.${this.prefix}--video--element`
-    );
+    this.VideoElement = this.element.querySelector(".ilo--video--element");
 
     return this;
   }

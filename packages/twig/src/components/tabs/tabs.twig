@@ -4,7 +4,7 @@
 {% for item in items %}
   {% set tabids = tabids|merge([random(100000)]) %}
 {% endfor %}
-<div class="ilo--tabs ilo--tabs__theme__{{theme}}" data-prefix="ilo" id="tabs--{{uid}}" data-loadcomponent="Tabs">
+<div class="ilo--tabs ilo--tabs__theme__{{theme}}" id="tabs--{{uid}}" data-loadcomponent="Tabs">
     <ul class="ilo--tabs--selection" aria-controls="tabs--{{uid}}" role="tablist" style="--tabscount: {{items|length}};">
       {% for item in items %}
         <li class="ilo--tabs--selection--item" role="presentation">

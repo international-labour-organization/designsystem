@@ -2,7 +2,7 @@
   IMAGE COMPONENT
 #}
 {% set theme = theme|default("light") %}
-<figure class="ilo--image ilo--image__theme__{{theme}}" data-prefix="ilo">
+<figure class="ilo--image ilo--image__theme__{{theme}}">
   <div class="image ilo--image--wrapper">
     <picture {% if credit and ishero and ishero != 'false' %}title="{{credit}}"{% endif %}>
       {% for img in url|reverse %}

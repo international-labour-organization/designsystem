@@ -9,7 +9,7 @@
 {% set base_class = prefix ~ "--photo-gallery" %}
 {% set core_class = base_class ~ "__core" %}
 
-<div class={{base_class}} data-prefix="ilo" data-loadcomponent="PhotoGallery" data-with-keyboard-controls="{{with_keyboard_controls ? 'true' : 'false'}}" data-caption-view="{{caption_view}}" data-see-all-label="{{see_all_label}}" tabindex="0">
+<div class={{base_class}} data-loadcomponent="PhotoGallery" data-with-keyboard-controls="{{with_keyboard_controls ? 'true' : 'false'}}" data-caption-view="{{caption_view}}" data-see-all-label="{{see_all_label}}" tabindex="0">
 	<div class={{core_class}}>
 		<button class={{core_class ~ "__zoom"}} type="button" aria-label="Open lightbox" data-action="open-lightbox">
 			{% include '@components/icon/icon.twig' with {

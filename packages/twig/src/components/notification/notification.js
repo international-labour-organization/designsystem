@@ -18,9 +18,6 @@ export default class Notification {
     this.element = element;
     this.parent = this.element.parentElement;
 
-    // get the theme prefix
-    this.prefix = this.element.dataset.prefix;
-
     // Initialize the view
     this.init();
   }
@@ -50,9 +47,7 @@ export default class Notification {
      * The button for toggling Read More state
      * @type {Object}
      */
-    this.CloseButton = this.element.querySelector(
-      `.${this.prefix}--notification--close`
-    );
+    this.CloseButton = this.element.querySelector(".ilo--notification--close");
 
     return this;
   }

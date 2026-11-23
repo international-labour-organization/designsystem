@@ -3,7 +3,7 @@
 {% set hideicon = hideicon|default(false) %}
 {% set theme = theme|default("light") %}
 
-<div class="ilo--language-toggle ilo--language-toggle__theme__{{ theme }} {{ className|default('') }}" data-prefix="ilo" data-loadcomponent="LanguageToggle">
+<div class="ilo--language-toggle ilo--language-toggle__theme__{{ theme }} {{ className|default('') }}" data-loadcomponent="LanguageToggle">
   <button class="ilo--language-toggle--container" aria-expanded="false" aria-controls="ilo--language-toggle--context-menu">
     {% if not hideicon %}
       <span class="ilo--language-toggle--icon"></span>

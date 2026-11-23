@@ -13,9 +13,6 @@ export default class LinkList {
      */
     this.element = element;
 
-    /** element prefix */
-    this.prefix = `${this.element.dataset.prefix}--link-list`;
-
     this.init();
   }
 
@@ -40,7 +37,7 @@ export default class LinkList {
    * @chainable
    */
   append() {
-    const selector = `a:not([target=_blank]).${this.prefix}--link`;
+    const selector = "a:not([target=_blank]).ilo--link-list--link";
     const links = this.element.querySelectorAll(selector);
     const origin = window.location.origin;
 

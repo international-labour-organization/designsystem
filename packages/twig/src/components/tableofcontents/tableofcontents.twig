@@ -7,7 +7,7 @@
 {% set closebutton_label = closebutton.label|default("Close") %}
 
 {% if items %}
-	<div class="ilo--table-of-contents--wrapper" data-loadcomponent="TableOfContents" data-prefix="ilo">
+	<div class="ilo--table-of-contents--wrapper" data-loadcomponent="TableOfContents">
 		<div class="ilo--table-of-contents--trigger">
 			{% include '@components/button/button.twig' with {
 				prefix: prefix,

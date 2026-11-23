@@ -5,7 +5,7 @@
 #}
 
 {% if component != 'modal' %}
-	<div class="ilo--modal" data-loadcomponent="Modal" data-prefix="ilo">
+	<div class="ilo--modal" data-loadcomponent="Modal">
 		{% include '@components/button/button.twig' with openbutton %}
 		<div class="ilo--modal--wrapper" {% if modalLabel %} aria-label="{{modalLabel}}" {% endif %} aria-modal="true" role="alertdialog">
 			<div class="ilo--modal--background" role="presentation"></div>
