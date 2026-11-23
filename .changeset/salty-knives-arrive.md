@@ -10,3 +10,4 @@ Cards: Fixed color of date text
 Table: Fixed chevron color
 Promocard: Fixed cornercut position in RTL layouts
 Mixins: Removed dataurlicon(). Please use icon() instead.
+Foundation: Added --ilo-color-dark-icon-brand-stronger

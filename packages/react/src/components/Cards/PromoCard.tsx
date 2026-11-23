@@ -10,6 +10,7 @@ import {
 } from "../../types";
 import { LinkProps } from "../Link";
 import { Button } from "../Button";
+import { Picture, PictureProps } from "../Picture";
 import { DynamicHeading } from "../DynamicHeading/DynamicHeading";
 
 export type PromoCardProps = {
@@ -49,6 +50,12 @@ export type PromoCardProps = {
   intro?: string;
 
   /**
+   * The image data for the card. It is shown above the content, or beside it
+   * in `wide` and `fluid` cards on larger screens.
+   */
+  image?: PictureProps;
+
+  /**
    * Source link for the card
    */
   link?: string;
@@ -73,6 +80,7 @@ const PromoCard = forwardRef<HTMLDivElement, PromoCardProps>(
       size = "narrow",
       cornercut,
       intro,
+      image,
       link,
       cta,
       titleLevel = "p",
@@ -94,6 +102,7 @@ const PromoCard = forwardRef<HTMLDivElement, PromoCardProps>(
       [`${baseClass}__size__${String(size)}`]: size,
       [`${baseClass}__theme__${theme}`]: theme,
       [`${baseClass}__cornercut`]: cornercut,
+      [`${baseClass}__hasimage`]: image,
     });
 
     return (
@@ -103,6 +112,11 @@ const PromoCard = forwardRef<HTMLDivElement, PromoCardProps>(
             <span className={`${baseClass}--link--text`}>{title}</span>
           </a>
           <div className={`${baseClass}--wrap`}>
+            {image && (
+              <div className={`${baseClass}--image--wrapper`}>
+                <Picture {...image} />
+              </div>
+            )}
             <div className={`${baseClass}--content`}>
               {eyebrow && <p className={`${baseClass}--eyebrow`}>{eyebrow}</p>}
               <DynamicHeading
