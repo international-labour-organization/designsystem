@@ -14,7 +14,7 @@
 					<p class="ilo--card--eyebrow">{{eyebrow}}</p>
 				{% endif %}
 				{% if title %}
-					<{{titleLevel|default('p')}} class="{{ prefix }}--card--title">{{ title }}</{{titleLevel|default('p')}}>
+					<{{titleLevel|default('p')}} class="ilo--card--title">{{ title }}</{{titleLevel|default('p')}}>
 				{% endif %}
 				{% if date %}
 					<time class="ilo--card--date" datetime="{{date.unix}}">{{date.human}}</time>

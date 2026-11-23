@@ -24,7 +24,7 @@
 	</div>
 	<!-- /.ilo--header--utility-bar -->
 	<div class="ilo--header--logo-bar">
-		<div class="ilo--header--inner {{ prefix }}--container">
+		<div class="ilo--header--inner ilo--container">
 			<a tabindex="1" href="{{siteurl}}" class="ilo--header--logo-link">
 				<img class="ilo--header--logo" src="{{logo.image}}" alt="{{logo.alt}}">
 			</a>
@@ -40,7 +40,7 @@
 	<!-- /.ilo--header--logo-bar -->
 	<div class="ilo--header--navigation">
 		<div
-			class="ilo--header--inner {{ prefix }}--container">
+			class="ilo--header--inner ilo--container">
 			<!-- /.ilo--mobile--nav -->
 			<div class="ilo--mobile--nav">
 				<div class="ilo--mobile--nav--logo">
@@ -78,7 +78,7 @@
 				{% endif %}
 				<!-- /.ilo--mobile--nav--language--switcher -->
 				<div class="ilo--mobile--nav--language--select">
-					<div class="ilo--header--inner {{ prefix }}--container">
+					<div class="ilo--header--inner ilo--container">
 						<div class="ilo--mobile--subnav--menu">
 							<button class="ilo--mobile--subnav--back" type="button">{{subnav.mobilebacklabel}}</button>
 							<button class="ilo--header--menu--close">{{subnav.mobilecloselabel}}</button>
@@ -120,7 +120,7 @@
 		<!-- /.ilo--header--inner -->
 		{% if subnav %}
 			<nav class="ilo--subnav" aria-labelledby="secondary-navigation">
-				<div class="ilo--subnav--inner {{ prefix }}--container">
+				<div class="ilo--subnav--inner ilo--container">
 					<div class="ilo--mobile--subnav">
 						<div class="ilo--mobile--subnav--menu">
 							<button class="ilo--mobile--subnav--back" type="button">{{subnav.mobilebacklabel}}</button>
@@ -144,7 +144,7 @@
 		{% endif %}
 
 		<div class="ilo--search-box">
-			<div class="ilo--header--inner {{ prefix }}--container">
+			<div class="ilo--header--inner ilo--container">
 				{% block desktopSearch %}
 					{% include '@components/form/form.twig' with {
             attributes: {

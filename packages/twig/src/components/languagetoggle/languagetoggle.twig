@@ -3,16 +3,16 @@
 {% set hideicon = hideicon|default(false) %}
 {% set theme = theme|default("light") %}
 
-<div class="{{ prefix }}--language-toggle {{ prefix }}--language-toggle__theme__{{ theme }} {{ className|default('') }}" data-prefix="ilo" data-loadcomponent="LanguageToggle">
-  <button class="{{ prefix }}--language-toggle--container" aria-expanded="false" aria-controls="ilo--language-toggle--context-menu">
+<div class="ilo--language-toggle ilo--language-toggle__theme__{{ theme }} {{ className|default('') }}" data-prefix="ilo" data-loadcomponent="LanguageToggle">
+  <button class="ilo--language-toggle--container" aria-expanded="false" aria-controls="ilo--language-toggle--context-menu">
     {% if not hideicon %}
-      <span class="{{ prefix }}--language-toggle--icon"></span>
+      <span class="ilo--language-toggle--icon"></span>
     {% endif %}
-    <span class="{{ prefix }}--language-toggle--action">{{ language }}</span>
-    <span class="{{ prefix }}--language-toggle--arrow"></span>
+    <span class="ilo--language-toggle--action">{{ language }}</span>
+    <span class="ilo--language-toggle--arrow"></span>
   </button>
   <template id="ilo--language-toggle--context-menu--template">
-    <div class="{{ prefix }}--language-toggle--context-menu" id="ilo--language-toggle--context-menu" tabindex="0">
+    <div class="ilo--language-toggle--context-menu" id="ilo--language-toggle--context-menu" tabindex="0">
       {% if links %}
         {% include "@components/contextmenu/contextmenu.twig" with {
           links: links,

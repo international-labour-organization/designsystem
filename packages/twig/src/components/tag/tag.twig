@@ -18,17 +18,17 @@
 {% endset %}
 
 {% if tagType == "button" or tagType == "reset" %}
-  <button class="{{ prefix }}--tag {{ prefix }}--tag__{{ enabledClass }} {{ prefix }}--tag__type__{{ tagType }}" id="{{ elementId }}" {% if disabled %}disabled{% endif %}>
+  <button class="ilo--tag ilo--tag__{{ enabledClass }} ilo--tag__type__{{ tagType }}" id="{{ elementId }}" {% if disabled %}disabled{% endif %}>
     {{ content }}
     {{ icon }}
   </button>
 {% elseif tagType == "anchor" %}
-  <a class="{{ prefix }}--tag {{ prefix }}--tag__{{ enabledClass }} {{ prefix }}--tag__type__anchor" id="{{ elementId }}" href="{{ url }}" {% if disabled %}disabled{% endif %}>
+  <a class="ilo--tag ilo--tag__{{ enabledClass }} ilo--tag__type__anchor" id="{{ elementId }}" href="{{ url }}" {% if disabled %}disabled{% endif %}>
     {{ content }}
     {{ icon }}
   </a>
 {% elseif tagType == "display" %}
-  <span class="{{ prefix }}--tag {{ prefix }}--tag__{{ enabledClass }} {{ prefix }}--tag__type__display" id="{{ elementId }}">
+  <span class="ilo--tag ilo--tag__{{ enabledClass }} ilo--tag__type__display" id="{{ elementId }}">
     {{ content }}
     {{ icon }}
   </span>
