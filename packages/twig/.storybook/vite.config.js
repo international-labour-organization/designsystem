@@ -8,9 +8,6 @@ export default defineConfig({
     namespaces: {
       components: join(import.meta.dirname, "..", "src/components"),
     },
-    globals: {
-      prefix: "ilo",
-    },
     dynamics: ["modal", "tabs"],
   }),
 });
