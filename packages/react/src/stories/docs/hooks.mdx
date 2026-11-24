@@ -8,7 +8,7 @@ import "./styles/docs-table.scss";
 
 # Hooks
 
-Besides components, `@ilo-org/react` exports the React hooks the design system is built with. They are useful when you write your own components that need to stay in step with the system—matching its breakpoints, its class-name prefix, or its interaction patterns for dropdowns and dialogs.
+Besides components, `@ilo-org/react` exports the React hooks the design system is built with. They are useful when you write your own components that need to stay in step with the system—matching its breakpoints or its interaction patterns for dropdowns and dialogs.
 
 All of them are named exports from the package root:
 
@@ -16,7 +16,6 @@ All of them are named exports from the package root:
 import {
   useBreakpoint,
   useFocusTrap,
-  useGlobalSettings,
   useOutsideClick,
   usePrevious,
 } from "@ilo-org/react";
@@ -177,43 +176,6 @@ The options:
 </table>
 
 The trap considers links, buttons, form fields, and elements with a non-negative `tabindex` focusable, skipping anything disabled or hidden. It recomputes that list on every <kbd>Tab</kbd> press, so content that appears or disappears while the trap is open is handled correctly.
-
-## `useGlobalSettings()`
-
-Returns the design system's global settings from the nearest `GlobalProvider`—the context provider component the package exports for configuring the system app-wide. There is currently one setting:
-
-<table className="docs-table">
-  <thead>
-    <tr>
-      <th>Property</th>
-      <th>Default</th>
-      <th>Description</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>
-        <code>prefix</code>
-      </td>
-      <td>
-        <code>"ilo"</code>
-      </td>
-      <td>The prefix used in every design system CSS class name</td>
-    </tr>
-  </tbody>
-</table>
-
-Every component builds its class names from this value (`ilo--button`, `ilo--card`, …). If you write custom components that reuse design system classes, read the prefix from the hook instead of hard-coding it, and they will follow along if an app remaps it through `GlobalProvider`:
-
-```tsx
-const Callout = ({ children }) => {
-  const { prefix } = useGlobalSettings();
-
-  return <aside className={`${prefix}--callout`}>{children}</aside>;
-};
-```
-
-Outside a `GlobalProvider` the hook returns the default settings, so it is safe to call anywhere.
 
 ## `useOutsideClick(ref, onClickOutside, config)`
 

@@ -1,6 +1,5 @@
 import { Meta, Unstyled } from "@storybook/addon-docs/blocks";
 import { Callout } from "../../components/Callout";
-import { GlobalProvider } from "../../components/GlobalProvider";
 import { Icon } from "../../components/Icon";
 import * as icons from "@ilo-org/icons-react/next";
 import "./styles/docs-table.scss";
@@ -28,17 +27,15 @@ export const IconGallery = () => (
 
 # Icons
 
-<GlobalProvider prefix="ilo">
-  <Callout
-    type="info"
-    headline="Design reference"
-    copy="The icon set is specified in the ILO Icons file in Figma."
-    cta={{
-      label: "Open in Figma",
-      url: "https://www.figma.com/design/szl87D4Zg4MeWXzKWMCCZO/ILO-Icons?node-id=34-1554&p=f&m=dev",
-    }}
-  />
-</GlobalProvider>
+<Callout
+  type="info"
+  headline="Design reference"
+  copy="The icon set is specified in the ILO Icons file in Figma."
+  cta={{
+    label: "Open in Figma",
+    url: "https://www.figma.com/design/szl87D4Zg4MeWXzKWMCCZO/ILO-Icons?node-id=34-1554&p=f&m=dev",
+  }}
+/>
 
 The design system ships its own icon set in the `@ilo-org/icons-react` package, where every icon is a React component wrapping an inline SVG. You don't usually need to install or import that package yourself—`@ilo-org/react` depends on it and exports the [Icon component](/docs/components-user-interface-icon--docs), which renders any icon in the set by name:
 

@@ -1,6 +1,5 @@
 import { Meta, Unstyled } from "@storybook/addon-docs/blocks";
 import { Callout } from "../../components/Callout";
-import { GlobalProvider } from "../../components/GlobalProvider";
 import "./styles/docs-table.scss";
 
 <Meta title="Usage/Layouts" />
@@ -10,17 +9,15 @@ import "./styles/docs-table.scss";
 
 # Layouts
 
-<GlobalProvider prefix="ilo">
-  <Callout
-    type="info"
-    headline="Design reference"
-    copy="The spacing and sizing foundations behind these layout primitives are specified in the ILO Foundations file in Figma."
-    cta={{
-      label: "Open in Figma",
-      url: "https://www.figma.com/design/qr8jQnxqJkRJFQnVC5PmrB/ILO-Foundations?node-id=1485-257&p=f&t=jmBo6mQs6s8X5yb9-0",
-    }}
-  />
-</GlobalProvider>
+<Callout
+  type="info"
+  headline="Design reference"
+  copy="The spacing and sizing foundations behind these layout primitives are specified in the ILO Foundations file in Figma."
+  cta={{
+    label: "Open in Figma",
+    url: "https://www.figma.com/design/qr8jQnxqJkRJFQnVC5PmrB/ILO-Foundations?node-id=1485-257&p=f&t=jmBo6mQs6s8X5yb9-0",
+  }}
+/>
 
 The design system is a component library, not a layout framework. It does not ship a grid system—there are no `Grid`, `Row`, or `Column` components, and no utility classes for building page structure. Components are designed to fill the width of whatever container you place them in, and how you arrange those containers is up to your application: plain CSS grid and flexbox work well and need no library support.
 

@@ -1,7 +1,6 @@
 import { Meta, Unstyled } from "@storybook/addon-docs/blocks";
 import { Blockquote } from "../../components/Blockquote";
 import { Callout } from "../../components/Callout";
-import { GlobalProvider } from "../../components/GlobalProvider";
 import "./styles/docs-table.scss";
 import "./styles/typography.scss";
 
@@ -83,17 +82,15 @@ export const TokenTable = ({ header, rows }) => (
 
 # Typography
 
-<GlobalProvider prefix="ilo">
-  <Callout
-    type="info"
-    headline="Design reference"
-    copy="The type scale and font families are specified in the ILO Foundations file in Figma."
-    cta={{
-      label: "Open in Figma",
-      url: "https://www.figma.com/design/qr8jQnxqJkRJFQnVC5PmrB/ILO-Foundations?node-id=6458-12248&p=f&t=jmBo6mQs6s8X5yb9-0",
-    }}
-  />
-</GlobalProvider>
+<Callout
+  type="info"
+  headline="Design reference"
+  copy="The type scale and font families are specified in the ILO Foundations file in Figma."
+  cta={{
+    label: "Open in Figma",
+    url: "https://www.figma.com/design/qr8jQnxqJkRJFQnVC5PmrB/ILO-Foundations?node-id=6458-12248&p=f&t=jmBo6mQs6s8X5yb9-0",
+  }}
+/>
 
 The design system's typography is built from three pieces:
 
@@ -302,12 +299,10 @@ import { Blockquote } from "@ilo-org/react";
 />;
 ```
 
-<GlobalProvider prefix="ilo">
-  <Blockquote
-    quote="Labour is not a commodity."
-    cite="Declaration of Philadelphia, 1944"
-  />
-</GlobalProvider>
+<Blockquote
+  quote="Labour is not a commodity."
+  cite="Declaration of Philadelphia, 1944"
+/>
 
 ## Typography tokens
 
