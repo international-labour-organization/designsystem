@@ -5,7 +5,7 @@
 {% set labelPlacement = labelPlacement|default("top") %}
 {% set labelSize = labelSize|default("medium") %}
 {% set disabled = disabled|default(false) %}
-{% set dropdownClass = prefix ~ '--dropdown' %}
+{% set dropdownClass = 'ilo--dropdown' %}
 {% set dropdownClasses = [dropdownClass, class] %}
 {% if error %}
 	{% set dropdownClasses = dropdownClasses|merge(['error']) %}

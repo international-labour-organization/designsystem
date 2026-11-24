@@ -17,9 +17,6 @@ export default class Navigation {
      */
     this.element = element;
 
-    // get the theme prefix
-    this.prefix = this.element.dataset.prefix;
-
     this.callback = callback;
 
     this.init();
@@ -50,36 +47,30 @@ export default class Navigation {
      * The button for toggling Subnav state
      * @type {Object}
      */
-    this.subNav = this.element.querySelector(`.${this.prefix}--subnav`);
-    this.subnavButton = this.element.querySelector(
-      `.${this.prefix}--nav--trigger`
-    );
+    this.subNav = this.element.querySelector(".ilo--subnav");
+    this.subnavButton = this.element.querySelector(".ilo--nav--trigger");
     this.menuCloseSet = this.element.querySelectorAll(
-      `.${this.prefix}--header--menu--close`
+      ".ilo--header--menu--close"
     );
     this.subnavBack = this.element.querySelectorAll(
-      `.${this.prefix}--mobile--subnav--back`
+      ".ilo--mobile--subnav--back"
     );
-    this.menuOpen = this.element.querySelector(`.${this.prefix}--header--menu`);
-    this.searchButton = this.element.querySelector(
-      `.${this.prefix}--search--button`
-    );
-    this.searchBox = this.element.querySelector(`.${this.prefix}--search-box`);
+    this.menuOpen = this.element.querySelector(".ilo--header--menu");
+    this.searchButton = this.element.querySelector(".ilo--search--button");
+    this.searchBox = this.element.querySelector(".ilo--search-box");
     this.searchInput = this.searchBox
       ? this.searchBox.querySelector("input")
       : null;
     this.contextButton = this.element.querySelector(
-      `.${this.prefix}--language-switcher--button`
+      ".ilo--language-switcher--button"
     );
     this.languageButton = this.element.querySelector(
-      `.${this.prefix}--mobile--nav--language--switcher--button`
+      ".ilo--mobile--nav--language--switcher--button"
     );
     this.contextLinks = this.element.querySelectorAll(
-      `.${this.prefix}--context-menu--link`
+      ".ilo--context-menu--link"
     );
-    this.languageLinks = this.element.querySelectorAll(
-      `.${this.prefix}--nav--language`
-    );
+    this.languageLinks = this.element.querySelectorAll(".ilo--nav--language");
     this.body = document.body;
 
     return this;
@@ -271,7 +262,7 @@ export default class Navigation {
   handleLanguageButtonClick(e) {
     e.preventDefault();
     e.stopImmediatePropagation();
-    this.element.classList.toggle(`${this.prefix}--select--open`);
+    this.element.classList.toggle("ilo--select--open");
 
     return this;
   }
@@ -284,7 +275,7 @@ export default class Navigation {
    */
   handleContextButtonClickOn(e) {
     e.stopImmediatePropagation();
-    this.element.classList.add(`${this.prefix}--context--open`);
+    this.element.classList.add("ilo--context--open");
     window.addEventListener(
       "keydown",
       (ev) => this.keyPress(ev, this.contextButtonClickOff),
@@ -303,7 +294,7 @@ export default class Navigation {
    */
   handleContextButtonClickOff(e) {
     e.stopImmediatePropagation();
-    this.element.classList.remove(`${this.prefix}--context--open`);
+    this.element.classList.remove("ilo--context--open");
     window.removeEventListener(
       "keydown",
       (ev) => this.keyPress(ev, this.contextButtonClickOff),
@@ -321,7 +312,7 @@ export default class Navigation {
    * @chainable
    */
   handleContextButtonClick(e) {
-    if (this.element.classList.contains(`${this.prefix}--context--open`)) {
+    if (this.element.classList.contains("ilo--context--open")) {
       this.contextButtonClickOff(e);
     } else {
       this.contextButtonClickOn(e);
@@ -344,7 +335,7 @@ export default class Navigation {
     // before the next class is added so the transition will work
     this.searchBox.style.display = "block";
     window.setTimeout(() => {
-      this.element.classList.add(`${this.prefix}--search--open`);
+      this.element.classList.add("ilo--search--open");
     }, 10);
 
     // Wait for searchinput field to appear
@@ -373,7 +364,7 @@ export default class Navigation {
    */
   handleSearchButtonClickOff(e) {
     e.stopImmediatePropagation();
-    this.element.classList.remove(`${this.prefix}--search--open`);
+    this.element.classList.remove("ilo--search--open");
 
     // Hiden from tab navigation after transition
     window.setTimeout(() => {
@@ -398,9 +389,9 @@ export default class Navigation {
    * @chainable
    */
   handleSearchButtonClick(e) {
-    this.element.classList.remove(`${this.prefix}--subnav--open`);
+    this.element.classList.remove("ilo--subnav--open");
 
-    if (this.element.classList.contains(`${this.prefix}--search--open`)) {
+    if (this.element.classList.contains("ilo--search--open")) {
       this.searchButtonClickOff(e);
     } else {
       this.searchButtonClickOn(e);
@@ -418,8 +409,8 @@ export default class Navigation {
   handleMenuOpenClick(e) {
     e.preventDefault();
     e.stopImmediatePropagation();
-    this.element.classList.add(`${this.prefix}--mobile--open`);
-    this.body.classList.add(`${this.prefix}--menu--open`);
+    this.element.classList.add("ilo--mobile--open");
+    this.body.classList.add("ilo--menu--open");
 
     return this;
   }
@@ -437,7 +428,7 @@ export default class Navigation {
     // Cross-browser hack to make sure the element has display
     // before the next class is added so the transition will work
     window.setTimeout(() => {
-      this.element.classList.add(`${this.prefix}--subnav--open`);
+      this.element.classList.add("ilo--subnav--open");
     }, 10);
 
     window.addEventListener(
@@ -460,7 +451,7 @@ export default class Navigation {
    */
   handleSubnavClickOff(e) {
     e.stopImmediatePropagation();
-    this.element.classList.remove(`${this.prefix}--subnav--open`);
+    this.element.classList.remove("ilo--subnav--open");
 
     window.setTimeout(() => {
       this.subNav.style.display = "none";
@@ -486,9 +477,9 @@ export default class Navigation {
   handleSubnavClick(e) {
     e.preventDefault();
     e.stopImmediatePropagation();
-    this.element.classList.remove(`${this.prefix}--search--open`);
+    this.element.classList.remove("ilo--search--open");
 
-    if (this.element.classList.contains(`${this.prefix}--subnav--open`)) {
+    if (this.element.classList.contains("ilo--subnav--open")) {
       this.subnavClickOff(e);
     } else {
       this.subnavClickOn(e);
@@ -506,9 +497,8 @@ export default class Navigation {
   handleSubnavBackClick(e) {
     e.stopImmediatePropagation();
     e.preventDefault();
-    // this.element.classList.remove(`${this.prefix}--subnav--open`);
     this.subnavClickOff(e);
-    this.element.classList.remove(`${this.prefix}--select--open`);
+    this.element.classList.remove("ilo--select--open");
 
     return this;
   }
@@ -522,9 +512,9 @@ export default class Navigation {
   handleMenuCloseClick(i, e) {
     e.preventDefault();
     e.stopImmediatePropagation();
-    this.element.classList.remove(`${this.prefix}--mobile--open`);
-    this.element.classList.remove(`${this.prefix}--subnav--open`);
-    this.body.classList.remove(`${this.prefix}--menu--open`);
+    this.element.classList.remove("ilo--mobile--open");
+    this.element.classList.remove("ilo--subnav--open");
+    this.body.classList.remove("ilo--menu--open");
 
     return this;
   }
@@ -536,10 +526,10 @@ export default class Navigation {
    * @chainable
    */
   handleResize() {
-    this.element.classList.remove(`${this.prefix}--context--open`);
-    this.element.classList.remove(`${this.prefix}--mobile--open`);
-    this.element.classList.remove(`${this.prefix}--subnav--open`);
-    this.element.classList.remove(`${this.prefix}--search--open`);
+    this.element.classList.remove("ilo--context--open");
+    this.element.classList.remove("ilo--mobile--open");
+    this.element.classList.remove("ilo--subnav--open");
+    this.element.classList.remove("ilo--search--open");
 
     return this;
   }

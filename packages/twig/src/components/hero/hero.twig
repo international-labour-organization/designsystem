@@ -22,7 +22,7 @@
 							{% endif %}
 						{% endif %}
 					{% endfor %}
-					<img class="{{prefix}}--card--image" src="{{image.url|reverse|last.src}}" alt="{{image.alt}}" {% if image.loading %} loading="{{ image.loading }}" {% endif %}{% if fetchpriority != "auto" %} fetchpriority="{{ fetchpriority }}" {% endif %}>
+					<img class="ilo--card--image" src="{{image.url|reverse|last.src}}" alt="{{image.alt}}" {% if image.loading %} loading="{{ image.loading }}" {% endif %}{% if fetchpriority != "auto" %} fetchpriority="{{ fetchpriority }}" {% endif %}>
 				</picture>
 			{% endif %}
 		{% endblock %}
@@ -31,34 +31,31 @@
 		<div class="hero--breadcrumbs">
 			<div class="hero--breadcrumbs--wrapper">
 				{% include "@components/breadcrumb/breadcrumb.twig" with {
-          home: breadcrumb.home,
-          links: breadcrumb.links,
-          prefix: prefix,
-        } only %}
+					home: breadcrumb.home,
+					links: breadcrumb.links,
+				} only %}
 			</div>
 		</div>
 	{% endif %}
 	<div class="hero--card-offset"></div>
 	<div class="hero--card">
 		{% include "@components/herocard/herocard.twig" with {
-    url: herocard.url,
-    eyebrow: herocard.eyebrow,
-    cornercut: herocard.cornercut,
-    datecopy: herocard.datecopy,
-    intro: herocard.intro,
-    prefix: prefix,
-    socialmedia: herocard.socialmedia,
-    theme: theme,
-    background: background,
-    title: herocard.title,
-  } only %}
+			url: herocard.url,
+			eyebrow: herocard.eyebrow,
+			cornercut: herocard.cornercut,
+			datecopy: herocard.datecopy,
+			intro: herocard.intro,
+			socialmedia: herocard.socialmedia,
+			theme: theme,
+			background: background,
+			title: herocard.title,
+		} only %}
 	</div>
 	<div class="hero--caption">
 		{% if not caption %}
 			{% else %}
 				<div class="hero--caption--wrapper">
 					{% include '@components/tooltip/tooltip.twig' with {
-						prefix: prefix,
 						label: caption.label,
 						icon: true,
 						theme: "dark",

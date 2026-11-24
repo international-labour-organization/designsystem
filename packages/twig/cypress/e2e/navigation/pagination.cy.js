@@ -6,8 +6,7 @@ describe("pagination", () => {
 
   it("renders the pagination with four links", () => {
     cy.get("@paginationSection").within(() => {
-      cy.get(".ilo--pagination--link") // Adjust prefix based on actual class
-        .should("have.length", 4);
+      cy.get(".ilo--pagination--link").should("have.length", 4);
     });
   });
 

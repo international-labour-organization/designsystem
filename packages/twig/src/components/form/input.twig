@@ -3,7 +3,7 @@
 
 {% set labelPlacement = labelPlacement|default("start") %}
 {% set labelSize = labelSize|default("medium") %}
-{% set baseClass = prefix ~ "--text-input" %}
+{% set baseClass = "ilo--text-input" %}
 {% set inputClass = [baseClass] %}
 {% if error %}
 	{% set inputClass = inputClass|merge([baseClass ~ "__error"]) %}

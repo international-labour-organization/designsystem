@@ -34,8 +34,7 @@
         "@ilo-org/styles#build:lib",
         "@ilo-org/icons#build:lib",
         "@ilo-org/brand-assets#build:lib",
-        "@ilo-org/fonts#build:lib",
-        "@ilo-org/themes#build:lib"
+        "@ilo-org/fonts#build:lib"
       ],
       "persistent": true,
       "cache": false
@@ -45,8 +44,7 @@
         "@ilo-org/styles#build:lib",
         "@ilo-org/icons#build:lib",
         "@ilo-org/brand-assets#build:lib",
-        "@ilo-org/fonts#build:lib",
-        "@ilo-org/themes#build:lib"
+        "@ilo-org/fonts#build:lib"
       ],
       "persistent": true,
       "cache": false

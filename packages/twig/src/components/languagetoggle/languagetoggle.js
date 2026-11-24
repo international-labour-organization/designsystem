@@ -22,8 +22,7 @@ export default class LanguageToggle extends StatefulComponent {
     // Initial state must be passed to the constructor for the StatefulComponent to work
     super(element, initialState);
 
-    this.prefix = `${this.element.dataset.prefix}--language-toggle`;
-    this.contextMenuVisibleClass = `${this.prefix}--context-menu__open`;
+    this.contextMenuVisibleClass = "ilo--language-toggle--context-menu__open";
 
     // Placeholders for DOM references for elements that haven't been added to the DOM yet
     this.contextMenuTemplate = null;
@@ -50,10 +49,10 @@ export default class LanguageToggle extends StatefulComponent {
    */
   cacheDomReferences = () => {
     this.contextMenuTemplate = this.element.querySelector(
-      `#${this.prefix}--context-menu--template`
+      "#ilo--language-toggle--context-menu--template"
     );
     this.contextButton = this.element.querySelector(
-      `.${this.prefix}--container`
+      ".ilo--language-toggle--container"
     );
 
     return this;
@@ -106,7 +105,7 @@ export default class LanguageToggle extends StatefulComponent {
     this.contextMenuContent = this.contextMenuTemplate.content.cloneNode(true);
     document.body.appendChild(this.contextMenuContent);
     this.contextMenu = document.body.querySelector(
-      `.${this.prefix}--context-menu`
+      ".ilo--language-toggle--context-menu"
     );
 
     this.positionContextMenu();

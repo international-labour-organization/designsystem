@@ -2,7 +2,7 @@
 
 {% set theme = theme|default('light') %}
 
-{% set baseClass = prefix ~ "--form" %}
+{% set baseClass = "ilo--form" %}
 {% set themeClass = baseClass ~ "__theme__" ~ theme %}
 
 {% set formControlClass = [baseClass, themeClass, class] %}
@@ -12,11 +12,10 @@
 		<h2>{{ headline }}</h2>
 	{% endif %}
 	{% for fieldset in fieldsets %}
-		{% include "@components/form/fieldset.twig" with fieldset|merge({ "prefix": prefix, "theme": theme }) only %}
+		{% include "@components/form/fieldset.twig" with fieldset|merge({ "theme": theme }) only %}
 	{% endfor %}
 	{% if submit %}
-		{% include "@components/button/button.twig" with submit|merge({
-		"prefix": prefix, "kind": "submit" }) only
+		{% include "@components/button/button.twig" with submit|merge({ "kind": "submit" }) only
 	%}
 	{% endif %}
 </form>

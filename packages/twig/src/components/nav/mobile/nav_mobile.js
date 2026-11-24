@@ -30,9 +30,6 @@ export default class MobileNav extends StatefulComponent {
     // Initialize the component
     super(element, initialState);
 
-    // Prefix for class names
-    this.prefix = this.element.dataset.prefix;
-
     // References to elements that get rendered dynamically on the client
     this.mobileDrawer = null;
     this.mobileDrawerClose = null;
@@ -86,9 +83,9 @@ export default class MobileNav extends StatefulComponent {
   renderClientContent = () => {
     // Get all mobile drawer templates in the order they appear in the DOM
     const mobileDrawerTemplates = [
-      `${this.prefix}--nav-mobile-drawer__template__main`,
-      `${this.prefix}--nav-mobile-drawer__template__languages`,
-      `${this.prefix}--nav-mobile-drawer__template__more`,
+      "ilo--nav-mobile-drawer__template__main",
+      "ilo--nav-mobile-drawer__template__languages",
+      "ilo--nav-mobile-drawer__template__more",
     ];
 
     // Append each template's content to the body in order
@@ -117,37 +114,37 @@ export default class MobileNav extends StatefulComponent {
 
     // Get a reference to the rendered mobile drawer (not the template)
     this.mobileDrawer = document.body.querySelector(
-      `#${this.prefix}--nav-mobile-drawer__main`
+      "#ilo--nav-mobile-drawer__main"
     );
 
     // Get a reference to the rendered mobile drawer menu home button once it gets rendered
     this.menuHomeButtons = document.body.querySelectorAll(
-      `.${this.prefix}--nav-mobile__nested__header`
+      ".ilo--nav-mobile__nested__header"
     );
 
     // Get a reference to all of the close buttons
     this.mobileDrawerCloseButtons = document.body.querySelectorAll(
-      `.${this.prefix}--nav-mobile-drawer__header-close`
+      ".ilo--nav-mobile-drawer__header-close"
     );
 
     // Get a reference to the rendered mobile language button once it gets rendered
     this.mobileLanguageButton = this.mobileDrawer.querySelector(
-      `.${this.prefix}--nav-mobile__widgets-language`
+      ".ilo--nav-mobile__widgets-language"
     );
 
     // Get a reference to the rendered mobile drawer (not the template)
     this.languagesMobileDrawer = document.body.querySelector(
-      `#${this.prefix}--nav-mobile-drawer__languages`
+      "#ilo--nav-mobile-drawer__languages"
     );
 
     // Get a reference to the rendered mobile drawer more (not the template)
     this.moreMobileDrawer = document.body.querySelector(
-      `#${this.prefix}--nav-mobile-drawer__more`
+      "#ilo--nav-mobile-drawer__more"
     );
 
     // Get a reference to the rendered mobile drawer more button once it gets rendered
     this.mobileMoreButton = this.mobileDrawer.querySelector(
-      `.${this.prefix}--nav-mobile__more`
+      ".ilo--nav-mobile__more"
     );
 
     return this;
@@ -278,7 +275,7 @@ export default class MobileNav extends StatefulComponent {
    */
   handleOpenMobileDrawer = () => {
     this.mobileDrawer.inert = false;
-    this.mobileDrawer?.classList.add(`${this.prefix}--nav-mobile-drawer--open`);
+    this.mobileDrawer?.classList.add("ilo--nav-mobile-drawer--open");
   };
 
   /**
@@ -287,9 +284,7 @@ export default class MobileNav extends StatefulComponent {
    */
   handleCloseMobileDrawer = () => {
     this.mobileDrawer.inert = true;
-    this.mobileDrawer?.classList.remove(
-      `${this.prefix}--nav-mobile-drawer--open`
-    );
+    this.mobileDrawer?.classList.remove("ilo--nav-mobile-drawer--open");
     this.burger.setAttribute("aria-expanded", "false");
   };
 
@@ -301,9 +296,7 @@ export default class MobileNav extends StatefulComponent {
     this.languagesMobileDrawer.inert = false;
     this.mobileDrawer.inert = true;
     this.mobileLanguageButton.setAttribute("aria-expanded", "true");
-    this.languagesMobileDrawer.classList.add(
-      `${this.prefix}--nav-mobile-drawer--open`
-    );
+    this.languagesMobileDrawer.classList.add("ilo--nav-mobile-drawer--open");
   };
 
   /**
@@ -315,7 +308,7 @@ export default class MobileNav extends StatefulComponent {
     this.mobileDrawer.inert = false;
     this.mobileLanguageButton.setAttribute("aria-expanded", "false");
     this.languagesMobileDrawer?.classList.remove(
-      `${this.prefix}--nav-mobile-drawer--open`
+      "ilo--nav-mobile-drawer--open"
     );
   };
 
@@ -327,9 +320,7 @@ export default class MobileNav extends StatefulComponent {
     this.moreMobileDrawer.inert = false;
     this.mobileDrawer.inert = true;
     this.mobileMoreButton.setAttribute("aria-expanded", "true");
-    this.moreMobileDrawer.classList.add(
-      `${this.prefix}--nav-mobile-drawer--open`
-    );
+    this.moreMobileDrawer.classList.add("ilo--nav-mobile-drawer--open");
   };
 
   /**
@@ -340,9 +331,7 @@ export default class MobileNav extends StatefulComponent {
     this.moreMobileDrawer.inert = true;
     this.mobileDrawer.inert = false;
     this.mobileMoreButton.setAttribute("aria-expanded", "false");
-    this.moreMobileDrawer?.classList.remove(
-      `${this.prefix}--nav-mobile-drawer--open`
-    );
+    this.moreMobileDrawer?.classList.remove("ilo--nav-mobile-drawer--open");
   };
 
   /**

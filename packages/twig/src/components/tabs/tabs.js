@@ -18,9 +18,6 @@ export default class Tabs {
      */
     this.element = element;
 
-    // get the theme prefix
-    this.prefix = this.element.dataset.prefix;
-
     // Initialize the view
     this.init();
   }
@@ -51,7 +48,7 @@ export default class Tabs {
      * @type {Object}
      */
     this.tabButtons = this.element.querySelectorAll(
-      `.${this.prefix}--tabs--selection--button`
+      ".ilo--tabs--selection--button"
     );
     this.tabPanels = this.element.querySelectorAll('[role="tabpanel"]');
     this.firstTab;

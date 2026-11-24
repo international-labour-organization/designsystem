@@ -4,13 +4,13 @@
 {% set titleLevel = titleLevel|default("p") %}
 {% set size = size|default("narrow") %}
 
-<div class="{{prefix}}--card {{prefix}}--card__type__feature {{prefix}}--card__theme__{{theme}} {{prefix}}--card__size__{{ size }} {% if isvideo|boolval %} {{prefix}}--card__isvideo {% endif %} {% if cta %} {{prefix}}--card__linklist {% endif %}">
-	<a class="{{prefix}}--card--link" href="{{link}}" title="{{title}}">
-		<span class="{{prefix}}--card--link--text">{{title}}</span>
+<div class="ilo--card ilo--card__type__feature ilo--card__theme__{{theme}} ilo--card__size__{{ size }} {% if isvideo|boolval %} ilo--card__isvideo {% endif %} {% if cta %} ilo--card__linklist {% endif %}">
+	<a class="ilo--card--link" href="{{link}}" title="{{title}}">
+		<span class="ilo--card--link--text">{{title}}</span>
 	</a>
-	<div class="{{prefix}}--card--wrap">
+	<div class="ilo--card--wrap">
 		{% if image %}
-			<div class="{{prefix}}--card--image--wrapper">
+			<div class="ilo--card--image--wrapper">
 				{% include "@components/picture/picture.twig" with {
           image: image,
           class: "card"
@@ -18,24 +18,23 @@
       %}
 			</div>
 		{% endif %}
-		<div class="{{prefix}}--card--content">
+		<div class="ilo--card--content">
 			{% if eyebrow %}
-				<p class="{{prefix}}--card--eyebrow">{{eyebrow}}</p>
+				<p class="ilo--card--eyebrow">{{eyebrow}}</p>
 			{% endif %}
 			{% if title %}
-				<{{titleLevel}} class="{{ prefix }}--card--title">{{ title }}</{{titleLevel|default('p')}}>
+				<{{titleLevel}} class="ilo--card--title">{{ title }}</{{titleLevel|default('p')}}>
 			{% endif %}
 			{% if date %}
-				<time class="{{prefix}}--card--date" datetime="{{date.unix}}">{{date.human}}</time>
+				<time class="ilo--card--date" datetime="{{date.unix}}">{{date.human}}</time>
 			{% endif %}
 			{% if cta and size == "narrow" %}
 				{% include "@components/linklist/linklist.twig" with {
 					theme: theme,
-          linkgroup: [{
-            links: [cta]
-          }],
-          prefix: prefix
-        } only %}
+					linkgroup: [{
+						links: [cta]
+					}]
+        		} only %}
 			{% endif %}
 		</div>
 	</div>
@@ -44,8 +43,7 @@
 				theme: theme,
 				linkgroup: [{
 					links: [cta]
-				}],
-				prefix: prefix
+				}]
 			} only %}
 		{% endif %}
 </div>

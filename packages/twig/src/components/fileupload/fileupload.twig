@@ -4,7 +4,7 @@
 
 {% set labelPlacement = labelPlacement|default("top") %}
 {% set labelSize = labelSize|default("medium") %}
-{% set baseClass = prefix ~ '--file-upload' %}
+{% set baseClass = 'ilo--file-upload' %}
 {% set fileUploadClasses = [baseClass] %}
 {% set inputClass = baseClass ~ '--input' %}
 
@@ -16,7 +16,7 @@
 	<div class="{{ fileUploadClasses|join(' ') }}">
 		<label class="{{ inputClass }}">
 			{{ placeholder }}
-			<input id="{{ id|default(name) }}" name="{{ name }}" {% if disabled %} disabled {% endif %} {% if multiple|boolval %} multiple {% endif %} placeholder="{{ placeholder }}" {% if required %} required {% endif %} type="file" data-label="{{ placeholder }}" aria-describedby="{{ ariaDescribedBy }}" {% if accept %} accept="{{ accept }}" {% endif %} data-loadcomponent="FileUpload" data-prefix="{{prefix}}"/>
+			<input id="{{ id|default(name) }}" name="{{ name }}" {% if disabled %} disabled {% endif %} {% if multiple|boolval %} multiple {% endif %} placeholder="{{ placeholder }}" {% if required %} required {% endif %} type="file" data-label="{{ placeholder }}" aria-describedby="{{ ariaDescribedBy }}" {% if accept %} accept="{{ accept }}" {% endif %} data-loadcomponent="FileUpload"/>
 		</label>
 	</div>
 {% endblock %}

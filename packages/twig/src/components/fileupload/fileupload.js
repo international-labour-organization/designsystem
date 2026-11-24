@@ -17,9 +17,6 @@ export default class FileUpload {
      */
     this.element = element;
 
-    // get the theme prefix
-    this.prefix = this.element.dataset.prefix;
-
     // Initialize the view
     this.init();
   }
@@ -105,7 +102,7 @@ export default class FileUpload {
    */
   onChange() {
     // Classname of the list of files to upload
-    const fileListClass = `${this.prefix}--file-upload--list`;
+    const fileListClass = "ilo--file-upload--list";
 
     // Find the fileList if it exsists
     let fileList = this.formControl.querySelector(`.${fileListClass}`);

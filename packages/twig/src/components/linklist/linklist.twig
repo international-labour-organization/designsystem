@@ -4,22 +4,22 @@
 {% set titleLevel = titleLevel|default('h3') %}
 {% set theme = theme|default('light') %}
 
-<div class="{{prefix}}--link-list {{prefix}}--link-list--{{theme}}" data-loadcomponent="LinkList" data-prefix="{{prefix}}">
+<div class="ilo--link-list ilo--link-list--{{theme}}" data-loadcomponent="LinkList">
   {% if headline %}
-    <{{titleLevel}} class="{{prefix}}--link-list--headline">{{headline}}</{{titleLevel}}>
+    <{{titleLevel}} class="ilo--link-list--headline">{{headline}}</{{titleLevel}}>
   {% endif %}
-  <ul class="{{prefix}}--link-list--linkgroups">
+  <ul class="ilo--link-list--linkgroups">
     {% for group in linkgroup %}
-    <li class="{{prefix}}--link-list--linkgroups-item">
+    <li class="ilo--link-list--linkgroups-item">
       {% if group.headline is not empty %}
-      <h4 class="{{prefix}}--link-list--links--headline">{{group.headline}}</h4>
+      <h4 class="ilo--link-list--links--headline">{{group.headline}}</h4>
       {% endif %}
-      <ul class="{{prefix}}--link-list--links">
+      <ul class="ilo--link-list--links">
         {% for link in group.links %}
-        <li class="{{prefix}}--link-list--links--item{{ link.indented|boolval ? ' indented'}}">
-          <a href="{{link.url}}" class="{{prefix}}--link-list--link">
-            <span class="{{prefix}}--link-list--label">{{link.label}}</span>
-            <span class="{{prefix}}--link-list--icon"></span>
+        <li class="ilo--link-list--links--item{{ link.indented|boolval ? ' indented'}}">
+          <a href="{{link.url}}" class="ilo--link-list--link">
+            <span class="ilo--link-list--label">{{link.label}}</span>
+            <span class="ilo--link-list--icon"></span>
           </a>
         </li>
         {% endfor %}

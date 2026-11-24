@@ -2,12 +2,11 @@
   VIDEO COMPONENT
 #}
 {% set theme = theme|default("light") %}
-<figure class="{{prefix}}--video {{prefix}}--video__theme__{{theme}}" data-prefix="{{prefix}}">
-  <div class="{{prefix}}--video--wrapper">
+<figure class="ilo--video ilo--video__theme__{{theme}}">
+  <div class="ilo--video--wrapper">
     {% include "@components/video/videoplayer.twig" with {
       alt: alt,
       controls: video.controls,
-      prefix: prefix,
       src: video.src,
       tracks: video.tracks,
       url: url,
@@ -15,6 +14,6 @@
     } %}
   </div>
   {% if caption %}
-    <figcaption class="{{prefix}}--video--caption">{{caption}}</figcaption>
+    <figcaption class="ilo--video--caption">{{caption}}</figcaption>
   {% endif %}
 </figure>

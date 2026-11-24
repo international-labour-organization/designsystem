@@ -1,7 +1,6 @@
 {# logo.twig #}
 
-{% set prefix = prefix|default('ilo') %}
-{% set base_class = className|default(prefix ~ '--logo') %}
+{% set base_class = className|default('ilo--logo') %}
 {% set img_class = imgClassName|default(base_class ~ '__img') %}
 
 {% if link and link.href %}

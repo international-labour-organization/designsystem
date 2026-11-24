@@ -3,30 +3,29 @@
 {% set size = size|default("narrow") %}
 {% set theme = theme|default("light") %}
 
-<div class="{{prefix}}--card--wrapper">
-	<div class="{{prefix}}--card {{prefix}}--card__type__text {{prefix}}--card__size__{{ size }} {{prefix}}--card__theme__{{theme}}">
-		<a class="{{prefix}}--card--link" href="{{link}}" title="{{title}}">
-			<span class="{{prefix}}--card--link--text">{{title}}</span>
+<div class="ilo--card--wrapper">
+	<div class="ilo--card ilo--card__type__text ilo--card__size__{{ size }} ilo--card__theme__{{theme}}">
+		<a class="ilo--card--link" href="{{link}}" title="{{title}}">
+			<span class="ilo--card--link--text">{{title}}</span>
 		</a>
-		<div class="{{prefix}}--card--wrap">
-			<div class="{{prefix}}--card--content">
+		<div class="ilo--card--wrap">
+			<div class="ilo--card--content">
 				{% if eyebrow %}
-					<p class="{{prefix}}--card--eyebrow">{{eyebrow}}</p>
+					<p class="ilo--card--eyebrow">{{eyebrow}}</p>
 				{% endif %}
 				{% if title %}
-					<{{titleLevel|default('p')}} class="{{ prefix }}--card--title">{{ title }}</{{titleLevel|default('p')}}>
+					<{{titleLevel|default('p')}} class="ilo--card--title">{{ title }}</{{titleLevel|default('p')}}>
 				{% endif %}
 				{% if date %}
-					<time class="{{prefix}}--card--date" datetime="{{date.unix}}">{{date.human}}</time>
+					<time class="ilo--card--date" datetime="{{date.unix}}">{{date.human}}</time>
 				{% endif %}
 				{% if profile %}
 					{% include "@components/profile/profile.twig" with {
-            avatar: profile.avatar,
-            name: profile.name,
-            prefix: prefix,
+						avatar: profile.avatar,
+						name: profile.name,
 						size: "small",
-            theme: theme,
-          } only %}
+						theme: theme,
+					} only %}
 				{% endif %}
 			</div>
 		</div>

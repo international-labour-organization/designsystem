@@ -1,7 +1,6 @@
 {# navmenu.twig #}
 
-{% set prefix = prefix|default('ilo') %}
-{% set base_class = prefix ~ '--nav-menu' %}
+{% set base_class = 'ilo--nav-menu' %}
 <div class="{{ base_class }} {{ className }} {% if light|boolval %}{{ base_class }}--light{% endif %}">
   <ul class="{{ base_class }}__list">
     {% for item in menu %}
@@ -17,8 +16,8 @@
       class="{{ base_class }}__more"
       aria-expanded="false"
       aria-haspopup="menu"
-      aria-controls="{{ prefix }}__nav-extra-menu"
-      id="{{ prefix }}--nav-dropdown__button">
+      aria-controls="ilo__nav-extra-menu"
+      id="ilo--nav-dropdown__button">
       {{ more.label }}
       <span class="{{ base_class }}__more-icon"></span>
     </button>

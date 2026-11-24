@@ -20,9 +20,6 @@ export default class Loading {
      */
     this.element = element;
 
-    // get the theme prefix
-    this.prefix = `${this.element.dataset.prefix}--loading`;
-
     // set some values
     this.status = "idle";
 
@@ -77,8 +74,8 @@ export default class Loading {
    * @chainable
    */
   loading() {
-    this.element.classList.remove(`${this.prefix}--idle`);
-    this.element.classList.add(`${this.prefix}--loading`);
+    this.element.classList.remove("ilo--loading--idle");
+    this.element.classList.add("ilo--loading--loading");
 
     return this;
   }
@@ -90,9 +87,9 @@ export default class Loading {
    * @chainable
    */
   loaded() {
-    this.element.classList.remove(`${this.prefix}--loading`);
-    this.element.classList.add(`${this.prefix}--loaded`);
-    this.element.querySelector(`.${this.prefix}--copy`).innerHTML =
+    this.element.classList.remove("ilo--loading--loading");
+    this.element.classList.add("ilo--loading--loaded");
+    this.element.querySelector(".ilo--loading--copy").innerHTML =
       this.element.dataset.loadedmessage;
 
     return this;

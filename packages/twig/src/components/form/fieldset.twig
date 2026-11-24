@@ -2,7 +2,7 @@
 
 {% set theme = theme|default('light') %}
 
-{% set baseClass = prefix ~ "--fieldset" %}
+{% set baseClass = "ilo--fieldset" %}
 {% set wrapClass = baseClass ~ "--wrap__" ~ wrap %}
 {% set directionClass = baseClass ~ "--direction__" ~ direction %}
 {% set helperClass = baseClass ~ "--helper" %}
@@ -11,7 +11,6 @@
 {% set themeClass = baseClass ~ "__theme__" ~ theme %}
 
 {% set mergeFields = {
-	"prefix": prefix,
 	"theme": theme
 } %}
 
@@ -40,7 +39,6 @@
 							"label": tooltip,
 							"icontheme": theme,
 							"theme": theme == "dark" ? "light" : "dark",
-							"prefix": prefix,
 							"tooltipId": tooltip
 						} only %}
 					{% endif %}

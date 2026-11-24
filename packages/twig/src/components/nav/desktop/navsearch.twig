@@ -1,8 +1,7 @@
 {# navsearch.twig #}
-{% set prefix = prefix|default("ilo") %}
-{% set base_class = prefix ~ "--nav-dropdown" %}
+{% set base_class = "ilo--nav-dropdown" %}
 
-<template id="{{ prefix }}--nav-search__template">
+<template id="ilo--nav-search__template">
 	<div class="{{ base_class }} {{ className|default("") }}" id="{{ base_class }}" tabindex="0">
 		<div class="{{ base_class }}__container">
 			{% include '@components/form/form.twig' with {
@@ -15,7 +14,7 @@
           fields: [{
             type: "search",
             placeholder: search.label,
-            id: prefix ~ '__widgets-search-input-field',
+            id: 'ilo__widgets-search-input-field',
           }]
         }]
       } %}

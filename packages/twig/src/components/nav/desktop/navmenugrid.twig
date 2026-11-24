@@ -1,7 +1,6 @@
 {# navmenugrid.twig #}
 
-{% set prefix = prefix|default('ilo') %}
-{% set base_class = prefix ~ '--nav-menu-grid' %}
+{% set base_class = 'ilo--nav-menu-grid' %}
 
 <div class="{{ base_class }}">
   {% for chunk in menu|batch(5) %}

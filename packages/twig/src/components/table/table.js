@@ -18,9 +18,6 @@ export default class Table {
      */
     this.element = element;
 
-    // get the theme prefix
-    this.prefix = this.element.dataset.prefix;
-
     this.sortlist = [];
 
     // Initialize the view
@@ -52,20 +49,12 @@ export default class Table {
      * The button for toggling Read More state
      * @type {Object}
      */
-    this.thCells = this.element.querySelectorAll(
-      `.${this.prefix}--table--head--cell`
-    );
-    this.tdCells = this.element.querySelectorAll(
-      `.${this.prefix}--table--body--cell`
-    );
+    this.thCells = this.element.querySelectorAll(".ilo--table--head--cell");
+    this.tdCells = this.element.querySelectorAll(".ilo--table--body--cell");
     this.rows = this.element.querySelectorAll(`[class~="--row"]`);
-    this.thRows = this.element.querySelectorAll(
-      `.${this.prefix}--table--head--row`
-    );
-    this.tdRows = this.element.querySelectorAll(
-      `.${this.prefix}--table--body--row`
-    );
-    this.tBody = this.element.querySelector(`.${this.prefix}--table--body`);
+    this.thRows = this.element.querySelectorAll(".ilo--table--head--row");
+    this.tdRows = this.element.querySelectorAll(".ilo--table--body--row");
+    this.tBody = this.element.querySelector(".ilo--table--body");
 
     return this;
   }
@@ -91,35 +80,35 @@ export default class Table {
    */
   setUpSorting() {
     Array.from(this.tdRows).forEach((tdrow) => {
-      Array.from(
-        tdrow.querySelectorAll(`.${this.prefix}--table--body--cell`)
-      ).forEach((cell, index) => {
-        const sortablecontent = cell.textContent.toLowerCase();
-        if (typeof this.sortlist[index] === "undefined") {
-          this.sortlist[index] = [];
-        }
-        if (cell.classList.contains("numeric")) {
-          if (this.isDate(sortablecontent)) {
+      Array.from(tdrow.querySelectorAll(".ilo--table--body--cell")).forEach(
+        (cell, index) => {
+          const sortablecontent = cell.textContent.toLowerCase();
+          if (typeof this.sortlist[index] === "undefined") {
+            this.sortlist[index] = [];
+          }
+          if (cell.classList.contains("numeric")) {
+            if (this.isDate(sortablecontent)) {
+              this.sortlist[index].push({
+                value: sortablecontent,
+                node: tdrow,
+                type: "date",
+              });
+            } else {
+              this.sortlist[index].push({
+                value: sortablecontent,
+                node: tdrow,
+                type: "numeric",
+              });
+            }
+          } else if (cell.innerHTML.match(/^([^0-9]*)$/)) {
             this.sortlist[index].push({
               value: sortablecontent,
               node: tdrow,
-              type: "date",
-            });
-          } else {
-            this.sortlist[index].push({
-              value: sortablecontent,
-              node: tdrow,
-              type: "numeric",
+              type: "string",
             });
           }
-        } else if (cell.innerHTML.match(/^([^0-9]*)$/)) {
-          this.sortlist[index].push({
-            value: sortablecontent,
-            node: tdrow,
-            type: "string",
-          });
         }
-      });
+      );
     });
     this.sortlist.forEach((column, index) => {
       if (this.sortlist[index].length === this.tdRows.length) {
@@ -201,9 +190,7 @@ export default class Table {
     });
 
     Array.from(
-      e.target.parentElement.querySelectorAll(
-        `.${this.prefix}--table--body--cell`
-      )
+      e.target.parentElement.querySelectorAll(".ilo--table--body--cell")
     ).forEach((tdcell, index) => {
       if (tdcell === e.target) {
         tdcell.classList.add("selected");
@@ -212,13 +199,13 @@ export default class Table {
     });
 
     Array.from(this.tdRows).forEach((tdrow) => {
-      Array.from(
-        tdrow.querySelectorAll(`.${this.prefix}--table--body--cell`)
-      ).forEach((tdcell, index) => {
-        if (index === currentindex && tdcell !== e.target) {
-          tdcell.classList.add("column--selected");
+      Array.from(tdrow.querySelectorAll(".ilo--table--body--cell")).forEach(
+        (tdcell, index) => {
+          if (index === currentindex && tdcell !== e.target) {
+            tdcell.classList.add("column--selected");
+          }
         }
-      });
+      );
     });
 
     if (e.target.hasAttribute("href")) {

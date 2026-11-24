@@ -43,7 +43,6 @@ export default class AudioPlayer extends StatefulComponent {
       volume: 1,
     };
     super(element, initialState);
-    this.prefix = this.element.dataset.prefix;
     this.init();
   }
 
@@ -63,39 +62,35 @@ export default class AudioPlayer extends StatefulComponent {
    * @returns {AudioPlayer} Returns the instance for method chaining
    */
   cacheDomReferences() {
-    this.audio = this.element.querySelector(
-      `.${this.prefix}--audio-player--audio`
-    );
+    this.audio = this.element.querySelector(".ilo--audio-player--audio");
     this.playButton = this.element.querySelector(
-      `.${this.prefix}--audio-player--play-button`
+      ".ilo--audio-player--play-button"
     );
     this.skipBackwardButton = this.element.querySelector(
-      `.${this.prefix}--audio-player--skip-backward`
+      ".ilo--audio-player--skip-backward"
     );
     this.skipForwardButton = this.element.querySelector(
-      `.${this.prefix}--audio-player--skip-forward`
+      ".ilo--audio-player--skip-forward"
     );
     this.progressBar = this.element.querySelector(
-      `.${this.prefix}--audio-player--progress-bar`
+      ".ilo--audio-player--progress-bar"
     );
     this.progressComplete = this.element.querySelector(
-      `.${this.prefix}--audio-player--progress-complete`
+      ".ilo--audio-player--progress-complete"
     );
     this.volumeButton = this.element.querySelector(
-      `.${this.prefix}--audio-player--volume-icon`
+      ".ilo--audio-player--volume-icon"
     );
     this.volumeSlider = this.element.querySelector(
-      `.${this.prefix}--audio-player--volume-slider`
+      ".ilo--audio-player--volume-slider"
     );
     this.currentTimeDisplay = this.element.querySelector(
-      `.${this.prefix}--audio-player--duration-played`
+      ".ilo--audio-player--duration-played"
     );
     this.totalTimeDisplay = this.element.querySelector(
-      `.${this.prefix}--audio-player--duration-total`
+      ".ilo--audio-player--duration-total"
     );
-    this.playIcon = this.element.querySelector(
-      `.${this.prefix}--audio-player--play-icon`
-    );
+    this.playIcon = this.element.querySelector(".ilo--audio-player--play-icon");
     return this;
   }
 

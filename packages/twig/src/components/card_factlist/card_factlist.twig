@@ -2,19 +2,18 @@
 {% set size = size|default("narrow") %}
 {% set theme = theme|default("dark") %}
 
-<div class="{{prefix}}--card {{prefix}}--card__type__factlist {{prefix}}--card__size__{{size}} {{prefix}}--card__theme__{{theme}}">
-	<div class="{{prefix}}--card--wrap">
-		<div class="{{prefix}}--card--content">
+<div class="ilo--card ilo--card__type__factlist ilo--card__size__{{size}} ilo--card__theme__{{theme}}">
+	<div class="ilo--card--wrap">
+		<div class="ilo--card--content">
 			{% if title %}
-				<{{titleLevel|default('p')}} class="{{ prefix }}--card--title">{{ title }}</{{titleLevel|default('p')}}>
+				<{{titleLevel|default('p')}} class="ilo--card--title">{{ title }}</{{titleLevel|default('p')}}>
 			{% endif %}
 			{% if list %}
 				{% include "@components/list/list.twig" with {
-          ordered: "unordered",
-          items: list.items,
-          prefix: prefix,
+					ordered: "unordered",
+					items: list.items,
 					theme: theme
-        } only %}
+        		} only %}
 			{% endif %}
 		</div>
 	</div>

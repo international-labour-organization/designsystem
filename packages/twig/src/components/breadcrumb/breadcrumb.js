@@ -17,9 +17,6 @@ export default class Breadcrumb {
      */
     this.element = element;
 
-    // get the theme prefix
-    this.prefix = this.element.dataset.prefix;
-
     // Initialize the view
     this.init();
   }
@@ -44,9 +41,9 @@ export default class Breadcrumb {
    */
   cacheDomReferences() {
     // Store references to classnames
-    this.breadcrumbsId = `${this.prefix}--breadcrumb--container`;
-    this.contextAreaClass = `${this.prefix}--breadcrumb--context`;
-    this.contextMenuItemsClass = `${this.prefix}--context-menu`;
+    this.breadcrumbsId = "ilo--breadcrumb--container";
+    this.contextAreaClass = "ilo--breadcrumb--context";
+    this.contextMenuItemsClass = "ilo--context-menu";
     this.contextCollapseClass = `${this.contextAreaClass}__collapse`;
     this.contextButtonClass = `${this.contextAreaClass}--button`;
     this.contextMenuClass = `${this.contextAreaClass}--menu`;

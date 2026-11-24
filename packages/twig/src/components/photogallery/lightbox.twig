@@ -1,13 +1,13 @@
 <div
-  class="{{prefix}}--lightbox"
+  class="ilo--lightbox"
   data-lightbox
   role="dialog"
   aria-modal="true"
 >
-  <div class="{{prefix}}--lightbox__backdrop"></div>
-  <div class="{{prefix}}--lightbox__container">
+  <div class="ilo--lightbox__backdrop"></div>
+  <div class="ilo--lightbox__container">
     <button
-      class="{{prefix}}--lightbox__close"
+      class="ilo--lightbox__close"
       aria-label="Close lightbox"
       type="button"
       data-action="close-lightbox"
@@ -17,9 +17,8 @@
         size: '32'
       } %}
     </button>
-    <div class="{{prefix}}--lightbox__content">
+    <div class="ilo--lightbox__content">
       {% include '@components/photogallery/lightboxgallery.twig' with {
-        prefix: prefix,
         items: items,
         galleryId: galleryId
       } %}

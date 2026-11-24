@@ -51,9 +51,8 @@ export default class Tooltip {
      */
 
     // enable defaults
-    this.prefix = this.element.getAttribute("data-prefix");
-    this.tooltip = this.element.querySelector(`.${this.prefix}--tooltip`);
-    this.arrow = this.element.querySelector(`.${this.prefix}--tooltip--arrow`);
+    this.tooltip = this.element.querySelector(".ilo--tooltip");
+    this.arrow = this.element.querySelector(".ilo--tooltip--arrow");
     this.alignment = this.arrow.getAttribute("data-alignment");
     this.placement = this.tooltip.getAttribute("data-placement");
 
@@ -94,8 +93,8 @@ export default class Tooltip {
 
     if (target != null) {
       const rect = target.getBoundingClientRect();
-      this.tooltip.classList.add(`${this.prefix}--tooltip--visible`);
-      this.tooltip.classList.add(`${this.prefix}--tooltip--fade`);
+      this.tooltip.classList.add("ilo--tooltip--visible");
+      this.tooltip.classList.add("ilo--tooltip--fade");
       this.postMouseOver(rect);
     }
 
@@ -104,8 +103,8 @@ export default class Tooltip {
 
   handleOnMouseOut() {
     setTimeout(() => {
-      this.tooltip.classList.remove(`${this.prefix}--tooltip--fade`);
-      this.tooltip.classList.remove(`${this.prefix}--tooltip--visible`);
+      this.tooltip.classList.remove("ilo--tooltip--fade");
+      this.tooltip.classList.remove("ilo--tooltip--visible");
     }, 200);
 
     return this;
@@ -150,7 +149,7 @@ export default class Tooltip {
     const textLength = tooltipText.trim().length;
 
     if (textLength > 50) {
-      this.tooltip.classList.add(`${this.prefix}--tooltip--long`);
+      this.tooltip.classList.add("ilo--tooltip--long");
     }
   }
 }

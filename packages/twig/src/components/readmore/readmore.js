@@ -17,12 +17,9 @@ export default class ReadMore {
      */
     this.element = element;
 
-    // get the theme prefix
-    this.prefix = this.element.dataset.prefix;
-
     // set some values
-    this.openclass = `${this.prefix}--read-more--open`;
-    this.buttonopenclass = `${this.prefix}--read-more--button--open`;
+    this.openclass = "ilo--read-more--open";
+    this.buttonopenclass = "ilo--read-more--button--open";
 
     // grab our HTML text to swap
     this.fulltext = this.element.dataset.fulltext;
@@ -65,10 +62,8 @@ export default class ReadMore {
      * The button for toggling Read More state
      * @type {Object}
      */
-    this.ReadMoreButton = this.element.querySelector(
-      `.${this.prefix}--read-more--button`
-    );
-    this.RichText = this.element.querySelector(`.${this.prefix}--richtext`);
+    this.ReadMoreButton = this.element.querySelector(".ilo--read-more--button");
+    this.RichText = this.element.querySelector(".ilo--richtext");
 
     return this;
   }

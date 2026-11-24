@@ -1,84 +1,83 @@
 {#
   LOCALNAV COMPONENT
 #}
-<header class="{{prefix}}--header {{prefix}}--header--local" data-loadcomponent="Navigation" data-prefix="{{prefix}}">
-  <div class="{{prefix}}--header--utility-bar {{prefix}}--header--utility-bar--local" {% if background %} style="background: {{background}};"{% endif %}>
-    <nav class="{{prefix}}--nav--local">
-      <div class="{{prefix}}--nav--local--logo-wrapper">
-        <a href="{{siteurl}}" class="{{prefix}}--nav--local--logo-link">
-          <img src="{{logo.image}}" alt="{{logo.alt}}" class="{{prefix}}--nav--local--logo">
+<header class="ilo--header ilo--header--local" data-loadcomponent="Navigation">
+  <div class="ilo--header--utility-bar ilo--header--utility-bar--local" {% if background %} style="background: {{background}};"{% endif %}>
+    <nav class="ilo--nav--local">
+      <div class="ilo--nav--local--logo-wrapper">
+        <a href="{{siteurl}}" class="ilo--nav--local--logo-link">
+          <img src="{{logo.image}}" alt="{{logo.alt}}" class="ilo--nav--local--logo">
         </a>
       </div>
 
-      <ul class="{{prefix}}--nav--local--set">
+      <ul class="ilo--nav--local--set">
         {% for item in primarynav.items %}
-          <li class="{{prefix}}--nav--local--item">
-            <a href="{{item.link}}" class="{{prefix}}--nav--local--link">
+          <li class="ilo--nav--local--item">
+            <a href="{{item.link}}" class="ilo--nav--local--link">
               <span>{{item.label}}</span>
             </a>
           </li>
         {% endfor %}
       </ul>
     </nav>
-    <div class="{{prefix}}--language-switcher">
-      <div class="{{prefix}}--language-switcher--wrap">
+    <div class="ilo--language-switcher">
+      <div class="ilo--language-switcher--wrap">
         {% if mainlink is defined %}
-          <span class="{{prefix}}--language-switcher--link--wrap">
-            <a href="{{mainlink.url}}" class="{{prefix}}--language-switcher--link">{{mainlink.label}}</a>
+          <span class="ilo--language-switcher--link--wrap">
+            <a href="{{mainlink.url}}" class="ilo--language-switcher--link">{{mainlink.label}}</a>
           </span>
         {% endif %}
         {% if languagecontextmenu.links is not empty %}
-          <button class="{{prefix}}--language-switcher--button" type="button">
+          <button class="ilo--language-switcher--button" type="button">
           {{languagelabel}}
           </button>
           {% include '@components/contextmenu/contextmenu.twig' with {
-            links: languagecontextmenu.links,
-            prefix: prefix
+            links: languagecontextmenu.links
           }
         %}
         {% endif %}
-      </div> <!-- /.{{prefix}}--language-switcher--wrap -->
-    </div> <!-- /.{{prefix}}--language-switcher -->
-    <button class="{{prefix}}--header--menu">Menu</button>
-  </div> <!-- /.{{prefix}}--header--utility-bar -->
+      </div> <!-- /.ilo--language-switcher--wrap -->
+    </div> <!-- /.ilo--language-switcher -->
+    <button class="ilo--header--menu">Menu</button>
+  </div> <!-- /.ilo--header--utility-bar -->
 
-  <div class="{{prefix}}--header--navigation">
-    <div class="{{prefix}}--header--inner">
-      <div class="{{prefix}}--mobile--nav">
-        <div class="{{prefix}}--mobile--nav--logo">
-          <a href="{{siteurl}}" class="{{prefix}}--header--logo-link">
-            <img class="{{prefix}}--header--logo" src="{{mobilelogo.image}}" alt="{{mobilelogo.alt}}">
+  <div class="ilo--header--navigation">
+    <div class="ilo--header--inner">
+      <div class="ilo--mobile--nav">
+        <div class="ilo--mobile--nav--logo">
+          <a href="{{siteurl}}" class="ilo--header--logo-link">
+            <img class="ilo--header--logo" src="{{mobilelogo.image}}" alt="{{mobilelogo.alt}}">
           </a>
-          <button class="{{prefix}}--header--menu--close">{{menucloselabel}}</button>
-        </div> <!-- /.{{prefix}}--mobile--logo -->
+          <button class="ilo--header--menu--close">{{menucloselabel}}</button>
+        </div> <!-- /.ilo--mobile--logo -->
       {% if languagecontextmenu.links is not empty %}
-        <div class="{{prefix}}--mobile--nav--language--switcher">
-          <button class="{{prefix}}--mobile--nav--language--switcher--button" type="button">{{languagelabel}}</button>
-        </div> <!-- /.{{prefix}}--mobile--nav--language--switcher -->
-        <div class="{{prefix}}--mobile--nav--language--select">
-          <div class="{{prefix}}--header--inner">
-            <div class="{{prefix}}--mobile--subnav--menu">
-              <button class="{{prefix}}--mobile--subnav--back" type="button">{{subnav.mobilebacklabel}}</button>
-              <button class="{{prefix}}--header--menu--close">{{subnav.mobilecloselabel}}</button>
-              <h6 class="{{prefix}}--mobile--subnav--label">{{languagelabel}}</h6>
-            </div> <!-- /{{prefix}}--mobile--subnav--menu -->
-            <ul class="{{prefix}}--nav--set">
+        <div class="ilo--mobile--nav--language--switcher">
+          <button class="ilo--mobile--nav--language--switcher--button" type="button">{{languagelabel}}</button>
+        </div> <!-- /.ilo--mobile--nav--language--switcher -->
+        <div class="ilo--mobile--nav--language--select">
+          <div class="ilo--header--inner">
+            <div class="ilo--mobile--subnav--menu">
+              <button class="ilo--mobile--subnav--back" type="button">{{subnav.mobilebacklabel}}</button>
+              <button class="ilo--header--menu--close">{{subnav.mobilecloselabel}}</button>
+              <h6 class="ilo--mobile--subnav--label">{{languagelabel}}</h6>
+            </div> <!-- /ilo--mobile--subnav--menu -->
+            <ul class="ilo--nav--set">
               {% for item in languagecontextmenu.links %}
-                <li class="{{prefix}}--nav--items">
-                  <a href="{{item.url}}" class="{{prefix}}--nav--link {{prefix}}--nav--language">{{item.label}}</a>
+                <li class="ilo--nav--items">
+                  <a href="{{item.url}}" class="ilo--nav--link ilo--nav--language">{{item.label}}</a>
                 </li>
               {% endfor %}
             </ul>
           </div>
         </div>
       {% endif %}
-      </div> <!-- /.{{prefix}}--mobile--nav -->
-      <nav class="{{prefix}}--nav" aria-labelledby="primary-navigation">
-        <h2 class="{{prefix}}--nav--label" id="primary-navigation">{{primarynav.navlabel}}</h2>
-        <ul class="{{prefix}}--nav--set">
+      </div> <!-- /.ilo--mobile--nav -->
+      <nav class="ilo--nav" aria-labelledby="primary-navigation">
+        <h2 class="ilo--nav--label" id="primary-navigation">{{primarynav.navlabel}}</h2>
+        <ul class="ilo--nav--set">
           {% for item in primarynav.items %}
-            <li class="{{prefix}}--nav--items">
-              <a href="{{item.link}}" class="{{prefix}}--nav--link">{{item.label}}</a>
+            <li class="ilo--nav--items">
+              <a href="{{item.link}}" class="ilo--nav--link">{{item.label}}</a>
             </li>
           {% endfor %}
         </ul>

@@ -4,13 +4,13 @@
 {% set size = size|default("narrow") %}
 {% set iconColor = theme == "light" ? "var(--ilo-color-light-icon-default)" : "var(--ilo-color-dark-icon-default)" %}
 
-<div class="{{prefix}}--card {{prefix}}--card__type__detail {{prefix}}--card__size__{{size}} {% if isvideo|boolval %} {{prefix}}--card__isvideo {% endif %} {{prefix}}--card__theme__{{theme}}">
-	<a class="{{prefix}}--card--link" href="{{link}}" title="{{title}}">
-		<span class="{{prefix}}--card--link--text">{{title}}</span>
+<div class="ilo--card ilo--card__type__detail ilo--card__size__{{size}} {% if isvideo|boolval %} ilo--card__isvideo {% endif %} ilo--card__theme__{{theme}}">
+	<a class="ilo--card--link" href="{{link}}" title="{{title}}">
+		<span class="ilo--card--link--text">{{title}}</span>
 	</a>
-	<div class="{{prefix}}--card--wrap">
+	<div class="ilo--card--wrap">
 		{% if image %}
-			<div class="{{prefix}}--card--image--wrapper">
+			<div class="ilo--card--image--wrapper">
 				{% include "@components/picture/picture.twig" with {
           image: image,
           class: "card"
@@ -18,32 +18,32 @@
       %}
 			</div>
 		{% endif %}
-		<div class="{{prefix}}--card--content">
+		<div class="ilo--card--content">
 			{% if eyebrow %}
-				<p class="{{prefix}}--card--eyebrow">{{eyebrow}}</p>
+				<p class="ilo--card--eyebrow">{{eyebrow}}</p>
 			{% endif %}
 			{% if title %}
-				<{{titleLevel|default('p')}} class="{{ prefix }}--card--title">{{ title }}</{{titleLevel|default('p')}}>
+				<{{titleLevel|default('p')}} class="ilo--card--title">{{ title }}</{{titleLevel|default('p')}}>
 			{% endif %}
 			{% if intro %}
-				<p class="{{prefix}}--card--intro">{{intro}}</p>
+				<p class="ilo--card--intro">{{intro}}</p>
 			{% endif %}
 			{% if date and not dateExtra %}
-				<time class="{{prefix}}--card--date" datetime="{{date.unix}}">{{date.human}}</time>
+				<time class="ilo--card--date" datetime="{{date.unix}}">{{date.human}}</time>
 			{% endif %}
 			{% if dateExtra %}
-				<p class="{{prefix}}--card--date-extra">
+				<p class="ilo--card--date-extra">
 					{% include "@components/icon/icon.twig" with {
 						name: "triangle_right",
 						size: 20,
 						color: iconColor,
-						class: prefix ~ "--card--icon-right"
+						class: "ilo--card--icon-right"
 					} %}
 					{% include "@components/icon/icon.twig" with {
 						name: "triangle_left",
 						size: 20,
 						color: iconColor,
-						class: prefix ~ "--card--icon-left"
+						class: "ilo--card--icon-left"
 					} %}
 					{{dateExtra}}
 				</p>

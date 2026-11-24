@@ -9,13 +9,13 @@
 	{% set iconColor = "var(--ilo-color-dark-icon-default)" %}
 {% endif %}
 
-<div class="{{prefix}}--card {{prefix}}--card__type__score {{prefix}}--card__theme__{{theme}} {{prefix}}--card__size__{{ size }} {% if isvideo|boolval %} {{prefix}}--card__isvideo {% endif %}">
-	<a class="{{prefix}}--card--link" href="{{link}}" title="{{title}}">
-		<span class="{{prefix}}--card--link--text">{{title}}</span>
+<div class="ilo--card ilo--card__type__score ilo--card__theme__{{theme}} ilo--card__size__{{ size }} {% if isvideo|boolval %} ilo--card__isvideo {% endif %}">
+	<a class="ilo--card--link" href="{{link}}" title="{{title}}">
+		<span class="ilo--card--link--text">{{title}}</span>
 	</a>
-	<div class="{{prefix}}--card--wrap">
+	<div class="ilo--card--wrap">
 		{% if image and size != "simple"  %}
-			<div class="{{prefix}}--card--image--wrapper">
+			<div class="ilo--card--image--wrapper">
 				{% include "@components/picture/picture.twig" with {
           image: image,
           class: "card"
@@ -23,7 +23,7 @@
       %}
 			</div>
 		{% endif %}
-		<div class="{{prefix}}--card--content">
+		<div class="ilo--card--content">
 			{% if status %}
 				{% include "@components/status/status.twig" with {
 					content: status.content,
@@ -31,15 +31,15 @@
 				} %}
 			{% endif %}
 			{% if eyebrow and size != "simple" %}
-				<p class="{{prefix}}--card--eyebrow">{{eyebrow}}</p>
+				<p class="ilo--card--eyebrow">{{eyebrow}}</p>
 			{% endif %}
 			{% if title %}
-				<{{titleLevel}} class="{{ prefix }}--card--title">{{ title }}</{{titleLevel|default('p')}}>
+				<{{titleLevel}} class="ilo--card--title">{{ title }}</{{titleLevel|default('p')}}>
 			{% endif %}
 			{% if dataset.content %}
-				<div class="{{prefix}}--card--area--content">
+				<div class="ilo--card--area--content">
 				{% for item in dataset.content.items %}
-						<div class="{{prefix}}--card--content--item">
+						<div class="ilo--card--content--item">
 							{% include "@components/icon/icon.twig" with {
 								name: item.icon,
 								size: 20,
@@ -51,13 +51,12 @@
 				</div>
 			{% endif %}
 			{% if dataset.content %}
-				<div class="{{prefix}}--card--area--cta">
+				<div class="ilo--card--area--cta">
 					{% for item in dataset.cta.items %}
-						<div class="{{prefix}}--card--cta">
+						<div class="ilo--card--cta">
 							{% include "@components/button/button.twig" with {
 								icon: {name: item.icon, size: 16},
 								label: item.label,
-								prefix: prefix,
 								type: "secondary",
 								size: "small",
 								iconPosition: "left",

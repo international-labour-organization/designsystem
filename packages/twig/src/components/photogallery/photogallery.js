@@ -23,7 +23,6 @@ export default class PhotoGallery extends StatefulComponent {
 
     super(element, initialState);
 
-    this.prefix = element.dataset.prefix;
     this.seeAllLabel = element.dataset.seeAllLabel || "See all";
 
     // Constants
@@ -82,7 +81,7 @@ export default class PhotoGallery extends StatefulComponent {
 
     /** Thumbnails */
     const thumbnailContainer = this.element.querySelector(
-      `.${this.prefix}--photo-gallery-thumbnails`
+      ".ilo--photo-gallery-thumbnails"
     );
 
     if (thumbnailContainer) {
@@ -98,7 +97,7 @@ export default class PhotoGallery extends StatefulComponent {
     }
 
     this.captionContainer = this.element.querySelector(
-      `.${this.prefix}--photo-gallery__caption`
+      ".ilo--photo-gallery__caption"
     );
 
     /** Lightbox */
@@ -119,7 +118,7 @@ export default class PhotoGallery extends StatefulComponent {
         "[data-lightbox-caption-text]"
       );
       this.lightBoxMobileCaptionContainer = this.lightBox.querySelector(
-        `.${this.prefix}--photo-gallery-expandable-caption`
+        ".ilo--photo-gallery-expandable-caption"
       );
       this.lightBoxMobileCaption = this.lightBox.querySelector(
         "[data-caption-text-mobile]"
@@ -402,7 +401,7 @@ export default class PhotoGallery extends StatefulComponent {
       event.currentTarget.getAttribute("aria-expanded") === "true";
     event.currentTarget.setAttribute("aria-expanded", String(!isExpanded));
     this.lightBoxMobileCaptionContainer.classList.toggle(
-      `${this.prefix}--photo-gallery-expandable-caption--expanded`
+      "ilo--photo-gallery-expandable-caption--expanded"
     );
   }
 
@@ -465,7 +464,7 @@ export default class PhotoGallery extends StatefulComponent {
       this.updateThumbnailSelection(
         index,
         this.thumbButtons,
-        `${this.prefix}--photo-gallery-thumbnails__thumbnail`
+        "ilo--photo-gallery-thumbnails__thumbnail"
       );
 
       if (this.thumbCarousel) {
@@ -478,7 +477,7 @@ export default class PhotoGallery extends StatefulComponent {
       this.updateThumbnailSelection(
         index,
         this.lightBoxThumbButtons,
-        `${this.prefix}--lightbox-gallery__thumbnails__image`
+        "ilo--lightbox-gallery__thumbnails__image"
       );
     }
 
@@ -504,7 +503,7 @@ export default class PhotoGallery extends StatefulComponent {
     if (!slide) return;
 
     const captionElement = slide.querySelector(
-      `.${this.prefix}--photo-gallery__core__caption-raw`
+      ".ilo--photo-gallery__core__caption-raw"
     );
     const caption = captionElement ? captionElement.textContent : "";
 
@@ -547,7 +546,7 @@ export default class PhotoGallery extends StatefulComponent {
   openLightbox() {
     if (!this.lightBox) return;
 
-    this.lightBox.classList.add(`${this.prefix}--lightbox--open`);
+    this.lightBox.classList.add("ilo--lightbox--open");
     document.body.style.overflow = "hidden";
 
     const closeBtn = this.lightBox.querySelector(
@@ -581,7 +580,7 @@ export default class PhotoGallery extends StatefulComponent {
   closeLightbox() {
     if (!this.lightBox) return;
 
-    this.lightBox.classList.remove(`${this.prefix}--lightbox--open`);
+    this.lightBox.classList.remove("ilo--lightbox--open");
     document.body.style.overflow = "";
 
     // Clean up event listeners

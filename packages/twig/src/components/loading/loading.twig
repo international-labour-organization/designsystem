@@ -2,13 +2,13 @@
 {% set size = size|default("large") %}
 {% set status = status|default("loading") %}
 
-<div class="{{prefix}}--loading {{prefix}}--loading__theme__{{theme|default('light')}} {% if size %}{{prefix}}--loading__size__{{size}}{% endif %} {% if status %}{{prefix}}--loading--{{status}}{% endif %}" role="alert" aria-live="assertive">
+<div class="ilo--loading ilo--loading__theme__{{theme|default('light')}} {% if size %}ilo--loading__size__{{size}}{% endif %} {% if status %}ilo--loading--{{status}}{% endif %}" role="alert" aria-live="assertive">
   {% if status == 'loading' %}
     <svg
       xmlns="http://www.w3.org/2000/svg"
       xmlSpace="preserve"
       viewBox="0 0 107.7 107.7"
-      class="{{prefix}}--loading__loading"
+      class="ilo--loading__loading"
     >
       <circle
         cx="53.8"
