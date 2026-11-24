@@ -44,3 +44,4 @@ export * from "./Cards";
 export * from "./LanguageToggle";
 export * from "./Toggle";
 export * from "./Nav";
+export * from "./MegaNav";
