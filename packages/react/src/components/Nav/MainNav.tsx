@@ -8,7 +8,7 @@ import {
 } from "react";
 import classNames from "classnames";
 
-import { useGlobalSettings, useOutsideClick } from "../../hooks";
+import { useOutsideClick } from "../../hooks";
 import { useNavSetup } from "./internals/hooks/useNavSetup";
 import { MainNavProps } from "./Navigation.props";
 import { LanguageToggle } from "../LanguageToggle";
@@ -20,7 +20,6 @@ import { SearchField } from "../SearchField";
 
 const MainNav = forwardRef<HTMLElement, MainNavProps>(
   ({ branding, menu: { items, labels }, widgets }, ref) => {
-    const { prefix } = useGlobalSettings();
     const {
       menu: { facade: facadeItems, more: moreItems },
       more: [isMoreOpen, setIsMoreOpen],
@@ -53,7 +52,7 @@ const MainNav = forwardRef<HTMLElement, MainNavProps>(
       }
     }, [isAboveXL]);
 
-    const baseClass = `${prefix}--main-nav`;
+    const baseClass = "ilo--main-nav";
 
     return (
       <header ref={headerRef} className={baseClass}>

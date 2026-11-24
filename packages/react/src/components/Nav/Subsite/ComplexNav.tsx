@@ -1,7 +1,6 @@
 import { forwardRef, useId, useImperativeHandle } from "react";
 import classNames from "classnames";
 
-import { useGlobalSettings } from "../../../hooks";
 import { NavigationDropdown } from "../internals/NavigationDropdown";
 import { NavigationMenuGrid } from "../internals/NavigationMenuGrid";
 import { LanguageToggle } from "../../LanguageToggle";
@@ -22,7 +21,6 @@ const ComplexNav = forwardRef<HTMLElement, ComplexNavProps>(
     },
     ref
   ) => {
-    const { prefix } = useGlobalSettings();
     const {
       menu: { facade: facadeItems, more: moreItems },
       more: [isMoreOpen, setIsMoreOpen],
@@ -35,7 +33,7 @@ const ComplexNav = forwardRef<HTMLElement, ComplexNavProps>(
 
     useImperativeHandle(ref, () => headerRef.current as HTMLElement);
 
-    const baseClass = `${prefix}--subsite-nav-complex`;
+    const baseClass = "ilo--subsite-nav-complex";
     return (
       <header ref={headerRef} className={baseClass}>
         <div className={classNames(`${baseClass}-bg--light`)}>

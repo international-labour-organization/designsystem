@@ -1,7 +1,6 @@
 import classNames from "classnames";
 import { forwardRef } from "react";
 
-import useGlobalSettings from "../../hooks/useGlobalSettings";
 import { Profile, ProfileProps } from "../Profile";
 import { DynamicHeading } from "../DynamicHeading/DynamicHeading";
 import { CardSize, EventDate, HeadingTypes, ThemeTypes } from "../../types";
@@ -68,9 +67,7 @@ const TextCard = forwardRef<HTMLDivElement, TextCardProps>(
     },
     ref
   ) => {
-    const { prefix } = useGlobalSettings();
-
-    const baseClass = `${prefix}--card`;
+    const baseClass = "ilo--card";
 
     const wrapperClass = classNames(`${baseClass}--wrapper`, className);
     const cardClasses = classNames(baseClass, `${baseClass}__type__text`, {
@@ -138,8 +135,7 @@ const TextCardSkeleton: React.FC<TextCardSkeletonProps> = ({
   size,
   theme,
 }) => {
-  const { prefix } = useGlobalSettings();
-  const baseClass = `${prefix}--card`;
+  const baseClass = "ilo--card";
   const wrapperClass = classNames(`${baseClass}--wrapper`, className);
   const cardClasses = classNames(baseClass, `${baseClass}__type__text`, {
     [`${baseClass}__size__${String(size)}`]: size,

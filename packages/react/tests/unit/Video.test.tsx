@@ -20,10 +20,6 @@ const { mockPlayer, videojsMock } = vi.hoisted(() => {
   return { mockPlayer, videojsMock };
 });
 
-vi.mock("../../src/hooks/useGlobalSettings", () => ({
-  default: () => ({ prefix: "ilo" }),
-}));
-
 vi.mock("video.js", () => ({
   default: videojsMock,
 }));

@@ -1,6 +1,5 @@
 import classNames from "classnames";
 import { forwardRef, useState } from "react";
-import useGlobalSettings from "../../hooks/useGlobalSettings";
 import { Button } from "../Button";
 import { CalloutTypes } from "../../types";
 
@@ -76,8 +75,7 @@ const Callout = forwardRef<HTMLDivElement, CalloutProps>(
     },
     ref
   ) => {
-    const { prefix } = useGlobalSettings();
-    const baseClass = `${prefix}--callout`;
+    const baseClass = "ilo--callout";
     const [toggleOpen, setToggleOpen] = useState(isOpen);
 
     const calloutClasses = classNames(baseClass, className, {

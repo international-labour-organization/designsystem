@@ -2,7 +2,6 @@ import { forwardRef } from "react";
 import classnames from "classnames";
 
 import { CardSize, HeadingTypes, ThemeTypes } from "../../types";
-import useGlobalSettings from "../../hooks/useGlobalSettings";
 import { List } from "../List";
 import { DynamicHeading } from "../DynamicHeading/DynamicHeading";
 
@@ -50,9 +49,7 @@ const FactListCard = forwardRef<HTMLDivElement, FactListCardProps>(
     },
     ref
   ) => {
-    const { prefix } = useGlobalSettings();
-
-    const baseClass = `${prefix}--card`;
+    const baseClass = "ilo--card";
 
     const cardClasses = classnames(
       baseClass,
@@ -69,10 +66,7 @@ const FactListCard = forwardRef<HTMLDivElement, FactListCardProps>(
         <div className={`${baseClass}--wrap`}>
           <div className={`${baseClass}--content`}>
             {title && (
-              <DynamicHeading
-                level={titleLevel}
-                className={`${prefix}--card--title`}
-              >
+              <DynamicHeading level={titleLevel} className="ilo--card--title">
                 {title}
               </DynamicHeading>
             )}
@@ -112,8 +106,7 @@ const FactListCardSkeleton: React.FC<FactListCardSkeletonProps> = ({
   theme = "light",
   size = "narrow",
 }) => {
-  const { prefix } = useGlobalSettings();
-  const baseClass = `${prefix}--card`;
+  const baseClass = "ilo--card";
   const cardClasses = classnames(
     baseClass,
     `${baseClass}__type__factlist`,

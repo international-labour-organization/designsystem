@@ -1,5 +1,4 @@
 import { forwardRef, createContext, useContext } from "react";
-import { useGlobalSettings } from "../../hooks";
 import classNames from "classnames";
 import { FormProps } from "./Form.props";
 import { ThemeTypes } from "../../types";
@@ -17,9 +16,7 @@ export const useFormContext = () => {
 
 const Form = forwardRef<HTMLFormElement, FormProps>(
   ({ children, theme = null, ...props }, ref) => {
-    const { prefix } = useGlobalSettings();
-
-    const baseClass = `${prefix}--form`;
+    const baseClass = "ilo--form";
     const themeClass = `${baseClass}__theme__${theme}`;
 
     const formClasses = classNames(baseClass, themeClass);

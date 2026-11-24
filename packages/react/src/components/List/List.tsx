@@ -1,7 +1,6 @@
 import { forwardRef, HTMLAttributes, ReactNode } from "react";
 import classNames from "classnames";
 
-import { useGlobalSettings } from "../../hooks";
 import { DynamicHeading } from "../DynamicHeading/DynamicHeading";
 import { HeadingTypes } from "../../types";
 
@@ -56,9 +55,7 @@ const List = forwardRef<HTMLDivElement, ListProps>(
     },
     ref
   ) => {
-    const { prefix } = useGlobalSettings();
-
-    const baseClass = `${prefix}--list`;
+    const baseClass = "ilo--list";
 
     const listClasses = classNames(className, baseClass, {
       [`${baseClass}__unstyled`]: ordered === "unstyled",

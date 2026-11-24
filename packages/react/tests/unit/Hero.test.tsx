@@ -5,11 +5,6 @@ import { render, screen } from "@testing-library/react";
 import { Hero } from "../../src/components/Hero";
 import { ThemeTypes } from "../../src/types";
 
-// Mock the useGlobalSettings hook
-vi.mock("../../src/hooks/useGlobalSettings", () => ({
-  default: () => ({ prefix: "ilo" }),
-}));
-
 // Mock child components
 vi.mock("../../src/components/Breadcrumb", () => ({
   Breadcrumb: () => <div data-testid="breadcrumb">Breadcrumb Component</div>,

@@ -1,6 +1,5 @@
 import { FC } from "react";
 import classNames from "classnames";
-import useGlobalSettings from "../../hooks/useGlobalSettings";
 import { LoadingProps } from "./Loading.props";
 
 const Loading: FC<LoadingProps> = ({
@@ -9,8 +8,7 @@ const Loading: FC<LoadingProps> = ({
   status,
   theme = "dark",
 }) => {
-  const { prefix } = useGlobalSettings();
-  const baseClass = `${prefix}--loading`;
+  const baseClass = "ilo--loading";
   const loadingClasses = classNames(
     className,
     baseClass,

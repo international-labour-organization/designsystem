@@ -1,6 +1,5 @@
 import { forwardRef, useState } from "react";
 import classNames from "classnames";
-import useGlobalSettings from "../../hooks/useGlobalSettings";
 import { Button } from "../Button";
 import { NotificationPlacement, NotificationTypes } from "../../types";
 
@@ -80,10 +79,9 @@ const Notification = forwardRef<HTMLDivElement, NotificationProps>(
     },
     ref
   ) => {
-    const { prefix } = useGlobalSettings();
     const [display, setDisplay] = useState(true);
 
-    const baseClass = `${prefix}--notification`;
+    const baseClass = "ilo--notification";
     const notificationClasses = classNames(baseClass, className, {
       [`${baseClass}--${placement}`]: placement,
       [`icon icon--${type}`]: type,

@@ -5,7 +5,6 @@ import {
   useCallback,
   useState,
 } from "react";
-import { useGlobalSettings } from "../../hooks";
 import classNames from "classnames";
 
 export type AccordionProps = {
@@ -64,7 +63,6 @@ const Accordion = forwardRef<HTMLUListElement, AccordionProps>(
     },
     ref
   ) => {
-    const { prefix } = useGlobalSettings();
     const [value, setValue] = useState<string | string[]>(
       controlledValue || multiple ? [] : ""
     );
@@ -84,7 +82,7 @@ const Accordion = forwardRef<HTMLUListElement, AccordionProps>(
       <AccordionContext.Provider
         value={{ size, multiple, scrollable, value, onChange: handleChange }}
       >
-        <ul ref={ref} className={classNames(`${prefix}--accordion`, className)}>
+        <ul ref={ref} className={classNames("ilo--accordion", className)}>
           {children}
         </ul>
       </AccordionContext.Provider>

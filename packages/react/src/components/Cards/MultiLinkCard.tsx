@@ -1,7 +1,6 @@
 import { forwardRef, isValidElement, ReactNode } from "react";
 import classNames from "classnames";
 
-import useGlobalSettings from "../../hooks/useGlobalSettings";
 import { LinkList, LinkListProps } from "../LinkList";
 import { DynamicHeading } from "../DynamicHeading/DynamicHeading";
 import { CardAlignment, CardSize, HeadingTypes } from "../../types";
@@ -83,9 +82,7 @@ const MultiLinkCard = forwardRef<HTMLDivElement, MultiLinkCardProps>(
     },
     ref
   ) => {
-    const { prefix } = useGlobalSettings();
-
-    const baseClass = `${prefix}--card`;
+    const baseClass = "ilo--card";
 
     const cardClasses = classNames(
       baseClass,
@@ -180,8 +177,7 @@ const MultiLinkCardSkeleton: React.FC<MultiLinkCardSkeletonProps> = ({
   alignment,
   theme = "light",
 }) => {
-  const { prefix } = useGlobalSettings();
-  const baseClass = `${prefix}--card`;
+  const baseClass = "ilo--card";
 
   const cardClasses = classNames(
     baseClass,

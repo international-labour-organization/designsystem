@@ -1,6 +1,5 @@
 import { useContext, FC } from "react";
 import classNames from "classnames";
-import useGlobalSettings from "../../hooks/useGlobalSettings";
 import { TagProps } from "./Tag.props";
 import { Icon } from "../Icon";
 import { TagSetContext } from "./TagCtx";
@@ -14,13 +13,12 @@ const Tag: FC<TagProps> = ({
   callback,
   ...rest
 }) => {
-  const { prefix } = useGlobalSettings();
   const { activeItems, setActiveItems, allowMultipleActive } =
     useContext(TagSetContext);
   const active = activeItems.indexOf(id) > -1;
 
-  const baseClass = `${prefix}--tag`;
-  const itemClass = `${prefix}--tag-set__item`;
+  const baseClass = "ilo--tag";
+  const itemClass = "ilo--tag-set__item";
   const stringType = type as string;
   const tagClasses = classNames(className, {
     [baseClass]: true,

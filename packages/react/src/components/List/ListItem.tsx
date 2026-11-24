@@ -1,8 +1,6 @@
 import { forwardRef, HTMLAttributes, ReactNode } from "react";
 import classNames from "classnames";
 
-import useGlobalSettings from "../../hooks/useGlobalSettings";
-
 export type ListItemProps = HTMLAttributes<HTMLLIElement> & {
   /**
    * Specify the content of your ListItem.
@@ -17,8 +15,7 @@ export type ListItemProps = HTMLAttributes<HTMLLIElement> & {
 
 const ListItem = forwardRef<HTMLLIElement, ListItemProps>(
   ({ children, className, ...rest }, ref) => {
-    const { prefix } = useGlobalSettings();
-    const baseClass = `${prefix}--list--item`;
+    const baseClass = "ilo--list--item";
     const listItemClasses = classNames(className, baseClass);
 
     return (

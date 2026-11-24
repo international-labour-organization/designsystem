@@ -1,6 +1,5 @@
 import { FC, useState, forwardRef, useId } from "react";
 import classNames from "classnames";
-import useGlobalSettings from "../../hooks/useGlobalSettings";
 import { SearchFieldProps } from "./SearchField.props";
 import { Icon } from "../Icon";
 import { FormControl } from "../FormControl";
@@ -54,8 +53,7 @@ const SearchField: FC<
     };
 
     const [searchValue, setSearchValue] = useState<string>("");
-    const { prefix } = useGlobalSettings();
-    const baseClass = `${prefix}--searchfield`;
+    const baseClass = "ilo--searchfield";
     const buttonClass = `${baseClass}--button`;
     const formClass = `${baseClass}--form`;
     const clearButtonClass = `${baseClass}--clear-button ${
@@ -64,7 +62,7 @@ const SearchField: FC<
     const rId = useId();
     const fieldId = id ?? input?.id ?? rId;
 
-    const fieldSetClass = `${prefix}--fieldset`;
+    const fieldSetClass = "ilo--fieldset";
 
     const handleClick: React.MouseEventHandler<HTMLButtonElement> = (e) => {
       if (callback) {
@@ -116,8 +114,8 @@ const SearchField: FC<
             <div className={fieldSetClass}>
               <input
                 className={classNames(
-                  `${prefix}--input`,
-                  `${prefix}--input__size__${size}`
+                  "ilo--input",
+                  `ilo--input__size__${size}`
                 )}
                 id={fieldId}
                 name={resolved.name}

@@ -3,7 +3,6 @@ import classNames from "classnames";
 
 import { ThemeTypes } from "../../types";
 import { SocialMediaProps, SocialMedia } from "../SocialMedia";
-import useGlobalSettings from "../../hooks/useGlobalSettings";
 import { HeroCardTitle } from "./HeroCardTitle";
 
 export type HeroCardProps = {
@@ -81,9 +80,7 @@ const HeroCard = forwardRef<HTMLDivElement, HeroCardProps>(
     },
     ref
   ) => {
-    const { prefix } = useGlobalSettings();
-
-    const baseClass = `${prefix}--hero-card`;
+    const baseClass = "ilo--hero-card";
 
     return (
       <div

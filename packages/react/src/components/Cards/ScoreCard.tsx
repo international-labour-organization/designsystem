@@ -1,7 +1,6 @@
 import { createElement, ElementType, forwardRef, ReactNode } from "react";
 import classNames from "classnames";
 
-import useGlobalSettings from "../../hooks/useGlobalSettings";
 import { Picture, PictureProps } from "../Picture";
 import { Status, StatusProps } from "../Status";
 import { Icon } from "../Icon";
@@ -100,14 +99,12 @@ const ScoreCard = forwardRef<HTMLDivElement, ScoreCardProps>(
     },
     ref
   ) => {
-    const { prefix } = useGlobalSettings();
-
     const iconColor =
       theme === "dark"
         ? "var(--ilo-color-dark-icon-default)"
         : "var(--ilo-color-light-icon-default)";
 
-    const baseClass = `${prefix}--card`;
+    const baseClass = "ilo--card";
     const cardClasses = classNames(baseClass, `${baseClass}__type__score`, {
       [`${baseClass}__theme__${theme}`]: theme,
       [`${baseClass}__size__${size}`]: size,
@@ -196,8 +193,7 @@ const ScoreCardSkeleton: React.FC<ScoreCardSkeletonProps> = ({
   theme = "light",
   size = "narrow",
 }) => {
-  const { prefix } = useGlobalSettings();
-  const baseClass = `${prefix}--card`;
+  const baseClass = "ilo--card";
   const cardClasses = classNames(baseClass, `${baseClass}__type__score`, {
     [`${baseClass}__theme__${theme}`]: theme,
     [`${baseClass}__size__${size}`]: size,

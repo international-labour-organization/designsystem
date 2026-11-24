@@ -1,7 +1,6 @@
 import classNames from "classnames";
 import { useEffect, useReducer, useRef } from "react";
 import { Icon } from "../Icon";
-import useGlobalSettings from "../../hooks/useGlobalSettings";
 
 export interface AudioPlayerProps {
   /**
@@ -113,8 +112,7 @@ export const AudioPlayer: React.FC<AudioPlayerProps> = ({
   src,
   onEnded,
 }) => {
-  const { prefix } = useGlobalSettings();
-  const baseClass = `${prefix}--audio-player`;
+  const baseClass = "ilo--audio-player";
   const audioPlayerClasses = classNames(baseClass, className);
 
   const [state, dispatch] = useReducer(reducer, initialState);

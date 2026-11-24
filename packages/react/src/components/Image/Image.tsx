@@ -1,6 +1,5 @@
 import { FC } from "react";
 import classNames from "classnames";
-import useGlobalSettings from "../../hooks/useGlobalSettings";
 import { ImageProps, ImageUrl } from "./Image.props";
 import { Tooltip } from "../Tooltip";
 
@@ -12,8 +11,7 @@ const Image: FC<ImageProps> = ({
   url,
   theme,
 }) => {
-  const { prefix } = useGlobalSettings();
-  const baseClass = `${prefix}--image`;
+  const baseClass = "ilo--image";
 
   const imageClasses = classNames(className, {
     [baseClass]: true,

@@ -1,6 +1,5 @@
 import { forwardRef } from "react";
 import classNames from "classnames";
-import useGlobalSettings from "../../hooks/useGlobalSettings";
 import FormControl, { useFormControl } from "../FormControl/FormControl";
 import { DatePickerProps, LabelledDatePickerProps } from "./DatePicker.props";
 
@@ -20,12 +19,11 @@ const DatePicker = forwardRef<HTMLInputElement, DatePickerProps>(
       step,
     } = props;
 
-    const { prefix } = useGlobalSettings();
     const formControlCtx = useFormControl();
     const { ariaDescribedBy } = formControlCtx;
 
-    const inputClass = `${prefix}--input`;
-    const baseClass = `${prefix}--datepicker`;
+    const inputClass = "ilo--input";
+    const baseClass = "ilo--datepicker";
 
     const datePickerClasses = classNames(inputClass, baseClass, {
       [`${inputClass}__error`]: error,

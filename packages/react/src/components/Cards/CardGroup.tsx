@@ -1,6 +1,5 @@
 import { forwardRef, type ComponentType } from "react";
 import classnames from "classnames";
-import useGlobalSettings from "../../hooks/useGlobalSettings";
 import { Button } from "../Button";
 import { CardTypes } from "../../types";
 
@@ -54,9 +53,7 @@ const CardGroup = forwardRef<HTMLDivElement, CardGroupProps<CardTypes>>(
     const CardComponent = cardMapper[type] as ComponentType<
       CardPropsMap[CardTypes]
     >;
-    const { prefix } = useGlobalSettings();
-
-    const baseClass = `${prefix}--cardgroup`;
+    const baseClass = "ilo--cardgroup";
     const cardGroupClasses = classnames(
       baseClass,
       `${baseClass}__count__${cardCount}`,

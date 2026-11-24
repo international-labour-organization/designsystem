@@ -1,14 +1,12 @@
 import { forwardRef } from "react";
 import classNames from "classnames";
-import useGlobalSettings from "../../hooks/useGlobalSettings";
 import { VideoProps } from "./Video.props";
 import VideoPlayer from "./VideoPlayer";
 import { VideoPlayerRef } from "./VideoPlayer.props";
 
 const Video = forwardRef<VideoPlayerRef, VideoProps>(
   ({ className, caption, theme, ...video }, ref) => {
-    const { prefix } = useGlobalSettings();
-    const baseClass = `${prefix}--video`;
+    const baseClass = "ilo--video";
 
     const videoClasses = classNames(className, {
       [baseClass]: true,

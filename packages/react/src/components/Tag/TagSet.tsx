@@ -1,6 +1,5 @@
 import classNames from "classnames";
 import { Children, FC, ReactElement, useEffect, useState } from "react";
-import useGlobalSettings from "../../hooks/useGlobalSettings";
 import { checkArrayDuplicates } from "../../utils/checkArrayDuplicates";
 import { TagSetContext } from "./TagCtx";
 import { TagSetProps } from "./TagSet.props";
@@ -13,8 +12,7 @@ const TagSet: FC<TagSetProps> = ({
   allowMultipleActive = true,
   ...rest
 }) => {
-  const { prefix } = useGlobalSettings();
-  const baseClass = `${prefix}--tag-set`;
+  const baseClass = "ilo--tag-set";
   const [activeItems, setActiveItems] = useState<string[]>([]);
 
   const defaultTagActiveString = JSON.stringify(defaultTagActive);

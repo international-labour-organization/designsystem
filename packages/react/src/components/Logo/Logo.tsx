@@ -1,5 +1,4 @@
 import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
-import { useGlobalSettings } from "../../hooks";
 import { InnerLogoProps, LogoProps } from "./Logo.props";
 import classnames from "classnames";
 
@@ -226,8 +225,7 @@ const Logo: React.FC<LogoProps> = ({
   size,
   ...props
 }) => {
-  const { prefix } = useGlobalSettings();
-  const baseClass = `${prefix}--logo`;
+  const baseClass = "ilo--logo";
   const linkClass = `${baseClass}--link`;
   const fluidClass = `${baseClass}--size--fluid`;
 

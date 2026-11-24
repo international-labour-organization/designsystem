@@ -1,7 +1,6 @@
 import useEmblaCarousel from "embla-carousel-react";
 import { useEffect, useId, useRef } from "react";
 import classNames from "classnames";
-import { useGlobalSettings } from "../../hooks";
 import { PhotoGalleryItem } from "./PhotoGallery";
 
 interface PhotoGalleryThumbnailsProps {
@@ -19,7 +18,6 @@ function PhotoGalleryThumbnails({
   onSeeAll,
   seeAllLabel = "See all",
 }: PhotoGalleryThumbnailsProps) {
-  const { prefix } = useGlobalSettings();
   const cid = useId();
   const wrapperRef = useRef<HTMLDivElement>(null);
   const [thumbRef, thumbAPI] = useEmblaCarousel({
@@ -35,7 +33,7 @@ function PhotoGalleryThumbnails({
     thumbAPI.scrollTo(selected);
   }, [thumbAPI, selected]);
 
-  const baseClass = `${prefix}--photo-gallery-thumbnails`;
+  const baseClass = "ilo--photo-gallery-thumbnails";
 
   return (
     <div className={baseClass} ref={wrapperRef} id={`${baseClass}--${cid}`}>

@@ -1,11 +1,9 @@
 import { FC } from "react";
 import classNames from "classnames";
-import useGlobalSettings from "../../hooks/useGlobalSettings";
 import { AnchorLink, TableOfContentsProps } from "./TableOfContents.props";
 
 const TableOfContents: FC<TableOfContentsProps> = ({ className, items }) => {
-  const { prefix } = useGlobalSettings();
-  const baseClass = `${prefix}--table-of-contents`;
+  const baseClass = "ilo--table-of-contents";
 
   const TableOfContentsClasses = classNames(className, {
     [baseClass]: true,

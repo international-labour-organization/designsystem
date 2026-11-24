@@ -1,7 +1,6 @@
 import { forwardRef } from "react";
 import classNames from "classnames";
 
-import useGlobalSettings from "../../hooks/useGlobalSettings";
 import { ThemeTypes, SizeTypes } from "../../types";
 import { Icon } from "../Icon";
 
@@ -71,9 +70,7 @@ const Profile = forwardRef<HTMLElement, ProfileProps>(
     },
     ref
   ) => {
-    const { prefix } = useGlobalSettings();
-
-    const baseClass = `${prefix}--profile`;
+    const baseClass = "ilo--profile";
     const profileClasses = classNames(className, {
       [baseClass]: true,
       [`${baseClass}__theme__${theme}`]: theme,

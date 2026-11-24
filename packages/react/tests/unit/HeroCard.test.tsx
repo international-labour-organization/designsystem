@@ -1,12 +1,7 @@
-import { expect, describe, it, vi } from "vitest";
+import { expect, describe, it } from "vitest";
 import { render, screen } from "@testing-library/react";
 
 import { HeroCard } from "../../src/components/HeroCard";
-
-// Mock the useGlobalSettings hook
-vi.mock("../../src/hooks/useGlobalSettings", () => ({
-  default: () => ({ prefix: "ilo" }),
-}));
 
 describe("HeroCard", () => {
   it("should render with default props", () => {

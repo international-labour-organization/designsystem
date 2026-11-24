@@ -1,5 +1,5 @@
 import { ReactNode, useId } from "react";
-import { useFocusTrap, useGlobalSettings } from "../../../../hooks";
+import { useFocusTrap } from "../../../../hooks";
 import { createPortal } from "react-dom";
 import classNames from "classnames";
 
@@ -46,7 +46,6 @@ const MobileDrawer = ({
   className,
   isNestedOpen = false,
 }: MobileDrawerProps) => {
-  const { prefix } = useGlobalSettings();
   const id = useId();
   const focusTrapRef = useFocusTrap<HTMLDivElement>({
     isActive: isOpen && !isNestedOpen,
@@ -57,7 +56,7 @@ const MobileDrawer = ({
     },
   });
 
-  const baseClass = `${prefix}--nav-mobile-drawer`;
+  const baseClass = "ilo--nav-mobile-drawer";
 
   if (typeof document === "undefined") return null;
 

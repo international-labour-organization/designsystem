@@ -1,6 +1,5 @@
 import { FC } from "react";
 import classNames from "classnames";
-import useGlobalSettings from "../../hooks/useGlobalSettings";
 import { PaginationProps } from "./Pagination.props";
 
 const Pagination: FC<PaginationProps> = ({
@@ -19,9 +18,7 @@ const Pagination: FC<PaginationProps> = ({
   totalPages,
   theme = "light",
 }) => {
-  const { prefix } = useGlobalSettings();
-
-  const baseClass = `${prefix}--pagination`;
+  const baseClass = "ilo--pagination";
   const themeClass = `${baseClass}__theme__${theme}`;
 
   const paginationClasses = classNames(className, baseClass, themeClass);

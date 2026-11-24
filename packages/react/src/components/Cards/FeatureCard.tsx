@@ -1,7 +1,6 @@
 import { forwardRef } from "react";
 import classNames from "classnames";
 
-import useGlobalSettings from "../../hooks/useGlobalSettings";
 import { LinkList, LinkListProps } from "../LinkList";
 import { DynamicHeading } from "../DynamicHeading/DynamicHeading";
 import { CardSize, EventDate, HeadingTypes, ThemeTypes } from "../../types";
@@ -77,9 +76,7 @@ const FeatureCard = forwardRef<HTMLDivElement, FeatureCardProps>(
     },
     ref
   ) => {
-    const { prefix } = useGlobalSettings();
-
-    const baseClass = `${prefix}--card`;
+    const baseClass = "ilo--card";
 
     const cardClasses = classNames(
       baseClass,
@@ -168,8 +165,7 @@ const FeatureCardSkeleton: React.FC<FeatureCardSkeletonProps> = ({
   size,
   theme,
 }) => {
-  const { prefix } = useGlobalSettings();
-  const baseClass = `${prefix}--card`;
+  const baseClass = "ilo--card";
   const cardClasses = classNames(
     baseClass,
     className,

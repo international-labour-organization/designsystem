@@ -1,8 +1,6 @@
 import { ElementType, forwardRef } from "react";
 import classNames from "classnames";
 
-import { useGlobalSettings } from "../../hooks";
-
 export type BreadcrumbItemProps = {
   /**
    * Optional additional className of the BreadcrumbLink
@@ -35,13 +33,10 @@ const BreadcrumbLink = ({
   label,
   url,
 }: BreadcrumbItemProps) => {
-  const { prefix } = useGlobalSettings();
-  const child = (
-    <span className={`${prefix}--breadcrumb--link--label`}>{label}</span>
-  );
+  const child = <span className={"ilo--breadcrumb--link--label"}>{label}</span>;
   const common = {
     href: url,
-    className: `${prefix}--breadcrumb--link`,
+    className: "ilo--breadcrumb--link",
     ["aria-label"]: label,
   };
 
@@ -58,13 +53,11 @@ const BreadcrumbLink = ({
 
 const BreadcrumbItem = forwardRef<HTMLLIElement, BreadcrumbItemProps>(
   ({ url, label, className, first, ...rest }, ref) => {
-    const { prefix } = useGlobalSettings();
-
     return (
       <li
         className={classNames({
-          [`${prefix}--breadcrumb--item`]: true,
-          [`${prefix}--breadcrumb--item__first`]: first,
+          "ilo--breadcrumb--item": true,
+          "ilo--breadcrumb--item__first": first,
           className,
         })}
         ref={ref}

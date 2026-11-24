@@ -6,7 +6,6 @@ import {
   ReactNode,
   createElement,
 } from "react";
-import useGlobalSettings from "../../hooks/useGlobalSettings";
 import { DynamicHeading } from "../DynamicHeading/DynamicHeading";
 import { CardSize, EventDate, HeadingTypes, ThemeTypes } from "../../types";
 import { Icon } from "../Icon";
@@ -103,9 +102,7 @@ const DetailCard = forwardRef<HTMLDivElement, DetailCardProps>(
     },
     ref
   ) => {
-    const { prefix } = useGlobalSettings();
-
-    const baseClass = `${prefix}--card`;
+    const baseClass = "ilo--card";
 
     const cardClasses = classNames(
       baseClass,
@@ -208,8 +205,7 @@ const DetailCardSkeleton: React.FC<DetailCardSkeletonProps> = ({
   theme = "light",
   size = "narrow",
 }) => {
-  const { prefix } = useGlobalSettings();
-  const baseClass = `${prefix}--card`;
+  const baseClass = "ilo--card";
   const cardClasses = classNames(
     baseClass,
     `${baseClass}__type__detail`,

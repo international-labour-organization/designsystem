@@ -1,5 +1,4 @@
 import { FC, SetStateAction, useEffect, useState } from "react";
-import useGlobalSettings from "../../hooks/useGlobalSettings";
 import classnames from "classnames";
 import { TabsProps } from "./Tabs.props";
 import { Icon } from "../Icon";
@@ -31,9 +30,7 @@ const Tabs: FC<TabsProps> = ({
     e.preventDefault();
   };
 
-  const { prefix } = useGlobalSettings();
-
-  const baseClass = `${prefix}--tabs`;
+  const baseClass = "ilo--tabs";
   const tabsClasses = classnames(
     baseClass,
     className,

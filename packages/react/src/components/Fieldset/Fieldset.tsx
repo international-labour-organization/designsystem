@@ -1,6 +1,5 @@
 import { FC, createContext, useContext, useState } from "react";
 import classNames from "classnames";
-import useGlobalSettings from "../../hooks/useGlobalSettings";
 import { FieldsetProps } from "./Fieldset.props";
 import { Tooltip } from "../Tooltip";
 import { useFormContext } from "../Form/Form";
@@ -32,13 +31,12 @@ const Fieldset: FC<FieldsetProps> = ({
   theme = "light",
   ...props
 }) => {
-  const { prefix } = useGlobalSettings();
   const { theme: formTheme } = useFormContext();
   const fieldsetTheme = formTheme || theme;
 
   const [hasError, setHasError] = useState(false);
 
-  const baseClass = `${prefix}--fieldset`;
+  const baseClass = "ilo--fieldset";
   const wrapClass = `${baseClass}--wrap__${wrap}`;
   const directionClass = `${baseClass}--direction__${direction}`;
   const helperClass = `${baseClass}--helper`;
