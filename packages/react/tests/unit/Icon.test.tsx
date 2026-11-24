@@ -13,7 +13,6 @@ describe("Icon component", () => {
     const { container } = render(<Icon name="check" />);
     const icon = container.firstChild;
     expect(icon).toBeInTheDocument();
-    // The className should be based on the mocked prefix
     expect(icon).toHaveAttribute("class", "ilo--icon");
     // Default fill should be "currentColor"
     expect(icon).toHaveAttribute("fill", "currentColor");
