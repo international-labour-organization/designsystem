@@ -1,6 +1,5 @@
 import { forwardRef, useImperativeHandle } from "react";
 
-import { useGlobalSettings } from "../../../hooks";
 import { NavigationDropdown } from "../internals/NavigationDropdown";
 import { NavigationMenuGrid } from "../internals/NavigationMenuGrid";
 import { LanguageToggle } from "../../LanguageToggle";
@@ -21,7 +20,6 @@ const CompactNav = forwardRef<HTMLElement, CompactNavProps>(
     },
     ref
   ) => {
-    const { prefix } = useGlobalSettings();
     const {
       menu: { facade: facadeItems, more: moreItems },
       more: [isMoreOpen, setIsMoreOpen],
@@ -33,7 +31,7 @@ const CompactNav = forwardRef<HTMLElement, CompactNavProps>(
 
     useImperativeHandle(ref, () => headerRef.current as HTMLElement);
 
-    const baseClass = `${prefix}--subsite-nav-compact`;
+    const baseClass = "ilo--subsite-nav-compact";
 
     return (
       <header ref={headerRef} className={baseClass}>

@@ -1,7 +1,6 @@
 import classNames from "classnames";
 import { forwardRef } from "react";
 import { SocialMediaProps } from "./SocialMedia.props";
-import { useGlobalSettings } from "../../hooks";
 import { DynamicHeading } from "../DynamicHeading/DynamicHeading";
 
 const SocialMedia = forwardRef<HTMLDivElement, SocialMediaProps>(
@@ -17,9 +16,7 @@ const SocialMedia = forwardRef<HTMLDivElement, SocialMediaProps>(
     },
     ref
   ) => {
-    const { prefix } = useGlobalSettings();
-
-    const baseClass = `${prefix}--social-media`;
+    const baseClass = "ilo--social-media";
 
     return (
       <div

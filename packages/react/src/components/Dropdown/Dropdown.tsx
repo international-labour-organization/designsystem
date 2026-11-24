@@ -1,6 +1,5 @@
 import React, { forwardRef } from "react";
 import classNames from "classnames";
-import { useGlobalSettings } from "../../hooks";
 import { DropdownProps, LabelledDropdownProps } from "./Dropdown.props";
 import FormControl, { useFormControl } from "../FormControl/FormControl";
 
@@ -23,11 +22,10 @@ const Dropdown = forwardRef<HTMLSelectElement, DropdownProps>((props, ref) => {
     size = "large",
   } = props;
 
-  const { prefix } = useGlobalSettings();
   const formControlCtx = useFormControl();
   const { ariaDescribedBy } = formControlCtx;
 
-  const baseClass = `${prefix}--dropdown`;
+  const baseClass = "ilo--dropdown";
 
   const dropdownClasses = classNames(baseClass, `${baseClass}__size__${size}`, {
     error: error,

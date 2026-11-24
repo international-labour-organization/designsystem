@@ -1,5 +1,4 @@
 import { forwardRef } from "react";
-import useGlobalSettings from "../../hooks/useGlobalSettings";
 
 export interface BlockquoteProps {
   quote: string;
@@ -8,10 +7,8 @@ export interface BlockquoteProps {
 
 const Blockquote = forwardRef<HTMLQuoteElement, BlockquoteProps>(
   ({ quote, cite }, ref) => {
-    const { prefix } = useGlobalSettings();
-
     return (
-      <blockquote ref={ref} className={`${prefix}--blockquote`}>
+      <blockquote ref={ref} className={"ilo--blockquote"}>
         <p>{quote}</p>
         <cite>{cite}</cite>
       </blockquote>

@@ -1,6 +1,6 @@
 import { ReactNode, useEffect } from "react";
 import { createPortal } from "react-dom";
-import { useFocusTrap, useGlobalSettings } from "../../hooks";
+import { useFocusTrap } from "../../hooks";
 import classNames from "classnames";
 import { Icon } from "../Icon";
 
@@ -11,7 +11,6 @@ interface LightBoxProps {
 }
 
 function LightBox({ isOpen, onClose, children }: LightBoxProps) {
-  const { prefix } = useGlobalSettings();
   const focusTrapRef = useFocusTrap<HTMLDivElement>({
     isActive: isOpen,
     onEscape: () => {
@@ -19,7 +18,7 @@ function LightBox({ isOpen, onClose, children }: LightBoxProps) {
     },
     restoreFocus: true,
   });
-  const baseClass = `${prefix}--lightbox`;
+  const baseClass = "ilo--lightbox";
 
   useEffect(() => {
     const handleEscapeKey = (event: KeyboardEvent) => {

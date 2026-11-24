@@ -1,5 +1,4 @@
 import { HTMLAttributes } from "react";
-import { useGlobalSettings } from "../../../../hooks";
 import { NavigationLinkProps } from "../../Navigation.props";
 import { NavigationLink } from "../NavigationLink";
 
@@ -10,9 +9,7 @@ type MobileMenuListProps = {
 const MobileMenuList = ({
   menu,
 }: HTMLAttributes<HTMLUListElement> & MobileMenuListProps) => {
-  const { prefix } = useGlobalSettings();
-
-  const baseClass = `${prefix}--nav-mobile-menu`;
+  const baseClass = "ilo--nav-mobile-menu";
 
   return (
     <ul className={`${baseClass}`}>

@@ -1,8 +1,6 @@
 import { forwardRef } from "react";
 import classNames from "classnames";
 
-import useGlobalSettings from "../../hooks/useGlobalSettings";
-
 export type PictureURl = {
   src: string;
   breakpoint: number;
@@ -24,9 +22,7 @@ export type PictureProps = {
 
 const Picture = forwardRef<HTMLPictureElement, PictureProps>(
   ({ className, url, loading, alt }, ref) => {
-    const { prefix } = useGlobalSettings();
-
-    const baseClass = `${prefix}--picture`;
+    const baseClass = "ilo--picture";
     const pictureClasses = classNames(baseClass, className);
 
     return (

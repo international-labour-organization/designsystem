@@ -1,13 +1,10 @@
 import React from "react";
 import classnames from "classnames";
-import { useGlobalSettings } from "../../hooks";
 import { LogoGridProps, LogoGridItemProps } from "./LogoGrid.props";
 
 const LogoGridItem: React.FC<LogoGridItemProps> = ({ url, label, src }) => {
-  const { prefix } = useGlobalSettings();
-
-  const itemClass = `${prefix}--logo-grid--item`;
-  const itemLinkClass = `${prefix}--logo-grid--link`;
+  const itemClass = "ilo--logo-grid--item";
+  const itemLinkClass = "ilo--logo-grid--link";
 
   const gridItemClass = classnames(itemClass, {
     [itemLinkClass]: !!url,
@@ -33,9 +30,7 @@ const LogoGridItem: React.FC<LogoGridItemProps> = ({ url, label, src }) => {
 };
 
 const LogoGrid: React.FC<LogoGridProps> = ({ logos, theme = "light" }) => {
-  const { prefix } = useGlobalSettings();
-
-  const baseClass = `${prefix}--logo-grid`;
+  const baseClass = "ilo--logo-grid";
   const themeClass = `${baseClass}__theme__${theme}`;
   const logoGridClass = classnames(baseClass, themeClass);
 

@@ -1,6 +1,5 @@
 import classNames from "classnames";
 import { useState, useRef, useEffect } from "react";
-import { useGlobalSettings } from "../../hooks";
 import { Icon } from "../Icon";
 
 interface ExpandableCaptionProps {
@@ -18,8 +17,7 @@ export function ExpandableCaption({
   onToggle,
   className,
 }: ExpandableCaptionProps) {
-  const { prefix } = useGlobalSettings();
-  const baseClass = `${prefix}--photo-gallery-expandable-caption`;
+  const baseClass = "ilo--photo-gallery-expandable-caption";
 
   const [uncontrolledIsOpen, setUncontrolledIsOpen] = useState(defaultOpen);
   const [isExpandable, setIsExpandable] = useState(false);

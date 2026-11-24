@@ -1,6 +1,5 @@
 import { HTMLAttributes, useCallback, useEffect } from "react";
 import classNames from "classnames";
-import { useGlobalSettings } from "../../hooks";
 import { UseEmblaCarouselType } from "embla-carousel-react";
 
 type PhotoGalleryControlsProps = HTMLAttributes<HTMLDivElement> & {
@@ -88,8 +87,7 @@ function PhotoGalleryControls({
   indicator,
   ...rest
 }: PhotoGalleryControlsProps) {
-  const { prefix } = useGlobalSettings();
-  const baseClass = `${prefix}--photo-gallery-controls`;
+  const baseClass = "ilo--photo-gallery-controls";
 
   return (
     <div {...rest}>

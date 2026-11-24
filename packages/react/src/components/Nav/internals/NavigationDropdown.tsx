@@ -9,11 +9,7 @@ import {
   HTMLAttributes,
 } from "react";
 import { createPortal } from "react-dom";
-import {
-  useGlobalSettings,
-  useOutsideClick,
-  useFocusTrap,
-} from "../../../hooks";
+import { useOutsideClick, useFocusTrap } from "../../../hooks";
 import classNames from "classnames";
 import mergeRefs from "merge-refs";
 
@@ -45,7 +41,6 @@ const NavigationDropdownBare = forwardRef<
   HTMLDivElement,
   NavigationDropdownProps
 >(({ isOpen, className, navRef, children, onClose, ...props }, ref) => {
-  const { prefix } = useGlobalSettings();
   const focusTrapRef = useFocusTrap<HTMLDivElement>({
     isActive: isOpen,
     onEscape: onClose,
@@ -66,7 +61,7 @@ const NavigationDropdownBare = forwardRef<
     }
   );
 
-  const baseClass = `${prefix}--nav-dropdown`;
+  const baseClass = "ilo--nav-dropdown";
 
   const updatePosition = useCallback(() => {
     if (!wrapperRef?.current || !navRef?.current) {

@@ -1,4 +1,3 @@
-import { useGlobalSettings } from "../../../hooks";
 import { NavigationLinkProps } from "../Navigation.props";
 import { NavigationLink } from "./NavigationLink";
 
@@ -7,9 +6,7 @@ type NavigationMenuGridProps = {
 };
 
 const NavigationMenuGrid = ({ menu }: NavigationMenuGridProps) => {
-  const { prefix } = useGlobalSettings();
-
-  const baseClass = `${prefix}--nav-menu-grid`;
+  const baseClass = "ilo--nav-menu-grid";
 
   const chunked = [];
   for (let i = 0; i < menu.length; i += 5) {

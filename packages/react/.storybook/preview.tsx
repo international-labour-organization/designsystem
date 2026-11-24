@@ -1,4 +1,3 @@
-import { GlobalProvider } from "../src/components/GlobalProvider";
 import { Preview } from "@storybook/react-vite";
 import { SyntaxHighlighter } from "storybook/internal/components";
 import scss from "react-syntax-highlighter/dist/esm/languages/prism/scss";
@@ -26,11 +25,6 @@ const preview: Preview = {
 
       return <Story />;
     },
-    (Story) => (
-      <GlobalProvider prefix="ilo">
-        <Story />
-      </GlobalProvider>
-    ),
   ],
   parameters: {
     controls: {

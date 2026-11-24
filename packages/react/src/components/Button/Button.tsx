@@ -6,7 +6,6 @@ import {
 } from "react";
 import classNames from "classnames";
 
-import useGlobalSettings from "../../hooks/useGlobalSettings";
 import { Link } from "../Link";
 import { Icon, IconProps } from "../Icon";
 import { ButtonTypes, PositionTypes, SizeTypes } from "../../types";
@@ -93,9 +92,7 @@ const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, ButtonProps>(
     },
     ref
   ) => {
-    const { prefix } = useGlobalSettings();
-
-    const baseClass = `${prefix}--button`;
+    const baseClass = "ilo--button";
 
     const rootClasses = classNames(className, {
       [baseClass]: true,

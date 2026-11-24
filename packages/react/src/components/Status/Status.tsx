@@ -1,8 +1,6 @@
 import { forwardRef } from "react";
 import classNames from "classnames";
 
-import useGlobalSettings from "../../hooks/useGlobalSettings";
-
 export type StatusProps = {
   /**
    * Specify the type of status.
@@ -27,8 +25,7 @@ export type StatusProps = {
 
 const Status = forwardRef<HTMLSpanElement, StatusProps>(
   ({ statusType = "active", content, elementId, className }, ref) => {
-    const { prefix } = useGlobalSettings();
-    const baseClass = `${prefix}--status`;
+    const baseClass = "ilo--status";
 
     const statusClasses = classNames(
       baseClass,

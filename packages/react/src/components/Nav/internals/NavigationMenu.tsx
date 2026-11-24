@@ -1,5 +1,4 @@
 import classNames from "classnames";
-import { useGlobalSettings } from "../../../hooks";
 import { NavigationLinkProps } from "../Navigation.props";
 import { NavigationLink } from "./NavigationLink";
 
@@ -22,9 +21,7 @@ const NavigationMenu = ({
   more,
   light = false,
 }: NavigationMenuProps) => {
-  const { prefix } = useGlobalSettings();
-
-  const baseClass = `${prefix}--nav-menu`;
+  const baseClass = "ilo--nav-menu";
 
   return (
     <div

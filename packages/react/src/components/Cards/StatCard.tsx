@@ -1,7 +1,6 @@
 import { forwardRef } from "react";
 import classNames from "classnames";
 
-import useGlobalSettings from "../../hooks/useGlobalSettings";
 import { Link, LinkProps } from "../Link";
 import { DynamicHeading } from "../DynamicHeading/DynamicHeading";
 import { CardColor, CardSize, HeadingTypes, ThemeTypes } from "../../types";
@@ -63,9 +62,7 @@ const StatCard = forwardRef<HTMLDivElement, StatCardProps>(
     },
     ref
   ) => {
-    const { prefix } = useGlobalSettings();
-
-    const baseClass = `${prefix}--card`;
+    const baseClass = "ilo--card";
 
     const wrapperClass = classNames(`${baseClass}--wrapper`, className);
     const cardClasses = classNames(baseClass, `${baseClass}__type__stat`, {
@@ -123,8 +120,7 @@ const StatCardSkeleton: React.FC<StatCardSkeletonProps> = ({
   theme = "light",
   size = "standard",
 }) => {
-  const { prefix } = useGlobalSettings();
-  const baseClass = `${prefix}--card`;
+  const baseClass = "ilo--card";
   const wrapperClass = classNames(`${baseClass}--wrapper`, className);
   const cardClasses = classNames(baseClass, `${baseClass}__type__stat`, {
     [`${baseClass}__size__${String(size)}`]: size,

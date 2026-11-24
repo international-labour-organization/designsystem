@@ -10,7 +10,6 @@ import {
 import classNames from "classnames";
 import { createPopper, Instance as PopperInstance } from "@popperjs/core";
 
-import useGlobalSettings from "../../hooks/useGlobalSettings";
 import { TooltipThemes, TooltipIconThemes } from "../../types";
 
 export type TooltipProps = {
@@ -65,8 +64,7 @@ const Tooltip = forwardRef<HTMLDivElement, TooltipProps>(
     },
     ref
   ) => {
-    const { prefix } = useGlobalSettings();
-    const baseClass = `${prefix}--tooltip`;
+    const baseClass = "ilo--tooltip";
     const tooltipRef = useRef<HTMLDivElement>(null);
     const popperRef = useRef<PopperInstance | null>(null);
     const [isShown, setIsShown] = useState<boolean>(!!isVisible);

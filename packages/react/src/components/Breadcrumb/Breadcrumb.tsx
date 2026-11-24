@@ -1,7 +1,6 @@
 import { forwardRef, useId, useEffect, useRef, useState } from "react";
 import classNames from "classnames";
 
-import useGlobalSettings from "../../hooks/useGlobalSettings";
 import { ContextMenu } from "../ContextMenu";
 import { BreadcrumbItem, BreadcrumbItemProps } from "./BreadcrumbItem";
 import { ThemeTypes } from "../../types";
@@ -30,7 +29,6 @@ export type BreadcrumbProps = {
 
 const Breadcrumb = forwardRef<HTMLElement, BreadcrumbProps>(
   ({ className, links, buttonLabel, theme = "light" }, ref) => {
-    const { prefix } = useGlobalSettings();
     const id = useId();
 
     const [isCtxMenuOpen, setIsCtxMenuOpen] = useState(false);
@@ -41,13 +39,9 @@ const Breadcrumb = forwardRef<HTMLElement, BreadcrumbProps>(
     const ctxContainerRef = useRef<HTMLDivElement>(null);
     const listRef = useRef<HTMLOListElement>(null);
 
-    const breadcrumbClassNames = classNames(
-      `${prefix}--breadcrumb`,
-      className,
-      {
-        [`${prefix}--breadcrumb__theme__${theme}`]: theme,
-      }
-    );
+    const breadcrumbClassNames = classNames("ilo--breadcrumb", className, {
+      [`ilo--breadcrumb__theme__${theme}`]: theme,
+    });
 
     useEffect(() => {
       fullBreadcrumbWidth.current = listRef.current!.offsetWidth;
@@ -85,7 +79,7 @@ const Breadcrumb = forwardRef<HTMLElement, BreadcrumbProps>(
         document.removeEventListener("mousedown", handleClickOutside);
         observer.disconnect();
       };
-    }, [id, prefix]);
+    }, [id]);
 
     useEffect(() => {
       if (!ctxButtonRef.current || !ctxContainerRef.current) {
@@ -119,10 +113,10 @@ const Breadcrumb = forwardRef<HTMLElement, BreadcrumbProps>(
 
     return (
       <nav className={breadcrumbClassNames} ref={ref}>
-        <div className={`${prefix}--breadcrumb--inner`}>
+        <div className={"ilo--breadcrumb--inner"}>
           <ol
-            className={`${prefix}--breadcrumb--items`}
-            id={`${prefix}--breadcrumb--items-${id}`}
+            className={"ilo--breadcrumb--items"}
+            id={`ilo--breadcrumb--items-${id}`}
             ref={listRef}
           >
             <BreadcrumbItem
@@ -132,11 +126,11 @@ const Breadcrumb = forwardRef<HTMLElement, BreadcrumbProps>(
             />
             {contextLinks.length > 0 && (
               <li
-                className={classNames(`${prefix}--breadcrumb--context`, {
-                  [`${prefix}--breadcrumb--context__collapse`]: isCollapsed,
+                className={classNames("ilo--breadcrumb--context", {
+                  "ilo--breadcrumb--context__collapse": isCollapsed,
                 })}
               >
-                <ol className={`${prefix}--breadcrumb--items`}>
+                <ol className={"ilo--breadcrumb--items"}>
                   {contextLinks.map((contextLink) => (
                     <BreadcrumbItem
                       url={contextLink.url}
@@ -149,8 +143,8 @@ const Breadcrumb = forwardRef<HTMLElement, BreadcrumbProps>(
                   onClick={() => setIsCtxMenuOpen(!isCtxMenuOpen)}
                   aria-label={buttonLabel}
                   aria-expanded={isCtxMenuOpen}
-                  aria-controls={`${prefix}--breadcrumb--menu-${id}`}
-                  className={`${prefix}--breadcrumb--context--button`}
+                  aria-controls={`ilo--breadcrumb--menu-${id}`}
+                  className={"ilo--breadcrumb--context--button"}
                   ref={ctxButtonRef}
                 ></button>
               </li>
@@ -159,10 +153,10 @@ const Breadcrumb = forwardRef<HTMLElement, BreadcrumbProps>(
           </ol>
         </div>
         <div
-          className={classNames(`${prefix}--breadcrumb--context--menu`, {
-            [`${prefix}--breadcrumb--context--menu__visible`]: isCtxMenuOpen,
+          className={classNames("ilo--breadcrumb--context--menu", {
+            "ilo--breadcrumb--context--menu__visible": isCtxMenuOpen,
           })}
-          id={`${prefix}--breadcrumb--menu-${id}`}
+          id={`ilo--breadcrumb--menu-${id}`}
           ref={ctxContainerRef}
         >
           <ContextMenu links={contextLinks} isOpen={isCtxMenuOpen} />

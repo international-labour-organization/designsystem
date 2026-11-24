@@ -1,6 +1,5 @@
 import { forwardRef } from "react";
 import classNames from "classnames";
-import useGlobalSettings from "../../hooks/useGlobalSettings";
 import { HeadingTypes, LinkListThemes } from "../../types";
 import { DynamicHeading } from "../DynamicHeading/DynamicHeading";
 
@@ -65,9 +64,7 @@ const LinkList = forwardRef<HTMLDivElement, LinkListProps>(
     { className, headline, linkgroup, theme = "light", titleLevel = "h3" },
     ref
   ) => {
-    const { prefix } = useGlobalSettings();
-
-    const baseClass = `${prefix}--link-list`;
+    const baseClass = "ilo--link-list";
 
     return (
       <div

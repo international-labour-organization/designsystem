@@ -1,7 +1,6 @@
 import { forwardRef, ReactNode, useMemo, version } from "react";
 import classNames from "classnames";
 
-import useGlobalSettings from "../../hooks/useGlobalSettings";
 import { ImageProps } from "../Image/Image.props";
 import { Breadcrumb, BreadcrumbProps } from "../Breadcrumb";
 import { Tooltip, TooltipProps } from "../Tooltip";
@@ -108,8 +107,6 @@ const Hero = forwardRef<HTMLDivElement, HeroProps>(
     },
     ref
   ) => {
-    const { prefix } = useGlobalSettings();
-
     const baseClass = `hero`;
 
     // Mirror the Twig component: the hero's theme and background default to
@@ -153,7 +150,7 @@ const Hero = forwardRef<HTMLDivElement, HeroProps>(
                   />
                 ))}
                 <img
-                  className={`${prefix}-${baseClass}--image`}
+                  className={`ilo-${baseClass}--image`}
                   src={orderedImages.at(-1)!.src}
                   alt={image.alt}
                   {...fetchPriorityAttribute(fetchPriority)}

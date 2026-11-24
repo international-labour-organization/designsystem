@@ -1,7 +1,6 @@
 import { forwardRef, AnchorHTMLAttributes, ReactNode } from "react";
 import classNames from "classnames";
 
-import useGlobalSettings from "../../hooks/useGlobalSettings";
 import { ThemeTypes } from "../../types";
 
 export type LinkProps = AnchorHTMLAttributes<HTMLAnchorElement> & {
@@ -41,8 +40,7 @@ const Link = forwardRef<HTMLAnchorElement, LinkProps>(
     { children, className, label, target, theme = "light", url, ...props },
     ref
   ) => {
-    const { prefix } = useGlobalSettings();
-    let baseClass = `${prefix}--link`;
+    let baseClass = "ilo--link";
 
     if (className?.includes("button")) {
       baseClass = "";

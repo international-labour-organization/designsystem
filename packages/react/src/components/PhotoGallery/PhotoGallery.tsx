@@ -1,6 +1,5 @@
 /* eslint-disable jsx-a11y/no-noninteractive-tabindex */
 import useEmblaCarousel from "embla-carousel-react";
-import { useGlobalSettings } from "../../hooks";
 import classNames from "classnames";
 import { Image } from "../Image";
 import { ImgHTMLAttributes, useEffect, useState } from "react";
@@ -43,7 +42,6 @@ function PhotoGallery({
   withKeyboardControls = false,
   captionView = "visible",
 }: PhotoGalleryProps) {
-  const { prefix } = useGlobalSettings();
   const [emblaRef, emblaAPI] = useEmblaCarousel({
     loop: true,
     direction: document.dir === "rtl" ? "rtl" : "ltr",
@@ -53,7 +51,7 @@ function PhotoGallery({
   const [index, setIndex] = useState(0);
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
 
-  const baseClass = `${prefix}--photo-gallery`;
+  const baseClass = "ilo--photo-gallery";
   const coreClass = `${baseClass}__core`;
 
   const onSelect = () => {

@@ -4,7 +4,6 @@ import useEmblaCarousel from "embla-carousel-react";
 import classNames from "classnames";
 
 import { PhotoGalleryItem } from "./PhotoGallery";
-import { useGlobalSettings } from "../../hooks";
 import {
   PhotoGalleryControls,
   useKeyboardControls,
@@ -25,7 +24,6 @@ function LightBoxGallery({
   onSelect: parentOnSelect,
   isActive,
 }: LightBoxProps) {
-  const { prefix } = useGlobalSettings();
   const [currentIndex, setCurrentIndex] = useState(parentIndex);
 
   const [emblaRef, emblaAPI] = useEmblaCarousel({
@@ -41,7 +39,7 @@ function LightBoxGallery({
   });
   const controls = usePhotoGalleryControls(emblaAPI);
 
-  const baseClass = `${prefix}--lightbox-gallery`;
+  const baseClass = "ilo--lightbox-gallery";
   const coreClass = `${baseClass}__core`;
   const thumbnailClass = `${baseClass}__thumbnails`;
 

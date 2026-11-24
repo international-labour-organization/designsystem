@@ -1,6 +1,5 @@
 import { ElementType, forwardRef, useId } from "react";
 import classNames from "classnames";
-import useGlobalSettings from "../../hooks/useGlobalSettings";
 import { createPortal } from "react-dom";
 import { useFocusTrap } from "../../hooks";
 import mergeRefs from "merge-refs";
@@ -56,7 +55,6 @@ export type ContextMenuProps = {
 
 const ContextMenu = forwardRef<HTMLOListElement, ContextMenuProps>(
   ({ className, links, withPortal = false, onClose, isOpen }, ref) => {
-    const { prefix } = useGlobalSettings();
     const id = useId();
     const focusTrapRef = useFocusTrap<HTMLOListElement>({
       isActive: isOpen,
@@ -70,14 +68,14 @@ const ContextMenu = forwardRef<HTMLOListElement, ContextMenuProps>(
 
     const Component = (
       <ol
-        className={classNames(`${prefix}--context-menu`, className)}
-        id={`${prefix}--context-menu-${id}`}
+        className={classNames("ilo--context-menu", className)}
+        id={`ilo--context-menu-${id}`}
         ref={mergeRefs(ref, focusTrapRef)}
       >
         {links.map((link) => {
           return (
             <li
-              className={classNames(`${prefix}--context-menu--item`, {
+              className={classNames("ilo--context-menu--item", {
                 endsection: link.endsection,
                 className: link.className,
               })}
@@ -85,19 +83,15 @@ const ContextMenu = forwardRef<HTMLOListElement, ContextMenuProps>(
             >
               {link.component ? (
                 <link.component
-                  className={`${prefix}--context-menu--link`}
+                  className="ilo--context-menu--link"
                   href={link.url}
                   {...link.componentProps}
                 >
-                  <span className={`${prefix}--context-menu--label`}>
-                    {link.label}
-                  </span>
+                  <span className="ilo--context-menu--label">{link.label}</span>
                 </link.component>
               ) : (
-                <a href={link.url} className={`${prefix}--context-menu--link`}>
-                  <span className={`${prefix}--context-menu--label`}>
-                    {link.label}
-                  </span>
+                <a href={link.url} className="ilo--context-menu--link">
+                  <span className="ilo--context-menu--label">{link.label}</span>
                 </a>
               )}
             </li>

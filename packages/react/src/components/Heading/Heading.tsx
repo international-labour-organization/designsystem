@@ -1,6 +1,5 @@
 import { FC } from "react";
 import classNames from "classnames";
-import useGlobalSettings from "../../hooks/useGlobalSettings";
 import { HeadingProps } from "./Heading.props";
 
 const Heading: FC<HeadingProps> = ({
@@ -10,9 +9,8 @@ const Heading: FC<HeadingProps> = ({
   type,
   ...rest
 }) => {
-  const { prefix } = useGlobalSettings();
   const UseHeading = level;
-  const baseClass = `${prefix}--${level}`;
+  const baseClass = `ilo--${level}`;
   const headingClasses = classNames(className, {
     [baseClass]: true,
     [`${baseClass}--${type}`]: type,

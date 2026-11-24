@@ -1,6 +1,5 @@
 import { FC, useState } from "react";
 import classNames from "classnames";
-import useGlobalSettings from "../../hooks/useGlobalSettings";
 import { ReadMoreProps } from "./ReadMore.props";
 import { RichText } from "../RichText";
 
@@ -12,8 +11,7 @@ const ReadMore: FC<ReadMoreProps> = ({
   openatstart,
   ...rest
 }) => {
-  const { prefix } = useGlobalSettings();
-  const baseClass = `${prefix}--read-more`;
+  const baseClass = "ilo--read-more";
   const [content, setContent] = useState(openatstart ? fulltext : excerpt);
   const [isopen, setOpen] = useState(openatstart);
 

@@ -1,6 +1,5 @@
 import { useCallback, useState } from "react";
 
-import { useGlobalSettings } from "../../../../hooks";
 import { MobileMenuList } from "./MobileMenuList";
 import { MobileDrawer } from "./MobileDrawer";
 import { MobileLanguageList } from "./MobileLanguageList";
@@ -31,8 +30,6 @@ const MobileNavigation = ({
   },
   onClose,
 }: MobileNavigationProps) => {
-  const { prefix } = useGlobalSettings();
-
   const [isMoreOpen, setIsMoreOpen] = useState(false);
   const [isLanguageOpen, setIsLanguageOpen] = useState(false);
 
@@ -41,7 +38,7 @@ const MobileNavigation = ({
     setIsLanguageOpen(false);
   }, []);
 
-  const baseClass = `${prefix}--nav-mobile`;
+  const baseClass = "ilo--nav-mobile";
   const isNested = isMoreOpen || isLanguageOpen;
   const facadeItems = items.slice(0, 5);
   const moreItems = items.slice(5);

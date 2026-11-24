@@ -1,6 +1,5 @@
 import React, { useEffect, forwardRef } from "react";
 import classNames from "classnames";
-import useGlobalSettings from "../../hooks/useGlobalSettings";
 import { CheckboxProps, LabelledCheckboxProps } from "./Checkbox.props";
 import { useFieldsetError } from "../Fieldset/Fieldset";
 import FormControl, { useFormControl } from "../FormControl/FormControl";
@@ -20,12 +19,11 @@ const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>((props, ref) => {
     value,
   } = props;
 
-  const { prefix } = useGlobalSettings();
   const { setHasError } = useFieldsetError();
   const formControlCtx = useFormControl();
   const { ariaDescribedBy } = formControlCtx;
 
-  const baseClass = `${prefix}--checkbox`;
+  const baseClass = "ilo--checkbox";
   const errorClass = `${baseClass}__error`;
 
   const CheckboxClasses = classNames(baseClass, {

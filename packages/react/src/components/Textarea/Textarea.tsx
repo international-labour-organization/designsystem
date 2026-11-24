@@ -1,16 +1,14 @@
 import React from "react";
 import classnames from "classnames";
-import useGlobalSettings from "../../hooks/useGlobalSettings";
 import { TextareaProps, LabelledTextareaProps } from "./Textarea.props";
 import FormControl, { useFormControl } from "../FormControl/FormControl";
 
 const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
   ({ error, className, name, id, ...props }, ref) => {
-    const { prefix } = useGlobalSettings();
     const formControlCtx = useFormControl();
     const { ariaDescribedBy } = formControlCtx;
 
-    const baseClass = `${prefix}--textarea`;
+    const baseClass = "ilo--textarea";
     const errorClass = `${baseClass}__error`;
 
     const textAreaClass = classnames(baseClass, className, {

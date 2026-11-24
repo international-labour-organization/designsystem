@@ -1,6 +1,5 @@
 import React from "react";
 import classNames from "classnames";
-import useGlobalSettings from "../../hooks/useGlobalSettings";
 import { TextInputProps, LabelledTextInputProps } from "./TextInput.props";
 import FormControl, { useFormControl } from "../FormControl/FormControl";
 
@@ -22,11 +21,10 @@ const TextInput = React.forwardRef<HTMLInputElement, TextInputProps>(
     },
     ref
   ) => {
-    const { prefix } = useGlobalSettings();
     const formControlCtx = useFormControl();
     const { ariaDescribedBy } = formControlCtx;
 
-    const baseClass = `${prefix}--input`;
+    const baseClass = "ilo--input";
 
     const inputClass = classNames(baseClass, {
       error: error,

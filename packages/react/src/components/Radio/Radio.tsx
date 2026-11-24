@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import classNames from "classnames";
-import { useGlobalSettings } from "../../hooks";
 import { LabelledRadioProps, RadioProps } from "./Radio.props";
 import { useFieldsetError } from "../Fieldset/Fieldset";
 import FormControl, { useFormControl } from "../FormControl/FormControl";
@@ -22,7 +21,6 @@ const Radio = React.forwardRef<HTMLInputElement, RadioProps>(
     },
     ref
   ) => {
-    const { prefix } = useGlobalSettings();
     const { setHasError } = useFieldsetError();
     const formControlCtx = useFormControl();
     const prevError = usePrevious(error);
@@ -41,7 +39,7 @@ const Radio = React.forwardRef<HTMLInputElement, RadioProps>(
       }
     };
 
-    const baseClass = `${prefix}--radio`;
+    const baseClass = "ilo--radio";
     const controlClass = `${baseClass}--control`;
     const errorClass = `${baseClass}__error`;
 

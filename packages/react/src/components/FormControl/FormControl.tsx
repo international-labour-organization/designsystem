@@ -8,7 +8,6 @@ import {
   useState,
   useId,
 } from "react";
-import { useGlobalSettings } from "../../hooks";
 import { Tooltip } from "../Tooltip";
 import { FormControlProps } from "./FormControl.props";
 import { useFormContext } from "../Form/Form";
@@ -81,13 +80,12 @@ const FormControl: FC<FormControlProps> = ({
   labelPlacement = "top",
   required,
 }) => {
-  const { prefix } = useGlobalSettings();
   const { theme: formTheme } = useFormContext();
 
   const formControlTheme = formTheme || theme;
 
   // Classes applied to the outer container
-  const baseClass = `${prefix}--form-control`;
+  const baseClass = "ilo--form-control";
 
   const instanceId = useId();
 

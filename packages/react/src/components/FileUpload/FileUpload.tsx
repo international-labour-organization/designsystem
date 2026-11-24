@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import classNames from "classnames";
-import useGlobalSettings from "../../hooks/useGlobalSettings";
 import FormControl, { useFormControl } from "../FormControl/FormControl";
 import { FileUploadProps, LabelledFileUploadProps } from "./FileUpload.props";
 
@@ -32,11 +31,10 @@ const FileUpload = React.forwardRef<HTMLInputElement, FileUploadProps>(
     },
     ref
   ) => {
-    const { prefix } = useGlobalSettings();
     const formControlCtx = useFormControl();
     const { ariaDescribedBy } = formControlCtx;
 
-    const baseClass = `${prefix}--file-upload`;
+    const baseClass = "ilo--file-upload";
     const fileUploadClasses = classNames(baseClass, {
       [`error`]: error,
     });

@@ -1,6 +1,5 @@
 import { forwardRef, ReactNode, useContext } from "react";
 import { AccordionContext } from "./Accordion";
-import { useGlobalSettings } from "../../hooks";
 import classNames from "classnames";
 
 export type AccordionItemProps = {
@@ -21,7 +20,6 @@ export type AccordionItemProps = {
 
 const AccordionItem = forwardRef<HTMLLIElement, AccordionItemProps>(
   ({ value, children, label, className }, ref) => {
-    const { prefix } = useGlobalSettings();
     const context = useContext(AccordionContext);
 
     if (!context) {
@@ -46,29 +44,26 @@ const AccordionItem = forwardRef<HTMLLIElement, AccordionItemProps>(
     }
 
     return (
-      <li
-        ref={ref}
-        className={classNames(`${prefix}--accordion-item`, className)}
-      >
-        <div className={`${prefix}--h3`}></div>
+      <li ref={ref} className={classNames("ilo--accordion-item", className)}>
+        <div className={"ilo--h3"}></div>
         <button
           onClick={handleClick}
-          className={`${prefix}--accordion--button ${prefix}--accordion--button__${context.size}`}
+          className={`ilo--accordion--button ilo--accordion--button__${context.size}`}
           aria-expanded={isSelected}
           aria-controls={value}
         >
-          <span className={`${prefix}--accordion--label`}>{label}</span>
-          <span className={`${prefix}--accordion--icon`}></span>
+          <span className={"ilo--accordion--label"}>{label}</span>
+          <span className={"ilo--accordion--icon"}></span>
         </button>
         <div
-          className={classNames(`${prefix}--accordion--panel`, {
-            [`${prefix}--accordion--panel__open`]: isSelected,
-            [`${prefix}--accordion--panel__scroll`]: scrollable,
+          className={classNames("ilo--accordion--panel", {
+            "ilo--accordion--panel__open": isSelected,
+            "ilo--accordion--panel__scroll": scrollable,
           })}
           role="region"
           aria-hidden={!isSelected}
         >
-          <div className={`${prefix}--accordion--innerpanel`}>{children}</div>
+          <div className={"ilo--accordion--innerpanel"}>{children}</div>
         </div>
       </li>
     );

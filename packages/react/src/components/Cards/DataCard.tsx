@@ -1,7 +1,6 @@
 import classNames from "classnames";
 import { forwardRef, Fragment, ReactNode } from "react";
 
-import useGlobalSettings from "../../hooks/useGlobalSettings";
 import { Link, LinkProps } from "../Link";
 import { CardSize, ThemeTypes } from "../../types";
 import { Button } from "../Button";
@@ -75,12 +74,10 @@ const DataCard = forwardRef<HTMLDivElement, DataCardProps>(
     },
     ref
   ) => {
-    const { prefix } = useGlobalSettings();
-
     // Force the card to render in one column if size is narrow
     const cols = size === "narrow" ? "one" : columns;
 
-    const baseClass = `${prefix}--card`;
+    const baseClass = "ilo--card";
 
     const cardClasses = classNames(
       baseClass,
@@ -230,9 +227,8 @@ const DataCardSkeleton: React.FC<DataCardSkeletonProps> = ({
   size = "narrow",
   columns = "one",
 }) => {
-  const { prefix } = useGlobalSettings();
   const cols = size === "narrow" ? "one" : columns;
-  const baseClass = `${prefix}--card`;
+  const baseClass = "ilo--card";
   const cardClasses = classNames(
     baseClass,
     `${baseClass}__type__data`,

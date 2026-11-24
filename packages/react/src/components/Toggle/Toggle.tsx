@@ -1,6 +1,5 @@
 import { Ref, forwardRef } from "react";
 import { ToggleProps, LabelledToggleProps } from "./Toggle.props";
-import { useGlobalSettings } from "../../hooks";
 import classnames from "classnames";
 import FormControl, { useFormControl } from "../FormControl/FormControl";
 
@@ -22,13 +21,12 @@ const Toggle = forwardRef<HTMLInputElement, ToggleProps>(
     },
     ref
   ) => {
-    const { prefix } = useGlobalSettings();
     const formControlCtx = useFormControl();
     const { ariaDescribedBy } = formControlCtx;
 
     const hasError = !disabled && !!error;
 
-    const baseClass = `${prefix}--input--toggle`;
+    const baseClass = "ilo--input--toggle";
     const sliderClass = `${baseClass}--slider`;
 
     const toggleClass = classnames(

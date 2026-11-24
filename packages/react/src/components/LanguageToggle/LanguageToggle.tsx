@@ -1,6 +1,5 @@
 import { forwardRef, HTMLAttributes, useEffect, useRef, useState } from "react";
 
-import { useGlobalSettings } from "../../hooks";
 import classNames from "classnames";
 import { ThemeTypes } from "../../types";
 import { ContextMenu, ContextMenuProps } from "../ContextMenu";
@@ -37,14 +36,12 @@ const LanguageToggle = forwardRef<
     { className, language, theme = "light", hideIcon, options, ...rest },
     ref
   ) => {
-    const { prefix } = useGlobalSettings();
-
     const [isCtxMenuOpen, setIsCtxMenuOpen] = useState(false);
 
     const containerRef = useRef<HTMLButtonElement>(null);
     const contextMenuRef = useRef<HTMLOListElement>(null);
 
-    const baseClass = `${prefix}--language-toggle`;
+    const baseClass = "ilo--language-toggle";
 
     useEffect(() => {
       function handleClickOutside(event: MouseEvent) {

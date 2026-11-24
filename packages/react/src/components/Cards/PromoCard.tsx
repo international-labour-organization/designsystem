@@ -1,7 +1,6 @@
 import { forwardRef } from "react";
 import classNames from "classnames";
 
-import useGlobalSettings from "../../hooks/useGlobalSettings";
 import {
   CardCornerType,
   CardSize,
@@ -88,9 +87,7 @@ const PromoCard = forwardRef<HTMLDivElement, PromoCardProps>(
     },
     ref
   ) => {
-    const { prefix } = useGlobalSettings();
-
-    const baseClass = `${prefix}--card`;
+    const baseClass = "ilo--card";
 
     const wrapperClass = classNames(
       `${baseClass}--wrapper`,
@@ -165,8 +162,7 @@ const PromoCardSkeleton: React.FC<PromoCardSkeletonProps> = ({
   theme = "light",
   size = "narrow",
 }) => {
-  const { prefix } = useGlobalSettings();
-  const baseClass = `${prefix}--card`;
+  const baseClass = "ilo--card";
   const wrapperClass = classNames(
     `${baseClass}--wrapper`,
     className,

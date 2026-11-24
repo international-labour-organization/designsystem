@@ -1,5 +1,4 @@
 import { createElement, FC } from "react";
-import useGlobalSettings from "../../hooks/useGlobalSettings";
 import { IconProps } from "./Icon.props";
 import * as icons from "@ilo-org/icons-react";
 import classnames from "classnames";
@@ -15,8 +14,7 @@ const Icon: FC<IconProps> = ({
   className,
   id,
 }) => {
-  const { prefix } = useGlobalSettings();
-  const baseClass = `${prefix}--icon`;
+  const baseClass = "ilo--icon";
   const iconClass = classnames([baseClass, className]);
   const ariaHidden = hidden ? "true" : "false";
   const iconsize = size || 24;

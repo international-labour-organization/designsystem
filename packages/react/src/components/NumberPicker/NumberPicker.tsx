@@ -1,6 +1,5 @@
 import React from "react";
 import classNames from "classnames";
-import useGlobalSettings from "../../hooks/useGlobalSettings";
 import FormControl, { useFormControl } from "../FormControl/FormControl";
 import {
   NumberPickerProps,
@@ -25,12 +24,11 @@ const NumberPicker = React.forwardRef<HTMLInputElement, NumberPickerProps>(
     },
     ref
   ) => {
-    const { prefix } = useGlobalSettings();
     const formControlCtx = useFormControl();
     const { ariaDescribedBy } = formControlCtx;
 
-    const inputClass = `${prefix}--input`;
-    const baseClass = `${prefix}--numberpicker`;
+    const inputClass = "ilo--input";
+    const baseClass = "ilo--numberpicker";
 
     const hasError = !disabled && !!error;
 
