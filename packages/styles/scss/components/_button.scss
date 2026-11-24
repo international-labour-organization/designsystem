@@ -1,9 +1,8 @@
 @use "../functions" as *;
 @use "../animations" as *;
 @use "../mixins" as *;
-@use "../config" as *;
 
-.#{$prefix}--button {
+.ilo--button {
   --ilo-button-label-weight: 700;
   --ilo-button-labels-actionable-color: var(--ilo-color-light-text-brand);
   --ilo-button-labels-active-color: var(--ilo-color-dark-text-brand);
@@ -28,7 +27,7 @@
   &--icon {
     position: relative;
 
-    .#{$prefix}--icon {
+    .ilo--icon {
       position: relative;
       bottom: px-to-rem(2px);
     }
@@ -40,7 +39,7 @@
     &--only {
       padding: unset !important;
 
-      .#{$prefix}--icon {
+      .ilo--icon {
         bottom: 0 !important;
       }
 
@@ -55,7 +54,7 @@
     height: px-to-rem(52px);
     @include typography("heading-4");
 
-    &.#{$prefix}--button--icon--only {
+    &.ilo--button--icon--only {
       width: px-to-rem(52px);
     }
   }
@@ -65,7 +64,7 @@
     height: px-to-rem(44px);
     @include typography("highlight-medium-bold");
 
-    &.#{$prefix}--button--icon--only {
+    &.ilo--button--icon--only {
       width: px-to-rem(44px);
     }
   }
@@ -75,11 +74,11 @@
     height: px-to-rem(32px);
     @include typography("highlight-small-bold");
 
-    &.#{$prefix}--button--icon--only {
+    &.ilo--button--icon--only {
       width: px-to-rem(32px);
     }
 
-    .#{$prefix}--icon {
+    .ilo--icon {
       bottom: px-to-rem(1px);
     }
   }
@@ -147,7 +146,7 @@
       -4px -4px 0 1px var(--ilo-color-light-border-focus) inset;
     @include globaltransition("color, background-color, border-color");
 
-    &.#{$prefix}--small {
+    &.ilo--small {
       box-shadow:
         3px 3px 0 1px var(--ilo-color-light-border-focus) inset,
         -3px -3px 0 1px var(--ilo-color-light-border-focus) inset;

@@ -1,12 +1,11 @@
 @use "../functions" as *;
 @use "../mixins" as *;
-@use "../config" as *;
 
 // =============================================================================
 // ACCORDION COMPONENT
 // =============================================================================
 
-.#{$prefix}--accordion {
+.ilo--accordion {
   // CSS Custom Properties
   // ---------------------------------------------------------------------------
   --ilo-accordion-color-icon: var(--ilo-color-light-action-default);

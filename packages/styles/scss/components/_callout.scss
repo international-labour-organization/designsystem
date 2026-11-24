@@ -1,8 +1,7 @@
 @use "../functions" as *;
 @use "../mixins" as *;
-@use "../config" as *;
 
-.#{$prefix}--callout {
+.ilo--callout {
   display: flex;
   transition: max-height 225ms ease-out;
   $callout: &;

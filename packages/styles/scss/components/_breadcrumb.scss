@@ -1,9 +1,8 @@
 @use "../functions" as *;
 @use "../animations" as *;
 @use "../mixins" as *;
-@use "../config" as *;
 
-.#{$prefix}--breadcrumb {
+.ilo--breadcrumb {
   $breadcrumb: &;
 
   --ilo-breadcrumb-background-color: var(
