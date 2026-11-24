@@ -60,7 +60,8 @@
 
       .ilo--form-control {
         width: 100%;
-        display: inline;
+        display: grid;
+        gap: 0;
       }
       .ilo--form-control--label {
         display: none;
