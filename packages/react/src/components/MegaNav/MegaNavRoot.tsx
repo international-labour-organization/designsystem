@@ -9,6 +9,7 @@ import {
 } from "react";
 
 import { useBreakpoint } from "../../hooks";
+import useIsomorphicLayoutEffect from "../../hooks/useIsomorphicLayoutEffect";
 import { prefix } from "../../utils";
 
 import { useIds } from "./internals/hooks/useIds";
@@ -87,7 +88,7 @@ const MegaNavRoot = forwardRef<HTMLElement, MegaNavRootProps>(
     });
     const { close } = openState;
 
-    useEffect(() => {
+    useIsomorphicLayoutEffect(() => {
       setIsClient(true);
     }, []);
 

@@ -124,6 +124,18 @@ $panel-shadow:
     @include breakpoint("lg", true) {
       display: none;
     }
+
+    // The server HTML has every item, the ones that don't fit are only known
+    // once measured. Until then the items stay invisible (still laid out, so
+    // they can be measured) and appear with "More" in their final place.
+    // Without JS they are always visible
+    &:not([data-measured]) {
+      @media (scripting: enabled) {
+        .ilo--mega-nav__list {
+          visibility: hidden;
+        }
+      }
+    }
   }
 
   &__list {

@@ -64,9 +64,10 @@ const MegaNavMenu = ({ className, children }: MegaNavMenuProps) => {
   const { labels } = useMegaNavConfig();
   const { items, itemKeys, isDesktop, isClient } = useMegaNavStatus();
 
+  const measured = isDesktop && isClient;
   const { containerRef, listRef, moreRef, visibleCount } = useOverflow({
     count: items.length,
-    enabled: isDesktop && isClient,
+    enabled: measured,
   });
 
   const menu = useMemo(
@@ -79,6 +80,7 @@ const MegaNavMenu = ({ className, children }: MegaNavMenuProps) => {
       ref={containerRef}
       className={classNames(`${baseClass}__menu`, className)}
       aria-label={labels.nav}
+      data-measured={measured || undefined}
     >
       <ul className={`${baseClass}__list`} ref={listRef}>
         <MegaNavMenuContext.Provider value={menu}>
