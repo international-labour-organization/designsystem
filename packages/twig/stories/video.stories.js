@@ -14,7 +14,9 @@ const Meta = {
   ...story.meta,
 };
 
-const [Default, Captioned] = story.stories;
+const [Default, Captioned, Hls] = story.stories;
 
 export default Meta;
-export { Default, Captioned };
+export { Default, Captioned, Hls };
+
+Hls.storyName = "Streaming Video (HLS)";

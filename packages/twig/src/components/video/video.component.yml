@@ -77,6 +77,29 @@ video:
               srclang: "es"
               label: "Spanish"
               kind: "captions"
+    hls:
+      label: "Streaming Video (HLS)"
+      description: "An adaptive HLS stream. Point `video.src` at an `.m3u8` playlist and set `vjsType` to `application/x-mpegURL` so the player picks its HLS engine."
+      fields:
+        alt: ""
+        caption: ""
+        url:
+          - breakpoint: 0
+            src: "https://storylab.fra1.cdn.digitaloceanspaces.com/videos/systemic-change/kailash/poster.jpg"
+        video:
+          controls:
+            fullscreen: "Fullscreen"
+            play: "Play"
+            pause: "Pause"
+            volume: "Volume"
+          src: "https://storylab.fra1.cdn.digitaloceanspaces.com/videos/systemic-change/kailash/master.m3u8"
+          tracks:
+            - src: "https://storylab.fra1.cdn.digitaloceanspaces.com/videos/systemic-change/kailash/captions/en.vtt"
+              srclang: "en"
+              label: "English"
+              kind: "captions"
+              default: true
+        vjsType: "application/x-mpegURL"
 
 youtube_video:
   namespace: Components/Media
