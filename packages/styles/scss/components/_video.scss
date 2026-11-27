@@ -104,6 +104,36 @@
       opacity: 1;
       transition: opacity 150ms ease-out;
     }
+
+    // Lift the captions clear of the control bar while it is showing. Only
+    // once playback has started and before it ends, as otherwise the control
+    // bar sits at the top of the player.
+    .vjs-has-started:not(.vjs-ended) {
+      .vjs-text-track-display {
+        transform: translateY(-#{px-to-rem(40px)});
+      }
+
+      // Safari renders captions natively instead of in .vjs-text-track-display
+      video::-webkit-media-text-track-container {
+        transform: translateY(-#{px-to-rem(40px)});
+      }
+    }
+  }
+
+  // Captions
+  // Cue positions are computed in px by video.js when a cue is laid out, so
+  // the display is moved with a transform rather than resized. It needs to
+  // fill the player explicitly so the transform doesn't change the box the
+  // cues are laid out in.
+  .vjs-text-track-display {
+    inset: 0;
+    pointer-events: none;
+    position: absolute;
+    transition: transform 150ms ease-out;
+  }
+
+  video::-webkit-media-text-track-container {
+    transition: transform 150ms ease-out;
   }
 
   // Youtube spacing
