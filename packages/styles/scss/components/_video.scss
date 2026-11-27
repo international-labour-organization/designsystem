@@ -94,9 +94,12 @@
   }
 
   // Show Controls
-  &:hover,
-  &:focus,
-  &:focus-within {
+  // Only while the pointer is over the player window or a control has
+  // keyboard focus. Using :focus-visible rather than :focus-within means a
+  // mouse click on a control doesn't pin the control bar open after the
+  // pointer leaves, where it would cover the subtitles.
+  &--wrapper:hover,
+  &--wrapper:has(:focus-visible) {
     .vjs-control-bar {
       opacity: 1;
       transition: opacity 150ms ease-out;
