@@ -1,5 +1,19 @@
 # @ilo-org/styles
 
+## 1.20.0
+
+### Minor Changes
+
+- 71c7733: **PromoCard:** New optional `image` prop. The image bleeds to the edges of the card above the content at 16:9, and sits beside it in `wide` and `fluid` cards from `md`.
+
+### Patch Changes
+
+- 70063ff: Cards: Fixed color of date text
+  Table: Fixed chevron color
+  Promocard: Fixed cornercut position in RTL layouts
+  Foundation: Added --ilo-color-dark-icon-brand-stronger
+- f816dab: Video: Fixed the controls staying visible over the subtitles after the pointer leaves the player. Subtitles now move above the controls while the controls are visible
+
 ## 1.19.2
 
 ### Patch Changes
