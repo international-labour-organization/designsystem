@@ -4,4 +4,4 @@
 "@ilo-org/react": patch
 ---
 
-Video: Fixed the controls staying visible over the subtitles after the pointer leaves the player
+Video: Fixed the controls staying visible over the subtitles after the pointer leaves the player. Subtitles now move above the controls while the controls are visible
